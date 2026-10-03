@@ -568,3 +568,5 @@ See that task's ExecPlan and evidence/outcome.md for exact results and limits.
 The runner reference now describes explicit local execution_host selection, pinned owner identities, aggregate admission and its limitations. AIDE-SCOPED-JOB-ENTRY-01 owns current production-entry qualification; AIDE-SESSION-CONTAINMENT-01 retains independently checked partial evidence. Neither record accepts whole-session containment.
 
 The scoped-entry outcome records normal CLI qualification, finite pool accounting, exact outputs, retirement and surviving outer/read boundaries. Failed attempts and independent source verdicts remain with the task.
+
+The dev-only integration packet is `.aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/`; its effect plan and observations distinguish shared source integration from unchanged whole-session and release gates.

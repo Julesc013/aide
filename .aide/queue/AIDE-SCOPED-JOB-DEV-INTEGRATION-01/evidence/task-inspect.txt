@@ -1,0 +1,10 @@
+AIDE Lite task inspect
+task_id: AIDE-SCOPED-JOB-DEV-INTEGRATION-01
+status: needs_review
+classification: partial
+task_yaml: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/task.yaml
+status_yaml: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/status.yaml
+evidence_dir: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence
+evidence_files: 3
+missing_evidence: 3
+recovery_suggestion: continue_from_status_and_evidence

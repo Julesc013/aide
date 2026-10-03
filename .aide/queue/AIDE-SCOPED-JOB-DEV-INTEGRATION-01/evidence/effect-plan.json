@@ -1,0 +1,23 @@
+{
+  "schema": "aide.delegated-dev-effect.v1",
+  "task": "AIDE-SCOPED-JOB-DEV-INTEGRATION-01",
+  "source": "9e0daa12a09cc356156e5785b73c1e566a8d0dbc",
+  "qualified_source": "886290be31357b40eef137c65d203fd9e170ecb3",
+  "qualification_packet": "8bdf3978c33386c12cf0743a937d8e4aeba998f2",
+  "qualification_job": "ce62387adceb40ab8bf31268a7964abd",
+  "effect_candidate": "exact frozen review subject supplied to independent reviewer; no mutable ref acceptance",
+  "local_dev_before": "1431d39452fa844c35496a75b5eac47922fbb7c3",
+  "remote_dev_before": "1431d39452fa844c35496a75b5eac47922fbb7c3",
+  "local_and_remote_main_unchanged": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3",
+  "effects": ["checkout existing dev in single existing checkout", "merge --ff-only exact accepted subject", "normal non-force push of exact accepted dev"],
+  "authority": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/owner-delegation-2026-09-25.md",
+  "accepted_archive_sha256": "002636e7732125ceade6bc3fe2d8e6fdb187cc544052360483dcb5b5d77acf97",
+  "original_config_sha256": "73c0b1a4f4bb7cf341c8882806852a9aaea81c81a3d956cde575c1814e3616f6",
+  "git_windows_identity": "BLACKGLASS-WIN1\\Jules",
+  "github_account": "Julesc013",
+  "runtime_and_storage": "unchanged existing owner/config; no new job or allocation",
+  "whole_session_contained": false,
+  "read_isolation": "failed_installed_host_preserved",
+  "disk_enforcement": "cooperative admission and monitored growth, not hard filesystem quota",
+  "unchanged_gates": ["outer session", "protected Git", "live model permission", "matched-outcome efficiency", "ten exact historical owner dispositions", "main", "tags", "publication", "downloaded consumers"]
+}

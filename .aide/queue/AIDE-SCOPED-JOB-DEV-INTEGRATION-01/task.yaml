@@ -1,0 +1,51 @@
+schema_version: aide.queue-task.v0
+id: AIDE-SCOPED-JOB-DEV-INTEGRATION-01
+title: Integrate independently qualified scoped worker source into dev
+type: integration
+status: needs_review
+planning_state: exact_dev_effect_preparation
+result: PENDING
+created_at: 2026-10-03
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+authority_basis: Recorded 2026-09-25 campaign delegation, continued Goal, and qualified independent worker review.
+objective: >
+  Fast-forward dev to the reviewed containment source and exact qualification
+  records using the existing single checkout, then non-force push and verify
+  remote identities. Whole-session, read isolation, live-model, main and
+  publication gates remain open.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/index.yaml
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  exact_git_effects:
+    - fast-forward refs/heads/dev from 1431d39452fa844c35496a75b5eac47922fbb7c3 to exact independently accepted candidate
+    - non-force push of exact dev to origin after verifying expected remote old ref
+    - preserve task/aide-session-containment-01 and all existing history
+  forbidden_operations:
+    - new clones, worktrees, storage roots or archives
+    - product source, export, accepted ZIP or original execution config changes
+    - main changes, tags, publication or target repository effects
+    - force push, history rewrite, branch deletion or credential/global configuration changes
+    - whole-session or completed efficiency qualification claims
+branch_plan:
+  helper: git plan ready_dry_run on task/aide-session-containment-01
+  observed_source: 9e0daa12a09cc356156e5785b73c1e566a8d0dbc
+  expected_dev: 1431d39452fa844c35496a75b5eac47922fbb7c3
+  expected_main: aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3
+  actions: checkout existing dev, merge --ff-only exact accepted candidate, push exact dev normally
+review_gate: exact independent source-and-dev-effect ACCEPT before integration and push
+verification:
+  - accepted source and generated pack identities
+  - clean single checkout, ancestry and structured commit range
+  - real Jules identity, authenticated Julesc013 and no retained credential material
+  - fresh exact local/remote dev/main refs before and after each effect
+  - scratch and active receipt absent; original config and accepted ZIP unchanged

@@ -1,0 +1,10 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-SCOPED-JOB-DEV-INTEGRATION-01
+status: needs_review
+planning_state: exact_dev_effect_preparation
+result: PENDING
+updated_at: 2026-10-03
+dev_integrated: false
+remote_verified: false
+whole_session_contained: false
+main_and_publication: unchanged_unqualified

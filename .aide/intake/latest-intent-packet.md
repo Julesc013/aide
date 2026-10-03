@@ -3,18 +3,18 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: cbd052f5deb7b400dd61be92d97a1c0a3e699d5dba7d0c7eacafd4499a1e55dd
-- raw_prompt_excerpt: Continue the existing AIDE containment campaign: integrate the already-qualified readonly Windows scoped command host into the normal managed job run entry, pin the existing accepted execution owner, and admit aggregate pool growth under...
-- interpreted_goal: Normalize prompt into a bounded evidence WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
+- raw_prompt_hash: 987c2a9316935b7ced20eced9aefed1b8245850f71f3072503c9a989de0bc3ef
+- raw_prompt_excerpt: Integrate the independently accepted AIDE-SCOPED-JOB-ENTRY-01 source and exact worker qualification into dev only through the existing checkout and owner campaign delegation. Preserve partial containment, failed read exclusion, unqualifi...
+- interpreted_goal: Normalize prompt into a bounded git WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
-- task_class: evidence
-- risk_class: high
-- sizing_class: audit_only
-- safe_to_execute: true
-- requires_split: false
-- blocked: false
-- blocker_reason: none
-- next_action: draft the smallest safe WorkUnit after repo-state preflight
+- task_class: git
+- risk_class: destructive
+- sizing_class: blocked
+- safe_to_execute: false
+- requires_split: true
+- blocked: true
+- blocker_reason: write blocker report and require reviewed authorization before mutation
+- next_action: write blocker report and require reviewed authorization before mutation
 - task_execution: false
 - provider_or_model_calls: none
 - network_calls: none
@@ -24,6 +24,8 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
+- do not merge, push, promote, or prune without reviewed branch plan
+- do not move or delete roots without inventory and salvage map
 
 ## Repo State Refs
 
@@ -47,6 +49,7 @@
 ## Validation Hints
 
 - `git diff --check`
+- `py -3 .aide/scripts/aide_lite.py git plan`
 - `py -3 .aide/scripts/aide_lite.py intent validate`
 
 ## Evidence Hints
@@ -55,3 +58,4 @@
 - `validation.md`
 - `remaining-risks.md`
 - `intent-compiler-report.md`
+- `preflight-or-blocker-report.md`

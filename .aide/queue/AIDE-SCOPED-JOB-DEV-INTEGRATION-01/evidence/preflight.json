@@ -1,0 +1,109 @@
+{
+  "observed_utc": "2026-10-03T13:35:53.443016+00:00",
+  "source": "9e0daa12a09cc356156e5785b73c1e566a8d0dbc",
+  "tree": "d6e0afb447610784548804bd46c0d7e024ed76cd",
+  "refs": {
+    "dev": "1431d39452fa844c35496a75b5eac47922fbb7c3",
+    "main": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3"
+  },
+  "qualification_product_inputs": [
+    {
+      "path": "core/execution/scoped_host.py",
+      "frozen_subject": "886290be31357b40eef137c65d203fd9e170ecb3",
+      "git_blob": "d815a4b417707d96ee70ca47a563ad4f8eb91101",
+      "working_sha256": "06f7544cdacaf86813f67d0c9a82380f7ee95088916a39699f75aecfb8c709dc"
+    },
+    {
+      "path": ".aide/scripts/aide_lite.py",
+      "frozen_subject": "886290be31357b40eef137c65d203fd9e170ecb3",
+      "git_blob": "9b0aaeefefaba097a35f1ea0d3dba795207f19b0",
+      "working_sha256": "d358884e0f572bb0f7af8ee679639cb60d50ec3d5fda86a6b27dd294e5e5ebf6"
+    },
+    {
+      "path": ".aide/scripts/tests/test_scoped_host.py",
+      "frozen_subject": "886290be31357b40eef137c65d203fd9e170ecb3",
+      "git_blob": "e3ad32112cf12e0af8223632d9b5a0a9a1db4106",
+      "working_sha256": "2fdc715b7be5c63bad319ce1e730d80f790a1eb9cdde109eba668a00085d8c0e"
+    },
+    {
+      "path": ".aide/scripts/tests/test_managed_workspace.py",
+      "frozen_subject": "886290be31357b40eef137c65d203fd9e170ecb3",
+      "git_blob": "606c20cbdb8e9af35c122c71223dece6a6a8a62b",
+      "working_sha256": "dec455194f5a0570c32b445df9ec4fb15643aed797a797b7c61acbee3fca2597"
+    },
+    {
+      "path": "docs/reference/aide-lite-test-runner.md",
+      "frozen_subject": "886290be31357b40eef137c65d203fd9e170ecb3",
+      "git_blob": "39b0f27bb1b736823eb0620c6a012127404cb6dc",
+      "working_sha256": "71a77c86fdaea601c3285624c92f0e5382fe21b92bd7373948bb0a98d92ae4ed"
+    },
+    {
+      "path": ".aide/export/aide-lite-pack-v0/manifest.yaml",
+      "frozen_subject": "8bdf3978c33386c12cf0743a937d8e4aeba998f2",
+      "git_blob": "a2f785ade7d1507c5dcc3d6d11de9aabe25a2acd",
+      "working_sha256": "e907c5d9d59c505c2dc0ed5023ff700704aae4de54f904554073da97fd766992"
+    },
+    {
+      "path": ".aide/export/aide-lite-pack-v0/checksums.json",
+      "frozen_subject": "8bdf3978c33386c12cf0743a937d8e4aeba998f2",
+      "git_blob": "d0b570aa8dda601d9b7d1ea451020b69a34c90d2",
+      "working_sha256": "ca03017dfc094999facf6c54e10c818876c8bbf875ee6df28adc13c68712f11c"
+    }
+  ],
+  "archive_and_config_unchanged": true,
+  "scratch_empty": true,
+  "active_absent": true,
+  "single_checkout": true,
+  "checks": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "evidence": "diff-check.txt"
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "intent",
+        "validate"
+      ],
+      "exit_code": 0,
+      "evidence": "intent-validate.txt"
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-SCOPED-JOB-DEV-INTEGRATION-01"
+      ],
+      "exit_code": 0,
+      "evidence": "task-inspect.txt"
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "1431d394..HEAD"
+      ],
+      "exit_code": 0,
+      "evidence": "commit-range.txt"
+    }
+  ],
+  "whole_session_contained": false
+}

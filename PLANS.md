@@ -4405,3 +4405,7 @@ current stable ZIP bytes unchanged.
 AIDE-SCOPED-JOB-ENTRY-01 admits a thin readonly host adapter using the existing accepted owner, configured storage and aggregate admission under its shared lock. Plan and scope are in the queue item; no new checkout or global configuration. One necessary real validation through the public CLI is required. Whole-session and read-isolation gaps remain open.
 
 The scoped public-entry child completed real export/full validation and all 64 applicable regressions on 886290be. Terminal evidence review and whole-session adoption remain separate gates; legacy jobs and outer tools are not automatically confined.
+
+## 2026-10-03 qualified worker dev integration
+
+AIDE-SCOPED-JOB-DEV-INTEGRATION-01 prepares independently reviewed dev-only integration of accepted worker source and terminal evidence. Reuse the single checkout and accepted archive/config; require exact candidate/effect review before fast-forward and normal push. Outer containment and main/release gates remain open.

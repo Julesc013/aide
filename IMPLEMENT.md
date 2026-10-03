@@ -12900,3 +12900,7 @@ The normal job entry can select a pinned accepted execution owner and readonly C
 Public job ce62387a qualified the new entry on 886290be: 64 tests, affected export and full validate passed, with verified retirement. Real execution repaired the export permission mismatch, permission-root deletion and source fixture lifecycle errors. Evidence/outcome.md records exact budgets and uncovered routes. No accepted ZIP/config mutation or whole-session completion claim.
 
 Final independent terminal review accepted packet 8bdf3978 for the scoped worker only, including all 844 listed pack bytes and verified retirement. No blocking bounded-source findings remain; outer-session containment and read isolation are still unqualified.
+
+## 2026-10-03 scoped worker integration preparation
+
+AIDE-SCOPED-JOB-DEV-INTEGRATION-01 records the bounded dev-only helper plan, delegation, real-user auth observation and exact unchanged qualification inputs. No branch or remote effect is inferred from preparation; exact independent integration acceptance is required. Product/export bytes and the accepted ZIP/config remain fixed.

@@ -1,13 +1,13 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-evidence-cbd052f5deb7
-- title: Evidence WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight
+- workunit_id: draft-git-987c2a931693
+- title: Git WorkUnit Draft - Write blocker report and require reviewed authorization before mutation
 - status: draft
-- task_class: evidence
-- risk_class: high
-- sizing_class: audit_only
-- objective: Normalize prompt into a bounded evidence WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
+- task_class: git
+- risk_class: destructive
+- sizing_class: blocked
+- objective: Normalize prompt into a bounded git WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - why: AIDE compiles raw prompts into bounded WorkUnits before execution.
 
 ## Preflight
@@ -19,12 +19,13 @@
 ## Implementation Outline
 
 - Reconcile repo state before editing.
-- draft the smallest safe WorkUnit after repo-state preflight
+- write blocker report and require reviewed authorization before mutation
 - Stop at review gates and record evidence before execution.
 
 ## Validation
 
 - git diff --check
+- py -3 .aide/scripts/aide_lite.py git plan
 - py -3 .aide/scripts/aide_lite.py intent validate
 
 ## Evidence
@@ -33,6 +34,7 @@
 - validation.md
 - remaining-risks.md
 - intent-compiler-report.md
+- preflight-or-blocker-report.md
 
 ## Acceptance
 
@@ -46,8 +48,10 @@
 - no provider/model/network calls
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
+- do not merge, push, promote, or prune without reviewed branch plan
+- do not move or delete roots without inventory and salvage map
 
 ## Recovery
 
-- idempotency: prompt_hash:cbd052f5deb7b400dd61be92d97a1c0a3e699d5dba7d0c7eacafd4499a1e55dd; status:draft; compile_only:true
+- idempotency: prompt_hash:987c2a9316935b7ced20eced9aefed1b8245850f71f3072503c9a989de0bc3ef; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

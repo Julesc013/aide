@@ -1,0 +1,121 @@
+AIDE Lite intent validate
+result: PASS
+- PASS Q36 required file exists: .aide/policies/intent.yaml
+- PASS Q36 required file exists: .aide/policies/workunit-sizing.yaml
+- PASS Q36 required file exists: .aide/policies/task-classes.yaml
+- PASS Q36 required file exists: .aide/policies/risk-classes.yaml
+- PASS Q36 required file exists: .aide/policies/prompt-normalization.yaml
+- PASS Q36 required file exists: .aide/intake/intent-packet.schema.json
+- PASS Q36 required file exists: .aide/intake/workunit-draft.schema.json
+- PASS Q36 required file exists: .aide/intake/intent-examples.yaml
+- PASS Q36 required file exists: .aide/intake/README.md
+- PASS Q36 required file exists: .aide/intake/latest-intent-packet.json
+- PASS Q36 required file exists: .aide/intake/latest-intent-packet.md
+- PASS Q36 required file exists: .aide/intake/latest-workunit-draft.json
+- PASS Q36 required file exists: .aide/intake/latest-workunit-draft.md
+- PASS .aide/policies/intent.yaml contains anchor: aide.intent-policy.v0
+- PASS .aide/policies/intent.yaml contains anchor: deterministic_local
+- PASS .aide/policies/intent.yaml contains anchor: compile_only
+- PASS .aide/policies/intent.yaml contains anchor: no_task_execution
+- PASS .aide/policies/workunit-sizing.yaml contains anchor: aide.workunit-sizing-policy.v0
+- PASS .aide/policies/workunit-sizing.yaml contains anchor: split_required
+- PASS .aide/policies/workunit-sizing.yaml contains anchor: behavior_proof_required_when
+- PASS .aide/policies/task-classes.yaml contains anchor: aide.task-classes-policy.v0
+- PASS .aide/policies/task-classes.yaml contains anchor: refactor
+- PASS .aide/policies/task-classes.yaml contains anchor: install
+- PASS .aide/policies/task-classes.yaml contains anchor: git
+- PASS .aide/policies/risk-classes.yaml contains anchor: aide.risk-classes-policy.v0
+- PASS .aide/policies/risk-classes.yaml contains anchor: destructive
+- PASS .aide/policies/risk-classes.yaml contains anchor: external_side_effect
+- PASS .aide/policies/risk-classes.yaml contains anchor: release
+- PASS .aide/policies/prompt-normalization.yaml contains anchor: aide.prompt-normalization-policy.v0
+- PASS .aide/policies/prompt-normalization.yaml contains anchor: vague_prompt
+- PASS .aide/policies/prompt-normalization.yaml contains anchor: overbroad_prompt
+- PASS .aide/policies/prompt-normalization.yaml contains anchor: target_repo_prompt
+- PASS .aide/intake/intent-packet.schema.json defines required fields
+- PASS .aide/intake/intent-packet.schema.json is object schema
+- PASS .aide/intake/workunit-draft.schema.json defines required fields
+- PASS .aide/intake/workunit-draft.schema.json is object schema
+- PASS intent packet contains required field: schema_version
+- PASS intent packet contains required field: generated_by
+- PASS intent packet contains required field: generated_from
+- PASS intent packet contains required field: raw_prompt_hash
+- PASS intent packet contains required field: raw_prompt_excerpt
+- PASS intent packet contains required field: interpreted_goal
+- PASS intent packet contains required field: confidence
+- PASS intent packet contains required field: task_class
+- PASS intent packet contains required field: risk_class
+- PASS intent packet contains required field: sizing_class
+- PASS intent packet contains required field: safe_to_execute
+- PASS intent packet contains required field: requires_split
+- PASS intent packet contains required field: blocked
+- PASS intent packet contains required field: blocker_reason
+- PASS intent packet contains required field: canonical_sources
+- PASS intent packet contains required field: repo_state_refs
+- PASS intent packet contains required field: branch_state_refs
+- PASS intent packet contains required field: rejected_interpretations
+- PASS intent packet contains required field: allowed_path_hints
+- PASS intent packet contains required field: forbidden_path_hints
+- PASS intent packet contains required field: validation_hints
+- PASS intent packet contains required field: evidence_hints
+- PASS intent packet contains required field: suggested_workunit
+- PASS intent packet contains required field: next_action
+- PASS intent packet contains required field: notes
+- PASS intent packet schema version is v0
+- PASS intent packet stores SHA-256 raw prompt hash
+- PASS intent packet stores bounded prompt excerpt
+- PASS intent packet excludes raw_prompt_body
+- PASS intent packet excludes raw_response_body
+- PASS intent packet records no provider/model calls
+- PASS intent packet records no network calls
+- PASS intent packet contains suggested WorkUnit draft object
+- PASS WorkUnit draft contains required field: schema_version
+- PASS WorkUnit draft contains required field: workunit_id
+- PASS WorkUnit draft contains required field: title
+- PASS WorkUnit draft contains required field: objective
+- PASS WorkUnit draft contains required field: why
+- PASS WorkUnit draft contains required field: task_class
+- PASS WorkUnit draft contains required field: risk_class
+- PASS WorkUnit draft contains required field: sizing_class
+- PASS WorkUnit draft contains required field: allowed_paths
+- PASS WorkUnit draft contains required field: forbidden_paths
+- PASS WorkUnit draft contains required field: dependencies
+- PASS WorkUnit draft contains required field: preflight
+- PASS WorkUnit draft contains required field: implementation_outline
+- PASS WorkUnit draft contains required field: validation
+- PASS WorkUnit draft contains required field: evidence
+- PASS WorkUnit draft contains required field: acceptance
+- PASS WorkUnit draft contains required field: non_goals
+- PASS WorkUnit draft contains required field: output_schema
+- PASS WorkUnit draft contains required field: idempotency
+- PASS WorkUnit draft contains required field: recovery
+- PASS WorkUnit draft contains required field: status
+- PASS WorkUnit draft schema version is v0
+- PASS WorkUnit status is draft
+- PASS WorkUnit draft forbids raw prompt execution
+- PASS WorkUnit draft contains required field: schema_version
+- PASS WorkUnit draft contains required field: workunit_id
+- PASS WorkUnit draft contains required field: title
+- PASS WorkUnit draft contains required field: objective
+- PASS WorkUnit draft contains required field: why
+- PASS WorkUnit draft contains required field: task_class
+- PASS WorkUnit draft contains required field: risk_class
+- PASS WorkUnit draft contains required field: sizing_class
+- PASS WorkUnit draft contains required field: allowed_paths
+- PASS WorkUnit draft contains required field: forbidden_paths
+- PASS WorkUnit draft contains required field: dependencies
+- PASS WorkUnit draft contains required field: preflight
+- PASS WorkUnit draft contains required field: implementation_outline
+- PASS WorkUnit draft contains required field: validation
+- PASS WorkUnit draft contains required field: evidence
+- PASS WorkUnit draft contains required field: acceptance
+- PASS WorkUnit draft contains required field: non_goals
+- PASS WorkUnit draft contains required field: output_schema
+- PASS WorkUnit draft contains required field: idempotency
+- PASS WorkUnit draft contains required field: recovery
+- PASS WorkUnit draft contains required field: status
+- PASS WorkUnit draft schema version is v0
+- PASS WorkUnit status is draft
+- PASS WorkUnit draft forbids raw prompt execution
+provider_or_model_calls: none
+network_calls: none
