@@ -1,0 +1,86 @@
+{
+  "schema": "aide.scoped-entry.attempt.v1",
+  "source_commit": "b957f7e56af21247cd9f9a5afb7490b7a768d15e",
+  "job_id": "2150dfcc934f4200a55fd3022012e92c",
+  "phase": "retired",
+  "scratch_absent": true,
+  "reservation_released": true,
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4138794
+    },
+    "memory_bytes": 267436032,
+    "scratch_bytes": 4898851
+  },
+  "qualification": {
+    "model_calls": 0,
+    "outer_session_contained": false,
+    "read_isolation": "unqualified",
+    "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+    "named_job_membership": true,
+    "unapproved_write_denied": true,
+    "child_unapproved_write_denied": true,
+    "child_probe_exit_code": 19,
+    "config_write_denied": true,
+    "trusted_archive_write_denied": true,
+    "control_write_denied": true,
+    "tests": {
+      "run": 11,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    "export_exit_code": 1,
+    "validation_exit_code": 1,
+    "validation_seconds": 13.324,
+    "passed": false
+  },
+  "scope": {
+    "aggregate_admission": {
+      "by_pool": {
+        "canonical:.aide/export/aide-lite-pack-v0": 4138794,
+        "control": 13694135,
+        "retained": 167498381,
+        "scratch": 0
+      },
+      "enforcement": "cooperative_admission_and_monitored_growth",
+      "limit_bytes": 268435456,
+      "logical_bytes": 185331310,
+      "reserved_bytes": 69271552
+    },
+    "filesystem": {
+      ":minimal": "read",
+      ":root": "deny",
+      "C:\\Program Files\\Git": "read",
+      "C:\\Users\\Jules\\.codex\\packages\\standalone\\releases\\0.145.0-x86_64-pc-windows-msvc\\bin": "read",
+      "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64": "read",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\control": "deny",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\control\\active.json": "read",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\2150dfcc934f4200a55fd3022012e92c": "read",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\2150dfcc934f4200a55fd3022012e92c\\cache": "write",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\2150dfcc934f4200a55fd3022012e92c\\output": "write",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\2150dfcc934f4200a55fd3022012e92c\\tmp": "write",
+      "D:\\Projects\\AIDE\\aide": "read",
+      "D:\\Projects\\AIDE\\aide\\.aide.local": "deny",
+      "D:\\Projects\\AIDE\\aide\\.aide.local\\scoped-job-entry-01-execution.json": "deny",
+      "D:\\Projects\\AIDE\\aide\\.aide\\export\\aide-lite-pack-v0": "write"
+    },
+    "host_executable_sha256": "83751f15cb6a0a7b97df67752c001e3fe1c20e18ffbfec3ff63567296205eb6c",
+    "network_enabled": false,
+    "outer_session_contained": false,
+    "read_isolation": "unqualified",
+    "schema": "aide.scoped-host.observation.v1"
+  },
+  "receipt_sha256": "4e0edb3adf3897158692c789199c6abe946308687a74d6c4f58f7674875988f0",
+  "logs": {
+    "stdout": {
+      "bytes": 4894463,
+      "sha256": "83f01fa2ec0d704a9b7274c20486f517c07839c795a63fb15c00cf02ba0640d9"
+    },
+    "stderr": {
+      "bytes": 1917,
+      "sha256": "e9dd2ae24a8b253391c3bb7a127ed17142270360df89a69e0c2a6b4c85fe708d"
+    }
+  },
+  "failure": "Export refused unnecessary release reservation; validation stale export provenance. All 11 tests and precise negative write probes passed."
+}

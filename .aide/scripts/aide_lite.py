@@ -43623,7 +43623,7 @@ def command_repair_owned_file(args: argparse.Namespace) -> int:
 
 
 def command_export_pack(args: argparse.Namespace) -> int:
-    if not source_maintainer_job_guard(args.repo_root, packaging=True):
+    if not source_maintainer_job_guard(args.repo_root, canonical_paths=(EXPORT_PACK_PATH,)):
         return 1
     pack_root, report = build_export_pack(args.repo_root, name=args.name, output=args.output)
     print("AIDE Lite export-pack")
@@ -45168,7 +45168,7 @@ def command_managed_job(args: argparse.Namespace) -> int:
             return 0 if view["status"] == "PASS" else 1
         print(json.dumps(result, sort_keys=True, indent=2))
         return 0
-    except (OSError, ValueError, KeyError, subprocess.SubprocessError) as exc:
+    except (OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError) as exc:
         print(json.dumps({"result": "REFUSED", "reason": str(exc), "writes": args.job_command != "inspect"}))
         return 1
 

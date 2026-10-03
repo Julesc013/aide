@@ -85,6 +85,16 @@ class ScopedHostTests(unittest.TestCase):
         with self.assertRaisesRegex(scope.ScopeRefused, 'aggregate pool budget'):
             scope.aggregate_admission(roots, self.limits, required-1, canonical_reservation=32)
 
+    def test_export_requires_only_its_actual_canonical_destination(self):
+        spec = importlib.util.spec_from_file_location('scoped_fixture_lite', REPO/'.aide/scripts/aide_lite.py')
+        lite = importlib.util.module_from_spec(spec)
+        sys.modules[spec.name] = lite
+        spec.loader.exec_module(lite)
+        args = mock.Mock(repo_root=self.root, name='aide-lite-pack-v0', output=None)
+        with mock.patch.object(lite, 'source_maintainer_job_guard', return_value=False) as guard:
+            self.assertEqual(lite.command_export_pack(args), 1)
+        guard.assert_called_once_with(self.root, canonical_paths=(lite.EXPORT_PACK_PATH,))
+
 
 if __name__ == '__main__':
     unittest.main()

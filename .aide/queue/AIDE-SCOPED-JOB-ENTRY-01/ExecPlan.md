@@ -1,16 +1,18 @@
 # Scoped job entry
 
-Connect the qualified readonly child host to `aide_lite.py job run` rather
+Connect the qualified repository-check host to `aide_lite.py job run` rather
 than retain a task-specific supervisor as the ordinary path. Reuse the accepted
-exported Windows storage/process owner and its shared lock, collection,
+archived Windows storage/process owner and its shared lock, collection,
 retirement and recovery. No new allocator or storage layout.
 
 The adapter verifies a pinned runtime dependency closure before import and a
 pinned Codex executable before launch. Worker permissions allow source and
 required tool reads, the exact active receipt read, and owned tmp/cache/output
-writes. Original config, control writes and trusted runtime writes are excluded.
+writes plus explicitly admitted canonical artifact destinations. Original
+config, control writes and trusted runtime writes are excluded.
 The installed host's read exclusion remains failed; this entry supports only
-readonly Python checks without secrets, model calls or canonical generation.
+Python checks without secrets or model calls; canonical generation requires
+exact finite declarations outside the trusted execution component.
 
 Aggregate admission counts existing scratch/cache, retained output/logs and
 control bytes plus the existing per-attempt reservation. It runs inside the
@@ -53,3 +55,10 @@ only the declared existing export destination; reject overlap with its own
 trusted runtime. Count that artifact's existing bytes and finite reservation
 in aggregate admission. Refresh this affected export before the unchanged
 validation command. The accepted ZIP and original execution config stay intact.
+
+The next real attempt 2150dfcc passed all eleven tests and the corrected child,
+config, archive and control probes. Export correctly refused because its old
+packaging guard unnecessarily required both export and release reservations.
+Use the exact export canonical path for export-pack; do not expand permission
+to the release directory or replace this refusal with Full Access. Preserve
+this failed attempt and add a focused regression for the narrower requirement.
