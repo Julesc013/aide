@@ -1,0 +1,85 @@
+{
+  "schema": "aide.session-containment.attempt.v1",
+  "job_id": "56b929c928d44edcba11757788a23fcd",
+  "result": {
+    "exit_code": 1,
+    "reason": "exited",
+    "quiescent": true,
+    "bytes": 4895702,
+    "io_errors": [],
+    "job_id": "56b929c928d44edcba11757788a23fcd",
+    "pid": 14100,
+    "creation_filetime": 134354985068656094
+  },
+  "phase": "retired",
+  "scratch_absent": true,
+  "reservation_released": true,
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\56b929c928d44edcba11757788a23fcd",
+  "peaks": {
+    "scratch_bytes": 4897879,
+    "memory_bytes": 256446464,
+    "canonical_bytes": {}
+  },
+  "aggregate_before": {
+    "scratch": {
+      "complete": true,
+      "logical_bytes": 0,
+      "entries": 0
+    },
+    "retained": {
+      "complete": true,
+      "logical_bytes": 152787368,
+      "entries": 5695
+    },
+    "control": {
+      "complete": true,
+      "logical_bytes": 13694135,
+      "entries": 153
+    }
+  },
+  "aggregate_after": {
+    "scratch": {
+      "complete": true,
+      "logical_bytes": 0,
+      "entries": 0
+    },
+    "retained": {
+      "complete": true,
+      "logical_bytes": 157689390,
+      "entries": 5705
+    },
+    "control": {
+      "complete": true,
+      "logical_bytes": 13694135,
+      "entries": 153
+    }
+  },
+  "aggregate_retention_admission": {
+    "observed": {
+      "complete": true,
+      "logical_bytes": 152787368,
+      "entries": 5695
+    },
+    "reserved_bytes": 17891328,
+    "pool_limit_bytes": 268435456
+  },
+  "effective_limits": {
+    "canonical_bytes": 536870912,
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 16777216,
+    "max_files": 100000,
+    "memory_bytes": 2147483648,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 32,
+    "retained_bytes": 65536,
+    "runtime_seconds": 900,
+    "scratch_bytes": 33554432
+  },
+  "effective_config_sha256": "ded6c076c082379718de0e046339284778c6848f1fdb0428419f570da2866e63",
+  "aggregate_hard_cap": false,
+  "outer_session_contained": false,
+  "subject_sha256": "484861bf93929abb8b676f0bf4a92f505d128fd558c1b5f7f8984ec49d47b56d",
+  "manifest_sha256": "fc0310b9c608990bfabfc158470f96f499c5fb98b0a2de9c27fac28940108a94",
+  "local_config_unchanged": true
+}

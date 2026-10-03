@@ -559,5 +559,6 @@ this source path.
 
 The bounded AIDE-SESSION-CONTAINMENT-01 queue packet records actual host routes,
 permission qualification, pinned execution, resource observations and retirement.
-Its initial native-host failure is preserved; no whole-session containment or
-hard disk quota is claimed. See that task's ExecPlan and evidence.
+Its real scoped validation passed with bounded logs and verified retirement;
+the requested read exclusion and outer-session routes remain unqualified.
+See that task's ExecPlan and evidence/outcome.md for exact results and limits.

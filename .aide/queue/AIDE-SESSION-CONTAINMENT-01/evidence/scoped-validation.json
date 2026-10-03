@@ -1,0 +1,53 @@
+{
+  "schema": "aide.scoped-validation.evidence.v1",
+  "job_id": "4afa560836114398aeaf2bf6f32ae03a",
+  "observation": {
+    "schema": "aide.session-containment.observation.v1",
+    "job_id": "4afa560836114398aeaf2bf6f32ae03a",
+    "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+    "model_calls": 0,
+    "real_task_requested": true,
+    "named_job_membership": true,
+    "allowed_write": true,
+    "unapproved_write_denied": true,
+    "child_unapproved_write_denied": true,
+    "supervisor_config_read_denied": false,
+    "supervisor_config_write_denied": true,
+    "filesystem_profile_passed": false,
+    "write_boundary_passed": true,
+    "preflight_passed": true,
+    "git_diff_check_exit": 0,
+    "existing_resource_tests": {
+      "run": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": true
+    },
+    "aggregate_budget_boundary_passed": true,
+    "validation_exit": 0,
+    "validation_seconds": 13.837,
+    "workload_passed": true,
+    "result": "PARTIAL"
+  },
+  "log_identity": {
+    "stdout": {
+      "bytes": 4894394,
+      "sha256": "03d820a3a6724e983506434e66f044ca10753125b03b1ecc37a7e9fc28b54988"
+    },
+    "stderr": {
+      "bytes": 107,
+      "sha256": "68ebf6c0a938c9afe0e2efbe69b6e28ec174d1b11d02e9696a0b7b31e58de658"
+    }
+  },
+  "log_lines": 60915,
+  "failure_count": 0,
+  "summaries": [
+    "status: PASS",
+    "Ran 4 tests in 5.943s",
+    "OK"
+  ],
+  "frozen_runtime_bytecode_files": 0,
+  "source_runtime_unchanged": true,
+  "receipt_sha256": "7a5aac44b8980608ea57e37732bcb38fbe6d631b0999ccacb530c4149887283b"
+}

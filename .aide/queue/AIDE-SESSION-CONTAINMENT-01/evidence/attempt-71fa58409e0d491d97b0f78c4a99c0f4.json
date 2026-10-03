@@ -1,0 +1,62 @@
+{
+  "schema": "aide.session-containment.attempt.v1",
+  "job_id": "71fa58409e0d491d97b0f78c4a99c0f4",
+  "result": {
+    "exit_code": 1,
+    "reason": "exited",
+    "quiescent": true,
+    "bytes": 495,
+    "io_errors": [],
+    "job_id": "71fa58409e0d491d97b0f78c4a99c0f4",
+    "pid": 19224,
+    "creation_filetime": 134354981557388828
+  },
+  "phase": "retired",
+  "scratch_absent": true,
+  "reservation_released": true,
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\71fa58409e0d491d97b0f78c4a99c0f4",
+  "peaks": {
+    "scratch_bytes": 2341,
+    "memory_bytes": 48070656,
+    "canonical_bytes": {}
+  },
+  "aggregate_before": {
+    "scratch": {
+      "complete": true,
+      "logical_bytes": 0,
+      "entries": 0
+    },
+    "retained": {
+      "complete": true,
+      "logical_bytes": 152781020,
+      "entries": 5685
+    },
+    "control": {
+      "complete": true,
+      "logical_bytes": 13694135,
+      "entries": 153
+    }
+  },
+  "aggregate_after": {
+    "scratch": {
+      "complete": true,
+      "logical_bytes": 0,
+      "entries": 0
+    },
+    "retained": {
+      "complete": true,
+      "logical_bytes": 152787368,
+      "entries": 5695
+    },
+    "control": {
+      "complete": true,
+      "logical_bytes": 13694135,
+      "entries": 153
+    }
+  },
+  "aggregate_hard_cap": false,
+  "outer_session_contained": false,
+  "subject_sha256": "484861bf93929abb8b676f0bf4a92f505d128fd558c1b5f7f8984ec49d47b56d",
+  "manifest_sha256": "cbd01d94d582efbd2738cd3d5431274e1a7d913e674412b14dd1541d8b4d1827",
+  "local_config_unchanged": true
+}

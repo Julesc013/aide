@@ -1,0 +1,81 @@
+{
+  "schema": "aide.qualification-generated-cache-retirement.v1",
+  "root": ".aide/export/aide-lite-pack-v0/files/core",
+  "basis": "Untracked reproducible CPython caches beside byte-identical accepted archive source; qualification supervisor failed to disable bytecode before imports.",
+  "files": [
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/__pycache__/state.cpython-314.pyc",
+      "sha256": "e018197f6bfe1509f65220d1830e042f2cc4161486d0676b1aeb6a262b1a9c8e",
+      "bytes": 16787,
+      "source": ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/state.py",
+      "source_sha256": "9b65b7953cfea7af9444abe6157b5edfe670a46be90211a8cf8d543855d12105"
+    },
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/__pycache__/windows_job.cpython-314.pyc",
+      "sha256": "7f75b6928e401230a7b398e0dea2cbff88d9f27e5fccc55b59b900fca83c53ff",
+      "bytes": 28265,
+      "source": ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/windows_job.py",
+      "source_sha256": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
+    },
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/__pycache__/__init__.cpython-314.pyc",
+      "sha256": "2f857f24f03a53618c95bd9fc7e13f0ba4a23fad4f2f2e15d257a04b298b8bb1",
+      "bytes": 293,
+      "source": ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/__init__.py",
+      "source_sha256": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c"
+    },
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/core/protocol/__pycache__/execution_receipt.cpython-314.pyc",
+      "sha256": "dbb3d990cffe817646bf1cd8d72b0d8165a0f9448eadbb7793dab3f5eb5adf5c",
+      "bytes": 6568,
+      "source": ".aide/export/aide-lite-pack-v0/files/core/protocol/execution_receipt.py",
+      "source_sha256": "966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc"
+    },
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/core/protocol/__pycache__/process_invocation.cpython-314.pyc",
+      "sha256": "4cb64148c67454c64d092e169d500cc800291d2438daa5619e059917b3aac6e5",
+      "bytes": 4983,
+      "source": ".aide/export/aide-lite-pack-v0/files/core/protocol/process_invocation.py",
+      "source_sha256": "aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
+    },
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/core/protocol/__pycache__/__init__.cpython-314.pyc",
+      "sha256": "33ee0479110e94d55d038e80cf11f4bb591c08f8d7e7e2d7b1b8c0703071493c",
+      "bytes": 558,
+      "source": ".aide/export/aide-lite-pack-v0/files/core/protocol/__init__.py",
+      "source_sha256": "b131e408f459709ebb03c6becc526f09517d2082f536efd643a8b7812ecdd946"
+    },
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/core/execution/__pycache__/managed_workspace.cpython-314.pyc",
+      "sha256": "ef4a84d3e30300e80e1cec0f9b6c8be2a441d0c7584e56e76857988ef1665077",
+      "bytes": 82001,
+      "source": ".aide/export/aide-lite-pack-v0/files/core/execution/managed_workspace.py",
+      "source_sha256": "d9338d9d25470b1a39f8c74566f7c108249a98dc564ac395f21b66ebc4eccfe3"
+    },
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/core/execution/__pycache__/provider.cpython-314.pyc",
+      "sha256": "d4276f152ded929aceb7b3f70024d18cee996a3e71f038e6ebdb77681315a12d",
+      "bytes": 1289,
+      "source": ".aide/export/aide-lite-pack-v0/files/core/execution/provider.py",
+      "source_sha256": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e"
+    },
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/core/execution/__pycache__/registered_process.cpython-314.pyc",
+      "sha256": "1f0b5f25c757d2c054bce298728dea9fb927480ff548ee9e60f545bd46c3e10b",
+      "bytes": 33722,
+      "source": ".aide/export/aide-lite-pack-v0/files/core/execution/registered_process.py",
+      "source_sha256": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a"
+    },
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/core/execution/__pycache__/__init__.cpython-314.pyc",
+      "sha256": "05c715f96b2251aa7e795c87cb1c28406342b57d39929e44a2c3c54027f141e8",
+      "bytes": 514,
+      "source": ".aide/export/aide-lite-pack-v0/files/core/execution/__init__.py",
+      "source_sha256": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5"
+    }
+  ],
+  "total_bytes": 174980,
+  "retired_files": 10,
+  "empty_cache_directories_retired": 3,
+  "source_files_preserved": true
+}

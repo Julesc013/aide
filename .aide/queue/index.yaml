@@ -3804,9 +3804,9 @@ items:
     prompt: .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/prompt.md
     evidence: .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/evidence
   - id: AIDE-SESSION-CONTAINMENT-01
-    status: running
-    planning_state: bounded_host_qualification
-    result: PENDING
+    status: needs_review
+    planning_state: real_scoped_validation_passed_whole_session_unqualified
+    result: PARTIAL
     title: Qualify scoped host execution through the existing managed owner
     task: .aide/queue/AIDE-SESSION-CONTAINMENT-01/task.yaml
     exec_plan: .aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md

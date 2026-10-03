@@ -5,8 +5,13 @@
 `AIDE-SESSION-CONTAINMENT-01` records the owner's immediate containment priority
 and a task-local adapter to the existing frozen exported job owner. Initial
 native-sandbox qualification passed process membership and write boundaries,
-but failed the requested supervisor-config read exclusion; the real workload
-was not admitted. Scratch retirement passed. The failed receipt is retained.
+but failed the requested supervisor-config read exclusion; both failures remain
+recorded. A repository-only validation then passed under the observed write and
+process boundaries, with 4/4 resource regressions and complete bounded logs.
+The supervisor now suppresses bytecode before frozen imports; its exactly
+identified caches were retired. All four attempts retired scratch and released
+reservations. Read isolation and the outer session remain unqualified; see
+the task's evidence/outcome.md.
 No production runner or release bytes changed. The refreshed compact task
 packet is the minimal cross-cutting generated context change for this child.
 

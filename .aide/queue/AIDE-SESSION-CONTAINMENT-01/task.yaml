@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-SESSION-CONTAINMENT-01
 title: Qualify scoped host execution through the existing managed owner
 type: implementation
-status: running
-planning_state: bounded_host_qualification
-result: PENDING
+status: needs_review
+planning_state: real_scoped_validation_passed_whole_session_unqualified
+result: PARTIAL
 created_at: 2026-10-03
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 authority_basis: Owner's 2026-10-03 session-containment instruction and existing campaign delegation.
@@ -29,8 +29,13 @@ scope:
     - DOCUMENTATION.md
   approved_existing_execution_config: .aide.local/execution.json
   read_only_runtime: .aide/export/aide-lite-pack-v0/files
+  corrective_generated_cleanup:
+    exact_manifest: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/generated-cache-retirement.json
+    scope: ten reproduced untracked bytecode files and three empty cache directories only; canonical sources preserved
   external_resource_root: D:/Projects/AIDE/.aide.local/execution
-  permitted_local_state: .aide.local/session-containment-01-job.json
+  permitted_local_state:
+    - .aide.local/session-containment-01-job.json
+    - .aide.local/session-containment-01-execution.json
   forbidden_operations:
     - new worktrees, clones, storage roots or recovery archives
     - machine-wide ACL, account, quota or Codex-default changes

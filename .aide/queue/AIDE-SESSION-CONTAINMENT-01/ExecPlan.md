@@ -51,9 +51,14 @@ No automatic replay of an uncertain effect. No new cleanup implementation.
 - [x] Initial state and existing configured storage observed without mutation.
 - [x] Installed permission-profile syntax confirmed and Python read probe passed.
 - [x] Broad intent compiled; bounded child scope and branch plan recorded.
-- [ ] Frozen supervisor and actual scoped-child qualification.
-- [ ] Necessary real validation and resource-retirement evidence.
-- [ ] Exact review, structured commit and remaining-route checkpoint.
+- [x] Frozen supervisor pinned to all 23 accepted exported Python sources;
+  worker identity, membership and write boundaries observed. Requested read
+  exclusion failed and remains recorded.
+- [x] Real validation exited 0 with 4/4 unchanged resource regressions, aggregate
+  boundary check, local Git check and verified retirement. See evidence/outcome.md.
+- [x] Initial failed candidate committed as f286d266; correction and exact
+  outcome prepared for a second structured commit.
+- [ ] Independent review and remaining normal-entry/read-isolation closure.
 
 ## Validation record
 
@@ -62,3 +67,13 @@ with extensive PASS output. Their megabyte-scale response was truncated by the
 tool, and separate command exit codes/full retained evidence were not captured.
 This is insufficient containment evidence. The scoped run must retain its own
 complete bounded result and individual exit codes.
+
+Final scoped job 4afa5608 retained complete logs (4,894,501 bytes), validation
+exit 0, four unchanged regressions without skips and an explicit PARTIAL scope
+observation. The entry narrows the finite envelope and checks aggregate retained
+capacity under the existing shared lock. The original configuration and ZIP
+stayed unchanged. Production runner source and outer editor/plugin routes were
+not changed. The repository-only validation was admitted independently under
+the observed write/process boundary, without private inputs or a model/network
+operation; it does not accept the failed read-isolation profile. Supervisor
+bytecode pollution was demonstrated, corrected and exactly retired before PASS.
