@@ -12904,3 +12904,5 @@ Final independent terminal review accepted packet 8bdf3978 for the scoped worker
 ## 2026-10-03 scoped worker integration preparation
 
 AIDE-SCOPED-JOB-DEV-INTEGRATION-01 records the bounded dev-only helper plan, delegation, real-user auth observation and exact unchanged qualification inputs. No branch or remote effect is inferred from preparation; exact independent integration acceptance is required. Product/export bytes and the accepted ZIP/config remain fixed.
+
+Independent afba7773 dev-effect acceptance preceded ordinary fast-forward and non-force push; current local/remote dev matched the candidate and main stayed aec53b1d. The single checkout, empty scratch, absent active receipt and unchanged accepted ZIP/config passed fresh invariants. Full command exits are retained in the child; protected Git and whole-session containment are not qualified.

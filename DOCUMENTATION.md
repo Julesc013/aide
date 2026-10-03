@@ -570,3 +570,5 @@ The runner reference now describes explicit local execution_host selection, pinn
 The scoped-entry outcome records normal CLI qualification, finite pool accounting, exact outputs, retirement and surviving outer/read boundaries. Failed attempts and independent source verdicts remain with the task.
 
 The dev-only integration packet is `.aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/`; its effect plan and observations distinguish shared source integration from unchanged whole-session and release gates.
+
+That packet now retains exact independent afba7773 acceptance and observed local/remote dev integration; outcome.md and integration-effect.json carry identity, command, retirement and preserved-gate evidence.

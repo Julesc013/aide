@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-SCOPED-JOB-DEV-INTEGRATION-01
 title: Integrate independently qualified scoped worker source into dev
 type: integration
-status: needs_review
-planning_state: exact_dev_effect_preparation
-result: PENDING
+status: passed_with_notes
+planning_state: exact_dev_effect_verified_evidence_closeout
+result: DEV_INTEGRATED_WITH_RETAINED_GATES
 created_at: 2026-10-03
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 authority_basis: Recorded 2026-09-25 campaign delegation, continued Goal, and qualified independent worker review.
@@ -41,7 +41,7 @@ branch_plan:
   observed_source: 9e0daa12a09cc356156e5785b73c1e566a8d0dbc
   expected_dev: 1431d39452fa844c35496a75b5eac47922fbb7c3
   expected_main: aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3
-  actions: checkout existing dev, merge --ff-only exact accepted candidate, push exact dev normally
+  actions: checkout existing dev, merge --ff-only exact accepted candidate, push exact dev normally; record verified effect on the same existing task branch and sync only exact reviewed metadata closeout
 review_gate: exact independent source-and-dev-effect ACCEPT before integration and push
 verification:
   - accepted source and generated pack identities

@@ -3822,9 +3822,9 @@ items:
     prompt: .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/prompt.md
     evidence: .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/evidence
   - id: AIDE-SCOPED-JOB-DEV-INTEGRATION-01
-    status: needs_review
-    planning_state: exact_dev_effect_preparation
-    result: PENDING
+    status: passed_with_notes
+    planning_state: exact_dev_effect_verified_evidence_closeout
+    result: DEV_INTEGRATED_WITH_RETAINED_GATES
     title: Integrate independently qualified scoped worker source into dev
     task: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/ExecPlan.md

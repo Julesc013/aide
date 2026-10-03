@@ -1,0 +1,45 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-SCOPED-JOB-DEV-INTEGRATION-01"
+      ],
+      "exit_code": 0,
+      "stdout": "AIDE Lite task inspect\ntask_id: AIDE-SCOPED-JOB-DEV-INTEGRATION-01\nstatus: passed_with_notes\nclassification: complete\ntask_yaml: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/task.yaml\nstatus_yaml: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/status.yaml\nevidence_dir: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence\nevidence_files: 13\nmissing_evidence: 0\nrecovery_suggestion: noop_already_complete\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "1431d394..HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "AIDE Lite commit range check\nresult: PASS\nrange: 1431d394..HEAD\ncommit_count: 14\npolicy: .aide/policies/commit-messages.yaml\ndisposition_policy: .aide/policies/commit-message-dispositions.yaml\ndispositions: loaded\n- f286d26 PASS test(harness): record scoped host qualification boundary\n- 0318161 PASS test(harness): qualify validation under a scoped Windows host\n- 97100ad PASS feat(harness): connect pinned scoped workers to managed job entry\n- b957f7e PASS fix(harness): bind scoped admission and protect export supervision\n- 343fed8 PASS fix(harness): request only the export destination for pack generation\n- 7eb5598 PASS fix(harness): preserve scoped export directory during regeneration\n- 27bb22f PASS fix(harness): preserve scoped export directory during regeneration\n- 6428c0f PASS fix(harness): keep scoped test fixtures visible to their owner\n- 99a5b45 PASS fix(harness): retire readonly Git fixture objects under scoped tests\n- 886290b PASS test(harness): qualify all managed regressions through scoped entry\n- 8bdf397 PASS test(harness): record qualified public scoped execution and retirement\n- 9e0daa1 PASS docs(harness): close independent scoped worker qualification gate\n- 1f424f1 PASS docs(git): prepare exact scoped worker dev integration effect\n- afba777 PASS docs(git): complete the bounded integration evidence contract\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,520 @@
+{
+  "subject": "afba7773054763c81ad940f44caaf20c048e9760",
+  "started_utc": "2026-10-03T13:51:48.260571+00:00",
+  "planned_before_dev": "1431d39452fa844c35496a75b5eac47922fbb7c3",
+  "main": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3",
+  "whole_session_contained": false,
+  "protected_git_qualified": false,
+  "result": "PASS",
+  "local_dev": "afba7773054763c81ad940f44caaf20c048e9760",
+  "remote_dev": "afba7773054763c81ad940f44caaf20c048e9760",
+  "local_and_remote_main": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3",
+  "archive_and_config_unchanged": true,
+  "scratch_empty": true,
+  "active_absent": true,
+  "single_checkout": true,
+  "task_branch_preserved": true,
+  "finished_utc": "2026-10-03T13:51:56.123656+00:00",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "dev"
+      ],
+      "exit_code": 0,
+      "stdout": "1431d39452fa844c35496a75b5eac47922fbb7c3\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "exit_code": 0,
+      "stdout": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "task/aide-session-containment-01"
+      ],
+      "exit_code": 0,
+      "stdout": "afba7773054763c81ad940f44caaf20c048e9760\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "origin",
+        "refs/heads/dev",
+        "refs/heads/main"
+      ],
+      "exit_code": 0,
+      "stdout": "1431d39452fa844c35496a75b5eac47922fbb7c3\trefs/heads/dev\naec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3\trefs/heads/main\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "worktree",
+        "list",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "worktree D:/Projects/AIDE/aide\nHEAD afba7773054763c81ad940f44caaf20c048e9760\nbranch refs/heads/task/aide-session-containment-01\n\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:core/execution/scoped_host.py"
+      ],
+      "exit_code": 0,
+      "stdout": "d815a4b417707d96ee70ca47a563ad4f8eb91101\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/scripts/aide_lite.py"
+      ],
+      "exit_code": 0,
+      "stdout": "9b0aaeefefaba097a35f1ea0d3dba795207f19b0\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/scripts/tests/test_scoped_host.py"
+      ],
+      "exit_code": 0,
+      "stdout": "e3ad32112cf12e0af8223632d9b5a0a9a1db4106\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/scripts/tests/test_managed_workspace.py"
+      ],
+      "exit_code": 0,
+      "stdout": "606c20cbdb8e9af35c122c71223dece6a6a8a62b\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:docs/reference/aide-lite-test-runner.md"
+      ],
+      "exit_code": 0,
+      "stdout": "39b0f27bb1b736823eb0620c6a012127404cb6dc\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/export/aide-lite-pack-v0/manifest.yaml"
+      ],
+      "exit_code": 0,
+      "stdout": "a2f785ade7d1507c5dcc3d6d11de9aabe25a2acd\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/export/aide-lite-pack-v0/checksums.json"
+      ],
+      "exit_code": 0,
+      "stdout": "d0b570aa8dda601d9b7d1ea451020b69a34c90d2\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "afba7773054763c81ad940f44caaf20c048e9760\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "gh",
+        "api",
+        "user",
+        "--jq",
+        ".login"
+      ],
+      "exit_code": 0,
+      "stdout": "Julesc013\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "1431d39452fa844c35496a75b5eac47922fbb7c3..afba7773054763c81ad940f44caaf20c048e9760"
+      ],
+      "exit_code": 0,
+      "stdout": "AIDE Lite commit range check\nresult: PASS\nrange: 1431d39452fa844c35496a75b5eac47922fbb7c3..afba7773054763c81ad940f44caaf20c048e9760\ncommit_count: 14\npolicy: .aide/policies/commit-messages.yaml\ndisposition_policy: .aide/policies/commit-message-dispositions.yaml\ndispositions: loaded\n- f286d26 PASS test(harness): record scoped host qualification boundary\n- 0318161 PASS test(harness): qualify validation under a scoped Windows host\n- 97100ad PASS feat(harness): connect pinned scoped workers to managed job entry\n- b957f7e PASS fix(harness): bind scoped admission and protect export supervision\n- 343fed8 PASS fix(harness): request only the export destination for pack generation\n- 7eb5598 PASS fix(harness): preserve scoped export directory during regeneration\n- 27bb22f PASS fix(harness): preserve scoped export directory during regeneration\n- 6428c0f PASS fix(harness): keep scoped test fixtures visible to their owner\n- 99a5b45 PASS fix(harness): retire readonly Git fixture objects under scoped tests\n- 886290b PASS test(harness): qualify all managed regressions through scoped entry\n- 8bdf397 PASS test(harness): record qualified public scoped execution and retirement\n- 9e0daa1 PASS docs(harness): close independent scoped worker qualification gate\n- 1f424f1 PASS docs(git): prepare exact scoped worker dev integration effect\n- afba777 PASS docs(git): complete the bounded integration evidence contract\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "1431d39452fa844c35496a75b5eac47922fbb7c3",
+        "afba7773054763c81ad940f44caaf20c048e9760"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "checkout",
+        "dev"
+      ],
+      "exit_code": 0,
+      "stdout": "Your branch is up to date with 'origin/dev'.\n",
+      "stderr": "Switched to branch 'dev'\n"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "1431d39452fa844c35496a75b5eac47922fbb7c3\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "merge",
+        "--ff-only",
+        "afba7773054763c81ad940f44caaf20c048e9760"
+      ],
+      "exit_code": 0,
+      "stdout": "Updating 1431d394..afba7773\nFast-forward\n .aide/context/latest-task-packet.md                |   8 +-\n .aide/export/aide-lite-pack-v0/checksums.json      |   5 +-\n .aide/export/aide-lite-pack-v0/export-report.md    |   4 +-\n .../files/.aide/scripts/aide_lite.py               |  55 +++-\n .../files/core/execution/scoped_host.py            | 319 +++++++++++++++++++++\n .../files/docs/reference/aide-lite-test-runner.md  |  44 +++\n .aide/export/aide-lite-pack-v0/manifest.yaml       |   3 +-\n .aide/intake/latest-intent-packet.json             |  44 +--\n .aide/intake/latest-intent-packet.md               |  21 +-\n .aide/intake/latest-workunit-draft.json            |  21 +-\n .aide/intake/latest-workunit-draft.md              |  19 +-\n .../AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md   |  17 ++\n .../AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml   |   5 +-\n .../AIDE-SCOPED-JOB-DEV-INTEGRATION-01/ExecPlan.md |  47 +++\n .../evidence/changed-files.md                      |   8 +\n .../evidence/commit-range.txt                      |  19 ++\n .../evidence/diff-check.txt                        |   1 +\n .../evidence/effect-plan.json                      |  23 ++\n .../evidence/intent-validate.txt                   | 121 ++++++++\n .../evidence/preflight.json                        | 109 +++++++\n .../evidence/remaining-risks.md                    |  12 +\n .../evidence/task-inspect-complete.txt             |  10 +\n .../evidence/task-inspect.txt                      |  10 +\n .../evidence/validation.md                         |  17 ++\n .../AIDE-SCOPED-JOB-DEV-INTEGRATION-01/prompt.md   |   8 +\n .../AIDE-SCOPED-JOB-DEV-INTEGRATION-01/status.yaml |  10 +\n .../AIDE-SCOPED-JOB-DEV-INTEGRATION-01/task.yaml   |  51 ++++\n .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/ExecPlan.md   | 107 +++++++\n .../attempt-0898722fd36f4b6c8d59c79554006dbe.json  |  50 ++++\n .../attempt-2150dfcc934f4200a55fd3022012e92c.json  |  86 ++++++\n .../attempt-798432752ba546e5b1fb5ca93308f9bc.json  |  78 +++++\n .../attempt-7df41d4da3d8438499fbfa827ad0278e.json  |  91 ++++++\n .../attempt-9429b6d97e24490083b91d9949869cac.json  |  38 +++\n .../attempt-9c17da045e914be095088da30287d4f9.json  |  37 +++\n .../attempt-ce62387adceb40ab8bf31268a7964abd.json  | 131 +++++++++\n .../evidence/commit-range-check.txt                |  18 ++\n .../AIDE-SCOPED-JOB-ENTRY-01/evidence/outcome.md   |  73 +++++\n .../evidence/review-8bdf3978.md                    |  24 ++\n .../evidence/review-97100adc.md                    |  11 +\n .../evidence/review-b957f7e5.md                    |  10 +\n .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/prompt.md     |   4 +\n .../retire_empty_fixture.py                        |  35 +++\n .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/status.yaml   |  16 ++\n .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/task.yaml     |  52 ++++\n .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/worker.py     |  87 ++++++\n .../queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md  |  79 +++++\n .../attempt-4afa560836114398aeaf2bf6f32ae03a.json  |  85 ++++++\n .../attempt-56b929c928d44edcba11757788a23fcd.json  |  85 ++++++\n .../attempt-71fa58409e0d491d97b0f78c4a99c0f4.json  |  62 ++++\n .../evidence/controller-check.json                 |  41 +++\n .../evidence/generated-cache-retirement.json       |  81 ++++++\n .../evidence/host-probe-result.json                |  61 ++++\n .../evidence/independent-review-03181610.md        |  15 +\n .../evidence/initial-observations.md               |  43 +++\n .../evidence/outcome.md                            |  73 +++++\n .../evidence/read-boundary-gap.md                  |  33 +++\n .../evidence/scoped-validation.json                |  53 ++++\n .aide/queue/AIDE-SESSION-CONTAINMENT-01/prompt.md  |  14 +\n .aide/queue/AIDE-SESSION-CONTAINMENT-01/qualify.py | 285 ++++++++++++++++++\n .../queue/AIDE-SESSION-CONTAINMENT-01/status.yaml  |  15 +\n .../queue/AIDE-SESSION-CONTAINMENT-01/subject.json |  37 +++\n .aide/queue/AIDE-SESSION-CONTAINMENT-01/task.yaml  |  56 ++++\n .aide/queue/index.yaml                             |  27 ++\n .aide/scripts/aide_lite.py                         |  55 +++-\n .aide/scripts/tests/test_managed_workspace.py      |  26 +-\n .aide/scripts/tests/test_scoped_host.py            | 144 ++++++++++\n DOCUMENTATION.md                                   |  16 ++\n IMPLEMENT.md                                       |  27 ++\n PLANS.md                                           |  18 ++\n core/execution/scoped_host.py                      | 319 +++++++++++++++++++++\n docs/reference/aide-lite-test-runner.md            |  44 +++\n 71 files changed, 3676 insertions(+), 77 deletions(-)\n create mode 100644 .aide/export/aide-lite-pack-v0/files/core/execution/scoped_host.py\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/ExecPlan.md\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence/changed-files.md\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence/commit-range.txt\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence/diff-check.txt\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence/effect-plan.json\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence/intent-validate.txt\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence/preflight.json\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence/remaining-risks.md\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence/task-inspect-complete.txt\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence/task-inspect.txt\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence/validation.md\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/prompt.md\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/status.yaml\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/task.yaml\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/ExecPlan.md\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/evidence/attempt-0898722fd36f4b6c8d59c79554006dbe.json\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/evidence/attempt-2150dfcc934f4200a55fd3022012e92c.json\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/evidence/attempt-798432752ba546e5b1fb5ca93308f9bc.json\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/evidence/attempt-7df41d4da3d8438499fbfa827ad0278e.json\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/evidence/attempt-9429b6d97e24490083b91d9949869cac.json\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/evidence/attempt-9c17da045e914be095088da30287d4f9.json\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/evidence/attempt-ce62387adceb40ab8bf31268a7964abd.json\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/evidence/commit-range-check.txt\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/evidence/outcome.md\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/evidence/review-8bdf3978.md\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/evidence/review-97100adc.md\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/evidence/review-b957f7e5.md\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/prompt.md\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/retire_empty_fixture.py\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/status.yaml\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/task.yaml\n create mode 100644 .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/worker.py\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/attempt-4afa560836114398aeaf2bf6f32ae03a.json\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/attempt-56b929c928d44edcba11757788a23fcd.json\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/attempt-71fa58409e0d491d97b0f78c4a99c0f4.json\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/controller-check.json\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/generated-cache-retirement.json\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/host-probe-result.json\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/independent-review-03181610.md\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/initial-observations.md\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/outcome.md\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/read-boundary-gap.md\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/scoped-validation.json\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/prompt.md\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/qualify.py\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/status.yaml\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/subject.json\n create mode 100644 .aide/queue/AIDE-SESSION-CONTAINMENT-01/task.yaml\n create mode 100644 .aide/scripts/tests/test_scoped_host.py\n create mode 100644 core/execution/scoped_host.py\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "dev"
+      ],
+      "exit_code": 0,
+      "stdout": "afba7773054763c81ad940f44caaf20c048e9760\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "exit_code": 0,
+      "stdout": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "task/aide-session-containment-01"
+      ],
+      "exit_code": 0,
+      "stdout": "afba7773054763c81ad940f44caaf20c048e9760\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "origin",
+        "refs/heads/dev",
+        "refs/heads/main"
+      ],
+      "exit_code": 0,
+      "stdout": "1431d39452fa844c35496a75b5eac47922fbb7c3\trefs/heads/dev\naec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3\trefs/heads/main\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "worktree",
+        "list",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "worktree D:/Projects/AIDE/aide\nHEAD afba7773054763c81ad940f44caaf20c048e9760\nbranch refs/heads/dev\n\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:core/execution/scoped_host.py"
+      ],
+      "exit_code": 0,
+      "stdout": "d815a4b417707d96ee70ca47a563ad4f8eb91101\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/scripts/aide_lite.py"
+      ],
+      "exit_code": 0,
+      "stdout": "9b0aaeefefaba097a35f1ea0d3dba795207f19b0\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/scripts/tests/test_scoped_host.py"
+      ],
+      "exit_code": 0,
+      "stdout": "e3ad32112cf12e0af8223632d9b5a0a9a1db4106\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/scripts/tests/test_managed_workspace.py"
+      ],
+      "exit_code": 0,
+      "stdout": "606c20cbdb8e9af35c122c71223dece6a6a8a62b\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:docs/reference/aide-lite-test-runner.md"
+      ],
+      "exit_code": 0,
+      "stdout": "39b0f27bb1b736823eb0620c6a012127404cb6dc\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/export/aide-lite-pack-v0/manifest.yaml"
+      ],
+      "exit_code": 0,
+      "stdout": "a2f785ade7d1507c5dcc3d6d11de9aabe25a2acd\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/export/aide-lite-pack-v0/checksums.json"
+      ],
+      "exit_code": 0,
+      "stdout": "d0b570aa8dda601d9b7d1ea451020b69a34c90d2\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "afba7773054763c81ad940f44caaf20c048e9760\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "push",
+        "origin",
+        "refs/heads/dev:refs/heads/dev"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "To https://github.com/Julesc013/aide.git\n   1431d394..afba7773  dev -> dev\n"
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "dev"
+      ],
+      "exit_code": 0,
+      "stdout": "afba7773054763c81ad940f44caaf20c048e9760\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "exit_code": 0,
+      "stdout": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "task/aide-session-containment-01"
+      ],
+      "exit_code": 0,
+      "stdout": "afba7773054763c81ad940f44caaf20c048e9760\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "origin",
+        "refs/heads/dev",
+        "refs/heads/main"
+      ],
+      "exit_code": 0,
+      "stdout": "afba7773054763c81ad940f44caaf20c048e9760\trefs/heads/dev\naec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3\trefs/heads/main\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "worktree",
+        "list",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "worktree D:/Projects/AIDE/aide\nHEAD afba7773054763c81ad940f44caaf20c048e9760\nbranch refs/heads/dev\n\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:core/execution/scoped_host.py"
+      ],
+      "exit_code": 0,
+      "stdout": "d815a4b417707d96ee70ca47a563ad4f8eb91101\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/scripts/aide_lite.py"
+      ],
+      "exit_code": 0,
+      "stdout": "9b0aaeefefaba097a35f1ea0d3dba795207f19b0\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/scripts/tests/test_scoped_host.py"
+      ],
+      "exit_code": 0,
+      "stdout": "e3ad32112cf12e0af8223632d9b5a0a9a1db4106\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/scripts/tests/test_managed_workspace.py"
+      ],
+      "exit_code": 0,
+      "stdout": "606c20cbdb8e9af35c122c71223dece6a6a8a62b\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:docs/reference/aide-lite-test-runner.md"
+      ],
+      "exit_code": 0,
+      "stdout": "39b0f27bb1b736823eb0620c6a012127404cb6dc\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/export/aide-lite-pack-v0/manifest.yaml"
+      ],
+      "exit_code": 0,
+      "stdout": "a2f785ade7d1507c5dcc3d6d11de9aabe25a2acd\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "afba7773054763c81ad940f44caaf20c048e9760:.aide/export/aide-lite-pack-v0/checksums.json"
+      ],
+      "exit_code": 0,
+      "stdout": "d0b570aa8dda601d9b7d1ea451020b69a34c90d2\n",
+      "stderr": ""
+    }
+  ]
+}

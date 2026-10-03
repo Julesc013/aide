@@ -42,6 +42,23 @@ outside the worker OS boundary; protected Git remains unqualified.
 
 - [x] Worker accepted; clean branch at 9e0daa12.
 - [x] Helper plan ready_dry_run; real Jules/Julesc013 and current refs match.
-- [ ] Exact candidate/effect independently accepted.
-- [ ] Local fast-forward and remote effect verified.
-- [ ] Evidence closeout accepted and retained.
+- [x] Exact afba7773 candidate/effect independently accepted with nonblocking notes.
+- [x] Local fast-forward and remote effect verified; main/archive/config unchanged.
+- [ ] Exact metadata closeout reviewed before follow-up dev sync.
+
+## Verified effect
+
+Independent reviewer accepted afba7773054763c81ad940f44caaf20c048e9760 and
+the exact dev-only effect. On 2026-10-03, native Jules Git performed normal
+checkout, --ff-only integration and non-force push after each fresh invariant
+check. Local and remote dev match afba7773; main remains aec53b1d. Single
+checkout, absent active receipt, empty scratch and original archive/config
+digests were verified after the effect. See integration-effect.json.
+
+Use the same existing task branch for evidence closeout. Git plan initially
+reported dirty_tree_requires_classification for the exact newly retained owned
+integration-effect.json; it is within this child's evidence allowlist. Commit
+that evidence and require ready_dry_run before any follow-up dev effect.
+A separately exact-reviewed metadata candidate may fast-forward
+dev from afba7773 and push normally; source/export/archive/config must stay
+unchanged and the original containment and release gates remain binding.
