@@ -1,0 +1,49 @@
+schema_version: aide.queue-task.v0
+id: AIDE-SCOPED-JOB-ENTRY-01
+title: Connect readonly scoped execution to the public managed job entry
+type: implementation
+status: running
+planning_state: admitted_bounded_source
+result: PENDING
+created_at: 2026-10-03
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+authority_basis: Owner's 2026-10-03 containment priority and recorded 2026-09-25 bounded-child delegation.
+objective: >
+  Connect the existing Windows scoped command host to job run using a pinned
+  accepted storage/process owner. Admit aggregate growth in the same shared
+  lock. Qualify one necessary readonly repository validation; preserve failed
+  read isolation and uncovered outer tools without a whole-session claim.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/**
+    - core/execution/scoped_host.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_scoped_host.py
+    - docs/reference/aide-lite-test-runner.md
+    - .aide/queue/AIDE-SESSION-CONTAINMENT-01/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/index.yaml
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/context/latest-task-packet.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  read_only_runtime: .aide/export/aide-lite-pack-v0/files
+  read_only_config: .aide.local/execution.json
+  permitted_local_state:
+    - .aide.local/scoped-job-entry-01-execution.json
+    - .aide.local/scoped-job-entry-01-job.json
+  external_resource_root: D:/Projects/AIDE/.aide.local/execution
+  forbidden_operations:
+    - new worktrees, clones, storage roots or archives
+    - machine-wide ACL, account, quota or host-default changes
+    - model, provider, billing or credential changes
+    - unrelated deletion, target mutation, release publication or whole-session containment claims
+branch_plan:
+  helper: git plan ready_dry_run on task/aide-session-containment-01; no remote mutation
+  action: continue the same bounded containment branch and checkout
+review_gate: exact independent technical review before integration

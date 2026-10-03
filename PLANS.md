@@ -4399,3 +4399,7 @@ retired scratch. Focused independent delta review accepted that exact source
 for dev integration; actual model use and matched outcome proof remain open.
 Remote `dev@3cd57cb4` now contains that limited no-model result with the
 current stable ZIP bytes unchanged.
+
+## 2026-10-03 scoped public job entry
+
+AIDE-SCOPED-JOB-ENTRY-01 admits a thin readonly host adapter using the existing accepted owner, configured storage and aggregate admission under its shared lock. Plan and scope are in the queue item; no new checkout or global configuration. One necessary real validation through the public CLI is required. Whole-session and read-isolation gaps remain open.

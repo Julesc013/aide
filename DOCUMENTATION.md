@@ -562,3 +562,7 @@ permission qualification, pinned execution, resource observations and retirement
 Its real scoped validation passed with bounded logs and verified retirement;
 the requested read exclusion and outer-session routes remain unqualified.
 See that task's ExecPlan and evidence/outcome.md for exact results and limits.
+
+## Scoped readonly worker qualification
+
+The runner reference now describes explicit local execution_host selection, pinned owner identities, aggregate admission and its limitations. AIDE-SCOPED-JOB-ENTRY-01 owns current production-entry qualification; AIDE-SESSION-CONTAINMENT-01 retains independently checked partial evidence. Neither record accepts whole-session containment.

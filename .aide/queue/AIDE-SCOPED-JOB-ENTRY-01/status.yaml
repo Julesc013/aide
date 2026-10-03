@@ -1,0 +1,8 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-SCOPED-JOB-ENTRY-01
+status: running
+planning_state: admitted_bounded_source
+result: PENDING
+updated_at: 2026-10-03
+whole_session_contained: false
+read_isolation: failed_installed_host_preserved

@@ -190,6 +190,39 @@ unknown aliases, changed configuration or a partial conflicting collection
 remain preserved and reported for reconciliation. Neither process IDs nor
 directory age authorize deletion.
 
+## Readonly scoped worker entry
+
+`job run --config <local-config> --manifest <job>` can explicitly select an
+`execution_host` with schema `aide.scoped-host.local.v1`, kind
+`codex_sandbox_readonly`, exact `codex_executable`/`codex_sha256`, approved
+toolchain `read_roots`, finite `aggregate_bytes`, and a `runtime` object with
+repository-relative `root` and exact dependency `files` SHA-256 map. The pinned
+owner must be an already accepted export; a changed source checkout does not
+become its own supervisor. Keep this selection in ignored operator-local state.
+No host or machine defaults are changed. Setup does not infer this selection.
+
+The public entry refuses unpinned runtime source/bytecode, changed executables,
+already imported execution code and unsupported workloads. It currently
+supports readonly Python checks, without canonical generation or model calls.
+The worker can write only its owned tmp/cache/output directories. The exact
+active receipt is readable for the existing job guard; control/config and
+trusted runtime writes are excluded. Full logs and effective scope are retained
+by the same owner, followed by normal scratch retirement and recovery.
+
+Aggregate admission inventories scratch (including cache), retained logs/results
+and control bytes and reserves the next attempt inside the existing estate lock
+before allocation. Incomplete observations or insufficient budget refuse launch
+without a fallback root. Existing disk checks monitor growth; this is not a hard
+filesystem quota. Source artifacts are readonly for this entry; external caches,
+other pools and unmanaged tools are outside its budget.
+
+Installed Codex 0.145.0 qualified worker write/process boundaries but failed
+read exclusion in AIDE's local qualification. Read isolation remains unqualified.
+This option does not constrain an unrestricted outer shell/editor, plugins,
+other sessions or GitHub integration and must not be called whole-session
+containment. Qualification evidence is in the session-containment and
+scoped-job-entry queue items.
+
 ## Raw unittest discovery
 
 The supported raw unittest discovery command is:

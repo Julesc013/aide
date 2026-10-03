@@ -12,4 +12,4 @@ resource_regressions: PASS_4_of_4_no_skips
 read_exclusion: FAIL_preserved
 scratch_retirement: PASS_empty_scratch_reservation_released
 production_entry_integration: not_implemented
-independent_review: pending
+independent_review: PASS_WITH_NOTES_partial_record_03181610

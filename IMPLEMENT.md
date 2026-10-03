@@ -12892,3 +12892,7 @@ for dev integration and limited no-model host evidence. No model turn ran.
 The four-commit accepted task lineage fast-forwarded `dev@f5512404` to
 `3cd57cb4`, tree `579366cb5dacf4`, and the remote ref was observed at that
 full commit after a non-force push. The stable ZIP bytes remained unchanged.
+
+## 2026-10-03 scoped worker entry implementation
+
+The normal job entry can select a pinned accepted execution owner and readonly Codex command host. Aggregate pool inventory and reservations use the existing estate lock before allocation; original placement/configuration is preserved. The session qualification record received exact independent PASS_WITH_NOTES for PARTIAL evidence only. Current implementation qualification is pending; outer tools and failed host read isolation remain uncovered.
