@@ -1,0 +1,138 @@
+{
+  "schema": "aide.bounded-storage-discovery.v1",
+  "machine": "BLACKGLASS-WIN1",
+  "observed_date_client": "2026-10-04",
+  "volumes": [
+    {
+      "root": "C:/",
+      "total_bytes": 599395090432,
+      "free_bytes": 275464597504,
+      "shallow_directories": [
+        "$Recycle.Bin",
+        "cmake",
+        "Documents and Settings",
+        "FacManTest",
+        "fd",
+        "FMProbe-\u00dcnicode",
+        "FMProbeAscii",
+        "inetpub",
+        "MSI",
+        "MSOCache",
+        "PerfLogs",
+        "Program",
+        "Program Files",
+        "Program Files (x86)",
+        "ProgramData",
+        "Recovery",
+        "Symbols",
+        "SymCache",
+        "System Volume Information",
+        "Users",
+        "Windows"
+      ],
+      "deeper_personal_content_read": false
+    },
+    {
+      "root": "D:/",
+      "total_bytes": 1500099112960,
+      "free_bytes": 68871507968,
+      "shallow_directories": [
+        "$RECYCLE.BIN",
+        "Development",
+        "Games",
+        "Programs",
+        "Projects",
+        "System Volume Information",
+        "VMs",
+        "_PHOTOS_TO_FILE"
+      ],
+      "deeper_personal_content_read": false
+    },
+    {
+      "root": "E:/",
+      "total_bytes": 2400192557056,
+      "free_bytes": 55858987008,
+      "shallow_directories": [
+        "$RECYCLE.BIN",
+        "Downloads",
+        "Files",
+        "Inbox",
+        "Remote",
+        "System Volume Information",
+        "Temporary"
+      ],
+      "deeper_personal_content_read": false
+    }
+  ],
+  "ranked_candidates": [
+    {
+      "path": "D:\\Development\\FacMan\\repositories",
+      "logical_bytes_observed": 17833800968,
+      "complete": false,
+      "entry_limit": 18000,
+      "depth_limit": 5,
+      "seconds_limit": 5,
+      "entries": 9506,
+      "errors": 0,
+      "links_skipped": 0,
+      "git_markers": [
+        "D:\\Development\\FacMan\\repositories\\universal-setup-db9c210f4a17\\worktrees\\task-usk-wu-006-production-publisher\\.git",
+        "D:\\Development\\FacMan\\repositories\\factorio-launcher-5db2844e2f29\\tasks\\task-facman-m-a2c1c5db81\\usrc\\.git",
+        "D:\\Development\\FacMan\\repositories\\factorio-launcher-5db2844e2f29\\tasks\\task-facman-c-e6a6a8453f\\predecessor-checkout-203321188f88\\.git"
+      ],
+      "ownership": "not proven disposable; preserve",
+      "allocated_recovery_bytes": null
+    },
+    {
+      "path": "E:\\Temporary\\FacMan\\FacManRoute",
+      "logical_bytes_observed": 9204345206,
+      "complete": true,
+      "entry_limit": 18000,
+      "depth_limit": 5,
+      "seconds_limit": 5,
+      "entries": 29,
+      "errors": 0,
+      "links_skipped": 0,
+      "git_markers": [],
+      "ownership": "not proven disposable; preserve",
+      "allocated_recovery_bytes": null
+    },
+    {
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\0sng5x14",
+      "logical_bytes_observed": 3559472175,
+      "complete": true,
+      "entry_limit": 18000,
+      "depth_limit": 5,
+      "seconds_limit": 5,
+      "entries": 718,
+      "errors": 0,
+      "links_skipped": 0,
+      "git_markers": [],
+      "ownership": "not proven disposable; preserve",
+      "allocated_recovery_bytes": null
+    },
+    {
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch",
+      "logical_bytes_observed": 0,
+      "complete": true,
+      "entry_limit": 18000,
+      "depth_limit": 5,
+      "seconds_limit": 5,
+      "entries": 1,
+      "errors": 0,
+      "links_skipped": 0,
+      "git_markers": [],
+      "ownership": "not proven disposable; preserve",
+      "allocated_recovery_bytes": null
+    }
+  ],
+  "registered_AIDE_checkouts": 1,
+  "AIDE_scratch_empty": true,
+  "reported_500GB_independently_measured": false,
+  "content_ingestion": false,
+  "full_volume_scan": false,
+  "file_hashing": false,
+  "deletions": 0,
+  "reclaimed_bytes": 0,
+  "unknown_content_preserved": true
+}

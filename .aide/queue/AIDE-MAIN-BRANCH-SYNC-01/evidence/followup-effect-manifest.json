@@ -1,0 +1,20 @@
+{
+  "schema": "aide.branch-sync.closeout-effect.v1",
+  "expected_refs": {
+    "main": "20d27d78c56d99c78f3fbc3e04898f1cbc674280",
+    "dev": "20d27d78c56d99c78f3fbc3e04898f1cbc674280",
+    "task/aide-session-containment-01": "20d27d78c56d99c78f3fbc3e04898f1cbc674280"
+  },
+  "candidate": "exact independently reviewed closeout commit descending from expected_refs",
+  "effects": [
+    "fast-forward existing task/dev/main to exact reviewed closeout",
+    "atomic non-force push of these three refs only",
+    "verify all 84 branch pairs remain matched"
+  ],
+  "other_81_branch_tips": "preserved exactly",
+  "tags": false,
+  "release": false,
+  "global_configuration": false,
+  "model_calls": false,
+  "source_scope": "owned task-local launch/probe qualification, integration outcome and current gate records; product/export/archive unchanged"
+}

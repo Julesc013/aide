@@ -1,0 +1,9 @@
+{
+  "schema": "aide.harmless-probe.recovery.v1",
+  "result": "RECOVERED",
+  "failure": "Probe teardown expected LF bytes, native text write produced CRLF. RPC response state not retained; no result inferred for that attempt.",
+  "owner_process_terminated": true,
+  "exact_fixture_files_retired": 2,
+  "model_turns_started": 0,
+  "acl_changes": 0
+}

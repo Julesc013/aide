@@ -1,0 +1,39 @@
+# Machine-local preparation; command sandbox only, not whole-session qualification.
+# Preserve the user's model, effort, provider and signed-in account settings.
+default_permissions = "aide-containment-task"
+approval_policy = "never"
+web_search = "disabled"
+
+[windows]
+sandbox = "elevated"
+
+[features]
+apps = false
+plugins = false
+remote_plugin = false
+hooks = false
+browser_use = false
+browser_use_external = false
+computer_use = false
+in_app_browser = false
+multi_agent = false
+
+[permissions.aide-containment-task.filesystem]
+":root" = "deny"
+":minimal" = "read"
+"D:/Projects/AIDE/aide" = "read"
+"D:/Projects/AIDE/aide/.aide/queue/AIDE-SESSION-CONTAINMENT-01" = "write"
+"D:/Projects/AIDE/aide/PLANS.md" = "write"
+"D:/Projects/AIDE/aide/IMPLEMENT.md" = "write"
+"D:/Projects/AIDE/aide/DOCUMENTATION.md" = "write"
+"D:/Projects/AIDE/aide/.aide/queue/AIDE-SESSION-CONTAINMENT-01/outer-launch.toml" = "read"
+"D:/Projects/AIDE/aide/.aide/queue/AIDE-SESSION-CONTAINMENT-01/outer-launch.py" = "read"
+"D:/Projects/AIDE/aide/.aide.local" = "deny"
+"D:/Projects/AIDE/.aide.local/execution" = "read"
+"D:/Projects/AIDE/.aide.local/execution/control" = "deny"
+"C:/Users/Jules/AppData/Local/Python/pythoncore-3.14-64" = "read"
+"C:/Program Files/Git" = "read"
+"C:/Users/Jules/.codex/packages/standalone/releases/0.145.0-x86_64-pc-windows-msvc/bin" = "read"
+
+[permissions.aide-containment-task.network]
+enabled = false

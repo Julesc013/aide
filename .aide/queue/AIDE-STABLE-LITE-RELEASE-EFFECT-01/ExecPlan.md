@@ -724,3 +724,7 @@ Local and remote dev reached `92d8db08` by clean fast-forward and non-force
 push. The exact observed integration is recorded in
 `evidence/taskos-dev-integration-2026-09-29.md`. Keep main/tag/publication
 closed until their separate gates pass.
+
+## 2026-10-04 direct owner source-main synchronization
+
+Owner explicitly directed dev into main and matching local/remote branch sync. Independent acceptance of exact20d27d78 source/ref effect and its100 retained guards completed this source-only integration, with84 matching pairs. This is not exact stable release acceptance and accepts no historical dispositions. Keep the original aec53b1d release-history base when checking the ten named records; current main..dev can be empty after synchronization and must not be treated as their clearance. Live model, actual/matched efficiency, outer filesystem route, archive update, exact stable effects and downloaded-consumer gates remain open. The old accepted ZIP is unchanged and does not contain the new scoped adapter.

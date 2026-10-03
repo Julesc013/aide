@@ -1,10 +1,10 @@
 AIDE Lite task inspect
 task_id: AIDE-MAIN-BRANCH-SYNC-01
-status: needs_review
+status: passed_with_notes
 classification: complete
 task_yaml: .aide/queue/AIDE-MAIN-BRANCH-SYNC-01/task.yaml
 status_yaml: .aide/queue/AIDE-MAIN-BRANCH-SYNC-01/status.yaml
 evidence_dir: .aide/queue/AIDE-MAIN-BRANCH-SYNC-01/evidence
-evidence_files: 5
+evidence_files: 8
 missing_evidence: 0
 recovery_suggestion: noop_already_complete

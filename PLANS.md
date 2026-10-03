@@ -4415,3 +4415,7 @@ The exact dev effect at afba7773 passed independent acceptance and actual local/
 ## 2026-10-04 owner-directed main and branch sync
 
 AIDE-MAIN-BRANCH-SYNC-01 scopes the direct owner request to independently reviewed fast-forward source integration and matching local/remote refs; stable release and host qualification remain separate.
+
+### 2026-10-04 verified source sync and ordinary-host boundary
+
+Main/dev source synchronization is verified at20d27d78 with84 matching branch pairs. Ordinary-host profile configuration passes; normal shell excludes harmless reads/writes, native filesystem API does not. Actual client scope setup precedes real-task qualification; historical release base remains aec53b1d.

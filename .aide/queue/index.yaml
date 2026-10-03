@@ -5,8 +5,8 @@ default_concurrency: 1
 canonical_source: .aide/queue
 items:
   - id: AIDE-MAIN-BRANCH-SYNC-01
-    status: needs_review
-    planning_state: exact_candidate_and_effect_review
+    status: passed_with_notes
+    planning_state: first_exact_effect_verified_closeout_review_pending
     title: Owner-directed main source integration and all branch sync
     task: .aide/queue/AIDE-MAIN-BRANCH-SYNC-01/task.yaml
     exec_plan: .aide/queue/AIDE-MAIN-BRANCH-SYNC-01/ExecPlan.md

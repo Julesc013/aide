@@ -576,3 +576,7 @@ That packet now retains exact independent afba7773 acceptance and observed local
 ## 2026-10-04 owner-directed main and branch sync
 
 Main/source synchronization evidence and exact effect: `.aide/queue/AIDE-MAIN-BRANCH-SYNC-01/ExecPlan.md` and `evidence/effect-manifest.json`. Source integration is not stable release qualification.
+
+### 2026-10-04 verified source sync and ordinary-host boundary
+
+Current source sync outcome: `.aide/queue/AIDE-MAIN-BRANCH-SYNC-01/evidence/integration-effect.json`. Prepared profile and exact remaining host action: `.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/outer-launch-boundary.md`. No whole-session containment or stable release claim.

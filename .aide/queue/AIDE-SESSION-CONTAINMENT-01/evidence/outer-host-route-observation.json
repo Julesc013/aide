@@ -1,0 +1,81 @@
+{
+  "schema": "aide.outer-host-route-observation.v1",
+  "installed_client": "0.145.0",
+  "profile": {
+    "name": "aide_outer_probe",
+    "filesystem": {
+      ":root": "deny",
+      ":minimal": "read",
+      "D:\\Projects\\AIDE\\aide": "read",
+      "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-SESSION-CONTAINMENT-01\\evidence\\outer-host-excluded-fixture.txt": "deny",
+      "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-SESSION-CONTAINMENT-01\\evidence\\outer-host-allowed-fixture.txt": "write"
+    },
+    "network_enabled": false
+  },
+  "model_turns_started": 0,
+  "threads_started": 0,
+  "global_configuration_changes": 0,
+  "current_outer_profile": "disabled/unrestricted",
+  "whole_session_contained": false,
+  "responses": [
+    {
+      "method": "fs/readFile",
+      "response": {
+        "id": 2,
+        "result": {
+          "dataBase64": "aGFybWxlc3MgZXhjbHVkZWQgZml4dHVyZQ=="
+        }
+      }
+    },
+    {
+      "method": "fs/writeFile",
+      "response": {
+        "id": 3,
+        "result": {}
+      }
+    },
+    {
+      "method": "fs/writeFile",
+      "response": {
+        "id": 4,
+        "result": {}
+      }
+    },
+    {
+      "method": "command/exec",
+      "response": {
+        "id": 5,
+        "result": {
+          "exitCode": 0,
+          "stdout": "{\"excluded_read_denied\": true, \"excluded_write_handle_denied\": true, \"allowed_shell_write\": true}\r\n",
+          "stderr": ""
+        }
+      }
+    }
+  ],
+  "direct_sandbox": {
+    "exit": 0,
+    "stdout": "{\"excluded_read_denied\": false, \"excluded_write_handle_denied\": true}\n",
+    "stderr": ""
+  },
+  "initialize": {
+    "id": 1,
+    "result": {
+      "userAgent": "codex_vscode/0.145.0 (Windows 10.0.19045; x86_64) dumb (aide_harmless_route_qualification; 1)",
+      "codexHome": "C:\\Users\\Jules\\.codex",
+      "platformFamily": "windows",
+      "platformOs": "windows"
+    }
+  },
+  "editor_excluded_read_denied": false,
+  "editor_excluded_write_denied": false,
+  "allowed_editor_write": true,
+  "shell": {
+    "excluded_read_denied": true,
+    "excluded_write_handle_denied": true,
+    "allowed_shell_write": true
+  },
+  "result": "PARTIAL",
+  "owned_server_exit": 0,
+  "fixture_retirement": true
+}

@@ -25,5 +25,11 @@ Outer tools remain Full Access; this WorkUnit does not qualify protected Git in 
 ## Progress
 
 - [x] State refreshed and bounded effect prepared.
-- [ ] Independent exact candidate/effect accepted.
-- [ ] Ref effects applied and remotely verified.
+- [x] Independent exact candidate/effect accepted for 20d27d78; all notes nonblocking for source/ref effect only.
+- [x] Ref effects applied: 42-ref atomic non-force push, one missing local tracking ref; all 84 pairs equal at verification.
+
+## Outcome and bounded closeout
+
+The first exact effect completed at 20d27d78 with 100 retained command results and fresh 84-pair equality. Source main integration does not qualify publication. The closeout adds terminal evidence and the directly requested task-local outer launch preparation and harmless route qualification in the existing session task (no core/runner/export rewrite). The task allowlist is expanded only to the exact named files and current gate records. Three-ref followup manifest freezes expected20d27 refs and requires exact independent review before any new dev/main sync. Other81 tips preserved.
+
+The ordinary shell profile passes allowed writes and denied fixture reads/write handles; direct sandbox read exclusion and native filesystem APIs fail. Prepared configuration resolves correctly; the active client is still disabled/unrestricted. Bounded metadata storage discovery identified relevant candidates, preserving unknown work and recording zero recovered bytes. No model or thread was started. Existing64-test evidence reused; retest only the newly changed host/configuration path. Maintain historical release range base aec53b1d even after source main moves, so an empty main..dev does not hide the ten pending records.

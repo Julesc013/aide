@@ -51,3 +51,8 @@ notes:
   - Current partial-recovery preview assets passed four-command committed replay and extracted ZIP/tar fresh/brownfield consumers; independent artifact review ACCEPT_WITH_NOTES permitted dev only. Local and remote dev now read 33abef7f after the evidence-only closeout replay. Stable release, remaining lifecycle/offline coverage and publication are still open.
   - Frozen-byte local Windows removal also passed a 50th-owned-unlink forced exit and fresh-process detach in D job 6df070ca; independent effect review accepted this additional evidence only. The ten historical-message owner decisions still gate main promotion.
   - On 2026-09-29 the remaining inactive partial-recovery checkout was retired through Git without force after exact ref, ignored-content and job-activity checks. Only the primary dev checkout remains; its local runner configuration was narrowed to that working root and validated. Frozen Lite assets and release gates are unchanged.
+
+owner_directed_source_main_sync: 20d27d78c56d99c78f3fbc3e04898f1cbc674280
+owner_directed_all_branch_sync: 84_matching_pairs_verified
+outer_command_profile: prepared_configuration_PASS_native_filesystem_API_FAIL
+source_main_sync_is_stable_release_acceptance: false

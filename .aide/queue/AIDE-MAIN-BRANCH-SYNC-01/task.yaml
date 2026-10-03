@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-MAIN-BRANCH-SYNC-01
 title: Apply owner-directed source main integration and all branch sync
 type: integration
-status: needs_review
-planning_state: exact_candidate_and_effect_review
-result: PENDING
+status: passed_with_notes
+planning_state: first_exact_effect_verified_closeout_review_pending
+result: MAIN_AND_BRANCH_SYNC_VERIFIED
 created_at: 2026-10-04
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 authority_basis: Owner explicitly instructed merge dev into main and sync all local and remote branches on 2026-10-04; campaign delegation supplies independent review route.
@@ -12,6 +12,19 @@ objective: Fast-forward qualified dev source into main and reconcile each corres
 scope:
   allowed_paths:
     - .aide/queue/AIDE-MAIN-BRANCH-SYNC-01/**
+    - .aide/queue/AIDE-SESSION-CONTAINMENT-01/outer_route_probe.py
+    - .aide/queue/AIDE-SESSION-CONTAINMENT-01/outer-launch.py
+    - .aide/queue/AIDE-SESSION-CONTAINMENT-01/outer-launch.toml
+    - .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/outer-host-route-observation.json
+    - .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/outer-host-probe-recovery.json
+    - .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/outer-launch-config-check.json
+    - .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/outer-launch-boundary.md
+    - .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/bounded-storage-discovery.json
+    - .aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md
+    - .aide/queue/AIDE-SESSION-CONTAINMENT-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/status.yaml
+    - .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md
     - .aide/intake/latest-intent-packet.json
     - .aide/intake/latest-intent-packet.md
     - .aide/intake/latest-workunit-draft.json

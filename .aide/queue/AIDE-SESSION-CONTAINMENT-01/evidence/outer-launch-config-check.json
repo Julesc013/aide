@@ -1,0 +1,17 @@
+{
+  "schema": "aide.prepared-launch-config.check.v1",
+  "result": "PASS",
+  "model_or_thread_started": false,
+  "global_config_rewritten": false,
+  "whole_session_contained": false,
+  "checks": {
+    "selected_profile": true,
+    "legacy_sandbox_absent": true,
+    "elevated": true,
+    "network_disabled": true,
+    "optional_features_disabled": true,
+    "declared_mcp_disabled": true
+  },
+  "tool_scope": "configuration resolution only; native filesystem API route remains separately uncovered",
+  "owned_server_exit": 0
+}

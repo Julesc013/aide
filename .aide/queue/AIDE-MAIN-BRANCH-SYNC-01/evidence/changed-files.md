@@ -17,3 +17,5 @@ Metadata-only integration packet. Product, export, archive and operator configur
 - `IMPLEMENT.md`
 - `PLANS.md`
 - Evidence contract: this changed-file list, validation.md and remaining-risks.md.
+
+Closeout scope: exact new paths listed in task.yaml, terminal integration outcome and followup-effect-manifest.json; no product, generated export or archive changes.
