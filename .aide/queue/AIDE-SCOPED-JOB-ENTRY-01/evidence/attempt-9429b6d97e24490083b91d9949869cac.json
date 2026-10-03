@@ -1,0 +1,38 @@
+{
+  "schema": "aide.scoped-entry.attempt.v1",
+  "source_commit": "343fed87a4d06d1b2d3ea1c9ba92b5215b890025",
+  "job_id": "9429b6d97e24490083b91d9949869cac",
+  "phase": "retired",
+  "scratch_absent": true,
+  "reservation_released": true,
+  "result": {
+    "exit_code": null,
+    "message": "[WinError 3] The system cannot find the path specified",
+    "reason": "FileNotFoundError"
+  },
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4138794
+    },
+    "memory_bytes": 280018944,
+    "scratch_bytes": 4053
+  },
+  "canonical_before": {
+    ".aide/export/aide-lite-pack-v0": 4138794
+  },
+  "canonical_after": {
+    ".aide/export/aide-lite-pack-v0": 0
+  },
+  "receipt_sha256": "fdef29de5a76c5151069f44299b82737ae58c8ed3c2c972c5c4ca3846f28d78d",
+  "logs": {
+    "stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "bytes": 2192,
+      "sha256": "3089e6d73d51eca30704850d4b73e758e7526bf8657e1798573d4758bbc59ac8"
+    }
+  },
+  "failure": "Exporter removed its permitted root and could not recreate under readonly parent. Exact empty root restored on verified volume, existing owner recover retired scratch. Accepted archive unchanged."
+}

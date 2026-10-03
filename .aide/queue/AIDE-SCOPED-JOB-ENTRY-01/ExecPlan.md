@@ -62,3 +62,14 @@ packaging guard unnecessarily required both export and release reservations.
 Use the exact export canonical path for export-pack; do not expand permission
 to the release directory or replace this refusal with Full Access. Preserve
 this failed attempt and add a focused regression for the narrower requirement.
+
+Attempt 9429b6d9 passed all twelve tests, then exposed the exporter deleting its
+approved root and failing to recreate it under a readonly parent. The owner
+refused new allocation while recovery remained active. Restore only the exact
+existing generated directory on its verified recorded volume and reconcile
+through the ZIP-pinned owner; retain its failure logs, retire scratch and release
+the reservation. Restore the known tracked generated contents, then change the
+exporter to preserve root identity and remove only recognized generated members.
+Unknown top-level members refuse before deletion. Add root-identity and unknown
+member regressions, and rerun the necessary export+validation with unchanged
+permission scope. No parent-write grant or Full Access fallback.

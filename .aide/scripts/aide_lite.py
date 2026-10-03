@@ -40635,6 +40635,28 @@ def render_export_report(pack_root: Path, manifest_files: list[str], boundary_vi
     return "\n".join(lines) + "\n"
 
 
+def reset_export_contents(pack_root: Path) -> None:
+    """Keep the directory carrying the scoped permission and volume binding."""
+    if not pack_root.exists():
+        pack_root.mkdir(parents=True)
+        return
+    known = {"files", "README.md", "install.md", "import-policy.yaml",
+             "manifest.yaml", "checksums.json", "export-report.md"}
+    children = list(pack_root.iterdir())
+    for child in children:
+        info = child.lstat()
+        if (child.name not in known or child.is_symlink()
+                or getattr(info, "st_file_attributes", 0) & 1024
+                or (child.name == "files") != child.is_dir()
+                or (child.is_file() and info.st_nlink != 1)):
+            raise ValueError("unknown or linked export member preserved: " + child.name)
+    for child in children:
+        if child.is_dir():
+            shutil.rmtree(child)
+        else:
+            child.unlink()
+
+
 def build_export_pack(repo_root: Path, name: str = EXPORT_PACK_ID, output: str | None = None) -> tuple[Path, dict[str, object]]:
     if name != EXPORT_PACK_ID:
         raise ValueError(f"unsupported pack name: {name}")
@@ -40661,8 +40683,7 @@ def build_export_pack(repo_root: Path, name: str = EXPORT_PACK_ID, output: str |
                 and not validate_export_pack_boundary(pack_root)):
             prior_source = candidate
             prior_checksums = json.loads(read_text(pack_root / "checksums.json"))
-    if pack_root.exists():
-        shutil.rmtree(pack_root)
+    reset_export_contents(pack_root)
     files_root = pack_root / "files"
     files_root.mkdir(parents=True, exist_ok=True)
 

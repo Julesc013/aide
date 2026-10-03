@@ -95,6 +95,28 @@ class ScopedHostTests(unittest.TestCase):
             self.assertEqual(lite.command_export_pack(args), 1)
         guard.assert_called_once_with(self.root, canonical_paths=(lite.EXPORT_PACK_PATH,))
 
+    def test_export_refresh_preserves_scoped_directory_identity(self):
+        spec = importlib.util.spec_from_file_location('scoped_refresh_lite', REPO/'.aide/scripts/aide_lite.py')
+        lite = importlib.util.module_from_spec(spec); sys.modules[spec.name] = lite; spec.loader.exec_module(lite)
+        root = self.root/'pack'; root.mkdir()
+        (root/'files').mkdir(); (root/'files/old').write_bytes(b'generated')
+        (root/'manifest.yaml').write_text('generated')
+        identity = (root.stat().st_dev, root.stat().st_ino)
+        lite.reset_export_contents(root)
+        self.assertEqual((root.stat().st_dev, root.stat().st_ino), identity)
+        self.assertEqual(list(root.iterdir()), [])
+
+    def test_export_unknown_member_is_preserved_before_any_removal(self):
+        spec = importlib.util.spec_from_file_location('scoped_unknown_lite', REPO/'.aide/scripts/aide_lite.py')
+        lite = importlib.util.module_from_spec(spec); sys.modules[spec.name] = lite; spec.loader.exec_module(lite)
+        root = self.root/'pack'; root.mkdir()
+        (root/'manifest.yaml').write_bytes(b'generated')
+        (root/'unique-work').write_bytes(b'preserve')
+        with self.assertRaisesRegex(ValueError, 'preserved'):
+            lite.reset_export_contents(root)
+        self.assertEqual((root/'unique-work').read_bytes(), b'preserve')
+        self.assertEqual((root/'manifest.yaml').read_bytes(), b'generated')
+
 
 if __name__ == '__main__':
     unittest.main()
