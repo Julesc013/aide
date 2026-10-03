@@ -580,3 +580,7 @@ Main/source synchronization evidence and exact effect: `.aide/queue/AIDE-MAIN-BR
 ### 2026-10-04 verified source sync and ordinary-host boundary
 
 Current source sync outcome: `.aide/queue/AIDE-MAIN-BRANCH-SYNC-01/evidence/integration-effect.json`. Prepared profile and exact remaining host action: `.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/outer-launch-boundary.md`. No whole-session containment or stable release claim.
+
+Bounded ownership distinctions and preservation reasons:
+`.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/storage-ownership-followup.json`.
+Logical file sizes are not claimed as measured recoverable disk space.

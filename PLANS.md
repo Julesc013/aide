@@ -4419,3 +4419,8 @@ AIDE-MAIN-BRANCH-SYNC-01 scopes the direct owner request to independently review
 ### 2026-10-04 verified source sync and ordinary-host boundary
 
 Main/dev source synchronization is verified at20d27d78 with84 matching branch pairs. Ordinary-host profile configuration passes; normal shell excludes harmless reads/writes, native filesystem API does not. Actual client scope setup precedes real-task qualification; historical release base remains aec53b1d.
+
+The accepted 4265f52b closeout and three-ref followup also completed with all
+84 pairs matched. Repeated source-sync instructions reuse that outcome; stable
+release gates remain open. Bounded ownership reconciliation preserves the
+private hard links, distinct Git checkouts and unqualified toolchain material.

@@ -19,3 +19,11 @@ Metadata-only integration packet. Product, export, archive and operator configur
 - Evidence contract: this changed-file list, validation.md and remaining-risks.md.
 
 Closeout scope: exact new paths listed in task.yaml, terminal integration outcome and followup-effect-manifest.json; no product, generated export or archive changes.
+
+Ownership/status followup (relative to 4265f52b):
+- This queue's task/status/ExecPlan, changed-files, validation, remaining-risks
+  and existing three-ref followup manifest.
+- Session ExecPlan/status and new evidence/storage-ownership-followup.json.
+- Queue index and the three root planning/execution/documentation indexes.
+All paths are explicitly allowed; source, configuration and artifact bytes
+are unchanged. Earlier frozen manifests remain in Git history.

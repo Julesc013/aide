@@ -3,7 +3,7 @@ id: AIDE-MAIN-BRANCH-SYNC-01
 title: Apply owner-directed source main integration and all branch sync
 type: integration
 status: passed_with_notes
-planning_state: first_exact_effect_verified_closeout_review_pending
+planning_state: source_sync_completed_release_gates_separate
 result: MAIN_AND_BRANCH_SYNC_VERIFIED
 created_at: 2026-10-04
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -20,6 +20,7 @@ scope:
     - .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/outer-launch-config-check.json
     - .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/outer-launch-boundary.md
     - .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/bounded-storage-discovery.json
+    - .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/storage-ownership-followup.json
     - .aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md
     - .aide/queue/AIDE-SESSION-CONTAINMENT-01/status.yaml
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml

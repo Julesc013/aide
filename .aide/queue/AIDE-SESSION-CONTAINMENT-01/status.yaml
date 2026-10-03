@@ -3,8 +3,8 @@ task_id: AIDE-SESSION-CONTAINMENT-01
 status: needs_review
 planning_state: real_scoped_validation_passed_whole_session_unqualified
 result: PARTIAL
-updated_at: 2026-10-03
-current_slice: real_scoped_validation_and_retirement_recorded
+updated_at: 2026-10-04
+current_slice: ordinary_host_probe_and_bounded_ownership_recorded
 whole_session_contained: false
 next_slice: outer_session_and_read_isolation_boundary_requires_host_change
 real_validation: PASS_job_4afa560836114398aeaf2bf6f32ae03a
@@ -21,3 +21,5 @@ ordinary_filesystem_api_boundary: excluded_read_and_write_FAIL
 active_client_permission_profile: disabled_unrestricted
 external_setup_requirement: enable_actual_client_filesystem_scope_or_omit_unrestricted_file_and_integration_routes
 ordinary_real_task_qualification: pending_actual_client_setup
+storage_ownership_followup: preserved_hardlinked_private_inputs_and_unqualified_git_and_toolchain_candidates
+storage_reclaimed_bytes: 0

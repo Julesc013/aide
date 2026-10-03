@@ -33,3 +33,17 @@ Outer tools remain Full Access; this WorkUnit does not qualify protected Git in 
 The first exact effect completed at 20d27d78 with 100 retained command results and fresh 84-pair equality. Source main integration does not qualify publication. The closeout adds terminal evidence and the directly requested task-local outer launch preparation and harmless route qualification in the existing session task (no core/runner/export rewrite). The task allowlist is expanded only to the exact named files and current gate records. Three-ref followup manifest freezes expected20d27 refs and requires exact independent review before any new dev/main sync. Other81 tips preserved.
 
 The ordinary shell profile passes allowed writes and denied fixture reads/write handles; direct sandbox read exclusion and native filesystem APIs fail. Prepared configuration resolves correctly; the active client is still disabled/unrestricted. Bounded metadata storage discovery identified relevant candidates, preserving unknown work and recording zero recovered bytes. No model or thread was started. Existing64-test evidence reused; retest only the newly changed host/configuration path. Maintain historical release range base aec53b1d even after source main moves, so an empty main..dev does not hide the ten pending records.
+
+## Duplicate-request reconciliation and ownership followup
+
+The independently accepted 4265f52b closeout and three-ref effect completed;
+all 84 pairs matched afterward. Repeated merge prompts must reuse that outcome.
+This followup corrects stale review-pending metadata and retains bounded
+ownership findings from the already ranked paths. The only added evidence path
+is the session task's storage-ownership-followup.json, named in task.yaml.
+
+Before editing, the clean task/dev/main tips were 4265f52b. Recheck only receipt,
+hardlink and Git metadata at the exact discovered candidates; preserve unknown
+and unique work. Validate JSON/YAML, task evidence, diff scope and structured
+commit. A new commit requires independent exact source/three-ref effect review
+and fresh guards before sync; no cleanup, model, tag or publication effect.

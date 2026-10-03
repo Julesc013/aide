@@ -1,9 +1,9 @@
 {
   "schema": "aide.branch-sync.closeout-effect.v1",
   "expected_refs": {
-    "main": "20d27d78c56d99c78f3fbc3e04898f1cbc674280",
-    "dev": "20d27d78c56d99c78f3fbc3e04898f1cbc674280",
-    "task/aide-session-containment-01": "20d27d78c56d99c78f3fbc3e04898f1cbc674280"
+    "main": "4265f52bb6e19e4bd805aef5e9bd7d009018229e",
+    "dev": "4265f52bb6e19e4bd805aef5e9bd7d009018229e",
+    "task/aide-session-containment-01": "4265f52bb6e19e4bd805aef5e9bd7d009018229e"
   },
   "candidate": "exact independently reviewed closeout commit descending from expected_refs",
   "effects": [
@@ -16,5 +16,7 @@
   "release": false,
   "global_configuration": false,
   "model_calls": false,
-  "source_scope": "owned task-local launch/probe qualification, integration outcome and current gate records; product/export/archive unchanged"
+  "source_scope": "completed source-sync status reconciliation and bounded storage ownership evidence; no new host probe or product/export/archive/configuration changes",
+  "other_81_refs_sha256": "925e00ac4e5e0cad54b7499aff24a2608944c7797172b89d3102e075a1ce32c5",
+  "other_refs_digest_encoding": "UTF-8 sorted branch_name TAB full_commit LF"
 }

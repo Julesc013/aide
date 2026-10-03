@@ -6,7 +6,7 @@ canonical_source: .aide/queue
 items:
   - id: AIDE-MAIN-BRANCH-SYNC-01
     status: passed_with_notes
-    planning_state: first_exact_effect_verified_closeout_review_pending
+    planning_state: source_sync_completed_release_gates_separate
     title: Owner-directed main source integration and all branch sync
     task: .aide/queue/AIDE-MAIN-BRANCH-SYNC-01/task.yaml
     exec_plan: .aide/queue/AIDE-MAIN-BRANCH-SYNC-01/ExecPlan.md

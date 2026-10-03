@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-MAIN-BRANCH-SYNC-01
 status: passed_with_notes
-planning_state: first_exact_effect_verified_closeout_review_pending
+planning_state: source_sync_completed_release_gates_separate
 result: MAIN_AND_BRANCH_SYNC_VERIFIED
 updated_at: 2026-10-04
 source_main_sync_authorized: true
@@ -9,7 +9,9 @@ historical_message_dispositions_accepted: false
 live_model_permission_granted: false
 stable_release_qualified: false
 whole_session_contained: false
-accepted_source_sync_candidate: 20d27d78c56d99c78f3fbc3e04898f1cbc674280
+accepted_source_sync_candidate: 4265f52bb6e19e4bd805aef5e9bd7d009018229e
 matching_branch_pairs: 84
 first_effect_verified: true
-metadata_closeout_requires_exact_followup_review: true
+metadata_closeout_review: ACCEPT_WITH_NOTES_all_notes_nonblocking_source_ref_effect_only
+metadata_closeout_effect_verified: true
+future_changed_source_or_effect_requires_exact_review: true

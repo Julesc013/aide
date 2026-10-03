@@ -83,3 +83,18 @@ bytecode pollution was demonstrated, corrected and exactly retired before PASS.
 The owner's direct outer-session instruction authorizes this bounded task-local launch preparation and harmless fixture test; no runner rewrite or global configuration changes. `outer_route_probe.py` reproduces direct-sandbox read exclusion failure, normal app-server shell read/write denial and native filesystem API read/write allowance under the same named profile. Allowed editing succeeds; exact fixtures retire; zero model/threads. `outer-launch.toml` and render-only helper preserve account/model defaults, disable optional routes and resolve security settings correctly. Actual client filesystem scope remains disabled/unrestricted, requiring client setup before ordinary scoped task acceptance. See evidence/outer-launch-boundary.md. The previous64-test worker source/retirement evidence is unchanged and not rerun.
 
 Storage discovery is metadata-only, bounded to recorded roots plus shallow volume metadata. The three ranked development/temporary candidates are preserved for ownership reconciliation; no source/cache/archive deletion is inferred from size. AIDE scratch is empty. The active ordinary host remains unqualified and cannot be called contained.
+
+The bounded ownership followup is retained in evidence/storage-ownership-followup.json.
+Two 4,597,290,876-byte archive paths are hard links to the same file, with only
+two links observed in total; the receipts say prepared_not_executed. No other
+independent copy is established. The Universal candidate is a linked worktree
+whose common Git directory is D:/Projects/Universal/universal-setup/.git; the
+other two candidates have independent Git directories. Tracked cleanliness
+does not establish untracked/ignored ownership or unique-commit coverage.
+Temporary child names indicate toolchain packages. All candidates remain
+preserved; deletions and recovered bytes are zero. No project work is resumed.
+
+Initial dependency observations above are historical: aggregate cooperative
+admission and the scoped worker have since been accepted. Ordinary outer-path
+acceptance remains pending actual client scope setup. Independent partial-worker
+acceptance does not discharge the failed routes or qualify the whole session.
