@@ -4,6 +4,15 @@ policy: .aide/queue/policy.yaml
 default_concurrency: 1
 canonical_source: .aide/queue
 items:
+  - id: AIDE-MAIN-BRANCH-SYNC-01
+    status: needs_review
+    planning_state: exact_candidate_and_effect_review
+    title: Owner-directed main source integration and all branch sync
+    task: .aide/queue/AIDE-MAIN-BRANCH-SYNC-01/task.yaml
+    exec_plan: .aide/queue/AIDE-MAIN-BRANCH-SYNC-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-MAIN-BRANCH-SYNC-01/prompt.md
+    evidence: .aide/queue/AIDE-MAIN-BRANCH-SYNC-01/evidence
+    description: Exact source integration under direct owner instruction; release, historical decisions and outer-host gates remain separate.
   - id: Q00-bootstrap-audit
     status: passed
     planning_state: implemented

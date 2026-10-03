@@ -1,0 +1,35 @@
+schema_version: aide.queue-task.v0
+id: AIDE-MAIN-BRANCH-SYNC-01
+title: Apply owner-directed source main integration and all branch sync
+type: integration
+status: needs_review
+planning_state: exact_candidate_and_effect_review
+result: PENDING
+created_at: 2026-10-04
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+authority_basis: Owner explicitly instructed merge dev into main and sync all local and remote branches on 2026-10-04; campaign delegation supplies independent review route.
+objective: Fast-forward qualified dev source into main and reconcile each corresponding local/remote ref while preserving every branch history.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-MAIN-BRANCH-SYNC-01/**
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  exact_git_effects: evidence/effect-manifest.json
+  forbidden_operations:
+    - force push, deletion, prune, history rewrite, new worktrees or clones
+    - tags, release publication, model calls or historical disposition acceptance
+    - product or execution configuration changes
+review_gate: Exact independent source-and-main-sync-effect ACCEPT before applying refs.
+verification:
+  - clean single checkout and exact ref preconditions
+  - ancestry and already accepted product/export identities
+  - classify raw historical commit-message failures without recording acceptance
+  - inspect unique CodeWarrior commit before publishing its branch
+  - real Jules and authenticated Julesc013; exact remote refs before and after
+  - matching local/remote names and hashes after effect

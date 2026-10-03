@@ -3,11 +3,11 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 987c2a9316935b7ced20eced9aefed1b8245850f71f3072503c9a989de0bc3ef
-- raw_prompt_excerpt: Integrate the independently accepted AIDE-SCOPED-JOB-ENTRY-01 source and exact worker qualification into dev only through the existing checkout and owner campaign delegation. Preserve partial containment, failed read exclusion, unqualifi...
-- interpreted_goal: Normalize prompt into a bounded git WorkUnit draft: write blocker report and require reviewed authorization before mutation.
+- raw_prompt_hash: 89129b8a2b4b983f13c19854bc903f76e3a5bb33fe3d7687a1d1cba6f8347f19
+- raw_prompt_excerpt: Merge the qualified current AIDE dev source into main and synchronize local and remote branches without force, deletion, retagging, or fabrication of historical-message dispositions. Prepare and qualify the installed supported scoped out...
+- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
-- task_class: git
+- task_class: release
 - risk_class: destructive
 - sizing_class: blocked
 - safe_to_execute: false
@@ -24,8 +24,8 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not merge, push, promote, or prune without reviewed branch plan
 - do not move or delete roots without inventory and salvage map
+- do not publish releases, tags, or assets from prompt alone
 
 ## Repo State Refs
 
@@ -41,15 +41,15 @@
 
 ## Branch State Refs
 
-- current_branch:task/aide-session-containment-01
-- current_role:task
+- current_branch:dev
+- current_role:integration
 - workflow:trunk_with_dev_integration
 - worktree_dirty:false
 
 ## Validation Hints
 
 - `git diff --check`
-- `py -3 .aide/scripts/aide_lite.py git plan`
+- `py -3 .aide/scripts/aide_lite.py changelog validate`
 - `py -3 .aide/scripts/aide_lite.py intent validate`
 
 ## Evidence Hints

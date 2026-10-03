@@ -572,3 +572,7 @@ The scoped-entry outcome records normal CLI qualification, finite pool accountin
 The dev-only integration packet is `.aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/`; its effect plan and observations distinguish shared source integration from unchanged whole-session and release gates.
 
 That packet now retains exact independent afba7773 acceptance and observed local/remote dev integration; outcome.md and integration-effect.json carry identity, command, retirement and preserved-gate evidence.
+
+## 2026-10-04 owner-directed main and branch sync
+
+Main/source synchronization evidence and exact effect: `.aide/queue/AIDE-MAIN-BRANCH-SYNC-01/ExecPlan.md` and `evidence/effect-manifest.json`. Source integration is not stable release qualification.

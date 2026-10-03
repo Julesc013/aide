@@ -1,0 +1,11 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-MAIN-BRANCH-SYNC-01
+status: needs_review
+planning_state: exact_candidate_and_effect_review
+result: PENDING
+updated_at: 2026-10-04
+source_main_sync_authorized: true
+historical_message_dispositions_accepted: false
+live_model_permission_granted: false
+stable_release_qualified: false
+whole_session_contained: false

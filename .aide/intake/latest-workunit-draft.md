@@ -1,13 +1,13 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-git-987c2a931693
-- title: Git WorkUnit Draft - Write blocker report and require reviewed authorization before mutation
+- workunit_id: draft-release-89129b8a2b4b
+- title: Release WorkUnit Draft - Write blocker report and require reviewed authorization before mutation
 - status: draft
-- task_class: git
+- task_class: release
 - risk_class: destructive
 - sizing_class: blocked
-- objective: Normalize prompt into a bounded git WorkUnit draft: write blocker report and require reviewed authorization before mutation.
+- objective: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - why: AIDE compiles raw prompts into bounded WorkUnits before execution.
 
 ## Preflight
@@ -25,7 +25,7 @@
 ## Validation
 
 - git diff --check
-- py -3 .aide/scripts/aide_lite.py git plan
+- py -3 .aide/scripts/aide_lite.py changelog validate
 - py -3 .aide/scripts/aide_lite.py intent validate
 
 ## Evidence
@@ -48,10 +48,10 @@
 - no provider/model/network calls
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not merge, push, promote, or prune without reviewed branch plan
 - do not move or delete roots without inventory and salvage map
+- do not publish releases, tags, or assets from prompt alone
 
 ## Recovery
 
-- idempotency: prompt_hash:987c2a9316935b7ced20eced9aefed1b8245850f71f3072503c9a989de0bc3ef; status:draft; compile_only:true
+- idempotency: prompt_hash:89129b8a2b4b983f13c19854bc903f76e3a5bb33fe3d7687a1d1cba6f8347f19; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

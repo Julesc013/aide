@@ -4411,3 +4411,7 @@ The scoped public-entry child completed real export/full validation and all 64 a
 AIDE-SCOPED-JOB-DEV-INTEGRATION-01 prepares independently reviewed dev-only integration of accepted worker source and terminal evidence. Reuse the single checkout and accepted archive/config; require exact candidate/effect review before fast-forward and normal push. Outer containment and main/release gates remain open.
 
 The exact dev effect at afba7773 passed independent acceptance and actual local/remote verification. Only evidence closeout remains for this child; containment and release qualification remain separate unfinished work.
+
+## 2026-10-04 owner-directed main and branch sync
+
+AIDE-MAIN-BRANCH-SYNC-01 scopes the direct owner request to independently reviewed fast-forward source integration and matching local/remote refs; stable release and host qualification remain separate.
