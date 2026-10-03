@@ -6,11 +6,13 @@ import json
 import os
 from pathlib import Path
 import stat
+import shutil
 import subprocess
 import sys
 import tempfile
 import time
 import unittest
+import uuid
 from unittest import mock
 
 REPO = Path(__file__).resolve().parents[3]
@@ -30,9 +32,11 @@ class ManagedWorkspaceTests(unittest.TestCase):
         # The bootstrap test command must name an existing bounded parent.
         # Never let tempfile pick a machine-wide fallback for these fixtures.
         parent = workspace.root_path(os.environ['AIDE_RESOURCE_TEST_PARENT'])
-        self.temp = tempfile.TemporaryDirectory(prefix='tiny-runner-', dir=parent)
-        self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        # Inherit the approved parent's ACL so the coordinator can monitor and
+        # recover this disposable fixture across sandbox/user identities.
+        self.root = parent / ('tiny-runner-' + uuid.uuid4().hex)
+        self.root.mkdir()
+        self.addCleanup(shutil.rmtree, self.root)
         self.roots = {name: self.root / name for name in ('scratch', 'retained', 'control')}
         for path in self.roots.values(): path.mkdir()
         self.source = self.root / 'source'; self.source.mkdir()

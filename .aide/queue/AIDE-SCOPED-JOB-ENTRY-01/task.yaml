@@ -20,6 +20,7 @@ scope:
     - .aide/export/aide-lite-pack-v0/**
     - .aide/scripts/aide_lite.py
     - .aide/scripts/tests/test_scoped_host.py
+    - .aide/scripts/tests/test_managed_workspace.py
     - docs/reference/aide-lite-test-runner.md
     - .aide/queue/AIDE-SESSION-CONTAINMENT-01/**
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml

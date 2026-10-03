@@ -73,3 +73,15 @@ exporter to preserve root identity and remove only recognized generated members.
 Unknown top-level members refuse before deletion. Add root-identity and unknown
 member regressions, and rerun the necessary export+validation with unchanged
 permission scope. No parent-write grant or Full Access fallback.
+
+The root-reparse guard passed but attempt 9c17da04 exposed Python 3.14's
+TemporaryDirectory mode 0700 applying a private Windows ACL to a disposable
+fixture. The coordinator's live scan could not read it; allocation remains
+blocked pending recovery. Under the same installed sandbox identity, inspect
+the exact receipt-owned fixture, refuse links/unknown content and remove only
+the three expected empty test directories plus their empty parent. Run this
+bounded recovery through the existing Windows process host with retained logs;
+then use normal owner recover. No ACL/account change. Disposable test fixtures
+will use ordinary inherited permissions in the already approved parent; test
+bodies/acceptance remain unchanged. Add the existing resource-test file to
+the bounded allowlist for this fixture-only correction.

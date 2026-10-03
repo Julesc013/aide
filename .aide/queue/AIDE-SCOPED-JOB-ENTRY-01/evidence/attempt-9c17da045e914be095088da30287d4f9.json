@@ -1,0 +1,37 @@
+{
+  "schema": "aide.scoped-entry.attempt.v1",
+  "source_commit": "27bb22f630945eeadf75476892d0c8d4ad4f30f7",
+  "job_id": "9c17da045e914be095088da30287d4f9",
+  "phase": "retired",
+  "scratch_absent": true,
+  "reservation_released": true,
+  "result": {
+    "exit_code": null,
+    "message": "[WinError 5] Access is denied: 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9c17da045e914be095088da30287d4f9\\\\tmp\\\\tiny-scope-fx7fg9nd'",
+    "reason": "PermissionError"
+  },
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4167045
+    },
+    "memory_bytes": 242262016,
+    "scratch_bytes": 3115
+  },
+  "receipt_sha256": "1f60891c6d79af3c6767b7d23fc04bf1b5affb675979e4988767c3242f133dba",
+  "logs": {
+    "stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "bytes": 1020,
+      "sha256": "f6add7b3a351c3b7f9075de47a22d6e2b15095966c1599b2f26463dff14ac24a"
+    }
+  },
+  "recovery": {
+    "retired_exact_empty_fixture": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\9c17da045e914be095088da30287d4f9\\tmp\\tiny-scope-fx7fg9nd",
+    "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+    "directories_removed": 4
+  },
+  "failure": "Coordinator cannot inspect private Windows ACL set by Python TemporaryDirectory 0700. Exact lower-identity recovery removed only three expected empty dirs and parent, then normal job recover retired scratch. No ACL changes."
+}

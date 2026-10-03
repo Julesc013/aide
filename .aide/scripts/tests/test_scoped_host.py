@@ -5,6 +5,8 @@ import os
 from pathlib import Path
 import sys
 import tempfile
+import shutil
+import uuid
 import unittest
 from unittest import mock
 
@@ -17,9 +19,11 @@ spec.loader.exec_module(scope)
 class ScopedHostTests(unittest.TestCase):
     def setUp(self):
         parent = scope.bounded_path(os.environ['AIDE_RESOURCE_TEST_PARENT'], directory=True)
-        self.temp = tempfile.TemporaryDirectory(prefix='tiny-scope-', dir=parent)
-        self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        # These disposable fixtures carry no secrets. Windows mode 0700 on
+        # TemporaryDirectory excludes the supervising user's scratch monitor.
+        self.root = parent / ('tiny-scope-' + uuid.uuid4().hex)
+        self.root.mkdir()
+        self.addCleanup(shutil.rmtree, self.root)
         self.roots = {key: self.root/key for key in ('scratch', 'retained', 'control')}
         for path in self.roots.values():
             path.mkdir()
@@ -128,6 +132,12 @@ class ScopedHostTests(unittest.TestCase):
                 lite.reset_export_contents(root)
             enumerated.assert_not_called()
         self.assertEqual((root/'manifest.yaml').read_bytes(), b'preserve')
+
+    def test_scoped_resource_fixtures_are_not_portable_consumer_tests(self):
+        spec = importlib.util.spec_from_file_location('scoped_export_filter_lite', REPO/'.aide/scripts/aide_lite.py')
+        lite = importlib.util.module_from_spec(spec); sys.modules[spec.name] = lite; spec.loader.exec_module(lite)
+        self.assertTrue(lite.is_source_only_export_test('.aide/scripts/tests/test_scoped_host.py'))
+        self.assertTrue(lite.is_source_only_export_test('.aide/scripts/tests/test_managed_workspace.py'))
 
 
 if __name__ == '__main__':

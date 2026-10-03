@@ -39834,7 +39834,7 @@ def is_source_only_export_test(rel_path: str) -> bool:
     if not rel.startswith(".aide/scripts/tests/"):
         return False
     name = Path(rel).name
-    return name == "test_managed_workspace.py" or name.startswith("test_continuous_worker") or (
+    return name in {"test_managed_workspace.py", "test_scoped_host.py"} or name.startswith("test_continuous_worker") or (
         name.startswith("test_aide_") and rel not in PORTABLE_AIDE_TEST_MODULES
     )
 
