@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-SCOPED-JOB-ENTRY-01
 title: Connect scoped repository checks to the public managed job entry
 type: implementation
-status: running
-planning_state: admitted_bounded_source
-result: PENDING
+status: passed_with_notes
+planning_state: exact_public_worker_qualification_accepted_with_notes
+result: PARTIAL_SCOPED_WORKER_PASS
 created_at: 2026-10-03
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 authority_basis: Owner's 2026-10-03 containment priority and recorded 2026-09-25 bounded-child delegation.

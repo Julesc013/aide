@@ -1,0 +1,18 @@
+AIDE Lite commit range check
+result: PASS
+range: 1431d39452fa844c35496a75b5eac47922fbb7c3..HEAD
+commit_count: 11
+policy: .aide/policies/commit-messages.yaml
+disposition_policy: .aide/policies/commit-message-dispositions.yaml
+dispositions: loaded
+- f286d26 PASS test(harness): record scoped host qualification boundary
+- 0318161 PASS test(harness): qualify validation under a scoped Windows host
+- 97100ad PASS feat(harness): connect pinned scoped workers to managed job entry
+- b957f7e PASS fix(harness): bind scoped admission and protect export supervision
+- 343fed8 PASS fix(harness): request only the export destination for pack generation
+- 7eb5598 PASS fix(harness): preserve scoped export directory during regeneration
+- 27bb22f PASS fix(harness): preserve scoped export directory during regeneration
+- 6428c0f PASS fix(harness): keep scoped test fixtures visible to their owner
+- 99a5b45 PASS fix(harness): retire readonly Git fixture objects under scoped tests
+- 886290b PASS test(harness): qualify all managed regressions through scoped entry
+- 8bdf397 PASS test(harness): record qualified public scoped execution and retirement

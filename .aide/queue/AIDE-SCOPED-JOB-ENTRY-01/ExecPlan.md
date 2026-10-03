@@ -101,3 +101,7 @@ shared fixture correction; it is not an unrelated full-programme rerun.
 ## Current result
 
 886290be public job ce62387a passed 64 regressions with no skips, affected export and unchanged full validate. All scratch retired and reservation released; original config/archive unchanged. Exact independent source review passed with notes; terminal evidence review is pending. Outer full-access tools and failed read isolation remain open. No unchanged blocker polling or unrelated full suites are required.
+
+## Accepted bounded result
+
+Independent exact terminal review of 8bdf3978 passed with notes: all retained identities, retirement, original config/archive and 844 listed pack bytes matched. This child is passed_with_notes for PARTIAL scoped-worker qualification. Parent priority returns to outer-session/read-isolation enforcement; no whole-session or release acceptance.

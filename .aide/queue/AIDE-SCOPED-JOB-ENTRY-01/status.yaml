@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-SCOPED-JOB-ENTRY-01
-status: needs_review
-planning_state: public_entry_export_validation_and_64_regressions_passed
+status: passed_with_notes
+planning_state: exact_public_worker_qualification_accepted_with_notes
 result: PARTIAL_SCOPED_WORKER_PASS
 updated_at: 2026-10-03
 whole_session_contained: false
@@ -12,5 +12,5 @@ tests: PASS_64_no_skips
 export_and_validation: PASS
 scratch_retirement: PASS_absent_and_reservation_released
 independent_source_review: PASS_WITH_NOTES_886290be
-independent_terminal_review: pending
+independent_terminal_review: PASS_WITH_NOTES_8bdf3978
 default_outer_session_adoption: not_qualified

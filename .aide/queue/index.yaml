@@ -3813,8 +3813,8 @@ items:
     prompt: .aide/queue/AIDE-SESSION-CONTAINMENT-01/prompt.md
     evidence: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence
   - id: AIDE-SCOPED-JOB-ENTRY-01
-    status: needs_review
-    planning_state: public_entry_export_validation_and_64_regressions_passed
+    status: passed_with_notes
+    planning_state: exact_public_worker_qualification_accepted_with_notes
     result: PARTIAL_SCOPED_WORKER_PASS
     title: Connect readonly scoped execution to the public managed job entry
     task: .aide/queue/AIDE-SCOPED-JOB-ENTRY-01/task.yaml
