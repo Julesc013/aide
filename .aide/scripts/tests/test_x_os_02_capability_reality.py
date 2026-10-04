@@ -168,6 +168,7 @@ class XOS02CapabilityRealityTests(unittest.TestCase):
             root = Path(temp)
             write_fixture(root)
             self.assertEqual(aide_lite.capability_ledger_evidence_validity(root)["state"], "UNKNOWN")
+
             aide_lite.write_capability_ledger(root)
             self.assertEqual(aide_lite.capability_ledger_evidence_validity(root)["state"], "UNKNOWN")
             ledger_path = root / aide_lite.CAPABILITY_LEDGER_JSON_PATH
@@ -180,6 +181,28 @@ class XOS02CapabilityRealityTests(unittest.TestCase):
             self.assertEqual(aide_lite.capability_ledger_evidence_validity(root)["state"], "UNKNOWN")
             binding.write_text('{"inputs":[],"inputs":[]}\n', encoding="utf-8")
             self.assertEqual(aide_lite.capability_ledger_evidence_validity(root)["state"], "UNKNOWN")
+
+    def test_input_mutation_during_generation_cannot_be_current(self) -> None:
+        with aide_lite.public_archive_fixture("aide-public-release-test-") as temp:
+            root = Path(temp)
+            write_fixture(root)
+            seed_path = root / aide_lite.CAPABILITY_SEEDS_PATH
+            original_seed_hash = hashlib.sha256(seed_path.read_bytes()).hexdigest()
+            original = aide_lite.capability_ledger_data
+            def mutate(*args, **kwargs):
+                data = original(*args, **kwargs)
+                seed_path.write_text(seed_path.read_text(encoding="utf-8").replace(
+                    "expected_state: exposed", "expected_state: documented"), encoding="utf-8")
+                return data
+            with mock.patch.object(aide_lite, "capability_ledger_data", mutate):
+                aide_lite.write_capability_ledger(root)
+            binding = json.loads((root / aide_lite.CAPABILITY_BINDINGS_PATH).read_text(encoding="utf-8"))
+            bound_seed = next(entry for entry in binding["inputs"]
+                              if entry["path"] == aide_lite.CAPABILITY_SEEDS_PATH)
+            self.assertEqual(bound_seed["sha256"], original_seed_hash)
+            ledger = json.loads((root / aide_lite.CAPABILITY_LEDGER_JSON_PATH).read_text(encoding="utf-8"))
+            self.assertEqual(ledger["records"][0]["dominant_state"], "exposed")
+            self.assertEqual(aide_lite.capability_ledger_evidence_validity(root)["state"], "STALE")
 
     def test_public_reader_excludes_private_external_and_redirected(self) -> None:
         with aide_lite.public_archive_fixture("aide-public-release-test-") as temp:

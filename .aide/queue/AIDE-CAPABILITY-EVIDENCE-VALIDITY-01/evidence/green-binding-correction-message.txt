@@ -1,0 +1,26 @@
+fix(capability): bind classification to its observed snapshot
+
+## Summary
+- Close the reviewed generation gap before any green native execution.
+## Why
+- Deriving the ledger and then separately observing inputs could bind old classification to new source bytes and incorrectly report CURRENT.
+## Changed
+- Derive ledger records from the same captured public reference observations and parsed seed bytes used for bindings.
+- Preserve existing helper defaults and v0 shape without taking a second full snapshot.
+- Add the eighteenth owned mutation-during-generation regression and exact envelope hashes.
+## Validation
+- PASS: AST and diff check.
+- NOT RUN: all superseded green subjects; corrected18-case native effect pending exact independent review.
+## Changelog
+- Fixed: source changes during ledger generation cannot acquire current binding freshness.
+## Risks
+- Hash observations remain source classifications and carry no execution or authority guarantee.
+## Follow-up
+- Independently accept the replacement source/native effect, dispatch once and verify full results and retirement.
+
+AIDE-Task: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
+AIDE-Phase: preexecution-binding-generation-correction
+AIDE-Result: corrected_source_prepared_not_run
+AIDE-Scope: existing capability producer/test/guide and exact child envelope
+AIDE-Token-Impact: reuse one finite snapshot rather than duplicate evidence hashing
+AIDE-Quality-Gate: exact independent replacement source/native review

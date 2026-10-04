@@ -48,6 +48,9 @@ source hashes are not evidence that tests ran or a host was qualified.
 Bindings cover the finite declared public file hints, seeds, policy, required
 capability records and producer, plus the parsed ledger's deterministic digest.
 They confer no additional authority and provide no cryptographic attestation.
+The ledger classification uses the seed bytes and observed references from that
+same captured snapshot. A source edit during generation therefore invalidates
+the resulting bindings; old classifications cannot be rebound to newer inputs.
 
 `capability status` reports `ledger_evidence_validity`:
 

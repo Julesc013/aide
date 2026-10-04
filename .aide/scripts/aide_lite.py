@@ -6999,7 +6999,9 @@ def capability_ignored_refs(repo_root: Path, refs: list[str]) -> set[str] | None
         return None
 
 
-def capability_evidence_snapshot(repo_root: Path) -> dict[str, object]:
+def capability_evidence_snapshot(repo_root: Path, *,
+                                 seed_records: list[dict[str, object]] | None = None
+                                 ) -> dict[str, object]:
     budget = [CAPABILITY_EVIDENCE_MAX_TOTAL_BYTES]
     seed_entry, seed_content = capability_evidence_read(
         repo_root, CAPABILITY_SEEDS_PATH,
@@ -7008,6 +7010,8 @@ def capability_evidence_snapshot(repo_root: Path) -> dict[str, object]:
         seeds = parse_capability_seed_records(seed_content.decode("utf-8")) if seed_content else []
     except UnicodeError:
         seeds = []
+    if seed_records is not None:
+        seed_records.extend(seeds)
     refs = {CAPABILITY_SEEDS_PATH, CAPABILITY_POLICY_PATH, ".aide/scripts/aide_lite.py",
             *CAPABILITY_REQUIRED_FILES}
     for seed in seeds:
@@ -7175,10 +7179,13 @@ def capability_confidence(seed: dict[str, object], evidence_refs: list[str], mis
     return "low"
 
 
-def capability_record_from_seed(repo_root: Path, seed: dict[str, object], index: int) -> dict[str, object]:
+def capability_record_from_seed(repo_root: Path, seed: dict[str, object], index: int,
+                                *, observed_refs: set[str] | None = None) -> dict[str, object]:
     hints = [normalize_rel(str(item)) for item in seed.get("expected_evidence_hints", []) if str(item)]
-    evidence_refs = sorted(ref for ref in hints if capability_path_exists(repo_root, ref))
-    missing_refs = sorted(ref for ref in hints if not capability_path_exists(repo_root, ref))
+    present = {ref for ref in hints if (ref in observed_refs if observed_refs is not None
+                                       else capability_path_exists(repo_root, ref))}
+    evidence_refs = sorted(present)
+    missing_refs = sorted(set(hints) - present)
     modifiers = sorted(str(item) for item in seed.get("expected_modifiers", []) if str(item))
     classes = sorted(dict.fromkeys(class_name for ref in evidence_refs for class_name in capability_evidence_classes_for_path(ref)))
     if not classes:
@@ -7287,10 +7294,15 @@ def capability_observation_records(repo_root: Path) -> list[dict[str, object]]:
     return sorted(records, key=lambda record: (str(record.get("capability_id", "")), str(record.get("evidence_ref", "")), str(record.get("evidence_class", ""))))
 
 
-def capability_ledger_data(repo_root: Path) -> dict[str, object]:
+def capability_ledger_data(repo_root: Path, *, source_snapshot: dict[str, object] | None = None,
+                           seed_records: list[dict[str, object]] | None = None) -> dict[str, object]:
+    seeds = capability_seed_records(repo_root) if seed_records is None else seed_records
+    observed_refs = (None if source_snapshot is None else {
+        normalize_rel(str(entry["path"])) for entry in source_snapshot["inputs"]
+        if entry["state"] == "observed"})
     records = [
-        capability_record_from_seed(repo_root, seed, index)
-        for index, seed in enumerate(capability_seed_records(repo_root), start=1)
+        capability_record_from_seed(repo_root, seed, index, observed_refs=observed_refs)
+        for index, seed in enumerate(seeds, start=1)
     ]
     counts: dict[str, int] = {state: 0 for state in CAPABILITY_STATES}
     for record in records:
@@ -7544,8 +7556,9 @@ def write_capability_scan(repo_root: Path) -> tuple[WriteResult, WriteResult, di
 
 
 def write_capability_ledger(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
-    data = capability_ledger_data(repo_root)
-    snapshot = capability_evidence_snapshot(repo_root)
+    seeds: list[dict[str, object]] = []
+    snapshot = capability_evidence_snapshot(repo_root, seed_records=seeds)
+    data = capability_ledger_data(repo_root, source_snapshot=snapshot, seed_records=seeds)
     json_result = write_text_if_changed(repo_root / CAPABILITY_LEDGER_JSON_PATH, stable_json_text(data))
     md_result = write_text_if_changed(repo_root / CAPABILITY_LEDGER_MD_PATH, capability_render_ledger(data, repo_root))
     binding = {"schema_version": "aide.capability-evidence-bindings.v1",

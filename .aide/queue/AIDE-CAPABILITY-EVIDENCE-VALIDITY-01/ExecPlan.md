@@ -145,3 +145,11 @@ harmless owned hard-link regression verifies no content open and removes only
 its exact verified alias before public fixture retirement. The private-path
 fixture is preserved until normal owned retirement. No source candidate has
 been dispatched green; original worker/limits remain unchanged.
+
+Review rejected10b before dispatch for the data/binding generation gap. The
+replacement derives the ledger from the same captured finite observed-reference
+set and parsed seed bytes as its binding. Existing helper signatures keep their
+default behavior for source-only callers. No second16MiB snapshot is required.
+The eighteenth owned regression mutates seed state immediately after data
+derivation, confirms bindings retain the original seed identity/classification,
+and requires STALE rather than CURRENT. No previous green native invocation.
