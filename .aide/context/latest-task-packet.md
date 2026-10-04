@@ -2,11 +2,11 @@
 
 ## PHASE
 
-AIDE-CONVERGENCE-AND-DELIVERY-01: current ZIP boundaries passed; exact source sync review.
+AIDE-CONVERGENCE-AND-DELIVERY-01: current ZIP boundaries accepted; observe exact source-only sync.
 
 ## GOAL
 
-Review and synchronize the actual current-ZIP0/1/50 result/source effect.
+Complete the exact reviewed current-ZIP0/1/50 source-only sync once.
 All three native checks passed once with verified collection and retirement.
 Do not repeat completed asset qualification or unchanged refused model work.
 
@@ -74,7 +74,9 @@ accessible and routine model views bounded. No model test follows from status.
 Retain exact source/asset/config/receipt and terminal retirement identities.
 Current original runtime: a2416a8c; current ZIP:4a45922b; payload source:a8e004e7.
 Latest observed sync: SESSION evidence/storage-final-sync.log.
-Pending exact current result sync: STABLE evidence/current-removal-final-sync.log.
+Actual final ref state: STABLE evidence/current-removal-final-sync.log.
+If that terminal receipt verifies completion, do not repeat the sync or native
+jobs. Select genuinely dependency-ready bounded work; keep blocked effects dormant.
 Storage custody and tiny native identity fixture passed with retirement;
 dirty target preserved, zero reclaimed; no target replay.
 Parent/reviewer/cumulative usage and matched efficiency remain unknown here.
@@ -100,5 +102,5 @@ remaining limitations and independent candidate work. Do not claim perfection.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up; not measured usage
-- chars_before_estimate: 4835
-- approx_tokens_before_estimate: 1209
+- chars_before_estimate: 4990
+- approx_tokens_before_estimate: 1248

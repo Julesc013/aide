@@ -69,8 +69,11 @@ qualified_storage_custody_ref: .aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-R
 latest_storage_source_sync_receipt: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/storage-final-sync.log
 qualified_storage_result: dirty_worktree_preserved_fresh_stat_native_fixture_passed_zero_reclaimed
 
-current_removal_qualification: actual_current_zip_0_1_50_PASS_collected_retired_source_sync_review_pending
+current_removal_qualification: actual_current_zip_0_1_50_PASS_collected_retired_independently_accepted
 current_removal_effect_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-effect.json
 
 current_removal_results_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-results.md
 latest_removal_source_sync_receipt: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-final-sync.log
+
+current_removal_technical_acceptance_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-acceptance.json
+current_removal_actual_ref_state: observe_latest_removal_source_sync_receipt_no_automatic_replay

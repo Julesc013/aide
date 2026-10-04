@@ -1,0 +1,34 @@
+{
+  "schema": "aide.current-removal-technical-acceptance.v1",
+  "reviewer": "/root/containment_review",
+  "verdict": "ACCEPT_WITH_NOTES",
+  "source_commit": "2138266bbe3d2146b54ea06848f554f7ef09e66e",
+  "source_tree": "7f38e33f40cdcf5189b98271499b0a2e17443264",
+  "qualified_native_source": "3460ba7a80b515495a58b325d7f64b0abc050fb9",
+  "source_effect_sha256": "1841192d8382e832dd21e12660ecb88b6d6cc54678179618e941550fdf89b10b",
+  "verification_sha256": "ad89898d721941b8cbf84fcbf663ace89c04d417537f3c78109f9a3b238459a3",
+  "blocking_findings": [],
+  "notes": [
+    {
+      "classification": "nonblocking",
+      "disposition": "Reviewer verified frozen LF/CRLF reconstruction and compact sorted JSON receipt digests; exact raw effect/verification identities remain frozen."
+    },
+    {
+      "classification": "nonblocking",
+      "disposition": "Fresh real-user/auth/fetch/ref/source/payload/config/pin/quiescence guards immediately before effects and after; actual maps retained in ignored final receipt."
+    },
+    {
+      "classification": "nonblocking",
+      "disposition": "Only normal local dev/main fast-forwards plus one atomic normal origin dev/main/current-task push. Stable/publication and broader gates stay open."
+    }
+  ],
+  "independent_checks": [
+    "three actual current-ZIP summaries, receipt hashes and collected log/output tree digests",
+    "frozen3460 inputs and effective manifest bindings; success/quiescence/retirement/absent scratch",
+    "20527 retained logical bytes;24 allowed cumulative changed paths; product/canary/assets unchanged",
+    "fast-forward ancestry, actual88 corresponding names and85 protected pairs/e770 digest",
+    "read-only Git show/diff/refs/worktree/status; diff check; selected Python -B hash/normalization/scope/link checks"
+  ],
+  "effects_executed_by_review": false,
+  "stable_publication_acceptance": false
+}

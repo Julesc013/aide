@@ -4,7 +4,8 @@ Three necessary local consumer checks passed once on frozen source
 `3460ba7a80b515495a58b325d7f64b0abc050fb9` / tree `704040e3bbb22945ecc49d1642d2fe860694f208`
 and current ZIP `4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0`. Exact independent preexecution
 ACCEPT_WITH_NOTES had no blocking findings; its notes were disposed before
-dispatch. Postexecution technical/source/ref acceptance is separate.
+dispatch. Independent result/source/ref acceptance at2138266b is recorded
+in [the technical verdict](current-removal-acceptance.json); it is source-only.
 
 | Owned-file boundary | Actual job | Peak scratch bytes | Peak memory bytes | Retained logical bytes |
 |---|---|---:|---:|---:|
