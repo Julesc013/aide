@@ -1,0 +1,35 @@
+fix(docs): align compact template with existing Lite packet contract
+
+## Summary
+- Close the supporting template gap under exact C4 scope admission.
+
+## Why
+- Future briefs need TOKEN_ESTIMATE already required by executable validation.
+
+## Changed
+- Append estimate guidance to the existing compact template; preserve its text.
+- Record one-file scope admission and source-only cross-document rationale.
+
+## Validation
+- PASS: all existing executable required sections and approx_tokens guidance.
+- PASS: old template text and actual-verified current packet preserved.
+- PASS: Harness compile/validate, whitespace and structured message precheck.
+- NOT RUN: projection refresh, native/export, refs and release effects.
+
+## Changelog
+- Fixed: reusable template reflects existing Lite packet estimate requirements.
+
+## Risks
+- Document-size estimate remains distinct from actual tokenizer or host usage.
+- Source/export/integration and release/outer boundaries remain open.
+
+## Follow-up
+- Review exact resulting source; rebind the held metadata effect before use.
+- Retain native23/live2 proof without replay; separately qualify affected source.
+
+AIDE-Task: AIDE-RETIRED-EVIDENCE-CUSTODY-01
+AIDE-Phase: supporting-template-fix-forward
+AIDE-Result: PASS_TEMPLATE_COHERENCE_EXACT_SOURCE_REVIEW_PENDING
+AIDE-Scope: one-admitted-template-and-existing-custody-records
+AIDE-Token-Impact: reusable-estimate-instructions-no-usage-claim
+AIDE-Quality-Gate: exact-source-and-separate-metadata-effect-review-required

@@ -13203,3 +13203,11 @@ bytes; postflight6201 pool entries,total224863629, scratch0. No physical
 recovery, host containment, archive rebuild, ref mutation or publication claim.
 Native23 regression proof remains separate and genuine. Source projection
 refresh/integration and delivered acceptance require their own bounded review.
+
+## 2026-10-05 compact template coherence correction
+
+Independent supporting-scope admission83300fad permits one cross-cutting
+documentation correction: append TOKEN_ESTIMATE/approx_tokens to the existing
+compact template. Executable requirements and original text remain unchanged.
+The concrete current packet passes the actual Lite verifier. Exact resulting
+source review is required; the5d report effect remains unexecuted after change.

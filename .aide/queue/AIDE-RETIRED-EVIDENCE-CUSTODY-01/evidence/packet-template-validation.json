@@ -1,0 +1,25 @@
+{
+  "admission_proposal_sha256": "83300fad95ba8345bd2be6708dfffdb73c1b996a413ab3ee35ae692620f41147",
+  "concrete_packet_unchanged_from_actual_verifier": true,
+  "missing_sections": [],
+  "old_template_text_preserved": true,
+  "required_executable_sections": [
+    "PHASE",
+    "GOAL",
+    "WHY",
+    "CONTEXT_REFS",
+    "ALLOWED_PATHS",
+    "FORBIDDEN_PATHS",
+    "IMPLEMENTATION",
+    "VALIDATION",
+    "EVIDENCE",
+    "NON_GOALS",
+    "ACCEPTANCE",
+    "OUTPUT_SCHEMA",
+    "TOKEN_ESTIMATE"
+  ],
+  "schema": "aide.retired-custody-template-contract-check.v1",
+  "source_code_policy_native_and_live_effects": "unchanged",
+  "status": "PASS",
+  "template_sha256": "b09467f8c47a4f8d90341e94a978104f982b6ecea7e1a9e051ba41b289b9ff9f"
+}

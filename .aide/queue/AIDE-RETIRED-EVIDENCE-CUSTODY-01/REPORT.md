@@ -145,6 +145,8 @@ reference docs, this queue packet/evidence and existing root/generated indexes.
   Independent review rejected the earlier f3 brief. A template-only comparison
   was narrower than the CLI contract; the actual verifier now establishes the
   fix. Native/live evidence is unchanged; no downstream effects occurred.
+- The existing compact template now includes the missing estimate guidance
+  under exact one-file scope admission; resulting source review is pending.
 - Actual managed `job run` plus23 source tests: PASS; complete postflight and
   retirement verified. Full raw stderr contains23-test/OK result, no skips.
 - `job custody plan/read/apply/verify/read` for the exact two jobs: PASS;

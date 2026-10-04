@@ -1,0 +1,23 @@
+{
+  "maintenance_source_verdict": "ACCEPT_WITH_NOTES",
+  "native_execution_authorized": false,
+  "notes": [
+    {
+      "classification": "nonblocking_disposed",
+      "note": "Savings logical-only; source/export/integration/release/outer boundaries separate."
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "After source/template amendment report effect remains unexecuted until rebound and independently reviewed."
+    }
+  ],
+  "record_kind": "controller transcription of independent reviewer message",
+  "report_effect_sha256": "cb94866268e2ebedf1d99fdf4e8f463407d96fb293e0a5607b811bfcac2f1a27",
+  "report_effect_verdict": "ACCEPT_WITH_NOTES_EXACT_5D_ONLY",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.retired-custody-source-template-scope-review.v1",
+  "source_commit": "5d93866b4a21acf067862a8fbc6ff153ab079df4",
+  "source_tree": "aa88418d8b3be5d2ee4f424debcc0867d1da664f",
+  "template_admission_verdict": "ACCEPT_ADMISSION_ONLY",
+  "template_proposal_sha256": "83300fad95ba8345bd2be6708dfffdb73c1b996a413ab3ee35ae692620f41147"
+}

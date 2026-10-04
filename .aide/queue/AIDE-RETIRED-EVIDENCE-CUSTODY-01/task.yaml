@@ -30,6 +30,7 @@ scope:
     - .aide/intake/latest-workunit-draft.json
     - .aide/intake/latest-workunit-draft.md
     - .aide/context/latest-task-packet.md
+    - .aide/prompts/compact-task.md
     - PLANS.md
     - IMPLEMENT.md
     - DOCUMENTATION.md
@@ -74,3 +75,5 @@ retained_gates:
 permitted_local_state:
   - .aide.local/retired-evidence-custody-test-execution.json
   - .aide.local/retired-evidence-custody-test-job.json
+
+supporting_template_amendment: Independent admission83300fad allows only the missing TOKEN_ESTIMATE/approx_tokens documentation in the existing compact template, preserving all earlier content and executable policy. Exact resulting source review required; metadata/native effects remain separately gated.

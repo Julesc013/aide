@@ -1,0 +1,17 @@
+{
+  "additional_allowed_path": ".aide/prompts/compact-task.md",
+  "authority": "recorded campaign delegation, independent exact supporting-scope admission required before template edit",
+  "canonical_amendment_records": "current C4 task.yaml, ExecPlan.md, evidence and existing root execution/doc indexes only",
+  "current_template_sha256": "196806a7b1547cc70cb972a71af1ffa2745b7451b2ab33e83b74da633f12cbe6",
+  "demonstrated_gap": "legacy template omits TOKEN_ESTIMATE/approx_tokens required by existing executable PACKET_REQUIRED_SECTIONS; a template-only comparison did not establish the actual contract",
+  "non_goals": [
+    "no executable policy/code change",
+    "no source-of-truth switch or new template/store",
+    "no new test suite, native effects, exports, refs or releases from admission"
+  ],
+  "only_proposed_change": "append TOKEN_ESTIMATE with explicit characters-div4 approx_tokens placeholder and unknown actual tokenizer/host usage; preserve existing template/manual content",
+  "proposal_only": true,
+  "schema": "aide.retired-custody-supporting-template-scope-proposal.v1",
+  "status": "candidate_unadmitted_unimplemented",
+  "validation": "actual CLI missing_sections/required section constants and verify_task_packet on current brief; Harness and whitespace; exact source review after change"
+}

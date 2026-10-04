@@ -220,3 +220,15 @@ helper:13 required sections, token estimate, four context refs, zero warnings/
 errors. Char/4 is an estimate, not host usage. The canonical v2 validation and
 f3 rejection remain recorded. Legacy template repair is a separate bounded
 documentation follow-up; it does not block this corrected actual packet.
+
+### Minimal supporting template correction admitted
+
+Exact5d maintenance source received ACCEPT_WITH_NOTES, all notes explicitly
+nonblocking/disposed. Supporting one-file scope proposal83300fad received
+independent ACCEPT admission only. Add .aide/prompts/compact-task.md to this
+child's allowlist and append its missing TOKEN_ESTIMATE/approx_tokens guidance;
+preserve all existing text and executable requirements. This closes the known
+template/runtime documentation gap, without new contracts or token claims.
+The report effectcb948662 was accepted only against5d and stays unexecuted
+after this source change; rebind and seek exact review before its four commands.
+Native source/export and integration effects remain separate.
