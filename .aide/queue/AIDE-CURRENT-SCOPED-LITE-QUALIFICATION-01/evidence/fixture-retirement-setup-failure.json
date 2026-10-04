@@ -1,0 +1,15 @@
+{
+  "job_id": "46e91fbfad5041828a02731d782b384f",
+  "effect": "4ae1f583d865d3f328d27cdb28e7479a4becaacf2eb00993a346b0b0ef43bf33",
+  "result": "NATIVE_SANDBOX_SETUP_FAILED_BEFORE_HELPER",
+  "helper_started": false,
+  "native_job_quiescent": true,
+  "lease_unchanged": true,
+  "evidence_renames_applied_and_verified": true,
+  "fixture_retired": false,
+  "error": "windows sandbox failed: helper_unknown_error: setup refresh had errors",
+  "local_sdk_log": "C:/Users/Jules/.codex/.sandbox/sandbox.2026-10-04.log",
+  "bounded_error_category": "SDK grant attempts on exact private leaf fail CreateFileW for sandbox_group and root_cap",
+  "credentials_read": false,
+  "recovery_plan": "reuse original admitted TMP write root, rather than requesting SDK setup on inaccessible leaf; exact helper custody guard unchanged; separately reviewed modified effect before retry"
+}

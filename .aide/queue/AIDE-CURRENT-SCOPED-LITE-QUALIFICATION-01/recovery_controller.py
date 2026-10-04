@@ -85,7 +85,10 @@ def main():
         rules = {":root": "deny", ":minimal": "read", str(REPO): "read"}
         rules.update({path: "read" for path in selection["read_roots"]})
         rules.update({str(REPO / ".aide.local"): "deny", str(roots["control"]): "deny",
-                      str(active): "read", str(scratch): "read", str(leaf): "write" if args.apply else "read"})
+                      str(active): "read", str(scratch): "read"})
+        # Reuse the original job's approved writable TMP. An exact private
+        # leaf grant triggers SDK ACL setup on a directory Jules cannot open.
+        rules[str(scratch / "tmp") if args.apply else str(leaf)] = "write" if args.apply else "read"
         profile = "aide_owned_fixture_" + ("apply_" if args.apply else "inspect_") + record["job_id"]
         inline = "{" + ",".join(json.dumps(k) + "=" + json.dumps(v) for k, v in rules.items()) + "}"
         argv = [selection["codex_executable"], "sandbox", "-P", profile,
@@ -94,7 +97,7 @@ def main():
                 sys.executable, "-B", str(TASK / "recover_fixture.py")]
         if args.apply:
             argv.append("--apply")
-        logs = (scratch / "output" / "recovery-fixture-retirement" if args.apply
+        logs = (scratch / effect["retirement_log"] if args.apply
                 else scratch / "logs" / "fixture-custody-observation")
         environment = owner.sanitized_environment()
         environment.update(TEMP=str(scratch / "tmp"), TMP=str(scratch / "tmp"),
