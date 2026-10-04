@@ -33,5 +33,15 @@
     3781016413010784355,
     3659174699367761
   ],
-  "approved_observation": null
+  "approved_observation": {
+    "fixture_identity": [
+      3781016413010784355,
+      3659174699367761
+    ],
+    "owner_sid": "S-1-5-21-2168396775-1281633702-301206425-1003",
+    "entries": 1085,
+    "logical_bytes": 4138257,
+    "file_custody_digest": "3429675e164bb725b86caeb96a4fec8f7ce8e99248dfdd01531f5e3ca8336de2"
+  },
+  "recovery_after_fixture_retirement": "Existing public job recover with unchanged original scoped configuration; preserve interrupted PermissionError and null exit; collect original output/logs and retire same scratch/reservation, no replay."
 }

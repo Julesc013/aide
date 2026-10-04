@@ -1,0 +1,16 @@
+{
+  "acl_changes_by_helper": 0,
+  "apply": false,
+  "creation_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+  "entries": 1085,
+  "file_custody_digest": "3429675e164bb725b86caeb96a4fec8f7ce8e99248dfdd01531f5e3ca8336de2",
+  "fixture": "tmp/aide-release-validate-g66uoc43",
+  "fixture_identity": [
+    3781016413010784355,
+    3659174699367761
+  ],
+  "job_id": "46e91fbfad5041828a02731d782b384f",
+  "logical_bytes": 4138257,
+  "owner_sid": "S-1-5-21-2168396775-1281633702-301206425-1003",
+  "status": "VERIFIED"
+}
