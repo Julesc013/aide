@@ -1,0 +1,24 @@
+chore(release): guard original temp identity before sandbox setup
+
+## Summary
+- Freeze exact observed public archive custody for conditional retirement.
+## Why
+- The accepted observation stopped before traversal or retirement.
+## Changed
+- Check frozen ordinary TMP device/inode before sandbox setup or any rename; preserve all preceding guards.
+- Keep original three logs within the collector five-entry bound; cap retirement logs at 8 KiB within 64 KiB retention.
+## Validation
+- PASS: custody inspection verified all entries and lease preservation; retirement remains review-pending.
+## Changelog
+- Changed: added precise metadata to an owned recovery refusal.
+## Risks
+- Only this exact verified fixture is proposed for retirement; no other deletion or replay.
+## Follow-up
+- Independently review exact retirement/recovery effect before applying.
+
+AIDE-Task: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
+AIDE-Phase: owned-fixture-observation
+AIDE-Result: review_pending
+AIDE-Scope: exact owned task recovery helper and evidence
+AIDE-Token-Impact: bounded terminal metadata; no model call
+AIDE-Quality-Gate: independent review required

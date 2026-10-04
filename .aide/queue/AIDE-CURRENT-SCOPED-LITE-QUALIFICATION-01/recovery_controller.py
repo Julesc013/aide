@@ -78,6 +78,10 @@ def main():
         scratch_info = scratch.lstat()
         if [scratch_info.st_dev, scratch_info.st_ino] != effect["scratch_identity"]:
             raise RuntimeError("strong recovery scratch identity changed")
+        temp_root = scratch / "tmp"
+        temp_info = owner.ordinary(temp_root, directory=True)
+        if [temp_info.st_dev, temp_info.st_ino] != effect["tmp_identity"]:
+            raise RuntimeError("strong original TMP identity changed")
         if args.apply:
             retain_observation_logs(owner, scratch, effect)
         leaf = scratch / effect["owned_fixture"]

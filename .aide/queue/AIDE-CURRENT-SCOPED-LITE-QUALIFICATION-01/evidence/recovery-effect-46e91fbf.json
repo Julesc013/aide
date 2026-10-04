@@ -25,7 +25,7 @@
   "acl_machine_or_config_change": false,
   "model_call": false,
   "helper_sha256": "4082f9cb172d050990279783eeb7f7025efa3459565329f786b9b77af98005a8",
-  "controller_sha256": "15131378eaef163b4c0f5c9755fcf2254ae7b27243d3e7c6818fad7407925074",
+  "controller_sha256": "1817f2df72b348f88d6db250d9f2123188827bfe1d64bafe0a45522b89e701a3",
   "controller_routing": "Existing pinned WindowsJobHost plus existing codex sandbox, exact same owned scratch and job ID under estate lock; no AIDE job resubmission; original result/lease untouched.",
   "observation_log": "logs/fixture-custody-observation",
   "owner_sid_required": "S-1-5-21-2168396775-1281633702-301206425-1003",
@@ -155,5 +155,9 @@
     "sha256": "4eb2ea4cdbd112c28dd5dd1904fa99abdbd9fa0fe97265cfb3c2397e75b0f762"
   },
   "apply_writable_scope": "exact original owned scratch/tmp; no direct private leaf setup; helper mutates only custody-approved leaf",
-  "preserved_failed_retirement": "output/recovery-fixture-retirement"
+  "preserved_failed_retirement": "output/recovery-fixture-retirement",
+  "tmp_identity": [
+    3781016413010784355,
+    1688849862428052
+  ]
 }

@@ -21,6 +21,22 @@
       "source": "bc8bc2e9bfc585f496b57855943b9009dec52d3e",
       "verdict": "REQUEST_CHANGES",
       "blocking": "Existing collector allows5 log entries; helper subdirectories produce15. Retain exact logs under existing output allowance instead; no discarded evidence."
+    },
+    {
+      "source": "0d726da44eae19d62291a2f3562c75fbd0262902",
+      "verdict": "REQUEST_CHANGES",
+      "blocking": "Check frozen scratch identity before evidence moves; resolved8db958aa."
+    },
+    {
+      "source": "8db958aa576472650eaebc49988f34b7f18b4e31",
+      "verdict": "ACCEPT_WITH_NOTES",
+      "notes_nonblocking": true,
+      "scope": "exact three evidence moves/verified fixture retirement/frozen exported CLI recover; subsequent SDK setup failed before helper."
+    },
+    {
+      "source": "d8f44df464ee283d4ae50a0c65721e837fd91a84",
+      "verdict": "REQUEST_CHANGES",
+      "blocking": "Bind ordinary original TMP identity before granting same original write scope."
     }
   ],
   "reviewer": "containment_review"
