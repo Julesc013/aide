@@ -1,0 +1,98 @@
+{
+  "job_id": "dc069cd9c81f4ccf81c5959a14519685",
+  "receipt_sha256": "36c6ea3de9fbeb3fbcae067e897b4508367fdc0dace15ca2fdd9ea09775b40c5",
+  "manifest_digest": "52047fae054b87f724634c6b3b2409e92080cace327e67b98a3b823bc20c5b70",
+  "collected_manifest": {
+    "logs": "634805840c33949a53407abfc1ed18fbb348dbe2591791c553bf00cecf721049",
+    "output": "582ef8607602354b6faa1bad61de38ecab060933e697b7d050efd105f6226799"
+  },
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 330551296,
+    "scratch_bytes": 29375912
+  },
+  "scoped_execution": null,
+  "retained_bytes": 3042992,
+  "scratch_absent": true,
+  "active_absent": true,
+  "reservation_released": true,
+  "collection_verified": true,
+  "proof_sha256": "f996fe6b7d702f8bf7b2e94db3dd3ffb902c0eddd475834ebf7682f701312f77",
+  "case_indices": [
+    0
+  ],
+  "retired_fixtures": [
+    "case-00"
+  ],
+  "asset": {
+    "assets": {
+      "aide-lite-v1.0.0.SHA256SUMS.txt": "aeded870e201d79a8d4689b326f1cb62434e0aa6962f5b9ef1fbc5c3cb9dad8b",
+      "aide-lite-v1.0.0.manifest.json": "7c737cfdc224dec90aa4c7fa03ed74a5ba2becee8a77f65c0d5f1c9a317068fa",
+      "aide-lite-v1.0.0.tar.gz": "4b3e22ee351aa31e9fdb5f50e89affd38ef3908163083058f2b151c0c57d8541",
+      "aide-lite-v1.0.0.zip": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0"
+    },
+    "cli_sha256": "f58f1cf419c09938c43d4a34779e9aba0be8d01455163b7e801dfa7d888a0e88",
+    "identity": {
+      "artifact_state": "immutable_release_payload",
+      "intended_channel": "stable",
+      "lifecycle_apply_platform": "Windows only; exact tested environment in effect evidence",
+      "offline_scope": "local CLI after archive acquisition; no native network isolation claim",
+      "predecessor_matrix": [],
+      "profile_id": "aide-lite-local-windows",
+      "public_cli_forms": [
+        "doctor",
+        "validate",
+        "context",
+        "pack --task <task>",
+        "verify --evidence <evidence-path>",
+        "task inspect",
+        "task status",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+        "plan-removal --target <target>",
+        "apply-removal --target <target> --expect-plan <digest>",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+        "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+        "job inspect --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json> --full",
+        "job recover --config <local-config>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>",
+        "job usage --stream <codex-exec-jsonl>",
+        "job usage --attempt-set <attempt-roster-json>",
+        "job context"
+      ],
+      "release_axis": "aide_lite_portable_package",
+      "schema_version": "aide.stable-release-identity.v1",
+      "source_commit": "a8e004e7235902cd1d290d82cbaccb9a1bd65bb1",
+      "source_pack_checksums_sha256": "c94b05ef9147f28e4014b14d4042333f2888b2b86db9e2b11937b72b0e5fa7e7",
+      "source_repo": "julesc013/aide",
+      "source_tree": "acb59c15a6b5b5678b94eb44d36b5aafdc939004",
+      "support_mode": "companion",
+      "support_tier_candidate": "T3",
+      "tag": "aide-lite-v1.0.0",
+      "version": "1.0.0",
+      "version_policy_sha256": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253"
+    },
+    "tar_sha256": "4b3e22ee351aa31e9fdb5f50e89affd38ef3908163083058f2b151c0c57d8541",
+    "zip_sha256": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0"
+  },
+  "result": "PASS_PARTIAL_FIRST_ONLY"
+}

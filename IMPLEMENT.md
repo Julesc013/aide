@@ -13005,3 +13005,13 @@ retired. consumer-effect-manifest.json freezes actual new ZIP/TAR/CLI identities
 for first/rest qualification under unchanged256 MiB aggregate. No publication,
 original runtime promotion or main/dev change is implied. Original failed
 preflight and recovery evidence remain retained.
+
+### Current local asset proof — 2026-10-05
+
+AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 completed all8 current-byte consumer
+cases,38 public forms/39 retained raw outputs plus12 job observations, Task OS
+and byte-identical four-asset replay. All fixtures/jobs retired and reservations
+released. REPORT.md consolidates current outcome and supersedes preparation
+labels only for completed checks. Exact artifact/runtime promotion review is
+pending; original configuration/main/dev/publication remain unchanged. Native
+original-entry probe is prepared, unrun, subject to that bounded review.

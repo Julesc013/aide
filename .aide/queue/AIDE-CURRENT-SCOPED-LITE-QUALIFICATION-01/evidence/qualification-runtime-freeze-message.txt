@@ -1,0 +1,28 @@
+chore(release): record current consumers and runtime promotion plan
+
+## Summary
+- Close actual local consumer/replay proof and prepare only the qualified runtime pin effect.
+## Why
+- Current asset acceptance must use exact present bytes, and the original entry still intentionally binds the old archive.
+## Changed
+- Bind all eight cases,38 forms,39 raw command outputs plus12 job observations and Task OS to current assets.
+- Record receipts, collection/retirement, byte replay and a narrow additive runtime candidate with a necessary native entry probe.
+- Consolidate full current development/report/index state while preserving historical failures and separate gates.
+## Validation
+- PASS: both consumer groups, all fixture/job retirement and digests; all four replay bytes identical.
+- PASS: native probe AST and exact promotion semantic diff limited to archive SHA and additive24-member closure.
+- REUSED:49 source checks/export/full validation and existing71 unchanged core/host evidence.
+- NOT RUN: runtime promotion/probe/integration/publication; exact postqualification review pending.
+## Changelog
+- Changed: local asset qualification is complete and original entry promotion is precisely bounded.
+## Risks
+- Outer client/read isolation/hard quota, historical/live/matched efficiency and public stable gates remain open.
+## Follow-up
+- Obtain exact artifact/runtime effect acceptance, apply only frozen original config promotion, run native probe, then review integration separately.
+
+AIDE-Task: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
+AIDE-Phase: current-qualification-runtime-freeze
+AIDE-Result: consumers_replay_PASS_artifact_pin_review_pending
+AIDE-Scope: own queue/proof/probe, three root indexes
+AIDE-Token-Impact: unchanged source tests reused; no model invocation
+AIDE-Quality-Gate: exact artifact and original pin promotion review pending

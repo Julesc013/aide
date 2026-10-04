@@ -1,0 +1,34 @@
+{
+  "schema": "aide.current-qualified-runtime-promotion.v1",
+  "original_path": ".aide.local/scoped-job-entry-01-execution.json",
+  "before_sha256": "1da3a51a9f1080c38897a1c5df3d8bdb438715e4fbf3d5d07f274ae6175dde88",
+  "candidate_ref": "evidence/promoted-runtime-configuration.json",
+  "after_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "archive": ".aide/release/stable/aide-lite-v1.0.0.zip",
+  "archive_sha256": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+  "closure_count_before": 23,
+  "closure_count_after": 24,
+  "only_semantic_changes": [
+    "runtime.sha256",
+    "runtime.files additive core/execution/scoped_host.py; existing23unchanged"
+  ],
+  "artifact_proof_ref": "evidence/current-qualification.json",
+  "artifact_proof_sha256": "36dcf78dbd1f8029fc1872c93013dd809cbe8f6d0a749373dbc2cc3cfe5a3368",
+  "required_before_effect": "exact independent current asset and pin promotion verdict; all actualchecks preserved",
+  "required_after_effect": "native necessary entry probe with existing config/roots/limits, receipt/collection/retirement; stop integration on failure",
+  "recovery": "exact original configuration bytes at evidence/repair-configuration.json remain; after failure reconcile owned probe then restore old4assets and originalconfig from frozen Git/custody",
+  "excluded_effects": [
+    "integration/push/tag/publication",
+    "model/historical/hostpermissions",
+    "otherdrives/unknowncleanup/targets"
+  ],
+  "entry_probe_ref": "qualified_runtime_probe.py",
+  "entry_probe_sha256": "04800c69038935c3a501e9699d01689db58b2ca3c28da8a21c9bbbb9682c7864",
+  "probe_acceptance": [
+    "original selected config exact reviewed SHA",
+    "CodexSandboxOffline native worker",
+    "configuration-bound inspect0 with same active job/config",
+    "no outer containment/hard quota claim",
+    "bounded raw/proof collection and terminal retirement"
+  ]
+}

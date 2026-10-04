@@ -84,7 +84,7 @@ remain unqualified. All previous candidates and reviews remain historical.
 
 - [x] Current source/state and missing artifact boundary identified.
 - [x] Frozen source and local build/replay envelope independently accepted; build passed/retired.
-- [ ] Current artifacts and full bounded consumer proof verified.
+- [x] Current artifacts, all8 consumers/38forms/12job observations and byte-identical replay verified.
 - [ ] Exact local artifact/runtime/integration acceptance and effects complete.
 
 ## Demonstrated admission repair amendment
@@ -200,3 +200,13 @@ first/rest groups. Original configuration/pin remains unchanged; publication
 and artifact acceptance are not inferred. Failed clean-source preflight33662de9
 is preserved, retired, assets unchanged, caused by the controller prematurely
 adding its review record; this was reconciled before the successful dispatch.
+
+## Actual qualification and proposed original runtime promotion
+
+Both consumer groups and byte replay passed/retired. Actual proof and51 raw
+output identities bind the current asset. Independent asset/promotion review
+precedes only runtime.sha256 and the additive24-member closure promotion; roots,
+all limits, account/model route and canonical scope stay identical. After that
+accepted effect, run a necessary native entry probe through the original selected
+configuration and verify collection/retirement before integration consideration.
+No new suite/model invocation/host setup is inferred.

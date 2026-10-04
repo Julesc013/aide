@@ -1,142 +1,168 @@
-# Current scoped Lite qualification
+# AIDE current qualification and development report
 
-## Current outcome
+Current outcome: 2026-10-05, Australia/Sydney. Architecture audit baseline:
+3d186d05; accepted source-sync baseline bf559c0a. Later source and consumer
+identities below supersede only the corresponding preparation statements.
 
-The exact source repair passed all49 required affected tests, export generation
-and full validation as CodexSandboxOffline in jobb92f98a4. Its scratch and active
-record are absent, reservation released, and full evidence retained. All846
-export checksums were recomputed. Independent source and local build/envelope review accepted the exact bytes.
-The new four-file local candidate passed build/validation in job2069e86b and
-retired. Consumer-effect review is next; main/dev remain bf559c0a. No
-publication, artifact acceptance or runtime-pin promotion has occurred.
+## Actual outcome
 
-The quiescent earlier job46e91fbf is also recovered and retired. Its original
-PermissionError/null exit remains a failed historical attempt. Source proof
-never changes that record into a pass.
+Two demonstrated release-path defects were repaired. Source qualification
+passed49 affected checks with no skips, export generation and full repository
+validation. All846 export checksums were recomputed. Independent source/local
+build acceptance was obtained for1813efe7; actual current assets then built and
+validated through a separate pinned supervisor.
 
-The normal worker path is useful and bounded within its tested scope. This
-outer controller/editor still has Full Access; whole-session containment,
-read isolation and a hard filesystem quota remain unqualified.
+All8 current-byte consumer cases passed exactly once in two serial groups.
+The38 public forms bind39 retained command outputs plus12 raw job observations.
+Task OS checks passed. Deterministic replay reproduced all4 assets byte for byte.
+Each fixture and terminal job was retired, evidence collected and reservations
+released. This is actual local qualification; exact postqualification artifact
+and original-runtime promotion acceptance are now pending.
 
-## Demonstrated defects and repairs
+Main/dev remain bf559c0a while this bounded branch is qualified. There is no
+new stable tag or public release. The original scoped configuration is unchanged;
+its old archive pin intentionally refuses new candidate bytes until reviewed
+promotion. The frozen export selection remains the usable supervisor meanwhile.
 
-1. Stable-build/validate required export as a writable destination while using
-   it as read-only supervisor input. The two commands now request only release
-   output through the existing canonical guard. Five regressions passed in the
-   interrupted repair job; other packaging reservation requirements are intact.
-2. Windows Python private temp excluded the separate Jules monitor/retirement
-   account. Source export succeeded, but full validation stopped. The exact
-   quiescent job46e91fbf and held reservation were preserved. Native owner
-   observation verified1085 public archive entries/4138257 bytes.
-3. The qualified public_archive_fixture repair creates only named public archive
-   and selected release-test directories under authenticated job TMP, inheriting
-   its existing permissions. No global tempfile monkeypatch, monitor bypass,
-   new pool or AIDE ACL/account/machine setter is used. Unmanaged/unrelated
-   temp behavior remains private. Eight regressions, actual cross-account measurement/retirement and36 affected
-   release tests passed in the recorded native source job.
+## Code and delivered behavior
 
-Owned recovery preserves original/helper logs, checks exact lease and directory
-identities, and removes only frozen public archive custody under its creation
-account. Failed observations, reviews and setup attempt remain evidence.
-That original allocation was reconciled before the successful source job.
+- Stable-build and stable-validate request only their release destination through
+  the existing canonical guard. They no longer overreserve read-only export.
+  Shared packaging still requires its original destinations and overlap guard.
+- Only named public archive/release-test fixtures under authenticated existing
+  job TMP inherit that allocation's permissions. Windows private temporary
+  directories had prevented the separate controller from monitoring/retiring
+  public bytes. No global tempfile override, monitor bypass or AIDE ACL setter
+  was introduced. Unmanaged/unrelated directories retain stdlib behavior.
+- Cleanup refuses changed identities, redirected entries and shared files;
+  readonly-file retirement stays confined to verified public fixture custody.
+- The actual source49 proof is hash-bound and reused for the unchanged36 release
+  tests during build. All delivered consumer checks and replay used current bytes.
+- The original runtime promotion proposes only its archive SHA and additive
+ 24-member dependency closure. Existing23 member hashes, storage, limits,
+ canonical scope and account/model route are preserved. A necessary native
+ entry probe is prepared, unrun, and subject to exact independent review.
 
-## Evidence and verification
+## Verification and resource evidence
 
-- First build job27de35f9 refused before archive mutation and retired scratch,
-  active record and reservation.
-- Repair job46e91fbf ran5 admission tests successfully and refreshed export,
-  then stopped with PermissionError/null terminal exit. Full validation did
-  not pass; the partial export checkpoint is explicitly unqualified.
-- Frozen helper custody inspection passed in the original native job identity
-  and preserved its lease. Only known public ZIP bytes were compared.
-- Native source checks passed:5 admission,8 public-fixture and36 release tests,
-  all without skips; export and full validation exit0. Exact independent
-  source/build acceptance is pending before asset effects.
-- Previously accepted71 core/host tests and their export/full-validation job
-  remain unchanged recorded evidence; this task does not rerun them merely
-  because packaging and fixture code changes.
+| Evidence | Actual result | Scratch peak | Retained bytes |
+|---|---|---:|---:|
+| Source b92f98a4 |5 admission +8 public fixtures +36 release checks; export/validate0; no skips; retired |6095005 |4903513 including complete logs |
+| Build2069e86b |stable-build/stable-validate0; source proof reused; retired |8508 |13787 |
+| First dc069cd9 |case00 import/update/partial recovery PASS; retired |29375912 |3042992 |
+| Rest eff8ab1f |cases01..07 lifecycle/context/partial/public/restart/job/TaskOS PASS; retired |28532513 |5809600 |
+| Replay2e0b0e5e |all4 frozen asset hashes identical; retired |8294 |see replay-result.json |
 
-## Effective scope and resources
+Source peak memory307408896 bytes; first330551296; rest334970880.
+Scratch maxima are observations, not hard disk quotas or sums of simultaneous
+use. Retained values include receipts/logs; result and log allowances are distinct.
+Parent, independent-review and historical usage are not fully attributed here.
+Deterministic workers made no nested model requests; that does not mean this
+whole campaign cost zero or prove savings. Matched-outcome efficiency is pending.
 
-Source: exact CLI and selected release tests/reference, owned queue records,
-three root indexes, current campaign state and affected export. Stable local
-asset build is separately reviewed for exactly4 files; publication is excluded.
-Approved output remains D:/Projects/AIDE/.aide.local/execution. Original repair
-limits are8 MiB scratch/64 KiB retained/6 MiB logs/900s/2 GiB memory/32 processes,
-with16 MiB canonical export reservation. Build16 MiB/1 MiB/1 MiB,
-consumer-first40 MiB/4 MiB/1 MiB and consumer-rest34 MiB/7 MiB/1 MiB
-envelopes retain256 MiB aggregate admission. The superseded single consumer
-envelope is historical and will not be dispatched.
+The original single consumer reservation would exceed the256 MiB monitored
+aggregate once full source logs were retained. Predeclared first40/4/1 MiB and
+rest34/7/1 MiB envelopes fit fresh locked admission without deleting proof,
+increasing the cap, changing drives or dropping cases. All8 indices occur once.
+Code owned waiting, monitoring, collection and retirement; no duplicate job was
+submitted while a result was uncertain. Outer-host wakeup efficiency is unproven.
 
-Windows job process/memory/log controls and tested worker write placement
-are enforced within exercised scope. Aggregate disk/growth is monitored,
-not a filesystem quota. The outer shell/editor is still Full Access, model
-file-editing/plugin route coverage and read exclusion remain unqualified.
+[Current proof](evidence/current-qualification.json),
+[form coverage](evidence/current-public-form-coverage.json),
+[consumer first](evidence/consumer-first-result.json),
+[consumer rest](evidence/consumer-rest-result.json),
+[byte replay](evidence/replay-result.json) retain exact SHA/receipt references.
+Named raw command results remain in the configured D retained pool. They were
+not discarded, copied into a new archive or ingested wholesale into context.
 
-## Other useful development
+## Candidate identity
 
-The accepted architecture reconciliation stages12 candidates without claiming
-all are admitted or delivered. Recommended sequence: C1 truthful operational
-projections and C8 explainable operations, then C2 compatibility, C3 portable
-checkpoints and C4 resource ownership. Later: contributor conformance (C9),
-recipe invalidation (C11), request lifecycle (C5), asset metadata (C6), scoped
-lesson correction (C7), characterized CLI extraction (C10), and attribution
-coverage (C12). Each needs its own bounded WorkUnit and real acceptance.
-See ../AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md for19 spec amendments,
-244 preserved UR/UC records, dependencies, source custody and full mapping.
+ZIP SHA256:4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0.
+TAR SHA256:4b3e22ee351aa31e9fdb5f50e89affd38ef3908163083058f2b151c0c57d8541.
+Delivered CLI:f58f1cf419c09938c43d4a34779e9aba0be8d01455163b7e801dfa7d888a0e88.
+Payload sourcea8e004e7235902cd1d290d82cbaccb9a1bd65bb1, with exact pack checksums
+and source tree recorded in current-qualification.json. Intended local version
+1.0.0 and candidate T3/companion posture are not public stable certification.
+The old candidate survives through exact baseline Git objects, without a new
+physical backup. Its historical acceptance does not cover these new bytes.
 
-## Remaining gates
+## Effective scope
 
-Source checks/full validation and independent source/local build acceptance
-passed. The four local assets were regenerated and validated; current consumers,
-replay, exact artifact/pin/integration acceptance remain pending. The original
-candidate is preserved by exact Git identities; its old review is not inherited. Historical10 decisions and live model
-permission remain absent; matched outcome efficiency, constrained outer-client
-workflow, publication/downloaded-consumer proof and authorized downstream
-adoption remain separate gates. Wider reported disk sprawl has not been
-measured or reclaimed here. Unknown/unique files and other projects are
-preserved; FacMan product development remains paused.
+Approved roots remain D:/Projects/AIDE/.aide.local/execution/{scratch,retained,control}.
+One heavyweight job at a time; finite phase allowances;2 GiB memory,32 processes,
+900-second job limit,10 GiB disk and4 GiB memory headroom. No other drive,
+worktree, clone, directory layout, machine permission or unknown file deletion.
 
-This task does not certify perfect software or full product support. No tag,
-public release, model/provider invocation, drive reshuffle, whole-drive content
-scan or blanket cache wipe occurred.
+The exercised worker write scope and Windows process/memory/log controls are
+qualified within the recorded routes. Aggregate capacity is cooperative admission
+and monitored growth. It is not a hard filesystem quota or machine-wide budget.
+Host management metadata/caches and unrelated sessions remain outside that claim.
 
-## Verified owned recovery outcome
+This outer controller/editor still has Full Access. Actual model editing/API/plugin
+route coverage, read exclusion and a normal constrained client workflow remain
+unqualified. Command-only qualification does not close those gaps. The current
+backend is pinned Codex0.145.0; outer application identification/setup remains
+an external client step, not another worker rewrite.
 
-Exact custody retirement and existing public recover succeeded. Job46e91fbf is
-retired; scratch and active record are absent, reservation released, all original
-and helper evidence retained with verified collection digests. Its original
-PermissionError/null exit remains intact. This closes recovery, not validation.
-The first recover invocation included unsupported display flag `--full` and was
-refused by argparse before effects; the supported invocation succeeded.
-No job replay, new workspace, machine permission change or archive mutation was
-used. Receipt and actual retained bytes are in evidence/same-job-recovery-result.json.
+## Documentation, specs and what can proceed
 
-## Verified source qualification outcome
+The accepted [architecture report](../AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md)
+reconciles19 existing topic owners and preserves244 original UR/UC statements,
+import custody and draft status. Proposed semantic amendments stay separate from
+implemented code, operation grants, support claims and release acceptance.
+README/Profile/runtime summaries and three root indexes were corrected against
+actual source; current proof updates continue through those same indexes.
 
-Jobb92f98a4 passed5 admission,8 public-fixture and36 release tests with no skips,
-export generation and full validation. The actual worker was CodexSandboxOffline;
-peak scratch6095005 bytes and memory307408896 bytes, canonical export4180161.
-Its scratch/active are absent and reservation released. Collection digests and
-all846 export checksum entries were independently recomputed locally. Retained
-4903513 bytes includes full logs; result output separately obeys64 KiB allowance.
-Evidence is in public-fixture-native-result.json and source-qualification.json.
-Independent source/local build acceptance was obtained against1813efe7;
-asset acceptance remains separate.
+The [staged roadmap](../../../docs/roadmap/staged-expansion-roadmap.md) contains
+12 candidate increments, each requiring a bounded WorkUnit and acceptance:
 
-The required full logs make the original all-consumer reservation exceed the
-finite aggregate cap. Predeclared first/rest groups retain exactly all8 cases,
-unchanged acceptance and full results; no log discard or allowance increase.
-Independent exact build effect review precedes any archive write.
+| Order | Candidate | Concrete next outcome |
+|---|---|---|
+| First |C1 truthful projections |Source/config/route changes invalidate affected claims; declarations cannot masquerade as runtime proof |
+| First |C8 explainable operations |One actionable failure reason and effective configuration provenance; unchanged setup does not resubmit work |
+| Next |C2 compatibility |Old/new reader-writer fixtures, unfamiliar-field preservation and explicit semantic loss/refusal |
+| Next |C3 portable checkpoints |Resume the same work from verified facts/effects/remaining obligations without a replacement checkout |
+| Next |C4 resource ownership |Metadata-first receipts/reachability, hardlink-aware logical versus recoverable allocation and explicit retirement |
+| Later |C9 contributor conformance |One version-pinned role reference with storage/error/cancellation fixtures and packaging guidance |
+| Later |C11 recipe invalidation |Targeted invalidation for requested/resolved/observed driver/model/template dependencies |
+| Consumer-dependent |C5 request lifecycle |Cancellation of one logical request preserves other requests on a shared instance |
+| Consumer-dependent |C6 asset metadata |Discovery/acquisition/qualification/activation and lineage without automatic downloads or training |
+| Consumer-dependent |C7 lesson correction |Scoped correction/retirement and dependent retrieval invalidation |
+| Consumer-dependent |C10 CLI characterization |One coherent use case characterized before any structural extraction; output/exit/effect compatibility |
+| Consumer-dependent |C12 usage attribution |Deduplicate shared/cumulative/parent-child counters, preserve failures/unknowns and verification reserve |
 
-## Actual local build outcome
+Fleet, enterprise, learning, shared inference and extra IDE/native/legacy lanes
+remain visible. They are later separately qualified profiles, not prerequisites
+for every local Lite task or an implicit license for another platform rewrite.
+Exact support stays in T0–T5 posture and L0–L4 capability records; no host parity
+or untested version support was added. FacMan product development stays paused.
 
-Build2069e86b passed stable-build and stable-validate with hash-bound reuse of
-the36 unchanged release tests. Scratch peak8508 bytes, memory250650624 bytes;
-retained13787 bytes, all collection digests verified, scratch/active absent and
-reservation released. New asset ZIP4a45922b / TAR4b3e22ee contains sourcea8e004e7
-and repaired CLIf58f1cf4. Exact full identities live in build-result.json.
-An earlier clean-source preflight33662de9 failed before any asset writes because
-this controller added its review as untracked Markdown; it retired normally and
-was reconciled by retaining that exact review in an ignored log until closeout.
-No failed attempt is erased or represented as passing.
+## Failures preserved and recovery
+
+Build27de35f9 refused erroneous export reservation before asset effects.
+Repair46e91fbf passed5 tests/export but failed full validation on private-temp
+access. Same-job custody recovery retired that exact public fixture, preserved
+original/helper logs and the original failure, and released its reservation.
+Wrong-SID observations, bounded setup failure and all review records remain.
+Build33662de9 refused clean-source state because this controller prematurely
+added an untracked review record; it retired with all assets unchanged. Retaining
+that exact review in an ignored log reconciled the setup before build2069e86b.
+No failed attempt is erased or relabelled as successful.
+
+## Separate remaining gates
+
+- Exact current local artifact acceptance and original pin promotion/probe.
+- Exact qualified source/assets integration and fresh local/remote ref guards.
+- Outer application and actual editor/tool routes constrained and qualified.
+- Ten historical-message dispositions remain unaccepted; source-sync permission
+  is not their acceptance. Live GPT-6.1 qualification permission remains absent.
+- Required live binding, matched accepted-outcome cost/quality and whole-host
+  unchanged-waiting evidence remain unfinished. No repeated refused invocation.
+- Exact stable release-effect acceptance, tag/publication, downloaded asset checks
+  and authorized downstream tooling adoption remain separate.
+- Wider reported500 GB drive/AppData/temp/clone sprawl is unmeasured/unreclaimed
+  here. Unknown or unique work is preserved; owned scratch retirement is narrower.
+
+The release Goal remains active while useful deterministic work progresses;
+blocked effects remain dormant without another permission retry. These results
+support a bounded local candidate, not perfect software or complete AIDE delivery.
