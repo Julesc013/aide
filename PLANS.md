@@ -4444,3 +4444,7 @@ e3e6f8bc. Existing inspect fields/refusals are preserved; configured worker
 placement and run-only aggregate admission are separated from unverified outer
 routes. Existing scoped worker validation and exact export generation provide
 qualification; host setup, model and release gates remain independent.
+Repaired source 092ebc59 passed the 71-test managed run; exact 9d339b0c source
+and dev-only effect received ACCEPT_WITH_NOTES. Focused metadata closeout and
+fresh guards precede dev integration. This completes one bounded C8 increment,
+not the whole candidate, client setup or stable publication.

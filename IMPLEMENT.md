@@ -12956,4 +12956,8 @@ one no-fallback regression; the first 70-test receipt is retained. The repaired
 source 092ebc59 passed job 67879a9f with 71 tests, export and full validation.
 Both retained result-tree hashes, retirement and all 844 payload checksums were
 verified. Exact superseding review remains required before dev integration;
-main, stable archive and operator configuration are unchanged.
+main, stable archive and operator configuration are unchanged. Exact 9d339b0c
+source/export/dev-effect review returned ACCEPT_WITH_NOTES, closing the older
+interface blocker. Notes preserve configuration-only, source-consumer and
+operational/usage limits. The metadata closeout requires focused exact review
+and fresh effect guards before the dev-only move.

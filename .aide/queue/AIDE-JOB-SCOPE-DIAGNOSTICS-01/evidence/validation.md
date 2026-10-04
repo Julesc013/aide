@@ -11,6 +11,8 @@ REQUEST_CHANGES: exact review of 52938981 found an unhandled older-adapter missi
 PASS: repaired source 092ebc5987fd0bb681e38ecb59626333e528ed35, public scoped job 67879a9fbce04871b15ab08996a20769: 71 tests, no failures/errors/skips; export and full validation exit 0. Its job-named receipt/summaries retain the first proof separately.
 PASS: repaired receipt SHA, complete retained logs/output hashes, six frozen input identities, retired scratch, released reservation and absent active marker independently checked. All 844 export checksums match; affected source/payload files are byte-identical.
 PASS: repaired source and export inspect views for both configurations, matching boundary metadata and less than 2 KiB each. This remains source-environment inspection, not fresh target installation.
-PENDING: structured closeout commit checks and superseding independent exact source/artifact/dev-effect review before integration.
+PASS: all four task commits from e3e6f8bc through 9d339b0c pass the commit range check. The unpublished qualification commit's message was corrected before review without changing its tree or shared history.
+ACCEPT_WITH_NOTES: independent exact 9d339b0c source/artifact/dev-effect review, with no remaining blocker; actual verdict in review-9d339b0c.md.
+PENDING: focused exact metadata-closeout review and fresh guards before dev-only integration; terminal effect proof is retained in final-integration.log. Main remains outside the effect.
 
 Full runtime logs remain at the exact job's retained root, with digests in the receipt. New queue evidence is bounded summary/identity data, not another duplicate log archive. Controller/review usage is unknown and not counted as zero. Stable release bytes and original operator settings are unchanged.

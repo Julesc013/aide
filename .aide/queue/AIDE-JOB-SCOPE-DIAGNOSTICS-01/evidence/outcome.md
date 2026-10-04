@@ -28,4 +28,10 @@ cooperative/monitored envelope. These replace no earlier observations and are
 not additive whole-campaign peaks or a hard quota. The repaired export's 844
 checksums and source/payload equality passed; actual source/export inspection
 remains under 2 KiB per view. Original operator configuration and stable ZIP
-pins remain unchanged. Superseding independent acceptance is pending.
+pins remain unchanged. Independent exact review of 9d339b0c returned
+ACCEPT_WITH_NOTES for source/artifact and the bounded dev-only effect, with no
+remaining blocker. Its configuration, source-consumer and operational/usage
+notes are explicitly nonblocking for that subject/effect and preserved here.
+Focused exact metadata-closeout review and fresh identity/ref/pin guards still
+precede integration; final-integration.log retains terminal effect verification.
+Main and stable publication remain separate review/effect gates.

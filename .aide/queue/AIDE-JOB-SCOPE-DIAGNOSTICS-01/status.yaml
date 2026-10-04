@@ -1,6 +1,6 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-JOB-SCOPE-DIAGNOSTICS-01
-status: needs_review
-planning_state: managed_qualification_passed_exact_review_pending
-result: INSPECTION_BOUNDARY_QUALIFIED_REVIEW_PENDING
+status: passed_with_notes
+planning_state: exact_source_accepted_dev_effect_guarded_closeout
+result: INSPECTION_BOUNDARY_ACCEPTED_WITH_RETAINED_GATES
 updated_at: 2026-10-04

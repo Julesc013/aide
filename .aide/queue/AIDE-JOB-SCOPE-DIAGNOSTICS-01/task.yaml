@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-JOB-SCOPE-DIAGNOSTICS-01
 title: Explain the actual managed-job inspection boundary
 type: implementation
-status: needs_review
-planning_state: managed_qualification_passed_exact_review_pending
-result: INSPECTION_BOUNDARY_QUALIFIED_REVIEW_PENDING
+status: passed_with_notes
+planning_state: exact_source_accepted_dev_effect_guarded_closeout
+result: INSPECTION_BOUNDARY_ACCEPTED_WITH_RETAINED_GATES
 created_at: 2026-10-04
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 authority_basis: Active campaign implementation objective, owner containment priority, and existing bounded-child delegation.

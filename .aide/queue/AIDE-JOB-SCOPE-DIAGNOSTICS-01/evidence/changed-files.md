@@ -30,6 +30,7 @@
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/qualified-outcome.json
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/remaining-risks.md
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/review-52938981.md
+- .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/review-9d339b0c.md
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/validation.md
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/prompt.md
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/status.yaml

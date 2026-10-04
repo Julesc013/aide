@@ -57,7 +57,8 @@ receipts, not a new clone. Native host/resource controls retain their prior limi
 - [x] Clean source, policies, adopted requirements and existing command inspected.
 - [x] Exact child admitted with plan and allowlist.
 - [x] Projection, repaired 71-test qualification, affected export and full managed validation complete.
-- [ ] Exact independent source/dev-effect review and guarded integration complete.
+- [x] Exact repaired source/dev-effect accepted with nonblocking notes.
+- [ ] Metadata closeout receives focused exact review and guarded integration.
 
 Source-binding detail: add a projection-only method to the existing prepared
 scoped host. It describes the validated configuration captured by prepare, not
@@ -89,4 +90,8 @@ were independently recomputed; scratch, active marker and reservation are
 retired. Job-named evidence preserves both subjects without replacing the first
 proof. All 844 export checksums and affected source/payload bytes match. Real
 source/export inspect views remain below 2 KiB against the existing source
-environment. Superseding exact source/effect review remains required.
+environment. Independent exact 9d339b0c source/dev-effect review returned
+ACCEPT_WITH_NOTES and no remaining blocker. Preserve explicit configuration,
+consumer and operational/usage limits. Focused exact review of this metadata
+closeout and fresh ref/pin guards precede applying the dev-only effect; its
+terminal verification belongs in retained final-integration.log. Main is excluded.
