@@ -18,6 +18,9 @@ truncating evidence, changing storage or raising the256MiB ceiling.
 Read this WorkUnit's task.yaml, status.yaml, ExecPlan.md and REPORT.md under
 .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/. Those records govern this slice.
 Parent authority: AIDE-CONVERGENCE-AND-DELIVERY-01 and its recorded delegation.
+Existing compact context references: `.aide/context/repo-map.json`,
+`.aide/context/test-map.json`, `.aide/context/context-index.json` and
+`.aide/context/latest-context-packet.md`.
 
 ## ALLOWED_PATHS
 
@@ -78,3 +81,9 @@ finite accounting and truthful uncovered routes. No release claim from custody.
 
 Return summary, changed files, actual checks/results, evidence refs and remaining
 gates. Outer shell/editor/plugins are unrestricted; no hard filesystem quota.
+
+## TOKEN_ESTIMATE
+
+approx_tokens: 888
+
+Characters divided by4 estimate only; not actual tokenizer or host usage.

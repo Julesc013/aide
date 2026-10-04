@@ -1,0 +1,35 @@
+fix(docs): validate compact brief against actual Lite contract
+
+## Summary
+- Correct C4 post-result task brief with the actual Lite packet verifier.
+
+## Why
+- The template-only check missed TOKEN_ESTIMATE required by executable policy.
+
+## Changed
+- Include the required token-estimate field and four existing context references.
+- Preserve exact independent f3 source rejection and narrower prior comparison.
+
+## Validation
+- PASS: actual verify_task_packet;13 required sections, zero warnings/errors.
+- PASS: same operative23-test and two live custody evidence remain unchanged.
+- PASS: Harness structural checks, whitespace and structured message precheck.
+- NOT RUN: derived report refresh, native source/export and integration effects.
+
+## Changelog
+- Fixed: compact3551-byte task brief conforms to executable Lite validation.
+
+## Risks
+- Character-count estimate is not actual tokenizer or host usage.
+- Legacy prompt template remains narrower; full source/release gates stay open.
+
+## Follow-up
+- Review corrected exact maintenance source and separate metadata effect.
+- Admit only the existing bounded export/source qualification after review.
+
+AIDE-Task: AIDE-RETIRED-EVIDENCE-CUSTODY-01
+AIDE-Phase: actual-packet-contract-fix-forward
+AIDE-Result: PASS_ACTUAL_PACKET_CONTRACT_SOURCE_EXPORT_PENDING
+AIDE-Scope: concrete-packet-and-custody-closeout-records
+AIDE-Token-Impact: bounded3551-byte-brief-full-evidence-preserved
+AIDE-Quality-Gate: exact-corrected-source-review-required

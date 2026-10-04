@@ -140,9 +140,11 @@ reference docs, this queue packet/evidence and existing root/generated indexes.
 - `scripts/aide compile --write` and `scripts/aide validate`: PASS structural;
   149info/0warnings/0errors in preparation.
 - Python AST, `git diff --check`, structured commit-message precheck: PASS.
-- Compact task packet:13 required section headings/order PASS;3257bytes.
-  The earlier shortened f3 brief missed this contract; fixed before downstream
-  effects, with native/live evidence unchanged.
+- Compact task packet: actual CLI `verify_task_packet` PASS; all13 required
+  sections, token estimate and context refs;3551bytes, zero warnings/errors.
+  Independent review rejected the earlier f3 brief. A template-only comparison
+  was narrower than the CLI contract; the actual verifier now establishes the
+  fix. Native/live evidence is unchanged; no downstream effects occurred.
 - Actual managed `job run` plus23 source tests: PASS; complete postflight and
   retirement verified. Full raw stderr contains23-test/OK result, no skips.
 - `job custody plan/read/apply/verify/read` for the exact two jobs: PASS;

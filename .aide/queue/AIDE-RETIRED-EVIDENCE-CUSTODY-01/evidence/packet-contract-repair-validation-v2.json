@@ -1,0 +1,65 @@
+{
+  "actual_cli_contract_sections": [
+    "PHASE",
+    "GOAL",
+    "WHY",
+    "CONTEXT_REFS",
+    "ALLOWED_PATHS",
+    "FORBIDDEN_PATHS",
+    "IMPLEMENTATION",
+    "VALIDATION",
+    "EVIDENCE",
+    "NON_GOALS",
+    "ACCEPTANCE",
+    "OUTPUT_SCHEMA",
+    "TOKEN_ESTIMATE"
+  ],
+  "actual_host_tokens": null,
+  "actual_readonly_verifier": "verify_task_packet",
+  "approx_tokens_characters_div4": 888,
+  "bytes": 3551,
+  "earlier_template_comparison": "narrower than actual CLI contract; current verifier also covers TOKEN_ESTIMATE and context refs",
+  "findings": [
+    {
+      "check": "task_packet",
+      "message": "required sections present",
+      "path": ".aide/context/latest-task-packet.md",
+      "severity": "INFO"
+    },
+    {
+      "check": "task_packet",
+      "message": "task packet tokens: 888",
+      "path": ".aide/context/latest-task-packet.md",
+      "severity": "INFO"
+    },
+    {
+      "check": "file_references",
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "path": ".aide/context/repo-map.json",
+      "severity": "INFO"
+    },
+    {
+      "check": "file_references",
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "path": ".aide/context/test-map.json",
+      "severity": "INFO"
+    },
+    {
+      "check": "file_references",
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "path": ".aide/context/context-index.json",
+      "severity": "INFO"
+    },
+    {
+      "check": "file_references",
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "path": ".aide/context/latest-context-packet.md",
+      "severity": "INFO"
+    }
+  ],
+  "native_and_live_operatives": "unchanged; no repeat effects",
+  "prior_direct_preparation_error": "placeholder substitution altered TOKEN_ESTIMATE heading; actual readonly verifier rejected before commit/effects; exact field replacement repaired it",
+  "raw_sha256": "210d3dd99afba1baceeaa20c8351f73be995410094f6f26db53cd9d6a53c76a6",
+  "schema": "aide.retired-custody-packet-public-contract-check.v1",
+  "status": "PASS"
+}

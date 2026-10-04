@@ -1,0 +1,16 @@
+{
+  "blocking": "latest-task-packet omitted13 required sections and approx_tokens; restore actual CLI packet contract before source closeout",
+  "effect_ea67590": "held/superseded/unexecuted/unapproved",
+  "nonblocking_disposed": [
+    "native23 and both completed custody operations remain valid; archives reconstruct collection hashes, anchors unchanged, raw copies/pending retired",
+    "7921599logical bytes saved; physical recovery unknown",
+    "export/integration/release and outer containment remain separate"
+  ],
+  "record_kind": "controller transcription of independent reviewer message, not a new reviewer signature",
+  "review_method": "read-only Git/rg and Python stdlib archive/hash/JSON; no tests/imports/mutations",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.retired-custody-exact-source-rejection.v1",
+  "source_commit": "f3a47599b1030941b7ade74173fc6fbb8c71dd85",
+  "source_tree": "768c500c520d2fec2afdd26b4fa831bb4a69acdb",
+  "verdict": "REQUEST_CHANGES"
+}

@@ -210,3 +210,13 @@ compact-task template. No operative source/native/custody result changed or
 replayed. The f3 metadata effect remains unexecuted and requires a changed-subject
 review. Preserve the original f3 record; final source acceptance must cover this
 fix-forward packet.
+
+The independent f3 review confirmed REQUEST_CHANGES for required sections and
+approx_tokens. It independently accepted the narrower native23/live evidence
+as valid. The c215 template comparison omitted TOKEN_ESTIMATE because that
+legacy template itself is narrower than the actual CLI contract; no new effect
+ran. Current3551-byte packet now passes the real readonly verify_task_packet
+helper:13 required sections, token estimate, four context refs, zero warnings/
+errors. Char/4 is an estimate, not host usage. The canonical v2 validation and
+f3 rejection remain recorded. Legacy template repair is a separate bounded
+documentation follow-up; it does not block this corrected actual packet.
