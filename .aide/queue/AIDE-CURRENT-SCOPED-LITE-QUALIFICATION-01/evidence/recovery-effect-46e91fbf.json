@@ -25,7 +25,7 @@
   "acl_machine_or_config_change": false,
   "model_call": false,
   "helper_sha256": "4082f9cb172d050990279783eeb7f7025efa3459565329f786b9b77af98005a8",
-  "controller_sha256": "5cd9b9b903efee09924e26e55ce57aeb277d2c171df74aeef0498c0ece21d756",
+  "controller_sha256": "6b1de90dd2ea0d19ed9bda2cdcff20ad6145a25f822a20059f1cd46f90788c55",
   "controller_routing": "Existing pinned WindowsJobHost plus existing codex sandbox, exact same owned scratch and job ID under estate lock; no AIDE job resubmission; original result/lease untouched.",
   "observation_log": "logs/fixture-custody-observation",
   "owner_sid_required": "S-1-5-21-2168396775-1281633702-301206425-1003",

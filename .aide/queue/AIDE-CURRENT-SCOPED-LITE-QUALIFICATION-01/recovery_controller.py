@@ -75,6 +75,9 @@ def main():
         if not owner.WindowsJobHost().reconcile(record["job_id"])["quiescent"]:
             raise RuntimeError("original process remains active")
         scratch = owner.owned_scratch(record, roots)
+        scratch_info = scratch.lstat()
+        if [scratch_info.st_dev, scratch_info.st_ino] != effect["scratch_identity"]:
+            raise RuntimeError("strong recovery scratch identity changed")
         if args.apply:
             retain_observation_logs(owner, scratch, effect)
         leaf = scratch / effect["owned_fixture"]
