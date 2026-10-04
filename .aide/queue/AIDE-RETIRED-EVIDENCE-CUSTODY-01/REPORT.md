@@ -1,13 +1,9 @@
 # Retired evidence custody development report
 
-Date:2026-10-05 Australia/Sydney. Public-route correction is prepared but unqualified.
-A real read-only plan exposed a pinned-package import gap; no live effects occurred.
-The22-test result below remains valid for its recorded fixture scope. A new23rd
-actual CLI workflow is authored and requires exact native review.
-
-A bounded C4 source repair passes22
-meaningful regressions through the restricted managed worker. Live custody,
-source integration and stable certification remain unfinished.
+Date:2026-10-05 Australia/Sydney. Actual public custody workflow and23 regressions
+now pass through the restricted worker; complete collection/retirement verified.
+Two real retired-job plans succeed read-only. Live custody, released capacity,
+projection refresh/integration and stable certification remain unfinished.
 
 ## What changed
 
@@ -28,8 +24,8 @@ source was not silently promoted into its own supervisor.
 
 ## Verified actual outcome
 
-Exact source50c0ac2b/treea0752bc9, independently accepted native effectae629dc4,
-ran once in jobc1ae2a93c1ca48c8941abea371a9bfa7 as CodexSandboxOffline. All22
+Exact sourcedca12298/treee5153a5a, independently accepted native effecte81f6f73,
+ran once in job30c718369d6a46ebbb1648ae2f2a866f as CodexSandboxOffline. All23
 tests passed without skips/errors/failures. Complete raw logs/output collection,
 receipt and proof are verified. Scratch and fixtures retired, process quiescent,
 no IO errors, reservation released. The source/native fixture used the current
@@ -39,20 +35,20 @@ output, no canonical writes,2MiB scratch/1MiB logs/64KiB results/180s/2GiB memor
 
 | Measurement | Actual observation |
 | --- | --- |
-| New retained evidence | 9620 logical bytes |
-| Sampled workspace/log occupancy | 5311bytes;30s sampling can miss transients |
-| Process memory peak | 246722560bytes |
-| Known pools after collection | scratch0 + control13694135 + retained219081134 =232775269logical bytes |
+| New retained evidence | 9959 logical bytes |
+| Sampled workspace/log occupancy | 5483bytes;30s sampling can miss transients |
+| Process memory peak | 246890496bytes |
+| Known pools after collection | scratch0 + control13694135 + retained219091093 =232785228logical bytes |
 | Live custody / reclaimed allocated space | No transition; no recovery measurement |
 | Original selected runtime configuration | a241 unchanged; held/stale original archive pin |
 | Current stable candidate ZIP | 7132 unchanged; does not contain new custody source |
 | Outer shell/editor/plugins and read isolation | Unrestricted / unqualified |
 | Whole accepted-outcome efficiency | Unqualified; whole parent/review/retry accounting unknown |
 
-See [result](evidence/native-fixture-result-v2.json),
-[proof](evidence/native-fixture-proof-v2.json),
-[exact revised effect](evidence/native-fixture-effect-v2.json) and
-[effect admission](evidence/native-fixture-admission-v2.json).
+See [result](evidence/native-fixture-result-v3.json),
+[proof](evidence/native-fixture-proof-v3.json),
+[exact revised effect](evidence/native-fixture-effect-v3.json) and
+[effect admission](evidence/native-fixture-admission-v3.json).
 Original receipt remains in the configured retained pool; full raw evidence
 was not replaced with abbreviated model output.
 
@@ -65,6 +61,12 @@ idempotent recovery, exact archive reuse, stale/unknown/nonquiescent/hardlink
 refusal, aggregate and canonical-artifact accounting, lock exclusion, changed
 raw custody refusal, no new allocation while pending and specific public job
 recovery refusal. These fixture results are not a live capacity-recovery proof.
+
+The actual public CLI fixture additionally completes compact plan, raw read,
+exact apply, complete verify and archived read with the unchanged pinned owner.
+A source namespace gap was found by one real read-only plan after the genuine
+22-test pass. Explicit source loading repaired it; a new exact23-test effect
+was accepted and passed. Preserve22-test evidence and source rejection.
 
 An earlier21-test native effect was REQUEST_CHANGES before dispatch. Reviewer
 found assertion-dependent alias cleanup plus staged-intent and lock-view gaps.
@@ -83,7 +85,9 @@ Plain old raw-file paths do not transparently decompress. The explicit custody
 map/read interface must be used after a reviewed live transition; existing
 receipts and their collection digests stay authentic historical records. Live
 transition is separately gated. Two exact old consumer jobs are candidates;
-metadata estimates confer no disposal authority or admitted space. Preserve
+the real read-only plans preserve receipt36c6ea3d/fc103deb and3035803/5802413
+payload bytes. Worst-case serial reservations7334555/10184109 fit unchanged
+256MiB. Planning grants no released capacity or raw-copy retirement authority. Preserve
 complete required evidence and all8 consumer cases/38 public forms/39 retained
 outputs/12 job observations and delivered C1/replay acceptance.
 
@@ -103,7 +107,7 @@ reference docs, this queue packet/evidence and existing root/generated indexes.
 - `scripts/aide compile --write` and `scripts/aide validate`: PASS structural;
   149info/0warnings/0errors in preparation.
 - Python AST, `git diff --check`, structured commit-message precheck: PASS.
-- Actual managed `job run` plus22 source tests: PASS; complete postflight and
-  retirement verified. Full raw stderr contains22-test/OK result, no skips.
+- Actual managed `job run` plus23 source tests: PASS; complete postflight and
+  retirement verified. Full raw stderr contains23-test/OK result, no skips.
 - Full source binding/export refresh, source integration, live custody and
   current-payload consumer/replay qualification: NOT RUN in this slice.

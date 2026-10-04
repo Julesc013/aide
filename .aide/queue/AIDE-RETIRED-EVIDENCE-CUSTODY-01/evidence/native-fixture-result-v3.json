@@ -1,0 +1,58 @@
+{
+  "active_absent": true,
+  "actual_public_cli_workflow": "plan/raw-read/apply/verify/archive-read with pinned owner and owned fixture roots",
+  "aggregate_limit_bytes": 268435456,
+  "allocated_space_reclaimed": null,
+  "assets_unchanged": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": "899e9ca4101514ae6d5becda3ccae150b732ccf7dc16d07a580cdf5263fe8e08",
+    "aide-lite-v1.0.0.manifest.json": "ce652cc764e2b2c71298e745b6a523253825f594ed315ad1486dacdd7d7a31b1",
+    "aide-lite-v1.0.0.tar.gz": "fe6ddadad63dc7d018c45aee8d391f112c1aa23a31b593a2a205b8f72e20cf8d",
+    "aide-lite-v1.0.0.zip": "7132a5404bf82cdf0c0076cf64b395f01715ae0abd2e8c95c2b971c4b233ee88"
+  },
+  "collected_manifest": {
+    "logs": "fa5071fe56f8a26eabc9e7dd91cde8a9ed0f3b8c22664b04083081a8c15a9f4c",
+    "output": "077a8eb04e2a9fd29203a8dbbaebb34d43f03e4803115168214029048852d5ab"
+  },
+  "configuration_sha256": "6ce5cde183a97aacdd4ebd56678790d1e5e8bdd84d2e331d57f4aa159ac1b301",
+  "executed_inputs_verified": 10,
+  "fixtures_retired": true,
+  "host_read_isolation": "unqualified",
+  "job_id": "30c718369d6a46ebbb1648ae2f2a866f",
+  "known_pool_total": 232785228,
+  "live_custody_effect": false,
+  "manifest_digest": "56bf25c7189bd40118c3c7cc4d059aa1ce5080355e8d1ed4cee521d7c15d1dff",
+  "matched_efficiency": "unqualified",
+  "observer_model_calls": 0,
+  "original_runtime_selection": "unchanged_held",
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 246890496,
+    "scratch_bytes": 5483
+  },
+  "pool_logical_bytes": {
+    "control": 13694135,
+    "retained": 219091093,
+    "scratch": 0
+  },
+  "proof_sha256": "26612b9dc9cb2659e7cd4e45137f7a572369b822680b25ea28c1cf5fc71b4802",
+  "quiescent": true,
+  "receipt_path": "D:/Projects/AIDE/.aide.local/execution/retained/30c718369d6a46ebbb1648ae2f2a866f/receipt.json",
+  "receipt_sha256": "b27ccc966209b23e25efede070406ef74983e9cba2db5f73cbaa77e6852659c9",
+  "reservation_released": true,
+  "result": "PASS_ACTUAL_PUBLIC_CLI_AND_SOURCE_FIXTURES",
+  "retained_logical_bytes": 9959,
+  "sampling_limitation": "sampled workspace/log occupancy; not true transient peak or hard quota",
+  "schema": "aide.retired-custody-native-result.v1",
+  "scratch_absent": true,
+  "source_commit": "dca12298346f59b38708ea99d3be57c1950e4cd6",
+  "source_tree": "e5153a5a1e8d9134405e6a8bb7a646b5ee73c983",
+  "tests": {
+    "errors": 0,
+    "failures": 0,
+    "run": 23,
+    "skips": 0
+  },
+  "total_host_controller_review_usage": "unknown",
+  "whole_session_contained": false,
+  "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline"
+}

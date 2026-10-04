@@ -4640,3 +4640,12 @@ restricted owner. Complete raw evidence and retirement verified;9620 logical
 bytes retained. No live custody, reclaimed space, source integration or release
 claim. [Full custody report](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md)
 records exact source/effect/result and unchanged consumer acceptance.
+
+## 2026-10-05 actual public custody route qualified
+
+Corrected pinned-package namespace selection without replacing the24-source
+supervisor. Job30c71836 on dca12298 passed23 checks including actual public
+plan/read/apply/verify/read, complete collected evidence and retirement verified.
+Two original consumer jobs now have exact feasible read-only custody plans;
+no live transition/reclaimed capacity. Source/live-effect reviews remain
+required, as do current consumer acceptance and stale projection refresh.

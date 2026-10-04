@@ -1,0 +1,27 @@
+{
+  "adapter": "python",
+  "argv": [
+    "C:/Users/Jules/AppData/Local/Python/pythoncore-3.14-64/python.exe",
+    "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-RETIRED-EVIDENCE-CUSTODY-01\\worker.py"
+  ],
+  "canonical_outputs": {},
+  "cwd": "D:\\Projects\\AIDE\\aide",
+  "executable_sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9",
+  "inputs": {
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md": "2bcdc53d3301b404d1810262fc6d873f6675792d5758050ae79a6752c48f9cd0",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/native-fixture-configuration.json": "6ce5cde183a97aacdd4ebd56678790d1e5e8bdd84d2e331d57f4aa159ac1b301",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/task.yaml": "dd24c150f94db45fef4a5b2df26cab3a2619339c8ee8458975c0fc287cc50b26",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/worker.py": "8c3b97591b081aa39d70b5d90b53f8764ff74f0c29c32496e84b01bf8882fc21",
+    ".aide/scripts/aide_lite.py": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+    ".aide/scripts/tests/test_retired_evidence.py": "37834a2c858b0cbdbc00a3c34b4b1be7642203d86c509bd1674f7030075c57be",
+    "core/execution/managed_workspace.py": "d9338d9d25470b1a39f8c74566f7c108249a98dc564ac395f21b66ebc4eccfe3",
+    "core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
+    "core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+    "core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
+  },
+  "owner": "retired-evidence-custody-test-01",
+  "schema": "aide.maintainer-job.v1",
+  "source_commit": "dca12298346f59b38708ea99d3be57c1950e4cd6",
+  "source_tree": "e5153a5a1e8d9134405e6a8bb7a646b5ee73c983",
+  "workunit": "AIDE-RETIRED-EVIDENCE-CUSTODY-01"
+}

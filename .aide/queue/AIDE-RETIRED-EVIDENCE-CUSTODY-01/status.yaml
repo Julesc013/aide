@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-RETIRED-EVIDENCE-CUSTODY-01
-status: running
-planning_state: public_route_corrective_fixture_prepared
-result: PASS22_FIXTURES_PUBLIC_ROUTE_QUALIFICATION_PENDING
+status: needs_review
+planning_state: public_cli23_passed_complete_retirement_live_review_pending
+result: PASS23_PUBLIC_CLI_LIVE_CUSTODY_PENDING
 updated_at: 2026-10-05
 current_slice: native22_verified_retired
 next_slice: exact_source_and_separate_live_custody_effect_review

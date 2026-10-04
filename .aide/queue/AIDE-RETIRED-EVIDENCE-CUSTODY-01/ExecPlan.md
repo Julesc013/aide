@@ -157,3 +157,24 @@ archived read. It checks unchanged receipt/owner and released pending state.
 No new live plan or effect is allowed before this actual route is qualified.
 A new exact native effect review is required; only public fixture code/context
 changed, and current archive/original selection/22-test history remain unchanged.
+
+### Actual public CLI23 result and read-only live plans
+
+Exactdca12298/treee5153a5a effecte81f6f73 received independent ACCEPT and ran
+once in job30c718369d6a46ebbb1648ae2f2a866f as CodexSandboxOffline. All23
+regressions including actual CLI workflow passed, no failures/errors/skips.
+Ten executed inputs, full raw collection and receiptb27ccc966209b23e25efede
+070406ef74983e9cba2db5f73cbaa77e6852659c9 verified. All fixtures/scratch
+retired, process quiescent/noIO, reservation released.9959 logical bytes
+retained; sampled workspace5483/nottruepeak; memory246890496. Known pools
+scratch0/control13694135/retained219091093,total232785228. Exact result SHA
+e2f6eaa1bcf6379775c7c16a8204c600ed414177721fd48196da126aa9c2e936.
+
+Two real read-only custody plans now succeed through that actual public route,
+no live transition. Original consumer receipts match36c6ea3d andfc103deb.
+Payload3035803 and5802413 bytes; worst-case reservations7334555 and10184109,
+serially feasible within unchanged256MiB. Plan digests006ec78e and00ee85a6;
+exact full hashes/maps retained in live-custody-plan-v2 logs. Roster SHA
+7899ec4b88cf3f5f31f7082da6ed6491372679439668b4c4af0354fe3db312df.
+No capacity is released by planning; complete custody and fresh measured
+accounting require separate exact source/effect review. No quota widening.

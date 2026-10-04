@@ -5,7 +5,7 @@
 [Custody reference](docs/reference/retired-evidence-custody.md) describes finite
 plan/apply/recover/verify/read behavior, receipt preservation, staging limits and
 lookup compatibility. [WorkUnit](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md)
-records actual22-test restricted qualification and verified retirement.
+records actual23-test restricted public-CLI qualification and verified retirement.
 [Full report](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md) preserves
 unfinished live custody, source projection/integration and release gates.
 

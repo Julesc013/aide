@@ -1,0 +1,31 @@
+{
+  "additional_scope": "Actual public custody plan/raw-read/apply/verify/archived-read using unchanged24 pinned selection and tiny newly owned fixture roots, never live retained pool.",
+  "aggregate_bytes": 268435456,
+  "archive_sha256": "7132a5404bf82cdf0c0076cf64b395f01715ae0abd2e8c95c2b971c4b233ee88",
+  "configuration_sha256": "6ce5cde183a97aacdd4ebd56678790d1e5e8bdd84d2e331d57f4aa159ac1b301",
+  "job_file_sha256": "87c173c79c9d1fe2bed2966d9e638a803a4f4bfcf13ef07248f38fb63d050047",
+  "job_manifest_digest": "56bf25c7189bd40118c3c7cc4d059aa1ce5080355e8d1ed4cee521d7c15d1dff",
+  "limits": {
+    "canonical_bytes": 536870912,
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 1048576,
+    "max_files": 100000,
+    "memory_bytes": 2147483648,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 32,
+    "retained_bytes": 65536,
+    "runtime_seconds": 180,
+    "scratch_bytes": 2097152
+  },
+  "original_configuration_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "prior22_effect_remains_passed": true,
+  "replay": "no uncertain automatic replay",
+  "schema": "aide.retired-custody-native-effect.v1",
+  "scope": "one restricted native job, tiny allocated fixture trees only, no canonical outputs or live custody",
+  "source_commit": "dca12298346f59b38708ea99d3be57c1950e4cd6",
+  "source_tree": "e5153a5a1e8d9134405e6a8bb7a646b5ee73c983",
+  "supersedes_unexecuted_effect_sha256": null,
+  "supervisor_file_count": 24,
+  "tests_expected": 23
+}

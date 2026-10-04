@@ -13182,3 +13182,13 @@ reservation released;9620logical retained bytes. Earlier unexecuted21-test
 effect REQUEST_CHANGES remains preserved; only revised independently accepted
 effectae629dc4 ran. Original runtime/current candidate unchanged. Live custody
 and affected binding/export refresh/integration remain separately gated.
+
+## 2026-10-05 real custody CLI namespace repair verified
+
+The first live read-only plan exposed a package namespace gap after the
+genuine22-test pass; no effects occurred. Explicit source-module loading with
+unchanged selected owner fixed the route. Independently admitted23-test native
+job30c71836 passed including actual CLI lifecycle, receiptb27ccc96/rawtrees
+verified,9959logical bytes retained, scratch/reservation retired. Two old
+consumer plans preserve receipts and fit exact staging; live custody remains
+separately gated. No asset/original config/ref/publication change.

@@ -1,0 +1,11 @@
+{
+  "effect_sha256": "e81f6f73204ca114f601e2ac663136ba945b530244c513cfbcda45dbd80ad3f3",
+  "job_manifest_digest": "56bf25c7189bd40118c3c7cc4d059aa1ce5080355e8d1ed4cee521d7c15d1dff",
+  "notes": "All3 notes explicitly classified nonblocking/disposed: fresh guards, single attempt, full postflight and later source/live/integration gates.",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.exact-independent-native-admission.v1",
+  "scope": "one23-test restricted actual-public-route fixture only; no live custody",
+  "source_commit": "dca12298346f59b38708ea99d3be57c1950e4cd6",
+  "source_tree": "e5153a5a1e8d9134405e6a8bb7a646b5ee73c983",
+  "verdict": "ACCEPT"
+}
