@@ -6928,6 +6928,8 @@ def capability_public_file(repo_root: Path, rel: str) -> tuple[Path | None, str]
             expected = stat.S_ISREG if index == len(parts) else stat.S_ISDIR
             if not expected(info.st_mode):
                 return None, "not_ordinary_file"
+            if index == len(parts) and (info.st_nlink != 1 or info.st_ino <= 0):
+                return None, "shared_or_unstable_identity"
     except FileNotFoundError:
         return None, "missing"
     except OSError:
@@ -6958,7 +6960,8 @@ def capability_evidence_read(repo_root: Path, rel: str,
             return entry, None
         with path.open("rb") as stream:
             opened = os.fstat(stream.fileno())
-            if (opened.st_dev, opened.st_ino) != (before.st_dev, before.st_ino):
+            if (not stat.S_ISREG(opened.st_mode) or opened.st_nlink != 1 or opened.st_ino <= 0
+                    or (opened.st_dev, opened.st_ino) != (before.st_dev, before.st_ino)):
                 entry["reason"] = "changed_during_read"
                 return entry, None
             # Reserve before the read, including failed/unstable observations.
@@ -6968,9 +6971,10 @@ def capability_evidence_read(repo_root: Path, rel: str,
             content = stream.read(before.st_size)
             after = os.fstat(stream.fileno())
         final = path.lstat()
-        identities = {(info.st_dev, info.st_ino, info.st_size, info.st_mtime_ns)
+        identities = {(info.st_dev, info.st_ino, info.st_size, info.st_mtime_ns, info.st_nlink)
                       for info in (before, opened, after, final)}
-        if len(content) != before.st_size or len(identities) != 1:
+        if (len(content) != before.st_size or len(identities) != 1
+                or stat.S_ISLNK(final.st_mode) or getattr(final, "st_file_attributes", 0) & 1024):
             entry["reason"] = "changed_during_read"
             return entry, None
         entry.update(state="observed", sha256=hashlib.sha256(content).hexdigest(),

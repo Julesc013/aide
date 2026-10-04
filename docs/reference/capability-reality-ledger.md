@@ -67,7 +67,8 @@ classification views; this projection qualifies ledger freshness only.
 The binding snapshot selects at most 128 references, reads at most 4 MiB per
 file and 16 MiB in total, and preserves incomplete/truncated coverage as unknown.
 It excludes private/secret-like paths, ignored files, external URIs, non-relative
-paths, symlinks/reparse components and nonordinary files. No URI is fetched.
+paths, symlinks/reparse components, shared hard-link identities and nonordinary
+files. No URI is fetched.
 Read identity changes cause unknown observations. These conservative reader
 checks are not filesystem confinement, a disk quota, or protection for another
 unrestricted editor or plugin. The outer session still needs its own boundary.

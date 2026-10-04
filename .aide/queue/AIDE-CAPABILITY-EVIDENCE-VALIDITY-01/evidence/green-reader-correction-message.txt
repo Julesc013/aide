@@ -1,0 +1,26 @@
+fix(capability): reject shared evidence file identities
+
+## Summary
+- Resolve independent preexecution review of the finite evidence reader.
+## Why
+- A public-looking hard-link alias can otherwise reference a private file while satisfying ordinary-file checks.
+## Changed
+- Refuse shared or unstable file identities before content open and verify opened/final file identities.
+- Add a harmless owned hard-link regression with exact guarded alias retirement.
+- Rebind the17-case candidate envelope and guide without changing worker supervision, roots or limits.
+## Validation
+- PASS: AST and diff check.
+- NOT RUN: all green source candidates remain undispatched pending exact independent replacement verdict.
+## Changelog
+- Fixed: shared-identity aliases remain unknown in capability evidence classification.
+## Risks
+- Reader checks remain conservative observations, not a whole-session filesystem security boundary.
+## Follow-up
+- Review the exact replacement17-case source/native effect and run once after acceptance.
+
+AIDE-Task: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
+AIDE-Phase: preexecution-reader-review-correction
+AIDE-Result: corrected_source_prepared_not_run
+AIDE-Scope: admitted reader/test/guide and exact child envelope
+AIDE-Token-Impact: prevent an unsafe read before native dispatch
+AIDE-Quality-Gate: independent exact corrected source/native review

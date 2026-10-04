@@ -8,6 +8,7 @@ import io
 import json
 import os
 import subprocess
+import stat
 import sys
 import tempfile
 import unittest
@@ -219,6 +220,30 @@ class XOS02CapabilityRealityTests(unittest.TestCase):
             self.assertIsNone(content)
             self.assertEqual(entry["reason"], "ignored")
 
+    def test_hard_linked_public_alias_is_not_read(self) -> None:
+        with aide_lite.public_archive_fixture("aide-public-release-test-") as temp:
+            root = Path(temp)
+            private = root / ".aide.local/harmless.txt"
+            private.parent.mkdir()
+            private.write_text("harmless private-path fixture\n", encoding="utf-8")
+            alias = root / "public-alias.txt"
+            os.link(private, alias)
+            identity = (private.stat().st_dev, private.stat().st_ino)
+            try:
+                with mock.patch.object(Path, "open", side_effect=AssertionError("shared alias content read")):
+                    entry, content = aide_lite.capability_evidence_read(root, "public-alias.txt")
+                self.assertIsNone(content)
+                self.assertEqual(entry["reason"], "shared_or_unstable_identity")
+            finally:
+                info = alias.lstat()
+                self.assertEqual((info.st_dev, info.st_ino), identity)
+                self.assertTrue(stat.S_ISREG(info.st_mode))
+                self.assertFalse(alias.is_symlink())
+                self.assertEqual(alias.resolve(strict=True).parent, root.resolve(strict=True))
+                alias.unlink()
+            self.assertEqual(private.stat().st_nlink, 1)
+            self.assertEqual(private.read_text(encoding="utf-8"), "harmless private-path fixture\n")
+
     def test_bounded_reader_and_truncated_dependencies_remain_unknown(self) -> None:
         with aide_lite.public_archive_fixture("aide-public-release-test-") as temp:
             root = Path(temp)
@@ -264,6 +289,7 @@ class XOS02CapabilityRealityTests(unittest.TestCase):
                 info = original(fd)
                 calls.append(fd)
                 return argparse.Namespace(st_dev=info.st_dev, st_ino=info.st_ino,
+                    st_mode=info.st_mode, st_nlink=info.st_nlink,
                     st_size=info.st_size, st_mtime_ns=info.st_mtime_ns + (len(calls) == 2))
             budget = [5]
             with mock.patch.object(os, "fstat", changing):

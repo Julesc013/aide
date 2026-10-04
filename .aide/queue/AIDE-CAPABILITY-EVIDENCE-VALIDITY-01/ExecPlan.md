@@ -137,3 +137,11 @@ used expected_state directly when repaired ledger required code/test evidence.
 Scan now reuses the same conservative record classification and explicitly
 labels source observations as not executed tests. A sixteenth regression checks
 scan/ledger agreement with missing command code. No d7 native effect occurred.
+
+Independent preexecution review also found public aliases with shared hard-link
+identities could be opened. The corrected reader rejects shared/unstable file
+identity before opening and checks the opened/final identities. A seventeenth
+harmless owned hard-link regression verifies no content open and removes only
+its exact verified alias before public fixture retirement. The private-path
+fixture is preserved until normal owned retirement. No source candidate has
+been dispatched green; original worker/limits remain unchanged.
