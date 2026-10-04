@@ -970,3 +970,10 @@ bytes. Keep existing256MiB/original config/assets and newly explicit exact
 admission arithmetic. Consumer/build fit needs a fresh separate review.
 No new archive/runtime/ref/tag/publication/model/target/host effect occurred.
 Obtain exact independent result/source review before the next local phase.
+
+Independent post-result/source review ACCEPT_WITH_NOTES accepted exact998a4d19/
+cdbe6dbf with no blockers and all notes explicitly nonblocking/disposed. See
+evidence/capability-payload-source-closeout-acceptance.json. This metadata
+descendant records that verdict without changing its subject; future exact
+asset/consumer/integration/release review must name its own frozen source and
+effect. No source/fixture rerun follows solely from recording the verdict.

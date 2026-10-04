@@ -9,7 +9,9 @@ trees/receipt/process and ten real CLI frames/52 source inputs/all847 pack
 checksums verified; scratch retired/reservation released. Original config and
 four old assets remain unchanged; archive still predates C1. See
 [full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
-Exact result/source review precedes new asset/build/current-consumer work.
+Exact998a4d19 result/source closeout received independent ACCEPT_WITH_NOTES;
+all notes are nonblocking/disposed. New asset/build/current-consumer effects
+require their own exact review.
 Outer controller/read isolation, retained lifecycle, historical/live/matched
 efficiency/publication and wider cleanup remain explicit independent gates.
 

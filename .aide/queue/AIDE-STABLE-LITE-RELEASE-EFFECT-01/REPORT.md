@@ -24,7 +24,10 @@ no IO errors. See [actual source result](evidence/capability-payload-current-sou
 [source qualification](evidence/source-qualification.json),
 [CLI proof](evidence/capability-payload-current-cli-proof.json) and
 [exact preexecution acceptance](evidence/capability-payload-corrective2-acceptance.json).
-Post-result source/effect review remains distinct from preexecution acceptance.
+Post-result source closeout received exact independent ACCEPT_WITH_NOTES on
+`998a4d19`/tree `cdbe6dbf`, with all notes nonblocking and disposed; see
+[closeout acceptance](evidence/capability-payload-source-closeout-acceptance.json).
+Future effects remain separately gated.
 
 ## What changed and why
 

@@ -1,0 +1,29 @@
+{
+  "blocking_findings": [],
+  "checks": "frozenGit reads/diffs/listed-filechecksums and Python-B retainedcomparisons; no newexecution/imports/effects",
+  "executed_source": "9badd6f951ca854ae4cc5b13079b26b2c3c3fc43",
+  "future_effects_accepted": false,
+  "notes": [
+    {
+      "blocking": false,
+      "disposition": "verified exact source/result and successor delta",
+      "note": "qualification binds executed9badd source; successor records only; report links/status/cached refs coherent"
+    },
+    {
+      "blocking": false,
+      "disposition": "explicit in current result and report, exact counts verified",
+      "note": "workspace sample includes logs/no hard4MiB/transient peak proof; logical bytes includeowner marker"
+    },
+    {
+      "blocking": false,
+      "disposition": "retained explicitly; verdict resolves source closeout only",
+      "note": "futurebuild/consumers/capacity/asset/promotion/integration/release gates separate; outer/read/history/live/efficiency open"
+    }
+  ],
+  "reviewer": "/root/containment_review",
+  "schema": "aide.capability-payload-postresult-source-acceptance.v1",
+  "source_commit": "998a4d19b3c2c1fb5ee912365e2106c76f6a3e05",
+  "source_result_sha256": "0ba452be6413d83d28cd7c22a59487ad2365fab159d9052fd41b3554b24fec8a",
+  "source_tree": "cdbe6dbf2ef789e6481aab50b2ee05dc4bc68e03",
+  "verdict": "ACCEPT_WITH_NOTES"
+}
