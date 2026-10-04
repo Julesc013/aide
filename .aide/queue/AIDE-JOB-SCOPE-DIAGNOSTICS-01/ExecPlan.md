@@ -56,7 +56,7 @@ receipts, not a new clone. Native host/resource controls retain their prior limi
 
 - [x] Clean source, policies, adopted requirements and existing command inspected.
 - [x] Exact child admitted with plan and allowlist.
-- [ ] Projection, regression and managed qualification complete.
+- [x] Projection, 70 regressions, affected export and full managed validation complete.
 - [ ] Exact independent source/dev-effect review and guarded integration complete.
 
 Source-binding detail: add a projection-only method to the existing prepared
@@ -64,3 +64,12 @@ scoped host. It describes the validated configuration captured by prepare, not
 the earlier CLI read. Bind its digest to the owner inspect result and refuse a
 mismatch. This prevents a configuration replacement from producing a stale
 diagnostic without changing execution controls or the trusted owner.
+
+## Actual qualification
+
+Frozen source 80fe1ab1 passed one existing public scoped job e093b66a.
+The 70 tests include six new command cases; export and full validation exit zero.
+Retained log/output trees match receipt digests. Scratch is absent, reservation
+released and active marker absent. Exported CLI views match source inspection
+against the approved source checkout; this is not a new target install. Existing
+ZIP/configuration pins remain unchanged. Actual outer containment remains open.

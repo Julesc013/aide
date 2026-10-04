@@ -1,0 +1,117 @@
+{
+  "after": {
+    "commit_free": 10589884416,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 69175312384
+    },
+    "physical_free": 11488649216
+  },
+  "before": {
+    "commit_free": 10728488960,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 69173211136
+    },
+    "physical_free": 11536932864
+  },
+  "canonical_after": {
+    ".aide/export/aide-lite-pack-v0": 4164409
+  },
+  "canonical_before": {
+    ".aide/export/aide-lite-pack-v0": 4160454
+  },
+  "collected_manifest": {
+    "logs": "60bf291ba70505c207881c01dcfb7ed1e1d31a2a9a50538beb4febac6be3a8f5",
+    "output": "ca9db3a0dc6056db4e615c0170e4b6bda17f0f70544550d757b7188a6894807d"
+  },
+  "config_digest": "57b25cad0fb28c9f4ec5caa7b0aa311013cc35743db240682d2324f96784cca3",
+  "created_at_unix_ns": 1791102561833463200,
+  "environment_digest": "38cabdf6f240f6b3454b684da5ab1db1a952c4b5c4d4adedda54fd8119c164b7",
+  "job": {
+    "adapter": "python",
+    "argv": [
+      "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      ".aide/queue/AIDE-SCOPED-JOB-ENTRY-01/worker.py",
+      "--refresh-export"
+    ],
+    "canonical_outputs": {
+      ".aide/export/aide-lite-pack-v0": {
+        "bytes": 16777216,
+        "volume_id": "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\"
+      }
+    },
+    "cwd": "D:\\Projects\\AIDE\\aide",
+    "executable_sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9",
+    "inputs": {
+      ".aide/queue/AIDE-SCOPED-JOB-ENTRY-01/worker.py": "fa802564abab196a69af0a87db8fbdba6efc439426b75fe336b6bbbebd655357",
+      ".aide/release/stable/aide-lite-v1.0.0.zip": "002636e7732125ceade6bc3fe2d8e6fdb187cc544052360483dcb5b5d77acf97",
+      ".aide/scripts/aide_lite.py": "9345fdbc91e8ac1aab6fec60b48ea0c71a984c31b6e8690e4370e0dd8b2ecb05",
+      ".aide/scripts/tests/test_managed_workspace.py": "dec455194f5a0570c32b445df9ec4fb15643aed797a797b7c61acbee3fca2597",
+      ".aide/scripts/tests/test_scoped_host.py": "cd76b5e2061b26c60dc1d9f120712de9bd3304188fcdeca754a2760e31117467",
+      "core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036"
+    },
+    "owner": "scoped-job-entry-01",
+    "schema": "aide.maintainer-job.v1",
+    "source_commit": "80fe1ab1e09240fa23819677aa27207287d842f9",
+    "source_tree": "6023570e1c889ff8d916d32873ad97e4ca46f83b",
+    "workunit": "AIDE-JOB-SCOPE-DIAGNOSTICS-01"
+  },
+  "job_id": "e093b66a21e648adabf6859c0841176e",
+  "last_capacity": {
+    "commit_free": 10394214400,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 69178425344
+    },
+    "physical_free": 11184828416
+  },
+  "limits": {
+    "canonical_bytes": 536870912,
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 6291456,
+    "max_files": 100000,
+    "memory_bytes": 2147483648,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 32,
+    "retained_bytes": 65536,
+    "runtime_seconds": 900,
+    "scratch_bytes": 8388608
+  },
+  "manifest_digest": "90971959c3b48325975a53ec237dc7e2b1b0fec9bdedab41f1fa64a4b8875404",
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4164409
+    },
+    "memory_bytes": 346931200,
+    "scratch_bytes": 3101307
+  },
+  "phase": "retired",
+  "process": {
+    "creation_filetime": 134355761623329510,
+    "job_id": "e093b66a21e648adabf6859c0841176e",
+    "peak_memory_bytes": 346931200,
+    "pid": 20948,
+    "stage": "quiescent"
+  },
+  "reservation_released": true,
+  "reservations": {
+    "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 40960000
+  },
+  "result": {
+    "bytes": 3098837,
+    "creation_filetime": 134355761623329510,
+    "exit_code": 0,
+    "io_errors": [],
+    "job_id": "e093b66a21e648adabf6859c0841176e",
+    "pid": 20948,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\e093b66a21e648adabf6859c0841176e",
+  "scratch": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\e093b66a21e648adabf6859c0841176e",
+  "scratch_absent": true,
+  "scratch_identity": [
+    3781016413010784355,
+    1407374885682216
+  ],
+  "scratch_readonly_cleared": 0
+}

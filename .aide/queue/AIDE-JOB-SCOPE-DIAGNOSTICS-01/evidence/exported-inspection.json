@@ -1,0 +1,18 @@
+[
+  {
+    "consumer": "legacy",
+    "exit_code": 0,
+    "bytes": 1775,
+    "sha256": "372c9e78a608940a8885dd0538ce4e540e644954df53918925afb93e07232e44",
+    "boundary_matches_source": true,
+    "route": "exported CLI against approved source checkout and existing source host/config; not a new target install"
+  },
+  {
+    "consumer": "scoped",
+    "exit_code": 0,
+    "bytes": 1841,
+    "sha256": "0e0d8d30bdef28761a0d79385c8f51dac231cdede792aa8221eb72ad51967e68",
+    "boundary_matches_source": true,
+    "route": "exported CLI against approved source checkout and existing source host/config; not a new target install"
+  }
+]

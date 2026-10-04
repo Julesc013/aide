@@ -1,0 +1,23 @@
+{
+  "schema": "aide.job-diagnostic-dev-effect.v1",
+  "source_base": "e3e6f8bcff762638326853746dfd952f826f1f76",
+  "candidate": "exact independently accepted final successor of frozen implementation 80fe1ab1",
+  "qualified_job": "e093b66a21e648adabf6859c0841176e",
+  "expected_remote_refs": {
+    "dev": "e3e6f8bcff762638326853746dfd952f826f1f76",
+    "main": "3d186d0584bb40f18402a626c9fe099260fae3d4",
+    "task/aide-job-scope-diagnostics-01": null
+  },
+  "untouched_ref_count": 84,
+  "untouched_ref_sha256": "f1a6ac639161913701702ace57a588190fe8365e2123cb30f38902f1007b11fb",
+  "ref_digest_encoding": "Python json.dumps(full_refs_heads_mapping, sort_keys=True), default separators/ensure_ascii, UTF-8, no trailing newline",
+  "effects": [
+    "fast-forward local dev to the exact independently accepted candidate",
+    "atomic nonforce push dev plus this one task branch",
+    "verify selected refs and all untouched tips"
+  ],
+  "main_promotion": false,
+  "other_refs": "preserved",
+  "runtime_archive_and_operator_configuration": "unchanged",
+  "tags_publication_target_machine_or_model_effects": false
+}

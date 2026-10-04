@@ -1,0 +1,23 @@
+{
+  "model_calls": 0,
+  "outer_session_contained": false,
+  "read_isolation": "unqualified",
+  "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+  "named_job_membership": true,
+  "unapproved_write_denied": true,
+  "child_unapproved_write_denied": true,
+  "child_probe_exit_code": 19,
+  "config_write_denied": true,
+  "trusted_archive_write_denied": true,
+  "control_write_denied": true,
+  "tests": {
+    "run": 70,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "export_exit_code": 0,
+  "validation_exit_code": 0,
+  "validation_seconds": 17.084,
+  "passed": true
+}

@@ -1,6 +1,6 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-JOB-SCOPE-DIAGNOSTICS-01
-status: running
-planning_state: bounded_projection_implementation
-result: IN_PROGRESS
+status: needs_review
+planning_state: managed_qualification_passed_exact_review_pending
+result: INSPECTION_BOUNDARY_QUALIFIED_REVIEW_PENDING
 updated_at: 2026-10-04

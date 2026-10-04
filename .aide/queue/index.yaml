@@ -5,8 +5,8 @@ default_concurrency: 1
 canonical_source: .aide/queue
 items:
   - id: AIDE-JOB-SCOPE-DIAGNOSTICS-01
-    status: running
-    planning_state: bounded_projection_implementation
+    status: needs_review
+    planning_state: managed_qualification_passed_exact_review_pending
     title: Explain the managed job inspection boundary
     task: .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/task.yaml
     exec_plan: .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/ExecPlan.md

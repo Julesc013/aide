@@ -247,6 +247,14 @@ def prepare(config_path, repo):
                            else Path(repo) / selection['runtime']['root'])
         working_repo = Path(repo)
 
+        def inspection_metadata(self):
+            """Describe the validated envelope, without an inventory or launch."""
+            return {'config_digest': owner.digest(config),
+                    'kind': selection['kind'],
+                    'aggregate_limit_bytes': selection['aggregate_bytes'],
+                    'canonical_outputs': list(allowed),
+                    'toolchain_read_root_count': len(selection['read_roots'])}
+
         def admission_probe(self, observed_roots):
             # owner.run calls this first under estate_lock, before allocation.
             # Later samples use OS counters; no repeated pool-wide scans.

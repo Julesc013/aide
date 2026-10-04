@@ -1,6 +1,11 @@
 # Changed files
 
 - .aide/context/latest-task-packet.md
+- .aide/export/aide-lite-pack-v0/checksums.json
+- .aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py
+- .aide/export/aide-lite-pack-v0/files/core/execution/scoped_host.py
+- .aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md
+- .aide/export/aide-lite-pack-v0/manifest.yaml
 - .aide/generated/manifest.yaml
 - .aide/intake/latest-intent-packet.json
 - .aide/intake/latest-intent-packet.md
@@ -8,9 +13,16 @@
 - .aide/intake/latest-workunit-draft.md
 - .aide/profile.yaml
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/ExecPlan.md
+- .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/attempt-e093b66a21e648adabf6859c0841176e.json
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/baseline-inspection.json
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/changed-files.md
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/current-inspection.json
+- .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/effect-manifest.json
+- .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/effective-scope.json
+- .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/exported-inspection.json
+- .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/outcome.md
+- .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/qualification.json
+- .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/qualified-outcome.json
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/remaining-risks.md
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/validation.md
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/prompt.md
@@ -25,4 +37,4 @@
 - core/execution/scoped_host.py
 - docs/reference/aide-lite-test-runner.md
 
-Only the scoped-host projection method and command rendering change executable behavior. Execution permissions, selected runtime and original configuration are unchanged. Affected export generation is separately admitted within the same finite canonical destination.
+Executable changes are the additive command projection and prepared-host metadata method. Accepted archive/operator pins and execution permissions remain unchanged. Only the existing affected export is regenerated; no new storage or target install.

@@ -1,0 +1,46 @@
+{
+  "job_id": "e093b66a21e648adabf6859c0841176e",
+  "source_commit": "80fe1ab1e09240fa23819677aa27207287d842f9",
+  "manifest_digest": "90971959c3b48325975a53ec237dc7e2b1b0fec9bdedab41f1fa64a4b8875404",
+  "receipt_sha256": "a2805e9bd9cfa432cb28a5b6faa7a44939529ec992a805c53a9762d3954eea10",
+  "retained_tree_hashes_verified": {
+    "logs": "60bf291ba70505c207881c01dcfb7ed1e1d31a2a9a50538beb4febac6be3a8f5",
+    "output": "ca9db3a0dc6056db4e615c0170e4b6bda17f0f70544550d757b7188a6894807d"
+  },
+  "tests": {
+    "run": 70,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "export_exit_code": 0,
+  "validation_exit_code": 0,
+  "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+  "named_job": true,
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4164409
+    },
+    "memory_bytes": 346931200,
+    "scratch_bytes": 3101307
+  },
+  "aggregate_admission": {
+    "by_pool": {
+      "canonical:.aide/export/aide-lite-pack-v0": 4160454,
+      "control": 13694135,
+      "retained": 187138974,
+      "scratch": 0
+    },
+    "enforcement": "cooperative_admission_and_monitored_growth",
+    "limit_bytes": 268435456,
+    "logical_bytes": 204993563,
+    "reserved_bytes": 39911424
+  },
+  "scratch_absent": true,
+  "reservation_released": true,
+  "active_absent": true,
+  "child_model_calls": 0,
+  "parent_review_usage": "unknown_not_zero",
+  "whole_session_containment": false,
+  "read_isolation": "unqualified"
+}
