@@ -11,6 +11,7 @@ import os
 from pathlib import Path
 import shutil
 import stat
+import subprocess
 import sys
 import unittest
 import uuid
@@ -301,6 +302,38 @@ class CustodyTests(unittest.TestCase):
         self.assertEqual(result, 1)
         self.assertIn('requires job custody recover', output.getvalue())
         self.assertEqual(owner.read_json(self.custody.active)['schema'], PENDING)
+
+    def test_actual_public_cli_with_pinned_owner_completes_custody_and_lookup(self):
+        # Reuse the exact public supervisor selection; only newly owned fixture
+        # roots/limits differ. No live pool grants or source archive edits.
+        public_config = REPO / '.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/native-fixture-configuration.json'
+        selection = json.loads(public_config.read_text(encoding='utf-8'))['execution_host']
+        self.config['execution_host'] = selection
+        owner.write_json(self.config_path, self.config)
+
+        def invoke(operation, *extra):
+            result = subprocess.run([sys.executable, '-B', str(REPO / '.aide/scripts/aide_lite.py'),
+                '--repo-root', str(REPO), 'job', 'custody', operation,
+                '--config', str(self.config_path), '--job-id', self.id, *extra],
+                capture_output=True, text=True, encoding='utf-8', timeout=30)
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            return json.loads(result.stdout)
+
+        plan = invoke('plan')
+        self.assertEqual(plan['state'], 'PLANNED')
+        self.assertNotIn('plan', plan)  # routine view remains bounded
+        before = invoke('read', '--member', 'logs/stdout', '--limit', '31')
+        changed = invoke('apply', '--expect-plan', plan['plan_digest'])
+        self.assertEqual(changed['state'], 'CUSTODIED')
+        self.assertTrue(changed['pending_absent'])
+        self.assertEqual(invoke('verify')['state'], 'VERIFIED')
+        after = invoke('read', '--member', 'logs/stdout', '--limit', '31')
+        self.assertEqual(after['slice_base64'], before['slice_base64'])
+        self.assertEqual(after['sha256'], before['sha256'])
+        self.assertEqual((self.root / 'receipt.json').read_bytes(), self.raw_receipt)
+        self.assertEqual((self.root / 'owner.json').read_bytes(), self.raw_owner)
+        self.assertFalse((self.root / 'logs').exists())
+        self.assertFalse(self.custody.active.exists())
 
 
 if __name__ == '__main__':

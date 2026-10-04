@@ -1,6 +1,11 @@
 # Retired evidence custody development report
 
-Date:2026-10-05 Australia/Sydney. A bounded C4 source repair now passes22
+Date:2026-10-05 Australia/Sydney. Public-route correction is prepared but unqualified.
+A real read-only plan exposed a pinned-package import gap; no live effects occurred.
+The22-test result below remains valid for its recorded fixture scope. A new23rd
+actual CLI workflow is authored and requires exact native review.
+
+A bounded C4 source repair passes22
 meaningful regressions through the restricted managed worker. Live custody,
 source integration and stable certification remain unfinished.
 

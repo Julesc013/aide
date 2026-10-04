@@ -45494,8 +45494,14 @@ def command_job_custody(args: argparse.Namespace) -> int:
             owner, _ = scoped.prepare(args.config, args.repo_root)
         else:
             from core.execution import managed_workspace as owner
-        from core.execution.retired_evidence import Custody
-        custody = Custody(owner, args.config)
+        # The pinned owner retains its own old core package namespace. Load
+        # this separately qualified administrative source explicitly; it uses
+        # the selected owner's guards/lock and never becomes the supervisor.
+        custody_spec = importlib.util.spec_from_file_location(
+            "aide_retired_evidence_custody", Path(root) / "core/execution/retired_evidence.py")
+        custody_module = importlib.util.module_from_spec(custody_spec)
+        custody_spec.loader.exec_module(custody_module)
+        custody = custody_module.Custody(owner, args.config)
         operation = args.custody_command
         if operation == "plan":
             result = custody.plan(args.job_id)

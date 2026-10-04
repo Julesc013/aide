@@ -1,0 +1,36 @@
+fix(execution): bind public custody to explicit source module
+
+## Summary
+- Correct AIDE-RETIRED-EVIDENCE-CUSTODY-01 real public namespace gap.
+
+## Why
+- Preserve complete unique evidence while addressing finite managed retention.
+
+## Changed
+- Add lossless custody plan, apply, recover, verify and bounded read commands.
+- Preserve receipt identities and reuse the existing owner reservation latch.
+- Record source-only admission, finite scope, recovery and23 authored checks.
+
+## Validation
+- PASS: AST parsing, Harness compile/structural validation and whitespace.
+- PASS: independently verified prior22-test result; public route remains unqualified.
+- NOT RUN:23 native regressions; exact next fixture review required.
+- WARN: CLI input change invalidates affected capability/export projections.
+
+## Changelog
+- Added: explicit administrative source loading and actual public CLI fixture.
+
+## Risks
+- No live custody, recovered bytes, outer containment or hard quota claim.
+- Original archive selection stays held and the current ZIP stays unchanged.
+
+## Follow-up
+- Obtain exact native fixture admission and inspect complete retired output.
+- Qualify source and live custody separately before raw-copy retirement.
+
+AIDE-Task: AIDE-RETIRED-EVIDENCE-CUSTODY-01
+AIDE-Phase: source-candidate
+AIDE-Result: PENDING_NATIVE_QUALIFICATION
+AIDE-Scope: finite-retired-evidence-custody
+AIDE-Token-Impact: bounded-evidence-view; full-evidence-preserved
+AIDE-Quality-Gate: exact-native-and-source-review-pending

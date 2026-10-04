@@ -33,7 +33,7 @@ def main():
     text = (result.stdout + result.stderr).decode('utf-8', errors='replace')
     proof = {'schema': 'aide.retired-custody-source-fixture.v1',
              'windows_identity': identity.value, 'test_exit_code': result.returncode,
-             'tests_expected': 22, 'count_verified': bool(re.search(r'Ran 22 tests? in ', text)),
+             'tests_expected': 23, 'count_verified': bool(re.search(r'Ran 23 tests? in ', text)),
              'stdout_sha256': hashlib.sha256(result.stdout).hexdigest(),
              'stderr_sha256': hashlib.sha256(result.stderr).hexdigest(),
              'fixtures_retired': not list(TMP.iterdir()), 'model_calls': 0,
@@ -42,7 +42,7 @@ def main():
         json.dumps(proof, sort_keys=True, indent=2) + '\n', encoding='utf-8', newline='\n')
     if result.returncode or not proof['count_verified'] or not proof['fixtures_retired'] or 'skipped=' in text:
         raise AssertionError('custody source fixture qualification failed; complete process output retained')
-    print(json.dumps({'result': 'PASS', 'tests': 22, 'fixtures_retired': True}), flush=True)
+    print(json.dumps({'result': 'PASS', 'tests': 23, 'fixtures_retired': True}), flush=True)
 
 
 if __name__ == '__main__':

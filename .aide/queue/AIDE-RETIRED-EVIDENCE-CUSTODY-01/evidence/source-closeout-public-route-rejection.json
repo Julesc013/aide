@@ -1,0 +1,10 @@
+{
+  "finding": "Public custody import resolves against older pinned package namespace. Explicit source loading plus actual public-route fixture required.",
+  "live_custody_performed": false,
+  "native22_result": "Independently verified PASS with complete receipt/rawtrees/proof/retirement; never relabelled a failure.",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.exact-source-closeout-review.v1",
+  "source_commit": "643283d9633d8170bbb47537a230c36ba6295334",
+  "source_tree": "cf7907e1a5b4426d98d9dd246d442fcbe0f2ed1b",
+  "verdict": "REQUEST_CHANGES"
+}

@@ -140,3 +140,20 @@ Source/native closeout and any live custody still require exact review.
 Full source binding/export refresh and integration are separate, unperformed
 effects; the current archive contains C1 and the unchanged24 owner sources,
 not this new custody feature. Observer model requests0 is not whole host usage.
+
+### Public route gap found before live effects
+
+One read-only live candidate plan stopped with ModuleNotFoundError before
+retained/control content changes. Source closeout643283d9 received REQUEST_CHANGES
+for the public handler importing against the older selected owner namespace.
+Reviewer independently verified genuine22-test PASS/retirement; preserve that
+result as class/ordinary-recovery scope, not working custody CLI delivery.
+
+Corrected the source command to explicitly load the administrative module from
+its frozen source path and pass in the selected known-good owner. The supervisor
+is not replaced. A23rd fixture uses the real public CLI with the24-pin selection
+and newly owned tiny roots: compact plan, raw read, exact apply, full verify and
+archived read. It checks unchanged receipt/owner and released pending state.
+No new live plan or effect is allowed before this actual route is qualified.
+A new exact native effect review is required; only public fixture code/context
+changed, and current archive/original selection/22-test history remain unchanged.

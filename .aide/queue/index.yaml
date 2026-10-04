@@ -3886,9 +3886,9 @@ items:
     evidence: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence
 
   - id: AIDE-RETIRED-EVIDENCE-CUSTODY-01
-    status: needs_review
-    planning_state: native22_passed_complete_collection_retired
-    result: PASS_SOURCE_FIXTURES_LIVE_CUSTODY_PENDING
+    status: running
+    planning_state: public_route_corrective_fixture_prepared
+    result: PASS22_FIXTURES_PUBLIC_ROUTE_QUALIFICATION_PENDING
     title: Preserve complete retired evidence under finite managed custody
     task: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/task.yaml
     exec_plan: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md
