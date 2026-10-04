@@ -13,17 +13,23 @@
 - .aide/intake/latest-workunit-draft.md
 - .aide/profile.yaml
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/ExecPlan.md
+- .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/attempt-67879a9fbce04871b15ab08996a20769.json
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/attempt-e093b66a21e648adabf6859c0841176e.json
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/baseline-inspection.json
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/changed-files.md
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/current-inspection.json
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/effect-manifest.json
+- .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/effective-scope-67879a9fbce04871b15ab08996a20769.json
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/effective-scope.json
+- .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/exported-inspection-67879a9fbce04871b15ab08996a20769.json
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/exported-inspection.json
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/outcome.md
+- .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/qualification-67879a9fbce04871b15ab08996a20769.json
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/qualification.json
+- .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/qualified-outcome-67879a9fbce04871b15ab08996a20769.json
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/qualified-outcome.json
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/review-52938981.md
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence/validation.md
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/prompt.md
 - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/status.yaml
@@ -36,5 +42,3 @@
 - PLANS.md
 - core/execution/scoped_host.py
 - docs/reference/aide-lite-test-runner.md
-
-Executable changes are the additive command projection and prepared-host metadata method. Accepted archive/operator pins and execution permissions remain unchanged. Only the existing affected export is regenerated; no new storage or target install.

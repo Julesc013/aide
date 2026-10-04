@@ -1,0 +1,36 @@
+{
+  "aggregate_admission": {
+    "by_pool": {
+      "canonical:.aide/export/aide-lite-pack-v0": 4164409,
+      "control": 13694135,
+      "retained": 190244506,
+      "scratch": 0
+    },
+    "enforcement": "cooperative_admission_and_monitored_growth",
+    "limit_bytes": 268435456,
+    "logical_bytes": 208103050,
+    "reserved_bytes": 39911424
+  },
+  "filesystem": {
+    ":minimal": "read",
+    ":root": "deny",
+    "C:\\Program Files\\Git": "read",
+    "C:\\Users\\Jules\\.codex\\packages\\standalone\\releases\\0.145.0-x86_64-pc-windows-msvc\\bin": "read",
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64": "read",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\control": "deny",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\control\\active.json": "read",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\67879a9fbce04871b15ab08996a20769": "read",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\67879a9fbce04871b15ab08996a20769\\cache": "write",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\67879a9fbce04871b15ab08996a20769\\output": "write",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\67879a9fbce04871b15ab08996a20769\\tmp": "write",
+    "D:\\Projects\\AIDE\\aide": "read",
+    "D:\\Projects\\AIDE\\aide\\.aide.local": "deny",
+    "D:\\Projects\\AIDE\\aide\\.aide.local\\scoped-job-entry-01-execution.json": "deny",
+    "D:\\Projects\\AIDE\\aide\\.aide\\export\\aide-lite-pack-v0": "write"
+  },
+  "host_executable_sha256": "83751f15cb6a0a7b97df67752c001e3fe1c20e18ffbfec3ff63567296205eb6c",
+  "network_enabled": false,
+  "outer_session_contained": false,
+  "read_isolation": "unqualified",
+  "schema": "aide.scoped-host.observation.v1"
+}

@@ -56,7 +56,7 @@ receipts, not a new clone. Native host/resource controls retain their prior limi
 
 - [x] Clean source, policies, adopted requirements and existing command inspected.
 - [x] Exact child admitted with plan and allowlist.
-- [x] Projection, 70 regressions, affected export and full managed validation complete.
+- [x] Projection, repaired 71-test qualification, affected export and full managed validation complete.
 - [ ] Exact independent source/dev-effect review and guarded integration complete.
 
 Source-binding detail: add a projection-only method to the existing prepared
@@ -81,3 +81,12 @@ adapter exception: absent inspection_metadata escaped structured REFUSED handlin
 Add a callable-method guard raising ValueError and one older-host regression;
 no legacy fallback or wider compatibility claim. Retain the first 70-test job
 as evidence of that subject; qualify the repaired source with 71 cases.
+
+Repaired source 092ebc5987fd0bb681e38ecb59626333e528ed35 passed public job
+67879a9fbce04871b15ab08996a20769: 71 tests, zero failures/errors/skips, export
+and full validation exit zero. Its receipt and complete retained tree hashes
+were independently recomputed; scratch, active marker and reservation are
+retired. Job-named evidence preserves both subjects without replacing the first
+proof. All 844 export checksums and affected source/payload bytes match. Real
+source/export inspect views remain below 2 KiB against the existing source
+environment. Superseding exact source/effect review remains required.

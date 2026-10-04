@@ -12953,4 +12953,7 @@ archive remain unchanged.
 Independent review of 52938981 found an older-adapter missing-method exception
 that escaped the structured refusal. The fix adds a callable interface guard and
 one no-fallback regression; the first 70-test receipt is retained. The repaired
-source receives a new exact managed qualification before superseding review.
+source 092ebc59 passed job 67879a9f with 71 tests, export and full validation.
+Both retained result-tree hashes, retirement and all 844 payload checksums were
+verified. Exact superseding review remains required before dev integration;
+main, stable archive and operator configuration are unchanged.
