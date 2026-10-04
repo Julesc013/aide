@@ -853,3 +853,9 @@ raw trees and retirement; exact archive build/consumer/replay acceptance before
 local runtime promotion/integration. No tag/publication, model calls, historical
 acceptance, client restart, machine controls or target adoption from this slice.
 All previous source/assets/reviews remain identifiable in Git and retained proofs.
+
+The queue/task/status review posture is reconciled for this frozen first phase.
+The existing six generated metadata targets may be compiled solely for this
+queue-index change; preserve manual content. The canonical configuration copy
+uses Git-LF bytes and is parsed-identical to the unchanged ignored a241 original;
+its projection digest and the actually selected raw original digest are distinct.

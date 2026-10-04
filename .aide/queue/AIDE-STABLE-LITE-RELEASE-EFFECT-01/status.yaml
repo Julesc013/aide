@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
-status: in_progress
-planning_state: accepted_capability_source_payload_refresh_admission_pending
+status: needs_review
+planning_state: capability_payload_source_frozen_exact_review_pending
 result: CAPABILITY_SOURCE_ACCEPTED_LOCAL_PAYLOAD_REFRESH_PENDING
 updated_at: 2026-10-05
 current_slice: capability_payload_refresh_source_envelope_pending_review

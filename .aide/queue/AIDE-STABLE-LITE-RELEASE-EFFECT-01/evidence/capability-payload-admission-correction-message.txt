@@ -1,0 +1,32 @@
+docs(release): reconcile payload admission and configuration evidence
+
+## Summary
+- Reconcile exact first-phase queue/task/status and configuration projection.
+
+## Why
+- The queue retained an older frozen-phase label and original config CRLF bytes require distinct canonical Git-LF custody.
+
+## Changed
+- Keep all release statuses needs_review with current capability payload preparation.
+- Compile only existing generated metadata and distinguish parsed configuration from selected raw original bytes.
+
+## Validation
+- PASS: exact configuration equivalence/input hashes/JSON, Harness compile and diff.
+- NOT RUN: native source/export, asset mutation and all later effects.
+- Corrected unsupported aide_lite compile invocation to documented scripts/aide compile --write; parser refused without mutation.
+
+## Changelog
+- Fixed: coherent queue posture and canonical configuration provenance for payload admission.
+
+## Risks
+- Existing256MiB monitored/cooperative admission and all release/host/model gates remain unchanged.
+
+## Follow-up
+- Review the corrected exact source/native effect before one source dispatch.
+
+AIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01
+AIDE-Phase: capability-payload-admission-correction
+AIDE-Result: PREPARED_native_not_run
+AIDE-Scope: existing queue/generated metadata and exact source effect
+AIDE-Token-Impact: no tests repeated; deterministic preparation
+AIDE-Quality-Gate: exact source/native acceptance
