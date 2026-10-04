@@ -38,6 +38,7 @@ scope:
     - .aide.local/session-containment-01-execution.json
     - .aide.local/session-storage-probe-execution.json
     - .aide.local/session-storage-probe-job.json
+    - .aide.local/session-storage-identity-job.json
   forbidden_operations:
     - new worktrees, clones, storage roots or recovery archives
     - machine-wide ACL, account, quota or Codex-default changes
@@ -58,7 +59,7 @@ verification:
   - explicit uncovered routes and monitored versus enforced limits
 
 storage_discovery_followup:
-  status: exact_read_only_admission_pending
+  status: actual_dirty_worktree_preserved_identity_fixture_pending
   paths:
     - D:/Development/FacMan/repositories/universal-setup-db9c210f4a17/worktrees/task-usk-wu-006-production-publisher
     - D:/Projects/Universal/universal-setup
@@ -67,3 +68,6 @@ storage_discovery_followup:
   current_branch_reuse: task/aide-current-scoped-lite-qualification-01
   scope: bounded read-only metadata; original live config/runtime/assets fixed; target mutation forbidden
   gate: exact independent admission/source/envelope before dispatch
+
+  actual_metadata_ref: evidence/storage-custody-verification.json
+  metadata_identity_repair: only owned three-file native fixture; no target reread

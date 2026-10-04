@@ -148,3 +148,26 @@ Check the metadata deadline before each queued directory. Other writers and
 race-free snapshot coverage remain unknown; pointer/hash observations are
 finite custody checks, not atomic exclusion. Mixed/truncated observations
 report PARTIAL. Only the superseding exact frozen subject may be dispatched.
+
+
+### Actual result and narrow identity correction
+
+Accepted d0fad3ad native job c3b0df3cbf1f4f0aa0b873b79bd5a9a5 observed
+801 entries/681 files and7,794,943 logical bytes. All Git results complete;
+three tracked source modifications and31 ignored bytecode names are present.
+Target HEAD671278ae and master7bdac084 stayed unchanged during the attempt;
+exact pointers/common root remained fixed. Preserve this worktree: paths and
+covering refs do not preserve dirty work or prove that another writer is absent.
+Receipt/output/log digests verified;17,806 peak scratch bytes,81,956,864 peak
+memory bytes,21,802 retained logical bytes; scratch/reservation retired.
+
+Windows DirEntry.stat cached identity/link fields are zero (Python documentation),
+so raw100 unique logical bytes and zero shared entries are INVALID. The original
+result is immutable; verification normalizes those fields to unknown and claims
+zero reclaimed bytes. Fix the diagnostic helper to use fresh os.stat without
+following links and mark nonpositive identities unknown/PARTIAL. Qualify this
+changed behavior on one owned native fixture: two distinct same-content3-byte
+files plus one hard link must observe9 logical/6 unique bytes and2 shared names.
+No repeat of target discovery, no target reads, no Git child in this fixture.
+Original selected config/runtime/256MiB budget supervises it. Freeze/review its
+exact source and native envelope; no model request or canonical output.

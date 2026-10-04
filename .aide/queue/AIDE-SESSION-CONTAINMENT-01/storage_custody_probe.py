@@ -153,6 +153,7 @@ def metadata():
     result = {"entries": 0, "files": 0, "directories": 0,
               "logical_bytes": 0, "observed_unique_logical_bytes": 0,
               "shared_file_entries": 0, "redirected_entries": 0,
+              "file_identity_complete": True, "identity_unknown_entries": 0,
               "errors": 0, "complete": True, "file_contents_read": False}
     seen = set()
     while stack:
@@ -169,7 +170,9 @@ def metadata():
                         return result
                     result["entries"] += 1
                     try:
-                        info = entry.stat(follow_symlinks=False)
+                        # Windows DirEntry.stat caches zero inode/device/link
+                        # values; fetch actual metadata before identity accounting.
+                        info = os.stat(entry.path, follow_symlinks=False)
                         if info.st_file_attributes & 1024 or stat.S_ISLNK(info.st_mode):
                             result["redirected_entries"] += 1
                             result["complete"] = False
@@ -179,12 +182,19 @@ def metadata():
                         elif stat.S_ISREG(info.st_mode):
                             result["files"] += 1
                             result["logical_bytes"] += info.st_size
-                            key = (info.st_dev, info.st_ino)
-                            if key not in seen:
-                                seen.add(key)
-                                result["observed_unique_logical_bytes"] += info.st_size
-                            if info.st_nlink > 1:
-                                result["shared_file_entries"] += 1
+                            if info.st_dev <= 0 or info.st_ino <= 0 or info.st_nlink <= 0:
+                                result["identity_unknown_entries"] += 1
+                                result["file_identity_complete"] = False
+                                result["complete"] = False
+                                result["observed_unique_logical_bytes"] = None
+                                result["shared_file_entries"] = None
+                            elif result["file_identity_complete"]:
+                                key = (info.st_dev, info.st_ino)
+                                if key not in seen:
+                                    seen.add(key)
+                                    result["observed_unique_logical_bytes"] += info.st_size
+                                if info.st_nlink > 1:
+                                    result["shared_file_entries"] += 1
                         else:
                             result["errors"] += 1
                             result["complete"] = False

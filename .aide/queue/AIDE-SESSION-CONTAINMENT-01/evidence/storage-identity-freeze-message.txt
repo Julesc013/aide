@@ -1,0 +1,31 @@
+fix(storage): preserve dirty custody and repair Windows identity counts
+
+## Summary
+- Retain actual dirty-worktree evidence and correct invalid Windows cached identity accounting.
+## Why
+- The bounded native discovery found three modified source paths; cached zero identities cannot establish duplicate bytes or hard links.
+## Changed
+- Preserve raw native output and normalize invalid unique/shared counts to unknown.
+- Use fresh no-follow os.stat with nonpositive-identity refusal of count claims.
+- Prepare only a three-file owned native regression fixture; no target replay or cleanup.
+- Record verified terminal digests, scratch retirement and original entry/runtime/asset preservation.
+## Validation
+- PASS: exact native job exited, all bounded Git observations completed, custody/heads unchanged, output/log digests and retirement verified.
+- PASS: source AST, UTF-8 records and original pins; no target content read, mutation or deletion.
+- WARN: native cached identity/link values are invalid and excluded from conclusions.
+- NOT RUN: changed fresh-stat helper fixture pending exact independent source/effect review.
+## Changelog
+- Fixed: Windows identity accounting in bounded storage discovery.
+- Added: actual dirty-worktree preservation evidence and tiny native regression envelope.
+## Risks
+- Other writers and physical/reclaimable bytes remain unknown; no disposal authority is inferred.
+- Outer containment and historical/live/efficiency/stable-publication gates remain unfinished.
+## Follow-up
+- Review and run the exact tiny fixture once, then separately review evidence/source integration.
+
+AIDE-Task: AIDE-SESSION-CONTAINMENT-01
+AIDE-Phase: single-worktree-custody-discovery
+AIDE-Result: native_custody_collected_retired_identity_fixture_pending
+AIDE-Scope: own helper/fixture/evidence/report/task/plan and three root indexes
+AIDE-Token-Impact: bounded real result and three tiny files; no target replay or model request
+AIDE-Quality-Gate: exact independent source/native fixture acceptance before dispatch

@@ -673,3 +673,13 @@ repair owner argv compatibility, exact Git pointer/common-root custody,
 external-filter/network refusal and the metadata time bound. See its ExecPlan
 and evidence/storage-probe-review-f27cdf63.json. Actual discovery remains
 pending exact independent admission/source/effect; targets and assets unchanged.
+
+
+## 2026-10-05 actual storage custody observation
+
+The bounded managed check found three tracked source modifications in the
+recorded Universal linked worktree. Preserve it; deletion/recovered bytes zero.
+Full Git outputs and logical metadata were collected and scratch retired.
+Windows cached identity fields are excluded as unknown; a three-file owned
+fixture qualifies the fresh-stat diagnostic correction without target replay.
+See [.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md](.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md).

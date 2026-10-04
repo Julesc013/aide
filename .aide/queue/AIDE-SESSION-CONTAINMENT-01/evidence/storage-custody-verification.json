@@ -1,0 +1,72 @@
+{
+  "schema": "aide.single-worktree-custody-verification.v1",
+  "job_id": "c3b0df3cbf1f4f0aa0b873b79bd5a9a5",
+  "source_commit": "d0fad3addec6c1b3abe61cec4bcd679e6316c111",
+  "source_tree": "6a674020911f6f15c5cd5d2b702574b13438468a",
+  "receipt_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\c3b0df3cbf1f4f0aa0b873b79bd5a9a5\\receipt.json",
+  "receipt_sha256": "89a47ed6d70f6644fd4991ed2113ee03a2a90b17b234c97436f4a756ada8b467",
+  "result_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\c3b0df3cbf1f4f0aa0b873b79bd5a9a5\\output\\storage-custody.json",
+  "result_sha256": "96a5bf98b5aaea9c4dc17ce3356fd1f54ec46a5996235e2182ff690d10eaf0be",
+  "collected_digests": {
+    "logs": "8c675845be13f42ccb5a274cdb80e5e1dbe7c51228bc6ea243107fbb44944e65",
+    "output": "46d04e25b4d011baed5782c3730fe53a89a0f1cc1c694e1a5aa9041d651be5be"
+  },
+  "collected_digests_verified": {
+    "logs": true,
+    "output": true
+  },
+  "native_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+  "target": "D:\\Development\\FacMan\\repositories\\universal-setup-db9c210f4a17\\worktrees\\task-usk-wu-006-production-publisher",
+  "master": "D:\\Projects\\Universal\\universal-setup",
+  "target_head": "671278ae69d2ec892c2d3c6d6f6635cc9113ef11",
+  "master_head": "7bdac084fd997f18bb69395777d73bb0de6c6e1b",
+  "branch": "refs/heads/task/usk-wu-006-production-publisher",
+  "tracked_modified_paths": [
+    "M apps/daemon/usk_publisher_lab_service.cpp",
+    " M runtime/setup/lifecycle/usk_protected_install_publisher.cpp",
+    " M runtime/setup/lifecycle/usk_protected_install_publisher_internal.h"
+  ],
+  "untracked_count": 0,
+  "ignored_count": 31,
+  "covering_refs": [
+    "refs/heads/task/usk-wu-006-production-publisher 671278ae69d2ec892c2d3c6d6f6635cc9113ef11",
+    "refs/remotes/origin/task/usk-wu-006-authenticated-admission 671278ae69d2ec892c2d3c6d6f6635cc9113ef11"
+  ],
+  "all_git_records_complete": true,
+  "custody_unchanged": true,
+  "heads_unchanged": true,
+  "metadata": {
+    "entries": 801,
+    "files": 681,
+    "directories": 120,
+    "logical_bytes": 7794943,
+    "observed_unique_logical_bytes": null,
+    "shared_file_entries": null,
+    "redirected_entries": 0,
+    "errors": 0,
+    "complete": true,
+    "file_contents_read": false,
+    "allocated_or_reclaimable_bytes": null,
+    "file_identity_complete": false
+  },
+  "raw_invalid_fields": [
+    "metadata.observed_unique_logical_bytes",
+    "metadata.shared_file_entries"
+  ],
+  "raw_invalid_field_reason": "Windows os.DirEntry.stat returns zero st_ino/st_dev/st_nlink; raw 100 unique bytes and zero shared entries are invalid and excluded, not reclaimable space.",
+  "primary_documentation": "https://docs.python.org/3/library/os.html#os.DirEntry.stat",
+  "result": "OBSERVED_DIRTY_WORKTREE_PRESERVE_IDENTITY_COUNTS_UNKNOWN",
+  "disposable_proven": false,
+  "active_other_writers": "unknown",
+  "target_mutations": false,
+  "target_deleted": false,
+  "reclaimed_bytes": 0,
+  "peak_scratch_bytes": 17806,
+  "peak_memory_bytes": 81956864,
+  "retained_total_logical_bytes": 21802,
+  "scratch_absent": true,
+  "reservation_released": true,
+  "canonical_outputs": {},
+  "model_calls": 0,
+  "no_retry_of_target": true
+}

@@ -1,0 +1,31 @@
+{
+  "reviewer": "/root/containment_review",
+  "verdict": "ACCEPT_WITH_NOTES",
+  "tiers": [
+    "ADMISSION",
+    "SOURCE",
+    "READ_ONLY_NATIVE_PREEXECUTION_EFFECT"
+  ],
+  "candidate": "d0fad3addec6c1b3abe61cec4bcd679e6316c111",
+  "tree": "6a674020911f6f15c5cd5d2b702574b13438468a",
+  "effect_sha256": "717f5c9864d1fe784db298b80602b22385961703576d99b2e606fbbcab65188d",
+  "template_sha256": "c619d61dc09c4b34e96c80bb254f082fda0d595a545778d157b8977025584008",
+  "effective_manifest_sha256": "dba2b6b0d9374f4a83d8c590ca6c12a66cacb54235e4c216c4f0f0bbd507aaa4",
+  "notes": [
+    {
+      "classification": "nonblocking",
+      "disposition": "Only ignored source_commit/tree bound; all other identities freshly verified; locked managed admission, no active job/scratch/fallback required."
+    },
+    {
+      "classification": "nonblocking",
+      "disposition": "Retain partial/refused/changed observations; verify collected digests and exact scratch/reservation retirement."
+    },
+    {
+      "classification": "nonblocking",
+      "disposition": "Other-writer/atomic snapshot unknown; no cleanup/ref/model/network/whole-session acceptance inferred."
+    }
+  ],
+  "dispatch_count_before": 0,
+  "configuration_original_unchanged": true,
+  "no_active_scratch_preflight": true
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "aide.native-storage-identity-fixture-effect.v1",
+  "source": "exact reviewed frozen candidate/tree; only ignored manifest source identities rebound after acceptance",
+  "manifest_template_sha256": "178535bab411094225ff105c89fe4ecf4402c19b9a4030508944d7c4e134a0a8",
+  "configuration": ".aide.local/scoped-job-entry-01-execution.json",
+  "configuration_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "scope": "one native three-file fixture in existing owned job TMP; no target metadata/Git/model/network/external configuration or canonical outputs",
+  "fixture_data": "two distinct 3-byte files and one hard-link alias; nine logical bytes, six identity-deduplicated bytes, two shared names",
+  "limits": "unchanged original finite limits/256MiB aggregate; no fallback or overlap",
+  "required_before": "exact source/native effect acceptance and fresh pins/source/config/no-active locked admission",
+  "required_after": "assertion PASS; collected digests verified; owned scratch absent/reservation released",
+  "retained_original_target_attempt": "c3b0df3cbf1f4f0aa0b873b79bd5a9a5, no replay",
+  "excluded": [
+    "target deletion/mutation/reread",
+    "ref integration",
+    "stable/release/model/historical/whole-host claim"
+  ]
+}
