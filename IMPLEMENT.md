@@ -13153,3 +13153,14 @@ sections stay preserved and source acceptance requires drift-free validation.
 ## 2026-10-05 Current-payload local build preparation
 
 Prepared the smallest existing build selection and effect after accepted current source qualification: 16 MiB scratch, 1 MiB logs/result each, 8 MiB release reservation, no new runner or pool. The original configuration remains byte-identical. No build, runtime promotion or release effect is claimed from preparation.
+
+
+## 2026-10-05 Actual current-payload build and retirement
+
+Job2edf313a on frozenf0c05f09/tree7043c3be passed stable-build/stable-validate under the existing scoped worker. Complete retained trees and850 identical archive members/847 release checksums/24 supervisor hashes were verified;15,862 retained bytes, scratch absent, reservation released. Only four assets changed. Read-only verifier expectations were corrected without native replay. Consumer/replay/runtime/integration/publication gates remain open.
+
+
+Real Jules/Julesc013 authentication and fresh fetch/maps passed for the prepared
+source-only integration. The pre-freeze helper correctly blocked the known dirty
+build/record diff; no ref mutation followed. Require clean frozen readiness and
+exact independent artifact/source/ref review before the delegated effect.

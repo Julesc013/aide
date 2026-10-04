@@ -1007,3 +1007,46 @@ promotion; on failed qualification restore the four exact recorded old blobs.
 Do not replay uncertainty or widen capacity. Current consumers, delivered C1
 and deterministic replay retain all assertions and require their own exact
 asset/envelope reviews; their old estimated fit is not an admission.
+
+
+### Actual current-payload build and resource follow-up
+
+Exact f0c05f09 build admission was accepted with all nonblocking notes disposed.
+One job2edf313a passed both stable commands and retired. Complete raw trees,
+850 identical ZIP/TAR members,847 release checksums/current CLI/schema/24pins
+and only four intended asset changes are verified. See build result and REPORT.
+Original a241 configuration bytes stay unchanged but its old archive pin is
+now held stale until separately accepted promotion or exact restoration.
+Known pools232,765,649 logical bytes; new retained15,862. Sampled workspace
+8,499 is not a complete transient peak. No native replay followed read-only
+verifier corrections. Obtain exact post-result/source acceptance; future effects
+remain separate.
+
+Previous first/rest consumer output was actually3,035,626/5,802,009 bytes,
+with sampled workspace29,375,912/28,532,513. Preserve all8 cases/38 public forms/
+39 raw outputs/12 job observations and complete evidence; do not cut result
+allowances below those real outputs to force fit. The previous first envelope
+still exceeds current aggregate; inspect owned retention/phase scheduling and
+review a feasible exact effect before dispatch. No evidence deletion, cap
+widening, new pool, checkout or reduced acceptance from this result.
+
+
+### Current build closeout and source-only integration
+
+The direct owner source synchronization instruction and campaign delegation
+permit this independently of stable certification. Fresh real Jules/Julesc013
+read-only checks and fetch still show main/dev/remote task at e3f14e85,88
+corresponding branch pairs and85 unchanged other tips. Freeze actual build
+proof/assets/records and the exact source-sync effect, then obtain independent
+post-result artifact/source/ref-effect acceptance. Before any mutation require
+clean frozen HEAD/tree, fresh same maps/asset/config/pin identities, ancestry,
+single checkout/no active scratch and ready_dry_run helper plan. The helper
+correctly blocks the currently uncommitted scoped records; retain that result,
+classify the diff, commit it, and recheck the changed clean state.
+
+Then normal fast-forward only local dev/main to the exact accepted source and
+atomically push dev/main/current task; protect all85 other tips. Record final
+full maps/88 matches/assets/config/scratch and terminal receipt without creating
+a recursive source-ID successor. No tag/publication/runtime promotion or
+consumer qualification from this effect. Retained capacity and all first-stable
+gates remain separate; do not infer an unchanged model or historical approval.

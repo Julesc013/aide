@@ -1,0 +1,13 @@
+{
+  "archives": "PASS850 identical members/847 release checksums/846 unchanged source payloads plus stable marker/exact secret-example exclusion",
+  "compile": 0,
+  "consumer_replay_runtime_publication": "NOT RUN; separate gates",
+  "diff_check": 0,
+  "harness_validate": 0,
+  "native_build": "PASS once; complete verified retirement",
+  "ref_effect": "NOT RUN; exact independent review required",
+  "schema": "aide.current-build-closeout-validation.v1",
+  "source_binding_refs_unchanged": 41,
+  "source_sync_effect_sha256": "236a94c91def92c72c0843ef3e264acd1fd49503b7a3f90bc764ff13ee1dfe8d",
+  "source_sync_helper_pre_freeze": "BLOCKED correctly; dirty scoped records classified; clean ready required before effects"
+}

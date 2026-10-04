@@ -3,8 +3,8 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: needs_review
-planning_state: capability_payload_build_effect_review_pending
-result: PASS_REUSED49_NEW18_EXPORT_FULLVALIDATE_RETIRED_SOURCE_ONLY
+planning_state: current_payload_built_consumer_capacity_review_pending
+result: PASS_CURRENT_SOURCE_AND_LOCAL_BUILD_RETIRED_CONSUMERS_PENDING
 created_at: 2026-09-28
 updated_at: 2026-10-05
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -121,7 +121,16 @@ capability_payload_refresh:
     - .aide.local/capability-payload-consumer-execution.json
     - .aide.local/capability-payload-consumer-job.json
   conditional_future_runtime_promotion: exact independently accepted new archive SHA only; unchanged24 member hashes/all other original config fields; current effect excludes promotion
-  admission_only_phase: exact_current_payload_build; source_accepted; independent_frozen_build_effect_review_required
+  admission_only_phase: source_and_one_local_build_accepted_executed; exact_post_result_asset_and_next_effect_gates_required
   aggregate_bytes: 268435456
   model_calls: none
   original_assets_mutated_by_source_phase: false
+
+current_payload_source_sync:
+  authority: direct_owner_source_sync_and_campaign_delegation
+  base_main_dev_remote_task: e3f14e85a82ea94ee8b8cbdcb4898e5b9ffea6b6
+  only_effect_refs: [main, dev, task/aide-current-scoped-lite-qualification-01]
+  preserved_other_branch_pairs: 85
+  normal_fast_forward_and_atomic_push_only: true
+  gate: exact_independent_post_build_artifact_source_and_ref_effect_review
+  publication_and_historical_approval: false

@@ -1,10 +1,49 @@
-# Current AIDE qualification and development report
+# Current AIDE source, artifact and development report
 
 Date: 2026-10-05, Australia/Sydney. This report describes the current source
 qualification, keeps the architecture audit visible, and names unfinished
-release and operating outcomes. Source-only result; stable release not certified.
+release and operating outcomes. Current source and local artifact build qualified; stable release not certified.
 
-## Actual outcome
+## Actual current-payload build outcome
+
+The exact reviewed f0c05f09/tree7043c3be local build ran once as
+`BLACKGLASS-WIN1\CodexSandboxOffline` in job `2edf313aeca44befb66e0e91634caa24`.
+`stable-build` and `stable-validate` exited zero. Complete receipt and collected
+log/output trees are verified; scratch is absent, reservation released and the
+process quiescent. The job retained 15,862 logical bytes. See
+[build result](evidence/capability-payload-current-build-result.json),
+[build proof](evidence/capability-payload-build-qualification.json) and
+[exact build admission](evidence/capability-payload-build-admission.json).
+
+The new ZIP is SHA256
+`7132a5404bf82cdf0c0076cf64b395f01715ae0abd2e8c95c2b971c4b233ee88`;
+the TAR is
+`fe6ddadad63dc7d018c45aee8d391f112c1aa23a31b593a2a205b8f72e20cf8d`.
+ZIP/TAR contain identical 850-member payloads and 847 verified release
+checksums. All 847 source export checksums remain valid: 846 transfer unchanged,
+the existing secrets-example README is omitted by packaging policy, and the
+stable identity marker is added. Current CLI/binding schema and all 24 unchanged
+supervisor sources are present. Only four intended assets changed; the other
+44 release files, export and original configuration are unchanged.
+
+The build used the verified export directory as its read-only supervisor,
+disjoint from release writes. Asset provenance remains the clean dd684b45 export
+ancestor; executed job source is f0c05f09. Neither identity is silently replaced.
+The original archive selection is HELD after replacement: its old archive pin
+is stale, although its configuration bytes remain unchanged. Exact promotion or
+reviewed restoration is required before using it. Consumers, delivered C1,
+replay, integration and stable publication remain separately gated.
+
+The 8,499-byte workspace sample occurred under 30-second sampling and is not
+a complete transient peak. Memory peak was 250,802,176 bytes. Known execution
+pools now total 232,765,649 logical bytes, scratch0/control13,694,135/
+retained219,071,514. The original first-consumer reservation does not fit this
+aggregate estimate; inspect exact ownership, retained evidence and phase needs
+before any consumer dispatch. No cap widening, evidence deletion or fallback
+allocation occurred. The native build was not rerun when two read-only verifier
+expectations were corrected against the schema and packaging exclusion.
+
+## Accepted source outcome
 
 The current capability repair and export now pass full source validation through
 the existing Windows scoped worker. Job `e188c5d70f14453ab20ddbd84dc09e4b` ran
@@ -103,20 +142,25 @@ keeps candidate IDs, ordering, support tiers T0-T5 and capability levels L0-L4
 separate from implementation and lane qualification. No broad parity claim or
 replacement specification is introduced by this source result.
 
-Local main/dev and cached origin/main/dev remain `e3f14e85` on this inspection;
-the last actual remote source-sync receipt names that subject. A fresh remote
-read is required for a new ref effect. The current task branch has newer local
-qualification records; source synchronization follows its own exact review.
+Fresh real Jules/Julesc013 checks and fetch still show local/remote main/dev
+and remote task at `e3f14e85`, with 88 corresponding branch pairs and 85 other
+tips preserved. The current task has newer local build/qualification records.
+The exact source-only sync effect awaits frozen post-result/source/ref review;
+its final terminal receipt is authoritative for actual resulting refs. No new
+ref effect is claimed from these prepared checks.
 Corresponding branch pairs retain their separate tips; no flattening/pruning is
 needed. Source integration is separate from stable certification.
 
-The old ZIP remains SHA256 `4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0`.
-It predates the C1 payload. No new archive, runtime promotion, tag, publication,
-downloaded-consumer check or target adoption occurred in this source slice.
+The previous ZIP SHA256 `4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0`
+and its other three assets remain recoverable from exact frozen Git preimages.
+It predates C1 and has now been replaced locally by the new candidate above.
+No runtime promotion, tag, publication, downloaded-consumer check or target
+adoption occurred. Build review is procedure admission; current artifacts still
+require exact post-result acceptance and consumer/replay qualification.
 
 | Remaining gate | Required next evidence |
 | --- | --- |
-| Current payload delivery | Build from verified current847-entry export, qualify exact new assets/consumers and deterministic replay |
+| Current payload delivery | Local build passed; qualify exact new assets/consumers, delivered C1 and deterministic replay |
 | Aggregate retained lifecycle | Review exact phase reservations and owned disposable/reproducible eligibility; no evidence deletion or quota widening to force fit |
 | Outer client | Effective settings and actual model-accessible shell/editor/integration routes; useful constrained ordinary workflow |
 | Ten historical message decisions | Exact owner dispositions against retained original history base; source sync grants none |
@@ -142,7 +186,7 @@ for all features or permission to start a new platform.
 Proceed through admitted queue work with existing tools and configured roots.
 Do not repeat storage selection, runner construction, specification import,
 unaffected full suites or old archive generation merely to add another status
-record. The immediate release task is exact current payload qualification;
+record. The immediate release task is current artifact acceptance and feasible exact consumer qualification;
 containment and finite retention also remain essential operating outcomes.
 
 ## Verification commands and evidence
@@ -160,6 +204,8 @@ containment and finite retention also remain essential operating outcomes.
 - `scripts/aide compile --write`, structural Harness validation, whitespace and
   structured commit checks: scope-appropriate metadata verification. Structural
   Harness checks are not runtime or whole-session qualification.
+
+- Exact current local `stable-build --version 1.0.0` and `stable-validate --version 1.0.0`: native exits0, complete collected trees/850 identical archive members/847 release checksums and retirement verified.
 
 Changed records live in this WorkUnit, the exact capability reports and existing
 queue/generated/root indexes. The actual implementation owner is C1; the

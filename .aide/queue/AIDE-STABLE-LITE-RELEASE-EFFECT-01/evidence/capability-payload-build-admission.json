@@ -1,0 +1,29 @@
+{
+  "blocking_findings": [],
+  "configuration_sha256": "75d951da7aad70cb54ecd5f159fda24bb151b610200de8a32675b331d0a1e714",
+  "effect_sha256": "5efc32ad5d28deb87d6e5f9e98c1d18f0ac4a88def2b4963cd8aec4c3cc76d0f",
+  "generated_assets_accepted": false,
+  "manifest_sha256": "33fd61a5b067a004cc88d70a4ce9ee9939cecc20b55654d8ecef638d25ff60c2",
+  "notes": [
+    {
+      "blocking": false,
+      "disposition": "fresh locked admission mandatory; refusal stops; consumers separate",
+      "note": "capacity estimate and unchanged pool"
+    },
+    {
+      "blocking": false,
+      "disposition": "export/supervisor/original config retained; old archive pin held after replacement until separately accepted promotion or exact restoration; failures retained; no replay",
+      "note": "custody and recovery"
+    },
+    {
+      "blocking": false,
+      "disposition": "terminal raw collection/retirement/exact artifact review required; consumers/replay/promotion/refs/publication separate",
+      "note": "acceptance limits"
+    }
+  ],
+  "reviewer": "/root/containment_review",
+  "schema": "aide.exact-current-payload-build-admission.v1",
+  "source_commit": "f0c05f09e9e5fb679ca669dd5a6684c41fee5086",
+  "source_tree": "7043c3be85c5a00b75431212bad3e28f613f5186",
+  "verdict": "ACCEPT_WITH_NOTES"
+}

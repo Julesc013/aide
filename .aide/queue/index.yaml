@@ -3822,8 +3822,8 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/evidence
   - id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
     status: needs_review
-    planning_state: capability_payload_build_effect_review_pending
-    result: PASS_REUSED49_NEW18_EXPORT_FULLVALIDATE_RETIRED_SOURCE_ONLY
+    planning_state: current_payload_built_consumer_capacity_review_pending
+    result: PASS_CURRENT_SOURCE_AND_LOCAL_BUILD_RETIRED_CONSUMERS_PENDING
     title: Freeze and qualify a publishable AIDE Lite release effect
     task: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml
     exec_plan: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md

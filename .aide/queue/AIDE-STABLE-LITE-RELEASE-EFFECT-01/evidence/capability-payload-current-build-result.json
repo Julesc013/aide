@@ -1,17 +1,5 @@
 {
-  "archives": {
-    "tar_gz": {
-      "path": ".aide/release/stable/aide-lite-v1.0.0.tar.gz",
-      "sha256": "fe6ddadad63dc7d018c45aee8d391f112c1aa23a31b593a2a205b8f72e20cf8d",
-      "size_bytes": 804516
-    },
-    "zip": {
-      "path": ".aide/release/stable/aide-lite-v1.0.0.zip",
-      "sha256": "7132a5404bf82cdf0c0076cf64b395f01715ae0abd2e8c95c2b971c4b233ee88",
-      "size_bytes": 1140670
-    }
-  },
-  "identity": {
+  "asset_identity": {
     "artifact_state": "immutable_release_payload",
     "intended_channel": "stable",
     "lifecycle_apply_platform": "Windows only; exact tested environment in effect evidence",
@@ -70,8 +58,78 @@
     "version": "1.0.0",
     "version_policy_sha256": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253"
   },
-  "publication_evidence": "separate exact effect record required",
-  "review_required": "independent technical ACCEPT for exact release and effect",
-  "schema_version": "aide.stable-release-candidate.v1",
-  "status": "frozen_release_assets"
+  "assets": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": {
+      "bytes": 274,
+      "sha256": "899e9ca4101514ae6d5becda3ccae150b732ccf7dc16d07a580cdf5263fe8e08"
+    },
+    "aide-lite-v1.0.0.manifest.json": {
+      "bytes": 4955,
+      "sha256": "ce652cc764e2b2c71298e745b6a523253825f594ed315ad1486dacdd7d7a31b1"
+    },
+    "aide-lite-v1.0.0.tar.gz": {
+      "bytes": 804516,
+      "sha256": "fe6ddadad63dc7d018c45aee8d391f112c1aa23a31b593a2a205b8f72e20cf8d"
+    },
+    "aide-lite-v1.0.0.zip": {
+      "bytes": 1140670,
+      "sha256": "7132a5404bf82cdf0c0076cf64b395f01715ae0abd2e8c95c2b971c4b233ee88"
+    }
+  },
+  "bundle_checksums_verified": 847,
+  "collected_manifest": {
+    "logs": "3f74d0b492334c816464b22ba557102aa79613e73cdd446b15fcf057db2b9469",
+    "output": "4c48d8c23d97ee97f266ac37010aac3a021d10bfdc9dd542196b823dae2cf3d0"
+  },
+  "collection_verified": true,
+  "consumers_replay_runtime_refs_publication": "NOT RUN; separate exact gates",
+  "delivered_cli_sha256": "387c5b2fe710baf84c48f13ab124ba5ec253c9f55b561261eacc95ca8480b3f7",
+  "delivered_schema_sha256": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
+  "eligible_source_checksums_delivered_unchanged": 846,
+  "exact_projection_omission": "files/.aide.local.example/secrets/README.md; existing release_forbidden_archive_path secrets rule",
+  "host_model_requests": "unknown; observer0 is not whole-outcome proof",
+  "job_id": "2edf313aeca44befb66e0e91634caa24",
+  "known_pools_after": {
+    "control": 13694135,
+    "retained": 219071514,
+    "scratch": 0
+  },
+  "manifest_digest": "5286085e453d36276f2ee0dd7d8130a25fc9a749a7f1f6f11ba1291d2674889e",
+  "model_calls_by_worker": 0,
+  "original_archive_selection": "HELD_STALE_AFTER_REPLACEMENT_UNTIL_SEPARATE_PROMOTION_OR_EXACT_RESTORATION",
+  "original_configuration_bytes_unchanged": true,
+  "other44_release_files_unchanged": true,
+  "outer_session_contained": false,
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/release": 3959522
+    },
+    "memory_bytes": 250802176,
+    "scratch_bytes": 8499
+  },
+  "processes": {
+    "stable-build": {
+      "exit_code": 0,
+      "proof_sha256": "7f8639bfe7de0cce587a46b11d3a5d29de1f5b68804b8b5569f5d5d8b12e7020"
+    },
+    "stable-validate": {
+      "exit_code": 0,
+      "proof_sha256": "3c08bb3411df6bb1408cf725b947a796388dfb2d3176544d7d5611b6feffe7a4"
+    }
+  },
+  "raw_qualification_sha256": "089bc23cb324774f13a5eee2a03d0c94085ff1c77a5b61716e82d7615298528f",
+  "read_isolation": "unqualified",
+  "receipt_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\2edf313aeca44befb66e0e91634caa24\\receipt.json",
+  "receipt_sha256": "430658e895ea9b809765b75a236737b96c354993ebbff97459dfe1a7dd042969",
+  "retained_logical_bytes": 15862,
+  "retired": true,
+  "schema": "aide.capability-payload-current-build-result.v1",
+  "scratch_peak_note": "whole owned workspace sampled at30s;8499 is not a complete transient peak or hard quota",
+  "source_commit": "f0c05f09e9e5fb679ca669dd5a6684c41fee5086",
+  "source_pack_checksums_verified": 847,
+  "source_tree": "7043c3be85c5a00b75431212bad3e28f613f5186",
+  "status": "PASS_LOCAL_BUILD_RETIREMENT_ONLY",
+  "supervisor_pins_verified": 24,
+  "verifier_correction": "read-only verification first stopped on boolean review_required expectation, then on source-minus-secret-example-plus-stable-marker count; both expectations corrected against actual schema and existing packaging boundary without native replay; no proof was written by stopped passes",
+  "zip_tar_members_verified": 850
 }

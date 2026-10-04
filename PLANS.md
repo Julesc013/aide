@@ -4612,3 +4612,15 @@ See its ExecPlan; no broader feature campaign or second status authority.
 ## 2026-10-05 Current-payload build follows accepted source
 
 The stable release-effect WorkUnit now prepares an exact local build from the current verified export, using its unchanged 24-source read-only supervisor and existing D pools. All release contents count toward the unchanged 256 MiB aggregate. Independent frozen-effect review and fresh locked admission precede dispatch; current consumers, replay, runtime promotion and publication remain separately gated.
+
+
+## 2026-10-05 Current payload build passed; consumer conservation remains
+
+The existing release-effect WorkUnit now has one verified native current-payload build/validation and complete retirement. ZIP7132a540 contains the capability repair. Exact artifact/source review and feasible retained-data/consumer phase scheduling are next; all eight consumer cases and full outputs remain required. The original archive pin is held stale; no runtime/ref/publication effect follows automatically.
+
+
+The exact current-build source-only integration is prepared under the owner
+sync instruction and campaign delegation. Fresh observed88 branch maps retain
+85 other tips. Independent artifact/source/ref review and clean helper readiness
+precede normal dev/main fast-forward and atomic three-ref push; stable and
+consumer certification remain open.
