@@ -1,0 +1,63 @@
+# Changed files
+
+Exact bounded documentation candidate paths (relative to the repository):
+
+- .aide/context/latest-task-packet.md
+- .aide/generated/manifest.yaml
+- .aide/intake/latest-intent-packet.json
+- .aide/intake/latest-intent-packet.md
+- .aide/intake/latest-workunit-draft.json
+- .aide/intake/latest-workunit-draft.md
+- .aide/profile.yaml
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/ExecPlan.md
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/check_docs.py
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/baseline-checks.json
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/changed-files.md
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/effect-manifest.json
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/final-checks.json
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/source-crosswalk.json
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/structural-checks.json
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/validation.md
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/prompt.md
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/status.yaml
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/task.yaml
+- .aide/queue/index.yaml
+- .aide/reports/capability-command-status.md
+- .aide/reports/capability-ledger.md
+- .aide/reports/capability-observations.md
+- .aide/reports/capability-overclaims.md
+- .aide/reports/capability-validation.md
+- DOCUMENTATION.md
+- IMPLEMENT.md
+- PLANS.md
+- README.md
+- ROADMAP.md
+- core/runtime/README.md
+- docs/reference/unified-spec-status.md
+- docs/roadmap/staged-expansion-roadmap.md
+- specs/control-plane/README.md
+- specs/control-plane/amendment-manifest.json
+- specs/control-plane/contracts/compatibility-and-migrations.md
+- specs/control-plane/contracts/execution-hosts-and-workers.md
+- specs/control-plane/draft-import.md
+- specs/control-plane/engineering/module-and-implementation-boundaries.md
+- specs/control-plane/engineering/performance-and-resource-planning.md
+- specs/control-plane/engineering/security-privacy-and-isolation.md
+- specs/control-plane/engineering/verification-and-evidence.md
+- specs/control-plane/experience/operator-workbench-and-accessibility.md
+- specs/control-plane/experience/workflows-and-operating-profiles.md
+- specs/control-plane/interop/extensions-packages-and-sdk.md
+- specs/control-plane/interop/standards-and-translation.md
+- specs/control-plane/knowledge/after-action-learning.md
+- specs/control-plane/knowledge/context-compilation.md
+- specs/control-plane/lifecycle/workspaces-storage-and-retention.md
+- specs/control-plane/optimization/model-effort-and-delegation.md
+- specs/control-plane/optimization/usage-budgets-and-economics.md
+- specs/control-plane/product/scope-and-profiles.md
+- specs/control-plane/runtime/durability-and-storage.md
+- specs/control-plane/runtime/recovery-and-uncertain-effects.md
+- specs/control-plane/runtime/supervision-and-continuity.md
+
+The original import manifest, implementation code, export pack, stable archive and operator configuration remain unchanged. Full bounded validation logs are retained locally under this task evidence directory and excluded by the existing log ignore rule. No scratch/worktree/archive was allocated.

@@ -3,12 +3,12 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 89129b8a2b4b983f13c19854bc903f76e3a5bb33fe3d7687a1d1cba6f8347f19
-- raw_prompt_excerpt: Merge the qualified current AIDE dev source into main and synchronize local and remote branches without force, deletion, retagging, or fabrication of historical-message dispositions. Prepare and qualify the installed supported scoped out...
+- raw_prompt_hash: 61ae23078e636211c5af8d0d31a53f5d0fb1019a0467833f544694cc367e71e4
+- raw_prompt_excerpt: Reconcile the supplied 2026-10-04 architecture review with existing AIDE control-plane specifications, capability evidence and phase plans. Update the existing topic owners and root documentation consistently; retain imported drafts as d...
 - interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release
-- risk_class: destructive
+- risk_class: release
 - sizing_class: blocked
 - safe_to_execute: false
 - requires_split: true
@@ -24,7 +24,6 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not move or delete roots without inventory and salvage map
 - do not publish releases, tags, or assets from prompt alone
 
 ## Repo State Refs

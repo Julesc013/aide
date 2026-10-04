@@ -117,3 +117,16 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Distinguish Task, immutable attempt, logical worker, harness session, inference request, model instance and compute allocation. Use existing object identities and role-specific bindings before proposing new wire kinds. A logical worker may make multiple requests; a model instance or allocation may be shared.
+
+Cancellation belongs to the owned attempt/request. Cancelling one worker must not terminate a model server or allocation serving other work. A shared instance needs declared tenancy, request/context separation and independent cancellation; residency is not ownership of the task.
+
+Retain a host-capability observation in the existing integration: outer application/version, backend/version, requested and effective scope, model-accessible shell/editor/plugin routes, fixture results, source/output lease and invalidation conditions. A trusted client-management API result is not evidence about every model editing tool.
+
+Acceptance direction: two requests sharing one backend survive cancellation of one; one deterministic path and two materially different admitted worker/inference bindings preserve work and authority. Offline protocol fixtures are narrower than actual binding qualification.

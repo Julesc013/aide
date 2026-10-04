@@ -1,0 +1,9 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ARCHITECTURE-RECONCILIATION-01
+status: needs_review
+planning_state: documentation_reconciled_independent_review_pending
+result: DOCUMENTATION_CANDIDATE_RUNTIME_GATES_PRESERVED
+updated_at: 2026-10-04
+release_goal_resumed: false
+runtime_behavior_changed: false
+draft_requirements_adopted: false

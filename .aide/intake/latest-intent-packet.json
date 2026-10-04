@@ -48,15 +48,13 @@
     "provider_or_model_calls: none",
     "network_calls: none",
     "task_execution: false",
-    "raw_long_prompt_storage: false",
-    "flag:unsafe_prompt"
+    "raw_long_prompt_storage: false"
   ],
-  "raw_prompt_excerpt": "Merge the qualified current AIDE dev source into main and synchronize local and remote branches without force, deletion, retagging, or fabrication of historical-message dispositions. Prepare and qualify the installed supported scoped out...",
-  "raw_prompt_hash": "89129b8a2b4b983f13c19854bc903f76e3a5bb33fe3d7687a1d1cba6f8347f19",
+  "raw_prompt_excerpt": "Reconcile the supplied 2026-10-04 architecture review with existing AIDE control-plane specifications, capability evidence and phase plans. Update the existing topic owners and root documentation consistently; retain imported drafts as d...",
+  "raw_prompt_hash": "61ae23078e636211c5af8d0d31a53f5d0fb1019a0467833f544694cc367e71e4",
   "rejected_interpretations": [
     "do not bypass queue, branch, evidence, or policy state",
     "do not execute raw prompt directly",
-    "do not move or delete roots without inventory and salvage map",
     "do not publish releases, tags, or assets from prompt alone"
   ],
   "repo_state_refs": [
@@ -71,7 +69,7 @@
     ".aide/reports/file-quality-summary.md"
   ],
   "requires_split": true,
-  "risk_class": "destructive",
+  "risk_class": "release",
   "safe_to_execute": false,
   "schema_version": "aide.intent-packet.v0",
   "sizing_class": "blocked",
@@ -107,7 +105,7 @@
       "raw response logs",
       "target repositories unless target-local queue authorizes work"
     ],
-    "idempotency": "prompt_hash:89129b8a2b4b983f13c19854bc903f76e3a5bb33fe3d7687a1d1cba6f8347f19; status:draft; compile_only:true",
+    "idempotency": "prompt_hash:61ae23078e636211c5af8d0d31a53f5d0fb1019a0467833f544694cc367e71e4; status:draft; compile_only:true",
     "implementation_outline": [
       "Reconcile repo state before editing.",
       "write blocker report and require reviewed authorization before mutation",
@@ -118,7 +116,6 @@
       "no provider/model/network calls",
       "do not bypass queue, branch, evidence, or policy state",
       "do not execute raw prompt directly",
-      "do not move or delete roots without inventory and salvage map",
       "do not publish releases, tags, or assets from prompt alone"
     ],
     "objective": "Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.",
@@ -129,7 +126,7 @@
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
-    "risk_class": "destructive",
+    "risk_class": "release",
     "schema_version": "aide.workunit-draft.v0",
     "sizing_class": "blocked",
     "status": "draft",
@@ -141,7 +138,7 @@
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-    "workunit_id": "draft-release-89129b8a2b4b"
+    "workunit_id": "draft-release-61ae23078e63"
   },
   "task_class": "release",
   "validation_hints": [

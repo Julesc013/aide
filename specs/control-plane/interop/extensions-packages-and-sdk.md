@@ -117,3 +117,16 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+A contributor-facing role needs one small reference binding, fixtures, conformance checks, failure cases and packaging guidance. Declare operations, side effects, credentials, cancellation, storage ownership, limitations and exact support profile.
+
+Discover, acquire, qualify, admit and activate components separately. Untrusted in-process code does not inherit controller authority merely by implementing an interface; isolation form follows the declared trust/dependency need.
+
+Extension removal preserves work, evidence, portable checkpoints and no-model functions. Multiple roles in one package still have independent grants and lifecycle ownership.
+
+Acceptance direction: install/discover a fixture without execution; omit an optional backend; reject a role binding that lacks required cancellation or authority semantics.

@@ -120,3 +120,16 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Distributed mutation requires a current ownership generation at the authoritative effect boundary. Bound leases and reject stale workers after reassignment; wall-clock timestamps alone do not prove ownership.
+
+Reconnect reconciles durable cancellation, duplicates, receipts, resource reservations and known/unknown effects before new mutation. A lost response cannot prove either no effect or success and does not authorize blind replay.
+
+Declare partition behavior by work class: permitted read-only activity may continue within a valid bounded grant; mutations needing shared ownership stop when that ownership cannot be proven. Shared model-server lifetime is separate from request cancellation.
+
+Acceptance direction: a disconnect after effect submission preserves uncertainty; a stale worker cannot mutate after reconnect; duplicate terminal data aids reconciliation without overwriting final cancellation.

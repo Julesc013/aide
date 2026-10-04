@@ -117,3 +117,16 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Work/authority retains object meaning; planning/coordination chooses admitted actions; execution/presentation binds tools and interfaces. Start within the existing modular Python implementation. Move a boundary into a process/service only for demonstrated isolation, incompatibility, ownership, fault containment or measured scale.
+
+Characterize supported CLI output, exit codes and effects before extracting one semantic seam. File size is a prioritization observation, not proof of defective behavior or a language-rewrite requirement. Use existing loader/extraction mechanisms and compatibility wrappers.
+
+Keep AIDE development semantics separate from designated installation lifecycle and launcher/session ownership. An adapter does not create another installation, cleanup or task authority.
+
+Acceptance direction: one extracted use case has unchanged supported behavior for representative callers; no duplicate distribution implementation or competing state owner is introduced.

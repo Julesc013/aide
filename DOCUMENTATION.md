@@ -584,3 +584,13 @@ Current source sync outcome: `.aide/queue/AIDE-MAIN-BRANCH-SYNC-01/evidence/inte
 Bounded ownership distinctions and preservation reasons:
 `.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/storage-ownership-followup.json`.
 Logical file sizes are not claimed as measured recoverable disk space.
+
+## Architecture reconciliation and independent development
+
+- Full current-state and development report: `.aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md`.
+- Existing chapter amendment provenance: `specs/control-plane/amendment-manifest.json`; original import custody remains historical and unchanged.
+- Independent candidate priorities and operational gates: `docs/roadmap/staged-expansion-roadmap.md`.
+- Adoption/current-byte boundary: `docs/reference/unified-spec-status.md`.
+
+These records clarify source, review and qualification scope; draft refinements
+are not new adopted schemas or supported runtime capabilities.

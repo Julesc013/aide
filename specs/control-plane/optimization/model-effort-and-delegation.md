@@ -129,3 +129,16 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Qualify a complete recipe including model identity, tokenizer/template, precision, runtime, hardware profile, context policy, tools, harness, inference settings and supported observations. Keep requested, resolved and observed values distinct, including hosted identity gaps.
+
+A changed model, driver, renderer or backend invalidates affected recipe evidence; it does not automatically invalidate unrelated repository tests. Preserve the lead selection and independent descendant grants.
+
+Separate execution eligibility from acceptance eligibility: an unevaluated model may enter a bounded authorized experiment, while its output remains ineligible for promotion. Unknown required isolation is not an acceptable quality experiment.
+
+Acceptance direction: change a recipe dependency and select only affected checks; reject unauthorized subscription/credit/API fallback and promotion without required outcome evidence.

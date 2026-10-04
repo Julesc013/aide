@@ -126,3 +126,14 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Protocol compatibility declares exact versions and selected native/emulated/missing semantics. An OpenAI-compatible endpoint or MCP label alone cannot establish full AIDE behavioral compatibility.
+
+External standards bind to AIDE-owned identities and authority rather than replacing them. Versioned translation preserves safe unknown data and records loss; missing required semantics refuse dependent effects.
+
+Acceptance direction: two version-pinned fixtures expose a material unmapped operation and produce a loss/refusal receipt rather than false conformance. Network interoperability remains separate qualification.

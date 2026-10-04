@@ -4424,3 +4424,15 @@ The accepted 4265f52b closeout and three-ref followup also completed with all
 84 pairs matched. Repeated source-sync instructions reuse that outcome; stable
 release gates remain open. Bounded ownership reconciliation preserves the
 private hard links, distinct Git checkouts and unqualified toolchain material.
+
+## 2026-10-04 architecture reconciliation and independent development
+
+AIDE-ARCHITECTURE-RECONCILIATION-01 is the owner-requested documentation split
+over the 3d186d05 integrated baseline. The blocked release Goal stays dormant.
+Nineteen existing topic owners receive proposed refinements; original requirements
+and cases remain preserved. The staged expansion plan defines C1–C12 candidates
+with consumers, dependencies and acceptance; no runtime implementation is admitted
+by that table. First priorities are truthful projections/explainable operations,
+compatibility, portable checkpoints and ownership-aware resource planning.
+REPORT.md in the queue packet contains source-linked current capabilities,
+proposal dispositions, unresolved operational gates and verification limitations.

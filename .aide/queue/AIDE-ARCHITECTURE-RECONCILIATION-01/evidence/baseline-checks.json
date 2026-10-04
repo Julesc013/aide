@@ -1,0 +1,40 @@
+[
+  {
+    "command": [
+      "doctor"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 39.694,
+    "retained": ".aide\\queue\\AIDE-ARCHITECTURE-RECONCILIATION-01\\evidence\\baseline-doctor.log",
+    "bytes": 5181,
+    "sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21",
+    "issue_count": 0,
+    "issue_view": []
+  },
+  {
+    "command": [
+      "validate"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 11.0,
+    "retained": ".aide\\queue\\AIDE-ARCHITECTURE-RECONCILIATION-01\\evidence\\baseline-validate.log",
+    "bytes": 4893625,
+    "sha256": "6df09a429b7acddfd4ed9f69107108f9e8d346ac09f4644e749395fcb3166ad3",
+    "issue_count": 0,
+    "issue_view": []
+  },
+  {
+    "command": [
+      "pack",
+      "--task",
+      "AIDE-ARCHITECTURE-RECONCILIATION-01 documentation-only architecture reconciliation"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.668,
+    "retained": ".aide\\queue\\AIDE-ARCHITECTURE-RECONCILIATION-01\\evidence\\baseline-pack.log",
+    "bytes": 186,
+    "sha256": "848623bd1f910f276d185e08c729e59556cb4c7fd80024f593b248bdc736c93a",
+    "issue_count": 0,
+    "issue_view": []
+  }
+]

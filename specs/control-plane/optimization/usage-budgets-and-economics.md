@@ -126,3 +126,16 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Compare total cost of accepted work including preparation/loading, context transfer, controller/children, review, verification, integration, retry and repair. Record warm/cold conditions and shared model residency rather than optimizing cache percentage alone.
+
+Attribute shared costs without double-counting provider cumulative snapshots or inherited aggregates. Unknown usage/liabilities remain unknown; document-size estimators and subscription allowance do not become precise billable tokens or currency.
+
+Reserve verification and recovery capacity before dispatch. An allowance failure does not select a new paid/account route without compatible explicit authority.
+
+Acceptance direction: overlapping parent/child counters reconcile once; a failed result retains usage; a cheap recipe with worse accepted outcome is not promoted.

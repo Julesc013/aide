@@ -120,3 +120,16 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Report record readability, round-trip preservation, operational semantics, behavioral command equivalence, exact deployment compatibility and migration compatibility separately. An old reader can display safe information while refusing unsupported execution.
+
+Unknown optional fields may survive a qualified round trip without becoming permission. Unknown security, confidentiality, correctness or other required semantics must refuse the affected operation; only optional presentation/performance may degrade gracefully.
+
+Readers/writers and migrations bind exact versions, changes, losses, recovery classification and qualified profile. A legacy companion need not run current inference or inherit modern controller authority.
+
+Acceptance direction: older/newer reader and writer pairs preserve unfamiliar safe data; an unfamiliar required isolation constraint blocks execution rather than disappearing on save.

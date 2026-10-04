@@ -1,5 +1,28 @@
 # AIDE Roadmap
 
+## Current development boundary — 2026-10-04
+
+Source synchronization is complete; corresponding branches retain their own
+tips. The bounded worker and local Windows lifecycle have source and recorded
+qualification, while ordinary outer-client containment, live/matched efficiency
+and stable publication remain separate unfinished gates. The release Goal is
+dormant. Declaration/projection baselines such as CapabilityManifest,
+ConformanceProfile/Result, AdapterManifest, PatchTransaction and ContextPack v2
+exist; they should not be queued again as wholly missing features.
+
+Independent work can improve source-linked truth projections, codecs, checkpoint
+preservation, explainable status, resource/retirement planning and extension
+conformance fixtures. The [staged development plan](docs/roadmap/staged-expansion-roadmap.md)
+defines candidate boundaries, dependencies and acceptance. The
+[full report](.aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md) gives current
+evidence and proposal dispositions. Networked execution, shared inference,
+training and tenant-aware service operation need separate profile qualification;
+they do not enlarge the first Windows Lite release contract.
+
+The phase records below preserve foundation history and host-lane intent. Their
+earlier deferred labels do not erase later bounded implementation, and no phase
+name implies shipping, modern IDE parity or an available native environment.
+
 ## 2026-09-26 dev synchronization checkpoint
 
 Reviewed campaign source was fast-forwarded from e88b1c2e to 53be4fc4;

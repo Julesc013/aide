@@ -114,3 +114,18 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Keep preferences, source-linked project knowledge, reviewed skills, evaluated routing policy and optional trained adaptation as independent personalization layers. Training is not a baseline dependency.
+
+Model/dataset/adaptation assets record origin, immutable identity where available, license metadata, dataset lineage, intended uses, evaluation scope, known limitations and retirement. Discovery, acquisition, qualification and activation are separate transitions; none implicitly downloads or enables an asset.
+
+Protect evaluation ownership from the learner. Held-out evaluation data, criteria and promotion decisions cannot be weakened or cherry-picked by the candidate being evaluated. Confidential project lessons do not silently become cross-project knowledge or training data.
+
+Correction/retirement propagates to dependent indexes and caches. Dataset deletion does not prove removal of influence from trained weights; record that limitation and dependent artifact dispositions.
+
+Acceptance direction: a proposed weaker test cannot approve itself; a retired lesson leaves relevant contexts; a rejected adaptation preserves prior assets, provenance and rollback.

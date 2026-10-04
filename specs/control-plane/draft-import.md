@@ -27,11 +27,22 @@ ordinal, source-member SHA-256, output SHA-256 and disposition. It accounts for
 all 54 files in the original `specs/control-plane/` subtree. Archive-member
 ordinals are zero-based positions in the original ZIP central directory.
 
-The only changes to the 34 imported source chapters are an explicit draft
+At the original import, the only changes to the 34 imported source chapters were an explicit draft
 notice after the title and replacement of links to withheld bulk registers.
 Their original proposed requirements, rationale, acceptance designs, and source
 attribution are otherwise retained. Original generator timestamps describe
 source generation, not import time or fresh operational observations.
+
+## Subsequent proposed refinements
+
+The 2026-10-04 architecture review appends proposed refinements to 18 draft
+chapter owners and a proposed appendix to product scope. Original text and
+UR/UC statements remain preserved. The original import manifest is a historical
+custody receipt, not a current-byte claim after amendments. The
+[amendment manifest](amendment-manifest.json) identifies the review input with
+its explicit raw-custody limitation, and binds the frozen baseline and current
+normalized Git-byte identities. Refinement presence
+does not adopt draft requirements or run their behavioral acceptance designs.
 
 ## Already adopted: preserve these versions
 

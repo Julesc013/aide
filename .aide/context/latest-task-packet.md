@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - AIDE-SESSION-CONTAINMENT-01: qualify scoped local validation with existing pinned runner and configured D storage; record all uncovered routes
+UNSPECIFIED - AIDE-ARCHITECTURE-RECONCILIATION-01
 
 ## GOAL
 
-AIDE-SESSION-CONTAINMENT-01: qualify scoped local validation with existing pinned runner and configured D storage; record all uncovered routes
+AIDE-ARCHITECTURE-RECONCILIATION-01
 
 ## WHY
 
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4346
-- approx_tokens: 1087
+- chars: 4132
+- approx_tokens: 1033
 - budget_status: PASS
 - warnings:
   - none

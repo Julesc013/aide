@@ -169,3 +169,16 @@ removal.
 
 These acceptance cases are desired tests. They are not recorded as run by this
 document.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Preserve work, authority, knowledge and evidence as models, machines and integrations are replaced. Work/authority, planning/coordination and execution/presentation are logical boundaries within one implementation; they do not require separate services.
+
+Compose deployments from independent inference location, control location, execution location, confidentiality, persistence, scheduling and interface choices. Laptop, workstation, home lab, managed enterprise, offline site and legacy companion are candidate compositions with distinct qualification. Hardware size and labels such as local or enterprise grant no trust.
+
+Retain the first local Windows Lite contract. Fleet, learning, shared inference and service scaling do not become additional release prerequisites. Changes to that scope require a separate explicit disposition and release review.
+
+Acceptance direction: remove an optional model/backend and retain work plus useful no-model operations; change a deployment axis without changing task identity or widening authority. These scenarios remain unrun.

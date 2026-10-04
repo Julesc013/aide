@@ -132,3 +132,16 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Qualify the actual outer application and every enabled model-accessible write route. Command sandbox results do not establish editor, filesystem API, plugin, connector or browser containment. Distinguish trusted client-management APIs from the model's actual editing route before attributing a failed probe.
+
+Record requested/effective scope, harmless fixture observations, version/config/tool identities, precise uncovered routes and invalidation conditions. Disable or omit an unrestrictable route through supported controls; a prompt promise is not enforcement.
+
+Do not weaken required authority, confidentiality or correctness to make a compatibility test pass. Keep the executing supervisor and protected limits independent of worker-editable source.
+
+Acceptance direction: permitted source editing and validation succeed while excluded model-accessible routes fail; a client/tool update invalidates affected coverage. The current partial worker evidence alone does not pass these cases.

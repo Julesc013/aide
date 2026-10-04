@@ -120,3 +120,16 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Work persists, attempts are recoverable and processes are expendable. A portable checkpoint retains objective, revisions, accepted facts, artifacts, observed/uncertain effects, questions and remaining obligations. It does not require migrating hidden activations or a provider-private session database.
+
+Keep one authoritative writer per object or declared ownership partition. Existing repository .aide/ ownership remains authoritative; a service-owned transactional store requires an explicit ownership migration. Do not introduce a second queue/database that independently owns the same work.
+
+Select storage behind the ownership contract. A networked deployment is not an instruction to share one local database file across machines. Qualify the selected service/storage topology, backup restoration, migration and loss/recovery behavior.
+
+Acceptance direction: remove the worker/backend and restore portable work; restore a backup under its actual storage profile and reconcile reservations, cancellations and uncertain effects.

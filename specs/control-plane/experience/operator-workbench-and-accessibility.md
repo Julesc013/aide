@@ -120,3 +120,16 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+The default view explains what is happening, why, where, whose authority applies, what changed, what is uncertain and which action is available. Show actual scope and enforcement class instead of a universal healthy/blocked indicator.
+
+Client/backend identity, effective configuration provenance and covered/uncovered model-accessible routes can be expanded from the existing evidence view. Client identity selects setup instructions but does not prove isolation.
+
+Use one command/use-case model for CLI, TUI, GUI and service clients. Normal users choose objectives and allowed locality/spending/autonomy; operators inspect recipes/reservations; experts inspect backend details. Presets cannot widen grants.
+
+Acceptance direction: status/health does not download a model or begin paid work; a missing setup produces one precise remedy without redundant approval; diagnostics are redacted and accessible.

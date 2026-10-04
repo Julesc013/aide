@@ -1,0 +1,51 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ARCHITECTURE-RECONCILIATION-01
+title: Reconcile architecture review, current capabilities and independent development plans
+type: documentation
+status: needs_review
+planning_state: documentation_reconciled_independent_review_pending
+result: DOCUMENTATION_CANDIDATE_RUNTIME_GATES_PRESERVED
+created_at: 2026-10-04
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+authority_basis: Owner explicitly requested attachment review, consistent specifications and plans, and a full development report; the blocked release Goal remains dormant.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/**
+    - specs/control-plane/**
+    - core/runtime/README.md
+    - .aide/profile.yaml
+    - .aide/queue/index.yaml
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/context/**
+    - .aide/generated/**
+    - .aide/reports/capability-*.json
+    - .aide/reports/capability-*.md
+    - AGENTS.md
+    - .agents/skills/**/SKILL.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/unified-spec-status.md
+    - docs/roadmap/staged-expansion-roadmap.md
+  generated_only: AGENTS and skill managed sections, generated manifest/previews and declared context/capability views; no manual policy rewrite
+  forbidden_operations:
+    - resume or replace the blocked release Goal
+    - model/provider calls, runtime feature implementation or automatic adoption of draft requirements
+    - machine configuration, new worktrees/clones, target mutation, deletion, archives or release effects
+    - rewriting historical import receipts, original UR/UC statements or original adopted requirements
+branch_plan:
+  base: 3d186d0584bb40f18402a626c9fe099260fae3d4
+  helper: git plan blocked only by four owned compiled-intake views; classify and include those views in this packet
+  action: create one task branch in the existing checkout; no worktree
+  integration: independently reviewed dev-only fast-forward and normal atomic push with the task branch; preserve main and all other refs
+review_gate: independent exact documentation and integration review under existing campaign delegation
+verification:
+  - source-linked capability claims and explicit qualification gaps
+  - amendment provenance, retained draft status and preserved original requirement/case text
+  - links, IDs, JSON, diff scope, generated views and proportionate Harness checks
+  - structured commit and independent exact review

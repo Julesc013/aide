@@ -1,0 +1,20 @@
+{
+  "schema": "aide.documentation-dev-effect.v1",
+  "source_base": "3d186d0584bb40f18402a626c9fe099260fae3d4",
+  "candidate": "exact independently reviewed documentation commit descending from source_base",
+  "expected_remote_refs": {
+    "dev": "3d186d0584bb40f18402a626c9fe099260fae3d4",
+    "main": "3d186d0584bb40f18402a626c9fe099260fae3d4",
+    "task/aide-architecture-reconciliation-01": null
+  },
+  "effects": [
+    "fast-forward local dev to the exact accepted documentation candidate",
+    "atomic non-force push dev and the one task branch",
+    "verify those remote refs and unchanged main"
+  ],
+  "main_promotion": false,
+  "other_refs": "preserved",
+  "release_goal": "remains blocked; no resume",
+  "tags_publication_archives_target_or_machine_changes": false,
+  "runtime_implementation_changes": false
+}

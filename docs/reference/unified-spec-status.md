@@ -41,8 +41,8 @@ source and destination bytes.
 
 The import preserves 244 proposed `UR-*` requirement aliases and 244 matching
 unrun `UC-*` acceptance designs. Those aliases are review input, not adopted
-`AIDE-*` requirements or passing tests. The six adopted foundation contracts
-remain byte-identical and retain precedence where scopes overlap.
+`AIDE-*` requirements or passing tests. At import, the six adopted foundation
+contracts remained byte-identical and retained precedence where scopes overlap.
 
 ## Bounded Post-Import Adoption
 
@@ -53,6 +53,15 @@ binds those clauses to executable source tests while retaining the imported
 integration-broker draft clauses stay proposed.
 
 ## Deferred Material
+
+The 2026-10-04 architecture review adds proposed refinements to 19 existing
+topic owners. Original requirements and case statements remain preserved;
+the product-scope appendix is proposed, not a new adopted contract. The
+[amendment manifest](../../specs/control-plane/amendment-manifest.json) records
+current Git-byte identities separately from the unchanged historical import
+receipt. No behavioral case is executed by these amendments. See the
+[development plan](../roadmap/staged-expansion-roadmap.md) and
+[full report](../../.aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md).
 
 - Draft clauses in recovery, compatibility, trust, lifecycle, knowledge,
   optimization, interop, experience, engineering, and runtime families still

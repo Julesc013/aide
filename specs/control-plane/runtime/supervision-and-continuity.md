@@ -117,3 +117,16 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+An unchanged setup blocker has one typed resume condition and one actionable explanation. Deterministic observers own waiting/backoff/deduplication; they do not wake a reasoning session for unchanged healthy status or resubmit uncertain work.
+
+Retain the known-good supervisor independently of source being edited. Worker-editable task or configuration material cannot widen the active permission/resource envelope by approving itself.
+
+Scope cancellation and emergency actions to owned work. A shared inference server or another session remains outside a worker's termination authority unless separately owned and authorized.
+
+Acceptance direction: interruption resumes the same attempt/resources without creating a replacement checkout; unchanged setup produces no new model request; a cancelled worker leaves another shared-server request intact.

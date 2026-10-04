@@ -120,3 +120,14 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Portable continuation captures objective, exact revisions, accepted facts, references, completed/uncertain effects, unresolved questions and remaining obligations. Preserve those semantics when replacing a worker/model rather than retaining an entire old conversation.
+
+Keep reusable rendered prefixes stable within a coherent phase only where useful; remove irrelevant context and measure the actual host rendering where observable. No undocumented cache controls or inference-account switch follows from a caching suggestion.
+
+Acceptance direction: a replacement worker resumes from a bounded source-linked checkpoint without rereading private session history, guessing unknown effects or changing authority.

@@ -42,7 +42,9 @@ a RAG system, or a project-management tool.
 ## Status
 
 AIDE has implemented repo-native control-plane, local Windows lifecycle and
-runtime foundations in `dev`.
+bounded runtime foundations. Source was synchronized between `main` and `dev`
+at `3d186d05`; later documentation integration is separate from stable
+certification.
 
 The source includes the self-hosting queue, context and evidence tools,
 portable import/update, project-owned customization, owned repair,
@@ -51,10 +53,12 @@ provides explicit storage admission, finite resource limits and retirement;
 real build/test use requires configured local pools. Worker, isolation and
 integration-broker foundations also have source and focused test evidence.
 
-Stable distribution still requires final integrated and delivered-artifact
-qualification. Current release archives are older previews. Native/hosted
-effects, restricted-principal isolation and model-enabled operation retain
-separate qualification gates. Service, Commander, Workshop/Workbench and
+The local Lite candidate has recorded technical review and delivered-consumer
+evidence, but remains unpublished. Its unchanged ZIP predates the scoped host
+adapter. The restricted worker has recorded validation and retirement evidence;
+the outer client's editing/filesystem routes and read isolation remain
+unqualified. Actual model usage, matched efficiency and exact release effects
+retain separate gates. Service, Commander, Workshop/Workbench and
 broader host/provider interfaces remain later work. The candidate local
 Windows Lite profile and its limits are defined in
 [product scope and profiles](specs/control-plane/product/scope-and-profiles.md).
@@ -105,6 +109,9 @@ session.
 
 ## Core Idea
 
+The target operating loop is below. Current bounded foundations do not establish
+whole-session containment or a continuously productive unattended service.
+
 ```text
 AIDE runs continuously.
 Agents run transactionally.
@@ -143,9 +150,10 @@ goal
 -> PatchTransaction review later
 ```
 
-The current repository can model several of these objects and validate their
-metadata or projections. The later patch engine, scheduler, async test broker,
-and automatic promotion loop remain planned.
+The current repository models these objects and includes bounded local process,
+transaction, lifecycle and worker foundations. Declaration/schema/projection
+checks do not qualify a general scheduler, async test broker or unattended
+promotion loop. See the scope and evidence in the current reconciliation report.
 
 ## How AIDE Works
 
@@ -155,17 +163,17 @@ AIDE models development as typed, reviewable objects:
 | --- | --- | --- |
 | `ContractEnvelope` | Versioned protocol wrapper for AIDE objects | Implemented for review |
 | `WorkUnit` | Bounded unit of intended work | Implemented for review |
-| `WorkerRun` | Metadata-only record of one bounded execution attempt | Implemented for review |
-| `TestJob` | Metadata-only non-agentic validation job record | Implemented for review |
+| `WorkerRun` | Attempt record, with separate bounded local execution bindings | Source and recorded scoped reviews; operational scope varies |
+| `TestJob` | Validation record, with registered local process bindings | Source and recorded scoped reviews; no general async broker claim |
 | `EvidencePacket` | Proof record for claims, checks, artifacts, and limitations | Implemented for review |
 | `ReferenceID` | Stable `aide://...` identity across files, reports, events, and views | Implemented for review |
 | `EventRecord` | Projection-only append/history vocabulary | Implemented for review |
 | `OKF Knowledge Page` | Human/agent-readable explanation of repo truth | Implemented for review as projection |
-| `CapabilityManifest` | Declared capability surface for tools, adapters, and subsystems | Planned |
-| `ConformanceProfile` | Admission checks before trusting a capability | Planned |
-| `PatchTransaction` | Controlled mutation proposal with evidence and boundaries | Planned |
-| `AdapterManifest` | Provider, tool, and host adapter declarations | Planned |
-| `ContextPack` | Compact agent context from OKF, protocol, and evidence | Planned as v2 |
+| `CapabilityManifest` | Declared capability surface for tools, adapters, and subsystems | Implemented declaration/schema; recorded review with warnings |
+| `ConformanceProfile` | Declares checks and acceptance obligations | Implemented profile/result projections; not automatic trust |
+| `PatchTransaction` | Controlled mutation proposal with evidence and boundaries | Schema and bounded executor source; no general apply authority |
+| `AdapterManifest` | Provider, tool, and host adapter declarations | Implemented declaration/schema; not adapter admission |
+| `ContextPack` | Compact agent context from OKF, protocol, and evidence | Implemented v2 projection; not model dispatch |
 
 ## What Makes AIDE Different
 
@@ -335,16 +343,13 @@ a reviewed policy explicitly says otherwise.
 
 ## Current Roadmap
 
-Near-term protocol sequence:
+Existing declaration and projection foundations include:
 
 ```text
-1. Check and accept OKF knowledge bundle
-2. Build report-only Reconciler
-3. Build CapabilityManifest
-4. Build ConformanceProfile
-5. Build PatchTransaction schema
-6. Build AdapterManifest
-7. Build ContextPack v2
+OKF knowledge and report-only Reconciler
+CapabilityManifest and ConformanceProfile/Result
+PatchTransaction and AdapterManifest schemas
+ContextPack v2 projection
 ```
 
 Later:
@@ -363,7 +368,11 @@ provider adapters
 checkpoint / promotion runtime
 ```
 
-These roadmap items are not calendar promises.
+The [staged development plan](docs/roadmap/staged-expansion-roadmap.md) separates
+dependency-ready local work from host/model/network qualification and larger
+deployments. The [full reconciliation report](.aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md)
+links current claims to source and recorded evidence. Candidates are not admitted
+runtime work or calendar promises.
 
 ## Implementation Status
 
@@ -374,22 +383,22 @@ These roadmap items are not calendar promises.
 | Contract envelope | Implemented for review | Versioned object shape and validation surface |
 | EvidencePacket | Implemented for review | Proof object for claims and validation |
 | WorkUnit | Implemented for review | Queue and CLI surfaces exist with bounded mutation controls |
-| WorkerRun | Implemented for review | Metadata-only execution attempt record; no worker runtime |
-| TestJob | Implemented for review | Metadata-only validation job record; no Test Broker runtime |
+| WorkerRun | Bounded local foundations | Metadata, durable attempt/process source and scoped worker evidence; outer client remains unqualified |
+| TestJob | Local validation foundations | Metadata and registered validation bindings; general async broker remains unqualified |
 | ReferenceID | Implemented for review | Stable `aide://...` identity syntax and projection reports |
 | EventRecord | Implemented for review | Projection-only event vocabulary; no append-only runtime event store |
 | OKF knowledge bundle | Implemented for review | Deterministic markdown/YAML projection under `.aide/knowledge/okf/` |
-| Reconciler reports | Planned | Drift detection, report-only first |
-| CapabilityManifest | Planned | Declared capabilities |
-| ConformanceProfile | Planned | Admission tests |
-| PatchTransaction | Planned | Controlled mutation object |
-| AdapterManifest | Planned | Provider/tool/host adapter declarations |
-| ContextPack v2 | Planned | Compact agent context from protocol, evidence, and OKF |
-| Runtime scheduler | Not started | Later |
-| Test Broker runtime | Not started | Later |
+| Reconciler reports | Implemented report-only | Drift detection and recorded review; no automatic repair |
+| CapabilityManifest | Implemented declaration/schema | Does not execute or qualify a capability |
+| ConformanceProfile/Result | Implemented projections | Does not establish operational conformance by itself |
+| PatchTransaction | Schema and bounded executor source | Scope/ownership/review still control every effect |
+| AdapterManifest | Implemented declaration/schema | Does not install, admit or activate adapters |
+| ContextPack v2 | Implemented projection | No automatic inference or provider dispatch |
+| Runtime scheduler | Limited local foundations | Generalized scheduling and fleet guarantees remain unqualified |
+| Test Broker runtime | Registered local validation bindings | General asynchronous broker remains unqualified |
 | Workshop / Workbench | Not started | Later |
-| Legacy IDE adapters | Not started | Later |
-| Live provider adapters | Not started | Offline/report-only metadata exists; live provider calls are not implemented |
+| Legacy IDE adapters | Lane-specific proofs/bindings | Exact inventory, tier and capability ceiling apply; no family-wide parity |
+| Live model/provider operation | Unqualified | Offline metadata and opt-in host-binding source exist; actual usage/efficiency qualification remains pending |
 
 ## Getting Started
 
@@ -427,6 +436,13 @@ Durable repo contract:
 ```
 
 Local/runtime state should stay outside committed source control:
+
+The following illustrates roles, not a directory-creation instruction. Each
+qualified deployment selects approved local roots and one authoritative writer;
+database and event-file examples cannot independently own the same objects.
+The current maintainer runner uses its existing ignored execution configuration
+and approved shared storage. A new task reuses that selection rather than
+creating another pool, clone or root layout.
 
 ```text
 .aide.local/

@@ -1,0 +1,88 @@
+[
+  {
+    "command": [
+      "py",
+      "-3",
+      "-B",
+      "scripts/aide",
+      "compile",
+      "--write"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.259,
+    "retained": ".aide\\queue\\AIDE-ARCHITECTURE-RECONCILIATION-01\\evidence\\final-0.log",
+    "bytes": 2590,
+    "sha256": "6d430a4931ec871c8b2767f7e6fab3de5f2b0be7e323f2d46545a4ffdf8a3234",
+    "issue_count": 0,
+    "issue_view": []
+  },
+  {
+    "command": [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "doctor"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 13.371,
+    "retained": ".aide\\queue\\AIDE-ARCHITECTURE-RECONCILIATION-01\\evidence\\final-1.log",
+    "bytes": 5181,
+    "sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21",
+    "issue_count": 0,
+    "issue_view": []
+  },
+  {
+    "command": [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "validate"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 9.287,
+    "retained": ".aide\\queue\\AIDE-ARCHITECTURE-RECONCILIATION-01\\evidence\\final-2.log",
+    "bytes": 4893625,
+    "sha256": "0427f5dda2c4dae1aa6f065c9e52c35329ccd31e6529fd52d6cc89b93d2561ed",
+    "issue_count": 0,
+    "issue_view": []
+  },
+  {
+    "command": [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "pack",
+      "--task",
+      "AIDE-ARCHITECTURE-RECONCILIATION-01"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.608,
+    "retained": ".aide\\queue\\AIDE-ARCHITECTURE-RECONCILIATION-01\\evidence\\final-3.log",
+    "bytes": 186,
+    "sha256": "f392f44f873fa2add89a330bde8df86e7a99a39d5040da7aeca117e21a470c5c",
+    "issue_count": 0,
+    "issue_view": []
+  },
+  {
+    "command": [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "task",
+      "inspect",
+      "--task-id",
+      "AIDE-ARCHITECTURE-RECONCILIATION-01"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.623,
+    "retained": ".aide\\queue\\AIDE-ARCHITECTURE-RECONCILIATION-01\\evidence\\final-4.log",
+    "bytes": 419,
+    "sha256": "b5be5854c114a88f4d2c567a17c84beba585f3f2bbb4d5cac666e845c4b36a9a",
+    "issue_count": 0,
+    "issue_view": []
+  }
+]

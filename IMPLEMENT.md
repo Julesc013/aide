@@ -12920,3 +12920,17 @@ Small receipt/file-identity/Git metadata observations distinguish one private
 archive under two hard-linked names, one linked Universal worktree and two
 independent checkouts. Unknown disposal and recovery coverage are preserved;
 no deletion, new workspace, host probe, model invocation or release effect.
+
+## 2026-10-04 architecture/specification and status reconciliation
+
+Read the supplied architecture review and compared existing chapter owners,
+source and recorded queue reviews. Appended proposed refinements to 19 topic
+files without changing original UR/UC text or adopted requirements. Retained
+the historical import receipt and added current Git-LF amendment provenance.
+Corrected README/Profile/roadmap claims about already present declaration,
+projection and bounded runtime foundations. The core/runtime README is the
+minimal cross-cutting correction: its Q02 placeholder description contradicted
+current worker/broker source, so history is preserved and current scope clarified.
+The development plan and full report separate independent local candidates
+from host/model/network/learning/scale qualification. No runtime behavior,
+source archive, machine setting, release or target effect is introduced.

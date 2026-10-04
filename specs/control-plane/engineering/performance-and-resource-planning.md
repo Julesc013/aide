@@ -114,3 +114,16 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Separate supported, fits, adequate measured performance and permitted. Backend-owned estimates describe relevant memory domains, accelerator/runtime operations, topology, capacity, concurrency, locality and observed power/thermal constraints; unknown sensors or model revision stay unknown.
+
+Do not assume all accelerators provide VRAM, all architectures use a transformer KV cache, or multiple devices form one memory pool. AIDE places admitted work within a reservation; the inference backend owns batching and model sharding inside that allocation.
+
+Aggregate admission includes model residency/loading, active scratch, retained results, caches, artifacts, checkouts, nested tools, retries and outstanding reservations. Classify each limit as hard-enforced, monitored, advisory or unsupported, and include known overshoot. Account for foreground responsiveness without repeatedly reloading models.
+
+Acceptance direction: competing projects cannot double-book the same pool; exhaustion and cleanup failure retain honest state; resource planning works with missing observations and distinguishes independent-job distribution from separately qualified model sharding.

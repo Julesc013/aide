@@ -36,8 +36,8 @@ first_shipped_stack:
   - Dominium Bridge
 
 current_focus:
-  summary: Q31 Export Pack Sync for Git / Commit Workflow is implemented and awaiting review; the portable pack now carries generic Q27-Q30 commit, recovery, changelog, Git workflow, and helper governance while excluding AIDE-specific branch state.
-  queue_item: Q31-export-pack-sync-git-commit-workflow
+  summary: Bounded worker and local Windows Lite foundations have source and scoped evidence; whole outer-client containment, live efficiency and stable publication remain unqualified. Independent architecture/specification reconciliation proceeds while the blocked release Goal remains dormant.
+  queue_item: AIDE-ARCHITECTURE-RECONCILIATION-01
   dominium_profile: XStack remains Dominium's strict local governance and proof profile.
 
 source_of_truth:
@@ -64,8 +64,8 @@ implemented_reality:
   shared_boot_slice: implemented-bootstrap-era
   host_proofs: implemented-bootstrap-era
   harness_v0: implemented
-  generated_artifacts_v0: implemented-pending-review
-  compatibility_baseline: implemented-v0-pending-review
+  generated_artifacts_v0: accepted-with-notes-by-qfix-03
+  compatibility_baseline: accepted-with-notes-by-qfix-03
   dominium_bridge: aide-side-structural-baseline-passed-with-notes
   self_hosting_automation: implemented-passed-with-notes
   token_survival_foundation: q09-q20-accepted-with-notes
@@ -81,20 +81,20 @@ implemented_reality:
   cache_local_state_boundary: accepted-with-notes
   gateway_skeleton: accepted-with-notes-local-report-only
   provider_adapters_v0: accepted-with-notes-offline-metadata-only
-  foundation_reconciliation: accepted-with-notes-awaiting-review
+  foundation_reconciliation: accepted-with-notes-by-qfix-03
   aide_lite_test_runner: implemented-canonical-test-command
-  cross_repo_pack_export_import: implemented-pack-repaired-awaiting-review
+  cross_repo_pack_export_import: accepted-with-notes-by-qfix-03
   eureka_import_pilot: completed-target-evidence-awaiting-review
   dominium_import_pilot: completed-target-evidence-awaiting-review
   existing_tool_adapter_compiler: implemented-advisory-preview-and-managed
-  importer_scope_state_truth_repair: implemented-awaiting-review
-  eureka_pilot_handover_review: implemented-awaiting-review
-  q27_commit_discipline_workunit_recovery: implemented-awaiting-review
-  q28_git_workflow_policy: implemented-awaiting-review
-  q29_merge_land_promote_helper: implemented-awaiting-review
-  q30_aide_dev_main_policy_sync: implemented-awaiting-review
-  q31_export_pack_sync_git_commit_workflow: implemented-awaiting-review
-  runtime: not_implemented
+  importer_scope_state_truth_repair: accepted-with-notes-by-qfix-03
+  eureka_pilot_handover_review: accepted-with-notes-by-qfix-03
+  q27_commit_discipline_workunit_recovery: accepted-with-notes-by-qfix-03
+  q28_git_workflow_policy: accepted-with-notes-by-qfix-03
+  q29_merge_land_promote_helper: accepted-with-notes-by-qfix-03-fixture-apply-only
+  q30_aide_dev_main_policy_sync: accepted-with-notes-by-qfix-03-no-live-branch-mutation
+  q31_export_pack_sync_git_commit_workflow: accepted-with-notes-by-qfix-03
+  runtime: partial_bounded_local_worker_and_integration_foundations
   sdk: not_implemented
   product_hosts: not_implemented
 
@@ -133,7 +133,7 @@ future_intent:
   q33_dominium_sync_from_canonical_aide_pack: target_repo_prompt_not_aide_local
   q34_changelog_release_notes_generator: accepted_with_notes_by_qfix_03
   q35_github_protection_ci_advisory: passed_report_only_no_github_or_ci_mutation
-  q36_intent_compiler_prompt_normalization: planned
+  q36_intent_compiler_prompt_normalization: implemented_compile_only_needs_review
   gateway_forwarding: deferred
   live_provider_calls: deferred
   providers: offline_metadata_only_until_reviewed_future_phase

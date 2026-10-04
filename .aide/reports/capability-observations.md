@@ -3,8 +3,8 @@
 - command: `capability scan`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-continuous-worker-pilot-01`
-- current_commit: `c39f47ea3cdb2f8359722906f3f486f3c8af19b7`
+- current_branch: `task/aide-architecture-reconciliation-01`
+- current_commit: `3d186d0584bb40f18402a626c9fe099260fae3d4`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

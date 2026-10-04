@@ -4,6 +4,15 @@ policy: .aide/queue/policy.yaml
 default_concurrency: 1
 canonical_source: .aide/queue
 items:
+  - id: AIDE-ARCHITECTURE-RECONCILIATION-01
+    status: needs_review
+    planning_state: documentation_reconciled_independent_review_pending
+    title: Architecture review and independent development reconciliation
+    task: .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/prompt.md
+    evidence: .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence
+    description: Owner-requested specs and plans only; blocked release Goal remains dormant.
   - id: AIDE-MAIN-BRANCH-SYNC-01
     status: passed_with_notes
     planning_state: source_sync_completed_release_gates_separate

@@ -108,3 +108,18 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Every allocation needs an owner and creation-time disposition. Execution result and retirement result are separate; cleanup failure blocks new allocation in the affected pool until reconciled, while unrelated admitted work may continue.
+
+On restart reconcile owned leftovers before replacement allocation. Count aggregate scratch, retained evidence, caches, packages, checkouts and reservations across cooperating projects; per-job limits alone do not bound lifetime accumulation.
+
+Discovery begins with receipts and Git metadata, then bounded shallow metadata. Distinguish linked worktrees from clones, unique/dirty work from reproducible outputs, and logical size from actual recoverable allocation. Hard-linked names are not independent backups.
+
+Use machine/volume identity plus each machine's approved local roots. No global directory layout, blanket cache wipe, same-volume full recovery copy or relocation is inferred from a cleanup suggestion.
+
+Acceptance direction: preserve unknown private hard links and unique work; interrupted cleanup reconciles its own allocation; eligible owned scratch retires with bounded retained evidence and no alternate-drive fallback.

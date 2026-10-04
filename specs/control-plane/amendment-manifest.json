@@ -1,0 +1,172 @@
+{
+  "format": "aide.spec-amendments.v1",
+  "status": "proposed_refinements_not_semantic_adoption",
+  "baseline_commit": "3d186d0584bb40f18402a626c9fe099260fae3d4",
+  "digest_encoding": "UTF-8 Git LF; CRLF working copies normalized explicitly",
+  "source": {
+    "title": "Owner-supplied architecture review, 2026-10-04",
+    "opening": "The previous proposal is a useful deployment sketch, but it is not yet a complete architecture for AIDE.",
+    "attachment_id": "f5ea6895-9dea-406e-979d-a8f9e9d5e287",
+    "sha256": null,
+    "observed_size_bytes_at_initial_read": 32307,
+    "role": "proposed_design_input_not_execution_or_release_authority",
+    "custody": "Read in full from the original client attachment. The attachment file was no longer available when capturing its hash; exact raw-byte identity remains unknown. No replacement copy or digest was synthesized."
+  },
+  "historical_import_receipt": "specs/control-plane/import-manifest.json",
+  "original_requirement_and_acceptance_text_preserved": true,
+  "behavioral_cases_executed": 0,
+  "records": [
+    {
+      "destination": "specs/control-plane/product/scope-and-profiles.md",
+      "baseline_git_lf_sha256": "8cb80b01d28755061c6bd7d1d8f0f411921a5d458ea76ba68a7f8845b816533e",
+      "current_git_lf_sha256": "58366a9eb7e0327904e6e419d6bc795622c2cfab9d52572a63d8f43a3e0032e1",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/contracts/execution-hosts-and-workers.md",
+      "baseline_git_lf_sha256": "60a11190b305942363d0bda7d921ec81f74b55b672851e29b2fbc12f42489b2a",
+      "current_git_lf_sha256": "9f46db9abd2ccb0a3da4d57815e3cb87f9ab29eadd60b61b01aeb7f2d8efc792",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/contracts/compatibility-and-migrations.md",
+      "baseline_git_lf_sha256": "60cc9ec4bd193f78567fd094e0eeebc16ddc3799915cc64fd5fe3c0e4cb266a9",
+      "current_git_lf_sha256": "d1f49eaf159df339481bc0c61ad881f5a350a88c3994175842d4882bdc97680f",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/engineering/performance-and-resource-planning.md",
+      "baseline_git_lf_sha256": "28fcccc9354333922a7da463851be8f3e22ec11b2475e2feebdac98a1a213a8b",
+      "current_git_lf_sha256": "e08f35f6d599c12091883b890317ece6a49a399f1ef559f1239c38d859f57bd8",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/engineering/module-and-implementation-boundaries.md",
+      "baseline_git_lf_sha256": "501b6373ec5ee1db45d01e4d9e0c94d06cb1aeca1d63037f3f6f09ab604be33d",
+      "current_git_lf_sha256": "28a88f412606b325bab93e99e61c5644dd3e872493deca3eecf0b3b74ee0c4f6",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/optimization/model-effort-and-delegation.md",
+      "baseline_git_lf_sha256": "2266fa6c65e1a5c3a87c82a9cb4344e4c34b41ff3254190e22cb445e9a326fbe",
+      "current_git_lf_sha256": "0180d71ec7fdc5c89e352be885aa942ffb0ae4266280a0f716a6ee966443c31b",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/runtime/durability-and-storage.md",
+      "baseline_git_lf_sha256": "161e57702723001ff94963aefbd247a02c5c53a458d510efb11f93761f943eaf",
+      "current_git_lf_sha256": "bcaa9c3236f9a838131fe004f62459be08c2b708abe2d96ff04c6d23c58f3a81",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/runtime/recovery-and-uncertain-effects.md",
+      "baseline_git_lf_sha256": "1fd31e4d353b7b43914aecb4f91b67b1f5fcfe3926e1b517d4a4c65f7ab6bd8f",
+      "current_git_lf_sha256": "421d4853a0a2c3272a8c2c301cd0494aa24f73fa836a6f75a595360930d2dd7c",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/runtime/supervision-and-continuity.md",
+      "baseline_git_lf_sha256": "0c00e7417db874e28301fc45dd06ac4ad196377f1cc89542db6e4a0a91f15bc1",
+      "current_git_lf_sha256": "9078c647fff173c6f2cc3f9f9609ff5075a0cb0a8cedf988a87187c350fa957a",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/knowledge/after-action-learning.md",
+      "baseline_git_lf_sha256": "2078634e547804b761c77f01af03ff8eedb9d0d550443897499a3f6ad8c16fe9",
+      "current_git_lf_sha256": "b4fbcfe1880b07e4b2dc95c8a967e22eec0cbe9fbeca5c0e1ca4c4e43fa7585d",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/lifecycle/workspaces-storage-and-retention.md",
+      "baseline_git_lf_sha256": "fb752148a24a8eeb1216dad347d4574cc778263651e5c2d459c8f68e025fe4b0",
+      "current_git_lf_sha256": "7b0666ae2bf91491b24491ec65e056a8a1edd4e8848fd0f0699c7599d1920795",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/interop/extensions-packages-and-sdk.md",
+      "baseline_git_lf_sha256": "dc897aff675e06c5335b28bbd4d8a49bc8bbe756b6fd7f375c2ca9b56abc7ae0",
+      "current_git_lf_sha256": "319dbc8456a60f0c6eb3cc1c8c9fad6441fa0ce0927bfd2fa346bd82c84e3ccc",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/interop/standards-and-translation.md",
+      "baseline_git_lf_sha256": "cf38e9513a66c5ce8b878303b5a80a5113810c363630a4c34b8496de75241783",
+      "current_git_lf_sha256": "6e48bce54c56b37fd1ce970b87f6a1b819f6a6e740f8ca8b57b15d174a4473b1",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/experience/operator-workbench-and-accessibility.md",
+      "baseline_git_lf_sha256": "0ce8384acd34378c3e3c78ccf793d142d4a13bf5275eaab64e1fdaffc984bb15",
+      "current_git_lf_sha256": "124af1a905f6bdd2ae54e55d24959baaca6f3caac8506128a63a51b2bd6b84a5",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/experience/workflows-and-operating-profiles.md",
+      "baseline_git_lf_sha256": "c64f95c0435fed2ac20637ed23d9a33b1b3a9ad20e63778a5343c9bf494ddc07",
+      "current_git_lf_sha256": "49d05d1fb7a2ace97d4e27bb28ba34b2edf70bc8aaf74df764caef1f41f4eab9",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/engineering/security-privacy-and-isolation.md",
+      "baseline_git_lf_sha256": "62f28f9439f87dd154dded861da52008006e0220819a79b9112e777d3fc88a55",
+      "current_git_lf_sha256": "9c904c7a57282525e02cd7ae327d33120fdaa3ae084754ad08e8401b21d2b732",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/engineering/verification-and-evidence.md",
+      "baseline_git_lf_sha256": "5e80b08274e03129c47c88e07fa9907a823c04d3603343fa66634e4babad7bf7",
+      "current_git_lf_sha256": "c96e5f1e3de6d575e62e22a0370e47449ec03381fc6fb1f4d24574a2aad23687",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/optimization/usage-budgets-and-economics.md",
+      "baseline_git_lf_sha256": "69ccad95a6c57797d2ebf2d180c0afed8659c85d68c1e497f8d2ae5be50d87b8",
+      "current_git_lf_sha256": "091c3b93f3e324b06322f614e1b90d604432fa24a7314dfd4efaf433c2f54244",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    },
+    {
+      "destination": "specs/control-plane/knowledge/context-compilation.md",
+      "baseline_git_lf_sha256": "50033ed128e4a34d8241188dbaaba59f11261fa0fe32f12babd670753fb87a29",
+      "current_git_lf_sha256": "424c79a100d884518cf143e25e4968bf0c4bf046861eecb5ec0d2e65cd0860d5",
+      "disposition": "append_proposed_refinement_preserve_original_text",
+      "adoption": "proposed_refinement_only",
+      "behavioral_qualification": "not_run"
+    }
+  ]
+}

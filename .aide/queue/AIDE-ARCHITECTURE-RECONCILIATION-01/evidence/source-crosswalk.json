@@ -1,0 +1,74 @@
+{
+  "schema": "aide.architecture-source-crosswalk.v1",
+  "source_baseline": "3d186d0584bb40f18402a626c9fe099260fae3d4",
+  "records": [
+    {
+      "source": "core/protocol/capability_manifest.py",
+      "git_lf_sha256": "77e0e367dffe10baa4d224fa8dca08c72fb6653387c043c2a95f0fdbb06632a1",
+      "unchanged_from_3d186d05": true,
+      "observed_property": "source presence and identity only; not fresh behavioral execution"
+    },
+    {
+      "source": "core/protocol/conformance_profile.py",
+      "git_lf_sha256": "528117a3c945c98588313656701d521eda27f863ec067f876105ec441d4c3e32",
+      "unchanged_from_3d186d05": true,
+      "observed_property": "source presence and identity only; not fresh behavioral execution"
+    },
+    {
+      "source": "core/protocol/conformance_result.py",
+      "git_lf_sha256": "ac69e185c804689cf4c3cc1ccd5f7b9f4b1a98f77202218c593e3e31ffce69e0",
+      "unchanged_from_3d186d05": true,
+      "observed_property": "source presence and identity only; not fresh behavioral execution"
+    },
+    {
+      "source": "core/protocol/patch_transaction.py",
+      "git_lf_sha256": "9339804ab3ac55c936b7d26ac68f1ffd5a684a55c713e58f2a5796580495d444",
+      "unchanged_from_3d186d05": true,
+      "observed_property": "source presence and identity only; not fresh behavioral execution"
+    },
+    {
+      "source": "core/protocol/adapter_manifest.py",
+      "git_lf_sha256": "04cbdaf4b24586121e8ca8eda3c0bc48dd7bf5b32a5a339593d343e6c7e863b9",
+      "unchanged_from_3d186d05": true,
+      "observed_property": "source presence and identity only; not fresh behavioral execution"
+    },
+    {
+      "source": "core/protocol/context_pack_v2.py",
+      "git_lf_sha256": "6c73dbc4f051a3094cb7550e7e715ba77b1a6e4e3113269a6e51d9c4154c58d4",
+      "unchanged_from_3d186d05": true,
+      "observed_property": "source presence and identity only; not fresh behavioral execution"
+    },
+    {
+      "source": "core/reconciler/reconciler_reports.py",
+      "git_lf_sha256": "0f7dd84f8bb7aedb7121f445374d131e7885325319f8ea0756374b6b6b68e3fb",
+      "unchanged_from_3d186d05": true,
+      "observed_property": "source presence and identity only; not fresh behavioral execution"
+    },
+    {
+      "source": "core/reconciler/doc_knowledge_truth.py",
+      "git_lf_sha256": "5cbc27b60a3a8e06f69d3af0f610829b36b7da88fc61bf1825d1d2b91a0dafdd",
+      "unchanged_from_3d186d05": true,
+      "observed_property": "source presence and identity only; not fresh behavioral execution"
+    },
+    {
+      "source": "core/apply/transaction_executor.py",
+      "git_lf_sha256": "fea86ef89c650dd1a90b60d0fcac7f09bdbe43333a531870b9ed4fd128b0a76a",
+      "unchanged_from_3d186d05": true,
+      "observed_property": "source presence and identity only; not fresh behavioral execution"
+    },
+    {
+      "source": "core/execution/managed_workspace.py",
+      "git_lf_sha256": "d9338d9d25470b1a39f8c74566f7c108249a98dc564ac395f21b66ebc4eccfe3",
+      "unchanged_from_3d186d05": true,
+      "observed_property": "source presence and identity only; not fresh behavioral execution"
+    },
+    {
+      "source": "core/execution/scoped_host.py",
+      "git_lf_sha256": "06f7544cdacaf86813f67d0c9a82380f7ee95088916a39699f75aecfb8c709dc",
+      "unchanged_from_3d186d05": true,
+      "observed_property": "source presence and identity only; not fresh behavioral execution"
+    }
+  ],
+  "existing_capability_projection": ".aide/reports/capability-ledger.json",
+  "projection_limits": "13 conservative seeds; not an exhaustive runtime/support map"
+}

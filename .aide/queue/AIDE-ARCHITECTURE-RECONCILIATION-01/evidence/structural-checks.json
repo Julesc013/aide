@@ -1,0 +1,14 @@
+{
+  "result": "PASS_WITH_SOURCE_CUSTODY_LIMITATION",
+  "amended_topic_owners": 19,
+  "original_text_preserved": true,
+  "draft_chapters": 34,
+  "original_UR_aliases": 244,
+  "original_UC_designs": 244,
+  "historical_import_receipt_unchanged": true,
+  "changed_paths_in_scope": 57,
+  "relative_links_checked": 166,
+  "broken_links": [],
+  "source_raw_hash_known": false,
+  "behavioral_cases_run": 0
+}

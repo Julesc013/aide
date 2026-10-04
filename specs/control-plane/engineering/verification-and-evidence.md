@@ -129,3 +129,16 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Select checks through explicit dependencies, qualified validity conditions and non-interference evidence. A new model/client/configuration does not trigger unrelated full suites merely because its checkpoint changed.
+
+Report accepted outcomes, escaped defects, correction effort, recovery success, resource use and operator intervention. Include failed/cancelled attempts and unknown coverage rather than using agents, schemas, reports or cache-hit percentage as success measures.
+
+Cross-cutting acceptance includes sleep/restart, uncertain effects, stale workers, shared-request cancellation, changed recipes, storage exhaustion, cross-version reads, allowance exhaustion, learner/evaluator separation and optional-backend removal.
+
+These scenarios are planned behavioral evidence. Link each to its owning contract and actual future test/subject before claiming execution; source/schema/link validation remains narrower.

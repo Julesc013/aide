@@ -111,3 +111,14 @@ The proposed requirements and acceptance designs are retained inline above. The 
 ## Delivery boundary
 
 Implement this contract only through a source-bound, queue-admitted vertical slice with existing consumers or a contrasting fixture. Separate source presence, local test results, operational qualification, activation and release support in the closeout record. Optional profiles do not become prerequisites for smaller supported profiles.
+
+## Proposed architecture refinement - 2026-10-04
+
+This refinement is proposed design, not adoption, activation or qualification.
+Its source and current-byte identity are in the [amendment manifest](../amendment-manifest.json).
+
+Independent axes select inference, control, execution, confidentiality, persistence, scheduling and interface. Presets supply overridable preferences inside authority ceilings; deployment labels are not privilege levels.
+
+Hardware discovery does not enroll a trusted execution node. Effective configuration exposes source, overrides and denials, with qualified task source/output scope rather than an all-drive write grant.
+
+Acceptance direction: an enterprise-locality preference cannot override a confidential project's allowed destination; a new device is discoverable but remains unenrolled and inactive.

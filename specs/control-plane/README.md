@@ -63,6 +63,20 @@ copying the files does not adopt those requirements or enable the behavior.
 Existing adopted contracts retain precedence. Candidate bulk registers and
 private archive material remain external review inputs.
 
+## Architecture refinements and implementation planning
+
+[Proposed refinement provenance](amendment-manifest.json) records the 2026-10-04
+review and 19 existing topic owners. The original import receipt remains
+historical; original requirement/case text and adopted sections are preserved.
+New refinement sections are explicitly proposed, including the appendix in
+product scope. They do not imply schema adoption or operational qualification.
+
+The [staged development plan](../../docs/roadmap/staged-expansion-roadmap.md)
+separates independent local contract/tooling work from host setup, model effects,
+networked ownership, learning and managed-scale qualification. Current source
+and limitations are cross-referenced in the
+[reconciliation report](../../.aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md).
+
 ## Operational Boundary
 
 These documents do not grant tool access, mutation, spending, integration,
