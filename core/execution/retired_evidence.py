@@ -58,6 +58,19 @@ class Custody:
     def refuse(self, reason):
         raise self.owner.WorkspaceRefused(reason)
 
+    def reservation(self, amount):
+        used = self.inventory()
+        if used + amount > self.ceiling:
+            self.refuse('custody staging cannot fit configured aggregate budget')
+        observed = self.owner.capacity(self.roots)
+        if any(free - amount < self.config['limits']['disk_reserve_bytes']
+               for free in observed['disk_free'].values()):
+            self.refuse('custody staging would consume configured disk headroom')
+        for name in ('physical', 'commit'):
+            if observed[name + '_free'] < self.config['limits'][name + '_reserve_bytes']:
+                self.refuse('custody would consume configured memory headroom')
+        return used
+
     def path(self, job_id):
         if not isinstance(job_id, str) or not re.fullmatch('[0-9a-f]{32}', job_id):
             self.refuse('exact retired job identity required')
@@ -200,17 +213,14 @@ class Custody:
                 'metadata_reserve_bytes': METADATA_RESERVE, 'aggregate_limit_bytes': self.ceiling}
         if len(_encoded({'schema': PENDING, 'plan': plan})) > 1048576:
             self.refuse('custody intent record limit exceeded')
-        used = self.inventory()
         reservation = plan['archive_limit_bytes'] + METADATA_RESERVE
-        if used + reservation > self.ceiling:
-            self.refuse('custody staging cannot fit configured aggregate budget')
-        volume = self.owner.volume_identity(root)
-        if self.owner.capacity(self.roots)['disk_free'][volume] - reservation < self.config['limits']['disk_reserve_bytes']:
-            self.refuse('custody staging would consume configured disk headroom')
+        used = self.reservation(reservation)
         return {'state': 'PLANNED', 'plan': plan, 'plan_digest': self.owner.digest(plan),
                 'logical_bytes': used, 'reserved_bytes': reservation, 'writes': False}
 
     def plan(self, job_id):
+        if self.owner.ordinary(self.roots['control'] / 'admission.lock').st_size < 1:
+            self.refuse('existing owner admission lock required')
         with self.owner.estate_lock(self.roots['control']):
             return self._plan(job_id)
 
@@ -427,13 +437,26 @@ class Custody:
 
     def recover(self, job_id, expected_digest, *, checkpoint=lambda _: None):
         with self.owner.estate_lock(self.roots['control']):
+            staging = self.active.with_name('active.json.next')
+            if os.path.lexists(staging):
+                if os.path.lexists(self.active):
+                    self.refuse('ambiguous custody intent staging requires separate reconciliation')
+                candidate = self.owner.read_json(staging)
+                if (candidate.get('schema') != PENDING or candidate.get('phase') != 'custody_pending'
+                        or candidate.get('job_id') != job_id or candidate.get('plan_digest') != expected_digest
+                        or self.owner.digest(candidate.get('plan')) != expected_digest):
+                    self.refuse('staged operation does not match exact custody intent')
+                root = self.check_plan(candidate['plan'])
+                files, directories, _ = self.snapshot(root)
+                if files != candidate['plan']['files'] or directories != candidate['plan']['directories']:
+                    self.refuse('staged custody source changed')
+                self.reservation(candidate['plan']['archive_limit_bytes'] + METADATA_RESERVE)
+                os.rename(staging, self.active)
             if not os.path.lexists(self.active):
                 view = self._plan(job_id)
                 if view['state'] != 'CUSTODIED' or view['plan_digest'] != expected_digest:
                     self.refuse('no matching pending custody operation')
                 return view
-            if os.path.lexists(self.active.with_name('active.json.next')):
-                self.refuse('custody intent staging requires separate reconciliation')
             pending = self.owner.read_json(self.active)
             if (pending.get('schema') != PENDING or pending.get('phase') != 'custody_pending'
                     or pending.get('job_id') != job_id or pending.get('plan_digest') != expected_digest
@@ -446,8 +469,7 @@ class Custody:
             reserve = METADATA_RESERVE
             if not os.path.lexists(root / 'custody.zip'):
                 reserve += pending['plan']['archive_limit_bytes']
-            if self.inventory() + reserve > self.ceiling:
-                self.refuse('custody recovery cannot fit finite aggregate budget')
+            self.reservation(reserve)
             return self.finish(pending, checkpoint)
 
     def read(self, job_id, member, *, offset=0, limit=2048, expected_sha256=None):

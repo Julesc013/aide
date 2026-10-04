@@ -10,6 +10,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import stat
 import sys
 import unittest
 import uuid
@@ -30,6 +31,7 @@ class CustodyTests(unittest.TestCase):
         self.roots = {v: self.fixture / v for v in ('scratch', 'retained', 'control')}
         for root in self.roots.values():
             root.mkdir()
+        (self.roots['control'] / 'admission.lock').write_bytes(b'0')
         self.source = self.fixture / 'source'
         self.source.mkdir()
         self.config = {'schema': 'aide.managed-workspace.local.v1',
@@ -127,6 +129,14 @@ class CustodyTests(unittest.TestCase):
         self.custody.recover(self.id, digest)
         self.assert_closed()
 
+    def test_complete_intent_staging_recovers_without_new_job(self):
+        digest = self.interrupt('intent_persisted')
+        staging = self.custody.active.with_name('active.json.next')
+        os.rename(self.custody.active, staging)
+        self.custody.recover(self.id, digest)
+        self.assertFalse(staging.exists())
+        self.assert_closed()
+
     def test_verified_archive_recovery_reuses_exact_archive(self):
         digest = self.interrupt('archive_written')
         archive = owner.file_digest(self.root / 'custody.zip')
@@ -195,10 +205,22 @@ class CustodyTests(unittest.TestCase):
     def test_hardlinked_original_refused_and_preserved(self):
         alias = self.fixture / 'external-alias'
         os.link(self.root / 'logs/stdout', alias)
-        with self.assertRaisesRegex(owner.WorkspaceRefused, 'single-link'):
-            self.custody.plan(self.id)
-        self.assertEqual(alias.read_bytes(), self.text)
-        alias.unlink()
+        info = alias.lstat()
+        identity = (info.st_dev, info.st_ino)
+        try:
+            with self.assertRaisesRegex(owner.WorkspaceRefused, 'single-link'):
+                self.custody.plan(self.id)
+            self.assertEqual(alias.read_bytes(), self.text)
+        finally:
+            # Retire only this exact fixture-created alias even on test failure.
+            # A changed identity/content remains preserved for reconciliation.
+            current = alias.lstat()
+            if (not stat.S_ISREG(current.st_mode) or getattr(current, 'st_file_attributes', 0) & 0x400
+                    or (current.st_dev, current.st_ino) != identity or current.st_nlink != 2
+                    or current.st_size != len(self.text)
+                    or hashlib.sha256(alias.read_bytes()).digest() != hashlib.sha256(self.text).digest()):
+                raise AssertionError('fixture hardlink alias changed; preserve it')
+            alias.unlink()
 
     def test_aggregate_staging_refusal_has_no_effect(self):
         self.config['execution_host']['aggregate_bytes'] = 4096

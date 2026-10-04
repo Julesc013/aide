@@ -1,0 +1,15 @@
+{
+  "disposition": "Corrected in successor source; new exact fixture review required; raw review never relabelled ACCEPT.",
+  "effect_sha256": "d96a651bb7b9b4685f4f30d2c81f082835ec52745a0f2f81a2261bffd7dc4d46",
+  "findings": [
+    "hardlink fixture cleanup must execute guarded finally on assertion failure",
+    "staged intent active.json.next must have exact explicit recovery",
+    "writes:false plan must not create lock contents"
+  ],
+  "native_dispatch_performed": false,
+  "reviewer": "/root/containment_review",
+  "schema": "aide.exact-review.v1",
+  "source_commit": "9dce930157ac68d1b8be9bdefce670e3e8fdd50b",
+  "source_tree": "8ac68f608f0bae8cd4acce288da1ff430f2e1087",
+  "verdict": "REQUEST_CHANGES"
+}

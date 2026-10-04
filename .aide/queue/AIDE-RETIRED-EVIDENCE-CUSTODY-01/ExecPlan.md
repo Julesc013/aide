@@ -109,3 +109,14 @@ native fixture uses archive7132 and all24 unchanged pins, no canonical writes,
 selection and current candidate assets remain unchanged. Full source capability
 bindings are now stale due to the CLI edit; explicit affected refresh/export
 needs a later bounded effect. Structural/AST checks do not erase this gap.
+
+### Unexecuted fixture rejection and fix-forward source
+
+Exact9dce9301/tree8ac68f60 fixture admission received REQUEST_CHANGES; no native
+job or allocation occurred. Preserve its v1 effect/job and explicit rejection.
+All three findings are corrected in source: exact alias retirement in finally,
+matching staged-intent recovery, and existing-lock requirement for read-only
+plan. A22nd regression covers interrupted intent publication. Recovery now
+rechecks unchanged aggregate/disk/memory headroom before allocation. Twenty-two
+authored tests require a new exact native effect verdict; prior checks21 stay
+historical and unrun. Source/candidate/original runtime gates remain unchanged.

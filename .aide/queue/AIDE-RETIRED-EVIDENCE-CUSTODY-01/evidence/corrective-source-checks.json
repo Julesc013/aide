@@ -1,0 +1,10 @@
+{
+  "ast": "PASS",
+  "files": {
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/worker.py": "48a39ff17980ad6689c5def96209904d6f12ab5f33c2921d93c54dfbc1e4c2cf",
+    ".aide/scripts/aide_lite.py": "62ce6968511818ed46236fb889e0f2cec24dcf431316d576eaa9628ecad69297",
+    ".aide/scripts/tests/test_retired_evidence.py": "f88aff25b3008c075feda4db242d8041b6d457444ad8a76c2079e5887b3a5547",
+    "core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488"
+  },
+  "tests_authored_not_run": 22
+}

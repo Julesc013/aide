@@ -1,0 +1,26 @@
+{
+  "adapter": "python",
+  "argv": [
+    "C:/Users/Jules/AppData/Local/Python/pythoncore-3.14-64/python.exe",
+    "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-RETIRED-EVIDENCE-CUSTODY-01\\worker.py"
+  ],
+  "canonical_outputs": {},
+  "cwd": "D:\\Projects\\AIDE\\aide",
+  "executable_sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9",
+  "inputs": {
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md": "8aa3f4e30d496608a1872a45680ce126c9653fc9ebfc6f93b685722d33523e7b",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/task.yaml": "971d1750f7dde2ab30610b585c8ec7d80472c8af25e547fdc2be84dc5d2a4fc5",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/worker.py": "ce71c024013ef4cd4c7dc5c0b112a8c9fcf1b8f0d2a74a9a59de5a28358c6f4c",
+    ".aide/scripts/aide_lite.py": "62ce6968511818ed46236fb889e0f2cec24dcf431316d576eaa9628ecad69297",
+    ".aide/scripts/tests/test_retired_evidence.py": "861e8c0e44fea8b91bdc2753fdafa67cc843bb98dcd8838c2839b76168e60b5d",
+    "core/execution/managed_workspace.py": "d9338d9d25470b1a39f8c74566f7c108249a98dc564ac395f21b66ebc4eccfe3",
+    "core/execution/retired_evidence.py": "7e6943cdde2669ffd99dcf48eb58762ebfed3cc2d317cb12eb20bea7494522af",
+    "core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+    "core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
+  },
+  "owner": "retired-evidence-custody-test-01",
+  "schema": "aide.maintainer-job.v1",
+  "source_commit": "9dce930157ac68d1b8be9bdefce670e3e8fdd50b",
+  "source_tree": "8ac68f608f0bae8cd4acce288da1ff430f2e1087",
+  "workunit": "AIDE-RETIRED-EVIDENCE-CUSTODY-01"
+}
