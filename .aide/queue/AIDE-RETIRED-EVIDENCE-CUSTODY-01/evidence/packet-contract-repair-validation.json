@@ -1,0 +1,25 @@
+{
+  "bytes": 3257,
+  "effect_ea67590": "unexecuted, held pending changed-subject review",
+  "f3_gap": "required packet sections absent in shortened post-result brief; Harness structural success did not establish this contract",
+  "operative_source_and_live_results": "unchanged; no repeat execution",
+  "raw_sha256": "5eebada0b868445e9774c6a8f11528e526aa34e4d4ce408d4c14b8862513fe15",
+  "required_sections": [
+    "PHASE",
+    "GOAL",
+    "WHY",
+    "CONTEXT_REFS",
+    "ALLOWED_PATHS",
+    "FORBIDDEN_PATHS",
+    "IMPLEMENTATION",
+    "VALIDATION",
+    "COMMITS",
+    "EVIDENCE",
+    "NON_GOALS",
+    "ACCEPTANCE",
+    "OUTPUT_SCHEMA"
+  ],
+  "schema": "aide.retired-custody-packet-contract-check.v1",
+  "section_order_exact": true,
+  "status": "PASS"
+}

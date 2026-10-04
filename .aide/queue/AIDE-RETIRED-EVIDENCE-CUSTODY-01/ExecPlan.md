@@ -200,3 +200,13 @@ Preserve all8 consumers and deliveredC1/replay acceptance. Remaining capacity
 must be freshly checked; no new pool, cap increase, dropped evidence or shortcut
 from custody success to release certification. Historical observations above
 remain dated evidence rather than current permission or state.
+
+### Packet-contract gap caught before downstream effects
+
+The f3a47599 post-result task brief omitted required13 sections. Harness
+structural PASS did not cover that Lite contract. Restore the existing section
+order with a bounded concrete brief and check it directly against the canonical
+compact-task template. No operative source/native/custody result changed or
+replayed. The f3 metadata effect remains unexecuted and requires a changed-subject
+review. Preserve the original f3 record; final source acceptance must cover this
+fix-forward packet.

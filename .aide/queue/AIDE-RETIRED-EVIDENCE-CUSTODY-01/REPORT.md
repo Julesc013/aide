@@ -140,6 +140,9 @@ reference docs, this queue packet/evidence and existing root/generated indexes.
 - `scripts/aide compile --write` and `scripts/aide validate`: PASS structural;
   149info/0warnings/0errors in preparation.
 - Python AST, `git diff --check`, structured commit-message precheck: PASS.
+- Compact task packet:13 required section headings/order PASS;3257bytes.
+  The earlier shortened f3 brief missed this contract; fixed before downstream
+  effects, with native/live evidence unchanged.
 - Actual managed `job run` plus23 source tests: PASS; complete postflight and
   retirement verified. Full raw stderr contains23-test/OK result, no skips.
 - `job custody plan/read/apply/verify/read` for the exact two jobs: PASS;

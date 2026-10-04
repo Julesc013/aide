@@ -1,0 +1,34 @@
+fix(docs): preserve required compact task packet contract
+
+## Summary
+- Repair the C4 post-result brief before downstream qualification.
+
+## Why
+- Harness structural validation did not establish Lite packet completeness.
+
+## Changed
+- Restore the existing13 required section headings in a3257-byte concrete brief.
+- Preserve the f3 formatting gap and unchanged native/live evidence in the plan.
+
+## Validation
+- PASS: direct section/order comparison against the canonical compact template.
+- PASS: Harness compile/validate, whitespace and structured message check.
+- NOT RUN: projection refresh, new native effects and full source validation.
+
+## Changelog
+- Fixed: bounded task brief retains the existing Lite packet section contract.
+
+## Risks
+- Previous structural success was narrower than full Lite validation.
+- Source/export/integration and release/host gates remain separate.
+
+## Follow-up
+- Review the corrected exact source; rebind the unexecuted metadata effect.
+- Keep accepted23/native and two live custody results without replay.
+
+AIDE-Task: AIDE-RETIRED-EVIDENCE-CUSTODY-01
+AIDE-Phase: packet-contract-fix-forward
+AIDE-Result: PASS_PACKET_CONTRACT_FULL_SOURCE_PENDING
+AIDE-Scope: bounded-task-brief-and-custody-records
+AIDE-Token-Impact: concrete3257-byte-brief-full-evidence-in-files
+AIDE-Quality-Gate: exact-corrected-source-review-pending
