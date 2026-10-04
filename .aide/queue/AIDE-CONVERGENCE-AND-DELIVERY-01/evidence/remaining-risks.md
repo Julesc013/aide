@@ -2,16 +2,18 @@
 
 ## Current checkpoint
 
-Accepted source/main/dev bf559c0a has the repaired 71-test scoped source and
-current export. The local stable candidate still carries older code. Child
-AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 now separates its read-only export
-supervisor from release output and awaits exact build-effect review.
+Current local source/assets/original pinned worker entry are independently
+accepted and integrated at21f8677d.49 affected source checks, export/full
+validation,8 consumers,38 forms/39 outputs plus12 job observations and identical
+four-asset replay passed. Original native probe passed and retired.88 matching
+local/remote pairs and85 preserved other tips are recorded in the current
+qualification report; metadata closeout is a separately reviewed final sync.
 
 Outer-client/editor/read containment, ten historical dispositions, live-model
-permission and matched efficiency, exact current stable/publication/downloaded
-consumer gates, downstream adoption and wider unknown disk cleanup remain open.
+permission and matched efficiency, exact stable/publication/downloaded consumers,
+authorized downstream adoption and wider unknown disk cleanup remain open.
 Shared D pools are configured; aggregate controls are monitored, not hard quotas.
-Source synchronization and prior retirement do not certify those properties.
+Source synchronization and owned retirement do not certify those properties.
 
 ## Preserved initial campaign risk record
 

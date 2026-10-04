@@ -85,7 +85,8 @@ remain unqualified. All previous candidates and reviews remain historical.
 - [x] Current source/state and missing artifact boundary identified.
 - [x] Frozen source and local build/replay envelope independently accepted; build passed/retired.
 - [x] Current artifacts, all8 consumers/38forms/12job observations and byte-identical replay verified.
-- [ ] Exact local artifact/runtime/integration acceptance and effects complete.
+- [x] Exact local artifact/runtime/integration acceptance and effects complete.
+- [x] Current metadata projections reconciled; exact postcommit review/sync receipts required in evidence/final-sync-result.log.
 
 ## Demonstrated admission repair amendment
 
@@ -223,3 +224,41 @@ taskremote and all85protected tips; fast-forward dev then main and atomic normal
 push onlymain/dev/currenttask. No stable/model/historical/client grant inferred.
 Posteffect metadata closeout receives its own narrow exact review before its
 final synchronization; unchanged product evidence is reused.
+
+## Actual source integration and bounded metadata closeout — 2026-10-05
+
+Exact21f8677d source/effect received independent ACCEPT_WITH_NOTES; every note
+nonblocking and disposed against fresh guards. Normal main/dev fast-forwards and
+one atomic main/dev/currenttask push passed.88 corresponding local/remote pairs
+match;85 other tips are preserved. No tag/publication or missing decision grant.
+
+Close only stale current records: task/status/index, parent status/risks, Profile
+focus, compact task packet and three root indexes. Add one dated current outcome
+to the existing roadmap so its earlier dormant checkpoint is not read as current
+campaign state. This is the minimal cross-document addition needed for coherence;
+no candidate feature or semantic specification adoption follows. Preserve all
+frozen proofs, historical attempts/reviews, source and four asset bytes. Compile
+only the existing generated manifest if its source fingerprint changes; inspect
+its dry-run before writes and stay inside the allowlist. Run proportionate
+structural checks, commit, independently review the exact metadata and final
+3-ref sync, then fresh-guard and apply. Unchanged behavior tests are reused.
+
+## Demonstrated Git checkout byte-preservation repair
+
+Postintegration pack-status found four checksum mismatches. Git's universal LF
+rule converted the qualified generated CRLF files to LF on branch switch. Each
+normalization-only comparison and ordinary-file identity was verified; the ZIP
+and qualified raw checksums stayed unchanged. Independent preexecution review
+accepted the exact generated-pack-only -text override and four-member restoration
+with nonblocking notes. All846 working entries and24 supervisor pins now match;
+staged Git blobs must also match before freezing. Do not rebuild assets or
+reinterpret this as a new test result. Root source/Git LF forms are equivalent
+after newline normalization; prior source proof is retained as its actual raw
+execution identity. Record final checkout-roundtrip proof and obtain a new
+exact review for this source metadata/byte repair and final three-ref effect.
+
+Git whitespace checks retain blank-at-eol, blank-at-eof and space-before-tab;
+only the generated subtree recognizes qualified CRLF as a line terminator via
+cr-at-eol. This does not suppress whitespace errors or change source policy.
+The installed Git gitattributes/config documentation and plain diff --check
+qualify the classification; final exact review includes the full attribute.

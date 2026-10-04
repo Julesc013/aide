@@ -5,14 +5,14 @@ default_concurrency: 1
 canonical_source: .aide/queue
 items:
   - id: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
-    status: needs_review
-    planning_state: bounded_local_asset_effect_review_pending
+    status: passed_with_notes
+    planning_state: qualified_local_source_assets_runtime_and_integration_complete
     title: Qualify current Lite assets with a separate pinned supervisor
     task: .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/ExecPlan.md
     prompt: .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/prompt.md
     evidence: .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence
-    description: Local current-byte qualification only; export supervisor immutable, previous assets preserved in Git, separate publication/model/host gates retained.
+    description: Current local assets and original runtime probe qualified and source synchronized; immutable supervision, Git custody and separate publication/model/client gates retained.
   - id: AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02
     status: passed_with_notes
     planning_state: exact_main_effect_accepted_guarded_closeout

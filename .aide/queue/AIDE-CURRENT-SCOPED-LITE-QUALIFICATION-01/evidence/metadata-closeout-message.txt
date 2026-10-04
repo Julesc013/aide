@@ -1,0 +1,34 @@
+fix(pack): preserve export bytes and reconcile delivery records
+
+## Summary
+- Complete current local Lite qualification records and prevent Git checkout from invalidating generated-pack checksums.
+## Why
+- The qualified source and current assets are integrated; stale pending records should not restart work.
+- Branch switching exposed four normalization-only checksum mismatches in generated CRLF files.
+## Changed
+- Preserve exact generated-pack bytes with a subtree-only Git attribute and restore four members from the unchanged qualified ZIP.
+- Retain the three default whitespace checks while recognizing generated CRLF terminators.
+- Reconcile task/index/Profile/context, parent risks, three root indexes, roadmap and full report; preserve frozen proofs and missing external gates.
+- Record actual 21f8677d main/dev/task integration and exact final three-ref synchronization effect with 85 protected tips.
+## Validation
+- PASS: all 846 working and staged Git blobs match qualified checksums; all four assets and 24 supervisor pins unchanged.
+- PASS: Harness structural validation, task packet sections/references, task inspect complete, pack checksum/boundary/provenance and diff check.
+- PASS: all 19 amended spec Git-LF identities; reuse original 244-statement conservation evidence.
+- REUSED: 49 source checks/export/full validation, 71 unchanged core/host checks, eight consumers/38 forms/39 outputs/12 job observations, replay and retired original-entry probe.
+- NOT RUN: final ref synchronization, pending exact independent frozen source/effect review.
+## Changelog
+- Fixed: generated-pack checksum identity survives Git checkout without rebuilding qualified archives.
+- Changed: current qualification and development records name completed local results and distinct remaining gates.
+## Risks
+- Outer client/read isolation/hard quota, historical decisions, live/matched efficiency, stable publication/downloaded consumers and wider cleanup remain open.
+- Root source/Git LF forms are newline-equivalent; frozen source proof preserves its actual executed raw hashes.
+## Follow-up
+- Obtain exact final source/effect verdict, repeat fresh guards, fast-forward main/dev and atomically synchronize only the three reviewed refs.
+- Retain final terminal receipt without a circular commit identity; continue separately admitted remaining work.
+
+AIDE-Task: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
+AIDE-Phase: qualified-local-candidate-record-closeout
+AIDE-Result: local_qualification_and_source_sync_PASS_external_gates_separate
+AIDE-Scope: generated-pack byte policy and exact four members, own records, existing current indexes/focus
+AIDE-Token-Impact: unchanged behavioral evidence reused; bounded batch Git blob verification
+AIDE-Quality-Gate: exact frozen source and final three-ref effect review required

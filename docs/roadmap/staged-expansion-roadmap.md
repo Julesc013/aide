@@ -27,8 +27,8 @@ A deferred track becomes active only when a later queue item defines scope, allo
 
 ## Independent development candidates — 2026-10-04
 
-These are candidate increments, not admitted runtime tasks. The release Goal
-remains dormant; a host-setup gate does not block unrelated bounded local work.
+These are candidate increments, not admitted runtime tasks. At this dated planning checkpoint the release Goal
+was dormant; a host-setup gate does not block unrelated bounded local work.
 Each implementation needs its own WorkUnit, exact consumer, source/output scope,
 validation and review. Reuse the listed owners and existing code before replacing
 them. The [full report](../../.aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md)
@@ -72,3 +72,14 @@ features of the first local Windows Lite release. No hardware acquisition,
 service enrollment, purchases, migrations or active deployments follow from
 this candidate table. Prefer one deterministic path and small fault fixtures
 before broader operational claims.
+
+## Current qualified checkpoint — 2026-10-05
+
+The architecture proposals remain candidates. One bounded C8 job-inspection
+projection and current Lite local source/assets/original-worker qualification
+are accepted and integrated; see the [current report](../../.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/REPORT.md).
+The campaign Goal is active; unchanged blocked effects remain dormant. First
+independent candidates remain C1/C8, then C2/C3/C4. No blanket feature admission,
+model permission or publication acceptance follows from this ordering. Outer
+client, historical/live/matched efficiency and stable/downloaded/cleanup gates
+remain separate; a completed worker path does not establish whole-session control.

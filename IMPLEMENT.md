@@ -12991,36 +12991,40 @@ WorkUnit now bounds two explicit release-only admission calls and five
 regressions; the supervising-runtime overlap guard remains unchanged. Original
 archive supervision qualifies source/export before any build retry.
 
-## 2026-10-04 Current scoped Lite qualification repair preparation
+## 2026-10-05 qualified current local Lite checkpoint
 
-Two attempted jobs are preserved: first refused before archive mutation and retired; second passed five admission regressions and refreshed export, then stopped on a private public-archive temp. Its exact quiescent allocation is held for reviewed same-job recovery. A narrow public-fixture repair and affected tests are prepared but are not qualified. Original four stable assets and runtime configuration are unchanged.
+AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 is locally qualified and integrated.
+Two demonstrated release-only admission/public-fixture defects were repaired;
+49 affected checks/no skips, export/full validation,846 checksums,8 current-byte
+consumers,38 public forms/39 outputs plus12 job observations, Task OS and
+byte-identical four-asset replay passed. All owned scratch and reservations
+retired. Source/build, local asset, narrow original runtime pin/probe and exact
+21f8677d main/dev/task integration each received independent acceptance with
+explicitly nonblocking disposed notes.88 corresponding pairs match;85 other
+tips preserved. Final metadata synchronization receives its own exact review.
 
-Current qualification update: jobb92f98a4 passed49 affected checks, export and full validation under CodexSandboxOffline; peak scratch6095005 bytes/memory307408896 bytes, scratch/active absent and reservation released. Old46e91fbf is separately reconciled with its failure preserved. Current source/build effect acceptance is pending; source test proof is reused only with exact input hashes. Consumer proof is predeclared in two groups to retain all raw evidence within the existing256MiB aggregate budget. Original archives/runtime pin remain unchanged.
+Only the original archive SHA/additive24th module changed; paths, limits,
+account route and canonical scope are identical. Original entry7b2c4eba passed
+as CodexSandboxOffline and retired. Supervisor/output separation and overlap
+guard remain. Failed attempts and same-job recovery are retained; prior assets
+have exact Git custody without another backup. REPORT.md and frozen proof/
+review/receipt files in that queue task are the current evidence references.
 
-### Current scoped Lite local build — 2026-10-04
+The 19 proposed topic amendments preserve 244 UR/UC statements and
+remain separate from semantic adoption. Current planning/context/parent records
+now describe completed local qualification accurately. This minimal cross-doc
+closeout adds the existing roadmap checkpoint for consistency; no new feature
+is admitted. Unchanged core/host71 evidence and product checks are reused.
 
-AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 source49/export/fullvalidation received
-exact independent acceptance; native current asset build2069e86b passed and
-retired. consumer-effect-manifest.json freezes actual new ZIP/TAR/CLI identities
-for first/rest qualification under unchanged256 MiB aggregate. No publication,
-original runtime promotion or main/dev change is implied. Original failed
-preflight and recovery evidence remain retained.
+Outer-client/read containment, hard quota, ten historical decisions, live/matched
+efficiency, stable tag/publication/downloaded consumers/adoption and wider disk
+cleanup remain open. Shared D storage is configured; FacMan stays paused. A
+local1.0.0 candidate and source promotion do not certify complete AIDE delivery.
 
-### Current local asset proof — 2026-10-05
-
-AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 completed all8 current-byte consumer
-cases,38 public forms/39 retained raw outputs plus12 job observations, Task OS
-and byte-identical four-asset replay. All fixtures/jobs retired and reservations
-released. REPORT.md consolidates current outcome and supersedes preparation
-labels only for completed checks. Exact artifact/runtime promotion review is
-pending; original configuration/main/dev/publication remain unchanged. Native
-original-entry probe is prepared, unrun, subject to that bounded review.
-
-### Qualified original entry and integration freeze — 2026-10-05
-
-AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 LOCALartifact accepted; only original
-runtime archiveSHA/additive24th module promoted under exact review. Necessary
-original-entry job7b2c4eba passed/retired with configuration/pin proof; paths,
-limits, account route and canonical scope identical. integration-effect-manifest
-prepares separately reviewed main/dev fast-forward and atomic3-ref synchronization,
-preserving85other tips. No tag/publication/model/historical/outer-host effect.
+Generated-pack checkout repair: the first source synchronization exposed four
+CRLF-to-LF checksum mismatches. Exact qualified ZIP bytes were restored under
+a separately reviewed generated-pack-only .gitattributes -text override. All
+846 working entries and24 immutable supervisor pins match; staged Git checksum
+verification precedes the final exact review. Original assets/proofs and source
+semantics are unchanged. This additional bounded diff prevents recurrence on
+checkout; no full rebuild or unchanged behavioral suite is required.

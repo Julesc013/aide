@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
 title: Qualify current Lite assets with a separate pinned supervisor
 type: qualification
-status: needs_review
-planning_state: source_assets_original_runtime_PASS_exact_integration_review_pending
-result: CURRENT_ASSET_QUALIFICATION_PENDING
+status: passed_with_notes
+planning_state: qualified_local_source_assets_runtime_and_integration_complete
+result: LOCAL_QUALIFICATION_AND_SOURCE_SYNC_PASS_PUBLICATION_GATES_SEPARATE
 created_at: 2026-10-04
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 authority_basis: Active owner delivery objective and campaign delegation authorize separately reviewed local asset qualification; publication and missing owner decisions remain separate.
@@ -36,6 +36,8 @@ scope:
     - PLANS.md
     - IMPLEMENT.md
     - DOCUMENTATION.md
+    - docs/roadmap/staged-expansion-roadmap.md
+    - .gitattributes
   read_only_sources:
     - core/**
     - .aide/scripts/** except the five exact allowed CLI/test repair files
@@ -65,3 +67,7 @@ public_fixture_repair_amendment: Job46e91fbf demonstrated Windows Python private
 consumer_scheduling: Source full logs add4903513 retained bytes; split original8 necessary cases into separately reviewed consumer-first40MiB/4MiB/1MiB and consumer-rest34MiB/7MiB/1MiB envelopes under original256MiB cap; preserve all acceptance and exactly-once coverage. No archive effect before independent source/build acceptance.
 
 integration_amendment: Actual49/source/export validation,8consumers/replay and original pin/probe have qualified. Admit only exact independently reviewed local main/dev fast-forward and atomic origin main/dev/currenttask synchronization, preserving other85tips; source promotion remains independent of stable/historical/model gates.
+
+metadata_closeout_amendment: Reconcile only current canonical status/focus/context/root indexes and the dated roadmap checkpoint; exact source/asset proofs remain immutable. No semantic adoption or new feature admission. Final metadata synchronization requires its own exact independent review.
+
+export_byte_preservation_amendment: Actual branch switch normalized four generated CRLF members toLF and broke their checksums. Separately reviewed generated-pack-only -text plus exact4 ZIP member restoration; all846 working/staged entries and24 supervisor pins must match before final source/effect review. Source semantics/archive/checksums unchanged.

@@ -1,0 +1,50 @@
+{
+  "schema": "aide.generated-pack-byte-preservation-repair.v1",
+  "reviewer": "/root/containment_review",
+  "preexecution_verdict": "ACCEPT_WITH_NOTES",
+  "all_notes_nonblocking_disposed": true,
+  "attribute": "/.aide/export/aide-lite-pack-v0/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol",
+  "archive_sha256": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+  "records": [
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q47_release_bundle.py",
+      "before_sha256": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+      "restored_sha256": "a55fb81345bb3f2af701cf9f5ee724e3d2b6478fc123db37cac59f06343fa476",
+      "zip_member": "aide-lite-pack-v0/files/.aide/scripts/tests/test_q47_release_bundle.py",
+      "normalization_only": true,
+      "restored_bytes": 34181
+    },
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q48_github_release_draft.py",
+      "before_sha256": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+      "restored_sha256": "db3eee5f99cc1ce99beb31fbabd109bc1050775fb690baa66d5e3e6f71e9b4cf",
+      "zip_member": "aide-lite-pack-v0/files/.aide/scripts/tests/test_q48_github_release_draft.py",
+      "normalization_only": true,
+      "restored_bytes": 12689
+    },
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_stable_release_admission.py",
+      "before_sha256": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+      "restored_sha256": "57f0397758f72d94208da66e128ff78a8437653410f9efbd3fd6cf44877435cf",
+      "zip_member": "aide-lite-pack-v0/files/.aide/scripts/tests/test_stable_release_admission.py",
+      "normalization_only": true,
+      "restored_bytes": 3244
+    },
+    {
+      "path": ".aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md",
+      "before_sha256": "09c76f50ba4110b1f8545925cc2aa5e0a6c0fabc31a2eac74bcdf05a8957062b",
+      "restored_sha256": "619db49066a3335ef4746bee19a3b8bb1cc0fa68b765469a7742f70b055b0348",
+      "zip_member": "aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md",
+      "normalization_only": true,
+      "restored_bytes": 18807
+    }
+  ],
+  "working_checksum_entries_verified": 846,
+  "unchanged_supervisor_pins_verified": 24,
+  "stable_assets_unchanged": true,
+  "source_semantics_changed": false,
+  "staged_blob_roundtrip": "PASS",
+  "whitespace_classification": "preserve all three default checks; recognize qualified CRLF terminator in generated pack only; no whitespace check disabled",
+  "staged_checksum_entries_verified": 846,
+  "staged_digest_encoding": "git cat-file --batch exact staged blob bytes, no normalization"
+}

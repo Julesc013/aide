@@ -1,121 +1,95 @@
-# AIDE Latest Task Packet
+# AIDE latest task packet
 
 ## PHASE
 
-UNSPECIFIED - AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01: rebuild only four local Lite assets using pinned read-only export supervision; qualify unchanged consumer oracles under finite D envelopes; review exact build first; no publication, model grant or original configuration change.
+AIDE-CONVERGENCE-AND-DELIVERY-01: qualified local Lite checkpoint, 2026-10-05.
 
 ## GOAL
 
-AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01: rebuild only four local Lite assets using pinned read-only export supervision; qualify unchanged consumer oracles under finite D envelopes; review exact build first; no publication, model grant or original configuration change.
+Continue from the accepted current local candidate and original worker entry;
+close only admitted remaining gates or one independently admitted roadmap task.
+Do not repeat completed asset qualification or unchanged refused model work.
 
 ## WHY
 
-Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
+Use compact current facts and exact references; prevent stale pending records
+from restarting work, creating duplicate checkouts or widening authority.
 
 ## CONTEXT_REFS
 
-- `.aide/memory/project-state.md`
-- `.aide/memory/decisions.md`
-- `.aide/memory/open-risks.md`
-- `.aide/context/repo-snapshot.json` (present)
-- `.aide/context/repo-map.json` (present)
-- `.aide/context/repo-map.md` (present)
-- `.aide/context/test-map.json` (present)
-- `.aide/context/context-index.json` (present)
-- `.aide/context/latest-context-packet.md` (present)
-- `.aide/repo/latest-repo-intelligence.md` (present)
-- `.aide/repo/file-inventory.json` (present)
-- `.aide/reports/file-quality-summary.md` (present)
-- `.aide/reports/file-quality-ledger.json` (present)
-- `.aide/refactors/latest-refactor-readiness.md` (present)
-- `.aide/refactors/latest-refactor-plan.example.json` (present)
-- `.aide/routing/latest-route-decision.json` (present)
-- `.aide/routing/latest-route-decision.md` (present)
-- `.aide/cache/latest-cache-keys.json` (present)
-- `.aide/cache/latest-cache-keys.md` (present)
-- `.aide/prompts/compact-task.md`
-- `.aide/policies/token-budget.yaml`
-- `.aide/policies/cache.yaml`
-- `.aide/policies/local-state.yaml`
+- `.aide/profile.yaml` and `.aide/queue/index.yaml`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/REPORT.md`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/task.yaml`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/status.yaml`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/current-qualification.json`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/qualification-acceptance.json`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/integration-result.json`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
+- `.aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md`
+- `docs/roadmap/staged-expansion-roadmap.md`
+- `.aide/policies/task-resumption.yaml`, `.aide/policies/work-units.yaml`
+- `.aide/policies/recovery.yaml`, `.aide/policies/review-gates.yaml`
+- `.aide/context/repo-map.json`, `.aide/context/test-map.json`
+- `.aide/context/context-index.json`, `.aide/context/latest-context-packet.md`
 
 ## ALLOWED_PATHS
 
-- `<fill from the next reviewed queue packet>`
-- `.aide/context/**`
-- `.aide/queue/unspecified-*` if this task becomes a queue item
-- root docs only when behavior or documentation links change
+Only the current admitted WorkUnit's exact allowlist. This packet grants no new
+paths, model calls, publication, host changes, target adoption or cleanup.
 
 ## FORBIDDEN_PATHS
 
-- `.git/**`
-- `.env`
-- `secrets/**`
-- `.aide.local/**`
-- raw provider credentials, API keys, local caches, raw prompt logs
-- Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
+Secrets, raw prompts/responses, unrelated targets, unknown or unique work and
+machine policy. Local configuration changes require their own exact effect.
+No new worktrees, clones, pools, broad backups, ACLs, quotas or deletion.
 
 ## IMPLEMENTATION
 
-- Read the queue packet and relevant repo refs first.
-- Keep changes inside the allowed paths.
-- Make the smallest coherent diff that satisfies acceptance.
-- Preserve generated/manual boundaries.
-- Do not inline whole source files unless exact contents are required.
-- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
+49 changed source checks/no skips, export/full validation and 846 checksums pass.
+Eight current consumers, 38 forms/39 outputs plus 12 job observations and four-
+asset replay pass. The original native worker probe passes and is retired.
+Only its archive SHA/additive 24th member changed; roots, limits, account/model
+route and canonical scope stay identical. Source sync at 21f8677d has 88 matching
+pairs/85 other tips preserved; final metadata has its own exact review/sync.
+19 proposed spec appendices preserve 244 UR/UC statements. C1/C8 are first
+candidate increments; each needs bounded admission, acceptance and review.
+Code owns waiting, monitoring, collection and retirement; preserve failed proof.
 
 ## VALIDATION
 
-- `py -3 .aide/scripts/aide_lite.py doctor`
-- `py -3 .aide/scripts/aide_lite.py validate`
-- `py -3 .aide/scripts/aide_lite.py index`
-- `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py repo inventory`
-- `py -3 .aide/scripts/aide_lite.py repo validate`
-- `py -3 .aide/scripts/aide_lite.py verify`
-- `py -3 .aide/scripts/aide_lite.py review-pack`
-- `py -3 .aide/scripts/aide_lite.py route explain`
-- `py -3 .aide/scripts/aide_lite.py test`
-- `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 scripts/aide validate`
-- `git diff --check`
-
-## COMMITS
-
-- Commit coherent subdeliverables with verbose bodies.
-- Stop at review gates.
+Use the selected task's proportionate checks. Reuse unchanged qualified source
+and asset evidence; retest changed dependencies. Before Git effects use the
+read-only git plan and fresh exact identity/ref/asset/authority/recovery guards.
+Run structured commit checks and git diff --check. Keep full required evidence
+accessible and routine model views bounded. No model test follows from status.
 
 ## EVIDENCE
 
-- changed files
-- validation commands and results
-- verifier result
-- review packet path and result when review-pack is available
-- advisory route decision path and result when Q17 routing is available
-- compact packet size and budget status
-- unresolved risks and deferrals
+Retain exact source/asset/config/receipt and terminal retirement identities.
+Current original runtime: a2416a8c; current ZIP:4a45922b; payload source:a8e004e7.
+Integration receipt records source 21f8677d and preserved corresponding pairs.
+Parent/reviewer/cumulative usage and matched efficiency remain unknown here.
 
 ## NON_GOALS
 
-- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
+Outer-client/editor/read qualification, ten historical-message owner decisions,
+live GPT-6.1 permission/matched outcome, stable publication/downloaded consumers,
+authorized adoption and wider storage cleanup remain separate. FacMan is paused.
+Do not retry a refused model job or ask again for configured storage roots.
 
 ## ACCEPTANCE
 
-- Task-specific acceptance criteria are met.
-- Validation is run and recorded.
-- Evidence is written.
-- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
+The exact selected WorkUnit passes its checks and independent gate; claims name
+actual scope. A local candidate/source sync is not whole-session containment,
+hard quota, complete AIDE delivery or stable-release certification.
 
 ## OUTPUT_SCHEMA
 
-Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
-Include the verifier result when Q12 verifier behavior is available.
+Report changed files, actual validation, exact accepted/integrated identities,
+remaining limitations and independent candidate work. Do not claim perfection.
 
 ## TOKEN_ESTIMATE
 
-- method: chars / 4, rounded up
-- chars: 4602
-- approx_tokens: 1151
-- budget_status: PASS
-- warnings:
-  - none
-- formal ledger: `.aide/reports/token-ledger.jsonl`
+- method: chars / 4, rounded up; not measured usage
+- chars_before_estimate: 4196
+- approx_tokens_before_estimate: 1049

@@ -1,0 +1,71 @@
+{
+  "schema": "aide.qualified-metadata-closeout.v1",
+  "source_integrated": "21f8677d16cccac2b8695e68634745dcab07f8e0",
+  "checks": [
+    {
+      "label": "harness",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        "scripts/aide",
+        "validate"
+      ],
+      "exit_code": 0,
+      "log_ref": "final-closeout-harness.log",
+      "log_sha256": "42e66752eeebcc37a004ca86d9de1cbcb79ea1b9b262e3aef754a9fa35c3be70"
+    },
+    {
+      "label": "pack",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "pack-status"
+      ],
+      "exit_code": 0,
+      "log_ref": "final-closeout-pack.log",
+      "log_sha256": "17eb7a713285498d636c31fd8f0e50e9b1a632f16f230bd1f2db48a19f2bb673"
+    },
+    {
+      "label": "task",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "inspect",
+        "--task-id",
+        "AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01"
+      ],
+      "exit_code": 0,
+      "log_ref": "final-closeout-task.log",
+      "log_sha256": "7f24dd5408c47456d6ea07b6e0f46e79245bb6a1b97cff3280c0fafdee0bc245"
+    },
+    {
+      "label": "whitespace",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log_ref": "final-closeout-whitespace.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "spec_amendments_current_git_lf_verified": 19,
+  "original_UR_UC_statements": "244 preserved; original architecture conservation proof reused",
+  "behavior_tests_rerun": false,
+  "new_behavioral_source_checks": 49,
+  "unchanged_core_host_checks_reused": 71,
+  "working_and_staged_export_entries_verified": 846,
+  "stable_assets_and_24pins_unchanged": true,
+  "missing_decisions_granted": false,
+  "whole_session_contained": false,
+  "full_yaml_schema_validation": "not implemented by Harness v0",
+  "independent_final_review": "required_exact_frozen_commit_before_ref_effect"
+}

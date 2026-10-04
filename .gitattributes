@@ -1,1 +1,4 @@
 * text=auto eol=lf
+
+# Generated pack checksums bind exact bytes, including original line endings.
+/.aide/export/aide-lite-pack-v0/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
