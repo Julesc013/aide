@@ -7002,6 +7002,8 @@ def capability_ignored_refs(repo_root: Path, refs: list[str]) -> set[str] | None
 def capability_evidence_snapshot(repo_root: Path, *,
                                  seed_records: list[dict[str, object]] | None = None
                                  ) -> dict[str, object]:
+    if CAPABILITY_EVIDENCE_MAX_REFS < 1:
+        return {"inputs": [], "complete": False, "truncated": True}
     budget = [CAPABILITY_EVIDENCE_MAX_TOTAL_BYTES]
     seed_entry, seed_content = capability_evidence_read(
         repo_root, CAPABILITY_SEEDS_PATH,
@@ -7016,7 +7018,9 @@ def capability_evidence_snapshot(repo_root: Path, *,
             *CAPABILITY_REQUIRED_FILES}
     for seed in seeds:
         refs.update(str(ref) for ref in seed.get("expected_evidence_hints", []) if str(ref))
-    selected = sorted(refs)[:CAPABILITY_EVIDENCE_MAX_REFS]
+    # The seed was already read to discover hints; reserve it within the cap.
+    selected = sorted({CAPABILITY_SEEDS_PATH, *sorted(refs - {CAPABILITY_SEEDS_PATH})[
+        :CAPABILITY_EVIDENCE_MAX_REFS - 1]})
     ignored = capability_ignored_refs(repo_root, selected)
     inputs = []
     for rel in selected:

@@ -276,9 +276,23 @@ class XOS02CapabilityRealityTests(unittest.TestCase):
                 entry, content = aide_lite.capability_evidence_read(root, "bounded.txt", maximum=4)
             self.assertIsNone(content)
             self.assertEqual(entry["reason"], "read_budget")
-            with mock.patch.object(aide_lite, "CAPABILITY_EVIDENCE_MAX_REFS", 2):
+            for rel in [aide_lite.CAPABILITY_BINDINGS_SCHEMA_PATH,
+                        aide_lite.CAPABILITY_OBSERVATION_SCHEMA_PATH]:
+                (root / rel).write_text("{}\n", encoding="utf-8")
+            admitted_reads = []
+            original_read = aide_lite.capability_evidence_read
+            def count_reads(*args, **kwargs):
+                entry, content = original_read(*args, **kwargs)
+                if content is not None:
+                    admitted_reads.append(entry["path"])
+                return entry, content
+            with mock.patch.object(aide_lite, "CAPABILITY_EVIDENCE_MAX_REFS", 2), mock.patch.object(
+                    aide_lite, "capability_evidence_read", count_reads):
                 snapshot = aide_lite.capability_evidence_snapshot(root)
             self.assertEqual(len(snapshot["inputs"]), 2)
+            self.assertEqual(len(admitted_reads), 2)
+            self.assertIn(aide_lite.CAPABILITY_SEEDS_PATH, admitted_reads)
+            self.assertEqual([entry["path"] for entry in snapshot["inputs"]], sorted(admitted_reads))
             self.assertTrue(snapshot["truncated"])
             self.assertFalse(snapshot["complete"])
             with mock.patch.object(aide_lite, "CAPABILITY_EVIDENCE_MAX_TOTAL_BYTES", 1):

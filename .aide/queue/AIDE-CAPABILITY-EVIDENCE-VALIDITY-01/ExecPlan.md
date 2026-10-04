@@ -153,3 +153,11 @@ default behavior for source-only callers. No second16MiB snapshot is required.
 The eighteenth owned regression mutates seed state immediately after data
 derivation, confirms bindings retain the original seed identity/classification,
 and requires STALE rather than CURRENT. No previous green native invocation.
+
+Review rejectedc524 before dispatch for an exact reference-cap edge: the seed
+was read before truncation and could be omitted from128 selected refs, admitting
+a129th distinct read. The seed is now reserved within the selected cap and
+entries remain sorted. The existing truncation regression provides two readable
+schema files and counts actual admitted content reads at a two-reference limit.
+It requires exactly two including the seed, complete=false and truncated=true.
+All prior green subjects remain undispatched.

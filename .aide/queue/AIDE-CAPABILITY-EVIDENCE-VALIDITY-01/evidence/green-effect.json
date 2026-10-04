@@ -9,13 +9,13 @@
   "expected": "18 tests, zero failures/errors/skips; ten actual capability CLI invocations with expected current/stale/refresh results",
   "fixture_lifecycle": "existing authenticated public_archive_fixture and original owned TMP; empty canonical_outputs",
   "harmless_hardlink_fixture": "two owned aliases only; reader must refuse before content open; exact identity-verified public alias unlink before fixture retirement",
-  "manifest_template_sha256": "7f5eb29e196fae848f1403e085e6ed3a0f52ab833dd1254c9e7eda873af42428",
+  "manifest_template_sha256": "90b7ccd8ce7aba697e88731ccf903a396a9baf446fc55e2ef5fe7532b6129290",
   "native_effect": "one all-case capability unittest invocation including one finite current public CLI copied fixture workflow",
   "no_uncertain_replay": true,
   "retirement_required": true,
   "schema": "aide.capability-validity-green-effect.v1",
   "source": "exact frozen source/tree; rebind only ignored manifest source IDs after independent verdict",
-  "superseded_unexecuted_source": "10b23256dd063c2ba5acc3f983275bf5cf9551d8",
+  "superseded_unexecuted_source": "c524954eba8895315a289a350dfa89492bf85ad1",
   "supervisor_zip_sha256": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
   "workunit": "AIDE-CAPABILITY-EVIDENCE-VALIDITY-01"
 }

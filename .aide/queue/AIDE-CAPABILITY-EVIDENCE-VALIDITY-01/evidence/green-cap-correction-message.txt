@@ -1,0 +1,26 @@
+fix(capability): include seeds within the evidence read cap
+
+## Summary
+- Resolve the reviewed exact reference-ceiling defect before green dispatch.
+## Why
+- Reading seeds before selecting128 references could admit129 distinct files when truncation omitted the seed.
+## Changed
+- Reserve the seed within the selected reference ceiling while preserving sorted binding entries.
+- Strengthen the existing truncation regression to count actual admitted reads with readable schema fixtures.
+- Rebind the unchanged18-case finite effect to the corrected source inputs.
+## Validation
+- PASS: AST and diff check.
+- NOT RUN: previous and current green subjects pending exact independent replacement verdict.
+## Changelog
+- Fixed: declared reference limits include seed discovery reads.
+## Risks
+- Incomplete or truncated coverage remains unknown; no permissions, storage or old assets change.
+## Follow-up
+- Independently review this exact final correction before the one managed18-case invocation.
+
+AIDE-Task: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
+AIDE-Phase: preexecution-reference-cap-correction
+AIDE-Result: corrected_source_prepared_not_run
+AIDE-Scope: finite reader, existing truncation regression and child envelope
+AIDE-Token-Impact: enforce actual read counts without extra execution
+AIDE-Quality-Gate: exact independent corrected source/native review
