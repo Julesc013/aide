@@ -1,0 +1,9 @@
+{
+  "job_id": "46e91fbfad5041828a02731d782b384f",
+  "effect_before": "2b21447d5eb6c5dbfbb438c0b2422ee8aa536d0ff406b62d50e016eecbade5e8",
+  "status": "OWNER_MISMATCH",
+  "entries_not_inspected": true,
+  "lease_unchanged": true,
+  "scratch_and_reservation_preserved": true,
+  "error": "fixture is not owned by the exact creation account"
+}

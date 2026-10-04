@@ -24,7 +24,7 @@
   "new_job_or_workspace": false,
   "acl_machine_or_config_change": false,
   "model_call": false,
-  "helper_sha256": "71059d33c50e56fcae74858e88b5c55036d334f48782ea63d0b071ee6f5c5c83",
+  "helper_sha256": "e9b5aeabba305d0a2c1b9342d9be1445c0f2410c963fe9d626a180ad1f2fd560",
   "controller_sha256": "29fe722ebc6ed07885376de3d233d3fc1e013e355b9e0c8f672616424ceb963a",
   "controller_routing": "Existing pinned WindowsJobHost plus existing codex sandbox, exact same owned scratch and job ID under estate lock; no AIDE job resubmission; original result/lease untouched."
 }

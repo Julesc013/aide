@@ -98,6 +98,11 @@ def main():
     digest = hashlib.sha256()
     owner = owner_sid(fixture)
     if owner != "S-1-5-21-2168396775-1281633702-301206425-1002":
+        print(json.dumps({"status": "OWNER_MISMATCH", "job_id": record["job_id"],
+                          "fixture": effect["owned_fixture"],
+                          "fixture_identity": [root.st_dev, root.st_ino],
+                          "owner_sid": owner, "creation_identity": identity.value,
+                          "contents_inspected": False, "apply": args.apply}, sort_keys=True), flush=True)
         raise RuntimeError("fixture is not owned by the exact creation account")
     while pending:
         directory = pending.pop()
