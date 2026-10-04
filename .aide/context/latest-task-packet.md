@@ -7,7 +7,7 @@
   export/full validation; original a241 config/ZIP4a supervisor unchanged.
 - Exact source-effect record: `evidence/capability-payload-source-effect.json`.
 - Existing D pools, one job, finite256MiB aggregate; no fallback or new layout.
-- Source-only18-test C1 and unchanged71-core evidence are reused by exact identity.
+- Source18-test C1 is re-exercised for changed context inputs; unchanged71-core evidence is reused.
 - Before dispatch: independent exact source/native review and fresh locked admission.
 - After: verify complete collection, export checksums/current schema/CLI,
   unchanged stable assets/config/pins and owned scratch/reservation retirement.

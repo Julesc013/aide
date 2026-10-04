@@ -4,7 +4,7 @@
 
 Prepared a tiny task-owned entry that selects the existing qualified worker,
 changing only its source-proof owner. The first local export envelope retains
-49 checks/export/full validation, reuses exact unchanged18-test C1 and71 core
+49 checks/export/full validation, re-exercises18 current-input C1 checks and reuses unchanged71 core
 proof, and leaves current four stable assets/original configuration untouched.
 No native effect has run from this preparation. Exact independent source/effect
 review and fresh locked admission precede dispatch; later archive effects are

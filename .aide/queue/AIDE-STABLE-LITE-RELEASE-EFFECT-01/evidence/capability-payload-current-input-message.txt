@@ -1,0 +1,32 @@
+test(lite): bind payload qualification to current capability inputs
+
+## Summary
+- Correct the held source envelope to re-exercise18 C1 checks against current inputs.
+
+## Why
+- Prior native source/test identity remains valid, while frozen context/queue metadata changed.
+
+## Changed
+- Preserve existing49 checks/export/full validation, then run18 C1 checks within the same native envelope.
+- Retain complete raw process output in logs with small hash/count proof; mark qualification pending until all stages pass.
+
+## Validation
+- PASS: AST/JSON, input hashes, unchanged original configuration and diff checks.
+- NOT RUN: any native effect; adb admission remains held and no attempt was dispatched.
+
+## Changelog
+- Fixed: current-input qualification scope and honest evidence reuse for changed Lite payload.
+
+## Risks
+- Full output remains bounded by original limits; admission/clean-source/retirement guards still mandatory.
+- All archive, host, model, history and publication effects remain separate.
+
+## Follow-up
+- Review corrected frozen subject/effect before67-check native source/export dispatch.
+
+AIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01
+AIDE-Phase: capability-payload-current-input-correction
+AIDE-Result: PREPARED_native_not_run
+AIDE-Scope: task-owned qualification entry and existing allowed records
+AIDE-Token-Impact: add affected C1 checks; preserve full output in deterministic logs
+AIDE-Quality-Gate: corrected exact source/native acceptance

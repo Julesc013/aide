@@ -822,7 +822,7 @@ qualification worker/canaries and accepted C1 proof without changing them. The
 new tiny entry selects the existing worker phases with a new proof owner; it is
 not another runner. Phase1 reruns49 release/fixture/admission checks because the
 CLI bytes changed, refreshes export, runs full source validation and verifies
-new schema/CLI inclusion. Reuse unchanged18-test native C1 and71 core/host proof.
+new schema/CLI inclusion. Re-exercise18 C1 checks against current inputs; reuse unchanged71 core/host proof.
 Later build and current-byte consumers require their own exact result/effect
 review, actual identities and clean committed pack before dispatch.
 
@@ -848,7 +848,7 @@ phase scheduling before allocation. Do not widen256MiB, erase unique evidence,
 truncate logs, choose another drive or create another workspace.
 
 Verification: exact independent source/native envelopes before effects; current
-source49 checks/export/fullvalidate; all pack checksums/new schema/CLI; retained
+source49 plus18 current-input C1 checks/export/fullvalidate; all pack checksums/new schema/CLI; retained
 raw trees and retirement; exact archive build/consumer/replay acceptance before
 local runtime promotion/integration. No tag/publication, model calls, historical
 acceptance, client restart, machine controls or target adoption from this slice.
@@ -859,3 +859,12 @@ The existing six generated metadata targets may be compiled solely for this
 queue-index change; preserve manual content. The canonical configuration copy
 uses Git-LF bytes and is parsed-identical to the unchanged ignored a241 original;
 its projection digest and the actually selected raw original digest are distinct.
+
+The adb source effect was held without dispatch. Current context/queue metadata
+is different from some old C1 frozen inputs, so the source phase re-exercises
+all18 C1 tests after49 existing checks/export/fullvalidate. Complete raw test
+stdout/stderr goes to bounded job logs; only hashes/counts and the existing small
+CLI proof enter output. Source qualification remains pending until every stage
+and the terminal native receipt pass. Resolve/recheck any Git stat-cache-only
+modified configuration report before dispatch; content equality does not waive
+clean-source verification. No accepted old full-input identity is inferred.

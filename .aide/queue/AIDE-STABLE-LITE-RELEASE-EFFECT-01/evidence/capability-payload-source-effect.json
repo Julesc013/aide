@@ -15,16 +15,17 @@
     "branch/tag/release effects",
     "capacity widening/new drive/workspace/evidence deletion"
   ],
+  "held_predecessor": "adb23739 unaccepted/unexecuted while exact C1 input reuse and clean-status precision were corrected",
   "inputs": {
     ".aide/capabilities/capability-evidence-bindings.schema.json": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
-    ".aide/context/latest-task-packet.md": "0928fdcabb57e6a9ac591010fdb25523086158573b9d1391b234988d92dcdc62",
+    ".aide/context/latest-task-packet.md": "c24790d600911715f283e33c9949a0e7fd4ee406b11b8742919850038650aaaa",
     ".aide/generated/manifest.yaml": "5eb014563bd14ca504cf7f60e958e007bb323889eff28251b03fb3b7307f9a0d",
     ".aide/policies/release-versioning.yaml": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253",
     ".aide/profile.yaml": "df129c25bb3209a430958ce6c65d282b952c71ae57da720ceb62de97dd4cbac1",
     ".aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/evidence/green-result.json": "5ade73e3324a65f0d51a0325a3922ee24008e65fb1b6e67f0328c31f6ec36bd5",
     ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/worker.py": "ece020b49246ac1ccda4acf54172fd037f11583c36f48e8589f4292412336838",
-    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md": "b2b91a15c4e220e9d6d825f2e96dfd9d33a04e7c01391172d4dc951351a209a0",
-    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/capability_payload_refresh.py": "744500ccb32374686fbc702f9c7f42051a54bacbe496580c95e3a3384ac9b934",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md": "b4b68575bd8d2299840e5bb84da635ba2c864fb66eda70c1ad022770b5a3fb94",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/capability_payload_refresh.py": "3efc4e2ed228fad44799f152d692253d2e3a3b9467e372eb70e927370be118b1",
     ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-payload-source-configuration.json": "1f4ff1991c6fc71cea71d5835e6e94533c28931fb338753d64cbcf5c85fc19d6",
     ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/status.yaml": "23dcdc8d0c68c9072b20a5b5dc6ce08be7d308a174cbbf1d739e9b3cd86f5490",
     ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml": "a69cdfb0d49baa7887fb2ad1a7febb16f3a28e2ab83fddc501e9f8d96d7bb2cc",
@@ -38,10 +39,10 @@
     ".aide/toolchain.lock": "9dbdfe09ffc0576e43f318b18f5a8150c5732eb54516a9239ff52a7a02f29801",
     "docs/reference/capability-reality-ledger.md": "1533b4122dc1666e92058643cc167070a3defab64a57c078fde4574082b7c51e"
   },
-  "phase": "repair via existing worker;49 checks/export/fullvalidate",
+  "phase": "repair via existing worker49/export/fullvalidate, then18 current-input C1 checks",
   "recovery": "stop, retain exact handle/results, reconcile owned leftover and canonical export changes; do not replay uncertainty",
   "required_after": [
-    "49 checks no failures/errors/skips; export/fullvalidate zero",
+    "49 release/admission/public fixture plus18 current-input C1 checks, no failures/errors/skips; export/fullvalidate zero",
     "all pack checksums/new capability schema and current CLI hashes",
     "complete collected raw log/output digests and terminal retirement",
     "original four stable assets/config24pins unchanged"
@@ -52,7 +53,6 @@
     "empty scratch/no active job and fresh locked finite admission"
   ],
   "retained_evidence_reuse": [
-    "exact unchanged accepted18-test/ten-call C1 result",
     "71 unchanged core/host checks"
   ],
   "schema": "aide.capability-payload-source-effect.v1",
