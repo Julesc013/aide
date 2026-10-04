@@ -16,13 +16,15 @@ All8 current-byte consumer cases passed exactly once in two serial groups.
 The38 public forms bind39 retained command outputs plus12 raw job observations.
 Task OS checks passed. Deterministic replay reproduced all4 assets byte for byte.
 Each fixture and terminal job was retired, evidence collected and reservations
-released. This is actual local qualification; exact postqualification artifact
-and original-runtime promotion acceptance are now pending.
+released. Exact postqualification LOCALartifact and original-runtime promotion received
+independent acceptance. The original configured entry now uses the current
+24-member pinned archive, and its actual native probe passed and retired.
 
 Main/dev remain bf559c0a while this bounded branch is qualified. There is no
-new stable tag or public release. The original scoped configuration is unchanged;
-its old archive pin intentionally refuses new candidate bytes until reviewed
-promotion. The frozen export selection remains the usable supervisor meanwhile.
+new stable tag or public release. The original scoped configuration changed only its archive SHA and additive
+24th member; every other field is identical. The normal selected worker entry
+is usable with current bytes. The frozen export remains a separate supervisor
+for disjoint artifact generation, preserving the overlap guard.
 
 ## Code and delivered behavior
 
@@ -40,8 +42,8 @@ promotion. The frozen export selection remains the usable supervisor meanwhile.
   tests during build. All delivered consumer checks and replay used current bytes.
 - The original runtime promotion proposes only its archive SHA and additive
  24-member dependency closure. Existing23 member hashes, storage, limits,
- canonical scope and account/model route are preserved. A necessary native
- entry probe is prepared, unrun, and subject to exact independent review.
+ canonical scope and account/model route are preserved. The necessary native
+ entry probe passed and retired after exact independent effect review.
 
 ## Verification and resource evidence
 
@@ -52,6 +54,7 @@ promotion. The frozen export selection remains the usable supervisor meanwhile.
 | First dc069cd9 |case00 import/update/partial recovery PASS; retired |29375912 |3042992 |
 | Rest eff8ab1f |cases01..07 lifecycle/context/partial/public/restart/job/TaskOS PASS; retired |28532513 |5809600 |
 | Replay2e0b0e5e |all4 frozen asset hashes identical; retired |8294 |see replay-result.json |
+| Original entry7b2c4eba |native pin/config/inspect PASS; retired |9988 |14780 |
 
 Source peak memory307408896 bytes; first330551296; rest334970880.
 Scratch maxima are observations, not hard disk quotas or sums of simultaneous
@@ -151,8 +154,11 @@ No failed attempt is erased or relabelled as successful.
 
 ## Separate remaining gates
 
-- Exact current local artifact acceptance and original pin promotion/probe.
-- Exact qualified source/assets integration and fresh local/remote ref guards.
+- LOCALartifact acceptance and original pin promotion/probe are complete; exact
+  source/assets/main integration is pending its separate frozen review.
+- Fresh local/remote ref guards and exact main/dev/currenttask effect acceptance.
+  All87existingpairs currently match;88local/87remote with new task unpublished;
+  other85tips preserved. Pair matching does not mean all branches have one tip.
 - Outer application and actual editor/tool routes constrained and qualified.
 - Ten historical-message dispositions remain unaccepted; source-sync permission
   is not their acceptance. Live GPT-6.1 qualification permission remains absent.
@@ -166,3 +172,8 @@ No failed attempt is erased or relabelled as successful.
 The release Goal remains active while useful deterministic work progresses;
 blocked effects remain dormant without another permission retry. These results
 support a bounded local candidate, not perfect software or complete AIDE delivery.
+
+Current original entry proof7b2c4eba records Windows10.0.19045 and Python3.14.7
+under CodexSandboxOffline, peak9988 scratch/218066944 memory bytes, retained14780
+bytes. All collection digests and final retirement verified. These exact facts
+close the worker selection/pin boundary; the outer client remains Full Access.

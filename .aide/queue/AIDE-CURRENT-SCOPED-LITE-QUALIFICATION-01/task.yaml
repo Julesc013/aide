@@ -3,7 +3,7 @@ id: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
 title: Qualify current Lite assets with a separate pinned supervisor
 type: qualification
 status: needs_review
-planning_state: all_current_consumers_replay_PASS_asset_runtime_review_pending
+planning_state: source_assets_original_runtime_PASS_exact_integration_review_pending
 result: CURRENT_ASSET_QUALIFICATION_PENDING
 created_at: 2026-10-04
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -63,3 +63,5 @@ owned_recovery: Exact quiescent job46e91fbf private public-archive fixture only;
 public_fixture_repair_amendment: Job46e91fbf demonstrated Windows Python private-temp/controller mismatch. Admit only public archive projection/extraction and selected public release-test fixture allocation within authenticated existing job TMP; inherit its existing permissions without ACL setters. Unmanaged and unrelated temp semantics stay private. Qualify actual separate-worker/controller measurement and retirement, refusal-before-allocation and changed release tests; no monitor weakening or supervisor rewrite.
 
 consumer_scheduling: Source full logs add4903513 retained bytes; split original8 necessary cases into separately reviewed consumer-first40MiB/4MiB/1MiB and consumer-rest34MiB/7MiB/1MiB envelopes under original256MiB cap; preserve all acceptance and exactly-once coverage. No archive effect before independent source/build acceptance.
+
+integration_amendment: Actual49/source/export validation,8consumers/replay and original pin/probe have qualified. Admit only exact independently reviewed local main/dev fast-forward and atomic origin main/dev/currenttask synchronization, preserving other85tips; source promotion remains independent of stable/historical/model gates.

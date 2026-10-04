@@ -1,0 +1,14 @@
+{
+  "effect_source": "5d9234b3135f3a3acc281d9c30f7a322d0243fc4",
+  "effect_sha256": "a9bbe4b128d322edcb5ba52e26336f465643529441c5d873ef4b29417e8fa79d",
+  "before_sha256": "1da3a51a9f1080c38897a1c5df3d8bdb438715e4fbf3d5d07f274ae6175dde88",
+  "after_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "changed_fields": [
+    "runtime.sha256",
+    "runtime.files additive core/execution/scoped_host.py; existing23unchanged"
+  ],
+  "roots_limits_account_route_unchanged": true,
+  "lease": "existing estate lock; no active job",
+  "probe": "NOT_RUN; next only after this recorded exact effect",
+  "integration": false
+}

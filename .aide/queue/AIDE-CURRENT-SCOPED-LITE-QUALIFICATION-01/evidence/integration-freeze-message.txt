@@ -1,0 +1,28 @@
+chore(git): freeze qualified source and current asset integration
+
+## Summary
+- Prepare exact main/dev synchronization of qualified source, current local assets and original runtime proof.
+## Why
+- Actual source, consumers, replay and promoted original entry are complete; source promotion remains separate from stable-release certification.
+## Changed
+- Record LOCALartifact acceptance, exact pin promotion and native original-entry receipt/retirement.
+- Freeze only main/dev/currenttask fast-forward and atomic normal push with85protected branch pairs preserved.
+- Reconcile current report, plan and root indexes; publication and missing authority stay separate.
+## Validation
+- PASS: original-entry7b2c4eba native worker, pin/config inspection, collection and retirement.
+- PASS: all15 new range commits without dispositions, helper ready_dry_run,87existingpairs match; pack-status source ancestor/checksums/boundary pass.
+- REUSED:49 source/export/fullvalidation,71 unchanged core/host checks,8 current consumers/38forms/12job observations and identical4asset replay.
+- NOT RUN: integration/push; exact effect review pending.
+## Changelog
+- Changed: qualified current candidate and ordinary worker selection ready for bounded integration.
+## Risks
+- Outer access/read isolation/hard quota and historical/live/matched efficiency/stable-publication gates remain open.
+## Follow-up
+- Obtain exact source/effect verdict, fresh guards, apply only normal3-ref integration, then narrowly review actual metadata closeout.
+
+AIDE-Task: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
+AIDE-Phase: qualified-source-main-integration-freeze
+AIDE-Result: local_source_asset_runtime_PASS_integration_review_pending
+AIDE-Scope: own queue/evidence, three root indexes; only main/dev/currenttask effects
+AIDE-Token-Impact: unchanged product checks reused; code owns monitoring
+AIDE-Quality-Gate: exact integration source/effect review pending

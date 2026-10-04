@@ -1,0 +1,14 @@
+{
+  "schema": "aide.local-qualification-acceptance.v1",
+  "frozen_subject": "5d9234b3135f3a3acc281d9c30f7a322d0243fc4",
+  "verdict": "ACCEPT_WITH_NOTES",
+  "review_ref": "review-5d9234b3-artifact-pin.md",
+  "all_notes_nonblocking_disposed": true,
+  "source_proof_sha256": "e1abd793a36275057a6fc0e5906abccde5aed76cdf8b25dcf4f2b562b3ab4d33",
+  "artifact_proof_sha256": "36dcf78dbd1f8029fc1872c93013dd809cbe8f6d0a749373dbc2cc3cfe5a3368",
+  "pin_effect_sha256": "a9bbe4b128d322edcb5ba52e26336f465643529441c5d873ef4b29417e8fa79d",
+  "actual_pin_result_sha256": "f0d11668fed5c9b8dceefe3fac125c33b641ee59953ac4fd7b65bf978b2890bb",
+  "actual_probe_result_sha256": "28ab22768143919ca2accfb34d07e882e8d06ddc1c5b62477a9a6113deaa6e80",
+  "publication": false,
+  "remaining_gates_separate": true
+}

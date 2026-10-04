@@ -1,0 +1,35 @@
+{
+  "job_id": "7b2c4ebad90144618e57e3d20d068d3a",
+  "receipt_sha256": "5734d0ca3bdbbf5ea68c729aa2dc74c269965e14fc02c8d9f8ec1a7273d77cb1",
+  "manifest_digest": "95fe2c2502cc5679d36962124086d883de45d7e7404dbd54c476a96db67554ce",
+  "collected_manifest": {
+    "logs": "05739e47845bac4258db066bd9c6d931c7a529c6f47367d5518fc941dbed2f84",
+    "output": "ab25bdf8c0f51d7de978a9eb0c02fbc5f18a8b965ad162ab988c30884d4c1b5a"
+  },
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 218066944,
+    "scratch_bytes": 9988
+  },
+  "retained_bytes": 14780,
+  "scratch_absent": true,
+  "active_absent": true,
+  "reservation_released": true,
+  "collection_verified": true,
+  "proof": {
+    "configuration_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+    "hard_filesystem_quota": false,
+    "inspect_raw_sha256": "f560292636b1748639456f602e0f5a713e9f61baafa8d5277372e5edf8d8040e",
+    "job_id": "7b2c4ebad90144618e57e3d20d068d3a",
+    "nested_model_calls": 0,
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python_version": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+    "runtime_archive_sha256": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+    "runtime_closure_count": 24,
+    "status": "PASS",
+    "whole_session_contained": false,
+    "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+    "worker_read_isolation": "unqualified"
+  },
+  "proof_sha256": "b5a594a74066367541c0e76eb955f7c2ce0e0116d152b2a4e00b59c0587bbe62"
+}

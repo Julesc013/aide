@@ -210,3 +210,16 @@ all limits, account/model route and canonical scope stay identical. After that
 accepted effect, run a necessary native entry probe through the original selected
 configuration and verify collection/retirement before integration consideration.
 No new suite/model invocation/host setup is inferred.
+
+## Original entry PASS and exact integration gate
+
+Review5d accepted LOCALartifact and exact additive pin/probe effect. Original
+configuration now has reviewed afterSHAa2416a8c, allotherfields unchanged.
+Probe7b2c4eba actually passed as CodexSandboxOffline under that original entry;
+raw/config/asset proof collected, scratch/active absent, reservation released.
+All required machine/consumer checks precede the new integration-effect manifest.
+Guard clean exactreviewedsource, fresh main/dev baselinebf559c0a, missingnew
+taskremote and all85protected tips; fast-forward dev then main and atomic normal
+push onlymain/dev/currenttask. No stable/model/historical/client grant inferred.
+Posteffect metadata closeout receives its own narrow exact review before its
+final synchronization; unchanged product evidence is reused.

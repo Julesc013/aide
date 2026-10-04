@@ -1,0 +1,370 @@
+{
+  "source": "5d9234b3135f3a3acc281d9c30f7a322d0243fc4",
+  "git_plan_result": "ready_dry_run",
+  "helper_plan_log": "current-integration-git-plan.log",
+  "local_count": 88,
+  "remote_count": 87,
+  "matching_existing_pairs": 87,
+  "protected_count": 85,
+  "protected_refs": {
+    "task/aide-api-loader-effect-01": {
+      "local": "e9ad4156d512a75af6b1add1e5972ecc81ce494b",
+      "remote": "e9ad4156d512a75af6b1add1e5972ecc81ce494b"
+    },
+    "task/aide-api-set-source-integration-01": {
+      "local": "c3a92154dd8e217604aea642e534fc7fbf20a8d2",
+      "remote": "c3a92154dd8e217604aea642e534fc7fbf20a8d2"
+    },
+    "task/aide-architecture-reconciliation-01": {
+      "local": "e3e6f8bcff762638326853746dfd952f826f1f76",
+      "remote": "e3e6f8bcff762638326853746dfd952f826f1f76"
+    },
+    "task/aide-broker-dev-pack-refresh-01": {
+      "local": "3f1bc120a10ce8f87d0de24d45cdd447f6800be9",
+      "remote": "3f1bc120a10ce8f87d0de24d45cdd447f6800be9"
+    },
+    "task/aide-campaign-resource-setup-01": {
+      "local": "917ebe80b91b9956b0b1d0cb2dc9db2c4ab2f5e4",
+      "remote": "917ebe80b91b9956b0b1d0cb2dc9db2c4ab2f5e4"
+    },
+    "task/aide-codex-dispatch-gate-01": {
+      "local": "32b9711bec4e1d301cef12b120f20ee8200366c5",
+      "remote": "32b9711bec4e1d301cef12b120f20ee8200366c5"
+    },
+    "task/aide-codex-neutrality-integration-01": {
+      "local": "916d4928373c9889e8a9dac52a329d5a056669f5",
+      "remote": "916d4928373c9889e8a9dac52a329d5a056669f5"
+    },
+    "task/aide-codex-result-boundary-01": {
+      "local": "9fe9cb485daf8ef6e1dbbabc876a6346e12899e5",
+      "remote": "9fe9cb485daf8ef6e1dbbabc876a6346e12899e5"
+    },
+    "task/aide-continuous-worker-pilot-01": {
+      "local": "a9a46292f1ad214fef8c3abaaaf1795b0d4b67d0",
+      "remote": "a9a46292f1ad214fef8c3abaaaf1795b0d4b67d0"
+    },
+    "task/aide-current-lite-taskos-projection-01": {
+      "local": "92d8db087f2886850b1fd4f8e75800d77506c541",
+      "remote": "92d8db087f2886850b1fd4f8e75800d77506c541"
+    },
+    "task/aide-cw-api-query-effect-01": {
+      "local": "3954ee4cbc725649269e675ef49ac3573f90f6a8",
+      "remote": "3954ee4cbc725649269e675ef49ac3573f90f6a8"
+    },
+    "task/aide-cw-api-set-loader-observation-01": {
+      "local": "73df2fe445e1ed46c53502b5b3a66664a094e0d9",
+      "remote": "73df2fe445e1ed46c53502b5b3a66664a094e0d9"
+    },
+    "task/aide-cw-apiquery-native-qualification-01": {
+      "local": "eace2e4d4ed2e6fabcb4a064d240b714d6e8b559",
+      "remote": "eace2e4d4ed2e6fabcb4a064d240b714d6e8b559"
+    },
+    "task/aide-cw-broker-dev-integration-01": {
+      "local": "2ef1fb7476bb350ad2a8da84c6093fa9ae5a7953",
+      "remote": "2ef1fb7476bb350ad2a8da84c6093fa9ae5a7953"
+    },
+    "task/aide-cw-github-target-dev-integration-01": {
+      "local": "3bdeb220cb31dfc3177faa6836f5e86c8071d1ef",
+      "remote": "3bdeb220cb31dfc3177faa6836f5e86c8071d1ef"
+    },
+    "task/aide-cw-github-target-qualification-01": {
+      "local": "d81d953a767492c4f71bfe9a2334944d51cf5201",
+      "remote": "d81d953a767492c4f71bfe9a2334944d51cf5201"
+    },
+    "task/aide-cw-integration-broker-01": {
+      "local": "75da33108995ba63fc7148c6b4137349d7013798",
+      "remote": "75da33108995ba63fc7148c6b4137349d7013798"
+    },
+    "task/aide-cw-isolated-host-apiquery-01": {
+      "local": "ad1076a3b165d15bfb68045908dfef1f5acd13c2",
+      "remote": "ad1076a3b165d15bfb68045908dfef1f5acd13c2"
+    },
+    "task/aide-delivered-lifecycle-combined-01": {
+      "local": "d4b67c96ff81eb10aeecd6763b538331844619c9",
+      "remote": "d4b67c96ff81eb10aeecd6763b538331844619c9"
+    },
+    "task/aide-delivered-pack-customization-01": {
+      "local": "a5cd5ca5ddf7d0be561fbf2796b073b9f5d96fd2",
+      "remote": "a5cd5ca5ddf7d0be561fbf2796b073b9f5d96fd2"
+    },
+    "task/aide-delivered-pack-import-closure-01": {
+      "local": "8e1e9a9d724dfc300f7a7a6d8b5201c20068b78f",
+      "remote": "8e1e9a9d724dfc300f7a7a6d8b5201c20068b78f"
+    },
+    "task/aide-delivered-pack-removal-plan-01": {
+      "local": "d1362f912c951ccc6022d0a2a3a527a4d66365f1",
+      "remote": "d1362f912c951ccc6022d0a2a3a527a4d66365f1"
+    },
+    "task/aide-delivered-pack-repair-health-01": {
+      "local": "a32535a2675f191ae3515f39501658e91ef41103",
+      "remote": "a32535a2675f191ae3515f39501658e91ef41103"
+    },
+    "task/aide-delivered-pack-safe-update-01": {
+      "local": "e642b73a78bef59cdd9452cde0bb988b81cbd5ab",
+      "remote": "e642b73a78bef59cdd9452cde0bb988b81cbd5ab"
+    },
+    "task/aide-delivered-pack-three-way-update-01": {
+      "local": "c68077548ee9d18a4167b0b6f5fcdbe5845d1738",
+      "remote": "c68077548ee9d18a4167b0b6f5fcdbe5845d1738"
+    },
+    "task/aide-distribution-fixture-portability-01": {
+      "local": "e73ac0b269df3a47214588ae2d025d1b97f2f2c7",
+      "remote": "e73ac0b269df3a47214588ae2d025d1b97f2f2c7"
+    },
+    "task/aide-distribution-fixture-portability-integration-01": {
+      "local": "6cb0a9ac8856a4e733b1d48ef2a86d50badb5d22",
+      "remote": "6cb0a9ac8856a4e733b1d48ef2a86d50badb5d22"
+    },
+    "task/aide-distribution-portability-pack-refresh-01": {
+      "local": "4c0da8974daa96022e53212b8d24b5f5660d7926",
+      "remote": "4c0da8974daa96022e53212b8d24b5f5660d7926"
+    },
+    "task/aide-historical-commit-dispositions-01": {
+      "local": "7a2305f518940077892729b915734bb766a335e1",
+      "remote": "7a2305f518940077892729b915734bb766a335e1"
+    },
+    "task/aide-historical-dev-integration-01": {
+      "local": "fce11e7fce3e8106a71f5a2391fd6f0517d7e0c8",
+      "remote": "fce11e7fce3e8106a71f5a2391fd6f0517d7e0c8"
+    },
+    "task/aide-host-dev-integration-01": {
+      "local": "1c75abf1d93b34be8998383ea2ce4c9084c9d612",
+      "remote": "1c75abf1d93b34be8998383ea2ce4c9084c9d612"
+    },
+    "task/aide-job-scope-diagnostics-01": {
+      "local": "9b1d18445b38ab39799aad18871b91ddb75a1759",
+      "remote": "9b1d18445b38ab39799aad18871b91ddb75a1759"
+    },
+    "task/aide-lifecycle-owned-repair-01": {
+      "local": "cdb3bd04f1ae20f4e58529f7132c376fcbdc48c6",
+      "remote": "cdb3bd04f1ae20f4e58529f7132c376fcbdc48c6"
+    },
+    "task/aide-lifecycle-removal-apply-01": {
+      "local": "fbd9465344f038ea0069fd65673a09bd9106a6a1",
+      "remote": "fbd9465344f038ea0069fd65673a09bd9106a6a1"
+    },
+    "task/aide-lifecycle-rollback-apply-01": {
+      "local": "33824b369b844b1c7a4304844838bcb424806131",
+      "remote": "33824b369b844b1c7a4304844838bcb424806131"
+    },
+    "task/aide-lifecycle-safe-import-01": {
+      "local": "0dfb2931d32f767db19f5df15f173b6a704be5d3",
+      "remote": "0dfb2931d32f767db19f5df15f173b6a704be5d3"
+    },
+    "task/aide-lite-changelog-admission-01": {
+      "local": "c0e07b083040069f9cdfe8c9005f714d4d5df58b",
+      "remote": "c0e07b083040069f9cdfe8c9005f714d4d5df58b"
+    },
+    "task/aide-lite-codex-host-binding-01": {
+      "local": "12351b07c3407c20118515ce868b5413c77a0b89",
+      "remote": "12351b07c3407c20118515ce868b5413c77a0b89"
+    },
+    "task/aide-lite-codex-no-repeat-01": {
+      "local": "3cc6bf1362aca510aced28ddbab485d4e39317d7",
+      "remote": "3cc6bf1362aca510aced28ddbab485d4e39317d7"
+    },
+    "task/aide-lite-current-runner-release-01": {
+      "local": "a9e0c5db8d6f039d6d069b800ac900b2cac8b3ac",
+      "remote": "a9e0c5db8d6f039d6d069b800ac900b2cac8b3ac"
+    },
+    "task/aide-lite-efficiency-01": {
+      "local": "ea80f73d21a9288891e6062a6df733487ae16da6",
+      "remote": "ea80f73d21a9288891e6062a6df733487ae16da6"
+    },
+    "task/aide-lite-efficiency-release-01": {
+      "local": "5eac25c21ba3f2abe2b422aa4b19ae41724bf77d",
+      "remote": "5eac25c21ba3f2abe2b422aa4b19ae41724bf77d"
+    },
+    "task/aide-lite-efficiency-release-refresh-01": {
+      "local": "d5a84c10b1b7a1ad12d3b2e8bdedc921b4710772",
+      "remote": "d5a84c10b1b7a1ad12d3b2e8bdedc921b4710772"
+    },
+    "task/aide-lite-efficiency-wait-consumer-01": {
+      "local": "31107d1854e64a237514babc2e406a064b470866",
+      "remote": "31107d1854e64a237514babc2e406a064b470866"
+    },
+    "task/aide-lite-host-context-integration-receipt-01": {
+      "local": "005c8036683e4002dde98a97bbe4bfd05d6bc282",
+      "remote": "005c8036683e4002dde98a97bbe4bfd05d6bc282"
+    },
+    "task/aide-lite-job-evidence-parse-01": {
+      "local": "2cd254df7cf26642fc47747fda4bae33ff1e10c1",
+      "remote": "2cd254df7cf26642fc47747fda4bae33ff1e10c1"
+    },
+    "task/aide-lite-live-host-readiness-01": {
+      "local": "3cd57cb49620f7dadc15ebe207a6a90d25448e62",
+      "remote": "3cd57cb49620f7dadc15ebe207a6a90d25448e62"
+    },
+    "task/aide-lite-parser-release-01": {
+      "local": "9a8af184b5e5d30e518afdbe51a78298e434e28d",
+      "remote": "9a8af184b5e5d30e518afdbe51a78298e434e28d"
+    },
+    "task/aide-lite-preunlink-recovery-01": {
+      "local": "694e623f58af87e24e4239908d1b2d5675c575a2",
+      "remote": "694e623f58af87e24e4239908d1b2d5675c575a2"
+    },
+    "task/aide-lite-usage-attribution-01": {
+      "local": "6e35ea1379da7d0e447e8973b44205da6df6e662",
+      "remote": "6e35ea1379da7d0e447e8973b44205da6df6e662"
+    },
+    "task/aide-lite-usage-duplicate-01": {
+      "local": "e5bb4f8b53ca98119f0d5762c1e377836db9813d",
+      "remote": "e5bb4f8b53ca98119f0d5762c1e377836db9813d"
+    },
+    "task/aide-owned-repair-dev-integration-01": {
+      "local": "9a8b08700ef7356ee75b6750f3a53c97a4a56e3e",
+      "remote": "9a8b08700ef7356ee75b6750f3a53c97a4a56e3e"
+    },
+    "task/aide-post-lite-source-integration-01": {
+      "local": "190d3f5c2f76143657514d3cb50100622b987608",
+      "remote": "190d3f5c2f76143657514d3cb50100622b987608"
+    },
+    "task/aide-qualified-source-main-sync-02": {
+      "local": "bf559c0a939aba7f9d3d2f3922418428fcf9b6ee",
+      "remote": "bf559c0a939aba7f9d3d2f3922418428fcf9b6ee"
+    },
+    "task/aide-release-metadata-integrity-01": {
+      "local": "f77ecba287415ebefb24db97b8543d6256963e45",
+      "remote": "f77ecba287415ebefb24db97b8543d6256963e45"
+    },
+    "task/aide-removal-combined-01": {
+      "local": "2c4c9089a546c04f81db946b3343aa4236ebe406",
+      "remote": "2c4c9089a546c04f81db946b3343aa4236ebe406"
+    },
+    "task/aide-removal-dev-integration-01": {
+      "local": "5dfa75e632b09f732a8150376db6840bcf149ed3",
+      "remote": "5dfa75e632b09f732a8150376db6840bcf149ed3"
+    },
+    "task/aide-removal-rename-recovery-01": {
+      "local": "b95a8f9a159e01325ee01e08d45556e005595fc9",
+      "remote": "b95a8f9a159e01325ee01e08d45556e005595fc9"
+    },
+    "task/aide-repair-staging-race-01": {
+      "local": "10a16afb681edcdd1907af0f178ccbb294ec17ff",
+      "remote": "10a16afb681edcdd1907af0f178ccbb294ec17ff"
+    },
+    "task/aide-retire-partial-recovery-checkout-01": {
+      "local": "ef0ecf1b6674ccf5ce0694398e37d66e4b3fdd95",
+      "remote": "ef0ecf1b6674ccf5ce0694398e37d66e4b3fdd95"
+    },
+    "task/aide-rollback-partial-recovery-01": {
+      "local": "9cabad8d4b9933c8261d520012aa7486346778c4",
+      "remote": "9cabad8d4b9933c8261d520012aa7486346778c4"
+    },
+    "task/aide-safe-import-combined-01": {
+      "local": "515ad6b2c07e398e62675a3b39fbee7260ac08b8",
+      "remote": "515ad6b2c07e398e62675a3b39fbee7260ac08b8"
+    },
+    "task/aide-session-containment-01": {
+      "local": "3d186d0584bb40f18402a626c9fe099260fae3d4",
+      "remote": "3d186d0584bb40f18402a626c9fe099260fae3d4"
+    },
+    "task/aide-spec-docs-integration-01": {
+      "local": "be3a854abde73dd1d3498a20c240bd0c0a58c28b",
+      "remote": "be3a854abde73dd1d3498a20c240bd0c0a58c28b"
+    },
+    "task/aide-stable-contract-projection-01": {
+      "local": "b3a001befaac2d2d9a596c1d7dc738dd1733bec6",
+      "remote": "b3a001befaac2d2d9a596c1d7dc738dd1733bec6"
+    },
+    "task/aide-stable-coverage-current-evidence-01": {
+      "local": "398d6914c873d01f27444dbdca3129434043bf36",
+      "remote": "398d6914c873d01f27444dbdca3129434043bf36"
+    },
+    "task/aide-stable-current-conflict-proof-01": {
+      "local": "0d9741e374f6bc3220bfa80834d27199b8242a36",
+      "remote": "0d9741e374f6bc3220bfa80834d27199b8242a36"
+    },
+    "task/aide-stable-documentation-alignment-01": {
+      "local": "1d70597894e3dbfe286cb06f5663fe2ad8bfe003",
+      "remote": "1d70597894e3dbfe286cb06f5663fe2ad8bfe003"
+    },
+    "task/aide-stable-lite-consumer-evidence-dev-integration-01": {
+      "local": "d292253b09944f28f0fc794fe3a9679966fe56a0",
+      "remote": "d292253b09944f28f0fc794fe3a9679966fe56a0"
+    },
+    "task/aide-stable-lite-consumer-qualification-01": {
+      "local": "b45010280e5ea9b628f6191ac9f1959c820444cb",
+      "remote": "b45010280e5ea9b628f6191ac9f1959c820444cb"
+    },
+    "task/aide-stable-lite-current-projection-01": {
+      "local": "493e3f13c1b2e754dd8fb5f533380ba13a7b8979",
+      "remote": "493e3f13c1b2e754dd8fb5f533380ba13a7b8979"
+    },
+    "task/aide-stable-lite-draft-truth-01": {
+      "local": "59286688dfcead36f39d2bd9a48c376bc98d7b9f",
+      "remote": "59286688dfcead36f39d2bd9a48c376bc98d7b9f"
+    },
+    "task/aide-stable-lite-forced-restart-01": {
+      "local": "e88b1c2ee6f3206c628f79908e430a7967e9f58c",
+      "remote": "e88b1c2ee6f3206c628f79908e430a7967e9f58c"
+    },
+    "task/aide-stable-lite-partial-import-recovery-01": {
+      "local": "e18f983b09378131c55d8a3ed7daed3521a243b9",
+      "remote": "e18f983b09378131c55d8a3ed7daed3521a243b9"
+    },
+    "task/aide-stable-lite-partial-recovery-projection-01": {
+      "local": "33abef7fca1547de6a3ca6de54ef0b99bedc6ef1",
+      "remote": "33abef7fca1547de6a3ca6de54ef0b99bedc6ef1"
+    },
+    "task/aide-stable-lite-release-effect-01": {
+      "local": "ec7fa41a64d7194ab3554993334026088574b2a6",
+      "remote": "ec7fa41a64d7194ab3554993334026088574b2a6"
+    },
+    "task/aide-stable-lite-release-qualification-01": {
+      "local": "f3f59303e5d09683a6345be8cbada06496ec4ff9",
+      "remote": "f3f59303e5d09683a6345be8cbada06496ec4ff9"
+    },
+    "task/aide-stable-lite-renewed-01": {
+      "local": "76e17a4c2101a9f75fa1116b9256d331bd2cedb8",
+      "remote": "76e17a4c2101a9f75fa1116b9256d331bd2cedb8"
+    },
+    "task/aide-stable-lite-target-queue-next-01": {
+      "local": "75406123ccb06febf34fe9c579a6a1f772b0d6c0",
+      "remote": "75406123ccb06febf34fe9c579a6a1f772b0d6c0"
+    },
+    "task/aide-stable-lite-task-truth-01": {
+      "local": "04caefe659865f16e5777f6c76293fb1df8510fd",
+      "remote": "04caefe659865f16e5777f6c76293fb1df8510fd"
+    },
+    "task/aide-stable-lite-verify-warnings-01": {
+      "local": "1d3d9fe1bb517bb8b9ce18cd26901a00dc9c4c30",
+      "remote": "1d3d9fe1bb517bb8b9ce18cd26901a00dc9c4c30"
+    },
+    "task/aide-stable-mid-removal-canary-01": {
+      "local": "a08c87e9cb150813690f8e0a234ad22d353cd150",
+      "remote": "a08c87e9cb150813690f8e0a234ad22d353cd150"
+    },
+    "task/aide-stable-release-contract-01": {
+      "local": "d38e5839fe102fd4b38dc29971877753ccb6e2ec",
+      "remote": "d38e5839fe102fd4b38dc29971877753ccb6e2ec"
+    },
+    "task/aide-task-os-readonly-next-01": {
+      "local": "dcdc9929a5ad145c34d198189b303186ba1553d5",
+      "remote": "dcdc9929a5ad145c34d198189b303186ba1553d5"
+    },
+    "task/aide-task-os-stale-next-01": {
+      "local": "56eebf9387563a420910cbcc168ac4a65334dd7e",
+      "remote": "56eebf9387563a420910cbcc168ac4a65334dd7e"
+    }
+  },
+  "protected_digest": "e770ac7ae789617faaa25363989a9b75bd6b56c983b57d5c0f496328554b4b9a",
+  "current_roles": {
+    "dev": {
+      "local": "bf559c0a939aba7f9d3d2f3922418428fcf9b6ee",
+      "remote": "bf559c0a939aba7f9d3d2f3922418428fcf9b6ee"
+    },
+    "main": {
+      "local": "bf559c0a939aba7f9d3d2f3922418428fcf9b6ee",
+      "remote": "bf559c0a939aba7f9d3d2f3922418428fcf9b6ee"
+    },
+    "task/aide-current-scoped-lite-qualification-01": {
+      "local": "5d9234b3135f3a3acc281d9c30f7a322d0243fc4",
+      "remote": null
+    }
+  },
+  "intended_future_effect": "qualified normal fast-forward of main/dev; push only main/dev/currenttask after exact independent integration review; preserve other85tips",
+  "current_user_context": "BLACKGLASS-WIN1\\Jules",
+  "github_account_verified": "Julesc013",
+  "no_apply": true
+}

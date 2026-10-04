@@ -13015,3 +13015,12 @@ released. REPORT.md consolidates current outcome and supersedes preparation
 labels only for completed checks. Exact artifact/runtime promotion review is
 pending; original configuration/main/dev/publication remain unchanged. Native
 original-entry probe is prepared, unrun, subject to that bounded review.
+
+### Qualified original entry and integration freeze — 2026-10-05
+
+AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 LOCALartifact accepted; only original
+runtime archiveSHA/additive24th module promoted under exact review. Necessary
+original-entry job7b2c4eba passed/retired with configuration/pin proof; paths,
+limits, account route and canonical scope identical. integration-effect-manifest
+prepares separately reviewed main/dev fast-forward and atomic3-ref synchronization,
+preserving85other tips. No tag/publication/model/historical/outer-host effect.
