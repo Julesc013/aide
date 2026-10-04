@@ -1,0 +1,27 @@
+{
+  "schema": "aide.scoped-index-correction.v1",
+  "reason": "Explicit UTF-8 restores three unintended historical PLANS character encodings and consolidates only new owned storage entries; prior root content preserved.",
+  "records": {
+    "PLANS.md": {
+      "historical_source": "76132f14e954bc5b54a20f6d503901b14c8431ac",
+      "historical_bytes_unchanged": true,
+      "before_sha256": "55e4cb6701cd91e0c213b543448258680d911c6e7027c26cbdce6fb9365c6654",
+      "after_sha256": "c2de82e081382170034ce3f46115905929835218bc31833aa926961b0b122d23",
+      "new_storage_sections": 1
+    },
+    "IMPLEMENT.md": {
+      "historical_source": "76132f14e954bc5b54a20f6d503901b14c8431ac",
+      "historical_bytes_unchanged": true,
+      "before_sha256": "b1e18027cdd32dff29e1b03ee50de521340a322f752adf1381266f5ff8c73b6e",
+      "after_sha256": "578feb4ebe67844f1639ecbda9ab4eea64d226d2864533f26f0e87f006a336cb",
+      "new_storage_sections": 1
+    },
+    "DOCUMENTATION.md": {
+      "historical_source": "76132f14e954bc5b54a20f6d503901b14c8431ac",
+      "historical_bytes_unchanged": true,
+      "before_sha256": "66f4fd4762e5998d2518c18b7c9912fda018df8a4a56c68d95449636192fd272",
+      "after_sha256": "c5b30c040d24c6555b726c318bd28017402138101cddfa58f482813ddb8cd787",
+      "new_storage_sections": 1
+    }
+  }
+}

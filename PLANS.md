@@ -3445,7 +3445,7 @@ bounded execution owner validate rejection and external output; the original
 - Plan: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/ExecPlan.md.
 - Objective: full FacMan 0.1 Beta1 engineering/package completion, exact integration, honest human gates.
 
-## AIDE-CW-INTEGRATION-BROKER-01 â€” local transaction and handoff slice
+## AIDE-CW-INTEGRATION-BROKER-01 — local transaction and handoff slice
 
 Status: active, exact dev base bfb86c12b9e6d2970024d29c57ba629994ec43cc. Implement frozen candidate bytes/Git tree and a separate durable broker core. Scope and acceptance are in the task ExecPlan. Validation uses disposable local Git and injected transport only; actual protected transport, isolated host and coordinator v1 adoption remain open.
 
@@ -4235,7 +4235,7 @@ integration candidate while exact historical message decisions gate the
 frozen Lite main promotion. Revalidate refs and integrated effects before a
 later dev move; new release bytes require their own qualification.
 
-The current Lite ZIP SHA-256 `a762c816â€¦` now has one accepted local Windows
+The current Lite ZIP SHA-256 `a762c816…` now has one accepted local Windows
 mid-removal child-exit canary on `task/aide-post-lite-source-integration-01`.
 It preserves authored brownfield bytes and resumes removal through a fresh
 delivered CLI. This supplemental evidence does not move dev or qualify remote
@@ -4430,7 +4430,7 @@ private hard links, distinct Git checkouts and unqualified toolchain material.
 AIDE-ARCHITECTURE-RECONCILIATION-01 is the owner-requested documentation split
 over the 3d186d05 integrated baseline. The blocked release Goal stays dormant.
 Nineteen existing topic owners receive proposed refinements; original requirements
-and cases remain preserved. The staged expansion plan defines C1â€“C12 candidates
+and cases remain preserved. The staged expansion plan defines C1–C12 candidates
 with consumers, dependencies and acceptance; no runtime implementation is admitted
 by that table. First priorities are truthful projections/explainable operations,
 compatibility, portable checkpoints and ownership-aware resource planning.
@@ -4497,46 +4497,16 @@ verification precedes the final exact review. Original assets/proofs and source
 semantics are unchanged. This additional bounded diff prevents recurrence on
 checkout; no full rebuild or unchanged behavioral suite is required.
 
-## 2026-10-05 one known worktree custody discovery
+## 2026-10-05 bounded storage custody result
 
-Continue the open AIDE-SESSION-CONTAINMENT-01 storage follow-up on the already
-recorded Universal linked worktree and master. The previous record left dirty,
-untracked/ignored and commit/active ownership unresolved. A bounded native
-read-only helper and process-local selection are prepared; only two exact read
-roots are appended, original runtime/config/limits/assets unchanged. Admission/
-source/envelope review precedes one dispatch; collect actual coverage and retire
-owned scratch. No target write, retirement, model/network request, product work,
-new checkout or cleanup authority. Compiler's conservative blocked classification
-is preserved. This addresses existing storage ownership, not the unqualified
-outer client or publication gates. Exact plan/effect and result references live
-in that queue task's evidence/storage-probe-* records.
-
-
-## 2026-10-05 Storage custody preflight repair
-
-The existing AIDE-SESSION-CONTAINMENT-01 storage slice preserves the rejected
-f27cdf63 attempt without dispatch. Its superseding helper and frozen manifest
-repair owner argv compatibility, exact Git pointer/common-root custody,
-external-filter/network refusal and the metadata time bound. See its ExecPlan
-and evidence/storage-probe-review-f27cdf63.json. Actual discovery remains
-pending exact independent admission/source/effect; targets and assets unchanged.
-
-
-## 2026-10-05 actual storage custody observation
-
-The bounded managed check found three tracked source modifications in the
-recorded Universal linked worktree. Preserve it; deletion/recovered bytes zero.
-Full Git outputs and logical metadata were collected and scratch retired.
-Windows cached identity fields are excluded as unknown; a three-file owned
-fixture qualifies the fresh-stat diagnostic correction without target replay.
-See [.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md](.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md).
-
-
-## 2026-10-05 actual storage custody observation
-
-The bounded managed check found three tracked source modifications in the
-recorded Universal linked worktree. Preserve it; deletion/recovered bytes zero.
-Full Git outputs and logical metadata were collected and scratch retired.
-Windows cached identity fields are excluded as unknown; a three-file owned
-fixture qualifies the fresh-stat diagnostic correction without target replay.
-See [.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md](.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md).
+AIDE-SESSION-CONTAINMENT-01 inspected one previously recorded Universal
+linked worktree through the pinned managed worker: three tracked source
+modifications, no untracked names,31 ignored names and7,794,943 logical bytes.
+The worktree is preserved; no deletion or reclaimed space is claimed. Output/
+log digests, scratch retirement and reservation release are verified. Raw
+Windows cached identity/link counts are invalid and normalized to unknown;
+a fresh-stat correction awaits one tiny owned native regression fixture.
+No target replay, new checkout, asset rebuild or original selection change.
+Read-only native acceptance does not close the outer-client, historical, live
+model, efficiency or stable-publication gates. Rejected preflights remain in
+the task's Git/evidence history. See [storage report](.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md).

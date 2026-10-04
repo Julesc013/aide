@@ -650,36 +650,16 @@ verification precedes the final exact review. Original assets/proofs and source
 semantics are unchanged. This additional bounded diff prevents recurrence on
 checkout; no full rebuild or unchanged behavioral suite is required.
 
-## 2026-10-05 one known worktree custody discovery
+## 2026-10-05 bounded storage custody result
 
-Continue the open AIDE-SESSION-CONTAINMENT-01 storage follow-up on the already
-recorded Universal linked worktree and master. The previous record left dirty,
-untracked/ignored and commit/active ownership unresolved. A bounded native
-read-only helper and process-local selection are prepared; only two exact read
-roots are appended, original runtime/config/limits/assets unchanged. Admission/
-source/envelope review precedes one dispatch; collect actual coverage and retire
-owned scratch. No target write, retirement, model/network request, product work,
-new checkout or cleanup authority. Compiler's conservative blocked classification
-is preserved. This addresses existing storage ownership, not the unqualified
-outer client or publication gates. Exact plan/effect and result references live
-in that queue task's evidence/storage-probe-* records.
-
-
-## 2026-10-05 Bounded custody discovery review
-
-The existing AIDE-SESSION-CONTAINMENT-01 storage slice preserves the rejected
-f27cdf63 attempt without dispatch. Its superseding helper and frozen manifest
-repair owner argv compatibility, exact Git pointer/common-root custody,
-external-filter/network refusal and the metadata time bound. See its ExecPlan
-and evidence/storage-probe-review-f27cdf63.json. Actual discovery remains
-pending exact independent admission/source/effect; targets and assets unchanged.
-
-
-## 2026-10-05 actual storage custody observation
-
-The bounded managed check found three tracked source modifications in the
-recorded Universal linked worktree. Preserve it; deletion/recovered bytes zero.
-Full Git outputs and logical metadata were collected and scratch retired.
-Windows cached identity fields are excluded as unknown; a three-file owned
-fixture qualifies the fresh-stat diagnostic correction without target replay.
-See [.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md](.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md).
+AIDE-SESSION-CONTAINMENT-01 inspected one previously recorded Universal
+linked worktree through the pinned managed worker: three tracked source
+modifications, no untracked names,31 ignored names and7,794,943 logical bytes.
+The worktree is preserved; no deletion or reclaimed space is claimed. Output/
+log digests, scratch retirement and reservation release are verified. Raw
+Windows cached identity/link counts are invalid and normalized to unknown;
+a fresh-stat correction awaits one tiny owned native regression fixture.
+No target replay, new checkout, asset rebuild or original selection change.
+Read-only native acceptance does not close the outer-client, historical, live
+model, efficiency or stable-publication gates. Rejected preflights remain in
+the task's Git/evidence history. See [storage report](.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md).

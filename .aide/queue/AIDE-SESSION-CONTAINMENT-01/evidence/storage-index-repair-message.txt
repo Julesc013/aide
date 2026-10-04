@@ -1,0 +1,25 @@
+docs(storage): preserve index text and consolidate custody records
+
+## Summary
+- Restore exact historical root-index text and one coherent current storage entry.
+## Why
+- A bookkeeping script decoded PLANS through a Windows default encoding and duplicated its new paragraph before UTF-8 recovery.
+## Changed
+- Preserve all three761 root-index prefixes byte-equivalently and consolidate only owned new storage sections.
+- Retain actual dirty-worktree result and pending fixture/outer/release gates with exact report references.
+## Validation
+- PASS: explicit UTF-8, exact historical prefixes and single current entry per root index.
+- PASS: native fixture/helper/input/effect identities unchanged; no new execution or target effects.
+## Changelog
+- Fixed: scoped storage index encoding and duplicate current entry.
+## Risks
+- Tiny native fixture remains pending exact acceptance; no broader release or containment claim.
+## Follow-up
+- Carry focused fixture review to this superseding exact source, execute accepted native fixture once and review final integration separately.
+
+AIDE-Task: AIDE-SESSION-CONTAINMENT-01
+AIDE-Phase: storage-evidence-index-correction
+AIDE-Result: index_text_preserved_fixture_native_pending
+AIDE-Scope: three root indexes and owned repair evidence
+AIDE-Token-Impact: compact current entries with references, no model/native request
+AIDE-Quality-Gate: exact superseding source/native effect before fixture dispatch
