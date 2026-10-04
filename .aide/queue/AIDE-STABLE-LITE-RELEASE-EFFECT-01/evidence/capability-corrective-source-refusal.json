@@ -1,0 +1,26 @@
+{
+  "accounting_formula": "scratch + retained + 2*logs + 2MiB metadata + canonical reservation; includes existing canonical occupancy",
+  "active_record_absent": true,
+  "aggregate_limit_bytes": 268435456,
+  "api_writes_field": "command mutation category, not proof that a worker or allocation ran",
+  "automatic_retry": false,
+  "canonical_export_bytes": 4214570,
+  "controller_exit_code": 1,
+  "known_pool_bytes_after": {
+    "control": 13694135,
+    "retained": 214054998,
+    "scratch": 0
+  },
+  "native_worker_started": false,
+  "observed_used_bytes": 231963703,
+  "observer_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-corrective-source-observer.log",
+  "observer_sha256": "aef050bcae8022f6d78e3ce555f43ad4fb1e1e48bcd26be67b4066fec5579b5c",
+  "reason": "aggregate pool budget cannot admit the next job",
+  "reserved_bytes": 37814272,
+  "schema": "aide.capability-payload-admission-refusal.v1",
+  "scratch_empty": true,
+  "source_clean": true,
+  "source_commit": "af6d35cf0311756ae99ecde6a0fb364525a460b6",
+  "source_tree": "7f60dfc54419827fa6c6bc8dfb5eb4b1de738c2f",
+  "used_plus_reserved": 269777975
+}

@@ -927,3 +927,28 @@ require exact frozen source/native-effect review, clean source/current inputs,
 verified original partial receipt and complete trees, no active scratch and
 fresh locked admission. New intent has its own identity; do not reuse ca2a1e14.
 No archive/ref/tag/publication/model/target/host effect is admitted.
+
+### Admission refusal and exact aggregate accounting correction
+
+The reviewed af6d35cf effect was submitted once and refused before worker
+launch/allocation: aggregate pool budget cannot admit the next job. Its
+observer/intent and capability-corrective-source-refusal.json are retained.
+Known pools remain227,749,133logical bytes; active record absent/scratch empty.
+No export, validation or18-test process ran, and no uncertain retry followed.
+
+The estimate omitted existing canonical occupancy and doubled log/staging
+reservation. Scoped admission counts scratch, retained, control and declared
+canonical contents, then reserves scratch+result+2*logs+2MiB metadata+canonical
+reservation. Freeze the actual arithmetic in the refusal/proposed effect.
+Keep all6MiB complete logs and64KiB result/16MiB export reservation. Narrow only
+scratch to4MiB for this follow-up:49 packaging/fixture tests are reused, not
+run; the sole real C1 public copy was2,615,426logical bytes with small bounded
+mock-budget fixtures. Existing worker/core/18 assertions remain unchanged.
+
+This revised configuration/effect requires new exact independent acceptance
+and fresh locked admission. Positive observed margin is an estimate, not a
+waiver of concurrent occupancy or monitored-limit uncertainty. Do not erase
+evidence, widen256MiB or choose a new destination. Preserve the six-MiB
+configuration projection and refused manifest/source identities. New source
+IDs/intent are separate from the refused af6 effect. Broader consumer budgeting
+and finite retention remain a later exact requirement, not settled by this fit.

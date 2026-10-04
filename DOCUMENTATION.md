@@ -1,5 +1,16 @@
 # AIDE Documentation Index
 
+## 2026-10-05 source admission refusal preserved; budget estimate corrected
+
+The af6d35cf corrective source job was refused before worker launch. No new
+validation/test process or scratch allocation is inferred from the API's
+requested-write flag. Existing canonical occupancy and doubled log/staging
+reservation are now included in the exact arithmetic. A proposed
+configuration narrows only scratch to4MiB for18 C1 checks plus export/
+full validation;49 packaging checks remain explicitly reused. Logs/result/
+export reservation, original config/assets and256MiB ceiling stay unchanged.
+
+
 ## 2026-10-05 capability projection repair; source qualification still pending
 
 Four exactly reviewed existing capability commands completed once, within the
