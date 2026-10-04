@@ -81,7 +81,7 @@ def asset_identity():
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("phase", choices=("build", "consumer", "replay"))
+    parser.add_argument("phase", choices=("repair", "build", "consumer", "replay"))
     parser.add_argument("--zip-sha256")
     args = parser.parse_args()
     os.environ.update(AIDE_RESOURCE_TEST_PARENT=str(TMP), GIT_CONFIG_COUNT="1",
@@ -95,7 +95,20 @@ def main():
     result = {"phase": args.phase, "windows_identity": identity.value,
               "model_calls": 0, "outer_session_contained": False,
               "read_isolation": "unqualified", "retired_fixtures": []}
-    if args.phase in ("build", "replay"):
+    if args.phase == "repair":
+        tests = invoke("stable-admission", [sys.executable, "-B", "-m", "unittest", "discover",
+                                            "-s", ".aide/scripts/tests", "-p", "test_stable_release_admission.py"])
+        if not re.search(r"Ran 5 tests? in ", tests.stdout + tests.stderr):
+            raise AssertionError("admission regression count changed")
+        for name in ("export-pack", "validate"):
+            # Full validation goes to the admitted 6 MiB log, not the tiny
+            # result allowance. Preserve its exit code and complete log.
+            run = subprocess.run([sys.executable, "-B", str(CLI), name], cwd=REPO, timeout=240)
+            result[name + "_exit_code"] = run.returncode
+            if run.returncode:
+                raise AssertionError(name + " failed")
+        result.update(status="PASS", admission_tests={"run": 5, "failures": 0, "errors": 0, "skips": 0})
+    elif args.phase in ("build", "replay"):
         before = {p.name: sha(p) for p in STABLE.iterdir()}
         if args.phase == "replay" and sha(ZIP) != args.zip_sha256:
             raise AssertionError("replay subject changed")

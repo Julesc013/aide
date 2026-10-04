@@ -14,3 +14,5 @@ forms/Task OS, replay and exact asset acceptance. No pending test is passed.
 
 PASS: managed compile (only pre-existing deferred metadata warnings), doctor and full structural validate (exit 0; full output retained in validate.log), prepared build inspection writes:false.
 PASS: diff whitespace check and unchanged original configuration.
+
+FAIL PRESERVED: job27de35f9 refused stable-build canonical admission before assets changed. PASS: exact receipt/output/log hashes, quiescent process, scratch absent and reservation released. Revised two-call source, five regressions and corresponding runner reference are AST/diff checked; runtime checks and exact amended review remain pending. No old verdict covers changed source.

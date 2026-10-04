@@ -1,0 +1,36 @@
+{
+  "status": "FAIL_preserved",
+  "receipt_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\27de35f93a0d4e71b5eba9c6a448fb39\\receipt.json",
+  "receipt_sha256": "047ae5b1079cdc806bc8681f00339f7a897e4ea3d17b3bbebb9db86506e70d45",
+  "retirement": "verified",
+  "source_commit": "6db0745335820b4b399137e02b62d649b3718a6c",
+  "manifest_digest": "9fe5034b7941b3117e41c8e469ca7687e648aea103ab226c0382b2cb17b61ac1",
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/release": 3917388
+    },
+    "memory_bytes": 241364992,
+    "scratch_bytes": 3691
+  },
+  "collected_manifest": {
+    "logs": "5fbbd4d32ca503d3580855b412665f323084eeadfeda88da01b86e330c2fb67a",
+    "output": "e98df6b5c3f1ece2a0c4a8fdb9103b80a2a1b778ff43814276686d32db40c227"
+  },
+  "process_output": {
+    "argv": [
+      "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-B",
+      "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\aide_lite.py",
+      "release",
+      "stable-build",
+      "--version",
+      "1.0.0"
+    ],
+    "exit_code": 1,
+    "stderr": "",
+    "stdout": "result: REFUSED\nresource_admission: command requires declared canonical output reservations\n"
+  },
+  "assets_unchanged": true,
+  "model_observer_requests": 0,
+  "retained_output_and_log_hashes_verified": true
+}

@@ -28,11 +28,27 @@
       "log_bytes": 1048576,
       "aggregate_bytes": 268435456,
       "canonical_outputs": {}
+    },
+    "repair": {
+      "configuration_ref": "evidence/repair-configuration.json",
+      "raw_sha256": "1da3a51a9f1080c38897a1c5df3d8bdb438715e4fbf3d5d07f274ae6175dde88",
+      "scratch_bytes": 8388608,
+      "retained_bytes": 65536,
+      "log_bytes": 6291456,
+      "aggregate_bytes": 268435456,
+      "canonical_outputs": {
+        ".aide/export/aide-lite-pack-v0": {
+          "bytes": 16777216,
+          "volume_id": "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\"
+        }
+      },
+      "supervisor": "unchanged original old ZIP; export is disjoint"
     }
   },
-  "worker_sha256": "be6e4bba01b074fea76ee78102d5dfe2dd9a35337da396b61dce41ccb79b0041",
+  "worker_sha256": "16d0330f5345a480e1d5c5bd5cece808be310f378fdf3a13ba4e805dae0cf13b",
   "canary_custody_sha256": "f07b23dcf7d10a55bb9232e2a7af7663b0340596207be053ae27fe0169c99f79",
   "effects": [
+    "Five admission regressions and affected export/full validation under unchanged original archive supervisor; exact source acceptance before build retry",
     "local exact four candidate files rebuilt using read-only current export supervisor",
     "unchanged 6 consumer oracles plus 12 job forms and delivered Task OS inspection in owned fixtures",
     "full required results retained and serial fixture/terminal job retirement verified",
@@ -44,5 +60,13 @@
     "integration and push",
     "tag, publication, model invocation or historical acceptance",
     "client/machine/other target/unknown cleanup"
-  ]
+  ],
+  "supersedes_prebuild_source": "6db0745335820b4b399137e02b62d649b3718a6c",
+  "preserved_failed_attempt": "evidence/failed-build-27de35f9.json",
+  "source_repair": {
+    "cli_sha256": "4eb2ea4cdbd112c28dd5dd1904fa99abdbd9fa0fe97265cfb3c2397e75b0f762",
+    "regression_sha256": "f9269b3aaa61e0a0a303f184ade440337b2e60d0c719aea54fbaee602d1850af",
+    "scope": "Only stable-build and stable-validate require explicit release canonical reservation; all other guards unchanged",
+    "runner_reference_sha256": "63a745cfc79237077647bdc3888a54fc1ad1affa4fc6ecf64e0fe293d6f5e95e"
+  }
 }

@@ -147,8 +147,10 @@ choice still requires matching local permission and available turn budget.
 Older positive-count dispatch records without request identities refuse new
 Codex admission until reconciled. This guards only turns launched through
 this owner; it does not intercept unmediated Codex or internal host inference.
-Source `export-pack` and release generation/validation require both existing
-canonical output roots in their job manifest, with their actual volume IDs and
+Source `export-pack` requires its export output root. `release stable-build`
+and `release stable-validate` require only `.aide/release`; their export pack
+is a read-only input. Other commands using the shared packaging guard still
+require both existing canonical output roots, with their actual volume IDs and
 finite byte reservations. Evaluation requires its existing runs destination.
 Default source-checkout `changelog preview` also requires a managed job with
 `.aide/changelog` declared as a finite canonical output. It refuses a direct

@@ -85,3 +85,24 @@ remain unqualified. All previous candidates and reviews remain historical.
 - [ ] Frozen envelope/build effect independently accepted.
 - [ ] Current artifacts and full bounded consumer proof verified.
 - [ ] Exact local artifact/runtime/integration acceptance and effects complete.
+
+## Demonstrated admission repair amendment
+
+Reviewed prebuild source 6db07453 failed in retired job
+27de35f93a0d4e71b5eba9c6a448fb39 before writing an asset. The shared packaging
+guard requires both export and release reservations even for stable-build and
+stable-validate, which read the export and only write/use release output.
+Declaring export would violate the supervisor-overlap guard; do not do that.
+
+Narrow source amendment: those two calls use the existing explicit canonical
+path guard for release only. Managed-context authentication and all other
+packaging requirements remain intact. Add positive and missing-reservation
+regressions plus preservation of the shared packaging guard. Freeze the amended
+source/effect and obtain independent review before qualification or retry.
+
+Run five regressions and affected export/full validation under the unchanged
+original archive-pinned configuration, with only export as canonical output.
+That supervisor remains outside export. Reuse the unchanged 71-test owner/host
+qualification. After exact source acceptance, resume the separate export-root
+build supervisor with new export provenance. Preserve the rejected first
+attempt, receipt and previous review; no unchanged retry is authorized.

@@ -12982,3 +12982,11 @@ from overwriting its archive supervisor. Select the already supported pinned
 export-runtime mode for release-only qualification, keeping that runtime
 read-only. No runner/guard change or additional storage layout is introduced.
 Local assets, their old Git custody and every subsequent pin/effect are explicit.
+
+### Current candidate admission repair
+
+The first reviewed export-supervised build retired with no asset change because
+stable-build requested an unnecessary export write reservation. The same
+WorkUnit now bounds two explicit release-only admission calls and five
+regressions; the supervising-runtime overlap guard remains unchanged. Original
+archive supervision qualifies source/export before any build retry.

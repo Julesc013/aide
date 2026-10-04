@@ -44,3 +44,11 @@
 - .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/worker.py
 
 Product source, selected export, original local configuration and prior assets remain unchanged at prebuild freeze.
+
+## Reviewed repair amendment
+
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/changed-files.md (self; included in exact Git source)
+- .aide/scripts/aide_lite.py (only two stable command admission calls)
+- .aide/scripts/tests/test_stable_release_admission.py (five regressions)
+- Own worker, exact effect/repair config, prior review and terminal failed-attempt evidence.
+- Affected export may change only under original archive supervision after independent revised effect acceptance.
