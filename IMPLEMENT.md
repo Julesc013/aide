@@ -13173,3 +13173,12 @@ Pending custody blocks allocation through the preexisting active.json latch.
 Scope remains the admitted C4 child; source/native/live effects still require
 exact qualification. Tests21 are authored, not run. Current candidate7132 and
 original held runtime selection are unchanged; outer routes remain unrestricted.
+
+## 2026-10-05 actual custody fixture qualification
+
+Jobc1ae2a93 on50c0ac2b passed22 checks as CodexSandboxOffline, no failures/errors/
+skips. Receipt0fd680e9 and complete raw trees verified, fixtures/scratch retired,
+reservation released;9620logical retained bytes. Earlier unexecuted21-test
+effect REQUEST_CHANGES remains preserved; only revised independently accepted
+effectae629dc4 ran. Original runtime/current candidate unchanged. Live custody
+and affected binding/export refresh/integration remain separately gated.

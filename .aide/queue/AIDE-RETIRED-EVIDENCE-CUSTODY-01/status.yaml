@@ -1,10 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-RETIRED-EVIDENCE-CUSTODY-01
-status: running
-planning_state: admitted_source_native_fixture_prepared
-result: PENDING
+status: needs_review
+planning_state: native22_passed_complete_collection_retired
+result: PASS_SOURCE_FIXTURES_LIVE_CUSTODY_PENDING
 updated_at: 2026-10-05
-current_slice: source_and_fixture_prepared
-next_slice: exact_native_fixture_review
+current_slice: native22_verified_retired
+next_slice: exact_source_and_separate_live_custody_effect_review
 live_custody_effect_performed: false
 release_publication_authorized_by_this_slice: false

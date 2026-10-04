@@ -1,0 +1,13 @@
+{
+  "count_verified": true,
+  "fixtures_retired": true,
+  "live_custody_effect": false,
+  "model_calls": 0,
+  "outer_session_contained": false,
+  "schema": "aide.retired-custody-source-fixture.v1",
+  "stderr_sha256": "9de208dd7eb2f0fbbd8438427d93cc2981ca046513e238eb554412aeab44c2aa",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "test_exit_code": 0,
+  "tests_expected": 22,
+  "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline"
+}

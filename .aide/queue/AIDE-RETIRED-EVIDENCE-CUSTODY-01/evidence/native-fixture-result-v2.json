@@ -1,0 +1,56 @@
+{
+  "active_absent": true,
+  "aggregate_limit_bytes": 268435456,
+  "allocated_space_reclaimed": null,
+  "assets_unchanged": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": "899e9ca4101514ae6d5becda3ccae150b732ccf7dc16d07a580cdf5263fe8e08",
+    "aide-lite-v1.0.0.manifest.json": "ce652cc764e2b2c71298e745b6a523253825f594ed315ad1486dacdd7d7a31b1",
+    "aide-lite-v1.0.0.tar.gz": "fe6ddadad63dc7d018c45aee8d391f112c1aa23a31b593a2a205b8f72e20cf8d",
+    "aide-lite-v1.0.0.zip": "7132a5404bf82cdf0c0076cf64b395f01715ae0abd2e8c95c2b971c4b233ee88"
+  },
+  "collected_manifest": {
+    "logs": "409fca27958d51db4751c96061b0cc74654beb9c69c37797879058589f77666b",
+    "output": "0e01f95be77f89f9905b3515ccf9bcb1965f4d8b67e6340389fc99cfc2af0941"
+  },
+  "configuration_sha256": "6ce5cde183a97aacdd4ebd56678790d1e5e8bdd84d2e331d57f4aa159ac1b301",
+  "fixtures_retired": true,
+  "host_read_isolation": "unqualified",
+  "job_id": "c1ae2a93c1ca48c8941abea371a9bfa7",
+  "known_pool_total": 232775269,
+  "live_custody_effect": false,
+  "manifest_digest": "a41e40f2443bfb05f1e972200884cfd0e0871737f75108abcc5ae07d51bc8969",
+  "matched_efficiency": "unqualified",
+  "observer_model_calls": 0,
+  "original_runtime_selection": "unchanged_held",
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 246722560,
+    "scratch_bytes": 5311
+  },
+  "pool_logical_bytes": {
+    "control": 13694135,
+    "retained": 219081134,
+    "scratch": 0
+  },
+  "proof_sha256": "d8ecbbac928240c567af7f9cb9b4c2e3f5d0a007c4670980808fea2f8f92a72f",
+  "quiescent": true,
+  "receipt_path": "D:/Projects/AIDE/.aide.local/execution/retained/c1ae2a93c1ca48c8941abea371a9bfa7/receipt.json",
+  "receipt_sha256": "0fd680e9ced60215581f40bd7a0ea075a0a476e625b70f70385de5440abaad6a",
+  "reservation_released": true,
+  "result": "PASS_SOURCE_FIXTURES_ONLY",
+  "retained_logical_bytes": 9620,
+  "sampling_limitation": "sampled workspace/log occupancy; not true transient peak or hard quota",
+  "schema": "aide.retired-custody-native-result.v1",
+  "scratch_absent": true,
+  "source_commit": "50c0ac2b38a540f14b24424439b1c7d0b3c5e138",
+  "source_tree": "a0752bc9df98baa4469a43ebd7753aea416886a2",
+  "tests": {
+    "errors": 0,
+    "failures": 0,
+    "run": 22,
+    "skips": 0
+  },
+  "total_host_controller_review_usage": "unknown",
+  "whole_session_contained": false,
+  "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline"
+}

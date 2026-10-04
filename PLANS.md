@@ -4632,3 +4632,11 @@ source-admission ACCEPT. It preserves complete retired evidence and receipts
 using finite compressed custody, explicit lookup and the unchanged owner latch.
 Twenty-one source regressions/native fixture are prepared, not yet executed.
 No live custody, reclaimed bytes, candidate refresh or release approval.
+
+## 2026-10-05 retired evidence custody native result
+
+C4 source fixtures22 passed once on50c0ac2b under the current7132/24-pin
+restricted owner. Complete raw evidence and retirement verified;9620 logical
+bytes retained. No live custody, reclaimed space, source integration or release
+claim. [Full custody report](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md)
+records exact source/effect/result and unchanged consumer acceptance.

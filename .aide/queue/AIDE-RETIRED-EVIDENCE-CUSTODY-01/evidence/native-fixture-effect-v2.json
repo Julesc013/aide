@@ -1,0 +1,29 @@
+{
+  "aggregate_bytes": 268435456,
+  "archive_sha256": "7132a5404bf82cdf0c0076cf64b395f01715ae0abd2e8c95c2b971c4b233ee88",
+  "configuration_sha256": "6ce5cde183a97aacdd4ebd56678790d1e5e8bdd84d2e331d57f4aa159ac1b301",
+  "job_file_sha256": "8a71cddd5e26a279c7447ffe1516a07a870b08bbc9122989c637ca97e74617be",
+  "job_manifest_digest": "a41e40f2443bfb05f1e972200884cfd0e0871737f75108abcc5ae07d51bc8969",
+  "limits": {
+    "canonical_bytes": 536870912,
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 1048576,
+    "max_files": 100000,
+    "memory_bytes": 2147483648,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 32,
+    "retained_bytes": 65536,
+    "runtime_seconds": 180,
+    "scratch_bytes": 2097152
+  },
+  "original_configuration_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "replay": "no uncertain automatic replay",
+  "schema": "aide.retired-custody-native-effect.v1",
+  "scope": "one restricted native job, tiny allocated fixture trees only, no canonical outputs or live custody",
+  "source_commit": "50c0ac2b38a540f14b24424439b1c7d0b3c5e138",
+  "source_tree": "a0752bc9df98baa4469a43ebd7753aea416886a2",
+  "supersedes_unexecuted_effect_sha256": "d96a651bb7b9b4685f4f30d2c81f082835ec52745a0f2f81a2261bffd7dc4d46",
+  "supervisor_file_count": 24,
+  "tests_expected": 22
+}

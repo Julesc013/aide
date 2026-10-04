@@ -1,0 +1,11 @@
+{
+  "effect_sha256": "ae629dc43ab5f14e05cdac62b6ada9bc5feeae1b61f680e2e6ad103b6a9eeb77",
+  "job_manifest_digest": "a41e40f2443bfb05f1e972200884cfd0e0871737f75108abcc5ae07d51bc8969",
+  "notes": "All3 notes classified nonblocking/disposed for exact effect; fresh guards, one attempt, complete post-result verification and later gates retained.",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.exact-independent-native-admission.v1",
+  "scope": "one22-test restricted fixture only; no live custody",
+  "source_commit": "50c0ac2b38a540f14b24424439b1c7d0b3c5e138",
+  "source_tree": "a0752bc9df98baa4469a43ebd7753aea416886a2",
+  "verdict": "ACCEPT"
+}

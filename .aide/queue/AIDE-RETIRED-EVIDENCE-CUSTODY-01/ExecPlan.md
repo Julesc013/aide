@@ -120,3 +120,23 @@ plan. A22nd regression covers interrupted intent publication. Recovery now
 rechecks unchanged aggregate/disk/memory headroom before allocation. Twenty-two
 authored tests require a new exact native effect verdict; prior checks21 stay
 historical and unrun. Source/candidate/original runtime gates remain unchanged.
+
+### Actual restricted native result
+
+Revised50c0ac2b/treea0752bc9 effectae629dc4 received independent ACCEPT and ran
+once. Jobc1ae2a93c1ca48c8941abea371a9bfa7 executed all22 tests: no failures,
+errors or skips, as BLACKGLASS-WIN1\CodexSandboxOffline. Complete receipt SHA
+0fd680e9ced60215581f40bd7a0ea075a0a476e625b70f70385de5440abaad6a,
+log/output digests and proof verified. All fixtures are retired, scratch absent,
+process quiescent, no IO errors, reservation released. Retained9620 logical
+bytes; sampled workspace5311 (not a true transient peak); process memory
+246722560bytes. Known pools scratch0/control13694135/retained219081134,
+total232775269. Actual result is evidence/native-fixture-result-v2.json SHA
+c3b0b7803b4d3dcbf2aec69f378497583c4c248db3075df18c510ad2a28ca0ac.
+
+Original runtime a241 and all four current candidate hashes are unchanged.
+No live evidence compressed/removed and no allocated disk recovery claimed.
+Source/native closeout and any live custody still require exact review.
+Full source binding/export refresh and integration are separate, unperformed
+effects; the current archive contains C1 and the unchanged24 owner sources,
+not this new custody feature. Observer model requests0 is not whole host usage.
