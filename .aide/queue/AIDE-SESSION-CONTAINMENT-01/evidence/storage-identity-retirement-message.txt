@@ -1,0 +1,26 @@
+fix(storage): retire owned fixture alias before collection
+
+## Summary
+- Correct the undispatched native fixture so accepted owner collection can retire it.
+## Why
+- Quiescent scratch requires ordinary single-link files; the observed hard-link fixture must remove its exact owned alias before exit.
+## Changed
+- Add finally cleanup limited to the owned a-link after directory/path/file identity, link, size and content guards.
+- Preserve assertion failures and refuse cleanup on changed custody.
+- Supersede only the fixture template/effect input hashes and retain the prior blocking finding.
+## Validation
+- PASS: fixture/helper AST, UTF-8 JSON and source bindings; original configuration/runtime/assets preserved.
+- NOT RUN: revised fixture awaits exact frozen source/native effect acceptance.
+## Changelog
+- Fixed: owned hard-link fixture retirement compatibility.
+## Risks
+- Changed fixture custody refuses deletion and preserves evidence; no target cleanup or replay is authorized.
+## Follow-up
+- Independently review the revised fixture, dispatch once, verify digests and retirement, then review source/evidence integration.
+
+AIDE-Task: AIDE-SESSION-CONTAINMENT-01
+AIDE-Phase: storage-native-identity-fixture
+AIDE-Result: fixture_retirement_preflight_repaired_not_run
+AIDE-Scope: own fixture/plan/evidence/envelope
+AIDE-Token-Impact: three tiny owned files; no target/model/network requests
+AIDE-Quality-Gate: exact frozen source/native effect before dispatch

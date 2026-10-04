@@ -1,7 +1,7 @@
 {
   "schema": "aide.native-storage-identity-fixture-effect.v1",
   "source": "exact reviewed frozen candidate/tree; only ignored manifest source identities rebound after acceptance",
-  "manifest_template_sha256": "178535bab411094225ff105c89fe4ecf4402c19b9a4030508944d7c4e134a0a8",
+  "manifest_template_sha256": "ca62746b4ed3fad4beb6977287d3c55b0e44f9273171c15f20c7e0b6f0fef089",
   "configuration": ".aide.local/scoped-job-entry-01-execution.json",
   "configuration_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
   "scope": "one native three-file fixture in existing owned job TMP; no target metadata/Git/model/network/external configuration or canonical outputs",
@@ -14,5 +14,7 @@
     "target deletion/mutation/reread",
     "ref integration",
     "stable/release/model/historical/whole-host claim"
-  ]
+  ],
+  "owned_retirement": "Only fixture a-link in finally after checked absolute fixture containment and unchanged ordinary root/file identities, two links, size/content; leaves a/b single-link for existing owner retirement. Custody mismatch refuses cleanup.",
+  "supersedes_undispatched_fixture": "f24d11a05fcfb7bd2249372cca76e1ff6d579821"
 }

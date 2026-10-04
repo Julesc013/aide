@@ -171,3 +171,11 @@ files plus one hard link must observe9 logical/6 unique bytes and2 shared names.
 No repeat of target discovery, no target reads, no Git child in this fixture.
 Original selected config/runtime/256MiB budget supervises it. Freeze/review its
 exact source and native envelope; no model request or canonical output.
+
+The f24d11a0 native preflight found that the owner requires single-link
+quiescent scratch at collection. No fixture was dispatched. The correction
+retires only its exact a-link in finally, including assertion failure, after
+ordinary ancestor/root and alias/source identity/link/size/content guards.
+Recheck the absolute resolved alias stays within that exact owned fixture.
+Changed custody refuses cleanup; preserve the error rather than deleting
+unknown material. Original target result remains immutable and is not replayed.

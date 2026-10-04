@@ -1,0 +1,9 @@
+{
+  "source": "f24d11a05fcfb7bd2249372cca76e1ff6d579821",
+  "tree": "7138caadcec268a00a0c80bbec95bdd07b22b61e",
+  "reviewer": "/root/containment_review",
+  "classification": "blocking_preexecution_finding",
+  "finding": "Fixture left a two-link file at quiescent exit, incompatible with accepted owner strict collection/retirement.",
+  "native_dispatched": false,
+  "correction": "Finally remove only owned a-link after ordinary fixture root/alias/source identity, exact two links and three-byte content guards; changed custody refuses cleanup."
+}
