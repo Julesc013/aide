@@ -605,3 +605,5 @@ establish read isolation, locked aggregate admission or outer containment.
 Source-only main integration and branch identity proof:
 .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/. This is separate from stable
 publication and retains the original release baseline and operational gates.
+Current development increment and full-report crosswalk:
+.aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/REPORT.md.

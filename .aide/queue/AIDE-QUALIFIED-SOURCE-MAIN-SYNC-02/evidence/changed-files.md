@@ -8,6 +8,7 @@
 - .aide/intake/latest-workunit-draft.md
 - .aide/profile.yaml
 - .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/ExecPlan.md
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/REPORT.md
 - .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/asset-pins.json
 - .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/baseline-refs.json
 - .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/changed-files.md
@@ -15,6 +16,7 @@
 - .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/intent-compiler-report.md
 - .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/preflight-or-blocker-report.md
 - .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/remaining-risks.md
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/review-de7bfb2b.md
 - .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/source-basis.md
 - .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/validation.md
 - .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/prompt.md

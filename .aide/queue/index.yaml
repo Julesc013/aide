@@ -5,8 +5,8 @@ default_concurrency: 1
 canonical_source: .aide/queue
 items:
   - id: AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02
-    status: needs_review
-    planning_state: source_reused_exact_main_effect_review_pending
+    status: passed_with_notes
+    planning_state: exact_main_effect_accepted_guarded_closeout
     title: Promote accepted architecture and inspection diagnostic source
     task: .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/task.yaml
     exec_plan: .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/ExecPlan.md

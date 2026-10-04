@@ -45,5 +45,12 @@ no reset, protection bypass, new clone or force push is authorized.
 ## Progress
 
 - [x] Accepted source and current role inspected; bounded child admitted.
-- [ ] Metadata freeze and independent exact main effect acceptance.
-- [ ] Fresh guarded integration and complete terminal ref verification.
+- [x] Metadata freeze de7bfb2b and independent exact main effect acceptance.
+- [ ] Focused exact closeout review, fresh guarded integration and terminal refs.
+
+Actual de7bfb2b review returned ACCEPT_WITH_NOTES and no blocking finding.
+Preserve its intake/source distinction, original historical release baseline,
+diagnostic/consumer/read/outer/monitored-resource and unknown-usage limits. The
+new task-local REPORT.md was outside that frozen subject and is included in
+this metadata closeout for focused exact review. No runtime or export changed.
+Final effect verification is retained in the declared integration log.

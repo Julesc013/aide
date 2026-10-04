@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02
 title: Promote accepted architecture and inspection diagnostic source
 type: integration
-status: needs_review
-planning_state: source_reused_exact_main_effect_review_pending
-result: QUALIFIED_SOURCE_MAIN_EFFECT_PENDING
+status: passed_with_notes
+planning_state: exact_main_effect_accepted_guarded_closeout
+result: SOURCE_PROMOTION_ACCEPTED_RETAINED_GATES
 created_at: 2026-10-04
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 authority_basis: Owner requested dev into main and matching local/remote branches; existing campaign delegation permits separately reviewed qualified main effects.
