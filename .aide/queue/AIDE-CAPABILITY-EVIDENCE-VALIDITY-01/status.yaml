@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
 status: running
-planning_state: admission_accepted_red_fixture_prepared_native_review_pending
-result: NOT_RUN
+planning_state: red_verified_green_source_and_native_review_pending
+result: RED_EXPECTED_FAILURE_VERIFIED_GREEN_NOT_RUN
 updated_at: 2026-10-05
 review_gate: exact_child_admission_then_native_and_source_effects
 current_archive_unchanged: true

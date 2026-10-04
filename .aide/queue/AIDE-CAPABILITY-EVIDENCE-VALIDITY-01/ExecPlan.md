@@ -104,3 +104,30 @@ The baseline red run selects only those two cases, expects exactly their two
 assertion failures/exit1, and must collect/retire before green. Original product
 CLI f58 remains unchanged for this red subject. Native execution remains pending
 its exact source/manifest/effect review; failure is retained rather than passed.
+
+### Baseline proved and green subject prepared
+
+Independent review rejected82557c48 before dispatch because private Python temp
+directories repeated the known coordinator-inspection failure. Corrected7b307e60
+used the existing authenticated public fixture factory and received exact red
+ACCEPT_WITH_NOTES; source-ID rebind, original identities, locked admission and
+retirement notes were disposed. One native jobbd3e4e248d6a4342b4867275d878060d
+failed with exactly two intended assertions/exit1, no setup/import/IO errors.
+Complete output/log digests passed; process quiescent, scratch absent and
+reservation released. Peak scratch3,111bytes; retained7,294 logical bytes.
+The baseline remains FAIL, not repair acceptance. Raw ignored logs retain the
+exact preflight/native/verification; canonical evidence/red-result.json preserves
+the result and receipt identity. No uncertain replay occurred.
+
+The green candidate adds a bounded derived binding schema/reader, current/stale/
+unknown status and retained-only validation. It preserves v0 ledger shape and
+source-only classification; missing code/test references remain unknown and
+test-file presence does not append executed-test evidence. The one all-case
+capability test invocation includes a real copied-current-CLI workflow, copying
+only declared finite public dependencies into the original owned TMP. It records
+full CLI stdout/stderr in the job log and a compact hashed invocation proof in
+output. Ten real CLI calls demonstrate current validation, changed-source stale
+failure without rebinding, deliberate ledger refresh, preserved authored content
+and final current validation. No canonical report outputs or real targets.
+Green native execution remains NOT_RUN until exact independent source/effect
+review; old4a payload/config/pins/roots/limits remain unchanged.

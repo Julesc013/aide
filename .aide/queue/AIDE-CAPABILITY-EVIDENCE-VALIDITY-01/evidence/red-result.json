@@ -1,0 +1,30 @@
+{
+  "baseline_result": "FAIL",
+  "checks": {
+    "exact_two_assertions": true,
+    "exit1": true,
+    "logs": true,
+    "no_active": true,
+    "output": true,
+    "quiescent": true,
+    "retired": true
+  },
+  "collected_manifest": {
+    "logs": "8550bed6a02eee5da85bc5e506c00fcc23f9e25860b4fe7d97709a9ddfd64b58",
+    "output": "573a981cfa3065ab97820bf8d3c77f2875cacf700cda73f4909311ea17d427a9"
+  },
+  "expected_failure_verified": true,
+  "job_id": "bd3e4e248d6a4342b4867275d878060d",
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 224481280,
+    "scratch_bytes": 3111
+  },
+  "preexecution_rejected_undispatched_source": "82557c48f32a90aac601b3b3326fc4460d095f84",
+  "receipt_sha256": "2dafb07d0b56ce997242d9deee9a2e5a2839587ae96ae4279dd6f1af1f6ba0d3",
+  "red_source_verdict": "ACCEPT_WITH_NOTES",
+  "retained_bytes": 7294,
+  "schema": "aide.capability-red-result.v1",
+  "source_commit": "7b307e605c8995bb340f313ca16361af8ac94acc",
+  "source_tree": "57f7448bef06ae0db35799de170e30da694baa6d"
+}

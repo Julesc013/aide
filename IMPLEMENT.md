@@ -1,5 +1,16 @@
 # AIDE Implementation Log
 
+## 2026-10-05 stale capability evidence baseline and candidate
+
+The existing restricted worker reproduced two precise baseline assertions in
+jobbd3e4e248d6a4342b4867275d878060d, then collected and retired successfully.
+The C1 candidate preserves the v0 ledger, adds finite derived source bindings
+and honest CURRENT/STALE/UNKNOWN status, and removes automatic regeneration
+from capability validation. Source and actual CLI workflow qualification are
+pending exact independent review; prepared code is not a passing repair.
+Only this coherence entry, its scoped reference guide and task records change
+across root documentation. Existing immutable assets contain older source.
+
 ## 2026-10-03 scoped command qualification
 
 `AIDE-SESSION-CONTAINMENT-01` records the owner's immediate containment priority

@@ -1843,6 +1843,11 @@ CAPABILITY_OBSERVATIONS_JSON_PATH = ".aide/reports/capability-observations.json"
 CAPABILITY_OBSERVATIONS_MD_PATH = ".aide/reports/capability-observations.md"
 CAPABILITY_LEDGER_JSON_PATH = ".aide/reports/capability-ledger.json"
 CAPABILITY_LEDGER_MD_PATH = ".aide/reports/capability-ledger.md"
+CAPABILITY_BINDINGS_PATH = ".aide/reports/capability-evidence-bindings.json"
+CAPABILITY_BINDINGS_SCHEMA_PATH = f"{CAPABILITY_DIR}/capability-evidence-bindings.schema.json"
+CAPABILITY_EVIDENCE_MAX_REFS = 128
+CAPABILITY_EVIDENCE_MAX_FILE_BYTES = 4 * 1024 * 1024
+CAPABILITY_EVIDENCE_MAX_TOTAL_BYTES = 16 * 1024 * 1024
 CAPABILITY_OVERCLAIMS_JSON_PATH = ".aide/reports/capability-overclaims.json"
 CAPABILITY_OVERCLAIMS_MD_PATH = ".aide/reports/capability-overclaims.md"
 CAPABILITY_VALIDATION_REPORT_PATH = ".aide/reports/capability-validation.md"
@@ -1909,6 +1914,7 @@ CAPABILITY_OVERCLAIM_CLASSES = [
     "unknown_claimed_as_verified",
 ]
 CAPABILITY_REQUIRED_FILES = [
+    CAPABILITY_BINDINGS_SCHEMA_PATH,
     CAPABILITY_SEEDS_PATH,
     CAPABILITY_OBSERVATION_SCHEMA_PATH,
     CAPABILITY_OVERCLAIM_SCHEMA_PATH,
@@ -1934,6 +1940,7 @@ CAPABILITY_COMMANDS = [
     "capability validate",
 ]
 CAPABILITY_PORTABLE_SOURCE_FILES = [
+    CAPABILITY_BINDINGS_SCHEMA_PATH,
     f"{CAPABILITY_DIR}/README.md",
     CAPABILITY_SEEDS_PATH,
     CAPABILITY_OBSERVATION_SCHEMA_PATH,
@@ -6886,16 +6893,207 @@ def parse_capability_seed_records(text: str) -> list[dict[str, object]]:
 
 
 def capability_seed_records(repo_root: Path) -> list[dict[str, object]]:
-    path = repo_root / CAPABILITY_SEEDS_PATH
-    if not path.exists():
+    _entry, content = capability_evidence_read(repo_root, CAPABILITY_SEEDS_PATH)
+    if content is None:
         return []
-    return parse_capability_seed_records(read_text(path))
+    try:
+        return parse_capability_seed_records(content.decode("utf-8"))
+    except UnicodeError:
+        return []
+
+
+def capability_public_file(repo_root: Path, rel: str) -> tuple[Path | None, str]:
+    """Inspect a declared public file, without following redirected components.
+
+    This conservative reader is not an OS sandbox or an authority boundary.
+    """
+    rel = rel.replace("\\", "/")
+    parts = rel.split("/")
+    if (not rel or ":" in rel or "\x00" in rel
+            or any(part in {"", ".", ".."} for part in parts)):
+        return None, "external_or_non_relative"
+    lower = [part.lower() for part in parts]
+    if (any(part in {".git", ".aide.local", "secrets", "__pycache__", "node_modules"} for part in lower)
+            or any(part.startswith(".env") for part in lower)
+            or install_rel_is_secret_like(rel)):
+        return None, "private_or_secret_like"
+    current = repo_root.absolute()
+    try:
+        for index, part in enumerate([None, *parts]):
+            if part is not None:
+                current = current / part
+            info = current.lstat()
+            if stat.S_ISLNK(info.st_mode) or getattr(info, "st_file_attributes", 0) & 1024:
+                return None, "redirected"
+            expected = stat.S_ISREG if index == len(parts) else stat.S_ISDIR
+            if not expected(info.st_mode):
+                return None, "not_ordinary_file"
+    except FileNotFoundError:
+        return None, "missing"
+    except OSError:
+        return None, "unreadable"
+    return current, ""
+
+
+def capability_evidence_read(repo_root: Path, rel: str,
+                             maximum: int = CAPABILITY_EVIDENCE_MAX_FILE_BYTES,
+                             *, check_ignored: bool = True, budget: list[int] | None = None
+                             ) -> tuple[dict[str, object], bytes | None]:
+    entry: dict[str, object] = {"path": rel, "state": "unknown", "sha256": None,
+                                "bytes": None, "reason": ""}
+    path, reason = capability_public_file(repo_root, rel)
+    if path is None:
+        entry["reason"] = reason
+        return entry, None
+    ignored = capability_ignored_refs(repo_root, [rel]) if check_ignored else set()
+    if ignored is None or rel in ignored:
+        entry["reason"] = "ignored_check_unavailable" if ignored is None else "ignored"
+        return entry, None
+    try:
+        before = path.lstat()
+        if budget is not None:
+            maximum = min(maximum, budget[0])
+        if before.st_size > maximum:
+            entry["reason"] = "read_budget"
+            return entry, None
+        with path.open("rb") as stream:
+            opened = os.fstat(stream.fileno())
+            if (opened.st_dev, opened.st_ino) != (before.st_dev, before.st_ino):
+                entry["reason"] = "changed_during_read"
+                return entry, None
+            # Reserve before the read, including failed/unstable observations.
+            # Never request bytes beyond the admitted snapshot budget.
+            if budget is not None:
+                budget[0] -= before.st_size
+            content = stream.read(before.st_size)
+            after = os.fstat(stream.fileno())
+        final = path.lstat()
+        identities = {(info.st_dev, info.st_ino, info.st_size, info.st_mtime_ns)
+                      for info in (before, opened, after, final)}
+        if len(content) != before.st_size or len(identities) != 1:
+            entry["reason"] = "changed_during_read"
+            return entry, None
+        entry.update(state="observed", sha256=hashlib.sha256(content).hexdigest(),
+                     bytes=len(content))
+        return entry, content
+    except OSError:
+        entry["reason"] = "unreadable"
+        return entry, None
+
+
+def capability_ignored_refs(repo_root: Path, refs: list[str]) -> set[str] | None:
+    if not (repo_root / ".git").exists():
+        return set()
+    try:
+        result = subprocess.run(["git", "-C", str(repo_root), "check-ignore", "--no-index",
+                                 "-z", "--stdin"], input="\x00".join(refs) + "\x00",
+                                capture_output=True, text=True, timeout=10)
+        if result.returncode not in {0, 1}:
+            return None
+        return set(result.stdout.rstrip("\x00").split("\x00")) if result.stdout else set()
+    except (OSError, subprocess.SubprocessError):
+        return None
+
+
+def capability_evidence_snapshot(repo_root: Path) -> dict[str, object]:
+    budget = [CAPABILITY_EVIDENCE_MAX_TOTAL_BYTES]
+    seed_entry, seed_content = capability_evidence_read(
+        repo_root, CAPABILITY_SEEDS_PATH,
+        min(CAPABILITY_EVIDENCE_MAX_FILE_BYTES, CAPABILITY_EVIDENCE_MAX_TOTAL_BYTES), budget=budget)
+    try:
+        seeds = parse_capability_seed_records(seed_content.decode("utf-8")) if seed_content else []
+    except UnicodeError:
+        seeds = []
+    refs = {CAPABILITY_SEEDS_PATH, CAPABILITY_POLICY_PATH, ".aide/scripts/aide_lite.py",
+            *CAPABILITY_REQUIRED_FILES}
+    for seed in seeds:
+        refs.update(str(ref) for ref in seed.get("expected_evidence_hints", []) if str(ref))
+    selected = sorted(refs)[:CAPABILITY_EVIDENCE_MAX_REFS]
+    ignored = capability_ignored_refs(repo_root, selected)
+    inputs = []
+    for rel in selected:
+        if rel == CAPABILITY_SEEDS_PATH:
+            entry = seed_entry.copy()
+        else:
+            entry, content = capability_evidence_read(
+                repo_root, rel, CAPABILITY_EVIDENCE_MAX_FILE_BYTES, check_ignored=False, budget=budget) if (
+                    ignored is not None and rel not in ignored
+                    and rel not in {*CAPABILITY_REPORT_FILES, CAPABILITY_BINDINGS_PATH}) else (
+                        {"path": rel, "state": "unknown", "sha256": None,
+                         "bytes": None, "reason": "ignored_or_self_referential"}, None)
+        if ignored is None or rel in ignored:
+            entry = {"path": rel, "state": "unknown", "sha256": None,
+                     "bytes": None, "reason": "ignored_check_unavailable" if ignored is None else "ignored"}
+        inputs.append(entry)
+    return {"inputs": inputs, "complete": bool(seeds) and len(refs) <= len(selected)
+            and all(entry["state"] == "observed" for entry in inputs),
+            "truncated": len(refs) > len(selected)}
+
+
+def capability_ledger_digest(data: dict[str, object]) -> str:
+    return hashlib.sha256(json.dumps(data, sort_keys=True, separators=(",", ":"),
+                                     ensure_ascii=True).encode("utf-8")).hexdigest()
+
+
+def capability_ledger_evidence_validity(repo_root: Path) -> dict[str, object]:
+    validity: dict[str, object] = {"state": "UNKNOWN", "reason": "missing_or_invalid_binding",
+                                   "changed_refs": [], "qualification": "source_classification_only"}
+    _binding_entry, raw = capability_evidence_read(repo_root, CAPABILITY_BINDINGS_PATH)
+    _ledger_entry, ledger_raw = capability_evidence_read(repo_root, CAPABILITY_LEDGER_JSON_PATH)
+    if raw is None or ledger_raw is None:
+        return validity
+    try:
+        binding, ledger = (json.loads(content, object_pairs_hook=_job_wait_unique_object,
+                                      parse_constant=_job_wait_reject_constant)
+                           for content in (raw, ledger_raw))
+        if (not isinstance(binding, dict) or not isinstance(ledger, dict)
+                or set(binding) != {"schema_version", "ledger_sha256", "inputs", "complete", "truncated"}
+                or binding["schema_version"] != "aide.capability-evidence-bindings.v1"
+                or not isinstance(binding["complete"], bool) or not isinstance(binding["truncated"], bool)
+                or not re.fullmatch(r"[0-9a-f]{64}", str(binding["ledger_sha256"]))
+                or not isinstance(binding["inputs"], list)
+                or not 1 <= len(binding["inputs"]) <= CAPABILITY_EVIDENCE_MAX_REFS):
+            return validity
+        paths = []
+        for entry in binding["inputs"]:
+            if (not isinstance(entry, dict) or set(entry) != {"path", "state", "sha256", "bytes", "reason"}
+                    or not isinstance(entry["path"], str) or not isinstance(entry["reason"], str)
+                    or entry["state"] not in {"observed", "unknown"}):
+                return validity
+            if entry["state"] == "observed":
+                if (not re.fullmatch(r"[0-9a-f]{64}", str(entry["sha256"]))
+                        or type(entry["bytes"]) is not int
+                        or not 0 <= entry["bytes"] <= CAPABILITY_EVIDENCE_MAX_FILE_BYTES
+                        or entry["reason"]):
+                    return validity
+            elif entry["sha256"] is not None or entry["bytes"] is not None or not entry["reason"]:
+                return validity
+            paths.append(entry["path"])
+        if paths != sorted(set(paths)):
+            return validity
+        if capability_ledger_digest(ledger) != binding["ledger_sha256"]:
+            validity.update(state="STALE", reason="ledger_binding_mismatch")
+            return validity
+        current = capability_evidence_snapshot(repo_root)
+        previous = {entry["path"]: entry for entry in binding["inputs"]}
+        observed = {entry["path"]: entry for entry in current["inputs"]}
+        changed = sorted(ref for ref in previous.keys() | observed.keys()
+                         if previous.get(ref) != observed.get(ref))
+        if changed:
+            validity.update(state="STALE", reason="source_inputs_changed", changed_refs=changed)
+        elif binding["complete"] and not binding["truncated"] and current["complete"]:
+            validity.update(state="CURRENT", reason="bound_source_inputs_unchanged")
+        else:
+            validity["reason"] = "incomplete_source_evidence"
+    except (ValueError, TypeError, KeyError, RecursionError):
+        pass
+    return validity
 
 
 def capability_path_exists(repo_root: Path, rel: str) -> bool:
-    if "://" in rel:
-        return True
-    return (repo_root / normalize_rel(rel)).exists()
+    path, _reason = capability_public_file(repo_root, rel)
+    ignored = capability_ignored_refs(repo_root, [rel]) if path is not None else None
+    return path is not None and ignored is not None and rel not in ignored
 
 
 def capability_evidence_classes_for_path(rel_path: str) -> list[str]:
@@ -6950,14 +7148,12 @@ def capability_generated_refs(refs: Iterable[str]) -> list[str]:
 
 def capability_observed_states(seed: dict[str, object], evidence_refs: list[str]) -> list[str]:
     expected = str(seed.get("expected_state", "unknown"))
-    states = [expected if expected in CAPABILITY_STATES else "unknown"]
+    states = [expected if evidence_refs and expected in CAPABILITY_STATES else "unknown"]
     classes = set(class_name for ref in evidence_refs for class_name in capability_evidence_classes_for_path(ref))
     if "docs_only" in classes and "documented" not in states:
         states.append("documented")
     if "schema_only" in classes and "specified" not in states:
         states.append("specified")
-    if "test_only" in classes and "tested" not in states:
-        states.append("tested")
     if "command_surface" in classes and expected in {"implemented", "tested", "exposed"} and "exposed" not in states:
         states.append("exposed")
     if not evidence_refs and "unknown" not in states:
@@ -6988,8 +7184,15 @@ def capability_record_from_seed(repo_root: Path, seed: dict[str, object], index:
         limitations.extend(f"missing evidence hint: {ref}" for ref in missing_refs)
     observed_states = capability_observed_states(seed, evidence_refs)
     dominant = str(seed.get("expected_state", "unknown"))
-    if dominant not in CAPABILITY_STATES:
+    if (dominant not in CAPABILITY_STATES or not evidence_refs
+            or dominant in {"implemented", "exposed"} and not capability_code_refs(evidence_refs)
+            or dominant == "tested" and not capability_test_refs(evidence_refs)):
         dominant = "unknown"
+    if dominant == "unknown":
+        observed_states = [state for state in observed_states if state not in {"implemented", "tested", "exposed"}]
+        if "unknown" not in observed_states:
+            observed_states.append("unknown")
+    limitations.append("Source classification and test-file presence are not executed tests or host qualification.")
     return {
         "record_id": f"CAPABILITY-{index:03d}",
         "capability_id": str(seed.get("capability_id", f"capability_{index:03d}")),
@@ -7190,6 +7393,7 @@ def capability_command_status_data(repo_root: Path) -> dict[str, object]:
         "commands": CAPABILITY_COMMANDS,
         "seed_count": len(seeds),
         "reports": reports,
+        "ledger_evidence_validity": capability_ledger_evidence_validity(repo_root),
         "source_files": [rel for rel in CAPABILITY_REQUIRED_FILES if (repo_root / rel).exists()],
         "no_apply_boundary": capability_no_apply_boundary(),
     }
@@ -7236,6 +7440,11 @@ def capability_render_command_status(data: dict[str, object], repo_root: Path) -
             "## Status",
             "",
             f"- seed_count: {data.get('seed_count', 0)}",
+            f"- ledger_evidence_validity: {data['ledger_evidence_validity']['state']}",
+            f"- evidence_reason: {data['ledger_evidence_validity']['reason']}",
+            "- evidence_qualification: source_classification_only",
+            *[f"- changed_evidence_ref: `{str(ref)[:240]}`"
+              for ref in data["ledger_evidence_validity"]["changed_refs"][:8]],
             "- command_surface: registered",
             "- no_apply_boundary: enforced_by_report",
             "",
@@ -7331,9 +7540,13 @@ def write_capability_scan(repo_root: Path) -> tuple[WriteResult, WriteResult, di
 
 def write_capability_ledger(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
     data = capability_ledger_data(repo_root)
-    write_capability_command_status(repo_root)
+    snapshot = capability_evidence_snapshot(repo_root)
     json_result = write_text_if_changed(repo_root / CAPABILITY_LEDGER_JSON_PATH, stable_json_text(data))
     md_result = write_text_if_changed(repo_root / CAPABILITY_LEDGER_MD_PATH, capability_render_ledger(data, repo_root))
+    binding = {"schema_version": "aide.capability-evidence-bindings.v1",
+               "ledger_sha256": capability_ledger_digest(data), **snapshot}
+    write_text_if_changed(repo_root / CAPABILITY_BINDINGS_PATH, stable_json_text(binding))
+    write_capability_command_status(repo_root)
     return json_result, md_result, data
 
 
@@ -30166,6 +30379,9 @@ def validate_capability_files(repo_root: Path, require_reports: bool = False) ->
         check_pass(checks, (repo_root / GOLDEN_TASK_ROOT / task_id / "acceptance.md").exists(), f"Capability acceptance exists: {task_id}")
 
     if require_reports:
+        validity = capability_ledger_evidence_validity(repo_root)
+        check_pass(checks, validity["state"] == "CURRENT",
+                   f"Capability ledger evidence validity: {validity['state']} ({validity['reason']}); explicit ledger refresh required otherwise")
         for rel in CAPABILITY_REPORT_FILES:
             path = repo_root / rel
             if rel == CAPABILITY_VALIDATION_REPORT_PATH and not path.exists():
@@ -33669,6 +33885,11 @@ def command_capability_status(args: argparse.Namespace) -> int:
     print(f"report: {CAPABILITY_COMMAND_STATUS_REPORT_PATH}")
     print(f"report_action: {write_result.action}")
     print(f"seed_count: {data.get('seed_count', 0)}")
+    print(f"ledger_evidence_validity: {data['ledger_evidence_validity']['state']}")
+    print(f"evidence_reason: {data['ledger_evidence_validity']['reason']}")
+    print("evidence_qualification: source_classification_only")
+    for ref in data["ledger_evidence_validity"]["changed_refs"][:8]:
+        print(f"changed_evidence_ref: {str(ref)[:240]}")
     print(f"command_count: {len(data.get('commands', [])) if isinstance(data.get('commands'), list) else 0}")
     print("mode: report_only")
     print("task_execution: false")
@@ -33729,9 +33950,6 @@ def command_capability_overclaim_report(args: argparse.Namespace) -> int:
 
 
 def command_capability_validate(args: argparse.Namespace) -> int:
-    write_capability_scan(args.repo_root)
-    write_capability_ledger(args.repo_root)
-    write_capability_overclaim_report(args.repo_root)
     write_result, checks = write_capability_validation_report(args.repo_root)
     result = result_from_checks(checks)
     print("AIDE Lite capability validate")

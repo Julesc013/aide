@@ -1,0 +1,30 @@
+fix(capability): detect stale retained source evidence
+
+## Summary
+- Prepare the bounded source classification freshness repair and real CLI regression workflow.
+## Why
+- The managed baseline proved that validation hides stale inputs and absent implementation evidence remains implemented.
+## Changed
+- Preserve v0 ledger shape; add an optional derived binding schema and finite public-file identities.
+- Report CURRENT/STALE/UNKNOWN and inspect retained validation without silently regenerating evidence.
+- Keep missing code/test evidence unknown; test-file presence does not append executed-test evidence.
+- Add scoped regressions and ten actual CLI calls inside one owned finite fixture.
+- Reconcile the exact child ExecPlan, root indexes and capability guide; preserve original assets, limits and supervisor.
+## Validation
+- PASS: expected two-assertion baseline under the restricted worker, full receipt/output/log digests and retirement.
+- PASS: Python AST, schema JSON, diff check and structural Harness validation.
+- NOT RUN: green15-case native effect pending exact independent source/effect verdict.
+## Changelog
+- Fixed: retained capability ledger freshness and missing-evidence classification.
+## Risks
+- Source hashes are classification freshness, not executed tests, authority, host containment or release certification.
+- Existing immutable assets contain older source; future rebuild and qualification remain separate.
+## Follow-up
+- Accept the exact green source/native envelope, bind only ignored source IDs, dispatch once and verify all cases, actual CLI outputs and retirement.
+
+AIDE-Task: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
+AIDE-Phase: frozen-green-source-native-candidate
+AIDE-Result: source_prepared_green_not_run
+AIDE-Scope: admitted child capability source/tests/schema/reference and plan indexes
+AIDE-Token-Impact: one managed regression/workflow invocation; no broad release reruns or model calls
+AIDE-Quality-Gate: exact independent green source/native effect before dispatch

@@ -3,7 +3,7 @@ id: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
 title: Detect stale capability classification evidence through the existing ledger
 type: repair
 status: running
-planning_state: admission_accepted_red_fixture_prepared_native_review_pending
+planning_state: red_verified_green_source_and_native_review_pending
 created_at: 2026-10-05
 updated_at: 2026-10-05
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

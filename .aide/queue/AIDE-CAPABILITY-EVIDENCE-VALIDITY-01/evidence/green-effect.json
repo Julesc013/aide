@@ -1,0 +1,19 @@
+{
+  "complete_collection": "all CLI stdout/stderr in job logs; compact copied-input/invocation hashes in output; verify exact receipt/output/log digests",
+  "config_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "exclusions": [
+    "model/provider/network/live targets",
+    "new checkout/archive/layout/limits or Git refs",
+    "whole-session or release qualification"
+  ],
+  "expected": "15 tests, zero failures/errors/skips; ten actual capability CLI invocations with expected current/stale/refresh results",
+  "fixture_lifecycle": "existing authenticated public_archive_fixture and original owned TMP; empty canonical_outputs",
+  "manifest_template_sha256": "4c45741e4a13d2a788aab977138897878c66a404b1675248cb75cf39641d621c",
+  "native_effect": "one all-case capability unittest invocation including one finite current public CLI copied fixture workflow",
+  "no_uncertain_replay": true,
+  "retirement_required": true,
+  "schema": "aide.capability-validity-green-effect.v1",
+  "source": "exact frozen source/tree; rebind only ignored manifest source IDs after independent verdict",
+  "supervisor_zip_sha256": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+  "workunit": "AIDE-CAPABILITY-EVIDENCE-VALIDITY-01"
+}

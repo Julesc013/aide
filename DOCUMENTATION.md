@@ -1,5 +1,14 @@
 # AIDE Documentation Index
 
+## Capability evidence freshness
+
+The [capability guide](docs/reference/capability-reality-ledger.md) describes the
+prepared finite derived bindings, retained-only validation and explicit refresh.
+[AIDE-CAPABILITY-EVIDENCE-VALIDITY-01](.aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/ExecPlan.md)
+records admission, the managed failing baseline and pending exact source/native
+qualification. Hash freshness is source classification, not executed tests,
+whole-session containment or stable release acceptance.
+
 ## AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
 
 Current status and specification roles are being aligned under AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01; global root-policy acceptance and shipping claims remain gated.
