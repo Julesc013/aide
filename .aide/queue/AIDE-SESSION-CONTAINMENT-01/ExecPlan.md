@@ -132,3 +132,19 @@ Collect bounded raw metadata/proof; verify receipt/digests, scratch retirement
 and reservation release. No target content ingestion, credentials/network,
 model invocation, deletion, target tools, product work, host/global changes or
 asset rebuild. Exact retirement remains a later separate effect if proven.
+
+
+### Frozen preflight repair (2026-10-05)
+
+Independent reviewer REQUEST_CHANGES on f27cdf63; no native effect occurred.
+Remove the redundant argv[1] -B rejected by the pinned owner. Authenticate
+the ordinary single-link .git pointer, exact recorded administrative directory
+task-usk-wu-006-reviewed-source-stream, commondir and backlink before any Git
+traversal; repeat custody before every Git child and after the observations.
+Stop before further reads if Git reports a different common directory.
+Refuse external clean/process filter names before status comparison, disable
+promisor lazy fetching and all Git transport, and ignore submodule comparisons.
+Check the metadata deadline before each queued directory. Other writers and
+race-free snapshot coverage remain unknown; pointer/hash observations are
+finite custody checks, not atomic exclusion. Mixed/truncated observations
+report PARTIAL. Only the superseding exact frozen subject may be dispatched.

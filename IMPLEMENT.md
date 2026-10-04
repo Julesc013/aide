@@ -13042,3 +13042,13 @@ new checkout or cleanup authority. Compiler's conservative blocked classificatio
 is preserved. This addresses existing storage ownership, not the unqualified
 outer client or publication gates. Exact plan/effect and result references live
 in that queue task's evidence/storage-probe-* records.
+
+
+## 2026-10-05 Storage discovery preparation correction
+
+The existing AIDE-SESSION-CONTAINMENT-01 storage slice preserves the rejected
+f27cdf63 attempt without dispatch. Its superseding helper and frozen manifest
+repair owner argv compatibility, exact Git pointer/common-root custody,
+external-filter/network refusal and the metadata time bound. See its ExecPlan
+and evidence/storage-probe-review-f27cdf63.json. Actual discovery remains
+pending exact independent admission/source/effect; targets and assets unchanged.

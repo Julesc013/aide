@@ -3,16 +3,15 @@
   "adapter": "python",
   "argv": [
     "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
-    "-B",
     ".aide/queue/AIDE-SESSION-CONTAINMENT-01/storage_custody_probe.py"
   ],
   "canonical_outputs": {},
   "cwd": "D:\\Projects\\AIDE\\aide",
   "executable_sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9",
   "inputs": {
-    ".aide/queue/AIDE-SESSION-CONTAINMENT-01/storage_custody_probe.py": "e1a55f09b03f0e52745b5a503fb62116e0f5e6d9fd3843dad3827b720d570c3c",
+    ".aide/queue/AIDE-SESSION-CONTAINMENT-01/storage_custody_probe.py": "9715833413c3be35476786aa78b5337ebadf306390c1eb89e39a6998b9bc724d",
     ".aide/queue/AIDE-SESSION-CONTAINMENT-01/task.yaml": "deab0136a6c0632ef5f32e81eff1e10599fe85b4d0dd7511542e50f7ff2c923f",
-    ".aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md": "daf02e040798d87cb044c9eacbf0884527b3a0568bd97ede1c437c0850257c46",
+    ".aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md": "6de387cb16890ad38d5d6d2d47b966a1928ec6496f88921a632238430a754444",
     ".aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/storage-probe-configuration.json": "eb36fa020d613345d499d40076191fd08f8528509e6454f7854fe0b579dc1f64",
     ".aide/scripts/aide_lite.py": "f58f1cf419c09938c43d4a34779e9aba0be8d01455163b7e801dfa7d888a0e88",
     ".aide/release/stable/aide-lite-v1.0.0.zip": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0"

@@ -1,0 +1,20 @@
+{
+  "schema": "aide.independent-review.v1",
+  "source_commit": "f27cdf63e6b1f43addb627687a3ecfb8f9a45456",
+  "source_tree": "4785e293a829a222ae588a81b3decbde4e55ea6d",
+  "reviewer": "/root/containment_review",
+  "verdict": "REQUEST_CHANGES",
+  "effect_dispatched": false,
+  "blocking_findings": [
+    "Pinned owner rejects -B at argv[1].",
+    "Authenticate single-link worktree pointer and recorded administration/common chain before Git traversal.",
+    "Refuse configured external clean/process filters and disable promisor lazy fetch.",
+    "Check metadata deadline before every outer directory scan."
+  ],
+  "nonblocking_notes": [
+    {
+      "note": "Bounded read-only slice retains unknown writers and non-disposability.",
+      "disposition": "No cleanup, integration or whole-session acceptance inferred."
+    }
+  ]
+}

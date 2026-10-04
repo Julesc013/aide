@@ -7,8 +7,8 @@
   "original_config_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
   "original_config_unchanged": true,
   "allowed_config_difference": "append two exact recorded roots to toolchain read_roots only; no write/model/limit/path/runtime change",
-  "manifest_sha256": "048bf9caca074774eca529b4834876e1ed83a8571b02b1b6a81adf584809d3b6",
-  "helper_sha256": "e1a55f09b03f0e52745b5a503fb62116e0f5e6d9fd3843dad3827b720d570c3c",
+  "manifest_sha256": "c619d61dc09c4b34e96c80bb254f082fda0d595a545778d157b8977025584008",
+  "helper_sha256": "9715833413c3be35476786aa78b5337ebadf306390c1eb89e39a6998b9bc724d",
   "compiler_result": "blocked conservative release/security classification; independent admission resolves read-only slice only",
   "shared_aggregate_bytes": 268435456,
   "entry_limit": 5000,
@@ -31,5 +31,8 @@
     "collected digests verified;owned scratch retired;reservation released"
   ],
   "retirement_authority": false,
-  "frozen_dispatch_binding": "Canonical manifest is a base-bound template; after exact independent source/envelope review replace only ignored manifest source_commit/source_tree with the exact frozen reviewed HEAD/tree, preserve all inputs/executable/argv/outputs and record effective manifest hash before one dispatch."
+  "frozen_dispatch_binding": "Canonical manifest is a base-bound template; after exact independent source/envelope review replace only ignored manifest source_commit/source_tree with the exact frozen reviewed HEAD/tree, preserve all inputs/executable/argv/outputs and record effective manifest hash before one dispatch.",
+  "supersedes_rejected_subject": "f27cdf63e6b1f43addb627687a3ecfb8f9a45456",
+  "custody_gate": "Exact ordinary single-link .git/commondir/backlink and recorded administrative directory before Git traversal; common root equality; recheck before each Git child and after observations; non-atomic writer coverage unknown.",
+  "target_tool_network_gate": "Refuse any external clean/process filter names; GIT_NO_LAZY_FETCH=1 and GIT_ALLOW_PROTOCOL empty; fsmonitor/optional locks disabled; ignore submodule comparison."
 }

@@ -1,30 +1,28 @@
-test(storage): prepare one bounded worktree custody discovery
+fix(storage): correct bounded custody probe preflight
 
 ## Summary
-- Prepare an actual read-only metadata check of one previously recorded linked worktree and its known master.
+- Correct four blocking findings on the undisbursed f27cdf63 storage probe.
 ## Why
-- Wider cleanup remains unfinished; this candidate lacked untracked/ignored and current commit ownership evidence.
+- The pinned owner rejects the prepared argv and the read-only promise needs explicit Git custody and tool/network refusals.
 ## Changed
-- Reuse the open containment WorkUnit and current checkout/branch with bounded metadata and local Git output.
-- Pin the helper, Git/Python and original24-member runtime; append only two exact read roots in a temporary selection.
-- Preserve the original configuration, finite256MiB admission, qualified assets and all target-write/cleanup/model/network refusals.
-- Retain conservative intake classification and require exact independent admission/source/envelope before one frozen dispatch.
+- Remove redundant argv -B while preserving the supervisor bytecode protection.
+- Authenticate exact ordinary single-link Git pointer/admin/common/backlink paths before traversal and repeat custody checks.
+- Refuse external clean/process filters, suppress lazy fetch and transports, and ignore submodule comparisons.
+- Check metadata deadlines before every queued directory and preserve incomplete coverage.
 ## Validation
-- PASS: helper Python AST and exact native identity constant; existing target/master are ordinary directories.
-- PASS: original configuration/archive hashes preserved; only two temporary read-root entries added.
-- PASS: output/entry/time bounds and explicit incomplete/unknown coverage; no cleanup authority.
-- NOT RUN: native discovery, pending exact independent frozen review.
+- PASS: helper AST and bounded JSON/hash bindings; original configuration/assets remain unchanged.
+- NOT RUN: native effect awaits a superseding exact independent admission/source/effect verdict.
 ## Changelog
-- Added: bounded custody discovery fixture for one previously ranked storage candidate.
+- Fixed: bounded storage custody probe admission and read-only preflight.
 ## Risks
-- Unknown active writers and incomplete metadata remain unknown; no disposal is authorized.
-- Outer access/read isolation, historical/live/efficiency/publication gates remain unchanged.
+- Concurrent writers and snapshot coverage remain unknown; no target cleanup is authorized.
+- Outer containment, historical decisions, live efficiency and public release remain separate unfinished gates.
 ## Follow-up
-- Obtain exact admission/source/envelope verdict, bind only ignored manifest source identities to frozen reviewed commit/tree, then dispatch once and verify collection/retirement.
+- Freeze and review the corrected subject, then bind only ignored source identities and dispatch once.
 
 AIDE-Task: AIDE-SESSION-CONTAINMENT-01
 AIDE-Phase: single-worktree-custody-discovery
-AIDE-Result: read_only_probe_prepared_review_pending
-AIDE-Scope: own task/evidence/helper, four owned intake views, three root indexes, temporary local selection
-AIDE-Token-Impact: deterministic bounded metadata; no model or network request
-AIDE-Quality-Gate: exact independent admission and frozen source/envelope before dispatch
+AIDE-Result: preflight_repaired_native_not_run
+AIDE-Scope: owned helper/manifest/effect/review/plan and root indexes
+AIDE-Token-Impact: bounded deterministic discovery; no model or network request
+AIDE-Quality-Gate: superseding exact independent admission/source/effect before dispatch
