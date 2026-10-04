@@ -54,3 +54,12 @@ process from changing paths. No claim of whole-machine cleanup follows.
 Current implementation and qualification state is recorded in
 [the custody WorkUnit](../../.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md).
 The stable consumer matrix and unrelated release/host/model gates are unchanged.
+
+The 2026-10-05 qualification completed23 restricted-worker regressions and two
+separately reviewed live transitions. Complete evidence and original receipts
+were preserved; lookup and retirement passed, releasing7921599 managed logical
+bytes. See the WorkUnit report for exact source/effect/receipt/archive identities.
+These operations ran administratively as Jules; native fixtures ran as
+CodexSandboxOffline. The current7132 candidate archive predates this source.
+No allocated physical recovery, whole-session containment or stable release
+claim follows from these results.

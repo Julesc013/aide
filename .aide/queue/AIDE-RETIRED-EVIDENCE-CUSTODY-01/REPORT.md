@@ -1,9 +1,11 @@
 # Retired evidence custody development report
 
-Date:2026-10-05 Australia/Sydney. Actual public custody workflow and23 regressions
-now pass through the restricted worker; complete collection/retirement verified.
-Two real retired-job plans succeed read-only. Live custody, released capacity,
-projection refresh/integration and stable certification remain unfinished.
+Date:2026-10-05 Australia/Sydney. The actual public custody workflow and 23
+regressions pass through the restricted worker. Separately reviewed custody of
+two real retired consumer jobs preserved complete evidence and original receipts,
+verified lookup, retired redundant raw copies and released 7,921,599 managed
+logical bytes. Source projection refresh/integration and stable certification
+remain unfinished. The outer session remains unrestricted.
 
 ## What changed
 
@@ -38,8 +40,10 @@ output, no canonical writes,2MiB scratch/1MiB logs/64KiB results/180s/2GiB memor
 | New retained evidence | 9959 logical bytes |
 | Sampled workspace/log occupancy | 5483bytes;30s sampling can miss transients |
 | Process memory peak | 246890496bytes |
-| Known pools after collection | scratch0 + control13694135 + retained219091093 =232785228logical bytes |
-| Live custody / reclaimed allocated space | No transition; no recovery measurement |
+| Known pools after native collection, before custody | scratch0 + control13694135 + retained219091093 =232785228logical bytes |
+| Known pools after both live custody operations | scratch0 + control13694135 + retained211169494 =224863629logical bytes |
+| Remaining cooperative aggregate capacity | 43571827bytes within unchanged256MiB limit |
+| Live custody / reclaimed allocated space | Two transitions verified;7921599logical bytes saved; allocated disk recovery unmeasured |
 | Original selected runtime configuration | a241 unchanged; held/stale original archive pin |
 | Current stable candidate ZIP | 7132 unchanged; does not contain new custody source |
 | Outer shell/editor/plugins and read isolation | Unrestricted / unqualified |
@@ -70,8 +74,38 @@ was accepted and passed. Preserve22-test evidence and source rejection.
 
 An earlier21-test native effect was REQUEST_CHANGES before dispatch. Reviewer
 found assertion-dependent alias cleanup plus staged-intent and lock-view gaps.
-The rejection stays preserved; fixes received a new exact review and only the
-corrected22-test attempt ran. No uncertain retry or relabelled failure.
+The rejection stays preserved. At that stage, fixes received a new exact review
+and only the corrected 22-test attempt ran. The later, separately reviewed
+23-test attempt qualified the actual public CLI. No uncertain retry or relabelled
+failure occurred.
+
+## Separately reviewed live result
+
+Frozen source8339181c/tree41f1fd1d and exact serial two-job effect1cbca7a2
+received independent ACCEPT_WITH_NOTES; every note was explicitly nonblocking
+and disposed. Each operation freshly checked its source/configuration, exact
+plan and unchanged anchors before apply. Complete archive verification preceded
+raw-copy retirement; bounded evidence lookup matched before and after.
+
+| Original retired job | Complete original payload | Custody ZIP | Logical bytes saved |
+| --- | ---: | ---: | ---: |
+| dc069cd9c81f4ccf81c5959a14519685 | 3035803 | 301200 | 2723463 |
+| eff8ab1f2afb4333b14690ee91007ffe | 5802413 | 571864 | 5198136 |
+
+Original receipt hashes36c6ea3d/fc103deb and owner bytes are unchanged. Both
+archives reconstruct the original log/output collection digests; no evidence
+was truncated. Raw logs/output copies and pending active.json/.next state are
+absent after success. The admin operations ran as BLACKGLASS-WIN1\Jules through
+the source CLI; they did not expand worker write access. The separate native
+fixture ran as CodexSandboxOffline. No model/provider invocation occurred.
+
+[Complete live result](evidence/live-custody-result.json),
+[postflight inventory](evidence/live-custody-postflight.json) and
+[exact source/effect acceptance](evidence/live-custody-source-effect-acceptance.json)
+retain identities and full verification references. Full preflight/apply/verify/
+lookup logs remain in this evidence directory. Postflight enumerated only the
+three configured pools:6201 entries, no fallback or whole-drive scan. Logical
+savings affect cooperative admission; actual allocated disk recovery is unknown.
 
 ## Limits, compatibility and next useful work
 
@@ -83,11 +117,10 @@ controls, not filesystem quotas, account/ACL isolation or whole-session control.
 
 Plain old raw-file paths do not transparently decompress. The explicit custody
 map/read interface must be used after a reviewed live transition; existing
-receipts and their collection digests stay authentic historical records. Live
-transition is separately gated. Two exact old consumer jobs are candidates;
-the real read-only plans preserve receipt36c6ea3d/fc103deb and3035803/5802413
-payload bytes. Worst-case serial reservations7334555/10184109 fit unchanged
-256MiB. Planning grants no released capacity or raw-copy retirement authority. Preserve
+receipts and their collection digests stay authentic historical records. Any
+further live transition requires its own exact effect review. The two approved
+operations used worst-case serial reservations7334555/10184109 within unchanged
+256MiB; their measured success grants no authority over other jobs. Preserve
 complete required evidence and all8 consumer cases/38 public forms/39 retained
 outputs/12 job observations and delivered C1/replay acceptance.
 
@@ -109,5 +142,7 @@ reference docs, this queue packet/evidence and existing root/generated indexes.
 - Python AST, `git diff --check`, structured commit-message precheck: PASS.
 - Actual managed `job run` plus23 source tests: PASS; complete postflight and
   retirement verified. Full raw stderr contains23-test/OK result, no skips.
-- Full source binding/export refresh, source integration, live custody and
-  current-payload consumer/replay qualification: NOT RUN in this slice.
+- `job custody plan/read/apply/verify/read` for the exact two jobs: PASS;
+  complete digests, anchors, lookup, retirement and cleared pending state checked.
+- Full source binding/export refresh, source integration and current-payload
+  consumer/replay qualification: NOT RUN in this slice.

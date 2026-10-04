@@ -1,0 +1,31 @@
+{
+  "allocated_recovery_bytes": null,
+  "anchors_unchanged": true,
+  "archive_bytes": 301200,
+  "archive_sha256": "b351b8c841f3cc056b878e3994ef688c0918582fd25525df407651f010f74098",
+  "complete_verification": {
+    "archive_sha256": "b351b8c841f3cc056b878e3994ef688c0918582fd25525df407651f010f74098",
+    "collected_manifest": {
+      "logs": "634805840c33949a53407abfc1ed18fbb348dbe2591791c553bf00cecf721049",
+      "output": "582ef8607602354b6faa1bad61de38ecab060933e697b7d050efd105f6226799"
+    },
+    "job_id": "dc069cd9c81f4ccf81c5959a14519685",
+    "plan_digest": "006ec78edc84c652c9ea723807b542c4674d5ed60e4c6cb85cfa9a6264bc7860",
+    "receipt_sha256": "36c6ea3de9fbeb3fbcae067e897b4508367fdc0dace15ca2fdd9ea09775b40c5",
+    "state": "VERIFIED",
+    "writes": false
+  },
+  "job_id": "dc069cd9c81f4ccf81c5959a14519685",
+  "lookup_equivalent": true,
+  "original_bytes": 3035803,
+  "pending_absent": true,
+  "plan_digest": "006ec78edc84c652c9ea723807b542c4674d5ed60e4c6cb85cfa9a6264bc7860",
+  "raw_copies_retired": true,
+  "receipt_sha256": "36c6ea3de9fbeb3fbcae067e897b4508367fdc0dace15ca2fdd9ea09775b40c5",
+  "saved_logical_bytes": 2723463,
+  "source_commit": "8339181c3b25c2a1b5c7ea975dcdf747b0b57d54",
+  "source_tree": "41f1fd1ddbc6ce052f095b2160e01a5661f759f1",
+  "state": "CUSTODIED",
+  "windows_identity": "BLACKGLASS-WIN1\\Jules",
+  "writes": true
+}

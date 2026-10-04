@@ -3,8 +3,8 @@ id: AIDE-RETIRED-EVIDENCE-CUSTODY-01
 title: Preserve complete retired evidence under finite managed custody
 type: implementation
 status: needs_review
-planning_state: public_cli23_passed_complete_retirement_live_review_pending
-result: PASS23_PUBLIC_CLI_LIVE_CUSTODY_PENDING
+planning_state: public_cli23_and_two_live_custody_verified_closeout_review_pending
+result: PASS23_TWO_LIVE_CUSTODY_VERIFIED
 created_at: 2026-10-05
 updated_at: 2026-10-05
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

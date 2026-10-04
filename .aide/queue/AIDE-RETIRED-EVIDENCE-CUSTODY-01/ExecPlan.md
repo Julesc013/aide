@@ -178,3 +178,25 @@ exact full hashes/maps retained in live-custody-plan-v2 logs. Roster SHA
 7899ec4b88cf3f5f31f7082da6ed6491372679439668b4c4af0354fe3db312df.
 No capacity is released by planning; complete custody and fresh measured
 accounting require separate exact source/effect review. No quota widening.
+
+### Exact live custody completed; downstream qualification still separate
+
+Source8339181c/tree41f1fd1d and effect1cbca7a2 received independent
+ACCEPT_WITH_NOTES with every note nonblocking/disposed. The two serial
+operations completed with fresh per-operation guards, complete archive
+verification before redundant raw retirement, unchanged original anchors and
+equal bounded lookup. No uncertain replay/recovery was needed. Jobsdc069cd9
+and eff8ab1f saved2723463 and5198136 logical bytes respectively; total7921599.
+Postflight observed scratch0/control13694135/retained211169494,total224863629
+over6201 entries. Remaining cooperative capacity43571827 under unchanged
+268435456 ceiling. Allocated physical recovery was not measured. Both pending
+latches are absent; original a241 configuration and four7132 candidate assets
+are unchanged. Exact result/postflight/effect/verdict are retained in evidence.
+
+Next: exact source/live closeout review. Then separately admit the existing
+capability report/export refresh and changed source qualification before source
+integration or packaging. Do not use old49 source-test reuse after CLI changed.
+Preserve all8 consumers and deliveredC1/replay acceptance. Remaining capacity
+must be freshly checked; no new pool, cap increase, dropped evidence or shortcut
+from custody success to release certification. Historical observations above
+remain dated evidence rather than current permission or state.

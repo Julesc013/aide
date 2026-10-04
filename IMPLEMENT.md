@@ -13192,3 +13192,14 @@ job30c71836 passed including actual CLI lifecycle, receiptb27ccc96/rawtrees
 verified,9959logical bytes retained, scratch/reservation retired. Two old
 consumer plans preserve receipts and fit exact staging; live custody remains
 separately gated. No asset/original config/ref/publication change.
+
+## 2026-10-05 actual lossless custody and retirement
+
+Independently accepted source8339181c/tree41f1fd1d/effect1cbca7a2 processed
+only dc069cd9 and eff8ab1f serially as Jules. Full archives verified before
+redundant raw retirement; original receipt/owner bytes and collection digests
+unchanged, bounded lookup equal and active/.next absent. Savings7921599logical
+bytes; postflight6201 pool entries,total224863629, scratch0. No physical
+recovery, host containment, archive rebuild, ref mutation or publication claim.
+Native23 regression proof remains separate and genuine. Source projection
+refresh/integration and delivered acceptance require their own bounded review.

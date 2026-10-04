@@ -1,0 +1,24 @@
+{
+  "live_effect_sha256": "1cbca7a2c57ba6925f0688289c4ec84d9d9599cfeb5c343512ad99cc750d71f3",
+  "live_effect_verdict": "ACCEPT_WITH_NOTES",
+  "notes": [
+    {
+      "classification": "nonblocking_disposed",
+      "note": "Older native22 current_slice label superseded by explicit PASS23 versioned proof; label grants nothing."
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "Fresh exact guards/locked admission, full archive verification before raw retirement, lookup/anchors/pending check before next; stop on uncertainty."
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "Savings unobserved until execution; projection/integration/runtime/consumer/release gates separate and original selection held."
+    }
+  ],
+  "reviewer": "/root/containment_review",
+  "schema": "aide.exact-maintenance-source-live-effect-acceptance.v1",
+  "scope": "exact two serial lossless retired-evidence custody transitions only",
+  "source_commit": "8339181c3b25c2a1b5c7ea975dcdf747b0b57d54",
+  "source_tree": "41f1fd1ddbc6ce052f095b2160e01a5661f759f1",
+  "source_verdict": "ACCEPT_WITH_NOTES"
+}

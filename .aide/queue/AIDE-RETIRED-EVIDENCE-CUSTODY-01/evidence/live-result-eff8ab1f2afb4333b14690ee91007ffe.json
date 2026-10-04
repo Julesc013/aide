@@ -1,0 +1,31 @@
+{
+  "allocated_recovery_bytes": null,
+  "anchors_unchanged": true,
+  "archive_bytes": 571864,
+  "archive_sha256": "62afd2c0a97329728642b552e50468db638a97b3ef242fc5534d024bc53e9662",
+  "complete_verification": {
+    "archive_sha256": "62afd2c0a97329728642b552e50468db638a97b3ef242fc5534d024bc53e9662",
+    "collected_manifest": {
+      "logs": "042a4c75f6d7299e3ac701d0524b644ed48b582710dc7d2d11212d6913e62aa5",
+      "output": "ff8267e4a5828b08ad947b19cefc993d96f854dc0c82b697b4f379af0b96cdfa"
+    },
+    "job_id": "eff8ab1f2afb4333b14690ee91007ffe",
+    "plan_digest": "00ee85a63128730f7075d80152518979a81058b14058acd170df6023eda1e622",
+    "receipt_sha256": "fc103deb743a7bdfbeaa8a284802ece49ff0fc9d9c0480736be528abfe21beba",
+    "state": "VERIFIED",
+    "writes": false
+  },
+  "job_id": "eff8ab1f2afb4333b14690ee91007ffe",
+  "lookup_equivalent": true,
+  "original_bytes": 5802413,
+  "pending_absent": true,
+  "plan_digest": "00ee85a63128730f7075d80152518979a81058b14058acd170df6023eda1e622",
+  "raw_copies_retired": true,
+  "receipt_sha256": "fc103deb743a7bdfbeaa8a284802ece49ff0fc9d9c0480736be528abfe21beba",
+  "saved_logical_bytes": 5198136,
+  "source_commit": "8339181c3b25c2a1b5c7ea975dcdf747b0b57d54",
+  "source_tree": "41f1fd1ddbc6ce052f095b2160e01a5661f759f1",
+  "state": "CUSTODIED",
+  "windows_identity": "BLACKGLASS-WIN1\\Jules",
+  "writes": true
+}

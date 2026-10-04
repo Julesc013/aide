@@ -1,0 +1,36 @@
+feat(execution): verify lossless custody of retained consumer evidence
+
+## Summary
+- Complete AIDE-RETIRED-EVIDENCE-CUSTODY-01 exact two-job live custody.
+
+## Why
+- Retain every evidence byte while making finite managed capacity reusable.
+
+## Changed
+- Preserve accepted effect, complete results, lookup and postflight identities.
+- Align current queue, task brief, report and root documentation with results.
+
+## Validation
+- PASS: same-input23 native regressions and complete restricted retirement.
+- PASS: two accepted serial custody operations; original anchors unchanged.
+- PASS: full archive digests, lookup, raw retirement and cleared pending state.
+- PASS: bounded pool inventory, Harness structural checks and whitespace.
+- NOT RUN: affected report/export refresh, integration and stable certification.
+
+## Changelog
+- Added: verified finite custody with7921599 managed logical bytes saved.
+
+## Risks
+- Cooperative admission is not a hard quota or outer-session containment.
+- Allocated physical recovery is unknown; current7132 ZIP predates custody.
+
+## Follow-up
+- Review this exact post-result closeout; separately qualify affected exports.
+- Preserve complete consumer acceptance and independent release/model/host gates.
+
+AIDE-Task: AIDE-RETIRED-EVIDENCE-CUSTODY-01
+AIDE-Phase: live-custody-closeout
+AIDE-Result: PASS23_TWO_LIVE_CUSTODY_VERIFIED
+AIDE-Scope: exact-two-owned-retired-jobs-and-bounded-records
+AIDE-Token-Impact: bounded-views-complete-evidence-preserved
+AIDE-Quality-Gate: exact-post-result-source-closeout-pending

@@ -1,0 +1,28 @@
+{
+  "aggregate_available_bytes": 43571827,
+  "aggregate_limit_bytes": 268435456,
+  "aggregate_used_bytes": 224863629,
+  "allocated_recovery_bytes": null,
+  "assets": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": "899e9ca4101514ae6d5becda3ccae150b732ccf7dc16d07a580cdf5263fe8e08",
+    "aide-lite-v1.0.0.manifest.json": "ce652cc764e2b2c71298e745b6a523253825f594ed315ad1486dacdd7d7a31b1",
+    "aide-lite-v1.0.0.tar.gz": "fe6ddadad63dc7d018c45aee8d391f112c1aa23a31b593a2a205b8f72e20cf8d",
+    "aide-lite-v1.0.0.zip": "7132a5404bf82cdf0c0076cf64b395f01715ae0abd2e8c95c2b971c4b233ee88"
+  },
+  "inventory_entries": 6201,
+  "original_config_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "pending_absent": true,
+  "pools_logical_bytes": {
+    "control": 13694135,
+    "retained": 211169494,
+    "scratch": 0
+  },
+  "result_sha256": "72b3e2cdffcf489c0f50aaf881162a9daed405581102063aa7cdfd2e2b3756b8",
+  "saved_logical_bytes": 7921599,
+  "schema": "aide.retired-evidence-live-postflight.v1",
+  "source_commit": "8339181c3b25c2a1b5c7ea975dcdf747b0b57d54",
+  "source_export_ref_and_release_effects_performed": false,
+  "source_tree": "41f1fd1ddbc6ce052f095b2160e01a5661f759f1",
+  "status": "PASS",
+  "whole_session_contained": false
+}

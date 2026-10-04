@@ -1,10 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-RETIRED-EVIDENCE-CUSTODY-01
 status: needs_review
-planning_state: public_cli23_passed_complete_retirement_live_review_pending
-result: PASS23_PUBLIC_CLI_LIVE_CUSTODY_PENDING
+planning_state: public_cli23_and_two_live_custody_verified_closeout_review_pending
+result: PASS23_TWO_LIVE_CUSTODY_VERIFIED
 updated_at: 2026-10-05
-current_slice: native22_verified_retired
-next_slice: exact_source_and_separate_live_custody_effect_review
-live_custody_effect_performed: false
+current_slice: native23_and_exact_two_live_custody_verified
+next_slice: exact_post_result_closeout_review_then_separate_projection_qualification
+live_custody_effect_performed: true
+saved_logical_bytes: 7921599
+allocated_disk_recovery_bytes: null
 release_publication_authorized_by_this_slice: false

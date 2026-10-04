@@ -4649,3 +4649,16 @@ plan/read/apply/verify/read, complete collected evidence and retirement verified
 Two original consumer jobs now have exact feasible read-only custody plans;
 no live transition/reclaimed capacity. Source/live-effect reviews remain
 required, as do current consumer acceptance and stale projection refresh.
+
+## 2026-10-05 exact two-job custody released managed capacity
+
+The separately accepted C4 effect on source8339181c completed both exact old
+consumer-job transitions. Complete bytes, collection digests and original
+receipts remain available through verified custody lookup. Redundant raw copies
+retired and pending state cleared;7921599logical bytes saved. Existing pool now
+uses224863629 of268435456bytes. Physical allocated recovery is unmeasured.
+[Custody report](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md) records
+actual worker/admin scopes. Next is affected report/export/source qualification,
+then exact source integration and current consumers; archive7132 does not
+contain custody. Outer-client, historical/model, matched efficiency, release
+and wider cleanup gates remain independent.

@@ -3887,8 +3887,8 @@ items:
 
   - id: AIDE-RETIRED-EVIDENCE-CUSTODY-01
     status: needs_review
-    planning_state: public_cli23_passed_complete_retirement_live_review_pending
-    result: PASS23_PUBLIC_CLI_LIVE_CUSTODY_PENDING
+    planning_state: public_cli23_and_two_live_custody_verified_closeout_review_pending
+    result: PASS23_TWO_LIVE_CUSTODY_VERIFIED
     title: Preserve complete retired evidence under finite managed custody
     task: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/task.yaml
     exec_plan: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md

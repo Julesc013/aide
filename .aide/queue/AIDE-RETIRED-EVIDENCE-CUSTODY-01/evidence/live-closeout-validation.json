@@ -1,0 +1,24 @@
+{
+  "checks": {
+    "compile": "PASS",
+    "diff_check": "PASS",
+    "full_collection_digests_and_anchor_preservation": "PASS",
+    "harness_structural": "PASS",
+    "native23": "PASS_RETAINED_SAME_INPUTS",
+    "pending_absent_and_raw_retirement": "PASS",
+    "source_export_integration_release": "NOT_RUN",
+    "two_live_transitions": "PASS"
+  },
+  "effect_sha256": "1cbca7a2c57ba6925f0688289c4ec84d9d9599cfeb5c343512ad99cc750d71f3",
+  "live_postflight_sha256": "7a7379124d7024a9cfb674f8ecd1b4773ecc44f09ff6a9b7c18dc1cdfe88e788",
+  "live_result_sha256": "72b3e2cdffcf489c0f50aaf881162a9daed405581102063aa7cdfd2e2b3756b8",
+  "native_regression_result_sha256": "e2f6eaa1bcf6379775c7c16a8204c600ed414177721fd48196da126aa9c2e936",
+  "operative_source_unchanged_from": "8339181c3b25c2a1b5c7ea975dcdf747b0b57d54",
+  "raw_structural_logs": {
+    "live-closeout-compile.log": "2d514c33635f30ce7620531928e11690912a97953c62260a58bd59f76e516438",
+    "live-closeout-harness.log": "42e66752eeebcc37a004ca86d9de1cbcb79ea1b9b262e3aef754a9fa35c3be70"
+  },
+  "schema": "aide.retired-evidence-live-closeout-validation.v1",
+  "source_effect_acceptance_sha256": "b354b11b8a16c3b6b4433f96ecc96a89cf1dbd6dd806236bb4439b886f9609ce",
+  "status": "PASS"
+}

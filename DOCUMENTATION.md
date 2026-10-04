@@ -6,8 +6,11 @@
 plan/apply/recover/verify/read behavior, receipt preservation, staging limits and
 lookup compatibility. [WorkUnit](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md)
 records actual23-test restricted public-CLI qualification and verified retirement.
-[Full report](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md) preserves
-unfinished live custody, source projection/integration and release gates.
+[Full report](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md) also records
+two separately accepted live custody operations: all evidence/receipts preserved,
+lookup verified and7921599logical bytes saved in the existing256MiB pool.
+Source projection/integration, allocated disk recovery and release qualification
+remain open; the outer session remains unrestricted.
 
 
 ## 2026-10-05 current capability payload source qualification completed

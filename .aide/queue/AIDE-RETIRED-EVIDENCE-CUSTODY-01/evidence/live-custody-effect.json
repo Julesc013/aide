@@ -1,0 +1,64 @@
+{
+  "aggregate_limit_bytes": 268435456,
+  "authority": "campaign delegation, source closeout and separately required exact effect ACCEPT",
+  "config_path": ".aide.local/retired-evidence-custody-test-execution.json",
+  "config_sha256": "6ce5cde183a97aacdd4ebd56678790d1e5e8bdd84d2e331d57f4aa159ac1b301",
+  "consumer_acceptance": "all8 cases/38forms/39outputs/12job observations plus delivered C1/replay unchanged",
+  "current_archive_sha256": "7132a5404bf82cdf0c0076cf64b395f01715ae0abd2e8c95c2b971c4b233ee88",
+  "effect_paths": "Only two exact existing retained roots logs/output,custody.zip/json and .next; existing control/active.json/.next and admission OS lock. Original owner/receipt bytes remain readonly.",
+  "forbidden": "any other job/file/unknown content, provider/model/new spending, new roots/drive fallback, raw truncation, source integration, runtime promotion, tag/publication",
+  "limits": "Custody uses its separate finite administrative staging envelope. Native job limits unchanged;256MiB configured-pool cooperative budget and existing disk/memory headroom. No hard/global quota.",
+  "max_entries_per_job": 4096,
+  "max_original_bytes_per_job": 16777216,
+  "max_record_bytes": 1048576,
+  "metadata_reserve_bytes_per_job": 4194304,
+  "native_result_sha256": "e2f6eaa1bcf6379775c7c16a8204c600ed414177721fd48196da126aa9c2e936",
+  "operations": [
+    {
+      "anchors": {
+        "owner.json": "4ee2f91379eef07e5f4e2636d612d704e5cde7acd82682df16f99a03a28d81d9",
+        "receipt.json": "36c6ea3de9fbeb3fbcae067e897b4508367fdc0dace15ca2fdd9ea09775b40c5"
+      },
+      "archive_limit_bytes": 3140251,
+      "full_plan_log": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/live-custody-plan-v2-dc069cd9c81f4ccf81c5959a14519685.log",
+      "full_plan_log_sha256": "ad8b5eb142b236f903972a530a8775408c96e15e359830d5c1b72ce08723a3a7",
+      "job_id": "dc069cd9c81f4ccf81c5959a14519685",
+      "logical_bytes_observed": 232785228,
+      "metadata_reserve_bytes": 4194304,
+      "original_bytes": 3035803,
+      "plan_digest": "006ec78edc84c652c9ea723807b542c4674d5ed60e4c6cb85cfa9a6264bc7860",
+      "reserved_bytes": 7334555,
+      "root_identity": [
+        3781016413010784355,
+        14355223814407865
+      ]
+    },
+    {
+      "anchors": {
+        "owner.json": "d1dc0245a32206b9edbf64d08686fb776679882980909ac4887a26d6f6777274",
+        "receipt.json": "fc103deb743a7bdfbeaa8a284802ece49ff0fc9d9c0480736be528abfe21beba"
+      },
+      "archive_limit_bytes": 5989805,
+      "full_plan_log": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/live-custody-plan-v2-eff8ab1f2afb4333b14690ee91007ffe.log",
+      "full_plan_log_sha256": "d73f537d18125735e7048c64c4eacef6a68ecbe2cfb49d82be28aa76e80cebda",
+      "job_id": "eff8ab1f2afb4333b14690ee91007ffe",
+      "logical_bytes_observed": 232785228,
+      "metadata_reserve_bytes": 4194304,
+      "original_bytes": 5802413,
+      "plan_digest": "00ee85a63128730f7075d80152518979a81058b14058acd170df6023eda1e622",
+      "reserved_bytes": 10184109,
+      "root_identity": [
+        3781016413010784355,
+        7599824373352169
+      ]
+    }
+  ],
+  "ordering": "serial; exact fresh plan/anchors/config/source guards; archive verifies before redundant raw retirement; stop on refusal/uncertainty, no automatic retry",
+  "original_config_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "projection_refresh_and_integration": "stale/notperformed; no whole-source or release acceptance from maintenance effect",
+  "recovery": "matching job custody recover reconciles pending operation; complete verified archives retain all bytes, hashes and empty directories. Explicit bounded lookup, no full backup or arbitrary restore.",
+  "route": "administrative public CLI under unrestricted Jules outer identity with selected immutable owner primitives; not contained outer session",
+  "schema": "aide.retired-evidence-live-custody-effect.v1",
+  "source_commit": "8339181c3b25c2a1b5c7ea975dcdf747b0b57d54",
+  "source_tree": "41f1fd1ddbc6ce052f095b2160e01a5661f759f1"
+}
