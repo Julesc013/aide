@@ -1,0 +1,84 @@
+[
+  {
+    "command": [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "job",
+      "inspect",
+      "--config",
+      ".aide.local/execution.json"
+    ],
+    "exit_code": 0,
+    "bytes": 1775,
+    "sha256": "37d96ff32c662b68fa15c4a7479654327e437a154b740aa8beea193c3aef75fa",
+    "config_sha256": "73c0b1a4f4bb7cf341c8882806852a9aaea81c81a3d956cde575c1814e3616f6",
+    "boundary": {
+      "aggregate_admission": "not_configured",
+      "aggregate_admission_checked_by_inspection": false,
+      "aggregate_limit_bytes": null,
+      "canonical_output_allowlist": [],
+      "config_digest": "7cde8a803ad396d5e87138fb904aa7dfa116625ed69c5e7ba04b1d270f639d1e",
+      "configuration_only": true,
+      "controls_outer_session": false,
+      "disk_enforcement": "reservation_and_monitored_threshold",
+      "execution_kind": "Windows_Job_resources",
+      "outer_session_containment": "unobserved",
+      "provides_hard_filesystem_quota": false,
+      "qualification": "requires_exact_route_and_runtime_evidence",
+      "toolchain_read_root_count": null,
+      "uncovered_routes": [
+        "outer_shell",
+        "editor_and_filesystem_tools",
+        "plugins_and_integrations",
+        "other_sessions_and_unmanaged_processes",
+        "external_host_metadata_and_caches"
+      ],
+      "worker_read_isolation": "not_verified_by_inspection",
+      "worker_write_placement": "not_enforced_by_Windows_Job"
+    }
+  },
+  {
+    "command": [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "job",
+      "inspect",
+      "--config",
+      ".aide.local/scoped-job-entry-01-execution.json"
+    ],
+    "exit_code": 0,
+    "bytes": 1841,
+    "sha256": "b4c332ebed9e13dc2dd5f9e0fd513120e579561c88d1806949f680d6d09b09d0",
+    "config_sha256": "1da3a51a9f1080c38897a1c5df3d8bdb438715e4fbf3d5d07f274ae6175dde88",
+    "boundary": {
+      "aggregate_admission": "checked_under_lock_by_job_run",
+      "aggregate_admission_checked_by_inspection": false,
+      "aggregate_limit_bytes": 268435456,
+      "canonical_output_allowlist": [
+        ".aide/export/aide-lite-pack-v0"
+      ],
+      "config_digest": "57b25cad0fb28c9f4ec5caa7b0aa311013cc35743db240682d2324f96784cca3",
+      "configuration_only": true,
+      "controls_outer_session": false,
+      "disk_enforcement": "cooperative_admission_and_monitored_growth",
+      "execution_kind": "codex_sandbox_checks",
+      "outer_session_containment": "unobserved",
+      "provides_hard_filesystem_quota": false,
+      "qualification": "requires_exact_route_and_runtime_evidence",
+      "toolchain_read_root_count": 3,
+      "uncovered_routes": [
+        "outer_shell",
+        "editor_and_filesystem_tools",
+        "plugins_and_integrations",
+        "other_sessions_and_unmanaged_processes",
+        "external_host_metadata_and_caches"
+      ],
+      "worker_read_isolation": "not_verified_by_inspection",
+      "worker_write_placement": "configured_command_sandbox"
+    }
+  }
+]

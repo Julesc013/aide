@@ -1,13 +1,13 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-release-61ae23078e63
-- title: Release WorkUnit Draft - Write blocker report and require reviewed authorization before mutation
+- workunit_id: draft-test-f8e019d844a5
+- title: Test WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight
 - status: draft
-- task_class: release
-- risk_class: release
-- sizing_class: blocked
-- objective: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
+- task_class: test
+- risk_class: medium
+- sizing_class: one_shot
+- objective: Normalize prompt into a bounded test WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
 - why: AIDE compiles raw prompts into bounded WorkUnits before execution.
 
 ## Preflight
@@ -19,14 +19,14 @@
 ## Implementation Outline
 
 - Reconcile repo state before editing.
-- write blocker report and require reviewed authorization before mutation
+- draft the smallest safe WorkUnit after repo-state preflight
 - Stop at review gates and record evidence before execution.
 
 ## Validation
 
 - git diff --check
-- py -3 .aide/scripts/aide_lite.py changelog validate
 - py -3 .aide/scripts/aide_lite.py intent validate
+- targeted failing test command after preflight
 
 ## Evidence
 
@@ -34,7 +34,6 @@
 - validation.md
 - remaining-risks.md
 - intent-compiler-report.md
-- preflight-or-blocker-report.md
 
 ## Acceptance
 
@@ -48,9 +47,8 @@
 - no provider/model/network calls
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not publish releases, tags, or assets from prompt alone
 
 ## Recovery
 
-- idempotency: prompt_hash:61ae23078e636211c5af8d0d31a53f5d0fb1019a0467833f544694cc367e71e4; status:draft; compile_only:true
+- idempotency: prompt_hash:f8e019d844a569b7a15fe4c3b2a273f47d15aa4363a3acad0c8061311843e057; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

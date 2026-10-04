@@ -45150,6 +45150,35 @@ def command_job_context(args: argparse.Namespace) -> int:
     return 0 if result["status"] == "COMPLETE" else 2 if result["status"] == "PARTIAL" else 1
 
 
+def managed_inspection_boundary(config_digest: str, scoped_metadata=None) -> dict[str, object]:
+    """Configuration provenance is not host qualification or run admission."""
+    scoped = scoped_metadata is not None
+    if scoped and scoped_metadata['config_digest'] != config_digest:
+        raise ValueError('inspection configuration identity changed')
+    return {
+        'config_digest': config_digest,
+        'configuration_only': True,
+        'execution_kind': scoped_metadata['kind'] if scoped else 'Windows_Job_resources',
+        'worker_write_placement': ('configured_command_sandbox' if scoped
+                                   else 'not_enforced_by_Windows_Job'),
+        'worker_read_isolation': 'not_verified_by_inspection',
+        'canonical_output_allowlist': list(scoped_metadata['canonical_outputs']) if scoped else [],
+        'toolchain_read_root_count': scoped_metadata['toolchain_read_root_count'] if scoped else None,
+        'aggregate_limit_bytes': scoped_metadata['aggregate_limit_bytes'] if scoped else None,
+        'aggregate_admission': 'checked_under_lock_by_job_run' if scoped else 'not_configured',
+        'aggregate_admission_checked_by_inspection': False,
+        'disk_enforcement': ('cooperative_admission_and_monitored_growth' if scoped
+                             else 'reservation_and_monitored_threshold'),
+        'provides_hard_filesystem_quota': False,
+        'controls_outer_session': False,
+        'outer_session_containment': 'unobserved',
+        'uncovered_routes': ['outer_shell', 'editor_and_filesystem_tools',
+                             'plugins_and_integrations', 'other_sessions_and_unmanaged_processes',
+                             'external_host_metadata_and_caches'],
+        'qualification': 'requires_exact_route_and_runtime_evidence',
+    }
+
+
 def command_managed_job(args: argparse.Namespace) -> int:
     """Explicit maintainer execution; inspect never projects tracked reports."""
     root = str(args.repo_root)
@@ -45182,6 +45211,8 @@ def command_managed_job(args: argparse.Namespace) -> int:
             job = managed_workspace.read_json(args.manifest) if args.manifest else None
             if args.job_command == "inspect":
                 result = managed_workspace.inspect(args.config, job)
+                result['execution_boundary'] = managed_inspection_boundary(
+                    result['config_digest'], scoped_host.inspection_metadata() if scoped is not None else None)
             else:
                 result = (scoped.run(managed_workspace, scoped_host, args.config, job)
                           if scoped is not None else managed_workspace.run(args.config, job))

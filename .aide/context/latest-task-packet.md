@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - AIDE-ARCHITECTURE-RECONCILIATION-01
+UNSPECIFIED - AIDE-JOB-SCOPE-DIAGNOSTICS-01
 
 ## GOAL
 
-AIDE-ARCHITECTURE-RECONCILIATION-01
+AIDE-JOB-SCOPE-DIAGNOSTICS-01
 
 ## WHY
 
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4132
-- approx_tokens: 1033
+- chars: 4120
+- approx_tokens: 1030
 - budget_status: PASS
 - warnings:
   - none

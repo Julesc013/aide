@@ -1,0 +1,84 @@
+[
+  {
+    "command": [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "job",
+      "inspect",
+      "--config",
+      ".aide.local/execution.json"
+    ],
+    "exit_code": 0,
+    "bytes": 747,
+    "sha256": "8c05553e8e353c8080ea2620d4de3c3fb43f0c5b00ddb4ccff3d96ca0a6705ab",
+    "config_sha256": "73c0b1a4f4bb7cf341c8882806852a9aaea81c81a3d956cde575c1814e3616f6",
+    "view": {
+      "active": null,
+      "capacity": {
+        "commit_free": 10402770944,
+        "disk_free": {
+          "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 69180039168
+        },
+        "physical_free": 11054026752
+      },
+      "config_digest": "7cde8a803ad396d5e87138fb904aa7dfa116625ed69c5e7ba04b1d270f639d1e",
+      "disk_enforcement": "reservation_and_monitored_threshold",
+      "dispatch": {
+        "codex_admitted": 0,
+        "codex_request_digests": [],
+        "epoch": 0,
+        "mode": "running",
+        "schema": "aide.job-dispatch.v1"
+      },
+      "log_enforcement": "bounded_pipe_drain",
+      "memory_enforcement": "Windows_Job_commit_limit",
+      "reservations": {
+        "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 1378877440
+      },
+      "writes": false
+    }
+  },
+  {
+    "command": [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "job",
+      "inspect",
+      "--config",
+      ".aide.local/scoped-job-entry-01-execution.json"
+    ],
+    "exit_code": 0,
+    "bytes": 745,
+    "sha256": "6f46bef5288a47332ff9447f4aefb3fe782930d221e0207d702f593be98aa8af",
+    "config_sha256": "1da3a51a9f1080c38897a1c5df3d8bdb438715e4fbf3d5d07f274ae6175dde88",
+    "view": {
+      "active": null,
+      "capacity": {
+        "commit_free": 10403225600,
+        "disk_free": {
+          "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 69180030976
+        },
+        "physical_free": 11063517184
+      },
+      "config_digest": "57b25cad0fb28c9f4ec5caa7b0aa311013cc35743db240682d2324f96784cca3",
+      "disk_enforcement": "reservation_and_monitored_threshold",
+      "dispatch": {
+        "codex_admitted": 0,
+        "codex_request_digests": [],
+        "epoch": 0,
+        "mode": "running",
+        "schema": "aide.job-dispatch.v1"
+      },
+      "log_enforcement": "bounded_pipe_drain",
+      "memory_enforcement": "Windows_Job_commit_limit",
+      "reservations": {
+        "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 24182784
+      },
+      "writes": false
+    }
+  }
+]

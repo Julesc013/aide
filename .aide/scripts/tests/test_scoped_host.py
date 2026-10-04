@@ -1,5 +1,8 @@
 """Small owned fixtures for public scoped entry admission and identity checks."""
 import importlib.util
+import argparse
+from contextlib import redirect_stdout
+import io
 import json
 import os
 from pathlib import Path
@@ -17,6 +20,105 @@ spec.loader.exec_module(scope)
 
 
 class ScopedHostTests(unittest.TestCase):
+    def inspection_lite(self):
+        name = 'scope_inspection_lite'
+        if name not in sys.modules:
+            spec = importlib.util.spec_from_file_location(name, REPO/'.aide/scripts/aide_lite.py')
+            module = importlib.util.module_from_spec(spec)
+            sys.modules[name] = module
+            spec.loader.exec_module(module)
+        return sys.modules[name]
+
+    def inspect_command(self, *, metadata=None, failure=None):
+        lite = self.inspection_lite()
+        args = argparse.Namespace(repo_root=REPO, config=self.root/'config.json',
+                                  job_command='inspect', manifest=None)
+        original = {'config_digest': 'fixture-digest', 'writes': False,
+                    'capacity': {'fixture': 123}, 'dispatch': {'mode': 'running'}}
+        output = io.StringIO()
+        if metadata is None:
+            from core.execution import managed_workspace
+            with mock.patch.object(lite, '_job_wait_read_json', return_value=({}, 'unused')), \
+                    mock.patch.object(managed_workspace, 'inspect', return_value=original,
+                                      side_effect=failure), redirect_stdout(output):
+                result = lite.command_managed_job(args)
+        else:
+            owner = mock.Mock()
+            owner.inspect.return_value = original
+            owner.inspect.side_effect = failure
+            host = mock.Mock()
+            host.inspection_metadata.return_value = metadata
+            adapter = mock.Mock()
+            adapter.prepare.return_value = (owner, host)
+            with mock.patch.object(lite, '_job_wait_read_json', return_value=({'execution_host': {}}, 'unused')), \
+                    mock.patch.object(lite.importlib.util, 'spec_from_file_location'), \
+                    mock.patch.object(lite.importlib.util, 'module_from_spec', return_value=adapter), \
+                    redirect_stdout(output):
+                result = lite.command_managed_job(args)
+            owner.run.assert_not_called()
+            adapter.run.assert_not_called()
+        return result, json.loads(output.getvalue())
+
+    def scoped_metadata(self, **overrides):
+        return {'config_digest': 'fixture-digest', 'kind': 'codex_sandbox_checks',
+                'aggregate_limit_bytes': 256*1024*1024,
+                'canonical_outputs': ['.aide/export/aide-lite-pack-v0'],
+                'toolchain_read_root_count': 2, **overrides}
+
+    def test_legacy_inspect_preserves_fields_without_filesystem_claim(self):
+        result, view = self.inspect_command()
+        self.assertEqual(result, 0)
+        self.assertEqual(view['capacity'], {'fixture': 123})
+        self.assertEqual(view['dispatch'], {'mode': 'running'})
+        self.assertFalse(view['writes'])
+        boundary = view['execution_boundary']
+        self.assertEqual(boundary['worker_write_placement'], 'not_enforced_by_Windows_Job')
+        self.assertIsNone(boundary['aggregate_limit_bytes'])
+        self.assertEqual(boundary['aggregate_admission'], 'not_configured')
+        self.assertEqual(boundary['outer_session_containment'], 'unobserved')
+        self.assertFalse(boundary['controls_outer_session'])
+
+    def test_scoped_inspect_is_not_a_locked_admission_or_qualification(self):
+        result, view = self.inspect_command(metadata=self.scoped_metadata())
+        self.assertEqual(result, 0)
+        boundary = view['execution_boundary']
+        self.assertEqual(boundary['config_digest'], view['config_digest'])
+        self.assertTrue(boundary['configuration_only'])
+        self.assertEqual(boundary['canonical_output_allowlist'], ['.aide/export/aide-lite-pack-v0'])
+        self.assertEqual(boundary['aggregate_limit_bytes'], 256*1024*1024)
+        self.assertFalse(boundary['aggregate_admission_checked_by_inspection'])
+        self.assertFalse(boundary['provides_hard_filesystem_quota'])
+        self.assertEqual(boundary['worker_read_isolation'], 'not_verified_by_inspection')
+        self.assertIn('editor_and_filesystem_tools', boundary['uncovered_routes'])
+
+    def test_readonly_inspect_retains_empty_canonical_allowlist(self):
+        result, view = self.inspect_command(metadata=self.scoped_metadata(
+            kind='codex_sandbox_readonly', canonical_outputs=[]))
+        self.assertEqual(result, 0)
+        self.assertEqual(view['execution_boundary']['canonical_output_allowlist'], [])
+
+    def test_inspect_refusal_never_emits_a_successful_boundary(self):
+        result, view = self.inspect_command(metadata=self.scoped_metadata(),
+                                           failure=ValueError('local model permission absent'))
+        self.assertEqual(result, 1)
+        self.assertEqual(view['result'], 'REFUSED')
+        self.assertFalse(view['writes'])
+        self.assertNotIn('execution_boundary', view)
+
+    def test_inspection_source_digest_change_refuses_without_fallback(self):
+        result, view = self.inspect_command(metadata=self.scoped_metadata(config_digest='replaced'))
+        self.assertEqual(result, 1)
+        self.assertEqual(view['result'], 'REFUSED')
+        self.assertIn('configuration identity changed', view['reason'])
+        self.assertFalse(view['writes'])
+        self.assertNotIn('execution_boundary', view)
+
+    def test_inspection_omits_unknown_local_configuration(self):
+        result, view = self.inspect_command(metadata=self.scoped_metadata(
+            private_fixture='DO_NOT_PROJECT_THIS_VALUE'))
+        self.assertEqual(result, 0)
+        self.assertNotIn('DO_NOT_PROJECT_THIS_VALUE', json.dumps(view))
+
     def setUp(self):
         parent = scope.bounded_path(os.environ['AIDE_RESOURCE_TEST_PARENT'], directory=True)
         # These disposable fixtures carry no secrets. Windows mode 0700 on

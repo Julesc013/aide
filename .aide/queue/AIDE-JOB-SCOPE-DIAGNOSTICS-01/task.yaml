@@ -1,0 +1,53 @@
+schema_version: aide.queue-task.v0
+id: AIDE-JOB-SCOPE-DIAGNOSTICS-01
+title: Explain the actual managed-job inspection boundary
+type: implementation
+status: running
+planning_state: bounded_projection_implementation
+result: IN_PROGRESS
+created_at: 2026-10-04
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+authority_basis: Active campaign implementation objective, owner containment priority, and existing bounded-child delegation.
+objective: Add truthful additive diagnostics to the existing job inspect command without widening execution or claiming outer containment.
+requirements:
+  - AIDE-AUTH-001 separate intended, observed, permission and support axes
+  - AIDE-STATE-002 preserve unverified and unknown status
+  - AIDE-STATE-003 bind current views to their configuration source and omissions
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/**
+    - core/execution/scoped_host.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_scoped_host.py
+    - docs/reference/aide-lite-test-runner.md
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/profile.yaml
+    - .aide/queue/index.yaml
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/context/**
+    - .aide/generated/**
+    - AGENTS.md
+    - .agents/skills/**/SKILL.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  generated_only: Export, generated views, context and AGENTS/skill managed sections; no manual governance rewrites.
+  read_only_runtime: .aide/release/stable/aide-lite-v1.0.0.zip
+  read_only_config: .aide.local/execution.json and .aide.local/scoped-job-entry-01-execution.json
+  permitted_local_state:
+    - .aide.local/job-scope-diagnostics-01-job.json
+  external_resource_root: D:/Projects/AIDE/.aide.local/execution
+  forbidden_operations:
+    - model/provider calls, new worktrees/clones/storage roots or machine changes
+    - deletion outside exact owned disposable test scratch
+    - rewriting draft/adopted specs, historical decisions, release assets or host configuration
+    - claiming whole-session containment or locked aggregate admission from inspection
+branch_plan:
+  base: e3e6f8bcff762638326853746dfd952f826f1f76
+  helper: git plan ready_dry_run on clean dev before the four owned compiled-intake changes
+  action: One bounded task branch in the existing checkout.
+  integration: Exact independent dev-only effect required; main and all other refs preserved.
+review_gate: Independent exact source and effect review under the existing campaign delegation.

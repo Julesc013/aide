@@ -234,6 +234,32 @@ other sessions or GitHub integration and must not be called whole-session
 containment. Qualification evidence is in the session-containment and
 scoped-job-entry queue items.
 
+### Inspection boundary diagnostics
+
+Successful `job inspect` retains its existing resource/dispatch fields and adds
+`execution_boundary`, bound to the same configuration digest. An explicit scoped
+selection reports its configured command sandbox, canonical allowlist, read-root
+count and aggregate ceiling. Legacy selection reports that Windows Job resources
+do not enforce filesystem placement.
+
+This is configuration evidence. Inspection does not run the locked aggregate
+inventory, verify filesystem behavior or establish read isolation. Aggregate
+admission happens under the owner lock during `job run`; disk growth remains
+monitored and no hard filesystem quota is supplied by this mechanism.
+
+Outer-session containment remains `unobserved`: the job does not control the
+outer shell, editing/filesystem tools, plugins/integrations, other sessions or
+unmanaged processes and external host metadata/caches. A configured worker is
+therefore not a whole-session qualification. Existing exact route observations
+remain necessary and may include failures.
+
+The scoped diagnostic uses the envelope captured by the prepared host, rather
+than the earlier command read. A digest mismatch refuses inspection without a
+fallback or allocation. A refusal remains `REFUSED` with `writes: false`; it does
+not acquire a successful boundary report. Unknown local configuration fields and
+their values are not projected. This addition grants no new writes, permissions,
+model requests, setup operations or automatic retries.
+
 ## Raw unittest discovery
 
 The supported raw unittest discovery command is:

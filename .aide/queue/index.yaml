@@ -4,6 +4,15 @@ policy: .aide/queue/policy.yaml
 default_concurrency: 1
 canonical_source: .aide/queue
 items:
+  - id: AIDE-JOB-SCOPE-DIAGNOSTICS-01
+    status: running
+    planning_state: bounded_projection_implementation
+    title: Explain the managed job inspection boundary
+    task: .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/task.yaml
+    exec_plan: .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/prompt.md
+    evidence: .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/evidence
+    description: Add an inspect-only source-bound projection, without changing permissions, admission or external host configuration.
   - id: AIDE-ARCHITECTURE-RECONCILIATION-01
     status: passed_with_notes
     planning_state: accepted_documentation_runtime_gates_preserved

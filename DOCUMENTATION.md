@@ -594,3 +594,10 @@ Logical file sizes are not claimed as measured recoverable disk space.
 
 These records clarify source, review and qualification scope; draft refinements
 are not new adopted schemas or supported runtime capabilities.
+
+## Managed inspection boundary
+
+Existing command semantics and limits: docs/reference/aide-lite-test-runner.md,
+Inspection boundary diagnostics. Source/evidence/review owner:
+.aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/. Configuration-only inspection does not
+establish read isolation, locked aggregate admission or outer containment.

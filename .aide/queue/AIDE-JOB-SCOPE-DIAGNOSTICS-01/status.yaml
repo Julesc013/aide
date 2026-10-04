@@ -1,0 +1,6 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-JOB-SCOPE-DIAGNOSTICS-01
+status: running
+planning_state: bounded_projection_implementation
+result: IN_PROGRESS
+updated_at: 2026-10-04

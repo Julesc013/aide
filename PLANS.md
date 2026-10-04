@@ -4436,3 +4436,11 @@ by that table. First priorities are truthful projections/explainable operations,
 compatibility, portable checkpoints and ownership-aware resource planning.
 REPORT.md in the queue packet contains source-linked current capabilities,
 proposal dispositions, unresolved operational gates and verification limitations.
+
+## 2026-10-04 managed inspection boundary
+
+AIDE-JOB-SCOPE-DIAGNOSTICS-01 implements the first bounded C8 projection over
+e3e6f8bc. Existing inspect fields/refusals are preserved; configured worker
+placement and run-only aggregate admission are separated from unverified outer
+routes. Existing scoped worker validation and exact export generation provide
+qualification; host setup, model and release gates remain independent.
