@@ -1,0 +1,24 @@
+{
+  "checks": {
+    "commit_message_check": 0,
+    "complete_current_binding_inputs": 41,
+    "diff_check": 0,
+    "generated_compile": 0,
+    "git_plan": "ready_dry_run",
+    "harness_validate": 0,
+    "source_proof_guard": "PASS",
+    "supervisor_pins": 24,
+    "working_and_frozen_pack_checksums": 847
+  },
+  "live_model_requests": 0,
+  "native_build": "NOT RUN; exact independent review first",
+  "remaining_gates": [
+    "current asset consumers/replay",
+    "separate runtime promotion and qualified source/ref integration",
+    "outer/client read scope",
+    "historical dispositions",
+    "live/matched efficiency",
+    "first-stable ACCEPT and publication/downloaded consumers"
+  ],
+  "schema": "aide.capability-payload-build-preparation-validation.v1"
+}

@@ -1,0 +1,151 @@
+{
+  "accepted_source_closeout": {
+    "all_notes_nonblocking_disposed": true,
+    "commit": "998a4d19b3c2c1fb5ee912365e2106c76f6a3e05",
+    "tree": "cdbe6dbf2ef789e6481aab50b2ee05dc4bc68e03",
+    "verdict": "ACCEPT_WITH_NOTES"
+  },
+  "actual_outputs": [
+    ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt",
+    ".aide/release/stable/aide-lite-v1.0.0.manifest.json",
+    ".aide/release/stable/aide-lite-v1.0.0.tar.gz",
+    ".aide/release/stable/aide-lite-v1.0.0.zip"
+  ],
+  "aggregate_estimate": {
+    "aggregate_bytes": 268435456,
+    "by_pool": {
+      "control": 13694135,
+      "retained": 219055652,
+      "scratch": 0
+    },
+    "canonical_release_bytes": 3942818,
+    "formula": "existing scratch+retained+control+all release contents; reserve scratch+result+2*logs+2MiB metadata+canonical",
+    "fresh_locked_admission_required": true,
+    "margin_bytes": 1334147,
+    "reservation_bytes": 30408704,
+    "used_bytes": 236692605
+  },
+  "authority": "recorded owner campaign delegation and current release-effect WorkUnit; independent exact build admission required",
+  "canonical_outputs": {
+    ".aide/release": {
+      "bytes": 8388608,
+      "volume_id": "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\"
+    }
+  },
+  "configuration_projection_raw_sha256": "75d951da7aad70cb54ecd5f159fda24bb151b610200de8a32675b331d0a1e714",
+  "configuration_raw_sha256": "75d951da7aad70cb54ecd5f159fda24bb151b610200de8a32675b331d0a1e714",
+  "excluded": [
+    "consumer/replay/runtime-promotion/ref/tag/publication/model/target/host effects",
+    "new pool/drive/worktree, evidence deletion or budget widening",
+    "stable certification or whole-session containment claim"
+  ],
+  "inputs": {
+    ".aide/capabilities/capability-evidence-bindings.schema.json": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
+    ".aide/capabilities/capability-seeds.yaml": "46817a46802870980297f9923f6e1d31fd6a9c418ced7ced10283d2e2565fd5f",
+    ".aide/export/aide-lite-pack-v0/README.md": "cfe3001e84b68f7b78b249e107edf0843d2310cadfe5a3717b17ce1252d61475",
+    ".aide/export/aide-lite-pack-v0/checksums.json": "53325b1ce4a945b1498f57bc99037e23a855c48f8db69a5c692f4ed0910d7a46",
+    ".aide/export/aide-lite-pack-v0/export-report.md": "9eebb21eb1c7dea2507195f57333c3206cd946128272f4e6a9a1dd3a416819b2",
+    ".aide/export/aide-lite-pack-v0/import-policy.yaml": "d1ec0ff25cd147736853e03181536480463fc58fc8db1fd39306278d89d89e13",
+    ".aide/export/aide-lite-pack-v0/install.md": "3bce5e90257d5d5c3b25ae00d6a8e47b693c8b944bbcf1340b49c5646170ea2f",
+    ".aide/export/aide-lite-pack-v0/manifest.yaml": "763317d3bf8631339cba01bb858054a42e0ee9f432f023abe64f429fe44e0615",
+    ".aide/policies/capability-reality.yaml": "7fd503b9a3560ee32e5b56cb3fb7a0cddc865f46a42780ceceaa636e18645e18",
+    ".aide/policies/release-versioning.yaml": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/worker.py": "ece020b49246ac1ccda4acf54172fd037f11583c36f48e8589f4292412336838",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md": "5b37459902899f12b7ad17f5cf304215d7db1ff6887999066a9f14944477f69b",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/capability_payload_refresh.py": "cdccd6d9cb4ddecaa1bdcc5627b7ddb28b57719de70d6b497cba0857237b3558",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-payload-build-configuration.json": "75d951da7aad70cb54ecd5f159fda24bb151b610200de8a32675b331d0a1e714",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-payload-current-source-result.json": "0ba452be6413d83d28cd7c22a59487ad2365fab159d9052fd41b3554b24fec8a",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-payload-source-closeout-acceptance.json": "a5a5aa4d31490584a330de27e825b9702baed4e080d7630467724ef9384941bc",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/source-qualification.json": "7d0e68d35b9724fa7f9cf8bc589a099695d598f69e7de72f1aa194388e7836f1",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/status.yaml": "7345fbd852ef6014c5e09363c91fa962e13c7ffcb44ea5bc3498c3f20181fdac",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml": "3aae55df0d09279dd1946475b49166fee1951cc078af464076602ed17de91f2e",
+    ".aide/scripts/aide_lite.py": "387c5b2fe710baf84c48f13ab124ba5ec253c9f55b561261eacc95ca8480b3f7",
+    ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+    ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+    ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+    ".aide/scripts/tests/test_stable_release_admission.py": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+    ".aide/scripts/tests/test_x_os_02_capability_reality.py": "4509355fc87b618c013ac1406e24e5a2181f5ac4c658f89fc0b8eae6a20393ef",
+    "core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+    "docs/reference/capability-reality-ledger.md": "1533b4122dc1666e92058643cc167070a3defab64a57c078fde4574082b7c51e"
+  },
+  "old_assets": {
+    ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt": {
+      "bytes": 274,
+      "recovery_blob": "efaaee8152558dde65c7cfb79bfb287f3b7465c9",
+      "sha256": "aeded870e201d79a8d4689b326f1cb62434e0aa6962f5b9ef1fbc5c3cb9dad8b"
+    },
+    ".aide/release/stable/aide-lite-v1.0.0.manifest.json": {
+      "bytes": 4955,
+      "recovery_blob": "74932a494acbad812ed8937f74cd264d3ade05ac",
+      "sha256": "7c737cfdc224dec90aa4c7fa03ed74a5ba2becee8a77f65c0d5f1c9a317068fa"
+    },
+    ".aide/release/stable/aide-lite-v1.0.0.tar.gz": {
+      "bytes": 796710,
+      "recovery_blob": "54a986378567ffb3325c207339c12201c4f836f4",
+      "sha256": "4b3e22ee351aa31e9fdb5f50e89affd38ef3908163083058f2b151c0c57d8541"
+    },
+    ".aide/release/stable/aide-lite-v1.0.0.zip": {
+      "bytes": 1131772,
+      "recovery_blob": "ae365dd6701bffbac55947d429062beb1599acd5",
+      "sha256": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0"
+    }
+  },
+  "original_configuration_raw_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "pack": {
+    "binding_schema_sha256": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
+    "checksums_sha256": "53325b1ce4a945b1498f57bc99037e23a855c48f8db69a5c692f4ed0910d7a46",
+    "cli_sha256": "387c5b2fe710baf84c48f13ab124ba5ec253c9f55b561261eacc95ca8480b3f7",
+    "source_commit": "dd684b45eef95b78028885b6f36780bc0acb0c31",
+    "working_and_frozen_entries_verified": 847
+  },
+  "phase": "one current-payload local build and stable-validate",
+  "recovery": "retain terminal failure and owned handle; no uncertainty replay; original archive selection must not be used after replacement until separately accepted exact promotion, or restore four exact old blobs under reviewed recovery before its use",
+  "recovery_source_commit": "2e77e5d58c5c29fcefcbd018c3010219dcb2e338",
+  "required_after": [
+    "complete terminal receipt/log/output tree verification and retirement",
+    "stable-build and stable-validate exit0; exact ZIP/TAR/manifest/sums current payload identity",
+    "only four expected canonical assets changed; original config bytes and read-only pack/supervisor unchanged"
+  ],
+  "required_before": [
+    "exact independent frozen source/build effect review",
+    "clean frozen source/tree; original config/four assets/24 pins/all847 working and frozen checksums unchanged",
+    "no active scratch/reservation; one exact new dispatch intent; fresh locked admission; no fallback"
+  ],
+  "schema": "aide.capability-payload-current-build-effect.v1",
+  "selected_local_configuration": ".aide.local/capability-payload-build-execution.json",
+  "selected_local_manifest": ".aide.local/capability-payload-build-job.json",
+  "source": "exact frozen current branch after independent review",
+  "source_qualification_sha256": "7d0e68d35b9724fa7f9cf8bc589a099695d598f69e7de72f1aa194388e7836f1",
+  "supervisor": {
+    "disjoint_from_release_writes": true,
+    "files": {
+      ".aide/export/aide-lite-pack-v0/files/core/apply/__init__.py": "d9f1cb35bdf8557ef871410aba60c9982f34a9bea2a9381eef17b00ab1b13ac8",
+      ".aide/export/aide-lite-pack-v0/files/core/apply/managed_sections.py": "a6cda7e7ffb4e5d3d8e6567192b4a37368c0291608d345612cd14b2b55a16220",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/__init__.py": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/managed_workspace.py": "d9338d9d25470b1a39f8c74566f7c108249a98dc564ac395f21b66ebc4eccfe3",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/provider.py": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/registered_process.py": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/__init__.py": "84f45062b88514d03f4d1618aa78df3d9aa506c94b870346bfa6e708f522a103",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/gateway_status.py": "40ef20c8890835e63953bada76ad118e966527dc384c72fa1f6b9ce7739a4a88",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/server.py": "b887d27bcbd75377005c3760bedbf2b36cd5caefd26bee5ff8b06cdaa2ec9aff",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/tests/__init__.py": "fc7e58b76b027cc9c7c37011c5aa40b240c09f37cdef2b71bbbe2a653a368860",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/tests/test_gateway_skeleton.py": "8e307b81e6aad7e5949c5788c61da282282f5fe076e3c5d888099441e6902b38",
+      ".aide/export/aide-lite-pack-v0/files/core/protocol/__init__.py": "b131e408f459709ebb03c6becc526f09517d2082f536efd643a8b7812ecdd946",
+      ".aide/export/aide-lite-pack-v0/files/core/protocol/execution_receipt.py": "966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+      ".aide/export/aide-lite-pack-v0/files/core/protocol/process_invocation.py": "aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/__init__.py": "91fda471923f178eb877be4afcd9f59ed336a2533fb4e7f50634ac1e3915912c",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/contracts.py": "ac7ba2c4cdd4f8ca08971858a0cc04c7c0fbf1af4896ae21c654301b6d51fee8",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/registry.py": "caeaaf76b5630bbfa837f847ff6dcab28f4c986a3ec277769b2bde78b28dcaa2",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/status.py": "341501a6a5d2bf3aedcce09b0f0b143ed39e3dd949b2ddd4fdad803c009f4886",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/tests/__init__.py": "fa00ddd28dbff411d7189b20793f00e464b26c0bdb9c9144296a3fe14d17c205",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/tests/test_provider_contracts.py": "ab9f4f74e08354cad3cbf0fe26bb56ab121fa588a7659b5fb9577b33edf73e8a",
+      ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/__init__.py": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
+      ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/state.py": "9b65b7953cfea7af9444abe6157b5edfe670a46be90211a8cf8d543855d12105",
+      ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
+    },
+    "kind": "read-only verified export directory",
+    "root": ".aide/export/aide-lite-pack-v0/files",
+    "same_24_old_archive_bytes": true
+  }
+}

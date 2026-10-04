@@ -755,3 +755,8 @@ add finite public-input binding and prove a meaningful managed CLI workflow.
 Exact child admission precedes implementation. Current archive and pinned D
 supervisor stay unchanged; new source requires later asset requalification.
 See its ExecPlan; no broader feature campaign or second status authority.
+
+
+## 2026-10-05 Current-payload build records
+
+The current development report remains `.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md`. Its evidence directory now owns the exact local build configuration, manifest and effect. Source acceptance and build admission are distinct from consumer and stable release certification.

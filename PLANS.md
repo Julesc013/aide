@@ -4607,3 +4607,8 @@ add finite public-input binding and prove a meaningful managed CLI workflow.
 Exact child admission precedes implementation. Current archive and pinned D
 supervisor stay unchanged; new source requires later asset requalification.
 See its ExecPlan; no broader feature campaign or second status authority.
+
+
+## 2026-10-05 Current-payload build follows accepted source
+
+The stable release-effect WorkUnit now prepares an exact local build from the current verified export, using its unchanged 24-source read-only supervisor and existing D pools. All release contents count toward the unchanged 256 MiB aggregate. Independent frozen-effect review and fresh locked admission precede dispatch; current consumers, replay, runtime promotion and publication remain separately gated.

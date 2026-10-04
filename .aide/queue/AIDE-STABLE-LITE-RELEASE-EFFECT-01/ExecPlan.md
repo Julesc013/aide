@@ -977,3 +977,33 @@ evidence/capability-payload-source-closeout-acceptance.json. This metadata
 descendant records that verdict without changing its subject; future exact
 asset/consumer/integration/release review must name its own frozen source and
 effect. No source/fixture rerun follows solely from recording the verdict.
+
+
+### Exact current-payload build preparation
+
+The current source closeout is independently accepted. The next local effect
+is one build/validation of the four existing stable candidate destinations from
+the current verified export; this is not stable certification or publication.
+Use the unchanged 24 supervisor sources directly from the read-only export,
+disjoint from the existing `.aide/release` write root. This phase changes only
+the explicit temporary selection, not the original a241 configuration.
+
+The existing worker entry's build phase receives the canonical LF source proof
+SHA256 7d0e68d35b9724fa7f9cf8bc589a099695d598f69e7de72f1aa194388e7836f1.
+Its exact guarded source hashes remain current. All 847 working and frozen
+pack checksums, clean source/export ancestry and original four Git preimages
+are required before dispatch. The envelope remains 16 MiB scratch, 1 MiB logs,
+1 MiB result, 8 MiB release reservation; 256 MiB aggregate unchanged. Count
+all existing release contents, not only the four stable files. Current observed
+headroom is an estimate; fresh locked admission decides whether it runs.
+
+Freeze configuration, manifest template, effect and source; require independent
+review of the exact local build. One dispatch intent, bounded observer and
+complete raw receipt/log/output verification; inspect exact changed paths and
+archive payloads, retirement and reservations. Keep the previous assets in Git.
+After archive replacement the original archive pin is deliberately stale:
+do not use that original selection until separately accepted exact runtime
+promotion; on failed qualification restore the four exact recorded old blobs.
+Do not replay uncertainty or widen capacity. Current consumers, delivered C1
+and deterministic replay retain all assertions and require their own exact
+asset/envelope reviews; their old estimated fit is not an admission.
