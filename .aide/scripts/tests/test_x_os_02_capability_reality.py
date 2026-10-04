@@ -103,7 +103,7 @@ class XOS02CapabilityRealityTests(unittest.TestCase):
                 self.assertIn(marker, markdown)
 
     def test_changed_source_evidence_invalidates_retained_ledger(self) -> None:
-        with tempfile.TemporaryDirectory() as temp:
+        with aide_lite.public_archive_fixture("aide-public-release-test-") as temp:
             root = Path(temp)
             write_fixture(root)
             aide_lite.write_capability_ledger(root)
@@ -114,7 +114,7 @@ class XOS02CapabilityRealityTests(unittest.TestCase):
             self.assertEqual(validity.get("state"), "STALE")
 
     def test_missing_implementation_evidence_stays_unknown(self) -> None:
-        with tempfile.TemporaryDirectory() as temp:
+        with aide_lite.public_archive_fixture("aide-public-release-test-") as temp:
             root = Path(temp)
             record = aide_lite.capability_record_from_seed(root, {
                 "capability_id": "missing_implementation",

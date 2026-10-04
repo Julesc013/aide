@@ -1,0 +1,25 @@
+test(capability): use observable managed baseline fixtures
+
+## Summary
+- Correct the two prepared red regressions before any native dispatch.
+## Why
+- Independent preexecution review found Python private temporary directories can prevent the separate Windows coordinator from inspecting cleanup.
+## Changed
+- Reuse the existing authenticated public fixture factory and original job TMP.
+- Preserve both assertions and bind the revised test and manifest hashes.
+## Validation
+- PASS: source AST, unchanged production CLI and diff checks.
+- NOT RUN: two expected baseline assertion failures pending exact replacement source and native review.
+## Changelog
+- Fixed: managed baseline fixture observability.
+## Risks
+- The rejected subject was never dispatched; this correction does not replay any uncertain effects.
+## Follow-up
+- Independently review the replacement exact source and effect before one native invocation.
+
+AIDE-Task: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
+AIDE-Phase: red-fixture-preexecution-correction
+AIDE-Result: prepared_not_run
+AIDE-Scope: two tests and exact native envelope
+AIDE-Token-Impact: prevent known setup failure before allocation
+AIDE-Quality-Gate: independent exact replacement source/native review
