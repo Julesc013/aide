@@ -24,8 +24,14 @@
   "new_job_or_workspace": false,
   "acl_machine_or_config_change": false,
   "model_call": false,
-  "helper_sha256": "e9b5aeabba305d0a2c1b9342d9be1445c0f2410c963fe9d626a180ad1f2fd560",
-  "controller_sha256": "7438e270679a131e150abe180b1629ecb6caba92a5f161bb90fac58e861b7626",
+  "helper_sha256": "4082f9cb172d050990279783eeb7f7025efa3459565329f786b9b77af98005a8",
+  "controller_sha256": "82071a1f7e5d62114b96111a6d2443350f8531b0a7d7d77fafdf16f7e8ecfacf",
   "controller_routing": "Existing pinned WindowsJobHost plus existing codex sandbox, exact same owned scratch and job ID under estate lock; no AIDE job resubmission; original result/lease untouched.",
-  "observation_log": "logs/fixture-owner-observation"
+  "observation_log": "logs/fixture-custody-observation",
+  "owner_sid_required": "S-1-5-21-2168396775-1281633702-301206425-1003",
+  "fixture_identity": [
+    3781016413010784355,
+    3659174699367761
+  ],
+  "approved_observation": null
 }

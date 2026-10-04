@@ -1,0 +1,24 @@
+chore(release): bind actual fixture owner and custody guard
+
+## Summary
+- Freeze a read-only diagnostic of the exact same-job owner mismatch.
+## Why
+- The accepted observation stopped before traversal or retirement.
+## Changed
+- Bind actual Windows SID resolution and strong leaf identity; sort and hash entry identities.
+- Require an exactly approved custody observation before apply; preserve both failures.
+## Validation
+- PASS: prior observation was quiescent and preserved the original lease; changed observation remains review-pending.
+## Changelog
+- Changed: added precise metadata to an owned recovery refusal.
+## Risks
+- No deletion or fixture acceptance is authorized by this diagnostic.
+## Follow-up
+- Independently review and inspect; resolve ownership before any retirement.
+
+AIDE-Task: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
+AIDE-Phase: owned-fixture-observation
+AIDE-Result: review_pending
+AIDE-Scope: exact owned task recovery helper and evidence
+AIDE-Token-Impact: bounded terminal metadata; no model call
+AIDE-Quality-Gate: independent review required

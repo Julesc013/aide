@@ -73,7 +73,7 @@ def main():
     fixture = scratch / effect["owned_fixture"]
     root = fixture.lstat()
     if (not stat.S_ISDIR(root.st_mode) or root.st_file_attributes & 0x400
-            or not root.st_ino):
+            or not root.st_ino or [root.st_dev, root.st_ino] != effect["fixture_identity"]):
         raise RuntimeError("invalid fixture root")
     if not fixture.resolve(strict=True).is_relative_to(scratch.resolve(strict=True) / "tmp"):
         raise RuntimeError("fixture escaped owned job")
@@ -97,7 +97,7 @@ def main():
     total = 0
     digest = hashlib.sha256()
     owner = owner_sid(fixture)
-    if owner != "S-1-5-21-2168396775-1281633702-301206425-1002":
+    if owner != effect["owner_sid_required"]:
         print(json.dumps({"status": "OWNER_MISMATCH", "job_id": record["job_id"],
                           "fixture": effect["owned_fixture"],
                           "fixture_identity": [root.st_dev, root.st_ino],
@@ -107,7 +107,7 @@ def main():
     while pending:
         directory = pending.pop()
         with os.scandir(directory) as children:
-            for item in children:
+            for item in sorted(children, key=lambda child: child.name):
                 path = Path(item.path)
                 entries.append(path)
                 if len(entries) > effect["max_entries"]:
@@ -121,6 +121,7 @@ def main():
                     if relative not in directories:
                         raise RuntimeError("unknown fixture directory")
                     pending.append(path)
+                    digest.update(json.dumps([relative, "directory", info.st_dev, info.st_ino]).encode())
                 elif stat.S_ISREG(info.st_mode) and info.st_nlink == 1:
                     total += info.st_size
                     if total > effect["bound_bytes"]:
@@ -128,7 +129,8 @@ def main():
                     data = path.read_bytes()
                     if not any(body.startswith(data) for body in expected.get(relative, [])):
                         raise RuntimeError("unknown or modified fixture bytes")
-                    digest.update(json.dumps([relative, len(data), hashlib.sha256(data).hexdigest()]).encode())
+                    digest.update(json.dumps([relative, "file", info.st_dev, info.st_ino,
+                                              len(data), hashlib.sha256(data).hexdigest()]).encode())
                 else:
                     raise RuntimeError("shared or nonregular fixture entry")
     observation = {"status": "VERIFIED", "job_id": record["job_id"],
@@ -138,6 +140,11 @@ def main():
                    "file_custody_digest": digest.hexdigest(), "acl_changes_by_helper": 0,
                    "apply": args.apply}
     if args.apply:
+        approved = effect.get("approved_observation")
+        current = {key: observation[key] for key in ("fixture_identity", "owner_sid", "entries",
+                                                    "logical_bytes", "file_custody_digest")}
+        if approved != current:
+            raise RuntimeError("exact inspected custody is not approved for retirement")
         for path in sorted(entries, key=lambda item: len(item.parts), reverse=True):
             if path.is_dir():
                 path.rmdir()

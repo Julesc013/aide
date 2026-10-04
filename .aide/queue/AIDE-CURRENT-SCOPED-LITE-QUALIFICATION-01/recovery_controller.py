@@ -56,7 +56,7 @@ def main():
                 sys.executable, "-B", str(TASK / "recover_fixture.py")]
         if args.apply:
             argv.append("--apply")
-        logs = scratch / "logs" / ("fixture-retirement" if args.apply else "fixture-owner-observation")
+        logs = scratch / "logs" / ("fixture-retirement" if args.apply else "fixture-custody-observation")
         environment = owner.sanitized_environment()
         environment.update(TEMP=str(scratch / "tmp"), TMP=str(scratch / "tmp"),
                            TMPDIR=str(scratch / "tmp"), PYTHONDONTWRITEBYTECODE="1")

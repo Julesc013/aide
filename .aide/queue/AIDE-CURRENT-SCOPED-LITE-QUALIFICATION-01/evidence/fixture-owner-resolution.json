@@ -1,0 +1,15 @@
+{
+  "job_id": "46e91fbfad5041828a02731d782b384f",
+  "fixture_identity": [
+    3781016413010784355,
+    3659174699367761
+  ],
+  "observed_owner_sid": "S-1-5-21-2168396775-1281633702-301206425-1003",
+  "authoritative_windows_sid_translation": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+  "creation_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+  "prior_wrong_assumption_sid": "S-1-5-21-2168396775-1281633702-301206425-1002",
+  "contents_inspected": false,
+  "lease_unchanged": true,
+  "first_verdict": "ACCEPT_WITH_NOTES inspection only 2aa27a36",
+  "prior_refusal": "REQUEST_CHANGES d77404dd reused logs"
+}
