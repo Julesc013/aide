@@ -29,7 +29,7 @@ class ScopedHostTests(unittest.TestCase):
             spec.loader.exec_module(module)
         return sys.modules[name]
 
-    def inspect_command(self, *, metadata=None, failure=None):
+    def inspect_command(self, *, metadata=None, failure=None, metadata_method=True):
         lite = self.inspection_lite()
         args = argparse.Namespace(repo_root=REPO, config=self.root/'config.json',
                                   job_command='inspect', manifest=None)
@@ -47,7 +47,10 @@ class ScopedHostTests(unittest.TestCase):
             owner.inspect.return_value = original
             owner.inspect.side_effect = failure
             host = mock.Mock()
-            host.inspection_metadata.return_value = metadata
+            if metadata_method:
+                host.inspection_metadata.return_value = metadata
+            else:
+                host = object()  # Older scoped adapter has no metadata method.
             adapter = mock.Mock()
             adapter.prepare.return_value = (owner, host)
             with mock.patch.object(lite, '_job_wait_read_json', return_value=({'execution_host': {}}, 'unused')), \
@@ -118,6 +121,14 @@ class ScopedHostTests(unittest.TestCase):
             private_fixture='DO_NOT_PROJECT_THIS_VALUE'))
         self.assertEqual(result, 0)
         self.assertNotIn('DO_NOT_PROJECT_THIS_VALUE', json.dumps(view))
+
+    def test_older_scoped_adapter_refuses_without_a_boundary_or_fallback(self):
+        result, view = self.inspect_command(metadata=self.scoped_metadata(), metadata_method=False)
+        self.assertEqual(result, 1)
+        self.assertEqual(view['result'], 'REFUSED')
+        self.assertIn('lacks configuration-bound inspection metadata', view['reason'])
+        self.assertFalse(view['writes'])
+        self.assertNotIn('execution_boundary', view)
 
     def setUp(self):
         parent = scope.bounded_path(os.environ['AIDE_RESOURCE_TEST_PARENT'], directory=True)

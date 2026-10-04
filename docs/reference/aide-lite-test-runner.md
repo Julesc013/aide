@@ -255,7 +255,9 @@ remain necessary and may include failures.
 
 The scoped diagnostic uses the envelope captured by the prepared host, rather
 than the earlier command read. A digest mismatch refuses inspection without a
-fallback or allocation. A refusal remains `REFUSED` with `writes: false`; it does
+fallback or allocation. A selected older scoped adapter without this metadata
+interface also refuses cleanly; no cross-version operation is inferred. A refusal
+remains `REFUSED` with `writes: false`; it does
 not acquire a successful boundary report. Unknown local configuration fields and
 their values are not projected. This addition grants no new writes, permissions,
 model requests, setup operations or automatic retries.

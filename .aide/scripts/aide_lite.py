@@ -45211,8 +45211,14 @@ def command_managed_job(args: argparse.Namespace) -> int:
             job = managed_workspace.read_json(args.manifest) if args.manifest else None
             if args.job_command == "inspect":
                 result = managed_workspace.inspect(args.config, job)
+                metadata = None
+                if scoped is not None:
+                    describe = getattr(scoped_host, 'inspection_metadata', None)
+                    if not callable(describe):
+                        raise ValueError('selected scoped host lacks configuration-bound inspection metadata')
+                    metadata = describe()
                 result['execution_boundary'] = managed_inspection_boundary(
-                    result['config_digest'], scoped_host.inspection_metadata() if scoped is not None else None)
+                    result['config_digest'], metadata)
             else:
                 result = (scoped.run(managed_workspace, scoped_host, args.config, job)
                           if scoped is not None else managed_workspace.run(args.config, job))

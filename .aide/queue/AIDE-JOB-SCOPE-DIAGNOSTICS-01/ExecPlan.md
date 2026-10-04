@@ -73,3 +73,11 @@ Retained log/output trees match receipt digests. Scratch is absent, reservation
 released and active marker absent. Exported CLI views match source inspection
 against the approved source checkout; this is not a new target install. Existing
 ZIP/configuration pins remain unchanged. Actual outer containment remains open.
+
+## Compatibility finding and repair
+
+Independent review of frozen 52938981 confirms a blocking newer-CLI/older-source
+adapter exception: absent inspection_metadata escaped structured REFUSED handling.
+Add a callable-method guard raising ValueError and one older-host regression;
+no legacy fallback or wider compatibility claim. Retain the first 70-test job
+as evidence of that subject; qualify the repaired source with 71 cases.

@@ -12945,7 +12945,12 @@ dispositions and require focused exact rereview before the dev move.
 Added a configuration-bound execution_boundary projection to successful job
 inspection. Prepared host metadata avoids stale early-read configuration claims;
 identity mismatch refuses without fallback. Legacy Jobs remain resource controls,
-not filesystem confinement. Six regressions cover command behavior, refusals,
+not filesystem confinement. Seven regressions cover command behavior, refusals,
 unknown data and source changes. Actual managed qualification is recorded in
 AIDE-JOB-SCOPE-DIAGNOSTICS-01; execution permissions and the accepted runtime
 archive remain unchanged.
+
+Independent review of 52938981 found an older-adapter missing-method exception
+that escaped the structured refusal. The fix adds a callable interface guard and
+one no-fallback regression; the first 70-test receipt is retained. The repaired
+source receives a new exact managed qualification before superseding review.
