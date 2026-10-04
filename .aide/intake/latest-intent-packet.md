@@ -3,12 +3,12 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 3198191b7ae9dd0cfeffd84f6e4f8e28b68ddd757bc9806cd5b83d465605efc9
-- raw_prompt_excerpt: Qualify current AIDE Lite candidate assets from accepted source bf559c0a939aba7f9d3d2f3922418428fcf9b6ee through the existing scoped runner and approved D storage. Pin the already accepted export runtime separately from release outputs;...
+- raw_prompt_hash: 5efae56ffb708ae63d728438c23e5daecbac3ba8245e2c7b97cf06e86fbe8649
+- raw_prompt_excerpt: Continue AIDE-SESSION-CONTAINMENT-01 storage ownership follow-up: read-only metadata and local Git checks of the single already recorded linked worktree D:/Development/FacMan/repositories/universal-setup-db9c210f4a17/worktrees/task-usk-w...
 - interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release
-- risk_class: release
+- risk_class: security
 - sizing_class: blocked
 - safe_to_execute: false
 - requires_split: true
@@ -24,6 +24,7 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
+- do not mutate target repositories from AIDE source repo
 - do not publish releases, tags, or assets from prompt alone
 
 ## Repo State Refs
@@ -31,7 +32,7 @@
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/Q17/status.yaml`
+- `.aide/queue/AIDE-CODEX-DISPATCH-GATE-01/status.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/repo/file-inventory.json`
 - `.aide/repo/latest-repo-intelligence.md`
@@ -40,8 +41,8 @@
 
 ## Branch State Refs
 
-- current_branch:dev
-- current_role:integration
+- current_branch:task/aide-current-scoped-lite-qualification-01
+- current_role:task
 - workflow:trunk_with_dev_integration
 - worktree_dirty:false
 

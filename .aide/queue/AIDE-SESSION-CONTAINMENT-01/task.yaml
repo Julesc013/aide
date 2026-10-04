@@ -36,6 +36,8 @@ scope:
   permitted_local_state:
     - .aide.local/session-containment-01-job.json
     - .aide.local/session-containment-01-execution.json
+    - .aide.local/session-storage-probe-execution.json
+    - .aide.local/session-storage-probe-job.json
   forbidden_operations:
     - new worktrees, clones, storage roots or recovery archives
     - machine-wide ACL, account, quota or Codex-default changes
@@ -54,3 +56,14 @@ verification:
   - same scoped path performs necessary repository validation and local Git read
   - aggregate before/after observations, bounded output and verified retirement
   - explicit uncovered routes and monitored versus enforced limits
+
+storage_discovery_followup:
+  status: exact_read_only_admission_pending
+  paths:
+    - D:/Development/FacMan/repositories/universal-setup-db9c210f4a17/worktrees/task-usk-wu-006-production-publisher
+    - D:/Projects/Universal/universal-setup
+  temporary_configuration: .aide.local/session-storage-probe-execution.json
+  temporary_manifest: .aide.local/session-storage-probe-job.json
+  current_branch_reuse: task/aide-current-scoped-lite-qualification-01
+  scope: bounded read-only metadata; original live config/runtime/assets fixed; target mutation forbidden
+  gate: exact independent admission/source/envelope before dispatch

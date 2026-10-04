@@ -1,0 +1,30 @@
+test(storage): prepare one bounded worktree custody discovery
+
+## Summary
+- Prepare an actual read-only metadata check of one previously recorded linked worktree and its known master.
+## Why
+- Wider cleanup remains unfinished; this candidate lacked untracked/ignored and current commit ownership evidence.
+## Changed
+- Reuse the open containment WorkUnit and current checkout/branch with bounded metadata and local Git output.
+- Pin the helper, Git/Python and original24-member runtime; append only two exact read roots in a temporary selection.
+- Preserve the original configuration, finite256MiB admission, qualified assets and all target-write/cleanup/model/network refusals.
+- Retain conservative intake classification and require exact independent admission/source/envelope before one frozen dispatch.
+## Validation
+- PASS: helper Python AST and exact native identity constant; existing target/master are ordinary directories.
+- PASS: original configuration/archive hashes preserved; only two temporary read-root entries added.
+- PASS: output/entry/time bounds and explicit incomplete/unknown coverage; no cleanup authority.
+- NOT RUN: native discovery, pending exact independent frozen review.
+## Changelog
+- Added: bounded custody discovery fixture for one previously ranked storage candidate.
+## Risks
+- Unknown active writers and incomplete metadata remain unknown; no disposal is authorized.
+- Outer access/read isolation, historical/live/efficiency/publication gates remain unchanged.
+## Follow-up
+- Obtain exact admission/source/envelope verdict, bind only ignored manifest source identities to frozen reviewed commit/tree, then dispatch once and verify collection/retirement.
+
+AIDE-Task: AIDE-SESSION-CONTAINMENT-01
+AIDE-Phase: single-worktree-custody-discovery
+AIDE-Result: read_only_probe_prepared_review_pending
+AIDE-Scope: own task/evidence/helper, four owned intake views, three root indexes, temporary local selection
+AIDE-Token-Impact: deterministic bounded metadata; no model or network request
+AIDE-Quality-Gate: exact independent admission and frozen source/envelope before dispatch

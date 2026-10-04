@@ -1,0 +1,35 @@
+{
+  "schema": "aide.bounded-storage-followup-effect.v1",
+  "slice": "read_only_single_recorded_worktree_metadata",
+  "source": "exact frozen reviewed candidate supplied before dispatch",
+  "base": "76132f14e954bc5b54a20f6d503901b14c8431ac",
+  "temporary_config_sha256": "eb36fa020d613345d499d40076191fd08f8528509e6454f7854fe0b579dc1f64",
+  "original_config_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "original_config_unchanged": true,
+  "allowed_config_difference": "append two exact recorded roots to toolchain read_roots only; no write/model/limit/path/runtime change",
+  "manifest_sha256": "048bf9caca074774eca529b4834876e1ed83a8571b02b1b6a81adf584809d3b6",
+  "helper_sha256": "e1a55f09b03f0e52745b5a503fb62116e0f5e6d9fd3843dad3827b720d570c3c",
+  "compiler_result": "blocked conservative release/security classification; independent admission resolves read-only slice only",
+  "shared_aggregate_bytes": 268435456,
+  "entry_limit": 5000,
+  "metadata_seconds": 10,
+  "git_output_limit": 8192,
+  "total_raw_git_limit": 24576,
+  "git_seconds_each": 20,
+  "retained_result_limit": 60000,
+  "target_mutation": false,
+  "deletion": false,
+  "model_request": false,
+  "required_before_dispatch": [
+    "exact independent admission/source/envelope",
+    "fresh input/executable/config/asset identities",
+    "locked admission;no active job;no fallback"
+  ],
+  "required_terminal": [
+    "metadata coverage explicit complete/partial/refused",
+    "target/master Git heads unchanged or unknown retained",
+    "collected digests verified;owned scratch retired;reservation released"
+  ],
+  "retirement_authority": false,
+  "frozen_dispatch_binding": "Canonical manifest is a base-bound template; after exact independent source/envelope review replace only ignored manifest source_commit/source_tree with the exact frozen reviewed HEAD/tree, preserve all inputs/executable/argv/outputs and record effective manifest hash before one dispatch."
+}

@@ -649,3 +649,17 @@ a separately reviewed generated-pack-only .gitattributes -text override. All
 verification precedes the final exact review. Original assets/proofs and source
 semantics are unchanged. This additional bounded diff prevents recurrence on
 checkout; no full rebuild or unchanged behavioral suite is required.
+
+## 2026-10-05 one known worktree custody discovery
+
+Continue the open AIDE-SESSION-CONTAINMENT-01 storage follow-up on the already
+recorded Universal linked worktree and master. The previous record left dirty,
+untracked/ignored and commit/active ownership unresolved. A bounded native
+read-only helper and process-local selection are prepared; only two exact read
+roots are appended, original runtime/config/limits/assets unchanged. Admission/
+source/envelope review precedes one dispatch; collect actual coverage and retire
+owned scratch. No target write, retirement, model/network request, product work,
+new checkout or cleanup authority. Compiler's conservative blocked classification
+is preserved. This addresses existing storage ownership, not the unqualified
+outer client or publication gates. Exact plan/effect and result references live
+in that queue task's evidence/storage-probe-* records.

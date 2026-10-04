@@ -98,3 +98,37 @@ Initial dependency observations above are historical: aggregate cooperative
 admission and the scoped worker have since been accepted. Ordinary outer-path
 acceptance remains pending actual client scope setup. Independent partial-worker
 acceptance does not discharge the failed routes or qualify the whole session.
+
+## 2026-10-05 one recorded linked-worktree ownership follow-up
+
+Previous Goal turn is progress: current Lite source/assets/original entry and
+exact main/dev integration completed. Host/model/history gates remain separate.
+The earlier ownership report left this exact ranked candidate unresolved:
+D:/Development/FacMan/repositories/universal-setup-db9c210f4a17/worktrees/task-usk-wu-006-production-publisher;
+recorded master:D:/Projects/Universal/universal-setup. Reuse this open WorkUnit,
+current bounded task branch and one existing D allocation. No new checkout.
+
+Objective: actual read-only Git/common-root/branch and dirty/untracked/ignored
+metadata; at most5000 filesystem entries/10seconds,8KiB per Git result and20
+seconds per owned subprocess. Pin Python/Git/helper/input/selected runtime.
+Use a process-local discovery selection cloned from the existing original
+scoped configuration, adding read access only to these two already identified
+roots. Preserve original configuration, roots,256MiB budget, all limits/model
+route and24 pinned dependencies; no canonical output. Reviewed selection is
+not permission to write the target or a claim of whole-session read isolation.
+
+Compiler classified the negated composite brief release/security/blocked. Keep
+that conservative record; separate exact independent admission/source/envelope
+review resolves only this read-only Git metadata slice. No release/model/host
+permission is inferred. Source owner is known-good pinned archive; helper/task
+sources are hash-bound and worker editing cannot expand its own envelope.
+
+Acceptance: one terminal actual native result; paths/common Git directory and
+branch are exact or a retained refusal; all three Git file-state classes expose
+complete/truncated/unknown coverage; logical/allocation/link counts remain
+bounded observations, not presumed reclaimable bytes. Targets/master refs stay
+unchanged. Retain uncertainty about other writers; cleanup authority is false.
+Collect bounded raw metadata/proof; verify receipt/digests, scratch retirement
+and reservation release. No target content ingestion, credentials/network,
+model invocation, deletion, target tools, product work, host/global changes or
+asset rebuild. Exact retirement remains a later separate effect if proven.
