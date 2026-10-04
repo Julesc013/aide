@@ -5,8 +5,8 @@ default_concurrency: 1
 canonical_source: .aide/queue
 items:
   - id: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
-    status: needs_review
-    planning_state: exact_child_admission_pending_no_product_edits
+    status: running
+    planning_state: admitted_source_evidence_validity_repair
     title: Detect stale capability classification evidence
     task: .aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/task.yaml
     exec_plan: .aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/ExecPlan.md

@@ -1,0 +1,27 @@
+{
+  "schema": "aide.capability-validity-red-effect.v1",
+  "workunit": "AIDE-CAPABILITY-EVIDENCE-VALIDITY-01",
+  "source": "exact frozen reviewed candidate/tree; rebind only ignored manifest source IDs",
+  "config_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "supervisor_zip_sha256": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+  "cli_sha256": "f58f1cf419c09938c43d4a34779e9aba0be8d01455163b7e801dfa7d888a0e88",
+  "manifest_template_sha256": "cef19dd76c071a6f86910dbb6430b950ad31488ab686891c0614172dac83f175",
+  "native_effect": "one Python unittest invocation selecting only the two named baseline regressions; original pinned D owner and empty canonical outputs",
+  "expected": "exactly two assertion failures and exit1; this is baseline failure evidence, NOT a passing repair",
+  "retirement_required": true,
+  "before": [
+    "exact independent source/finite native verdict",
+    "clean frozen source/input/config/python/codex/24pin identities",
+    "no active job and existing locked capacity admission"
+  ],
+  "after": [
+    "actual two named assertions differ as anticipated; no import/setup/sandbox/IO failure",
+    "complete receipt/output/log digests and retired scratch/reservation release",
+    "no repeat or replacement of uncertain effects"
+  ],
+  "exclusions": [
+    "model/provider/network/real-target reads or mutation",
+    "new checkout/archive/layout/limits or Git refs",
+    "operational capability/source repair/publication acceptance"
+  ]
+}

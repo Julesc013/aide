@@ -102,6 +102,28 @@ class XOS02CapabilityRealityTests(unittest.TestCase):
             for marker in ["report_only", "target_mutation: false", "provider_or_model_calls: none", "network_calls: none"]:
                 self.assertIn(marker, markdown)
 
+    def test_changed_source_evidence_invalidates_retained_ledger(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            write_fixture(root)
+            aide_lite.write_capability_ledger(root)
+            (root / ".aide/scripts/aide_lite.py").write_text(
+                "# changed command surface fixture\n", encoding="utf-8")
+            status = aide_lite.capability_command_status_data(root)
+            validity = status.get("ledger_evidence_validity", {})
+            self.assertEqual(validity.get("state"), "STALE")
+
+    def test_missing_implementation_evidence_stays_unknown(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            record = aide_lite.capability_record_from_seed(root, {
+                "capability_id": "missing_implementation",
+                "expected_state": "implemented",
+                "expected_evidence_hints": ["core/missing.py"],
+                "expected_modifiers": ["report_only"],
+            }, 1)
+            self.assertEqual(record["dominant_state"], "unknown")
+
     def test_overclaim_detector_flags_bad_claim(self) -> None:
         ledger = {
             "records": [

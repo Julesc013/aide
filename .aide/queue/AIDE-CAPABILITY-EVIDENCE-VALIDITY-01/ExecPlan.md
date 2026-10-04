@@ -92,3 +92,15 @@ Git-plan currently reports the expected allowlisted dirty tree; freeze it and
 require ready_dry_run before any later branch effect. No product or native
 fixture execution has occurred. The read-only metadata view's CP1252 arrow
 printing failed; the same existing rows were reread using JSON ASCII output.
+
+
+### Accepted admission and frozen red regression
+
+Exact09e787e0 admission accepted with all nonblocking notes disposed; its
+canonical verdict is evidence/admission-acceptance.json. Two direct regressions
+exercise the existing functions: retained source changes are not reported stale,
+and an implemented seed with only missing references still reports implemented.
+The baseline red run selects only those two cases, expects exactly their two
+assertion failures/exit1, and must collect/retire before green. Original product
+CLI f58 remains unchanged for this red subject. Native execution remains pending
+its exact source/manifest/effect review; failure is retained rather than passed.

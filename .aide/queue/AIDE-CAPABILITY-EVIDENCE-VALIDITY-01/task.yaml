@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
 title: Detect stale capability classification evidence through the existing ledger
 type: repair
-status: needs_review
-planning_state: exact_child_admission_pending_no_product_edits
+status: running
+planning_state: admission_accepted_red_fixture_prepared_native_review_pending
 created_at: 2026-10-05
 updated_at: 2026-10-05
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

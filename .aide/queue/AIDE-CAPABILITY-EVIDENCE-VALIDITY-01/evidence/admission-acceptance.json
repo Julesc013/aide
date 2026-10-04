@@ -1,0 +1,14 @@
+{
+  "schema": "aide.capability-validity-admission-acceptance.v1",
+  "source_commit": "09e787e09ad1be3cca39deba4dc45aed5f69721a",
+  "source_tree": "359b1a1e3e3a267902c1b9697db1d0772fd2cad0",
+  "reviewer": "/root/containment_review",
+  "verdict": "ACCEPT_WITH_NOTES",
+  "blocking_findings": [],
+  "notes_disposed": [
+    "Generated fingerprint warning nonblocking at admission only; exact six targets compile with manual content preserved; zero drift before source acceptance",
+    "Native gates must prove source edit causes stale/failure without rebind, explicit regen restores current plus legacy/missing/tamper/safety/budget; no hash-based operational or authority claims",
+    "Generated generic context menu/placeholders grant no scope; exact child controls",
+    "Admission only; source/native/assets/integration gates retained; immutable old4a archive unchanged"
+  ]
+}

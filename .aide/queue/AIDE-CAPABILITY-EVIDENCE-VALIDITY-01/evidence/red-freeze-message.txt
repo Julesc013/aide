@@ -1,0 +1,27 @@
+test(capability): freeze stale-evidence baseline regressions
+
+## Summary
+- Freeze two managed baseline regressions after independent child admission.
+## Why
+- Current capability status does not report changed evidence, and an implemented seed remains implemented without any observed reference.
+## Changed
+- Add only two focused tests; preserve production CLI f58 and original worker configuration/current archive.
+- Record exact admission verdict, prepare source-bound red manifest/effect and reconcile six named generated outputs without changing manual sections.
+## Validation
+- PASS:149 structural info/0 warnings/0 errors after compile --write; test AST and exact original configuration/CLI/archive identities.
+- PASS: independent09 admission with all notes nonblocking/disposed; generated warning resolved before further source review.
+- NOT RUN: one frozen red native invocation pending exact independent source/effect verdict; expects exactly two assertion failures/exit1, not repair success.
+## Changelog
+- Added: bounded stale-evidence and missing-implementation regressions.
+## Risks
+- Baseline failure evidence must be preserved and collected/retired; unexpected setup or sandbox failure is not a valid red oracle.
+- No operational/host/model/release acceptance follows from admission or these fixture tests.
+## Follow-up
+- Review exact red source/effect, bind only ignored source IDs and run once; verify precise failures/digests/retirement before implementing and qualifying the repair.
+
+AIDE-Task: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
+AIDE-Phase: frozen-managed-red-baseline
+AIDE-Result: baseline_regressions_prepared_not_run
+AIDE-Scope: own task; existing capability tests; six generated metadata outputs; admitted index state
+AIDE-Token-Impact: exactly two meaningful baseline cases; no broad rerun or model call
+AIDE-Quality-Gate: exact independent frozen red source/native effect before dispatch
