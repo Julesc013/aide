@@ -20,12 +20,12 @@
   "max_entries": 100000,
   "memory_limit": 536870912,
   "timeout_seconds": 60,
-  "log_limit_bytes": 65536,
+  "log_limit_bytes": 8192,
   "new_job_or_workspace": false,
   "acl_machine_or_config_change": false,
   "model_call": false,
   "helper_sha256": "4082f9cb172d050990279783eeb7f7025efa3459565329f786b9b77af98005a8",
-  "controller_sha256": "82071a1f7e5d62114b96111a6d2443350f8531b0a7d7d77fafdf16f7e8ecfacf",
+  "controller_sha256": "5cd9b9b903efee09924e26e55ce57aeb277d2c171df74aeef0498c0ece21d756",
   "controller_routing": "Existing pinned WindowsJobHost plus existing codex sandbox, exact same owned scratch and job ID under estate lock; no AIDE job resubmission; original result/lease untouched.",
   "observation_log": "logs/fixture-custody-observation",
   "owner_sid_required": "S-1-5-21-2168396775-1281633702-301206425-1003",
@@ -43,5 +43,115 @@
     "logical_bytes": 4138257,
     "file_custody_digest": "3429675e164bb725b86caeb96a4fec8f7ce8e99248dfdd01531f5e3ca8336de2"
   },
-  "recovery_after_fixture_retirement": "Existing public job recover with unchanged original scoped configuration; preserve interrupted PermissionError and null exit; collect original output/logs and retire same scratch/reservation, no replay."
+  "recovery_after_fixture_retirement": "Existing public job recover with unchanged original scoped configuration; preserve interrupted PermissionError and null exit; collect original output/logs and retire same scratch/reservation, no replay.",
+  "observation_log_retention": [
+    {
+      "source": "logs/fixture-observation",
+      "target": "output/recovery-fixture-observation",
+      "identity": [
+        3781016413010784355,
+        18295873488323633
+      ],
+      "files": {
+        "stderr": {
+          "identity": [
+            3781016413010784355,
+            18014398511613382
+          ],
+          "bytes": 456,
+          "sha256": "4b70c7096bbdd86b9ccec7d864165bf78bec7713d786a776d990222dc2df28d6"
+        },
+        "stdin": {
+          "identity": [
+            3781016413010784355,
+            9007199256872236
+          ],
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "identity": [
+            3781016413010784355,
+            18295873488324028
+          ],
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "source": "logs/fixture-owner-observation",
+      "target": "output/recovery-fixture-owner-observation",
+      "identity": [
+        3781016413010784355,
+        56857945297857294
+      ],
+      "files": {
+        "stderr": {
+          "identity": [
+            3781016413010784355,
+            44473046322588540
+          ],
+          "bytes": 456,
+          "sha256": "3c7a614fd806c47cdeaa61e201af95c6cc14e20402e05ea80b22d9cae9ae261e"
+        },
+        "stdin": {
+          "identity": [
+            3781016413010784355,
+            46161896182852472
+          ],
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "identity": [
+            3781016413010784355,
+            45035996276009851
+          ],
+          "bytes": 354,
+          "sha256": "73b217476fdbb9d4bfabd1a9d4f26e3f3ce809eaa30b0d794ac5c46b84882bc9"
+        }
+      }
+    },
+    {
+      "source": "logs/fixture-custody-observation",
+      "target": "output/recovery-fixture-custody-observation",
+      "identity": [
+        3781016413010784355,
+        48132221019827065
+      ],
+      "files": {
+        "stderr": {
+          "identity": [
+            3781016413010784355,
+            45035996276009872
+          ],
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdin": {
+          "identity": [
+            3781016413010784355,
+            44473046322588556
+          ],
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "identity": [
+            3781016413010784355,
+            41095346602060686
+          ],
+          "bytes": 481,
+          "sha256": "d691a31f390d6f3f0882fbd6506c98f2cae8999672ffc922ca453136ce99c11e"
+        }
+      }
+    }
+  ],
+  "retained_limit_bytes": 65536,
+  "retirement_log": "output/recovery-fixture-retirement",
+  "recovery_cli": {
+    "path": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py",
+    "sha256": "4eb2ea4cdbd112c28dd5dd1904fa99abdbd9fa0fe97265cfb3c2397e75b0f762"
+  }
 }

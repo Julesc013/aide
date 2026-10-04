@@ -1,0 +1,27 @@
+{
+  "reviews": [
+    {
+      "source": "d77404dd6f26a18c239f7d2a8adeaa39a93979b4",
+      "verdict": "REQUEST_CHANGES",
+      "blocking": "Existing observation log destination conflicts with host exist_ok=False; corrected in2aa27a36."
+    },
+    {
+      "source": "2aa27a3610da20a635b36dda6db9d359319cacd8",
+      "verdict": "ACCEPT_WITH_NOTES",
+      "scope": "inspection only",
+      "notes_nonblocking": true
+    },
+    {
+      "source": "c4fa969203fdd7efbab659f0e13e36d0abf3a7a3",
+      "verdict": "ACCEPT_WITH_NOTES",
+      "scope": "inspection only",
+      "notes_nonblocking": true
+    },
+    {
+      "source": "bc8bc2e9bfc585f496b57855943b9009dec52d3e",
+      "verdict": "REQUEST_CHANGES",
+      "blocking": "Existing collector allows5 log entries; helper subdirectories produce15. Retain exact logs under existing output allowance instead; no discarded evidence."
+    }
+  ],
+  "reviewer": "containment_review"
+}

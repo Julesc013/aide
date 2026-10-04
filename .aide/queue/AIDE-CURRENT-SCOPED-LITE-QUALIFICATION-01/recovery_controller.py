@@ -17,6 +17,39 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def retain_observation_logs(owner, scratch, effect):
+    """Same-volume evidence renames; every identity/hash is frozen first."""
+    pending = []
+    for item in effect["observation_log_retention"]:
+        source, target = scratch / item["source"], scratch / item["target"]
+        if (source.parent != scratch / "logs" or target.parent != scratch / "output"
+                or source.exists() == target.exists()):
+            raise RuntimeError("unexpected recovery evidence disposition")
+        current = source if source.exists() else target
+        info = owner.ordinary(current, directory=True)
+        if [info.st_dev, info.st_ino] != item["identity"]:
+            raise RuntimeError("observation log identity changed")
+        if {p.name for p in current.iterdir()} != set(item["files"]):
+            raise RuntimeError("unexpected observation evidence entry")
+        for name, expected in item["files"].items():
+            member = current / name
+            value = owner.ordinary(member)
+            if ([value.st_dev, value.st_ino] != expected["identity"]
+                    or value.st_size != expected["bytes"] or sha(member) != expected["sha256"]):
+                raise RuntimeError("observation evidence changed")
+        if current == source:
+            pending.append((source, target))
+    output = owner.tree_usage(scratch / "output", maximum=effect["retained_limit_bytes"],
+                              max_files=100000)
+    pending_bytes = sum(sum(f["bytes"] for f in item["files"].values())
+                        for item in effect["observation_log_retention"]
+                        if (scratch / item["source"]).exists())
+    if output + pending_bytes + effect["log_limit_bytes"] > effect["retained_limit_bytes"]:
+        raise RuntimeError("recovery evidence does not fit original retention allowance")
+    for source, target in pending:
+        source.rename(target)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--apply", action="store_true")
@@ -42,6 +75,8 @@ def main():
         if not owner.WindowsJobHost().reconcile(record["job_id"])["quiescent"]:
             raise RuntimeError("original process remains active")
         scratch = owner.owned_scratch(record, roots)
+        if args.apply:
+            retain_observation_logs(owner, scratch, effect)
         leaf = scratch / effect["owned_fixture"]
         selection = cfg["execution_host"]
         rules = {":root": "deny", ":minimal": "read", str(REPO): "read"}
@@ -56,7 +91,8 @@ def main():
                 sys.executable, "-B", str(TASK / "recover_fixture.py")]
         if args.apply:
             argv.append("--apply")
-        logs = scratch / "logs" / ("fixture-retirement" if args.apply else "fixture-custody-observation")
+        logs = (scratch / "output" / "recovery-fixture-retirement" if args.apply
+                else scratch / "logs" / "fixture-custody-observation")
         environment = owner.sanitized_environment()
         environment.update(TEMP=str(scratch / "tmp"), TMP=str(scratch / "tmp"),
                            TMPDIR=str(scratch / "tmp"), PYTHONDONTWRITEBYTECODE="1")
