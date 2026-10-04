@@ -1,0 +1,29 @@
+docs(capability): complete required queue evidence records
+
+## Summary
+- Resolve exact independent closeout review without changing qualified code.
+## Why
+- The task inspector requires conventional changed-files, validation and remaining-risks evidence; missing records classified the passed task partial.
+## Changed
+- Add all three required records and retain complete task inspection with missing_evidence0.
+- Clarify normalized decoded invocation hashes versus complete raw retained job-tree hashes.
+- Preserve accepted native source/test/schema and the separate unapplied source-ref envelope.
+## Validation
+- PASS: task inspection complete, missing_evidence0; exact green native result independently accepted with notes disposed.
+- PASS: unchanged18 tests and ten CLI outcomes, complete retained trees and retirement evidence reused.
+- PASS: diff and unchanged qualified source/test hashes.
+- NOT RUN:003 ref effect; corrected final closeout/ref review remains required before apply.
+## Changelog
+- Fixed: canonical task closeout evidence completeness and precise hash coverage descriptions.
+## Risks
+- Original individual CLI process-byte hashes were not captured; functional results, normalized frames and raw combined job trees remain verified.
+- Host, historical, model, efficiency, refreshed assets and publication gates remain separate.
+## Follow-up
+- Review the corrected metadata and exact source-ref effect, then synchronize qualified existing refs once.
+
+AIDE-Task: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
+AIDE-Phase: final-required-evidence-correction
+AIDE-Result: PASS_native_complete_task_ref_not_run
+AIDE-Scope: conventional evidence, report and ExecPlan only
+AIDE-Token-Impact: reuse unchanged technical evidence; no redundant native rerun
+AIDE-Quality-Gate: exact corrected final source/ref acceptance

@@ -31,7 +31,7 @@ zero failures/errors/skips, in12.983 seconds. No uncertain effect was replayed.
 | Green native job | ce5a5508b3104df0a9a3441f22768616 |
 | Real CLI calls | ten; generate/current validate, edit/stale reject without rebind, explicit refresh/current validate |
 | Copied fixture inputs |52 declared public files;2,615,426logical bytes |
-| Full raw CLI evidence | all ten stdout/stderr hashes verified in retained log |
+| Complete CLI evidence | ten LF-normalized decoded text hashes verified against retained log frames; combined raw job trees hashed |
 | Collected output/log trees | both complete hashes independently reproducible |
 | Authored fixture content | preserved |
 | Sampled scratch peak |91,819bytes; observation, not full allocation or hard quota |
@@ -64,6 +64,10 @@ new executions of unchanged broad repository suites.
 
 Implementation files: `.aide/scripts/aide_lite.py`, its existing capability test
 file, the new binding schema and[capability guide](../../../docs/reference/capability-reality-ledger.md).
+Per-invocation original process bytes were not separately captured; these are
+functional CLI results and normalized text hashes, with complete combined raw
+job-tree verification.
+
 Canonical task/index/campaign status, PLANS/IMPLEMENT/DOCUMENTATION and the
 existing six generated metadata targets are reconciled without manual-policy
 changes. No replacement specification, clone, worktree or broad handoff archive.

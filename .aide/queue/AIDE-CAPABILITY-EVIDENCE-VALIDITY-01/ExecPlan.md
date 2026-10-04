@@ -169,7 +169,7 @@ no blocking findings. Its only notes (ignored source-ID rebind; fresh identity
 checks and locked admission; actual18checks/tenCLI calls and retirement; no
 global/artifact/ref/release claim) are disposed in evidence/green-result.json.
 One jobce5a5508b3104df0a9a3441f22768616 passed18tests in12.983s, zero failures,
-errors or skips. All ten raw CLI stdout/stderr hashes and both retained tree
+errors or skips. All ten LF-normalized decoded CLI text hashes and both complete raw retained tree
 digests match; all52 copied public dependencies came from the declared inputs.
 Authored fixture content and stale retained ledger/bindings stayed intact.
 Scratch absent, process quiescent, reservation released, no active job.
@@ -188,3 +188,12 @@ new archive. Fresh real Jules/GitHub identity and refs must pass before effect;
 postcondition retains all88 actual corresponding pairs and protected85.
 Final source/native closeout and this exact ref envelope require independent
 review before apply. Missing publication/model/client gates remain separate.
+
+Independent final review accepted the native result with the explicit text/byte
+coverage distinction: individual process-byte hashes were not captured; all
+normalized invocation frames and complete combined raw job-tree hashes match.
+Closeout003 was held because conventional changed-files/validation/remaining-
+risks evidence was missing and task inspection classified it partial. Those
+three scoped records are now added; require complete/missing_evidence0 before
+exact corrected final source/ref review. No source/test change or rerun needed.
+The003 ref effect was never applied.

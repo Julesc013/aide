@@ -3,7 +3,7 @@
   "checks": {
     "all_frozen_inputs_still_match": true,
     "authored_preserved": true,
-    "complete_raw_cli_output_hashes": true,
+    "complete_normalized_cli_text_hashes": true,
     "exit0_quiescent": true,
     "logs": true,
     "no_active": true,
@@ -14,6 +14,7 @@
     "ten_expected_cli_calls": true,
     "tests_18_zero_failures_errors_skips": true
   },
+  "cli_hash_coverage": "LF-normalized decoded subprocess stdout/stderr, verified against retained log frames; complete combined raw job-tree hashes verified; individual original process bytes not captured",
   "collected_manifest": {
     "logs": "d88e21f24b62bfcbcce3a9c21e6df1fcba424e56c53a5573e7f54ecc4e6d5e4a",
     "output": "4afb49c34acca9aa29c46d14f44b6be81e8f291cce968714472446243cae5880"
@@ -22,6 +23,10 @@
   "fixture_public_payload_logical_bytes": 2615426,
   "job_id": "ce5a5508b3104df0a9a3441f22768616",
   "limits_are_monitored_not_hard_filesystem_quota": true,
+  "native_result_independent_verdict": "ACCEPT_WITH_NOTES",
+  "native_result_notes_disposed": [
+    "normalized per-invocation text hashes and complete combined raw job-tree hashes distinguished; no original-process-byte assertion"
+  ],
   "notes_disposed": [
     "ignored manifest source IDs only rebound to accepted406/a00; actualpreflight and effective hash retained",
     "fresh56inputs/config/Python/Codex24pins, original locked admission and one dispatch",
