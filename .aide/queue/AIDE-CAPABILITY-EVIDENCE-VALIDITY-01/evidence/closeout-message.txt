@@ -1,0 +1,30 @@
+docs(capability): record qualified repair and source sync effect
+
+## Summary
+- Close the scoped source repair with actual native evidence and consistent plans.
+## Why
+- The two reproduced classification faults require durable repair evidence without implying whole-session or release completion.
+## Changed
+- Record18 passing checks, ten actual CLI outcomes, complete collected hashes and successful retirement.
+- Update canonical task/index/campaign state and root indexes; add the full scoped outcome and remaining development report.
+- Reconcile generated metadata and prepare a separate exact nonforced source synchronization envelope.
+## Validation
+- PASS: independent406 source/native verdict with all notes disposed; native18 checks and ten CLI calls.
+- PASS: full raw CLI/output/log hashes, authored and stale evidence preservation, quiescence, scratch retirement and reservation release.
+- PASS:149 structural info/0 warnings/0 errors after compile; source/test hashes preserved.
+- NOT RUN: final source/ref integration pending exact independent closeout/effect review.
+## Changelog
+- Fixed: stale capability evidence is reported and retained validation requires explicit refresh.
+- Changed: planning and documentation distinguish source qualification from unfinished host, model, artifact and publication gates.
+## Risks
+- Source classifications are not operational proof; monitored resource controls remain distinct from hard quotas.
+- Old immutable assets contain older source, and all historical/live-model/efficiency/publication gates remain open.
+## Follow-up
+- Independently review exact closeout and ref effect, synchronize qualified existing refs without force, then refresh and qualify affected release payload.
+
+AIDE-Task: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
+AIDE-Phase: qualified-source-closeout-ref-effect-candidate
+AIDE-Result: PASS_scoped_source_and_cli_ref_effect_not_run
+AIDE-Scope: admitted capability task, evidence, canonical indexes and root documentation
+AIDE-Token-Impact:18 meaningful checks and one real CLI workflow; code owns monitoring and retirement
+AIDE-Quality-Gate: exact independent closeout and ref-effect review before apply

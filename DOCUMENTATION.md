@@ -3,10 +3,10 @@
 ## Capability evidence freshness
 
 The [capability guide](docs/reference/capability-reality-ledger.md) describes the
-prepared finite derived bindings, retained-only validation and explicit refresh.
+qualified finite derived bindings, retained-only validation and explicit refresh.
 [AIDE-CAPABILITY-EVIDENCE-VALIDITY-01](.aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/ExecPlan.md)
-records admission, the managed failing baseline and pending exact source/native
-qualification. Hash freshness is source classification, not executed tests,
+records admission, the preserved managed failing baseline,18 passing checks
+and ten real CLI calls with verified collection/retirement. Hash freshness is source classification, not executed tests,
 whole-session containment or stable release acceptance.
 
 ## AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01

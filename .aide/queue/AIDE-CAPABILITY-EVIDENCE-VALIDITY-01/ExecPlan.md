@@ -161,3 +161,30 @@ entries remain sorted. The existing truncation regression provides two readable
 schema files and counts actual admitted content reads at a two-reference limit.
 It requires exactly two including the seed, complete=false and truncated=true.
 All prior green subjects remain undispatched.
+
+### Actual accepted green effect
+
+Exact4067179b/a00d725b source/native preexecution ACCEPT_WITH_NOTES arrived with
+no blocking findings. Its only notes (ignored source-ID rebind; fresh identity
+checks and locked admission; actual18checks/tenCLI calls and retirement; no
+global/artifact/ref/release claim) are disposed in evidence/green-result.json.
+One jobce5a5508b3104df0a9a3441f22768616 passed18tests in12.983s, zero failures,
+errors or skips. All ten raw CLI stdout/stderr hashes and both retained tree
+digests match; all52 copied public dependencies came from the declared inputs.
+Authored fixture content and stale retained ledger/bindings stayed intact.
+Scratch absent, process quiescent, reservation released, no active job.
+Retained102,051logical bytes; output12,762bytes. Sampled scratch91,819bytes
+is an observed peak, not a hard cap or the whole fixture's logical size;
+fixture source payload2,615,426bytes. Peak memory269,426,688bytes.
+Old4a/assets/originala241 limits and24pins unchanged.
+
+Prepared final source integration is a SEPARATE reviewed effect under the
+existing owner campaign source-sync delegation: retain the single checkout,
+require clean exact accepted source/helper plan and all85 protected tips,
+fast-forward existing local main/dev atomically through nonforced local Git
+fetch refspecs, then one atomic normal origin main/dev/currenttask push. No
+checkout switch, new refs, force/prune/tag/release/network-provider call or
+new archive. Fresh real Jules/GitHub identity and refs must pass before effect;
+postcondition retains all88 actual corresponding pairs and protected85.
+Final source/native closeout and this exact ref envelope require independent
+review before apply. Missing publication/model/client gates remain separate.

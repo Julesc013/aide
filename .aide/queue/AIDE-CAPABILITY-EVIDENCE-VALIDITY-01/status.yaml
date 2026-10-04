@@ -1,9 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
-status: running
-planning_state: red_verified_green_source_and_native_review_pending
-result: RED_EXPECTED_FAILURE_VERIFIED_GREEN_NOT_RUN
+status: passed_with_notes
+planning_state: qualified_source_native_complete_ref_state_uses_terminal_receipt
+result: PASS_scoped_source_and_cli_qualification
 updated_at: 2026-10-05
 review_gate: exact_child_admission_then_native_and_source_effects
 current_archive_unchanged: true
 source_in_existing_archive: false
+source_sync_effect_ref: .aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/evidence/source-sync-effect.json
+source_sync_result_ref: .aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/evidence/source-sync-final.log
+source_sync_replay: forbidden_inspect_receipt_before_any_followup

@@ -6,8 +6,10 @@ The existing restricted worker reproduced two precise baseline assertions in
 jobbd3e4e248d6a4342b4867275d878060d, then collected and retired successfully.
 The C1 candidate preserves the v0 ledger, adds finite derived source bindings
 and honest CURRENT/STALE/UNKNOWN status, and removes automatic regeneration
-from capability validation. Source and actual CLI workflow qualification are
-pending exact independent review; prepared code is not a passing repair.
+from capability validation. Exact reviewed source4067179b passed18 checks and ten actual CLI calls in
+jobce5a5508b3104df0a9a3441f22768616. Stale validation preserved evidence,
+explicit refresh restored CURRENT, full collected hashes passed, and scratch/
+reservation retired. Final source/ref closeout remains separately reviewed.
 Only this coherence entry, its scoped reference guide and task records change
 across root documentation. Existing immutable assets contain older source.
 

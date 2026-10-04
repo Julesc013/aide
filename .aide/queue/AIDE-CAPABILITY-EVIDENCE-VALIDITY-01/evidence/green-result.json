@@ -1,0 +1,50 @@
+{
+  "actual_host_usage": "unknown_not_matched_efficiency_proof",
+  "checks": {
+    "all_frozen_inputs_still_match": true,
+    "authored_preserved": true,
+    "complete_raw_cli_output_hashes": true,
+    "exit0_quiescent": true,
+    "logs": true,
+    "no_active": true,
+    "output": true,
+    "retired": true,
+    "source_still_clean": true,
+    "stale_validation_no_rebind": true,
+    "ten_expected_cli_calls": true,
+    "tests_18_zero_failures_errors_skips": true
+  },
+  "collected_manifest": {
+    "logs": "d88e21f24b62bfcbcce3a9c21e6df1fcba424e56c53a5573e7f54ecc4e6d5e4a",
+    "output": "4afb49c34acca9aa29c46d14f44b6be81e8f291cce968714472446243cae5880"
+  },
+  "copied_public_files": 52,
+  "fixture_public_payload_logical_bytes": 2615426,
+  "job_id": "ce5a5508b3104df0a9a3441f22768616",
+  "limits_are_monitored_not_hard_filesystem_quota": true,
+  "notes_disposed": [
+    "ignored manifest source IDs only rebound to accepted406/a00; actualpreflight and effective hash retained",
+    "fresh56inputs/config/Python/Codex24pins, original locked admission and one dispatch",
+    "18 tests zero failures/errors/skips; ten expectedCLI outputs verified; full collection/quiescence/retirement verified",
+    "all rejected green subjects undispatched; no global host/ref/asset/release qualification"
+  ],
+  "observed_peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 269426688,
+    "scratch_bytes": 91819
+  },
+  "outer_session_contained": false,
+  "proof_sha256": "21d673b5e71459f731eea10f02029262d3c14bac3b96bf4c758d6ae8ec83d05e",
+  "read_isolation": "unqualified",
+  "receipt_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\ce5a5508b3104df0a9a3441f22768616\\receipt.json",
+  "receipt_sha256": "7dbc6414257251876355595ec2d079897cdb5407c33bb97cee8c104790f98f80",
+  "result": "PASS",
+  "retained_logical_bytes": 102051,
+  "retained_output_bytes": 12762,
+  "reviewer": "/root/containment_review",
+  "schema": "aide.capability-green-result.v1",
+  "source_commit": "4067179b6a5f01a327747a865193c26c3d607aba",
+  "source_preexecution_verdict": "ACCEPT_WITH_NOTES",
+  "source_tree": "a00d725b59cf1c4ae94f84830e08a9304d175cb6",
+  "test_seconds": 12.983
+}

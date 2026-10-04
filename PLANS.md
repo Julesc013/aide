@@ -5,8 +5,10 @@
 [AIDE-CAPABILITY-EVIDENCE-VALIDITY-01](.aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/ExecPlan.md)
 is the admitted narrow C1 increment after qualified current-archive interruptions
 and source sync. Managed baseline reproduced stale-evidence and missing-code
-overclaims; the bounded binding/status/retained-validation repair is prepared
-for exact independent source/native review. Existing host, efficiency, owner
+overclaims. The bounded binding/status/retained-validation repair then passed
+18 checks and ten real CLI calls through the pinned restricted worker, with
+full collected hashes and retirement. Final source synchronization is a
+separate reviewed effect; release payload refresh remains necessary. Existing host, efficiency, owner
 disposition and stable publication gates remain separate. No new worktree,
 layout or archive.
 
