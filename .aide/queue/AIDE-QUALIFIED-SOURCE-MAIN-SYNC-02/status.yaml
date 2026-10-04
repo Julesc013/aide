@@ -1,0 +1,6 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02
+status: needs_review
+planning_state: source_reused_exact_main_effect_review_pending
+result: QUALIFIED_SOURCE_MAIN_EFFECT_PENDING
+updated_at: 2026-10-04

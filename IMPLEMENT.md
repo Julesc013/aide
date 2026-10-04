@@ -12961,3 +12961,11 @@ source/export/dev-effect review returned ACCEPT_WITH_NOTES, closing the older
 interface blocker. Notes preserve configuration-only, source-consumer and
 operational/usage limits. The metadata closeout requires focused exact review
 and fresh effect guards before the dev-only move.
+
+## 2026-10-04 qualified source main integration
+
+The diagnostic dev effect at exact 9b1d1844 is verified with 86 matching branch
+pairs and 84 preserved unrelated tips. AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02 now
+prepares the separately reviewed main/dev/task effect. This metadata-only child
+reuses qualified source/payload checks and changes no execution, release asset,
+operator setting or historical disposition. Fresh guards precede applying refs.

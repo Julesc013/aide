@@ -1,0 +1,26 @@
+# Changed files
+
+- .aide/context/latest-task-packet.md
+- .aide/generated/manifest.yaml
+- .aide/intake/latest-intent-packet.json
+- .aide/intake/latest-intent-packet.md
+- .aide/intake/latest-workunit-draft.json
+- .aide/intake/latest-workunit-draft.md
+- .aide/profile.yaml
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/ExecPlan.md
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/asset-pins.json
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/baseline-refs.json
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/changed-files.md
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/effect-manifest.json
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/intent-compiler-report.md
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/preflight-or-blocker-report.md
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/remaining-risks.md
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/source-basis.md
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence/validation.md
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/prompt.md
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/status.yaml
+- .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/task.yaml
+- .aide/queue/index.yaml
+- DOCUMENTATION.md
+- IMPLEMENT.md
+- PLANS.md

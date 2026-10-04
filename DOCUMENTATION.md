@@ -601,3 +601,7 @@ Existing command semantics and limits: docs/reference/aide-lite-test-runner.md,
 Inspection boundary diagnostics. Source/evidence/review owner:
 .aide/queue/AIDE-JOB-SCOPE-DIAGNOSTICS-01/. Configuration-only inspection does not
 establish read isolation, locked aggregate admission or outer containment.
+
+Source-only main integration and branch identity proof:
+.aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/. This is separate from stable
+publication and retains the original release baseline and operational gates.

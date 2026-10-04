@@ -4,6 +4,15 @@ policy: .aide/queue/policy.yaml
 default_concurrency: 1
 canonical_source: .aide/queue
 items:
+  - id: AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02
+    status: needs_review
+    planning_state: source_reused_exact_main_effect_review_pending
+    title: Promote accepted architecture and inspection diagnostic source
+    task: .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/task.yaml
+    exec_plan: .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/ExecPlan.md
+    prompt: .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/prompt.md
+    evidence: .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/evidence
+    description: Separately reviewed source-only main/dev/task fast-forward; release and operational gates preserved.
   - id: AIDE-JOB-SCOPE-DIAGNOSTICS-01
     status: passed_with_notes
     planning_state: exact_source_accepted_dev_effect_guarded_closeout

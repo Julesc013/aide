@@ -1,0 +1,22 @@
+{
+  "schema": "aide.qualified-source-main-effect.v1",
+  "accepted_source_base": "9b1d18445b38ab39799aad18871b91ddb75a1759",
+  "candidate": "exact independently accepted frozen metadata successor of 9b1d18445b38ab39799aad18871b91ddb75a1759",
+  "expected_remote_refs": {
+    "main": "3d186d0584bb40f18402a626c9fe099260fae3d4",
+    "dev": "9b1d18445b38ab39799aad18871b91ddb75a1759",
+    "task/aide-qualified-source-main-sync-02": null
+  },
+  "untouched_ref_count": 84,
+  "untouched_ref_sha256": "d9486fe3700df558222d53dfd27bd0b092d2b89ef8a81c44d27ac5c3bf1b3791",
+  "ref_digest_encoding": "Python json.dumps(full refs/heads mapping, sort_keys=True), default separators/ensure_ascii, UTF-8, no trailing newline",
+  "effects": [
+    "fast-forward local dev and main to the exact reviewed candidate",
+    "atomic nonforce push main/dev plus this task branch, no tags",
+    "verify all corresponding local/remote pairs and every untouched tip"
+  ],
+  "source_integration_only": true,
+  "stable_release_certification": false,
+  "historical_dispositions_model_host_target_storage_or_publication_effects": false,
+  "runtime_and_payload": "unchanged"
+}

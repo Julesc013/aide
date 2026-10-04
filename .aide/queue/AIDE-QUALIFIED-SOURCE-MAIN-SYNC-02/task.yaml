@@ -1,0 +1,42 @@
+schema_version: aide.queue-task.v0
+id: AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02
+title: Promote accepted architecture and inspection diagnostic source
+type: integration
+status: needs_review
+planning_state: source_reused_exact_main_effect_review_pending
+result: QUALIFIED_SOURCE_MAIN_EFFECT_PENDING
+created_at: 2026-10-04
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+authority_basis: Owner requested dev into main and matching local/remote branches; existing campaign delegation permits separately reviewed qualified main effects.
+objective: Promote accepted dev source and this bounded integration packet by fast-forward, preserving unrelated branch tips and all operational release gates.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/**
+    - .aide/queue/index.yaml
+    - .aide/profile.yaml
+    - .aide/generated/**
+    - .aide/context/latest-task-packet.md
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  generated_only: Context and generated views; no product, export, policy, release or original operator bytes change.
+  git_effects: evidence/effect-manifest.json after exact independent acceptance and fresh guards
+  forbidden_operations:
+    - force push, history rewrite, deletion, prune, new worktrees or clones
+    - tags, release publication or certification, model calls or historical disposition acceptance
+    - changing host permissions, storage, target repositories, source or accepted payload
+review_gate: Exact independent source/main-dev-task effect acceptance under the recorded campaign delegation.
+branch_plan:
+  base: 9b1d18445b38ab39799aad18871b91ddb75a1759
+  task_branch: task/aide-qualified-source-main-sync-02
+  helper: git plan ready_dry_run on clean dev before the four owned intake projections
+verification:
+  - reuse the exact architecture and 71-test inspection source acceptance
+  - validate metadata and compiled views; no runtime or export change
+  - commit range, ancestry, selected refs and untouched ref digest
+  - real Jules identity and Julesc013 authentication; unchanged runtime/config pins
+  - atomic nonforce push and matching local/remote names and hashes

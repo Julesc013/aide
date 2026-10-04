@@ -3,18 +3,18 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: f8e019d844a569b7a15fe4c3b2a273f47d15aa4363a3acad0c8061311843e057
-- raw_prompt_excerpt: Implement a bounded additive execution-boundary diagnostic in the existing AIDE job inspect command. Preserve existing fields and refusal behavior. Distinguish configured worker placement, locked run-time aggregate admission, monitored d...
-- interpreted_goal: Normalize prompt into a bounded test WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
+- raw_prompt_hash: f468dd3e8080765929f4bd32668489ed355d7e2c15c22666d3fad8a8535c7325
+- raw_prompt_excerpt: Integrate independently accepted AIDE architecture reconciliation and managed inspection diagnostic source from dev 9b1d18445b38ab39799aad18871b91ddb75a1759 into main 3d186d0584bb40f18402a626c9fe099260fae3d4. Admit one bounded campaign i...
+- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
-- task_class: test
-- risk_class: medium
-- sizing_class: one_shot
-- safe_to_execute: true
-- requires_split: false
-- blocked: false
-- blocker_reason: none
-- next_action: draft the smallest safe WorkUnit after repo-state preflight
+- task_class: release
+- risk_class: release
+- sizing_class: blocked
+- safe_to_execute: false
+- requires_split: true
+- blocked: true
+- blocker_reason: write blocker report and require reviewed authorization before mutation
+- next_action: write blocker report and require reviewed authorization before mutation
 - task_execution: false
 - provider_or_model_calls: none
 - network_calls: none
@@ -24,6 +24,7 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
+- do not publish releases, tags, or assets from prompt alone
 
 ## Repo State Refs
 
@@ -47,8 +48,8 @@
 ## Validation Hints
 
 - `git diff --check`
+- `py -3 .aide/scripts/aide_lite.py changelog validate`
 - `py -3 .aide/scripts/aide_lite.py intent validate`
-- `targeted failing test command after preflight`
 
 ## Evidence Hints
 
@@ -56,3 +57,4 @@
 - `validation.md`
 - `remaining-risks.md`
 - `intent-compiler-report.md`
+- `preflight-or-blocker-report.md`

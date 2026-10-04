@@ -4448,3 +4448,10 @@ Repaired source 092ebc59 passed the 71-test managed run; exact 9d339b0c source
 and dev-only effect received ACCEPT_WITH_NOTES. Focused metadata closeout and
 fresh guards precede dev integration. This completes one bounded C8 increment,
 not the whole candidate, client setup or stable publication.
+
+## 2026-10-04 qualified source main integration
+
+AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02 admits a separately reviewed source-only
+main/dev/task effect over accepted dev 9b1d1844. Reuse architecture and repaired
+71-test diagnostic qualification. Preserve unrelated tips, proposed/adopted
+boundaries, original historical release baseline and all operational gates.

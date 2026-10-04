@@ -1,0 +1,1 @@
+Promote the separately accepted architecture reconciliation and inspection diagnostic source into main under the owner's existing source-sync instruction and campaign delegation. Preserve all unrelated branch tips. This is source integration, with exact independent effect review and fresh guards; it does not pass stable-release, host or model gates.

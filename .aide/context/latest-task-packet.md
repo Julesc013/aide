@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - AIDE-JOB-SCOPE-DIAGNOSTICS-01
+UNSPECIFIED - AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02
 
 ## GOAL
 
-AIDE-JOB-SCOPE-DIAGNOSTICS-01
+AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02
 
 ## WHY
 
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4120
-- approx_tokens: 1030
+- chars: 4130
+- approx_tokens: 1033
 - budget_status: PASS
 - warnings:
   - none
