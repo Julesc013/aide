@@ -12934,3 +12934,8 @@ current worker/broker source, so history is preserved and current scope clarifie
 The development plan and full report separate independent local candidates
 from host/model/network/learning/scale qualification. No runtime behavior,
 source archive, machine setting, release or target effect is introduced.
+
+Frozen documentation afd9dfdc received independent ACCEPT_WITH_NOTES for source
+and dev-only integration; custody, proposal and operational-limit notes remain
+explicitly nonblocking for that bounded effect. Closeout records preserve their
+dispositions and require focused exact rereview before the dev move.

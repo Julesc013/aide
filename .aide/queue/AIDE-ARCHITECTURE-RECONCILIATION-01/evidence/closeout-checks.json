@@ -1,0 +1,43 @@
+[
+  {
+    "command": [
+      "py",
+      "-3",
+      "-B",
+      "scripts/aide",
+      "compile"
+    ],
+    "exit_code": 0,
+    "bytes": 2013,
+    "sha256": "c81fdbbf70b779d987b2a047d59d190d5d6bdecb30db95239de4dd5c1a23b7ff",
+    "retained": ".aide\\queue\\AIDE-ARCHITECTURE-RECONCILIATION-01\\evidence\\closeout-0.log"
+  },
+  {
+    "command": [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "task",
+      "inspect",
+      "--task-id",
+      "AIDE-ARCHITECTURE-RECONCILIATION-01"
+    ],
+    "exit_code": 0,
+    "bytes": 424,
+    "sha256": "eb9e5dfeaa286b2f04e5af8512a0001f11750f31dd88ea3eb917c6da9c91ba42",
+    "retained": ".aide\\queue\\AIDE-ARCHITECTURE-RECONCILIATION-01\\evidence\\closeout-1.log"
+  },
+  {
+    "command": [
+      "py",
+      "-3",
+      "-B",
+      ".aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/check_docs.py"
+    ],
+    "exit_code": 0,
+    "bytes": 375,
+    "sha256": "22689a366e75397beb5edcaa8205fa1f80317a3eaed4166e2faf5f1aac7cc81d",
+    "retained": ".aide\\queue\\AIDE-ARCHITECTURE-RECONCILIATION-01\\evidence\\closeout-2.log"
+  }
+]

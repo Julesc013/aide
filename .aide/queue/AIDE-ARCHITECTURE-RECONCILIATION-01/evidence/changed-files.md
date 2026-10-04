@@ -14,8 +14,10 @@ Exact bounded documentation candidate paths (relative to the repository):
 - .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/check_docs.py
 - .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/baseline-checks.json
 - .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/changed-files.md
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/closeout-checks.json
 - .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/effect-manifest.json
 - .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/final-checks.json
+- .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/independent-review-afd9dfdc.md
 - .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/remaining-risks.md
 - .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/source-crosswalk.json
 - .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/evidence/structural-checks.json

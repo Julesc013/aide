@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-ARCHITECTURE-RECONCILIATION-01
 title: Reconcile architecture review, current capabilities and independent development plans
 type: documentation
-status: needs_review
-planning_state: documentation_reconciled_independent_review_pending
-result: DOCUMENTATION_CANDIDATE_RUNTIME_GATES_PRESERVED
+status: passed_with_notes
+planning_state: accepted_documentation_runtime_gates_preserved
+result: DOCUMENTATION_ACCEPTED_RUNTIME_GATES_PRESERVED
 created_at: 2026-10-04
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 authority_basis: Owner explicitly requested attachment review, consistent specifications and plans, and a full development report; the blocked release Goal remains dormant.
@@ -49,3 +49,5 @@ verification:
   - amendment provenance, retained draft status and preserved original requirement/case text
   - links, IDs, JSON, diff scope, generated views and proportionate Harness checks
   - structured commit and independent exact review
+accepted_source: afd9dfdc80387b19411dd148d74120731f5a0ba2
+independent_review: evidence/independent-review-afd9dfdc.md

@@ -1,9 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-ARCHITECTURE-RECONCILIATION-01
-status: needs_review
-planning_state: documentation_reconciled_independent_review_pending
-result: DOCUMENTATION_CANDIDATE_RUNTIME_GATES_PRESERVED
+status: passed_with_notes
+planning_state: accepted_documentation_runtime_gates_preserved
+result: DOCUMENTATION_ACCEPTED_RUNTIME_GATES_PRESERVED
 updated_at: 2026-10-04
 release_goal_resumed: false
 runtime_behavior_changed: false
 draft_requirements_adopted: false
+accepted_source: afd9dfdc80387b19411dd148d74120731f5a0ba2
+independent_review: evidence/independent-review-afd9dfdc.md

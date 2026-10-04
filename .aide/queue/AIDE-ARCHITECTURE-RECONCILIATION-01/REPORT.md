@@ -184,3 +184,12 @@ efficiency or released support. Controller/reviewer inference and any unknown
 usage are not represented as zero; this task is not an efficiency benchmark.
 No broad disk scan, new worktree, source archive, machine policy change or target
 product development is performed. See [remaining risks](evidence/remaining-risks.md).
+
+## Independent acceptance
+
+Frozen documentation source `afd9dfdc80387b19411dd148d74120731f5a0ba2` and its
+dev-only effect received [independent ACCEPT_WITH_NOTES](evidence/independent-review-afd9dfdc.md).
+All notes are explicitly nonblocking for that source/effect: preserve unknown
+raw-source custody, separate proposal admission and every operational gate.
+Record-only successors require focused exact rereview before the declared dev
+effect; main and stable qualification are outside this documentation integration.

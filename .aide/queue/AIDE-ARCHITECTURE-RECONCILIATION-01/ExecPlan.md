@@ -45,11 +45,16 @@ client remains unrestricted; these bounded edits are not a containment test.
 - [x] Capability and contradiction crosswalk completed; existing 13-seed capability projection reused.
 - [x] Existing chapters, status and plans reconciled; full report and C1–C12 candidates recorded.
 - [x] Machine checks and full report completed.
-- [ ] Independent exact documentation and dev-effect review completed.
+- [x] Independent exact documentation and dev-effect review of afd9dfdc accepted with three nonblocking notes.
+
+Focused successor review and fresh guarded dev integration are mandatory effect
+preconditions. The final controller verdict binds the final frozen commit;
+record-only successors do not inherit acceptance automatically.
 
 Doctor, full validate and context pack pass before and after amendments.
 Structural checks preserve all 19 original prefixes, 34 draft markers,
-244 UR aliases and 244 UC designs, with 166 links and zero broken targets.
+244 UR aliases and 244 UC designs, with 166 links and zero broken targets at the first freeze; the record-only
+closeout extends this to 167 links with zero broken targets.
 Existing report-only capability generation/validation passes; 11 implementation
 source identities remain unchanged. Full finite logs and hashes are retained.
 
@@ -71,3 +76,11 @@ current placeholder claim while retaining Q02 history; implementation files are
 unchanged. Reuse existing capability projection commands and Harness generated
 views. The Lite helper has no compile command; generated refresh uses the
 documented py -3 -B scripts/aide compile --write path.
+
+## Independent acceptance
+
+Frozen afd9dfdc received ACCEPT_WITH_NOTES from /root/containment_review;
+all three notes are explicitly nonblocking for documentation/dev integration and
+disposed in evidence/independent-review-afd9dfdc.md. The accepted source is recorded
+without granting any runtime/adoption/release authority. This record-only closeout
+needs focused exact rereview before its separately declared dev effect.
