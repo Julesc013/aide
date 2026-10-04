@@ -1,5 +1,24 @@
 # Remaining Risks
 
+## Current checkpoint
+
+Accepted source/main/dev bf559c0a has the repaired 71-test scoped source and
+current export. The local stable candidate still carries older code. Child
+AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 now separates its read-only export
+supervisor from release output and awaits exact build-effect review.
+
+Outer-client/editor/read containment, ten historical dispositions, live-model
+permission and matched efficiency, exact current stable/publication/downloaded
+consumer gates, downstream adoption and wider unknown disk cleanup remain open.
+Shared D pools are configured; aggregate controls are monitored, not hard quotas.
+Source synchronization and prior retirement do not certify those properties.
+
+## Preserved initial campaign risk record
+
+The entries below describe the bootstrap checkpoint. Subsequent qualified
+source and integration receipts supersede its source-state observations; they
+are retained as history rather than current blockers or cleanup authority.
+
 - Multiple Codex processes may write to the repository; every child task must
   recheck ownership and source stability before mutation.
 - The unavailable `aide-screensave-pack` worktree registration remains stale;

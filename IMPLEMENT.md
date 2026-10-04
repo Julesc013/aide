@@ -12973,3 +12973,12 @@ Independent exact de7bfb2b review returned ACCEPT_WITH_NOTES with no blocker.
 The actual verdict and preserved limits are recorded in the child evidence;
 the added current REPORT and closeout receive focused exact review before
 fresh guarded main/dev/task application and retained terminal verification.
+
+## 2026-10-04 current asset qualification admission
+
+Source main/dev synchronization at bf559c0a is terminally verified. The next
+child addresses actual stale ZIP bytes: the existing guard prohibits a worker
+from overwriting its archive supervisor. Select the already supported pinned
+export-runtime mode for release-only qualification, keeping that runtime
+read-only. No runner/guard change or additional storage layout is introduced.
+Local assets, their old Git custody and every subsequent pin/effect are explicit.

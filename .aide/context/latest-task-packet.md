@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02
+UNSPECIFIED - AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01: rebuild only four local Lite assets using pinned read-only export supervision; qualify unchanged consumer oracles under finite D envelopes; review exact build first; no publication, model grant or original configuration change.
 
 ## GOAL
 
-AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02
+AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01: rebuild only four local Lite assets using pinned read-only export supervision; qualify unchanged consumer oracles under finite D envelopes; review exact build first; no publication, model grant or original configuration change.
 
 ## WHY
 
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4130
-- approx_tokens: 1033
+- chars: 4602
+- approx_tokens: 1151
 - budget_status: PASS
 - warnings:
   - none

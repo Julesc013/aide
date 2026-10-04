@@ -1,0 +1,86 @@
+[
+  {
+    "source": ".aide.local/consumer_canary_base.py",
+    "source_sha256": "c8ef2dab903793e2f9ae11c5d8ce6ecebad0c0733b142e8ce85360affac11cba",
+    "copy": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/consumer_canary_base.py",
+    "copy_sha256": "c8ef2dab903793e2f9ae11c5d8ce6ecebad0c0733b142e8ce85360affac11cba",
+    "adaptation": "none"
+  },
+  {
+    "source": ".aide.local/consumer_canary_runner.py",
+    "source_sha256": "ece23decd62270cdf1e03ebf04a8b419bc3afb4578a6c6d729cd2c3b763dc62d",
+    "copy": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/consumer_canary_runner.py",
+    "copy_sha256": "ece23decd62270cdf1e03ebf04a8b419bc3afb4578a6c6d729cd2c3b763dc62d",
+    "adaptation": "none"
+  },
+  {
+    "source": ".aide.local/lifecycle_canary_base.py",
+    "source_sha256": "08ab80da60664556f16d9ba63ce9ba08f24060327de1316dad0a80ce4118dfb1",
+    "copy": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_canary_base.py",
+    "copy_sha256": "08ab80da60664556f16d9ba63ce9ba08f24060327de1316dad0a80ce4118dfb1",
+    "adaptation": "none"
+  },
+  {
+    "source": ".aide.local/lifecycle_canary_runner.py",
+    "source_sha256": "716256c5236eb1b68d00c871612b9d5fbbb29a6c57541a2756f529d5d4298e7b",
+    "copy": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_canary_runner.py",
+    "copy_sha256": "716256c5236eb1b68d00c871612b9d5fbbb29a6c57541a2756f529d5d4298e7b",
+    "adaptation": "none"
+  },
+  {
+    "source": ".aide.local/lifecycle_helper.py",
+    "source_sha256": "3f3140807520b1481181c34e95e06273e2774698cf2d384e42b5b6214f58a181",
+    "copy": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py",
+    "copy_sha256": "3f3140807520b1481181c34e95e06273e2774698cf2d384e42b5b6214f58a181",
+    "adaptation": "none"
+  },
+  {
+    "source": ".aide.local/context_offline_canary.py",
+    "source_sha256": "4bce2172cae12c7504e8095e23e8151e07b2a4fd9f34f2f221ad79cc8009cb92",
+    "copy": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/context_offline_canary.py",
+    "copy_sha256": "4bce2172cae12c7504e8095e23e8151e07b2a4fd9f34f2f221ad79cc8009cb92",
+    "adaptation": "none"
+  },
+  {
+    "source": ".aide.local/partial_cli_canary.py",
+    "source_sha256": "a1fbff1147cdf341e00da4a5c40869cdccd1dd2011dbc20dbcbff9db6f64456d",
+    "copy": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/partial_cli_canary.py",
+    "copy_sha256": "a1fbff1147cdf341e00da4a5c40869cdccd1dd2011dbc20dbcbff9db6f64456d",
+    "adaptation": "none"
+  },
+  {
+    "source": ".aide.local/public_cli_canary.py",
+    "source_sha256": "3ebc962bd9c8a938cd10b36c5da16862ef75e6d3d605ffac269ae2467e4095e3",
+    "copy": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/public_cli_canary.py",
+    "copy_sha256": "3ebc962bd9c8a938cd10b36c5da16862ef75e6d3d605ffac269ae2467e4095e3",
+    "adaptation": "none"
+  },
+  {
+    "source": ".aide.local/forced_restart_base.py",
+    "source_sha256": "2dd3b0f8b12a7bc382a71747019ce61ba7938e72b832d1a96d2e807b3e2b005b",
+    "copy": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/forced_restart_base.py",
+    "copy_sha256": "2dd3b0f8b12a7bc382a71747019ce61ba7938e72b832d1a96d2e807b3e2b005b",
+    "adaptation": "none"
+  },
+  {
+    "source": ".aide.local/forced_restart_runner.py",
+    "source_sha256": "615f02705135758104cfafa2c11b7797220f622e489d86508224c59a922e1bbd",
+    "copy": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/forced_restart_runner.py",
+    "copy_sha256": "615f02705135758104cfafa2c11b7797220f622e489d86508224c59a922e1bbd",
+    "adaptation": "none"
+  },
+  {
+    "source": ".aide.local/job_forms_canary.py",
+    "source_sha256": "5ad1c8092d7728e3ea76b4a99e051701b894abae7893b8f45dc275a8ae9b7a09",
+    "copy": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/job_forms_canary.py",
+    "copy_sha256": "2fa1506bbc59bee0d9b9c64f97c5ea4b4738902a72119cf575ad598d92b39af0",
+    "adaptation": "Repository depth and selected public legacy fixture template; retain raw command outputs; assert new inspection flags. Existing 12 forms and assertions preserved."
+  },
+  {
+    "source": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/taskos_delivered_canary.py",
+    "source_sha256": "3fbf7e4a859f98923204a77cdeb70fd3dde690458aa055b23de1176864246183",
+    "copy": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/taskos_delivered_canary.py",
+    "copy_sha256": "3fbf7e4a859f98923204a77cdeb70fd3dde690458aa055b23de1176864246183",
+    "adaptation": "none"
+  }
+]

@@ -4458,3 +4458,11 @@ boundaries, original historical release baseline and all operational gates.
 Exact de7bfb2b source/main-dev-task effect is accepted with nonblocking notes;
 the metadata closeout and current report require focused exact review before
 fresh guarded application. Unchanged product/payload qualification is reused.
+
+## 2026-10-04 current scoped Lite qualification
+
+AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 closes the stale local asset boundary
+over accepted bf559c0a. Pin the already accepted export supervisor separately
+from release outputs, retain prior asset Git custody, and reuse full consumer
+acceptance. Exact envelope review precedes build; artifact/runtime promotion
+and integration have separate exact review. External release gates remain.

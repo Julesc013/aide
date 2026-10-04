@@ -1,0 +1,52 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
+title: Qualify current Lite assets with a separate pinned supervisor
+type: qualification
+status: needs_review
+planning_state: bounded_local_asset_effect_review_pending
+result: CURRENT_ASSET_QUALIFICATION_PENDING
+created_at: 2026-10-04
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+authority_basis: Active owner delivery objective and campaign delegation authorize separately reviewed local asset qualification; publication and missing owner decisions remain separate.
+objective: Replace stale local candidate bytes with current qualified source and prove supported delivered journeys under the existing scoped entry without modifying its supervisor.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/**
+    - .aide/release/stable/aide-lite-v1.0.0.zip
+    - .aide/release/stable/aide-lite-v1.0.0.tar.gz
+    - .aide/release/stable/aide-lite-v1.0.0.manifest.json
+    - .aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt
+    - .aide/queue/index.yaml
+    - .aide/profile.yaml
+    - .aide/generated/**
+    - .aide/context/latest-task-packet.md
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/remaining-risks.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  read_only_sources:
+    - .aide/export/aide-lite-pack-v0/**
+    - core/**
+    - .aide/scripts/**
+    - .aide/policies/**
+    - .aide.local existing selected canaries and original configuration
+  permitted_local_state:
+    - .aide.local/current-scoped-lite-qualification-execution.json
+    - .aide.local/current-scoped-lite-qualification-job.json
+  separately_reviewed_local_promotion: Only runtime archive SHA and pinned dependency closure in .aide.local/scoped-job-entry-01-execution.json after exact asset acceptance; all other original configuration fields preserved.
+  external_resources: Existing D:/Projects/AIDE/.aide.local/execution pools only; finite aggregate 256 MiB, one job, no fallback.
+  forbidden_operations:
+    - tag, publication, model/provider calls, historical disposition acceptance
+    - drive changes, ACL/accounts/quotas, unknown cleanup, target-project adoption
+    - new worktrees/clones, full backups, new source archives or storage layout
+    - modifying product source, policies, the selected export supervisor or old reviews
+review_gate: Exact independent local build/qualification envelope before archive mutation; exact current asset and runtime-promotion acceptance before integration or original runtime-pin change.
+branch_plan:
+  base: bf559c0a939aba7f9d3d2f3922418428fcf9b6ee
+  helper: git plan ready_dry_run on clean dev before the four owned intake views
+  task_branch: task/aide-current-scoped-lite-qualification-01

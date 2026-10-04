@@ -1,0 +1,6 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
+status: needs_review
+planning_state: bounded_local_asset_effect_review_pending
+result: CURRENT_ASSET_QUALIFICATION_PENDING
+updated_at: 2026-10-04

@@ -1,0 +1,10 @@
+{
+  "identity": "BLACKGLASS-WIN1\\Jules",
+  "github_account": "Julesc013",
+  "local_stable_tags": [],
+  "remote_stable_tags": [],
+  "release_count": 0,
+  "published_stable_release_count": 0,
+  "version_candidate": "1.0.0",
+  "policy": "first_stable_rule; not tag/publication acceptance"
+}

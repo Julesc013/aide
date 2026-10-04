@@ -607,3 +607,7 @@ Source-only main integration and branch identity proof:
 publication and retains the original release baseline and operational gates.
 Current development increment and full-report crosswalk:
 .aide/queue/AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02/REPORT.md.
+
+Current local asset and separate-supervisor qualification owner:
+.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/. Local artifact evidence
+does not discharge outer/client, model, historical or publication gates.

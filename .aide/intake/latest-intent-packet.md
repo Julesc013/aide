@@ -3,8 +3,8 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: f468dd3e8080765929f4bd32668489ed355d7e2c15c22666d3fad8a8535c7325
-- raw_prompt_excerpt: Integrate independently accepted AIDE architecture reconciliation and managed inspection diagnostic source from dev 9b1d18445b38ab39799aad18871b91ddb75a1759 into main 3d186d0584bb40f18402a626c9fe099260fae3d4. Admit one bounded campaign i...
+- raw_prompt_hash: 3198191b7ae9dd0cfeffd84f6e4f8e28b68ddd757bc9806cd5b83d465605efc9
+- raw_prompt_excerpt: Qualify current AIDE Lite candidate assets from accepted source bf559c0a939aba7f9d3d2f3922418428fcf9b6ee through the existing scoped runner and approved D storage. Pin the already accepted export runtime separately from release outputs;...
 - interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release

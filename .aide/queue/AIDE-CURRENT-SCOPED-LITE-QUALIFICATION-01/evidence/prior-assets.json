@@ -1,0 +1,26 @@
+{
+  ".aide/release/stable/aide-lite-v1.0.0.zip": {
+    "baseline_commit": "bf559c0a939aba7f9d3d2f3922418428fcf9b6ee",
+    "blob_oid": "4f72afc3503bd296481526d03c01eb9baad236fd",
+    "sha256": "002636e7732125ceade6bc3fe2d8e6fdb187cc544052360483dcb5b5d77acf97",
+    "bytes": 1118439
+  },
+  ".aide/release/stable/aide-lite-v1.0.0.tar.gz": {
+    "baseline_commit": "bf559c0a939aba7f9d3d2f3922418428fcf9b6ee",
+    "blob_oid": "733dc1c21470b09eb3513a5c0874e7b7227be9f5",
+    "sha256": "0821532cbd382953c07cf0d4508159b2aa06e0161fbf7568e4ca0f83feac5022",
+    "bytes": 784613
+  },
+  ".aide/release/stable/aide-lite-v1.0.0.manifest.json": {
+    "baseline_commit": "bf559c0a939aba7f9d3d2f3922418428fcf9b6ee",
+    "blob_oid": "679fb9b5babf48590afb275043c1aed892279ca6",
+    "sha256": "79681299012d802543252bd4bb6c927f2f893a9410a2cf18a88b5f994f7e071f",
+    "bytes": 4955
+  },
+  ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt": {
+    "baseline_commit": "bf559c0a939aba7f9d3d2f3922418428fcf9b6ee",
+    "blob_oid": "24403d8c30e7b95d67d42cfd1fdae7348bc17c5b",
+    "sha256": "ccb314006c642ac076342886af3ab487e789447c09f15fe626952374ce81ac79",
+    "bytes": 274
+  }
+}

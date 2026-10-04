@@ -1,0 +1,46 @@
+# Frozen qualification files
+
+- .aide/context/latest-task-packet.md
+- .aide/generated/manifest.yaml
+- .aide/intake/latest-intent-packet.json
+- .aide/intake/latest-intent-packet.md
+- .aide/intake/latest-workunit-draft.json
+- .aide/intake/latest-workunit-draft.md
+- .aide/profile.yaml
+- .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+- .aide/queue/index.yaml
+- DOCUMENTATION.md
+- IMPLEMENT.md
+- PLANS.md
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/ExecPlan.md
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/consumer_canary_base.py
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/consumer_canary_runner.py
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/context_offline_canary.py
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/forced_restart_base.py
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/forced_restart_runner.py
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/job_forms_canary.py
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/legacy-config-template.json
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_canary_base.py
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_canary_runner.py
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/partial_cli_canary.py
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/public_cli_canary.py
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/taskos_delivered_canary.py
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/build-configuration.json
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/build-selection.json
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/canary-custody.json
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/consumer-configuration.json
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/effect-manifest.json
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/intent-compiler-report.md
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/preflight-or-blocker-report.md
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/prior-assets.json
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/release-history.json
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/validation.md
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/prompt.md
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/status.yaml
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/task.yaml
+- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/worker.py
+
+Product source, selected export, original local configuration and prior assets remain unchanged at prebuild freeze.

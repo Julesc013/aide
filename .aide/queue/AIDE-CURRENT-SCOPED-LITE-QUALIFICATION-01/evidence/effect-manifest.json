@@ -1,0 +1,48 @@
+{
+  "schema": "aide.local-asset-qualification-effect.v1",
+  "baseline": "bf559c0a939aba7f9d3d2f3922418428fcf9b6ee",
+  "prior_assets_ref": "evidence/prior-assets.json",
+  "prior_assets_sha256": "3940a6268b5c1444339c7a7a9657516c4f051269181c99bd39ed5e685465e63f",
+  "original_scoped_configuration_sha256": "1da3a51a9f1080c38897a1c5df3d8bdb438715e4fbf3d5d07f274ae6175dde88",
+  "original_legacy_configuration_sha256": "73c0b1a4f4bb7cf341c8882806852a9aaea81c81a3d956cde575c1814e3616f6",
+  "phase_envelopes": {
+    "build": {
+      "configuration_ref": "evidence/build-configuration.json",
+      "raw_sha256": "75d951da7aad70cb54ecd5f159fda24bb151b610200de8a32675b331d0a1e714",
+      "scratch_bytes": 16777216,
+      "retained_bytes": 1048576,
+      "log_bytes": 1048576,
+      "aggregate_bytes": 268435456,
+      "canonical_outputs": {
+        ".aide/release": {
+          "bytes": 8388608,
+          "volume_id": "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\"
+        }
+      }
+    },
+    "consumer": {
+      "configuration_ref": "evidence/consumer-configuration.json",
+      "raw_sha256": "e73458e1f9c16d0ef0f32315957930784dedf322f255a6ac4d89290bd42e1ece",
+      "scratch_bytes": 41943040,
+      "retained_bytes": 10485760,
+      "log_bytes": 1048576,
+      "aggregate_bytes": 268435456,
+      "canonical_outputs": {}
+    }
+  },
+  "worker_sha256": "be6e4bba01b074fea76ee78102d5dfe2dd9a35337da396b61dce41ccb79b0041",
+  "canary_custody_sha256": "f07b23dcf7d10a55bb9232e2a7af7663b0340596207be053ae27fe0169c99f79",
+  "effects": [
+    "local exact four candidate files rebuilt using read-only current export supervisor",
+    "unchanged 6 consumer oracles plus 12 job forms and delivered Task OS inspection in owned fixtures",
+    "full required results retained and serial fixture/terminal job retirement verified",
+    "deterministic replay, no asset or pin promotion inferred"
+  ],
+  "recovery": "Restore exact four Git blobs from baseline if build/qualification fails; original configuration never changes in this effect",
+  "excluded_effects": [
+    "original runtime configuration promotion",
+    "integration and push",
+    "tag, publication, model invocation or historical acceptance",
+    "client/machine/other target/unknown cleanup"
+  ]
+}
