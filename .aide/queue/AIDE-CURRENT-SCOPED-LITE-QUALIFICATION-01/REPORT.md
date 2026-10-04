@@ -5,9 +5,10 @@
 The exact source repair passed all49 required affected tests, export generation
 and full validation as CodexSandboxOffline in jobb92f98a4. Its scratch and active
 record are absent, reservation released, and full evidence retained. All846
-export checksums were recomputed. Independent technical source/build acceptance
-is the next gate; current local assets remain the older candidate, and main/dev
-remain bf559c0a. No publication or runtime-pin promotion has occurred.
+export checksums were recomputed. Independent source and local build/envelope review accepted the exact bytes.
+The new four-file local candidate passed build/validation in job2069e86b and
+retired. Consumer-effect review is next; main/dev remain bf559c0a. No
+publication, artifact acceptance or runtime-pin promotion has occurred.
 
 The quiescent earlier job46e91fbf is also recovered and retired. Its original
 PermissionError/null exit remains a failed historical attempt. Source proof
@@ -86,9 +87,10 @@ See ../AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md for19 spec amendments,
 
 ## Remaining gates
 
-Source checks/full validation passed; exact technical acceptance, new asset
-consumers/replay and exact integration are pending. The original4 local assets are still older source; no unchanged
-ZIP acquires this repair by implication. Historical10 decisions and live model
+Source checks/full validation and independent source/local build acceptance
+passed. The four local assets were regenerated and validated; current consumers,
+replay, exact artifact/pin/integration acceptance remain pending. The original
+candidate is preserved by exact Git identities; its old review is not inherited. Historical10 decisions and live model
 permission remain absent; matched outcome efficiency, constrained outer-client
 workflow, publication/downloaded-consumer proof and authorized downstream
 adoption remain separate gates. Wider reported disk sprawl has not been
@@ -119,9 +121,22 @@ Its scratch/active are absent and reservation released. Collection digests and
 all846 export checksum entries were independently recomputed locally. Retained
 4903513 bytes includes full logs; result output separately obeys64 KiB allowance.
 Evidence is in public-fixture-native-result.json and source-qualification.json.
-Independent technical source acceptance remains a distinct pending gate.
+Independent source/local build acceptance was obtained against1813efe7;
+asset acceptance remains separate.
 
 The required full logs make the original all-consumer reservation exceed the
 finite aggregate cap. Predeclared first/rest groups retain exactly all8 cases,
 unchanged acceptance and full results; no log discard or allowance increase.
 Independent exact build effect review precedes any archive write.
+
+## Actual local build outcome
+
+Build2069e86b passed stable-build and stable-validate with hash-bound reuse of
+the36 unchanged release tests. Scratch peak8508 bytes, memory250650624 bytes;
+retained13787 bytes, all collection digests verified, scratch/active absent and
+reservation released. New asset ZIP4a45922b / TAR4b3e22ee contains sourcea8e004e7
+and repaired CLIf58f1cf4. Exact full identities live in build-result.json.
+An earlier clean-source preflight33662de9 failed before any asset writes because
+this controller added its review as untracked Markdown; it retired normally and
+was reconciled by retaining that exact review in an ignored log until closeout.
+No failed attempt is erased or represented as passing.

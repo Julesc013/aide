@@ -3,7 +3,7 @@ id: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
 title: Qualify current Lite assets with a separate pinned supervisor
 type: qualification
 status: needs_review
-planning_state: source_49_check_native_PASS_exact_build_effect_review_pending
+planning_state: current_assets_built_exact_consumer_effect_review_pending
 result: CURRENT_ASSET_QUALIFICATION_PENDING
 created_at: 2026-10-04
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

@@ -617,3 +617,12 @@ does not discharge outer/client, model, historical or publication gates.
 See .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/ExecPlan.md, task.yaml and evidence/recovery-effect-46e91fbf.json for exact scope, bounded public-fixture repair and same-job retirement. docs/reference/aide-lite-test-runner.md describes the proposed public fixture route and explicit remaining limits. Reuse accepted core/host evidence where its identities remain unchanged; do not describe interrupted validation or stale archives as current acceptance.
 
 Current qualification update: jobb92f98a4 passed49 affected checks, export and full validation under CodexSandboxOffline; peak scratch6095005 bytes/memory307408896 bytes, scratch/active absent and reservation released. Old46e91fbf is separately reconciled with its failure preserved. Current source/build effect acceptance is pending; source test proof is reused only with exact input hashes. Consumer proof is predeclared in two groups to retain all raw evidence within the existing256MiB aggregate budget. Original archives/runtime pin remain unchanged.
+
+### Current scoped Lite local build — 2026-10-04
+
+AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 source49/export/fullvalidation received
+exact independent acceptance; native current asset build2069e86b passed and
+retired. consumer-effect-manifest.json freezes actual new ZIP/TAR/CLI identities
+for first/rest qualification under unchanged256 MiB aggregate. No publication,
+original runtime promotion or main/dev change is implied. Original failed
+preflight and recovery evidence remain retained.

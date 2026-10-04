@@ -3,7 +3,8 @@
   "config_sha256": "75d951da7aad70cb54ecd5f159fda24bb151b610200de8a32675b331d0a1e714",
   "phase_configuration_refs": [
     "evidence/build-configuration.json",
-    "evidence/consumer-configuration.json"
+    "evidence/consumer-first-configuration.json",
+    "evidence/consumer-rest-configuration.json"
   ],
   "original_config_sha256": "1da3a51a9f1080c38897a1c5df3d8bdb438715e4fbf3d5d07f274ae6175dde88",
   "original_config_unchanged": true,

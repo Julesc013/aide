@@ -12996,3 +12996,12 @@ archive supervision qualifies source/export before any build retry.
 Two attempted jobs are preserved: first refused before archive mutation and retired; second passed five admission regressions and refreshed export, then stopped on a private public-archive temp. Its exact quiescent allocation is held for reviewed same-job recovery. A narrow public-fixture repair and affected tests are prepared but are not qualified. Original four stable assets and runtime configuration are unchanged.
 
 Current qualification update: jobb92f98a4 passed49 affected checks, export and full validation under CodexSandboxOffline; peak scratch6095005 bytes/memory307408896 bytes, scratch/active absent and reservation released. Old46e91fbf is separately reconciled with its failure preserved. Current source/build effect acceptance is pending; source test proof is reused only with exact input hashes. Consumer proof is predeclared in two groups to retain all raw evidence within the existing256MiB aggregate budget. Original archives/runtime pin remain unchanged.
+
+### Current scoped Lite local build — 2026-10-04
+
+AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 source49/export/fullvalidation received
+exact independent acceptance; native current asset build2069e86b passed and
+retired. consumer-effect-manifest.json freezes actual new ZIP/TAR/CLI identities
+for first/rest qualification under unchanged256 MiB aggregate. No publication,
+original runtime promotion or main/dev change is implied. Original failed
+preflight and recovery evidence remain retained.

@@ -83,7 +83,7 @@ remain unqualified. All previous candidates and reviews remain historical.
 ## Progress
 
 - [x] Current source/state and missing artifact boundary identified.
-- [ ] Frozen envelope/build effect independently accepted.
+- [x] Frozen source and local build/replay envelope independently accepted; build passed/retired.
 - [ ] Current artifacts and full bounded consumer proof verified.
 - [ ] Exact local artifact/runtime/integration acceptance and effects complete.
 
@@ -190,3 +190,13 @@ cases00..07 once, the same new archive identity,38 public forms and12 job-form
 observations. Partial success is retained as partial; failed/interrupted groups
 are reconciled before any next allocation. This schedules the necessary proof
 within finite available resources; it does not change acceptance criteria.
+
+## Actual current asset subject
+
+Build2069e86b passed stable-build/stable-validate and retired. New four-file
+identity is bound in evidence/consumer-effect-manifest.json; source49 proof is
+reused by exact hashes. Freeze and review that actual consumer subject before
+first/rest groups. Original configuration/pin remains unchanged; publication
+and artifact acceptance are not inferred. Failed clean-source preflight33662de9
+is preserved, retired, assets unchanged, caused by the controller prematurely
+adding its review record; this was reconciled before the successful dispatch.

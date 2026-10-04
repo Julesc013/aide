@@ -1,0 +1,11 @@
+{
+  "job_id": "33662de9b4204b7c8ad5dd03a74fecc4",
+  "receipt_sha256": "3663332d7afde8b31bb6faf384525e85093bc66dab71d50c6222992dffe7ccc6",
+  "phase": "retired",
+  "exit_code": 1,
+  "reason": "new untracked owned review record made clean-source guard refuse before asset writes",
+  "reservation_released": true,
+  "scratch_absent": true,
+  "assets_unchanged": true,
+  "remedy": "same owned review bytes relocated to ignored evidence log; source/effect/input hashes unchanged"
+}
