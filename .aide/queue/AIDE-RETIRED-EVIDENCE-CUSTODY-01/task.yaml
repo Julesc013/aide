@@ -1,0 +1,76 @@
+schema_version: aide.queue-task.v0
+id: AIDE-RETIRED-EVIDENCE-CUSTODY-01
+title: Preserve complete retired evidence under finite managed custody
+type: implementation
+status: running
+planning_state: admitted_source_native_fixture_prepared
+result: PENDING
+created_at: 2026-10-05
+updated_at: 2026-10-05
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+depends_on:
+  - AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
+objective: >
+  Add lossless finite custody for terminal owned job evidence through the
+  existing storage owner, with unchanged receipt identities, explicit evidence
+  lookup, bounded staging, interruption recovery and blocked new allocation
+  while custody retirement is unresolved. Preserve all consumer acceptance.
+authority_basis: Campaign owner delegation; C4 resource lifecycle candidate.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/**
+    - core/execution/retired_evidence.py
+    - core/execution/managed_workspace.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_retired_evidence.py
+    - docs/reference/retired-evidence-custody.md
+    - .aide/queue/index.yaml
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/context/latest-task-packet.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - AGENTS.md
+    - .agents/skills/aide-queue/SKILL.md
+    - .agents/skills/aide-execplan/SKILL.md
+    - .agents/skills/aide-review/SKILL.md
+    - .aide/generated/preview/CLAUDE.md
+    - .aide/generated/manifest.yaml
+  read_only_paths:
+    - .aide/policies/review-gates.yaml
+    - .aide/release/**
+    - .aide/export/**
+    - .aide.local/scoped-job-entry-01-execution.json
+  forbidden_operations:
+    - live retained/control/scratch mutation from source admission
+    - new worktree, clone, pool, fallback drive or quota/ACL change
+    - truncation, removal of unique evidence or acceptance reduction
+    - blanket cache wipe, arbitrary target changes or machine-wide inventory
+    - provider/model calls, runtime promotion, tag or publication
+implementation_boundary:
+  existing_receipt_bytes_preserved: true
+  archive_contains_complete_logs_and_output: true
+  operator_lock_reuses_admission_lock: true
+  aggregate_limit_unchanged: true
+  ownership_and_single_writer_controls_are_cooperative: true
+  hard_filesystem_quota_or_host_containment_claim: false
+  consumer_matrix_unchanged: eight_cases_38_forms_39_outputs_12_job_observations
+verification:
+  - exact source admission and later independent frozen source/native review
+  - lossless roundtrip including empty directories and binary evidence
+  - unchanged owner/receipt digests and reconstructed collected tree digests
+  - stale, active, unknown, redirected and tampered evidence refusals
+  - bounded staging and estate lock; no double allocation during pending cleanup
+  - interruption at each custody boundary resumes without recopy or job replay
+  - explicit bounded evidence read works before and after custody
+  - no live custody effect before exact separate source/effect acceptance
+retained_gates:
+  - current-payload consumers and release checks remain required
+  - outer client, historical dispositions and live efficiency remain separate
+
+permitted_local_state:
+  - .aide.local/retired-evidence-custody-test-execution.json
+  - .aide.local/retired-evidence-custody-test-job.json

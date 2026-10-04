@@ -1,5 +1,13 @@
 # AIDE Documentation Index
 
+## Retired evidence custody source candidate
+
+[Custody reference](docs/reference/retired-evidence-custody.md) describes finite
+plan/apply/recover/verify/read behavior, receipt preservation, staging limits and
+lookup compatibility. [WorkUnit](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md)
+records exact qualification; no live custody or reclaimed capacity is yet claimed.
+
+
 ## 2026-10-05 current capability payload source qualification completed
 
 Current scoped job e188c5d7 on9badd6f9 passed export/full validation and18 newly

@@ -1,0 +1,11 @@
+{
+  "ast": {
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/worker.py": "ce71c024013ef4cd4c7dc5c0b112a8c9fcf1b8f0d2a74a9a59de5a28358c6f4c",
+    ".aide/scripts/aide_lite.py": "62ce6968511818ed46236fb889e0f2cec24dcf431316d576eaa9628ecad69297",
+    ".aide/scripts/tests/test_retired_evidence.py": "861e8c0e44fea8b91bdc2753fdafa67cc843bb98dcd8838c2839b76168e60b5d",
+    "core/execution/retired_evidence.py": "7e6943cdde2669ffd99dcf48eb58762ebfed3cc2d317cb12eb20bea7494522af"
+  },
+  "authored_test_count": 21,
+  "native_configuration_sha256": "6ce5cde183a97aacdd4ebd56678790d1e5e8bdd84d2e331d57f4aa159ac1b301",
+  "original_config_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa"
+}

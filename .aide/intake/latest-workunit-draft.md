@@ -1,13 +1,13 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-release-1ad155f3c8ef
-- title: Release WorkUnit Draft - Write blocker report and require reviewed authorization before mutation
+- workunit_id: draft-evidence-8a2a93adbe62
+- title: Evidence WorkUnit Draft - Require behavior proof and live-test validation plan before implementation
 - status: draft
-- task_class: release
-- risk_class: release
-- sizing_class: blocked
-- objective: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
+- task_class: evidence
+- risk_class: high
+- sizing_class: live_test_gate
+- objective: Normalize prompt into a bounded evidence WorkUnit draft: require behavior proof and live-test validation plan before implementation.
 - why: AIDE compiles raw prompts into bounded WorkUnits before execution.
 
 ## Preflight
@@ -19,13 +19,12 @@
 ## Implementation Outline
 
 - Reconcile repo state before editing.
-- write blocker report and require reviewed authorization before mutation
+- require behavior proof and live-test validation plan before implementation
 - Stop at review gates and record evidence before execution.
 
 ## Validation
 
 - git diff --check
-- py -3 .aide/scripts/aide_lite.py changelog validate
 - py -3 .aide/scripts/aide_lite.py intent validate
 
 ## Evidence
@@ -34,7 +33,6 @@
 - validation.md
 - remaining-risks.md
 - intent-compiler-report.md
-- preflight-or-blocker-report.md
 
 ## Acceptance
 
@@ -48,9 +46,8 @@
 - no provider/model/network calls
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not publish releases, tags, or assets from prompt alone
 
 ## Recovery
 
-- idempotency: prompt_hash:1ad155f3c8ef4ad2c6291bd9d62484a9da171c2732a89c498ae9bd19aff01288; status:draft; compile_only:true
+- idempotency: prompt_hash:8a2a93adbe62a35d938abc43f5fd62ce52aabf68676e4a2d16c8c753fc5f72c3; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

@@ -13164,3 +13164,12 @@ Real Jules/Julesc013 authentication and fresh fetch/maps passed for the prepared
 source-only integration. The pre-freeze helper correctly blocked the known dirty
 build/record diff; no ref mutation followed. Require clean frozen readiness and
 exact independent artifact/source/ref review before the delegated effect.
+
+## 2026-10-05 lossless retired evidence custody implementation candidate
+
+Added finite custody operations to the existing job command family. Original
+receipts remain untouched; full archive verification precedes raw-copy retirement.
+Pending custody blocks allocation through the preexisting active.json latch.
+Scope remains the admitted C4 child; source/native/live effects still require
+exact qualification. Tests21 are authored, not run. Current candidate7132 and
+original held runtime selection are unchanged; outer routes remain unrestricted.

@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - AIDE-STABLE-LITE-RELEASE-EFFECT-01 capability payload validation correction: preserve completed49-check job ca2a1e14 and exact partial export. Restore required task packet sections through this existing generator. After exact review, run export/full source validation and18 current-input capability tests within existing D roots and narrower finite scratch; preserve original assets/config/supervisor, complete evidence and retirement. Build and current-byte consumers remain separately reviewed; no model, host, tag, publication, new checkout or storage layout.
+UNSPECIFIED - AIDE-RETIRED-EVIDENCE-CUSTODY-01
 
 ## GOAL
 
-AIDE-STABLE-LITE-RELEASE-EFFECT-01 capability payload validation correction: preserve completed49-check job ca2a1e14 and exact partial export. Restore required task packet sections through this existing generator. After exact review, run export/full source validation and18 current-input capability tests within existing D roots and narrower finite scratch; preserve original assets/config/supervisor, complete evidence and retirement. Build and current-byte consumers remain separately reviewed; no model, host, tag, publication, new checkout or storage layout.
+AIDE-RETIRED-EVIDENCE-CUSTODY-01
 
 ## WHY
 
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 5186
-- approx_tokens: 1297
+- chars: 4126
+- approx_tokens: 1032
 - budget_status: PASS
 - warnings:
   - none

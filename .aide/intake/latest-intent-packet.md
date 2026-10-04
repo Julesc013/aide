@@ -3,18 +3,18 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 1ad155f3c8ef4ad2c6291bd9d62484a9da171c2732a89c498ae9bd19aff01288
-- raw_prompt_excerpt: Refresh and locally qualify the existing AIDE Lite 1.0.0 candidate with the accepted capability evidence repair. Reuse the current task branch, configured D execution pools and unchanged supervisor; export and build only existing canonic...
-- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
+- raw_prompt_hash: 8a2a93adbe62a35d938abc43f5fd62ce52aabf68676e4a2d16c8c753fc5f72c3
+- raw_prompt_excerpt: Add bounded lossless custody of terminal owned AIDE job evidence; preserve full receipt hashes and every log/output byte. Plan source work through AIDE-RETIRED-EVIDENCE-CUSTODY-01. Live raw-copy retirement is separately reviewed; no mode...
+- interpreted_goal: Normalize prompt into a bounded evidence WorkUnit draft: require behavior proof and live-test validation plan before implementation.
 - confidence: high
-- task_class: release
-- risk_class: release
-- sizing_class: blocked
+- task_class: evidence
+- risk_class: high
+- sizing_class: live_test_gate
 - safe_to_execute: false
 - requires_split: true
-- blocked: true
-- blocker_reason: write blocker report and require reviewed authorization before mutation
-- next_action: write blocker report and require reviewed authorization before mutation
+- blocked: false
+- blocker_reason: none
+- next_action: require behavior proof and live-test validation plan before implementation
 - task_execution: false
 - provider_or_model_calls: none
 - network_calls: none
@@ -24,7 +24,6 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not publish releases, tags, or assets from prompt alone
 
 ## Repo State Refs
 
@@ -43,12 +42,11 @@
 - current_branch:task/aide-current-scoped-lite-qualification-01
 - current_role:task
 - workflow:trunk_with_dev_integration
-- worktree_dirty:false
+- worktree_dirty:true
 
 ## Validation Hints
 
 - `git diff --check`
-- `py -3 .aide/scripts/aide_lite.py changelog validate`
 - `py -3 .aide/scripts/aide_lite.py intent validate`
 
 ## Evidence Hints
@@ -57,4 +55,3 @@
 - `validation.md`
 - `remaining-risks.md`
 - `intent-compiler-report.md`
-- `preflight-or-blocker-report.md`

@@ -3884,3 +3884,13 @@ items:
     exec_plan: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/ExecPlan.md
     prompt: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/prompt.md
     evidence: .aide/queue/AIDE-SCOPED-JOB-DEV-INTEGRATION-01/evidence
+
+  - id: AIDE-RETIRED-EVIDENCE-CUSTODY-01
+    status: running
+    planning_state: admitted_source_native_fixture_prepared
+    result: PENDING
+    title: Preserve complete retired evidence under finite managed custody
+    task: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/prompt.md
+    evidence: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence

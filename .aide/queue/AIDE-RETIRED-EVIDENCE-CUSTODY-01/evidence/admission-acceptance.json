@@ -1,0 +1,9 @@
+{
+  "base": "cef28a568e1dee757e885ab1ec96a2ac948e12db",
+  "manifest_sha256": "672436132cc1925fcaad0bd501d7bf1aa7a4887bffdd000558aa6c17d59502ff",
+  "notes": "All four compatibility, capacity, generated-record and later-effect notes classified nonblocking and disposed by reviewer. Implementation/native/live effects require subsequent exact review.",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.independent-admission.v1",
+  "scope": "source_only",
+  "verdict": "ACCEPT"
+}

@@ -1,0 +1,12 @@
+{
+  "base": "cef28a568e1dee757e885ab1ec96a2ac948e12db",
+  "files": {
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md": "cbbec36538e981f6dfef62d531c474964a315684295dac1bf1133e57a62a2ab5",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/prompt.md": "8d72bf5eff909e80847dc37ef7990900501cbf061a85d2251ac496b481b9993a",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/status.yaml": "8bd4fd61a11fa45d37171353621043b6efe760204b8bd65aa82350caeff4dcdb",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/task.yaml": "0c0c0edaa15e2d354cfbbc3289d49d5e42f888031f54763a3aac521c5c429b6f",
+    ".aide/queue/index.yaml": "3acc0e4444b7fdb77efdea71de504b728cb08d19de38bf51c7ccd65ed358a71d"
+  },
+  "live_effect": false,
+  "schema": "aide.custody-source-admission.v1"
+}

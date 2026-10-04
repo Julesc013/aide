@@ -3515,7 +3515,7 @@ bounded execution owner validate rejection and external output; the original
 - Plan: .aide/queue/AIDE-EXECUTE-FACMAN-BETA1-PROGRAMME-01/ExecPlan.md.
 - Objective: full FacMan 0.1 Beta1 engineering/package completion, exact integration, honest human gates.
 
-## AIDE-CW-INTEGRATION-BROKER-01 — local transaction and handoff slice
+## AIDE-CW-INTEGRATION-BROKER-01 â€” local transaction and handoff slice
 
 Status: active, exact dev base bfb86c12b9e6d2970024d29c57ba629994ec43cc. Implement frozen candidate bytes/Git tree and a separate durable broker core. Scope and acceptance are in the task ExecPlan. Validation uses disposable local Git and injected transport only; actual protected transport, isolated host and coordinator v1 adoption remain open.
 
@@ -4305,7 +4305,7 @@ integration candidate while exact historical message decisions gate the
 frozen Lite main promotion. Revalidate refs and integrated effects before a
 later dev move; new release bytes require their own qualification.
 
-The current Lite ZIP SHA-256 `a762c816…` now has one accepted local Windows
+The current Lite ZIP SHA-256 `a762c816â€¦` now has one accepted local Windows
 mid-removal child-exit canary on `task/aide-post-lite-source-integration-01`.
 It preserves authored brownfield bytes and resumes removal through a fresh
 delivered CLI. This supplemental evidence does not move dev or qualify remote
@@ -4500,7 +4500,7 @@ private hard links, distinct Git checkouts and unqualified toolchain material.
 AIDE-ARCHITECTURE-RECONCILIATION-01 is the owner-requested documentation split
 over the 3d186d05 integrated baseline. The blocked release Goal stays dormant.
 Nineteen existing topic owners receive proposed refinements; original requirements
-and cases remain preserved. The staged expansion plan defines C1–C12 candidates
+and cases remain preserved. The staged expansion plan defines C1â€“C12 candidates
 with consumers, dependencies and acceptance; no runtime implementation is admitted
 by that table. First priorities are truthful projections/explainable operations,
 compatibility, portable checkpoints and ownership-aware resource planning.
@@ -4624,3 +4624,11 @@ sync instruction and campaign delegation. Fresh observed88 branch maps retain
 85 other tips. Independent artifact/source/ref review and clean helper readiness
 precede normal dev/main fast-forward and atomic three-ref push; stable and
 consumer certification remain open.
+
+## 2026-10-05 retired evidence custody source admission
+
+The bounded C4 child AIDE-RETIRED-EVIDENCE-CUSTODY-01 received independent
+source-admission ACCEPT. It preserves complete retired evidence and receipts
+using finite compressed custody, explicit lookup and the unchanged owner latch.
+Twenty-one source regressions/native fixture are prepared, not yet executed.
+No live custody, reclaimed bytes, candidate refresh or release approval.

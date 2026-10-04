@@ -1,0 +1,10 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-RETIRED-EVIDENCE-CUSTODY-01
+status: running
+planning_state: admitted_source_native_fixture_prepared
+result: PENDING
+updated_at: 2026-10-05
+current_slice: source_and_fixture_prepared
+next_slice: exact_native_fixture_review
+live_custody_effect_performed: false
+release_publication_authorized_by_this_slice: false
