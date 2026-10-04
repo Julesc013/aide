@@ -242,6 +242,18 @@ class XOS02CapabilityRealityTests(unittest.TestCase):
         states = aide_lite.capability_observed_states(seed, [".aide/scripts/tests/test_fixture.py"])
         self.assertNotIn("tested", states)
 
+    def test_scan_and_ledger_agree_when_code_evidence_is_missing(self) -> None:
+        with aide_lite.public_archive_fixture("aide-public-release-test-") as temp:
+            root = Path(temp)
+            write_fixture(root)
+            (root / ".aide/scripts/aide_lite.py").unlink()
+            ledger = aide_lite.capability_ledger_data(root)
+            self.assertEqual(ledger["records"][0]["dominant_state"], "unknown")
+            observations = [row for row in aide_lite.capability_observation_records(root)
+                            if row["capability_id"] == "fixture_report_command"]
+            self.assertTrue(observations)
+            self.assertEqual({row["observed_state"] for row in observations}, {"unknown"})
+
     def test_changed_read_consumes_budget_and_remains_unknown(self) -> None:
         with aide_lite.public_archive_fixture("aide-public-release-test-") as temp:
             root = Path(temp)

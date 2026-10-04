@@ -7251,7 +7251,7 @@ def capability_observation_records(repo_root: Path) -> list[dict[str, object]]:
     records: list[dict[str, object]] = []
     for seed in capability_seed_records(repo_root):
         capability_id = str(seed.get("capability_id", "unknown"))
-        expected_state = str(seed.get("expected_state", "unknown"))
+        classified_state = str(capability_record_from_seed(repo_root, seed, 1)["dominant_state"])
         hints = [normalize_rel(str(item)) for item in seed.get("expected_evidence_hints", []) if str(item)]
         if not hints:
             records.append(
@@ -7272,11 +7272,12 @@ def capability_observation_records(repo_root: Path) -> list[dict[str, object]]:
                 records.append(
                     {
                         "capability_id": capability_id,
-                        "observed_state": expected_state if exists and expected_state in CAPABILITY_STATES else "unknown",
+                        "observed_state": classified_state if exists else "unknown",
                         "evidence_class": class_name,
                         "evidence_ref": ref,
                         "confidence": "high" if exists else "low",
-                        "notes": "evidence present" if exists else "declared evidence hint is missing",
+                        "notes": ("declared source evidence present; classification only, tests not executed"
+                                  if exists else "declared evidence hint is missing"),
                     }
                 )
     return sorted(records, key=lambda record: (str(record.get("capability_id", "")), str(record.get("evidence_ref", "")), str(record.get("evidence_class", ""))))

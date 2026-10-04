@@ -131,3 +131,9 @@ failure without rebinding, deliberate ledger refresh, preserved authored content
 and final current validation. No canonical report outputs or real targets.
 Green native execution remains NOT_RUN until exact independent source/effect
 review; old4a payload/config/pins/roots/limits remain unchanged.
+
+Self-review superseded unexecuted green sourced7e2f938: the existing scan still
+used expected_state directly when repaired ledger required code/test evidence.
+Scan now reuses the same conservative record classification and explicitly
+labels source observations as not executed tests. A sixteenth regression checks
+scan/ledger agreement with missing command code. No d7 native effect occurred.
