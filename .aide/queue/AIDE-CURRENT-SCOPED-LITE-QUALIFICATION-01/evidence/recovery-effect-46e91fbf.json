@@ -1,0 +1,30 @@
+{
+  "schema": "aide.owned-fixture-retirement-effect.v1",
+  "job_id": "46e91fbfad5041828a02731d782b384f",
+  "manifest_digest": "ffc3ee7d65fc9d0c66e431cf0f4c02fb3cf04956da768e4b2f37708385df3385",
+  "active_raw_sha256": "01973dd5659fcd3bbb61d6839008a47dce6cfa6927f11c0ae7f09df15e213fb9",
+  "config_sha256": "1da3a51a9f1080c38897a1c5df3d8bdb438715e4fbf3d5d07f274ae6175dde88",
+  "scratch_identity": [
+    3781016413010784355,
+    1688849862428049
+  ],
+  "owned_fixture": "tmp/aide-release-validate-g66uoc43",
+  "phase_required": "quiescent",
+  "identity_required": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+  "archive_inputs": {
+    ".aide/release/dist/aide-lite-pack-v0.zip": "6f6414c04721db7d91a17171a7062c69ed08ae498ad24f9345ebade9e0e9df9a",
+    ".aide/release/stable/aide-lite-v1.0.0.zip": "002636e7732125ceade6bc3fe2d8e6fdb187cc544052360483dcb5b5d77acf97"
+  },
+  "effect": "Under the original creation identity, verify exact lease, no active job, all entries ordinary/private-owned and every file equal to a frozen archive member or an interrupted prefix; remove only this exact generated validation fixture. Preserve output/log evidence and then existing job recover retires same job.",
+  "bound_bytes": 8388608,
+  "max_entries": 100000,
+  "memory_limit": 536870912,
+  "timeout_seconds": 60,
+  "log_limit_bytes": 65536,
+  "new_job_or_workspace": false,
+  "acl_machine_or_config_change": false,
+  "model_call": false,
+  "helper_sha256": "71059d33c50e56fcae74858e88b5c55036d334f48782ea63d0b071ee6f5c5c83",
+  "controller_sha256": "29fe722ebc6ed07885376de3d233d3fc1e013e355b9e0c8f672616424ceb963a",
+  "controller_routing": "Existing pinned WindowsJobHost plus existing codex sandbox, exact same owned scratch and job ID under estate lock; no AIDE job resubmission; original result/lease untouched."
+}

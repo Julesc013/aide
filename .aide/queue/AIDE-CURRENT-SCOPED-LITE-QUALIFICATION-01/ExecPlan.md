@@ -106,3 +106,20 @@ That supervisor remains outside export. Reuse the unchanged 71-test owner/host
 qualification. After exact source acceptance, resume the separate export-root
 build supervisor with new export provenance. Preserve the rejected first
 attempt, receipt and previous review; no unchanged retry is authorized.
+
+## Same-job private fixture recovery
+
+The admitted repair ran all five regressions successfully and refreshed export,
+but the live monitor stopped on one unreadable Python private validation temp.
+Job46e91fbf is quiescent with its reservation still held; no new allocation is
+permitted. Full validation and source qualification are unfinished.
+
+Freeze exact existing lease, creation identity, owned temp and public archive
+inputs. Independently review native same-job observation and conditional fixture
+retirement through the existing pinned WindowsJobHost/Codex sandbox. It holds
+the estate lock, reuses the same job ID and original scratch, bounds process/log
+resources and changes no ACL, account, quota, machine or original configuration.
+Read-only observation must prove creation ownership and entry/archive-byte
+custody. Only then retire that exact disposable fixture and use existing public
+job recover to collect logs/results and retire the original job. Preserve the
+interrupted failure; do not replay the source work or fabricate full validation.
