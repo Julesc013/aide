@@ -179,3 +179,18 @@ ordinary ancestor/root and alias/source identity/link/size/content guards.
 Recheck the absolute resolved alias stays within that exact owned fixture.
 Changed custody refuses cleanup; preserve the error rather than deleting
 unknown material. Original target result remains immutable and is not replayed.
+
+
+### Qualified terminal closeout
+
+Exact5b7e0ef5 source/native-fixture ACCEPT_WITH_NOTES (all notes explicitly
+nonblocking/disposed) followed one dispatch b47148c48c6649b5a0a8115721c95ac2.
+Actual assertions passed9 logical/6 unique bytes and2 shared names. Guarded
+alias retired before quiescence; output/log digests verified;2,424 peak scratch
+bytes,35,217,408 peak memory bytes; scratch absent/reservation released.
+No target reread, fallback, model, network or product/source archive rebuild.
+Fresh-stat correction qualified on owned native fixture only; original target
+identity/link counts remain unknown. Full host/read isolation and broader
+cleanup remain unfinished. Final evidence/source synchronization uses the
+current qualification WorkUnit's separately reviewed exact integration effect;
+this child alone does not authorize main or publication.

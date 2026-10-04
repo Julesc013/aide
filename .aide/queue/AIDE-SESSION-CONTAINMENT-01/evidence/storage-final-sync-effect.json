@@ -1,0 +1,49 @@
+{
+  "schema": "aide.storage-qualified-source-sync-effect.v1",
+  "workunit": "AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01",
+  "child": "AIDE-SESSION-CONTAINMENT-01",
+  "candidate": "exact frozen candidate/tree supplied to reviewer; match fresh clean source before effect",
+  "expected_before": {
+    "refs/heads/main": "76132f14e954bc5b54a20f6d503901b14c8431ac",
+    "refs/heads/dev": "76132f14e954bc5b54a20f6d503901b14c8431ac",
+    "refs/remotes/origin/main": "76132f14e954bc5b54a20f6d503901b14c8431ac",
+    "refs/remotes/origin/dev": "76132f14e954bc5b54a20f6d503901b14c8431ac",
+    "refs/remotes/origin/task/aide-current-scoped-lite-qualification-01": "76132f14e954bc5b54a20f6d503901b14c8431ac"
+  },
+  "task_branch": "task/aide-current-scoped-lite-qualification-01",
+  "protected_count": 85,
+  "local_remote_count": 88,
+  "protected_inventory": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/integration-preflight.json",
+  "protected_inventory_sha256": "b1f08f6c58a56e7200a18066cf1a0dbb83568e6639577291db326c9bcc7d1f82",
+  "target_observation_proof_sha256": "939414112a9eca9ff8e9ec051b53f14e65a8ede6d76a3e7143e4a5072dc24808",
+  "fixture_proof_sha256": "d659b1f8fc245886a37081e72e4ee3f8d0b98fcf6d371a9312d462dfbc3b5839",
+  "original_configuration_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "runtime_members": 24,
+  "assets": {
+    "aide-lite-v1.0.0.zip": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+    "aide-lite-v1.0.0.tar.gz": "4b3e22ee351aa31e9fdb5f50e89affd38ef3908163083058f2b151c0c57d8541",
+    "aide-lite-v1.0.0.manifest.json": "7c737cfdc224dec90aa4c7fa03ed74a5ba2becee8a77f65c0d5f1c9a317068fa",
+    "aide-lite-v1.0.0.SHA256SUMS.txt": "aeded870e201d79a8d4689b326f1cb62434e0aa6962f5b9ef1fbc5c3cb9dad8b"
+  },
+  "export_members": 846,
+  "effects": [
+    "normal local dev fast-forward from exact baseline to frozen qualified source",
+    "normal local main fast-forward from dev; current task branch unchanged",
+    "atomic normal origin push only main/dev/currenttask; no force",
+    "return to current task; verify actual88 corresponding pairs/85 other tips and exact846 export/4asset/config/24runtime identities; record terminal receipt in storage-final-sync.log"
+  ],
+  "guards": [
+    "real BLACKGLASS-WIN1/Jules and Julesc013 session; fresh auth/fetch/actual remote head map",
+    "read-only git plan ready_dry_run; clean exact frozen HEAD/tree/effect/proofs",
+    "all85 other tips match exact inventory; exact expectedbefore refs and ancestry",
+    "single AIDE checkout owner; no active job/scratch; original config/pins/assets unchanged"
+  ],
+  "recovery": "Preserve exact error and actual source/ref state. No reset, force, deletion, credential change, protection bypass or uncertain push replay. Read actual remote heads if result uncertain.",
+  "excluded": [
+    "target edits/reread/deletion/adoption",
+    "live/model/network qualification or historical owner acceptance",
+    "tag/publication/stable certification",
+    "whole-host/read isolation/hard-quota/efficiency claims",
+    "new checkout/storage/cache/archive layout"
+  ]
+}

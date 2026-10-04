@@ -1,0 +1,48 @@
+{
+  "schema": "aide.storage-identity-fixture-verification.v1",
+  "job_id": "b47148c48c6649b5a0a8115721c95ac2",
+  "source_commit": "5b7e0ef54de1b3a9ee1209af405a12260ec5af74",
+  "source_tree": "a238739a263ae20abb08967ffbbf3073fe065ba1",
+  "receipt_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\b47148c48c6649b5a0a8115721c95ac2\\receipt.json",
+  "receipt_sha256": "ee007dc3bfe6d226ca597c91bae1d75b2dc9e3c6ecc50c7bd7d00c067a3eacff",
+  "output_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\b47148c48c6649b5a0a8115721c95ac2\\output\\storage-identity-fixture.json",
+  "output_sha256": "fc9fb738162917af2f3b0a182d439d5efd923b847b3d112ab2ed1df40d51d6bf",
+  "result": {
+    "status": "PASS",
+    "worker_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+    "metadata": {
+      "entries": 3,
+      "files": 3,
+      "directories": 0,
+      "logical_bytes": 9,
+      "observed_unique_logical_bytes": 6,
+      "shared_file_entries": 2,
+      "redirected_entries": 0,
+      "file_identity_complete": true,
+      "identity_unknown_entries": 0,
+      "errors": 0,
+      "complete": true,
+      "file_contents_read": false,
+      "allocated_or_reclaimable_bytes": null
+    },
+    "model_calls": 0,
+    "target_reads": 0,
+    "target_mutations": false,
+    "disposable_proven": false
+  },
+  "collected_manifest": {
+    "logs": "3b299856b9f90f3254a5f080655203b1597543977b89caa37c6baaf6549771cf",
+    "output": "e4967a83a4251355b2a11e31f5614d080d8f759e04442a46f888719f7813d109"
+  },
+  "collected_digests_verified": {
+    "logs": true,
+    "output": true
+  },
+  "peak_scratch_bytes": 2424,
+  "peak_memory_bytes": 35217408,
+  "retained_total_logical_bytes": 6428,
+  "scratch_absent": true,
+  "reservation_released": true,
+  "canonical_outputs": {},
+  "target_reread": false
+}

@@ -262,3 +262,20 @@ only the generated subtree recognizes qualified CRLF as a line terminator via
 cr-at-eol. This does not suppress whitespace errors or change source policy.
 The installed Git gitattributes/config documentation and plain diff --check
 qualify the classification; final exact review includes the full attribute.
+
+
+## Separately reviewed storage evidence/source synchronization
+
+The existing SESSION child completed one exact readonly target observation
+and one owned native identity regression. Admit its helper/evidence/root-index
+closeout for source integration only. Actual dirty target is preserved; raw
+invalid identity fields stay unknown; no target replay/deletion or asset/core
+change. Same original config/24 pins and qualified four assets remain fixed.
+After final exact independent source/effect review, fresh real-user auth and
+actual88 remote/local maps must match baseline761 for main/dev/currenttask and
+all85 other tips unchanged. Normal local dev/main fast-forward and atomic origin
+three-ref push only; no force, new branches/worktrees/tags or publication.
+Require clean frozen source/tree, no active job/scratch, 846 export blob/working
+checksums and exact4asset/config/runtime identities before/after. Retain terminal
+sync receipt locally, referenced by canonical report; if any effect fails,
+preserve actual refs and error, with no replay/reset or protection bypass.

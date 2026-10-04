@@ -1,0 +1,8 @@
+{
+  "source_commit": "f24d11a05fcfb7bd2249372cca76e1ff6d579821",
+  "reviewer": "/root/containment_review",
+  "verdict": "REQUEST_CHANGES",
+  "finding": "Exact alias left through quiescence incompatible with strict owner collection/retirement.",
+  "effect_dispatched": false,
+  "superseded_by_accepted_subject": "5b7e0ef54de1b3a9ee1209af405a12260ec5af74"
+}

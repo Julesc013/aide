@@ -1,0 +1,26 @@
+{
+  "reviewer": "/root/containment_review",
+  "verdict": "ACCEPT_WITH_NOTES",
+  "candidate": "5b7e0ef54de1b3a9ee1209af405a12260ec5af74",
+  "tree": "a238739a263ae20abb08967ffbbf3073fe065ba1",
+  "effect_sha256": "89aece8d59b38ffbc4fcde25ac3e638ad6ac2a8cc95af1a29e03ded2c4c2cdd4",
+  "template_sha256": "ca62746b4ed3fad4beb6977287d3c55b0e44f9273171c15f20c7e0b6f0fef089",
+  "effective_manifest_sha256": "e046dd152556a6eabc4afe7ad58f7261030c5aa8ac0e27179426bd3a5be1ea28",
+  "original_config_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "notes": [
+    {
+      "classification": "nonblocking",
+      "disposition": "Only ignored source identities bound; fresh inputs/Python/config/asset/no-active guards verified; managed lock and no fallback required."
+    },
+    {
+      "classification": "nonblocking",
+      "disposition": "Actual three-file assertions and verified collection/retirement required; errors/custody changes retained."
+    },
+    {
+      "classification": "nonblocking",
+      "disposition": "Dirty target preserved; no target reread/cleanup/ref or broader qualification."
+    }
+  ],
+  "fixture_dispatch_count_before": 0,
+  "target_replay": false
+}

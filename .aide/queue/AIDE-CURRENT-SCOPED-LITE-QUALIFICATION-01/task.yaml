@@ -12,6 +12,7 @@ objective: Replace stale local candidate bytes with current qualified source and
 scope:
   allowed_paths:
     - .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/**
+    - .aide/queue/AIDE-SESSION-CONTAINMENT-01/**
     - .aide/release/stable/aide-lite-v1.0.0.zip
     - .aide/release/stable/aide-lite-v1.0.0.tar.gz
     - .aide/release/stable/aide-lite-v1.0.0.manifest.json
@@ -71,3 +72,6 @@ integration_amendment: Actual49/source/export validation,8consumers/replay and o
 metadata_closeout_amendment: Reconcile only current canonical status/focus/context/root indexes and the dated roadmap checkpoint; exact source/asset proofs remain immutable. No semantic adoption or new feature admission. Final metadata synchronization requires its own exact independent review.
 
 export_byte_preservation_amendment: Actual branch switch normalized four generated CRLF members toLF and broke their checksums. Separately reviewed generated-pack-only -text plus exact4 ZIP member restoration; all846 working/staged entries and24 supervisor pins must match before final source/effect review. Source semantics/archive/checksums unchanged.
+
+
+storage_evidence_sync_amendment: Integrate only the separately admitted and independently reviewed SESSION read-only custody metadata, diagnostic helper/owned native fixture, verified retirement and compact documentation. Same current branch/main/dev normal fast-forward/atomic sync; other85tips, original runtime/assets and historical/model/release gates preserved. Final exact source/effect review required; no target retirement or publication.

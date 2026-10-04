@@ -13037,8 +13037,12 @@ modifications, no untracked names,31 ignored names and7,794,943 logical bytes.
 The worktree is preserved; no deletion or reclaimed space is claimed. Output/
 log digests, scratch retirement and reservation release are verified. Raw
 Windows cached identity/link counts are invalid and normalized to unknown;
-a fresh-stat correction awaits one tiny owned native regression fixture.
+a fresh-stat correction passed one tiny owned native regression fixture.
 No target replay, new checkout, asset rebuild or original selection change.
 Read-only native acceptance does not close the outer-client, historical, live
 model, efficiency or stable-publication gates. Rejected preflights remain in
 the task's Git/evidence history. See [storage report](.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md).
+The current qualification WorkUnit adds only this SESSION evidence/helper
+closure to its source-sync allowlist; exact independent final source/effect
+review remains required. This cross-cutting record prevents native acceptance
+being mistaken for integration or whole-session acceptance.

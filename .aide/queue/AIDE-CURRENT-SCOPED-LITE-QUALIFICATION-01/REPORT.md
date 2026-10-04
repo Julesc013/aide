@@ -215,3 +215,21 @@ The campaign Goal remains active; unchanged blocked effects remain dormant.
 Current qualification closes the stale-asset and original-worker selection
 boundaries. It does not establish perfect software, whole-session containment,
 measured savings or a published stable AIDE release.
+
+
+## Bounded storage follow-up (2026-10-05)
+
+The existing SESSION WorkUnit completed a read-only check of one recorded
+Universal linked worktree. Three tracked source modifications require
+preservation. Its owned native regression qualified the fresh-stat file
+identity correction; both jobs collected/verified results and retired scratch.
+Actual target link/unique-byte and reclaimed-space claims remain unknown/zero.
+See [storage report](../AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md).
+
+This source/evidence synchronization is separately reviewed; the four Lite
+assets, original configuration and24 supervised dependencies remain unchanged.
+Its final actual-ref receipt is retained at
+../AIDE-SESSION-CONTAINMENT-01/evidence/storage-final-sync.log. That receipt
+determines the observed synchronized head; no self-referential commit identity
+is fabricated in this report. Stable tag/publication and remaining external
+gates above remain unfinished. No FacMan product work or target cleanup occurs.

@@ -1,0 +1,34 @@
+docs(storage): close qualified custody and source sync plans
+
+## Summary
+- Close actual bounded storage custody and native identity regression evidence with separate reviewed source synchronization.
+## Why
+- The recorded worktree contains dirty source and must be preserved; source synchronization is independent of cleanup and stable-release certification.
+## Changed
+- Record native fixture assertions, verified output/log digests and complete scratch/reservation retirement.
+- Retain dirty target and invalid raw identity fields as unknown without target replay.
+- Align compact root indexes, current reports, parent status and context references.
+- Admit only this evidence/helper closure to the existing qualified source-sync WorkUnit and exact main/dev/currenttask effect.
+## Validation
+- PASS: both exact native jobs terminal, output/log digests verified and owned scratch retired.
+- PASS: native owned three-file fixture observed9 logical/6 unique bytes and2 shared names.
+- PASS: Harness149 info/zero warnings/errors; source AST/JSON, compact references and pack checksums/boundary.
+- PASS: original config/24 runtime pins/four assets unchanged; real Jules/Julesc013 auth and88 actual branch maps/85 other tips verified.
+- WARN: original target identity counts unknown; physical/reclaimable bytes and other writers unknown; no deletion.
+- NOT RUN: final source/ref effect pending exact independent acceptance; unchanged broad suites reused.
+## Changelog
+- Added: verified storage custody/identity result and bounded source-sync closeout.
+- Fixed: stale current references and duplicated/encoded root-index entries.
+## Risks
+- Outer client/read isolation, ten historical decisions, live binding/matched efficiency and stable publication remain unfinished.
+- No whole-host quota, measured savings, target disposal or FacMan product work is claimed.
+## Follow-up
+- Review this exact frozen source/effect, apply only guarded main/dev/currenttask synchronization and retain actual terminal receipt.
+- Keep unresolved external gates dormant; no repeated refused model job or new storage layout.
+
+AIDE-Task: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
+AIDE-Phase: storage-qualified-source-evidence-sync
+AIDE-Result: native_results_verified_final_sync_review_pending
+AIDE-Scope: admitted SESSION closure, current qualification plan/report/task, parent status, compact context and root indexes
+AIDE-Token-Impact: code-owned once-only observation and three-file regression; no target replay, model call or broad suite rerun
+AIDE-Quality-Gate: exact independent frozen source/final ref effect before integration

@@ -59,7 +59,7 @@ verification:
   - explicit uncovered routes and monitored versus enforced limits
 
 storage_discovery_followup:
-  status: actual_dirty_worktree_preserved_identity_fixture_pending
+  status: actual_dirty_worktree_preserved_identity_fixture_passed
   paths:
     - D:/Development/FacMan/repositories/universal-setup-db9c210f4a17/worktrees/task-usk-wu-006-production-publisher
     - D:/Projects/Universal/universal-setup
@@ -71,3 +71,6 @@ storage_discovery_followup:
 
   actual_metadata_ref: evidence/storage-custody-verification.json
   metadata_identity_repair: only owned three-file native fixture; no target reread
+
+  identity_fixture_ref: evidence/storage-identity-verification.json
+  wider_reclamation: unfinished_unknown_ownership_preserved

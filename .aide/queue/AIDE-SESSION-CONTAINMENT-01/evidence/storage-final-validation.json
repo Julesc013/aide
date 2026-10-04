@@ -1,0 +1,20 @@
+{
+  "schema": "aide.storage-final-structural-checks.v1",
+  "source_helpers_ast": "PASS",
+  "bounded_json_records": "PASS",
+  "original_config": "UNCHANGED",
+  "runtime_pins": 24,
+  "runtime_archive": "UNCHANGED",
+  "harness": "PASS_149_info_0_warning_0_error",
+  "harness_scope": "structural contract checks, not complete YAML/schema coverage",
+  "pack_status": "PASS_source_ancestor_checksums_and_boundary",
+  "packet_refs": 20,
+  "packet_missing_refs": [],
+  "packet_chars": 4360,
+  "packet_tokens_estimate": 1090,
+  "actual_tokens": "UNKNOWN",
+  "native_target_once": "PASS_dirty_preserved_identity_fields_unknown",
+  "native_owned_identity_fixture": "PASS_9_logical_6_unique_2_shared_retired",
+  "unchanged_full_source_suites": "reused prior accepted evidence; not rerun",
+  "unsupported_cli_call": "aide_lite.py harness validate refused; corrected documented scripts/aide validate passed, no effects from refusal"
+}

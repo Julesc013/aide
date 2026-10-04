@@ -19,6 +19,7 @@ from restarting work, creating duplicate checkouts or widening authority.
 
 - `.aide/profile.yaml` and `.aide/queue/index.yaml`
 - `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/REPORT.md`
+- `.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md`
 - `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/task.yaml`
 - `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/status.yaml`
 - `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/current-qualification.json`
@@ -67,7 +68,9 @@ accessible and routine model views bounded. No model test follows from status.
 
 Retain exact source/asset/config/receipt and terminal retirement identities.
 Current original runtime: a2416a8c; current ZIP:4a45922b; payload source:a8e004e7.
-Integration receipt records source 21f8677d and preserved corresponding pairs.
+Latest source sync receipt: SESSION evidence/storage-final-sync.log.
+Storage custody and tiny native identity fixture passed with retirement;
+dirty target preserved, zero reclaimed; no target replay.
 Parent/reviewer/cumulative usage and matched efficiency remain unknown here.
 
 ## NON_GOALS
@@ -91,5 +94,5 @@ remaining limitations and independent candidate work. Do not claim perfection.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up; not measured usage
-- chars_before_estimate: 4196
-- approx_tokens_before_estimate: 1049
+- chars_before_estimate: 4360
+- approx_tokens_before_estimate: 1090
