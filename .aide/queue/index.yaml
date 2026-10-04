@@ -3822,8 +3822,8 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/evidence
   - id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
     status: needs_review
-    planning_state: capability_payload_right_sized_corrective_native_effect_review
-    result: ADMISSION_REFUSED_REVISED_SOURCE_EFFECT_PENDING
+    planning_state: capability_payload_current_source_result_review
+    result: PASS_REUSED49_NEW18_EXPORT_FULLVALIDATE_RETIRED_SOURCE_ONLY
     title: Freeze and qualify a publishable AIDE Lite release effect
     task: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml
     exec_plan: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md

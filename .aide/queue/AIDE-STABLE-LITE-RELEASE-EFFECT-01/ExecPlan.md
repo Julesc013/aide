@@ -952,3 +952,21 @@ evidence, widen256MiB or choose a new destination. Preserve the six-MiB
 configuration projection and refused manifest/source identities. New source
 IDs/intent are separate from the refused af6 effect. Broader consumer budgeting
 and finite retention remain a later exact requirement, not settled by this fit.
+
+### Actual corrected source qualification
+
+The exact9badd6f9 native effect passed once in e188c5d7. Export/fullvalidate0,
+18 current tests/no failures/errors/skips,49 verified same-input reuse, ten
+real CLI calls/52 copied public inputs/all847 pack hashes, complete collected
+raw trees and retirement all verified. See capability-payload-current-source-result.json and
+REPORT.md. The expected fixture STALE rejection is not a source validation
+failure. Full source validation has zero FAIL/WARN. Canonical proof JSON is
+LF/parsed-identical; original raw CRLF identities stay bound in retained job.
+
+Observed workspace peak4,989,256 includes logs under scratch+log allowance and
+30-second sampling; no hard4MiB filesystem quota or complete transient peak is
+inferred. New retained5,000,654 bytes raises known pools to232,749,787logical
+bytes. Keep existing256MiB/original config/assets and newly explicit exact
+admission arithmetic. Consumer/build fit needs a fresh separate review.
+No new archive/runtime/ref/tag/publication/model/target/host effect occurred.
+Obtain exact independent result/source review before the next local phase.

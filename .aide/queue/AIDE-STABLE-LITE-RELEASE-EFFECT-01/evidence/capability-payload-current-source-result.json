@@ -1,0 +1,65 @@
+{
+  "archive_build_consumer_publication": "NOT RUN",
+  "canonical_proof_relation": "parsed JSON identical; canonical LF bytes; original raw CRLF proofs and digests preserved in retained job",
+  "capability_cli_proof_projection_sha256": "b316fd7b4eafa7545ccf623c6c0168a335ecb22df171766fd8a77259f7872c9d",
+  "capability_cli_proof_sha256": "aca45471cfe0f70619cd6a14c4f147b3290b704fc547585c24293bc4d4325aa1",
+  "collected_manifest": {
+    "logs": "133a4f6ff23dd00acd15ddae6bd6bae178a56dcadf5eacef6b349897fbc9a21d",
+    "output": "a550f78cd9b859674a95174ab5346932773c1fc3d75998f4337d34d8b73e130b"
+  },
+  "collection_verified": true,
+  "copied_inputs": 52,
+  "copied_logical_bytes": 2616176,
+  "effective_limits": {
+    "canonical_bytes": 536870912,
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 6291456,
+    "max_files": 100000,
+    "memory_bytes": 2147483648,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 32,
+    "retained_bytes": 65536,
+    "runtime_seconds": 900,
+    "scratch_bytes": 4194304
+  },
+  "effective_scope_sha256": "065b4e843d4cde3e68634c80579620f5f11d84c19282990c42e458acc8149e7f",
+  "export_exit": 0,
+  "full_validate_exit": 0,
+  "full_validate_failures": 0,
+  "full_validate_warning_count": 0,
+  "full_validate_warnings": [],
+  "host_model_requests": "unknown; observer0 is not whole-campaign proof",
+  "intentional_fixture_rejects": [
+    "- FAIL Capability ledger evidence validity: STALE (source_inputs_changed); explicit ledger refresh required otherwise"
+  ],
+  "job_id": "e188c5d70f14453ab20ddbd84dc09e4b",
+  "new_tests": 18,
+  "original_config_assets_unchanged": true,
+  "outer_session_contained": false,
+  "pack_entries_verified": 847,
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4214570
+    },
+    "memory_bytes": 285949952,
+    "scratch_bytes": 4989256
+  },
+  "per_cli_hashes": "LF-normalized decoded text; separately verified from raw job trees",
+  "previous_whole_job_passed": false,
+  "qualification_sha256": "d03b2f1b5eeaa8842773d8f9282955b3d540ea9308765ddf00dbefd12db11b23",
+  "read_isolation": "unqualified",
+  "real_cli_invocations_verified": 10,
+  "receipt_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\e188c5d70f14453ab20ddbd84dc09e4b\\receipt.json",
+  "receipt_sha256": "7c8417397c901c48fd4cee0879f0dff3606eb434a040ca542989683922b08393",
+  "retained_logical_bytes": 5000654,
+  "retired": true,
+  "reused_tests": 49,
+  "sampled_workspace_peak_includes_logs": "owned workspace scanned against scratch+logs;30-second samples can miss transient allocations; not hard4MiB quota",
+  "schema": "aide.capability-payload-current-source-result.v1",
+  "source_commit": "9badd6f951ca854ae4cc5b13079b26b2c3c3fc43",
+  "source_qualification_projection_sha256": "7d0e68d35b9724fa7f9cf8bc589a099695d598f69e7de72f1aa194388e7836f1",
+  "source_tree": "91e1d0aa0511e87d2fda698c76bfe1b0f5cf922d",
+  "status": "PASS_SOURCE_ONLY",
+  "test_process_raw_stdout_stderr_verified": true
+}

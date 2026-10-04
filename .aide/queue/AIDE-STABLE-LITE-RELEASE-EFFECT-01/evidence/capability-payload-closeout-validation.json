@@ -1,0 +1,36 @@
+{
+  "actual_verification": [
+    "four capability commands exit0/CURRENT complete41",
+    "native new18 PASS + reused49 exactsix hashes",
+    "native export/fullvalidate0 zeroWARN/FAIL",
+    "rawtrees/receipt52inputs10CLI/all847payloadhashes/retirement verified",
+    "originalconfig/4oldassetsunchanged",
+    "closeoutlocalMarkdownrefs and current41binding PASS"
+  ],
+  "changed_files": [
+    ".aide/generated/manifest.yaml",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-payload-corrective2-acceptance.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-payload-current-cli-proof.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-payload-current-source-result.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/source-qualification.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/status.yaml",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml",
+    ".aide/queue/index.yaml",
+    "DOCUMENTATION.md",
+    "IMPLEMENT.md",
+    "PLANS.md"
+  ],
+  "evidence_views": "full retained raw logs; bounded UI outputs",
+  "native_result_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-payload-current-source-result.json",
+  "remaining": [
+    "exact source/result review",
+    "archive/build/newconsumers/replay and futurecapacity",
+    "outerread/editor/plugin containment",
+    "historicalowner/modelpermission/matchedwholeoutcome",
+    "firststableACCEPT/tag/publication/downloadedconsumer/adoption",
+    "widerunknownstoragecleanup"
+  ],
+  "schema": "aide.capability-payload-closeout-validation.v1"
+}

@@ -1,5 +1,19 @@
 # AIDE Implementation Log
 
+## 2026-10-05 current capability payload source qualification completed
+
+Current scoped job e188c5d7 on9badd6f9 passed export/full validation and18 newly
+executed C1 tests. All49 preceding checks are explicitly reused only on their
+six identical input hashes; whole priorFAIL stays preserved. Complete raw
+trees/receipt/process and ten real CLI frames/52 source inputs/all847 pack
+checksums verified; scratch retired/reservation released. Original config and
+four old assets remain unchanged; archive still predates C1. See
+[full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+Exact result/source review precedes new asset/build/current-consumer work.
+Outer controller/read isolation, retained lifecycle, historical/live/matched
+efficiency/publication and wider cleanup remain explicit independent gates.
+
+
 ## 2026-10-05 source admission refusal preserved; budget estimate corrected
 
 The af6d35cf corrective source job was refused before worker launch. No new

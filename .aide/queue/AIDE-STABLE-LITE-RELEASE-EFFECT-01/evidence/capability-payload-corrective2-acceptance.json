@@ -1,0 +1,14 @@
+{
+  "blocking_findings": [],
+  "effect_sha256": "23ded2ca662ee6d902a09967baa29e858e66f565d45aad83ba15272ef9a42a2e",
+  "notes_disposed": [
+    "observed754633 margin not admission; require fresh locked admission/no fallback, widening or automatic retry",
+    "bind only ignored source IDs/hash; preserveAF6 refusal",
+    "49 six-hash reuse plus18new/export/fullvalidate0/847pack/complete collection+retirement/oldassetsconfigpins",
+    "rawbinaryvsnormalizedCLI distinctions; laterbuild/consumer/promotion/ref/release separate"
+  ],
+  "reviewer": "/root/containment_review",
+  "source_commit": "9badd6f951ca854ae4cc5b13079b26b2c3c3fc43",
+  "source_tree": "91e1d0aa0511e87d2fda698c76bfe1b0f5cf922d",
+  "verdict": "ACCEPT_WITH_NOTES"
+}
