@@ -3,8 +3,8 @@
 - command: `capability validate`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-architecture-reconciliation-01`
-- current_commit: `3d186d0584bb40f18402a626c9fe099260fae3d4`
+- current_branch: `task/aide-current-scoped-lite-qualification-01`
+- current_commit: `fee253b1aa5049e1b3383f00d769e79272c31ad1`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -18,10 +18,11 @@
 ## Result
 
 - result: PASS
-- checks: 322
+- checks: 324
 
 ## Checks
 
+- PASS Capability required file exists: .aide/capabilities/capability-evidence-bindings.schema.json
 - PASS Capability required file exists: .aide/capabilities/capability-seeds.yaml
 - PASS Capability required file exists: .aide/capabilities/capability-observation.schema.json
 - PASS Capability required file exists: .aide/capabilities/capability-overclaim.schema.json
@@ -246,6 +247,7 @@
 - PASS Capability golden task registered: capability_export_pack_inclusion_golden
 - PASS Capability golden task.yaml exists: capability_export_pack_inclusion_golden
 - PASS Capability acceptance exists: capability_export_pack_inclusion_golden
+- PASS Capability ledger evidence validity: CURRENT (bound_source_inputs_unchanged); explicit ledger refresh required otherwise
 - PASS Capability report exists: .aide/reports/capability-command-status.md
 - PASS Capability report contains no-apply marker: .aide/reports/capability-command-status.md report_only
 - PASS Capability report contains no-apply marker: .aide/reports/capability-command-status.md task_execution: false

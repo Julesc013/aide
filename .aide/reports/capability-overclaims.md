@@ -3,8 +3,8 @@
 - command: `capability overclaim-report`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-architecture-reconciliation-01`
-- current_commit: `3d186d0584bb40f18402a626c9fe099260fae3d4`
+- current_branch: `task/aide-current-scoped-lite-qualification-01`
+- current_commit: `fee253b1aa5049e1b3383f00d769e79272c31ad1`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

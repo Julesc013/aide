@@ -3,8 +3,8 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: needs_review
-planning_state: capability_payload_partial_source_explicit_metadata_refresh_review
-result: SOURCE49_PASS_EXPORT_PARTIAL_VALIDATION_FAIL_C1_NOT_RUN
+planning_state: capability_payload_corrective_source_native_effect_review
+result: REPORTS_CURRENT_REUSED49_FULL_SOURCE_AND_C1_PENDING
 created_at: 2026-09-28
 updated_at: 2026-10-05
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -121,7 +121,7 @@ capability_payload_refresh:
     - .aide.local/capability-payload-consumer-execution.json
     - .aide.local/capability-payload-consumer-job.json
   conditional_future_runtime_promotion: exact independently accepted new archive SHA only; unchanged24 member hashes/all other original config fields; current effect excludes promotion
-  admission_only_phase: source49_export_fullvalidate; exact result and next-phase envelope review before build
+  admission_only_phase: corrective_source_reuse49_export_fullvalidate_current_C1; exact result and next-phase envelope review before build
   aggregate_bytes: 268435456
   model_calls: none
   original_assets_mutated_by_source_phase: false

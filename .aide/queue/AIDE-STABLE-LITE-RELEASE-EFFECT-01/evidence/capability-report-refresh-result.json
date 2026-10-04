@@ -1,0 +1,111 @@
+{
+  "actual_changed_paths": [
+    ".aide/reports/capability-command-status.md",
+    ".aide/reports/capability-evidence-bindings.json",
+    ".aide/reports/capability-ledger.json",
+    ".aide/reports/capability-ledger.md",
+    ".aide/reports/capability-observations.json",
+    ".aide/reports/capability-observations.md",
+    ".aide/reports/capability-overclaims.md",
+    ".aide/reports/capability-validation.md"
+  ],
+  "actual_report_hashes": {
+    ".aide/reports/capability-command-status.md": "9839b01ea7164c60efe26280dba2b1260516dcfd4f7b0384200940679e7aca4c",
+    ".aide/reports/capability-evidence-bindings.json": "ccd4e8bac799bb91129c1a2c8fa06d02f68296fe9e49fb5032b45c3e01d4f135",
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "6061d97107e79a5f0022330fb92460f94da45626fb7939a461fa8ae5997bff6e",
+    ".aide/reports/capability-observations.json": "67269a907025d10b2ba4da598cc383ed750929d212407a83d724f9524d3ee16e",
+    ".aide/reports/capability-observations.md": "ffa575393fa6b595479c5c3d3e56960868aacef663a2afd059dc723875163842",
+    ".aide/reports/capability-overclaims.json": "2f01f4fb3d2a6f0ad95fa11a8acfe681c71b92d31aa3989cc3bdbc4245e01eb1",
+    ".aide/reports/capability-overclaims.md": "d7d504bbaaa09740201b5a9624968d648070d65d075cf2aebd59a757c41e92e5",
+    ".aide/reports/capability-validation.md": "7ce8091278e632bdcb533a93f1d9f30c8d9ef00c7903e16070f34453d49c0c2f"
+  },
+  "binding_complete": true,
+  "binding_input_count": 41,
+  "binding_truncated": false,
+  "commands": [
+    {
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "scan"
+      ],
+      "exit_code": 0,
+      "raw_log_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-report-refresh-scan-raw.log",
+      "raw_log_sha256": "d143493994c0b92a96734be9105c404a7d358dd05e7120e5b2cd470660cf7fc2",
+      "stderr_raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_raw_sha256": "d143493994c0b92a96734be9105c404a7d358dd05e7120e5b2cd470660cf7fc2"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "ledger"
+      ],
+      "exit_code": 0,
+      "raw_log_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-report-refresh-ledger-raw.log",
+      "raw_log_sha256": "fa0bbbaec7cf6fa534bca5cba8c20accef7516d8e87a08673e789d821edba152",
+      "stderr_raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_raw_sha256": "fa0bbbaec7cf6fa534bca5cba8c20accef7516d8e87a08673e789d821edba152"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "overclaim-report"
+      ],
+      "exit_code": 0,
+      "raw_log_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-report-refresh-overclaim-report-raw.log",
+      "raw_log_sha256": "0462a0044de9d2163b7dd63b68d71ed9e539118bbd984356826b17cf5320b424",
+      "stderr_raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_raw_sha256": "0462a0044de9d2163b7dd63b68d71ed9e539118bbd984356826b17cf5320b424"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "validate"
+      ],
+      "exit_code": 0,
+      "raw_log_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-report-refresh-validate-raw.log",
+      "raw_log_sha256": "9a5358e7d433fe89cc2c16b2cf491e7ee47aaf33463bcc413aeac02840ef3a52",
+      "stderr_raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_raw_sha256": "9a5358e7d433fe89cc2c16b2cf491e7ee47aaf33463bcc413aeac02840ef3a52"
+    }
+  ],
+  "controller_route_unrestricted": true,
+  "effect_sha256": "1a365473934f127473c8b31fa5666c24f781ad12a0f5b1474dc9dd81c36410eb",
+  "full_source_validation": "NOT RUN",
+  "previous_source_job": "FAIL preserved",
+  "provider_model_network_calls": "none",
+  "review": {
+    "blocking_findings": [],
+    "effect_sha256": "1a365473934f127473c8b31fa5666c24f781ad12a0f5b1474dc9dd81c36410eb",
+    "notes_disposed": [
+      "exact identities/ordinary paths and only9 report changes; once each; stop on failure; complete retained results/hashes",
+      "CURRENT complete truthful binding; outer route unrestricted/no containment proof",
+      "49 reuse limited to same six hashes/verified partial proof; later source/C1/native/capacity gates separate"
+    ],
+    "reviewer": "/root/containment_review",
+    "source_commit": "fee253b1aa5049e1b3383f00d769e79272c31ad1",
+    "source_tree": "021ccc87d454daf1c5f50a0bb51645a8eb8f39ab",
+    "verdict": "ACCEPT_WITH_NOTES"
+  },
+  "schema": "aide.capability-projection-explicit-refresh-result.v1",
+  "source_commit": "fee253b1aa5049e1b3383f00d769e79272c31ad1",
+  "source_tree": "021ccc87d454daf1c5f50a0bb51645a8eb8f39ab",
+  "status": "PASS_SOURCE_PROJECTION_ONLY",
+  "whole_session_contained": false
+}

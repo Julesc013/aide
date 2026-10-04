@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-architecture-reconciliation-01`
-- current_commit: `3d186d0584bb40f18402a626c9fe099260fae3d4`
+- current_branch: `task/aide-current-scoped-lite-qualification-01`
+- current_commit: `fee253b1aa5049e1b3383f00d769e79272c31ad1`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -25,6 +25,7 @@
 
 ## Source Files
 
+- `.aide/capabilities/capability-evidence-bindings.schema.json`
 - `.aide/capabilities/capability-seeds.yaml`
 - `.aide/capabilities/capability-observation.schema.json`
 - `.aide/capabilities/capability-overclaim.schema.json`
@@ -46,5 +47,8 @@
 ## Status
 
 - seed_count: 13
+- ledger_evidence_validity: CURRENT
+- evidence_reason: bound_source_inputs_unchanged
+- evidence_qualification: source_classification_only
 - command_surface: registered
 - no_apply_boundary: enforced_by_report

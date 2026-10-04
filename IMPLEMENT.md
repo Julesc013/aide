@@ -1,5 +1,16 @@
 # AIDE Implementation Log
 
+## 2026-10-05 capability projection repair; source qualification still pending
+
+Four exactly reviewed existing capability commands completed once, within the
+nine declared projection paths. Current derived binding covers41 public inputs;
+source classifications remain distinct from runtime/host/support authority.
+The earlier native49 PASS/export with full-validation14 FAIL stays preserved.
+A separately reviewed corrective native slice will reuse those49 only on six
+identical hashes and execute export/full validation plus18 current C1 checks.
+Original config/assets/pools remain unchanged; outer shell remains unrestricted.
+
+
 ## 2026-10-05 capability payload partial source correction
 
 The native source job passed49 checks and export, then failed full validation

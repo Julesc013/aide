@@ -40,6 +40,7 @@
       "generated_report_refs": [],
       "golden_task_refs": [],
       "limitations": [
+        "Source classification and test-file presence are not executed tests or host qualification.",
         "schemas and policies do not execute tasks or repairs"
       ],
       "missing_evidence_refs": [],
@@ -95,6 +96,7 @@
         ".aide/evals/golden-tasks/task_os_command_surface_golden/task.yaml"
       ],
       "limitations": [
+        "Source classification and test-file presence are not executed tests or host qualification.",
         "command exposure is report-only and does not execute tasks or repairs"
       ],
       "missing_evidence_refs": [],
@@ -105,7 +107,6 @@
       ],
       "no_apply_boundary": true,
       "observed_states": [
-        "tested",
         "exposed"
       ],
       "overclaim_refs": [],
@@ -150,6 +151,7 @@
       "generated_report_refs": [],
       "golden_task_refs": [],
       "limitations": [
+        "Source classification and test-file presence are not executed tests or host qualification.",
         "generated ledger is evidence classification, not apply behavior"
       ],
       "missing_evidence_refs": [],
@@ -198,6 +200,7 @@
         ".aide/evals/golden-tasks/capability_ledger_generation_golden/task.yaml"
       ],
       "limitations": [
+        "Source classification and test-file presence are not executed tests or host qualification.",
         "tests prove report behavior, not live target behavior"
       ],
       "missing_evidence_refs": [],
@@ -248,6 +251,7 @@
       "generated_report_refs": [],
       "golden_task_refs": [],
       "limitations": [
+        "Source classification and test-file presence are not executed tests or host qualification.",
         "documentation alone is not implementation proof"
       ],
       "missing_evidence_refs": [],
@@ -294,6 +298,7 @@
       "generated_report_refs": [],
       "golden_task_refs": [],
       "limitations": [
+        "Source classification and test-file presence are not executed tests or host qualification.",
         "gateway status is not runtime forwarding"
       ],
       "missing_evidence_refs": [],
@@ -339,6 +344,7 @@
       "generated_report_refs": [],
       "golden_task_refs": [],
       "limitations": [
+        "Source classification and test-file presence are not executed tests or host qualification.",
         "provider metadata is not live provider integration"
       ],
       "missing_evidence_refs": [],
@@ -388,6 +394,7 @@
       ],
       "golden_task_refs": [],
       "limitations": [
+        "Source classification and test-file presence are not executed tests or host qualification.",
         "draft output is not public release publication"
       ],
       "missing_evidence_refs": [],
@@ -435,6 +442,7 @@
       "generated_report_refs": [],
       "golden_task_refs": [],
       "limitations": [
+        "Source classification and test-file presence are not executed tests or host qualification.",
         "dry-run planning is not target install, repair, upgrade, rollback, or uninstall apply"
       ],
       "missing_evidence_refs": [],
@@ -481,6 +489,7 @@
       ],
       "golden_task_refs": [],
       "limitations": [
+        "Source classification and test-file presence are not executed tests or host qualification.",
         "target pilot notes are not product-general availability or target truth"
       ],
       "missing_evidence_refs": [],
@@ -528,6 +537,7 @@
       "generated_report_refs": [],
       "golden_task_refs": [],
       "limitations": [
+        "Source classification and test-file presence are not executed tests or host qualification.",
         "raw prompt text is not canonical task truth"
       ],
       "missing_evidence_refs": [],
@@ -573,6 +583,7 @@
       "generated_report_refs": [],
       "golden_task_refs": [],
       "limitations": [
+        "Source classification and test-file presence are not executed tests or host qualification.",
         "preserved history does not override the filesystem queue or Profile contract"
       ],
       "missing_evidence_refs": [],
@@ -612,6 +623,7 @@
       "generated_report_refs": [],
       "golden_task_refs": [],
       "limitations": [
+        "Source classification and test-file presence are not executed tests or host qualification.",
         "no scheduler or worker exists in X-OS-02"
       ],
       "missing_evidence_refs": [],

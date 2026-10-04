@@ -900,3 +900,30 @@ no widened pool or new output location. Add the exact temporary config name to
 permitted ignored state. A new reviewed attempt follows terminal evidence, never
 an automatic replay. Additional retained failure logs require fresh future
 consumer budget/scheduling review; old estimated phase fit is not a guarantee.
+
+### Completed explicit projection repair and corrective native admission
+
+Exact fee253b1 source/controller effect received independent ACCEPT_WITH_NOTES,
+all nonblocking notes disposed. The four existing commands each ran once and
+exited zero, with changes confined to eight of the nine declared report paths.
+Binding is CURRENT/complete/not truncated over41 public inputs; actual hashes
+and raw command refs are in capability-report-refresh-result.json. The outer
+controller stays unrestricted; this is source projection, not runtime support
+or filesystem protection. Prior14-finding native failure stays retained.
+
+The tiny existing entry now accepts resume-source. It checks the exact partial
+FAIL proof, six unchanged code/test/version identities and restricted identity;
+it records49 tests as reused, then executes export/full validation and18 current
+C1 checks. PASS requires both new command exits zero and18 tests/no failures,
+errors or skips; previous whole-job FAIL cannot become a claimed PASS. Existing
+worker/canaries/core remain unchanged. Actual current source proof is collected
+from this new terminal job, not fabricated from preparation.
+
+Temporary config narrows only scratch8->6MiB; its canonical projection and
+selected ignored copy are byte-identical. Original rawa241 and all four old
+assets/24 archive pins stay unchanged. Keep6MiB logs/64KiB result/export16MiB,
+old read-only archive supervisor and unchanged256MiB aggregate. Before dispatch
+require exact frozen source/native-effect review, clean source/current inputs,
+verified original partial receipt and complete trees, no active scratch and
+fresh locked admission. New intent has its own identity; do not reuse ca2a1e14.
+No archive/ref/tag/publication/model/target/host effect is admitted.
