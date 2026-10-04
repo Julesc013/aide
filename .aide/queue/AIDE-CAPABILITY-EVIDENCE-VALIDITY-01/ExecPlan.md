@@ -197,3 +197,14 @@ risks evidence was missing and task inspection classified it partial. Those
 three scoped records are now added; require complete/missing_evidence0 before
 exact corrected final source/ref review. No source/test change or rerun needed.
 The003 ref effect was never applied.
+
+## Report candidate identity correction
+
+Objective: make the final development list use the existing roadmap candidate
+IDs. Scope: this ExecPlan, REPORT.md and one structured correction message in
+this task evidence only. Dependencies: qualified source/native evidence and
+completed source-sync receipt remain unchanged. Correct C2 to compatibility,
+C3 to portable checkpoints, C4 to resource ownership/retirement and C12 to
+usage attribution. Verification: compare the report against the existing
+roadmap table, diff/commit checks and focused independent metadata/ref review.
+No native rerun, artifact change, new scope or semantic proposal adoption.

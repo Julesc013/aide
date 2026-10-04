@@ -1,0 +1,31 @@
+docs(capability): align closeout candidate IDs with the staged roadmap
+
+## Summary
+- Prompt: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01; correct the final development list.
+
+## Why
+- The report mislabeled C2, C3 and C4 and associated efficiency with C4.
+
+## Changed
+- Match C2 compatibility, C3 checkpoints, C4 resource ownership and C12 attribution to the existing roadmap.
+- Record this bounded documentation correction in the task ExecPlan.
+
+## Validation
+- PASS: exact candidate labels checked against the unchanged staged roadmap and diff whitespace.
+- Native 18-test and ten-call qualification is unchanged; no rerun.
+
+## Changelog
+- Fixed: correct the next-development candidate IDs without changing implementation or authority.
+
+## Risks
+- Outer containment, model/historical decisions, efficiency and publication remain separate.
+
+## Follow-up
+- Obtain focused exact metadata/ref review; continue changed-payload qualification.
+
+AIDE-Task: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
+AIDE-Phase: report-candidate-identity-correction
+AIDE-Result: PASS_structural_native_evidence_reused
+AIDE-Scope: report and ExecPlan metadata only
+AIDE-Token-Impact: no native replay or broad-suite rerun
+AIDE-Quality-Gate: exact metadata and source-ref review

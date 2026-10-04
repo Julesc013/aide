@@ -98,10 +98,11 @@ or substitute for first-publication ACCEPT.
 3. C8 host-capability record/client-route binding is the next operating priority.
    Record effective tool coverage and invalidate after actual client/tool changes;
    the current outer client still needs an external supported setup change.
-4. C2 recovery/retirement usability, C3 finite aggregate retention and C4 useful
-   matched-outcome efficiency remain ranked candidate increments in the existing
-   plan. Each needs a bounded admitted task, real acceptance and preserved project
-   ownership; they are not automatically authorized platform expansion.
+4. C2 compatibility codecs, C3 portable checkpoints and C4 resource ownership
+   and retirement explanation are the next ranked candidates in the existing
+   roadmap. C12 covers usage attribution; matched-outcome efficiency remains a
+   separate operational qualification. Each increment needs a bounded admitted
+   task, real acceptance and preserved project ownership.
 5. Qualify reusable tooling in one authorized downstream adapter after payload
    qualification. FacMan product development remains paused.
 
