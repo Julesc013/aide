@@ -728,3 +728,43 @@ closed until their separate gates pass.
 ## 2026-10-04 direct owner source-main synchronization
 
 Owner explicitly directed dev into main and matching local/remote branch sync. Independent acceptance of exact20d27d78 source/ref effect and its100 retained guards completed this source-only integration, with84 matching pairs. This is not exact stable release acceptance and accepts no historical dispositions. Keep the original aec53b1d release-history base when checking the ten named records; current main..dev can be empty after synchronization and must not be treated as their clearance. Live model, actual/matched efficiency, outer filesystem route, archive update, exact stable effects and downloaded-consumer gates remain open. The old accepted ZIP is unchanged and does not contain the new scoped adapter.
+
+
+## 2026-10-05 current-byte removal interruption closure
+
+Previous Goal turn is progress: qualified storage finding/identity repair and
+reviewed source synchronization reached37024570. No unchanged model retry.
+Current eight consumer cases include removal-receipt exit, but pre-unlink and
+first/50th-owned-unlink records name older ZIPs95ecee6c/a762c816. They do not
+prove these boundaries for current ZIP4a45922b. Complete the three named
+boundaries on current immutable bytes, without regenerating the archive or
+repeating the eight passed consumers or unchanged broad suites.
+
+Reuse the existing current-mid-removal-canary.py unchanged; each ordinal0/1/50
+gets one source/input-bound native job and fresh owned brownfield/extraction
+fixture. Current archive849 members totals4,183,891 uncompressed bytes. A
+separate temporary selection changes only scratch8->16MiB and logs6->1MiB;
+retained64KiB, original roots/volume IDs/memory/process/runtime/account/model,
+24 pinned supervisor files and cooperative256MiB budget remain unchanged.
+No canonical outputs or fallback. Fresh locked admission decides actual
+capacity; a full/unknown pool refuses rather than selecting another drive.
+Original a241 configuration stays byte-identical.
+
+Compile result remains conservatively blocked for the composite release
+brief. Exact independent admission resolves only this existing local consumer
+qualification slice, not host setup, historical disposition, model permission
+or publication. Preserve old source/receipts and their distinct archive IDs.
+Use current task branch/checkout and git-plan ready_dry_run; no new worktree.
+
+Acceptance per exact ordinal: child77 at matching owned-file boundary, durable
+intent/receipt retained, zero deletions/all managed hashes unchanged for0,
+selected owned file absent for1/50, same plan resumed by fresh delivered CLI
+to DETACHED, all remaining owned paths absent, authored/project-owned bytes
+preserved. Verify complete retained summary/receipt/output/log digests, owned
+scratch retirement and reservation release. Do not mistake local bytes for
+downloaded/whole-release/host/model efficiency proof. Run each ordinal once
+sequentially; stop and reconcile any failure before a replacement allocation.
+
+Qualification is the next product result; known host/history/live gates remain
+independent. Only a later exact reviewed source/ref effect integrates this
+evidence into dev/main; no tag or publication from this native envelope.

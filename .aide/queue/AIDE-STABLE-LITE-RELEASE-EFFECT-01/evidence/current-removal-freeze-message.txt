@@ -1,0 +1,29 @@
+test(release): prepare current-byte removal interruption checks
+
+## Summary
+- Prepare three existing removal interruption boundaries on the current accepted Lite ZIP.
+## Why
+- Pre-unlink and first/fiftieth-unlink records identify older archives; current forced-restart coverage exits after receipt removal.
+## Changed
+- Reuse the unchanged canary and existing release WorkUnit/current task branch with exact0/1/50 manifests.
+- Pin current ZIP/source/inputs/Python and original24-member owner; temporary selection changes only scratch16MiB/log1MiB limits.
+- Keep original roots/configuration/256MiB aggregate and all assets fixed; declare no canonical output.
+- Align bounded plans/context/current qualification pointers while preserving historical evidence and external gates.
+## Validation
+- PASS: current ZIP849 members/4183891 uncompressed bytes; canary AST/hash unchanged and exact input/config differences verified.
+- PASS: git-plan ready_dry_run, scoped paths and diff check; intake conservative block retained pending exact slice admission.
+- NOT RUN: native0/1/50 effects pending exact independent source/envelope review.
+## Changelog
+- Added: source-bound current-archive removal boundary qualification envelopes.
+## Risks
+- Shared capacity remains cooperative/monitored; failed/unknown admission never falls back or replays automatically.
+- These fixtures do not grant model, historical, host or publication acceptance.
+## Follow-up
+- Review exact frozen source/local effect, bind only ignored source identities, run0/1/50 once sequentially and verify complete retirement before integration review.
+
+AIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01
+AIDE-Phase: current-archive-removal-boundaries
+AIDE-Result: exact_native_envelopes_prepared_not_run
+AIDE-Scope: own release records, four intake views, compact context, parent status and root indexes
+AIDE-Token-Impact: unchanged canary; three necessary boundaries, no broad tests or model request
+AIDE-Quality-Gate: exact independent admission/source/native effect before dispatch

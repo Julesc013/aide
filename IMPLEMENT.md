@@ -13046,3 +13046,15 @@ The current qualification WorkUnit adds only this SESSION evidence/helper
 closure to its source-sync allowlist; exact independent final source/effect
 review remains required. This cross-cutting record prevents native acceptance
 being mistaken for integration or whole-session acceptance.
+
+
+## 2026-10-05 current-byte removal boundary qualification
+
+The open AIDE-STABLE-LITE-RELEASE-EFFECT-01 reuses its unchanged removal
+canary to qualify ordinal0/1/50 against current accepted ZIP4a45922b. Earlier
+records name older bytes; the current eight-case matrix tests receipt-removal
+exit rather than these three owned-file boundaries. Existing D pools/original
+24-pin supervisor remain fixed; one finite native consumer at a time, no
+archive rebuild, broad-suite replay, model or publication effect. Exact
+admission/source/envelope review precedes execution. See its ExecPlan and
+evidence/current-removal-effect.json.

@@ -1,11 +1,11 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-release-5efae56ffb70
+- workunit_id: draft-release-2bd8c14a74cb
 - title: Release WorkUnit Draft - Write blocker report and require reviewed authorization before mutation
 - status: draft
 - task_class: release
-- risk_class: security
+- risk_class: release
 - sizing_class: blocked
 - objective: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - why: AIDE compiles raw prompts into bounded WorkUnits before execution.
@@ -48,10 +48,9 @@
 - no provider/model/network calls
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not mutate target repositories from AIDE source repo
 - do not publish releases, tags, or assets from prompt alone
 
 ## Recovery
 
-- idempotency: prompt_hash:5efae56ffb708ae63d728438c23e5daecbac3ba8245e2c7b97cf06e86fbe8649; status:draft; compile_only:true
+- idempotency: prompt_hash:2bd8c14a74cb24455990319549a815d3f071aabb1d47be1472eeee7ef88aab00; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

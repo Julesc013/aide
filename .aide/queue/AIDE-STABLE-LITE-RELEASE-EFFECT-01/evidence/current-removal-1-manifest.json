@@ -1,0 +1,26 @@
+{
+  "schema": "aide.maintainer-job.v1",
+  "adapter": "python",
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/current-mid-removal-canary.py",
+    ".aide/release/stable/aide-lite-v1.0.0.zip",
+    "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+    "1"
+  ],
+  "canonical_outputs": {},
+  "cwd": "D:\\Projects\\AIDE\\aide",
+  "executable_sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9",
+  "inputs": {
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/current-mid-removal-canary.py": "0938981977a75549472636de75b15a9a498501d3733d6d26810a808a28005f70",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml": "6d08ade38422a0fee8879c272e1e3cf4b00444015f2b9806fafa478cca4ff936",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md": "e86c7dd3d609f77f0c6d4127e3ceaa3c6b7fa7f60925012be879b3cc96cf1daa",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-execution.json": "51c4c0a66e9cd7cf461253f4562df3912e5de402b4e25377eed6f13c5ade7d71",
+    ".aide/release/stable/aide-lite-v1.0.0.zip": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+    ".aide/scripts/aide_lite.py": "f58f1cf419c09938c43d4a34779e9aba0be8d01455163b7e801dfa7d888a0e88"
+  },
+  "owner": "current-removal-boundary-1",
+  "source_commit": "370245700cb6473ab1ad7b1e7c092a8b1cf67745",
+  "source_tree": "8ea39d8a1a499d715e70793df8e9b11a74f97af4",
+  "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01"
+}

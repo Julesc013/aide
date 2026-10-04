@@ -1,0 +1,45 @@
+{
+  "schema": "aide.current-removal-qualification-effect.v1",
+  "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01",
+  "source": "exact frozen reviewed candidate/tree, then bind only ignored manifests source identities",
+  "base": "370245700cb6473ab1ad7b1e7c092a8b1cf67745",
+  "config_sha256": "51c4c0a66e9cd7cf461253f4562df3912e5de402b4e25377eed6f13c5ade7d71",
+  "original_config_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "original_config_unchanged": true,
+  "config_differences": {
+    "limits.scratch_bytes": [
+      8388608,
+      16777216
+    ],
+    "limits.log_bytes": [
+      6291456,
+      1048576
+    ]
+  },
+  "manifest_templates": {
+    "0": "bea0225eb176a9fd526ea97bbb6e5660098c0e53c761768060c244d31580dfd9",
+    "1": "2a1d804cfe3c2005d376ed46b57863e2de648aaf8405b46c9180b22f2d8e5439",
+    "50": "be125b62c2f51ca492f28e47025e0a5c49ce29e0ec4574b2627750c1ffb13327"
+  },
+  "canary_sha256": "0938981977a75549472636de75b15a9a498501d3733d6d26810a808a28005f70",
+  "canary_unchanged": true,
+  "zip_sha256": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+  "shared_aggregate_bytes": 268435456,
+  "native_effects": "one ordinal0,then1,then50; sequential existing D jobs, fresh owned consumer per job; no effect on real project or immutable source/assets",
+  "required_before": [
+    "exact independent admission/source/local consumer envelope",
+    "fresh input/Python/runtime/config/archive/source IDs and no active job",
+    "locked capacity admission; no fallback or uncertain replay"
+  ],
+  "required_after": [
+    "actual child77/ordinal/intent/receipt/preservation/fresh DETACHED assertions",
+    "complete output/log/receipt identities and digest verification",
+    "owned scratch absent/reservation released before next ordinal"
+  ],
+  "exclusions": [
+    "outer/client/read/whole-machine hard quota acceptance",
+    "model/live/matched savings or historical grants",
+    "tag/publication/downloaded bytes",
+    "new checkout/storage/source/archive or target edits"
+  ]
+}

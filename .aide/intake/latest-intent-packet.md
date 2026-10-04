@@ -3,12 +3,12 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 5efae56ffb708ae63d728438c23e5daecbac3ba8245e2c7b97cf06e86fbe8649
-- raw_prompt_excerpt: Continue AIDE-SESSION-CONTAINMENT-01 storage ownership follow-up: read-only metadata and local Git checks of the single already recorded linked worktree D:/Development/FacMan/repositories/universal-setup-db9c210f4a17/worktrees/task-usk-w...
+- raw_prompt_hash: 2bd8c14a74cb24455990319549a815d3f071aabb1d47be1472eeee7ef88aab00
+- raw_prompt_excerpt: Qualify the existing pre-unlink, first-unlink and fiftieth-unlink removal canary against the current locally accepted Lite ZIP, through the existing bounded D managed worker. Reuse AIDE-STABLE-LITE-RELEASE-EFFECT-01 and the current task...
 - interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release
-- risk_class: security
+- risk_class: release
 - sizing_class: blocked
 - safe_to_execute: false
 - requires_split: true
@@ -24,7 +24,6 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not mutate target repositories from AIDE source repo
 - do not publish releases, tags, or assets from prompt alone
 
 ## Repo State Refs

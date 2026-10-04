@@ -2,12 +2,12 @@
 
 ## PHASE
 
-AIDE-CONVERGENCE-AND-DELIVERY-01: qualified local Lite checkpoint, 2026-10-05.
+AIDE-CONVERGENCE-AND-DELIVERY-01: current ZIP removal boundaries, 2026-10-05.
 
 ## GOAL
 
-Continue from the accepted current local candidate and original worker entry;
-close only admitted remaining gates or one independently admitted roadmap task.
+Qualify the existing ordinal0/1/50 removal canary against current ZIP4a45922b
+through exact independently reviewed native envelopes and existing D pools.
 Do not repeat completed asset qualification or unchanged refused model work.
 
 ## WHY
@@ -19,6 +19,8 @@ from restarting work, creating duplicate checkouts or widening authority.
 
 - `.aide/profile.yaml` and `.aide/queue/index.yaml`
 - `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/REPORT.md`
+- `.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md`
+- `.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-effect.json`
 - `.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md`
 - `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/task.yaml`
 - `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/status.yaml`
@@ -94,5 +96,5 @@ remaining limitations and independent candidate work. Do not claim perfection.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up; not measured usage
-- chars_before_estimate: 4360
-- approx_tokens_before_estimate: 1090
+- chars_before_estimate: 4506
+- approx_tokens_before_estimate: 1127

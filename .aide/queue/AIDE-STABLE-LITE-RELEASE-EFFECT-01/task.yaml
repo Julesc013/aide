@@ -22,6 +22,12 @@ authority_basis: >
 scope:
   allowed_paths:
     - .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/**
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/context/latest-task-packet.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/remaining-risks.md
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/current-mid-removal-canary.py
     - .aide/queue/index.yaml
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
@@ -58,3 +64,19 @@ verification:
   - observed remote main/tag/release identities, downloaded hashes and consumers
 retained_gates:
   - native/hosted and broader programme outcomes remain separate unless qualified
+
+
+current_removal_qualification:
+  source_base: 370245700cb6473ab1ad7b1e7c092a8b1cf67745
+  current_branch_reuse: task/aide-current-scoped-lite-qualification-01
+  source_canary: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/current-mid-removal-canary.py
+  source_canary_read_only: true
+  current_zip_sha256: 4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0
+  ordinals: [0, 1, 50]
+  permitted_local_state:
+    - .aide.local/current-removal-execution.json
+    - .aide.local/current-removal-0-job.json
+    - .aide.local/current-removal-1-job.json
+    - .aide.local/current-removal-50-job.json
+  envelope: existing D roots and original24-member pinned owner;16MiB scratch/1MiB logs/64KiB result per job; unchanged256MiB aggregate; one job at a time
+  gate: exact independent admission/source/native-fixture effect; no publication authority from this slice
