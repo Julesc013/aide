@@ -2,11 +2,11 @@
 
 import argparse
 import hashlib
+import importlib.util
 import json
 import os
 import subprocess
 import sys
-import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -14,6 +14,11 @@ from consumer_canary_base import extract_archive, verify_pack
 
 
 ROOT = Path(__file__).resolve().parents[4]
+sys.path.insert(0, str(ROOT))
+_spec = importlib.util.spec_from_file_location("jobforms_public_fixture", ROOT / ".aide/scripts/aide_lite.py")
+_source = importlib.util.module_from_spec(_spec)
+sys.modules[_spec.name] = _source
+_spec.loader.exec_module(_source)
 CONFIG = Path(__file__).with_name("legacy-config-template.json")
 APPROVED_PARENT = Path(r"D:\Projects\AIDE\.aide.local\execution")
 
@@ -74,7 +79,7 @@ def main():
     if job_scratch and not scratch.is_relative_to(Path(config["roots"]["scratch"]).resolve(strict=True)):
         raise AssertionError("job scratch escaped approved root")
     records = []
-    with tempfile.TemporaryDirectory(prefix="lite-job-forms-", dir=scratch) as temporary:
+    with _source.public_archive_fixture("aide-public-release-test-") as temporary:
         temp = Path(temporary)
         asset_root = temp / "asset"
         checks = extract_archive(archive, asset_root, "zip")

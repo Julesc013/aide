@@ -12990,3 +12990,7 @@ stable-build requested an unnecessary export write reservation. The same
 WorkUnit now bounds two explicit release-only admission calls and five
 regressions; the supervising-runtime overlap guard remains unchanged. Original
 archive supervision qualifies source/export before any build retry.
+
+## 2026-10-04 Current scoped Lite qualification repair preparation
+
+Two attempted jobs are preserved: first refused before archive mutation and retired; second passed five admission regressions and refreshed export, then stopped on a private public-archive temp. Its exact quiescent allocation is held for reviewed same-job recovery. A narrow public-fixture repair and affected tests are prepared but are not qualified. Original four stable assets and runtime configuration are unchanged.

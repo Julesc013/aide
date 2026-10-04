@@ -4,9 +4,9 @@ import importlib.util
 import json
 import subprocess
 import sys
-import tempfile
 import unittest
 from pathlib import Path
+from contextlib import ExitStack
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -20,9 +20,9 @@ SPEC.loader.exec_module(aide_lite)
 
 class Q48GitHubReleaseDraftTests(unittest.TestCase):
     def make_repo(self) -> Path:
-        temp = tempfile.TemporaryDirectory()
-        self.addCleanup(temp.cleanup)
-        root = Path(temp.name)
+        stack = ExitStack()
+        self.addCleanup(stack.close)
+        root = Path(stack.enter_context(aide_lite.public_archive_fixture("aide-public-release-test-")))
         for rel in [*aide_lite.Q47_POLICY_FILES, *aide_lite.Q47_SCHEMA_FILES, *aide_lite.Q48_POLICY_FILES, *aide_lite.Q48_SCHEMA_FILES, aide_lite.RELEASE_README_PATH]:
             source = REPO_ROOT / rel
             self.write(root, rel, source.read_text(encoding="utf-8"))

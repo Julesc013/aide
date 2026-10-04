@@ -611,3 +611,7 @@ Current development increment and full-report crosswalk:
 Current local asset and separate-supervisor qualification owner:
 .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/. Local artifact evidence
 does not discharge outer/client, model, historical or publication gates.
+
+## 2026-10-04 Current-byte qualification and recovery references
+
+See .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/ExecPlan.md, task.yaml and evidence/recovery-effect-46e91fbf.json for exact scope, bounded public-fixture repair and same-job retirement. docs/reference/aide-lite-test-runner.md describes the proposed public fixture route and explicit remaining limits. Reuse accepted core/host evidence where its identities remain unchanged; do not describe interrupted validation or stale archives as current acceptance.

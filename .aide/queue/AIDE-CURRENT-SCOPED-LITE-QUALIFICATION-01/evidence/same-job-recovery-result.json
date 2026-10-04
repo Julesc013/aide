@@ -1,0 +1,44 @@
+{
+  "job_id": "46e91fbfad5041828a02731d782b384f",
+  "status": "RECONCILED_FAILED_JOB",
+  "receipt_sha256": "7a01601ec1e4bd21e6c136cdbc2f5a15204fa3a77130ebe7aace3290f321b059",
+  "collected_manifest": {
+    "logs": "4e8d704b98a8458d7dce88a03e0fded23c4fcac55d2dd68dbc1a6b632ef71c88",
+    "output": "220e481d1323dca5ee8f6c96f09d7575fa735d44b39164a55a20d657570529ea"
+  },
+  "original_result": {
+    "exit_code": null,
+    "message": "[WinError 5] Access is denied: 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\46e91fbfad5041828a02731d782b384f\\\\tmp\\\\aide-release-validate-g66uoc43'",
+    "reason": "PermissionError"
+  },
+  "fixture_retirement": {
+    "acl_changes_by_helper": 0,
+    "apply": true,
+    "creation_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+    "entries": 1085,
+    "file_custody_digest": "3429675e164bb725b86caeb96a4fec8f7ce8e99248dfdd01531f5e3ca8336de2",
+    "fixture": "tmp/aide-release-validate-g66uoc43",
+    "fixture_identity": [
+      3781016413010784355,
+      3659174699367761
+    ],
+    "job_id": "46e91fbfad5041828a02731d782b384f",
+    "logical_bytes": 4138257,
+    "owner_sid": "S-1-5-21-2168396775-1281633702-301206425-1003",
+    "status": "RETIRED_FIXTURE"
+  },
+  "scratch_absent": true,
+  "active_absent": true,
+  "reservation_released": true,
+  "replay_or_new_workspace": false,
+  "retained_bytes": 9337,
+  "original_config_sha256": "1da3a51a9f1080c38897a1c5df3d8bdb438715e4fbf3d5d07f274ae6175dde88",
+  "original_four_assets_unchanged": {
+    "aide-lite-v1.0.0.manifest.json": "79681299012d802543252bd4bb6c927f2f893a9410a2cf18a88b5f994f7e071f",
+    "aide-lite-v1.0.0.SHA256SUMS.txt": "ccb314006c642ac076342886af3ab487e789447c09f15fe626952374ce81ac79",
+    "aide-lite-v1.0.0.tar.gz": "0821532cbd382953c07cf0d4508159b2aa06e0161fbf7568e4ca0f83feac5022",
+    "aide-lite-v1.0.0.zip": "002636e7732125ceade6bc3fe2d8e6fdb187cc544052360483dcb5b5d77acf97"
+  },
+  "collector_log_entries": 3,
+  "public_recover_note": "First invocation --full was argparse-refused without effects; actual supported invocation omitted unsupported display flag."
+}

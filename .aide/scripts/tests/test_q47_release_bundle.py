@@ -8,10 +8,10 @@ import shutil
 import subprocess
 import sys
 import tarfile
-import tempfile
 import unittest
 import zipfile
 from pathlib import Path
+from contextlib import ExitStack
 from unittest import mock
 
 
@@ -26,9 +26,9 @@ SPEC.loader.exec_module(aide_lite)
 
 class Q47ReleaseBundleTests(unittest.TestCase):
     def make_repo(self) -> Path:
-        temp = tempfile.TemporaryDirectory()
-        self.addCleanup(temp.cleanup)
-        root = Path(temp.name)
+        stack = ExitStack()
+        self.addCleanup(stack.close)
+        root = Path(stack.enter_context(aide_lite.public_archive_fixture("aide-public-release-test-")))
         for rel in [*aide_lite.Q47_POLICY_FILES, *aide_lite.Q47_SCHEMA_FILES, aide_lite.RELEASE_README_PATH]:
             source = REPO_ROOT / rel
             self.write(root, rel, source.read_text(encoding="utf-8"))
@@ -93,8 +93,9 @@ class Q47ReleaseBundleTests(unittest.TestCase):
         }
 
     def extract_archive(self, root: Path, archive_rel: str) -> Path:
-        extracted = Path(tempfile.mkdtemp())
-        self.addCleanup(shutil.rmtree, extracted, ignore_errors=True)
+        stack = ExitStack()
+        self.addCleanup(stack.close)
+        extracted = Path(stack.enter_context(aide_lite.public_archive_fixture("aide-public-release-test-")))
         shutil.unpack_archive(root / archive_rel, extracted)
         return extracted / aide_lite.RELEASE_ARCHIVE_ROOT
 
@@ -161,8 +162,9 @@ class Q47ReleaseBundleTests(unittest.TestCase):
         for archive_rel in [aide_lite.RELEASE_ZIP_PATH, aide_lite.RELEASE_TAR_GZ_PATH]:
             with self.subTest(archive=archive_rel):
                 pack_root = self.extract_archive(root, archive_rel)
-                target = Path(tempfile.mkdtemp())
-                self.addCleanup(shutil.rmtree, target, ignore_errors=True)
+                stack = ExitStack()
+                self.addCleanup(stack.close)
+                target = Path(stack.enter_context(aide_lite.public_archive_fixture("aide-public-release-test-")))
                 subprocess.run(
                     ["git", "init", "--quiet", str(target)],
                     stdout=subprocess.PIPE,
@@ -539,7 +541,7 @@ class Q47ReleaseBundleTests(unittest.TestCase):
             member.type = tarfile.SYMTYPE
             member.linkname = "../../outside.txt"
             archive.addfile(member)
-        with mock.patch.object(aide_lite.tempfile, "TemporaryDirectory", side_effect=AssertionError("extraction attempted")):
+        with mock.patch.object(aide_lite, "public_archive_fixture", side_effect=AssertionError("extraction attempted")):
             zip_result = aide_lite.validate_release_archive(root, aide_lite.RELEASE_ZIP_PATH)
             tar_result = aide_lite.validate_release_archive(root, aide_lite.RELEASE_TAR_GZ_PATH)
         self.assertEqual(zip_result["result"], "FAIL")
@@ -573,7 +575,7 @@ class Q47ReleaseBundleTests(unittest.TestCase):
                                 member = tarfile.TarInfo(name)
                                 member.size = len(data)
                                 archive.addfile(member, io.BytesIO(data))
-                    with mock.patch.object(aide_lite.tempfile, "TemporaryDirectory", side_effect=AssertionError("extraction attempted")):
+                    with mock.patch.object(aide_lite, "public_archive_fixture", side_effect=AssertionError("extraction attempted")):
                         result = aide_lite.validate_release_archive(root, archive_rel)
                     self.assertEqual(result["result"], "FAIL")
                     self.assertTrue(any(expected in item for item in result["problems"]))
@@ -589,7 +591,7 @@ class Q47ReleaseBundleTests(unittest.TestCase):
                 member.size = 1
                 archive.addfile(member, io.BytesIO(b"x"))
         with mock.patch.object(aide_lite, "RELEASE_VALIDATION_MAX_MEMBERS", 2):
-            with mock.patch.object(aide_lite.tempfile, "TemporaryDirectory", side_effect=AssertionError("extraction attempted")):
+            with mock.patch.object(aide_lite, "public_archive_fixture", side_effect=AssertionError("extraction attempted")):
                 result = aide_lite.validate_release_archive(root, aide_lite.RELEASE_TAR_GZ_PATH)
         self.assertEqual(result["result"], "FAIL")
         self.assertTrue(any("member count exceeds validation limit" in item for item in result["problems"]))
@@ -605,7 +607,7 @@ class Q47ReleaseBundleTests(unittest.TestCase):
             archive.addfile(member, io.BytesIO(b"x" * member.size))
         with mock.patch.object(aide_lite, "RELEASE_VALIDATION_MAX_TAR_METADATA_BYTES", 1024):
             with mock.patch.object(tarfile.TarInfo, "_proc_pax", side_effect=AssertionError("PAX metadata parsed")):
-                with mock.patch.object(aide_lite.tempfile, "TemporaryDirectory", side_effect=AssertionError("extraction attempted")):
+                with mock.patch.object(aide_lite, "public_archive_fixture", side_effect=AssertionError("extraction attempted")):
                     result = aide_lite.validate_release_archive(root, aide_lite.RELEASE_TAR_GZ_PATH)
         self.assertEqual(result["result"], "FAIL")
         self.assertTrue(any("tar metadata exceeds validation limit" in item for item in result["problems"]))

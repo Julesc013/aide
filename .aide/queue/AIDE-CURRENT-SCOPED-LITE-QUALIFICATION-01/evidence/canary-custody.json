@@ -73,8 +73,9 @@
     "source": ".aide.local/job_forms_canary.py",
     "source_sha256": "5ad1c8092d7728e3ea76b4a99e051701b894abae7893b8f45dc275a8ae9b7a09",
     "copy": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/job_forms_canary.py",
-    "copy_sha256": "2fa1506bbc59bee0d9b9c64f97c5ea4b4738902a72119cf575ad598d92b39af0",
-    "adaptation": "Repository depth and selected public legacy fixture template; retain raw command outputs; assert new inspection flags. Existing 12 forms and assertions preserved."
+    "copy_sha256": "e54c4ca2219c39d1503c573ddaee95d8a10cc4f44a20ad623c29f185ea50089b",
+    "adaptation": "Repository depth and selected public legacy fixture template; retain raw command outputs; assert new inspection flags. Existing 12 forms and assertions preserved. Use authenticated public source fixture allocator for generated job-form temp; original 12 assertions remain.",
+    "previous_copy_sha256": "2fa1506bbc59bee0d9b9c64f97c5ea4b4738902a72119cf575ad598d92b39af0"
   },
   {
     "source": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/taskos_delivered_canary.py",

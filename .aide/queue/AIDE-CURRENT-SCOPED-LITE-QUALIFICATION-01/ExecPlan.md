@@ -123,3 +123,45 @@ Read-only observation must prove creation ownership and entry/archive-byte
 custody. Only then retire that exact disposable fixture and use existing public
 job recover to collect logs/results and retire the original job. Preserve the
 interrupted failure; do not replay the source work or fabricate full validation.
+
+## Demonstrated public archive fixture repair
+
+The exact native owner inspection verified 1085 public archive entries totaling
+4138257 bytes in the private validation fixture. The separate Jules controller
+cannot enumerate it, while CodexSandboxOffline can. This is an actual monitor
+and retirement incompatibility, not a reason to ignore measurement failures.
+
+Objective: make only public archive projection/extraction and selected release
+test fixtures observable and retireable under the existing admitted TMP.
+Reuse authenticated current_context, path/ordinary checks and the same pools;
+allocate ordinary inherited-permission directories with finite monitored limits.
+No ACL setter, privilege change, global tempfile monkeypatch, machine setup or
+new storage. Unmanaged and unrelated temporary directories retain private
+stdlib behavior. Fail before allocation on forged context, wrong TMP or unknown
+namespace; preserve changed identities/shared entries on cleanup refusal.
+
+Scope: existing CLI plus test_public_archive_fixture.py, existing admission and
+Q47/Q48 test fixture setup, runner reference, owned job-form canary fixture and
+affected export. Original acceptance assertions remain, including fail-before-
+extraction checks bound to the actual archive fixture API. Core/supervisor files
+remain unchanged; reuse 71-test evidence. Add focused allocator regressions and
+one native held-public-fixture measurement/retirement case, then repeat affected
+export/full validation and resume exact current artifact qualification.
+
+Dependencies: accepted same-job recovery first; independently review frozen
+repair/envelope before execution. Retain both failed jobs and wrong-SID recovery
+refusals; the correct SID was resolved through Windows metadata, not inferred.
+Full validation, new assets and source acceptance remain pending until actually
+completed. A fixture repair is not whole-client containment or a hard quota.
+
+Run the five admission, eight public-fixture and 36 affected release regressions
+once in the repair job. Retain exact source-input hashes in its successful
+qualification record. Build must verify that frozen proof hash and every source
+input before any archive effect; it records reuse rather than rerunning unchanged
+unit tests. Delivered consumer and deterministic byte replay checks remain new
+current-asset checks. Partial or refused source proof never permits asset build.
+
+Owned recovery preserves helper logs by exact guarded same-volume renames into
+the existing result area, not by discarding evidence or changing collector
+limits. Original logs remain three files; all results stay within original
+64 KiB retention including at most8 KiB retirement helper output.

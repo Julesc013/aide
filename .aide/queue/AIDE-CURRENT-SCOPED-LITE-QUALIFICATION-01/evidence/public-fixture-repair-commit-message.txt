@@ -1,0 +1,27 @@
+fix(release): keep public fixtures observable to managed owner
+
+## Summary
+- Freeze narrow public archive fixture compatibility repair and native qualification envelope.
+## Why
+- Private Windows temporary archive directories prevent the separate monitoring and retirement account from completing an admitted job.
+## Changed
+- Allocate only named public fixtures inside authenticated existing job TMP with inherited permissions.
+- Preserve private unmanaged/unrelated temporary semantics and refusal/retirement guards.
+- Adapt selected release fixture setup and add eight regressions; bind unchanged-suite reuse to exact source proof.
+- Reconcile queue scope, current campaign state, root indexes and runner reference.
+## Validation
+- PASS: stdlib AST parse for changed source/tests/worker and bounded scope checks.
+- NOT RUN: revised thirteen focused plus36 release tests, export/full validation; exact preexecution review and prior-job retirement required.
+## Changelog
+- Fixed: public packaging fixtures remain observable to the separate managed owner.
+## Risks
+- This frozen source is unqualified and not integrated; no monitored-limit or outer-client containment claim is widened.
+## Follow-up
+- Complete exact same-job recovery, independent envelope review, native checks and technical acceptance before archive build.
+
+AIDE-Task: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
+AIDE-Phase: public-fixture-repair
+AIDE-Result: review_pending
+AIDE-Scope: exact CLI, selected release tests, queue records, docs and affected export
+AIDE-Token-Impact: reuse unchanged source-suite proof; bounded deterministic waiting
+AIDE-Quality-Gate: independent preexecution review and qualification pending

@@ -83,6 +83,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("phase", choices=("repair", "build", "consumer", "replay"))
     parser.add_argument("--zip-sha256")
+    parser.add_argument("--source-proof-sha256")
     args = parser.parse_args()
     os.environ.update(AIDE_RESOURCE_TEST_PARENT=str(TMP), GIT_CONFIG_COUNT="1",
                       GIT_CONFIG_KEY_0="safe.directory", GIT_CONFIG_VALUE_0=str(REPO))
@@ -100,6 +101,14 @@ def main():
                                             "-s", ".aide/scripts/tests", "-p", "test_stable_release_admission.py"])
         if not re.search(r"Ran 5 tests? in ", tests.stdout + tests.stderr):
             raise AssertionError("admission regression count changed")
+        public = invoke("public-fixtures", [sys.executable, "-B", "-m", "unittest", "discover",
+                                            "-s", ".aide/scripts/tests", "-p", "test_public_archive_fixture.py"])
+        if not re.search(r"Ran 8 tests? in ", public.stdout + public.stderr) or "skipped=" in public.stdout + public.stderr:
+            raise AssertionError("public fixture regression count changed or checks skipped")
+        release = invoke("q47q48", [sys.executable, "-B", "-m", "unittest", "discover",
+                                   "-s", ".aide/scripts/tests", "-p", "test_q4[78]*.py"])
+        if not re.search(r"Ran 36 tests? in ", release.stdout + release.stderr) or "skipped=" in release.stdout + release.stderr:
+            raise AssertionError("release regression count changed or checks skipped")
         for name in ("export-pack", "validate"):
             # Full validation goes to the admitted 6 MiB log, not the tiny
             # result allowance. Preserve its exit code and complete log.
@@ -107,20 +116,29 @@ def main():
             result[name + "_exit_code"] = run.returncode
             if run.returncode:
                 raise AssertionError(name + " failed")
-        result.update(status="PASS", admission_tests={"run": 5, "failures": 0, "errors": 0, "skips": 0})
+        result.update(status="PASS", admission_tests={"run": 5, "failures": 0, "errors": 0, "skips": 0},
+                      public_fixture_tests={"run": 8, "failures": 0, "errors": 0, "skips": 0},
+                      release_tests={"run": 36, "failures": 0, "errors": 0, "skips": 0},
+                      source_inputs={name: sha(REPO / name) for name in (
+                          ".aide/scripts/aide_lite.py", ".aide/scripts/tests/test_public_archive_fixture.py",
+                          ".aide/scripts/tests/test_q47_release_bundle.py", ".aide/scripts/tests/test_q48_github_release_draft.py",
+                          ".aide/scripts/tests/test_stable_release_admission.py")})
     elif args.phase in ("build", "replay"):
+        if args.phase == "build":
+            proof_path = TASK / "evidence/source-qualification.json"
+            if sha(proof_path) != args.source_proof_sha256:
+                raise AssertionError("accepted source proof changed")
+            proof = json.loads(proof_path.read_text())
+            if (proof["status"] != "PASS" or proof["release_tests"] != {"run": 36, "failures": 0, "errors": 0, "skips": 0}
+                    or any(sha(REPO / name) != digest for name, digest in proof["source_inputs"].items())):
+                raise AssertionError("source suite subject changed")
+            result["release_tests"] = dict(proof["release_tests"], reused=True,
+                                           source_proof_sha256=args.source_proof_sha256)
         before = {p.name: sha(p) for p in STABLE.iterdir()}
         if args.phase == "replay" and sha(ZIP) != args.zip_sha256:
             raise AssertionError("replay subject changed")
         invoke("stable-build", [sys.executable, "-B", str(CLI), "release", "stable-build", "--version", "1.0.0"])
         invoke("stable-validate", [sys.executable, "-B", str(CLI), "release", "stable-validate", "--version", "1.0.0"])
-        if args.phase == "build":
-            tests = invoke("q47q48", [sys.executable, "-B", "-m", "unittest", "discover",
-                                      "-s", ".aide/scripts/tests", "-p", "test_q4[78]*.py"])
-            transcript = tests.stdout + tests.stderr
-            if not re.search(r"Ran 36 tests? in ", transcript) or "skipped=" in transcript:
-                raise AssertionError("release suite count changed or required checks skipped")
-            result["release_tests"] = {"run": 36, "failures": 0, "errors": 0, "skips": 0}
         current = asset_identity()
         if args.phase == "replay" and current["assets"] != before:
             raise AssertionError("deterministic replay changed frozen bytes")

@@ -18253,6 +18253,64 @@ def inspect_release_archive_members(archive_path: Path) -> tuple[list[str], list
     return names, unsafe, uncompressed
 
 
+@contextmanager
+def public_archive_fixture(prefix: str):
+    """Public packaging fixtures inside an authenticated job remain observable.
+
+    Windows Python private temp directories exclude the separate controller
+    account. Only these public archive/test fixtures inherit the existing job
+    temp ACL; unrelated and unmanaged temporary directories stay private.
+    """
+    if prefix not in {"aide-release-validate-", "aide-release-pack-", "aide-stable-pack-",
+                      "aide-public-release-test-"}:
+        raise ValueError("unknown public archive fixture namespace")
+    if os.name != "nt" or not os.environ.get("AIDE_JOB_ID"):
+        with tempfile.TemporaryDirectory(prefix=prefix) as directory:
+            yield directory
+        return
+    source_root = repo_root_from_script()
+    if str(source_root) not in sys.path:
+        sys.path.insert(0, str(source_root))
+    from core.execution import managed_workspace
+    control = managed_workspace.root_path(os.environ["AIDE_JOB_CONTROL"])
+    seed = managed_workspace.read_json(control / "active.json")
+    record = managed_workspace.current_context(seed["job"]["cwd"])
+    parent = managed_workspace.root_path(os.environ["AIDE_JOB_TMP"])
+    owned_parent = managed_workspace.root_path(str(Path(record["scratch"]) / "tmp"))
+    if not parent.is_relative_to(owned_parent):
+        raise managed_workspace.WorkspaceRefused("public fixture must use this admitted job temp")
+    fixture = parent / (prefix + uuid.uuid4().hex)
+    fixture.mkdir(mode=0o777)
+    original = managed_workspace.ordinary(fixture, directory=True)
+    identity = (original.st_dev, original.st_ino)
+    try:
+        yield str(fixture)
+    finally:
+        current = managed_workspace.ordinary(fixture, directory=True)
+        if (current.st_dev, current.st_ino) != identity or fixture.resolve(strict=True).parent != parent:
+            raise managed_workspace.WorkspaceRefused("public fixture identity changed before retirement")
+        for index, entry in enumerate(fixture.rglob("*")):
+            if index >= 100000:
+                raise managed_workspace.WorkspaceRefused("public fixture retirement entry bound")
+            info = entry.lstat()
+            if stat.S_ISDIR(info.st_mode):
+                managed_workspace.ordinary(entry, directory=True)
+            else:
+                managed_workspace.ordinary(entry)
+        def remove_readonly_file(function, path, exc):
+            # Git fixtures can have the ordinary DOS read-only file flag.
+            # This does not alter ACLs, ownership or directory access.
+            if not isinstance(exc, PermissionError) or function not in {os.unlink, os.remove}:
+                raise exc
+            target = Path(path)
+            managed_workspace.ordinary(target)
+            if not target.resolve(strict=True).is_relative_to(fixture):
+                raise managed_workspace.WorkspaceRefused("public fixture cleanup target escaped")
+            target.chmod(stat.S_IWRITE | stat.S_IREAD)
+            function(path)
+        shutil.rmtree(fixture, onexc=remove_readonly_file)
+
+
 def validate_release_archive(repo_root: Path, archive_rel: str) -> dict[str, object]:
     archive_path = repo_root / archive_rel
     result = {
@@ -18303,7 +18361,7 @@ def validate_release_archive(repo_root: Path, archive_rel: str) -> dict[str, obj
             "problems": problems,
         })
         return result
-    with tempfile.TemporaryDirectory(prefix="aide-release-validate-") as temp_name:
+    with public_archive_fixture("aide-release-validate-") as temp_name:
         temp_root = Path(temp_name)
         try:
             if archive_path.name.endswith(".zip"):
@@ -18493,7 +18551,7 @@ def build_release_bundle_outputs(repo_root: Path) -> dict[str, object]:
     bundle_id = f"{RELEASE_BUNDLE_NAME}-{short_sha(source_commit)}"
     dist = release_dist_dir(repo_root)
     dist.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix="aide-release-pack-") as temp_name:
+    with public_archive_fixture("aide-release-pack-") as temp_name:
         projected_pack_root = Path(temp_name) / RELEASE_ARCHIVE_ROOT
         build_release_pack_projection(pack_root, projected_pack_root)
         write_release_zip(projected_pack_root, repo_root / RELEASE_ZIP_PATH)
@@ -18734,7 +18792,7 @@ def build_stable_release_candidate(repo_root: Path, version: str) -> dict[str, o
         "source_pack_checksums_sha256": sha256_file(pack_root / "checksums.json"),
     }
     output_root.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix="aide-stable-pack-") as temp_name:
+    with public_archive_fixture("aide-stable-pack-") as temp_name:
         projected = Path(temp_name) / RELEASE_ARCHIVE_ROOT
         build_release_pack_projection(pack_root, projected)
         write_text_if_changed(projected / "stable-release.json", stable_json_text(marker))

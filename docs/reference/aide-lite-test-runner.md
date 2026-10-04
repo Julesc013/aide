@@ -299,3 +299,23 @@ py -3 .aide/scripts/aide_lite.py test
 
 The command is stdlib-only and no-call, so it is safe to run before any future
 Gateway/provider/runtime work.
+
+### Public archive fixtures under the scoped Windows worker
+
+Public archive projection/extraction and selected release-test fixtures use
+`public_archive_fixture` inside the authenticated job TMP. These newly created
+ordinary directories inherit the existing allocated parent permissions, so the
+separate controller can measure and retire their public bytes. This avoids the
+Windows Python private-temp/controller mismatch demonstrated in job46e91fbf.
+No ACL setter, global tempfile replacement, new pool or larger resource allowance
+is involved. Unmanaged and unrelated temporary directories retain stdlib private
+behavior. A forged context, outside TMP or unknown fixture namespace refuses
+before allocation. Changed directory identities and shared/redirected entries
+refuse cleanup and preserve the material; ordinary read-only file flags in
+Git test fixtures can be cleared only on verified files within that fixture.
+
+Qualification is limited to these exercised public fixture routes. A tool that
+creates other private output can still cause a monitored job to stop and require
+owned recovery. Whole-client containment and a hard filesystem quota remain
+unqualified. Native measurement, affected checks and retirement evidence must
+be recorded before calling this repair qualified.

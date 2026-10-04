@@ -5,7 +5,6 @@ import importlib.util
 import io
 from pathlib import Path
 import sys
-import tempfile
 import unittest
 from unittest.mock import patch
 
@@ -21,9 +20,9 @@ spec.loader.exec_module(lite)
 
 class StableReleaseAdmissionTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory(prefix="aide-stable-admission-")
-        self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        self.temp = contextlib.ExitStack()
+        self.addCleanup(self.temp.close)
+        self.root = Path(self.temp.enter_context(lite.public_archive_fixture("aide-public-release-test-")))
         for relative in ("core/execution/managed_workspace.py", ".aide/queue/index.yaml"):
             p = self.root / relative
             p.parent.mkdir(parents=True, exist_ok=True)

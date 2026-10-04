@@ -18,6 +18,9 @@ scope:
     - .aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt
     - .aide/scripts/aide_lite.py
     - .aide/scripts/tests/test_stable_release_admission.py
+    - .aide/scripts/tests/test_public_archive_fixture.py
+    - .aide/scripts/tests/test_q47_release_bundle.py
+    - .aide/scripts/tests/test_q48_github_release_draft.py
     - docs/reference/aide-lite-test-runner.md
     - .aide/export/aide-lite-pack-v0/**
     - .aide/queue/index.yaml
@@ -35,7 +38,7 @@ scope:
     - DOCUMENTATION.md
   read_only_sources:
     - core/**
-    - .aide/scripts/** except the two exact allowed repair files
+    - .aide/scripts/** except the five exact allowed CLI/test repair files
     - .aide/policies/**
     - .aide.local existing selected canaries and original configuration
   permitted_local_state:
@@ -47,7 +50,7 @@ scope:
     - tag, publication, model/provider calls, historical disposition acceptance
     - drive changes, ACL/accounts/quotas, unknown cleanup, target-project adoption
     - new worktrees/clones, full backups, new source archives or storage layout
-    - modifying product source outside the exact stable admission repair, policies, the currently selected supervisor or old reviews
+    - modifying product source outside the exact stable admission/public-fixture repair, policies, the currently selected supervisor or old reviews
 review_gate: Exact independent local build/qualification envelope before archive mutation; exact current asset and runtime-promotion acceptance before integration or original runtime-pin change.
 repair_amendment: Retired job27de35f9 demonstrated stable command overreservation; allow only two explicit release-path guard calls and regressions. Original archive supervises affected export refresh, never the export supervisor itself. Exact revised source/effect review precedes execution.
 branch_plan:
@@ -56,3 +59,5 @@ branch_plan:
   task_branch: task/aide-current-scoped-lite-qualification-01
 
 owned_recovery: Exact quiescent job46e91fbf private public-archive fixture only; separately reviewed same-job native sandbox observation then conditional owned retirement; no ACL, original config, machine or unrelated deletion.
+
+public_fixture_repair_amendment: Job46e91fbf demonstrated Windows Python private-temp/controller mismatch. Admit only public archive projection/extraction and selected public release-test fixture allocation within authenticated existing job TMP; inherit its existing permissions without ACL setters. Unmanaged and unrelated temp semantics stay private. Qualify actual separate-worker/controller measurement and retirement, refusal-before-allocation and changed release tests; no monitor weakening or supervisor rewrite.

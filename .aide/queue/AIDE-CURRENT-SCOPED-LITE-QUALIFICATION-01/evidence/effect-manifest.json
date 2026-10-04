@@ -45,10 +45,10 @@
       "supervisor": "unchanged original old ZIP; export is disjoint"
     }
   },
-  "worker_sha256": "16d0330f5345a480e1d5c5bd5cece808be310f378fdf3a13ba4e805dae0cf13b",
-  "canary_custody_sha256": "f07b23dcf7d10a55bb9232e2a7af7663b0340596207be053ae27fe0169c99f79",
+  "worker_sha256": "1714c7414db9c47752a0a7992bde427d35564d4623c169ed889451979ef0bd0b",
+  "canary_custody_sha256": "86bb1e446ba316ed001e940376e3b022f6ea0163a12766b78f88e57d14ed2229",
   "effects": [
-    "Five admission regressions and affected export/full validation under unchanged original archive supervisor; exact source acceptance before build retry",
+    "Five admission, eight public-fixture and36 affected release regressions plus export/full validation under unchanged original archive supervisor; required source acceptance before build retry",
     "local exact four candidate files rebuilt using read-only current export supervisor",
     "unchanged 6 consumer oracles plus 12 job forms and delivered Task OS inspection in owned fixtures",
     "full required results retained and serial fixture/terminal job retirement verified",
@@ -64,9 +64,26 @@
   "supersedes_prebuild_source": "6db0745335820b4b399137e02b62d649b3718a6c",
   "preserved_failed_attempt": "evidence/failed-build-27de35f9.json",
   "source_repair": {
-    "cli_sha256": "4eb2ea4cdbd112c28dd5dd1904fa99abdbd9fa0fe97265cfb3c2397e75b0f762",
-    "regression_sha256": "f9269b3aaa61e0a0a303f184ade440337b2e60d0c719aea54fbaee602d1850af",
-    "scope": "Only stable-build and stable-validate require explicit release canonical reservation; all other guards unchanged",
-    "runner_reference_sha256": "63a745cfc79237077647bdc3888a54fc1ad1affa4fc6ecf64e0fe293d6f5e95e"
-  }
+    "scope": "Stable release-only reservation guard plus only public archive/release-test fixture allocation within authenticated job TMP; original source/core/placement/account/limits otherwise unchanged",
+    "files": {
+      ".aide/scripts/aide_lite.py": "f58f1cf419c09938c43d4a34779e9aba0be8d01455163b7e801dfa7d888a0e88",
+      ".aide/scripts/tests/test_stable_release_admission.py": "57f0397758f72d94208da66e128ff78a8437653410f9efbd3fd6cf44877435cf",
+      ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+      ".aide/scripts/tests/test_q47_release_bundle.py": "a55fb81345bb3f2af701cf9f5ee724e3d2b6478fc123db37cac59f06343fa476",
+      ".aide/scripts/tests/test_q48_github_release_draft.py": "db3eee5f99cc1ce99beb31fbabd109bc1050775fb690baa66d5e3e6f71e9b4cf",
+      "docs/reference/aide-lite-test-runner.md": "619db49066a3335ef4746bee19a3b8bb1cc0fa68b765469a7742f70b055b0348"
+    },
+    "required_checks": {
+      "admission": 5,
+      "public_fixtures": 8,
+      "release": 36,
+      "export_full_validation": true
+    },
+    "unchanged_core_host_evidence": "71 tests/67879a9fbce04871b15ab08996a20769",
+    "public_fixture_native_proof": "hold real generated public bytes across live Jules monitor samples; successful complete job, observed peak, collection and retirement",
+    "source_suite_reuse": "build verifies accepted proof hash and all source-input hashes before archive effect"
+  },
+  "supersedes_admission_repair_source": "2020bea662b1a9e4c438bdf8b1b4f7c5720b842d",
+  "preserved_interrupted_repair_job": "46e91fbfad5041828a02731d782b384f",
+  "precondition": "Original quiescent job46e91fbf must be recovered/retired and reservation released before any new allocation"
 }

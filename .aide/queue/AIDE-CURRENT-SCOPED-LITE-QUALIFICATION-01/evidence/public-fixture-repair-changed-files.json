@@ -1,0 +1,29 @@
+{
+  "scope": "PASS",
+  "paths": [
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/ExecPlan.md",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/REPORT.md",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/job_forms_canary.py",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/canary-custody.json",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/effect-manifest.json",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/public-fixture-repair-changed-files.json",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/public-fixture-repair-commit-message.txt",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/public-fixture-repair-plan.json",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/same-job-recovery-result.json",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/task.yaml",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/worker.py",
+    ".aide/scripts/aide_lite.py",
+    ".aide/scripts/tests/test_public_archive_fixture.py",
+    ".aide/scripts/tests/test_q47_release_bundle.py",
+    ".aide/scripts/tests/test_q48_github_release_draft.py",
+    ".aide/scripts/tests/test_stable_release_admission.py",
+    "DOCUMENTATION.md",
+    "IMPLEMENT.md",
+    "PLANS.md",
+    "docs/reference/aide-lite-test-runner.md"
+  ],
+  "self_included": true,
+  "runtime_checks": "NOT_RUN",
+  "owned_recovery": "PASS_RETIRED"
+}

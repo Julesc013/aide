@@ -4466,3 +4466,7 @@ over accepted bf559c0a. Pin the already accepted export supervisor separately
 from release outputs, retain prior asset Git custody, and reuse full consumer
 acceptance. Exact envelope review precedes build; artifact/runtime promotion
 and integration have separate exact review. External release gates remain.
+
+## 2026-10-04 Current scoped Lite qualification demonstrated repair
+
+The admitted current-byte qualification exposed stable command overreservation and cross-account private temporary fixture incompatibility. Narrow release-only admission and authenticated public-fixture allocation are prepared; exact source/envelope review and native checks remain pending. No new runner, pool or machine ACL is introduced. Source/main integration and public release remain separate gates.

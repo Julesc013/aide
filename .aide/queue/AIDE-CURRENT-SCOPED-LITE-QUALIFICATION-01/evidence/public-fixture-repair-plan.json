@@ -1,0 +1,40 @@
+{
+  "schema": "aide.bounded-source-repair-envelope.v1",
+  "state": "DRAFT_REVIEW_PENDING",
+  "demonstrated_failed_job": "46e91fbfad5041828a02731d782b384f",
+  "cause": "Windows Python private archive temp excludes the separate monitoring/retirement account",
+  "scope": [
+    ".aide/scripts/aide_lite.py",
+    ".aide/scripts/tests/test_public_archive_fixture.py",
+    ".aide/scripts/tests/test_stable_release_admission.py",
+    ".aide/scripts/tests/test_q47_release_bundle.py",
+    ".aide/scripts/tests/test_q48_github_release_draft.py",
+    "docs/reference/aide-lite-test-runner.md"
+  ],
+  "unchanged_core_host_evidence": "71 tests/job67879a9fbce04871b15ab08996a20769",
+  "qualification": {
+    "admission_tests": 5,
+    "public_fixture_tests": 8,
+    "release_tests": 36,
+    "native_cross_account_measurement": "hold public fixture across live controller sampling; check successful receipt and retirement",
+    "export_full_validation": "required after frozen source/envelope review",
+    "unchanged_suite_reuse": "hash-bound proof before asset mutation"
+  },
+  "limits": "unchanged original archive-pinned repair envelope; no new allocation until prior owned job reconciled",
+  "enforced_vs_monitored": "Windows job process/memory/log controls and tested command placement; finite aggregate/disk monitored, outer client unrestricted",
+  "unchanged_semantics": [
+    "unmanaged tempfile privacy",
+    "unrelated temporary directories",
+    "canonical reservation and immutable supervisor guards",
+    "archive membership/custody acceptance"
+  ],
+  "excluded": [
+    "ACL or account changes",
+    "global tempfile monkeypatch",
+    "monitor exception ignoring",
+    "hard quota claim",
+    "whole-client containment",
+    "provider/model calls",
+    "publication/historical acceptance"
+  ]
+}
