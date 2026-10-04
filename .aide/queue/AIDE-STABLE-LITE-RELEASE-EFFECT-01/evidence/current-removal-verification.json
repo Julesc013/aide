@@ -1,0 +1,135 @@
+{
+  "schema": "aide.current-removal-native-verification.v1",
+  "source_commit": "3460ba7a80b515495a58b325d7f64b0abc050fb9",
+  "source_tree": "704040e3bbb22945ecc49d1642d2fe860694f208",
+  "asset_sha256": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+  "jobs": [
+    {
+      "ordinal": 0,
+      "job_id": "3a77da5f88864f8291d1df6d8fb1bd98",
+      "receipt_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\3a77da5f88864f8291d1df6d8fb1bd98\\receipt.json",
+      "receipt_sha256": "f0f10cc63eae19ed83c484376438f68b82aee8e6016165d9e147a6af3b42e6c4",
+      "output_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\3a77da5f88864f8291d1df6d8fb1bd98\\output\\current-mid-removal-summary.json",
+      "output_sha256": "b4de55cf5cb56b084e31156ba0c85dffe40b714325b1ae03826b2ba122ed6712",
+      "summary": {
+        "archive_members": 849,
+        "asset_sha256": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+        "authored_and_project_owned_preserved": true,
+        "child_exit": 77,
+        "fresh_cli_resume": "DETACHED",
+        "intent_and_receipt_retained_after_exit": true,
+        "interrupted_after_owned_unlinks": 0,
+        "interrupted_relative": ".aide.local.example/README.md",
+        "managed_bytes_unchanged_before_effect": true,
+        "managed_files": 815,
+        "status": "PASS"
+      },
+      "collected_manifest": {
+        "logs": "fb612fa8e8e103cedbed953c2c7a797c96c6bbbc3426e6f4f87db1c09988c28f",
+        "output": "ddaac23592213c986818103326f642b249b2e820467eaf7fb151ffdaf54b38af"
+      },
+      "collected_digests_verified": true,
+      "source_commit": "3460ba7a80b515495a58b325d7f64b0abc050fb9",
+      "source_tree": "704040e3bbb22945ecc49d1642d2fe860694f208",
+      "effective_manifest_sha256": "b3594a3f415ebd056bd0bc1479a0fd76aedff35c860bef28aae155e02e642e97",
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 261468160,
+        "scratch_bytes": 8329339
+      },
+      "retained_total_logical_bytes": 6817,
+      "scratch_absent": true,
+      "reservation_released": true,
+      "canonical_outputs": {},
+      "native_log_ref": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\current-removal-0-native.log",
+      "native_log_sha256": "b9e37efe58f4f017b816fc5de47b6ccb12466f51b946eed84e598f620a20f097"
+    },
+    {
+      "ordinal": 1,
+      "job_id": "2d2a183287e14d8387935fb836a077c0",
+      "receipt_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\2d2a183287e14d8387935fb836a077c0\\receipt.json",
+      "receipt_sha256": "3e929ce7c6e378ffaf322c2219cd5a224388ea113e61d884791975d70d30a0b8",
+      "output_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\2d2a183287e14d8387935fb836a077c0\\output\\current-mid-removal-summary.json",
+      "output_sha256": "439633612b65aba99ab4fb187841f742657a7d89c0da7acf3dd9f887218ccb07",
+      "summary": {
+        "archive_members": 849,
+        "asset_sha256": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+        "authored_and_project_owned_preserved": true,
+        "child_exit": 77,
+        "fresh_cli_resume": "DETACHED",
+        "intent_and_receipt_retained_after_exit": true,
+        "interrupted_after_owned_unlinks": 1,
+        "interrupted_relative": ".aide.local.example/README.md",
+        "managed_bytes_unchanged_before_effect": false,
+        "managed_files": 815,
+        "status": "PASS"
+      },
+      "collected_manifest": {
+        "logs": "8adb29cff12a9dd2f1f17bce6c11a8ebd9ef973a287463cdcf5ed4ac4656cb0f",
+        "output": "885ce817bd3e5d48ba998be87f3617d72fa7fdc2fa2227567592108be4a4bcc4"
+      },
+      "collected_digests_verified": true,
+      "source_commit": "3460ba7a80b515495a58b325d7f64b0abc050fb9",
+      "source_tree": "704040e3bbb22945ecc49d1642d2fe860694f208",
+      "effective_manifest_sha256": "4880df5159c49334ca6dacf4a98f6a7c0bb93fc504ebb3eade1939c719f6142b",
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 262066176,
+        "scratch_bytes": 8329339
+      },
+      "retained_total_logical_bytes": 6819,
+      "scratch_absent": true,
+      "reservation_released": true,
+      "canonical_outputs": {},
+      "native_log_ref": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\current-removal-1-native.log",
+      "native_log_sha256": "96064e8ad44e15d0ceaa510d40384559f78594f0cbf436001824c36fc67b1cf9"
+    },
+    {
+      "ordinal": 50,
+      "job_id": "eee07b9581a64391bf1c2731719fdfa9",
+      "receipt_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\eee07b9581a64391bf1c2731719fdfa9\\receipt.json",
+      "receipt_sha256": "760cebefc7fef549e862adf9c870731ae994ef02a095fc95627c72d1812022ae",
+      "output_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\eee07b9581a64391bf1c2731719fdfa9\\output\\current-mid-removal-summary.json",
+      "output_sha256": "8dc5abf3661070e767760a959c6b3af2a0f649a4fa09ec073f5e818ade4ffeda",
+      "summary": {
+        "archive_members": 849,
+        "asset_sha256": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+        "authored_and_project_owned_preserved": true,
+        "child_exit": 77,
+        "fresh_cli_resume": "DETACHED",
+        "intent_and_receipt_retained_after_exit": true,
+        "interrupted_after_owned_unlinks": 50,
+        "interrupted_relative": ".aide/evals/golden-tasks/branch_role_detection_golden/task.yaml",
+        "managed_bytes_unchanged_before_effect": false,
+        "managed_files": 815,
+        "status": "PASS"
+      },
+      "collected_manifest": {
+        "logs": "7b0bb001ea1756708e30fac18719d0ccc37a9dfb734b7bac16b5a06320f01b2e",
+        "output": "01f0b68de7ea12eb0e9a72271bc568ff957e70b60c72f56f50188aa7f8a0ecf5"
+      },
+      "collected_digests_verified": true,
+      "source_commit": "3460ba7a80b515495a58b325d7f64b0abc050fb9",
+      "source_tree": "704040e3bbb22945ecc49d1642d2fe860694f208",
+      "effective_manifest_sha256": "d023b10f214fa4e1339de0f5d4b64792bc9c38a4aaf4f81fdafdfad4e166506d",
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 261795840,
+        "scratch_bytes": 8329339
+      },
+      "retained_total_logical_bytes": 6891,
+      "scratch_absent": true,
+      "reservation_released": true,
+      "canonical_outputs": {},
+      "native_log_ref": "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\current-removal-50-native.log",
+      "native_log_sha256": "a112031aa74140cb028a589c690dd05dfd2157d68d32aa1edf55e64a6047c4a9"
+    }
+  ],
+  "all_three_once_passed": true,
+  "all_scratch_absent": true,
+  "all_reservations_released": true,
+  "asset_bytes_unchanged": true,
+  "whole_host_claim": false,
+  "publication_claim": false,
+  "preexecution_review_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-admission.json"
+}

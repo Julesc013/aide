@@ -1,0 +1,23 @@
+{
+  "schema": "aide.current-removal-preexecution.v1",
+  "source_commit": "3460ba7a80b515495a58b325d7f64b0abc050fb9",
+  "source_tree": "704040e3bbb22945ecc49d1642d2fe860694f208",
+  "review": "ACCEPT_WITH_NOTES",
+  "reviewer": "/root/containment_review",
+  "effect_sha256": "ad49af1be4d9748dc12f3832fb3e671b45c38d1eb622ef88375ffcf5535920bb",
+  "blocking_findings": [],
+  "notes_disposed": [
+    "Only ignored source identity rebind; fresh frozen inputs before each dispatch; sequential 0/1/50 with full collection/retirement before next; locked admission and no fallback/replay; local qualification only"
+  ],
+  "effective_manifest_sha256": {
+    "0": "b3594a3f415ebd056bd0bc1479a0fd76aedff35c860bef28aae155e02e642e97",
+    "1": "4880df5159c49334ca6dacf4a98f6a7c0bb93fc504ebb3eade1939c719f6142b",
+    "50": "d023b10f214fa4e1339de0f5d4b64792bc9c38a4aaf4f81fdafdfad4e166506d"
+  },
+  "runtime_members_verified": 24,
+  "config_sha256": "51c4c0a66e9cd7cf461253f4562df3912e5de402b4e25377eed6f13c5ade7d71",
+  "original_config_unchanged": true,
+  "scratch_empty": true,
+  "no_active_job": true,
+  "canonical_outputs": {}
+}

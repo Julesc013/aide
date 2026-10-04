@@ -768,3 +768,30 @@ sequentially; stop and reconcile any failure before a replacement allocation.
 Qualification is the next product result; known host/history/live gates remain
 independent. Only a later exact reviewed source/ref effect integrates this
 evidence into dev/main; no tag or publication from this native envelope.
+
+
+### Actual current-byte results and bounded source synchronization
+
+All three jobs on3460ba7a/tree704040e3 passed once. Ordinal0/1/50 jobs
+3a77da5f/2d2a1832/eee07b95 proved exact recovery/preservation, complete collected
+digests and terminal retirement. See evidence/current-removal-results.md and
+current-removal-verification.json. Original config/assets/pinned canary stay
+unchanged; no native rerun follows from this metadata closeout.
+
+The direct owner dev/main/all-corresponding-ref sync instruction authorizes
+this SOURCE-ONLY continuation independently of stable certification, under
+the campaign delegation and exact technical gate. After independent review
+of the exact frozen result/source/effect, normal fast-forward local dev/main
+from37024570 to that reviewed descendant; atomically push only dev, main and
+task/aide-current-scoped-lite-qualification-01. Preserve the other85 actual
+branch pairs at their recorded tips; no flattening, force, prune, tag or release.
+
+Before effects require real Jules/Julesc013 read-only identity/auth, fetch and
+actual88 local/remote maps, clean frozen source/tree and single checkout,
+original/temporary configuration, four assets and24 runtime pins, all846
+working and Git blob pack checksums, no active scratch/reservation, normal
+ancestry and ready_dry_run helper plan. Refuse changed/unknown guard; no fallback.
+Record exact acceptance and notes first, then verify all the same relevant
+identities and88 pair matches after the effects. Retain the final ignored
+receipt and full before/after maps without making a self-referential source ID.
+Unchanged external gates remain dormant; source sync certifies none of them.

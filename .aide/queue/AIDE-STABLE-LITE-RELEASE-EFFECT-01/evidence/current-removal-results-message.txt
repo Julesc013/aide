@@ -1,0 +1,29 @@
+test(release): qualify current-byte removal interruption recovery
+
+## Summary
+- Qualify before-first and first/fiftieth-owned-file interruption recovery on the current accepted Lite archive.
+## Why
+- Older boundary records identify different archives; source synchronization must preserve honest current-byte release evidence.
+## Changed
+- Retain exact reviewed preexecution bindings and three actual native receipt/summary/output/log/retirement proofs.
+- Align the existing release plan, parent risks/status, compact task packet and root indexes with the actual result.
+- Prepare a separately reviewed source-only main/dev/current-task fast-forward and atomic push preserving85 other branch pairs.
+## Validation
+- PASS: ordinal0/1/50 exited77 at the matching boundary and fresh delivered CLI completed DETACHED while preserving authored/project-owned bytes.
+- PASS: full collected digests, no active scratch, all three reservations released, original config/four assets/24 supervisor pins unchanged.
+- PASS:149 structural info/0 warnings/0 errors; pack-status;846 working and Git blob checksums; scoped links; git-plan ready_dry_run and diff check.
+- REUSED:49 affected source checks,8 consumer cases,38 forms/39 outputs/12 job observations; no broad suite or archive replay.
+## Changelog
+- Added: exact current-archive pre-unlink and first/fiftieth unlink recovery qualification.
+## Risks
+- Shared aggregate limits remain cooperative/monitored; this local proof does not certify outer client, hard quotas, efficiency or stable publication.
+- Ten historical dispositions and live invocation permission remain ungranted; no target mutation or model call.
+## Follow-up
+- Obtain exact result/source/ref-effect acceptance, then guarded source-only sync; keep separate stable and broader campaign gates visible.
+
+AIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01
+AIDE-Phase: current-archive-removal-boundary-results
+AIDE-Result: three_native_boundaries_pass_collected_retired_source_sync_pending
+AIDE-Scope: own release evidence/plan; parent status/risks; compact context; root indexes
+AIDE-Token-Impact: three necessary native consumer checks; unchanged source suites reused; no model call
+AIDE-Quality-Gate: exact independent result/source and three-ref effect before synchronization

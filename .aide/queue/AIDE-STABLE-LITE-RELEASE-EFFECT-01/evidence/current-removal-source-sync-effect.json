@@ -1,0 +1,44 @@
+{
+  "schema": "aide.current-removal-source-sync-effect.v1",
+  "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01",
+  "authority": "direct owner dev/main/all corresponding branch sync, campaign delegation, exact independent result/source/effect review",
+  "base_main_dev_remote_task": "370245700cb6473ab1ad7b1e7c092a8b1cf67745",
+  "subject": "exact frozen reviewed descendant of3460ba7a; no source change after acceptance",
+  "only_refs": [
+    "main",
+    "dev",
+    "task/aide-current-scoped-lite-qualification-01"
+  ],
+  "effect": "normal local dev/main fast-forward then atomic normal origin main/dev/current-task push",
+  "protected_refs_ref": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/integration-preflight.json",
+  "protected_other_pairs": 85,
+  "protected_digest": "e770ac7ae789617faaa25363989a9b75bd6b56c983b57d5c0f496328554b4b9a",
+  "four_asset_sha256": {
+    "zip": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+    "tar": "4b3e22ee351aa31e9fdb5f50e89affd38ef3908163083058f2b151c0c57d8541",
+    "manifest": "7c737cfdc224dec90aa4c7fa03ed74a5ba2becee8a77f65c0d5f1c9a317068fa",
+    "sums": "aeded870e201d79a8d4689b326f1cb62434e0aa6962f5b9ef1fbc5c3cb9dad8b"
+  },
+  "original_config_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "temporary_config_sha256": "51c4c0a66e9cd7cf461253f4562df3912e5de402b4e25377eed6f13c5ade7d71",
+  "required_before": [
+    "fresh Jules/Julesc013 auth and fetch",
+    "clean accepted commit/tree, normal ancestor, single checkout, git-plan ready_dry_run",
+    "actual88 local/remote pairs and other85 exact protected tips",
+    "three actual native receipts/digests/retirement and no active job/scratch",
+    "four assets, original/temporary selections,24 runtime member pins",
+    "846 working AND accepted Git blob pack checksums"
+  ],
+  "required_after": [
+    "all three effect refs equal reviewed subject locally/remotely; all88 pair matches",
+    "all85 other branch tips preserved",
+    "repeat relevant source/tree/assets/config24pins/846payload/onecheckout/retirement guards",
+    "retain exact before/after maps and notes in ignored current-removal-final-sync.log"
+  ],
+  "excluded": [
+    "force/prune/delete/flatten/protection bypass",
+    "tag/release/publication or artifact certification",
+    "historical/model grants, global host/quota/savings claims",
+    "target mutation/adoption/cleanup or new source/archive/checkouts"
+  ]
+}

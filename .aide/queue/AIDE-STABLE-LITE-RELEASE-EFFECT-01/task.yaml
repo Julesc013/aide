@@ -6,7 +6,7 @@ status: in_progress
 planning_state: current_runner_dev_integrated_release_gates_pending
 result: CURRENT_RUNNER_DEV_INTEGRATED_FINAL_EFFECT_PENDING
 created_at: 2026-09-28
-updated_at: 2026-09-29
+updated_at: 2026-10-05
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 base_dev: 4dcd896b4a9b65ef2bf6e8ecbbd7f60809560637
 depends_on:
@@ -80,3 +80,12 @@ current_removal_qualification:
     - .aide.local/current-removal-50-job.json
   envelope: existing D roots and original24-member pinned owner;16MiB scratch/1MiB logs/64KiB result per job; unchanged256MiB aggregate; one job at a time
   gate: exact independent admission/source/native-fixture effect; no publication authority from this slice
+
+current_removal_source_sync:
+  authority: direct_owner_source_sync_and_campaign_delegation
+  base_main_dev_remote_task: 370245700cb6473ab1ad7b1e7c092a8b1cf67745
+  only_effect_refs: [main, dev, task/aide-current-scoped-lite-qualification-01]
+  preserved_other_branch_pairs: 85
+  normal_fast_forward_and_atomic_push_only: true
+  gate: exact_independent_result_source_and_ref_effect_review
+  publication_and_historical_approval: false

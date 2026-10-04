@@ -667,11 +667,14 @@ the task's Git/evidence history. See [storage report](.aide/queue/AIDE-SESSION-C
 
 ## 2026-10-05 current-byte removal boundary qualification
 
-The open AIDE-STABLE-LITE-RELEASE-EFFECT-01 reuses its unchanged removal
-canary to qualify ordinal0/1/50 against current accepted ZIP4a45922b. Earlier
-records name older bytes; the current eight-case matrix tests receipt-removal
-exit rather than these three owned-file boundaries. Existing D pools/original
-24-pin supervisor remain fixed; one finite native consumer at a time, no
-archive rebuild, broad-suite replay, model or publication effect. Exact
-admission/source/envelope review precedes execution. See its ExecPlan and
-evidence/current-removal-effect.json.
+Three native consumer jobs qualified the unchanged removal canary at0/1/50
+on current accepted ZIP4a45922b. Actual child77 boundaries, fresh-process
+DETACHED recovery and authored/project-owned preservation passed. Full
+output/log digests and each scratch/reservation retirement are verified.
+Peak scratch8,329,339 bytes per job; three retained sets total20,527 logical
+bytes. Original assets/a241 configuration/24-pin supervisor remain unchanged.
+Earlier old-ZIP evidence is preserved; no archive rebuild, broad suite replay
+or model invocation was required. Exact source/ref review remains distinct
+from stable/publication, host, history, live/efficiency and wider cleanup gates.
+See [results](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-results.md)
+and its ExecPlan for the source-only three-ref synchronization.

@@ -2,12 +2,12 @@
 
 ## PHASE
 
-AIDE-CONVERGENCE-AND-DELIVERY-01: current ZIP removal boundaries, 2026-10-05.
+AIDE-CONVERGENCE-AND-DELIVERY-01: current ZIP boundaries passed; exact source sync review.
 
 ## GOAL
 
-Qualify the existing ordinal0/1/50 removal canary against current ZIP4a45922b
-through exact independently reviewed native envelopes and existing D pools.
+Review and synchronize the actual current-ZIP0/1/50 result/source effect.
+All three native checks passed once with verified collection and retirement.
 Do not repeat completed asset qualification or unchanged refused model work.
 
 ## WHY
@@ -20,7 +20,8 @@ from restarting work, creating duplicate checkouts or widening authority.
 - `.aide/profile.yaml` and `.aide/queue/index.yaml`
 - `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/REPORT.md`
 - `.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md`
-- `.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-effect.json`
+- `.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-results.md`
+- `.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-source-sync-effect.json`
 - `.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md`
 - `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/task.yaml`
 - `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/status.yaml`
@@ -52,8 +53,10 @@ No new worktrees, clones, pools, broad backups, ACLs, quotas or deletion.
 Eight current consumers, 38 forms/39 outputs plus 12 job observations and four-
 asset replay pass. The original native worker probe passes and is retired.
 Only its archive SHA/additive 24th member changed; roots, limits, account/model
-route and canonical scope stay identical. Source sync at 21f8677d has 88 matching
-pairs/85 other tips preserved; final metadata has its own exact review/sync.
+route and canonical scope stay identical. Latest source sync37024570 has88
+matching pairs/85 other tips preserved; current closeout has its own review.
+Current0/1/50 recovery/preservation passed; peak scratch8,329,339 per job,
+three retained sets20,527 logical bytes, all scratch/reservations retired.
 19 proposed spec appendices preserve 244 UR/UC statements. C1/C8 are first
 candidate increments; each needs bounded admission, acceptance and review.
 Code owns waiting, monitoring, collection and retirement; preserve failed proof.
@@ -70,7 +73,8 @@ accessible and routine model views bounded. No model test follows from status.
 
 Retain exact source/asset/config/receipt and terminal retirement identities.
 Current original runtime: a2416a8c; current ZIP:4a45922b; payload source:a8e004e7.
-Latest source sync receipt: SESSION evidence/storage-final-sync.log.
+Latest observed sync: SESSION evidence/storage-final-sync.log.
+Pending exact current result sync: STABLE evidence/current-removal-final-sync.log.
 Storage custody and tiny native identity fixture passed with retirement;
 dirty target preserved, zero reclaimed; no target replay.
 Parent/reviewer/cumulative usage and matched efficiency remain unknown here.
@@ -96,5 +100,5 @@ remaining limitations and independent candidate work. Do not claim perfection.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up; not measured usage
-- chars_before_estimate: 4506
-- approx_tokens_before_estimate: 1127
+- chars_before_estimate: 4835
+- approx_tokens_before_estimate: 1209

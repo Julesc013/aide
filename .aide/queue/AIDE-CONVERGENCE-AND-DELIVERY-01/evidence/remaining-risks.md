@@ -3,11 +3,13 @@
 ## Current checkpoint
 
 Current local source/assets/original pinned worker entry are independently
-accepted and integrated at21f8677d.49 affected source checks, export/full
-validation,8 consumers,38 forms/39 outputs plus12 job observations and identical
-four-asset replay passed. Original native probe passed and retired.88 matching
-local/remote pairs and85 preserved other tips are recorded in the current
-qualification report; metadata closeout is a separately reviewed final sync.
+accepted; latest observed source synchronization reached37024570.49 affected
+source checks, export/full validation,8 consumers,38 forms/39 outputs plus12
+job observations and identical four-asset replay passed. The supplemental
+current-ZIP0/1/50 removal checks passed once on frozen3460ba7a; complete
+output/log digests and retirement are verified. Current source/ref closeout
+requires its own exact review and observed final receipt, not an invented ID.
+See [current removal results](../../AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-results.md).
 
 Outer-client/editor/read containment, ten historical dispositions, live-model
 permission and matched efficiency, exact stable/publication/downloaded consumers,
