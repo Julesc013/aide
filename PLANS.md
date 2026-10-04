@@ -1,5 +1,15 @@
 # AIDE Planning Index
 
+## 2026-10-05 capability payload partial source correction
+
+The native source job passed49 checks and export, then failed full validation
+on13 packet-section omissions and the legacy unbound capability ledger. The
+packet is restored through the existing generator; exact9 report refresh is
+awaiting independent scope/effect review. Full collected trees and retirement
+are verified;18 C1 checks remain unrun for this new payload. Reuse only verified
+unchanged49 inputs on the separately reviewed corrective native phase. Stable
+assets/config/supervisor and all release/host/model gates remain unchanged.
+
 ## 2026-10-05 capability payload refresh
 
 The existing release-effect WorkUnit refreshes the local candidate after C1

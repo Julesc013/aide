@@ -1,0 +1,79 @@
+{
+  "before_reports": {
+    ".aide/reports/capability-command-status.md": "e6bb8a52ec29025a60113882bd99793fd71bee9516ea913154ad8fe004e82848",
+    ".aide/reports/capability-evidence-bindings.json": null,
+    ".aide/reports/capability-ledger.json": "f1ba8cb8a0d4b8a021ae8731d815f1434437c51c328b08d38fa50beb3d7687ec",
+    ".aide/reports/capability-ledger.md": "b10ef4b796b274b848fab97e6689fde5ba85282c0607e35bb3a0c8b9a4f75c66",
+    ".aide/reports/capability-observations.json": "3e4cbb6c664e96ed1c6469e62d9b771629abc21eb5e8ad7646286b4473a51d80",
+    ".aide/reports/capability-observations.md": "a301ceee58705266d223d487bd038f91fd093dc6c2ab9fbde7bbfd9572bfd1fa",
+    ".aide/reports/capability-overclaims.json": "2f01f4fb3d2a6f0ad95fa11a8acfe681c71b92d31aa3989cc3bdbc4245e01eb1",
+    ".aide/reports/capability-overclaims.md": "f053a99807d85212223950843963d9795472d97183cb29396cf86c3889686e01",
+    ".aide/reports/capability-validation.md": "41d39984105e8d4e2a5496f095eafff53d2baad960bdcde70b428502a7afb94a"
+  },
+  "commands": [
+    [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "capability",
+      "scan"
+    ],
+    [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "capability",
+      "ledger"
+    ],
+    [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "capability",
+      "overclaim-report"
+    ],
+    [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "capability",
+      "validate"
+    ]
+  ],
+  "controller_route": "existing outer unrestricted shell; this metadata effect has no worker/whole-session containment claim",
+  "exclusions": [
+    "validation weakening or capability/runtime qualification fabrication",
+    "all unrelated report/source paths, machine/target/model/ref/archive/publication effects",
+    "new storage layout or unknown deletion"
+  ],
+  "only_allowed_writes": [
+    ".aide/reports/capability-command-status.md",
+    ".aide/reports/capability-observations.json",
+    ".aide/reports/capability-observations.md",
+    ".aide/reports/capability-ledger.json",
+    ".aide/reports/capability-ledger.md",
+    ".aide/reports/capability-evidence-bindings.json",
+    ".aide/reports/capability-overclaims.json",
+    ".aide/reports/capability-overclaims.md",
+    ".aide/reports/capability-validation.md"
+  ],
+  "recovery": "stop on any failed command or scope/identity change; retain outputs and exact report changes; no automatic retry",
+  "required_after": [
+    "all four command exit codes retained",
+    "CURRENT complete source binding with finite coverage and truthful classifications",
+    "actual changed paths confined to exact9 reports",
+    "complete actual report hashes and originals recoverable from pre-effect Git commit"
+  ],
+  "required_before": [
+    "exact independent frozen scope/controller metadata effect acceptance",
+    "same code/test/version policy and partial native49 proof verified",
+    "source changes wholly inside existing release allowlist; no unrelated writer",
+    "source packet generated with all required sections"
+  ],
+  "schema": "aide.capability-projection-explicit-refresh-effect.v1",
+  "source_cli_sha256": "387c5b2fe710baf84c48f13ab124ba5ec253c9f55b561261eacc95ca8480b3f7"
+}

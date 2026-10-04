@@ -3,8 +3,8 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: needs_review
-planning_state: capability_payload_source_frozen_exact_review_pending
-result: CAPABILITY_SOURCE_ACCEPTED_LOCAL_PAYLOAD_REFRESH_PENDING
+planning_state: capability_payload_partial_source_explicit_metadata_refresh_review
+result: SOURCE49_PASS_EXPORT_PARTIAL_VALIDATION_FAIL_C1_NOT_RUN
 created_at: 2026-09-28
 updated_at: 2026-10-05
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -38,6 +38,15 @@ scope:
     - .aide/scripts/tests/test_export_import.py
     - .aide/scripts/tests/test_q34_changelog_release.py
     - .aide/changelog/**
+    - .aide/reports/capability-command-status.md
+    - .aide/reports/capability-observations.json
+    - .aide/reports/capability-observations.md
+    - .aide/reports/capability-ledger.json
+    - .aide/reports/capability-ledger.md
+    - .aide/reports/capability-evidence-bindings.json
+    - .aide/reports/capability-overclaims.json
+    - .aide/reports/capability-overclaims.md
+    - .aide/reports/capability-validation.md
     - .aide/policies/release-versioning.yaml
     - .aide/export/**
     - .aide/release/**
@@ -106,6 +115,7 @@ capability_payload_refresh:
   retained_c1_proof: .aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/evidence/green-result.json
   permitted_local_state:
     - .aide.local/capability-payload-source-job.json
+    - .aide.local/capability-payload-source-execution.json
     - .aide.local/capability-payload-build-execution.json
     - .aide.local/capability-payload-build-job.json
     - .aide.local/capability-payload-consumer-execution.json

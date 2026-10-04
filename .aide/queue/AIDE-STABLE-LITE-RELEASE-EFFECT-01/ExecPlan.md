@@ -868,3 +868,35 @@ CLI proof enter output. Source qualification remains pending until every stage
 and the terminal native receipt pass. Resolve/recheck any Git stat-cache-only
 modified configuration report before dispatch; content equality does not waive
 clean-source verification. No accepted old full-input identity is inferred.
+
+### Actual source result and explicit report-refresh correction
+
+One job ca2a1e14 on dd684b45 ended FAIL and retired completely. All49 tests
+passed; export succeeded with current CLI/schema. Full validation had14 precise
+failures:13 missing task-packet sections and UNKNOWN legacy unbound capability
+ledger. C1's18 checks were not reached. Complete raw output/log trees verified;
+see capability-payload-source-failure.json. No uncertain replay and four stable
+assets/original a241 config remain unchanged. Generate the required packet via
+existing pack command (done,1297 estimated tokens); preserve this failed job.
+
+Admit only exact9 existing capability projection destinations plus the new
+optional binding through scan/ledger/overclaim-report/validate. The source CLI
+is frozen387c; finite public snapshot/exclusions remain intact. Do not weaken
+UNKNOWN or rewrite qualification claims. Commands execute once in the current
+controller with a path/content guard and exact independent scope/effect review;
+this outer route remains unrestricted. Existing canonical managed destinations
+exclude flat report files, so this precise metadata generation is not presented
+as worker or whole-session filesystem enforcement. No runner rewrite or broader
+reports write grant follows. Preserve prior report blobs in Git; stop on failures
+or unexpected paths and retain actual source-bound output and hashes.
+
+Then separately review a follow-up native source job: reuse verified49 checks
+only against identical code/test/version-policy inputs, regenerate export/full
+validation and run18 current C1 checks. Temporary source selection narrows only
+scratch8->6MiB, based on retired source5,558,203byte and C1 fixture2,615,426byte
+observations; original configuration stays byte-identical. Logs6MiB/result64KiB,
+16MiB export and256MiB aggregate remain unchanged. Fresh admission can refuse;
+no widened pool or new output location. Add the exact temporary config name to
+permitted ignored state. A new reviewed attempt follows terminal evidence, never
+an automatic replay. Additional retained failure logs require fresh future
+consumer budget/scheduling review; old estimated phase fit is not a guarantee.

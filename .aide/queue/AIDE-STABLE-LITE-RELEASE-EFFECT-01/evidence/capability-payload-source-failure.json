@@ -1,0 +1,63 @@
+{
+  "aggregate_and_disk": "finite monitored/cooperative limits unchanged; no fallback",
+  "capability18_executed": false,
+  "collected_manifest": {
+    "logs": "3310b2d09538f6a12ca201f375eb8cca2d8110d07f395a9034d0415f1045e4e2",
+    "output": "f53add10e258d7f162be235ab66b290a681fd65bd597cc3bd681dbfb7c401014"
+  },
+  "collection_verified": true,
+  "export_succeeded": true,
+  "failure_causes": [
+    "controller-authored task packet omitted required13 sections",
+    "legacy capability ledger lacks current optional binding; explicitly regenerate its derived reports without weakening validation"
+  ],
+  "full_validation_failed": true,
+  "full_validation_failure_lines": [
+    "- FAIL Capability ledger evidence validity: UNKNOWN (missing_or_invalid_binding); explicit ledger refresh required otherwise",
+    "- FAIL latest task packet missing section: PHASE",
+    "- FAIL latest task packet missing section: GOAL",
+    "- FAIL latest task packet missing section: WHY",
+    "- FAIL latest task packet missing section: CONTEXT_REFS",
+    "- FAIL latest task packet missing section: ALLOWED_PATHS",
+    "- FAIL latest task packet missing section: FORBIDDEN_PATHS",
+    "- FAIL latest task packet missing section: IMPLEMENTATION",
+    "- FAIL latest task packet missing section: VALIDATION",
+    "- FAIL latest task packet missing section: EVIDENCE",
+    "- FAIL latest task packet missing section: NON_GOALS",
+    "- FAIL latest task packet missing section: ACCEPTANCE",
+    "- FAIL latest task packet missing section: OUTPUT_SCHEMA",
+    "- FAIL latest task packet missing section: TOKEN_ESTIMATE"
+  ],
+  "job_id": "ca2a1e1406954ceca009f00e3e064b32",
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4214570
+    },
+    "memory_bytes": 308228096,
+    "scratch_bytes": 5558203
+  },
+  "receipt_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\ca2a1e1406954ceca009f00e3e064b32\\receipt.json",
+  "receipt_sha256": "05ba3f77811dca37bd3ee6418add8e4c9d33f8fd48120f50c86e6130333b02e3",
+  "retained_logical_bytes": 4905773,
+  "retired": true,
+  "schema": "aide.capability-payload-partial-source.v1",
+  "source49_passed": {
+    "admission": 5,
+    "errors": 0,
+    "failures": 0,
+    "public_fixtures": 8,
+    "release": 36,
+    "skips": 0
+  },
+  "source_commit": "dd684b45eef95b78028885b6f36780bc0acb0c31",
+  "source_inputs_for_49_reuse": {
+    ".aide/policies/release-versioning.yaml": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253",
+    ".aide/scripts/aide_lite.py": "387c5b2fe710baf84c48f13ab124ba5ec253c9f55b561261eacc95ca8480b3f7",
+    ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+    ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+    ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+    ".aide/scripts/tests/test_stable_release_admission.py": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5"
+  },
+  "source_tree": "d1ee7fae2cf261b6a708616375359d305e081059",
+  "status": "FAIL_VALIDATION_CONTEXT_AND_UNBOUND_LEDGER_C1_NOT_RUN"
+}

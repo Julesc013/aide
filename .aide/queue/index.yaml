@@ -3822,8 +3822,8 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/evidence
   - id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
     status: needs_review
-    planning_state: capability_payload_source_frozen_exact_review_pending
-    result: CAPABILITY_SOURCE_ACCEPTED_LOCAL_PAYLOAD_REFRESH_PENDING
+    planning_state: capability_payload_partial_source_explicit_metadata_refresh_review
+    result: SOURCE49_PASS_EXPORT_PARTIAL_VALIDATION_FAIL_C1_NOT_RUN
     title: Freeze and qualify a publishable AIDE Lite release effect
     task: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml
     exec_plan: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md
