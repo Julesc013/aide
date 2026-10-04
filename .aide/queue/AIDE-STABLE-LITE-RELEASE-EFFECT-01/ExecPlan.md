@@ -804,3 +804,52 @@ the verdict without moving its subject; obtain focused acceptance of this
 metadata descendant and unchanged effect, then execute the single guarded
 sync. The actual terminal receipt is authoritative for its final refs. Once
 that receipt verifies completion, do not repeat sync, native tests or polling.
+
+## 2026-10-05 capability payload refresh
+
+Previous Goal turn made authoritative progress: accepted C1 code/native evidence
+and corrected candidate list are synchronized at e3f14e85. Existing immutable
+ZIP4a45922b still predates that repair. Refresh its actual payload through this
+existing WorkUnit, preserving all first-publication, historical, live/matched
+and outer-client gates. Compiler classified the composite release brief blocked
+and split-required; exact independent local effect admission resolves only the
+named local phases, never those other gates.
+
+Objective/scope: existing export pack and four stable candidate files, this
+WorkUnit records and its already allowed intake/context/root indexes. Reuse the
+current single checkout/branch and known-good supervisors. Read existing current
+qualification worker/canaries and accepted C1 proof without changing them. The
+new tiny entry selects the existing worker phases with a new proof owner; it is
+not another runner. Phase1 reruns49 release/fixture/admission checks because the
+CLI bytes changed, refreshes export, runs full source validation and verifies
+new schema/CLI inclusion. Reuse unchanged18-test native C1 and71 core/host proof.
+Later build and current-byte consumers require their own exact result/effect
+review, actual identities and clean committed pack before dispatch.
+
+Native source envelope: unchanged a241 original config/ZIP24 pins;8MiB scratch,
+6MiB logs,64KiB output,16MiB existing export reservation. One dispatch, complete
+collection/quiescence/retirement and all canonical/asset/config hashes verified.
+No archive mutation during this source phase. After verified export and source
+commit, build uses exact24 read-only export supervisor files and disjoint existing
+release output:16/1/1MiB scratch/log/result and8MiB canonical reservation.
+Original config stays byte-identical until separately accepted runtime promotion;
+if asset qualification fails, restore exact old four Git blobs before using it.
+
+Qualification preserves all8 current consumer assertions/38 forms/39 outputs/12
+job observations, with new exact asset identities; add delivered18-test C1 path
+and zero-change replay. Planned serial envelopes are31/1/4MiB for first consumer,
+28/1/6MiB for remainder,8/1/0.0625MiB for delivered C1,16/1/1MiB for replay.
+These are smaller than the old allowances based on observed29.4/28.5MB peaks,
+not dynamic fallback or reduced acceptance. Fresh locked admission remains
+mandatory. Last actual pool observation222,741,309logical bytes plus estimated
+source/build/first retained growth places remainder reservation near the cap;
+if changed totals do not fit, refuse and reconcile exact owned eligibility or
+phase scheduling before allocation. Do not widen256MiB, erase unique evidence,
+truncate logs, choose another drive or create another workspace.
+
+Verification: exact independent source/native envelopes before effects; current
+source49 checks/export/fullvalidate; all pack checksums/new schema/CLI; retained
+raw trees and retirement; exact archive build/consumer/replay acceptance before
+local runtime promotion/integration. No tag/publication, model calls, historical
+acceptance, client restart, machine controls or target adoption from this slice.
+All previous source/assets/reviews remain identifiable in Git and retained proofs.

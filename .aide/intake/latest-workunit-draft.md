@@ -1,7 +1,7 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-release-4376aafc9f29
+- workunit_id: draft-release-1ad155f3c8ef
 - title: Release WorkUnit Draft - Write blocker report and require reviewed authorization before mutation
 - status: draft
 - task_class: release
@@ -52,5 +52,5 @@
 
 ## Recovery
 
-- idempotency: prompt_hash:4376aafc9f29cc2c585665791178f8f0249416652dba769189c4095cd88237a4; status:draft; compile_only:true
+- idempotency: prompt_hash:1ad155f3c8ef4ad2c6291bd9d62484a9da171c2732a89c498ae9bd19aff01288; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

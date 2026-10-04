@@ -48,10 +48,11 @@
     "provider_or_model_calls: none",
     "network_calls: none",
     "task_execution: false",
-    "raw_long_prompt_storage: false"
+    "raw_long_prompt_storage: false",
+    "flag:unsafe_prompt"
   ],
-  "raw_prompt_excerpt": "Repair capability evidence validity in the existing report-only ledger, status and validate path. Bind classification reports to finite public source inputs, detect changed or missing evidence without executing providers or claiming host...",
-  "raw_prompt_hash": "4376aafc9f29cc2c585665791178f8f0249416652dba769189c4095cd88237a4",
+  "raw_prompt_excerpt": "Refresh and locally qualify the existing AIDE Lite 1.0.0 candidate with the accepted capability evidence repair. Reuse the current task branch, configured D execution pools and unchanged supervisor; export and build only existing canonic...",
+  "raw_prompt_hash": "1ad155f3c8ef4ad2c6291bd9d62484a9da171c2732a89c498ae9bd19aff01288",
   "rejected_interpretations": [
     "do not bypass queue, branch, evidence, or policy state",
     "do not execute raw prompt directly",
@@ -61,7 +62,7 @@
     ".aide/context/latest-context-packet.md",
     ".aide/context/latest-review-packet.md",
     ".aide/context/latest-task-packet.md",
-    ".aide/queue/AIDE-CODEX-DISPATCH-GATE-01/status.yaml",
+    ".aide/queue/Q17/status.yaml",
     ".aide/queue/index.yaml",
     ".aide/repo/file-inventory.json",
     ".aide/repo/latest-repo-intelligence.md",
@@ -105,7 +106,7 @@
       "raw response logs",
       "target repositories unless target-local queue authorizes work"
     ],
-    "idempotency": "prompt_hash:4376aafc9f29cc2c585665791178f8f0249416652dba769189c4095cd88237a4; status:draft; compile_only:true",
+    "idempotency": "prompt_hash:1ad155f3c8ef4ad2c6291bd9d62484a9da171c2732a89c498ae9bd19aff01288; status:draft; compile_only:true",
     "implementation_outline": [
       "Reconcile repo state before editing.",
       "write blocker report and require reviewed authorization before mutation",
@@ -138,7 +139,7 @@
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-    "workunit_id": "draft-release-4376aafc9f29"
+    "workunit_id": "draft-release-1ad155f3c8ef"
   },
   "task_class": "release",
   "validation_hints": [

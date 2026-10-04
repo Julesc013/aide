@@ -1,0 +1,43 @@
+{
+  "adapter": "python",
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\capability_payload_refresh.py",
+    "repair"
+  ],
+  "canonical_outputs": {
+    ".aide/export/aide-lite-pack-v0": {
+      "bytes": 16777216,
+      "volume_id": "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\"
+    }
+  },
+  "cwd": "D:\\Projects\\AIDE\\aide",
+  "executable_sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9",
+  "inputs": {
+    ".aide/capabilities/capability-evidence-bindings.schema.json": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
+    ".aide/context/latest-task-packet.md": "0928fdcabb57e6a9ac591010fdb25523086158573b9d1391b234988d92dcdc62",
+    ".aide/policies/release-versioning.yaml": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253",
+    ".aide/profile.yaml": "df129c25bb3209a430958ce6c65d282b952c71ae57da720ceb62de97dd4cbac1",
+    ".aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/evidence/green-result.json": "5ade73e3324a65f0d51a0325a3922ee24008e65fb1b6e67f0328c31f6ec36bd5",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/worker.py": "ece020b49246ac1ccda4acf54172fd037f11583c36f48e8589f4292412336838",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md": "b1896e93a3fe1e43ed176a54f6338b196ab208df0bd1fcdf3445d32c6ef1f332",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/capability_payload_refresh.py": "744500ccb32374686fbc702f9c7f42051a54bacbe496580c95e3a3384ac9b934",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-payload-source-configuration.json": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/capability-payload-source-effect.json": "86c639ef739b748210a7b3ae53b2818bc600e45a5cc9157fd0778f1fbb5acbc2",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/status.yaml": "e2076ab556ca0ddfd4de31ac880a597858e56dc1cc3b7e9ad87cd10bc481865b",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml": "2905b79ed44eca1662fb21de7d988c615f50d7cdfb0f10943fd7c5a2fdf3cc15",
+    ".aide/scripts/aide_lite.py": "387c5b2fe710baf84c48f13ab124ba5ec253c9f55b561261eacc95ca8480b3f7",
+    ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+    ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+    ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+    ".aide/scripts/tests/test_stable_release_admission.py": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+    ".aide/scripts/tests/test_x_os_02_capability_reality.py": "4509355fc87b618c013ac1406e24e5a2181f5ac4c658f89fc0b8eae6a20393ef",
+    ".aide/toolchain.lock": "9dbdfe09ffc0576e43f318b18f5a8150c5732eb54516a9239ff52a7a02f29801",
+    "docs/reference/capability-reality-ledger.md": "1533b4122dc1666e92058643cc167070a3defab64a57c078fde4574082b7c51e"
+  },
+  "owner": "capability-payload-refresh-01",
+  "schema": "aide.maintainer-job.v1",
+  "source_commit": "EXACT_ACCEPTED_SUBJECT",
+  "source_tree": "EXACT_ACCEPTED_TREE",
+  "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01"
+}

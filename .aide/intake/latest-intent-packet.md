@@ -3,8 +3,8 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 4376aafc9f29cc2c585665791178f8f0249416652dba769189c4095cd88237a4
-- raw_prompt_excerpt: Repair capability evidence validity in the existing report-only ledger, status and validate path. Bind classification reports to finite public source inputs, detect changed or missing evidence without executing providers or claiming host...
+- raw_prompt_hash: 1ad155f3c8ef4ad2c6291bd9d62484a9da171c2732a89c498ae9bd19aff01288
+- raw_prompt_excerpt: Refresh and locally qualify the existing AIDE Lite 1.0.0 candidate with the accepted capability evidence repair. Reuse the current task branch, configured D execution pools and unchanged supervisor; export and build only existing canonic...
 - interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release
@@ -31,7 +31,7 @@
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/AIDE-CODEX-DISPATCH-GATE-01/status.yaml`
+- `.aide/queue/Q17/status.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/repo/file-inventory.json`
 - `.aide/repo/latest-repo-intelligence.md`

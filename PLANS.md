@@ -1,5 +1,15 @@
 # AIDE Planning Index
 
+## 2026-10-05 capability payload refresh
+
+The existing release-effect WorkUnit refreshes the local candidate after C1
+source/native acceptance and e3f14e85 source synchronization. First exact
+source/native envelope:49 current CLI release/fixture/admission checks, export
+and full validation using the unchanged old pinned supervisor. Asset build,
+current-byte consumers/replay and runtime promotion remain separately reviewed
+phases. Existing256MiB budget, roots and all historical/live/outer/publication
+gates remain unchanged; see the release-effect ExecPlan.
+
 ## 2026-10-05 capability evidence freshness repair
 
 [AIDE-CAPABILITY-EVIDENCE-VALIDITY-01](.aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/ExecPlan.md)

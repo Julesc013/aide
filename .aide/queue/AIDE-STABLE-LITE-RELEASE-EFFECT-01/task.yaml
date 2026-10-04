@@ -3,8 +3,8 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: in_progress
-planning_state: current_runner_dev_integrated_release_gates_pending
-result: CURRENT_RUNNER_DEV_INTEGRATED_FINAL_EFFECT_PENDING
+planning_state: accepted_capability_source_payload_refresh_admission_pending
+result: CAPABILITY_SOURCE_ACCEPTED_LOCAL_PAYLOAD_REFRESH_PENDING
 created_at: 2026-09-28
 updated_at: 2026-10-05
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -89,3 +89,23 @@ current_removal_source_sync:
   normal_fast_forward_and_atomic_push_only: true
   gate: exact_independent_result_source_and_ref_effect_review
   publication_and_historical_approval: false
+
+capability_payload_refresh:
+  source_base: e3f14e85a82ea94ee8b8cbdcb4898e5b9ffea6b6
+  current_branch_reuse: task/aide-current-scoped-lite-qualification-01
+  old_candidate_zip_sha256: 4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0
+  original_configuration_sha256: a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa
+  read_only_worker: .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/worker.py
+  read_only_consumer_canaries: .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/**
+  retained_c1_proof: .aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/evidence/green-result.json
+  permitted_local_state:
+    - .aide.local/capability-payload-source-job.json
+    - .aide.local/capability-payload-build-execution.json
+    - .aide.local/capability-payload-build-job.json
+    - .aide.local/capability-payload-consumer-execution.json
+    - .aide.local/capability-payload-consumer-job.json
+  conditional_future_runtime_promotion: exact independently accepted new archive SHA only; unchanged24 member hashes/all other original config fields; current effect excludes promotion
+  admission_only_phase: source49_export_fullvalidate; exact result and next-phase envelope review before build
+  aggregate_bytes: 268435456
+  model_calls: none
+  original_assets_mutated_by_source_phase: false

@@ -1,5 +1,13 @@
 # AIDE Documentation Index
 
+## Capability payload refresh evidence
+
+The existing release-effect ExecPlan now carries the current C1 payload refresh
+and its phased source/build/consumer/replay gates. Its exact source effect and
+known-good configuration are retained under that WorkUnit evidence. Preparation
+is not qualification, runtime promotion or publication; the old accepted archive
+still has its old identity until a separately reviewed build occurs.
+
 ## Capability evidence freshness
 
 The [capability guide](docs/reference/capability-reality-ledger.md) describes the

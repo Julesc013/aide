@@ -1,0 +1,33 @@
+build(lite): admit current capability payload source qualification
+
+## Summary
+- Prompt: AIDE-STABLE-LITE-RELEASE-EFFECT-01; prepare the C1 payload refresh source phase.
+
+## Why
+- Accepted C1 source is integrated but the local immutable candidate still excludes it.
+
+## Changed
+- Reuse the existing worker through a small task-owned entry and exact source envelope.
+- Record phase/resource/recovery boundaries and compact current task references.
+
+## Validation
+- PASS: Python AST, JSON templates, raw input/config digests, diff and existing branch plan.
+- NOT RUN: source49/export/fullvalidate native phase; exact independent review required first.
+
+## Changelog
+- Changed: prepare current-source local payload qualification without inferring release acceptance.
+
+## Risks
+- Later consumer admission is near the finite shared cap and must use fresh actual totals.
+- Outer host, historical, live/matched efficiency and publication gates stay open.
+
+## Follow-up
+- Review this exact source/native effect, dispatch once and verify complete collection/retirement.
+- Review subsequent changed assets/effects separately; preserve prior candidate identities.
+
+AIDE-Task: AIDE-STABLE-LITE-RELEASE-EFFECT-01
+AIDE-Phase: capability-payload-source-admission
+AIDE-Result: PREPARED_native_not_run
+AIDE-Scope: existing release WorkUnit and permitted intake/context/root records
+AIDE-Token-Impact: reuse worker and unchanged source evidence; deterministic lifecycle
+AIDE-Quality-Gate: exact independent source/native acceptance
