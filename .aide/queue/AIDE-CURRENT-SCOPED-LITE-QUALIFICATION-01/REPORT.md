@@ -1,11 +1,21 @@
 # Current scoped Lite qualification
 
-## Outcome at source-repair preparation
+## Current outcome
 
-Current main/dev remain the previously accepted bf559c0a checkpoint. This task
-uses one bounded branch in the existing checkout; no replacement clone/worktree
-is created. Original stable assets and scoped runtime configuration remain
-unchanged. The new source repair is prepared, not qualified or integrated.
+The exact source repair passed all49 required affected tests, export generation
+and full validation as CodexSandboxOffline in jobb92f98a4. Its scratch and active
+record are absent, reservation released, and full evidence retained. All846
+export checksums were recomputed. Independent technical source/build acceptance
+is the next gate; current local assets remain the older candidate, and main/dev
+remain bf559c0a. No publication or runtime-pin promotion has occurred.
+
+The quiescent earlier job46e91fbf is also recovered and retired. Its original
+PermissionError/null exit remains a failed historical attempt. Source proof
+never changes that record into a pass.
+
+The normal worker path is useful and bounded within its tested scope. This
+outer controller/editor still has Full Access; whole-session containment,
+read isolation and a hard filesystem quota remain unqualified.
 
 ## Demonstrated defects and repairs
 
@@ -17,17 +27,17 @@ unchanged. The new source repair is prepared, not qualified or integrated.
    account. Source export succeeded, but full validation stopped. The exact
    quiescent job46e91fbf and held reservation were preserved. Native owner
    observation verified1085 public archive entries/4138257 bytes.
-3. The proposed public_archive_fixture repair creates only named public archive
+3. The qualified public_archive_fixture repair creates only named public archive
    and selected release-test directories under authenticated job TMP, inheriting
    its existing permissions. No global tempfile monkeypatch, monitor bypass,
    new pool or AIDE ACL/account/machine setter is used. Unmanaged/unrelated
-   temp behavior remains private. Eight regressions plus actual cross-account
-   measurement/retirement and36 affected release tests are required.
+   temp behavior remains private. Eight regressions, actual cross-account measurement/retirement and36 affected
+   release tests passed in the recorded native source job.
 
 Owned recovery preserves original/helper logs, checks exact lease and directory
 identities, and removes only frozen public archive custody under its creation
 account. Failed observations, reviews and setup attempt remain evidence.
-No new job is dispatched until this original allocation is reconciled.
+That original allocation was reconciled before the successful source job.
 
 ## Evidence and verification
 
@@ -38,8 +48,9 @@ No new job is dispatched until this original allocation is reconciled.
   not pass; the partial export checkpoint is explicitly unqualified.
 - Frozen helper custody inspection passed in the original native job identity
   and preserved its lease. Only known public ZIP bytes were compared.
-- Static AST checks passed for prepared changed CLI/tests/worker; no runtime
-  test is inferred from syntax. Independent source/envelope review is pending.
+- Native source checks passed:5 admission,8 public-fixture and36 release tests,
+  all without skips; export and full validation exit0. Exact independent
+  source/build acceptance is pending before asset effects.
 - Previously accepted71 core/host tests and their export/full-validation job
   remain unchanged recorded evidence; this task does not rerun them merely
   because packaging and fixture code changes.
@@ -51,8 +62,10 @@ three root indexes, current campaign state and affected export. Stable local
 asset build is separately reviewed for exactly4 files; publication is excluded.
 Approved output remains D:/Projects/AIDE/.aide.local/execution. Original repair
 limits are8 MiB scratch/64 KiB retained/6 MiB logs/900s/2 GiB memory/32 processes,
-with16 MiB canonical export reservation. Build16 MiB/1 MiB/1 MiB and consumer
-40 MiB/10 MiB/1 MiB envelopes retain256 MiB aggregate admission.
+with16 MiB canonical export reservation. Build16 MiB/1 MiB/1 MiB,
+consumer-first40 MiB/4 MiB/1 MiB and consumer-rest34 MiB/7 MiB/1 MiB
+envelopes retain256 MiB aggregate admission. The superseded single consumer
+envelope is historical and will not be dispatched.
 
 Windows job process/memory/log controls and tested worker write placement
 are enforced within exercised scope. Aggregate disk/growth is monitored,
@@ -73,8 +86,8 @@ See ../AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md for19 spec amendments,
 
 ## Remaining gates
 
-Current source/full validation, new asset consumers/replay and exact integration
-are pending. The original4 local assets are still older source; no unchanged
+Source checks/full validation passed; exact technical acceptance, new asset
+consumers/replay and exact integration are pending. The original4 local assets are still older source; no unchanged
 ZIP acquires this repair by implication. Historical10 decisions and live model
 permission remain absent; matched outcome efficiency, constrained outer-client
 workflow, publication/downloaded-consumer proof and authorized downstream
@@ -96,3 +109,19 @@ The first recover invocation included unsupported display flag `--full` and was
 refused by argparse before effects; the supported invocation succeeded.
 No job replay, new workspace, machine permission change or archive mutation was
 used. Receipt and actual retained bytes are in evidence/same-job-recovery-result.json.
+
+## Verified source qualification outcome
+
+Jobb92f98a4 passed5 admission,8 public-fixture and36 release tests with no skips,
+export generation and full validation. The actual worker was CodexSandboxOffline;
+peak scratch6095005 bytes and memory307408896 bytes, canonical export4180161.
+Its scratch/active are absent and reservation released. Collection digests and
+all846 export checksum entries were independently recomputed locally. Retained
+4903513 bytes includes full logs; result output separately obeys64 KiB allowance.
+Evidence is in public-fixture-native-result.json and source-qualification.json.
+Independent technical source acceptance remains a distinct pending gate.
+
+The required full logs make the original all-consumer reservation exceed the
+finite aggregate cap. Predeclared first/rest groups retain exactly all8 cases,
+unchanged acceptance and full results; no log discard or allowance increase.
+Independent exact build effect review precedes any archive write.

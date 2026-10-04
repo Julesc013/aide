@@ -20,15 +20,6 @@
         }
       }
     },
-    "consumer": {
-      "configuration_ref": "evidence/consumer-configuration.json",
-      "raw_sha256": "e73458e1f9c16d0ef0f32315957930784dedf322f255a6ac4d89290bd42e1ece",
-      "scratch_bytes": 41943040,
-      "retained_bytes": 10485760,
-      "log_bytes": 1048576,
-      "aggregate_bytes": 268435456,
-      "canonical_outputs": {}
-    },
     "repair": {
       "configuration_ref": "evidence/repair-configuration.json",
       "raw_sha256": "1da3a51a9f1080c38897a1c5df3d8bdb438715e4fbf3d5d07f274ae6175dde88",
@@ -43,14 +34,53 @@
         }
       },
       "supervisor": "unchanged original old ZIP; export is disjoint"
+    },
+    "consumer_historical": {
+      "configuration_ref": "evidence/consumer-configuration.json",
+      "raw_sha256": "e73458e1f9c16d0ef0f32315957930784dedf322f255a6ac4d89290bd42e1ece",
+      "scratch_bytes": 41943040,
+      "retained_bytes": 10485760,
+      "log_bytes": 1048576,
+      "aggregate_bytes": 268435456,
+      "canonical_outputs": {}
+    },
+    "consumer-first": {
+      "configuration_ref": "evidence/consumer-first-configuration.json",
+      "raw_sha256": "672a229f94a81bf1925d358d59b236c5a68f8264c102fffe1065cd5a01b0ef80",
+      "scratch_bytes": 41943040,
+      "retained_bytes": 4194304,
+      "log_bytes": 1048576,
+      "aggregate_bytes": 268435456,
+      "canonical_outputs": {},
+      "case_indices": [
+        0
+      ]
+    },
+    "consumer-rest": {
+      "configuration_ref": "evidence/consumer-rest-configuration.json",
+      "raw_sha256": "5804d2794baab074c7df74bb6feb4d39554fecb11af1a5180d641d171e8439bf",
+      "scratch_bytes": 35651584,
+      "retained_bytes": 7340032,
+      "log_bytes": 1048576,
+      "aggregate_bytes": 268435456,
+      "canonical_outputs": {},
+      "case_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
     }
   },
-  "worker_sha256": "1714c7414db9c47752a0a7992bde427d35564d4623c169ed889451979ef0bd0b",
+  "worker_sha256": "ece020b49246ac1ccda4acf54172fd037f11583c36f48e8589f4292412336838",
   "canary_custody_sha256": "86bb1e446ba316ed001e940376e3b022f6ea0163a12766b78f88e57d14ed2229",
   "effects": [
-    "Five admission, eight public-fixture and36 affected release regressions plus export/full validation under unchanged original archive supervisor; required source acceptance before build retry",
+    "49 affected source checks/export/fullvalidate completed; same proven source tests are hash-bound for build reuse",
     "local exact four candidate files rebuilt using read-only current export supervisor",
-    "unchanged 6 consumer oracles plus 12 job forms and delivered Task OS inspection in owned fixtures",
+    "All8 unchanged consumer oracles in two predeclared serial groups, same bytes and exactly-once indices;38 public forms plus12 job observations/TaskOS, all raw evidence retained",
     "full required results retained and serial fixture/terminal job retirement verified",
     "deterministic replay, no asset or pin promotion inferred"
   ],
@@ -85,5 +115,8 @@
   },
   "supersedes_admission_repair_source": "2020bea662b1a9e4c438bdf8b1b4f7c5720b842d",
   "preserved_interrupted_repair_job": "46e91fbfad5041828a02731d782b384f",
-  "precondition": "Original quiescent job46e91fbf must be recovered/retired and reservation released before any new allocation"
+  "precondition": "Prior job46e91fbf verified recovered;49-check repair jobb92f98a4 verified PASS and retired; exact source/build effect review required before assets",
+  "accepted_source_proof_sha256": "e1abd793a36275057a6fc0e5906abccde5aed76cdf8b25dcf4f2b562b3ab4d33",
+  "accepted_source_native_result_sha256": "d1936f9674da296820e598cd0fa2f95c18ae4bbcb5dbab653e50667e3124cfcd",
+  "source_acceptance": "pending exact independent actual49check/export/validate and846checksum review; no acceptance inferred"
 }

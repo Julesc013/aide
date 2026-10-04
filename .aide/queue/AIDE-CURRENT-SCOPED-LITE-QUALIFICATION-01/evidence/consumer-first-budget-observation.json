@@ -1,0 +1,13 @@
+{
+  "logical_bytes": 213779547,
+  "by_pool": {
+    "scratch": 0,
+    "retained": 200085412,
+    "control": 13694135
+  },
+  "reserved_bytes": 50331648,
+  "limit_bytes": 268435456,
+  "enforcement": "cooperative_admission_and_monitored_growth",
+  "configuration_only": true,
+  "actual_locked_admission_pending": true
+}

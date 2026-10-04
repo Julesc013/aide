@@ -58,8 +58,9 @@ from that actual requirement and let locked aggregate admission refuse if it
 does not fit. No other drive or higher aggregate budget is inferred.
 Retained results are bounded, and all raw required proof remains accessible.
 The frozen build/replay selection uses 16 MiB scratch/1 MiB retained/1 MiB log
-and an 8 MiB canonical reservation. Consumer selection uses 40 MiB scratch,
-10 MiB retained/1 MiB log and no canonical destination. Old required consumer
+and an 8 MiB canonical reservation. The original single consumer selection used40 MiB scratch/10 MiB retained/
+1 MiB log and no canonical destination. It is superseded by the first/rest
+groups below; both preserve the complete consumer acceptance. Old required consumer
 output totaled 8,753,711 bytes. Both retain 256 MiB aggregate admission; phase
 selections are predeclared, not a fallback after refusal.
 Reuse the same job record on interrupted observation; never duplicate dispatch.
@@ -111,8 +112,9 @@ attempt, receipt and previous review; no unchanged retry is authorized.
 
 The admitted repair ran all five regressions successfully and refreshed export,
 but the live monitor stopped on one unreadable Python private validation temp.
-Job46e91fbf is quiescent with its reservation still held; no new allocation is
-permitted. Full validation and source qualification are unfinished.
+At that interrupted preparation checkpoint, job46e91fbf was quiescent with
+its reservation held. It is now recovered/retired; source qualification
+subsequently passed49 checks/export/full validation. Preserve both outcomes.
 
 Freeze exact existing lease, creation identity, owned temp and public archive
 inputs. Independently review native same-job observation and conditional fixture
@@ -165,3 +167,26 @@ Owned recovery preserves helper logs by exact guarded same-volume renames into
 the existing result area, not by discarding evidence or changing collector
 limits. Original logs remain three files; all results stay within original
 64 KiB retention including at most8 KiB retirement helper output.
+
+## Measured consumer scheduling amendment
+
+The successful49-test/export/validate job retained4903513 bytes including its
+full required logs. Original global noncanonical pool bytes then total at least
+213779547. The old single consumer envelope reserves56623104 bytes (40 MiB
+scratch +10 MiB output +two1 MiB log captures +2 MiB overhead), exceeding the
+268435456 aggregate cap before any new build result. Do not discard proof or
+increase the cap.
+
+Predeclare two serial groups using unchanged canary assertions: case00 only
+uses40 MiB scratch/4 MiB output/1 MiB log; cases01..07 use34 MiB scratch/7 MiB
+output/1 MiB log. Largest previously observed scratch is34939134 for case00
+and31558508 for the remainder; required retained case00 bytes3016759, remainder
+5736952 plus the bounded Task OS/job-inspection additions. Both keep original
+256 MiB aggregate, one active job, same roots and complete evidence. Fresh
+locked admission remains mandatory; a refusal cannot choose another drive.
+
+No case is dropped or replayed. Combined terminal proof must cover exactly
+cases00..07 once, the same new archive identity,38 public forms and12 job-form
+observations. Partial success is retained as partial; failed/interrupted groups
+are reconciled before any next allocation. This schedules the necessary proof
+within finite available resources; it does not change acceptance criteria.

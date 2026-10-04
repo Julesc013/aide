@@ -1,0 +1,27 @@
+chore(release): record scoped qualification and bounded consumers
+
+## Summary
+- Close verified source qualification and predeclare current-byte asset proof under the existing budget.
+## Why
+- Actual49 affected checks/export/full validation passed and retired; complete evidence makes the previous single consumer reservation too large.
+## Changed
+- Freeze current export, exact native receipts/proof and independently checked846 checksums.
+- Split the same eight serial consumer cases into first/rest resource envelopes without dropping assertions or logs.
+- Reconcile current planning/report/index state and hash-bound source-suite reuse.
+## Validation
+- PASS:5 admission,8 public fixture and36 release tests; no skips; export and full validation in jobb92f98a4.
+- PASS: scratch/active absent, reservation released, collection digests, source/export equality and preliminary first-group budget observation.
+- NOT RUN: new asset generation, consumers/replay, promotion/publication; exact review pending.
+## Changelog
+- Changed: source qualification is retained once and consumer proof scheduled within finite capacity.
+## Risks
+- Outer session/read isolation/hard quota remain unqualified; original assets/runtime configuration are unchanged.
+## Follow-up
+- Obtain exact independent source/build effect acceptance before generation; verify all eight cases,38 public forms and12 job observations.
+
+AIDE-Task: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
+AIDE-Phase: source-qualification-closeout
+AIDE-Result: source_checks_PASS_effect_review_pending
+AIDE-Scope: affected export, own queue/evidence, three root indexes
+AIDE-Token-Impact: reuse hash-bound unchanged source tests; code owns waiting
+AIDE-Quality-Gate: exact source and local build effect review pending

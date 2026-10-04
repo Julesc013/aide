@@ -12994,3 +12994,5 @@ archive supervision qualifies source/export before any build retry.
 ## 2026-10-04 Current scoped Lite qualification repair preparation
 
 Two attempted jobs are preserved: first refused before archive mutation and retired; second passed five admission regressions and refreshed export, then stopped on a private public-archive temp. Its exact quiescent allocation is held for reviewed same-job recovery. A narrow public-fixture repair and affected tests are prepared but are not qualified. Original four stable assets and runtime configuration are unchanged.
+
+Current qualification update: jobb92f98a4 passed49 affected checks, export and full validation under CodexSandboxOffline; peak scratch6095005 bytes/memory307408896 bytes, scratch/active absent and reservation released. Old46e91fbf is separately reconciled with its failure preserved. Current source/build effect acceptance is pending; source test proof is reused only with exact input hashes. Consumer proof is predeclared in two groups to retain all raw evidence within the existing256MiB aggregate budget. Original archives/runtime pin remain unchanged.

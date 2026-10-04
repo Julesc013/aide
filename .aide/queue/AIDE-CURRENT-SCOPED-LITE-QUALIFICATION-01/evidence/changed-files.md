@@ -1,54 +1,30 @@
-# Frozen qualification files
+# Current source qualification closeout
 
-- .aide/context/latest-task-packet.md
-- .aide/generated/manifest.yaml
-- .aide/intake/latest-intent-packet.json
-- .aide/intake/latest-intent-packet.md
-- .aide/intake/latest-workunit-draft.json
-- .aide/intake/latest-workunit-draft.md
-- .aide/profile.yaml
-- .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/remaining-risks.md
-- .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
-- .aide/queue/index.yaml
-- DOCUMENTATION.md
-- IMPLEMENT.md
-- PLANS.md
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/ExecPlan.md
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/consumer_canary_base.py
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/consumer_canary_runner.py
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/context_offline_canary.py
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/forced_restart_base.py
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/forced_restart_runner.py
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/job_forms_canary.py
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/legacy-config-template.json
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_canary_base.py
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_canary_runner.py
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/partial_cli_canary.py
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/public_cli_canary.py
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/taskos_delivered_canary.py
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/build-configuration.json
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/build-selection.json
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/canary-custody.json
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/consumer-configuration.json
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/effect-manifest.json
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/intent-compiler-report.md
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/preflight-or-blocker-report.md
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/prior-assets.json
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/release-history.json
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/remaining-risks.md
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/validation.md
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/prompt.md
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/status.yaml
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/task.yaml
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/worker.py
+These paths are inside the admitted task allowlist.
 
-Product source, selected export, original local configuration and prior assets remain unchanged at prebuild freeze.
+- `.aide/export/aide-lite-pack-v0/checksums.json`
+- `.aide/export/aide-lite-pack-v0/export-report.md`
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py`
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_public_archive_fixture.py`
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q47_release_bundle.py`
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q48_github_release_draft.py`
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_stable_release_admission.py`
+- `.aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md`
+- `.aide/export/aide-lite-pack-v0/manifest.yaml`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/ExecPlan.md`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/REPORT.md`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/changed-files.md`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/consumer-first-budget-observation.json`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/consumer-first-configuration.json`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/consumer-rest-configuration.json`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/effect-manifest.json`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/public-fixture-native-result.json`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/source-qualification.json`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/source-qualified-closeout-message.txt`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/task.yaml`
+- `.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/worker.py`
+- `DOCUMENTATION.md`
+- `IMPLEMENT.md`
+- `PLANS.md`
 
-## Reviewed repair amendment
-
-- .aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/evidence/changed-files.md (self; included in exact Git source)
-- .aide/scripts/aide_lite.py (only two stable command admission calls)
-- .aide/scripts/tests/test_stable_release_admission.py (five regressions)
-- Own worker, exact effect/repair config, prior review and terminal failed-attempt evidence.
-- Affected export may change only under original archive supervision after independent revised effect acceptance.
+Source checks are49 PASS; exact independent local build effect review remains pending.

@@ -1,0 +1,36 @@
+{
+  "admission_tests": {
+    "errors": 0,
+    "failures": 0,
+    "run": 5,
+    "skips": 0
+  },
+  "export-pack_exit_code": 0,
+  "model_calls": 0,
+  "outer_session_contained": false,
+  "phase": "repair",
+  "public_fixture_tests": {
+    "errors": 0,
+    "failures": 0,
+    "run": 8,
+    "skips": 0
+  },
+  "read_isolation": "unqualified",
+  "release_tests": {
+    "errors": 0,
+    "failures": 0,
+    "run": 36,
+    "skips": 0
+  },
+  "retired_fixtures": [],
+  "source_inputs": {
+    ".aide/scripts/aide_lite.py": "f58f1cf419c09938c43d4a34779e9aba0be8d01455163b7e801dfa7d888a0e88",
+    ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+    ".aide/scripts/tests/test_q47_release_bundle.py": "a55fb81345bb3f2af701cf9f5ee724e3d2b6478fc123db37cac59f06343fa476",
+    ".aide/scripts/tests/test_q48_github_release_draft.py": "db3eee5f99cc1ce99beb31fbabd109bc1050775fb690baa66d5e3e6f71e9b4cf",
+    ".aide/scripts/tests/test_stable_release_admission.py": "57f0397758f72d94208da66e128ff78a8437653410f9efbd3fd6cf44877435cf"
+  },
+  "status": "PASS",
+  "validate_exit_code": 0,
+  "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline"
+}

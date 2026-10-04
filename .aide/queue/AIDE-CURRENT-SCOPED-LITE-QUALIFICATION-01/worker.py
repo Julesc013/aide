@@ -81,7 +81,7 @@ def asset_identity():
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("phase", choices=("repair", "build", "consumer", "replay"))
+    parser.add_argument("phase", choices=("repair", "build", "consumer-first", "consumer-rest", "replay"))
     parser.add_argument("--zip-sha256")
     parser.add_argument("--source-proof-sha256")
     args = parser.parse_args()
@@ -162,7 +162,10 @@ def main():
                                     "--out", "unused.json"]),
             ("taskos_delivered_canary.py", [z, zs, cs]),
         ]
-        for index, (name, parameters) in enumerate(cases):
+        indices = (0,) if args.phase == "consumer-first" else tuple(range(1, 8))
+        result["case_indices"] = list(indices)
+        for index in indices:
+            name, parameters = cases[index]
             label = f"case-{index:02d}"
             scratch = TMP / label
             retained = OUTPUT / label
