@@ -1,0 +1,29 @@
+fix(capability): prepare finite evidence validity repair admission
+
+## Summary
+- Prepare a bounded child repair of stale capability classification evidence through the existing ledger/status/validate owner.
+## Why
+- Seed declarations and file presence remain unchanged when evidence bytes change; retained report validation does not detect drift.
+## Changed
+- Define exact source/docs/test/schema scope, finite public hash bounds and report-only classification semantics.
+- Reuse current checkout/task branch and pinned D supervisor; keep current immutable release bytes and all external gates separate.
+- Register the child, align compact intake/context and root indexes, and allow only six existing generated metadata targets for required postadmission compile.
+## Validation
+- PASS: doctor and bounded pack; originala241 configuration/current4a supervisor/currentf58 CLI unchanged.
+- WARN: structural148 info/1 generated-fingerprint warning/0 errors after new queue entry; warning nonblocking for admission, compile and zero drift required before source acceptance.
+- WARN: helper plan reports the expected allowlisted dirty tree; no ref effects.
+- NOT RUN: implementation and managed fixture qualification pending exact independent admission/effect reviews.
+## Changelog
+- Added: bounded capability evidence validity repair WorkUnit and qualification plan.
+## Risks
+- Hash bindings are derived source observations, not executed tests, host protection, authority or stable certification.
+- Existing archive does not contain proposed source; later current asset qualification remains required.
+## Follow-up
+- Obtain exact child admission, compile managed metadata, run frozen managed red/green and a necessary CLI workflow, then review exact source and later integration/assets effects.
+
+AIDE-Task: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
+AIDE-Phase: exact-source-classification-repair-admission
+AIDE-Result: bounded_child_prepared_implementation_not_run
+AIDE-Scope: own task; index/intake/context/parent status/root indexes; later exact producer/test/schema/docs and six generated targets
+AIDE-Token-Impact: meaningful source drift repair; bounded fixture plan; no unchanged model retry or new checkout
+AIDE-Quality-Gate: exact independent admission before implementation; exact native/source/effect gates retained

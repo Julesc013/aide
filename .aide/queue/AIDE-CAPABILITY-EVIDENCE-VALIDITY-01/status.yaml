@@ -1,0 +1,9 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
+status: needs_review
+planning_state: exact_child_admission_pending_no_product_edits
+result: NOT_RUN
+updated_at: 2026-10-05
+review_gate: exact_child_admission_then_native_and_source_effects
+current_archive_unchanged: true
+source_in_existing_archive: false

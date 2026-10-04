@@ -48,12 +48,10 @@
     "provider_or_model_calls: none",
     "network_calls: none",
     "task_execution: false",
-    "raw_long_prompt_storage: false",
-    "flag:unsafe_prompt",
-    "flag:repeated_prompt"
+    "raw_long_prompt_storage: false"
   ],
-  "raw_prompt_excerpt": "Qualify the existing pre-unlink, first-unlink and fiftieth-unlink removal canary against the current locally accepted Lite ZIP, through the existing bounded D managed worker. Reuse AIDE-STABLE-LITE-RELEASE-EFFECT-01 and the current task...",
-  "raw_prompt_hash": "2bd8c14a74cb24455990319549a815d3f071aabb1d47be1472eeee7ef88aab00",
+  "raw_prompt_excerpt": "Repair capability evidence validity in the existing report-only ledger, status and validate path. Bind classification reports to finite public source inputs, detect changed or missing evidence without executing providers or claiming host...",
+  "raw_prompt_hash": "4376aafc9f29cc2c585665791178f8f0249416652dba769189c4095cd88237a4",
   "rejected_interpretations": [
     "do not bypass queue, branch, evidence, or policy state",
     "do not execute raw prompt directly",
@@ -107,7 +105,7 @@
       "raw response logs",
       "target repositories unless target-local queue authorizes work"
     ],
-    "idempotency": "prompt_hash:2bd8c14a74cb24455990319549a815d3f071aabb1d47be1472eeee7ef88aab00; status:draft; compile_only:true",
+    "idempotency": "prompt_hash:4376aafc9f29cc2c585665791178f8f0249416652dba769189c4095cd88237a4; status:draft; compile_only:true",
     "implementation_outline": [
       "Reconcile repo state before editing.",
       "write blocker report and require reviewed authorization before mutation",
@@ -140,7 +138,7 @@
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-    "workunit_id": "draft-release-2bd8c14a74cb"
+    "workunit_id": "draft-release-4376aafc9f29"
   },
   "task_class": "release",
   "validation_hints": [

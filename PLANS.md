@@ -4525,3 +4525,15 @@ or model invocation was required. Exact source/ref review remains distinct
 from stable/publication, host, history, live/efficiency and wider cleanup gates.
 See [results](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-results.md)
 and its ExecPlan for the source-only three-ref synchronization.
+
+
+## 2026-10-05 capability evidence validity repair admission
+
+AIDE-CAPABILITY-EVIDENCE-VALIDITY-01 prepares a bounded first C1 increment in
+the existing report-only ledger/status/validate owner. Current classification
+trusts seed state/file presence without invalidating retained reports when
+those inputs change. Preserve v0 ledger semantics and all operational gates;
+add finite public-input binding and prove a meaningful managed CLI workflow.
+Exact child admission precedes implementation. Current archive and pinned D
+supervisor stay unchanged; new source requires later asset requalification.
+See its ExecPlan; no broader feature campaign or second status authority.

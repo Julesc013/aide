@@ -1,0 +1,80 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
+title: Detect stale capability classification evidence through the existing ledger
+type: repair
+status: needs_review
+planning_state: exact_child_admission_pending_no_product_edits
+created_at: 2026-10-05
+updated_at: 2026-10-05
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+authority_basis: owner_campaign_delegation_exact_independent_child_admission_required
+source_base: 7ed3119a184fa6dd73e201765b6fd9d0e625b0fc
+branch_reuse: task/aide-current-scoped-lite-qualification-01
+objective: >
+  Bind the existing report-only capability ledger to finite public source
+  evidence and classify changed/missing bindings honestly through its
+  existing status and validate paths; complete a real CLI fixture workflow.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_x_os_02_capability_reality.py
+    - .aide/capabilities/capability-evidence-bindings.schema.json
+    - docs/reference/capability-reality-ledger.md
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/context/latest-task-packet.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - AGENTS.md
+    - .agents/skills/aide-queue/SKILL.md
+    - .agents/skills/aide-execplan/SKILL.md
+    - .agents/skills/aide-review/SKILL.md
+    - .aide/generated/preview/CLAUDE.md
+    - .aide/generated/manifest.yaml
+  read_only_paths:
+    - .aide/profile.yaml
+    - .aide/policies/capability-reality.yaml
+    - .aide/capabilities/capability-seeds.yaml
+    - .aide/ledgers/capability-ledger.schema.json
+    - .aide/policies/review-gates.yaml
+    - .aide/release/stable/**
+    - core/reconciler/**
+  forbidden_operations:
+    - authority or policy widening from generated reports
+    - model/provider/network calls or external URI evidence fetching
+    - reading secrets, local ignored state or redirected evidence
+    - new checkout, branch, storage layout, quota or machine ACL
+    - real-target edits, release rebuild, tag, publication or unreviewed ref mutation
+implementation_boundary:
+  ledger_v0_shape_preserved: true
+  source_bindings_are_derived_not_canonical: true
+  classifications_are_not_execution_or_host_proof: true
+  bounded_hash_reads: 128_refs_4MiB_each_16MiB_total
+  old_unbound_report: unknown_not_promoted
+  new_source_not_in_existing_immutable_assets: true
+qualification:
+  config: .aide.local/scoped-job-entry-01-execution.json
+  config_sha256: a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa
+  supervisor_archive_sha256: 4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0
+  one_native_job_at_a_time: true
+  canonical_outputs: {}
+  model_calls: none
+  replay_of_uncertain_attempt: forbidden
+verification:
+  - managed red/green stale-input and missing-evidence regressions
+  - unchanged/unrelated input cases and source classification versus qualification
+  - finite reader excludes private/URI/redirected paths with harmless fixtures
+  - interrupted or tampered ledger/binding pair refuses current validity
+  - real current source CLI produces then invalidates the fixture ledger
+  - existing capability tests, exact native result/output/log hashes and retirement
+  - proportionate structural/AST/commit/scope checks and exact independent source review
+retained_gates:
+  - native envelopes and consequential source require exact independent verdict
+  - source integration, archive refresh and stable publication are separately qualified
+  - outer-client, historical, live-model, matched efficiency and wider cleanup remain open

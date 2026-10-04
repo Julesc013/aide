@@ -3,8 +3,8 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 2bd8c14a74cb24455990319549a815d3f071aabb1d47be1472eeee7ef88aab00
-- raw_prompt_excerpt: Qualify the existing pre-unlink, first-unlink and fiftieth-unlink removal canary against the current locally accepted Lite ZIP, through the existing bounded D managed worker. Reuse AIDE-STABLE-LITE-RELEASE-EFFECT-01 and the current task...
+- raw_prompt_hash: 4376aafc9f29cc2c585665791178f8f0249416652dba769189c4095cd88237a4
+- raw_prompt_excerpt: Repair capability evidence validity in the existing report-only ledger, status and validate path. Bind classification reports to finite public source inputs, detect changed or missing evidence without executing providers or claiming host...
 - interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release

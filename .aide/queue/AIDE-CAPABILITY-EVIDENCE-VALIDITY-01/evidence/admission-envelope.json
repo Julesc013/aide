@@ -1,0 +1,29 @@
+{
+  "schema": "aide.capability-validity-admission.v1",
+  "workunit": "AIDE-CAPABILITY-EVIDENCE-VALIDITY-01",
+  "source_base": "7ed3119a184fa6dd73e201765b6fd9d0e625b0fc",
+  "authority": "existing campaign delegation and required exact child admission",
+  "only_outcome": "finite evidence invalidation through existing ledger/status/validate and actual managed CLI fixture",
+  "existing_schema_policy_preserved": true,
+  "derived_bindings_not_grants_or_qualification": true,
+  "original_config_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "known_good_supervisor_zip_sha256": "4a45922b1dc09cf5073c0968fd016d008cb7bc924c2905efe526ffe11f95dab0",
+  "source_cli_before_sha256": "f58f1cf419c09938c43d4a34779e9aba0be8d01455163b7e801dfa7d888a0e88",
+  "controller_edits_only_allowed_paths": true,
+  "no_branch_worktree_creation": true,
+  "reader_limits": {
+    "refs": 128,
+    "per_file_bytes": 4194304,
+    "total_bytes": 16777216
+  },
+  "generated_warning": "Q05 source fingerprint stale after queue registration; compile only six named outputs after admission, zero drift required for source acceptance",
+  "native_not_yet_authorized": "exact frozen manifests/source/input/finite effect review before each job; canonical_outputs empty, original8MiB/6MiB/64KiB/256MiB monitored configuration",
+  "retained_external_gates": [
+    "outer-client and read exclusion",
+    "ten historical decisions",
+    "live model permission/matched efficiency",
+    "stable/tag/publication/downloaded-consumer/adoption",
+    "unknown wider cleanup"
+  ],
+  "intake": "conservative composite release block preserved; requested admission resolves only local source repair"
+}

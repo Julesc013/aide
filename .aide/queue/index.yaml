@@ -4,6 +4,15 @@ policy: .aide/queue/policy.yaml
 default_concurrency: 1
 canonical_source: .aide/queue
 items:
+  - id: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
+    status: needs_review
+    planning_state: exact_child_admission_pending_no_product_edits
+    title: Detect stale capability classification evidence
+    task: .aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/prompt.md
+    evidence: .aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/evidence
+    description: Existing report owner; finite public input bindings and explicit current/stale/unknown classification, with all operational/release gates preserved.
   - id: AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01
     status: passed_with_notes
     planning_state: qualified_local_source_assets_runtime_and_integration_complete
