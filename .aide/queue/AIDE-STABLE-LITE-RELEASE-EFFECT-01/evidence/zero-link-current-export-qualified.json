@@ -1,0 +1,96 @@
+{
+  "actual_principal": "Previously qualified configured Offline route; this plain export command makes no separate new principal observation.",
+  "actual_source_sync_ref": ".aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-source-sync-terminal.log",
+  "actual_source_sync_sha256": "b2d70ac32fe5b76b02ea7f0cae8b7c1eda9145e167d36f3238f7b80b18a56b70",
+  "all848_source_inputs_and_held4_registry_runtime_unchanged": true,
+  "automatic_replay": false,
+  "checksum_count": 851,
+  "checksums_sha256": "dd564384415f06165d53f4de492840131dfd74f230485c2326fba8e44df10a2d",
+  "collected_manifest": {
+    "logs": "b23fef70e8740b7b0830e66c398d3a9cf040eab2daa51ff8916c41bf61de6508",
+    "output": "d66d44cfb4eee409905242374527e85a15870f1b9e43cb51d906368cdf529c78"
+  },
+  "effect_sha256": "370785cfcca375a0bb80b66e1db097661f1dc41073f8270f0fa19d5f42e06462",
+  "export_bytes": 4321660,
+  "export_changes": {
+    ".aide/export/aide-lite-pack-v0/checksums.json": {
+      "bytes": 112809,
+      "sha256": "dd564384415f06165d53f4de492840131dfd74f230485c2326fba8e44df10a2d"
+    },
+    ".aide/export/aide-lite-pack-v0/files/core/execution/managed_workspace.py": {
+      "bytes": 56611,
+      "sha256": "bca3178f45667bdf326e549858de58469e0cb0153f104c03abfef9ad140a3d96"
+    },
+    ".aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md": {
+      "bytes": 19235,
+      "sha256": "8ef11d64dd800552b20732b947a0f4eefd222e4f8c2570949cbe0d41a7b32c1b"
+    },
+    ".aide/export/aide-lite-pack-v0/manifest.yaml": {
+      "bytes": 54101,
+      "sha256": "81c215bdf9f21ccda65f06a848cca0c1d1101d8f54e1b5b06aff8544b1398ec9"
+    }
+  },
+  "export_members": 854,
+  "hard_disk_quota": false,
+  "included_source_files": 848,
+  "job_id": "971a2045a6414c65b3c9d56d3cc6b59f",
+  "local_full_result_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-export-result.log",
+  "local_full_result_sha256": "f6082ac423545870a445a87fefe0731088e1fcb2bcf8d22ba9d4ace414f1045a",
+  "manifest_sha256": "81c215bdf9f21ccda65f06a848cca0c1d1101d8f54e1b5b06aff8544b1398ec9",
+  "model_calls": 0,
+  "native_parent_exit": 0,
+  "native_submission_count": 1,
+  "native_terminal_sha256": "10b0b185fc355601f2c8d69b9b9e4ca71ad67b5f5048db873612a371d5a912cd",
+  "outer_containment": false,
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4321660
+    },
+    "memory_bytes": 218923008,
+    "scratch_bytes": 2194
+  },
+  "quiescent": true,
+  "receipt_sha256": "ff37a7d3771b32307e6f12ee00831fd63e6b848f0f0539035dbc9b09289cfcd8",
+  "reservation_released": true,
+  "retained_bytes": 114954,
+  "retained_members": {
+    "logs/stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdout": {
+      "bytes": 292,
+      "sha256": "c444bb0ed5a9b8b5c13901f432d10d1f9f971a4eb523d0a4701b44f17aa1f945"
+    },
+    "output/effective-scope.json": {
+      "bytes": 1762,
+      "sha256": "6239319ca28e48a894987617ede34ecbb0a0f29d267d944dacbc9c3cfa2dea9a"
+    },
+    "owner.json": {
+      "bytes": 140,
+      "sha256": "9e4d57259b28b5b12eb20942855ecfa131b7328335779620e7c556702b810caa"
+    },
+    "receipt.json": {
+      "bytes": 112760,
+      "sha256": "ff37a7d3771b32307e6f12ee00831fd63e6b848f0f0539035dbc9b09289cfcd8"
+    }
+  },
+  "review_sha256": "077d7999195493e7d4d5e4daa7d34b1a1238ae89c21cbcac0ad24a49e63c0807",
+  "schema": "aide.zero-link-current-export-result.v1",
+  "scratch_absent": true,
+  "shipped_scanner_sha256": "bca3178f45667bdf326e549858de58469e0cb0153f104c03abfef9ad140a3d96",
+  "source": "27338811d14b3314a98434a68be4a7d7d56b6667",
+  "source_dirty_state": false,
+  "source_sync_independent_acceptance_sha256": "077d7999195493e7d4d5e4daa7d34b1a1238ae89c21cbcac0ad24a49e63c0807",
+  "source_test60_included": false,
+  "source_tree": "ac7a4305ac100563efae2fc329a1afaaca3c511b",
+  "stable_or_ref_or_payload_effect": false,
+  "status": "PASS_RETIRED_EXPORT_COMMIT_PENDING",
+  "subsequent_exact_commit_and_payload_effects": "retain their own independent gates and actual terminal evidence; no future identity inferred",
+  "worker_exit": 0,
+  "wrapper_reconciliation_sha256": "0b27afba57f030b800d18ec40242ab26845df36128ea872179f944daf1139aa0"
+}

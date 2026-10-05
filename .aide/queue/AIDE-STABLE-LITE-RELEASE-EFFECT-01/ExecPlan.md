@@ -10,8 +10,10 @@ following source/export work; source edits do not silently change the runner.
 [qualification evidence](../AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-qualified-result.json)
 retain exact identities, reviews and verified collection/retirement.
 
-Finish exact guarded source/ref integration, then refresh only the changed
-export/payload closure and qualify affected delivered bytes. The held ZIP5cba
+Source27338811 is synchronized with88 corresponding branch pairs intact.
+The repaired canonical export971a2045 has854 members/851 checksums and clean273
+provenance. Finish its exact guarded export commit, then build and qualify only
+the affected payload/delivered bytes under pinned302688. The held ZIP5cba
 has archive98 and actual unchanged replay; cases0/3 are complete,1/2 are partial
 PASS oracles from a failed job,4–7/current delivered41/full38 remain incomplete.
 It contains the old scanner. Preserve all historical proofs without claiming

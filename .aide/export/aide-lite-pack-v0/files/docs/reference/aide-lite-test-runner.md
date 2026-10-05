@@ -192,6 +192,18 @@ unknown aliases, changed configuration or a partial conflicting collection
 remain preserved and reported for reconciliation. Neither process IDs nor
 directory age authorize deletion.
 
+### Live scratch observation and strict collection
+
+A live scan may encounter a regular, non-reparse file with zero links while
+its owner deletes it. It reobserves that metadata at most twice, with5 ms waits.
+Confirmed absence is omitted; surviving fresh metadata must pass the existing
+type/link, byte and file-count checks. Persistent zero links, reparse metadata,
+outside hardlinks and observation errors still refuse. Strict quiescent result
+collection does not retry or accept zero-link files. The source60 regressions
+and an unchanged real partial-import CLI task qualified this boundary in the
+[resource WorkUnit](../../.aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/REPORT.md).
+Disk monitoring remains separate from a hard filesystem quota.
+
 ## Scoped repository-check worker entry
 
 `job run --config <local-config> --manifest <job>` can explicitly select an

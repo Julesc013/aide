@@ -1,17 +1,22 @@
 # AIDE Documentation Index
 
-## Execution qualification — 2026-10-06
+
+## Current repair and export records — 2026-10-06
 
 The [resource report](.aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/REPORT.md)
-records source60, the exact execution archive and a useful recovery task with
+records source60, the exact execution archive and normal recovery CLI10 with
 full retirement. [Runner reference](docs/reference/aide-lite-test-runner.md)
-explains live versus strict scratch observation. The
-[release report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
-separates source repair from held package bytes and remaining delivery gates.
-These records do not establish outer-client containment, read isolation,
-hard/global disk limits, matched total-cost efficiency or stable publication.
+explains live versus strict observation. The newer
+[release report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) records
+accepted source273 synchronization and the refreshed export971a2045 with exact
+repaired scanner, while held ZIP5cba still has the earlier scanner.
 
-## Managed commit prevention — 2026-10-06
+[Export qualification summary](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-export-qualified.json)
+retains numeric outcomes, full collection hashes and actual source/asset scope.
+Package qualification, outer containment, read isolation, hard/global disk
+limits, matched efficiency and stable publication remain separate.
+
+## Historical managed commit delivery checkpoint — 2026-10-06
 
 [WorkUnit](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/ExecPlan.md) governs the
 qualified exact-object local commit path. [Commit discipline](docs/reference/commit-discipline.md)

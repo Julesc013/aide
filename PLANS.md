@@ -1,17 +1,22 @@
 # AIDE Planning Index
 
-## Current delivery path — 2026-10-06
+
+## Current repaired export and delivery — 2026-10-06
 
 The [resource repair](.aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/REPORT.md)
-is qualified by source60 and a real10-command recovery task under the exact
-replacement runtime. Finish guarded source/ref integration, then refresh and
-qualify the repaired export/payload through the existing
+is source60/normal CLI10 qualified. Guarded commit27338811 is synchronized to
+local/remote main, dev and task;88 corresponding pairs match,85other tips stay.
+The affected export job971a2045 now includes the exact repaired scanner:
+854 members/851 checksums, four changed generated files, clean273 provenance.
+
+Next: finish its exact export commit, build and qualify repaired archives,
+then affected delivered/consumer/form evidence and unchanged replay through the
 [release plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md).
-The held ZIP5cba contains the old scanner. Historical decisions, live/matched
-efficiency, actual outer-client setup and stable publication remain separate;
+Held ZIP5cba still contains the old scanner. Historical11, live/matched
+qualification, outer-client setup and stable publication remain separate;
 unchanged blockers do not admit repetitive status work. FacMan stays paused.
 
-## Current managed commit prevention — 2026-10-06
+## Historical managed commit delivery checkpoint — 2026-10-06
 
 The [managed commit WorkUnit](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/ExecPlan.md)
 has accepted72-test native evidence and completed actual guarded source commit

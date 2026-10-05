@@ -1,5 +1,35 @@
 # Current AIDE source, artifact and development report
 
+## Repaired source integrated; canonical export current — 2026-10-06
+
+Guarded commit27338811/treeac7a4305 is independently accepted and synchronized
+to local/remote main, dev and existing task. All88 corresponding pairs match;
+85other tips and tags are preserved. One physical checkout remains. Canonical
+source doctor73/validate60,169 passed with zero WARN/FAIL and full retirement.
+
+The separately admitted export job971a2045 exited0 at worker/native parent,
+verified all854 members/851 checksums and clean273 provenance, and changed only
+scanner, runner reference, checksums and manifest. Export scanner SHA256
+`bca3178f45667bdf326e549858de58469e0cb0153f104c03abfef9ad140a3d96`
+is the accepted repair. The source-only workspace test is intentionally absent
+under the existing export policy; source60 is not represented as a shipped
+suite. Full source inputs, held assets, registry and pinned runtime stayed exact.
+
+Retained114,954B, sampled scratch2,194B and Job memory218,923,008B are this job's
+observations. Complete collection digests/ownership, quiescence, scratch removal
+and reservation release passed. The plain worker uses the qualified configured
+Offline route without a new principal observation. Two postexecution wrapper
+assumptions (observation-versus-receipt shape and four-versus-five predicted
+changed files) were reconciled from original receipts/maps; the actual worker
+succeeded once. [Summary](evidence/zero-link-current-export-qualified.json) and
+[full local result](evidence/zero-link-current-export-result.log) retain that
+scope. No worker, export or copy was replayed.
+
+The held four archives below remain unchanged. This export is not yet a repaired
+release archive. Finish the exact export commit, then build/qualify affected
+payload, consumers/forms and replay under pinned302688. Exact final stable
+release acceptance/publication/downloads and independent external inputs remain.
+
 ## Current qualified scratch repair — 2026-10-06
 
 The [resource repair report](../AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/REPORT.md)

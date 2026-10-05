@@ -548,6 +548,23 @@ def tree_usage(root, *, maximum, max_files, allow_transient_absence=False,
                 except FileNotFoundError:
                     if allow_transient_absence: continue
                     raise
+                # A live Windows deletion can expose zero links before the
+                # name disappears. Never accept that metadata as a file:
+                # briefly reobserve this exact member, then run every normal
+                # check on fresh metadata or confirm FileNotFoundError.
+                if allow_transient_absence:
+                    for attempt in range(2):
+                        if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 0
+                                or getattr(info, 'st_file_attributes', 0) & 0x400):
+                            break
+                        time.sleep(0.005)
+                        try:
+                            info = Path(entry.path).lstat()
+                        except FileNotFoundError:
+                            info = None
+                            break
+                    if info is None:
+                        continue
                 count += 1
                 if stat.S_ISLNK(info.st_mode) or getattr(info, 'st_file_attributes', 0) & 0x400:
                     raise WorkspaceRefused('linked job member preserved for recovery')

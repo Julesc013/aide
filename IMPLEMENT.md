@@ -1,16 +1,23 @@
 # AIDE Implementation Log
 
-## Live scratch deletion repair — 2026-10-06
 
-The existing scanner now confirms disappearing zero-link regular files in
-bounded live reobservations while preserving strict collection and link/type/
-resource guards. All52 old tests plus8 regressions passed; the original recovery
-canary then passed10 CLI checks under the exact26-component replacement runtime.
-Complete result collection and retirement are independently accepted. The
-[resource report](.aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/REPORT.md)
-owns source/runtime identities, measured resources and limitations. The held
-release ZIP still needs the repaired payload; exact later commit/ref effects
-retain their own terminal evidence.
+## Qualified repair integrated and export refreshed — 2026-10-06
+
+Bounded live zero-link reobservations preserve strict collection and existing
+link/type/resource refusals. Source60 and original normal CLI10 passed under
+the exact replacement runtime; complete collection and retirement accepted.
+Guarded commit27338811 passed exact message/tree/parent/latest checks, then one
+reviewed atomic nonforce push synchronized main/dev/task with88 pairs matching.
+
+Job971a2045 refreshed only the affected portable export under pinned302688:
+854 members,851 verified checksums, four changed files, clean273 source,
+2,194B sampled scratch/218,923,008B Job memory/114,954B retained. The worker and
+native parent exited0, scratch retired, reservation released. Postexecution
+wrapper assumptions were corrected from exact existing receipts/maps without
+replaying the job; original failures are retained. This small index/report
+update reflects that actual delivery dependency change. Product/tests/helpers
+remain the source-qualified bytes. [Release report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+owns exact export identities and the still-held old archive; no release claim.
 
 ## Historical export-only checkpoint — 2026-10-06
 
