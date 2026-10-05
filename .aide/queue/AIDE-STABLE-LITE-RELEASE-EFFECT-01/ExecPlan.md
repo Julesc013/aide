@@ -1270,3 +1270,21 @@ Originala241 runtime remains held. Outer/read/hardquota/historical10/live/matche
 efficiency/exact stable acceptance/tag/publication/download/wider cleanup remain
 separate; FacMan product paused. No new storage/checkout, paid calls, broad
 source tests, archive regeneration or global cleanup from this closeout.
+
+
+## Current release binding qualification — 2026-10-05
+
+Accepted plan cc5b570c at baseline935 admits only read-only queue-local binding
+qualification. Earlier proposed effect manifests identify older asset bytes.
+A separately named HELD packet binds current four assets and recorded source67,
+build, case0+remaining7, coverage38/51, replay and delivered41-with-fixtures
+proofs. The checker preserves the historical base and every external gate; it
+is consistency verification, not review authenticity or publication admission.
+
+Sequence: freeze source/checker/refusal fixtures/current packet; independently
+review a finite native effect using unchanged existing pinned execution config;
+run once, collect full results/streams/receipt and verify scratch retirement and
+reservation release; independently review actual result; commit scoped evidence.
+No archive replay, runtime promotion, model, network, ref/tag/publication effect,
+new pool/worktree, broad cleanup or draft adoption is admitted. Source/ref
+integration requires its own subsequent exact review. Native effect pending.

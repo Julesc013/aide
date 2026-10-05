@@ -13285,3 +13285,13 @@ once, all exit0; only6/9 allowed report files changed. Complete41-input binding
 and full raw outputs retained; source/original config/assets unchanged. Current
 C4 maintenance is qualified; separately reviewed native source/export work is
 prepared, not dispatched. No source/ref/archive/publication effect inferred.
+
+
+## Current held release binding — preparation, 2026-10-05
+
+Added queue-local read-only release_binding.py and refusal fixtures to detect
+stale archive/evidence identities before future release review. The current
+packet retains all external gates and explicit delivered-test fixture limits.
+AST checks only at preparation; tests/native execution not yet run. Existing
+archives, product source,25 supervisor pins and executing configuration unchanged.
+Exact independent native review is required before qualification.

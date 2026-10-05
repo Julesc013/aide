@@ -1,0 +1,63 @@
+{
+  "schema": "aide.current-release-binding-plan.v1",
+  "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01",
+  "base_source": "935545a8a4b5679692e67f474947a8188b5d030b",
+  "base_tree": "cd983411d342ac24454108f23576b8990f0a31b5",
+  "objective": "Replace stale prospective release binding with exact current asset/evidence qualification without executing publication or adopting another feature.",
+  "scope": [
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/**",
+    ".aide/intake/latest-intent-packet.json",
+    ".aide/intake/latest-intent-packet.md",
+    ".aide/intake/latest-workunit-draft.json",
+    ".aide/intake/latest-workunit-draft.md",
+    ".aide/context/latest-task-packet.md",
+    ".aide/reports/capability-command-status.md",
+    ".aide/reports/capability-observations.md",
+    ".aide/reports/capability-ledger.md",
+    ".aide/reports/capability-evidence-bindings.json",
+    ".aide/reports/capability-overclaims.md",
+    ".aide/reports/capability-validation.md",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/remaining-risks.md",
+    "PLANS.md",
+    "IMPLEMENT.md",
+    "DOCUMENTATION.md"
+  ],
+  "source_deliverables": [
+    "release_binding.py read-only checker; no subprocess/network/apply/storage allocation",
+    "test_release_binding.py small meaningful loss/tamper/stale/overclaim refusal cases",
+    "evidence/release-effect-manifest-1.0.0-qualified.json exact proposed HELD current packet, no old manifest overwrite",
+    "Existing ExecPlan/report/plan indexes updated for this qualification slice"
+  ],
+  "dependency_evidence": [
+    "Accepted current build + source67 + current8 consumers + coverage38/51 + delivered41 explicit fixtures + unchanged replay",
+    "Accepted source935 and source-only sync terminal ca8ff792 / review d87876db",
+    "Immutable readonly clean export25 supervisor pins and unchanged D selected execution config bc8fc185"
+  ],
+  "verification": [
+    "Reject actual older release manifest; check exact four assets and current accepted evidence without archive reconstruction",
+    "Tests refuse wrong assets/evidence hash, missing proof, duplicate records/form coverage, fixture/bare archive overclaim, erased external gates and publish-ready claim",
+    "Run checker + tests once through existing pinned managed owner under separately reviewed native effect, one job, explicit source inputs, finite 16MiB scratch/1MiB full results/512KiB logs within same256MiB pool and unchanged headroom",
+    "Inspect complete numeric exits/results/receipts/hash bindings and verify scratch retirement/reservation release; independent source/result review",
+    "Structural Harness/changed links/packet/whitespace/structured commit checks; retain unchanged source67 proof only unchanged ten operative inputs"
+  ],
+  "effect_exclusions": [
+    "No live model or network from worker",
+    "No runtime/config/pin promotion",
+    "No tag/publication/Git ref effects from this source/native phase",
+    "No existing archive/test rewrite or broad source suite replay",
+    "No new worktree, clone, pool, hard quota, changed host profile, draft adoption or target mutation"
+  ],
+  "blocking_gates": [
+    "Ten exact historical owner decisions remain absent",
+    "Bounded signed-in live-model permission and matched outcome remain absent",
+    "Outer client remains unrestricted and cannot be reconfigured here",
+    "Final technical/effect stable acceptance and downloaded-consumer verification remain future effects"
+  ],
+  "intake": {
+    "result": "PASS compiler classification, release/blocked/split-required",
+    "safe_to_execute": false,
+    "resolution": "Seek existing delegated exact bounded qualification-phase admission; intake does not grant implementation or external effects."
+  },
+  "admission_only": true,
+  "native_effect_admitted": false
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "aide.current-release-binding-admission.v1",
+  "plan_sha256": "cc5b570c05d4cdc2a68de443725ed6893c10fae1e2abe40247ab6859d5a7dca4",
+  "reviewer": "/root/containment_review",
+  "verdict": "ACCEPT",
+  "blocking_findings": [],
+  "scope": "Exact16 source-plan paths under existing release WorkUnit; checker, refusal fixtures, separately named held packet and supporting records only",
+  "notes": [
+    {
+      "classification": "nonblocking_disposed",
+      "text": "Compiler remains blocked/split-required/safe_to_execute false; delegated exact bounded qualification only"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "text": "Fixture scope/external gates retained; local binding is not release acceptance"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "text": "Native effect remains unadmitted and requires exact separate freeze/review"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "text": "Writer scope remains declared paths only"
+    }
+  ],
+  "native_effect_admitted": false,
+  "publication_authorized": false
+}

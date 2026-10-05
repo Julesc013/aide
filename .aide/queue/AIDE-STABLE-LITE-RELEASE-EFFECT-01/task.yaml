@@ -163,3 +163,5 @@ delivered_additions_qualification:
   bare_archive_case_count_or_CURRENT_claim: false
   permitted_local_state: [.aide.local/capability-payload-delivered-execution.json, .aide.local/capability-payload-delivered-job.json, .aide.local/capability-payload-replay-job.json, .aide.local/capability-payload-consumer-rest-execution.json, .aide.local/capability-payload-consumer-rest-job.json]
   runtime_promotion_or_stable_certification: false
+
+current_release_binding_qualification: Accepted cc5b570c bounded queue-local pure checker/refusal fixtures/current HELD packet; source preparation only, separate exact native effect/result review using existing config required; no archive/model/ref/runtime/publication/draft effect.

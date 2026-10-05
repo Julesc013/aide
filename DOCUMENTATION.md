@@ -844,3 +844,12 @@ The current development report remains `.aide/queue/AIDE-STABLE-LITE-RELEASE-EFF
 ## 2026-10-05 Current build proof and runtime hold
 
 The release-effect REPORT and exact build result/proof/admission now distinguish the new C1 candidate ZIP7132a540 from the preserved old4a45922b candidate. The original local configuration remains unchanged but its old archive selection is held stale after replacement. Current consumers and aggregate retention are separate pending evidence; no stable certification is claimed.
+
+
+## Current local release binding qualification
+
+[Held current packet](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/release-effect-manifest-1.0.0-qualified.json)
+and [read-only checker](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/release_binding.py)
+bind existing qualification; they neither authenticate reviews nor admit release
+effects. Refusal fixtures/native qualification remain pending in the existing
+[ExecPlan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md).

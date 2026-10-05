@@ -1,0 +1,144 @@
+{
+  "schema_version": "aide.stable-release-local-binding.v1",
+  "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01",
+  "state": "HELD_EXTERNAL_GATES",
+  "version": "1.0.0",
+  "tag": "aide-lite-v1.0.0",
+  "publication_authorized": false,
+  "effect_executable": false,
+  "prospective_tag_source": null,
+  "historical_release_check_base": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3",
+  "pack_source": {
+    "commit": "cf2345476bd130efaaf9da1f416d6b0c96451107",
+    "tree": "97b590184781d8c713a75f5f8ecf782fad30489f"
+  },
+  "integrated_source_checkpoint": {
+    "commit": "935545a8a4b5679692e67f474947a8188b5d030b",
+    "tree": "cd983411d342ac24454108f23576b8990f0a31b5",
+    "scope": "accepted source-only integration context; not prospective tag target or stable acceptance"
+  },
+  "assets": {
+    "aide-lite-v1.0.0.zip": {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.zip",
+      "sha256": "55665b2f6369869209a166db640ffc334f921898505610705b4fee4860e65197",
+      "size_bytes": 1153071
+    },
+    "aide-lite-v1.0.0.tar.gz": {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.tar.gz",
+      "sha256": "fce561ca9b86be55b123d0ab272c68e25e36fba3b691a76e7192db2120573ced",
+      "size_bytes": 815242
+    },
+    "aide-lite-v1.0.0.manifest.json": {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.manifest.json",
+      "sha256": "21f8d087453a4426bbd8f3e6a9351625f0f8c84b6547c75c64189b68443ecb88",
+      "size_bytes": 4955
+    },
+    "aide-lite-v1.0.0.SHA256SUMS.txt": {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt",
+      "sha256": "cc58568d1a5705457d7d30f4658235937f9100ff87851441665c831b0cb4a19d",
+      "size_bytes": 274
+    }
+  },
+  "operative_inputs": {
+    ".aide/capabilities/capability-evidence-bindings.schema.json": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
+    ".aide/capabilities/capability-seeds.yaml": "46817a46802870980297f9923f6e1d31fd6a9c418ced7ced10283d2e2565fd5f",
+    ".aide/policies/capability-reality.yaml": "7fd503b9a3560ee32e5b56cb3fb7a0cddc865f46a42780ceceaa636e18645e18",
+    ".aide/scripts/aide_lite.py": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+    ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+    ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+    ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+    ".aide/scripts/tests/test_stable_release_admission.py": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+    ".aide/scripts/tests/test_x_os_02_capability_reality.py": "4509355fc87b618c013ac1406e24e5a2181f5ac4c658f89fc0b8eae6a20393ef",
+    "docs/reference/capability-reality-ledger.md": "1533b4122dc1666e92058643cc167070a3defab64a57c078fde4574082b7c51e"
+  },
+  "evidence": {
+    "source67": {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-payload-source-qualification.json",
+      "sha256": "5a10448a4d2fc5de1d52294abf30a85e38100207f7c6515f9eb29338a707577b",
+      "size_bytes": 2138
+    },
+    "build_effect": {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-build-native-effect.json",
+      "sha256": "90e0b86dc91ac2b64445771127e1db5721295d7d7c9120b2cd15898799e4bbca",
+      "size_bytes": 14207
+    },
+    "build": {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-build-result.json",
+      "sha256": "5f50ffd82163e0d2d27fa477ccf12114936a3b2555d929eede392caaf8203788",
+      "size_bytes": 3906,
+      "review": {
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-build-result-review.json",
+        "sha256": "48148d0352eb3a1abf08592efe81d7e7265b7da29dd2644e339f3e84848d974c",
+        "size_bytes": 1278
+      }
+    },
+    "case0": {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-consumer-first-result.json",
+      "sha256": "04602684715d6a87a5d2137b760de1f7b8b5636d72214725e0766ab1379ca887",
+      "size_bytes": 14358,
+      "review": {
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-consumer-first-result-review.json",
+        "sha256": "6f8d00b0caa1809ecc9410eabadebf88aaefd44f3869a5def4d26d7007e70c8c",
+        "size_bytes": 980
+      }
+    },
+    "remaining7": {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-consumer-rest-result.json",
+      "sha256": "c61d615ea46c5df5f08b83e3069d3b24f1596267e9e321451c3fe495b8d0fe14",
+      "size_bytes": 32411,
+      "review": {
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-consumer-rest-result-review.json",
+        "sha256": "a00b090f12c7944e06b4272432d0a8c883db48df30cf8fe855aefc42017b66f6",
+        "size_bytes": 772
+      }
+    },
+    "coverage": {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-public-form-coverage.json",
+      "sha256": "13e7d4e363e7588dc068dbbabd9ddd5d90f02e04150f085a1fa0fcfcf6b85dd4",
+      "size_bytes": 42798,
+      "review": {
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-public-form-coverage-review.json",
+        "sha256": "2093fb4482fe87f3bed5cc2c965e3eedf436cd3a248a6f84b2ce2c464fc40fb3",
+        "size_bytes": 842
+      }
+    },
+    "replay": {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-zerochange-replay-result.json",
+      "sha256": "d390847f17fc1a185cefe46ba22a387f5cade240574d1aa7118387488c9d149c",
+      "size_bytes": 17444,
+      "review": {
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-zerochange-replay-result-review.json",
+        "sha256": "ef8d9bb6308ee2272ec1e3b551ec5e6314b4b5da28fbe42790d39724473788ef",
+        "size_bytes": 912
+      }
+    },
+    "delivered41": {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-result.json",
+      "sha256": "d26bc95e5044be9a09f9c25bb7c7ae7253dca2699d1645973449b4f31054f74a",
+      "size_bytes": 18824,
+      "review": {
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-result-review.json",
+        "sha256": "19971e346657a7b4df16ec5af4a76de050d1e99b04eeb290afe2772e15da2cd2",
+        "size_bytes": 1356
+      }
+    }
+  },
+  "delivered_test_scope": "41 original tests with ten explicit fixture-data overlays; no bare-archive or unaugmented CURRENT claim",
+  "external_gates": {
+    "outer_client": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+    "historical_messages": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+    "live_model_permission": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+    "matched_efficiency": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+    "final_release_acceptance": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+    "runtime_promotion": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+    "publication_and_download_verification": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+    "wider_cleanup": "PENDING_SEPARATE_PROOF_OR_AUTHORITY"
+  },
+  "limits": {
+    "whole_session_contained": false,
+    "read_isolation": "unqualified",
+    "hard_global_disk_quota": false,
+    "total_cost_reduction_proven": false
+  },
+  "effect_boundary": "Proposed local qualification binding only. Resolve independent gates, freeze prospective tag source/effects and obtain exact release acceptance before any tag/upload/publication. These recorded review hashes prove byte linkage, not reviewer authenticity or authority. No old manifest is silently replaced."
+}

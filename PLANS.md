@@ -4723,3 +4723,12 @@ with6/9 changes and complete41-input current binding. Next separately reviewed
 worker49+18/export/fullvalidate uses current7132 supervisor and original pools,
 no49 reuse after CLI change. Current ZIP predates custody; no integration or
 release claim. See both WorkUnit reports for current and historical identities.
+
+
+## Current release binding qualification — 2026-10-05
+
+The existing stable-effect WorkUnit admits a pure current asset/evidence checker,
+small refusal fixtures and a separately named HELD packet. Baseline935 is already
+source-synchronized. Source is prepared; exact native effect/result review remains
+pending. Old effect manifests remain historical; no stable, model, runtime or
+publication gate is waived. See its ExecPlan and current-release-binding-plan.json.
