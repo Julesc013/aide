@@ -2,16 +2,21 @@
 
 ## Current plan — 2026-10-05
 
-Local current-archive consumers8/8,38-form coverage, unchanged replay and original
-delivered18+23 tests with explicit fixtures are independently accepted. Eight
-owned custody jobs preserve full evidence and release36264832logical bytes.
-Closeout now reconciles specs/queue/indexes, then exact source-only synchronization
-under existing delegation. [Full report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
-and [ExecPlan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) own outcomes.
-Remaining C8 explainability/C2 compatibility/C3 checkpoint are bounded candidates;
-C9/C11 follow dependencies. No blanket adoption or unrelated implementation.
-Outer client, historical10/live/matched efficiency, exact stable publication/
-downloaded consumers and wider cleanup remain separate; FacMan product paused.
+Source-only main/dev/task64874d3f synchronization is independently accepted:
+88 corresponding pairs match,85 other branch tips preserved. Current ZIP55665b2f
+retains8 consumers/38forms/delivered41-with-fixtures/replay and native17 local
+bindings. Qualified operative inputs/assets/configs are unchanged.
+
+Prepare and review the [complete exact11 owner packet](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/historical-current-owner-packet.md).
+All new decisions are proposed, blank-reviewed and ineffective; the live three
+accepted records remain unchanged. Actual682-range FAIL11 remains a release gate.
+Normal source commit/sync require exact review; owner activation is separate.
+[Full report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and
+[ExecPlan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) own details.
+
+Outer client, live permission/matched efficiency, final stable release/download
+verification and wider cleanup remain open. C2/C3/C9/C11 and further C8/C10 are
+bounded candidates, not blanket adoption. FacMan product development stays paused.
 Older dated entries preserve historical execution-time snapshots.
 
 ## 2026-10-05 current custody archive build accepted

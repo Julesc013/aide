@@ -1303,9 +1303,10 @@ closeout supersedes the preparation-only native status.
 - [x] Independent normal fix-forward admissionb38c00f8 accepted. Preserve66
   unchanged as an ancestor; no amendment exception is required for the normal
   corrective commit. Original full681-commit rangeFAIL11 remains a release gate.
-- [ ] Create exact qualified corrective commit with prechecked messagec114e8d9;
-  retain original66 and all full-history failures. No disposition is invented.
-- [ ] Clean source closeout, independent source/ref review and authorized sync.
+- [x] Corrective64874d3f retained66, passed latest-message check and preserved
+  all full-history failures; no disposition was invented.
+- [x] Exact clean source/ref effect92e9 and terminal8f9ffea2 independently
+  accepted; main/dev/task648 and88 corresponding pairs/85 other tips verified.
 
 Qualification uses a Git baseline plus actual working-byte snapshot; overlay
 bytes are not in the66 tree. Windows account was not separately recorded; the
@@ -1326,3 +1327,42 @@ disposition is substituted. Only current qualified13paths may be staged/committe
 after superseding documentation review; original66 must remain an ancestor.
 Then obtain exact clean source/ref-effect acceptance and fresh helper/identity/ref/
 asset/config guards before integration. No archive/model/runtime/release effect.
+
+## Current exact historical decision packet preparation — 2026-10-05
+
+The accepted source-only terminal8f9ffea2 and review5eebd7b6 establish actual
+main/dev/task64874d3f with88 corresponding pairs and85 other tips preserved.
+Original66 is now a published immutable ancestor; the old amendment proposal
+is superseded by the completed normal corrective route, without owner approval.
+
+Admission4ab77e24 permits only eight existing queue/root/context records and
+14 exact evidence files. Prepare one owner-readable packet for all11 current
+unresolved message failures, including66, using existing canonical helpers.
+Bind complete commits, trees, ordered parents, canonical message hashes and
+exact failed checks; prefixes are labels only. Every new record/decision stays
+proposed with blank reviewer/date and must validate as effective:false. The
+live registry's three accepted records and all42 qualification inputs/25pins/
+assets/export/config remain unchanged. Retain the complete682-range output
+and numeric expectedFAIL, not a shortened main..dev range. No AIDE-managed model call,
+archive/test replay, history rewrite, source ref or publication effect follows.
+
+Review exact packet/source before the normal prechecked commit; source-only
+synchronization retains its own exact review/fresh guards/terminal acceptance.
+Only responsible owner approval can activate exact historical dispositions.
+Live-model, client, matched-efficiency and final release gates stay separate.
+
+### Exact proposed packet generated and checked
+
+The original full682-commit range exits1/FAIL11;14 raw failures include three
+already accepted exact decisions. Eleven new exact proposed records validate
+alone and combined with the existing three; each evaluates effective:false.
+All reviewer/date fields are blank and decision files remain proposed. The
+live registry is unchanged. Packet registry17835710 and verification6013ec7d
+retain complete object/tree/parents/canonical-message/check bindings and raw
+stream references. No AIDE-managed model/worker dispatch, archive, runtime or publication ran.
+Controller/review calls occurred; their actual usage is unknown, not zero.
+
+Freeze the admitted22files and exact prechecked normal message, seek independent
+source/packet review, then separately review source-only ref synchronization.
+Only afterward present this concrete proposed decision to the responsible owner.
+No automatic continuation can accept these records or the other release gates.

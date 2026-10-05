@@ -2,9 +2,9 @@
 
 ## PHASE
 
-AIDE-STABLE-LITE-RELEASE-EFFECT-01: accepted native17 and current bindings;
-normal corrective fix-forward admitted, preserving66 without amendment.
-Clean source/ref review precedes source-only sync. Existing checkout; reuse proof.
+AIDE-STABLE-LITE-RELEASE-EFFECT-01: source-only648 synchronization accepted.
+Prepare/review complete11 exact historical owner decisions; all remain proposed
+and ineffective. Existing checkout/assets/proof retained; owner approval separate.
 
 ## GOAL
 
@@ -55,7 +55,7 @@ All8 distinct custody operations losslessly saved36264832logical bytes, complete
 receipt/log/output/failure history preserved; physical/global/net recovery unknown.
 Actual remaining7 used40MiB/8MiB and delivered16MiB/1MiB, no256MiB cap widening.
 Known conservative pools/export/release218796754logical bytes after delivered.
-Source-only sync last accepted935545a8/88 corresponding pairs/85 other tips;
+Source-only sync last accepted64874d3f/88 corresponding pairs/85 other tips;
 final closeout sync requires exact accepted source/ref effect and terminal receipt.
 Do not make recursive receipt-only commits. Runtime originala241 held.
 
@@ -91,6 +91,7 @@ Outer shell/editor/plugins remain unrestricted and read isolation unqualified.
 Historical dispositions, live GPT6.1 permission, matched whole efficiency,
 stable ACCEPT/tag/publication/download/adoption and wider cleanup remain separate.
 FacMan product work stays paused. Do not recheck unchanged external blockers.
+Controller/review actual usage is unknown; zero managed dispatch is not total cost.
 
 ## ACCEPTANCE
 
@@ -104,7 +105,7 @@ Summary, files, actual checks/results, evidence refs and remaining uncovered rou
 
 ## TOKEN_ESTIMATE
 
-approx_tokens: 1597
+approx_tokens: 1622
 
 Characters divided by4 estimate only; not tokenizer or host usage measurement.
 
@@ -116,10 +117,10 @@ the stable WorkUnit result/result-review for exact baseline66 plus working-overl
 identities.42inputs/25pins/fourassets/config unchanged; no archive/test replay.
 
 Preparation66 messageFAIL remains in the full history. Normal corrective child
-commit is independently admitted; messagec114e8d9 precheckPASS. Preserve66 and
-its failure; no amendment exception or historical approval is inferred. Commit
-only accepted scoped bytes, then review exact clean source/ref effect before
-source-only sync. Full681historyFAIL11 remains a stable gate; live/client/matched/
+commit648 was created and independently accepted/source-only synchronized.
+Preserve66 and its failure; no historical approval is inferred. Current full682
+rangeFAIL11 remains a stable gate. A separately reviewed exact11 proposed owner
+packet is prepared; all records ineffective/live registry unchanged. Live/client/matched/
 final release inputs remain separate. Do not retry passed qualification or ask
 again for configured storage/client paths.
 

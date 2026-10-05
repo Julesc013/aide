@@ -174,3 +174,16 @@ current_release_binding_qualification:
   scratch_retired_reservation_released: true
   current_commit_message_exception: not_required_normal_fixforward_route_no_amendment_or_owner_approval_assumed
   source_ref_runtime_publication_draft_authority: false
+
+current_historical_owner_packet_preparation:
+  state: exact11_proposed_ineffective_prepared_source_review_pending
+  authority: reviewed_finite_gate_preparation_existing_campaign_not_owner_decision
+  proposal_sha256: 4ab77e24b46bc1c36e0bde72eadb04bf54e0c0901797571825b34ee0fc88aa4a
+  baseline_source: 64874d3fcf979648844f88001d61bbba42f51666
+  proposed_registry_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/historical-current-proposed-registry.json
+  owner_packet_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/historical-current-owner-packet.md
+  records: 11
+  all_status_proposed_empty_reviewer_date_effective_false: true
+  live_registry_or_policy_mutation: false
+  exact_source_normal_commit_and_ref_effect_reviews_required: true
+  model_runtime_archive_tag_publication_authority: false

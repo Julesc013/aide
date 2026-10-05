@@ -858,3 +858,14 @@ record current0/HELD, stale1/REFUSED and verified collection/retirement. See the
 normal fix-forward admission preserving preparation66, clean source/ref review
 and later stable gates. Full historical rangeFAIL11 remains; no amendment
 exception is needed for the normal corrective commit. Qualified fixes remain local.
+
+## Exact current historical owner input — 2026-10-05
+
+[Proposed owner packet](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/historical-current-owner-packet.md),
+[exact proposed registry](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/historical-current-proposed-registry.json)
+and [failure bindings](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/historical-current-failures.json)
+cover all11 pending message-format decisions including published66. All are
+proposed/ineffective with blank review identity/date; live registry3 unchanged.
+Source-only648 sync already has accepted terminal evidence. These new inputs
+undergo their own source review; they grant no historical or other release
+approval. Preserve the original ten-record proposal as its historical scope.

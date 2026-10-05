@@ -102,9 +102,11 @@ report_malformed_do_not_rewrite` requires an exception for message-only
 amendment. No exception is recorded. Independent admission now permits a normal
 corrective child commit preserving66; that route requires no amendment exception.
 The prechecked corrective message passes. The actual full681-commit historical
-range still FAILS11: originalten plus66, with none waived. Source fixes and
-closeout remain local pending clean exact source/ref review; source-only sync is
-eligible under the existing owner instruction separately from stable certification.
+range still FAILS11: originalten plus66, with none waived. Normal corrective648 and source-only synchronization completed after exact
+source/ref-effect and actual-terminal acceptance. The authoritative receipt
+is [terminal8f9ffea2](evidence/current-release-binding-source-sync-terminal.log);
+88 corresponding pairs match and85 other tips are preserved. Stable
+certification remains separate.
 No runtime/tag/publication effect follows. Do not replay passed qualification.
 
 ### Remaining independent gates
@@ -112,7 +114,7 @@ No runtime/tag/publication effect follows. Do not replay passed qualification.
 | Gate | Exact remaining condition |
 |---|---|
 | Outer client | Supported active-client setup must constrain the actual model editing/integration routes, then one ordinary edit/check/collect/retire workflow; no unchanged probes or guessed menu instructions |
-| Historical messages | Owner disposition for the exact retained ten records; main/dev agreement does not waive the historical release range |
+| Historical messages | Owner disposition for all11 exact records, including published66; [proposed owner packet](evidence/historical-current-owner-packet.md) remains ineffective and source synchronization waives nothing |
 | Live model binding | Explicit one bounded signed-in GPT6.1Sol/medium permission; optional proposed text is not approval |
 | Efficiency | Matched accepted outcome and available controller/child/review/retry/repair usage, deduplicated counters and warm/cold conditions; document-size estimates and zero nested calls do not prove reduced total cost |
 | Stable release | Exact current technical/effect ACCEPT, any required runtime promotion, tag/publication and downloaded-asset/supported-consumer verification; candidate1.0.0 is not yet a published stable release |
@@ -603,3 +605,21 @@ requires its own queue/adoption/source qualification before changing the CLI.
 The accepted67-input/archived payload and the current passed binding job remain
 unchanged; no broad runner rewrite or historical test replay follows from this
 documentation check.
+
+### Complete proposed historical owner packet
+
+The [owner-readable packet](evidence/historical-current-owner-packet.md) binds
+all11 pending exact message-format dispositions, including the now-published66.
+Its [proposed registry](evidence/historical-current-proposed-registry.json) has
+SHA256178357102337e813a72f58cf931dd9fd43180a10ba1c35551aabb1d53abf9f56.
+Every record and individual decision is proposed with empty reviewer/date.
+Existing validators accept the structure and refuse effectiveness for all11.
+The live registry retains its three earlier accepted records unchanged.
+
+[Failure bindings](evidence/historical-current-failures.json) retain the actual
+full682-range FAIL/exit1 and complete raw-stream references. This is a concrete
+review input, not an owner decision or a change to the already qualified HELD
+manifest. No amendment is required or proposed. Actual owner approval would
+need a separately reviewed application with real identity/date and whole-registry
+validation; original proposals, objects and raw failures would be preserved.
+Other client/live/matched-efficiency/stable/publication/cleanup gates stay open.

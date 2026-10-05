@@ -13348,3 +13348,26 @@ originalten plus66. Exact source-only integration remains eligible under existin
 owner authority but needs subsequent clean source/ref-effect acceptance. Canonical
 next-action docs now distinguish source fix-forward from amendment and stable
 history certification. Product/runtime/archive/source-input bytes are unchanged.
+
+## Exact pending historical-message packet — 2026-10-05
+
+After independently accepted source-only648 sync, admission4ab77e24 authorized
+a finite22-file owner-gate preparation. Existing helpers inspected all682
+commits from the originalaec release base: actual commit-check exits1/FAIL11,
+with three existing accepted decisions and14 preserved raw-format failures.
+Created11 fully bound proposed records and11 proposed decision files, plus
+exact failures and owner-readable approval text. Reviewer/date fields remain
+empty. Proposed registry17835710 and its combination with existing3 records
+validate structurally; each new record evaluates effective:false. Verification
+6013ec7d binds the actual full stdout/stderr and exact canonical identities.
+
+The live registry/policy remain unchanged. No self-approval, historical rewrite,
+AIDE-managed model/worker dispatch, archive replay, runtime or release effect occurred. New
+evidence files total52,284 logical bytes, not an archive or replacement pool.
+Remaining source/packet/normal-commit/ref-effect gates and eventual actual owner
+activation remain distinct. This corrects the formerly incomplete ten-record
+owner input by explicitly including immutable published66 without amendment.
+
+Controller/review calls are outside this native-dispatch observation; actual
+usage is unknown. Zero managed dispatches do not prove zero whole-outcome cost
+or efficiency improvement. No token-estimate figure is treated as actual usage.

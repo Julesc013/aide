@@ -1,0 +1,12 @@
+{
+  "commit": "51cbce9de0eb7d516e4192b34e1b6e0e892275dc",
+  "decision": "accept_historical_nonconformance",
+  "disposition_id": "release-historical-message-51cbce9de0eb7d516e4192b34e1b6e0e892275dc",
+  "message_sha256": "47dc2600b0f21f2147235a91ec5be180963a718d8766179442a438077bd733eb",
+  "reviewed_at": "",
+  "reviewed_by": "",
+  "schema_version": "aide.commit-message-disposition-decision.v1",
+  "scope": "historical_commit_message_only",
+  "status": "proposed",
+  "tree": "40338d8960dca23f1b1e8f3255bbd7e802491549"
+}
