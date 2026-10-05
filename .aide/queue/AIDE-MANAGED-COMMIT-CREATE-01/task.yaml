@@ -2,7 +2,7 @@ schema_version: aide.queue-task.v0
 id: AIDE-MANAGED-COMMIT-CREATE-01
 title: Refuse malformed managed commits before branch advancement
 type: implementation
-status: running
+status: passed
 created_at: 2026-10-05
 updated_at: 2026-10-06
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

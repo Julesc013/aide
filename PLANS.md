@@ -1,8 +1,17 @@
 # AIDE Planning Index
 
-## Current managed commit prevention — 2026-10-05
+## Current managed commit prevention — 2026-10-06
 
-The admitted [managed commit WorkUnit](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/ExecPlan.md) now has accepted72-test native evidence for strict message/tree/scope checks, prepared Git transactions, public CLI behavior and retirement. Finish its source-consistency closeout and use the guarded path for its exact normal commit. Local commit/ref terminals govern delivery; stable release remains separate. Published66 and proposed owner decisions remain unchanged.
+The [managed commit WorkUnit](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/ExecPlan.md)
+has accepted72-test native evidence and completed actual guarded source commit
+c23dbddd. Exact tree/parent/message, unchanged working/index bytes and latest
+message PASS are independently accepted. The child objective is closed; current
+queue/root closeout and source-only branch sync retain exact effect reviews.
+[Report](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/REPORT.md) and terminal records
+own current delivery. Stable release remains separate. Current full validation has two old-export
+provenance failures requiring the affected payload refresh; its original PASS
+remains scoped to the earlier checkpoint. Published66 and proposed owner
+decisions remain unchanged. Older dated entries below are snapshots.
 
 ## Current plan — 2026-10-05
 

@@ -3895,9 +3895,9 @@ items:
     prompt: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/prompt.md
     evidence: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence
   - id: AIDE-MANAGED-COMMIT-CREATE-01
-    status: needs_review
-    planning_state: native_accepted_source_closeout_pending
-    result: partial
+    status: passed
+    planning_state: native72_and_real_guarded_source_commit_accepted
+    result: PASS72_REAL_COMMIT_VERIFIED
     title: Refuse malformed managed commits before branch advancement
     task: .aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/task.yaml
     exec_plan: .aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/ExecPlan.md

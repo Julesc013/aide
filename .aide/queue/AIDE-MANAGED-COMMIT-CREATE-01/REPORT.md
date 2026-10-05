@@ -2,8 +2,11 @@
 
 AIDE now has a qualified ordinary local commit path that rejects malformed
 messages before creating a candidate or advancing the branch. The exact source
-commit and any subsequent branch delivery are certified by their terminal
-records under `evidence/`; stable publication remains a separate campaign gate.
+commit c23dbddd8742fa18982066fbb6fb03a502489d6f completed through this path:
+exact tree, parent and message verified, apply/latest checks exited0, working and
+index bytes preserved. Independent result acceptance closes the child objective.
+Any subsequent branch delivery is certified separately by its terminal records
+under `evidence/`; stable publication remains a separate campaign gate.
 
 ## Behavior delivered
 
@@ -37,8 +40,10 @@ refuses. The earlier Windows permission error's underlying cause is unknown.
 | Real Git/API/public CLI cases | 49 passed |
 | Original Q27 regressions | 23 passed; source/assertions unchanged |
 | Failures, errors, skips | Zero |
-| Repository `doctor` | Exit0;73 PASS |
-| Repository `validate` | Exit0;60,911 PASS |
+| Pre-commit repository `doctor` | Exit0;73 PASS at original source checkpoint |
+| Pre-commit repository `validate` | Exit0;60,911 PASS at original source checkpoint |
+| Post-commit current `validate` | Exit1;60,909 PASS, two held-export source-provenance failures |
+| Post-commit current `doctor` | Exit1;72 PASS, one dependent validation failure |
 | Capability classification refresh | All13 records/classifications unchanged |
 | Native collection | All six retained files and both collection digests verified |
 | Retirement | Scratch absent; reservation released; active/.next absent |
@@ -46,7 +51,13 @@ refuses. The earlier Windows permission error's underlying cause is unknown.
 Acceptance binds `native-result-v7-passed.log` with the original parent journal
 `native-invocation-v7.log`. Earlier failed jobs and rejected reviews remain
 available against their original subjects. The corrected task brief and source
-classification reports have separate structural evidence. Full validator output
+classification reports have separate structural evidence. After commitc23dbddd,
+the current validator correctly refuses two old-export provenance claims: the
+held pack names sourcecf234547 and its inputs now differ. Doctor retains its
+corresponding failure. These are not passing current validation or a release
+waiver; the separately reviewed affected payload refresh must close them.
+All other60,909 checks passed. No native test was rerun for this metadata closeout.
+Full validator output
 is retained losslessly as compressed logs, with raw and compressed checksums.
 
 ## Resource and execution scope

@@ -17,7 +17,14 @@ Four existing capability-report paths were admitted by45425f4d solely to refresh
 source classification after CLI/task-brief bytes changed. This minimal cross-cutting
 closeout does not requalify old functional evidence. The original supervisor,
 storage, limits, live dispositions and four held release assets remain unchanged.
-Actual local commit and later ref effects have their own terminal records.
+Actual guarded commit c23dbddd completed: tree881e8c8e, parentd2c8e831,
+exact message267b92a8, apply/latest exits0 and working/index bytes preserved.
+Independent acceptance d7c13814 binds terminal916edade. This task's preventive
+workflow objective is closed. The minimal queue/current-index closeout changes
+no capability-bound input. Current post-commit validation has60,909 PASS and
+two held-export source-provenance failures; doctor reports the dependent failure.
+These remain payload gates, not waived current PASS. Earlier accepted structural
+proof retains its original checkpoint. Later ref/payload effects keep separate gates.
 
 ## Actual delivered qualification and coherent closeout — 2026-10-05
 

@@ -1,8 +1,16 @@
 # AIDE Documentation Index
 
-## Managed commit prevention — 2026-10-05
+## Managed commit prevention — 2026-10-06
 
-[WorkUnit](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/ExecPlan.md) governs the qualified exact-object local commit path. [Commit discipline](docs/reference/commit-discipline.md) documents its behavior and boundaries; accepted72-test evidence lives under the WorkUnit. Local commit/ref terminals govern source delivery from the synchronized d2 base. This phase grants no history repair, owner acceptance, outer confinement or publication.
+[WorkUnit](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/ExecPlan.md) governs the
+qualified exact-object local commit path. [Commit discipline](docs/reference/commit-discipline.md)
+documents its behavior and boundaries. The [report](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/REPORT.md)
+records accepted72-test evidence and actual guarded source commitc23dbddd with
+independent terminal acceptance. Queue/current-index closure and subsequent
+source-only ref synchronization keep their exact gates. Post-commit full
+validation retains two old-export provenance failures until the affected payload
+is refreshed; its prior PASS is historical proof, not current pack acceptance.
+This phase grants no history repair, owner acceptance, outer confinement or publication.
 
 ## Current evidence and planning index — 2026-10-05
 

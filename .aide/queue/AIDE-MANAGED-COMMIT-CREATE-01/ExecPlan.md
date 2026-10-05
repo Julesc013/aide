@@ -26,14 +26,19 @@ read, human historical, live/matched and release/download gates remain separate.
   staged/unstaged work, expose uncertain outcome without rollback/replay.
   Four reviewed native attempts exposed environment, binary-lock and Git
   transaction defects. Each failed result and source was retained; scratch was
-  retired. Revised prepared transaction remains unqualified until its next job.
+  retired. The revised prepared transaction subsequently passed the accepted
+  72-test job below; failed attempts retain their original subjects.
 - [x] Review exact source and one finite managed fixture effect: abedd7d5/7d7b44ff.
 - [x] Exercise actual CLI malformed/changed-input refusals, preview and normal
   success; collect full evidence and verify retirement, then result review.
   Jobdc7003a7 passed72 tests, no skips; c5672710/b1116014 accepted independently.
-- [ ] Review and perform one real normal local managed commit of this task.
-- [ ] Later source/ref synchronization and affected release refresh each keep
-  their separate exact guards/reviews. Preserve unrelated valid qualification.
+- [x] Review and perform one real normal local managed commit of this task.
+  Commit c23dbddd8742fa18982066fbb6fb03a502489d6f preserves tree881e8c8e,
+  parentd2c8e831 and finalmessage267b92a8; apply/latest checks exited0 and
+  working/index bytes remained unchanged. Result916edade is independently
+  accepted by d7c13814. This closes the child objective.
+- [ ] Separate campaign delivery: source/ref synchronization and affected release
+  refresh keep their exact guards/reviews. Unrelated valid qualification remains.
 
 ## Validation and recovery
 
@@ -67,4 +72,7 @@ all13 classifications and preserve source-only/no-apply boundaries. Run affected
 structural validation. The exact local commit terminal records the self-referential
 commit identity; no test replay or history rewrite is required to bind those
 unchanged input bytes. Subsequent source/ref delivery keeps its separate gate.
+Post-commit structural checks retain two old-export provenance failures and
+the dependent doctor failure;60,909 other checks passed. The affected payload
+refresh remains a separate campaign gate, without waiving those failures.
 There is no stable publication, live model or whole-session containment claim.
