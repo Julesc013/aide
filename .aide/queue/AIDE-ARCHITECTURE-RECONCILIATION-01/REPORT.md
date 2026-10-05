@@ -10,8 +10,10 @@ custody operations, preserving all receipts/evidence and saving7,921,599 logical
 bytes. Current affected source at eea174be passed67 fresh checks and full
 validation; collection/retirement are independently accepted. A separately accepted pure export at cf234547 resolved provenance;849 checksums,
 complete collection/retirement and clean-source identity verify.
-The existing7132 ZIP predates custody and still needs current consumer/replay
-acceptance. C4 integration and stable certification remain unfinished.
+The separately accepted f3312a04 build now delivers custody in ZIP55665b2f and
+TARfce561ca,852 equal file members/849 archive checksums, complete collection and
+retirement. Source integration follows its separate exact ref-effect record. Current
+consumers/replay and stable certification remain unfinished.
 
 [Current delivery report](../AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md),
 [custody report](../AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md) and the

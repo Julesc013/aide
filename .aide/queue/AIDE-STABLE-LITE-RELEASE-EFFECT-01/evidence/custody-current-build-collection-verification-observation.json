@@ -1,0 +1,10 @@
+{
+  "build_still_successful": true,
+  "corrected_verification": "all849 source entries and all849 archive entries; all848 common payloads, exact projection set and ZIP/TAR equivalence verified",
+  "diagnosis": "existing stable projection omits the example secrets README and adds the stable identity; own checksums and projected metadata are regenerated",
+  "first_verification_exit": 1,
+  "native_reexecutions": 0,
+  "reason": "incorrectly compared projected archive against the entire source checksum set",
+  "schema": "aide.custody-current-build-collection-verification-observation.v1",
+  "stage": "metadata verification after successful native terminal build"
+}

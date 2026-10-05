@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-B",
+    "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\aide_lite.py",
+    "job",
+    "run",
+    "--config",
+    "D:\\Projects\\AIDE\\aide\\.aide.local\\capability-payload-build-execution.json",
+    "--manifest",
+    "D:\\Projects\\AIDE\\aide\\.aide.local\\capability-payload-build-job.json",
+    "--full"
+  ],
+  "automatic_resubmission": false,
+  "command_exit_code": 0,
+  "completed_utc": "2026-10-05T01:43:27.766582+00:00",
+  "effect_sha256": "90e0b86dc91ac2b64445771127e1db5721295d7d7c9120b2cd15898799e4bbca",
+  "schema": "aide.custody-current-build-command-observation.v1",
+  "started_utc": "2026-10-05T01:43:07.607531+00:00",
+  "stderr": {
+    "bytes": 0,
+    "path": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\custody-current-build-native.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "bytes": 8421,
+    "path": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\custody-current-build-native.stdout.log",
+    "sha256": "3050ca5fb6837639463dca3a023410745867d71115f9df2495e28390232e4967"
+  }
+}

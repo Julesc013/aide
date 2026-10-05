@@ -1,0 +1,9 @@
+{
+  "schema": "aide.custody-build-closeout-editor-observation.v1",
+  "first_editor_exit": 1,
+  "reason": "Windows default cp1252 decode of existing UTF8 documentation",
+  "native_or_external_effect": false,
+  "partial_metadata_edits_reconciled": true,
+  "final_all_reads_writes_explicit_utf8": true,
+  "unrelated_original_text_preserved": true
+}

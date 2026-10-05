@@ -1,5 +1,19 @@
 # AIDE Documentation Index
 
+## 2026-10-05 current custody archive build accepted
+
+One restricted native build on f3312a04/treeb5a3bd2e passed both stable commands.
+Current ZIP55665b2f/TARfce561ca contain852 equal file members and849 verified
+archive checksums, including qualified custody/current CLI. Complete collection,
+quiescence, noIO, scratch retirement and reservation release verify. Independent
+result ACCEPT_WITH_NOTES has all notes disposed. Zero source tests replayed;
+67/native23 evidence retains exact unchanged-input scope. Retained16772logical
+bytes/sample8499/memory251400192, release growth23127logical; no physical/global
+quota or outer containment claim. Consumers/replay/promotion/source-ref effects
+and stable publication remain separately gated. Original config held.
+[Full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+
+
 ## 2026-10-05 clean custody export accepted
 
 Pure export jobc1aca2e0 at cf234547 produced actual clean provenance and849

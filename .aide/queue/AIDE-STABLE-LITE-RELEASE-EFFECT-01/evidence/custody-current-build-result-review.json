@@ -1,0 +1,30 @@
+{
+  "blocking_findings": [],
+  "job_id": "ca5fbbed58744c82834326ff371afae2",
+  "notes": [
+    {
+      "classification": "nonblocking_disposed",
+      "note": "persistent lock and controller/verifier corrections preserved; no native replay"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "source67/native23 reused only on identical operative inputs, zero tests here"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "peaks sampled; no outer containment/read-isolation/hard-quota qualification"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "consumers/replay/promotion/refs/publication separate; original config held"
+    }
+  ],
+  "record_kind": "controller transcription of independent reviewer final message",
+  "result_sha256": "5f50ffd82163e0d2d27fa477ccf12114936a3b2555d929eede392caaf8203788",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.custody-current-build-result-review.v1",
+  "source_commit": "f3312a04a27194780681f69762488970a946ee91",
+  "source_tree": "b5a3bd2e2d0dffaf524d78909b387e50b85c728e",
+  "verdict": "ACCEPT_WITH_NOTES",
+  "verification": "read-only Git and Python stdlib exact effect/receipt/collection/assets/pins/input checks; no imports/tests/mutations"
+}

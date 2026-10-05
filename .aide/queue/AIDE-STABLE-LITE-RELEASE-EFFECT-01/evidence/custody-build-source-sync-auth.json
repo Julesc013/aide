@@ -1,0 +1,11 @@
+{
+  "active_account": "Julesc013",
+  "credentials_printed_or_changed": false,
+  "expected_identity_confirmed": true,
+  "gh_api_user_login": "Julesc013",
+  "gh_auth_status_exit": 0,
+  "read_only": true,
+  "schema": "aide.user-context-github-auth-check.v1",
+  "used_for": "owner-directed source-only synchronization; not stable certification",
+  "windows_identity": "BLACKGLASS-WIN1\\Jules"
+}

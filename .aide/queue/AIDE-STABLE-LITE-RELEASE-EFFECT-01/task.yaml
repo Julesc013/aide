@@ -3,8 +3,8 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: needs_review
-planning_state: custody_clean_export_accepted_local_build_preparation
-result: PASS67_CLEAN_EXPORT849_CURRENT_BUILD_PENDING
+planning_state: custody_current_build_accepted_closeout_and_consumer_capacity_planning
+result: PASS67_CLEAN_EXPORT849_BUILD852_CURRENT_CONSUMERS_PENDING
 created_at: 2026-09-28
 updated_at: 2026-10-05
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -143,3 +143,12 @@ custody_documentation_amendment: Exact independent proposal3224ee85 admits only 
 custody_clean_export_preparation: Existing pinned7132 supervisor, same roots/256MiB aggregate and exact export only; one pure export command proposed after clean freeze, reuse67 only unchanged operative inputs. Separate exact native review required; no build/consumer/ref effect from preparation.
 
 custody_build_runtime_closure: Existing24 execution component hashes remain unchanged; independently qualified immutable custody namespace member247ea8c is explicitly the25th pin required by current export closure. Only proposed build selection is amended, not original config or executing code. Exact independent25-pin source/effect review required before dispatch.
+
+custody_current_build_source_sync:
+  authority: direct_owner_source_sync_and_campaign_delegation
+  base_main_dev_origin_task: cef28a568e1dee757e885ab1ec96a2ac948e12db
+  effect_refs: [main, dev, task/aide-current-scoped-lite-qualification-01]
+  preserved_other_corresponding_pairs: 85
+  helper_plan: ready_dry_run_after_clean_freeze_required
+  gate: exact_independent_build_result_frozen_source_and_ref_effect_review
+  stable_certification_runtime_promotion_consumer_or_cleanup_authority: false

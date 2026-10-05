@@ -85,9 +85,11 @@ or hard filesystem quota. See the [custody report](../../.aide/queue/AIDE-RETIRE
 The affected current source passed67 fresh checks, export generation and full
 validation at eea174be. Complete collection and retirement are independently
 accepted. A separately reviewed pure export at cf234547 now has clean provenance and
-849 verified checksums, with complete collection/retirement; no tests reran. The older7132 ZIP
-contains C1 but predates custody. C4 integration, new-archive consumers/replay
-and stable certification remain unfinished. See the [current delivery report](../../.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+849 verified checksums, with complete collection/retirement; no tests reran.
+The separately accepted f3312a04 build now delivers custody in ZIP55665b2f and
+TARfce561ca:852 identical file members/849 archive checksums, complete collection
+and retirement. Source integration follows its separate exact ref-effect record. Current
+consumers/replay and stable certification remain unfinished. See the [current delivery report](../../.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
 
 Remaining C8 explainability, C2 compatibility codecs and C3 portable checkpoints
 are useful next bounded candidates; admit their exact consumers and tests before

@@ -2,13 +2,13 @@
 
 ## PHASE
 
-AIDE-STABLE-LITE-RELEASE-EFFECT-01: clean custody export metadata closeout and
-separately reviewed local build preparation. Reuse the existing checkout.
+AIDE-STABLE-LITE-RELEASE-EFFECT-01: accepted current custody archive closeout and
+separately reviewed source synchronization/consumer capacity planning. Reuse the existing checkout.
 
 ## GOAL
 
 Deliver the qualified custody payload through the existing stable pipeline.
-Current archive7132 predates custody; no stable certification is implied.
+Current archive55665b2f contains custody; consumer/stable qualification is pending.
 
 ## WHY
 
@@ -29,13 +29,13 @@ The exact WorkUnit allowlists govern; no expansion from this brief. Release
 records, existing export/release products, declared selected local config/job
 records, root/generated indexes and exact admitted checkpoint docs only.
 C4 Report/ExecPlan updates use its existing documentation allowlist.
-Proposed build writes release only, with readonly qualified export supervision.
+Completed build wrote release only, with readonly qualified export supervision.
 
 ## FORBIDDEN_PATHS
 
 Unrelated repos, drive roots, .git/**, .env, secrets/** or arbitrary local state.
 No new clone/worktree/pool/layout, quota/ACL change, unknown deletion, model call,
-ref/runtime promotion or release effect from preparation. Originala241 config held.
+ref/runtime promotion or release effect without exact admission. Originala241 config held.
 
 ## IMPLEMENTATION
 
@@ -43,17 +43,18 @@ C4 native23 and live2 accepted; complete evidence/receipts preserved and
 7921599logical bytes saved. Sourceeea174be passed67 fresh affected checks,
 export/fullvalidate0 and verified retirement. Clean exportcf234547 passed one
 pure invocation: actual dirty:false,849 checksums, complete collection/retirement.
-No67 replay. Original24 execution hashes are unchanged; new qualified custody
-namespace member requires an explicit25th pin for proposed build supervision.
-Read-only inspection refused missing pin before allocation; corrected inspect
-passes. Next: exact frozen source/build effect review, one local build, then
-unchanged8 consumers plus delivered C1/custody and zero-change replay.
+No67 replay. Original24 hashes plus explicitly qualified custody25th pin supervised
+one accepted native build at f3312a04: stable-build/validate0, actual offline
+identity, ZIP55665b2f/TARfce561ca852 members/849checksums, complete collection and
+retirement, independently accepted. No native replay after guard/verifier fixes.
+Next: freeze closeout, exact source/ref review and feasible unchanged8consumer
+plus delivered C1/custody/replay effects. Two custody plans are read-only/unapplied.
 
 ## VALIDATION
 
-PASS: native23/live2, current67, clean849 export, complete collection/retirement.
+PASS: native23/live2/current67, clean849 export, accepted build852/849 and retirement.
 PASS: source proof operative10 unchanged, current bindings, structural checks.
-NOT RUN: current custody archive build/consumers/replay/integration/publication.
+NOT RUN: current consumers/replay/runtimepromotion/integration/publication.
 Use exact supported recipes and readonly owner inspection; no automatic retries.
 
 ## COMMITS
@@ -64,7 +65,8 @@ and unexecuted effects. No force push, retag, branch flattening or stale accepta
 ## EVIDENCE
 
 Delivery evidence/custody-payload-native-source-result.json and
-custody-clean-export-result.json with independent review records. C4 evidence
+custody-clean-export-result.json and custody-current-build-result.json with exact
+independent review records. C4 evidence
 native-fixture-result-v3.json and live-custody-result.json remain historical.
 Complete raw logs remain accessible; compact views do not replace evidence.
 
@@ -88,6 +90,6 @@ Summary, files, actual checks/results, evidence refs and remaining uncovered rou
 
 ## TOKEN_ESTIMATE
 
-approx_tokens: 999
+approx_tokens: 1049
 
 Characters divided by4 estimate only; not tokenizer or host usage measurement.

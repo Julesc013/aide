@@ -1,0 +1,181 @@
+{
+  "additional_readonly_export_logical_bytes": 4265213,
+  "aggregate_bytes": 268435456,
+  "assets_before": {
+    ".aide\\release\\stable\\aide-lite-v1.0.0.SHA256SUMS.txt": "899e9ca4101514ae6d5becda3ccae150b732ccf7dc16d07a580cdf5263fe8e08",
+    ".aide\\release\\stable\\aide-lite-v1.0.0.manifest.json": "ce652cc764e2b2c71298e745b6a523253825f594ed315ad1486dacdd7d7a31b1",
+    ".aide\\release\\stable\\aide-lite-v1.0.0.tar.gz": "fe6ddadad63dc7d018c45aee8d391f112c1aa23a31b593a2a205b8f72e20cf8d",
+    ".aide\\release\\stable\\aide-lite-v1.0.0.zip": "7132a5404bf82cdf0c0076cf64b395f01715ae0abd2e8c95c2b971c4b233ee88"
+  },
+  "budget_coverage": "native locked counts selected pools and write-canonical release; conservative parent preflight additionally counts immutable readonlyexport; no global/hard quota claim",
+  "closure": "original24 hashes unchanged plus explicitly qualified custody247ea8c namespace25th pin; no executing code edits; readonly clean export disjoint from release output",
+  "configuration_file": ".aide.local/capability-payload-build-execution.json",
+  "configuration_sha256": "bc8fc18534b40cb951d1a049a94de0996f69343da2dd410ebd2ee23c2c31d4ef",
+  "conservative_margin_including_readonly_export": 2488321,
+  "dispatch_argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-B",
+    "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\aide_lite.py",
+    "job",
+    "run",
+    "--config",
+    "D:\\Projects\\AIDE\\aide\\.aide.local\\capability-payload-build-execution.json",
+    "--manifest",
+    "D:\\Projects\\AIDE\\aide\\.aide.local\\capability-payload-build-job.json",
+    "--full"
+  ],
+  "excludes": [
+    "test replay,8 consumer/delivered/replay/runtimepromotion/ref/model/publication effects",
+    "newstorage/worktrees/layout,quota/ACL/accounts,forcepush or unknown deletion"
+  ],
+  "job": {
+    "adapter": "python",
+    "argv": [
+      "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\capability_payload_refresh.py",
+      "build",
+      "--source-proof-sha256",
+      "5a10448a4d2fc5de1d52294abf30a85e38100207f7c6515f9eb29338a707577b"
+    ],
+    "canonical_outputs": {
+      ".aide/release": {
+        "bytes": 8388608,
+        "volume_id": "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\"
+      }
+    },
+    "cwd": "D:\\Projects\\AIDE\\aide",
+    "executable_sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9",
+    "inputs": {
+      ".aide/capabilities/capability-evidence-bindings.schema.json": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
+      ".aide/capabilities/capability-seeds.yaml": "46817a46802870980297f9923f6e1d31fd6a9c418ced7ced10283d2e2565fd5f",
+      ".aide/context/latest-task-packet.md": "9e53cbe179e326ffb28ee742a9b1a966f3abacba13fa04ac6e350aa01afdfedd",
+      ".aide/export/aide-lite-pack-v0/README.md": "cfe3001e84b68f7b78b249e107edf0843d2310cadfe5a3717b17ce1252d61475",
+      ".aide/export/aide-lite-pack-v0/checksums.json": "69841f10a6f5e9113983cd945df86c325275472870544728cff4bad0b4fcd513",
+      ".aide/export/aide-lite-pack-v0/export-report.md": "28f8fef921207d1fe41ea2bb18b86e0a2cd1669009bdc5ce22af4a175cc84a24",
+      ".aide/export/aide-lite-pack-v0/import-policy.yaml": "d1ec0ff25cd147736853e03181536480463fc58fc8db1fd39306278d89d89e13",
+      ".aide/export/aide-lite-pack-v0/install.md": "3bce5e90257d5d5c3b25ae00d6a8e47b693c8b944bbcf1340b49c5646170ea2f",
+      ".aide/export/aide-lite-pack-v0/manifest.yaml": "332633c6dfc250b1b870dc483fc4cca954e91b94b2fdbed004a10fc9cc77a671",
+      ".aide/policies/capability-reality.yaml": "7fd503b9a3560ee32e5b56cb3fb7a0cddc865f46a42780ceceaa636e18645e18",
+      ".aide/policies/release-versioning.yaml": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253",
+      ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/worker.py": "ece020b49246ac1ccda4acf54172fd037f11583c36f48e8589f4292412336838",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md": "f54983beeacce4564cc040f9e4efcd5c9c581f9ca9ebe61beb5ab1a90bb5d6e1",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/capability_payload_refresh.py": "cdccd6d9cb4ddecaa1bdcc5627b7ddb28b57719de70d6b497cba0857237b3558",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-clean-export-result-review.json": "ebe86ea0ab077e8bbc4fb71f55da101dc8dcdf7673eddfc74a2c37ceefd7d1e3",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-clean-export-result.json": "57d33672e85fd8017c76955b9ac3a1bc2f05679fc5657849e73e157493ea50e5",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-build-configuration.json": "bc8fc18534b40cb951d1a049a94de0996f69343da2dd410ebd2ee23c2c31d4ef",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-payload-native-source-result.json": "2b55475fb3fd0ad278f22db8a91ed3855e5fc94c2393e5ccc1cbc0ada2f0dfad",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-payload-source-qualification.json": "5a10448a4d2fc5de1d52294abf30a85e38100207f7c6515f9eb29338a707577b",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-post-source-independent-review.json": "a30359c9ad631e8abea3dc66d4d720ac30ce6d622eb701d5fd123fd36d02b8ae",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/source-qualification.json": "5a10448a4d2fc5de1d52294abf30a85e38100207f7c6515f9eb29338a707577b",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/status.yaml": "1535a2f409bc05c7dea09ff330ceac256fb93637e1631b5c4f386896e625c3c0",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml": "8e28c353d516001bee3cc31b2ea1f9c02602c08402fae89fa738fbcced2a91b2",
+      ".aide/reports/capability-evidence-bindings.json": "17f92881cbc2862ec5a2bb57e1f6de772626d24e8efd560034f9bd54a4a0c664",
+      ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+      ".aide/scripts/aide_lite.py": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+      ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+      ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+      ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+      ".aide/scripts/tests/test_retired_evidence.py": "37834a2c858b0cbdbc00a3c34b4b1be7642203d86c509bd1674f7030075c57be",
+      ".aide/scripts/tests/test_stable_release_admission.py": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+      ".aide/scripts/tests/test_x_os_02_capability_reality.py": "4509355fc87b618c013ac1406e24e5a2181f5ac4c658f89fc0b8eae6a20393ef",
+      "core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
+      "core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+      "docs/reference/capability-reality-ledger.md": "1533b4122dc1666e92058643cc167070a3defab64a57c078fde4574082b7c51e"
+    },
+    "owner": "custody-current-build-01",
+    "schema": "aide.maintainer-job.v1",
+    "source_commit": "f3312a04a27194780681f69762488970a946ee91",
+    "source_tree": "b5a3bd2e2d0dffaf524d78909b387e50b85c728e",
+    "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01"
+  },
+  "job_file": ".aide.local/capability-payload-build-job.json",
+  "job_file_sha256": "efea6578b0f00294bc0780af16c01b57ec5207965ff07f9859affb02bd96447c",
+  "job_manifest_digest": "f20e1d68db506f9e451be3112636f835d2198e85b442d53f2cd98f3c6e242700",
+  "limits": {
+    "canonical_bytes": 536870912,
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 262144,
+    "max_files": 100000,
+    "memory_bytes": 2147483648,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 32,
+    "retained_bytes": 65536,
+    "runtime_seconds": 300,
+    "scratch_bytes": 16777216
+  },
+  "native_locked_admission_required": true,
+  "original_configuration_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "preliminary_inventory_not_locked_admission": {
+    "by_pool": {
+      "canonical:.aide/release": 3959522,
+      "control": 13694135,
+      "retained": 216175465,
+      "scratch": 0
+    },
+    "enforcement": "cooperative_admission_and_monitored_growth",
+    "limit_bytes": 268435456,
+    "logical_bytes": 233829122,
+    "reserved_bytes": 27852800
+  },
+  "read_only_export_provenance": {
+    "checksums_sha256": "69841f10a6f5e9113983cd945df86c325275472870544728cff4bad0b4fcd513",
+    "files": 849,
+    "manifest_sha256": "332633c6dfc250b1b870dc483fc4cca954e91b94b2fdbed004a10fc9cc77a671",
+    "source": "cf2345476bd130efaaf9da1f416d6b0c96451107",
+    "status": "PASS_SOURCE_ANCESTOR"
+  },
+  "readonly_inspection": {
+    "exit": 0,
+    "stdout_sha256": "e1e6a81a904b7df7d977020a69fff9e711a9d2e3b7c25b6a42dca20fa54498e6",
+    "writes": false
+  },
+  "record_strategy": "exact effect/admission/rawstdout/stderr as ignored owned logs beforeterminal then canonicalJSON; sourceclean beforebuild",
+  "recovery": "one exact accepted invocation; stop/reconcile refusal/failure/uncertainty, never automatic replay",
+  "required_after": [
+    "worker identity recorded, build/validateexit0 and exactnewmember/checksum/provenance identities",
+    "complete rawlogs/output/receipt collection, quiescence noIO scratchretirement reservationreleased",
+    "newZIP/TARsamepayload and custody/sourceCLI verified; all25 supervisor hashes/export remainunchanged",
+    "only4 stable assets differ outside ignored/canonical postresult records; originalconfig unchanged"
+  ],
+  "roots": {
+    "control": "D:\\Projects\\AIDE\\.aide.local\\execution\\control",
+    "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained",
+    "scratch": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch"
+  },
+  "runtime": {
+    "files": {
+      ".aide/export/aide-lite-pack-v0/files/core/apply/__init__.py": "d9f1cb35bdf8557ef871410aba60c9982f34a9bea2a9381eef17b00ab1b13ac8",
+      ".aide/export/aide-lite-pack-v0/files/core/apply/managed_sections.py": "a6cda7e7ffb4e5d3d8e6567192b4a37368c0291608d345612cd14b2b55a16220",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/__init__.py": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/managed_workspace.py": "d9338d9d25470b1a39f8c74566f7c108249a98dc564ac395f21b66ebc4eccfe3",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/provider.py": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/registered_process.py": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/__init__.py": "84f45062b88514d03f4d1618aa78df3d9aa506c94b870346bfa6e708f522a103",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/gateway_status.py": "40ef20c8890835e63953bada76ad118e966527dc384c72fa1f6b9ce7739a4a88",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/server.py": "b887d27bcbd75377005c3760bedbf2b36cd5caefd26bee5ff8b06cdaa2ec9aff",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/tests/__init__.py": "fc7e58b76b027cc9c7c37011c5aa40b240c09f37cdef2b71bbbe2a653a368860",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/tests/test_gateway_skeleton.py": "8e307b81e6aad7e5949c5788c61da282282f5fe076e3c5d888099441e6902b38",
+      ".aide/export/aide-lite-pack-v0/files/core/protocol/__init__.py": "b131e408f459709ebb03c6becc526f09517d2082f536efd643a8b7812ecdd946",
+      ".aide/export/aide-lite-pack-v0/files/core/protocol/execution_receipt.py": "966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+      ".aide/export/aide-lite-pack-v0/files/core/protocol/process_invocation.py": "aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/__init__.py": "91fda471923f178eb877be4afcd9f59ed336a2533fb4e7f50634ac1e3915912c",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/contracts.py": "ac7ba2c4cdd4f8ca08971858a0cc04c7c0fbf1af4896ae21c654301b6d51fee8",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/registry.py": "caeaaf76b5630bbfa837f847ff6dcab28f4c986a3ec277769b2bde78b28dcaa2",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/status.py": "341501a6a5d2bf3aedcce09b0f0b143ed39e3dd949b2ddd4fdad803c009f4886",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/tests/__init__.py": "fa00ddd28dbff411d7189b20793f00e464b26c0bdb9c9144296a3fe14d17c205",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/tests/test_provider_contracts.py": "ab9f4f74e08354cad3cbf0fe26bb56ab121fa588a7659b5fb9577b33edf73e8a",
+      ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/__init__.py": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
+      ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/state.py": "9b65b7953cfea7af9444abe6157b5edfe670a46be90211a8cf8d543855d12105",
+      ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
+    },
+    "root": ".aide/export/aide-lite-pack-v0/files"
+  },
+  "schema": "aide.custody-current-build-native-effect.v1",
+  "scope": "one unchanged existing worker local stable-build and stable-validate; exact4 stable assets; no new archive layout or full backup; Git preserves previous asset bytes",
+  "source67_proof_sha256": "5a10448a4d2fc5de1d52294abf30a85e38100207f7c6515f9eb29338a707577b",
+  "source_commit": "f3312a04a27194780681f69762488970a946ee91",
+  "source_tree": "b5a3bd2e2d0dffaf524d78909b387e50b85c728e"
+}

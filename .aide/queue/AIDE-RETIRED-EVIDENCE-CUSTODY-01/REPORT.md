@@ -4,8 +4,11 @@ Date:2026-10-05 Australia/Sydney. The actual public custody workflow and 23
 regressions pass through the restricted worker. Separately reviewed custody of
 two real retired consumer jobs preserved complete evidence and original receipts,
 verified lookup, retired redundant raw copies and released 7,921,599 managed
-logical bytes. Later delivery source/projection/export qualification is now accepted in the
-release WorkUnit; integration and stable certification remain unfinished. Exact maintenance sourcec8351859 received independent
+logical bytes. Later delivery source/projection/export and current archive build qualification
+are accepted in the release WorkUnit. ZIP55665b2f/TARfce561ca now include custody,
+852 equal file members/849 archive checksums, complete collection and retirement.
+Source integration follows its exact ref-effect record; current consumers/replay
+and stable certification remain unfinished. Exact maintenance sourcec8351859 received independent
 ACCEPT_WITH_NOTES with all notes nonblocking/disposed. The bounded C4 child is
 qualified; delivery work continues in the existing release WorkUnit. The outer
 session remains unrestricted.
@@ -27,7 +30,7 @@ explicit. Source implementation is core/execution/retired_evidence.py and the
 existing CLI. The24 executing owner dependencies are unchanged; worker-editable
 source was not silently promoted into its own supervisor.
 
-## Verified actual outcome
+## Verified actual maintenance outcome (before later delivery build)
 
 Exact sourcedca12298/treee5153a5a, independently accepted native effecte81f6f73,
 ran once in job30c718369d6a46ebbb1648ae2f2a866f as CodexSandboxOffline. All23

@@ -1,0 +1,11 @@
+{
+  "automatic_replay": false,
+  "controller_guard_exit": 1,
+  "correction": "require active.json/active.json.next absent and persistent ordinary lock file; native lock unchanged",
+  "effect_unchanged": "90e0b86dc91ac2b64445771127e1db5721295d7d7c9120b2cd15898799e4bbca",
+  "evidence": "managed_workspace.estate_lock retains one-byte lock file; native LK_NBLCK enforces ownership",
+  "native_dispatches": 0,
+  "reason": "mistaken absence check for persistent admission.lock",
+  "schema": "aide.custody-current-build-preflight-correction.v1",
+  "stage": "before native subprocess or admission record"
+}

@@ -1129,3 +1129,24 @@ Explicitly pin that immutable, independently qualified member as25th closure
 entry; original24 hashes remain unchanged. Do not remove it from the pack or
 create a replacement runtime layout. Only the proposed build configuration is
 updated; original runtime remains held. Exact source/effect review precedes use.
+
+### 2026-10-05 actual current custody archive build accepted
+
+Exact sourcef3312a04/treeb5a3bd2e and effect90e0b86d independently admitted;
+one native jobca5fbbed passed stable-build/validate as CodexSandboxOffline.
+Current ZIP55665b2f/TARfce561ca contain852 equivalent file members and849 archive
+checksums, including custody and current CLI. All849 export checksums verify;
+existing stable projection excludes one example README and adds identity.
+Result5f50ffd8 received independent ACCEPT_WITH_NOTES, all notes disposed.
+Retained16772logical bytes/sample8499/memory251400192; release growth23127logical.
+Full collection, retirement/quiescence/noIO/reservation clear verify. Original
+24 execution pins plus qualified25th custody hash and original config unchanged.
+Native build ran once; guard and verifier corrections were metadata-only.
+
+Closeout objective/scope/verification are in evidence/custody-build-closeout-plan.json.
+Freeze current records; seek exact source/ref-effect review for owner-directed
+source-only sync. Preserve all85 other branch tips and never infer release
+certification from main/dev agreement. Independently prepare feasible8-case
+consumers, delivered C1/custody and replay. Two read-only custody plans inspect
+owned source-validation evidence; no further raw retirement is authorized by
+those plans. No cap widening, new pools, evidence truncation or skipped cases.

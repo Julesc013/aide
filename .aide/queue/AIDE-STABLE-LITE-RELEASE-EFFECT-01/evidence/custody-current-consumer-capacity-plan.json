@@ -1,0 +1,61 @@
+{
+  "acceptance_preserved": "all8 cases/38publicforms/39outputs/12job observations plus deliveredC1/custody/replay",
+  "ceiling_bytes": 268435456,
+  "compression_net_savings": "unknown until independently admitted effect; plans do not promise a fit",
+  "conservative_deficit_including_readonly_export_and_release": 10068954,
+  "custody_plans": [
+    {
+      "anchors": {
+        "owner.json": "fda37996e75026572db32f55e9910b08e14d7529e4ff1c54b06ec068c80cedbd",
+        "receipt.json": "b893dcbdc0f99697cf5a2ca68538a4042afd41e70c041fd104af7aba138b7512"
+      },
+      "apply_performed": false,
+      "archive_limit_bytes": 5066870,
+      "job_id": "1b3224cd83fb4531beb3553decbae1a2",
+      "metadata_reserve_bytes": 4194304,
+      "payload_bytes": 4990070,
+      "plan_digest": "cdfc3c448d544bcd7eac60b975e4bd6450d0a5bb12fef86b716770f59f845e13",
+      "plan_stdout_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-consumer-budget-plan-1b3224cd83fb4531beb3553decbae1a2.stdout.log",
+      "plan_stdout_sha256": "a20b0f89fd6b75708a5a885d3affa3412ff887c55db2786f93a4757c62543ec8",
+      "reserved_bytes": 9261174
+    },
+    {
+      "anchors": {
+        "owner.json": "c7c0321de47d3d5b590ba7b24a75f050b2c21649af7f752073b8cb1c7a3c2140",
+        "receipt.json": "7c8417397c901c48fd4cee0879f0dff3606eb434a040ca542989683922b08393"
+      },
+      "apply_performed": false,
+      "archive_limit_bytes": 5062844,
+      "job_id": "e188c5d70f14453ab20ddbd84dc09e4b",
+      "metadata_reserve_bytes": 4194304,
+      "payload_bytes": 4989116,
+      "plan_digest": "fdf078d663996c87100b6cb9ee83d6b688d9e15d63dbf2d66c2a132becb0aaa2",
+      "plan_stdout_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-consumer-budget-plan-e188c5d70f14453ab20ddbd84dc09e4b.stdout.log",
+      "plan_stdout_sha256": "71cb5b561a107e3c9d164f6e0748c04d00daec74ee51fe518619b2fbcd883df9",
+      "reserved_bytes": 9257148
+    }
+  ],
+  "example_first_consumer_envelope": {
+    "logs_each_bytes": 262144,
+    "metadata_reserve_bytes": 2097152,
+    "result_bytes": 4194304,
+    "scratch_bytes": 33554432,
+    "total_bytes": 40370176
+  },
+  "forbidden": "quota widening, fallback allocation, arbitrary deletions, truncation or reduced consumer acceptance",
+  "hard_or_global_quota": false,
+  "known_pools": {
+    "control": 13694135,
+    "retained": 216192237,
+    "scratch": 0
+  },
+  "known_pools_bytes": 229886372,
+  "native_pool_only_deficit_bytes": 1821092,
+  "next": "review exact owned retention strategy and phase reservations; additional owned candidates may be needed; no automatic apply or uncertain replay",
+  "original_payload_sum": 9979186,
+  "planning_assumption": "example current first-case envelope; no final selection or locked admission yet; preserve previously observed29375912sample and3035626complete output",
+  "readonly_export_bytes": 4265213,
+  "release_bytes": 3982649,
+  "schema": "aide.custody-current-consumer-capacity-plan.v1",
+  "state": "PLANNING_NO_APPLY_OR_CONSUMER_DISPATCH"
+}

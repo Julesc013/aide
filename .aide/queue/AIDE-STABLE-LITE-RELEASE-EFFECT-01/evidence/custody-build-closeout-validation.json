@@ -1,0 +1,104 @@
+{
+  "actual_packet_verifier": "PASS",
+  "all41_current": true,
+  "all_source67_operative_identical": true,
+  "commands": [
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        "scripts/aide",
+        "compile",
+        "--write"
+      ],
+      "exit": 0,
+      "name": "compile",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "b3d605add50bc937b41f0f61c671dff1a52e4ac8f42cf0ea8bdaa450c46cb4c1"
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        "scripts/aide",
+        "validate"
+      ],
+      "exit": 0,
+      "name": "structural",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "42e66752eeebcc37a004ca86d9de1cbcb79ea1b9b262e3aef754a9fa35c3be70"
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "scan"
+      ],
+      "exit": 0,
+      "name": "scan",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c9cc8c069a5fe3831d6321e0ae1ae8fb36d5307db6d367bdbc4f9acc72a12784"
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "ledger"
+      ],
+      "exit": 0,
+      "name": "ledger",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "8848b6ef789fa38921045a3311e9fbacecdbc86cfa808e0b8e838242f5b87059"
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "overclaim-report"
+      ],
+      "exit": 0,
+      "name": "overclaim",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "0462a0044de9d2163b7dd63b68d71ed9e539118bbd984356826b17cf5320b424"
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "validate"
+      ],
+      "exit": 0,
+      "name": "capability-validate",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9a5358e7d433fe89cc2c16b2cf491e7ee47aaf33463bcc413aeac02840ef3a52"
+    }
+  ],
+  "current_public_input_bindings": 41,
+  "full_logs_retained": true,
+  "native_build_replayed": false,
+  "outer_route_contained": false,
+  "pack_problems": [],
+  "pack_status": "PASS_SOURCE_ANCESTOR",
+  "projection_reason": "default task packet updated to accepted actual custody build; deterministic report views refresh within existing9-report allowlist",
+  "readonly_binding_verifier_correction": "first controller used dict.items on canonical list, exit1 before mutation; corrected item path/sha256/state check passed; no report/test/native replay",
+  "schema": "aide.custody-build-closeout-validation.v1",
+  "source67_operative_inputs": 10,
+  "source_pack_commit": "cf2345476bd130efaaf9da1f416d6b0c96451107",
+  "source_tests_rerun": 0,
+  "status": "PASS_CURRENT41_SOURCE67_SCOPE_AND_CLEAN_PACK",
+  "whitespace": "PASS"
+}

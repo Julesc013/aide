@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: needs_review
-planning_state: custody_clean_export_accepted_local_build_preparation
-result: PASS67_CLEAN_EXPORT849_CURRENT_BUILD_PENDING
+planning_state: custody_current_build_accepted_closeout_and_consumer_capacity_planning
+result: PASS67_CLEAN_EXPORT849_BUILD852_CURRENT_CONSUMERS_PENDING
 updated_at: 2026-10-05
-current_slice: independently_accepted_native67_fullvalidate_export_complete_collection_retirement
-next_slice: frozen_source_and_exact_disjoint_local_build_effect_review
+current_slice: independently_accepted_current_build_complete_collection_retirement
+next_slice: frozen_closeout_source_sync_and_feasible_exact_consumer_effect_review
 review_gate: exact_current_source_ref_acceptance_before_sync_stable_gates_before_tag_publication
 stable_release_main_promotion_performed: false
 tag_created: false
@@ -37,7 +37,7 @@ current_capability_payload_build_result_ref: .aide/queue/AIDE-STABLE-LITE-RELEAS
 original_archive_runtime_selection: held_stale_after_local_asset_replacement
 previous_current_archive_fields: historical_pre_C1_qualification_only_not_new_asset_acceptance
 custody_payload_report_result_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-payload-projection-result-v3.json
-custody_payload_delivered_in_current_archive: false
+custody_payload_delivered_in_current_archive: true
 
 custody_native67_result_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-payload-native-source-result.json
 custody_native67_review_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-post-source-independent-review.json
@@ -45,3 +45,8 @@ custody_export_source_dirty_state: false
 
 custody_clean_export_result_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-clean-export-result.json
 custody_clean_export_review_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-clean-export-result-review.json
+
+custody_current_build_result_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-build-result.json
+custody_current_build_review_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-build-result-review.json
+custody_current_archive_zip_sha256: 55665b2f6369869209a166db640ffc334f921898505610705b4fee4860e65197
+custody_current_archive_consumer_qualification: pending_exact_feasible_effect

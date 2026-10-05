@@ -1,0 +1,35 @@
+{
+  "automatic_resubmission": false,
+  "conservative_margin_bytes": 2488321,
+  "dispatch_count": 1,
+  "effect_sha256": "90e0b86dc91ac2b64445771127e1db5721295d7d7c9120b2cd15898799e4bbca",
+  "fresh_conservative_by_pool": {
+    "canonical:.aide/release": 3959522,
+    "control": 13694135,
+    "readonly-export": 4265213,
+    "retained": 216175465,
+    "scratch": 0
+  },
+  "native_verdict": "ACCEPT_WITH_NOTES",
+  "notes": [
+    {
+      "classification": "nonblocking_disposed",
+      "note": "fresh native locked admission mandatory; readonly-export additionally counted before dispatch"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "reused source inputs identical; normalized CRLF evidence retains original raw collection"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "preexecution only; actual identity/assets/collection/retirement review required; consumer/replay/promotion/ref/publication separate"
+    }
+  ],
+  "record_kind": "controller transcription of independent reviewer message",
+  "reservation_bytes": 27852800,
+  "reviewer": "/root/containment_review",
+  "schema": "aide.custody-current-build-native-admission.v1",
+  "source_commit": "f3312a04a27194780681f69762488970a946ee91",
+  "source_tree": "b5a3bd2e2d0dffaf524d78909b387e50b85c728e",
+  "source_verdict": "ACCEPT_WITH_NOTES"
+}

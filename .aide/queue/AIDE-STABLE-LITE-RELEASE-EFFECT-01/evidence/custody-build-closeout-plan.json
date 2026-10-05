@@ -1,0 +1,32 @@
+{
+  "blockers": [
+    "consumer capacity not yet admitted",
+    "outer host/historical/live/matched efficiency/stable release gates separate"
+  ],
+  "dependencies": [
+    "accepted build result5f50ffd8",
+    "unchanged source67 operative10 and native23 scope",
+    "existing queue delegation and exact further effect gates"
+  ],
+  "no_effects": [
+    "custody plans are readonly only",
+    "consumer/runtime/ref/publication require exact subsequent verdict"
+  ],
+  "objective": "record accepted current assets and maintain source/spec/plan consistency; prepare separate feasible delivery and source-sync effects",
+  "schema": "aide.custody-build-closeout-plan.v1",
+  "scope": [
+    "release WorkUnit evidence/task/status/ExecPlan/REPORT",
+    "current queue entry",
+    "root PLANS/IMPLEMENT/DOCUMENTATION",
+    "existing narrow roadmap and architecture checkpoint",
+    "default compact packet and9existing capability views"
+  ],
+  "verification": [
+    "structural Harness",
+    "actual task packet verifier",
+    "complete current41 public bindings",
+    "archive hashes and source proof reuse",
+    "whitespace/structured commit checks",
+    "independent frozen source/effect reviews"
+  ]
+}

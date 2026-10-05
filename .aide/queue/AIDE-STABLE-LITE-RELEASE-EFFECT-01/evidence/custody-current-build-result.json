@@ -1,0 +1,90 @@
+{
+  "admin_model_calls": 0,
+  "aggregate_scope": "selected pools and write-canonical release; preflight also counted readonly export; not global",
+  "all10_source67_operative_inputs_reused": true,
+  "all25_supervisor_pins_current": true,
+  "all35_bound_inputs_current_at_collection": true,
+  "all849_export_and_archive_checksums_verified": true,
+  "archive_checksum_entries": 849,
+  "archive_checksums_sha256": "8c60e6c28053747c19e3c127c9c57ee5a9d5f85ae5cff92bf0a58a043736fb7e",
+  "archive_file_members": 852,
+  "archive_manifest_sha256": "df1272c9ded97884917c02aaecb1b411d0a1a10973e871ece71aa88103e49271",
+  "assets": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": {
+      "bytes": 274,
+      "sha256": "cc58568d1a5705457d7d30f4658235937f9100ff87851441665c831b0cb4a19d"
+    },
+    "aide-lite-v1.0.0.manifest.json": {
+      "bytes": 4955,
+      "sha256": "21f8d087453a4426bbd8f3e6a9351625f0f8c84b6547c75c64189b68443ecb88"
+    },
+    "aide-lite-v1.0.0.tar.gz": {
+      "bytes": 815242,
+      "sha256": "fce561ca9b86be55b123d0ab272c68e25e36fba3b691a76e7192db2120573ced"
+    },
+    "aide-lite-v1.0.0.zip": {
+      "bytes": 1153071,
+      "sha256": "55665b2f6369869209a166db640ffc334f921898505610705b4fee4860e65197"
+    }
+  },
+  "build_exit": 0,
+  "canonical_growth_logical_bytes": 23127,
+  "collected_manifest": {
+    "logs": "bfdd5f46c1c36282137a3eeab15bc3cef5123d51fc2ea27fd60fac632f0da887",
+    "output": "e1f4ab5083bc1909467bc7c467ef4f03cb8fc06561f64bacc3b79c2fcd57f935"
+  },
+  "collection_verified": true,
+  "consumer_replay_runtimepromotion_integration_publication": "NOT_RUN",
+  "custody_and_current_cli_present": true,
+  "effect_sha256": "90e0b86dc91ac2b64445771127e1db5721295d7d7c9120b2cd15898799e4bbca",
+  "hard_filesystem_quota": false,
+  "job_id": "ca5fbbed58744c82834326ff371afae2",
+  "manifest_digest": "f20e1d68db506f9e451be3112636f835d2198e85b442d53f2cd98f3c6e242700",
+  "native23_same_input_scope_retained": true,
+  "native_command_exit": 0,
+  "only4_stable_assets_changed_before_postresult": true,
+  "original_configuration_unchanged_held": true,
+  "outer_session_contained": false,
+  "parent_review_usage": "separate, coverage unknown",
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/release": 3982649
+    },
+    "memory_bytes": 251400192,
+    "scratch_bytes": 8499
+  },
+  "physical_growth_or_recovery": null,
+  "qualification_sha256": "2db19d4af2df1023462601d5a03df1b9961d80c5b10833e5b433d56f0e777c05",
+  "read_isolation": "unqualified",
+  "receipt_path": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\ca5fbbed58744c82834326ff371afae2\\receipt.json",
+  "receipt_sha256": "35ef1abb9ab345eea8440c7af7cdb45bfa8b18228eee515f9c721768b0b60a1d",
+  "release_projection_difference": {
+    "added": "stable-release.json",
+    "all848_common_members_identical": true,
+    "excluded_placeholder": "files/.aide.local.example/secrets/README.md",
+    "projected_manifest_and_report_regenerated": "existing reviewed stable builder"
+  },
+  "retained_logical_bytes": 16772,
+  "retirement": {
+    "io_errors": [],
+    "pending_absent": true,
+    "persistent_lock_file_retained": true,
+    "phase": "retired",
+    "quiescent": true,
+    "reservation_released": true,
+    "scratch_absent": true
+  },
+  "schema": "aide.custody-current-build-result.v1",
+  "source_commit": "f3312a04a27194780681f69762488970a946ee91",
+  "source_export_checksum_entries": 849,
+  "source_pack_commit": "cf2345476bd130efaaf9da1f416d6b0c96451107",
+  "source_pack_dirty": false,
+  "source_pack_manifest_sha256": "332633c6dfc250b1b870dc483fc4cca954e91b94b2fdbed004a10fc9cc77a671",
+  "source_pack_tree": "97b590184781d8c713a75f5f8ecf782fad30489f",
+  "source_tree": "b5a3bd2e2d0dffaf524d78909b387e50b85c728e",
+  "status": "PASS_CURRENT_BUILD_ARCHIVES_CHECKSUMS_COLLECTION_RETIRED",
+  "tests_executed_here": 0,
+  "validate_exit": 0,
+  "worker_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+  "zip_tar_payload_identical": true
+}
