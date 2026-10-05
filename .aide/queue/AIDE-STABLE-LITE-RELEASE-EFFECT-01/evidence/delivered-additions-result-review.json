@@ -1,0 +1,33 @@
+{
+  "blocking_findings": [],
+  "effect_sha256": "f194ab25fc32ff7322aad5af13cd4a621ffb359ed486bec7fec10008571a3bc9",
+  "job_id": "c258ff6fadea4c36a4da4a1cc618aac0",
+  "notes": [
+    {
+      "blocking": false,
+      "disposition": "Proof/support/result/report preserve precise limit.",
+      "note": "All41 qualification uses explicit fixtures; no bare-archive count/CURRENT"
+    },
+    {
+      "blocking": false,
+      "disposition": "Original native observation and correction retained.",
+      "note": "CRLF reader correction retained raw bytes and0 without replay"
+    },
+    {
+      "blocking": false,
+      "disposition": "Metrics and unknowns separated.",
+      "note": "Samples are not quota/physical savings/total cost"
+    },
+    {
+      "blocking": false,
+      "disposition": "No external gate or effect inferred.",
+      "note": "Integration/runtime promotion/stable/tags/publication separate"
+    }
+  ],
+  "reviewer": "/root/containment_review",
+  "source_commit": "b1e308efa9733b1807dc2986b01234ef9418b00b",
+  "source_tree": "7e6e0efad1d98031f5daf0dadb801091a4b7f547",
+  "subject_result_sha256": "d26bc95e5044be9a09f9c25bb7c7ae7253dca2699d1645973449b4f31054f74a",
+  "transcription": "Actual independent final result ACCEPT_WITH_NOTES; no blocking findings, all notes disposed. Read-only verification only.",
+  "verdict": "ACCEPT_WITH_NOTES"
+}

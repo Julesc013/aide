@@ -1,0 +1,7 @@
+{
+  "fault": "default codepage read re-encoded historical ExecPlan Unicode in9936cb9d",
+  "restored_baseline": "eb3148ec8e6ebaa122862560bf1cca003914ce51",
+  "method": "git show raw bytes decoded explicit UTF-8, preserve only intended classification replacement/append",
+  "preserved_original_prefix": true,
+  "native_dispatched": false
+}

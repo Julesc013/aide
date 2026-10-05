@@ -1,0 +1,13 @@
+{
+  "additional_findings": [],
+  "blocking_findings": [
+    "ExecPlan historical Unicode unintentionally re-encoded by default-codepage read"
+  ],
+  "classification": "resolved",
+  "disposition": "Exact eb3148ec raw-byte/UTF-8 reconstruction with intended classification replacement/append only.",
+  "effect_sha256": "583a7a6cbcfab9337709e5ef5a29e3fbb92f01ccf6ea8c7a2bb05a57a0adab47",
+  "native_dispatch": false,
+  "reviewer": "/root/containment_review",
+  "source": "9936cb9df14f05daddd7855d7ae6df9fbd9eacf8",
+  "verdict": "REQUEST_CHANGES"
+}

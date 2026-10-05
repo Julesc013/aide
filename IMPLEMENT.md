@@ -1,20 +1,19 @@
 # AIDE Implementation Log
-## Delivered-module qualification entry prepared — 2026-10-05
+## Actual delivered qualification and coherent closeout — 2026-10-05
 
-The release WorkUnit now contains a thin archive qualifier, reusing unchanged
-extraction and strict fixture retirement. It selects the original18 C1 and23
-custody tests from the current delivered ZIP, checks full ZIP/TAR equality and
-collects raw suite streams before disposal. AST, diff checks and structural
-validation passed. This preparation has not executed those41 checks or expanded
-runner/source/tool authority; exact source/native review and fresh admission
-precede execution. [Plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md).
-
-
-The initial exact review rejected two missing source-test fixture dependencies
-before dispatch. The corrected entry binds ten explicit non-executable fixture
-files without overwriting archive content: all41 unchanged tests run with explicit
-fixture support; both public CLI cases and capability-registration need it. All original code/assertions remain
-unchanged; this is not a bare portable-root18+23 claim. See the ExecPlan correction.
+Remaining7 current consumers,38-form map and byte-identical replay are accepted.
+Thin delivered verifier reused original extraction/retirement and18+23 tests with
+explicit bound non-executable fixture data; all41 passed, all original852 archive
+files unchanged, complete collection and retirement independently accepted.
+The source-oriented fixture and count findings were resolved before dispatch;
+UTF8 plan restoration and CRLF reader correction preserve original history and
+raw bytes. No rejected/native job replay or changed assertion. Eight distinct
+lossless custody operations preserved all original evidence/failures and saved
+36264832logical bytes, physical recovery unknown. Authoritative reports/plans/
+queue/capability views are aligned in this bounded closeout. Existing source
+67/native23 proof remains exact-input reused, not rerun. Source-only ref sync is
+a separate exact effect; stable publication and outer containment unfinished.
+[Full outcome](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
 
 ## Actual lossless retirement and current consumer — 2026-10-05
 

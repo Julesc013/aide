@@ -1,0 +1,33 @@
+{
+  "blocking_findings": [],
+  "effect_sha256": "f194ab25fc32ff7322aad5af13cd4a621ffb359ed486bec7fec10008571a3bc9",
+  "notes": [
+    {
+      "blocking": false,
+      "disposition": "Program proof/support/effect/report state this limit.",
+      "note": "All41 original tests with explicit support and three known dependent cases; no bare-archive/CURRENT claim"
+    },
+    {
+      "blocking": false,
+      "disposition": "Before guards+native admission; no inspection-only fit guarantee.",
+      "note": "Fresh locked capacity/headroom remains mandatory"
+    },
+    {
+      "blocking": false,
+      "disposition": "One original dispatch then exact actual verification/review.",
+      "note": "Actual18+23/archive bytes/full collection/retirement need actual result review"
+    },
+    {
+      "blocking": false,
+      "disposition": "Retained exact rejection records; no other effect.",
+      "note": "Prior rejected effects remain undispatched; promotion/publication/wider scope excluded"
+    }
+  ],
+  "preexecution_only": true,
+  "reviewer": "/root/containment_review",
+  "source_commit": "b1e308efa9733b1807dc2986b01234ef9418b00b",
+  "source_tree": "7e6e0efad1d98031f5daf0dadb801091a4b7f547",
+  "source_verdict": "ACCEPT_WITH_NOTES",
+  "transcription": "Actual final independent source and native preexecution verdict; read-only Git/Python checks.",
+  "verdict": "ACCEPT_WITH_NOTES"
+}

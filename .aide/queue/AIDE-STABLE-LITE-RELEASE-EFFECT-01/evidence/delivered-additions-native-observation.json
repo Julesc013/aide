@@ -1,0 +1,32 @@
+{
+  "admission_sha256": "62eb9bbd9b00084397405a2ca849bfc802190d0e5beb79d724389d320cb455a0",
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-B",
+    "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\aide_lite.py",
+    "job",
+    "run",
+    "--config",
+    "D:\\Projects\\AIDE\\aide\\.aide.local\\capability-payload-delivered-execution.json",
+    "--manifest",
+    "D:\\Projects\\AIDE\\aide\\.aide.local\\capability-payload-delivered-job.json",
+    "--full"
+  ],
+  "automatic_resubmission": false,
+  "command_exit_code": 0,
+  "completed_utc": "2026-10-05T05:12:02.271368+00:00",
+  "effect_sha256": "f194ab25fc32ff7322aad5af13cd4a621ffb359ed486bec7fec10008571a3bc9",
+  "schema": "aide.current-delivered-additions-command-observation.v1",
+  "source_commit": "b1e308efa9733b1807dc2986b01234ef9418b00b",
+  "started_utc": "2026-10-05T05:11:16.475779+00:00",
+  "stderr": {
+    "bytes": 0,
+    "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-native.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "bytes": 10922,
+    "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-native.stdout.log",
+    "sha256": "9651d034e3df2e2ce87cf8ae69d7dfad82387eec539cb35262802215ee439295"
+  }
+}

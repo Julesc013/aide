@@ -1,0 +1,14 @@
+{
+  "additional_blockers": [],
+  "blocking_findings": [
+    "39 archive-local plus2 fixture-supported partition unsupported; capability-registration also requires overlays"
+  ],
+  "dispatch_performed": false,
+  "disposition": "Remove partition; all41 original tests with explicit support. Name the two public CLI cases and capability-registration dependence.",
+  "effect_sha256": "25a2884a660afb1749b6a0a4e420eac325f06b71fbdaf451701aaceefd982179",
+  "prior_dependency_findings": "resolved",
+  "reviewer": "/root/containment_review",
+  "source": "eb3148ec8e6ebaa122862560bf1cca003914ce51",
+  "source_tree": "1e8cd80deca2875af73f776aef5a6ed7a600e0e4",
+  "verdict": "REQUEST_CHANGES"
+}

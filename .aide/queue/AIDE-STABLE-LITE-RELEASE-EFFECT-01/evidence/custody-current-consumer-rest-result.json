@@ -1,0 +1,840 @@
+{
+  "admission_sha256": "863f23b443a1528f591053dc0d22646d7a88b2008beb69b34e00d3cbdf54d7bb",
+  "all28_inputs_and25_pins_unchanged": true,
+  "all8_claim_requires_separate_current_case0_result": "04602684715d6a87a5d2137b760de1f7b8b5636d72214725e0766ab1379ca887",
+  "assets_originalconfig_source_unchanged": true,
+  "case0_replayed": false,
+  "complete_collection_digests": {
+    "logs": "a9ec7b42e826a626d4241b4770e8688f90e8e6328663fbfea1e1122da15f1c1a",
+    "output": "e656c7fd20d3c9f4201299626701da4c65f2c633e2335bd09bfaa0302fd77459"
+  },
+  "complete_payload_bytes": 5818155,
+  "complete_retained_root_bytes": 5826004,
+  "coverage": "original fixedindices1..7 allPASS. cases8 is whole suite definition; othercase0 retainedseparately,38forms39outputs coverage must bind actualcase0/public/current records;12jobobservations verified including expectedpartial/refused exits.",
+  "effect_sha256": "4fd62a9253a4f54ff5fff65f053516b1cbdbaf1aa2cafcd047c3782819fa5f42",
+  "hard_global_quota": false,
+  "job_form_observation_count": 12,
+  "job_form_observations": [
+    {
+      "exit_code": 0,
+      "label": "job-setup-fresh",
+      "status": "CONFIGURED",
+      "stdout_sha256": "d07dc57ebe3af555b01fc8741c766f247790a53d79cc99f0b918d76147f23674"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-setup-existing",
+      "status": "ALREADY_CONFIGURED",
+      "stdout_sha256": "c2fc34f9cb4c2b937c54c5037dd8b38b8b3f3c228f0bca489306723fadb83594"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-inspect",
+      "status": "",
+      "stdout_sha256": "9d8d1063db9feffc5fd481c9019e136a2447cf4d25e6ccd7722262f36b50bee9"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-run",
+      "status": "PASS",
+      "stdout_sha256": "79d79fba8ab3691ef92d637509b8f37cbab4d3e5dd5c185d13e0c801b09ebb84"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-run-full",
+      "status": {
+        "bytes": 31,
+        "creation_filetime": 134356475172485406,
+        "exit_code": 0,
+        "io_errors": [],
+        "job_id": "4ae15c3a4c8a47ae9604b44c446e84fd",
+        "pid": 30028,
+        "quiescent": true,
+        "reason": "exited"
+      },
+      "stdout_sha256": "dcd523a33f91048fe14d3615c1257f98a17c2982cfcdadcc56aa0a81a6d4eb99"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-wait",
+      "status": "PASS",
+      "stdout_sha256": "79d79fba8ab3691ef92d637509b8f37cbab4d3e5dd5c185d13e0c801b09ebb84"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-wait-default",
+      "status": "PASS",
+      "stdout_sha256": "79d79fba8ab3691ef92d637509b8f37cbab4d3e5dd5c185d13e0c801b09ebb84"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-recover",
+      "status": "",
+      "stdout_sha256": "4e99a9a4f866cfbb352b01a3a4ce2dbb45810f10b19409dc9b03e9493bde14ab"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-usage",
+      "status": "COMPLETE",
+      "stdout_sha256": "1ce1509d9e0dde997f980cb81c614c3dbceebb0c726ccd198c1c6bb18fa7f61d"
+    },
+    {
+      "exit_code": 2,
+      "label": "job-usage-attempt-set",
+      "status": "PARTIAL",
+      "stdout_sha256": "fded720abffc69dbe9f3e9dbad90ab56b70d890e781f63d172f11e7de0ffe0a0"
+    },
+    {
+      "exit_code": 1,
+      "label": "job-usage-invalid-parent",
+      "status": "REFUSED",
+      "stdout_sha256": "3e8211a4f209f694827237b4c4b4de00222821f0ddd3260b73a0c3eb992493a2"
+    },
+    {
+      "exit_code": 0,
+      "label": "job-context",
+      "status": "COMPLETE",
+      "stdout_sha256": "ed1c49a715ce5bb619ac2e290e0a7be8dbfe9c1128281a85a4af80043e04853d"
+    }
+  ],
+  "job_id": "4ce19cef7cb94052b85a0806e17def12",
+  "known_after_pools": {
+    "canonical_release": 3982649,
+    "control": 13694135,
+    "readonly_export": 4265213,
+    "retained": 196726870,
+    "scratch": 0
+  },
+  "known_conservative_after_bytes": 218668867,
+  "manifest_digest": "3a4db1fa9cbe6b25c9b87f5dbecff0a1babdbe2f554e4dd1c2e35497945752cd",
+  "native_command_exit": 0,
+  "native_observation_sha256": "68107931728a0c434067d7ccbf3780a58014011e8f54c59048e219345e474fe5",
+  "nested_model_calls": 0,
+  "network_calls": "none from deterministic canaries; no native network isolation claim",
+  "owner_sha256": "5d47bc9181403735ae55593b32e84b9ff33f2ee0f5d060b5795928821d3e9ad5",
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 336080896,
+    "scratch_bytes": 28195124
+  },
+  "physical_disk_growth_or_recovery": null,
+  "qualification": {
+    "asset": {
+      "assets": {
+        "aide-lite-v1.0.0.SHA256SUMS.txt": "cc58568d1a5705457d7d30f4658235937f9100ff87851441665c831b0cb4a19d",
+        "aide-lite-v1.0.0.manifest.json": "21f8d087453a4426bbd8f3e6a9351625f0f8c84b6547c75c64189b68443ecb88",
+        "aide-lite-v1.0.0.tar.gz": "fce561ca9b86be55b123d0ab272c68e25e36fba3b691a76e7192db2120573ced",
+        "aide-lite-v1.0.0.zip": "55665b2f6369869209a166db640ffc334f921898505610705b4fee4860e65197"
+      },
+      "cli_sha256": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+      "identity": {
+        "artifact_state": "immutable_release_payload",
+        "intended_channel": "stable",
+        "lifecycle_apply_platform": "Windows only; exact tested environment in effect evidence",
+        "offline_scope": "local CLI after archive acquisition; no native network isolation claim",
+        "predecessor_matrix": [],
+        "profile_id": "aide-lite-local-windows",
+        "public_cli_forms": [
+          "doctor",
+          "validate",
+          "context",
+          "pack --task <task>",
+          "verify --evidence <evidence-path>",
+          "task inspect",
+          "task status",
+          "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+          "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+          "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+          "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+          "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+          "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+          "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+          "plan-removal --target <target>",
+          "apply-removal --target <target> --expect-plan <digest>",
+          "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+          "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+          "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+          "job inspect --config <local-config> --manifest <job-json>",
+          "job run --config <local-config> --manifest <job-json>",
+          "job run --config <local-config> --manifest <job-json> --full",
+          "job recover --config <local-config>",
+          "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+          "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>",
+          "job usage --stream <codex-exec-jsonl>",
+          "job usage --attempt-set <attempt-roster-json>",
+          "job context"
+        ],
+        "release_axis": "aide_lite_portable_package",
+        "schema_version": "aide.stable-release-identity.v1",
+        "source_commit": "cf2345476bd130efaaf9da1f416d6b0c96451107",
+        "source_pack_checksums_sha256": "69841f10a6f5e9113983cd945df86c325275472870544728cff4bad0b4fcd513",
+        "source_repo": "julesc013/aide",
+        "source_tree": "97b590184781d8c713a75f5f8ecf782fad30489f",
+        "support_mode": "companion",
+        "support_tier_candidate": "T3",
+        "tag": "aide-lite-v1.0.0",
+        "version": "1.0.0",
+        "version_policy_sha256": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253"
+      },
+      "tar_sha256": "fce561ca9b86be55b123d0ab272c68e25e36fba3b691a76e7192db2120573ced",
+      "zip_sha256": "55665b2f6369869209a166db640ffc334f921898505610705b4fee4860e65197"
+    },
+    "case_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "cases": 8,
+    "model_calls": 0,
+    "outer_session_contained": false,
+    "phase": "consumer-rest",
+    "read_isolation": "unqualified",
+    "retired_fixtures": [
+      "case-01",
+      "case-02",
+      "case-03",
+      "case-04",
+      "case-05",
+      "case-06",
+      "case-07"
+    ],
+    "status": "PASS",
+    "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline"
+  },
+  "qualification_sha256": "51dfa69bcc8b98ba470b3f0f79b0aa1e0074c78adf9bb54711dbc557725dd991",
+  "receipt_sha256": "381d32f2e7546b8e600ed918cddf485dcaf631ae481ffc51d0b1e22d6e4895cd",
+  "remaining": [
+    "delivered C1/custody41",
+    "deterministic zerochange release replay",
+    "historical dispositions",
+    "livebinding andmatched efficiency",
+    "outer-client configuration",
+    "exactstable ACCEPT/tag/publication/downloaded checks/wider cleanup"
+  ],
+  "retained_files": [
+    {
+      "bytes": 0,
+      "path": "logs/stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "logs/stdin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 404,
+      "path": "logs/stdout",
+      "sha256": "6da07199d3f42ef443f2e6d36fb601500983ee63caebfe3a1637004aa6774dde"
+    },
+    {
+      "bytes": 51750,
+      "path": "output/case-01/brown-changed-apply.json",
+      "sha256": "9cc671f437f70aa17eca39fef8e997a976491a5762572d94c89c2d0f93e2d1f9"
+    },
+    {
+      "bytes": 1607,
+      "path": "output/case-01/brown-changed-install-apply.json",
+      "sha256": "bd8539d6473b12d88188d4285f3580aa6681e243e01c51b4d25eacd0a3e9051d"
+    },
+    {
+      "bytes": 100302,
+      "path": "output/case-01/brown-changed-install-preview.json",
+      "sha256": "440cda27d0a2db9d64db7bf7afe2d3f2a8d0ed8b6b5cd365a4fda78cde87dc9a"
+    },
+    {
+      "bytes": 754940,
+      "path": "output/case-01/brown-changed-plan.json",
+      "sha256": "ff100d98bd0d578d40ad3c242c15aee7dde1ec3201aed2b11856357ffa85ecf5"
+    },
+    {
+      "bytes": 51717,
+      "path": "output/case-01/brown-removal-apply.json",
+      "sha256": "2a2d8bbe5a375de5f6d8ccf6e392ac23cded156cebd20f653747bfeef732f46a"
+    },
+    {
+      "bytes": 1591,
+      "path": "output/case-01/brown-removal-install-apply.json",
+      "sha256": "2f8536864666b0a89ac7f5215d398d36c5c563e081e0878dd832bcd686422ede"
+    },
+    {
+      "bytes": 100286,
+      "path": "output/case-01/brown-removal-install-preview.json",
+      "sha256": "3128774c6d1827bdc2304747f196b03fcbe5e6d6f5692197a135a3c15545d73b"
+    },
+    {
+      "bytes": 754879,
+      "path": "output/case-01/brown-removal-preview.json",
+      "sha256": "4202812dfc89e805986e82522bf77d0b055fe0ebadf046a4baa1e340987bdf4d"
+    },
+    {
+      "bytes": 836,
+      "path": "output/case-01/case-01-process.json",
+      "sha256": "ae15fb12ae18028fe0ea9f4ea5168ad5ca4883561214da6c437e9ff3563c96cd"
+    },
+    {
+      "bytes": 51717,
+      "path": "output/case-01/fresh-removal-apply.json",
+      "sha256": "5bf3559a19c50f24e26e1ac8485fd4c611909c5db941d1a02d0ab10a43e5f0ca"
+    },
+    {
+      "bytes": 1591,
+      "path": "output/case-01/fresh-removal-install-apply.json",
+      "sha256": "953b62972c428a3ce09592f314ff9100535576a2ac51772ee04d022acb2c1363"
+    },
+    {
+      "bytes": 100286,
+      "path": "output/case-01/fresh-removal-install-preview.json",
+      "sha256": "f12b434b7eac6e1d07885123ff3ec4ff968a9b2cd3ac050e731f4f0a49924645"
+    },
+    {
+      "bytes": 754879,
+      "path": "output/case-01/fresh-removal-preview.json",
+      "sha256": "110bb50927beda35e20775f57bce3d2b355c6a026d7551c0fe1f3f7a99221bbd"
+    },
+    {
+      "bytes": 987,
+      "path": "output/case-01/fresh-removal-wrong-plan.json",
+      "sha256": "842ec8ce88df48ca159b6036773def77894052bcfdbeebcf61bb6b42fc64aa06"
+    },
+    {
+      "bytes": 1370,
+      "path": "output/case-01/repair-apply.json",
+      "sha256": "37bc509241343011b4b936bc57cc18759d6e8ed905c79a9e1b5a4bbeaaded524"
+    },
+    {
+      "bytes": 1589,
+      "path": "output/case-01/repair-install-apply.json",
+      "sha256": "d80efe735289f9b04a6291d479f2e4479bfcdc56051356b304683dd1f2fc772a"
+    },
+    {
+      "bytes": 100284,
+      "path": "output/case-01/repair-install-preview.json",
+      "sha256": "e547e6ba72d84d532e4d3d2732d2ef7aae0fb6d47750323469093876d063e0f5"
+    },
+    {
+      "bytes": 367,
+      "path": "output/case-01/repair-post-write-interruption.json",
+      "sha256": "27b5d9997d1a84bc2d1b762579b1b06dbc06410db12d1f2877389e8688f731cf"
+    },
+    {
+      "bytes": 1293,
+      "path": "output/case-01/repair-preview.json",
+      "sha256": "f9f60878edae71db041818fef5a1ccd51103c368f3c2271aeb9a5288f191f0a8"
+    },
+    {
+      "bytes": 1293,
+      "path": "output/case-01/repair-repreview.json",
+      "sha256": "f9f60878edae71db041818fef5a1ccd51103c368f3c2271aeb9a5288f191f0a8"
+    },
+    {
+      "bytes": 1605,
+      "path": "output/case-01/repair-restart-install-apply.json",
+      "sha256": "046a986742a8c557029af27dd49fbdb5902fe484cf1cfef0b58b1336a7eade3c"
+    },
+    {
+      "bytes": 100300,
+      "path": "output/case-01/repair-restart-install-preview.json",
+      "sha256": "4d1c8f8a90ffe1f56da8158247334e4614309941e46d28af342386e1e05be4a3"
+    },
+    {
+      "bytes": 1368,
+      "path": "output/case-01/repair-restart-preview-refusal.json",
+      "sha256": "fa81beda90e46828d4071f1869ea9e474de0c01e8770cb9600facd07dc3c13e2"
+    },
+    {
+      "bytes": 1437,
+      "path": "output/case-01/repair-restart-resume.json",
+      "sha256": "b01cf5faaa7c65a6f9af2747ce147acc711282f7a2ebb527cc7f6c3c7c7f7ada"
+    },
+    {
+      "bytes": 1428,
+      "path": "output/case-01/repair-rival-refusal.json",
+      "sha256": "aa9265a380c1a90b725e01212845614971ff2e236fdf00965aa1ab196e707e25"
+    },
+    {
+      "bytes": 1373,
+      "path": "output/case-01/repair-wrong-plan.json",
+      "sha256": "8125fa9415e4359ba91b181d24e1d0f880b5cc673d8f595aa08a8e44e891714d"
+    },
+    {
+      "bytes": 488811,
+      "path": "output/case-01/rollback-apply.json",
+      "sha256": "862c453264e3f9e09227ad05c30873b26756da4f8f2fbb632a37f0b304335769"
+    },
+    {
+      "bytes": 484078,
+      "path": "output/case-01/rollback-preview.json",
+      "sha256": "20c856b75e499fa5d6ea2c108df73c24c6ff65934864f410bc8957f5e5c94daf"
+    },
+    {
+      "bytes": 1603,
+      "path": "output/case-01/rollback-v1-install-apply.json",
+      "sha256": "220d942ad70e213cf4c65979db91a0e099ec518ed44ce7d66f72fc35cabfcd36"
+    },
+    {
+      "bytes": 100298,
+      "path": "output/case-01/rollback-v1-install-preview.json",
+      "sha256": "86be20fa374a53d29c298c8a5258795fe271764abe03afcac30ae9ed7664f0c2"
+    },
+    {
+      "bytes": 1876,
+      "path": "output/case-01/rollback-v2-update-apply.json",
+      "sha256": "73fd311b875d5db15ea4d986ba9ca73dbbfd61daf976f477048b02675e1236de"
+    },
+    {
+      "bytes": 104589,
+      "path": "output/case-01/rollback-v2-update-preview.json",
+      "sha256": "f07cc1fc55b4df6ec6a625cc70c86cfe4e9960e7ff64500d0e2d584423a1ed33"
+    },
+    {
+      "bytes": 1354,
+      "path": "output/case-01/rollback-wrong-plan.json",
+      "sha256": "e9071d3285d8416b5d5169cf7b9fa265ee60fd37d3c40791dc2a7e50851c0f64"
+    },
+    {
+      "bytes": 11785,
+      "path": "output/case-01/summary.json",
+      "sha256": "9634120ff038025c65fea5198244ddca156383bed2a33ebe38ca9ff64de88065"
+    },
+    {
+      "bytes": 916,
+      "path": "output/case-02/brownfield-context.json",
+      "sha256": "146a706c7ed5c3f79fc9f50b0a015cd80476023fcc0810c1b2630db6b56fdfc8"
+    },
+    {
+      "bytes": 1560,
+      "path": "output/case-02/brownfield-install-apply.json",
+      "sha256": "d45086072479123576ec7e786516c2fcaf40bcd8790c9c4edbc02c24d7635afc"
+    },
+    {
+      "bytes": 100255,
+      "path": "output/case-02/brownfield-install-preview.json",
+      "sha256": "eb73f2df0c22a1f31b2fce9e157ee5a4d6a2c2594e951c5f13489a4841275349"
+    },
+    {
+      "bytes": 912,
+      "path": "output/case-02/brownfield-pack.json",
+      "sha256": "f1d3d16bea509d86b1b64a38a8e4ff655a6c5abd353bb7428f7a1931e3c71d29"
+    },
+    {
+      "bytes": 3049,
+      "path": "output/case-02/brownfield-verify.json",
+      "sha256": "9b21cb569dacd4d3928e1ff470ee9f64d3ac846cd89a4bed6dc479443be71140"
+    },
+    {
+      "bytes": 645,
+      "path": "output/case-02/case-02-process.json",
+      "sha256": "a5a56fa8f66fe9e8b2824166d652193589f9d71f4ae31593430d4f723330d24e"
+    },
+    {
+      "bytes": 906,
+      "path": "output/case-02/fresh-context.json",
+      "sha256": "ddd2efdc4f9f5c87aead35be6cd0f00e89ccb0d1acba6f102400e92be0d3dad3"
+    },
+    {
+      "bytes": 1550,
+      "path": "output/case-02/fresh-install-apply.json",
+      "sha256": "d30354169198cfd8efbc4e85b201043fc9391f40eb1e662d934c17c2bf9df476"
+    },
+    {
+      "bytes": 100245,
+      "path": "output/case-02/fresh-install-preview.json",
+      "sha256": "c7e712357a638a576680b5361c5cbc2beca834962be0ff72bb6b22198013f140"
+    },
+    {
+      "bytes": 902,
+      "path": "output/case-02/fresh-pack.json",
+      "sha256": "ccfdeafdaa2170918c1b2a450ee9c4fad03780002157b34ffa2567c711e9a766"
+    },
+    {
+      "bytes": 2815,
+      "path": "output/case-02/fresh-verify.json",
+      "sha256": "8058414b6d51de1e2e6f547fc785cf3f1df6c3a62814bec4ad9468cd6b075dce"
+    },
+    {
+      "bytes": 387,
+      "path": "output/case-02/offline-guard.py",
+      "sha256": "f3ca0dc5ad58ca384cfd9ea09be6c3ff93fa787a99968edb8158923e4da2ae40"
+    },
+    {
+      "bytes": 2198,
+      "path": "output/case-02/summary.json",
+      "sha256": "3ba3a65cbc83dbdc1f3018627990192ecc6ec9cf626249c1f729bbf009144b16"
+    },
+    {
+      "bytes": 682,
+      "path": "output/case-03/case-03-process.json",
+      "sha256": "9de1b3cbb7be5e582a16fb6cb4b0116c28766b3b93a77d2cddacf9ac52347725"
+    },
+    {
+      "bytes": 1526,
+      "path": "output/case-03/fresh-cli-recover.json",
+      "sha256": "e558745a9b875703d58ddf55dccd6145606a15e3752565995cc34c687e9205f2"
+    },
+    {
+      "bytes": 1410,
+      "path": "output/case-03/fresh-ordinary-refusal.json",
+      "sha256": "5be03f9aecfae0950d23982ad13a3d09fad462ee7e177343fd30d55482696da3"
+    },
+    {
+      "bytes": 1531,
+      "path": "output/case-03/fresh-wrong-plan-refusal.json",
+      "sha256": "ab9bd9f80d5babffb41c6848919652ed1e987e0eaadac75d7b19cb2f9822c153"
+    },
+    {
+      "bytes": 106104,
+      "path": "output/case-03/predecessor-feedback-preview.json",
+      "sha256": "d8aaddf77a9001430be664c0ffc25678f9faeb960f74d44a85c2d0a1ac9233b6"
+    },
+    {
+      "bytes": 1969,
+      "path": "output/case-03/resolved-changed-input-refusal.json",
+      "sha256": "4b489e56ce92ba0d24335ebe49bb4cdaf3557f5adfbb771ef9b9b4b74478601a"
+    },
+    {
+      "bytes": 1964,
+      "path": "output/case-03/resolved-cli-recover.json",
+      "sha256": "d03c1c0c41ad4d8183eca305d168a269e8851fa7e801b6ab7b0ab211376e72b3"
+    },
+    {
+      "bytes": 1848,
+      "path": "output/case-03/resolved-ordinary-refusal.json",
+      "sha256": "470056ad43ff04b6c5cf61b6eef9049a075183c1bb77b26b216ae596b2d21204"
+    },
+    {
+      "bytes": 4196,
+      "path": "output/case-03/summary.json",
+      "sha256": "511e4462fa970292e07ffabb68b356f7e72d3dba3a04913db139fec56469c4f6"
+    },
+    {
+      "bytes": 1781,
+      "path": "output/case-03/update-cli-recover.json",
+      "sha256": "8f175a8e3752de9ddf7443653ae0edf804459c92263fed42b9ba45688e534f85"
+    },
+    {
+      "bytes": 3686,
+      "path": "output/case-03/update-feedback.json",
+      "sha256": "10ea43eefa7f4d74a07525642465e33d2488e12f42330bdabdf432b7f89e2b9b"
+    },
+    {
+      "bytes": 1665,
+      "path": "output/case-03/update-ordinary-refusal.json",
+      "sha256": "14e4e2e7debc580255311a1ca166ef669b187844f364a3d515affc936f98875a"
+    },
+    {
+      "bytes": 1786,
+      "path": "output/case-03/update-wrong-plan-refusal.json",
+      "sha256": "d381b219058b2201d7877448409beafc4fa7ecb9a79fd64b3032833577e0c264"
+    },
+    {
+      "bytes": 526,
+      "path": "output/case-04/case-04-process.json",
+      "sha256": "507c98eefb4f94c1417fd7adaa93eca3fedec085369ebe33681c0dcaac5be809"
+    },
+    {
+      "bytes": 759,
+      "path": "output/case-04/empty-task-inspect.json",
+      "sha256": "47d272f8ca586ad19bb2e30813758a512aa0203f40b9648595c07b9f4d021d98"
+    },
+    {
+      "bytes": 612,
+      "path": "output/case-04/empty-task-status.json",
+      "sha256": "874ef4ab298ab1778fbc177585d9a672e3ec4dbeb91d150958d5cada2d734bba"
+    },
+    {
+      "bytes": 2651,
+      "path": "output/case-04/explicit-feedback-packet.json",
+      "sha256": "ea0a2c772120c05c311fdbae6ceb64dd87d033865e5573d38d889644463931a3"
+    },
+    {
+      "bytes": 105350,
+      "path": "output/case-04/explicit-feedback.json",
+      "sha256": "c352eb623f3dbc8ae5121a65915f293503b6b3730560aa216139661c0df4a357"
+    },
+    {
+      "bytes": 2284,
+      "path": "output/case-04/installed-validate.json",
+      "sha256": "d053947e82ea65d825fc656710bb63f82085b9f474aa0fb77eb5f5916f25d408"
+    },
+    {
+      "bytes": 104189,
+      "path": "output/case-04/ordinary-preview.json",
+      "sha256": "7b5cea6448807c84466bbab3e7ea5a9497af32e25f9f7e8cbc54311dfbc9a0c4"
+    },
+    {
+      "bytes": 3792,
+      "path": "output/case-04/summary.json",
+      "sha256": "7855915172618022c979811d9834fdc0f82cb4c1459faa595feb4615be6d9097"
+    },
+    {
+      "bytes": 955,
+      "path": "output/case-04/task-inspect.json",
+      "sha256": "af2a817569b1f4a490bac18bb610a9135a156a36f17a568f881b538704c543cf"
+    },
+    {
+      "bytes": 681,
+      "path": "output/case-04/task-status.json",
+      "sha256": "e693050e58c2e69b36f06b9aa846f160aacd2b8878d710ccfa756641dea2df88"
+    },
+    {
+      "bytes": 735,
+      "path": "output/case-05/case-05-process.json",
+      "sha256": "bff45f1e329f1bc6fe1c5281c874033800726d1ded2f70e14e3e0eedfa64dfb0"
+    },
+    {
+      "bytes": 1554,
+      "path": "output/case-05/import-pending.json",
+      "sha256": "3fb3774a360c25e2efa24b793eb2a17bbb16d5856e10638c0374ab03b8a5d400"
+    },
+    {
+      "bytes": 100287,
+      "path": "output/case-05/import-preview.json",
+      "sha256": "bbf3dee2873e0d44f869fde281ca91c730da22c24fa707c4385c0d3c8ca69be0"
+    },
+    {
+      "bytes": 933,
+      "path": "output/case-05/import-receipt.child.json",
+      "sha256": "90d7757f541ed04d3a04fb4226162abc0d672fb83a7b4528a92412eb67145c31"
+    },
+    {
+      "bytes": 1589,
+      "path": "output/case-05/import-resume.json",
+      "sha256": "ff1a3fb8811852d0dad784cc8547bc416ff52c976e47f80a9f43143e14ef955f"
+    },
+    {
+      "bytes": 1582,
+      "path": "output/case-05/removal-install-apply.json",
+      "sha256": "75f30a0315eca78365cd904688da3c62938ab15e72ab833d1c751f77d4afb9e1"
+    },
+    {
+      "bytes": 100277,
+      "path": "output/case-05/removal-install-preview.json",
+      "sha256": "faa2e2e640051c77d595ac92c75921c0f74f7d055d40045bc6a6b5dd417fdf7a"
+    },
+    {
+      "bytes": 754848,
+      "path": "output/case-05/removal-preview.json",
+      "sha256": "7c8fa3183d964096dbe2cc557fb565bd64072c078f8626de6f28408a7a3182a6"
+    },
+    {
+      "bytes": 930,
+      "path": "output/case-05/removal-receipt.child.json",
+      "sha256": "3ad141704dddb766247effdda0dae77833b10d4589b7fe774850f5f59ed04de2"
+    },
+    {
+      "bytes": 1025,
+      "path": "output/case-05/removal-resume.json",
+      "sha256": "170cda0f5814e16f600948d5abeb531d9806f6a4453355aeda1473edc4aa0176"
+    },
+    {
+      "bytes": 921,
+      "path": "output/case-05/repair-file.child.json",
+      "sha256": "fe298fd48cbe5da2aa21e94f58d8cc4bc098a2ff66cb64ab643dc60134c64411"
+    },
+    {
+      "bytes": 1580,
+      "path": "output/case-05/repair-install-apply.json",
+      "sha256": "50e716ea59140421dfe3fcd92bf1e02c7fd775e00629d034015b422ba053673b"
+    },
+    {
+      "bytes": 100275,
+      "path": "output/case-05/repair-install-preview.json",
+      "sha256": "097de80f9b68cef8689b8a4f86613c74e060e53f80e533c30f561fc4ee89f89f"
+    },
+    {
+      "bytes": 1347,
+      "path": "output/case-05/repair-pending.json",
+      "sha256": "9b64ad30e6214e9ae7b44a5999af744853c67eedbc8f11a997c16fd974443e77"
+    },
+    {
+      "bytes": 1280,
+      "path": "output/case-05/repair-preview.json",
+      "sha256": "d1c2cd636d2b31e6879b0762a39bcb5a189d8794a4a467287148362fc184ceed"
+    },
+    {
+      "bytes": 1416,
+      "path": "output/case-05/repair-resume.json",
+      "sha256": "2b189da1124fa71ebbc62c7430db63edd6384a5fa31e0c2d79beaa0ddaf249e9"
+    },
+    {
+      "bytes": 1310,
+      "path": "output/case-05/summary.json",
+      "sha256": "86ae41895ed0a2202c16538a059409f4de21ed78fbe68eeb94321642e442168b"
+    },
+    {
+      "bytes": 802,
+      "path": "output/case-06/case-06-process.json",
+      "sha256": "fdd64cba8ff2b63214353ca322d0dd2357ad0ab1bd716370ee0c9d374a3398f7"
+    },
+    {
+      "bytes": 1153,
+      "path": "output/case-06/command_outputs/job-context.json",
+      "sha256": "77bc7661cda3a0bf2281770efe32b790da8f5df532f923092ad2bf611766d4d5"
+    },
+    {
+      "bytes": 3036,
+      "path": "output/case-06/command_outputs/job-inspect.json",
+      "sha256": "a4597b70f7ea5d22256ca3006e6232a65e8e3d7b57e8852504fe819ddcd3a180"
+    },
+    {
+      "bytes": 950,
+      "path": "output/case-06/command_outputs/job-recover.json",
+      "sha256": "11d20cba4ec6ed150b8da26506ad53555394afb740c758c9c87a0cb20c9cb5cc"
+    },
+    {
+      "bytes": 5222,
+      "path": "output/case-06/command_outputs/job-run-full.json",
+      "sha256": "538b6d1329ad265760485d30a3264fb6cfcd2a4af30b21a5d01a7f7ffe3c0c5a"
+    },
+    {
+      "bytes": 2155,
+      "path": "output/case-06/command_outputs/job-run.json",
+      "sha256": "4c8604088756078ce83e0ace66fbeca91c2932ff120e574d192e475e01e899d9"
+    },
+    {
+      "bytes": 1954,
+      "path": "output/case-06/command_outputs/job-setup-existing.json",
+      "sha256": "dd02762f52873d5b5c18cbb1286c36002af1da5ae3580d5424911db052d7a8d3"
+    },
+    {
+      "bytes": 1945,
+      "path": "output/case-06/command_outputs/job-setup-fresh.json",
+      "sha256": "0c81cb28ea2f0fc549394bd97c4fad9762567fefb63db6b2bb2f51333c0533d0"
+    },
+    {
+      "bytes": 2586,
+      "path": "output/case-06/command_outputs/job-usage-attempt-set.json",
+      "sha256": "1c009a55eab7048c1bf8303f3aeeeac5849c9963f355c5cc85699cce26a10592"
+    },
+    {
+      "bytes": 1032,
+      "path": "output/case-06/command_outputs/job-usage-invalid-parent.json",
+      "sha256": "dc85d32822e5b8168d7e470d3ae5523e3aabc5c858c4c98e12734e344fc49817"
+    },
+    {
+      "bytes": 1980,
+      "path": "output/case-06/command_outputs/job-usage.json",
+      "sha256": "63f5404ff1276fdd76b7d3074d948101071ecaf073db67ce2be573b796773cfd"
+    },
+    {
+      "bytes": 2066,
+      "path": "output/case-06/command_outputs/job-wait-default.json",
+      "sha256": "e1ab32ae457c04fa32f35b01c8f98ecec822f5ac7fdedc900635f9d6c20f2067"
+    },
+    {
+      "bytes": 2102,
+      "path": "output/case-06/command_outputs/job-wait.json",
+      "sha256": "b0567d6b5856d0c5da2223f5b83e8024edad42ecacc2a5cb03cc1cd8387735c1"
+    },
+    {
+      "bytes": 3274,
+      "path": "output/case-06/summary.json",
+      "sha256": "d0b979be46e54f610d4680e2b6ba07cfc34a381c972c16f9ce82b13e68fd9d3e"
+    },
+    {
+      "bytes": 3655,
+      "path": "output/case-06/summary.receipt.json",
+      "sha256": "677549658c3014edff9fb6284d0ddf4457129a1f42df2e25090dac380205ebfd"
+    },
+    {
+      "bytes": 568,
+      "path": "output/case-07/case-07-process.json",
+      "sha256": "19b86450257cc766d183ed5c9e3f089a4e9370754896c095927511fbb09190c5"
+    },
+    {
+      "bytes": 378,
+      "path": "output/case-07/summary.json",
+      "sha256": "74c621cf4df26a57fcb5029109972b3f9548f4c1749397da283033372ae4fe9c"
+    },
+    {
+      "bytes": 1593,
+      "path": "output/effective-scope.json",
+      "sha256": "7619f2d9a23bd61b217b1ad0d68be8ba0d67b468428e7b1744c113ee005776df"
+    },
+    {
+      "bytes": 5655,
+      "path": "output/qualification.json",
+      "sha256": "51dfa69bcc8b98ba470b3f0f79b0aa1e0074c78adf9bb54711dbc557725dd991"
+    }
+  ],
+  "retained_root": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\4ce19cef7cb94052b85a0806e17def12",
+  "retirement": "complete output/log tree digests, each fixture retired, nativequiescent/noIO/scratchabsent/reservationreleased",
+  "sampled_scratch_margin_bytes": 13747916,
+  "schema": "aide.custody-current-consumer-rest-result.v1",
+  "scratch_limit_bytes": 41943040,
+  "scratch_pending_reservation_absent": true,
+  "source_commit": "477f911300f9d3ea610542701478b9a51934e476",
+  "source_commit_binding": "archive manifest declaration and bound delivered CLI/operativebytes; no stronger wholeGit attestation",
+  "source_tree": "54e3c9fc403854629e196c4ca41d97f1a0e852e5",
+  "status": "PASS_SEVEN_CURRENT_DELIVERED_CASES",
+  "summaries": [
+    {
+      "case_index": 1,
+      "command_rows": 31,
+      "process_sha256": "ae15fb12ae18028fe0ea9f4ea5168ad5ca4883561214da6c437e9ff3563c96cd",
+      "status": "PASS",
+      "summary_sha256": "9634120ff038025c65fea5198244ddca156383bed2a33ebe38ca9ff64de88065"
+    },
+    {
+      "case_index": 2,
+      "command_rows": null,
+      "process_sha256": "a5a56fa8f66fe9e8b2824166d652193589f9d71f4ae31593430d4f723330d24e",
+      "status": "PASS",
+      "summary_sha256": "3ba3a65cbc83dbdc1f3018627990192ecc6ec9cf626249c1f729bbf009144b16"
+    },
+    {
+      "case_index": 3,
+      "command_rows": 10,
+      "process_sha256": "9de1b3cbb7be5e582a16fb6cb4b0116c28766b3b93a77d2cddacf9ac52347725",
+      "status": "PASS",
+      "summary_sha256": "511e4462fa970292e07ffabb68b356f7e72d3dba3a04913db139fec56469c4f6"
+    },
+    {
+      "case_index": 4,
+      "command_rows": 10,
+      "process_sha256": "507c98eefb4f94c1417fd7adaa93eca3fedec085369ebe33681c0dcaac5be809",
+      "status": "PASS",
+      "summary_sha256": "7855915172618022c979811d9834fdc0f82cb4c1459faa595feb4615be6d9097"
+    },
+    {
+      "case_index": 5,
+      "command_rows": null,
+      "process_sha256": "bff45f1e329f1bc6fe1c5281c874033800726d1ded2f70e14e3e0eedfa64dfb0",
+      "status": "PASS",
+      "summary_sha256": "86ae41895ed0a2202c16538a059409f4de21ed78fbe68eeb94321642e442168b"
+    },
+    {
+      "case_index": 6,
+      "command_rows": null,
+      "process_sha256": "fdd64cba8ff2b63214353ca322d0dd2357ad0ab1bd716370ee0c9d374a3398f7",
+      "status": "PASS",
+      "summary_sha256": "d0b979be46e54f610d4680e2b6ba07cfc34a381c972c16f9ce82b13e68fd9d3e"
+    },
+    {
+      "case_index": 7,
+      "command_rows": null,
+      "process_sha256": "19b86450257cc766d183ed5c9e3f089a4e9370754896c095927511fbb09190c5",
+      "status": "PASS",
+      "summary_sha256": "74c621cf4df26a57fcb5029109972b3f9548f4c1749397da283033372ae4fe9c"
+    }
+  ],
+  "whole_outcome_usage": "unknown parent/reviewer/retry/repair/model/warmcoldcoverage; no costclaim",
+  "whole_session_contained": false,
+  "worker_native_exit": 0,
+  "worker_read_isolation": "unqualified"
+}

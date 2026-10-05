@@ -1235,3 +1235,38 @@ partition: capability-registration also depends on the overlay. The correction
 removes any bare-archive case-count claim and names all three known support
 dependencies. Original test assertions, program, archive, fixture bytes,25 pins
 and envelope are unchanged. Neither rejected recipe dispatched.
+
+## Actual current delivered qualification accepted — 2026-10-05
+
+Remaining7 job4ce19cef completed once: all original cases pass, complete raw
+collection/receipt/fixture and scratch retirement accepted. Current38-form map
+rebinds39 non-job outputs and12 job observations,51 distinct records. Additional
+three owned custody transitions preserved complete archives and saved14098924
+logical bytes; all8 distinct custody operations total36264832 logical savings,
+not physical recovery or whole-campaign net growth. Original exit1 records stay.
+
+Replay job2e7d1b37 completed original build/validation0 with all four assets
+byte-identical, full collection and retirement accepted. Then independently
+accepted exact b1e308ef/f194ab25 dispatched delivered jobc258ff6f once. Original
+18 C1+23 custody assertions passed/no skips with ten explicit fixture-data files;
+three known cases depend on support, no bare-archive case-count/CURRENT claim.
+All852 original archive files/overlays unchanged, ten actual C1 CLI oracles pass
+including stale validation1/no automatic rebind and authored preservation. Full
+12 retained files/digests/receipt/identity/quiescence/noIO/scratch and reservation
+retirement verify. Independent actual ACCEPT_WITH_NOTES has all notes disposed.
+Retained110278/sample8845578/memory291008512; conservative known218796754 bytes.
+
+Preexecution dependency/classification refusals, exact UTF8 recovery and CRLF
+observer correction are preserved. No rejected recipe or native uncertainty was
+replayed; no test assertion or product/runner code changed. Existing67/native23
+proof remains scoped to unchanged operative inputs. Batch canonical evidence,
+queue statuses, architecture/roadmap/root indexes and compact packet. Validate
+changed records, links,19 preserved prefixes/34drafts244 requirements244 designs,
+capability projections/Harness/commit policy; freeze then independently review
+exact source-only sync of main/dev/current task,85 other tips preserved. Consult
+its terminal receipt instead of recursive receipt-only source commits.
+
+Originala241 runtime remains held. Outer/read/hardquota/historical10/live/matched
+efficiency/exact stable acceptance/tag/publication/download/wider cleanup remain
+separate; FacMan product paused. No new storage/checkout, paid calls, broad
+source tests, archive regeneration or global cleanup from this closeout.

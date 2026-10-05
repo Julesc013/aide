@@ -1,0 +1,169 @@
+{
+  "behavioral_checks_executed_by_this_precheck": 0,
+  "count": 19,
+  "draft_chapters": 34,
+  "historical_import_manifest_unchanged": true,
+  "original_UC_acceptance_designs": 244,
+  "original_UR_UC_preserved": true,
+  "original_UR_requirements": 244,
+  "original_prefix_checks": [
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/product/scope-and-profiles.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/contracts/execution-hosts-and-workers.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/contracts/compatibility-and-migrations.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/engineering/performance-and-resource-planning.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/engineering/module-and-implementation-boundaries.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/optimization/model-effort-and-delegation.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/runtime/durability-and-storage.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/runtime/recovery-and-uncertain-effects.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/runtime/supervision-and-continuity.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/knowledge/after-action-learning.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/lifecycle/workspaces-storage-and-retention.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/interop/extensions-packages-and-sdk.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/interop/standards-and-translation.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/experience/operator-workbench-and-accessibility.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/experience/workflows-and-operating-profiles.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/engineering/security-privacy-and-isolation.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/engineering/verification-and-evidence.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/optimization/usage-budgets-and-economics.md"
+    },
+    {
+      "original_prefix_preserved": true,
+      "path": "specs/control-plane/knowledge/context-compilation.md"
+    }
+  ],
+  "raw_attachment_sha256": null,
+  "reader_correction": "Initial exploratory regex/count used the19 amendment subset and missed namespace/context; corrected to original checker definitions over34 imported drafts. Counts are244 requirements plus244 acceptance designs, not244 combined. No spec/test/native effects.",
+  "semantic_adoption": "proposed_refinements_not_adopted",
+  "spec_records": [
+    {
+      "git_lf_sha256": "58366a9eb7e0327904e6e419d6bc795622c2cfab9d52572a63d8f43a3e0032e1",
+      "path": "specs/control-plane/product/scope-and-profiles.md"
+    },
+    {
+      "git_lf_sha256": "9f46db9abd2ccb0a3da4d57815e3cb87f9ab29eadd60b61b01aeb7f2d8efc792",
+      "path": "specs/control-plane/contracts/execution-hosts-and-workers.md"
+    },
+    {
+      "git_lf_sha256": "d1f49eaf159df339481bc0c61ad881f5a350a88c3994175842d4882bdc97680f",
+      "path": "specs/control-plane/contracts/compatibility-and-migrations.md"
+    },
+    {
+      "git_lf_sha256": "e08f35f6d599c12091883b890317ece6a49a399f1ef559f1239c38d859f57bd8",
+      "path": "specs/control-plane/engineering/performance-and-resource-planning.md"
+    },
+    {
+      "git_lf_sha256": "28a88f412606b325bab93e99e61c5644dd3e872493deca3eecf0b3b74ee0c4f6",
+      "path": "specs/control-plane/engineering/module-and-implementation-boundaries.md"
+    },
+    {
+      "git_lf_sha256": "0180d71ec7fdc5c89e352be885aa942ffb0ae4266280a0f716a6ee966443c31b",
+      "path": "specs/control-plane/optimization/model-effort-and-delegation.md"
+    },
+    {
+      "git_lf_sha256": "bcaa9c3236f9a838131fe004f62459be08c2b708abe2d96ff04c6d23c58f3a81",
+      "path": "specs/control-plane/runtime/durability-and-storage.md"
+    },
+    {
+      "git_lf_sha256": "421d4853a0a2c3272a8c2c301cd0494aa24f73fa836a6f75a595360930d2dd7c",
+      "path": "specs/control-plane/runtime/recovery-and-uncertain-effects.md"
+    },
+    {
+      "git_lf_sha256": "9078c647fff173c6f2cc3f9f9609ff5075a0cb0a8cedf988a87187c350fa957a",
+      "path": "specs/control-plane/runtime/supervision-and-continuity.md"
+    },
+    {
+      "git_lf_sha256": "b4fbcfe1880b07e4b2dc95c8a967e22eec0cbe9fbeca5c0e1ca4c4e43fa7585d",
+      "path": "specs/control-plane/knowledge/after-action-learning.md"
+    },
+    {
+      "git_lf_sha256": "7b0666ae2bf91491b24491ec65e056a8a1edd4e8848fd0f0699c7599d1920795",
+      "path": "specs/control-plane/lifecycle/workspaces-storage-and-retention.md"
+    },
+    {
+      "git_lf_sha256": "319dbc8456a60f0c6eb3cc1c8c9fad6441fa0ce0927bfd2fa346bd82c84e3ccc",
+      "path": "specs/control-plane/interop/extensions-packages-and-sdk.md"
+    },
+    {
+      "git_lf_sha256": "6e48bce54c56b37fd1ce970b87f6a1b819f6a6e740f8ca8b57b15d174a4473b1",
+      "path": "specs/control-plane/interop/standards-and-translation.md"
+    },
+    {
+      "git_lf_sha256": "124af1a905f6bdd2ae54e55d24959baaca6f3caac8506128a63a51b2bd6b84a5",
+      "path": "specs/control-plane/experience/operator-workbench-and-accessibility.md"
+    },
+    {
+      "git_lf_sha256": "49d05d1fb7a2ace97d4e27bb28ba34b2edf70bc8aaf74df764caef1f41f4eab9",
+      "path": "specs/control-plane/experience/workflows-and-operating-profiles.md"
+    },
+    {
+      "git_lf_sha256": "9c904c7a57282525e02cd7ae327d33120fdaa3ae084754ad08e8401b21d2b732",
+      "path": "specs/control-plane/engineering/security-privacy-and-isolation.md"
+    },
+    {
+      "git_lf_sha256": "c96e5f1e3de6d575e62e22a0370e47449ec03381fc6fb1f4d24574a2aad23687",
+      "path": "specs/control-plane/engineering/verification-and-evidence.md"
+    },
+    {
+      "git_lf_sha256": "091c3b93f3e324b06322f614e1b90d604432fa24a7314dfd4efaf433c2f54244",
+      "path": "specs/control-plane/optimization/usage-budgets-and-economics.md"
+    },
+    {
+      "git_lf_sha256": "424c79a100d884518cf143e25e4968bf0c4bf046861eecb5ec0d2e65cd0860d5",
+      "path": "specs/control-plane/knowledge/context-compilation.md"
+    }
+  ],
+  "status": "PASS"
+}

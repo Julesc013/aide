@@ -1,0 +1,25 @@
+{
+  "blocking_findings": [],
+  "executed_source": "477f911300f9d3ea610542701478b9a51934e476",
+  "notes": [
+    {
+      "blocking": false,
+      "disposition": "Exact immutable executed477 and its receipt/inputs only.",
+      "note": "Later7c6d6993 preparation excluded"
+    },
+    {
+      "blocking": false,
+      "disposition": "Explicit scope retained.",
+      "note": "Monitoring is not hard quota or whole-session containment"
+    },
+    {
+      "blocking": false,
+      "disposition": "No such acceptance inferred.",
+      "note": "Delivered41/runtime promotion/stable/publication separate"
+    }
+  ],
+  "reviewer": "/root/containment_review",
+  "subject_result_sha256": "d390847f17fc1a185cefe46ba22a387f5cade240574d1aa7118387488c9d149c",
+  "transcription": "Exact actual reviewer final verdict, read-only Git/Python stdlib checks; all849 export checksums also matched.",
+  "verdict": "ACCEPT_WITH_NOTES"
+}

@@ -1,5 +1,120 @@
 # Current AIDE source, artifact and development report
 
+## Current accepted outcome — 2026-10-05
+
+The current Windows Lite candidate has eight passing consumer cases against
+ZIP55665b2f/TARfce561ca, complete38-form evidence, and an accepted zero-change
+build/validation replay. The original18 capability and23 custody tests of delivered modules passed with explicit bound test fixtures. These are local technical outcomes;
+stable publication and whole-session containment remain unfinished.
+
+| Evidence | Actual outcome and scope |
+|---|---|
+| Current source |67 affected checks, export and full validation passed on unchanged operative inputs; separate23 native custody checks retained |
+| Clean export/build | Clean exportcf234547 with849 checksums;852 identical ZIP/TAR file members/849 archive checksums, current CLI and custody included |
+| Current consumers | Case0 job8c9d3a83 plus remaining7 job4ce19cef; every original case passed and fixture/scratch/result retirement verified |
+| Public forms |38 declared forms;39 non-job command outputs and12 job observations,51 distinct records rebound to current bytes; intentional PARTIAL/refusal results preserved |
+| Unchanged replay | Job2e7d1b37, original stable-build/stable-validate both0; all four asset bytes unchanged, complete collection and retirement independently accepted |
+| Delivered additions | All41 original C1/custody tests of unchanged delivered modules, using ten explicitly bound fixture-data files; two public CLI cases and capability-registration need nonbundled support; no bare-archive/CURRENT claim |
+| Source synchronization | Last accepted terminal477f9113;88 corresponding local/remote pairs matched,85 other distinct branch tips preserved; later closing source requires its own exact ref review |
+| Owned custody | Eight distinct retired jobs retained complete evidence and original failure history; total36,264,832 logical bytes released from raw redundancy, physical recovery unknown |
+
+[Current remaining-case result](evidence/custody-current-consumer-rest-result.json),
+[coverage](evidence/custody-current-public-form-coverage.json),
+[replay](evidence/custody-current-zerochange-replay-result.json) and
+[delivered result](evidence/delivered-additions-result.json) link actual retained
+receipts, full streams, input identities and independent reviews. Old results
+below retain their exact historical subjects and do not replace these records.
+
+### Effective execution and resources
+
+The exercised worker is BLACKGLASS-WIN1\CodexSandboxOffline under the existing
+Windows Job and pinned25-member read-only supervisor. Source/toolchain reads and
+allocated tmp/output/cache are scoped for that route. The ordinary outer shell,
+editor/filesystem tools, plugins/integrations and other unmanaged sessions remain
+unrestricted. Reads are unqualified. This is partially contained.
+
+Existing D control/retained/scratch pools and the same checkout were reused.
+No new worktree, clone, root folder, storage pool, drive fallback, archive handoff,
+machine-wide ACL/quota or blanket cleanup was created. The256MiB shared ceiling
+is cooperative admission and monitored growth. It is neither a filesystem quota
+nor a whole-machine budget. Windows Job memory/process and pipe bounds enforce
+their respective controls; disk sampling cannot establish a transient hard cap.
+
+Measured remaining7 retained5,826,004 bytes/sampled scratch28,195,124/memory336,080,896;
+replay retained17,609/sampled scratch8,285/memory251,527,168. Case0 retained3,051,862
+and sampled scratch33,528,294 under32MiB by only26,138, a narrow observed margin.
+Delivered qualification retained110,278 bytes, sampled scratch8,845,578 and memory291,008,512; final known conservative pool/export/release total218,796,754 bytes. Distinct resource observations are not summed into an
+invented peak. Eight-job logical custody savings are not whole-campaign net
+growth or a measurement/reclamation of the reported500GB wider disk sprawl.
+
+### Specifications, plans and useful next work
+
+The supplied architecture material was reconciled through19 existing topic
+owners, retaining244 original proposed requirements and244 acceptance designs. Proposed refinements remain
+proposals; bounded C1 truth freshness, one C8 inspection projection and C4 custody
+are qualified increments, not blanket semantic adoption. The amendment manifest
+binds current Git-LF spec bytes; the original attachment's raw SHA remains
+unknown. No reconstructed attachment or invented digest replaces it.
+
+[Architecture report](../AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md),
+[staged roadmap](../../../docs/roadmap/staged-expansion-roadmap.md),
+[spec amendment manifest](../../../specs/control-plane/amendment-manifest.json)
+and the existing ExecPlans retain ownership, dependency and adoption boundaries.
+
+| Next candidate | Small useful deliverable | Acceptance before broader claims |
+|---|---|---|
+| C8 Explainable operations | Persist effective route/scope/client provenance and one exact resume condition through existing status/doctor views | Pure inspection; relevant version/config/tool changes invalidate proof; unchanged blockers never resubmit work |
+| C2 Compatibility codecs | One old/new schema pair preserving safe unfamiliar data while refusing unknown required execution semantics | Round-trip/loss receipts and unchanged exit/effect behavior; no live model required |
+| C3 Portable checkpoints | Resume one existing WorkUnit from objective, owner generation, input/artifact identities, effects and remaining obligations | Interrupt/resume without duplicate effects, hidden session dependence or replacement checkout |
+| C4 Resource explanation | Extend existing metadata-first ownership/reachability and logical-versus-allocated reporting | Unknown/unique work preserved; exact disposal only after its own ownership/effect review |
+| C9 Contributor conformance | One role reference and version-pinned error/cancellation/storage fixtures over existing manifests | Fixture conformance is labelled separately from actual live-host conformance |
+| C11 Recipe invalidation | Bind requested/resolved/observed model/runtime/template/tool dependencies to affected checks | Recheck changed dependencies and preserve unrelated valid source proof |
+
+C5 request lifecycle, C6 model/dataset metadata, C7 scoped lesson correction,
+C10 CLI characterization and C12 whole-outcome usage attribution remain useful
+later increments when their actual consumers and prerequisites are ready.
+Every implementation needs its own bounded WorkUnit, paths, acceptance and review.
+Do not invent another task/status authority, generalized platform, service stack
+or language rewrite. Native/legacy/hosted/fleet/mobile support remains lane-specific
+T0–T5/L0–L4 and separately qualified; no uniform parity follows from shared core.
+FacMan product development remains paused.
+
+### Remaining independent gates
+
+| Gate | Exact remaining condition |
+|---|---|
+| Outer client | Supported active-client setup must constrain the actual model editing/integration routes, then one ordinary edit/check/collect/retire workflow; no unchanged probes or guessed menu instructions |
+| Historical messages | Owner disposition for the exact retained ten records; main/dev agreement does not waive the historical release range |
+| Live model binding | Explicit one bounded signed-in GPT6.1Sol/medium permission; optional proposed text is not approval |
+| Efficiency | Matched accepted outcome and available controller/child/review/retry/repair usage, deduplicated counters and warm/cold conditions; document-size estimates and zero nested calls do not prove reduced total cost |
+| Stable release | Exact current technical/effect ACCEPT, any required runtime promotion, tag/publication and downloaded-asset/supported-consumer verification; candidate1.0.0 is not yet a published stable release |
+| Wider cleanup | Bounded local machine/volume-specific ownership discovery and exact proven-disposable retirement; no whole-drive content ingestion or deletion of unknown work |
+
+An unchanged gate blocks its own effects, not independently authorized deterministic
+work. No release, model or cleanup authority is inferred from an attachment,
+source synchronization, successful worker or a proposed architecture appendix.
+
+### Verification and practical limits
+
+Actual job-run/receipt/raw-tree checks cover the current remaining7 consumers,
+replay and the delivered18+23 suites with explicit fixture support. Complete retained evidence was collected before
+retirement, and independent reviews identify exact subjects. Structural Harness
+validation, task-packet verification, spec provenance, changed links, affected
+capability views, commit policy and whitespace are recorded in closeout evidence.
+Unchanged source suites were reused only for their verified input identities.
+
+Observer preflight/parser corrections and rejected effects are preserved. They
+were corrected without automatically replaying native effects. No proof here
+closes outer editing, real read isolation, hard/global disk quotas, total actual
+host cost, publication/downloaded consumers or the wider500GB report.
+
+## Historical execution-time snapshots
+
+The sections below are retained history. References to then-current sources,
+pending consumers, budgets and proposed effects apply to those dated snapshots,
+not the current checkpoint above.
+
+
 ## Latest accepted delivery checkpoint — 2026-10-05
 
 Case0 against current ZIP55665b2f/TARfce561ca passed once as

@@ -1,0 +1,17 @@
+{
+  "effects_replayed": false,
+  "first_custody_terminal": "completed_once",
+  "native_first_job": "67879a9fbce04871b15ab08996a20769",
+  "native_plan_apply_verify_read_exits": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "observation_sha256": "9ea128097cef09d25636908ede629ffccfc5083f3393b74f985bf9f795b4771a",
+  "original_terminal_sha256": "8d3c76577767cd07a19b5997f1fd3661863a8a675723e4e07f20d96781788fd6",
+  "other2": "not dispatched; remain original exact accepted effect209d and existing source477; freshguards required",
+  "reason": "Controller expected invented readstate READ; public CLI correctly returned ARCHIVED. Wholearchive verified and rawretirement already terminal. Corrected reader verifies actualARCHIVED state/base64slice/originalmemberSHA without any native replay.",
+  "schema": "aide.terminal-evidence-reader-correction.v1",
+  "slice_equal_archive": true
+}

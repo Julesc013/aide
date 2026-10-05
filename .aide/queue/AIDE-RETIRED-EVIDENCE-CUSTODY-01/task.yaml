@@ -3,8 +3,8 @@ id: AIDE-RETIRED-EVIDENCE-CUSTODY-01
 title: Preserve complete retired evidence under finite managed custody
 type: implementation
 status: passed
-planning_state: native_public_cli_and_two_live_custody_qualified_delivery_pending
-result: PASS23_TWO_LIVE_CUSTODY_QUALIFIED
+planning_state: native23_eight_live_lossless_custody_and_delivered_tests_qualified
+result: PASS23_EIGHT_LIVE_CUSTODY_DELIVERED23_FULL_EVIDENCE
 created_at: 2026-10-05
 updated_at: 2026-10-05
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -93,7 +93,7 @@ delivery_custody_subphase:
   excludes: consumer_replay_runtimepromotion_refs_tag_publication_models_newstorage_unknown_deletion
 
 remaining_consumer_capacity_subphase:
-  status: admitted_metadata_only_exact_source_and_effect_review_required
+  status: passed_exact_three_verified_independently_accepted
   admitted_proposal_sha256: c153c8d8064dafe6b750e16103ba111c8da9d68a47c5fc54b312e102ce524f35
   jobs: [67879a9fbce04871b15ab08996a20769, ce62387adceb40ab8bf31268a7964abd, 0898722fd36f4b6c8d59c79554006dbe]
   original_payload_bytes: 14718824
@@ -101,7 +101,13 @@ remaining_consumer_capacity_subphase:
   selected_configuration: .aide.local/capability-payload-build-execution.json
   selected_configuration_sha256: bc8fc18534b40cb951d1a049a94de0996f69343da2dd410ebd2ee23c2c31d4ef
   ceiling_bytes: 268435456
-  actual_savings: unknown_before_apply
-  future_consumer_deficit_bytes: 11459419
-  apply_performed: false
+  actual_savings_logical_bytes: 14098924
+  future_consumer_deficit_bytes: 0
+  apply_performed: true
   exclusions: consumer_replay_runtimepromotion_refs_models_tag_publication_otherjobs_newstorage_unknown_deletion
+
+remaining_custody_actual_result_ref: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-result-v2.json
+remaining_custody_actual_review_ref: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-result-review.json
+all_distinct_live_custody_jobs: 8
+all_distinct_custody_savings_logical_bytes: 36264832
+physical_recovery_or_whole_campaign_net_growth: unknown

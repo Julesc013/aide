@@ -1,19 +1,18 @@
 # AIDE Documentation Index
-## Delivered-module qualification preparation — 2026-10-05
+## Current evidence and planning index — 2026-10-05
 
-The [release ExecPlan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md)
-records the actual accepted consumer/coverage checkpoint and the next bounded
-qualification. Its task-owned delivered_additions.py is executable verification
-scaffolding, not product source or a second runner. Source evidence, delivered
-behavior and outer-client containment remain separate claims. No41-test result
-is implied by preparing this entry.
-
-
-The initial exact review rejected two missing source-test fixture dependencies
-before dispatch. The corrected entry binds ten explicit non-executable fixture
-files without overwriting archive content: all41 unchanged tests run with explicit
-fixture support; both public CLI cases and capability-registration need it. All original code/assertions remain
-unchanged; this is not a bare portable-root18+23 claim. See the ExecPlan correction.
+[Delivery report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) owns current
+archive consumers8/8,38 forms/51 output records, replay and original41 tests with
+explicit fixture support. [Custody report](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md)
+owns eight exact lossless operations and logical-versus-physical limits.
+[Architecture report](.aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md),
+[roadmap](docs/roadmap/staged-expansion-roadmap.md) and
+[amendment manifest](specs/control-plane/amendment-manifest.json) retain19 topic
+owners,34 imported drafts/244 proposed requirements and244 acceptance designs.
+Those proposals are not adopted features or uniform host support. Root planning,
+execution and this documentation index retain their distinct responsibilities;
+task ExecPlans/queue remain canonical for scope/status, derived reports remain
+projections. Historical snapshots are labelled separately from current proof.
 
 ## Current evidence and continuation references — 2026-10-05
 

@@ -1,23 +1,18 @@
 # AIDE Planning Index
 
-## Current delivery next step — 2026-10-05
+## Current plan — 2026-10-05
 
-Current-byte consumer cases8/8 and38-form coverage are independently accepted.
-Complete additional custody3 freed14098924 logical bytes; source synchronization
-477f9113 preserves88 corresponding pairs/85 other tips. The unchanged replay
-completed0, with actual result review pending. Freeze the thin delivered-module
-qualifier, then obtain exact source/native review for original18 C1+23 custody
-checks inside the delivered archive. Existing runner/layout/256MiB budget and
-assertions remain unchanged. Afterwards batch canonical report/plan closeout.
-[Current plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) owns this
-work. Stable publication, outer permissions, historical10/live/matched efficiency
-and wider cleanup remain separate; dated entries below are historical snapshots.
-
-The initial exact review rejected two missing source-test fixture dependencies
-before dispatch. The corrected entry binds ten explicit non-executable fixture
-files without overwriting archive content: all41 unchanged tests run with explicit
-fixture support; both public CLI cases and capability-registration need it. All original code/assertions remain
-unchanged; this is not a bare portable-root18+23 claim. See the ExecPlan correction.
+Local current-archive consumers8/8,38-form coverage, unchanged replay and original
+delivered18+23 tests with explicit fixtures are independently accepted. Eight
+owned custody jobs preserve full evidence and release36264832logical bytes.
+Closeout now reconciles specs/queue/indexes, then exact source-only synchronization
+under existing delegation. [Full report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+and [ExecPlan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) own outcomes.
+Remaining C8 explainability/C2 compatibility/C3 checkpoint are bounded candidates;
+C9/C11 follow dependencies. No blanket adoption or unrelated implementation.
+Outer client, historical10/live/matched efficiency, exact stable publication/
+downloaded consumers and wider cleanup remain separate; FacMan product paused.
+Older dated entries preserve historical execution-time snapshots.
 
 ## 2026-10-05 current custody archive build accepted
 

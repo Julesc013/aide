@@ -1,0 +1,109 @@
+{
+  "canonical_copies": [
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-consumer-rest-result.json",
+      "sha256": "c61d615ea46c5df5f08b83e3069d3b24f1596267e9e321451c3fe495b8d0fe14"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-consumer-rest-result-review.json",
+      "sha256": "a00b090f12c7944e06b4272432d0a8c883db48df30cf8fe855aefc42017b66f6"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-public-form-coverage.json",
+      "sha256": "13e7d4e363e7588dc068dbbabd9ddd5d90f02e04150f085a1fa0fcfcf6b85dd4"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-public-form-coverage-review.json",
+      "sha256": "2093fb4482fe87f3bed5cc2c965e3eedf436cd3a248a6f84b2ce2c464fc40fb3"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-zerochange-replay-result.json",
+      "sha256": "d390847f17fc1a185cefe46ba22a387f5cade240574d1aa7118387488c9d149c"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-zerochange-replay-result-review.json",
+      "sha256": "ef8d9bb6308ee2272ec1e3b551ec5e6314b4b5da28fbe42790d39724473788ef"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-native-effect-v4.json",
+      "sha256": "f194ab25fc32ff7322aad5af13cd4a621ffb359ed486bec7fec10008571a3bc9"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-native-admission.json",
+      "sha256": "62eb9bbd9b00084397405a2ca849bfc802190d0e5beb79d724389d320cb455a0"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-native-observation.json",
+      "sha256": "74826ba81480ddd8bce0f2bb6ff131effb7c9aa87ed2b6a11dd52633837df2be"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-result.json",
+      "sha256": "d26bc95e5044be9a09f9c25bb7c7ae7253dca2699d1645973449b4f31054f74a"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-result-review.json",
+      "sha256": "19971e346657a7b4df16ec5af4a76de050d1e99b04eeb290afe2772e15da2cd2"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-native-rejection.json",
+      "sha256": "d402d23c86a8c28d22f2fe5869c27058b3d3433b8cc0f97cf72c69b14f3f8276"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-native-rejection-v2.json",
+      "sha256": "46f43a528ad96009a27b1f03dff5af4f132106a242112dab1bac693d3e6b5bba"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-native-rejection-v3.json",
+      "sha256": "7ceab0edf9f2cd89bb7ecea3c9ec0980131eb25c02ccdf414dacef28f9b46f87"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-encoding-correction.json",
+      "sha256": "5b19f6de0eeb46958a4fbed5fede38d8a71a6eb59723f28b7088d6f0b9bbe05c"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-reader-correction.json",
+      "sha256": "138d32354806b627ea8d92eb9b63be704b12f2c69bdab9ae6ea319aa2df027de"
+    },
+    {
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-provenance-precheck.json",
+      "sha256": "67387411626a8fe0e04327774ff86142eacf669dc2a6350c3be27ce30b0200e1"
+    },
+    {
+      "path": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-effect-v2.json",
+      "sha256": "209d18424d33978fc4fb7f37f52846f7f565b558e6ea01dc4d32b3071b4cf3de"
+    },
+    {
+      "path": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-result-v2.json",
+      "sha256": "9e5332a1406ba78c89a152cf8fd9ac75f1e28e5be57bb4e038994ca6d0c4b43f"
+    },
+    {
+      "path": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-result-review.json",
+      "sha256": "50c8cfbfd11ae50a68f112283212ef77e6dad54f064393bb861a0efb89185f24"
+    },
+    {
+      "path": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-reader-correction.json",
+      "sha256": "c502f84e2757be0fe78f3480b5f516c062e3bfbfac055c1916de06f32c38fe1a"
+    },
+    {
+      "path": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-preflight-correction.json",
+      "sha256": "223a1955e465ca133c4d8d6bc8132ed47e0cedaf211792aaf4cd739b22dfcd60"
+    },
+    {
+      "path": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-preflight-v2.json",
+      "sha256": "6b1571d82e474294d16a2a974c8b2f723c3b2129564881ff206b101418315ba4"
+    }
+  ],
+  "dependencies": "All original actual results independently accepted; inherited 67/source23 proofs only unchanged operative inputs.",
+  "objective": "Reconcile actual accepted current consumers/coverage/replay/delivered modules and custody with authoritative queue/spec/plan/index views, then exact source-only sync.",
+  "retained_gates": [
+    "outer client/read/hardquota",
+    "historical10",
+    "live model",
+    "matched efficiency",
+    "exact stable runtime/release acceptance tag/publication/download",
+    "wider cleanup",
+    "FacMan product pause"
+  ],
+  "scope": "Existing release and custody records, declared roadmap/architecture checkpoints, root indexes/compact packet/capability projections/generated manifest; no operative code/payload/schema/adoption or runtime change.",
+  "verification": "UTF8/history/spec34draft244requirements244designs/19prefixes; affected links/packet/capability views/Harness/commit/allowlist and exact source/ref review. No unchanged broad source/consumer/native replay."
+}

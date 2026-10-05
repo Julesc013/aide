@@ -1,0 +1,9 @@
+{
+  "blocking_findings": [],
+  "effect_sha256": "4fd62a9253a4f54ff5fff65f053516b1cbdbaf1aa2cafcd047c3782819fa5f42",
+  "notes": "Sevenindices1..7 allPASS/actualofflineidentity/109retainedfiles/digests/completeouterstreams/receipt/retirement/inputspinsassetsconfigs verified. ExpectedPARTIALexit2/REFUSEDexit1 andTaskOSboundariespreserved. Allnotes nonblocking/disposed: separatecase0 accepted; precise38forms39nonjob+12job binding stillrequiresreview; deliveredC1custody+replay pending; sampledresource/read/outer/hardquota/totalcost limitations retained.",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.exact-review-transcription.v1",
+  "subject_sha256": "c61d615ea46c5df5f08b83e3069d3b24f1596267e9e321451c3fe495b8d0fe14",
+  "verdict": "ACCEPT_WITH_NOTES"
+}

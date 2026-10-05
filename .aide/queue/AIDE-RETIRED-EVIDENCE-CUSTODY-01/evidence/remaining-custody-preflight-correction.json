@@ -1,0 +1,13 @@
+{
+  "held_unexecuted_v1_effect_sha256": "e6ca7d627883028c5c097938b2dc9cfccbcce1f91bb40bb43e4aab3ada1c70b5",
+  "independent_finding": "root descriptor copied precustody216192237 retained bytes vs fresh204999790; currenttotal/margin used freshcorrectcount",
+  "native_operations": 0,
+  "no_automatic_replay": true,
+  "rejected_v1_preflight_sha256": "da09740f337d52e44ae810fe2fd96b7d8496892bd7d52175e1d1248ac5816962",
+  "replacement_effect_sha256": "209d18424d33978fc4fb7f37f52846f7f565b558e6ea01dc4d32b3071b4cf3de",
+  "replacement_preflight_sha256": "6b1571d82e474294d16a2a974c8b2f723c3b2129564881ff206b101418315ba4",
+  "same_exact_new_independent_effect_review_required": true,
+  "schema": "aide.remaining-custody-preflight-correction.v1",
+  "source_ref_effect_unchanged": true,
+  "source_unchanged": "477f911300f9d3ea610542701478b9a51934e476"
+}

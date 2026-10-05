@@ -1,0 +1,14 @@
+{
+  "blocking_findings": [
+    "C1 actual CLI source fixture requires nine seed hint files omitted from archive",
+    "Custody actual CLI source fixture requires native-fixture-configuration.json omitted from archive"
+  ],
+  "dispatch_performed": false,
+  "disposition": "Bind explicit non-executable fixture support separately; unchanged archived operative/test bytes and original assertions. No bare-archive18+23 claim.",
+  "effect_sha256": "6c561b1d9dea32f5ff63128cd13102b43edf0f9a9ba18580599599f2c28c819d",
+  "reviewer": "/root/containment_review",
+  "scratch_allocated": false,
+  "source": "7c6d69930a8c55c31cd01dfb9fd88490752479dc",
+  "source_tree": "7830df743e8616c1e8236f46032fdf7698eb0ab0",
+  "verdict": "REQUEST_CHANGES"
+}

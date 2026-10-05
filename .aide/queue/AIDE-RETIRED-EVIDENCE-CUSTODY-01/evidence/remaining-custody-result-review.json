@@ -1,0 +1,9 @@
+{
+  "blocking_findings": [],
+  "effect_sha256": "209d18424d33978fc4fb7f37f52846f7f565b558e6ea01dc4d32b3071b4cf3de",
+  "notes": "12successfulexits/no replay/completearchivescollectionhashes/boundedlookup/rawretirement/all513others/failedexit1/sourceassetsconfig25pins verified. Savings14098924logical physicalunknown; stoppedreadercorrectionoriginalobservationretained; preliminary2639505futuremargin separate nativeeffect review+freshlockedadmission mandatory. Allnonblocking/disposed.",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.exact-review-transcription.v1",
+  "subject_sha256": "9e5332a1406ba78c89a152cf8fd9ac75f1e28e5be57bb4e038994ca6d0c4b43f",
+  "verdict": "ACCEPT_WITH_NOTES"
+}

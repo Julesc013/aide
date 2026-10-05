@@ -1,0 +1,143 @@
+{
+  "acceptance_unchanged": "all8 cases/38forms39outputs12job observations/delivered C1+custody/replay; currentcase0acceptedonly, no sourcebinding/wholecontainment/quota/usage claims",
+  "admission_is_apply_authority": false,
+  "apply_command": [
+    "py",
+    "-3",
+    "-B",
+    ".aide/scripts/aide_lite.py",
+    "job",
+    "custody",
+    "apply",
+    "--config",
+    ".aide.local/capability-payload-build-execution.json",
+    "--job-id",
+    "EXACT_REVIEWED_JOB",
+    "--expect-plan",
+    "EXACT_REVIEWED_DIGEST"
+  ],
+  "authority": "existing C4 lifecycle delegation, new exact scope admission plus later frozen source/effect and actual result review required",
+  "base_source": "771684bcbd1430e692c0b72d9fa087b8fdc6ac79",
+  "cli_sha256": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+  "configuration_file": ".aide.local/capability-payload-build-execution.json",
+  "configuration_sha256": "bc8fc18534b40cb951d1a049a94de0996f69343da2dd410ebd2ee23c2c31d4ef",
+  "current_assets": {
+    ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt": "cc58568d1a5705457d7d30f4658235937f9100ff87851441665c831b0cb4a19d",
+    ".aide/release/stable/aide-lite-v1.0.0.manifest.json": "21f8d087453a4426bbd8f3e6a9351625f0f8c84b6547c75c64189b68443ecb88",
+    ".aide/release/stable/aide-lite-v1.0.0.tar.gz": "fce561ca9b86be55b123d0ab272c68e25e36fba3b691a76e7192db2120573ced",
+    ".aide/release/stable/aide-lite-v1.0.0.zip": "55665b2f6369869209a166db640ffc334f921898505610705b4fee4860e65197"
+  },
+  "current_source67_qualification_sha256": "5a10448a4d2fc5de1d52294abf30a85e38100207f7c6515f9eb29338a707577b",
+  "custody_source_sha256": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
+  "effect_paths": "each exactretainedjob logs/output pluscustody.zip/json/.next, existingOSadmissionlock/controlactive/.next; originalowners/receipts unchanged",
+  "effect_requested": "only exactly3 custody apply once each serial after exact frozen source/effect acceptance; no consumer effect",
+  "excludes": [
+    "otherjobs/unknown deletion/truncation/evidence omission",
+    "consumer/replay/runtimepromotion/refs/tag/publication/model effects",
+    "newstorage/worktree/clone/rootlayout/quota/ACL/account/fallback"
+  ],
+  "first_consumer_result_sha256": "04602684715d6a87a5d2137b760de1f7b8b5636d72214725e0766ab1379ca887",
+  "future_consumer_envelope": "not admitted:40MiB scratch/8MiB complete results/2x256KiBlogs/finite runtime; current deficit11459419bytes, compression/netretirement unknown, fresh capacity decides",
+  "inventory_correction": "paths-only root descriptors; fresh byte observations sole current counters; no source/effect/recovery attempted",
+  "limits": {
+    "aggregate_bytes": 268435456,
+    "entries_perjob": 4096,
+    "headrooms_memory_process_unchanged": true,
+    "metadata_reserve_perjob": 4194304,
+    "original_bytes_perjob": 16777216,
+    "record_bytes": 1048576
+  },
+  "nextconsumer": "only after actual independently accepted savings/fresh capacity and separate exact native effect review; current52953088 reservation deficit11459419 unresolved",
+  "objective": "losslessly retire exactly3 further known complete terminal collections to support unchanged remaining7 consumers with measured finite scratch/results; no budget increase",
+  "observations": "exclusive complete native stdout/stderr/numeric exit durable before parsing; original sole handle; stopuncertainty/noreplay, matching recovery separately reviewed",
+  "operations": [
+    {
+      "anchors": {
+        "owner.json": "eac213fa1a6f9e32cc61da1e9c659cdad63bc8ed3f67983a961017add3f10e84",
+        "receipt.json": "91f076c6270f9bb6bdae7560f85cdc9dc604a6c1aa81f766c9c6adfeb7a463b9"
+      },
+      "archive_limit_bytes": 4983398,
+      "collected_manifest": {
+        "logs": "4b29b1d7e0d84893e9843b5688793032c44991de5635d34cd69898dfd68a21d8",
+        "output": "c845796c3a160f99ae15aa7164ee212c0a2bc8e7d386dd76e3b50d9b35bc0747"
+      },
+      "full_plan_log": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-plan-67879a9fbce04871b15ab08996a20769.stdout.log",
+      "full_plan_sha256": "a5742bab3a5c16839dd097e47507c10a6424678684998591e2f0874499239db1",
+      "job_id": "67879a9fbce04871b15ab08996a20769",
+      "original_bytes": 4909670,
+      "original_exit_code": 0,
+      "plan_digest": "92cb199898c467ad488a1262958cd8300fccf60207646cc6d3b0d792a283b210",
+      "reserved_bytes": 9177702,
+      "root_identity": [
+        3781016413010784355,
+        22236523162272805
+      ]
+    },
+    {
+      "anchors": {
+        "owner.json": "204c0f202ef6baab8bda66ec15218448993089821cf93ea14e0a54d4ce05580d",
+        "receipt.json": "defab0c32093242c6fc9a869283af6feea23812b7adc5fc95d12845f16cf7a1c"
+      },
+      "archive_limit_bytes": 4982173,
+      "collected_manifest": {
+        "logs": "c3d6e71c4816009f5c5792d194364d132862863295ebf1bd164f22aae713548c",
+        "output": "4721b069f6326c547f6558175a79653f27a827caca70fa1265c74804a0d48217"
+      },
+      "full_plan_log": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-plan-ce62387adceb40ab8bf31268a7964abd.stdout.log",
+      "full_plan_sha256": "dae0a4786ad9272239846779b3377d75c7b12e37fee8823e703bf06a6ecb223b",
+      "job_id": "ce62387adceb40ab8bf31268a7964abd",
+      "original_bytes": 4908445,
+      "original_exit_code": 0,
+      "plan_digest": "96ae63d7bdfefebcb31427984bd5a354fd278b1d76e0e7f2d72fe72af15e2485",
+      "reserved_bytes": 9176477,
+      "root_identity": [
+        3781016413010784355,
+        21392098232958478
+      ]
+    },
+    {
+      "anchors": {
+        "owner.json": "63143912b74666de911ef7b9549d4270836e08d6337fa798c5d52f098b5d763f",
+        "receipt.json": "17a710ccaccc29a0585e08765a007f5839dc99b8c9e87eaf59d797ab0112a7ec"
+      },
+      "archive_limit_bytes": 4974437,
+      "collected_manifest": {
+        "logs": "abb79204db8c087fa4d79155e627e7d413be6b2e0004b0c461d321dcdfe5f3b1",
+        "output": "758678dc25b96a9fad82c7d17b5d48a61c5bfe09a1183e073b0b1fcbceb7b67a"
+      },
+      "full_plan_log": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-plan-0898722fd36f4b6c8d59c79554006dbe.stdout.log",
+      "full_plan_sha256": "f74a64733ee7dbb0b5160a3d8d44bfd4cc392fe37ea8e138f6e8a24932a8810a",
+      "job_id": "0898722fd36f4b6c8d59c79554006dbe",
+      "original_bytes": 4900709,
+      "original_exit_code": 1,
+      "plan_digest": "931972d974ca0d587a1cafbff8ca70e409b22cdbc09b5a14e35cfc706881a138",
+      "reserved_bytes": 9168741,
+      "root_identity": [
+        3781016413010784355,
+        8162774327557595
+      ]
+    }
+  ],
+  "original_configuration_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "original_implementation": "23native and earlier2live remain passed; completed3later custody/case0 evidence separately accepted; third new sourceexit1 preserved",
+  "post_commands": "existing job custody verify and bounded read2048 with exact originalmemberSHA; full archive/map/collected digests verify without extraction, rawretired/anchors/failure/pending/other513 unchanged; true net logical savings",
+  "preflight_log": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-preflight-v2.log",
+  "preflight_sha256": "6b1571d82e474294d16a2a974c8b2f723c3b2129564881ff206b101418315ba4",
+  "preserved_244_requirements_and19_draft_owner_topics": true,
+  "proposal_sha256": "c153c8d8064dafe6b750e16103ba111c8da9d68a47c5fc54b312e102ce524f35",
+  "requirements": "serialexacteffect once each, fresh plan/source/config/pins/assets/anchors+conservativeallknownpools/release/readonlyexport/fullstaging+headroom checks; fullarchiveverify before raw retirement; preserveeveryfile/dir/hash/failure; boundedlookup and recoveryonly separately matchingreviewedintent; complete raw streams/native exits durablebeforeparsing; stopuncertainty/noreplay",
+  "route": "existing administrative public CLI under Jules/unrestricted outer; same immutable25pin owner; no model/nativeworker launch",
+  "runtime": "same25 immutable clean-export pins; original24 and helda241 configuration unchanged",
+  "schema": "aide.remaining-delivery-custody-effect.v1",
+  "scope_admission_sha256": "01657d55a563e3652a4af928d4eb76ac7384123faec0de9138537b95131dffb9",
+  "scope_patch_only": [
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/task.yaml",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/status.yaml",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/**"
+  ],
+  "source_commit": "477f911300f9d3ea610542701478b9a51934e476",
+  "source_tree": "54e3c9fc403854629e196c4ca41d97f1a0e852e5",
+  "supersedes_held_unexecuted_effect_sha256": "e6ca7d627883028c5c097938b2dc9cfccbcce1f91bb40bb43e4aab3ada1c70b5"
+}

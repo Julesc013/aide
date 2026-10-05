@@ -2,43 +2,31 @@
 
 ## Current operating evidence — 2026-10-05
 
-Source-only sync bfb1a21b and current local ZIP55665b2f/TARfce561ca have separate
-accepted receipts. Three further lossless custody operations saved14244309
-logical bytes and preserved failure history; current case0 passed once with
-complete collection/retirement as CodexSandboxOffline. Only1of8 cases is current
-consumer-qualified. Narrow sampled scratch margin requires separately bounded
-remaining7 capacity; no whole-session containment, hard/global quota, model/
-cost or stable/publication claim. The [current full report](../AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
-owns exact evidence and next gates. New closing metadata remains task-local.
+Current ZIP55665b2f/TARfce561ca deliver qualified C1 and custody modules. All8
+original consumer cases,38-form/51-record coverage and unchanged-build replay
+now have actual accepted local evidence. Original18 capability+23 custody tests
+passed against delivered modules using ten explicit fixture-data files; three
+known tests need nonbundled support, so no bare-archive count/CURRENT claim.
+Eight distinct lossless custody operations preserve complete evidence/failure
+history and release36264832logical bytes; physical/global cleanup unknown.
+[Current full report](../AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) owns exact
+receipts, identities, metrics and next independent gates. Source-only integration
+is separate from stable certification. Outer shell/editor/plugins unrestricted,
+reads unqualified,256MiB cooperative monitored admission is not a hard quota.
 
-The original2026-10-04 reconciliation/table below is a historical snapshot.
-Its raw-attachment identity limitation remains explicit. Preserve19 proposed
-owner refinements/244 originalUR/UC; bounded C1/C8/C4 work does not adopt all
-candidates or semantic drafts. FacMan product remains paused.
+The19 amended topic prefixes remain byte-text preserved against original Git,
+and all34 imported drafts retain244 proposed requirements plus244 acceptance
+designs, unique and unadopted. Import receipt/current amendment hashes verify;
+raw attachment SHA remains unknown. Useful next candidates are C8 explainability,
+C2 compatibility and C3 portable checkpoints, followed by C9 conformance/C11
+recipe invalidation and other candidate-specific prerequisites. This does not
+adopt all12 increments or19 architecture refinements. FacMan product paused.
 
-## Later checkpoint — 2026-10-05
+## Historical reconciliation snapshot
 
-The original reconciliation below is retained as its dated source/evidence
-snapshot. Later work qualified bounded C1 evidence dependencies, a C8 inspection
-view and finite C4 custody; this does not adopt all12 candidates or the19 draft
-architecture refinements. C4 passed23 native/public-CLI regressions and two live
-custody operations, preserving all receipts/evidence and saving7,921,599 logical
-bytes. Current affected source at eea174be passed67 fresh checks and full
-validation; collection/retirement are independently accepted. A separately accepted pure export at cf234547 resolved provenance;849 checksums,
-complete collection/retirement and clean-source identity verify.
-The separately accepted f3312a04 build now delivers custody in ZIP55665b2f and
-TARfce561ca,852 equal file members/849 archive checksums, complete collection and
-retirement. Source integration follows its separate exact ref-effect record. Current
-consumers/replay and stable certification remain unfinished.
-
-[Current delivery report](../AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md),
-[custody report](../AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md) and the
-[staged roadmap](../../../docs/roadmap/staged-expansion-roadmap.md) carry current
-facts and next bounded candidates. Outer-client setup, historical dispositions,
-live/matched efficiency, publication/download and wider cleanup remain separate;
-FacMan product work remains paused. Preserve the original244 UR/UC and proposed
-versus adopted semantics described below.
-
+The original2026-10-04 material below preserves its historical evidence/table
+and proposed/adopted distinctions. Then-current source, assets, Goal state and
+pending gates apply to that dated snapshot, not the current checkpoint above.
 
 Date: 2026-10-04, Australia/Sydney. Source baseline:
 `3d186d0584bb40f18402a626c9fe099260fae3d4`.

@@ -1,0 +1,264 @@
+{
+  "assets_runtime25_original_config_unchanged": true,
+  "broken_links": [],
+  "capability_evidence_validity": {
+    "changed_refs": [],
+    "qualification": "source_classification_only",
+    "reason": "bound_source_inputs_unchanged",
+    "state": "CURRENT"
+  },
+  "changed_paths": [
+    ".aide/context/latest-task-packet.md",
+    ".aide/generated/manifest.yaml",
+    ".aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-effect-v2.json",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-preflight-correction.json",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-preflight-v2.json",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-reader-correction.json",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-result-review.json",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/remaining-custody-result-v2.json",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/status.yaml",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/task.yaml",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-provenance-precheck.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-qualification-closeout-plan.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-consumer-rest-result-review.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-consumer-rest-result.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-public-form-coverage-review.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-public-form-coverage.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-zerochange-replay-result-review.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-zerochange-replay-result.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-encoding-correction.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-native-admission.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-native-effect-v4.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-native-observation.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-native-rejection-v2.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-native-rejection-v3.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-native-rejection.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-reader-correction.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-result-review.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/delivered-additions-result.json",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/status.yaml",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml",
+    ".aide/queue/index.yaml",
+    ".aide/reports/capability-command-status.md",
+    ".aide/reports/capability-evidence-bindings.json",
+    ".aide/reports/capability-ledger.md",
+    ".aide/reports/capability-observations.md",
+    ".aide/reports/capability-overclaims.md",
+    ".aide/reports/capability-validation.md",
+    "DOCUMENTATION.md",
+    "IMPLEMENT.md",
+    "PLANS.md",
+    "docs/roadmap/staged-expansion-roadmap.md"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        "scripts/aide",
+        "compile",
+        "--write"
+      ],
+      "exit_code": 0,
+      "stderr": {
+        "bytes": 0,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-check-0.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 2590,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-check-0.stdout.log",
+        "sha256": "e276af5a8a88cbc1885686655747ad983e142e868f5869533f3c5c29c48c9d38"
+      }
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "scan"
+      ],
+      "exit_code": 0,
+      "stderr": {
+        "bytes": 0,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-check-1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 307,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-check-1.stdout.log",
+        "sha256": "c9cc8c069a5fe3831d6321e0ae1ae8fb36d5307db6d367bdbc4f9acc72a12784"
+      }
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "ledger"
+      ],
+      "exit_code": 0,
+      "stderr": {
+        "bytes": 0,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-check-2.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 423,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-check-2.stdout.log",
+        "sha256": "8848b6ef789fa38921045a3311e9fbacecdbc86cfa808e0b8e838242f5b87059"
+      }
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "overclaim-report"
+      ],
+      "exit_code": 0,
+      "stderr": {
+        "bytes": 0,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-check-3.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 356,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-check-3.stdout.log",
+        "sha256": "0462a0044de9d2163b7dd63b68d71ed9e539118bbd984356826b17cf5320b424"
+      }
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "validate"
+      ],
+      "exit_code": 0,
+      "stderr": {
+        "bytes": 0,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-check-4.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 25364,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-check-4.stdout.log",
+        "sha256": "9a5358e7d433fe89cc2c16b2cf491e7ee47aaf33463bcc413aeac02840ef3a52"
+      }
+    },
+    {
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        "scripts/aide",
+        "validate"
+      ],
+      "exit_code": 0,
+      "stderr": {
+        "bytes": 0,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-check-5.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 15604,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-check-5.stdout.log",
+        "sha256": "42e66752eeebcc37a004ca86d9de1cbcb79ea1b9b262e3aef754a9fa35c3be70"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr": {
+        "bytes": 0,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-check-6.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 0,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-closeout-check-6.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "current_complete_binding_count": 41,
+  "estimate_measurement": "characters divided by4, not tokenizer/host usage",
+  "native_or_source_suite_replay": false,
+  "nonblocking_overclaim_review": [
+    {
+      "blocking": false,
+      "capability_id": "capability_reality_ledger",
+      "evidence_refs": [
+        ".aide/capabilities/capability-seeds.yaml",
+        ".aide/ledgers/capability-ledger.schema.json",
+        ".aide/scripts/aide_lite.py",
+        "docs/reference/capability-reality-ledger.md"
+      ],
+      "notes": "report-only capability mentions apply boundary; review claim wording",
+      "overclaim_class": "report_only_claimed_as_apply",
+      "overclaim_id": "OVERCLAIM-001",
+      "severity": "medium"
+    }
+  ],
+  "outer_session_contained": false,
+  "packet_utf8_bytes": 5133,
+  "relative_links_checked": 131,
+  "schema": "aide.current-qualification-closeout-validation.v1",
+  "scope_all_paths_allowed": true,
+  "source67_ten_operative_inputs_unchanged": true,
+  "spec_provenance": {
+    "acceptance_designs": 244,
+    "drafts": 34,
+    "proposed_requirements": 244,
+    "raw_attachment_hash_known": false,
+    "topic_prefixes": 19
+  },
+  "stable_published": false,
+  "status": "PASS",
+  "task_packet_findings": [
+    {
+      "message": "required sections present",
+      "severity": "INFO"
+    },
+    {
+      "message": "task packet tokens: 1284",
+      "severity": "INFO"
+    },
+    {
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "severity": "INFO"
+    },
+    {
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "severity": "INFO"
+    },
+    {
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "severity": "INFO"
+    },
+    {
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "severity": "INFO"
+    }
+  ],
+  "writer_prelaunch_correction": "Overlong shell command rejected before process creation; exact owned ignored writer ran once through short command, no partial first writes."
+}

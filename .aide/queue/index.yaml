@@ -3822,8 +3822,8 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/evidence
   - id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
     status: needs_review
-    planning_state: current_case0_accepted_remaining7_capacity_and_exact_effect_pending
-    result: PASS67_CLEAN_EXPORT849_BUILD852_CASE0_CURRENT7_PENDING
+    planning_state: current8_coverage38_delivered41_replay_accepted_stable_external_gates_pending
+    result: PASS67_EXPORT849_ARCHIVE852_CASES8_FORMS38_DELIVERED41_REPLAY_STABLE_PENDING
     title: Freeze and qualify a publishable AIDE Lite release effect
     task: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml
     exec_plan: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md
@@ -3887,8 +3887,8 @@ items:
 
   - id: AIDE-RETIRED-EVIDENCE-CUSTODY-01
     status: passed
-    planning_state: native_public_cli_and_two_live_custody_qualified_delivery_pending
-    result: PASS23_TWO_LIVE_CUSTODY_QUALIFIED
+    planning_state: native23_eight_live_lossless_custody_and_delivered_tests_qualified
+    result: PASS23_EIGHT_LIVE_CUSTODY_DELIVERED23_FULL_EVIDENCE
     title: Preserve complete retired evidence under finite managed custody
     task: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/task.yaml
     exec_plan: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md

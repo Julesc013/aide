@@ -1,0 +1,317 @@
+{
+  "all54_inputs25_pins_and_assets_unchanged": true,
+  "capability_ten_real_cli_oracles_passed": true,
+  "complete_collected_files": [
+    {
+      "bytes": 11182,
+      "path": "output/capability-cli-proof.json",
+      "sha256": "417c248a21ae5f77bb7f3b3e07cdfecb10ec2dafdd7e93ba051fde7218ffe4ce"
+    },
+    {
+      "bytes": 4405,
+      "path": "output/delivered-additions.json",
+      "sha256": "1cc74771547b238a59ce1d9f4a73bc97ab4317a6430a12b1593ca1dfb31e5692"
+    },
+    {
+      "bytes": 1589,
+      "path": "output/effective-scope.json",
+      "sha256": "80aacd235550a40329f58b85d2a4d182f93520f899567b240fe96f0c6e3bb10f"
+    },
+    {
+      "bytes": 3213,
+      "path": "output/test_retired_evidence.py.stderr",
+      "sha256": "443d1ecd1a45e514abd9f621172f97b4274d869e4491229e18069e6a5e1b66a3"
+    },
+    {
+      "bytes": 0,
+      "path": "output/test_retired_evidence.py.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 122,
+      "path": "output/test_x_os_02_capability_reality.py.stderr",
+      "sha256": "d9ef10d0fb4bddf8fb6bdb2dbcb9b8cd9a99ee07ecf904f384c257c27cfe8d49"
+    },
+    {
+      "bytes": 78794,
+      "path": "output/test_x_os_02_capability_reality.py.stdout",
+      "sha256": "d2dfd8a0b7ab5f7cd6d1dccc5cad9f3f33b0a21ad44035162de91eae05930fd0"
+    },
+    {
+      "bytes": 0,
+      "path": "logs/stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "logs/stdin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 68,
+      "path": "logs/stdout",
+      "sha256": "4a58b58818f04f22ac1c782398c09c8fba800dbf77070a66f8f9d55682838776"
+    }
+  ],
+  "effect_sha256": "f194ab25fc32ff7322aad5af13cd4a621ffb359ed486bec7fec10008571a3bc9",
+  "exclusions": [
+    "runtime promotion",
+    "refs tag publication",
+    "live model",
+    "matched whole efficiency",
+    "outer/read/hardquota",
+    "wider cleanup"
+  ],
+  "job_id": "c258ff6fadea4c36a4da4a1cc618aac0",
+  "known_conservative_bytes": 218796754,
+  "known_pools": {
+    "canonical_release": 3982649,
+    "control": 13694135,
+    "readonly_export": 4265213,
+    "retained": 196854757,
+    "scratch": 0
+  },
+  "native_record": {
+    "after": {
+      "commit_free": 8866988032,
+      "disk_free": {
+        "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 70070894592
+      },
+      "physical_free": 10709852160
+    },
+    "before": {
+      "commit_free": 8669536256,
+      "disk_free": {
+        "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 70072598528
+      },
+      "physical_free": 10503888896
+    },
+    "canonical_after": {},
+    "canonical_before": {},
+    "collected_manifest": {
+      "logs": "cac8d0db05d07f7aa2ae7d36810f5f8303d762f194ffacbf647e246009cc0b93",
+      "output": "1d3a004236c07f73fae45f714d67c775b13aa49cca911d19984e452f8d180436"
+    },
+    "config_digest": "035137faee676378bf1e5325deb19d837394609765802f5c03079dcb5c6910ec",
+    "created_at_unix_ns": 1791177077566257600,
+    "environment_digest": "f8bcf64e5d87279719f87ff62b65f7389c5d669bee59e2b14dc46588eab7de53",
+    "job": {
+      "adapter": "python",
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/delivered_additions.py",
+        "--zip-sha256",
+        "55665b2f6369869209a166db640ffc334f921898505610705b4fee4860e65197",
+        "--tar-sha256",
+        "fce561ca9b86be55b123d0ab272c68e25e36fba3b691a76e7192db2120573ced"
+      ],
+      "canonical_outputs": {},
+      "cwd": "D:\\Projects\\AIDE\\aide",
+      "executable_sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9",
+      "inputs": {
+        ".aide/capabilities/capability-evidence-bindings.schema.json": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
+        ".aide/capabilities/capability-seeds.yaml": "46817a46802870980297f9923f6e1d31fd6a9c418ced7ced10283d2e2565fd5f",
+        ".aide/context/latest-task-packet.md": "e2cbd009aa779a49ab3be4b1e433408ff6d4933047db92d566b980b3c10742b8",
+        ".aide/export/aide-lite-pack-v0/README.md": "cfe3001e84b68f7b78b249e107edf0843d2310cadfe5a3717b17ce1252d61475",
+        ".aide/export/aide-lite-pack-v0/checksums.json": "69841f10a6f5e9113983cd945df86c325275472870544728cff4bad0b4fcd513",
+        ".aide/export/aide-lite-pack-v0/export-report.md": "28f8fef921207d1fe41ea2bb18b86e0a2cd1669009bdc5ce22af4a175cc84a24",
+        ".aide/export/aide-lite-pack-v0/import-policy.yaml": "d1ec0ff25cd147736853e03181536480463fc58fc8db1fd39306278d89d89e13",
+        ".aide/export/aide-lite-pack-v0/install.md": "3bce5e90257d5d5c3b25ae00d6a8e47b693c8b944bbcf1340b49c5646170ea2f",
+        ".aide/export/aide-lite-pack-v0/manifest.yaml": "332633c6dfc250b1b870dc483fc4cca954e91b94b2fdbed004a10fc9cc77a671",
+        ".aide/memory/project-state.md": "8ec39c10322bddb01cb51d85adaac141350010d7df44a8f20e068ac8c6b80f80",
+        ".aide/policies/capability-reality.yaml": "7fd503b9a3560ee32e5b56cb3fb7a0cddc865f46a42780ceceaa636e18645e18",
+        ".aide/policies/release-versioning.yaml": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253",
+        ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/consumer_canary_base.py": "c8ef2dab903793e2f9ae11c5d8ce6ecebad0c0733b142e8ce85360affac11cba",
+        ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/worker.py": "ece020b49246ac1ccda4acf54172fd037f11583c36f48e8589f4292412336838",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md": "a5f5487915a2b8ce6a452283d44fe15c808c1e83f7f4921ae248a5d4b613690a",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/capability_payload_refresh.py": "cdccd6d9cb4ddecaa1bdcc5627b7ddb28b57719de70d6b497cba0857237b3558",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/delivered_additions.py": "d1456213cfae9828ad705a5503ddc5e0a7d65e834ab336b5b88d3965729700c1",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/delivered_fixture_support.json": "eadb832b8ec023856031dda79709d0eaa478f8eb846f6de786d716c8e8120465",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-clean-export-result-review.json": "ebe86ea0ab077e8bbc4fb71f55da101dc8dcdf7673eddfc74a2c37ceefd7d1e3",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-clean-export-result.json": "57d33672e85fd8017c76955b9ac3a1bc2f05679fc5657849e73e157493ea50e5",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-build-configuration.json": "bc8fc18534b40cb951d1a049a94de0996f69343da2dd410ebd2ee23c2c31d4ef",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-build-result-review.json": "48148d0352eb3a1abf08592efe81d7e7265b7da29dd2644e339f3e84848d974c",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-build-result.json": "5f50ffd82163e0d2d27fa477ccf12114936a3b2555d929eede392caaf8203788",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-consumer-first-result-review.json": "6f8d00b0caa1809ecc9410eabadebf88aaefd44f3869a5def4d26d7007e70c8c",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-consumer-first-result.json": "04602684715d6a87a5d2137b760de1f7b8b5636d72214725e0766ab1379ca887",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-consumer-rest-result.log": "c61d615ea46c5df5f08b83e3069d3b24f1596267e9e321451c3fe495b8d0fe14",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-public-form-coverage.log": "13e7d4e363e7588dc068dbbabd9ddd5d90f02e04150f085a1fa0fcfcf6b85dd4",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-payload-native-source-result.json": "2b55475fb3fd0ad278f22db8a91ed3855e5fc94c2393e5ccc1cbc0ada2f0dfad",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-payload-source-qualification.json": "5a10448a4d2fc5de1d52294abf30a85e38100207f7c6515f9eb29338a707577b",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-post-source-independent-review.json": "a30359c9ad631e8abea3dc66d4d720ac30ce6d622eb701d5fd123fd36d02b8ae",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/source-qualification.json": "5a10448a4d2fc5de1d52294abf30a85e38100207f7c6515f9eb29338a707577b",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/status.yaml": "7702bceaa32a6d38e7e207165d59c3f883fff9ed186132e324e6e9d33e0e5bef",
+        ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml": "83afdccadc1ca10bc59ddfa4834338c9af392b324bdfc019c9d58e10e33b2314",
+        ".aide/queue/X-OS-02-capability-reality-ledger-v0/task.yaml": "b656828983267b477b69733a0b481c0e2cabe1934228676b0a4ec7fcf8ea7fc5",
+        ".aide/release/latest-github-release-draft.json": "890ad7031c22b029aca1b48e36c434da5810315d8a8e53cea44e252fc4bc04ec",
+        ".aide/release/stable/aide-lite-v1.0.0.tar.gz": "fce561ca9b86be55b123d0ab272c68e25e36fba3b691a76e7192db2120573ced",
+        ".aide/release/stable/aide-lite-v1.0.0.zip": "55665b2f6369869209a166db640ffc334f921898505610705b4fee4860e65197",
+        ".aide/reports/capability-evidence-bindings.json": "d8abbdd8895929df7298b524bf5cee52d5c7753c7bcff16f36b35548632b0afe",
+        ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+        ".aide/reports/target-work-deferral.md": "0c4d5e75e9d7f8bf73a979f995e5f8c30d889864e1fabdc5f2fcd2b355c40f48",
+        ".aide/reports/task-os-command-status.md": "df946d2b93198db2b64fd4dcb17329fa1247c89fddc16eb114dd92701a5241dd",
+        ".aide/scripts/aide_lite.py": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+        ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+        ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+        ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+        ".aide/scripts/tests/test_retired_evidence.py": "37834a2c858b0cbdbc00a3c34b4b1be7642203d86c509bd1674f7030075c57be",
+        ".aide/scripts/tests/test_stable_release_admission.py": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+        ".aide/scripts/tests/test_x_os_02_capability_reality.py": "4509355fc87b618c013ac1406e24e5a2181f5ac4c658f89fc0b8eae6a20393ef",
+        "AGENTS.md": "c9fe0422ea2f0694b4e8eed3583e5a0d66d3fc65d222c4b6ba38b006510bc827",
+        "core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
+        "core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+        "docs/reference/README.md": "f5ffaf1aec6eb9ee45d258b98b4e36842c8dc51edce099d04e8e7018df3aee3f",
+        "docs/reference/capability-reality-ledger.md": "1533b4122dc1666e92058643cc167070a3defab64a57c078fde4574082b7c51e",
+        "docs/reference/source-of-truth.md": "8977a7ebb80ee30e6e42ec66866b0ba5aa545188f670ae4cbf3472bed94a163a"
+      },
+      "owner": "custody-current-delivered-additions-01",
+      "schema": "aide.maintainer-job.v1",
+      "source_commit": "b1e308efa9733b1807dc2986b01234ef9418b00b",
+      "source_tree": "7e6e0efad1d98031f5daf0dadb801091a4b7f547",
+      "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01"
+    },
+    "job_id": "c258ff6fadea4c36a4da4a1cc618aac0",
+    "last_capacity": {
+      "commit_free": 8804646912,
+      "disk_free": {
+        "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 70063095808
+      },
+      "physical_free": 10646310912
+    },
+    "limits": {
+      "canonical_bytes": 536870912,
+      "commit_reserve_bytes": 4294967296,
+      "disk_reserve_bytes": 10737418240,
+      "log_bytes": 262144,
+      "max_files": 100000,
+      "memory_bytes": 2147483648,
+      "physical_reserve_bytes": 4294967296,
+      "processes": 32,
+      "retained_bytes": 1048576,
+      "runtime_seconds": 600,
+      "scratch_bytes": 16777216
+    },
+    "manifest_digest": "9ed5aa98879bf7082691f1cd956b4c7c43ef58e9aaf2d99e7e48fd341012db70",
+    "peaks": {
+      "canonical_bytes": {},
+      "memory_bytes": 291008512,
+      "scratch_bytes": 8845578
+    },
+    "phase": "retired",
+    "process": {
+      "creation_filetime": 134356506779645935,
+      "job_id": "c258ff6fadea4c36a4da4a1cc618aac0",
+      "peak_memory_bytes": 291008512,
+      "pid": 14500,
+      "stage": "quiescent"
+    },
+    "reservation_released": true,
+    "reservations": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 21495808
+    },
+    "result": {
+      "bytes": 68,
+      "creation_filetime": 134356506779645935,
+      "exit_code": 0,
+      "io_errors": [],
+      "job_id": "c258ff6fadea4c36a4da4a1cc618aac0",
+      "pid": 14500,
+      "quiescent": true,
+      "reason": "exited"
+    },
+    "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\c258ff6fadea4c36a4da4a1cc618aac0",
+    "scratch": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\c258ff6fadea4c36a4da4a1cc618aac0",
+    "scratch_absent": true,
+    "scratch_identity": [
+      3781016413010784355,
+      5629499537189707
+    ],
+    "scratch_readonly_cleared": 0
+  },
+  "observation_sha256": "74826ba81480ddd8bce0f2bb6ff131effb7c9aa87ed2b6a11dd52633837df2be",
+  "proof": {
+    "all_original_archive_files_unchanged": true,
+    "archives": {
+      "tar": "fce561ca9b86be55b123d0ab272c68e25e36fba3b691a76e7192db2120573ced",
+      "zip": "55665b2f6369869209a166db640ffc334f921898505610705b4fee4860e65197"
+    },
+    "delivered_fixture_retired": true,
+    "delivered_inputs": {
+      ".aide/capabilities/capability-evidence-bindings.schema.json": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
+      ".aide/capabilities/capability-seeds.yaml": "46817a46802870980297f9923f6e1d31fd6a9c418ced7ced10283d2e2565fd5f",
+      ".aide/policies/capability-reality.yaml": "7fd503b9a3560ee32e5b56cb3fb7a0cddc865f46a42780ceceaa636e18645e18",
+      ".aide/scripts/aide_lite.py": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+      "core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488"
+    },
+    "explicit_fixture_overlays": {
+      ".aide/context/latest-task-packet.md": "e2cbd009aa779a49ab3be4b1e433408ff6d4933047db92d566b980b3c10742b8",
+      ".aide/memory/project-state.md": "8ec39c10322bddb01cb51d85adaac141350010d7df44a8f20e068ac8c6b80f80",
+      ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/native-fixture-configuration.json": "be7d7aeb9ead95518c9130f96e0192d669fa97ea028d37956d28c00c481997b3",
+      ".aide/queue/X-OS-02-capability-reality-ledger-v0/task.yaml": "b656828983267b477b69733a0b481c0e2cabe1934228676b0a4ec7fcf8ea7fc5",
+      ".aide/release/latest-github-release-draft.json": "890ad7031c22b029aca1b48e36c434da5810315d8a8e53cea44e252fc4bc04ec",
+      ".aide/reports/target-work-deferral.md": "0c4d5e75e9d7f8bf73a979f995e5f8c30d889864e1fabdc5f2fcd2b355c40f48",
+      ".aide/reports/task-os-command-status.md": "df946d2b93198db2b64fd4dcb17329fa1247c89fddc16eb114dd92701a5241dd",
+      "AGENTS.md": "c9fe0422ea2f0694b4e8eed3583e5a0d66d3fc65d222c4b6ba38b006510bc827",
+      "docs/reference/README.md": "f5ffaf1aec6eb9ee45d258b98b4e36842c8dc51edce099d04e8e7018df3aee3f",
+      "docs/reference/source-of-truth.md": "8977a7ebb80ee30e6e42ec66866b0ba5aa545188f670ae4cbf3472bed94a163a"
+    },
+    "fixture_support_sha256": "eadb832b8ec023856031dda79709d0eaa478f8eb846f6de786d716c8e8120465",
+    "full_archive_file_count": 852,
+    "full_archive_maps_equal": true,
+    "nested_model_calls": 0,
+    "outer_session_contained": false,
+    "qualification_limit": "All41 original tests exercise unchanged delivered modules with ten explicit fixture-data overlays. Two public CLI cases and capability-registration need nonbundled support. No bare-archive test-count, shipped-support or unaugmented portable-root CURRENT claim.",
+    "read_isolation": "unqualified",
+    "schema": "aide.delivered-additions-qualification.v1",
+    "status": "PASS",
+    "suites": [
+      {
+        "argv": [
+          "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+          "-I",
+          "-B",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\c258ff6fadea4c36a4da4a1cc618aac0\\tmp\\case-delivered-additions\\zip\\aide-lite-pack-v0\\files\\.aide\\scripts\\tests\\test_x_os_02_capability_reality.py"
+        ],
+        "count_verified": true,
+        "delivered_test_sha256": "4509355fc87b618c013ac1406e24e5a2181f5ac4c658f89fc0b8eae6a20393ef",
+        "exit_code": 0,
+        "skip_marker_absent": true,
+        "stderr_sha256": "d9ef10d0fb4bddf8fb6bdb2dbcb9b8cd9a99ee07ecf904f384c257c27cfe8d49",
+        "stdout_sha256": "d2dfd8a0b7ab5f7cd6d1dccc5cad9f3f33b0a21ad44035162de91eae05930fd0",
+        "test": "test_x_os_02_capability_reality.py",
+        "tests_expected": 18
+      },
+      {
+        "argv": [
+          "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+          "-I",
+          "-B",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\c258ff6fadea4c36a4da4a1cc618aac0\\tmp\\case-delivered-additions\\zip\\aide-lite-pack-v0\\files\\.aide\\scripts\\tests\\test_retired_evidence.py"
+        ],
+        "count_verified": true,
+        "delivered_test_sha256": "37834a2c858b0cbdbc00a3c34b4b1be7642203d86c509bd1674f7030075c57be",
+        "exit_code": 0,
+        "skip_marker_absent": true,
+        "stderr_sha256": "443d1ecd1a45e514abd9f621172f97b4274d869e4491229e18069e6a5e1b66a3",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "test": "test_retired_evidence.py",
+        "tests_expected": 23
+      }
+    ],
+    "tests_qualified": 41,
+    "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline"
+  },
+  "reader_correction": {
+    "fault": "Readonly observer expected LF-only unittest OK footer while original Windows raw stderr contains CRLF",
+    "method": "Allow CRLF or LF in documented OK marker, retain original complete raw bytes and hashes",
+    "native_replay": false,
+    "original_numeric_parent_and_worker_exit": 0
+  },
+  "retained_root_bytes": 110278,
+  "schema": "aide.current-delivered-additions-result.v1",
+  "scope": "Original41 tests of delivered modules with ten explicit fixture-data files; three known support-dependent cases; no unaugmented archive CURRENT or case-count claim.",
+  "scratch_retired_reservation_released": true,
+  "source_commit": "b1e308efa9733b1807dc2986b01234ef9418b00b",
+  "source_tree": "7e6e0efad1d98031f5daf0dadb801091a4b7f547",
+  "status": "PASS"
+}

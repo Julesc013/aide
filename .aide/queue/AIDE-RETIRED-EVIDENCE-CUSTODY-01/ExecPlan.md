@@ -320,3 +320,18 @@ must separately bind and review its exact native effect with fresh capacity.
 All8/38forms/39outputs/12job observations, deliveredC1/custody and replay remain
 required. No other jobs, unique-byte loss, new storage, refs, model, runtime
 promotion, consumer or publication effects from this C4 subphase.
+
+## Current custody outcome — 2026-10-05
+
+All8 distinct exact owned live custody operations are now losslessly verified
+and independently accepted. Original2 saved7921599logical bytes, delivery3
+saved14244309, remaining3 saved14098924: total36264832logical bytes. Every original
+file/empty directory/receipt/owner and failure history remains; bounded lookup
+and raw redundancy retirement verified. Physical recovery/global500GB cleanup
+and whole-campaign net growth are unknown. Remaining consumer phase actually
+completed all7 cases after fresh locked admission; no budget widening/fallback.
+Delivered23 original custody checks also passed against unchanged archived
+modules with explicit fixture-only supervisor data, alongside18 C1 checks.
+See [current release report](../AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and
+remaining-custody-result-v2.json/review in this evidence directory. Historical
+sections below retain their original subjects and limits.

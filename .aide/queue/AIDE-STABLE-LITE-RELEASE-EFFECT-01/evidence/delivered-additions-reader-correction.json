@@ -1,0 +1,6 @@
+{
+  "fault": "Readonly observer expected LF-only unittest OK footer while original Windows raw stderr contains CRLF",
+  "method": "Allow CRLF or LF in documented OK marker, retain original complete raw bytes and hashes",
+  "native_replay": false,
+  "original_numeric_parent_and_worker_exit": 0
+}

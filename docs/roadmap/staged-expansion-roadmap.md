@@ -75,33 +75,28 @@ before broader operational claims.
 
 ## Current qualified checkpoint — 2026-10-05
 
-C1's bounded dependency-bound capability evidence source and one C8 inspection
-projection have accepted integration records. C4 now qualifies finite lossless
-retired-evidence custody:23 restricted native/public-CLI regressions and two
-separately reviewed live operations, preserving receipts and saving7,921,599
-managed logical bytes. This is a bounded part of C4, not a whole estate cleanup
-or hard filesystem quota. See the [custody report](../../.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md).
+Bounded C1 dependency-bound truth, one C8 inspection view and C4 finite lossless
+custody have accepted implementation/integration evidence. The current archive
+ZIP55665b2f/TARfce561ca contains current CLI/custody:852 identical file members,
+849 verified checksums from clean exportcf234547. Source67/native23 proofs retain
+unchanged-input scope. All8 original current-byte consumer cases,38 public forms
+with51 distinct output records, unchanged-build replay and original18+23 delivered
+module tests with explicit fixture support are independently accepted. Three
+source-oriented tests require nonbundled data; no bare-archive CURRENT/count claim.
 
-The affected current source passed67 fresh checks, export generation and full
-validation at eea174be. Complete collection and retirement are independently
-accepted. A separately reviewed pure export at cf234547 now has clean provenance and
-849 verified checksums, with complete collection/retirement; no tests reran.
-The separately accepted f3312a04 build now delivers custody in ZIP55665b2f and
-TARfce561ca:852 identical file members/849 archive checksums, complete collection
-and retirement. Source-only integration completed at bfb1a21b in its exact ref-effect receipt.
-A later3-job custody slice saved14244309 logical bytes losslessly, independently
-accepted, with original failures preserved. Current case0 then passed once as
-CodexSandboxOffline with complete collection and retirement; only1of8 cases.
-Its33528294 sampled scratch leaves26138bytes below the32MiB allowance, so
-remaining7 capacity is planned with finite40MiB scratch/8MiB results. More exact
-owned custody is only planning; no fit/effect claim or256MiB budget widening.
-Remaining7/delivered checks/replay and stable certification remain unfinished. See the [current delivery report](../../.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+Eight exact owned custody operations preserve complete receipts/logs/output and
+original failures, releasing36264832logical bytes; physical allocation/global
+cleanup/net campaign growth remain unknown. Existing D roots/checkout and256MiB
+cooperative monitored budget reused, no new storage or hard quota. Current source
+synchronization follows its own exact terminal record; it is not stable release
+certification. [Full current report](../../.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+and [custody report](../../.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md)
+retain exact subjects and limits.
 
-Remaining C8 explainability, C2 compatibility codecs and C3 portable checkpoints
-are useful next bounded candidates; admit their exact consumers and tests before
-implementation. The other candidates retain their prerequisites. The19 draft
-architecture owners and244 original UR/UC statements remain preserved; no whole
-candidate, proposed semantic refinement or uniform host support is adopted here.
-Outer-client controls, ten historical dispositions, live/matched efficiency,
-publication/downloaded consumers and wider cleanup remain separate. The campaign
-Goal is active; unchanged blocked effects stay dormant.
+Remaining C8/C2/C3 are useful next bounded candidates; C9/C11 follow their actual
+consumers/dependencies, then C5/C6/C7/C10/C12 as separately admitted. Preserve19
+amended topic owners and34 imported drafts with244 original proposed requirements
+plus244 acceptance designs. No blanket semantic adoption or uniform T0–T5/L0–L4
+host parity. Outer client, historical ten decisions, live/matched efficiency,
+stable ACCEPT/tag/publication/downloaded consumers and wider cleanup remain
+separate. FacMan product paused; unchanged blocked effects stay dormant.
