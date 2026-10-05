@@ -4768,3 +4768,12 @@ Candidate C10 work: make the requested WorkUnit explicit for scope verification
 and prove blocked streams do not substitute their scope for another admitted
 stream. This is a concrete candidate, not CLI implementation/adoption authority;
 source/pack qualification must be rebound only if its future change affects them.
+
+
+### AIDE-STABLE-LITE-RELEASE-EFFECT-01: retained timeout and capture repair — 2026-10-06
+
+Payload job5e24c5a8 timed out before build, retired cleanly and preserved all
+assets. Repair the existing qualification helper to stream child output and
+retain failure metadata. Keep full payload checksums and authenticated fixture
+checks; narrow only redundant manifest inputs. New changed native attempt
+needs its exact gate. Tests/native result and new archives remain pending.

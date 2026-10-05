@@ -650,3 +650,24 @@ manifest. No amendment is required or proposed. Actual owner approval would
 need a separately reviewed application with real identity/date and whole-registry
 validation; original proposals, objects and raw failures would be preserved.
 Other client/live/matched-efficiency/stable/publication/cleanup gates stay open.
+
+
+### Changed qualification attempt: capture repair and finite input closure — 2026-10-06
+
+The first payload job5e24c5a8 failed its first Q47 child deadline180s before
+archive build. It exited1, became quiescent, collected257,868 logical bytes and
+retired all scratch/reservations; all1701 inputs/26pins and four old assets
+were unchanged. Original child PIPE output was lost on TimeoutExpired, so
+test count is unknown. Retain failurec44122f0; do not infer a pass or replay.
+
+The helper now streams child outputs into owned result files before launch
+and saves numeric exit or explicit timeout/OSError metadata before raising.
+The next manifest will pin complete execution/test/fixture inputs and export
+metadata that transitively binds all851 payload checksums. The unchanged
+builder still verifies every payload byte, and fixture authentication still
+revalidates every declared input. No validation cache, bypass or limit increase.
+
+Exact source/local-commit review precedes a clean freeze; a fresh independent
+native-effect review is required for the changed attempt. Preserve source72
+and old consumer evidence without rebinding. Remaining external release gates
+are unchanged. This repair is not a whole-client containment or efficiency claim.

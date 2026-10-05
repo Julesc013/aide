@@ -13424,3 +13424,12 @@ identities, live registry, qualified inputs/assets/configs and88/85 maps passed.
 This bounded two-document normal fix-forward retains the rejected subject and
 reuses those unchanged checks, without history rewrite, test/archive replay or
 owner approval. Exact corrected source/ref review still precedes any sync.
+
+
+### AIDE-STABLE-LITE-RELEASE-EFFECT-01: retained timeout and capture repair — 2026-10-06
+
+Payload job5e24c5a8 timed out before build, retired cleanly and preserved all
+assets. Repair the existing qualification helper to stream child output and
+retain failure metadata. Keep full payload checksums and authenticated fixture
+checks; narrow only redundant manifest inputs. New changed native attempt
+needs its exact gate. Tests/native result and new archives remain pending.

@@ -51,20 +51,33 @@ def main():
                          encoding="utf-8", newline="\n")
 
     def command(label, argv, cwd, expected_tests=None):
-        result = subprocess.run(argv, cwd=cwd, env=env, capture_output=True, timeout=180)
         out, err = OUTPUT / (label + ".stdout"), OUTPUT / (label + ".stderr")
-        out.write_bytes(result.stdout)
-        err.write_bytes(result.stderr)
-        text = (result.stdout + result.stderr).decode("utf-8", errors="replace")
-        row = {"label": label, "argv": argv, "exit": result.returncode,
-               "stdout_sha256": sha(out), "stderr_sha256": sha(err)}
+        failure = None
+        row = {"label": label, "argv": argv, "exit": None,
+               "timeout_seconds": 180, "timed_out": False}
+        with out.open("xb") as stdout, err.open("xb") as stderr:
+            try:
+                result = subprocess.run(argv, cwd=cwd, env=env,
+                                        stdout=stdout, stderr=stderr, timeout=180)
+                row["exit"] = result.returncode
+            except (subprocess.TimeoutExpired, OSError) as exc:
+                failure = exc
+                row.update(timed_out=isinstance(exc, subprocess.TimeoutExpired),
+                           failure_type=type(exc).__name__, failure=str(exc))
+        text = (out.read_bytes() + err.read_bytes()).decode("utf-8", errors="replace")
+        row.update(stdout_bytes=out.stat().st_size, stderr_bytes=err.stat().st_size,
+                   stdout_sha256=sha(out), stderr_sha256=sha(err))
         if expected_tests is not None:
             row.update(tests=expected_tests,
                        count_verified=bool(re.search(r"Ran " + str(expected_tests) + r" tests? in ", text)),
                        no_skips="skipped=" not in text)
         proof["commands"].append(row)
         save()
-        if result.returncode or (expected_tests is not None and
+        if failure is not None:
+            proof["status"] = "FAILED"
+            save()
+            raise failure
+        if row["exit"] or (expected_tests is not None and
                                 (not row["count_verified"] or not row["no_skips"])):
             raise AssertionError(label + " failed; exact raw streams retained")
         return row

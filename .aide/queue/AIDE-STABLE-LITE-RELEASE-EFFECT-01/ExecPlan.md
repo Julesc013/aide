@@ -1376,3 +1376,24 @@ No automatic continuation can accept these records or the other release gates.
 - [ ] Accept actual result before new archive/consumer/replay/promotion claims. Current scratch16MiB/output64KiB/300s/shared256MiB limits stay finite and monitored; source and executing runtime stay disjoint from outputs.
 
 Exact old852 export and held4 asset preimages remain in immutable Git75; ZIP556 alone is not an exact old-export restoration source. No uncertain automatic replay, new root/worktree, whole-client/read isolation, hard quota, owner dispositions or model/publication effects follow. Native72 is not replayed for metadata; old asset consumers are not rebound without affected proof.
+
+
+### Changed qualification attempt: capture repair and finite input closure — 2026-10-06
+
+The first payload job5e24c5a8 failed its first Q47 child deadline180s before
+archive build. It exited1, became quiescent, collected257,868 logical bytes and
+retired all scratch/reservations; all1701 inputs/26pins and four old assets
+were unchanged. Original child PIPE output was lost on TimeoutExpired, so
+test count is unknown. Retain failurec44122f0; do not infer a pass or replay.
+
+The helper now streams child outputs into owned result files before launch
+and saves numeric exit or explicit timeout/OSError metadata before raising.
+The next manifest will pin complete execution/test/fixture inputs and export
+metadata that transitively binds all851 payload checksums. The unchanged
+builder still verifies every payload byte, and fixture authentication still
+revalidates every declared input. No validation cache, bypass or limit increase.
+
+Exact source/local-commit review precedes a clean freeze; a fresh independent
+native-effect review is required for the changed attempt. Preserve source72
+and old consumer evidence without rebinding. Remaining external release gates
+are unchanged. This repair is not a whole-client containment or efficiency claim.
