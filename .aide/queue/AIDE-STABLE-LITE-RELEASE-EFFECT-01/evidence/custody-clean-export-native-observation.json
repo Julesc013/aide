@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-B",
+    "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\aide_lite.py",
+    "job",
+    "run",
+    "--config",
+    "D:\\Projects\\AIDE\\aide\\.aide.local\\capability-payload-source-execution.json",
+    "--manifest",
+    "D:\\Projects\\AIDE\\aide\\.aide.local\\capability-payload-source-job.json",
+    "--full"
+  ],
+  "automatic_resubmission": false,
+  "command_exit_code": 0,
+  "completed_utc": "2026-10-05T01:08:00.015838+00:00",
+  "effect_sha256": "73a8217ad9e7ae7a6c1b86324c94ea9e26ed5663314b8fc08a72bf55686e55e1",
+  "schema": "aide.custody-clean-export-command-observation.v1",
+  "started_utc": "2026-10-05T01:07:43.283486+00:00",
+  "stderr": {
+    "bytes": 0,
+    "path": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\custody-clean-export-native.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "bytes": 7174,
+    "path": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\custody-clean-export-native.stdout.log",
+    "sha256": "13f10f01e2960f54fc02d372ed81f63ca7d2c38dc81999759fc299be0cd398c3"
+  }
+}

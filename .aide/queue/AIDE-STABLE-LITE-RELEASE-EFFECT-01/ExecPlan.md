@@ -1107,3 +1107,25 @@ in addition to existing paths. Preserve19 proposed architecture topic owners,
 matched-efficiency/stable/downloaded/cleanup gates. Exact resulting source
 review is required. Existing7132 assets and originala241 configuration remain
 unchanged; no C4 archive/current consumers/replay/promotion/integration claimed.
+
+## 2026-10-05 clean export accepted; build remains separate
+
+Exactcf234547/tree97b59018 and accepted73a8217a effect ran one pure export job
+c1aca2e0. Actual clean provenance and849 checksums verify; only manifestchanged.
+Complete collection/receipt/quiescence/retirement/reservationrelease are accepted
+with all notes nonblocking/disposed. Original assets/config unchanged. Inner-B
+recipe5c005bbe was rejected before dispatch, corrected and inspected before
+new exact review; no failed worker replay. Retain67 operative proofs, native23
+custody and both actual live effects. Freeze metadata before a separate local
+build using current export24pins, disjoint from release writes. Exact configured
+build inventory covers write-canonical release; also calculate immutable export
+occupancy conservatively in preflight. This is not whole-machine aggregate or
+hard filesystem enforcement. Preserve all8 consumer cases/current delivered
+behavior and zero-change replay; no runtime promotion or refs from this phase.
+
+Read-only build inspection refused the old24 pin set because the new qualified
+export contains custody namespace source247ea8c. No build allocated or ran.
+Explicitly pin that immutable, independently qualified member as25th closure
+entry; original24 hashes remain unchanged. Do not remove it from the pack or
+create a replacement runtime layout. Only the proposed build configuration is
+updated; original runtime remains held. Exact source/effect review precedes use.

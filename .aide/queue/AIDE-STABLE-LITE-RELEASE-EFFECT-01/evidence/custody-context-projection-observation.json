@@ -1,0 +1,10 @@
+{
+  "durable_terminal_marker": "custody-delivery-context-projection.json written only after all4 subprocess exits0 and41bindings verified",
+  "full4_stdout_stderr_logs_retained": true,
+  "marker_observed_after_completion": true,
+  "outer_exec_handle": "not propagated in model view; no process/session identifier retained by that view",
+  "outer_exit_code": null,
+  "resubmitted_commands": false,
+  "schema": "aide.custody-context-projection-observation.v1",
+  "scope": "report-only metadata; no allocation or model job"
+}

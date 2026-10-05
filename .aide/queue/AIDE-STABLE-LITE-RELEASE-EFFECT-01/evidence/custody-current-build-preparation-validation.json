@@ -1,0 +1,48 @@
+{
+  "additional_readonly_export_logical_bytes": 4265213,
+  "all10_source67_operative_inputs_identical": true,
+  "all41_public_bindings_current": true,
+  "budget_coverage": "selected pools and write-canonical release; separate conservative readonlyexport count; not global/hard quota",
+  "checks": [
+    {
+      "exit": 0,
+      "name": "compile"
+    },
+    {
+      "exit": 0,
+      "name": "structural"
+    },
+    {
+      "exit": 0,
+      "name": "whitespace"
+    }
+  ],
+  "configuration_sha256": "bc8fc18534b40cb951d1a049a94de0996f69343da2dd410ebd2ee23c2c31d4ef",
+  "conservative_margin_including_readonly_export": 2488321,
+  "job_inputs": 35,
+  "manifest_template_sha256": "e950478dfce98a9857111e4b80df4b79cf33f4ff5d1fd77330c9dd584bb2fe51",
+  "native_build": "NOT_RUN",
+  "native_clean_export_result_accepted": true,
+  "new_qualified_custody_pin": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
+  "original24_unchanged": true,
+  "preliminary_locked_scope_inventory": {
+    "by_pool": {
+      "canonical:.aide/release": 3959522,
+      "control": 13694135,
+      "retained": 216175465,
+      "scratch": 0
+    },
+    "enforcement": "cooperative_admission_and_monitored_growth",
+    "limit_bytes": 268435456,
+    "logical_bytes": 233829122,
+    "reserved_bytes": 27852800
+  },
+  "readonly_owner_inspection": {
+    "exit": 0,
+    "stdout_sha256": "ddb9c9bceb7daa791a29b8dcea7fe32968cdad7fe9ea5759f3103f9b9eaf983b",
+    "writes": false
+  },
+  "runtime_pins": 25,
+  "schema": "aide.custody-current-build-preparation-validation.v1",
+  "status": "PASS_PREPARATION_BUILD_UNRUN"
+}

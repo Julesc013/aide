@@ -1,0 +1,24 @@
+{
+  "effect_sha256": "73a8217ad9e7ae7a6c1b86324c94ea9e26ed5663314b8fc08a72bf55686e55e1",
+  "native_verdict": "ACCEPT_WITH_NOTES",
+  "notes": [
+    {
+      "classification": "nonblocking_disposed",
+      "note": "configuration-only inspection; fresh locked admission mandatory"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "require actual clean provenance/all849 checksums/complete collection/retirement; no dirty rewrite or replay"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "reuse67 unchanged; build/consumers/promotion/refs/release excluded"
+    }
+  ],
+  "record_kind": "controller transcription of independent reviewer message",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.custody-clean-export-native-admission.v2",
+  "source_commit": "cf2345476bd130efaaf9da1f416d6b0c96451107",
+  "source_tree": "97b590184781d8c713a75f5f8ecf782fad30489f",
+  "source_verdict": "ACCEPT_WITH_NOTES"
+}

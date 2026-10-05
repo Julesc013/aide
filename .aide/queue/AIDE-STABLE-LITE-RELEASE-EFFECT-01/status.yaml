@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: needs_review
-planning_state: custody_source67_accepted_clean_export_preparation
-result: PASS67_C4_SOURCE_DIRTY_EXPORT_CLEAN_REFRESH_PENDING
+planning_state: custody_clean_export_accepted_local_build_preparation
+result: PASS67_CLEAN_EXPORT849_CURRENT_BUILD_PENDING
 updated_at: 2026-10-05
 current_slice: independently_accepted_native67_fullvalidate_export_complete_collection_retirement
-next_slice: frozen_metadata_source_and_exact_clean_export_effect_review
+next_slice: frozen_source_and_exact_disjoint_local_build_effect_review
 review_gate: exact_current_source_ref_acceptance_before_sync_stable_gates_before_tag_publication
 stable_release_main_promotion_performed: false
 tag_created: false
@@ -41,4 +41,7 @@ custody_payload_delivered_in_current_archive: false
 
 custody_native67_result_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-payload-native-source-result.json
 custody_native67_review_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-post-source-independent-review.json
-custody_export_source_dirty_state: true
+custody_export_source_dirty_state: false
+
+custody_clean_export_result_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-clean-export-result.json
+custody_clean_export_review_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-clean-export-result-review.json

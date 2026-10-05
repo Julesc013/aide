@@ -1,0 +1,46 @@
+{
+  "actual_host_tokens": null,
+  "actual_verifier": "verify_task_packet",
+  "approx_tokens_characters_div4": 999,
+  "bytes": 3996,
+  "findings": [
+    {
+      "check": "task_packet",
+      "message": "required sections present",
+      "path": ".aide/context/latest-task-packet.md",
+      "severity": "INFO"
+    },
+    {
+      "check": "task_packet",
+      "message": "task packet tokens: 999",
+      "path": ".aide/context/latest-task-packet.md",
+      "severity": "INFO"
+    },
+    {
+      "check": "file_references",
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "path": ".aide/context/repo-map.json",
+      "severity": "INFO"
+    },
+    {
+      "check": "file_references",
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "path": ".aide/context/test-map.json",
+      "severity": "INFO"
+    },
+    {
+      "check": "file_references",
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "path": ".aide/context/context-index.json",
+      "severity": "INFO"
+    },
+    {
+      "check": "file_references",
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "path": ".aide/context/latest-context-packet.md",
+      "severity": "INFO"
+    }
+  ],
+  "schema": "aide.custody-delivery-task-packet-validation.v1",
+  "status": "PASS"
+}

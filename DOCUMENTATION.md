@@ -1,5 +1,16 @@
 # AIDE Documentation Index
 
+## 2026-10-05 clean custody export accepted
+
+Pure export jobc1aca2e0 at cf234547 produced actual clean provenance and849
+verified checksums; complete collection and retirement independently accepted,
+all notes nonblocking/disposed. Only manifestchanged;9189 retained logical bytes,
+zero test replay. Existing67 operative and23 custody proofs remain scoped.
+Archive build/currentconsumers/replay/runtimepromotion/integration/publication
+remain separate. Current7132 ZIP predates custody; outer session unrestricted.
+See [current full report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+
+
 ## 2026-10-05 custody payload current source accepted
 
 Current restricted job1b3224cd at eea174be passed67 fresh checks, export and full
@@ -25,7 +36,7 @@ lookup verified and7921599logical bytes saved in the existing256MiB pool.
 Maintenance sourcec8351859 and template are independently accepted. The
 existing release task completed the exact9-path projection refresh and is
 completed independently accepted67-check source/export qualification; clean
-export regeneration remains required. Integration, physical recovery and release
+export regeneration is now independently accepted. Integration, physical recovery and release
 qualification remain open; the outer session is unrestricted.
 
 

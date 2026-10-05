@@ -244,3 +244,11 @@ template/runtime documentation gap, without new contracts or token claims.
 The report effectcb948662 was accepted only against5d and stays unexecuted
 after this source change; rebind and seek exact review before its four commands.
 Native source/export and integration effects remain separate.
+
+## Later delivery checkpoint — 2026-10-05
+
+The separate existing release WorkUnit accepted67 fresh current-source checks/
+fullvalidate and clean849-checksum export with complete retirement. The native23
+and live2 maintenance effects are unchanged; no child rerun or new effect here.
+Update only this report/current checkpoint within the child documentation scope;
+archive build/currentconsumers/integration/stable gates remain separate.

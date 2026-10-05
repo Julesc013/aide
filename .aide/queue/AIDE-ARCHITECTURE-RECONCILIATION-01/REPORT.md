@@ -8,8 +8,8 @@ view and finite C4 custody; this does not adopt all12 candidates or the19 draft
 architecture refinements. C4 passed23 native/public-CLI regressions and two live
 custody operations, preserving all receipts/evidence and saving7,921,599 logical
 bytes. Current affected source at eea174be passed67 fresh checks and full
-validation; collection/retirement are independently accepted. Its849-checksum
-export includes custody but dirty provenance requires a clean reviewed refresh.
+validation; collection/retirement are independently accepted. A separately accepted pure export at cf234547 resolved provenance;849 checksums,
+complete collection/retirement and clean-source identity verify.
 The existing7132 ZIP predates custody and still needs current consumer/replay
 acceptance. C4 integration and stable certification remain unfinished.
 

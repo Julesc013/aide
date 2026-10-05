@@ -1,0 +1,27 @@
+{
+  "all_bindings_current": true,
+  "bindings": 41,
+  "commands": [
+    {
+      "exit": 0,
+      "name": "scan"
+    },
+    {
+      "exit": 0,
+      "name": "ledger"
+    },
+    {
+      "exit": 0,
+      "name": "overclaim"
+    },
+    {
+      "exit": 0,
+      "name": "validate"
+    }
+  ],
+  "native_tests_build_refs_models": "NO_EFFECTS",
+  "reason": "updated default task packet from completed C4 to current clean-export delivery; exact latestpacket dependency changed",
+  "report_only": true,
+  "schema": "aide.custody-delivery-context-projection.v1",
+  "task_packet_sha256": "9e53cbe179e326ffb28ee742a9b1a966f3abacba13fa04ac6e350aa01afdfedd"
+}

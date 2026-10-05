@@ -1,0 +1,12 @@
+{
+  "command_exit_code": null,
+  "exit_gap": "controller asserted before persisting numeric inspection exit",
+  "inspection_stdout_sha256": "3ca908fbfa0f2861796661f721527441534126a0cd2ef3b3ed8aa728e3615ac7",
+  "inspection_writes": false,
+  "native_dispatch": false,
+  "prior_configuration_sha256": "31508926d8ef5505e26914585021b8230481d2084538191b2e74e850019523ca",
+  "reason": "new immutable exported custody namespace member absent from old24 pin set",
+  "repair": "explicitly pin independently qualified custody module as25th member; original24 unchanged; no file removal or new runtime layout",
+  "result": "REFUSED_BEFORE_NATIVE_ALLOCATION",
+  "schema": "aide.custody-build-readonly-runtime-refusal.v1"
+}

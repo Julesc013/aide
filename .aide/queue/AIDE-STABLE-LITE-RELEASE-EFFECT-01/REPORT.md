@@ -1,9 +1,56 @@
 # Current AIDE source, artifact and development report
 
 Date:2026-10-05 Australia/Sydney. Current C4 source is independently qualified,
-and the affected source/export checks now pass. Clean export provenance, current
-archive delivery and stable certification remain unfinished. The historical C1
+and the affected source/export checks now pass. Clean export provenance is now independently accepted; current archive delivery
+and stable certification remain unfinished. The historical C1
 build and other source results below remain valid only for their exact subjects.
+
+## Latest clean export outcome
+
+One accepted export-only effect73a8217a at clean sourcecf234547/tree97b59018
+completed in jobc1aca2e040ab44e0b12d3cb36cdfa271. Worker/CLI exited0, all849
+checksums verify and actual manifest records this source with dirty:false.
+Only provenance manifest changed; no dirty flag was rewritten. Full receipt/log/
+output digests verify; scratch absent, process quiescent/noIO and reservation
+released. Retained9189logical bytes, sampled2152bytes, memory218112000bytes.
+This command did not separately emit a username; proof covers its unchanged
+configured codex_sandbox_checks route. Zero tests reran;67 prior checks retain
+identical operative inputs. Independent ACCEPT_WITH_NOTES, all notes disposed.
+
+[Clean export result](evidence/custody-clean-export-result.json),
+[effect](evidence/custody-clean-export-native-effect-v2.json) and
+[result review](evidence/custody-clean-export-result-review.json) retain exact
+identities. A proposed recipe with redundant inner-B was independently rejected
+before dispatch, repaired to the existing adapter contract and passed read-only
+owner inspection before its new exact review. The rejected effect is preserved.
+
+Next: freeze this metadata closeout, obtain exact source/build effect review,
+build with the original24 execution components plus explicitly pinned qualified
+custody namespace member25, using readonly export while writing release outputs, and qualify the unchanged8 consumer cases plus delivered C1/
+custody and zero-change replay. The current7132 archive still predates custody;
+no new archive/runtime promotion/integration/publication is claimed.
+
+## Current restart and build preparation
+
+The default compact task packet now names delivery rather than repeating the
+completed C4 closeout. The actual packet verifier passes all required sections,
+refs and estimate; the estimate remains characters/4. Four report-only context
+projection commands passed and41 complete bindings are current. No model call,
+new job or archive mutation came from that documentation refresh.
+
+Build preparation reuses the existing worker/canonical output. Read-only owner
+inspection initially refused an unpinned new custody namespace file. Its exact
+qualified247ea8c hash is now an explicit25th closure pin; the original24 execution
+hashes stay unchanged. Corrected read-only inspection passes. No build ran.
+The preparation counts pools/write-canonical release and conservatively adds
+immutable readonly export occupancy;2488321bytes preliminary headroom remains.
+Native locked accounting does not provide a global/hard filesystem quota.
+
+[Build preparation](evidence/custody-current-build-preparation-validation.json)
+and [task packet check](evidence/custody-delivery-task-packet-validation.json)
+retain the actual checks. Frozen source and exact25-pin native build effect
+still require separate independent verdicts. Original7132 assets/config remain
+unchanged; no new archive or full-session containment claim is made.
 
 ## Latest actual source outcome
 
@@ -31,11 +78,10 @@ and unknown numeric exit are preserved. A later preflight key lookup failed
 before invocation. Only the corrected accepted native job ran; there was no
 uncertain replay or additional67-test attempt.
 
-The export truthfully records source_dirty_state:true because exact post-freeze
-review/effect records were untracked during generation. It is not stable-ready.
-Next: freeze the result and checkpoint docs, independently review one pure
-export from clean source, verify its complete collection/retirement, then freeze
-and review build/current8consumers/delivered capability+custody/replay effects.
+That source-phase export recorded source_dirty_state:true because post-freeze
+review/effect records were untracked. The separately accepted clean export above
+resolved provenance without changing the payload or repeating67 checks. Build,
+current8consumers/delivered capability+custody/replay remain separate effects.
 The67 passing checks may be reused only on identical operative input hashes;
 old23-test custody evidence remains independently scoped. No dirty flag waiver,
 new runtime selection, integration or release effect follows from this result.

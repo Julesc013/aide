@@ -1,0 +1,65 @@
+{
+  "all24_supervisor_pins_current": true,
+  "all26_bound_inputs_current": true,
+  "all4_stable_assets_unchanged": true,
+  "archive_consumers_replay_promotion_integration_publication": "NOT_RUN",
+  "collected_manifest": {
+    "logs": "e0efa70cd2d1643dd272a6f69f6d73a36d902e6c4ae270e626db950d92732d25",
+    "output": "18495ab070330db2983a420a6f8681e93112e433718b6857b1154fd7eeb1ca68"
+  },
+  "collection_verified": true,
+  "effect_sha256": "73a8217ad9e7ae7a6c1b86324c94ea9e26ed5663314b8fc08a72bf55686e55e1",
+  "export": {
+    "all_checksums_verified": true,
+    "checksums_sha256": "69841f10a6f5e9113983cd945df86c325275472870544728cff4bad0b4fcd513",
+    "custody_and_current_cli_present": true,
+    "files": 849,
+    "manifest_sha256": "332633c6dfc250b1b870dc483fc4cca954e91b94b2fdbed004a10fc9cc77a671",
+    "only_changed_path": ".aide/export/aide-lite-pack-v0/manifest.yaml",
+    "source_commit": "cf2345476bd130efaaf9da1f416d6b0c96451107",
+    "source_dirty_state": false
+  },
+  "hard_filesystem_quota": false,
+  "job_id": "c1aca2e040ab44e0b12d3cb36cdfa271",
+  "manifest_digest": "d12cc8578ecef870eefdcc4425124344e5c8082783f73bebe6362856dc78e7ee",
+  "native23_retained_exact_proof": true,
+  "original_configuration_unchanged": true,
+  "outer_session_contained": false,
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4265213
+    },
+    "memory_bytes": 218112000,
+    "scratch_bytes": 2152
+  },
+  "physical_recovery_bytes": null,
+  "receipt_path": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\c1aca2e040ab44e0b12d3cb36cdfa271\\receipt.json",
+  "receipt_sha256": "14be7d0c16307654e9f01ad27e34f411c6f35c03459a6f682599f15f944771a4",
+  "retained_logical_bytes": 9189,
+  "retirement": {
+    "io_errors": [],
+    "pending_absent": true,
+    "phase": "retired",
+    "quiescent": true,
+    "reservation_released": true,
+    "scratch_absent": true
+  },
+  "schema": "aide.custody-clean-export-result.v1",
+  "source_commit": "cf2345476bd130efaaf9da1f416d6b0c96451107",
+  "source_tree": "97b590184781d8c713a75f5f8ecf782fad30489f",
+  "status": "PASS_CLEAN_SOURCE_EXPORT_849_COLLECTION_RETIRED",
+  "tests67_reused_identical_operative_inputs": {
+    ".aide/capabilities/capability-evidence-bindings.schema.json": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
+    ".aide/capabilities/capability-seeds.yaml": "46817a46802870980297f9923f6e1d31fd6a9c418ced7ced10283d2e2565fd5f",
+    ".aide/policies/capability-reality.yaml": "7fd503b9a3560ee32e5b56cb3fb7a0cddc865f46a42780ceceaa636e18645e18",
+    ".aide/scripts/aide_lite.py": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+    ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+    ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+    ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+    ".aide/scripts/tests/test_stable_release_admission.py": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+    ".aide/scripts/tests/test_x_os_02_capability_reality.py": "4509355fc87b618c013ac1406e24e5a2181f5ac4c658f89fc0b8eae6a20393ef",
+    "docs/reference/capability-reality-ledger.md": "1533b4122dc1666e92058643cc167070a3defab64a57c078fde4574082b7c51e"
+  },
+  "tests_executed_here": 0,
+  "worker_identity": "same unchanged codex_sandbox_checks route; this export command does not independently emit Windows username"
+}

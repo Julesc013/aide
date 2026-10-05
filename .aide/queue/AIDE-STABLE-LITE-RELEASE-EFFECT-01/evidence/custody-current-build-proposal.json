@@ -1,0 +1,77 @@
+{
+  "accounting": "locked scope includes selected pools and write-canonical release; conservative parent preflight also includes fixed read-only export occupancy; no global budget or whole-session claim",
+  "canonical_outputs": {
+    ".aide/release": {
+      "bytes": 8388608,
+      "volume_id": "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\"
+    }
+  },
+  "configuration_sha256": "bc8fc18534b40cb951d1a049a94de0996f69343da2dd410ebd2ee23c2c31d4ef",
+  "existing_worker_unchanged": true,
+  "limits": {
+    "canonical_bytes": 536870912,
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 262144,
+    "max_files": 100000,
+    "memory_bytes": 2147483648,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 32,
+    "retained_bytes": 65536,
+    "runtime_seconds": 300,
+    "scratch_bytes": 16777216
+  },
+  "manifest_template_sha256": "e950478dfce98a9857111e4b80df4b79cf33f4ff5d1fd77330c9dd584bb2fe51",
+  "new_namespace_pin": {
+    "path": ".aide/export/aide-lite-pack-v0/files/core/execution/retired_evidence.py",
+    "qualified_by": "independent C4 native23/maintenance plus source67 and verified clean export849; explicit exact selection review still required",
+    "sha256": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488"
+  },
+  "only_mutation": "existing stable builder expected4 assets in .aide/release/stable; no extra archives or directories beyond original bounded builder staging",
+  "prior_owned_selected_build_configuration_sha256": "75d951da7aad70cb54ecd5f159fda24bb151b610200de8a32675b331d0a1e714",
+  "prior_owned_selected_build_job_sha256": "f4a88471ef9a639aae5e6f4c778f75159c5174abb3f705e07e3bc7c7e1ef194b",
+  "proof": {
+    "no_tests_rerun": "worker build reuses exact source proof; broader67/23 retained on unchanged inputs",
+    "source67_raw_sha256": "5a10448a4d2fc5de1d52294abf30a85e38100207f7c6515f9eb29338a707577b",
+    "tests_reused": 36
+  },
+  "recovery": "stop after one refusal/failure/uncertainty; full collection/retirement and assetdiff required before new effect",
+  "retained_gates": "exact frozen source/native build effect acceptance; old7132 bytes preserved until separately accepted replacement; no consumers/ref/runtime/model/publication",
+  "roots": {
+    "control": "D:\\Projects\\AIDE\\.aide.local\\execution\\control",
+    "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained",
+    "scratch": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch"
+  },
+  "runtime": {
+    "files": {
+      ".aide/export/aide-lite-pack-v0/files/core/apply/__init__.py": "d9f1cb35bdf8557ef871410aba60c9982f34a9bea2a9381eef17b00ab1b13ac8",
+      ".aide/export/aide-lite-pack-v0/files/core/apply/managed_sections.py": "a6cda7e7ffb4e5d3d8e6567192b4a37368c0291608d345612cd14b2b55a16220",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/__init__.py": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/managed_workspace.py": "d9338d9d25470b1a39f8c74566f7c108249a98dc564ac395f21b66ebc4eccfe3",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/provider.py": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/registered_process.py": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+      ".aide/export/aide-lite-pack-v0/files/core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/__init__.py": "84f45062b88514d03f4d1618aa78df3d9aa506c94b870346bfa6e708f522a103",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/gateway_status.py": "40ef20c8890835e63953bada76ad118e966527dc384c72fa1f6b9ce7739a4a88",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/server.py": "b887d27bcbd75377005c3760bedbf2b36cd5caefd26bee5ff8b06cdaa2ec9aff",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/tests/__init__.py": "fc7e58b76b027cc9c7c37011c5aa40b240c09f37cdef2b71bbbe2a653a368860",
+      ".aide/export/aide-lite-pack-v0/files/core/gateway/tests/test_gateway_skeleton.py": "8e307b81e6aad7e5949c5788c61da282282f5fe076e3c5d888099441e6902b38",
+      ".aide/export/aide-lite-pack-v0/files/core/protocol/__init__.py": "b131e408f459709ebb03c6becc526f09517d2082f536efd643a8b7812ecdd946",
+      ".aide/export/aide-lite-pack-v0/files/core/protocol/execution_receipt.py": "966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+      ".aide/export/aide-lite-pack-v0/files/core/protocol/process_invocation.py": "aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/__init__.py": "91fda471923f178eb877be4afcd9f59ed336a2533fb4e7f50634ac1e3915912c",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/contracts.py": "ac7ba2c4cdd4f8ca08971858a0cc04c7c0fbf1af4896ae21c654301b6d51fee8",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/registry.py": "caeaaf76b5630bbfa837f847ff6dcab28f4c986a3ec277769b2bde78b28dcaa2",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/status.py": "341501a6a5d2bf3aedcce09b0f0b143ed39e3dd949b2ddd4fdad803c009f4886",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/tests/__init__.py": "fa00ddd28dbff411d7189b20793f00e464b26c0bdb9c9144296a3fe14d17c205",
+      ".aide/export/aide-lite-pack-v0/files/core/providers/tests/test_provider_contracts.py": "ab9f4f74e08354cad3cbf0fe26bb56ab121fa588a7659b5fb9577b33edf73e8a",
+      ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/__init__.py": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
+      ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/state.py": "9b65b7953cfea7af9444abe6157b5edfe670a46be90211a8cf8d543855d12105",
+      ".aide/export/aide-lite-pack-v0/files/core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
+    },
+    "root": ".aide/export/aide-lite-pack-v0/files"
+  },
+  "schema": "aide.custody-current-build-proposal.v1",
+  "status": "PREPARATION_ONLY_NO_BUILD_EFFECT",
+  "supervisor": "clean cf234 export: original24 executing components unchanged plus separately qualified custody namespace25th pin; disjoint from release output"
+}

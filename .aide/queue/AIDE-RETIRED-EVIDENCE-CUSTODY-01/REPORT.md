@@ -4,8 +4,8 @@ Date:2026-10-05 Australia/Sydney. The actual public custody workflow and 23
 regressions pass through the restricted worker. Separately reviewed custody of
 two real retired consumer jobs preserved complete evidence and original receipts,
 verified lookup, retired redundant raw copies and released 7,921,599 managed
-logical bytes. Source projection refresh/integration and stable certification
-remain unfinished. Exact maintenance sourcec8351859 received independent
+logical bytes. Later delivery source/projection/export qualification is now accepted in the
+release WorkUnit; integration and stable certification remain unfinished. Exact maintenance sourcec8351859 received independent
 ACCEPT_WITH_NOTES with all notes nonblocking/disposed. The bounded C4 child is
 qualified; delivery work continues in the existing release WorkUnit. The outer
 session remains unrestricted.
@@ -127,9 +127,12 @@ operations used worst-case serial reservations7334555/10184109 within unchanged
 complete required evidence and all8 consumer cases/38 public forms/39 retained
 outputs/12 job observations and delivered C1/replay acceptance.
 
-The CLI edit makes affected source capability/export projections stale. Their
-explicit refresh, packaging and source integration are later bounded effects;
-no whole-source validation or new current archive is claimed here. Source
+The CLI edit initially made source capability/export projections stale. The
+release WorkUnit subsequently passed67 fresh affected checks and fullvalidation
+at eea174be, then one independently accepted pure clean export at cf234547
+verified849 checksums and complete collection/retirement. See its current report.
+Those are later delivery facts; no additional23 execution or new archive is
+claimed by this maintenance slice. Packaging and integration remain open. Source
 maintenance can continue; it must not claim this archive delivers custody.
 Outer-client setup, ten historical dispositions, live model permission, matched
 efficiency, stable ACCEPT/tag/publication/download/adoption and wider drive

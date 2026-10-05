@@ -1,0 +1,24 @@
+{
+  "job_id": "c1aca2e040ab44e0b12d3cb36cdfa271",
+  "notes": [
+    {
+      "classification": "nonblocking_disposed",
+      "note": "no separately emitted username; covers unchanged configured route only"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "zero rerun tests;67 operative input scope retained"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "sampled peaks; metadata closeout/build/later effects require separate review"
+    }
+  ],
+  "record_kind": "controller transcription of independent reviewer message",
+  "result_sha256": "57d33672e85fd8017c76955b9ac3a1bc2f05679fc5657849e73e157493ea50e5",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.custody-clean-export-result-review.v1",
+  "source_commit": "cf2345476bd130efaaf9da1f416d6b0c96451107",
+  "source_tree": "97b590184781d8c713a75f5f8ecf782fad30489f",
+  "verdict": "ACCEPT_WITH_NOTES"
+}

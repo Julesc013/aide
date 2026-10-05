@@ -84,8 +84,8 @@ or hard filesystem quota. See the [custody report](../../.aide/queue/AIDE-RETIRE
 
 The affected current source passed67 fresh checks, export generation and full
 validation at eea174be. Complete collection and retirement are independently
-accepted. Its849-entry export is checksum-valid but records dirty provenance;
-a clean reviewed refresh is required before packaging. The older7132 ZIP
+accepted. A separately reviewed pure export at cf234547 now has clean provenance and
+849 verified checksums, with complete collection/retirement; no tests reran. The older7132 ZIP
 contains C1 but predates custody. C4 integration, new-archive consumers/replay
 and stable certification remain unfinished. See the [current delivery report](../../.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
 
