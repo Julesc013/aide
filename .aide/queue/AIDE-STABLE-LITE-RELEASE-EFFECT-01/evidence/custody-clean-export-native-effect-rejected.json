@@ -1,0 +1,168 @@
+{
+  "aggregate_bytes": 268435456,
+  "assets_before": {
+    ".aide\\release\\stable\\aide-lite-v1.0.0.SHA256SUMS.txt": "899e9ca4101514ae6d5becda3ccae150b732ccf7dc16d07a580cdf5263fe8e08",
+    ".aide\\release\\stable\\aide-lite-v1.0.0.manifest.json": "ce652cc764e2b2c71298e745b6a523253825f594ed315ad1486dacdd7d7a31b1",
+    ".aide\\release\\stable\\aide-lite-v1.0.0.tar.gz": "fe6ddadad63dc7d018c45aee8d391f112c1aa23a31b593a2a205b8f72e20cf8d",
+    ".aide\\release\\stable\\aide-lite-v1.0.0.zip": "7132a5404bf82cdf0c0076cf64b395f01715ae0abd2e8c95c2b971c4b233ee88"
+  },
+  "configuration_file": ".aide.local/capability-payload-source-execution.json",
+  "configuration_sha256": "4df3adaef15214e41cd2135716bd4e713287f260c0aebc0066ef79a43499f736",
+  "dispatch_argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-B",
+    "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\aide_lite.py",
+    "job",
+    "run",
+    "--config",
+    "D:\\Projects\\AIDE\\aide\\.aide.local\\capability-payload-source-execution.json",
+    "--manifest",
+    "D:\\Projects\\AIDE\\aide\\.aide.local\\capability-payload-source-job.json",
+    "--full"
+  ],
+  "job": {
+    "adapter": "python",
+    "argv": [
+      "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "export-pack"
+    ],
+    "canonical_outputs": {
+      ".aide/export/aide-lite-pack-v0": {
+        "bytes": 16777216,
+        "volume_id": "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\"
+      }
+    },
+    "cwd": "D:\\Projects\\AIDE\\aide",
+    "executable_sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9",
+    "inputs": {
+      ".aide/capabilities/capability-evidence-bindings.schema.json": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
+      ".aide/capabilities/capability-seeds.yaml": "46817a46802870980297f9923f6e1d31fd6a9c418ced7ced10283d2e2565fd5f",
+      ".aide/context/latest-task-packet.md": "210d3dd99afba1baceeaa20c8351f73be995410094f6f26db53cd9d6a53c76a6",
+      ".aide/policies/capability-reality.yaml": "7fd503b9a3560ee32e5b56cb3fb7a0cddc865f46a42780ceceaa636e18645e18",
+      ".aide/policies/release-versioning.yaml": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253",
+      ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/worker.py": "ece020b49246ac1ccda4acf54172fd037f11583c36f48e8589f4292412336838",
+      ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/maintenance-source-acceptance.json": "affc0b9d68525a49c7accb4987e8af0989bfab4cd92caf3426f942eb31faa76a",
+      ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/native-fixture-result-v3.json": "e2f6eaa1bcf6379775c7c16a8204c600ed414177721fd48196da126aa9c2e936",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md": "dd42c3347ec060eca18ee38f4597474d79b29c9edc57ae19d48791633ed8d3c3",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/capability_payload_refresh.py": "cdccd6d9cb4ddecaa1bdcc5627b7ddb28b57719de70d6b497cba0857237b3558",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-clean-export-configuration.json": "4df3adaef15214e41cd2135716bd4e713287f260c0aebc0066ef79a43499f736",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-payload-native-source-result.json": "2b55475fb3fd0ad278f22db8a91ed3855e5fc94c2393e5ccc1cbc0ada2f0dfad",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-payload-source-qualification.json": "5a10448a4d2fc5de1d52294abf30a85e38100207f7c6515f9eb29338a707577b",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-post-source-independent-review.json": "a30359c9ad631e8abea3dc66d4d720ac30ce6d622eb701d5fd123fd36d02b8ae",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml": "14648f2e38b1f559239e430ed5f25a92c1c5971e95fd55a909b32e11bb851987",
+      ".aide/reports/capability-evidence-bindings.json": "a9bf950782e6070da59f696e4510b3c62b8679bac5afea1a7da38cdd0fefcd1f",
+      ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+      ".aide/scripts/aide_lite.py": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+      ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+      ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+      ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+      ".aide/scripts/tests/test_retired_evidence.py": "37834a2c858b0cbdbc00a3c34b4b1be7642203d86c509bd1674f7030075c57be",
+      ".aide/scripts/tests/test_stable_release_admission.py": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+      ".aide/scripts/tests/test_x_os_02_capability_reality.py": "4509355fc87b618c013ac1406e24e5a2181f5ac4c658f89fc0b8eae6a20393ef",
+      "core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
+      "docs/reference/capability-reality-ledger.md": "1533b4122dc1666e92058643cc167070a3defab64a57c078fde4574082b7c51e"
+    },
+    "owner": "custody-clean-export-01",
+    "schema": "aide.maintainer-job.v1",
+    "source_commit": "496bc56b41c42fb3ddb512664873e51f2d627356",
+    "source_tree": "44c968ccc33b907d807ea3d5871e46f52f5b9cf5",
+    "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01"
+  },
+  "job_file": ".aide.local/capability-payload-source-job.json",
+  "job_file_sha256": "1d32d3cc8d00cf2f56c8f0b6bf12fcbfa5bc369e2867f7f81d84b758b3e065d2",
+  "job_manifest_digest": "46338c0401efd676f9a1badec6a4fc6d85f402f329dcc4ebeca12958093bb2ee",
+  "limits": {
+    "canonical_bytes": 536870912,
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 262144,
+    "max_files": 100000,
+    "memory_bytes": 2147483648,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 32,
+    "retained_bytes": 65536,
+    "runtime_seconds": 90,
+    "scratch_bytes": 1048576
+  },
+  "locked_admission_required": true,
+  "native67_proof_sha256": "5a10448a4d2fc5de1d52294abf30a85e38100207f7c6515f9eb29338a707577b",
+  "no_effects": [
+    "tests,archive build,consumer,replay,runtime promotion,refs,models,publication",
+    "new roots/worktree/clone/limits widening/unknown deletion"
+  ],
+  "original_configuration_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "preliminary_inventory_not_locked_admission": {
+    "by_pool": {
+      "canonical:.aide/export/aide-lite-pack-v0": 4265212,
+      "control": 13694135,
+      "retained": 216166276,
+      "scratch": 0
+    },
+    "enforcement": "cooperative_admission_and_monitored_growth",
+    "limit_bytes": 268435456,
+    "logical_bytes": 234125623,
+    "reserved_bytes": 20512768
+  },
+  "preliminary_margin_bytes": 13797065,
+  "prior_native23_proof": "unchanged custody module/test and native runtime; metadata histories retain exact versions",
+  "record_retention": "effect/admission/observation in explicitly owned ignored queue logs through terminal; canonical JSON copies only after export; full source clean before dispatch",
+  "recovery": "one invocation only after independent verdict; stop/reconcile refusal/failure/uncertainty; never automatically replay",
+  "required_after": [
+    "CLI/workerexit0; complete command streams and retained collection/receipt digests",
+    "export source_dirty_state:false actual frozen source HEAD; all849 checksums/custody/currentCLI verified",
+    "quiescent noIO scratchretired/reservationreleased; asset/original config unchanged"
+  ],
+  "reuse_only_identical_operative_inputs": {
+    ".aide/capabilities/capability-evidence-bindings.schema.json": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
+    ".aide/capabilities/capability-seeds.yaml": "46817a46802870980297f9923f6e1d31fd6a9c418ced7ced10283d2e2565fd5f",
+    ".aide/policies/capability-reality.yaml": "7fd503b9a3560ee32e5b56cb3fb7a0cddc865f46a42780ceceaa636e18645e18",
+    ".aide/scripts/aide_lite.py": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+    ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+    ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+    ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+    ".aide/scripts/tests/test_stable_release_admission.py": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+    ".aide/scripts/tests/test_x_os_02_capability_reality.py": "4509355fc87b618c013ac1406e24e5a2181f5ac4c658f89fc0b8eae6a20393ef",
+    "docs/reference/capability-reality-ledger.md": "1533b4122dc1666e92058643cc167070a3defab64a57c078fde4574082b7c51e"
+  },
+  "roots": {
+    "control": "D:\\Projects\\AIDE\\.aide.local\\execution\\control",
+    "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained",
+    "scratch": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch"
+  },
+  "runtime": {
+    "archive": ".aide/release/stable/aide-lite-v1.0.0.zip",
+    "files": {
+      "aide-lite-pack-v0/files/core/apply/__init__.py": "d9f1cb35bdf8557ef871410aba60c9982f34a9bea2a9381eef17b00ab1b13ac8",
+      "aide-lite-pack-v0/files/core/apply/managed_sections.py": "a6cda7e7ffb4e5d3d8e6567192b4a37368c0291608d345612cd14b2b55a16220",
+      "aide-lite-pack-v0/files/core/execution/__init__.py": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5",
+      "aide-lite-pack-v0/files/core/execution/managed_workspace.py": "d9338d9d25470b1a39f8c74566f7c108249a98dc564ac395f21b66ebc4eccfe3",
+      "aide-lite-pack-v0/files/core/execution/provider.py": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e",
+      "aide-lite-pack-v0/files/core/execution/registered_process.py": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+      "aide-lite-pack-v0/files/core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+      "aide-lite-pack-v0/files/core/gateway/__init__.py": "84f45062b88514d03f4d1618aa78df3d9aa506c94b870346bfa6e708f522a103",
+      "aide-lite-pack-v0/files/core/gateway/gateway_status.py": "40ef20c8890835e63953bada76ad118e966527dc384c72fa1f6b9ce7739a4a88",
+      "aide-lite-pack-v0/files/core/gateway/server.py": "b887d27bcbd75377005c3760bedbf2b36cd5caefd26bee5ff8b06cdaa2ec9aff",
+      "aide-lite-pack-v0/files/core/gateway/tests/__init__.py": "fc7e58b76b027cc9c7c37011c5aa40b240c09f37cdef2b71bbbe2a653a368860",
+      "aide-lite-pack-v0/files/core/gateway/tests/test_gateway_skeleton.py": "8e307b81e6aad7e5949c5788c61da282282f5fe076e3c5d888099441e6902b38",
+      "aide-lite-pack-v0/files/core/protocol/__init__.py": "b131e408f459709ebb03c6becc526f09517d2082f536efd643a8b7812ecdd946",
+      "aide-lite-pack-v0/files/core/protocol/execution_receipt.py": "966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+      "aide-lite-pack-v0/files/core/protocol/process_invocation.py": "aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de",
+      "aide-lite-pack-v0/files/core/providers/__init__.py": "91fda471923f178eb877be4afcd9f59ed336a2533fb4e7f50634ac1e3915912c",
+      "aide-lite-pack-v0/files/core/providers/contracts.py": "ac7ba2c4cdd4f8ca08971858a0cc04c7c0fbf1af4896ae21c654301b6d51fee8",
+      "aide-lite-pack-v0/files/core/providers/registry.py": "caeaaf76b5630bbfa837f847ff6dcab28f4c986a3ec277769b2bde78b28dcaa2",
+      "aide-lite-pack-v0/files/core/providers/status.py": "341501a6a5d2bf3aedcce09b0f0b143ed39e3dd949b2ddd4fdad803c009f4886",
+      "aide-lite-pack-v0/files/core/providers/tests/__init__.py": "fa00ddd28dbff411d7189b20793f00e464b26c0bdb9c9144296a3fe14d17c205",
+      "aide-lite-pack-v0/files/core/providers/tests/test_provider_contracts.py": "ab9f4f74e08354cad3cbf0fe26bb56ab121fa588a7659b5fb9577b33edf73e8a",
+      "aide-lite-pack-v0/files/core/runtime/continuous_worker/__init__.py": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
+      "aide-lite-pack-v0/files/core/runtime/continuous_worker/state.py": "9b65b7953cfea7af9444abe6157b5edfe670a46be90211a8cf8d543855d12105",
+      "aide-lite-pack-v0/files/core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
+    },
+    "prefix": "aide-lite-pack-v0/files",
+    "sha256": "7132a5404bf82cdf0c0076cf64b395f01715ae0abd2e8c95c2b971c4b233ee88"
+  },
+  "schema": "aide.custody-clean-export-native-effect.v1",
+  "source_commit": "496bc56b41c42fb3ddb512664873e51f2d627356",
+  "source_tree": "44c968ccc33b907d807ea3d5871e46f52f5b9cf5"
+}

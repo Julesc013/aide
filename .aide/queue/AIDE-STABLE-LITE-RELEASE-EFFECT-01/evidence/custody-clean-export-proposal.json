@@ -13,6 +13,7 @@
     }
   },
   "configuration_sha256": "4df3adaef15214e41cd2135716bd4e713287f260c0aebc0066ef79a43499f736",
+  "job_argv_correction": "inner Python adapter receives script directly; owner supplies -B; readonly pinned owner inspection passed before any dispatch",
   "limits": {
     "canonical_bytes": 536870912,
     "commit_reserve_bytes": 4294967296,
@@ -26,7 +27,7 @@
     "runtime_seconds": 90,
     "scratch_bytes": 1048576
   },
-  "manifest_template_sha256": "eb1fde92a1bc45f10d28a6864301300a436824f10c96d98dbda943d362b3130a",
+  "manifest_template_sha256": "f176fe7f2476629a4bbad63d464b320bbcad05efd0d15c6ed10e43ec8c42afce",
   "new_local_path": false,
   "old_selected_local_records": {
     ".aide.local/capability-payload-source-execution.json": "b1f88fc84fbd91fde324c59de592070a8a5e580d87bc31319ad6c11a867f30e5",

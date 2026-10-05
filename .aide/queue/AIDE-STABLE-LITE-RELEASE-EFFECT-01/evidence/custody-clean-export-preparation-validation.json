@@ -13,12 +13,18 @@
     "custody-clean-export-native.stdout.log",
     "custody-clean-export-native.stderr.log"
   ],
-  "manifest_template_sha256": "eb1fde92a1bc45f10d28a6864301300a436824f10c96d98dbda943d362b3130a",
+  "manifest_template_sha256": "f176fe7f2476629a4bbad63d464b320bbcad05efd0d15c6ed10e43ec8c42afce",
   "native67_proof_sha256": "5a10448a4d2fc5de1d52294abf30a85e38100207f7c6515f9eb29338a707577b",
   "native_clean_export": "NOT_RUN",
   "new_effect_requires_independent_verdict": true,
   "old_c1_source_alias_preserved": "7d0e68d35b9724fa7f9cf8bc589a099695d598f69e7de72f1aa194388e7836f1",
-  "proposal_sha256": "b244a2810415b664d00ae3102378a45ae6c831afcb5a0c1e127805dfde19be81",
+  "prior_native_effect": "REQUEST_CHANGES no invocation; preserve exact rejected recipe",
+  "proposal_sha256": "ec10134387e5b38068528c18528f3dd7e537d7babd55ea9f6b8b60cb9853ce0b",
+  "readonly_owner_inspection": {
+    "exit_code": 0,
+    "stdout_sha256": "9e65dad77b1b567c3abafbc6c562964a531c1d83ff862b7c44032577eefca27c",
+    "writes": false
+  },
   "reuse_source67_operative_inputs": {
     ".aide/capabilities/capability-evidence-bindings.schema.json": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
     ".aide/capabilities/capability-seeds.yaml": "46817a46802870980297f9923f6e1d31fd6a9c418ced7ced10283d2e2565fd5f",

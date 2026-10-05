@@ -1,0 +1,10 @@
+{
+  "effect_sha256": "5c005bbe4969d49807d47b0141667a27dc8140b31049115cbc37490e77384e42",
+  "native_dispatch": false,
+  "reason": "python adapter requires argv[1] script; redundant inner -B rejected by pinned owner; owner itself adds -B",
+  "repair": "remove only inner-job -B; keep outer dispatch -B; exact readonly owner inspection and new source/effect review required",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.custody-clean-export-pre-dispatch-rejection.v1",
+  "source_commit": "496bc56b41c42fb3ddb512664873e51f2d627356",
+  "verdict": "REQUEST_CHANGES"
+}
