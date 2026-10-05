@@ -1,0 +1,41 @@
+{
+  "actual_independent_review_transcription": true,
+  "blocking_findings": [],
+  "job_id": "b38c6cf0026245a991616b620f1bcb15",
+  "notes": [
+    {
+      "blocking": false,
+      "disposition": "Windows principal was not separately observed; acceptance covers retained process/job identities and configured route, with no account qualification or repeat inferred."
+    },
+    {
+      "blocking": false,
+      "disposition": "Source remains disclosed66 baseline plus exact two-file overlays. Post-terminal result JSON is evidence, not another code change."
+    },
+    {
+      "blocking": false,
+      "disposition": "Scratch7456B is sampled; memory225296384B is recorded WindowsJob peak. No hard disk quota or whole-session containment follows."
+    },
+    {
+      "blocking": false,
+      "disposition": "Commit-format FAIL remains an amendment/integration/release gate; no policy waiver, runtime promotion or publication acceptance."
+    }
+  ],
+  "original_dispatch_refs": {
+    "current-release-binding-v2-dispatch-start.log": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-release-binding-v2-dispatch-start.log",
+    "current-release-binding-v2-native-admission.log": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-release-binding-v2-native-admission.log",
+    "current-release-binding-v2-native-terminal.log": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-release-binding-v2-native-terminal.log",
+    "current-release-binding-v2-native.stderr.log": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-release-binding-v2-native.stderr.log",
+    "current-release-binding-v2-native.stdout.log": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-release-binding-v2-native.stdout.log"
+  },
+  "reviewer": "/root/containment_review",
+  "schema_version": "aide.current-release-binding-result-review.v1",
+  "scope": "Local current-release consistency qualification only; no external gate acceptance",
+  "subject_result_sha256": "ddce4396851872423c5e4d0e9a6d1e7e20208302a2857169b6d1027752951a26",
+  "verdict": "ACCEPT_WITH_NOTES",
+  "verified": [
+    "Single original dispatch and parent/worker exit0;17 tests/no failures/errors/skips",
+    "Current checker0/HELD and stale checker1/REFUSED; full streams retained",
+    "All11 retained files/both tree digests/receipt inputs/digests/42inputs/25pins/configurations unchanged",
+    "Quiescence, retirement, reservation release, scratch/active/staging absence"
+  ]
+}

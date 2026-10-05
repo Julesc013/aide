@@ -851,5 +851,10 @@ The release-effect REPORT and exact build result/proof/admission now distinguish
 [Held current packet](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/release-effect-manifest-1.0.0-qualified.json)
 and [read-only checker](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/release_binding.py)
 bind existing qualification; they neither authenticate reviews nor admit release
-effects. Refusal fixtures/native qualification remain pending in the existing
-[ExecPlan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md).
+effects. The [actual17-test native result](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-release-binding-result.json)
+and [independent result review](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-release-binding-result-review.json)
+record current0/HELD, stale1/REFUSED and verified collection/retirement. See the
+[ExecPlan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) for the pending
+normal fix-forward admission preserving preparation66, clean source/ref review
+and later stable gates. Full historical rangeFAIL11 remains; no amendment
+exception is needed for the normal corrective commit. Qualified fixes remain local.

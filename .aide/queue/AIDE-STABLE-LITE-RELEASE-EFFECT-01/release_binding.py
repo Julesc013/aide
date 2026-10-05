@@ -87,7 +87,13 @@ def _review(root: Path, entry: dict) -> None:
     else:
         require(isinstance(notes, list), "review notes malformed")
         for note in notes:
-            require(isinstance(note, dict) and
+            require(isinstance(note, dict), "review note malformed")
+            if "blocking" in note:
+                require(note["blocking"] is False, "review note is blocking or contradictory")
+            if "classification" in note:
+                require(note["classification"] == "nonblocking_disposed",
+                        "review note classification is unresolved or contradictory")
+            require(
                     (note.get("classification") == "nonblocking_disposed" or
                      (note.get("blocking") is False and bool(note.get("disposition")))),
                     "recorded note remains unresolved")

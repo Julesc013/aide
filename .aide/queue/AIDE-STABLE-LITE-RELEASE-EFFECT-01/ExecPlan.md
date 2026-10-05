@@ -1287,4 +1287,42 @@ run once, collect full results/streams/receipt and verify scratch retirement and
 reservation release; independently review actual result; commit scoped evidence.
 No archive replay, runtime promotion, model, network, ref/tag/publication effect,
 new pool/worktree, broad cleanup or draft adoption is admitted. Source/ref
-integration requires its own subsequent exact review. Native effect pending.
+integration requires its own subsequent exact review. The following actual
+closeout supersedes the preparation-only native status.
+
+## Current binding actual qualification — 2026-10-05
+
+- [x] Exact v2source/native review accepted baseline66 plus disclosed checker
+  and test overlays, unchanged10-module fixture import closure/25 supervisor
+  pins and configuration. Original v1effect was rejected and never dispatched.
+- [x] One v2effect6a76948a dispatched as jobb38c6cf0:17 tests/no failures,
+  errors or skips; current packet0/HELD and stale packet1/REFUSED.
+- [x] Full receipt/streams,11 retained files16,966B and both tree digests checked;
+  scratch retired/reservation released,42inputs/assets/pins/config unchanged.
+- [x] Actual resultddce4396 independently ACCEPT_WITH_NOTES; all notes disposed.
+- [x] Independent normal fix-forward admissionb38c00f8 accepted. Preserve66
+  unchanged as an ancestor; no amendment exception is required for the normal
+  corrective commit. Original full681-commit rangeFAIL11 remains a release gate.
+- [ ] Create exact qualified corrective commit with prechecked messagec114e8d9;
+  retain original66 and all full-history failures. No disposition is invented.
+- [ ] Clean source closeout, independent source/ref review and authorized sync.
+
+Qualification uses a Git baseline plus actual working-byte snapshot; overlay
+bytes are not in the66 tree. Windows account was not separately recorded; the
+accepted scope covers process/job identities and the exact configured route.
+Sampled scratch7,456B and Windows Job peak225,296,384B do not establish a disk
+quota, whole-session containment, billed usage or efficiency improvement. Four
+release assets are unchanged. Stable/client/live/matched/publication/cleanup
+gates remain independent. Preserve the original result; no unchanged replay.
+
+## Normal corrective route after goal resumption
+
+Independent proposalb38c00f8 ACCEPT_WITH_NOTES identified the compliant route:
+normal prechecked corrective commit, preserving66 and its original failure.
+Earlier amendment-specific stop is superseded for this route, without granting
+an exception. Source-only owner authority remains separate from stable history
+certification. Exact full681rangeFAIL11 is retained; no short range or automatic
+disposition is substituted. Only current qualified13paths may be staged/committed
+after superseding documentation review; original66 must remain an ancestor.
+Then obtain exact clean source/ref-effect acceptance and fresh helper/identity/ref/
+asset/config guards before integration. No archive/model/runtime/release effect.

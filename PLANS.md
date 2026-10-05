@@ -4729,6 +4729,22 @@ release claim. See both WorkUnit reports for current and historical identities.
 
 The existing stable-effect WorkUnit admits a pure current asset/evidence checker,
 small refusal fixtures and a separately named HELD packet. Baseline935 is already
-source-synchronized. Source is prepared; exact native effect/result review remains
-pending. Old effect manifests remain historical; no stable, model, runtime or
-publication gate is waived. See its ExecPlan and current-release-binding-plan.json.
+source-synchronized. Local binding qualification passed17 refusal tests and
+current0/HELD plus stale1/REFUSED, with exact independent source/effect/result
+acceptance and verified collection/retirement. Preparation commit66 message
+fails policy; independent normal fix-forward admission permits a valid corrective
+child commit preserving66 without an amendment exception. Full681-commit range
+still FAILS11; later release dispositions remain separate. Fixes/closeout are
+local pending exact clean source/ref review and source-only sync. Old manifests remain
+historical; no stable/model/runtime/publication gate is waived. See the WorkUnit
+ExecPlan and current-release-binding-result.json/result-review.json.
+
+## Bounded verification scope-selection follow-up
+
+Current closeout retained actualverify WARN9/ERROR0: --task-packet validates the
+brief but active_scope_task_path still selects AIDE-SESSION-CONTAINMENT-01 for
+diff scopes. Exact release WorkUnit13-path admission check passes independently.
+Candidate C10 work: make the requested WorkUnit explicit for scope verification
+and prove blocked streams do not substitute their scope for another admitted
+stream. This is a concrete candidate, not CLI implementation/adoption authority;
+source/pack qualification must be rebound only if its future change affects them.

@@ -5,7 +5,10 @@
 The current Windows Lite candidate has eight passing consumer cases against
 ZIP55665b2f/TARfce561ca, complete38-form evidence, and an accepted zero-change
 build/validation replay. The original18 capability and23 custody tests of delivered modules passed with explicit bound test fixtures. These are local technical outcomes;
-stable publication and whole-session containment remain unfinished.
+stable publication and whole-session containment remain unfinished. The new
+current-asset binding check also passed17 refusal tests and actual current0/HELD
+and historical-packet1/REFUSED commands in one retired job; its independent
+result review accepted this local consistency scope with all notes disposed.
 
 | Evidence | Actual outcome and scope |
 |---|---|
@@ -15,7 +18,8 @@ stable publication and whole-session containment remain unfinished.
 | Public forms |38 declared forms;39 non-job command outputs and12 job observations,51 distinct records rebound to current bytes; intentional PARTIAL/refusal results preserved |
 | Unchanged replay | Job2e7d1b37, original stable-build/stable-validate both0; all four asset bytes unchanged, complete collection and retirement independently accepted |
 | Delivered additions | All41 original C1/custody tests of unchanged delivered modules, using ten explicitly bound fixture-data files; two public CLI cases and capability-registration need nonbundled support; no bare-archive/CURRENT claim |
-| Source synchronization | Last accepted terminal477f9113;88 corresponding local/remote pairs matched,85 other distinct branch tips preserved; later closing source requires its own exact ref review |
+| Current binding | Jobb38c6cf0 passed17 tests/no errors/failures/skips; current packet0/HELD and stale packet1/REFUSED. Exact resultddce4396 independently accepted; process/job identities retained, Windows account not separately observed |
+| Source synchronization | Last independently accepted terminal935545a8;88 corresponding local/remote pairs matched,85 other distinct branch tips preserved. This is the last observed sync, not a fresh remote read. Local task66b66938 plus disclosed fixes/evidence remains unpublished and requires its own source/ref review |
 | Owned custody | Eight distinct retired jobs retained complete evidence and original failure history; total36,264,832 logical bytes released from raw redundancy, physical recovery unknown |
 
 [Current remaining-case result](evidence/custody-current-consumer-rest-result.json),
@@ -78,6 +82,30 @@ Do not invent another task/status authority, generalized platform, service stack
 or language rewrite. Native/legacy/hosted/fleet/mobile support remains lane-specific
 T0–T5/L0–L4 and separately qualified; no uniform parity follows from shared core.
 FacMan product development remains paused.
+
+### Current binding qualification and commit-format gate
+
+[Native result](evidence/current-release-binding-result.json) and its
+[independent review](evidence/current-release-binding-result-review.json) bind
+exact source baseline66b66938/tree4b4f9de6 plus the disclosed two-file working
+overlay. The checker refuses contradictory blocking review notes; tests reuse
+the unchanged authenticated fixture lifecycle rather than private Windows temp
+ACLs. All42 inputs,25 supervisor pins, four assets, selected974151a5 config and
+originala241 config were unchanged after execution. Worker scratch retired and
+reservation released. Eleven retained files occupy16,966 logical bytes; sampled
+scratch7,456 and Windows Job memory225,296,384 are distinct observations.
+
+Preparation commit66b66938 has a real message-format failure caused during this
+work. Its original object/failure are retained. The exact corrected message
+passes the message-file check, but policy `existing_history:
+report_malformed_do_not_rewrite` requires an exception for message-only
+amendment. No exception is recorded. Independent admission now permits a normal
+corrective child commit preserving66; that route requires no amendment exception.
+The prechecked corrective message passes. The actual full681-commit historical
+range still FAILS11: originalten plus66, with none waived. Source fixes and
+closeout remain local pending clean exact source/ref review; source-only sync is
+eligible under the existing owner instruction separately from stable certification.
+No runtime/tag/publication effect follows. Do not replay passed qualification.
 
 ### Remaining independent gates
 
@@ -556,3 +584,22 @@ containment and finite retention also remain essential operating outcomes.
 Changed records live in this WorkUnit, the exact capability reports and existing
 queue/generated/root indexes. The actual implementation owner is C1; the
 release entry reuses unchanged worker/canaries and introduces no new runner.
+
+## Current closeout verification scope warning — 2026-10-05
+
+`git diff --check`, AST/input/review/link checks and the exact13-path admitted
+allowlist check passed. Read-only `verify --task-packet
+.aide/context/latest-task-packet.md --changed-files` exited0 with **WARN**,
+9 scope warnings and0 errors. Its active-scope resolver selects
+`.aide/queue/AIDE-SESSION-CONTAINMENT-01/task.yaml` rather than this explicitly
+admitted release WorkUnit; passing a task packet does not select scope. This
+is a retained tooling gap, not a waived warning or evidence of13 allowed paths
+being forbidden. Full streams and classifications are retained in
+`evidence/current-release-binding-closeout-validation.log`.
+
+A useful bounded C10 follow-up is explicit WorkUnit selection and matching scope
+verification while preserving default behavior and blocked-stream dormancy. It
+requires its own queue/adoption/source qualification before changing the CLI.
+The accepted67-input/archived payload and the current passed binding job remain
+unchanged; no broad runner rewrite or historical test replay follows from this
+documentation check.

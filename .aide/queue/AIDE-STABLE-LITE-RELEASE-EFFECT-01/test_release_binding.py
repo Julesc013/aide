@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import ExitStack
 import hashlib
 import importlib.util
 import json
@@ -9,13 +10,17 @@ import os
 from pathlib import Path
 import subprocess
 import sys
-import tempfile
 import unittest
 
 HERE = Path(__file__).resolve().parent
 SPEC = importlib.util.spec_from_file_location("release_binding", HERE / "release_binding.py")
 binding = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(binding)
+ROOT = HERE.parents[2]
+LITE_SPEC = importlib.util.spec_from_file_location("release_binding_fixture_lite", ROOT / ".aide/scripts/aide_lite.py")
+lite = importlib.util.module_from_spec(LITE_SPEC)
+sys.modules[LITE_SPEC.name] = lite
+LITE_SPEC.loader.exec_module(lite)
 
 
 def write_record(root, path, value):
@@ -98,12 +103,13 @@ def fixture(root):
 
 class BindingTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory(prefix="aide-release-binding-")
-        self.root = Path(self.temp.name)
+        self.temp = ExitStack()
+        self.addCleanup(self.temp.close)
+        self.root = Path(self.temp.enter_context(lite.public_archive_fixture("aide-public-release-test-")))
         self.packet = fixture(self.root)
 
     def tearDown(self):
-        self.temp.cleanup()
+        self.temp.close()
 
     def refuses(self):
         with self.assertRaises((binding.Refusal, KeyError, TypeError, ValueError, OSError)):
@@ -142,6 +148,14 @@ class BindingTests(unittest.TestCase):
         entry = self.packet["evidence"]["case0"]
         review = binding.load_json(self.root / entry["review"]["path"])
         review["notes"] = [{"blocking": False, "note": "required test still pending"}]
+        entry["review"] = write_record(self.root, entry["review"]["path"], review)
+        self.refuses()
+
+    def test_contradictory_blocking_review_note_refused(self):
+        entry = self.packet["evidence"]["case0"]
+        review = binding.load_json(self.root / entry["review"]["path"])
+        review["notes"] = [{"classification": "nonblocking_disposed", "blocking": True,
+                            "disposition": "still blocking despite this label"}]
         entry["review"] = write_record(self.root, entry["review"]["path"], review)
         self.refuses()
 

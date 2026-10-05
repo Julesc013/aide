@@ -13295,3 +13295,56 @@ packet retains all external gates and explicit delivered-test fixture limits.
 AST checks only at preparation; tests/native execution not yet run. Existing
 archives, product source,25 supervisor pins and executing configuration unchanged.
 Exact independent native review is required before qualification.
+
+## Current held release binding — actual qualification, 2026-10-05
+
+Repaired two demonstrated qualification defects: private Windows fixture ACLs
+now use the existing authenticated public_archive_fixture lifecycle; contradictory
+blocking review notes are refused with a regression. Baseline66/tree4b plus exact
+working overlay was independently reviewed for local verification only. Existing
+974151a5 config/25 pinned supervisor members admitted one effect6a76948a.
+
+Jobb38c6cf0 passed17 tests/no errors/failures/skips, current checker0/HELD and old
+checker1/REFUSED. Full streams/receipt/11 retained files16,966B and collection
+digests were checked; scratch retired and reservation released. Actual result
+ddce4396 independently accepted with notes, all disposed.42inputs/fourassets/pins
+and configurations are unchanged. Sampled scratch7,456B/memory225,296,384B are
+not disk-quota or cost-reduction proof; Windows principal was not separately
+observed. No model/ref/tag/runtime/publication effect or archive regeneration.
+
+Preparation commit66 message-format FAIL was caused here. Original commit and
+failure are preserved; corrected message-file precheck passes. Required owner
+message-only exception is pending, so no amendment or integration was executed.
+These local fixes/evidence do not waive that failure or historical release gates.
+
+## Current binding documentation verification
+
+Actualgit diff --check/AST/42-input identities/result-review bindings/new links
+and explicit13-path scope checks pass. Read-only Lite verify exits0 with WARN9
+and ERROR0, because its global active-scope resolver selects the session-
+containment WorkUnit despite the passed release task packet. Full raw output
+and the exact warning paths are retained; no all-clear or warning waiver is
+claimed. Explicit WorkUnit scope selection is a bounded candidate follow-up,
+not a new implementation, CLI change or reason to replay accepted source tests.
+
+## Campaign risk checkpoint precedence correction — 2026-10-05
+
+The remaining-risk register still led with the earlier37024570/49-check snapshot.
+Labelled that preserved snapshot as historical and placed the accepted935 source
+synchronization/current67-check/8-consumer/38-form/41-delivered/17-binding record
+first. This cross-cutting documentation correction prevents readers from treating
+old evidence as current. Original receipts and external/message-format gates
+are retained. Existing admitted parent-risk/engineering-log paths only; no test,
+archive, executable, source-ref, runtime or publication changes.
+
+## Normal corrective commit route — policy clarification
+
+The earlier stop treated amendment of66 as the needed route. Independent
+fix-forward admissionb38c00f8 permits a normal corrective child commit preserving
+66, consistent with AGENTS121 and existing-history policy127. No owner exception
+is required for that route and none is assumed. Proposed messagec114e8d9 actual
+precheckPASS; fulloriginal-aec range checked all681commits and stillFAILS11, the
+originalten plus66. Exact source-only integration remains eligible under existing
+owner authority but needs subsequent clean source/ref-effect acceptance. Canonical
+next-action docs now distinguish source fix-forward from amendment and stable
+history certification. Product/runtime/archive/source-input bytes are unchanged.

@@ -164,4 +164,13 @@ delivered_additions_qualification:
   permitted_local_state: [.aide.local/capability-payload-delivered-execution.json, .aide.local/capability-payload-delivered-job.json, .aide.local/capability-payload-replay-job.json, .aide.local/capability-payload-consumer-rest-execution.json, .aide.local/capability-payload-consumer-rest-job.json]
   runtime_promotion_or_stable_certification: false
 
-current_release_binding_qualification: Accepted cc5b570c bounded queue-local pure checker/refusal fixtures/current HELD packet; source preparation only, separate exact native effect/result review using existing config required; no archive/model/ref/runtime/publication/draft effect.
+current_release_binding_qualification:
+  state: native17_current0_held_stale1_refused_independent_ACCEPT_WITH_NOTES
+  source_binding: baseline66b66938_plus_explicit_two_file_working_overlay_not_in_git_tree
+  result_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-release-binding-result.json
+  result_sha256: ddce4396851872423c5e4d0e9a6d1e7e20208302a2857169b6d1027752951a26
+  review_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-release-binding-result-review.json
+  job_id: b38c6cf0026245a991616b620f1bcb15
+  scratch_retired_reservation_released: true
+  current_commit_message_exception: not_required_normal_fixforward_route_no_amendment_or_owner_approval_assumed
+  source_ref_runtime_publication_draft_authority: false

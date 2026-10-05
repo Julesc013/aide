@@ -2,8 +2,9 @@
 
 ## PHASE
 
-AIDE-STABLE-LITE-RELEASE-EFFECT-01: accepted current local qualification;
-canonical closeout and exact source-only synchronization. Existing checkout.
+AIDE-STABLE-LITE-RELEASE-EFFECT-01: accepted native17 and current bindings;
+normal corrective fix-forward admitted, preserving66 without amendment.
+Clean source/ref review precedes source-only sync. Existing checkout; reuse proof.
 
 ## GOAL
 
@@ -54,7 +55,7 @@ All8 distinct custody operations losslessly saved36264832logical bytes, complete
 receipt/log/output/failure history preserved; physical/global/net recovery unknown.
 Actual remaining7 used40MiB/8MiB and delivered16MiB/1MiB, no256MiB cap widening.
 Known conservative pools/export/release218796754logical bytes after delivered.
-Source-only sync last accepted477f9113/88 corresponding pairs/85 other tips;
+Source-only sync last accepted935545a8/88 corresponding pairs/85 other tips;
 final closeout sync requires exact accepted source/ref effect and terminal receipt.
 Do not make recursive receipt-only commits. Runtime originala241 held.
 
@@ -103,6 +104,26 @@ Summary, files, actual checks/results, evidence refs and remaining uncovered rou
 
 ## TOKEN_ESTIMATE
 
-approx_tokens: 1284
+approx_tokens: 1597
 
 Characters divided by4 estimate only; not tokenizer or host usage measurement.
+
+## CURRENT LOCAL BINDING CLOSEOUT
+
+Jobb38c6cf0/resultddce4396 passed17 tests, current0/HELD, stale1/REFUSED and
+collection/retirement; independently ACCEPT_WITH_NOTES/allnotesdisposed. Read
+the stable WorkUnit result/result-review for exact baseline66 plus working-overlay
+identities.42inputs/25pins/fourassets/config unchanged; no archive/test replay.
+
+Preparation66 messageFAIL remains in the full history. Normal corrective child
+commit is independently admitted; messagec114e8d9 precheckPASS. Preserve66 and
+its failure; no amendment exception or historical approval is inferred. Commit
+only accepted scoped bytes, then review exact clean source/ref effect before
+source-only sync. Full681historyFAIL11 remains a stable gate; live/client/matched/
+final release inputs remain separate. Do not retry passed qualification or ask
+again for configured storage/client paths.
+
+Closeout Lite verify returned WARN9/errors0: global scope picks session-
+containment, not this explicitly admitted WorkUnit. All13 exact allowed paths
+pass independently. Preserve warnings; explicit WorkUnit scope selection is a
+candidate follow-up, not a CLI/source change or permission expansion.

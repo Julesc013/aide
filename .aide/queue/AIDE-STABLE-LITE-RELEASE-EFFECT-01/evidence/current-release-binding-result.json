@@ -1,0 +1,225 @@
+{
+  "collected_tree_digests_verified": {
+    "logs": "7adfe4e206d395d2969e646fa64b25168a689db9bb890e09d3da3d2fea8182b8",
+    "output": "c7169a15fa358275d9aaefe23e3a3c1a87a22b7a26e65e58f54f4c05c60940da"
+  },
+  "configuration_digest": "035137faee676378bf1e5325deb19d837394609765802f5c03079dcb5c6910ec",
+  "dirty_overlay": {
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/release_binding.py": "4b5d928a4f2a201880308effdfb60387b3748e9ab6ee12a7dc193ef70eaeee18",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/test_release_binding.py": "343f3303a122a207b8b8c679c40311a7eabe1f5aac8ca8a96f4e3f9d961a8d29"
+  },
+  "effect_executable": false,
+  "effective_scope": {
+    "aggregate_admission": {
+      "by_pool": {
+        "control": 13694135,
+        "retained": 196854757,
+        "scratch": 0
+      },
+      "enforcement": "cooperative_admission_and_monitored_growth",
+      "limit_bytes": 268435456,
+      "logical_bytes": 210548892,
+      "reserved_bytes": 20447232
+    },
+    "filesystem": {
+      ":minimal": "read",
+      ":root": "deny",
+      "C:\\Program Files\\Git": "read",
+      "C:\\Users\\Jules\\.codex\\packages\\standalone\\releases\\0.145.0-x86_64-pc-windows-msvc\\bin": "read",
+      "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64": "read",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\control": "deny",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\control\\active.json": "read",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b38c6cf0026245a991616b620f1bcb15": "read",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b38c6cf0026245a991616b620f1bcb15\\cache": "write",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b38c6cf0026245a991616b620f1bcb15\\output": "write",
+      "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b38c6cf0026245a991616b620f1bcb15\\tmp": "write",
+      "D:\\Projects\\AIDE\\aide": "read",
+      "D:\\Projects\\AIDE\\aide\\.aide.local": "deny",
+      "D:\\Projects\\AIDE\\aide\\.aide.local\\capability-payload-delivered-execution.json": "deny"
+    },
+    "host_executable_sha256": "83751f15cb6a0a7b97df67752c001e3fe1c20e18ffbfec3ff63567296205eb6c",
+    "network_enabled": false,
+    "outer_session_contained": false,
+    "read_isolation": "unqualified",
+    "schema": "aide.scoped-host.observation.v1"
+  },
+  "input42_runtime25_asset4_config_identities_unchanged": true,
+  "job_id": "b38c6cf0026245a991616b620f1bcb15",
+  "manifest_digest": "85b62527976c8afae0c4db9c918051fbe150a95ae309a47b910b7d59ead16b96",
+  "monitoring_sampling_limit": "Sampled scratch peak does not measure every transient fixture allocation and is not a hard disk quota.",
+  "native_admission_path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-release-binding-v2-native-admission.log",
+  "native_admission_sha256": "0a67e40a89ec6cb95af5d819d8174b13e01435b5c993083836935b65b6651ddd",
+  "native_effect_path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-release-binding-native-effect-v2.log",
+  "native_effect_sha256": "6a76948a927354483f6b847cd33c55568ba30ec299e5503ecf0f63d525f17fea",
+  "native_parent_exit": 0,
+  "native_worker_exit": 0,
+  "pool_active_staging_scratch_absent": true,
+  "process_identity": {
+    "bytes": 1954,
+    "creation_filetime": 134356570465987087,
+    "exit_code": 0,
+    "io_errors": [],
+    "job_id": "b38c6cf0026245a991616b620f1bcb15",
+    "pid": 35796,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "publication_authorized": false,
+  "qualification": {
+    "commands": [
+      {
+        "argv": [
+          "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+          "-I",
+          "-B",
+          "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\release_binding.py",
+          "--root",
+          ".",
+          "--packet",
+          ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/release-effect-manifest-1.0.0-qualified.json"
+        ],
+        "exit_code": 0,
+        "expected_exit": 0,
+        "passed": true,
+        "result": {
+          "consumer_cases": 8,
+          "delivered_tests_with_explicit_fixtures": 41,
+          "distinct_records": 51,
+          "effect_executable": false,
+          "evidence_roles": [
+            "build",
+            "build_effect",
+            "case0",
+            "coverage",
+            "delivered41",
+            "remaining7",
+            "replay",
+            "source67"
+          ],
+          "external_gates": {
+            "final_release_acceptance": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+            "historical_messages": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+            "live_model_permission": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+            "matched_efficiency": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+            "outer_client": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+            "publication_and_download_verification": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+            "runtime_promotion": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+            "wider_cleanup": "PENDING_SEPARATE_PROOF_OR_AUTHORITY"
+          },
+          "public_forms": 38,
+          "publication_authorized": false,
+          "status": "PASS_LOCAL_BINDINGS_HELD",
+          "verification_scope": "Hash-bound recorded local evidence; not review authenticity, current host permissions or release admission"
+        }
+      },
+      {
+        "argv": [
+          "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+          "-I",
+          "-B",
+          "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\release_binding.py",
+          "--root",
+          ".",
+          "--packet",
+          ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/release-effect-manifest-1.0.0-current-runner.json"
+        ],
+        "exit_code": 1,
+        "expected_exit": 1,
+        "passed": true,
+        "result": {
+          "reason": "not a current local binding packet",
+          "status": "REFUSED"
+        }
+      }
+    ],
+    "effect_executable": false,
+    "errors": 0,
+    "failures": 0,
+    "fixture_tests": 17,
+    "publication_authorized": false,
+    "scope": "Small refusal fixtures and actual hash-bound held local packet; no publication admission",
+    "skips": 0,
+    "status": "PASS"
+  },
+  "qualification_sha256": "63587f56a85bb5d0736bf3a9c5498f59d3329d1ef7786b03a90deb0941637f6c",
+  "remaining_external_stable_gates": {
+    "final_release_acceptance": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+    "historical_messages": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+    "live_model_permission": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+    "matched_efficiency": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+    "outer_client": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+    "publication_and_download_verification": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+    "runtime_promotion": "PENDING_SEPARATE_PROOF_OR_AUTHORITY",
+    "wider_cleanup": "PENDING_SEPARATE_PROOF_OR_AUTHORITY"
+  },
+  "remaining_integration_blocker": "Original unpublished66 commit message fails policy; requested exact owner message-only exception remains pending.",
+  "retained_files": {
+    "logs/stderr": {
+      "sha256": "ebaba9aee73f459edb94ff0942ac6f13b37c18f5a68882ab1ee1d32a6b593e68",
+      "size_bytes": 1840
+    },
+    "logs/stdin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "logs/stdout": {
+      "sha256": "38bd55d54bf4534a4a1fc9f573748de15b8a5119bb8e51f9dcd3a6d76ad46430",
+      "size_bytes": 114
+    },
+    "output/binding-qualification.json": {
+      "sha256": "63587f56a85bb5d0736bf3a9c5498f59d3329d1ef7786b03a90deb0941637f6c",
+      "size_bytes": 2716
+    },
+    "output/current.stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "output/current.stdout.log": {
+      "sha256": "e0345af13d969c56cb5df5612ef16a8d86e30ed08884ad0e9d1eb1ac3dea597c",
+      "size_bytes": 986
+    },
+    "output/effective-scope.json": {
+      "sha256": "d071206854c9f28477caa1b3f1fe2c3b68a5e06ba772c36e28fc74cdd0ea7fc7",
+      "size_bytes": 1589
+    },
+    "output/stale.stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "output/stale.stdout.log": {
+      "sha256": "d220072252de314f4e3ab4a0aafbd5808fb21f0763c04f5ae4a5597118a61b80",
+      "size_bytes": 71
+    },
+    "owner.json": {
+      "sha256": "354bf8b4bb30678377d62e9dde023d99ecae78895621b21f5180d2c4bfca7467",
+      "size_bytes": 140
+    },
+    "receipt.json": {
+      "sha256": "5f40b8c3d3c54e33a8cef200dea20ef46ffdcebdc521abf074db8214d6025e35",
+      "size_bytes": 9510
+    }
+  },
+  "retained_logical_bytes": 16966,
+  "retained_root": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\b38c6cf0026245a991616b620f1bcb15",
+  "sampled_scratch_peak_bytes": 7456,
+  "schema_version": "aide.current-release-binding-result.v1",
+  "scratch_retired_reservation_released": true,
+  "source_binding": "Git baseline plus exact explicitly disclosed working input snapshot; overlay is absent from baseline Git tree.",
+  "source_commit": "66b66938bb22edb9135918634f9cce8774c95efa",
+  "source_tree": "4b4f9de63ecb9503decdb81dc733da247200e2ff",
+  "status": "PASS_LOCAL_BINDINGS_HELD_NATIVE_RESULT_REVIEW_PENDING",
+  "terminal": {
+    "dispatch_count": 1,
+    "effect_sha256": "6a76948a927354483f6b847cd33c55568ba30ec299e5503ecf0f63d525f17fea",
+    "ended_unix_ns": 1791183458208364500,
+    "exit_code": 0,
+    "manifest_sha256": "171e96a17b30e6e4d76855c60c9e61e4f3177a622994facd0f74fd0ac6ce5cce",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_bytes": 9657,
+    "stdout_sha256": "a8cde4b710210ba5f6701b2350b8eb408437c7caa5220a8eea22f5dd597a2ff9"
+  },
+  "unchanged_assertions": "No archive regeneration/runtime promotion/ref mutation/network-model submission/publication or whole-session containment claim from this slice.",
+  "windows_job_peak_commit_bytes": 225296384,
+  "worker_windows_account": "not separately recorded by this fixture; owned process/job identities and exact configured route are retained"
+}
