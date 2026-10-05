@@ -45,6 +45,11 @@
     }
   },
   "configuration_fixture_destination": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/native-fixture-configuration.json",
+  "known_support_dependent_tests": [
+    "test_public_cli_stale_validation_and_explicit_refresh",
+    "test_actual_public_cli_with_pinned_owner_completes_custody_and_lookup",
+    "test_current_repo_validation_registration_passes_without_reports"
+  ],
   "maximum_total_fixture_bytes": 1048576,
   "missing_non_executable_source_fixtures": {
     ".aide/context/latest-task-packet.md": {
@@ -85,7 +90,7 @@
     }
   },
   "purpose": "Fixture data for two source-oriented public CLI tests; absent from portable package by design, not delivered support/authority.",
-  "qualification_limit": "39 archive-local original cases plus2 original public CLI cases using explicitly bound fixture support. Archive operative/test code and assertions unchanged; no unaugmented portable root CURRENT claim.",
+  "qualification_limit": "All41 original tests exercise unchanged delivered modules with ten explicit fixture-data overlays. Two public CLI cases and capability-registration need nonbundled support. No bare-archive test-count, shipped-support or unaugmented portable-root CURRENT claim.",
   "schema": "aide.delivered-tests-explicit-fixture-support.v1",
   "source_basis": "7c6d69930a8c55c31cd01dfb9fd88490752479dc"
 }

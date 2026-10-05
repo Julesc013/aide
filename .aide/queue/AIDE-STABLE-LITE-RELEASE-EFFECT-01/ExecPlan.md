@@ -655,7 +655,7 @@ effect was attempted.
 
 Objective: produce a superseding local Lite candidate from clean
 `dev@dcdc9929` after the two independently accepted Task OS changes. The
-existing ZIP `27948415…` remains frozen as a prior candidate and its review
+existing ZIP `27948415â€¦` remains frozen as a prior candidate and its review
 does not transfer to changed bytes. Keep this in the existing release WorkUnit
 and sole checkout with the approved D execution roots. Do not perform a model,
 native, hosted, main, tag or publication effect in this slice.
@@ -677,17 +677,17 @@ or documentation-only edits.
 The D export job `03785bb5` passed and retired scratch. `pack-status` passed
 checksum, provenance and boundary checks; the resulting pack commit is
 `350e8037`. Stable build `f27082d2` and validation `431d8862` passed; asset
-commit `b14e6184` holds ZIP SHA-256 `002636e7…` and TAR SHA-256 `0821532c…`.
+commit `b14e6184` holds ZIP SHA-256 `002636e7â€¦` and TAR SHA-256 `0821532câ€¦`.
 Postcommit export replay `bba90883` and stable-build replay `8c98d838`
 changed zero tracked files. Q47/Q48 job `2586592a` passed 36/36. The six
 serial current-byte consumer jobs passed, with matrix summary SHA-256
-`95e1a75b…`, scratch retired and reservations released. Their existing
+`95e1a75bâ€¦`, scratch retired and reservations released. Their existing
 oracles do not directly invoke the changed `task next-plan` command. Add one
 small delivered-ZIP canary for default non-mutation and explicit report
 generation before claiming coverage of that changed behavior. This canary
 is a test-only source addition; it does not change the frozen archive bytes.
 
-Focused delivered Task OS job `6fe1be9c` passed against ZIP `002636e7…`:
+Focused delivered Task OS job `6fe1be9c` passed against ZIP `002636e7â€¦`:
 default inspection preserved its sentinel report, and explicit
 `--write-report` refreshed it. The 12 delivered job forms passed in outer D
 job `e862547d`; the local harness used that job's owned scratch and retained
@@ -1151,7 +1151,7 @@ consumers, delivered C1/custody and replay. Two read-only custody plans inspect
 owned source-validation evidence; no further raw retirement is authorized by
 those plans. No cap widening, new pools, evidence truncation or skipped cases.
 
-## Actual case0 accepted and remaining-consumer capacity — 2026-10-05
+## Actual case0 accepted and remaining-consumer capacity â€” 2026-10-05
 
 Source-only sync completed to bfb1a21b with all88 corresponding pairs and85
 other tips preserved in its exact terminal record; new closing metadata is
@@ -1188,7 +1188,7 @@ Code owns waiting/collection/retirement; stop uncertainty, no automatic replay.
 All outer/historical/live/matched efficiency/tag/publication/downloaded/wider
 cleanup/FacMan gates remain separate. No new worktree/layout or budget widening.
 
-## Current delivered-module qualification preparation — 2026-10-05
+## Current delivered-module qualification preparation â€” 2026-10-05
 
 All eight unchanged consumer cases now have actual current-archive passing
 evidence: case0 job8c9d3a83 plus remaining7 job4ce19cef, separately accepted.
@@ -1216,7 +1216,7 @@ Retain19 proposed topic owners/244 original UR/UC and all separate operational,
 historical/live/matched-efficiency/stable/downloaded/wider-cleanup gates. FacMan
 product remains paused. Unchanged external gates are not re-polled.
 
-### Delivered fixture dependency correction — 2026-10-05
+### Delivered fixture dependency correction â€” 2026-10-05
 
 Exact7c6d6993/6c561b1d review returned REQUEST_CHANGES before dispatch: two
 source-oriented public CLI tests require nine non-executable seed-hint files and
@@ -1225,7 +1225,13 @@ job allocated. Bind those exact source fixture bytes in task-owned support JSON
 and generate a tiny fixture-only selection from the same25 delivered core pins,
 root '.', no canonical outputs. Materialize only ten missing fixture-data files
 in the allocated extraction; overwrite nothing. All852 original archive files,
-operative/test bytes and18+23 assertions must remain unchanged. Report39
-archive-local cases plus2 explicitly fixture-backed public CLI cases, never an
+operative/test bytes and18+23 assertions must remain unchanged. Report all41 unchanged tests with explicit fixture support, including both
+public CLI cases and capability-registration; never claim an
 unaugmented portable-root CURRENT or shipped-test-fixture claim. The original
 rejected effect remains held; freeze and review a superseding exact effect.
+
+The eb3148ec/25a2884a review resolved both fixture gaps but rejected the39+2
+partition: capability-registration also depends on the overlay. The correction
+removes any bare-archive case-count claim and names all three known support
+dependencies. Original test assertions, program, archive, fixture bytes,25 pins
+and envelope are unchanged. Neither rejected recipe dispatched.
