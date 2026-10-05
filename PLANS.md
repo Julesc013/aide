@@ -1,5 +1,23 @@
 # AIDE Planning Index
 
+## 2026-10-06 current preventive commit archives
+
+Existing release WorkUnit [REPORT](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+owns the actual changed job633f65b2:49 source and49 delivered command tests
+passed, build/validation0,854 identical archive members/851 checksums and
+complete retirement. Current ZIP5cba4ff6 includes the guarded command.
+Capture repair282 and96-input transitive closure preserve full authentication
+and payload verification under unchanged finite limits. Original failed5e24
+and old ZIP556 consumer/replay evidence are retained, not rebound.
+
+The old release-effect packet is stale for these new assets. Exact current
+result/source/ref acceptance and affected consumers/replay precede final
+release-effect review; historical11, live/matched efficiency, outer-client
+setup and stable publication/download gates remain separate. Native72 and
+unchanged export73/60,911 evidence were reused without broad test replay.
+No new worktree, storage pool, installed execution profile or tag was created.
+
+
 ## Current managed commit prevention — 2026-10-06
 
 The [managed commit WorkUnit](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/ExecPlan.md)

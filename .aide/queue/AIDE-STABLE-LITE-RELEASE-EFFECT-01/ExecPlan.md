@@ -1371,9 +1371,10 @@ No automatic continuation can accept these records or the other release gates.
 
 - [x] Integrate source72 and actual guarded commits through independent source/ref gates; main/dev/task75e6c40f source-only synchronization accepted.
 - [x] One restricted export-only job32c656ee refreshes exact8 derivative files, clean75 provenance,854 members/851 checksums; doctor73/validate60911 PASS, complete retirement. Old4 asset bytes preserved.
-- [ ] Freeze and commit only that exact export and minimal current control/report updates.
-- [ ] One separately admitted existing-build-profile job: affected source24+12+8+5 tests, stable-build/stable-validate, equal complete ZIP/TAR maps and49 unchanged new tests loaded from delivered modules without source overlays. Preserve originals and full failed/terminal evidence.
-- [ ] Accept actual result before new archive/consumer/replay/promotion claims. Current scratch16MiB/output64KiB/300s/shared256MiB limits stay finite and monitored; source and executing runtime stay disjoint from outputs.
+- [x] Freeze and commit exact export20a063a9; separately accepted capture repair2825069b preserves originals.
+- [x] Changed job633f65b2 passes source24+12+8+5, stable-build/stable-validate and49 actual delivered tests; equal854 mappings/851 checksums, no source overlays. Failed5e24 and raw streams remain retained.
+- [x] Independently accept actual633 result: review5b60ce54 ACCEPT_WITH_NOTES/all notes nonblocking and disposed.
+- [ ] Commit only4 assets and current closeout, then source-only synchronization; affected new-byte consumers/replay/final release effect remain separate. Current scratch16MiB/output64KiB/300s/shared256MiB limits stay finite and monitored; source and executing runtime stay disjoint from outputs.
 
 Exact old852 export and held4 asset preimages remain in immutable Git75; ZIP556 alone is not an exact old-export restoration source. No uncertain automatic replay, new root/worktree, whole-client/read isolation, hard quota, owner dispositions or model/publication effects follow. Native72 is not replayed for metadata; old asset consumers are not rebound without affected proof.
 

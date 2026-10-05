@@ -3,8 +3,8 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: needs_review
-planning_state: managed_commit_export_current_held_assets_stable_external_gates_pending
-result: SOURCE72_EXPORT854_STRUCTURAL_PASS_NEW_ARCHIVES_PENDING
+planning_state: managed_commit_current_archives98_pass_stable_external_gates_pending
+result: SOURCE72_EXPORT854_ARCHIVES98_PASS_STABLE_GATES_PENDING
 created_at: 2026-09-28
 updated_at: 2026-10-06
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

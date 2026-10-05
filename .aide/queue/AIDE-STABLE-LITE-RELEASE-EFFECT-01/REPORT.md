@@ -2,34 +2,67 @@
 
 ## Current managed commit delivery — 2026-10-06
 
-The preventive commit path completed real guarded commits c23dbddd and75e6c40f,
-then exact source synchronization: main/dev/task75e6c40f,88 corresponding branch
-pairs matched,85 other tips preserved. No published history was rewritten.
-The current export now includes the qualified commit command/core and49 new
-cases. One restricted export job32c656ee completed with exits0, full collection,
-quiescence, scratch retirement and released reservations. Its854 members and851
-checksums bind clean75 provenance; the old two provenance failures are closed.
-Actual doctor73 and validate60,911 checks passed with no warnings/failures.
+The managed commit command now reaches the actual portable archives. The
+changed job633f65b2 passed49 affected source tests and49 unchanged command
+tests loaded from the extracted ZIP, with no source overrides or fixture
+overlays. Existing stable-build/stable-validate both exited0. Complete ZIP
+and TAR maps match854 members, and all851 archive checksums verify. The
+unchanged first-stable compatibility contract still declares38 public forms;
+the new commit operation is an additional tested command, not an implicit
+expansion of that frozen support contract.
 
-[Export result](evidence/managed-commit-current-export-result.log),
-[structural terminal](evidence/managed-commit-current-export-structural-terminal.log)
-and [independent result review](evidence/managed-commit-current-export-result-review.log)
-own this exact boundary. The job retained114,318 logical bytes including the
-full input-bound receipt, sampled2,202 scratch bytes and218,652,672 peak memory.
-These observations are separate from the source72-test job and machine-wide usage.
+| Current artifact | SHA256 |
+|---|---|
+| ZIP |5cba4ff6658f8f74ea91ec44442e4d566eea20dac90f7f57c53eb903763587fe|
+| TAR |8b02718548e7ad61791e0e6f78c4859521bc64e47b324683d1c881f326d197ea|
+| Manifest |597df23c5e3ebb0aa89c713b3ec8403af4e2d084084d60835899058153b290ed|
+| SHA256SUMS |97495d6627551a4ad40ed55a63d97b6bc8df131a486c8ed001ff18a90b9a2797|
 
-The four held ZIP55665b2f/TARfce561ca assets remain byte-identical and preserve their
-old8-consumer/38-form/41-delivered-test evidence; they do not contain the new
-commit command. The next changed-payload slice runs only affected release checks,
-build/validation and49 tests of the new delivered command using the existing
-runner, fixtures and limits. Its prospective helper is execution machinery,
-not another canonical task authority. Source72 and unaffected original tests
-remain valid within their unchanged-input scope. Stable acceptance, historical11,
-outer-client setup, live/matched efficiency and downloaded consumers remain open.
+[Actual result](evidence/managed-commit-current-payload-result-v3.log) binds
+source2825069b, the capture repair,96 complete declared inputs,26 unchanged
+supervisor pins and full raw streams. Archive identity names export source
+75e6c40f, not the later helper-only commit. The restricted account was
+BLACKGLASS-WIN1\CodexSandboxOffline. Worker and parent exited0, became
+quiescent, verified collection digests/ownership, retained35,548 logical bytes,
+removed scratch and released reservations. Sampled scratch8,803,951B and
+peak Job memory326,504,448B fit unchanged16MiB/2GiB limits; the same300s job
+and256MiB cooperative shared budget were used. These are monitored disk
+observations, not hard quotas or whole-machine/parent usage measurements.
+
+The first attempt5e24 timed out before build and is preserved as failed;
+its lost child PIPE output leaves case count unknown. Repair282 streams child
+output before launch. The manifest now has96 required code/test/fixture/control
+inputs and transitive pack metadata instead of1701 redundant source/export
+entries. Fixture authentication and the builder's full payload verification
+remain intact. The changed attempt succeeded without raising a limit. No
+matched model-cost efficiency conclusion follows; job model calls were0,
+while controller/reviewer usage coverage is unknown.
+
+Earlier native72 source checks and clean export32c656ee remain separately
+qualified. The export has854 members/851 checksums and clean75 provenance;
+actual doctor73/validate60,911 were PASS with no warnings/failures. The last
+accepted source-only synchronization before this slice established75 on
+main/dev/task and88 corresponding branch pairs, preserving85 other tips.
+The exact later effect/terminal receipts own subsequent source synchronization,
+not a guessed future commit identity in this report.
+
+The old ZIP55665b2f/TARfce561ca and their8-consumer/38-form/41-test/replay
+evidence remain recoverable in immutable Git282. That evidence has not been
+rebound to the new archives. The old qualified release-effect manifest458e7957
+is historical and stale for these new bytes; publication stays unauthorized.
+[Independent result review](evidence/managed-commit-current-payload-result-review-v3.log)
+accepted this exact98-test scope with all notes nonblocking and disposed.
+Source/ref acceptance, affected current-byte consumer
+and replay qualification, final release-effect acceptance, historical11 actual
+owner dispositions, live permission/qualification, matched efficiency, client
+containment, publication and downloaded consumers remain distinct gates.
+The outer shell/editor/plugins remain unrestricted; excluded reads remain
+unqualified. Wider disk reclamation is unfinished. No stable tag or release
+has been created.
 
 ## Historical accepted archive snapshot — 2026-10-05
 
-The current Windows Lite candidate has eight passing consumer cases against
+The earlier Windows Lite candidate had eight passing consumer cases against
 ZIP55665b2f/TARfce561ca, complete38-form evidence, and an accepted zero-change
 build/validation replay. The original18 capability and23 custody tests of delivered modules passed with explicit bound test fixtures. These are local technical outcomes;
 stable publication and whole-session containment remain unfinished. The new
