@@ -2387,6 +2387,7 @@ TRANSACTION_REQUIRED_GATES = [
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
+    "core/apply/managed_commit.py",
     ".aide/templates/portable-apply/README.md",
     ".aide/templates/portable-apply/__init__.py",
     ".aide/scripts/aide_lite.py",
@@ -18509,8 +18510,24 @@ def public_archive_fixture(prefix: str):
         sys.path.insert(0, str(source_root))
     from core.execution import managed_workspace
     control = managed_workspace.root_path(os.environ["AIDE_JOB_CONTROL"])
-    seed = managed_workspace.read_json(control / "active.json")
-    record = managed_workspace.current_context(seed["job"]["cwd"])
+    active = control / "active.json"
+    for attempt in range(3):
+        try:
+            seed = managed_workspace.read_json(active)
+            record = managed_workspace.current_context(seed["job"]["cwd"])
+            break
+        except PermissionError as exc:
+            # The controller replaces this read-only checkpoint while sampling.
+            # Retry only this exact metadata read, before any fixture allocation;
+            # authentication remains mandatory and persistent denial fails closed.
+            if (attempt == 2 or exc.filename is None
+                    or os.path.normcase(os.path.abspath(exc.filename))
+                    != os.path.normcase(str(active))):
+                raise
+            print(f"Public fixture active metadata read: errno={exc.errno} "
+                  f"winerror={getattr(exc, 'winerror', None)}; retry={attempt + 1}/2",
+                  file=sys.stderr)
+            time.sleep(0.05)
     parent = managed_workspace.root_path(os.environ["AIDE_JOB_TMP"])
     owned_parent = managed_workspace.root_path(str(Path(record["scratch"]) / "tmp"))
     if not parent.is_relative_to(owned_parent):
@@ -33680,6 +33697,32 @@ def command_commit_check(args: argparse.Namespace) -> int:
     return 1 if result == "FAIL" else 0
 
 
+def command_commit_create(args: argparse.Namespace) -> int:
+    module_path = repo_root_from_script() / "core/apply/managed_commit.py"
+    spec = importlib.util.spec_from_file_location("aide_managed_commit", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("managed commit module is unavailable")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    message_path = safe_repo_path(args.repo_root, args.message_file)
+    if message_path.stat().st_size > module.MAX_MESSAGE_BYTES:
+        print("AIDE Lite managed commit\nresult: REFUSED\nreason: message exceeds finite limit")
+        return 1
+    result = module.create_commit(
+        args.repo_root, message=message_path.read_bytes(),
+        expected_message_sha256=args.expect_message_sha256,
+        expected_ref=args.expect_ref, expected_head=args.expect_head,
+        expected_tree=args.expect_tree, allowed_paths=args.path,
+        validator=lambda message: [check.message for check in validate_commit_message_text(message)
+                                   if check.severity == "FAIL"],
+        apply=args.apply,
+    )
+    print("AIDE Lite managed commit")
+    print("result: " + str(result["status"]))
+    print(json.dumps(result, sort_keys=True))
+    return 0 if result["status"] in ("DRY_RUN", "COMMITTED") else 1
+
+
 def command_commit_template(args: argparse.Namespace) -> int:
     template_path = args.repo_root / COMMIT_TEMPLATE_PATH
     if not template_path.exists():
@@ -45815,6 +45858,15 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     commit_check_parser.add_argument("--max-count", type=int, help="Limit range validation to the latest N commits in the range.")
     commit_check_parser.add_argument("--no-dispositions", action="store_true", help="Report raw range-policy results without historical dispositions.")
     commit_check_parser.set_defaults(handler=command_commit_check)
+    commit_create_parser = commit_subparsers.add_parser("create", help="Guard one normal local commit; dry-run by default.")
+    commit_create_parser.add_argument("--message-file", required=True, help="Exact bounded checkout-relative UTF-8 LF message.")
+    commit_create_parser.add_argument("--expect-message-sha256", required=True, help="Expected exact message-file digest.")
+    commit_create_parser.add_argument("--expect-ref", required=True, help="Expected existing refs/heads/... branch.")
+    commit_create_parser.add_argument("--expect-head", required=True, help="Expected full parent object id.")
+    commit_create_parser.add_argument("--expect-tree", required=True, help="Expected full staged tree object id.")
+    commit_create_parser.add_argument("--path", action="append", required=True, help="Exact allowed staged path; repeat for each path.")
+    commit_create_parser.add_argument("--apply", action="store_true", help="Create, verify and atomically advance this existing local branch.")
+    commit_create_parser.set_defaults(handler=command_commit_create)
     commit_template_parser = commit_subparsers.add_parser("template")
     commit_template_parser.add_argument("--output", help="Optional repo-relative path to write the template.")
     commit_template_parser.set_defaults(handler=command_commit_template)

@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+## Current managed commit prevention — 2026-10-05
+
+The admitted [managed commit WorkUnit](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/ExecPlan.md) now has accepted72-test native evidence for strict message/tree/scope checks, prepared Git transactions, public CLI behavior and retirement. Finish its source-consistency closeout and use the guarded path for its exact normal commit. Local commit/ref terminals govern delivery; stable release remains separate. Published66 and proposed owner decisions remain unchanged.
+
 ## Current plan — 2026-10-05
 
 Source-only main/dev/task64874d3f synchronization is independently accepted:

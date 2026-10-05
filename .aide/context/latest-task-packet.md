@@ -1,130 +1,76 @@
-# AIDE Latest Task Packet
+# AIDE managed commit prevention
 
 ## PHASE
 
-AIDE-STABLE-LITE-RELEASE-EFFECT-01: source-only648 synchronization accepted.
-Prepare/review complete11 exact historical owner decisions; all remain proposed
-and ineffective. Existing checkout/assets/proof retained; owner approval separate.
+AIDE-MANAGED-COMMIT-CREATE-01: bounded implementation under the existing campaign.
+Use its task.yaml, ExecPlan.md and exact evidence subjects.
 
 ## GOAL
 
-Deliver qualified current custody payload. Archive55665b2f now passed all8
-consumers,38-form coverage, replay and original41 tests with explicit fixtures.
-Stable release and client/owner/live/matched gates remain separate.
+Refuse malformed messages and changed inputs before a managed branch moves;
+qualify the actual public CLI and complete one real ordinary local commit.
 
 ## WHY
 
-Keep restart state current and reuse valid proof without new workspaces,
-repeated tests, lost evidence or increased aggregate storage allowance.
+Prevent formatting failures at entry without rewriting historical commits.
 
 ## CONTEXT_REFS
 
-Read task.yaml, status.yaml, ExecPlan.md and REPORT.md under
-.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/. That WorkUnit governs delivery.
-C4 maintenance lives under .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/.
-Existing compact refs: `.aide/context/repo-map.json`, `.aide/context/test-map.json`,
-`.aide/context/context-index.json`, `.aide/context/latest-context-packet.md`.
+Child ExecPlan; docs/reference/commit-discipline.md; admission977f1cfb;
+evidence/native-result-v5-failed.log; current source/native review and terminal.
+Base d2c8e831, tree272c4edc, existing task/aide-current-scoped-lite-qualification-01.
 
 ## ALLOWED_PATHS
 
-The exact WorkUnit allowlists govern; no expansion from this brief. Release
-records, existing export/release products, declared selected local config/job
-records, root/generated indexes and exact admitted checkpoint docs only.
-C4 Report/ExecPlan updates use its existing documentation allowlist.
-Completed build wrote release only, with readonly qualified export supervision.
+The17 original scope entries plus four admitted capability-report paths in child
+task.yaml. Preserve current checkout/storage.
+The four compiled intake outputs belong to this admitted task.
 
 ## FORBIDDEN_PATHS
 
-Unrelated repos, drive roots, .git/**, .env, secrets/** or arbitrary local state.
-No new clone/worktree/pool/layout, quota/ACL change, unknown deletion, model call,
-ref/runtime promotion or release effect without exact admission. Originala241 config held.
+Unrelated source, machine configuration, credentials, other repositories, new
+worktrees/pools; history rewriting, live model calls and publication effects.
 
 ## IMPLEMENTATION
 
-Source67/native23 retain unchanged-operative-input scope; clean exportcf234547
-849 checksums/buildf3312a04 ZIP55665b2f/TARfce561ca852members, same25pins.
-Current case0 job8c9d3a83 and remaining7 job4ce19cef complete8/8;38 forms cover
-39 non-job outputs+12 job observations,51 unique records. Replay2e7d1b37 both0
-and all four assets byte-identical. Deliveredc258ff6f original18+23 pass/no skips
-with ten explicit test-fixture files; three cases need support. All852 original
-archive files/fixtures unchanged, full collection and retirement accepted.
-No bare-archive case-count/CURRENT claim. Prior rejected recipes did not dispatch;
-UTF8 history and CRLF reader corrections preserve original evidence/no replay.
-
-All8 distinct custody operations losslessly saved36264832logical bytes, complete
-receipt/log/output/failure history preserved; physical/global/net recovery unknown.
-Actual remaining7 used40MiB/8MiB and delivered16MiB/1MiB, no256MiB cap widening.
-Known conservative pools/export/release218796754logical bytes after delivered.
-Source-only sync last accepted64874d3f/88 corresponding pairs/85 other tips;
-final closeout sync requires exact accepted source/ref effect and terminal receipt.
-Do not make recursive receipt-only commits. Runtime originala241 held.
+Strict message/ref/parent/tree/path checks; owned index lock; verified immutable
+object; prepared Git HEAD/referent transaction with exact branch checks before
+commit. Preserve locks if child reaping is unproven. Public fixture metadata-read
+retries are finite and retain full authentication.
 
 ## VALIDATION
 
-PASS: source67/native23, clean849 export/build852/849 (exact-input reuse).
-PASS: all8 current cases/38forms51records, unchanged replay and delivered41
-with explicit bound fixture data, independent actual acceptance/retirement.
-Run affected structural/packet/spec/projection/link/commit checks only.
-NOT RUN: runtime promotion, stable ACCEPT/tag/publication/downloaded consumers,
-live GPT6.1/matched whole efficiency or outer-client setup/wider cleanup.
-No automatic replay; fresh exact identities/capacity before any new effect.
-
-## COMMITS
-
-Structured commits, required headings/trailers and commit check. Preserve refused
-and unexecuted effects. No force push, retag, branch flattening or stale acceptance.
+Native jobdc7003a7 passed49 new cases and23 intact Q27 regressions with zero skips;
+resultc5672710/parentb1116014 are independently accepted. Four earlier jobs failed
+and retired. Final structural/source review and actual local commit remain gated.
+The four-path report refresh closes source-classification staleness only; it does
+not qualify the unchanged old archive or approve release/model/host effects.
 
 ## EVIDENCE
 
-Current q/evidence canonical custody-current-consumer-rest-result.json,
-custody-current-public-form-coverage.json,custody-current-zerochange-replay-result.json,
-delivered-additions-result.json and independent review files. Existing source/
-clean-export/build results retain original subjects. C4 remaining-custody-result-v2.json
-and review preserve actual last3 effects; original2/delivery3 records stay.
-Full raw streams/receipts/archives remain accessible; compact views do not replace
-evidence. See REPORT for19 topic prefixes/34 drafts/244 requirements244 designs.
+Retain numeric exits, full bounded native streams, identities, candidate/ref
+effects, collection and retirement. Structural validator output is losslessly
+compressed with verified digests, not copied into context.
 
 ## NON_GOALS
 
-Outer shell/editor/plugins remain unrestricted and read isolation unqualified.
-256MiB is cooperative monitored admission, not a global/hard filesystem quota.
-Historical dispositions, live GPT6.1 permission, matched whole efficiency,
-stable ACCEPT/tag/publication/download/adoption and wider cleanup remain separate.
-FacMan product work stays paused. Do not recheck unchanged external blockers.
-Controller/review actual usage is unknown; zero managed dispatch is not total cost.
+Published66 and eleven proposed historical decisions remain unchanged. No live
+permission/client setup is inferred. Outer tools remain unrestricted, reads
+unqualified and disk control monitored. FacMan stays paused.
 
 ## ACCEPTANCE
 
-Exact independently accepted source/effect, current inputs/asset/config identities,
-complete results and retirement. Build/runtime/consumer/ref/release gates remain
-separate; no new effect before its exact verdict and fresh locked admission.
+Invalid/changed inputs cannot advance; exact valid commit succeeds. Real locks,
+races, reflogs and uncertainty are tested; outputs collected; scratch retired.
+Local commit, integration and release effects each keep exact review. Preserve
+unchanged older artifact evidence.
 
 ## OUTPUT_SCHEMA
 
-Summary, files, actual checks/results, evidence refs and remaining uncovered routes.
+Outcome, changed paths, actual checks, effective boundaries, resource use,
+retirement and unresolved gates. No repeated report for unchanged owner blockers.
 
 ## TOKEN_ESTIMATE
 
-approx_tokens: 1622
-
-Characters divided by4 estimate only; not tokenizer or host usage measurement.
-
-## CURRENT LOCAL BINDING CLOSEOUT
-
-Jobb38c6cf0/resultddce4396 passed17 tests, current0/HELD, stale1/REFUSED and
-collection/retirement; independently ACCEPT_WITH_NOTES/allnotesdisposed. Read
-the stable WorkUnit result/result-review for exact baseline66 plus working-overlay
-identities.42inputs/25pins/fourassets/config unchanged; no archive/test replay.
-
-Preparation66 messageFAIL remains in the full history. Normal corrective child
-commit648 was created and independently accepted/source-only synchronized.
-Preserve66 and its failure; no historical approval is inferred. Current full682
-rangeFAIL11 remains a stable gate. A separately reviewed exact11 proposed owner
-packet is prepared; all records ineffective/live registry unchanged. Live/client/matched/
-final release inputs remain separate. Do not retry passed qualification or ask
-again for configured storage/client paths.
-
-Closeout Lite verify returned WARN9/errors0: global scope picks session-
-containment, not this explicitly admitted WorkUnit. All13 exact allowed paths
-pass independently. Preserve warnings; explicit WorkUnit scope selection is a
-candidate follow-up, not a CLI/source change or permission expansion.
+approx_tokens: 713
+method: characters/4, rounded up; document-size estimate, not actual usage.

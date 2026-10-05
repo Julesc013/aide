@@ -1,0 +1,55 @@
+schema_version: aide.queue-task.v0
+id: AIDE-MANAGED-COMMIT-CREATE-01
+title: Refuse malformed managed commits before branch advancement
+type: implementation
+status: running
+created_at: 2026-10-05
+updated_at: 2026-10-06
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+source_base: d2c8e83103aa773490bb249ed7886cccc9d2412e
+objective: >
+  Add one ordinary local commit operation that uses the strict existing checker,
+  binds intended message/tree/head/paths, verifies the created object before
+  advancing the existing branch, and completes a real necessary local task.
+authority_basis: New owner preventive-workflow instruction and independently accepted exact child admission977f1cfb; wider approvals remain proposed.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/**
+    - .aide/queue/index.yaml
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/context/latest-task-packet.md
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_managed_commit_create.py
+    - core/apply/managed_commit.py
+    - docs/reference/commit-discipline.md
+    - .aide/policies/commit-messages.yaml
+    - .aide.local/managed-commit-create-execution.json
+    - .aide.local/managed-commit-create-job.json
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - .aide/reports/capability-ledger.json
+    - .aide/reports/capability-ledger.md
+    - .aide/reports/capability-evidence-bindings.json
+    - .aide/reports/capability-command-status.md
+  forbidden_operations:
+    - history amendment or rewrite
+    - signing or hook bypass
+    - main/dev/ref push, tag or publication without a later exact effect review
+    - inference calls, privilege or resource ceiling changes
+    - physical clone/worktree/storage layout creation
+verification:
+  - strict malformed-message refusal before ref advance
+  - immutable tree/head/message/path and owned-lock fixtures
+  - actual public CLI dry-run and commit with exact object/parent evidence
+  - managed native result collection and scratch retirement
+  - independently reviewed real normal local commit
+retained_gates:
+  - source, native and real local effect each require exact independent review
+  - source synchronization and release-payload qualification remain separate
+
+scope_extension: evidence/ledger-closeout-scope-proposal.log
+scope_extension_verdict: evidence/ledger-closeout-scope-review.log

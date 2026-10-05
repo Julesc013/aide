@@ -3894,3 +3894,12 @@ items:
     exec_plan: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md
     prompt: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/prompt.md
     evidence: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence
+  - id: AIDE-MANAGED-COMMIT-CREATE-01
+    status: needs_review
+    planning_state: native_accepted_source_closeout_pending
+    result: partial
+    title: Refuse malformed managed commits before branch advancement
+    task: .aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/prompt.md
+    evidence: .aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/evidence

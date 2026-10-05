@@ -3,8 +3,8 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: e31cbefb8a3cbfd2c0e407abc7d379726b6f9b7ec771328ac30f919eeef95fa6
-- raw_prompt_excerpt: Prepare and qualify the exact current AIDE Lite 1.0.0 release-effect evidence packet under AIDE-STABLE-LITE-RELEASE-EFFECT-01. Bind unchanged current assets and accepted qualification. Add a read-only deterministic binding checker with r...
+- raw_prompt_hash: 0fbca3389237d3ae2eb84c3b414bd2e3d4477f8631a529036517c14c86ec9fdb
+- raw_prompt_excerpt: Implement a guarded local AIDE commit-create operation using the existing strict message checker. Bind expected HEAD, intended staged tree and bounded changed paths; verify message, tree and ordered parents before advancing the managed b...
 - interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release

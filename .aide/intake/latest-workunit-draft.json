@@ -30,7 +30,7 @@
     "raw response logs",
     "target repositories unless target-local queue authorizes work"
   ],
-  "idempotency": "prompt_hash:e31cbefb8a3cbfd2c0e407abc7d379726b6f9b7ec771328ac30f919eeef95fa6; status:draft; compile_only:true",
+  "idempotency": "prompt_hash:0fbca3389237d3ae2eb84c3b414bd2e3d4477f8631a529036517c14c86ec9fdb; status:draft; compile_only:true",
   "implementation_outline": [
     "Reconcile repo state before editing.",
     "write blocker report and require reviewed authorization before mutation",
@@ -63,5 +63,5 @@
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ],
   "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-  "workunit_id": "draft-release-e31cbefb8a3c"
+  "workunit_id": "draft-release-0fbca3389237"
 }

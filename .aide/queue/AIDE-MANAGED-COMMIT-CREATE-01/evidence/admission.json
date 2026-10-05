@@ -1,0 +1,16 @@
+{
+  "actual_independent_review_transcription": true,
+  "verdict": "ACCEPT_WITH_NOTES",
+  "reviewer": "/root/containment_review",
+  "proposal_sha256": "977f1cfbb65fbff0b1fb35ada379083918d2155e0099041b161718678882184e",
+  "blocking_findings": [],
+  "all_notes_disposed": true,
+  "scope": "Admission only,17entries; classified4intakefiles, same d2/tree/index.",
+  "notes": [
+    "Composite intake remains blocked/split-required; child only.",
+    "Strict new-message checker; no historical waivers.",
+    "Exact source review and public-CLI fixture qualification required for locking, immutable inputs, hook/signing refusal/object/HEAD-ref CAS.",
+    "Native/realcommit/integration/payload/publication separate effect gates.",
+    "Known-good supervisor/pools/ceilings unchanged."
+  ]
+}

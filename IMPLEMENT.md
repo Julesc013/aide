@@ -1,4 +1,24 @@
 # AIDE Implementation Log
+
+## 2026-10-05 managed commit prevention admitted
+
+New owner instruction addresses malformed messages at entry. Exact child admission977f1cfb is ACCEPT_WITH_NOTES/all notes nonblocking and disposed. The four compiler outputs are classified; compiler blocked composite result is retained. Work reuses task/d2 checkout, unchanged supervisor/pools/limits, with source/native/actual local commit reviewed separately. Published66 cannot use the proposed unpublished amendment.
+
+The revised public `commit create` and shared core passed49 new real Git/CLI and
+23 unchanged Q27 tests in jobdc7003a7; both exits0, no skips. Independent result
+acceptance binds c5672710/b1116014. Strict messages precede object creation;
+verified objects precede prepared HEAD/branch advancement. Reaping uncertainty
+preserves the owned index lock. Exact metadata-read retries preserve admission.
+All failed native attempts are terminal and retired; they are not hidden by the
+passing result. Final job retained17,206 logical bytes, sampled29,856 scratch bytes
+and322,293,760 peak memory bytes; scratch absent/reservation released.
+
+Four existing capability-report paths were admitted by45425f4d solely to refresh
+source classification after CLI/task-brief bytes changed. This minimal cross-cutting
+closeout does not requalify old functional evidence. The original supervisor,
+storage, limits, live dispositions and four held release assets remain unchanged.
+Actual local commit and later ref effects have their own terminal records.
+
 ## Actual delivered qualification and coherent closeout — 2026-10-05
 
 Remaining7 current consumers,38-form map and byte-identical replay are accepted.

@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+id: AIDE-MANAGED-COMMIT-CREATE-01
+status: needs_review
+planning_state: native_accepted_source_closeout_pending
+result: partial
+native_result: PASS
+native_result_ref: evidence/native-result-v7-passed.log
+native_result_review: evidence/native-result-review-v7.log
+source_base: d2c8e83103aa773490bb249ed7886cccc9d2412e
+admission_proposal_sha256: 977f1cfbb65fbff0b1fb35ada379083918d2155e0099041b161718678882184e
+scope_extension_ref: evidence/ledger-closeout-scope-review.log
+local_commit: pending_exact_reviewed_effect
+owner_dispositions_or_live_permission: not_granted
