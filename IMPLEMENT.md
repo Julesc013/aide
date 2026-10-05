@@ -13371,3 +13371,15 @@ owner input by explicitly including immutable published66 without amendment.
 Controller/review calls are outside this native-dispatch observation; actual
 usage is unknown. Zero managed dispatches do not prove zero whole-outcome cost
 or efficiency improvement. No token-estimate figure is treated as actual usage.
+
+## Historical packet source-summary correction — 2026-10-05
+
+Independent clean-source/ref review of4ee52a95/3006e3cc returned REQUEST_CHANGES
+for one stale current-report row: it incorrectly left935 as latest sync and66
+unpublished. No ref effect ran. Correct the row to accepted648/terminal8f9 and
+label the new exact11 packet as a preparation snapshot awaiting its own source
+gate; subsequent actual effects belong to their terminal receipt. All proposal
+identities, live registry, qualified inputs/assets/configs and88/85 maps passed.
+This bounded two-document normal fix-forward retains the rejected subject and
+reuses those unchanged checks, without history rewrite, test/archive replay or
+owner approval. Exact corrected source/ref review still precedes any sync.
