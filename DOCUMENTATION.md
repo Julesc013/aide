@@ -1,4 +1,13 @@
 # AIDE Documentation Index
+## Delivered-module qualification preparation — 2026-10-05
+
+The [release ExecPlan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md)
+records the actual accepted consumer/coverage checkpoint and the next bounded
+qualification. Its task-owned delivered_additions.py is executable verification
+scaffolding, not product source or a second runner. Source evidence, delivered
+behavior and outer-client containment remain separate claims. No41-test result
+is implied by preparing this entry.
+
 
 ## Current evidence and continuation references — 2026-10-05
 

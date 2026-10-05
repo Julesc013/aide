@@ -2,14 +2,16 @@
 
 ## Current delivery next step — 2026-10-05
 
-Accepted current case0 completes one of8 consumer cases. Next use the existing
-C4 exact owned-custody plans to resolve measured capacity, then admit the
-unchanged remaining7 worker phase with finite40MiB scratch/8MiB results. Current
-52953088 reservation is short11459419bytes; no apply/fit promise. Keep delivered
-C1/custody/replay, historical10/live/matched/stable/downloaded/outer/wider-cleanup
-gates separate. [Current plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md)
-and [custody plan](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md) own work.
-Older dated entries below are execution-time snapshots, not current blockers.
+Current-byte consumer cases8/8 and38-form coverage are independently accepted.
+Complete additional custody3 freed14098924 logical bytes; source synchronization
+477f9113 preserves88 corresponding pairs/85 other tips. The unchanged replay
+completed0, with actual result review pending. Freeze the thin delivered-module
+qualifier, then obtain exact source/native review for original18 C1+23 custody
+checks inside the delivered archive. Existing runner/layout/256MiB budget and
+assertions remain unchanged. Afterwards batch canonical report/plan closeout.
+[Current plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) owns this
+work. Stable publication, outer permissions, historical10/live/matched efficiency
+and wider cleanup remain separate; dated entries below are historical snapshots.
 
 ## 2026-10-05 current custody archive build accepted
 

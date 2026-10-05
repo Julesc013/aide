@@ -1187,3 +1187,31 @@ without writes, review exact native effect, then one fresh locked admission.
 Code owns waiting/collection/retirement; stop uncertainty, no automatic replay.
 All outer/historical/live/matched efficiency/tag/publication/downloaded/wider
 cleanup/FacMan gates remain separate. No new worktree/layout or budget widening.
+
+## Current delivered-module qualification preparation — 2026-10-05
+
+All eight unchanged consumer cases now have actual current-archive passing
+evidence: case0 job8c9d3a83 plus remaining7 job4ce19cef, separately accepted.
+The rebound map covers38 public forms,39 non-job outputs and12 job observations
+(51 distinct output records). Remaining capacity custody3 saved14098924 logical
+bytes, with complete lossless archives and failed history preserved. Source-only
+sync to477f9113 preserved88 corresponding branch pairs and85 other tips.
+Original replay job2e7d1b37 exited0; actual-result review remains separate.
+
+Objective: qualify the unchanged18 C1 and23 custody suites from actual current
+ZIP/TAR bytes. Scope: this task's thin delivered_additions.py, reuse original
+archive extractor and strict owned-fixture retirement, no payload/runner/test
+changes. Plan: freeze source; independently review exact code/native effect;
+inspect then dispatch once under existing25-pin read-only supervisor. Propose
+16MiB scratch/1MiB complete results/2x256KiBlogs/600s, unchanged256MiB cooperative
+aggregate/headrooms/2GiB memory/32 processes and existing D roots, no canonical
+outputs. Fresh locked capacity decides. Require852 equal archive file maps,
+unmodified delivered test bytes, exact18+23 counts/no skips, complete raw logs,
+fixture and scratch retirement/quiescence/reservation release, then actual-result
+review. No model/source-suite replay, runtime promotion, refs, tag/publication,
+outer containment/read isolation or hard/global quota from this slice.
+
+After actual acceptance, batch existing spec/plan/report/queue closeout once.
+Retain19 proposed topic owners/244 original UR/UC and all separate operational,
+historical/live/matched-efficiency/stable/downloaded/wider-cleanup gates. FacMan
+product remains paused. Unchanged external gates are not re-polled.
