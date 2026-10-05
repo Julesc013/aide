@@ -1,0 +1,84 @@
+{
+  "after_reports": {
+    ".aide/reports/capability-command-status.md": "15ee723e0c7973d2e16829c1e2d77565930aaa7f3c47ac6a725fadd21f4fc91a",
+    ".aide/reports/capability-evidence-bindings.json": "a9bf950782e6070da59f696e4510b3c62b8679bac5afea1a7da38cdd0fefcd1f",
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "611c24c7266d86c5a807cd868276aa74ff6ff4ecd1a3938900d3d98e7570ec89",
+    ".aide/reports/capability-observations.json": "67269a907025d10b2ba4da598cc383ed750929d212407a83d724f9524d3ee16e",
+    ".aide/reports/capability-observations.md": "f597f1672fb2d01254247c049fb1f2640c2d0179bd10894bc55a4fa3e66cf405",
+    ".aide/reports/capability-overclaims.json": "2f01f4fb3d2a6f0ad95fa11a8acfe681c71b92d31aa3989cc3bdbc4245e01eb1",
+    ".aide/reports/capability-overclaims.md": "18ff1db38e9d89efad3eceea2c06f64ec50cc59451b40c8bb9a13036ed6f50f5",
+    ".aide/reports/capability-validation.md": "fc76c835ebbc1c3885af7be7501a9d04f69da2c036b6a0890a078cdcb4525ff7"
+  },
+  "changed_report_paths": [
+    ".aide/reports/capability-command-status.md",
+    ".aide/reports/capability-evidence-bindings.json",
+    ".aide/reports/capability-ledger.md",
+    ".aide/reports/capability-observations.md",
+    ".aide/reports/capability-overclaims.md",
+    ".aide/reports/capability-validation.md"
+  ],
+  "effect_sha256": "cf09b04373b4ed3fe94003afccd78ba98322f83da5e05c65cb6f1209613eb9e6",
+  "native_or_export_effect_performed": false,
+  "operative_source_original_config_and_assets_unchanged": true,
+  "outer_session_contained": false,
+  "record_writes": "existing release WorkUnit evidence only",
+  "schema": "aide.custody-payload-projection-result.v1",
+  "source_commit": "c83518597dbdb93827c14f2cc9df99482f261619",
+  "source_tree": "042a2574dd69efb333d5f55db51344c99ab95e04",
+  "status": "PASS",
+  "steps": [
+    {
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "scan"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c9cc8c069a5fe3831d6321e0ae1ae8fb36d5307db6d367bdbc4f9acc72a12784"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "ledger"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "8848b6ef789fa38921045a3311e9fbacecdbc86cfa808e0b8e838242f5b87059"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "overclaim-report"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "0462a0044de9d2163b7dd63b68d71ed9e539118bbd984356826b17cf5320b424"
+    },
+    {
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "validate"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9a5358e7d433fe89cc2c16b2cf491e7ee47aaf33463bcc413aeac02840ef3a52"
+    }
+  ]
+}

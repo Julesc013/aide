@@ -1,6 +1,6 @@
 # AIDE Documentation Index
 
-## Retired evidence custody source candidate
+## Retired evidence custody qualified maintenance
 
 [Custody reference](docs/reference/retired-evidence-custody.md) describes finite
 plan/apply/recover/verify/read behavior, receipt preservation, staging limits and
@@ -9,8 +9,10 @@ records actual23-test restricted public-CLI qualification and verified retiremen
 [Full report](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md) also records
 two separately accepted live custody operations: all evidence/receipts preserved,
 lookup verified and7921599logical bytes saved in the existing256MiB pool.
-Source projection/integration, allocated disk recovery and release qualification
-remain open; the outer session remains unrestricted.
+Maintenance sourcec8351859 and template are independently accepted. The
+existing release task completed the exact9-path projection refresh and is
+preparing separately reviewed source/export qualification. Integration, physical
+recovery and release qualification remain open; the outer session is unrestricted.
 
 
 ## 2026-10-05 current capability payload source qualification completed

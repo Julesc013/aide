@@ -1,0 +1,85 @@
+{
+  "authority": "existing exact nine-report release-task allowlist and recorded campaign delegation; independent effect acceptance required",
+  "before_reports": {
+    ".aide/reports/capability-command-status.md": "9839b01ea7164c60efe26280dba2b1260516dcfd4f7b0384200940679e7aca4c",
+    ".aide/reports/capability-evidence-bindings.json": "ccd4e8bac799bb91129c1a2c8fa06d02f68296fe9e49fb5032b45c3e01d4f135",
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "6061d97107e79a5f0022330fb92460f94da45626fb7939a461fa8ae5997bff6e",
+    ".aide/reports/capability-observations.json": "67269a907025d10b2ba4da598cc383ed750929d212407a83d724f9524d3ee16e",
+    ".aide/reports/capability-observations.md": "ffa575393fa6b595479c5c3d3e56960868aacef663a2afd059dc723875163842",
+    ".aide/reports/capability-overclaims.json": "2f01f4fb3d2a6f0ad95fa11a8acfe681c71b92d31aa3989cc3bdbc4245e01eb1",
+    ".aide/reports/capability-overclaims.md": "d7d504bbaaa09740201b5a9624968d648070d65d075cf2aebd59a757c41e92e5",
+    ".aide/reports/capability-validation.md": "7ce8091278e632bdcb533a93f1d9f30c8d9ef00c7903e16070f34453d49c0c2f"
+  },
+  "commands": [
+    [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "capability",
+      "scan"
+    ],
+    [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "capability",
+      "ledger"
+    ],
+    [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "capability",
+      "overclaim-report"
+    ],
+    [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "capability",
+      "validate"
+    ]
+  ],
+  "controller_route": "existing unrestricted Jules outer shell; no worker or whole-session containment claim",
+  "custody_live_result_sha256": "72b3e2cdffcf489c0f50aaf881162a9daed405581102063aa7cdfd2e2b3756b8",
+  "not_authorized": [
+    "native dispatch, export/build/archive mutation",
+    "additional custody effects or pool effects",
+    "model/provider calls, original runtime promotion, refs/tags/publication",
+    "new storage/drive/ACL/account/quota changes"
+  ],
+  "only_allowed_writes": [
+    ".aide/reports/capability-command-status.md",
+    ".aide/reports/capability-observations.json",
+    ".aide/reports/capability-observations.md",
+    ".aide/reports/capability-ledger.json",
+    ".aide/reports/capability-ledger.md",
+    ".aide/reports/capability-evidence-bindings.json",
+    ".aide/reports/capability-overclaims.json",
+    ".aide/reports/capability-overclaims.md",
+    ".aide/reports/capability-validation.md"
+  ],
+  "original_configuration_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "packet_contract_validation_sha256": "43e8c26355ce74a2a704ecf439991c4d94598f133e2a055c0a1427cb63111118",
+  "record_writes": "this release WorkUnit evidence only; records identify post-freeze effects, not new operative source",
+  "recovery": "stop on failure or source/scope/identity change; retain full outputs and exact reports, no uncertain retry",
+  "required_after": [
+    "every exact command exit0",
+    "current finite public-input binding verified",
+    "actual report changes confined to these nine paths",
+    "source modules, original selection, four stable assets and all24 supervisor pins unchanged",
+    "no capability/runtime/support/release qualification fabricated"
+  ],
+  "schema": "aide.custody-payload-capability-refresh-effect.v1",
+  "source_cli_sha256": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+  "source_commit": "c83518597dbdb93827c14f2cc9df99482f261619",
+  "source_tree": "042a2574dd69efb333d5f55db51344c99ab95e04",
+  "supersedes_unexecuted_held_effect_sha256": "cb94866268e2ebedf1d99fdf4e8f463407d96fb293e0a5607b811bfcac2f1a27",
+  "template_scope_admission_ref": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/corrected-source-and-template-admission.json",
+  "template_validation_sha256": "432c74907707c10305747daa6717661544ba3dd0bee2eebd8ef6f14ebab48e8c"
+}

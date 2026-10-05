@@ -13211,3 +13211,11 @@ documentation correction: append TOKEN_ESTIMATE/approx_tokens to the existing
 compact template. Executable requirements and original text remain unchanged.
 The concrete current packet passes the actual Lite verifier. Exact resulting
 source review is required; the5d report effect remains unexecuted after change.
+
+## 2026-10-05 exact derived capability refresh after custody
+
+Accepted effectcf09b043 on c8351859 ran scan/ledger/overclaim-report/validate
+once, all exit0; only6/9 allowed report files changed. Complete41-input binding
+and full raw outputs retained; source/original config/assets unchanged. Current
+C4 maintenance is qualified; separately reviewed native source/export work is
+prepared, not dispatched. No source/ref/archive/publication effect inferred.

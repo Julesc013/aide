@@ -2,9 +2,30 @@
 
 Date: 2026-10-05, Australia/Sydney. This report describes the current source
 qualification, keeps the architecture audit visible, and names unfinished
-release and operating outcomes. Current source and local artifact build qualified; stable release not certified.
+release and operating outcomes. The prior C1 source/build results below remain
+valid for their exact subjects. New C4 maintenance is independently qualified;
+its changed payload still needs source/export and delivery qualification.
+Stable release is not certified.
 
-## Actual current-payload build outcome
+## Latest maintenance and source preparation
+
+The C4 child qualified23 native regressions/public CLI and two separately
+reviewed lossless custody operations. Original receipts and all evidence remain
+verified;7921599 managed logical bytes saved. Existing pools now224863629bytes
+with scratch0. This is not measured allocated recovery or outer containment.
+The exact acceptedcf09b043 metadata effect completed once, four commands exit0,
+only6 of9 allowed reports changed; complete41-input binding verified.
+
+[Custody report](../AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md) and
+[projection result](evidence/custody-payload-projection-result-v3.json) record
+these actual outcomes. Existing7132 candidate assets/originala241 config stayed
+unchanged; this ZIP contains C1, not custody. Next exact native review covers the
+existing worker49+18, export/fullvalidation under the finite original pool.
+No native dispatch, new build, current consumer/replay, integration or publication
+is claimed from this preparation. Earlier results below retain their dates,
+archive/source identities and narrower applicability.
+
+## Prior exact C1 payload build outcome
 
 The exact reviewed f0c05f09/tree7043c3be local build ran once as
 `BLACKGLASS-WIN1\CodexSandboxOffline` in job `2edf313aeca44befb66e0e91634caa24`.
@@ -43,7 +64,7 @@ before any consumer dispatch. No cap widening, evidence deletion or fallback
 allocation occurred. The native build was not rerun when two read-only verifier
 expectations were corrected against the schema and packaging exclusion.
 
-## Accepted source outcome
+## Prior accepted C1 source outcome
 
 The current capability repair and export now pass full source validation through
 the existing Windows scoped worker. Job `e188c5d70f14453ab20ddbd84dc09e4b` ran

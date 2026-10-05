@@ -1,0 +1,135 @@
+{
+  "binding_complete_inputs": 41,
+  "binding_current": true,
+  "checks": {
+    "compile": "PASS",
+    "harness_structural": "PASS",
+    "source49_capability18_export_fullvalidate": "NOT_RUN",
+    "whitespace": "PASS"
+  },
+  "configuration_sha256": "b1f88fc84fbd91fde324c59de592070a8a5e580d87bc31319ad6c11a867f30e5",
+  "manifest_template_sha256": "4a110ed1113b082d92a86b0293b13278322784798c96dc1b5f952bf37a7a9d90",
+  "native_dispatch": false,
+  "original_config_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "outer_session_contained": false,
+  "pending_absent": true,
+  "physical_recovery_bytes": null,
+  "preliminary_inventory_not_locked_admission": {
+    "by_pool": {
+      "canonical:.aide/export/aide-lite-pack-v0": 4214570,
+      "control": 13694135,
+      "retained": 211169494,
+      "scratch": 0
+    },
+    "enforcement": "cooperative_admission_and_monitored_growth",
+    "limit_bytes": 268435456,
+    "logical_bytes": 229078199,
+    "reserved_bytes": 38862848
+  },
+  "prior_readonly_guard_correction": "portable core/apply facade derives from existing PORTABLE_TEMPLATE_MAP; raw source facade is different; no native effect or supervisor change",
+  "projection_result_sha256": "2de7e92a0ad91f7bb253cd7e4735aa8bc25702860ad29ab4c9ecff9a44c099aa",
+  "remaining_after_proposed_reservation_bytes": 494409,
+  "runtime_archive_sha256": "7132a5404bf82cdf0c0076cf64b395f01715ae0abd2e8c95c2b971c4b233ee88",
+  "schema": "aide.custody-payload-source-preparation-validation.v1",
+  "scope": "metadata/source preparation only; locked admission and exact independent native effect still required",
+  "source_projection_origins": {
+    "core/apply/__init__.py": {
+      "origin": ".aide/templates/portable-apply/__init__.py",
+      "sha256": "d9f1cb35bdf8557ef871410aba60c9982f34a9bea2a9381eef17b00ab1b13ac8"
+    },
+    "core/apply/managed_sections.py": {
+      "origin": "core/apply/managed_sections.py",
+      "sha256": "a6cda7e7ffb4e5d3d8e6567192b4a37368c0291608d345612cd14b2b55a16220"
+    },
+    "core/execution/__init__.py": {
+      "origin": "core/execution/__init__.py",
+      "sha256": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5"
+    },
+    "core/execution/managed_workspace.py": {
+      "origin": "core/execution/managed_workspace.py",
+      "sha256": "d9338d9d25470b1a39f8c74566f7c108249a98dc564ac395f21b66ebc4eccfe3"
+    },
+    "core/execution/provider.py": {
+      "origin": "core/execution/provider.py",
+      "sha256": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e"
+    },
+    "core/execution/registered_process.py": {
+      "origin": "core/execution/registered_process.py",
+      "sha256": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a"
+    },
+    "core/execution/scoped_host.py": {
+      "origin": "core/execution/scoped_host.py",
+      "sha256": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036"
+    },
+    "core/gateway/__init__.py": {
+      "origin": "core/gateway/__init__.py",
+      "sha256": "84f45062b88514d03f4d1618aa78df3d9aa506c94b870346bfa6e708f522a103"
+    },
+    "core/gateway/gateway_status.py": {
+      "origin": "core/gateway/gateway_status.py",
+      "sha256": "40ef20c8890835e63953bada76ad118e966527dc384c72fa1f6b9ce7739a4a88"
+    },
+    "core/gateway/server.py": {
+      "origin": "core/gateway/server.py",
+      "sha256": "b887d27bcbd75377005c3760bedbf2b36cd5caefd26bee5ff8b06cdaa2ec9aff"
+    },
+    "core/gateway/tests/__init__.py": {
+      "origin": "core/gateway/tests/__init__.py",
+      "sha256": "fc7e58b76b027cc9c7c37011c5aa40b240c09f37cdef2b71bbbe2a653a368860"
+    },
+    "core/gateway/tests/test_gateway_skeleton.py": {
+      "origin": "core/gateway/tests/test_gateway_skeleton.py",
+      "sha256": "8e307b81e6aad7e5949c5788c61da282282f5fe076e3c5d888099441e6902b38"
+    },
+    "core/protocol/__init__.py": {
+      "origin": "core/protocol/__init__.py",
+      "sha256": "b131e408f459709ebb03c6becc526f09517d2082f536efd643a8b7812ecdd946"
+    },
+    "core/protocol/execution_receipt.py": {
+      "origin": "core/protocol/execution_receipt.py",
+      "sha256": "966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc"
+    },
+    "core/protocol/process_invocation.py": {
+      "origin": "core/protocol/process_invocation.py",
+      "sha256": "aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de"
+    },
+    "core/providers/__init__.py": {
+      "origin": "core/providers/__init__.py",
+      "sha256": "91fda471923f178eb877be4afcd9f59ed336a2533fb4e7f50634ac1e3915912c"
+    },
+    "core/providers/contracts.py": {
+      "origin": "core/providers/contracts.py",
+      "sha256": "ac7ba2c4cdd4f8ca08971858a0cc04c7c0fbf1af4896ae21c654301b6d51fee8"
+    },
+    "core/providers/registry.py": {
+      "origin": "core/providers/registry.py",
+      "sha256": "caeaaf76b5630bbfa837f847ff6dcab28f4c986a3ec277769b2bde78b28dcaa2"
+    },
+    "core/providers/status.py": {
+      "origin": "core/providers/status.py",
+      "sha256": "341501a6a5d2bf3aedcce09b0f0b143ed39e3dd949b2ddd4fdad803c009f4886"
+    },
+    "core/providers/tests/__init__.py": {
+      "origin": "core/providers/tests/__init__.py",
+      "sha256": "fa00ddd28dbff411d7189b20793f00e464b26c0bdb9c9144296a3fe14d17c205"
+    },
+    "core/providers/tests/test_provider_contracts.py": {
+      "origin": "core/providers/tests/test_provider_contracts.py",
+      "sha256": "ab9f4f74e08354cad3cbf0fe26bb56ab121fa588a7659b5fb9577b33edf73e8a"
+    },
+    "core/runtime/continuous_worker/__init__.py": {
+      "origin": "core/runtime/continuous_worker/__init__.py",
+      "sha256": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c"
+    },
+    "core/runtime/continuous_worker/state.py": {
+      "origin": "core/runtime/continuous_worker/state.py",
+      "sha256": "9b65b7953cfea7af9444abe6157b5edfe670a46be90211a8cf8d543855d12105"
+    },
+    "core/runtime/continuous_worker/windows_job.py": {
+      "origin": "core/runtime/continuous_worker/windows_job.py",
+      "sha256": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
+    }
+  },
+  "status": "PASS_PREPARATION_ONLY",
+  "supervisor_pins_verified": 24
+}

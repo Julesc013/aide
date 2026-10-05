@@ -1,6 +1,17 @@
 # Retired evidence custody ExecPlan
 
-## Purpose, scope and facts
+## Current checkpoint
+
+Bounded C4 maintenance is qualified: native23/public CLI and exact two live
+custody operations passed, with complete retirement and7921599logical savings.
+Sourcec8351859 has independent ACCEPT_WITH_NOTES, every note disposed. Current
+known pool224863629/268435456bytes, scratch0; no physical recovery claim.
+Existing release WorkUnit separately refreshed its9 allowed reports and is
+preparing affected source/export qualification. No further C4 effect is granted.
+Current REPORT.md and accepted/result JSONs are the compact resume references.
+The following initial facts/progress retain their historical phase identities.
+
+## Initial purpose, scope and facts
 
 Current source and local C1 candidate were qualified and synced once to
 main/dev/task at cef28a568e1dee757e885ab1ec96a2ac948e12db. Preserve newer work.
@@ -70,7 +81,8 @@ No archive is added to the public release or portable pack by this admission.
 
 ## Progress and remaining gates
 
-Prepared source scope and plan only. No implementation, tests or live mutation.
+Initial pre-admission snapshot: prepared source scope and plan only; no
+implementation, tests or live mutation at that point.
 Outer shell/editor/plugins remain unrestricted. Ten historical dispositions,
 one live model permission, matched efficiency, stable release/download and
 downstream adoption remain separate. The wider reported500GB is not measured.

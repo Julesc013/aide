@@ -1050,3 +1050,34 @@ full maps/88 matches/assets/config/scratch and terminal receipt without creating
 a recursive source-ID successor. No tag/publication/runtime promotion or
 consumer qualification from this effect. Retained capacity and all first-stable
 gates remain separate; do not infer an unchanged model or historical approval.
+
+## 2026-10-05 custody payload source qualification preparation
+
+C4 maintenance sourcec8351859 and native23/live2 result are independently
+accepted; full bytes/receipt identities remain,7921599logical bytes released.
+Exact report effectcf09b043 ran its four commands once, all exit0; only6 of9
+allowed reports changed. Result2de7e92a records full raw outputs and unchanged
+operative source/original config/assets. Current finite41-input binding is
+complete/nontruncated. Earlier report effects are held/unexecuted, not retries.
+
+Reuse the existing worker repair phase, no new runner/worktree/pool. Because
+CLI bytes changed, execute49 affected admission/public/packaging checks, then18
+current capability checks, export and fullvalidate. Retain same-input native23
+evidence rather than rerunning it for record changes. Current immutable7132
+archive and24 unchanged pins supervise writes only to existing export; no
+self-rewrite of the supervising export. Native proposed envelope7MiB scratch/
+6MiB logs/64KiB result/16MiB canonical reservation/900s/2GiB memory/32 processes,
+original10GiB disk and4GiB physical/commit headroom, unchanged256MiB aggregate.
+Its aggregate reservation is exactly38862848bytes; fresh locked observation decides
+admission. Prior full49 sampled workspace5558203bytes motivates this finite
+allowance, without hard quota or transient-peak guarantee. Preserve complete
+logs, owner/receipt, collection/quiescence and scratch/reservation retirement.
+
+Prepare source/manifest/config identities and exact independent effect review
+before one dispatch. Stop on refusal/error/uncertainty; attach exact owned state
+without automatic replay. Existing selected capability-payload-source local
+config/job files are the only temporary local records; originala241 remains
+held/stale and unchanged. No archive mutation/model/provider/ref effects from
+this source phase. Packaging/current consumers/deliveredC1+custody/replay and
+publication remain separate; all8 existing consumer cases/38forms/39outputs/
+12job observations are retained. No missing owner decision is inferred.

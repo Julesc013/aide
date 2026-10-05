@@ -5,7 +5,10 @@ regressions pass through the restricted worker. Separately reviewed custody of
 two real retired consumer jobs preserved complete evidence and original receipts,
 verified lookup, retired redundant raw copies and released 7,921,599 managed
 logical bytes. Source projection refresh/integration and stable certification
-remain unfinished. The outer session remains unrestricted.
+remain unfinished. Exact maintenance sourcec8351859 received independent
+ACCEPT_WITH_NOTES with all notes nonblocking/disposed. The bounded C4 child is
+qualified; delivery work continues in the existing release WorkUnit. The outer
+session remains unrestricted.
 
 ## What changed
 
@@ -146,7 +149,8 @@ reference docs, this queue packet/evidence and existing root/generated indexes.
   was narrower than the CLI contract; the actual verifier now establishes the
   fix. Native/live evidence is unchanged; no downstream effects occurred.
 - The existing compact template now includes the missing estimate guidance
-  under exact one-file scope admission; resulting source review is pending.
+  under exact one-file scope admission; resulting sourcec8351859 is independently
+  accepted, all notes nonblocking/disposed.
 - Actual managed `job run` plus23 source tests: PASS; complete postflight and
   retirement verified. Full raw stderr contains23-test/OK result, no skips.
 - `job custody plan/read/apply/verify/read` for the exact two jobs: PASS;

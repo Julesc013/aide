@@ -1,0 +1,21 @@
+{
+  "effect_sha256": "cf09b04373b4ed3fe94003afccd78ba98322f83da5e05c65cb6f1209613eb9e6",
+  "effect_verdict": "ACCEPT_WITH_NOTES",
+  "notes": [
+    {
+      "classification": "nonblocking_disposed",
+      "note": "earlier effects held/unexecuted; document estimates do not prove usage savings"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "native/export/integration/release effects require separate gates; changed source requires rebind/review"
+    }
+  ],
+  "record_kind": "controller transcription of independent reviewer message",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.custody-payload-projection-admission.v1",
+  "scope": "exact four existing commands and nine declared reports only",
+  "source_commit": "c83518597dbdb93827c14f2cc9df99482f261619",
+  "source_tree": "042a2574dd69efb333d5f55db51344c99ab95e04",
+  "source_verdict": "ACCEPT_WITH_NOTES"
+}

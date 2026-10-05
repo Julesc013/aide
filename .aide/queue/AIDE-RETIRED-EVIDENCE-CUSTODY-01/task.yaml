@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-RETIRED-EVIDENCE-CUSTODY-01
 title: Preserve complete retired evidence under finite managed custody
 type: implementation
-status: needs_review
-planning_state: public_cli23_and_two_live_custody_verified_closeout_review_pending
-result: PASS23_TWO_LIVE_CUSTODY_VERIFIED
+status: passed
+planning_state: native_public_cli_and_two_live_custody_qualified_delivery_pending
+result: PASS23_TWO_LIVE_CUSTODY_QUALIFIED
 created_at: 2026-10-05
 updated_at: 2026-10-05
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

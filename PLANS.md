@@ -4662,3 +4662,12 @@ actual worker/admin scopes. Next is affected report/export/source qualification,
 then exact source integration and current consumers; archive7132 does not
 contain custody. Outer-client, historical/model, matched efficiency, release
 and wider cleanup gates remain independent.
+
+## 2026-10-05 qualified custody; affected delivery source next
+
+C4 native23/live2 and template/sourcec8351859 are independently accepted; all
+notes disposed. The existing release task's exact report refresh passed once
+with6/9 changes and complete41-input current binding. Next separately reviewed
+worker49+18/export/fullvalidate uses current7132 supervisor and original pools,
+no49 reuse after CLI change. Current ZIP predates custody; no integration or
+release claim. See both WorkUnit reports for current and historical identities.
