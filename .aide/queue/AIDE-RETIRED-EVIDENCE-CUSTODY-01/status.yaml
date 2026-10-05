@@ -11,3 +11,9 @@ saved_logical_bytes: 7921599
 allocated_disk_recovery_bytes: null
 release_publication_authorized_by_this_slice: false
 maintenance_source_acceptance_ref: .aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/maintenance-source-acceptance.json
+
+delivery_custody_subphase_state: needs_exact_frozen_source_and_effect_review
+delivery_custody_jobs: [1b3224cd83fb4531beb3553decbae1a2, e188c5d70f14453ab20ddbd84dc09e4b, ca2a1e1406954ceca009f00e3e064b32]
+delivery_custody_apply_performed: false
+delivery_custody_savings_logical_bytes: null
+delivery_custody_consumer_feasibility: not_yet_proven

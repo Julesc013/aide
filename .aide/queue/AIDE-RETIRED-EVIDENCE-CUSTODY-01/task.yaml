@@ -77,3 +77,17 @@ permitted_local_state:
   - .aide.local/retired-evidence-custody-test-job.json
 
 supporting_template_amendment: Independent admission83300fad allows only the missing TOKEN_ESTIMATE/approx_tokens documentation in the existing compact template, preserving all earlier content and executable policy. Exact resulting source review required; metadata/native effects remain separately gated.
+
+delivery_custody_subphase:
+  status: needs_exact_frozen_source_and_effect_review
+  objective: losslessly retire exact three owned complete source-validation collections for current consumer capacity
+  admitted_proposal_sha256: 4823c98eaefb1301985ac1368b8a2ac3782d3fccadf9516eb1d248ebdd2bf8ad
+  jobs: [1b3224cd83fb4531beb3553decbae1a2, e188c5d70f14453ab20ddbd84dc09e4b, ca2a1e1406954ceca009f00e3e064b32]
+  selected_config: .aide.local/capability-payload-build-execution.json
+  selected_config_sha256: bc8fc18534b40cb951d1a049a94de0996f69343da2dd410ebd2ee23c2c31d4ef
+  runtime: existing_readonly_clean_export_25pins_original24_unchanged
+  ceiling_bytes: 268435456
+  original_implementation_23_live2_status: passed_unchanged
+  failed_source_status_preserved: terminal_exit1_not_relabelled
+  apply_from_admission: false
+  excludes: consumer_replay_runtimepromotion_refs_tag_publication_models_newstorage_unknown_deletion

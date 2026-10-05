@@ -1,0 +1,122 @@
+{
+  "acceptance_unchanged": "all8 cases/38forms/39outputs/12job observations plus deliveredC1/custody/replay",
+  "admission_alone_has_effect": false,
+  "authority": "existing campaign C4 lifecycle delegation; separately qualified exact source/effect review required",
+  "base_source": "bfb1a21b263440116822980b1299c78980707a90",
+  "candidate_zip_sha256": "55665b2f6369869209a166db640ffc334f921898505610705b4fee4860e65197",
+  "compression_savings": "unknown until effect, consumer fit not promised",
+  "custody_source_sha256": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
+  "effect_paths": "only each named retained root logs/output and custody.zip/json/.next; existing control active.json/.next and OS admission lock; anchors stay bytewise unchanged",
+  "excludes": [
+    "consumer/replay/ref/tag/publication/model/runtimepromotion",
+    "additional jobs or unique evidence deletion; omission/truncation",
+    "new storage/worktree/clone/quota/ACL/account/fallback"
+  ],
+  "limits": {
+    "aggregate_bytes": 268435456,
+    "disk_headroom_unchanged": true,
+    "max_entries": 4096,
+    "max_original_bytes_per_job": 16777216,
+    "metadata_reserve_bytes_per_job": 4194304,
+    "physical_recovery_measured": false,
+    "readonly_export_additional_count": 4265213
+  },
+  "objective": "losslessly retire exactly three owned complete source-validation raw collections to support unchanged current-asset consumers under existing budget",
+  "operations": [
+    {
+      "anchors": {
+        "owner.json": "fda37996e75026572db32f55e9910b08e14d7529e4ff1c54b06ec068c80cedbd",
+        "receipt.json": "b893dcbdc0f99697cf5a2ca68538a4042afd41e70c041fd104af7aba138b7512"
+      },
+      "archive_limit_bytes": 5066870,
+      "collected_manifest": {
+        "logs": "c2d1abf8ce3db40b0e6c0dfa20c78cd6e4e652fce354db727175d33a232a1289",
+        "output": "72261f0343a906262b567c04cb6e984703a123dd96d0753ce1bacaeab3809bd9"
+      },
+      "full_plan_log": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/delivery-custody-plan-1b3224cd83fb4531beb3553decbae1a2.stdout.log",
+      "full_plan_sha256": "a20b0f89fd6b75708a5a885d3affa3412ff887c55db2786f93a4757c62543ec8",
+      "job_id": "1b3224cd83fb4531beb3553decbae1a2",
+      "metadata_reserve_bytes": 4194304,
+      "observed_native_scope_bytes": 233869021,
+      "original_bytes": 4990070,
+      "plan_digest": "cdfc3c448d544bcd7eac60b975e4bd6450d0a5bb12fef86b716770f59f845e13",
+      "reserved_bytes": 9261174,
+      "root_identity": [
+        3781016413010784355,
+        35184372091274879
+      ]
+    },
+    {
+      "anchors": {
+        "owner.json": "c7c0321de47d3d5b590ba7b24a75f050b2c21649af7f752073b8cb1c7a3c2140",
+        "receipt.json": "7c8417397c901c48fd4cee0879f0dff3606eb434a040ca542989683922b08393"
+      },
+      "archive_limit_bytes": 5062844,
+      "collected_manifest": {
+        "logs": "133a4f6ff23dd00acd15ddae6bd6bae178a56dcadf5eacef6b349897fbc9a21d",
+        "output": "a550f78cd9b859674a95174ab5346932773c1fc3d75998f4337d34d8b73e130b"
+      },
+      "full_plan_log": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/delivery-custody-plan-e188c5d70f14453ab20ddbd84dc09e4b.stdout.log",
+      "full_plan_sha256": "71cb5b561a107e3c9d164f6e0748c04d00daec74ee51fe518619b2fbcd883df9",
+      "job_id": "e188c5d70f14453ab20ddbd84dc09e4b",
+      "metadata_reserve_bytes": 4194304,
+      "observed_native_scope_bytes": 233869021,
+      "original_bytes": 4989116,
+      "plan_digest": "fdf078d663996c87100b6cb9ee83d6b688d9e15d63dbf2d66c2a132becb0aaa2",
+      "reserved_bytes": 9257148,
+      "root_identity": [
+        3781016413010784355,
+        28710447626901510
+      ]
+    },
+    {
+      "anchors": {
+        "owner.json": "a43b8e31e7157e9115cdf3512903c783f66e110f49b3054b1917702faec206a5",
+        "receipt.json": "05ba3f77811dca37bd3ee6418add8e4c9d33f8fd48120f50c86e6130333b02e3"
+      },
+      "archive_limit_bytes": 4973982,
+      "collected_manifest": {
+        "logs": "3310b2d09538f6a12ca201f375eb8cca2d8110d07f395a9034d0415f1045e4e2",
+        "output": "f53add10e258d7f162be235ab66b290a681fd65bd597cc3bd681dbfb7c401014"
+      },
+      "full_plan_log": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/delivery-custody-plan-ca2a1e1406954ceca009f00e3e064b32.stdout.log",
+      "full_plan_sha256": "7b9e449d08364feed6a6a6ccf505536e818aeadeef0d6d57c299180f8ffd1b45",
+      "job_id": "ca2a1e1406954ceca009f00e3e064b32",
+      "metadata_reserve_bytes": 4194304,
+      "observed_native_scope_bytes": 233869021,
+      "original_bytes": 4899230,
+      "plan_digest": "39186637366b54be41c11e8f29a1e2067050160e78fced09bbb6ae3cf6c78f6c",
+      "reserved_bytes": 9168286,
+      "root_identity": [
+        3781016413010784355,
+        38280596835063535
+      ]
+    }
+  ],
+  "original_config_sha256": "a2416a8ce8a63a90549b3a12c335d9cedb2c4f38ab77cd15e6dad18afbc9f6fa",
+  "queue_index_handling": "implementation23/live2 remains passed; operational proposal/effect tracked as new bounded subphase in existing WorkUnit, no new queue or policy",
+  "recovery": "exact custody recover only after explicit review of matching pending intent; preserve failure records, stop/reconcile without automatic replay",
+  "required_after": [
+    "all original bytes/dirs/file hashes and collection digests verified in archive without extraction",
+    "original owners/receipts unchanged; bounded old path lookup equal",
+    "raw-copy retirement/no pending/lock released; true net logical savings",
+    "current assets/export/pins/config untouched; no other retained job modified"
+  ],
+  "required_before": [
+    "exact later frozen-source/effect verdict",
+    "current source/config/25pins/archive/receipt-owner/raw tree identities match",
+    "fresh conservative complete known pools+canonicalrelease+readonlyexport plus full archive staging/4MiB metadata fits unchanged256MiB and disk headroom",
+    "serial estate-locked operations; any failure stops with pending latch blocking new allocation"
+  ],
+  "runtime": "existing readonly clean export,25 exact accepted pins, original24 unchanged; no new executing code or promotion",
+  "schema": "aide.delivery-custody-scope-proposal.v1",
+  "scope_patch_only": [
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/task.yaml",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/status.yaml",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md",
+    ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/**"
+  ],
+  "selected_configuration": ".aide.local/capability-payload-build-execution.json",
+  "selected_configuration_sha256": "bc8fc18534b40cb951d1a049a94de0996f69343da2dd410ebd2ee23c2c31d4ef"
+}

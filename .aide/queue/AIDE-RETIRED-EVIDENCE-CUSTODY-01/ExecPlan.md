@@ -261,3 +261,30 @@ as CodexSandboxOffline,852 equal file members/849 archive checksums and complete
 collection/retirement. Result5f50ffd8 independently accepted with disposed notes.
 Maintenance23/live2 remains separately scoped; no extra custody applied.
 Current consumers/replay/integration/stable qualification remain in release queue.
+
+### Delivery capacity: separately admitted three-job custody subphase
+
+Admission4823c98e received independent ACCEPT_WITH_NOTES with every note
+nonblocking/disposed. Existing23/live2 implementation remains passed; this new
+operational slice has no apply authority until exact frozen source/effect review.
+Three exact complete terminal collections are current67 job1b3224cd, priorC1
+e188c5d7 and original failedca2a1e14. Preserve the latter's exit1/fullfailure
+history, all owners/receipts, every log/output byte and empty directory.
+
+Objective is finite conservation for unchanged current-consumer acceptance.
+Reuse selectedbc8fc185 configuration and immutable clean export25pins; original24
+execution hashes and helda241 config/current55665b2f assets stay unchanged.
+Three fresh readonly plans match,14878416 total payload bytes, each under16MiB/
+4096entries. Worst-case serial archive staging+4MiB metadata plus pools/release
+and additionally counted readonly export fit256MiB now. Native locked admission
+must recheck each operation; no hard/global quota or compression savings claim.
+
+Freeze metadata/effect; seek exact independent source/effect verdict. Apply once
+per exact reviewed plan, serial. Fully verify archive collection and bounded old
+member lookup before closing; receipt/owner unchanged, raw redundancy retired,
+no pending/latch/next files and true net logical savings. Stop on failed or
+uncertain command; matching reviewed custody recovery only, never job replay.
+No otherjob/deletion/truncation/consumer/ref/model/promotion/publication effects.
+After actual accepted savings, release WorkUnit independently prepares its
+unchanged8consumer cases, deliveredC1/custody and zero-change replay. Actual
+capacity, not estimates, determines readiness; keep full results and finite caps.

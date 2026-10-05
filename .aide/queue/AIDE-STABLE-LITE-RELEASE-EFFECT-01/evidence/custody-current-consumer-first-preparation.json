@@ -1,0 +1,19 @@
+{
+  "acceptance": "existing unchanged8caseworker consumer-first executesindex0 (other7 later), no assert/canary source edits; newdeliveredC1/custody and zerochange replay remain required",
+  "admin_model_calls": 0,
+  "aggregate_ceiling": 268435456,
+  "configuration_sha256": "8d00927146b8808b91fff1ca2da726c7b3f2b95b6935622d3aa36f695b942424",
+  "dependency": "three exact full-evidence custody transitions reviewed/applied/verified, actual capacity count; this preparation grants no effect",
+  "manifest_template_sha256": "b23b72248b248455998558a3b415eca77f00e8008776587d2f59257cfd208989",
+  "outer_contained": false,
+  "past_actual_output_bytes": 3035626,
+  "past_sampled_workspace_bytes": 29375912,
+  "reservation_bytes": 40370176,
+  "result_allowance": 4194304,
+  "runtime_pins": 25,
+  "schema": "aide.custody-current-consumer-first-preparation.v1",
+  "scratch_allowance": 33554432,
+  "source_inputs": 25,
+  "state": "UNRUN_UNADMITTED_CAPACITY_MUST_BE_ACTUALLY_VERIFIED",
+  "writes": "allocated TMP/cache/output only; source/export/release/supervisor readonly"
+}

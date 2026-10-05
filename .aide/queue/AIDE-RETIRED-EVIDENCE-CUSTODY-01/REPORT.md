@@ -13,6 +13,18 @@ ACCEPT_WITH_NOTES with all notes nonblocking/disposed. The bounded C4 child is
 qualified; delivery work continues in the existing release WorkUnit. The outer
 session remains unrestricted.
 
+## Current delivery-capacity subphase (unexecuted)
+
+Three exact owned complete source collections now have independently admitted
+custody planning: current67 job1b3224cd, priorC1 e188c5d7, failedca2a1e14.
+All14878416 payload bytes, original failures and receipt identities must survive.
+The old23/live2 qualification remains passed; this proposal does not apply it.
+Separate frozen source/effect review and fresh locked admission are required.
+No new savings or consumer feasibility is claimed. Existing selectedbc8fc185
+config/read-only cleanexport25pins,256MiB ceiling and all acceptance are unchanged.
+[Exact scope proposal](evidence/delivery-custody-scope-proposal.json) and
+[admission](evidence/delivery-custody-scope-admission.json) retain the boundaries.
+
 ## What changed
 
 The existing `job` command family now has custody plan/apply/recover/verify/read
