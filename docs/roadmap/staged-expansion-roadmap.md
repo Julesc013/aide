@@ -75,11 +75,25 @@ before broader operational claims.
 
 ## Current qualified checkpoint — 2026-10-05
 
-The architecture proposals remain candidates. One bounded C8 job-inspection
-projection and current Lite local source/assets/original-worker qualification
-are accepted and integrated; see the [current report](../../.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/REPORT.md).
-The campaign Goal is active; unchanged blocked effects remain dormant. First
-independent candidates remain C1/C8, then C2/C3/C4. No blanket feature admission,
-model permission or publication acceptance follows from this ordering. Outer
-client, historical/live/matched efficiency and stable/downloaded/cleanup gates
-remain separate; a completed worker path does not establish whole-session control.
+C1's bounded dependency-bound capability evidence source and one C8 inspection
+projection have accepted integration records. C4 now qualifies finite lossless
+retired-evidence custody:23 restricted native/public-CLI regressions and two
+separately reviewed live operations, preserving receipts and saving7,921,599
+managed logical bytes. This is a bounded part of C4, not a whole estate cleanup
+or hard filesystem quota. See the [custody report](../../.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md).
+
+The affected current source passed67 fresh checks, export generation and full
+validation at eea174be. Complete collection and retirement are independently
+accepted. Its849-entry export is checksum-valid but records dirty provenance;
+a clean reviewed refresh is required before packaging. The older7132 ZIP
+contains C1 but predates custody. C4 integration, new-archive consumers/replay
+and stable certification remain unfinished. See the [current delivery report](../../.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+
+Remaining C8 explainability, C2 compatibility codecs and C3 portable checkpoints
+are useful next bounded candidates; admit their exact consumers and tests before
+implementation. The other candidates retain their prerequisites. The19 draft
+architecture owners and244 original UR/UC statements remain preserved; no whole
+candidate, proposed semantic refinement or uniform host support is adopted here.
+Outer-client controls, ten historical dispositions, live/matched efficiency,
+publication/downloaded consumers and wider cleanup remain separate. The campaign
+Goal is active; unchanged blocked effects stay dormant.

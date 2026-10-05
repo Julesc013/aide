@@ -1,0 +1,23 @@
+{
+  "effect_sha256": "2c4acdbcabf15d67523d2577747f3dddbf425410bd0a70ad1bb25888dea5f510",
+  "notes": [
+    {
+      "classification": "nonblocking_disposed",
+      "note": "preserve parser refusal and unknown numeric exit; no native dispatch occurred"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "one corrected dispatch only, fresh locked admission; save code and full streams before parsing; stop/reconcile failure"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "49+18/export/fullvalidate required; archive/ref/release remain excluded"
+    }
+  ],
+  "record_kind": "controller transcription of independent reviewer message",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.custody-payload-native-source-admission.v2",
+  "source_commit": "eea174be2b7bd5a8677c4157af9e24993a63320a",
+  "source_tree": "f19df8462bf5384daf5f31468103603a222979a1",
+  "verdict": "ACCEPT_WITH_NOTES"
+}

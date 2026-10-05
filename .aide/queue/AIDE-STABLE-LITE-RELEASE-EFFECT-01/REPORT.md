@@ -1,29 +1,76 @@
 # Current AIDE source, artifact and development report
 
-Date: 2026-10-05, Australia/Sydney. This report describes the current source
-qualification, keeps the architecture audit visible, and names unfinished
-release and operating outcomes. The prior C1 source/build results below remain
-valid for their exact subjects. New C4 maintenance is independently qualified;
-its changed payload still needs source/export and delivery qualification.
-Stable release is not certified.
+Date:2026-10-05 Australia/Sydney. Current C4 source is independently qualified,
+and the affected source/export checks now pass. Clean export provenance, current
+archive delivery and stable certification remain unfinished. The historical C1
+build and other source results below remain valid only for their exact subjects.
 
-## Latest maintenance and source preparation
+## Latest actual source outcome
 
-The C4 child qualified23 native regressions/public CLI and two separately
-reviewed lossless custody operations. Original receipts and all evidence remain
-verified;7921599 managed logical bytes saved. Existing pools now224863629bytes
-with scratch0. This is not measured allocated recovery or outer containment.
-The exact acceptedcf09b043 metadata effect completed once, four commands exit0,
-only6 of9 allowed reports changed; complete41-input binding verified.
+One corrected exact invocation on eea174be/treef19df846, job1b3224cd83fb4531beb3553decbae1a2,
+ran as BLACKGLASS-WIN1\CodexSandboxOffline. All67 tests actually ran:5 admission,
+8 public fixtures,36 Q47/Q48 and18 capability checks. No skips/failures/errors or
+validation warnings occurred; export/fullvalidate exited0. This result received
+independent ACCEPT_WITH_NOTES; every note is nonblocking/disposed.
 
+Receipt/complete collection digests, all23 bound inputs,41 public bindings,
+24 unchanged supervising modules and849 export checksums verify. Custody module,
+regressions and current CLI are included in the export. Scratch/fixtures retired,
+process quiescent/noIO and reservation released. Retained4,996,782 logical bytes;
+sampled workspace/log peak4,990,210bytes and memory peak308,019,200bytes. These
+measurements do not establish whole-session growth or matched outcome efficiency.
+Known managed pools after collection are229,860,411logical bytes with scratch0;
+canonical export separately4,265,212bytes. No physical recovery estimate is made.
+
+[Native result](evidence/custody-payload-native-source-result.json),
+[actual proof](evidence/custody-payload-source-qualification.json) and
+[independent result review](evidence/custody-post-source-independent-review.json)
+retain exact identities and complete evidence references. The first controller
+command used an unsupported flag and refused before dispatch; its complete logs
+and unknown numeric exit are preserved. A later preflight key lookup failed
+before invocation. Only the corrected accepted native job ran; there was no
+uncertain replay or additional67-test attempt.
+
+The export truthfully records source_dirty_state:true because exact post-freeze
+review/effect records were untracked during generation. It is not stable-ready.
+Next: freeze the result and checkpoint docs, independently review one pure
+export from clean source, verify its complete collection/retirement, then freeze
+and review build/current8consumers/delivered capability+custody/replay effects.
+The67 passing checks may be reused only on identical operative input hashes;
+old23-test custody evidence remains independently scoped. No dirty flag waiver,
+new runtime selection, integration or release effect follows from this result.
+
+## Maintenance, specification and development status
+
+C4 qualified23 native/public-CLI regressions and two separately reviewed live
+lossless custody operations. All original receipts and complete evidence are
+verified;7,921,599 managed logical bytes saved. The exactcf09b043 projection
+refresh ran four commands exit0, only6 of9 allowed reports changed and complete
+41-input binding verified. Those views remain current after the source job.
 [Custody report](../AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md) and
-[projection result](evidence/custody-payload-projection-result-v3.json) record
-these actual outcomes. Existing7132 candidate assets/originala241 config stayed
-unchanged; this ZIP contains C1, not custody. Next exact native review covers the
-existing worker49+18, export/fullvalidation under the finite original pool.
-No native dispatch, new build, current consumer/replay, integration or publication
-is claimed from this preparation. Earlier results below retain their dates,
-archive/source identities and narrower applicability.
+[projection result](evidence/custody-payload-projection-result-v3.json) retain
+those separate actual outcomes.
+
+The19 original architecture topic owners,244 UR/UC and proposed/adopted semantic
+boundary remain preserved. The [architecture report](../AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md)
+and [staged roadmap](../../../docs/roadmap/staged-expansion-roadmap.md) now
+separate bounded C1/C8/C4 qualification from the remaining candidate scope.
+Useful next candidates are remaining C8 explainability, C2 compatibility codecs
+and C3 portable checkpoints; admission must name existing owners, consumers and
+acceptance. C9 contributor conformance/C11 recipe invalidation follow their
+prerequisites; request lifecycle/assets/lessons/characterization/attribution
+remain independently gated. No new platform, rewrite or blanket implementation
+admission is introduced.
+
+The7132 stable candidate and originala241 configuration are unchanged. This ZIP
+contains C1 and predates custody. Main/dev source synchronization is separate
+from new C4 integration and stable certification. Outer shell/editor/plugins
+remain unrestricted, read isolation unqualified and256MiB aggregate is
+cooperative admission plus monitoring, not a filesystem quota. Ten historical
+dispositions, live GPT6.1 permission, actual-host/matched whole efficiency,
+strict stable ACCEPT/tag/publication/downloaded consumers and wider cleanup
+remain distinct. FacMan product development remains paused. Earlier records
+below retain their dates and exact source/archive applicability.
 
 ## Prior exact C1 payload build outcome
 

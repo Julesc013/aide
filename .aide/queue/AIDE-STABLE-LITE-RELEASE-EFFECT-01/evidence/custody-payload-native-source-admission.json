@@ -1,0 +1,25 @@
+{
+  "effect_sha256": "0026571a9dca951fba3df0395947c12318c2def5d58a5930ba95f2617acd1888",
+  "native_effect_verdict": "ACCEPT_WITH_NOTES",
+  "notes": [
+    {
+      "classification": "nonblocking_disposed",
+      "note": "494409-byte margin preliminary; locked admission mandatory; reconcile refusal/failure without automatic replay"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "accept actual49+18/export/fullvalidate/full collection and retirement; retained23 proof scope unchanged"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "build/runtime/refs/release and outer containment remain separate"
+    }
+  ],
+  "record_kind": "controller transcription of independent reviewer message",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.custody-payload-native-source-admission.v1",
+  "scope": "one exact existing-worker source invocation",
+  "source_commit": "eea174be2b7bd5a8677c4157af9e24993a63320a",
+  "source_tree": "f19df8462bf5384daf5f31468103603a222979a1",
+  "source_verdict": "ACCEPT_WITH_NOTES"
+}

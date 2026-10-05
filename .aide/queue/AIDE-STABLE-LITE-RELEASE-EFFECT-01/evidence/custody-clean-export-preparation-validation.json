@@ -1,0 +1,36 @@
+{
+  "all10_operative_inputs_identical": true,
+  "all26_template_inputs_current": true,
+  "all41_bindings_current": true,
+  "assets_build_consumers_refs_models": "NO_EFFECTS",
+  "canonical_source_alias_is_exact_native_output": true,
+  "compile_structural_ast_whitespace": "PASS",
+  "configuration_sha256": "4df3adaef15214e41cd2135716bd4e713287f260c0aebc0066ef79a43499f736",
+  "ignored_pre_effect_records": [
+    "custody-clean-export-native-effect.log",
+    "custody-clean-export-native-admission.log",
+    "custody-clean-export-native-observation.log",
+    "custody-clean-export-native.stdout.log",
+    "custody-clean-export-native.stderr.log"
+  ],
+  "manifest_template_sha256": "eb1fde92a1bc45f10d28a6864301300a436824f10c96d98dbda943d362b3130a",
+  "native67_proof_sha256": "5a10448a4d2fc5de1d52294abf30a85e38100207f7c6515f9eb29338a707577b",
+  "native_clean_export": "NOT_RUN",
+  "new_effect_requires_independent_verdict": true,
+  "old_c1_source_alias_preserved": "7d0e68d35b9724fa7f9cf8bc589a099695d598f69e7de72f1aa194388e7836f1",
+  "proposal_sha256": "b244a2810415b664d00ae3102378a45ae6c831afcb5a0c1e127805dfde19be81",
+  "reuse_source67_operative_inputs": {
+    ".aide/capabilities/capability-evidence-bindings.schema.json": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
+    ".aide/capabilities/capability-seeds.yaml": "46817a46802870980297f9923f6e1d31fd6a9c418ced7ced10283d2e2565fd5f",
+    ".aide/policies/capability-reality.yaml": "7fd503b9a3560ee32e5b56cb3fb7a0cddc865f46a42780ceceaa636e18645e18",
+    ".aide/scripts/aide_lite.py": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+    ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+    ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+    ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+    ".aide/scripts/tests/test_stable_release_admission.py": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+    ".aide/scripts/tests/test_x_os_02_capability_reality.py": "4509355fc87b618c013ac1406e24e5a2181f5ac4c658f89fc0b8eae6a20393ef",
+    "docs/reference/capability-reality-ledger.md": "1533b4122dc1666e92058643cc167070a3defab64a57c078fde4574082b7c51e"
+  },
+  "schema": "aide.custody-clean-export-preparation-validation.v1",
+  "status": "PASS_PREPARATION_ONLY"
+}

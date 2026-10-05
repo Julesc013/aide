@@ -3822,8 +3822,8 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/evidence
   - id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
     status: needs_review
-    planning_state: custody_payload_reports_current_native_source_review_pending
-    result: PASS_C4_MAINTENANCE_REPORTS_CURRENT_SOURCE_EXPORT_PENDING
+    planning_state: custody_source67_accepted_clean_export_preparation
+    result: PASS67_C4_SOURCE_DIRTY_EXPORT_CLEAN_REFRESH_PENDING
     title: Freeze and qualify a publishable AIDE Lite release effect
     task: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml
     exec_plan: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md

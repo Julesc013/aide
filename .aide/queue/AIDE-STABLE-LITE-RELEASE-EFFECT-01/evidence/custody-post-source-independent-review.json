@@ -1,0 +1,28 @@
+{
+  "documentation_admission_verdict": "ACCEPT_WITH_NOTES",
+  "documentation_proposal_sha256": "3224ee85c58e46f3d2a36e9583cb4fdef27acbd5237d6b02ad264b934f1e87c7",
+  "native_result_sha256": "2b55475fb3fd0ad278f22db8a91ed3855e5fc94c2393e5ccc1cbc0ada2f0dfad",
+  "native_result_verdict": "ACCEPT_WITH_NOTES",
+  "notes": [
+    {
+      "classification": "nonblocking_disposed",
+      "note": "dirty export truthful; clean reviewed regeneration required before stable build"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "sampled peaks; fresh admission must include canonical export"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "consumer/replay/promotion/integration/release/containment separate"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "note": "only two hash-matched documentation paths and stated queue/index updates; preserve draft/history; resulting exact source review required; no runtime effect authority"
+    }
+  ],
+  "record_kind": "controller transcription of independent reviewer message",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.custody-post-source-review.v1",
+  "source_commit": "eea174be2b7bd5a8677c4157af9e24993a63320a"
+}

@@ -10,13 +10,13 @@
     "failures": 0,
     "run": 18,
     "skips": 0,
-    "stderr_raw_sha256": "2f68a03d866fd465c32c3a57a4fda9c5504d26671cd095d66990b4f613d7de92",
+    "stderr_raw_sha256": "a6268bd77eb2b45f1ef45c935808a6acb72b97699488c514050984548d74ecc5",
     "stdout_raw_sha256": "d2dfd8a0b7ab5f7cd6d1dccc5cad9f3f33b0a21ad44035162de91eae05930fd0"
   },
   "export-pack_exit_code": 0,
   "model_calls": 0,
   "outer_session_contained": false,
-  "phase": "repair",
+  "phase": "resume-source",
   "public_fixture_tests": {
     "errors": 0,
     "failures": 0,
@@ -31,11 +31,20 @@
     "skips": 0
   },
   "retired_fixtures": [],
+  "source49_reuse": {
+    "entire_previous_job_passed": false,
+    "job_id": "ca2a1e1406954ceca009f00e3e064b32",
+    "partial_proof_sha256": "d87fb2f2565752ff8cc4f8bcae1e2d3839975ec5fb029070bd93a606d76146a0",
+    "receipt_sha256": "05ba3f77811dca37bd3ee6418add8e4c9d33f8fd48120f50c86e6130333b02e3",
+    "source_commit": "dd684b45eef95b78028885b6f36780bc0acb0c31",
+    "source_tree": "d1ee7fae2cf261b6a708616375359d305e081059"
+  },
   "source_inputs": {
     ".aide/capabilities/capability-evidence-bindings.schema.json": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
     ".aide/capabilities/capability-seeds.yaml": "46817a46802870980297f9923f6e1d31fd6a9c418ced7ced10283d2e2565fd5f",
     ".aide/policies/capability-reality.yaml": "7fd503b9a3560ee32e5b56cb3fb7a0cddc865f46a42780ceceaa636e18645e18",
-    ".aide/scripts/aide_lite.py": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+    ".aide/policies/release-versioning.yaml": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253",
+    ".aide/scripts/aide_lite.py": "387c5b2fe710baf84c48f13ab124ba5ec253c9f55b561261eacc95ca8480b3f7",
     ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
     ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
     ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",

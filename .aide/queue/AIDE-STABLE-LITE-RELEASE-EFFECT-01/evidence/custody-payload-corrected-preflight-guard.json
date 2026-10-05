@@ -1,0 +1,9 @@
+{
+  "all23_inputs_unchanged": true,
+  "all4_assets_unchanged": true,
+  "corrected_guard": "explicit existing selected_configuration_sha256 and selected_job_file_sha256 fields; exact effect/argv unchanged",
+  "prior_dispatch": false,
+  "prior_guard": "controller looked up nonexistent selected_configuration_file_sha256 key; KeyError before admission record or invocation",
+  "schema": "aide.custody-payload-corrected-preflight-guard.v1",
+  "source_and_selected_records_unchanged": true
+}

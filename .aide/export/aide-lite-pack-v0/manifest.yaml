@@ -1,8 +1,8 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: dd684b45eef95b78028885b6f36780bc0acb0c31
-source_dirty_state: false
+source_commit: eea174be2b7bd5a8677c4157af9e24993a63320a
+source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
 raw_prompt_storage: false
@@ -713,6 +713,7 @@ included_files:
   - files/.aide/scripts/tests/test_q46_rollback_uninstall.py
   - files/.aide/scripts/tests/test_q47_release_bundle.py
   - files/.aide/scripts/tests/test_q48_github_release_draft.py
+  - files/.aide/scripts/tests/test_retired_evidence.py
   - files/.aide/scripts/tests/test_review_pack.py
   - files/.aide/scripts/tests/test_router_profile.py
   - files/.aide/scripts/tests/test_stable_release_admission.py
@@ -788,6 +789,7 @@ included_files:
   - files/core/execution/managed_workspace.py
   - files/core/execution/provider.py
   - files/core/execution/registered_process.py
+  - files/core/execution/retired_evidence.py
   - files/core/execution/scoped_host.py
   - files/core/gateway/README.md
   - files/core/gateway/__init__.py

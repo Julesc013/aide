@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: needs_review
-planning_state: custody_payload_reports_current_native_source_review_pending
-result: PASS_C4_MAINTENANCE_REPORTS_CURRENT_SOURCE_EXPORT_PENDING
+planning_state: custody_source67_accepted_clean_export_preparation
+result: PASS67_C4_SOURCE_DIRTY_EXPORT_CLEAN_REFRESH_PENDING
 updated_at: 2026-10-05
-current_slice: accepted_c4_maintenance_and_exact_projection_refresh_verified
-next_slice: exact_current_source_native_envelope_review_then_source_export_qualification
+current_slice: independently_accepted_native67_fullvalidate_export_complete_collection_retirement
+next_slice: frozen_metadata_source_and_exact_clean_export_effect_review
 review_gate: exact_current_source_ref_acceptance_before_sync_stable_gates_before_tag_publication
 stable_release_main_promotion_performed: false
 tag_created: false
@@ -38,3 +38,7 @@ original_archive_runtime_selection: held_stale_after_local_asset_replacement
 previous_current_archive_fields: historical_pre_C1_qualification_only_not_new_asset_acceptance
 custody_payload_report_result_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-payload-projection-result-v3.json
 custody_payload_delivered_in_current_archive: false
+
+custody_native67_result_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-payload-native-source-result.json
+custody_native67_review_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-post-source-independent-review.json
+custody_export_source_dirty_state: true

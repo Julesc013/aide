@@ -3,8 +3,8 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: needs_review
-planning_state: custody_payload_reports_current_native_source_review_pending
-result: PASS_C4_MAINTENANCE_REPORTS_CURRENT_SOURCE_EXPORT_PENDING
+planning_state: custody_source67_accepted_clean_export_preparation
+result: PASS67_C4_SOURCE_DIRTY_EXPORT_CLEAN_REFRESH_PENDING
 created_at: 2026-09-28
 updated_at: 2026-10-05
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -22,6 +22,8 @@ authority_basis: >
 scope:
   allowed_paths:
     - .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/**
+    - docs/roadmap/staged-expansion-roadmap.md
+    - .aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md
     - .aide/intake/latest-intent-packet.json
     - .aide/intake/latest-intent-packet.md
     - .aide/intake/latest-workunit-draft.json
@@ -136,3 +138,6 @@ current_payload_source_sync:
   publication_and_historical_approval: false
 
 custody_payload_source_amendment: Reuse existing capability_payload_refresh.py repair to rerun49 affected public/admission/packaging checks and18 current capability checks, refresh only existing export and fullvalidate. Current7132 archive with unchanged24 module pins supervises export writes. SevenMiB scratch/sixMiB logs/64KiB results/16MiB export reservation and900s within unchanged256MiB. Same-input native23 evidence is retained; no49 reuse after CLI changes. Exact independent frozen source/native effect required; original a241 config/assets and all8 consumer acceptance remain unchanged.
+
+custody_documentation_amendment: Exact independent proposal3224ee85 admits only roadmap current checkpoint and a dated later checkpoint in the original architecture report; no draft semantic adoption or source implementation.
+custody_clean_export_preparation: Existing pinned7132 supervisor, same roots/256MiB aggregate and exact export only; one pure export command proposed after clean freeze, reuse67 only unchanged operative inputs. Separate exact native review required; no build/consumer/ref effect from preparation.

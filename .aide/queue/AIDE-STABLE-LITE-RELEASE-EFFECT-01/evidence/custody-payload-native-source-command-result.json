@@ -1,0 +1,134 @@
+{
+  "after": {
+    "commit_free": 9181954048,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 70841090048
+    },
+    "physical_free": 11014623232
+  },
+  "before": {
+    "commit_free": 9088024576,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 70850588672
+    },
+    "physical_free": 10919124992
+  },
+  "canonical_after": {
+    ".aide/export/aide-lite-pack-v0": 4265212
+  },
+  "canonical_before": {
+    ".aide/export/aide-lite-pack-v0": 4214570
+  },
+  "collected_manifest": {
+    "logs": "c2d1abf8ce3db40b0e6c0dfa20c78cd6e4e652fce354db727175d33a232a1289",
+    "output": "72261f0343a906262b567c04cb6e984703a123dd96d0753ce1bacaeab3809bd9"
+  },
+  "config_digest": "8b7760ac87c1223c9e56bdf14ae6becab43725919a0d859e2715b55a2c0753d3",
+  "created_at_unix_ns": 1791160644039085500,
+  "environment_digest": "90a326bc4773f30958da8a4b0815df62adbbd60ab6049278807d8060f4391f7f",
+  "job": {
+    "adapter": "python",
+    "argv": [
+      "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\capability_payload_refresh.py",
+      "repair"
+    ],
+    "canonical_outputs": {
+      ".aide/export/aide-lite-pack-v0": {
+        "bytes": 16777216,
+        "volume_id": "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\"
+      }
+    },
+    "cwd": "D:\\Projects\\AIDE\\aide",
+    "executable_sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9",
+    "inputs": {
+      ".aide/capabilities/capability-evidence-bindings.schema.json": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
+      ".aide/capabilities/capability-seeds.yaml": "46817a46802870980297f9923f6e1d31fd6a9c418ced7ced10283d2e2565fd5f",
+      ".aide/context/latest-task-packet.md": "210d3dd99afba1baceeaa20c8351f73be995410094f6f26db53cd9d6a53c76a6",
+      ".aide/policies/capability-reality.yaml": "7fd503b9a3560ee32e5b56cb3fb7a0cddc865f46a42780ceceaa636e18645e18",
+      ".aide/policies/release-versioning.yaml": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253",
+      ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/worker.py": "ece020b49246ac1ccda4acf54172fd037f11583c36f48e8589f4292412336838",
+      ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/maintenance-source-acceptance.json": "affc0b9d68525a49c7accb4987e8af0989bfab4cd92caf3426f942eb31faa76a",
+      ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/native-fixture-result-v3.json": "e2f6eaa1bcf6379775c7c16a8204c600ed414177721fd48196da126aa9c2e936",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md": "c417dc0f7b17cb5310f9f9dafba436fa2167258e9cb361a2f1b10a7794e6f590",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/capability_payload_refresh.py": "cdccd6d9cb4ddecaa1bdcc5627b7ddb28b57719de70d6b497cba0857237b3558",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-payload-source-configuration.json": "b1f88fc84fbd91fde324c59de592070a8a5e580d87bc31319ad6c11a867f30e5",
+      ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml": "40cc8b4e1561d43522aa145a416921b90b4e7dd0ee528c31f1adc9f4e4f2d3a2",
+      ".aide/reports/capability-evidence-bindings.json": "a9bf950782e6070da59f696e4510b3c62b8679bac5afea1a7da38cdd0fefcd1f",
+      ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+      ".aide/scripts/aide_lite.py": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+      ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+      ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+      ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+      ".aide/scripts/tests/test_retired_evidence.py": "37834a2c858b0cbdbc00a3c34b4b1be7642203d86c509bd1674f7030075c57be",
+      ".aide/scripts/tests/test_stable_release_admission.py": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+      ".aide/scripts/tests/test_x_os_02_capability_reality.py": "4509355fc87b618c013ac1406e24e5a2181f5ac4c658f89fc0b8eae6a20393ef",
+      "core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
+      "docs/reference/capability-reality-ledger.md": "1533b4122dc1666e92058643cc167070a3defab64a57c078fde4574082b7c51e"
+    },
+    "owner": "custody-payload-source-01",
+    "schema": "aide.maintainer-job.v1",
+    "source_commit": "eea174be2b7bd5a8677c4157af9e24993a63320a",
+    "source_tree": "f19df8462bf5384daf5f31468103603a222979a1",
+    "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01"
+  },
+  "job_id": "1b3224cd83fb4531beb3553decbae1a2",
+  "last_capacity": {
+    "commit_free": 9181884416,
+    "disk_free": {
+      "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 70841090048
+    },
+    "physical_free": 11014909952
+  },
+  "limits": {
+    "canonical_bytes": 536870912,
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 6291456,
+    "max_files": 100000,
+    "memory_bytes": 2147483648,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 32,
+    "retained_bytes": 65536,
+    "runtime_seconds": 900,
+    "scratch_bytes": 7340032
+  },
+  "manifest_digest": "41864f9fac7dc3e7bc8a1914685e4c5c51193d73efa5e0815298d75e0b362f7e",
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4265212
+    },
+    "memory_bytes": 308019200,
+    "scratch_bytes": 4990210
+  },
+  "phase": "retired",
+  "process": {
+    "creation_filetime": 134356342443723208,
+    "job_id": "1b3224cd83fb4531beb3553decbae1a2",
+    "peak_memory_bytes": 308019200,
+    "pid": 25024,
+    "stage": "quiescent"
+  },
+  "reservation_released": true,
+  "reservations": {
+    "\\\\?\\volume{a9d3c288-813a-484a-924d-a2ca46c715b0}\\": 39911424
+  },
+  "result": {
+    "bytes": 4973777,
+    "creation_filetime": 134356342443723208,
+    "exit_code": 0,
+    "io_errors": [],
+    "job_id": "1b3224cd83fb4531beb3553decbae1a2",
+    "pid": 25024,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\1b3224cd83fb4531beb3553decbae1a2",
+  "scratch": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\1b3224cd83fb4531beb3553decbae1a2",
+  "scratch_absent": true,
+  "scratch_identity": [
+    3781016413010784355,
+    15199648744818287
+  ],
+  "scratch_readonly_cleared": 0
+}

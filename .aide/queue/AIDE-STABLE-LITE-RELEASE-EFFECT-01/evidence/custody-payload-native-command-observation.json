@@ -1,0 +1,43 @@
+{
+  "actual_argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-B",
+    "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\aide_lite.py",
+    "job",
+    "run",
+    "--config",
+    "D:\\Projects\\AIDE\\aide\\.aide.local\\capability-payload-source-execution.json",
+    "--job",
+    "D:\\Projects\\AIDE\\aide\\.aide.local\\capability-payload-source-job.json"
+  ],
+  "automatic_resubmission": false,
+  "command_exit_code": null,
+  "dispatch": "argument parser refused missing required --manifest before handler; no native worker dispatch",
+  "effect_sha256": "0026571a9dca951fba3df0395947c12318c2def5d58a5930ba95f2617acd1888",
+  "exit_code_gap": "not persisted before controller JSON decode failed; no numeric value inferred",
+  "observed_utc": "2026-10-05T00:34:30.668985+00:00",
+  "postflight": {
+    "active_absent": true,
+    "active_next_absent": true,
+    "all23_inputs_unchanged": true,
+    "all4_assets_unchanged": true,
+    "original_configuration_unchanged": true,
+    "scratch_empty": true
+  },
+  "result": "PRE_DISPATCH_CLI_ARGUMENT_REFUSAL",
+  "schema": "aide.custody-payload-native-command-observation.v1",
+  "source_commit": "eea174be2b7bd5a8677c4157af9e24993a63320a",
+  "source_qualification": "NOT_RUN",
+  "source_tree": "f19df8462bf5384daf5f31468103603a222979a1",
+  "stderr": {
+    "bytes": 158,
+    "path": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\custody-payload-native-source-run.stderr.log",
+    "sha256": "14495b8660aaf43dd8be7fc5645d00b470ad58eeda00443d530db9132a514909"
+  },
+  "stderr_text": "usage: aide_lite.py job run [-h] --config CONFIG --manifest MANIFEST [--full]\naide_lite.py job run: error: the following arguments are required: --manifest\n",
+  "stdout": {
+    "bytes": 0,
+    "path": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\custody-payload-native-source-run.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

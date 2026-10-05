@@ -1,5 +1,27 @@
 # AIDE architecture and independent development report
 
+## Later checkpoint — 2026-10-05
+
+The original reconciliation below is retained as its dated source/evidence
+snapshot. Later work qualified bounded C1 evidence dependencies, a C8 inspection
+view and finite C4 custody; this does not adopt all12 candidates or the19 draft
+architecture refinements. C4 passed23 native/public-CLI regressions and two live
+custody operations, preserving all receipts/evidence and saving7,921,599 logical
+bytes. Current affected source at eea174be passed67 fresh checks and full
+validation; collection/retirement are independently accepted. Its849-checksum
+export includes custody but dirty provenance requires a clean reviewed refresh.
+The existing7132 ZIP predates custody and still needs current consumer/replay
+acceptance. C4 integration and stable certification remain unfinished.
+
+[Current delivery report](../AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md),
+[custody report](../AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md) and the
+[staged roadmap](../../../docs/roadmap/staged-expansion-roadmap.md) carry current
+facts and next bounded candidates. Outer-client setup, historical dispositions,
+live/matched efficiency, publication/download and wider cleanup remain separate;
+FacMan product work remains paused. Preserve the original244 UR/UC and proposed
+versus adopted semantics described below.
+
+
 Date: 2026-10-04, Australia/Sydney. Source baseline:
 `3d186d0584bb40f18402a626c9fe099260fae3d4`.
 

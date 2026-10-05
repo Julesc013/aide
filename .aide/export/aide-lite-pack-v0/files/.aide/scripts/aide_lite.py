@@ -2394,6 +2394,7 @@ PORTABLE_SOURCE_FILES = [
     "core/execution/provider.py",
     "core/execution/registered_process.py",
     "core/execution/managed_workspace.py",
+    "core/execution/retired_evidence.py",
     "core/execution/scoped_host.py",
     "core/protocol/__init__.py",
     "core/protocol/execution_receipt.py",
@@ -45477,6 +45478,57 @@ def managed_inspection_boundary(config_digest: str, scoped_metadata=None) -> dic
     }
 
 
+def command_job_custody(args: argparse.Namespace) -> int:
+    """Explicit retired-evidence administration; never start a worker/model."""
+    root = str(args.repo_root)
+    if root not in sys.path:
+        sys.path.insert(0, root)
+    sys.dont_write_bytecode = True
+    try:
+        config, _ = _job_wait_read_json(Path(args.config), 1048576)
+        if "execution_host" in config:
+            spec = importlib.util.spec_from_file_location(
+                "aide_custody_scoped_host", Path(root) / "core/execution/scoped_host.py")
+            scoped = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(scoped)
+            owner, _ = scoped.prepare(args.config, args.repo_root)
+        else:
+            from core.execution import managed_workspace as owner
+        # The pinned owner retains its own old core package namespace. Load
+        # this separately qualified administrative source explicitly; it uses
+        # the selected owner's guards/lock and never becomes the supervisor.
+        custody_spec = importlib.util.spec_from_file_location(
+            "aide_retired_evidence_custody", Path(root) / "core/execution/retired_evidence.py")
+        custody_module = importlib.util.module_from_spec(custody_spec)
+        custody_spec.loader.exec_module(custody_module)
+        custody = custody_module.Custody(owner, args.config)
+        operation = args.custody_command
+        if operation == "plan":
+            result = custody.plan(args.job_id)
+            if not args.full:
+                plan = result.pop("plan")
+                result.update(job_id=args.job_id, original_bytes=plan["original_bytes"],
+                              files=len(plan["files"]), directories=len(plan["directories"]))
+        elif operation == "verify":
+            manifest = custody.verify(args.job_id)
+            result = {"state": "VERIFIED", "job_id": args.job_id,
+                      "plan_digest": owner.digest(manifest["plan"]),
+                      "archive_sha256": manifest["archive_sha256"],
+                      "receipt_sha256": manifest["plan"]["anchors"]["receipt.json"],
+                      "collected_manifest": manifest["plan"]["collected_manifest"], "writes": False}
+        elif operation == "read":
+            result = custody.read(args.job_id, args.member, offset=args.offset,
+                                  limit=args.limit, expected_sha256=args.sha256)
+        else:
+            result = getattr(custody, operation)(args.job_id, args.expect_plan)
+        print(json.dumps(result, sort_keys=True, indent=2))
+        return 0
+    except (OSError, ValueError, KeyError, TypeError, RuntimeError, zipfile.BadZipFile) as exc:
+        print(json.dumps({"state": "REFUSED", "reason": str(exc),
+                          "effect_requested": args.custody_command in ("apply", "recover")}))
+        return 1
+
+
 def command_managed_job(args: argparse.Namespace) -> int:
     """Explicit maintainer execution; inspect never projects tracked reports."""
     root = str(args.repo_root)
@@ -45501,6 +45553,10 @@ def command_managed_job(args: argparse.Namespace) -> int:
         if args.job_command == "setup":
             result = managed_workspace.configure(args.config, args.selection, args.approved_parent)
         elif args.job_command == "recover":
+            _, roots, _ = managed_workspace.load_config(args.config)
+            active = roots["control"] / "active.json"
+            if os.path.lexists(active) and managed_workspace.read_json(active).get("schema") == "aide.retired-evidence-custody-pending.v1":
+                raise ValueError("pending evidence custody requires job custody recover with its exact plan digest")
             result = managed_workspace.recover(args.config)
         elif args.job_command in ("pause-dispatch", "resume-dispatch"):
             mode = "paused" if args.job_command == "pause-dispatch" else "running"
@@ -46768,6 +46824,22 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     job_parser = subparsers.add_parser("job", help="Bounded maintainer jobs with explicit local storage.")
     job_subparsers = job_parser.add_subparsers(dest="job_command", required=True)
+    custody_parser = job_subparsers.add_parser("custody", help="Plan, preserve and read complete retired evidence under finite custody.")
+    custody_subparsers = custody_parser.add_subparsers(dest="custody_command", required=True)
+    for operation in ("plan", "apply", "recover", "verify", "read"):
+        custody_operation_parser = custody_subparsers.add_parser(operation)
+        custody_operation_parser.add_argument("--config", required=True)
+        custody_operation_parser.add_argument("--job-id", required=True)
+        if operation == "plan":
+            custody_operation_parser.add_argument("--full", action="store_true", help="Print complete custody plan for retained review evidence.")
+        if operation in ("apply", "recover"):
+            custody_operation_parser.add_argument("--expect-plan", required=True)
+        if operation == "read":
+            custody_operation_parser.add_argument("--member", required=True)
+            custody_operation_parser.add_argument("--sha256")
+            custody_operation_parser.add_argument("--offset", type=int, default=0)
+            custody_operation_parser.add_argument("--limit", type=int, default=2048)
+        custody_operation_parser.set_defaults(handler=command_job_custody)
     wait_parser = job_subparsers.add_parser("wait", help="Observe one existing job without model calls or writes.")
     wait_parser.add_argument("--config", required=True)
     wait_parser.add_argument("--job-id", required=True)

@@ -1,0 +1,73 @@
+{
+  "all23_inputs_current": true,
+  "all24_supervisor_pins_current": true,
+  "all41_public_bindings_current": true,
+  "all4_stable_assets_unchanged": true,
+  "build_current_consumers_replay_runtime_promotion_integration_publication": "NOT_RUN",
+  "collected_manifest": {
+    "logs": "c2d1abf8ce3db40b0e6c0dfa20c78cd6e4e652fce354db727175d33a232a1289",
+    "output": "72261f0343a906262b567c04cb6e984703a123dd96d0753ce1bacaeab3809bd9"
+  },
+  "collection_verified": true,
+  "collector_correction": "first read-only check assumed files key; actual existing checksums map verified; no extra native invocation",
+  "effect_sha256": "2c4acdbcabf15d67523d2577747f3dddbf425410bd0a70ad1bb25888dea5f510",
+  "export": {
+    "all_checksums_verified": true,
+    "checksums_sha256": "69841f10a6f5e9113983cd945df86c325275472870544728cff4bad0b4fcd513",
+    "custody_module_and_cli_included": true,
+    "dirty_reason": "post-freeze exact review/effect records were untracked; require clean admitted export refresh before stable build",
+    "files": 849,
+    "logical_bytes": 4265212,
+    "manifest_sha256": "263f9aaf3939a1c7a3b58c206765ca33e8cc36f8280843c1579b6a1a6292e990",
+    "source_dirty_state": true
+  },
+  "job_id": "1b3224cd83fb4531beb3553decbae1a2",
+  "known_pool_inventory": {
+    "canonical_export_bytes": 4265212,
+    "files": 4671,
+    "hard_filesystem_quota": false,
+    "logical_by_pool": {
+      "control": 13694135,
+      "retained": 216166276,
+      "scratch": 0
+    },
+    "logical_total": 229860411
+  },
+  "manifest_digest": "41864f9fac7dc3e7bc8a1914685e4c5c51193d73efa5e0815298d75e0b362f7e",
+  "original_configuration_unchanged": true,
+  "outer_session_contained": false,
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4265212
+    },
+    "memory_bytes": 308019200,
+    "scratch_bytes": 4990210
+  },
+  "proof_sha256": "5a10448a4d2fc5de1d52294abf30a85e38100207f7c6515f9eb29338a707577b",
+  "read_isolation": "unqualified",
+  "receipt_path": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\1b3224cd83fb4531beb3553decbae1a2\\receipt.json",
+  "receipt_sha256": "b893dcbdc0f99697cf5a2ca68538a4042afd41e70c041fd104af7aba138b7512",
+  "retained_custody_tests": {
+    "count": 23,
+    "result_sha256": "e2f6eaa1bcf6379775c7c16a8204c600ed414177721fd48196da126aa9c2e936",
+    "reuse_scope": "unchanged operative custody code/test/worker/24pins; metadata versions retained; no new23 execution"
+  },
+  "retained_logical_bytes": 4996782,
+  "retirement": {
+    "fixtures_retired": true,
+    "io_errors": [],
+    "pending_absent": true,
+    "phase": "retired",
+    "quiescent": true,
+    "reservation_released": true,
+    "scratch_absent": true
+  },
+  "schema": "aide.custody-payload-native-source-result.v1",
+  "source_commit": "eea174be2b7bd5a8677c4157af9e24993a63320a",
+  "source_tree": "f19df8462bf5384daf5f31468103603a222979a1",
+  "status": "PASS67_CURRENT_SOURCE_EXPORT_QUALIFIED_DIRTY_PROVENANCE_NOT_RELEASE_READY",
+  "tests_executed": 67,
+  "tests_reused_here": 0,
+  "warnings_or_skips": [],
+  "whole_efficiency_qualified": false
+}

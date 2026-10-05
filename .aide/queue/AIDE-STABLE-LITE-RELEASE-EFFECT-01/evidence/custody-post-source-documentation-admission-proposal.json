@@ -1,0 +1,19 @@
+{
+  "additional_allowed_paths": [
+    "docs/roadmap/staged-expansion-roadmap.md",
+    ".aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md"
+  ],
+  "authority": "direct owner consistent specs/plans/full report request and existing campaign delegation",
+  "before": {
+    ".aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md": "dd5b6c066a27d74410b5abf7bac768b0d1b82c7c7cb018067f9dc39a7701a315",
+    "docs/roadmap/staged-expansion-roadmap.md": "ce6c44f1185387accf9be451003cfc939c58831aee6c3b79c90eea536f11c576"
+  },
+  "exact_change": "replace only roadmap current-qualified-checkpoint subsection and prepend explicitly dated later checkpoint to architecture report; retain19 draft topics/244 UR UC and original historical source reviews",
+  "facts": "C1 bounded source integrated prior checkpoint; C4 native23 plus2 live custody operations accepted; current source67/export/fullvalidate PASS at eea174be, exact evidence collected/retired;849 checksums current but dirty provenance pending clean refresh;7132 stableZIP unchanged no custody; C8 partial; next candidates C2/C3 orremainingC8 after bounded admission",
+  "new_platform_or_requirements": false,
+  "parent_workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01",
+  "required_gate": "independent narrow documentation admission then exact source review; changes grant no new native/archive/runtime/ref/model/publication effect",
+  "root_and_queue_changes": "existing allowed rootindexes/queueREPORT/ExecPlan/status/task/index evidence only; no source/code/policy/support/permission changes",
+  "runtime_effects": false,
+  "schema": "aide.custody-post-source-documentation-admission.v1"
+}

@@ -1,5 +1,18 @@
 # AIDE Implementation Log
 
+## 2026-10-05 custody payload current source accepted
+
+Current restricted job1b3224cd at eea174be passed67 fresh checks, export and full
+validation, no warnings/skips. Independent result ACCEPT_WITH_NOTES, all notes
+nonblocking/disposed; complete collection/receipt and retirement verify.
+The849-entry export includes custody but truthfully records dirty provenance;
+freeze this result/checkpoint documentation, then separately review one clean
+export effect before archive build. Reuse67 only unchanged operative inputs.
+Source C4 native23 and two live custody operations remain qualified;7,921,599
+logical bytes saved. No current C4 archive/integration/stable/whole-session claim.
+See [full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+
+
 ## 2026-10-05 current capability payload source qualification completed
 
 Current scoped job e188c5d7 on9badd6f9 passed export/full validation and18 newly

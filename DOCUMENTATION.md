@@ -1,5 +1,18 @@
 # AIDE Documentation Index
 
+## 2026-10-05 custody payload current source accepted
+
+Current restricted job1b3224cd at eea174be passed67 fresh checks, export and full
+validation, no warnings/skips. Independent result ACCEPT_WITH_NOTES, all notes
+nonblocking/disposed; complete collection/receipt and retirement verify.
+The849-entry export includes custody but truthfully records dirty provenance;
+freeze this result/checkpoint documentation, then separately review one clean
+export effect before archive build. Reuse67 only unchanged operative inputs.
+Source C4 native23 and two live custody operations remain qualified;7,921,599
+logical bytes saved. No current C4 archive/integration/stable/whole-session claim.
+See [full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+
+
 ## Retired evidence custody qualified maintenance
 
 [Custody reference](docs/reference/retired-evidence-custody.md) describes finite
@@ -11,8 +24,9 @@ two separately accepted live custody operations: all evidence/receipts preserved
 lookup verified and7921599logical bytes saved in the existing256MiB pool.
 Maintenance sourcec8351859 and template are independently accepted. The
 existing release task completed the exact9-path projection refresh and is
-preparing separately reviewed source/export qualification. Integration, physical
-recovery and release qualification remain open; the outer session is unrestricted.
+completed independently accepted67-check source/export qualification; clean
+export regeneration remains required. Integration, physical recovery and release
+qualification remain open; the outer session is unrestricted.
 
 
 ## 2026-10-05 current capability payload source qualification completed

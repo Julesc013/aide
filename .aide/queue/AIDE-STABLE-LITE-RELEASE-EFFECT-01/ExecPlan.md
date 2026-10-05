@@ -1081,3 +1081,29 @@ held/stale and unchanged. No archive mutation/model/provider/ref effects from
 this source phase. Packaging/current consumers/deliveredC1+custody/replay and
 publication remain separate; all8 existing consumer cases/38forms/39outputs/
 12job observations are retained. No missing owner decision is inferred.
+
+## 2026-10-05 native custody payload source accepted
+
+Exact eea174be/treef19df846, corrected effect2c4acdbc, job1b3224cd, actually
+passed5+8+36+18=67 checks with no skips or warnings; export/fullvalidate exit0.
+Complete logs/output collection and receipt verified; scratch retired, process
+quiescent/noIO and reservation released. Reviewer accepted this bounded result
+with all notes nonblocking/disposed. Reuse67 only identical operative inputs;
+retain the separate native23 custody proof and two actual live operations.
+
+The849-entry export is checksum-valid and contains custody/current CLI, but
+its manifest truthfully records dirty source because post-freeze effect records
+were untracked. Commit the exact metadata/source result, then separately review
+one pure export invocation from a clean checkout. Keep post-freeze effect and
+admission in explicitly owned ignored local records until export completes,
+retain full command streams before parsing and preserve clean provenance. Never
+rewrite the dirty flag or repeat67 unchanged tests. After clean export is frozen
+and reviewed, a separate build may use its unchanged24 supervising modules
+while writing release outputs; no archive may supervise its own replacement.
+
+Documentation admission3224ee85 permits only the two named checkpoint updates
+in addition to existing paths. Preserve19 proposed architecture topic owners,
+244 original UR/UC, historical reviews and distinct outer/historical/live/
+matched-efficiency/stable/downloaded/cleanup gates. Exact resulting source
+review is required. Existing7132 assets and originala241 configuration remain
+unchanged; no C4 archive/current consumers/replay/promotion/integration claimed.
