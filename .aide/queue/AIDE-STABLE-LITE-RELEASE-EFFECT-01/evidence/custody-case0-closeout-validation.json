@@ -1,0 +1,59 @@
+{
+  "all_existing_release_gates_preserved": true,
+  "bindings_complete": true,
+  "bindings_truncated": false,
+  "capability_bindings_current": 41,
+  "changed_markdown_links_exist": true,
+  "fresh_source_tests": 0,
+  "harness_observation_sha256": "a82e6bd430b8f5673af42778c19ce12b22e0d61357ac27a2c9f96640e31c3146",
+  "native_case0_replays": 0,
+  "new_custody_effects": 0,
+  "next_scope_admission_only": true,
+  "outer_contained": false,
+  "report_refresh_observation_sha256": "8a93c05ec4692f9704980f11dd8be99a29ffe77381c8e614b6d1e891911177e8",
+  "routine4KiB_soft_view_budget": "deliberate limited expansion for exact phase/resource facts; complete evidence remains referenced",
+  "same_source67_operative_inputs": 10,
+  "schema": "aide.custody-case0-closeout-validation.v1",
+  "source_code_unchanged": true,
+  "status": "PASS_METADATA_CURRENT41_AND_SCOPED_REUSED_SOURCE",
+  "task_packet_findings": [
+    {
+      "check": "task_packet",
+      "message": "required sections present",
+      "path": ".aide/context/latest-task-packet.md",
+      "severity": "INFO"
+    },
+    {
+      "check": "task_packet",
+      "message": "task packet tokens: 1139",
+      "path": ".aide/context/latest-task-packet.md",
+      "severity": "INFO"
+    },
+    {
+      "check": "file_references",
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "path": ".aide/context/repo-map.json",
+      "severity": "INFO"
+    },
+    {
+      "check": "file_references",
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "path": ".aide/context/test-map.json",
+      "severity": "INFO"
+    },
+    {
+      "check": "file_references",
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "path": ".aide/context/context-index.json",
+      "severity": "INFO"
+    },
+    {
+      "check": "file_references",
+      "message": "referenced path exists (from .aide/context/latest-task-packet.md)",
+      "path": ".aide/context/latest-context-packet.md",
+      "severity": "INFO"
+    }
+  ],
+  "task_packet_utf8_bytes": 4556,
+  "unchanged_runtime_pins": 25
+}

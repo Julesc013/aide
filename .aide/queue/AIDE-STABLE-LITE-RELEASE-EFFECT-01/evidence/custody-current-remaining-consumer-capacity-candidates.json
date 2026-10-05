@@ -1,0 +1,114 @@
+{
+  "complete_plan_and_new_scope_review_required": true,
+  "eligible_metadata_candidates": 60,
+  "inspected_known_retained_roots": 516,
+  "known_conservative_bytes": 226941787,
+  "metadata_tree_entries": 3471,
+  "no_newstorage_or_deletion": true,
+  "observed_first_scratch_bytes": 33528294,
+  "old_remaining7_output_bytes": 5802009,
+  "old_remaining7_sample_bytes": 28532513,
+  "physical_disk_recovery_unknown": true,
+  "proposed_finite_envelope_not_admitted": {
+    "cooperative_reservation_bytes": 52953088,
+    "deficit_before_actual_savings_bytes": 11459419,
+    "result_bytes": 8388608,
+    "scratch_bytes": 41943040
+  },
+  "provider_content_read": false,
+  "ranked_candidates": [
+    {
+      "job_id": "67879a9fbce04871b15ab08996a20769",
+      "original_native_exit_code": 0,
+      "owner": "scoped-job-entry-01",
+      "payload_files": 6,
+      "payload_logical_bytes": 4909670,
+      "receipt_sha256": "91f076c6270f9bb6bdae7560f85cdc9dc604a6c1aa81f766c9c6adfeb7a463b9",
+      "source_commit": "092ebc5987fd0bb681e38ecb59626333e528ed35",
+      "state": "metadata_only_candidate_no_complete_plan_or_disposal_authority",
+      "workunit": "AIDE-JOB-SCOPE-DIAGNOSTICS-01"
+    },
+    {
+      "job_id": "ce62387adceb40ab8bf31268a7964abd",
+      "original_native_exit_code": 0,
+      "owner": "scoped-job-entry-01",
+      "payload_files": 6,
+      "payload_logical_bytes": 4908445,
+      "receipt_sha256": "defab0c32093242c6fc9a869283af6feea23812b7adc5fc95d12845f16cf7a1c",
+      "source_commit": "886290be31357b40eef137c65d203fd9e170ecb3",
+      "state": "metadata_only_candidate_no_complete_plan_or_disposal_authority",
+      "workunit": "AIDE-SCOPED-JOB-ENTRY-01"
+    },
+    {
+      "job_id": "0898722fd36f4b6c8d59c79554006dbe",
+      "original_native_exit_code": 1,
+      "owner": "scoped-job-entry-01",
+      "payload_files": 6,
+      "payload_logical_bytes": 4900709,
+      "receipt_sha256": "17a710ccaccc29a0585e08765a007f5839dc99b8c9e87eaf59d797ab0112a7ec",
+      "source_commit": "6428c0f6f265af2b6101d9a75824468f925053f2",
+      "state": "metadata_only_candidate_no_complete_plan_or_disposal_authority",
+      "workunit": "AIDE-SCOPED-JOB-ENTRY-01"
+    },
+    {
+      "job_id": "7df41d4da3d8438499fbfa827ad0278e",
+      "original_native_exit_code": 0,
+      "owner": "scoped-job-entry-01",
+      "payload_files": 6,
+      "payload_logical_bytes": 4899185,
+      "receipt_sha256": "160126233a7ab7bd58d7ce3c4892f627b51c72321c0b9ca01d5d993aaacd7ae6",
+      "source_commit": "7eb559886fbc7b21906c04ffe9a8313f16dac6fb",
+      "state": "metadata_only_candidate_no_complete_plan_or_disposal_authority",
+      "workunit": "AIDE-SCOPED-JOB-ENTRY-01"
+    },
+    {
+      "job_id": "2150dfcc934f4200a55fd3022012e92c",
+      "original_native_exit_code": 1,
+      "owner": "scoped-job-entry-01",
+      "payload_files": 6,
+      "payload_logical_bytes": 4898711,
+      "receipt_sha256": "4e0edb3adf3897158692c789199c6abe946308687a74d6c4f58f7674875988f0",
+      "source_commit": "b957f7e56af21247cd9f9a5afb7490b7a768d15e",
+      "state": "metadata_only_candidate_no_complete_plan_or_disposal_authority",
+      "workunit": "AIDE-SCOPED-JOB-ENTRY-01"
+    },
+    {
+      "job_id": "b92f98a450dc4b38af55fcd3d97755b1",
+      "original_native_exit_code": 0,
+      "owner": "current-scoped-lite-qualification-01",
+      "payload_files": 8,
+      "payload_logical_bytes": 4898343,
+      "receipt_sha256": "47a16873a911205c2d08dfaca6d8a13dab9c0f03ef1afa01d28c8528e5a3e007",
+      "source_commit": "a8e004e7235902cd1d290d82cbaccb9a1bd65bb1",
+      "state": "metadata_only_candidate_no_complete_plan_or_disposal_authority",
+      "workunit": "AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01"
+    },
+    {
+      "job_id": "798432752ba546e5b1fb5ca93308f9bc",
+      "original_native_exit_code": 1,
+      "owner": "scoped-job-entry-01",
+      "payload_files": 6,
+      "payload_logical_bytes": 4897884,
+      "receipt_sha256": "548c4ac9b20ca69226250977ecdb2cd94ef675b8115fde823ee7e529d2cf9df2",
+      "source_commit": "97100adce3fbe8c289917b625db4c7335254199f",
+      "state": "metadata_only_candidate_no_complete_plan_or_disposal_authority",
+      "workunit": "AIDE-SCOPED-JOB-ENTRY-01"
+    },
+    {
+      "job_id": "56b929c928d44edcba11757788a23fcd",
+      "original_native_exit_code": 1,
+      "owner": "session-containment-01",
+      "payload_files": 5,
+      "payload_logical_bytes": 4897716,
+      "receipt_sha256": "49feab410b5f47d039d013a68ccc517d53a47b18a202043e5b773ae5693fcf27",
+      "source_commit": "f286d266f534a50bf9708cb4773f5e55ff80da33",
+      "state": "metadata_only_candidate_no_complete_plan_or_disposal_authority",
+      "workunit": "AIDE-SESSION-CONTAINMENT-01"
+    }
+  ],
+  "rationale": "first sampled total is near32MiB; preserve full accumulated7-case results, no blind reuse/reduction; actual capacity and exact admission required",
+  "remaining7_acceptance_unchanged": true,
+  "schema": "aide.custody-current-remaining-consumer-capacity-candidates.v1",
+  "skipped_roots": 12,
+  "state": "READONLY_METADATA_CANDIDATES_ONLY_NO_PLAN_OR_APPLY"
+}

@@ -1,5 +1,16 @@
 # AIDE Planning Index
 
+## Current delivery next step — 2026-10-05
+
+Accepted current case0 completes one of8 consumer cases. Next use the existing
+C4 exact owned-custody plans to resolve measured capacity, then admit the
+unchanged remaining7 worker phase with finite40MiB scratch/8MiB results. Current
+52953088 reservation is short11459419bytes; no apply/fit promise. Keep delivered
+C1/custody/replay, historical10/live/matched/stable/downloaded/outer/wider-cleanup
+gates separate. [Current plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md)
+and [custody plan](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/ExecPlan.md) own work.
+Older dated entries below are execution-time snapshots, not current blockers.
+
 ## 2026-10-05 current custody archive build accepted
 
 One restricted native build on f3312a04/treeb5a3bd2e passed both stable commands.

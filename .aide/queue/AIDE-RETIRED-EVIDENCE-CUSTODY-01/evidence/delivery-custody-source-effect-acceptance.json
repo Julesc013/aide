@@ -1,0 +1,24 @@
+{
+  "blocking_findings": [],
+  "effect_sha256": "14efe7a53ad14ca403cb929877e7b4964f98cd7a06d83089cd034ab913d8f5f6",
+  "effect_verdict": "ACCEPT_WITH_NOTES",
+  "notes": [
+    {
+      "classification": "nonblocking_disposed",
+      "text": "preliminary cooperative margin; fresh locked capacity/headroom/custody checks mandatory each operation"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "text": "complete verified lossless archive before raw retirement; preserve anchors/failure, bounded lookup/full streams/exits, stop uncertainty, separate matching recovery review"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "text": "consumers unrun/unadmitted; actual savings/fit unknown; all other effects excluded"
+    }
+  ],
+  "record_kind": "controller transcription of actual independent reviewer final message",
+  "reviewer": "/root/containment_review",
+  "source_commit": "771684bcbd1430e692c0b72d9fa087b8fdc6ac79",
+  "source_tree": "33fd5937e28c2dd7b700c74bba3e61e5cd8dcb7f",
+  "source_verdict": "ACCEPT_WITH_NOTES"
+}

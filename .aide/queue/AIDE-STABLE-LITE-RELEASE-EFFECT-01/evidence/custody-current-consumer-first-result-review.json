@@ -1,0 +1,27 @@
+{
+  "blocking_findings": [],
+  "effect_sha256": "3c063a915c4791ea69891ee66eb1b7a53ba8a3d639dbd15c92e1cffa8a82d8ee",
+  "notes": [
+    {
+      "classification": "nonblocking_disposed",
+      "text": "case0only; remaining7/delivered/replay required"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "text": "sample26138byte margin does not prove hard peak bound"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "text": "source binding remains manifest declaration and bundled CLI digest"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "text": "both reader errors recorded; no native replay"
+    }
+  ],
+  "record_kind": "controller transcription of independent actual-result reviewer final message",
+  "result_sha256": "04602684715d6a87a5d2137b760de1f7b8b5636d72214725e0766ab1379ca887",
+  "reviewer": "/root/containment_review",
+  "source_commit": "771684bcbd1430e692c0b72d9fa087b8fdc6ac79",
+  "verdict": "ACCEPT_WITH_NOTES"
+}

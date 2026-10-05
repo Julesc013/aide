@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: needs_review
-planning_state: custody_current_build_accepted_closeout_and_consumer_capacity_planning
-result: PASS67_CLEAN_EXPORT849_BUILD852_CURRENT_CONSUMERS_PENDING
+planning_state: current_case0_accepted_remaining7_capacity_and_exact_effect_pending
+result: PASS67_CLEAN_EXPORT849_BUILD852_CASE0_CURRENT7_PENDING
 updated_at: 2026-10-05
-current_slice: independently_accepted_current_build_complete_collection_retirement
-next_slice: frozen_closeout_source_sync_and_feasible_exact_consumer_effect_review
+current_slice: independently_accepted_current_case0_complete_collection_retirement
+next_slice: exact_further_custody_and_feasible_remaining7_native_effect_review
 review_gate: exact_current_source_ref_acceptance_before_sync_stable_gates_before_tag_publication
 stable_release_main_promotion_performed: false
 tag_created: false
@@ -49,4 +49,13 @@ custody_clean_export_review_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/
 custody_current_build_result_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-build-result.json
 custody_current_build_review_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-build-result-review.json
 custody_current_archive_zip_sha256: 55665b2f6369869209a166db640ffc334f921898505610705b4fee4860e65197
-custody_current_archive_consumer_qualification: pending_exact_feasible_effect
+custody_current_archive_consumer_qualification: case0_accepted_only_remaining7_delivered_checks_and_replay_pending
+
+custody_current_case0_result_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-consumer-first-result.json
+custody_current_case0_review_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-current-consumer-first-result-review.json
+custody_current_case0_sampled_scratch_bytes: 33528294
+custody_current_case0_scratch_limit_bytes: 33554432
+custody_current_case0_sampled_margin_bytes: 26138
+current_build_source_sync_last_terminal_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/custody-build-source-sync-final.log
+current_build_source_sync_last_accepted_main_dev: bfb1a21b263440116822980b1299c78980707a90
+new_closeout_integration_performed: false

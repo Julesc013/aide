@@ -1,5 +1,16 @@
 # AIDE Documentation Index
 
+## Current evidence and continuation references — 2026-10-05
+
+The [delivery report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+now separates accepted case0 and measured capacity from remaining qualification.
+The [custody report](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md)
+records three further verified lossless transitions and independently admitted
+future planning. The [roadmap](docs/roadmap/staged-expansion-roadmap.md) preserves
+candidate priorities; the [architecture reconciliation](.aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md)
+retains19 proposed owners/244 original UR/UC. Historical snapshots below and
+source-only synchronization are not current release certification.
+
 ## 2026-10-05 current custody archive build accepted
 
 One restricted native build on f3312a04/treeb5a3bd2e passed both stable commands.

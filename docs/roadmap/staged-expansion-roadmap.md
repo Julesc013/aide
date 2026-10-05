@@ -88,8 +88,14 @@ accepted. A separately reviewed pure export at cf234547 now has clean provenance
 849 verified checksums, with complete collection/retirement; no tests reran.
 The separately accepted f3312a04 build now delivers custody in ZIP55665b2f and
 TARfce561ca:852 identical file members/849 archive checksums, complete collection
-and retirement. Source integration follows its separate exact ref-effect record. Current
-consumers/replay and stable certification remain unfinished. See the [current delivery report](../../.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+and retirement. Source-only integration completed at bfb1a21b in its exact ref-effect receipt.
+A later3-job custody slice saved14244309 logical bytes losslessly, independently
+accepted, with original failures preserved. Current case0 then passed once as
+CodexSandboxOffline with complete collection and retirement; only1of8 cases.
+Its33528294 sampled scratch leaves26138bytes below the32MiB allowance, so
+remaining7 capacity is planned with finite40MiB scratch/8MiB results. More exact
+owned custody is only planning; no fit/effect claim or256MiB budget widening.
+Remaining7/delivered checks/replay and stable certification remain unfinished. See the [current delivery report](../../.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
 
 Remaining C8 explainability, C2 compatibility codecs and C3 portable checkpoints
 are useful next bounded candidates; admit their exact consumers and tests before

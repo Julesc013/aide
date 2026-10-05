@@ -79,7 +79,7 @@ permitted_local_state:
 supporting_template_amendment: Independent admission83300fad allows only the missing TOKEN_ESTIMATE/approx_tokens documentation in the existing compact template, preserving all earlier content and executable policy. Exact resulting source review required; metadata/native effects remain separately gated.
 
 delivery_custody_subphase:
-  status: needs_exact_frozen_source_and_effect_review
+  status: passed_exact_three_verified_independently_accepted
   objective: losslessly retire exact three owned complete source-validation collections for current consumer capacity
   admitted_proposal_sha256: 4823c98eaefb1301985ac1368b8a2ac3782d3fccadf9516eb1d248ebdd2bf8ad
   jobs: [1b3224cd83fb4531beb3553decbae1a2, e188c5d70f14453ab20ddbd84dc09e4b, ca2a1e1406954ceca009f00e3e064b32]
@@ -91,3 +91,17 @@ delivery_custody_subphase:
   failed_source_status_preserved: terminal_exit1_not_relabelled
   apply_from_admission: false
   excludes: consumer_replay_runtimepromotion_refs_tag_publication_models_newstorage_unknown_deletion
+
+remaining_consumer_capacity_subphase:
+  status: admitted_metadata_only_exact_source_and_effect_review_required
+  admitted_proposal_sha256: c153c8d8064dafe6b750e16103ba111c8da9d68a47c5fc54b312e102ce524f35
+  jobs: [67879a9fbce04871b15ab08996a20769, ce62387adceb40ab8bf31268a7964abd, 0898722fd36f4b6c8d59c79554006dbe]
+  original_payload_bytes: 14718824
+  failed_source_status_preserved: terminal_exit1_not_relabelled
+  selected_configuration: .aide.local/capability-payload-build-execution.json
+  selected_configuration_sha256: bc8fc18534b40cb951d1a049a94de0996f69343da2dd410ebd2ee23c2c31d4ef
+  ceiling_bytes: 268435456
+  actual_savings: unknown_before_apply
+  future_consumer_deficit_bytes: 11459419
+  apply_performed: false
+  exclusions: consumer_replay_runtimepromotion_refs_models_tag_publication_otherjobs_newstorage_unknown_deletion

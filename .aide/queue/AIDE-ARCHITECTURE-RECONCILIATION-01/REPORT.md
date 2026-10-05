@@ -1,5 +1,21 @@
 # AIDE architecture and independent development report
 
+## Current operating evidence — 2026-10-05
+
+Source-only sync bfb1a21b and current local ZIP55665b2f/TARfce561ca have separate
+accepted receipts. Three further lossless custody operations saved14244309
+logical bytes and preserved failure history; current case0 passed once with
+complete collection/retirement as CodexSandboxOffline. Only1of8 cases is current
+consumer-qualified. Narrow sampled scratch margin requires separately bounded
+remaining7 capacity; no whole-session containment, hard/global quota, model/
+cost or stable/publication claim. The [current full report](../AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+owns exact evidence and next gates. New closing metadata remains task-local.
+
+The original2026-10-04 reconciliation/table below is a historical snapshot.
+Its raw-attachment identity limitation remains explicit. Preserve19 proposed
+owner refinements/244 originalUR/UC; bounded C1/C8/C4 work does not adopt all
+candidates or semantic drafts. FacMan product remains paused.
+
 ## Later checkpoint — 2026-10-05
 
 The original reconciliation below is retained as its dated source/evidence

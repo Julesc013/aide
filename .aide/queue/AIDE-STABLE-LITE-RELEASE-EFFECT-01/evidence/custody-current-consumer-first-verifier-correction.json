@@ -1,0 +1,16 @@
+{
+  "correction": "preserve exact none string and authoritative full retained path; complete native result/collection remains unchanged",
+  "metadata_verification_failures": [
+    {
+      "exit": 1,
+      "reason": "expected numeric network_calls0 but actual canary schema uses string none"
+    },
+    {
+      "exit": 1,
+      "reason": "reader appended jobID to receipt retained path which already includes that jobID"
+    }
+  ],
+  "native_consumer_still_successful": true,
+  "native_reexecutions": 0,
+  "schema": "aide.custody-current-consumer-first-verifier-correction.v1"
+}

@@ -13,17 +13,34 @@ ACCEPT_WITH_NOTES with all notes nonblocking/disposed. The bounded C4 child is
 qualified; delivery work continues in the existing release WorkUnit. The outer
 session remains unrestricted.
 
-## Current delivery-capacity subphase (unexecuted)
+## Current delivery-capacity outcome
 
-Three exact owned complete source collections now have independently admitted
-custody planning: current67 job1b3224cd, priorC1 e188c5d7, failedca2a1e14.
-All14878416 payload bytes, original failures and receipt identities must survive.
-The old23/live2 qualification remains passed; this proposal does not apply it.
-Separate frozen source/effect review and fresh locked admission are required.
-No new savings or consumer feasibility is claimed. Existing selectedbc8fc185
-config/read-only cleanexport25pins,256MiB ceiling and all acceptance are unchanged.
-[Exact scope proposal](evidence/delivery-custody-scope-proposal.json) and
-[admission](evidence/delivery-custody-scope-admission.json) retain the boundaries.
+Exact771684bc/14efe7a5 was independently accepted; three serial custody
+operations completed once and fully verified. All original file/dir/collection
+bytes survive in archives, owners/receipts and512 other listed anchors are
+unchanged, bounded lookup works and redundant raw copies/pending state are
+retired. Original failedca2a still records exit1. Independent actual result
+ACCEPT_WITH_NOTES has all notes disposed. Savings are14244309 logical bytes;
+physical recovery is unknown. This is additional to the distinct earlier2
+operations'7921599 logical bytes, not a whole-campaign net-storage measurement.
+
+Known conservative total after this slice was223889925 including readonly
+export/release. The release WorkUnit then completed case0 against current
+assets as CodexSandboxOffline; full results collected, fixture/scratch/reservation
+retired. No outer/session/global-quota or whole8consumer claim follows.
+[Complete actual custody result](evidence/delivery-custody-result.json),
+[review](evidence/delivery-custody-result-review.json) and
+[exact effect](evidence/delivery-custody-effect.json) preserve full raw references.
+
+The next separately admitted metadata-only proposalc153c8d8 names three further
+exact complete terminal collections,14718824 original bytes, including failed
+0898722f exit1. Scope admission is not apply authority. The new40MiB/8MiB
+remaining-consumer envelope is unadmitted and currently short11459419bytes.
+Compression and fit are unknown until actual verified retirement. Preserve the
+unchanged256MiB budget/25pins/held config/full acceptance; freeze and obtain exact
+source/effect review before any new custody or native consumer.
+[New scope proposal](evidence/remaining-custody-scope-proposal.json) and
+[admission](evidence/remaining-custody-scope-admission.json) retain the boundaries.
 
 ## What changed
 

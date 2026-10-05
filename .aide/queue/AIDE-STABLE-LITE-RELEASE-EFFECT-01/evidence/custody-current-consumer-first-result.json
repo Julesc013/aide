@@ -1,0 +1,290 @@
+{
+  "admission_sha256": "284a5e34fe5998da0f7a2ad6469def861d8e4d55ef034e460e392bff49e47c55",
+  "all26_inputs_and25_pins_unchanged": true,
+  "assets_originalconfig_source_unchanged": true,
+  "complete_collection_digests": {
+    "logs": "d43117353e5698149a249d3d95b3a15ffc5a8b4b45eaed7a36d2f93a006c5f95",
+    "output": "031026f603626b2bebeb4e9cde8ed6f8b5fac2de0c55e13de54b5e7435b89d7b"
+  },
+  "complete_payload_bytes": 3044374,
+  "complete_retained_root_bytes": 3051862,
+  "coverage": "only caseindex0; qualification.cases8 names full suite definition, not eight executed cases",
+  "effect_sha256": "3c063a915c4791ea69891ee66eb1b7a53ba8a3d639dbd15c92e1cffa8a82d8ee",
+  "hard_global_quota": false,
+  "job_id": "8c9d3a83de9f414eabe6bbca3615eaee",
+  "known_after_pools": {
+    "canonical_release": 3982649,
+    "control": 13694135,
+    "readonly_export": 4265213,
+    "retained": 204999790,
+    "scratch": 0
+  },
+  "known_conservative_after_bytes": 226941787,
+  "manifest_digest": "8b9c9070af5ceaa6f35372db6185a7674887306e46d9d72f87ca0eaed9bc81da",
+  "native_command_exit": 0,
+  "native_observation_sha256": "3afc2767faa8d148a5a5e19ad24e07432804881b8a709181eb89c68b098269d1",
+  "nested_model_calls": 0,
+  "network_calls": "none",
+  "owner_sha256": "e165423c72bab5e7d1c4d21dd16c88c98ceddb198dcceb1142988b8013ca3818",
+  "partial_recovery_sha256": "9239bd512b9b73cfcc9d32a2cabe874cbc8997342dd89cd3cef05f0a19f70554",
+  "partial_recovery_status": "PASS",
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 331915264,
+    "scratch_bytes": 33528294
+  },
+  "physical_disk_growth_or_recovery": null,
+  "qualification": {
+    "asset": {
+      "assets": {
+        "aide-lite-v1.0.0.SHA256SUMS.txt": "cc58568d1a5705457d7d30f4658235937f9100ff87851441665c831b0cb4a19d",
+        "aide-lite-v1.0.0.manifest.json": "21f8d087453a4426bbd8f3e6a9351625f0f8c84b6547c75c64189b68443ecb88",
+        "aide-lite-v1.0.0.tar.gz": "fce561ca9b86be55b123d0ab272c68e25e36fba3b691a76e7192db2120573ced",
+        "aide-lite-v1.0.0.zip": "55665b2f6369869209a166db640ffc334f921898505610705b4fee4860e65197"
+      },
+      "cli_sha256": "19c10a53e1231769018ec91b182e51f29c93423288f40c52eca7c0c6f9f300ef",
+      "identity": {
+        "artifact_state": "immutable_release_payload",
+        "intended_channel": "stable",
+        "lifecycle_apply_platform": "Windows only; exact tested environment in effect evidence",
+        "offline_scope": "local CLI after archive acquisition; no native network isolation claim",
+        "predecessor_matrix": [],
+        "profile_id": "aide-lite-local-windows",
+        "public_cli_forms": [
+          "doctor",
+          "validate",
+          "context",
+          "pack --task <task>",
+          "verify --evidence <evidence-path>",
+          "task inspect",
+          "task status",
+          "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+          "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+          "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+          "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+          "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+          "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+          "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+          "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+          "plan-removal --target <target>",
+          "apply-removal --target <target> --expect-plan <digest>",
+          "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+          "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+          "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+          "job inspect --config <local-config> --manifest <job-json>",
+          "job run --config <local-config> --manifest <job-json>",
+          "job run --config <local-config> --manifest <job-json> --full",
+          "job recover --config <local-config>",
+          "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+          "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>",
+          "job usage --stream <codex-exec-jsonl>",
+          "job usage --attempt-set <attempt-roster-json>",
+          "job context"
+        ],
+        "release_axis": "aide_lite_portable_package",
+        "schema_version": "aide.stable-release-identity.v1",
+        "source_commit": "cf2345476bd130efaaf9da1f416d6b0c96451107",
+        "source_pack_checksums_sha256": "69841f10a6f5e9113983cd945df86c325275472870544728cff4bad0b4fcd513",
+        "source_repo": "julesc013/aide",
+        "source_tree": "97b590184781d8c713a75f5f8ecf782fad30489f",
+        "support_mode": "companion",
+        "support_tier_candidate": "T3",
+        "tag": "aide-lite-v1.0.0",
+        "version": "1.0.0",
+        "version_policy_sha256": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253"
+      },
+      "tar_sha256": "fce561ca9b86be55b123d0ab272c68e25e36fba3b691a76e7192db2120573ced",
+      "zip_sha256": "55665b2f6369869209a166db640ffc334f921898505610705b4fee4860e65197"
+    },
+    "case_indices": [
+      0
+    ],
+    "cases": 8,
+    "model_calls": 0,
+    "outer_session_contained": false,
+    "phase": "consumer-first",
+    "read_isolation": "unqualified",
+    "retired_fixtures": [
+      "case-00"
+    ],
+    "status": "PASS",
+    "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline"
+  },
+  "qualification_sha256": "abe54e255efabd5c4e7f221451356d3c3705cf11a2949e241721da8f2546603b",
+  "receipt_sha256": "7daf06ea90be4048f076896d6efae4651c1f1a2a058ffe94720aa48f95dac195",
+  "remaining": "7cases/38forms39outputs12job observations/deliveredC1+custody/replay; exact capacity based on measured scratch/results",
+  "retained_files": {
+    "logs/stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdout": {
+      "bytes": 177,
+      "sha256": "5101ae79512c0a252b5f1640463ec3acd788bbc909cc9ced3d59e9464eccbc03"
+    },
+    "output/case-00/brown-agents-overlay-apply.json": {
+      "bytes": 1506,
+      "sha256": "609ac325e7cd64739c2f355c070800e11a50b0addfc2723379a5d60b1e67cd22"
+    },
+    "output/case-00/brown-agents-overlay-preview.json": {
+      "bytes": 105545,
+      "sha256": "4eeefd1ee2d33a3a673c8098d2eab66a1a4754770a735dfd6a56fdce34c6fe97"
+    },
+    "output/case-00/brown-agents-overlay-repair-health.json": {
+      "bytes": 462668,
+      "sha256": "cf9f2a4a45ba9f78ab405b9f286e337fd4c8ec7d014b775b208507cf0f0f8f2c"
+    },
+    "output/case-00/brown-direct-edit-repair-health.json": {
+      "bytes": 462717,
+      "sha256": "9ceaf9f6fef4acbd5d85b10f4b84c8e14e7fe18a5fd9bfd3aff6e75fcdc468e6"
+    },
+    "output/case-00/brown-v1-apply.json": {
+      "bytes": 1567,
+      "sha256": "24fec6676ea3d9a40dab418029da4e6490f972c0c47ef538fe0ebd3ac9312023"
+    },
+    "output/case-00/brown-v1-preview.json": {
+      "bytes": 100262,
+      "sha256": "8ce881d5a071cecae44ee19951c766ab4edc46f5bdfa3a785a7b340e6e837f71"
+    },
+    "output/case-00/brown-v2-conflict-apply.json": {
+      "bytes": 1815,
+      "sha256": "6bff756fed56dd865e0e8f400c9c9138b87fa5dd806aec91bce93b81b90ea944"
+    },
+    "output/case-00/brown-v2-conflict-preview.json": {
+      "bytes": 105902,
+      "sha256": "84251325a3f8cbc6ce3e9829652c5d5e18fd128778afd0e8b510a3ac89e62990"
+    },
+    "output/case-00/brown-v2-resolved-apply.json": {
+      "bytes": 2020,
+      "sha256": "68362adae78031aa621465bc4845705d6849f6c6afab9ea97575ec42a871affe"
+    },
+    "output/case-00/brown-v2-resolved-feedback.json": {
+      "bytes": 3706,
+      "sha256": "91d06fd3559cc3c6b983a9ceba31c3c8754a50859feea06e36029871032bb932"
+    },
+    "output/case-00/brown-v2-resolved-plain-preview.json": {
+      "bytes": 104737,
+      "sha256": "9c8522515fc036cde4d6c1af4c7db6bafdadcc3a345f69582f66bac48974bd4d"
+    },
+    "output/case-00/brown-v2-resolved-preview.json": {
+      "bytes": 106404,
+      "sha256": "d8f33e5f41704234b0e641666e8847f959e8733269e7eff1831f6c0f40ea1098"
+    },
+    "output/case-00/brown-v3-conflict-preview.json": {
+      "bytes": 105863,
+      "sha256": "4a7292a8ff8070475f67b12434f60cb3e53ca95728934ca9e55685430ba1fe15"
+    },
+    "output/case-00/brown-v3-resolved-apply.json": {
+      "bytes": 1981,
+      "sha256": "45fed14d16ec1d626cc4fb293e81d46e75a7cb4ee389b3e34a83a6c99a679123"
+    },
+    "output/case-00/brown-v3-resolved-preview.json": {
+      "bytes": 106035,
+      "sha256": "bf6d7e16fa183ba11112116e5d5cd286c1a7ac24329256641f1b3680711ce36b"
+    },
+    "output/case-00/case-00-process.json": {
+      "bytes": 1467,
+      "sha256": "b6f00b71837f8d888a6f8732ac585e5bd82679cce494f2be0f4369a56de54de7"
+    },
+    "output/case-00/fresh-disabled-v2-apply.json": {
+      "bytes": 1799,
+      "sha256": "e88ffc731f5bc898fe6c1e103f43098bf8823061bdf081e5d317b392373ea79d"
+    },
+    "output/case-00/fresh-disabled-v2-preview.json": {
+      "bytes": 107244,
+      "sha256": "1d3ef974e3384257f3d4409f881f1d7bad4885548c0770489644f9f8fec1e75b"
+    },
+    "output/case-00/fresh-disabled-v3-apply.json": {
+      "bytes": 1760,
+      "sha256": "577dad02ca44ab0f6472cb6581d31bd30d59f30c0c2d0656d5a13d28e441a133"
+    },
+    "output/case-00/fresh-disabled-v3-preview.json": {
+      "bytes": 104521,
+      "sha256": "573c75e1254f991751478aa2991d87469baf3d6e1a27ac9f662d1e3cacce0eb5"
+    },
+    "output/case-00/fresh-installed-doctor.json": {
+      "bytes": 5823,
+      "sha256": "ca6234ac397c62944fd5a16de4f3ec9c4b04f680c636770da56775f1bc275640"
+    },
+    "output/case-00/fresh-missing-owned-apply.json": {
+      "bytes": 1492,
+      "sha256": "009b80f1f001b0f894aa17ba34ada599c0eebc9cba6abd558d38897fbc167352"
+    },
+    "output/case-00/fresh-missing-owned-preview.json": {
+      "bytes": 104257,
+      "sha256": "5d5e3b2e5a5ea2ba5d7a6ca2deb735db77761c71962a22264c97b302ef4677fa"
+    },
+    "output/case-00/fresh-missing-owned-repair-health.json": {
+      "bytes": 459351,
+      "sha256": "5ae095335d6b732c0752f8e2229ac739cfa4e5e321350c467608b39b311419cd"
+    },
+    "output/case-00/fresh-missing-owned-repair-preview.json": {
+      "bytes": 1214,
+      "sha256": "4853487ac1867df2fbd731990304f9656b2a6bc871061548e39ec2dc1970d14e"
+    },
+    "output/case-00/fresh-v1-apply.json": {
+      "bytes": 1552,
+      "sha256": "ba7430fae7aa03bd7bcdbaee4b3283c4c2f0ae230df984b9a9e786c28165bab9"
+    },
+    "output/case-00/fresh-v1-preview.json": {
+      "bytes": 100247,
+      "sha256": "2c4fa141776a19940d36241faa9de6c95cfaf5700d8da35557f2f7735ad7c570"
+    },
+    "output/case-00/fresh-v1-repair-health.json": {
+      "bytes": 462587,
+      "sha256": "678b58bbbcca0aac3cc3ffda438511909b60a868184a9d81d22d04f5c7c44d52"
+    },
+    "output/case-00/partial-recovery-result.json": {
+      "bytes": 316,
+      "sha256": "9239bd512b9b73cfcc9d32a2cabe874cbc8997342dd89cd3cef05f0a19f70554"
+    },
+    "output/case-00/summary.json": {
+      "bytes": 10739,
+      "sha256": "0f2a55a4808b8c37920b3cf4c2f99104a68a1a18983254e06c947e9a7a98f8f3"
+    },
+    "output/effective-scope.json": {
+      "bytes": 1588,
+      "sha256": "631a84039d01bd7ca0dc0630b2bb9e16b379579cc7aab0b5b2ec2374c68f4967"
+    },
+    "output/qualification.json": {
+      "bytes": 5512,
+      "sha256": "abe54e255efabd5c4e7f221451356d3c3705cf11a2949e241721da8f2546603b"
+    }
+  },
+  "retained_root": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\8c9d3a83de9f414eabe6bbca3615eaee",
+  "retirement": {
+    "fixture": "case-00",
+    "io_errors": [],
+    "process_quiescent": true,
+    "reservation_released": true,
+    "worker_scratch_absent": true
+  },
+  "sampled_scratch_margin_bytes": 26138,
+  "schema": "aide.custody-current-consumer-first-result.v1",
+  "scratch_limit_bytes": 33554432,
+  "scratch_pending_reservation_absent": true,
+  "source_commit": "771684bcbd1430e692c0b72d9fa087b8fdc6ac79",
+  "source_commit_binding": "manifest_declaration_and_bundled_cli_digest_only",
+  "source_tree": "33fd5937e28c2dd7b700c74bba3e61e5cd8dcb7f",
+  "status": "PASS_CURRENT_CASE0_COMPLETE_RETIRED",
+  "summary_sha256": "0f2a55a4808b8c37920b3cf4c2f99104a68a1a18983254e06c947e9a7a98f8f3",
+  "summary_status": "PASS",
+  "verifier_correction_sha256": "cd5ccbdc4f87fde8576e8955601afb6fc05ef2019e1075bd1e5c0ebbe3d0d008",
+  "whole_outcome_usage": "parent/review/retry coverage not established; deterministic nested count not total cost",
+  "whole_session_contained": false,
+  "worker_native_exit": 0,
+  "worker_read_isolation": "unqualified"
+}

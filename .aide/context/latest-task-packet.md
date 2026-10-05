@@ -2,13 +2,13 @@
 
 ## PHASE
 
-AIDE-STABLE-LITE-RELEASE-EFFECT-01: accepted current custody archive closeout and
-separately reviewed source synchronization/consumer capacity planning. Reuse the existing checkout.
+AIDE-STABLE-LITE-RELEASE-EFFECT-01: accepted current case0 and lossless custody;
+remaining7 capacity and exact-effect planning. Reuse the existing checkout.
 
 ## GOAL
 
 Deliver the qualified custody payload through the existing stable pipeline.
-Current archive55665b2f contains custody; consumer/stable qualification is pending.
+Archive55665b2f contains custody; case0 passed, remaining7/stable gates pending.
 
 ## WHY
 
@@ -39,22 +39,25 @@ ref/runtime promotion or release effect without exact admission. Originala241 co
 
 ## IMPLEMENTATION
 
-C4 native23 and live2 accepted; complete evidence/receipts preserved and
-7921599logical bytes saved. Sourceeea174be passed67 fresh affected checks,
-export/fullvalidate0 and verified retirement. Clean exportcf234547 passed one
-pure invocation: actual dirty:false,849 checksums, complete collection/retirement.
-No67 replay. Original24 hashes plus explicitly qualified custody25th pin supervised
-one accepted native build at f3312a04: stable-build/validate0, actual offline
-identity, ZIP55665b2f/TARfce561ca852 members/849checksums, complete collection and
-retirement, independently accepted. No native replay after guard/verifier fixes.
-Next: freeze closeout, exact source/ref review and feasible unchanged8consumer
-plus delivered C1/custody/replay effects. Two custody plans are read-only/unapplied.
+Native23/source67 retain exact unchanged-input scope. Clean exportcf234547:
+actual dirty:false/849checksums. Accepted buildf3312a04 ZIP55665b2f/TARfce561ca:
+852members/849checksums, complete retirement; same24+qualified25th pins.
+No source/native-test replay. Source-only syncbfb1a21b completed separately.
+Later771684bc custody3 saved14244309logical bytes losslessly, full evidence and
+failedexit1 retained. Case0 job8c9d3a83 passed with collection/retirement accepted;
+sampled33528294 leaves26138below32MiB, not a hard peak. Other7 remain required.
+Next3 exact custody plans14718824bytes have metadata-only admissionc153c8d8.
+No new apply. Planned40MiB scratch/8MiB results/52953088reservation for unchanged
+remaining7 is currently short11459419bytes; actual reviewed savings and exact
+native review/fresh admission required. DeliveredC1/custody/replay remain.
+Later closing docs are task-local until a separate qualified ref effect.
 
 ## VALIDATION
 
 PASS: native23/live2/current67, clean849 export, accepted build852/849 and retirement.
 PASS: source proof operative10 unchanged, current bindings, structural checks.
-NOT RUN: current consumers/replay/runtimepromotion/integration/publication.
+PASS: exact later3 custody and current case0, complete collection/retirement.
+NOT RUN: remaining7/delivered/replay/runtimepromotion/newrefs/publication.
 Use exact supported recipes and readonly owner inspection; no automatic retries.
 
 ## COMMITS
@@ -67,7 +70,9 @@ and unexecuted effects. No force push, retag, branch flattening or stale accepta
 Delivery evidence/custody-payload-native-source-result.json and
 custody-clean-export-result.json and custody-current-build-result.json with exact
 independent review records. C4 evidence
-native-fixture-result-v3.json and live-custody-result.json remain historical.
+native-fixture-result-v3.json/live-custody-result.json retain their exact scope.
+Current records: C4 delivery-custody-result.json and remaining-custody-scope-proposal.json;
+delivery custody-current-consumer-first-result.json and its independent review.
 Complete raw logs remain accessible; compact views do not replace evidence.
 
 ## NON_GOALS
@@ -90,6 +95,6 @@ Summary, files, actual checks/results, evidence refs and remaining uncovered rou
 
 ## TOKEN_ESTIMATE
 
-approx_tokens: 1049
+approx_tokens: 1139
 
 Characters divided by4 estimate only; not tokenizer or host usage measurement.

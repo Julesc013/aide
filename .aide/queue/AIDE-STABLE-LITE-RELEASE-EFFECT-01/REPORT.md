@@ -1,5 +1,46 @@
 # Current AIDE source, artifact and development report
 
+## Latest accepted delivery checkpoint — 2026-10-05
+
+Case0 against current ZIP55665b2f/TARfce561ca passed once as
+BLACKGLASS-WIN1\CodexSandboxOffline at source771684bc/effect3c063a91, job8c9d3a83.
+Fresh/brownfield installation, conflict preservation, repair and partial recovery
+passed; complete results/receipt verify, noIO/quiescent, fixture and scratch
+retired, reservation released. Independent actual ACCEPT_WITH_NOTES has all
+notes disposed. Coverage is only index0; qualification.cases8 defines the suite.
+Other7/full38forms39outputs12job observations/deliveredC1+custody/replay remain.
+[Complete case0 result](evidence/custody-current-consumer-first-result.json) and
+[review](evidence/custody-current-consumer-first-result-review.json) retain exact
+subjects and full evidence. Manifest declaration/bundled CLI digest is the
+source-binding limit; no stronger Git attestation or stable certification.
+
+Retained root3051862logical bytes/payload3044374; sampled scratch33528294 under
+33554432 by26138, memory331915264. Monitoring can miss transients; future phases
+need an allowance based on actual results. Two reader assumptions were corrected
+without native replay; [record](evidence/custody-current-consumer-first-verifier-correction.json).
+
+Preceding exact3-job custody preserved every original byte/dir/receipt and
+failedexit1 history, verified lookup and retirement, saving14244309 logical
+bytes. Physical recovery is unknown; this is not the reported500GB estate.
+Known conservative total after custody223889925 and after case0 226941787
+includes selected pools, readonly export and release, not every outer write.
+The separate source-sync terminal receipt records bfb1a21b on local/origin
+main/dev/task,88 matching corresponding pairs and85 distinct other tips intact.
+Later closing metadata is task-local until separately reviewed integration.
+
+Next: three further exact C4 metadata/plan candidates are admitted for planning
+only. Their14718824 original bytes may support a finite40MiB/8MiB remaining7
+consumer phase, whose52953088 reservation currently has11459419byte deficit.
+[Bounded metadata candidates](evidence/custody-current-remaining-consumer-capacity-candidates.json)
+are not deletion or apply authority. Actual savings, exact source/effect/result
+reviews and fresh locked capacity are required; unchanged256MiB/full acceptance.
+Outer shell/editor/plugins remain unrestricted, read isolation unqualified,
+hard/global quota absent, originala241 runtime held, historical10/live/matched
+qualification/publication/download/wider cleanup and FacMan pause remain.
+
+The dated sections below preserve earlier build/planning snapshots. Their
+past proposed effects and capacity totals do not replace this current checkpoint.
+
 Date:2026-10-05 Australia/Sydney. Current C4 source is independently qualified,
 and the affected source/export checks now pass. Clean export provenance and the current local
 archive build are independently accepted. Consumer qualification and stable
@@ -51,7 +92,7 @@ owned source-validation jobs; they preserve all evidence and are not deletion
 or apply authority. Any further custody/consumer effect needs exact review and
 fresh locked admission, unchanged256MiB ceiling and full acceptance.
 
-## Current source synchronization and consumer capacity
+## Historical pre-sync consumer-capacity planning snapshot
 
 Real interactive BLACKGLASS-WIN1\Jules and GitHubJulesc013 are authenticated;
 fresh fetch shows local/origin main/dev and origin task at cef28a56. All88 local

@@ -288,3 +288,35 @@ No otherjob/deletion/truncation/consumer/ref/model/promotion/publication effects
 After actual accepted savings, release WorkUnit independently prepares its
 unchanged8consumer cases, deliveredC1/custody and zero-change replay. Actual
 capacity, not estimates, determines readiness; keep full results and finite caps.
+
+## Delivery capacity outcome and next exact subphase — 2026-10-05
+
+Frozen771684bc/14efe7a5 received exact source/effect ACCEPT_WITH_NOTES, all
+notes disposed. Three serial operations actually completed once;12 native
+commands exited0, complete archives/anchors/lookup/raw retirement verified,
+all512 other listed anchors unchanged. Failedca2a retained exit1. Resultc9cca522
+independently accepted;14244309 logical bytes saved, physical recovery unknown.
+No program/asset/supervisor/config changes. Known conservative total223889925
+before the separate case0 consumer. Case0 completed and was independently
+accepted in the release WorkUnit; this is not whole-session containment.
+
+Metadata-only bounded discovery of the same516 known retained roots found60
+finite candidates. New scope proposalc153c8d8 and independent admission allow
+only the same five C4 metadata/evidence paths for exact jobs67879a9f, ce62387a
+and0898722f. Three fresh full readonly plans preserve14718824 original bytes;
+the third remains failedexit1. No apply occurred. Freeze this explicit subphase
+and later effect; obtain exact independent source/effect acceptance before
+serial apply-once, with unchanged bc8 selection/25pins/256MiB/headrooms.
+Require fresh complete known-pool/release/readonly-export capacity plus full
+staging/4MiB metadata, locked native admission, full verification before raw
+retirement, anchors/collection/dir/file preservation and bounded lookup. Stop
+uncertainty; only separately reviewed matching custody recovery, no replay.
+
+The remaining7 consumer phase needs a finite40MiB scratch/8MiB result envelope
+based on first33528294 sampled scratch and prior complete remaining-output size.
+Its52953088 cooperative reservation currently has11459419byte deficit; no
+savings/fit claim. After actual reviewed custody result, the release WorkUnit
+must separately bind and review its exact native effect with fresh capacity.
+All8/38forms/39outputs/12job observations, deliveredC1/custody and replay remain
+required. No other jobs, unique-byte loss, new storage, refs, model, runtime
+promotion, consumer or publication effects from this C4 subphase.

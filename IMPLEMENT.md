@@ -1,5 +1,18 @@
 # AIDE Implementation Log
 
+## Actual lossless retirement and current consumer — 2026-10-05
+
+Reviewed source771684bc applied exactly3 owned custody transitions once; complete
+archives/anchors/lookup/raw retirement verified, failedexit1 history preserved,
+14244309 logical bytes released. First current-asset consumer job8c9d3a83 then
+passed as CodexSandboxOffline with complete collection/retirement and independent
+acceptance. Retained3051862/sample33528294/memory331915264;26138 sampled scratch
+margin is narrow and not a hard peak. Both reader errors are recorded; native
+work was not repeated. Source67/native23 inputs, assets and25pins unchanged.
+[Full outcome](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md). No remaining7,
+new-custody, promotion, tag/publication, whole-containment or physical-savings claim.
+Older dated entries remain their original execution-time snapshots.
+
 ## 2026-10-05 current custody archive build accepted
 
 One restricted native build on f3312a04/treeb5a3bd2e passed both stable commands.

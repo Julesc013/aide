@@ -1150,3 +1150,40 @@ certification from main/dev agreement. Independently prepare feasible8-case
 consumers, delivered C1/custody and replay. Two read-only custody plans inspect
 owned source-validation evidence; no further raw retirement is authorized by
 those plans. No cap widening, new pools, evidence truncation or skipped cases.
+
+## Actual case0 accepted and remaining-consumer capacity — 2026-10-05
+
+Source-only sync completed to bfb1a21b with all88 corresponding pairs and85
+other tips preserved in its exact terminal record; new closing metadata is
+later task-local work until its own qualified ref effect, not another release
+certificate. C4 delivery3 at771684bc losslessly saved14244309 logical bytes,
+fully verified/independently accepted without changing assets or executing code.
+Exact3c063a91 then ran one current case0 job8c9d3a83 as CodexSandboxOffline:
+parent/worker0, full fresh/brownfield/partial-recovery PASS, complete collection,
+quiescence/noIO, fixture/scratch retired and reservation released. Result04602684
+independently accepted with all notes disposed. Only index0 ran; cases8 in the
+qualification names the defined suite. Archive binding remains manifest
+declaration/bundled CLI digest, not stronger source attestation. Reader errors
+(network none string and full retained path) are recorded; no native replay.
+
+Retained root3051862 bytes; payload3044374, sampled scratch33528294 under
+33554432 allowance by only26138bytes, memory331915264. These are observed
+samples, not hard/transient peaks. Known conservative total226941787. Reuse
+case0 only identical operative canaries and archive bytes; q metadata changes
+are not claimed as tested at771684bc. Other7/38forms39outputs12job observations,
+deliveredC1/custody and deterministic replay remain mandatory. No source tests
+reran;67 operative10 and native23 keep their exact scopes.
+
+Existing C4 separately admitted proposalc153c8d8 has three more exact readonly
+owned plans,14718824 bytes, no apply. Actual complete verified custody savings
+must be accepted before the unchanged original worker consumer-rest invocation.
+Prepare40MiB scratch/8MiB result/2x256KiBlogs and finite whole7-case runtime
+within unchanged memory/process/headroom/256MiB controls, source/export/release
+readonly and same25 pinned supervisor. Aggregate reservation52953088 currently
+exceeds conservative capacity by11459419bytes; do not claim fit or dispatch.
+Use only existing local consumer config/job selections, bind current exact
+source/tree/operative inputs/assets and accepted actual custody result, inspect
+without writes, review exact native effect, then one fresh locked admission.
+Code owns waiting/collection/retirement; stop uncertainty, no automatic replay.
+All outer/historical/live/matched efficiency/tag/publication/downloaded/wider
+cleanup/FacMan gates remain separate. No new worktree/layout or budget widening.

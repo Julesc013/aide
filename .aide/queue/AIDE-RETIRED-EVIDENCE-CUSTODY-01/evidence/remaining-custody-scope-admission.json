@@ -1,0 +1,23 @@
+{
+  "admission_is_apply_authority": false,
+  "base_source": "771684bcbd1430e692c0b72d9fa087b8fdc6ac79",
+  "blocking_findings": [],
+  "notes": [
+    {
+      "classification": "nonblocking_disposed",
+      "text": "only5C4metadata/evidence paths admitted; frozen source/effect/result review mandatory"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "text": "fullverify/anchors/lookup/locks/capacity/stopuncertainty mandatory"
+    },
+    {
+      "classification": "nonblocking_disposed",
+      "text": "savingsunknown and11459419byte futuredeficit unresolved; no consumer/othereffect admitted"
+    }
+  ],
+  "proposal_sha256": "c153c8d8064dafe6b750e16103ba111c8da9d68a47c5fc54b312e102ce524f35",
+  "record_kind": "controller transcription of independent scope-admission reviewer final message",
+  "reviewer": "/root/containment_review",
+  "verdict": "ACCEPT_WITH_NOTES"
+}
