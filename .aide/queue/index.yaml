@@ -3822,8 +3822,8 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/evidence
   - id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
     status: needs_review
-    planning_state: current8_coverage38_delivered41_replay_accepted_stable_external_gates_pending
-    result: PASS67_EXPORT849_ARCHIVE852_CASES8_FORMS38_DELIVERED41_REPLAY_STABLE_PENDING
+    planning_state: managed_commit_export_current_held_assets_stable_external_gates_pending
+    result: SOURCE72_EXPORT854_STRUCTURAL_PASS_NEW_ARCHIVES_PENDING
     title: Freeze and qualify a publishable AIDE Lite release effect
     task: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml
     exec_plan: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md

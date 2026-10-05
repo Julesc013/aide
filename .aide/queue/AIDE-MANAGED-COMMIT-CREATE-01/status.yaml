@@ -13,6 +13,7 @@ local_commit: c23dbddd8742fa18982066fbb6fb03a502489d6f
 local_commit_terminal: evidence/local-commit-terminal.log
 local_commit_review: evidence/local-commit-result-review.log
 source_sync: separate_exact_effect_gate
-current_validation: FAIL2_HELD_EXPORT_SOURCE_PROVENANCE
-current_validation_ref: evidence/closeout-structural-terminal.log
+source_commit_checkpoint_validation: FAIL2_HELD_EXPORT_SOURCE_PROVENANCE
+source_commit_checkpoint_validation_ref: evidence/closeout-structural-terminal.log
 owner_dispositions_or_live_permission: not_granted
+current_payload_followup_ref: ../AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/managed-commit-current-export-structural-terminal.log

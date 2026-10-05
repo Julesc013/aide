@@ -1,6 +1,33 @@
 # Current AIDE source, artifact and development report
 
-## Current accepted outcome — 2026-10-05
+## Current managed commit delivery — 2026-10-06
+
+The preventive commit path completed real guarded commits c23dbddd and75e6c40f,
+then exact source synchronization: main/dev/task75e6c40f,88 corresponding branch
+pairs matched,85 other tips preserved. No published history was rewritten.
+The current export now includes the qualified commit command/core and49 new
+cases. One restricted export job32c656ee completed with exits0, full collection,
+quiescence, scratch retirement and released reservations. Its854 members and851
+checksums bind clean75 provenance; the old two provenance failures are closed.
+Actual doctor73 and validate60,911 checks passed with no warnings/failures.
+
+[Export result](evidence/managed-commit-current-export-result.log),
+[structural terminal](evidence/managed-commit-current-export-structural-terminal.log)
+and [independent result review](evidence/managed-commit-current-export-result-review.log)
+own this exact boundary. The job retained114,318 logical bytes including the
+full input-bound receipt, sampled2,202 scratch bytes and218,652,672 peak memory.
+These observations are separate from the source72-test job and machine-wide usage.
+
+The four held ZIP55665b2f/TARfce561ca assets remain byte-identical and preserve their
+old8-consumer/38-form/41-delivered-test evidence; they do not contain the new
+commit command. The next changed-payload slice runs only affected release checks,
+build/validation and49 tests of the new delivered command using the existing
+runner, fixtures and limits. Its prospective helper is execution machinery,
+not another canonical task authority. Source72 and unaffected original tests
+remain valid within their unchanged-input scope. Stable acceptance, historical11,
+outer-client setup, live/matched efficiency and downloaded consumers remain open.
+
+## Historical accepted archive snapshot — 2026-10-05
 
 The current Windows Lite candidate has eight passing consumer cases against
 ZIP55665b2f/TARfce561ca, complete38-form evidence, and an accepted zero-change

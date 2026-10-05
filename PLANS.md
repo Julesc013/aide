@@ -8,9 +8,11 @@ c23dbddd. Exact tree/parent/message, unchanged working/index bytes and latest
 message PASS are independently accepted. The child objective is closed; current
 queue/root closeout and source-only branch sync retain exact effect reviews.
 [Report](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/REPORT.md) and terminal records
-own current delivery. Stable release remains separate. Current full validation has two old-export
-provenance failures requiring the affected payload refresh; its original PASS
-remains scoped to the earlier checkpoint. Published66 and proposed owner
+own current delivery. Stable release remains separate. The affected export-only job32c656ee now
+passes854-member/851-checksum and clean75 provenance checks; doctor73 and
+validate60,911 passed with zero warnings/failures. [Current payload plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md)
+owns the separately gated affected release and delivered commit checks. Old ZIP556
+remains qualified for its original scope and lacks the new command. Published66 and proposed owner
 decisions remain unchanged. Older dated entries below are snapshots.
 
 ## Current plan — 2026-10-05

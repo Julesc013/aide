@@ -7,9 +7,10 @@ qualified exact-object local commit path. [Commit discipline](docs/reference/com
 documents its behavior and boundaries. The [report](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/REPORT.md)
 records accepted72-test evidence and actual guarded source commitc23dbddd with
 independent terminal acceptance. Queue/current-index closure and subsequent
-source-only ref synchronization keep their exact gates. Post-commit full
-validation retains two old-export provenance failures until the affected payload
-is refreshed; its prior PASS is historical proof, not current pack acceptance.
+source-only ref synchronization keep their exact gates. The affected export is now current: job32c656ee,854 members/851 checksums,
+clean75 provenance and current doctor73/validate60,911 PASS. [Payload report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+links exact result/structural acceptance and the next affected delivered checks.
+The unchanged old ZIP remains qualified only for its original bytes.
 This phase grants no history repair, owner acceptance, outer confinement or publication.
 
 ## Current evidence and planning index — 2026-10-05

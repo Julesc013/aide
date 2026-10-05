@@ -1,5 +1,19 @@
 # AIDE Implementation Log
 
+## 2026-10-06 current preventive commit export
+
+Guarded commitsc23dbddd/75e6c40f and exact source/ref terminal accepted;88 corresponding
+branch pairs matched,85 other tips preserved. One separately reviewed managed
+export job32c656ee completed parent/worker0 with clean75 provenance,854 members,
+851 checksums and new CLI/core/test bytes. Current doctor73/validate60,911 PASS;
+old FAIL2 and dependent doctor failure are superseded for this exact export.
+Full streams/receipt/collection and retirement verify. Retained114,318 logical
+bytes include the full844-input receipt; sampled scratch2,202 and peak memory
+218,652,672 are separate observations. Installed profiles/runtime/held4assets
+unchanged. No hard/global quota, outer containment or whole-efficiency claim.
+[Current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) separates
+new payload checks from old archive evidence and external stable gates.
+
 ## 2026-10-05 managed commit prevention admitted
 
 New owner instruction addresses malformed messages at entry. Exact child admission977f1cfb is ACCEPT_WITH_NOTES/all notes nonblocking and disposed. The four compiler outputs are classified; compiler blocked composite result is retained. Work reuses task/d2 checkout, unchanged supervisor/pools/limits, with source/native/actual local commit reviewed separately. Published66 cannot use the proposed unpublished amendment.

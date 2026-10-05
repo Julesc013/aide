@@ -42,8 +42,8 @@ refuses. The earlier Windows permission error's underlying cause is unknown.
 | Failures, errors, skips | Zero |
 | Pre-commit repository `doctor` | Exit0;73 PASS at original source checkpoint |
 | Pre-commit repository `validate` | Exit0;60,911 PASS at original source checkpoint |
-| Post-commit current `validate` | Exit1;60,909 PASS, two held-export source-provenance failures |
-| Post-commit current `doctor` | Exit1;72 PASS, one dependent validation failure |
+| Source-commit checkpoint `validate` | Exit1;60,909 PASS, two held-export source-provenance failures |
+| Source-commit checkpoint `doctor` | Exit1;72 PASS, one dependent validation failure |
 | Capability classification refresh | All13 records/classifications unchanged |
 | Native collection | All six retained files and both collection digests verified |
 | Retirement | Scratch absent; reservation released; active/.next absent |
@@ -52,10 +52,12 @@ Acceptance binds `native-result-v7-passed.log` with the original parent journal
 `native-invocation-v7.log`. Earlier failed jobs and rejected reviews remain
 available against their original subjects. The corrected task brief and source
 classification reports have separate structural evidence. After commitc23dbddd,
-the current validator correctly refuses two old-export provenance claims: the
+the validator at that source-commit checkpoint correctly refused two old-export provenance claims: the
 held pack names sourcecf234547 and its inputs now differ. Doctor retains its
 corresponding failure. These are not passing current validation or a release
-waiver; the separately reviewed affected payload refresh must close them.
+waiver. The later separately reviewed export job32c656ee closes them with
+doctor73/validate60,911 PASS; [current payload report](../AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+owns that new854-member/851-checksum boundary. Old release archives stay separate.
 All other60,909 checks passed. No native test was rerun for this metadata closeout.
 Full validator output
 is retained losslessly as compressed logs, with raw and compressed checksums.

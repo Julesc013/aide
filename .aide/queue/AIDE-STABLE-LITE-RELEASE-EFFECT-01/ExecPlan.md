@@ -1366,3 +1366,13 @@ Freeze the admitted22files and exact prechecked normal message, seek independent
 source/packet review, then separately review source-only ref synchronization.
 Only afterward present this concrete proposed decision to the responsible owner.
 No automatic continuation can accept these records or the other release gates.
+
+## Current managed commit payload slice — 2026-10-06
+
+- [x] Integrate source72 and actual guarded commits through independent source/ref gates; main/dev/task75e6c40f source-only synchronization accepted.
+- [x] One restricted export-only job32c656ee refreshes exact8 derivative files, clean75 provenance,854 members/851 checksums; doctor73/validate60911 PASS, complete retirement. Old4 asset bytes preserved.
+- [ ] Freeze and commit only that exact export and minimal current control/report updates.
+- [ ] One separately admitted existing-build-profile job: affected source24+12+8+5 tests, stable-build/stable-validate, equal complete ZIP/TAR maps and49 unchanged new tests loaded from delivered modules without source overlays. Preserve originals and full failed/terminal evidence.
+- [ ] Accept actual result before new archive/consumer/replay/promotion claims. Current scratch16MiB/output64KiB/300s/shared256MiB limits stay finite and monitored; source and executing runtime stay disjoint from outputs.
+
+Exact old852 export and held4 asset preimages remain in immutable Git75; ZIP556 alone is not an exact old-export restoration source. No uncertain automatic replay, new root/worktree, whole-client/read isolation, hard quota, owner dispositions or model/publication effects follow. Native72 is not replayed for metadata; old asset consumers are not rebound without affected proof.
