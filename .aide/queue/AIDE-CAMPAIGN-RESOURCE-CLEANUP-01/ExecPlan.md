@@ -1,5 +1,69 @@
 # Resource cleanup and allocation control
 
+## Qualified repair outcome — 2026-10-06
+
+Source job68cacb7f passed all60 workspace tests without skips; the old scanner
+produced exactly the expected baseline4 failures/3 errors/strict-case pass.
+Runtime builderbc4e675b emitted69,803 B with25 unchanged accepted components and
+the qualified scanner as sole replacement. Normal job78d7338f completed the
+unchanged original partial-import CLI case03 with10 checks, full collection and
+retirement. Exact independent reviews accepted all three scopes with all notes
+nonblocking and disposed. [Report](REPORT.md) owns exact identities and limits.
+
+This bounded source/runtime repair is closed. Keep the pinned archive when
+performing dependent source/export work; edited code must not silently become
+its own supervisor. Exact guarded source/ref integration, refreshed repaired
+payload, remaining consumers/forms/delivered41/replay and final stable effects
+remain separately gated in the existing release WorkUnit. Outer/read/quota,
+historical decisions, live/matched efficiency and wider disk cleanup remain open.
+
+## Repair plan and original incident — 2026-10-06
+
+Reopen only the live scratch observation boundary after retired job
+`9f28b745ab6e486ca0d116e4051cc3b3`. Original consumer cases1/2 exited0 and
+their summaries say PASS; the overall job failed during case2 retirement.
+The monitor observed an ordinary file with `st_nlink=0` while its owner was
+deleting it. Full collection, quiescence, scratch removal and reservation
+release are verified in the incident result named by `status.yaml`. The
+original successful cleanup/source qualification remains historical evidence.
+
+Objective: recognize a confirmed disappearing member in an explicitly live
+scan, without accepting persistent zero-link files, redirection or outside
+hardlinks. Change only `core/execution/managed_workspace.py`, its existing
+regression module and this WorkUnit's records. The compiled intent's split
+is honored: first source/regression qualification; then a separately reviewed
+ordinary-path effect. No consumer job is automatically replayed.
+
+Plan before source edits:
+
+1. Add bounded reobservation only for a regular, non-reparse zero-link member
+   when `allow_transient_absence` is explicitly enabled. Confirm absence or
+   reclassify the fresh metadata with all existing checks. A persistent or
+   unobservable member still refuses. Strict quiescent collection is unchanged.
+2. Add tiny tests for disappearance, a surviving replacement's byte/file
+   limits, persistent zero-link refusal, strict collection and redirection.
+   Keep existing inside/outside hardlink and junction tests unchanged.
+3. Qualify candidate code as worker inputs under the unchanged, hash-pinned
+   export supervisor (`managed_workspace` SHA d9338d9d). The source being
+   edited must not supervise this validation. Use existing D roots, finite
+   workload limits, intact4GiB reserves and256MiB shared admission.
+4. Review the exact source/native result before committing or selecting it
+   as a future supervisor. Then prove the affected normal cleanup route;
+   any necessary export/archive/runtime selection is a separate reviewed
+   effect. Preserve the old candidate, failure receipts and qualified results.
+
+Verification: targeted scanner regressions plus the existing workspace suite
+where its declared fixture needs fit; no unsafe check is relaxed to obtain a
+pass. Retain complete command streams, exact dependency hashes, resource
+observations and verified retirement. Missing actual proof remains pending.
+
+Outer shell/editor/plugins remain unrestricted; read isolation, hard/global
+disk quotas, live-model/matched efficiency and stable publication remain
+separate. No machine ACL/account change, foreign process termination, storage
+layout, checkout, blanket cleanup or historical disposition is authorized.
+
+## Historical setup and qualified cleanup — 2026-09-26 onward
+
 Owner explicitly requested immediate cleanup and efficient operation on
 2026-09-26. D had 1.81 GB free, E 45.24 GB, C 169.82 GB; RAM had 9.99 GB
 free. Stop new builds/worktrees and reuse the current task checkout.

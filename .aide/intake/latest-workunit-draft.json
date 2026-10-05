@@ -5,8 +5,8 @@
     "Validation and evidence requirements are explicit."
   ],
   "allowed_paths": [
-    ".aide/changelog/**",
-    ".aide/queue/<workunit>/**"
+    ".aide/queue/<workunit>/**",
+    "docs/reference/**"
   ],
   "dependencies": [
     "repo_policy",
@@ -17,8 +17,7 @@
     "changed-files.md",
     "validation.md",
     "remaining-risks.md",
-    "intent-compiler-report.md",
-    "preflight-or-blocker-report.md"
+    "intent-compiler-report.md"
   ],
   "forbidden_paths": [
     ".git/**",
@@ -30,20 +29,19 @@
     "raw response logs",
     "target repositories unless target-local queue authorizes work"
   ],
-  "idempotency": "prompt_hash:0fbca3389237d3ae2eb84c3b414bd2e3d4477f8631a529036517c14c86ec9fdb; status:draft; compile_only:true",
+  "idempotency": "prompt_hash:b5ea32fc083e80d9d974368a3a3f334b88eda814107ec1af4ac3deea475c955f; status:draft; compile_only:true",
   "implementation_outline": [
     "Reconcile repo state before editing.",
-    "write blocker report and require reviewed authorization before mutation",
+    "draft the smallest safe WorkUnit after repo-state preflight",
     "Stop at review gates and record evidence before execution."
   ],
   "non_goals": [
     "no raw prompt execution",
     "no provider/model/network calls",
     "do not bypass queue, branch, evidence, or policy state",
-    "do not execute raw prompt directly",
-    "do not publish releases, tags, or assets from prompt alone"
+    "do not execute raw prompt directly"
   ],
-  "objective": "Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.",
+  "objective": "Normalize prompt into a bounded refactor WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
   "output_schema": ".aide/intake/workunit-draft.schema.json",
   "preflight": [
     "git status --short",
@@ -51,17 +49,16 @@
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ],
   "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
-  "risk_class": "release",
+  "risk_class": "medium",
   "schema_version": "aide.workunit-draft.v0",
-  "sizing_class": "blocked",
+  "sizing_class": "two_shot",
   "status": "draft",
-  "task_class": "release",
-  "title": "Release WorkUnit Draft - Write blocker report and require reviewed authorization before mutation",
+  "task_class": "refactor",
+  "title": "Refactor WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
   "validation": [
     "git diff --check",
-    "py -3 .aide/scripts/aide_lite.py changelog validate",
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ],
   "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-  "workunit_id": "draft-release-0fbca3389237"
+  "workunit_id": "draft-refactor-b5ea32fc083e"
 }

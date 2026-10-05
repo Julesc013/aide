@@ -1,28 +1,16 @@
 # AIDE Implementation Log
 
-## 2026-10-06 current preventive commit archives
+## Live scratch deletion repair — 2026-10-06
 
-Existing release WorkUnit [REPORT](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
-owns the actual changed job633f65b2:49 source and49 delivered command tests
-passed, build/validation0,854 identical archive members/851 checksums and
-complete retirement. Current ZIP5cba4ff6 includes the guarded command.
-Capture repair282 and96-input transitive closure preserve full authentication
-and payload verification under unchanged finite limits. Original failed5e24
-and old ZIP556 consumer/replay evidence are retained, not rebound.
-
-Source-only3ea synchronization is independently accepted:88 corresponding
-pairs match,85 other tips and all tags remain preserved. Exact effect receipts
-own subsequent metadata-only ref identities; the working plan must not invent
-a future hash. Additional replay inspection refused beforeallocation on the
-unchanged memory commit reserve. No job ran; no automatic unchanged retry.
-
-The old release-effect packet is stale for these new assets. Exact current
-result/source/ref acceptance and affected consumers/replay precede final
-release-effect review; historical11, live/matched efficiency, outer-client
-setup and stable publication/download gates remain separate. Native72 and
-unchanged export73/60,911 evidence were reused without broad test replay.
-No new worktree, storage pool, installed execution profile or tag was created.
-
+The existing scanner now confirms disappearing zero-link regular files in
+bounded live reobservations while preserving strict collection and link/type/
+resource guards. All52 old tests plus8 regressions passed; the original recovery
+canary then passed10 CLI checks under the exact26-component replacement runtime.
+Complete result collection and retirement are independently accepted. The
+[resource report](.aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/REPORT.md)
+owns source/runtime identities, measured resources and limitations. The held
+release ZIP still needs the repaired payload; exact later commit/ref effects
+retain their own terminal evidence.
 
 ## Historical export-only checkpoint — 2026-10-06
 

@@ -3,18 +3,18 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 0fbca3389237d3ae2eb84c3b414bd2e3d4477f8631a529036517c14c86ec9fdb
-- raw_prompt_excerpt: Implement a guarded local AIDE commit-create operation using the existing strict message checker. Bind expected HEAD, intended staged tree and bounded changed paths; verify message, tree and ordered parents before advancing the managed b...
-- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
+- raw_prompt_hash: b5ea32fc083e80d9d974368a3a3f334b88eda814107ec1af4ac3deea475c955f
+- raw_prompt_excerpt: Repair only the demonstrated active scratch scan zero-link deletion race from retired job 9f28b745ab6e486ca0d116e4051cc3b3. Reopen existing AIDE-CAMPAIGN-RESOURCE-CLEANUP-01 within its established scope. Preserve strict quiescent collect...
+- interpreted_goal: Normalize prompt into a bounded refactor WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
 - confidence: high
-- task_class: release
-- risk_class: release
-- sizing_class: blocked
+- task_class: refactor
+- risk_class: medium
+- sizing_class: two_shot
 - safe_to_execute: false
 - requires_split: true
-- blocked: true
-- blocker_reason: write blocker report and require reviewed authorization before mutation
-- next_action: write blocker report and require reviewed authorization before mutation
+- blocked: false
+- blocker_reason: none
+- next_action: draft the smallest safe WorkUnit after repo-state preflight
 - task_execution: false
 - provider_or_model_calls: none
 - network_calls: none
@@ -24,14 +24,13 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not publish releases, tags, or assets from prompt alone
 
 ## Repo State Refs
 
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/AIDE-CODEX-DISPATCH-GATE-01/status.yaml`
+- `.aide/queue/Q27/status.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/repo/file-inventory.json`
 - `.aide/repo/latest-repo-intelligence.md`
@@ -48,7 +47,6 @@
 ## Validation Hints
 
 - `git diff --check`
-- `py -3 .aide/scripts/aide_lite.py changelog validate`
 - `py -3 .aide/scripts/aide_lite.py intent validate`
 
 ## Evidence Hints
@@ -57,4 +55,3 @@
 - `validation.md`
 - `remaining-risks.md`
 - `intent-compiler-report.md`
-- `preflight-or-blocker-report.md`

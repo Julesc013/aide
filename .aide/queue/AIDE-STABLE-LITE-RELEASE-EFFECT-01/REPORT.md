@@ -1,5 +1,32 @@
 # Current AIDE source, artifact and development report
 
+## Current qualified scratch repair — 2026-10-06
+
+The [resource repair report](../AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/REPORT.md)
+owns the accepted source60 regression result, exact26-component runtime and
+unchanged original partial-import CLI case03 PASS10. The code now confirms
+transient zero-link disappearance during live scans while keeping strict
+collection/link/type/growth refusals. Its normal task collected full results,
+retired scratch and released reservations. This is qualified worker behavior;
+outer tools remain unrestricted and read isolation is unqualified.
+
+The held ZIP5cba below still contains the old scanner. Its98-test archive proof
+and actual unchanged replay job939ccf7e remain bound to those bytes. Current
+case0 job92807553 passed; cases1/2 have actual PASS oracles inside failed overall
+job9f28b745; case03 job78d7338f now passed under the replacement supervisor.
+Cases4–7/current delivered41/full38 coverage are not complete. The failed parent,
+null worker exit and missing final proof for9f28 remain preserved; partial case
+oracles do not make that job PASS.
+
+Keep the accepted pinned runtime archive when integrating the source and
+refreshing the changed export/payload closure. The repaired delivered assets
+require their own affected tests, consumer/form bindings and unchanged replay;
+old ZIP evidence is not silently rebound. Later exact commit/ref terminal
+records own source synchronization. Historical11 decisions, live/matched
+efficiency, outer-client setup, final release-effect acceptance and publication/
+downloaded consumers remain distinct. No installed profile, tag or release
+was changed by this repair. The reported wider disk sprawl remains unfinished.
+
 ## Current managed commit delivery — 2026-10-06
 
 The managed commit command now reaches the actual portable archives. The
@@ -64,7 +91,7 @@ The outer shell/editor/plugins remain unrestricted; excluded reads remain
 unqualified. Wider disk reclamation is unfinished. No stable tag or release
 has been created.
 
-### Post-commit replay admission
+### Historical initial post-commit replay admission
 
 The existing replay worker is prepared against ZIP5cba and source3ea, without
 source/test changes or suite replay. Fresh read-only inspection exited1:

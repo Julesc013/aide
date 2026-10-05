@@ -1,0 +1,377 @@
+{
+  "candidate_core_sha256": "bca3178f45667bdf326e549858de58469e0cb0153f104c03abfef9ad140a3d96",
+  "candidate_test_sha256": "85458aead553f8ade4a59657fbeb8dcbeed1e59e07bb2bf5ec627cb501d1ec02",
+  "canonical_validation": {
+    "doctor": {
+      "actual_principal": "same configured qualified Offline route, no separate new principal observation in these plain commands",
+      "all867_inputs_and23overlay_unchanged": true,
+      "collected_manifest": {
+        "logs": "05332a3a3853a1bd84ea51f68b14b0e6f7ebb57f7cdd870411c93b22f781c7ab",
+        "output": "2de89a758bfb886f656aa62a610a95ef48fd61c302e995392f6a19fe6ed9c78d"
+      },
+      "collection_verified": true,
+      "full_command_stdout_bytes": 5181,
+      "full_command_stdout_sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21",
+      "job_id": "a292f5d185d44ed4a4a20f38d768738c",
+      "local_result_ref": ".aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-closeout-validation-doctor-result.log",
+      "local_result_sha256": "61185a13ab779153ea711344baf14f11b2ddf867816d6b40243eeb768e8b4b04",
+      "native_parent_exit": 0,
+      "native_terminal_sha256": "1477e28fe5bd2de78d58551e93ce0873ebd6e406910d38d95209b6905e089321",
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 217432064,
+        "scratch_bytes": 6960
+      },
+      "quiescent": true,
+      "receipt_sha256": "6080346c96f04fb6d8d5411ebbd78f06d52e9e8379551c7aa19be5423b99d2f3",
+      "reservation_released": true,
+      "retained_bytes": 121817,
+      "scratch_absent": true,
+      "severity_counts": {
+        "FAIL": 0,
+        "PASS": 73,
+        "WARN": 0
+      },
+      "worker_exit": 0
+    },
+    "validate": {
+      "actual_principal": "same configured qualified Offline route, no separate new principal observation in these plain commands",
+      "all867_inputs_and23overlay_unchanged": true,
+      "collected_manifest": {
+        "logs": "8edbb214387e7819696b2b05b546616b892e357a0b430f548b87a4f1a31276d7",
+        "output": "401e797d1120573737dee7b0896f27358a3c286840b3dda97ab85c3621e3c4a2"
+      },
+      "collection_verified": true,
+      "full_command_stdout_bytes": 4829403,
+      "full_command_stdout_sha256": "b8413088704811d15df336a2c1318f3affc717e3bb53d7628b8e1d2d691d99f0",
+      "job_id": "7d8e1aed83884dcd8aead70e8d038500",
+      "local_result_ref": ".aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-closeout-validation-validate-result.log",
+      "local_result_sha256": "62e89c098a7cbbb28163feb8d82f0c5c62b7ca5d02a999e3ecc9cf1cd613999e",
+      "native_parent_exit": 0,
+      "native_terminal_sha256": "5d56af520581d0503766a3e95dd8afcced348e6bb803825749422d0d7ae38b07",
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 217944064,
+        "scratch_bytes": 4831182
+      },
+      "quiescent": true,
+      "receipt_sha256": "d8c7454b282497ea56162ce9f0a0ce544ca1c22bc51121d094981303bb59880f",
+      "reservation_released": true,
+      "retained_bytes": 4946049,
+      "scratch_absent": true,
+      "severity_counts": {
+        "FAIL": 0,
+        "PASS": 60169,
+        "WARN": 0
+      },
+      "worker_exit": 0
+    }
+  },
+  "evidence_custody": "Curated qualification summary and exact review preserved here; full native originals and collected streams remain in the configured local evidence/retained roots, hash-bound by subjects.",
+  "independent_review": {
+    "all_notes_explicitly_disposed": true,
+    "all_notes_nonblocking": true,
+    "authorized_write_only": ".aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-normal-result-and-source-review.log",
+    "blocking_findings": [],
+    "notes": [
+      {
+        "applies_to": [
+          "NORMAL_PATH_ACTUAL_RESULT"
+        ],
+        "blocking": false,
+        "classification": "nonblocking",
+        "disposition": "Disposed by preserving exact71bb4da6 reconciliation and prepared invocation, verifying actual f9b39f04 submission and terminal0 chain; acceptance covers one subsequently submitted job only, without recopy, reinspection or native replay.",
+        "id": "N1",
+        "note": "A controller launch wrapper failed after projection/inspection but before raw native streams/subprocess submission."
+      },
+      {
+        "applies_to": [
+          "NORMAL_PATH_ACTUAL_RESULT",
+          "SOURCE_REPAIR_AND_RUNTIME_FOR_INTEGRATION"
+        ],
+        "blocking": false,
+        "classification": "nonblocking",
+        "disposition": "Disposed by accepting source repair plus runtime closure and this case03 normal qualification only. Repaired delivered-byte qualification, export refresh, current asset replacement and installed-profile selection require their own exact effects and results.",
+        "id": "N2",
+        "note": "Runtime302688 has the repaired scanner, while current stable ZIP5cba still contains the prior scanner."
+      },
+      {
+        "applies_to": [
+          "SOURCE_REPAIR_AND_RUNTIME_FOR_INTEGRATION"
+        ],
+        "blocking": false,
+        "classification": "nonblocking",
+        "disposition": "Disposed by allowing canonical closeout validation and guarded-commit preparation on this qualified basis; exact resulting source/local-commit/ref-sync candidates still require separate review. No source commit/ref/profile effect is authorized by this result review.",
+        "id": "N3",
+        "note": "Qualified code/tests and runtime remain explicit overlay/owned archive evidence, not a new accepted Git tree or ref effect."
+      },
+      {
+        "applies_to": [
+          "NORMAL_PATH_ACTUAL_RESULT",
+          "SOURCE_REPAIR_AND_RUNTIME_FOR_INTEGRATION"
+        ],
+        "blocking": false,
+        "classification": "nonblocking",
+        "disposition": "Disposed by preserving original failures and narrower independently accepted case results; no whole-matrix, old8/full38 or repaired delivered41 rebinding. No automatic continuation replay is granted.",
+        "id": "N4",
+        "note": "Original case03 passed, but cases4..7 and full current matrix/delivered41 remain incomplete; prior9f28 failed job remains failed despite partial case01/02 PASS records."
+      },
+      {
+        "applies_to": [
+          "NORMAL_PATH_ACTUAL_RESULT",
+          "SOURCE_REPAIR_AND_RUNTIME_FOR_INTEGRATION"
+        ],
+        "blocking": false,
+        "classification": "nonblocking",
+        "disposition": "Disposed by retaining actual locked admission, measured/sample limits, worker-managed model_calls0 and unknown controller/review usage, with stable/publication/history11/live/outer/read/quota/matched-cost gates unchanged.",
+        "id": "N5",
+        "note": "Resource evidence is cooperative/monitored and worker-scoped, not whole-session/read/global-quota or matched-efficiency qualification."
+      }
+    ],
+    "review_actions": "bounded exact evidence/retained/source-input/runtime reads and standard-library hashes only; no source imports/tests/native/network/source/state/ref mutations",
+    "reviewed_at": "2026-10-05T20:51:17.705417+00:00",
+    "reviewer": "/root/containment_review",
+    "schema": "aide.independent-active-zero-link-normal-result-source-review.v1",
+    "subjects": {
+      "actual_submission_sha256": "f9b39f042bded60ca9b51aab4128edd76211f6c77422c6f96fa149826e98ae5e",
+      "candidate_test_sha256": "85458aead553f8ade4a59657fbeb8dcbeed1e59e07bb2bf5ec627cb501d1ec02",
+      "candidate_workspace_sha256": "bca3178f45667bdf326e549858de58469e0cb0153f104c03abfef9ad140a3d96",
+      "effect_review_sha256": "2e93eeec2199a7e3a05a5d06e3943be2cc07c81383ddc07b4f5c218e4075afc5",
+      "effect_sha256": "4f442b68c2752fa2337ea73dda33a1965708a2f2a841fd4db65efd0de7885b83",
+      "job_id": "78d7338f791849f89182c6bd82c7df50",
+      "native_terminal_sha256": "0f8a5ba55c98a5f84bdfc1eaa6d1fe05bc9cf27aeabd3aac03291944b672ff54",
+      "normal_proof_sha256": "bef236a0d2ea513800077d3e3df00ad4eb2e7d928539ad1907483224d070385f",
+      "normal_result_sha256": "37e8f88e22baa514095b85a7b0a5f540758c67680f90fa69c9c866e570003cbb",
+      "original_summary_sha256": "c47022ddc282e2b572cf44576577fc3c4d1b729d8b237ea77e0a00080cbff279",
+      "receipt_sha256": "807ca90e478c26698bd100dc22337ee66d20d818bd7111d1f89d67763ee04331",
+      "runtime_archive_bytes": 69803,
+      "runtime_archive_sha256": "302688d665d2f1cd1b57d4539d1471ca9337f48dde385ec0f1faae5431ea2032",
+      "source_commit": "d886adff9b57d1e436aa1d930a30fb2fc5bb1823",
+      "source_tree": "a9d04301fcbf2defb8de96bcb9a4db64d852c34f",
+      "wrapper_reconciliation_sha256": "71bb4da631fa83f66bdba96bede43ae7489ca1e157b413f32aa826b8033ae56e"
+    },
+    "verdicts": {
+      "NORMAL_PATH_ACTUAL_RESULT": "ACCEPT_WITH_NOTES",
+      "SOURCE_REPAIR_AND_RUNTIME_FOR_INTEGRATION": "ACCEPT_WITH_NOTES"
+    },
+    "verification": [
+      "Verified all21 ordinary single-link retained members/152621 bytes and complete logs/output digests, exact owner/job/manifest and receipt linkage; worker0/noIOerrors/quiescent/retired/scratch absent/reservation released.",
+      "Verified actual parent terminal0 exact stdout/stderr hashes and bytes; parent stdout equals retained receipt. Native argv/effect/review/inspection/projection/prepared invocation/submission form one consistent recorded chain with one actual native submission.",
+      "Verified actual case_indices[3], observed BLACKGLASS-WIN1\\CodexSandboxOffline, original process0/summaryPASS/854 members and currentZIP5cba/TAR8b02/CLI7a75. All10 raw command hashes/exits match summary; expected six refusal exit3 records contain RECOVERY_REQUIRED, three recovery exit0 records contain RECOVERED, feedback preview0 is PLANNED. Original fresh/update/resolved chains and authored-project preservation remain unmodified.",
+      "Verified source113 input hashes and13 working-overlay hashes unchanged, selected archive69803/302688 and all26 member hashes exact; only source60-qualified scanner bca replaces old d933, unchanged25 retained. Current4 release asset bytes unchanged.",
+      "Verified exact projection record and inspection0 streams/active:null/writes:false. Effective scope records actual locked shared admission218755890+38273024 below268435456; limits32MiB scratch/1GiB memory/intact4GiB reserves. Actual sampled scratch22480659 and Job peak330858496 remain within admitted limits.",
+      "Reused accepted source60 and runtime builder exact reviews. New normal result supplies the formerly missing normal cleanup path under candidate supervisor, including original fixture retirement. No native/suite replay or broad source audit performed."
+    ]
+  },
+  "independent_review_sha256": "08c37c2625db4c26b451141fd8372b9d2111b1ede52e67d318a6e5dc17e09499",
+  "integration": "Exact subsequent commit/ref effects and structural closeout validation require their own actual terminal evidence; no future object identity inferred.",
+  "normal_task": {
+    "actual_locked_aggregate_admission": {
+      "by_pool": {
+        "control": 13694135,
+        "retained": 205061755,
+        "scratch": 0
+      },
+      "enforcement": "cooperative_admission_and_monitored_growth",
+      "limit_bytes": 268435456,
+      "logical_bytes": 218755890,
+      "reserved_bytes": 38273024
+    },
+    "assets_after": {
+      "aide-lite-v1.0.0.SHA256SUMS.txt": "97495d6627551a4ad40ed55a63d97b6bc8df131a486c8ed001ff18a90b9a2797",
+      "aide-lite-v1.0.0.manifest.json": "597df23c5e3ebb0aa89c713b3ec8403af4e2d084084d60835899058153b290ed",
+      "aide-lite-v1.0.0.tar.gz": "8b02718548e7ad61791e0e6f78c4859521bc64e47b324683d1c881f326d197ea",
+      "aide-lite-v1.0.0.zip": "5cba4ff6658f8f74ea91ec44442e4d566eea20dac90f7f57c53eb903763587fe"
+    },
+    "assets_before": {
+      "aide-lite-v1.0.0.SHA256SUMS.txt": "97495d6627551a4ad40ed55a63d97b6bc8df131a486c8ed001ff18a90b9a2797",
+      "aide-lite-v1.0.0.manifest.json": "597df23c5e3ebb0aa89c713b3ec8403af4e2d084084d60835899058153b290ed",
+      "aide-lite-v1.0.0.tar.gz": "8b02718548e7ad61791e0e6f78c4859521bc64e47b324683d1c881f326d197ea",
+      "aide-lite-v1.0.0.zip": "5cba4ff6658f8f74ea91ec44442e4d566eea20dac90f7f57c53eb903763587fe"
+    },
+    "network_enabled": false,
+    "original_case": 3,
+    "original_cli_commands": 10,
+    "original_recovery_oracles": {
+      "fresh": [
+        "INTERRUPTED",
+        "RECOVERY_REQUIRED",
+        "RECOVERY_REQUIRED",
+        "RECOVERED"
+      ],
+      "resolved_update": [
+        "INTERRUPTED",
+        "RECOVERY_REQUIRED",
+        "RECOVERY_REQUIRED",
+        "RECOVERED"
+      ],
+      "update": [
+        "INTERRUPTED",
+        "RECOVERY_REQUIRED",
+        "RECOVERY_REQUIRED",
+        "RECOVERED"
+      ]
+    },
+    "source_checkout_permission": "read",
+    "worker_windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+    "writable_scope": "exact_allocated_tmp_cache_output_only"
+  },
+  "old_scanner_baseline": {
+    "baseline_sha256": "d9338d9d25470b1a39f8c74566f7c108249a98dc564ac395f21b66ebc4eccfe3",
+    "errors": 3,
+    "expected_failed_methods": [
+      "test_live_persistent_zero_link_member_is_refused_after_bounded_observation",
+      "test_live_zero_link_member_confirmed_absent_is_not_retained",
+      "test_live_zero_link_reobservation_does_not_hide_observation_errors",
+      "test_live_zero_link_reobservation_rejects_reparse_metadata",
+      "test_live_zero_link_replacement_cannot_alias_outside_scratch",
+      "test_live_zero_link_replacement_cannot_hide_growth",
+      "test_live_zero_link_surviving_member_is_counted_from_fresh_metadata"
+    ],
+    "failed_methods": [
+      "test_live_persistent_zero_link_member_is_refused_after_bounded_observation",
+      "test_live_zero_link_member_confirmed_absent_is_not_retained",
+      "test_live_zero_link_reobservation_does_not_hide_observation_errors",
+      "test_live_zero_link_reobservation_rejects_reparse_metadata",
+      "test_live_zero_link_replacement_cannot_alias_outside_scratch",
+      "test_live_zero_link_replacement_cannot_hide_growth",
+      "test_live_zero_link_surviving_member_is_counted_from_fresh_metadata"
+    ],
+    "failures": 4,
+    "original_scanner_regression_demonstrated": true,
+    "run": 8,
+    "schema": "aide.zero-link-original-baseline.v1",
+    "skips": 0,
+    "status": "EXPECTED_RED",
+    "test_sha256": "85458aead553f8ade4a59657fbeb8dcbeed1e59e07bb2bf5ec627cb501d1ec02"
+  },
+  "postqualification_changes": "Queue/report/reference/index closeout occurs after immutable functional evidence capture; tests/core/helper bytes remain the qualified subjects.",
+  "postvalidation_changes": "Two link captions corrected and actual canonical validation summaries recorded after both exact-input jobs completed; product/test/helper bytes unchanged. Proportionate final diff/link/JSON checks cover these closeout-only edits.",
+  "qualification_source_is_git_tree_identical": false,
+  "qualified_at": "2026-10-06",
+  "release_payload_contains_repaired_scanner": false,
+  "retained_boundaries": {
+    "disk_limits": "cooperative_admission_and_sampled_growth_not_hard_or_global_quota",
+    "facman_product": "paused",
+    "historical11_dispositions": "proposed_not_granted",
+    "matched_total_cost_efficiency": "unqualified_parent_review_usage_unknown",
+    "nested_live_model_permission": "absent",
+    "outer_shell_editor_plugins": "unrestricted",
+    "stable_tag_publication_downloads": "pending",
+    "wider_machine_disk_sprawl": "unmeasured_unreclaimed",
+    "worker_read_isolation": "unqualified"
+  },
+  "runtime": {
+    "archive_bytes": 69803,
+    "archive_sha256": "302688d665d2f1cd1b57d4539d1471ca9337f48dde385ec0f1faae5431ea2032",
+    "changed_components": [
+      "core/execution/managed_workspace.py"
+    ],
+    "files": {
+      "runtime/core/apply/__init__.py": "d9f1cb35bdf8557ef871410aba60c9982f34a9bea2a9381eef17b00ab1b13ac8",
+      "runtime/core/apply/managed_commit.py": "e3ef99000a466e60ae6d56d6a77fda6501a10a195f70eb6990a97ea99e1c6dcf",
+      "runtime/core/apply/managed_sections.py": "a6cda7e7ffb4e5d3d8e6567192b4a37368c0291608d345612cd14b2b55a16220",
+      "runtime/core/execution/__init__.py": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5",
+      "runtime/core/execution/managed_workspace.py": "bca3178f45667bdf326e549858de58469e0cb0153f104c03abfef9ad140a3d96",
+      "runtime/core/execution/provider.py": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e",
+      "runtime/core/execution/registered_process.py": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+      "runtime/core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
+      "runtime/core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+      "runtime/core/gateway/__init__.py": "84f45062b88514d03f4d1618aa78df3d9aa506c94b870346bfa6e708f522a103",
+      "runtime/core/gateway/gateway_status.py": "40ef20c8890835e63953bada76ad118e966527dc384c72fa1f6b9ce7739a4a88",
+      "runtime/core/gateway/server.py": "b887d27bcbd75377005c3760bedbf2b36cd5caefd26bee5ff8b06cdaa2ec9aff",
+      "runtime/core/gateway/tests/__init__.py": "fc7e58b76b027cc9c7c37011c5aa40b240c09f37cdef2b71bbbe2a653a368860",
+      "runtime/core/gateway/tests/test_gateway_skeleton.py": "8e307b81e6aad7e5949c5788c61da282282f5fe076e3c5d888099441e6902b38",
+      "runtime/core/protocol/__init__.py": "b131e408f459709ebb03c6becc526f09517d2082f536efd643a8b7812ecdd946",
+      "runtime/core/protocol/execution_receipt.py": "966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+      "runtime/core/protocol/process_invocation.py": "aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de",
+      "runtime/core/providers/__init__.py": "91fda471923f178eb877be4afcd9f59ed336a2533fb4e7f50634ac1e3915912c",
+      "runtime/core/providers/contracts.py": "ac7ba2c4cdd4f8ca08971858a0cc04c7c0fbf1af4896ae21c654301b6d51fee8",
+      "runtime/core/providers/registry.py": "caeaaf76b5630bbfa837f847ff6dcab28f4c986a3ec277769b2bde78b28dcaa2",
+      "runtime/core/providers/status.py": "341501a6a5d2bf3aedcce09b0f0b143ed39e3dd949b2ddd4fdad803c009f4886",
+      "runtime/core/providers/tests/__init__.py": "fa00ddd28dbff411d7189b20793f00e464b26c0bdb9c9144296a3fe14d17c205",
+      "runtime/core/providers/tests/test_provider_contracts.py": "ab9f4f74e08354cad3cbf0fe26bb56ab121fa588a7659b5fb9577b33edf73e8a",
+      "runtime/core/runtime/continuous_worker/__init__.py": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
+      "runtime/core/runtime/continuous_worker/state.py": "9b65b7953cfea7af9444abe6157b5edfe670a46be90211a8cf8d543855d12105",
+      "runtime/core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
+    },
+    "installed_profiles_modified": false,
+    "unchanged_original_components": 25
+  },
+  "schema": "aide.active-zero-link-qualified-repair.v1",
+  "source_base_commit": "d886adff9b57d1e436aa1d930a30fb2fc5bb1823",
+  "source_base_tree": "a9d04301fcbf2defb8de96bcb9a4db64d852c34f",
+  "source_tests": {
+    "added_regressions": 8,
+    "errors": 0,
+    "failures": 0,
+    "run": 60,
+    "skips": 0,
+    "unchanged_original_methods": 52
+  },
+  "subjects": {
+    "builder": {
+      "actual_job_peak_memory_bytes": 35385344,
+      "collected_manifest": {
+        "logs": "602e0789bb615247f48ecb3e4932d653bd294941ab45bef53df95a150d2531d3",
+        "output": "4c449ce09ab7ecd0ea714ef1cb4e23d95deeac620a20e45765316e09eb03eee2"
+      },
+      "job_id": "bc4e675bfb404899a8de17c595948e32",
+      "local_result_ref": ".aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-runtime-build-result.log",
+      "local_result_sha256": "16a53d758e6b3d80859317ef08db574a714e7fdf2b78cbc21e9b70c4a8abdd31",
+      "native_parent_exit": 0,
+      "quiescent": true,
+      "receipt_sha256": "7f88e4a453e182963b3d9f270ae6efe99766b6f2667694fe8f14c48224c56efc",
+      "reservation_released": true,
+      "retained_bytes": 87931,
+      "retained_files": 8,
+      "sampled_scratch_peak_bytes": 75175,
+      "scratch_absent": true,
+      "worker_exit": 0
+    },
+    "normal": {
+      "actual_job_peak_memory_bytes": 330858496,
+      "collected_manifest": {
+        "logs": "f673beaa3a5c2da30aa2cf868ac3dbfa980f48fb9323080c7bd8b022996427a9",
+        "output": "716929c1d70a255edc47df987bda3cf77a3a06fdb44459b3a4a53cd20612f0d5"
+      },
+      "job_id": "78d7338f791849f89182c6bd82c7df50",
+      "local_result_ref": ".aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-normal-path-result.log",
+      "local_result_sha256": "37e8f88e22baa514095b85a7b0a5f540758c67680f90fa69c9c866e570003cbb",
+      "native_parent_exit": 0,
+      "quiescent": true,
+      "receipt_sha256": "807ca90e478c26698bd100dc22337ee66d20d818bd7111d1f89d67763ee04331",
+      "reservation_released": true,
+      "retained_bytes": 152621,
+      "retained_files": 21,
+      "sampled_scratch_peak_bytes": 22480659,
+      "scratch_absent": true,
+      "worker_exit": 0
+    },
+    "source": {
+      "actual_job_peak_memory_bytes": 276680704,
+      "collected_manifest": {
+        "logs": "15050d2ce22b2d5edac045de3e2effb0a42b438a32b6c01c45f5acf4de795488",
+        "output": "ec58fbd6e902cf9108bd7c41dbc71dce9cce1cb005dfc6aa7d7ba59e3c424a45"
+      },
+      "job_id": "68cacb7f651e4f70bdc3fb10b873ec4d",
+      "local_result_ref": ".aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-source-result.log",
+      "local_result_sha256": "5e5248d8a27d481f182d7d74dbb6cbd5811b4db3ce7366e2b32e59c4acdc6c64",
+      "native_parent_exit": 0,
+      "quiescent": true,
+      "receipt_sha256": "4aa8b32bc73831eab7d083f787ad2013d04f5c3f33e5ced210e1afac9a444a57",
+      "reservation_released": true,
+      "retained_bytes": 35863,
+      "retained_files": 12,
+      "sampled_scratch_peak_bytes": 47634,
+      "scratch_absent": true,
+      "worker_exit": 0
+    }
+  },
+  "wrapper_error": {
+    "actual_job_submission_count": 1,
+    "automatic_replay": false,
+    "before_native_submission": true,
+    "reconciliation_sha256": "71bb4da631fa83f66bdba96bede43ae7489ca1e157b413f32aa826b8033ae56e"
+  }
+}

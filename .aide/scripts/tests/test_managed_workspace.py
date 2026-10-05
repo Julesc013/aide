@@ -11,6 +11,7 @@ import subprocess
 import sys
 import tempfile
 import time
+from types import SimpleNamespace
 import unittest
 import uuid
 from unittest import mock
@@ -793,6 +794,148 @@ class ManagedWorkspaceTests(unittest.TestCase):
                 workspace.tree_usage(scratch, maximum=1024, max_files=10)
             self.assertEqual(workspace.tree_usage(scratch, maximum=1024, max_files=10,
                                                   allow_transient_absence=True), 0)
+
+    def zero_link_fixture(self):
+        member = self.roots['scratch'] / 'deleting.txt'
+        member.write_bytes(b'tiny')
+        info = member.lstat()
+        zero = SimpleNamespace(st_mode=info.st_mode, st_nlink=0,
+                               st_size=info.st_size, st_dev=info.st_dev,
+                               st_ino=info.st_ino,
+                               st_file_attributes=getattr(info, 'st_file_attributes', 0))
+        return member, zero, Path.lstat
+
+    def test_live_zero_link_member_confirmed_absent_is_not_retained(self):
+        member, zero, original = self.zero_link_fixture()
+        calls = 0
+        def deleting(path, *args, **kwargs):
+            nonlocal calls
+            if path == member:
+                calls += 1
+                if calls == 1:
+                    return zero
+                member.unlink()
+            return original(path, *args, **kwargs)
+        with mock.patch.object(Path, 'lstat', deleting):
+            self.assertEqual(workspace.tree_usage(self.roots['scratch'], maximum=8,
+                                                 max_files=1, allow_transient_absence=True), 0)
+        self.assertEqual(calls, 2)
+        self.assertFalse(member.exists())
+
+    def test_live_zero_link_surviving_member_is_counted_from_fresh_metadata(self):
+        member, zero, original = self.zero_link_fixture()
+        calls = 0
+        def replacement(path, *args, **kwargs):
+            nonlocal calls
+            if path == member:
+                calls += 1
+                if calls == 1:
+                    return zero
+                member.write_bytes(b'sixteen-bytes!!!')
+            return original(path, *args, **kwargs)
+        with mock.patch.object(Path, 'lstat', replacement):
+            self.assertEqual(workspace.tree_usage(self.roots['scratch'], maximum=64,
+                                                 max_files=1, allow_transient_absence=True), 16)
+        self.assertEqual(calls, 2)
+
+    def test_live_zero_link_replacement_cannot_hide_growth(self):
+        member, zero, original = self.zero_link_fixture()
+        calls = 0
+        def growing(path, *args, **kwargs):
+            nonlocal calls
+            if path == member:
+                calls += 1
+                if calls == 1:
+                    return zero
+                member.write_bytes(b'larger-than-eight')
+            return original(path, *args, **kwargs)
+        with mock.patch.object(Path, 'lstat', growing):
+            with self.assertRaisesRegex(workspace.WorkspaceRefused, 'size/file threshold'):
+                workspace.tree_usage(self.roots['scratch'], maximum=8, max_files=1,
+                                     allow_transient_absence=True)
+
+    def test_live_persistent_zero_link_member_is_refused_after_bounded_observation(self):
+        member, zero, original = self.zero_link_fixture()
+        calls = 0
+        def persistent(path, *args, **kwargs):
+            nonlocal calls
+            if path == member:
+                calls += 1
+                return zero
+            return original(path, *args, **kwargs)
+        with mock.patch.object(Path, 'lstat', persistent):
+            with self.assertRaisesRegex(workspace.WorkspaceRefused, 'nlink=0'):
+                workspace.tree_usage(self.roots['scratch'], maximum=64, max_files=1,
+                                     allow_transient_absence=True)
+        self.assertEqual(calls, 3)
+        self.assertEqual(member.read_bytes(), b'tiny')
+
+    def test_quiescent_zero_link_member_is_refused_without_retry(self):
+        member, zero, original = self.zero_link_fixture()
+        calls = 0
+        def persistent(path, *args, **kwargs):
+            nonlocal calls
+            if path == member:
+                calls += 1
+                return zero
+            return original(path, *args, **kwargs)
+        with mock.patch.object(Path, 'lstat', persistent):
+            with self.assertRaisesRegex(workspace.WorkspaceRefused, 'nlink=0'):
+                workspace.tree_usage(self.roots['scratch'], maximum=64, max_files=1)
+        self.assertEqual(calls, 1)
+
+    def test_live_zero_link_reobservation_rejects_reparse_metadata(self):
+        member, zero, original = self.zero_link_fixture()
+        calls = 0
+        redirected = SimpleNamespace(**{**vars(zero), 'st_nlink': 1,
+                                        'st_file_attributes': 0x400})
+        def changed(path, *args, **kwargs):
+            nonlocal calls
+            if path == member:
+                calls += 1
+                return zero if calls == 1 else redirected
+            return original(path, *args, **kwargs)
+        with mock.patch.object(Path, 'lstat', changed):
+            with self.assertRaisesRegex(workspace.WorkspaceRefused, 'linked job member'):
+                workspace.tree_usage(self.roots['scratch'], maximum=64, max_files=1,
+                                     allow_transient_absence=True)
+        self.assertEqual(calls, 2)
+
+    def test_live_zero_link_reobservation_does_not_hide_observation_errors(self):
+        member, zero, original = self.zero_link_fixture()
+        calls = 0
+        def unreadable(path, *args, **kwargs):
+            nonlocal calls
+            if path == member:
+                calls += 1
+                if calls == 1:
+                    return zero
+                raise PermissionError('fixture metadata unavailable')
+            return original(path, *args, **kwargs)
+        with mock.patch.object(Path, 'lstat', unreadable):
+            with self.assertRaisesRegex(PermissionError, 'metadata unavailable'):
+                workspace.tree_usage(self.roots['scratch'], maximum=64, max_files=1,
+                                     allow_transient_absence=True)
+
+    def test_live_zero_link_replacement_cannot_alias_outside_scratch(self):
+        member, zero, original = self.zero_link_fixture()
+        outside = self.root / 'outside.txt'
+        outside.write_bytes(b'preserve')
+        calls = 0
+        def linked(path, *args, **kwargs):
+            nonlocal calls
+            if path == member:
+                calls += 1
+                if calls == 1:
+                    return zero
+                member.unlink()
+                os.link(outside, member)
+            return original(path, *args, **kwargs)
+        with mock.patch.object(Path, 'lstat', linked):
+            with self.assertRaisesRegex(workspace.WorkspaceRefused, 'hardlink outside'):
+                workspace.tree_usage(self.roots['scratch'], maximum=64, max_files=1,
+                                     allow_transient_absence=True, allow_transient_hardlinks=True)
+        self.assertEqual(outside.read_bytes(), b'preserve')
 
     @unittest.skipUnless(os.name == 'nt', 'Windows execution profile')
     def test_success_retires_scratch_and_preserves_output(self):

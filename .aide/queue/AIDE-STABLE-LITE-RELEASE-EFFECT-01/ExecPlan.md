@@ -1,5 +1,28 @@
 # ExecPlan: AIDE Lite stable release effect
 
+## Current dependency-ready delivery — 2026-10-06
+
+The existing resource WorkUnit closed the live scratch deletion race with
+source60 and the unchanged original partial-import CLI case03 PASS10 under
+accepted runtime302688. Use that pinned26-component archive to supervise
+following source/export work; source edits do not silently change the runner.
+[Resource report](../AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/REPORT.md) and
+[qualification evidence](../AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-qualified-result.json)
+retain exact identities, reviews and verified collection/retirement.
+
+Finish exact guarded source/ref integration, then refresh only the changed
+export/payload closure and qualify affected delivered bytes. The held ZIP5cba
+has archive98 and actual unchanged replay; cases0/3 are complete,1/2 are partial
+PASS oracles from a failed job,4–7/current delivered41/full38 remain incomplete.
+It contains the old scanner. Preserve all historical proofs without claiming
+that the repaired scanner is delivered or that the full matrix passed.
+
+Keep limits finite, existing D roots, one heavy job, both4GiB reserves and
+verified retirement. No new worktree/layout/profile change. The eleven proposed
+historical dispositions, nested live permission/actual-host and matched
+outcomes, outer-client setup and final exact release/publication/download
+prerequisites remain separate; unchanged blockers do not admit repeated checks.
+
 ## Objective and source
 
 Parent `AIDE-CONVERGENCE-AND-DELIVERY-01` remains active. The predecessor
