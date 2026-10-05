@@ -1,0 +1,91 @@
+{
+  "configuration_fixture": {
+    "execution_host": {
+      "aggregate_bytes": 268435456,
+      "canonical_outputs": [],
+      "codex_executable": "C:\\Users\\Jules\\.codex\\packages\\standalone\\releases\\0.145.0-x86_64-pc-windows-msvc\\bin\\codex.exe",
+      "codex_sha256": "83751f15cb6a0a7b97df67752c001e3fe1c20e18ffbfec3ff63567296205eb6c",
+      "kind": "codex_sandbox_checks",
+      "read_roots": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64",
+        "C:\\Program Files\\Git",
+        "C:\\Users\\Jules\\.codex\\packages\\standalone\\releases\\0.145.0-x86_64-pc-windows-msvc\\bin"
+      ],
+      "runtime": {
+        "files": {
+          "core/apply/__init__.py": "d9f1cb35bdf8557ef871410aba60c9982f34a9bea2a9381eef17b00ab1b13ac8",
+          "core/apply/managed_sections.py": "a6cda7e7ffb4e5d3d8e6567192b4a37368c0291608d345612cd14b2b55a16220",
+          "core/execution/__init__.py": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5",
+          "core/execution/managed_workspace.py": "d9338d9d25470b1a39f8c74566f7c108249a98dc564ac395f21b66ebc4eccfe3",
+          "core/execution/provider.py": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e",
+          "core/execution/registered_process.py": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+          "core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
+          "core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+          "core/gateway/__init__.py": "84f45062b88514d03f4d1618aa78df3d9aa506c94b870346bfa6e708f522a103",
+          "core/gateway/gateway_status.py": "40ef20c8890835e63953bada76ad118e966527dc384c72fa1f6b9ce7739a4a88",
+          "core/gateway/server.py": "b887d27bcbd75377005c3760bedbf2b36cd5caefd26bee5ff8b06cdaa2ec9aff",
+          "core/gateway/tests/__init__.py": "fc7e58b76b027cc9c7c37011c5aa40b240c09f37cdef2b71bbbe2a653a368860",
+          "core/gateway/tests/test_gateway_skeleton.py": "8e307b81e6aad7e5949c5788c61da282282f5fe076e3c5d888099441e6902b38",
+          "core/protocol/__init__.py": "b131e408f459709ebb03c6becc526f09517d2082f536efd643a8b7812ecdd946",
+          "core/protocol/execution_receipt.py": "966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+          "core/protocol/process_invocation.py": "aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de",
+          "core/providers/__init__.py": "91fda471923f178eb877be4afcd9f59ed336a2533fb4e7f50634ac1e3915912c",
+          "core/providers/contracts.py": "ac7ba2c4cdd4f8ca08971858a0cc04c7c0fbf1af4896ae21c654301b6d51fee8",
+          "core/providers/registry.py": "caeaaf76b5630bbfa837f847ff6dcab28f4c986a3ec277769b2bde78b28dcaa2",
+          "core/providers/status.py": "341501a6a5d2bf3aedcce09b0f0b143ed39e3dd949b2ddd4fdad803c009f4886",
+          "core/providers/tests/__init__.py": "fa00ddd28dbff411d7189b20793f00e464b26c0bdb9c9144296a3fe14d17c205",
+          "core/providers/tests/test_provider_contracts.py": "ab9f4f74e08354cad3cbf0fe26bb56ab121fa588a7659b5fb9577b33edf73e8a",
+          "core/runtime/continuous_worker/__init__.py": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
+          "core/runtime/continuous_worker/state.py": "9b65b7953cfea7af9444abe6157b5edfe670a46be90211a8cf8d543855d12105",
+          "core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
+        },
+        "root": "."
+      },
+      "schema": "aide.scoped-host.local.v1"
+    }
+  },
+  "configuration_fixture_destination": ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/native-fixture-configuration.json",
+  "maximum_total_fixture_bytes": 1048576,
+  "missing_non_executable_source_fixtures": {
+    ".aide/context/latest-task-packet.md": {
+      "bytes": 4556,
+      "sha256": "e2cbd009aa779a49ab3be4b1e433408ff6d4933047db92d566b980b3c10742b8"
+    },
+    ".aide/memory/project-state.md": {
+      "bytes": 2956,
+      "sha256": "8ec39c10322bddb01cb51d85adaac141350010d7df44a8f20e068ac8c6b80f80"
+    },
+    ".aide/queue/X-OS-02-capability-reality-ledger-v0/task.yaml": {
+      "bytes": 5041,
+      "sha256": "b656828983267b477b69733a0b481c0e2cabe1934228676b0a4ec7fcf8ea7fc5"
+    },
+    ".aide/release/latest-github-release-draft.json": {
+      "bytes": 11534,
+      "sha256": "890ad7031c22b029aca1b48e36c434da5810315d8a8e53cea44e252fc4bc04ec"
+    },
+    ".aide/reports/target-work-deferral.md": {
+      "bytes": 1030,
+      "sha256": "0c4d5e75e9d7f8bf73a979f995e5f8c30d889864e1fabdc5f2fcd2b355c40f48"
+    },
+    ".aide/reports/task-os-command-status.md": {
+      "bytes": 3227,
+      "sha256": "df946d2b93198db2b64fd4dcb17329fa1247c89fddc16eb114dd92701a5241dd"
+    },
+    "AGENTS.md": {
+      "bytes": 20645,
+      "sha256": "c9fe0422ea2f0694b4e8eed3583e5a0d66d3fc65d222c4b6ba38b006510bc827"
+    },
+    "docs/reference/README.md": {
+      "bytes": 7628,
+      "sha256": "f5ffaf1aec6eb9ee45d258b98b4e36842c8dc51edce099d04e8e7018df3aee3f"
+    },
+    "docs/reference/source-of-truth.md": {
+      "bytes": 5541,
+      "sha256": "8977a7ebb80ee30e6e42ec66866b0ba5aa545188f670ae4cbf3472bed94a163a"
+    }
+  },
+  "purpose": "Fixture data for two source-oriented public CLI tests; absent from portable package by design, not delivered support/authority.",
+  "qualification_limit": "39 archive-local original cases plus2 original public CLI cases using explicitly bound fixture support. Archive operative/test code and assertions unchanged; no unaugmented portable root CURRENT claim.",
+  "schema": "aide.delivered-tests-explicit-fixture-support.v1",
+  "source_basis": "7c6d69930a8c55c31cd01dfb9fd88490752479dc"
+}

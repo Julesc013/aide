@@ -57,6 +57,37 @@ def main():
     if mappings["zip"] != mappings["tar"] or len(mappings["zip"]) != 852:
         raise AssertionError("full delivered ZIP/TAR file mapping differs")
     delivered = case / "zip/aide-lite-pack-v0/files"
+    support = json.loads((Path(__file__).parent / "delivered_fixture_support.json").read_text(encoding="utf-8"))
+    if support["schema"] != "aide.delivered-tests-explicit-fixture-support.v1":
+        raise AssertionError("unknown fixture support")
+    overlays = {}
+    fixture_bytes = 0
+    for name, binding in support["missing_non_executable_source_fixtures"].items():
+        relative = Path(name)
+        if relative.is_absolute() or ".." in relative.parts or relative.suffix in (".py", ".ps1", ".exe", ".dll"):
+            raise AssertionError("non-executable bounded fixture data required")
+        source = REPO / relative
+        destination = delivered / relative
+        content = source.read_bytes()
+        fixture_bytes += len(content)
+        if destination.exists() or len(content) != binding["bytes"] or sha(source) != binding["sha256"]:
+            raise AssertionError("exact missing fixture dependency changed")
+        if fixture_bytes > support["maximum_total_fixture_bytes"]:
+            raise AssertionError("fixture data bound exceeded")
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes(content)
+        overlays[name] = sha(destination)
+    config_name = support["configuration_fixture_destination"]
+    if config_name != ".aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/evidence/native-fixture-configuration.json":
+        raise AssertionError("unexpected configuration fixture")
+    destination = delivered / config_name
+    if destination.exists():
+        raise AssertionError("fixture cannot overwrite delivered files")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(json.dumps(support["configuration_fixture"], indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    overlays[config_name] = sha(destination)
+    if fixture_bytes + destination.stat().st_size > support["maximum_total_fixture_bytes"]:
+        raise AssertionError("total fixture data bound exceeded")
     fixture_parent = case / "fixtures"
     fixture_parent.mkdir()
     env = {**os.environ, "AIDE_RESOURCE_TEST_PARENT": str(fixture_parent),
@@ -66,7 +97,10 @@ def main():
              "windows_identity": identity.value, "archives": expected,
              "full_archive_file_count": 852, "full_archive_maps_equal": True,
              "nested_model_calls": 0, "outer_session_contained": False,
-             "read_isolation": "unqualified", "suites": [], "status": "RUNNING"}
+             "read_isolation": "unqualified", "suites": [], "status": "RUNNING",
+             "explicit_fixture_overlays": overlays,
+             "fixture_support_sha256": sha(Path(__file__).parent / "delivered_fixture_support.json"),
+             "qualification_limit": support["qualification_limit"]}
     path = OUTPUT / "delivered-additions.json"
     def save():
         path.write_text(json.dumps(proof, indent=2, sort_keys=True) + "\n",
@@ -106,6 +140,12 @@ def main():
     if any(digest != mappings["zip"]["aide-lite-pack-v0/files/" + name]
            for name, digest in proof["delivered_inputs"].items()):
         raise AssertionError("delivered operative bytes changed")
+    for name, digest in mappings["zip"].items():
+        if sha(case / "zip" / name) != digest:
+            raise AssertionError("an original archive file changed")
+    if any(sha(delivered / name) != digest for name, digest in overlays.items()):
+        raise AssertionError("explicit fixture data changed")
+    proof["all_original_archive_files_unchanged"] = True
     worker.retire_owned_fixture(case)
     proof.update(status="PASS", tests_qualified=41,
                  delivered_fixture_retired=not case.exists())

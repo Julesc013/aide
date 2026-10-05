@@ -13,6 +13,12 @@ assertions remain unchanged. Afterwards batch canonical report/plan closeout.
 work. Stable publication, outer permissions, historical10/live/matched efficiency
 and wider cleanup remain separate; dated entries below are historical snapshots.
 
+The initial exact review rejected two missing source-test fixture dependencies
+before dispatch. The corrected entry binds ten explicit non-executable fixture
+files without overwriting archive content:39 archive-local cases plus2 original
+public CLI cases with fixture support. All original code/assertions remain
+unchanged; this is not a bare portable-root18+23 claim. See the ExecPlan correction.
+
 ## 2026-10-05 current custody archive build accepted
 
 One restricted native build on f3312a04/treeb5a3bd2e passed both stable commands.

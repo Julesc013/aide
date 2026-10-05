@@ -10,6 +10,12 @@ runner/source/tool authority; exact source/native review and fresh admission
 precede execution. [Plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md).
 
 
+The initial exact review rejected two missing source-test fixture dependencies
+before dispatch. The corrected entry binds ten explicit non-executable fixture
+files without overwriting archive content:39 archive-local cases plus2 original
+public CLI cases with fixture support. All original code/assertions remain
+unchanged; this is not a bare portable-root18+23 claim. See the ExecPlan correction.
+
 ## Actual lossless retirement and current consumer — 2026-10-05
 
 Reviewed source771684bc applied exactly3 owned custody transitions once; complete

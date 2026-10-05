@@ -1215,3 +1215,17 @@ After actual acceptance, batch existing spec/plan/report/queue closeout once.
 Retain19 proposed topic owners/244 original UR/UC and all separate operational,
 historical/live/matched-efficiency/stable/downloaded/wider-cleanup gates. FacMan
 product remains paused. Unchanged external gates are not re-polled.
+
+### Delivered fixture dependency correction — 2026-10-05
+
+Exact7c6d6993/6c561b1d review returned REQUEST_CHANGES before dispatch: two
+source-oriented public CLI tests require nine non-executable seed-hint files and
+a fixture execution-host selection absent from the portable archive. No native
+job allocated. Bind those exact source fixture bytes in task-owned support JSON
+and generate a tiny fixture-only selection from the same25 delivered core pins,
+root '.', no canonical outputs. Materialize only ten missing fixture-data files
+in the allocated extraction; overwrite nothing. All852 original archive files,
+operative/test bytes and18+23 assertions must remain unchanged. Report39
+archive-local cases plus2 explicitly fixture-backed public CLI cases, never an
+unaugmented portable-root CURRENT or shipped-test-fixture claim. The original
+rejected effect remains held; freeze and review a superseding exact effect.

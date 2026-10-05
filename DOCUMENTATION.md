@@ -9,6 +9,12 @@ behavior and outer-client containment remain separate claims. No41-test result
 is implied by preparing this entry.
 
 
+The initial exact review rejected two missing source-test fixture dependencies
+before dispatch. The corrected entry binds ten explicit non-executable fixture
+files without overwriting archive content:39 archive-local cases plus2 original
+public CLI cases with fixture support. All original code/assertions remain
+unchanged; this is not a bare portable-root18+23 claim. See the ExecPlan correction.
+
 ## Current evidence and continuation references — 2026-10-05
 
 The [delivery report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
