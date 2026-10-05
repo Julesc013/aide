@@ -10,6 +10,12 @@ Capture repair282 and96-input transitive closure preserve full authentication
 and payload verification under unchanged finite limits. Original failed5e24
 and old ZIP556 consumer/replay evidence are retained, not rebound.
 
+Source-only3ea synchronization is independently accepted:88 corresponding
+pairs match,85 other tips and all tags remain preserved. Exact effect receipts
+own subsequent metadata-only ref identities; the working plan must not invent
+a future hash. Additional replay inspection refused beforeallocation on the
+unchanged memory commit reserve. No job ran; no automatic unchanged retry.
+
 The old release-effect packet is stale for these new assets. Exact current
 result/source/ref acceptance and affected consumers/replay precede final
 release-effect review; historical11, live/matched efficiency, outer-client

@@ -52,13 +52,28 @@ rebound to the new archives. The old qualified release-effect manifest458e7957
 is historical and stale for these new bytes; publication stays unauthorized.
 [Independent result review](evidence/managed-commit-current-payload-result-review-v3.log)
 accepted this exact98-test scope with all notes nonblocking and disposed.
-Source/ref acceptance, affected current-byte consumer
-and replay qualification, final release-effect acceptance, historical11 actual
+Archive/source integration [terminal](evidence/managed-commit-current-assets-source-sync-terminal.log)
+and [review](evidence/managed-commit-current-assets-source-sync-result-review.log)
+accepted3ea on main/dev/task with88 corresponding pairs,85 other tips and
+all tags preserved. Later metadata-only synchronization belongs to its exact
+terminal receipt, not a circular future commit identity. Affected current-byte
+consumer and replay qualification, final release-effect acceptance, historical11 actual
 owner dispositions, live permission/qualification, matched efficiency, client
 containment, publication and downloaded consumers remain distinct gates.
 The outer shell/editor/plugins remain unrestricted; excluded reads remain
 unqualified. Wider disk reclamation is unfinished. No stable tag or release
 has been created.
+
+### Post-commit replay admission
+
+The existing replay worker is prepared against ZIP5cba and source3ea, without
+source/test changes or suite replay. Fresh read-only inspection exited1:
+`memory reservation would consume commit_free`; writes:false. The unchanged
+2GiB job memory reservation and4GiB reserve were preserved. No job, scratch
+or model request was allocated; all4 asset bytes remain qualified and unchanged.
+[Numeric inspection](evidence/managed-commit-current-postcommit-replay-inspect-terminal.log)
+retains complete streams. This blocks only that replay; no automatic unchanged
+retry, profile widening, unrelated process termination or Full Access remedy.
 
 ## Historical accepted archive snapshot — 2026-10-05
 

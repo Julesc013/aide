@@ -1374,7 +1374,8 @@ No automatic continuation can accept these records or the other release gates.
 - [x] Freeze and commit exact export20a063a9; separately accepted capture repair2825069b preserves originals.
 - [x] Changed job633f65b2 passes source24+12+8+5, stable-build/stable-validate and49 actual delivered tests; equal854 mappings/851 checksums, no source overlays. Failed5e24 and raw streams remain retained.
 - [x] Independently accept actual633 result: review5b60ce54 ACCEPT_WITH_NOTES/all notes nonblocking and disposed.
-- [ ] Commit only4 assets and current closeout, then source-only synchronization; affected new-byte consumers/replay/final release effect remain separate. Current scratch16MiB/output64KiB/300s/shared256MiB limits stay finite and monitored; source and executing runtime stay disjoint from outputs.
+- [x] Actual3ea commit and source-only synchronization independently accepted:88 corresponding pairs/85 other tips/all tags preserved.
+- [ ] Current-byte consumers/replay/final release effect remain separate; replay inspection refused1 beforeallocation on commit_free reserve. Retry only after relevant capacity change and applicable fresh admission. Current scratch16MiB/output64KiB/300s/shared256MiB limits stay finite and monitored; source and executing runtime stay disjoint from outputs.
 
 Exact old852 export and held4 asset preimages remain in immutable Git75; ZIP556 alone is not an exact old-export restoration source. No uncertain automatic replay, new root/worktree, whole-client/read isolation, hard quota, owner dispositions or model/publication effects follow. Native72 is not replayed for metadata; old asset consumers are not rebound without affected proof.
 
@@ -1398,3 +1399,7 @@ Exact source/local-commit review precedes a clean freeze; a fresh independent
 native-effect review is required for the changed attempt. Preserve source72
 and old consumer evidence without rebinding. Remaining external release gates
 are unchanged. This repair is not a whole-client containment or efficiency claim.
+
+The current closeout uses effect receipts for source state so it does not need
+another descriptive commit whenever its own branch tip advances. Current archive
+bytes and source tests remain qualified. No admitted replay job has run.
