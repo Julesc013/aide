@@ -1,7 +1,36 @@
 # AIDE Implementation Log
 
 
-## Qualified repair integrated and export refreshed — 2026-10-06
+## Current repaired candidate and retained failure streams — 2026-10-06
+
+Affected archive job322d37de passed source49 and delivered49 without overlays;
+ZIP8280a38f/TAR3b417de4 maps854/checksums851 verify. Delivered jobfb5fe461 passed
+original18+23 with ten explicit data overlays and real completion/timeout
+capture. Case0 jobf37a25a4 passed26 original command records plus fresh/update
+interruption recovery, preserving project-owned bytes. All full collections,
+quiescence, fixture/scratch retirement and reservation release passed.
+
+Qualification helpers preopen raw streams, save pending/failure metadata and
+rethrow original timeout/error outcomes. Original assertions and limits remain.
+Production allowances follow measured peaks; shared256MiB/reserves/D layout
+stay unchanged. Exact custody2 saved7,367,008 logical bytes without losing any
+file/emptydir or altering original owners/receipts. Its completed first effect
+was not replayed after the wrapper's own log-name/status failure; original FAIL
+and byte-identical log rename reconciliation remain. Refused9f28 is untouched.
+[Current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) preserves
+all failed920-input attempts and the narrower98-input successful scope.
+
+The deterministic compiler refreshed only the generated manifest's queue-source
+fingerprint. Five managed guidance/preview targets remain byte-identical.
+Harness validation passed149 structural diagnostics with zero warnings/errors;
+this is structural verification, not full YAML schema or runtime qualification.
+
+Local source/export326 and the qualified candidate/helper overlay require the
+guarded commit before original clean-source case6. Remaining consumers/forms,
+source synchronization/replay and external stable gates are not claimed here.
+Older dated entries below retain their original subjects.
+
+## Historical source repair/export checkpoint — 2026-10-06
 
 Bounded live zero-link reobservations preserve strict collection and existing
 link/type/resource refusals. Source60 and original normal CLI10 passed under

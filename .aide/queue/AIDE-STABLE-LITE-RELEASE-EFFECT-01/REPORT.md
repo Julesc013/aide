@@ -1,6 +1,78 @@
 # Current AIDE source, artifact and development report
 
-## Repaired source integrated; canonical export current — 2026-10-06
+## Current repaired local candidate — 2026-10-06
+
+The leading checkpoint is current. Later dated sections preserve evidence for
+their named source and archive subjects; those results do not transfer to the
+current assets automatically.
+
+The [current qualification summary](evidence/zero-link-current-package-qualified.json)
+binds exact assets, receipts and local result hashes. The [ExecPlan](ExecPlan.md)
+owns the remaining consumer, synchronization and release sequence.
+
+The repaired local v1.0.0 candidate now contains the accepted live scratch
+scanner. ZIP8280a38f and TAR3b417de4 have854 identical members and851 verified
+checksums. Clean export provenance remains source27338811/treeac7a4305;
+the local export integration is3269160f. These are candidate assets, not an
+existing stable tag or published release.
+
+Actual job322d37de passed49 affected source tests and49 unchanged tests from
+the delivered ZIP, with no skips or fixture overlays. Source workspace60 is
+qualified separately and excluded from the portable pack by its existing
+policy. Original delivered18+23 passed in jobfb5fe461 with ten explicitly
+recorded non-executable fixture overlays; it proves exact delivered modules,
+not a bare-archive41 count or shipped fixture support. Real completion and
+TimeoutExpired fixtures retained exact raw streams. Their fixtures, worker
+scratch and reservations were retired.
+
+The first920-input attempt stopped for memory headroom; its one reviewed
+recovery hit the original180s Q47 cap. Both remain failed. The original
+isolated test passed unchanged. The succeeding98-operative-input job retained
+the full920 outer snapshot,854 archive maps, original assertions and time
+limits. This narrows repeated qualification admission work; it is neither
+proof of a unique timeout cause nor a matched total-model-cost result.
+
+Exactly two owned custody operations preserve all original files/emptydirs,
+collection digests, owners/receipts and bounded readback while saving7,367,008
+logical bytes. The first completed effect was not replayed after the parent
+wrapper stopped on its own unignored log names. Original FAIL and exact
+byte-preserving reconciliation remain retained. The refused9f28 collection
+is unchanged. Physical recovery, whole-campaign net use and reported wider
+disk sprawl are unmeasured.
+
+Current case0 jobf37a25a4 passed the original26 retained command records,
+fresh/brownfield update and interrupted fresh/update recovery oracles. Project-
+owned bytes remain exact. Full39 retained files total3,058,750B; sampled scratch
+33,174,735B and Job memory330,993,664B are this observation. All33inputs,
+854export/48release files and the9-path working overlay stayed exact. Complete
+collection, quiescence, scratch retirement and reservation release verify.
+Cases1–7/current38forms/12job observations and unchanged replay remain pending.
+Local export326 is not yet synchronized; main/dev remain at last verified273. The capture adapter changes only stream transport: original
+worker/canary assertions,600s child limits and strict retirement are intact.
+The original job-form test requires a clean source checkout, so a guarded
+local qualification commit precedes that case.
+
+Execution uses the existing D scratch/retained/control layout and accepted
+26-component runtime302688. Finite production envelopes follow actual peaks:
+case0 uses36MiB scratch/4MiB results; cases1–7 use32MiB/6MiB; both retain
+1GiB Windows Job memory,32 processes,900s total, shared256MiB, both4GiB memory
+reserves and10GiB disk reserve. Disk/aggregate admission is cooperative and
+monitored; it is not a hard filesystem or global machine quota.
+
+Outer shell/editor/plugin paths remain unrestricted. Actual read isolation,
+a usable constrained outer client, historical11 owner decisions, one bounded
+live-model permission, actual-host/matched efficiency and exact final stable
+release/publication/download evidence remain independent open prerequisites.
+Source synchronization alone grants none of them. FacMan product development
+stays paused.
+
+The next product work uses the existing qualified runner and unchanged
+consumer acceptance. Later bounded capability work remains in its existing
+roadmap: compatibility codecs, portable checkpoints, contributor conformance,
+dependency invalidation and wider host support need their own admission and
+evidence. No new platform or blanket feature completion is recorded here.
+
+## Historical source/export checkpoint — 2026-10-06
 
 Guarded commit27338811/treeac7a4305 is independently accepted and synchronized
 to local/remote main, dev and existing task. All88 corresponding pairs match;

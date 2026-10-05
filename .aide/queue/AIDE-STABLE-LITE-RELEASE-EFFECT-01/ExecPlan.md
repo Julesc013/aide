@@ -10,14 +10,21 @@ following source/export work; source edits do not silently change the runner.
 [qualification evidence](../AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-qualified-result.json)
 retain exact identities, reviews and verified collection/retirement.
 
-Source27338811 is synchronized with88 corresponding branch pairs intact.
-The repaired canonical export971a2045 has854 members/851 checksums and clean273
-provenance. Finish its exact guarded export commit, then build and qualify only
-the affected payload/delivered bytes under pinned302688. The held ZIP5cba
-has archive98 and actual unchanged replay; cases0/3 are complete,1/2 are partial
-PASS oracles from a failed job,4–7/current delivered41/full38 remain incomplete.
-It contains the old scanner. Preserve all historical proofs without claiming
-that the repaired scanner is delivered or that the full matrix passed.
+Source27338811 is the last synchronized checkpoint with88 corresponding pairs.
+Local export commit3269160f holds854 members/851 checksums and clean273
+provenance. New ZIP8280a38f/TAR3b417de4 contain the repaired scanner and passed
+source49/delivered49 without overlays, delivered41 with ten explicit data
+overlays, real completion/TimeoutExpired raw capture and original case0 PASS.
+Both exact owned custody operations preserved full evidence and saved7,367,008
+logical bytes. The original parent wrapper FAIL stays preserved; no completed
+operation was replayed. Refused9f28 is unchanged.
+
+Integrate these qualified candidate/helper bytes with a prevalidated guarded
+local commit, then run unchanged consumer cases1–7 from a clean checkout;
+the original case6 requires it. Bind current38 forms/12 job observations,
+verify unchanged archive replay and obtain exact source-only ref acceptance.
+Old ZIP5cba and its earlier partial/results/replay remain historical subjects,
+not current qualification. Current full8/38 and stable effects are pending.
 
 Keep limits finite, existing D roots, one heavy job, both4GiB reserves and
 verified retirement. No new worktree/layout/profile change. The eleven proposed
@@ -26,6 +33,33 @@ outcomes, outer-client setup and final exact release/publication/download
 prerequisites remain separate; unchanged blockers do not admit repeated checks.
 
 ## Objective and source
+
+### Current-byte consumer dependency — 2026-10-06
+
+The repaired8280a38f ZIP/3b417de4 TAR passed actual source49/delivered49 and
+original delivered41 with ten explicit data overlays. Real completion and
+TimeoutExpired capture retained full raw streams; owned fixtures retired.
+Exactly two owned custody operations preserved every member and emptydir,
+original receipts/owners and bounded lookup, saving7,367,008 logical bytes.
+The first completed operation is not replayed; its post-effect wrapper FAIL
+remains recorded. The refused9f28 collection remains unchanged.
+
+Reuse original worker phases/canaries/assertions/600s child limits and strict
+retirement. The small current_consumer_capture.py adapter uses the qualified
+preopened capture, retaining original process fields plus raw failure streams.
+Source/helpers/immutable4assets remain readonly during native jobs. Use the
+existing D roots, pinned26-component302688 runtime, shared256MiB, both4GiB
+reserves and hard1GiB Job memory. First case0 uses measured36MiB scratch/4MiB
+results; remaining cases1–7 use32MiB/6MiB, with fresh locked admission.
+
+Run case0 first. Then guarded local source/assets/helper commit precedes
+case6: the original job-form canary explicitly requires a clean checkout.
+Do not weaken that assertion or create another worktree. Bind every current
+asset/operative input, retain full collection, verify all8 cases/38 frozen
+forms/12 job observations, then source-only sync and unchanged archive replay.
+Root/queue closeout changes only report actual outcomes. Historical11,
+live/matched efficiency, unrestricted outer tools/read isolation and exact
+stable publication remain separate; no acceptance is inferred here.
 
 Parent `AIDE-CONVERGENCE-AND-DELIVERY-01` remains active. The predecessor
 WorkUnit independently accepted local preview at `4dcd896b`, tree `b8ae4507`,

@@ -14,9 +14,10 @@
       "runtime": {
         "files": {
           "core/apply/__init__.py": "d9f1cb35bdf8557ef871410aba60c9982f34a9bea2a9381eef17b00ab1b13ac8",
+          "core/apply/managed_commit.py": "e3ef99000a466e60ae6d56d6a77fda6501a10a195f70eb6990a97ea99e1c6dcf",
           "core/apply/managed_sections.py": "a6cda7e7ffb4e5d3d8e6567192b4a37368c0291608d345612cd14b2b55a16220",
           "core/execution/__init__.py": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5",
-          "core/execution/managed_workspace.py": "d9338d9d25470b1a39f8c74566f7c108249a98dc564ac395f21b66ebc4eccfe3",
+          "core/execution/managed_workspace.py": "bca3178f45667bdf326e549858de58469e0cb0153f104c03abfef9ad140a3d96",
           "core/execution/provider.py": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e",
           "core/execution/registered_process.py": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
           "core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
@@ -53,8 +54,8 @@
   "maximum_total_fixture_bytes": 1048576,
   "missing_non_executable_source_fixtures": {
     ".aide/context/latest-task-packet.md": {
-      "bytes": 4556,
-      "sha256": "e2cbd009aa779a49ab3be4b1e433408ff6d4933047db92d566b980b3c10742b8"
+      "bytes": 2851,
+      "sha256": "1d0db0fa562bfb3eb4222b20d933d95d5160ce3334e37c9037d9fb397344e973"
     },
     ".aide/memory/project-state.md": {
       "bytes": 2956,
@@ -89,8 +90,8 @@
       "sha256": "8977a7ebb80ee30e6e42ec66866b0ba5aa545188f670ae4cbf3472bed94a163a"
     }
   },
-  "purpose": "Fixture data for two source-oriented public CLI tests; absent from portable package by design, not delivered support/authority.",
-  "qualification_limit": "All41 original tests exercise unchanged delivered modules with ten explicit fixture-data overlays. Two public CLI cases and capability-registration need nonbundled support. No bare-archive test-count, shipped-support or unaugmented portable-root CURRENT claim.",
+  "purpose": "Fixture data for unchanged source-oriented public CLI tests; absent from portable package by design, not delivered support/authority. Runtime fixture pins exactly the current delivered26 core sources; outer supervisor and installed profiles are unchanged.",
+  "qualification_limit": "All41 original tests exercise exact delivered modules, unchanged during qualification, with ten explicit fixture-data overlays. Two public CLI cases and capability-registration need nonbundled support. No bare-archive test-count, shipped-support or unaugmented portable-root CURRENT claim.",
   "schema": "aide.delivered-tests-explicit-fixture-support.v1",
-  "source_basis": "7c6d69930a8c55c31cd01dfb9fd88490752479dc"
+  "source_basis": "3269160ffec959778c7df387037a2ceb26217fd6"
 }

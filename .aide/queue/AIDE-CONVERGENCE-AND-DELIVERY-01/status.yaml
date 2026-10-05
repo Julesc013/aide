@@ -16,7 +16,11 @@ delivery_dependency: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 current_dev_candidate_manifest_sha256: f93f360411dfc83cc7abf60a586a1b825555890939713e0d16cd8062cefe3ddd
 efficiency_release_gate: exported_Lite_actual_host_and_matched_outcome_unqualified
 resource_placement: owner_approved_D_shared_roots_configured
-blocking_input: outer_client_setup_ten_historical_decisions_live_model_permission_and_matched_outcome
+blocking_input: outer_client_setup_eleven_historical_decisions_live_model_permission_and_matched_outcome
+current_delivery_checkpoint_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-package-qualified.json
+current_delivery_slice: repaired_package_source49_delivered49_delivered41_with_explicit_data_and_case0_PASS_remaining_consumers_and_replay_pending
+current_outer_filesystem_permission: disabled_unrestricted_not_whole_session_containment
+unchanged_blockers_stop_independently_authorized_work: false
 owned_jobs_remaining: none_all_current_qualification_jobs_verified_retired
 notes:
   - Current-runner Lite ZIP 27948415 and exact manifest f93f3604 received independent dev-integration ACCEPT; local and remote dev are a9e0c5db/tree 824f6197. The full 559-commit main..dev check still fails on ten exact historical owner-only messages. The latest owner efficiency amendment also requires exported Lite and actual-host measured outcome proof before final stable acceptance; synthetic host tests do not substitute. No main/tag/publication/downloaded-byte effect occurred.

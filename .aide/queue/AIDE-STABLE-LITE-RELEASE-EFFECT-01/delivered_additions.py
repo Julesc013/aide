@@ -26,6 +26,12 @@ def load(name, path):
     spec.loader.exec_module(module)
     return module
 
+def capture_streams(argv, *, cwd, env, stdout_path, stderr_path, timeout=180):
+    """Own raw streams before dispatch, including timeout and launch failures."""
+    with stdout_path.open("xb") as stdout, stderr_path.open("xb") as stderr:
+        return subprocess.run(argv, cwd=cwd, env=env, stdout=stdout,
+                              stderr=stderr, timeout=timeout)
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--zip-sha256", required=True)
@@ -54,7 +60,7 @@ def main():
     case.mkdir()
     mappings = {kind: helper.extract_archive(path, case / kind, kind)
                 for kind, path in archives.items()}
-    if mappings["zip"] != mappings["tar"] or len(mappings["zip"]) != 852:
+    if mappings["zip"] != mappings["tar"] or len(mappings["zip"]) != 854:
         raise AssertionError("full delivered ZIP/TAR file mapping differs")
     delivered = case / "zip/aide-lite-pack-v0/files"
     support = json.loads((Path(__file__).parent / "delivered_fixture_support.json").read_text(encoding="utf-8"))
@@ -95,7 +101,7 @@ def main():
            "TMPDIR": str(fixture_parent), "PYTHONDONTWRITEBYTECODE": "1"}
     proof = {"schema": "aide.delivered-additions-qualification.v1",
              "windows_identity": identity.value, "archives": expected,
-             "full_archive_file_count": 852, "full_archive_maps_equal": True,
+             "full_archive_file_count": 854, "full_archive_maps_equal": True,
              "nested_model_calls": 0, "outer_session_contained": False,
              "read_isolation": "unqualified", "suites": [], "status": "RUNNING",
              "explicit_fixture_overlays": overlays,
@@ -113,22 +119,37 @@ def main():
         if sha(test) != mappings["zip"][member]:
             raise AssertionError("delivered test bytes changed")
         argv = [sys.executable, "-I", "-B", str(test)]
-        result = subprocess.run(argv, cwd=delivered, env=env,
-                                capture_output=True, timeout=180)
         out = OUTPUT / (name + ".stdout")
         err = OUTPUT / (name + ".stderr")
-        out.write_bytes(result.stdout)
-        err.write_bytes(result.stderr)
-        text = (result.stdout + result.stderr).decode("utf-8", errors="replace")
         row = {"test": name, "delivered_test_sha256": sha(test),
-               "argv": argv, "exit_code": result.returncode,
-               "tests_expected": count,
-               "count_verified": bool(re.search(r"Ran " + str(count) + r" tests? in ", text)),
-               "stdout_sha256": sha(out), "stderr_sha256": sha(err),
-               "skip_marker_absent": "skipped=" not in text}
+               "argv": argv, "exit_code": None, "tests_expected": count,
+               "status": "RUNNING", "timeout_seconds": 180,
+               "timed_out": False}
         proof["suites"].append(row)
         save()
-        if result.returncode or not row["count_verified"] or not row["skip_marker_absent"]:
+        failure = None
+        try:
+            result = capture_streams(argv, cwd=delivered, env=env,
+                                     stdout_path=out, stderr_path=err)
+            row["exit_code"] = result.returncode
+        except (subprocess.TimeoutExpired, OSError) as exc:
+            failure = exc
+            row.update(timed_out=isinstance(exc, subprocess.TimeoutExpired),
+                       failure_type=type(exc).__name__, failure=str(exc))
+        text = (out.read_bytes() + err.read_bytes()).decode("utf-8", errors="replace")
+        row.update(count_verified=bool(re.search(r"Ran " + str(count) + r" tests? in ", text)),
+                   stdout_sha256=sha(out), stderr_sha256=sha(err),
+                   stdout_bytes=out.stat().st_size, stderr_bytes=err.stat().st_size,
+                   skip_marker_absent="skipped=" not in text)
+        passed = (failure is None and row["exit_code"] == 0
+                  and row["count_verified"] and row["skip_marker_absent"])
+        row["status"] = "PASS" if passed else "FAILED"
+        if not passed:
+            proof["status"] = "FAILED"
+        save()
+        if failure is not None:
+            raise failure
+        if not passed:
             raise AssertionError("delivered suite failed; complete raw output retained")
     if list(fixture_parent.iterdir()):
         raise AssertionError("delivered suite fixtures were not retired")

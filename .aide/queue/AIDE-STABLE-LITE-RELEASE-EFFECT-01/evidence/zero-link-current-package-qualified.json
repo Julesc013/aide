@@ -1,0 +1,143 @@
+{
+  "actual_stable_publication_or_tag": false,
+  "archive_checksums": 851,
+  "archive_members": 854,
+  "assets": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": {
+      "bytes": 274,
+      "sha256": "ce8b3016ae494f3828012d77b82e6bc62c470a5631ffda1f632e43ec94cd8ddf"
+    },
+    "aide-lite-v1.0.0.manifest.json": {
+      "bytes": 4955,
+      "sha256": "c0eac87c89070f7e3ca99692d4c43813012796986c458a5981fc313ffe9abf1b"
+    },
+    "aide-lite-v1.0.0.tar.gz": {
+      "bytes": 829216,
+      "sha256": "3b417de4c38aca4c850b4c48f39f6e4c6d52cf04f0b7110c20b03e51bb48e824"
+    },
+    "aide-lite-v1.0.0.zip": {
+      "bytes": 1167927,
+      "sha256": "8280a38fb51ac85a8d644daf3e75e6957576c3ee573c5c02182046cd0c472911"
+    }
+  },
+  "capture_faults": {
+    "actual_TimeoutExpired": true,
+    "completion": true,
+    "raw_partial_bytes_preserved": true,
+    "timeout_child_success_claim": false
+  },
+  "current_consumers": {
+    "case0_commands": 26,
+    "executed_case_indices": [
+      0
+    ],
+    "full38forms_current": false,
+    "job12observations_current": false,
+    "remaining_case_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "whole_suite_cases_definition": 8
+  },
+  "delivered41": {
+    "bare_archive_count_claim": false,
+    "count": 41,
+    "fixture_overlays": 10,
+    "scope": "All41 original tests exercise exact delivered modules, unchanged during qualification, with ten explicit fixture-data overlays. Two public CLI cases and capability-registration need nonbundled support. No bare-archive test-count, shipped-support or unaugmented portable-root CURRENT claim."
+  },
+  "delivered49": {
+    "count": 49,
+    "overlays": 0,
+    "skips": 0
+  },
+  "downloaded_consumer_evidence": false,
+  "evidence": {
+    "zero-link-current-consumer-first-result.log": {
+      "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-consumer-first-result.log",
+      "sha256": "96a6816e71603fcafc34e03a27a8bb34babb23480cca124c2fa1cb3ba50dfd3c"
+    },
+    "zero-link-current-delivered41-result.log": {
+      "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-delivered41-result.log",
+      "sha256": "08da95afd801970a011bc6e5bad455d0e8f006f6d93da96e014d0ec4d0352487"
+    },
+    "zero-link-current-payload-operative98-result.log": {
+      "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-payload-operative98-result.log",
+      "sha256": "cf900b3d6bb86dff0b70abaf1ce309a1435ea1ff20d89a76106f7bc33c67f8ca"
+    },
+    "zero-link-custody-result-and-consumer-first-review.log": {
+      "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-custody-result-and-consumer-first-review.log",
+      "sha256": "eccb0755ae2a01b2debe6729bdc6bf84e1cde129b3d2a462e14cc881cea3b44f"
+    },
+    "zero-link-next-consumer-custody-second-result.log": {
+      "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-next-consumer-custody-second-result.log",
+      "sha256": "7047434484257b3efabcbebb082ab20844caa2696dec0037f3083132f167aa07"
+    },
+    "zero-link-next-consumer-custody-wrapper-reconciliation.log": {
+      "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-next-consumer-custody-wrapper-reconciliation.log",
+      "sha256": "79fe976c2083207bdea2c6fcb431cdfa739494bf79ad8ad4498fb43b9eaeb7ff"
+    }
+  },
+  "export_integration_commit": "3269160ffec959778c7df387037a2ceb26217fd6",
+  "export_provenance_source_commit": "27338811d14b3314a98434a68be4a7d7d56b6667",
+  "first_custody_completed_once_original_wrapper_fail_preserved": true,
+  "fixture_scratch_and_reservations_retired": true,
+  "generated_coherence": {
+    "errors": 0,
+    "full_yaml_schema_claim": false,
+    "harness_structural_info": 149,
+    "only_changed": ".aide/generated/manifest.yaml",
+    "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-package-generated-coherence.log",
+    "sha256": "fdba77074e3930c678b38d2346de0f3d8e90725b08a8900d1c3aadd2ffdabb40",
+    "warnings": 0
+  },
+  "historical11_owner_acceptance": false,
+  "live_model_permission": false,
+  "logical_custody_saved_bytes_this_two_subject_slice": 7367008,
+  "main_dev_source_sync_last_verified": "27338811d14b3314a98434a68be4a7d7d56b6667",
+  "original_source_tests_and_canaries_unchanged": true,
+  "outer_session_contained": false,
+  "peaks_distinct_observations": {
+    "case0": {
+      "canonical_bytes": {},
+      "memory_bytes": 330993664,
+      "scratch_bytes": 33174735
+    },
+    "delivered41": {
+      "canonical_bytes": {},
+      "memory_bytes": 290443264,
+      "scratch_bytes": 8814647
+    },
+    "package98": {
+      "canonical_bytes": {
+        ".aide/release": 4011479
+      },
+      "memory_bytes": 325730304,
+      "scratch_bytes": 8693935
+    }
+  },
+  "production_profiles": {
+    "case0_results_mib": 4,
+    "case0_scratch_mib": 36,
+    "disk_reserve_gib": 10,
+    "global_or_filesystem_hard_quota": false,
+    "hard_job_memory_mib": 1024,
+    "physical_commit_reserves_mib": 4096,
+    "rest_results_mib": 6,
+    "rest_scratch_mib": 32,
+    "shared_mib": 256
+  },
+  "read_isolation": "unqualified",
+  "refused_custody_subject_preserved": "9f28b745ab6e486ca0d116e4051cc3b3",
+  "remaining": "Guarded local package/helper commit for original clean-source case6; currentrest1..7/forms38/job12, source-onlysync and unchangedreplay. Exact historical11/live/outer/matched/final publication gates are separate.",
+  "runtime_sha256": "302688d665d2f1cd1b57d4539d1471ca9337f48dde385ec0f1faae5431ea2032",
+  "schema": "aide.current-repaired-lite-local-qualification.v1",
+  "source49": 49,
+  "source_head_before_package_integration": "3269160ffec959778c7df387037a2ceb26217fd6",
+  "status": "CURRENT_LOCAL_PACKAGE_SOURCE49_DELIVERED49_DELIVERED41_WITH_DATA_FIXTURES_AND_CASE0_PASS_REST_PENDING",
+  "whole_outcome_cost_quality_proof": "pending_unknown_total_parent_child_review_retry_repair_warmcold_usage"
+}

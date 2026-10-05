@@ -1,7 +1,24 @@
 # AIDE Planning Index
 
 
-## Current repaired export and delivery — 2026-10-06
+## Current repaired local candidate and consumer dependency — 2026-10-06
+
+New ZIP8280a38f/TAR3b417de4 contain the accepted scanner:854 members/851
+checksums, actual source49/delivered49 without overlays, original delivered41
+with explicit data support and real timeout capture, and original case0 PASS.
+[Qualification summary](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-package-qualified.json)
+and [delivery report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+own exact subjects, scope and collection/retirement. Two owned lossless custody
+effects saved7,367,008 logical bytes; refused evidence and failed wrappers remain.
+
+Next: guarded local candidate/helper commit, then original consumers1–7 from
+the clean source required by case6; bind current38 forms/12 job observations,
+source-only sync and unchanged replay. Local export326 is not yet synchronized;
+last verified main/dev is273. Historical11, live/matched qualification, outer
+client and exact stable publication/downloads remain separate. FacMan is paused.
+Older dated entries below are subject-specific historical snapshots.
+
+## Historical repaired export checkpoint — 2026-10-06
 
 The [resource repair](.aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/REPORT.md)
 is source60/normal CLI10 qualified. Guarded commit27338811 is synchronized to

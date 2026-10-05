@@ -1,7 +1,24 @@
 # AIDE Documentation Index
 
 
-## Current repair and export records — 2026-10-06
+## Current repaired local candidate records — 2026-10-06
+
+[Current delivery report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+and [qualification summary](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-package-qualified.json)
+bind new ZIP8280a38f/TAR3b417de4,854 members/851 checksums, actual source49 and
+delivered49 without overlays, delivered41 with explicit data support, real
+timeout-stream preservation and original consumer case0. The
+[ExecPlan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) preserves
+the original clean-checkout requirement before remaining consumers1–7.
+
+Evidence records exact lossless custody, failed attempts, retirement and
+enforced Job memory versus monitored aggregate/disk limits. Current all8/38
+forms/job12, replay, source-only synchronization and exact publication remain
+distinct pending results. Outer tools are unrestricted; historical11 and live/
+matched efficiency are unapproved/unqualified. Older sections are dated subject
+snapshots, not qualification of current candidate bytes.
+
+## Historical repair/export records — 2026-10-06
 
 The [resource report](.aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/REPORT.md)
 records source60, the exact execution archive and normal recovery CLI10 with
