@@ -9,7 +9,11 @@ bind new ZIP8280a38f/TAR3b417de4,854 members/851 checksums, actual source49 and
 delivered49 without overlays, delivered41 with explicit data support, real
 timeout-stream preservation and original consumer case0. The
 [ExecPlan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) preserves
-the original clean-checkout requirement before remaining consumers1–7.
+the original clean-checkout requirement. Verified local commit964d7e0a is
+followed by exact jobe928a717 partial1/2/3 PASS under a failed900s attempt.
+All collection/retirement verified. Its fixed4–7 recovery and per-case timing
+stay within the existing capture adapter; original worker/canaries stay intact.
+Structural argument/vector verification is separate from pending native tail.
 
 Evidence records exact lossless custody, failed attempts, retirement and
 enforced Job memory versus monitored aggregate/disk limits. Current all8/38

@@ -2,6 +2,25 @@
 
 ## Current dependency-ready delivery — 2026-10-06
 
+### Bounded remaining-case recovery
+
+Reviewed candidate/helper commit964d7e0a is clean. Its remaining-seven job
+e928a717 reached the unchanged900s total limit: original cases1/2/3 passed
+31/4/10 command checks, case4 was incomplete, and5/6/7 never started. Complete
+collection, quiescence, scratch retirement and reservation release verified;
+the failed job retains its exit124 and exact partial evidence.
+
+Scope the next repair to this WorkUnit's capture adapter: add a fixed4–7 tail
+that invokes the original canaries and strict retirement, plus per-case elapsed
+time. The read-only original worker/canaries, runtime, assets and assertions do
+not change. Verify argument refusal and exact tail command vectors structurally,
+review the small source/commit effect, then commit before case6's original clean
+checkout check. Carry accepted cases0–3 without replay; obtain separate exact
+admission/review for the finite tail and lossless custody if capacity needs it.
+Acceptance requires actual original4–7 results, all8 current-byte oracles in
+their honest distinct job subjects, full38/12 coverage, retirement and replay.
+No total/child cap increase, new checkout, policy waiver or stable claim.
+
 The existing resource WorkUnit closed the live scratch deletion race with
 source60 and the unchanged original partial-import CLI case03 PASS10 under
 accepted runtime302688. Use that pinned26-component archive to supervise

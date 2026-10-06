@@ -3822,8 +3822,8 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/evidence
   - id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
     status: needs_review
-    planning_state: repaired_payload49_delivered41_case0_qualified_rest_pending
-    result: CURRENT_PACKAGE49_DELIVERED41_CASE0_PASS_REST_PENDING
+    planning_state: repaired_payload49_delivered41_cases0_3_tail_pending
+    result: CURRENT_PACKAGE49_DELIVERED41_CASES0_3_PASS_REST900_TIMEOUT_TAIL_PENDING
     title: Freeze and qualify a publishable AIDE Lite release effect
     task: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml
     exec_plan: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md

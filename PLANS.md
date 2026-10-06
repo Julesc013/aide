@@ -11,7 +11,10 @@ and [delivery report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
 own exact subjects, scope and collection/retirement. Two owned lossless custody
 effects saved7,367,008 logical bytes; refused evidence and failed wrappers remain.
 
-Next: guarded local candidate/helper commit, then original consumers1–7 from
+Candidate/helper commit964d7e0a is verified. Jobe928a717 timed out at its900s
+total limit after original cases1/2/3 PASS; case4 incomplete,5–7 unstarted.
+Full collection/retirement verified. Next: review/commit the fixed4–7 adapter,
+carry exact completed cases without replay, admit only that finite tail from
 the clean source required by case6; bind current38 forms/12 job observations,
 source-only sync and unchanged replay. Local export326 is not yet synchronized;
 last verified main/dev is273. Historical11, live/matched qualification, outer

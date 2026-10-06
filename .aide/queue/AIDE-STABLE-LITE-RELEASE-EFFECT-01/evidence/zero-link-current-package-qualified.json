@@ -29,21 +29,32 @@
   "current_consumers": {
     "case0_commands": 26,
     "executed_case_indices": [
-      0
+      0,
+      1,
+      2,
+      3
     ],
     "full38forms_current": false,
     "job12observations_current": false,
+    "partial_completed_original_commands": {
+      "1": 31,
+      "2": 4,
+      "3": 10
+    },
+    "partial_rest_job": "e928a717d83f4b159178d244bf3dd1b7",
+    "partial_rest_native_exit": 1,
+    "partial_rest_worker_exit": 124,
     "remaining_case_indices": [
-      1,
-      2,
-      3,
       4,
       5,
       6,
       7
     ],
+    "tail_native_pending": true,
+    "whole_rest_pass": false,
     "whole_suite_cases_definition": 8
   },
+  "current_local_candidate_helper_commit": "964d7e0a522d6b954968474e5268cb71423e2993",
   "delivered41": {
     "bare_archive_count_claim": false,
     "count": 41,
@@ -61,13 +72,29 @@
       "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-consumer-first-result.log",
       "sha256": "96a6816e71603fcafc34e03a27a8bb34babb23480cca124c2fa1cb3ba50dfd3c"
     },
+    "zero-link-current-consumer-rest-failed-result.log": {
+      "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-consumer-rest-failed-result.log",
+      "sha256": "17417efc79afae0ab9c665b8fa5ff7b7b06af621ccb34f0491f3e22747e15a92"
+    },
     "zero-link-current-delivered41-result.log": {
       "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-delivered41-result.log",
       "sha256": "08da95afd801970a011bc6e5bad455d0e8f006f6d93da96e014d0ec4d0352487"
     },
+    "zero-link-current-package-commit-result-and-rest-effect-review.log": {
+      "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-package-commit-result-and-rest-effect-review.log",
+      "sha256": "af41c63a07a59aca6dca1ad7a400f43281c2c1ffa817426aab15085cb75580a1"
+    },
+    "zero-link-current-package-commit-result.log": {
+      "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-package-commit-result.log",
+      "sha256": "2b14efe4837fd279d37ec3fb9ed94143af2c481232c3b01455005b6c10f380fd"
+    },
     "zero-link-current-payload-operative98-result.log": {
       "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-payload-operative98-result.log",
       "sha256": "cf900b3d6bb86dff0b70abaf1ce309a1435ea1ff20d89a76106f7bc33c67f8ca"
+    },
+    "zero-link-current-tail-source-validation.log": {
+      "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-tail-source-validation.log",
+      "sha256": "264824bcf7dcb3cb22eaaf2042ae7dfdc7413b3f7d7c27f403c67e3da7389cff"
     },
     "zero-link-custody-result-and-consumer-first-review.log": {
       "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-custody-result-and-consumer-first-review.log",
@@ -99,6 +126,7 @@
   "live_model_permission": false,
   "logical_custody_saved_bytes_this_two_subject_slice": 7367008,
   "main_dev_source_sync_last_verified": "27338811d14b3314a98434a68be4a7d7d56b6667",
+  "new_fixed_tail_source_scope": "Fixed original4\u20137 command vectors, strict original retirement,10 pure argument checks and per-case timing. Actual native tail not yet exercised; partial rest stays failure. Original worker/canaries/runtime/payload unchanged.",
   "original_source_tests_and_canaries_unchanged": true,
   "outer_session_contained": false,
   "peaks_distinct_observations": {

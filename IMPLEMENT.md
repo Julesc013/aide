@@ -25,8 +25,17 @@ fingerprint. Five managed guidance/preview targets remain byte-identical.
 Harness validation passed149 structural diagnostics with zero warnings/errors;
 this is structural verification, not full YAML schema or runtime qualification.
 
-Local source/export326 and the qualified candidate/helper overlay require the
-guarded commit before original clean-source case6. Remaining consumers/forms,
+Guarded19-file commit964d7e0a passed exact message/tree/parent/latest check and
+clean-worktree verification. Remaining-seven jobe928a717 failed at900s total,
+with original1/2/3 PASS31/4/10, case4 incomplete and5–7 not started. All75files/
+4,501,561B, complete digests, quiescence, scratch retirement and released
+reservation verify. Preserve exit124; never relabel it whole-suite PASS.
+The capture adapter adds only a fixed original4–7 tail and per-case elapsed
+time. Original worker/canaries/assertions/600s caps remain unchanged. Ten pure
+argument checks and all four original command-vector AST comparisons passed;
+actual tail still pending. Queue/index/generated fingerprint coherence updates
+are necessary to keep this scoped repair restartable; no product/profile/
+payload/permission policy changes. Remaining consumers/forms,
 source synchronization/replay and external stable gates are not claimed here.
 Older dated entries below retain their original subjects.
 

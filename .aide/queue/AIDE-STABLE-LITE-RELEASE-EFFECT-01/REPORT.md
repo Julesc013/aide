@@ -46,11 +46,22 @@ owned bytes remain exact. Full39 retained files total3,058,750B; sampled scratch
 33,174,735B and Job memory330,993,664B are this observation. All33inputs,
 854export/48release files and the9-path working overlay stayed exact. Complete
 collection, quiescence, scratch retirement and reservation release verify.
-Cases1–7/current38forms/12job observations and unchanged replay remain pending.
-Local export326 is not yet synchronized; main/dev remain at last verified273. The capture adapter changes only stream transport: original
+The guarded19-file candidate/helper commit964d7e0a passed exact message, tree,
+ordered-parent and latest-check verification. Remaining-seven jobe928a717
+reached its unchanged900s total limit: original cases1/2/3 passed31/4/10 checks;
+case4 was incomplete and5/6/7 never started. Native1/worker124 remain failed.
+All75 retained files/4,501,561B, collection digests, quiescence, scratch retirement
+and reservation release verify. Completed cases are distinct exact subjects,
+not a whole-rest PASS. The bounded capture adapter now prepares only original
+cases4–7 and records elapsed time; ten argument checks and four original command
+vectors passed structural verification. Actual tail/full38/job12/replay remain
+pending; no cap increase or completed-case replay is authorized by this record.
+Local export326 is not yet synchronized; main/dev remain at last verified273. The adapter preserves original
 worker/canary assertions,600s child limits and strict retirement are intact.
 The original job-form test requires a clean source checkout, so a guarded
-local qualification commit precedes that case.
+local qualification commit precedes that case. The original worker and canaries
+remain byte-identical; the fixed tail calls their unchanged assertions and
+strict retirement. Its actual native result still needs independent acceptance.
 
 Execution uses the existing D scratch/retained/control layout and accepted
 26-component runtime302688. Finite production envelopes follow actual peaks:
