@@ -3,7 +3,7 @@ id: AIDE-SESSION-CONTAINMENT-01
 title: Qualify scoped host execution through the existing managed owner
 type: implementation
 status: needs_review
-planning_state: real_scoped_validation_passed_whole_session_unqualified
+planning_state: actual_client_bound_configuration_qualified_whole_session_unqualified
 result: PARTIAL
 created_at: 2026-10-03
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -27,6 +27,7 @@ scope:
     - PLANS.md
     - IMPLEMENT.md
     - DOCUMENTATION.md
+    - .aide/generated/manifest.yaml
   approved_existing_execution_config: .aide.local/execution.json
   read_only_runtime: .aide/export/aide-lite-pack-v0/files
   corrective_generated_cleanup:
@@ -74,3 +75,16 @@ storage_discovery_followup:
 
   identity_fixture_ref: evidence/storage-identity-verification.json
   wider_reclamation: unfinished_unknown_ownership_preserved
+
+current_host_launch_slice:
+  observed_base: 1402003782ee9e23d3892065f3b4e4dc329ccbfe
+  branch_reuse: task/aide-current-scoped-lite-qualification-01
+  authority: resumed_owner_campaign_and_exact_independent_source_effect_review
+  scope: task_local_pinned_launcher_configuration_only_and_required_index_coherence
+  capability_ref: evidence/current-host-capability.json
+  qualification_ref: evidence/current-host-launch-verification.json
+  acceptance_ref: evidence/current-host-launch-acceptance.json
+  generated_scope: compiler_owned_manifest_fingerprint_only_due_queue_index_change
+  source_sync: separate_parent_campaign_exact_review_required_no_stable_effect
+  native_replay_after_decoder: forbidden_without_new_concrete_invalidation_and_review
+  ordinary_model_editing: unqualified_requires_effective_client_setup_and_bounded_permission

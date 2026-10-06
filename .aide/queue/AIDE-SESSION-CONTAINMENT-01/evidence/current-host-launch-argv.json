@@ -1,0 +1,34 @@
+{
+  "account_model_and_effort_overrides": false,
+  "argv": [
+    "C:\\Users\\Jules\\.vscode\\extensions\\openai.chatgpt-26.930.41038-win32-x64\\bin\\windows-x86_64\\codex.exe",
+    "-C",
+    "D:\\Projects\\AIDE\\aide",
+    "-c",
+    "default_permissions=\"aide-containment-task\"",
+    "-c",
+    "approval_policy=\"never\"",
+    "-c",
+    "web_search=\"disabled\"",
+    "-c",
+    "windows={\"sandbox\"=\"elevated\"}",
+    "-c",
+    "features={\"apps\"=false,\"plugins\"=false,\"remote_plugin\"=false,\"hooks\"=false,\"browser_use\"=false,\"browser_use_external\"=false,\"computer_use\"=false,\"in_app_browser\"=false,\"multi_agent\"=false}",
+    "-c",
+    "permissions={\"aide-containment-task\"={\"filesystem\"={\":root\"=\"deny\",\":minimal\"=\"read\",\"D:/Projects/AIDE/aide\"=\"read\",\"D:/Projects/AIDE/aide/.aide/queue/AIDE-SESSION-CONTAINMENT-01\"=\"write\",\"D:/Projects/AIDE/aide/PLANS.md\"=\"write\",\"D:/Projects/AIDE/aide/IMPLEMENT.md\"=\"write\",\"D:/Projects/AIDE/aide/DOCUMENTATION.md\"=\"write\",\"D:/Projects/AIDE/aide/.aide/queue/AIDE-SESSION-CONTAINMENT-01/outer-launch.toml\"=\"read\",\"D:/Projects/AIDE/aide/.aide/queue/AIDE-SESSION-CONTAINMENT-01/outer-launch.py\"=\"read\",\"D:/Projects/AIDE/aide/.aide.local\"=\"deny\",\"D:/Projects/AIDE/.aide.local/execution\"=\"read\",\"D:/Projects/AIDE/.aide.local/execution/control\"=\"deny\",\"C:/Users/Jules/AppData/Local/Python/pythoncore-3.14-64\"=\"read\",\"C:/Program Files/Git\"=\"read\",\"C:/Users/Jules/.codex/packages/standalone/releases/0.145.0-x86_64-pc-windows-msvc/bin\"=\"read\",\"C:/Users/Jules/.vscode/extensions/openai.chatgpt-26.930.41038-win32-x64/bin/windows-x86_64\"=\"read\",\"D:/Projects/AIDE/aide/.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/current-host-capability.json\"=\"read\"},\"network\"={\"enabled\"=false}}}",
+    "-c",
+    "mcp_servers.node_repl.enabled=false",
+    "-c",
+    "mcp_servers.openaiDeveloperDocs.enabled=false"
+  ],
+  "loaded_config_security": [
+    {
+      "mcp_servers": {
+        "node_repl": {},
+        "openaiDeveloperDocs": {}
+      }
+    }
+  ],
+  "schema": "aide.task-current-launch-argv.v1",
+  "starts_model": false
+}

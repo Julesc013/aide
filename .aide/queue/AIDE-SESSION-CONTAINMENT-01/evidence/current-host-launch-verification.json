@@ -1,0 +1,180 @@
+{
+  "active": null,
+  "actual_signed_in_account_qualified": false,
+  "corrected_checks": {
+    "approval_never": true,
+    "declared_mcp_disabled": true,
+    "elevated": true,
+    "exact_filesystem": true,
+    "legacy_sandbox_absent": true,
+    "network_disabled": true,
+    "optional_routes_disabled": true,
+    "selected_profile": true,
+    "web_disabled": true
+  },
+  "decoder_correction": "Only documented optional glob_scan_max_depth:null accepted when not configured; no path or other extra/non-null metadata waived. All8mutational oracles passed. Original native FAIL immutable; no native/model replay.",
+  "decoder_oracles": {
+    "changed_deny": "PASS",
+    "documented_unset_metadata": "PASS",
+    "exact": "PASS",
+    "explicit_glob_changed_to_null": "PASS",
+    "nonnull_glob": "PASS",
+    "removed_deny": "PASS",
+    "unapproved_write": "PASS",
+    "unknown_null_metadata": "PASS"
+  },
+  "decoder_source_sha256": "becb6558e918bb36026637b1884fc6d1e15a5b66d180d1cc93a44c3a37f94142",
+  "effective_features": {
+    "apps": false,
+    "browser_use": false,
+    "browser_use_external": false,
+    "computer_use": false,
+    "hooks": false,
+    "in_app_browser": false,
+    "multi_agent": false,
+    "plugins": false,
+    "remote_plugin": false
+  },
+  "effective_profile": {
+    "description": null,
+    "extends": null,
+    "filesystem": {
+      ":minimal": "read",
+      ":root": "deny",
+      "C:/Program Files/Git": "read",
+      "C:/Users/Jules/.codex/packages/standalone/releases/0.145.0-x86_64-pc-windows-msvc/bin": "read",
+      "C:/Users/Jules/.vscode/extensions/openai.chatgpt-26.930.41038-win32-x64/bin/windows-x86_64": "read",
+      "C:/Users/Jules/AppData/Local/Python/pythoncore-3.14-64": "read",
+      "D:/Projects/AIDE/.aide.local/execution": "read",
+      "D:/Projects/AIDE/.aide.local/execution/control": "deny",
+      "D:/Projects/AIDE/aide": "read",
+      "D:/Projects/AIDE/aide/.aide.local": "deny",
+      "D:/Projects/AIDE/aide/.aide/queue/AIDE-SESSION-CONTAINMENT-01": "write",
+      "D:/Projects/AIDE/aide/.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/current-host-capability.json": "read",
+      "D:/Projects/AIDE/aide/.aide/queue/AIDE-SESSION-CONTAINMENT-01/outer-launch.py": "read",
+      "D:/Projects/AIDE/aide/.aide/queue/AIDE-SESSION-CONTAINMENT-01/outer-launch.toml": "read",
+      "D:/Projects/AIDE/aide/DOCUMENTATION.md": "write",
+      "D:/Projects/AIDE/aide/IMPLEMENT.md": "write",
+      "D:/Projects/AIDE/aide/PLANS.md": "write",
+      "glob_scan_max_depth": null
+    },
+    "network": {
+      "allow_local_binding": null,
+      "allow_upstream_proxy": null,
+      "dangerously_allow_all_unix_sockets": null,
+      "dangerously_allow_non_loopback_proxy": null,
+      "domains": null,
+      "enable_socks5": null,
+      "enable_socks5_udp": null,
+      "enabled": false,
+      "mitm": null,
+      "mode": null,
+      "proxy_url": null,
+      "socks_url": null,
+      "unix_sockets": null
+    },
+    "workspace_roots": null
+  },
+  "effective_security": {
+    "approval_policy": "never",
+    "default_permissions": "aide-containment-task",
+    "web_search": "disabled",
+    "windows": {
+      "sandbox": "elevated"
+    }
+  },
+  "fixture_support": {
+    "actual_user_transports_qualified": false,
+    "disabled_mcp_transport_schema_only": [
+      "node_repl",
+      "openaiDeveloperDocs"
+    ]
+  },
+  "global_filesystem_quota": false,
+  "job_id": "20d2c7f5264e41d18bde9f2a15a7c5bd",
+  "mcp_disabled": {
+    "node_repl": true,
+    "openaiDeveloperDocs": true
+  },
+  "native_backend_exit": 0,
+  "native_helper_exit_preserved": 1,
+  "native_job_status_preserved": "FAIL",
+  "native_replayed_for_decoder": false,
+  "observed_response_bytes": 15591,
+  "observed_response_messages": 4,
+  "official_metadata_source": "https://learn.chatgpt.com/docs/permissions#profile-keys",
+  "ordinary_model_editing_qualified": false,
+  "original_collected_manifest": {
+    "logs": "d7af492104d1e679a22dbe7c320d15a59817ec38c4b929423bd68fc49763209a",
+    "output": "0997a27713719ff3c415706d63341073360987276031dc2c76cadb230e45948f"
+  },
+  "original_job_input_binding": {
+    ".aide.local/execution.json": "73c0b1a4f4bb7cf341c8882806852a9aaea81c81a3d956cde575c1814e3616f6",
+    ".aide/git/commit-message-dispositions.json": "c52b1a3143b2f77b411114f9720029f4de1cf6a94cd78812637ac5c7438a6717",
+    ".aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-runtime-archive.log": "302688d665d2f1cd1b57d4539d1471ca9337f48dde385ec0f1faae5431ea2032",
+    ".aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md": "45806df6180fc4897dcdd0e198e2dca0212557c01a0572d43123a42e02d045a8",
+    ".aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/current-host-capability.json": "e83953ff9a581340484a92f6642c1f921f76a47f7cf1309ab9e68b744209c799",
+    ".aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/current-host-launch-argv.json": "3fc9c75798517bc1510ae1fa869232d8e56cb6e95dc20e3b1ebb09da29ebf258",
+    ".aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/current-host-launch-config.log": "462c344fe870c58c90e0108dcd33f7175c0d9d7b995a47c6ce8565ed53b3d951",
+    ".aide/queue/AIDE-SESSION-CONTAINMENT-01/outer-launch.py": "c6be9f666006a2e0b4195eea9390611fb40e32747a7c0aa0a695f8c394ddac0b",
+    ".aide/queue/AIDE-SESSION-CONTAINMENT-01/outer-launch.toml": "510bea3afdaf26ee73d2e347e4bdb0e657533e41e595ba73e6db90f2a4c3c782",
+    ".aide/queue/AIDE-SESSION-CONTAINMENT-01/verify_current_launch.py": "1f8c48e50e1af5c598b6cfaab858b5b8d00a6548ffbac15ba13b4669a6454fb3",
+    ".aide/scripts/aide_lite.py": "7a75c172d1dfb76946d39087d9f034cdeec2c892cbf2ee2453663c06f01dbf1c",
+    "core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036"
+  },
+  "original_payload_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\20d2c7f5264e41d18bde9f2a15a7c5bd\\output\\current-launch-check.json",
+  "original_payload_sha256": "b498c80b8e13f92df458fea394fb023b228a335a61d0a1b27769648802e43ce9",
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 62124032,
+    "scratch_bytes": 2752968
+  },
+  "receipt_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\20d2c7f5264e41d18bde9f2a15a7c5bd\\receipt.json",
+  "receipt_sha256": "c41dcd765492d985e359b7b48f3b51168050246632b2c187b76a3017754e6b26",
+  "requested_model_invocations": 0,
+  "requested_threads": 0,
+  "requested_turns": 0,
+  "reservation_released": true,
+  "retained_file_roster": {
+    "logs/stderr": {
+      "bytes": 1215,
+      "sha256": "1bdbed08ca33e113abc778ad31102d7ac3bec2bfd3a5885e191908b16c2dec4b"
+    },
+    "logs/stdin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdout": {
+      "bytes": 351,
+      "sha256": "5a50b03d8c031ee19c41102694af2da189803c5b3ccac9861b149f2fc029d62e"
+    },
+    "output/backend-stderr.log": {
+      "bytes": 848,
+      "sha256": "6e4d92f0855135ee4434f574ae0aa364be4500e6e4dca2168f8d0ace76a149ed"
+    },
+    "output/current-launch-check.json": {
+      "bytes": 4100,
+      "sha256": "b498c80b8e13f92df458fea394fb023b228a335a61d0a1b27769648802e43ce9"
+    },
+    "output/effective-scope.json": {
+      "bytes": 1708,
+      "sha256": "fc123b18224fa0e043dad2f3c984ad8658464326800c6a6a6eb5a8a71f725feb"
+    },
+    "owner.json": {
+      "bytes": 140,
+      "sha256": "7e987034924ebf69b714e6e5fdbd2c3b56221dd156b968edb61761c5ba02cf1b"
+    },
+    "receipt.json": {
+      "bytes": 4799,
+      "sha256": "c41dcd765492d985e359b7b48f3b51168050246632b2c187b76a3017754e6b26"
+    }
+  },
+  "retained_logical_bytes": 13161,
+  "schema": "aide.current-launch.configuration-decoding.v1",
+  "scope": "actual0.160 backend config resolution and three refusal checks; disabled MCP schema fixtures only; no actual usertransport/account or model editor tests",
+  "scratch_absent": true,
+  "source_commit": "1402003782ee9e23d3892065f3b4e4dc329ccbfe",
+  "source_tree": "96c72fa0d36b05e838ed9d85baa8d3dba706f714",
+  "status": "PASS_CONFIGURATION_DECODED",
+  "whole_session_contained": false
+}

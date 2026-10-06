@@ -1,0 +1,46 @@
+{
+  "accepted_scopes": [
+    "CONFIGURATION_DECODING_RESULT",
+    "SOURCE"
+  ],
+  "blocking_findings": [],
+  "date": "2026-10-07",
+  "new_native_or_model_effect_approved": false,
+  "notes": [
+    {
+      "disposition": "accepted",
+      "finding": "Exact rules or one unconfigured glob_scan_max_depth:null only; all recorded mutation outcomes agree. Optional metadata corroborated by official permissions specification.",
+      "severity": "nonblocking"
+    },
+    {
+      "disposition": "accepted",
+      "finding": "Nine decoded security checks and three original refusal checks supported; helper/native exit1 and FAIL immutable, backend exit0 distinct; changed decoder not rerun natively.",
+      "severity": "nonblocking"
+    },
+    {
+      "disposition": "accepted",
+      "finding": "Eight retained files, owner/source binding, receipt c41dcd76, reconstructed collection digests and13,161 bytes verify; scratch absent and reservation released.",
+      "severity": "nonblocking"
+    },
+    {
+      "disposition": "retained_as_unqualified_scope",
+      "finding": "Configuration resolution uses explicit disabled transport fixtures; real transports/account, model editing, enforcement/read isolation, whole-session containment and quota unqualified.",
+      "severity": "nonblocking"
+    }
+  ],
+  "official_metadata_source": "https://learn.chatgpt.com/docs/permissions#configuration-spec",
+  "ordinary_model_editing_qualified": false,
+  "record_kind": "agent_transcription_of_actual_independent_response_not_owner_approval",
+  "result": "ACCEPT_WITH_NOTES",
+  "reviewer": "/root/containment_review",
+  "schema": "aide.task-host-launch-acceptance.v1",
+  "source_ref_effect_requires_separate_exact_review": true,
+  "stable_release_effect_approved": false,
+  "subjects": {
+    "decoder_source_ref": ".aide/queue/AIDE-SESSION-CONTAINMENT-01/verify_current_launch.py",
+    "decoder_source_sha256": "becb6558e918bb36026637b1884fc6d1e15a5b66d180d1cc93a44c3a37f94142",
+    "verification_ref": ".aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/current-host-launch-verification.json",
+    "verification_sha256": "e01be13def67fec349e2d204d255dc0fa56205b2c9c5b6ca8178a71d3824ff20"
+  },
+  "whole_session_contained": false
+}

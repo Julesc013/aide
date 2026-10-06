@@ -1,6 +1,23 @@
 # AIDE Documentation Index
 
-## Current local Lite qualification records - 2026-10-06
+## Current actual-client launch records - 2026-10-07
+
+[Host boundary](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/outer-launch-boundary.md)
+records VS Code extension 26.930.41038/backend 0.160.0 and the exact remaining
+setup scope. [Capability](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/current-host-capability.json),
+[configuration result](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/current-host-launch-verification.json)
+and [independent acceptance](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/current-host-launch-acceptance.json)
+preserve configuration-only evidence, original native FAIL, actual collected
+bytes and retirement. The launcher renders overrides; it does not alter this
+unrestricted VS Code thread. Native fs/* management evidence is not proof of the
+actual model editing route. Older route results retain their original versions.
+
+Read the task's source-sync terminal for actual later refs; no receipt commit or
+stable tag/publication is implied. The existing Lite archive excludes this new
+task-local launcher. Historical decisions, live/matched evidence, constrained
+ordinary workflow and final release acquisition remain independently pending.
+
+## Historical local Lite qualification records - 2026-10-06
 
 [Full delivery report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md),
 [qualification summary](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-package-qualified.json)

@@ -194,3 +194,92 @@ identity/link counts remain unknown. Full host/read isolation and broader
 cleanup remain unfinished. Final evidence/source synchronization uses the
 current qualification WorkUnit's separately reviewed exact integration effect;
 this child alone does not authorize main or publication.
+
+
+## 2026-10-07 actual VS Code client and launch repair
+
+The owner resumed this campaign with CONTINUE GO GO GO GO. The immediate
+shell parent is the VS Code Codex extension 26.930.41038, whose pinned
+backend is Codex 0.160.0, not the separate 0.145.0 previously exercised.
+This resolves client identity; it does not prove the active unrestricted
+profile or model editing route is constrained. The old fs/* management API
+probe must not be relabelled as a model apply_patch probe.
+
+Objective: repair the task-local render-only launch binding and retain a
+small exact host capability record. Preserve the old backend evidence and
+existing storage, accounts, model/effort and release assets. No model call,
+global Codex/VS Code setting change, restart, account/ACL/quota change,
+new worktree or wider disk discovery. Scope: this existing WorkUnit plus
+its current root planning/index records only.
+
+1. Bind the observed extension/package/entrypoint/backend identities in a
+   non-secret persistent capability record with explicit invalidation rules.
+2. Reuse outer-launch.py/TOML; select the pinned actual backend, keep the
+   permission record and launcher read-only, refuse legacy-setting conflicts
+   and disable separately declared integrations. Rendering never starts AI.
+3. Freeze the exact helper/config/job and obtain the existing independent
+   review before one deterministic native config-read job. The unchanged
+   known-good runtime owns process/resource/result/retirement. The actual
+   backend must resolve the prepared filesystem/security/tool settings;
+   no thread, turn or model request is permitted. Small necessary failure
+   cases verify changed binding/conflicting legacy settings refuse.
+4. Record actual output paths, available resource/retirement witnesses and
+   exact supported client setup. Current unrestricted outer shell/editor,
+   actual model editing, read isolation and other routes remain uncovered
+   until a real normal task qualifies them. Commit the tested repair via
+   the existing prevalidated managed path; stable-release gates unchanged.
+
+This is an executable/version invalidation, not a reason to replay accepted
+consumer suites or archives. An actual client profile change plus bounded
+model permission is still required for ordinary model edit/test/collect proof.
+
+
+### Current-client fixture correction
+
+The first native submission was definitely REFUSED at20-second aggregate
+metadata admission; no backend/worker was allocated. Read-only reconciliation
+found no active job and empty scratch. The exact unchanged inventory algorithm
+then observed222,119,900 bytes plus19,464,192 reserved bytes in0.352436s.
+Cause of the timing discrepancy is UNKNOWN; no ceiling/deadline was changed.
+A separately reviewed final recovery submission admitted job
+e34046a1326f451bb38275c2a5b46f47 but its isolated CODEX_HOME omitted MCP
+transport schema, so backend startup failed before initialize response.
+Full output/log/receipt custody verified;10,156 retained bytes,5,359 peak
+scratch bytes,49,651,712 peak memory; scratch and reservation retired.
+That subject is closed FAILED and its two admission attempts are exhausted.
+
+Correct the test fixture, preserving actual user configuration: seed harmless
+valid disabled transports in owned isolated state; never copy credentials.
+Explicitly record that real user transports/account/model editing are not
+qualified. A marker makes any unexpected fixture transport start fail.
+One new exact corrected-source native subject is permitted after independent
+review, at unchanged bounds, with no automatic replay. Preserve both original
+failures. This tests configuration only; it cannot close whole-session scope.
+
+### Configuration observation accepted; source slice closeout
+
+Corrected-fixture job20d2c7f5264e41d18bde9f2a15a7c5bd started actual0.160.0,
+completed initialize/config/read/EOF and backend exit0. Helper/native exit1 and
+jobFAIL are retained because its decoder rejected documented optional null
+metadata. A read-only exact decoder correction accepted only that unconfigured
+field, with eight mutation oracles; no native rerun or rule weakening. Nine
+decoded security checks and three original refusal checks passed. Independent
+review accepts exact verificatione01be13d and decoderbecb6558 with all notes
+nonblocking/disposed. It grants no new native/model effect.
+
+All eight retained files, receiptc41dcd76, source binding and collection digests
+verify. Retained13,161B, sampled scratch2,752,968B/Job memory62,124,032B;
+scratch absent/reservation released/no active job. Explicit disabled-transport
+fixtures do not qualify real services/account or model editing. Preserve every
+failed attempt and older0.145.0 probe. Current whole-session status stays PARTIAL.
+
+Update only required task/index/parent/root records. Minimal compiler-owned
+manifest fingerprint is included because the canonical queue index changed;
+IMPLEMENT records this scope exception. Validate generated coherence, exact
+source AST/data/links and unchanged assets/registry/config, then prevalidate the
+LF message and staged scope. The parent campaign separately reviews one normal
+child commit plus conditional exact nonforce main/dev/current-task sync; preserve
+85 other tips. Actual terminal owns later refs; no post-sync receipt commit.
+No package/suite replay or further configuration job is justified. External
+client scope, bounded model permission, historical11, matched outcome and stable
+publication remain independent. Client identity itself is now resolved.

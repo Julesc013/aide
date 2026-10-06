@@ -21,3 +21,67 @@ Current outer shell and apply_patch remain Full Access. Remote connectors, integ
 All probe-created files were exact harmless owned fixtures and retired; owned app-server processes exited. A teardown CRLF expectation failure was reconciled and retained in outer-host-probe-recovery.json before repeating the changed probe. No machine-wide ACL/account/quota changes, secret reads, model turns or full suites. Report resource coverage honestly: the small retained probe record and source helper are counted; client state/log growth was not measured and no whole-campaign total is claimed.
 
 Official scope: https://learn.chatgpt.com/docs/permissions and https://learn.chatgpt.com/docs/app-server . Permission profiles govern local commands; other host/tool surfaces require separate controls.
+
+## Actual client update - 2026-10-07
+
+The immediate shell parent is the backend bundled with **VS Code Codex extension
+26.930.41038**, version **0.160.0**, with Code.exe as its parent. This is the
+application hosting the current thread, rather than an inference from a separately
+installed executable. The capability record pins package, extension entrypoint and
+backend bytes and states invalidation conditions. Do not ask for client identity
+again unless that binding changes. The current effective permission profile is
+still **disabled/unrestricted**; no tool here changes or restarts that thread.
+
+The earlier table remains a historical 0.145.0 route qualification. In particular,
+native app-server fs/* is a management API. Its old failures do not establish that
+the current model apply_patch tool uses that API. Current model editing is simply
+unrestricted and its behavior under a constrained profile remains unqualified.
+
+The existing render-only launcher now verifies the actual pinned client/backend,
+refuses conflicting legacy settings, and retains the documentation/qualification
+profile's exact writes. It does not enable arbitrary product implementation or
+pool-wide storage writes. It changes no user's global settings, model/effort,
+account, ACL, quota or storage placement. The requested command profile has root
+deny, minimal/source/toolchain reads, writes only to this task and three root
+records, read-only launch/capability records, control/private-state deny, disabled
+network and optional tools. Real jobs still need their own runner-owned lease.
+
+One corrected native configuration observation used backend0.160.0 inside the
+existing managed owner and isolated CODEX_HOME in allocated scratch. Initialize
+and config/read completed, backend exit0 and clean EOF verified. No thread/turn
+or model request occurred. Two harmless transport-schema fixtures were disabled;
+actual user transports and signed-in account were not qualified. The worker
+exited1 because its original decoder rejected `glob_scan_max_depth:null`.
+
+The [official specification](https://learn.chatgpt.com/docs/permissions#configuration-spec)
+identifies that field as optional metadata. The reviewed decoder allows this
+one unset field only when it was not explicitly configured; no rule or unknown
+metadata is waived. Nine decoded security checks and eight mutation oracles
+passed, alongside the three original refusal checks. This is
+**PASS_CONFIGURATION_DECODED**, independently accepted, while the actual native
+job stays **FAIL**. The updated decoder was not rerun natively. Earlier admission
+refusal and missing-transport startup failure also remain failed subjects.
+
+The corrected observation retained13,161 logical bytes at
+`D:/Projects/AIDE/.aide.local/execution/retained/20d2c7f5264e41d18bde9f2a15a7c5bd`.
+Its eight files, receipt, collection digests and source binding verify; scratch
+is absent and reservation released. Sampled scratch2,752,968B and Job memory
+62,124,032B are per-job peaks. The startup-failed job retained10,156B separately.
+Resource admission/occupancy remain monitored/cooperative, not a hard quota.
+The20-second inventory refusal's timing cause remains UNKNOWN; no limit was
+increased and no output moved to a fallback location. Wider cleanup was not run.
+
+**Remaining client setup:** replace the active unrestricted profile using this
+client's supported controls, or use a separately launched scoped workflow with
+the pinned rendered arguments. Omit any enabled route lacking enforcement for
+that workflow. This render does not apply CLI flags to the existing VS Code
+conversation; no undocumented setting or guessed menu sequence is prescribed.
+An actual normal model edit/test/collect task and harmless negative fixture must
+qualify the changed tool routes. That attempt also requires its recorded bounded
+model permission for the actual task scope. The pending read-only canary
+permission does not by itself authorize a model-editing qualification. Current shell, editor, integrations and client-owned state are
+outside this configuration-only result. Do not call the session contained.
+
+The current accepted Lite archives are unchanged and do not contain this task's
+launcher/helper. No model/account, historical-message, stable-release acceptance
+or acquisition result is inferred from this source increment.

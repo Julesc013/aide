@@ -34,6 +34,8 @@ multi_agent = false
 "C:/Users/Jules/AppData/Local/Python/pythoncore-3.14-64" = "read"
 "C:/Program Files/Git" = "read"
 "C:/Users/Jules/.codex/packages/standalone/releases/0.145.0-x86_64-pc-windows-msvc/bin" = "read"
+"C:/Users/Jules/.vscode/extensions/openai.chatgpt-26.930.41038-win32-x64/bin/windows-x86_64" = "read"
+"D:/Projects/AIDE/aide/.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/current-host-capability.json" = "read"
 
 [permissions.aide-containment-task.network]
 enabled = false

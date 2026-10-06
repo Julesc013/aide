@@ -2,7 +2,7 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-CONVERGENCE-AND-DELIVERY-01
 status: running
 classification: admitted
-planning_state: qualified_current_local_assets_and_runtime_integrated_external_gates_open
+planning_state: qualified_assets_actual_client_bound_configuration_accepted_external_gates_open
 result: PENDING
 review_gate: admitted_by_owner
 approved_candidate_manifest_sha256: eaf650073734b7cb3c55084b63bddb7cb055a5a30f862f3e907b8ee95d2b3c15
@@ -87,3 +87,10 @@ current_independent_source_increment: bounded_C1_18_tests_10_CLI_calls_PASS_coll
 capability_evidence_validity_ref: .aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/REPORT.md
 next_release_effect_boundary: refresh_and_qualify_changed_payload_before_any_stable_claim_no_model_retry_without_permission
 capability_source_sync_receipt: .aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/evidence/source-sync-final.log
+
+current_outer_client_identity: VS_Code_Codex_extension_26_930_41038_backend_0_160_0
+current_outer_client_capability_ref: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/current-host-capability.json
+current_client_configuration_ref: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/current-host-launch-verification.json
+current_client_configuration_result: PASS_CONFIGURATION_DECODED_original_native_FAIL_preserved
+current_client_source_sync_terminal: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/current-host-launch-source-sync-terminal.log
+ordinary_client_model_edit_test_collect: unqualified_active_profile_unrestricted

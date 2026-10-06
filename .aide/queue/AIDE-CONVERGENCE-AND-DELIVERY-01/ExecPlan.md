@@ -469,3 +469,24 @@ afba7773 after independent dev-only ACCEPT_WITH_NOTES, fresh expected-ref
 checks, ordinary fast-forward and non-force push. Main, ZIP/config, single
 checkout and retired resources are unchanged. Evidence closeout sync is narrow
 and separately reviewed; outer/read containment remains the immediate priority.
+
+## 2026-10-07 actual client launch repair
+
+CONTINUE resumes authorized execution. Immediate shell ancestry establishes the
+actual client as VS Code Codex extension 26.930.41038/backend 0.160.0. The existing
+containment WorkUnit now pins that executable and client binding, refusing stale
+or conflicting settings. Its exact configuration-only observation and bounded
+decoder correction have independent ACCEPT_WITH_NOTES. Original failed jobs and
+older 0.145.0 route evidence are preserved; no native replay makes them green.
+The actual model editor has not been shown to use the old native fs/* API.
+
+Close this qualified source slice with its required task/index/root coherence
+and compiler-owned manifest fingerprint, then one reviewed guarded commit and
+conditional source-only main/dev/current-task sync under the parent campaign.
+The child cannot grant this ref effect alone. Exact terminal journals own actual
+ref outcomes; do not add a post-sync receipt commit. Preserve all other tips,
+release assets, existing roots, account/model defaults and historical decisions.
+One consolidated owner question remains pending; never infer a response from GO.
+The effective current thread is still unrestricted. Ordinary constrained model
+edit/test/collect, read isolation, live/matched efficiency and final publication
+remain unqualified. No unchanged consumer replay, extra task or broad inventory.

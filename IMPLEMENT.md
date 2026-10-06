@@ -1,6 +1,29 @@
 # AIDE Implementation Log
 
-## Current consumer qualification and unchanged replay - 2026-10-06
+## Current actual-client launch repair - 2026-10-07
+
+The existing task-local launcher now pins the actual VS Code extension and its
+0.160.0 backend instead of substituting the older standalone 0.145.0. Bounded
+streamed identity checks, conflicting legacy-setting refusals and disabled
+integration rendering preserve user defaults. No global configuration changed.
+The helper uses isolated owned state, bounded RPC streams, stopped-reader and
+process proofs, and harmless disabled transport fixtures. It starts no model.
+
+Configuration decoding has independent ACCEPT_WITH_NOTES: nine security checks,
+three refusal checks and eight mutation oracles agree. Original admission refusal,
+MCP fixture startup failure and corrected native FAIL remain intact. Backend exit0
+is distinct from helper exit1; accepting documented unset metadata does not waive
+any path rule. No additional native replay. The corrected job retained13,161B,
+sampled2,752,968B scratch and62,124,032B Job memory, with full custody and retirement.
+Other peaks are separate; no whole-campaign/physical-recovery claim is made.
+
+The only cross-cutting generated change is the compiler-owned manifest fingerprint
+required by the queue index update. Task, parent and root records retain uncovered
+routes and independent owner/release gates. Existing four release assets and
+published history are unchanged. The active conversation still has unrestricted
+tools; ordinary model editing/read isolation/whole-session containment remain open.
+
+## Historical consumer qualification and unchanged replay - 2026-10-06
 
 Fixed original4-7 tail50ff passed after preserving e928's900s timeout and exact
 completed1-3; case0 remains f37a. The adapter preserves worker/canary bytes,

@@ -1,6 +1,21 @@
 # AIDE Planning Index
 
-## Current local Lite qualification and integration - 2026-10-06
+## Current client launch qualification - 2026-10-07
+
+The actual client is VS Code Codex extension 26.930.41038/backend 0.160.0.
+The [containment plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md)
+closes its pinned launch repair and configuration-only decoding slice with
+independent acceptance. Its original native FAIL remains; no model was started.
+Current shell/editor/integration routes remain unrestricted. Client identity is
+resolved; effective profile setup and ordinary model edit/test/collect are not.
+
+The qualified source slice uses one guarded commit and exact source-only sync;
+its terminal journal owns actual refs. Existing local Lite assets/evidence remain
+unchanged. Eleven historical dispositions, bounded live permission, matched
+efficiency and final stable effect/acquisition stay separate. No repeated suites,
+worktrees, storage discovery or filler tasks while these inputs remain unchanged.
+
+## Historical local Lite qualification and integration - 2026-10-06
 
 Current ZIP8280a38f/TAR3b417de4 passed affected source49/delivered49 without
 overlays, delivered41 with explicit data fixtures, all eight original consumers,

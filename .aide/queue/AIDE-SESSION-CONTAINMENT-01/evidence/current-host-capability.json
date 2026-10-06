@@ -1,0 +1,45 @@
+{
+  "backend": {
+    "bytes": 326872368,
+    "path": "C:\\Users\\Jules\\.vscode\\extensions\\openai.chatgpt-26.930.41038-win32-x64\\bin\\windows-x86_64\\codex.exe",
+    "sha256": "fdda5fa3cf3fb3d000b876720742857676293e4315e4b045fae6f8bd7e866d1d",
+    "version": "0.160.0"
+  },
+  "effective_current_profile": "disabled/unrestricted",
+  "historical_message_dispositions_accepted": false,
+  "identity_basis": "Immediate native shell parent PID13908 is this extension backend; its parent PID32752 is Code.exe. More distant ancestry is not used as client authority.",
+  "invalidation_conditions": [
+    "outer client or extension version/entrypoint changes",
+    "backend path/content/version changes",
+    "effective profile or writable/readable scope changes",
+    "enabled tool/integration/hook or executing runner changes"
+  ],
+  "nested_model_calls_authorized": false,
+  "observed_at": "2026-10-07",
+  "official_sources": [
+    "https://learn.chatgpt.com/docs/permissions",
+    "https://learn.chatgpt.com/docs/app-server",
+    "https://learn.chatgpt.com/docs/windows/windows-sandbox"
+  ],
+  "outer_client": {
+    "application": "VS Code Codex extension",
+    "entrypoint": "out/extension.js",
+    "entrypoint_sha256": "3c914f0363ebd7f69c4bb6b888960220d43cdd15752f56d81b6645502bf1cf95",
+    "extension_root": "C:\\Users\\Jules\\.vscode\\extensions\\openai.chatgpt-26.930.41038-win32-x64",
+    "extension_version": "26.930.41038",
+    "package_sha256": "3613e869fa6cd77cee273bc212a3f5b1e812d865c3949863009ff6c742e84bc8",
+    "publisher": "openai"
+  },
+  "publication_accepted": false,
+  "qualification_record": "evidence/current-host-launch-verification.json",
+  "remaining_setup": "Select the reviewed constrained task profile in the actual client, disable uncovered integrations for that workflow, then qualify actual model editing and one normal edit/test/collect task. The launcher does not change an existing VS Code thread.",
+  "routes": {
+    "current_model_apply_patch": "unrestricted; constrained-profile behavior not exercised",
+    "current_shell": "unrestricted",
+    "native_fs_management": "0.145.0 previous failure retained; not a model-editing witness",
+    "plugins_and_connectors": "separate controls, enabled in current thread; unqualified",
+    "prepared_launcher": "render only, pinned backend; no model invocation"
+  },
+  "schema": "aide.task-host-capability.v1",
+  "whole_session_contained": false
+}
