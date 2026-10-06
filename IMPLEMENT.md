@@ -1,43 +1,30 @@
 # AIDE Implementation Log
 
+## Current consumer qualification and unchanged replay - 2026-10-06
 
-## Current repaired candidate and retained failure streams — 2026-10-06
+Fixed original4-7 tail50ff passed after preserving e928's900s timeout and exact
+completed1-3; case0 remains f37a. The adapter preserves worker/canary bytes,
+assertions,600s caps and strict retirement, adding bounded phase validation and
+explicit elapsed times. Full current38 forms/39 non-job/12 job/51 unique witnesses
+bind actual argv/status/hash and fresh process identities; no old job counters
+are inherited. Replaye863 passed stable-build/stable-validate once with all4assets,
+854export/48release maps unchanged. Full collections, quiescence and scratch/
+reservation retirement verify. Tail retains1,350,685B, replay21,275B; sampled
+scratch17,957,874B/8,338B remain separate observations.
 
-Affected archive job322d37de passed source49 and delivered49 without overlays;
-ZIP8280a38f/TAR3b417de4 maps854/checksums851 verify. Delivered jobfb5fe461 passed
-original18+23 with ten explicit data overlays and real completion/timeout
-capture. Case0 jobf37a25a4 passed26 original command records plus fresh/update
-interruption recovery, preserving project-owned bytes. All full collections,
-quiescence, fixture/scratch retirement and reservation release passed.
+This bounded metadata closure updates only release planning/status/report/curated
+summary, parent/index/root docs and compiler-owned manifest. Product modules,
+original tests/canaries, assets/export, profiles and historical registry stay exact.
+Source49/delivered49, delivered41-with-data and source60 evidence are reused at
+their real epochs. All three custody subjects preserve unique evidence; e928 saved
+4,034,259 logical bytes separately from earlier two7,367,008. Refused9f28 remains.
+The managed commit draft's CRLF rejection happened before commit creation;
+exact LF correction preserved staged scope. Published66 remains unchanged.
 
-Qualification helpers preopen raw streams, save pending/failure metadata and
-rethrow original timeout/error outcomes. Original assertions and limits remain.
-Production allowances follow measured peaks; shared256MiB/reserves/D layout
-stay unchanged. Exact custody2 saved7,367,008 logical bytes without losing any
-file/emptydir or altering original owners/receipts. Its completed first effect
-was not replayed after the wrapper's own log-name/status failure; original FAIL
-and byte-identical log rename reconciliation remain. Refused9f28 is untouched.
-[Current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) preserves
-all failed920-input attempts and the narrower98-input successful scope.
-
-The deterministic compiler refreshed only the generated manifest's queue-source
-fingerprint. Five managed guidance/preview targets remain byte-identical.
-Harness validation passed149 structural diagnostics with zero warnings/errors;
-this is structural verification, not full YAML schema or runtime qualification.
-
-Guarded19-file commit964d7e0a passed exact message/tree/parent/latest check and
-clean-worktree verification. Remaining-seven jobe928a717 failed at900s total,
-with original1/2/3 PASS31/4/10, case4 incomplete and5–7 not started. All75files/
-4,501,561B, complete digests, quiescence, scratch retirement and released
-reservation verify. Preserve exit124; never relabel it whole-suite PASS.
-The capture adapter adds only a fixed original4–7 tail and per-case elapsed
-time. Original worker/canaries/assertions/600s caps remain unchanged. Ten pure
-argument checks and all four original command-vector AST comparisons passed;
-actual tail still pending. Queue/index/generated fingerprint coherence updates
-are necessary to keep this scoped repair restartable; no product/profile/
-payload/permission policy changes. Remaining consumers/forms,
-source synchronization/replay and external stable gates are not claimed here.
-Older dated entries below retain their original subjects.
+Exact source/ref terminal records own later integration. Source-only sync grants
+no stable certification, model permission, historical decision or containment.
+Outer tools remain unrestricted; disk/shared admission monitored; host/matched
+usage and final publication/downloads pending. Older entries retain their subjects.
 
 ## Historical source repair/export checkpoint — 2026-10-06
 

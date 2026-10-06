@@ -1,26 +1,23 @@
 # AIDE Documentation Index
 
+## Current local Lite qualification records - 2026-10-06
 
-## Current repaired local candidate records — 2026-10-06
+[Full delivery report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md),
+[qualification summary](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-package-qualified.json)
+and [ExecPlan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) bind current
+ZIP8280a38f/TAR3b417de4,854members/851checksums,49 source/49 delivered without
+overlays,41 delivered with explicit support, all8 consumers,38 forms/39non-job/
+12job witnesses and unchanged replay. Each actual source/job/receipt remains its
+own subject; e928 whole timeout is preserved with only completed1-3 reused.
+Tail50ff/replaye863 have full collection and scratch/reservation retirement.
 
-[Current delivery report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
-and [qualification summary](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-package-qualified.json)
-bind new ZIP8280a38f/TAR3b417de4,854 members/851 checksums, actual source49 and
-delivered49 without overlays, delivered41 with explicit data support, real
-timeout-stream preservation and original consumer case0. The
-[ExecPlan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) preserves
-the original clean-checkout requirement. Verified local commit964d7e0a is
-followed by exact jobe928a717 partial1/2/3 PASS under a failed900s attempt.
-All collection/retirement verified. Its fixed4–7 recovery and per-case timing
-stay within the existing capture adapter; original worker/canaries stay intact.
-Structural argument/vector verification is separate from pending native tail.
-
-Evidence records exact lossless custody, failed attempts, retirement and
-enforced Job memory versus monitored aggregate/disk limits. Current all8/38
-forms/job12, replay, source-only synchronization and exact publication remain
-distinct pending results. Outer tools are unrestricted; historical11 and live/
-matched efficiency are unapproved/unqualified. Older sections are dated subject
-snapshots, not qualification of current candidate bytes.
+Read exact source/ref terminal journals for later metadata integration/sync;
+older dated headings are historical, not current asset or approval truth.
+The existing [staged roadmap](docs/roadmap/staged-expansion-roadmap.md) retains
+bounded C2/C3/C9/C11 and remaining C8/C10 candidates, not completed capabilities.
+Outer shell/editor/plugin routes are unrestricted, read isolation unqualified,
+disk/shared limits monitored. Historical11, live/matched qualification and final
+stable tag/publication/downloads remain distinct unresolved gates.
 
 ## Historical repair/export records — 2026-10-06
 

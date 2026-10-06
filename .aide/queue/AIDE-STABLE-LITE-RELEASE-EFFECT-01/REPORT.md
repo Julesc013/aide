@@ -1,87 +1,102 @@
 # Current AIDE source, artifact and development report
 
-## Current repaired local candidate — 2026-10-06
+## Current local Lite qualification - 2026-10-06
 
-The leading checkpoint is current. Later dated sections preserve evidence for
-their named source and archive subjects; those results do not transfer to the
-current assets automatically.
+The current repaired v1.0.0 candidate has completed all eight original consumer
+cases, current38-form coverage and an unchanged-byte asset replay. Actual results
+and full collection/retirement are verified. Stable certification, publication
+and whole-session containment remain unfinished. The [qualification summary](evidence/zero-link-current-package-qualified.json)
+and [ExecPlan](ExecPlan.md) bind the precise subjects and remaining effects.
+Later dated sections retain their historical scope, not current-byte claims.
 
-The [current qualification summary](evidence/zero-link-current-package-qualified.json)
-binds exact assets, receipts and local result hashes. The [ExecPlan](ExecPlan.md)
-owns the remaining consumer, synchronization and release sequence.
+ZIP8280a38f/TAR3b417de4 contain the accepted scratch scanner,854 identical members
+and851 checksums. Package provenance is clean source27338811/treeac7a4305;
+export integration3269160f and later metadata/helper commits964d7e0a/d6f8dea8
+are distinct identities. The assets are local candidates with no stable tag or
+published release. Source/doc-only integration does not silently alter their
+payload or rebind old evidence to a new full Git tree.
 
-The repaired local v1.0.0 candidate now contains the accepted live scratch
-scanner. ZIP8280a38f and TAR3b417de4 have854 identical members and851 verified
-checksums. Clean export provenance remains source27338811/treeac7a4305;
-the local export integration is3269160f. These are candidate assets, not an
-existing stable tag or published release.
+| Qualification | Actual outcome and scope |
+| --- | --- |
+| Scratch scanner/source | Original52 plus8 focused tests=60; original normal partial-import CLI10 passed under pinned runtime302688. Live race repair keeps strict quiescent collection and link/type refusals. |
+| Affected packaging/delivered commit | Job322d37de passed49 source and49 extracted-ZIP tests without overlays/skips; source workspace60 remains excluded by existing pack policy. |
+| Delivered capability/custody | Jobfb5fe461 passed original18+23 with ten explicit non-executable fixture overlays. This is delivered-module proof, not a bare-archive41 or shipped fixture-support claim. |
+| Consumer0 | Jobf37a25a4 passed original26 command records and fresh/update interruption/recovery; project-owned bytes preserved. |
+| Consumers1-3 | Jobe928a717 passed original31/4/10 checks. Whole job still failed at900s, native1/worker124; case4 incomplete,5-7 never started. Completed results remain separate accepted subjects in lossless custody. |
+| Consumers4-7 | Fixed-tail job50ff6977 passed all four original canaries without replaying0-3. Four fixtures retired; full59 retained files/1,350,685B verified. Per-case elapsed seconds57.822/175.681/25.805/1.559; native265.774s. |
+| Current public forms |38 forms/39 non-job outputs/12 job observations/51 unique current witnesses. Actual argv/exit/status/file hashes and fresh job/process identities are bound. WARN, missing, conflict, recovery-required and usage-refusal cases retain their explicit original oracles; no skips. |
+| Asset replay | Jobe8633815 ran original stable-build and stable-validate once, native26.538s. All four asset bytes and full854 export/48 release maps unchanged; full21,275B retained and retirement verified. |
 
-Actual job322d37de passed49 affected source tests and49 unchanged tests from
-the delivered ZIP, with no skips or fixture overlays. Source workspace60 is
-qualified separately and excluded from the portable pack by its existing
-policy. Original delivered18+23 passed in jobfb5fe461 with ten explicitly
-recorded non-executable fixture overlays; it proves exact delivered modules,
-not a bare-archive41 count or shipped fixture support. Real completion and
-TimeoutExpired fixtures retained exact raw streams. Their fixtures, worker
-scratch and reservations were retired.
+[Full tail result](evidence/zero-link-current-consumer-tail-result.log),
+[current coverage](evidence/zero-link-current-public-form-coverage.log) and
+[replay result](evidence/zero-link-current-unchanged-replay-result.log) retain
+complete receipts, owners, collection digests, output rosters and distinct source
+epochs. Review records, rather than a successful compact job observation, govern
+independent acceptance. Each original case retained its assertions and600s child
+cap. The small fixed-tail adapter adds exact phase/argument validation and timing;
+it does not modify original worker/canary bytes or reinterpret the900s failure.
 
-The first920-input attempt stopped for memory headroom; its one reviewed
-recovery hit the original180s Q47 cap. Both remain failed. The original
-isolated test passed unchanged. The succeeding98-operative-input job retained
-the full920 outer snapshot,854 archive maps, original assertions and time
-limits. This narrows repeated qualification admission work; it is neither
-proof of a unique timeout cause nor a matched total-model-cost result.
+The first920-input packaging attempt stopped on memory headroom; its reviewed
+recovery hit the original180s Q47 cap. Both failures remain retained. The original
+isolated test passed unchanged. The successful98-operative-input fixture kept the
+full920 outer snapshot,854 archive maps, original assertions and time limits while
+removing repeated admission hashing. No unique stall cause or matched total-model-
+cost outcome is established. Actual completion and TimeoutExpired fixtures retain
+raw streams and rethrow failure; uncertain effects are not automatically replayed.
 
-Exactly two owned custody operations preserve all original files/emptydirs,
-collection digests, owners/receipts and bounded readback while saving7,367,008
-logical bytes. The first completed effect was not replayed after the parent
-wrapper stopped on its own unignored log names. Original FAIL and exact
-byte-preserving reconciliation remain retained. The refused9f28 collection
-is unchanged. Physical recovery, whole-campaign net use and reported wider
-disk sprawl are unmeasured.
+The managed commit path validates exact final UTF8-LF message and intended staged
+tree before branch advance, then verifies resulting message/tree/ordered parents.
+Current local commits964/d6 passed those checks. The d6 draft's CRLF refusal occurred
+before commit creation but after staging; its exact LF correction preserved tree
+and staged scope. This demonstrates the managed route, not universal enforcement
+over every raw Git command. Published66b66938 remains unchanged; no message-only
+history exception or owner decision is inferred from pasted proposed approval.
 
-Current case0 jobf37a25a4 passed the original26 retained command records,
-fresh/brownfield update and interrupted fresh/update recovery oracles. Project-
-owned bytes remain exact. Full39 retained files total3,058,750B; sampled scratch
-33,174,735B and Job memory330,993,664B are this observation. All33inputs,
-854export/48release files and the9-path working overlay stayed exact. Complete
-collection, quiescence, scratch retirement and reservation release verify.
-The guarded19-file candidate/helper commit964d7e0a passed exact message, tree,
-ordered-parent and latest-check verification. Remaining-seven jobe928a717
-reached its unchanged900s total limit: original cases1/2/3 passed31/4/10 checks;
-case4 was incomplete and5/6/7 never started. Native1/worker124 remain failed.
-All75 retained files/4,501,561B, collection digests, quiescence, scratch retirement
-and reservation release verify. Completed cases are distinct exact subjects,
-not a whole-rest PASS. The bounded capture adapter now prepares only original
-cases4–7 and records elapsed time; ten argument checks and four original command
-vectors passed structural verification. Actual tail/full38/job12/replay remain
-pending; no cap increase or completed-case replay is authorized by this record.
-Local export326 is not yet synchronized; main/dev remain at last verified273. The adapter preserves original
-worker/canary assertions,600s child limits and strict retirement are intact.
-The original job-form test requires a clean source checkout, so a guarded
-local qualification commit precedes that case. The original worker and canaries
-remain byte-identical; the fixed tail calls their unchanged assertions and
-strict retirement. Its actual native result still needs independent acceptance.
+Existing D control/retained/scratch roots and pinned26-component runtime302688 were
+reused. Tail peak scratch17,957,874B and Windows Job memory294,682,624B; replay
+scratch8,338B/memory248,053,760B. These are separate sampled observations, not
+whole-campaign totals. Tail limits32MiB scratch/3MiB results/900s/1GiB hard Job
+memory; replay16MiB/64KiB/300s plus existing8MiB canonical release reservation.
+Both4GiB memory reserves,10GiB disk reserve,32 processes and shared256MiB remain.
+Placement in exercised workers is enforced; aggregate/disk admission and growth
+are cooperative and monitored. No hard filesystem or global-machine quota claim.
 
-Execution uses the existing D scratch/retained/control layout and accepted
-26-component runtime302688. Finite production envelopes follow actual peaks:
-case0 uses36MiB scratch/4MiB results; cases1–7 use32MiB/6MiB; both retain
-1GiB Windows Job memory,32 processes,900s total, shared256MiB, both4GiB memory
-reserves and10GiB disk reserve. Disk/aggregate admission is cooperative and
-monitored; it is not a hard filesystem or global machine quota.
+Three exact lossless custody effects preserved all original files/empty directories,
+receipt/owner anchors, collection digests and bounded lookup. The earlier two saved
+7,367,008 logical bytes; failed e928 custody saved4,034,259 separately. This is not
+physical recovery or whole-campaign net accounting. The original post-effect wrapper
+failure remains; no completed effect was replayed. Refused9f28 remains untouched.
+Unknown files, unique work and the reported wider/multi-machine disk sprawl remain
+unclassified and unreclaimed. No backup clone, worktree, blanket cache wipe or new
+storage layout was created for this closure.
 
-Outer shell/editor/plugin paths remain unrestricted. Actual read isolation,
-a usable constrained outer client, historical11 owner decisions, one bounded
-live-model permission, actual-host/matched efficiency and exact final stable
-release/publication/download evidence remain independent open prerequisites.
-Source synchronization alone grants none of them. FacMan product development
-stays paused.
+The last independently verified main/dev synchronization is27338811. Existing
+local taskd6 holds the qualified candidate/helpers. The bounded metadata child and
+nonforce source-only main/dev/task synchronization use exact terminal journals;
+consult `evidence/zero-link-current-qualified-source-sync-terminal.log` for the
+actual later effect. Other85 branch tips must stay unchanged; source equality is
+not stable release acceptance. Root/queue indexes and compiler fingerprints are
+updated together, without another archive rebuild or post-sync bookkeeping commit.
 
-The next product work uses the existing qualified runner and unchanged
-consumer acceptance. Later bounded capability work remains in its existing
-roadmap: compatibility codecs, portable checkpoints, contributor conformance,
-dependency invalidation and wider host support need their own admission and
-evidence. No new platform or blanket feature completion is recorded here.
+| Remaining gate | Specific remaining input or proof |
+| --- | --- |
+| Outer client | Actual application/version/effective routes and a supported constrained normal edit/test/collect workflow. Current shell/editor/plugins are unrestricted; read isolation unqualified. |
+| Historical messages | Actual owner decisions for the exact11 proposed dispositions. Live three unrelated accepted records remain fixed; published66 is not rewritten. |
+| Live binding/efficiency | One bounded signed-in Sol/medium permission, then actual model/input identity and matched acceptance with controller/child/review/retry/repair usage, warm/cold conditions and unknown coverage preserved. Parent model selection is not permission. |
+| Stable delivery | Exact final release-effect technical acceptance, delegated publication/tag, downloads/hash checks and supported downloaded consumer journeys. Local tests and source sync do not discharge them. |
+| Wider cleanup | Ownership-first bounded discovery and exact disposable candidates; unknown/unique content preserved. No500GB recovery or whole-machine containment claim. |
+
+Useful next feature work remains in the existing [staged roadmap](../../../docs/roadmap/staged-expansion-roadmap.md):
+C2 compatibility codecs for one schema pair with round-trip/loss/refusal fixtures;
+C3 portable checkpoints for one WorkUnit with duplicate-free interrupt/resume;
+C9 version-pinned contributor cancellation/storage conformance; and C11 targeted
+dependency invalidation that preserves unrelated evidence. Remaining C8 explanation
+and C10 host capability work need the same bounded admission and real acceptance.
+These are candidates, not blanket adopted implementations or uniform host parity.
+No broader native/hosted/fleet/interface completion is implied by Lite. FacMan
+product development stays paused. Once dependency-ready authorized effects are
+exhausted, code should observe changes and the campaign should remain dormant;
+unchanged blockers do not justify model polling or another status-only review.
 
 ## Historical source/export checkpoint — 2026-10-06
 

@@ -1,25 +1,23 @@
 # AIDE Planning Index
 
+## Current local Lite qualification and integration - 2026-10-06
 
-## Current repaired local candidate and consumer dependency — 2026-10-06
-
-New ZIP8280a38f/TAR3b417de4 contain the accepted scanner:854 members/851
-checksums, actual source49/delivered49 without overlays, original delivered41
-with explicit data support and real timeout capture, and original case0 PASS.
+Current ZIP8280a38f/TAR3b417de4 passed affected source49/delivered49 without
+overlays, delivered41 with explicit data fixtures, all eight original consumers,
+38 public forms/39 non-job outputs/12 job observations and unchanged-byte replay.
 [Qualification summary](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-package-qualified.json)
-and [delivery report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
-own exact subjects, scope and collection/retirement. Two owned lossless custody
-effects saved7,367,008 logical bytes; refused evidence and failed wrappers remain.
+and [full report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) bind exact
+subjects. e928 retains its whole-job timeout; completed1-3 are reused honestly,
+not replayed or relabelled. Tail50ff and replaye863 have full collection/retirement.
 
-Candidate/helper commit964d7e0a is verified. Jobe928a717 timed out at its900s
-total limit after original cases1/2/3 PASS; case4 incomplete,5–7 unstarted.
-Full collection/retirement verified. Next: review/commit the fixed4–7 adapter,
-carry exact completed cases without replay, admit only that finite tail from
-the clean source required by case6; bind current38 forms/12 job observations,
-source-only sync and unchanged replay. Local export326 is not yet synchronized;
-last verified main/dev is273. Historical11, live/matched qualification, outer
-client and exact stable publication/downloads remain separate. FacMan is paused.
-Older dated entries below are subject-specific historical snapshots.
+Next: substantive result acceptance, one bounded metadata closure/guarded commit
+and exact nonforce source-only main/dev/existing-task sync, preserving85 other
+tips. Consult the release WorkUnit's exact source-sync terminal for actual refs.
+No unchanged suite/archive regeneration or post-sync status commit. Historical11,
+live/matched efficiency, constrained outer client and stable publication/downloads
+remain independent. Candidate C2/C3/C9/C11 and further C8/C10 stay bounded future
+work in the existing roadmap; FacMan product stays paused. Older entries retain
+their named historical subjects.
 
 ## Historical repaired export checkpoint — 2026-10-06
 

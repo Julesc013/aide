@@ -27,15 +27,21 @@
     "timeout_child_success_claim": false
   },
   "current_consumers": {
+    "all8_current_oracles_complete_distinct_subjects": true,
     "case0_commands": 26,
     "executed_case_indices": [
       0,
       1,
       2,
-      3
+      3,
+      4,
+      5,
+      6,
+      7
     ],
-    "full38forms_current": false,
-    "job12observations_current": false,
+    "full38forms_current": true,
+    "job12observations_current": true,
+    "nonjob_output_records": 39,
     "partial_completed_original_commands": {
       "1": 31,
       "2": 4,
@@ -44,17 +50,21 @@
     "partial_rest_job": "e928a717d83f4b159178d244bf3dd1b7",
     "partial_rest_native_exit": 1,
     "partial_rest_worker_exit": 124,
-    "remaining_case_indices": [
-      4,
-      5,
-      6,
-      7
-    ],
-    "tail_native_pending": true,
+    "remaining_case_indices": [],
+    "tail_job": "50ff6977680e4e8696e615abb6ebe5e2",
+    "tail_native_pending": false,
+    "unique_output_records": 51,
     "whole_rest_pass": false,
     "whole_suite_cases_definition": 8
   },
   "current_local_candidate_helper_commit": "964d7e0a522d6b954968474e5268cb71423e2993",
+  "current_local_tail_adapter_commit": "d6f8dea835612590c7b0939a3c59d541a056f986",
+  "current_unchanged_replay": {
+    "assets_unchanged": true,
+    "full_collection_retirement": true,
+    "job_id": "e8633815788148a8bc1f2ce0fa7f4a73",
+    "status": "PASS"
+  },
   "delivered41": {
     "bare_archive_count_claim": false,
     "count": 41,
@@ -76,6 +86,18 @@
       "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-consumer-rest-failed-result.log",
       "sha256": "17417efc79afae0ab9c665b8fa5ff7b7b06af621ccb34f0491f3e22747e15a92"
     },
+    "zero-link-current-consumer-tail-result.log": {
+      "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-consumer-tail-result.log",
+      "sha256": "9d3165fa0578bea11aea833d5061ba5734cb1788ed2993f9f7369d5d92a41804"
+    },
+    "zero-link-current-coverage-verifier.log": {
+      "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-coverage-verifier.log",
+      "sha256": "31714614d263539dc58557610bff1f7583ae23b3ab8e1d225e6cf15f6ac4d299"
+    },
+    "zero-link-current-custody-commit-tail-replay-review.log": {
+      "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-custody-commit-tail-replay-review.log",
+      "sha256": "1a650c75cf19a60b1e47c5140df4ea520fd0579a94b907fcbc52e73a7efaaeb1"
+    },
     "zero-link-current-delivered41-result.log": {
       "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-delivered41-result.log",
       "sha256": "08da95afd801970a011bc6e5bad455d0e8f006f6d93da96e014d0ec4d0352487"
@@ -92,9 +114,25 @@
       "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-payload-operative98-result.log",
       "sha256": "cf900b3d6bb86dff0b70abaf1ce309a1435ea1ff20d89a76106f7bc33c67f8ca"
     },
+    "zero-link-current-public-form-coverage.log": {
+      "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-public-form-coverage.log",
+      "sha256": "ede6016d97ee85143219bb4c012354b9d6ae2c03c5e1f601dcbc55636e7b4022"
+    },
+    "zero-link-current-rest-failed-custody-result.log": {
+      "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-rest-failed-custody-result.log",
+      "sha256": "03c3e53166ea2f3a73e3989817d1af895b33b3b185a86ce08aca1c5d4d9b56ce"
+    },
+    "zero-link-current-tail-commit-result.log": {
+      "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-tail-commit-result.log",
+      "sha256": "fc9dd18d9064df62d8599e04c921bee7e053dd5e2bfbd96cebb288c86de8de50"
+    },
     "zero-link-current-tail-source-validation.log": {
       "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-tail-source-validation.log",
       "sha256": "264824bcf7dcb3cb22eaaf2042ae7dfdc7413b3f7d7c27f403c67e3da7389cff"
+    },
+    "zero-link-current-unchanged-replay-result.log": {
+      "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-unchanged-replay-result.log",
+      "sha256": "f8177d432458ef58410d270fa791337adf70e159e700bae688dffa7426909e40"
     },
     "zero-link-custody-result-and-consumer-first-review.log": {
       "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-custody-result-and-consumer-first-review.log",
@@ -118,15 +156,16 @@
     "full_yaml_schema_claim": false,
     "harness_structural_info": 149,
     "only_changed": ".aide/generated/manifest.yaml",
-    "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-package-generated-coherence.log",
-    "sha256": "fdba77074e3930c678b38d2346de0f3d8e90725b08a8900d1c3aadd2ffdabb40",
+    "ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-qualified-generated-coherence.log",
+    "sha256": "e85d0a8e2fe2f7f4e51860db911706b1ed25ad6c772c4da2a1f4a14294c73dd7",
     "warnings": 0
   },
   "historical11_owner_acceptance": false,
   "live_model_permission": false,
+  "logical_custody_saved_bytes_failed_e928_subject": 4034259,
   "logical_custody_saved_bytes_this_two_subject_slice": 7367008,
   "main_dev_source_sync_last_verified": "27338811d14b3314a98434a68be4a7d7d56b6667",
-  "new_fixed_tail_source_scope": "Fixed original4\u20137 command vectors, strict original retirement,10 pure argument checks and per-case timing. Actual native tail not yet exercised; partial rest stays failure. Original worker/canaries/runtime/payload unchanged.",
+  "new_fixed_tail_source_scope": "Fixed original4-7 native PASS; original worker/canaries/600s caps/strict retirement unchanged. Cases0-3 not repeated; e928 whole-rest timeout124 preserved.",
   "original_source_tests_and_canaries_unchanged": true,
   "outer_session_contained": false,
   "peaks_distinct_observations": {
@@ -146,6 +185,18 @@
       },
       "memory_bytes": 325730304,
       "scratch_bytes": 8693935
+    },
+    "replay": {
+      "canonical_bytes": {
+        ".aide/release": 4011479
+      },
+      "memory_bytes": 248053760,
+      "scratch_bytes": 8338
+    },
+    "tail": {
+      "canonical_bytes": {},
+      "memory_bytes": 294682624,
+      "scratch_bytes": 17957874
     }
   },
   "production_profiles": {
@@ -154,18 +205,27 @@
     "disk_reserve_gib": 10,
     "global_or_filesystem_hard_quota": false,
     "hard_job_memory_mib": 1024,
+    "original_child_runtime_seconds": 600,
     "physical_commit_reserves_mib": 4096,
+    "replay_canonical_mib": 8,
+    "replay_results_bytes": 65536,
+    "replay_runtime_seconds": 300,
+    "replay_scratch_mib": 16,
     "rest_results_mib": 6,
     "rest_scratch_mib": 32,
-    "shared_mib": 256
+    "shared_mib": 256,
+    "tail_results_mib": 3,
+    "tail_runtime_seconds": 900,
+    "tail_scratch_mib": 32
   },
+  "qualified_source_sync_terminal_ref": ".aide\\queue\\AIDE-STABLE-LITE-RELEASE-EFFECT-01\\evidence\\zero-link-current-qualified-source-sync-terminal.log",
   "read_isolation": "unqualified",
   "refused_custody_subject_preserved": "9f28b745ab6e486ca0d116e4051cc3b3",
-  "remaining": "Guarded local package/helper commit for original clean-source case6; currentrest1..7/forms38/job12, source-onlysync and unchangedreplay. Exact historical11/live/outer/matched/final publication gates are separate.",
+  "remaining": "Substantive actual-result/source-effect acceptance, bounded metadata integration and exact source-onlysync terminal. Historical11/live/actual-host/matched/outer-client/final stable acceptance/publication/downloads remain separate.",
   "runtime_sha256": "302688d665d2f1cd1b57d4539d1471ca9337f48dde385ec0f1faae5431ea2032",
   "schema": "aide.current-repaired-lite-local-qualification.v1",
   "source49": 49,
   "source_head_before_package_integration": "3269160ffec959778c7df387037a2ceb26217fd6",
-  "status": "CURRENT_LOCAL_PACKAGE_SOURCE49_DELIVERED49_DELIVERED41_WITH_DATA_FIXTURES_AND_CASE0_PASS_REST_PENDING",
+  "status": "CURRENT_LOCAL_49_41_8_38_12_REPLAY_PASS_STABLE_PENDING",
   "whole_outcome_cost_quality_proof": "pending_unknown_total_parent_child_review_retry_repair_warmcold_usage"
 }

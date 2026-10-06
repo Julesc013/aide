@@ -3,8 +3,8 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: needs_review
-planning_state: repaired_payload49_delivered41_cases0_3_tail_pending
-result: CURRENT_PACKAGE49_DELIVERED41_CASES0_3_PASS_REST900_TIMEOUT_TAIL_PENDING
+planning_state: local_payload49_delivered41_consumers8_forms38_replay_pass_external_gates_open
+result: CURRENT_LOCAL_49_41_8_38_12_REPLAY_PASS_STABLE_PENDING
 created_at: 2026-09-28
 updated_at: 2026-10-06
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

@@ -1,59 +1,58 @@
 # ExecPlan: AIDE Lite stable release effect
 
-## Current dependency-ready delivery — 2026-10-06
+## Current local qualification closeout - 2026-10-06
 
-### Bounded remaining-case recovery
+Objective: close the completed current-byte consumer and replay qualification,
+keep failed attempts and source epochs honest, integrate the exact reviewed
+source into existing main/dev/task refs, and retain independent release gates.
+This is a local Lite qualification milestone, not final stable certification.
 
-Reviewed candidate/helper commit964d7e0a is clean. Its remaining-seven job
-e928a717 reached the unchanged900s total limit: original cases1/2/3 passed
-31/4/10 command checks, case4 was incomplete, and5/6/7 never started. Complete
-collection, quiescence, scratch retirement and reservation release verified;
-the failed job retains its exit124 and exact partial evidence.
+Scope: this WorkUnit's ExecPlan, REPORT, task/status and curated qualification
+summary; parent status; queue index; PLANS/IMPLEMENT/DOCUMENTATION; compiler-owned
+generated manifest only. Original worker/canaries, product modules, immutable
+four assets, export, permission profiles and disposition registry remain fixed.
+No new worktree, directory layout, feature framework, archive or blanket cleanup.
 
-Scope the next repair to this WorkUnit's capture adapter: add a fixed4–7 tail
-that invokes the original canaries and strict retirement, plus per-case elapsed
-time. The read-only original worker/canaries, runtime, assets and assertions do
-not change. Verify argument refusal and exact tail command vectors structurally,
-review the small source/commit effect, then commit before case6's original clean
-checkout check. Carry accepted cases0–3 without replay; obtain separate exact
-admission/review for the finite tail and lossless custody if capacity needs it.
-Acceptance requires actual original4–7 results, all8 current-byte oracles in
-their honest distinct job subjects, full38/12 coverage, retirement and replay.
-No total/child cap increase, new checkout, policy waiver or stable claim.
+Actual tail50ff6977 passed original cases4-7 with complete retained collection,
+Offline principal, four fixture retirements and released reservation. Existing
+case0f37a and completed1-3e928 remain separate subjects. e928 whole-rest remains
+native1/worker124 timeout. Its exact custody preserved all73 files/6 directories,
+original owner/receipt and lookup, retiring only redundant raw evidence.
+Current coverage binds38 forms/39 non-job outputs/12 job observations/51 unique
+records to actual current argv, exit/status, file hashes and honest job epochs.
+Replay e8633815 ran the original stable-build/stable-validate once; all4 assets,
+854 export files and48 release files stayed exact; full collection and retirement
+verify. No repeated source/delivered suite or completed-case replay occurred.
 
-The existing resource WorkUnit closed the live scratch deletion race with
-source60 and the unchanged original partial-import CLI case03 PASS10 under
-accepted runtime302688. Use that pinned26-component archive to supervise
-following source/export work; source edits do not silently change the runner.
-[Resource report](../AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/REPORT.md) and
-[qualification evidence](../AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-qualified-result.json)
-retain exact identities, reviews and verified collection/retirement.
+Verification/effect order: obtain substantive independent acceptance of these
+actual results; update only this bounded metadata closure and generated queue
+fingerprints; run harness validation/dry-run coherence and current-byte structural
+bindings; prevalidate the exact UTF8-LF commit message and staged tree; obtain
+exact source/commit/nonforce-ref acceptance; create and verify one metadata commit,
+then source-only synchronize main/dev/existing task while preserving85 other
+branch tips. Use exact terminal journals instead of another post-sync status
+commit. Keep local source and package provenance identities distinct.
 
-Source27338811 is the last synchronized checkpoint with88 corresponding pairs.
-Local export commit3269160f holds854 members/851 checksums and clean273
-provenance. New ZIP8280a38f/TAR3b417de4 contain the repaired scanner and passed
-source49/delivered49 without overlays, delivered41 with ten explicit data
-overlays, real completion/TimeoutExpired raw capture and original case0 PASS.
-Both exact owned custody operations preserved full evidence and saved7,367,008
-logical bytes. The original parent wrapper FAIL stays preserved; no completed
-operation was replayed. Refused9f28 is unchanged.
+Source qualification:60 workspace tests and original CLI10; affected package49
+source+49 delivered with no overlays; delivered41 with ten explicit data overlays;
+archive854 members/851 checksums. Preserve unchanged evidence. Pinned26-component
+runtime302688 supervises managed jobs; edited source never replaces it implicitly.
+Consumer tail keeps32MiB scratch/3MiB results/900s total/600s child/1GiB hard Job
+memory/32 processes; both4GiB memory reserves/10GiB disk/shared256MiB remain.
+Replay uses16MiB scratch/64KiB results/300s, canonical8MiB existing release scope.
+Disk growth/admission is cooperative and monitored, not a filesystem/global quota.
 
-Integrate these qualified candidate/helper bytes with a prevalidated guarded
-local commit, then run unchanged consumer cases1–7 from a clean checkout;
-the original case6 requires it. Bind current38 forms/12 job observations,
-verify unchanged archive replay and obtain exact source-only ref acceptance.
-Old ZIP5cba and its earlier partial/results/replay remain historical subjects,
-not current qualification. Current full8/38 and stable effects are pending.
-
-Keep limits finite, existing D roots, one heavy job, both4GiB reserves and
-verified retirement. No new worktree/layout/profile change. The eleven proposed
-historical dispositions, nested live permission/actual-host and matched
-outcomes, outer-client setup and final exact release/publication/download
-prerequisites remain separate; unchanged blockers do not admit repeated checks.
+After this closeout, remaining dependencies are exact11 historical owner
+message decisions, bounded nested live permission and actual-host/matched outcome
+qualification, a usable constrained outer client, and final exact stable release
+acceptance/publication/downloaded consumers. None is inferred from source sync.
+FacMan product development stays paused. Unchanged blockers do not justify new
+model rechecks, repeated reports or unrelated administrative tasks. Later sections
+preserve execution-time plans and historical subjects; this section routes work.
 
 ## Objective and source
 
-### Current-byte consumer dependency — 2026-10-06
+### Historical execution-time consumer dependency — 2026-10-06
 
 The repaired8280a38f ZIP/3b417de4 TAR passed actual source49/delivered49 and
 original delivered41 with ten explicit data overlays. Real completion and
