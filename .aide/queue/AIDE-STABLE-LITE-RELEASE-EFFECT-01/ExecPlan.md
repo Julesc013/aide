@@ -1593,3 +1593,30 @@ This closeout record precedes its exact commit/ref effect. The actual
 `evidence/automation-consumer-partial-sync-terminal.log` governs those completed
 effects; do not create a receipt-only commit or replay the closeout to tick
 these pre-effect checkboxes.
+
+
+## Consumer completion and tested failure-capture closeout - 2026-10-08
+
+Objective: retain exact eight-case current-byte qualification and apply the
+failure-capture reorder. Scope: exact job_forms_canary.py path under the current
+scoped-qualification task, this WorkUnit/evidence/report/status, reasonable-
+automation report, queue/root indexes and compiler manifest. Admission8c7b0e57
+and candidate51d9a46f are independently accepted; no new task/storage/worktree.
+Dependencies: source9ef220f5, unchanged ZIP822cbd42/TAR ef2c086e, eight distinct
+passing jobs and exact accepted coverage/curated b0319c27. Preserve original
+case0's1c673059 epoch and all four failures. Diagnostic exit0 remains diagnostic.
+
+Case6 discloses only512MiB nested memory instead of2GiB; all other fixture fields
+and4GiB reserves stay unchanged. Two focused failure/success capture checks and
+the original real case6 assertions passed. Case7 is unchanged. All scratch and
+reservations retired. Original2GiB setup remains unqualified. No archive/export,
+completed-case replay, additional model call or client change is needed here.
+
+Apply only the tested two-line assertion reorder; current archive excludes this
+canary. Check queue/index/compiler coherence, exact file diff, strict final
+message and staged tree. Obtain separate exact source/commit/ref review before
+one guarded commit and conditional main/dev CAS plus atomic ordinary push;
+preserve85 other tips/88 pairs. Actual effects use the ignored terminal journal,
+without a receipt-only follow-up commit. Ordinary constrained editing/read
+isolation, whole-outcome efficiency and final exact stable release/publication/
+downloaded consumers remain material gates. No cosmetic approval is pending.

@@ -1,5 +1,25 @@
 # AIDE Planning Index
 
+## Current consumer completion and capture repair - 2026-10-08
+
+All eight current-archive consumer cases passed across eight distinct jobs.
+The38 public forms have39 nonjob and12 job records (51 unique witnesses).
+Case6 uses a disclosed512MiB probe fixture and the tested capture reorder;
+the original2GiB selection remains unqualified. Both4GiB reserves,1GiB
+outer Job cap and existing D pools remain unchanged. Four failures and the
+diagnostic remain preserved. All scratch/reservations retired;207 passing
+retainedfiles total9,006,685B. Max scratch30,272,565B and Jobmemory331,825,152B
+are distinct observations. Controller/review usage remains unknown.
+
+[Exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-qualified.json)
+binds assets, source epochs, custody and detailed local command-proof references.
+The canary now saves the response before its unchanged failure assertion; both
+failure/success capture checks and real job-form consumer passed. It is excluded
+from the archive, so no export/archive or completed-consumer replay occurred.
+Ordinary constrained editing/read isolation, whole-outcome efficiency and exact
+stable release-effect/publication/downloaded-consumer gates remain open. Actual
+source effects belong to the terminal journal; older sections retain their epochs.
+
 ## Proportionate automation - 2026-10-07
 
 Current affected candidate qualification is complete: 49 source tests, 49 delivered

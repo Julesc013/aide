@@ -3822,8 +3822,8 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/evidence
   - id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
     status: needs_review
-    planning_state: automation_case0_pass_remaining7_memory_guard_pending
-    result: CURRENT_AUTOMATION_PARTIAL_CONSUMERS_STABLE_PENDING
+    planning_state: automation_consumers8_forms38_capture_repair_local_pass_stable_pending
+    result: CURRENT_AUTOMATION_CONSUMERS_QUALIFIED_STABLE_PENDING
     title: Freeze and qualify a publishable AIDE Lite release effect
     task: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml
     exec_plan: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md

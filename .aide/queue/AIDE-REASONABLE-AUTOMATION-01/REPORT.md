@@ -84,3 +84,13 @@ reserve with zero completed cases; all evidence and retirement are verified.
 retains those failures and the remaining seven cases without reopening owner
 formatting/account decisions. Exact old case0 lossless custody saved2,735,160
 logical bytes; current archives and accepted policy/package tests are unchanged.
+
+
+## Current native consumer completion - 2026-10-08
+
+The current archives passed eight original cases across distinct jobs, including
+disclosed512MiB fixture qualification and two capture checks. Four failures and
+the diagnostic remain separate. [Exact current proof](../AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-qualified.json)
+binds38forms/39nonjob/12job witnesses and retirement. No archive regeneration
+or new model call occurred. Ordinary constrained editing, whole-outcome efficiency
+and stable publication/acquisition remain separate material gates.

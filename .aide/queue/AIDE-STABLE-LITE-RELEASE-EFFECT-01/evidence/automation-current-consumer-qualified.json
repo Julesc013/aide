@@ -1,0 +1,272 @@
+{
+  "actual_case_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "aggregate_bytes": 268435456,
+  "aggregate_enforcement": "cooperative_admission_and_monitored_growth",
+  "archive_regeneration": false,
+  "artifact_source_commit": "6c37af95393dade9092dbfc788f466be34ff2c7c",
+  "assertions_or_expected_exit_codes_changed": false,
+  "assets": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": "905a30fedce5e7b7f0ae4b838fff7c111892909696b11a575691e7ce3c8a6916",
+    "aide-lite-v1.0.0.manifest.json": "aed5e88f915e8ef094da3e87f732a069c3f26d6f833c7c8519b798ba13bc526a",
+    "aide-lite-v1.0.0.tar.gz": "ef2c086ec211e0a041de07b8ea8e5d3b9c1553df0eeca2096bc8fe9c4f631860",
+    "aide-lite-v1.0.0.zip": "822cbd42b6ee87e5d09491a9aed988cb5294b8b061dcd40abfa87f84f9da494b"
+  },
+  "canary_excluded_from_release_archive": true,
+  "capture_candidate_sha256": "51d9a46fbf285664067b4c5b5247d5e9e61cbc0efe7f024cdc818b66d1f12ab7",
+  "cases": {
+    "0": {
+      "collection_verified": true,
+      "inputs_unchanged_at_execution": true,
+      "job_id": "62c59587b63a41a5bd7b6c2ad9a2497f",
+      "native_exit": 0,
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 331825152,
+        "scratch_bytes": 30272565
+      },
+      "receipt_sha256": "f82e1e974fcaa5890b97f93262c5b4abfccefd20374742c0102c5e4ffb318750",
+      "reservation_released": true,
+      "result_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-first-result.log",
+      "result_sha256": "a2a1bb31e8692866cba1035fc4bf1f72a7906565f1046bec86dd22999d29aa8b",
+      "retained_bytes": 3058464,
+      "retained_files": 39,
+      "scratch_retired": true,
+      "source_commit": "1c673059202b086b1e39ea06d06b3b4fd7f647fb",
+      "source_tree": "668fbfa2a701c58d71aa1d16b3bd12897cd135b3"
+    },
+    "1": {
+      "collection_verified": true,
+      "inputs_unchanged_at_execution": true,
+      "job_id": "c9bb2559b93e41329b976d51c27ce371",
+      "native_exit": 0,
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 271306752,
+        "scratch_bytes": 27369389
+      },
+      "receipt_sha256": "ed38e5894136a9442c55af58bc2c698271ab10cd45e2fc85c8b9797e4986de1d",
+      "reservation_released": true,
+      "result_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-single1-result.log",
+      "result_sha256": "25c071f143239a406611da17f389c8ee9565cb394977a2fe5528abf47262fcf5",
+      "retained_bytes": 4158809,
+      "retained_files": 43,
+      "scratch_retired": true,
+      "source_commit": "9ef220f503de759f52ff9d94d91e4a2727b57e2b",
+      "source_tree": "ded9e7c724d08036d723e0a2fa02013804d54f7c"
+    },
+    "2": {
+      "collection_verified": true,
+      "inputs_unchanged_at_execution": true,
+      "job_id": "81fd3e273b5e44e88b3df31b1b89a3d2",
+      "native_exit": 0,
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 253202432,
+        "scratch_bytes": 15085187
+      },
+      "receipt_sha256": "ce2e57bba6a8b20df743eeb34ba3142bcfec7054008519b50f354320d745bd8b",
+      "reservation_released": true,
+      "result_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-single2-result.log",
+      "result_sha256": "05e8eb5fadadc54661f9aaaab12d299a0bd32ff13591a2f1ae1d3612c0b0d99e",
+      "retained_bytes": 234078,
+      "retained_files": 22,
+      "scratch_retired": true,
+      "source_commit": "9ef220f503de759f52ff9d94d91e4a2727b57e2b",
+      "source_tree": "ded9e7c724d08036d723e0a2fa02013804d54f7c"
+    },
+    "3": {
+      "collection_verified": true,
+      "inputs_unchanged_at_execution": true,
+      "job_id": "b142f3e917614e44a08bf490e6d4cd33",
+      "native_exit": 0,
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 330035200,
+        "scratch_bytes": 22591329
+      },
+      "receipt_sha256": "982997064daa8d7a2e1e863c2c87fcca014a71aab965f290740a170f19a7f6ad",
+      "reservation_released": true,
+      "result_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-single3-result.log",
+      "result_sha256": "a1ec6671db9461118cf3f2689f0e076e332886428d1611207871a35d19f1c7cf",
+      "retained_bytes": 147552,
+      "retained_files": 22,
+      "scratch_retired": true,
+      "source_commit": "9ef220f503de759f52ff9d94d91e4a2727b57e2b",
+      "source_tree": "ded9e7c724d08036d723e0a2fa02013804d54f7c"
+    },
+    "4": {
+      "collection_verified": true,
+      "inputs_unchanged_at_execution": true,
+      "job_id": "21d562995bfa4da3b885f0dd51ecd4ad",
+      "native_exit": 0,
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 263475200,
+        "scratch_bytes": 7365519
+      },
+      "receipt_sha256": "2433e5305841b106d7ec0e4cc7466ec7b4ef3721bd90600420c15ca01aadcaae",
+      "reservation_released": true,
+      "result_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-single4-result.log",
+      "result_sha256": "71602bcb3bcbdd29a9ce3c652fdf0f7c1b54c43d499069b8b3e06cbe3c3d4077",
+      "retained_bytes": 239437,
+      "retained_files": 19,
+      "scratch_retired": true,
+      "source_commit": "9ef220f503de759f52ff9d94d91e4a2727b57e2b",
+      "source_tree": "ded9e7c724d08036d723e0a2fa02013804d54f7c"
+    },
+    "5": {
+      "collection_verified": true,
+      "inputs_unchanged_at_execution": true,
+      "job_id": "10e40e0f55dc42cbbc42906efa78d0d4",
+      "native_exit": 0,
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 292225024,
+        "scratch_bytes": 14494650
+      },
+      "receipt_sha256": "e479ac0881d796653c58196722f56c7b7c709a9bb893dc6f9082d00a79ee49c1",
+      "reservation_released": true,
+      "result_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-completion5-result.log",
+      "result_sha256": "444d69705589f7fa1276fcb8372378eec1b5f7d066818d6444c235024131e18b",
+      "retained_bytes": 1092377,
+      "retained_files": 26,
+      "scratch_retired": true,
+      "source_commit": "9ef220f503de759f52ff9d94d91e4a2727b57e2b",
+      "source_tree": "ded9e7c724d08036d723e0a2fa02013804d54f7c"
+    },
+    "6": {
+      "collection_verified": true,
+      "inputs_unchanged_at_execution": true,
+      "job_id": "12dc2e3b0f2e4abeb5f6f31d77250801",
+      "native_exit": 0,
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 286920704,
+        "scratch_bytes": 43080
+      },
+      "receipt_sha256": "b11daf947421c7be1a04cb25f27136bf587883aac71b237f6ddd0beb4baf1294",
+      "reservation_released": true,
+      "result_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-calibrated6-result.log",
+      "result_sha256": "63f7011e445e6e61f588b829cd7c0b2d3dad84e6519c8a60e83bc6913919fbef",
+      "retained_bytes": 55048,
+      "retained_files": 25,
+      "scratch_retired": true,
+      "source_commit": "9ef220f503de759f52ff9d94d91e4a2727b57e2b",
+      "source_tree": "ded9e7c724d08036d723e0a2fa02013804d54f7c"
+    },
+    "7": {
+      "collection_verified": true,
+      "inputs_unchanged_at_execution": true,
+      "job_id": "879193b1cef04f98a1ed70279bcb75c6",
+      "native_exit": 0,
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 253919232,
+        "scratch_bytes": 8953
+      },
+      "receipt_sha256": "e62d4f36e6bfeede7b63585912388ba5338a318436ad707919f0fbdc387d6025",
+      "reservation_released": true,
+      "result_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-calibrated7-result.log",
+      "result_sha256": "19f1766cdcb1e1ca9d72f80a1795f340bdc7a3c32b0247e6056c0134f6b64ba2",
+      "retained_bytes": 20920,
+      "retained_files": 11,
+      "scratch_retired": true,
+      "source_commit": "9ef220f503de759f52ff9d94d91e4a2727b57e2b",
+      "source_tree": "ded9e7c724d08036d723e0a2fa02013804d54f7c"
+    }
+  },
+  "completed_case_replay": false,
+  "controller_and_review_usage": "unknown",
+  "coverage_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-public-form-coverage.log",
+  "coverage_sha256": "1e52dc46a5e5c37939b6b721e5fe02604fc6f0f5a32afb07e308d79d8b2824a5",
+  "current_unique_command_records": 51,
+  "diagnostic": {
+    "captured_refusal_reason": "memory reservation would consume physical_free",
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-setup-observation-result.log",
+    "sha256": "433a603a47e0b00d37e30547d33715abe3c5fda2dea0e0a048c20e07c22ba697",
+    "status": "DIAGNOSTIC_COMPLETED_NOT_CONSUMER_PASS"
+  },
+  "disk_reserve_bytes": 10737418240,
+  "distinct_passing_jobs": 8,
+  "existing_pool": "D:/Projects/AIDE/.aide.local/execution",
+  "fixture_profile": {
+    "calibrated_template_sha256": "6b9948502d0a70261e1c6e9c0a585f97bb6572ba5be9b983a8f29855f9a74cac",
+    "calibration_rationale": "TwoGiB fixture reservation refused before dispatch. Probe is one tiny deterministic Python child;512MiB finite child Job cap below unchanged1GiB enclosing Job cap. No increased allowance or new spending.",
+    "capture_candidate_sha256": "51d9a46fbf285664067b4c5b5247d5e9e61cbc0efe7f024cdc818b66d1f12ab7",
+    "failure_capture_regressions": [
+      {
+        "criterion": "same refusal assertion; full failed output now retained",
+        "status": "PASS"
+      },
+      {
+        "criterion": "same successful result and record",
+        "status": "PASS"
+      }
+    ],
+    "fixture_memory_bytes": 536870912,
+    "only_changed_field": "limits.memory_bytes",
+    "original_memory_bytes": 2147483648,
+    "original_template_sha256": "f7b89605be4e453bb6d71b35001bbb6d1d7dd26989c91089070f934b8c8721ed",
+    "outer_limits_changed": false,
+    "reserves_changed": false,
+    "schema": "aide.disclosed-jobform-fixture.v1"
+  },
+  "full_input_epochs": {
+    "case0": 927,
+    "cases1_to7": 928
+  },
+  "independent_verdict": "Required exact native/coverage/source effect acceptance belongs to its external terminal review journal; this summary does not grant acceptance.",
+  "job_form_observations": 12,
+  "native_worker_model_calls": 0,
+  "nonjob_output_observations": 39,
+  "outer_job_memory_hard_cap_bytes": 1073741824,
+  "peaks_distinct_observations": {
+    "memory_max_bytes": 331825152,
+    "scratch_max_bytes": 30272565
+  },
+  "physical_and_commit_reserve_bytes": 4294967296,
+  "prior_failures": {
+    "completion6": {
+      "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-completion6-result.log",
+      "sha256": "ed11b56925b3b43b3fd6e897055a39c4e9b6b0b6abb90b1eb842e2818e4ac0f8",
+      "status": "FAIL"
+    },
+    "middle": {
+      "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-middle-result.log",
+      "sha256": "ed919e315c57492fb190d4b6a453e978ea76af40beb6574d1bf8e0f6a0f877fb",
+      "status": "FAIL"
+    },
+    "middle-recovery": {
+      "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-middle-recovery-result.log",
+      "sha256": "26a05490ad1dd29b15ba889597fde89c27739099107d86566cc99327cce48a15",
+      "status": "FAIL"
+    },
+    "single5": {
+      "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-single5-result.log",
+      "sha256": "27403a72bbdbd9fb272626d3f1b4795c2c6bcfdf4a3753a37d79c18d6523bab4",
+      "status": "FAIL"
+    }
+  },
+  "public_forms": 38,
+  "qualification_source_commit": "9ef220f503de759f52ff9d94d91e4a2727b57e2b",
+  "remaining_material_gates": [
+    "ordinary constrained model editing/client route and read isolation",
+    "whole-outcome efficiency with observable overhead and unknown coverage retained",
+    "exact final stable release effect acceptance",
+    "tag/publication and downloaded-byte consumers"
+  ],
+  "retained_passing_jobs_bytes": 9006685,
+  "retained_passing_jobs_files": 207,
+  "schema": "aide.current-consumer-qualified.v1",
+  "stable_release": false,
+  "status": "LOCAL_NATIVE_PASS_STABLE_PENDING"
+}

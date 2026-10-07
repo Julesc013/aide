@@ -35,8 +35,6 @@ def invoke(cli, payload, label, *args, stdin=None, exits=(0,)):
     command = [sys.executable, "-I", "-B", str(cli), "--repo-root", str(payload), "job", *args]
     process = subprocess.run(command, cwd=ROOT, input=stdin, capture_output=True,
                              text=stdin is None, timeout=120)
-    if process.returncode not in exits:
-        raise AssertionError(f"{label} exited {process.returncode}: {process.stderr[-500:]!r}")
     stdout = process.stdout if isinstance(process.stdout, bytes) else process.stdout.encode()
     proof = Path(os.environ["AIDE_JOB_OUTPUT"]) / "command_outputs"
     proof.mkdir(exist_ok=True)
@@ -45,6 +43,8 @@ def invoke(cli, payload, label, *args, stdin=None, exits=(0,)):
         "argv": command, "exit_code": process.returncode,
         "stdout": stdout.decode(errors="replace"), "stderr": stderr,
     }, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+    if process.returncode not in exits:
+        raise AssertionError(f"{label} exited {process.returncode}: {process.stderr[-500:]!r}")
     result = json.loads(stdout)
     return result, {"label": label, "exit_code": process.returncode,
                     "stdout_sha256": hashlib.sha256(stdout).hexdigest(),
