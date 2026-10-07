@@ -63,8 +63,10 @@ remain in the configured retained pool; abbreviated views do not discard them.
 
 This is qualified source and bounded child evidence. The active VS Code shell,
 editor and integrations remain unrestricted. Ordinary constrained editing and
-read isolation are unqualified. Changed CLI/policy bytes require an affected
-portable payload refresh; existing Lite archives retain their old identities.
+read isolation are unqualified. One scoped export refreshed the portable pack
+from clean6c37af95,854 members/851 exact checksummed derivations. Collection and
+retirement verified; [actual export](../AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-export-qualified.json)
+binds this result. Existing Lite archives retain their old identities and bytes.
 Stable tag/publication, downloaded-byte consumers and broader project outcomes
 remain separate. Exact guarded commit/source synchronization outcomes belong
 to `evidence/source-sync-terminal.log`; no receipt-only follow-up commit is needed.

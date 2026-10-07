@@ -1,0 +1,137 @@
+{
+  "canonical_after": {
+    ".aide/export/aide-lite-pack-v0": 4341317
+  },
+  "canonical_before": {
+    ".aide/export/aide-lite-pack-v0": 4321660
+  },
+  "changed_paths": [
+    ".aide/export/aide-lite-pack-v0/checksums.json",
+    ".aide/export/aide-lite-pack-v0/files/.aide/policies/commit-message-dispositions.yaml",
+    ".aide/export/aide-lite-pack-v0/files/.aide/policies/commit-messages.yaml",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q27_commit_recovery.py",
+    ".aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md",
+    ".aide/export/aide-lite-pack-v0/files/docs/reference/commit-discipline.md",
+    ".aide/export/aide-lite-pack-v0/manifest.yaml"
+  ],
+  "checksummed_exact_derivations": 851,
+  "config_sha256": "a9157a21914ad4e0da9a187e91c04dda2c3662e61574b0a9a19e8f40421eabdc",
+  "effect_sha256": "118e7c361209635e3f2fe567a8da0df76829f976bac86fd18dcba55f3ddb8043",
+  "exact_mapping_basis": "All851 checksummed bytes compared with unchanged generator source-copy or template derivation; metadata/checksum boundary validated",
+  "job_id": "5c63a348cf1e4606a0773ebfe965181c",
+  "job_sha256": "84a7e6dd03ba42ec4fc798aca9d1710d40bd39a2c1c6f9bac2bb0a238b7c89df",
+  "limits_note": "8MiB sole canonical reservation, 4MiB scratch; collected output limit excludes 253373-byte receipt/control metadata; 256MiB aggregate monitored, not hard filesystem quota",
+  "manifest_digest": "fa45cc5171e5a64ec217be79d2c177788ee397e7d4b86c932b0917bb0836f942",
+  "noncanonical_inputs_unchanged": 847,
+  "old_canonical_preimages": 854,
+  "pack_bytes": 4341317,
+  "pack_files": 854,
+  "pack_manifest": {
+    "checksum_scope": "payload and static pack docs; excludes manifest.yaml, checksums.json, and export-report.md",
+    "contents_inline": "false",
+    "excluded_classes": "",
+    "generated_by": "aide-lite q24.existing-tool-adapter-compiler.v0",
+    "included_files": "",
+    "limitations": "",
+    "local_state_copied": "false",
+    "no_secret_guarantee": "obvious secret-like patterns are refused during export",
+    "pack_id": "aide-lite-pack-v0",
+    "provider_or_model_calls": "false",
+    "raw_prompt_storage": "false",
+    "raw_response_storage": "false",
+    "required_target_initialization_steps": "",
+    "schema_version": "q21.aide-lite-pack-manifest.v0",
+    "source_commit": "6c37af95393dade9092dbfc788f466be34ff2c7c",
+    "source_dirty_state": "false",
+    "source_repo": "julesc013/aide"
+  },
+  "pack_member_map_sha256": "9896fcb6f11a5274a3e64c31f752d0a063a888e8e8dfd7df4ec6b5b32d075ffe",
+  "pack_member_witness": "checksums.json retains all851payload/static hashes; three excluded metadata hashes below; no discarded execution logs",
+  "pack_metadata_sha256": {
+    "checksums.json": {
+      "bytes": 112809,
+      "sha256": "7354fa79e8c83e5813fbb699f8284bd03c12b6c2a3c5b2e9935d10c3c7ebd90f"
+    },
+    "export-report.md": {
+      "bytes": 1797,
+      "sha256": "dcc62457534124758692c0122f362ff740ec7370403dd83d79030362ffe8a0aa"
+    },
+    "manifest.yaml": {
+      "bytes": 54101,
+      "sha256": "71f7a6fe8c598aae09e0e89014707132b890650d1f2cdfd58f0d0362c6d957e3"
+    }
+  },
+  "payload_collection_bytes": 2107,
+  "receipt_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\5c63a348cf1e4606a0773ebfe965181c\\receipt.json",
+  "receipt_sha256": "9bbc51e9119c6262aa17afb31533d1d9020d10d902f2eb87a195363e8ad4e557",
+  "remaining": [
+    "delivered/archive/current-byte qualification",
+    "ordinary constrained outer edit/test/collect path",
+    "read isolation",
+    "whole-outcome efficiency usage coverage",
+    "exact final release acceptance/publication/acquisition"
+  ],
+  "retained_file_map": {
+    "logs/stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdout": {
+      "bytes": 292,
+      "sha256": "c444bb0ed5a9b8b5c13901f432d10d1f9f971a4eb523d0a4701b44f17aa1f945"
+    },
+    "output/effective-scope.json": {
+      "bytes": 1815,
+      "sha256": "838e16cd6de6c49aa7162054fe064d6e4bfacf521db4803589b357ec5217e86e"
+    },
+    "owner.json": {
+      "bytes": 140,
+      "sha256": "35440994a4c4a6117ed38e7bc412037c6b7289901a86d735f4b276efe66d3686"
+    },
+    "receipt.json": {
+      "bytes": 253373,
+      "sha256": "9bbc51e9119c6262aa17afb31533d1d9020d10d902f2eb87a195363e8ad4e557"
+    }
+  },
+  "retirement": {
+    "active_record_absent": true,
+    "quiescent": true,
+    "reservation_released": true,
+    "scratch_absent": true
+  },
+  "sampled_peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4341317
+    },
+    "memory_bytes": 218660864,
+    "scratch_bytes": 2247
+  },
+  "schema": "aide.affected-export-result.v1",
+  "source_commit": "6c37af95393dade9092dbfc788f466be34ff2c7c",
+  "source_tree": "d20f963dc693a4b90eb56eb4df357ed59728dfc2",
+  "stable_assets_unchanged": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": {
+      "bytes": 274,
+      "sha256": "ce8b3016ae494f3828012d77b82e6bc62c470a5631ffda1f632e43ec94cd8ddf"
+    },
+    "aide-lite-v1.0.0.manifest.json": {
+      "bytes": 4955,
+      "sha256": "c0eac87c89070f7e3ca99692d4c43813012796986c458a5981fc313ffe9abf1b"
+    },
+    "aide-lite-v1.0.0.tar.gz": {
+      "bytes": 829216,
+      "sha256": "3b417de4c38aca4c850b4c48f39f6e4c6d52cf04f0b7110c20b03e51bb48e824"
+    },
+    "aide-lite-v1.0.0.zip": {
+      "bytes": 1167927,
+      "sha256": "8280a38fb51ac85a8d644daf3e75e6957576c3ee573c5c02182046cd0c472911"
+    }
+  },
+  "status": "PASS",
+  "total_retained_bytes": 255620
+}

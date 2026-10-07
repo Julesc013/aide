@@ -29,6 +29,16 @@ and retirement. It emits a prepared message/digest after strict validation,
 without inventing substance or changing files/history. The [task report](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/REPORT.md)
 and source-sync terminal own the bounded outcome and actual ref effects.
 
+
+The affected portable pack was refreshed by one scoped export job from clean
+source6c37af95:854 members/851 checksummed exact derivations,4,341,317 logical
+bytes. Full collection and scratch/reservation retirement verified; only eight
+expected export files changed. The first read-only selection refusal allocated
+nothing and remains preserved. [Export evidence](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-export-qualified.json)
+records the actual result. Existing ZIP/TAR bytes are unchanged and do not contain
+this refresh; affected delivered/archive qualification and final release effects
+remain separate. Current integration refs belong to the effect terminal journal.
+
 ## Current client launch qualification - 2026-10-07
 
 The actual client is VS Code Codex extension 26.930.41038/backend 0.160.0.

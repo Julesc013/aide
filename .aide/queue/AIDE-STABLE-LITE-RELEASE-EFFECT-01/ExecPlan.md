@@ -1480,3 +1480,36 @@ are unchanged. This repair is not a whole-client containment or efficiency claim
 The current closeout uses effect receipts for source state so it does not need
 another descriptive commit whenever its own branch tip advances. Current archive
 bytes and source tests remain qualified. No admitted replay job has run.
+
+
+## Owner-directed automation payload refresh - 2026-10-07
+
+The reasonable-automation WorkUnit supersedes the older cosmetic owner packet
+and ordinary live-permission blocker under the actual owner's instruction.
+Clean source6c37af95 has accepted47 affected checks, six draft checks, the bounded
+signed-in canary and matched pair. All three model turns are consumed; partial
+child usage is not whole-outcome savings. Preserve their original subjects.
+
+One export-only v1 selection refused before allocation because it was read-only.
+Preserve that refusal and its effect. The separately reviewed v2 changed only
+that selector to the existing scoped-write kind and its manifest config binding.
+One job5c63a348 completed from clean6c37af95,854 members/851 exact checksummed
+derivations,4,341,317 logical bytes. Eight derivative paths changed. The other
+847 inputs remained unchanged; old854 preimages are retained in Git6c37.
+Full six-file255,620-byte collection verified, including253,373-byte receipt
+metadata and2,107-byte collected payload/logs. Sampled scratch2,247 bytes and
+Job memory218,660,864 bytes; scratch absent/reservation released/active absent.
+Sole8MiB canonical reservation and unchanged256MiB aggregate remain monitored,
+not a filesystem quota; control metadata is not hidden by the64KiB payload limit.
+The four existing stable asset bytes are unchanged, with no new archive claim.
+
+Bounded closeout scope: eight changed export files, this ExecPlan, the compact
+actual export JSON, reasonable-automation REPORT and three root indexes only.
+Exact result/source/message/tree review precedes the guarded normal commit.
+Then separately qualified source-only main/dev/existing-task CAS and atomic
+ordinary push may proceed under existing delegation, preserving85 other tips.
+No further model, archive/consumer, runtime promotion, tag or publication effect
+is admitted by this slice. Current source/ref effects belong to its terminal.
+Affected delivery and constrained ordinary editing/read isolation/whole-outcome
+usage/final exact release/acquisition remain technical work; old packet records
+are historical and are not retroactively changed to pass.
