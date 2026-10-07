@@ -1,0 +1,107 @@
+{
+  "active_record_absent": true,
+  "archive_member_count": 854,
+  "assets": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": {
+      "bytes": 274,
+      "sha256": "905a30fedce5e7b7f0ae4b838fff7c111892909696b11a575691e7ce3c8a6916"
+    },
+    "aide-lite-v1.0.0.manifest.json": {
+      "bytes": 4955,
+      "sha256": "aed5e88f915e8ef094da3e87f732a069c3f26d6f833c7c8519b798ba13bc526a"
+    },
+    "aide-lite-v1.0.0.tar.gz": {
+      "bytes": 834192,
+      "sha256": "ef2c086ec211e0a041de07b8ea8e5d3b9c1553df0eeca2096bc8fe9c4f631860"
+    },
+    "aide-lite-v1.0.0.zip": {
+      "bytes": 1172791,
+      "sha256": "822cbd42b6ee87e5d09491a9aed988cb5294b8b061dcd40abfa87f84f9da494b"
+    }
+  },
+  "delivered_automation_tests": 10,
+  "delivered_commit_case_coverage": "47exactcompleted cases in failed parent +2native passing cases in tail =49unique original assertions acrossdistinct jobs; no whole-parent PASS",
+  "delivered_q27_fixture_support": "module-local managed factory only, nofile/assertion overlays",
+  "export_checksums": 851,
+  "export_provenance": "clean6c37af95393dade9092dbfc788f466be34ff2c7c",
+  "export_witness_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-export-qualified.json",
+  "failed_parent_preserved": {
+    "completed_delivered_cases": 47,
+    "job_id": "01377a1352da4719bc2b4f65b0ad6910",
+    "result": "FAIL memory reserve danger",
+    "terminal_suite49": false
+  },
+  "failures_errors_skips": 0,
+  "full_tail_custody": {
+    "logs/stderr": {
+      "bytes": 1886,
+      "sha256": "c2013bb0197550fdcc05bab50472706313cf9680783f321cf1dc77ea0cd51803"
+    },
+    "logs/stdin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdout": {
+      "bytes": 127,
+      "sha256": "6466846615ff2ae2f23f7900a5d8a0d2dd26bd1fd93c5a59c85c57c9074c00a6"
+    },
+    "output/delivered-tail.json": {
+      "bytes": 4751,
+      "sha256": "ced17c12062438c2f4902e0ca949d14ccddb9b336d737f0051e4646cab1d231c"
+    },
+    "output/delivered-tail2.stderr": {
+      "bytes": 393,
+      "sha256": "44eb1885af0bf9b16ec05fd1f81356a63097326160bd8c3241d7cc743952ccf1"
+    },
+    "output/delivered-tail2.stdout": {
+      "bytes": 213,
+      "sha256": "15d7a6b3c36f09ec770d259a9e07e2cbe6f34bbec3c0a58c51409e68d7a4fb5c"
+    },
+    "output/effective-scope.json": {
+      "bytes": 1676,
+      "sha256": "d5fab64ede04729afb348a9ecfcb80cc0295f2a08337dd26458285e04d642f8c"
+    },
+    "owner.json": {
+      "bytes": 140,
+      "sha256": "7a709191e90e954689ba6375617d91cce6558fc58a39bc62e1f47921dc25e3f0"
+    },
+    "receipt.json": {
+      "bytes": 17802,
+      "sha256": "fcf1776a083fefa545f836c6435509e1d3373908dd6069ecbc9292f79dab6240"
+    }
+  },
+  "immutable_inputs1803_unchanged": true,
+  "model_calls": 0,
+  "next": "independent actual local result acceptance then bounded qualifiedasset/doccommit/source sync; remaining operational and final exact release effects separate",
+  "not_claimed": [
+    "old eightconsumer/38form evidence reboundto newbytes",
+    "wholeclient or readisolation",
+    "harddiskquota",
+    "wholeoutcome efficiency",
+    "stablecertification/tag/publication/downloadedconsumers"
+  ],
+  "partial_sha256": "9d0b8574bdc75aa9796e3b9a383f0bbd083412c96823b57f700f2a3847c4f906",
+  "release48names_exact_and44nonstable_unchanged": true,
+  "result": "LOCAL_AFFECTED_QUALIFICATION_COMPLETE",
+  "schema": "aide.current-automation-package-qualified.v1",
+  "source49_and_build_validate_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-package-partial.json",
+  "source_commit": "581acb8443b43ef8167630d676c33c2cc4373892",
+  "source_tree": "0e8204a17699241c0fe3cc438b955300b4321a0b",
+  "tail_exit_code": 0,
+  "tail_job_id": "370fb4e9c15e4c8a82bf1a8b314446d0",
+  "tail_manifest_digest": "63036b8007fbb814d77cbd5e6486df672d5b12c459f75d2aeedd7e0499ca04b5",
+  "tail_output_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\370fb4e9c15e4c8a82bf1a8b314446d0\\output\\delivered-tail.json",
+  "tail_output_sha256": "ced17c12062438c2f4902e0ca949d14ccddb9b336d737f0051e4646cab1d231c",
+  "tail_quiescent": true,
+  "tail_receipt_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\370fb4e9c15e4c8a82bf1a8b314446d0\\receipt.json",
+  "tail_receipt_sha256": "fcf1776a083fefa545f836c6435509e1d3373908dd6069ecbc9292f79dab6240",
+  "tail_reservation_released": true,
+  "tail_result": "PASS",
+  "tail_retained_bytes": 26988,
+  "tail_sampled_peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 246353920,
+    "scratch_bytes": 4350825
+  },
+  "tail_scratch_absent": true
+}

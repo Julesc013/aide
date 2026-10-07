@@ -66,7 +66,12 @@ editor and integrations remain unrestricted. Ordinary constrained editing and
 read isolation are unqualified. One scoped export refreshed the portable pack
 from clean6c37af95,854 members/851 exact checksummed derivations. Collection and
 retirement verified; [actual export](../AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-export-qualified.json)
-binds this result. Existing Lite archives retain their old identities and bytes.
+binds this result. The subsequently refreshed local ZIP/TAR now contain that
+payload. Its [affected qualification](../AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-package-qualified.json)
+passed 49 source tests, 49 delivered cases across jobs and 10 automation cases.
+The memory-refused parent remains failed; completed cases were reused and only
+the two missing cases plus 10 unstarted cases ran in the read-only tail.
+Full custody/retirement verified. Old consumer evidence retains its old bytes.
 Stable tag/publication, downloaded-byte consumers and broader project outcomes
 remain separate. Exact guarded commit/source synchronization outcomes belong
 to `evidence/source-sync-terminal.log`; no receipt-only follow-up commit is needed.

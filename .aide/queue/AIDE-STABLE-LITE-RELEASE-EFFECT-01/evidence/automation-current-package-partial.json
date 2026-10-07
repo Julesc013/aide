@@ -1,0 +1,393 @@
+{
+  "active_record_absent": true,
+  "archive854_maps_equal": true,
+  "assets": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": {
+      "bytes": 274,
+      "sha256": "905a30fedce5e7b7f0ae4b838fff7c111892909696b11a575691e7ce3c8a6916"
+    },
+    "aide-lite-v1.0.0.manifest.json": {
+      "bytes": 4955,
+      "sha256": "aed5e88f915e8ef094da3e87f732a069c3f26d6f833c7c8519b798ba13bc526a"
+    },
+    "aide-lite-v1.0.0.tar.gz": {
+      "bytes": 834192,
+      "sha256": "ef2c086ec211e0a041de07b8ea8e5d3b9c1553df0eeca2096bc8fe9c4f631860"
+    },
+    "aide-lite-v1.0.0.zip": {
+      "bytes": 1172791,
+      "sha256": "822cbd42b6ee87e5d09491a9aed988cb5294b8b061dcd40abfa87f84f9da494b"
+    }
+  },
+  "checksums851_verified": true,
+  "delivered47_exact_completed_cases": [
+    "test_active_hook_refused_without_execution_or_reconfiguration",
+    "test_arbitrary_global_config_override_refused",
+    "test_changed_lock_preserved_before_ref_advance",
+    "test_created_wrong_object_cannot_advance_branch",
+    "test_declared_gitlink_can_commit_exact_tree",
+    "test_dry_run_has_no_candidate_or_ref_effect",
+    "test_existing_lock_preserved",
+    "test_expected_parent_refuses_stale_head",
+    "test_expected_tree_refuses_changed_stage",
+    "test_extra_staged_path_refuses",
+    "test_git_config_file_redirection_refused",
+    "test_git_redirection_refused",
+    "test_head_switch_is_not_silently_followed",
+    "test_hidden_gitlink_cannot_evade_exact_tree",
+    "test_hidden_gitlink_cannot_evade_path_scope",
+    "test_invalid_message_creates_no_object_or_ref",
+    "test_lost_ref_result_keeps_uncertainty_and_candidate",
+    "test_merge_state_refused",
+    "test_message_digest_refuses_changed_input",
+    "test_non_relative_scope_refuses",
+    "test_owned_lock_blocks_cooperating_git_staging",
+    "test_owned_lock_exact_lf_bytes_verified_and_retired",
+    "test_partial_runner_config_isolation_refused",
+    "test_postcondition_failure_keeps_advanced_candidate",
+    "test_prepared_git_locks_block_branch_and_head_changes",
+    "test_prepared_input_refusal_aborts_without_ref_change",
+    "test_public_cli_changed_inputs_cannot_advance",
+    "test_public_cli_invalid_message_cannot_advance",
+    "test_public_cli_preview_then_normal_commit",
+    "test_public_fixture_authentication_refusal_has_no_retry_or_allocation",
+    "test_public_fixture_bounded_active_read_retry",
+    "test_public_fixture_other_permission_error_has_no_retry",
+    "test_public_fixture_persistent_active_denial_fails_closed",
+    "test_public_fixture_retries_authentication_read_then_authenticates",
+    "test_ref_mismatch_refuses",
+    "test_rename_requires_both_declared_paths",
+    "test_runner_null_global_pair_preserved_and_succeeds",
+    "test_runtime_count_missing_refuses_remaining_pairs",
+    "test_runtime_malformed_configuration_refused",
+    "test_runtime_safe_directory_preserved_and_succeeds",
+    "test_runtime_settings_rechecked_before_each_git_call",
+    "test_runtime_unexpected_indices_refused",
+    "test_runtime_unsupported_configuration_refused",
+    "test_short_object_identity_refuses",
+    "test_signing_refused_without_changing_configuration",
+    "test_success_exact_object_and_unstaged_bytes_preserved",
+    "test_symbolic_expected_branch_refused"
+  ],
+  "delivered_automation10": "not_started",
+  "delivered_raw_stream_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\01377a1352da4719bc2b4f65b0ad6910\\output\\delivered-commit49.stderr",
+  "delivered_raw_stream_sha256": "92769f6076d8160ccd13768d7d1823a933ed4cd9d80d66524b3e72fad7a3b20c",
+  "delivered_remaining_cases": [
+    "test_unproven_git_reaping_preserves_owned_index_lock",
+    "test_windows_null_device_case_preserves_setting"
+  ],
+  "delivered_suite_terminal_count": "absent_interrupted",
+  "delivered_test_sha256": "19842a0f7dfde4db7db1725bc44f84c1eae93cfac8d90ae928d662f71bf7e614",
+  "full_custody": {
+    "logs/stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output/current-payload.json": {
+      "bytes": 17283,
+      "sha256": "1e9e378d4575a16e7c069b51f0ab7e33e70245d3f5697718ff15522de1633952"
+    },
+    "output/delivered-commit49.stderr": {
+      "bytes": 6976,
+      "sha256": "92769f6076d8160ccd13768d7d1823a933ed4cd9d80d66524b3e72fad7a3b20c"
+    },
+    "output/delivered-commit49.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output/effective-scope.json": {
+      "bytes": 1781,
+      "sha256": "6259a6e540e2a5bd8c5e50b436b4ad4c7b7c113e0f2704b43b8aed17ef892693"
+    },
+    "output/stable-build.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output/stable-build.stdout": {
+      "bytes": 123,
+      "sha256": "2da22a2ae4f5772a2720d54c075e9494f5bfb9fad0aa07581166d946671eab8b"
+    },
+    "output/stable-validate.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output/stable-validate.stdout": {
+      "bytes": 50,
+      "sha256": "986b22ede5aad84ee9e7c264d9de0161f15805f77720a5a4f6d024bbee07df52"
+    },
+    "output/test_public_archive_fixture.stderr": {
+      "bytes": 111,
+      "sha256": "d14fbef698e361afc08ed043ba92c852332b088b7dd8d5c9c21be09be8c22f14"
+    },
+    "output/test_public_archive_fixture.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output/test_q47_part_1.stderr": {
+      "bytes": 1304,
+      "sha256": "b9eda2cc601affa2bbb413fe015c48aceaf16b710324b46e9f77b2d96f58f691"
+    },
+    "output/test_q47_part_1.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output/test_q47_part_2.stderr": {
+      "bytes": 1286,
+      "sha256": "257f2442e32e4e18fba81424a7731c5a84c7a2f7f499cc5e8921c82b74eab2df"
+    },
+    "output/test_q47_part_2.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output/test_q47_part_3.stderr": {
+      "bytes": 1420,
+      "sha256": "2677597ad21c2483a78c782a761b0223e932de4dc2eecadc68fedb5cc3effb74"
+    },
+    "output/test_q47_part_3.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output/test_q48_github_release_draft.stderr": {
+      "bytes": 117,
+      "sha256": "b64fc4c8db978194bf3c5a9c89507ddc8b7f1c4ec0556118d5e30a166727162b"
+    },
+    "output/test_q48_github_release_draft.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output/test_stable_release_admission.stderr": {
+      "bytes": 108,
+      "sha256": "f8a1b906cafd502a390d8b079778d21307cb5f477a857801b2ac4f99b109760e"
+    },
+    "output/test_stable_release_admission.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "owner.json": {
+      "bytes": 140,
+      "sha256": "78034f128a7d2fdeab68476c46ce73bf000f24c27c0c666ae0f0aab5c89f0ca9"
+    },
+    "receipt.json": {
+      "bytes": 17178,
+      "sha256": "3d347625d81caf2d97a3f4026b08b07816755f9593a11f3f30f35fa6db9fa07f"
+    }
+  },
+  "job_id": "01377a1352da4719bc2b4f65b0ad6910",
+  "manifest_digest": "474123c5195e1383f1670ba8d2a283ea8fb0b4ba5b30881a0935f8e4f27ff560",
+  "model_calls": 0,
+  "native_reason": "WorkspaceRefused:memory reserve danger",
+  "native_status": "FAIL",
+  "next_admission": "only exact2unfinished delivered cases and10not-started cases, no source/rebuild/47completed replay",
+  "observer_ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-package-result-v4.log",
+  "observer_sha256": "db9750e8f61c55597b8f0430c3e57cf3e7c3c9d4ae2df931e31ffa1dca0034d6",
+  "post_worker_final_guards": "not_reached; supervisor verified immutable identities/archive maps and canonical members after retirement",
+  "publication": false,
+  "quiescent": true,
+  "receipt_ref": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\01377a1352da4719bc2b4f65b0ad6910\\receipt.json",
+  "receipt_sha256": "3d347625d81caf2d97a3f4026b08b07816755f9593a11f3f30f35fa6db9fa07f",
+  "release44nonstable_unchanged_and48names_exact": true,
+  "reservation_released": true,
+  "sampled_peaks": {
+    "canonical_bytes": {
+      ".aide/release": 4021319
+    },
+    "memory_bytes": 328646656,
+    "scratch_bytes": 8747193
+  },
+  "schema": "aide.affected-package-partial.v1",
+  "scratch_absent": true,
+  "source_commit": "581acb8443b43ef8167630d676c33c2cc4373892",
+  "source_suites": [
+    {
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\tests\\test_q47_release_bundle.py",
+        "-v",
+        "Q47ReleaseBundleTests.test_archive_extraction_validation_and_forbidden_paths",
+        "Q47ReleaseBundleTests.test_checksum_mismatch_detection_fails",
+        "Q47ReleaseBundleTests.test_checksum_validation_rejects_stale_and_missing_entries",
+        "Q47ReleaseBundleTests.test_extracted_archives_import_without_source_checkout",
+        "Q47ReleaseBundleTests.test_missing_preview_json_is_blocked_and_release_validate_fails",
+        "Q47ReleaseBundleTests.test_preview_markdown_and_json_must_bind_the_same_source",
+        "Q47ReleaseBundleTests.test_preview_parent_is_bound_only_across_generated_projection",
+        "Q47ReleaseBundleTests.test_release_archives_are_byte_deterministic"
+      ],
+      "count_verified": true,
+      "exact_cases": [
+        "Q47ReleaseBundleTests.test_archive_extraction_validation_and_forbidden_paths",
+        "Q47ReleaseBundleTests.test_checksum_mismatch_detection_fails",
+        "Q47ReleaseBundleTests.test_checksum_validation_rejects_stale_and_missing_entries",
+        "Q47ReleaseBundleTests.test_extracted_archives_import_without_source_checkout",
+        "Q47ReleaseBundleTests.test_missing_preview_json_is_blocked_and_release_validate_fails",
+        "Q47ReleaseBundleTests.test_preview_markdown_and_json_must_bind_the_same_source",
+        "Q47ReleaseBundleTests.test_preview_parent_is_bound_only_across_generated_projection",
+        "Q47ReleaseBundleTests.test_release_archives_are_byte_deterministic"
+      ],
+      "exit": 0,
+      "label": "test_q47_part_1",
+      "no_skips": true,
+      "source_test_sha256": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+      "stderr_bytes": 1304,
+      "stderr_sha256": "b9eda2cc601affa2bbb413fe015c48aceaf16b710324b46e9f77b2d96f58f691",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tests": 8,
+      "timed_out": false,
+      "timeout_seconds": 180
+    },
+    {
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\tests\\test_q47_release_bundle.py",
+        "-v",
+        "Q47ReleaseBundleTests.test_release_asset_index_binds_exact_hashes_and_sizes",
+        "Q47ReleaseBundleTests.test_release_bundle_fixture_generation_creates_required_artifacts",
+        "Q47ReleaseBundleTests.test_release_clean_dry_run_deletes_nothing",
+        "Q47ReleaseBundleTests.test_release_commands_are_local_only_and_no_publish",
+        "Q47ReleaseBundleTests.test_release_metadata_is_checkout_path_independent",
+        "Q47ReleaseBundleTests.test_release_policy_and_schema_validation",
+        "Q47ReleaseBundleTests.test_release_records_clean_source_before_writing_bundle_outputs",
+        "Q47ReleaseBundleTests.test_release_validate_does_not_rewrite_bundle_metadata"
+      ],
+      "count_verified": true,
+      "exact_cases": [
+        "Q47ReleaseBundleTests.test_release_asset_index_binds_exact_hashes_and_sizes",
+        "Q47ReleaseBundleTests.test_release_bundle_fixture_generation_creates_required_artifacts",
+        "Q47ReleaseBundleTests.test_release_clean_dry_run_deletes_nothing",
+        "Q47ReleaseBundleTests.test_release_commands_are_local_only_and_no_publish",
+        "Q47ReleaseBundleTests.test_release_metadata_is_checkout_path_independent",
+        "Q47ReleaseBundleTests.test_release_policy_and_schema_validation",
+        "Q47ReleaseBundleTests.test_release_records_clean_source_before_writing_bundle_outputs",
+        "Q47ReleaseBundleTests.test_release_validate_does_not_rewrite_bundle_metadata"
+      ],
+      "exit": 0,
+      "label": "test_q47_part_2",
+      "no_skips": true,
+      "source_test_sha256": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+      "stderr_bytes": 1286,
+      "stderr_sha256": "257f2442e32e4e18fba81424a7731c5a84c7a2f7f499cc5e8921c82b74eab2df",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tests": 8,
+      "timed_out": false,
+      "timeout_seconds": 180
+    },
+    {
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\tests\\test_q47_release_bundle.py",
+        "-v",
+        "Q47ReleaseBundleTests.test_release_validate_rejects_missing_required_file",
+        "Q47ReleaseBundleTests.test_release_validator_refuses_oversized_pax_before_metadata_parse",
+        "Q47ReleaseBundleTests.test_release_validator_refuses_unsafe_members_before_extraction",
+        "Q47ReleaseBundleTests.test_release_validator_rejects_windows_aliases_and_ads_before_extraction",
+        "Q47ReleaseBundleTests.test_release_validator_stops_tar_member_scan_at_bound",
+        "Q47ReleaseBundleTests.test_stable_candidate_is_distinct_replayable_and_tamper_checked",
+        "Q47ReleaseBundleTests.test_stable_cli_refuses_portable_consumer_without_managed_source_runner",
+        "Q47ReleaseBundleTests.test_stale_preview_is_blocked_in_release_bundle"
+      ],
+      "count_verified": true,
+      "exact_cases": [
+        "Q47ReleaseBundleTests.test_release_validate_rejects_missing_required_file",
+        "Q47ReleaseBundleTests.test_release_validator_refuses_oversized_pax_before_metadata_parse",
+        "Q47ReleaseBundleTests.test_release_validator_refuses_unsafe_members_before_extraction",
+        "Q47ReleaseBundleTests.test_release_validator_rejects_windows_aliases_and_ads_before_extraction",
+        "Q47ReleaseBundleTests.test_release_validator_stops_tar_member_scan_at_bound",
+        "Q47ReleaseBundleTests.test_stable_candidate_is_distinct_replayable_and_tamper_checked",
+        "Q47ReleaseBundleTests.test_stable_cli_refuses_portable_consumer_without_managed_source_runner",
+        "Q47ReleaseBundleTests.test_stale_preview_is_blocked_in_release_bundle"
+      ],
+      "exit": 0,
+      "label": "test_q47_part_3",
+      "no_skips": true,
+      "source_test_sha256": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+      "stderr_bytes": 1420,
+      "stderr_sha256": "2677597ad21c2483a78c782a761b0223e932de4dc2eecadc68fedb5cc3effb74",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tests": 8,
+      "timed_out": false,
+      "timeout_seconds": 180
+    },
+    {
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\tests\\test_q48_github_release_draft.py"
+      ],
+      "count_verified": true,
+      "exit": 0,
+      "label": "test_q48_github_release_draft",
+      "no_skips": true,
+      "source_test_sha256": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+      "stderr_bytes": 117,
+      "stderr_sha256": "b64fc4c8db978194bf3c5a9c89507ddc8b7f1c4ec0556118d5e30a166727162b",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tests": 12,
+      "timed_out": false,
+      "timeout_seconds": 180
+    },
+    {
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\tests\\test_public_archive_fixture.py"
+      ],
+      "count_verified": true,
+      "exit": 0,
+      "label": "test_public_archive_fixture",
+      "no_skips": true,
+      "source_test_sha256": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+      "stderr_bytes": 111,
+      "stderr_sha256": "d14fbef698e361afc08ed043ba92c852332b088b7dd8d5c9c21be09be8c22f14",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tests": 8,
+      "timed_out": false,
+      "timeout_seconds": 180
+    },
+    {
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\tests\\test_stable_release_admission.py"
+      ],
+      "count_verified": true,
+      "exit": 0,
+      "label": "test_stable_release_admission",
+      "no_skips": true,
+      "source_test_sha256": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+      "stderr_bytes": 108,
+      "stderr_sha256": "f8a1b906cafd502a390d8b079778d21307cb5f477a857801b2ac4f99b109760e",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tests": 5,
+      "timed_out": false,
+      "timeout_seconds": 180
+    }
+  ],
+  "source_tests_passed": 49,
+  "source_tree": "0e8204a17699241c0fe3cc438b955300b4321a0b",
+  "stable_build_exit": 0,
+  "stable_validate_exit": 0,
+  "supervisor_post_verified_full_inputs1803": true,
+  "total_retained_bytes": 47877
+}

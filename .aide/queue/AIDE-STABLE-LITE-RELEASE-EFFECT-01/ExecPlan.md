@@ -1,5 +1,10 @@
 # ExecPlan: AIDE Lite stable release effect
 
+Current routing (2026-10-07): use the affected automation archive closeout
+at the end of this plan. Owner-directed cosmetic advisories and finite existing-
+account testing supersede the older decision/permission blockers. Earlier dated
+sections preserve their execution-time subjects, not current release acceptance.
+
 ## Current local qualification closeout - 2026-10-06
 
 Objective: close the completed current-byte consumer and replay qualification,
@@ -1513,3 +1518,46 @@ is admitted by this slice. Current source/ref effects belong to its terminal.
 Affected delivery and constrained ordinary editing/read isolation/whole-outcome
 usage/final exact release/acquisition remain technical work; old packet records
 are historical and are not retroactively changed to pass.
+
+## Affected automation archive closeout - 2026-10-07
+
+Objective: retain the accepted current archive qualification and finish one
+guarded artifact/metadata commit, then separately reviewed source sync.
+This does not certify the stable release or outer client.
+
+Scope: four stable assets; curated partial/qualified JSONs; this ExecPlan,
+REPORT, task/status; reasonable-automation REPORT; queue index; compiler-owned
+generated manifest; PLANS/IMPLEMENT/DOCUMENTATION. No code, assertion, runtime,
+export, account, root or permission change is needed.
+
+Actual01377a13 remains FAIL for memory reserve danger after49 source tests and
+build/validate succeeded. Exactly47 delivered cases completed with explicit
+raw outcomes; two were incomplete/unstarted. All25 files/47,877B, archive854
+maps/851 checksums/full1803 inputs/44 nonstable members/retirement verified
+after quiescence. This is partial result reuse, not a whole-job PASS.
+
+Tail370fb4e9 passed only those two methods and ten unstarted Q27 cases. Files
+and assertions stayed exact; Q27 uses its disclosed module-local managed
+fixture factory. All nine files/26,988B and final guards/retirement verified.
+Independent LOCAL_RESULT accepted exactacf44816 with no blocking findings.
+
+The source-suite180s timeout remains failed. Its repair reuses the prior
+operative code/oracle set, with complete1803 input guards before/after instead
+of per-fixture rehashing. Three disjoint eight-case Q47 windows retain180s
+each and900s total; this changes Q47 scheduling. No unique timeout cause or
+matched performance savings are claimed. Memory reserves were not reduced.
+Predispatch refusals remain unexecuted.
+
+Verification: reuse exact49 source/47+2 delivered/10 automation results, full
+custody and immutable assets; check task/index coherence, compiler manifest,
+JSON and whitespace; strictly check final message and exact staged tree before
+guarded creation. Review actual commit before conditional main/dev/task CAS
+and atomic nonforce push. Preserve85 other tips and old-byte evidence.
+
+Current ZIP822cbd42/TAR ef2c086e contain the clean6c37 export. Old eight-
+consumer/38-form and41-with-fixtures observations retain their old assets.
+Current consumers, ordinary constrained model editing/read isolation, whole-
+outcome efficiency and final release/publication/download remain separate
+work. Three live turns are spent; no model call is admitted by this native
+archive/source slice. Ref effects belong to the terminal journal; no receipt-
+only follow-up commit is required.

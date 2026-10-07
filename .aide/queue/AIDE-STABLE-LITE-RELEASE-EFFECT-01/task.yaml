@@ -3,10 +3,10 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: needs_review
-planning_state: local_payload49_delivered41_consumers8_forms38_replay_pass_external_gates_open
-result: CURRENT_LOCAL_49_41_8_38_12_REPLAY_PASS_STABLE_PENDING
+planning_state: automation_source49_delivered47_plus2_and10_pass_final_gates_open
+result: CURRENT_AUTOMATION_LOCAL_QUALIFIED_STABLE_PENDING
 created_at: 2026-09-28
-updated_at: 2026-10-06
+updated_at: 2026-10-07
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 base_dev: 4dcd896b4a9b65ef2bf6e8ecbbd7f60809560637
 depends_on:
@@ -187,3 +187,13 @@ current_historical_owner_packet_preparation:
   live_registry_or_policy_mutation: false
   exact_source_normal_commit_and_ref_effect_reviews_required: true
   model_runtime_archive_tag_publication_authority: false
+
+# Latest exact subject; preceding payload fields retain their historical epochs.
+automation_current_qualification_ref: evidence/automation-current-package-qualified.json
+automation_current_qualification_sha256: acf448162595d6405258f40e77fbfb32256a0bfbeffb70936f9a5e5c4367d474
+automation_current_zip_sha256: 822cbd42b6ee87e5d09491a9aed988cb5294b8b061dcd40abfa87f84f9da494b
+automation_current_tar_sha256: ef2c086ec211e0a041de07b8ea8e5d3b9c1553df0eeca2096bc8fe9c4f631860
+automation_local_result_review: ACCEPT_WITH_NOTES_all_notes_nonblocking_disposed
+automation_old_consumer_evidence_rebound: false
+automation_current_stable_certification: false
+automation_source_sync_terminal_ref: evidence/automation-package-sync-terminal.log

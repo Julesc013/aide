@@ -2,6 +2,19 @@
 
 ## Proportionate automation - 2026-10-07
 
+Current affected candidate qualification is complete: 49 source tests, 49 delivered
+commit cases across distinct jobs (47 completed before the preserved memory
+refusal plus two passing tail cases), and 10 actual delivered automation cases.
+ZIP822cbd42/TAR ef2c086e contain the clean6c37 export, 854 equal members/851
+checksums. [Exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-package-qualified.json)
+records custody, unchanged assertions, explicit Q27 fixture support and
+retirement. No completed suite/build was replayed for the tail, no memory reserve
+was reduced, and no model call occurred in this archive phase. Old consumer
+evidence is not rebound. Ordinary constrained editing/read isolation, whole-
+outcome efficiency, current-byte consumers and final exact release publication/
+acquisition remain separate. Source ref effects belong to the terminal journal;
+source sync does not create a stable release.
+
 The owner's new instruction removes individual cosmetic-history approval and
 ordinary existing-account test permission as unresolved inputs. The bounded
 [automation plan](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/ExecPlan.md) implements
@@ -35,9 +48,9 @@ source6c37af95:854 members/851 checksummed exact derivations,4,341,317 logical
 bytes. Full collection and scratch/reservation retirement verified; only eight
 expected export files changed. The first read-only selection refusal allocated
 nothing and remains preserved. [Export evidence](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-export-qualified.json)
-records the actual result. Existing ZIP/TAR bytes are unchanged and do not contain
-this refresh; affected delivered/archive qualification and final release effects
-remain separate. Current integration refs belong to the effect terminal journal.
+records the export-time result. The then-existing ZIP/TAR stayed unchanged
+during export; the later affected qualification is recorded above. Final
+release effects remain separate. Current integration refs belong to the effect terminal journal.
 
 ## Current client launch qualification - 2026-10-07
 

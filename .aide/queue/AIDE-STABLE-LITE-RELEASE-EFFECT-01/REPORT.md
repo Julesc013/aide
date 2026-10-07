@@ -1,5 +1,31 @@
 # Current AIDE source, artifact and development report
 
+## Current affected automation candidate - 2026-10-07
+
+The refreshed local v1.0.0 candidate contains the accepted proportionate-history
+checker and strict draft preparation. ZIP822cbd42/TAR ef2c086e have854 identical
+members/851 checksums from clean6c37af95 export provenance; qualification is
+bound to581acb84. It remains a local candidate, without a tag or publication.
+
+The49 source tests and original build/validate completed. The parent then
+failed on the memory-reserve guard after47 delivered commit cases completed.
+Its failure and raw outcomes remain preserved. A separate read-only tail passed
+the exact two remaining cases and ten automation cases, without rebuilding or
+replaying completed work. All fixtures retired and reservations released.
+[Current qualification](evidence/automation-current-package-qualified.json) and
+[partial evidence](evidence/automation-current-package-partial.json) bind the
+exact assets, failure, case membership, custody and independent acceptance.
+This is49 delivered cases across jobs, not a green original parent.
+
+Old eight-consumer/38-form and delivered41 evidence below retain their original
+assets and epochs. They are not claims about these changed archives. Cosmetic
+history and ordinary existing-account tests no longer need individual owner
+permissions; substantive gates remain. Ordinary constrained editing/read
+isolation, whole-outcome efficiency, current-byte consumers and final exact
+release/publication/acquisition still need proof. Current refs belong to the
+source-effect terminal journal, not this record's inferred outcome.
+
+
 ## Current local Lite qualification - 2026-10-06
 
 The current repaired v1.0.0 candidate has completed all eight original consumer
