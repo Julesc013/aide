@@ -3903,3 +3903,13 @@ items:
     exec_plan: .aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/ExecPlan.md
     prompt: .aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/prompt.md
     evidence: .aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/evidence
+
+  - id: AIDE-REASONABLE-AUTOMATION-01
+    status: passed_with_notes
+    planning_state: native47_draft6_history696_canary_matched_local_qualified
+    result: QUALIFIED_LOCAL_AUTOMATION_AND_CHILD_OBSERVATION
+    title: Automate reasonable cosmetic decisions and bounded existing-account tests
+    task: .aide/queue/AIDE-REASONABLE-AUTOMATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-REASONABLE-AUTOMATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-REASONABLE-AUTOMATION-01/prompt.md
+    evidence: .aide/queue/AIDE-REASONABLE-AUTOMATION-01/evidence

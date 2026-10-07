@@ -492,3 +492,28 @@ The accepted task lineage fast-forwarded local `dev` from `f5512404` to
 `dev` was observed at the same full commit after a non-force push. The
 checkout is clean, the stable ZIP SHA-256 remains `27948415…`, and remote
 `main` remains `aec53b1d`. This closes only the no-model host context canary.
+
+## 2026-10-07 actual testing instruction
+
+The owner authorizes necessary finite existing-account tests, including the live
+canary. Older missing-permission/message-approval statements above remain dated
+history. Current local phase permission is ChatGPT GPT-6.1 Sol/medium, maximum
+three distinct admitted turns; this is not a parent-model/global-default pin.
+One source-excerpt canary and two matched-task attempts fit this phase; exact
+source/effect review, installed capability/authentication route, finite resources,
+request deduplication and retirement remain required. No API billing fallback,
+new subscriptions/purchases or replay of uncertain results is allowed. Canary
+binding is distinct from matched quality/cost and ordinary client containment.
+
+## Owner-authorized live phase actual results — 2026-10-07
+
+The bounded reasonable-automation child completed its canary and one matched
+causal-review pair through the existing signed-in ChatGPT route. Both answers
+meet the same five criteria under independent acceptance. Known child input
+14,809→13,650 (7.8263%) and output368→361 with cached0both are a single ordered
+observation. Usage remains PARTIAL; whole outcome cost, physical returned model
+identity and parent/review/repair/hidden usage are unknown. All three turns are
+consumed, complete custody/retirement verified, and no extra dispatch is admitted.
+The current outcome is evidence/matched-summary.json in the child; old refused
+preparations retain their original identity. Changed delivered payload and
+ordinary constrained client workflow remain technical qualifications.

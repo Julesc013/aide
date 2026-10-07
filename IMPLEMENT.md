@@ -1,5 +1,35 @@
 # AIDE Implementation Log
 
+## Owner-directed proportionate automation - 2026-10-07
+
+The existing range checker now distinguishes presentation-only faults within
+an explicit immutable history boundary from missing/ambiguous content, secrets,
+unknown failures and future commits. Original strict findings and raw mode are
+preserved; published history and exception records are untouched. New guarded
+commits remain strict and draft repairs must preserve facts. The existing runner
+refuses API/third-party accounts and override fields; dedicated regressions are
+qualified with its existing authenticated fixture/retirement lifecycle.
+No new supervisor, checkout, global client setting or billing route is introduced.
+The [bounded task](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/ExecPlan.md) owns actual
+qualification and finite local allowance. No stable release claim is made.
+
+Actual affected qualification:47 tests passed,11 immutable historical messages
+became advisories, original findings/registry/history stayed intact, and full
+collection/scratch retirement/reservation release were verified. The initial
+metadata admission refusal remains preserved; no worker ran in that attempt.
+
+The signed-in canary and one matched causal-review pair completed with verified
+collection and retirement. Both answers satisfy the same five criteria under
+independent review; known child input fell14809→13650 (7.8263%), output368→361,
+cached input0both. All three finite turns are consumed. Usage is PARTIAL and
+whole-outcome cost remains unknown; no general savings or containment claim.
+See [actual observation](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/evidence/matched-summary.json).
+
+New-draft mechanical preview passed six focused checks with verified collection
+and retirement. It emits a prepared message/digest after strict validation,
+without inventing substance or changing files/history. The [task report](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/REPORT.md)
+and source-sync terminal own the bounded outcome and actual ref effects.
+
 ## Current actual-client launch repair - 2026-10-07
 
 The existing task-local launcher now pins the actual VS Code extension and its

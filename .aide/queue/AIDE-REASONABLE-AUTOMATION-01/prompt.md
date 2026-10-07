@@ -1,0 +1,3 @@
+# Owner-directed adaptation
+
+Implement the owner's 2026-10-07 instruction through existing mechanisms: cosmetic historical findings are advisory; substance, missing evidence and security remain blocking. Preserve published history. Fix new drafts mechanically without changing meaning or inventing outcomes. Necessary finite local/model tests may use existing signed-in OpenAI/Codex resources without repeated owner requests. No purchases, API fallback or unavailable-provider dependency for unrelated work. Reuse storage, retirement and deterministic observation. Continue qualification after this bounded slice.

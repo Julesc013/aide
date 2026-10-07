@@ -1,0 +1,13 @@
+{
+  "task": "Actual required review of the AIDE mediated dispatch pause boundary",
+  "criteria": [
+    "Pause committed under the same estate dispatch lock before created_suspended checkpoint must prevent ResumeThread under the old epoch.",
+    "Pause after checkpoint lock acquisition cannot commit until the resumed checkpoint releases that lock.",
+    "Consumed turn/request identity remains recorded on canceled execution.",
+    "Regression must specify event placement and observable no-resume/quiescence plus ledger assertions.",
+    "Limits are mediated cooperating launch only, not unrestricted parent or host-internal requests; no claim of whole-session confinement."
+  ],
+  "both_profiles": "same source objects, models, effort, account, limits, output schema, required causal result and regression; context selection alone differs",
+  "condition": "independent sequential ephemeral sessions, cache state unknown until reported; no forced cache flags",
+  "whole_usage": "include available child counters; controller/review/repair coverage unknown retained explicitly; no total-cost claim from prompt bytes"
+}

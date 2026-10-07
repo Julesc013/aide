@@ -486,7 +486,29 @@ conditional source-only main/dev/current-task sync under the parent campaign.
 The child cannot grant this ref effect alone. Exact terminal journals own actual
 ref outcomes; do not add a post-sync receipt commit. Preserve all other tips,
 release assets, existing roots, account/model defaults and historical decisions.
-One consolidated owner question remains pending; never infer a response from GO.
+That checkpoint had one consolidated owner question pending; GO alone supplied no response. The subsequent explicit 2026-10-07 instruction below supplies cosmetic and necessary-test authority.
 The effective current thread is still unrestricted. Ordinary constrained model
 edit/test/collect, read isolation, live/matched efficiency and final publication
 remain unqualified. No unchanged consumer replay, extra task or broad inventory.
+
+## 2026-10-07 owner-directed adaptation
+
+The actual owner now authorizes proportionate cosmetic history handling and
+necessary bounded tests through existing signed-in OpenAI/Codex access. This
+supersedes individual eleven-record acceptance and local test-permission requests;
+it does not invent historical strict PASS or authorize billing fallback, new
+storage, uncertain deletion, permission widening or unqualified publication.
+AIDE-REASONABLE-AUTOMATION-01 implements the bounded checker/policy regression
+slice and finite three-turn testing allowance. Continue actual qualification,
+affected payload refresh and existing release work after reviewed results.
+
+## Actual reasonable-automation increment — 2026-10-07
+
+The admitted child removes cosmetic-only owner decisions, preserves original
+objects/findings, and qualifies47 regressions plus all696 original range objects.
+The finite signed-in canary and matched pair completed with independent accepted
+quality and verified collection/retirement. Three model turns consumed; reported
+child input improves7.8263% for this pair, while whole outcome cost remains unknown.
+Current child REPORT/status supersede prior live-permission/cosmetic inputs.
+Outer client ordinary editing, changed delivered payload and exact release
+effects remain independent; no additional model dispatch or publication inferred.

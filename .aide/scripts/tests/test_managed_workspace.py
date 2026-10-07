@@ -156,6 +156,25 @@ class ManagedWorkspaceTests(unittest.TestCase):
             workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
         self.assertEqual(host.run.call_count, 1)
 
+    def test_codex_paid_routes_and_override_fields_refuse_without_fallback(self):
+        job = self.codex_job()
+        host = mock.Mock()
+        baseline = dict(self.config['codex_exec'])
+        for permission in (
+            {**baseline, 'account': 'api'},
+            {**baseline, 'account': 'third-party'},
+            {**baseline, 'provider': 'unavailable-paid-service'},
+            {**baseline, 'api_billing_fallback': True},
+        ):
+            with self.subTest(permission=permission):
+                self.config['codex_exec'] = permission
+                workspace.write_json(self.config_path, self.config)
+                with self.assertRaisesRegex(workspace.WorkspaceRefused, 'local Codex permission'):
+                    workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+                host.run.assert_not_called()
+                self.assertEqual(list(self.roots['scratch'].iterdir()), [])
+                self.assertEqual(workspace.dispatch_state(self.roots['control'])['codex_admitted'], 0)
+
     def test_codex_unchanged_request_refuses_before_second_allocation(self):
         job = self.codex_job()
         self.config['codex_exec']['max_turns'] = 2

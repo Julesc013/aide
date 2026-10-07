@@ -1,5 +1,29 @@
 # AIDE Documentation Index
 
+## Reasonable automation - 2026-10-07
+
+[Commit discipline](docs/reference/commit-discipline.md) defines immutable-history
+presentation advisories, strict new commits and preserved substantive evidence.
+[Autonomy policy](.aide/policies/autonomy.yaml) retains the owner's explicit
+resource/spending preferences; [test runner](docs/reference/aide-lite-test-runner.md)
+describes necessary tests within existing signed-in access and finite budgets.
+The [automation task](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/ExecPlan.md) supersedes
+older individual cosmetic approval/live-permission blockers. Actual client
+containment, measured whole-outcome efficiency and delivered/publication results are
+separate technical evidence. Old archives do not acquire the new checker code.
+
+The signed-in canary and one matched causal-review pair completed with verified
+collection and retirement. Both answers satisfy the same five criteria under
+independent review; known child input fell14809→13650 (7.8263%), output368→361,
+cached input0both. All three finite turns are consumed. Usage is PARTIAL and
+whole-outcome cost remains unknown; no general savings or containment claim.
+See [actual observation](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/evidence/matched-summary.json).
+
+New-draft mechanical preview passed six focused checks with verified collection
+and retirement. It emits a prepared message/digest after strict validation,
+without inventing substance or changing files/history. The [task report](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/REPORT.md)
+and source-sync terminal own the bounded outcome and actual ref effects.
+
 ## Current actual-client launch records - 2026-10-07
 
 [Host boundary](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/outer-launch-boundary.md)

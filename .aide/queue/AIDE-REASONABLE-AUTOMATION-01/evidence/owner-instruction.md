@@ -1,0 +1,5 @@
+# Standing owner instruction — 2026-10-07
+
+The current owner directly authorizes reasonable automatic handling of harmless historical/new formatting and necessary finite campaign tests through existing signed-in OpenAI/Codex access. This is actual instruction, not the older proposed eleven-record approval wording. Published history and original findings must remain unchanged. Description/changelog correctness, actual evidence, resource limits, safe retirement and consequential release effects remain substantive. No purchases, API billing fallback, unavailable paid-service prerequisite, new storage layout, uncertain deletion or permission widening is authorized. AIDE should adapt durable policy when demonstrated improvement warrants it, rather than repeatedly request cosmetic exceptions.
+
+Binding context: D:/Projects/AIDE/aide; current task branch at 143ed76134c7fa19b8954e6061df3c1799206403; parent AIDE-CONVERGENCE-AND-DELIVERY-01. This record documents the instruction and does not fabricate individual historical reviews or tests.

@@ -1,10 +1,10 @@
 {
   "allowed_path_hints": [
-    ".aide/queue/<workunit>/**",
-    "docs/reference/**"
+    ".aide/changelog/**",
+    ".aide/queue/<workunit>/**"
   ],
-  "blocked": false,
-  "blocker_reason": "",
+  "blocked": true,
+  "blocker_reason": "block until release gates, tags, and assets are approved",
   "branch_state_refs": [
     "current_branch:task/aide-current-scoped-lite-qualification-01",
     "current_role:task",
@@ -26,7 +26,8 @@
     "changed-files.md",
     "validation.md",
     "remaining-risks.md",
-    "intent-compiler-report.md"
+    "intent-compiler-report.md",
+    "preflight-or-blocker-report.md"
   ],
   "forbidden_path_hints": [
     ".git/**",
@@ -40,20 +41,23 @@
   ],
   "generated_by": "aide-lite",
   "generated_from": "inline_prompt",
-  "interpreted_goal": "Normalize prompt into a bounded refactor WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
-  "next_action": "draft the smallest safe WorkUnit after repo-state preflight",
+  "interpreted_goal": "Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.",
+  "next_action": "block until release gates, tags, and assets are approved",
   "notes": [
     "deterministic_local: true",
     "provider_or_model_calls: none",
     "network_calls: none",
     "task_execution: false",
-    "raw_long_prompt_storage: false"
+    "raw_long_prompt_storage: false",
+    "flag:unsafe_prompt",
+    "flag:repeated_prompt"
   ],
-  "raw_prompt_excerpt": "Repair only the demonstrated active scratch scan zero-link deletion race from retired job 9f28b745ab6e486ca0d116e4051cc3b3. Reopen existing AIDE-CAMPAIGN-RESOURCE-CLEANUP-01 within its established scope. Preserve strict quiescent collect...",
-  "raw_prompt_hash": "b5ea32fc083e80d9d974368a3a3f334b88eda814107ec1af4ac3deea475c955f",
+  "raw_prompt_excerpt": "Adopt the owner standing instruction to handle safe cosmetic commit issues without repeated permission, preserve published history and description/changelog content, and run necessary bounded tests only through existing signed-in OpenAI/...",
+  "raw_prompt_hash": "69c6fde88d0344bb7951ec9df5d40b914550ee84bfad208deb9d059a5797e650",
   "rejected_interpretations": [
     "do not bypass queue, branch, evidence, or policy state",
-    "do not execute raw prompt directly"
+    "do not execute raw prompt directly",
+    "do not publish releases, tags, or assets from prompt alone"
   ],
   "repo_state_refs": [
     ".aide/context/latest-context-packet.md",
@@ -67,10 +71,10 @@
     ".aide/reports/file-quality-summary.md"
   ],
   "requires_split": true,
-  "risk_class": "medium",
+  "risk_class": "release",
   "safe_to_execute": false,
   "schema_version": "aide.intent-packet.v0",
-  "sizing_class": "two_shot",
+  "sizing_class": "blocked",
   "suggested_workunit": {
     "acceptance": [
       "WorkUnit scope is bounded and repo-grounded.",
@@ -78,8 +82,8 @@
       "Validation and evidence requirements are explicit."
     ],
     "allowed_paths": [
-      ".aide/queue/<workunit>/**",
-      "docs/reference/**"
+      ".aide/changelog/**",
+      ".aide/queue/<workunit>/**"
     ],
     "dependencies": [
       "repo_policy",
@@ -90,7 +94,8 @@
       "changed-files.md",
       "validation.md",
       "remaining-risks.md",
-      "intent-compiler-report.md"
+      "intent-compiler-report.md",
+      "preflight-or-blocker-report.md"
     ],
     "forbidden_paths": [
       ".git/**",
@@ -102,19 +107,20 @@
       "raw response logs",
       "target repositories unless target-local queue authorizes work"
     ],
-    "idempotency": "prompt_hash:b5ea32fc083e80d9d974368a3a3f334b88eda814107ec1af4ac3deea475c955f; status:draft; compile_only:true",
+    "idempotency": "prompt_hash:69c6fde88d0344bb7951ec9df5d40b914550ee84bfad208deb9d059a5797e650; status:draft; compile_only:true",
     "implementation_outline": [
       "Reconcile repo state before editing.",
-      "draft the smallest safe WorkUnit after repo-state preflight",
+      "block until release gates, tags, and assets are approved",
       "Stop at review gates and record evidence before execution."
     ],
     "non_goals": [
       "no raw prompt execution",
       "no provider/model/network calls",
       "do not bypass queue, branch, evidence, or policy state",
-      "do not execute raw prompt directly"
+      "do not execute raw prompt directly",
+      "do not publish releases, tags, or assets from prompt alone"
     ],
-    "objective": "Normalize prompt into a bounded refactor WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
+    "objective": "Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.",
     "output_schema": ".aide/intake/workunit-draft.schema.json",
     "preflight": [
       "git status --short",
@@ -122,22 +128,24 @@
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
-    "risk_class": "medium",
+    "risk_class": "release",
     "schema_version": "aide.workunit-draft.v0",
-    "sizing_class": "two_shot",
+    "sizing_class": "blocked",
     "status": "draft",
-    "task_class": "refactor",
-    "title": "Refactor WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
+    "task_class": "release",
+    "title": "Release WorkUnit Draft - Block until release gates, tags, and assets are approved",
     "validation": [
       "git diff --check",
+      "py -3 .aide/scripts/aide_lite.py changelog validate",
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-    "workunit_id": "draft-refactor-b5ea32fc083e"
+    "workunit_id": "draft-release-69c6fde88d03"
   },
-  "task_class": "refactor",
+  "task_class": "release",
   "validation_hints": [
     "git diff --check",
+    "py -3 .aide/scripts/aide_lite.py changelog validate",
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ]
 }

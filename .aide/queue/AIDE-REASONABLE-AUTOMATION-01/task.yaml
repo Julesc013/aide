@@ -1,0 +1,58 @@
+schema_version: aide.queue-task.v0
+id: AIDE-REASONABLE-AUTOMATION-01
+title: Apply proportionate historical formatting and existing-account test automation
+type: implementation
+status: passed_with_notes
+planning_state: bounded_local_qualification_complete_guarded_closeout
+result: QUALIFIED_LOCAL_AUTOMATION_AND_CHILD_OBSERVATION
+created_at: 2026-10-07
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+authority_basis: Owner direct instructions on 2026-10-07; campaign delegation retains independent technical gates.
+objective: Remove cosmetic-only historical release interruptions while preserving substantive evidence, history, finite resources and the existing signed-in test route.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-REASONABLE-AUTOMATION-01/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_q27_commit_recovery.py
+    - .aide/scripts/tests/test_managed_workspace.py
+    - .aide/policies/commit-messages.yaml
+    - .aide/policies/commit-message-dispositions.yaml
+    - .aide/policies/autonomy.yaml
+    - docs/reference/commit-discipline.md
+    - docs/reference/aide-lite-test-runner.md
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-LITE-EFFICIENCY-01/task.yaml
+    - .aide/queue/AIDE-LITE-EFFICIENCY-01/status.yaml
+    - .aide/queue/AIDE-LITE-EFFICIENCY-01/ExecPlan.md
+    - .aide/generated/manifest.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  ignored_local_state:
+    - .aide.local/reasonable-automation-*.json
+    - .aide.local/efficiency-live-host-*.json
+    - .aide.local/efficiency-live-host-prompt.txt
+    - .aide.local/efficiency-live-host-*-prompt.txt
+  existing_storage: D:/Projects/AIDE/.aide.local/execution
+  branch_reuse: task/aide-current-scoped-lite-qualification-01
+  observed_head: 143ed76134c7fa19b8954e6061df3c1799206403
+  forbidden_operations:
+    - published history changes, force pushes or deletion of unknown content
+    - new checkouts, storage roots, provider subscriptions or API billing fallback
+    - machine-wide ACL/account/quota changes or enabling Full Access
+    - source registry copying into target repositories or fabricated test results
+verification:
+  - historical presentation classification and strict substantive, secret, unknown and invalid registry refusals
+  - latest and managed creation remain strict; original findings remain available with --no-dispositions
+  - actual eleven historical records classified against immutable Git objects
+  - existing permission/dispatch/observer regressions establish no fallback or duplicate submission
+  - bounded native job evidence collection, retirement and reservations
+retained_gates:
+  - independent exact policy/source and native effect review under parent delegation
+  - final source sync, live model outcome, efficiency comparison and release qualification remain separate

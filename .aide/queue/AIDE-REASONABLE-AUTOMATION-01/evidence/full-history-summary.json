@@ -1,0 +1,14 @@
+{
+  "schema": "aide.full-history-message-gate.v1",
+  "result": "PASS_WITH_WARNINGS",
+  "base": "aec53b1d3675f02e2fdd17cc718fdcff6cd4e9f3",
+  "through": "143ed76134c7fa19b8954e6061df3c1799206403",
+  "commit_count": 696,
+  "git_count_matches": true,
+  "advisory_count": 11,
+  "exact_disposition_count": 3,
+  "unresolved_count": 0,
+  "full_output_sha256": "f45c006a1b8fc42bf2352f81a5da65cda6978df166d12b94550b3d5a3d36f9b2",
+  "raw_findings_preserved": true,
+  "individual_owner_decisions_created": false
+}

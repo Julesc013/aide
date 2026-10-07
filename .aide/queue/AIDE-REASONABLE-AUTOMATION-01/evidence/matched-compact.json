@@ -1,0 +1,101 @@
+{
+  "account": "existing_signed_in_chatgpt",
+  "actual_model_identity": "not_reported",
+  "codex_admitted_after": 3,
+  "effort": "medium",
+  "files": [
+    {
+      "bytes": 0,
+      "path": "logs/stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 14724,
+      "path": "logs/stdin",
+      "sha256": "5dc78cd7698f41864d847eeaa8b09a46e32b3fb1880760c1e19a7696d2233e74"
+    },
+    {
+      "bytes": 1927,
+      "path": "logs/stdout",
+      "sha256": "3f664e361a854a22169685f8086a898afe7928247ea6ef45dcc545fc707cc2f0"
+    },
+    {
+      "bytes": 140,
+      "path": "owner.json",
+      "sha256": "715990a907038deb74b6dbbad364fd48ea867d668bc79dbc0e64947bfd7b324a"
+    },
+    {
+      "bytes": 4676,
+      "path": "receipt.json",
+      "sha256": "69193c0d3880b8cb9179235019ae5d4572ba5091f5c9bcf9139d1efd480b0539"
+    }
+  ],
+  "full_collection_verified": true,
+  "job_id": "d4bcb84f6b2b460db286aab47aad2e67",
+  "manifest_digest": "0ec650609d67e87320c546d58ef86c34ff4332cf8b338c0dc4bc92943357c8ba",
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 164868096,
+    "scratch_bytes": 17070
+  },
+  "profile": "compact",
+  "receipt_sha256": "69193c0d3880b8cb9179235019ae5d4572ba5091f5c9bcf9139d1efd480b0539",
+  "requested_model": "gpt-6.1-sol",
+  "reservation_released": true,
+  "response": {
+    "evidence": "The created_suspended checkpoint acquires the same estate dispatch.lock as Pause, compares current state with admitted_dispatch, and holds the lock through ResumeThread until the resumed checkpoint. A Pause committed first changes mode/epoch, so the checkpoint raises before ResumeThread. If the checkpoint acquires first, Pause cannot commit while the guard remains held: locking is nonblocking, so Pause receives 'dispatch control is busy' and must retry. Cancellation does not roll back the admitted turn count or request digest.",
+    "limitation": "Static analysis of supplied source only; regressions were not executed and reconcile internals were not supplied. Guarantees cover mediated cooperating launch, not unrestricted parent or host-internal requests, and do not establish whole-session confinement.",
+    "regression": "Use events in two schedules. First, stop after suspended creation but before checkpoint lock acquisition; commit Pause, then release the checkpoint. Assert zero ResumeThread calls, dispatch-change refusal, reconciled Job quiescence with no live child, and the incremented turn count plus consumed request digest still recorded; after returning to running, replay must be refused. Second, stop after checkpoint lock acquisition/state validation but before ResumeThread; attempt Pause and assert busy refusal with unchanged mode/epoch. Release execution through ResumeThread and the resumed checkpoint, then retry Pause and assert successful commit. Assert eventual Job quiescence and unchanged consumed count/digest.",
+    "verdict": "safe"
+  },
+  "retained_bytes": 21467,
+  "schema": "aide.actual-matched-model-result.v1",
+  "scratch_absent": true,
+  "tool_events": [],
+  "usage": {
+    "completed_turns": 1,
+    "coverage_gaps": [
+      "unrecognized_usage_fields"
+    ],
+    "duplicate_streams_excluded": 0,
+    "failed_or_incomplete_turns": 0,
+    "known_usage_totals": {
+      "cached_input_tokens": 0,
+      "input_tokens": 13650,
+      "output_tokens": 361,
+      "reasoning_output_tokens": 64
+    },
+    "model": "unknown",
+    "model_requests": "unknown",
+    "raw_prompt_or_response_retained": false,
+    "records": [
+      {
+        "coverage_gaps": [
+          "unrecognized_usage_fields"
+        ],
+        "duplicate_terminal_events": 0,
+        "event_count": 4,
+        "session_id": "01a115ae-8e91-7e03-a4f4-442219ef421f",
+        "stream_sha256": "3f664e361a854a22169685f8086a898afe7928247ea6ef45dcc545fc707cc2f0",
+        "terminal_status": "COMPLETED",
+        "usage": {
+          "cached_input_tokens": 0,
+          "input_tokens": 13650,
+          "output_tokens": 361,
+          "reasoning_output_tokens": 64
+        }
+      }
+    ],
+    "schema": "aide.codex-exec-usage.v1",
+    "source": "codex_exec_jsonl",
+    "status": "PARTIAL",
+    "usage_totals": {
+      "cached_input_tokens": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null
+    }
+  },
+  "whole_cost": "unknown_parent_review_repair_and_host_internal_coverage",
+  "whole_session_contained": false
+}

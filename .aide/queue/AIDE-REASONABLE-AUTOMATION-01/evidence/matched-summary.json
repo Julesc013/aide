@@ -1,0 +1,39 @@
+{
+  "actual_model_identity": "not_reported_requested_gpt_6_1_sol_medium",
+  "attempts": "phase3_of_3_consumed_no_further_dispatch",
+  "baseline_ref": ".aide/queue/AIDE-REASONABLE-AUTOMATION-01/evidence/matched-baseline.json",
+  "baseline_sha256": "5034b6cc5f4e9d9115ad1644945699a774f9ee671780b980dfef4029cca51dd7",
+  "cached_input_tokens": {
+    "baseline": 0,
+    "compact": 0
+  },
+  "compact_ref": ".aide/queue/AIDE-REASONABLE-AUTOMATION-01/evidence/matched-compact.json",
+  "compact_sha256": "449ea914f515a8e51152ec952a336e8914462960aa6a6cda34200fd4ec019df2",
+  "condition": "single_fixed_order_pair_distinct_ephemeral_sessions_reported_zero_cached_input_no_forced_cache_state",
+  "input_tokens": {
+    "baseline": 14809,
+    "compact": 13650,
+    "percent_reduction": 7.8263,
+    "reduction": 1159
+  },
+  "not_established": [
+    "general_efficiency_across_projects",
+    "whole_outcome_cost_savings",
+    "runtime_pause_race_test",
+    "ordinary_client_edit_containment",
+    "stable_release"
+  ],
+  "output_tokens": {
+    "baseline": 368,
+    "compact": 361
+  },
+  "quality_acceptance_ref": ".aide/queue/AIDE-REASONABLE-AUTOMATION-01/evidence/matched-acceptance.json",
+  "reasoning": "64_each_already_in_output_not_added",
+  "result": "ACCEPTED_QUALITY_OBSERVED_CHILD_INPUT_REDUCTION",
+  "retirement": "both_full_collection_verified_scratch_absent_reservations_released",
+  "schema": "aide.matched-efficiency-observation.v1",
+  "technical_review": "Independent containment_review BASELINE_RESULT and COMPACT_RESULT ACCEPT_WITH_NOTES; all5 criteria satisfied, full actual custody independently verified; all notes nonblocking/disposed. See matched-actual-review.log.",
+  "usage_status": "PARTIAL_unrecognized_usage_fields",
+  "whole_cost": "unknown_controller_review_repair_hidden_host_coverage",
+  "whole_session_contained": false
+}

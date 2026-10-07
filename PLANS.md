@@ -1,5 +1,34 @@
 # AIDE Planning Index
 
+## Proportionate automation - 2026-10-07
+
+The owner's new instruction removes individual cosmetic-history approval and
+ordinary existing-account test permission as unresolved inputs. The bounded
+[automation plan](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/ExecPlan.md) implements
+frozen-history presentation advisories with strict substantive/new-message
+checks, finite signed-in ChatGPT qualification and existing owned retirement.
+Constrained ordinary client editing, whole-outcome accounting and exact release effects
+remain technical work. Changed checker/policy bytes require affected payload
+refresh; the previous Lite archives retain their original evidence identity.
+Older dated status sections below describe their original checkpoints.
+
+Actual affected qualification:47 tests passed,11 immutable historical messages
+became advisories, original findings/registry/history stayed intact, and full
+collection/scratch retirement/reservation release were verified. The initial
+metadata admission refusal remains preserved; no worker ran in that attempt.
+
+The signed-in canary and one matched causal-review pair completed with verified
+collection and retirement. Both answers satisfy the same five criteria under
+independent review; known child input fell14809→13650 (7.8263%), output368→361,
+cached input0both. All three finite turns are consumed. Usage is PARTIAL and
+whole-outcome cost remains unknown; no general savings or containment claim.
+See [actual observation](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/evidence/matched-summary.json).
+
+New-draft mechanical preview passed six focused checks with verified collection
+and retirement. It emits a prepared message/digest after strict validation,
+without inventing substance or changing files/history. The [task report](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/REPORT.md)
+and source-sync terminal own the bounded outcome and actual ref effects.
+
 ## Current client launch qualification - 2026-10-07
 
 The actual client is VS Code Codex extension 26.930.41038/backend 0.160.0.

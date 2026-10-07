@@ -1,0 +1,105 @@
+{
+  "schema": "aide.actual-live-canary.v1",
+  "result": "LIVE_BINDING_PASS",
+  "job_id": "ad372a4d5bd0495c9146808597798ed3",
+  "manifest_digest": "b7e544c263ea3249526d2d400336e4fbde0517bfa46bea074f07aed6864bab0d",
+  "receipt_sha256": "7d0c61c02b91df26d577406e51e9a387dab895daca180bd1d4ae47b43ab37006",
+  "account": "existing_signed_in_chatgpt",
+  "requested_model": "gpt-6.1-sol",
+  "effort": "medium",
+  "response": {
+    "verdict": "safe",
+    "evidence": "For a pause committed under dispatch.lock, the shown mediated Codex turn cannot resume under its old epoch. Admission records the consumed turn and releases the lock. The child is then created suspended. At created_suspended, the checkpoint reacquires dispatch.lock and compares the full current state with admitted_dispatch. A pause accepted before that check makes the states differ, raising WorkspaceRefused before ResumeThread; host cleanup closes the owned Job. If the checkpoint acquires the lock first, it retains it through ResumeThread until the resumed checkpoint, so a cooperating pause cannot commit between validation and resume.",
+    "regression": "Gate execution in the created_suspended observation, before its checkpoint acquires dispatch.lock. Commit a pause under dispatch.lock after admission, then release the gate. Assert the admission count increased once and its request digest remains recorded; dispatch is paused at the new epoch; ResumeThread is never called; the result is WorkspaceRefused with 'dispatch epoch changed before child resume'; and reconciliation confirms no owned child remains active.",
+    "limitation": "This conclusion covers the supplied mediated child-launch boundary, not host-internal inference or verification of the actual signed-in model binding. The pause writer is omitted: safety requires pause acceptance to mean a committed state change serialized by the same dispatch.lock. A pause writer that bypasses that lock would invalidate the guarantee."
+  },
+  "usage": {
+    "schema": "aide.codex-exec-usage.v1",
+    "status": "PARTIAL",
+    "source": "codex_exec_jsonl",
+    "model": "unknown",
+    "model_requests": "unknown",
+    "completed_turns": 1,
+    "failed_or_incomplete_turns": 0,
+    "duplicate_streams_excluded": 0,
+    "records": [
+      {
+        "session_id": "01a1159c-e451-7bf1-851b-097a71cec2a4",
+        "stream_sha256": "806940b52130213081217f327ff460008c1a25d48b90b69fdf648efe831e230d",
+        "event_count": 4,
+        "duplicate_terminal_events": 0,
+        "terminal_status": "COMPLETED",
+        "usage": {
+          "input_tokens": 14342,
+          "cached_input_tokens": 0,
+          "output_tokens": 405,
+          "reasoning_output_tokens": 118
+        },
+        "coverage_gaps": [
+          "unrecognized_usage_fields"
+        ]
+      }
+    ],
+    "usage_totals": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null
+    },
+    "known_usage_totals": {
+      "input_tokens": 14342,
+      "cached_input_tokens": 0,
+      "output_tokens": 405,
+      "reasoning_output_tokens": 118
+    },
+    "coverage_gaps": [
+      "unrecognized_usage_fields"
+    ],
+    "raw_prompt_or_response_retained": false
+  },
+  "tool_events": [],
+  "stream_paths": [
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\ad372a4d5bd0495c9146808597798ed3\\logs\\stdout"
+  ],
+  "full_collection_verified": true,
+  "retained_bytes": 24706,
+  "files": [
+    {
+      "path": "owner.json",
+      "bytes": 140,
+      "sha256": "f391589b0ab1891750540280a608a91e68023350af23e7074545bd944db743b6"
+    },
+    {
+      "path": "receipt.json",
+      "bytes": 4365,
+      "sha256": "7d0c61c02b91df26d577406e51e9a387dab895daca180bd1d4ae47b43ab37006"
+    },
+    {
+      "path": "logs/stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "logs/stdin",
+      "bytes": 18318,
+      "sha256": "2047fce47efbf2b61056c3e76f320920c14b2b912ed7bc3cf9fb63b3ac9ac2cb"
+    },
+    {
+      "path": "logs/stdout",
+      "bytes": 1883,
+      "sha256": "806940b52130213081217f327ff460008c1a25d48b90b69fdf648efe831e230d"
+    }
+  ],
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 187330560,
+    "scratch_bytes": 20620
+  },
+  "scratch_absent": true,
+  "reservation_released": true,
+  "codex_admitted_after": 1,
+  "whole_cost": "unknown_parent_review_and_host_internal_coverage",
+  "efficiency_outcome": "not_yet_matched",
+  "whole_session_contained": false,
+  "scope": "live model binding and causal task response only; no excluded-read/editor/ordinary-task containment or hard quota claim"
+}

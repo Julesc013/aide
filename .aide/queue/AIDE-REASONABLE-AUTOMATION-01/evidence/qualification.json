@@ -1,0 +1,328 @@
+{
+  "schema": "aide.reasonable-automation-verification.v1",
+  "result": "PASS",
+  "job_id": "bb5b912bbf5a4e0c8a5b1e5bfb6bd511",
+  "receipt_sha256": "78ae6f79d026ef0a0c2fcbb5138aed4bbcc706271896757efa531a759d13119c",
+  "manifest_digest": "fb17cc89982f536e5ef8ad2c10bcedd6009c5fe3fc8044059875c02f8b0bca14",
+  "test_count": 47,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "historical_records": [
+    {
+      "commit": "0e76df9e10c0fa6d80b363c0990224ef45853062",
+      "tree": "30748cd87ce52c996b733971eefdbfedc211348f",
+      "parents": [
+        "2a44f17eb7232757133df549ac6fc519d535e71b"
+      ],
+      "message_sha256": "cfc3fb5f81dcbb36de6c664d5b3d308b3fb054607b6410657233bcb0b0cb3437",
+      "original_failed_checks": [
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "classification": "PRESENTATION_ADVISORY",
+      "strict_result": "FAIL"
+    },
+    {
+      "commit": "91efe8156c4132cc8178e330b43d01db1a678d8c",
+      "tree": "530481b8dcd61318f5753fca9939a0c20b8cac6a",
+      "parents": [
+        "0e76df9e10c0fa6d80b363c0990224ef45853062"
+      ],
+      "message_sha256": "5fbfd9bd4eae02e42b0eaa75ea4817d211bdf2bbb077a5eb8ba2ff25a37b4c8e",
+      "original_failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "classification": "PRESENTATION_ADVISORY",
+      "strict_result": "FAIL"
+    },
+    {
+      "commit": "4682413df7975b76edb35e783364702c4f0e7e5a",
+      "tree": "80c1b5b241a64eac3e38e0514d439593dafc5642",
+      "parents": [
+        "91efe8156c4132cc8178e330b43d01db1a678d8c"
+      ],
+      "message_sha256": "4a851634adae1749764f63c16f74cc662a4f8afe457c56e2c3e7f8a385e58143",
+      "original_failed_checks": [
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "classification": "PRESENTATION_ADVISORY",
+      "strict_result": "FAIL"
+    },
+    {
+      "commit": "51cbce9de0eb7d516e4192b34e1b6e0e892275dc",
+      "tree": "40338d8960dca23f1b1e8f3255bbd7e802491549",
+      "parents": [
+        "4682413df7975b76edb35e783364702c4f0e7e5a"
+      ],
+      "message_sha256": "47dc2600b0f21f2147235a91ec5be180963a718d8766179442a438077bd733eb",
+      "original_failed_checks": [
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "classification": "PRESENTATION_ADVISORY",
+      "strict_result": "FAIL"
+    },
+    {
+      "commit": "386195afd08e5798e227e208a601fb77f4ca0298",
+      "tree": "6c2283af9e3a6b2b3860cdb1f5048bea37c4ce76",
+      "parents": [
+        "51cbce9de0eb7d516e4192b34e1b6e0e892275dc"
+      ],
+      "message_sha256": "f173d9d79398afa77f13c83d4a26e75db8b49ed28c1514682c58f3135c733717",
+      "original_failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "classification": "PRESENTATION_ADVISORY",
+      "strict_result": "FAIL"
+    },
+    {
+      "commit": "477764b0eb8847cc166922329f6eccbb8c0dfcca",
+      "tree": "d66a2e9d4eda82a0ad33c4571fa941e49e9c1729",
+      "parents": [
+        "386195afd08e5798e227e208a601fb77f4ca0298"
+      ],
+      "message_sha256": "76bb96a9065b0be676cba39785587ac4b10df9e0ad6f621fa5eec6f2afa79c8a",
+      "original_failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "classification": "PRESENTATION_ADVISORY",
+      "strict_result": "FAIL"
+    },
+    {
+      "commit": "e3663fe198265a2611dbf7beb4c92d7f93d2a4b3",
+      "tree": "0695cc8ffc8a8be72fbbdfd1a1ca616f3c7ef697",
+      "parents": [
+        "477764b0eb8847cc166922329f6eccbb8c0dfcca"
+      ],
+      "message_sha256": "10da3e2266eabfbe41da078a3409afd42b98aff35bb11921940080223f952faa",
+      "original_failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "classification": "PRESENTATION_ADVISORY",
+      "strict_result": "FAIL"
+    },
+    {
+      "commit": "c4d0305e6b933c4264ddf32eb0e468f9b5dd92f3",
+      "tree": "4a8ce98292bd55f6178c4a98a28784df5122672d",
+      "parents": [
+        "e3663fe198265a2611dbf7beb4c92d7f93d2a4b3"
+      ],
+      "message_sha256": "f71bdc5279403a8cde8817c7122cba999a49150eb313103e88dc35e7fd98a7b9",
+      "original_failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "classification": "PRESENTATION_ADVISORY",
+      "strict_result": "FAIL"
+    },
+    {
+      "commit": "83df2b73c96f754561e669080bc4c90108d0bc4b",
+      "tree": "8d5c5d0ba01ec27ec8556a97d0066528d8a0bd63",
+      "parents": [
+        "c4d0305e6b933c4264ddf32eb0e468f9b5dd92f3"
+      ],
+      "message_sha256": "2a40201cb992db28e56b3e4dd3e2849e9499e8d6a6f9b66375229df777ceada7",
+      "original_failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "classification": "PRESENTATION_ADVISORY",
+      "strict_result": "FAIL"
+    },
+    {
+      "commit": "02a15a671d15445288b911532117eba7ebbf1046",
+      "tree": "26951ec98f183370b7f45c5231aa9b42f72483dd",
+      "parents": [
+        "5e3f9240026f6f58825f605f4d1a3d24ca3762c0"
+      ],
+      "message_sha256": "53f3ea70840aba451a96e15b3f02dde57ddf10c8631ba717f668dd0f4dcfcc71",
+      "original_failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Task",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "classification": "PRESENTATION_ADVISORY",
+      "strict_result": "FAIL"
+    },
+    {
+      "commit": "66b66938bb22edb9135918634f9cce8774c95efa",
+      "tree": "4b4f9de63ecb9503decdb81dc733da247200e2ff",
+      "parents": [
+        "935545a8a4b5679692e67f474947a8188b5d030b"
+      ],
+      "message_sha256": "fda97e6530d68419fa6de152d5cbfddc36b0f6dc44acc5143f19612b37af9583",
+      "original_failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Changed",
+        "commit body heading has bullet content: ## Validation",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+        "changelog section uses a machine-readable category prefix",
+        "commit trailer present: AIDE-Task",
+        "commit trailer present: AIDE-Phase",
+        "commit trailer present: AIDE-Result",
+        "commit trailer present: AIDE-Scope",
+        "commit trailer present: AIDE-Token-Impact",
+        "commit trailer present: AIDE-Quality-Gate"
+      ],
+      "classification": "PRESENTATION_ADVISORY",
+      "strict_result": "FAIL"
+    }
+  ],
+  "retained_bytes": 24142,
+  "retained_file_count": 7,
+  "files": [
+    {
+      "path": "owner.json",
+      "bytes": 140,
+      "sha256": "d4aecdee46c793930d78fb64daa26a577fe8e3bc8965ca6f4d2c4bd94683c4c8"
+    },
+    {
+      "path": "receipt.json",
+      "bytes": 9048,
+      "sha256": "78ae6f79d026ef0a0c2fcbb5138aed4bbcc706271896757efa531a759d13119c"
+    },
+    {
+      "path": "logs/stderr",
+      "bytes": 152,
+      "sha256": "7731eb0ccdd6a05ceb74a7399f2b56b2262fc9440d1aecdd93b432c225ea2bdf"
+    },
+    {
+      "path": "logs/stdin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "logs/stdout",
+      "bytes": 197,
+      "sha256": "27998ef6d671dec4b7b900459dc29492004c1d1fc06e6ef89ad873dd40d50fe9"
+    },
+    {
+      "path": "output/effective-scope.json",
+      "bytes": 1670,
+      "sha256": "3bc7ce276e05989468ba55d5fd2154139b302290b3dd4e6a22bbbc576fa954f6"
+    },
+    {
+      "path": "output/qualification.json",
+      "bytes": 12935,
+      "sha256": "512abadb663106d6e6d43d477832f1561a0e038a6f1cfcda17478f05deb1d1ca"
+    }
+  ],
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 250712064,
+    "scratch_bytes": 28303
+  },
+  "scratch_absent": true,
+  "reservation_released": true,
+  "full_collection_verified": true,
+  "model_requests": 0,
+  "dispositions_registry_unchanged": true,
+  "original_admission_refusal_preserved": true,
+  "scope": "actual presentation-only history and affected tests; strict original failures remain; no semantic release acceptance"
+}
