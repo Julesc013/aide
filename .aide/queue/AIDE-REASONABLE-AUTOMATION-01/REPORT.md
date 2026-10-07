@@ -75,3 +75,12 @@ Full custody/retirement verified. Old consumer evidence retains its old bytes.
 Stable tag/publication, downloaded-byte consumers and broader project outcomes
 remain separate. Exact guarded commit/source synchronization outcomes belong
 to `evidence/source-sync-terminal.log`; no receipt-only follow-up commit is needed.
+
+
+The subsequent current-byte consumer case0 passed26 original command records
+and retired scratch. Two middle attempts stopped on the unchanged memory
+reserve with zero completed cases; all evidence and retirement are verified.
+[Partial qualification](../AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-partial.json)
+retains those failures and the remaining seven cases without reopening owner
+formatting/account decisions. Exact old case0 lossless custody saved2,735,160
+logical bytes; current archives and accepted policy/package tests are unchanged.

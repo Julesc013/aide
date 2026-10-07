@@ -4878,3 +4878,8 @@ assets. Repair the existing qualification helper to stream child output and
 retain failure metadata. Keep full payload checksums and authenticated fixture
 checks; narrow only redundant manifest inputs. New changed native attempt
 needs its exact gate. Tests/native result and new archives remain pending.
+
+
+## Current automation consumer partial - 2026-10-08
+
+New-byte case0 passed; middle and one recovery stopped before completion on the4GiB memory reserve. Cases1-7 await changed stable headroom and finite admission. Policy/old-history authority is resolved; outer editing, whole-outcome efficiency and final publication remain material gates.

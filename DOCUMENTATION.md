@@ -981,3 +981,8 @@ proposed/ineffective with blank review identity/date; live registry3 unchanged.
 Source-only648 sync already has accepted terminal evidence. These new inputs
 undergo their own source review; they grant no historical or other release
 approval. Preserve the original ten-record proposal as its historical scope.
+
+
+## Current consumer partial record - 2026-10-08
+
+See [.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and evidence/automation-current-consumer-partial.json for exact current case0, failed attempts, custody and remaining gates. Current bytes do not inherit old eight-case coverage.

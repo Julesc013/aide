@@ -1561,3 +1561,35 @@ outcome efficiency and final release/publication/download remain separate
 work. Three live turns are spent; no model call is admitted by this native
 archive/source slice. Ref effects belong to the terminal journal; no receipt-
 only follow-up commit is required.
+
+
+## Current consumer partial closeout - 2026-10-08
+
+Objective: preserve the accepted new-byte case0 and two reconciled memory-guard
+failures without inventing all-eight success or repeating consumed attempts.
+Scope: one compact qualification, task/status/index, reports and root indexes;
+compiler manifest only. No code/assertion/runtime/export/archive/model changes.
+Dependencies: source1c673059, unchanged assets822cbd42/ef2c086e, three exact
+receipts, full927 guards, original case0/custody acceptance and final reconciliation
+review. Validate UTF8, exact file scope, generated manifest/harness coherence and
+strict managed commit before source-only synchronization.
+
+- [x] Case0/26 original observations passed; full collection/retirement accepted.
+- [x] Middle and one finite recovery failed before any case completed; collection
+  and scratch retirement verified. Preserve null exit/RUNNING/FAIL raw records.
+- [x] Old f37 custody preserves37files/3directories and saved2,735,160 logical bytes.
+- [ ] Accept final exact partial evidence and closeout source effect.
+- [ ] Create one guarded metadata commit and verify delegated source-only sync.
+- [ ] Future affected cases1-7 require changed stable native headroom and bounded
+  admission; no automatic repeated checks, extra model call or case0/package replay.
+
+Remaining host setup uses the already identified VS Code extension26.930.41038
+/backend0.160.0. Current unrestricted shell/editing/integration routes cannot
+inherit the worker claim. No app-name question, formatting decisions or new paid
+service are outstanding inputs. Stable exact review/tag/publication/acquisition
+and whole-outcome efficiency remain unfinished.
+
+This closeout record precedes its exact commit/ref effect. The actual
+`evidence/automation-consumer-partial-sync-terminal.log` governs those completed
+effects; do not create a receipt-only commit or replay the closeout to tick
+these pre-effect checkboxes.

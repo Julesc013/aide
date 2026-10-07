@@ -13553,3 +13553,8 @@ assets. Repair the existing qualification helper to stream child output and
 retain failure metadata. Keep full payload checksums and authenticated fixture
 checks; narrow only redundant manifest inputs. New changed native attempt
 needs its exact gate. Tests/native result and new archives remain pending.
+
+
+## Current consumer resource outcome - 2026-10-08
+
+Original case0/26 records passed; two middle memory-guard failures retained with zero complete cases. All scratch retired/reservations released. Existing lossless custody saved2,735,160 logical bytes with37files/3directories preserved. No model, runtime, archive, tag or publication effect in this phase.

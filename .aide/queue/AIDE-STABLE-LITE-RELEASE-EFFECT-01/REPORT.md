@@ -1,5 +1,47 @@
 # Current AIDE source, artifact and development report
 
+## Current consumer result and resource boundary - 2026-10-08
+
+The new ZIP822cbd42/TAR ef2c086e passed original case0:26 command
+records, fresh/brownfield update and recovery, preserved project-owned files,
+complete collection and scratch retirement. The first middle job and its one
+admitted recovery both stopped on the4GiB memory-reserve guard before any
+case completed. Their FAIL/RUNNING/null-exit records remain preserved; cases1-7
+are pending and the tail was never dispatched. All three jobs retired scratch
+and released reservations with full927-input/source/asset guards unchanged.
+
+[Current partial qualification](evidence/automation-current-consumer-partial.json)
+binds each native receipt and the exact current assets. The affected archive
+49-source/49-delivered-across-jobs/10-automation proof below remains valid.
+Old eight-consumer/38-form evidence remains bound to old archive bytes.
+No current eight-case or publication claim follows from the case0 pass.
+
+Existing immutable lossless custody preserved37files/3directories from the
+exact old case0, including both anchors and collection digests, while saving
+2,735,160 logical retained bytes. Two plan-only memory refusals preceded the
+single actual custody effect; a generic pagefile observation was corrected to
+the pinned runner's authoritative commit counter. All original bytes remain
+recoverable through bounded archived lookup; no wider or physical-space claim.
+
+Recovery began with physical6,139,830,272/commit8,105,959,424 bytes free and
+ended after reconciliation with physical4,055,252,992/commit6,430,359,552;
+worker Job peak271,917,056. The exact responsible process is unestablished.
+Bounded process metadata identified vmmem and existing editor/browser/system
+loads; no unrelated process was stopped. Existing D roots,256MiB cooperative
+aggregate,1GiB hard Job cap,4GiB memory reserves and10GiB disk reserve remain.
+No further automatic retry is admitted after the finite recovery failure.
+
+The native consumer workers made zero model/provider calls; controller/review
+usage is unknown. They changed no source, export,
+archive, branch, tag or release. Cosmetic decisions and ordinary existing-account
+tests are already authorized. Next dispatch requires a relevant stable native
+headroom change and a separately finite affected-case admission; do not rerun0
+or the accepted package tests, lower reserves, switch accounts or wake a model
+to recheck unchanged conditions. Ordinary constrained outer editing/read
+isolation, whole-outcome efficiency and final exact publication/acquisition
+remain separate material gates. Current source refs use the existing terminal
+journal; any later closeout synchronization must record its own actual effect.
+
 ## Current affected automation candidate - 2026-10-07
 
 The refreshed local v1.0.0 candidate contains the accepted proportionate-history

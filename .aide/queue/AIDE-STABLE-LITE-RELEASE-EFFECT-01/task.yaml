@@ -3,10 +3,10 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: needs_review
-planning_state: automation_source49_delivered47_plus2_and10_pass_final_gates_open
-result: CURRENT_AUTOMATION_LOCAL_QUALIFIED_STABLE_PENDING
+planning_state: automation_case0_pass_remaining7_memory_guard_pending
+result: CURRENT_AUTOMATION_PARTIAL_CONSUMERS_STABLE_PENDING
 created_at: 2026-09-28
-updated_at: 2026-10-07
+updated_at: 2026-10-08
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 base_dev: 4dcd896b4a9b65ef2bf6e8ecbbd7f60809560637
 depends_on:
@@ -197,3 +197,13 @@ automation_local_result_review: ACCEPT_WITH_NOTES_all_notes_nonblocking_disposed
 automation_old_consumer_evidence_rebound: false
 automation_current_stable_certification: false
 automation_source_sync_terminal_ref: evidence/automation-package-sync-terminal.log
+
+automation_current_consumer_partial_ref: evidence/automation-current-consumer-partial.json
+automation_current_consumer_partial_sha256: 2b7b5e6eab53e9859081036c2720399f46ea27ae678a1284151c2c0bf412e397
+automation_current_consumer_pass_cases: [0]
+automation_current_consumer_pending_cases: [1, 2, 3, 4, 5, 6, 7]
+automation_current_consumer_tail_dispatched: false
+automation_current_consumer_further_automatic_retry: false
+automation_owner_cosmetic_and_existing_account_test_authority: already_recorded_no_repeat_owner_packet
+automation_current_partial_source_sync_terminal_ref: evidence/automation-consumer-partial-sync-terminal.log
+automation_current_partial_sync_state: actual_effect_only_in_terminal_journal_not_inferred_from_prepared_record

@@ -1,0 +1,98 @@
+{
+  "assets": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": "905a30fedce5e7b7f0ae4b838fff7c111892909696b11a575691e7ce3c8a6916",
+    "aide-lite-v1.0.0.manifest.json": "aed5e88f915e8ef094da3e87f732a069c3f26d6f833c7c8519b798ba13bc526a",
+    "aide-lite-v1.0.0.tar.gz": "ef2c086ec211e0a041de07b8ea8e5d3b9c1553df0eeca2096bc8fe9c4f631860",
+    "aide-lite-v1.0.0.zip": "822cbd42b6ee87e5d09491a9aed988cb5294b8b061dcd40abfa87f84f9da494b"
+  },
+  "claims_all8_pass": false,
+  "controller_and_review_usage": "unknown; not zero and not measured by native receipts",
+  "current_case0_command_records": 26,
+  "current_pass_cases": [
+    0
+  ],
+  "current_pending_cases": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "current_remaining_completed_cases": 0,
+  "evidence": {
+    "automation-current-consumer-custody-result.log": {
+      "job_id": "f37a25a45e8c4e328010cd4bfbc8cd3f",
+      "sha256": "6c662967af27f40fe3d2cd8be825e0ef3650ac93bc479e27117e8cae80a9217d"
+    },
+    "automation-current-consumer-first-result.log": {
+      "job_id": "62c59587b63a41a5bd7b6c2ad9a2497f",
+      "sha256": "a2a1bb31e8692866cba1035fc4bf1f72a7906565f1046bec86dd22999d29aa8b"
+    },
+    "automation-current-consumer-middle-recovery-result.log": {
+      "job_id": "ea7f573a35e54e0db13488df9804856a",
+      "sha256": "26a05490ad1dd29b15ba889597fde89c27739099107d86566cc99327cce48a15"
+    },
+    "automation-current-consumer-middle-result.log": {
+      "job_id": "bae6788a49374d3c8c9d78f3841b8e02",
+      "sha256": "ed919e315c57492fb190d4b6a453e978ea76af40beb6574d1bf8e0f6a0f877fb"
+    }
+  },
+  "hard_disk_quota": false,
+  "limits": {
+    "aggregate_cooperative_bytes": 268435456,
+    "automatic_more_attempts": false,
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "hard_job_memory_bytes": 1073741824,
+    "physical_reserve_bytes": 4294967296
+  },
+  "memory_cause": "Exact responsible process not established. Recovery before physical6139830272/commit8105959424; after physical4055252992/commit6430359552. Worker Job peak271917056. Bounded top8 process metadata observed vmmem2831003648 plus Code/Defender/dwm/browser. No unrelated process stopped.",
+  "native_worker_model_calls": 0,
+  "old8_consumer_evidence": "Remains bound to ZIP8280a38f/TAR3b417de4; no rebinding to current bytes.",
+  "outer_session_contained": false,
+  "owner_authority": "Presentation warnings and necessary bounded existing-account tests already authorized; no repeat formatting/account approvals required.",
+  "preflight_refusals": "Two custody plan-only memory refusals preserved; apply executed once after authoritative pinned capacity. Generic pagefile sample was insufficient and corrected in journal.",
+  "publication": false,
+  "read_isolation": "unqualified",
+  "remaining_material": [
+    "Stable actual native headroom before separately finite affected consumer recovery",
+    "Supported ordinary constrained editing and enabled route qualification",
+    "Whole-outcome efficiency coverage",
+    "Exact final release-effect acceptance/tag/publication/downloaded consumers"
+  ],
+  "resource_observations": {
+    "failed_middle": {
+      "job_memory": 273612800,
+      "retained": 16082,
+      "scratch": 10236808
+    },
+    "failed_recovery": {
+      "job_memory": 271917056,
+      "retained": 16269,
+      "scratch": 9951414
+    },
+    "first": {
+      "job_memory": 331825152,
+      "retained": 3058464,
+      "scratch": 30272565
+    }
+  },
+  "retirement": {
+    "all37_files_and3_directories_preserved": true,
+    "all3_jobs_collection_verified": true,
+    "custody_archive_sha256": "60fd23217bac96fc3cb31df2c3ca49b1ab78ac4146d3276e47ce2e959db5afc4",
+    "lossless_old_case0_logical_saved_bytes": 2735160,
+    "physical_recovery_or_whole_disk_total_claimed": false,
+    "reservations_released": true,
+    "scratch_absent": true
+  },
+  "review": "Exact actual-result/partial source closeout review pending; accepted source/package/case0/custody retain their original epoch.",
+  "schema": "aide.current-consumer-partial.v1",
+  "source49_delivered49_and10_ref": "evidence/automation-current-package-qualified.json",
+  "source_commit": "1c673059202b086b1e39ea06d06b3b4fd7f647fb",
+  "source_tree": "668fbfa2a701c58d71aa1d16b3bd12897cd135b3",
+  "status": "CURRENT_CASE0_PASS_REMAINING7_RESOURCE_PENDING",
+  "tail_dispatched": false
+}
