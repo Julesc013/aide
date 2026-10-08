@@ -1,5 +1,29 @@
 # Current AIDE source, artifact and development report
 
+## Current candidate assets and changed delivery - 2026-10-08
+
+The new ZIPa4787e1e/TAR efcc1f83 contain the source71-qualified sparse candidate
+and known-backend refusal guard. Stable-build/validate passed once. Their native
+parent remains FAIL because the qualification wrapper omitted a runtime field
+before any delivered test began. A separately reviewed read-only tail passed all
+ten unchanged assertions with an explicit pinned runtime and source-only external
+harness. No successful command or source suite was repeated.
+
+[Exact qualification](evidence/candidate-current-package-qualified.json) preserves
+both results and the preallocation memory refusal. The tail's finite384MiB cap
+kept both4GiB memory reserves,256MiB monitored aggregate and existing D pools.
+All1746 inputs/48 release preimages verified; complete8-file270,832B custody,
+retired scratch and released reservation. Tail sampled scratch7,693B and Job
+memory125,169,664B are separate from parent's8,722,391B/255,377,408B. No model call.
+
+Source synchronization integrates these candidate assets, not stable certification.
+Earlier eight-consumer/38-form proofs retain their old822cbd42/ef2c086e identity;
+they are not current-byte consumer PASS. Applicable current-byte qualification,
+ordinary constrained host/model editing, whole-outcome efficiency, final exact
+release review, publication and downloaded-consumer verification remain open.
+Current outer tools are unrestricted; disk protection is monitored, not hard quota.
+Older sections preserve their dated asset epochs and original failures.
+
 ## Current affected candidate export - 2026-10-08
 
 The portable export now includes the tested sparse-candidate and known-backend

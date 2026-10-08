@@ -1,0 +1,306 @@
+{
+  "actual_model_editing_qualified": false,
+  "admission_refusal": {
+    "ref": "candidate-current-delivery-admission-refusal.log",
+    "sha256": "2255b1d768429e906d3fb53ff6b07f4db37f591ce3fcbf3018e6675d85c37562",
+    "status": "REFUSED_BEFORE_ALLOCATION",
+    "tests_started": 0
+  },
+  "archive_mapping": "ZIP/TAR854 maps equal; established stable transformation excludes secret placeholder, adds stable-release.json, adjusts pack metadata/checksums; standalone export names not identical",
+  "build_parent": {
+    "assets": {
+      "aide-lite-v1.0.0.SHA256SUMS.txt": {
+        "bytes": 274,
+        "sha256": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83"
+      },
+      "aide-lite-v1.0.0.manifest.json": {
+        "bytes": 4955,
+        "sha256": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb"
+      },
+      "aide-lite-v1.0.0.tar.gz": {
+        "bytes": 837890,
+        "sha256": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a"
+      },
+      "aide-lite-v1.0.0.zip": {
+        "bytes": 1176436,
+        "sha256": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b"
+      }
+    },
+    "completed_commands": [
+      {
+        "argv": [
+          "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+          "-I",
+          "-B",
+          "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\aide_lite.py",
+          "release",
+          "stable-build",
+          "--version",
+          "1.0.0"
+        ],
+        "exit": 0,
+        "label": "stable-build",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "a7b8b78410b4df20cea17aadcd3d0b83f2fbf5ee2c665b6652fb60bfc781a0b8",
+        "timeout_seconds": 120
+      },
+      {
+        "argv": [
+          "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+          "-I",
+          "-B",
+          "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\aide_lite.py",
+          "release",
+          "stable-validate",
+          "--version",
+          "1.0.0"
+        ],
+        "exit": 0,
+        "label": "stable-validate",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "986b22ede5aad84ee9e7c264d9de0161f15805f77720a5a4f6d024bbee07df52",
+        "timeout_seconds": 120
+      }
+    ],
+    "counter_after": 4,
+    "delivered_tests_started": 0,
+    "exact_release_member_names": 48,
+    "inputs_unchanged": 1737,
+    "job_id": "9226e567a4964bcf96568c1afc8f1bfd",
+    "model_calls": 0,
+    "nonstable_preimages_unchanged": 44,
+    "original_error": "'trusted_runtime_selection'",
+    "original_native_exit": 1,
+    "peaks": {
+      "canonical_bytes": {
+        ".aide/release": 4028662
+      },
+      "memory_bytes": 255377408,
+      "scratch_bytes": 8722391
+    },
+    "proof_sha256": "ca5ce5ff41fc146f6d616622e3293dd5ba81b6afc320f0fed1827081fe9a61e1",
+    "receipt_sha256": "d5a0a63ca4adb0354dfd547c6d4dd6c7084af7bb737ca55977bfa9aa80f956af",
+    "recovery": "one separately reviewed readonly tail for ten unstarted assertions; no build/validate replay",
+    "reservation_released": true,
+    "retained_bytes": 264295,
+    "retained_full_custody": {
+      "logs/stderr": {
+        "bytes": 1474,
+        "sha256": "0b2900393ff2496df7fb2eb8a51148e73f2d7927102b8e2963d0c25fc51d8a91"
+      },
+      "logs/stdin": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "logs/stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "output/effective-scope.json": {
+        "bytes": 1775,
+        "sha256": "c9de3b0f2a6c4cdebd9fa4d6457962815f493dd66acce6678d031cf61ab349b3"
+      },
+      "output/qualification.json": {
+        "bytes": 2885,
+        "sha256": "ca5ce5ff41fc146f6d616622e3293dd5ba81b6afc320f0fed1827081fe9a61e1"
+      },
+      "output/stable-build.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "output/stable-build.stdout": {
+        "bytes": 123,
+        "sha256": "a7b8b78410b4df20cea17aadcd3d0b83f2fbf5ee2c665b6652fb60bfc781a0b8"
+      },
+      "output/stable-validate.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "output/stable-validate.stdout": {
+        "bytes": 50,
+        "sha256": "986b22ede5aad84ee9e7c264d9de0161f15805f77720a5a4f6d024bbee07df52"
+      },
+      "owner.json": {
+        "bytes": 140,
+        "sha256": "26c5923738eeb06e759d4b4cd5924926c18eb8c5a0fb5a97b62935f66fcf1c4c"
+      },
+      "receipt.json": {
+        "bytes": 257848,
+        "sha256": "d5a0a63ca4adb0354dfd547c6d4dd6c7084af7bb737ca55977bfa9aa80f956af"
+      }
+    },
+    "schema": "aide.affected-candidate-build-partial.v1",
+    "scratch_absent": true,
+    "source71_reused": true,
+    "stable_acceptance": false,
+    "status": "BUILD_VALIDATE_PASS_NATIVE_PARENT_FAIL_DELIVERED_UNSTARTED",
+    "terminal_sha256": "5aa0c7590984f9ac01cabc5d6208bd7816aac55c0b3bdd441fd306a9845872c8",
+    "whole_session_contained": false
+  },
+  "build_parent_failed_preserved": true,
+  "build_validation_replayed": false,
+  "counter_after": 4,
+  "delivery_tail": {
+    "effect_sha256": "095de42cc541e68326c2785740b34e75f706bc4587c70ef1f379a2058c69e63b",
+    "inputs_unchanged": 1746,
+    "job_id": "f8caebb0e3ff4bad93bd0ebcbc894e69",
+    "limits": {
+      "canonical_bytes": 536870912,
+      "commit_reserve_bytes": 4294967296,
+      "disk_reserve_bytes": 10737418240,
+      "log_bytes": 262144,
+      "max_files": 12000,
+      "memory_bytes": 402653184,
+      "physical_reserve_bytes": 4294967296,
+      "processes": 32,
+      "retained_bytes": 131072,
+      "runtime_seconds": 180,
+      "scratch_bytes": 12582912
+    },
+    "native_exit": 0,
+    "peaks": {
+      "canonical_bytes": {},
+      "memory_bytes": 125169664,
+      "scratch_bytes": 7693
+    },
+    "proof": {
+      "actual_model_editing_qualified": false,
+      "all_current_release_preimages_unchanged": 48,
+      "archive_members": 854,
+      "assets": {
+        "aide-lite-v1.0.0.SHA256SUMS.txt": {
+          "bytes": 274,
+          "sha256": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83"
+        },
+        "aide-lite-v1.0.0.manifest.json": {
+          "bytes": 4955,
+          "sha256": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb"
+        },
+        "aide-lite-v1.0.0.tar.gz": {
+          "bytes": 837890,
+          "sha256": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a"
+        },
+        "aide-lite-v1.0.0.zip": {
+          "bytes": 1176436,
+          "sha256": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b"
+        }
+      },
+      "commands": [],
+      "delivered_inputs": {
+        ".aide/scripts/aide_lite.py": "bd66068522077f0bc30031c2de15a7c9f73aa5e35e7f19e11cb4719b28dcbde7",
+        "core/execution/managed_workspace.py": "55f1590b37d150088c6023ccf8151adfbc350644e906c64d40b367c4884606d6",
+        "core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+        "core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc",
+        "docs/reference/aide-lite-test-runner.md": "6e069802a5c0f5d2869044f684df0222713698a62862c8db9838058cb55c8ba1"
+      },
+      "errors": 0,
+      "exact_release_member_names": true,
+      "failures": 0,
+      "fixture_retired": true,
+      "fixture_support": "Unmodified, source-only external test module; candidate workspace imported from exact extracted ZIP bytes. These ten cases do not invoke source CLI or real model. Protected process primitives remain pinned.",
+      "hard_disk_quota": false,
+      "harness_assertions_changed": false,
+      "harness_sha256": "2b0f0e49b433d569ef8740bcf9c0a904a71feedfa8e59f3b8d593f26dc753ec1",
+      "immutable_inputs_unchanged": 1746,
+      "mock_model_boundary": true,
+      "model_calls": 0,
+      "nonstable_preimages_unchanged": 44,
+      "original_archive_members_unchanged": true,
+      "preimages_witness_sha256": "76e529050841bd16de794e5c825038720ea364f63186873964b642b57ea23f0f",
+      "release_member_count": 48,
+      "reused_build_validation": {
+        "completed_commands": [
+          "stable-build",
+          "stable-validate"
+        ],
+        "job_id": "9226e567a4964bcf96568c1afc8f1bfd",
+        "native_parent_exit": 1,
+        "partial_sha256": "7e0208810aa4c5293276cf550c049924cd27c5563d56de5331ed2428f8996e66",
+        "replayed_commands": false
+      },
+      "schema": "aide.affected-candidate-delivery-tail.v1",
+      "selected_cases": [
+        "test_codex_known_unsupported_profile_refuses_changed_prompt_without_submission",
+        "test_codex_profile_refusal_identities_are_finite_exact_and_not_capability_proof",
+        "test_codex_candidate_edit_collects_without_writing_source_or_legacy_override",
+        "test_codex_workspace_without_matching_permission_never_allocates",
+        "test_codex_workspace_unsafe_paths_and_collisions_refuse_before_allocation",
+        "test_codex_workspace_permission_and_retained_budgets_are_finite",
+        "test_codex_workspace_digest_binds_mode_target_and_roots_preserves_legacy",
+        "test_codex_workspace_spent_failed_request_is_not_replayed",
+        "test_codex_workspace_source_race_refuses_without_spending_turn",
+        "test_codex_workspace_private_source_and_read_root_carveouts_never_allocate"
+      ],
+      "skips": 0,
+      "source71_reused_not_replayed": true,
+      "source_only_test_harness": ".aide/scripts/tests/test_managed_workspace.py",
+      "source_only_tests_shipped": false,
+      "status": "PASS",
+      "tests_run": 10,
+      "whole_session_contained": false,
+      "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+      "zip_tar_maps_equal": true
+    },
+    "proof_sha256": "56931b17f1e55f6a75a478a8d42ad03a87de6dcf2eb46f6dde6bd6b37b04b5fc",
+    "quiescent": true,
+    "receipt_sha256": "b53aa77b6af1c921f75fd1b81861864c8622dcbe78277159f69bbb2d70f47163",
+    "reservation_released": true,
+    "retained_bytes": 270832,
+    "retained_files": 8,
+    "retained_full_custody": {
+      "logs/stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "logs/stdin": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "logs/stdout": {
+        "bytes": 94,
+        "sha256": "a8ba3885b79d1bf3967c26090039111ba1d00582bf51695b81dc4244cf18ab9a"
+      },
+      "output/effective-scope.json": {
+        "bytes": 1682,
+        "sha256": "62e38a8dc1a32ef9302079e180dc9a30f935e772f9e02efb28acfd24d28be84e"
+      },
+      "output/qualification.json": {
+        "bytes": 3631,
+        "sha256": "56931b17f1e55f6a75a478a8d42ad03a87de6dcf2eb46f6dde6bd6b37b04b5fc"
+      },
+      "output/tests.txt": {
+        "bytes": 2146,
+        "sha256": "a9fd23c2d855c4fd95e00ca0d3448bc83511d1c8d0bd6c9abf3aa50d2e74844e"
+      },
+      "owner.json": {
+        "bytes": 140,
+        "sha256": "b7e15c215e8ca2b4b5d0b901d863290509756a458f1ebd1d73d483985d978a58"
+      },
+      "receipt.json": {
+        "bytes": 263139,
+        "sha256": "b53aa77b6af1c921f75fd1b81861864c8622dcbe78277159f69bbb2d70f47163"
+      }
+    },
+    "scratch_absent": true,
+    "terminal_sha256": "f61c29779f317100885574433ea82dcd215a657147b00c342d7f90d5815d1d9a"
+  },
+  "export_witness_sha256": "eabb16a760834369ceb829daa64b73ad27f45b462fb8789722e88c4ea09ed051",
+  "hard_disk_quota": false,
+  "model_calls": 0,
+  "new_asset_original_eight_consumers": false,
+  "old_eight_consumer_evidence_rebound": false,
+  "remaining_gates": [
+    "supported constrained ordinary host route and actual model editing",
+    "whole-outcome matched efficiency",
+    "applicable exact current-byte consumer/invalidation review",
+    "final exact stable release effect acceptance",
+    "publication and downloaded-byte consumer verification"
+  ],
+  "schema": "aide.affected-candidate-package-qualified.v1",
+  "source71_reused_not_replayed": true,
+  "source_commit": "ae60e5c0257fa0b5974795157a81db40c7915faf",
+  "stable_acceptance": false,
+  "status": "AFFECTED_BUILD_VALIDATE_AND_DELIVERED10_PASS_STABLE_PENDING",
+  "tag_or_publication": false,
+  "whole_session_contained": false
+}

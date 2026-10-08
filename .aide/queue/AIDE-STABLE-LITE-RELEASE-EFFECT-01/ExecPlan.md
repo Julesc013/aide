@@ -1,9 +1,53 @@
 # ExecPlan: AIDE Lite stable release effect
 
-Current routing (2026-10-07): use the affected automation archive closeout
-at the end of this plan. Owner-directed cosmetic advisories and finite existing-
-account testing supersede the older decision/permission blockers. Earlier dated
-sections preserve their execution-time subjects, not current release acceptance.
+## Affected candidate assets and delivery closeout - 2026-10-08
+
+Objective: retain the new candidate bytes and qualified changed delivery scope,
+integrate this bounded closure into existing source refs, then address material
+release dependencies. Scope: four stable assets, one curated witness, this
+WorkUnit's plan/report/task/status, queue index/compiler manifest and root indexes.
+No source/export/runtime/model changes or new worktree/storage family.
+
+- [x] Export closeout ae60e5c0 completed source sync; its exact terminal journal
+  owns the main/dev/task effects and preserves85 unrelated branch tips.
+- [x] Stable-build and stable-validate completed once in job9226e567. Preserve
+  parent FAIL: wrapper KeyError occurred before all ten delivered tests.
+- [x] Original tail refused before allocation on the unchanged4GiB reserve.
+  Calibrate only its native Job cap from1GiB to384MiB using observed peaks;
+  preserve refusal and separately reviewed effect, without reserve reduction.
+- [x] Read-only tailf8caebb0 passed exactly ten unchanged external source-harness
+  assertions against extracted current ZIP code; no skips/model calls. ZIP/TAR
+  mappings agree; all1746 inputs and48 release preimages stayed exact.
+- [x] Verify complete8-file270,832B tail custody, scratch retirement and released
+  reservation. Tail scratch7,693B/memory125,169,664B are separate observations
+  from parent's8,722,391B/255,377,408B. Neither is a whole-campaign total.
+- [ ] Review actual qualification, freeze strict message/staged tree and exact
+  source effects, then commit and CAS main/dev plus one normal atomic push.
+
+The curated candidate-current-package-qualified.json retains parent failure,
+refusal, separate passing tail, exact asset identities and remaining gates.
+Source71 remains valid for unchanged source/test bytes; it was not replayed.
+These source-only tests are excluded from the archive and supplied externally.
+Established stable transformation excludes the secret placeholder, adds stable
+metadata and adjusts checksums; its854 members differ from standalone export.
+
+Earlier eight-consumer/38-form evidence remains bound to prior822cbd42/ef2c086e
+bytes. Current affected delivery PASS does not rebind it. Review actual dependency
+invalidation/current-byte consumer scope before final stable release acceptance.
+Ordinary constrained host/model editing, whole-outcome efficiency and final exact
+release-effect/publication/downloaded consumers remain unqualified. No cosmetic
+approval, new billing or root-read widening is pending or inferred.
+
+Effect recovery: preserve each failed/refused/terminal identity; no implicit
+replay or further memory calibration after the admitted tail. Final source
+receipt belongs to evidence/candidate-current-assets-source-sync-terminal.log;
+do not create a receipt-only commit or replay to tick this pre-effect checkbox.
+Older dated sections retain their execution-time subjects.
+
+Current routing (2026-10-08): the affected candidate assets closeout above
+supersedes older pending export/build steps. Preserve actual terminal journals,
+owner-directed cosmetic advisories and finite existing-account testing. Earlier
+dated sections are historical subjects, not current release acceptance.
 
 ## Current local qualification closeout - 2026-10-06
 

@@ -3,8 +3,8 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: needs_review
-planning_state: candidate_export_qualified_assets_held_stable_pending
-result: CURRENT_EXPORT_QUALIFIED_ASSETS_HELD_STABLE_PENDING
+planning_state: candidate_assets_affected_delivery_qualified_stable_pending
+result: CURRENT_ASSETS_AFFECTED_DELIVERY_PASS_STABLE_PENDING
 created_at: 2026-09-28
 updated_at: 2026-10-08
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -216,3 +216,14 @@ automation_current_coverage_sha256: 1e52dc46a5e5c37939b6b721e5fe02604fc6f0f5a32a
 automation_current_case6_fixture_memory_bytes: 536870912
 automation_current_original_2GiB_fixture_qualified: false
 automation_current_final_sync_terminal_ref: evidence/automation-consumer-final-sync-terminal.log
+
+current_affected_candidate_package:
+  result_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-package-qualified.json
+  zip_sha256: a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b
+  tar_sha256: efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a
+  build_validation: PASS_completed_once_native_parent_FAIL_preserved
+  delivered_external_assertions: 10_PASS_separate_readonly_tail
+  source71: reused_exact_source_and_tests_not_replayed
+  old_consumer_evidence_rebound: false
+  stable_release_accepted: false
+  source_sync_terminal_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-assets-source-sync-terminal.log

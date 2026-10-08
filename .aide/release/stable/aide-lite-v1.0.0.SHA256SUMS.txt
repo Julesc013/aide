@@ -1,3 +1,3 @@
-822cbd42b6ee87e5d09491a9aed988cb5294b8b061dcd40abfa87f84f9da494b  aide-lite-v1.0.0.zip
-ef2c086ec211e0a041de07b8ea8e5d3b9c1553df0eeca2096bc8fe9c4f631860  aide-lite-v1.0.0.tar.gz
-aed5e88f915e8ef094da3e87f732a069c3f26d6f833c7c8519b798ba13bc526a  aide-lite-v1.0.0.manifest.json
+a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b  aide-lite-v1.0.0.zip
+efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a  aide-lite-v1.0.0.tar.gz
+c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb  aide-lite-v1.0.0.manifest.json

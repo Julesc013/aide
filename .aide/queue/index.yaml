@@ -3822,8 +3822,8 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/evidence
   - id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
     status: needs_review
-    planning_state: candidate_export_qualified_assets_held_stable_pending
-    result: CURRENT_EXPORT_QUALIFIED_ASSETS_HELD_STABLE_PENDING
+    planning_state: candidate_assets_affected_delivery_qualified_stable_pending
+    result: CURRENT_ASSETS_AFFECTED_DELIVERY_PASS_STABLE_PENDING
     title: Freeze and qualify a publishable AIDE Lite release effect
     task: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml
     exec_plan: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md

@@ -1,5 +1,14 @@
 # AIDE Documentation Index
 
+## Affected candidate assets - 2026-10-08
+
+[Current release report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+and [exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-package-qualified.json)
+bind the new candidate archives to passed build/validation and ten delivered
+assertions, preserving failed/refused attempts. Source-only tests are external,
+not shipped. Prior consumer evidence keeps its original byte identity; ordinary
+host, whole-outcome efficiency and final release/publication gates remain open.
+
 ## Affected runner export - 2026-10-08
 
 [Current release report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)

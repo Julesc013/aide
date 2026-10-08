@@ -1,5 +1,14 @@
 # AIDE Planning Index
 
+## Affected candidate assets - 2026-10-08
+
+The [release plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md)
+records completed archive generation/validation and ten passing delivered
+assertions in a separate read-only tail. Preserve the failed parent and admission
+refusal; source71 is reused. Integrate the four candidate assets and retain the
+applicable current-byte consumer, ordinary host, efficiency and publication gates.
+Earlier dated entries retain their original payload subjects.
+
 ## Affected runner export - 2026-10-08
 
 The [release plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md)

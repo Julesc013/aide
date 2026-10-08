@@ -1,5 +1,16 @@
 # AIDE Implementation Log
 
+## Affected candidate assets - 2026-10-08
+
+Build/validate passed once; native parent9226e567 remains FAIL before delivered
+tests. Read-only tailf8caebb0 passed ten unchanged external-harness assertions
+against current ZIPa4787e1e/TAR efcc1f83. Its384MiB cap preserves both4GiB reserves;
+full8-file270,832B custody, scratch retirement and reservation release verified.
+Sampled tail scratch7,693B/Job memory125,169,664B are this job's observations.
+[Exact witness](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-package-qualified.json)
+retains the parent failure and preallocation refusal. No model, successful-step
+replay or stable publication; old consumer proofs remain bound to old assets.
+
 ## Affected runner export - 2026-10-08
 
 Pinned restricted jobcd314f54 refreshed only four portable export files from

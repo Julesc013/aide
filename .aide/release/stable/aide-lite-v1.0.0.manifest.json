@@ -2,13 +2,13 @@
   "archives": {
     "tar_gz": {
       "path": ".aide/release/stable/aide-lite-v1.0.0.tar.gz",
-      "sha256": "ef2c086ec211e0a041de07b8ea8e5d3b9c1553df0eeca2096bc8fe9c4f631860",
-      "size_bytes": 834192
+      "sha256": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a",
+      "size_bytes": 837890
     },
     "zip": {
       "path": ".aide/release/stable/aide-lite-v1.0.0.zip",
-      "sha256": "822cbd42b6ee87e5d09491a9aed988cb5294b8b061dcd40abfa87f84f9da494b",
-      "size_bytes": 1172791
+      "sha256": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b",
+      "size_bytes": 1176436
     }
   },
   "identity": {
@@ -60,10 +60,10 @@
     ],
     "release_axis": "aide_lite_portable_package",
     "schema_version": "aide.stable-release-identity.v1",
-    "source_commit": "6c37af95393dade9092dbfc788f466be34ff2c7c",
-    "source_pack_checksums_sha256": "7354fa79e8c83e5813fbb699f8284bd03c12b6c2a3c5b2e9935d10c3c7ebd90f",
+    "source_commit": "a17cf4b3dbec5caa236c62ee2fa23b31aa09c8fc",
+    "source_pack_checksums_sha256": "97898ece41a00f7d1b3c7182ee4fc1b81ad203f3aa55ebb91dfa5ad11905fa9f",
     "source_repo": "julesc013/aide",
-    "source_tree": "d20f963dc693a4b90eb56eb4df357ed59728dfc2",
+    "source_tree": "450cbd28aed578bbb8990595e2447cf081df2321",
     "support_mode": "companion",
     "support_tier_candidate": "T3",
     "tag": "aide-lite-v1.0.0",
