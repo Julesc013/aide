@@ -1,5 +1,13 @@
 # AIDE Documentation Index
 
+## Affected runner export - 2026-10-08
+
+[Current release report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+distinguishes the newly qualified portable export from unchanged archives.
+Its [witness](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-payload-export-qualified.json)
+binds exact derivation/custody and retirement; source-only tests remain
+excluded. Actual model editing and stable publication remain unqualified.
+
 ## Ordinary CLI profile qualification and refusal guard - 2026-10-08
 
 [Runner reference](docs/reference/aide-lite-test-runner.md) documents the sparse

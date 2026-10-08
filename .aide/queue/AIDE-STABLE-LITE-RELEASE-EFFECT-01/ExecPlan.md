@@ -1620,3 +1620,31 @@ preserve85 other tips/88 pairs. Actual effects use the ignored terminal journal,
 without a receipt-only follow-up commit. Ordinary constrained editing/read
 isolation, whole-outcome efficiency and final exact stable release/publication/
 downloaded consumers remain material gates. No cosmetic approval is pending.
+
+
+## Affected candidate export - 2026-10-08
+
+Objective: deliver the tested runner/refusal repair through the existing portable
+pack. Reuse exact source71, keep its source-only test exclusion and preserve
+old archives/consumer evidence. Existing release WorkUnit, pinned302688d owner,
+D pools,256MiB aggregate and all reserves remain; no new model or host setup.
+
+- [x] Freeze clean a17cf4b3,1703 guards and exact8MiB export-only native effect.
+- [x] Independent review accepted one pure export; jobcd314f54 completed.
+- [x] Verify all851 source/template derivations,849 immutable inputs and full
+  six-file255,912B custody. Sampled scratch2,247B/Job memory219,385,856B; scratch
+  retired and reservation released. Only four export files changed.
+- [ ] Freeze this bounded closeout, strict message/staged tree and independently
+  review one guarded commit and conditional main/dev/current-task source sync.
+- [ ] Separately review the changed archive build and ten new assertions using
+  a bound external source harness against extracted delivered modules. No tests
+  are added to the pack and no old consumer result is rebound to changed bytes.
+
+Closeout scope: four export outputs, one curated witness, this task/status/plan/
+report, queue index/compiler manifest and three root indexes. Stable builder
+requires clean source, making the export commit its concrete prerequisite.
+Original preimages remain in Git a17cf4b3; no backup/worktree is created.
+First refused/uncertain effect stops without automatic replay. Existing archives
+remain exact822cbd42/ef2c086e, with no stable/tag/publication effect. Supported
+ordinary model editing/read isolation and whole-outcome efficiency remain
+unqualified. This source closeout grants none of those separate effects.

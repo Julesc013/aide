@@ -1,0 +1,102 @@
+{
+  "active_absent": true,
+  "admission_counter": 4,
+  "changed_paths": [
+    ".aide/export/aide-lite-pack-v0/checksums.json",
+    ".aide/export/aide-lite-pack-v0/files/core/execution/managed_workspace.py",
+    ".aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md",
+    ".aide/export/aide-lite-pack-v0/manifest.yaml"
+  ],
+  "checksummed_exact_derivations": 851,
+  "effect_sha256": "14568744cd47e12ecaf22da2f6628310bb5780f3db1a96ab79aacbdb286a0aa6",
+  "full_custody": {
+    "logs/stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdout": {
+      "bytes": 292,
+      "sha256": "c444bb0ed5a9b8b5c13901f432d10d1f9f971a4eb523d0a4701b44f17aa1f945"
+    },
+    "output/effective-scope.json": {
+      "bytes": 1815,
+      "sha256": "42b7232f150f03b4d1c633776d48a5301ca07d1c991cc1defbee11e39e0dd625"
+    },
+    "owner.json": {
+      "bytes": 140,
+      "sha256": "cf44dddc37fa9d3ea350d56d82a26028e8f0e29ea06629512920d0ebcf6a149d"
+    },
+    "receipt.json": {
+      "bytes": 253665,
+      "sha256": "0c96f07dbb24fd7fa58c0fd04097597b619a4319e6e0ed92aad5854712962da6"
+    }
+  },
+  "immutable_inputs_unchanged": 849,
+  "job_id": "cd314f54da564416800555a10a0baafd",
+  "model_calls": 0,
+  "native_exit_code": 0,
+  "native_terminal_sha256": "110d76fbd17c48c09fecd742f5ff8675c3f0b3270ddc34815cfb24565522121f",
+  "next": "separately reviewed affected build and external delivered regression harness",
+  "old_four_assets_unchanged": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": {
+      "bytes": 274,
+      "sha256": "905a30fedce5e7b7f0ae4b838fff7c111892909696b11a575691e7ce3c8a6916"
+    },
+    "aide-lite-v1.0.0.manifest.json": {
+      "bytes": 4955,
+      "sha256": "aed5e88f915e8ef094da3e87f732a069c3f26d6f833c7c8519b798ba13bc526a"
+    },
+    "aide-lite-v1.0.0.tar.gz": {
+      "bytes": 834192,
+      "sha256": "ef2c086ec211e0a041de07b8ea8e5d3b9c1553df0eeca2096bc8fe9c4f631860"
+    },
+    "aide-lite-v1.0.0.zip": {
+      "bytes": 1172791,
+      "sha256": "822cbd42b6ee87e5d09491a9aed988cb5294b8b061dcd40abfa87f84f9da494b"
+    }
+  },
+  "pack_bytes": 4354242,
+  "pack_files": 854,
+  "pack_source_manifest": {
+    "checksum_scope": "payload and static pack docs; excludes manifest.yaml, checksums.json, and export-report.md",
+    "contents_inline": "false",
+    "excluded_classes": "",
+    "generated_by": "aide-lite q24.existing-tool-adapter-compiler.v0",
+    "included_files": "",
+    "limitations": "",
+    "local_state_copied": "false",
+    "no_secret_guarantee": "obvious secret-like patterns are refused during export",
+    "pack_id": "aide-lite-pack-v0",
+    "provider_or_model_calls": "false",
+    "raw_prompt_storage": "false",
+    "raw_response_storage": "false",
+    "required_target_initialization_steps": "",
+    "schema_version": "q21.aide-lite-pack-manifest.v0",
+    "source_commit": "a17cf4b3dbec5caa236c62ee2fa23b31aa09c8fc",
+    "source_dirty_state": "false",
+    "source_repo": "julesc013/aide"
+  },
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4354242
+    },
+    "memory_bytes": 219385856,
+    "scratch_bytes": 2247
+  },
+  "quiescent": true,
+  "reservation_released": true,
+  "result": "PASS_PURE_EXPORT_ONLY",
+  "retained_bytes": 255912,
+  "schema": "aide.affected-candidate-export-result.v1",
+  "scratch_absent": true,
+  "source_commit": "a17cf4b3dbec5caa236c62ee2fa23b31aa09c8fc",
+  "source_dirty_state": false,
+  "source_only_tests_shipped": false,
+  "source_tree": "450cbd28aed578bbb8990595e2447cf081df2321",
+  "stable_acceptance": false,
+  "whole_session_contained": false
+}

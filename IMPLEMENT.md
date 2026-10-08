@@ -1,5 +1,15 @@
 # AIDE Implementation Log
 
+## Affected runner export - 2026-10-08
+
+Pinned restricted jobcd314f54 refreshed only four portable export files from
+clean a17cf4b3. All851 derivations/849 immutable inputs/full six-file255,912B
+custody verified; sampled scratch2,247B and Job memory219,385,856B. Scratch
+retired and its lease released. Source71 was not rerun. The unchanged four
+stable assets exclude this repair until the separate affected build qualifies.
+[Exact witness](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-payload-export-qualified.json)
+and release plan retain the actual unsupported host/read and release gates.
+
 ## Ordinary CLI profile qualification and refusal guard - 2026-10-08
 
 The existing-account authority and eleven cosmetic historical dispositions

@@ -1,5 +1,24 @@
 # Current AIDE source, artifact and development report
 
+## Current affected candidate export - 2026-10-08
+
+The portable export now includes the tested sparse-candidate and known-backend
+refusal repair, derived from clean a17cf4b3. All851 checksummed source/template
+derivations and849 immutable inputs verified; only core, runner reference and
+their two generated metadata files changed. Source71 is reused for unchanged
+operative bytes; its test remains excluded from the pack.
+
+One pinned restricted native export job completed with six retained files
+255,912B, sampled scratch2,247B and Job memory219,385,856B. Scratch retired and
+its reservation released. [Exact export witness](evidence/candidate-payload-export-qualified.json)
+binds source, output hashes and custody. The four archives/manifest/checksums
+assets remain unchanged at822cbd42/ef2c086e and retain their original consumer
+qualification. Next: commit this qualified export to satisfy the clean-source
+build boundary, then separately qualify changed assets and ten new assertions
+through the explicit external test harness. Ordinary model editing/read
+isolation, whole-outcome efficiency and final stable/publication/download
+gates remain open; no model request or publication occurred.
+
 ## Current consumer completion and capture repair - 2026-10-08
 
 All eight current-archive consumer cases passed across eight distinct jobs.

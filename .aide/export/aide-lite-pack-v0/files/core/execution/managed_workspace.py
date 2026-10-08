@@ -162,7 +162,8 @@ def validate_config(config):
     if 'codex_exec' in config:
         permission = config['codex_exec']
         if (not isinstance(permission, dict)
-                or set(permission) != {'account', 'model', 'effort', 'max_turns'}
+                or set(permission) not in ({'account', 'model', 'effort', 'max_turns'},
+                                          {'account', 'model', 'effort', 'max_turns', 'task_workspace'})
                 or permission['account'] != 'chatgpt'
                 or not isinstance(permission['model'], str)
                 or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,63}', permission['model'])
@@ -170,9 +171,14 @@ def validate_config(config):
                 or type(permission['max_turns']) is not int
                 or not 0 < permission['max_turns'] <= 100):
             raise WorkspaceRefused('exact finite local Codex permission required')
+        if 'task_workspace' in permission:
+            workspace_permission(permission['task_workspace'])
     working = [root_path(value) for value in config['working_roots']]
     if not working or any(root.is_relative_to(work) for root in roots.values() for work in working):
         raise WorkspaceRefused('storage inside working source refused')
+    if config.get('codex_exec', {}).get('task_workspace'):
+        workspace_read_roots(config['codex_exec']['task_workspace']['read_roots'],
+                             protected=(*working, *roots.values(), codex_account_home()))
     return config, roots, working
 
 
@@ -400,13 +406,23 @@ def codex_request_digest(job):
     cwd_info = ordinary(job['cwd'], directory=True)
     if cwd_info.st_ino <= 0:
         raise WorkspaceRefused('Codex request requires stable working-root identity')
-    return digest({'cwd_identity': [cwd_info.st_dev, cwd_info.st_ino],
+    subject = {'cwd_identity': [cwd_info.st_dev, cwd_info.st_ino],
         'source_commit': job['source_commit'], 'source_tree': job['source_tree'],
         'executable_sha256': job['executable_sha256'],
         'input_sha256s': sorted(set(job['inputs'].values())),
         'prompt_sha256': job['inputs'][job['prompt_file']],
         'schema_sha256': job['inputs'][job['schema_file']],
-        'model': job['model'].casefold(), 'effort': job['effort']})
+        'model': job['model'].casefold(), 'effort': job['effort']}
+    if 'task_workspace' in job:
+        # Keep the legacy digest byte-for-byte compatible with spent requests.
+        # Input aliases with identical bytes/targets do not buy another turn.
+        candidate = job['task_workspace']
+        subject['task_workspace'] = {
+            'files': sorted((target.casefold(), job['inputs'][source])
+                            for source, target in candidate['files'].items()),
+            'read_roots': sorted(os.path.normcase(str(root_path(value)))
+                                 for value in candidate['read_roots'])}
+    return digest(subject)
 
 
 def require_codex_permission(config, job, dispatch):
@@ -416,6 +432,18 @@ def require_codex_permission(config, job, dispatch):
     if (not permission or job['model'] != permission['model']
             or job['effort'] != permission['effort']):
         raise WorkspaceRefused('Codex job has no matching local model permission')
+    if 'task_workspace' in job:
+        admitted = permission.get('task_workspace')
+        if (not admitted or job['task_workspace']['read_roots'] != admitted['read_roots']):
+            raise WorkspaceRefused('Codex task workspace has no matching local permission')
+        if job['executable_sha256'] in admitted.get('blocked_executable_sha256s', []):
+            raise WorkspaceRefused('known unsupported Codex task filesystem profile; requalification required')
+        declared = job['task_workspace']['files']
+        total = sum(ordinary(Path(job['cwd']) / name).st_size for name in declared)
+        if len(declared) > admitted['max_files'] or total > admitted['max_input_bytes']:
+            raise WorkspaceRefused('Codex task workspace exceeds admitted input budget')
+        if total + 16384 > config['limits']['retained_bytes']:
+            raise WorkspaceRefused('Codex candidate cannot fit its retained budget')
     if dispatch['codex_admitted'] >= permission['max_turns']:
         raise WorkspaceRefused('finite Codex turn budget exhausted')
     if dispatch['codex_request_digests'] is None:
@@ -610,6 +638,8 @@ def validate_job(job, working):
     if not exe.is_absolute():
         raise WorkspaceRefused('absolute executable required')
     adapter = job.get('adapter')
+    if 'task_workspace' in job and adapter != 'codex_exec':
+        raise WorkspaceRefused('task workspace requires the admitted Codex adapter')
     if adapter == 'codex_exec':
         root_path(str(exe.parent))
     ordinary(exe)
@@ -655,6 +685,10 @@ def validate_job(job, working):
         if not script.is_relative_to(cwd) or script.relative_to(cwd).as_posix() not in inputs:
             raise WorkspaceRefused('script must be a bound source input')
     if adapter == 'codex_exec':
+        if 'task_workspace' in job:
+            if paths_overlap(cwd, codex_account_home()):
+                raise WorkspaceRefused('Codex candidate source overlaps private account state')
+            workspace_manifest(job['task_workspace'], inputs)
         for name in ('prompt_file', 'schema_file'):
             relative = job.get(name)
             if not isinstance(relative, str) or relative not in inputs:
@@ -675,6 +709,128 @@ def validate_job(job, working):
     if git('rev-parse', 'HEAD') != job['source_commit'] or git('rev-parse', 'HEAD^{tree}') != job['source_tree']:
         raise WorkspaceRefused('source commit/tree changed')
     return cwd
+
+
+def workspace_permission(value):
+    required = {'read_roots', 'max_files', 'max_input_bytes'}
+    if (not isinstance(value, dict)
+            or not required <= set(value) <= required | {'blocked_executable_sha256s'}
+            or type(value['max_files']) is not int or not 0 < value['max_files'] <= 32
+            or type(value['max_input_bytes']) is not int
+            or not 0 < value['max_input_bytes'] <= 1048576):
+        raise WorkspaceRefused('finite exact Codex task workspace permission required')
+    blocked = value.get('blocked_executable_sha256s', [])
+    if (not isinstance(blocked, list) or len(blocked) > 8
+            or any(not isinstance(item, str) or not re.fullmatch(r'[0-9a-f]{64}', item)
+                   for item in blocked) or len(blocked) != len(set(blocked))):
+        raise WorkspaceRefused('finite exact blocked Codex executable identities required')
+    workspace_read_roots(value['read_roots'])
+
+
+def codex_account_home():
+    return Path(os.environ.get('CODEX_HOME', str(Path.home() / '.codex'))).absolute()
+
+
+def paths_overlap(first, second):
+    first = Path(os.path.normcase(str(first)))
+    second = Path(os.path.normcase(str(second)))
+    return first.is_relative_to(second) or second.is_relative_to(first)
+
+
+def workspace_read_roots(value, *, protected=()):
+    if (not isinstance(value, list) or len(value) > 8
+            or any(not isinstance(item, str) for item in value)):
+        raise WorkspaceRefused('bounded exact Codex workspace read roots required')
+    normalized = [os.path.normcase(str(root_path(item))) for item in value]
+    if len(normalized) != len(set(normalized)):
+        raise WorkspaceRefused('duplicate Codex workspace read root')
+    if any(paths_overlap(root, private) for root in normalized for private in protected):
+        raise WorkspaceRefused('Codex toolchain read root overlaps protected source or state')
+
+
+def workspace_manifest(value, inputs):
+    if (not isinstance(value, dict) or set(value) != {'files', 'read_roots'}
+            or not isinstance(value['files'], dict) or not 0 < len(value['files']) <= 32):
+        raise WorkspaceRefused('bounded exact Codex task workspace manifest required')
+    workspace_read_roots(value['read_roots'])
+    targets = []
+    for source, target in value['files'].items():
+        if not isinstance(source, str) or source not in inputs:
+            raise WorkspaceRefused('Codex candidate source is not a bound input')
+        if any(part.casefold() in ('.aide.local', '.git', '.codex')
+               for part in Path(source).parts):
+            raise WorkspaceRefused('private source cannot be copied into a Codex candidate')
+        if (not isinstance(target, str) or len(target) > 512 or '\\' in target
+                or not target or target.startswith('/') or ':' in target):
+            raise WorkspaceRefused('bounded relative Codex candidate path required')
+        parts = target.split('/')
+        for part in parts:
+            stem = part.split('.')[0].upper()
+            if (not part or part in ('.', '..') or part.rstrip(' .') != part
+                    or any(ord(char) < 32 or char in '<>"|?*' for char in part)
+                    or stem in {'CON', 'PRN', 'AUX', 'NUL', *(f'COM{n}' for n in range(10)),
+                                *(f'LPT{n}' for n in range(10))}
+                    or part.casefold() in ('.git', '.codex', '.aide.local')):
+                raise WorkspaceRefused('unsafe Codex candidate path')
+        normalized = target.casefold()
+        if any(normalized == old or normalized.startswith(old + '/')
+               or old.startswith(normalized + '/') for old in targets):
+            raise WorkspaceRefused('Codex candidate path collision')
+        targets.append(normalized)
+
+
+def prepare_codex_workspace(config_path, config, roots, job, root, cwd, schema):
+    """Prepare a sparse candidate; grant no writes to canonical source/state."""
+    candidate = root / 'output' / 'workspace'
+    candidate.mkdir()
+    for source, target in job['task_workspace']['files'].items():
+        path = cwd / source
+        ordinary(path)
+        maximum = config['codex_exec']['task_workspace']['max_input_bytes']
+        with path.open('rb') as stream:
+            data = stream.read(maximum + 1)
+        if len(data) > maximum or hashlib.sha256(data).hexdigest() != job['inputs'][source]:
+            raise WorkspaceRefused('Codex candidate input changed before copy')
+        destination = candidate.joinpath(*target.split('/'))
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        with destination.open('xb') as stream:
+            stream.write(data)
+    private = root / 'cache' / 'codex-private'
+    private.mkdir()
+    rules = {':root': 'deny', ':minimal': 'read'}
+    for value in job['task_workspace']['read_roots']:
+        rules[value] = 'read'
+    # Originals include controller-local prompt/schema/config identities. Only
+    # copied public candidate bytes, stdin and the copied schema reach the model.
+    rules.update({str(Path(config_path).absolute()): 'deny', str(codex_account_home()): 'deny',
+                  str(cwd / '.aide.local'): 'deny', str(cwd / '.git'): 'deny',
+                  str(roots['control']): 'deny', str(roots['retained']): 'deny',
+                  str(root): 'read', str(root / 'tmp'): 'write',
+                  str(schema): 'read', str(root / 'cache'): 'deny',
+                  str(candidate): 'write', str(candidate / '.codex'): 'deny',
+                  str(candidate / '.git'): 'deny', str(candidate / '.aide.local'): 'deny'})
+    profile = 'aide_task_' + root.name
+    inline = '{' + ','.join(json.dumps(k) + '=' + json.dumps(v) for k, v in rules.items()) + '}'
+    options = ['-c', 'default_permissions=' + json.dumps(profile),
+               '-c', 'permissions.' + profile + '.filesystem=' + inline,
+               '-c', 'permissions.' + profile + '.network.enabled=false',
+               '-c', 'windows.sandbox="elevated"',
+               '-c', 'log_dir=' + json.dumps(str(private / 'logs')),
+               '-c', 'sqlite_home=' + json.dumps(str(private / 'state')),
+               '-c', 'history.persistence="none"']
+    for feature in ('plugins', 'browser_use', 'browser_use_external', 'computer_use', 'in_app_browser'):
+        options += ['-c', 'features.' + feature + '=false']
+    # Refuse overlong command profiles instead of silently dropping rules.
+    if len(subprocess.list2cmdline(options).encode('utf-16-le')) > 48000:
+        raise WorkspaceRefused('Codex workspace profile exceeds command size budget')
+    write_json(root / 'output' / 'effective-scope.json', {
+        'schema': 'aide.codex-task-workspace.scope.v1', 'filesystem': rules,
+        'network_enabled': False, 'private_backend_state': str(private),
+        'candidate_files': job['task_workspace']['files'],
+        'canonical_source_writes': False, 'outer_session_contained': False,
+        'read_isolation': 'requires_actual_tool_qualification',
+        'account_home_metadata': 'outside_managed_pool_unqualified'})
+    return candidate, options
 
 
 def inspect(config_path, job=None):
@@ -957,6 +1113,13 @@ def run(config_path, job, *, host=None, cancelled=lambda: False, probe=capacity)
                     '-c', 'features.remote_plugin=false', '-c', 'web_search="disabled"', '-']
         try:
             if job['adapter'] == 'codex_exec':
+                if 'task_workspace' in job:
+                    process_cwd, options = prepare_codex_workspace(
+                        config_path, config, roots, job, root, cwd, schema_copy)
+                    index = argv.index('--sandbox')
+                    del argv[index:index + 2]
+                    argv[argv.index('--cd') + 1] = str(process_cwd)
+                    argv[-1:-1] = options
                 admitted_dispatch = admit_codex_turn(roots['control'], admitted_dispatch,
                     config['codex_exec']['max_turns'], codex_request_digest(job))
                 schema_copy.write_bytes(codex_schema)

@@ -1,5 +1,13 @@
 # AIDE Planning Index
 
+## Affected runner export - 2026-10-08
+
+The [release plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md)
+records the qualified current runner export and separate pending archive
+build/external delivered assertions. Source71 is reused unchanged; actual
+model editing remains unqualified. Existing archives and their consumer
+evidence stay bound to original bytes. No new model or publication effect.
+
 ## Ordinary CLI profile qualification and refusal guard - 2026-10-08
 
 71 managed-workspace tests passed. The observed0.160.0 root-deny startup
