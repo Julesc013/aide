@@ -3,8 +3,8 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: needs_review
-planning_state: candidate_assets_affected_delivery_qualified_stable_pending
-result: CURRENT_ASSETS_AFFECTED_DELIVERY_PASS_STABLE_PENDING
+planning_state: candidate_current_consumer_partial_five_PASS_material_gates_retained
+result: CURRENT_FIVE_CONSUMERS_PASS_TWO_INCOMPLETE_ONE_UNSTARTED
 created_at: 2026-09-28
 updated_at: 2026-10-08
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -65,6 +65,7 @@ scope:
     - .agents/skills/aide-execplan/SKILL.md
     - .agents/skills/aide-review/SKILL.md
     - .aide/generated/preview/CLAUDE.md
+    - .aide/generated/manifest.yaml
     - .aide/generated/manifest.yaml
   read_only_paths:
     - .aide/policies/review-gates.yaml
@@ -227,3 +228,20 @@ current_affected_candidate_package:
   old_consumer_evidence_rebound: false
   stable_release_accepted: false
   source_sync_terminal_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-assets-source-sync-terminal.log
+
+
+current_candidate_consumer_partial:
+  result_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-partial.json
+  result_sha256: 1a008c2e816efa478ad69ee566ceca860a204d9a64df6aa68b1b68242847d498
+  source_commit: 84909ad3598ad70938365279bc45b3eb94e9a738
+  passing_cases: [0, 2, 3, 4, 6]
+  incomplete_cases: [1, 5]
+  new_archive_unstarted_cases: [7]
+  all_allocated_jobs_quiescent_retired_released: true
+  stronger_headroom_wait: 600_seconds_no_submission_timeout
+  extra_attempts_allocated: 0
+  automatic_retry: false
+  full38_current_form_coverage: false
+  historical_cosmetic_gate: resolved_advisory_original_findings_preserved
+  existing_account_tests: owner_authorized_bounded_no_paid_fallback
+  source_sync_terminal_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-partial-source-sync-terminal.log

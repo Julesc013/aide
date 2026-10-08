@@ -1692,3 +1692,37 @@ First refused/uncertain effect stops without automatic replay. Existing archives
 remain exact822cbd42/ef2c086e, with no stable/tag/publication effect. Supported
 ordinary model editing/read isolation and whole-outcome efficiency remain
 unqualified. This source closeout grants none of those separate effects.
+
+
+## Current-byte consumer partial qualification - 2026-10-08
+
+Objective: retain actual new-archive cases0,2,3,4,6 PASS, incomplete cases1/5
+and the finite no-submission timeout; close this verified slice without
+repeating accepted work or claiming stable acceptance. Scope: this task, one
+curated partial witness, queue/compiler manifest, three root indexes and the
+parent risk record's current header. Preserve every older asset epoch.
+
+The exact native and custody effects were independently admitted. Source84909ad3
+and ZIPa4787e1e/TAR efcc1f83 remained unchanged throughout. All seven allocated
+consumer jobs collected full evidence, proved quiescence, retired scratch and
+released reservations. Cases1/5 stopped on memory reserve danger before their
+original assertions completed. One additional three-case group waited600s for
+stronger headroom, allocated nothing and stopped;7 and1 were not dispatched by
+that group. No automatic retry or new model request follows this record.
+
+Verify all127 passing retained files/receipt bindings, exact failed outcomes,
+the no-submission timeout, UTF8/document/queue/compiler coherence and strict
+final message/staged tree. Obtain one proportionate exact closeout/source/ref
+review, create one guarded metadata commit, conditionally synchronize only
+main/dev/current task, and preserve85 other tips and88 branch pairs. The
+actual terminal journal governs effects; no receipt-only follow-up commit.
+
+Current-archive lifecycle1 and restart5 retain material payload dependencies;
+unchanged CLI bytes do not qualify their changed install/receipt/rollback
+inputs. Old TaskOS7 can support only identical standalone-CLI behavior with
+its old subject preserved; it is not a new-archive job PASS. Full38-form and
+current consumer matrix, current zero-change replay, exact stable ACCEPT, tag,
+publication and downloaded consumers remain open. Those local Lite gates are
+separate from ordinary host/model editing/read isolation and whole-outcome
+efficiency. Historical cosmetic decisions and existing-account test authority
+are already resolved. No paid fallback, new storage or unknown cleanup.

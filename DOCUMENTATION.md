@@ -1,5 +1,14 @@
 # AIDE Documentation Index
 
+## Current consumer partial qualification - 2026-10-08
+
+[Release report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and
+[exact witness](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-partial.json)
+identify five actual current-archive PASS cases, two incomplete outcomes and the
+no-submission capacity timeout. The parent risk header now reflects resolved
+cosmetic/test authority and current technical boundaries. Earlier dated records
+remain history; no old execution is rebound to new bytes or stable acceptance.
+
 ## Affected candidate assets - 2026-10-08
 
 [Current release report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)

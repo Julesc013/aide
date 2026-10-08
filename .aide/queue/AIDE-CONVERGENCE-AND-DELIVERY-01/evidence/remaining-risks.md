@@ -1,6 +1,32 @@
 # Remaining Risks
 
-## Current checkpoint — 2026-10-05
+## Current material boundaries - 2026-10-08
+
+Latest observed source synchronization reached84909ad3 with88 corresponding
+branch pairs and85 other tips preserved. Current candidate ZIPa4787e1e/TAR
+efcc1f83 passed build/validation and delivered10; unchanged source71 is reused.
+Current archive consumers0/2/3/4/6 passed. Lifecycle1/restart5 aborted under the
+memory reserve guard, reconciled quiescent and retired;7 was not started. One
+600s stronger-headroom wait submitted no further job. Full current consumer/
+38-form coverage, current zero-change replay, exact stable ACCEPT, publication
+and downloaded consumers remain open. See the
+[current release report](../../AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+
+Owner-directed policy has resolved cosmetic historical-message dispositions
+as advisory while preserving raw failures and published history, including66.
+Necessary finite existing-account/local tests are authorized. No formatting
+waiver packet, extra service purchase or repeated test permission is pending.
+
+Supported ordinary constrained model editing/read isolation and whole-outcome
+efficiency remain separate parent-campaign gaps. Actual known0.160.0 startup
+failure is preserved; four live request identities are spent, with no automatic
+model replay. Current outer routes are unrestricted. The256MiB shared D pool
+is cooperative/monitored, not a hard filesystem or global quota. Wider unknown
+disk reclamation and downstream adoption remain unfinished; FacMan development
+remains paused. Historical sections below are superseded observations, not
+current owner requests, current release acceptance or deletion authority.
+
+## Historical checkpoint — 2026-10-05
 
 The last independently accepted source-only synchronization reached935545a8;
 its terminal receipt observed88 corresponding local/remote branch pairs and
@@ -20,7 +46,7 @@ See the [current stable WorkUnit report](../../AIDE-STABLE-LITE-RELEASE-EFFECT-0
 [accepted binding result](../../AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-release-binding-result.json)
 and the retained current-qualification-final-sync.log terminal receipt.
 
-## Current remaining external gates
+## Historical remaining external gates
 
 Outer-client/editor/read containment, ten historical dispositions, live-model
 permission and matched efficiency, exact stable/publication/downloaded consumers,
@@ -60,7 +86,7 @@ are retained as history rather than current blockers or cleanup authority.
 - No dev integration, main promotion, release candidate, tag, asset set, or
   publication decision exists yet.
 
-## Current binding qualification and new local message gate — 2026-10-05
+## Historical binding qualification and new local message gate — 2026-10-05
 
 Stable WorkUnit resultddce4396/job b38c6cf0 independently accepted17 refusal
 fixtures/current0HELD/stale1REFUSED with complete collection/retirement. This

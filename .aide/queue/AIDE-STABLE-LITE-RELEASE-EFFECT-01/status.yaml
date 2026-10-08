@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: needs_review
-planning_state: candidate_assets_affected_delivery_qualified_stable_pending
-result: CURRENT_ASSETS_AFFECTED_DELIVERY_PASS_STABLE_PENDING
+planning_state: candidate_current_consumer_partial_five_PASS_material_gates_retained
+result: CURRENT_FIVE_CONSUMERS_PASS_TWO_INCOMPLETE_ONE_UNSTARTED
 updated_at: 2026-10-08
-current_slice: current_assets_build_validate_and_delivered10_PASS_parent_FAIL_preserved
-next_slice: exact_source_asset_closeout_then_applicable_current_byte_and_material_release_gates
+current_slice: five_current_consumers_PASS_two_reconciled_memory_aborts_finite_wait_no_submission
+next_slice: after_relevant_capacity_change_exact_bounded_affected_lifecycle_restart_then_release_gates
 review_gate: exact_source_ref_effects_changed_payload_qualification_and_final_stable_release_gates_retained
 current_repair_result_ref: .aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-qualified-result.json
 current_scanner_source_sha256: bca3178f45667bdf326e549858de58469e0cb0153f104c03abfef9ad140a3d96
@@ -202,3 +202,20 @@ current_affected_candidate_package:
   old_consumer_evidence_rebound: false
   stable_release_accepted: false
   source_sync_terminal_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-assets-source-sync-terminal.log
+
+
+current_candidate_consumer_partial:
+  result_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-partial.json
+  result_sha256: 1a008c2e816efa478ad69ee566ceca860a204d9a64df6aa68b1b68242847d498
+  source_commit: 84909ad3598ad70938365279bc45b3eb94e9a738
+  passing_cases: [0, 2, 3, 4, 6]
+  incomplete_cases: [1, 5]
+  new_archive_unstarted_cases: [7]
+  all_allocated_jobs_quiescent_retired_released: true
+  stronger_headroom_wait: 600_seconds_no_submission_timeout
+  extra_attempts_allocated: 0
+  automatic_retry: false
+  full38_current_form_coverage: false
+  historical_cosmetic_gate: resolved_advisory_original_findings_preserved
+  existing_account_tests: owner_authorized_bounded_no_paid_fallback
+  source_sync_terminal_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-partial-source-sync-terminal.log

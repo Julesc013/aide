@@ -1,5 +1,41 @@
 # Current AIDE source, artifact and development report
 
+## Current archive consumer outcomes - 2026-10-08
+
+Five actual consumers passed on ZIPa4787e1e/TAR efcc1f83: fresh/brownfield
+adoption and update0, context2, partial-import recovery3, public CLI4 and managed
+job forms6. [Exact partial qualification](evidence/candidate-current-consumer-partial.json)
+binds their127 retained files/5,019,290B, receipts and original acceptance.
+Maximum sampled scratch30,255,410B and Job memory331,878,400B are separate
+observations. Source71 and delivered10 remain valid for unchanged operative bytes.
+
+Lifecycle1 and restart5 were genuinely allocated but stopped on machine-wide
+memory reserve danger before complete assertions. Both original null exits,
+RUNNING captures and full failure evidence remain; actual reconciliation proves
+owned-job-absent/quiescence, scratch retirement and reservation release. The
+reporting fix preserves incomplete stream metadata without fabricating PASS.
+All seven allocated jobs retired. The separately reviewed remaining5→7→1 group
+waited600s for30s sampled sustained extra1GiB headroom, allocated nothing and
+stopped. TaskOS7 was not started on the new archive. No further automatic retry.
+
+Four exact older retired collections were compressed with full member readback,
+retained anchors and bounded retrieval, saving19,290,575 logical bytes. This is
+lossless owned custody, not measured physical/global recovery or wider cleanup.
+Existing D pools,256MiB cooperative aggregate,384MiB worker Job caps, both4GiB
+memory reserves and10GiB disk reserve remain. Native fixtures made zero model
+calls; the four spent live request identities/counter remain unchanged.
+Controller/review usage and whole-outcome cost remain unknown.
+
+Current lifecycle/restart payload dependencies invalidate blanket reuse of their
+old archive PASS; identical CLI alone is insufficient. Old TaskOS evidence may
+support only identical standalone-CLI behavior with its original subject kept.
+Full38-form/current consumer qualification, current zero-change replay, exact
+stable ACCEPT, tag/publication and downloaded consumers remain open. These local
+Windows Lite gates are separate from supported ordinary model editing/read
+isolation and whole-outcome efficiency. Outer tools remain unrestricted; disk
+limits remain monitored. Cosmetic history and ordinary existing-account tests
+need no new owner approval. Earlier dated sections below retain their old epochs.
+
 ## Current candidate assets and changed delivery - 2026-10-08
 
 The new ZIPa4787e1e/TAR efcc1f83 contain the source71-qualified sparse candidate

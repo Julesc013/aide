@@ -1,5 +1,16 @@
 # AIDE Implementation Log
 
+## Current consumer partial qualification - 2026-10-08
+
+Current cases0/2/3/4/6 passed with127 full retained files/5,019,290B; every
+allocated job collected results, proved quiescence, retired scratch and released
+its reservation. Cases1/5 remain incomplete memory-guard outcomes. A reviewed
+600s stronger-headroom observer allocated no retry and stopped. Four exact
+lossless custodies saved19,290,575 logical retained bytes. Runtime, source71,
+archive bytes, roots and reserves were not changed or replayed.
+[Exact witness](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-partial.json)
+keeps old subjects and material release/host/efficiency gaps visible.
+
 ## Affected candidate assets - 2026-10-08
 
 Build/validate passed once; native parent9226e567 remains FAIL before delivered

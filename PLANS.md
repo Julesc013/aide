@@ -1,5 +1,14 @@
 # AIDE Planning Index
 
+## Current consumer partial qualification - 2026-10-08
+
+The [release plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md)
+retains five current-archive PASS cases, two reconciled memory-aborted consumers
+and a finite600s stronger-headroom wait that submitted no job. Preserve accepted
+results and original failures; remaining lifecycle/restart checks require a
+relevant capacity change and exact finite admission. Local Lite release gates
+remain separate from ordinary host/model and whole-outcome efficiency work.
+
 ## Affected candidate assets - 2026-10-08
 
 The [release plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md)
