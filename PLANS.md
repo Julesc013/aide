@@ -1,5 +1,24 @@
 # AIDE Planning Index
 
+## Ordinary CLI profile qualification and refusal guard - 2026-10-08
+
+71 managed-workspace tests passed. The observed0.160.0 root-deny startup
+failure now has a tested preallocation refusal guard; no model replay or access
+widening. [SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md)
+keeps the exact failed live attempt, retired resources and supported-host
+requirement. Integrate reviewed source; affected release payload qualification
+and final publication remain separate. Current outer tools remain unrestricted.
+
+## Ordinary managed CLI candidate workflow - 2026-10-08
+
+Source preparation is admitted under the existing
+[SESSION WorkUnit](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) to add an
+explicit sparse candidate write mode to the currently read-only managed Codex
+route. Existing account, spent identities, D pools and finite resource limits
+remain. Actual editing, required checks and excluded-path tool witnesses need
+separately accepted native/runtime/model effects. This does not change the
+unrestricted VS Code thread or certify a stable release.
+
 ## Current consumer completion and capture repair - 2026-10-08
 
 All eight current-archive consumer cases passed across eight distinct jobs.

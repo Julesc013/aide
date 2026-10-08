@@ -1,0 +1,75 @@
+{
+  "schema": "aide.ordinary-workspace.actual-host-capability.v1",
+  "status": "LOCAL_PROFILE_UNSUPPORTED_FAIL_CUSTODY_PASS",
+  "backend_version": "0.160.0",
+  "backend_sha256": "fdda5fa3cf3fb3d000b876720742857676293e4315e4b045fae6f8bd7e866d1d",
+  "outer_client": "VS_Code_Codex_26.930.41038",
+  "profile": "root_deny_elevated",
+  "observed_error": "elevated Windows sandbox requires effective :root read access",
+  "stage": "thread/start_session_creation_before_model_turn",
+  "job_id": "2a1ffe932e634947bd6967d090b2435c",
+  "terminal_sha256": "7a2f180a820a60a0f3d220fa03f7c0176893265fe89cbdcdda2850fac10451ef",
+  "files": [
+    {
+      "path": "owner.json",
+      "bytes": 140,
+      "sha256": "892abbc95b4e8385c33a0a8899fc612bfb5fb69ca4aceeb3e7ba8b26349934d8"
+    },
+    {
+      "path": "receipt.json",
+      "bytes": 5242,
+      "sha256": "43e92d7acab4954cf525537d4f853c35deedc5f07e28c14b1f26be9b4fece666"
+    },
+    {
+      "path": "logs/stderr",
+      "bytes": 564,
+      "sha256": "2a910e9c2f14aa2690b733a5227fea928cebc7cb40f4edbd1104cacf915d929c"
+    },
+    {
+      "path": "logs/stdin",
+      "bytes": 2721,
+      "sha256": "13cab9e805eeacb7008c4df7c00492c9c508dfa8ddeb4eb388083feacbea4e0c"
+    },
+    {
+      "path": "logs/stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "output/effective-scope.json",
+      "bytes": 2230,
+      "sha256": "131b1b1fcad29a87545884e227e1240ea4048c3ff631a2ac5860013b0762a4e2"
+    },
+    {
+      "path": "output/workspace/verify_ordinary_guide.py",
+      "bytes": 2218,
+      "sha256": "f6d114fde15b62874f4e62a64d674d8b623adc8e543eae99ef55392dfe9d4c78"
+    },
+    {
+      "path": "output/workspace/docs/reference/aide-lite-test-runner.md",
+      "bytes": 22515,
+      "sha256": "511c745333ca283d366b3dc98c98764a450a520c22a8b56540d5c772db6201aa"
+    }
+  ],
+  "retained_bytes": 35630,
+  "inputs_unchanged": true,
+  "candidate_checker_and_guide_unchanged": true,
+  "fixture_contents_unchanged": true,
+  "stdout_events": 0,
+  "observed_model_usage": "none_reported_session_not_started",
+  "admitted_model_counter": 4,
+  "actual_model_editing": false,
+  "excluded_tool_results": "not_observed",
+  "outer_session_contained": false,
+  "limits": "Job memory/process cap enforced for backend;disk growth monitored;broker tools/account attribution unqualified",
+  "peaks": {
+    "scratch_bytes": 14261018,
+    "memory_bytes": 858968064,
+    "canonical_bytes": {}
+  },
+  "scratch_absent": true,
+  "reservation_released": true,
+  "account_metadata_delta_bytes_unattributed": 294,
+  "automatic_replay": false,
+  "resolution": "Require a genuinely supported bounded read profile or separate reviewed constrained host; do not silently change :root to read. This fingerprint remains unavailable; keep independent deterministic work available."
+}

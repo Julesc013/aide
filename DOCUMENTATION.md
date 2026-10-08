@@ -1,5 +1,14 @@
 # AIDE Documentation Index
 
+## Ordinary CLI profile qualification and refusal guard - 2026-10-08
+
+[Runner reference](docs/reference/aide-lite-test-runner.md) documents the sparse
+candidate and exact known-backend refusal. [SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md)
+binds71 passing native/mock tests and the failed actual0.160.0 session start.
+Actual model editing/read isolation remain unqualified; no replay or root-read
+widening. Current stable assets are unchanged and exclude this optional mode.
+See IMPLEMENT for execution/custody and remaining material release boundaries.
+
 ## Current consumer completion and capture repair - 2026-10-08
 
 All eight current-archive consumer cases passed across eight distinct jobs.

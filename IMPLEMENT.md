@@ -1,5 +1,40 @@
 # AIDE Implementation Log
 
+## Ordinary CLI profile qualification and refusal guard - 2026-10-08
+
+The existing-account authority and eleven cosmetic historical dispositions
+are resolved under owner-directed proportionate automation; published history
+and substantive gates remain intact. The opt-in sparse task candidate keeps
+canonical source, executing runtime, private state and counters outside model
+write authority. Legacy read-only behavior and request identities are preserved.
+
+All71 managed-workspace tests passed under the unchanged pinned restricted
+worker, including10 new candidate/refusal regressions; no skips or model calls.
+Job3690aaad collected evidence, retired scratch and released its reservation.
+Sampled scratch30,356B and backend Job memory258,473,984B are this observation.
+The earlier69-test run and original rejected read grant remain preserved.
+
+The single0.160.0 live attempt2a1ffe93 failed before session creation because
+the elevated Windows sandbox requires effective root read. No guide edit,
+local-tool exclusion or model usage witness occurred; all11 inputs stayed
+unchanged. Native1 and35,630B across8 retained files are preserved; scratch
+and reservations retired. Admission counter4 retains all earlier identities.
+A scoped private configuration records that exact unsupported backend hash,
+so changed prompts refuse before allocation, counters or launch. An absent
+entry does not certify another backend. No replay or read-scope widening.
+
+Current VS Code tools remain unrestricted. Broker-tool memory/account metadata
+attribution, hard disk quotas, ordinary model editing and whole-outcome cost
+remain unqualified. Existing four stable assets are unchanged and exclude this
+new optional mode; affected payload qualification and exact tag/publication/
+downloaded-consumer gates remain open. Source integration is separate from
+release certification; its actual terminal journal owns the resulting refs.
+
+[Runner reference](docs/reference/aide-lite-test-runner.md) and
+[SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) bind the
+source,71-test terminal and retained actual host failure. No broad suite,
+archive rebuild, additional model request, checkout or storage root was made.
+
 ## Current consumer completion and capture repair - 2026-10-08
 
 All eight current-archive consumer cases passed across eight distinct jobs.

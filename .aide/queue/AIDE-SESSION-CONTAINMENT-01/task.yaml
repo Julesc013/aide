@@ -3,7 +3,7 @@ id: AIDE-SESSION-CONTAINMENT-01
 title: Qualify scoped host execution through the existing managed owner
 type: implementation
 status: needs_review
-planning_state: actual_client_bound_configuration_qualified_whole_session_unqualified
+planning_state: candidate71_PASS_actual_host_profile_UNSUPPORTED_refusal_guard_qualified
 result: PARTIAL
 created_at: 2026-10-03
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -28,6 +28,9 @@ scope:
     - IMPLEMENT.md
     - DOCUMENTATION.md
     - .aide/generated/manifest.yaml
+    - core/execution/managed_workspace.py
+    - .aide/scripts/tests/test_managed_workspace.py
+    - docs/reference/aide-lite-test-runner.md
   approved_existing_execution_config: .aide.local/execution.json
   read_only_runtime: .aide/export/aide-lite-pack-v0/files
   corrective_generated_cleanup:
@@ -43,7 +46,7 @@ scope:
   forbidden_operations:
     - new worktrees, clones, storage roots or recovery archives
     - machine-wide ACL, account, quota or Codex-default changes
-    - model calls, provider calls, billing or credential changes
+    - unadmitted model/provider calls, new billing routes or credential changes
     - unrelated target mutation or deletion
     - main promotion, publication or claims of whole-session containment
 branch_plan:
@@ -88,3 +91,20 @@ current_host_launch_slice:
   source_sync: separate_parent_campaign_exact_review_required_no_stable_effect
   native_replay_after_decoder: forbidden_without_new_concrete_invalidation_and_review
   ordinary_model_editing: unqualified_requires_effective_client_setup_and_bounded_permission
+
+ordinary_cli_workflow_slice:
+  source_base: 30c6de928db7ce39bb12a32f14371b27adbbffce
+  authority: owner_existing_account_tests_and_campaign_exact_independent_gates
+  admission_proposal: evidence/ordinary-workflow-admission-proposal.log
+  admission_sha256: 189b692312f8fa4c3a3fe64641cbc6576748de5df9c680b658f3645468bbfe09
+  admission: ACCEPT_WITH_NOTES_all_notes_nonblocking_disposed_source_preparation_only
+  objective: actual_managed_CLI_sparse_candidate_edit_test_collect_retire
+  legacy_readonly_and_spent_request_identities: preserved
+  canonical_model_writes: forbidden
+  source_fixture_jobs_max: 2
+  future_model_phase_new_turns_max: 1
+  model_effect: not_admitted_requires_exact_source_runtime_effect_review
+  runtime_artifact_ref_publication_effects: not_admitted_by_this_source_slice
+  local_state_prefix: .aide.local/ordinary-workflow-
+  retained_limits: existing_D_roots_256MiB_aggregate_10GiB_disk_4GiB_memory_reserves_one_heavy_job
+  current_outer_thread: disabled_unrestricted_not_changed_or_qualified

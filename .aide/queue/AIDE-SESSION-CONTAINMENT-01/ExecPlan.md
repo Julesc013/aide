@@ -283,3 +283,96 @@ child commit plus conditional exact nonforce main/dev/current-task sync; preserv
 No package/suite replay or further configuration job is justified. External
 client scope, bounded model permission, historical11, matched outcome and stable
 publication remain independent. Client identity itself is now resolved.
+
+## 2026-10-08 ordinary managed CLI workflow
+
+The previous source turn qualified all eight current consumers and synchronized
+30c6de92. No current native job is live. The next dependency is actual editing:
+the managed Codex adapter always requests read-only mode and the prepared
+launcher only renders. Existing-account testing is already authorized; the
+current VS Code thread remains unrestricted and cannot inherit a CLI claim.
+
+Scope admission189b6923 received exact independent ACCEPT_WITH_NOTES; every
+note is nonblocking and disposed. Source preparation only is admitted. Extend
+managed_workspace.py, its existing tests and the test-runner reference, plus
+this WorkUnit and required indexes. Preserve old epochs and published history.
+
+1. Add an opt-in task_workspace permission and manifest. Legacy jobs keep their
+   exact read-only behavior and request digests. Bind candidate contents, paths,
+   mode and read roots into new request identity without resetting spent turns.
+2. Copy only finite declared bound inputs into owned output/workspace. The
+   model edits this assigned candidate; canonical source and executing runtime
+   stay outside its write authority. Validate paths, links, collisions, input
+   counts/bytes and matching local permission before allocation. Candidate
+   integration uses the existing independent review and guarded commit path.
+3. Supply the installed client's named permission profile, without a legacy
+   sandbox override: root deny, necessary bounded reads, candidate/tmp writes,
+   private control/runtime/state denied, tool-network disabled. Disable all
+   separately enabled integration/browser/plugin/agent paths. Redirect supported
+   logs/SQLite state into private disposable job cache, keep ephemeral/no-history
+   and existing signed-in auth. Do not copy credentials or invent options.
+4. Freeze source and meaningful regressions; separately review at most two
+   deterministic fixture jobs supervised by the unchanged known-good owner.
+   Source/unit results cannot grant live model execution or runtime promotion.
+5. Only after exact runtime/effect review, allow one new Sol/medium 300-second
+   turn, adding one finite allowance without erasing the three spent turns.
+   Complete a necessary operator-guide candidate edit and actual local checks.
+   Collect genuine excluded read/write tool observations using harmless fixtures;
+   missing witnesses or permissive behavior leave that boundary unqualified.
+6. Verify output custody, candidate diff, backend destinations, collection,
+   retirement and reservations. Unknown account-home writes and controller/review
+   usage stay unknown. Qualify only the demonstrated CLI workflow. Existing
+   unrestricted tools, hard disk quotas and other clients remain outside scope.
+
+Existing D roots,256MiB aggregate,10GiB disk and both4GiB memory reserves stay.
+One heavy job,1GiB Job memory/32processes; model16MiB scratch/256KiB retained/
+1MiB log. Candidate limits32files/1MiB source inputs. No new checkout/storage
+family, account change, Full Access or paid fallback. Changed payloads need
+affected export/consumer/release qualification; old asset evidence is preserved.
+No native/model/artifact/ref effect is admitted by this plan alone.
+
+The first exact source/native subject acddd108 (candidate fd0e72ee) received
+REQUEST_CHANGES before dispatch: a narrow raw-input/read-root grant could reopen
+private state or copy it into the candidate. No job or turn was allocated.
+Repair removes original-input read grants, refuses private source mappings and
+rejects toolchain overlaps with source/account/all pools in both directions;
+add Windows normalization and preallocation refusal coverage. Rebind the full
+source/effect before any native submission; keep the rejected finding immutable.
+
+
+### Actual host refusal and bounded prevention
+
+Native fixture4996134d passed69/zero skips under the unchanged302688d owner.
+The one reviewed live attempt2a1ffe93 then failed during thread/start before
+a session or model/tool result: installed0.160 requires effective root read,
+so the admitted root-deny profile is unsupported. Preserve native1, all eight
+retained files35,630B, unchanged11 inputs and spent admission counter4.
+Scratch/reservation retirement passed. No retry or root-read widening.
+
+Exact independent failure/preparation admission accepts a minimal persistent
+private-configuration clone: optional task_workspace.blocked_executable_sha256s
+(up to8 unique hashes), refused before allocation, counters or host launch.
+An absent entry is never capability qualification. Keep legacy jobs/digests
+unchanged. Add two regressions for changed-prompt refusal and exact/malformed
+binding with legacy unaffected; review and run only second zero-model fixture.
+No model retry, global configuration or shared-control schema is admitted.
+Update the current capability/reference truth; integrate only exact reviewed
+source through the parent campaign. Stable assets remain unchanged and lack
+this optional candidate mode. Ordinary model editing remains unqualified.
+
+
+Secondfixture3690aaad passed71/zero skips, all427 inputs unchanged, scratch
+retired and reservations released at original limits. Preserve one preallocation
+memory refusal: no process/job was created; fresh capacity then admitted the
+unchanged fixture. No budget weakening. Final source/default-legacy behavior
+is qualified; the optional actual model-editing mode remains unsupported on
+0.160.0, with explicit known-backend refusal in the private clone.
+
+Final closeout updates only task/parent/root indexes and compiler manifest.
+The queue index requires its compiler-owned fingerprint refresh; no generated
+contract body or old acceptance is rewritten. Check strict message/staged scope
+and obtain exact independent final-source/commit/ref acceptance before one
+guarded commit and conditional source-only atomic main/dev/current-task sync.
+Actual terminal records completed effects without another receipt-only commit.
+No model replay, runtime promotion, asset rebuild, tag or publication is admitted
+by this source closeout. The full campaign goal remains incomplete.

@@ -156,6 +156,236 @@ class ManagedWorkspaceTests(unittest.TestCase):
             workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
         self.assertEqual(host.run.call_count, 1)
 
+    def workspace_job(self):
+        job = self.codex_job()
+        packet = {'files': {'task-packet.txt': 'docs/guide.txt'},
+                  'read_roots': [str(Path(sys.executable).parent)]}
+        job['task_workspace'] = packet
+        self.config['codex_exec']['task_workspace'] = {
+            'read_roots': packet['read_roots'], 'max_files': 4, 'max_input_bytes': 4096}
+        self.config['limits']['retained_bytes'] = 65536
+        workspace.write_json(self.config_path, self.config)
+        return job
+
+    def test_codex_known_unsupported_profile_refuses_changed_prompt_without_submission(self):
+        job = self.workspace_job()
+        self.config['codex_exec']['task_workspace']['blocked_executable_sha256s'] = [
+            job['executable_sha256']]
+        workspace.write_json(self.config_path, self.config)
+        before = workspace.dispatch_state(self.roots['control'])
+        host, probe = mock.Mock(), mock.Mock(return_value=self.ample)
+        for text in ('first bounded task', 'a different bounded task'):
+            (self.source / job['prompt_file']).write_text(text, encoding='utf-8')
+            job['inputs'][job['prompt_file']] = workspace.file_digest(self.source / job['prompt_file'])
+            with self.assertRaisesRegex(workspace.WorkspaceRefused, 'known unsupported.*requalification'):
+                workspace.run(self.config_path, job, host=host, probe=probe)
+            self.assertEqual(workspace.dispatch_state(self.roots['control']), before)
+            self.assertFalse((self.roots['control'] / 'active.json').exists())
+            self.assertEqual(list(self.roots['scratch'].iterdir()), [])
+            self.assertEqual(list(self.roots['retained'].iterdir()), [])
+        host.run.assert_not_called()
+        probe.assert_not_called()
+        # A profile-specific refusal never makes the legacy route unavailable.
+        legacy = {key: value for key, value in job.items() if key != 'task_workspace'}
+        host.run.return_value = {'reason': 'exited', 'exit_code': 0, 'quiescent': True}
+        result = workspace.run(self.config_path, legacy, host=host, probe=lambda _: self.ample)
+        self.assertIn('--sandbox', host.run.call_args.args[0])
+        self.assertTrue(result['scratch_absent'])
+        self.assertTrue(result['reservation_released'])
+        self.assertEqual(workspace.dispatch_state(self.roots['control'])['codex_admitted'], 1)
+
+    def test_codex_profile_refusal_identities_are_finite_exact_and_not_capability_proof(self):
+        job = self.workspace_job()
+        permission = self.config['codex_exec']['task_workspace']
+        invalid = (None, 'f' * 64, [1], ['g' * 64], ['F' * 64],
+                   ['f' * 64, 'f' * 64], [format(n, '064x') for n in range(9)])
+        for blocked in invalid:
+            with self.subTest(blocked=blocked):
+                permission['blocked_executable_sha256s'] = blocked
+                with self.assertRaisesRegex(workspace.WorkspaceRefused, 'blocked.*identities'):
+                    workspace.validate_config(self.config)
+        permission['blocked_executable_sha256s'] = ['f' * 64]
+        workspace.write_json(self.config_path, self.config)
+        # Nonmatching hashes do not certify enforcement; captured-host coverage
+        # demonstrates only that the original finite permission still applies.
+        host = mock.Mock()
+        host.run.return_value = {'reason': 'exited', 'exit_code': 0, 'quiescent': True}
+        result = workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        self.assertEqual(host.run.call_count, 1)
+        self.assertTrue(result['scratch_absent'])
+        self.assertTrue(result['reservation_released'])
+
+    def test_codex_candidate_edit_collects_without_writing_source_or_legacy_override(self):
+        import tomllib
+        job = self.workspace_job()
+        original = (self.source / 'task-packet.txt').read_bytes()
+        host = mock.Mock()
+        def edit_candidate(argv, **kwargs):
+            candidate = kwargs['cwd']
+            self.assertEqual((candidate / 'docs/guide.txt').read_bytes(), original)
+            (candidate / 'docs/guide.txt').write_text('Qualified candidate fixture.\n', encoding='utf-8')
+            overrides = dict(value.split('=', 1) for index, value in enumerate(argv)
+                             if index > 0 and argv[index - 1] == '-c')
+            profile = json.loads(overrides['default_permissions'])
+            rules = tomllib.loads('rules=' + overrides['permissions.' + profile + '.filesystem'])['rules']
+            self.assertEqual(rules[str(candidate)], 'write')
+            self.assertNotIn(str(self.source / 'task-packet.txt'), rules)
+            self.assertNotIn(str(self.source / 'result-schema.json'), rules)
+            self.assertEqual(rules[str(self.roots['control'])], 'deny')
+            self.assertEqual(rules[str(self.roots['retained'])], 'deny')
+            self.assertEqual(rules[str(candidate / '.codex')], 'deny')
+            self.assertEqual(rules[str(candidate.parent.parent / 'cache')], 'deny')
+            self.assertEqual(overrides['permissions.' + profile + '.network.enabled'], 'false')
+            self.assertEqual(overrides['features.plugins'], 'false')
+            self.assertEqual(overrides['history.persistence'], '"none"')
+            self.assertTrue(Path(json.loads(overrides['sqlite_home'])).is_relative_to(candidate.parent.parent / 'cache'))
+            self.assertTrue(Path(json.loads(overrides['log_dir'])).is_relative_to(candidate.parent.parent / 'cache'))
+            self.assertNotIn('--sandbox', argv)
+            self.assertNotIn('danger-full-access', argv)
+            return {'reason': 'exited', 'exit_code': 0, 'quiescent': True}
+        host.run.side_effect = edit_candidate
+        result = workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        self.assertEqual((self.source / 'task-packet.txt').read_bytes(), original)
+        retained = Path(result['retained']) / 'output/workspace/docs/guide.txt'
+        self.assertEqual(retained.read_text(encoding='utf-8'), 'Qualified candidate fixture.\n')
+        self.assertTrue(result['scratch_absent'])
+        self.assertTrue(result['reservation_released'])
+        self.assertEqual(workspace.dispatch_state(self.roots['control'])['codex_admitted'], 1)
+
+    def test_codex_workspace_without_matching_permission_never_allocates(self):
+        job = self.workspace_job()
+        host = mock.Mock()
+        for permission in (None, {'read_roots': [], 'max_files': 4, 'max_input_bytes': 4096}):
+            with self.subTest(permission=permission):
+                if permission is None:
+                    self.config['codex_exec'].pop('task_workspace', None)
+                else:
+                    self.config['codex_exec']['task_workspace'] = permission
+                workspace.write_json(self.config_path, self.config)
+                with self.assertRaisesRegex(workspace.WorkspaceRefused, 'workspace.*permission'):
+                    workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+                host.run.assert_not_called()
+                self.assertEqual(list(self.roots['scratch'].iterdir()), [])
+                self.assertEqual(workspace.dispatch_state(self.roots['control'])['codex_admitted'], 0)
+
+    def test_codex_workspace_unsafe_paths_and_collisions_refuse_before_allocation(self):
+        job = self.workspace_job()
+        source = 'task-packet.txt'
+        invalid = ['../escape', '/absolute', 'C:/drive', 'a\\b', 'a//b', 'a/./b',
+                   'a/../b', 'a/NUL.txt', 'COM1', 'a:stream', '.codex/config.toml',
+                   'a/.git/config', '.aide.local/permission', 'trailing.']
+        invalid_maps = [{source: target} for target in invalid]
+        invalid_maps += [{source: 'same', 'result-schema.json': 'SAME'},
+                         {source: 'a', 'result-schema.json': 'a/b'},
+                         {'unbound.py': 'file.py'}]
+        host = mock.Mock()
+        for files in invalid_maps:
+            with self.subTest(files=files), self.assertRaises(workspace.WorkspaceRefused):
+                workspace.run(self.config_path, {**job, 'task_workspace': {
+                    **job['task_workspace'], 'files': files}}, host=host, probe=lambda _: self.ample)
+        host.run.assert_not_called()
+        self.assertEqual(list(self.roots['scratch'].iterdir()), [])
+
+    def test_codex_workspace_permission_and_retained_budgets_are_finite(self):
+        job = self.workspace_job()
+        base = self.config['codex_exec']['task_workspace'].copy()
+        for change in ({'max_files': True}, {'max_files': 33}, {'max_input_bytes': 0},
+                       {'max_input_bytes': 1048577}, {'extra': True},
+                       {'read_roots': [str(self.root), str(self.root)]}):
+            self.config['codex_exec']['task_workspace'] = {**base, **change}
+            with self.subTest(change=change), self.assertRaises(workspace.WorkspaceRefused):
+                workspace.validate_config(self.config)
+        self.config['codex_exec']['task_workspace'] = {**base, 'max_input_bytes': 1}
+        workspace.write_json(self.config_path, self.config)
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'input budget'):
+            workspace.run(self.config_path, job, probe=lambda _: self.ample)
+        self.config['codex_exec']['task_workspace'] = base
+        self.config['limits']['retained_bytes'] = 1
+        workspace.write_json(self.config_path, self.config)
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'retained budget'):
+            workspace.run(self.config_path, job, probe=lambda _: self.ample)
+        self.assertEqual(list(self.roots['scratch'].iterdir()), [])
+
+    def test_codex_workspace_digest_binds_mode_target_and_roots_preserves_legacy(self):
+        job = self.workspace_job()
+        legacy = {key: value for key, value in job.items() if key != 'task_workspace'}
+        info = self.source.stat()
+        expected = workspace.digest({'cwd_identity': [info.st_dev, info.st_ino],
+            'source_commit': job['source_commit'], 'source_tree': job['source_tree'],
+            'executable_sha256': job['executable_sha256'],
+            'input_sha256s': sorted(set(job['inputs'].values())),
+            'prompt_sha256': job['inputs'][job['prompt_file']],
+            'schema_sha256': job['inputs'][job['schema_file']],
+            'model': job['model'].casefold(), 'effort': job['effort']})
+        self.assertEqual(workspace.codex_request_digest(legacy), expected)
+        current = workspace.codex_request_digest(job)
+        self.assertNotEqual(current, expected)
+        changed = {**job, 'task_workspace': {**job['task_workspace'],
+                   'files': {'task-packet.txt': 'other.txt'}}}
+        self.assertNotEqual(workspace.codex_request_digest(changed), current)
+        casing = {**job, 'task_workspace': {**job['task_workspace'],
+                  'files': {'task-packet.txt': 'DOCS/GUIDE.TXT'}}}
+        self.assertEqual(workspace.codex_request_digest(casing), current)
+
+    def test_codex_workspace_spent_failed_request_is_not_replayed(self):
+        job = self.workspace_job()
+        self.config['codex_exec']['max_turns'] = 2
+        workspace.write_json(self.config_path, self.config)
+        host = mock.Mock()
+        host.run.side_effect = OSError('definitive fixture launch failure')
+        host.reconcile.return_value = {'quiescent': True}
+        result = workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        self.assertEqual(result['result']['reason'], 'OSError')
+        self.assertTrue(result['scratch_absent'])
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'already admitted'):
+            workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        self.assertEqual(host.run.call_count, 1)
+        self.assertEqual(workspace.dispatch_state(self.roots['control'])['codex_admitted'], 1)
+
+    def test_codex_workspace_source_race_refuses_without_spending_turn(self):
+        job = self.workspace_job()
+        original = workspace.prepare_codex_workspace
+        def changed(*args):
+            (self.source / 'task-packet.txt').write_text('changed after admission', encoding='utf-8')
+            return original(*args)
+        host = mock.Mock()
+        host.reconcile.return_value = {'quiescent': True}
+        with mock.patch.object(workspace, 'prepare_codex_workspace', side_effect=changed):
+            result = workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        host.run.assert_not_called()
+        self.assertEqual(result['result']['reason'], 'WorkspaceRefused')
+        self.assertEqual(workspace.dispatch_state(self.roots['control'])['codex_admitted'], 0)
+        self.assertTrue(result['scratch_absent'])
+        self.assertTrue(result['reservation_released'])
+
+    def test_codex_workspace_private_source_and_read_root_carveouts_never_allocate(self):
+        job = self.workspace_job()
+        host = mock.Mock()
+        private = self.source / '.aide.local' / 'harmless-fixture.txt'
+        private.parent.mkdir()
+        private.write_text('public negative fixture; never real account data', encoding='utf-8')
+        bound = {**job['inputs'], '.aide.local/harmless-fixture.txt': workspace.file_digest(private)}
+        with self.assertRaisesRegex(workspace.WorkspaceRefused, 'private source'):
+            workspace.run(self.config_path, {**job, 'inputs': bound, 'task_workspace': {
+                **job['task_workspace'], 'files': {'.aide.local/harmless-fixture.txt': 'guide.txt'}}},
+                host=host, probe=lambda _: self.ample)
+        child = self.roots['control'] / 'read-carveout'
+        child.mkdir()
+        paths = [self.source, self.root, self.roots['control'], self.roots['retained'],
+                 self.roots['scratch'], child, Path(str(child).swapcase())]
+        base = self.config['codex_exec']['task_workspace'].copy()
+        for path in paths:
+            with self.subTest(path=path):
+                self.config['codex_exec']['task_workspace'] = {**base, 'read_roots': [str(path)]}
+                workspace.write_json(self.config_path, self.config)
+                with self.assertRaisesRegex(workspace.WorkspaceRefused, 'overlaps protected'):
+                    workspace.run(self.config_path, job, host=host, probe=lambda _: self.ample)
+        self.assertTrue(workspace.paths_overlap(Path('C:/Users/Jules/.codex'), Path('c:/users/jules')))
+        self.assertTrue(workspace.paths_overlap(Path('c:/users/jules/.codex/auth'), Path('C:/Users/Jules/.CODEX')))
+        host.run.assert_not_called()
+        self.assertEqual(list(self.roots['scratch'].iterdir()), [])
+        self.assertEqual(workspace.dispatch_state(self.roots['control'])['codex_admitted'], 0)
+
     def test_codex_paid_routes_and_override_fields_refuse_without_fallback(self):
         job = self.codex_job()
         host = mock.Mock()
