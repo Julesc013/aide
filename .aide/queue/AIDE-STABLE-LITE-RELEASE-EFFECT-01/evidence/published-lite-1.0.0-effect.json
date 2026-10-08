@@ -1,0 +1,1186 @@
+{
+  "acquisition": {
+    "config_path": ".aide.local/candidate-current-acquisition-execution.json",
+    "config_sha256": "dbee0100868ef33de8e7aff3ea31b63c822996b3bc03f5dec55e13c3aca7b6ef",
+    "download_budget_bytes": 4194304,
+    "download_root": ".aide/release/acquired-aide-lite-v1.0.0.log",
+    "download_time_enforcement": {
+      "attempts_per_asset": 1,
+      "byte_caps_enforced_before_each_write": true,
+      "cooperative_deadline_seconds": 120,
+      "hard_total_wall_time_bound": false,
+      "socket_inactivity_timeout_seconds": 30
+    },
+    "exact_download_paths_ignored": {
+      ".aide/release/acquired-aide-lite-v1.0.0.log/aide-lite-v1.0.0.SHA256SUMS.txt": ".aide/release/acquired-aide-lite-v1.0.0.log/aide-lite-v1.0.0.SHA256SUMS.txt",
+      ".aide/release/acquired-aide-lite-v1.0.0.log/aide-lite-v1.0.0.manifest.json": ".aide/release/acquired-aide-lite-v1.0.0.log/aide-lite-v1.0.0.manifest.json",
+      ".aide/release/acquired-aide-lite-v1.0.0.log/aide-lite-v1.0.0.tar.gz": ".aide/release/acquired-aide-lite-v1.0.0.log/aide-lite-v1.0.0.tar.gz",
+      ".aide/release/acquired-aide-lite-v1.0.0.log/aide-lite-v1.0.0.zip": ".aide/release/acquired-aide-lite-v1.0.0.log/aide-lite-v1.0.0.zip"
+    },
+    "job_path": ".aide.local/candidate-current-acquisition-job.json",
+    "job_sha256": "b61cae8dfb990b39b088fb8dd35ad0d337239dc4c714702fa93f6cb5c28ae4b0",
+    "known_download_bytes": 2019555,
+    "limits": {
+      "canonical_bytes": 536870912,
+      "commit_reserve_bytes": 4294967296,
+      "disk_reserve_bytes": 10737418240,
+      "log_bytes": 262144,
+      "max_files": 100000,
+      "memory_bytes": 402653184,
+      "physical_reserve_bytes": 4294967296,
+      "processes": 32,
+      "retained_bytes": 4194304,
+      "runtime_seconds": 900,
+      "scratch_bytes": 37748736
+    },
+    "observer": {
+      "bytes": 7134,
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-acquisition-native.py.log",
+      "sha256": "37ade8919ce35bf280cad8605db55bfad5e84ac4952f41a4d9a726be3b9d162b"
+    },
+    "wait_limits": {
+      "sample_seconds": 1,
+      "seconds": 600,
+      "stable_seconds": 30,
+      "threshold_bytes": 5771362304
+    },
+    "worker": {
+      "bytes": 1983,
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-acquisition-worker.py.log",
+      "sha256": "0ce986adce3905e70684009f2bf6cec6b2301e8d45c85bb9046d5368e7929b26"
+    },
+    "worker_canary": "Unchanged consumer case0 fresh/brownfield ZIP/TAR install, synthetic update/conflict/repair/removal/partial-recovery acceptance on actual downloaded paths. Original assertions unchanged; no source or model suite repeated."
+  },
+  "assets": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": {
+      "bytes": 274,
+      "path": ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt",
+      "sha256": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83"
+    },
+    "aide-lite-v1.0.0.manifest.json": {
+      "bytes": 4955,
+      "path": ".aide/release/stable/aide-lite-v1.0.0.manifest.json",
+      "sha256": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb"
+    },
+    "aide-lite-v1.0.0.tar.gz": {
+      "bytes": 837890,
+      "path": ".aide/release/stable/aide-lite-v1.0.0.tar.gz",
+      "sha256": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a"
+    },
+    "aide-lite-v1.0.0.zip": {
+      "bytes": 1176436,
+      "path": ".aide/release/stable/aide-lite-v1.0.0.zip",
+      "sha256": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b"
+    }
+  },
+  "capacity_remediation": {
+    "aggregate_preflight_headroom_bytes": 2232750,
+    "exact_owned_retired_helper_jobs": [
+      "798432752ba546e5b1fb5ca93308f9bc",
+      "4afa560836114398aeaf2bf6f32ae03a"
+    ],
+    "limits_unchanged": true,
+    "lossless_saved_logical_bytes": 9384474,
+    "original_failure_exit_preserved": true,
+    "owner_and_receipts_unchanged": true,
+    "physical_reclaimed_space_claimed": false
+  },
+  "completion_gate": "Tag/release/upload and all4 downloads must match; native acquired-byte fresh/brownfield/update consumers must complete with full custody, quiescence, retirement and released reservation. Stable source qualification alone is not publication completion.",
+  "effects": {
+    "consumer": "One native managed original case0 on downloaded bytes; fixed finite wait/allocation, unchanged reserve and256MiB aggregate; collect full outputs, retire scratch, release reservation.",
+    "download": "One HTTPS acquisition per asset; exclusive writes with frozen per-file and4MiB total byte caps; cooperative120s deadline checked between reads and30s socket inactivity timeout; no hard total wall-time guarantee. Approved existing .aide/release parent.",
+    "other_branches": "All88 remote-head preimages remain unchanged;85other tips preserved; no clone/worktree/source mutation.",
+    "publication": "One GitHub Release with these4 assets and exact notes through Jules/Julesc013. No external paid service or API billing route.",
+    "tag": "One annotated immutable tag on exact synchronized main, only if no tags or releases exist. Ordinary tag push, no force/retag."
+  },
+  "enforcement": {
+    "aggregate_artifact_accounting": "Publisher holds the existing estate admission lock during exact effects/downloads and stock bounded inventory includes existing .aide/release plus4MiB download reservation and next worker allowance. Acquired-byte observer separately inventories release artifacts read-only, then existing runner performs fresh locked worker admission. This is cooperative/monitored, not filesystem quota or a guarantee over unrelated processes.",
+    "download_retention": "Keep the4 downloaded release evidence assets, at most4MiB, in the existing release tree. No cache family, full source copy or unknown deletion.",
+    "native_worker": "Previously qualified selected CodexSandboxOffline write confinement and Windows Job memory/process limits.",
+    "publisher": "Exact reviewed bounded parent Git/GitHub/HTTPS operation, not covered by worker sandbox. Actual current controller/editor/plugin routes remain unrestricted.",
+    "resource_limits": "Cooperative monitored admission/scratch/disk headroom, not a hard filesystem/global quota."
+  },
+  "frozen_inputs": {
+    ".aide.local/candidate-current-acquisition-execution.json": "dbee0100868ef33de8e7aff3ea31b63c822996b3bc03f5dec55e13c3aca7b6ef",
+    ".aide.local/candidate-current-acquisition-job.json": "b61cae8dfb990b39b088fb8dd35ad0d337239dc4c714702fa93f6cb5c28ae4b0",
+    ".aide/policies/release-versioning.yaml": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253",
+    ".aide/policies/review-gates.yaml": "7db8f568853e67a2a4226a26daf819397b3cb45317c02c02b9b3be2c29a2b1ef",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/owner-delegation-2026-09-25.md": "693ed1715d14059f82032c795742c2fecce5e261cb87c8db3e2fa07173cf79fb",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-acquisition-native.py.log": "37ade8919ce35bf280cad8605db55bfad5e84ac4952f41a4d9a726be3b9d162b",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-acquisition-worker.py.log": "0ce986adce3905e70684009f2bf6cec6b2301e8d45c85bb9046d5368e7929b26",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-closeout-source-review-v2.log": "7436b369fbbbcc3f474b6faa5cfe942e8081c4ad49fe0e7cbdca9d12bf008869",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-closeout-source-sync-terminal.log": "e85f5f97a079a8706085b8363bec1661a3e774270ee6d78ebf925254410b59c1",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-qualified.json": "54116697ab82d3cd28825868a0f793c5e15d672c143822354804d5eb053b31e4",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-package-qualified.json": "4d6847a977ce3d5fc067f50f2d6fa298394bb576278173689bcd45cbfaa1c27c",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-public-form-coverage.log": "23129f29cc766b2ad9b318309bcc05294b2c782a4eba063a9ef23c04f71b5866",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-publish.py.log": "d91d5b35af6c87c770778945cba566132a7d722dc06e7f13ed137837f6ce38dd",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-release-capacity-result.log": "09e97add5c7b4f06b23bc06cd6ff7d97bea68873d7b81cebc8f4a1a1ae950cbc",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-release-capacity-review.log": "6e4da1c9c43371d8a8f5fc5f676b19a2074fa3ae136765f836865c5b16efa4f8",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-release-history.log": "113b856b21e1b9657c5440d50c829ad1425fa919b65246024a143a63275dddf8",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-release-resource-preflight.log": "b6298df617bae155a89fec95683b596d425db3b414df353bfcf094217cac33a5",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-replay-qualified.json": "1e3719fc9d5a2d0ae3689b0eae57d46f489554418fa3c7c2ca981fc83b9f9faf",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml": "bff4093134021b96672ffbbd3dbe07478848846d10feba202bf5e7d0c614905c",
+    ".aide/scripts/aide_lite.py": "bd66068522077f0bc30031c2de15a7c9f73aa5e35e7f19e11cb4719b28dcbde7",
+    ".aide/scripts/tests/test_managed_workspace.py": "2b0f0e49b433d569ef8740bcf9c0a904a71feedfa8e59f3b8d593f26dc753ec1",
+    "core/execution/managed_workspace.py": "55f1590b37d150088c6023ccf8151adfbc350644e906c64d40b367c4884606d6",
+    "core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+    "docs/reference/aide-lite-test-runner.md": "6e069802a5c0f5d2869044f684df0222713698a62862c8db9838058cb55c8ba1"
+  },
+  "notes": {
+    "bytes": 1857,
+    "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/release-notes-1.0.0.md",
+    "sha256": "44a74eba2cce44a519a4cbc1781df20eacc4ba6cafafdb9af16d97e54500ec50"
+  },
+  "preserved_deadline_wording_proposal_sha256": "3a39d42781d138a35b4810f595186840b2ecbd4faba374b480b78367f58f9471",
+  "preserved_initial_proposal_sha256": "7b1dd017813e0b29e4f378a893c2687bb236e06b535e622373a3cfab0916952c",
+  "preserved_rejected_download_path_proposal": {
+    "finding": "Proposed untracked download directory would violate required clean-state guard after publication; caught and corrected before any tag, upload or download. Existing *.log ignore rule applies to exact new subtree; clean guard unchanged.",
+    "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-release-effect-untracked-path-proposal.log",
+    "sha256": "ba1c1a40b59edf87fc0d081b4e8cec5adafb6c38a5f27f14612c208d8df7d662"
+  },
+  "profile": {
+    "disabled_feature_ids": [
+      "local_state_examples"
+    ],
+    "excluded_profiles": [
+      "non-Windows lifecycle apply",
+      "native isolated-host operation",
+      "hosted target effects",
+      "model-enabled autonomous operation"
+    ],
+    "id": "aide-lite-local-windows",
+    "metadata_schemas": [
+      "aide.project-customizations.v1",
+      "aide.project-customizations.v2"
+    ],
+    "offline_scope": "local CLI after archive acquisition; Python socket guard observed, no OS-native network-isolation claim",
+    "platform_qualified": "Windows 10 19045, Python 3.14.7, local CLI",
+    "published_predecessors": [],
+    "support_mode": "companion",
+    "support_tier": "T3"
+  },
+  "programme": "AIDE-CONVERGENCE-AND-DELIVERY-01",
+  "public_cli": [
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "fe2d8579c096854b99b220b029962faa5f03be0a757a9265d257a44dad03c97b",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+          "observed": "status: PASS",
+          "output": "output/case-00/fresh-installed-doctor.json",
+          "sha256": "4a9b911aea1fb7102b2a5b9a87ed59c14a396d4eb85149a697b13d2c1e707171"
+        }
+      ],
+      "form": "doctor",
+      "supported_target_state": "installed fresh or existing Git target",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "24bd2a161e15ab81106c48d24492f08a7b0deb69a1be1937afe2bb60518d17ae",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "ddc250146d6e41b5b46d5e36809bd533",
+          "observed": "status: PASS",
+          "output": "output/case-04/installed-validate.json",
+          "sha256": "70035c63a024dfbd6d7b5226ac42dd43683ed3f5670454155a790c95c47a06ca"
+        }
+      ],
+      "form": "validate",
+      "supported_target_state": "installed fresh or existing Git target",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "66b6f1c77117e25eebe70439776a606cac80b3c9b44d7fe349304aca465b8243",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "2002e18570ac4009a47b73234a0e0784",
+          "observed": "",
+          "output": "output/case-02/fresh-context.json",
+          "sha256": "ce2a3397b480b87bc0c850bb7306297480b5d65f273f1298624582d48686f12e"
+        },
+        {
+          "current_argv_sha256": "5d3d1f266c238b30bedced608c98fdbd2fd234d2e56c95f50e4c9f3b1a37a69e",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "2002e18570ac4009a47b73234a0e0784",
+          "observed": "",
+          "output": "output/case-02/brownfield-context.json",
+          "sha256": "f65ce9d3f5a8b7c7acab8788bde937945e93b996349a6b80bd2b27d3f4bf375c"
+        }
+      ],
+      "form": "context",
+      "supported_target_state": "installed fresh or existing Git target",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "27317f3f5dcefb2770e8298d90974bedfdcc54cc7f13f88387ab5cab728ed123",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "2002e18570ac4009a47b73234a0e0784",
+          "observed": "",
+          "output": "output/case-02/fresh-pack.json",
+          "sha256": "4eec81f877d4f8a1134febd2a042de4acd05161187789e63c44f14337990140b"
+        },
+        {
+          "current_argv_sha256": "b836bf6be635229b6706dec382e3c6bed74b375671110f876bf3d5b0904aea3d",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "2002e18570ac4009a47b73234a0e0784",
+          "observed": "",
+          "output": "output/case-02/brownfield-pack.json",
+          "sha256": "d3892850fea1451b342f5cb7cd6513e01237560f8e14c45dc067f62b5da9c222"
+        }
+      ],
+      "form": "pack --task <task>",
+      "supported_target_state": "installed fresh or existing Git target",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "1ea425be9f604efbede2415b2ff3872a77e6d0eab6b9d8a45fc2e789eed3d150",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "2002e18570ac4009a47b73234a0e0784",
+          "observed": "result: WARN",
+          "output": "output/case-02/fresh-verify.json",
+          "sha256": "5a29c6c03c5b2fae2e2f09e6d22e0c906014f2a140f833ca6492382d1ebfa6e7"
+        },
+        {
+          "current_argv_sha256": "a6f790c0eac2fa86b28c913825a781563e81e2581075f35960859370d9557dfe",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "2002e18570ac4009a47b73234a0e0784",
+          "observed": "result: WARN",
+          "output": "output/case-02/brownfield-verify.json",
+          "sha256": "667eca516c0bcfd36be5a43641571db275402011598ada0d0c7399f745ce3f8b"
+        }
+      ],
+      "form": "verify --evidence <evidence-path>",
+      "supported_target_state": "installed fresh or existing Git target",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "67c556d2741534916330a854a21847166e3914a04bb6bc64df29e2f0ec01ef63",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 1,
+          "job_id": "ddc250146d6e41b5b46d5e36809bd533",
+          "observed": "status: missing",
+          "output": "output/case-04/empty-task-inspect.json",
+          "sha256": "6fc8388a0eaed8fd51c2ee579c92aa3b4010d375e15a319a63003b4bca3f6fb0"
+        }
+      ],
+      "form": "task inspect",
+      "supported_target_state": "installed target with empty queue; missing classification and exit 1 are expected",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "c6ddddaf9046e4741c7011582e6ac66ab96d0b238d5c3a9eb0e39d4d06cd4161",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "ddc250146d6e41b5b46d5e36809bd533",
+          "observed": "",
+          "output": "output/case-04/task-status.json",
+          "sha256": "fab324929fbe018e1b622cad369fd54069ed779e512e1465443ffb1bf130a6e1"
+        }
+      ],
+      "form": "task status",
+      "supported_target_state": "installed target with empty or populated queue",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "fb3947e668861fea03329becb5da17b394c09696721bbdb4fb1b2338c6d04afe",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "2002e18570ac4009a47b73234a0e0784",
+          "observed": "status: PLANNED",
+          "output": "output/case-02/fresh-install-preview.json",
+          "sha256": "b0cefabddaf051fdcc7a4839bf4167f32af70b61db903ee705be7e661df70b61"
+        },
+        {
+          "current_argv_sha256": "ab9ddf1e8a9d21b50544ae37913dd0281e991e222d96eb485aea6d96e380ad94",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "8c32287dead242ab834e0633d758dc4b",
+          "observed": "status: PLANNED",
+          "output": "output/case-01/brown-changed-install-preview.json",
+          "sha256": "ec68b158e0d188666e1e7bbab1cbff453097dfb5e9d3f876074b77fe553db99d"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+      "supported_target_state": "uninstalled fresh or existing Git target",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "f4896742c062cfe4fe28feb986fff8294d5ea1b3d1e5975027d9a46460b8d61c",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "2002e18570ac4009a47b73234a0e0784",
+          "observed": "status: APPLIED",
+          "output": "output/case-02/fresh-install-apply.json",
+          "sha256": "1f1cbf507192f4b27e1225e3fac4fc466664b1f46758ade3f965c80e58e34d8f"
+        },
+        {
+          "current_argv_sha256": "09e4404a759316967c5dc44214306449678ece8782004f9fc2f3a7f8b29eccd6",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+          "observed": "status: APPLIED",
+          "output": "output/case-00/brown-agents-overlay-apply.json",
+          "sha256": "3906a6f5d912e11c6ca2d9a212bcde60117ae2ac61c22c549e40c3ee1c948bce"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+      "supported_target_state": "uninstalled fresh or existing Git target",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "7bf94a929b0e62ba10e043eb20d0d4aba6f0dee5e16a77f8d5d85e02cc27a2f2",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+          "observed": "status: PLANNED",
+          "output": "output/case-00/fresh-disabled-v3-preview.json",
+          "sha256": "1698096216dae8d0505bc146621ca6d2eb7a39b3ea8922a3a17170c2fa39349c"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+      "supported_target_state": "installed target with synthetic predecessor",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "52c0572a40bb84322bba50e22233360ec654b52b2019fb5648c1dd7ec59f7484",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+          "observed": "status: APPLIED",
+          "output": "output/case-00/fresh-disabled-v2-apply.json",
+          "sha256": "3802561b80ffee102d6cebee38654199eacaf172d6b58ee9f0e7b8bf9b9e17ae"
+        },
+        {
+          "current_argv_sha256": "b6767f77d53d36541fbd73fe98278fec938a5f390e554b4abb6143c81968ebfe",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 2,
+          "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+          "observed": "status: CONFLICT",
+          "output": "output/case-00/brown-v2-conflict-apply.json",
+          "sha256": "0d894a2ea30518628e4907e1b5b6d2a55b00215ab0f2237988461ab96388de36"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+      "supported_target_state": "installed target with synthetic predecessor",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "07fc6cc11f372859b694a9fb64390720a741cbce1a9563265808035901457f84",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+          "observed": "status: PLANNED",
+          "output": "output/case-00/brown-v2-resolved-plain-preview.json",
+          "sha256": "e41aaa86073f4eaeb2052a063534dc6f94caae0d26262767a59ef95f7ccf168d"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+      "supported_target_state": "installed target with synthetic predecessor and project-selected conflict resolution",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "8232912950e281ed69efb20b8a5f70822917a75e493c427e36c2cfe409dbf0b0",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+          "observed": "status: APPLIED",
+          "output": "output/case-00/brown-v2-resolved-apply.json",
+          "sha256": "1901fe7588145ece62ec34c9e39e0c6ec97144f6a0c1d5463ffbbcbcdd015f96"
+        },
+        {
+          "current_argv_sha256": "8a838a05714cd32c3b31d5d3821288906830d12805c59bd25f1241a284689df0",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+          "observed": "status: APPLIED",
+          "output": "output/case-00/brown-v3-resolved-apply.json",
+          "sha256": "1634a469c5b377136fd11e82c428a86b4b8fbd158f6c290fbf87acd8265c19d6"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+      "supported_target_state": "installed target with synthetic predecessor and project-selected conflict resolution",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "69b0adad3d7b759e60f6248d4caabd2f66ea24f0ccb0c4aff8b7cffe220aef8f",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+          "observed": "status: PLANNED",
+          "output": "output/case-00/brown-agents-overlay-preview.json",
+          "sha256": "6b93cbb85f8fc439bf57be0502b0880be3fc43e5a164cc40cd76c10d885ee3c5"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+      "supported_target_state": "uninstalled fresh or existing Git target",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "ab4c9ea5f50ce16c48b31f3e7e1cf682ae092b042d4df0377c77a7b52ef59a5f",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+          "observed": "status: PLANNED",
+          "output": "output/case-00/fresh-disabled-v2-preview.json",
+          "sha256": "c7907b5dec3046ffcba4ed459740e41b65e25e7ad9f31d470ac9373602549616"
+        },
+        {
+          "current_argv_sha256": "9b5fc43d0cfd59f71648ce04db08a64186d8a9e39354b45a388b978e58826c83",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 2,
+          "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+          "observed": "status: PLANNED_CONFLICT",
+          "output": "output/case-00/brown-v2-conflict-preview.json",
+          "sha256": "576ebc055cba234c2b9a82953b6ad1448770cd507f9eab0f311e502f82778316"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+      "supported_target_state": "installed target with synthetic predecessor",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "bf6213e35ba5242282da651c6fc755b452d204dc368f6551d2f31a444890aa42",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+          "observed": "status: PLANNED",
+          "output": "output/case-00/brown-v3-resolved-preview.json",
+          "sha256": "e77caabbca4b3a59dbaa9a36b41037a6daef1eaa03440245f4d7eebc93b9602c"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+      "supported_target_state": "installed target with synthetic predecessor and project-selected conflict resolution",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "44d5443b562594424e1c3edf3f15492d47ef28d9caf1ee410a82cd078e2516d6",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "ddc250146d6e41b5b46d5e36809bd533",
+          "observed": "status: PLANNED",
+          "output": "output/case-04/explicit-feedback.json",
+          "sha256": "22404e79aa502bd2714b194497e0fdf9ea825d71ca435d46d8356759c30fc62b"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+      "supported_target_state": "uninstalled fresh or existing Git target",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "c6c31eaae857b57262e168d2e95cb4e16bc26cf81d45b7ea72946adf0851aa1c",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "51923ddf1f874c09b4a72112b16e619d",
+          "observed": "status: PLANNED",
+          "output": "output/case-03/predecessor-feedback-preview.json",
+          "sha256": "fbc45573966a209598050b4b810ecd42e08eaa6efdca9c5902f81a78538d9d7a"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+      "supported_target_state": "installed target with synthetic predecessor",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "22634cb1f262c5e382b137cd971d5b96fa4c60447cd5b98eec7a4f0d7c63047f",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+          "observed": "status: PLANNED",
+          "output": "output/case-00/brown-v2-resolved-preview.json",
+          "sha256": "6cd872ffcdee82026b99f1b6ee3f5813ee30c00b19487b7ca6686e96bd3b48b6"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+      "supported_target_state": "installed target with synthetic predecessor and project-selected conflict resolution",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "fd0d20dd25e6d5a2fe278454cd1e4d9ec845ab9e5fa7e882e076c1f9d2775b03",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "51923ddf1f874c09b4a72112b16e619d",
+          "observed": "status: RECOVERED",
+          "output": "output/case-03/fresh-cli-recover.json",
+          "sha256": "0d707e790b13c71455fbe7681dcc2095e79fdfc2b6033865bfcbda35dbfa5d90"
+        },
+        {
+          "current_argv_sha256": "7261f421afe3cd1dc271574f7db2817c9ae0a12eda64f10950a19a64b77d4ea5",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 3,
+          "job_id": "51923ddf1f874c09b4a72112b16e619d",
+          "observed": "status: RECOVERY_REQUIRED",
+          "output": "output/case-03/fresh-wrong-plan-refusal.json",
+          "sha256": "24859d6007403c6540c0821da0bd458c7dc37cb09a34fc24a0dd6964bb1fb34c"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+      "supported_target_state": "saved exact partial import with fresh target",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "fe215fec636fad3d83615ac14ccfac89d87e599283a1f2deb5b0a2992e299cf9",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "51923ddf1f874c09b4a72112b16e619d",
+          "observed": "status: RECOVERED",
+          "output": "output/case-03/update-cli-recover.json",
+          "sha256": "34eb87040d1f29b74f3b1de62101fc739aeff82b5e5aa4f7221d92294b1dce55"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+      "supported_target_state": "saved exact partial import with synthetic predecessor",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "9a25104d3b0f806ce11fbeedeb4658703e76770e2f37e3b2ee4c8fa2b8623be4",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "51923ddf1f874c09b4a72112b16e619d",
+          "observed": "status: RECOVERED",
+          "output": "output/case-03/resolved-cli-recover.json",
+          "sha256": "74e161c531a00c9b9ef63387b1122fafeb5cbcc409a0b957dd672822e314ed47"
+        }
+      ],
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+      "supported_target_state": "saved exact partial import with synthetic predecessor and project resolution",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "938b617142f285e56fb183fb5419fb3986824da22308546c98f982ebced9fabb",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "8c32287dead242ab834e0633d758dc4b",
+          "observed": "",
+          "output": "output/case-01/rollback-preview.json",
+          "sha256": "6359dd2e5dc0ba32698b700299ff3a7fef73947e386448bfdadcb5ec6d01cb5b"
+        }
+      ],
+      "form": "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+      "supported_target_state": "installed synthetic successor with prior pack",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "f4bc7b647af7be9010252f72f1d31cd2bd342410096caf58065afbec3fae9608",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "8c32287dead242ab834e0633d758dc4b",
+          "observed": "",
+          "output": "output/case-01/rollback-apply.json",
+          "sha256": "768617dbb3c632fe91bf9c37e08337c8c7f57b3e4a4ce8dbde2c6859aac58bb1"
+        }
+      ],
+      "form": "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+      "supported_target_state": "installed synthetic successor with prior pack",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "4c1b44b2ded66dad04f9a24eedcbe260c3703a3d10b1a5e9ec46d3405babae9c",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "8c32287dead242ab834e0633d758dc4b",
+          "observed": "",
+          "output": "output/case-01/fresh-removal-preview.json",
+          "sha256": "997f153988c3c0ca90566d410d77631e164194596151b3e0bccb5956aeb909b6"
+        },
+        {
+          "current_argv_sha256": "63dab9b1616cb999a59cad14f3e7e52d1cb4719121ad5594870e4bf0ad8f7c6d",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "8c32287dead242ab834e0633d758dc4b",
+          "observed": "",
+          "output": "output/case-01/brown-removal-preview.json",
+          "sha256": "f753d1f935a17a6c54b169a9b643b5db939e4339b66ff05422fb51985939bcbb"
+        }
+      ],
+      "form": "plan-removal --target <target>",
+      "supported_target_state": "installed receipt-owned fresh or existing Git target",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "232c4ce75afc3684197da2d4317ef47ecb1e62a608904dedde122de795222d12",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "8c32287dead242ab834e0633d758dc4b",
+          "observed": "",
+          "output": "output/case-01/fresh-removal-apply.json",
+          "sha256": "4d96f1bc1bbf1a9799e44c5182eb316032e5be69fcfe1c112ea511649060e53d"
+        },
+        {
+          "current_argv_sha256": "e2f96673903d5f36d65119ec662d6d87adabae93fbbf6996a2b0f5ced6cd98af",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "8c32287dead242ab834e0633d758dc4b",
+          "observed": "",
+          "output": "output/case-01/brown-removal-apply.json",
+          "sha256": "40f8288381013a2023c8b6c3f8bc717e3c52db5f8d7015870fdd620efc94add6"
+        }
+      ],
+      "form": "apply-removal --target <target> --expect-plan <digest>",
+      "supported_target_state": "installed receipt-owned fresh or existing Git target",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "80d36895d310b97d93d5f1fb70a3a87bd0f4de3b93f88eadd55182575a5c66f7",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+          "observed": "status: PLANNED",
+          "output": "output/case-00/fresh-missing-owned-repair-preview.json",
+          "sha256": "43ca041e4c46687a4b24059b8c3b7400e756569cccfa60cc3a1509dd7e3df042"
+        }
+      ],
+      "form": "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+      "supported_target_state": "installed receipt-owned file missing or modified",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "4171065e42d471e827cdc63c3b9170112bb7fee4feb39934fefd42d479a8e32f",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "8c32287dead242ab834e0633d758dc4b",
+          "observed": "status: APPLIED",
+          "output": "output/case-01/repair-apply.json",
+          "sha256": "4a5f61099362058d17759739d92a566ceab0e03130cd59589b12df3d7662cc66"
+        }
+      ],
+      "form": "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+      "supported_target_state": "installed receipt-owned file missing or modified",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "fa3e424f12b2462332307419029002aef2ae7344735b84dcf52f681deee68d18",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "32c4beb189a74f11a2c6761c0a409b91",
+          "observed": "CONFIGURED",
+          "output": "output/case-06/command_outputs/job-setup-fresh.json",
+          "sha256": "e6afda0425894b62936a4f3457335cf0f85248b0da9896e0d9cc65c686ea399f"
+        },
+        {
+          "current_argv_sha256": "fa3e424f12b2462332307419029002aef2ae7344735b84dcf52f681deee68d18",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "32c4beb189a74f11a2c6761c0a409b91",
+          "observed": "ALREADY_CONFIGURED",
+          "output": "output/case-06/command_outputs/job-setup-existing.json",
+          "sha256": "15ec121d39c05f63d184356ca520f7e0067857699d3efc1bc8eb56999c275dc7"
+        }
+      ],
+      "form": "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+      "supported_target_state": "approved local disposable Git consumer",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "091affcbd4a091b4c6e912ce73d46e83cc9b1ef372d24684b6a4e387fdf4a56a",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "32c4beb189a74f11a2c6761c0a409b91",
+          "observed": "",
+          "output": "output/case-06/command_outputs/job-inspect.json",
+          "sha256": "fbc6b1798c868d1b63c9e7af656dcc7ca103503c57d60c3e8bc179b23c46ef46"
+        }
+      ],
+      "form": "job inspect --config <local-config> --manifest <job-json>",
+      "supported_target_state": "approved local disposable Git consumer",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "bea8d094d508f3ebc1053f91425bde6e52d31acd5bb48827c40087bfee04e969",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "32c4beb189a74f11a2c6761c0a409b91",
+          "observed": "PASS",
+          "output": "output/case-06/command_outputs/job-run.json",
+          "sha256": "4c17256bd56bc53b8730ad68299a32f008a185e1c8e97d26d08c56d03fc30539"
+        }
+      ],
+      "form": "job run --config <local-config> --manifest <job-json>",
+      "supported_target_state": "approved local disposable Git consumer",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "eb1ea59cc6826e85ecc9b370a77f9937a7c94d618919fdbc12820337704dc3df",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "32c4beb189a74f11a2c6761c0a409b91",
+          "observed": {
+            "bytes": 31,
+            "creation_filetime": 134358969780356190,
+            "exit_code": 0,
+            "io_errors": [],
+            "job_id": "f8da48c9b6b14e66bae33aa0db715013",
+            "pid": 56796,
+            "quiescent": true,
+            "reason": "exited"
+          },
+          "output": "output/case-06/command_outputs/job-run-full.json",
+          "sha256": "aa510e90a734a8a462c00442b14e9c916f983fd9550a446fd390bb5fe5f27c77"
+        }
+      ],
+      "form": "job run --config <local-config> --manifest <job-json> --full",
+      "supported_target_state": "approved local disposable Git consumer",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "5a019dbba5c3c6c167d930f59e8d5735aa535aa164022cd4c7120336e7d4da5a",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "32c4beb189a74f11a2c6761c0a409b91",
+          "observed": "",
+          "output": "output/case-06/command_outputs/job-recover.json",
+          "sha256": "62757867742f8bb8231437243487ca6243941ce5ba063e71c2ef8acb95c0dfd3"
+        }
+      ],
+      "form": "job recover --config <local-config>",
+      "supported_target_state": "approved local disposable Git consumer",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "004be820546a6ae545e2444b31aa51c4e02fd0002bd689a5eff735d228ba1ba1",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "32c4beb189a74f11a2c6761c0a409b91",
+          "observed": "PASS",
+          "output": "output/case-06/command_outputs/job-wait-default.json",
+          "sha256": "7ca151d06db8ff9ec347032452fe5e9604ccc94e29e1081c1629292a8ef0bb12"
+        }
+      ],
+      "form": "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+      "supported_target_state": "approved local disposable Git consumer",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "87cf7cf3787863e232de27bdd4018c0a9ac099fd8e05035cd58f228a89da7196",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "32c4beb189a74f11a2c6761c0a409b91",
+          "observed": "PASS",
+          "output": "output/case-06/command_outputs/job-wait.json",
+          "sha256": "2af9766f7e03e868eb0c46688beee8d8b41394b8f02048c0d09911567e7c6892"
+        }
+      ],
+      "form": "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>",
+      "supported_target_state": "approved local disposable Git consumer",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "aab30fccefa5bb82b0e21a0b4101ca0dc32d6cc2b763eddbdbd6ab4970ab02b3",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "32c4beb189a74f11a2c6761c0a409b91",
+          "observed": "COMPLETE",
+          "output": "output/case-06/command_outputs/job-usage.json",
+          "sha256": "ec4e559f31fbed25db13231c75f04130cc095dad87474b506b1e45066b9e456a"
+        }
+      ],
+      "form": "job usage --stream <codex-exec-jsonl>",
+      "supported_target_state": "approved local disposable Git consumer",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "b0f5f8b7e0b11a886ed5b179b79cb8eb0c2001a55a3fbfef9b55fa0240d694f2",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 2,
+          "job_id": "32c4beb189a74f11a2c6761c0a409b91",
+          "observed": "PARTIAL",
+          "output": "output/case-06/command_outputs/job-usage-attempt-set.json",
+          "sha256": "5ae7c6b0fc36d10f5889cdb4a034a608cd707d3ea3644dcba79b7b1685251527"
+        },
+        {
+          "current_argv_sha256": "b0f5f8b7e0b11a886ed5b179b79cb8eb0c2001a55a3fbfef9b55fa0240d694f2",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 1,
+          "job_id": "32c4beb189a74f11a2c6761c0a409b91",
+          "observed": "REFUSED",
+          "output": "output/case-06/command_outputs/job-usage-invalid-parent.json",
+          "sha256": "5ce9a1f79069f3593d10715a6d48186fe7f2e703b22b27c194454aa821a1c34f"
+        }
+      ],
+      "form": "job usage --attempt-set <attempt-roster-json>",
+      "supported_target_state": "approved local disposable Git consumer",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    },
+    {
+      "evidence": [
+        {
+          "current_argv_sha256": "d460540ebc1a2c79006ae2df5be655c55be66b9bdf0750581386a90c4f3192cc",
+          "current_exit_status_verified": true,
+          "custody_route": "RAW",
+          "exit_code": 0,
+          "job_id": "32c4beb189a74f11a2c6761c0a409b91",
+          "observed": "COMPLETE",
+          "output": "output/case-06/command_outputs/job-context.json",
+          "sha256": "2b5c1836d1fbf45a15de2dfbf73e701f5f8bdad837a4b8d16f41d7c32df820ed"
+        }
+      ],
+      "form": "job context",
+      "supported_target_state": "approved local disposable Git consumer",
+      "tested_environment": "Windows10.0.19045/Python3.14.7; current ZIP/TAR; actual CodexSandboxOffline native workers; enclosing384MiB Windows Job; existing D roots; no outer/read-isolation/hard-disk/model qualification"
+    }
+  ],
+  "publisher": {
+    "bytes": 8495,
+    "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-publish.py.log",
+    "sha256": "d91d5b35af6c87c770778945cba566132a7d722dc06e7f13ed137837f6ce38dd"
+  },
+  "qualification": {
+    "all8_actual_current_archive_consumers": "PASS",
+    "delivered_tests": 10,
+    "evidence": {
+      "candidate-current-closeout-source-review-v2.log": {
+        "bytes": 9229,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-closeout-source-review-v2.log",
+        "sha256": "7436b369fbbbcc3f474b6faa5cfe942e8081c4ad49fe0e7cbdca9d12bf008869"
+      },
+      "candidate-current-closeout-source-sync-terminal.log": {
+        "bytes": 59649,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-closeout-source-sync-terminal.log",
+        "sha256": "e85f5f97a079a8706085b8363bec1661a3e774270ee6d78ebf925254410b59c1"
+      },
+      "candidate-current-consumer-qualified.json": {
+        "bytes": 14525,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-qualified.json",
+        "sha256": "54116697ab82d3cd28825868a0f793c5e15d672c143822354804d5eb053b31e4"
+      },
+      "candidate-current-package-qualified.json": {
+        "bytes": 12481,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-package-qualified.json",
+        "sha256": "4d6847a977ce3d5fc067f50f2d6fa298394bb576278173689bcd45cbfaa1c27c"
+      },
+      "candidate-current-public-form-coverage.log": {
+        "bytes": 45801,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-public-form-coverage.log",
+        "sha256": "23129f29cc766b2ad9b318309bcc05294b2c782a4eba063a9ef23c04f71b5866"
+      },
+      "candidate-current-release-capacity-result.log": {
+        "bytes": 7891,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-release-capacity-result.log",
+        "sha256": "09e97add5c7b4f06b23bc06cd6ff7d97bea68873d7b81cebc8f4a1a1ae950cbc"
+      },
+      "candidate-current-release-capacity-review.log": {
+        "bytes": 3376,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-release-capacity-review.log",
+        "sha256": "6e4da1c9c43371d8a8f5fc5f676b19a2074fa3ae136765f836865c5b16efa4f8"
+      },
+      "candidate-current-release-history.log": {
+        "bytes": 554,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-release-history.log",
+        "sha256": "113b856b21e1b9657c5440d50c829ad1425fa919b65246024a143a63275dddf8"
+      },
+      "candidate-current-release-resource-preflight.log": {
+        "bytes": 884,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-release-resource-preflight.log",
+        "sha256": "b6298df617bae155a89fec95683b596d425db3b414df353bfcf094217cac33a5"
+      },
+      "candidate-current-replay-qualified.json": {
+        "bytes": 4701,
+        "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-replay-qualified.json",
+        "sha256": "1e3719fc9d5a2d0ae3689b0eae57d46f489554418fa3c7c2ca981fc83b9f9faf"
+      }
+    },
+    "forms": 38,
+    "output_observations": 51,
+    "preserved_nonpass": "Original case1/case5 native memory aborts, case5 parent collection-cap failure and collection-only recovery, rejected replay proposals and obsolete read-root preallocation refusal remain raw evidence.",
+    "source_only_fixture_tests_not_shipped": true,
+    "source_tests": 71,
+    "zero_change_current_replay": "PASS"
+  },
+  "recovery": "First failed/uncertain effect stops and keeps exact journal plus partial downloads. No retry, retag, asset replacement, forced update, credential/billing change or automatic native replay. Observe actual remote state before any later reviewed continuation.",
+  "remaining_parent_boundaries": [
+    "outer shell/editor/plugin containment",
+    "read isolation",
+    "actual supported model editing",
+    "whole-outcome matched efficiency",
+    "wider multi-machine disk cleanup",
+    "paused FacMan/downstream adoption"
+  ],
+  "remote_heads_preimages": {
+    "refs/heads/dev": "0f293eb6a99dbd444bfa35016007b13451c49275",
+    "refs/heads/main": "0f293eb6a99dbd444bfa35016007b13451c49275",
+    "refs/heads/task/aide-api-loader-effect-01": "e9ad4156d512a75af6b1add1e5972ecc81ce494b",
+    "refs/heads/task/aide-api-set-source-integration-01": "c3a92154dd8e217604aea642e534fc7fbf20a8d2",
+    "refs/heads/task/aide-architecture-reconciliation-01": "e3e6f8bcff762638326853746dfd952f826f1f76",
+    "refs/heads/task/aide-broker-dev-pack-refresh-01": "3f1bc120a10ce8f87d0de24d45cdd447f6800be9",
+    "refs/heads/task/aide-campaign-resource-setup-01": "917ebe80b91b9956b0b1d0cb2dc9db2c4ab2f5e4",
+    "refs/heads/task/aide-codex-dispatch-gate-01": "32b9711bec4e1d301cef12b120f20ee8200366c5",
+    "refs/heads/task/aide-codex-neutrality-integration-01": "916d4928373c9889e8a9dac52a329d5a056669f5",
+    "refs/heads/task/aide-codex-result-boundary-01": "9fe9cb485daf8ef6e1dbbabc876a6346e12899e5",
+    "refs/heads/task/aide-continuous-worker-pilot-01": "a9a46292f1ad214fef8c3abaaaf1795b0d4b67d0",
+    "refs/heads/task/aide-current-lite-taskos-projection-01": "92d8db087f2886850b1fd4f8e75800d77506c541",
+    "refs/heads/task/aide-current-scoped-lite-qualification-01": "0f293eb6a99dbd444bfa35016007b13451c49275",
+    "refs/heads/task/aide-cw-api-query-effect-01": "3954ee4cbc725649269e675ef49ac3573f90f6a8",
+    "refs/heads/task/aide-cw-api-set-loader-observation-01": "73df2fe445e1ed46c53502b5b3a66664a094e0d9",
+    "refs/heads/task/aide-cw-apiquery-native-qualification-01": "eace2e4d4ed2e6fabcb4a064d240b714d6e8b559",
+    "refs/heads/task/aide-cw-broker-dev-integration-01": "2ef1fb7476bb350ad2a8da84c6093fa9ae5a7953",
+    "refs/heads/task/aide-cw-github-target-dev-integration-01": "3bdeb220cb31dfc3177faa6836f5e86c8071d1ef",
+    "refs/heads/task/aide-cw-github-target-qualification-01": "d81d953a767492c4f71bfe9a2334944d51cf5201",
+    "refs/heads/task/aide-cw-integration-broker-01": "75da33108995ba63fc7148c6b4137349d7013798",
+    "refs/heads/task/aide-cw-isolated-host-apiquery-01": "ad1076a3b165d15bfb68045908dfef1f5acd13c2",
+    "refs/heads/task/aide-delivered-lifecycle-combined-01": "d4b67c96ff81eb10aeecd6763b538331844619c9",
+    "refs/heads/task/aide-delivered-pack-customization-01": "a5cd5ca5ddf7d0be561fbf2796b073b9f5d96fd2",
+    "refs/heads/task/aide-delivered-pack-import-closure-01": "8e1e9a9d724dfc300f7a7a6d8b5201c20068b78f",
+    "refs/heads/task/aide-delivered-pack-removal-plan-01": "d1362f912c951ccc6022d0a2a3a527a4d66365f1",
+    "refs/heads/task/aide-delivered-pack-repair-health-01": "a32535a2675f191ae3515f39501658e91ef41103",
+    "refs/heads/task/aide-delivered-pack-safe-update-01": "e642b73a78bef59cdd9452cde0bb988b81cbd5ab",
+    "refs/heads/task/aide-delivered-pack-three-way-update-01": "c68077548ee9d18a4167b0b6f5fcdbe5845d1738",
+    "refs/heads/task/aide-distribution-fixture-portability-01": "e73ac0b269df3a47214588ae2d025d1b97f2f2c7",
+    "refs/heads/task/aide-distribution-fixture-portability-integration-01": "6cb0a9ac8856a4e733b1d48ef2a86d50badb5d22",
+    "refs/heads/task/aide-distribution-portability-pack-refresh-01": "4c0da8974daa96022e53212b8d24b5f5660d7926",
+    "refs/heads/task/aide-historical-commit-dispositions-01": "7a2305f518940077892729b915734bb766a335e1",
+    "refs/heads/task/aide-historical-dev-integration-01": "fce11e7fce3e8106a71f5a2391fd6f0517d7e0c8",
+    "refs/heads/task/aide-host-dev-integration-01": "1c75abf1d93b34be8998383ea2ce4c9084c9d612",
+    "refs/heads/task/aide-job-scope-diagnostics-01": "9b1d18445b38ab39799aad18871b91ddb75a1759",
+    "refs/heads/task/aide-lifecycle-owned-repair-01": "cdb3bd04f1ae20f4e58529f7132c376fcbdc48c6",
+    "refs/heads/task/aide-lifecycle-removal-apply-01": "fbd9465344f038ea0069fd65673a09bd9106a6a1",
+    "refs/heads/task/aide-lifecycle-rollback-apply-01": "33824b369b844b1c7a4304844838bcb424806131",
+    "refs/heads/task/aide-lifecycle-safe-import-01": "0dfb2931d32f767db19f5df15f173b6a704be5d3",
+    "refs/heads/task/aide-lite-changelog-admission-01": "c0e07b083040069f9cdfe8c9005f714d4d5df58b",
+    "refs/heads/task/aide-lite-codex-host-binding-01": "12351b07c3407c20118515ce868b5413c77a0b89",
+    "refs/heads/task/aide-lite-codex-no-repeat-01": "3cc6bf1362aca510aced28ddbab485d4e39317d7",
+    "refs/heads/task/aide-lite-current-runner-release-01": "a9e0c5db8d6f039d6d069b800ac900b2cac8b3ac",
+    "refs/heads/task/aide-lite-efficiency-01": "ea80f73d21a9288891e6062a6df733487ae16da6",
+    "refs/heads/task/aide-lite-efficiency-release-01": "5eac25c21ba3f2abe2b422aa4b19ae41724bf77d",
+    "refs/heads/task/aide-lite-efficiency-release-refresh-01": "d5a84c10b1b7a1ad12d3b2e8bdedc921b4710772",
+    "refs/heads/task/aide-lite-efficiency-wait-consumer-01": "31107d1854e64a237514babc2e406a064b470866",
+    "refs/heads/task/aide-lite-host-context-integration-receipt-01": "005c8036683e4002dde98a97bbe4bfd05d6bc282",
+    "refs/heads/task/aide-lite-job-evidence-parse-01": "2cd254df7cf26642fc47747fda4bae33ff1e10c1",
+    "refs/heads/task/aide-lite-live-host-readiness-01": "3cd57cb49620f7dadc15ebe207a6a90d25448e62",
+    "refs/heads/task/aide-lite-parser-release-01": "9a8af184b5e5d30e518afdbe51a78298e434e28d",
+    "refs/heads/task/aide-lite-preunlink-recovery-01": "694e623f58af87e24e4239908d1b2d5675c575a2",
+    "refs/heads/task/aide-lite-usage-attribution-01": "6e35ea1379da7d0e447e8973b44205da6df6e662",
+    "refs/heads/task/aide-lite-usage-duplicate-01": "e5bb4f8b53ca98119f0d5762c1e377836db9813d",
+    "refs/heads/task/aide-owned-repair-dev-integration-01": "9a8b08700ef7356ee75b6750f3a53c97a4a56e3e",
+    "refs/heads/task/aide-post-lite-source-integration-01": "190d3f5c2f76143657514d3cb50100622b987608",
+    "refs/heads/task/aide-qualified-source-main-sync-02": "bf559c0a939aba7f9d3d2f3922418428fcf9b6ee",
+    "refs/heads/task/aide-release-metadata-integrity-01": "f77ecba287415ebefb24db97b8543d6256963e45",
+    "refs/heads/task/aide-removal-combined-01": "2c4c9089a546c04f81db946b3343aa4236ebe406",
+    "refs/heads/task/aide-removal-dev-integration-01": "5dfa75e632b09f732a8150376db6840bcf149ed3",
+    "refs/heads/task/aide-removal-rename-recovery-01": "b95a8f9a159e01325ee01e08d45556e005595fc9",
+    "refs/heads/task/aide-repair-staging-race-01": "10a16afb681edcdd1907af0f178ccbb294ec17ff",
+    "refs/heads/task/aide-retire-partial-recovery-checkout-01": "ef0ecf1b6674ccf5ce0694398e37d66e4b3fdd95",
+    "refs/heads/task/aide-rollback-partial-recovery-01": "9cabad8d4b9933c8261d520012aa7486346778c4",
+    "refs/heads/task/aide-safe-import-combined-01": "515ad6b2c07e398e62675a3b39fbee7260ac08b8",
+    "refs/heads/task/aide-session-containment-01": "3d186d0584bb40f18402a626c9fe099260fae3d4",
+    "refs/heads/task/aide-spec-docs-integration-01": "be3a854abde73dd1d3498a20c240bd0c0a58c28b",
+    "refs/heads/task/aide-stable-contract-projection-01": "b3a001befaac2d2d9a596c1d7dc738dd1733bec6",
+    "refs/heads/task/aide-stable-coverage-current-evidence-01": "398d6914c873d01f27444dbdca3129434043bf36",
+    "refs/heads/task/aide-stable-current-conflict-proof-01": "0d9741e374f6bc3220bfa80834d27199b8242a36",
+    "refs/heads/task/aide-stable-documentation-alignment-01": "1d70597894e3dbfe286cb06f5663fe2ad8bfe003",
+    "refs/heads/task/aide-stable-lite-consumer-evidence-dev-integration-01": "d292253b09944f28f0fc794fe3a9679966fe56a0",
+    "refs/heads/task/aide-stable-lite-consumer-qualification-01": "b45010280e5ea9b628f6191ac9f1959c820444cb",
+    "refs/heads/task/aide-stable-lite-current-projection-01": "493e3f13c1b2e754dd8fb5f533380ba13a7b8979",
+    "refs/heads/task/aide-stable-lite-draft-truth-01": "59286688dfcead36f39d2bd9a48c376bc98d7b9f",
+    "refs/heads/task/aide-stable-lite-forced-restart-01": "e88b1c2ee6f3206c628f79908e430a7967e9f58c",
+    "refs/heads/task/aide-stable-lite-partial-import-recovery-01": "e18f983b09378131c55d8a3ed7daed3521a243b9",
+    "refs/heads/task/aide-stable-lite-partial-recovery-projection-01": "33abef7fca1547de6a3ca6de54ef0b99bedc6ef1",
+    "refs/heads/task/aide-stable-lite-release-effect-01": "ec7fa41a64d7194ab3554993334026088574b2a6",
+    "refs/heads/task/aide-stable-lite-release-qualification-01": "f3f59303e5d09683a6345be8cbada06496ec4ff9",
+    "refs/heads/task/aide-stable-lite-renewed-01": "76e17a4c2101a9f75fa1116b9256d331bd2cedb8",
+    "refs/heads/task/aide-stable-lite-target-queue-next-01": "75406123ccb06febf34fe9c579a6a1f772b0d6c0",
+    "refs/heads/task/aide-stable-lite-task-truth-01": "04caefe659865f16e5777f6c76293fb1df8510fd",
+    "refs/heads/task/aide-stable-lite-verify-warnings-01": "1d3d9fe1bb517bb8b9ce18cd26901a00dc9c4c30",
+    "refs/heads/task/aide-stable-mid-removal-canary-01": "a08c87e9cb150813690f8e0a234ad22d353cd150",
+    "refs/heads/task/aide-stable-release-contract-01": "d38e5839fe102fd4b38dc29971877753ccb6e2ec",
+    "refs/heads/task/aide-task-os-readonly-next-01": "dcdc9929a5ad145c34d198189b303186ba1553d5",
+    "refs/heads/task/aide-task-os-stale-next-01": "56eebf9387563a420910cbcc168ac4a65334dd7e"
+  },
+  "schema": "aide.exact-current-stable-release-effect.v1",
+  "scoped_host_sha256": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+  "source": {
+    "archive_identity": {
+      "artifact_state": "immutable_release_payload",
+      "intended_channel": "stable",
+      "lifecycle_apply_platform": "Windows only; exact tested environment in effect evidence",
+      "offline_scope": "local CLI after archive acquisition; no native network isolation claim",
+      "predecessor_matrix": [],
+      "profile_id": "aide-lite-local-windows",
+      "public_cli_forms": [
+        "doctor",
+        "validate",
+        "context",
+        "pack --task <task>",
+        "verify --evidence <evidence-path>",
+        "task inspect",
+        "task status",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+        "plan-removal --target <target>",
+        "apply-removal --target <target> --expect-plan <digest>",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+        "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+        "job inspect --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json> --full",
+        "job recover --config <local-config>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>",
+        "job usage --stream <codex-exec-jsonl>",
+        "job usage --attempt-set <attempt-roster-json>",
+        "job context"
+      ],
+      "release_axis": "aide_lite_portable_package",
+      "schema_version": "aide.stable-release-identity.v1",
+      "source_commit": "a17cf4b3dbec5caa236c62ee2fa23b31aa09c8fc",
+      "source_pack_checksums_sha256": "97898ece41a00f7d1b3c7182ee4fc1b81ad203f3aa55ebb91dfa5ad11905fa9f",
+      "source_repo": "julesc013/aide",
+      "source_tree": "450cbd28aed578bbb8990595e2447cf081df2321",
+      "support_mode": "companion",
+      "support_tier_candidate": "T3",
+      "tag": "aide-lite-v1.0.0",
+      "version": "1.0.0",
+      "version_policy_sha256": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253"
+    },
+    "source_epoch_rule": "Actual build/consumer/replay subjects retain their own earlier commits. Current source is only a metadata descendant; unchanged operative/package dependency closure, no evidence rebinding.",
+    "tag_commit": "0f293eb6a99dbd444bfa35016007b13451c49275",
+    "tag_tree": "7cfb7775a6619bda8d88b52347da3c048ccc19dd"
+  },
+  "state": "PENDING_STRICT_INDEPENDENT_RELEASE_ACCEPT_NO_EFFECTS",
+  "tag": "aide-lite-v1.0.0",
+  "version": "1.0.0",
+  "workunit": "AIDE-STABLE-LITE-RELEASE-EFFECT-01"
+}

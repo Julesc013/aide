@@ -1051,3 +1051,17 @@ recovery and local raw custody remain explicitly bound. Exact final release
 acceptance, publication and downloaded consumers remain next. This Windows
 Lite evidence grants no outer-host/read isolation/global quota/full efficiency
 or wider programme completion claim. Older dated sections retain their epochs.
+
+
+## Published Lite profile - 2026-10-09
+
+[AIDE Lite1.0.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0)
+is published for the qualified localWindows T3 profile. Strict release ACCEPT,
+all4downloaded asset hashes and unchanged fresh/brownfield acquisition/update/
+recovery acceptance passed; full collection, scratch retirement and reservation
+release are recorded in the [existing report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+and [exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json).
+Tag0f293eb6 and pack sourcea17cf4b3 remain distinct immutable identities.
+No code/export/archive or unsupported profile was changed. Broader containment,
+read isolation, actual model editing, whole-outcome efficiency, wider cleanup
+and downstream work remain open; this is not whole-programme completion.

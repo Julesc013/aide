@@ -1,0 +1,364 @@
+{
+  "acceptance_sha256": "8c415f5bb5e5ad64b78bb965feee1db7bf5b15d9d7e1b9245ccee6e3af68141c",
+  "active_absent": true,
+  "actual_model_calls": 0,
+  "actual_native_acquisition_scope": "Unchanged original case0 assertions on exact actual downloaded ZIP/TAR: fresh/brownfield adoption, synthetic update/conflict/lifecycle and partial recovery. No published predecessor exists.",
+  "all8_current_archive_consumers": "PASS",
+  "archive_identity": {
+    "artifact_state": "immutable_release_payload",
+    "intended_channel": "stable",
+    "lifecycle_apply_platform": "Windows only; exact tested environment in effect evidence",
+    "offline_scope": "local CLI after archive acquisition; no native network isolation claim",
+    "predecessor_matrix": [],
+    "profile_id": "aide-lite-local-windows",
+    "public_cli_forms": [
+      "doctor",
+      "validate",
+      "context",
+      "pack --task <task>",
+      "verify --evidence <evidence-path>",
+      "task inspect",
+      "task status",
+      "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+      "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+      "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+      "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+      "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+      "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+      "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+      "plan-removal --target <target>",
+      "apply-removal --target <target> --expect-plan <digest>",
+      "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+      "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+      "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+      "job inspect --config <local-config> --manifest <job-json>",
+      "job run --config <local-config> --manifest <job-json>",
+      "job run --config <local-config> --manifest <job-json> --full",
+      "job recover --config <local-config>",
+      "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+      "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>",
+      "job usage --stream <codex-exec-jsonl>",
+      "job usage --attempt-set <attempt-roster-json>",
+      "job context"
+    ],
+    "release_axis": "aide_lite_portable_package",
+    "schema_version": "aide.stable-release-identity.v1",
+    "source_commit": "a17cf4b3dbec5caa236c62ee2fa23b31aa09c8fc",
+    "source_pack_checksums_sha256": "97898ece41a00f7d1b3c7182ee4fc1b81ad203f3aa55ebb91dfa5ad11905fa9f",
+    "source_repo": "julesc013/aide",
+    "source_tree": "450cbd28aed578bbb8990595e2447cf081df2321",
+    "support_mode": "companion",
+    "support_tier_candidate": "T3",
+    "tag": "aide-lite-v1.0.0",
+    "version": "1.0.0",
+    "version_policy_sha256": "b81235640cbca552826a1bb212f5e451a9dd0af8c8ab27e65765446324ab1253"
+  },
+  "completion_scope": "Only aide-lite-local-windows T3 public package profile; not whole-programme completion.",
+  "controller_review_usage": "unknown",
+  "custody_saved_logical_bytes": 9384474,
+  "dispatch_unchanged": true,
+  "downloaded_assets": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": {
+      "asset_id": 621971823,
+      "browser_download_url": "https://github.com/Julesc013/aide/releases/download/aide-lite-v1.0.0/aide-lite-v1.0.0.SHA256SUMS.txt",
+      "bytes": 274,
+      "path": ".aide/release/acquired-aide-lite-v1.0.0.log/aide-lite-v1.0.0.SHA256SUMS.txt",
+      "sha256": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83"
+    },
+    "aide-lite-v1.0.0.manifest.json": {
+      "asset_id": 621971821,
+      "browser_download_url": "https://github.com/Julesc013/aide/releases/download/aide-lite-v1.0.0/aide-lite-v1.0.0.manifest.json",
+      "bytes": 4955,
+      "path": ".aide/release/acquired-aide-lite-v1.0.0.log/aide-lite-v1.0.0.manifest.json",
+      "sha256": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb"
+    },
+    "aide-lite-v1.0.0.tar.gz": {
+      "asset_id": 621971820,
+      "browser_download_url": "https://github.com/Julesc013/aide/releases/download/aide-lite-v1.0.0/aide-lite-v1.0.0.tar.gz",
+      "bytes": 837890,
+      "path": ".aide/release/acquired-aide-lite-v1.0.0.log/aide-lite-v1.0.0.tar.gz",
+      "sha256": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a"
+    },
+    "aide-lite-v1.0.0.zip": {
+      "asset_id": 621971818,
+      "browser_download_url": "https://github.com/Julesc013/aide/releases/download/aide-lite-v1.0.0/aide-lite-v1.0.0.zip",
+      "bytes": 1176436,
+      "path": ".aide/release/acquired-aide-lite-v1.0.0.log/aide-lite-v1.0.0.zip",
+      "sha256": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b"
+    }
+  },
+  "effect_sha256": "1a3519e92fd89d6c6a02d74b4bdec0ad66f4181cc58923bbb681582652a08049",
+  "files": {
+    "logs/stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdout": {
+      "bytes": 195,
+      "sha256": "57ebb0d7c0ad129ae70af09009a05e18a0557f2c8a985f5054a46931757960d9"
+    },
+    "output/case-00/brown-agents-overlay-apply.json": {
+      "bytes": 1506,
+      "sha256": "934e7b0b18d5bfdd4436405303dbaa4e9e2a8e8b356f44112b7c572b0b0edb32"
+    },
+    "output/case-00/brown-agents-overlay-preview.json": {
+      "bytes": 105783,
+      "sha256": "570eb02aadeaa4308c5a7636af3f2337406b4855265f1a8c37ce8abaa2ba8784"
+    },
+    "output/case-00/brown-agents-overlay-repair-health.json": {
+      "bytes": 463230,
+      "sha256": "fced9ae1820f6c10fa0827cf8eef3771fe68cfb192a90f60b60b04678f9a1f0d"
+    },
+    "output/case-00/brown-direct-edit-repair-health.json": {
+      "bytes": 463279,
+      "sha256": "95709dc0acf4cc62f6262c29db68ddf0cf4cde16c113e139ef76a47e15929be8"
+    },
+    "output/case-00/brown-v1-apply.json": {
+      "bytes": 1567,
+      "sha256": "5543af3330f677948688451a6fa104c776014b760c4a254cd1eb68cbf64ca536"
+    },
+    "output/case-00/brown-v1-preview.json": {
+      "bytes": 100495,
+      "sha256": "ae5f19cb8e404585967dfd8e136d6f30c3ec29d4df7e7fa456fd6ebb91344262"
+    },
+    "output/case-00/brown-v2-conflict-apply.json": {
+      "bytes": 1815,
+      "sha256": "4dc7de0b673b80adc1f5762493d80e4d442c8b624c37df10ff51385fd66eb4c4"
+    },
+    "output/case-00/brown-v2-conflict-preview.json": {
+      "bytes": 106140,
+      "sha256": "fb47edc451131cd66d4ac4f8e6a48b85fa1fd232017457bdd779bed0a86426df"
+    },
+    "output/case-00/brown-v2-resolved-apply.json": {
+      "bytes": 2020,
+      "sha256": "b5e9b120724762b8a88dd857d3bf1f520b1c0dbc7d652e00d430ecd22131960f"
+    },
+    "output/case-00/brown-v2-resolved-feedback.json": {
+      "bytes": 3706,
+      "sha256": "588df909101fe0a32da4c04290d5edef1dc359e5848da56d40fd4c03289a2af1"
+    },
+    "output/case-00/brown-v2-resolved-plain-preview.json": {
+      "bytes": 104975,
+      "sha256": "e386a6413dfa024eb3a2ecbf0e7e009eafd8f7576f0e477eb00d484bb6f9afb4"
+    },
+    "output/case-00/brown-v2-resolved-preview.json": {
+      "bytes": 106642,
+      "sha256": "8f97832608c3580541213719040b874c04912273cd9604f92469ec72943b7f7e"
+    },
+    "output/case-00/brown-v3-conflict-preview.json": {
+      "bytes": 106101,
+      "sha256": "8f21dc72881381ae00adeb61984dde240b647905d5367806a60f65a070c26a5a"
+    },
+    "output/case-00/brown-v3-resolved-apply.json": {
+      "bytes": 1981,
+      "sha256": "a4411721eab52b87acf926aae02cb28665be1fdd1c58c6783576d4b1444566ac"
+    },
+    "output/case-00/brown-v3-resolved-preview.json": {
+      "bytes": 106273,
+      "sha256": "6829034ea59b893271da11dc81e0f5cbe45391d7b0828cfaf98f96854e6bec1a"
+    },
+    "output/case-00/case-00-process.json": {
+      "bytes": 1886,
+      "sha256": "4140283bc39d7ed29639941835e559b9e28eef27474f60fdd682b84b69211435"
+    },
+    "output/case-00/case-00.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output/case-00/case-00.stdout": {
+      "bytes": 509,
+      "sha256": "69bd7ac88756d8b3e1aea266e9a1169c57b4b84969250257fffee87350c971ea"
+    },
+    "output/case-00/fresh-disabled-v2-apply.json": {
+      "bytes": 1799,
+      "sha256": "2458e1bf85f9b497165636da1e2d5cfb02e06e5bc99b2a4788e94d5d59d1bb6e"
+    },
+    "output/case-00/fresh-disabled-v2-preview.json": {
+      "bytes": 107482,
+      "sha256": "ace7f3bd7bfd836790f913f3c56f3d7cb78d8394071b8acebcda1728c04208f6"
+    },
+    "output/case-00/fresh-disabled-v3-apply.json": {
+      "bytes": 1760,
+      "sha256": "6c71200cd5e4e4a1fe3e2e96fe217a727af94f7e6424d5b62359c417ff8524d9"
+    },
+    "output/case-00/fresh-disabled-v3-preview.json": {
+      "bytes": 104759,
+      "sha256": "5c4848c549188a0548407626a2adb3b72de5bda1a87d1168fbcfe3a7a9b7a010"
+    },
+    "output/case-00/fresh-installed-doctor.json": {
+      "bytes": 5823,
+      "sha256": "0c9409433b2b0ee2026fc8d207e3f483e946202e35cc99d4dd965e596e457cd7"
+    },
+    "output/case-00/fresh-missing-owned-apply.json": {
+      "bytes": 1492,
+      "sha256": "4f47dfd33e000349b9974e8d25d7926cf1af9508bc1fa85f32e30d55f7417512"
+    },
+    "output/case-00/fresh-missing-owned-preview.json": {
+      "bytes": 104495,
+      "sha256": "7569f09ef1620a374223ee26f01526b78fd88a0b87edbb56f37e534a12fdfdb6"
+    },
+    "output/case-00/fresh-missing-owned-repair-health.json": {
+      "bytes": 459913,
+      "sha256": "e6ef691518cc76886bd54dc3fe95f7b8355166ed4092893218d1ff9ffbd3dc66"
+    },
+    "output/case-00/fresh-missing-owned-repair-preview.json": {
+      "bytes": 1214,
+      "sha256": "3e3d382ff43af3570ff835a87a58bb46198fb5001adb1b2add3d185baaee894d"
+    },
+    "output/case-00/fresh-v1-apply.json": {
+      "bytes": 1552,
+      "sha256": "74765fc5bf18df08bdb2420f8fcb5314a20b8d3d8872b0a0574278dda7a1fb46"
+    },
+    "output/case-00/fresh-v1-preview.json": {
+      "bytes": 100480,
+      "sha256": "570cbe43e56ff2ed77843dde83e7d66558ac522f61f6126b1be7d2e0fe258c01"
+    },
+    "output/case-00/fresh-v1-repair-health.json": {
+      "bytes": 463149,
+      "sha256": "dd44fed6a8e2ae07ab9b94e5c35b808d4fb2ae5e5f710bb6ad7c36ef137c7746"
+    },
+    "output/case-00/partial-recovery-result.json": {
+      "bytes": 316,
+      "sha256": "9239bd512b9b73cfcc9d32a2cabe874cbc8997342dd89cd3cef05f0a19f70554"
+    },
+    "output/case-00/summary.json": {
+      "bytes": 10739,
+      "sha256": "6b9cd29ea3a3c45dc654682b7a2b092f71ab0056de893500ffa801505d5fd73c"
+    },
+    "output/effective-scope.json": {
+      "bytes": 1590,
+      "sha256": "0e3f8b5a8fa8428684febc92222e7f0d8bbc2a6182ec5c89917719a41d4e9726"
+    },
+    "output/qualification.json": {
+      "bytes": 5737,
+      "sha256": "92260c9da81a120442d784e9e8bb5772360bc1b1beb582344c6b4131a0b35ab9"
+    },
+    "owner.json": {
+      "bytes": 140,
+      "sha256": "c52a827ab6967ea36e1d71ec2f5ce5600c25274fc8f34b889659ffa0108b8a76"
+    },
+    "receipt.json": {
+      "bytes": 267870,
+      "sha256": "63bcf9362e45cd5f04c391ee5ab0cd2fec798ab4c652c6dfc639c7fc01a3b3ed"
+    }
+  },
+  "hard_disk_quota": false,
+  "job_id": "bf1c7e7794474ff9938cb3fddebf1cf6",
+  "manifest_digest": "5255f1f6252c6e55b34342d79f17b7e16bea3e8ff39e94fe84b7010d8c3d5782",
+  "native_limits": {
+    "canonical_bytes": 536870912,
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 262144,
+    "max_files": 100000,
+    "memory_bytes": 402653184,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 32,
+    "retained_bytes": 4194304,
+    "runtime_seconds": 900,
+    "scratch_bytes": 37748736
+  },
+  "native_result": {
+    "bytes": 195,
+    "creation_filetime": 134359410806313704,
+    "exit_code": 0,
+    "io_errors": [],
+    "job_id": "bf1c7e7794474ff9938cb3fddebf1cf6",
+    "pid": 56228,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "native_result_source": {
+    "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-acquisition-qualified.log",
+    "sha256": "b761412244c3d9d765139b8a2dacebe040e2df896ba2419a472a03d0f27487a6"
+  },
+  "output_observations": 51,
+  "owned_parent_terminal": {
+    "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-acquisition-parent-terminal.log",
+    "sha256": "ff3fc82bbe8d24769c41864d78243b8b06e67202139e2f5ae705b3713cd6c83d"
+  },
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 332079104,
+    "scratch_bytes": 34074169
+  },
+  "physical_space_reclaimed_claimed": false,
+  "profile": {
+    "disabled_feature_ids": [
+      "local_state_examples"
+    ],
+    "excluded_profiles": [
+      "non-Windows lifecycle apply",
+      "native isolated-host operation",
+      "hosted target effects",
+      "model-enabled autonomous operation"
+    ],
+    "id": "aide-lite-local-windows",
+    "metadata_schemas": [
+      "aide.project-customizations.v1",
+      "aide.project-customizations.v2"
+    ],
+    "offline_scope": "local CLI after archive acquisition; Python socket guard observed, no OS-native network-isolation claim",
+    "platform_qualified": "Windows 10 19045, Python 3.14.7, local CLI",
+    "published_predecessors": [],
+    "support_mode": "companion",
+    "support_tier": "T3"
+  },
+  "public_forms": 38,
+  "publication_sha256": "d88933f4586cea39e7891188c8df8dacfe6b989f11bee29893099c8a2fd7d858",
+  "read_isolation": "unqualified",
+  "receipt_sha256": "63bcf9362e45cd5f04c391ee5ab0cd2fec798ab4c652c6dfc639c7fc01a3b3ed",
+  "release": {
+    "draft": false,
+    "html_url": "https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0",
+    "id": 406882845,
+    "prerelease": false,
+    "published_at": "2026-10-08T13:50:35Z",
+    "tag_name": "aide-lite-v1.0.0",
+    "target_commitish": "0f293eb6a99dbd444bfa35016007b13451c49275"
+  },
+  "release_effect_copy": {
+    "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-effect.json",
+    "sha256": "1a3519e92fd89d6c6a02d74b4bdec0ad66f4181cc58923bbb681582652a08049"
+  },
+  "release_url": "https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0",
+  "remaining_parent_boundaries": [
+    "outer shell/editor/plugin containment",
+    "read isolation",
+    "actual supported model editing",
+    "whole-outcome matched efficiency",
+    "wider multi-machine disk cleanup",
+    "paused FacMan/downstream adoption"
+  ],
+  "reservation_released": true,
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\bf1c7e7794474ff9938cb3fddebf1cf6",
+  "retained_bytes": 3318413,
+  "schema": "aide.verified-published-lite-profile.v1",
+  "scratch_retired": true,
+  "status": "PUBLISHED_AND_DOWNLOADED_CONSUMERS_PASS",
+  "strict_release_acceptance": {
+    "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-release-accept.log",
+    "sha256": "8c415f5bb5e5ad64b78bb965feee1db7bf5b15d9d7e1b9245ccee6e3af68141c",
+    "verdict": "ACCEPT"
+  },
+  "tag": "aide-lite-v1.0.0",
+  "tag_commit": "0f293eb6a99dbd444bfa35016007b13451c49275",
+  "tag_object": "03de245f57add1c3cc134fffe4f21ee68fd03065",
+  "tag_tree": "7cfb7775a6619bda8d88b52347da3c048ccc19dd",
+  "terminal_sha256": "64a1e3482f8e766c50cabb972fa573534cb33fbdaf4bc13749345c9620ea3b54",
+  "whole_session_contained": false
+}

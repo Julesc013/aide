@@ -2,28 +2,27 @@
 
 ## Current material boundaries - 2026-10-09
 
-Latest recorded source synchronization reached0d41bfe9 with88 corresponding
-branch pairs and85 other tips preserved. The current ZIPa4787e1e/TAR efcc1f83
-now has all8 original consumers PASS,38 forms/51 actual output records and
-one byte-identical replay. All allocated jobs are quiescent, fully collected,
-scratch-retired and reservation-released. Original memory interruptions,
-case5's initial collection failure and no-allocation refusals remain retained.
-The actual closeout journal records any subsequent source/ref effect.
+Local Windows Lite1.0.0 is published at immutable tag0f293eb6, strict release
+ACCEPT8c415f5b, all4acquired asset hashes verified and native fresh/brownfield
+acquisition/update/recovery PASS. All8original consumers,38forms/51records
+and the current unchanged replay are closed for that specific T3 profile.
+See the [published qualification](../../AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json).
+Original failed attempts/refusals remain; all managed scratch is retired and
+reservations released. Two exact finished helpers entered lossless custody,
+saving9,384,474 logical bytes, not a whole-machine space-recovery measurement.
 
-Final exact local Windows Lite release ACCEPT, tag/publication and acquired-byte
-fresh/brownfield verification remain distinct next effects. Source71/delivered10
-were reused for identical operative bytes; no broad rerun or archive change was
-required. Historical cosmetic decisions and existing-account test authority
-are resolved; no new owner-formatting or paid-provider decision is pending.
+Source-only synchronization and the release-effect journal preserve88 paired
+branches and85other tips. A later metadata successor records effects after the
+immutable tag; it does not replace published assets. Historical formatting
+advisories and necessary existing-account test authority are resolved.
 
-Outer containment/read isolation, supported ordinary model editing and matched
-whole-outcome efficiency remain unfinished. Known backend0.160 startup refusal
-and four spent request identities are preserved, with no automatic model replay.
-Outer routes are unrestricted;256MiB shared admission and disk growth remain
-cooperative/monitored, not hard/global quotas. Wider unknown disk reclamation
-and downstream adoption remain unfinished; FacMan product work stays paused.
-Historical sections below retain their old epochs and do not grant current
-release acceptance, broader permissions or deletion authority.
+Outer shell/editor/plugin routes remain unrestricted; read isolation, supported
+ordinary model editing and matched whole-outcome efficiency remain unfinished.
+Known0.160 startup refusal/four spent request identities remain preserved with
+no automatic replay. Aggregate/disk limits remain cooperative/monitored, not
+hard/global quotas. Wider unknown disk cleanup and downstream adoption remain
+unfinished; FacMan product work is paused. Historical sections retain their
+original epochs and confer no broader permission or deletion authority.
 
 ## Historical checkpoint — 2026-10-05
 

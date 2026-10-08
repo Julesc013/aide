@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
-status: needs_review
-planning_state: candidate_all8_38forms_and_current_replay_qualified_exact_release_pending
-result: CURRENT_EIGHT_CONSUMERS_38FORMS_AND_UNCHANGED_REPLAY_PASS
+status: passed
+planning_state: published_local_windows_lite_1_0_0_downloaded_consumers_verified
+result: PUBLISHED_LITE_1_0_0_ALL4_HASHES_AND_ACQUIRED_CONSUMERS_PASS
 updated_at: 2026-10-09
-current_slice: all8_current_consumers_38forms_51records_and_unchanged_archive_replay_PASS
-next_slice: exact_stable_release_acceptance_tag_publication_and_downloaded_consumer_verification
+current_slice: published_exact_local_windows_Lite_profile_acquisition_PASS
+next_slice: parent_containment_efficiency_cleanup_and_downstream_remain_separate
 review_gate: exact_source_ref_effects_changed_payload_qualification_and_final_stable_release_gates_retained
 current_repair_result_ref: .aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-qualified-result.json
 current_scanner_source_sha256: bca3178f45667bdf326e549858de58469e0cb0153f104c03abfef9ad140a3d96
@@ -32,8 +32,8 @@ current_source_sync_last_verified_main_dev: 27338811d14b3314a98434a68be4a7d7d56b
 current_local_export_commit: 3269160ffec959778c7df387037a2ceb26217fd6
 legacy_subject_fields_scope: retained_historical_subjects_not_current_repaired_payload_truth
 stable_release_main_promotion_performed: false
-tag_created: false
-release_published: false
+tag_created: true
+release_published: true
 supplemental_preunlink_qualification: exact_202fa0a8_two_D_jobs_PASS_independent_ACCEPT_dev_ff_694e623f_local
 efficiency_repeat_candidate: subject_9cfa91da_tree_1caf7de0_independent_ACCEPT_integration_ancestor_5eac25c2_pack_f26fa5b3_assets_8e9c1c0c_zip_798f44df_six_consumers_36_q47q48_12_delivered_job_forms
 current_taskos_candidate: zip_002636e7_six_consumers_36_q47q48_12_job_forms_delivered_taskos_canary_five_zero_change_replays_review_pending
@@ -242,3 +242,12 @@ current_candidate_qualification:
   stable_release_accepted: false
   publication_and_downloaded_consumers: pending
   source_sync_terminal_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-closeout-source-sync-terminal.log
+
+published_local_windows_profile:
+  tag: aide-lite-v1.0.0
+  tag_commit: 0f293eb6a99dbd444bfa35016007b13451c49275
+  release_url: https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0
+  qualification_ref: evidence/published-lite-1.0.0-qualified.json
+  exact_effect_ref: evidence/published-lite-1.0.0-effect.json
+  status: actual_all4_download_hashes_and_native_acquisition_PASS
+  completion_scope: T3_local_Windows_Lite_profile_only_parent_not_complete

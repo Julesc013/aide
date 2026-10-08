@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
-status: needs_review
-planning_state: candidate_all8_38forms_and_current_replay_qualified_exact_release_pending
-result: CURRENT_EIGHT_CONSUMERS_38FORMS_AND_UNCHANGED_REPLAY_PASS
+status: passed
+planning_state: published_local_windows_lite_1_0_0_downloaded_consumers_verified
+result: PUBLISHED_LITE_1_0_0_ALL4_HASHES_AND_ACQUIRED_CONSUMERS_PASS
 created_at: 2026-09-28
 updated_at: 2026-10-09
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -268,3 +268,12 @@ current_candidate_qualification:
   stable_release_accepted: false
   publication_and_downloaded_consumers: pending
   source_sync_terminal_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-closeout-source-sync-terminal.log
+
+published_local_windows_profile:
+  tag: aide-lite-v1.0.0
+  tag_commit: 0f293eb6a99dbd444bfa35016007b13451c49275
+  release_url: https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0
+  qualification_ref: evidence/published-lite-1.0.0-qualified.json
+  exact_effect_ref: evidence/published-lite-1.0.0-effect.json
+  status: actual_all4_download_hashes_and_native_acquisition_PASS
+  completion_scope: T3_local_Windows_Lite_profile_only_parent_not_complete

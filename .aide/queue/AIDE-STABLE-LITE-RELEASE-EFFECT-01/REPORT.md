@@ -1,6 +1,45 @@
 # Current AIDE source, artifact and development report
 
-## Current local archive qualification - 2026-10-09
+## Published local Windows Lite profile - 2026-10-09
+
+[AIDE Lite 1.0.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0)
+is published with immutable tag source0f293eb6/tree7cfb7775. The archive
+identity remains a17cf4b3/tree450cbd28; metadata descendants did not replace
+those bytes or rebind earlier test subjects. Strict independent ACCEPT8c415f5b
+approved [the exact effect](evidence/published-lite-1.0.0-effect.json).
+
+All4assets were acquired from the published release and SHA256-matched: ZIP
+1,176,436B, TAR837,890B, manifest4,955B, sums274B; total2,019,555B.
+[Actual publication/acquisition](evidence/published-lite-1.0.0-qualified.json)
+binds their full hashes,39 retained files/3,318,413B and native jobbf1c7e77.
+The unchanged original case0 acceptance ran on downloaded ZIP/TAR paths,
+covering fresh/brownfield adoption, synthetic update/conflicts and lifecycle,
+plus explicit partial-import recovery. Exit0/quiescence/full collection,
+scratch retirement and reservation release were verified. No published
+predecessor compatibility claim is made. Existing8consumer/38form/51record
+evidence and byte-identical replay remain valid without another suite run.
+
+Acquisition sampled scratch34,074,169B and Job memory332,079,104B; its original
+36MiB scratch/4MiB retained allowance,384MiB Job cap,256MiB cooperative
+aggregate and4GiB physical/commit plus10GiB disk reserves stayed unchanged.
+Two exact finished helper collections were losslessly compressed/read back,
+saving9,384,474 logical bytes while retaining original failures and receipts.
+This is not a measurement of reclaimed physical space or wider cleanup.
+All native workers made zero model calls; controller/review usage remains unknown.
+
+The supported scope is aide-lite-local-windows, T3 Limited Support, Windows10
+19045/Python3.14.7 local CLI, with the38 exact forms/target states/options in
+the effect manifest. Parent Git/GitHub/HTTPS effects were exact reviewed
+operations, outside the worker sandbox; the ordinary outer shell/editor/plugin
+routes remain unrestricted. Disk admission/growth and the download wall-time
+deadline are monitored/cooperative, not hard quotas or a hard total timeout.
+Outer containment/read isolation, supported ordinary modeled editing, whole
+outcome efficiency, wider multi-machine cleanup and downstream adoption remain
+unfinished; FacMan product development stays paused. Historical formatting
+advisories and existing-account test authority are resolved. No new purchase,
+API billing fallback, storage family, worktree or unknown deletion occurred.
+
+## Prepublication local archive qualification - 2026-10-09
 
 All eight original consumer cases passed on ZIPa4787e1e/TAR efcc1f83.
 [Current matrix](evidence/candidate-current-consumer-qualified.json) binds
