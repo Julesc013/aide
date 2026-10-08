@@ -1,5 +1,17 @@
 # AIDE Implementation Log
 
+## Changed host configuration - 2026-10-09
+
+The active VS Code extension26.1002.51308/backend0.162.0-alpha.2 differs from
+prior0.160. One managed configuration-only probe passed initialize/config-read,
+native/backend exit0, full9-file22,072B collection and retirement. No Codex thread,
+app-server command or model was requested; counter4, D roots/reserves and published Lite
+assets/tag remain unchanged. [Exact qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/changed-backend-qualification.json)
+records the new fingerprint and keeps native enforcement, account isolation,
+actual model editing and outer containment unqualified. Implicit Windows
+sandbox setup must be separately reviewed before a real workflow; decoder
+PASS cannot authorize that effect. Operative runtime and release payload identities remain unchanged.
+
 ## Current consumer partial qualification - 2026-10-08
 
 Current cases0/2/3/4/6 passed with127 full retained files/5,019,290B; every

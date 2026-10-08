@@ -1,0 +1,227 @@
+{
+  "account_home_and_broker_scope": "unqualified",
+  "actual_model_editing_qualified": false,
+  "backend": {
+    "backend_bytes": 333357872,
+    "backend_path": "C:\\Users\\Jules\\.vscode\\extensions\\openai.chatgpt-26.1002.51308-win32-x64\\bin\\windows-x86_64\\codex.exe",
+    "backend_sha256": "d83cc3582592e307df008411f02f61a93fb93580b53dc173608a63202d97bbe4",
+    "backend_version": "0.162.0-alpha.2",
+    "effective_current_profile": "disabled/unrestricted",
+    "entrypoint_sha256": "bc0b44429768ea49c559c6a5524dcd710c500d6193f3bfe62c81cab75c18661c",
+    "extension_version": "26.1002.51308",
+    "identity": "BLACKGLASS-WIN1\\Jules",
+    "official_sources": [
+      "https://learn.chatgpt.com/docs/permissions",
+      "https://learn.chatgpt.com/docs/windows/windows-sandbox",
+      "https://learn.chatgpt.com/docs/app-server#start-or-resume-a-thread"
+    ],
+    "old_backend_refusal_unchanged": true,
+    "outer_client": "VS Code Codex extension",
+    "package_sha256": "c09d3a7db8527302e7647e79c2abb3c47eb85ede8e9819938d9936e691346348",
+    "process_ancestry": "immediate native shell parent codex.exe in identified extension; parent Code.exe",
+    "qualification": "not_yet_run",
+    "schema": "aide.changed-host-observation.v1"
+  },
+  "configuration_only": true,
+  "dispatch_unchanged": true,
+  "effect_sha256": "5c5b5b9ca7f40af3388bcc99087c733d27bfca529d595f6c8052f2eba1aacd24",
+  "files": {
+    "logs/stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdout": {
+      "bytes": 124,
+      "sha256": "9039ecfab35373daa8b835d68bf93efc32ca867aa6f048300aaeddf8927219d9"
+    },
+    "output/backend-stderr.log": {
+      "bytes": 358,
+      "sha256": "f9620990f3f312d8e4ab143114f26a55b89952746b7569f6a5e11b5618de22ce"
+    },
+    "output/backend-stdout.log": {
+      "bytes": 10517,
+      "sha256": "d7b3bc3b253b336cfa835cfde53e91c34bc228cf2d3a09814b51c70eae1c0bda"
+    },
+    "output/changed-backend-probe.json": {
+      "bytes": 5176,
+      "sha256": "01bed0fe9cfbc8c2bdc53e55c677aa5ad8e0c645b21fd409e0f3e26756f4875a"
+    },
+    "output/effective-scope.json": {
+      "bytes": 1696,
+      "sha256": "5a93e273b5bc0bc715cf732881dd58214fdf087ba8c639d633c33bcc5e9bd254"
+    },
+    "owner.json": {
+      "bytes": 140,
+      "sha256": "4bd9faa6a43ab6c1bbb92fc987bb4605ec28d1da7734fa42b0532f8aa0b99447"
+    },
+    "receipt.json": {
+      "bytes": 4061,
+      "sha256": "bd3aa87106d6afaf6659f6cb459a1ad35bf2b8e43a4da30414068be23636e3f9"
+    }
+  },
+  "job_id": "8d3b444f1d0c4237a38b0b0dbdb5f061",
+  "native_result": {
+    "bytes": 124,
+    "creation_filetime": 134359441861002954,
+    "exit_code": 0,
+    "io_errors": [],
+    "job_id": "8d3b444f1d0c4237a38b0b0dbdb5f061",
+    "pid": 45460,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "next_required_evidence": "Separately reviewed setup-free or specifically authorized supported Windows sandbox route, then actual edit/test/collect and excluded tool witnesses; no thread/command/model replay from decoder PASS.",
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 63664128,
+    "scratch_bytes": 2794864
+  },
+  "proof": {
+    "actual_model_editing_qualified": false,
+    "backend_exit": 0,
+    "backend_sha256": "d83cc3582592e307df008411f02f61a93fb93580b53dc173608a63202d97bbe4",
+    "client_state_destination": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\8d3b444f1d0c4237a38b0b0dbdb5f061\\tmp\\isolated-client",
+    "configuration_checks_passed": true,
+    "credentials_copied": false,
+    "effective_features": {
+      "apps": false,
+      "browser_use": false,
+      "browser_use_external": false,
+      "computer_use": false,
+      "hooks": false,
+      "in_app_browser": false,
+      "multi_agent": false,
+      "plugins": false,
+      "remote_plugin": false
+    },
+    "effective_profile": {
+      "description": null,
+      "extends": null,
+      "filesystem": {
+        ":minimal": "read",
+        ":root": "deny",
+        "C:\\Users\\Jules\\.vscode\\extensions\\openai.chatgpt-26.1002.51308-win32-x64\\bin\\windows-x86_64": "read",
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64": "read",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\8d3b444f1d0c4237a38b0b0dbdb5f061\\tmp\\candidate": "write",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\8d3b444f1d0c4237a38b0b0dbdb5f061\\tmp\\candidate\\.aide.local": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\8d3b444f1d0c4237a38b0b0dbdb5f061\\tmp\\candidate\\.codex": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\8d3b444f1d0c4237a38b0b0dbdb5f061\\tmp\\candidate\\.git": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\8d3b444f1d0c4237a38b0b0dbdb5f061\\tmp\\excluded": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\8d3b444f1d0c4237a38b0b0dbdb5f061\\tmp\\isolated-client": "deny",
+        "glob_scan_max_depth": null
+      },
+      "network": {
+        "allow_local_binding": null,
+        "allow_upstream_proxy": null,
+        "dangerously_allow_all_unix_sockets": null,
+        "dangerously_allow_non_loopback_proxy": null,
+        "domains": null,
+        "enable_socks5": null,
+        "enable_socks5_udp": null,
+        "enabled": false,
+        "mitm": null,
+        "mode": null,
+        "proxy_url": null,
+        "socks_url": null,
+        "unix_sockets": null
+      },
+      "workspace_roots": null
+    },
+    "effective_security": {
+      "approval_policy": "never",
+      "default_permissions": "aide_updated_backend_probe",
+      "web_search": "disabled",
+      "windows": {
+        "sandbox": "elevated"
+      }
+    },
+    "fixture_unchanged": true,
+    "job_id": "8d3b444f1d0c4237a38b0b0dbdb5f061",
+    "native_filesystem_boundary_exercised": false,
+    "profile": {
+      "filesystem": {
+        ":minimal": "read",
+        ":root": "deny",
+        "C:\\Users\\Jules\\.vscode\\extensions\\openai.chatgpt-26.1002.51308-win32-x64\\bin\\windows-x86_64": "read",
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64": "read",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\8d3b444f1d0c4237a38b0b0dbdb5f061\\tmp\\candidate": "write",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\8d3b444f1d0c4237a38b0b0dbdb5f061\\tmp\\candidate\\.aide.local": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\8d3b444f1d0c4237a38b0b0dbdb5f061\\tmp\\candidate\\.codex": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\8d3b444f1d0c4237a38b0b0dbdb5f061\\tmp\\candidate\\.git": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\8d3b444f1d0c4237a38b0b0dbdb5f061\\tmp\\excluded": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\8d3b444f1d0c4237a38b0b0dbdb5f061\\tmp\\isolated-client": "deny"
+      },
+      "name": "aide_updated_backend_probe",
+      "network_enabled": false
+    },
+    "reader_faults": [],
+    "readers_quiescent": true,
+    "real_account_qualified": false,
+    "requested_model_turns": 0,
+    "requested_sandboxed_commands": 0,
+    "requested_threads": 0,
+    "responses": [
+      {
+        "request": {
+          "id": 1,
+          "method": "initialize",
+          "params": {
+            "capabilities": {
+              "experimentalApi": true
+            },
+            "clientInfo": {
+              "name": "aide_changed_backend_probe",
+              "version": "1"
+            }
+          }
+        },
+        "response": {
+          "id": 1,
+          "result": {
+            "codexHome": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\8d3b444f1d0c4237a38b0b0dbdb5f061\\tmp\\isolated-client",
+            "platformFamily": "windows",
+            "platformOs": "windows",
+            "userAgent": "aide_changed_backend_probe/0.162.0-alpha.2 (Windows 10.0.19045; x86_64) unknown (aide_changed_backend_probe; 1)"
+          }
+        }
+      },
+      {
+        "request": {
+          "id": 2,
+          "method": "config/read",
+          "params": {
+            "includeLayers": false
+          }
+        },
+        "response": {
+          "id": 2,
+          "security_matched": true
+        }
+      }
+    ],
+    "schema": "aide.changed-backend.no-model-probe.v1",
+    "status": "PASS_CONFIGURATION_DECODED_NATIVE_NOT_EXERCISED",
+    "teardown_errors": [],
+    "user_agent": "aide_changed_backend_probe/0.162.0-alpha.2 (Windows 10.0.19045; x86_64) unknown (aide_changed_backend_probe; 1)",
+    "whole_session_contained": false,
+    "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline"
+  },
+  "receipt_sha256": "bd3aa87106d6afaf6659f6cb459a1ad35bf2b8e43a4da30414068be23636e3f9",
+  "requested_model_turns": 0,
+  "reservation_released": true,
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\8d3b444f1d0c4237a38b0b0dbdb5f061",
+  "retained_bytes": 22072,
+  "review_sha256": "e64d1e766acd9ac7701a9a5026fba68513e2cb87355d54e2184136f4a3ad911f",
+  "schema": "aide.changed-host.actual-qualification.v1",
+  "scratch_retired": true,
+  "source_commit": "70a7f68e83fd8faefb55ffc430ab54c983b88004",
+  "source_tree": "6e3d71eb32da0d03f10c21205afbc23c590e6a79",
+  "status": "PASS_CONFIGURATION_DECODED_NATIVE_NOT_EXERCISED",
+  "terminal_sha256": "3d3c63ecf3f13fd77b71d13cc447f4de12c9753144f41c09d859391d68964e69",
+  "whole_outcome_usage": "unknown",
+  "whole_session_contained": false
+}

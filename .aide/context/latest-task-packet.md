@@ -1,76 +1,66 @@
-# AIDE managed commit prevention
+# AIDE changed host qualification
 
 ## PHASE
 
-AIDE-MANAGED-COMMIT-CREATE-01: bounded implementation under the existing campaign.
-Use its task.yaml, ExecPlan.md and exact evidence subjects.
+AIDE-SESSION-CONTAINMENT-01, current changed-backend configuration slice.
+Task/status/ExecPlan and exact evidence own continuation; this is a compact brief.
 
 ## GOAL
 
-Refuse malformed messages and changed inputs before a managed branch moves;
-qualify the actual public CLI and complete one real ordinary local commit.
+Establish a genuinely supported bounded ordinary edit/test/collect path.
+Configuration decoding alone does not achieve this goal.
 
-## WHY
+## CURRENT RESULT
 
-Prevent formatting failures at entry without rewriting historical commits.
+Probe source70a7f68e, one existing task checkout; the exact sync terminal owns later refs. Lite1.0.0 is already published,
+all8current consumers/38forms and downloaded-byte adoption/recovery pass.
+Preserve tag0f293eb6 and all four published/downloaded asset identities.
 
-## CONTEXT_REFS
+Immediate shell-parent ancestry now identifies VS Code Codex26.1002.51308,
+backend0.162.0-alpha.2/SHA d83cc3582592e307df008411f02f61a93fb93580b53dc173608a63202d97bbe4.
+One reviewed no-model configuration job8d3b444f passed initialize/config-read,
+native/backend exit0. Nine files22,072B fully collected; scratch/reservation
+retired. No Codex thread/app-server command/model requested; counter4 unchanged.
+See evidence/changed-backend-qualification.json for full immutable bindings.
 
-Child ExecPlan; docs/reference/commit-discipline.md; admission977f1cfb;
-evidence/native-result-v5-failed.log; current source/native review and terminal.
-Base d2c8e831, tree272c4edc, existing task/aide-current-scoped-lite-qualification-01.
+## NEXT DEPENDENCY
 
-## ALLOWED_PATHS
+The ordinary scoped model workflow remains unqualified. Windows command/thread
+routes may implicitly provision or refresh sandbox setup. Do not start them
+without a separately reviewed supported setup-free route or exact authorized
+setup effect and recovery. No global account/ACL/quota change is authorized by
+the decoder. Do not silently broaden root reads, switch Full Access, retry the
+old0.160 request, reset counters or invent a PASS from configuration metadata.
+The unrestricted outer VS Code shell/editor/plugin routes remain unqualified.
 
-The17 original scope entries plus four admitted capability-report paths in child
-task.yaml. Preserve current checkout/storage.
-The four compiled intake outputs belong to this admitted task.
+## ALLOWED PREPARATION
 
-## FORBIDDEN_PATHS
+Only SESSION task-local diagnostic/evidence/task/status/ExecPlan, required parent
+status and queue index, compiler manifest, this brief and root indexes. Current
+source closeout needs its exact result/source/guarded-commit/ref review. No new
+native/model job, runtime promotion, artifact regeneration, tag/upload or other
+project mutation is admitted by this brief. The exact sync terminal owns later
+source refs; do not invent a successor identity or another receipt-only commit.
 
-Unrelated source, machine configuration, credentials, other repositories, new
-worktrees/pools; history rewriting, live model calls and publication effects.
+## RESOURCES AND AUTHORITY
 
-## IMPLEMENTATION
+Reuse existing D shared execution control/retained/scratch and sole checkout.
+256MiB aggregate admission is cooperative/monitored; both4GiB memory reserves,
+10GiB disk reserve and finite one-job budget remain. No new provider, purchases,
+API billing fallback, storage family or unknown deletion. Existing signed-in
+OpenAI testing authority is finite and does not grant machine-wide setup.
+FacMan product development remains paused.
 
-Strict message/ref/parent/tree/path checks; owned index lock; verified immutable
-object; prepared Git HEAD/referent transaction with exact branch checks before
-commit. Preserve locks if child reaping is unproven. Public fixture metadata-read
-retries are finite and retain full authentication.
+## RECOVERY AND WAITING
 
-## VALIDATION
+Original0.160 startup failure and all four spent request identities remain.
+New fingerprint decoding does not prove native support or erase that failure.
+No active job remains. Do not repeat this finished decoder or unchanged suites.
+An unchanged genuine blocker causes no additional submission; preserve the full
+campaign objective without manufacturing more status work.
 
-Native jobdc7003a7 passed49 new cases and23 intact Q27 regressions with zero skips;
-resultc5672710/parentb1116014 are independently accepted. Four earlier jobs failed
-and retired. Final structural/source review and actual local commit remain gated.
-The four-path report refresh closes source-classification staleness only; it does
-not qualify the unchanged old archive or approve release/model/host effects.
+## REMAINING OUTCOMES
 
-## EVIDENCE
-
-Retain numeric exits, full bounded native streams, identities, candidate/ref
-effects, collection and retirement. Structural validator output is losslessly
-compressed with verified digests, not copied into context.
-
-## NON_GOALS
-
-Published66 and eleven proposed historical decisions remain unchanged. No live
-permission/client setup is inferred. Outer tools remain unrestricted, reads
-unqualified and disk control monitored. FacMan stays paused.
-
-## ACCEPTANCE
-
-Invalid/changed inputs cannot advance; exact valid commit succeeds. Real locks,
-races, reflogs and uncertainty are tested; outputs collected; scratch retired.
-Local commit, integration and release effects each keep exact review. Preserve
-unchanged older artifact evidence.
-
-## OUTPUT_SCHEMA
-
-Outcome, changed paths, actual checks, effective boundaries, resource use,
-retirement and unresolved gates. No repeated report for unchanged owner blockers.
-
-## TOKEN_ESTIMATE
-
-approx_tokens: 713
-method: characters/4, rounded up; document-size estimate, not actual usage.
+Actual bounded editing/read isolation, whole-outcome efficiency coverage,
+wider ownership-safe cleanup and authorized downstream adoption remain open.
+The delivered local Windows Lite profile does not close the whole campaign.

@@ -3859,7 +3859,7 @@ items:
     evidence: .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/evidence
   - id: AIDE-SESSION-CONTAINMENT-01
     status: needs_review
-    planning_state: candidate71_PASS_actual_host_profile_UNSUPPORTED_refusal_guard_qualified
+    planning_state: changed_backend_config_PASS_native_and_model_boundary_unqualified
     result: PARTIAL
     title: Qualify scoped host execution through the existing managed owner
     task: .aide/queue/AIDE-SESSION-CONTAINMENT-01/task.yaml

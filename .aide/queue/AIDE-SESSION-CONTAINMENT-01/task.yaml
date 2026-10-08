@@ -3,7 +3,7 @@ id: AIDE-SESSION-CONTAINMENT-01
 title: Qualify scoped host execution through the existing managed owner
 type: implementation
 status: needs_review
-planning_state: candidate71_PASS_actual_host_profile_UNSUPPORTED_refusal_guard_qualified
+planning_state: changed_backend_config_PASS_native_and_model_boundary_unqualified
 result: PARTIAL
 created_at: 2026-10-03
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -108,3 +108,15 @@ ordinary_cli_workflow_slice:
   local_state_prefix: .aide.local/ordinary-workflow-
   retained_limits: existing_D_roots_256MiB_aggregate_10GiB_disk_4GiB_memory_reserves_one_heavy_job
   current_outer_thread: disabled_unrestricted_not_changed_or_qualified
+
+changed_backend_requalification_slice:
+  source_base: 70a7f68e83fd8faefb55ffc430ab54c983b88004
+  authority: existing_owner_necessary_local_tests_and_exact_independent_security_review
+  scope: initialize_and_config_read_only_no_threads_commands_model_or_setup
+  observed_backend: 0.162.0-alpha.2
+  observed_client: VS_Code_Codex_extension_26.1002.51308
+  current_result_ref: evidence/changed-backend-qualification.json
+  native_job: 8d3b444f1d0c4237a38b0b0dbdb5f061
+  result: PASS_CONFIGURATION_DECODED_NATIVE_NOT_EXERCISED
+  old_profile_failure_and_spent_counter: preserved_four_no_replay
+  next_gate: separately_review_supported_sandbox_setup_before_actual_workflow

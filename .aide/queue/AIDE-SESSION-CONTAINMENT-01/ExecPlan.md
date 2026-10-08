@@ -376,3 +376,48 @@ guarded commit and conditional source-only atomic main/dev/current-task sync.
 Actual terminal records completed effects without another receipt-only commit.
 No model replay, runtime promotion, asset rebuild, tag or publication is admitted
 by this source closeout. The full campaign goal remains incomplete.
+
+## 2026-10-09 changed backend requalification
+
+Lite1.0.0 publication and downloaded-byte consumers are complete. The next
+actual dependency is the supported bounded host. Fresh immediate-process
+ancestry identifies VS Code extension26.1002.51308/backend0.162.0-alpha.2,
+SHA d83cc3582592e307df008411f02f61a93fb93580b53dc173608a63202d97bbe4.
+This is a concrete invalidation of the older0.160 observation, not permission
+to replay that failed request or assume the new backend is supported.
+
+Prepare one task-local no-model probe, a private configuration/manifest and
+an exact independently reviewed effect. Reuse the302688d frozen owner,
+standalone0.145 command supervisor and existing D roots/reserves/256MiB ceiling.
+The sole read-root adjustment is the identified current backend's bin directory.
+Use at most one180-second native job,1GiB existing Job cap/32processes,
+16MiB scratch,192KiB retained,128KiB logs. No model admission or counter change.
+
+Independent pre-effect review16a3ac79 REQUEST_CHANGES identified implicit
+Windows sandbox provisioning from command execution, unsafe teardown and a
+possible false-PASS observer. The unexecuted proposal is preserved. Narrow
+this one probe to initialize/config-read ONLY; thread/start and command/exec
+are removed. No model, sandbox setup, account/ACL change, fallback or automatic
+retry. The repaired helper checkpoints evidence before teardown; the observer
+requires exact native/backend exit0, quiescence and all configuration/custody
+predicates. Configuration decoding alone never qualifies a native boundary or
+ordinary model editing. Those require a separately reviewed supported setup
+route. Existing unrestricted VS Code routes do not inherit this probe's claim.
+
+Retain complete bounded responses, original refusal/failure, exact receipt,
+collection digests, resource observations and retirement. Curate only the
+changed capability finding into task/index/root records after independent
+result review. Preserve all old epochs, current assets/tag and branch tips;
+source integration remains a separately bound effect. No broader suite,
+storage inventory, worktree or release regeneration is needed for this probe.
+
+Actual job8d3b444f passed configuration decoding/native exit0/backend0, two
+RPCs only and no thread/command/model. Nine full retained files22,072B verify;
+scratch2,794,864B/Job memory63,664,128B, scratch absent/reservation released,
+original dispatch counter4 unchanged. New backend supports decoding the named
+root-deny rules; its native enforcement/session support remains unknown.
+The old0.160 refusal is preserved against its original fingerprint. Do not
+interpret this changed configuration result as model-editing or account
+isolation proof. Implicit Windows setup needs a separately reviewed supported
+route; no further dispatch is admitted. Exact result/source/conditional
+source-sync review must precede one guarded commit. Tag/assets stay unchanged.
