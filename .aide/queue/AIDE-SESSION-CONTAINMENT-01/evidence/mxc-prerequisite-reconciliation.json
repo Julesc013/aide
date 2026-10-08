@@ -1,0 +1,154 @@
+{
+  "account_home_and_broker_scope": "unqualified",
+  "actual_model_editing_qualified": false,
+  "actual_worker_backend_exits": [
+    1,
+    1
+  ],
+  "additional_attempts": 0,
+  "backend": {
+    "backend_bytes": 333357872,
+    "backend_path": "C:\\Users\\Jules\\.vscode\\extensions\\openai.chatgpt-26.1002.51308-win32-x64\\bin\\windows-x86_64\\codex.exe",
+    "backend_sha256": "d83cc3582592e307df008411f02f61a93fb93580b53dc173608a63202d97bbe4",
+    "backend_version": "0.162.0-alpha.2",
+    "effective_current_profile": "disabled/unrestricted",
+    "entrypoint_sha256": "bc0b44429768ea49c559c6a5524dcd710c500d6193f3bfe62c81cab75c18661c",
+    "extension_version": "26.1002.51308",
+    "identity": "BLACKGLASS-WIN1\\Jules",
+    "official_sources": [
+      "https://learn.chatgpt.com/docs/permissions",
+      "https://learn.chatgpt.com/docs/windows/windows-sandbox",
+      "https://learn.chatgpt.com/docs/app-server#start-or-resume-a-thread"
+    ],
+    "old_backend_refusal_unchanged": true,
+    "outer_client": "VS Code Codex extension",
+    "package_sha256": "c09d3a7db8527302e7647e79c2abb3c47eb85ede8e9819938d9936e691346348",
+    "process_ancestry": "immediate native shell parent codex.exe in identified extension; parent Code.exe",
+    "qualification": "not_yet_run",
+    "schema": "aide.changed-host-observation.v1"
+  },
+  "classification_repair_runtime_retested": false,
+  "classification_repair_tests_exit": 0,
+  "classification_repair_tests_ref": "evidence/mxc-refusal-classification-tests.log",
+  "dispatch_unchanged": true,
+  "effect_sha256": "485ed42def0273910425dc89ebb776fab4e1a0e5161893eb154f0f793e774157",
+  "executed_plan_snapshot_ref": "evidence/mxc-prerequisite-executed-plan-input.log",
+  "executed_worker_sha256": "3edfc452983b65e214d7d7ae08b3793bc72991b192ed4313f763abc3ecb18db5",
+  "executed_worker_snapshot_ref": "evidence/mxc-prerequisite-executed-worker-input.log",
+  "executor_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline",
+  "fallback_or_setup": false,
+  "files": {
+    "logs/stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdout": {
+      "bytes": 87,
+      "sha256": "c6dee565309f00d673c4bef939d988ad41c2d8a8f3fe4361961f764d3f712c2b"
+    },
+    "output/backend-stderr.log": {
+      "bytes": 446,
+      "sha256": "83884aaaba5458352d4dc877767350843f09cebf37871cdb85967748349d5e5d"
+    },
+    "output/backend-stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output/effective-scope.json": {
+      "bytes": 1691,
+      "sha256": "59f11adbf06c75394524029ff42618b0d9583188f31062270dbd2c0fd6e95a36"
+    },
+    "output/mxc-prerequisite.json": {
+      "bytes": 1835,
+      "sha256": "c0a41efb1e2bc440b93109aeca230f298eeea5a4b932922957c3c5237cc82f02"
+    },
+    "owner.json": {
+      "bytes": 140,
+      "sha256": "7d7123d0ac6b352f58c59b6177b8150c9c3aae969352b98f656e4deec48d0f3a"
+    },
+    "receipt.json": {
+      "bytes": 4043,
+      "sha256": "2c07f74ab4411b6ae4334130a2227eb7c46cb11a160b2f9c4c98a7969a68d4ab"
+    }
+  },
+  "job_id": "22c30b48aa8a4350bc143a956a5ab011",
+  "machine_wide_availability_inferred": false,
+  "native_command_witnesses_exercised": false,
+  "native_result": {
+    "bytes": 87,
+    "creation_filetime": 134359464741824329,
+    "exit_code": 1,
+    "io_errors": [],
+    "job_id": "22c30b48aa8a4350bc143a956a5ab011",
+    "pid": 54852,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "negative_capability_finding": "NATIVE_MXC_UNAVAILABLE_ON_TESTED_EXECUTOR",
+  "next_requirement": "supported constrained ordinary editing executor; native MXC refusal on this exact executor is preserved, not replayed",
+  "original_result_ref": "evidence/mxc-prerequisite-qualified.log",
+  "original_result_sha256": "64dfc5b06cb031e0b3fe97ac4d4918f9184719e420922eed15dd9e1aab9f01aa",
+  "original_status": "FAIL_PRESERVED_NO_CAPABILITY_ACCEPTANCE",
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 49020928,
+    "scratch_bytes": 4230
+  },
+  "proof": {
+    "actual_model_editing_qualified": false,
+    "allowed_edit_present": false,
+    "backend_exit": 1,
+    "backend_sha256": "d83cc3582592e307df008411f02f61a93fb93580b53dc173608a63202d97bbe4",
+    "credentials_copied": false,
+    "fallback_permitted": false,
+    "fixture_unchanged": true,
+    "job_id": "22c30b48aa8a4350bc143a956a5ab011",
+    "private_escape_absent": true,
+    "profile": {
+      "filesystem": {
+        ":minimal": "read",
+        ":root": "deny",
+        "C:\\Users\\Jules\\.vscode\\extensions\\openai.chatgpt-26.1002.51308-win32-x64\\bin\\windows-x86_64": "read",
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64": "read",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\22c30b48aa8a4350bc143a956a5ab011\\tmp\\candidate": "write",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\22c30b48aa8a4350bc143a956a5ab011\\tmp\\candidate\\.aide.local": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\22c30b48aa8a4350bc143a956a5ab011\\tmp\\candidate\\.codex": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\22c30b48aa8a4350bc143a956a5ab011\\tmp\\candidate\\.git": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\22c30b48aa8a4350bc143a956a5ab011\\tmp\\excluded": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\22c30b48aa8a4350bc143a956a5ab011\\tmp\\mxc-client": "deny"
+      },
+      "name": "aide_strict_mxc_probe",
+      "network_enabled": false
+    },
+    "reader_faults": [],
+    "readers_quiescent": true,
+    "requested_commands": 1,
+    "requested_model_turns": 0,
+    "requested_threads": 0,
+    "sandbox": "mxc",
+    "schema": "aide.strict-mxc.prerequisite.v1",
+    "status": "FAIL_NATIVE_MXC_PRESERVED_NO_FALLBACK",
+    "teardown_errors": [],
+    "whole_session_contained": false,
+    "windows_identity": "BLACKGLASS-WIN1\\CodexSandboxOffline"
+  },
+  "receipt_sha256": "2c07f74ab4411b6ae4334130a2227eb7c46cb11a160b2f9c4c98a7969a68d4ab",
+  "reported_windows_version": "10.0.19045.0",
+  "requested_model_turns": 0,
+  "reservation_released": true,
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\22c30b48aa8a4350bc143a956a5ab011",
+  "retained_bytes": 8242,
+  "review_sha256": "94f4370f8ea37a537fb4936639d3361e2cef62e4a3d94fab4aac8959ec4a072f",
+  "schema": "aide.strict-mxc.prerequisite-reconciliation.v1",
+  "scratch_retired": true,
+  "source_commit": "2532954659d70447cf4cc059bb1d8d965e36e548",
+  "source_tree": "c595bf4613a492899b76bd0f77c60d80d617e093",
+  "status": "FAIL_PRESERVED_NO_CAPABILITY_ACCEPTANCE",
+  "terminal_sha256": "9fb742d36d12d2dd7f7a098703b47dfd9db857b3f2fe7970653faa7ed4a4a022",
+  "whole_outcome_usage": "unknown",
+  "whole_session_contained": false
+}

@@ -1,5 +1,15 @@
 # AIDE Documentation Index
 
+## Current native host prerequisite - 2026-10-09
+
+[Native MXC reconciliation](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json)
+keeps the original failure and tested-executor unavailability separate from
+[configuration decoding](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/changed-backend-qualification.json).
+Neither demonstrates ordinary model editing or outer containment.
+[SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) records the
+strict route, unchanged resources, classifier regression and no-replay rule.
+Lite1.0.0's published tag/assets and acquired consumer evidence remain valid.
+
 ## Changed host configuration - 2026-10-09
 
 The active VS Code extension26.1002.51308/backend0.162.0-alpha.2 differs from

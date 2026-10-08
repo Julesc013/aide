@@ -421,3 +421,54 @@ interpret this changed configuration result as model-editing or account
 isolation proof. Implicit Windows setup needs a separately reviewed supported
 route; no further dispatch is admitted. Exact result/source/conditional
 source-sync review must precede one guarded commit. Tag/assets stay unchanged.
+
+
+## 2026-10-09 strict native MXC prerequisite
+
+Objective: establish whether the changed installed backend can execute a
+root-deny native command without the elevated backend's persistent setup.
+The exact upstream rust-v0.162.0-alpha.2 MXC implementation is a concrete new
+route: strict windows.sandbox=mxc never falls back, does not provision users
+or edit host ACLs, and refuses execution if native PSEC or deny-path support
+is absent. The readiness RPC alone is insufficient because selected MXC is
+reported ready without demonstrating a workload. Preserve the previous
+configuration result and all older refusals; do not replay those attempts.
+
+Prepare one task-local zero-model CLI fixture and independently review its
+exact source/command/resource effect before dispatch. Reuse the frozen302688d
+owner, standalone0.145 restricted supervisor, existing pools/reserves and
+changed-backend read root. Limits remain1GiB Job,16MiB scratch,192KiB retained,
+128KiB logs/180seconds; one180second/10second-sustained readiness wait and at
+most one job. No thread, model, account copy, default configuration edit,
+setup, fallback, new storage or ref/publication effect. Filter backend env to
+necessary Windows/tool variables only. Use strict named profile/root deny,
+minimal/toolchain reads, only the owned candidate writable, private metadata
+and harmless sibling fixture denied. Exercise an allowed edit plus denied
+read/write and child write only if native launch succeeds. Preserve bounded
+complete stdout/stderr, exact result, receipts, resource peaks and retirement.
+
+A runtime unavailable or deny-capability refusal closes this prerequisite
+negatively, preserving the precise host limitation without claiming a useful
+workflow or model editing. Do not retry, install a platform feature, change
+accounts/ACLs, widen reads or enable Full Access. A native command success
+still needs independently reviewed actual model editing before any ordinary
+workflow claim. Extend only affected task/parent/root coherence after result
+review; source integration is separately reviewed. Published1.0.0 assets and
+all valid consumer/source evidence stay unchanged.
+
+Actual job22c30b48 preserved native worker1/backend1 and the exact early
+preparation refusal "native MXC is unavailable on this executor" before any
+fixture workload. All9 files8,242B collected; peak scratch4,230B/Job memory
+49,020,928B, scratch retired/reservation released, no active job, counter4
+unchanged. The classifier expected later helper wording and honestly retained
+FAIL; original result/raw streams/receipt remain untouched. Exact upstream
+manager.rs confirms the earlier availability check. Curate that negative
+finding only for this tested executor, not all machine contexts. Preserve
+executed worker and plan byte snapshots. A minimal future classifier repair
+passes five pure regressions, including zero/missing exit and generic failures;
+no native/model attempt is replayed. Existing WSL is running but has no Codex
+or Node on PATH and reports uid0; no supported fallback or installation is
+inferred. Supported ordinary editing, account/read isolation and unrestricted
+outer routes remain unqualified. Source-only result/helper/index closeout
+requires exact independent review, guarded commit and conditional three-head
+sync; stable tag/assets/evidence do not change. The full campaign stays open.

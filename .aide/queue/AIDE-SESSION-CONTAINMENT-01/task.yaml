@@ -3,7 +3,7 @@ id: AIDE-SESSION-CONTAINMENT-01
 title: Qualify scoped host execution through the existing managed owner
 type: implementation
 status: needs_review
-planning_state: changed_backend_config_PASS_native_and_model_boundary_unqualified
+planning_state: strict_mxc_unavailable_on_tested_executor_original_failure_preserved
 result: PARTIAL
 created_at: 2026-10-03
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -120,3 +120,16 @@ changed_backend_requalification_slice:
   result: PASS_CONFIGURATION_DECODED_NATIVE_NOT_EXERCISED
   old_profile_failure_and_spent_counter: preserved_four_no_replay
   next_gate: separately_review_supported_sandbox_setup_before_actual_workflow
+
+strict_mxc_prerequisite_slice:
+  source_base: 2532954659d70447cf4cc059bb1d8d965e36e548
+  authority: existing_owner_necessary_local_tests_exact_independent_security_review
+  effect_ref: evidence/mxc-prerequisite-effect.log
+  effect_sha256: 485ed42def0273910425dc89ebb776fab4e1a0e5161893eb154f0f793e774157
+  admission_ref: evidence/mxc-prerequisite-admission-review.log
+  actual_job: 22c30b48aa8a4350bc143a956a5ab011
+  reconciliation_ref: evidence/mxc-prerequisite-reconciliation.json
+  result: original_FAIL_preserved_native_MXC_unavailable_on_tested_executor
+  native_witnesses_or_model_claim: none
+  additional_attempts_or_fallback: forbidden
+  closure: exact_result_source_guarded_commit_and_parent_sync_review_required

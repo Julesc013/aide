@@ -1,5 +1,16 @@
 # AIDE Implementation Log
 
+## Strict MXC attempt and classification repair - 2026-10-09
+
+One independently admitted job22c30b48 returned worker/backend1 with
+"native MXC is unavailable on this executor" before the harmless workload.
+[Reconciliation](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json)
+preserves original FAIL,9 full files8,242B and exact retirement. Peak scratch
+was4,230B and Job memory49,020,928B; dispatch counter4 remains unchanged.
+The helper now recognizes the exact early refusal as unavailable; five pure
+classification tests pass, with no runtime replay or changed substantive gate.
+No model/account/setup/ref/release effect follows from this test.
+
 ## Changed host configuration - 2026-10-09
 
 The active VS Code extension26.1002.51308/backend0.162.0-alpha.2 differs from

@@ -1,5 +1,15 @@
 # AIDE Planning Index
 
+## Native MXC prerequisite - 2026-10-09
+
+The [exact prerequisite](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json)
+records the tested executor's native MXC unavailability before fixture execution.
+The original failure is preserved; no model, fallback or replay occurred.
+A supported constrained ordinary editing executor remains necessary. Reuse
+valid Lite1.0.0 evidence and the previous decoder; this negative result does
+not qualify read isolation or unrestricted outer tools. Whole-outcome
+efficiency, ownership-safe wider cleanup and downstream adoption remain open.
+
 ## Changed host configuration - 2026-10-09
 
 The active VS Code extension26.1002.51308/backend0.162.0-alpha.2 differs from
