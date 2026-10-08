@@ -1,30 +1,29 @@
 # Remaining Risks
 
-## Current material boundaries - 2026-10-08
+## Current material boundaries - 2026-10-09
 
-Latest observed source synchronization reached84909ad3 with88 corresponding
-branch pairs and85 other tips preserved. Current candidate ZIPa4787e1e/TAR
-efcc1f83 passed build/validation and delivered10; unchanged source71 is reused.
-Current archive consumers0/2/3/4/6 passed. Lifecycle1/restart5 aborted under the
-memory reserve guard, reconciled quiescent and retired;7 was not started. One
-600s stronger-headroom wait submitted no further job. Full current consumer/
-38-form coverage, current zero-change replay, exact stable ACCEPT, publication
-and downloaded consumers remain open. See the
-[current release report](../../AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+Latest recorded source synchronization reached0d41bfe9 with88 corresponding
+branch pairs and85 other tips preserved. The current ZIPa4787e1e/TAR efcc1f83
+now has all8 original consumers PASS,38 forms/51 actual output records and
+one byte-identical replay. All allocated jobs are quiescent, fully collected,
+scratch-retired and reservation-released. Original memory interruptions,
+case5's initial collection failure and no-allocation refusals remain retained.
+The actual closeout journal records any subsequent source/ref effect.
 
-Owner-directed policy has resolved cosmetic historical-message dispositions
-as advisory while preserving raw failures and published history, including66.
-Necessary finite existing-account/local tests are authorized. No formatting
-waiver packet, extra service purchase or repeated test permission is pending.
+Final exact local Windows Lite release ACCEPT, tag/publication and acquired-byte
+fresh/brownfield verification remain distinct next effects. Source71/delivered10
+were reused for identical operative bytes; no broad rerun or archive change was
+required. Historical cosmetic decisions and existing-account test authority
+are resolved; no new owner-formatting or paid-provider decision is pending.
 
-Supported ordinary constrained model editing/read isolation and whole-outcome
-efficiency remain separate parent-campaign gaps. Actual known0.160.0 startup
-failure is preserved; four live request identities are spent, with no automatic
-model replay. Current outer routes are unrestricted. The256MiB shared D pool
-is cooperative/monitored, not a hard filesystem or global quota. Wider unknown
-disk reclamation and downstream adoption remain unfinished; FacMan development
-remains paused. Historical sections below are superseded observations, not
-current owner requests, current release acceptance or deletion authority.
+Outer containment/read isolation, supported ordinary model editing and matched
+whole-outcome efficiency remain unfinished. Known backend0.160 startup refusal
+and four spent request identities are preserved, with no automatic model replay.
+Outer routes are unrestricted;256MiB shared admission and disk growth remain
+cooperative/monitored, not hard/global quotas. Wider unknown disk reclamation
+and downstream adoption remain unfinished; FacMan product work stays paused.
+Historical sections below retain their old epochs and do not grant current
+release acceptance, broader permissions or deletion authority.
 
 ## Historical checkpoint — 2026-10-05
 

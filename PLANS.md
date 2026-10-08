@@ -4948,3 +4948,15 @@ needs its exact gate. Tests/native result and new archives remain pending.
 ## Current automation consumer partial - 2026-10-08
 
 New-byte case0 passed; middle and one recovery stopped before completion on the4GiB memory reserve. Cases1-7 await changed stable headroom and finite admission. Policy/old-history authority is resolved; outer editing, whole-outcome efficiency and final publication remain material gates.
+
+## Current Lite qualification closeout - 2026-10-09
+
+The current package has all8 original consumers PASS with38 forms/51 output
+records,207 retained files/11,067,390B and one unchanged four-asset replay.
+Only unfinished5,7,1 ran; prior incomplete/failing attempts remain preserved.
+Case5 needed exact collection-only recovery, not a worker rerun. Existing roots,
+aggregate/caps/reserves and dispatcher4 remain. See the stable WorkUnit's
+current matrix, replay and ExecPlan. One guarded metadata/source sync closes
+this slice; exact stable ACCEPT and publication/acquisition remain next.
+Outer containment/read isolation, ordinary modeled work, full efficiency and
+wider cleanup remain separate unfinished parent outcomes.

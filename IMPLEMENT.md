@@ -13645,3 +13645,18 @@ needs its exact gate. Tests/native result and new archives remain pending.
 ## Current consumer resource outcome - 2026-10-08
 
 Original case0/26 records passed; two middle memory-guard failures retained with zero complete cases. All scratch retired/reservations released. Existing lossless custody saved2,735,160 logical bytes with37files/3directories preserved. No model, runtime, archive, tag or publication effect in this phase.
+
+## Current Lite consumers and required replay - 2026-10-09
+
+All8 current-package cases now pass original assertions. New restart5,
+TaskOS7 and lifecycle1 jobs completed serially; full38-form/51-record coverage
+was checked against actual argv/status/hash records. The coverage helper's
+hash-domain/type mistakes and failed attempts remain retained. Case5's worker
+passed, but its initial1MiB collection failed32,695B over allowance; reviewed
+quiescent2MiB collection preserved26 files and retired scratch without rerun.
+The required replay then passed once with unchanged4 assets/854 export/48
+release preimages. Initial preallocation replay failures remain; the obsolete
+extension read root was removed with all limits/reserves/storage unchanged.
+Source71/delivered10 were reused. The current source/ref effect journal is the
+actual commit receipt; stable acceptance/publication and downloaded consumers
+are not inferred from this metadata closeout.

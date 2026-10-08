@@ -3,10 +3,10 @@ id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 title: Freeze and qualify a publishable AIDE Lite release effect
 type: release
 status: needs_review
-planning_state: candidate_current_consumer_partial_five_PASS_material_gates_retained
-result: CURRENT_FIVE_CONSUMERS_PASS_TWO_INCOMPLETE_ONE_UNSTARTED
+planning_state: candidate_all8_38forms_and_current_replay_qualified_exact_release_pending
+result: CURRENT_EIGHT_CONSUMERS_38FORMS_AND_UNCHANGED_REPLAY_PASS
 created_at: 2026-09-28
-updated_at: 2026-10-08
+updated_at: 2026-10-09
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 base_dev: 4dcd896b4a9b65ef2bf6e8ecbbd7f60809560637
 depends_on:
@@ -245,3 +245,26 @@ current_candidate_consumer_partial:
   historical_cosmetic_gate: resolved_advisory_original_findings_preserved
   existing_account_tests: owner_authorized_bounded_no_paid_fallback
   source_sync_terminal_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-partial-source-sync-terminal.log
+
+
+current_candidate_qualification:
+  consumer_matrix_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-qualified.json
+  consumer_matrix_sha256: 54116697ab82d3cd28825868a0f793c5e15d672c143822354804d5eb053b31e4
+  source_execution_epoch: 0d41bfe920be736dd23323f084c9cd684abf80e4
+  passing_cases: [0, 1, 2, 3, 4, 5, 6, 7]
+  public_forms: 38
+  current_output_records: 51
+  passing_retained_files: 207
+  passing_retained_bytes: 11067390
+  original_incomplete_attempts_preserved: true
+  current_case5_initial_collection_failure_preserved: true
+  current_case5_worker_rerun: false
+  required_replay_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-replay-qualified.json
+  required_replay_sha256: 1e3719fc9d5a2d0ae3689b0eae57d46f489554418fa3c7c2ca981fc83b9f9faf
+  four_assets_854_export_48_release_preimages_unchanged: true
+  all_jobs_quiescent_collected_retired_released: true
+  actual_worker_model_calls: 0
+  controller_review_and_whole_outcome_usage: unknown
+  stable_release_accepted: false
+  publication_and_downloaded_consumers: pending
+  source_sync_terminal_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-closeout-source-sync-terminal.log

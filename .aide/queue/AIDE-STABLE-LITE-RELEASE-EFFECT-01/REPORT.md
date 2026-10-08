@@ -1,6 +1,43 @@
 # Current AIDE source, artifact and development report
 
-## Current archive consumer outcomes - 2026-10-08
+## Current local archive qualification - 2026-10-09
+
+All eight original consumer cases passed on ZIPa4787e1e/TAR efcc1f83.
+[Current matrix](evidence/candidate-current-consumer-qualified.json) binds
+207 retained files/11,067,390B and actual38-form/51-record coverage. Accepted
+cases0/2/3/4/6 were reused; only unfinished5,7,1 ran in that order. Original
+memory-aborted1/5 and both no-allocation groups remain unchanged evidence.
+The later restart5 worker passed all three forced interruptions, but its
+parent initially failed collection32,695B over1MiB. Exact quiescent collection
+with a finite2MiB allowance preserved all26 files and retired scratch without
+rerunning the worker or rewriting its original result/config identity.
+
+[Required replay](evidence/candidate-current-replay-qualified.json) passed
+stable-build and stable-validate once. All four assets,854 export files and48
+release preimages remained exact; job49b317ad retained9 files/269,095B and
+retired scratch/released its reservation. Initial replay preparation failures
+remain preserved; no worker was allocated by those failures. The obsolete
+extension read root was removed, leaving the same Python/Git/standalone roots
+used by accepted consumer jobs. No operative code, archive or export revision was required.
+
+Maximum passing-consumer sampled scratch30,255,410B and memory331,878,400B
+are separate peaks. Replay sampled scratch4,360,180B/memory252,784,640B.
+Existing D roots,256MiB cooperative/monitored aggregate,384MiB Windows Job cap,
+both4GiB memory reserves and10GiB disk reserve remained unchanged. This phase
+made zero native-worker model calls; dispatch counter4 remains unchanged.
+Controller/review usage and whole-outcome cost remain unknown. Source71 and
+delivered10 evidence remain valid for unchanged operative bytes and were reused.
+
+Local package consumer and reproducibility gates are closed. Final exact stable
+ACCEPT, tag/publication and downloaded-byte fresh/brownfield consumers remain
+next gates for the local Windows Lite profile. Outer shell/editor/integration
+routes remain unrestricted; read isolation, ordinary modeled editing, matched
+whole-outcome efficiency, wider unknown disk cleanup and downstream adoption
+remain unfinished parent outcomes. No global containment/hard quota or whole
+programme completion is claimed. The source effect journal records the actual
+closeout commit and synchronization; preparation is not publication.
+
+## Earlier partial consumer checkpoint - 2026-10-08
 
 Five actual consumers passed on ZIPa4787e1e/TAR efcc1f83: fresh/brownfield
 adoption and update0, context2, partial-import recovery3, public CLI4 and managed

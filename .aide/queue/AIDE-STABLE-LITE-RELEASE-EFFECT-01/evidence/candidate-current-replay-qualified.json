@@ -1,0 +1,114 @@
+{
+  "active_absent": true,
+  "actual_model_calls": 0,
+  "admission_review": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-replay-review-v3.log",
+    "sha256": "b31c69d9dfdef2fbc48007ede249df497846f4908aa1c6570ef281bc6d95dc03"
+  },
+  "assets": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83",
+    "aide-lite-v1.0.0.manifest.json": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb",
+    "aide-lite-v1.0.0.tar.gz": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a",
+    "aide-lite-v1.0.0.zip": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b"
+  },
+  "consumer_matrix": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-qualified.json",
+    "sha256": "54116697ab82d3cd28825868a0f793c5e15d672c143822354804d5eb053b31e4"
+  },
+  "controller_review_usage": "unknown",
+  "dispatch_unchanged": true,
+  "export_files_unchanged": 854,
+  "files": {
+    "logs/stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdout": {
+      "bytes": 220,
+      "sha256": "d150e3e16f2fdbfa433410b2364d2f5a221fe3cfc252f5249dc9b51f16ba042a"
+    },
+    "output/effective-scope.json": {
+      "bytes": 1645,
+      "sha256": "2b31188c93960d3e0f300abc6bfb3e5e98cd10f1fed00b54937680e277f879ce"
+    },
+    "output/qualification.json": {
+      "bytes": 5465,
+      "sha256": "9fb7a94304fbd5e224bb4f27872579c0fac2032198ce1ad3bdcb4860ef48a10c"
+    },
+    "output/stable-build-process.json": {
+      "bytes": 423,
+      "sha256": "5888804a93b554cdb2e8ee27493d635feb8399d14c0e04a19efc0d34af48a099"
+    },
+    "output/stable-validate-process.json": {
+      "bytes": 353,
+      "sha256": "3c08bb3411df6bb1408cf725b947a796388dfb2d3176544d7d5611b6feffe7a4"
+    },
+    "owner.json": {
+      "bytes": 140,
+      "sha256": "4a7f3d52a0615a2ceeeaaf2284e8f41f6ad60fcb7a2c8510bb08ab8c50ac77b9"
+    },
+    "receipt.json": {
+      "bytes": 260849,
+      "sha256": "4695569c0024e4cf47ca8e2bc7ad4831221e3ad21ff8c18e58de34cc024fa829"
+    }
+  },
+  "hard_disk_quota": false,
+  "initial_preallocation_failure": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-replay-parent-terminal.log",
+    "sha256": "a02ec28855d6abec61b7fa87ccb712a70388c923804a680c6a3928e7274c5c8a"
+  },
+  "inputs_unchanged": 1753,
+  "job_id": "49b317ad5ab7469597b548257eb4c7a5",
+  "native_result": {
+    "bytes": 220,
+    "creation_filetime": 134359376756799609,
+    "exit_code": 0,
+    "io_errors": [],
+    "job_id": "49b317ad5ab7469597b548257eb4c7a5",
+    "pid": 51148,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "native_terminal": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-replay-native-terminal-v3.log",
+    "sha256": "8d1ac9a4fc0c1c0242f56f70fedbb55a4bf7a0ebb8c5d1ec7a9122013da80426"
+  },
+  "outer_session_contained": false,
+  "parent_terminal": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-replay-parent-v3-terminal.log",
+    "sha256": "7c2e75c2d7749336a2ba81009db66821c3969de43d36fe25f9935597d16ea4c3"
+  },
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/release": 4028662
+    },
+    "memory_bytes": 252784640,
+    "scratch_bytes": 4360180
+  },
+  "public_form_coverage": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-public-form-coverage.log",
+    "sha256": "23129f29cc766b2ad9b318309bcc05294b2c782a4eba063a9ef23c04f71b5866"
+  },
+  "published": false,
+  "raw_fixture_data": "Full logs and receipts remain in configured local retained pool; curated source record does not copy raw worker manifest.",
+  "raw_observation": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-replay-qualified.log",
+    "sha256": "f1898f8b47955a86b401e46f384a483e1da88159febea6faca7a8f5f68a0d7b1"
+  },
+  "receipt_sha256": "4695569c0024e4cf47ca8e2bc7ad4831221e3ad21ff8c18e58de34cc024fa829",
+  "release_files_unchanged": 48,
+  "replay_unchanged": true,
+  "reservation_released": true,
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\49b317ad5ab7469597b548257eb4c7a5",
+  "retained_bytes": 269095,
+  "schema": "aide.current-byte-zero-change-replay.v1",
+  "scratch_retired": true,
+  "source_commit": "0d41bfe920be736dd23323f084c9cd684abf80e4",
+  "source_tree": "407f88bcd8dc96515b72847e5dac63d34158de93",
+  "stable_release_accepted": false,
+  "status": "PASS"
+}

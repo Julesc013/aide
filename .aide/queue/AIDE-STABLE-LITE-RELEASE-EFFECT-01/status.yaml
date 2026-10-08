@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
 status: needs_review
-planning_state: candidate_current_consumer_partial_five_PASS_material_gates_retained
-result: CURRENT_FIVE_CONSUMERS_PASS_TWO_INCOMPLETE_ONE_UNSTARTED
-updated_at: 2026-10-08
-current_slice: five_current_consumers_PASS_two_reconciled_memory_aborts_finite_wait_no_submission
-next_slice: after_relevant_capacity_change_exact_bounded_affected_lifecycle_restart_then_release_gates
+planning_state: candidate_all8_38forms_and_current_replay_qualified_exact_release_pending
+result: CURRENT_EIGHT_CONSUMERS_38FORMS_AND_UNCHANGED_REPLAY_PASS
+updated_at: 2026-10-09
+current_slice: all8_current_consumers_38forms_51records_and_unchanged_archive_replay_PASS
+next_slice: exact_stable_release_acceptance_tag_publication_and_downloaded_consumer_verification
 review_gate: exact_source_ref_effects_changed_payload_qualification_and_final_stable_release_gates_retained
 current_repair_result_ref: .aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/active-zero-link-qualified-result.json
 current_scanner_source_sha256: bca3178f45667bdf326e549858de58469e0cb0153f104c03abfef9ad140a3d96
@@ -219,3 +219,26 @@ current_candidate_consumer_partial:
   historical_cosmetic_gate: resolved_advisory_original_findings_preserved
   existing_account_tests: owner_authorized_bounded_no_paid_fallback
   source_sync_terminal_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-partial-source-sync-terminal.log
+
+
+current_candidate_qualification:
+  consumer_matrix_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-qualified.json
+  consumer_matrix_sha256: 54116697ab82d3cd28825868a0f793c5e15d672c143822354804d5eb053b31e4
+  source_execution_epoch: 0d41bfe920be736dd23323f084c9cd684abf80e4
+  passing_cases: [0, 1, 2, 3, 4, 5, 6, 7]
+  public_forms: 38
+  current_output_records: 51
+  passing_retained_files: 207
+  passing_retained_bytes: 11067390
+  original_incomplete_attempts_preserved: true
+  current_case5_initial_collection_failure_preserved: true
+  current_case5_worker_rerun: false
+  required_replay_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-replay-qualified.json
+  required_replay_sha256: 1e3719fc9d5a2d0ae3689b0eae57d46f489554418fa3c7c2ca981fc83b9f9faf
+  four_assets_854_export_48_release_preimages_unchanged: true
+  all_jobs_quiescent_collected_retired_released: true
+  actual_worker_model_calls: 0
+  controller_review_and_whole_outcome_usage: unknown
+  stable_release_accepted: false
+  publication_and_downloaded_consumers: pending
+  source_sync_terminal_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-closeout-source-sync-terminal.log

@@ -1726,3 +1726,27 @@ publication and downloaded consumers remain open. Those local Lite gates are
 separate from ordinary host/model editing/read isolation and whole-outcome
 efficiency. Historical cosmetic decisions and existing-account test authority
 are already resolved. No paid fallback, new storage or unknown cleanup.
+
+## Current consumer and replay closeout - 2026-10-09
+
+Objective: close the actual current-package qualification in one coherent
+metadata change, then obtain exact release acceptance and verify acquisition.
+Allowed paths are this WorkUnit's task/status/report/plan and two curated
+evidence JSON records, the queue/compiler manifest, three root indexes and
+the parent risk record's current header. No operative source, export, archive,
+storage, limit, permission, model or unrelated branch changes are admitted.
+
+All eight current-byte consumers passed their original assertions. Preserve
+both original memory interruptions and the later case5 collection failure;
+its worker was not rerun. The existing worker's required replay also passed:
+four assets,854 export files and48 release preimages remained exact. Earlier
+preflight/proposal failures remain evidence, not native passes.
+
+Verify the curated bindings, structural Harness/compiler coherence, whitespace,
+strict final message and staged scope. Independently review the actual replay
+and one guarded metadata commit with conditional main/dev/current-task sync.
+Preserve85 other tips and88 corresponding branch pairs. Use the actual effect
+journal for the resulting commit; do not create a receipt-only successor.
+Final strict stable ACCEPT, tag/publication and downloaded consumers remain
+distinct next gates. Outer containment/read isolation, whole-outcome efficiency
+and wider cleanup remain separate unfinished parent outcomes.

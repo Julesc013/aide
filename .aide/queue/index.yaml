@@ -3822,8 +3822,8 @@ items:
     evidence: .aide/queue/AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01/evidence
   - id: AIDE-STABLE-LITE-RELEASE-EFFECT-01
     status: needs_review
-    planning_state: candidate_current_consumer_partial_five_PASS_material_gates_retained
-    result: CURRENT_FIVE_CONSUMERS_PASS_TWO_INCOMPLETE_ONE_UNSTARTED
+    planning_state: candidate_all8_38forms_and_current_replay_qualified_exact_release_pending
+    result: CURRENT_EIGHT_CONSUMERS_38FORMS_AND_UNCHANGED_REPLAY_PASS
     title: Freeze and qualify a publishable AIDE Lite release effect
     task: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/task.yaml
     exec_plan: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md

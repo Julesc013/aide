@@ -1,0 +1,323 @@
+{
+  "assets": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": {
+      "bytes": 274,
+      "sha256": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83"
+    },
+    "aide-lite-v1.0.0.manifest.json": {
+      "bytes": 4955,
+      "sha256": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb"
+    },
+    "aide-lite-v1.0.0.tar.gz": {
+      "bytes": 837890,
+      "sha256": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a"
+    },
+    "aide-lite-v1.0.0.zip": {
+      "bytes": 1176436,
+      "sha256": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b"
+    }
+  },
+  "case5_current_collection_recovery": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-owner-resume-consumer5-collection-terminal.log",
+    "sha256": "2ea60e164ec5ba0a7c2ee2a8df4f894a1cd60a2cc58368fef2b0b591fd90ec30"
+  },
+  "case5_current_collection_recovery_review": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-owner-resume-consumer5-collection-result-review.log",
+    "sha256": "007f6947db05834896d37bf60cf4b6aebbdd80c86ff77fd032025d0b50c09888"
+  },
+  "case5_current_initial_collection_failure": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-owner-resume-consumer5-native-terminal.log",
+    "sha256": "ced1ad4571c28cefc11e2bcbdb9acbe388f7d3249cc06b28d7e025e7c73fa124"
+  },
+  "case5_current_initial_parent_pass": false,
+  "case5_current_worker_rerun": false,
+  "case6_disclosure": "512MiB nested declared fixture subject to enclosing384MiB Windows Job; original2GiB not qualified",
+  "cases": [
+    {
+      "index": 0,
+      "inputs_unchanged": 1770,
+      "job_id": "c28a54cc0a7a403fab7e76fb0880f32c",
+      "manifest_digest": "f49bf1a90a1b35b4595295ad0e01692520a23f90f2a51fa2e57133bc3dc8e98b",
+      "observation": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer0-qualified.log",
+        "sha256": "9a59ab6f5f44bcfdb7ed3c5824435ac980c46764c64c3c8852d1a9aa814b24b1"
+      },
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 331878400,
+        "scratch_bytes": 30255410
+      },
+      "receipt_sha256": "8fdea2a8b9db85c09bc072d24cfd585f4768f92831f2ae4007a4c271fede154a",
+      "reservation_released": true,
+      "retained_bytes": 3317320,
+      "retained_files": 39,
+      "scratch_retired": true,
+      "source_commit": "84909ad3598ad70938365279bc45b3eb94e9a738",
+      "status": "PASS",
+      "terminal": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer0-native-terminal-v2.log",
+        "sha256": "0eee8b91cf4a3afe6d77ff0250fd47e011c89c44fdd9c41107e454853a8c5665"
+      }
+    },
+    {
+      "index": 1,
+      "inputs_unchanged": 1782,
+      "job_id": "8c32287dead242ab834e0633d758dc4b",
+      "manifest_digest": "37b8b671885612206c8880e8f0fed5a9dbf500c914fa3a49c79f3fcede45c3b6",
+      "observation": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-owner-resume-consumer1-qualified.log",
+        "sha256": "02fda9ebd99802cbb53b10b2ec7172e28a48260ac36d36fdf5d57dff4ade3000"
+      },
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 273100800,
+        "scratch_bytes": 29734285
+      },
+      "receipt_sha256": "6b539d91c5c6cea9106ad5eaa533bddb9e1eab8d2ccbd46315a3323469522bd5",
+      "reservation_released": true,
+      "retained_bytes": 4418779,
+      "retained_files": 43,
+      "scratch_retired": true,
+      "source_commit": "0d41bfe920be736dd23323f084c9cd684abf80e4",
+      "status": "PASS",
+      "terminal": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-owner-resume-consumer1-native-terminal.log",
+        "sha256": "0c457b017f11dce2ae6e17380608c6367ffc8335c778330f2b003e2ad8f949a3"
+      }
+    },
+    {
+      "index": 2,
+      "inputs_unchanged": 1770,
+      "job_id": "2002e18570ac4009a47b73234a0e0784",
+      "manifest_digest": "2dc56d3a4054bb5bcef11cc499ce475bd895cc77399e20f786e9f43ac14c9b0c",
+      "observation": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer2-qualified.log",
+        "sha256": "70edd3f467fc5bacee44c6038bdbd0ad179b2a6711cd83233d5832f80bbcce09"
+      },
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 253833216,
+        "scratch_bytes": 15921461
+      },
+      "receipt_sha256": "3e3cae74ebfe3244962658f1c77d3fef96260de5c89ec78eba275f40ade14d16",
+      "reservation_released": true,
+      "retained_bytes": 491853,
+      "retained_files": 22,
+      "scratch_retired": true,
+      "source_commit": "84909ad3598ad70938365279bc45b3eb94e9a738",
+      "status": "PASS",
+      "terminal": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer2-native-terminal.log",
+        "sha256": "a80b8b6488fd0abd34328594390b8b16ef90232cd63834610470dd2f570d4dab"
+      }
+    },
+    {
+      "index": 3,
+      "inputs_unchanged": 1770,
+      "job_id": "51923ddf1f874c09b4a72112b16e619d",
+      "manifest_digest": "27db283d033e092a56092ff021992271583b7f62b546bd266e9f49c29dc1c0d9",
+      "observation": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer3-qualified.log",
+        "sha256": "86530373f46a2f89e8e431d4f705ee5221f443911a36659d1b6b921af737fc6c"
+      },
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 330293248,
+        "scratch_bytes": 21809688
+      },
+      "receipt_sha256": "ad635cd0498b7f288b2e71729834d7f63f3a370e225534f7e77f95a12e1c5b3f",
+      "reservation_released": true,
+      "retained_bytes": 405325,
+      "retained_files": 22,
+      "scratch_retired": true,
+      "source_commit": "84909ad3598ad70938365279bc45b3eb94e9a738",
+      "status": "PASS",
+      "terminal": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer3-native-terminal.log",
+        "sha256": "5892cfd0ec31a0d56437884d5bfd6ee053f8225b9d4ab0bc143092d1046ac282"
+      }
+    },
+    {
+      "index": 4,
+      "inputs_unchanged": 1770,
+      "job_id": "ddc250146d6e41b5b46d5e36809bd533",
+      "manifest_digest": "02e69b5bdef870a23057225d23721546b6dac136d045d372e3be884f4efe34b5",
+      "observation": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer4-qualified.log",
+        "sha256": "417e0bf238d1c7865da180e4041bb8e249528fe0dd50fe9b2a3e191848ae58e6"
+      },
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 263376896,
+        "scratch_bytes": 5667033
+      },
+      "receipt_sha256": "ee4576c3d8750cba51f47b382c0b68f04f7748bcd8f7e7f8f097f5f427ba54c0",
+      "reservation_released": true,
+      "retained_bytes": 497209,
+      "retained_files": 19,
+      "scratch_retired": true,
+      "source_commit": "84909ad3598ad70938365279bc45b3eb94e9a738",
+      "status": "PASS",
+      "terminal": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer4-native-terminal.log",
+        "sha256": "65e4ab2c2f3484c8fbe53292e25d2a45686bfa351184e5a9c27522c68ad56455"
+      }
+    },
+    {
+      "index": 5,
+      "inputs_unchanged": 1782,
+      "job_id": "c593044d2fb6489bb223b74a11a8b38f",
+      "manifest_digest": "10390d554e40e902c6880e1c512e664760de9631153380382126cfa70767e43b",
+      "observation": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-owner-resume-consumer5-qualified.log",
+        "sha256": "46e632d956016e0519a54c4020c6a8ee549a7a1323a3c2947e74cddcc9bd26d6"
+      },
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 291323904,
+        "scratch_bytes": 18081918
+      },
+      "receipt_sha256": "f35ec36c4be09a15b5f6e199e2e614bfa7c6c07c8cd30bc0aca819f5e472395d",
+      "reservation_released": true,
+      "retained_bytes": 1351212,
+      "retained_files": 26,
+      "scratch_retired": true,
+      "source_commit": "0d41bfe920be736dd23323f084c9cd684abf80e4",
+      "status": "PASS",
+      "terminal": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-owner-resume-consumer5-collection-terminal.log",
+        "sha256": "2ea60e164ec5ba0a7c2ee2a8df4f894a1cd60a2cc58368fef2b0b591fd90ec30"
+      }
+    },
+    {
+      "index": 6,
+      "inputs_unchanged": 1757,
+      "job_id": "32c4beb189a74f11a2c6761c0a409b91",
+      "manifest_digest": "7f91c317b75078197be69664f3c6c7b37212462dfb59b44f30453d63455a6e50",
+      "observation": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer6-qualified.log",
+        "sha256": "5ca3826a2985c56fde74ea454aeb4334392cc395ad43162958ed125b3b14a8b9"
+      },
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 287035392,
+        "scratch_bytes": 42619
+      },
+      "receipt_sha256": "eb72b1cda3c5b063f8da5ecbe5541dd42668e6fb146454a63ad1639f9f3368b5",
+      "reservation_released": true,
+      "retained_bytes": 307583,
+      "retained_files": 25,
+      "scratch_retired": true,
+      "source_commit": "84909ad3598ad70938365279bc45b3eb94e9a738",
+      "status": "PASS",
+      "terminal": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer6-native-terminal.log",
+        "sha256": "7e27e1a08e7c52fd6111059bb47bfc58ec5404a57b47d0f3c1a4ed78a03107b8"
+      }
+    },
+    {
+      "index": 7,
+      "inputs_unchanged": 1782,
+      "job_id": "4349284640374ede906a7f0354f31948",
+      "manifest_digest": "40a0f02f18df2b373d1c55b2f2de65a93627266723b9cd73b2937f095883c1a3",
+      "observation": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-owner-resume-consumer7-qualified.log",
+        "sha256": "9fac2c54e3ed07867bbf599de3b3fc98c1c78184b9da258f02ce6fb3b3fa223b"
+      },
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 253800448,
+        "scratch_bytes": 8859
+      },
+      "receipt_sha256": "208b1456266f463cb99bc85282ae0a49793750d67a9dff48ade7500a7b2d0ba5",
+      "reservation_released": true,
+      "retained_bytes": 278109,
+      "retained_files": 11,
+      "scratch_retired": true,
+      "source_commit": "0d41bfe920be736dd23323f084c9cd684abf80e4",
+      "status": "PASS",
+      "terminal": {
+        "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-owner-resume-consumer7-native-terminal.log",
+        "sha256": "2f98010bcadc3368defe978982428296c6db80ce8092ca254a5ac5f4cd2ce6dc"
+      }
+    }
+  ],
+  "controller_review_usage": "unknown",
+  "coverage_checker_repair": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-owner-resume-coverage-checker-repair.log",
+    "sha256": "0254e5bbef1ae410e142f361489044b07a31e054e5ff3687756058d71bb70e0e"
+  },
+  "coverage_checker_type_repair": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-owner-resume-coverage-checker-type-repair.log",
+    "sha256": "081a3389cbb6043191ac3bce104472bf0c50276564f6ab75515e02165c396591"
+  },
+  "custody_saved_logical_bytes": 19290575,
+  "dispatch_counter": 4,
+  "downloaded_consumers": false,
+  "fixture_scope": "Disposable owned local consumers; original assertions and disclosed source-only helpers; no arbitrary target rollout",
+  "hard_disk_quota": false,
+  "job_form_observations": 12,
+  "lossless_custody": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-capacity-result.log",
+    "sha256": "cf577abe41706c99d4b4627b9f3ff20b56c25764855bf85bc51a2f9648bc6c3d"
+  },
+  "max_sampled_job_memory_bytes": 331878400,
+  "max_sampled_scratch_bytes": 30255410,
+  "native_worker_model_calls": 0,
+  "nonjob_output_observations": 39,
+  "old_consumer_evidence_rebound": false,
+  "original_allocated_case1_failure": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer1-failure-qualified.log",
+    "sha256": "7b3e0b50d822918b6772cbc38ede4bbea6af7c65325adc62e8313f8040c32589"
+  },
+  "original_allocated_case5_failure": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer5-qualified.log",
+    "sha256": "ebaafde3dd29ec73ddba4e805f431a236da27c9913ea70ea4907e91f8b88d4b7"
+  },
+  "other_preserved_refusals": [
+    {
+      "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-capacity-refusal.log",
+      "sha256": "4c9d890a89c5fa721b4e76533bc71c3aab9f7afe6cb301bbb97f8c57abd620c0"
+    },
+    {
+      "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer0-native-terminal.log",
+      "sha256": "7dcce73d4c7fd3556a4ec9b24be8ec251fddaf82474e6a04f6c1550c66250430"
+    }
+  ],
+  "outer_session_contained": false,
+  "prior_aggregate_observation_refusal": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-resumed-consumer5-native-terminal.log",
+    "sha256": "9d0ef20c3b9b7fc3aa280ef12d93dc77c2298eb1586cf7c1527c01e47f99a1db"
+  },
+  "prior_no_submission_timeout": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-unfinished-consumer5-native-terminal.log",
+    "sha256": "475bab982d06b74ca1fe5951e915559a8786c73a49f4b254dcbc948e4b513f1d"
+  },
+  "profile": "aide-lite-local-windows",
+  "public_cli_form_coverage": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-public-form-coverage.log",
+    "sha256": "23129f29cc766b2ad9b318309bcc05294b2c782a4eba063a9ef23c04f71b5866"
+  },
+  "public_forms": 38,
+  "publication": false,
+  "published_predecessors": [],
+  "read_isolation": "unqualified",
+  "reservations_released": true,
+  "schema": "aide.current-lite-consumer-matrix.v2",
+  "scratch_retired": true,
+  "source71_and_delivered10_reused": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-package-qualified.json",
+    "sha256": "4d6847a977ce3d5fc067f50f2d6fa298394bb576278173689bcd45cbfaa1c27c"
+  },
+  "source_commit": "0d41bfe920be736dd23323f084c9cd684abf80e4",
+  "stable_release_acceptance": false,
+  "status": "PASS",
+  "total_passing_retained_bytes": 11067390,
+  "total_passing_retained_files": 207,
+  "unfinished_group_review": {
+    "ref": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-owner-resume-consumers-review.log",
+    "sha256": "c26710cf073a0eb5f7db466808b90f82b62573c99702dde450652a2c477024ad"
+  },
+  "unique_output_records": 51,
+  "whole_outcome_efficiency": "unknown"
+}

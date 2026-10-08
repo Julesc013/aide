@@ -1041,3 +1041,13 @@ approval. Preserve the original ten-record proposal as its historical scope.
 ## Current consumer partial record - 2026-10-08
 
 See [.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and evidence/automation-current-consumer-partial.json for exact current case0, failed attempts, custody and remaining gates. Current bytes do not inherit old eight-case coverage.
+
+## Current local Lite qualification - 2026-10-09
+
+The stable WorkUnit's current report, consumer matrix and replay replace the
+older partial status: all8 cases,38 public forms and51 current output records
+PASS; four assets replay identically. Original failures, collection-only case5
+recovery and local raw custody remain explicitly bound. Exact final release
+acceptance, publication and downloaded consumers remain next. This Windows
+Lite evidence grants no outer-host/read isolation/global quota/full efficiency
+or wider programme completion claim. Older dated sections retain their epochs.
