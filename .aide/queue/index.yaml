@@ -3859,7 +3859,7 @@ items:
     evidence: .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/evidence
   - id: AIDE-SESSION-CONTAINMENT-01
     status: needs_review
-    planning_state: strict_mxc_unavailable_on_tested_executor_original_failure_preserved
+    planning_state: strict_mxc_unavailable_nested_and_Jules_executors_no_native_witnesses
     result: PARTIAL
     title: Qualify scoped host execution through the existing managed owner
     task: .aide/queue/AIDE-SESSION-CONTAINMENT-01/task.yaml

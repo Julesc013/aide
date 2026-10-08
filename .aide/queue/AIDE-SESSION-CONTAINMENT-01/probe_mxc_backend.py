@@ -25,13 +25,15 @@ def native_mxc_unavailable(exit_code, stderr):
                                      'this Windows build cannot enforce native MXC deny paths')))
 
 
-def main():
+def main(*, real_user_prerequisite=False):
     output, temporary = (Path(os.environ[k]) for k in ('AIDE_JOB_OUTPUT', 'AIDE_JOB_TMP'))
     identity = ctypes.create_unicode_buffer(256)
     size = ctypes.c_ulong(len(identity))
     if not ctypes.windll.secur32.GetUserNameExW(2, identity, ctypes.byref(size)):
         raise ctypes.WinError()
-    if identity.value != 'BLACKGLASS-WIN1\\CodexSandboxOffline':
+    expected_identity = ('BLACKGLASS-WIN1\\Jules' if real_user_prerequisite
+                         else 'BLACKGLASS-WIN1\\CodexSandboxOffline')
+    if identity.value != expected_identity:
         raise RuntimeError('unexpected supervisor identity')
     with BACKEND.open('rb') as stream:
         if hashlib.file_digest(stream, 'sha256').hexdigest() != BACKEND_SHA:
@@ -91,6 +93,8 @@ sys.exit(0 if all(proof.values()) else 23)
               'fallback_permitted': False, 'credentials_copied': False,
               'whole_session_contained': False, 'actual_model_editing_qualified': False,
               'profile': {'name': profile, 'filesystem': rules, 'network_enabled': False}}
+    result['expected_windows_identity'] = expected_identity
+    result['trusted_wrapper_filesystem_confinement_claimed'] = False
     buffers, faults, readers = [bytearray(), bytearray()], [], []
     process = None
 
@@ -162,4 +166,6 @@ sys.exit(0 if all(proof.values()) else 23)
 
 
 if __name__ == '__main__':
-    main()
+    if sys.argv[1:] not in ([], ['--real-user-prerequisite']):
+        raise SystemExit('only the exact reviewed executor option is supported')
+    main(real_user_prerequisite=sys.argv[1:] == ['--real-user-prerequisite'])

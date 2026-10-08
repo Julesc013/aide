@@ -3,7 +3,7 @@ id: AIDE-SESSION-CONTAINMENT-01
 title: Qualify scoped host execution through the existing managed owner
 type: implementation
 status: needs_review
-planning_state: strict_mxc_unavailable_on_tested_executor_original_failure_preserved
+planning_state: strict_mxc_unavailable_nested_and_Jules_executors_no_native_witnesses
 result: PARTIAL
 created_at: 2026-10-03
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -132,4 +132,20 @@ strict_mxc_prerequisite_slice:
   result: original_FAIL_preserved_native_MXC_unavailable_on_tested_executor
   native_witnesses_or_model_claim: none
   additional_attempts_or_fallback: forbidden
+  closure: exact_result_source_guarded_commit_and_parent_sync_review_required
+
+actual_user_mxc_prerequisite_slice:
+  source_base: f66f9c5b9bb3560d4b5570536b6dc18882c7043b
+  authority: existing_owner_necessary_local_tests_and_exact_independent_security_review
+  executor: BLACKGLASS-WIN1\Jules_stock_pinned_WindowsJobHost_no_old_supervisor
+  trusted_wrapper_confinement_claim: false_native_workload_only
+  effect_ref: evidence/mxc-user-effect.log
+  admission_ref: evidence/mxc-user-admission-review.log
+  actual_job: 73e7042691684827adc58887c2e1fa0e
+  qualification_ref: evidence/mxc-user-qualification.json
+  result: UNAVAILABLE_NATIVE_MXC_NO_FALLBACK_before_fixture
+  retained_files: 8
+  retained_bytes: 6954
+  native_witnesses_and_model_claim: none
+  additional_attempts_or_fallback: forbidden_for_unchanged_dependency
   closure: exact_result_source_guarded_commit_and_parent_sync_review_required

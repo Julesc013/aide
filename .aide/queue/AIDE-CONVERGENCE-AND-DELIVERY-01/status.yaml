@@ -2,7 +2,7 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-CONVERGENCE-AND-DELIVERY-01
 status: running
 classification: admitted
-planning_state: published_windows_Lite_strict_mxc_unavailable_ordinary_host_unqualified
+planning_state: published_windows_Lite_MXC_unavailable_nested_and_Jules_ordinary_host_unqualified
 result: PENDING
 review_gate: admitted_by_owner
 approved_candidate_manifest_sha256: eaf650073734b7cb3c55084b63bddb7cb055a5a30f862f3e907b8ee95d2b3c15
@@ -91,7 +91,7 @@ next_release_effect_boundary: refresh_and_qualify_changed_payload_before_any_sta
 capability_source_sync_receipt: .aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/evidence/source-sync-final.log
 
 current_outer_client_identity: VS_Code_Codex_extension_26_1002_51308_backend_0_162_0_alpha_2
-current_outer_client_capability_ref: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json
+current_outer_client_capability_ref: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json
 current_client_configuration_ref: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/changed-backend-qualification.json
 current_client_configuration_result: PASS_CONFIGURATION_DECODED_NATIVE_NOT_EXERCISED
 current_client_source_sync_terminal: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/changed-backend-source-sync-terminal.log
@@ -108,3 +108,7 @@ current_changed_backend_capability: config_decoded_strict_mxc_unavailable_on_tes
 current_strict_mxc_prerequisite_ref: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json
 current_strict_mxc_prerequisite: original_FAIL_preserved_no_native_witnesses_no_model_no_fallback
 current_strict_mxc_source_sync_terminal: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-source-sync-terminal.log
+
+actual_user_strict_mxc_ref: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json
+actual_user_strict_mxc_result: unavailable_before_fixture_Jules_stock_Job_owner_no_model
+actual_user_strict_mxc_source_sync_terminal: .aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-source-sync-terminal.log

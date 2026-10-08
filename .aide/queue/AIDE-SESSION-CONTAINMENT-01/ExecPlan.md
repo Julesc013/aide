@@ -472,3 +472,65 @@ inferred. Supported ordinary editing, account/read isolation and unrestricted
 outer routes remain unqualified. Source-only result/helper/index closeout
 requires exact independent review, guarded commit and conditional three-head
 sync; stable tag/assets/evidence do not change. The full campaign stays open.
+
+
+## 2026-10-09 actual user-context MXC prerequisite
+
+Previous goal turn progressed: exact nested-supervisor refusal was preserved,
+classifier fixed, and source synchronized atf66f9c5b. That result proves only
+CodexSandboxOffline inside the older0.145 supervisor; it does not settle MXC
+availability for the actual Jules executor. Do not infer machine-wide failure
+or replay that old job. Brief bounded custody discovery found the two former
+Factorio clone paths absent, FacMan tmp empty, remaining worktree-store receipts
+owned by facman-development, and source-bearing u6p without ownership proof.
+No deletion/adoption authority or completed reclamation is inferred.
+
+Prepare exactly one changed-executor prerequisite: same strict MXC native
+fixture/backend/profile, zero models, under the frozen302688d Windows Job owner
+in BLACKGLASS-WIN1\Jules context. Do not invoke the old0.145 command sandbox;
+use the existing stock WindowsJobHost, estate/dispatch locks, monitoring,
+collection and retirement. This is not a new runner. The fixed reviewed outer
+Python fixture is trusted management code, not a contained agent; only its
+strict MXC workload can earn native-boundary evidence. Preserve that distinction
+and all old attempt/result fingerprints. No account/ACL/setup/config defaults,
+credentials, fallback, unknown deletion, source writes by the workload or new
+storage families. Future model editing still requires its own exact effect.
+
+Allowed preparation is the task-local probe's explicit fixed Jules-context
+option, plan, private config/manifest, exact observer/effect and required
+coherence after review. Pin the full same26-member runtime archive and current
+backend; keep all roots/reserves/256MiB aggregate cap unchanged. One180second
+Job,1GiB memory,16MiB scratch,192KiB retained/128KiB logs; one180second capacity
+wait with10seconds sustained5GiB physical/commit headroom. Fresh locked
+aggregate admission must include release assets and all pools; no worker
+lease/control enlargement or model counter update. Independently review
+the changed executor/source/effect before dispatch. Actual native witnesses
+or a precise refusal, complete bytes/receipts, retirement and unchanged
+counter4 must be reported honestly. No automatic retry or weakening.
+
+### Actual result and closeout
+
+Independently accepted effect7c7d22f8/observer2043549c ran one stock-owned
+job73e7042691684827adc58887c2e1fa0e under BLACKGLASS-WIN1\Jules.
+The backend returned1: native MXC unavailable on this executor, before the
+fixture. The evidence-preserving wrapper returned0; that is not a native
+boundary PASS. All8 files6,954B were collected and verified. Peak scratch
+2,635B/Job memory32,804,864B; scratch absent/reservation released/no active
+job, counter4 unchanged. Zero models/threads, no fallback/setup/account/ACL
+changes or native witnesses. The corrected preview lookup and its unexecuted
+preimage are retained. Five affected pure classifier tests pass.
+
+The exact qualification is evidence/mxc-user-qualification.json, preserving
+raw result/effect/review/receipt and executed input identities. Original
+nested FAIL/reconciliation stays unchanged. Both tested executor contexts
+refused; this does not diagnose OS cause or every possible route. A supported
+constrained ordinary editing executor remains an external setup dependency.
+No unchanged replay, model dispatch, root widening, OS/setup installation or
+unknown cleanup is admitted. Existing Lite tag/assets/runtime remain valid.
+
+Close only this bounded source/result slice after exact independent review.
+Reuse the existing protected commit/ref helper, fresh complete staged blob map
+and real-user GitHub checks. Preserve all85 other branch tips; synchronize
+only current/main/dev through ordinary atomic non-force push. No release,
+artifact, runtime or target effect. Record the terminal result, not an assumed
+future commit identity. Full campaign remains incomplete.

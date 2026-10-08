@@ -1,5 +1,17 @@
 # AIDE Implementation Log
 
+## Actual user-context MXC prerequisite - 2026-10-09
+
+The probe now selects the exact reviewed Jules executor explicitly, preserving
+its original restricted-account default. One independently admitted stock Job
+run73e70426 returned wrapper0/backend1: native MXC unavailable before fixtures.
+[Full qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json)
+preserves8 files6,954B, scratch2,635B/memory32,804,864B peaks and verified
+retirement/release. Counter4 unchanged; no model, fallback or persistent setup.
+Five pure classifier tests passed. A preview lookup was corrected before
+execution; its original unexecuted inputs are preserved. The original nested
+failure remains unchanged. Runtime/CLI/release bytes are unaffected.
+
 ## Strict MXC attempt and classification repair - 2026-10-09
 
 One independently admitted job22c30b48 returned worker/backend1 with

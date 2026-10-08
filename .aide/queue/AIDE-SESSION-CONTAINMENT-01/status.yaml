@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-SESSION-CONTAINMENT-01
 status: needs_review
-planning_state: strict_mxc_unavailable_on_tested_executor_original_failure_preserved
+planning_state: strict_mxc_unavailable_nested_and_Jules_executors_no_native_witnesses
 result: PARTIAL
 updated_at: 2026-10-09
 current_slice: strict_mxc_prerequisite_unavailable_no_native_witnesses
@@ -75,3 +75,17 @@ strict_mxc_retirement: scratch_absent_reservation_released
 strict_mxc_classification_repair: five_pure_tests_PASS_no_native_replay
 strict_mxc_dispatch_counter: four_unchanged
 strict_mxc_source_sync_terminal: evidence/mxc-prerequisite-source-sync-terminal.log
+
+actual_user_mxc_ref: evidence/mxc-user-qualification.json
+actual_user_mxc_job: 73e7042691684827adc58887c2e1fa0e
+actual_user_mxc_result: UNAVAILABLE_NATIVE_MXC_NO_FALLBACK_before_fixture
+actual_user_mxc_executor: BLACKGLASS-WIN1\Jules_stock_WindowsJobHost
+actual_user_mxc_worker_backend_exits: 0_and_1_negative_capability_not_PASS
+actual_user_mxc_retained_files: 8
+actual_user_mxc_retained_bytes: 6954
+actual_user_mxc_peak_scratch_bytes: 2635
+actual_user_mxc_peak_job_memory_bytes: 32804864
+actual_user_mxc_retirement: scratch_absent_reservation_released_no_active_job
+actual_user_mxc_counter: four_unchanged_zero_new_models
+actual_user_mxc_source_sync_terminal: evidence/mxc-user-source-sync-terminal.log
+actual_user_mxc_next: supported_constrained_editing_executor_external_setup_dependency_no_unchanged_replay

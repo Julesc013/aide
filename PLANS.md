@@ -1,5 +1,15 @@
 # AIDE Planning Index
 
+## Actual user-context MXC result - 2026-10-09
+
+[Actual Jules qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json)
+records strict MXC refusal before fixtures under the existing stock Windows Job
+owner. This changed-executor test made zero model calls, collected8 files6,954B
+and retired/released all scratch/reservations. Both tested contexts now have
+negative evidence; native isolation and ordinary editing remain unqualified.
+No unchanged replay or fallback is authorized. A supported constrained executor
+is the remaining setup dependency; Lite1.0.0's existing publication stays valid.
+
 ## Native MXC prerequisite - 2026-10-09
 
 The [exact prerequisite](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json)

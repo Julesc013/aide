@@ -1,0 +1,143 @@
+{
+  "account_home_and_broker_scope": "unqualified",
+  "actual_model_editing_qualified": false,
+  "backend": {
+    "backend_bytes": 333357872,
+    "backend_path": "C:\\Users\\Jules\\.vscode\\extensions\\openai.chatgpt-26.1002.51308-win32-x64\\bin\\windows-x86_64\\codex.exe",
+    "backend_sha256": "d83cc3582592e307df008411f02f61a93fb93580b53dc173608a63202d97bbe4",
+    "backend_version": "0.162.0-alpha.2",
+    "effective_current_profile": "disabled/unrestricted",
+    "entrypoint_sha256": "bc0b44429768ea49c559c6a5524dcd710c500d6193f3bfe62c81cab75c18661c",
+    "extension_version": "26.1002.51308",
+    "identity": "BLACKGLASS-WIN1\\Jules",
+    "official_sources": [
+      "https://learn.chatgpt.com/docs/permissions",
+      "https://learn.chatgpt.com/docs/windows/windows-sandbox",
+      "https://learn.chatgpt.com/docs/app-server#start-or-resume-a-thread"
+    ],
+    "old_backend_refusal_unchanged": true,
+    "outer_client": "VS Code Codex extension",
+    "package_sha256": "c09d3a7db8527302e7647e79c2abb3c47eb85ede8e9819938d9936e691346348",
+    "process_ancestry": "immediate native shell parent codex.exe in identified extension; parent Code.exe",
+    "qualification": "not_yet_run",
+    "schema": "aide.changed-host-observation.v1"
+  },
+  "dispatch_unchanged": true,
+  "effect_sha256": "7c7d22f80d095db45586da3b082fbc11967a5e115defb634c5393506b7bcc88a",
+  "executed_input_custody": {
+    "mxc-user-executed-plan-input.log": "3fb3425dc137639ca90d6bc1f8348e670429dd4afc7d91fdc37da48ffd923dc7",
+    "mxc-user-executed-worker-input.log": "5a5fe3a11248f18f657a546e91dca9be452cd010a9ec35aebf05a7416020510e"
+  },
+  "files": {
+    "logs/stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/stdout": {
+      "bytes": 84,
+      "sha256": "09686e75d512d4f68935376fe0122660ef132f57732143f4b299f274891e42f8"
+    },
+    "output/backend-stderr.log": {
+      "bytes": 446,
+      "sha256": "c4f41d4155e845690df13fb70f390c6c3831eeb2403b93411580379d2ead93e7"
+    },
+    "output/backend-stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output/mxc-prerequisite.json": {
+      "bytes": 1934,
+      "sha256": "b7a31ba2557e9acea49708423f44ea16c3be0ea277a3a4cee9e141d20181522d"
+    },
+    "owner.json": {
+      "bytes": 140,
+      "sha256": "da6032a6eccbbf2c82f69a3d9978acdb3372314f9cd6d30bf0e1687389109818"
+    },
+    "receipt.json": {
+      "bytes": 4350,
+      "sha256": "9a533510983ec74c8ba2cff7dd7f8836f827b9e7d3a2ca0f845efedd3cf12e06"
+    }
+  },
+  "interpretation": "Actual Jules executor under pinned stock Windows Job owner refused native MXC before the harmless workload. No native access witness, model editing, account isolation or outer containment was exercised. Original nested failure remains unchanged; no machine-wide or all-route inference.",
+  "job_id": "73e7042691684827adc58887c2e1fa0e",
+  "legacy0_145_supervisor_used": false,
+  "native_result": {
+    "bytes": 84,
+    "creation_filetime": 134359492956050018,
+    "exit_code": 0,
+    "io_errors": [],
+    "job_id": "73e7042691684827adc58887c2e1fa0e",
+    "pid": 56108,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "original_result_ref": "evidence/mxc-user-qualified.log",
+  "original_result_sha256": "0aeb17ef9147c8b1f4983079e0fbb2762f77b50b3eb66896d1291e94a9664272",
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 32804864,
+    "scratch_bytes": 2635
+  },
+  "proof": {
+    "actual_model_editing_qualified": false,
+    "allowed_edit_present": false,
+    "backend_exit": 1,
+    "backend_sha256": "d83cc3582592e307df008411f02f61a93fb93580b53dc173608a63202d97bbe4",
+    "credentials_copied": false,
+    "expected_windows_identity": "BLACKGLASS-WIN1\\Jules",
+    "fallback_permitted": false,
+    "fixture_unchanged": true,
+    "job_id": "73e7042691684827adc58887c2e1fa0e",
+    "private_escape_absent": true,
+    "profile": {
+      "filesystem": {
+        ":minimal": "read",
+        ":root": "deny",
+        "C:\\Users\\Jules\\.vscode\\extensions\\openai.chatgpt-26.1002.51308-win32-x64\\bin\\windows-x86_64": "read",
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64": "read",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\73e7042691684827adc58887c2e1fa0e\\tmp\\candidate": "write",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\73e7042691684827adc58887c2e1fa0e\\tmp\\candidate\\.aide.local": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\73e7042691684827adc58887c2e1fa0e\\tmp\\candidate\\.codex": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\73e7042691684827adc58887c2e1fa0e\\tmp\\candidate\\.git": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\73e7042691684827adc58887c2e1fa0e\\tmp\\excluded": "deny",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\73e7042691684827adc58887c2e1fa0e\\tmp\\mxc-client": "deny"
+      },
+      "name": "aide_strict_mxc_probe",
+      "network_enabled": false
+    },
+    "reader_faults": [],
+    "readers_quiescent": true,
+    "requested_commands": 1,
+    "requested_model_turns": 0,
+    "requested_threads": 0,
+    "sandbox": "mxc",
+    "schema": "aide.strict-mxc.prerequisite.v1",
+    "status": "UNAVAILABLE_NATIVE_MXC_NO_FALLBACK",
+    "teardown_errors": [],
+    "trusted_wrapper_filesystem_confinement_claimed": false,
+    "whole_session_contained": false,
+    "windows_identity": "BLACKGLASS-WIN1\\Jules"
+  },
+  "receipt_sha256": "9a533510983ec74c8ba2cff7dd7f8836f827b9e7d3a2ca0f845efedd3cf12e06",
+  "repeat_rule": "No automatic native/model retry against unchanged backend/executor/configuration; only genuinely changed authorized dependency may be admitted.",
+  "requested_model_turns": 0,
+  "reservation_released": true,
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\73e7042691684827adc58887c2e1fa0e",
+  "retained_bytes": 6954,
+  "review_sha256": "847384a94323ce1b39c579b0eb173210f0e68a89722b30fe64686d5f2c40e662",
+  "schema": "aide.actual-user.strict-mxc.prerequisite.v1",
+  "scratch_retired": true,
+  "source_commit": "f66f9c5b9bb3560d4b5570536b6dc18882c7043b",
+  "source_integration": "Requires exact independent result/source/guarded-commit/ref-effect acceptance; terminal records actual resulting identity.",
+  "source_tree": "811f782329de8b66659c4b76f2c9e05276111a8d",
+  "status": "UNAVAILABLE_NATIVE_MXC_NO_FALLBACK",
+  "terminal_sha256": "7f881472721b0218b11030e64d56637c8dff55b8de55a27c887f26e87ec768e1",
+  "tested_executor_identity": "BLACKGLASS-WIN1\\Jules",
+  "trusted_wrapper_filesystem_confinement_claimed": false,
+  "whole_outcome_usage": "unknown",
+  "whole_session_contained": false
+}

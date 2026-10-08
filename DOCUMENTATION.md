@@ -1,5 +1,14 @@
 # AIDE Documentation Index
 
+## Actual user-context native prerequisite - 2026-10-09
+
+[Actual Jules qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json)
+and the [SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md)
+record a second, distinct executor's native MXC refusal. Exact negative evidence,
+stock Job custody and unchanged resources do not qualify ordinary model editing
+or the unrestricted outer session. Reuse prior Lite publication and consumer
+proof; do not rebuild archives or retry models for this unchanged setup blocker.
+
 ## Current native host prerequisite - 2026-10-09
 
 [Native MXC reconciliation](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json)
