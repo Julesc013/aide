@@ -1,5 +1,21 @@
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
+## Current owner routing - 2026-10-09
+
+The owner is installing Windows on a different machine for AIDE and DiskEd,
+with local and remote agent development. Existing-machine FacMan, UniSetup,
+Syspane and related work belongs to each project's own queue. SESSION records
+this owner direction; no target task or machine setup is performed by that
+source slice. Historical checkpoints below retain their original date/subject.
+
+Lite1.0.0 is published and acquired-byte qualified for its declared profile.
+The current machine's two native MXC refusals remain unchanged. Do not retry
+them, infer the new host's capability, or transfer paths/accounts/budgets.
+Next AIDE environment qualification waits for the new machine to be ready and
+accessible. Identity, hardware, checkout, approved roots/limits, client routes
+and model capabilities must be discovered and tested there. Whole-outcome
+usage, wider ownership-safe cleanup and downstream adoption remain incomplete.
+
 ## 2026-09-26 resource-bound checkpoint
 
 Predecessor-feedback source c6d104f6 and its corrected candidate contract have

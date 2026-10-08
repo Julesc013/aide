@@ -534,3 +534,44 @@ and real-user GitHub checks. Preserve all85 other branch tips; synchronize
 only current/main/dev through ordinary atomic non-force push. No release,
 artifact, runtime or target effect. Record the terminal result, not an assumed
 future commit identity. Full campaign remains incomplete.
+
+## 2026-10-09 owner machine allocation reconciliation
+
+Objective: make the active queue/brief reflect the owner's new allocation:
+AIDE and DiskEd development on another Windows machine being installed;
+FacMan, UniSetup, Syspane and related work on this existing machine. Preserve
+the already-recorded PLANS.md clarification. This is the existing SESSION
+WorkUnit's documentation-only continuation, not a new implementation campaign.
+
+Allowed diff: SESSION task/status/this plan and one compact owner-direction
+record, parent status/ExecPlan, current brief, queue index, compiler manifest,
+PLANS.md, IMPLEMENT.md and DOCUMENTATION.md. No code, runtime, profiles, client
+permissions, new provider, model, target repository, storage, tag or asset
+changes. Machine selection is not capability/permission/acquisition evidence.
+
+Steps: record actual owner facts and pending machine-local prerequisites;
+replace the stale active routing while keeping all historical MXC/qualification
+records unchanged; verify UTF-8/diff/scope, structural Harness and exact managed
+commit message/tree. Reuse unchanged executable tests and release evidence.
+One exact independent combined source/ref-effect review precedes the existing
+pinned guarded commit and non-force current/main/dev sync. Preserve85 other
+branch tips, tag/assets, sole checkout, dispatch4 and inactive managed control.
+
+New machine's identity, accessible checkout, roots, finite budget, installed
+client/toolchain and local model hardware/service remain unknown. Discover and
+qualify them there once available; never copy current D paths, current Windows
+account assumptions or current MXC result into its effective policy. Existing
+spending authority stays unchanged. Do not repeat old-host model/native checks.
+
+Read-only current-machine reconciliation observed clean canonical checkouts:
+Factorio launcher on task/facman-world-restore-retention-01; Universal launcher
+and setup on dev. The Factorio default packet still references an older slug
+decision. These observations do not prove no other writer, admit a new target
+WorkUnit, resume all of Beta1, or dispose of dirty linked work. Target work
+belongs to its own queue and ownership checks; this slice changes none of it.
+
+Recovery: verify actual staged/source/ref state after uncertainty, never replay
+the effect automatically or rewrite history. Source integration closes only
+this owner-routing slice. The broader objective remains incomplete; actual new
+host/model qualification, whole-outcome efficiency, wider ownership-safe cleanup
+and downstream tooling adoption retain their requirements and evidence gaps.

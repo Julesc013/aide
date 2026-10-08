@@ -1,5 +1,17 @@
 # AIDE Implementation Log
 
+## Owner machine allocation reconciled - 2026-10-09
+
+The owner's new AIDE/DiskEd development machine and existing-machine
+FacMan/UniSetup/Syspane allocation now govern the active SESSION/parent brief,
+queue state and planning indexes. [Owner-direction record](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/owner-machine-allocation-2026-10-09.json)
+separates reported intent from unverified new host/model capabilities. Current
+MXC failures, runtime, release assets and original qualification remain unchanged.
+The three known canonical project checkouts were observed clean; no target
+mutation, writer-liveness or automatic project-task admission follows. This
+slice uses structural and exact source/ref checks, with no executable test,
+model/native replay, setup, migration or new provider implementation.
+
 ## Actual user-context MXC prerequisite - 2026-10-09
 
 The probe now selects the exact reviewed Jules executor explicitly, preserving

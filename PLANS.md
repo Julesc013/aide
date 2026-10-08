@@ -1,5 +1,21 @@
 # AIDE Planning Index
 
+## Owner machine allocation - 2026-10-09
+
+The owner is installing Windows on another machine for AIDE and DiskEd
+development, including practical tests of local agents and remote models.
+This machine is intended for continued FacMan, UniSetup, Syspane and related
+project work. Their implementation should follow each project's own tasks.
+
+The new machine's identity, hardware, checkout paths, storage budgets, client
+permissions and model capabilities are not yet verified. Qualify them locally;
+the current machine's paths and failed MXC checks are not evidence about it.
+Select local models after discovering its available hardware. Existing spending
+limits remain: no new paid service or API billing route is authorized by this
+development allocation. DiskEd storage tests should use disposable disk images
+before physical-device operations. This records owner intent, not completed
+setup, provider support, a migration, or a new execution architecture.
+
 ## Actual user-context MXC result - 2026-10-09
 
 [Actual Jules qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json)

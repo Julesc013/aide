@@ -1,5 +1,15 @@
 # AIDE Documentation Index
 
+## Owner development machine allocation - 2026-10-09
+
+[Owner-direction record](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/owner-machine-allocation-2026-10-09.json),
+[SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) and the
+[current task brief](.aide/context/latest-task-packet.md) route AIDE/DiskEd
+qualification to the new Windows machine once ready. Existing-machine project
+work belongs to its own queues. New host identity, paths, limits, client routes
+and local/remote model capabilities require local evidence; current-machine
+failures and successful Lite publication do not qualify that environment.
+
 ## Actual user-context native prerequisite - 2026-10-09
 
 [Actual Jules qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json)

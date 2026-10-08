@@ -1,0 +1,72 @@
+{
+  "current_machine_read_only_observations": [
+    {
+      "branch": "task/facman-world-restore-retention-01",
+      "default_packet": "FACMAN-REPOSITORY-SLUG-DECISION-01",
+      "repository": "D:/Projects/Factorio/factorio-launcher",
+      "working_tree": "clean_at_read",
+      "writer_liveness": "not_examined"
+    },
+    {
+      "branch": "dev",
+      "default_packet": "absent_at_read",
+      "repository": "D:/Projects/Universal/universal-launcher",
+      "working_tree": "clean_at_read",
+      "writer_liveness": "not_examined"
+    },
+    {
+      "branch": "dev",
+      "default_packet": "absent_at_read",
+      "repository": "D:/Projects/Universal/universal-setup",
+      "working_tree": "clean_at_read",
+      "writer_liveness": "not_examined"
+    }
+  ],
+  "effects_performed": {
+    "machine_setup": false,
+    "model_or_provider_calls": 0,
+    "native_prerequisite_replay": false,
+    "release_changes": false,
+    "runtime_changes": false,
+    "target_changes": false
+  },
+  "existing_machine": {
+    "AIDE_change_scope": "documentation_only_no_target_effects",
+    "observed_execution_identity": "BLACKGLASS-WIN1\\Jules",
+    "owner_project_allocation": [
+      "FacMan",
+      "UniSetup",
+      "Syspane",
+      "related projects"
+    ]
+  },
+  "full_goal_completed": false,
+  "new_machine": {
+    "checkout_paths": null,
+    "effective_permissions": null,
+    "hardware": null,
+    "identity": null,
+    "model_intent": [
+      "local",
+      "remote"
+    ],
+    "projects": [
+      "AIDE",
+      "DiskEd"
+    ],
+    "qualified_models": [],
+    "storage_policy": null,
+    "windows_installation": "reported_in_progress"
+  },
+  "next_AIDE_dependency": "New machine ready and accessible, then discover its identity, hardware, checkout, approved storage and client routes before qualifying ordinary editing and local/remote models.",
+  "preserved_boundaries": [
+    "Existing spending limits; no new paid provider, API billing fallback, credits or rented infrastructure are authorized.",
+    "Storage selections, finite limits and effective permissions require local machine evidence.",
+    "Historical current-machine MXC refusals and release qualification retain their original subjects.",
+    "AIDE/DiskEd allocation does not demonstrate installed local models or change any support claim.",
+    "Current-machine projects use their own queue, ownership, source scope and actual authorization; no blanket target mutation."
+  ],
+  "reported_date": "2026-10-09",
+  "schema": "aide.owner-machine-allocation.v1",
+  "source": "Direct owner message in this thread, after b0640803 integration; structured paraphrase, not a host probe."
+}

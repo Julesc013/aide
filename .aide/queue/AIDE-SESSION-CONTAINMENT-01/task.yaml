@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: AIDE-SESSION-CONTAINMENT-01
 title: Qualify scoped host execution through the existing managed owner
 type: implementation
-status: needs_review
-planning_state: strict_mxc_unavailable_nested_and_Jules_executors_no_native_witnesses
+status: blocked
+planning_state: owner_machine_allocation_recorded_new_development_host_pending
 result: PARTIAL
 created_at: 2026-10-03
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -149,3 +149,14 @@ actual_user_mxc_prerequisite_slice:
   native_witnesses_and_model_claim: none
   additional_attempts_or_fallback: forbidden_for_unchanged_dependency
   closure: exact_result_source_guarded_commit_and_parent_sync_review_required
+
+owner_machine_allocation_slice:
+  source_base: b064080358c00dd4cd5c4f6feb787b5c29daf616
+  authority: direct_owner_machine_allocation_and_existing_campaign_source_delegation
+  record_ref: evidence/owner-machine-allocation-2026-10-09.json
+  scope: existing_SESSION_documentation_and_routing_only_no_runtime_or_target_effect
+  destination_host: owner_new_Windows_machine_installation_reported_not_accessible_here
+  AIDE_and_DiskEd_work: new_machine_after_local_identity_storage_client_qualification
+  existing_machine_projects: FacMan_UniSetup_Syspane_and_related_project_owned_tasks
+  old_MXC_tests: unchanged_original_subjects_no_replay_or_cross_machine_inference
+  closure: exact_source_and_guarded_commit_ref_effect_review_required
