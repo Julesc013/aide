@@ -6,7 +6,7 @@ canonical_source: .aide/queue
 items:
   - id: AIDE-DAILY-INSTALLED-BINDING-01
     status: needs_review
-    planning_state: preparation_admitted_plan_first_inputs_wrapper_and_effect_pending
+    planning_state: consumer_candidate_prepared_exact_source_effect_review_pending
     title: Qualify the named-task daily workflow through installed Lite
     task: .aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/task.yaml
     exec_plan: .aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/ExecPlan.md

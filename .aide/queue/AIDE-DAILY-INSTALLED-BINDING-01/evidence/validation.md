@@ -10,3 +10,7 @@ PASS: selected-scope structural verify and whitespace. Exact Git executable hash
 and version recorded, with no Git configuration change outside owned fixtures.
 NOT RUN: installed17tests, actual CLI fixture cases, continuation and any job.
 No runtime qualification follows from preparation. Exact source/effect review held.
+
+Current candidate preparation: wrapper AST PASS; all1,709exact manifest inputs
+match their current bytes. Thin fixture orchestration only; all runtime checks
+remain NOT RUN until exact source/effect review. No shipped assertion changed.

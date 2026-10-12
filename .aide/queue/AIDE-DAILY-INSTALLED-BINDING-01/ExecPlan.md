@@ -71,3 +71,13 @@ Preparation admission and current export prerequisites are accepted. Intent is
 compiled under parent's four intake output paths. Local named task branch uses
 clean648116f6, existing helperready_dry_run/missing-upstream disclosed, and noactive
 attempt. No qualification code, fixture import or consumer job has started.
+
+### Current prepared consumer candidate
+
+Plan-first preparation checkpointcde9d5ad is committed; its structured check PASS.
+Thin installed_binding.py and consumer-job-template/effect are now prepared under
+the existing owners. Original17assertion bytes are unchanged; actual CLI checks
+include separate-process task inspection, packet/evidence continuity and default
+review binding. Full started/completed stages and stdout/stderr are retained by
+existing job collection. Wrapper AST and exact current input pins pass. Runtime
+remains NOT RUN, with source/effect review required before any fixture/import/job.

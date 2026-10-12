@@ -3,8 +3,8 @@ task_id: AIDE-DAILY-INSTALLED-BINDING-01
 status: needs_review
 result: PENDING
 updated_at: 2026-10-12
-planning_state: preparation_admitted_plan_first_inputs_wrapper_and_effect_pending
+planning_state: consumer_candidate_prepared_exact_source_effect_review_pending
 jobs_allocated: 0
 maximum_jobs: 2
 model_requests: 0
-next_slice: pin_installed_inputs_and_prepare_exact_scratch_only_consumer_wrapper
+next_slice: freeze_review_exact_consumer_source_effect_then_one_conditional_job
