@@ -60,7 +60,8 @@ planning and deterministic work continues.
   checks, exact child scope and final doctor/validate PASS.
 - [x] Prepare concrete next briefs and request reviewer choice after checks.
 - [ ] Freeze candidate and obtain independent review.
-- [ ] Record structured commit and exact validation result.
+- [x] Record guarded source commit09afd31c/tree50f9422d and latest-message PASS.
+  Portable source-checkpoint.json records exact state without inventing review.
 
 ## Discoveries and decisions
 

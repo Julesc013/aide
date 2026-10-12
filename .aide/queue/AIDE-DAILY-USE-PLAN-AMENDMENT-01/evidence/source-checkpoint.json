@@ -1,0 +1,42 @@
+{
+  "schema_version": "aide.prepared-source-checkpoint.v1",
+  "date": "2026-10-12",
+  "task_id": "AIDE-DAILY-USE-PLAN-AMENDMENT-01",
+  "branch": "task/aide-daily-use-plan-amendment-01",
+  "prepared_source_commit": "09afd31ce4bed291bd2df5ccc6462f7d39e5d92d",
+  "prepared_source_tree": "50f9422dbe63109fbf773835232fb9d142847989",
+  "parent": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a",
+  "managed_commit": "COMMITTED_exact_head_ref_tree_message_and_paths",
+  "commit_check_latest": "PASS",
+  "independent_verdict": null,
+  "review_state": "needs_review",
+  "goal_state": "active_incomplete",
+  "next_action": "Resolve requested independent-review agent authorization; accept only an actual qualified verdict, then prepare exact new-host runner/route effects under SESSION.",
+  "observed_prerequisites": {
+    "runner_config_present": false,
+    "approved_execution_pools_present": false,
+    "current_client": "Codex 0.162.0-alpha.17.2 / VS Code 1.141.0",
+    "target_candidate": "DiskEd clean at 40ac8ec; spec/work/units.json retains authority"
+  },
+  "effects": {
+    "main_dev_integration": false,
+    "push": false,
+    "models": 0,
+    "pool_setup": false,
+    "target_mutation": false,
+    "publication": false
+  },
+  "validation": {
+    "doctor": "PASS_exit0",
+    "validate": "PASS_exit0",
+    "plan": "PASS_22_capabilities_8_phases_6_invalid_plans_refused",
+    "harness_closeout": "PASS_exit0",
+    "exact_child_scope": "PASS",
+    "builtin_verifier": "WARN18_wrong_active_scope_selection_disclosed"
+  },
+  "accounting": {
+    "controller_model_usage": null,
+    "reviewer_model_usage": null,
+    "note": "Deterministic command durations/output hashes are in baseline/final checks; unknown model use is not zero."
+  }
+}
