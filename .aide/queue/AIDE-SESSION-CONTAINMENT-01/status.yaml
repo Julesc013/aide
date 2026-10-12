@@ -1,12 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-SESSION-CONTAINMENT-01
-status: blocked
-planning_state: owner_machine_allocation_recorded_new_development_host_pending
+status: needs_review
+planning_state: new_host_setup_and_source_checks_candidate_native_dispatch_held
 result: PARTIAL
-updated_at: 2026-10-09
-current_slice: owner_machine_allocation_routing_documentation_only
+updated_at: 2026-10-12
+current_slice: exact_new_host_setup_and_pure_checks_preparation
 whole_session_contained: false
-next_slice: discover_and_qualify_new_development_machine_once_ready_accessible
+next_slice: independently_review_setup_and_source_check_effect_before_apply
 real_validation: PASS_job_4afa560836114398aeaf2bf6f32ae03a
 resource_regressions: PASS_4_of_4_no_skips
 read_exclusion: FAIL_preserved

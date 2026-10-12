@@ -2,88 +2,84 @@
 
 ## PHASE
 
-phase: AIDE-DAILY-USE-PLAN-AMENDMENT-01
+phase: AIDE-SESSION-CONTAINMENT-01
 
 ## GOAL
 
-Prepare and validate the owner's capability-specific daily-use planning amendment
-under AIDE-CONVERGENCE-AND-DELIVERY-01. Acceptance awaits exact independent review.
+Qualify the actual new-host execution path through the existing managed owner.
+The present slice prepares exact setup and pure checks; native dispatch awaits
+its later independent effect verdict. Whole-session containment remains false.
 
 ## WHY
 
-Useful workflows need specific prerequisites and observable outcomes. Preserve
-the shared architecture and P0-P11/C1-C12; begin cost observation, usability and
-selective reuse with the first useful task.
+The accepted daily-use plan needs useful bounded work on GUNMETAL-WIN. Fresh
+identity, volume, capacity and executable pins replace assumptions about the old
+host. Existing released Lite and original failures retain their exact subjects.
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/task.yaml`
-- `.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md`
-- `.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/status.yaml`
-- `.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/evidence/next-briefs.md`
-- `docs/roadmap/staged-expansion-roadmap.md`
-- `docs/roadmap/development-workflows.json`
-- `.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md`
+- `.aide/queue/AIDE-SESSION-CONTAINMENT-01/task.yaml`
+- `.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md`
 - `.aide/queue/AIDE-SESSION-CONTAINMENT-01/status.yaml`
-- `.aide/policies/review-gates.yaml`
+- `.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-effect.md`
+- `.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-selection.json`
+- `.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-inputs.json`
+- `.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/evidence/independent-review-922173c8.json`
+- `docs/reference/aide-lite-test-runner.md`
 
 ## ALLOWED_PATHS
 
-The exact allowlist is `task.yaml` scope.allowed_paths. It covers this child,
-named parent routing records, index/intake, current Profile/task packet,
-compiler-owned generated sections, capability-derived views, README/root indexes
-and the two named roadmap files. References to later briefs grant no other paths.
+Use task.yaml scope and its exact new_host_continuation_slice. Task-local source
+and evidence, named parent/queue/current packet/root indexes and compiler-owned
+derived views are preparation paths. The local config and three selected roots
+are permitted only after the exact setup effect verdict.
 
 ## FORBIDDEN_PATHS
 
-- Runtime or provider implementation, unadmitted `.aide.local/**` changes
-- User credentials, account/ACL changes, unrelated target writes or deletion
-- Released assets/tags, publication, remote or dev/main integration effects
-- Manual AGENTS/skill policy sections and adoption of proposed specifications
+- Unreviewed machine accounts, ACLs, settings, quota or permission widening
+- Unadmitted models, provider/billing fallback, credentials or target writes
+- Unselected storage roots, new checkouts, unknown deletion or released artifacts
+- Main/dev integration or publication without their separately reviewed effects
 
 ## IMPLEMENTATION
 
-Separate implementation prerequisites, activation gates, qualification evidence
-and preferred sequencing at capability granularity. Specify all eight daily-use
-phases and prepare only ready briefs. Correct current published-release prose;
-retain historical evidence and original released bytes. Observe exact new-host
-metadata once without inheriting old qualification or consumed model allowances.
+Reuse managed_workspace and WindowsJobHost unchanged. Prepare a complete backend
+digest/identity binding and correct native argv. Preserve the mistaken default
+help launch as an unintended attempt with unknown persistent effects. Configure
+only selected roots after review, run eight pure source checks through admission,
+then obtain the exact native-effect verdict before at most one strict MXC job.
 
 ## VALIDATION
 
-- `py -3 -B .aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/evidence/check_plan.py`
-- `py -3 -B .aide/scripts/aide_lite.py doctor`
-- `py -3 -B .aide/scripts/aide_lite.py validate`
-- `py -3 -B scripts/aide compile --dry-run`
-- `git diff --check`, explicit changed-file allowlist and relative-link checks
-- Structured commit check after the concrete prepared-result commit
+- AST/JSON/diff checks for preparation, unchanged existing runtime input hashes
+- Existing Harness and explicit capability-derived refresh
+- Eight pure task-local regressions through one reviewed managed job
+- Fresh pins, pause, reservations and admission before each actual job
+- Exact exits/output custody, quiescence, scratch retirement and release
 
 ## EVIDENCE
 
-Task-local baseline/final results, host observation, next briefs, changed-files,
-validation, remaining risks and exact candidate/review state. Unknown controller
-usage remains unknown. Local full logs are ignored; compact findings and hashes
-are portable evidence, not substitutes for an absent raw receipt.
+Task-local source/effect verdicts, exact effective manifests and actual results.
+Never infer PASS from wrapper zero, absent logs or an unavailable backend.
+Known deterministic observations and unknown total usage remain separate.
 
 ## NON_GOALS
 
-No model/native qualification, task-store replacement, target mutation, blanket
-specification adoption, archive rebuild, release or automatic integration.
+No model editing, whole-session claim, provider setup, legacy sandbox provisioning,
+unrelated cleanup, target mutation, archive rebuild or repeat of Lite qualification.
 
 ## ACCEPTANCE
 
-Typed relationships permit independent early reuse, read-only native/relay,
-lesson-correction and contributor fixtures. Daily-use phases specify positive,
-refusal and recovery outcomes. Costs and harvest start immediately. Independent
-review remains pending; planning and structural PASS do not imply operational use.
+Setup/source-check acceptance is narrower than native route acceptance. A precise
+native refusal stops that route until relevant change and preserves independent
+authorized deterministic/supervised work. Other agents remain outside enforcement.
 
 ## OUTPUT_SCHEMA
 
-Report changed files, checks, commit, exact review state, unresolved boundaries
-and the next dependency-ready action. Preserve the active goal until its actual
-outcomes are achieved or the goal service's blocked threshold is met.
+Return exact completed outcome, checks/evidence, commit, uncovered routes and the
+next dependency-ready action. Retain the active incomplete goal and same WorkUnit.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- scope: compact task brief; measure with the existing estimate command
+- scope: compact current task brief

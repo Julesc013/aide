@@ -1,9 +1,11 @@
 """One strict MXC prerequisite; no model, persistent setup or backend fallback."""
+import argparse
 import ctypes
 import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 import sys
 import threading
@@ -25,18 +27,52 @@ def native_mxc_unavailable(exit_code, stderr):
                                      'this Windows build cannot enforce native MXC deny paths')))
 
 
-def main(*, real_user_prerequisite=False):
+def executor_binding(backend=None, backend_sha256=None, expected_identity=None,
+                     *, real_user_prerequisite=False):
+    explicit = (backend, backend_sha256, expected_identity)
+    if all(value is None for value in explicit):
+        return (BACKEND, BACKEND_SHA,
+                'BLACKGLASS-WIN1\\Jules' if real_user_prerequisite
+                else 'BLACKGLASS-WIN1\\CodexSandboxOffline')
+    if real_user_prerequisite or any(value is None for value in explicit):
+        raise ValueError('complete explicit binding required without legacy executor option')
+    path = Path(backend)
+    if (not path.is_absolute() or '..' in path.parts
+            or path.name.casefold() != 'codex.exe'
+            or not isinstance(backend_sha256, str)
+            or not re.fullmatch('[0-9a-f]{64}', backend_sha256)
+            or not isinstance(expected_identity, str)
+            or not re.fullmatch(r'[^\\\r\n]+\\[^\\\r\n]+', expected_identity)):
+        raise ValueError('exact absolute Codex path, lowercase digest and host identity required')
+    return path, backend_sha256, expected_identity
+
+
+def sandbox_command(backend, candidate, options, profile, workload):
+    render = lambda v: ('{' + ','.join(json.dumps(k) + '=' + json.dumps(w) for k, w in v.items()) + '}'
+                        if isinstance(v, dict) else json.dumps(v))
+    argv = [str(backend), '-C', str(candidate)]
+    for key, value in options.items():
+        argv += ['-c', key + '=' + render(value)]
+    # Native Windows CLI has no "windows" subcommand. Everything after -- is
+    # the reviewed workload; a nonexistent subcommand would become a workload.
+    return argv + ['sandbox', '--permission-profile', profile,
+                   '--include-managed-config', '--', *workload]
+
+
+def main(*, real_user_prerequisite=False, backend=None, backend_sha256=None,
+         expected_identity=None):
+    backend, backend_sha256, expected_identity = executor_binding(
+        backend, backend_sha256, expected_identity,
+        real_user_prerequisite=real_user_prerequisite)
     output, temporary = (Path(os.environ[k]) for k in ('AIDE_JOB_OUTPUT', 'AIDE_JOB_TMP'))
     identity = ctypes.create_unicode_buffer(256)
     size = ctypes.c_ulong(len(identity))
     if not ctypes.windll.secur32.GetUserNameExW(2, identity, ctypes.byref(size)):
         raise ctypes.WinError()
-    expected_identity = ('BLACKGLASS-WIN1\\Jules' if real_user_prerequisite
-                         else 'BLACKGLASS-WIN1\\CodexSandboxOffline')
     if identity.value != expected_identity:
         raise RuntimeError('unexpected supervisor identity')
-    with BACKEND.open('rb') as stream:
-        if hashlib.file_digest(stream, 'sha256').hexdigest() != BACKEND_SHA:
+    with backend.open('rb') as stream:
+        if hashlib.file_digest(stream, 'sha256').hexdigest() != backend_sha256:
             raise RuntimeError('backend changed; no substitution')
     home, candidate, excluded = (temporary / n for n in ('mxc-client', 'candidate', 'excluded'))
     for p in (home, candidate, excluded):
@@ -48,7 +84,7 @@ def main(*, real_user_prerequisite=False):
         (candidate / name).mkdir()
     profile = 'aide_strict_mxc_probe'
     rules = {':root': 'deny', ':minimal': 'read', str(Path(sys.executable).parent): 'read',
-             str(BACKEND.parent): 'read', str(candidate): 'write', str(excluded): 'deny',
+             str(backend.parent): 'read', str(candidate): 'write', str(excluded): 'deny',
              str(home): 'deny', **{str(candidate / n): 'deny' for n in ('.git', '.codex', '.aide.local')}}
     options = {'default_permissions': profile, 'approval_policy': 'never',
                'windows.sandbox': 'mxc', 'web_search': 'disabled', 'history.persistence': 'none',
@@ -56,8 +92,6 @@ def main(*, real_user_prerequisite=False):
                'permissions.' + profile + '.filesystem': rules,
                'permissions.' + profile + '.network.enabled': False}
     options.update({'features.' + f: False for f in FEATURES})
-    render = lambda v: ('{' + ','.join(json.dumps(k) + '=' + json.dumps(w) for k, w in v.items()) + '}'
-                        if isinstance(v, dict) else json.dumps(v))
     # Only pre-existing harmless fixture bytes are touched by negative witnesses.
     code = '''import json, pathlib, subprocess, sys
 allowed, denied = map(pathlib.Path, sys.argv[1:])
@@ -79,15 +113,12 @@ proof = {'allowed_edit': allowed.read_bytes() == b"AIDE allowed native edit\\n",
 print(json.dumps(proof, sort_keys=True))
 sys.exit(0 if all(proof.values()) else 23)
 '''
-    argv = [str(BACKEND), '-C', str(candidate)]
-    for k, v in options.items():
-        argv += ['-c', k + '=' + render(v)]
-    argv += ['sandbox', 'windows', '--permission-profile', profile, '--include-managed-config', '--',
-             sys.executable, '-I', '-B', '-c', code, str(allowed), str(marker)]
+    argv = sandbox_command(backend, candidate, options, profile,
+                           [sys.executable, '-I', '-B', '-c', code, str(allowed), str(marker)])
     environment = {k: v for k, v in os.environ.items() if k.upper() in ENV_KEYS}
     environment.update(CODEX_HOME=str(home), TEMP=str(home), TMP=str(home), PYTHONDONTWRITEBYTECODE='1')
     result = {'schema': 'aide.strict-mxc.prerequisite.v1', 'status': 'FAIL',
-              'backend_sha256': BACKEND_SHA, 'job_id': os.environ['AIDE_JOB_ID'],
+              'backend_sha256': backend_sha256, 'job_id': os.environ['AIDE_JOB_ID'],
               'windows_identity': identity.value, 'requested_model_turns': 0,
               'requested_threads': 0, 'requested_commands': 1, 'sandbox': 'mxc',
               'fallback_permitted': False, 'credentials_copied': False,
@@ -166,6 +197,9 @@ sys.exit(0 if all(proof.values()) else 23)
 
 
 if __name__ == '__main__':
-    if sys.argv[1:] not in ([], ['--real-user-prerequisite']):
-        raise SystemExit('only the exact reviewed executor option is supported')
-    main(real_user_prerequisite=sys.argv[1:] == ['--real-user-prerequisite'])
+    parser = argparse.ArgumentParser(allow_abbrev=False)
+    parser.add_argument('--real-user-prerequisite', action='store_true')
+    parser.add_argument('--backend')
+    parser.add_argument('--backend-sha256')
+    parser.add_argument('--expected-identity')
+    main(**vars(parser.parse_args()))

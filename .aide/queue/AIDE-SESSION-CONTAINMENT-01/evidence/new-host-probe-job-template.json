@@ -1,0 +1,32 @@
+{
+    "argv":  [
+                 "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+                 ".aide/queue/AIDE-SESSION-CONTAINMENT-01/probe_mxc_backend.py",
+                 "--backend",
+                 "c:\\Users\\Jules\\.vscode\\extensions\\openai.chatgpt-26.1007.21434-win32-x64\\bin\\windows-x86_64\\codex.exe",
+                 "--backend-sha256",
+                 "f5521b058ca08e249afd3b25b4681e81100181d92e73aa6b94bb8e75c2aa487b",
+                 "--expected-identity",
+                 "GUNMETAL-WIN\\Jules"
+             ],
+    "schema":  "aide.maintainer-job.v1",
+    "cwd":  "D:/Projects/AIDE/aide",
+    "inputs":  {
+                   ".aide/scripts/aide_lite.py":  "bd66068522077f0bc30031c2de15a7c9f73aa5e35e7f19e11cb4719b28dcbde7",
+                   "core/execution/__init__.py":  "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5",
+                   "core/execution/managed_workspace.py":  "55f1590b37d150088c6023ccf8151adfbc350644e906c64d40b367c4884606d6",
+                   "core/runtime/continuous_worker/__init__.py":  "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
+                   "core/runtime/continuous_worker/windows_job.py":  "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc",
+                   "core/runtime/continuous_worker/state.py":  "9b65b7953cfea7af9444abe6157b5edfe670a46be90211a8cf8d543855d12105",
+                   ".aide/queue/AIDE-SESSION-CONTAINMENT-01/probe_mxc_backend.py":  "32459dbb2b82aa5ca5a1323c5ae324e2b6170a22a7e0970f2387c9bf1c1eef6e",
+                   ".aide/queue/AIDE-SESSION-CONTAINMENT-01/test_probe_mxc_backend.py":  "8a2d4ab5484d31596879040315f0c114921bda9492cd22af67a63164fde7cc20",
+                   ".aide/queue/AIDE-SESSION-CONTAINMENT-01/new_host_checks.py":  "bb222e759ccf78fb2c8149d37ba37f6c4b7151bee5cac86614024d759ed2d7ba",
+                   ".aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-selection.json":  "074cdae7a7d5b3a2375c763f6dc28b97c8ea81c9e4d75a65e09f32d3fb259708"
+               },
+    "workunit":  "AIDE-SESSION-CONTAINMENT-01",
+    "source_commit":  "bde3d7103b70fd78ad5908134b3d929da95972b9",
+    "owner":  "session-new-host-prerequisite-01",
+    "executable_sha256":  "434b361fe0c5960d404974feed493db47f2603a1ace2574312104fbed0182c6f",
+    "source_tree":  "ba1bffdf63f5cf4fd1074880a0ee65f35de9ddc0",
+    "adapter":  "python"
+}

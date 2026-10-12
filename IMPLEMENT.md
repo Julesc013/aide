@@ -1,5 +1,17 @@
 # AIDE Implementation Log
 
+## New-host qualification preparation — 2026-10-12
+
+Prepared the [exact SESSION effect](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-effect.md)
+for fresh local configuration, eight pure source checks and a later strict native
+prerequisite. Existing runtime/process-owner code is unchanged. The task-local
+probe corrects the Windows pseudo-subcommand and accepts an explicit complete
+backend/hash/identity binding; original old-host results stay preserved.
+AST/diff preparation checks pass; actual source tests and native qualification
+are not yet run. One mistaken help invocation attempted an absent executable and
+is preserved with unknown persistent effects, without a containment claim.
+Setup/check and native effect reviews are separate; no model or target effect.
+
 ## Daily-use planning candidate — 2026-10-12
 
 Prepared the owner's workflow amendment through

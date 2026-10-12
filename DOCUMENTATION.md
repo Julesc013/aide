@@ -1,5 +1,14 @@
 # AIDE Documentation Index
 
+## New-host execution preparation — 2026-10-12
+
+[SESSION](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) and its
+[exact prepared effect](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-effect.md)
+bind fresh resource selection and task-local prerequisite source to the actual
+new host. Setup/source checks require independent effect review; native dispatch
+requires later passing source checks and its exact verdict. Original release and
+old-host results retain their subjects. This preparation is not activation.
+
 ## Daily-use planning and current release — 2026-10-12
 
 The [existing roadmap](docs/roadmap/staged-expansion-roadmap.md) and

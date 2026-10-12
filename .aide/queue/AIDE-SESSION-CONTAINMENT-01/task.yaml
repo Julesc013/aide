@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: AIDE-SESSION-CONTAINMENT-01
 title: Qualify scoped host execution through the existing managed owner
 type: implementation
-status: blocked
-planning_state: owner_machine_allocation_recorded_new_development_host_pending
+status: needs_review
+planning_state: new_host_setup_and_source_checks_candidate_native_dispatch_held
 result: PARTIAL
 created_at: 2026-10-03
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
@@ -28,6 +28,8 @@ scope:
     - IMPLEMENT.md
     - DOCUMENTATION.md
     - .aide/generated/manifest.yaml
+    - .aide/reports/capability-*.json
+    - .aide/reports/capability-*.md
     - core/execution/managed_workspace.py
     - .aide/scripts/tests/test_managed_workspace.py
     - docs/reference/aide-lite-test-runner.md
@@ -44,7 +46,7 @@ scope:
     - .aide.local/session-storage-probe-job.json
     - .aide.local/session-storage-identity-job.json
   forbidden_operations:
-    - new worktrees, clones, storage roots or recovery archives
+    - new worktrees, clones, unselected storage roots or recovery archives
     - machine-wide ACL, account, quota or Codex-default changes
     - unadmitted model/provider calls, new billing routes or credential changes
     - unrelated target mutation or deletion
@@ -160,3 +162,30 @@ owner_machine_allocation_slice:
   existing_machine_projects: FacMan_UniSetup_Syspane_and_related_project_owned_tasks
   old_MXC_tests: unchanged_original_subjects_no_replay_or_cross_machine_inference
   closure: exact_source_and_guarded_commit_ref_effect_review_required
+
+new_host_continuation_slice:
+  date: 2026-10-12
+  authority: direct_owner_execute_daily_use_goal_and_existing_campaign_delegation
+  state: preparing_setup_and_source_check_effect_review_native_dispatch_requires_later_verdict
+  observed_host: GUNMETAL-WIN_Windows19045_Python3_14_8
+  source_base: bde3d7103b70fd78ad5908134b3d929da95972b9
+  branch_action: create_task_aide_session_containment_new_host_01_existing_checkout_only
+  helper_plan: git_plan_ready_dry_run_task_role_reports_written_false
+  approved_parent_candidate: D:/Projects/AIDE
+  exact_selected_roots:
+    scratch: D:/Projects/AIDE/.aide.local/execution/scratch
+    retained: D:/Projects/AIDE/.aide.local/execution/retained
+    control: D:/Projects/AIDE/.aide.local/execution/control
+  local_state_after_exact_effect_review:
+    - D:/Projects/AIDE/aide/.aide.local/execution.json
+    - exact_selected_roots_above_only
+  selection_rule: fresh_volume_capacity_ownership_and_nonredirected_parent_checks_no_old_config_copy
+  reserve_bytes: 4294967296_physical_and_commit_10737418240_disk
+  effects_candidate:
+    - existing_job_setup_with_exact_selection_no_accounts_ACLs_or_defaults
+    - one_bounded_no_model_source_check_job
+    - at_most_one_strict_MXC_changed_host_backend_prerequisite_job_no_fallback
+  runtime: existing_managed_workspace_and_WindowsJobHost_unchanged_pinned_inputs
+  model_or_provider_calls: not_admitted
+  full_access_fallback: forbidden
+  closure: independently_review_exact_source_selection_jobs_and_effects_before_execution

@@ -1,5 +1,46 @@
 # Scoped host qualification
 
+## New-host continuation — 2026-10-12
+
+The owner requested execution of the daily-use plan and authorized independent
+review agents. The planning candidate922173c8 has actual ACCEPT_WITH_NOTES;
+all notes are nonblocking for planning only. Continue this existing SESSION
+owner; do not reopen the released Lite consumer or publication work.
+
+Objective: configure the existing resource-owner family on the actual new host,
+qualify its deterministic process/check path and assess the exact changed strict
+MXC command route once. Scope is task-local source/evidence and the new-host
+slice in task.yaml; all local setup/native effects require their exact independent
+review before execution. No account/ACL/default change, model, billing fallback,
+target mutation, new checkout or new storage family. The current outer client
+remains unrestricted and cannot earn containment from a controlled child.
+
+Plan:
+1. Pin host/runtime/backend and observe capacity/volume through existing counters.
+2. Prepare exact setup selection under D:/Projects/AIDE, with fresh observed
+   volume identity and finite limits; no old config transfer or alternative drive.
+3. Correct the task-local probe's literal native command syntax and add an explicit
+   reviewed new-host binding, preserving original old-host records/defaults.
+4. Freeze source, selection and at most two job effects for independent review.
+5. After acceptance, run existing setup and a no-model pure source-check job.
+6. Recheck pins/pause/reservations/admission, then run at most one strict MXC job.
+   Keep complete bounded results, original failures, quiescence and retirement.
+7. A negative capability result stops only that protected route until relevant
+   change; continue separately admitted deterministic/supervised work.
+
+One unreviewed invocation intended as help used `codex sandbox windows --help`.
+The installed Windows parser treats `windows --help` as a workload and attempted
+native launch, failing CreateProcessAsUserW2 before that nonexistent executable
+could run. This is an unintended attempt, not native PASS or an accepted probe.
+Persistent side effects are not established; no further default sandbox launch
+is performed. The exact observation is retained in new-host-command-observation.json.
+Official current CLI help/docs use `sandbox ... -- <executable>` on Windows.
+
+Likely blockers: required MXC features are documented for compatible Windows11
+builds, while this host is19045; actual native result still belongs to its subject.
+Missing or changed dependencies hold dispatch without fallback. Source-check
+and useful read-only work can proceed independently under declared boundaries.
+
 ## Objective and scope
 
 Complete one necessary AIDE repository validation through the installed scoped

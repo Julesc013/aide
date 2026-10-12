@@ -1,5 +1,16 @@
 # AIDE Planning Index
 
+## Actual new-host qualification — 2026-10-12
+
+The [existing SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md)
+prepares exact resource setup and a pure source-check job on GUNMETAL-WIN using
+the existing owner and established D resource family. The task-local native
+probe now supports a complete explicit host/executable binding and the installed
+Windows command syntax. Source checks precede a separately reviewed, at-most-one
+strict MXC prerequisite. No model or Full Access fallback is admitted; a native
+refusal holds only that route. The accepted daily-use planning review remains
+bound to922173c8; useful deterministic work continues through bounded owners.
+
 ## Useful daily development — 2026-10-12
 
 The owner requested execution of the reviewed workflow plan. The

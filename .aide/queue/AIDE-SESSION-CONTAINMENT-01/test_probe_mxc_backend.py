@@ -9,6 +9,31 @@ spec.loader.exec_module(probe)
 
 
 class NativeRefusalClassification(unittest.TestCase):
+    def test_native_cli_workload_is_after_separator_without_windows_subcommand(self):
+        command = probe.sandbox_command('codex.exe', 'candidate',
+                                        {'windows.sandbox': 'mxc'}, 'strict',
+                                        ['python.exe', '-I', '-B', '-c', 'pass'])
+        self.assertEqual(command[command.index('sandbox') + 1], '--permission-profile')
+        self.assertNotIn('windows', command)
+        self.assertEqual(command[command.index('--') + 1:],
+                         ['python.exe', '-I', '-B', '-c', 'pass'])
+        self.assertIn('windows.sandbox="mxc"', command)
+
+    def test_incomplete_or_mixed_executor_binding_refuses_before_launch(self):
+        for options in ({'backend': str(probe.BACKEND)},
+                        {'backend': str(probe.BACKEND), 'backend_sha256': 'a' * 64},
+                        {'backend': str(probe.BACKEND), 'backend_sha256': 'a' * 64,
+                         'expected_identity': 'GUNMETAL-WIN\\Jules', 'real_user_prerequisite': True}):
+            with self.subTest(options=options), self.assertRaises(ValueError):
+                probe.executor_binding(**options)
+
+    def test_exact_new_host_binding_preserves_legacy_identity(self):
+        binding = probe.executor_binding(str(probe.BACKEND), 'a' * 64,
+                                         'GUNMETAL-WIN\\Jules')
+        self.assertEqual(binding, (probe.BACKEND, 'a' * 64, 'GUNMETAL-WIN\\Jules'))
+        self.assertEqual(probe.executor_binding(real_user_prerequisite=True)[2],
+                         'BLACKGLASS-WIN1\\Jules')
+
     def test_observed_early_preparation_refusal(self):
         self.assertTrue(probe.native_mxc_unavailable(1, 'Error: failed to prepare MXC sandbox: native MXC is unavailable on this executor\n'))
 

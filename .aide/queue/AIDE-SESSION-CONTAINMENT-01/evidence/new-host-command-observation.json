@@ -1,0 +1,15 @@
+{
+  "schema": "aide.host-command-observation.v1",
+  "date": "2026-10-12",
+  "host": "GUNMETAL-WIN",
+  "backend_version": "0.162.0-alpha.17.2",
+  "intended_action": "read_help",
+  "actual_argv": ["codex", "sandbox", "windows", "--help"],
+  "actual_action": "native_sandbox_launch_attempt_for_nonexistent_windows_executable",
+  "observed_error": "windows sandbox failed: runner failed during SpawnChild: CreateProcessAsUserW failed: 2 (The system cannot find the file specified.) | cwd=D:\\Projects\\AIDE\\aide | cmd=windows --help | env_u16_len=3965 | si_flags=256 | creation_flags=134743040 (Windows error 2)",
+  "workload_executable_started": false,
+  "persistent_side_effects": "unknown_not_established",
+  "qualification": "not_an_admitted_probe_not_PASS",
+  "models_requested": 0,
+  "response": "Retain the mistake; use actual installed parser help and explicit reviewed strict mode before further native effects. Do not retry the mistaken command."
+}
