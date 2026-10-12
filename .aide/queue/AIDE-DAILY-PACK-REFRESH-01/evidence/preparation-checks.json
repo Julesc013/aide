@@ -3,11 +3,14 @@
   "actual_prior_inventory": "PASS854_files_240_directories_4354242bytes",
   "export_reset_and_dispatch": "HELD",
   "input_count": 858,
+  "isolated_import_repair": "explicit_two_pinned_task_modules",
+  "original_attempt": "c02cac0e_FAIL_BEFORE_FIXTURES_OR_RESET",
+  "proposed_total_attempts": 3,
   "replay": "SEPARATE_REVIEW_REQUIRED",
   "review_required_fix": "unknown_until_completed_asset_comparison_original_failure_preserved",
   "schema": "aide.export-effect-preparation.v1",
   "six_fixtures": "NOT_RUN",
   "source_PASS74_reused": true,
   "source_helper_sha256": "ba7f49574a2a54ae3606599392285409a4c5923fadc1c3dd972795363b11deff",
-  "template_sha256": "b61335182b4bb7ecfc0bf0f574c0433dd6f9cfe12cd367a235f2ab98cce1540b"
+  "template_sha256": "2f77170ec03fea820a9b871fc326c3b4ec0adb2c894ba08501c528b7ec62ba95"
 }

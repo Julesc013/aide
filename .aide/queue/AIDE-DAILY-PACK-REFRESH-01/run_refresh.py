@@ -3,13 +3,25 @@ import sys
 sys.dont_write_bytecode = True
 import argparse
 import hashlib
+import importlib.util
 import json
 import os
 from pathlib import Path
 import subprocess
 import unittest
 
-from pack_inventory import REPO, PACK_REL, EXCLUDED, require_same
+def load_task_module(name):
+    path = Path(__file__).resolve().with_name(name + '.py')
+    spec = importlib.util.spec_from_file_location(name, path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+ownership = load_task_module('pack_inventory')
+REPO, PACK_REL, EXCLUDED, require_same = (ownership.REPO, ownership.PACK_REL,
+                                        ownership.EXCLUDED, ownership.require_same)
 
 
 def sha(path):
@@ -40,7 +52,7 @@ def main():
     parser.add_argument('--inventory-sha256', required=True)
     args = parser.parse_args()
     output = Path(os.environ['AIDE_JOB_OUTPUT'])
-    import test_pack_inventory
+    test_pack_inventory = load_task_module('test_pack_inventory')
     tests = unittest.TextTestRunner(verbosity=2).run(
         unittest.defaultTestLoader.loadTestsFromModule(test_pack_inventory))
     test_record = {'tests_run': tests.testsRun, 'failures': len(tests.failures),

@@ -41,7 +41,7 @@ proposed_effect:
   state: HELD_until_exact_wrapper_source_reset_dispatch_review
   owner: existing_build_export_pack_checksums_managed_workspace_WindowsJobHost
   exact_output: D:/Projects/AIDE/aide/.aide/export/aide-lite-pack-v0
-  maximum_jobs: 2
+  maximum_jobs: 3
   config: D:/Projects/AIDE/aide/.aide.local/execution.json
   limits: unchanged_finite_config_canonical8MiB_memory1GiB_reserves4GiB_physical_commit10GiB_disk
   ownership_gate: complete_ordinary_single_link_tracked_checksummed_descendants_and_expected_directories_no_unknown_members
@@ -61,3 +61,10 @@ branch_plan:
   action: task/aide-daily-pack-refresh-01_existing_checkout_only
   reviewer_clarification: existing_delegation_and_prerequisites_cover_ordinary_branch_no_new_gate
 review_gate: exact_wrapper_reset_dispatch_generated_outcome_and_replay_review
+bounded_repair_amendment:
+  evidence: evidence/first-attempt-failure.json
+  cause: isolated_managed_runpy_does_not_add_the_script_sibling_directory
+  correction: explicit_pinned_task_module_loading_only_no_executor_change
+  attempt_budget: three_total_one_retired_import_failure_one_corrected_refresh_one_separate_replay
+  authority: existing_campaign_bounded_child_repair_requires_exact_independent_amendment_and_effect_review
+  limits_and_reserves: unchanged

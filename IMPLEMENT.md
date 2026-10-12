@@ -1,5 +1,14 @@
 # AIDE Implementation Log
 
+## Derived export isolated-import correction — 2026-10-12
+
+One independently admitted export attempt failed before fixtures/reset because
+the managed isolated runpy route omits sibling module search. The job retired
+with full output retained, and actual prior pack comparison remains unchanged.
+Correct the task-local wrapper to load its two pinned files explicitly. Three
+total bounded attempts are proposed for preserved failure, corrected refresh
+and required replay; limits/reserves and executor remain unchanged, review held.
+
 ## Derived export qualification preparation — 2026-10-12
 
 Prepared task-local oracles/orchestration around the unchanged exporter and

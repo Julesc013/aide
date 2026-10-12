@@ -1,0 +1,18 @@
+{
+  "actual_prior_pack_unchanged": "PASS_complete_ownership_and_content_comparison",
+  "collection_and_retirement": "PASS",
+  "error": "ModuleNotFoundError: pack_inventory; isolated managed runpy does not add sibling script directory",
+  "export_reset": "NOT_RUN",
+  "fixtures": "NOT_RUN",
+  "job_id": "c02cac0e1e984d6a98055470d28be64f",
+  "jobs_allocated": 1,
+  "models_requested": 0,
+  "original_exit": 1,
+  "receipt_sha256": "fea3eb190f2f036ae90faced374de2c1a133040d548a55541f264e4bcb989907",
+  "repair_requires_exact_review": true,
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\c02cac0e1e984d6a98055470d28be64f",
+  "schema": "aide.failed-export-attempt.v1",
+  "source_commit": "f8bb46ebe759276c88013bf7ba50ec98408fb4f6",
+  "source_tree": "8e00e99cbdfeb4a3e66d7bc6216485c353e9c0b3",
+  "status": "FAIL_BEFORE_FIXTURES_OR_RESET"
+}

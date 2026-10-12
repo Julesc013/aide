@@ -1,5 +1,14 @@
 # Held exact export refresh effect
 
+## Demonstrated startup repair amendment
+
+Original admitted jobc02cac0e is retired with an isolated sibling-import failure
+before fixtures/reset; full prior pack comparison still passes. The corrected
+wrapper loads only its two exact pinned sibling files by path. It changes no
+executor or permission. Proposed budget is three total attempts, including the
+retained failed startup, one corrected refresh and one separate clean replay;
+the source/amendment/corrected effect needs exact review before allocation.
+
 This candidate permits no reset or dispatch until independent exact source/effect
 review. Source prerequisite is accepted0a91084f, tested helperba7f4957/PASS74.
 The canonical output is only D:/Projects/AIDE/aide/.aide/export/aide-lite-pack-v0.

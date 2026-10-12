@@ -1,0 +1,14 @@
+{
+  "schema": "aide.exact-source-effect-review.v1",
+  "reviewer": "/root/review_new_host_bootstrap",
+  "subject_commit": "f8bb46ebe759276c88013bf7ba50ec98408fb4f6",
+  "subject_tree": "8e00e99cbdfeb4a3e66d7bc6216485c353e9c0b3",
+  "template_sha256": "b61335182b4bb7ecfc0bf0f574c0433dd6f9cfe12cd367a235f2ab98cce1540b",
+  "verdict": "ACCEPT",
+  "required_fixes": [],
+  "optional_notes": [],
+  "effect": "one conditional first job obtaining six fixture checks, repeated complete ownership preflight, then unchanged export and structural checks",
+  "actual_attempt_ref": "first-attempt-failure.json",
+  "generated_result_replay_integration_release": "not_admitted",
+  "review_was_read_only": true
+}

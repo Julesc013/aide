@@ -57,6 +57,18 @@ remain separate from this export-only qualification.
 
 ## Progress
 
+Corrected f8bb46eb has actual independent ACCEPT for one conditional job. Attempt
+c02cac0e exited1 at the sibling import before fixtures/reset. Full original stderr
+is preserved; exact actual pack content/ownership comparison still passes. Job
+is quiescent/retired, collection verified, scratch absent and reservation released.
+
+The managed Python route intentionally uses isolated runpy and does not add a
+script directory to module search. Correct only the wrapper to load its two pinned
+sibling files explicitly, as the earlier source-check wrapper did. Do not change
+the executor or weaken isolation. Prepare exact amendment for three total attempts:
+the preserved import failure, one corrected refresh, and one separate replay.
+All per-job reserves/limits remain unchanged. No new attempt before exact review.
+
 Review00f1f428 requested one failure-record fix: asset unchanged status must stay
 unknown until comparison. Corrected initialization/finalization preserves original
 exceptions and unknown status on comparison failure. Original review retained;

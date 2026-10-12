@@ -3,8 +3,9 @@ task_id: AIDE-DAILY-PACK-REFRESH-01
 status: needs_review
 result: PENDING
 updated_at: 2026-10-12
-planning_state: exact_conditional_refresh_effect_prepared_fixtures_and_reset_held
-jobs_allocated: 0
-maximum_jobs: 2
+planning_state: preserved_isolated_import_failure_exact_bounded_repair_review
+jobs_allocated: 1
+maximum_jobs: 3
+first_attempt_ref: evidence/first-attempt-failure.json
 model_requests: 0
-next_slice: independent_exact_wrapper_and_conditional_refresh_effect_review
+next_slice: exact_three_total_attempt_amendment_and_corrected_import_effect_review
