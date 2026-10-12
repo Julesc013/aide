@@ -1,0 +1,41 @@
+{
+  "checks": {
+    "errors": 0,
+    "failures": 0,
+    "filesystem_containment_claimed": false,
+    "job_id": "70f40199274a49aca8fa7922d086cf35",
+    "models_requested": 0,
+    "modules": [
+      "test_task_binding.py",
+      "test_verifier.py",
+      "test_review_pack.py",
+      "test_token_ledger.py",
+      "test_aide_lite.py",
+      "test_x_os_01_task_os_commands.py"
+    ],
+    "schema": "aide.daily-task-binding.checks.v1",
+    "skips": 0,
+    "stage": "repaired",
+    "status": "PASS",
+    "tests_run": 74
+  },
+  "collection_and_retirement": "PASS",
+  "collection_manifest": {
+    "logs": "d9b203d04fa62f69a80454e5a1803eca314bad2e8eb1a0174e9ab2434f084948",
+    "output": "63fecde9015be7c21252338cb229b6f37c78ed57a2a9835581158d2dfae0d7ee"
+  },
+  "jobs_allocated": 2,
+  "jobs_maximum": 3,
+  "models_requested": 0,
+  "peak_job_memory_bytes": 262856704,
+  "peak_scratch_bytes": 3184382,
+  "receipt_sha256": "384d6f71f23158c9dd8e2e2caf8adac6506cd7217c0a26723ade24bf3270e0f1",
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\70f40199274a49aca8fa7922d086cf35",
+  "retained_bytes": 17327,
+  "retained_files": 6,
+  "schema": "aide.task-binding-verification.v1",
+  "source_commit": "fc8a68b7884ce955aa99536f952b59840bd8badc",
+  "source_package_provenance": "stale_current_source_export_two_failures_preserved_no_release_claim",
+  "source_tree": "880f44fa72f1e8c8547867e419dc95edecfd9899",
+  "whole_task_usage": "unknown"
+}

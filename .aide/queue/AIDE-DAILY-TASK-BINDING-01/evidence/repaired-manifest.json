@@ -1,0 +1,34 @@
+{
+  "adapter": "python",
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    ".aide/queue/AIDE-DAILY-TASK-BINDING-01/run_checks.py"
+  ],
+  "cwd": "D:/Projects/AIDE/aide",
+  "executable_sha256": "434b361fe0c5960d404974feed493db47f2603a1ace2574312104fbed0182c6f",
+  "inputs": {
+    ".aide/queue/AIDE-DAILY-TASK-BINDING-01/run_checks.py": "1ad89c2d0b18259631f98f97fc5121074d5d1e6d38eefbc337484151d45d891c",
+    ".aide/scripts/aide_lite.py": "ba7f49574a2a54ae3606599392285409a4c5923fadc1c3dd972795363b11deff",
+    ".aide/scripts/tests/test_aide_lite.py": "6c9a00d60930f5376f76eeb3e6de26ed3a510c377a69da810f8b5d3f845dc582",
+    ".aide/scripts/tests/test_review_pack.py": "c6a62b1bb29f3e2b1c99608803dcda9945ffe1d0356f64826327644acf3bb228",
+    ".aide/scripts/tests/test_task_binding.py": "487a384b1632a38bbaf5ce8d6c9079a1789a3b4f9e3a16a3fd1ff9928bb793e0",
+    ".aide/scripts/tests/test_token_ledger.py": "c7dbfd465fabce79eb1e2af1f8e9ae762ef4c123a41229d0f50ecbdd04c611a8",
+    ".aide/scripts/tests/test_verifier.py": "c5d87dacd3845a67b75e99e03a75899628a0c9bc49d90a91a19220c4d9da9cb8",
+    ".aide/scripts/tests/test_x_os_01_task_os_commands.py": "388a1da8b6569dae0869972db36521b7c879dcee99460339557f8fc393f8e0fe",
+    "core/execution/__init__.py": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5",
+    "core/execution/managed_workspace.py": "55f1590b37d150088c6023ccf8151adfbc350644e906c64d40b367c4884606d6",
+    "core/execution/provider.py": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e",
+    "core/execution/registered_process.py": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+    "core/protocol/__init__.py": "b131e408f459709ebb03c6becc526f09517d2082f536efd643a8b7812ecdd946",
+    "core/protocol/execution_receipt.py": "966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+    "core/protocol/process_invocation.py": "aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de",
+    "core/runtime/continuous_worker/__init__.py": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
+    "core/runtime/continuous_worker/state.py": "9b65b7953cfea7af9444abe6157b5edfe670a46be90211a8cf8d543855d12105",
+    "core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
+  },
+  "owner": "daily-task-binding-01",
+  "schema": "aide.maintainer-job.v1",
+  "source_commit": "fc8a68b7884ce955aa99536f952b59840bd8badc",
+  "source_tree": "880f44fa72f1e8c8547867e419dc95edecfd9899",
+  "workunit": "AIDE-DAILY-TASK-BINDING-01"
+}

@@ -1,12 +1,13 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-DAILY-TASK-BINDING-01
-status: running
+status: needs_review
 result: PENDING
-planning_state: eight_baseline_failures_preserved_repaired_source_checks_pending
+planning_state: repaired_source_PASS74_exact_acceptance_pending_package_provenance_held
 updated_at: 2026-10-12
 review_gate: exact_source_acceptance_pending
-jobs_allocated: 1
+jobs_allocated: 2
 jobs_maximum: 3
 model_requests: 0
 baseline_ref: evidence/baseline-failures.json
-next_slice: freeze_and_run_repaired_source_compatibility
+verification_ref: evidence/verification.json
+next_slice: exact_source_review_then_separately_admit_current_pack_refresh_and_replay

@@ -59,7 +59,10 @@ test owners and exact source refs in documentation. No whole-task savings claim.
 - Existing identity/rendering/verification owners repaired. Same selected task
   now supplies default review evidence; seven additional refusal/consistency tests
   retain all ten original assertions. AST and actual named pack preparation pass.
-- Freeze repaired source and run focused/legacy compatibility in the second job.
+- Repaired sourcefc8a68b7/tree880f44fa passed74 tests in job70f40199:17 focused
+  regressions plus existing verifier, review, ledger, Lite and Task OS compatibility;
+  zero failures/errors/skips. Full collection/retirement verified, peak memory
+  262,856,704 bytes and peak scratch3,184,382 bytes. Two of three admitted jobs used.
 - Doctor/validate ran and retain the two export/current-source provenance failures.
   Source changes invalidate current-source correspondence; the historical export
   and published assets remain unchanged. Regeneration/replay needs its own bounded

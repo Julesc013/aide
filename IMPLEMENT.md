@@ -1,5 +1,14 @@
 # AIDE Implementation Log
 
+## Daily task-binding source result — 2026-10-12
+
+Existing task identity, packet preparation, verification scope and default review
+evidence now follow the selected WorkUnit. The original baseline retains8 failed
+assertions; repaired frozen source passes74 focused/legacy tests without skips.
+Both jobs collected and retired safely. Exact source acceptance is pending;
+doctor/validate preserve stale current-export provenance failures, so no current
+package or release qualification follows. See the child's verification.json.
+
 ## Daily task-binding regression preparation — 2026-10-12
 
 Prepared the admitted task and ten regression oracles for named WorkUnit meaning,
