@@ -1,44 +1,89 @@
-# AIDE development machine allocation
+# AIDE Latest Task Packet
 
-## CURRENT OWNER DIRECTION
+## PHASE
 
-The owner is installing Windows on another machine for AIDE and DiskEd,
-including local and remote agents. This existing machine is allocated to
-continued FacMan, UniSetup, Syspane and related project work. Their own
-repository queues govern implementation; this AIDE slice changes none of them.
-SESSION/evidence/owner-machine-allocation-2026-10-09.json records the actual
-owner direction, pending inputs and bounded read-only project observations.
+phase: AIDE-DAILY-USE-PLAN-AMENDMENT-01
 
-## CURRENT EVIDENCE AND NEXT ACTION
+## GOAL
 
-Source baseb0640803; subsequent source integration is authoritative only in
-SESSION/evidence/machine-allocation-source-sync-terminal.log. Lite1.0.0 is
-already published and acquired-byte qualified for the local Windows profile.
-Preserve its immutable tag, four assets and existing consumer evidence.
+Prepare and validate the owner's capability-specific daily-use planning amendment
+under AIDE-CONVERGENCE-AND-DELIVERY-01. Acceptance awaits exact independent review.
 
-On this machine, backend0.162.0-alpha.2 refused native MXC before fixtures
-under both the older restricted supervisor and actual Jules stock Job executor.
-Preserve original negative evidence and counter4; no native or model replay
-against unchanged inputs. Neither failure establishes the new machine's
-capability. The old outer session remains unrestricted and unqualified.
+## WHY
 
-Next AIDE executable environment work is on the new machine once ready and
-accessible: discover its identity, hardware, checkout, approved storage and
-finite budgets; qualify actual shell/editing/integration routes; then admit
-local/remote model tasks under supported capabilities and existing spending
-limits. No new provider purchase, API billing fallback, account/ACL change,
-blanket deletion, new storage family or copied old path policy is authorized.
-Local models are intended, not installed or qualified evidence.
+Useful workflows need specific prerequisites and observable outcomes. Preserve
+the shared architecture and P0-P11/C1-C12; begin cost observation, usability and
+selective reuse with the first useful task.
 
-## BOUNDED SOURCE SLICE AND REMAINING OUTCOMES
+## CONTEXT_REFS
 
-Existing SESSION/parent task records, this brief, queue/compiler manifest and
-root indexes only. Independent exact source/guarded-commit/ref review precedes
-integration. No runtime, target, host setup, model, artifact or release changes.
-Current D roots/reserves and existing protected execution component stay intact.
+- `.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/task.yaml`
+- `.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md`
+- `.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/status.yaml`
+- `.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/evidence/next-briefs.md`
+- `docs/roadmap/staged-expansion-roadmap.md`
+- `docs/roadmap/development-workflows.json`
+- `.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md`
+- `.aide/queue/AIDE-SESSION-CONTAINMENT-01/status.yaml`
+- `.aide/policies/review-gates.yaml`
 
-Ordinary constrained editing/read isolation, uncovered outer tools, whole-outcome
-usage, wider ownership-safe cleanup and downstream tooling adoption remain
-unfinished. No repeated model wakeup for unchanged readiness/host blockers.
-A new machine-ready observation or genuine authorized dependency may wake
-only its affected work. Do not manufacture new bookkeeping to fill the wait.
+## ALLOWED_PATHS
+
+The exact allowlist is `task.yaml` scope.allowed_paths. It covers this child,
+named parent routing records, index/intake, current Profile/task packet,
+compiler-owned generated sections, capability-derived views, README/root indexes
+and the two named roadmap files. References to later briefs grant no other paths.
+
+## FORBIDDEN_PATHS
+
+- Runtime or provider implementation, unadmitted `.aide.local/**` changes
+- User credentials, account/ACL changes, unrelated target writes or deletion
+- Released assets/tags, publication, remote or dev/main integration effects
+- Manual AGENTS/skill policy sections and adoption of proposed specifications
+
+## IMPLEMENTATION
+
+Separate implementation prerequisites, activation gates, qualification evidence
+and preferred sequencing at capability granularity. Specify all eight daily-use
+phases and prepare only ready briefs. Correct current published-release prose;
+retain historical evidence and original released bytes. Observe exact new-host
+metadata once without inheriting old qualification or consumed model allowances.
+
+## VALIDATION
+
+- `py -3 -B .aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/evidence/check_plan.py`
+- `py -3 -B .aide/scripts/aide_lite.py doctor`
+- `py -3 -B .aide/scripts/aide_lite.py validate`
+- `py -3 -B scripts/aide compile --dry-run`
+- `git diff --check`, explicit changed-file allowlist and relative-link checks
+- Structured commit check after the concrete prepared-result commit
+
+## EVIDENCE
+
+Task-local baseline/final results, host observation, next briefs, changed-files,
+validation, remaining risks and exact candidate/review state. Unknown controller
+usage remains unknown. Local full logs are ignored; compact findings and hashes
+are portable evidence, not substitutes for an absent raw receipt.
+
+## NON_GOALS
+
+No model/native qualification, task-store replacement, target mutation, blanket
+specification adoption, archive rebuild, release or automatic integration.
+
+## ACCEPTANCE
+
+Typed relationships permit independent early reuse, read-only native/relay,
+lesson-correction and contributor fixtures. Daily-use phases specify positive,
+refusal and recovery outcomes. Costs and harvest start immediately. Independent
+review remains pending; planning and structural PASS do not imply operational use.
+
+## OUTPUT_SCHEMA
+
+Report changed files, checks, commit, exact review state, unresolved boundaries
+and the next dependency-ready action. Preserve the active goal until its actual
+outcomes are achieved or the goal service's blocked threshold is met.
+
+## TOKEN_ESTIMATE
+
+- method: chars / 4, rounded up
+- scope: compact task brief; measure with the existing estimate command

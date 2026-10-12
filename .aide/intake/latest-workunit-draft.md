@@ -1,13 +1,13 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-release-69c6fde88d03
-- title: Release WorkUnit Draft - Block until release gates, tags, and assets are approved
+- workunit_id: draft-release-23187800b50a
+- title: Release WorkUnit Draft - Write blocker report and require reviewed authorization before mutation
 - status: draft
 - task_class: release
 - risk_class: release
 - sizing_class: blocked
-- objective: Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.
+- objective: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - why: AIDE compiles raw prompts into bounded WorkUnits before execution.
 
 ## Preflight
@@ -19,7 +19,7 @@
 ## Implementation Outline
 
 - Reconcile repo state before editing.
-- block until release gates, tags, and assets are approved
+- write blocker report and require reviewed authorization before mutation
 - Stop at review gates and record evidence before execution.
 
 ## Validation
@@ -52,5 +52,5 @@
 
 ## Recovery
 
-- idempotency: prompt_hash:69c6fde88d0344bb7951ec9df5d40b914550ee84bfad208deb9d059a5797e650; status:draft; compile_only:true
+- idempotency: prompt_hash:23187800b50a90d14d4b5adf7f2b97aa15babffb3944f31f6d06cfd4ab0af88c; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

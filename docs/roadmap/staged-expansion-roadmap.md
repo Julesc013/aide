@@ -25,6 +25,96 @@ and review. It is not a published release claim.
 
 A deferred track becomes active only when a later queue item defines scope, allowed paths, evidence, validation, and review gates. Until then, references to these tracks are future intent, not implemented reality.
 
+## Daily-use planning candidate — 2026-10-12
+
+Lite 1.0.0 is published for the recorded T3 local Windows CLI profile. The
+[release report](../../.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+owns the exact artifact and consumer evidence. The 2026-10-08 memory-paused
+three-case continuation and initial publication are completed history.
+
+The owner requested execution of the reviewed workflow plan. The existing
+campaign coordinates bounded children; the
+[planning child](../../.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md)
+prepares this amendment for independent review. P0-P11 and C1-C12 remain
+navigation over existing owners. The adjacent
+[machine-readable plan](development-workflows.json) is an advisory view, not
+another queue, contract, authority source or admission of all later work.
+
+Relationships attach to a capability, not a whole programme:
+
+| Relationship | Meaning |
+|---|---|
+| Implementation prerequisite | An output actually required to implement that bounded capability |
+| Activation gate | Required evidence, profile and authority before operational effects |
+| Qualification gate | Required proof before a support, release, reliability or savings claim |
+| Preferred sequence | Shared opportunity or convenient ordering; never a blocker by itself |
+
+Empty prerequisite lists grant no effects. Task scope and exact review still
+govern admission. Read-only Workbench, a finite offline interchange fixture,
+existing-fact reuse, cost observation, scoped lesson correction and one
+contributor-role fixture can begin without full worker interchangeability,
+cross-machine continuity, training or fleet programmes. Domain apply requires
+its own actual mutation route, authority, validation and recovery proof.
+
+### Daily-use acceptance
+
+| Phase | Observable outcome |
+|---|---|
+| Start | Identify intended outcome, source, existing owner/helper, checks and permitted effects; explain selection and unknown coverage |
+| Work | Complete a useful bounded change through an actual selected route; demonstrate required exclusions with synthetic fixtures |
+| Verify | Retain registered check outcomes, failures/skips and exact source/environment identities |
+| Interrupt | Preserve finished, unfinished and uncertain effects without inventing state |
+| Resume | Another session continues the same WorkUnit; known completed effects are reused and uncertainty reconciled before retry |
+| Conserve | Make a useful regression/helper/explanation/failure lesson discoverable; preserve unique value before owned scratch disposition |
+| Consume | Complete one target-owned ordinary repository task while preserving policy, tools and customization |
+| Explain | Show one compact outcome, applicable evidence, limitations, resources/usage and next action without dispatch or billing |
+
+Positive behaviour, refusal and recovery are specified for each phase in the
+JSON view. One successful pair of AIDE/consumer journeys establishes feasibility.
+A repeated journey and a controlled failure/recovery case provide repeatability
+evidence for their subjects. Neither establishes universal reliability.
+
+### Three implementation horizons
+
+**Now:** combine the ready parts of P0 current truth, P1 actual host route,
+P2 one consumer, P5 cost observation and P6 useful context/reuse/harvest. Start
+accounting and understandable CLI output with the first useful task. Each target
+retains its own local admission; supervised/read-only consumption does not wait
+for optional whole-session containment.
+
+**Next:** strengthen P3 continuation/compatibility, P4 admission/request ownership,
+P5 comparable outcome measurement, P6 conservative impact and P7 another worker
+binding. Small read-only P8 Workbench and legacy/offline proofs exercise the
+interfaces without enabling unqualified mutation.
+
+**Later:** expand P8 native domain authoring, P9 networked ownership, P10 optional
+adaptation and P11 managed ecosystem. Scoped lesson correction and contributor
+fixtures may precede these larger families. Training, marketplaces and tenancy
+do not become Lite release prerequisites.
+
+### Cross-cutting acceptance
+
+- Record preparation, context/transfer, execution, tests, review, repair,
+  integration, recovery and cleanup; preserve unknown usage and failed attempts.
+- Compare accepted quality, human interventions, repeated work, time to accepted
+  outcome, resource peaks/reservations, retained growth and duplication. Child
+  input reduction alone is not total savings.
+- Explain why context was selected. Distinguish known-absent, not-found, unindexed,
+  stale and not-selected information; incomplete impact knowledge broadens checks.
+- Preserve recoverable development value. Promote reusable work under its owner,
+  keep concise failure lessons, and retire proven disposable scratch. Reuse
+  fixtures and transport while keeping the semantic oracle independent.
+- Separate per-checkout mutation ownership, heavy-job admission and shared-service
+  request lifetime. Unenrolled agents are outside enforcement. Observe an
+  unsupported subject once, retain the result, and retry only after relevant change.
+- Track implemented, qualified, supported, released and actually-used outcomes
+  separately. Routine difficulty within an authorized task is not a new grant.
+
+Future Lite releases remain contract-driven. Test published 1.0.0 as the actual
+predecessor, including customization, direct edits, upstream conflict/resolution
+and supported recovery. No planned P0-P11 completion set or dropped mandatory
+Lite behaviour is implied by a version number.
+
 ## Independent development candidates — 2026-10-04
 
 These are candidate increments, not admitted runtime tasks. At this dated planning checkpoint the release Goal
@@ -73,7 +163,7 @@ service enrollment, purchases, migrations or active deployments follow from
 this candidate table. Prefer one deterministic path and small fault fixtures
 before broader operational claims.
 
-## Current qualified checkpoint — 2026-10-05
+## Historical qualified checkpoint — 2026-10-05
 
 Bounded C1 dependency-bound truth, one C8 inspection view and C4 finite lossless
 custody have accepted implementation/integration evidence. The current archive

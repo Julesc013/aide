@@ -1,0 +1,61 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DAILY-USE-PLAN-AMENDMENT-01
+title: Make the existing roadmap executable through useful daily workflows
+type: documentation
+status: needs_review
+planning_state: prepared_machine_checks_pass_independent_review_pending
+result: PREPARED_NOT_ACCEPTED
+created_at: 2026-10-12
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+authority_basis: >
+  Direct owner instruction to set a goal and implement the supplied planning
+  corrections, within the existing campaign delegation. The compiler marks
+  the combined request split-required; this child prepares only the planning
+  and current-status slice, not release, runtime or target effects.
+objective: >
+  Preserve P0-P11 and C1-C12, separate capability prerequisites from activation
+  and qualification gates and preferred sequencing, define daily-use acceptance,
+  and prepare bounded dependency-ready briefs with accounting and conservation.
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/index.yaml
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/profile.yaml
+    - .aide/context/latest-task-packet.md
+    - .aide/generated/**
+    - .aide/reports/capability-*.json
+    - .aide/reports/capability-*.md
+    - AGENTS.md
+    - .agents/skills/**/SKILL.md
+    - README.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/roadmap/staged-expansion-roadmap.md
+    - docs/roadmap/development-workflows.json
+  generated_only: AGENTS and skill managed sections and compiler-owned generated views
+  forbidden_operations:
+    - runtime feature changes or adoption of draft specifications
+    - live model calls or sandbox/account/ACL changes
+    - target repository mutation, unrelated process termination or deletion
+    - archive rebuild, tag, release or publication
+    - dev/main integration or remote mutation without a separate exact effect review
+branch_plan:
+  base: 6f2abc4cd69e0d94f86a00495cb8feeebe20398a
+  helper: git plan returned ready_dry_run on clean main with reports_written false
+  action: create task/aide-daily-use-plan-amendment-01 in the existing checkout
+  authority: existing campaign expressly authorizes bounded task branches
+  dirty_paths: four freshly compiled intake views owned by this child
+verification:
+  - positive and negative structural checks of typed capability relationships
+  - daily-use acceptance covers start, work, verify, interrupt, resume, conserve, consume and explain
+  - every immediate brief names owner, consumer, scope, checks, evidence reuse and stop condition
+  - source-linked release status and unchanged released assets
+  - doctor, validate, generated-view checks, diff scope and structured commit validation
+review_gate: exact independent review required before queue acceptance or source integration

@@ -1,0 +1,26 @@
+﻿[
+    {
+        "command":  "py -3 -B .aide/scripts/aide_lite.py validate",
+        "exit_code":  0,
+        "elapsed_seconds":  15.5083212,
+        "output_bytes":  4833159,
+        "output_sha256":  "5179adf8ab7db0ae0d1f8f87468d52402c53f5866282bd7c0278813ca3fa37be",
+        "full_local_log":  ".aide\\queue\\AIDE-DAILY-USE-PLAN-AMENDMENT-01\\evidence\\final-validate.log",
+        "failures":  [
+
+                     ],
+        "warning_count":  0
+    },
+    {
+        "command":  "py -3 -B .aide/scripts/aide_lite.py doctor",
+        "exit_code":  0,
+        "elapsed_seconds":  14.1947192,
+        "output_bytes":  5092,
+        "output_sha256":  "a975c5b82200160fc5843bc3f3723c4333cfd34a8c85026dab30286128189620",
+        "full_local_log":  ".aide\\queue\\AIDE-DAILY-USE-PLAN-AMENDMENT-01\\evidence\\final-doctor.log",
+        "failures":  [
+
+                     ],
+        "warning_count":  0
+    }
+]

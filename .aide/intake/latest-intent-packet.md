@@ -3,9 +3,9 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 69c6fde88d0344bb7951ec9df5d40b914550ee84bfad208deb9d059a5797e650
-- raw_prompt_excerpt: Adopt the owner standing instruction to handle safe cosmetic commit issues without repeated permission, preserve published history and description/changelog content, and run necessary bounded tests only through existing signed-in OpenAI/...
-- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.
+- raw_prompt_hash: 23187800b50a90d14d4b5adf7f2b97aa15babffb3944f31f6d06cfd4ab0af88c
+- raw_prompt_excerpt: Continue AIDE-CONVERGENCE-AND-DELIVERY-01: amend existing P0-P11 capability dependencies and daily-use acceptance, preserve released Lite 1.0.0 and existing C owners, instrument whole outcomes and selective reuse from the first useful wo...
+- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release
 - risk_class: release
@@ -13,8 +13,8 @@
 - safe_to_execute: false
 - requires_split: true
 - blocked: true
-- blocker_reason: block until release gates, tags, and assets are approved
-- next_action: block until release gates, tags, and assets are approved
+- blocker_reason: write blocker report and require reviewed authorization before mutation
+- next_action: write blocker report and require reviewed authorization before mutation
 - task_execution: false
 - provider_or_model_calls: none
 - network_calls: none
@@ -31,7 +31,7 @@
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/Q27/status.yaml`
+- `.aide/queue/AIDE-CODEX-DISPATCH-GATE-01/status.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/repo/file-inventory.json`
 - `.aide/repo/latest-repo-intelligence.md`
@@ -40,8 +40,8 @@
 
 ## Branch State Refs
 
-- current_branch:task/aide-current-scoped-lite-qualification-01
-- current_role:task
+- current_branch:main
+- current_role:canonical
 - workflow:trunk_with_dev_integration
 - worktree_dirty:false
 

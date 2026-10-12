@@ -1,0 +1,41 @@
+﻿{
+    "kind":  "read_only_planning_host_inventory",
+    "observed_at":  "2026-10-12T08:17:52.8548693Z",
+    "computer":  "GUNMETAL-WIN",
+    "total_ram_bytes":  34315370496,
+    "os_name":  "Microsoft Windows 10 Enterprise",
+    "os_version":  "10.0.19045",
+    "os_build":  "19045",
+    "cpu":  [
+                {
+                    "Name":  "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+                    "NumberOfCores":  4,
+                    "NumberOfLogicalProcessors":  8
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "NVIDIA GeForce GTX 1050 Ti",
+                    "DriverVersion":  "32.0.15.8278"
+                }
+            ],
+    "python":  "Python 3.14.8",
+    "git":  "git version 2.55.0.windows.5",
+    "tool_paths":  [
+                       {
+                           "Name":  "codex.exe",
+                           "Source":  "c:\\Users\\Jules\\.vscode\\extensions\\openai.chatgpt-26.1007.21434-win32-x64\\bin\\windows-x86_64\\codex.exe"
+                       },
+                       {
+                           "Name":  "ollama.exe",
+                           "Source":  "C:\\Users\\Jules\\AppData\\Local\\Programs\\Ollama\\ollama.exe"
+                       },
+                       {
+                           "Name":  "code.cmd",
+                           "Source":  "C:\\Users\\Jules\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code.cmd"
+                       }
+                   ],
+    "qualification":  "metadata_only_no_runtime_or_isolation_claim",
+    "model_calls":  0,
+    "process_termination":  0
+}

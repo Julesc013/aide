@@ -1,5 +1,30 @@
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
+## Daily-use continuation — 2026-10-12
+
+The owner instructed this campaign to execute the supplied planning corrections
+and continue useful dependency-ready improvements. Active Goal state is tracked
+by the current client; this filesystem plan remains the restartable execution
+record. The planning child AIDE-DAILY-USE-PLAN-AMENDMENT-01 prepares typed
+capability relationships and daily-use acceptance for exact independent review.
+Its source candidate does not activate runtime or downstream effects.
+
+The one metadata observation identifies GUNMETAL-WIN, Windows 10 build19045,
+i7-7700K, 34,315,370,496 bytes physical RAM, GTX1050Ti and Python3.14.8. The
+released profile's Python3.14.7 and old-host native results retain their subjects.
+Tool routes, local resource configuration and target ownership still need exact
+qualification; no old path/account/permission result transfers automatically.
+
+Next: finish and review the bounded planning candidate, then continue the existing
+SESSION owner with one selected actual route and synthetic boundary fixtures.
+Observation/accounting and conservative existing-fact reuse begin with the first
+useful task. A target-owned ordinary consumer task proceeds under its own local
+scope; optional autonomous containment does not block otherwise admitted work.
+Preserve Lite1.0.0 and avoid rerunning its completed consumer/publication gates.
+Read-only native projections, offline interchange, lesson correction and narrow
+contributor fixtures remain independently admissible capabilities, not blanket
+dependencies on every larger P milestone.
+
 ## Current owner routing - 2026-10-09
 
 The owner is installing Windows on a different machine for AIDE and DiskEd,

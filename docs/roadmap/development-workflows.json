@@ -1,0 +1,587 @@
+{
+  "schema_version": "aide.development-workflow-plan.v1",
+  "date": "2026-10-12",
+  "authority": "advisory_navigation_not_queue_admission",
+  "parent_campaign": "AIDE-CONVERGENCE-AND-DELIVERY-01",
+  "planning_task": "AIDE-DAILY-USE-PLAN-AMENDMENT-01",
+  "source_baseline": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a",
+  "review_state": "prepared_independent_review_pending",
+  "supersedes": "Only broad sequencing in the external 2026-10-10 advisory checkpoint; preserves P0-P11/C1-C12 identities, existing contracts, queue authority and historical evidence.",
+  "relationship_semantics": {
+    "implementation_prerequisites": "Only capability outputs needed to implement this increment; an empty list does not authorize effects.",
+    "activation_gates": "Capability prerequisites before operational use, plus the named exact task/effect authority and profile.",
+    "qualification_gates": "Evidence needed before support, release, reliability or efficiency claims; source presence alone is insufficient.",
+    "preferred_sequence": "Ordering or shared opportunity only; never an admission blocker."
+  },
+  "milestones": [
+    {
+      "id": "P0",
+      "title": "Accurate current status"
+    },
+    {
+      "id": "P1",
+      "title": "Actual host workflow"
+    },
+    {
+      "id": "P2",
+      "title": "Downstream consumption"
+    },
+    {
+      "id": "P3",
+      "title": "Portable continuity and compatibility"
+    },
+    {
+      "id": "P4",
+      "title": "Shared resources and requests"
+    },
+    {
+      "id": "P5",
+      "title": "Whole-outcome efficiency"
+    },
+    {
+      "id": "P6",
+      "title": "Project intelligence and work conservation"
+    },
+    {
+      "id": "P7",
+      "title": "Replaceable execution"
+    },
+    {
+      "id": "P8",
+      "title": "Native experience and legacy reach"
+    },
+    {
+      "id": "P9",
+      "title": "Networked teams"
+    },
+    {
+      "id": "P10",
+      "title": "Controlled learning"
+    },
+    {
+      "id": "P11",
+      "title": "Managed ecosystem"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "P0.current_view",
+      "milestone": "P0",
+      "title": "Accurate current version, task and evidence view",
+      "horizon": "now",
+      "existing_owner": "C1/C8; existing release, task/status and Reconciler",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [],
+      "acceptance": [
+        "Published Lite and current source remain distinct.",
+        "Historical records are dated; implemented, qualified, supported, released and used are separate dimensions."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P1.host_inventory",
+      "milestone": "P1",
+      "title": "One actual host and route inventory",
+      "horizon": "now",
+      "existing_owner": "AIDE-SESSION-CONTAINMENT-01",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [],
+      "acceptance": [
+        "Observe exact tool/runtime/host identities once.",
+        "Old negative evidence is preserved and never inherited across subjects."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P1.selected_route",
+      "milestone": "P1",
+      "title": "Useful edit/check/collect/retire through one selected route",
+      "horizon": "now",
+      "existing_owner": "AIDE-SESSION-CONTAINMENT-01",
+      "implementation_prerequisites": [],
+      "activation_gates": [
+        "P1.host_inventory"
+      ],
+      "qualification_gates": [],
+      "preferred_sequence": [
+        "P0.current_view"
+      ],
+      "acceptance": [
+        "Actual enabled editing/read/shell routes meet the named profile or remain excluded.",
+        "Exact finite admission, pause, recovery and synthetic excluded-path probes precede claimed protected operation.",
+        "An unchanged unsupported route is dormant; independent authorized work continues."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P2.consumer",
+      "milestone": "P2",
+      "title": "One target-owned downstream ordinary repository task",
+      "horizon": "now",
+      "existing_owner": "Selected target queue; released Lite distribution owner",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [
+        "P1.host_inventory"
+      ],
+      "acceptance": [
+        "Target authority, ownership and actual local Lite prerequisites are satisfied independently.",
+        "Preserve customization, authored content and existing tools.",
+        "Supervised/read-only consumption does not require optional whole-session containment."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P3.continuation",
+      "milestone": "P3",
+      "title": "Portable same-WorkUnit continuation",
+      "horizon": "next",
+      "existing_owner": "C3; work/attempt/context/durable-worker owners",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [
+        "P1.selected_route"
+      ],
+      "acceptance": [
+        "Retain effects, uncertainty, remaining obligations, decisions and budgets.",
+        "Another session resumes without duplicate completed effects or hidden provider history."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P3.compatibility",
+      "milestone": "P3",
+      "title": "Loss-aware readers and required-semantics refusal",
+      "horizon": "next",
+      "existing_owner": "C2; existing protocol validators",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [],
+      "acceptance": [
+        "Safe unfamiliar optional information round-trips.",
+        "Unknown required execution semantics refuse; actual writer/migration guarantees are separately qualified."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P4.resources",
+      "milestone": "P4",
+      "title": "Cooperating-project admission and per-checkout ownership",
+      "horizon": "next",
+      "existing_owner": "C4/C8; existing managed workspace owner",
+      "implementation_prerequisites": [],
+      "activation_gates": [
+        "P1.host_inventory"
+      ],
+      "qualification_gates": [],
+      "preferred_sequence": [],
+      "acceptance": [
+        "Heavy-job admission, checkout mutation ownership and shared-service request ownership are distinct.",
+        "Hard, monitored, cooperative and unsupported limits are explicit.",
+        "Unenrolled agents remain outside enforcement."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P4.requests",
+      "milestone": "P4",
+      "title": "Independent logical request cancellation",
+      "horizon": "next",
+      "existing_owner": "C5; execution-host and recovery owners",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [
+        "P4.resources"
+      ],
+      "acceptance": [
+        "Cancelling one fixture request preserves another.",
+        "Actual shared inference activation requires its own supported binding and resource authority."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P5.observation",
+      "milestone": "P5",
+      "title": "Whole-outcome cost observation from the first useful task",
+      "horizon": "now",
+      "existing_owner": "AIDE-LITE-EFFICIENCY-01; C11/C12",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [],
+      "acceptance": [
+        "Record preparation, context/transfer, execution, tests, review, repair, integration, recovery and cleanup.",
+        "Unknown accounting is null/classified unknown; failed/cancelled attempts remain included.",
+        "Avoid double-counting cumulative/shared counters."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P5.comparison",
+      "milestone": "P5",
+      "title": "Matched accepted-outcome efficiency comparison",
+      "horizon": "next",
+      "existing_owner": "AIDE-LITE-EFFICIENCY-01; C11/C12",
+      "implementation_prerequisites": [
+        "P5.observation"
+      ],
+      "activation_gates": [],
+      "qualification_gates": [
+        "P5.observation"
+      ],
+      "preferred_sequence": [
+        "P2.consumer"
+      ],
+      "acceptance": [
+        "Match task, quality, recipe and relevant environment.",
+        "Report correctness, human effort, continuity, accepted-outcome latency, resources, known usage and duplication.",
+        "Child-only token savings do not establish whole-outcome savings."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P6.reuse",
+      "milestone": "P6",
+      "title": "Answer one concrete owner/helper/test question",
+      "horizon": "now",
+      "existing_owner": "C1/C8; existing inventory, quality, context and knowledge producers",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [
+        "P2.consumer"
+      ],
+      "acceptance": [
+        "Explain selection by task target, interface, caller, regression, decision, failure or ownership constraint.",
+        "Distinguish not-selected, known-absent, not-found, unindexed and stale.",
+        "Use existing facts before adding semantic producers."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P6.harvest",
+      "milestone": "P6",
+      "title": "Selective, cheap work conservation",
+      "horizon": "now",
+      "existing_owner": "Existing module/test/knowledge owners; C4/C7",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [
+        "P6.reuse"
+      ],
+      "acceptance": [
+        "Promote a useful regression/helper only where actual reuse warrants it.",
+        "Keep source-linked failure lessons and diagnostic value; retire established disposable scratch.",
+        "Shared fixtures/transport do not replace an independent semantic oracle."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P6.impact",
+      "milestone": "P6",
+      "title": "Conservative incremental impact and test selection",
+      "horizon": "next",
+      "existing_owner": "ProjectGraph producer/consumer and existing test owners",
+      "implementation_prerequisites": [
+        "P6.reuse"
+      ],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [
+        "P3.continuation"
+      ],
+      "acceptance": [
+        "Incomplete dependencies broaden checks.",
+        "Compare selection against known cases and retain missed regressions.",
+        "Cross-machine consistency and automatic restructuring remain separate, unadmitted capabilities."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P7.role_fixture",
+      "milestone": "P7",
+      "title": "One narrow adapter role reference and conformance fixture",
+      "horizon": "now",
+      "existing_owner": "C9; existing execution/adapter/conformance owners",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [],
+      "acceptance": [
+        "Declare effects, cancellation, storage and unsupported/lost semantics.",
+        "Fixture conformance is narrower than live operational conformance."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P7.bindings",
+      "milestone": "P7",
+      "title": "Interchangeable real execution bindings",
+      "horizon": "next",
+      "existing_owner": "C9/C11; execution-host/capability owners",
+      "implementation_prerequisites": [
+        "P7.role_fixture"
+      ],
+      "activation_gates": [
+        "P1.selected_route"
+      ],
+      "qualification_gates": [],
+      "preferred_sequence": [
+        "P3.continuation",
+        "P4.requests"
+      ],
+      "acceptance": [
+        "One deterministic route and two materially different authorized bindings preserve task semantics.",
+        "Model, account, descendant effort and effect authority remain independent controls."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P8.readonly_view",
+      "milestone": "P8",
+      "title": "Read-only Workbench work/context/evidence projection",
+      "horizon": "next",
+      "existing_owner": "Existing host contract and Dominium Workbench owners",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [
+        "P0.current_view"
+      ],
+      "acceptance": [
+        "Show existing identities and evidence with permission-aware reads.",
+        "No live worker, domain apply or second task authority is implied."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P8.relay",
+      "milestone": "P8",
+      "title": "Bounded legacy/offline task-result interchange proof",
+      "horizon": "next",
+      "existing_owner": "Existing protocol/compatibility and companion-lane owners",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [
+        "P3.compatibility"
+      ],
+      "acceptance": [
+        "Export/inspect a finite task-result bundle with identities and loss/refusal semantics.",
+        "Full IDE support and L0-L4 parity are not inferred."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P8.domain_apply",
+      "milestone": "P8",
+      "title": "One native domain preview/apply/validate/recovery workflow",
+      "horizon": "later",
+      "existing_owner": "Domain-owned capabilities, Dominium bridge and native host",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [
+        "P8.readonly_view",
+        "P6.reuse"
+      ],
+      "acceptance": [
+        "Exact domain authority, qualified mutation/recovery operations and actual host route precede activation.",
+        "Preview, stale-write refusal, post-apply validation and domain recovery have independent evidence.",
+        "Two interchangeable coding backends and a full ProjectGraph are not blanket prerequisites."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P9.network",
+      "milestone": "P9",
+      "title": "Fenced networked work and recovery",
+      "horizon": "later",
+      "existing_owner": "Existing durable-state owners and replaceable transport/store bindings",
+      "implementation_prerequisites": [],
+      "activation_gates": [
+        "P4.requests"
+      ],
+      "qualification_gates": [],
+      "preferred_sequence": [
+        "P3.continuation",
+        "P7.bindings"
+      ],
+      "acceptance": [
+        "Node identity, current ownership generations, stale-worker rejection and durable cancellation.",
+        "Partition/reconnect, uncertain effects and restoration are proven for an exact profile."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P10.lesson_correction",
+      "milestone": "P10",
+      "title": "Source-linked lesson correction and retirement",
+      "horizon": "now",
+      "existing_owner": "C7; knowledge/AAR/context owners",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [
+        "P6.harvest"
+      ],
+      "acceptance": [
+        "Applicability and confidentiality remain scoped.",
+        "Retirement invalidates dependent retrieval; no automatic authority or evaluator rewrite."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P10.adaptation",
+      "milestone": "P10",
+      "title": "Optional governed model adaptation",
+      "horizon": "later",
+      "existing_owner": "C6/C7; model/dataset/routing/evaluation owners",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [
+        "P5.comparison"
+      ],
+      "preferred_sequence": [
+        "P10.lesson_correction",
+        "P7.bindings"
+      ],
+      "acceptance": [
+        "Lineage, license/data authority, held-out evaluator, activation and rollback precede a learned-improvement claim.",
+        "Training and routing-policy changes are independently admitted effects."
+      ],
+      "status": "candidate_unadmitted"
+    },
+    {
+      "id": "P11.ecosystem",
+      "milestone": "P11",
+      "title": "Managed packages, Commander and scale profiles",
+      "horizon": "later",
+      "existing_owner": "Existing SDK/package/conformance/deployment owners",
+      "implementation_prerequisites": [],
+      "activation_gates": [],
+      "qualification_gates": [],
+      "preferred_sequence": [
+        "P7.role_fixture",
+        "P8.domain_apply",
+        "P9.network"
+      ],
+      "acceptance": [
+        "Signing/versioning, migration/revocation, tenant boundaries and restore/scale evidence.",
+        "Marketplace/fleet distribution does not block a first contributor fixture or Lite release."
+      ],
+      "status": "candidate_unadmitted"
+    }
+  ],
+  "daily_use": {
+    "name": "Useful daily development with continuity",
+    "status": "unqualified",
+    "phases": [
+      {
+        "id": "start",
+        "positive": "Task context identifies the intended outcome, existing owner/helper, relevant checks and permitted effects.",
+        "refusal": "Missing or stale facts remain explicit; the graph cannot widen authority.",
+        "recovery": "Source identities and selection reasons can be reconstructed without the full conversation.",
+        "evidence_required": true,
+        "state": "not_yet_qualified"
+      },
+      {
+        "id": "work",
+        "positive": "A useful bounded change uses the actual selected editing route.",
+        "refusal": "Excluded synthetic reads/writes are denied for the claimed profile; unsupported routes refuse.",
+        "recovery": "A stopped attempt retains its proposal and does not imply applied effects.",
+        "evidence_required": true,
+        "state": "not_yet_qualified"
+      },
+      {
+        "id": "verify",
+        "positive": "Registered checks retain outcomes, failures, skips and source/environment identities.",
+        "refusal": "A missing required check cannot become PASS; unknown impact broadens validation.",
+        "recovery": "Collected check receipts survive interruption and are reused only while dependencies match.",
+        "evidence_required": true,
+        "state": "not_yet_qualified"
+      },
+      {
+        "id": "interrupt",
+        "positive": "A controlled interruption identifies finished, unfinished and uncertain effects.",
+        "refusal": "Uncertain effects are never treated as absent or successful by inference.",
+        "recovery": "Original attempt and failure records remain immutable.",
+        "evidence_required": true,
+        "state": "not_yet_qualified"
+      },
+      {
+        "id": "resume",
+        "positive": "Another session continues the same WorkUnit from a portable checkpoint.",
+        "refusal": "Changed source/route invalidates affected evidence; a stale owner cannot act.",
+        "recovery": "Known completed effects are not repeated; uncertainty is reconciled before retry.",
+        "evidence_required": true,
+        "state": "not_yet_qualified"
+      },
+      {
+        "id": "conserve",
+        "positive": "A useful regression, helper, explanation or failed hypothesis is discoverable.",
+        "refusal": "Unknown ownership blocks disposal; an experiment is not automatically a public tool.",
+        "recovery": "Unique value is preserved before owned scratch is retired.",
+        "evidence_required": true,
+        "state": "not_yet_qualified"
+      },
+      {
+        "id": "consume",
+        "positive": "One target-owned ordinary repository task preserves policy, tools and customization.",
+        "refusal": "AIDE adoption does not grant device effects or target release authority.",
+        "recovery": "Target receipts and recovery remain target-owned.",
+        "evidence_required": true,
+        "state": "not_yet_qualified"
+      },
+      {
+        "id": "explain",
+        "positive": "One compact view shows outcome, evidence, limitations, usage and the next action.",
+        "refusal": "Inspection does not mutate, bill, dispatch or repeatedly wake a model.",
+        "recovery": "The view is reconstructible from canonical records, with unknown coverage visible.",
+        "evidence_required": true,
+        "state": "not_yet_qualified"
+      }
+    ],
+    "proof_levels": {
+      "feasibility": "One useful AIDE task and one target-owned consumer journey with honest boundaries.",
+      "repeatability": "A repeated journey plus a controlled failure/recovery case under declared inputs.",
+      "supported_profile": "Only after exact required checks and independent review for the named profile.",
+      "universal_reliability": "Not inferred from these runs."
+    }
+  },
+  "cross_cutting": {
+    "accounting_from_first_task": true,
+    "usability_from_first_task": true,
+    "selective_harvest_from_first_task": true,
+    "no_new_authority_from_plan": true,
+    "unknown_usage": "preserve_unknown",
+    "progress_dimensions": [
+      "implemented",
+      "qualified",
+      "supported",
+      "released",
+      "actually_used"
+    ],
+    "resource_ownership": [
+      "one mutation owner per mutable checkout/resource partition",
+      "finite heavy-job admission among cooperating consumers",
+      "logical request ownership separate from shared server lifetime"
+    ],
+    "waiting": "Existing finite observer; one terminal result; no unchanged resubmission or model polling."
+  },
+  "release": {
+    "current": "AIDE Lite 1.0.0",
+    "next_version": "uncommitted_contract_driven",
+    "required_predecessor": "actual published 1.0.0 with customization, direct edits, conflict/resolution and supported recovery",
+    "advanced_profiles_required_for_lite": false
+  }
+}

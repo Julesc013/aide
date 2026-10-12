@@ -41,10 +41,14 @@ a RAG system, or a project-management tool.
 
 ## Status
 
-AIDE has implemented repo-native control-plane, local Windows lifecycle and
-bounded runtime foundations. Source was synchronized between `main` and `dev`
-at `3d186d05`; later documentation integration is separate from stable
-certification.
+AIDE Lite **1.0.0 is published** as `aide-lite-v1.0.0`, from release commit
+`0f293eb6`. Its declared profile is `aide-lite-local-windows`, **T3 Limited
+Support**, qualified on Windows 10 build 19045 / Python 3.14.7. The
+[release](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0) and
+[recorded qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+bind the delivered bytes, all eight consumer cases, 38 public forms, replay and
+downloaded-asset checks. Development source and release payload identities are
+separate.
 
 The source includes the self-hosting queue, context and evidence tools,
 portable import/update, project-owned customization, owned repair,
@@ -53,15 +57,20 @@ provides explicit storage admission, finite resource limits and retirement;
 real build/test use requires configured local pools. Worker, isolation and
 integration-broker foundations also have source and focused test evidence.
 
-The local Lite candidate has recorded technical review and delivered-consumer
-evidence, but remains unpublished. Its unchanged ZIP predates the scoped host
-adapter. The restricted worker has recorded validation and retirement evidence;
-the outer client's editing/filesystem routes and read isolation remain
-unqualified. Actual model usage, matched efficiency and exact release effects
-retain separate gates. Service, Commander, Workshop/Workbench and
-broader host/provider interfaces remain later work. The candidate local
+The full AIDE campaign remains active. The bounded worker has recorded
+validation and retirement evidence; ordinary model-assisted editing and
+outer-client read/write containment still need actual-route qualification.
+Whole-outcome efficiency, wider ownership-aware cleanup and downstream
+daily-use acceptance remain open. Service, Commander, Workshop/Workbench and
+broader host/provider interfaces require their own qualification. The local
 Windows Lite profile and its limits are defined in
 [product scope and profiles](specs/control-plane/product/scope-and-profiles.md).
+
+The next milestone is a useful development workflow in AIDE and one downstream
+project, with interruption recovery, preserved customization, reusable results
+and clear accounting. The [workflow roadmap](docs/roadmap/staged-expansion-roadmap.md)
+separates implementation prerequisites, activation gates, claim evidence and
+preferred sequencing. Planning status is not operational acceptance.
 
 AIDE's short doctrine:
 

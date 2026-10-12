@@ -1,0 +1,75 @@
+# AIDE Verification Report
+
+## VERIFIER_RESULT
+
+- result: WARN
+- method: deterministic repo-local checks
+- contents_inline: false
+- provider_or_model_calls: none
+
+## CHECK_COUNTS
+
+- info: 3
+- warnings: 18
+- errors: 0
+- checked_files: 0
+- changed_files: 21
+
+## CHANGED_FILES
+
+- unknown: `.aide/context/latest-task-packet.md` (M; does not match active task allowed paths)
+- unknown: `.aide/generated/manifest.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/intake/latest-intent-packet.json` (M; does not match active task allowed paths)
+- unknown: `.aide/intake/latest-intent-packet.md` (M; does not match active task allowed paths)
+- unknown: `.aide/intake/latest-workunit-draft.json` (M; does not match active task allowed paths)
+- unknown: `.aide/intake/latest-workunit-draft.md` (M; does not match active task allowed paths)
+- unknown: `.aide/profile.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml` (M; does not match active task allowed paths)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- unknown: `.aide/reports/capability-command-status.md` (M; does not match active task allowed paths)
+- unknown: `.aide/reports/capability-evidence-bindings.json` (M; does not match active task allowed paths)
+- unknown: `.aide/reports/capability-ledger.md` (M; does not match active task allowed paths)
+- unknown: `.aide/reports/capability-validation.md` (M; does not match active task allowed paths)
+- unknown: `DOCUMENTATION.md` (M; does not match active task allowed paths)
+- allowed: `IMPLEMENT.md` (M; matches active task allowed path)
+- allowed: `PLANS.md` (M; matches active task allowed path)
+- unknown: `README.md` (M; does not match active task allowed paths)
+- unknown: `docs/roadmap/staged-expansion-roadmap.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01` (??; does not match active task allowed paths)
+- unknown: `docs/roadmap/development-workflows.json` (??; does not match active task allowed paths)
+
+## WARNINGS
+
+- diff_scope: does not match active task allowed paths `.aide/context/latest-task-packet.md`
+- diff_scope: does not match active task allowed paths `.aide/generated/manifest.yaml`
+- diff_scope: does not match active task allowed paths `.aide/intake/latest-intent-packet.json`
+- diff_scope: does not match active task allowed paths `.aide/intake/latest-intent-packet.md`
+- diff_scope: does not match active task allowed paths `.aide/intake/latest-workunit-draft.json`
+- diff_scope: does not match active task allowed paths `.aide/intake/latest-workunit-draft.md`
+- diff_scope: does not match active task allowed paths `.aide/profile.yaml`
+- diff_scope: does not match active task allowed paths `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
+- diff_scope: does not match active task allowed paths `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
+- diff_scope: does not match active task allowed paths `.aide/reports/capability-command-status.md`
+- diff_scope: does not match active task allowed paths `.aide/reports/capability-evidence-bindings.json`
+- diff_scope: does not match active task allowed paths `.aide/reports/capability-ledger.md`
+- diff_scope: does not match active task allowed paths `.aide/reports/capability-validation.md`
+- diff_scope: does not match active task allowed paths `DOCUMENTATION.md`
+- diff_scope: does not match active task allowed paths `README.md`
+- diff_scope: does not match active task allowed paths `docs/roadmap/staged-expansion-roadmap.md`
+- diff_scope: does not match active task allowed paths `.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01`
+- diff_scope: does not match active task allowed paths `docs/roadmap/development-workflows.json`
+
+## ERRORS
+
+- none
+
+## EVIDENCE_REFS
+
+
+## LIMITS
+
+- Structural verifier only; no LLM judging.
+- Diff scope is path-based only.
+- Secret scan is heuristic only.
+- Token counts use chars / 4 approximation.

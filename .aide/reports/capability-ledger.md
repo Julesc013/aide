@@ -3,8 +3,8 @@
 - command: `capability ledger`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-current-scoped-lite-qualification-01`
-- current_commit: `d2c8e83103aa773490bb249ed7886cccc9d2412e`
+- current_branch: `task/aide-daily-use-plan-amendment-01`
+- current_commit: `6f2abc4cd69e0d94f86a00495cb8feeebe20398a`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

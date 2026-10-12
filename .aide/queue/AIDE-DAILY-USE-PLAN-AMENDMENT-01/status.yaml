@@ -1,0 +1,16 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-DAILY-USE-PLAN-AMENDMENT-01
+status: needs_review
+planning_state: prepared_machine_checks_pass_independent_review_pending
+result: PREPARED_NOT_ACCEPTED
+updated_at: 2026-10-12
+independent_review: pending_not_fabricated
+baseline_validation: FAIL_14_preserved_task_packet_and_stale_projection
+host_observation: metadata_only_GUNMETAL_WIN_i7_7700K_32GB_Win19045_Python3_14_8
+operational_activation: not_authorized_by_planning_candidate
+final_validate: exit_0
+final_doctor: exit_0
+plan_checks: PASS_22_capabilities_8_phases_6_negative_cases
+diff_scope: exact_child_allowlist_PASS_builtin_verifier_WARN18_wrong_active_task
+runner_setup: absent_new_host_config_and_execution_pools_not_created
+reviewer_choice: requested_owner_authorization_for_separate_review_agents

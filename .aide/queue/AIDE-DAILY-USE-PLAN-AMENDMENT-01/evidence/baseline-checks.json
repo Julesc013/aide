@@ -1,0 +1,52 @@
+﻿[
+    {
+        "command":  "py -3 -B .aide/scripts/aide_lite.py doctor",
+        "exit_code":  1,
+        "elapsed_seconds":  35.7119146,
+        "output_bytes":  5085,
+        "output_sha256":  "24d5c736358b8fc6e77edc53624da30354f43307c29c29d8a205f37ce37721fe",
+        "full_local_log":  ".aide\\queue\\AIDE-DAILY-USE-PLAN-AMENDMENT-01\\evidence\\baseline-doctor.log",
+        "findings":  [
+                         "status: FAIL",
+                         "- INFO Q09 status: passed",
+                         "- INFO Q10 status: passed",
+                         "- INFO Q11 status: passed",
+                         "- INFO Q12 status: passed",
+                         "- INFO Q13 status: passed",
+                         "- INFO Q14 status: passed",
+                         "- INFO Q15 status: passed",
+                         "- INFO Q16 status: passed",
+                         "- INFO Q17 status: passed",
+                         "- INFO Q18 status: passed",
+                         "- INFO Q19 status: passed",
+                         "- INFO Q20 status: passed",
+                         "- PASS controller artifact exists: .aide/controller/failure-taxonomy.yaml",
+                         "- PASS adapter status: current; no action needed"
+                     ]
+    },
+    {
+        "command":  "py -3 -B .aide/scripts/aide_lite.py validate",
+        "exit_code":  1,
+        "elapsed_seconds":  15.8604399,
+        "output_bytes":  4833851,
+        "output_sha256":  "1f364d834f781ab30deaab0151c7a7b4b512e65f80f9f2665facbbec74c27760",
+        "full_local_log":  ".aide\\queue\\AIDE-DAILY-USE-PLAN-AMENDMENT-01\\evidence\\baseline-validate.log",
+        "findings":  [
+                         "status: FAIL",
+                         "- PASS controller artifact exists: .aide/controller/failure-taxonomy.yaml",
+                         "- PASS Q31 pack includes governance file: files/.aide/tests/failure-family.schema.json",
+                         "- PASS Q31 manifest lists governance file: files/.aide/tests/failure-family.schema.json",
+                         "- PASS Q31 pack includes governance file: files/.aide/tests/examples/failure-family.example.json",
+                         "- PASS Q31 manifest lists governance file: files/.aide/tests/examples/failure-family.example.json",
+                         "- PASS changelog JSON contains warnings",
+                         "- PASS release-notes JSON contains warnings",
+                         "- PASS .aide/policies/file-quality.yaml contains anchor: orphan_candidates_warn_never_delete",
+                         "- PASS .aide/policies/module-quality.yaml contains anchor: large_file_warning_threshold",
+                         "- PASS quality record contains required field: warnings",
+                         "- PASS root inventory contains required field: warnings",
+                         "- PASS tool inventory contains required field: warnings",
+                         "- PASS tool adapter map contains required field: warnings",
+                         "- PASS tool wrapper plan wrap-tool-aide-queue-qfix-03-warning-review-reconciliation-evidence-generated-artifact-refresh-md contains required field: plan_id"
+                     ]
+    }
+]

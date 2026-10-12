@@ -1,5 +1,24 @@
 # AIDE Planning Index
 
+## Useful daily development — 2026-10-12
+
+The owner requested execution of the reviewed workflow plan. The
+[existing campaign](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md)
+routes the [bounded planning amendment](.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md)
+before actual-route qualification and target-owned consumption. The
+[roadmap](docs/roadmap/staged-expansion-roadmap.md) and its
+[advisory dependency view](docs/roadmap/development-workflows.json) preserve
+P0-P11/C1-C12, separate implementation/activation/claim gates from preferred
+sequencing, and define start/work/verify/interrupt/resume/conserve/consume/explain
+acceptance. Whole-outcome observation, understandable output and selective reuse
+begin with the first workflow. This candidate awaits independent review.
+
+Actual host metadata is GUNMETAL-WIN, i7-7700K, approximately32GiB RAM,
+GTX1050Ti, Windows10 build19045/Python3.14.8. Metadata is not route qualification.
+Released Lite1.0.0, prior failures and five reused plus three completed consumers
+remain preserved. No target implementation, model call or release effect follows
+from this planning amendment.
+
 ## Owner machine allocation - 2026-10-09
 
 The owner is installing Windows on another machine for AIDE and DiskEd

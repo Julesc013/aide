@@ -1,5 +1,18 @@
 # AIDE Documentation Index
 
+## Daily-use planning and current release — 2026-10-12
+
+The [existing roadmap](docs/roadmap/staged-expansion-roadmap.md) and
+[advisory capability relationships](docs/roadmap/development-workflows.json)
+define the next useful development milestone, four distinct relationship types,
+early accounting/usability/harvest and independent smaller capabilities. The
+[planning child](.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md) owns
+the candidate, checks and next briefs; independent acceptance remains pending.
+The [release report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
+records published Lite1.0.0 and completed consumer/replay/acquisition checks.
+Historical checkpoints below retain their original subjects. Host metadata and
+support qualification are separate; no universal readiness follows from the plan.
+
 ## Owner development machine allocation - 2026-10-09
 
 [Owner-direction record](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/owner-machine-allocation-2026-10-09.json),

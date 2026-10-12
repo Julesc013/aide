@@ -4,6 +4,15 @@ policy: .aide/queue/policy.yaml
 default_concurrency: 1
 canonical_source: .aide/queue
 items:
+  - id: AIDE-DAILY-USE-PLAN-AMENDMENT-01
+    status: needs_review
+    planning_state: prepared_machine_checks_pass_independent_review_pending
+    title: Make the existing roadmap executable through useful daily workflows
+    task: .aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/prompt.md
+    evidence: .aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/evidence
+    description: Owner-requested bounded planning candidate; preserves P/C owners and released Lite, with independent acceptance and operational gates outstanding.
   - id: AIDE-CAPABILITY-EVIDENCE-VALIDITY-01
     status: passed_with_notes
     planning_state: qualified_source_native_complete_ref_state_uses_terminal_receipt

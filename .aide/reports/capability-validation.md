@@ -3,8 +3,8 @@
 - command: `capability validate`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-current-scoped-lite-qualification-01`
-- current_commit: `b1e308efa9733b1807dc2986b01234ef9418b00b`
+- current_branch: `task/aide-daily-use-plan-amendment-01`
+- current_commit: `6f2abc4cd69e0d94f86a00495cb8feeebe20398a`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

@@ -1,5 +1,25 @@
 # AIDE Implementation Log
 
+## Daily-use planning candidate — 2026-10-12
+
+Prepared the owner's workflow amendment through
+[AIDE-DAILY-USE-PLAN-AMENDMENT-01](.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md).
+The existing roadmap now gives capability-specific relationships, eight daily-use
+acceptance phases, immediate accounting/usability/reuse and three horizons.
+Its adjacent JSON is advisory navigation, not another task authority. README and
+Profile current focus identify published Lite1.0.0; the old roadmap checkpoint is
+explicitly historical. Original release bytes and specification drafts are unchanged.
+
+Baseline doctor/validate results are preserved in task evidence: validate found
+13 missing task-packet sections and stale capability input bindings. An explicit
+current packet and derived projection refresh are planned; validation never
+silently refreshes its subject. One host metadata observation identifies the
+actual new machine and changed Python; no model/native qualification occurred.
+Final doctor/validate passed with no failure/warning lines. Plan checks cover22
+capabilities/eight phases and reject six invalid plans. Exact child scope/link
+checks pass; the built-in verifier's18 wrong-task scope warnings remain disclosed.
+Independent acceptance and operational/target effects remain outstanding.
+
 ## Owner machine allocation reconciled - 2026-10-09
 
 The owner's new AIDE/DiskEd development machine and existing-machine
