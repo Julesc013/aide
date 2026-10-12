@@ -1,5 +1,12 @@
 # AIDE Planning Index
 
+## Daily task-binding implementation — 2026-10-12
+
+[AIDE-DAILY-TASK-BINDING-01](.aide/queue/AIDE-DAILY-TASK-BINDING-01/ExecPlan.md)
+has independent bounded admission. First preserve regressions against unchanged
+source, then repair named-task briefs and packet-bound verification through their
+existing owners. Exact source acceptance and integration remain separate.
+
 ## 2026-10-12 — New-host terminal and next useful task
 
 SESSION new-host setup/source checks pass; strict MXC is unavailable on the exact

@@ -1,5 +1,7 @@
 # AIDE Documentation Index
 
+- [Daily task-binding plan](.aide/queue/AIDE-DAILY-TASK-BINDING-01/ExecPlan.md): bounded repair of task preparation and verification with exact independent admission.
+
 - [SESSION new-host qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-qualification.json): eight source checks pass, native MXC unavailable; exact retained evidence and boundary limitations.
 
 ## New-host execution preparation — 2026-10-12

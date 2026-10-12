@@ -1,0 +1,64 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DAILY-TASK-BINDING-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Bind compact task preparation and verification to the selected WorkUnit
+type: implementation
+status: running
+result: PENDING
+objective: Correct demonstrated named-task packet and unrelated verification scope through existing owners.
+authority_basis: direct_owner_daily_use_goal_campaign_delegation_and_independent_bounded_admission
+admission:
+  proposal_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/daily-task-binding-admission.log
+  sha256: 101f243f816ee8855305e7ad0283859b994dd30de607addac4174d1e2c5a915d
+  reviewer: /root/review_daily_use_plan
+  verdict: ACCEPT
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-DAILY-TASK-BINDING-01/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/index.yaml
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_verifier.py
+    - .aide/scripts/tests/test_task_binding.py
+    - .aide/context/latest-task-packet.md
+    - .aide/reports/capability-*.json
+    - .aide/reports/capability-*.md
+    - .aide/verification/latest-verification-report.md
+    - .aide/generated/**
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/task-packets.md
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+  forbidden_operations:
+    - new task store, scheduler, status database or source restructuring
+    - models, providers, targets, accounts, ACLs or global configuration
+    - reserve reduction, unrelated process termination or package/publication work
+    - main/dev integration or remote mutation without separate exact effect review
+acceptance:
+  - Known named WorkUnit yields deterministic identity, queue refs and actual scope.
+  - Default verification and explicit task packet select that packet's WorkUnit.
+  - Other active tasks and incidental later IDs cannot override the selected task.
+  - Explicit missing, malformed or escaping identities refuse without broad scope fallback.
+  - Scope projection remains distinct from implementation and activation authority.
+  - Legacy Q generic-packet compatibility remains tested and disclosed.
+  - Repeated preparation is deterministic and original failure evidence preserved.
+local_test_effect:
+  owner: unchanged_managed_workspace_and_WindowsJobHost
+  config: D:/Projects/AIDE/aide/.aide.local/execution.json
+  limits: unchanged_reviewed_new_host_finite_config_no_model_allowance
+  maximum_jobs: 3
+  workload: named_pure_tests_in_owned_scratch_no_canonical_outputs
+  source_binding: frozen_HEAD_tree_and_exact_known_inputs_Python_digest
+  recovery: retained_outputs_digests_quiescence_scratch_retirement_reservation_release
+branch_plan:
+  base: 8a473d9ceb30adf5f4d00d5f40f45dd0a4671638
+  helper_result: ready_dry_run_existing_task_role_upstream_unavailable_disclosed
+  action: task/aide-daily-task-binding-01_existing_checkout
+  prerequisite: both_SESSION_jobs_retired_no_active_record_clean_source
+review_gate: exact_source_acceptance_then_separate_integration_effect

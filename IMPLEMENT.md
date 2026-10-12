@@ -1,5 +1,12 @@
 # AIDE Implementation Log
 
+## Daily task-binding regression preparation — 2026-10-12
+
+Prepared the admitted task and ten regression oracles for named WorkUnit meaning,
+scope selection, refusal and legacy behavior. Production source is unchanged for
+the baseline managed run. Actual tests remain pending; the task-local wrapper
+uses only named modules, existing resource owner and retained output.
+
 ## 2026-10-12 — SESSION new-host operational checkpoint
 
 Existing managed setup configured the selected GUNMETAL-WIN resource roots and

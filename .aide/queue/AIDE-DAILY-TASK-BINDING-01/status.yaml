@@ -1,0 +1,11 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-DAILY-TASK-BINDING-01
+status: running
+result: PENDING
+planning_state: admitted_reproducing_regressions_before_source_fix
+updated_at: 2026-10-12
+review_gate: exact_source_acceptance_pending
+jobs_allocated: 0
+jobs_maximum: 3
+model_requests: 0
+next_slice: freeze_and_run_reproducing_regressions

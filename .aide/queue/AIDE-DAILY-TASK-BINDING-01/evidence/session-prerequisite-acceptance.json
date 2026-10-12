@@ -1,0 +1,11 @@
+{
+  "schema": "aide.exact-independent-source-acceptance.v1",
+  "reviewer": "/root/review_new_host_bootstrap",
+  "subject_commit": "8a473d9ceb30adf5f4d00d5f40f45dd0a4671638",
+  "subject_tree": "27704504c8183c8d9b920eaf212608e57a898fe9",
+  "verdict": "ACCEPT",
+  "required_fixes": [],
+  "optional_notes": [],
+  "scope": "SESSION exact setup, eight checks and negative native result checkpoint only",
+  "integration_or_native_retry_admitted": false
+}

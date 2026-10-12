@@ -4,6 +4,14 @@ policy: .aide/queue/policy.yaml
 default_concurrency: 1
 canonical_source: .aide/queue
 items:
+  - id: AIDE-DAILY-TASK-BINDING-01
+    status: running
+    planning_state: admitted_reproducing_regressions_before_source_fix
+    title: Bind compact task preparation and verification to the selected WorkUnit
+    task: .aide/queue/AIDE-DAILY-TASK-BINDING-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DAILY-TASK-BINDING-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DAILY-TASK-BINDING-01/prompt.md
+    evidence: .aide/queue/AIDE-DAILY-TASK-BINDING-01/evidence
   - id: AIDE-DAILY-USE-PLAN-AMENDMENT-01
     status: passed_with_notes
     planning_state: independently_accepted_planning_source_operational_gates_retained
