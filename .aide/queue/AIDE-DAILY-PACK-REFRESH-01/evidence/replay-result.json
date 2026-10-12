@@ -1,0 +1,79 @@
+{
+  "after_bytes": 4367105,
+  "after_files": 855,
+  "collection_and_retirement": "PASS",
+  "collection_manifest": {
+    "logs": "12eb8e5e69fd4b82649ae402c6e1abbdd6bdf8ae771b1529af658e4010900ddf",
+    "output": "3b73de82e70050d0c5bf50f25eab7c4f7b3780232ba3d48aad65c6182e181102"
+  },
+  "controller_preflight_corrections": [
+    "Before allocation, raw-file SHA256 was incorrectly compared with the semantic config digest.",
+    "Before allocation, load_config third return was incorrectly treated as digest. Both failed assertions had no job or effect; actual existing owner.digest(config) then passed."
+  ],
+  "every_pack_byte_equal": true,
+  "installed_consumer_integration_release_accepted": false,
+  "job_id": "0135cdc9c22246e58153e9fb997c2644",
+  "jobs_allocated": 3,
+  "maximum_jobs": 3,
+  "models_requested": 0,
+  "operations": {
+    "doctor": {
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 5181,
+      "stdout_sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21"
+    },
+    "export-pack": {
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 292,
+      "stdout_sha256": "bd0247f0d954ad2e10636a85e9a69dbe7c5be54857d998e69856f508b54b1ecf"
+    },
+    "pack-status": {
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 232,
+      "stdout_sha256": "17eb7a713285498d636c31fd8f0e50e9b1a632f16f230bd1f2db48a19f2bb673"
+    },
+    "validate": {
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 4894074,
+      "stdout_sha256": "9fcc81de229be4977b768c54c295b56fae0f76abcc129d7433403d35b1fec5b3"
+    }
+  },
+  "outcome_acceptance": "HELD_exact_review",
+  "ownership_tests": {
+    "errors": 0,
+    "failures": 0,
+    "skips": 0,
+    "tests_run": 6
+  },
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4367105
+    },
+    "memory_bytes": 240201728,
+    "scratch_bytes": 5186560
+  },
+  "published_release_unchanged": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83",
+    "aide-lite-v1.0.0.manifest.json": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb",
+    "aide-lite-v1.0.0.tar.gz": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a",
+    "aide-lite-v1.0.0.zip": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b"
+  },
+  "qualification_sha256": "484d722c333fa6e497e49b4526b01ff523dce9c52a8cdd39a12bc81f97b8a72a",
+  "receipt_sha256": "92648944e354d2989852f9138f4a59ec24632b30810f2c468828cc933c10d048",
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\0135cdc9c22246e58153e9fb997c2644",
+  "retained_bytes": 5301228,
+  "schema": "aide.derived-export-replay-result.v1",
+  "source_PASS74_reused": true,
+  "source_commit": "c15adb159785601f87f82588086c558a4d2cff8f",
+  "source_tree": "d2dda244f118d2366e7907bcd725f54308270db9",
+  "status": "PASS",
+  "whole_task_model_usage": "unknown"
+}

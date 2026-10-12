@@ -113,3 +113,17 @@ and was guarded-committed at3f956ce8 with structured latest-commit PASS. Its fre
 855-file/240-directory inventory and three metadata preimages are retained.
 Prepare the separately reviewed final attempt using unchanged wrapper/owner.
 Replay source/effect remains held until exact clean frozen-subject acceptance.
+
+### Current actual final replay - exact outcome acceptance pending
+
+Source/effectc15adb15 received independent ACCEPT for one conditional final job.
+Job0135cdc9 completed six fixtures and all four commands with zero failures or
+skips; every byte of all855pack files is equal, including excluded metadata.
+Four published assets remain equal. Full logs/receipt/qualification and collection
+digests independently recomputed; retirement, quiescence, scratch absence and
+reservation release pass. PeakJob240,201,728bytes and scratch5,186,560bytes.
+All three attempts are spent; no further dispatch is authorised. Exact outcome
+acceptance and evidence closure are next, then separately admitted installed
+consumer preparation5824d3e (actual independent ACCEPT, operational gate retained).
+Controller preflight bookkeeping errors are preserved separately from allocated
+jobs; they changed no input/effect/reserve and required no retry allocation.

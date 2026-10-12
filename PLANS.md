@@ -1,5 +1,12 @@
 # AIDE Planning Index
 
+## Final export replay actual result - 2026-10-12
+
+Job0135cdc9 passes six fixtures and full structural checks and reproduces every
+pack byte. Exact outcome acceptance/closure is next; all three attempts are spent.
+Installed-binding preparation proposal5824d3e is independently accepted, with
+operational qualification held behind accepted replay and its own exact effect.
+
 ## Final export replay preparation - 2026-10-12
 
 Exact generated outcome is independently accepted and guarded-committed at

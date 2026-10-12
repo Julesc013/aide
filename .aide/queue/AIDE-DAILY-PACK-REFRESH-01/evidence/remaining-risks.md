@@ -1,10 +1,13 @@
 # Remaining risks
 
-Reset/dispatch are held behind exact independent review and six passing fixtures
-plus fresh actual recursive ownership preflight. Unknown or changed ownership
-must preserve the pack. Preflight assumes trusted serialized source mutation;
-it is not protection from malicious concurrent filesystem writers or outer clients.
-Partial canonical output after interruption requires reconciliation before retry.
-Second replay needs reviewed committed generated result and its own exact subject.
-Export-only qualification never completes consumer, downstream, integration,
-matched efficiency, protected model route or release requirements.
+Actual refresh and final clean replay pass; exact outcome acceptance is pending.
+All3authorised attempts are spent. Preserve original startup failure and its full
+logs, each independent verdict, prior ownership/metadata/Git identities and all
+published release evidence. No further job is admitted through this child.
+
+Current ownership checks assume trusted serialized mutation; they do not prove
+malicious writer, outer-client filesystem or aggregate model-session containment.
+Installed consumer qualification, real target-owned work, same-WorkUnit client
+continuation, matched whole-outcome efficiency and integration/release remain
+separate. Native MXC is unavailable on the observed route and remains dormant.
+Source74PASS reuse applies only while source/tests/execution dependencies match.

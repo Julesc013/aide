@@ -1,5 +1,16 @@
 # Validation
 
+Current final replay PASS (exact outcome acceptance pending): job0135cdc9 used
+acceptedc15adb15/source-tree d2dda244. All855pack hashes and4,367,105bytes are
+identical before/after. Six fixtures pass0fail/error/skip; export/doctor/validate/
+pack-status all exit0. Full validate4,894,074bytes has no failure/warning lines.
+Receipt/qualification and both collected-tree hashes rechecked. Four published
+assets unchanged; sourceba7/PASS74 remains reusable. Retired/quiescent, scratch
+absent and reservation released. Three of three attempts spent, no retry.
+Exact replay-result.json binds all recorded counters and retained evidence.
+
+Historical phase observations below are preserved and superseded by this result.
+
 Actual corrected effect015de64c has independent ACCEPT. Jobc74e8a7f passed six
 fixtures with zero failures/errors/skips; export, doctor, validate and pack-status
 all exit0. Complete logs/digests and exact source/tree are in refresh-result.json.

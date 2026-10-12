@@ -1,0 +1,14 @@
+{
+  "schema": "aide.independent-source-effect-review.v1",
+  "subject_commit": "c15adb159785601f87f82588086c558a4d2cff8f",
+  "subject_tree": "d2dda244f118d2366e7907bcd725f54308270db9",
+  "reviewer": "/root/review_new_host_bootstrap",
+  "verdict": "ACCEPT",
+  "template_sha256": "8b4f5edc9d3ac64ce273092a07271551afb1d07a1c44dd9d87502685864756fd",
+  "required_fixes": [],
+  "job_allowance": "one_conditional_final_attempt3of3_only",
+  "effective_substitutions": "source_commit_and_source_tree_only",
+  "checks": "17paths scoped,862pins/executable,855file240directory inventory/preimages, unchanged portable/source/export/asset bytes, config/reserves and noactive/staging; require all replay/equality/collection/retirement checks.",
+  "read_only": true,
+  "outcome_consumers_integration_release_accepted": false
+}

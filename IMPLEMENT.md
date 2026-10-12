@@ -1,5 +1,12 @@
 # AIDE Implementation Log
 
+## Final export replay verification - 2026-10-12
+
+Independently accepted effectc15adb15 completed final job0135cdc9. Six fixtures,
+four commands, all855pack bytes and four unchanged published assets pass. Complete
+collection hashes/receipt checked; owned scratch retired and reservation released.
+Source74PASS reused; no further retry allowance or installed/release claim.
+
 ## Derived export generated-result acceptance - 2026-10-12
 
 Independent review required two record corrections, both repaired without rerun
