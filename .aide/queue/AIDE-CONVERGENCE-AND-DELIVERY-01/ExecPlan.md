@@ -1,5 +1,15 @@
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
+## Current derived export acceptance and final replay - 2026-10-12
+
+DAILY-TASK-BINDING source74PASS remains applicable. DAILY-PACK-REFRESH corrected
+job passed six ownership fixtures and full structural checks; exact generated
+outcome837ea92b is independently ACCEPTed and committed at3f956ce8. Published
+Lite1.0.0 assets remain unchanged. The fresh inventory/metadata pins prepare the
+third and final allowed attempt: a separately reviewed clean-source byte replay.
+No replay, installed consumer, integration, downstream or release claim follows.
+Native MXC remains dormant; continue independent admitted no-model work.
+
 ## Accepted useful task-binding source — 2026-10-12
 
 DAILY-TASK-BINDING source0a91084f is independently accepted with one source-only

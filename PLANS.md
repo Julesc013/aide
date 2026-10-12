@@ -1,5 +1,12 @@
 # AIDE Planning Index
 
+## Final export replay preparation - 2026-10-12
+
+Exact generated outcome is independently accepted and guarded-committed at
+3f956ce8. Fresh complete ownership and separately preserved metadata pin the
+last authorised replay attempt; source/effect acceptance remains held. Installed
+consumer and downstream tasks, integration and release remain separate.
+
 ## Current export proof and replay gate — 2026-10-12
 
 Actual corrected refresh passes six ownership checks and all structural commands.

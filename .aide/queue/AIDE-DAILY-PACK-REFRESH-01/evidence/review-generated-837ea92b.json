@@ -1,0 +1,13 @@
+{
+  "schema": "aide.independent-generated-outcome-review.v1",
+  "reviewer": "/root/review_new_host_bootstrap",
+  "subject_tree": "837ea92b93e0e47e8904cf1452b32ede10f22039",
+  "base_commit": "015de64c9d110470723e49a3760c8715c6ce532f",
+  "verdict": "ACCEPT",
+  "required_fixes": [],
+  "optional_notes": [],
+  "committed_subject": "3f956ce8d62a9304e7127d2656debf7d4b8dea6c",
+  "read_only": true,
+  "replay_integration_release_accepted": false,
+  "checks": "Both record corrections satisfied; only three records differ from prior tree, job/source/generated/asset bytes unchanged and prior independent full evidence checks reusable."
+}
