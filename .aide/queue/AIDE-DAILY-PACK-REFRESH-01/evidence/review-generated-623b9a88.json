@@ -1,0 +1,23 @@
+{
+  "schema": "aide.independent-generated-outcome-review.v1",
+  "subject_tree": "623b9a888a373311f1c6bfb66d2ea6cc2a3e0ff8",
+  "base_commit": "015de64c9d110470723e49a3760c8715c6ce532f",
+  "reviewer": "/root/review_new_host_bootstrap",
+  "verdict": "REQUEST_CHANGES",
+  "required_fixes": [
+    "Commit message must identify files/.aide/scripts/tests/test_task_binding.py as actual addition.",
+    "ExecPlan superseded preparation and repair statements need explicit historical labels."
+  ],
+  "generated_bytes_and_job_evidence_consistent": true,
+  "independent_checks": [
+    "19paths allowed, whitespace PASS",
+    "six fixtures and four commands PASS",
+    "receipt and collection digests match",
+    "855pack hashes and4367105bytes match",
+    "source Git blob andclean015de64c provenance match",
+    "fourpublished assets unchanged",
+    "retirement quiescence scratchabsent release confirmed"
+  ],
+  "replay_integration_release_accepted": false,
+  "read_only": true
+}

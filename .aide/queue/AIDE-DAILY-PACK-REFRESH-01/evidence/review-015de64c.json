@@ -1,0 +1,15 @@
+{
+  "schema": "aide.exact-source-effect-review.v1",
+  "reviewer": "/root/review_new_host_bootstrap",
+  "subject_commit": "015de64c9d110470723e49a3760c8715c6ce532f",
+  "subject_tree": "254b60cbe32731240b7bde9e8878b5216c473944",
+  "template_sha256": "2f77170ec03fea820a9b871fc326c3b4ec0adb2c894ba08501c528b7ec62ba95",
+  "verdict": "ACCEPT",
+  "required_fixes": [],
+  "optional_notes": [],
+  "accepted_amendment": "three total attempts: original startup failure, one corrected conditional refresh, one separately reviewed replay; no further retry allowance",
+  "effect": "corrected sibling imports, six required passing fixtures, repeated actual ownership verification, then unchanged exporter and structural checks with full retained output and retirement",
+  "generated_result_replay_integration_release": "held_for_separate_reviews",
+  "actual_attempt_ref": "refresh-result.json",
+  "review_was_read_only": true
+}

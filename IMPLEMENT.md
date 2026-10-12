@@ -1,5 +1,14 @@
 # AIDE Implementation Log
 
+## Current export structural result — 2026-10-12
+
+Corrected jobc74e8a7f passed six ownership checks, rebuilt only the positively
+owned export and passed doctor/validate/pack-status. The855-file/4.37MB result
+matches retained hashes; published Lite1.0.0 assets remain byte-identical. Full
+validation output and verified collection/retirement are preserved. Original
+startup failure remains. Generated-result review and clean replay are next;
+consumer/integration/release and broader daily-use requirements stay open.
+
 ## Derived export isolated-import correction — 2026-10-12
 
 One independently admitted export attempt failed before fixtures/reset because

@@ -1,5 +1,13 @@
 # AIDE Planning Index
 
+## Current export proof and replay gate — 2026-10-12
+
+Actual corrected refresh passes six ownership checks and all structural commands.
+Review the exact generated result and commit it before the third/final attempt,
+which is reserved for separately reviewed clean-subject byte replay. Published
+assets and original failure evidence remain unchanged; installed consumer and
+downstream acceptance remain separate.
+
 ## Derived export refresh preparation — 2026-10-12
 
 [AIDE-DAILY-PACK-REFRESH-01](.aide/queue/AIDE-DAILY-PACK-REFRESH-01/ExecPlan.md)

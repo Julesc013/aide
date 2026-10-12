@@ -5692,14 +5692,15 @@ def task_status_value(repo_root: Path, task_id: str) -> str:
 
 def current_task_id(repo_root: Path) -> str | None:
     packet = repo_root / LATEST_PACKET_PATH
-    if packet.exists():
-        text = read_text(packet)
-        match = re.search(r"^phase:\s*([^\n]+)$", text, re.IGNORECASE | re.MULTILINE)
-        if match:
-            return match.group(1).strip()
-        match = re.search(r"Q\d+[A-Za-z0-9._-]*[^\s`]*", text)
-        if match:
-            return match.group(0).strip()
+    if packet.is_file():
+        raw, explicit = task_packet_identity(read_text(packet))
+        if explicit and not raw:
+            raise ValueError("empty declared task identity")
+    raw, resolved = task_os_latest_task_ref(repo_root)
+    if raw:
+        if not resolved:
+            raise ValueError("invalid declared task identity")
+        return resolved
     tasks = queue_task_blocks(repo_root)
     for status in ["running", "partial", "ready", "needs_review"]:
         for task in reversed(tasks):
@@ -5795,24 +5796,24 @@ def safe_git_head_commit(repo_root: Path) -> str:
         return "unknown"
 
 
-def task_os_latest_task_ref(repo_root: Path) -> tuple[str, str]:
-    packet = repo_root / LATEST_PACKET_PATH
-    if not packet.exists():
-        return "", ""
-    text = read_text(packet)
+def task_packet_identity(text: str) -> tuple[str, bool]:
     # Only the packet preamble and the leading PHASE/GOAL lines can declare
     # task identity. Later sections contain incidental IDs in guidance.
     preamble = re.split(r"^##\s+", text, maxsplit=1, flags=re.MULTILINE)[0]
-    declared_id = re.search(r"^\s*[-*]?\s*task_id:\s*([^\s`]+)", preamble, re.MULTILINE)
-    if declared_id:
-        raw = declared_id.group(1)
-        return raw, resolve_task_id(repo_root, raw)
+    declared_ids = re.findall(r"^[ \t]*[-*]?[ \t]*(?:task_id|phase):[ \t]*([^\n]*)$", preamble, re.MULTILINE | re.IGNORECASE)
+    if declared_ids:
+        values = [value.strip() for value in declared_ids]
+        if len(set(values)) != 1:
+            raise ValueError("conflicting declared task identities")
+        return values[0], True
     candidate_lines: list[str] = []
     for heading in ["PHASE", "GOAL"]:
         match = re.search(rf"^##\s+{heading}\s*$\s*(.*?)(?=^##\s+|\Z)", text, re.MULTILINE | re.DOTALL)
         if match:
             lines = match.group(1).strip().splitlines()
             if lines:
+                if heading == "PHASE" and lines[0].strip().startswith("phase:"):
+                    return lines[0].strip().partition(":")[2].strip(), True
                 candidate_lines.append(re.sub(r"^UNSPECIFIED\s+-\s+", "", lines[0].strip()))
     patterns = [
         r"AIDE-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
@@ -5824,9 +5825,33 @@ def task_os_latest_task_ref(repo_root: Path) -> tuple[str, str]:
         for pattern in patterns:
             match = re.match(pattern, line)
             if match:
-                raw = match.group(0)
-                return raw, resolve_task_id(repo_root, raw)
-    return "", ""
+                return match.group(0), False
+    return "", False
+
+
+def task_os_latest_task_ref(repo_root: Path, packet_path: str = LATEST_PACKET_PATH) -> tuple[str, str]:
+    packet = safe_repo_path(repo_root, packet_path)
+    if not packet.exists():
+        return "", ""
+    raw, _explicit = task_packet_identity(read_text(packet))
+    if not raw:
+        return "", ""
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", raw):
+        return raw, ""
+    return raw, resolve_task_id(repo_root, raw)
+
+
+def selected_task_path(repo_root: Path, task_id: str) -> Path:
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", task_id):
+        raise ValueError("invalid declared task identity")
+    selected = resolve_task_id(repo_root, task_id)
+    path = safe_repo_path(repo_root, f".aide/queue/{selected}/task.yaml")
+    if not path.is_file():
+        raise ValueError(f"declared task is missing: {task_id}")
+    declared = re.search(r"^id:\s*(\S+)\s*$", read_text(path), re.MULTILINE)
+    if declared and declared.group(1) != selected:
+        raise ValueError(f"declared task identity mismatch: {task_id}")
+    return path
 
 
 def task_os_read_status_yaml(repo_root: Path, task_id: str) -> str:
@@ -29569,7 +29594,20 @@ def scan_for_secret_findings(repo_root: Path, paths: Iterable[str]) -> list[Veri
     return findings
 
 
-def active_scope_task_path(repo_root: Path) -> Path | None:
+def active_scope_task_path(repo_root: Path, task_packet_path: str | None = None) -> Path | None:
+    packet = safe_repo_path(repo_root, task_packet_path or LATEST_PACKET_PATH)
+    if task_packet_path and not packet.is_file():
+        raise ValueError(f"selected task packet is missing: {task_packet_path}")
+    if packet.is_file():
+        raw, explicit = task_packet_identity(read_text(packet))
+        if raw or explicit:
+            try:
+                return selected_task_path(repo_root, raw)
+            except ValueError:
+                # Historical Q-only generic packets are context, not explicit
+                # queue declarations. Preserve their old fallback only here.
+                if explicit or not re.fullmatch(r"Q\d+", raw):
+                    raise
     index = repo_root / ".aide/queue/index.yaml"
     if index.exists():
         text = read_text(index)
@@ -29590,8 +29628,8 @@ def active_scope_task_path(repo_root: Path) -> Path | None:
     return None
 
 
-def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
-    task_path = active_scope_task_path(repo_root)
+def load_scope_patterns(repo_root: Path, task_packet_path: str | None = None) -> tuple[list[str], list[str]]:
+    task_path = active_scope_task_path(repo_root, task_packet_path)
     if task_path and task_path.exists():
         text = read_text(task_path)
         allowed = parse_simple_list(text, "allowed_paths")
@@ -29600,6 +29638,10 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
         allowed = []
         forbidden = []
     if not allowed:
+        packet = safe_repo_path(repo_root, task_packet_path or LATEST_PACKET_PATH)
+        raw, explicit = task_packet_identity(read_text(packet)) if packet.is_file() else ("", False)
+        if raw and (explicit or not re.fullmatch(r"Q\d+", raw)):
+            raise ValueError(f"declared task has no allowed paths: {raw}")
         allowed = [
             ".aide/queue/Q20-provider-adapter-v0/**",
             ".aide/queue/Q19-gateway-architecture-skeleton/**",
@@ -31353,12 +31395,17 @@ def provider_validation_checks(repo_root: Path) -> list[Check]:
     return checks
 
 
-def classify_changed_files(repo_root: Path) -> tuple[list[DiffScopeResult], list[VerificationFinding]]:
+def classify_changed_files(repo_root: Path, task_packet_path: str | None = None) -> tuple[list[DiffScopeResult], list[VerificationFinding]]:
     ok, entries, error = git_status_short(repo_root)
     findings: list[VerificationFinding] = []
+    try:
+        allowed, forbidden = load_scope_patterns(repo_root, task_packet_path)
+    except ValueError as exc:
+        allowed, forbidden = [], [".git/**", ".env", "secrets/**", ".aide.local/**"]
+        findings.append(VerificationFinding("ERROR", "diff_scope", str(exc)))
     if not ok:
-        return [], [VerificationFinding("WARN", "diff_scope", f"git status unavailable: {error}")]
-    allowed, forbidden = load_scope_patterns(repo_root)
+        findings.append(VerificationFinding("WARN", "diff_scope", f"git status unavailable: {error}"))
+        return [], findings
     results = [classify_scope_path(path, status, allowed, forbidden) for status, path in entries]
     for result in results:
         if result.classification == "forbidden":
@@ -31499,7 +31546,7 @@ def collect_verification_findings(
         checked_files.extend(scan_paths)
         findings.extend(scan_for_secret_findings(repo_root, scan_paths))
 
-    changed_files, diff_findings = classify_changed_files(repo_root)
+    changed_files, diff_findings = classify_changed_files(repo_root, task_packet_path)
     findings.extend(diff_findings)
     return findings, changed_files, sorted(set(checked_files))
 
@@ -31603,6 +31650,13 @@ def write_verification_report(repo_root: Path, requested: str, report: Verificat
 
 
 def current_queue_id(repo_root: Path) -> str:
+    packet = repo_root / LATEST_PACKET_PATH
+    if packet.is_file():
+        raw, explicit = task_packet_identity(read_text(packet))
+        if raw or explicit:
+            selected = active_scope_task_path(repo_root)
+            if selected:
+                return selected.parent.name
     for queue_id in [
         "Q20-provider-adapter-v0",
         "Q19-gateway-architecture-skeleton",
@@ -32603,6 +32657,48 @@ def packet_budget_warnings(text: str, repo_root: Path) -> tuple[str, tuple[str, 
 
 def render_task_packet(repo_root: Path, task_text: str, chars: int = 0, tokens: int = 0, budget_status: str = "PENDING", warnings: Iterable[str] = ()) -> str:
     phase, title = infer_phase(task_text)
+    goal = task_text.strip()
+    requested = re.sub(r"^(?:Implement|Review|Plan)\s+", "", task_text.strip(), flags=re.IGNORECASE)
+    raw, _explicit = task_packet_identity("## GOAL\n\n" + requested)
+    if not raw and requested:
+        leading = requested.split()[0].rstrip(":")
+        if (re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", leading)
+                and (repo_root / f".aide/queue/{leading}/task.yaml").is_file()):
+            raw = leading
+    task_source = None
+    if raw:
+        try:
+            task_source = selected_task_path(repo_root, raw)
+        except ValueError:
+            if not re.fullmatch(r"Q\d+", raw):
+                raise
+    identity_preamble = ""
+    task_refs = ""
+    allowed_lines = ("- `<fill from the next reviewed queue packet>`\n- `.aide/context/**`\n"
+                     f"- `.aide/queue/{phase.lower()}-*` if this task becomes a queue item\n"
+                     "- root docs only when behavior or documentation links change")
+    forbidden_lines = "- `.git/**`\n- `.env`\n- `secrets/**`\n- `.aide.local/**`"
+    if task_source:
+        source_text = read_text(task_source)
+        allowed = parse_simple_list(source_text, "allowed_paths")
+        forbidden = parse_simple_list(source_text, "forbidden_paths")
+        if not allowed and not re.fullmatch(r"Q\d+", raw):
+            raise ValueError(f"declared task has no allowed paths: {raw}")
+        if allowed:
+            selected = task_source.parent.name
+            identity_preamble = f"task_id: {selected}\nprojection_only: true\n\n"
+            phase = selected
+            title_match = re.search(r"^title:\s*(.+)$", source_text, re.MULTILINE)
+            if title_match:
+                title = title_match.group(1).strip()
+            if requested == raw:
+                goal = title
+            task_refs = (f"- `.aide/queue/{selected}/task.yaml` (selected scope and acceptance)\n"
+                         f"- `.aide/queue/{selected}/ExecPlan.md` (continuation; when present)\n"
+                         f"- `.aide/queue/{selected}/status.yaml` (actual state; when present)\n")
+            allowed_lines = "\n".join(f"- `{value}`" for value in allowed)
+            forbidden_lines = "\n".join(f"- `{value}`" for value in forbidden)
+            forbidden_lines += "\n- baseline protected paths and effects remain governed by repository policy"
     snapshot_state = "present" if (repo_root / SNAPSHOT_PATH).exists() else "missing; run snapshot"
     repo_map_state = "present" if (repo_root / REPO_MAP_JSON_PATH).exists() else "missing; run index"
     test_map_state = "present" if (repo_root / TEST_MAP_JSON_PATH).exists() else "missing; run index"
@@ -32615,13 +32711,13 @@ def render_task_packet(repo_root: Path, task_text: str, chars: int = 0, tokens: 
     warning_lines = "\n".join(f"  - {warning}" for warning in warnings) or "  - none"
     return f"""# AIDE Latest Task Packet
 
-## PHASE
+{identity_preamble}## PHASE
 
 {phase} - {title}
 
 ## GOAL
 
-{task_text.strip()}
+{goal}
 
 ## WHY
 
@@ -32629,7 +32725,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `.aide/memory/project-state.md`
+{task_refs}- `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
 - `{SNAPSHOT_PATH}` ({snapshot_state})
@@ -32655,22 +32751,17 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `<fill from the next reviewed queue packet>`
-- `.aide/context/**`
-- `.aide/queue/{phase.lower()}-*` if this task becomes a queue item
-- root docs only when behavior or documentation links change
+{allowed_lines}
 
 ## FORBIDDEN_PATHS
 
-- `.git/**`
-- `.env`
-- `secrets/**`
-- `.aide.local/**`
+{forbidden_lines}
 - raw provider credentials, API keys, local caches, raw prompt logs
 - Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
 
 ## IMPLEMENTATION
 
+- This projection is context; it does not admit work or activate effects. Read the selected queue authority and review gates.
 - Read the queue packet and relevant repo refs first.
 - Keep changes inside the allowed paths.
 - Make the smallest coherent diff that satisfies acceptance.
@@ -32752,9 +32843,10 @@ def build_task_packet(repo_root: Path, task_text: str) -> PacketRender:
 
 
 def write_task_packet(repo_root: Path, task_text: str) -> tuple[WriteResult, PacketRender]:
+    packet = build_task_packet(repo_root, task_text)
     if not (repo_root / SNAPSHOT_PATH).exists():
         write_snapshot(repo_root)
-    packet = build_task_packet(repo_root, task_text)
+        packet = build_task_packet(repo_root, task_text)
     result = write_text_if_changed(repo_root / LATEST_PACKET_PATH, packet.text)
     return result, packet
 
