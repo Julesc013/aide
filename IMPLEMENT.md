@@ -1,5 +1,15 @@
 # AIDE Implementation Log
 
+## 2026-10-12 — SESSION new-host operational checkpoint
+
+Existing managed setup configured the selected GUNMETAL-WIN resource roots and
+finite reserves after exact independent review. Eight pure source checks passed;
+one separately reviewed strict MXC prerequisite returned native-unavailable
+before canaries. Both jobs collected and retired safely. Full outputs and exact
+review/receipt identities are preserved in the SESSION new-host evidence.
+No ordinary/model editing or whole-session containment claim follows. The
+admitted task-binding repair continues independently; no unchanged native replay.
+
 ## New-host qualification preparation — 2026-10-12
 
 Prepared the [exact SESSION effect](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-effect.md)

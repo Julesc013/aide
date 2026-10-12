@@ -166,7 +166,7 @@ owner_machine_allocation_slice:
 new_host_continuation_slice:
   date: 2026-10-12
   authority: direct_owner_execute_daily_use_goal_and_existing_campaign_delegation
-  state: preparing_setup_and_source_check_effect_review_native_dispatch_requires_later_verdict
+  state: checks_PASS8_native_UNAVAILABLE_result_checkpoint_review_no_unchanged_replay
   observed_host: GUNMETAL-WIN_Windows19045_Python3_14_8
   source_base: bde3d7103b70fd78ad5908134b3d929da95972b9
   branch_action: create_task_aide_session_containment_new_host_01_existing_checkout_only
@@ -188,4 +188,4 @@ new_host_continuation_slice:
   runtime: existing_managed_workspace_and_WindowsJobHost_unchanged_pinned_inputs
   model_or_provider_calls: not_admitted
   full_access_fallback: forbidden
-  closure: independently_review_exact_source_selection_jobs_and_effects_before_execution
+  closure: two_exact_effect_reviews_completed_actual_qualification_ref_evidence_new_host_qualification_json

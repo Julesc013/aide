@@ -1,0 +1,35 @@
+{
+  "schema": "aide.exact-independent-reviews.v1",
+  "date": "2026-10-12",
+  "reviewer": "/root/review_new_host_bootstrap",
+  "subject_commit": "18c026dbfffca3a87afe5abb59be285b71e9f512",
+  "subject_tree": "fca89e1cecc8c3cece280d93d4be0077fd3465be",
+  "reviews": [
+    {
+      "effect": "fresh selected managed workspace setup and exactly one pure source-check job",
+      "verdict": "ACCEPT_WITH_NOTES",
+      "all_notes_nonblocking": true,
+      "dispositions": [
+        "Immediately before setup every selected root and local config was absent; no ALREADY_CONFIGURED fallback used.",
+        "Clean frozen source and no additional ignored/untracked Python shadow files covered the five independently inspected transitive imports omitted from explicit pins.",
+        "Effective manifest changed only source_commit/tree; digest retained. Config matches normalized selected roots and exact limits plus observed volume identities.",
+        "Eight actual tests subsequently passed with no failures/errors/skips; collection and retirement were independently checked before native review.",
+        "Earlier unknown persistent effects and all unrelated/unrestricted routes remain unqualified."
+      ]
+    },
+    {
+      "effect": "at most one strict MXC no-model native canary job",
+      "verdict": "ACCEPT_WITH_NOTES",
+      "all_notes_nonblocking": true,
+      "dispositions": [
+        "Frozen clean source, executable and input pins rechecked; identity checked by pinned helper; managed owner rechecked exact config, pause, active attempts and fresh admission.",
+        "Negative backend exit1 retained separately from wrapper exit0; no fallback or repeated dispatch.",
+        "Native witnesses did not run; actual/model editing and whole-session containment remain unqualified.",
+        "Readers quiescent, harmless excluded fixture unchanged, private escape absent, complete output digests verified, scratch absent and reservation released.",
+        "No account/ACL/default, model, provider, target, integration or publication effect was admitted or performed."
+      ]
+    }
+  ],
+  "source_integration_admitted": false,
+  "model_admitted": false
+}

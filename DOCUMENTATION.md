@@ -1,5 +1,7 @@
 # AIDE Documentation Index
 
+- [SESSION new-host qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-qualification.json): eight source checks pass, native MXC unavailable; exact retained evidence and boundary limitations.
+
 ## New-host execution preparation — 2026-10-12
 
 [SESSION](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) and its

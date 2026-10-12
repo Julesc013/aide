@@ -3868,7 +3868,7 @@ items:
     evidence: .aide/queue/AIDE-CODEX-DISPATCH-GATE-01/evidence
   - id: AIDE-SESSION-CONTAINMENT-01
     status: needs_review
-    planning_state: new_host_setup_and_source_checks_candidate_native_dispatch_held
+    planning_state: new_host_checks_pass_native_unavailable_exact_result_closure_review
     result: PARTIAL
     title: Qualify scoped host execution through the existing managed owner
     task: .aide/queue/AIDE-SESSION-CONTAINMENT-01/task.yaml

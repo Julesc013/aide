@@ -1,5 +1,18 @@
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
+## Actual daily-use continuation checkpoint — 2026-10-12
+
+Planning source accepted; fresh GUNMETAL-WIN managed setup and8 pure checks pass.
+The one independently admitted strict native prerequisite refused MXC before
+canaries. Both jobs retired with full collection verified. The native route is
+dormant until a relevant prerequisite changes; no fallback or model admission.
+SESSION evidence/new-host-qualification.json preserves the exact subjects.
+
+Next dependency-ready child: AIDE-DAILY-TASK-BINDING-01. Independent reviewer
+accepted its exact admission101f243f (parent evidence/daily-task-binding-admission.log).
+It repairs named task preparation and packet-bound verification with focused
+ordinary tests; exact source acceptance and integration remain separate gates.
+
 ## Daily-use continuation — 2026-10-12
 
 The owner instructed this campaign to execute the supplied planning corrections

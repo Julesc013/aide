@@ -1,5 +1,13 @@
 # AIDE Planning Index
 
+## 2026-10-12 — New-host terminal and next useful task
+
+SESSION new-host setup/source checks pass; strict MXC is unavailable on the exact
+tested executor. Both jobs retired. Continue the admitted daily task-binding
+repair through the existing managed test owner; retain all native/outer-client,
+downstream, efficiency and release gates. Exact SESSION results:
+[new-host qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-qualification.json).
+
 ## Actual new-host qualification — 2026-10-12
 
 The [existing SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md)

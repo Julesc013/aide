@@ -1,5 +1,22 @@
 # Scoped host qualification
 
+## Actual new-host terminal checkpoint — 2026-10-12
+
+Exact independent setup/check and native-effect reviews accepted frozen18c026db
+with only explicitly nonblocking disposed notes. Setup configured the exact new
+roots/limits. Source-check jobf486edd8 ran8 tests with0 failures/errors/skips.
+One strict native job97e4c831 returned UNAVAILABLE_NATIVE_MXC_NO_FALLBACK,
+backend1/wrapper0 before canaries. This is negative capability evidence. Full
+outputs remain under the selected retained root; every collected digest matches.
+Both jobs are quiescent/retired, scratch absent and reservations released.
+
+See evidence/new-host-independent-reviews.json and new-host-qualification.json.
+Do not replay this native route until a relevant prerequisite changes. Ordinary
+model editing and outer-session containment remain unqualified. The independently
+admitted AIDE-DAILY-TASK-BINDING-01 can proceed through ordinary bounded tests.
+Earlier help-attempt persistent effects remain unknown; no legacy state adopted.
+Result/source checkpoint still requires exact closure review before integration.
+
 ## New-host continuation — 2026-10-12
 
 The owner requested execution of the daily-use plan and authorized independent
