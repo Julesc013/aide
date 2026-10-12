@@ -1,0 +1,10 @@
+{
+  "reviewer": "/root/review_new_host_bootstrap",
+  "verdict": "ACCEPT",
+  "subject_tree": "74172ff659535f7dfffe787e977aa379d0927b6f",
+  "base_commit": "8abd7186fa1ecd2067bf609e3e10e723ad3feb78",
+  "required_fixes": [],
+  "optional_notes": [],
+  "scope": "guarded closure commit only; exact14metadata paths; no runtime/payload changes; other gates remain",
+  "read_only": true
+}

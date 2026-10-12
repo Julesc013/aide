@@ -1,0 +1,10 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-DAILY-INSTALLED-BINDING-01
+status: needs_review
+result: PENDING
+updated_at: 2026-10-12
+planning_state: preparation_admitted_plan_first_inputs_wrapper_and_effect_pending
+jobs_allocated: 0
+maximum_jobs: 2
+model_requests: 0
+next_slice: pin_installed_inputs_and_prepare_exact_scratch_only_consumer_wrapper

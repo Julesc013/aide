@@ -1,0 +1,13 @@
+{
+  "schema": "aide.child-preparation-admission.v1",
+  "reviewer": "/root/review_daily_use_plan",
+  "proposal_ref": ".aide/queue/AIDE-DAILY-PACK-REFRESH-01/evidence/installed-binding-admission.log",
+  "proposal_sha256": "5824d3e02111552dfb1e7738b69a4212ddfa3d24ab19330db79f3ab4c90523c4",
+  "verdict": "ACCEPT",
+  "required_fixes": [],
+  "independent_checks": "Reuses existing owners; preserves17assertions; actual CLI/separate-process continuation and authored/native authority; two-job cap/unchanged configuration/reserves/scratch-only/fullcollection/retirement/stop-on-source-defect suitable.",
+  "preparation_only": true,
+  "operational_gate": "Accepted final replay and exact child source/effect reviews required",
+  "protected_route_arbitrary_recovery_downstream_release_claim": false,
+  "review_was_read_only": true
+}

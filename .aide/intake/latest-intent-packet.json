@@ -6,8 +6,8 @@
   "blocked": true,
   "blocker_reason": "write blocker report and require reviewed authorization before mutation",
   "branch_state_refs": [
-    "current_branch:main",
-    "current_role:canonical",
+    "current_branch:task/aide-daily-installed-binding-01",
+    "current_role:task",
     "workflow:trunk_with_dev_integration",
     "worktree_dirty:false"
   ],
@@ -50,8 +50,8 @@
     "task_execution: false",
     "raw_long_prompt_storage: false"
   ],
-  "raw_prompt_excerpt": "Continue AIDE-CONVERGENCE-AND-DELIVERY-01: amend existing P0-P11 capability dependencies and daily-use acceptance, preserve released Lite 1.0.0 and existing C owners, instrument whole outcomes and selective reuse from the first useful wo...",
-  "raw_prompt_hash": "23187800b50a90d14d4b5adf7f2b97aa15babffb3944f31f6d06cfd4ab0af88c",
+  "raw_prompt_excerpt": "Prepare AIDE-DAILY-INSTALLED-BINDING-01 under accepted proposal5824d3e. Qualify shipped task identity, selected scope and verification through real installed CLI in owned disposable Git projects. Preserve all17 regression assertions and...",
+  "raw_prompt_hash": "8cf2ae77e39511e1e8ee6d4a10746396735eeca00a18764ecb457ed19f15f820",
   "rejected_interpretations": [
     "do not bypass queue, branch, evidence, or policy state",
     "do not execute raw prompt directly",
@@ -61,7 +61,7 @@
     ".aide/context/latest-context-packet.md",
     ".aide/context/latest-review-packet.md",
     ".aide/context/latest-task-packet.md",
-    ".aide/queue/AIDE-CODEX-DISPATCH-GATE-01/status.yaml",
+    ".aide/queue/AIDE-DAILY-PACK-REFRESH-01/status.yaml",
     ".aide/queue/index.yaml",
     ".aide/repo/file-inventory.json",
     ".aide/repo/latest-repo-intelligence.md",
@@ -105,7 +105,7 @@
       "raw response logs",
       "target repositories unless target-local queue authorizes work"
     ],
-    "idempotency": "prompt_hash:23187800b50a90d14d4b5adf7f2b97aa15babffb3944f31f6d06cfd4ab0af88c; status:draft; compile_only:true",
+    "idempotency": "prompt_hash:8cf2ae77e39511e1e8ee6d4a10746396735eeca00a18764ecb457ed19f15f820; status:draft; compile_only:true",
     "implementation_outline": [
       "Reconcile repo state before editing.",
       "write blocker report and require reviewed authorization before mutation",
@@ -138,7 +138,7 @@
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-    "workunit_id": "draft-release-23187800b50a"
+    "workunit_id": "draft-release-8cf2ae77e395"
   },
   "task_class": "release",
   "validation_hints": [

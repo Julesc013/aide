@@ -1,15 +1,15 @@
 # AIDE Latest Task Packet
 
-task_id: AIDE-DAILY-PACK-REFRESH-01
+task_id: AIDE-DAILY-INSTALLED-BINDING-01
 projection_only: true
 
 ## PHASE
 
-AIDE-DAILY-PACK-REFRESH-01 - Refresh the derived Lite export after the qualified task-binding fix
+AIDE-DAILY-INSTALLED-BINDING-01 - Qualify the named-task daily workflow through installed Lite
 
 ## GOAL
 
-Refresh the derived Lite export after the qualified task-binding fix
+Qualify the named-task daily workflow through installed Lite
 
 ## WHY
 
@@ -17,9 +17,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-DAILY-PACK-REFRESH-01/task.yaml` (selected scope and acceptance)
-- `.aide/queue/AIDE-DAILY-PACK-REFRESH-01/ExecPlan.md` (continuation; when present)
-- `.aide/queue/AIDE-DAILY-PACK-REFRESH-01/status.yaml` (actual state; when present)
+- `.aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/task.yaml` (selected scope and acceptance)
+- `.aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/ExecPlan.md` (continuation; when present)
+- `.aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/status.yaml` (actual state; when present)
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -46,15 +46,18 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-DAILY-PACK-REFRESH-01/**`
-- `.aide/export/aide-lite-pack-v0/**`
+- `.aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
+- `.aide/generated/**`
 - `.aide/reports/capability-*.json`
 - `.aide/reports/capability-*.md`
-- `.aide/generated/**`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
+- `.aide/intake/latest-intent-packet.json`
+- `.aide/intake/latest-intent-packet.md`
+- `.aide/intake/latest-workunit-draft.json`
+- `.aide/intake/latest-workunit-draft.md`
 - `PLANS.md`
 - `IMPLEMENT.md`
 - `DOCUMENTATION.md`
@@ -129,8 +132,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4951
-- approx_tokens: 1238
+- chars: 5097
+- approx_tokens: 1275
 - budget_status: PASS
 - warnings:
   - none

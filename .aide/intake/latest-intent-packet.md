@@ -3,8 +3,8 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 23187800b50a90d14d4b5adf7f2b97aa15babffb3944f31f6d06cfd4ab0af88c
-- raw_prompt_excerpt: Continue AIDE-CONVERGENCE-AND-DELIVERY-01: amend existing P0-P11 capability dependencies and daily-use acceptance, preserve released Lite 1.0.0 and existing C owners, instrument whole outcomes and selective reuse from the first useful wo...
+- raw_prompt_hash: 8cf2ae77e39511e1e8ee6d4a10746396735eeca00a18764ecb457ed19f15f820
+- raw_prompt_excerpt: Prepare AIDE-DAILY-INSTALLED-BINDING-01 under accepted proposal5824d3e. Qualify shipped task identity, selected scope and verification through real installed CLI in owned disposable Git projects. Preserve all17 regression assertions and...
 - interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release
@@ -31,7 +31,7 @@
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/AIDE-CODEX-DISPATCH-GATE-01/status.yaml`
+- `.aide/queue/AIDE-DAILY-PACK-REFRESH-01/status.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/repo/file-inventory.json`
 - `.aide/repo/latest-repo-intelligence.md`
@@ -40,8 +40,8 @@
 
 ## Branch State Refs
 
-- current_branch:main
-- current_role:canonical
+- current_branch:task/aide-daily-installed-binding-01
+- current_role:task
 - workflow:trunk_with_dev_integration
 - worktree_dirty:false
 

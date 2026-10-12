@@ -1,5 +1,12 @@
 # AIDE Planning Index
 
+## Installed named-task workflow preparation - 2026-10-12
+
+[AIDE-DAILY-INSTALLED-BINDING-01](.aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/ExecPlan.md)
+is preparation-admitted through exact5824d3e. Plan first, preserve17original
+assertions and prepare real CLI scope/refusal/continuation in owned fixtures.
+No operational consumer effect is admitted before exact source/effect review.
+
 ## Accepted current export and next installed workflow - 2026-10-12
 
 DAILY-PACK-REFRESH exact outcome3e5587d9 is independently ACCEPTed at8abd7186.

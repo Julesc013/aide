@@ -1,5 +1,7 @@
 # AIDE Documentation Index
 
+- [Installed daily workflow plan](.aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/ExecPlan.md): actual shipped task identity/scope and bounded continuation qualification; effects held for exact review.
+
 - [Accepted current export proof](.aide/queue/AIDE-DAILY-PACK-REFRESH-01/evidence/replay-result.json): all 855 package files match after clean replay; installed/platform/release claims remain separate.
 
 - [Derived export refresh](.aide/queue/AIDE-DAILY-PACK-REFRESH-01/ExecPlan.md): known ownership, exact current-source correspondence and separate reset/replay gates after the accepted task-binding fix.

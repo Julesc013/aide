@@ -4,6 +4,14 @@ policy: .aide/queue/policy.yaml
 default_concurrency: 1
 canonical_source: .aide/queue
 items:
+  - id: AIDE-DAILY-INSTALLED-BINDING-01
+    status: needs_review
+    planning_state: preparation_admitted_plan_first_inputs_wrapper_and_effect_pending
+    title: Qualify the named-task daily workflow through installed Lite
+    task: .aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/prompt.md
+    evidence: .aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/evidence
   - id: AIDE-DAILY-PACK-REFRESH-01
     status: passed
     planning_state: exact_export_outcomes_accepted_no_more_jobs_installed_preparation_next

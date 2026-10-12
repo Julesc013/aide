@@ -1,5 +1,13 @@
 # AIDE Implementation Log
 
+## Installed workflow plan-first routing - 2026-10-12
+
+Accepted current-export closure648116f6 permits the next admitted qualification
+preparation. Parent intent compilation preserves a conservative negative-keyword
+release classification; exact bounded queue authority governs preparation only.
+Four parent-authorised intake outputs are coordinated in this change; no policy,
+production, archive, real-target or model effect. Consumer checks remain unrun.
+
 ## Derived-export qualification closure - 2026-10-12
 
 Final replay terminal outcome receives exact independent ACCEPT, preserved in

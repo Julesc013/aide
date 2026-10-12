@@ -1,0 +1,68 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DAILY-INSTALLED-BINDING-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Qualify the named-task daily workflow through installed Lite
+type: qualification
+status: needs_review
+result: PENDING
+objective: Prove shipped task identity, selected scope, refusal and bounded durable continuation in disposable projects.
+authority_basis: owner_daily_use_goal_parent_delegation_and_exact_independent_preparation_admission
+admission:
+  proposal_ref: .aide/queue/AIDE-DAILY-PACK-REFRESH-01/evidence/installed-binding-admission.log
+  sha256: 5824d3e02111552dfb1e7738b69a4212ddfa3d24ab19330db79f3ab4c90523c4
+  reviewer: /root/review_daily_use_plan
+  verdict: ACCEPT_preparation_only
+  record: evidence/admission.json
+dependencies:
+  - AIDE-DAILY-PACK-REFRESH-01
+  - AIDE-DAILY-TASK-BINDING-01
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/**
+    - .aide/queue/index.yaml
+    - .aide/context/latest-task-packet.md
+    - .aide/generated/**
+    - .aide/reports/capability-*.json
+    - .aide/reports/capability-*.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  coordinated_intake_owner: parent_task_scope_explicit_four_outputs_only
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+  forbidden_operations:
+    - product_executor_policy_or_export_source_changes
+    - source_archive_version_support_target_model_network_privilege_account_ACL_or_configuration_effect
+    - unrelated_cleanup_new_roots_or_checkouts_main_dev_integration_remote_or_release_effect
+proposed_effect:
+  state: HELD_until_exact_source_wrapper_fixture_effect_review
+  owner: existing_import_pack_task_context_verifier_review_and_managed_job
+  maximum_jobs: 2
+  canonical_outputs: none
+  config_digest: 61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90
+  limits: unchanged_memory1GiB_runtime180sec_scratch32MiB_retained8MiB_reserves4GiB_physical_commit10GiB_disk
+  fixtures: disposable_owned_job_scratch_only
+  recovery: full_actual_streams_assertions_collection_hashes_quiescence_retirement_release
+acceptance:
+  - Original17assertions pass against shipped helper with no source-import fallback.
+  - Actual installed CLI projects selected named and project IDs with correct scope and refs.
+  - Real Git classifications pass selected edits and refuse unrelated edits or invalid identities without fallback.
+  - Valid packets snapshots authored sentinels and customization remain preserved on refusals.
+  - Separate process continues the same fixture WorkUnit using durable state and completed result.
+  - Exact measured outcomes retain unknown coverage and do not claim unrelated platform release or target capability.
+review_gate: preparation_source_effect_and_terminal_outcome_exact_review
+branch_plan:
+  base: 648116f660e9df24090726b690c59a9bfabb87db
+  tree: 74172ff659535f7dfffe787e977aa379d0927b6f
+  helper: ready_dry_run_missing_upstream_disclosed_reports_not_written
+  branch: task/aide-daily-installed-binding-01
+  effect: local_named_task_branch_existing_checkout_no_other_refs_or_remote
