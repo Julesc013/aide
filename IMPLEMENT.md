@@ -1,5 +1,11 @@
 # AIDE Implementation Log
 
+## Derived-export qualification closure - 2026-10-12
+
+Final replay terminal outcome receives exact independent ACCEPT, preserved in
+review-replay-outcome-3e5587d9.json, and guarded commit8abd7186. Status passed is
+limited to current derived export, not installed, downstream or release evidence.
+
 ## Final export replay verification - 2026-10-12
 
 Independently accepted effectc15adb15 completed final job0135cdc9. Six fixtures,

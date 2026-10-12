@@ -1,0 +1,23 @@
+{
+  "schema": "aide.independent-terminal-outcome-review.v1",
+  "reviewer": "/root/review_new_host_bootstrap",
+  "subject_tree": "3e5587d9d92568468c7cc5ff0f0e49e8469711ac",
+  "base_commit": "c15adb159785601f87f82588086c558a4d2cff8f",
+  "verdict": "ACCEPT",
+  "required_fixes": [],
+  "optional_notes": [],
+  "committed_subject": "8abd7186fa1ecd2067bf609e3e10e723ad3feb78",
+  "independent_checks": [
+    "14scopedpaths whitespacePASS no product/pack/release changes",
+    "sixfixtures zero failures/errors/skips andfourcommands exit0",
+    "855files4367105bytes before_after_current_equal including excludedmetadata",
+    "fourpublishedassets identical",
+    "receipt qualification bothcollectiondigests andallstreams recomputed",
+    "fullvalidation has noFAIL/WARN",
+    "retired quiescent scratchabsent reservationreleased"
+  ],
+  "read_only": true,
+  "child_export_closure_accepted": true,
+  "installed_preparation_only_admission_corrobated": true,
+  "operational_consumers_integration_release_accepted": false
+}

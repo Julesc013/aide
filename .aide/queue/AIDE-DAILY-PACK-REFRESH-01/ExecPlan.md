@@ -127,3 +127,13 @@ acceptance and evidence closure are next, then separately admitted installed
 consumer preparation5824d3e (actual independent ACCEPT, operational gate retained).
 Controller preflight bookkeeping errors are preserved separately from allocated
 jobs; they changed no input/effect/reserve and required no retry allocation.
+
+### Accepted export-task closure
+
+Final replay outcome tree3e5587d9 received actual independent ACCEPT with no fixes
+or notes and was guarded-committed as8abd7186; latest structured commit check PASS.
+All task acceptance predicates are satisfied for current derived export only.
+Status passed reports this accepted subject, not installed/platform/release work.
+No remaining job is authorised. Admission5824d3e permits next installed-child
+preparation; native route, real downstream, whole-outcome efficiency and integration
+remain explicitly separate. Original failures and all exact verdicts are preserved.

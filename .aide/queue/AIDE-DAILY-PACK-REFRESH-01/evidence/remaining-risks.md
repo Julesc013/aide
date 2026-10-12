@@ -1,6 +1,6 @@
 # Remaining risks
 
-Actual refresh and final clean replay pass; exact outcome acceptance is pending.
+Actual refresh and final clean replay pass; exact outcome has independent ACCEPT.
 All3authorised attempts are spent. Preserve original startup failure and its full
 logs, each independent verdict, prior ownership/metadata/Git identities and all
 published release evidence. No further job is admitted through this child.

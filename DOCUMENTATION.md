@@ -1,5 +1,7 @@
 # AIDE Documentation Index
 
+- [Accepted current export proof](.aide/queue/AIDE-DAILY-PACK-REFRESH-01/evidence/replay-result.json): all 855 package files match after clean replay; installed/platform/release claims remain separate.
+
 - [Derived export refresh](.aide/queue/AIDE-DAILY-PACK-REFRESH-01/ExecPlan.md): known ownership, exact current-source correspondence and separate reset/replay gates after the accepted task-binding fix.
 
 - [Task packet identity and scope](docs/reference/task-packets.md): named WorkUnit projections, verification binding, refusal cases and legacy compatibility.

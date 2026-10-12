@@ -1,5 +1,11 @@
 # AIDE Planning Index
 
+## Accepted current export and next installed workflow - 2026-10-12
+
+DAILY-PACK-REFRESH exact outcome3e5587d9 is independently ACCEPTed at8abd7186.
+Current export qualification is complete. Continue admitted5824d3e installed
+binding preparation; consumer operations remain separately reviewed and unrun.
+
 ## Final export replay actual result - 2026-10-12
 
 Job0135cdc9 passes six fixtures and full structural checks and reproduces every

@@ -5,8 +5,8 @@ default_concurrency: 1
 canonical_source: .aide/queue
 items:
   - id: AIDE-DAILY-PACK-REFRESH-01
-    status: needs_review
-    planning_state: final_replay_actual_PASS_all_bytes_equal_exact_outcome_review
+    status: passed
+    planning_state: exact_export_outcomes_accepted_no_more_jobs_installed_preparation_next
     title: Refresh the derived Lite export after the qualified task-binding fix
     task: .aide/queue/AIDE-DAILY-PACK-REFRESH-01/task.yaml
     exec_plan: .aide/queue/AIDE-DAILY-PACK-REFRESH-01/ExecPlan.md

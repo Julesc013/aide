@@ -1,5 +1,10 @@
 # Validation
 
+Current export closure: exact replay outcome3e5587d9 has independent ACCEPT and
+guarded commit8abd7186 with latest structured commit PASS. No remaining task job.
+Current derived export checks/byte replay/retirement are complete; consumer and
+integration/release are unqualified for this changed package.
+
 Current final replay PASS (exact outcome acceptance pending): job0135cdc9 used
 acceptedc15adb15/source-tree d2dda244. All855pack hashes and4,367,105bytes are
 identical before/after. Six fixtures pass0fail/error/skip; export/doctor/validate/
