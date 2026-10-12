@@ -57,6 +57,13 @@ remain separate from this export-only qualification.
 
 ## Progress
 
+Review00f1f428 requested one failure-record fix: asset unchanged status must stay
+unknown until comparison. Corrected initialization/finalization preserves original
+exceptions and unknown status on comparison failure. Original review retained;
+updated pins and exact corrected review are required before any job/reset.
+Reviewer accepted the conditional six-fixture/actual-preflight/refresh sequence
+without an additional ceremonial job; all other gates remain unchanged.
+
 - Exact preparation admission and source/branch prerequisites satisfied.
 - Prior actual854-file/240-directory inventory, exact Git blobs/checksums/identity
   and three metadata preimages are preserved. Thin unchanged-owner orchestration

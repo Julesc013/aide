@@ -614,7 +614,7 @@
     ".aide/queue/AIDE-DAILY-PACK-REFRESH-01/evidence/prior-pack-inventory.json": "b86d406c6c3047dadf82b39a959bc30443a29c269ec3bd30688a975450c306d5",
     ".aide/queue/AIDE-DAILY-PACK-REFRESH-01/evidence/prior-pack-manifest.yaml": "71d1720abdacc4c37f4522b49ed590d52ad9dba8b8860b82087f5b48760bdcd8",
     ".aide/queue/AIDE-DAILY-PACK-REFRESH-01/pack_inventory.py": "7f50bf6596969c071a3b1c689f68c996c6eb4a5893a8bcb006f710fe9cc5423c",
-    ".aide/queue/AIDE-DAILY-PACK-REFRESH-01/run_refresh.py": "cd20f3502b7faabd8a275dd3697fef776da43dc329b379e97a84347576b5b8be",
+    ".aide/queue/AIDE-DAILY-PACK-REFRESH-01/run_refresh.py": "d3b7381ea3a458086a2fcb06f56882551d3626f1b9d1c6fd0c541578885cd9a0",
     ".aide/queue/AIDE-DAILY-PACK-REFRESH-01/task.yaml": "b77a1b3b8ec7e070274c04385548a6cdf3bc65c2cc5b0005f86083d1c70f7a3c",
     ".aide/queue/AIDE-DAILY-PACK-REFRESH-01/test_pack_inventory.py": "b43f8e16aa5cfc8cc72592a4eb60933e75b5067285c69e0f8228f44cfae33c56",
     ".aide/refactors/README.md": "7b379c35a1d7efbb41e2b5603db0b8454593f3974fa04c9ce7a095f73fa3135a",

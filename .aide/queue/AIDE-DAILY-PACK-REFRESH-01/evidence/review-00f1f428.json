@@ -1,0 +1,14 @@
+{
+  "schema": "aide.exact-source-effect-review.v1",
+  "reviewer": "/root/review_new_host_bootstrap",
+  "subject_commit": "00f1f428f21a15a63b732af33dfc5a99e3b01324",
+  "subject_tree": "602cec476ac757da036263f89865a45812f1b068",
+  "template_sha256": "7618c964ac310b0536d08f5ff5ab7293da7deee0229b703ba40537dd70119be0",
+  "verdict": "REQUEST_CHANGES",
+  "required_fix": "Initialize archives_changed as unknown, set it only after completed before/after comparison, and preserve original operation failure if final comparison cannot complete.",
+  "other_blockers": [],
+  "independent_checks": "29 paths allowed, all858 input/executable/template hashes match, production/executor/export/releases unchanged, ownership safeguards and six before-reset fixtures adequate, original metadata/root/limits preserved.",
+  "conditional_one_job_sequence": "acceptable_after_corrected_exact_subject_review",
+  "reset_and_dispatch_admitted": false,
+  "tests_or_effects_run_by_reviewer": false
+}

@@ -67,7 +67,7 @@ def main():
               'job_id': os.environ['AIDE_JOB_ID'], 'status': 'INCOMPLETE',
               'before_files': len(before), 'before_metadata': {name: before[name] for name in EXCLUDED},
               'prior_git_commit': observed['git_commit'], 'models_requested': 0,
-              'archives_changed': False, 'filesystem_containment_claimed': False,
+              'archives_changed': None, 'filesystem_containment_claimed': False,
               'operations': {}}
     record['ownership_tests'] = test_record
     record['published_release_before'] = prior_release
@@ -98,6 +98,15 @@ def main():
         record['error'] = {'type': type(error).__name__, 'message': str(error)}
         raise
     finally:
+        if 'published_release_after' not in record:
+            try:
+                record['published_release_after'] = {name: sha(release_root / name) for name in release_names}
+                record['archives_changed'] = record['published_release_after'] != prior_release
+            except Exception as comparison_error:
+                record['archives_changed'] = None
+                record['release_comparison_error'] = {
+                    'type': type(comparison_error).__name__, 'message': str(comparison_error)}
+                # Keep the original operation failure, including its traceback.
         result_path.write_text(json.dumps(record, sort_keys=True, indent=2) + '\n',
                                encoding='utf-8', newline='\n')
         print(json.dumps({key: record.get(key) for key in ('status', 'phase', 'byte_equality')}), flush=True)
