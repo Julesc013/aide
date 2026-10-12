@@ -6,7 +6,7 @@ canonical_source: .aide/queue
 items:
   - id: AIDE-DAILY-INSTALLED-BINDING-01
     status: needs_review
-    planning_state: pre_dispatch_oracle_repair_new_exact_source_effect_review_pending
+    planning_state: first_attempt_retired_shipped17_PASS_report_path_repair_final_effect_held
     title: Qualify the named-task daily workflow through installed Lite
     task: .aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/task.yaml
     exec_plan: .aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/ExecPlan.md

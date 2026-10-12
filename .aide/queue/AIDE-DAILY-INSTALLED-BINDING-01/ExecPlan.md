@@ -93,3 +93,20 @@ vary only task_id in otherwise-valid packets, and invalid/mismatched reports mus
 name the intended diff_scope cause. No original17assertion or source behavior
 changes. Preserve the original frozen candidate/review and refresh all affected
 pins before new exact review. Zero jobs allocated; both attempts remain available.
+
+### Actual partial consumer outcome and held final fixture repair
+
+Accepted effect95707b37 completed actual first attemptcd376d53. All original17
+shipped tests pass0fail/error/skip; safe import, isolated Git baseline and named
+packet succeed. Verification then correctly rejects the fixture's unsupported
+.aide/reports output path. This is a wrapper error, not a product defect or a
+consumer pass. Full original exit/trace/streams, receipt and collection digests
+are preserved; job quiescent/retired, scratch absent and reservation released.
+
+Fix only reports to selected .aide/queue/PROJECT-TASK-17/evidence. Preserve valid
+PASS17 for exact helper/test/Python/config subjects through pinned prior result;
+new owned fixtures must rebuild their disposable setup, while original completed
+assertions are conserved. No assertions or product semantics change. One of two
+attempts remains, held behind exact repair/source/final-effect review. Reuse proof
+is independently checked with actual original stderr/count/receipt, not inferred
+from overall failed parent. All subsequent consumer checks remain NOT RUN.

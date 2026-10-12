@@ -1,0 +1,107 @@
+{
+  "collection_and_retirement": "PASS",
+  "collection_manifest": {
+    "logs": "0c73595e977b288202214f77e4c60e0173a12ca4fc0688ccbaa6ac80aa108d72",
+    "output": "a32cfdee44e458d59c91189180c31185ea603d0dbc30c7abfc7b3e95a3e33321"
+  },
+  "completed_shipped_regression": {
+    "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+    "errors": 0,
+    "failures": 0,
+    "helper_sha256": "ba7f49574a2a54ae3606599392285409a4c5923fadc1c3dd972795363b11deff",
+    "python_executable_sha256": "434b361fe0c5960d404974feed493db47f2603a1ace2574312104fbed0182c6f",
+    "skips": 0,
+    "status": "PASS",
+    "stderr_bytes": 2766,
+    "stderr_sha256": "d2ac58164e3bf3e128eb872d56115236e748234c4601524c0692a4df934b4388",
+    "test_sha256": "487a384b1632a38bbaf5ce8d6c9079a1789a3b4f9e3a16a3fd1ff9928bb793e0",
+    "tests_run": 17
+  },
+  "failure_reason": "Fixture requested .aide/reports/selected-edit-verification.md; unchanged writer permits only .aide/verification or .aide/queue report roots.",
+  "failure_stderr_sha256": "6798bb574768fcb2b3ff4713371717677ceaec988093e86668b2acd6c2c8119e",
+  "full_consumer_qualified": false,
+  "job_id": "cd376d53d1134c9ba7ce6d6d0e451d9f",
+  "jobs_allocated": 1,
+  "maximum_jobs": 2,
+  "models_requested": 0,
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 226680832,
+    "scratch_bytes": 10094536
+  },
+  "receipt_sha256": "f9b6ba12079bf82e7147c2cde92b841b9a278b85f78b43e3bfcfc1cbb645005b",
+  "reservation_released": true,
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cd376d53d1134c9ba7ce6d6d0e451d9f",
+  "retained_bytes": 324842,
+  "schema": "aide.partial-installed-consumer-result.v1",
+  "scratch_absent": true,
+  "source_commit": "95707b375f35a5782762d4c048f2a45a59c7fd83",
+  "source_tree": "02065e85fa2a872290bb147d4374427bdbba4c72",
+  "stages": [
+    {
+      "elapsed_seconds": 1.2152385000372306,
+      "exit_code": 0,
+      "stage": "shipped-original-17",
+      "stderr_bytes": 2766,
+      "stderr_sha256": "d2ac58164e3bf3e128eb872d56115236e748234c4601524c0692a4df934b4388",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "elapsed_seconds": 34.78328569990117,
+      "exit_code": 0,
+      "stage": "safe-import",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 492,
+      "stdout_sha256": "cef542abd6de90d45e3c86f94635d97f851c4ec68b4a0ec0619a803dfb71f54c"
+    },
+    {
+      "elapsed_seconds": 0.05232310004066676,
+      "exit_code": 0,
+      "stage": "fixture-git-init",
+      "stderr_bytes": 586,
+      "stderr_sha256": "3e70934f1909b0f5a846d62237fcc1509d733b9fb0321187024723dfc67176d3",
+      "stdout_bytes": 134,
+      "stdout_sha256": "fb77236145c65dacf97bb9c63181dd3628ac1cf034a04748ab3a363ba2291368"
+    },
+    {
+      "elapsed_seconds": 22.726590399979614,
+      "exit_code": 0,
+      "stage": "fixture-git-add",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "elapsed_seconds": 8.182565200026147,
+      "exit_code": 0,
+      "stage": "fixture-git-baseline",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 59938,
+      "stdout_sha256": "ca3f84fe7bd9c3d7efa2f47cb3f9ffd2498aac1039d5bac7ae6f9034e1e1fbee"
+    },
+    {
+      "elapsed_seconds": 1.650375199969858,
+      "exit_code": 0,
+      "stage": "named-packet",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 186,
+      "stdout_sha256": "ac122dbd78c2139739b471c321eb0d7b74d90d89a56d18a2ecb83eac35e3058e"
+    },
+    {
+      "elapsed_seconds": 0.9646747000515461,
+      "exit_code": 1,
+      "stage": "selected-edit-verification",
+      "stderr_bytes": 93,
+      "stderr_sha256": "6798bb574768fcb2b3ff4713371717677ceaec988093e86668b2acd6c2c8119e",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "status": "FAIL_PRESERVED_FIXTURE_REPORT_PATH",
+  "whole_task_model_usage": "unknown"
+}

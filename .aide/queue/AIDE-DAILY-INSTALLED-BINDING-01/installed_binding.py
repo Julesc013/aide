@@ -78,11 +78,17 @@ def main():
     assert sha(exported_cli) == inputs['shipped_helper_sha256']
     tests = pack / 'files/.aide/scripts/tests/test_task_binding.py'
     assert sha(tests) == inputs['shipped_regression_sha256']
-    _, test_log = invoke('shipped-original-17', [sys.executable, '-I', '-B', '-m',
-                           'unittest', 'discover', '-s', str(tests.parent),
-                           '-p', tests.name, '-v'], scratch)
-    assert 'Ran 17 tests' in test_log and '\nOK\n' in test_log
-    assert 'skipped=' not in test_log and 'FAILED' not in test_log
+    # The first attempt completed all original assertions before the later
+    # report-path error. Reuse only that exact unchanged shipped subject.
+    prior = json.loads((TASK / 'evidence/first-attempt-result.json').read_text(encoding='utf-8'))
+    original_tests = prior['completed_shipped_regression']
+    assert original_tests['status'] == 'PASS' and original_tests['tests_run'] == 17
+    assert not any(original_tests[key] for key in ('failures', 'errors', 'skips'))
+    assert sha(exported_cli) == original_tests['helper_sha256']
+    assert sha(tests) == original_tests['test_sha256']
+    assert sha(sys.executable) == original_tests['python_executable_sha256']
+    write(output / 'reused-shipped-17.json', json.dumps({'original_job': prior['job_id'],
+          'receipt_sha256': prior['receipt_sha256'], 'subject': original_tests}) + '\n')
 
     target = scratch / 'project'
     target.mkdir()
@@ -132,7 +138,7 @@ def main():
                               '--repo-root', str(target), *parts], target, expected)
 
     def verification(label, expected=0):
-        relative = '.aide/reports/' + label + '.md'
+        relative = '.aide/queue/' + SELECTED + '/evidence/' + label + '.md'
         stdout, _ = command(label, 'verify', '--changed-files', '--write-report',
                             relative, expected=expected)
         report_path = target / relative
@@ -222,6 +228,7 @@ def main():
     summary = {'schema': 'aide.installed-task-binding-qualification.v1', 'status': 'PASS',
                'job_id': os.environ['AIDE_JOB_ID'], 'source_helper_sha256': sha(cli),
                'original_regression_tests': 17, 'task_id': SELECTED,
+               'original_regression_evidence': 'reused_actual_first_attempt_PASS17',
                'shipped_import_no_source_fallback': True, 'real_Git_scope_verified': True,
                'undeclared_path_warns_without_grant': True, 'explicit_forbidden_path_refuses': True,
                'valid_packet_snapshot_preserved_on_unknown_task': True,

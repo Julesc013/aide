@@ -1,0 +1,11 @@
+{
+  "reviewer": "/root/review_daily_use_plan",
+  "verdict": "ACCEPT",
+  "subject_commit": "95707b375f35a5782762d4c048f2a45a59c7fd83",
+  "subject_tree": "02065e85fa2a872290bb147d4374427bdbba4c72",
+  "template_sha256": "50ad20f1824b08eaac0fc2aed25030d38e70a00b0f020f496a4a6e7f1f7bb383",
+  "required_fixes": [],
+  "notes": [],
+  "scope": "corrected source and one conditional first consumer job only; later outcomes and all other gates separate",
+  "read_only": true
+}

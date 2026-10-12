@@ -19,3 +19,9 @@ Pre-dispatch independent REQUEST_CHANGES3aac28e6 preserved. Fixture/contract rep
 adds intended classification/cause reports and preserves all original17methods.
 Production/test/export bytes remain unchanged. Updated AST/pins require exact
 re-review before any job; runtime still NOT RUN, zero allocations.
+
+Actual first attempt: shipped17PASS and import/Git/named packet succeeded, then
+fixture report destination was refused. Full digests/retirement PASS; overall
+FAIL preserved. Correct only task-evidence destination. Reuse exact shipped17
+completed results, requiring reviewed originalreceipt/streams and unchanged
+helper/test/Python/config bindings. Remaining CLI qualification remains NOT RUN.

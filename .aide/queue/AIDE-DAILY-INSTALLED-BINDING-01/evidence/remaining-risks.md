@@ -9,3 +9,7 @@ Unknown complete usage stays unknown. Native MXC and outer clients remain
 unqualified. No real-target grant, protected model route, new release support or
 integration is implied. A demonstrated product defect requires another source
 repair; assertions cannot be weakened through this qualification task.
+
+One attempt is spent and safely retired. Final attempt requires exact report-path
+repair and PASS17 reuse review; no automatic retry. A failure of that final job
+exhausts this child and must be retained, with no new job through this allowance.

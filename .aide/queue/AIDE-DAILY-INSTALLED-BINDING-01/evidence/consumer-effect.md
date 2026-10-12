@@ -44,3 +44,21 @@ unknown-path warnings grant no effect authority and do not qualify containment.
 Invalid declaration fixtures preserve the valid packet body; retained reports
 must include each expected identity/owner diff_scope error. No weak nonzero-only
 oracle, original assertion removal or production semantic change is permitted.
+
+## Held final attempt amendment after actual fixture-path failure
+
+First attemptcd376d53 is retired with full collection verified. Shipped17tests
+passed before later report-path failure; source helper/test/Python/config unchanged.
+The corrected wrapper uses selected task evidence paths admitted by unchanged
+writer and fixture scope. It reuses only pinned actual first-attempt17PASS evidence,
+checking exact helper/test/Python/count/no failures or skips. The original test
+module and assertions remain unchanged; cached success is not a new execution.
+Existing reviewer must independently verify that original receipt/streams support
+reuse before final allocation. Disposable import/Git fixtures are rebuilt because
+the first owned scratch was retired; no real finished effects are repeated.
+
+This is attempt2of2, FINAL. All unfinished CLI/report/cause/sentinel/continuation
+assertions must run; all full collection/quiescence/retirement/release obligations
+remain. Only sourcecommit/tree substitution to exact accepted repairHEAD/tree is
+allowed in the final effective manifest. No further retry, source/product fix,
+provider/target/integration/release effect or wider resource limit is admitted.
