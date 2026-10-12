@@ -53,6 +53,11 @@ test owners and exact source refs in documentation. No whole-task savings claim.
 
 ## Progress
 
+Independent source review238fa7bc requested explicit refresh of the stale derived
+helper binding. Refreshed against final tested ba7f4957; doctor/validate repeated
+and retained exactly the current-export provenance failures. Production source
+and tests unchanged; PASS74 reused. Corrected metadata candidate needs exact review.
+
 - Admission accepted; allowed paths and existing owner confirmed.
 - Baseline job1331d025 ran10 tests:8 original failures,0 errors/skips. Full
   results remain retained, collection verified and job retired.

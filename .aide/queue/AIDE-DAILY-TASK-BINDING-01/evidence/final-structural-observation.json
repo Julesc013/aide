@@ -1,0 +1,30 @@
+{
+  "bindings_sha256": "14d2a5e7df4e0595e5dd157dca9578818692c1d893a979922a7651660dec1792",
+  "doctor_exit": 1,
+  "fix": "explicit_capability_ledger_refresh_against_tested_source",
+  "logs": {
+    "final-doctor.log": {
+      "bytes": 10350,
+      "failures": [
+        "- FAIL validation should be run: run validate and fix failures"
+      ],
+      "sha256": "96be2e283c2c5a7ae90ee317d104e0369c563c05d0f658b7b7b14b81e5cac186"
+    },
+    "final-validate.log": {
+      "bytes": 9788570,
+      "failures": [
+        "- FAIL export pack provenance problem: manifest source_commit a17cf4b3dbec5caa236c62ee2fa23b31aa09c8fc does not match current HEAD 238fa7bc4895cf4be07f6dd49f5fa0986a9ab0e5",
+        "- FAIL pack-status problem: manifest source_commit a17cf4b3dbec5caa236c62ee2fa23b31aa09c8fc does not match current HEAD 238fa7bc4895cf4be07f6dd49f5fa0986a9ab0e5"
+      ],
+      "sha256": "13179b6cbfb3744cc8bab54d35c2695999907760f24087a84760ac9f9d7e180c"
+    }
+  },
+  "package_gate": "two_current_export_provenance_failures_preserved",
+  "reviewer_required_fix": "derived_source_binding_stale_before_final_helper_change",
+  "runtime_tests_reused": "PASS74_same_exact_source_bytes",
+  "schema": "aide.final-source-structural-observation.v1",
+  "source_bytes": 2379708,
+  "source_matches_tested_fc8a68b7": true,
+  "source_sha256": "ba7f49574a2a54ae3606599392285409a4c5923fadc1c3dd972795363b11deff",
+  "validate_exit": 1
+}

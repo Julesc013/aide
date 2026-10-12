@@ -1,0 +1,13 @@
+{
+  "schema": "aide.exact-source-review.v1",
+  "reviewer": "/root/review_daily_use_plan",
+  "subject_commit": "238fa7bc4895cf4be07f6dd49f5fa0986a9ab0e5",
+  "subject_tree": "5011cfc6e0e826b632b689ed85920043a95cfbce",
+  "verdict": "REQUEST_CHANGES",
+  "required_fix": "Derived capability binding identifies an earlier helper (2379455 bytes/60c06d67), not the actual tested helper (2379708 bytes/ba7f4957). Explicitly refresh and obtain structural observation for final bytes before source acceptance.",
+  "nonblocking_disposition": "Two current-export provenance failures remain unresolved package/integration/release gates; they do not block limited source acceptance after the separate required binding fix.",
+  "independent_checks": "Allowlist, unchanged executor/release/export/specification boundaries, original ten tests, AST/whitespace, exact red/green receipts and collection/retirement pass.",
+  "repair_ref": "final-structural-observation.json",
+  "new_candidate_review_required": true,
+  "original_review_preserved": true
+}
