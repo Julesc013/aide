@@ -1,5 +1,13 @@
 # AIDE Implementation Log
 
+## Daily task-binding acceptance — 2026-10-12
+
+Independent source review accepts0a91084f with no required fixes and one explicit
+source-only nonblocking note for the preserved export provenance failures. The
+selected task now owns preparation, verification and default review evidence.
+Actual74 tests pass; original eight failures and both retired jobs remain intact.
+Current package regeneration/replay and integration are separately gated.
+
 ## Daily task-binding source result — 2026-10-12
 
 Existing task identity, packet preparation, verification scope and default review

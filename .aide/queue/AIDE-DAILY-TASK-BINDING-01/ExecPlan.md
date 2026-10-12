@@ -53,6 +53,13 @@ test owners and exact source refs in documentation. No whole-task savings claim.
 
 ## Progress
 
+Corrected source0a91084f has actual independent ACCEPT_WITH_NOTES. Required fixes
+are none; the one note is explicitly nonblocking only for source and disposed
+by preserving the provenance failures and separately gating package/integration.
+See evidence/independent-review-0a91084f.json. Source task accepted; no more test
+job is needed for these unchanged subjects. DAILY-PACK-REFRESH preparation follows
+its separately accepted exact proposal6c8d839d and all reset/replay effect gates.
+
 Independent source review238fa7bc requested explicit refresh of the stale derived
 helper binding. Refreshed against final tested ba7f4957; doctor/validate repeated
 and retained exactly the current-export provenance failures. Production source

@@ -1,5 +1,11 @@
 # AIDE Planning Index
 
+## Accepted daily task-binding source — 2026-10-12
+
+Source0a91084f is independently accepted after74 tests and one derived-binding
+repair. Continue separately admitted current-export refresh/replay; package and
+integration claims remain gated by the preserved provenance failures.
+
 ## Daily task-binding implementation — 2026-10-12
 
 [AIDE-DAILY-TASK-BINDING-01](.aide/queue/AIDE-DAILY-TASK-BINDING-01/ExecPlan.md)

@@ -1,0 +1,19 @@
+{
+  "schema": "aide.exact-source-acceptance.v1",
+  "reviewer": "/root/review_daily_use_plan",
+  "subject_commit": "0a91084f38223cf3ee95db1318a28a58282fd970",
+  "subject_tree": "e6da1bd0bffbe89c6057165bf387b0fbf90bd7a8",
+  "verdict": "ACCEPT_WITH_NOTES",
+  "required_fixes": [],
+  "all_notes_nonblocking_for_source": true,
+  "notes": [
+    {
+      "classification": "nonblocking_for_exact_source",
+      "issue": "Historical export current-source provenance remains stale; doctor/validate failures remain actual failures.",
+      "disposition": "Retain original and final log hashes/results. Separately admit exact export regeneration/replay; package, integration and release remain held until applicable checks pass. No waiver or package claim."
+    }
+  ],
+  "independent_checks": "36 changed paths allowed, corrected binding matches tested source, production/tests/runner unchanged, original ten assertions and eight failures preserved, PASS74 reusable, final structural log hashes/failures correct, retained receipts/collection/retirement intact.",
+  "package_or_integration_accepted": false,
+  "review_was_read_only": true
+}

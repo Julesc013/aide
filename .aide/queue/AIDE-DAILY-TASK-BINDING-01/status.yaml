@@ -1,10 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-DAILY-TASK-BINDING-01
-status: needs_review
-result: PENDING
-planning_state: repaired_source_PASS74_exact_acceptance_pending_package_provenance_held
+status: passed_with_notes
+result: SOURCE_ACCEPTED_PASS74_PACKAGE_GATE_RETAINED
+planning_state: exact_source_accepted_current_export_and_integration_held
 updated_at: 2026-10-12
-review_gate: exact_source_acceptance_pending
+review_gate: source_ACCEPT_WITH_NOTES_all_nonblocking_package_and_integration_separate
+independent_review_ref: evidence/independent-review-0a91084f.json
 jobs_allocated: 2
 jobs_maximum: 3
 model_requests: 0

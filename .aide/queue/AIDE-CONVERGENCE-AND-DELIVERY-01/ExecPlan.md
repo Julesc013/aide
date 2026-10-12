@@ -1,5 +1,16 @@
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
+## Accepted useful task-binding source — 2026-10-12
+
+DAILY-TASK-BINDING source0a91084f is independently accepted with one source-only
+nonblocking note. Actual74-test PASS follows8 original baseline failures, with
+all outputs/retirement retained. Corrected capability binding identifies tested
+ba7f4957. Current-export provenance still fails; no current-package/integration
+claim. Next bounded preparation DAILY-PACK-REFRESH proposal6c8d839d is accepted
+with held exact reset/dispatch/replay effects and ownership preflight. Published
+Lite1.0.0 and historical proofs remain unchanged. Downstream and full daily-use
+continuation/efficiency acceptance remain open.
+
 ## Actual daily-use continuation checkpoint — 2026-10-12
 
 Planning source accepted; fresh GUNMETAL-WIN managed setup and8 pure checks pass.

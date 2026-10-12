@@ -3,8 +3,8 @@ id: AIDE-DAILY-TASK-BINDING-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Bind compact task preparation and verification to the selected WorkUnit
 type: implementation
-status: needs_review
-result: PASS74_SOURCE_REVIEW_AND_PACKAGE_GATES_RETAINED
+status: passed_with_notes
+result: SOURCE_ACCEPTED_PASS74_PACKAGE_GATE_RETAINED
 objective: Correct demonstrated named-task packet and unrelated verification scope through existing owners.
 authority_basis: direct_owner_daily_use_goal_campaign_delegation_and_independent_bounded_admission
 admission:
