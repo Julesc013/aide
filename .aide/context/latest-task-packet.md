@@ -1,85 +1,141 @@
 # AIDE Latest Task Packet
 
+task_id: AIDE-DAILY-TASK-BINDING-01
+projection_only: true
+
 ## PHASE
 
-phase: AIDE-SESSION-CONTAINMENT-01
+AIDE-DAILY-TASK-BINDING-01 - Bind compact task preparation and verification to the selected WorkUnit
 
 ## GOAL
 
-Qualify the actual new-host execution path through the existing managed owner.
-The present slice prepares exact setup and pure checks; native dispatch awaits
-its later independent effect verdict. Whole-session containment remains false.
+Bind compact task preparation and verification to the selected WorkUnit
 
 ## WHY
 
-The accepted daily-use plan needs useful bounded work on GUNMETAL-WIN. Fresh
-identity, volume, capacity and executable pins replace assumptions about the old
-host. Existing released Lite and original failures retain their exact subjects.
+Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-SESSION-CONTAINMENT-01/task.yaml`
-- `.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md`
-- `.aide/queue/AIDE-SESSION-CONTAINMENT-01/status.yaml`
-- `.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-effect.md`
-- `.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-selection.json`
-- `.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-inputs.json`
-- `.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/evidence/independent-review-922173c8.json`
-- `docs/reference/aide-lite-test-runner.md`
+- `.aide/queue/AIDE-DAILY-TASK-BINDING-01/task.yaml` (selected scope and acceptance)
+- `.aide/queue/AIDE-DAILY-TASK-BINDING-01/ExecPlan.md` (continuation; when present)
+- `.aide/queue/AIDE-DAILY-TASK-BINDING-01/status.yaml` (actual state; when present)
+- `.aide/memory/project-state.md`
+- `.aide/memory/decisions.md`
+- `.aide/memory/open-risks.md`
+- `.aide/context/repo-snapshot.json` (present)
+- `.aide/context/repo-map.json` (present)
+- `.aide/context/repo-map.md` (present)
+- `.aide/context/test-map.json` (present)
+- `.aide/context/context-index.json` (present)
+- `.aide/context/latest-context-packet.md` (present)
+- `.aide/repo/latest-repo-intelligence.md` (present)
+- `.aide/repo/file-inventory.json` (present)
+- `.aide/reports/file-quality-summary.md` (present)
+- `.aide/reports/file-quality-ledger.json` (present)
+- `.aide/refactors/latest-refactor-readiness.md` (present)
+- `.aide/refactors/latest-refactor-plan.example.json` (present)
+- `.aide/routing/latest-route-decision.json` (present)
+- `.aide/routing/latest-route-decision.md` (present)
+- `.aide/cache/latest-cache-keys.json` (present)
+- `.aide/cache/latest-cache-keys.md` (present)
+- `.aide/prompts/compact-task.md`
+- `.aide/policies/token-budget.yaml`
+- `.aide/policies/cache.yaml`
+- `.aide/policies/local-state.yaml`
 
 ## ALLOWED_PATHS
 
-Use task.yaml scope and its exact new_host_continuation_slice. Task-local source
-and evidence, named parent/queue/current packet/root indexes and compiler-owned
-derived views are preparation paths. The local config and three selected roots
-are permitted only after the exact setup effect verdict.
+- `.aide/queue/AIDE-DAILY-TASK-BINDING-01/**`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
+- `.aide/queue/index.yaml`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_verifier.py`
+- `.aide/scripts/tests/test_task_binding.py`
+- `.aide/context/latest-task-packet.md`
+- `.aide/reports/capability-*.json`
+- `.aide/reports/capability-*.md`
+- `.aide/verification/latest-verification-report.md`
+- `.aide/generated/**`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+- `docs/reference/task-packets.md`
 
 ## FORBIDDEN_PATHS
 
-- Unreviewed machine accounts, ACLs, settings, quota or permission widening
-- Unadmitted models, provider/billing fallback, credentials or target writes
-- Unselected storage roots, new checkouts, unknown deletion or released artifacts
-- Main/dev integration or publication without their separately reviewed effects
+- `.git/**`
+- `.env`
+- `secrets/**`
+- `.aide.local/**`
+- baseline protected paths and effects remain governed by repository policy
+- raw provider credentials, API keys, local caches, raw prompt logs
+- Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
 
 ## IMPLEMENTATION
 
-Reuse managed_workspace and WindowsJobHost unchanged. Prepare a complete backend
-digest/identity binding and correct native argv. Preserve the mistaken default
-help launch as an unintended attempt with unknown persistent effects. Configure
-only selected roots after review, run eight pure source checks through admission,
-then obtain the exact native-effect verdict before at most one strict MXC job.
+- This projection is context; it does not admit work or activate effects. Read the selected queue authority and review gates.
+- Read the queue packet and relevant repo refs first.
+- Keep changes inside the allowed paths.
+- Make the smallest coherent diff that satisfies acceptance.
+- Preserve generated/manual boundaries.
+- Do not inline whole source files unless exact contents are required.
+- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
 
 ## VALIDATION
 
-- AST/JSON/diff checks for preparation, unchanged existing runtime input hashes
-- Existing Harness and explicit capability-derived refresh
-- Eight pure task-local regressions through one reviewed managed job
-- Fresh pins, pause, reservations and admission before each actual job
-- Exact exits/output custody, quiescence, scratch retirement and release
+- `py -3 .aide/scripts/aide_lite.py doctor`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py index`
+- `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py repo inventory`
+- `py -3 .aide/scripts/aide_lite.py repo validate`
+- `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py route explain`
+- `py -3 .aide/scripts/aide_lite.py test`
+- `py -3 .aide/scripts/aide_lite.py selftest`
+- `py -3 scripts/aide validate`
+- `git diff --check`
+
+## COMMITS
+
+- Commit coherent subdeliverables with verbose bodies.
+- Stop at review gates.
 
 ## EVIDENCE
 
-Task-local source/effect verdicts, exact effective manifests and actual results.
-Never infer PASS from wrapper zero, absent logs or an unavailable backend.
-Known deterministic observations and unknown total usage remain separate.
+- changed files
+- validation commands and results
+- verifier result
+- review packet path and result when review-pack is available
+- advisory route decision path and result when Q17 routing is available
+- compact packet size and budget status
+- unresolved risks and deferrals
 
 ## NON_GOALS
 
-No model editing, whole-session claim, provider setup, legacy sandbox provisioning,
-unrelated cleanup, target mutation, archive rebuild or repeat of Lite qualification.
+- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
 
 ## ACCEPTANCE
 
-Setup/source-check acceptance is narrower than native route acceptance. A precise
-native refusal stops that route until relevant change and preserves independent
-authorized deterministic/supervised work. Other agents remain outside enforcement.
+- Task-specific acceptance criteria are met.
+- Validation is run and recorded.
+- Evidence is written.
+- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
 
 ## OUTPUT_SCHEMA
 
-Return exact completed outcome, checks/evidence, commit, uncovered routes and the
-next dependency-ready action. Retain the active incomplete goal and same WorkUnit.
+Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
+Include the verifier result when Q12 verifier behavior is available.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- scope: compact current task brief
+- chars: 5124
+- approx_tokens: 1281
+- budget_status: PASS
+- warnings:
+  - none
+- formal ledger: `.aide/reports/token-ledger.jsonl`

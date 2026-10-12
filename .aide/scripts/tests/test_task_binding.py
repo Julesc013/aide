@@ -101,8 +101,46 @@ class SelectedTaskBinding(unittest.TestCase):
         self.assertEqual(aide.build_task_packet(self.root, self.selected).text,
                          aide.build_task_packet(self.root, self.selected).text)
 
+    def test_empty_or_conflicting_declaration_refuses_scope_fallback(self):
+        for identity in ['', self.selected + '\nphase: ' + self.other]:
+            with self.subTest(identity=identity):
+                self.packet(identity)
+                self.assertEqual(self.report().result, 'FAIL')
+
+    def test_missing_explicit_packet_refuses_scope_fallback(self):
+        self.assertEqual(self.report('.aide/context/missing.md').result, 'FAIL')
+
+    def test_invalid_identity_fails_even_without_git_observations(self):
+        self.packet('AIDE-MISSING-01')
+        with patch.object(aide, 'git_status_short', return_value=(False, [], 'unavailable')):
+            report = aide.build_verification_report(self.root, changed_files_only=True)
+        self.assertEqual(report.result, 'FAIL')
+
+    def test_review_evidence_uses_the_same_selected_workunit(self):
+        self.assertEqual(aide.default_evidence_dir(self.root),
+                         f'.aide/queue/{self.selected}/evidence')
+
+    def test_mismatched_task_owner_refuses_scope_fallback(self):
+        path = self.root / f'.aide/queue/{self.selected}/task.yaml'
+        aide.write_text(path, aide.read_text(path).replace('id: ' + self.selected, 'id: ' + self.other))
+        self.assertEqual(self.report().result, 'FAIL')
+
+    def test_named_task_without_scope_refuses_scope_fallback(self):
+        aide.write_text(self.root / f'.aide/queue/{self.selected}/task.yaml',
+                        'id: ' + self.selected + '\n')
+        self.assertEqual(self.report().result, 'FAIL')
+
     def test_generic_q_inference_compatibility(self):
         self.assertEqual(aide.infer_phase('Implement Q12 Verifier v0'), ('Q12', 'Verifier v0'))
+
+    def test_existing_project_named_queue_id_needs_no_aide_prefix(self):
+        name = 'PROJECT-TASK-17'
+        aide.write_text(self.root / f'.aide/queue/{name}/task.yaml',
+                        f'id: {name}\ntitle: Project-owned task\n'
+                        'scope:\n  allowed_paths:\n    - project/**\n')
+        packet = aide.build_task_packet(self.root, name).text
+        self.assertIn('task_id: ' + name, packet)
+        self.assertIn('project/**', packet)
 
 
 if __name__ == '__main__':

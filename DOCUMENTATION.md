@@ -1,5 +1,7 @@
 # AIDE Documentation Index
 
+- [Task packet identity and scope](docs/reference/task-packets.md): named WorkUnit projections, verification binding, refusal cases and legacy compatibility.
+
 - [Daily task-binding plan](.aide/queue/AIDE-DAILY-TASK-BINDING-01/ExecPlan.md): bounded repair of task preparation and verification with exact independent admission.
 
 - [SESSION new-host qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-qualification.json): eight source checks pass, native MXC unavailable; exact retained evidence and boundary limitations.

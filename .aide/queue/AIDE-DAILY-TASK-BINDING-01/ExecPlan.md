@@ -54,5 +54,14 @@ test owners and exact source refs in documentation. No whole-task savings claim.
 ## Progress
 
 - Admission accepted; allowed paths and existing owner confirmed.
-- Reproducing regressions and frozen test job preparation next.
+- Baseline job1331d025 ran10 tests:8 original failures,0 errors/skips. Full
+  results remain retained, collection verified and job retired.
+- Existing identity/rendering/verification owners repaired. Same selected task
+  now supplies default review evidence; seven additional refusal/consistency tests
+  retain all ten original assertions. AST and actual named pack preparation pass.
+- Freeze repaired source and run focused/legacy compatibility in the second job.
+- Doctor/validate ran and retain the two export/current-source provenance failures.
+  Source changes invalidate current-source correspondence; the historical export
+  and published assets remain unchanged. Regeneration/replay needs its own bounded
+  scope, not a weaker expected result or silent modification of this task's allowlist.
 - Source acceptance, daily-use interruption/consumer milestones and integration open.

@@ -1,0 +1,24 @@
+{
+  "disposition": "source change invalidates old export-pack current-source provenance; original manifest/release assets preserved, exact current-package regeneration/replay requires separately admitted scope",
+  "doctor_exit": 1,
+  "focused_source_tests": "pending",
+  "logs": {
+    "source-doctor.log": {
+      "bytes": 10350,
+      "failures": [
+        "- FAIL validation should be run: run validate and fix failures"
+      ],
+      "sha256": "96be2e283c2c5a7ae90ee317d104e0369c563c05d0f658b7b7b14b81e5cac186"
+    },
+    "source-validate.log": {
+      "bytes": 9788570,
+      "failures": [
+        "- FAIL export pack provenance problem: manifest source_commit a17cf4b3dbec5caa236c62ee2fa23b31aa09c8fc does not match current HEAD 7fbf8e11a63b39a3ba68e04e9a4fffe04e25c84c",
+        "- FAIL pack-status problem: manifest source_commit a17cf4b3dbec5caa236c62ee2fa23b31aa09c8fc does not match current HEAD 7fbf8e11a63b39a3ba68e04e9a4fffe04e25c84c"
+      ],
+      "sha256": "2f8d045ad39c02cc938b517e56de57770522d2fe1a7969693ab77db3b43d416f"
+    }
+  },
+  "schema": "aide.source-structural-observation.v1",
+  "validate_exit": 1
+}

@@ -1,0 +1,38 @@
+{
+  "checks": {
+    "errors": 0,
+    "failures": 8,
+    "filesystem_containment_claimed": false,
+    "job_id": "1331d02560344e0689574ab0f106e7a0",
+    "models_requested": 0,
+    "modules": [
+      "test_task_binding.py"
+    ],
+    "schema": "aide.daily-task-binding.checks.v1",
+    "skips": 0,
+    "stage": "baseline",
+    "status": "FAIL",
+    "tests_run": 10
+  },
+  "collection_and_retirement": "PASS",
+  "expected_defect_reproduction": true,
+  "failed_cases": [
+    "test_default_verification_uses_selected_task_not_last_active (daily_test_task_binding.SelectedTaskBinding.test_default_verification_uses_selected_task_not_last_active)",
+    "test_escaping_explicit_identity_refuses_scope_fallback (daily_test_task_binding.SelectedTaskBinding.test_escaping_explicit_identity_refuses_scope_fallback)",
+    "test_explicit_packet_overrides_latest_task_for_scope (daily_test_task_binding.SelectedTaskBinding.test_explicit_packet_overrides_latest_task_for_scope)",
+    "test_incidental_later_q_identifier_does_not_replace_declared_task (daily_test_task_binding.SelectedTaskBinding.test_incidental_later_q_identifier_does_not_replace_declared_task)",
+    "test_legacy_phase_declaration_selects_named_task (daily_test_task_binding.SelectedTaskBinding.test_legacy_phase_declaration_selects_named_task)",
+    "test_named_packet_projects_identity_refs_and_actual_scope (daily_test_task_binding.SelectedTaskBinding.test_named_packet_projects_identity_refs_and_actual_scope)",
+    "test_unknown_explicit_identity_refuses_scope_fallback (daily_test_task_binding.SelectedTaskBinding.test_unknown_explicit_identity_refuses_scope_fallback)",
+    "test_unknown_named_task_refuses_before_packet_write (daily_test_task_binding.SelectedTaskBinding.test_unknown_named_task_refuses_before_packet_write)"
+  ],
+  "models_requested": 0,
+  "original_worker_exit": 1,
+  "peak_job_memory_bytes": 208125952,
+  "peak_scratch_bytes": 12074,
+  "receipt_sha256": "1ffca42eb7aad47a99beae4fb447a63d6c7af77b5eec6a7ab147a41768ea5960",
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\1331d02560344e0689574ab0f106e7a0",
+  "schema": "aide.regression-baseline.v1",
+  "source_commit": "7fbf8e11a63b39a3ba68e04e9a4fffe04e25c84c",
+  "source_tree": "e4d9742ec07c7661ad8ba2f89897398fe4d2a98c"
+}

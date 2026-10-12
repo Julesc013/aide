@@ -3,8 +3,8 @@
 - command: `capability ledger`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-session-containment-new-host-01`
-- current_commit: `bde3d7103b70fd78ad5908134b3d929da95972b9`
+- current_branch: `task/aide-daily-task-binding-01`
+- current_commit: `7fbf8e11a63b39a3ba68e04e9a4fffe04e25c84c`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

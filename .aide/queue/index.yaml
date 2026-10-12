@@ -6,7 +6,7 @@ canonical_source: .aide/queue
 items:
   - id: AIDE-DAILY-TASK-BINDING-01
     status: running
-    planning_state: admitted_reproducing_regressions_before_source_fix
+    planning_state: eight_baseline_failures_preserved_repaired_source_checks_pending
     title: Bind compact task preparation and verification to the selected WorkUnit
     task: .aide/queue/AIDE-DAILY-TASK-BINDING-01/task.yaml
     exec_plan: .aide/queue/AIDE-DAILY-TASK-BINDING-01/ExecPlan.md

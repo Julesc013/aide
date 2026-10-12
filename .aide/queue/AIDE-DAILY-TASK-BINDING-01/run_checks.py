@@ -14,7 +14,8 @@ args = parser.parse_args()
 repo = Path(__file__).resolve().parents[3]
 files = ['test_task_binding.py']
 if not args.baseline:
-    files += ['test_verifier.py', 'test_review_pack.py', 'test_token_ledger.py', 'test_aide_lite.py']
+    files += ['test_verifier.py', 'test_review_pack.py', 'test_token_ledger.py',
+              'test_aide_lite.py', 'test_x_os_01_task_os_commands.py']
 suite = unittest.TestSuite()
 for name in files:
     spec = importlib.util.spec_from_file_location('daily_' + Path(name).stem,
