@@ -1,15 +1,15 @@
 # AIDE Latest Task Packet
 
-task_id: AIDE-DAILY-TASK-BINDING-01
+task_id: AIDE-DAILY-PACK-REFRESH-01
 projection_only: true
 
 ## PHASE
 
-AIDE-DAILY-TASK-BINDING-01 - Bind compact task preparation and verification to the selected WorkUnit
+AIDE-DAILY-PACK-REFRESH-01 - Refresh the derived Lite export after the qualified task-binding fix
 
 ## GOAL
 
-Bind compact task preparation and verification to the selected WorkUnit
+Refresh the derived Lite export after the qualified task-binding fix
 
 ## WHY
 
@@ -17,9 +17,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-DAILY-TASK-BINDING-01/task.yaml` (selected scope and acceptance)
-- `.aide/queue/AIDE-DAILY-TASK-BINDING-01/ExecPlan.md` (continuation; when present)
-- `.aide/queue/AIDE-DAILY-TASK-BINDING-01/status.yaml` (actual state; when present)
+- `.aide/queue/AIDE-DAILY-PACK-REFRESH-01/task.yaml` (selected scope and acceptance)
+- `.aide/queue/AIDE-DAILY-PACK-REFRESH-01/ExecPlan.md` (continuation; when present)
+- `.aide/queue/AIDE-DAILY-PACK-REFRESH-01/status.yaml` (actual state; when present)
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -46,22 +46,18 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-DAILY-TASK-BINDING-01/**`
-- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
-- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
+- `.aide/queue/AIDE-DAILY-PACK-REFRESH-01/**`
+- `.aide/export/aide-lite-pack-v0/**`
 - `.aide/queue/index.yaml`
-- `.aide/scripts/aide_lite.py`
-- `.aide/scripts/tests/test_verifier.py`
-- `.aide/scripts/tests/test_task_binding.py`
 - `.aide/context/latest-task-packet.md`
 - `.aide/reports/capability-*.json`
 - `.aide/reports/capability-*.md`
-- `.aide/verification/latest-verification-report.md`
 - `.aide/generated/**`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
 - `PLANS.md`
 - `IMPLEMENT.md`
 - `DOCUMENTATION.md`
-- `docs/reference/task-packets.md`
 
 ## FORBIDDEN_PATHS
 
@@ -133,8 +129,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 5124
-- approx_tokens: 1281
+- chars: 4951
+- approx_tokens: 1238
 - budget_status: PASS
 - warnings:
   - none

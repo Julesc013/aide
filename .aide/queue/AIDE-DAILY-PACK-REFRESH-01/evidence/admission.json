@@ -1,0 +1,13 @@
+{
+  "schema": "aide.child-admission.v1",
+  "reviewer": "/root/review_new_host_bootstrap",
+  "proposal_sha256": "6c8d839d921195c9f6bc5c1ebfadbe975f828e3f143a7dac7d88256e2173a5e7",
+  "verdict": "ACCEPT_WITH_NOTES",
+  "all_notes_nonblocking_for_preparation": true,
+  "notes_dispositions": [
+    "Complete ancestor/root/descendant ordinary and single-link identity, exact tracked/checksummed files and expected directories, excluded metadata pins and preserved prior bytes/Git identities are required before later reviewed reset.",
+    "Exact accepted source prerequisite holds; each effect has fresh source/tree/input/manifest binding and admission. Review and commit regenerated output before separate clean-subject replay; preserve original provenance/release evidence."
+  ],
+  "branch_clarification": "Reviewer confirmed existing campaign delegation plus helper/queue/source/clean/noactive prerequisites already cover ordinary named task-branch creation; no extra gate invented.",
+  "reset_dispatch_replay_admitted": false
+}

@@ -1,0 +1,63 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DAILY-PACK-REFRESH-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Refresh the derived Lite export after the qualified task-binding fix
+type: qualification
+status: needs_review
+result: PENDING
+objective: Restore current-source correspondence with existing exporter and exact structural/replay evidence.
+authority_basis: direct_owner_daily_use_goal_existing_campaign_and_independent_bounded_admission
+admission:
+  proposal_ref: .aide/queue/AIDE-DAILY-TASK-BINDING-01/evidence/pack-refresh-admission.log
+  sha256: 6c8d839d921195c9f6bc5c1ebfadbe975f828e3f143a7dac7d88256e2173a5e7
+  reviewer: /root/review_new_host_bootstrap
+  verdict: ACCEPT_WITH_NOTES_all_notes_nonblocking_for_preparation
+  source_prerequisite: accepted_0a91084f_tested_ba7f4957_PASS74_checkpoint_36994f46
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-DAILY-PACK-REFRESH-01/**
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/queue/index.yaml
+    - .aide/context/latest-task-packet.md
+    - .aide/reports/capability-*.json
+    - .aide/reports/capability-*.md
+    - .aide/generated/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+  forbidden_operations:
+    - product_or_executor_source_changes_policy_changes_or_weakened_assertions
+    - archives_tags_publication_upload_version_or_support_claim
+    - models_providers_targets_accounts_ACLs_or_configuration_reserve_changes
+    - unrelated_cleanup_new_roots_checkouts_main_dev_integration_or_remote_mutation
+proposed_effect:
+  state: HELD_until_exact_wrapper_source_reset_dispatch_review
+  owner: existing_build_export_pack_checksums_managed_workspace_WindowsJobHost
+  exact_output: D:/Projects/AIDE/aide/.aide/export/aide-lite-pack-v0
+  maximum_jobs: 2
+  config: D:/Projects/AIDE/aide/.aide.local/execution.json
+  limits: unchanged_finite_config_canonical8MiB_memory1GiB_reserves4GiB_physical_commit10GiB_disk
+  ownership_gate: complete_ordinary_single_link_tracked_checksummed_descendants_and_expected_directories_no_unknown_members
+  prior_metadata: separately_pin_and_preserve_manifest_checksums_export_report_and_Git_identity
+  after_each_job: full_collection_digests_quiescence_scratch_retirement_reservation_release
+  replay_gate: reviewed_generated_result_committed_clean_before_separately_reviewed_replay
+acceptance:
+  - Current export exact source correspondence and structural checks pass honestly.
+  - Prior provenance failures, pack identities and published release evidence remain intact.
+  - Byte equality requires actual replay for the frozen clean matching subject.
+  - Source PASS74 reused only for unchanged production_tests_execution_inputs.
+  - Export alone confers no consumer_integration_release_or_model_qualification.
+branch_plan:
+  base: 36994f4618501ae5b2c01902ca47097ab22d91f4
+  tree: 9c84a384a7f000b56803fad31ec4391b7edcf27f
+  helper_result: ready_dry_run_missing_upstream_disclosed_no_reports_written
+  action: task/aide-daily-pack-refresh-01_existing_checkout_only
+  reviewer_clarification: existing_delegation_and_prerequisites_cover_ordinary_branch_no_new_gate
+review_gate: exact_wrapper_reset_dispatch_generated_outcome_and_replay_review

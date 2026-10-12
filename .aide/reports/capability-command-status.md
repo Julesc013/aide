@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-daily-task-binding-01`
-- current_commit: `0a91084f38223cf3ee95db1318a28a58282fd970`
+- current_branch: `task/aide-daily-pack-refresh-01`
+- current_commit: `36994f4618501ae5b2c01902ca47097ab22d91f4`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

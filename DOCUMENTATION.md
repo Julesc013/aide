@@ -1,5 +1,7 @@
 # AIDE Documentation Index
 
+- [Derived export refresh](.aide/queue/AIDE-DAILY-PACK-REFRESH-01/ExecPlan.md): known ownership, exact current-source correspondence and separate reset/replay gates after the accepted task-binding fix.
+
 - [Task packet identity and scope](docs/reference/task-packets.md): named WorkUnit projections, verification binding, refusal cases and legacy compatibility.
 
 - [Daily task-binding plan](.aide/queue/AIDE-DAILY-TASK-BINDING-01/ExecPlan.md): bounded repair of task preparation and verification with exact independent admission.

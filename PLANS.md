@@ -1,5 +1,13 @@
 # AIDE Planning Index
 
+## Derived export refresh preparation — 2026-10-12
+
+[AIDE-DAILY-PACK-REFRESH-01](.aide/queue/AIDE-DAILY-PACK-REFRESH-01/ExecPlan.md)
+is admitted for preparation after task-binding source acceptance. Actual prior
+ownership is recorded; thin wrapper, six refusal fixtures and exact effect await
+review before any generated-content reset. Later replay and consumer/integration
+remain separate subjects.
+
 ## Accepted daily task-binding source — 2026-10-12
 
 Source0a91084f is independently accepted after74 tests and one derived-binding

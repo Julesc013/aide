@@ -1,0 +1,10 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-DAILY-PACK-REFRESH-01
+status: needs_review
+result: PENDING
+updated_at: 2026-10-12
+planning_state: exact_conditional_refresh_effect_prepared_fixtures_and_reset_held
+jobs_allocated: 0
+maximum_jobs: 2
+model_requests: 0
+next_slice: independent_exact_wrapper_and_conditional_refresh_effect_review

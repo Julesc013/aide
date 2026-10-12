@@ -1,0 +1,12 @@
+{
+  "AST": "PASS",
+  "actual_prior_inventory": "PASS854_files_240_directories_4354242bytes",
+  "export_reset_and_dispatch": "HELD",
+  "input_count": 858,
+  "replay": "SEPARATE_REVIEW_REQUIRED",
+  "schema": "aide.export-effect-preparation.v1",
+  "six_fixtures": "NOT_RUN",
+  "source_PASS74_reused": true,
+  "source_helper_sha256": "ba7f49574a2a54ae3606599392285409a4c5923fadc1c3dd972795363b11deff",
+  "template_sha256": "7618c964ac310b0536d08f5ff5ab7293da7deee0229b703ba40537dd70119be0"
+}

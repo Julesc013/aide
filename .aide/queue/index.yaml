@@ -4,6 +4,14 @@ policy: .aide/queue/policy.yaml
 default_concurrency: 1
 canonical_source: .aide/queue
 items:
+  - id: AIDE-DAILY-PACK-REFRESH-01
+    status: needs_review
+    planning_state: exact_conditional_refresh_effect_prepared_fixtures_and_reset_held
+    title: Refresh the derived Lite export after the qualified task-binding fix
+    task: .aide/queue/AIDE-DAILY-PACK-REFRESH-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DAILY-PACK-REFRESH-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DAILY-PACK-REFRESH-01/prompt.md
+    evidence: .aide/queue/AIDE-DAILY-PACK-REFRESH-01/evidence
   - id: AIDE-DAILY-TASK-BINDING-01
     status: passed_with_notes
     planning_state: exact_source_accepted_current_export_and_integration_held

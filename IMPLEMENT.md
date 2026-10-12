@@ -1,5 +1,13 @@
 # AIDE Implementation Log
 
+## Derived export qualification preparation — 2026-10-12
+
+Prepared task-local oracles/orchestration around the unchanged exporter and
+managed owner. Read-only preflight verifies854 tracked/checksummed files and240
+directories totaling4.35MB, with prior metadata/Git identities preserved. Source
+AST passes; fixtures and reset/dispatch remain unrun and held for exact review.
+Published archives and actual generated export contents remain unchanged.
+
 ## Daily task-binding acceptance — 2026-10-12
 
 Independent source review accepts0a91084f with no required fixes and one explicit
