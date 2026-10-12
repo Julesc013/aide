@@ -59,7 +59,9 @@ planning and deterministic work continues.
 - [x] Amend and verify the planning candidate;22 capabilities/8 phases/6 negative
   checks, exact child scope and final doctor/validate PASS.
 - [x] Prepare concrete next briefs and request reviewer choice after checks.
-- [ ] Freeze candidate and obtain independent review.
+- [x] Exact922173c8/tree7c701ed1 received independent ACCEPT_WITH_NOTES from
+  /root/review_daily_use_plan. Every note is nonblocking and disposed for this
+  source/queue subject; no integration or runtime effect is admitted by it.
 - [x] Record guarded source commit09afd31c/tree50f9422d and latest-message PASS.
   Portable source-checkpoint.json records exact state without inventing review.
 
@@ -78,9 +80,10 @@ absent. No pool was created, model launched or old configuration transferred.
 DiskEd is clean at40ac8ec and retains target-owned spec/work units; read-only
 preparation does not authorize replacing that authority or physical-device work.
 
-Independent-review permission was requested after the concrete checked candidate
-was ready. No reviewer is running or verdict recorded merely because one is
-requested. Continue independent preparation while awaiting the actual choice.
+The owner authorized separate review agents for bounded campaign candidates.
+The actual independent review is evidence/independent-review-922173c8.json.
+The prior source-checkpoint remains its original preparation record. Continue
+the existing SESSION task under its own exact new-host source/effect review.
 
 ## Recovery and evidence
 

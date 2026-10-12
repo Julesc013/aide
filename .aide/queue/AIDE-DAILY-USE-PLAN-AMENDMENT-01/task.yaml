@@ -2,9 +2,9 @@ schema_version: aide.queue-task.v0
 id: AIDE-DAILY-USE-PLAN-AMENDMENT-01
 title: Make the existing roadmap executable through useful daily workflows
 type: documentation
-status: needs_review
-planning_state: prepared_machine_checks_pass_independent_review_pending
-result: PREPARED_NOT_ACCEPTED
+status: passed_with_notes
+planning_state: independently_accepted_planning_source_operational_gates_retained
+result: PLANNING_ACCEPTED_WITH_NONBLOCKING_NOTES
 created_at: 2026-10-12
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 authority_basis: >

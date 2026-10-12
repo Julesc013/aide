@@ -1,0 +1,45 @@
+{
+  "schema_version": "aide.independent-source-review.v1",
+  "date": "2026-10-12",
+  "task_id": "AIDE-DAILY-USE-PLAN-AMENDMENT-01",
+  "reviewer": "/root/review_daily_use_plan",
+  "verdict": "ACCEPT_WITH_NOTES",
+  "subject_commit": "922173c83e134b6d4d44895ac0c2d89632ff890a",
+  "subject_tree": "7c701ed122e02dabc655f31995b314035528cd52",
+  "base": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a",
+  "scope": "source_and_queue_acceptance_only",
+  "checks": [
+    "39 frozen changed files within child allowlist",
+    "No runtime/specification/export/release source changes",
+    "14 added local Markdown links exist in frozen tree",
+    "12 milestones/22 capabilities/8 phases and 6 invalid plan refusals",
+    "commit-range diff check PASS",
+    "final doctor/validate retained log bytes and SHA256 match; exits zero",
+    "working tree clean during review"
+  ],
+  "required_fixes": [],
+  "notes": [
+    {
+      "topic": "Builtin verifier WARN18",
+      "blocking": false,
+      "disposition": "Independent frozen-range scope check passed against the exact child allowlist; production selection limitation stays disclosed."
+    },
+    {
+      "topic": "Operational qualification",
+      "blocking": false,
+      "disposition": "Open runtime/host/consumer/usage work is outside this planning-only subject; no activation or support claim."
+    },
+    {
+      "topic": "Historical evidence identities",
+      "blocking": false,
+      "disposition": "Older manifest and primary-source checkpoint keep their original subjects; this verdict binds the full commit/tree above."
+    }
+  ],
+  "effects_authorized_by_verdict": {
+    "source_queue_acceptance": true,
+    "integration": false,
+    "runtime_activation": false,
+    "external_effects": false
+  },
+  "review_agent_model_usage": null
+}
