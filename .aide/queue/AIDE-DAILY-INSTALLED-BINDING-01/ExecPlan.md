@@ -30,7 +30,8 @@ No release effect or implementation is inferred from intake or preparation.
    bytes with no source-import fallback; retain every assertion and exact count.
 3. Exercise real CLI and Git observations: two tasks with distinct allowlists,
    project-owned ID, selected packet actual scope/refs, positive changes and
-   unrelated-change refusal, invalid declarations/owners and preserved snapshots.
+   undeclared-path WARN characterization, explicit forbidden refusal, invalid
+   declarations/owners and preserved snapshots.
    Keep existing read-only Task OS behavior. Do not replace failures with skips.
 4. In a separate process continue the same fixture WorkUnit using durable records
    and retained completed result. Preserve authored sentinels/customizations and
@@ -81,3 +82,14 @@ include separate-process task inspection, packet/evidence continuity and default
 review binding. Full started/completed stages and stdout/stderr are retained by
 existing job collection. Wrapper AST and exact current input pins pass. Runtime
 remains NOT RUN, with source/effect review required before any fixture/import/job.
+
+### Current exact pre-dispatch oracle repair
+
+Independent source/effect review3aac28e6 returned REQUEST_CHANGES before any job.
+The first new fixture incorrectly expected unknown paths to fail; unchanged
+verifier semantics are unknown/WARN/exit0 and explicitly forbidden/FAIL/nonzero.
+Now assert both exact classifications and retain reports. Invalid identity cases
+vary only task_id in otherwise-valid packets, and invalid/mismatched reports must
+name the intended diff_scope cause. No original17assertion or source behavior
+changes. Preserve the original frozen candidate/review and refresh all affected
+pins before new exact review. Zero jobs allocated; both attempts remain available.

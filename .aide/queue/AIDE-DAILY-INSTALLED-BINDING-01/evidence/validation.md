@@ -14,3 +14,8 @@ No runtime qualification follows from preparation. Exact source/effect review he
 Current candidate preparation: wrapper AST PASS; all1,709exact manifest inputs
 match their current bytes. Thin fixture orchestration only; all runtime checks
 remain NOT RUN until exact source/effect review. No shipped assertion changed.
+
+Pre-dispatch independent REQUEST_CHANGES3aac28e6 preserved. Fixture/contract repair
+adds intended classification/cause reports and preserves all original17methods.
+Production/test/export bytes remain unchanged. Updated AST/pins require exact
+re-review before any job; runtime still NOT RUN, zero allocations.

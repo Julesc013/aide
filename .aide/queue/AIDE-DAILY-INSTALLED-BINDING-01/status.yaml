@@ -3,7 +3,7 @@ task_id: AIDE-DAILY-INSTALLED-BINDING-01
 status: needs_review
 result: PENDING
 updated_at: 2026-10-12
-planning_state: consumer_candidate_prepared_exact_source_effect_review_pending
+planning_state: pre_dispatch_oracle_repair_new_exact_source_effect_review_pending
 jobs_allocated: 0
 maximum_jobs: 2
 model_requests: 0

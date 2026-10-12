@@ -90,6 +90,7 @@ def main():
     (target / 'AGENTS.md').write_bytes(sentinel)
     write(target / 'source/selected/helper.py', 'value = 1\n')
     write(target / 'source/other/helper.py', 'value = 1\n')
+    write(target / 'source/forbidden/helper.py', 'value = 1\n')
     authored = target / 'customization.txt'
     authored.write_bytes(b'target-owned customization\n')
     invoke('safe-import', [sys.executable, '-I', '-B', str(exported_cli),
@@ -110,7 +111,7 @@ def main():
                 + ''.join('    - ' + value + '\n' for value in paths)
                 + '    - .aide/context/**\n    - .aide/memory/**\n    - .aide/reports/**\n'
                 + '    - .aide/queue/' + identity + '/evidence/**\n'
-                + '  forbidden_paths:\n    - .aide.local/**\n')
+                + '  forbidden_paths:\n    - .aide.local/**\n    - source/forbidden/**\n')
         write(queue / identity / 'task.yaml', text)
         write(queue / identity / 'status.yaml', 'schema_version: aide.queue-status.v0\n'
               + 'task_id: ' + identity + '\nstatus: running\nresult: PENDING\n')
@@ -130,6 +131,16 @@ def main():
         return invoke(label, [sys.executable, '-I', '-B', str(cli),
                               '--repo-root', str(target), *parts], target, expected)
 
+    def verification(label, expected=0):
+        relative = '.aide/reports/' + label + '.md'
+        stdout, _ = command(label, 'verify', '--changed-files', '--write-report',
+                            relative, expected=expected)
+        report_path = target / relative
+        data = report_path.read_bytes()
+        with (output / (label + '.verification.md')).open('xb') as retained:
+            retained.write(data)
+        return stdout, data.decode('utf-8')
+
     command('named-packet', 'pack', '--task', SELECTED)
     packet = target / '.aide/context/latest-task-packet.md'
     text = packet.read_text(encoding='utf-8')
@@ -137,12 +148,24 @@ def main():
     allowed = text.split('## ALLOWED_PATHS\n', 1)[1].split('## FORBIDDEN_PATHS', 1)[0]
     assert 'source/**' not in allowed and '<fill' not in allowed
     write(target / 'source/selected/helper.py', 'value = 2\n')
-    positive, _ = command('selected-edit-verification', 'verify', '--changed-files')
+    positive, positive_report = verification('selected-edit-verification')
     assert 'result: PASS' in positive
+    assert '- allowed: `source/selected/helper.py`' in positive_report
     write(target / 'source/other/helper.py', 'value = 2\n')
-    negative, _ = command('unrelated-edit-refusal', 'verify', '--changed-files', expected='nonzero')
-    assert 'result: FAIL' in negative
+    unknown, unknown_report = verification('undeclared-edit-advisory')
+    assert 'result: FAIL' not in unknown and 'errors: 0' in unknown.splitlines()
+    assert '- unknown: `source/other/helper.py`' in unknown_report
+    warnings = unknown_report.split('## WARNINGS', 1)[1].split('## ERRORS', 1)[0]
+    assert any('diff_scope:' in line and '`source/other/helper.py`' in line
+               for line in warnings.splitlines())
     write(target / 'source/other/helper.py', 'value = 1\n')
+    write(target / 'source/forbidden/helper.py', 'value = 2\n')
+    forbidden, forbidden_report = verification('forbidden-edit-refusal', expected='nonzero')
+    assert 'result: FAIL' in forbidden and '- forbidden: `source/forbidden/helper.py`' in forbidden_report
+    errors = forbidden_report.split('## ERRORS', 1)[1].split('## EVIDENCE_REFS', 1)[0]
+    assert any('diff_scope:' in line and '`source/forbidden/helper.py`' in line
+               for line in errors.splitlines())
+    write(target / 'source/forbidden/helper.py', 'value = 1\n')
     original_packet = packet.read_bytes()
     packet.write_bytes(original_packet + b'\n## EVIDENCE\n\nOld Q20 example is context only.\n')
     current, _ = command('incidental-Q-identity', 'task', 'inspect')
@@ -154,14 +177,25 @@ def main():
     command('unknown-named-task-refusal', 'pack', '--task', 'AIDE-MISSING-01', expected='nonzero')
     assert packet.read_bytes() == before_unknown
     assert sha(snapshot_path) == snapshot_sha
-    for number, identity in enumerate(('', '../../outside', 'AIDE-MISSING-01', SELECTED + '\nphase: ' + OTHER)):
-        write(packet, '# Task\n\ntask_id: ' + identity + '\n\n## PHASE\n\nBounded work\n')
-        _, _ = command('invalid-identity-' + str(number), 'verify', '--changed-files', expected='nonzero')
+    invalid_cases = (('', 'invalid declared task identity'),
+                     ('../../outside', 'invalid declared task identity'),
+                     ('AIDE-MISSING-01', 'declared task is missing: AIDE-MISSING-01'),
+                     (SELECTED + '\nphase: ' + OTHER, 'conflicting declared task identities'))
+    valid_text = before_unknown.decode('utf-8')
+    assert valid_text.count('task_id: ' + SELECTED + '\n') == 1
+    for number, (identity, cause) in enumerate(invalid_cases):
+        write(packet, valid_text.replace('task_id: ' + SELECTED + '\n',
+                                        'task_id: ' + identity + '\n', 1))
+        _, invalid_report = verification('invalid-identity-' + str(number), expected='nonzero')
+        errors = invalid_report.split('## ERRORS', 1)[1].split('## EVIDENCE_REFS', 1)[0]
+        assert '- diff_scope: ' + cause in errors
     packet.write_bytes(before_unknown)
     task_path = queue / SELECTED / 'task.yaml'
     task_bytes = task_path.read_bytes()
     task_path.write_bytes(task_bytes.replace(('id: ' + SELECTED).encode(), ('id: ' + OTHER).encode(), 1))
-    command('mismatched-owner-refusal', 'verify', '--changed-files', expected='nonzero')
+    _, mismatch_report = verification('mismatched-owner-refusal', expected='nonzero')
+    errors = mismatch_report.split('## ERRORS', 1)[1].split('## EVIDENCE_REFS', 1)[0]
+    assert '- diff_scope: declared task identity mismatch: ' + SELECTED in errors
     task_path.write_bytes(task_bytes)
     inspected, _ = command('task-os-read-only', 'task', 'next-plan')
     assert 'non_mutating: true' in inspected and 'lifecycle_apply_authorized: false' in inspected
@@ -189,6 +223,7 @@ def main():
                'job_id': os.environ['AIDE_JOB_ID'], 'source_helper_sha256': sha(cli),
                'original_regression_tests': 17, 'task_id': SELECTED,
                'shipped_import_no_source_fallback': True, 'real_Git_scope_verified': True,
+               'undeclared_path_warns_without_grant': True, 'explicit_forbidden_path_refuses': True,
                'valid_packet_snapshot_preserved_on_unknown_task': True,
                'authored_content_preserved': True, 'same_fixture_workunit_resumed': True,
                'default_review_same_selected_task': True, 'task_os_inspection_behavior_preserved': True,

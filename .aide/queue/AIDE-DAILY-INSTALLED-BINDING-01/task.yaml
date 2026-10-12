@@ -55,7 +55,8 @@ proposed_effect:
 acceptance:
   - Original17assertions pass against shipped helper with no source-import fallback.
   - Actual installed CLI projects selected named and project IDs with correct scope and refs.
-  - Real Git classifications pass selected edits and refuse unrelated edits or invalid identities without fallback.
+  - Real Git classifies selected edits as allowed and undeclared edits as unknown WARN without granting effects.
+  - Explicitly forbidden edits and invalid declared identities or mismatched owners produce the intended diff_scope error without fallback.
   - Valid packets snapshots authored sentinels and customization remain preserved on refusals.
   - Separate process continues the same fixture WorkUnit using durable state and completed result.
   - Exact measured outcomes retain unknown coverage and do not claim unrelated platform release or target capability.
@@ -66,3 +67,9 @@ branch_plan:
   helper: ready_dry_run_missing_upstream_disclosed_reports_not_written
   branch: task/aide-daily-installed-binding-01
   effect: local_named_task_branch_existing_checkout_no_other_refs_or_remote
+oracle_repair:
+  review_ref: evidence/review-3aac28e6.json
+  source_semantics: unchanged_unknown_is_advisory_forbidden_and_identity_errors_fail
+  original17_assertions: preserved_byte_identical
+  refusal_proof: otherwise_valid_packet_specific_diff_scope_cause_in_retained_report
+  authority: bounded_fixture_contract_clarification_inside_admitted_preparation_no_effect_or_policy_expansion

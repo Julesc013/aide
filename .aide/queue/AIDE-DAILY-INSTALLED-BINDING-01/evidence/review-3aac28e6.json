@@ -1,0 +1,14 @@
+{
+  "schema": "aide.independent-source-effect-review.v1",
+  "subject_commit": "3aac28e6066c74826f5458797562025d7d82c88a",
+  "subject_tree": "639d28f905efa03f9f8c5288d81a95cf8725481e",
+  "reviewer": "/root/review_daily_use_plan",
+  "verdict": "REQUEST_CHANGES",
+  "required_fixes": [
+    "Characterize undeclared paths as unknown/WARN/exit0 and add explicitly forbidden FAIL/nonzero fixture; update contract/effect without changing production semantics or17original assertions.",
+    "Vary identity in an otherwise-valid packet and require specific diff_scope identity/owner errors in retained verification reports."
+  ],
+  "independent_preparation_checks": "31paths allowed; unchanged production/executor/export/archive/specification; AST valid;1709pins Python/Git and855pack hashes match; shipped17original methods/bytes unchanged; finite scratch/collection/retirement/effect gates suitable.",
+  "jobs_started": 0,
+  "read_only": true
+}

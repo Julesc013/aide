@@ -19,7 +19,8 @@ paths; no source-package fallback. Original17test methods/bodies are unchanged.
 
 Preserve full command stdout/stderr, started-stage/exit/duration and collected
 stage hashes. Actual CLI stages exercise importer, selected packet and
-real Git positive/negative scope, incidentalQ/unknown/invalid/mismatched refusal,
+real Git allowed/unknown-WARN/explicit-forbidden-FAIL scope, incidentalQ and
+unknown/invalid/mismatched-identity refusal with specific diff_scope report causes,
 TaskOS read-only/explicit report, selected default review evidence and same-task
 separate-process continuation without changing retained completed result. Both
 authored AGENTS and customization survive all fixture operations. Final success
@@ -36,3 +37,10 @@ requires separate source admission. All old tests/reviews/release evidence remai
 This only proves exact installed fixture behavior and bounded process continuity.
 No arbitrary interruption, client/model containment, complete usage/efficiency,
 real downstream grant, integration, version/support/archive or release effect.
+
+The original3aac28e6 REQUEST_CHANGES and pre-dispatch repair are preserved. This
+clarifies fixture expectations against unchanged advisory verifier semantics;
+unknown-path warnings grant no effect authority and do not qualify containment.
+Invalid declaration fixtures preserve the valid packet body; retained reports
+must include each expected identity/owner diff_scope error. No weak nonzero-only
+oracle, original assertion removal or production semantic change is permitted.
