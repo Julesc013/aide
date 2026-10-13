@@ -1,5 +1,15 @@
 # AIDE Implementation Log
 
+## Native consumer postimages and acquisition preparation - 2026-10-13
+
+Parent77f06858 records independently accepted preparation a18773ae. New bounded
+child prepares three DiskEd postimages inside AIDE only; exporter/CLI selector,
+five tests and existing tool contract. Original69method bodies are unchanged;
+AST/pins and Harness149checks PASS. Seven631366-byte public wheel inputs and a
+nonexecuting acquisition wrapper are frozen for review. No packages/jobs/target
+effects yet. Existing stale capability failure is retained and its derived owner
+refreshed in scope; no production/policy/export change.
+
 ## Installed fixture acceptance and conservation - 2026-10-13
 
 All22actual stages/eight reports and exact original17PASS reuse received independent

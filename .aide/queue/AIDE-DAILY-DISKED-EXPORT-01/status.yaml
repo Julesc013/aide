@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-DAILY-DISKED-EXPORT-01
+status: planning
+classification: admitted_preparation_only
+planning_state: target_postimages_and_pinned_dependency_effect_preparation
+result: PENDING
+review_gate: exact_source_and_each_effect_held
+updated_at: 2026-10-13
+jobs_allocated: 0
+maximum_jobs: 3
+target_mutated: false
+product_qualified: false
+next_action: freeze_native_postimages_and_pinned_wheel_acquisition_for_exact_review

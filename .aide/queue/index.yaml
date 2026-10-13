@@ -3946,3 +3946,13 @@ items:
     exec_plan: .aide/queue/AIDE-REASONABLE-AUTOMATION-01/ExecPlan.md
     prompt: .aide/queue/AIDE-REASONABLE-AUTOMATION-01/prompt.md
     evidence: .aide/queue/AIDE-REASONABLE-AUTOMATION-01/evidence
+
+  - id: AIDE-DAILY-DISKED-EXPORT-01
+    status: planning
+    planning_state: native_owner_preparation_only
+    result: PENDING
+    title: Prepare and qualify one selected native DiskEd WorkUnit export
+    task: .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/prompt.md
+    evidence: .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence

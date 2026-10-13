@@ -1,0 +1,71 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DAILY-DISKED-EXPORT-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Prepare and qualify one selected native DiskEd WorkUnit export
+type: implementation
+status: planning
+result: PENDING
+objective: Extend existing DE-W000 specctl ownership for bounded selected export and conserved native evidence.
+authority_basis: explicit_owner_downstream_goal_and_exact_preparation_admission_only
+admission:
+  proposal_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/disked-selected-export-proposal.md
+  sha256: a18773ae7e5217723b9afe1912ee5977a9fdc6eac8cbfc39905da1c2e9370584
+  reviewer: /root/review_daily_use_plan
+  verdict: ACCEPT_preparation_only
+  record: evidence/admission.json
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/**
+    - .aide/queue/index.yaml
+    - .aide/context/latest-task-packet.md
+    - .aide/generated/**
+    - .aide/reports/capability-*.json
+    - .aide/reports/capability-*.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  read_only_target: D:/Projects/DiskEd/disked
+  target_preparation: proposed_postimages_inside_own_child_only_no_apply
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+  forbidden_operations:
+    - AIDE_production_policy_export_archive_or_original_test_changes
+    - target_mutation_installation_or_ref_effect_without_separate_exact_review
+    - models_providers_accounts_privilege_ACL_global_install_or_configuration_effects
+    - unpinned_resolution_source_distribution_build_or_unrelated_cleanup
+    - remote_writes_main_dev_integration_tags_publication_or_support_claims
+native_owner:
+  work_id: DE-W000
+  catalog: spec/work/units.json
+  base_revision: 40ac8ec02778b7c25100421147fc1e107fa14ed5
+  baseline_accepted: false
+  upstream_runtime_qualified: false
+finite_effect_preparation:
+  state: HELD_until_separate_exact_source_effect_review
+  config_digest: 61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90
+  maximum_jobs: 3
+  allocations: one_pinned_wheel_acquisition_one_qualification_one_conditional_repair_replay
+  limits: unchanged_existing_new_host_config_and_reserves
+  canonical_outputs: none
+  acquisition_network: reviewed_exact_public_wheel_HTTPS_reads_only
+  qualification_network: none_offline_owned_scratch
+acceptance:
+  - Default all export and original tests preserve their exact behavior.
+  - Selected export retains native ID scope planned_NOT_RUN_false_authorization.
+  - Unknown selector refuses before creating output and existing content is preserved.
+  - Actual native tool checks complete assertions and bounded recovery conserve results.
+  - Target apply and native grant remain held for separate exact review.
+  - Known resource_effort observations retain unknown coverage and no whole_savings_claim.
+review_gate: preparation_then_exact_source_effect_then_terminal_outcome
+branch_plan:
+  base: 77f06858ffab4129a056af7d9958976325f624e2
+  tree: a13e22fd54b4f17d6ce5ba0358346c4bc79f26c1
+  helper: ready_dry_run_upstream_missing_disclosed
+  no_active_job: true
+  branch: task/aide-daily-disked-export-01
+  effect: local_task_branch_only_existing_checkout

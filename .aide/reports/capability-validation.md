@@ -3,8 +3,8 @@
 - command: `capability validate`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-daily-use-plan-amendment-01`
-- current_commit: `6f2abc4cd69e0d94f86a00495cb8feeebe20398a`
+- current_branch: `task/aide-daily-disked-export-01`
+- current_commit: `77f06858ffab4129a056af7d9958976325f624e2`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

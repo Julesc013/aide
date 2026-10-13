@@ -1,0 +1,32 @@
+{
+  "schema": "aide.native-consumer-preimages.v1",
+  "target": "D:\\Projects\\DiskEd\\disked",
+  "base_revision": "40ac8ec02778b7c25100421147fc1e107fa14ed5",
+  "base_tree": "69266da0750047b06cce918ef6d7527970e52c7a",
+  "original_paths": {
+    "spec/tools/specctl.py": "6533be987ed582f9e644114d42c7a79d79da4cf1b07af49c061934aada2f010e",
+    "spec/tools/tests/test_specctl.py": "86f11fb0ab22e61425b3d79e84d8812cbda5dc4a2f1d89709a0ec9f1809f6988",
+    "spec/development/specctl.md": "96b889f6bafeafab42fa8b5500dbca35a591c464e67c75a67080b19113065977"
+  },
+  "proposed_paths": {
+    "spec/tools/specctl.py": "e5575137ec2e5d790881d5524830c1a8da3e0c5a10d692ecae54327c8c42ba53",
+    "spec/tools/tests/test_specctl.py": "6ca68f60cec7b99dc25a6147308aec248c1a98d184eb6c9b7f979db803ef1501",
+    "spec/development/specctl.md": "41b1a1c0a322ba1679112c67d2841a80c5583da2cc9b42b257e7eea9dc8b06d0"
+  },
+  "preserved_native_records": {
+    "AGENTS.md": "3ea4b6538996b1d20143636c4c3f778cbd1aa2f07d2d652da34a4a8fea2a2e2f",
+    "CLAUDE.md": "2bee088a31f07633bada951ae74c71d69c753a170c51d78357a69042aada6dd7",
+    ".aide/integration.json": "b9aba220096a2a2061c5a34af9b978345d220b2509be515b8fb6c514c7c1b6d5",
+    "spec/work/units.json": "fe86d2ef538cfd64d34c03ea3182eb52b7a301a35e2d4448f1005bef0f3f963d",
+    "spec/work/acceptances.json": "4bdc707e151f7974395189e03607828a95570cd0bc70ba6ec08fa3f0e8f60c7d",
+    "spec/work/grants.json": "0af2d1c2bd197ba339a75f918299b71219d601a10f9e8ef9120a2f71b8f595ec",
+    "spec/references/aide-lock.json": "ff8e90670ae67fe394c4a81d09fc920e5cc4c98cdd2206336ee4a77c2d78abce",
+    "spec/bundle.json": "94d6cb97ca8cb25b0c7bcdb0b4432a7a4f2d933e31584df022e3ed09c0c431c0",
+    "spec/manifest.json": "818f38c516d71870ee1ff92e12ba8a1c7ad0e7b33e399c7cb03208fbf058f6ee"
+  },
+  "original_test_methods": 69,
+  "new_test_methods": 5,
+  "original_test_methods_unchanged": true,
+  "target_mutated": false,
+  "runtime_validation": "NOT_RUN"
+}

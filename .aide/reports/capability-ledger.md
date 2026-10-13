@@ -3,8 +3,8 @@
 - command: `capability ledger`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-daily-pack-refresh-01`
-- current_commit: `36994f4618501ae5b2c01902ca47097ab22d91f4`
+- current_branch: `task/aide-daily-disked-export-01`
+- current_commit: `77f06858ffab4129a056af7d9958976325f624e2`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

@@ -1,5 +1,14 @@
 # AIDE Planning Index
 
+## Native selected-export consumer preparation - 2026-10-13
+
+Admitted AIDE-DAILY-DISKED-EXPORT-01 retains DiskEd DE-W000 and its native work
+catalogue. Prepare optional selected export through existing specctl, conserving
+original69test methods and adding five independent cases. Seven pinned test wheels
+are observed; acquisition and actual source/consumer/target effects remain held
+for exact review. No target mutation or replacement AIDE queue. Continue the open
+daily-use Goal; broader editing, recovery, whole cost and release remain separate.
+
 ## Accepted installed fixture and remaining daily-use proof - 2026-10-13
 
 Exact fixture outcomebcbfa46d is independently ACCEPTed at local commita90f1330.

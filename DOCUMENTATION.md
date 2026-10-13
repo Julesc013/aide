@@ -1,5 +1,7 @@
 # AIDE Documentation Index
 
+- [Native selected-export plan](.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/ExecPlan.md): existing DiskEd ownership, conserved original tests and separately gated acquisition/consumer/target effects.
+
 - [Installed fixture result](.aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/evidence/final-result.json): actual 22 stages and conserved 17-test pass; exact outcome acceptance and broader claims remain separate.
 
 - [Installed daily workflow plan](.aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/ExecPlan.md): actual shipped task identity/scope and bounded continuation qualification; effects held for exact review.
