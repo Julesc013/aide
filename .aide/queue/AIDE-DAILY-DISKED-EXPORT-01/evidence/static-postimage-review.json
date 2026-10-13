@@ -1,0 +1,13 @@
+{
+  "schema": "aide.static-native-postimage-review.v1",
+  "reviewer": "/root/review_daily_use_plan",
+  "source_tree": "5733bcd1d98e6ee838fc778062cdf8e62f19773a",
+  "scope": "three_pinned_native_postimages_against_clean_40ac8ec0",
+  "feedback": "No required source or oracle issues found.",
+  "required_fixes": [],
+  "checks": "All pre/postimage hashes,69unchanged original test bodies,five additions,AST and preserved native authority records match.",
+  "static_only": true,
+  "native_tests_run_by_reviewer": false,
+  "operational_source_accepted": false,
+  "target_apply_accepted": false
+}

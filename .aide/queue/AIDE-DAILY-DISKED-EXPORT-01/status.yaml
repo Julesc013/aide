@@ -1,13 +1,13 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-DAILY-DISKED-EXPORT-01
-status: planning
+status: needs_review
 classification: admitted_preparation_only
-planning_state: target_postimages_and_pinned_dependency_effect_preparation
+planning_state: wheels_acquired_verified_retired_offline_native_effect_held
 result: PENDING
 review_gate: exact_source_and_each_effect_held
 updated_at: 2026-10-13
-jobs_allocated: 0
+jobs_allocated: 1
 maximum_jobs: 3
 target_mutated: false
 product_qualified: false
-next_action: freeze_native_postimages_and_pinned_wheel_acquisition_for_exact_review
+next_action: exact_offline_native_source_effect_review_then_fresh_admission

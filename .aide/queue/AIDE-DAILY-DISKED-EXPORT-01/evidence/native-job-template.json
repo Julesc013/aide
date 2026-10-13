@@ -1,0 +1,31 @@
+{
+  "adapter": "python",
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/native_qualification.py"
+  ],
+  "cwd": "D:\\Projects\\AIDE\\aide",
+  "executable_sha256": "434b361fe0c5960d404974feed493db47f2603a1ace2574312104fbed0182c6f",
+  "inputs": {
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence/acquisition-result.json": "c48b290d81e71e3bc61ac56cdde2097956f1acbfbaed64e5196072c3404fbf36",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence/native-fixture-inputs.json": "b2c9c298c1381563833a8abcf5ed6a0d41e4afc0c4eff4106c17906d13e5be6a",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence/native-preimages.json": "dfba84aab59f43b8a5902449e1dfa0f494f01fdeb2420b87d4f9d87c34d5029f",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/native-proposed/spec/development/specctl.md": "41b1a1c0a322ba1679112c67d2841a80c5583da2cc9b42b257e7eea9dc8b06d0",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/native-proposed/spec/tools/specctl.py": "e5575137ec2e5d790881d5524830c1a8da3e0c5a10d692ecae54327c8c42ba53",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/native-proposed/spec/tools/tests/test_specctl.py": "6ca68f60cec7b99dc25a6147308aec248c1a98d184eb6c9b7f979db803ef1501",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/native_qualification.py": "aca383055042e29a61a8ca563620ac05221c5194503df0b4c8774b33289eb323",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/native_stage.py": "bd961b39e6e501f36203b2dc1a05710518f630781ad120d4a402c319b9a4c636",
+    "core/execution/__init__.py": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5",
+    "core/execution/managed_workspace.py": "55f1590b37d150088c6023ccf8151adfbc350644e906c64d40b367c4884606d6",
+    "core/execution/provider.py": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e",
+    "core/execution/registered_process.py": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+    "core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
+    "core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+    "core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
+  },
+  "owner": "daily-disked-export-01",
+  "schema": "aide.maintainer-job.v1",
+  "source_commit": "c38b043ef610317a608fbe6479c0f1c9c3d6ad49",
+  "source_tree": "5733bcd1d98e6ee838fc778062cdf8e62f19773a",
+  "workunit": "AIDE-DAILY-DISKED-EXPORT-01"
+}

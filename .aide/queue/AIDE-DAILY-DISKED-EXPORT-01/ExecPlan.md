@@ -57,6 +57,29 @@ whose actual subjects remain unchanged. Do not weaken tests for a green result.
 
 ## Current progress and next action
 
+### Actual acquisition and next offline qualification
+
+Exact acquisition5733bcd1/c38b043e receives independent ACCEPT from
+/root/review_new_host_bootstrap. Nonblocking socket-timeout/import-closure
+clarifications are disposed against unchanged effect; clean exact source and
+imported Git module identities are checked before dispatch. First controller
+preflight misread known stdin __main__ as a repository module, stopped before
+any job, and is preserved; correction keeps every actual source identity check.
+
+Actual jobba01f5b6 exits0/quiescent and acquires all seven exact wheels without
+executing them. Every hash/size/metadata and both collection digests are verified;
+retired, scratch absent and reservation released. Peak memory28,323,840bytes,
+scratch636,193bytes. No global installation, target mutation or model request.
+Current source checkpointc38b043e retains all prior source/package proofs.
+
+Static independent postimage feedback identifies no required source/oracle issue;
+all69original main-file bodies and five new tests match frozen hashes. That is
+not native operational acceptance. Prepare second job for exact offline native
+106-method suite, existing index/check/manifest and controlled process continuity.
+Keep original environment-dependent symlink skips visible; no new selected-export
+case may skip. Target remains clean/native grant/apply unadmitted. Final job remains
+conditional repair/recovery only. Exact new source/effect review precedes dispatch.
+
 Parent preparation77f06858 is exact independently accepted and committed. Fresh
 helper/state checks confirm clean source/no active or staged job/config unchanged;
 local task branch created. Native postimages and acquisition wrapper are next.
