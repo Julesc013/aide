@@ -1,0 +1,147 @@
+{
+    "observed_at":  "2026-10-13T09:07:05.6173907Z",
+    "schema":  "aide.public-package-observation.v1",
+    "packages":  [
+                     {
+                         "version":  "6.0.3",
+                         "name":  "PyYAML",
+                         "metadata_url":  "https://pypi.org/pypi/PyYAML/6.0.3/json",
+                         "wheels":  [
+                                        {
+                                            "requires_python":  "\u003e=3.8",
+                                            "url":  "https://files.pythonhosted.org/packages/23/20/bb6982b26a40bb43951265ba29d4c246ef0ff59c9fdcdf0ed04e0687de4d/pyyaml-6.0.3-cp314-cp314-win_amd64.whl",
+                                            "filename":  "pyyaml-6.0.3-cp314-cp314-win_amd64.whl",
+                                            "bytes":  156429,
+                                            "sha256":  "4a2e8cebe2ff6ab7d1050ecd59c25d4c8bd7e6f400f5f82b96557ac0abafd0ac"
+                                        }
+                                    ],
+                         "requires_dist":  null,
+                         "status":  "OBSERVED"
+                     },
+                     {
+                         "version":  "4.26.0",
+                         "name":  "jsonschema",
+                         "metadata_url":  "https://pypi.org/pypi/jsonschema/4.26.0/json",
+                         "wheels":  [
+                                        {
+                                            "requires_python":  "\u003e=3.10",
+                                            "url":  "https://files.pythonhosted.org/packages/69/90/f63fb5873511e014207a475e2bb4e8b2e570d655b00ac19a9a0ca0a385ee/jsonschema-4.26.0-py3-none-any.whl",
+                                            "filename":  "jsonschema-4.26.0-py3-none-any.whl",
+                                            "bytes":  90630,
+                                            "sha256":  "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce"
+                                        }
+                                    ],
+                         "requires_dist":  [
+                                               "attrs\u003e=22.2.0",
+                                               "jsonschema-specifications\u003e=2023.03.6",
+                                               "referencing\u003e=0.28.4",
+                                               "rpds-py\u003e=0.25.0",
+                                               "fqdn; extra == \"format\"",
+                                               "idna; extra == \"format\"",
+                                               "isoduration; extra == \"format\"",
+                                               "jsonpointer\u003e1.13; extra == \"format\"",
+                                               "rfc3339-validator; extra == \"format\"",
+                                               "rfc3987; extra == \"format\"",
+                                               "uri-template; extra == \"format\"",
+                                               "webcolors\u003e=1.11; extra == \"format\"",
+                                               "fqdn; extra == \"format-nongpl\"",
+                                               "idna; extra == \"format-nongpl\"",
+                                               "isoduration; extra == \"format-nongpl\"",
+                                               "jsonpointer\u003e1.13; extra == \"format-nongpl\"",
+                                               "rfc3339-validator; extra == \"format-nongpl\"",
+                                               "rfc3986-validator\u003e0.1.0; extra == \"format-nongpl\"",
+                                               "rfc3987-syntax\u003e=1.1.0; extra == \"format-nongpl\"",
+                                               "uri-template; extra == \"format-nongpl\"",
+                                               "webcolors\u003e=24.6.0; extra == \"format-nongpl\""
+                                           ],
+                         "status":  "OBSERVED"
+                     },
+                     {
+                         "version":  "26.1.0",
+                         "name":  "attrs",
+                         "metadata_url":  "https://pypi.org/pypi/attrs/26.1.0/json",
+                         "wheels":  [
+                                        {
+                                            "requires_python":  "\u003e=3.9",
+                                            "url":  "https://files.pythonhosted.org/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl",
+                                            "filename":  "attrs-26.1.0-py3-none-any.whl",
+                                            "bytes":  67548,
+                                            "sha256":  "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+                                        }
+                                    ],
+                         "requires_dist":  null,
+                         "status":  "OBSERVED"
+                     },
+                     {
+                         "version":  "2025.9.1",
+                         "name":  "jsonschema-specifications",
+                         "metadata_url":  "https://pypi.org/pypi/jsonschema-specifications/2025.9.1/json",
+                         "wheels":  [
+                                        {
+                                            "requires_python":  "\u003e=3.9",
+                                            "url":  "https://files.pythonhosted.org/packages/41/45/1a4ed80516f02155c51f51e8cedb3c1902296743db0bbc66608a0db2814f/jsonschema_specifications-2025.9.1-py3-none-any.whl",
+                                            "filename":  "jsonschema_specifications-2025.9.1-py3-none-any.whl",
+                                            "bytes":  18437,
+                                            "sha256":  "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe"
+                                        }
+                                    ],
+                         "requires_dist":  [
+                                               "referencing\u003e=0.31.0"
+                                           ],
+                         "status":  "OBSERVED"
+                     },
+                     {
+                         "version":  "0.37.0",
+                         "name":  "referencing",
+                         "metadata_url":  "https://pypi.org/pypi/referencing/0.37.0/json",
+                         "wheels":  [
+                                        {
+                                            "requires_python":  "\u003e=3.10",
+                                            "url":  "https://files.pythonhosted.org/packages/2c/58/ca301544e1fa93ed4f80d724bf5b194f6e4b945841c5bfd555878eea9fcb/referencing-0.37.0-py3-none-any.whl",
+                                            "filename":  "referencing-0.37.0-py3-none-any.whl",
+                                            "bytes":  26766,
+                                            "sha256":  "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231"
+                                        }
+                                    ],
+                         "requires_dist":  [
+                                               "attrs\u003e=22.2.0",
+                                               "rpds-py\u003e=0.7.0",
+                                               "typing-extensions\u003e=4.4.0; python_version \u003c \"3.13\""
+                                           ],
+                         "status":  "OBSERVED"
+                     },
+                     {
+                         "version":  "2026.5.1",
+                         "name":  "rpds-py",
+                         "metadata_url":  "https://pypi.org/pypi/rpds-py/2026.5.1/json",
+                         "wheels":  [
+                                        {
+                                            "requires_python":  "\u003e=3.11",
+                                            "url":  "https://files.pythonhosted.org/packages/fb/80/65a5aa96c155e611d1ed844e4e1f57f3e36b021f396d9f8585d756e6b90d/rpds_py-2026.5.1-cp314-cp314-win_amd64.whl",
+                                            "filename":  "rpds_py-2026.5.1-cp314-cp314-win_amd64.whl",
+                                            "bytes":  225985,
+                                            "sha256":  "cef8ac28d26f4dda3533060c20fbf80a325458fa9fd23ea72a73cdfa8e978838"
+                                        }
+                                    ],
+                         "requires_dist":  null,
+                         "status":  "OBSERVED"
+                     },
+                     {
+                         "version":  "4.16.0",
+                         "name":  "typing_extensions",
+                         "metadata_url":  "https://pypi.org/pypi/typing_extensions/4.16.0/json",
+                         "wheels":  [
+                                        {
+                                            "requires_python":  "\u003e=3.9",
+                                            "url":  "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+                                            "filename":  "typing_extensions-4.16.0-py3-none-any.whl",
+                                            "bytes":  45571,
+                                            "sha256":  "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+                                        }
+                                    ],
+                         "requires_dist":  null,
+                         "status":  "OBSERVED"
+                     }
+                 ],
+    "purpose":  "read_only_prerequisite_metadata_no_package_acquisition"
+}
