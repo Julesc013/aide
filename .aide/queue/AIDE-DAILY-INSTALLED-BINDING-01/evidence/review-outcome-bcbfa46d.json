@@ -1,0 +1,22 @@
+{
+  "schema": "aide.independent-consumer-outcome-review.v1",
+  "reviewer": "/root/review_daily_use_plan",
+  "subject_tree": "bcbfa46d019f24e5db7531cfbce36cf1cc903440",
+  "base_commit": "665c8f700df387ad9e94e18f6b57e36041444648",
+  "verdict": "ACCEPT",
+  "required_fixes": [],
+  "notes": [],
+  "committed_subject": "a90f1330b96d34b5ca98156cdd26e71c6f23a116",
+  "independent_checks": [
+    "22 stages with seven intended refusals match expected exits",
+    "All streams eight reports receipt qualification and bothcollection digests match",
+    "Actual allowed/PASS unknown/WARN forbidden/FAIL and identity/owner errors proven",
+    "TaskOS selected review and same-fixture process continuity match assertions",
+    "Original PASS17 validly reused and firstoverall failure preserved",
+    "Exit0 retired/quiescent scratchabsent reservationreleased retained bytes match",
+    "16paths scoped and wrapper/production/package unchanged"
+  ],
+  "read_only": true,
+  "bounded_installed_fixture_closure_accepted": true,
+  "broader_recovery_outer_containment_real_target_efficiency_integration_release_accepted": false
+}

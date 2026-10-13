@@ -5,8 +5,8 @@ default_concurrency: 1
 canonical_source: .aide/queue
 items:
   - id: AIDE-DAILY-INSTALLED-BINDING-01
-    status: needs_review
-    planning_state: final_consumer_actual_PASS22_reused17_exact_outcome_review
+    status: passed
+    planning_state: exact_fixture_outcome_accepted_attempts_exhausted_real_consumer_next
     title: Qualify the named-task daily workflow through installed Lite
     task: .aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/task.yaml
     exec_plan: .aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/ExecPlan.md

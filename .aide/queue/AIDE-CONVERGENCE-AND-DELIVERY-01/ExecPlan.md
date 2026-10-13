@@ -1,5 +1,18 @@
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
+## Current accepted fixture and continued daily-use work - 2026-10-13
+
+Installed fixture outcomebcbfa46d has exact independent ACCEPT and commita90f1330.
+The current source fix, export/replay and installed binding are qualified for their
+exact subjects. All22stages pass, original17PASS reused, both jobs retired.
+Continue the updated owner Goal through next dependency-ready bounded children;
+full daily-use acceptance remains unproven. Next real target must retain its native
+work/authority and customization, with ordinary useful work and controlled recovery.
+DiskEd is identified/clean at40ac8ec0, but its native units/grants and passive AIDE
+integration boundary must be read and honoured before any target effect. Source
+AIDE delegation cannot impersonate a native grant or replace spec/work/units.json.
+Keep outer/client containment, complete accounting and release gates explicit.
+
 ## Current actual installed workflow result - 2026-10-12
 
 DAILY-INSTALLED-BINDING final jobc4a7aaa7 passes22actual stages and conserves

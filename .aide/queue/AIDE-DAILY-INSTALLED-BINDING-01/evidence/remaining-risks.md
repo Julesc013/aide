@@ -1,7 +1,6 @@
 # Current remaining risks
 
-Final installed fixture result passes all required stages; exact outcome acceptance
-is pending. Both attempts are spent, no further job is admitted. Preserve original
+Final installed fixture result has exact independent ACCEPT. Both attempts are spent, no further job is admitted. Preserve original
 failed attempt/partial17PASS and every exact source/effect verdict; reuse was
 independently reviewed for unchanged inputs. Unknown warnings do not grant effects.
 Same-fixture process continuation does not prove arbitrary interruption/client

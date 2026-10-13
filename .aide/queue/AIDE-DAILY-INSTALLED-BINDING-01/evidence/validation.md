@@ -1,5 +1,9 @@
 # Validation
 
+Accepted fixture closure: exact terminal treebcbfa46d has independent ACCEPT and
+guarded commita90f1330 with structured latest check PASS. This covers the scoped
+installed fixture assertions only. Both attempts retired; no further child jobs.
+
 Current actual final consumer: all22stages pass their expected exits, including
 seven intended refusals. Shipped17PASS reused from preserved first attempt, not
 rerun. Eight verification reports and every stdout/stderr digest checked; receipt

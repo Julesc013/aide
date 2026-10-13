@@ -128,3 +128,15 @@ no further job is authorised. Original overall failure/partial success stays.
 Exact terminal outcome acceptance remains; no arbitrary client/interruption,
 real-target, outer containment, matched whole-efficiency, integration or release
 claim. Source74PASS/current export855-file digest map remain unchanged and reusable.
+
+### Accepted fixture-task closure - 2026-10-13
+
+Exact terminal treebcbfa46d received independent ACCEPT with no fixes/notes and
+was guarded-committed asa90f1330; latest structured commit check PASS. All child
+acceptance predicates are satisfied for installed fixtures and bounded separate-
+process continuity only. Source74 and shipped17 successes remain preserved for
+unchanged inputs. Both jobs are retired and allowance exhausted. Native real-
+target work, controlled interruption/client recovery, whole outcome accounting,
+outer containment and integration/release remain unfinished parent requirements.
+The user's updated Goal continues this campaign and future dependency-ready work;
+it does not waive exact source/effect or target-native authority gates.
