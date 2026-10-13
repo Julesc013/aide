@@ -1,3 +1,16 @@
+# Current remaining risks
+
+Final installed fixture result passes all required stages; exact outcome acceptance
+is pending. Both attempts are spent, no further job is admitted. Preserve original
+failed attempt/partial17PASS and every exact source/effect verdict; reuse was
+independently reviewed for unchanged inputs. Unknown warnings do not grant effects.
+Same-fixture process continuation does not prove arbitrary interruption/client
+recovery. Native MXC/outer containment, real downstream native authority, complete
+usage/matched savings and integration/release remain independent. Published1.0.0
+and current export bytes remain unchanged by this installed qualification.
+
+## Historical phase risks
+
 # Remaining risks
 
 Installed fixtures and exact wrapper/effect remain unrun/unreviewed. Original

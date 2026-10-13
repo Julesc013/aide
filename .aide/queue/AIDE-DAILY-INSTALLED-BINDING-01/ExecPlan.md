@@ -110,3 +110,21 @@ assertions are conserved. No assertions or product semantics change. One of two
 attempts remains, held behind exact repair/source/final-effect review. Reuse proof
 is independently checked with actual original stderr/count/receipt, not inferred
 from overall failed parent. All subsequent consumer checks remain NOT RUN.
+
+### Current actual final consumer result - exact outcome review pending
+
+Repair665c8f70 has independent ACCEPT for exact PASS17 reuse and final attempt.
+Jobc4a7aaa7 passes all22actual stages, including seven intended nonzero refusals.
+Original first-attempt17PASS is conserved for exact unchanged inputs; no new test
+execution is claimed. Eight detailed verification reports retain correct allowed,
+unknown-WARN, forbidden-FAIL and exact identity/owner causes. Packet/snapshot and
+authored content survive; TaskOS default/explicit report and default review evidence
+bind correctly. Another process resumes the same fixture task and completed result.
+
+Full operation streams and both collection hashes checked; receipt/qualification
+bind results. Quiescent/retired, scratch absent and reservation released. PeakJob
+211,558,400bytes, scratch10,131,845bytes, retained348,114bytes. Two attempts spent;
+no further job is authorised. Original overall failure/partial success stays.
+Exact terminal outcome acceptance remains; no arbitrary client/interruption,
+real-target, outer containment, matched whole-efficiency, integration or release
+claim. Source74PASS/current export855-file digest map remain unchanged and reusable.

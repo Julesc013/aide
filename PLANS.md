@@ -1,5 +1,11 @@
 # AIDE Planning Index
 
+## Actual installed workflow and retained work - 2026-10-12
+
+Final installed fixture job passes22stages with valid17-test reuse; exact outcome
+review closes the child. Real downstream consumption and broader recovery/cost/
+containment/integration claims remain independent, with no more consumer retries.
+
 ## Installed named-task workflow preparation - 2026-10-12
 
 [AIDE-DAILY-INSTALLED-BINDING-01](.aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/ExecPlan.md)

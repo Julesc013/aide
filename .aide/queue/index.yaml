@@ -6,7 +6,7 @@ canonical_source: .aide/queue
 items:
   - id: AIDE-DAILY-INSTALLED-BINDING-01
     status: needs_review
-    planning_state: first_attempt_retired_shipped17_PASS_report_path_repair_final_effect_held
+    planning_state: final_consumer_actual_PASS22_reused17_exact_outcome_review
     title: Qualify the named-task daily workflow through installed Lite
     task: .aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/task.yaml
     exec_plan: .aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/ExecPlan.md

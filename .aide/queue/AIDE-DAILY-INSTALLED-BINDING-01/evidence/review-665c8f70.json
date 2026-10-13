@@ -1,0 +1,11 @@
+{
+  "reviewer": "/root/review_daily_use_plan",
+  "verdict": "ACCEPT",
+  "subject_commit": "665c8f700df387ad9e94e18f6b57e36041444648",
+  "subject_tree": "597bcc174c887f7761fd4d668fae6bef97b4aa7f",
+  "template_sha256": "10436d897ac58ecb5f8be6e8207c2d6d51676533121f1fc184ee5371d1f3c5c5",
+  "required_fixes": [],
+  "notes": [],
+  "scope": "partial-result reconciliation, exact PASS17 reuse and one conditional final attempt2of2 only; full outcome and other gates separate",
+  "read_only": true
+}

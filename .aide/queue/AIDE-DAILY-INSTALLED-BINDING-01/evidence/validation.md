@@ -1,5 +1,12 @@
 # Validation
 
+Current actual final consumer: all22stages pass their expected exits, including
+seven intended refusals. Shipped17PASS reused from preserved first attempt, not
+rerun. Eight verification reports and every stdout/stderr digest checked; receipt
+and both collected trees match. Retired/quiescent, scratch absent and reservation
+released. Both attempts spent. Exact outcome acceptance pending; broader gates
+remain open. Earlier held/NOT RUN statements below preserve historical phases.
+
 PASS: original admission5824d3e and accepted export closure648116f6; all855current
 pack hashes equal accepted replay map,4,367,105bytes. Shipped regression matches
 original source bytes; exact17assertions preserved, helperba7/PASS74 source-only.

@@ -1,5 +1,13 @@
 # AIDE Implementation Log
 
+## Actual installed fixture qualification - 2026-10-12
+
+Final jobc4a7aaa7 passes imported named task/scope/refusal, preserved work, TaskOS
+and default review evidence with same-task separate-process continuity. Original
+17PASS and overall first failure remain; no duplicated test execution. Full22stage
+streams/eight reports/collection verified; scratch/reservation retired. Outcome
+review required, no general client/real-target/platform/release qualification.
+
 ## Installed workflow plan-first routing - 2026-10-12
 
 Accepted current-export closure648116f6 permits the next admitted qualification

@@ -1,0 +1,276 @@
+{
+  "actual_stages": 22,
+  "collection_and_retirement": "PASS",
+  "collection_manifest": {
+    "logs": "2745c881bac56f5140386a6403807cf6fc955b0914078cb2e5c89a6a401e395a",
+    "output": "cd4b3ee25cd00c31bd5a18984b463d06e340e40d50f2a7496c0360b6c3025896"
+  },
+  "controller_observation": "Initial post-run refusal-roster assertion omitted expected unknown-named-task pack refusal; corrected by reading actual unchanged stage list. No runtime/effect/job changed.",
+  "expected_nonzero_refusals": [
+    "forbidden-edit-refusal",
+    "invalid-identity-0",
+    "invalid-identity-1",
+    "invalid-identity-2",
+    "invalid-identity-3",
+    "mismatched-owner-refusal",
+    "unknown-named-task-refusal"
+  ],
+  "integration_or_release_accepted": false,
+  "job_id": "c4a7aaa7ca904dd3afdb22ce6166c292",
+  "jobs_allocated": 2,
+  "maximum_jobs": 2,
+  "models_requested": 0,
+  "original_first_failure_preserved": "cd376d53d1134c9ba7ce6d6d0e451d9f",
+  "outcome_acceptance": "HELD_exact_review",
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 211558400,
+    "scratch_bytes": 10131845
+  },
+  "qualification": {
+    "authored_content_preserved": true,
+    "completed_result_sha256": "d53db4e1ccb21836177d07f880c80e874a19670a43ebd06196ff3efc0f8fcc31",
+    "default_review_same_selected_task": true,
+    "explicit_forbidden_path_refuses": true,
+    "general_interruption_recovery_qualified": false,
+    "job_id": "c4a7aaa7ca904dd3afdb22ce6166c292",
+    "model_requests": 0,
+    "original_regression_evidence": "reused_actual_first_attempt_PASS17",
+    "original_regression_tests": 17,
+    "outer_containment_qualified": false,
+    "real_Git_scope_verified": true,
+    "real_target_activated": false,
+    "same_fixture_workunit_resumed": true,
+    "schema": "aide.installed-task-binding-qualification.v1",
+    "shipped_import_no_source_fallback": true,
+    "source_helper_sha256": "ba7f49574a2a54ae3606599392285409a4c5923fadc1c3dd972795363b11deff",
+    "stages": 22,
+    "status": "PASS",
+    "task_id": "PROJECT-TASK-17",
+    "task_os_inspection_behavior_preserved": true,
+    "undeclared_path_warns_without_grant": true,
+    "valid_packet_snapshot_preserved_on_unknown_task": true,
+    "whole_task_model_usage": "unknown"
+  },
+  "qualification_sha256": "250dc665b4d4c63460614c2cd39fd3c02df84718264a74a966f983d436b26e2e",
+  "receipt_sha256": "d1feaa0df3d1c2fe611b866b04696ad0e4e5f1ab8101e070544431e64b7946c5",
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\c4a7aaa7ca904dd3afdb22ce6166c292",
+  "retained_bytes": 348114,
+  "schema": "aide.installed-consumer-final-result.v1",
+  "shipped_PASS17_reused": true,
+  "source_PASS74_reused": true,
+  "source_commit": "665c8f700df387ad9e94e18f6b57e36041444648",
+  "source_tree": "597bcc174c887f7761fd4d668fae6bef97b4aa7f",
+  "stages": [
+    {
+      "elapsed_seconds": 35.77367539994884,
+      "exit_code": 0,
+      "stage": "safe-import",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 492,
+      "stdout_sha256": "90d5cb4919c73324c2ce929749e82128cd454e04dfd57f9d323ed2a17049e2dc"
+    },
+    {
+      "elapsed_seconds": 0.053451300016604364,
+      "exit_code": 0,
+      "stage": "fixture-git-init",
+      "stderr_bytes": 586,
+      "stderr_sha256": "3e70934f1909b0f5a846d62237fcc1509d733b9fb0321187024723dfc67176d3",
+      "stdout_bytes": 134,
+      "stdout_sha256": "b5fe96fa0c3874b416d789ffbbe28b649b0fffd86eb7c7e34224b65ff0573f61"
+    },
+    {
+      "elapsed_seconds": 21.978015700005926,
+      "exit_code": 0,
+      "stage": "fixture-git-add",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "elapsed_seconds": 7.995856299996376,
+      "exit_code": 0,
+      "stage": "fixture-git-baseline",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 59938,
+      "stdout_sha256": "8796869dbbd0e9b7acfa3bfbaa9331075a57e7c50e0999127cd05d8bf9bffb5d"
+    },
+    {
+      "elapsed_seconds": 1.5974652000004426,
+      "exit_code": 0,
+      "stage": "named-packet",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 186,
+      "stdout_sha256": "ac122dbd78c2139739b471c321eb0d7b74d90d89a56d18a2ecb83eac35e3058e"
+    },
+    {
+      "elapsed_seconds": 0.953970699920319,
+      "exit_code": 0,
+      "stage": "selected-edit-verification",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 201,
+      "stdout_sha256": "f317173b417dd506433a887a205314badee23c492609e0ce7381bb6e5eb36d31"
+    },
+    {
+      "elapsed_seconds": 0.9505872000008821,
+      "exit_code": 0,
+      "stage": "undeclared-edit-advisory",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 288,
+      "stdout_sha256": "2f4d8ea5ee0b5e19f872ef000529099e7069ff46595aa53bbb2e55b27d393341"
+    },
+    {
+      "elapsed_seconds": 0.976531199994497,
+      "exit_code": 1,
+      "stage": "forbidden-edit-refusal",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 280,
+      "stdout_sha256": "0206de8ae6cf201e7667bde3c3bef43f72c8c0f029ceab86296fbce1fee33c0b"
+    },
+    {
+      "elapsed_seconds": 0.8963191999355331,
+      "exit_code": 0,
+      "stage": "incidental-Q-identity",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 344,
+      "stdout_sha256": "fe4bb99c7672b8b186782f33433838a0752ac9c7cd49cc8dd09acbddd7cceae6"
+    },
+    {
+      "elapsed_seconds": 0.8886185000883415,
+      "exit_code": 1,
+      "stage": "unknown-named-task-refusal",
+      "stderr_bytes": 50,
+      "stderr_sha256": "5348ef8d783872298db000c4b2edd60bf839ff912537fcd41cb0e8f9e3d258d3",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "elapsed_seconds": 0.9711042999988422,
+      "exit_code": 1,
+      "stage": "invalid-identity-0",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 641,
+      "stdout_sha256": "152e025374db0ea3bfb0364ccb748700e739a895dbf391b9b4319751482071aa"
+    },
+    {
+      "elapsed_seconds": 1.0030250999843702,
+      "exit_code": 1,
+      "stage": "invalid-identity-1",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 641,
+      "stdout_sha256": "650dd0a9a7788ccb5f43c6bc0af8c2e0c434be3df82deec7fe68c58e195f16e0"
+    },
+    {
+      "elapsed_seconds": 0.9497534999391064,
+      "exit_code": 1,
+      "stage": "invalid-identity-2",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 652,
+      "stdout_sha256": "2bcd3669fb066e0cc29f029dc91a0ed4eac8ba6a9def955a8c53d711fa244e0e"
+    },
+    {
+      "elapsed_seconds": 0.9582549000624567,
+      "exit_code": 1,
+      "stage": "invalid-identity-3",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 647,
+      "stdout_sha256": "ab5030bd3cde6f868cb27ffda9cf578f35dbcb1fa22589a7ad9df41cac425180"
+    },
+    {
+      "elapsed_seconds": 0.9530494000064209,
+      "exit_code": 1,
+      "stage": "mismatched-owner-refusal",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 769,
+      "stdout_sha256": "e121752246d163c1288defa9e0039bdc3e337ac7cf487c5ba7583d40fc60d1f9"
+    },
+    {
+      "elapsed_seconds": 0.9844662999967113,
+      "exit_code": 0,
+      "stage": "task-os-read-only",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 365,
+      "stdout_sha256": "3da9212c491acf4ccd23ebc4863127708280cad0344c43e10d6522dbb071de7f"
+    },
+    {
+      "elapsed_seconds": 1.0813257000409067,
+      "exit_code": 0,
+      "stage": "task-os-explicit-report",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 420,
+      "stdout_sha256": "866c896afd272482b8970091196e5d277268987c292ef60192891e50907dbbaf"
+    },
+    {
+      "elapsed_seconds": 0.896725400001742,
+      "exit_code": 0,
+      "stage": "stable-packet-before-resume",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 186,
+      "stdout_sha256": "ac122dbd78c2139739b471c321eb0d7b74d90d89a56d18a2ecb83eac35e3058e"
+    },
+    {
+      "elapsed_seconds": 1.5277530000312254,
+      "exit_code": 0,
+      "stage": "selected-default-review-evidence",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 189,
+      "stdout_sha256": "7d00a92fc8112c986b621ff4ae86c59293e688f1f8d717918ab747b6c82e2a1c"
+    },
+    {
+      "elapsed_seconds": 0.8825647999765351,
+      "exit_code": 0,
+      "stage": "separate-process-resume-inspection",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 344,
+      "stdout_sha256": "bbba010633d009546842a00a5a1f3211468fb8cb8b4ec480ba17d41107da9422"
+    },
+    {
+      "elapsed_seconds": 0.8971023999620229,
+      "exit_code": 0,
+      "stage": "separate-process-resume-packet",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 188,
+      "stdout_sha256": "0c02b01f75757f98a69b1badcc8e47fbc6b972f0d241a39271a2f14aca889c7a"
+    },
+    {
+      "elapsed_seconds": 0.9520142999244854,
+      "exit_code": 0,
+      "stage": "separate-process-resume-verification",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 101,
+      "stdout_sha256": "293e9bb4ab5d7a86f681d72934f48091cf244ced4b2a0ab2fd8dd61e2f5e6e94"
+    }
+  ],
+  "status": "PASS",
+  "verification_report_sha256s": {
+    "forbidden-edit-refusal.verification.md": "4126c3747f862e23490131e9a700e4bbefa36c0f0aa4a18d04d90a7927449a57",
+    "invalid-identity-0.verification.md": "66494f036e40b4e3ed41d3be3fd17e033a6e9a4d587f4ff18901da09c0738c16",
+    "invalid-identity-1.verification.md": "66494f036e40b4e3ed41d3be3fd17e033a6e9a4d587f4ff18901da09c0738c16",
+    "invalid-identity-2.verification.md": "ab8fd98df56aef3b0060a6fc58e8e581f3ccf49fadde2c35682cd716cbcc3b43",
+    "invalid-identity-3.verification.md": "dc234d9cfbe3962d45a4ea80a6aa331ddd09e66a3b68b4a4c7185cf7126adf41",
+    "mismatched-owner-refusal.verification.md": "c740ff2a38426a8b058d2f3a3cb626124613f1bda7c7b3c5aec0ea6a79c8e98a",
+    "selected-edit-verification.verification.md": "7d01aa54ec5a0039ea162841d8086422e5db3ff20c196acb5708a946984b6227",
+    "undeclared-edit-advisory.verification.md": "a2a90cf01b03a0a637d7654227f642f17b5c102efcad5718e4f91728bc105d58"
+  },
+  "whole_task_usage": "unknown"
+}

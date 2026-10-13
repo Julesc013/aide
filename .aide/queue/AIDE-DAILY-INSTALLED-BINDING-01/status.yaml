@@ -3,9 +3,10 @@ task_id: AIDE-DAILY-INSTALLED-BINDING-01
 status: needs_review
 result: PENDING
 updated_at: 2026-10-12
-planning_state: first_attempt_retired_shipped17_PASS_report_path_repair_final_effect_held
-jobs_allocated: 1
+planning_state: final_consumer_actual_PASS22_reused17_exact_outcome_review
+jobs_allocated: 2
 maximum_jobs: 2
 model_requests: 0
-next_slice: review_fixture_report_path_repair_and_valid_PASS17_reuse_before_final_job
+next_slice: exact_terminal_outcome_acceptance_then_no_more_consumer_jobs
 first_attempt_ref: evidence/first-attempt-result.json
+final_result_ref: evidence/final-result.json

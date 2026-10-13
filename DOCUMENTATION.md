@@ -1,5 +1,7 @@
 # AIDE Documentation Index
 
+- [Installed fixture result](.aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/evidence/final-result.json): actual 22 stages and conserved 17-test pass; exact outcome acceptance and broader claims remain separate.
+
 - [Installed daily workflow plan](.aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/ExecPlan.md): actual shipped task identity/scope and bounded continuation qualification; effects held for exact review.
 
 - [Accepted current export proof](.aide/queue/AIDE-DAILY-PACK-REFRESH-01/evidence/replay-result.json): all 855 package files match after clean replay; installed/platform/release claims remain separate.
