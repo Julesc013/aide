@@ -40,6 +40,9 @@ from typing import Callable, Iterable
 
 GENERATOR_NAME = "aide-lite"
 GENERATOR_VERSION = "q24.existing-tool-adapter-compiler.v0"
+# The exporter binds this declaration to the generated AIDE-owned module.
+WORK_EFFORT_MODULE_PATH = "core/execution/work_effort.py"
+PORTABLE_WORK_EFFORT_MODULE_PATH = ".aide/scripts/aide_work_effort.py"
 SNAPSHOT_PATH = ".aide/context/repo-snapshot.json"
 LATEST_PACKET_PATH = ".aide/context/latest-task-packet.md"
 REVIEW_PACKET_PATH = ".aide/context/latest-review-packet.md"
@@ -2804,6 +2807,7 @@ PORTABLE_REMOVAL_PLAN_SCHEMA = "aide.portable-removal-plan.v1"
 PORTABLE_REMOVAL_INTENT_SCHEMA = "aide.portable-removal-intent.v1"
 
 PORTABLE_TEMPLATE_MAP = {
+    "core/execution/work_effort.py": PORTABLE_WORK_EFFORT_MODULE_PATH,
     ".aide/templates/portable-apply/README.md": "core/apply/README.md",
     ".aide/templates/portable-apply/__init__.py": "core/apply/__init__.py",
     TARGET_PROFILE_TEMPLATE_PATH: ".aide/profile.template.yaml",
@@ -41308,6 +41312,19 @@ def copy_pack_file(source: Path, destination: Path) -> WriteResult:
     return write_bytes_if_changed(destination, source.read_bytes())
 
 
+def portable_cli_text(source: str) -> str:
+    """Bind the delivered CLI at build time; never discover target-owned code."""
+    prefix = "WORK_EFFORT_MODULE_PATH = "
+    source_binding = prefix + json.dumps("core/execution/work_effort.py")
+    delivered_binding = prefix + json.dumps(PORTABLE_WORK_EFFORT_MODULE_PATH)
+    lines = source.splitlines()
+    bindings = [line for line in lines if line.startswith(prefix)]
+    if len(bindings) != 1 or bindings[0] not in (source_binding, delivered_binding):
+        raise ValueError("portable CLI work effort binding is missing or changed")
+    return "\n".join(delivered_binding if line == bindings[0] else line
+                     for line in lines) + "\n"
+
+
 def portable_agents_template() -> str:
     return """<!-- AIDE-PORTABLE:BEGIN section=aide-lite-pack-v0 mode=managed -->
 ## AIDE Lite Portable Guidance
@@ -41794,6 +41811,12 @@ def build_export_pack(repo_root: Path, name: str = EXPORT_PACK_ID, output: str |
                 and not validate_export_pack_boundary(pack_root)):
             prior_source = candidate
             prior_checksums = json.loads(read_text(pack_root / "checksums.json"))
+    # Validate the explicit source binding and its dependency before resetting
+    # a previously generated pack. A missing dependency must not yield a CLI
+    # which searches a consumer's project-owned core directory.
+    cli_source = repo_root / ".aide/scripts/aide_lite.py"
+    projected_cli = portable_cli_text(read_text(cli_source))
+    read_text(repo_root / "core/execution/work_effort.py")
     reset_export_contents(pack_root)
     files_root = pack_root / "files"
     files_root.mkdir(parents=True, exist_ok=True)
@@ -41802,7 +41825,10 @@ def build_export_pack(repo_root: Path, name: str = EXPORT_PACK_ID, output: str |
     copied: list[str] = []
     for rel in source_files:
         destination = files_root / rel
-        copy_pack_file(repo_root / rel, destination)
+        if rel == ".aide/scripts/aide_lite.py":
+            write_text_if_changed(destination, projected_cli)
+        else:
+            copy_pack_file(repo_root / rel, destination)
         copied.append(pack_rel(destination, pack_root))
 
     for template_source, destination_rel in PORTABLE_TEMPLATE_MAP.items():
@@ -46231,7 +46257,7 @@ def _work_effort_path(root: Path, relative: object) -> Path:
 
 def _work_effort_module():
     # Implementation belongs to this CLI, never to the observed evidence root.
-    path = Path(__file__).resolve().parents[2] / "core/execution/work_effort.py"
+    path = Path(__file__).resolve().parents[2] / WORK_EFFORT_MODULE_PATH
     _job_wait_root(str(path.parent))
     info = path.lstat()
     if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1

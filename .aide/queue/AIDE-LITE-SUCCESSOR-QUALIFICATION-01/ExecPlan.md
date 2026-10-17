@@ -63,3 +63,11 @@ evidence/installed-effort-repair-amendment.md adds only the CLI/export binding,
 focused tests/reference and generated pack. Maximum26 includes all prior attempts;
 no implementation or new job until admission, then exact source/effect review.
 Keep the canonical module, project core exclusion and all original assertions.
+
+Repair admission ACCEPT at tree522c824e; checkpoint26984567 remotely verified.
+Source candidate now binds delivered accounting to an owned generated module.
+Allocation11 selects19 focused source/export checks; NOT RUN pending exact review.
+
+Source review requested idempotent delivered re-export and two affected fixture
+adaptations. Exact additional admission55a0772c ACCEPTed; source now selects21
+methods, with all behavioral assertions preserved. No job has run under this repair.

@@ -1,0 +1,18 @@
+{
+  "after": {
+    "refs/heads/dev": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/main": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/task/aide-lite-successor-qualification-01": "26984567aaad1001067e9e47ca7a461cdecf0b37"
+  },
+  "before": {
+    "refs/heads/dev": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/main": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/task/aide-lite-successor-qualification-01": "b46448f2fa4c0668749fdee4d9cff82d74cf3664"
+  },
+  "candidate": "26984567aaad1001067e9e47ca7a461cdecf0b37",
+  "latest_message_result": "PASS",
+  "main_release_qualified": false,
+  "purpose": "retained installed failure and reviewed repair admission",
+  "range_result": "FAIL_exact_three_preserved",
+  "verified": true
+}

@@ -1,0 +1,30 @@
+{
+  "baseline": "26984567aaad1001067e9e47ca7a461cdecf0b37",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md": "6e49188b01532d6b0f01a80fb1d56cb4fe20526388b14dd155ce082713ed82c9",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/effort-projection-test-amendment.md": "55a0772c7dfcd531cce0081d074a1554aa7549c7b59c6bac146123be7e2ef36d",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/effort-repair-effect.md": "70c3c65d4a9cddd92a86679ef792194a149d0af3ec60f71f243bab547d40581a",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/effort-repair-job-template.json": "c236822f8491691e0ec0071f2080e1a425d2b257cdf3627a86d7611052fb1f3b",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/effort-repair-message.txt": "0e54d02b04da31fdfb0cbc496eaf304d1297010856a891f605da272f789cbded",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/effort-repair-review-corrections.md": "c17125f193b9bd93b81d523c36fd52d22db0b76d1aa6590f80dc9388a09250a6",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/repair-admission-push.json": "b334cc985c782413eb8afdede1e4102f60d11df3ee5ec1b38e0652704179f864",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_effort_repair.py": "00f343c51758114cf80fa9f1d67a16c3f0c48f4d5819ced41d46bbb48976274a",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/status.yaml": "45c56993be355504583f6623b435421459295164c540460afa29cb49dcbdc6e9",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/task.yaml": "a5630e37f0d2d38c4d50af4641ee5700141f909e808d077ec40af8ab953fa94f",
+    ".aide/reports/capability-command-status.md": "5a02a7d766512a1e70a3842ce4e7a97ef9ae782311923793ad09c87994a6a4c1",
+    ".aide/reports/capability-evidence-bindings.json": "52a7f2736e835612dd4e4dde9069acb1053533a27d20070ebfdf1d5d1a43ee0a",
+    ".aide/reports/capability-ledger.md": "0b2de93d0b0dbf74c924ca31d02dba4549499d8580901a8be0e63b51fcb90565",
+    ".aide/scripts/aide_lite.py": "c6a25f40ab9a89cf4f629478fa594fae1f50c253f0fec2739e56b96d6d49b302",
+    ".aide/scripts/tests/test_aide_lite.py": "d1637800816e53e90e9b3663357311351f9e8e93104b5a2303149f786eab752c",
+    ".aide/scripts/tests/test_export_import.py": "7008820345679e7b6127e499ebedbfb7d6334f3eb129ecdbeb8a8b2676ec0b4a",
+    ".aide/scripts/tests/test_work_effort.py": "54ebcc09f035d4d2b7791784039ebaffe64a2ef315ae1cf63455c940583531ec",
+    "IMPLEMENT.md": "af7542405d713ed8c7e018d527bc8d7fe075b6ad7575091910f4cbf61ebc389a",
+    "docs/reference/aide-lite-test-runner.md": "4cec1175aeb513444bb88e6ebea42c12b833f635fc9b8341ab590d79e1de0719"
+  },
+  "initial_validation_failure_sha256": "ef949bb92fc309541c72fe70da4595d39000cf5a35809b0079d0458e9d10df07",
+  "message_sha256": "0e54d02b04da31fdfb0cbc496eaf304d1297010856a891f605da272f789cbded",
+  "supersedes_unexecuted_tree": "d2c393aef97dbe22c7403c6f8561c905675a8213",
+  "template_sha256": "c236822f8491691e0ec0071f2080e1a425d2b257cdf3627a86d7611052fb1f3b",
+  "validation": "AST, diff, full validate after capability refresh, strict message PASS; job11 NOT RUN",
+  "validation_log_sha256": "08990a5d5a24d834ccfd5099a9748247ef76b85d7699ffed7d38f2a62b4781d1"
+}

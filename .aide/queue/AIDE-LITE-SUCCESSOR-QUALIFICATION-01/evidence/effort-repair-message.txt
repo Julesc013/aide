@@ -1,0 +1,34 @@
+fix(pack): bind installed effort to the owned normalizer
+
+## Summary
+- Deliver accounting through an explicit AIDE-owned module binding.
+
+## Why
+- Safe installation omitted the core dependency and could execute target-owned code.
+
+## Changed
+- Project the canonical normalizer with the existing export map; bind the CLI before reset.
+- Preserve safe-import core exclusions and refuse an absent private dependency.
+- Add installed fresh/brownfield and export-drift regressions.
+- Adapt two exact projection fixture prerequisites; retain every behavioral assertion.
+
+## Validation
+- PASS syntax and diff checks; full repository validation recorded in source evidence.
+- NOT RUN allocation 11; exact source/effect review precedes the managed fixture job.
+
+## Changelog
+- Security: Prevent installed effort from loading project-owned core code.
+- Tests: Add actual safe-install preservation and missing-dependency regressions.
+
+## Risks
+- Replacement pack and archives remain unbuilt and unqualified; historical failures retained.
+
+## Follow-up
+- Run the focused regressions, then qualify refreshed pack and replacement archive identities.
+
+AIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
+AIDE-Phase: installed-effort-repair-source
+AIDE-Result: NOT RUN
+AIDE-Scope: CLI export binding and focused regression evidence
+AIDE-Token-Impact: unknown
+AIDE-Quality-Gate: exact independent source and effect review

@@ -3,7 +3,7 @@ task_id: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
 status: running
 result: ORIGINAL8_PASS_ADDITIONS_INTERRUPTED_AT_INSTALLED_EFFORT
 owner: aide_campaign
-next_action: review_installed_effort_repair_amendment
+next_action: review_installed_effort_source_and_allocation11
 promotion_blocker: three_commit_message_failures_preserved_pending_disposition
 jobs_allocated: 10
 maximum_jobs: 26

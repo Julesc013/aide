@@ -9,6 +9,8 @@ scope:
     - .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/**
     - .aide/scripts/aide_lite.py
     - .aide/scripts/tests/test_work_effort.py
+    - .aide/scripts/tests/test_export_import.py
+    - .aide/scripts/tests/test_aide_lite.py
     - docs/reference/aide-lite-test-runner.md
     - .aide/export/aide-lite-pack-v0/**
     - .aide/release/stable/aide-lite-v1.1.0.zip

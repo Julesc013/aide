@@ -1,5 +1,9 @@
 # AIDE Implementation Log
 
+## Installed effort binding repair candidate - 2026-10-18
+
+The exporter projects the unchanged canonical accounting module into the owned script directory and binds the delivered CLI there before any export reset. Safe import still excludes project core. Added fresh/brownfield installed and binding-drift regressions; allocation11 is pending review, with no new archive or support claim.
+
 ## Installed addition failure preserved - 2026-10-18
 
 Allocation10 completed16 additional forms then failed at installed job effort with REFUSED. Safe import skips the core module used by that command; independent review confirms an installed boundary defect: project-owned core code could execute. A bounded owned-path packaging repair is proposed. Original outputs and successful earlier assertions remain, the failed managed attempt retired, and no retry is admitted. Public1.0.0 and candidate archives are unchanged.
