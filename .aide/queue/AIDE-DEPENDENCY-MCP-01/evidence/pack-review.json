@@ -1,0 +1,11 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_tree": "df4f6db8db6e07d5a098bcea1d3289b1703b7cfe",
+  "template_sha256": "44ac3b177aaef2c36e13900b0ce9ab8246ddcadbdcb3454c01fa764092769ee5",
+  "effect_sha256": "ba4f65c5c035afe2c70012b056c970af2d4f70c5aaa008ef86e59d6b43449261",
+  "allocation": 2,
+  "maximum": 2,
+  "scope": "Source checkpoint and exact second pack effect only. No third job or integration.",
+  "findings": []
+}

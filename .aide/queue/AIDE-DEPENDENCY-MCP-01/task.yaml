@@ -27,6 +27,12 @@ scope:
     - .aide/generated/**
     - .aide/reports/capability-*
     - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/CHANGELOG.preview.md
+    - .aide/changelog/RELEASE_NOTES.preview.md
+    - .aide/changelog/changelog.preview.json
+    - .aide/changelog/latest-changelog-report.md
+    - .aide/changelog/malformed-commits.md
+    - .aide/changelog/release-notes.preview.json
     - PLANS.md
     - IMPLEMENT.md
     - DOCUMENTATION.md
@@ -40,3 +46,6 @@ review_gate: exact_source_effect_and_terminal_review
 pack_scope_amendment_ref: evidence/pack-scope-amendment.md
 pack_scope_amendment_sha256: 7d2a4b6958d8ad7e17ab1faff7f2396d4c330a4bf17523f14528ccc89af4fba7
 pack_scope_verdict: ACCEPT_scope_only
+promotion_preview_amendment_ref: evidence/promotion-preview-amendment.md
+promotion_preview_verdict: ACCEPT_ed891935
+maximum_additional_promotion_jobs: 1

@@ -19,8 +19,17 @@
     "60 methods PASS without failures/errors/skips in eb166a5c, full logs retained, collection digests verified, quiescent and retired",
     "All 51 executable/oracle inputs remain identical to tested source3d789913",
     "Full final structural validation PASS, structured commit range8f93..candidate PASS",
-    "No development export or published asset changes; no stable release claim"
+    "Pack job11d03c41 PASS six ownership checks plus export/doctor/full validate/pack-status; only manifest.yaml changed, exact refreshed858file digest map and all published assets verified. No new release claim."
   ],
-  "exclusions": ["force push", "history rewrite", "remote deletion", "task branch publication", "tags/releases", "protection changes", "target/provider effects", "other branch retirement"],
+  "exclusions": [
+    "force push",
+    "history rewrite",
+    "remote deletion",
+    "task branch publication",
+    "tags/releases",
+    "protection changes",
+    "target/provider effects",
+    "other branch retirement"
+  ],
   "recovery": "Changed refs/source, protection refusal or uncertain response require actual-state reconciliation. Preserve candidate and partial receipt; never force or blindly retry. Retire local task only after every exact confirmation."
 }

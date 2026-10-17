@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
 - current_branch: `task/aide-dependency-mcp-01`
-- current_commit: `3d78991305013fb63e5adf0c4c916d9cba00f032`
+- current_commit: `730d43f3e492cef5509ca749e2872f20230b80a5`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

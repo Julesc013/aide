@@ -4008,7 +4008,7 @@ items:
 
   - id: AIDE-DEPENDENCY-MCP-01
     status: running
-    planning_state: local_stdio_qualified_pack_closure_pending
+    planning_state: local_qualified_promotion_preview_pending
     result: PENDING
     title: Expose participant-bound cooperative dependency tools
     task: .aide/queue/AIDE-DEPENDENCY-MCP-01/task.yaml

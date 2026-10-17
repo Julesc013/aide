@@ -26,10 +26,16 @@ The [first source review](evidence/first-review.json) refused unbounded output.
 The repaired candidate enforces 64 KiB input and 1 MiB output limits, preserving
 explicit uncertain-effect reconciliation if a response cannot be represented.
 [Exact review](evidence/source-review.json) admitted only the first fixture job;
-no job ran on the rejected tree. One of two allocations was used, and no further
-runtime job is requested. Final validation after commit records two conservative
-pack-provenance failures; scoped metadata closure is pending. Published Lite
-1.0.0 assets are unchanged.
+no job ran on the rejected tree. The first allocation qualified runtime behavior.
+After commit, two conservative provenance failures required the separately
+reviewed second allocation. [Pack result](evidence/pack-result.json), job
+`11d03c4117c049738fcdbd74b521d94e`, passed six ownership checks, export-pack, doctor,
+full validation and pack-status. Only manifest.yaml changed;
+all 858 files remain 4,421,128 bytes total, with every payload/checksum byte and
+published1.0.0 asset unchanged. Collection and retirement are verified. Both
+allocations are exhausted; no further job is requested. The intermediate failures
+and premature-status review correction are retained, without converting them to
+successful checks.
 
 This proves the bounded local protocol/record path. No live ledger was initialized,
 peer contacted, editor configured, new worker launched or target changed. Installed
@@ -41,3 +47,8 @@ this is not an exhaustive claim that all possible connection routes are absent.
 Exact source integration is governed by [integration-effect.json](evidence/integration-effect.json).
 Actual commands/ref confirmations are preserved in `evidence/integration-result.log`
 after execution; the proposed effect alone is not proof that it happened.
+
+Terminal review accepted source and generated-byte qualification but held main
+promotion for an applicable changelog preview. One explicitly additional preview-only
+allocation is admitted; original runtime/pack results remain valid. No Git effect
+has occurred at this checkpoint. See first-terminal-review.json and the amendment.

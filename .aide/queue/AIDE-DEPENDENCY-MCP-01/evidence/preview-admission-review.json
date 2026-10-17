@@ -1,0 +1,8 @@
+{
+  "verdict": "ACCEPT",
+  "tier": "promotion_preview_amendment_only",
+  "reviewer": "/root/review_disked_continuation",
+  "sha256": "ed8919356908ea12a72b3bf7da14b8fb9e35dae358d467bd0bb8abe91a1b61ea",
+  "findings": [],
+  "scope": "Six existing preview outputs and one additional promotion-only managed allocation. Original two allocations remain exhausted. Deterministic read-only regeneration of the fixed range is permitted after promotion. Exact effect and terminal reviews remain required."
+}

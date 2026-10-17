@@ -4,6 +4,9 @@
 
 [AIDE-DEPENDENCY-MCP-01](.aide/queue/AIDE-DEPENDENCY-MCP-01/ExecPlan.md) adds a bounded participant inbox and stdio tools over existing Requests. Local records are integrated at 8f93cb7e; this child passed all 60 runtime/protocol methods, including actual subprocess exchange. Existing-worker delivery and native DiskEd adoption remain mandatory follow-ons.
 
+Metadata closure11d03c41 passed with all payload/checksum bytes unchanged. Both
+managed jobs are retired; actual worker delivery and native adoption remain open.
+
 ## Local dependency request/reply - 2026-10-17
 
 [AIDE-LOCAL-DEPENDENCY-01](.aide/queue/AIDE-LOCAL-DEPENDENCY-01/ExecPlan.md) implements

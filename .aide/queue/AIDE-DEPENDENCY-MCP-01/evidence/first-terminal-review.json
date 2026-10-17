@@ -1,0 +1,9 @@
+{
+  "reviewer": "/root/review_disked_continuation",
+  "source_tree": "4b35409a4a739e74f2ec77eb3a8fb552e9dafa4a",
+  "source_verdict": "ACCEPT",
+  "integration_effect_sha256": "80d4d8d853faba463550d7a95a4e3f77b5de1393992aee70890a45ee3fae18c0",
+  "integration_verdict": "REQUEST_CHANGES",
+  "findings": ["Main promotion requires an applicable changelog preview; current preview1435659b omits the MCP commits."],
+  "disposition": "Separately admit one finite preview-only effect, preserve runtime/export qualification without rerunning it, then review generated evidence and exact integration again. No integration was executed."
+}
