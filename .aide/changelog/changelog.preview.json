@@ -802,6 +802,56 @@
         "summary": "development export includes tested current-task view and Git defaults.",
         "type": "chore",
         "validation": "- PASS: 36 Git/default methods across preserved first and corrected second runs.\n- PASS: six ownership methods, export completion and published-asset conservation.\n- FAIL: original doctor result due stale ledger, retained without alteration.\n- PASS: full diagnostic validate after explicit ledger refresh.\n- NOT RUN: remaining native consumer and changelog qualification awaits checkpoint."
+      },
+      {
+        "aide_phase": "terminal-checkpoint",
+        "aide_result": "blocked-dependent-repair",
+        "breaking": false,
+        "category": "Changed",
+        "commit": "7f42f88df495",
+        "commit_sha": "7f42f88df495e85eeb94eb3b6a80ad8b2a84ddc7",
+        "entry": "portable Git defaults carry explicit qualification and integration status.",
+        "follow_up": "- Qualify the narrow installed guard repair, then complete actual consumers and main review.\n\nAIDE-Task: AIDE-GIT-DEFAULTS-01\nAIDE-Phase: terminal-checkpoint\nAIDE-Result: blocked-dependent-repair\nAIDE-Scope: outcome-records-and-dev-sharing\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-effect-and-admission-review",
+        "risks": "- Dev sharing is a classified repairable checkpoint; main and distribution acceptance remain pending.",
+        "scope": "git",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "docs(git): preserve consumer failure and admit its narrow repair",
+        "summary": "portable Git defaults carry explicit qualification and integration status.",
+        "type": "docs",
+        "validation": "- PASS: 47 completed methods, pack integrity, final managed diagnostics and changelog checks.\n- FAIL: original installed-queue changelog consumer, preserved as a main blocker.\n- NOT RUN: fresh-default and customized-update consumers after that failure."
+      },
+      {
+        "aide_phase": "remaining-stage-amendment",
+        "aide_result": "export-conserved-consumers-pending",
+        "breaking": false,
+        "category": "Changed",
+        "commit": "c627b2f0bd00",
+        "commit_sha": "c627b2f0bd005f39d870352fa4f7ae6259e7a208",
+        "entry": "development payload contains the qualified installed-changelog source.",
+        "follow_up": "- Complete only unrun stages and review actual outcomes before integration.\n\nAIDE-Task: AIDE-INSTALLED-CHANGELOG-GUARD-01\nAIDE-Phase: remaining-stage-amendment\nAIDE-Result: export-conserved-consumers-pending\nAIDE-Scope: generated-pack-and-continuation-recipe\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: exact-independent-amendment-and-effect-review",
+        "risks": "- Original two-job ceiling is exhausted; only exact review of the explicit amendment can authorize continuation.\n- Main remains gated; no published release or real target changes.",
+        "scope": "changelog",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "test(changelog): conserve export and isolate remaining checks",
+        "summary": "development payload contains the qualified installed-changelog source.",
+        "type": "test",
+        "validation": "- PASS: ten source methods, six ownership tests, export and unchanged published assets.\n- FAIL: post-export doctor admission from the recipe mismatch, preserved.\n- NOT RUN: remaining diagnostics and actual consumers."
       }
     ],
     "Fixed": [
@@ -1104,6 +1154,56 @@
         "summary": "stale capability evidence refreshed against actual source inputs.",
         "type": "chore",
         "validation": "- PASS: 36 Git/default methods across preserved first and corrected second runs.\n- PASS: six ownership methods, export completion and published-asset conservation.\n- FAIL: original doctor result due stale ledger, retained without alteration.\n- PASS: full diagnostic validate after explicit ledger refresh.\n- NOT RUN: remaining native consumer and changelog qualification awaits checkpoint."
+      },
+      {
+        "aide_phase": "source-candidate",
+        "aide_result": "pending-qualification",
+        "breaking": false,
+        "category": "Fixed",
+        "commit": "f4f3474dd058",
+        "commit_sha": "f4f3474dd0583d831b15f67bcf74d0dd5b98282b",
+        "entry": "installed project queues no longer imply source-checkout identity for changelog previews.",
+        "follow_up": "- Run the reviewed affected job, then qualify the export and downstream defaults.\n\nAIDE-Task: AIDE-INSTALLED-CHANGELOG-GUARD-01\nAIDE-Phase: source-candidate\nAIDE-Result: pending-qualification\nAIDE-Scope: installed-changelog-identity\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-and-effect-review",
+        "risks": "- Receipt identity is local consistency, not whole-host isolation.\n- Main promotion and actual refreshed export consumers remain gated.",
+        "scope": "changelog",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "fix(changelog): recognize installed projects with their own queue",
+        "summary": "installed project queues no longer imply source-checkout identity for changelog previews.",
+        "type": "fix",
+        "validation": "- PASS: syntax inspection and diagnostic doctor after capability refresh.\n- NOT RUN: ten native methods await this reviewed clean source checkpoint.\n- FAIL retained: earlier Q31 consumer remains uncorrected evidence until this candidate is executed."
+      },
+      {
+        "aide_phase": "export-qualification",
+        "aide_result": "source-qualified-consumers-pending",
+        "breaking": false,
+        "category": "Fixed",
+        "commit": "bbb153e26108",
+        "commit_sha": "bbb153e26108b834d18cd9715e71a42a8e81b213",
+        "entry": "source qualification confirms changelog works after target queue creation.",
+        "follow_up": "- Qualify the development export and synchronize the accepted result.\n\nAIDE-Task: AIDE-INSTALLED-CHANGELOG-GUARD-01\nAIDE-Phase: export-qualification\nAIDE-Result: source-qualified-consumers-pending\nAIDE-Scope: owned-export-and-disposable-consumers\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-export-effect-review",
+        "risks": "- The next job is the second and final admitted allocation. No automatic retry.\n- Main promotion requires actual consumer acceptance and exact effect review.",
+        "scope": "changelog",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "test(changelog): qualify source and prepare portable consumers",
+        "summary": "source qualification confirms changelog works after target queue creation.",
+        "type": "test",
+        "validation": "- PASS: ten native methods, zero failures/errors/skips, verified collection and retirement.\n- PASS: syntax and exact current pack inventory inspection.\n- NOT RUN: refreshed actual payload/default/customization qualification."
       }
     ],
     "Follow-up": [
@@ -1415,13 +1515,13 @@
   },
   "category_counts": {
     "Added": 26,
-    "Changed": 6,
-    "Fixed": 12,
+    "Changed": 8,
+    "Fixed": 14,
     "Follow-up": 1,
     "Internal": 2,
     "Risks": 9
   },
-  "commit_count": 36,
+  "commit_count": 40,
   "entries": [
     {
       "aide_phase": "daily-use-planning-candidate",
@@ -2822,6 +2922,106 @@
       "summary": "stale capability evidence refreshed against actual source inputs.",
       "type": "chore",
       "validation": "- PASS: 36 Git/default methods across preserved first and corrected second runs.\n- PASS: six ownership methods, export completion and published-asset conservation.\n- FAIL: original doctor result due stale ledger, retained without alteration.\n- PASS: full diagnostic validate after explicit ledger refresh.\n- NOT RUN: remaining native consumer and changelog qualification awaits checkpoint."
+    },
+    {
+      "aide_phase": "terminal-checkpoint",
+      "aide_result": "blocked-dependent-repair",
+      "breaking": false,
+      "category": "Changed",
+      "commit": "7f42f88df495",
+      "commit_sha": "7f42f88df495e85eeb94eb3b6a80ad8b2a84ddc7",
+      "entry": "portable Git defaults carry explicit qualification and integration status.",
+      "follow_up": "- Qualify the narrow installed guard repair, then complete actual consumers and main review.\n\nAIDE-Task: AIDE-GIT-DEFAULTS-01\nAIDE-Phase: terminal-checkpoint\nAIDE-Result: blocked-dependent-repair\nAIDE-Scope: outcome-records-and-dev-sharing\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-effect-and-admission-review",
+      "risks": "- Dev sharing is a classified repairable checkpoint; main and distribution acceptance remain pending.",
+      "scope": "git",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "docs(git): preserve consumer failure and admit its narrow repair",
+      "summary": "portable Git defaults carry explicit qualification and integration status.",
+      "type": "docs",
+      "validation": "- PASS: 47 completed methods, pack integrity, final managed diagnostics and changelog checks.\n- FAIL: original installed-queue changelog consumer, preserved as a main blocker.\n- NOT RUN: fresh-default and customized-update consumers after that failure."
+    },
+    {
+      "aide_phase": "source-candidate",
+      "aide_result": "pending-qualification",
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "f4f3474dd058",
+      "commit_sha": "f4f3474dd0583d831b15f67bcf74d0dd5b98282b",
+      "entry": "installed project queues no longer imply source-checkout identity for changelog previews.",
+      "follow_up": "- Run the reviewed affected job, then qualify the export and downstream defaults.\n\nAIDE-Task: AIDE-INSTALLED-CHANGELOG-GUARD-01\nAIDE-Phase: source-candidate\nAIDE-Result: pending-qualification\nAIDE-Scope: installed-changelog-identity\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-and-effect-review",
+      "risks": "- Receipt identity is local consistency, not whole-host isolation.\n- Main promotion and actual refreshed export consumers remain gated.",
+      "scope": "changelog",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "fix(changelog): recognize installed projects with their own queue",
+      "summary": "installed project queues no longer imply source-checkout identity for changelog previews.",
+      "type": "fix",
+      "validation": "- PASS: syntax inspection and diagnostic doctor after capability refresh.\n- NOT RUN: ten native methods await this reviewed clean source checkpoint.\n- FAIL retained: earlier Q31 consumer remains uncorrected evidence until this candidate is executed."
+    },
+    {
+      "aide_phase": "export-qualification",
+      "aide_result": "source-qualified-consumers-pending",
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "bbb153e26108",
+      "commit_sha": "bbb153e26108b834d18cd9715e71a42a8e81b213",
+      "entry": "source qualification confirms changelog works after target queue creation.",
+      "follow_up": "- Qualify the development export and synchronize the accepted result.\n\nAIDE-Task: AIDE-INSTALLED-CHANGELOG-GUARD-01\nAIDE-Phase: export-qualification\nAIDE-Result: source-qualified-consumers-pending\nAIDE-Scope: owned-export-and-disposable-consumers\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-export-effect-review",
+      "risks": "- The next job is the second and final admitted allocation. No automatic retry.\n- Main promotion requires actual consumer acceptance and exact effect review.",
+      "scope": "changelog",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "test(changelog): qualify source and prepare portable consumers",
+      "summary": "source qualification confirms changelog works after target queue creation.",
+      "type": "test",
+      "validation": "- PASS: ten native methods, zero failures/errors/skips, verified collection and retirement.\n- PASS: syntax and exact current pack inventory inspection.\n- NOT RUN: refreshed actual payload/default/customization qualification."
+    },
+    {
+      "aide_phase": "remaining-stage-amendment",
+      "aide_result": "export-conserved-consumers-pending",
+      "breaking": false,
+      "category": "Changed",
+      "commit": "c627b2f0bd00",
+      "commit_sha": "c627b2f0bd005f39d870352fa4f7ae6259e7a208",
+      "entry": "development payload contains the qualified installed-changelog source.",
+      "follow_up": "- Complete only unrun stages and review actual outcomes before integration.\n\nAIDE-Task: AIDE-INSTALLED-CHANGELOG-GUARD-01\nAIDE-Phase: remaining-stage-amendment\nAIDE-Result: export-conserved-consumers-pending\nAIDE-Scope: generated-pack-and-continuation-recipe\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: exact-independent-amendment-and-effect-review",
+      "risks": "- Original two-job ceiling is exhausted; only exact review of the explicit amendment can authorize continuation.\n- Main remains gated; no published release or real target changes.",
+      "scope": "changelog",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "test(changelog): conserve export and isolate remaining checks",
+      "summary": "development payload contains the qualified installed-changelog source.",
+      "type": "test",
+      "validation": "- PASS: ten source methods, six ownership tests, export and unchanged published assets.\n- FAIL: post-export doctor admission from the recipe mismatch, preserved.\n- NOT RUN: remaining diagnostics and actual consumers."
     }
   ],
   "generated_by": "aide-lite",
@@ -2832,7 +3032,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "88fa0008c5670df41e5fc6aa061a519d66f48495",
+  "source_head": "c627b2f0bd005f39d870352fa4f7ae6259e7a208",
   "source_range": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a..HEAD",
   "warnings": []
 }

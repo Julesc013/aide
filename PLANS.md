@@ -4,11 +4,10 @@
 
 [AIDE-GIT-DEFAULTS-01](.aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md) implements the
 owner's cross-project default through existing policy, advisory and adapter owners.
-The defaults and matching export are implemented, with 47 passing methods retained.
-An original installed-consumer check exposed a changelog guard compatibility gap;
-the child's three-job allowance is exhausted. The dependent repair proposal keeps
-that assertion and main-promotion gate. A classified dev-only checkpoint and later
-qualified main sync retain separate review. See the child's REPORT for evidence.
+The defaults and actual fresh/customized consumers are qualified. The dependent
+installed-changelog repair passes the original assertion and both delivered CLI
+checks. Original attempt evidence remains; exact dev/main integration review is
+next. See the dependent repair REPORT for current evidence and tested scope.
 
 ## Current-task view - 2026-10-17
 
@@ -5170,3 +5169,7 @@ and downstream work remain open; this is not whole-programme completion.
 ## Installed changelog compatibility repair - 2026-10-17
 
 [AIDE-INSTALLED-CHANGELOG-GUARD-01](.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/ExecPlan.md) restores the existing installed workflow using receipt-based recognition, then qualifies the exported defaults/customization before main promotion. Two bounded jobs; prior failures remain evidence.
+
+## Portable Git defaults qualified - 2026-10-17
+
+The installed guard repair and actual exported fresh/customized consumers passed. Integrate this bounded accepted source promptly; next campaign preparation returns to native owner adoption and useful daily coordination. No whole-campaign or new-release completion is implied.

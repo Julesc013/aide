@@ -3,7 +3,7 @@
 - [Portable Git workflow](docs/reference/git-workflow-policy.md): integration
   cadence, project protection choices, task publication and safe retirement.
   [Current outcome](.aide/queue/AIDE-GIT-DEFAULTS-01/REPORT.md) retains qualification
-  evidence and the installed-changelog repair that gates main promotion.
+  evidence and the completed installed-changelog repair/consumer qualification.
 
 - [Current-task view](docs/reference/task-packets.md): named human/JSON observation,
   recorded-status provenance and evidence uncertainty; source qualification in
@@ -1162,3 +1162,5 @@ read isolation, actual model editing, whole-outcome efficiency, wider cleanup
 and downstream work remain open; this is not whole-programme completion.
 
 - [Installed changelog recognition](docs/reference/changelog-preview.md) distinguishes project-owned queues from source admission; [bounded repair](.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/ExecPlan.md) tracks actual qualification.
+
+- [Qualified Git-default consumer outcome](.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/REPORT.md): current evidence, actual tested payload pair and limits. Earlier blocked checkpoints remain historical evidence.

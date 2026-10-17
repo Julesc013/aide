@@ -1,0 +1,36 @@
+{
+  "schema": "aide.git-defaults.integration-effect.v1",
+  "base": "c627b2f0bd005f39d870352fa4f7ae6259e7a208",
+  "candidate": "exact reviewed terminal metadata/changelog successor commit and tree only",
+  "task_branch": "task/aide-installed-changelog-guard-01",
+  "expected_local_dev": "7f42f88df495e85eeb94eb3b6a80ad8b2a84ddc7",
+  "expected_remote_dev": "7f42f88df495e85eeb94eb3b6a80ad8b2a84ddc7",
+  "expected_local_main": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a",
+  "expected_remote_main": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "effects": [
+    "Fresh clean helper plan, commit checks, exact accepted HEAD/tree, worktree ownership, no active/pending job and running dispatch under existing estate lock. Fetch and observe exact remote/local refs and both ancestor relationships.",
+    "CAS fast-forward local dev from expected old commit to accepted candidate; nonforce push dev; verify remote commit/tree.",
+    "After dev verification, freshly recheck main and source identities. CAS fast-forward local main from expected old commit; nonforce push main; verify remote commit/tree and dev equality. Remain on task branch."
+  ],
+  "required_evidence": [
+    "full diagnostic validate PASS after terminal metadata",
+    "source tests and actual consumers per terminal result",
+    "unchanged generated pack matches recorded858-file hashes",
+    "structured commit checks main..candidate PASS",
+    "reviewed changelog preview covers throughc627; only reviewed result/status metadata commit follows, with its message separately checked"
+  ],
+  "scope": "Promote reviewed bounded development source/defaults and installed guard outcome; preserve older accepted campaign increments and detailed history. Not a new release or certification of optional/unqualified runtime routes.",
+  "additive_terminal_path": ".aide/queue/AIDE-GIT-DEFAULTS-01/task.yaml status alignment only",
+  "exclusions": [
+    "force push",
+    "reset",
+    "branch deletion",
+    "task publication",
+    "tag/release",
+    "protection changes",
+    "new target/provider effects"
+  ],
+  "recovery": "On any changed ref, protection refusal or uncertain response inspect actual refs and retain candidates; stop affected synchronization only. Never force or blindly repeat. Record actual remote receipt under existing child evidence; no success claim before observation."
+}

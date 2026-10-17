@@ -3968,9 +3968,9 @@ items:
     evidence: .aide/queue/AIDE-DAILY-CURRENT-VIEW-01/evidence
 
   - id: AIDE-GIT-DEFAULTS-01
-    status: blocked
-    planning_state: defaults_implemented_installed_changelog_repair_required
-    result: FAIL_PRESERVED_INSTALLED_QUEUE_CHANGELOG_GUARD
+    status: passed_with_notes
+    planning_state: source_and_actual_consumers_qualified
+    result: PASS_WITH_DEPENDENT_REPAIR
     title: Make frequent safe integration and local task branches portable defaults
     task: .aide/queue/AIDE-GIT-DEFAULTS-01/task.yaml
     exec_plan: .aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md
@@ -3978,9 +3978,9 @@ items:
     evidence: .aide/queue/AIDE-GIT-DEFAULTS-01/evidence
 
   - id: AIDE-INSTALLED-CHANGELOG-GUARD-01
-    status: blocked
-    planning_state: export_conserved_explicit_continuation_review
-    result: FAIL_PRESERVED_MUTABLE_OUTPUT_PINNED_AS_INPUT
+    status: passed_with_notes
+    planning_state: source_and_actual_consumers_qualified
+    result: PASS_WITH_PRESERVED_ATTEMPTS
     title: Recognize installed changelog work without weakening source admission
     task: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/task.yaml
     exec_plan: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/ExecPlan.md

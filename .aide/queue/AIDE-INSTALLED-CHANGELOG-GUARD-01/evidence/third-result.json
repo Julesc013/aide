@@ -1,0 +1,100 @@
+{
+  "result": "PASS",
+  "job_id": "a00327414d0e4da589b6109cc8f38df4",
+  "source_commit": "c627b2f0bd005f39d870352fa4f7ae6259e7a208",
+  "source_tree": "5fee291d423533c54a2cbdc0c1cef81e8e167aee",
+  "consumer": {
+    "status": "PASS",
+    "model_calls": 0,
+    "remote_effects": false,
+    "predecessor": {
+      "pack_id": "aide-lite-pack-v0",
+      "source_commit": "015de64c9d110470723e49a3760c8715c6ce532f",
+      "manifest_digest": "9f7ba3562b67fc4d80e222612bcabdd3c0e9745f16ee5688e5a490d33e0811ed",
+      "checksums_digest": "703a65730492f6591eb40d899fb800ce696eae97ac660c1087300725c888cc42"
+    },
+    "current_pack": {
+      "pack_id": "aide-lite-pack-v0",
+      "source_commit": "bbb153e26108b834d18cd9715e71a42a8e81b213",
+      "manifest_digest": "ead30896338da544471d0bc05a7e3f25d6f392e0b60627e68e6f428e221dd9b5",
+      "checksums_digest": "fc6675b2d448964bddd6d52d4f0253515d47809c1f06f5259d74f388c253caf7"
+    },
+    "stages": {
+      "fresh_import": {
+        "status": "APPLIED",
+        "plan_digest": "2bf4e290d096432201e2e3313ebc78b989b61a63e0035231032742412a18c6a1",
+        "written": 828
+      },
+      "fresh_choices": {
+        "main": false,
+        "dev": false,
+        "release/*": true,
+        "hotfix/*": true,
+        "gh-pages": true
+      },
+      "predecessor_import": {
+        "status": "APPLIED",
+        "plan_digest": "5a0d37bb414ea749db0e82d14f137acb901a514b63a52ee91f04e6fbdfd9d1cc",
+        "written": 825
+      },
+      "unresolved_update": "CONFLICT_without_changed_bytes",
+      "initial_update_conflicts": [
+        ".aide/policies/branch-protection.yaml"
+      ],
+      "custom_update": {
+        "status": "APPLIED",
+        "plan_digest": "a02c4cd973a3856cc904a097d867af905a5ddff711fafcb3983601afaad44218",
+        "written": 22
+      },
+      "custom_choices": {
+        "main": true,
+        "dev": false,
+        "release/*": true,
+        "hotfix/*": true,
+        "gh-pages": true
+      },
+      "customization_receipt": {
+        "installed_digest": "3710761ce2c3f607313e4baf478269b900b33bbe65718f379efd44e1123dd254",
+        "kind": "managed_file",
+        "local_overlay": true,
+        "ownership": "project_overlay_on_aide_managed",
+        "source": ".aide/policies/branch-protection.yaml",
+        "source_digest": "d03bc5d6086344a855dd4fa67baac5bcd4e297672c52fba823be4ce9260e6ff2"
+      }
+    }
+  },
+  "q31_methods_reused": 6,
+  "diagnostics": [
+    "doctor",
+    "validate",
+    "pack-status",
+    "changelog preview",
+    "changelog validate",
+    "changelog status"
+  ],
+  "delivered_changelog_checks": [
+    "fresh target queue PASS",
+    "customized target queue PASS"
+  ],
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\a00327414d0e4da589b6109cc8f38df4",
+  "receipt_sha256": "ffc1b7aa6054a38ef515232924bb7a794eafba5082d4af90604551512cdad9e8",
+  "collected_manifest": {
+    "output": "37568d1c062a2cf4a3afacf8d6e9d860f6af6b7b3cf6eb469e084aa5810fe43c",
+    "logs": "b42722955a163ce93f74a9894b2211332cc3a790e6d0d3f942ecd517e670de1a"
+  },
+  "phase": "retired",
+  "quiescent": true,
+  "scratch_absent": true,
+  "reservation_released": true,
+  "peaks": {
+    "scratch_bytes": 13579889,
+    "memory_bytes": 246906880,
+    "canonical_bytes": {
+      ".aide/changelog": 266632
+    }
+  },
+  "jobs_allocated": 3,
+  "maximum_jobs": 3,
+  "pack_unchanged": true,
+  "whole_task_usage": "unknown"
+}

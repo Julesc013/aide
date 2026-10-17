@@ -1,3 +1,7 @@
+# Current outcome
+
+Portable defaults and actual fresh/customized consumers are qualified. The dependent installed-changelog repair passed, including both delivered CLIs after target queue creation. See [repair outcome](../AIDE-INSTALLED-CHANGELOG-GUARD-01/REPORT.md). Original attempts below retain their subjects and failures. Exact dev/main integration remains separately reviewed.
+
 # Portable Git defaults: implementation and qualification checkpoint
 
 The source and development pack now carry the owner's cross-project defaults:
@@ -27,7 +31,7 @@ the managed runner. The original assertion remains required. This needs a narrow
 source repair and affected qualification, not a weaker oracle or another retry
 through this child's exhausted allowance. See the dependent admission proposal.
 
-Main promotion and distribution acceptance are blocked. A separately reviewed dev
+At the following historical checkpoint, main promotion and distribution acceptance were blocked. A separately reviewed dev
 checkpoint may share this clearly classified, repairable state with contributors;
 it is not a stable release or a completed portable-consumer claim. Remote task
 deletion remains deferred until integration and exact ownership checks. No remote

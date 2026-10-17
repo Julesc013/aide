@@ -81,10 +81,11 @@ New-project hosting protection is optional for `main` and normally disabled for
 `dev`. Existing project overrides and hosting protections are preserved. These
 defaults guide authorized work; they do not activate an unattended Git service.
 
-The [current Git-default qualification](.aide/queue/AIDE-GIT-DEFAULTS-01/REPORT.md)
-retains the original installed-queue changelog failure. The bounded source repair
-now passes the affected consumer; main promotion awaits the refreshed payload and
-customization checks. Published 1.0.0 assets retain their original identity.
+The [Git-default qualification](.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/REPORT.md)
+passes fresh adoption, explicit customization conflict/resolution, and installed
+changelog generation after project queue creation. Original failures remain in
+evidence. These results qualify the development pack on the observed native route;
+published 1.0.0 assets retain their original identity.
 
 AIDE's short doctrine:
 

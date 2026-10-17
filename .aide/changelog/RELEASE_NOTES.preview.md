@@ -3,7 +3,7 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: 6f2abc4cd69e0d94f86a00495cb8feeebe20398a..HEAD
-source_head: 88fa0008c5670df41e5fc6aa061a519d66f48495
+source_head: c627b2f0bd005f39d870352fa4f7ae6259e7a208
 preview_only: true
 
 ## Highlights
@@ -40,6 +40,8 @@ preview_only: true
 - Changed: installed fixture task closes against exact accepted outcomes. (207553d8815f)
 - Changed: next bounded priority is portable Git defaults and reviewed integration. (2ef8ad51a56a)
 - Changed: development export includes tested current-task view and Git defaults. (88fa0008c567)
+- Changed: portable Git defaults carry explicit qualification and integration status. (7f42f88df495)
+- Changed: development payload contains the qualified installed-changelog source. (c627b2f0bd00)
 - Fixed: incomplete current task metadata and explicitly refreshed stale bindings. (09afd31ce4be)
 - Fixed: task-local Windows native prerequisite command syntax. (18c026dbfffc)
 - Fixed: selected task identity in compact preparation and changed-file scope verification. (fc8a68b7884c)
@@ -52,6 +54,8 @@ preview_only: true
 - Fixed: task-local qualification entry-point setup. (0f6182d63f00)
 - Fixed: report-writing test invocation follows the existing explicit command flag. (39df07cbee63)
 - Fixed: stale capability evidence refreshed against actual source inputs. (88fa0008c567)
+- Fixed: installed project queues no longer imply source-checkout identity for changelog previews. (f4f3474dd058)
+- Fixed: source qualification confirms changelog works after target queue creation. (bbb153e26108)
 
 ## Validation Summary
 

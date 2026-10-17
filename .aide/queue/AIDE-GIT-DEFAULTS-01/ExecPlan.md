@@ -65,3 +65,5 @@ protection bypass, new roots or unauthorized target operations. Keep published
   no fourth job. Keep 47 passing methods and unchanged pack/assets. Propose the
   bounded dependent source repair and separately reviewed dev-only checkpoint;
   main remains gated on actual affected consumer and customization outcomes.
+
+- Remaining-stage job a0032741 passed actual fresh/default and customized-update consumers, delivered changelog checks and full diagnostics. Source/consumer acceptance is complete with original failures retained; exact integration review remains.

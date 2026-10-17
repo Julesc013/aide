@@ -8,9 +8,9 @@ branches. GitHub advisory choices read project policy rather than hard-coded
 main/dev protection, exposing malformed or missing choices. Existing settings
 remain unchanged. All nine new behavior methods and 38 other methods have passing
 evidence. The pack is rebuilt and validated; original failures remain preserved.
-An installed target queue causes changelog preview to refuse incorrectly, so the
-remaining consumer/default-update proof and main promotion await a bounded repair.
-All three job slots are consumed and retired. No published release was changed.
+The dependent installed-queue repair and actual default/customized-update proof
+now pass. Original attempts and their failures remain; all jobs are retired.
+Exact integration review is next. No published release was changed.
 
 ## Bounded current-task projection source outcome - 2026-10-17
 
@@ -13905,3 +13905,7 @@ and downstream work remain open; this is not whole-programme completion.
 The changelog operation can recognize a completed installed CLI receipt despite a project-owned queue. It checks exact CLI identity and excludes lifecycle uncertainty, self-hosting identity and overlays. Source admission and other operations retain their guards. Ten affected native methods are prepared; qualification is pending.
 
 - Installed-changelog source result: ten methods passed in retired job cf7f620d, including the original consumer. Exact exported-payload qualification remains pending.
+
+## Portable Git defaults consumer closure - 2026-10-17
+
+Job a0032741 passed full diagnostics and the actual fresh/default and customized-update cases, including both delivered changelog commands after queues. An explicitly reviewed continuation corrected a recipe input/output collision without rebuilding the completed export. Original failures remain retained.

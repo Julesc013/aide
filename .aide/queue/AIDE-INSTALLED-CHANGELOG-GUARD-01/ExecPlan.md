@@ -16,3 +16,5 @@ Progress: admission ACCEPT, local branch created from reviewed and remotely veri
 - First source review found an advisory-profile parsing gap; repaired before any job. Exact source/effect ACCEPT followed. Job cf7f620d passed all ten methods, including the original Q31 consumer; collection verified and fully retired. Original failed evidence remains. Prepare only the second owned export/consumer job.
 
 - Second job completed the owned export and six ownership tests, then doctor refused because the job recipe incorrectly pinned mutable output checksums. Preserve that failure and exact export. Two allocations are exhausted; propose the explicit one-job continuation amendment for only unrun stages, with no product-source change or rebuild.
+
+- Remaining-stage job a0032741 passed actual fresh/default and customized-update consumers, delivered changelog checks and full diagnostics. Source/consumer acceptance is complete with original failures retained; exact integration review remains.

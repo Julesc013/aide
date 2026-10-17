@@ -1,15 +1,19 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-INSTALLED-CHANGELOG-GUARD-01
-status: blocked
-result: FAIL_PRESERVED_MUTABLE_OUTPUT_PINNED_AS_INPUT
-classification: admitted
+status: passed_with_notes
+result: PASS_WITH_PRESERVED_ATTEMPTS
+classification: source_and_actual_consumers_qualified
 review_gate: exact_source_and_each_effect_required
-next_action: review_explicit_one_job_remaining_stage_amendment
-jobs_allocated: 2
+next_action: review_terminal_source_and_integration_effect
+jobs_allocated: 3
 maximum_jobs: 3
-product_qualified: false
+product_qualified: true
 target_mutated: false
 
 original_maximum_jobs: 2
 continuation_admission_ref: evidence/continuation-admission.md
 continuation_gate: exact_independent_accept_required
+
+qualification_scope: portable_git_defaults_and_installed_changelog_on_observed_native_route
+integration_state: pending_exact_effect_review
+terminal_result_ref: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/evidence/third-result.json

@@ -223,6 +223,22 @@
     {
       "commit": "88fa0008c567",
       "summary": "Review actual final outcomes, then synchronize exact accepted dev/main source."
+    },
+    {
+      "commit": "7f42f88df495",
+      "summary": "Qualify the narrow installed guard repair, then complete actual consumers and main review."
+    },
+    {
+      "commit": "f4f3474dd058",
+      "summary": "Run the reviewed affected job, then qualify the export and downstream defaults."
+    },
+    {
+      "commit": "bbb153e26108",
+      "summary": "Qualify the development export and synchronize the accepted result."
+    },
+    {
+      "commit": "c627b2f0bd00",
+      "summary": "Complete only unrun stages and review actual outcomes before integration."
     }
   ],
   "highlights": [
@@ -452,6 +468,20 @@
     },
     {
       "breaking": false,
+      "category": "Changed",
+      "commit": "7f42f88df495",
+      "subject": "docs(git): preserve consumer failure and admit its narrow repair",
+      "summary": "portable Git defaults carry explicit qualification and integration status."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "c627b2f0bd00",
+      "subject": "test(changelog): conserve export and isolate remaining checks",
+      "summary": "development payload contains the qualified installed-changelog source."
+    },
+    {
+      "breaking": false,
       "category": "Fixed",
       "commit": "09afd31ce4be",
       "subject": "docs(docs): prepare daily-use workflow amendment",
@@ -533,6 +563,20 @@
       "commit": "88fa0008c567",
       "subject": "chore(git): conserve exported defaults and resume remaining checks",
       "summary": "stale capability evidence refreshed against actual source inputs."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "f4f3474dd058",
+      "subject": "fix(changelog): recognize installed projects with their own queue",
+      "summary": "installed project queues no longer imply source-checkout identity for changelog previews."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "bbb153e26108",
+      "subject": "test(changelog): qualify source and prepare portable consumers",
+      "summary": "source qualification confirms changelog works after target queue creation."
     }
   ],
   "preview_only": true,
@@ -760,10 +804,26 @@
     {
       "commit": "88fa0008c567",
       "summary": "Development export is not a new published release. Final consumer evidence is pending."
+    },
+    {
+      "commit": "7f42f88df495",
+      "summary": "Dev sharing is a classified repairable checkpoint; main and distribution acceptance remain pending."
+    },
+    {
+      "commit": "f4f3474dd058",
+      "summary": "Receipt identity is local consistency, not whole-host isolation."
+    },
+    {
+      "commit": "bbb153e26108",
+      "summary": "The next job is the second and final admitted allocation. No automatic retry."
+    },
+    {
+      "commit": "c627b2f0bd00",
+      "summary": "Original two-job ceiling is exhausted; only exact review of the explicit amendment can authorize continuation."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "88fa0008c5670df41e5fc6aa061a519d66f48495",
+  "source_head": "c627b2f0bd005f39d870352fa4f7ae6259e7a208",
   "source_range": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a..HEAD",
   "validation_summary": [
     {
@@ -989,6 +1049,22 @@
     {
       "commit": "88fa0008c567",
       "summary": "PASS: 36 Git/default methods across preserved first and corrected second runs."
+    },
+    {
+      "commit": "7f42f88df495",
+      "summary": "PASS: 47 completed methods, pack integrity, final managed diagnostics and changelog checks."
+    },
+    {
+      "commit": "f4f3474dd058",
+      "summary": "PASS: syntax inspection and diagnostic doctor after capability refresh."
+    },
+    {
+      "commit": "bbb153e26108",
+      "summary": "PASS: ten native methods, zero failures/errors/skips, verified collection and retirement."
+    },
+    {
+      "commit": "c627b2f0bd00",
+      "summary": "PASS: ten source methods, six ownership tests, export and unchanged published assets."
     }
   ],
   "warnings": []

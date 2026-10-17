@@ -3,8 +3,8 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: 6f2abc4cd69e0d94f86a00495cb8feeebe20398a..HEAD
-source_head: 88fa0008c5670df41e5fc6aa061a519d66f48495
-commit_count: 36
+source_head: c627b2f0bd005f39d870352fa4f7ae6259e7a208
+commit_count: 40
 malformed_count: 0
 preview_only: true
 release_publishing: false
@@ -12,8 +12,8 @@ release_publishing: false
 ## Summary
 
 - Added: 26
-- Changed: 6
-- Fixed: 12
+- Changed: 8
+- Fixed: 14
 - Internal: 2
 - Risks: 9
 - Follow-up: 1
@@ -55,6 +55,8 @@ release_publishing: false
 - installed fixture task closes against exact accepted outcomes. (207553d8815f chore(workflows): close accepted installed fixture qualification)
 - next bounded priority is portable Git defaults and reviewed integration. (2ef8ad51a56a docs(tasks): close current view and admit portable Git defaults)
 - development export includes tested current-task view and Git defaults. (88fa0008c567 chore(git): conserve exported defaults and resume remaining checks)
+- portable Git defaults carry explicit qualification and integration status. (7f42f88df495 docs(git): preserve consumer failure and admit its narrow repair)
+- development payload contains the qualified installed-changelog source. (c627b2f0bd00 test(changelog): conserve export and isolate remaining checks)
 
 ## Fixed
 
@@ -70,6 +72,8 @@ release_publishing: false
 - task-local qualification entry-point setup. (0f6182d63f00 test(tasks): exercise current view through the CLI entry point)
 - report-writing test invocation follows the existing explicit command flag. (39df07cbee63 test(git): qualify portable defaults and preserve project choices)
 - stale capability evidence refreshed against actual source inputs. (88fa0008c567 chore(git): conserve exported defaults and resume remaining checks)
+- installed project queues no longer imply source-checkout identity for changelog previews. (f4f3474dd058 fix(changelog): recognize installed projects with their own queue)
+- source qualification confirms changelog works after target queue creation. (bbb153e26108 test(changelog): qualify source and prepare portable consumers)
 
 ## Internal
 

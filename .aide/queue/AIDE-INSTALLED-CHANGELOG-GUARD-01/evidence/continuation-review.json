@@ -1,0 +1,9 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "head": "bbb153e26108b834d18cd9715e71a42a8e81b213",
+  "tree": "5fee291d423533c54a2cbdc0c1cef81e8e167aee",
+  "template_sha256": "1afdc4cb9c8dc401d584c026bc6da353688bb21275a3d3d750a95319ef9ee7d9",
+  "scope": "explicit one-job continuation; maximum3total; conservedexport; no integration",
+  "findings": []
+}
