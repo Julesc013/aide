@@ -1,0 +1,14 @@
+{
+  "base": "442c2cccb5640c3e2a21157802935af4e53a4f68",
+  "observation": "pure in-memory conversion of a copy of one existing record loses project_provenance; no ledger mutation",
+  "existing_rows": 7,
+  "lost_optional_key": "project_provenance",
+  "malformed_lines": "source read_outcome_records catches parse errors and continues; not yet exercised in scratch",
+  "inputs": {
+    ".aide/scripts/aide_lite.py": "70c00dde6f25c458478c14755fb600526b7106b3f0e7e36723e5964c7c5aaa09",
+    ".aide/scripts/tests/test_outcome_controller.py": "a58c5917b4d648639f753540e7e3730de103b8bd384c103b73287db76915ed56",
+    ".aide/policies/controller.yaml": "72c34303d80c66ac4e18ac7b2fcce7c5a12e24a5155f5ebc2d78c690919f56c4",
+    "docs/reference/outcome-controller-v0.md": "573c825437a9203c590e156f8c56e767b6b1ef5842d05e4166eaf572be7c57a6",
+    ".aide/controller/outcome-ledger.jsonl": "295ed35c4526f3d50dff31e8a4dc311acbe48110abfe7f1ef07c2e5580edef60"
+  }
+}

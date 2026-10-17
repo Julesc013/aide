@@ -4078,3 +4078,12 @@ items:
     task: .aide/queue/AIDE-IMPACT-COVERAGE-01/task.yaml
     exec_plan: .aide/queue/AIDE-IMPACT-COVERAGE-01/ExecPlan.md
     evidence: .aide/queue/AIDE-IMPACT-COVERAGE-01/evidence
+
+  - id: AIDE-OUTCOME-CONSERVATION-01
+    status: needs_review
+    result: CANDIDATE
+    planning_state: exact_source_and_first_job_review
+    title: Preserve outcome metadata and refuse lossy ledger updates
+    task: .aide/queue/AIDE-OUTCOME-CONSERVATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-OUTCOME-CONSERVATION-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence

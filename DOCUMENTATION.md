@@ -1,5 +1,13 @@
 # AIDE Documentation Index
 
+## Outcome conservation - 2026-10-18
+
+[AIDE-OUTCOME-CONSERVATION-01](.aide/queue/AIDE-OUTCOME-CONSERVATION-01/ExecPlan.md)
+preserves unfamiliar project metadata in the existing outcome ledger and refuses
+updates that would discard corrupt or ambiguous records. The live ledger remains
+untouched. Original ten tests are retained; ten regressions are prepared. Runtime
+and delivered qualification are pending exact review; no release claim is made.
+
 ## Test-impact observation - 2026-10-18
 
 [AIDE-IMPACT-COVERAGE-01](.aide/queue/AIDE-IMPACT-COVERAGE-01/ExecPlan.md)

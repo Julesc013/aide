@@ -1,0 +1,16 @@
+{
+  "base": "442c2cccb5640c3e2a21157802935af4e53a4f68",
+  "files": {
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/admission-effect.md": "37615a0a3b94a18a1f6739d6b339427f26a131c6f500d4d47ad82cd03cddbc08",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/baseline.json": "a2bafb1e8130071f33e853f979337c55feed5791038c36669d6a94f6225067af",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/latest-intent-packet.json": "dea404d29e19cfa0e832cced75436412e8f8ecf7dfd8cc0ef592adadd1e0a216",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/latest-intent-packet.md": "0404bb2c9b353d5581fb8ce3c108347069e0a0d6bb6ed1fcd24bb7bd194c4506",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/latest-workunit-draft.json": "81db0455f35f483d812742a5868082a34cc9e551e99169988f34afaf17a61e18",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/latest-workunit-draft.md": "143b050c61532e0d22b3a33598b496e91491e49f1b9cc274af597fdb2824104a",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/ExecPlan.md": "c7d5cf8ac889ea4f2101955f376e8e783e878ff8c6e2a5d4442d13ea783ecf9a",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/prompt.md": "e6c318ae5631eb97564daac148e8eb2f8188b5c9c3e60f3d2abfaef126da82dd",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/status.yaml": "c6fd1260423639fa9e0e7b26fcb2bf35d7f55d0582798cafde4997933671c634",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/task.yaml": "85ebbd037fecf1e7df61346179e2bd7288e08602aa9bb55609befe4c81839949"
+  },
+  "effect_sha256": "37615a0a3b94a18a1f6739d6b339427f26a131c6f500d4d47ad82cd03cddbc08"
+}

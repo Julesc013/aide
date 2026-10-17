@@ -155,3 +155,5 @@ resume_advice_integration_receipt: .aide/queue/AIDE-RESUME-PLAN-01/evidence/inte
 
 impact_coverage_result_ref: .aide/queue/AIDE-IMPACT-COVERAGE-01/REPORT.md
 impact_coverage_integration_receipt: .aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/integration-result.log
+
+outcome_conservation_ref: .aide/queue/AIDE-OUTCOME-CONSERVATION-01/status.yaml

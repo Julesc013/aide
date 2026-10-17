@@ -1,0 +1,35 @@
+fix(outcomes): preserve project metadata and refuse lossy ledger updates
+
+## Summary
+- Prepare AIDE-OUTCOME-CONSERVATION-01 through the existing outcome owner.
+
+## Why
+- Unfamiliar metadata was discarded and malformed lines were silently skipped.
+
+## Changed
+- Preserve opaque metadata across valid reads and unambiguous replacements.
+- Refuse corrupt records, ambiguous metadata and invalid known fields before writes.
+- Reuse atomic ledger replacement; retain all ten original tests and add ten regressions.
+- Document exact preservation and current-run replacement boundaries.
+
+## Validation
+- PASS: original ten method ASTs unchanged; source and runner syntax.
+- NOT RUN: exact reviewed source and delivered jobs.
+- NOTE: capability binding requires its later reviewed refresh.
+
+## Changelog
+- Fixed: Preserve project outcome metadata and refuse silent loss of damaged records.
+
+## Risks
+- Not immutable history, concurrent-writer exclusion or a multi-file transaction.
+- No live ledger migration or new qualified release.
+
+## Follow-up
+- Run one source job; qualify delivered payload and review integration separately.
+
+AIDE-Task: AIDE-OUTCOME-CONSERVATION-01
+AIDE-Phase: source-candidate
+AIDE-Result: CANDIDATE
+AIDE-Scope: existing-outcome-conservation
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: independent-source-and-job-review-required

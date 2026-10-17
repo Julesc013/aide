@@ -805,3 +805,11 @@ P6 impact advice qualified through AIDE-IMPACT-COVERAGE-01: source13, ownership6
 actual delivered13, structural checks and exact preview pass. Original failed alias
 fixture retained; all3 jobs retired. Ref state is governed by the child's actual
 integration receipt. This does not close actual-host/native-adoption/release gates.
+
+### Outcome conservation - 2026-10-18
+
+AIDE-OUTCOME-CONSERVATION-01 extends the existing outcome owner after verified
+unfamiliar-metadata loss and silent malformed-line skipping. Exact admission is
+accepted; source and first job are pending review. It contributes to P6 preservation
+and P3 loss-aware reading without a new knowledge store or learning framework.
+Live history, published assets and target repositories remain outside scope.
