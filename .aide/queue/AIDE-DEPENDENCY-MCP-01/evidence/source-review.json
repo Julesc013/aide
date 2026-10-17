@@ -1,0 +1,11 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_tree": "dbb8fa4bca290a458abd9abfcd6a4311ae0c7c32",
+  "template_sha256": "2c01f68d2b3ec14f53560cb38803c02b2aa23619b4c856ae605fc9312a0793a6",
+  "effect_sha256": "1397ae0d0625a8829207019a67b5ce1690f27f830dddf16fe661858ea5920828",
+  "allocation": 1,
+  "maximum": 2,
+  "findings": [],
+  "scope": "Source for qualification and first managed fixture effect only. No integration or live delivery."
+}

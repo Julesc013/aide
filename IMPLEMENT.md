@@ -2,7 +2,7 @@
 
 ## Cooperative dependency tools candidate - 2026-10-18
 
-Extract conservative database preflight/opening for reuse by CLI and participant-bound MCP tools. Add inbox discovery without acknowledgements; preserve existing lifecycle authority and every regression. Exact source/effect review and managed behavioral checks are pending; no live configuration, initialization or peer contact occurred.
+Extract conservative database preflight/opening for reuse by CLI and participant-bound MCP tools. Add inbox discovery without acknowledgements; preserve existing lifecycle authority and every regression. Exact source/effect review admitted job eb166a5c: all 60 methods passed without skips. Outgoing frame limits were corrected before the first run. Collection and retirement are verified; no live configuration, initialization or peer contact occurred.
 
 ## Local dependency interface candidate - 2026-10-17
 

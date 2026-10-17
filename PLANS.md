@@ -2,7 +2,7 @@
 
 ## Cooperative dependency tools - 2026-10-18
 
-[AIDE-DEPENDENCY-MCP-01](.aide/queue/AIDE-DEPENDENCY-MCP-01/ExecPlan.md) adds a bounded participant inbox and stdio tools over existing Requests. Local records are integrated at 8f93cb7e; this child still requires actual subprocess qualification. Existing-worker delivery and native DiskEd adoption remain mandatory follow-ons.
+[AIDE-DEPENDENCY-MCP-01](.aide/queue/AIDE-DEPENDENCY-MCP-01/ExecPlan.md) adds a bounded participant inbox and stdio tools over existing Requests. Local records are integrated at 8f93cb7e; this child passed all 60 runtime/protocol methods, including actual subprocess exchange. Existing-worker delivery and native DiskEd adoption remain mandatory follow-ons.
 
 ## Local dependency request/reply - 2026-10-17
 

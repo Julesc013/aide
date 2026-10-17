@@ -100,7 +100,7 @@ action. This profile does not automatically retry, revise, reject or cancel a
 task. An amendment needs a separately attributed native decision and successor;
 changing an existing request ID's body refuses.
 
-## Cooperative MCP tools (development candidate)
+## Cooperative MCP tools (qualified local profile)
 
 The optional source module `core.runtime.continuous_worker.dependency_mcp` exposes
 the same ledger through MCP 2025-11-25 stdio. A launching host supplies the existing
@@ -138,7 +138,9 @@ and [tools](https://modelcontextprotocol.io/specification/2025-11-25/server/tool
 This limited transport is isolated from lifecycle logic. The existing broader
 MCP contract catalogue remains a declaration-only preview. SDK integration or
 additional protocol capabilities require their own demonstrated need and checks.
-The current candidate is not yet behavior-qualified. Installed-client integration,
+The [local qualification](../../.aide/queue/AIDE-DEPENDENCY-MCP-01/REPORT.md) passed
+60 methods, including actual subprocess exchanges and all original regressions.
+Installed-client integration,
 automatic wake-up and actual existing-worker delivery require separate evidence;
 connecting a transport does not establish that another worker accepted a request.
 

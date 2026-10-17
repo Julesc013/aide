@@ -23,3 +23,14 @@ upstream SDK instead of extending this into a framework.
 Progress: fresh helper classified exactly the four intake files and admission.
 Under estate lock, confirmed unchanged dev/main/base, no active job, running
 dispatch and sole checkout; created local-only task/aide-dependency-mcp-01.
+
+First source review refused unbounded outgoing frames before any execution.
+Repaired output policy and two added cases received exact ACCEPT. Managed job
+eb166a5c passed all 60 methods (original 47 plus 13) without skips at 3d789913.
+Collection identities, quiescence, scratch retirement and released reservation
+are verified. One allocation used; no further fixture requested. Full validation
+passed before commit; after commit two conservative export-provenance findings
+require scoped metadata closure. Terminal source/effect review precedes exact
+dev/main synchronization. Actual installed-worker delivery remains the next goal.
+
+Exact scoped amendment7d2a4b69 ACCEPTed metadata closure using the remaining second allocation, existing exporter/ownership oracles, unchanged payload and publication checks. Preparation does not authorize execution until exact source/effect review.

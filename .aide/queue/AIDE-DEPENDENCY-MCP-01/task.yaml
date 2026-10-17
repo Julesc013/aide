@@ -26,6 +26,7 @@ scope:
     - .aide/context/latest-task-packet.md
     - .aide/generated/**
     - .aide/reports/capability-*
+    - .aide/export/aide-lite-pack-v0/**
     - PLANS.md
     - IMPLEMENT.md
     - DOCUMENTATION.md
@@ -36,3 +37,6 @@ verification:
   live_initializations: 0
   live_peer_deliveries: 0
 review_gate: exact_source_effect_and_terminal_review
+pack_scope_amendment_ref: evidence/pack-scope-amendment.md
+pack_scope_amendment_sha256: 7d2a4b6958d8ad7e17ab1faff7f2396d4c330a4bf17523f14528ccc89af4fba7
+pack_scope_verdict: ACCEPT_scope_only

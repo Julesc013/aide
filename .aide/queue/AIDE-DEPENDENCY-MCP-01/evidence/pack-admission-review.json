@@ -1,0 +1,10 @@
+{
+  "verdict": "ACCEPT",
+  "tier": "scope_amendment_only",
+  "reviewer": "/root/review_disked_continuation",
+  "subject": "pack-scope-amendment.md",
+  "sha256": "7d2a4b6958d8ad7e17ab1faff7f2396d4c330a4bf17523f14528ccc89af4fba7",
+  "head": "3d78991305013fb63e5adf0c4c916d9cba00f032",
+  "findings": [],
+  "scope": "Prepare exact pack-only candidate using remaining second allocation; separate exact effect review before execution. No third job, runtime repeat, changelog, live or integration effect."
+}
