@@ -782,3 +782,14 @@ AIDE-LITE-SUCCESSOR-01 admitted at33ec403f: preserve historical published assets
 Lite successor source/development qualification completed: 60 source and 25 affected delivered methods, ownership 6, exporter checks and fixed preview pass. Original timeouts/errors remain retained; all eight allocations retired. Exact integration is pending and will be recorded in the child receipt after the reviewed effect. Next release work must qualify actual archives and published 1.0.0 upgrades; existing-host delivery and native DiskEd ownership remain independently open.
 
 Actual Lite successor qualification admitted from integrated4f2c3960. See AIDE-LITE-SUCCESSOR-QUALIFICATION-01; bounded14 allocations, original8 families and actual published-predecessor obligations retained. No publication in this child.
+
+
+2026-10-18: Actual successor consumers, published-predecessor upgrade/recovery and
+exact archive replay pass; all28 consumed jobs are retired, prior failures retained.
+The stale child queue-index entry is reconciled. Truthful fixed preview preparation
+can proceed independently of owner acceptance of three historical message failures:
+the policy requires reporting malformed history and gates promotion, not generation.
+Preview29 will cover the complete published1.0-to-reviewed-checkpoint range under
+an explicit200-commit bound, preserve the three exact malformed records and range
+FAIL, and leave dispositions/registry unchanged. Native host and DiskEd ownership
+prerequisites remain independently unresolved; no unchanged environment retry.

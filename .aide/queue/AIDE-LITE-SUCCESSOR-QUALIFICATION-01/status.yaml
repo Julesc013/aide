@@ -3,7 +3,7 @@ task_id: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
 status: needs_review
 result: CONSUMER_PREDECESSOR_RECOVERY_REPLAY_PASS
 owner: aide_campaign
-next_action: owner_message_dispositions_then_fixed_preview_and_final_review
+next_action: review_truthful_fixed_preview_with_owner_decision_still_pending
 promotion_blocker: three_commit_message_failures_preserved_pending_disposition
 jobs_allocated: 28
 maximum_jobs: 29

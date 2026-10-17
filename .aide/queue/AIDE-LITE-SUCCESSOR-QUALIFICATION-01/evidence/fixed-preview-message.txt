@@ -1,0 +1,37 @@
+test(lite): prepare complete preview with unresolved history visible
+
+## Summary
+- Prepare the reserved release preview independently of historical-message approval.
+
+## Why
+- Draft generation reports malformed history; approval is a promotion gate.
+- The full published-predecessor range exceeds the older one-hundred-commit cap.
+
+## Changed
+- Reuse existing changelog generation and renderers with bounded complete-range coverage.
+- Preserve exact known failures, six-output regeneration and pending owner decisions.
+- Reconcile stale queue-index and parent current-state records from retained outcomes.
+
+## Validation
+- PASS raw full-range inspection:103 commits and exactly three known failures.
+- PASS read-only output-size planning within the existing one-MiB reservation.
+- PASS syntax, input-map, message and diff checks; allocation29 NOT RUN pending exact review.
+- Prior consumer, actual predecessor and archive replay evidence remains applicable.
+
+## Changelog
+- Tests: Prepare complete deterministic preview with unresolved historical records retained.
+- Docs: Separate draft preparation from promotion approval and reconcile current task state.
+
+## Risks
+- Historical owner dispositions and final release gates remain unresolved.
+- Preview generation does not qualify publication or broader host operation.
+
+## Follow-up
+- Run allocation29, review actual preview outputs and preserve the remaining promotion obligations.
+
+AIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
+AIDE-Phase: truthful-fixed-preview
+AIDE-Result: PARTIAL
+AIDE-Scope: qualification wrapper and current-state reconciliation
+AIDE-Token-Impact: unknown
+AIDE-Quality-Gate: independent source and effect review

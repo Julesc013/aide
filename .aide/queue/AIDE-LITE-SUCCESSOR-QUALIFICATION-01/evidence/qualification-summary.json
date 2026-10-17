@@ -41,7 +41,7 @@
   "published_version": "1.0.0",
   "remaining": [
     "owner dispositions for three exact historical commit-message failures",
-    "fixed changelog preview allocation29 with truthful dispositions and complete range coverage",
+    "fixed changelog preview allocation29 preserving unresolved history and complete published-predecessor range coverage",
     "exact independent final release-candidate review",
     "guarded dev/main integration",
     "separately admitted publication and acquired-byte validation"

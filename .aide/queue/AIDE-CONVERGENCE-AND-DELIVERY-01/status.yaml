@@ -14,7 +14,7 @@ operational_next_task: actual_host_delivery_after_qualified_local_exchange
 portable_git_defaults_integration_ref: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/evidence/integration-result.json
 last_completed_task: AIDE-LITE-SUCCESSOR-01
 git_defaults_admission_ref: evidence/git-defaults-admission.md
-next_preparation: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
+next_preparation: fixed_successor_preview_with_unresolved_history
 native_selected_export_result_ref: .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence/native-final-result.json
 planning_amendment_ref: evidence/useful-extensibility-amendment.md
 next_current_view_brief_ref: evidence/current-view-brief.md
@@ -152,3 +152,9 @@ engineering_review_integration_receipt: .aide/queue/AIDE-ENGINEERING-REVIEW-01/e
 
 resume_advice_result_ref: .aide/queue/AIDE-RESUME-PLAN-01/REPORT.md
 resume_advice_integration_receipt: .aide/queue/AIDE-RESUME-PLAN-01/evidence/integration-result.log
+
+latest_successor_qualification_ref: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/qualification-summary.json
+latest_successor_qualification: original8_additional18_actual_predecessor_recovery_replay_PASS
+successor_jobs_retired: 28_of_28_consumed
+successor_preview: prepared_independent_of_pending_owner_message_dispositions
+successor_promotion: held_for_owner_dispositions_and_final_candidate_review

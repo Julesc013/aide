@@ -125,3 +125,30 @@ Actual-predecessor upgrade25 and recovery26 PASS with collected and retired evid
 
 
 Actual published-predecessor upgrade/recovery and exact scratch archive replay PASS. All28 consumed jobs are retired; all prior failures remain. Candidate1.1.0 stays unpublished. Pending: owner dispositions for three exact historical message failures, fixed preview29, final independent release review, guarded dev/main integration and separately admitted publication/acquired-byte checks. Important task checkpoint debd5886 is remotely verified; accepted dev/main remain4f2c3960.
+
+
+## Prepare the truthful fixed preview before owner disposition
+
+Source inspection and independent contract review establish that preview generation
+reports malformed commits without accepting them. The changelog policy gates
+promotion, not draft preparation. Correct the earlier owner-first dependency.
+
+1. Reconcile this child in the queue index and parent current-state fields using
+   retained native evidence. Preserve old chronology and independent host/target blockers.
+2. Prepare allocation29 with the existing changelog CLI/parser/renderers and the
+   existing bounded inventory helper. Freeze the range from published1.0.0 target
+   0f293eb6a99dbd444bfa35016007b13451c49275 through the reviewed checkpoint.
+   Use an explicit200-commit bound: the current103-commit range exceeds100.
+3. Preserve prior six outputs; generate, validate and inspect new six outputs;
+   regenerate exact bytes read-only. Account for every commit through categorized,
+   malformed and explicitly ignored merge records. Verify known3 object/message
+   identities and parser reasons separately from strict message-check failures.
+4. Keep the original range FAIL and owner_decision_pending in companion evidence.
+   No registry/policy change or inferred approval; all release/promotion gates stay.
+5. Exact source/effect review precedes the sole remaining managed allocation.
+   Collect and retire, then review actual outputs and checkpoint the evidence.
+
+No archive, pack, provider, peer, target or other runtime source change. Existing
+source/payload evidence remains valid for unchanged subjects. Possible blockers:
+new unexpected malformed history, changed source/ref/input identities or resource
+admission. Stop and preserve any failed attempt; no automatic retry.

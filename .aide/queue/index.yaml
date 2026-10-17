@@ -4062,8 +4062,9 @@ items:
     evidence: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence
 
   - id: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
-    status: running
-    result: ORIGINAL8_PASS_ADDITIONS_AND_PREDECESSOR_PENDING
+    status: needs_review
+    result: CONSUMER_PREDECESSOR_RECOVERY_REPLAY_PASS
+    planning_state: truthful_fixed_preview_prepared_owner_disposition_independent
     title: Qualify actual additive Lite archives and published predecessor
     task: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md

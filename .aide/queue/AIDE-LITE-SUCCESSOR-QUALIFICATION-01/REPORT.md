@@ -8,7 +8,7 @@ Actual published-predecessor upgrade and recovery now PASS. [Qualified outcomes]
 
 [Exact archive replay](evidence/replay-qualified.json) now PASS: ZIP and TAR reproduce byte for byte; all53 release files and863 pack files remain unchanged. Doctor, full validate, stable validation and pack status pass; the existing advisory missing review-reference warning is retained. The earlier replay reservation refusal remains historical evidence.
 
-[Current qualification summary](evidence/qualification-summary.json) separates demonstrated behavior from open release gates. All28 consumed jobs are retired. Fixed preview29, the three historical owner dispositions, final candidate review and integration remain. Public Lite1.0.0 is unchanged; no1.1.0 publication is claimed.
+[Current qualification summary](evidence/qualification-summary.json) separates demonstrated behavior from open release gates. All28 consumed jobs are retired. Fixed preview29 is prepared independently of the three historical owner dispositions. It will report those failures without approving them. Final candidate review and integration remain. Public Lite1.0.0 is unchanged; no1.1.0 publication is claimed.
 
 The table and original candidate narrative below are historical evidence for
 ZIP 089d75da, not substitutes for the separately linked replacement results.
