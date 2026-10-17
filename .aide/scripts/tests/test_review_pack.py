@@ -6,6 +6,7 @@ import io
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 
@@ -52,6 +53,22 @@ class AideLiteReviewPackTests(unittest.TestCase):
         self.assertNotIn("print('hello')", text)
         self.assertNotIn("SHOULD_NOT_APPEAR", text)
         self.assertNotIn("whole repo dump", text.lower())
+
+    def test_fixture_without_source_ignore_or_baselines_remains_verifiable(self) -> None:
+        source = aide_lite.repo_root_from_script()
+        omitted = {source / ".gitignore", source / aide_lite.TOKEN_BASELINES_PATH}
+        exists = Path.exists
+        with mock.patch.object(Path, "exists", lambda path: False if path in omitted else exists(path)):
+            root = self.make_repo()
+        self.assertTrue(aide_lite.gitignore_has_local_state_rules(root))
+        report = aide_lite.build_verification_report(root, task_packet_path=aide_lite.LATEST_PACKET_PATH)
+        self.assertIn(report.result, {"PASS", "WARN"}, report.findings)
+        for name in ("root_history_baseline", "review_baseline", "repo_context_baseline"):
+            baseline = aide_lite.baseline_by_name(root, name)
+            self.assertGreater(aide_lite.calculate_baseline(root, baseline).approx_tokens, 0)
+        aide_lite.write_review_packet(root)
+        summary = aide_lite.write_token_savings_summary(root, [], [])
+        self.assertTrue(summary.path.is_file())
 
     def test_review_pack_is_deterministic_for_same_state(self) -> None:
         root = self.make_repo()

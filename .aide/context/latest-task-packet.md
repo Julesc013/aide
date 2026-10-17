@@ -9,7 +9,7 @@ AIDE-ENGINEERING-REVIEW-01 - Strengthen bounded engineering review through exist
 
 ## GOAL
 
-AIDE-ENGINEERING-REVIEW-01: improve shared evidence review guidance, packet discovery, compatibility and bounded findings; qualify original review-pack behavior and delivered payload
+AIDE-ENGINEERING-REVIEW-01: repair demonstrated portable self-test fixture gaps under amendment7b8ae471; preserve original failure and assertions; qualify source and delivered review checks with separate processes
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 5621
-- approx_tokens: 1406
+- chars: 5652
+- approx_tokens: 1413
 - budget_status: PASS
 - warnings:
   - none

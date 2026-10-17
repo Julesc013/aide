@@ -33,3 +33,9 @@ Allocation1/3 PASS7, original methods retained, collected/retired. Both fresh re
 Allocation2 original FAIL retained: six delivered checks pass, existing self-test fails verifier assertion. Static fixture portability diagnosis and narrow amendment prepared; no retry. Preserve refreshed pack candidate and all original evidence before any fix.
 
 Amendment7b8ae471 independently ACCEPTed by /root/review_disked_continuation. Maximum now4, with2 consumed; one new source/refresh/delivered repair qualification and the original preview remain. Freeze the failed export before repair.
+
+Prepared fixture repair: preserve initialized .gitignore; supply synthetic named baselines only in disposable fixtures when source reports are absent; retain verifier assertion with actionable diagnostic details. New absence regression and fresh source/delivered processes await exact review. Failed export checkpoint5ee93ea7 preserves original bytes.
+
+Repair pre-run REQUEST_CHANGES retained for tree8532444c: missing repo_context_baseline would fail the unchanged summary renderer. Added the third synthetic baseline and exercised the real summary path in the absence regression. Child processes now pin owned TEMP through existing bootstrap semantics. No allocation consumed before correction.
+
+Pre-run review of tree186118d7 resolved the source finding but caught stale CLI capability binding after the correction. Refreshed through capability ledger and refreshed all existing template pins. No job consumed.
