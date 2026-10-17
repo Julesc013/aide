@@ -1,0 +1,9 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "head": "7cd6d657eaa18e8da5ab9c1b069efc2f50f46cf1",
+  "tree": "c7137a98c9fdfaa5b4643e205576f710c2767e0a",
+  "template_sha256": "8343743d494f26a72761a9d47377e861aba663769935dfe2c55d122dba3a8512",
+  "scope": "additive changelog scope and amended second export/consumer job; no remote or real target or release effects",
+  "findings": []
+}

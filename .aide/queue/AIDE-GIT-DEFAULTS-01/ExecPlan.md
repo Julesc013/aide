@@ -56,3 +56,7 @@ protection bypass, new roots or unauthorized target operations. Keep published
 - Include the existing changelog preview owner as an explicit reviewed scope
   amendment for main promotion. Reserve 7 MiB export plus 1 MiB changelog within
   the unchanged 8 MiB canonical allowance; no new generator or storage root.
+- Second job passed the affected method and six ownership checks and rebuilt the
+  export, then doctor stopped on a stale capability ledger. Preserve the failure.
+  Ledger refreshed; full diagnostic validate now passes. Commit/reuse the exact
+  generated pack; final job resumes only unrun stages with no second export reset.

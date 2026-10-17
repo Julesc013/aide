@@ -1,0 +1,92 @@
+{
+  "result": "FAIL_PRESERVED_STALE_CAPABILITY_LEDGER_AFTER_EXPORT",
+  "job_id": "59cbf6c27f9e40618486ee8309f85de6",
+  "source_commit": "39df07cbee630346bcbad83fa8700b901ff43b7a",
+  "affected_repair": {
+    "tests_run": 1,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "qualification": {
+    "archives_changed": false,
+    "before_files": 855,
+    "before_metadata": {
+      "checksums.json": "703a65730492f6591eb40d899fb800ce696eae97ac660c1087300725c888cc42",
+      "export-report.md": "667694cfe956089d380e6a253e5de628641f6e2a3b39ec7d60363d5cb7f1311b",
+      "manifest.yaml": "9f7ba3562b67fc4d80e222612bcabdd3c0e9745f16ee5688e5a490d33e0811ed"
+    },
+    "error": {
+      "message": "doctor failed; original full output retained",
+      "type": "AssertionError"
+    },
+    "filesystem_containment_claimed": false,
+    "job_id": "59cbf6c27f9e40618486ee8309f85de6",
+    "models_requested": 0,
+    "operations": {
+      "doctor": {
+        "exit_code": 1,
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 5174,
+        "stdout_sha256": "42ada420129670dd9a9f22a6a19d875c6573973bdcc076b0e8856f2929621eef"
+      },
+      "export-pack": {
+        "exit_code": 0,
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 292,
+        "stdout_sha256": "1ef4719a791735f7dfa99854bf05751f9162c190941779cb8aecf74a442d1958"
+      }
+    },
+    "ownership_tests": {
+      "errors": 0,
+      "failures": 0,
+      "skips": 0,
+      "tests_run": 6
+    },
+    "phase": "refresh",
+    "prior_git_commit": "39df07cbee630346bcbad83fa8700b901ff43b7a",
+    "published_release_after": {
+      "aide-lite-v1.0.0.SHA256SUMS.txt": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83",
+      "aide-lite-v1.0.0.manifest.json": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb",
+      "aide-lite-v1.0.0.tar.gz": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a",
+      "aide-lite-v1.0.0.zip": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b"
+    },
+    "published_release_before": {
+      "aide-lite-v1.0.0.SHA256SUMS.txt": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83",
+      "aide-lite-v1.0.0.manifest.json": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb",
+      "aide-lite-v1.0.0.tar.gz": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a",
+      "aide-lite-v1.0.0.zip": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b"
+    },
+    "schema": "aide.derived-export-qualification.v1",
+    "status": "FAIL_PRESERVED"
+  },
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\59cbf6c27f9e40618486ee8309f85de6",
+  "receipt_sha256": "f32fdd9632800a84edf9de4ca6046c3ffe88935cc92465574f01de71590d6485",
+  "collected_manifest": {
+    "logs": "da5e3ebd8477f4a608ca4aa9830ce3c4c1baed81034abb34469a1d110497ea8b",
+    "output": "4f45b2c275e0510bca8a893dbd97f9cb393fe64a50ceb196b1572d6d531ade67"
+  },
+  "phase": "retired",
+  "quiescent": true,
+  "scratch_absent": true,
+  "reservation_released": true,
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/changelog": 190182,
+      ".aide/export/aide-lite-pack-v0": 4411274
+    },
+    "memory_bytes": 263704576,
+    "scratch_bytes": 4546852
+  },
+  "remaining_stages": [
+    "doctor",
+    "validate",
+    "pack-status",
+    "changelog",
+    "original_q31",
+    "portable_consumers"
+  ],
+  "export_replay_required": false
+}

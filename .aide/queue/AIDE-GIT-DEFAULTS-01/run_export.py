@@ -4,12 +4,14 @@ sys.dont_write_bytecode = True
 import contextlib
 import hashlib
 import importlib.util
+import io
 import json
 import os
 from pathlib import Path
 import shutil
 import subprocess
 import tempfile
+import tarfile
 import unittest
 
 ROOT = Path.cwd()
@@ -48,24 +50,57 @@ def run_suite(label, suite):
     return record
 
 
-q28 = load('git_defaults_q28', '.aide/scripts/tests/test_q28_git_workflow.py')
-repair = run_suite('affected-repair', unittest.TestSuite([
-    q28.Q28GitWorkflowTests('test_git_detect_writes_report_with_mocked_git')]))
-assert repair['tests_run'] == 1
+assert sys.argv[1:] in ([], ['resume'])
+resume = sys.argv[1:] == ['resume']
+if not resume:
+    q28 = load('git_defaults_q28', '.aide/scripts/tests/test_q28_git_workflow.py')
+    repair = run_suite('affected-repair', unittest.TestSuite([
+        q28.Q28GitWorkflowTests('test_git_detect_writes_report_with_mocked_git')]))
+    assert repair['tests_run'] == 1
 
 refresh = load('git_defaults_refresh', '.aide/queue/AIDE-DAILY-PACK-REFRESH-01/run_refresh.py')
 inventory_path = EVIDENCE / 'prior-pack-inventory.json'
 inventory = json.loads(inventory_path.read_bytes())
-refresh.require_same(inventory)
 predecessor = TMP / 'predecessor-pack'
-shutil.copytree(ROOT / refresh.PACK_REL, predecessor)
+if resume:
+    # Reconstruct only the exact retained predecessor; do not reset the new pack.
+    archive = subprocess.check_output([str(git), 'archive', '--format=tar',
+                                       inventory['git_commit'], '--', refresh.PACK_REL], cwd=ROOT, timeout=30)
+    assert len(archive) <= 8 * 1024 * 1024
+    seen = set()
+    with tarfile.open(fileobj=io.BytesIO(archive)) as source:
+        for member in source:
+            if member.isdir():
+                continue
+            assert member.isfile() and member.name.startswith(refresh.PACK_REL + '/')
+            relative = member.name[len(refresh.PACK_REL) + 1:]
+            assert relative in inventory['files'] and relative not in seen
+            assert not Path(relative).is_absolute() and '..' not in Path(relative).parts
+            data = source.extractfile(member).read()
+            assert hashlib.sha256(data).hexdigest() == inventory['files'][relative]['sha256']
+            target = predecessor / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(data)
+            seen.add(relative)
+    assert seen == set(inventory['files'])
+else:
+    refresh.require_same(inventory)
+    shutil.copytree(ROOT / refresh.PACK_REL, predecessor)
 assert refresh.inventory_bytes(predecessor) == {
     name: entry['sha256'] for name, entry in inventory['files'].items()}
-sys.argv = [str(ROOT / '.aide/queue/AIDE-DAILY-PACK-REFRESH-01/run_refresh.py'),
-            'refresh', '--inventory', inventory_path.relative_to(ROOT).as_posix(),
-            '--inventory-sha256', hashlib.sha256(inventory_path.read_bytes()).hexdigest()]
-refresh.main()
 pack = ROOT / refresh.PACK_REL
+if resume:
+    expected = json.loads((EVIDENCE / 'refreshed-pack-sha256s.json').read_bytes())
+    assert refresh.inventory_bytes(pack) == expected
+    for command in ('doctor', 'validate', 'pack-status'):
+        observed = refresh.invoke(command, [sys.executable, '-B',
+                                            str(ROOT / '.aide/scripts/aide_lite.py'), command], OUTPUT)
+        assert observed['exit_code'] == 0, command
+else:
+    sys.argv = [str(ROOT / '.aide/queue/AIDE-DAILY-PACK-REFRESH-01/run_refresh.py'),
+                'refresh', '--inventory', inventory_path.relative_to(ROOT).as_posix(),
+                '--inventory-sha256', hashlib.sha256(inventory_path.read_bytes()).hexdigest()]
+    refresh.main()
 changelog = {}
 for label, args in [
     ('changelog-preview', ['changelog', 'preview', '--range',
@@ -158,5 +193,8 @@ try:
     result['status'] = 'PASS'
 finally:
     (OUTPUT / 'consumer.json').write_bytes((json.dumps(result, indent=2) + '\n').encode())
-print(json.dumps({'status': result['status'], 'affected_tests': 1, 'original_q31_tests': 6,
-                  'reused_passes': 35, 'whole_task_usage': 'unknown'}))
+if resume:
+    assert refresh.inventory_bytes(pack) == expected
+print(json.dumps({'status': result['status'], 'affected_tests': 0 if resume else 1,
+                  'original_q31_tests': 6, 'reused_passes': 42 if resume else 35,
+                  'whole_task_usage': 'unknown'}))

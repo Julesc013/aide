@@ -22856,49 +22856,69 @@ def github_expected_ci_commands() -> list[str]:
     ]
 
 
+def github_protection_choices(repo_root: Path) -> tuple[dict[str, dict[str, bool | None]], list[str]]:
+    """Read the existing policy's two/four-space boolean rule fields conservatively."""
+    branches = ("main", "dev", "release/*", "hotfix/*", "gh-pages")
+    keys = ("protect", "require_reviews", "require_status_checks")
+    choices = {branch: {key: None for key in keys} for branch in branches}
+    issues: list[str] = []
+    path = repo_root / BRANCH_PROTECTION_POLICY_PATH
+    if not path.is_file():
+        return choices, ["branch_protection_policy_missing"]
+    text = read_text(path)
+    rules = list(re.finditer(r"(?m)^rules:[ \t]*(.*)$", text))
+    if len(rules) != 1:
+        return choices, ["branch_protection_rules_missing_or_duplicate"]
+    if rules[0].group(1) and not rules[0].group(1).startswith("#"):
+        return choices, ["branch_protection_rules_unsupported_inline_value"]
+    section = text[rules[0].end():]
+    end = re.search(r"(?m)^[^\s#]", section)
+    if end:
+        section = section[:end.start()]
+    blocks = list(re.finditer(r"(?m)^  ([^\s:][^:\r\n]*):[ \t]*(.*)$", section))
+    for branch in branches:
+        selected = [(i, match) for i, match in enumerate(blocks) if match.group(1) == branch]
+        if len(selected) != 1:
+            issues.append(f"{branch}: rule missing or duplicate")
+            continue
+        index, match = selected[0]
+        if match.group(2) and not match.group(2).startswith("#"):
+            issues.append(f"{branch}: unsupported inline rule")
+            continue
+        body = section[match.end():blocks[index + 1].start() if index + 1 < len(blocks) else len(section)]
+        for key in keys:
+            values = re.findall(r"(?m)^    " + key + r":[ \t]*(.*)$", body)
+            if not values and key != "protect":
+                continue
+            if len(values) == 1 and re.fullmatch(r"(?:true|false)(?:[ \t]+#.*)?[ \t]*", values[0]):
+                choices[branch][key] = values[0].split()[0] == "true"
+            else:
+                issues.append(f"{branch}: {key} must be one literal boolean")
+    return choices, issues
+
+
 def make_github_protection_plan(repo_root: Path, state: dict[str, object] | None = None) -> dict[str, object]:
     helper_state = state if state is not None else collect_git_helper_state(repo_root)
     branches = [str(item) for item in helper_state.get("local_branches", []) if isinstance(item, str)]
     remote_branches = [str(item) for item in helper_state.get("remote_branches", []) if isinstance(item, str)]
     normalized = {normalize_branch_for_role(item) for item in [*branches, *remote_branches]}
+    choices, policy_issues = github_protection_choices(repo_root)
     branch_targets = []
-    for branch in ["main", "dev"]:
+    for branch, choice in choices.items():
         branch_targets.append(
             {
                 "branch": branch,
-                "role": classify_branch_role(branch),
-                "present": branch in normalized,
-                "recommended": True,
-                "required_reviews": 1 if branch == "main" else 0,
+                "role": {"release/*": "release", "hotfix/*": "hotfix"}.get(branch, classify_branch_role(branch)),
+                "present": any(fnmatch.fnmatchcase(item, branch) for item in normalized),
+                "recommended": choice["protect"],
+                "protection_choice": "project_optional" if branch == "main" else "normally_unprotected" if branch == "dev" else "project_policy",
+                "required_reviews": int(choice["require_reviews"]) if choice["require_reviews"] is not None else None,
+                "require_status_checks": choice["require_status_checks"],
                 "require_linear_history": False,
                 "allow_force_pushes": False,
                 "allow_deletions": False,
             }
         )
-    branch_targets.extend(
-        [
-            {
-                "branch": "release/*",
-                "role": "release",
-                "present": any(item.startswith("release/") for item in normalized),
-                "recommended": True,
-                "required_reviews": 1,
-                "require_linear_history": False,
-                "allow_force_pushes": False,
-                "allow_deletions": False,
-            },
-            {
-                "branch": "hotfix/*",
-                "role": "hotfix",
-                "present": any(item.startswith("hotfix/") for item in normalized),
-                "recommended": True,
-                "required_reviews": 1,
-                "require_linear_history": False,
-                "allow_force_pushes": False,
-                "allow_deletions": False,
-            },
-        ]
-    )
     required_checks = [
         "aide-validate",
         "aide-lite-validate",
@@ -22914,10 +22934,14 @@ def make_github_protection_plan(repo_root: Path, state: dict[str, object] | None
     return {
         "schema_version": "aide.github-branch-protection-plan.v0",
         "generated_by": GENERATOR_NAME,
-        "repo_id": "julesc013/aide",
+        "repo_id": "not_observed",
         "current_branch": helper_state.get("current_branch", "unknown"),
         "current_branch_role": helper_state.get("current_role", "unknown"),
-        "protected_branch_roles": ["canonical", "integration", "release", "deploy"],
+        "protected_branch_roles": sorted({item["role"] for item in branch_targets if item["recommended"] is True}),
+        "protection_policy_source": BRANCH_PROTECTION_POLICY_PATH,
+        "policy_issues": policy_issues,
+        "remote_protection_observed": False,
+        "preserve_existing_remote_settings": True,
         "branch_targets": branch_targets,
         "required_status_checks": required_checks,
         "required_review_gate": True,
@@ -22977,12 +23001,15 @@ def make_github_advisory(repo_root: Path) -> dict[str, object]:
                 remote_url = parts[1]
                 break
     findings = []
+    repo_id = remote_repo_summary(remote_url)
+    protection["repo_id"] = ci["repo_id"] = repo_id
+    findings.extend(protection["policy_issues"])
     if not any(item.get("branch") == "dev" and item.get("present") for item in protection["branch_targets"] if isinstance(item, dict)):
         findings.append("dev integration branch is planned but not detected locally/remotely")
     return {
         "schema_version": "aide.github-advisory.v0",
         "generated_by": GENERATOR_NAME,
-        "repo_id": remote_repo_summary(remote_url),
+        "repo_id": repo_id,
         "remote_url_summary": remote_repo_summary(remote_url),
         "current_branch": helper_state.get("current_branch", "unknown"),
         "current_commit": helper_state.get("current_commit", "unknown"),
@@ -22993,8 +23020,8 @@ def make_github_advisory(repo_root: Path) -> dict[str, object]:
         "branch_protection": protection,
         "ci": ci,
         "findings": findings,
-        "blockers": [],
-        "recommended_next_action": "review Q35 advisory before any future Q36+ intent work; do not apply GitHub settings until a later reviewed phase",
+        "blockers": list(protection["policy_issues"]),
+        "recommended_next_action": "review project protection choices and current Git evidence; preserve existing settings until a separately authorized apply",
         "github_api_mutation": False,
         "branch_protection_applied": False,
         "workflow_file_written": False,
@@ -23013,7 +23040,7 @@ def render_github_protection_plan_md(plan: dict[str, object]) -> str:
     for item in plan.get("branch_targets", []):
         if isinstance(item, dict):
             target_lines.append(
-                f"- {item.get('branch', '')}: role={item.get('role', '')}; present={str(item.get('present', False)).lower()}; force_push={str(item.get('allow_force_pushes', False)).lower()}; deletion={str(item.get('allow_deletions', False)).lower()}"
+                f"- {item.get('branch', '')}: role={item.get('role', '')}; present={str(item.get('present', False)).lower()}; protection={str(item.get('recommended')).lower() if item.get('recommended') is not None else 'unknown'}; choice={item.get('protection_choice', '')}; force_push={str(item.get('allow_force_pushes', False)).lower()}; deletion={str(item.get('allow_deletions', False)).lower()}"
             )
     check_lines = [f"- {item}" for item in plan.get("required_status_checks", []) if isinstance(item, str)]
     return f"""# AIDE GitHub Branch Protection Plan
@@ -23027,6 +23054,8 @@ def render_github_protection_plan_md(plan: dict[str, object]) -> str:
 - branch_protection_applied: false
 - workflow_file_written: false
 - preview_only: true
+- remote_protection_observed: false
+- policy_issues: {json.dumps(plan.get('policy_issues', []))}
 
 ## Branch Targets
 
@@ -23041,6 +23070,9 @@ def render_github_protection_plan_md(plan: dict[str, object]) -> str:
 This is an advisory plan. Q35 does not call GitHub APIs, create branch
 protection rules, write `.github/workflows`, push branches, create tags, or
 publish releases.
+Project-owned protection choices come from `{BRANCH_PROTECTION_POLICY_PATH}`.
+Existing remote protection is preserved; optional or disabled hosting protection
+does not bypass validation, review, no-force-push or persistent-branch retention.
 """
 
 
@@ -23167,6 +23199,8 @@ def write_github_advisory_reports(repo_root: Path) -> dict[str, object]:
 
 def validate_github_advisory_files(repo_root: Path) -> list[Check]:
     checks: list[Check] = []
+    _choices, policy_issues = github_protection_choices(repo_root)
+    check_pass(checks, not policy_issues, "branch protection choices are explicit: " + "; ".join(policy_issues))
     required_markers = {
         GITHUB_PROTECTION_POLICY_PATH: ["aide.github-protection-policy.v0", "advisory_only", "github_api_mutation: false", "workflow_file_written: false"],
         CI_GATES_POLICY_PATH: ["aide.ci-gates-policy.v0", "advisory_only", "required_gates", "workflow_installation: false"],
@@ -39619,12 +39653,250 @@ def command_task_evidence(args: argparse.Namespace) -> int:
     return 0
 
 
+def task_view_read(repo_root: Path, relative: str, *, limit: int = 131072) -> bytes:
+    """Read one bounded ordinary repository record; never follow a link."""
+    parts = relative.replace("\\", "/").split("/")
+    public_queue_record = (len(parts) == 4 and parts[:2] == [".aide", "queue"]
+                           and parts[-1] in ("task.yaml", "status.yaml"))
+    if (not relative or any(part in ("", ".", "..") or ":" in part
+                           or part.endswith((".", " ")) for part in parts)
+            or quality_secret_or_local_path(relative)
+            or any(part.lower() in (".git", ".codex", ".ssh", ".aide.local")
+                   or part.lower().startswith(".env") for part in parts)
+            or (not public_queue_record and install_rel_is_secret_like(relative))):
+        raise ValueError("unsafe_reference")
+    path = repo_root.resolve()
+    for part in parts:
+        path /= part
+        info = path.lstat()
+        if stat.S_ISLNK(info.st_mode) or getattr(info, "st_file_attributes", 0) & 0x400:
+            raise ValueError("unsafe_reference")
+    if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
+        raise ValueError("unsafe_reference")
+    if info.st_size > limit:
+        raise ValueError("record_too_large")
+    with path.open("rb") as stream:
+        data = stream.read(limit + 1)
+    if len(data) > limit:
+        raise ValueError("record_too_large")
+    return data
+
+
+def task_view_fields(text: str, source: str, issues: list[dict[str, str]]) -> dict[str, object]:
+    """Project supported public fields, not a general YAML loader."""
+    names = {"id", "task_id", "title", "objective", "status", "result", "owner",
+             "responsible_owner", "next_action", "next_slice", "classification",
+             "review_gate", "planning_state", "acceptance_scope", "remaining_obligations",
+             "blocking_input", "blocked_reason", "product_qualified", "target_mutated"}
+    fields: dict[str, object] = {}
+    lines = text.splitlines()
+    def scalar(raw: str) -> object:
+        raw = raw.strip()
+        if len(raw) > 1024 or any(ord(char) < 32 for char in raw):
+            raise ValueError
+        if raw.startswith("#"):
+            return None
+        if raw.startswith('"'):
+            value = json.loads(raw)
+            if not isinstance(value, str) or any(ord(char) < 32 for char in value):
+                raise ValueError
+            return value
+        if raw.startswith("'"):
+            if not re.fullmatch(r"'(?:[^']|'')*'", raw):
+                raise ValueError
+            return raw[1:-1].replace("''", "'")
+        raw = re.split(r"\s+#", raw, maxsplit=1)[0].rstrip()
+        if raw.lower() in ("", "null", "~"):
+            return None
+        if raw.lower() in ("true", "false"):
+            return raw.lower() == "true"
+        if raw.startswith(("[", "{", "!", "&", "*", "|", ">")) or ": " in raw:
+            raise ValueError
+        return raw
+    for index, line in enumerate(lines):
+        if len(issues) >= 32:
+            if issues[-1]["code"] != "issue_limit":
+                issues.append({"code": "issue_limit", "source": source, "field": ""})
+            break
+        if not line or line[0].isspace() or line.startswith("#") or line == "---":
+            continue
+        match = re.fullmatch(r"([A-Za-z_][A-Za-z0-9_-]*):[ \t]*(.*)", line)
+        if not match:
+            issues.append({"code": "malformed_record", "source": source, "field": ""})
+            continue
+        key, raw = match.groups()
+        if len(key) > 128:
+            issues.append({"code": "field_name_limit", "source": source, "field": ""})
+            continue
+        if key not in names and not key.endswith(("_ref", "_sha256")):
+            continue
+        if key in fields:
+            fields[key] = None
+            issues.append({"code": "duplicate_field", "source": source, "field": key})
+            continue
+        if len(fields) >= 64:
+            issues.append({"code": "field_limit", "source": source, "field": ""})
+            break
+        continuation = []
+        for following in lines[index + 1:]:
+            if following and not following[0].isspace():
+                break
+            if following.strip() and not following.lstrip().startswith("#"):
+                continuation.append(following.strip())
+        try:
+            if raw in (">", ">-", "|", "|-"):
+                value = " ".join(continuation)
+                if len(value) > 1024 or any(ord(char) < 32 for char in value):
+                    raise ValueError
+            elif not raw and continuation:
+                if key != "remaining_obligations" or len(continuation) > 16:
+                    raise ValueError
+                if not all(item.startswith("- ") for item in continuation):
+                    raise ValueError
+                value = [scalar(item[2:]) for item in continuation]
+                if not all(isinstance(item, str) for item in value):
+                    raise ValueError
+            elif continuation:
+                raise ValueError
+            else:
+                value = scalar(raw)
+            if value is not None:
+                if key in ("product_qualified", "target_mutated"):
+                    if not isinstance(value, bool):
+                        raise ValueError
+                elif key != "remaining_obligations" and not isinstance(value, str):
+                    raise ValueError
+            fields[key] = value
+        except (ValueError, TypeError):
+            fields[key] = None
+            issues.append({"code": "unsupported_field", "source": source, "field": key})
+    return fields
+
+
+def build_current_task_view(repo_root: Path, task_id: str | None = None) -> dict[str, object]:
+    issues: list[dict[str, str]] = []
+    view: dict[str, object] = {"schema_version": "aide.task-current.v1", "task_id": "",
+        "status": "missing", "result": None, "objective": None, "owner": None,
+        "next_action": None, "remaining_obligations": None, "scope": {},
+        "declared_status": None, "index_status": None, "evidence": [], "sources": {},
+        "issues": issues, "read_only": True, "acceptance_verified": False}
+    def observe(relative: str, *, optional: bool = False, limit: int = 131072) -> str:
+        try:
+            text = task_view_read(repo_root, relative, limit=limit).decode("utf-8-sig")
+            if not text.strip() and not optional:
+                issues.append({"code": "empty_record", "source": relative, "field": ""})
+            return text
+        except FileNotFoundError:
+            if not optional:
+                issues.append({"code": "missing_record", "source": relative, "field": ""})
+        except (OSError, UnicodeError, ValueError) as exc:
+            issues.append({"code": str(exc) if isinstance(exc, ValueError) and not isinstance(exc, UnicodeError)
+                           else "unreadable_record", "source": relative, "field": ""})
+        return ""
+    # Bound and check the existing resolver's fixed input paths before using it.
+    index_text = observe(".aide/queue/index.yaml", optional=True, limit=1048576)
+    packet_text = observe(LATEST_PACKET_PATH, optional=True) if task_id is None else ""
+    if issues:
+        return view
+    try:
+        if task_id is None:
+            raw, explicit = task_packet_identity(packet_text)
+            if explicit and not raw:
+                raise ValueError("invalid declared task identity")
+            task_id = current_task_id(repo_root) or ""
+        if not task_id:
+            return view
+        if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", task_id):
+            raise ValueError("invalid declared task identity")
+        selected = resolve_task_id(repo_root, task_id)
+        if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", selected):
+            raise ValueError("invalid resolved task identity")
+    except ValueError:
+        issues.append({"code": "invalid_identity", "source": LATEST_PACKET_PATH if packet_text else "request", "field": "task_id"})
+        return view
+    task_ref = f".aide/queue/{selected}/task.yaml"
+    status_ref = f".aide/queue/{selected}/status.yaml"
+    task_text = observe(task_ref)
+    if not task_text:
+        return view
+    task = task_view_fields(task_text, task_ref, issues)
+    if task.get("id") != selected:
+        issues.append({"code": "identity_mismatch", "source": task_ref, "field": "id"})
+        return view
+    view["task_id"] = selected
+    status = task_view_fields(observe(status_ref), status_ref, issues)
+    if any(key in status and status[key] != selected for key in ("id", "task_id")):
+        issues.append({"code": "identity_mismatch", "source": status_ref, "field": "task_id"})
+        status = {}
+    sources = {"objective": task_ref, "status": status_ref, "result": status_ref,
+               "scope": status_ref, "declared_status": task_ref, "index_status": ".aide/queue/index.yaml"}
+    view.update(status=status.get("status") if isinstance(status.get("status"), str) else "unknown",
+                result=status.get("result"), objective=task.get("objective") or task.get("title"),
+                declared_status=task.get("status"), sources=sources)
+    for output, keys in {"owner": ("responsible_owner", "owner"), "next_action": ("next_action", "next_slice"),
+                         "remaining_obligations": ("remaining_obligations", "blocking_input", "blocked_reason")}.items():
+        for record, source in ((status, status_ref), (task, task_ref)):
+            found = next((key for key in keys if record.get(key) is not None), None)
+            if found:
+                view[output] = record[found]; sources[output] = source
+                break
+    view["scope"] = {key: status.get(key) for key in
+        ("classification", "acceptance_scope", "review_gate", "product_qualified", "target_mutated")}
+    entries = [item for item in queue_task_blocks(repo_root) if item.get("id") == selected] if index_text else []
+    if len(entries) == 1:
+        view["index_status"] = entries[0].get("status")
+        if view["index_status"] and view["index_status"] != view["status"]:
+            issues.append({"code": "index_status_conflict", "source": ".aide/queue/index.yaml", "field": "status"})
+    elif len(entries) > 1:
+        issues.append({"code": "duplicate_index_identity", "source": ".aide/queue/index.yaml", "field": "id"})
+    refs = [(record, source, key) for record, source in ((task, task_ref), (status, status_ref))
+            for key in sorted(record) if key.endswith("_ref") and record[key] is not None]
+    if len(refs) > 16:
+        issues.append({"code": "reference_limit", "source": status_ref, "field": ""})
+    for record, source, key in refs[:16]:
+        ref = record[key]
+        item = {"field": key, "source": source, "path": None, "availability": "unsafe_reference",
+                "applicability": "unverified"}
+        if isinstance(ref, str):
+            ref = ref.replace("\\", "/")
+            relative = ref if ref.startswith(".aide/") else f".aide/queue/{selected}/{ref}"
+            try:
+                data = task_view_read(repo_root, relative)
+                item.update(path=relative, availability="present")
+                expected = record.get(key[:-4] + "_sha256")
+                if expected is not None:
+                    if not isinstance(expected, str) or not re.fullmatch(r"[a-f0-9]{64}", expected):
+                        item["availability"] = "invalid_digest"
+                    elif hashlib.sha256(data).hexdigest() != expected:
+                        item["availability"] = "digest_mismatch"
+                    else:
+                        item["digest_verified"] = True
+            except FileNotFoundError:
+                item.update(path=relative, availability="missing")
+            except ValueError as exc:
+                item["availability"] = str(exc)
+            except OSError:
+                item["availability"] = "unreadable"
+        view["evidence"].append(item)
+    return view
+
+
 def command_task_current(args: argparse.Namespace) -> int:
-    task_id = current_task_id(args.repo_root) or ""
-    print("AIDE Lite task current")
-    print(f"task_id: {task_id}")
-    print(f"status: {task_status_value(args.repo_root, task_id) if task_id else 'missing'}")
-    return 0 if task_id else 1
+    view = build_current_task_view(args.repo_root, getattr(args, "task_id", None))
+    if getattr(args, "json", False):
+        print(json.dumps(view, indent=2, sort_keys=True, ensure_ascii=True))
+    else:
+        print("AIDE Lite task current")
+        print(f"task_id: {view['task_id']}")
+        print(f"status: {view['status']}")
+        for key in ("result", "objective", "owner", "next_action", "remaining_obligations"):
+            print(f"{key}: {view[key] if view[key] is not None else 'unknown'}")
+        print("scope: " + json.dumps(view["scope"], sort_keys=True))
+        print("evidence: " + (", ".join(f"{item['field']}={item['availability']}" for item in view["evidence"]) or "unknown"))
+        print("evidence_applicability: unverified; recorded outcomes do not verify acceptance")
+        if view["issues"]:
+            print("issues: " + ", ".join(sorted({item["code"] for item in view["issues"]})))
+    return 0 if view["task_id"] else 1
 
 
 def command_blocker_status(args: argparse.Namespace) -> int:
@@ -46312,7 +46584,10 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_evidence_parser = task_subparsers.add_parser("evidence")
     task_evidence_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
     task_evidence_parser.set_defaults(handler=command_task_evidence)
-    task_subparsers.add_parser("current").set_defaults(handler=command_task_current)
+    task_current_parser = task_subparsers.add_parser("current")
+    task_current_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
+    task_current_parser.add_argument("--json", action="store_true", help="Emit a bounded read-only task observation as JSON.")
+    task_current_parser.set_defaults(handler=command_task_current)
 
     blocker_parser = subparsers.add_parser("blocker")
     blocker_subparsers = blocker_parser.add_subparsers(dest="blocker_command", required=True)
