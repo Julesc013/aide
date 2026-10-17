@@ -13,3 +13,10 @@ corrected without assertion changes; product source unchanged. Baseline regressi
 comparison and collection/retirement checks pass. One reviewed capability refresh
 passes, classification unchanged and binding CURRENT. Corrected source/delivered
 execution pending exact allocation2 review. Live ledger remains unchanged.
+
+PASS allocation2: source20, delivered20, ownership6; no skips. Doctor, full structural
+validation and pack-status pass. Same862packmembers; four payload files plus manifest
+and checksums differ. All original published1.0 bytes/live ledger unchanged.
+Both attempts fully retired and collection verified. Peak memory270118912bytes,
+scratch10918389bytes; canonical pack4544911bytes. No model calls; whole effort unknown.
+Exact fixed-range preview remains pending allocation3 review.

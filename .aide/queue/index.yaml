@@ -4081,8 +4081,8 @@ items:
 
   - id: AIDE-OUTCOME-CONSERVATION-01
     status: needs_review
-    result: CANDIDATE
-    planning_state: exact_source_and_first_job_review
+    result: SOURCE20_DELIVERED20_OWNERSHIP6_PASS
+    planning_state: exact_promotion_preview_review
     title: Preserve outcome metadata and refuse lossy ledger updates
     task: .aide/queue/AIDE-OUTCOME-CONSERVATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-OUTCOME-CONSERVATION-01/ExecPlan.md

@@ -3823,6 +3823,7 @@ class OutcomeRecord:
     verifier_status: str
     recommendation_id: str
     notes: str
+    extra_fields: tuple[tuple[str, object], ...] = ()
 
 
 @dataclass(frozen=True)
@@ -27864,7 +27865,7 @@ def assert_controller_related_path(repo_root: Path, requested: str) -> str:
 
 
 def outcome_record_to_dict(record: OutcomeRecord) -> dict[str, object]:
-    return {
+    known = {
         "run_id": record.run_id,
         "phase": record.phase,
         "source": record.source,
@@ -27879,13 +27880,34 @@ def outcome_record_to_dict(record: OutcomeRecord) -> dict[str, object]:
         "recommendation_id": record.recommendation_id,
         "notes": record.notes,
     }
+    extra = dict(record.extra_fields)
+    if set(extra) & set(known):
+        raise ValueError("outcome metadata conflicts with a known field")
+    return {**extra, **known}
 
 
 def outcome_record_from_dict(data: dict[str, object]) -> OutcomeRecord:
+    if not isinstance(data, dict):
+        raise ValueError("outcome record must be an object")
+    text_fields = ("run_id", "phase", "source", "result", "failure_class", "severity",
+                   "budget_status", "golden_task_status", "verifier_status",
+                   "recommendation_id", "notes")
+    for key in text_fields:
+        if key in data and not isinstance(data[key], str):
+            raise ValueError(f"outcome field {key} must be text")
+    for key in ("run_id", "phase", "source"):
+        if not data.get(key, "").strip():
+            raise ValueError(f"outcome identity {key} is missing")
+    if data.get("result", "WARN") not in {"PASS", "WARN", "FAIL"}:
+        raise ValueError("outcome result is invalid")
+    if data.get("severity", "warning") not in {"info", "warning", "error"}:
+        raise ValueError("outcome severity is invalid")
     related = data.get("related_paths", [])
-    if not isinstance(related, list):
-        related = []
+    if not isinstance(related, list) or any(not isinstance(path, str) for path in related):
+        raise ValueError("outcome related_paths must be a list of text paths")
     approx = data.get("approx_tokens")
+    if approx is not None and (type(approx) is not int or approx < 0):
+        raise ValueError("outcome approx_tokens must be a nonnegative integer or null")
     return OutcomeRecord(
         run_id=str(data.get("run_id", "")),
         phase=str(data.get("phase", "")),
@@ -27900,7 +27922,22 @@ def outcome_record_from_dict(data: dict[str, object]) -> OutcomeRecord:
         verifier_status=str(data.get("verifier_status", "UNKNOWN")),
         recommendation_id=str(data.get("recommendation_id", "")),
         notes=str(data.get("notes", "")),
+        extra_fields=tuple((key, value) for key, value in data.items()
+                           if key not in (*text_fields, "related_paths", "approx_tokens")),
     )
+
+
+def _outcome_json_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    result: dict[str, object] = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError("duplicate JSON object key")
+        result[key] = value
+    return result
+
+
+def _outcome_json_constant(_value: str) -> None:
+    raise ValueError("non-finite JSON number")
 
 
 def read_outcome_records(repo_root: Path) -> list[OutcomeRecord]:
@@ -27908,29 +27945,57 @@ def read_outcome_records(repo_root: Path) -> list[OutcomeRecord]:
     if not path.exists():
         return []
     records: list[OutcomeRecord] = []
-    for line in read_text(path).splitlines():
+    for number, line in enumerate(read_text(path).splitlines(), 1):
         if not line.strip():
             continue
         try:
-            records.append(outcome_record_from_dict(json.loads(line)))
-        except (json.JSONDecodeError, TypeError, ValueError):
-            continue
+            data = json.loads(line, object_pairs_hook=_outcome_json_object,
+                              parse_constant=_outcome_json_constant)
+            json.dumps(data, allow_nan=False)  # Also reject exponent overflow to infinity.
+            records.append(outcome_record_from_dict(data))
+        except RecursionError as exc:
+            raise ValueError(f"invalid outcome ledger record at {OUTCOME_LEDGER_PATH}:{number}: JSON nesting exceeds reader capacity") from exc
+        except (TypeError, ValueError) as exc:
+            raise ValueError(f"invalid outcome ledger record at {OUTCOME_LEDGER_PATH}:{number}: {exc}") from exc
     return records
 
 
 def write_outcome_records(repo_root: Path, records: Iterable[OutcomeRecord]) -> WriteResult:
     sorted_records = sorted(records, key=lambda item: (item.run_id, item.phase, item.source, item.failure_class, item.recommendation_id))
-    lines = [
-        json.dumps(outcome_record_to_dict(record), sort_keys=True, separators=(",", ":"))
-        for record in sorted_records
-    ]
-    return write_text_if_changed(repo_root / OUTCOME_LEDGER_PATH, "\n".join(lines) + ("\n" if lines else ""))
+    lines = []
+    for record in sorted_records:
+        data = outcome_record_to_dict(record)
+        outcome_record_from_dict(data)  # Refuse newly constructed invalid records too.
+        lines.append(json.dumps(data, sort_keys=True, separators=(",", ":"), allow_nan=False))
+    data = ("\n".join(lines) + ("\n" if lines else "")).encode("utf-8")
+    return atomic_write_bytes_if_changed(repo_root / OUTCOME_LEDGER_PATH, data)
+
+
+def preserve_outcome_metadata(previous: Iterable[OutcomeRecord], replacements: Iterable[OutcomeRecord]) -> list[OutcomeRecord]:
+    """Carry opaque metadata only across an unambiguous existing update identity."""
+    old, new = list(previous), list(replacements)
+    identity = lambda record: (record.run_id, record.phase, record.source)
+    for record in old:
+        if not record.extra_fields:
+            continue
+        matches = [index for index, item in enumerate(new) if identity(item) == identity(record)]
+        if len(matches) != 1 or sum(identity(item) == identity(record) for item in old) != 1:
+            raise ValueError("outcome update would drop or ambiguously merge unfamiliar metadata; reconcile the recorded identity")
+        index = matches[0]
+        data = outcome_record_to_dict(new[index])
+        for key, value in record.extra_fields:
+            if key in data and json.dumps(data[key], sort_keys=True, allow_nan=False) != json.dumps(value, sort_keys=True, allow_nan=False):
+                raise ValueError("outcome update conflicts with unfamiliar metadata; reconcile it explicitly")
+            data[key] = value
+        new[index] = outcome_record_from_dict(data)
+    return new
 
 
 def merge_outcome_records(repo_root: Path, new_records: Iterable[OutcomeRecord], run_id: str = "q16.current") -> tuple[WriteResult, list[OutcomeRecord]]:
     existing = read_outcome_records(repo_root)
     retained = [record for record in existing if record.run_id != run_id]
-    merged = [*retained, *list(new_records)]
+    replaced = [record for record in existing if record.run_id == run_id]
+    merged = [*retained, *preserve_outcome_metadata(replaced, new_records)]
     return write_outcome_records(repo_root, merged), merged
 
 
@@ -40502,6 +40567,9 @@ def command_outcome_add(args: argparse.Namespace) -> int:
         run_id=args.run_id,
     )
     existing = read_outcome_records(args.repo_root)
+    replaced = [item for item in existing
+                if (item.run_id, item.phase, item.source) == (record.run_id, record.phase, record.source)]
+    record = preserve_outcome_metadata(replaced, [record])[0]
     retained = [
         item
         for item in existing

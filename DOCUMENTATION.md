@@ -3,10 +3,11 @@
 ## Outcome conservation - 2026-10-18
 
 [AIDE-OUTCOME-CONSERVATION-01](.aide/queue/AIDE-OUTCOME-CONSERVATION-01/ExecPlan.md)
-preserves unfamiliar project metadata in the existing outcome ledger and refuses
-updates that would discard corrupt or ambiguous records. The live ledger remains
-untouched. Original ten tests are retained; ten regressions are prepared. Runtime
-and delivered qualification are pending exact review; no release claim is made.
+preserves unfamiliar project metadata and refuses lossy outcome-ledger updates.
+Source20, delivered20 and ownership6 pass without skips, as do doctor, structural
+validation and pack-status. The first failed fixture run is preserved; every original
+test assertion remains. Four portable payload files changed; published1.0 and live
+ledger bytes remain unchanged. Fixed-range preview and exact integration are pending.
 
 ## Test-impact observation - 2026-10-18
 

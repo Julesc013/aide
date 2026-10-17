@@ -1,8 +1,9 @@
 schema_version: aide.queue-status.v0
 id: AIDE-OUTCOME-CONSERVATION-01
 status: needs_review
-result: ORIGINAL_SOURCE_ATTEMPT_FAIL_PRESERVED
-planning_state: exact_corrected_source_and_delivered_job_review
-jobs_allocated: 1
+result: SOURCE20_DELIVERED20_OWNERSHIP6_PASS
+planning_state: exact_promotion_preview_review
+jobs_allocated: 2
 maximum_jobs: 3
+original_failure_preserved: true
 live_ledger_effect: forbidden

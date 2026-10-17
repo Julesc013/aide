@@ -1,0 +1,33 @@
+{
+  "result": "PASS",
+  "commit": "04fcc15a75aecefe7d60c547c073c9517c2b7d55",
+  "tree": "ad7ad5cf5bcb2804991ad6080310b070a3d4c283",
+  "base": "761d284613f5030b45df28cb1f464d660ed6ba9b",
+  "paths": [
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/ExecPlan.md",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/attempt-01-baseline-comparison.json",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/attempt-01-source-tests.json",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/attempt-01-source-tests.txt",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/ledger-preimages.json",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/ledger-refresh.json",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/pack-effect.md",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/pack-job-template.json",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/pack-message.txt",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/pack-source.json",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/prior-pack-inventory.json",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/repair-effect.md",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/repair-review.md",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/repair-source.json",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/source-attempt-01.json",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/source-commit-result.json",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/source-review.md",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/validation.md",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/run_pack.py",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/status.yaml",
+    ".aide/reports/capability-command-status.md",
+    ".aide/reports/capability-evidence-bindings.json",
+    ".aide/reports/capability-ledger.md",
+    ".aide/scripts/tests/test_outcome_controller.py"
+  ],
+  "review_map": "f00776cd7cb0d5b8ea196ed4f904bf341d91d0696600b54b1f89cdc0cc50829a"
+}

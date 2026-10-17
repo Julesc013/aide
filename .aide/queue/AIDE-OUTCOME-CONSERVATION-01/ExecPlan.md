@@ -90,3 +90,13 @@ Independent fixture/refresh review accepted; one capability refresh preserved al
 four preimages and identical classification, binding CURRENT. Exact existing862-file
 pack inventory recorded. Allocation2 candidate runs source20 before any export,
 then ownership6 and delivered20 in separate processes. Pending independent review.
+
+### Corrected source and delivered qualification
+
+Jobc6c04fd014c8484e9e88cae0c5afe547 passed source20, ownership6 and delivered20
+without skips. Separate processes prevent selftest cache crossing subjects.
+Doctor, structural validation and pack-status pass. Exactly four payloads plus
+manifest/checksums changed,862members retained, published1.0 assets/live ledger
+unchanged. Collection digests, quiescence, scratch absence and released reservations
+verified. Both attempts retired; original failure preserved. Exact allocation3
+preview preparation follows; no release qualification or integration claim yet.

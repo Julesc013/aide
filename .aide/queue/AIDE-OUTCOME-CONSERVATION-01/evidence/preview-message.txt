@@ -1,0 +1,36 @@
+fix(outcomes): qualify preservation in the portable pack
+
+## Summary
+- Qualify AIDE-OUTCOME-CONSERVATION-01 in source and actual exported payload.
+
+## Why
+- Consumer projects must receive tested metadata preservation and refusal behavior.
+
+## Changed
+- Refresh four portable payloads with exact membership and source checks.
+- Record source, delivered, ownership and diagnostic evidence plus original failure.
+- Prepare one fixed-range promotion preview through the existing owner.
+
+## Validation
+- PASS: source20, delivered20 and ownership6 with no skips.
+- PASS: doctor, structural validation and pack-status; exact862members.
+- PASS: collected digests and retirement for both attempts; live ledger unchanged.
+- PASS: published Lite1.0 assets unchanged; four intended payloads only.
+- NOT RUN: final fixed-range preview, separately reviewed allocation3.
+
+## Changelog
+- Fixed: Export tested preservation of project outcome metadata and corrupt-record refusal.
+
+## Risks
+- Original failed fixture attempt retained; no broad reliability or efficiency claim.
+- Published1.0 remains unchanged; this does not publish1.1.
+
+## Follow-up
+- Run exact promotion preview then review closure and guarded dev/main synchronization.
+
+AIDE-Task: AIDE-OUTCOME-CONSERVATION-01
+AIDE-Phase: qualified-pack-preview-preparation
+AIDE-Result: PASS_WITH_RETAINED_FAILURE
+AIDE-Scope: portable-outcome-conservation
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: exact-preview-and-integration-review-required
