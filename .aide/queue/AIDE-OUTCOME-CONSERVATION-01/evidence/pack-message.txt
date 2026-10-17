@@ -1,0 +1,37 @@
+test(outcomes): correct fixtures and prepare delivered qualification
+
+## Summary
+- Preserve the failed first outcome-conservation run and prepare exact allocation2.
+
+## Why
+- Three new test methods failed before intended behavior due to fixture setup.
+
+## Changed
+- Supply required CLI arguments and prepare reports using the existing fixture.
+- Preserve every assertion and all ten original method bodies.
+- Refresh capability binding with identical classifications and retained preimages.
+- Bind the existing exporter and actual delivered suite to reviewed ownership.
+
+## Validation
+- PASS: original ten methods in attempt1 and unchanged ASTs after fixture repair.
+- PASS: baseline metadata-loss and malformed-skip comparison; retirement digests.
+- FAIL retained: original attempt1 has three failures and two errors across three methods.
+- PASS: capability binding CURRENT; classification unchanged.
+- NOT RUN: corrected source20, delivered20 and exporter qualification.
+
+## Changelog
+- Internal: Correct outcome conservation fixtures and retain failed-run evidence.
+
+## Risks
+- Allocation2 remains bounded; original failure is not erased or reclassified.
+- No release or target behavior claim.
+
+## Follow-up
+- Run exact allocation2 once; review collected results before preview and integration.
+
+AIDE-Task: AIDE-OUTCOME-CONSERVATION-01
+AIDE-Phase: source-delivered-preparation
+AIDE-Result: CANDIDATE
+AIDE-Scope: outcome-fixture-recovery-and-export-qualification
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: exact-pack-source-and-job-review-required

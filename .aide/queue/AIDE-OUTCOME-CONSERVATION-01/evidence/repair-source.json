@@ -1,0 +1,12 @@
+{
+  "base": "761d284613f5030b45df28cb1f464d660ed6ba9b",
+  "files": {
+    ".aide/scripts/tests/test_outcome_controller.py": "8ddf490f5255976bf2fe23737cf5a976bd3ec316382e3c9b21419604aae2f15c",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/repair-effect.md": "b194e46b486135a7070667ecb2fb0559e2ece341f2080cf070d1d590d9099e7c",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/ledger-preimages.json": "d3c56165b456c683f4b862c7bf6f11f8772e3750cc7f0b615de6af1170e6b97f",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/ExecPlan.md": "3afca2add26a8b1cda017b8cd371a7975fcf32d2147ea2476962cf431e920454",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/status.yaml": "b29431327e5e65b931e02969f88b12a2a0cb0ed8c9430e13540454b753aab5e5"
+  },
+  "unchanged_cli": "a1553641e262ab7cbe7b22bfa1f2c2841960a59913d6cee101ee06ef5e99f143",
+  "effect_sha256": "b194e46b486135a7070667ecb2fb0559e2ece341f2080cf070d1d590d9099e7c"
+}

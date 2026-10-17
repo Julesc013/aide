@@ -239,7 +239,8 @@ class OutcomeControllerTests(unittest.TestCase):
         with contextlib.redirect_stdout(io.StringIO()):
             code = aide_lite.main(["--repo-root", str(root), "outcome", "add", "--run-id",
                                    "recorded-attempt", "--phase", "repair", "--source", "checks",
-                                   "--result", "PASS", "--notes", "resolved same observation"])
+                                   "--result", "PASS", "--failure-class", "unknown", "--severity", "info",
+                                   "--notes", "resolved same observation"])
         self.assertEqual(code, 0)
         rows = {x.run_id: aide_lite.outcome_record_to_dict(x) for x in aide_lite.read_outcome_records(root)}
         self.assertEqual(rows["recorded-attempt"]["result"], "PASS")
@@ -284,14 +285,15 @@ class OutcomeControllerTests(unittest.TestCase):
                 aide_lite.outcome_record_from_dict(self.outcome_data(**changes))
 
     def test_all_update_commands_preserve_corrupt_ledger_and_reports(self) -> None:
-        root = self.make_repo(prepared=False)
+        root = self.make_repo()
         paths = [root / p for p in [aide_lite.OUTCOME_LEDGER_PATH,
                                    aide_lite.OUTCOME_REPORT_PATH, aide_lite.RECOMMENDATIONS_PATH]]
         paths[0].write_text(json.dumps(self.outcome_data()) + '\n{"private-marker":\n', encoding="utf-8")
         for path in paths[1:]:
             path.write_text("previous accepted report\n", encoding="utf-8")
         before = {path: path.read_bytes() for path in paths}
-        commands = [["outcome", "add", "--phase", "repair", "--source", "checks", "--result", "PASS"],
+        commands = [["outcome", "add", "--phase", "repair", "--source", "checks", "--result", "PASS",
+                     "--failure-class", "unknown", "--severity", "info"],
                     ["outcome", "report"], ["optimize", "suggest"]]
         for args in commands:
             with self.subTest(args=args):
@@ -335,7 +337,8 @@ class OutcomeControllerTests(unittest.TestCase):
     def test_actual_cli_preserves_metadata_and_refuses_corrupt_input(self) -> None:
         root = self.ledger_repo([json.dumps(self.outcome_data(project_note={"keep": "value"}))])
         command = [sys.executable, "-B", str(MODULE_PATH), "--repo-root", str(root), "outcome", "add",
-                   "--run-id", "recorded-attempt", "--phase", "repair", "--source", "checks", "--result", "PASS"]
+                   "--run-id", "recorded-attempt", "--phase", "repair", "--source", "checks", "--result", "PASS",
+                   "--failure-class", "unknown", "--severity", "info"]
         result = subprocess.run(command, capture_output=True, text=True, encoding="utf-8", timeout=20)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         path = root / aide_lite.OUTCOME_LEDGER_PATH

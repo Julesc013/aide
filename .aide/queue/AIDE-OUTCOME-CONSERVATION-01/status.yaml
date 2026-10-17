@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 id: AIDE-OUTCOME-CONSERVATION-01
 status: needs_review
-result: CANDIDATE
-planning_state: exact_source_and_first_job_review
-jobs_allocated: 0
+result: ORIGINAL_SOURCE_ATTEMPT_FAIL_PRESERVED
+planning_state: exact_corrected_source_and_delivered_job_review
+jobs_allocated: 1
 maximum_jobs: 3
 live_ledger_effect: forbidden

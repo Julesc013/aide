@@ -1,0 +1,203 @@
+test_actual_cli_preserves_metadata_and_refuses_corrupt_input (outcome_subject_tests.OutcomeControllerTests.test_actual_cli_preserves_metadata_and_refuses_corrupt_input) ... FAIL
+test_all_update_commands_preserve_corrupt_ledger_and_reports (outcome_subject_tests.OutcomeControllerTests.test_all_update_commands_preserve_corrupt_ledger_and_reports) ... 
+  test_all_update_commands_preserve_corrupt_ledger_and_reports (outcome_subject_tests.OutcomeControllerTests.test_all_update_commands_preserve_corrupt_ledger_and_reports) (args=['outcome', 'add', '--phase', 'repair', '--source', 'checks', '--result', 'PASS']) ... ERROR
+  test_all_update_commands_preserve_corrupt_ledger_and_reports (outcome_subject_tests.OutcomeControllerTests.test_all_update_commands_preserve_corrupt_ledger_and_reports) (args=['outcome', 'report']) ... FAIL
+  test_all_update_commands_preserve_corrupt_ledger_and_reports (outcome_subject_tests.OutcomeControllerTests.test_all_update_commands_preserve_corrupt_ledger_and_reports) (args=['optimize', 'suggest']) ... FAIL
+test_conflicting_metadata_refuses_without_boolean_number_conflation (outcome_subject_tests.OutcomeControllerTests.test_conflicting_metadata_refuses_without_boolean_number_conflation) ... ok
+test_context_artifact_reader_detects_missing_artifact (outcome_subject_tests.OutcomeControllerTests.test_context_artifact_reader_detects_missing_artifact) ... ok
+test_controller_policy_and_failure_taxonomy_are_loadable (outcome_subject_tests.OutcomeControllerTests.test_controller_policy_and_failure_taxonomy_are_loadable) ... ok
+test_current_run_regeneration_preserves_matching_metadata (outcome_subject_tests.OutcomeControllerTests.test_current_run_regeneration_preserves_matching_metadata) ... ok
+test_failed_atomic_replacement_preserves_original_and_cleans_temporary (outcome_subject_tests.OutcomeControllerTests.test_failed_atomic_replacement_preserves_original_and_cleans_temporary) ... ok
+test_invalid_known_types_are_not_coerced (outcome_subject_tests.OutcomeControllerTests.test_invalid_known_types_are_not_coerced) ... ok
+test_malformed_and_ambiguous_json_refuse_with_line_location (outcome_subject_tests.OutcomeControllerTests.test_malformed_and_ambiguous_json_refuse_with_line_location) ... ok
+test_optimize_command_writes_only_controller_outputs (outcome_subject_tests.OutcomeControllerTests.test_optimize_command_writes_only_controller_outputs) ... ok
+test_optimize_suggest_proceeds_to_next_queue_phase_when_all_fixture_signals_pass (outcome_subject_tests.OutcomeControllerTests.test_optimize_suggest_proceeds_to_next_queue_phase_when_all_fixture_signals_pass) ... ok
+test_optimize_suggest_recommends_for_golden_fail_and_packet_size (outcome_subject_tests.OutcomeControllerTests.test_optimize_suggest_recommends_for_golden_fail_and_packet_size) ... ok
+test_orphaned_or_ambiguous_metadata_stops_regeneration (outcome_subject_tests.OutcomeControllerTests.test_orphaned_or_ambiguous_metadata_stops_regeneration) ... ok
+test_outcome_add_command_writes_metadata_record (outcome_subject_tests.OutcomeControllerTests.test_outcome_add_command_writes_metadata_record) ... ok
+test_outcome_record_write_read_and_raw_prompt_rejection (outcome_subject_tests.OutcomeControllerTests.test_outcome_record_write_read_and_raw_prompt_rejection) ... ok
+test_outcome_report_command_and_selftest_include_controller (outcome_subject_tests.OutcomeControllerTests.test_outcome_report_command_and_selftest_include_controller) ... ok
+test_signal_readers_detect_bad_samples (outcome_subject_tests.OutcomeControllerTests.test_signal_readers_detect_bad_samples) ... ok
+test_token_report_reader_detects_over_budget_sample (outcome_subject_tests.OutcomeControllerTests.test_token_report_reader_detects_over_budget_sample) ... ok
+test_unfamiliar_metadata_roundtrips_with_legacy_defaults (outcome_subject_tests.OutcomeControllerTests.test_unfamiliar_metadata_roundtrips_with_legacy_defaults) ... ok
+test_unrelated_and_selected_metadata_survive_add (outcome_subject_tests.OutcomeControllerTests.test_unrelated_and_selected_metadata_survive_add) ... ERROR
+
+======================================================================
+ERROR: test_all_update_commands_preserve_corrupt_ledger_and_reports (outcome_subject_tests.OutcomeControllerTests.test_all_update_commands_preserve_corrupt_ledger_and_reports) (args=['outcome', 'add', '--phase', 'repair', '--source', 'checks', '--result', 'PASS'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2047, in _parse_known_args2
+    namespace, args = self._parse_known_args(args, namespace, intermixed)
+                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2344, in _parse_known_args
+    raise ArgumentError(None, _('the following arguments are required: %s') %
+               ', '.join(required_actions))
+argparse.ArgumentError: the following arguments are required: --failure-class, --severity
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\AIDE\aide\.aide\scripts\tests\test_outcome_controller.py", line 300, in test_all_update_commands_preserve_corrupt_ledger_and_reports
+    code = aide_lite.main(["--repo-root", str(root), *args])
+  File "D:\Projects\AIDE\aide\.aide\scripts\aide_lite.py", line 48010, in main
+    args = parser.parse_args(effective_argv)
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2008, in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+                 ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2018, in parse_known_args
+    return self._parse_known_args2(args, namespace, intermixed=False)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2047, in _parse_known_args2
+    namespace, args = self._parse_known_args(args, namespace, intermixed)
+                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2279, in _parse_known_args
+    positionals_end_index = consume_positionals(start_index)
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2254, in consume_positionals
+    take_action(action, args)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2123, in take_action
+    action(self, namespace, argument_values, option_string)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 1318, in __call__
+    subnamespace, arg_strings = subparser.parse_known_args(arg_strings, None)
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2018, in parse_known_args
+    return self._parse_known_args2(args, namespace, intermixed=False)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2047, in _parse_known_args2
+    namespace, args = self._parse_known_args(args, namespace, intermixed)
+                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2279, in _parse_known_args
+    positionals_end_index = consume_positionals(start_index)
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2254, in consume_positionals
+    take_action(action, args)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2123, in take_action
+    action(self, namespace, argument_values, option_string)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 1318, in __call__
+    subnamespace, arg_strings = subparser.parse_known_args(arg_strings, None)
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2018, in parse_known_args
+    return self._parse_known_args2(args, namespace, intermixed=False)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2049, in _parse_known_args2
+    self.error(str(err))
+    ~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2785, in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2772, in exit
+    _sys.exit(status)
+    ~~~~~~~~~^^^^^^^^
+SystemExit: 2
+
+======================================================================
+ERROR: test_unrelated_and_selected_metadata_survive_add (outcome_subject_tests.OutcomeControllerTests.test_unrelated_and_selected_metadata_survive_add)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2047, in _parse_known_args2
+    namespace, args = self._parse_known_args(args, namespace, intermixed)
+                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2344, in _parse_known_args
+    raise ArgumentError(None, _('the following arguments are required: %s') %
+               ', '.join(required_actions))
+argparse.ArgumentError: the following arguments are required: --failure-class, --severity
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\AIDE\aide\.aide\scripts\tests\test_outcome_controller.py", line 240, in test_unrelated_and_selected_metadata_survive_add
+    code = aide_lite.main(["--repo-root", str(root), "outcome", "add", "--run-id",
+                           "recorded-attempt", "--phase", "repair", "--source", "checks",
+                           "--result", "PASS", "--notes", "resolved same observation"])
+  File "D:\Projects\AIDE\aide\.aide\scripts\aide_lite.py", line 48010, in main
+    args = parser.parse_args(effective_argv)
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2008, in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+                 ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2018, in parse_known_args
+    return self._parse_known_args2(args, namespace, intermixed=False)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2047, in _parse_known_args2
+    namespace, args = self._parse_known_args(args, namespace, intermixed)
+                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2279, in _parse_known_args
+    positionals_end_index = consume_positionals(start_index)
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2254, in consume_positionals
+    take_action(action, args)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2123, in take_action
+    action(self, namespace, argument_values, option_string)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 1318, in __call__
+    subnamespace, arg_strings = subparser.parse_known_args(arg_strings, None)
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2018, in parse_known_args
+    return self._parse_known_args2(args, namespace, intermixed=False)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2047, in _parse_known_args2
+    namespace, args = self._parse_known_args(args, namespace, intermixed)
+                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2279, in _parse_known_args
+    positionals_end_index = consume_positionals(start_index)
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2254, in consume_positionals
+    take_action(action, args)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2123, in take_action
+    action(self, namespace, argument_values, option_string)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 1318, in __call__
+    subnamespace, arg_strings = subparser.parse_known_args(arg_strings, None)
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2018, in parse_known_args
+    return self._parse_known_args2(args, namespace, intermixed=False)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2049, in _parse_known_args2
+    self.error(str(err))
+    ~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2785, in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\argparse.py", line 2772, in exit
+    _sys.exit(status)
+    ~~~~~~~~~^^^^^^^^
+SystemExit: 2
+
+======================================================================
+FAIL: test_actual_cli_preserves_metadata_and_refuses_corrupt_input (outcome_subject_tests.OutcomeControllerTests.test_actual_cli_preserves_metadata_and_refuses_corrupt_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\AIDE\aide\.aide\scripts\tests\test_outcome_controller.py", line 340, in test_actual_cli_preserves_metadata_and_refuses_corrupt_input
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : usage: aide_lite.py outcome add [-h] [--run-id RUN_ID] --phase PHASE
+                                --source SOURCE --result {PASS,WARN,FAIL}
+                                --failure-class {context_missing,packet_too_large,token_budget_exceeded,token_regression,adapter_drift,verifier_gap,verifier_fail,review_packet_incomplete,golden_task_fail,unclear_acceptance,validation_failure,policy_violation,stale_artifact,missing_evidence,secret_risk,unknown}
+                                --severity {info,warning,error}
+                                [--related-path RELATED_PATH] [--notes NOTES]
+aide_lite.py outcome add: error: the following arguments are required: --failure-class, --severity
+
+
+======================================================================
+FAIL: test_all_update_commands_preserve_corrupt_ledger_and_reports (outcome_subject_tests.OutcomeControllerTests.test_all_update_commands_preserve_corrupt_ledger_and_reports) (args=['outcome', 'report'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\AIDE\aide\.aide\scripts\tests\test_outcome_controller.py", line 302, in test_all_update_commands_preserve_corrupt_ledger_and_reports
+    self.assertIn("outcome-ledger.jsonl:2", stderr.getvalue())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'outcome-ledger.jsonl:2' not found in 'error: controller related path does not exist: .aide/evals/runs/latest-golden-tasks.json\n'
+
+======================================================================
+FAIL: test_all_update_commands_preserve_corrupt_ledger_and_reports (outcome_subject_tests.OutcomeControllerTests.test_all_update_commands_preserve_corrupt_ledger_and_reports) (args=['optimize', 'suggest'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\AIDE\aide\.aide\scripts\tests\test_outcome_controller.py", line 302, in test_all_update_commands_preserve_corrupt_ledger_and_reports
+    self.assertIn("outcome-ledger.jsonl:2", stderr.getvalue())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'outcome-ledger.jsonl:2' not found in 'error: controller related path does not exist: .aide/evals/runs/latest-golden-tasks.json\n'
+
+----------------------------------------------------------------------
+Ran 20 tests in 34.780s
+
+FAILED (failures=3, errors=2)

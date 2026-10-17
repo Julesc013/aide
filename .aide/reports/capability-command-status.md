@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-impact-coverage-01`
-- current_commit: `498eb2c09e927e621d862ff98afabdb8d3ca218d`
+- current_branch: `task/aide-outcome-conservation-01`
+- current_commit: `761d284613f5030b45df28cb1f464d660ed6ba9b`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

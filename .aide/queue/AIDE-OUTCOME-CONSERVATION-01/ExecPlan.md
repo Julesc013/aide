@@ -71,3 +71,22 @@ method ASTs are unchanged; ten new methods cover actual CLI and failure preserva
 Source syntax passes; runtime qualification is pending exact source/job review.
 Live ledger bytes remain unchanged. Subsequent delivered export and preview need
 separate exact review and fresh admission.
+
+### Source attempt1 and fixture correction
+
+Job4ca59b4ff47c40118d7645c7ca18fae9 ran all20 methods. The original10 passed;
+three new methods had fixture errors (required CLI arguments and missing prepared
+reports), retained as three failures/two errors. Product source is unchanged.
+Baseline comparison proves old metadata loss and silent bad-line skipping; new
+reader refuses with located diagnostic. Digests, quiescence, scratch absence and
+reservation release verified. Correct only fixtures, retain every assertion and
+original test body. Pending exact refresh review, then separately review job2
+combining source20 and delivered20, ownership checks and export within unchanged
+limits. The original failed attempt remains allocation1; ceiling stays3.
+
+### Allocation2 preparation
+
+Independent fixture/refresh review accepted; one capability refresh preserved all
+four preimages and identical classification, binding CURRENT. Exact existing862-file
+pack inventory recorded. Allocation2 candidate runs source20 before any export,
+then ownership6 and delivered20 in separate processes. Pending independent review.
