@@ -23,3 +23,5 @@ needs subject/dependency review; mere availability never grants acceptance.
 Progress: admission7c258c5b ACCEPT by /root/review_disked_continuation, no notes.
 Local task branch created from716ec1fd after classifying five owned admission paths
 and observing the idle shared estate. No qualification jobs allocated yet.
+
+Allocation1 PASS63 and actual CLI fixture consumer. Jobabb9d2e6 retired with all collection hashes verified. Source unchanged. Preallocation raw/canonical config digest mistake stopped before any job, now reconciled. Prepare allocation2 through the existing exporter.

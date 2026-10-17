@@ -1,10 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-RESUME-PLAN-01
 status: running
-result: CANDIDATE_PREPARATION
+result: SOURCE63_CONSUMER_PASS
 owner: aide_campaign
-next_action: prepare_and_review_source_and_qualification_effect
-jobs_allocated: 0
+next_action: review_exact_portable_qualification
+jobs_allocated: 1
 maximum_jobs: 3
 remaining_obligations:
   - source_and_portable_consumer_qualification
