@@ -163,3 +163,5 @@ outcome_conservation_integration_receipt: .aide/queue/AIDE-OUTCOME-CONSERVATION-
 context_task_selection_ref: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/status.yaml
 context_task_selection_result_ref: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/REPORT.md
 context_task_selection_integration_receipt: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/integration-result.log
+
+# AIDE-PORTABLE-TASK-HANDOFF-01 admitted; bounded source preparation only. Existing native/host gates unchanged.

@@ -5282,3 +5282,7 @@ Preview and reviewed integration remain, with whole-work cost still unknown.
 AIDE-WORK-EFFORT-01 qualification closed: preview96d7ee46 PASS, all three
 allocations retired. Final dev/main review and synchronization remain pending. Their actual result
 will be written to the child integration receipt; accounting gaps remain explicit.
+
+## AIDE-PORTABLE-TASK-HANDOFF-01
+
+Portable task-record handoff advances bounded P3 continuation and P8 relay inspection. Safe-installed CLI consumer is mandatory; see the child ExecPlan.

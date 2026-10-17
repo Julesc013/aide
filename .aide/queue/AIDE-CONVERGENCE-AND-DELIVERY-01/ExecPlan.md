@@ -829,3 +829,7 @@ Context-selection child qualification: source61/delivered60/ownership6 and fixed
 preview pass. Three jobs retired, original post-export wrapper failure preserved.
 Two portable payloads changed; source reference is not exported. Final exact
 review/ref checks and observed integration receipt determine dev/main closure.
+
+## AIDE-PORTABLE-TASK-HANDOFF-01
+
+Admitted AIDE-PORTABLE-TASK-HANDOFF-01: finite task-record interchange, source/delivered/safe-installed checks, no live target handoff or worker ownership transfer. Native adoption and actual host binding stay separate.

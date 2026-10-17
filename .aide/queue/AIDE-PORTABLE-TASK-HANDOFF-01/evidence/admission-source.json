@@ -1,0 +1,16 @@
+{
+  "base": "19e237cde0864ca56169a14a7bf8ded5180d6def",
+  "files": {
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/ExecPlan.md": "98089304d49fbe1aae17cc9d02a15cf38d0f89cd29738cf5b4d2dc362badf243",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/admission-effect.md": "49d35a69da04c7fb4f7119343b5cf76eecb09c420e73916eb3d992682def1517",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/baseline.json": "ca3d3c6c84394b473d02e7377053ac0f112e2c1a608472742a56d1927a343765",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/latest-intent-packet.json": "e4ccd0969d9d7aaa389acf588fe3c0c17de8339e827731cedf49f6dcb61ee263",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/latest-intent-packet.md": "48e5da51111e5118bdcfced14dec79fcf2c602fbcd8216d75ba012f9de01d21a",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/latest-workunit-draft.json": "dd6fbc57e0ba4a32f6c012f9c6b2a6f5dcc15d19f6981e9202896e78cde59c7b",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/latest-workunit-draft.md": "900d4fc197d8ff79cc64a949f985c145c6ebe2554f9a827af2bfbb188fd8401e",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/prompt.md": "c09fad884d4ab258821f9e711ea72812c126f456d01d952a4006ad194a1aa207",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/status.yaml": "078f5e3a6d4db28a739e060b5ddf6627095a8c08db20a6e8ee7f63ddd7a0bd6c",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/task.yaml": "1932ea195f6b11b0c9d7a8eac00a172e1ce9d00fc62e2bebce5fbd86972e392d"
+  },
+  "effect_sha256": "49d35a69da04c7fb4f7119343b5cf76eecb09c420e73916eb3d992682def1517"
+}

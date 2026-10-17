@@ -1,0 +1,7 @@
+schema_version: aide.queue-status.v0
+id: AIDE-PORTABLE-TASK-HANDOFF-01
+status: needs_review
+result: PENDING
+planning_state: source_candidate_review
+jobs_allocated: 0
+maximum_jobs: 3

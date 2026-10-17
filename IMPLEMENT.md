@@ -14019,3 +14019,7 @@ Preview and reviewed integration remain, with whole-work cost still unknown.
 AIDE-WORK-EFFORT-01 qualification closed: preview96d7ee46 PASS, all three
 allocations retired. Final dev/main review and synchronization remain pending. Their actual result
 will be written to the child integration receipt; accounting gaps remain explicit.
+
+## AIDE-PORTABLE-TASK-HANDOFF-01
+
+Prepared finite handoff codec, export/inspect CLI, byte-preservation/refusal regressions and safe-installed delivery binding. Runtime qualification pending.

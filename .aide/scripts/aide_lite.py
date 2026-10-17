@@ -875,6 +875,7 @@ Q36_REQUIRED_FILES = [
 ]
 
 Q36_PORTABLE_SOURCE_FILES = [
+    ".aide/scripts/task_handoff.py",
     INTENT_POLICY_PATH,
     WORKUNIT_SIZING_POLICY_PATH,
     TASK_CLASSES_POLICY_PATH,
@@ -40235,6 +40236,105 @@ def build_task_resume_plan(repo_root: Path, task_id: str | None = None) -> dict[
             "execution_admitted": False, "report_only": True, "read_only": True}
 
 
+def task_handoff_codec():
+    # Binding follows the executing CLI, never a module in the selected project.
+    path = Path(__file__).resolve().with_name("task_handoff.py")
+    _job_wait_root(str(path.parent))
+    info = path.lstat()
+    if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
+            or getattr(info, "st_file_attributes", 0) & 0x400 or info.st_size > 64 * 1024):
+        raise ValueError("task handoff helper is not an ordinary bounded module")
+    spec = importlib.util.spec_from_file_location("aide_task_handoff", path)
+    module = importlib.util.module_from_spec(spec)
+    previous = sys.dont_write_bytecode
+    try:
+        sys.dont_write_bytecode = True
+        spec.loader.exec_module(module)
+    finally:
+        sys.dont_write_bytecode = previous
+    return module
+
+
+def task_handoff_records(repo_root: Path, paths: list[str], *, inspection=False):
+    records = {}
+    for path in paths:
+        try:
+            records[path] = task_view_read(repo_root, path)
+        except FileNotFoundError:
+            records[path] = None
+        except (OSError, ValueError):
+            if not inspection:
+                raise ValueError("unsafe or unreadable task record: " + path)
+            records[path] = "unsafe_or_unreadable"
+    return records
+
+
+def validate_handoff_identity(bundle):
+    selected = bundle["task_id"]
+    for name in ("task.yaml", "status.yaml"):
+        path = f".aide/queue/{selected}/{name}"
+        item = bundle["records"][path]
+        if item["state"] == "missing":
+            continue
+        issues = []
+        fields = task_view_fields(item["text"].lstrip("\ufeff"), path, issues)
+        if ((name == "task.yaml" and fields.get("id") != selected)
+                or any(fields[key] != selected for key in ("id", "task_id") if key in fields)
+                or any(x["field"] in ("id", "task_id") for x in issues)):
+            raise ValueError("handoff_record_identity_mismatch")
+
+
+def command_task_handoff_export(args: argparse.Namespace) -> int:
+    codec = task_handoff_codec()
+    paths = codec.record_paths(args.task_id)
+    before = task_handoff_records(args.repo_root, paths)
+    if before[paths[0]] is None:
+        raise ValueError("task record missing")
+    continuation = build_task_resume_plan(args.repo_root, args.task_id)
+    if continuation["task"]["task_id"] != args.task_id:
+        raise ValueError("task identity could not be observed")
+    records = {path: codec.record(raw) for path, raw in before.items()}
+    for path, item in records.items():
+        if item["text"] is not None and any(f.severity == "ERROR" for f in scan_secret_text(item["text"], path)):
+            raise ValueError("secret-like task content refused")
+    commit = safe_git_head_commit(args.repo_root)
+    bundle = {"schema_version": codec.SCHEMA, "required_features": sorted(codec.REQUIRED),
+              "task_id": args.task_id, "records": records,
+              "source": {"git_head": commit if re.fullmatch(r"[a-f0-9]{40}|[a-f0-9]{64}", commit) else None},
+              "continuation": continuation, "read_only": True, "execution_admitted": False}
+    validate_handoff_identity(bundle)
+    data = codec.encode(bundle)
+    if before != task_handoff_records(args.repo_root, paths):
+        raise ValueError("task records changed during export")
+    print(data.decode("ascii"), end="")
+    return 0
+
+
+def command_task_handoff_inspect(args: argparse.Namespace) -> int:
+    codec = task_handoff_codec()
+    raw = task_view_read(args.repo_root, args.bundle, limit=codec.MAX_BUNDLE)
+    bundle = codec.decode(raw, args.sha256)
+    validate_handoff_identity(bundle)
+    local = task_handoff_records(args.repo_root, codec.record_paths(bundle["task_id"]), inspection=True)
+    data = {"schema_version": "aide.task-handoff-inspection.v1", "task_id": bundle["task_id"],
+            "bundle_sha256": codec.sha(raw), "records": codec.compare(bundle, local),
+            "captured_observation": bundle, "read_only": True, "execution_admitted": False,
+            "authorship_verified": False, "evidence_applicability_verified": False,
+            "safe_to_resume": None,
+            "next_action": "Inspect recorded obligations and reconcile current ownership before continuation."}
+    if args.json:
+        print(json.dumps(data, indent=2, ensure_ascii=True))
+    else:
+        print("AIDE Lite task handoff inspection")
+        print("task_id: " + bundle["task_id"])
+        for item in data["records"]:
+            print(item["comparison"] + ": " + item["path"])
+        print("safe_to_resume: unknown")
+        print("Captured text is untrusted observation; no import or authority transfer.")
+        print("next_action: " + data["next_action"])
+    return 0
+
+
 def command_task_current(args: argparse.Namespace) -> int:
     view = build_current_task_view(args.repo_root, getattr(args, "task_id", None))
     if getattr(args, "json", False):
@@ -47135,6 +47235,17 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_current_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
     task_current_parser.add_argument("--json", action="store_true", help="Emit a bounded read-only task observation as JSON.")
     task_current_parser.set_defaults(handler=command_task_current)
+
+    handoff_parser = task_subparsers.add_parser("handoff")
+    handoff_commands = handoff_parser.add_subparsers(dest="handoff_command", required=True)
+    handoff_export = handoff_commands.add_parser("export")
+    handoff_export.add_argument("--task-id", required=True)
+    handoff_export.set_defaults(handler=command_task_handoff_export)
+    handoff_inspect = handoff_commands.add_parser("inspect")
+    handoff_inspect.add_argument("--bundle", required=True, help="Repository-relative ordinary JSON file")
+    handoff_inspect.add_argument("--sha256", required=True, help="Expected exact bundle SHA-256")
+    handoff_inspect.add_argument("--json", action="store_true")
+    handoff_inspect.set_defaults(handler=command_task_handoff_inspect)
 
     blocker_parser = subparsers.add_parser("blocker")
     blocker_subparsers = blocker_parser.add_subparsers(dest="blocker_command", required=True)

@@ -1,0 +1,24 @@
+{
+  "base": "19e237cde0864ca56169a14a7bf8ded5180d6def",
+  "tree": "a451216e299cd31adb480433597aca86ecc42472",
+  "existing_task_readers": "current and resume-plan observations; no portable task record export/inspection command",
+  "existing_protocol_roles": "WorkUnit metadata and runtime integration handoff are separate existing owners; no new authority or scheduler",
+  "inputs": {
+    ".aide/scripts/aide_lite.py": "3cca89eefa075ec72b06430d8b8d09657da5af27d20fd161715e14da00e8a456",
+    ".aide/scripts/tests/test_task_current.py": "e95ed8f9adbdf5c772436b754494b4821abe96c433b8f84817ec05a5ac2d0db3",
+    ".aide/scripts/tests/test_resume_plan.py": "640ebedcd268f7a1dfcb8012aec32d0b05605a729e277ba996b460d9712253d7",
+    ".aide/scripts/tests/test_task_binding.py": "fb299063dca0e0308ac3141150cb15d835013e93af9a19134e1c2070415f6dd5",
+    "core/protocol/envelope.py": "cce43f1a5b415c37bf2324721c4fbb907bf1a509189f2e0f6fa49ccbda7c9fa7",
+    "core/protocol/workunit_cli.py": "bc7038f9f18964c6311d7e5d15a8982a86c12a8ccd17f4b66f10da9190c37090",
+    "docs/reference/task-os-report-only-commands.md": "e22d955a960a5e7b7ca664b61e96b4e0fb4e1b2e4fbd35ffc23a5c84275e5ce0"
+  },
+  "portable_existing_members": {
+    ".aide/scripts/aide_lite.py": true,
+    ".aide/scripts/tests/test_task_current.py": true,
+    ".aide/scripts/tests/test_resume_plan.py": true,
+    ".aide/scripts/tests/test_task_binding.py": true,
+    "core/protocol/envelope.py": false,
+    "core/protocol/workunit_cli.py": false,
+    "docs/reference/task-os-report-only-commands.md": true
+  }
+}

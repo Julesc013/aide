@@ -4096,3 +4096,12 @@ items:
     task: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/task.yaml
     exec_plan: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/ExecPlan.md
     evidence: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence
+
+  - id: AIDE-PORTABLE-TASK-HANDOFF-01
+    status: needs_review
+    result: PENDING
+    planning_state: source_candidate_review
+    title: Carry bounded task records between sessions
+    task: .aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/task.yaml
+    exec_plan: .aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence

@@ -1,0 +1,11 @@
+{
+  "syntax": "PASS",
+  "methods": {
+    "test_task_handoff": 20,
+    "test_task_binding": 25,
+    "test_task_current": 22,
+    "test_resume_plan": 12
+  },
+  "existing_tests_byte_identical": true,
+  "runtime_tests": "NOT_RUN"
+}

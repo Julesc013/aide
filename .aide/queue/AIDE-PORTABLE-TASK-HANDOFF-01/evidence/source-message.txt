@@ -1,0 +1,33 @@
+feat(task): carry bounded continuation records between sessions
+
+## Summary
+- Prepare AIDE-PORTABLE-TASK-HANDOFF-01 for exact qualification.
+
+## Why
+- Another session needs inspectable original work and uncertainty without copying chat.
+
+## Changed
+- Add bounded JSON codec and read-only task handoff export/inspection commands.
+- Deliver the single helper beside the CLI through the existing portable catalogue.
+- Preserve raw records and unknown optional data; refuse incompatible required semantics.
+
+## Validation
+- PASS: syntax; 59 existing test methods unchanged; 20 new regressions prepared.
+- NOT RUN: source, delivered and safe-installed runtime qualification.
+
+## Changelog
+- Added: Portable task-record export and checksum-bound inspection.
+
+## Risks
+- Observation is not ownership, authorization, authenticity or atomic capture.
+- Published Lite and live targets remain unchanged.
+
+## Follow-up
+- Qualify source and actual safe-installed consumers; review integration separately.
+
+AIDE-Task: AIDE-PORTABLE-TASK-HANDOFF-01
+AIDE-Phase: source-candidate
+AIDE-Result: CANDIDATE
+AIDE-Scope: portable-task-record-handoff
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: independent-source-and-job-review-required

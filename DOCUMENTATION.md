@@ -1253,3 +1253,7 @@ and downstream work remain open; this is not whole-programme completion.
 ## AIDE-WORK-EFFORT-01
 
 `job effort --work-set PATH [--json]` is documented in `docs/reference/aide-lite-test-runner.md`; candidate qualification is tracked in `.aide/queue/AIDE-WORK-EFFORT-01/ExecPlan.md`.
+
+## AIDE-PORTABLE-TASK-HANDOFF-01
+
+Task handoff usage and delivery boundary are documented in docs/reference/task-os-report-only-commands.md; execution evidence belongs to the child.
