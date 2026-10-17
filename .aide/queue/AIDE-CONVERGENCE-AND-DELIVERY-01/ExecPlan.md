@@ -751,3 +751,5 @@ independently pending. No peer was contacted and no live state initialized.
 Cooperative stdio interface passed all 60 managed methods in eb166a5c; actual existing-worker delivery, cancellation/binding replacement and downstream adoption remain open. No new fixture loop is needed for unchanged inputs.
 
 Metadata closure11d03c41 passed; 858-file payload/checksum bytes and published assets remain unchanged. Both finite jobs are retired; next exact terminal Git effect does not claim installed-worker delivery.
+
+Promotion-only job ac48e888 passed generation/validation/status and exact six-output regeneration over 8f93cb7e..8513f7f5. Collection and retirement verified; all three implementation commits are covered. Original allocations 2/2 and additional promotion allocation 1/1 are exhausted. Final closure adds no executable behavior; terminal source and Git-effect review remains.

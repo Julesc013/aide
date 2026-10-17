@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 9605d8e333a1da8f113a2a1b44f88427511fbba2..HEAD
-source_head: 1435659b220b29e34ea81894644335f13dc209a6
+source_range: 8f93cb7e021a5347e71d81a60aae4bd3f8d53602..8513f7f572ed18a5390225b5a9d1d8becbf59318
+source_head: 8513f7f572ed18a5390225b5a9d1d8becbf59318
 commit_count: 3
 malformed_count: 0
 preview_only: true
@@ -11,17 +11,17 @@ release_publishing: false
 
 ## Summary
 
-- Added: 2
-- Fixed: 1
+- Added: 1
+- Changed: 2
 
 ## Added
 
-- Development candidate: cooperative local dependency request/reply and continuation interface. Published Lite assets are unchanged. (bc47743e3ce5 feat(runtime): record cooperative dependency requests and replies)
-- cooperative local request qualification and affected pack closure recipe. (1435659b220b chore(packaging): qualify local requests and prepare pack closure)
+- Development candidate for cooperative inbox, status, submit and observation tools. Published Lite assets remain unchanged. (3d7899130501 feat(runtime): expose cooperative dependency tools over stdio)
 
-## Fixed
+## Changed
 
-- dependency refusal preflight and fixture database cleanup. (cf293cb02194 fix(runtime): preserve state during dependency request refusal)
+- Development evidence records local stdio qualification and a bounded metadata closure. No new public release or live worker delivery. (730d43f3e492 chore(pack): prepare exact dependency interface provenance closure)
+- Qualified cooperative stdio source and unchanged Lite payload evidence are retained; main promotion requires a current reviewed preview. Published Lite1.0.0 remains unchanged. (8513f7f572ed chore(runtime): retain qualification and prepare promotion preview)
 
 ## Malformed Commits
 

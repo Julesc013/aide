@@ -5,7 +5,9 @@
 Extract conservative database preflight/opening for reuse by CLI and participant-bound MCP tools. Add inbox discovery without acknowledgements; preserve existing lifecycle authority and every regression. Exact source/effect review admitted job eb166a5c: all 60 methods passed without skips. Outgoing frame limits were corrected before the first run. Collection and retirement are verified; no live configuration, initialization or peer contact occurred.
 
 Metadata closure11d03c41 passed with all payload/checksum bytes unchanged. Both
-managed jobs are retired; actual worker delivery and native adoption remain open.
+managed jobs are retired. The separately admitted promotion-only job ac48e888
+passed current preview generation and exact regeneration; final integration review
+is pending. Actual worker delivery and native adoption remain open.
 
 ## Local dependency interface candidate - 2026-10-17
 

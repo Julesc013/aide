@@ -1,0 +1,9 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_tree": "30686489188cd2f6df63b6d2b432de9f394568ec",
+  "template_sha256": "e6f5ed0a0d3aea7888c543600eb70967f8ed59658e541b7e66181bb261b0f074",
+  "effect_sha256": "0f1784ee7b6f41b3e8cab26618c31cb49c0c3375e7d42585ff4785003922a2a3",
+  "scope": "One additional preview-only managed allocation, no Git effect",
+  "findings": []
+}

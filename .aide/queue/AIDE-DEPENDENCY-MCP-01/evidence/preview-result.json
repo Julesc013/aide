@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "source_head": "8513f7f572ed18a5390225b5a9d1d8becbf59318",
+  "source_range": "8f93cb7e021a5347e71d81a60aae4bd3f8d53602..8513f7f572ed18a5390225b5a9d1d8becbf59318",
+  "commits": [
+    "8513f7f572ed18a5390225b5a9d1d8becbf59318",
+    "730d43f3e492cef5509ca749e2872f20230b80a5",
+    "3d78991305013fb63e5adf0c4c916d9cba00f032"
+  ],
+  "malformed_count": 0,
+  "sha256s": {
+    "CHANGELOG.preview.md": "204789b55a3e94b55ceff2bf70014299ea5e4ece7e3631c752eed415aa552778",
+    "RELEASE_NOTES.preview.md": "30aeb5ce4e1896ff11a0a8912c55db406fe6df1804f2132d89696dd96a1f7e5d",
+    "changelog.preview.json": "2a57cac38fa3dad55c1a043d3ef420c7039b76237cd884d60dbc8f8e53325faf",
+    "latest-changelog-report.md": "5c6f06f2f0cd5db1a537436a9ee8f61bce3a4b5c2cabbfda0f1806a2aba83bf1",
+    "malformed-commits.md": "8eb639c49348901a8127813a385c8bb5b3bd488efbee975edfa8bf6268162c8e",
+    "release-notes.preview.json": "e5ea07e619e94693034c51dffc929a595b99e48dada12d832b5355deeb2bb6e0"
+  },
+  "regeneration": "read_only_exact_six_output_comparison",
+  "operations": {
+    "preview": {
+      "exit_code": 0,
+      "log_sha256": "8cadf2170f777f49d18a1dd8bd9cf7b44a2c133e4f716a8026b584aded3ba25f"
+    },
+    "validate": {
+      "exit_code": 0,
+      "log_sha256": "eb5ba25320954d7fb10d12867818e67bb7ae7ef3f878daa54c49aeb385b5bc37"
+    },
+    "status": {
+      "exit_code": 0,
+      "log_sha256": "92b9f888b485c193d66fc27627af6c99c927daa0d06f7a70c58282efa1aa055f"
+    }
+  },
+  "job_id": "ac48e8885ce04767aaf49db3471c837e",
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\ac48e8885ce04767aaf49db3471c837e",
+  "result": {
+    "exit_code": 0,
+    "reason": "exited",
+    "quiescent": true,
+    "bytes": 93,
+    "io_errors": [],
+    "job_id": "ac48e8885ce04767aaf49db3471c837e",
+    "pid": 3720,
+    "creation_filetime": 134367194635100214
+  },
+  "peaks": {
+    "scratch_bytes": 23841,
+    "memory_bytes": 209068032,
+    "canonical_bytes": {
+      ".aide/changelog": 22469
+    }
+  },
+  "collected_manifest": {
+    "output": "a0974d571526ef6554a880cce2f1641f293a76b0c7687ff94d25e940df7de60e",
+    "logs": "113c99270b7bb67353f98efd42baea61ead6d0318f35ef40be6f9f673b7cb829"
+  },
+  "source_tree": "30686489188cd2f6df63b6d2b432de9f394568ec",
+  "receipt_sha256": "da3b7630ca1d652bb7d6bd36c508950dd1a0bdbcc9774851e1649564dd3a7586",
+  "collection_retirement_verified": true
+}

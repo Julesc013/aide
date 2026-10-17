@@ -4007,9 +4007,9 @@ items:
     evidence: .aide/queue/AIDE-LOCAL-DEPENDENCY-01/evidence
 
   - id: AIDE-DEPENDENCY-MCP-01
-    status: running
-    planning_state: local_qualified_promotion_preview_pending
-    result: PENDING
+    status: passed_with_notes
+    planning_state: local_qualified_terminal_integration_review_pending
+    result: PASS_LOCAL_STDIO_AND_UNCHANGED_PAYLOAD_AND_PREVIEW
     title: Expose participant-bound cooperative dependency tools
     task: .aide/queue/AIDE-DEPENDENCY-MCP-01/task.yaml
     exec_plan: .aide/queue/AIDE-DEPENDENCY-MCP-01/ExecPlan.md

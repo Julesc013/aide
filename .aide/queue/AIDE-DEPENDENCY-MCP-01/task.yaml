@@ -3,7 +3,7 @@ id: AIDE-DEPENDENCY-MCP-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Expose participant-bound cooperative dependency tools
 type: implementation
-status: running
+status: passed_with_notes
 admission_ref: ../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/dependency-mcp-admission.md
 admission_sha256: 8027fe21cc6c37da68d435cfe615d613c1db7710e471c0da3b72add29f152d0e
 admission_verdict: ACCEPT_bounded_admission_only

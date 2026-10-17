@@ -33,7 +33,8 @@ reviewed second allocation. [Pack result](evidence/pack-result.json), job
 full validation and pack-status. Only manifest.yaml changed;
 all 858 files remain 4,421,128 bytes total, with every payload/checksum byte and
 published1.0.0 asset unchanged. Collection and retirement are verified. Both
-allocations are exhausted; no further job is requested. The intermediate failures
+runtime/pack allocations are exhausted. The separately admitted promotion-only
+allocation is described below; no further job is requested. The intermediate failures
 and premature-status review correction are retained, without converting them to
 successful checks.
 
@@ -49,6 +50,12 @@ Actual commands/ref confirmations are preserved in `evidence/integration-result.
 after execution; the proposed effect alone is not proof that it happened.
 
 Terminal review accepted source and generated-byte qualification but held main
-promotion for an applicable changelog preview. One explicitly additional preview-only
-allocation is admitted; original runtime/pack results remain valid. No Git effect
-has occurred at this checkpoint. See first-terminal-review.json and the amendment.
+promotion for an applicable changelog preview. The explicitly additional job
+`ac48e8885ce04767aaf49db3471c837e` passed preview generation, validation, status and
+exact read-only regeneration of all six outputs. The fixed range ends at
+`8513f7f572ed18a5390225b5a9d1d8becbf59318` and includes all three implementation
+commits with zero malformed records. Nongenerated files and templates are unchanged.
+[Preview result](evidence/preview-result.json) binds output hashes and verified
+collection/retirement. The original two allocations and the one promotion allocation
+are exhausted. No Git effect has occurred at this checkpoint. Final closure contains
+only preview/evidence/status documentation; exact terminal review precedes integration.

@@ -12,14 +12,16 @@
   "effects": [
     "Fresh clean helper plan, exact source/input identities and structured commit checks; confirm sole checkout ownership, no active job, running dispatch under estate lock. Fetch only dev/main and verify exact local/remote refs and ancestor relationships.",
     "CAS fast-forward local dev from exact base to accepted candidate; nonforce push dev; verify remote ref.",
-    "Freshly recheck accepted source and main; CAS fast-forward local main from exact base; nonforce push main; verify both remote dev/main refs.",
+    "After dev push, rerun full read-only integration validation and structured main..dev commit check, retain logs. Recheck accepted source and main; CAS fast-forward local main from exact base; nonforce push main; verify both remote dev/main refs.",
+    "After main push, run run_preview.py verify: read-only regeneration at the retained fixed 8f93..8513f7f5 range must match every one of the six reviewed bytes and hashes. Retain result with promotion receipt. Failure stops task retirement; preserve actual state.",
     "After exact confirmations, switch sole checkout to dev; verify clean source/refs and containment, then delete only positively owned local task/aide-dependency-mcp-01 with git branch -d. It was never published."
   ],
   "required_evidence": [
     "60 methods PASS without failures/errors/skips in eb166a5c, full logs retained, collection digests verified, quiescent and retired",
     "All 51 executable/oracle inputs remain identical to tested source3d789913",
     "Full final structural validation PASS, structured commit range8f93..candidate PASS",
-    "Pack job11d03c41 PASS six ownership checks plus export/doctor/full validate/pack-status; only manifest.yaml changed, exact refreshed858file digest map and all published assets verified. No new release claim."
+    "Pack job11d03c41 PASS six ownership checks plus export/doctor/full validate/pack-status; only manifest.yaml changed, exact refreshed858file digest map and all published assets verified. No new release claim.",
+    "Preview job ac48e888 PASS generation/validate/status and exact six-output regeneration, all three implementation commits covered with zero malformed records; collection and retirement verified. Fixed range ends at8513f7f5. The final closure commit changes only reviewed preview/evidence/status docs, separately structured-message checked; any executable change invalidates closure and blocks main."
   ],
   "exclusions": [
     "force push",
@@ -31,5 +33,22 @@
     "target/provider effects",
     "other branch retirement"
   ],
-  "recovery": "Changed refs/source, protection refusal or uncertain response require actual-state reconciliation. Preserve candidate and partial receipt; never force or blindly retry. Retire local task only after every exact confirmation."
+  "recovery": "Changed refs/source, protection refusal or uncertain response require actual-state reconciliation. Preserve candidate and partial receipt; never force or blindly retry. Retire local task only after every exact confirmation.",
+  "preview": {
+    "source_head": "8513f7f572ed18a5390225b5a9d1d8becbf59318",
+    "source_range": "8f93cb7e021a5347e71d81a60aae4bd3f8d53602..8513f7f572ed18a5390225b5a9d1d8becbf59318",
+    "commits": [
+      "8513f7f572ed18a5390225b5a9d1d8becbf59318",
+      "730d43f3e492cef5509ca749e2872f20230b80a5",
+      "3d78991305013fb63e5adf0c4c916d9cba00f032"
+    ],
+    "sha256s": {
+      "CHANGELOG.preview.md": "204789b55a3e94b55ceff2bf70014299ea5e4ece7e3631c752eed415aa552778",
+      "RELEASE_NOTES.preview.md": "30aeb5ce4e1896ff11a0a8912c55db406fe6df1804f2132d89696dd96a1f7e5d",
+      "changelog.preview.json": "2a57cac38fa3dad55c1a043d3ef420c7039b76237cd884d60dbc8f8e53325faf",
+      "latest-changelog-report.md": "5c6f06f2f0cd5db1a537436a9ee8f61bce3a4b5c2cabbfda0f1806a2aba83bf1",
+      "malformed-commits.md": "8eb639c49348901a8127813a385c8bb5b3bd488efbee975edfa8bf6268162c8e",
+      "release-notes.preview.json": "e5ea07e619e94693034c51dffc929a595b99e48dada12d832b5355deeb2bb6e0"
+    }
+  }
 }
