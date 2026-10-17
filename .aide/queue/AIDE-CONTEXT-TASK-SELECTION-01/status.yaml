@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 id: AIDE-CONTEXT-TASK-SELECTION-01
 status: needs_review
-result: SOURCE_PASS_DELIVERED_PENDING
-planning_state: exact_pack_review
-jobs_allocated: 1
+result: SOURCE_PASS_EXPORT_COMPLETE_DELIVERED_NOT_STARTED
+planning_state: exact_delivered_preview_continuation_review
+jobs_allocated: 2
 maximum_jobs: 3

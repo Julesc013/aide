@@ -26,8 +26,7 @@ old = {name: value['sha256'] for name, value in before['files'].items()}
 assert set(old) == set(after), 'unexpected pack membership change'
 changed = {name for name in old if old[name] != after[name]}
 payload = {'files/.aide/scripts/aide_lite.py',
-           'files/.aide/scripts/tests/test_task_binding.py',
-           'files/docs/reference/context-compiler-v0.md'}
+           'files/.aide/scripts/tests/test_task_binding.py'}
 assert changed - {'manifest.yaml', 'checksums.json', 'export-report.md'} == payload, sorted(changed)
 for name in payload:
     assert refresh.sha(ROOT / refresh.PACK_REL / name) == refresh.sha(ROOT / name.removeprefix('files/'))

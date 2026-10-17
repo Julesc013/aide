@@ -1,0 +1,22 @@
+test_changed_tracked_bytes_refuse (test_pack_inventory.PackOwnershipTests.test_changed_tracked_bytes_refuse) ... ok
+test_complete_owned_fixture_is_accepted (test_pack_inventory.PackOwnershipTests.test_complete_owned_fixture_is_accepted) ... ok
+test_incomplete_checksum_coverage_refuses (test_pack_inventory.PackOwnershipTests.test_incomplete_checksum_coverage_refuses) ... ok
+test_multiply_linked_member_refuses (test_pack_inventory.PackOwnershipTests.test_multiply_linked_member_refuses) ... ok
+test_unknown_directory_refuses_before_descending (test_pack_inventory.PackOwnershipTests.test_unknown_directory_refuses_before_descending) ... ok
+test_unknown_file_refuses_without_retiring_it (test_pack_inventory.PackOwnershipTests.test_unknown_file_refuses_without_retiring_it) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.056s
+
+OK
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import os,sys,tempfile,runpy; tempfile.tempdir=os.environ['AIDE_JOB_TMP']; a=sys.argv[1:]; sys.argv=([a[1],*a[2:]] if a[0]=='-m' else a); runpy.run_module(a[1],run_name='__main__',alter_sys=True) if a[0]=='-m' else runpy.run_path(a[0],run_name='__main__')
+                                                                                                                                                                                                                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 294, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/run_pack.py", line 31, in <module>
+    assert changed - {'manifest.yaml', 'checksums.json', 'export-report.md'} == payload, sorted(changed)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ['checksums.json', 'files/.aide/scripts/aide_lite.py', 'files/.aide/scripts/tests/test_task_binding.py', 'manifest.yaml']

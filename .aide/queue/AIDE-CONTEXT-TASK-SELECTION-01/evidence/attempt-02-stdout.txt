@@ -1,0 +1,5 @@
+{"stage": "export-pack", "exit_code": 0, "stdout_bytes": 292, "stdout_sha256": "b55646a2f348c2de3e71b5694ff01306a3c20484d97aecaaaa668678d02f4b2a", "stderr_bytes": 0, "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}
+{"stage": "doctor", "exit_code": 0, "stdout_bytes": 5181, "stdout_sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21", "stderr_bytes": 0, "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}
+{"stage": "validate", "exit_code": 0, "stdout_bytes": 4894166, "stdout_sha256": "c66df2b68e17128bfb7a47a24fbefaf346095933eba6d2a728c0ac9acfd5b153", "stderr_bytes": 0, "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}
+{"stage": "pack-status", "exit_code": 0, "stdout_bytes": 216, "stdout_sha256": "6dfead5e9ffb41f8a52d930554e3db5ba710ec78dc87266a9b3d7e5b304bc41d", "stderr_bytes": 0, "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}
+{"status": "PASS", "phase": "refresh", "byte_equality": false}

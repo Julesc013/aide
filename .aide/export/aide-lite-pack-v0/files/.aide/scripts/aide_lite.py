@@ -29597,24 +29597,16 @@ def write_context_index(repo_root: Path, repo_map: dict[str, object], test_map: 
     return result, context_index
 
 
-def current_queue_ref(repo_root: Path) -> str:
-    for queue_id in [
-        "Q17-router-profile-v0",
-        "Q16-outcome-controller-v0",
-        "Q15-golden-tasks-v0",
-        "Q14-token-ledger-savings-report",
-        "Q13-evidence-review-workflow",
-        "Q12-verifier-v0",
-        "Q11-context-compiler-v0",
-        "Q10-aide-lite-hardening",
-        "Q09-token-survival-core",
-    ]:
-        if (repo_root / f".aide/queue/{queue_id}/status.yaml").exists():
-            return f".aide/queue/{queue_id}/"
-    return ".aide/queue/index.yaml"
+def current_queue_ref(repo_root: Path, task_view: dict[str, object] | None = None) -> str:
+    view = build_current_task_view(repo_root) if task_view is None else task_view
+    selected = view["task_id"]
+    return f".aide/queue/{selected}/" if selected else ".aide/queue/index.yaml"
 
 
 def render_context_packet(repo_root: Path, repo_map: dict[str, object], test_map: dict[str, object], context_index: dict[str, object], chars: int = 0, tokens: int = 0) -> str:
+    task_view = build_current_task_view(repo_root)
+    selection = task_view["selection"]
+    selection_issues = ", ".join(sorted({item["code"] for item in task_view["issues"]})) or "none"
     role_counts = context_index.get("role_counts", {})
     role_lines = []
     for role in ROLE_ORDER:
@@ -29664,8 +29656,16 @@ def render_context_packet(repo_root: Path, repo_map: dict[str, object], test_map
 
 ## CURRENT_QUEUE
 
-- current_queue_ref: `{current_queue_ref(repo_root)}`
+- current_queue_ref: `{current_queue_ref(repo_root, task_view)}`
 - queue_index: `.aide/queue/index.yaml`
+- selected_task: `{task_view['task_id'] or 'unresolved'}`
+- recorded_status: {json.dumps(task_view['status'], ensure_ascii=True)}
+- selection_mode: {selection['mode']}
+- selection_source: `{selection['source'] or 'unresolved'}`
+- selection_issues: {selection_issues}
+- acceptance_verified: false
+- Selection describes recorded context, not an active worker or permission to execute.
+- Reconcile selection issues before acting; a completed selected task is not a new assignment.
 
 ## EXACT_REFS
 
@@ -40097,7 +40097,8 @@ def build_current_task_view(repo_root: Path, task_id: str | None = None) -> dict
         "status": "missing", "result": None, "objective": None, "owner": None,
         "next_action": None, "remaining_obligations": None, "scope": {},
         "declared_status": None, "index_status": None, "evidence": [], "sources": {},
-        "issues": issues, "read_only": True, "acceptance_verified": False}
+        "issues": issues, "read_only": True, "acceptance_verified": False,
+        "selection": {"mode": "unresolved", "source": None}}
     def observe(relative: str, *, optional: bool = False, limit: int = 131072) -> str:
         try:
             text = task_view_read(repo_root, relative, limit=limit).decode("utf-8-sig")
@@ -40119,9 +40120,13 @@ def build_current_task_view(repo_root: Path, task_id: str | None = None) -> dict
     try:
         if task_id is None:
             raw, explicit = task_packet_identity(packet_text)
+            view["selection"] = {"mode": "task_packet" if raw or explicit else "queue_fallback",
+                                 "source": LATEST_PACKET_PATH if raw or explicit else ".aide/queue/index.yaml"}
             if explicit and not raw:
                 raise ValueError("invalid declared task identity")
             task_id = current_task_id(repo_root) or ""
+        else:
+            view["selection"] = {"mode": "explicit_request", "source": "request"}
         if not task_id:
             return view
         if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", task_id):
@@ -40238,6 +40243,7 @@ def command_task_current(args: argparse.Namespace) -> int:
         print("AIDE Lite task current")
         print(f"task_id: {view['task_id']}")
         print(f"status: {view['status']}")
+        print("selection: " + json.dumps(view["selection"], sort_keys=True))
         for key in ("result", "objective", "owner", "next_action", "remaining_obligations"):
             print(f"{key}: {view[key] if view[key] is not None else 'unknown'}")
         print("scope: " + json.dumps(view["scope"], sort_keys=True))

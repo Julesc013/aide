@@ -64,3 +64,12 @@ Source61 passed with no failures/errors/skips at6a50010b. Jobb93da708 retired an
 collected hashes verified, scratch absent/reservation released. Baseline fixture
 reproduced oldQ17 link and candidate project-task link. Reviewed binding refresh
 returned CURRENT with classification JSON unchanged. Export remains unqualified.
+
+## Evidence-based continuation
+
+Allocation2 failed on an incorrect three-payload expectation after the completed
+export and ownership6/doctor/validate/pack-status passed. Context reference is source
+only; the portable pack has two affected payloads. See evidence/export-interruption.md.
+Original failure stays retained. Amend sequence step3/4: reuse exact completed
+export, then delivered60 and fixed preview in allocation3 under one separately
+reviewed effect. No new job, rebuild, source rerun or weakened runtime assertion.

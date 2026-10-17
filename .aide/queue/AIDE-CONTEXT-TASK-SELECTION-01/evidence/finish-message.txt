@@ -1,0 +1,34 @@
+test(context): preserve export and qualify delivered context selection
+
+## Summary
+- Continue AIDE-CONTEXT-TASK-SELECTION-01 without rebuilding its completed export.
+
+## Why
+- A wrapper incorrectly expected a source-only reference document in the pack.
+
+## Changed
+- Retain original allocation 2 failure and successful export evidence.
+- Correct the payload expectation to the two actual exported files.
+- Prepare delivered 60 checks and fixed preview in the final bounded job.
+
+## Validation
+- PASS: source 61; ownership 6; export, doctor, validate and pack status.
+- PASS: exact 862-member inventory, two payloads, original source tests unchanged.
+- NOT RUN: delivered suite and preview; original wrapper failure retained.
+
+## Changelog
+- Changed: Prepare portable context checks using the already completed export.
+
+## Risks
+- Source documentation is not an exported pack member; no wider delivery claim.
+- No job-cap increase, live context change, new release or active-worker claim.
+
+## Follow-up
+- Run final reviewed continuation and review terminal integration separately.
+
+AIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01
+AIDE-Phase: delivered-preview-continuation
+AIDE-Result: EXPORT_PASS_DELIVERED_PENDING
+AIDE-Scope: exact-export-and-fixed-preview
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: independent-continuation-review-required

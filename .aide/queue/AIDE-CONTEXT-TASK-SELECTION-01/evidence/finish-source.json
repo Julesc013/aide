@@ -1,0 +1,31 @@
+{
+  "base": "bf15170f5a0dc41385b732b8d0c0d443dfd55aee",
+  "files": {
+    ".aide/export/aide-lite-pack-v0/checksums.json": "806f5aa332ea394fbe14928d31dc301040f91ee36b51a23236fc4dd4dca48819",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py": "3cca89eefa075ec72b06430d8b8d09657da5af27d20fd161715e14da00e8a456",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_task_binding.py": "fb299063dca0e0308ac3141150cb15d835013e93af9a19134e1c2070415f6dd5",
+    ".aide/export/aide-lite-pack-v0/manifest.yaml": "7d0a5ef79fba59e196490222f72fa38f6b085a5f86617365b84b843a3737ec5c",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/ExecPlan.md": "3eb3f14d8ee8190a59d19dcd44a7fd2e2128ca2db8fb804906d5770f18cc4d80",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/attempt-02-ownership-tests.json": "a6cf7e4ddadc235eedf04e5d2971739d575be1b957628d6ff38935c8ddc51b4c",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/attempt-02-qualification.json": "4cbb20cf6ed8cbeeaff1c7e4467d907aa3696d8ea6e24d4eb512a63002727e61",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/attempt-02-stderr.txt": "fb17176bbe2656c2adc5b635fdba67afe813904c130f3af10fe6f026ab035370",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/attempt-02-stdout.txt": "fc376b932d88f0f8f8cd0fcaeb6a5080692dd8be1b3587aba42709b71d942ca8",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/export-interruption.md": "d480b9f49ed2ae9121fe6d186e5b9b6dbfb2f42cb8a544de919bcb0bd19cb84d",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/finish-effect.md": "7b8c84ede60139f2a580ef42dd770259371eb183862807a46e514d9c57fe0dd8",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/finish-job-template.json": "1cc8ca89eee95e33d2ab3956acd2a4072af05a2e43d69c02290dd7e2b3c32425",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/finish-message.txt": "90da437ddfe33d72a2ec0b4b8fdc06a0e5d42688ac983524c01731a149578d38",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/pack-attempt-02.json": "4e50a7859949936c50ae9bebbeb8479e9c02138f8e679d9637f07af0f81161ed",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/pack-commit-result.json": "c7afe9b398abdf73f6c30d0551a5c411154d198af691aff97776687ba2f2d263",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/pack-correction-review.md": "1c61ef9c2dd9361a18fad8b971561c6b4b2b7485e4f50a7ea9dc9966f4432f13",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/pack-review.md": "333fa21277e7e9741dbe6408c31aedf30597496e67cc4fc625ead37c152897b1",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/preview-prior-hashes.json": "fb2c6cb1b820a1580993bde5733ecb83311e6f3a77069184a5d27e9600bc6f27",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/validation.md": "90a1880af4a454b7f13d5f5934cb6230a72ffcf7b865ad15b492a20788e72450",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/run_finish.py": "7c376fb6ffee903cf94c15b6e7d46d6a1b30a24f4119ead7006b5fffc1c85165",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/run_pack.py": "647fd48e66b8adbe83da63f14889152c2f782d8e385fd6263585223fb47b699a",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/run_preview.py": "694186e0a688dbce4c567c348a2e26d1261b51923b736b53b5d0d7ddc5bb948b",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/status.yaml": "668dae8b1a493984a1ada60b8b91868865571e0908c060196729f5f53f6cd37c"
+  },
+  "effect_sha256": "7b8c84ede60139f2a580ef42dd770259371eb183862807a46e514d9c57fe0dd8",
+  "message_sha256": "90da437ddfe33d72a2ec0b4b8fdc06a0e5d42688ac983524c01731a149578d38",
+  "template_sha256": "1cc8ca89eee95e33d2ab3956acd2a4072af05a2e43d69c02290dd7e2b3c32425"
+}
