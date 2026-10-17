@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 36d388a72b6e6e941ca84c93387d742f85af3064..5f9bb31a7a84255befb74b7a3841d09a045d1646
-source_head: 5f9bb31a7a84255befb74b7a3841d09a045d1646
+source_range: 442c2cccb5640c3e2a21157802935af4e53a4f68..0a6feb17a0c030690b46d1f14c96e39b8447236f
+source_head: 0a6feb17a0c030690b46d1f14c96e39b8447236f
 commit_count: 3
 malformed_count: 0
 preview_only: true
@@ -16,12 +16,12 @@ release_publishing: false
 
 ## Fixed
 
-- Prevent unavailable changed-path observations from appearing unchanged. (498eb2c09e92 fix(validation): preserve uncertainty in test-impact observations)
-- Preserve uncertainty and known paths in test-impact planning. (5f9bb31a7a84 chore(validation): qualify impact advice and prepare promotion)
+- Preserve project outcome metadata and refuse silent loss of damaged records. (761d284613f5 fix(outcomes): preserve project metadata and refuse lossy ledger updates)
+- Export tested preservation of project outcome metadata and corrupt-record refusal. (0a6feb17a0c0 fix(outcomes): qualify preservation in the portable pack)
 
 ## Internal
 
-- Exercise test alias through an admitted source or validated export. (45f29220a30d test(validation): qualify impact advice through admitted execution)
+- Correct outcome conservation fixtures and retain failed-run evidence. (04fcc15a75ae test(outcomes): correct fixtures and prepare delivered qualification)
 
 ## Malformed Commits
 

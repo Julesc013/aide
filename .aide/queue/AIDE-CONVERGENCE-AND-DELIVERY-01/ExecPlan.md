@@ -813,3 +813,8 @@ unfamiliar-metadata loss and silent malformed-line skipping. Exact admission is
 accepted; source and first job are pending review. It contributes to P6 preservation
 and P3 loss-aware reading without a new knowledge store or learning framework.
 Live history, published assets and target repositories remain outside scope.
+
+Outcome-conservation qualification now passes source20/delivered20/ownership6 and
+fixed preview; original failure retained, all three jobs retired. Current child
+REPORT.md supersedes earlier pending qualification descriptions. Exact integration
+follows its separate terminal effect; no expanded release or operational claim.

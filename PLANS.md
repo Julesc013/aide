@@ -2,12 +2,12 @@
 
 ## Outcome conservation - 2026-10-18
 
-[AIDE-OUTCOME-CONSERVATION-01](.aide/queue/AIDE-OUTCOME-CONSERVATION-01/ExecPlan.md)
-preserves unfamiliar project metadata and refuses lossy outcome-ledger updates.
-Source20, delivered20 and ownership6 pass without skips, as do doctor, structural
-validation and pack-status. The first failed fixture run is preserved; every original
-test assertion remains. Four portable payload files changed; published1.0 and live
-ledger bytes remain unchanged. Fixed-range preview and exact integration are pending.
+[Outcome qualification](.aide/queue/AIDE-OUTCOME-CONSERVATION-01/REPORT.md) records
+source20, delivered20, ownership6 and exact promotion-preview passes. The portable
+CLI preserves project metadata and refuses lossy ledger updates. All three jobs are
+retired; the original failed fixture run remains. Four payloads changed; published1.0
+and the live ledger remain unchanged. Exact reviewed effects and observed Git refs
+determine integration; this record establishes qualification, not a new release.
 
 ## Test-impact observation - 2026-10-18
 

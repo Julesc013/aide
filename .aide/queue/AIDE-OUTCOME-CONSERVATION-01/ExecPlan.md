@@ -1,5 +1,12 @@
 # Preserve outcome knowledge through ordinary updates
 
+## Current qualification
+
+Source20, delivered20, ownership6 and fixed three-commit preview PASS; all three jobs
+retired and original failure preserved. See REPORT.md for current results and limits.
+The following progress entries retain their observation-time state. Exact closure
+review and the integration receipt govern actual dev/main synchronization.
+
 ## Objective and existing owner
 
 Extend the existing Lite outcome ledger owner in place. At accepted442c2ccc,

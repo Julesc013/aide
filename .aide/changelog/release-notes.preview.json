@@ -1,64 +1,64 @@
 {
   "follow_up": [
     {
-      "commit": "498eb2c09e92",
-      "summary": "Run the exact source job, retain evidence, then qualify the delivered payload."
+      "commit": "761d284613f5",
+      "summary": "Run one source job; qualify delivered payload and review integration separately."
     },
     {
-      "commit": "45f29220a30d",
-      "summary": "Run allocation2 after exact review and fresh admission; retain all outcomes."
+      "commit": "04fcc15a75ae",
+      "summary": "Run exact allocation2 once; review collected results before preview and integration."
     },
     {
-      "commit": "5f9bb31a7a84",
-      "summary": "Qualify the fixed source-range preview, independently review closure and integrate."
+      "commit": "0a6feb17a0c0",
+      "summary": "Run exact promotion preview then review closure and guarded dev/main synchronization."
     }
   ],
   "highlights": [
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "498eb2c09e92",
-      "subject": "fix(validation): preserve uncertainty in test-impact observations",
-      "summary": "Prevent unavailable changed-path observations from appearing unchanged."
+      "commit": "761d284613f5",
+      "subject": "fix(outcomes): preserve project metadata and refuse lossy ledger updates",
+      "summary": "Preserve project outcome metadata and refuse silent loss of damaged records."
     },
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "5f9bb31a7a84",
-      "subject": "chore(validation): qualify impact advice and prepare promotion",
-      "summary": "Preserve uncertainty and known paths in test-impact planning."
+      "commit": "0a6feb17a0c0",
+      "subject": "fix(outcomes): qualify preservation in the portable pack",
+      "summary": "Export tested preservation of project outcome metadata and corrupt-record refusal."
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "498eb2c09e92",
-      "summary": "Path mappings remain heuristic; T2 does not prove coverage or authorize tests."
+      "commit": "761d284613f5",
+      "summary": "Not immutable history, concurrent-writer exclusion or a multi-file transaction."
     },
     {
-      "commit": "45f29220a30d",
-      "summary": "The repaired selftest remains unqualified until its actual run."
+      "commit": "04fcc15a75ae",
+      "summary": "Allocation2 remains bounded; original failure is not erased or reclassified."
     },
     {
-      "commit": "5f9bb31a7a84",
-      "summary": "Heuristic advice is not complete dependency proof or execution authority."
+      "commit": "0a6feb17a0c0",
+      "summary": "Original failed fixture attempt retained; no broad reliability or efficiency claim."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "5f9bb31a7a84255befb74b7a3841d09a045d1646",
-  "source_range": "36d388a72b6e6e941ca84c93387d742f85af3064..5f9bb31a7a84255befb74b7a3841d09a045d1646",
+  "source_head": "0a6feb17a0c030690b46d1f14c96e39b8447236f",
+  "source_range": "442c2cccb5640c3e2a21157802935af4e53a4f68..0a6feb17a0c030690b46d1f14c96e39b8447236f",
   "validation_summary": [
     {
-      "commit": "498eb2c09e92",
-      "summary": "PASS: original missing-base defect observed without writes."
+      "commit": "761d284613f5",
+      "summary": "PASS: original ten method ASTs unchanged; source and runner syntax."
     },
     {
-      "commit": "45f29220a30d",
-      "summary": "Attempt1: 12/13 passed, all seven new regressions passed; original failure retained."
+      "commit": "04fcc15a75ae",
+      "summary": "PASS: original ten methods in attempt1 and unchanged ASTs after fixture repair."
     },
     {
-      "commit": "5f9bb31a7a84",
-      "summary": "PASS: source13, ownership6 and delivered13; zero errors or skips."
+      "commit": "0a6feb17a0c0",
+      "summary": "PASS: source20, delivered20 and ownership6 with no skips."
     }
   ],
   "warnings": []

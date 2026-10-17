@@ -6,12 +6,12 @@
         "aide_result": "CANDIDATE",
         "breaking": false,
         "category": "Fixed",
-        "commit": "498eb2c09e92",
-        "commit_sha": "498eb2c09e927e621d862ff98afabdb8d3ca218d",
-        "entry": "Prevent unavailable changed-path observations from appearing unchanged.",
-        "follow_up": "- Run the exact source job, retain evidence, then qualify the delivered payload.\n- Review actual outputs and Git effects before dev/main promotion.\n\nAIDE-Task: AIDE-IMPACT-COVERAGE-01\nAIDE-Phase: source-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: existing-impact-observation-and-advice\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-source-and-job-review-required",
-        "risks": "- Path mappings remain heuristic; T2 does not prove coverage or authorize tests.\n- This candidate is not a new qualified package or release.",
-        "scope": "validation",
+        "commit": "761d284613f5",
+        "commit_sha": "761d284613f5030b45df28cb1f464d660ed6ba9b",
+        "entry": "Preserve project outcome metadata and refuse silent loss of damaged records.",
+        "follow_up": "- Run one source job; qualify delivered payload and review integration separately.\n\nAIDE-Task: AIDE-OUTCOME-CONSERVATION-01\nAIDE-Phase: source-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: existing-outcome-conservation\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-source-and-job-review-required",
+        "risks": "- Not immutable history, concurrent-writer exclusion or a multi-file transaction.\n- No live ledger migration or new qualified release.",
+        "scope": "outcomes",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -21,22 +21,22 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "fix(validation): preserve uncertainty in test-impact observations",
-        "summary": "Prevent unavailable changed-path observations from appearing unchanged.",
+        "subject": "fix(outcomes): preserve project metadata and refuse lossy ledger updates",
+        "summary": "Preserve project outcome metadata and refuse silent loss of damaged records.",
         "type": "fix",
-        "validation": "- PASS: original missing-base defect observed without writes.\n- PASS: original six method ASTs unchanged; new source and runner parse.\n- NOT RUN: one exact reviewed source job and later delivered qualification.\n- NOTE: capability binding needs its scoped refresh before structural acceptance."
+        "validation": "- PASS: original ten method ASTs unchanged; source and runner syntax.\n- NOT RUN: exact reviewed source and delivered jobs.\n- NOTE: capability binding requires its later reviewed refresh."
       },
       {
-        "aide_phase": "qualified-source-and-preview-preparation",
-        "aide_result": "PASS_WITH_PENDING_PROMOTION",
+        "aide_phase": "qualified-pack-preview-preparation",
+        "aide_result": "PASS_WITH_RETAINED_FAILURE",
         "breaking": false,
         "category": "Fixed",
-        "commit": "5f9bb31a7a84",
-        "commit_sha": "5f9bb31a7a84255befb74b7a3841d09a045d1646",
-        "entry": "Preserve uncertainty and known paths in test-impact planning.",
-        "follow_up": "- Qualify the fixed source-range preview, independently review closure and integrate.\n- Preserve separate Lite1.1 qualification and unrelated task branches.\n\nAIDE-Task: AIDE-IMPACT-COVERAGE-01\nAIDE-Phase: qualified-source-and-preview-preparation\nAIDE-Result: PASS_WITH_PENDING_PROMOTION\nAIDE-Scope: existing-planner-portable-export-and-evidence\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-independent-review-required",
-        "risks": "- Heuristic advice is not complete dependency proof or execution authority.\n- No new published release, host support or whole-task savings claim.",
-        "scope": "validation",
+        "commit": "0a6feb17a0c0",
+        "commit_sha": "0a6feb17a0c030690b46d1f14c96e39b8447236f",
+        "entry": "Export tested preservation of project outcome metadata and corrupt-record refusal.",
+        "follow_up": "- Run exact promotion preview then review closure and guarded dev/main synchronization.\n\nAIDE-Task: AIDE-OUTCOME-CONSERVATION-01\nAIDE-Phase: qualified-pack-preview-preparation\nAIDE-Result: PASS_WITH_RETAINED_FAILURE\nAIDE-Scope: portable-outcome-conservation\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-preview-and-integration-review-required",
+        "risks": "- Original failed fixture attempt retained; no broad reliability or efficiency claim.\n- Published1.0 remains unchanged; this does not publish1.1.",
+        "scope": "outcomes",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -46,24 +46,24 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "chore(validation): qualify impact advice and prepare promotion",
-        "summary": "Preserve uncertainty and known paths in test-impact planning.",
-        "type": "chore",
-        "validation": "- PASS: source13, ownership6 and delivered13; zero errors or skips.\n- PASS: doctor, structural validate, pack-status, exact payload delta and stable bytes.\n- PASS: two retired/quiescent jobs, collection hashes, scratch absence and reservations.\n- NOT RUN: final preview allocation3 and dev/main integration.\n- WARN: historical global review reference; task-specific review evidence is present."
+        "subject": "fix(outcomes): qualify preservation in the portable pack",
+        "summary": "Export tested preservation of project outcome metadata and corrupt-record refusal.",
+        "type": "fix",
+        "validation": "- PASS: source20, delivered20 and ownership6 with no skips.\n- PASS: doctor, structural validation and pack-status; exact862members.\n- PASS: collected digests and retirement for both attempts; live ledger unchanged.\n- PASS: published Lite1.0 assets unchanged; four intended payloads only.\n- NOT RUN: final fixed-range preview, separately reviewed allocation3."
       }
     ],
     "Internal": [
       {
-        "aide_phase": "recovery-and-pack-candidate",
+        "aide_phase": "source-delivered-preparation",
         "aide_result": "CANDIDATE",
         "breaking": false,
         "category": "Internal",
-        "commit": "45f29220a30d",
-        "commit_sha": "45f29220a30ddc4af87d80a62755817ab349c1d9",
-        "entry": "Exercise test alias through an admitted source or validated export.",
-        "follow_up": "- Run allocation2 after exact review and fresh admission; retain all outcomes.\n- Qualify preview and integration separately; preserve Lite1.0 and the Lite1.1 branch.\n\nAIDE-Task: AIDE-IMPACT-COVERAGE-01\nAIDE-Phase: recovery-and-pack-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: fixture-repair-existing-export-qualification\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-independent-review-required",
-        "risks": "- The repaired selftest remains unqualified until its actual run.\n- Heuristic impact advice does not prove complete dependency coverage.",
-        "scope": "validation",
+        "commit": "04fcc15a75ae",
+        "commit_sha": "04fcc15a75aecefe7d60c547c073c9517c2b7d55",
+        "entry": "Correct outcome conservation fixtures and retain failed-run evidence.",
+        "follow_up": "- Run exact allocation2 once; review collected results before preview and integration.\n\nAIDE-Task: AIDE-OUTCOME-CONSERVATION-01\nAIDE-Phase: source-delivered-preparation\nAIDE-Result: CANDIDATE\nAIDE-Scope: outcome-fixture-recovery-and-export-qualification\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-pack-source-and-job-review-required",
+        "risks": "- Allocation2 remains bounded; original failure is not erased or reclassified.\n- No release or target behavior claim.",
+        "scope": "outcomes",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -73,10 +73,10 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "test(validation): qualify impact advice through admitted execution",
-        "summary": "Exercise test alias through an admitted source or validated export.",
+        "subject": "test(outcomes): correct fixtures and prepare delivered qualification",
+        "summary": "Correct outcome conservation fixtures and retain failed-run evidence.",
         "type": "test",
-        "validation": "- Attempt1: 12/13 passed, all seven new regressions passed; original failure retained.\n- PASS: collected digests, retirement, absent scratch and released reservation.\n- PASS: one reviewed ledger refresh; classification unchanged, binding CURRENT.\n- NOT RUN: exact allocation2 source13, ownership6 and delivered13."
+        "validation": "- PASS: original ten methods in attempt1 and unchanged ASTs after fixture repair.\n- PASS: baseline metadata-loss and malformed-skip comparison; retirement digests.\n- FAIL retained: original attempt1 has three failures and two errors across three methods.\n- PASS: capability binding CURRENT; classification unchanged.\n- NOT RUN: corrected source20, delivered20 and exporter qualification."
       }
     ]
   },
@@ -91,12 +91,12 @@
       "aide_result": "CANDIDATE",
       "breaking": false,
       "category": "Fixed",
-      "commit": "498eb2c09e92",
-      "commit_sha": "498eb2c09e927e621d862ff98afabdb8d3ca218d",
-      "entry": "Prevent unavailable changed-path observations from appearing unchanged.",
-      "follow_up": "- Run the exact source job, retain evidence, then qualify the delivered payload.\n- Review actual outputs and Git effects before dev/main promotion.\n\nAIDE-Task: AIDE-IMPACT-COVERAGE-01\nAIDE-Phase: source-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: existing-impact-observation-and-advice\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-source-and-job-review-required",
-      "risks": "- Path mappings remain heuristic; T2 does not prove coverage or authorize tests.\n- This candidate is not a new qualified package or release.",
-      "scope": "validation",
+      "commit": "761d284613f5",
+      "commit_sha": "761d284613f5030b45df28cb1f464d660ed6ba9b",
+      "entry": "Preserve project outcome metadata and refuse silent loss of damaged records.",
+      "follow_up": "- Run one source job; qualify delivered payload and review integration separately.\n\nAIDE-Task: AIDE-OUTCOME-CONSERVATION-01\nAIDE-Phase: source-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: existing-outcome-conservation\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-source-and-job-review-required",
+      "risks": "- Not immutable history, concurrent-writer exclusion or a multi-file transaction.\n- No live ledger migration or new qualified release.",
+      "scope": "outcomes",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -106,22 +106,22 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "fix(validation): preserve uncertainty in test-impact observations",
-      "summary": "Prevent unavailable changed-path observations from appearing unchanged.",
+      "subject": "fix(outcomes): preserve project metadata and refuse lossy ledger updates",
+      "summary": "Preserve project outcome metadata and refuse silent loss of damaged records.",
       "type": "fix",
-      "validation": "- PASS: original missing-base defect observed without writes.\n- PASS: original six method ASTs unchanged; new source and runner parse.\n- NOT RUN: one exact reviewed source job and later delivered qualification.\n- NOTE: capability binding needs its scoped refresh before structural acceptance."
+      "validation": "- PASS: original ten method ASTs unchanged; source and runner syntax.\n- NOT RUN: exact reviewed source and delivered jobs.\n- NOTE: capability binding requires its later reviewed refresh."
     },
     {
-      "aide_phase": "recovery-and-pack-candidate",
+      "aide_phase": "source-delivered-preparation",
       "aide_result": "CANDIDATE",
       "breaking": false,
       "category": "Internal",
-      "commit": "45f29220a30d",
-      "commit_sha": "45f29220a30ddc4af87d80a62755817ab349c1d9",
-      "entry": "Exercise test alias through an admitted source or validated export.",
-      "follow_up": "- Run allocation2 after exact review and fresh admission; retain all outcomes.\n- Qualify preview and integration separately; preserve Lite1.0 and the Lite1.1 branch.\n\nAIDE-Task: AIDE-IMPACT-COVERAGE-01\nAIDE-Phase: recovery-and-pack-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: fixture-repair-existing-export-qualification\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-independent-review-required",
-      "risks": "- The repaired selftest remains unqualified until its actual run.\n- Heuristic impact advice does not prove complete dependency coverage.",
-      "scope": "validation",
+      "commit": "04fcc15a75ae",
+      "commit_sha": "04fcc15a75aecefe7d60c547c073c9517c2b7d55",
+      "entry": "Correct outcome conservation fixtures and retain failed-run evidence.",
+      "follow_up": "- Run exact allocation2 once; review collected results before preview and integration.\n\nAIDE-Task: AIDE-OUTCOME-CONSERVATION-01\nAIDE-Phase: source-delivered-preparation\nAIDE-Result: CANDIDATE\nAIDE-Scope: outcome-fixture-recovery-and-export-qualification\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-pack-source-and-job-review-required",
+      "risks": "- Allocation2 remains bounded; original failure is not erased or reclassified.\n- No release or target behavior claim.",
+      "scope": "outcomes",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -131,22 +131,22 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "test(validation): qualify impact advice through admitted execution",
-      "summary": "Exercise test alias through an admitted source or validated export.",
+      "subject": "test(outcomes): correct fixtures and prepare delivered qualification",
+      "summary": "Correct outcome conservation fixtures and retain failed-run evidence.",
       "type": "test",
-      "validation": "- Attempt1: 12/13 passed, all seven new regressions passed; original failure retained.\n- PASS: collected digests, retirement, absent scratch and released reservation.\n- PASS: one reviewed ledger refresh; classification unchanged, binding CURRENT.\n- NOT RUN: exact allocation2 source13, ownership6 and delivered13."
+      "validation": "- PASS: original ten methods in attempt1 and unchanged ASTs after fixture repair.\n- PASS: baseline metadata-loss and malformed-skip comparison; retirement digests.\n- FAIL retained: original attempt1 has three failures and two errors across three methods.\n- PASS: capability binding CURRENT; classification unchanged.\n- NOT RUN: corrected source20, delivered20 and exporter qualification."
     },
     {
-      "aide_phase": "qualified-source-and-preview-preparation",
-      "aide_result": "PASS_WITH_PENDING_PROMOTION",
+      "aide_phase": "qualified-pack-preview-preparation",
+      "aide_result": "PASS_WITH_RETAINED_FAILURE",
       "breaking": false,
       "category": "Fixed",
-      "commit": "5f9bb31a7a84",
-      "commit_sha": "5f9bb31a7a84255befb74b7a3841d09a045d1646",
-      "entry": "Preserve uncertainty and known paths in test-impact planning.",
-      "follow_up": "- Qualify the fixed source-range preview, independently review closure and integrate.\n- Preserve separate Lite1.1 qualification and unrelated task branches.\n\nAIDE-Task: AIDE-IMPACT-COVERAGE-01\nAIDE-Phase: qualified-source-and-preview-preparation\nAIDE-Result: PASS_WITH_PENDING_PROMOTION\nAIDE-Scope: existing-planner-portable-export-and-evidence\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-independent-review-required",
-      "risks": "- Heuristic advice is not complete dependency proof or execution authority.\n- No new published release, host support or whole-task savings claim.",
-      "scope": "validation",
+      "commit": "0a6feb17a0c0",
+      "commit_sha": "0a6feb17a0c030690b46d1f14c96e39b8447236f",
+      "entry": "Export tested preservation of project outcome metadata and corrupt-record refusal.",
+      "follow_up": "- Run exact promotion preview then review closure and guarded dev/main synchronization.\n\nAIDE-Task: AIDE-OUTCOME-CONSERVATION-01\nAIDE-Phase: qualified-pack-preview-preparation\nAIDE-Result: PASS_WITH_RETAINED_FAILURE\nAIDE-Scope: portable-outcome-conservation\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-preview-and-integration-review-required",
+      "risks": "- Original failed fixture attempt retained; no broad reliability or efficiency claim.\n- Published1.0 remains unchanged; this does not publish1.1.",
+      "scope": "outcomes",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -156,10 +156,10 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "chore(validation): qualify impact advice and prepare promotion",
-      "summary": "Preserve uncertainty and known paths in test-impact planning.",
-      "type": "chore",
-      "validation": "- PASS: source13, ownership6 and delivered13; zero errors or skips.\n- PASS: doctor, structural validate, pack-status, exact payload delta and stable bytes.\n- PASS: two retired/quiescent jobs, collection hashes, scratch absence and reservations.\n- NOT RUN: final preview allocation3 and dev/main integration.\n- WARN: historical global review reference; task-specific review evidence is present."
+      "subject": "fix(outcomes): qualify preservation in the portable pack",
+      "summary": "Export tested preservation of project outcome metadata and corrupt-record refusal.",
+      "type": "fix",
+      "validation": "- PASS: source20, delivered20 and ownership6 with no skips.\n- PASS: doctor, structural validation and pack-status; exact862members.\n- PASS: collected digests and retirement for both attempts; live ledger unchanged.\n- PASS: published Lite1.0 assets unchanged; four intended payloads only.\n- NOT RUN: final fixed-range preview, separately reviewed allocation3."
     }
   ],
   "generated_by": "aide-lite",
@@ -170,7 +170,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "5f9bb31a7a84255befb74b7a3841d09a045d1646",
-  "source_range": "36d388a72b6e6e941ca84c93387d742f85af3064..5f9bb31a7a84255befb74b7a3841d09a045d1646",
+  "source_head": "0a6feb17a0c030690b46d1f14c96e39b8447236f",
+  "source_range": "442c2cccb5640c3e2a21157802935af4e53a4f68..0a6feb17a0c030690b46d1f14c96e39b8447236f",
   "warnings": []
 }

@@ -1,5 +1,8 @@
 # Validation
 
+Current result: source20/delivered20/ownership6 and fixed preview PASS. All three
+jobs retired. Prior pending entries below are retained history; see REPORT.md.
+
 PASS: source and runner syntax; original ten test bodies have identical ASTs.
 Baseline in-memory comparison records lost optional metadata at exact442c2ccc.
 NOT RUN: source20, delivered20, exporter ownership and fixed promotion preview.
@@ -20,3 +23,8 @@ and checksums differ. All original published1.0 bytes/live ledger unchanged.
 Both attempts fully retired and collection verified. Peak memory270118912bytes,
 scratch10918389bytes; canonical pack4544911bytes. No model calls; whole effort unknown.
 Exact fixed-range preview remains pending allocation3 review.
+
+Final preview allocation3 PASS: exact442c2ccc..0a6feb17, three commits, six replayed
+outputs, zero malformed commits. All jobs retired; ceiling exhausted. No retry.
+Terminal structural validation and exact full commit range are checked before and
+after integration under the reviewed effect; no product changes after qualification.

@@ -1,0 +1,32 @@
+{
+  "base": "0a6feb17a0c030690b46d1f14c96e39b8447236f",
+  "files": {
+    ".aide/changelog/CHANGELOG.preview.md": "a75ec8a3e45391044c7552873a0d140076a56fe32a5da84bfde68844a96f5aad",
+    ".aide/changelog/RELEASE_NOTES.preview.md": "66545f351bb7766d078c659ceb6e504d946390de0a544ff4f68066f818dc012b",
+    ".aide/changelog/changelog.preview.json": "d0a85f8fd3180e4833430c0a6177396513dda91e4b9afb9551797aa075e056d1",
+    ".aide/changelog/latest-changelog-report.md": "20d1082795260b0f0af9b41374d100db42d1bc7e804dfd3a559d4d416b41e78b",
+    ".aide/changelog/malformed-commits.md": "f7de9766873da69800b8e69b70441d18c2f87b277020611f376561baadadc6c4",
+    ".aide/changelog/release-notes.preview.json": "33612403bb3e7f678c455c2f79e55b28a57cf9d37d3dbe63b52b8eff8c1ad04c",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md": "5cf00d9d7187b4df910038d5b06f35be4ac2cdf649bebfc4ef8be7978c203467",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml": "8f2ed0f945e8aac7e52d59efc6b1f4ee7bdde16dc155eecb530b1061876fb2d3",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/ExecPlan.md": "2b03bac64a8977dcb0a6d6ae6795d22c564f95961aabe29692c4c2f28374e62e",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/REPORT.md": "604c8d33adb60c45cccce44ad0d10dd716c2078cd85b2776a4cd0f3e7272a5e5",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/closure-message.txt": "778b56def8e06e6fd01fd8544bbf2d4ce166bc84b6ccfcbabf7775b63c2770f2",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/dev-review-packet.md": "95f0fae7206c0c18364d16b9552a3bab2eb1064c69e1b2dbcdf97caef07dc5ab",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/integration-effect.json": "7387d8ab5ecc775715430e823801512e2c8af824fbb219f67ee71dee769e1b5c",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/preview-attempt-03.json": "171501872cf5b853a23ca1c96cb5aeaa8bb0e32dfb65c65916421d28b94246e9",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/preview-commit-original-refusal.txt": "29ddb84c4a96b481e09ce3d0f1d0f882fcacf472989ea57339cff66360a21dec",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/preview-commit-result.json": "33e29e2244d4ef2c83593fb765ad9a6ec03f4ab40136ed6e3df411945a1a2247",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/preview-correction-review.md": "822b8b927297cd8807c498bf0b093d1eb932f3fc569337ac841862f79240ff11",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/preview-result.json": "7ee1a98cb83296e89dca96932ded2b5dfd02a7292fb70c949f85bd12f12544a0",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/preview-review.md": "5192a7f5eb2b47bc647a99b46c18ab30ea4ca715ea1622d86545e53745b141d6",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/validation.md": "eb546a7bb59cfe119accf0fc7aa7e87d2f66f5751bc4476105be9f5d269318d0",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/status.yaml": "cf2f01b1d40a219387a65ca7f972149f858db478d5fccb9b9e84b6fce26ad048",
+    ".aide/queue/index.yaml": "7a67687556b7e3e88e08608a8c95d8530de0840f3c6917db04abf0980873cb72",
+    "DOCUMENTATION.md": "12e13d05e28b7319babb80e612ee8e78319d572d7a058035ce8b51d322414cca",
+    "IMPLEMENT.md": "a281a8a63ea9663decb3451826554981891c98003910f0417672aa827db915c2",
+    "PLANS.md": "5c5aa38d7066d498ae63aab2f7b64a3ff7e59c655154a5b9659f5a05a3aca4ff"
+  },
+  "effect_sha256": "7387d8ab5ecc775715430e823801512e2c8af824fbb219f67ee71dee769e1b5c",
+  "message_sha256": "778b56def8e06e6fd01fd8544bbf2d4ce166bc84b6ccfcbabf7775b63c2770f2"
+}
