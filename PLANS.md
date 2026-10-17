@@ -1,5 +1,13 @@
 # AIDE Planning Index
 
+## Local dependency request/reply - 2026-10-17
+
+[AIDE-LOCAL-DEPENDENCY-01](.aide/queue/AIDE-LOCAL-DEPENDENCY-01/ExecPlan.md) implements
+the first cooperative local exchange under existing runtime state. Native work
+retains authority; actual host delivery, independent cancellation and downstream
+adoption remain follow-ons. Exact source and finite fixture effect review precede
+behavioral qualification. DiskEd ownership remains independently pending.
+
 ## Native DiskEd adoption preparation - 2026-10-17
 
 AIDE-DAILY-DISKED-ADOPTION-01 prepares actual owner adoption of the conserved

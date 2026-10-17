@@ -1,13 +1,13 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-release-203a63a67f07
-- title: Release WorkUnit Draft - Write blocker report and require reviewed authorization before mutation
+- workunit_id: draft-implementation-5cd64803e1ce
+- title: Implementation WorkUnit Draft - Require behavior proof and live-test validation plan before implementation
 - status: draft
-- task_class: release
-- risk_class: release
-- sizing_class: blocked
-- objective: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
+- task_class: implementation
+- risk_class: medium
+- sizing_class: live_test_gate
+- objective: Normalize prompt into a bounded implementation WorkUnit draft: require behavior proof and live-test validation plan before implementation.
 - why: AIDE compiles raw prompts into bounded WorkUnits before execution.
 
 ## Preflight
@@ -19,13 +19,12 @@
 ## Implementation Outline
 
 - Reconcile repo state before editing.
-- write blocker report and require reviewed authorization before mutation
+- require behavior proof and live-test validation plan before implementation
 - Stop at review gates and record evidence before execution.
 
 ## Validation
 
 - git diff --check
-- py -3 .aide/scripts/aide_lite.py changelog validate
 - py -3 .aide/scripts/aide_lite.py intent validate
 
 ## Evidence
@@ -34,7 +33,6 @@
 - validation.md
 - remaining-risks.md
 - intent-compiler-report.md
-- preflight-or-blocker-report.md
 
 ## Acceptance
 
@@ -48,9 +46,8 @@
 - no provider/model/network calls
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not publish releases, tags, or assets from prompt alone
 
 ## Recovery
 
-- idempotency: prompt_hash:203a63a67f0726fc52df086fc7f879b90264bbbd57be23d60e1821cd23ddcc81; status:draft; compile_only:true
+- idempotency: prompt_hash:5cd64803e1cef7a21a61c0785d98a3ad5cb6b70d858083f682b1d343e889f9ad; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

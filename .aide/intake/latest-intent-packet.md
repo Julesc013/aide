@@ -3,18 +3,18 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 203a63a67f0726fc52df086fc7f879b90264bbbd57be23d60e1821cd23ddcc81
-- raw_prompt_excerpt: Continue AIDE daily-use campaign by preparing exact native-owner adoption of the already-qualified DiskEd DE-W000 selected-export change at D:/Projects/DiskEd/disked, base 40ac8ec02778b7c25100421147fc1e107fa14ed5. Preserve existing nativ...
-- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
+- raw_prompt_hash: 5cd64803e1cef7a21a61c0785d98a3ad5cb6b70d858083f682b1d343e889f9ad
+- raw_prompt_excerpt: Implement bounded local dependency request and reply records under the existing continuous-worker state owner. Preserve canonical project work and reviewed-candidate integration boundaries; prove duplicate-safe submission, restart, revis...
+- interpreted_goal: Normalize prompt into a bounded implementation WorkUnit draft: require behavior proof and live-test validation plan before implementation.
 - confidence: high
-- task_class: release
-- risk_class: release
-- sizing_class: blocked
+- task_class: implementation
+- risk_class: medium
+- sizing_class: live_test_gate
 - safe_to_execute: false
 - requires_split: true
-- blocked: true
-- blocker_reason: write blocker report and require reviewed authorization before mutation
-- next_action: write blocker report and require reviewed authorization before mutation
+- blocked: false
+- blocker_reason: none
+- next_action: require behavior proof and live-test validation plan before implementation
 - task_execution: false
 - provider_or_model_calls: none
 - network_calls: none
@@ -24,14 +24,13 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not publish releases, tags, or assets from prompt alone
 
 ## Repo State Refs
 
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/status.yaml`
+- `.aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/status.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/repo/file-inventory.json`
 - `.aide/repo/latest-repo-intelligence.md`
@@ -40,15 +39,14 @@
 
 ## Branch State Refs
 
-- current_branch:dev
-- current_role:integration
+- current_branch:task/aide-daily-disked-adoption-01
+- current_role:task
 - workflow:trunk_with_dev_integration
 - worktree_dirty:false
 
 ## Validation Hints
 
 - `git diff --check`
-- `py -3 .aide/scripts/aide_lite.py changelog validate`
 - `py -3 .aide/scripts/aide_lite.py intent validate`
 
 ## Evidence Hints
@@ -57,4 +55,3 @@
 - `validation.md`
 - `remaining-risks.md`
 - `intent-compiler-report.md`
-- `preflight-or-blocker-report.md`

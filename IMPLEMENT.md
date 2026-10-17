@@ -1,5 +1,14 @@
 # AIDE Implementation Log
 
+## Local dependency interface candidate - 2026-10-17
+
+The existing continuous-worker state gains opt-in dependency records through one
+module and CLI. Immutable bindings, revision-bound observations, duplicate-safe
+transactions, finite records and separate return/adoption are implemented as a
+candidate. No live initialization or peer delivery occurred; fixtures remain
+pending exact review. Existing tasks, attempts, effects and broker gates retain
+their owners. Read-only State opening supports inspection without record writes.
+
 ## Native DiskEd adoption candidate - 2026-10-17
 
 The existing candidate remains unchanged. Bounded native request/grant/handoff

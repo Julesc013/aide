@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+- [Local dependency requests](docs/reference/local-dependency-requests.md): opt-in
+  cooperative request/reply CLI, native ownership, continuation and explicit
+  qualification limits. [Work plan](.aide/queue/AIDE-LOCAL-DEPENDENCY-01/ExecPlan.md).
+
 ## Native DiskEd adoption - 2026-10-17
 
 [Adoption ExecPlan](.aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/ExecPlan.md) tracks

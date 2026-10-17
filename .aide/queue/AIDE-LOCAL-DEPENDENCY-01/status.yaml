@@ -1,0 +1,10 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LOCAL-DEPENDENCY-01
+status: running
+result: PENDING
+classification: local_interface_implementation
+jobs_allocated: 0
+maximum_jobs: 2
+next_action: implement_then_review_exact_source_and_fixture_effect
+live_initializations: 0
+live_peer_deliveries: 0

@@ -730,3 +730,11 @@ remains pending and target writes are held. Two bounded attempts are retired,
 with the first failure retained. Continue the existing local dependency-handoff
 brief independently; do not repeatedly query the unchanged target or infer an
 answer. The native adoption child remains incomplete and resumable.
+
+## Local dependency interface admission - 2026-10-17
+
+AIDE-LOCAL-DEPENDENCY-01 received exact independent admission for cooperative
+records in the existing coordinator state. Preserve the reviewed-candidate broker
+gate and native work authority. Implement and qualify the local CLI/recovery path
+before actual host delivery. Zero live state initialization/contact is admitted;
+two separately reviewed deterministic fixture allocations are available.

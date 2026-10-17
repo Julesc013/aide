@@ -1,0 +1,8 @@
+{
+  "reviewer": "/root/review_disked_continuation",
+  "verdict": "ACCEPT",
+  "subject": "../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/local-dependency-admission.md",
+  "sha256": "ddf08ca19e3bf521a32405f3d0fcc3a7b8e5c28fbce176a20631a3c8d8285308",
+  "scope": "bounded admission/local branch only; no job or live initialization/contact",
+  "findings": []
+}

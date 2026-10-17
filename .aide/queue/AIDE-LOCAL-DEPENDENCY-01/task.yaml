@@ -1,0 +1,37 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LOCAL-DEPENDENCY-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Record local dependency requests and replies without competing task authority
+type: implementation
+status: running
+admission_ref: ../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/local-dependency-admission.md
+admission_sha256: ddf08ca19e3bf521a32405f3d0fcc3a7b8e5c28fbce176a20631a3c8d8285308
+admission_verdict: ACCEPT_bounded_admission_only
+scope:
+  allowed_paths_source: admission_ref
+  allowed_paths:
+    - core/runtime/continuous_worker/requests.py
+    - core/runtime/continuous_worker/state.py
+    - core/runtime/continuous_worker/__main__.py
+    - .aide/scripts/tests/test_dependency_requests.py
+    - .aide/scripts/tests/test_continuous_worker_state.py
+    - docs/reference/local-dependency-requests.md
+    - .aide/queue/AIDE-LOCAL-DEPENDENCY-01/**
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/local-dependency-admission.md
+    - .aide/intake/latest-*
+    - .aide/context/latest-task-packet.md
+    - .aide/generated/**
+    - .aide/reports/capability-*
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+verification:
+  maximum_jobs: 2
+  config_digest: 61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90
+  admission: exact_source_and_effect_review_before_each_job
+  live_initializations: 0
+  live_peer_deliveries: 0
+review_gate: exact_source_effect_and_terminal_review

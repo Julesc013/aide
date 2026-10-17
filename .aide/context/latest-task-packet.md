@@ -1,15 +1,15 @@
 # AIDE Latest Task Packet
 
-task_id: AIDE-DAILY-DISKED-ADOPTION-01
+task_id: AIDE-LOCAL-DEPENDENCY-01
 projection_only: true
 
 ## PHASE
 
-AIDE-DAILY-DISKED-ADOPTION-01 - Adopt conserved selected export through DiskEd native ownership
+AIDE-LOCAL-DEPENDENCY-01 - Record local dependency requests and replies without competing task authority
 
 ## GOAL
 
-AIDE-DAILY-DISKED-ADOPTION-01: prepare native owner adoption; target effects held
+AIDE-LOCAL-DEPENDENCY-01: bounded cooperative dependency request/reply in existing state; exact local interface and recovery fixtures; no live delivery
 
 ## WHY
 
@@ -17,9 +17,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/task.yaml` (selected scope and acceptance)
-- `.aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/ExecPlan.md` (continuation; when present)
-- `.aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/status.yaml` (actual state; when present)
+- `.aide/queue/AIDE-LOCAL-DEPENDENCY-01/task.yaml` (selected scope and acceptance)
+- `.aide/queue/AIDE-LOCAL-DEPENDENCY-01/ExecPlan.md` (continuation; when present)
+- `.aide/queue/AIDE-LOCAL-DEPENDENCY-01/status.yaml` (actual state; when present)
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -46,12 +46,17 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/**`
+- `core/runtime/continuous_worker/requests.py`
+- `core/runtime/continuous_worker/state.py`
+- `core/runtime/continuous_worker/__main__.py`
+- `.aide/scripts/tests/test_dependency_requests.py`
+- `.aide/scripts/tests/test_continuous_worker_state.py`
+- `docs/reference/local-dependency-requests.md`
+- `.aide/queue/AIDE-LOCAL-DEPENDENCY-01/**`
 - `.aide/queue/index.yaml`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
-- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/disked-native-adoption-admission.md`
-- `.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/task.yaml`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/local-dependency-admission.md`
 - `.aide/intake/latest-*`
 - `.aide/context/latest-task-packet.md`
 - `.aide/generated/**`
@@ -127,8 +132,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 5020
-- approx_tokens: 1255
+- chars: 5308
+- approx_tokens: 1327
 - budget_status: PASS
 - warnings:
   - none

@@ -3995,3 +3995,13 @@ items:
     exec_plan: .aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/ExecPlan.md
     prompt: .aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/prompt.md
     evidence: .aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/evidence
+
+  - id: AIDE-LOCAL-DEPENDENCY-01
+    status: running
+    planning_state: local_interface_implementation
+    result: PENDING
+    title: Record local dependency requests and replies without competing task authority
+    task: .aide/queue/AIDE-LOCAL-DEPENDENCY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LOCAL-DEPENDENCY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-LOCAL-DEPENDENCY-01/prompt.md
+    evidence: .aide/queue/AIDE-LOCAL-DEPENDENCY-01/evidence

@@ -3,8 +3,8 @@
 - command: `capability ledger`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-daily-disked-adoption-01`
-- current_commit: `ac0ca3a94a53e5c3470ff556ab889212acab0af9`
+- current_branch: `task/aide-local-dependency-01`
+- current_commit: `9605d8e333a1da8f113a2a1b44f88427511fbba2`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

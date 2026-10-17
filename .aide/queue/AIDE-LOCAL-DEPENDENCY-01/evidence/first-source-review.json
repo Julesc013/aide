@@ -1,0 +1,11 @@
+{
+  "verdict": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "tree": "2756fe20915cc7676caa1ad8be2745fbd4662c89",
+  "findings": [
+    "Refused non-init commands could initialize empty database or change journaling before schema/config validation.",
+    "Returned failed/unknown/unrun obligations suggested adoption which correctly refused."
+  ],
+  "disposition": "Repair before first job; preserve original review. Add CLI byte/sidecar preservation and unmet-obligation action assertions.",
+  "jobs_run": 0
+}
