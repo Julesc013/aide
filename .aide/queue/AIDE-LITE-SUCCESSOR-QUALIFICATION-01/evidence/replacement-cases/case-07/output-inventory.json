@@ -1,0 +1,22 @@
+{
+  "case-07/process.json": {
+    "sha256": "b038dce9ad44303a17044897552f4129fb2bb952bfed9c300b6c81ac5dbb0543",
+    "size_bytes": 694
+  },
+  "case-07/stderr.log": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "case-07/stdout.log": {
+    "sha256": "3b1385778e0642c2b11816fd8cde44fb6527f83096620ef717a31593d3039663",
+    "size_bytes": 36
+  },
+  "case-07/summary.json": {
+    "sha256": "51d4915d95a2a4626dfed2b20b32017d6f292ad6fd124d8be0556ae558a47927",
+    "size_bytes": 378
+  },
+  "consumer-result.json": {
+    "sha256": "410b4e9f7962fca05b8a3eb9dc2af5744bbe13cd366954108f34c39e8541795b",
+    "size_bytes": 1142
+  }
+}

@@ -1,10 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
 status: running
-result: REPAIRED_BUILD_PASS_CONSUMERS_PENDING
+result: REPLACEMENT_ORIGINAL8_ADDITIONAL18_PASS
 owner: aide_campaign
-next_action: review_replacement_archive_consumers
+next_action: review_actual_predecessor_recovery_and_replay
 promotion_blocker: three_commit_message_failures_preserved_pending_disposition
-jobs_allocated: 14
+jobs_allocated: 23
 maximum_jobs: 27
 public_release: unchanged_1.0.0

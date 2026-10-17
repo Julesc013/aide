@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+## Replacement consumers qualified - 2026-10-18
+
+[Replacement qualification](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md) records eight original consumer passes and all 18 additions, with 56 actual command mappings and nine retired jobs. [Actual predecessor recovery](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/actual-predecessor-recovery-contract.md) distinguishes existing same-path rollback, cross-version refusal, unchanged-target detach/reinstall and preserved overlay limitations. The next three jobs are prepared; public 1.0.0 and dev/main remain unchanged.
+
 ## Replacement archives built - 2026-10-18
 
 Allocation 14 passed the existing builder and validator for ZIP 80b8a875 and companions. Other release and development-pack bytes remain unchanged. [Replacement consumer plan](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replacement-consumers-effect.md) retains all original assertions and requires fresh evidence for the new archives. Public 1.0.0 and accepted dev/main remain unchanged.

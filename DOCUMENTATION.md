@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+## Replacement consumers qualified - 2026-10-18
+
+[Replacement qualification](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md) records eight original consumer passes and all 18 additions, with 56 actual command mappings and nine retired jobs. [Actual predecessor recovery](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/actual-predecessor-recovery-contract.md) distinguishes existing same-path rollback, cross-version refusal, unchanged-target detach/reinstall and preserved overlay limitations. The next three jobs are prepared; public 1.0.0 and dev/main remain unchanged.
+
 ## Repaired pack and replacement candidate - 2026-10-18
 
 [Current qualification](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md) distinguishes source checks, delivered-pack checks and old archive evidence. [Direct installed evidence](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/direct-pack-result.json) supports the repaired private module binding; [replacement build effect](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/rebuild-effect.md) bounds the next candidate.

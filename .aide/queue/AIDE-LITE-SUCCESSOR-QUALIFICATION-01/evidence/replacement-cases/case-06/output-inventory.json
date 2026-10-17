@@ -1,0 +1,74 @@
+{
+  "case-06/command_outputs/job-context.json": {
+    "sha256": "6037105d6d838747a48efcb13b27a1c93041906607f22bb8bc39c23a020b1e46",
+    "size_bytes": 1153
+  },
+  "case-06/command_outputs/job-inspect.json": {
+    "sha256": "b916110a851f3821f9528bb8acb80abf89a2da96e34411b45235c14c887fe749",
+    "size_bytes": 3036
+  },
+  "case-06/command_outputs/job-recover.json": {
+    "sha256": "77f2ff616eef9318d8512b617f6b84c5ed3590b13089a6e42123b1ee2a0ce307",
+    "size_bytes": 950
+  },
+  "case-06/command_outputs/job-run-full.json": {
+    "sha256": "651b956f453919f8583114fb9fbcf210403b02742800ce2ab6b61b98dfc754fd",
+    "size_bytes": 5220
+  },
+  "case-06/command_outputs/job-run.json": {
+    "sha256": "5a47fa28d05ba50706722fb361518ff614142e9c16aba4969cfd615cb29b1fe8",
+    "size_bytes": 2155
+  },
+  "case-06/command_outputs/job-setup-existing.json": {
+    "sha256": "57f771540f78ee80ad2aae9fa2f11654da26cd84db63c94c11e8ce84a62b0549",
+    "size_bytes": 1956
+  },
+  "case-06/command_outputs/job-setup-fresh.json": {
+    "sha256": "d405684e806c14302f2a89bab00557a235efed70cc3a798a5ffe174e9838f5ef",
+    "size_bytes": 1947
+  },
+  "case-06/command_outputs/job-usage-attempt-set.json": {
+    "sha256": "2c748282fe89e9804cd5821f4774677901a84ead1d59444c497e92fb3318a5cc",
+    "size_bytes": 2586
+  },
+  "case-06/command_outputs/job-usage-invalid-parent.json": {
+    "sha256": "26c92685593037dc242471d6e64d45f80b64dec910f04160fa76cf2742e88f25",
+    "size_bytes": 1032
+  },
+  "case-06/command_outputs/job-usage.json": {
+    "sha256": "8754b9644f27997595638c922a76c801c824693ca4ce29e63d06fca8c24d3b11",
+    "size_bytes": 1980
+  },
+  "case-06/command_outputs/job-wait-default.json": {
+    "sha256": "66b40380bff9e181ea2b18c5102118420de1b6cccb18f703c9a108fd109ea683",
+    "size_bytes": 2066
+  },
+  "case-06/command_outputs/job-wait.json": {
+    "sha256": "bb8fb000650e398a058fac8e7d72b6746bd927ec5515f97752f951c9e6c11fca",
+    "size_bytes": 2102
+  },
+  "case-06/process.json": {
+    "sha256": "5dcb24627c5b4d9d0759ccfb4a50441467b18f1d839b79efcd4bf41243a53b4c",
+    "size_bytes": 1169
+  },
+  "case-06/stderr.log": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "case-06/stdout.log": {
+    "sha256": "adbf1d8bb847688d94978fb195e1a4b03f37dcb5d00748e8ee661b9d2e51c81e",
+    "size_bytes": 173
+  },
+  "case-06/summary.json": {
+    "sha256": "311271b8e2dcf3690072784014d8bb4e78d460d11805966cb32d232902f758bd",
+    "size_bytes": 3274
+  },
+  "case-06/summary.receipt.json": {
+    "sha256": "49237a35cba8991c86295397fd4ed452e85ca44c1cb49e2458a1da925cde8888",
+    "size_bytes": 3651
+  },
+  "consumer-result.json": {
+    "sha256": "012e896b2e710e39d23ea6201a20acbccfba2f092a3f3971e005d80ff3dbf348",
+    "size_bytes": 1142
+  }
+}

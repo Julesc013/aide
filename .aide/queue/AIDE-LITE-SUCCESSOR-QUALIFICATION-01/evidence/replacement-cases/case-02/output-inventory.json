@@ -1,0 +1,66 @@
+{
+  "case-02/brownfield-context.json": {
+    "sha256": "a8c9db56a42d04c3d52f2953f2fbd6c2178d3630c5cfec9ca1e138c969e099a4",
+    "size_bytes": 916
+  },
+  "case-02/brownfield-install-apply.json": {
+    "sha256": "cbe9ab4dd2c02a4b8299bcf74983207feabf393d093a8fc670405cb3b7812a24",
+    "size_bytes": 1560
+  },
+  "case-02/brownfield-install-preview.json": {
+    "sha256": "addd44944812ee5c390c7ba6d07cb8c3365196f886b2fb872c5d545f8a20a7d7",
+    "size_bytes": 101378
+  },
+  "case-02/brownfield-pack.json": {
+    "sha256": "8660b680d9ed982cc8d9c947e71c41431a445f4b4ab5ae2151f869463bcadf71",
+    "size_bytes": 912
+  },
+  "case-02/brownfield-verify.json": {
+    "sha256": "49d2fab8fb2a636c50c115aeb32be994a3cd1614964126d41d3b834b18d449f0",
+    "size_bytes": 3049
+  },
+  "case-02/fresh-context.json": {
+    "sha256": "22b79684e384674d0fdfdca56622c49e37ec232e346d204a80dca9ad33c88591",
+    "size_bytes": 906
+  },
+  "case-02/fresh-install-apply.json": {
+    "sha256": "49115fbc849e97a5d2a8b7b2e298863f17a4b980112bc1c20ceff7c1e8dea84b",
+    "size_bytes": 1550
+  },
+  "case-02/fresh-install-preview.json": {
+    "sha256": "e4086d50cf361af060b618d911a0d395b2fae4d2a5e3ddb78a24168a87f636d9",
+    "size_bytes": 101368
+  },
+  "case-02/fresh-pack.json": {
+    "sha256": "6f1222393f52271aa0ffe13b0ce3cc8be8d4e982a6a93a29d79af26afdfb4747",
+    "size_bytes": 902
+  },
+  "case-02/fresh-verify.json": {
+    "sha256": "e8d886c788db89779659bc93762e6bd33aa65569069e972c2c9094d358e6f322",
+    "size_bytes": 2815
+  },
+  "case-02/offline-guard.py": {
+    "sha256": "f3ca0dc5ad58ca384cfd9ea09be6c3ff93fa787a99968edb8158923e4da2ae40",
+    "size_bytes": 387
+  },
+  "case-02/process.json": {
+    "sha256": "2bd36f93c069e216c61caac6a132b1f4e6b49e14cc8602a5d5cfbaef396f45f9",
+    "size_bytes": 693
+  },
+  "case-02/stderr.log": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "case-02/stdout.log": {
+    "sha256": "99ca909a764fb5c22973e7d7a8c004dbdc271eed77607936e79bb9e9d54d658b",
+    "size_bytes": 106
+  },
+  "case-02/summary.json": {
+    "sha256": "76127c40ef26feb7c929487c778682612f93d9eb1df9d499e8ebd0cd3b31072b",
+    "size_bytes": 2198
+  },
+  "consumer-result.json": {
+    "sha256": "d2381f70c2c10ddd6738cdf5820763e299da36fc4e3c276fb66dc89adccad096",
+    "size_bytes": 1142
+  }
+}

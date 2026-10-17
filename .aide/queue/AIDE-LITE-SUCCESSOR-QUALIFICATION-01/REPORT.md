@@ -1,6 +1,16 @@
 # Lite 1.1.0 candidate qualification
 
-The original candidate passed all eight original consumer families, then exposed an installed accounting defect. The repair has source and actual delivered-pack evidence. Replacement archives now pass build validation; their consumer qualification is next. Historical results below remain valid for their exact bytes. Public Lite 1.0.0 remains unchanged.
+The replacement 1.1.0 candidate (ZIP 80b8a875) passes all eight original consumer
+families and all 18 added forms. [Replacement evidence](evidence/replacement-consumers-qualified.json)
+and [56-form mapping](evidence/replacement-cli-coverage.json) retain exact command
+variants, expected WARN/refusal outcomes, raw-output identities and safe retirement.
+Actual published-predecessor recovery and final release checks remain. Automatic
+rollback across changed owned-file sets is unsupported; the next recovery checks
+keep unchanged and customized target states distinct. Public Lite 1.0.0 is unchanged.
+
+The table and original candidate narrative below are historical evidence for
+ZIP 089d75da, not substitutes for the separately linked replacement results.
+
 
 | Case | Result | Consumer seconds |
 | --- | --- | ---: |
@@ -67,3 +77,13 @@ preserved. Collection and retirement verified. The original candidate and its
 passes retain their original identities. Prepare allocations 15-22 original
 cases and 23 additional forms against the replacement bytes; no test launched.
 Actual published predecessor, recovery, replay and preview remain 24-27.
+
+Allocations 15-23 PASS: all eight unchanged original consumers and all 18 added
+forms on replacement ZIP 80b8a875. Exact 56-form mapping links actual commands,
+including repeatable-stream and JSON variants and expected warning/refusal states.
+All nine collections and retirements verified. Source a4b5d25f is task-only synced;
+dev/main remain 4f2c3960. Prepare actual predecessor 24, recovery 25 and scratch
+replay 26. Automatic rollback across changed owned path sets remains unsupported;
+qualify explicit recovery only for an unchanged completed update. Preserve the
+customized overlay state and its manual-reconciliation limit. Preview 27 and
+owner dispositions remain open. No new archive rebuild or publication.

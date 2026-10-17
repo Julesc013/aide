@@ -1,0 +1,21 @@
+{
+  "historical_format_failures": [
+    "4bb6a4f",
+    "651464a",
+    "ae26a1c"
+  ],
+  "promotion": "held",
+  "remote_after": {
+    "refs/heads/dev": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/main": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/task/aide-lite-successor-qualification-01": "a4b5d25f64b9e0ae3029302511956f5d33652f60"
+  },
+  "remote_before": {
+    "refs/heads/dev": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/main": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/task/aide-lite-successor-qualification-01": "447e393b3f87004641b7387c1f33828ac1ee3a85"
+  },
+  "source_commit": "a4b5d25f64b9e0ae3029302511956f5d33652f60",
+  "source_tree": "0ae6db54f8ea8c2b63016f1438318aa1ec640716",
+  "status": "PASS_TASK_CHECKPOINT_ONLY"
+}
