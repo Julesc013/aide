@@ -3,8 +3,8 @@
 - command: `capability ledger`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-current-memory-01`
-- current_commit: `4f2c39606378492622fa8580152373fffc074d7c`
+- current_branch: `task/aide-impact-coverage-01`
+- current_commit: `498eb2c09e927e621d862ff98afabdb8d3ca218d`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

@@ -1,0 +1,19 @@
+{
+  "original": {
+    "recommended_tier": "T0",
+    "changed_paths": [],
+    "changed_path_observation": null,
+    "warnings": [
+      "fatal: ambiguous argument 'refs/heads/base-not-present..HEAD': unknown revision or path not in the working tree.\nUse '--' to separate paths from revisions, like this:\n'git <command> [<revision>...] -- [<file>...]'",
+      "no_changed_paths_detected"
+    ]
+  },
+  "candidate": {
+    "recommended_tier": "T2",
+    "changed_paths": [],
+    "changed_path_observation": "incomplete",
+    "warnings": [
+      "base_diff_unavailable: fatal: ambiguous argument 'refs/heads/base-not-present...HEAD': unknown revision or path not in the working tree.\nUse '--' to separate paths from revisions, like this:\n'git <command> [<revision>...] -- [<file>...]'; endpoint_diff_unavailable: fatal: ambiguous argument 'refs/heads/base-not-present..HEAD': unknown revision or path not in the working tree.\nUse '--' to separate paths from revisions, like this:\n'git <command> [<revision>...] -- [<file>...]'"
+    ]
+  }
+}

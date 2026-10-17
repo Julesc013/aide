@@ -1,0 +1,23 @@
+{
+  "result": "PASS",
+  "command": "capability ledger",
+  "before_sha256s": {
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "9e51820f66fe4861aaa6498c1e25742d601b061e9ebc45026d4ad42ba28a89b2",
+    ".aide/reports/capability-evidence-bindings.json": "2f35abeaf8846931177319b33bb54aaf331c73160eaece623a5a56afa33de9b5",
+    ".aide/reports/capability-command-status.md": "e02c31ddd07a39cf38d99cd762f765ebe6d760651691379db14d981c2477203f"
+  },
+  "after_sha256s": {
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "1eb021cdc6a7292fafa4a7f488083fe384ee2e0e1fb15b40783edbd9012d80a8",
+    ".aide/reports/capability-evidence-bindings.json": "560fe9475f0b2b91ff26643087e7f5c49ca75481be8ba53ddadb83ee9eebed4e",
+    ".aide/reports/capability-command-status.md": "c69120881c4934494bc4df1fe70d13fd1890e4ea12cad3628885c46ca1e82ff6"
+  },
+  "classification_unchanged": true,
+  "binding": {
+    "state": "CURRENT",
+    "reason": "bound_source_inputs_unchanged",
+    "changed_refs": [],
+    "qualification": "source_classification_only"
+  }
+}

@@ -69,3 +69,10 @@ Admission ACCEPTed and guarded local branch created. Prepared existing-owner
 correction, additive observation fields, explicit CLI WARN with exit0 for a written
 incomplete report, unchanged known mappings and seven new regressions. Original
 six test bodies remain identical. Source runner/manifest await exact review.
+
+Allocation1 retired FAIL:12/13, all seven new tests pass. Static diagnosis found
+the original alias fixture is refused by the execution guard. Reviewed repair
+uses the actual source/export root with all assertions retained. Ledger refreshed
+once, classification unchanged and binding CURRENT. Allocation2 proposal combines
+source13 then conditional ownership6/export/delivered13 in fresh processes; ceiling3
+unchanged, no automatic retry. Full failure and controller stops retained.

@@ -1,0 +1,29 @@
+{
+  "base": "498eb2c09e927e621d862ff98afabdb8d3ca218d",
+  "files": {
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/ExecPlan.md": "c5e5c8a7547a115fe79cb9e931092f76c878c8e5695fc7d95acbae843e9a899c",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/attempt-01-missing-base-comparison.json": "cc840de6a93e4dcc23c7209fa9bb2016659ccace9311c74671ddc3c9729545ee",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/attempt-01-source-tests.json": "9aab10945be4d54e126017e7e88b89378b4cd314eee8675473da0492d759c646",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/attempt-01-source-tests.txt": "5f3ce2477b93df31a9a424291a4beb431a89711cfc28db7a86f3904c02e51fb2",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/controller-stops.md": "5f51a2e108b7e34b251296fb2ad1d395a8a46df41cba8cbaabbd336de3a09caa",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/ledger-preimages.json": "0c9fdd9899d89544a71e39d7fa18ef760645de7bc12864f5e3ec66a1b1e5cf09",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/ledger-refresh.json": "4e864e2af1649721e28a9286beffac462ddf2ac89ae6a221fd77f05e20501b1e",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/pack-effect.md": "efb5fd12be16669a989138b5057eebcece0a598dea987408cd3586597a737800",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/pack-job-template.json": "ddbedc8332ad0073f602be9690faf63ce5fa93506e2e6c98e615ca268fdac3af",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/pack-message.txt": "297106997e92d7f53fab247b0f41080cb5f3d92e41b8422c12396300c5395721",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/prior-pack-inventory.json": "28e1f89f6eefe064d22e4f062a8fb0e5b8e9d211ca0bf3aa8ed192b17a455ef7",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/repair-effect.md": "a1d8448355ef00c1e5e90fe37c11cdc4cdcce57f9bbc517d86c8d41f5fcad91a",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/repair-review.md": "445338981c36a09b5c1353c09cdc735b454902c8473039557f807867e7ed6981",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/repair-source.json": "f8b4b474a9512dfa9434e53ff34b586af6d25ea94b3079c5ff64d554d1a59913",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/source-attempt-01.json": "34745c1b12515c01ad2a6bc10ac37f03c9232f140853deba3f5296a8a60226ab",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/run_pack.py": "13e62f5721f7fd48c414fc26dc4cdbff60a174a038c982e6a9a1379743ce1af8",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/status.yaml": "70f69c455ad324896176e475e0430447ec862024fe494d0fef2c8de734ff2728",
+    ".aide/reports/capability-command-status.md": "c69120881c4934494bc4df1fe70d13fd1890e4ea12cad3628885c46ca1e82ff6",
+    ".aide/reports/capability-evidence-bindings.json": "560fe9475f0b2b91ff26643087e7f5c49ca75481be8ba53ddadb83ee9eebed4e",
+    ".aide/reports/capability-ledger.md": "1eb021cdc6a7292fafa4a7f488083fe384ee2e0e1fb15b40783edbd9012d80a8",
+    ".aide/scripts/tests/test_x_test_00_validation_tiers.py": "13ab07444e265c9ab4f524a6640ba88335cc29bafdcdc7370b71c077f54bb642"
+  },
+  "effect_sha256": "efb5fd12be16669a989138b5057eebcece0a598dea987408cd3586597a737800",
+  "template_sha256": "ddbedc8332ad0073f602be9690faf63ce5fa93506e2e6c98e615ca268fdac3af",
+  "message_sha256": "297106997e92d7f53fab247b0f41080cb5f3d92e41b8422c12396300c5395721"
+}

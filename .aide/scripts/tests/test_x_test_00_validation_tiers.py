@@ -36,9 +36,9 @@ class ValidationTierCommandTests(unittest.TestCase):
         return code, buffer.getvalue()
 
     def test_existing_test_command_remains_selftest_alias(self) -> None:
-        root = self.make_repo()
-        code, output = self.run_cli(root, "test")
-        self.assertEqual(code, 0)
+        # Exercise the admitted source or validated export, not an unowned scaffold.
+        code, output = self.run_cli(REPO_ROOT, "test")
+        self.assertEqual(code, 0, output)
         self.assertIn("AIDE Lite test", output)
         self.assertIn("status: PASS", output)
 

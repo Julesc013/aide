@@ -1,0 +1,38 @@
+test(validation): qualify impact advice through admitted execution
+
+## Summary
+- Prepare AIDE-IMPACT-COVERAGE-01 source recovery and portable qualification.
+
+## Why
+- The unchanged alias test submitted an unowned scaffold to the execution guard.
+- Qualification must exercise the admitted source and actual delivered payload.
+
+## Changed
+- Preserve the original failed attempt and every acceptance assertion.
+- Correct only the alias-test subject and retain captured diagnostics on failure.
+- Refresh existing capability evidence without changing capability classification.
+- Combine source checks and conditional export qualification within the original ceiling.
+
+## Validation
+- Attempt1: 12/13 passed, all seven new regressions passed; original failure retained.
+- PASS: collected digests, retirement, absent scratch and released reservation.
+- PASS: one reviewed ledger refresh; classification unchanged, binding CURRENT.
+- NOT RUN: exact allocation2 source13, ownership6 and delivered13.
+
+## Changelog
+- Internal: Exercise test alias through an admitted source or validated export.
+
+## Risks
+- The repaired selftest remains unqualified until its actual run.
+- Heuristic impact advice does not prove complete dependency coverage.
+
+## Follow-up
+- Run allocation2 after exact review and fresh admission; retain all outcomes.
+- Qualify preview and integration separately; preserve Lite1.0 and the Lite1.1 branch.
+
+AIDE-Task: AIDE-IMPACT-COVERAGE-01
+AIDE-Phase: recovery-and-pack-candidate
+AIDE-Result: CANDIDATE
+AIDE-Scope: fixture-repair-existing-export-qualification
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: exact-independent-review-required
