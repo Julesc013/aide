@@ -73,3 +73,11 @@ only; the portable pack has two affected payloads. See evidence/export-interrupt
 Original failure stays retained. Amend sequence step3/4: reuse exact completed
 export, then delivered60 and fixed preview in allocation3 under one separately
 reviewed effect. No new job, rebuild, source rerun or weakened runtime assertion.
+
+## Qualification closure
+
+Final allocation90ca096b passed delivered60 and exact three-commit preview at
+cba99132. Source61 subjects unchanged. All3allocations retired/quiescent with
+verified collection, scratch absent and reservations released. Original job2
+failure remains. Two exported payloads; reference is source-only. Final integration
+uses separately reviewed exact effect and actual receipt, not this planning state.

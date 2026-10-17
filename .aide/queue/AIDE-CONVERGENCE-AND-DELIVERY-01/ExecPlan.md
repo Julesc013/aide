@@ -824,3 +824,8 @@ follows its separate terminal effect; no expanded release or operational claim.
 Admitted AIDE-CONTEXT-TASK-SELECTION-01 contributes to P0/P6 daily-use start and
 explain. It reuses current-task observation; three separately reviewed native jobs
 maximum. No live context regeneration, new task selector or whole-milestone claim.
+
+Context-selection child qualification: source61/delivered60/ownership6 and fixed
+preview pass. Three jobs retired, original post-export wrapper failure preserved.
+Two portable payloads changed; source reference is not exported. Final exact
+review/ref checks and observed integration receipt determine dev/main closure.

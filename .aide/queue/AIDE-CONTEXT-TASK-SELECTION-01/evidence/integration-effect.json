@@ -1,0 +1,41 @@
+{
+  "schema": "aide.context-task-selection.integration-effect.v1",
+  "base": "9a22aa0913965c41685105d0781a70ecad16696c",
+  "candidate": "Exact reviewed closure map; substitute only resulting managed commit/tree.",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "task_branch": "task/aide-context-task-selection-01",
+  "expected_local_dev": "9a22aa0913965c41685105d0781a70ecad16696c",
+  "expected_local_main": "9a22aa0913965c41685105d0781a70ecad16696c",
+  "expected_remote_dev": "9a22aa0913965c41685105d0781a70ecad16696c",
+  "expected_remote_main": "9a22aa0913965c41685105d0781a70ecad16696c",
+  "preserved_qualification_ref": "task/aide-lite-successor-qualification-01",
+  "preserved_qualification_commit": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "effects": [
+    "After exact terminal review commit only closure-source.json files plus map through managed dry-run/apply, exact message/ref/parent/tree. Check latest and full base..candidate commits.",
+    "Under shared admission/dispatch controls require running dispatch, no active job, sole checkout, clean exact candidate, fresh ready helper plan, current expected local/remote refs and unchanged qualification branch. Fetch dev/main only and reobserve.",
+    "CAS fast-forward local dev from expected base to candidate; nonforce explicit candidate:refs/heads/dev push; verify remote dev.",
+    "After dev sync run read-only full structural validation and full base..candidate commit check. Recheck controls/refs/tree. CAS main from expected base to candidate; nonforce explicit push; verify both remote heads.",
+    "After main sync run child run_preview.py verify: exact fixed9a22aa09..cba99132 in-memory replay of all six outputs and complete three-commit set. Closure separately checked in full range. Failure stops retirement.",
+    "Only after both refs/postchecks pass switch to dev, verify clean tree/ancestor/exactownedtasksha, branch -d task/aide-context-task-selection-01. Task stays local-only. Keep every other branch."
+  ],
+  "required_evidence": [
+    "source61/delivered60/ownership6 PASS no skips; original wrapper failure retained",
+    "doctor/fullvalidate/packstatus PASS; binding CURRENT/classificationunchanged",
+    "same862members/two payloads; source reference not exported; published1.0/livecontext/liveledgerunchanged",
+    "fixedthreecommitpreview PASS; all3jobsretired/collectionsverified"
+  ],
+  "failure_response": "Record each started/completed effect in integration-result.log. Stop on changed inputs/refs or gate failure; inspect actual effects after uncertainty, never blindly repeat.",
+  "forbidden": [
+    "force push",
+    "history rewrite",
+    "tag/release effects",
+    "protection mutation/bypass",
+    "unrelated branch deletion",
+    "target mutation",
+    "provider/model requests",
+    "package rebuild",
+    "further job allocation"
+  ]
+}

@@ -1,0 +1,36 @@
+fix(context): qualify selected-task packets for portable consumers
+
+## Summary
+- Close bounded qualification for AIDE-CONTEXT-TASK-SELECTION-01.
+
+## Why
+- Task and context views must agree without inventing active work or permission.
+
+## Changed
+- Record source, delivered, ownership and fixed-preview outcomes.
+- Preserve original failed export-wrapper attempt and successful continuation.
+- Update current navigation and prepare exact dev/main integration evidence.
+
+## Validation
+- PASS: source 61, delivered 60, ownership 6; no test skips.
+- PASS: doctor, full validate, pack status and exact three-commit preview.
+- PASS: all three jobs retired, collections verified and reservations released.
+- PASS: source subjects and completed export unchanged during continuation.
+
+## Changelog
+- Fixed: Context packets explain the recorded task selection consistently.
+
+## Risks
+- Selection is recorded context, not active ownership or execution permission.
+- Two payloads changed; the context reference remains source-only.
+- No new release, wider host support or whole-outcome efficiency claim.
+
+## Follow-up
+- Perform separately reviewed dev/main synchronization and exact local branch retirement.
+
+AIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01
+AIDE-Phase: qualification-closure
+AIDE-Result: PASS_WITH_RETAINED_FAILURE
+AIDE-Scope: bounded-context-selection-and-portable-consumers
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: terminal-independent-integration-review-required

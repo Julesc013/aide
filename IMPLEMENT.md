@@ -2,11 +2,13 @@
 
 ## Selected-task context - 2026-10-18
 
-[AIDE-CONTEXT-TASK-SELECTION-01](.aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/ExecPlan.md)
-reuses the existing task view to replace the historical Q17 context link. Recorded
-selection, status and uncertainty remain distinct from active work or authorization.
-The candidate preserves existing assertions; source and delivered qualification
-are pending. See [context behavior](docs/reference/context-compiler-v0.md).
+[Context qualification](.aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/REPORT.md)
+records source 61, delivered 60, ownership 6 and exact preview passes. The existing
+resolver now provides consistent recorded selection, status and uncertainty to
+context packets. All three jobs retired; the original wrapper failure is retained.
+Two payload files changed in the 862-member pack; the reference remains source-only.
+Published 1.0.0 and live context outputs are unchanged. Reviewed effects and actual
+Git refs establish integration; this qualification is not a new release.
 
 ## Outcome conservation - 2026-10-18
 

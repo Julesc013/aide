@@ -4089,9 +4089,9 @@ items:
     evidence: .aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence
 
   - id: AIDE-CONTEXT-TASK-SELECTION-01
-    status: needs_review
-    result: SOURCE_CANDIDATE
-    planning_state: exact_source_and_job_review
+    status: passed_with_notes
+    result: SOURCE_DELIVERED_AND_PREVIEW_PASS
+    planning_state: qualified_context_selection_integration_receipt_required
     title: Make context packets explain the selected WorkUnit
     task: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/task.yaml
     exec_plan: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/ExecPlan.md

@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 442c2cccb5640c3e2a21157802935af4e53a4f68..0a6feb17a0c030690b46d1f14c96e39b8447236f
-source_head: 0a6feb17a0c030690b46d1f14c96e39b8447236f
+source_range: 9a22aa0913965c41685105d0781a70ecad16696c..cba99132e729511b497e65ceb4f1c73cc4d6a29a
+source_head: cba99132e729511b497e65ceb4f1c73cc4d6a29a
 commit_count: 3
 malformed_count: 0
 preview_only: true
@@ -11,17 +11,17 @@ release_publishing: false
 
 ## Summary
 
-- Fixed: 2
-- Internal: 1
+- Changed: 2
+- Fixed: 1
+
+## Changed
+
+- Record selected-task context proof and prepare its portable consumer checks. (bf15170f5a0d test(context): record source proof and prepare delivered qualification)
+- Prepare portable context checks using the already completed export. (cba99132e729 test(context): preserve export and qualify delivered context selection)
 
 ## Fixed
 
-- Preserve project outcome metadata and refuse silent loss of damaged records. (761d284613f5 fix(outcomes): preserve project metadata and refuse lossy ledger updates)
-- Export tested preservation of project outcome metadata and corrupt-record refusal. (0a6feb17a0c0 fix(outcomes): qualify preservation in the portable pack)
-
-## Internal
-
-- Correct outcome conservation fixtures and retain failed-run evidence. (04fcc15a75ae test(outcomes): correct fixtures and prepare delivered qualification)
+- Context packets follow the recorded task selection and explain uncertainty. (6a50010b7160 fix(context): explain the selected task through the existing resolver)
 
 ## Malformed Commits
 

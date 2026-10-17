@@ -161,3 +161,5 @@ outcome_conservation_result_ref: .aide/queue/AIDE-OUTCOME-CONSERVATION-01/REPORT
 outcome_conservation_integration_receipt: .aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/integration-result.log
 
 context_task_selection_ref: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/status.yaml
+context_task_selection_result_ref: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/REPORT.md
+context_task_selection_integration_receipt: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/integration-result.log

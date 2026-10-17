@@ -1,17 +1,69 @@
 {
   "categories": {
+    "Changed": [
+      {
+        "aide_phase": "delivered-preparation",
+        "aide_result": "SOURCE_PASS",
+        "breaking": false,
+        "category": "Changed",
+        "commit": "bf15170f5a0d",
+        "commit_sha": "bf15170f5a0dc41385b732b8d0c0d443dfd55aee",
+        "entry": "Record selected-task context proof and prepare its portable consumer checks.",
+        "follow_up": "- Run one reviewed export job, then preview and separately reviewed integration.\n\nAIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01\nAIDE-Phase: delivered-preparation\nAIDE-Result: SOURCE_PASS\nAIDE-Scope: selected-task-context-portable-consumer\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-delivered-job-review-required",
+        "risks": "- No active-worker, atomic snapshot, new release or whole-workflow claim.",
+        "scope": "context",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "test(context): record source proof and prepare delivered qualification",
+        "summary": "Record selected-task context proof and prepare its portable consumer checks.",
+        "type": "test",
+        "validation": "- PASS: source 61, no failures/errors/skips; job fully retired and collection verified.\n- PASS: capability CURRENT with unchanged classification; runner syntax.\n- NOT RUN: actual delivered job and final preview."
+      },
+      {
+        "aide_phase": "delivered-preview-continuation",
+        "aide_result": "EXPORT_PASS_DELIVERED_PENDING",
+        "breaking": false,
+        "category": "Changed",
+        "commit": "cba99132e729",
+        "commit_sha": "cba99132e729511b497e65ceb4f1c73cc4d6a29a",
+        "entry": "Prepare portable context checks using the already completed export.",
+        "follow_up": "- Run final reviewed continuation and review terminal integration separately.\n\nAIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01\nAIDE-Phase: delivered-preview-continuation\nAIDE-Result: EXPORT_PASS_DELIVERED_PENDING\nAIDE-Scope: exact-export-and-fixed-preview\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-continuation-review-required",
+        "risks": "- Source documentation is not an exported pack member; no wider delivery claim.\n- No job-cap increase, live context change, new release or active-worker claim.",
+        "scope": "context",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "test(context): preserve export and qualify delivered context selection",
+        "summary": "Prepare portable context checks using the already completed export.",
+        "type": "test",
+        "validation": "- PASS: source 61; ownership 6; export, doctor, validate and pack status.\n- PASS: exact 862-member inventory, two payloads, original source tests unchanged.\n- NOT RUN: delivered suite and preview; original wrapper failure retained."
+      }
+    ],
     "Fixed": [
       {
         "aide_phase": "source-candidate",
         "aide_result": "CANDIDATE",
         "breaking": false,
         "category": "Fixed",
-        "commit": "761d284613f5",
-        "commit_sha": "761d284613f5030b45df28cb1f464d660ed6ba9b",
-        "entry": "Preserve project outcome metadata and refuse silent loss of damaged records.",
-        "follow_up": "- Run one source job; qualify delivered payload and review integration separately.\n\nAIDE-Task: AIDE-OUTCOME-CONSERVATION-01\nAIDE-Phase: source-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: existing-outcome-conservation\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-source-and-job-review-required",
-        "risks": "- Not immutable history, concurrent-writer exclusion or a multi-file transaction.\n- No live ledger migration or new qualified release.",
-        "scope": "outcomes",
+        "commit": "6a50010b7160",
+        "commit_sha": "6a50010b7160ea52206edc84c864c016a7ea74c4",
+        "entry": "Context packets follow the recorded task selection and explain uncertainty.",
+        "follow_up": "- Qualify source, delivered payload and preview; review integration separately.\n\nAIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01\nAIDE-Phase: source-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: existing-context-task-selection\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-source-and-job-review-required",
+        "risks": "- Recorded selection is not an atomic snapshot, active worker or permission.\n- No live context regeneration or new qualified release.",
+        "scope": "context",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -21,68 +73,16 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "fix(outcomes): preserve project metadata and refuse lossy ledger updates",
-        "summary": "Preserve project outcome metadata and refuse silent loss of damaged records.",
+        "subject": "fix(context): explain the selected task through the existing resolver",
+        "summary": "Context packets follow the recorded task selection and explain uncertainty.",
         "type": "fix",
-        "validation": "- PASS: original ten method ASTs unchanged; source and runner syntax.\n- NOT RUN: exact reviewed source and delivered jobs.\n- NOTE: capability binding requires its later reviewed refresh."
-      },
-      {
-        "aide_phase": "qualified-pack-preview-preparation",
-        "aide_result": "PASS_WITH_RETAINED_FAILURE",
-        "breaking": false,
-        "category": "Fixed",
-        "commit": "0a6feb17a0c0",
-        "commit_sha": "0a6feb17a0c030690b46d1f14c96e39b8447236f",
-        "entry": "Export tested preservation of project outcome metadata and corrupt-record refusal.",
-        "follow_up": "- Run exact promotion preview then review closure and guarded dev/main synchronization.\n\nAIDE-Task: AIDE-OUTCOME-CONSERVATION-01\nAIDE-Phase: qualified-pack-preview-preparation\nAIDE-Result: PASS_WITH_RETAINED_FAILURE\nAIDE-Scope: portable-outcome-conservation\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-preview-and-integration-review-required",
-        "risks": "- Original failed fixture attempt retained; no broad reliability or efficiency claim.\n- Published1.0 remains unchanged; this does not publish1.1.",
-        "scope": "outcomes",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "fix(outcomes): qualify preservation in the portable pack",
-        "summary": "Export tested preservation of project outcome metadata and corrupt-record refusal.",
-        "type": "fix",
-        "validation": "- PASS: source20, delivered20 and ownership6 with no skips.\n- PASS: doctor, structural validation and pack-status; exact862members.\n- PASS: collected digests and retirement for both attempts; live ledger unchanged.\n- PASS: published Lite1.0 assets unchanged; four intended payloads only.\n- NOT RUN: final fixed-range preview, separately reviewed allocation3."
-      }
-    ],
-    "Internal": [
-      {
-        "aide_phase": "source-delivered-preparation",
-        "aide_result": "CANDIDATE",
-        "breaking": false,
-        "category": "Internal",
-        "commit": "04fcc15a75ae",
-        "commit_sha": "04fcc15a75aecefe7d60c547c073c9517c2b7d55",
-        "entry": "Correct outcome conservation fixtures and retain failed-run evidence.",
-        "follow_up": "- Run exact allocation2 once; review collected results before preview and integration.\n\nAIDE-Task: AIDE-OUTCOME-CONSERVATION-01\nAIDE-Phase: source-delivered-preparation\nAIDE-Result: CANDIDATE\nAIDE-Scope: outcome-fixture-recovery-and-export-qualification\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-pack-source-and-job-review-required",
-        "risks": "- Allocation2 remains bounded; original failure is not erased or reclassified.\n- No release or target behavior claim.",
-        "scope": "outcomes",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "test(outcomes): correct fixtures and prepare delivered qualification",
-        "summary": "Correct outcome conservation fixtures and retain failed-run evidence.",
-        "type": "test",
-        "validation": "- PASS: original ten methods in attempt1 and unchanged ASTs after fixture repair.\n- PASS: baseline metadata-loss and malformed-skip comparison; retirement digests.\n- FAIL retained: original attempt1 has three failures and two errors across three methods.\n- PASS: capability binding CURRENT; classification unchanged.\n- NOT RUN: corrected source20, delivered20 and exporter qualification."
+        "validation": "- PASS: syntax and all 17 original binding method ASTs unchanged.\n- NOT RUN: source and delivered qualification; capability refresh follows review."
       }
     ]
   },
   "category_counts": {
-    "Fixed": 2,
-    "Internal": 1
+    "Changed": 2,
+    "Fixed": 1
   },
   "commit_count": 3,
   "entries": [
@@ -91,12 +91,12 @@
       "aide_result": "CANDIDATE",
       "breaking": false,
       "category": "Fixed",
-      "commit": "761d284613f5",
-      "commit_sha": "761d284613f5030b45df28cb1f464d660ed6ba9b",
-      "entry": "Preserve project outcome metadata and refuse silent loss of damaged records.",
-      "follow_up": "- Run one source job; qualify delivered payload and review integration separately.\n\nAIDE-Task: AIDE-OUTCOME-CONSERVATION-01\nAIDE-Phase: source-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: existing-outcome-conservation\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-source-and-job-review-required",
-      "risks": "- Not immutable history, concurrent-writer exclusion or a multi-file transaction.\n- No live ledger migration or new qualified release.",
-      "scope": "outcomes",
+      "commit": "6a50010b7160",
+      "commit_sha": "6a50010b7160ea52206edc84c864c016a7ea74c4",
+      "entry": "Context packets follow the recorded task selection and explain uncertainty.",
+      "follow_up": "- Qualify source, delivered payload and preview; review integration separately.\n\nAIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01\nAIDE-Phase: source-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: existing-context-task-selection\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-source-and-job-review-required",
+      "risks": "- Recorded selection is not an atomic snapshot, active worker or permission.\n- No live context regeneration or new qualified release.",
+      "scope": "context",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -106,22 +106,22 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "fix(outcomes): preserve project metadata and refuse lossy ledger updates",
-      "summary": "Preserve project outcome metadata and refuse silent loss of damaged records.",
+      "subject": "fix(context): explain the selected task through the existing resolver",
+      "summary": "Context packets follow the recorded task selection and explain uncertainty.",
       "type": "fix",
-      "validation": "- PASS: original ten method ASTs unchanged; source and runner syntax.\n- NOT RUN: exact reviewed source and delivered jobs.\n- NOTE: capability binding requires its later reviewed refresh."
+      "validation": "- PASS: syntax and all 17 original binding method ASTs unchanged.\n- NOT RUN: source and delivered qualification; capability refresh follows review."
     },
     {
-      "aide_phase": "source-delivered-preparation",
-      "aide_result": "CANDIDATE",
+      "aide_phase": "delivered-preparation",
+      "aide_result": "SOURCE_PASS",
       "breaking": false,
-      "category": "Internal",
-      "commit": "04fcc15a75ae",
-      "commit_sha": "04fcc15a75aecefe7d60c547c073c9517c2b7d55",
-      "entry": "Correct outcome conservation fixtures and retain failed-run evidence.",
-      "follow_up": "- Run exact allocation2 once; review collected results before preview and integration.\n\nAIDE-Task: AIDE-OUTCOME-CONSERVATION-01\nAIDE-Phase: source-delivered-preparation\nAIDE-Result: CANDIDATE\nAIDE-Scope: outcome-fixture-recovery-and-export-qualification\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-pack-source-and-job-review-required",
-      "risks": "- Allocation2 remains bounded; original failure is not erased or reclassified.\n- No release or target behavior claim.",
-      "scope": "outcomes",
+      "category": "Changed",
+      "commit": "bf15170f5a0d",
+      "commit_sha": "bf15170f5a0dc41385b732b8d0c0d443dfd55aee",
+      "entry": "Record selected-task context proof and prepare its portable consumer checks.",
+      "follow_up": "- Run one reviewed export job, then preview and separately reviewed integration.\n\nAIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01\nAIDE-Phase: delivered-preparation\nAIDE-Result: SOURCE_PASS\nAIDE-Scope: selected-task-context-portable-consumer\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-delivered-job-review-required",
+      "risks": "- No active-worker, atomic snapshot, new release or whole-workflow claim.",
+      "scope": "context",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -131,22 +131,22 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "test(outcomes): correct fixtures and prepare delivered qualification",
-      "summary": "Correct outcome conservation fixtures and retain failed-run evidence.",
+      "subject": "test(context): record source proof and prepare delivered qualification",
+      "summary": "Record selected-task context proof and prepare its portable consumer checks.",
       "type": "test",
-      "validation": "- PASS: original ten methods in attempt1 and unchanged ASTs after fixture repair.\n- PASS: baseline metadata-loss and malformed-skip comparison; retirement digests.\n- FAIL retained: original attempt1 has three failures and two errors across three methods.\n- PASS: capability binding CURRENT; classification unchanged.\n- NOT RUN: corrected source20, delivered20 and exporter qualification."
+      "validation": "- PASS: source 61, no failures/errors/skips; job fully retired and collection verified.\n- PASS: capability CURRENT with unchanged classification; runner syntax.\n- NOT RUN: actual delivered job and final preview."
     },
     {
-      "aide_phase": "qualified-pack-preview-preparation",
-      "aide_result": "PASS_WITH_RETAINED_FAILURE",
+      "aide_phase": "delivered-preview-continuation",
+      "aide_result": "EXPORT_PASS_DELIVERED_PENDING",
       "breaking": false,
-      "category": "Fixed",
-      "commit": "0a6feb17a0c0",
-      "commit_sha": "0a6feb17a0c030690b46d1f14c96e39b8447236f",
-      "entry": "Export tested preservation of project outcome metadata and corrupt-record refusal.",
-      "follow_up": "- Run exact promotion preview then review closure and guarded dev/main synchronization.\n\nAIDE-Task: AIDE-OUTCOME-CONSERVATION-01\nAIDE-Phase: qualified-pack-preview-preparation\nAIDE-Result: PASS_WITH_RETAINED_FAILURE\nAIDE-Scope: portable-outcome-conservation\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-preview-and-integration-review-required",
-      "risks": "- Original failed fixture attempt retained; no broad reliability or efficiency claim.\n- Published1.0 remains unchanged; this does not publish1.1.",
-      "scope": "outcomes",
+      "category": "Changed",
+      "commit": "cba99132e729",
+      "commit_sha": "cba99132e729511b497e65ceb4f1c73cc4d6a29a",
+      "entry": "Prepare portable context checks using the already completed export.",
+      "follow_up": "- Run final reviewed continuation and review terminal integration separately.\n\nAIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01\nAIDE-Phase: delivered-preview-continuation\nAIDE-Result: EXPORT_PASS_DELIVERED_PENDING\nAIDE-Scope: exact-export-and-fixed-preview\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-continuation-review-required",
+      "risks": "- Source documentation is not an exported pack member; no wider delivery claim.\n- No job-cap increase, live context change, new release or active-worker claim.",
+      "scope": "context",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -156,10 +156,10 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "fix(outcomes): qualify preservation in the portable pack",
-      "summary": "Export tested preservation of project outcome metadata and corrupt-record refusal.",
-      "type": "fix",
-      "validation": "- PASS: source20, delivered20 and ownership6 with no skips.\n- PASS: doctor, structural validation and pack-status; exact862members.\n- PASS: collected digests and retirement for both attempts; live ledger unchanged.\n- PASS: published Lite1.0 assets unchanged; four intended payloads only.\n- NOT RUN: final fixed-range preview, separately reviewed allocation3."
+      "subject": "test(context): preserve export and qualify delivered context selection",
+      "summary": "Prepare portable context checks using the already completed export.",
+      "type": "test",
+      "validation": "- PASS: source 61; ownership 6; export, doctor, validate and pack status.\n- PASS: exact 862-member inventory, two payloads, original source tests unchanged.\n- NOT RUN: delivered suite and preview; original wrapper failure retained."
     }
   ],
   "generated_by": "aide-lite",
@@ -170,7 +170,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "0a6feb17a0c030690b46d1f14c96e39b8447236f",
-  "source_range": "442c2cccb5640c3e2a21157802935af4e53a4f68..0a6feb17a0c030690b46d1f14c96e39b8447236f",
+  "source_head": "cba99132e729511b497e65ceb4f1c73cc4d6a29a",
+  "source_range": "9a22aa0913965c41685105d0781a70ecad16696c..cba99132e729511b497e65ceb4f1c73cc4d6a29a",
   "warnings": []
 }

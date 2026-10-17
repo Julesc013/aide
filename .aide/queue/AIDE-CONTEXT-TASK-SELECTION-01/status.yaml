@@ -1,7 +1,13 @@
 schema_version: aide.queue-status.v0
 id: AIDE-CONTEXT-TASK-SELECTION-01
-status: needs_review
-result: SOURCE_PASS_EXPORT_COMPLETE_DELIVERED_NOT_STARTED
-planning_state: exact_delivered_preview_continuation_review
-jobs_allocated: 2
+status: passed_with_notes
+result: SOURCE_DELIVERED_AND_PREVIEW_PASS
+planning_state: qualified_context_selection_integration_receipt_required
+jobs_allocated: 3
 maximum_jobs: 3
+source_tests: 61
+delivered_tests: 60
+ownership_tests: 6
+original_failed_attempt: 425afc831eb8422d84ef3ad27e612192
+report_ref: REPORT.md
+integration_receipt_ref: evidence/integration-result.log

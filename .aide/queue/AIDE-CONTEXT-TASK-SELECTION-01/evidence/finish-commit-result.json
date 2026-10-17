@@ -1,0 +1,32 @@
+{
+  "result": "PASS",
+  "commit": "cba99132e729511b497e65ceb4f1c73cc4d6a29a",
+  "tree": "2e837b40289dcce2d7ca1a0395d0537f476e89be",
+  "base": "bf15170f5a0dc41385b732b8d0c0d443dfd55aee",
+  "paths": [
+    ".aide/export/aide-lite-pack-v0/checksums.json",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_task_binding.py",
+    ".aide/export/aide-lite-pack-v0/manifest.yaml",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/ExecPlan.md",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/attempt-02-ownership-tests.json",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/attempt-02-qualification.json",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/attempt-02-stderr.txt",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/attempt-02-stdout.txt",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/export-interruption.md",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/finish-effect.md",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/finish-job-template.json",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/finish-message.txt",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/finish-source.json",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/pack-attempt-02.json",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/pack-commit-result.json",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/pack-correction-review.md",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/pack-review.md",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/preview-prior-hashes.json",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/validation.md",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/run_finish.py",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/run_pack.py",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/run_preview.py",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/status.yaml"
+  ]
+}

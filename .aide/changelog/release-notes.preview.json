@@ -1,64 +1,71 @@
 {
   "follow_up": [
     {
-      "commit": "761d284613f5",
-      "summary": "Run one source job; qualify delivered payload and review integration separately."
+      "commit": "6a50010b7160",
+      "summary": "Qualify source, delivered payload and preview; review integration separately."
     },
     {
-      "commit": "04fcc15a75ae",
-      "summary": "Run exact allocation2 once; review collected results before preview and integration."
+      "commit": "bf15170f5a0d",
+      "summary": "Run one reviewed export job, then preview and separately reviewed integration."
     },
     {
-      "commit": "0a6feb17a0c0",
-      "summary": "Run exact promotion preview then review closure and guarded dev/main synchronization."
+      "commit": "cba99132e729",
+      "summary": "Run final reviewed continuation and review terminal integration separately."
     }
   ],
   "highlights": [
     {
       "breaking": false,
-      "category": "Fixed",
-      "commit": "761d284613f5",
-      "subject": "fix(outcomes): preserve project metadata and refuse lossy ledger updates",
-      "summary": "Preserve project outcome metadata and refuse silent loss of damaged records."
+      "category": "Changed",
+      "commit": "bf15170f5a0d",
+      "subject": "test(context): record source proof and prepare delivered qualification",
+      "summary": "Record selected-task context proof and prepare its portable consumer checks."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "cba99132e729",
+      "subject": "test(context): preserve export and qualify delivered context selection",
+      "summary": "Prepare portable context checks using the already completed export."
     },
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "0a6feb17a0c0",
-      "subject": "fix(outcomes): qualify preservation in the portable pack",
-      "summary": "Export tested preservation of project outcome metadata and corrupt-record refusal."
+      "commit": "6a50010b7160",
+      "subject": "fix(context): explain the selected task through the existing resolver",
+      "summary": "Context packets follow the recorded task selection and explain uncertainty."
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "761d284613f5",
-      "summary": "Not immutable history, concurrent-writer exclusion or a multi-file transaction."
+      "commit": "6a50010b7160",
+      "summary": "Recorded selection is not an atomic snapshot, active worker or permission."
     },
     {
-      "commit": "04fcc15a75ae",
-      "summary": "Allocation2 remains bounded; original failure is not erased or reclassified."
+      "commit": "bf15170f5a0d",
+      "summary": "No active-worker, atomic snapshot, new release or whole-workflow claim."
     },
     {
-      "commit": "0a6feb17a0c0",
-      "summary": "Original failed fixture attempt retained; no broad reliability or efficiency claim."
+      "commit": "cba99132e729",
+      "summary": "Source documentation is not an exported pack member; no wider delivery claim."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "0a6feb17a0c030690b46d1f14c96e39b8447236f",
-  "source_range": "442c2cccb5640c3e2a21157802935af4e53a4f68..0a6feb17a0c030690b46d1f14c96e39b8447236f",
+  "source_head": "cba99132e729511b497e65ceb4f1c73cc4d6a29a",
+  "source_range": "9a22aa0913965c41685105d0781a70ecad16696c..cba99132e729511b497e65ceb4f1c73cc4d6a29a",
   "validation_summary": [
     {
-      "commit": "761d284613f5",
-      "summary": "PASS: original ten method ASTs unchanged; source and runner syntax."
+      "commit": "6a50010b7160",
+      "summary": "PASS: syntax and all 17 original binding method ASTs unchanged."
     },
     {
-      "commit": "04fcc15a75ae",
-      "summary": "PASS: original ten methods in attempt1 and unchanged ASTs after fixture repair."
+      "commit": "bf15170f5a0d",
+      "summary": "PASS: source 61, no failures/errors/skips; job fully retired and collection verified."
     },
     {
-      "commit": "0a6feb17a0c0",
-      "summary": "PASS: source20, delivered20 and ownership6 with no skips."
+      "commit": "cba99132e729",
+      "summary": "PASS: source 61; ownership 6; export, doctor, validate and pack status."
     }
   ],
   "warnings": []
