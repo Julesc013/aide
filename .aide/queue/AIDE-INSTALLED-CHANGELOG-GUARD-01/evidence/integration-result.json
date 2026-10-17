@@ -1,0 +1,53 @@
+{
+  "schema": "aide.git-defaults.integration-receipt.v1",
+  "candidate": "c02228d0a34c6c389b4f23d9d6b1deb8d4c02bad",
+  "tree": "cb3aa255654d5854f6051375aa8c13a172bf7fde",
+  "started_utc": "2026-10-17T12:12:34.981921+00:00",
+  "before_expected": {
+    "refs/heads/dev": "7f42f88df495e85eeb94eb3b6a80ad8b2a84ddc7",
+    "refs/heads/main": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a"
+  },
+  "operations": [
+    {
+      "branch": "dev",
+      "local_cas": "PASS",
+      "old": "7f42f88df495e85eeb94eb3b6a80ad8b2a84ddc7",
+      "new": "c02228d0a34c6c389b4f23d9d6b1deb8d4c02bad",
+      "push_exit": 0,
+      "push_stdout": "",
+      "push_stderr": "To https://github.com/Julesc013/aide.git\n   7f42f88d..c02228d0  dev -> dev\n",
+      "observed_after": {
+        "refs/heads/dev": "c02228d0a34c6c389b4f23d9d6b1deb8d4c02bad",
+        "refs/heads/main": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a"
+      },
+      "remote_tree": "cb3aa255654d5854f6051375aa8c13a172bf7fde"
+    },
+    {
+      "branch": "main",
+      "local_cas": "PASS",
+      "old": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a",
+      "new": "c02228d0a34c6c389b4f23d9d6b1deb8d4c02bad",
+      "push_exit": 0,
+      "push_stdout": "",
+      "push_stderr": "To https://github.com/Julesc013/aide.git\n   6f2abc4c..c02228d0  main -> main\n",
+      "observed_after": {
+        "refs/heads/dev": "c02228d0a34c6c389b4f23d9d6b1deb8d4c02bad",
+        "refs/heads/main": "c02228d0a34c6c389b4f23d9d6b1deb8d4c02bad"
+      },
+      "remote_tree": "cb3aa255654d5854f6051375aa8c13a172bf7fde"
+    }
+  ],
+  "result": "PASS",
+  "effect_manifest_sha256": "f6379a2c99987f638a8c0d953c5dc9a94112efd74b428bfc1759dbd48e1236d4",
+  "prior_preflight": "integration-result.log: zero operations; raw-vs-canonical config digest comparison corrected",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "before": {
+    "refs/heads/dev": "7f42f88df495e85eeb94eb3b6a80ad8b2a84ddc7",
+    "refs/heads/main": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a"
+  },
+  "after": {
+    "refs/heads/dev": "c02228d0a34c6c389b4f23d9d6b1deb8d4c02bad",
+    "refs/heads/main": "c02228d0a34c6c389b4f23d9d6b1deb8d4c02bad"
+  },
+  "finished_utc": "2026-10-17T12:12:49.936204+00:00"
+}

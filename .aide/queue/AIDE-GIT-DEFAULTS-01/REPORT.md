@@ -1,6 +1,6 @@
 # Current outcome
 
-Portable defaults and actual fresh/customized consumers are qualified. The dependent installed-changelog repair passed, including both delivered CLIs after target queue creation. See [repair outcome](../AIDE-INSTALLED-CHANGELOG-GUARD-01/REPORT.md). Original attempts below retain their subjects and failures. Exact dev/main integration remains separately reviewed.
+Portable defaults and actual fresh/customized consumers are qualified. The dependent installed-changelog repair passed, including both delivered CLIs after target queue creation. See [repair outcome](../AIDE-INSTALLED-CHANGELOG-GUARD-01/REPORT.md). Original attempts below retain their subjects and failures. Independent exact review and observed dev/main synchronization completed at c02228d0; the repair outcome links the durable receipt.
 
 # Portable Git defaults: implementation and qualification checkpoint
 

@@ -1,5 +1,14 @@
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
+## Portable defaults qualified and integrated - 2026-10-17
+
+Actual fresh/customized consumers and delivered changelog checks passed. Independent
+review accepted the final source/evidence tree; c02228d0 reached local and remote
+dev/main with matching trees. See the guard-repair integration-result.json. Earlier
+blocked checkpoints below remain historical. Native owner adoption and bounded
+daily-use coordination preparation are next; no new runtime or target effect is
+admitted by this closeout.
+
 ## Portable defaults implemented; installed changelog repair required - 2026-10-17
 
 AIDE-GIT-DEFAULTS-01 retains 47 passing methods, a rebuilt development pack and

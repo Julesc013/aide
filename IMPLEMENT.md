@@ -10,7 +10,9 @@ remain unchanged. All nine new behavior methods and 38 other methods have passin
 evidence. The pack is rebuilt and validated; original failures remain preserved.
 The dependent installed-queue repair and actual default/customized-update proof
 now pass. Original attempts and their failures remain; all jobs are retired.
-Exact integration review is next. No published release was changed.
+Exact independent review accepted tree cb3aa255; c02228d0 then reached local and
+remote dev/main by checked nonforce fast-forwards. The durable integration receipt
+records both effects. No published release was changed.
 
 ## Bounded current-task projection source outcome - 2026-10-17
 

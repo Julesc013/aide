@@ -1,0 +1,24 @@
+{
+  "schema": "aide.git-defaults.receipt-closure-effect.v1",
+  "base": "c02228d0a34c6c389b4f23d9d6b1deb8d4c02bad",
+  "candidate": "exact independently reviewed metadata successor commit/tree only",
+  "expected_local_remote_dev_main": "c02228d0a34c6c389b4f23d9d6b1deb8d4c02bad",
+  "task_branch": "task/aide-installed-changelog-guard-01",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "authority": "parent standing delegation, owner default integration/short-lived branch direction, exact independent verdict required",
+  "scope": "persist observed prior integration; metadata-only source successor; no export or new qualification",
+  "effects": [
+    "Fresh clean helper/commit checks, exact HEAD/tree and config, one worktree, no active/pending jobs, running dispatch, all dev/main refs unchanged under existing estate lock.",
+    "CAS fast-forward local dev then nonforce push and remote/tree verification; freshly recheck before repeating for main.",
+    "After both remote refs match candidate, verify task branch is local-only and fully contained in dev/main, switch the clean sole checkout to dev, and delete only task/aide-installed-changelog-guard-01 with normal git branch -d. Preserve any uncertainty."
+  ],
+  "exclusions": [
+    "remote deletion",
+    "other local branch retirement",
+    "force/reset",
+    "hosting protection",
+    "tag/release",
+    "new job/provider/target effects"
+  ],
+  "recovery": "Retain observations; inspect actual refs after uncertainty; no blind retry or force. Record final synchronization and local retirement in an ignored effect journal, without recursively committing receipts for their own commits."
+}

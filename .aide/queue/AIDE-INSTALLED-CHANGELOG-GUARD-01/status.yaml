@@ -4,7 +4,7 @@ status: passed_with_notes
 result: PASS_WITH_PRESERVED_ATTEMPTS
 classification: source_and_actual_consumers_qualified
 review_gate: exact_source_and_each_effect_required
-next_action: review_terminal_source_and_integration_effect
+next_action: continue_parent_native_owner_adoption_preparation
 jobs_allocated: 3
 maximum_jobs: 3
 product_qualified: true
@@ -15,5 +15,6 @@ continuation_admission_ref: evidence/continuation-admission.md
 continuation_gate: exact_independent_accept_required
 
 qualification_scope: portable_git_defaults_and_installed_changelog_on_observed_native_route
-integration_state: pending_exact_effect_review
+integration_state: dev_and_main_observed_c02228d0
+integration_result_ref: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/evidence/integration-result.json
 terminal_result_ref: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/evidence/third-result.json

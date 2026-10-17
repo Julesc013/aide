@@ -6,8 +6,9 @@
 owner's cross-project default through existing policy, advisory and adapter owners.
 The defaults and actual fresh/customized consumers are qualified. The dependent
 installed-changelog repair passes the original assertion and both delivered CLI
-checks. Original attempt evidence remains; exact dev/main integration review is
-next. See the dependent repair REPORT for current evidence and tested scope.
+checks. Original attempt evidence remains. Independently reviewed c02228d0 reached
+local and remote dev/main with matching trees. The dependent repair REPORT links
+the observed receipt; native owner adoption preparation remains next.
 
 ## Current-task view - 2026-10-17
 

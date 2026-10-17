@@ -4,6 +4,8 @@
   cadence, project protection choices, task publication and safe retirement.
   [Current outcome](.aide/queue/AIDE-GIT-DEFAULTS-01/REPORT.md) retains qualification
   evidence and the completed installed-changelog repair/consumer qualification.
+  [Integration receipt](.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/evidence/integration-result.json)
+  records the reviewed c02228d0 source reaching local and remote dev/main.
 
 - [Current-task view](docs/reference/task-packets.md): named human/JSON observation,
   recorded-status provenance and evidence uncertainty; source qualification in

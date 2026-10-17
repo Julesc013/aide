@@ -5,7 +5,7 @@ result: PASS_WITH_DEPENDENT_REPAIR
 classification: source_and_actual_consumers_qualified
 review_gate: exact_source_and_each_effect_required
 owner: AIDE_Git_policy_and_advisory
-next_action: review_terminal_source_and_integration_effect
+next_action: continue_parent_native_owner_adoption_preparation
 early_dev_blocker: resolved_by_reviewed_export_refresh_original_failure_retained
 jobs_allocated: 3
 maximum_jobs: 3
@@ -18,5 +18,6 @@ historical_result_ref: evidence/third-result.json
 dependent_admission_ref: evidence/installed-changelog-guard-admission.md
 
 qualification_scope: portable_git_defaults_and_installed_changelog_on_observed_native_route
-integration_state: pending_exact_effect_review
+integration_state: dev_and_main_observed_c02228d0
+integration_result_ref: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/evidence/integration-result.json
 terminal_result_ref: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/evidence/third-result.json

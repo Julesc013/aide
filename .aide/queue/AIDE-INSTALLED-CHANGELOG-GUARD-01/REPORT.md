@@ -10,6 +10,6 @@ Fresh import receives main/dev hosting-protection defaults false/false and local
 
 The development pack has 858 files / 4,420,678 bytes, source bbb153e2. The actual consumer predecessor is the earlier development pack (source 015de64c), not the published 1.0.0 upgrade baseline. No new release qualification is claimed. All three jobs are retired, collected hashes verified, scratch absent and reservations released. Published 1.0.0 assets are unchanged. Whole-task model cost remains unknown.
 
-The Git-default and guard-repair source/consumer gates are complete; exact integration review and observed remote results remain separate. This does not qualify outer-client isolation, autonomous dispatch, actual target adoption or the whole campaign.
+The Git-default and guard-repair source/consumer gates are complete. Independent review accepted tree cb3aa255 at c627b2f0; resulting commit c02228d0 was fast-forwarded and pushed to dev, then main. Fresh remote observations and tree checks passed. [Integration receipt](evidence/integration-result.json) records both effects; [review](evidence/terminal-review.json) identifies the accepted subject. This does not qualify outer-client isolation, autonomous dispatch, actual target adoption or the whole campaign.
 
 Evidence: first-result.json, second-result.json, third-result.json, q31-reuse.json and exact source/effect review records under evidence/. A future bounded recipe check should reject mutable-output/immutable-input collisions before admission; this incident is retained as its reproduction.

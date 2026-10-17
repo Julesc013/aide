@@ -67,3 +67,5 @@ protection bypass, new roots or unauthorized target operations. Keep published
   main remains gated on actual affected consumer and customization outcomes.
 
 - Remaining-stage job a0032741 passed actual fresh/default and customized-update consumers, delivered changelog checks and full diagnostics. Source/consumer acceptance is complete with original failures retained; exact integration review remains.
+
+- Terminal source/effect ACCEPT produced c02228d0; checked local/remote dev and main fast-forwards both passed. Durable receipt: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/evidence/integration-result.json. No release or remote deletion occurred.
