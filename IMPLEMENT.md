@@ -2,7 +2,7 @@
 
 ## Lite successor candidate - 2026-10-18
 
-The existing stable builder now has a bounded successor declaration path, historical asset/manifest checks and lineage binding. The proposed contract retains38 forms and adds18. Qualification is pending; no live stable archive or published asset changed.
+The existing stable builder now has a bounded successor declaration path, historical asset/manifest checks and lineage binding. The proposed contract retains38 forms and adds18. Source60 composed qualification passes with both earlier failed attempts preserved; delivered qualification is pending. No live stable archive or published asset changed.
 
 ## Continuation candidate - 2026-10-18
 

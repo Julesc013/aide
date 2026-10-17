@@ -1,0 +1,106 @@
+{
+  "result": "PASS_SOURCE60_COMPOSED",
+  "application_commit": "d43b3298677ee01cb4057d4e107bab2381248bda",
+  "current_fixture_commit": "5fa02af5d4ca4ef654b23df2cbe9d82e6c32f902",
+  "reused_methods": 22,
+  "newly_completed_methods": 38,
+  "test_ids": [
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_changed_root_preserved_on_cleanup_refusal",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_forged_context_refuses_before_allocation",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_outside_temp_refuses_before_allocation",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_readonly_public_file_retires_without_acl_change",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_real_admitted_public_fixture_is_held_then_retired",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_shared_file_preserved_on_cleanup_refusal",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_unknown_namespace_refuses_before_allocation",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_unmanaged_keeps_standard_private_temp",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_archive_extraction_validation_and_forbidden_paths",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_checksum_mismatch_detection_fails",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_checksum_validation_rejects_stale_and_missing_entries",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_extracted_archives_import_without_source_checkout",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_missing_preview_json_is_blocked_and_release_validate_fails",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_preview_markdown_and_json_must_bind_the_same_source",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_preview_parent_is_bound_only_across_generated_projection",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_archives_are_byte_deterministic",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_asset_index_binds_exact_hashes_and_sizes",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_bundle_fixture_generation_creates_required_artifacts",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_clean_dry_run_deletes_nothing",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_commands_are_local_only_and_no_publish",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_metadata_is_checkout_path_independent",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_policy_and_schema_validation",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_records_clean_source_before_writing_bundle_outputs",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_validate_does_not_rewrite_bundle_metadata",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_validate_rejects_missing_required_file",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_validator_refuses_oversized_pax_before_metadata_parse",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_validator_refuses_unsafe_members_before_extraction",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_validator_rejects_windows_aliases_and_ads_before_extraction",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_validator_stops_tar_member_scan_at_bound",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_stable_candidate_is_distinct_replayable_and_tamper_checked",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_stable_cli_refuses_portable_consumer_without_managed_source_runner",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_stale_preview_is_blocked_in_release_bundle",
+    "test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_assets_include_hashes_and_upload_plan_is_no_upload",
+    "test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_commands_generate_local_only_outputs",
+    "test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_draft_distinguishes_legacy_planners_from_exact_plan_apply",
+    "test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_draft_provenance_uses_pack_identity_not_checkout_path",
+    "test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_draft_validate_rejects_checksum_mismatch",
+    "test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_draft_validate_rejects_implied_published_state",
+    "test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_fixture_bundle_produces_draft_markdown_and_json",
+    "test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_missing_preview_json_blocks_draft_and_draft_validate",
+    "test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_missing_required_asset_creates_blocker",
+    "test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_policy_and_schema_validation",
+    "test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_publication_boundary_is_false_and_advisory_only",
+    "test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_stale_previews_are_not_publish_candidates",
+    "test_stable_release_admission.StableReleaseAdmissionTests.test_build_accepts_release_only_reservation",
+    "test_stable_release_admission.StableReleaseAdmissionTests.test_build_refuses_missing_release_before_asset_effect",
+    "test_stable_release_admission.StableReleaseAdmissionTests.test_shared_packaging_guard_still_requires_export_and_release",
+    "test_stable_release_admission.StableReleaseAdmissionTests.test_validate_accepts_release_only_reservation",
+    "test_stable_release_admission.StableReleaseAdmissionTests.test_validate_refuses_missing_release_before_asset_effect",
+    "test_stable_successor.StableSuccessorTests.test_asset_metadata_bounds_duplicates_and_paths",
+    "test_stable_successor.StableSuccessorTests.test_bad_versions_tags_and_policy_refuse",
+    "test_stable_successor.StableSuccessorTests.test_contract_hardlink_and_reparse_metadata_are_rejected",
+    "test_stable_successor.StableSuccessorTests.test_future_successor_retains_every_older_version",
+    "test_stable_successor.StableSuccessorTests.test_missing_tampered_or_inconsistent_predecessor_refuses",
+    "test_stable_successor.StableSuccessorTests.test_patch_can_preserve_the_same_public_forms",
+    "test_stable_successor.StableSuccessorTests.test_strict_metadata_refuses_without_output",
+    "test_stable_successor.StableSuccessorTests.test_successor_preserves_history_binds_identity_and_replays",
+    "test_stable_successor.StableSuccessorTests.test_unknown_and_shared_output_members_refuse",
+    "test_stable_successor.StableSuccessorTests.test_validator_detects_changed_contract_and_manifest_lineage",
+    "test_stable_successor.StableSuccessorTests.test_validator_rejects_coherent_wrong_identity"
+  ],
+  "completed_batches": [
+    {
+      "job_id": "0f2e444d2fc44dc9bc8cd0eb8dd673d0",
+      "batch": "source_remaining",
+      "methods": 27,
+      "collection_hashes": {
+        "logs": "19b2a9ad503ed7cf0f17508fe79ab753cd911edcdda4c172ba512207566dbc2e",
+        "output": "fd527b2f1074d8dd63b9252c83848edfbd83d77924be13ace9f593c734911955"
+      },
+      "result_ref": "source_remaining-job-result.json"
+    },
+    {
+      "job_id": "c0c86e1b186949f7a47735b8dc4d0982",
+      "batch": "source_successor_a",
+      "methods": 5,
+      "collection_hashes": {
+        "logs": "b405b002e1316d853be0477cea7381f8abbca70fe833720a3d3f98f9e791d5a6",
+        "output": "eaa3ea3276211f45fbc7e00bf00fa596417dec4dee540b26618815bc5953995a"
+      },
+      "result_ref": "source_successor_a-repair-job-result.json"
+    },
+    {
+      "job_id": "cdc8c052a33c455896016e89a2912fc6",
+      "batch": "source_successor_b",
+      "methods": 6,
+      "collection_hashes": {
+        "logs": "11dd0dc78c181a1ec3c1ec7ca4e7eaaf9665e00a7bf78c53757ee9856e2013d6",
+        "output": "f78cee2a7743d385cafa37743dca1b8f55a9fb897526d93d0cae72d910774271"
+      },
+      "result_ref": "source_successor_b-repair-job-result.json"
+    }
+  ],
+  "prior_outcomes_preserved": [
+    "c5aaa6dc22c64798af3d08e19778abe8: timeout",
+    "75af9443d7d4413f82e743ac6f10b104: 2 fixture errors; earlier3 passes not reused"
+  ],
+  "release_qualification": false
+}

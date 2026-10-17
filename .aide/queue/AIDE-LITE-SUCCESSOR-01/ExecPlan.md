@@ -39,3 +39,5 @@ created from33ec403f. No jobs allocated. Implementation and qualification pendin
 Allocation1 jobc5aaa6dc timed out at180sec and retired safely; retained22 completed methods and one interrupted method, with38 source methods unfinished. All collection hashes verified, no source/test/asset mutation. Request a finite partition amendment, not an automatic retry or resource-limit increase.
 
 Allocation2 PASS27 closes original49 with retained22. Allocation3 successor5 produced3 passes/2 fixture-provenance errors; safely retired, allocation4 not submitted. Repair the new shared fixture only and rerun11 affected methods under the same maximum8 allocations; see evidence/fixture-repair.md.
+
+Allocations4/5 PASS5 and PASS6; source60 is the disjoint union of retained22, completed27 and repaired11, verified by exact IDs. Every job retired/hash-verified. Two original failed attempts remain. Five allocations consumed; prepare combined exporter/delivered18 for slot6, delivered7 for slot7, then preview8.

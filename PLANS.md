@@ -2,7 +2,7 @@
 
 ## Lite successor preparation - 2026-10-18
 
-[AIDE-LITE-SUCCESSOR-01](.aide/queue/AIDE-LITE-SUCCESSOR-01/ExecPlan.md) extends the existing builder with preserved published assets and a proposed additive1.1.0 contract. Source/synthetic and development delivery qualification come first; actual archives, published1.0.0 upgrades and publication remain separate gates.
+[AIDE-LITE-SUCCESSOR-01](.aide/queue/AIDE-LITE-SUCCESSOR-01/ExecPlan.md) extends the existing builder with preserved published assets and a proposed additive1.1.0 contract. Source60 is qualified through retained and completed exact methods; development delivery is pending. Actual archives, published1.0.0 upgrades and publication remain separate gates.
 
 ## Selected-task continuation - 2026-10-18
 
