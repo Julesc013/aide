@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "producer_exit": 7,
+  "inspections": [
+    {
+      "execution_admitted": false,
+      "read_only": true,
+      "reason": "Determine completed, pending and uncertain effects and current ownership before another attempt.",
+      "recommendation": "reconcile_attempt",
+      "report_only": true,
+      "safe_to_resume": null,
+      "schema_version": "aide.task-resume-plan.v1",
+      "task": {
+        "acceptance_verified": false,
+        "declared_status": null,
+        "evidence": [
+          {
+            "applicability": "unverified",
+            "availability": "present",
+            "digest_verified": true,
+            "field": "completed_ref",
+            "path": ".aide/queue/CONSUMER-CONTINUATION-01/receipt.json",
+            "source": ".aide/queue/CONSUMER-CONTINUATION-01/status.yaml"
+          }
+        ],
+        "index_status": null,
+        "issues": [],
+        "next_action": null,
+        "objective": "Complete two bounded fixture effects",
+        "owner": null,
+        "read_only": true,
+        "remaining_obligations": [
+          "second_fixture_effect"
+        ],
+        "result": "INCOMPLETE",
+        "schema_version": "aide.task-current.v1",
+        "scope": {
+          "acceptance_scope": null,
+          "classification": null,
+          "product_qualified": null,
+          "review_gate": null,
+          "target_mutated": null
+        },
+        "sources": {
+          "declared_status": ".aide/queue/CONSUMER-CONTINUATION-01/task.yaml",
+          "index_status": ".aide/queue/index.yaml",
+          "objective": ".aide/queue/CONSUMER-CONTINUATION-01/task.yaml",
+          "remaining_obligations": ".aide/queue/CONSUMER-CONTINUATION-01/status.yaml",
+          "result": ".aide/queue/CONSUMER-CONTINUATION-01/status.yaml",
+          "scope": ".aide/queue/CONSUMER-CONTINUATION-01/status.yaml",
+          "status": ".aide/queue/CONSUMER-CONTINUATION-01/status.yaml"
+        },
+        "status": "interrupted",
+        "task_id": "CONSUMER-CONTINUATION-01"
+      }
+    },
+    {
+      "execution_admitted": false,
+      "read_only": true,
+      "reason": "Inspect recorded acceptance scope and remaining obligations; reuse valid results without replay.",
+      "recommendation": "inspect_completed_evidence",
+      "report_only": true,
+      "safe_to_resume": null,
+      "schema_version": "aide.task-resume-plan.v1",
+      "task": {
+        "acceptance_verified": false,
+        "declared_status": null,
+        "evidence": [
+          {
+            "applicability": "unverified",
+            "availability": "present",
+            "field": "completed_ref",
+            "path": ".aide/queue/CONSUMER-CONTINUATION-01/receipt.json",
+            "source": ".aide/queue/CONSUMER-CONTINUATION-01/status.yaml"
+          },
+          {
+            "applicability": "unverified",
+            "availability": "present",
+            "field": "original_ref",
+            "path": ".aide/queue/CONSUMER-CONTINUATION-01/original-incomplete.yaml",
+            "source": ".aide/queue/CONSUMER-CONTINUATION-01/status.yaml"
+          }
+        ],
+        "index_status": null,
+        "issues": [],
+        "next_action": null,
+        "objective": "Complete two bounded fixture effects",
+        "owner": null,
+        "read_only": true,
+        "remaining_obligations": [
+          "actual_host_recovery_unqualified"
+        ],
+        "result": "PASS_FIXTURE",
+        "schema_version": "aide.task-current.v1",
+        "scope": {
+          "acceptance_scope": null,
+          "classification": null,
+          "product_qualified": null,
+          "review_gate": null,
+          "target_mutated": null
+        },
+        "sources": {
+          "declared_status": ".aide/queue/CONSUMER-CONTINUATION-01/task.yaml",
+          "index_status": ".aide/queue/index.yaml",
+          "objective": ".aide/queue/CONSUMER-CONTINUATION-01/task.yaml",
+          "remaining_obligations": ".aide/queue/CONSUMER-CONTINUATION-01/status.yaml",
+          "result": ".aide/queue/CONSUMER-CONTINUATION-01/status.yaml",
+          "scope": ".aide/queue/CONSUMER-CONTINUATION-01/status.yaml",
+          "status": ".aide/queue/CONSUMER-CONTINUATION-01/status.yaml"
+        },
+        "status": "passed",
+        "task_id": "CONSUMER-CONTINUATION-01"
+      }
+    }
+  ],
+  "completed_effect_sha256": "1e23e643f1b15e2ce26c51e78311fe26f9419737b012bfd424f901802dcff51a",
+  "actual_host_recovery": "unqualified"
+}

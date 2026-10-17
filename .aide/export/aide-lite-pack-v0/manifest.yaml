@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 7c2aec4949cc916406b4eb3480a93da744a947ba
+source_commit: 1cd8478051888f7a80f891c0ff83af0270c88858
 source_dirty_state: false
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -716,6 +716,7 @@ included_files:
   - files/.aide/scripts/tests/test_q46_rollback_uninstall.py
   - files/.aide/scripts/tests/test_q47_release_bundle.py
   - files/.aide/scripts/tests/test_q48_github_release_draft.py
+  - files/.aide/scripts/tests/test_resume_plan.py
   - files/.aide/scripts/tests/test_retired_evidence.py
   - files/.aide/scripts/tests/test_review_pack.py
   - files/.aide/scripts/tests/test_router_profile.py

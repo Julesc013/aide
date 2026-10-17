@@ -25,3 +25,5 @@ Local task branch created from716ec1fd after classifying five owned admission pa
 and observing the idle shared estate. No qualification jobs allocated yet.
 
 Allocation1 PASS63 and actual CLI fixture consumer. Jobabb9d2e6 retired with all collection hashes verified. Source unchanged. Preallocation raw/canonical config digest mistake stopped before any job, now reconciled. Prepare allocation2 through the existing exporter.
+
+Allocation2 PASS delivered61, same CLI consumer, ownership6 and exporter checks. Job99091c90 retired/hash-verified. Pack861 with exactly three changed payload files and unchanged1.0.0 assets. Allocation3 remains for fixed-range preview.

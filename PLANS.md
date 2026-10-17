@@ -2,7 +2,7 @@
 
 ## Selected-task continuation - 2026-10-18
 
-AIDE-RESUME-PLAN-01 corrects unconditional readiness and historical references in the existing resume command. Source/effect review and portable qualification remain pending.
+AIDE-RESUME-PLAN-01 corrects unconditional readiness and historical references in the existing resume command. Source63 and delivered61 checks, both CLI consumers and exporter ownership6 pass; exact preview and integration review remain.
 
 ## Engineering review - 2026-10-18
 

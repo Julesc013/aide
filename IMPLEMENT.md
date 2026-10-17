@@ -2,7 +2,7 @@
 
 ## Continuation candidate - 2026-10-18
 
-The candidate uses the bounded current-task owner for task resume-plan, preserves human report generation, and adds nonmutating JSON. Execution readiness remains unknown; no runtime effects are admitted.
+The qualified source and portable CLI use the bounded current-task owner for task resume-plan, preserves human report generation, and adds nonmutating JSON. Execution readiness remains unknown; no runtime effects are admitted.
 
 ## Engineering review - 2026-10-18
 

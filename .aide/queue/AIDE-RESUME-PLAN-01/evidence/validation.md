@@ -8,3 +8,5 @@ current task review includes .aide/prompts/evidence-review.md and the existing
 Behavioral source63/delivered61 and consumer checks are not yet run.
 
 Source63 and fresh-process actual CLI consumer now PASS; zero skips. Delivered61 and integration still pending. See source-outcome.md and checks-job-result.json.
+
+Delivered61 and actual CLI consumer PASS at1cd84780, ownership6 and exporter doctor/validate/pack-status PASS. Pack861, exact three-file payload delta and unchanged published assets. Collection and retirement verified. Preview and exact integration review remain.

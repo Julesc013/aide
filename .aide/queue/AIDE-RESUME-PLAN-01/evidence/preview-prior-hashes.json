@@ -1,0 +1,18 @@
+{
+  "directories": [
+    ".",
+    "templates"
+  ],
+  "files": {
+    "CHANGELOG.preview.md": "50052ba5552ca0d8bceb70855d92f509e2de825d901454776dbae459d387be7d",
+    "README.md": "7f40ac9c6642fc01a4b52e70282c803f0cc0a3e5ffffd5ba9045e4167c788f68",
+    "RELEASE_NOTES.preview.md": "2e10aa455923c824de4f0adbe8dc72b136c86f2f5aedb1873d89d7a0737c38c9",
+    "changelog.preview.json": "ffa1ac868ef3b5cfab8def1c964c568771ab573133bea3fe6bb5ab68412abb4d",
+    "config.yaml": "7c9c825f1dba7df4ec6ea4a4f4d88246d80b26fd35be71f7b954e32eaf67ff74",
+    "latest-changelog-report.md": "c8974bb1d50aa7223077dbc0661d9759fb55394d239d37ff0ee27a69f7702f60",
+    "malformed-commits.md": "7f486001c6af5ec0fe3b30541bca29eee4f07973514b8e600ee75bebbfe802f3",
+    "release-notes.preview.json": "9c18023ddb1f71d7c3ec98db80689bde648521c585832c1b3aa301dff93daaa0",
+    "templates/changelog.md.template": "7513640913399d3b8d75a307087685394e83308698c810c60a6a84a03ff89a01",
+    "templates/release-notes.md.template": "5e7ed80873adbd7197c076bf4a17d3fa55f4c5681421c97335d1274e981f5c6b"
+  }
+}
