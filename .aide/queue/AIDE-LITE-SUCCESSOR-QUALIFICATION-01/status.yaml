@@ -1,10 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
-status: running
-result: ACTUAL_PREDECESSOR_PASS_REPLAY_RESERVATION_REFUSED
+status: needs_review
+result: CONSUMER_PREDECESSOR_RECOVERY_REPLAY_PASS
 owner: aide_campaign
-next_action: review_replay_reservation_correction
+next_action: owner_message_dispositions_then_fixed_preview_and_final_review
 promotion_blocker: three_commit_message_failures_preserved_pending_disposition
-jobs_allocated: 27
+jobs_allocated: 28
 maximum_jobs: 29
+active_jobs: 0
 public_release: unchanged_1.0.0

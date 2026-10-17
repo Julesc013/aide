@@ -1,6 +1,6 @@
 # Actual Lite 1.1.0 qualification
 
-Current state: Actual-predecessor upgrade25 and recovery26 PASS with collected and retired evidence. Replay27 stopped at the existing stable-validator guard because its job omitted the release-directory reservation; doctor and full validation passed, archive generation was not reached. Preserve this refusal and all prior failures. A manifest-only correction reserves the existing .aide/release root at its unchanged 8 MiB bound, preserves all53 release files and863 pack files, and runs unchanged scratch replay as allocation28 after exact review. Maximum29 includes all27 consumed attempts; fixed preview29 and owner message dispositions remain open.
+Current state: Actual published-predecessor upgrade/recovery and exact scratch archive replay PASS. All28 consumed jobs are retired; all prior failures remain. Candidate1.1.0 stays unpublished. Pending: owner dispositions for three exact historical message failures, fixed preview29, final independent release review, guarded dev/main integration and separately admitted publication/acquired-byte checks. Important task checkpoint debd5886 is remotely verified; accepted dev/main remain4f2c3960.
 
 Baseline 4f2c39606378492622fa8580152373fffc074d7c. Existing successor builder and
 portable pack are integrated into local/remote dev/main; see evidence/prior-integration.json.
@@ -122,3 +122,6 @@ Allocation 24 stopped in brownfield fixture setup after fresh actual-predecessor
 
 
 Actual-predecessor upgrade25 and recovery26 PASS with collected and retired evidence. Replay27 stopped at the existing stable-validator guard because its job omitted the release-directory reservation; doctor and full validation passed, archive generation was not reached. Preserve this refusal and all prior failures. A manifest-only correction reserves the existing .aide/release root at its unchanged 8 MiB bound, preserves all53 release files and863 pack files, and runs unchanged scratch replay as allocation28 after exact review. Maximum29 includes all27 consumed attempts; fixed preview29 and owner message dispositions remain open.
+
+
+Actual published-predecessor upgrade/recovery and exact scratch archive replay PASS. All28 consumed jobs are retired; all prior failures remain. Candidate1.1.0 stays unpublished. Pending: owner dispositions for three exact historical message failures, fixed preview29, final independent release review, guarded dev/main integration and separately admitted publication/acquired-byte checks. Important task checkpoint debd5886 is remotely verified; accepted dev/main remain4f2c3960.

@@ -6,7 +6,9 @@ and [56-form mapping](evidence/replacement-cli-coverage.json) retain exact comma
 variants, expected WARN/refusal outcomes, raw-output identities and safe retirement.
 Actual published-predecessor upgrade and recovery now PASS. [Qualified outcomes](evidence/predecessor-qualified-replay-refused.json) cover fresh update, customized conflict/resolution, partial ordinary/resolved recovery, refusal of unsupported path-set rollback and explicit unchanged-target detach/reinstall. Customized overlays remain preserved for manual reconciliation.
 
-Replay27 stopped at a missing job reservation before archive generation; its original refusal remains. Doctor and full validation passed, with one retained advisory review-reference warning. The manifest-only retry, fixed preview, owner message dispositions and final release review remain. Public Lite1.0.0 is unchanged.
+[Exact archive replay](evidence/replay-qualified.json) now PASS: ZIP and TAR reproduce byte for byte; all53 release files and863 pack files remain unchanged. Doctor, full validate, stable validation and pack status pass; the existing advisory missing review-reference warning is retained. The earlier replay reservation refusal remains historical evidence.
+
+[Current qualification summary](evidence/qualification-summary.json) separates demonstrated behavior from open release gates. All28 consumed jobs are retired. Fixed preview29, the three historical owner dispositions, final candidate review and integration remain. Public Lite1.0.0 is unchanged; no1.1.0 publication is claimed.
 
 The table and original candidate narrative below are historical evidence for
 ZIP 089d75da, not substitutes for the separately linked replacement results.
@@ -93,3 +95,6 @@ Allocation 24 stopped in brownfield fixture setup after fresh actual-predecessor
 
 
 Actual-predecessor upgrade25 and recovery26 PASS with collected and retired evidence. Replay27 stopped at the existing stable-validator guard because its job omitted the release-directory reservation; doctor and full validation passed, archive generation was not reached. Preserve this refusal and all prior failures. A manifest-only correction reserves the existing .aide/release root at its unchanged 8 MiB bound, preserves all53 release files and863 pack files, and runs unchanged scratch replay as allocation28 after exact review. Maximum29 includes all27 consumed attempts; fixed preview29 and owner message dispositions remain open.
+
+
+Actual published-predecessor upgrade/recovery and exact scratch archive replay PASS. All28 consumed jobs are retired; all prior failures remain. Candidate1.1.0 stays unpublished. Pending: owner dispositions for three exact historical message failures, fixed preview29, final independent release review, guarded dev/main integration and separately admitted publication/acquired-byte checks. Important task checkpoint debd5886 is remotely verified; accepted dev/main remain4f2c3960.
