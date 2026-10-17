@@ -1,10 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
 status: running
-result: PREDECESSOR_FIXTURE_SETUP_FAILED_RETAINED
+result: ACTUAL_PREDECESSOR_PASS_REPLAY_RESERVATION_REFUSED
 owner: aide_campaign
-next_action: review_exact_fixture_correction_and_retry
+next_action: review_replay_reservation_correction
 promotion_blocker: three_commit_message_failures_preserved_pending_disposition
-jobs_allocated: 24
-maximum_jobs: 28
+jobs_allocated: 27
+maximum_jobs: 29
 public_release: unchanged_1.0.0

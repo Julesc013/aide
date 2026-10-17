@@ -1,0 +1,26 @@
+{
+  "added_paths_removed": [
+    ".aide/scripts/aide_work_effort.py",
+    ".aide/scripts/tests/test_git_defaults.py",
+    ".aide/scripts/tests/test_installed_changelog_guard.py",
+    ".aide/scripts/tests/test_resume_plan.py",
+    ".aide/scripts/tests/test_stable_successor.py",
+    ".aide/scripts/tests/test_task_binding.py",
+    ".aide/scripts/tests/test_task_current.py",
+    ".aide/scripts/tests/test_work_effort.py"
+  ],
+  "authored_outside_sha256": "3a39be454b17a2bd88bcabffe739bb34d7198be6c305e81a77d75ab7e6a748e1",
+  "automatic_rollback": false,
+  "new_safe_targets": 826,
+  "old_safe_targets": 818,
+  "project_preserved": {
+    "project-owned.txt": "9cbbe66a57c56615b73d58ce54a8cfa7f79988c58bd921366c4756d7e585846e"
+  },
+  "restored_pack": {
+    "checksums_digest": "8a2506e8117830924095561e76511187446fa5d561ca483ab88988cec6885b5b",
+    "manifest_digest": "e2e2cd0e49086b235dd9959e420776d5d9de8eee89e69fe076ba9b9293b31498",
+    "pack_id": "aide-lite-pack-v0",
+    "source_commit": "a17cf4b3dbec5caa236c62ee2fa23b31aa09c8fc"
+  },
+  "route": "explicit complete detach then published predecessor safe reinstall"
+}

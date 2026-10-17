@@ -1,6 +1,6 @@
 # Actual Lite 1.1.0 qualification
 
-Current state: replacement original8/additional18 PASS; actual-predecessor attempt24 failed during fixture setup. Allocation 24 stopped in brownfield fixture setup after fresh actual-predecessor update succeeded. The optional path was absent from both archives; no product defect is established. The original failed result, all command outputs and safe retirement are retained in evidence/predecessor-first-attempt.json. Select the actually shipped optional README and assert its original receipt ownership before project customization. Proposed maximum 28 preserves allocation 24 and assigns retry 25, recovery 26, replay 27 and fixed preview 28. No assertions, package bytes or resource limits change; exact review precedes any retry.
+Current state: Actual-predecessor upgrade25 and recovery26 PASS with collected and retired evidence. Replay27 stopped at the existing stable-validator guard because its job omitted the release-directory reservation; doctor and full validation passed, archive generation was not reached. Preserve this refusal and all prior failures. A manifest-only correction reserves the existing .aide/release root at its unchanged 8 MiB bound, preserves all53 release files and863 pack files, and runs unchanged scratch replay as allocation28 after exact review. Maximum29 includes all27 consumed attempts; fixed preview29 and owner message dispositions remain open.
 
 Baseline 4f2c39606378492622fa8580152373fffc074d7c. Existing successor builder and
 portable pack are integrated into local/remote dev/main; see evidence/prior-integration.json.
@@ -119,3 +119,6 @@ owner dispositions remain open. No new archive rebuild or publication.
 
 
 Allocation 24 stopped in brownfield fixture setup after fresh actual-predecessor update succeeded. The optional path was absent from both archives; no product defect is established. The original failed result, all command outputs and safe retirement are retained in evidence/predecessor-first-attempt.json. Select the actually shipped optional README and assert its original receipt ownership before project customization. Proposed maximum 28 preserves allocation 24 and assigns retry 25, recovery 26, replay 27 and fixed preview 28. No assertions, package bytes or resource limits change; exact review precedes any retry.
+
+
+Actual-predecessor upgrade25 and recovery26 PASS with collected and retired evidence. Replay27 stopped at the existing stable-validator guard because its job omitted the release-directory reservation; doctor and full validation passed, archive generation was not reached. Preserve this refusal and all prior failures. A manifest-only correction reserves the existing .aide/release root at its unchanged 8 MiB bound, preserves all53 release files and863 pack files, and runs unchanged scratch replay as allocation28 after exact review. Maximum29 includes all27 consumed attempts; fixed preview29 and owner message dispositions remain open.

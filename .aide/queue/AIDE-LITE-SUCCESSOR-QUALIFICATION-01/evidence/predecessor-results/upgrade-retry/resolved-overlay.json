@@ -1,0 +1,19 @@
+{
+  "authored_prefix_sha256": "962cfc5a8a247075b7cdab13de2a7ee31998aaf0768c18f3caa1ae06b21ae8fe",
+  "controls_sha256": "3935abcf2b55531fd0a0d9d9241d5631f1244dba56ba846df3c682ce786d0c02",
+  "entry": {
+    "installed_digest": "09ffe8d62aec135c8d3ca82026f44678052296c2ecf579550df7d68e3e6e64f7",
+    "kind": "managed_file",
+    "local_overlay": true,
+    "ownership": "project_overlay_on_aide_managed",
+    "source": ".aide/policies/git-workflow.yaml",
+    "source_digest": "eab8e17ac56481ae07ad66a66b14b591de938f9af0c65278b202dd06fa0b784d"
+  },
+  "path": ".aide/policies/git-workflow.yaml",
+  "preserved_project_files": {
+    ".aide.local.example/README.md": "1ef3d257b260c7764d10ce044ec7a8006d250332ab56c5f9b32bdc06e0ec721c",
+    ".aide/customizations.json": "3935abcf2b55531fd0a0d9d9241d5631f1244dba56ba846df3c682ce786d0c02",
+    "README.md": "b1685c1e61182ff812bd4b045558c54874b3a489b0975f225be74955b1820dc7",
+    "tools/project-check.py": "e05932ae9c9069791c595fe222e7425e9ef02a41accc129ee16066d5cf82bbc4"
+  }
+}

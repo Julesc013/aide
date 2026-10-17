@@ -1,0 +1,198 @@
+{
+  "logs/stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "logs/stdin": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "logs/stdout": {
+    "sha256": "ca443b39eaeeb194993bc19b2c02545dc44a9e0f941b5fe10e4322147e9fceca",
+    "size_bytes": 43
+  },
+  "output/brown-conflict-apply.json": {
+    "sha256": "f4e4419042f928c8be9d2c27b2896daa68e6dda53e5ebe740821cde6918dc03b",
+    "size_bytes": 1301
+  },
+  "output/brown-conflict-apply.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/brown-conflict-apply.stdout": {
+    "sha256": "df87d83b27d77a56dc2343c08fcb261887a79b7538bb91623e633acd7cb68087",
+    "size_bytes": 673
+  },
+  "output/brown-conflict-preview.json": {
+    "sha256": "94d119d5ec4c7fb8af7acf12f05f15f8c9da9ad70998c1f577dc9a4d97e92353",
+    "size_bytes": 1242
+  },
+  "output/brown-conflict-preview.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/brown-conflict-preview.stdout": {
+    "sha256": "494f948aeaca7ddedd0eae2dc647f00498ce7bda51057c0f29fd7bd53c45de93",
+    "size_bytes": 115414
+  },
+  "output/brown-old-install-apply.json": {
+    "sha256": "b0e84d78176632cac1c8a6d7735083052c6d50b2110eb99e0b6e8ec0c2b6a263",
+    "size_bytes": 1132
+  },
+  "output/brown-old-install-apply.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/brown-old-install-apply.stdout": {
+    "sha256": "bf8b4224807c2379f57d64921b96f04548ad9fae914115ba76ffe6d50ffbde23",
+    "size_bytes": 548
+  },
+  "output/brown-old-install-preview.json": {
+    "sha256": "6e2dd16810bd651d4c4f2919a18e5d8d00563534141d8b9d9d41e7b19324b7af",
+    "size_bytes": 1055
+  },
+  "output/brown-old-install-preview.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/brown-old-install-preview.stdout": {
+    "sha256": "35830c2ff9683ee5683094193939cdb20dee290a5f2ec60aaa6803d6f95bf275",
+    "size_bytes": 99553
+  },
+  "output/brown-resolved-preview.json": {
+    "sha256": "a5cf7a1f8654c97aeb9fefb1a21c7e499c7b34540cac97008303645086ff5fa2",
+    "size_bytes": 1452
+  },
+  "output/brown-resolved-preview.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/brown-resolved-preview.stdout": {
+    "sha256": "69a6bb4403b989cee8385c15a3b888d5d63c674cac733469e32d6dc707d75e3a",
+    "size_bytes": 115380
+  },
+  "output/brown-resolved-recovery.json": {
+    "sha256": "29b7f0209d2972564b6b683a45c78937a24ca3d61d6fb0290fa53337a5245d24",
+    "size_bytes": 1537
+  },
+  "output/brown-resolved-recovery.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/brown-resolved-recovery.stdout": {
+    "sha256": "5511278b573581144eff3761fd17052fb632f68b3781e08f705d59e7adc384a7",
+    "size_bytes": 675
+  },
+  "output/customized-recovery-limitation.json": {
+    "sha256": "1f1b64927d6027fb7815f326b971dd4a46e9b1a4629bfff791fc7129aaf2b045",
+    "size_bytes": 956
+  },
+  "output/customized-removal-boundary.json": {
+    "sha256": "d251d79011ed70e7e2ff406d5fbccf264c0957e1610b0437bfb2afe5140fd2aa",
+    "size_bytes": 820
+  },
+  "output/customized-removal-boundary.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/customized-removal-boundary.stdout": {
+    "sha256": "91c7d34614dd545c82d66fadaf5914581a6343cadd6a86f4bb3d7599679ff55b",
+    "size_bytes": 715892
+  },
+  "output/fresh-actual-update-apply.json": {
+    "sha256": "40d98413f54e4c0cbaea8b6e787a1428aa23a40ea2b51cd079d16704e19cfd00",
+    "size_bytes": 1301
+  },
+  "output/fresh-actual-update-apply.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/fresh-actual-update-apply.stdout": {
+    "sha256": "bc4125a447bc64f54a35cf3f1e67ba494410b91d59154b15f0ab93d6a47213b1",
+    "size_bytes": 673
+  },
+  "output/fresh-actual-update-preview.json": {
+    "sha256": "a6504939801789c1f6caaaeabeb6403d168e1624847b88eb510ed8fb75b34e9a",
+    "size_bytes": 1224
+  },
+  "output/fresh-actual-update-preview.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/fresh-actual-update-preview.stdout": {
+    "sha256": "0cb2dd751cf908ab3dfb0e3c512fd7da50c8abf4d96a93d6ebdb7d9cef3770ab",
+    "size_bytes": 104686
+  },
+  "output/fresh-old-install-apply.json": {
+    "sha256": "c68666aabb74b007486234532c4d2ea8a6daa1bf1b212af882056e15a7f7cb08",
+    "size_bytes": 1132
+  },
+  "output/fresh-old-install-apply.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/fresh-old-install-apply.stdout": {
+    "sha256": "73bb8bbb7f1c84b2889a588b66efb3b9d1815d8596c12947fa3fb7fdf9441d78",
+    "size_bytes": 548
+  },
+  "output/fresh-old-install-preview.json": {
+    "sha256": "bd053a2b6ade80f34d4a5c45b263144fc2de58e2d52eeeb5adb06deb29ddce5a",
+    "size_bytes": 1055
+  },
+  "output/fresh-old-install-preview.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/fresh-old-install-preview.stdout": {
+    "sha256": "0af74b051673dd92c7da2e8bc4b4565f15e3667301cb6c302054c4ebfe5a57b4",
+    "size_bytes": 99553
+  },
+  "output/resolved-changed-input.json": {
+    "sha256": "eaee607d91e7b1b6465e4eb05fdb129a624f5d9fc9a59d752f40d2511efe6cbd",
+    "size_bytes": 1537
+  },
+  "output/resolved-changed-input.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/resolved-changed-input.stdout": {
+    "sha256": "7fdce8456c41ce3d301ccb5251a3a361da07beae84cc5d9e41a869229467ceb5",
+    "size_bytes": 680
+  },
+  "output/resolved-ordinary.json": {
+    "sha256": "bbe68d10377132d16c1779acb57cc79cab4fa7288578e49afedeca94eb4ac902",
+    "size_bytes": 1416
+  },
+  "output/resolved-ordinary.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/resolved-ordinary.stdout": {
+    "sha256": "7fdce8456c41ce3d301ccb5251a3a361da07beae84cc5d9e41a869229467ceb5",
+    "size_bytes": 680
+  },
+  "output/resolved-overlay.json": {
+    "sha256": "fce14261b8c3971c2acdf11a5a8a4d64105df5a004ddc1324ca6854419d07021",
+    "size_bytes": 1032
+  },
+  "output/resolved-update-interruption.json": {
+    "sha256": "47b215d55dc21f7677fdda08b495a312dac119c9befee0e9cea274179cb2bc3d",
+    "size_bytes": 477711
+  },
+  "output/resolved-wrong-plan.json": {
+    "sha256": "56ef66fd86a06ef587b24e9bd9c32813e6268e6f5e25381fdee569ad2983916b",
+    "size_bytes": 1537
+  },
+  "output/resolved-wrong-plan.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/resolved-wrong-plan.stdout": {
+    "sha256": "7fdce8456c41ce3d301ccb5251a3a361da07beae84cc5d9e41a869229467ceb5",
+    "size_bytes": 680
+  },
+  "output/summary.json": {
+    "sha256": "3223e6b8e40927b7851f75e045eeffd66bd20da3c72fdd8567877d2868a66168",
+    "size_bytes": 4556
+  }
+}

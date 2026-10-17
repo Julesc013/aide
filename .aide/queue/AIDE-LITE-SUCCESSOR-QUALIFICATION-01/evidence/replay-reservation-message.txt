@@ -1,0 +1,36 @@
+test(lite): retain predecessor passes and declare replay reservation
+
+## Summary
+- Record actual published-predecessor qualification and correct the replay job declaration.
+
+## Why
+- The read-only stable validator requires the existing release-directory reservation.
+
+## Changed
+- Preserve fresh/customized upgrade, interrupted recovery and explicit detach/reinstall passes.
+- Retain the refused replay and its completed doctor/validation observations.
+- Declare the unchanged release reservation while preserving every package byte and replay assertion.
+
+## Validation
+- PASS allocations25 and26 with collection and retirement verified.
+- FAIL allocation27 missing job reservation; archive replay NOT RUN.
+- PASS doctor and full validate with one retained advisory legacy review reference.
+- PASS exact maps, syntax and diff checks; corrected replay pending independent review and execution.
+
+## Changelog
+- Tests: Qualify actual published1.0-to1.1 upgrade and supported recovery.
+- Docs: Record precise rollback limits and preserve the failed replay declaration.
+
+## Risks
+- Final replay, fixed preview, historical owner dispositions and release gates remain open.
+- Existing resource boundary does not establish outer-client or read isolation.
+
+## Follow-up
+- Run exact reserved replay; sync the important task checkpoint without promoting dev/main.
+
+AIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
+AIDE-Phase: replay-reservation-correction
+AIDE-Result: PARTIAL
+AIDE-Scope: qualification evidence and exact job declaration
+AIDE-Token-Impact: unknown
+AIDE-Quality-Gate: independent source and effect review

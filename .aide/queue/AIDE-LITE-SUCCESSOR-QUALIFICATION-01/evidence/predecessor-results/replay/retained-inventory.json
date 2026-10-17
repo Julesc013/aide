@@ -1,0 +1,42 @@
+{
+  "logs/stderr": {
+    "sha256": "562c272ba99a40e8c23362e976ba7c10c2027fd9938d6424db0f6decd11bf4d3",
+    "size_bytes": 1100
+  },
+  "logs/stdin": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "logs/stdout": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/doctor.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/doctor.stdout": {
+    "sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21",
+    "size_bytes": 5181
+  },
+  "output/operations.json": {
+    "sha256": "3ac38020ae14c336c4adbe11f7cc2a332ba1459d0f7a5d85de6ccae5f53c1704",
+    "size_bytes": 1260
+  },
+  "output/stable-validate.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/stable-validate.stdout": {
+    "sha256": "d55ff6439cbf8a626a8d8ab2c3d438afd8d9023e065380c93ccb555933071119",
+    "size_bytes": 94
+  },
+  "output/validate.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/validate.stdout": {
+    "sha256": "a65d1b09d1901d492fa59d33855b368569f71673c9908f13b557df2738c91f0d",
+    "size_bytes": 4894198
+  }
+}

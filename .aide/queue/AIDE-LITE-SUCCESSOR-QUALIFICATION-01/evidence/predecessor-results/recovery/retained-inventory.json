@@ -1,0 +1,170 @@
+{
+  "logs/stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "logs/stdin": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "logs/stdout": {
+    "sha256": "7b60f0ac6212b94bd0c9b8a4523ed3eca8e9cdcab7db5f5611f61917c76c9bb6",
+    "size_bytes": 44
+  },
+  "output/actual-path-change-rollback-apply.json": {
+    "sha256": "c90f059b9cc4a4cf3b4878d480faf9b44b5a5efabbf38675f3b1800e629eebb3",
+    "size_bytes": 1275
+  },
+  "output/actual-path-change-rollback-apply.stderr": {
+    "sha256": "58f2d8f7887443be3cc2e7e60e139e53019eedffe4394d895cc991183209e242",
+    "size_bytes": 94
+  },
+  "output/actual-path-change-rollback-apply.stdout": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/actual-path-change-rollback-preview.json": {
+    "sha256": "c349398e35d817a4dd10ac029f98f89de6225ecf7695eb7034b8df203d3586a0",
+    "size_bytes": 1198
+  },
+  "output/actual-path-change-rollback-preview.stderr": {
+    "sha256": "58f2d8f7887443be3cc2e7e60e139e53019eedffe4394d895cc991183209e242",
+    "size_bytes": 94
+  },
+  "output/actual-path-change-rollback-preview.stdout": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/actual-update-interruption.json": {
+    "sha256": "410137efa62b43fe7b93cdebc385f0babfbf592e0db9db9813b62f0da18867e8",
+    "size_bytes": 477051
+  },
+  "output/downgrade-detach-exact.json": {
+    "sha256": "4eb62bb26b6a05af40a314c1f4dca0940e7fdb13cb856dc9678389017d1d5432",
+    "size_bytes": 928
+  },
+  "output/downgrade-detach-exact.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/downgrade-detach-exact.stdout": {
+    "sha256": "1c02db6c51e8080518114addea1bedce6eacbfc79ea2357dbdc4549621edec7a",
+    "size_bytes": 49708
+  },
+  "output/downgrade-detach-preview.json": {
+    "sha256": "638615e013978e811c2c89e2304c39674940355997cb2b0c5e63560f394f4b0e",
+    "size_bytes": 832
+  },
+  "output/downgrade-detach-preview.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/downgrade-detach-preview.stdout": {
+    "sha256": "92a8f6e845392a2537607137905c49cf79ac8e896b10f6437c9117ae197a7b79",
+    "size_bytes": 720816
+  },
+  "output/downgrade-detach-wrong-plan.json": {
+    "sha256": "718622cd869ec477f1cf91e027af816b3f4725a517d558dbd127449c8461d720",
+    "size_bytes": 928
+  },
+  "output/downgrade-detach-wrong-plan.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/downgrade-detach-wrong-plan.stdout": {
+    "sha256": "bfe90c3c3a150f63cd44bde60f3a568a0758aa4421b96f08d9f6315e1ea3e0ec",
+    "size_bytes": 156
+  },
+  "output/downgrade-published-reinstall-apply.json": {
+    "sha256": "aebf077a376c45bd188552d090d31d17edf79221413c322ed5e088cc5c915a27",
+    "size_bytes": 1139
+  },
+  "output/downgrade-published-reinstall-apply.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/downgrade-published-reinstall-apply.stdout": {
+    "sha256": "7543415012002376e4a96f05e48a8db8657d1331141e314762ceec595e1051d3",
+    "size_bytes": 553
+  },
+  "output/downgrade-published-reinstall-preview.json": {
+    "sha256": "e844c27cff719efb572f100ce3917056d7dfb4302105c6c0b43670a5f4ec1996",
+    "size_bytes": 1062
+  },
+  "output/downgrade-published-reinstall-preview.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/downgrade-published-reinstall-preview.stdout": {
+    "sha256": "a63d114caeeaf034ac593cb18f72312afd61c9bf93460e1740f5de09b1ee1c0b",
+    "size_bytes": 99494
+  },
+  "output/recovery-exact.json": {
+    "sha256": "cb0c21677c1d80b102201928e708c8ede63a6110767c7bc8964469bbcb658781",
+    "size_bytes": 1335
+  },
+  "output/recovery-exact.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/recovery-exact.stdout": {
+    "sha256": "95bd1030c2c4789818dc1eefe34121a369cf95341c10882be9dbba6213b57082",
+    "size_bytes": 681
+  },
+  "output/recovery-old-install-apply.json": {
+    "sha256": "e3f2030da47bcdcec7554d5ac85aaaa9cb95cced1b7c5eb29f25474f4ea8e63a",
+    "size_bytes": 1139
+  },
+  "output/recovery-old-install-apply.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/recovery-old-install-apply.stdout": {
+    "sha256": "3b825147f948327b7fcc27d2a8537693126de650683ca9d2c6bcbca72afd0c9f",
+    "size_bytes": 553
+  },
+  "output/recovery-old-install-preview.json": {
+    "sha256": "7cf3b254f2d195eb8f580121df1701ff921b8f6f8f975c349c769852a20449a1",
+    "size_bytes": 1062
+  },
+  "output/recovery-old-install-preview.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/recovery-old-install-preview.stdout": {
+    "sha256": "0728feec89323a0f720e7b75096574ca9709ca42127b31eb9f74aca255d91bbd",
+    "size_bytes": 99558
+  },
+  "output/recovery-ordinary.json": {
+    "sha256": "eb4a0c1078fd36b84a47ea83655dc7fe8acb1b77ffda13bb0c46659f16700c05",
+    "size_bytes": 1214
+  },
+  "output/recovery-ordinary.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/recovery-ordinary.stdout": {
+    "sha256": "b3f4c66b4ff12a4508b972872bd7f258714a2b28d8f67ca512e168ad3e46d468",
+    "size_bytes": 686
+  },
+  "output/recovery-wrong-plan.json": {
+    "sha256": "5f39a7781b0a376b9db8f3d23075629695cec61c4e401fee107e8a3c49a7b6bd",
+    "size_bytes": 1335
+  },
+  "output/recovery-wrong-plan.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/recovery-wrong-plan.stdout": {
+    "sha256": "b3f4c66b4ff12a4508b972872bd7f258714a2b28d8f67ca512e168ad3e46d468",
+    "size_bytes": 686
+  },
+  "output/separate-recovery.json": {
+    "sha256": "1a9fbcb3369e46f8de83cb768e09d49a7f84f0b7b396f18d2914475641c12e48",
+    "size_bytes": 1146
+  },
+  "output/summary.json": {
+    "sha256": "5f8a3fa865da7566157ae35556683b21692409007b831c943e932f9cce4498cc",
+    "size_bytes": 4139
+  }
+}
