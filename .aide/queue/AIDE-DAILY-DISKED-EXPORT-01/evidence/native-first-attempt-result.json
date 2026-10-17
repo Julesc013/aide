@@ -1,0 +1,114 @@
+{
+  "schema": "aide.native-partial-qualification-result.v1",
+  "job_id": "3591d13b81944afd9ea3b437314e855d",
+  "source_commit": "126724bebf8440993759b2f6b82e6c02176ea9b2",
+  "source_tree": "e31843fd48444c6230e75a7d26924c23cafdd7ed",
+  "status": "FAIL_PRESERVED_WRAPPER_EXPECTED_COUNT_106_ACTUAL_160",
+  "result": {
+    "exit_code": 1,
+    "reason": "exited",
+    "quiescent": true,
+    "bytes": 2580,
+    "io_errors": [],
+    "job_id": "3591d13b81944afd9ea3b437314e855d",
+    "pid": 18176,
+    "creation_filetime": 134363585029882986
+  },
+  "receipt_sha256": "681dd0ab0c1fa055e74ff80c8bf3230e654671c08c2b7845831b44fd82f7995c",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\3591d13b81944afd9ea3b437314e855d",
+  "collection_manifest": {
+    "output": "3eb6ae494f3d87e729aadfa0e2f195e6790d2bb7984efa8f7b59165d4a9aae18",
+    "logs": "210d2fb928482b37274d75733f434a3165dd4f15c79c597d16d813fa0e01ce16"
+  },
+  "peaks": {
+    "scratch_bytes": 4824409,
+    "memory_bytes": 91664384,
+    "canonical_bytes": {}
+  },
+  "retained_bytes": 29745,
+  "completed_stages": [
+    {
+      "stage": "target-base",
+      "exit_code": 0,
+      "elapsed_seconds": 0.04117950005456805,
+      "stdout_bytes": 41,
+      "stdout_sha256": "c58e6fd89b646525586736c782c6751a74d3a661d82c095a751cc5e958aa51fd",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "target-clean",
+      "exit_code": 0,
+      "elapsed_seconds": 0.04740150005090982,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "native-index",
+      "exit_code": 0,
+      "elapsed_seconds": 2.893443699926138,
+      "stdout_bytes": 96,
+      "stdout_sha256": "bc64a6c94299433e5576fb12c4e6b2ddac68a4d270d0d8b4b16a63807f665e36",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "native-check",
+      "exit_code": 0,
+      "elapsed_seconds": 2.8418508000904694,
+      "stdout_bytes": 491,
+      "stdout_sha256": "5e0d12e9d5d89c0db8646c4a413e2a93a0d2b3349c2f73eebf7329538e65cb0a",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "native-tests",
+      "exit_code": 0,
+      "elapsed_seconds": 98.99157579999883,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_bytes": 19012,
+      "stderr_sha256": "a7f13f4f9dd376f04d271a3d0e7db6a585cff4ca93425e7cf235c12a734a5208"
+    }
+  ],
+  "completed_native_tests": {
+    "tests_run": 160,
+    "failures": 0,
+    "errors": 0,
+    "skips": 2,
+    "skipped_cases": [
+      {
+        "test": "test_specctl.PathTests.test_symlink_path_is_refused",
+        "reason": "symlinks unavailable on coordinator"
+      },
+      {
+        "test": "test_specctl.TemporaryBundleTests.test_bootstrap_refuses_symlink_root",
+        "reason": "symlinks unavailable"
+      }
+    ],
+    "dependency_versions": {
+      "PyYAML": "6.0.3",
+      "jsonschema": "4.26.0",
+      "attrs": "26.1.0",
+      "jsonschema-specifications": "2025.9.1",
+      "referencing": "0.37.0",
+      "rpds-py": "2026.5.1",
+      "typing_extensions": "4.16.0"
+    }
+  },
+  "completed_native_test_stderr_sha256": "a7f13f4f9dd376f04d271a3d0e7db6a585cff4ca93425e7cf235c12a734a5208",
+  "source_postimages": {
+    "spec/tools/specctl.py": "e5575137ec2e5d790881d5524830c1a8da3e0c5a10d692ecae54327c8c42ba53",
+    "spec/tools/tests/test_specctl.py": "6ca68f60cec7b99dc25a6147308aec248c1a98d184eb6c9b7f979db803ef1501",
+    "spec/development/specctl.md": "41b1a1c0a322ba1679112c67d2841a80c5583da2cc9b42b257e7eea9dc8b06d0"
+  },
+  "native_input_fingerprint_sha256": "b2c9c298c1381563833a8abcf5ed6a0d41e4afc0c4eff4106c17906d13e5be6a",
+  "python_executable_sha256": "434b361fe0c5960d404974feed493db47f2603a1ace2574312104fbed0182c6f",
+  "all_collection_hashes_verified": true,
+  "collection_retirement_verified": true,
+  "target_mutated": false,
+  "remaining_stages": "manifest_verify_manifest_fixture_git_context_selected_export_controlled_exit_resume_all_export_comparison"
+}

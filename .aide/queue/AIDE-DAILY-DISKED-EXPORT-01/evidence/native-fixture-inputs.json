@@ -953,5 +953,10 @@
     "spec/tools/tests/test_corrective.py": 22,
     "spec/tools/tests/test_specctl.py": 74
   },
-  "expected_test_count": 106
+  "expected_test_count": 160,
+  "expected_static_test_count": 106,
+  "generated_fixture_case_counts": {
+    "spec/fixtures/invocation.json": 25,
+    "spec/catalog/validation-cases.json": 29
+  }
 }

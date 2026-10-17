@@ -59,6 +59,27 @@ whose actual subjects remain unchanged. Do not weaken tests for a green result.
 
 ### Actual acquisition and next offline qualification
 
+### Actual native partial outcome and final conserved continuation
+
+Exact effecte31843fd/126724be is independently accepted. Job3591d13b completes
+native index/check and all160tests:158pass,0failure/error,2original symlink checks
+unavailable. Five new selector cases all pass. Wrapper then fails its incorrect
+expected106 count: AST counted declared methods but omitted54generated fixture
+cases (invocation and schema). This is a task-local orchestration bug; change no
+native source or test expectation. Preserve actual full stderr/counts and overall
+exit1, every stage stream/digest and quiescent/retired/scratch absent/released result.
+
+Correct count metadata using unchanged fixture tables and original run. Reuse the
+completed native check/test results only for exact same235files,3postimages,Python,
+dependency versions and config subjects, with retained stream hashes verified.
+Do not rerun the98.99-second suite to obtain a green aggregate. Rebuild only owned
+transient fixture setup because previous scratch is retired; resume unfinished
+manifest/Git/context/export/controlled-stop/resume/default-comparison stages under
+new final attempt identity after exact independent repair/reuse/effect review.
+Two of three jobs spent. Target still unchanged; third/final job and source outcome
+remain held. Generated-case audit54 plus106declared tests equals160 actual methods;
+original2unavailable filesystem assertions remain explicit qualification gaps.
+
 Exact acquisition5733bcd1/c38b043e receives independent ACCEPT from
 /root/review_new_host_bootstrap. Nonblocking socket-timeout/import-closure
 clarifications are disposed against unchanged effect; clean exact source and

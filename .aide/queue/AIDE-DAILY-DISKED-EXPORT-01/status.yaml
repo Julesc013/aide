@@ -2,12 +2,12 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-DAILY-DISKED-EXPORT-01
 status: needs_review
 classification: admitted_preparation_only
-planning_state: wheels_acquired_verified_retired_offline_native_effect_held
+planning_state: actual160_completed_first_overall_failure_preserved_final_reuse_effect_held
 result: PENDING
 review_gate: exact_source_and_each_effect_held
 updated_at: 2026-10-13
-jobs_allocated: 1
+jobs_allocated: 2
 maximum_jobs: 3
 target_mutated: false
 product_qualified: false
-next_action: exact_offline_native_source_effect_review_then_fresh_admission
+next_action: review_count_repair_exact_valid160_reuse_and_final_unfinished_stages
