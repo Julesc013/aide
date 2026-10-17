@@ -1,0 +1,23 @@
+{
+  "tests_run": 5,
+  "failures": 0,
+  "errors": 2,
+  "skips": [],
+  "test_ids": [
+    "test_stable_successor.StableSuccessorTests.test_bad_versions_tags_and_policy_refuse",
+    "test_stable_successor.StableSuccessorTests.test_contract_hardlink_and_reparse_metadata_are_rejected",
+    "test_stable_successor.StableSuccessorTests.test_future_successor_retains_every_older_version",
+    "test_stable_successor.StableSuccessorTests.test_missing_tampered_or_inconsistent_predecessor_refuses",
+    "test_stable_successor.StableSuccessorTests.test_successor_preserves_history_binds_identity_and_replays"
+  ],
+  "test_inputs": {
+    ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+    ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+    ".aide/scripts/tests/test_stable_release_admission.py": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+    ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+    ".aide/scripts/tests/test_stable_successor.py": "88bea3e28a3263cfbd80c97cec83b9a2566bf275b79b2011da580f74e8d7e459"
+  },
+  "subject": "source",
+  "batch": "source_successor_a",
+  "scope": "synthetic release lineage; not actual published-predecessor upgrade evidence"
+}

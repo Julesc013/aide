@@ -37,3 +37,5 @@ paths classified, fresh helper plan and idle estate observed, local task branch
 created from33ec403f. No jobs allocated. Implementation and qualification pending.
 
 Allocation1 jobc5aaa6dc timed out at180sec and retired safely; retained22 completed methods and one interrupted method, with38 source methods unfinished. All collection hashes verified, no source/test/asset mutation. Request a finite partition amendment, not an automatic retry or resource-limit increase.
+
+Allocation2 PASS27 closes original49 with retained22. Allocation3 successor5 produced3 passes/2 fixture-provenance errors; safely retired, allocation4 not submitted. Repair the new shared fixture only and rerun11 affected methods under the same maximum8 allocations; see evidence/fixture-repair.md.

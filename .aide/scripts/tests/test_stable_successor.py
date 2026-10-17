@@ -35,6 +35,18 @@ class StableSuccessorTests(unittest.TestCase):
                  "sha256": hashlib.sha256((root / rel).read_bytes()).hexdigest()}
                 for rel in lite.stable_release_paths(version).values()]
 
+    def refresh_pack(self, root):
+        # A policy/source change requires a new clean source identity. Do not
+        # weaken production provenance to accommodate the synthetic fixture.
+        pack = lite.export_pack_root(root)
+        source = self.git(root, "rev-parse", "HEAD")
+        (pack / "manifest.yaml").write_text(lite.render_manifest(
+            lite.pack_manifest_list(pack, "included_files"), source, False),
+            encoding="utf-8", newline="\n")
+        (pack / "checksums.json").write_text(lite.stable_json_text(lite.build_pack_checksums(pack)),
+                                             encoding="utf-8", newline="\n")
+        self.commit(root)
+
     def make_repo(self):
         helper = fixture.Q47ReleaseBundleTests()
         self.addCleanup(helper.doCleanups)
@@ -63,6 +75,7 @@ class StableSuccessorTests(unittest.TestCase):
         policy.write_text(policy.read_text(encoding="utf-8") + "\n# successor fixture\n",
                           encoding="utf-8", newline="\n")
         self.commit(root)
+        self.refresh_pack(root)
         return root, record
 
     def snapshot(self, root):
@@ -118,6 +131,7 @@ class StableSuccessorTests(unittest.TestCase):
         record["preserved_assets"] += self.pins(root, "1.1.0")
         self.save(root, record)
         self.commit(root)
+        self.refresh_pack(root)
         lite.build_stable_release_candidate(root, "1.2.0")
         self.assertEqual({name: self.snapshot(root)[name] for name in old}, old)
         self.assertEqual(lite.validate_stable_release_candidate(root, "1.2.0")["result"], "PASS")
@@ -259,6 +273,7 @@ class StableSuccessorTests(unittest.TestCase):
         record.update(version="1.0.1", additional_cli_forms=[])
         self.save(root, record)
         self.commit(root)
+        self.refresh_pack(root)
         lite.build_stable_release_candidate(root, "1.0.1")
         self.assertEqual(lite.validate_stable_release_candidate(root, "1.0.1")["result"], "PASS")
 
