@@ -24,3 +24,5 @@ record filename and stopped before effects; corrected to existing dispatch_state
 owner. Sole local task branch created from a0970bad. No jobs allocated yet.
 
 Source review1 requested two corrections: target-code import boundary and legitimate recovered receipts. Both repaired with regression cases; no job allocated. Full validation will be repeated only for these changed inputs.
+
+Allocation1 consumed:41 PASS/1 fixture error (invalid synthetic session UUID). Actual consumer not reached. Preserve original failure and proposed exact combined allocation2 in qualification-amendment.md. Maximum3 unchanged.

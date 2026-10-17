@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-WORK-EFFORT-01
 status: running
-result: SOURCE_PREPARATION
-jobs_allocated: 0
+result: SOURCE41_PASS_ONE_FIXTURE_ERROR_PRESERVED
+jobs_allocated: 1
 maximum_jobs: 3
-next_action: exact_source_and_effect_review
+next_action: combined_qualification_amendment_review

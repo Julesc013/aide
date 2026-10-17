@@ -196,7 +196,7 @@ class WorkEffortTests(unittest.TestCase):
         entries = []
         for i in range(2):
             name = f"stream{i}.jsonl"
-            events = [{"type": "thread.started", "thread_id": "same-session"},
+            events = [{"type": "thread.started", "thread_id": "00000000-0000-4000-8000-000000000001"},
                       {"type": "turn.started"}, {"type": "turn.completed", "usage": {
                        "input_tokens": 10 + i, "cached_input_tokens": 0, "output_tokens": 3}}]
             path = self.root / name
