@@ -1,0 +1,29 @@
+schema_version: aide.queue-task.v0
+id: AIDE-COOPERATIVE-REVIEW-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Complete one actual cooperative readiness review
+type: operational_qualification
+status: running
+admission_ref: ../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/cooperative-review-admission.md
+admission_sha256: 6fb7e3876823e7f30687aa3a6bae91f1b415537355f2203f052dbdf7d4dd2cbc
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-COOPERATIVE-REVIEW-01/**
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/cooperative-review-admission.md
+    - .aide/intake/latest-*
+    - .aide/context/latest-task-packet.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - .aide/changelog/CHANGELOG.preview.md
+    - .aide/changelog/RELEASE_NOTES.preview.md
+    - .aide/changelog/changelog.preview.json
+    - .aide/changelog/latest-changelog-report.md
+    - .aide/changelog/malformed-commits.md
+    - .aide/changelog/release-notes.preview.json
+review_gate: exact_live_effect_then_terminal_source_and_integration
+maximum_requests: 1
+maximum_promotion_jobs: 1

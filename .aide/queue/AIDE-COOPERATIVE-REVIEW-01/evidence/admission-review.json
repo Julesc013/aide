@@ -1,0 +1,7 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "scope": "bounded preparation and guarded local branch only",
+  "sha256": "6fb7e3876823e7f30687aa3a6bae91f1b415537355f2203f052dbdf7d4dd2cbc",
+  "findings": []
+}

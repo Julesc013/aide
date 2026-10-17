@@ -4015,3 +4015,13 @@ items:
     exec_plan: .aide/queue/AIDE-DEPENDENCY-MCP-01/ExecPlan.md
     prompt: .aide/queue/AIDE-DEPENDENCY-MCP-01/prompt.md
     evidence: .aide/queue/AIDE-DEPENDENCY-MCP-01/evidence
+
+  - id: AIDE-COOPERATIVE-REVIEW-01
+    status: running
+    planning_state: exact_live_effect_preparation
+    result: PENDING
+    title: Complete one actual cooperative readiness review
+    task: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/task.yaml
+    exec_plan: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/prompt.md
+    evidence: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence

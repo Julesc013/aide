@@ -1,0 +1,31 @@
+{
+  "actor": {
+    "participant": "sender",
+    "binding_sha256": "41f5d1775d558aa41cae257234317f7654816feb66cef4189a7ce0d03775527a"
+  },
+  "request": {
+    "schema": "aide.dependency-request.v1",
+    "id": "aide-host-readiness-review-01",
+    "sender": "sender",
+    "recipient": "reviewer",
+    "sender_work": {
+      "ref": ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/prompt.md",
+      "sha256": "9bbb1200002107169e12faa460b7cb71ff64037a3152f0e5562a188b60a6e689"
+    },
+    "objective": "Identify the smallest supported next connection step for delivery to the installed existing Codex worker, preserving the failed observation and exact limits.",
+    "acceptance": "A source-linked readiness answer distinguishes available commands, unproven connection, receipt and acceptance; states missing prerequisites without inventing live delivery. Do not repeat the unchanged probe or launch/configure anything.",
+    "references": [
+      {
+        "ref": ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/host-observation.json",
+        "sha256": "c5a3f27bb15d749b605c5a5adedd8b7795c9511c45725962d0f6f6fcc776c8d9"
+      },
+      {
+        "ref": "docs/reference/local-dependency-requests.md",
+        "sha256": "4d57b187ed64fd498eb4a5f4ddba9a648317cd037fa8385d55185a65131585b2"
+      }
+    ],
+    "completion": [
+      "answer"
+    ]
+  }
+}

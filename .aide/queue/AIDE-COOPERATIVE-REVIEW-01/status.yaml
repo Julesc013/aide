@@ -1,0 +1,12 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-COOPERATIVE-REVIEW-01
+status: running
+result: PENDING
+stage: preparing_exact_live_effect
+live_initializations: 0
+live_requests: 0
+promotion_jobs_allocated: 0
+maximum_promotion_jobs: 1
+next_action: independent_exact_source_and_live_effect_review
+installed_desktop_delivery: not_qualified
+native_disked_adoption: ownership_pending

@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+## Cooperative exchange evidence - 2026-10-18
+
+[Operational plan](.aide/queue/AIDE-COOPERATIVE-REVIEW-01/ExecPlan.md) and [host observations](.aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/host-observation.json) distinguish a failed default socket probe from command availability and actual worker delivery.
+
 ## Cooperative dependency interface - 2026-10-18
 
 [Local request reference](docs/reference/local-dependency-requests.md) documents the four tools, pinned stdio subset and exact operational limitations. [Qualified result](.aide/queue/AIDE-DEPENDENCY-MCP-01/REPORT.md) records 60 passing methods, unchanged portable payload and the applicable promotion preview. [Child plan](.aide/queue/AIDE-DEPENDENCY-MCP-01/ExecPlan.md) preserves installed-client and actual delivery obligations.

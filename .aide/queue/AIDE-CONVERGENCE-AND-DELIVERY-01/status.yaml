@@ -12,7 +12,7 @@ workflow_plan_ref: docs/roadmap/development-workflows.json
 workflow_plan_acceptance: ACCEPT_WITH_NOTES_922173c8_all_notes_nonblocking_disposed
 operational_next_task: actual_host_delivery_after_qualified_local_exchange
 portable_git_defaults_integration_ref: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/evidence/integration-result.json
-last_completed_task: AIDE-LOCAL-DEPENDENCY-01
+last_completed_task: AIDE-DEPENDENCY-MCP-01
 git_defaults_admission_ref: evidence/git-defaults-admission.md
 next_preparation: actual_host_delivery_after_local_interface_qualification
 native_selected_export_result_ref: .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence/native-final-result.json
@@ -135,3 +135,6 @@ native_adoption_pending_ref: .aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/status.ya
 
 cooperative_dependency_interface_ref: .aide/queue/AIDE-DEPENDENCY-MCP-01/REPORT.md
 cooperative_dependency_interface_result: PASS60_local_stdio_actual_worker_delivery_pending
+
+actual_cooperative_review_ref: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/status.yaml
+installed_control_probe: failed_10050_no_unchanged_retry

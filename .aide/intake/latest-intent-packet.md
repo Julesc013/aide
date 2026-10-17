@@ -3,18 +3,18 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 03d2ba1a149bda4e39bff92d80930448c86a2507631d9127fb469252557c74f8
-- raw_prompt_excerpt: Prepare a bounded cooperative MCP interface over the qualified local dependency request owner, with exact recipient binding, inbox discovery, duplicate-safe request/reply, and actual protocol-client verification. Preserve the observed un...
-- interpreted_goal: Normalize prompt into a bounded install WorkUnit draft: require behavior proof and live-test validation plan before implementation.
-- confidence: low
-- task_class: install
-- risk_class: unknown
-- sizing_class: live_test_gate
+- raw_prompt_hash: 050173bcfdad30cbbe92c5044127ab5f3b2421f4fad0806356dbdc44ddad36bd
+- raw_prompt_excerpt: AIDE-COOPERATIVE-REVIEW-01: use the existing AIDE Requests CLI and already authorized review worker for one real bounded host-delivery readiness review; initialize one explicitly bound ledger in the existing approved control directory af...
+- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
+- confidence: high
+- task_class: release
+- risk_class: release
+- sizing_class: blocked
 - safe_to_execute: false
 - requires_split: true
-- blocked: false
-- blocker_reason: none
-- next_action: require behavior proof and live-test validation plan before implementation
+- blocked: true
+- blocker_reason: write blocker report and require reviewed authorization before mutation
+- next_action: write blocker report and require reviewed authorization before mutation
 - task_execution: false
 - provider_or_model_calls: none
 - network_calls: none
@@ -24,13 +24,14 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
+- do not publish releases, tags, or assets from prompt alone
 
 ## Repo State Refs
 
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/AIDE-LOCAL-DEPENDENCY-01/status.yaml`
+- `.aide/queue/AIDE-DEPENDENCY-MCP-01/status.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/repo/file-inventory.json`
 - `.aide/repo/latest-repo-intelligence.md`
@@ -47,8 +48,8 @@
 ## Validation Hints
 
 - `git diff --check`
+- `py -3 .aide/scripts/aide_lite.py changelog validate`
 - `py -3 .aide/scripts/aide_lite.py intent validate`
-- `target-local preflight validation; no source-side target mutation`
 
 ## Evidence Hints
 

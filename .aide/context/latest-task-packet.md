@@ -1,15 +1,15 @@
 # AIDE Latest Task Packet
 
-task_id: AIDE-DEPENDENCY-MCP-01
+task_id: AIDE-COOPERATIVE-REVIEW-01
 projection_only: true
 
 ## PHASE
 
-AIDE-DEPENDENCY-MCP-01 - Expose participant-bound cooperative dependency tools
+AIDE-COOPERATIVE-REVIEW-01 - Complete one actual cooperative readiness review
 
 ## GOAL
 
-Expose participant-bound cooperative dependency tools
+Complete one actual cooperative readiness review
 
 ## WHY
 
@@ -17,9 +17,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-DEPENDENCY-MCP-01/task.yaml` (selected scope and acceptance)
-- `.aide/queue/AIDE-DEPENDENCY-MCP-01/ExecPlan.md` (continuation; when present)
-- `.aide/queue/AIDE-DEPENDENCY-MCP-01/status.yaml` (actual state; when present)
+- `.aide/queue/AIDE-COOPERATIVE-REVIEW-01/task.yaml` (selected scope and acceptance)
+- `.aide/queue/AIDE-COOPERATIVE-REVIEW-01/ExecPlan.md` (continuation; when present)
+- `.aide/queue/AIDE-COOPERATIVE-REVIEW-01/status.yaml` (actual state; when present)
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -46,25 +46,22 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `core/runtime/continuous_worker/requests.py`
-- `core/runtime/continuous_worker/__main__.py`
-- `core/runtime/continuous_worker/request_access.py`
-- `core/runtime/continuous_worker/dependency_mcp.py`
-- `.aide/scripts/tests/test_continuous_worker_mcp.py`
-- `.aide/scripts/tests/test_continuous_worker_requests.py`
-- `docs/reference/local-dependency-requests.md`
-- `.aide/queue/AIDE-DEPENDENCY-MCP-01/**`
+- `.aide/queue/AIDE-COOPERATIVE-REVIEW-01/**`
 - `.aide/queue/index.yaml`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
-- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/dependency-mcp-admission.md`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/cooperative-review-admission.md`
 - `.aide/intake/latest-*`
 - `.aide/context/latest-task-packet.md`
-- `.aide/generated/**`
-- `.aide/reports/capability-*`
 - `PLANS.md`
 - `IMPLEMENT.md`
 - `DOCUMENTATION.md`
+- `.aide/changelog/CHANGELOG.preview.md`
+- `.aide/changelog/RELEASE_NOTES.preview.md`
+- `.aide/changelog/changelog.preview.json`
+- `.aide/changelog/latest-changelog-report.md`
+- `.aide/changelog/malformed-commits.md`
+- `.aide/changelog/release-notes.preview.json`
 
 ## FORBIDDEN_PATHS
 
@@ -133,8 +130,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 5239
-- approx_tokens: 1310
+- chars: 5106
+- approx_tokens: 1277
 - budget_status: PASS
 - warnings:
   - none

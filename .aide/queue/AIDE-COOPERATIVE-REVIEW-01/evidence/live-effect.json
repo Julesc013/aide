@@ -1,0 +1,81 @@
+{
+  "schema": "aide.cooperative-review.live-effect.v1",
+  "source": "Exact independently accepted staged tree committed unchanged; pin actual commit/tree at initialization",
+  "runtime_input_ref": ".aide/queue/AIDE-DEPENDENCY-MCP-01/evidence/job-template.json",
+  "runtime_input_ref_sha256": "2c01f68d2b3ec14f53560cb38803c02b2aa23619b4c856ae605fc9312a0793a6",
+  "configuration_input": "evidence/live-config.log",
+  "configuration_raw_sha256": "0a3f6108638f8e02100d37524f19fd5b1c78d716a64f18eb9b372c65bfc1953b",
+  "configuration_sha256": "ba1861846131a5279b3a4acc06447ad979f0f66ed04d8f6d8265bb608b9726db",
+  "bindings": {
+    "sender": "41f5d1775d558aa41cae257234317f7654816feb66cef4189a7ce0d03775527a",
+    "reviewer": "277ceac88fd185962399603643ec18fd9cc13dac8bf28a34f6ff48318030bded"
+  },
+  "request_file": "evidence/request.json",
+  "request_file_sha256": "97752760986d6b2f82ce3088acf4644fb133d93a0934d112bbb6fdc15f5959f9",
+  "request_id": "aide-host-readiness-review-01",
+  "request_sha256": "563713f0c9d4c76f9651074fde4f358f1ef40246e90860a83f5211d4a0dea61d",
+  "state_root": "D:\\Projects\\AIDE\\.aide.local\\execution\\control",
+  "existing_control_members": [
+    "admission.lock",
+    "dispatch.lock"
+  ],
+  "created_state_members": [
+    "coordinator.sqlite3",
+    "coordinator.sqlite3-wal",
+    "coordinator.sqlite3-shm"
+  ],
+  "limits": {
+    "initializations": 1,
+    "logical_requests": 1,
+    "record_mutations": 6,
+    "status_reads": 12,
+    "message_bytes": 8192,
+    "command_seconds": 20,
+    "recorded_output_bytes": 1048576,
+    "post_command_database_bytes": 1048576,
+    "expiry": 1792851485,
+    "new_workers": 0,
+    "notifications": 1,
+    "managed_provider_dispatches": 0
+  },
+  "guard": "Before every write: existing estate lock, exact approved config/root/source and executable input pins, running dispatch, no active/next job, bounded input, stable request identity; never alter lock/dispatch files. Initial SQLite/sidecar paths must be absent. Later reads/replays reconcile stable ID before any uncertain retry. Limits are bounded cooperative pre/post checks, not OS containment.",
+  "sequence": [
+    "sender request-init from exact raw configuration",
+    "sender request-submit exact input",
+    "one collaboration followup to existing reviewer with request ID/config hashes/native task refs, no fabricated acknowledgement",
+    "recipient fresh request-status; write actual delivered receipt and request-observe delivered",
+    "recipient write native review-task reference and request-observe accepted",
+    "recipient bounded read-only readiness review, write answer; request-observe returned with answer PASS only for a complete supported answer",
+    "sender fresh request-status, verify returned answer and every reference byte and native acceptance; record verification and request-observe adopted using digest of complete returned observation",
+    "fresh read-only final status/event/table audit; preserve durable DB and stage evidence"
+  ],
+  "recipient_owned_outputs": [
+    "evidence/recipient-receipt.json",
+    "evidence/native-review-task.md",
+    "evidence/native-answer.md",
+    "evidence/delivered.json",
+    "evidence/accepted.json",
+    "evidence/returned.json",
+    "evidence/recipient-*.log"
+  ],
+  "sender_owned_outputs": [
+    "evidence/initialization.log",
+    "evidence/submission.log",
+    "evidence/sender-verification.json",
+    "evidence/adopted.json",
+    "evidence/sender-*.log",
+    "evidence/operational-result.json"
+  ],
+  "exclusions": [
+    "no recipient impersonation",
+    "no automatic desktop/peer delivery claim",
+    "no native task/attempt/effect mutation",
+    "no external repo message",
+    "no account/history/secret access",
+    "no Codex queue dispatch",
+    "no global config/new server/provider change",
+    "no storage-root or ledger deletion",
+    "no Git effect from this live effect"
+  ],
+  "usage_boundary": "One actual operational reviewer turn uses the already authorized collaboration host; controller/reviewer model usage remains unknown, not zero. No model request is launched by the CLI or through a new provider."
+}
