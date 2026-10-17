@@ -3968,9 +3968,9 @@ items:
     evidence: .aide/queue/AIDE-DAILY-CURRENT-VIEW-01/evidence
 
   - id: AIDE-GIT-DEFAULTS-01
-    status: running
-    planning_state: admitted_portable_git_defaults_early_dev_sync
-    result: PENDING
+    status: blocked
+    planning_state: defaults_implemented_installed_changelog_repair_required
+    result: FAIL_PRESERVED_INSTALLED_QUEUE_CHANGELOG_GUARD
     title: Make frequent safe integration and local task branches portable defaults
     task: .aide/queue/AIDE-GIT-DEFAULTS-01/task.yaml
     exec_plan: .aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md

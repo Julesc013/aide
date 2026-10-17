@@ -2,55 +2,95 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 6d6cfc61c34517bab7ef88128bea126515528f3a latest 50 commits
-source_head: 6d6cfc61c34517bab7ef88128bea126515528f3a
+source_range: 6f2abc4cd69e0d94f86a00495cb8feeebe20398a..HEAD
+source_head: 88fa0008c5670df41e5fc6aa061a519d66f48495
 preview_only: true
 
 ## Highlights
 
-- Fixed: Source changelog previews can use finite managed-job storage admission. (8ee5b4b98c02)
-- Fixed: Q34 validation runs in both managed and documented raw discovery modes. (0063ab234484)
-- Fixed: Avoid a stale self-hosted next-work recommendation. (3991acf99688)
-- Fixed: Prevent Task OS next-plan inspection from rewriting tracked report snapshots. (de5e8d47c511)
+- Added: capability-specific daily-use planning and restartable execution briefs. (09afd31ce4be)
+- Added: explicit complete host/backend binding and bounded new-host preparation. (18c026dbfffc)
+- Added: exact new-host qualification and review evidence. (8a473d9ceb30)
+- Added: independent selected-task regression preparation. (7fbf8e11a63b)
+- Added: named task scope documentation and refusal regressions. (fc8a68b7884c)
+- Added: exact repaired source and compatibility evidence. (238fa7bc4895)
+- Added: actual source acceptance and durable continuation state. (36994f461850)
+- Added: bounded current-source export refresh qualification preparation. (00f1f428f21a)
+- Added: exact startup failure and bounded retry/replay amendment evidence. (015de64c9d11)
+- Added: exact regenerated result and retained structural evidence. (3f956ce8d62a)
+- Added: frozen final replay preparation and accepted generated-result evidence. (c15adb159785)
+- Added: final clean-source derived-export replay evidence. (8abd7186fa1e)
+- Added: admitted installed-workflow qualification plan and exact input identities. (cde9d5ad0111)
+- Added: bounded installed consumer candidate with complete command stream retention. (3aac28e6066c)
+- Added: preserved partial outcomes and bounded completed-test reuse. (665c8f700df3)
+- Added: exact installed task-binding fixture and continuation evidence. (a90f1330b96d)
+- Added: native selected-export preparation with separately held effects. (77f06858ffab)
+- Added: native selected-export preparation; original default and non-authorizing semantics retained. (c38b043ef610)
+- Added: held offline consumer effect with original assertions and actual counts. (126724bebf84)
+- Added: accepted native fixture outcome with conserved original evidence. (3caf98aae9c3)
+- Added: prospective delivery refinements and a bounded current-view brief. (753de2e3659b)
+- Added: admitted current-view child preparation packet. (cd7b1bcf2013)
+- Added: named read-only task observations and structured output. (c7ea89dcd692)
+- Added: qualified named task observations and explicit evidence uncertainty. (2ef8ad51a56a)
+- Added: New project policy defaults and report-only project-aware protection advice. (7cd6d657eaa1)
+- Added: bounded fresh adoption and project-protection update qualification recipe. (39df07cbee63)
+- Changed: current release explanation identifies the published local Windows Lite profile. (09afd31ce4be)
+- Changed: derived Lite export now corresponds to accepted current source. (3f956ce8d62a)
+- Changed: current derived-export task is closed against accepted exact evidence. (648116f660e9)
+- Changed: installed fixture task closes against exact accepted outcomes. (207553d8815f)
+- Changed: next bounded priority is portable Git defaults and reviewed integration. (2ef8ad51a56a)
+- Changed: development export includes tested current-task view and Git defaults. (88fa0008c567)
+- Fixed: incomplete current task metadata and explicitly refreshed stale bindings. (09afd31ce4be)
+- Fixed: task-local Windows native prerequisite command syntax. (18c026dbfffc)
+- Fixed: selected task identity in compact preparation and changed-file scope verification. (fc8a68b7884c)
+- Fixed: stale derived source binding for the task preparation helper. (0a91084f3822)
+- Fixed: premature unchanged-asset claim in failed export records. (f8bb46ebe759)
+- Fixed: isolated wrapper sibling module loading. (015de64c9d11)
+- Fixed: proposed installed fixture refusal oracles and bounded contract precision. (95707b375f35)
+- Fixed: proposed fixture verification-report destinations. (665c8f700df3)
+- Fixed: task-local count accounting with conserved original native outcomes. (9ce7d46d4333)
+- Fixed: task-local qualification entry-point setup. (0f6182d63f00)
+- Fixed: report-writing test invocation follows the existing explicit command flag. (39df07cbee63)
+- Fixed: stale capability evidence refreshed against actual source inputs. (88fa0008c567)
 
 ## Validation Summary
 
-- 9a8af184b5e5: PASS: reviewer returned strict technical release ACCEPT for ab1a797d.
-- 6f8eb6902f72: PASS: clean fast-forward from dev 2cd254df to task closeout 9a8af184.
-- 81ddce079fc6: PASS: D-managed injected loader suite ran 10/10 tests in job 4a9051ae.
-- 7cbb7dccb71c: PASS: postcommit managed test job 49b237ea ran 10/10 cases.
-- 14d5cc108f1f: PASS: read-only load_plan preflight verified the exact manifest; no native load occurred.
-- e9ad4156d512: PASS: independent reviewer matched all ten job inputs and found no one-use journal.
-- 202fa0a88020: PASS: Python AST parse and git diff --check.
-- 694e623f58af: PASS: pre-unlink D job 1f6319a9 exited zero and resumed removal after child exit 77.
-- 98f43bc59cd3: PASS: fast-forward only from 6f8eb690 to 694e623f with no conflicts.
-- 1482b57808e0: PASS: merge-tree preview reported no conflicts; six branch commit messages passed.
+- 09afd31ce4be: Doctor and validate exit zero after preserving the original fourteen failures.
+- 09afd31ce4be: Doctor and validate exit zero after preserving the original fourteen failures.
+- 09afd31ce4be: Doctor and validate exit zero after preserving the original fourteen failures.
+- 922173c83e13: PASS: previous doctor/validate, typed-plan, Harness and exact-child-scope checks.
+- 922173c83e13: PASS: previous doctor/validate, typed-plan, Harness and exact-child-scope checks.
+- bde3d7103b70: PASS: independent full-range scope, fourteen added links and retained receipt hashes.
+- bde3d7103b70: PASS: independent full-range scope, fourteen added links and retained receipt hashes.
+- 18c026dbfffc: PASS: AST parsing of the three task-local Python files and diff preparation.
+- 18c026dbfffc: PASS: AST parsing of the three task-local Python files and diff preparation.
+- 18c026dbfffc: PASS: AST parsing of the three task-local Python files and diff preparation.
 
 ## Known Risks
 
-- 9a8af184b5e5: Ten owner-message dispositions still block main; no tag or release exists.
-- 6f8eb6902f72: Main, tag and publication remain blocked; no downloaded assets exist.
-- 81ddce079fc6: This is injected testing only; no native load or worker activation occurred.
-- 7cbb7dccb71c: Injected tests do not qualify a native loader call or restricted host.
-- 14d5cc108f1f: Same-user LoadLibraryExW can run DLL initialization or dependencies; the effect remains unadmitted.
-- e9ad4156d512: Native loader and restricted-principal guarantees remain unqualified on a disposable host.
-- 202fa0a88020: The canary tests a disposable local consumer, not hostile concurrent writers or downloaded assets.
-- 694e623f58af: The result covers disposable local Windows bytes, not hostile writers or public downloaded assets.
-- 98f43bc59cd3: This evidence does not replace strict release acceptance or downloaded-byte checks.
-- 1482b57808e0: No native effect or disposable host qualification follows from this source merge.
+- 09afd31ce4be: Independent review is pending. The new host has no configured execution pools.
+- 09afd31ce4be: Independent review is pending. The new host has no configured execution pools.
+- 09afd31ce4be: Independent review is pending. The new host has no configured execution pools.
+- 922173c83e13: The whole active goal is incomplete; no runtime, target or release claim follows.
+- 922173c83e13: The whole active goal is incomplete; no runtime, target or release claim follows.
+- bde3d7103b70: All three review notes are nonblocking for this source subject and explicitly disposed.
+- bde3d7103b70: All three review notes are nonblocking for this source subject and explicitly disposed.
+- 18c026dbfffc: Setup, source tests and native effects need exact independent review and fresh admission.
+- 18c026dbfffc: Setup, source tests and native effects need exact independent review and fresh admission.
+- 18c026dbfffc: Setup, source tests and native effects need exact independent review and fresh admission.
 
 ## Follow-up
 
-- 9a8af184b5e5: Fast-forward qualified branch to dev after fresh ancestry and remote checks.
-- 6f8eb6902f72: Apply ten actual owner decisions when supplied, then rerun full main-range validation.
-- 81ddce079fc6: Rerun against the committed test bytes, then prepare a separate exact effect review.
-- 7cbb7dccb71c: Obtain narrow independent review, then prepare one exact finite effect packet.
-- 14d5cc108f1f: Review the exact effect manifest and bounded managed job before any native call.
-- e9ad4156d512: Integrate reviewed source separately; require an identified disposable host for a fresh effect packet.
-- 202fa0a88020: Run the exact current ZIP through the bounded job and obtain independent harness/result review.
-- 694e623f58af: Preserve this task branch while main promotion awaits ten exact owner decisions.
-- 98f43bc59cd3: Observe remote dev; retain the historical-message owner decision gate before main.
-- 1482b57808e0: Run combined tests, obtain exact integration review, then sync authorized dev ref.
+- 09afd31ce4be: Obtain the independent verdict, then qualify one supported actual route under
+- 09afd31ce4be: Obtain the independent verdict, then qualify one supported actual route under
+- 09afd31ce4be: Obtain the independent verdict, then qualify one supported actual route under
+- 922173c83e13: Resolve reviewer choice, obtain the exact independent verdict and continue the
+- 922173c83e13: Resolve reviewer choice, obtain the exact independent verdict and continue the
+- bde3d7103b70: Prepare and review exact new-host resource setup and one supported-route qualification.
+- bde3d7103b70: Prepare and review exact new-host resource setup and one supported-route qualification.
+- 18c026dbfffc: Review setup/source-check effects, collect passing tests, then review the native effect.
+- 18c026dbfffc: Review setup/source-check effects, collect passing tests, then review the native effect.
+- 18c026dbfffc: Review setup/source-check effects, collect passing tests, then review the native effect.
 
 ## Warnings
 

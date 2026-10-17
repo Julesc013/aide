@@ -1,16 +1,20 @@
 # Latest Changelog Report
 
-source_range: 6d6cfc61c34517bab7ef88128bea126515528f3a latest 50 commits
-source_head: 6d6cfc61c34517bab7ef88128bea126515528f3a
-commit_count: 50
-entry_count: 50
+source_range: 6f2abc4cd69e0d94f86a00495cb8feeebe20398a..HEAD
+source_head: 88fa0008c5670df41e5fc6aa061a519d66f48495
+commit_count: 36
+entry_count: 56
 malformed_count: 0
-highlight_count: 4
+highlight_count: 44
 
 ## Category Counts
 
-- Fixed: 4
-- Internal: 46
+- Added: 26
+- Changed: 6
+- Fixed: 12
+- Internal: 2
+- Risks: 9
+- Follow-up: 1
 
 ## Outputs
 

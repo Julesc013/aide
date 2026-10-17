@@ -2,15 +2,15 @@
 
 - [Portable Git workflow](docs/reference/git-workflow-policy.md): integration
   cadence, project protection choices, task publication and safe retirement.
-  [Current implementation](.aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md) retains
-  focused qualification, export and exact remote-effect gates.
+  [Current outcome](.aide/queue/AIDE-GIT-DEFAULTS-01/REPORT.md) retains qualification
+  evidence and the installed-changelog repair that gates main promotion.
 
 - [Current-task view](docs/reference/task-packets.md): named human/JSON observation,
   recorded-status provenance and evidence uncertainty; source qualification in
   [the bounded child](.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/REPORT.md).
 - [Portable Git default admission](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/git-defaults-admission.md):
   owner-directed integration cadence, optional hosting protection, local task
-  branches and independently reviewed retirement; implementation is next.
+  branches and independently reviewed retirement; source defaults are implemented.
 
 - [Native selected-export outcome](.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/REPORT.md):
   completed fixture continuation, conserved 158 passes/two unavailable checks,

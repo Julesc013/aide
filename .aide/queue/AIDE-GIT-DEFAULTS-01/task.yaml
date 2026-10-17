@@ -3,7 +3,7 @@ id: AIDE-GIT-DEFAULTS-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Make frequent safe integration and local task branches portable defaults
 type: implementation
-status: running
+status: blocked
 objective: Deliver the owner's default Git workflow through existing AIDE and portable policy owners.
 admission_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/git-defaults-admission.md
 admission_sha256: f64a2d4edd2f44bfb794a285777d8343269216429f7fa0f3e1e3a9be258d5f61

@@ -60,3 +60,8 @@ protection bypass, new roots or unauthorized target operations. Keep published
   export, then doctor stopped on a stale capability ledger. Preserve the failure.
   Ledger refreshed; full diagnostic validate now passes. Commit/reuse the exact
   generated pack; final job resumes only unrun stages with no second export reset.
+- Third job completed validation/changelog and five Q31 methods, then preserved
+  the installed-queue/changelog guard failure. All three allocations are exhausted;
+  no fourth job. Keep 47 passing methods and unchanged pack/assets. Propose the
+  bounded dependent source repair and separately reviewed dev-only checkpoint;
+  main remains gated on actual affected consumer and customization outcomes.

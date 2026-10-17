@@ -1,0 +1,9 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "head": "39df07cbee630346bcbad83fa8700b901ff43b7a",
+  "tree": "2be5b5ff5e03224d90d90dbdbdffab1d90f6962d",
+  "template_sha256": "831030abfc4322bd3ae713793f0d736babaabe2a973bd84854783d9096f1e73e",
+  "scope": "exact generated pack, refreshed capability evidence and conditional final remaining-stage job3of3; no integration/real target/release effects",
+  "findings": []
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "aide.git-defaults.dev-sharing-effect.v1",
+  "candidate_base": "88fa0008c5670df41e5fc6aa061a519d66f48495",
+  "candidate": "exact independently reviewed metadata/changelog-outcome successor; substitute only clean accepted commit/tree",
+  "task_branch": "task/aide-git-defaults-01",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "expected_remote_dev": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a",
+  "expected_remote_main": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a",
+  "expected_local_main": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a",
+  "expected_local_dev": null,
+  "effects": [
+    "Verify reviewed clean HEAD/tree, task branch, current worktree/dispatch ownership, exact refs and ancestry.",
+    "Create local dev at the accepted candidate using compare-and-create update-ref, staying on the existing task checkout.",
+    "Push only local dev to remote dev non-forcibly; verify remote commit and tree; record/set upstream."
+  ],
+  "scope": "Share explicitly classified repairable development checkpoint under dev policy; not main promotion or distribution acceptance.",
+  "guarded_source_state": "Native Git/default tests passed; original installed Q31 changelog refusal is retained and main gated. Current export unchanged from reviewed857-file result; source validations and36-commit changelog preview passed.",
+  "exclusions": [
+    "main update",
+    "task branch publication",
+    "any deletion",
+    "force push",
+    "reset",
+    "tag",
+    "release",
+    "hosting protection",
+    "real target or provider effect"
+  ],
+  "concurrency": "Fresh fetch/ls-remote and exact local refs before effect; no active job or conflicting worktree. Normal push preserves concurrent divergent remote work by refusal.",
+  "recovery": "Inspect actual refs after any uncertainty; do not repeat blindly, reset or force. Preserve candidate and halt only affected synchronization on changed refs or protection refusal."
+}

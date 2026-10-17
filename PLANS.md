@@ -4,9 +4,11 @@
 
 [AIDE-GIT-DEFAULTS-01](.aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md) implements the
 owner's cross-project default through existing policy, advisory and adapter owners.
-The attempted early dev preparation found stale export provenance; no ref was
-changed. Qualify the new defaults and a matching portable export before reviewed
-dev/main synchronization. Remote cleanup retains its own exact ownership gate.
+The defaults and matching export are implemented, with 47 passing methods retained.
+An original installed-consumer check exposed a changelog guard compatibility gap;
+the child's three-job allowance is exhausted. The dependent repair proposal keeps
+that assertion and main-promotion gate. A classified dev-only checkpoint and later
+qualified main sync retain separate review. See the child's REPORT for evidence.
 
 ## Current-task view - 2026-10-17
 

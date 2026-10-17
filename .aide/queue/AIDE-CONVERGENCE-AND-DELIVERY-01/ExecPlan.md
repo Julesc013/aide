@@ -1,5 +1,15 @@
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
+## Portable defaults implemented; installed changelog repair required - 2026-10-17
+
+AIDE-GIT-DEFAULTS-01 retains 47 passing methods, a rebuilt development pack and
+three fully retired attempts. Its original Q31 installed consumer found a guard
+that refuses changelog preview once a target creates its own queue. Preserve this
+failure and exhausted allowance. The dependent admission proposal lives in that
+child's evidence/installed-changelog-guard-admission.md. Review a dev-only sharing
+checkpoint separately; main and distribution acceptance await the affected repair
+and actual default/customized-update consumers. No new target or model authority.
+
 ## Current view qualified; portable Git defaults next - 2026-10-17
 
 Current-view source has 29 conserved original passes, 22 repaired fixture passes

@@ -1,0 +1,89 @@
+{
+  "result": "FAIL_PRESERVED_INSTALLED_QUEUE_CHANGELOG_GUARD",
+  "job_id": "a676ccb2a4b7478099c52c9d104b13d3",
+  "source_commit": "88fa0008c5670df41e5fc6aa061a519d66f48495",
+  "q31": {
+    "tests_run": 6,
+    "failures": 1,
+    "errors": 0,
+    "skips": 0
+  },
+  "completed_stages": {
+    "doctor.stdout": {
+      "sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21",
+      "head": [
+        "AIDE Lite doctor",
+        "status: PASS",
+        "- repo_root: D:/Projects/AIDE/aide"
+      ]
+    },
+    "validate.stdout": {
+      "sha256": "f2a609d96e7ae76f743ae204d0166f0f4266ee88c7d9b98e37d8aa01856667e1",
+      "head": [
+        "AIDE Lite validate",
+        "status: PASS",
+        "- PASS required file: .aide/policies/token-budget.yaml"
+      ]
+    },
+    "pack-status.stdout": {
+      "sha256": "17eb7a713285498d636c31fd8f0e50e9b1a632f16f230bd1f2db48a19f2bb673",
+      "head": [
+        "AIDE Lite pack-status",
+        "pack: .aide/export/aide-lite-pack-v0",
+        "exists: true"
+      ]
+    },
+    "changelog-preview.stdout": {
+      "sha256": "fbfd1bae31fe8a69ed2b526359a8612c243d3bd7c929b9459e3f9b9d441eecbb",
+      "head": [
+        "AIDE Lite changelog preview",
+        "result: PASS",
+        "range: 6f2abc4cd69e0d94f86a00495cb8feeebe20398a..HEAD"
+      ]
+    },
+    "changelog-validate.stdout": {
+      "sha256": "eb5ba25320954d7fb10d12867818e67bb7ae7ef3f878daa54c49aeb385b5bc37",
+      "head": [
+        "AIDE Lite changelog validate",
+        "result: PASS",
+        "- PASS changelog source artifact exists: .aide/policies/changelog.yaml"
+      ]
+    },
+    "changelog-status.stdout": {
+      "sha256": "2efc95d04e7a718d2492299706d1914f96b9dff12a1bf34e8e525791a4b4c3f0",
+      "head": [
+        "AIDE Lite changelog status",
+        "result: PASS",
+        "range: 6f2abc4cd69e0d94f86a00495cb8feeebe20398a..HEAD"
+      ]
+    }
+  },
+  "reused_passes": 42,
+  "new_q31_passes": 5,
+  "total_completed_methods": 47,
+  "consumer_cases": "NOT_RUN_after_Q31_failure",
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\a676ccb2a4b7478099c52c9d104b13d3",
+  "receipt_sha256": "5a2c22857a2eafefdace998a429656d72cd4465f28f475f69726c36d8c652841",
+  "collected_manifest": {
+    "logs": "68d15e98c67fd349f23129eef3f656ba0403035d154d48b62f57a2a2d38f6a16",
+    "output": "70a1dfe0cb3d6c80389db9a198b868de3010c4772d0ea6c688f26ab37e8185cf"
+  },
+  "phase": "retired",
+  "quiescent": true,
+  "scratch_absent": true,
+  "reservation_released": true,
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/changelog": 249964
+    },
+    "memory_bytes": 248303616,
+    "scratch_bytes": 20714127
+  },
+  "export_unchanged": true,
+  "published_assets_unchanged": true,
+  "jobs_allocated": 3,
+  "maximum_jobs": 3,
+  "further_jobs_authorized": false,
+  "main_promotion_ready": false,
+  "whole_task_usage": "unknown"
+}

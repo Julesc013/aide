@@ -6,9 +6,11 @@ Generic policy and guidance now express frequent validated integration, optional
 main hosting protection, normally unprotected dev and local short-lived task
 branches. GitHub advisory choices read project policy rather than hard-coded
 main/dev protection, exposing malformed or missing choices. Existing settings
-remain unchanged. Focused behavioral and export/consumer qualification are pending.
-The early dev check's stale-pack provenance and capability-ledger failures remain
-in the child evidence; no remote effect or existing release update has occurred.
+remain unchanged. All nine new behavior methods and 38 other methods have passing
+evidence. The pack is rebuilt and validated; original failures remain preserved.
+An installed target queue causes changelog preview to refuse incorrectly, so the
+remaining consumer/default-update proof and main promotion await a bounded repair.
+All three job slots are consumed and retired. No published release was changed.
 
 ## Bounded current-task projection source outcome - 2026-10-17
 
