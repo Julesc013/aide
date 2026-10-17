@@ -1,0 +1,7 @@
+schema_version: aide.queue-status.v0
+id: AIDE-CONTEXT-TASK-SELECTION-01
+status: needs_review
+result: SOURCE_CANDIDATE
+planning_state: exact_source_and_job_review
+jobs_allocated: 0
+maximum_jobs: 3

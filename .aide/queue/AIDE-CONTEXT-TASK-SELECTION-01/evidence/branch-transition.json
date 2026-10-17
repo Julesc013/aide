@@ -1,0 +1,7 @@
+{
+  "result": "PASS",
+  "base": "9a22aa0913965c41685105d0781a70ecad16696c",
+  "branch": "task/aide-context-task-selection-01",
+  "qualification_preserved": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "remote_effects": false
+}

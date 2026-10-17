@@ -1,0 +1,16 @@
+{
+  "base": "9a22aa0913965c41685105d0781a70ecad16696c",
+  "observed_context_queue_ref": ".aide/queue/Q17-router-profile-v0/",
+  "observed_selected_task": "AIDE-LITE-SUCCESSOR-01",
+  "observed_selected_status": "passed_with_notes",
+  "observation": "read-only existing functions disagree; no packet or state mutation",
+  "inputs": {
+    ".aide/scripts/aide_lite.py": "a1553641e262ab7cbe7b22bfa1f2c2841960a59913d6cee101ee06ef5e99f143",
+    ".aide/scripts/tests/test_task_binding.py": "487a384b1632a38bbaf5ce8d6c9079a1789a3b4f9e3a16a3fd1ff9928bb793e0",
+    ".aide/scripts/tests/test_task_current.py": "e95ed8f9adbdf5c772436b754494b4821abe96c433b8f84817ec05a5ac2d0db3",
+    ".aide/scripts/tests/test_resume_plan.py": "640ebedcd268f7a1dfcb8012aec32d0b05605a729e277ba996b460d9712253d7",
+    ".aide/scripts/tests/test_aide_lite.py": "6c9a00d60930f5376f76eeb3e6de26ed3a510c377a69da810f8b5d3f845dc582",
+    "core/harness/tests/test_aide_lite.py": "72b44eedbf021f0501ab7c5eaa76406cc875cb9bddf425a301c91965a28b9779",
+    "docs/reference/context-compiler-v0.md": "7f1e819e5a572b9dd80b88b2f11f92ade610527aca64a1eb7224d4e01c1489b5"
+  }
+}

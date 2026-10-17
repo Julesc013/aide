@@ -159,3 +159,5 @@ impact_coverage_integration_receipt: .aide/queue/AIDE-IMPACT-COVERAGE-01/evidenc
 outcome_conservation_ref: .aide/queue/AIDE-OUTCOME-CONSERVATION-01/status.yaml
 outcome_conservation_result_ref: .aide/queue/AIDE-OUTCOME-CONSERVATION-01/REPORT.md
 outcome_conservation_integration_receipt: .aide/queue/AIDE-OUTCOME-CONSERVATION-01/evidence/integration-result.log
+
+context_task_selection_ref: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/status.yaml

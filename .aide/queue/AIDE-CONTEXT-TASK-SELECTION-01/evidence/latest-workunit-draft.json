@@ -1,0 +1,65 @@
+{
+  "acceptance": [
+    "WorkUnit scope is bounded and repo-grounded.",
+    "Rejected unsafe interpretations are recorded.",
+    "Validation and evidence requirements are explicit."
+  ],
+  "allowed_paths": [
+    ".aide/scripts/tests/**",
+    "core/**/tests/**"
+  ],
+  "dependencies": [
+    "repo_policy",
+    "queue_state",
+    "branch_state"
+  ],
+  "evidence": [
+    "changed-files.md",
+    "validation.md",
+    "remaining-risks.md",
+    "intent-compiler-report.md"
+  ],
+  "forbidden_paths": [
+    ".git/**",
+    ".github/**",
+    ".aide.local/**",
+    ".env",
+    "secrets/**",
+    "raw prompt logs",
+    "raw response logs",
+    "target repositories unless target-local queue authorizes work"
+  ],
+  "idempotency": "prompt_hash:ebad13df30ca88be66b5fafd2f99a8beeefa3562a5e6c379c1c61091ecbf7498; status:draft; compile_only:true",
+  "implementation_outline": [
+    "Reconcile repo state before editing.",
+    "draft the smallest safe WorkUnit after repo-state preflight",
+    "Stop at review gates and record evidence before execution."
+  ],
+  "non_goals": [
+    "no raw prompt execution",
+    "no provider/model/network calls",
+    "do not bypass queue, branch, evidence, or policy state",
+    "do not execute raw prompt directly"
+  ],
+  "objective": "Normalize prompt into a bounded test WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
+  "output_schema": ".aide/intake/workunit-draft.schema.json",
+  "preflight": [
+    "git status --short",
+    "py -3 .aide/scripts/aide_lite.py task inspect",
+    "py -3 .aide/scripts/aide_lite.py intent validate"
+  ],
+  "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
+  "risk_class": "governance",
+  "schema_version": "aide.workunit-draft.v0",
+  "sizing_class": "two_shot",
+  "status": "draft",
+  "task_class": "test",
+  "title": "Test WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
+  "validation": [
+    "git diff --check",
+    "py -3 .aide/scripts/aide_lite.py intent validate",
+    "targeted failing test command after preflight"
+  ],
+  "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
+  "workunit_id": "draft-test-ebad13df30ca"
+}

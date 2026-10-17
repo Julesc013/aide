@@ -1,5 +1,13 @@
 # AIDE Implementation Log
 
+## Selected-task context - 2026-10-18
+
+[AIDE-CONTEXT-TASK-SELECTION-01](.aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/ExecPlan.md)
+reuses the existing task view to replace the historical Q17 context link. Recorded
+selection, status and uncertainty remain distinct from active work or authorization.
+The candidate preserves existing assertions; source and delivered qualification
+are pending. See [context behavior](docs/reference/context-compiler-v0.md).
+
 ## Outcome conservation - 2026-10-18
 
 [Outcome qualification](.aide/queue/AIDE-OUTCOME-CONSERVATION-01/REPORT.md) records

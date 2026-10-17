@@ -1,0 +1,33 @@
+fix(context): explain the selected task through the existing resolver
+
+## Summary
+- Prepare AIDE-CONTEXT-TASK-SELECTION-01 for exact source qualification.
+
+## Why
+- Context linked historical Q17 while task current resolved different work.
+
+## Changed
+- Reuse bounded task observation and expose selection source, status and issues.
+- Preserve completed and blocked selections without inventing active ownership.
+- Retain all original tests and add eight context and actual CLI regressions.
+
+## Validation
+- PASS: syntax and all 17 original binding method ASTs unchanged.
+- NOT RUN: source and delivered qualification; capability refresh follows review.
+
+## Changelog
+- Fixed: Context packets follow the recorded task selection and explain uncertainty.
+
+## Risks
+- Recorded selection is not an atomic snapshot, active worker or permission.
+- No live context regeneration or new qualified release.
+
+## Follow-up
+- Qualify source, delivered payload and preview; review integration separately.
+
+AIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01
+AIDE-Phase: source-candidate
+AIDE-Result: CANDIDATE
+AIDE-Scope: existing-context-task-selection
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: independent-source-and-job-review-required

@@ -1,0 +1,16 @@
+{
+  "base": "9a22aa0913965c41685105d0781a70ecad16696c",
+  "files": {
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/admission-effect.md": "72a3b7db3619f1d712c735c4064bdba81019aac0d899d80973b811beac1d80ee",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/baseline.json": "f7d04f269c3c6676e25cbf6a6951a82f2b7dd8c4d75cd2e77b07fefa13b742f1",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/latest-intent-packet.json": "f319083e6a51ba2cd6e2d725dba66ce18b146529b37afe024b5c48c74fcd07d7",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/latest-intent-packet.md": "8fc585f07aecdfba75f1ce65de0c008b7fdc90ed7cd43a541fb85d3fd8a94fe7",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/latest-workunit-draft.json": "ba8084d02066a228b73cfb3783aeadad88940dd5ab5de9eb01aa47b02b8b5049",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/latest-workunit-draft.md": "b828a8fdc5aa121e5fb6127a1abb82a086fc41f223d5435f4a374133eee5cbb2",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/ExecPlan.md": "ffcab8de27ecdb0c352342ecb043b37cbc5149fbab2dee9928273dd89178e1cb",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/prompt.md": "c33db215bf25b960168555b3ad95d2f5d5c7835060cba9865461ea9560c0a3ce",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/status.yaml": "3a8b650c8be3389f13a66177c8f1592dd3fc0dc900a390e951e68c178303b031",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/task.yaml": "4b0b8ba3be6811e74df3afcfdf7c55057148f0797a07694c930bd05ea2a89494"
+  },
+  "effect_sha256": "72a3b7db3619f1d712c735c4064bdba81019aac0d899d80973b811beac1d80ee"
+}

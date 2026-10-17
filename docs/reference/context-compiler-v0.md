@@ -30,6 +30,22 @@ These artifacts contain refs and metadata only. They do not inline raw source co
 
 ## Exact Refs
 
+The `CURRENT_QUEUE` section uses the same bounded observation as `task current`.
+It honors the selected task packet, including legacy phase declarations, before
+the existing queue fallback. It reports the selected identity, recorded status,
+selection source and unresolved or conflicting observations. A completed or
+blocked selection stays selected; another running task does not replace it.
+Missing or invalid selection uses the queue index reference with an unresolved
+identity and visible issues, rather than a historical task link.
+
+`task current` also exposes additive `selection.mode` and `selection.source`
+fields: `explicit_request`, `task_packet`, `queue_fallback`, or `unresolved`.
+Existing packet sections, CLI syntax and character-based token estimates remain.
+These are recorded observations, not an atomic snapshot, a verified acceptance,
+an active worker identity or authorization to execute. A stale task packet can
+still select old work. Reconcile reported issues and choose work through the
+owning task workflow; context generation does not change the selected task.
+
 Preferred exact-reference syntax:
 
 ```text

@@ -818,3 +818,9 @@ Outcome-conservation qualification now passes source20/delivered20/ownership6 an
 fixed preview; original failure retained, all three jobs retired. Current child
 REPORT.md supersedes earlier pending qualification descriptions. Exact integration
 follows its separate terminal effect; no expanded release or operational claim.
+
+## Selected-task context
+
+Admitted AIDE-CONTEXT-TASK-SELECTION-01 contributes to P0/P6 daily-use start and
+explain. It reuses current-task observation; three separately reviewed native jobs
+maximum. No live context regeneration, new task selector or whole-milestone claim.
