@@ -1,8 +1,11 @@
 # AIDE Documentation Index
 
 - [Current-task view](docs/reference/task-packets.md): named human/JSON observation,
-  recorded-status provenance and evidence uncertainty; candidate qualification in
-  [the bounded child](.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/ExecPlan.md).
+  recorded-status provenance and evidence uncertainty; source qualification in
+  [the bounded child](.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/REPORT.md).
+- [Portable Git default admission](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/git-defaults-admission.md):
+  owner-directed integration cadence, optional hosting protection, local task
+  branches and independently reviewed retirement; implementation is next.
 
 - [Native selected-export outcome](.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/REPORT.md):
   completed fixture continuation, conserved 158 passes/two unavailable checks,

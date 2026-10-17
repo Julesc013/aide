@@ -4,8 +4,12 @@
 
 [AIDE-DAILY-CURRENT-VIEW-01](.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/ExecPlan.md)
 extends the existing read-only CLI with named selection and human/JSON observation.
-Preserve recorded outcomes, uncertainty and pending obligations. Exact source and
-finite fixture qualification remain under independent review; no runtime activation.
+It preserves recorded outcomes, uncertainty and pending obligations. All 51 required
+methods have passing evidence across two retained attempts, plus three CLI smokes.
+No package or runtime qualification follows. The owner's next priority is the
+[portable Git default](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/git-defaults-admission.md)
+and frequent reviewed dev/main synchronization, including project overrides and
+safe remote task-branch retirement.
 
 ## Native selected-export fixture outcome - 2026-10-17
 

@@ -1,12 +1,15 @@
 # AIDE Implementation Log
 
-## Bounded current-task projection candidate - 2026-10-17
+## Bounded current-task projection source outcome - 2026-10-17
 
 Existing task-current command gains one bounded observation for human and JSON
 views, with explicit named selection, public field provenance and uncertain evidence
 applicability. Original binding/Task OS tests are unchanged; new behavioral oracles
-cover refusal, stale/malformed state and no-write observation. Qualification is
-pending through the unchanged managed runner; no package or target claim.
+cover refusal, stale/malformed state and no-write observation. The first run's
+eight fixture setup errors remain; its 29 original passes are conserved. The final
+run passed 22 affected methods and three CLI smokes. Both jobs retired cleanly;
+no package or target claim. The parent also records the owner's portable Git
+defaults request as the next bounded child proposal, not an applied remote policy.
 
 ## Conserved native test results and completed continuation - 2026-10-17
 

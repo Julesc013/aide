@@ -3958,9 +3958,9 @@ items:
     evidence: .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence
 
   - id: AIDE-DAILY-CURRENT-VIEW-01
-    status: running
-    planning_state: admitted_bounded_projection
-    result: PENDING
+    status: passed
+    planning_state: source_qualified_distribution_pending
+    result: PASS_CURRENT_VIEW_WITH_PRESERVED_ORIGINAL_TESTS
     title: Explain current task outcomes and next actions through the existing CLI
     task: .aide/queue/AIDE-DAILY-CURRENT-VIEW-01/task.yaml
     exec_plan: .aide/queue/AIDE-DAILY-CURRENT-VIEW-01/ExecPlan.md

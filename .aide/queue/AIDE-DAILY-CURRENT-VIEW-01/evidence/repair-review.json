@@ -1,0 +1,9 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "head": "c7ea89dcd692042de216d1a194d8d30d07845cd0",
+  "tree": "a85de223d23415e990dbdc5ad4a478419a14ed17",
+  "template_sha256": "b15f5acb0d3923fa6c61d0de212df80039ac4afbbdf0c77dee370d06ca6533ae",
+  "scope": "fixture repair and second final affected qualification; no further job; terminal gate retained",
+  "findings": []
+}

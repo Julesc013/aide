@@ -49,4 +49,8 @@ Both are fixed with regression cases; no job ran against the rejected candidate.
 Source c7ea89dc and the first effect were independently accepted. First managed
 job 6783c56b retired with eight new-fixture setup errors; all 29 original methods
 passed. The affected repair uses the actual CLI entry point. See first-attempt-
-result.json and repair-effect.md. Product bytes are unchanged. Final job pending.
+result.json and repair-effect.md. Product bytes are unchanged. Final job 915391e2
+passed all 22 affected methods and three CLI smokes. Both jobs are collected and
+retired. The first failure remains preserved; all 51 required methods have valid
+passing evidence across the two attempts. No further job is admitted. Final
+outcome review is pending; source qualification is not distribution acceptance.

@@ -1,0 +1,94 @@
+{
+  "schema": "aide.task-current.qualification.v1",
+  "job_id": "915391e2cfee4e399d92917933ac2b35",
+  "source_commit": "0f6182d63f0064e6e801b0ff320198fac25d2eb6",
+  "source_tree": "a85de223d23415e990dbdc5ad4a478419a14ed17",
+  "result": "PASS_CURRENT_VIEW_WITH_PRESERVED_ORIGINAL_TESTS",
+  "current_tests": {
+    "tests_run": 22,
+    "failures": 0,
+    "errors": 0,
+    "skipped": [],
+    "expected_test_ids": [
+      "test_task_current.CurrentTaskView.test_comment_only_values_are_unknown_and_quoted_hashes_are_preserved",
+      "test_task_current.CurrentTaskView.test_conflicting_packet_and_task_identity_refuse",
+      "test_task_current.CurrentTaskView.test_duplicate_fields_cannot_select_a_convenient_status",
+      "test_task_current.CurrentTaskView.test_empty_required_record_is_visible",
+      "test_task_current.CurrentTaskView.test_explicit_selection_does_not_depend_on_a_broken_latest_packet",
+      "test_task_current.CurrentTaskView.test_hardlinked_reference_is_not_read",
+      "test_task_current.CurrentTaskView.test_human_legacy_prefix_and_json_report_same_record",
+      "test_task_current.CurrentTaskView.test_missing_and_digest_mismatch_remain_distinct",
+      "test_task_current.CurrentTaskView.test_missing_and_foreign_status_remain_unknown",
+      "test_task_current.CurrentTaskView.test_needs_review_is_not_accepted",
+      "test_task_current.CurrentTaskView.test_observation_leaves_all_fixture_bytes_and_mtimes_unchanged",
+      "test_task_current.CurrentTaskView.test_planning_declaration_does_not_override_recorded_status",
+      "test_task_current.CurrentTaskView.test_preparation_success_preserves_unfinished_native_obligations",
+      "test_task_current.CurrentTaskView.test_present_digest_does_not_establish_evidence_applicability",
+      "test_task_current.CurrentTaskView.test_private_and_escape_references_are_rejected_before_open",
+      "test_task_current.CurrentTaskView.test_record_and_diagnostic_output_are_bounded",
+      "test_task_current.CurrentTaskView.test_repository_reference_accepts_windows_separators",
+      "test_task_current.CurrentTaskView.test_stale_index_status_is_explained_without_repair",
+      "test_task_current.CurrentTaskView.test_unknown_and_escaping_identities_refuse_without_fallback",
+      "test_task_current.CurrentTaskView.test_unsupported_shapes_and_types_are_visible",
+      "test_task_current.CurrentTaskView.test_windows_dot_space_aliases_are_refused_before_filesystem_access",
+      "test_task_current.CurrentTaskView.test_windows_reparse_attribute_is_refused_without_open"
+    ],
+    "inputs": {
+      ".aide/scripts/tests/test_task_current.py": "e95ed8f9adbdf5c772436b754494b4821abe96c433b8f84817ec05a5ac2d0db3"
+    }
+  },
+  "cli_smokes": [
+    {
+      "args": [
+        "--task-id",
+        "AIDE-DAILY-DISKED-EXPORT-01",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b3e3c1f3fe9d1cd23778ecceccc84859b66cf81ce2be42d4ec2e5a15b654e61e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "args": [
+        "--task-id",
+        "AIDE-DAILY-DISKED-EXPORT-01"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "05463d1dded4eeb001cc5a06a3b541f717ca6d7cb4498b5ff268128ced3c5108",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "args": [
+        "--task-id",
+        "../../outside",
+        "--json"
+      ],
+      "exit_code": 1,
+      "stdout_sha256": "aeabe3ed46b1ad1a3be6d4e611d9463219080622fb504002b1d42f87a1b5a737",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "reused_tests": {
+    "count": 29,
+    "result_ref": "evidence/first-attempt-result.json",
+    "source_and_original_tests_unchanged": true
+  },
+  "receipt_sha256": "7ef966833fb3bf3983b3dd499ccbc9aee34b820b106cdd67a4a7b1bbde95bd1a",
+  "collected_manifest": {
+    "logs": "04b1bf1ecbf8729338783a27a07e12d9ec1e940cf0d7c664b21390ed06f9c6f5",
+    "output": "7f338f803ef461bcea0e26be34bee47d46207fb8f9dde365d3def327b82d0009"
+  },
+  "phase": "retired",
+  "quiescent": true,
+  "scratch_absent": true,
+  "reservation_released": true,
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 242761728,
+    "scratch_bytes": 10258
+  },
+  "model_calls": 0,
+  "whole_task_usage": "unknown",
+  "product_release_qualified": false,
+  "target_mutated": false
+}

@@ -1,5 +1,16 @@
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
+## Current view qualified; portable Git defaults next - 2026-10-17
+
+Current-view source has 29 conserved original passes, 22 repaired fixture passes
+and three CLI smoke passes, with both jobs collected and retired. The original
+failure remains. The owner then explicitly broadened frequent safe integration
+from this campaign to AIDE and adopting repos, with optional main protection,
+usually unprotected dev, local task branches and safe remote cleanup. The exact
+next child proposal is evidence/git-defaults-admission.md. Implement through
+existing owners after admission; review each source/export/Git effect. Native
+target adoption and the wider daily-use milestone remain open independently.
+
 ## Current-view child admitted - 2026-10-17
 
 Exact packet1ac30691 received independent ACCEPT for bounded child admission and

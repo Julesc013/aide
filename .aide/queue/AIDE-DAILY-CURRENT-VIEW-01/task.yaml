@@ -3,7 +3,7 @@ id: AIDE-DAILY-CURRENT-VIEW-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Explain current task outcomes and next actions through the existing CLI
 type: implementation
-status: running
+status: passed
 objective: Provide bounded read-only human and JSON task views with explicit evidence uncertainty.
 admission:
   proposal_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/current-view-admission.md
