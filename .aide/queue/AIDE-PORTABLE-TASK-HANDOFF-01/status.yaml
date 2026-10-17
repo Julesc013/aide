@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 id: AIDE-PORTABLE-TASK-HANDOFF-01
 status: needs_review
-result: PENDING
-planning_state: delivered_consumer_review
-jobs_allocated: 1
+result: SOURCE_DELIVERED_INSTALLED_PASS
+planning_state: preview_review
+jobs_allocated: 2
 maximum_jobs: 3

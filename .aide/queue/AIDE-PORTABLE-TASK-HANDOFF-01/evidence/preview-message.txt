@@ -1,0 +1,34 @@
+test(task): qualify portable and installed task handoff
+
+## Summary
+- Preserve AIDE-PORTABLE-TASK-HANDOFF-01 delivered acceptance evidence.
+
+## Why
+- A safe-installed project must retain usable task continuity without core imports.
+
+## Changed
+- Refresh the owned portable pack with one helper and its handoff tests.
+- Record actual installed export/inspect, original record preservation and drift detection.
+- Prepare the existing fixed-range preview owner against qualified package bytes.
+
+## Validation
+- PASS: source79, delivered79, ownership6; no skips; installed consumer PASS.
+- PASS: doctor/full validate/pack status; published assets unchanged; jobs retired.
+- NOT RUN: fixed preview and final integration.
+
+## Changelog
+- Added: Safe-installed task-record export and read-only comparison.
+
+## Risks
+- Observations do not transfer worker ownership or execution authority.
+- Published Lite1.0.0 remains unchanged; this is an additive source capability.
+
+## Follow-up
+- Complete fixed preview, terminal review and guarded dev/main synchronization.
+
+AIDE-Task: AIDE-PORTABLE-TASK-HANDOFF-01
+AIDE-Phase: portable-qualification
+AIDE-Result: CONSUMER_PASS
+AIDE-Scope: portable-task-record-handoff
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: independent-preview-job-review-required

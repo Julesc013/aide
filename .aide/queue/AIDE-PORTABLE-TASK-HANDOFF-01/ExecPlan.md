@@ -100,3 +100,8 @@ no-B subprocess preservation and sentinel helper-link/reparse refusal cases.
 Source79 passed at40a5740e; jobea724f2028db4b2cb060b632f7a77808 fully retired.
 Capability refresh independently accepted and CURRENT with unchanged classifications.
 Actual portable/safe-installed consumers remain unrun pending this effect review.
+
+Job80fcc6d4f3694340a5ff10193197260a passed delivered79, ownership6, actual
+safe-installed consumer and preserved real records. Export now864members (helper/
+test added; CLI/reference changed); published assets unchanged. All evidence
+collected and job retired. Fixed preview remains before terminal integration.

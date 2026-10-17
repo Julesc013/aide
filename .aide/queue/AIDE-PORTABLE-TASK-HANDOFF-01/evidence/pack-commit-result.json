@@ -1,0 +1,28 @@
+{
+  "result": "PASS",
+  "commit": "579925c7c5ee6f7e353bb076ad02dbbb1285277b",
+  "tree": "14cf1e4f9baa16fa8fe674cd6ced140dcad4ecac",
+  "base": "40a5740e7eef5cdd8c54fd3fc75961d67c482236",
+  "paths": [
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/ExecPlan.md",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/attempt-01-source-tests.json",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/ledger-preimages.json",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/ledger-refresh.json",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/pack-effect.md",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/pack-job-template.json",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/pack-message.txt",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/pack-source.json",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/prior-pack-inventory.json",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/refresh-effect.md",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/refresh-review.md",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/refresh-source.json",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/source-attempt-01.json",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/source-commit-result.json",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/source-review.md",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/run_pack.py",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/status.yaml",
+    ".aide/reports/capability-command-status.md",
+    ".aide/reports/capability-evidence-bindings.json",
+    ".aide/reports/capability-ledger.md"
+  ]
+}

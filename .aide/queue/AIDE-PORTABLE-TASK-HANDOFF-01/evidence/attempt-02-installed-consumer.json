@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "actual_cli": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\80fcc6d4f3694340a5ff10193197260a\\tmp\\handoff-consumer-jpozd2jh\\.aide\\scripts\\aide_lite.py",
+  "core_absent": true,
+  "receipt_sha256": "8fd52ecc056763c9978e732d748330ca291397bc7983e7b4c5b97ddd5bb0c1ba",
+  "helper_entry": {
+    "installed_digest": "55b273d3d16bc17cd0a916ad5f0c65f3742ff1724caecb2c6537b1b91df6dd99",
+    "kind": "managed_file",
+    "local_overlay": false,
+    "ownership": "aide_portable_managed",
+    "source": ".aide/scripts/task_handoff.py",
+    "source_digest": "55b273d3d16bc17cd0a916ad5f0c65f3742ff1724caecb2c6537b1b91df6dd99"
+  },
+  "source_task": "AIDE-CONTEXT-TASK-SELECTION-01",
+  "bundle_sha256": "b3e48df7ec7b7b2484060fe5d5277f120e19d2f63b434a5d0950f6543e46c0b1",
+  "original_record_sha256s": {
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/task.yaml": "4b0b8ba3be6811e74df3afcfdf7c55057148f0797a07694c930bd05ea2a89494",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/status.yaml": "c0b3fbcd5389060cd6bf383b75f0c5c3ea8a10754531f81934690b9ecc9ca1c1",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/ExecPlan.md": "012b6270608d94ce99c6a8f290ea049f659bd3aa4b4de3f9a2422e75e9bb50bb"
+  },
+  "read_only_inventory_preserved": true,
+  "changed_status_detected": true
+}
