@@ -1,0 +1,7 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-IMPACT-COVERAGE-01
+status: needs_review
+result: SOURCE_CANDIDATE
+next_action: independent_source_commit_and_first_job_review
+jobs_allocated: 0
+maximum_jobs: 3

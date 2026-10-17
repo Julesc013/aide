@@ -1,0 +1,38 @@
+fix(validation): preserve uncertainty in test-impact observations
+
+## Summary
+- Prepare AIDE-IMPACT-COVERAGE-01 through the existing report-only planner.
+
+## Why
+- A missing Git base previously produced empty paths and T0-only advice.
+- Partial observations and endpoint fallback must not imply complete scope.
+
+## Changed
+- Preserve known paths after observation failure and retain fallback diagnostics.
+- Expose observation coverage, heuristic mapping and a concrete next action.
+- Use advisory T2 fallback and CLI WARN while preserving report fields and exit0.
+- Add seven regressions beside six unchanged original tests.
+
+## Validation
+- PASS: original missing-base defect observed without writes.
+- PASS: original six method ASTs unchanged; new source and runner parse.
+- NOT RUN: one exact reviewed source job and later delivered qualification.
+- NOTE: capability binding needs its scoped refresh before structural acceptance.
+
+## Changelog
+- Fixed: Prevent unavailable changed-path observations from appearing unchanged.
+
+## Risks
+- Path mappings remain heuristic; T2 does not prove coverage or authorize tests.
+- This candidate is not a new qualified package or release.
+
+## Follow-up
+- Run the exact source job, retain evidence, then qualify the delivered payload.
+- Review actual outputs and Git effects before dev/main promotion.
+
+AIDE-Task: AIDE-IMPACT-COVERAGE-01
+AIDE-Phase: source-candidate
+AIDE-Result: CANDIDATE
+AIDE-Scope: existing-impact-observation-and-advice
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: independent-source-and-job-review-required

@@ -1,0 +1,37 @@
+schema_version: aide.queue-task.v0
+id: AIDE-IMPACT-COVERAGE-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Preserve unknown coverage in existing test-impact advice
+type: implementation
+status: needs_review
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-IMPACT-COVERAGE-01/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_x_test_00_validation_tiers.py
+    - docs/reference/impacted-test-planning.md
+    - .aide/policies/impacted-tests.yaml
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/reports/capability-ledger.json
+    - .aide/reports/capability-ledger.md
+    - .aide/reports/capability-evidence-bindings.json
+    - .aide/reports/capability-command-status.md
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/CHANGELOG.preview.md
+    - .aide/changelog/RELEASE_NOTES.preview.md
+    - .aide/changelog/changelog.preview.json
+    - .aide/changelog/latest-changelog-report.md
+    - .aide/changelog/malformed-commits.md
+    - .aide/changelog/release-notes.preview.json
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  forbidden_paths:
+    - target repositories
+    - .aide/release/**
+    - .github/**
+    - machine configuration
+review_gate: exact_admission_then_source_each_job_and_integration_effect
+maximum_jobs: 3

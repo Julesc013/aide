@@ -4069,3 +4069,12 @@ items:
     task: .aide/queue/AIDE-CURRENT-MEMORY-01/task.yaml
     exec_plan: .aide/queue/AIDE-CURRENT-MEMORY-01/ExecPlan.md
     evidence: .aide/queue/AIDE-CURRENT-MEMORY-01/evidence
+
+  - id: AIDE-IMPACT-COVERAGE-01
+    status: needs_review
+    result: SOURCE_CANDIDATE
+    planning_state: bounded_conservative_impact_source_candidate
+    title: Preserve unknown coverage in existing test-impact advice
+    task: .aide/queue/AIDE-IMPACT-COVERAGE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-IMPACT-COVERAGE-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-IMPACT-COVERAGE-01/evidence

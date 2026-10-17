@@ -1,0 +1,16 @@
+{
+  "base": "36d388a72b6e6e941ca84c93387d742f85af3064",
+  "effect_sha256": "ead516e2dc82025cbafb5162758c041b35f96656c3833b7927ff9e1cee6d519b",
+  "files": {
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/ExecPlan.md": "5451cb9048ae13a3c87f0f22c9be249d1e864189ebb826f8ce01f78406e5a3af",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/admission-effect.md": "ead516e2dc82025cbafb5162758c041b35f96656c3833b7927ff9e1cee6d519b",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/baseline.json": "5176deaf21ce2adb2d26f0ec411d28e13ea296cfcb4a85aec20a191717f1ff4b",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/latest-intent-packet.json": "4dabcecfa242784be036f3b5fc95bfdf85bf54d507b1867aeaf5bb8a438bf660",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/latest-intent-packet.md": "f78a6c962c626fe360a774abfe960c7c574b8a053555b6f93ef620ab0e60a97e",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/latest-workunit-draft.json": "0ccbfc7683bd75881cfa801cc09a718f82f76a1587605f1b8c8b87a5761a2f03",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/latest-workunit-draft.md": "c8e1759e8bf87663135bfa79c747e709f27d4f93e3a82c30272a1e178ce958fc",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/prompt.md": "766ca7a5659b22645ce3379aae6260cd69ac0f0340d8849b8ec5bf29dc3cebca",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/status.yaml": "f2281d4f0c525544c943c888f57d8f411034b6bf52baec41f970b1af5a5dbb4a",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/task.yaml": "8578743850c20f2be31b4b5d381a490b1f8f174671365a2c3c3d3eff6b0d652f"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "result": "PASS",
+  "base": "36d388a72b6e6e941ca84c93387d742f85af3064",
+  "branch": "task/aide-impact-coverage-01",
+  "qualification_preserved": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "remote_effects": false
+}

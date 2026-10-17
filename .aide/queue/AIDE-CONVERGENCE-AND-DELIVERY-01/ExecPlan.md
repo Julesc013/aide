@@ -795,3 +795,8 @@ Current-memory qualification passes: exact source review, compact context/read-o
 views, doctor/full structural validation, one unchanged-classification refresh and
 fixed promotion preview. One allocation retired. Exact closure/integration evidence
 is tracked by the child; the separate Lite 1.1 branch remains preserved.
+
+AIDE-IMPACT-COVERAGE-01 admitted from36d388a7 under P6.impact: missing Git scope
+must not become no-change/T0 advice. Source/tests prepared through existing owners;
+source, delivered and preview jobs remain separately gated. No prior qualification
+is reopened and the preserved Lite1.1 branch remains independently gated.

@@ -1,0 +1,28 @@
+{
+  "base": "36d388a72b6e6e941ca84c93387d742f85af3064",
+  "branch": "dev",
+  "existing_checks_reused": "36d388a7 post-dev full structural validate and post-main exact preview; no source mutation before this packet",
+  "inputs": {
+    ".aide/policies/impacted-tests.yaml": "3ffd86d78793cf0d9d323984c692f7555a44267aa28100cd8b0240cf01ac817d",
+    ".aide/scripts/aide_lite.py": "c57d53d2a478552e3e1c986a8a3f958f4966c33335a86ef7bb869046c6196bf5",
+    ".aide/scripts/tests/test_x_test_00_validation_tiers.py": "61e31e837c4d3f8473064dce12c9dbbe533c0a7e5aa0b673968d66a7bdc7748a",
+    ".aide/tests/test-impact-map.schema.json": "45983d86821ee498f4a6fddabebde83e85ac1d6a26addef6562cbd9198f4da1d",
+    "docs/reference/impacted-test-planning.md": "bb13c1810ee40153a7c93c9420aec85545af2ffe507ac21f338cb291f5b226ee"
+  },
+  "intake_exit": 0,
+  "new_jobs": 0,
+  "observation": {
+    "changed_paths": [],
+    "commands_to_run_manually": [
+      "py -3 .aide/scripts/aide_lite.py validate"
+    ],
+    "from_ref": "refs/heads/aide-observation-base-not-present",
+    "proof_status": "plan_not_proof",
+    "recommended_tier": "T0",
+    "warnings": [
+      "fatal: ambiguous argument 'refs/heads/aide-observation-base-not-present..HEAD': unknown revision or path not in the working tree.\nUse '--' to separate paths from revisions, like this:\n'git <command> [<revision>...] -- [<file>...]'",
+      "no_changed_paths_detected"
+    ]
+  },
+  "prior_turn": "progress: current-memory correction synced36d388a7"
+}

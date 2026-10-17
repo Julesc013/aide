@@ -1,0 +1,22 @@
+{
+  "new_jobs": 0,
+  "new_methods": [
+    "test_actual_cli_reports_incomplete_observation_in_all_outputs",
+    "test_failed_staged_observation_does_not_discard_other_paths",
+    "test_known_staged_working_and_untracked_paths_keep_existing_mapping",
+    "test_missing_base_retains_known_paths_and_requires_reconciliation",
+    "test_observation_exception_is_unknown_not_empty_scope",
+    "test_successful_empty_observation_is_distinct_from_unknown",
+    "test_unrelated_history_endpoint_fallback_is_explicit"
+  ],
+  "original_methods_unchanged": [
+    "test_existing_test_command_remains_selftest_alias",
+    "test_impact_plan_is_plan_not_proof",
+    "test_slow_report_validate_accepts_example",
+    "test_summary_validate_accepts_compact_and_rejects_raw_log",
+    "test_telemetry_and_handoff_commands_write_reports_without_running_full_suite",
+    "test_tiers_and_tier_plan_are_report_only"
+  ],
+  "runtime_tests": "NOT_RUN",
+  "syntax_compile": "PASS"
+}

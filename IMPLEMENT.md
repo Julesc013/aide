@@ -1,5 +1,14 @@
 # AIDE Implementation Log
 
+## Test-impact observation - 2026-10-18
+
+[AIDE-IMPACT-COVERAGE-01](.aide/queue/AIDE-IMPACT-COVERAGE-01/ExecPlan.md)
+repairs the existing planner's missing-base empty/T0 advice. The candidate preserves
+known paths and mappings while exposing incomplete observation and reconciliation.
+All six original test bodies remain; seven regressions are prepared. Source,
+delivered qualification and integration remain pending exact review.
+
+
 ## Current memory correction - 2026-10-18
 
 [Current-memory work](.aide/queue/AIDE-CURRENT-MEMORY-01/ExecPlan.md) replaces obsolete
