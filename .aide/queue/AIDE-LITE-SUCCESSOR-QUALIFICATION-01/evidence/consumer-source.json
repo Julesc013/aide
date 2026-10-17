@@ -1,0 +1,34 @@
+{
+  "allocation1": "PASS_20da96f577714a5aac77ed3fa936dbee_collected_retired",
+  "baseline": "4bb6a4f990c5845a2141a20329168b582b37e8d8",
+  "config_sha256": "b73f055a31c0b62ed66e9f1ad2dcd3dae4b6f443296ac80fb7cce301e09d8815",
+  "consumer_cases": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "evidence_projection": "Build summary/process JSON normalized to LF; original raw outputs remain under immutable collected job receipt.",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md": "bb14b9de7c7dddce5778e2f598945fa347c57c79cdc72283fa7f47b063f9c321",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/build-job-result.json": "97c2058d7ca517b6edb3ccc4605ef8c54aaca97bbbaa68ffb89953828496c545",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/build-result.json": "b13835f1ed4fde7cf5557c443a6787d033185bb7fae95b97d0da231c292e6bc1",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/build-review.md": "42ceb9714c2c5e0cb10617c96d3fb3788cd17f20c1528bf2a910c47fd9121f2d",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/consumer-job-template.json": "cff28bf800f7f128ec0fd9135a38df055cd22d6b507fd5cc822016609fe7cd4a",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/consumers-effect.md": "a88f377b629f953f8afb6d98588ce88a358fd5b682703c474230e6df1f69faba",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/stable-build-process.json": "a1057dd84cacc5fd274cf1924e731f429147c13dcefff47e8f2486ecaeea9afd",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/stable-validate-process.json": "f644c9241b909291cf7ec50c4d241fbb500b2e84e6b75cb5018326b7b4ba08b2",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_consumer.py": "80e718e8d4c41efee103759fc683151214f888202b9259558d36e8db8af1034a",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/status.yaml": "c75891a23c1b157bbf56d7f19610d5313b54eb41c71057c22f298453d89985c9",
+    ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt": "a332877c62c47ec98fdd3e6d4906fdaa249560137f381b26ffcf503a7dcc8ee1",
+    ".aide/release/stable/aide-lite-v1.1.0.manifest.json": "01d55f36cc12e6b6c49cf73b3c8c9e07429c180b6f433c7ecaf2e5c41f82c3f7",
+    ".aide/release/stable/aide-lite-v1.1.0.tar.gz": "0d6af134c3bcce7726386ef41e0183f3dc88441626b1ec75c20a6c255ed579ac",
+    ".aide/release/stable/aide-lite-v1.1.0.zip": "089d75da1675ad461264d4b526788aeaacac6cde1bcddd94b3d6484fa20c3e36"
+  },
+  "source_development_checks": "unchanged_reused_source60_delivered25",
+  "template_sha256": "cff28bf800f7f128ec0fd9135a38df055cd22d6b507fd5cc822016609fe7cd4a"
+}

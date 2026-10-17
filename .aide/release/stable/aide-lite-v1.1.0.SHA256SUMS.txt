@@ -1,0 +1,3 @@
+089d75da1675ad461264d4b526788aeaacac6cde1bcddd94b3d6484fa20c3e36  aide-lite-v1.1.0.zip
+0d6af134c3bcce7726386ef41e0183f3dc88441626b1ec75c20a6c255ed579ac  aide-lite-v1.1.0.tar.gz
+01d55f36cc12e6b6c49cf73b3c8c9e07429c180b6f433c7ecaf2e5c41f82c3f7  aide-lite-v1.1.0.manifest.json

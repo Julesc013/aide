@@ -31,3 +31,5 @@ new root, target mutation, tag, upload, or unrelated cleanup is authorized here.
 
 Progress: child prepared, zero jobs. Build/config review pending. Public1.0.0
 unchanged; current archives, upgrade and release claims are not yet qualified.
+
+Allocation1 job20da96f5 PASS: four exact1.1.0 assets, all49 prior release members and862 pack files preserved. Exit0, quiescent, collection verified, scratch/reservation retired. CandidateZIP089d75da remains consumer-unqualified. Original8 canaries prepared for independent review; no original assertion or module changed.
