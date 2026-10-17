@@ -4,8 +4,8 @@ status: running
 result: PENDING
 classification: admitted
 review_gate: exact_source_and_each_effect_required
-next_action: prepare_narrow_guard_and_affected_tests
-jobs_allocated: 0
+next_action: review_owned_export_and_actual_consumer_effect
+jobs_allocated: 1
 maximum_jobs: 2
 product_qualified: false
 target_mutated: false

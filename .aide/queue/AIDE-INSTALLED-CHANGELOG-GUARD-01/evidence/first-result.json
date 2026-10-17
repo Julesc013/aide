@@ -1,0 +1,46 @@
+{
+  "result": "PASS",
+  "job_id": "cf7f620d3af74e43bb1a6c5b878ea4dd",
+  "source_commit": "f4f3474dd0583d831b15f67bcf74d0dd5b98282b",
+  "source_tree": "1629a4bc5993269bd622fab5a1eadee4d3b392b9",
+  "tests": {
+    "tests_run": 10,
+    "failures": 0,
+    "errors": 0,
+    "skipped": [],
+    "expected_test_ids": [
+      "test_installed_changelog_guard.InstalledChangelogGuardTests.test_absent_malformed_or_invalid_receipt_refuses",
+      "test_installed_changelog_guard.InstalledChangelogGuardTests.test_installed_queue_and_project_profile_allow_changelog_only",
+      "test_installed_changelog_guard.InstalledChangelogGuardTests.test_modified_or_missing_cli_refuses",
+      "test_installed_changelog_guard.InstalledChangelogGuardTests.test_pending_lifecycle_operations_refuse",
+      "test_installed_changelog_guard.InstalledChangelogGuardTests.test_receipt_must_own_exact_cli",
+      "test_installed_changelog_guard.InstalledChangelogGuardTests.test_recorded_cli_overlay_refuses",
+      "test_installed_changelog_guard.InstalledChangelogGuardTests.test_source_identity_cannot_use_installed_receipt",
+      "test_installed_changelog_guard.InstalledChangelogGuardTests.test_source_runner_still_requires_source_admission",
+      "test_q31_export_pack_governance.Q31ExportPackGovernanceTests.test_fixture_import_runs_governance_commands_without_hook_install",
+      "installed_guard_export_fixtures.ExportImportTests.test_source_checkout_missing_queue_index_cannot_bypass_job_guard"
+    ],
+    "input_hashes": {
+      ".aide/scripts/aide_lite.py": "c680cd09f7c6f3c259d47e9ae6dbfb46fb84868524f378acb426e9531fb6dd62",
+      ".aide/scripts/tests/test_installed_changelog_guard.py": "e5b081a652fe5c3888e51c2b648574e4c9cf083a2ba50c6838f2b9d9aaa18e34",
+      ".aide/scripts/tests/test_q31_export_pack_governance.py": "201edea2ac37a174f9384b06fe7a138b3880d5573eae06d4fdf93f8accd0b80b",
+      ".aide/scripts/tests/test_export_import.py": "1b51173723634910871189487e4a3dbf2d97367185775ea97a0e3219f8971043"
+    },
+    "fixture_destination": "owned_temporary_fixture",
+    "model_calls": 0
+  },
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cf7f620d3af74e43bb1a6c5b878ea4dd",
+  "receipt_sha256": "e89fa3d852362edeb3e503023608aa93906fcfa6abe46a2c0df726a148d3dcea",
+  "collected_manifest": {
+    "output": "4b4e0610f3b52da1a93862e07709385c2694312a018535dafda22f91605fdf8f",
+    "logs": "1536e623d175e4198a22e7b1d0e38d82ffbefdf51601592bcd1f0929099235b9"
+  },
+  "phase": "retired",
+  "quiescent": true,
+  "scratch_absent": true,
+  "reservation_released": true,
+  "jobs_allocated": 1,
+  "maximum_jobs": 2,
+  "export_consumers": "NOT_RUN",
+  "whole_task_usage": "unknown"
+}

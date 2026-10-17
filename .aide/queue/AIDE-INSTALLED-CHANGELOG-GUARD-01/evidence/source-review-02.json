@@ -1,0 +1,9 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "head": "7f42f88df495e85eeb94eb3b6a80ad8b2a84ddc7",
+  "tree": "1629a4bc5993269bd622fab5a1eadee4d3b392b9",
+  "template_sha256": "aa9e9658b25ad32401155c26c510e07eff192cce012e9aad197b9fec2f70588d",
+  "scope": "source and conditional first10method job; no export or integration",
+  "findings": []
+}

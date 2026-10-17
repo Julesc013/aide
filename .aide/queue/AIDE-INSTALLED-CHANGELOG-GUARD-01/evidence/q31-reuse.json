@@ -1,0 +1,16 @@
+{
+  "schema": "aide.q31-evidence-reuse.v1",
+  "unchanged_test_sha256": "201edea2ac37a174f9384b06fe7a138b3880d5573eae06d4fdf93f8accd0b80b",
+  "prior_subject": "88fa0008c5670df41e5fc6aa061a519d66f48495",
+  "current_source_subject": "f4f3474dd0583d831b15f67bcf74d0dd5b98282b",
+  "changed_definitions": [
+    "command_changelog_preview",
+    "installed_changelog_identity_valid",
+    "source_maintainer_job_guard"
+  ],
+  "five_unaffected_methods_job": "a676ccb2a4b7478099c52c9d104b13d3",
+  "repaired_original_consumer_job": "cf7f620d3af74e43bb1a6c5b878ea4dd",
+  "basis": "Five methods cover unchanged policy text, export/manifest/checksum and Q31 golden owners; their functions and policies are unchanged by the narrow guard repair. The only affected governance consumer passed against f4f3474d. Original assertions remain intact. The final job separately verifies the actual rebuilt payload and its checksums/defaults/customization/delivered CLI.",
+  "deadline_seconds": 180,
+  "extra_jobs": false
+}
