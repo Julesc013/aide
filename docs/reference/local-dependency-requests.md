@@ -100,6 +100,48 @@ action. This profile does not automatically retry, revise, reject or cancel a
 task. An amendment needs a separately attributed native decision and successor;
 changing an existing request ID's body refuses.
 
+## Cooperative MCP tools (development candidate)
+
+The optional source module `core.runtime.continuous_worker.dependency_mcp` exposes
+the same ledger through MCP 2025-11-25 stdio. A launching host supplies the existing
+state root, configuration digest, participant and binding digest:
+
+```text
+python -B -m core.runtime.continuous_worker.dependency_mcp --state-root ROOT --configuration-sha256 CONFIG_DIGEST --participant NAME --binding-sha256 BINDING_DIGEST
+```
+
+Run from the AIDE source root with an explicitly owned ledger. This command does
+not initialize state or configure any editor. Every tool call rechecks the pinned
+configuration and binding. Caller-controlled tool arguments cannot replace them;
+the local process and its launcher are still trusted cooperative participants.
+
+| Tool | Arguments | Effect |
+|---|---|---|
+| `dependency_inbox` | Optional `after` ID and `limit` (1–16) | Lists involved requests with next action and cursor; does not acknowledge |
+| `dependency_status` | `request_id` | Reads one involved request and reported evidence |
+| `dependency_submit` | `request` object described above | Records as the bound sender |
+| `dependency_observe` | `request_id`, `request_sha256`, `stage`, `detail` | Records the bound actor's explicit observation |
+
+The protocol implements initialization, ping and tool discovery/calls only. It
+advertises no Tasks extension, sampling, resources or notifications. UTF-8 newline
+input frames are limited to 65,536 bytes including protocol wrapping; output
+frames may reach 1 MiB to carry accumulated observations. A larger reply produces
+a protocol error explicitly warning that a mutation may already be recorded;
+reconcile its stable ID before retrying. Records are never truncated. An oversized or
+unterminated frame closes the connection; a host must inspect the stable request
+ID after uncertain outcomes. EOF closes without cancellation or acknowledgement.
+The host owns process lifetime. No network listener or background polling runs.
+See the pinned [MCP lifecycle](https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle),
+[stdio transport](https://modelcontextprotocol.io/specification/2025-11-25/basic/transports)
+and [tools](https://modelcontextprotocol.io/specification/2025-11-25/server/tools).
+
+This limited transport is isolated from lifecycle logic. The existing broader
+MCP contract catalogue remains a declaration-only preview. SDK integration or
+additional protocol capabilities require their own demonstrated need and checks.
+The current candidate is not yet behavior-qualified. Installed-client integration,
+automatic wake-up and actual existing-worker delivery require separate evidence;
+connecting a transport does not establish that another worker accepted a request.
+
 ## Continuation and qualification
 
 Transactions commit each record with its history event. After an uncertain CLI

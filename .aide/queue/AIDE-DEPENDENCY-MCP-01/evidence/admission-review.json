@@ -1,0 +1,10 @@
+{
+  "verdict": "ACCEPT",
+  "tier": "bounded_admission_only",
+  "reviewer": "/root/review_disked_continuation",
+  "subject": "../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/dependency-mcp-admission.md",
+  "sha256": "8027fe21cc6c37da68d435cfe615d613c1db7710e471c0da3b72add29f152d0e",
+  "base": "8f93cb7e021a5347e71d81a60aae4bd3f8d53602",
+  "findings": [],
+  "scope": "Child preparation and guarded local branch only; each fixture effect independently reviewed. Installed-client compatibility, actual worker delivery and downstream adoption remain mandatory follow-ons. No live or integration effects."
+}

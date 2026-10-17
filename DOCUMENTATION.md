@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+## Cooperative dependency interface - 2026-10-18
+
+[Local request reference](docs/reference/local-dependency-requests.md) documents the four tools, pinned stdio subset and exact operational limitations. [Child plan](.aide/queue/AIDE-DEPENDENCY-MCP-01/ExecPlan.md) preserves installed-client and actual delivery obligations.
+
 - [Local dependency requests](docs/reference/local-dependency-requests.md): opt-in
   cooperative request/reply CLI, native ownership, continuation and explicit
   qualification limits. [Qualified outcome](.aide/queue/AIDE-LOCAL-DEPENDENCY-01/REPORT.md)

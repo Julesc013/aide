@@ -3,8 +3,8 @@
 - command: `capability ledger`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-local-dependency-01`
-- current_commit: `1435659b220b29e34ea81894644335f13dc209a6`
+- current_branch: `task/aide-dependency-mcp-01`
+- current_commit: `8f93cb7e021a5347e71d81a60aae4bd3f8d53602`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

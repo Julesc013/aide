@@ -261,3 +261,26 @@ class Requests:
                 "configuration_expired": expired, "coordinator_mode": self.state.mode(),
                 "claims_independently_verified": False, "execution_authorized": False,
                 "limitation": "Attributed local records only; no live host, effect or verification is inferred."}
+
+    def inbox(self, actor, *, after=None, limit=16):
+        """A bounded projection; discovery never acknowledges or changes work."""
+        self.actor(actor, actor["participant"])
+        if after is not None:
+            identity(after)
+        if type(limit) is not int or not 1 <= limit <= 16:
+            raise Refused("inbox limit must be one to 16")
+        records = []
+        for row in self.state.db.execute("SELECT id,body FROM dependency_requests WHERE id>? ORDER BY id",
+                                         (after or "",)):
+            body = json.loads(row["body"])
+            if actor["participant"] not in (body["sender"], body["recipient"]):
+                continue
+            status = self.inspect(row["id"])
+            records.append({key: status[key] for key in
+                            ("id", "request_sha256", "stage", "next_owner", "next_action")})
+            if len(records) > limit:
+                break
+        return {"mode": "cooperative", "requests": records[:limit],
+                "next_cursor": records[limit - 1]["id"] if len(records) > limit else None,
+                "configuration_expired": self.now() >= self.config["expires_at"],
+                "coordinator_mode": self.state.mode(), "execution_authorized": False}

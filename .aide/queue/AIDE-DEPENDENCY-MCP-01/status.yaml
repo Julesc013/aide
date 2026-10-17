@@ -1,0 +1,9 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-DEPENDENCY-MCP-01
+status: running
+result: PENDING
+jobs_allocated: 0
+maximum_jobs: 2
+live_initializations: 0
+live_peer_deliveries: 0
+next_action: implement_then_exact_source_effect_review

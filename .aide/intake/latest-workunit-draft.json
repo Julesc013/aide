@@ -5,6 +5,8 @@
     "Validation and evidence requirements are explicit."
   ],
   "allowed_paths": [
+    ".aide/import/**",
+    ".aide/export/aide-lite-pack-v0/**",
     ".aide/queue/<workunit>/**"
   ],
   "dependencies": [
@@ -16,7 +18,8 @@
     "changed-files.md",
     "validation.md",
     "remaining-risks.md",
-    "intent-compiler-report.md"
+    "intent-compiler-report.md",
+    "preflight-or-blocker-report.md"
   ],
   "forbidden_paths": [
     ".git/**",
@@ -28,7 +31,7 @@
     "raw response logs",
     "target repositories unless target-local queue authorizes work"
   ],
-  "idempotency": "prompt_hash:5cd64803e1cef7a21a61c0785d98a3ad5cb6b70d858083f682b1d343e889f9ad; status:draft; compile_only:true",
+  "idempotency": "prompt_hash:03d2ba1a149bda4e39bff92d80930448c86a2507631d9127fb469252557c74f8; status:draft; compile_only:true",
   "implementation_outline": [
     "Reconcile repo state before editing.",
     "require behavior proof and live-test validation plan before implementation",
@@ -40,7 +43,7 @@
     "do not bypass queue, branch, evidence, or policy state",
     "do not execute raw prompt directly"
   ],
-  "objective": "Normalize prompt into a bounded implementation WorkUnit draft: require behavior proof and live-test validation plan before implementation.",
+  "objective": "Normalize prompt into a bounded install WorkUnit draft: require behavior proof and live-test validation plan before implementation.",
   "output_schema": ".aide/intake/workunit-draft.schema.json",
   "preflight": [
     "git status --short",
@@ -48,16 +51,17 @@
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ],
   "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
-  "risk_class": "medium",
+  "risk_class": "unknown",
   "schema_version": "aide.workunit-draft.v0",
   "sizing_class": "live_test_gate",
   "status": "draft",
-  "task_class": "implementation",
-  "title": "Implementation WorkUnit Draft - Require behavior proof and live-test validation plan before implementation",
+  "task_class": "install",
+  "title": "Install WorkUnit Draft - Require behavior proof and live-test validation plan before implementation",
   "validation": [
     "git diff --check",
-    "py -3 .aide/scripts/aide_lite.py intent validate"
+    "py -3 .aide/scripts/aide_lite.py intent validate",
+    "target-local preflight validation; no source-side target mutation"
   ],
   "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-  "workunit_id": "draft-implementation-5cd64803e1ce"
+  "workunit_id": "draft-install-03d2ba1a149b"
 }

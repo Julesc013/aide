@@ -3,12 +3,12 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 5cd64803e1cef7a21a61c0785d98a3ad5cb6b70d858083f682b1d343e889f9ad
-- raw_prompt_excerpt: Implement bounded local dependency request and reply records under the existing continuous-worker state owner. Preserve canonical project work and reviewed-candidate integration boundaries; prove duplicate-safe submission, restart, revis...
-- interpreted_goal: Normalize prompt into a bounded implementation WorkUnit draft: require behavior proof and live-test validation plan before implementation.
-- confidence: high
-- task_class: implementation
-- risk_class: medium
+- raw_prompt_hash: 03d2ba1a149bda4e39bff92d80930448c86a2507631d9127fb469252557c74f8
+- raw_prompt_excerpt: Prepare a bounded cooperative MCP interface over the qualified local dependency request owner, with exact recipient binding, inbox discovery, duplicate-safe request/reply, and actual protocol-client verification. Preserve the observed un...
+- interpreted_goal: Normalize prompt into a bounded install WorkUnit draft: require behavior proof and live-test validation plan before implementation.
+- confidence: low
+- task_class: install
+- risk_class: unknown
 - sizing_class: live_test_gate
 - safe_to_execute: false
 - requires_split: true
@@ -30,7 +30,7 @@
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/status.yaml`
+- `.aide/queue/AIDE-LOCAL-DEPENDENCY-01/status.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/repo/file-inventory.json`
 - `.aide/repo/latest-repo-intelligence.md`
@@ -39,8 +39,8 @@
 
 ## Branch State Refs
 
-- current_branch:task/aide-daily-disked-adoption-01
-- current_role:task
+- current_branch:dev
+- current_role:integration
 - workflow:trunk_with_dev_integration
 - worktree_dirty:false
 
@@ -48,6 +48,7 @@
 
 - `git diff --check`
 - `py -3 .aide/scripts/aide_lite.py intent validate`
+- `target-local preflight validation; no source-side target mutation`
 
 ## Evidence Hints
 
@@ -55,3 +56,4 @@
 - `validation.md`
 - `remaining-risks.md`
 - `intent-compiler-report.md`
+- `preflight-or-blocker-report.md`

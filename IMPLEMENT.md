@@ -1,5 +1,9 @@
 # AIDE Implementation Log
 
+## Cooperative dependency tools candidate - 2026-10-18
+
+Extract conservative database preflight/opening for reuse by CLI and participant-bound MCP tools. Add inbox discovery without acknowledgements; preserve existing lifecycle authority and every regression. Exact source/effect review and managed behavioral checks are pending; no live configuration, initialization or peer contact occurred.
+
 ## Local dependency interface candidate - 2026-10-17
 
 The existing continuous-worker state gains opt-in dependency records through one

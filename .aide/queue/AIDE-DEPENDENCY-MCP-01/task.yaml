@@ -1,0 +1,38 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DEPENDENCY-MCP-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Expose participant-bound cooperative dependency tools
+type: implementation
+status: running
+admission_ref: ../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/dependency-mcp-admission.md
+admission_sha256: 8027fe21cc6c37da68d435cfe615d613c1db7710e471c0da3b72add29f152d0e
+admission_verdict: ACCEPT_bounded_admission_only
+scope:
+  allowed_paths_source: admission_ref
+  allowed_paths:
+    - core/runtime/continuous_worker/requests.py
+    - core/runtime/continuous_worker/__main__.py
+    - core/runtime/continuous_worker/request_access.py
+    - core/runtime/continuous_worker/dependency_mcp.py
+    - .aide/scripts/tests/test_continuous_worker_mcp.py
+    - .aide/scripts/tests/test_continuous_worker_requests.py
+    - docs/reference/local-dependency-requests.md
+    - .aide/queue/AIDE-DEPENDENCY-MCP-01/**
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/dependency-mcp-admission.md
+    - .aide/intake/latest-*
+    - .aide/context/latest-task-packet.md
+    - .aide/generated/**
+    - .aide/reports/capability-*
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+verification:
+  maximum_jobs: 2
+  config_digest: 61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90
+  admission: exact_source_and_effect_review_before_each_job
+  live_initializations: 0
+  live_peer_deliveries: 0
+review_gate: exact_source_effect_and_terminal_review

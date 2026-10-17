@@ -3,8 +3,8 @@
 - command: `capability overclaim-report`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-current-scoped-lite-qualification-01`
-- current_commit: `b1e308efa9733b1807dc2986b01234ef9418b00b`
+- current_branch: `task/aide-dependency-mcp-01`
+- current_commit: `8f93cb7e021a5347e71d81a60aae4bd3f8d53602`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

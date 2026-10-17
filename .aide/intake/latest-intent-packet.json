@@ -1,12 +1,14 @@
 {
   "allowed_path_hints": [
+    ".aide/import/**",
+    ".aide/export/aide-lite-pack-v0/**",
     ".aide/queue/<workunit>/**"
   ],
   "blocked": false,
   "blocker_reason": "",
   "branch_state_refs": [
-    "current_branch:task/aide-daily-disked-adoption-01",
-    "current_role:task",
+    "current_branch:dev",
+    "current_role:integration",
     "workflow:trunk_with_dev_integration",
     "worktree_dirty:false"
   ],
@@ -20,12 +22,13 @@
     ".aide/policies/work-units.yaml",
     ".aide/policies/workunit-sizing.yaml"
   ],
-  "confidence": "high",
+  "confidence": "low",
   "evidence_hints": [
     "changed-files.md",
     "validation.md",
     "remaining-risks.md",
-    "intent-compiler-report.md"
+    "intent-compiler-report.md",
+    "preflight-or-blocker-report.md"
   ],
   "forbidden_path_hints": [
     ".git/**",
@@ -39,7 +42,7 @@
   ],
   "generated_by": "aide-lite",
   "generated_from": "inline_prompt",
-  "interpreted_goal": "Normalize prompt into a bounded implementation WorkUnit draft: require behavior proof and live-test validation plan before implementation.",
+  "interpreted_goal": "Normalize prompt into a bounded install WorkUnit draft: require behavior proof and live-test validation plan before implementation.",
   "next_action": "require behavior proof and live-test validation plan before implementation",
   "notes": [
     "deterministic_local: true",
@@ -48,8 +51,8 @@
     "task_execution: false",
     "raw_long_prompt_storage: false"
   ],
-  "raw_prompt_excerpt": "Implement bounded local dependency request and reply records under the existing continuous-worker state owner. Preserve canonical project work and reviewed-candidate integration boundaries; prove duplicate-safe submission, restart, revis...",
-  "raw_prompt_hash": "5cd64803e1cef7a21a61c0785d98a3ad5cb6b70d858083f682b1d343e889f9ad",
+  "raw_prompt_excerpt": "Prepare a bounded cooperative MCP interface over the qualified local dependency request owner, with exact recipient binding, inbox discovery, duplicate-safe request/reply, and actual protocol-client verification. Preserve the observed un...",
+  "raw_prompt_hash": "03d2ba1a149bda4e39bff92d80930448c86a2507631d9127fb469252557c74f8",
   "rejected_interpretations": [
     "do not bypass queue, branch, evidence, or policy state",
     "do not execute raw prompt directly"
@@ -58,7 +61,7 @@
     ".aide/context/latest-context-packet.md",
     ".aide/context/latest-review-packet.md",
     ".aide/context/latest-task-packet.md",
-    ".aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/status.yaml",
+    ".aide/queue/AIDE-LOCAL-DEPENDENCY-01/status.yaml",
     ".aide/queue/index.yaml",
     ".aide/repo/file-inventory.json",
     ".aide/repo/latest-repo-intelligence.md",
@@ -66,7 +69,7 @@
     ".aide/reports/file-quality-summary.md"
   ],
   "requires_split": true,
-  "risk_class": "medium",
+  "risk_class": "unknown",
   "safe_to_execute": false,
   "schema_version": "aide.intent-packet.v0",
   "sizing_class": "live_test_gate",
@@ -77,6 +80,8 @@
       "Validation and evidence requirements are explicit."
     ],
     "allowed_paths": [
+      ".aide/import/**",
+      ".aide/export/aide-lite-pack-v0/**",
       ".aide/queue/<workunit>/**"
     ],
     "dependencies": [
@@ -88,7 +93,8 @@
       "changed-files.md",
       "validation.md",
       "remaining-risks.md",
-      "intent-compiler-report.md"
+      "intent-compiler-report.md",
+      "preflight-or-blocker-report.md"
     ],
     "forbidden_paths": [
       ".git/**",
@@ -100,7 +106,7 @@
       "raw response logs",
       "target repositories unless target-local queue authorizes work"
     ],
-    "idempotency": "prompt_hash:5cd64803e1cef7a21a61c0785d98a3ad5cb6b70d858083f682b1d343e889f9ad; status:draft; compile_only:true",
+    "idempotency": "prompt_hash:03d2ba1a149bda4e39bff92d80930448c86a2507631d9127fb469252557c74f8; status:draft; compile_only:true",
     "implementation_outline": [
       "Reconcile repo state before editing.",
       "require behavior proof and live-test validation plan before implementation",
@@ -112,7 +118,7 @@
       "do not bypass queue, branch, evidence, or policy state",
       "do not execute raw prompt directly"
     ],
-    "objective": "Normalize prompt into a bounded implementation WorkUnit draft: require behavior proof and live-test validation plan before implementation.",
+    "objective": "Normalize prompt into a bounded install WorkUnit draft: require behavior proof and live-test validation plan before implementation.",
     "output_schema": ".aide/intake/workunit-draft.schema.json",
     "preflight": [
       "git status --short",
@@ -120,22 +126,24 @@
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
-    "risk_class": "medium",
+    "risk_class": "unknown",
     "schema_version": "aide.workunit-draft.v0",
     "sizing_class": "live_test_gate",
     "status": "draft",
-    "task_class": "implementation",
-    "title": "Implementation WorkUnit Draft - Require behavior proof and live-test validation plan before implementation",
+    "task_class": "install",
+    "title": "Install WorkUnit Draft - Require behavior proof and live-test validation plan before implementation",
     "validation": [
       "git diff --check",
-      "py -3 .aide/scripts/aide_lite.py intent validate"
+      "py -3 .aide/scripts/aide_lite.py intent validate",
+      "target-local preflight validation; no source-side target mutation"
     ],
     "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-    "workunit_id": "draft-implementation-5cd64803e1ce"
+    "workunit_id": "draft-install-03d2ba1a149b"
   },
-  "task_class": "implementation",
+  "task_class": "install",
   "validation_hints": [
     "git diff --check",
-    "py -3 .aide/scripts/aide_lite.py intent validate"
+    "py -3 .aide/scripts/aide_lite.py intent validate",
+    "target-local preflight validation; no source-side target mutation"
   ]
 }

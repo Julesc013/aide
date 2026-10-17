@@ -1,0 +1,9 @@
+{
+  "verdict": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "source_tree": "ba8db529c368740b371ba253a0f6129aef6ea3df",
+  "template_sha256": "15c7ede095cfd0a546e0cab411d3e1a249983387778aa517aec3f0429386ff3f",
+  "findings": ["Outgoing response size was unbounded while docs described a single 65536-byte frame limit. Require explicit output policy and actual subprocess coverage for large valid history; preserve reconciliation after uncertain committed mutation."],
+  "jobs_run": 0,
+  "disposition": "Define 64 KiB incoming and 1 MiB outgoing limits, explicit oversize uncertainty error, complete large-history subprocess case and independent oversize encoder oracle. Original assertions retained; new exact review required."
+}
