@@ -31,3 +31,7 @@ consumed fields/identities and bound rendered bytes. Corrected before any job;
 
 Allocation1/3 PASS23 at5fa78ca7, collected and retired. Prepare exact existing-owner
 pack refresh and all16 delivered Q38 methods for allocation2/3.
+
+Allocation2/3 PASS: ownership6, deliveredQ38=16, unchanged public assets and all858
+pack identities accounted for. Collected/retired. Prepare final preview allocation
+at fixed33a37774..accepted package checkpoint; no new source tests necessary.

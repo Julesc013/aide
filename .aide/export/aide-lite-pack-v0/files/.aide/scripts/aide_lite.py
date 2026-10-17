@@ -12297,7 +12297,8 @@ def write_quality_outputs(repo_root: Path, ledger: dict[str, object]) -> dict[st
     output_ledger.pop("docs_report", None)
     output_ledger.pop("test_report", None)
     output_ledger.pop("module_report", None)
-    output_ledger.pop("reuse_report", None)
+    # Preserve already-computed candidates for read-only discovery. Older ledgers
+    # without this optional field remain valid; absence is not negative evidence.
     return {
         "file_quality_ledger": write_text_if_changed(repo_root / FILE_QUALITY_LEDGER_JSON_PATH, stable_json_text(output_ledger)),
         "file_quality_summary": write_text_if_changed(repo_root / FILE_QUALITY_SUMMARY_MD_PATH, render_file_quality_summary(ledger)),
@@ -12446,29 +12447,120 @@ def command_quality_status(args: argparse.Namespace) -> int:
     return 0
 
 
+def quality_file_explanation(ledger: dict[str, object], rel: str) -> dict[str, object]:
+    """Project recorded facts only; never infer completeness or current validity."""
+    if ledger.get("schema_version") != "aide.file-quality-ledger.v0" or not isinstance(ledger.get("records"), list):
+        raise ValueError("expected a v0 quality ledger with records")
+    records = ledger["records"]
+    if not isinstance(ledger.get("source_commit"), str):
+        raise ValueError("invalid source_commit")
+    if any(not isinstance(item, dict) or not isinstance(item.get("path"), str) or not item["path"] for item in records):
+        raise ValueError("invalid file record identity")
+    matches = [item for item in records if item["path"] == rel]
+    if len(matches) > 1:
+        raise ValueError("ambiguous duplicate file record")
+    result = {
+        "schema_version": "aide.quality-explanation.v1", "path": rel,
+        "result": "PASS" if matches else "MISSING", "ledger": FILE_QUALITY_LEDGER_JSON_PATH,
+        "source_commit": ledger.get("source_commit", ""), "freshness": "unverified",
+        "coverage": "heuristic_incomplete" if matches else "unindexed",
+        "caveats": ["Report revision is attribution, not current-byte verification.",
+                    "Missing links do not establish absence; do not narrow checks solely from this view.",
+                    "Similarity does not prove shared semantics or authorize refactoring."],
+    }
+    if not matches:
+        result["next_action"] = "inspect the target and existing inventory; no file record was found"
+        return result
+    record = matches[0]
+    for key in ("kind", "status", "owner", "quality_level", "recommended_next_action"):
+        value = record.get(key)
+        if not isinstance(value, str):
+            raise ValueError(f"invalid {key}")
+        result[key] = value
+
+    def bounded_strings(value: object) -> dict[str, object]:
+        if not isinstance(value, list) or any(not isinstance(item, str) for item in value):
+            raise ValueError("expected a list of string references")
+        items = sorted(set(value))
+        return {"items": items[:20], "omitted": max(0, len(items) - 20)}
+
+    relations = {}
+    for key, reason in (("docs_refs", "recorded documentation link"),
+                        ("test_refs", "heuristic likely test target; not an executed check"),
+                        ("dependency_refs", "recorded local reference; not complete impact analysis"),
+                        ("warnings", "recorded quality warning"),
+                        ("exemptions", "recorded lifecycle exemption")):
+        relation = bounded_strings(record.get(key))
+        relations[key] = {**relation, "reason": reason,
+                          "state": "found" if relation["items"] else "not_found"}
+    result["relations"] = relations
+    candidates = []
+    reuse = ledger.get("reuse_report")
+    if "reuse_report" in ledger:
+        if not isinstance(reuse, dict):
+            raise ValueError("invalid reuse report")
+        for group, key, reason in (("duplicate_hash_candidates", "sha256", "recorded identical content hash"),
+                                   ("repeated_helper_name_candidates", "helper_name", "repeated helper name"),
+                                   ("similar_filename_clusters", "name", "similar filename")):
+            entries = reuse.get(group)
+            if not isinstance(entries, list):
+                raise ValueError(f"invalid reuse group: {group}")
+            for entry in entries:
+                if not isinstance(entry, dict) or not isinstance(entry.get(key), str):
+                    raise ValueError(f"invalid reuse candidate: {group}")
+                paths = entry.get("paths")
+                bounded_strings(paths)  # Validate even candidates not selected.
+                if rel in paths:
+                    peers = bounded_strings([path for path in paths if path != rel])
+                    candidates.append({"reason": reason, "match": entry[key], "peers": peers})
+    result["reuse"] = {"state": "unindexed" if reuse is None else "found" if candidates else "not_found",
+                       "items": candidates[:20], "omitted": max(0, len(candidates) - 20)}
+    return result
+
+
 def command_quality_explain_file(args: argparse.Namespace) -> int:
     rel = normalize_rel(args.path)
-    ledger = latest_or_missing_quality_ledger(args.repo_root)
-    print("AIDE Lite quality explain-file")
-    if ledger is None:
-        print("result: MISSING")
-        print("next_action: run `quality ledger`")
-        return 1
-    records = ledger.get("records", [])
-    record = next((item for item in records if isinstance(item, dict) and item.get("path") == rel), None) if isinstance(records, list) else None
-    if record is None:
-        print("result: MISSING")
-        print(f"path: {rel}")
-        return 1
-    print("result: PASS")
-    for key in ["path", "kind", "status", "owner", "quality_level", "recommended_next_action"]:
-        print(f"{key}: {record.get(key, '')}")
-    print(f"warnings: {', '.join(record.get('warnings', []))}")
-    print(f"exemptions: {', '.join(record.get('exemptions', []))}")
-    print(f"docs_refs: {', '.join(record.get('docs_refs', []))}")
-    print(f"test_refs: {', '.join(record.get('test_refs', []))}")
-    print(f"dependency_refs: {', '.join(record.get('dependency_refs', [])[:30])}")
-    return 0
+    try:
+        # This lookup reads one bounded report, never target source or new indexes.
+        with (args.repo_root / FILE_QUALITY_LEDGER_JSON_PATH).open("rb") as stream:
+            raw = stream.read(16 * 1024 * 1024 + 1)
+        if len(raw) > 16 * 1024 * 1024:
+            raise ValueError("quality ledger exceeds the 16 MiB lookup limit")
+        ledger = json.loads(raw)
+        if not isinstance(ledger, dict):
+            raise ValueError("quality ledger must be an object")
+        result = quality_file_explanation(ledger, rel)
+    except FileNotFoundError:
+        result = {"result": "MISSING", "path": rel, "coverage": "unindexed",
+                  "next_action": "run `repo inventory` then `quality ledger` when authorized"}
+    except (OSError, ValueError, RecursionError) as error:
+        result = {"result": "INVALID", "path": rel, "error": str(error),
+                  "next_action": "inspect the retained report; no regeneration was attempted"}
+    if getattr(args, "json", False):
+        rendered = stable_json_text(result)
+    else:
+        lines = ["AIDE Lite quality explain-file"]
+        for key, value in result.items():
+            if key in {"relations", "reuse", "caveats"}:
+                continue
+            lines.append(f"{key}: {value}")
+        for key, relation in result.get("relations", {}).items():
+            lines.append(f"{key}: {', '.join(relation['items'])}")
+            lines.append(f"  {relation['state']}; {relation['reason']}; omitted: {relation['omitted']}")
+        reuse = result.get("reuse", {})
+        if reuse:
+            lines.append(f"reuse: {reuse['state']}; omitted: {reuse['omitted']}")
+            for item in reuse["items"]:
+                lines.append(f"- {item['reason']} ({item['match']}): {', '.join(item['peers']['items'])}; omitted peers: {item['peers']['omitted']}")
+        for caveat in result.get("caveats", []):
+            lines.append(f"caveat: {caveat}")
+        rendered = "\n".join(lines) + "\n"
+    if len(rendered.encode("utf-8", errors="replace")) > 64 * 1024:
+        result = {"result": "INVALID", "error": "explanation exceeds the 64 KiB UTF-8 output limit",
+                  "next_action": "inspect the retained report directly; no partial explanation was emitted"}
+        rendered = stable_json_text(result) if getattr(args, "json", False) else "\n".join(f"{key}: {value}" for key, value in result.items()) + "\n"
+    print(rendered, end="")
+    return {"PASS": 0, "MISSING": 1, "INVALID": 2}[result["result"]]
 
 
 def command_quality_report_file(args: argparse.Namespace, title: str, path: str) -> int:
@@ -46461,6 +46553,7 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     quality_subparsers.add_parser("status").set_defaults(handler=command_quality_status)
     quality_explain_parser = quality_subparsers.add_parser("explain-file")
     quality_explain_parser.add_argument("path")
+    quality_explain_parser.add_argument("--json", action="store_true", help="emit the read-only evidence projection as JSON")
     quality_explain_parser.set_defaults(handler=command_quality_explain_file)
     quality_subparsers.add_parser("docs").set_defaults(handler=command_quality_docs)
     quality_subparsers.add_parser("tests").set_defaults(handler=command_quality_tests)

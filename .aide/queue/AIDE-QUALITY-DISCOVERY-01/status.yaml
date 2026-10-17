@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-QUALITY-DISCOVERY-01
 status: running
-result: PASS23_SOURCE_PACKAGE_PENDING
-jobs_allocated: 1
+result: PASS23_SOURCE_PASS16_DELIVERED_PREVIEW_PENDING
+jobs_allocated: 2
 maximum_jobs: 3
-next_action: qualify_changed_portable_export
+next_action: exact_promotion_preview_then_integration

@@ -21,5 +21,14 @@ freshness and reuse unindexed; 3584output bytes. Live ledger SHA256
 fa63e5a98682e243d8a8e64d6eb2b059f1cf38fb6f13bfa56b3ff1663c81d643 stayed unchanged.
 The live lookup log is retained locally, not shipped as canonical evidence.
 
-Affected portable export and exact integration remain pending. Published Lite1.0.0
-is unchanged. Actual desktop delivery and native DiskEd adoption remain open.
+Allocation2/3, job8437ff4e51f2410090c4cf8c76f8df1f, PASS. Six ownership checks
+preceded export; existing exporter/doctor/validate/pack-status all passed. All16
+Q38 methods passed against actual exported CLI, with no skips/errors/failures.
+The five planned payload files plus manifest/checksums changed; all858 members
+remain accounted for and payload matches source. Export report was unchanged.
+Pack bytes remained identical after the delivered tests; public1.0.0 assets stayed
+unchanged. Job collected, quiescent, scratch absent and reservation released.
+Observed peaks: memory263553024bytes, scratch5395901bytes; pack4436386bytes.
+
+Exact preview and integration remain pending. Actual desktop delivery and native
+DiskEd adoption remain open; this increment qualifies a read-only CLI workflow.

@@ -2,7 +2,7 @@
 
 ## Quality discovery - 2026-10-18
 
-[AIDE-QUALITY-DISCOVERY-01](.aide/queue/AIDE-QUALITY-DISCOVERY-01/ExecPlan.md) extends existing Q38 lookup with explained evidence and JSON. Source and delivered-package checks are pending. The prior cooperative review is integrated at33a37774; desktop delivery and DiskEd ownership remain open.
+[AIDE-QUALITY-DISCOVERY-01](.aide/queue/AIDE-QUALITY-DISCOVERY-01/ExecPlan.md) extends existing Q38 lookup with explained evidence and JSON. All23 source methods and16 delivered Q38 methods pass; promotion preview/integration remain. The prior cooperative review is integrated at33a37774; desktop delivery and DiskEd ownership remain open.
 
 ## Actual cooperative review - 2026-10-18
 

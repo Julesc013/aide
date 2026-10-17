@@ -2,7 +2,7 @@
 
 ## Quality discovery candidate - 2026-10-18
 
-Added a bounded read-only explanation over the existing ledger and optional retention of computed reuse candidates. Old reports remain valid. No live index regeneration, source scanning or automatic test selection. Fixture and export qualification are pending.
+Added a bounded read-only explanation over the existing ledger and optional retention of computed reuse candidates. Old reports remain valid. No live index regeneration, source scanning or automatic test selection. All23 source and16 delivered Q38 methods pass, as do six ownership checks and export validation; both managed jobs retired.
 
 ## Cooperative review preparation - 2026-10-18
 

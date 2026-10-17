@@ -2,7 +2,7 @@
 
 ## Quality discovery reference - 2026-10-18
 
-[File quality reference](docs/reference/file-quality-ledger.md) explains advisory ownership/check/reuse lookup, JSON output, omitted counts and unverified freshness. [Bounded task](.aide/queue/AIDE-QUALITY-DISCOVERY-01/ExecPlan.md) tracks qualification.
+[File quality reference](docs/reference/file-quality-ledger.md) explains advisory ownership/check/reuse lookup, JSON output, omitted counts and unverified freshness. [Qualified outcome](.aide/queue/AIDE-QUALITY-DISCOVERY-01/REPORT.md) records source and delivered checks; the bounded task tracks remaining promotion.
 
 ## Cooperative exchange evidence - 2026-10-18
 
