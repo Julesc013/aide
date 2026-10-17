@@ -1,5 +1,9 @@
 # AIDE Implementation Log
 
+## Installed effort source qualification - 2026-10-18
+
+Allocation11 passed21 accounting, actual safe-import and extracted-workflow checks. The malicious project core stayed untouched and unexecuted; missing owned dependency refused without fallback. Managed collection and retirement verified. Prepare the existing exporter and delivered qualification; original candidate/failure evidence remains unchanged.
+
 ## Installed effort binding repair candidate - 2026-10-18
 
 The exporter projects the unchanged canonical accounting module into the owned script directory and binds the delivered CLI there before any export reset. Safe import still excludes project core. Added fresh/brownfield installed and binding-drift regressions; allocation11 is pending review, with no new archive or support claim.

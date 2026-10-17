@@ -1,10 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
 status: running
-result: ORIGINAL8_PASS_ADDITIONS_INTERRUPTED_AT_INSTALLED_EFFORT
+result: INSTALLED_EFFORT_REPAIR_SOURCE21_PASS_ARCHIVES_PENDING
 owner: aide_campaign
-next_action: review_installed_effort_source_and_allocation11
+next_action: review_pack_refresh_and_allocation12
 promotion_blocker: three_commit_message_failures_preserved_pending_disposition
-jobs_allocated: 10
+jobs_allocated: 11
 maximum_jobs: 26
 public_release: unchanged_1.0.0

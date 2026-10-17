@@ -34,3 +34,9 @@ evidence/installed-effort-repair-amendment.md adds only the CLI/export binding,
 focused tests/reference and generated pack. Maximum26 includes all prior attempts;
 no implementation or new job until admission, then exact source/effect review.
 Keep the canonical module, project core exclusion and all original assertions.
+
+Allocation11 job595f6ad0 PASS21 focused source/export checks, including hostile
+project core preservation, missing-private refusal, re-export, existing extracted
+native workflow and unchanged apply descriptions. Original failure retained.
+Collection hashes, quiescence, scratch and reservation retirement verified.
+Prepare allocation12 owned pack refresh plus delivered21; archives stay unchanged.

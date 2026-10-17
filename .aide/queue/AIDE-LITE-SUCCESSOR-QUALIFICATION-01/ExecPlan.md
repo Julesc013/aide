@@ -71,3 +71,9 @@ Allocation11 selects19 focused source/export checks; NOT RUN pending exact revie
 Source review requested idempotent delivered re-export and two affected fixture
 adaptations. Exact additional admission55a0772c ACCEPTed; source now selects21
 methods, with all behavioral assertions preserved. No job has run under this repair.
+
+Allocation11 job595f6ad0 PASS21 focused source/export checks, including hostile
+project core preservation, missing-private refusal, re-export, existing extracted
+native workflow and unchanged apply descriptions. Original failure retained.
+Collection hashes, quiescence, scratch and reservation retirement verified.
+Prepare allocation12 owned pack refresh plus delivered21; archives stay unchanged.
