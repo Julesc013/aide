@@ -96,3 +96,7 @@ methods prepared with 59 existing methods retained. No managed job run yet.
 Source review found loader cache writes and link following before any job.
 Reused existing bounded ordinary-module checks and bytecode suppression; added
 no-B subprocess preservation and sentinel helper-link/reparse refusal cases.
+
+Source79 passed at40a5740e; jobea724f2028db4b2cb060b632f7a77808 fully retired.
+Capability refresh independently accepted and CURRENT with unchanged classifications.
+Actual portable/safe-installed consumers remain unrun pending this effect review.

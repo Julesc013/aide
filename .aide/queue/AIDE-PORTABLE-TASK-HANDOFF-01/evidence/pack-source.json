@@ -1,0 +1,27 @@
+{
+  "base": "40a5740e7eef5cdd8c54fd3fc75961d67c482236",
+  "files": {
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/ExecPlan.md": "a26f03f975b5c6d6628ed304a16fbff81d8c96a4bdce45cc996d5cabaaf79e2c",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/attempt-01-source-tests.json": "ae7b50e1ab4320aff335e8fdfa85d7c6764a0f1168b23ceb3eabad7817425b9d",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/ledger-preimages.json": "91909ca40b5791e22cfd25d7952a204a0a48d42169e5a31dcd2abec7a6cee2bf",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/ledger-refresh.json": "c67450babfb0549a4dce258cf4330d1bf88ed38bffff16913994a9af75b11927",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/pack-effect.md": "4d754eb863d98c703f51d0049484bbebb3e2c25db262ec9ddf85190cf47ac5d8",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/pack-job-template.json": "babf31dd83c870f5e153795bc1cd7dfce1e3220f75f8a60ab1d0621723a21a51",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/pack-message.txt": "be07dcd1a883ccee5d63670cd12dc9c7fe357043cd00c457eaeaf0161bae61ed",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/prior-pack-inventory.json": "24a8eda85ca4e21ce1549dffeb3e045a6037dc069c5141c2dd27395667073776",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/refresh-effect.md": "a4574ee5339cf32aff5e149f6dc0572241086aaf92bab0cc0de55f4d243cb52e",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/refresh-review.md": "ff4f2b3ef2b23fee22e305a926173f7629dfa05a3d47c414b26298efb4dac22b",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/refresh-source.json": "27030e3213f38d612becf8208617cabecc7adc64c9b3b4357b277eb8fb9a9df5",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/source-attempt-01.json": "b7825b2ff7482e58e985aa5b6998440d261d0a614f37cae8f77c04371874a662",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/source-commit-result.json": "2fcfdbdc470515a65440eff011031cf1f62fd2709adbaef6df943a5f57cca82e",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/source-review.md": "e8ba7bf0f35ee894573a0f58b3f59cf2515aa29fca9d375282d1ad14133cea5a",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/run_pack.py": "ea378787f27f4c4eea65a0928cc94580b4252e7214c7bf95fc49c0aaee34c49f",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/status.yaml": "692e7f6bb9c63d80311db48d881bbef51eae1d409932d345acbda9f3c840f2d0",
+    ".aide/reports/capability-command-status.md": "611a24adb977432e47a99813ff1ba3eb38815654ca13de4b98f9db50f556db48",
+    ".aide/reports/capability-evidence-bindings.json": "324c29816141c49202a4d4c7402aabff41597dd1f53651de1220ae854a61e6a3",
+    ".aide/reports/capability-ledger.md": "3cb013e29f9fa17478d89d0091f70315613f4b61ac46318a18b38876b08d2094"
+  },
+  "effect_sha256": "4d754eb863d98c703f51d0049484bbebb3e2c25db262ec9ddf85190cf47ac5d8",
+  "message_sha256": "be07dcd1a883ccee5d63670cd12dc9c7fe357043cd00c457eaeaf0161bae61ed",
+  "template_sha256": "babf31dd83c870f5e153795bc1cd7dfce1e3220f75f8a60ab1d0621723a21a51"
+}

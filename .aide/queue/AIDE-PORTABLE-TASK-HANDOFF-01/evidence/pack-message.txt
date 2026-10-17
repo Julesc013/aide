@@ -1,0 +1,33 @@
+test(task): prepare exported and installed handoff qualification
+
+## Summary
+- Record AIDE-PORTABLE-TASK-HANDOFF-01 source qualification.
+
+## Why
+- Task continuity must work from the delivered CLI in ordinary safe installs.
+
+## Changed
+- Preserve 79 source passes and retired-job evidence.
+- Refresh existing capability bindings without changing classifications.
+- Prepare owned export, delivered checks and one safe-installed consumer.
+
+## Validation
+- PASS: source79, no skips; collection and retirement verified; binding CURRENT.
+- PASS: runner syntax and existing export inventory.
+- NOT RUN: delivered/installed consumers and final preview.
+
+## Changelog
+- Changed: Record task handoff source proof and prepare portable consumer checks.
+
+## Risks
+- Bundle inspection does not establish authority, authenticity or atomic capture.
+
+## Follow-up
+- Run reviewed export consumer job and fixed preview before integration review.
+
+AIDE-Task: AIDE-PORTABLE-TASK-HANDOFF-01
+AIDE-Phase: delivered-preparation
+AIDE-Result: SOURCE_PASS
+AIDE-Scope: portable-task-record-handoff
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: independent-delivered-job-review-required

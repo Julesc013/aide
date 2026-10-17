@@ -1,0 +1,16 @@
+{
+  "base": "40a5740e7eef5cdd8c54fd3fc75961d67c482236",
+  "files": {
+    ".aide/scripts/aide_lite.py": "633cb60093cd227d66c960e9b5480d5f2b0f8d0efff259f7715473656c8e0f68",
+    ".aide/scripts/task_handoff.py": "55b273d3d16bc17cd0a916ad5f0c65f3742ff1724caecb2c6537b1b91df6dd99",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/source-attempt-01.json": "b7825b2ff7482e58e985aa5b6998440d261d0a614f37cae8f77c04371874a662",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/attempt-01-source-tests.json": "ae7b50e1ab4320aff335e8fdfa85d7c6764a0f1168b23ceb3eabad7817425b9d",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/ledger-preimages.json": "91909ca40b5791e22cfd25d7952a204a0a48d42169e5a31dcd2abec7a6cee2bf",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence/refresh-effect.md": "a4574ee5339cf32aff5e149f6dc0572241086aaf92bab0cc0de55f4d243cb52e",
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "e81a982790751f4eb1e097b2d6d84f088f9885d79d323a4af1ab8ca2a75c7db9",
+    ".aide/reports/capability-evidence-bindings.json": "50c776e394f70dbe7a0f041e3c604349ce87270f41020ce0fdb2b8b5e3f1fa47",
+    ".aide/reports/capability-command-status.md": "4c468b81e70a8875fbf38f293b2d0cb9c67f50123433584a9307a3490c2e3bb2"
+  },
+  "effect_sha256": "a4574ee5339cf32aff5e149f6dc0572241086aaf92bab0cc0de55f4d243cb52e"
+}

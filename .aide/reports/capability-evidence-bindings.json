@@ -170,10 +170,10 @@
       "state": "observed"
     },
     {
-      "bytes": 2429887,
+      "bytes": 2435380,
       "path": ".aide/scripts/aide_lite.py",
       "reason": "",
-      "sha256": "3cca89eefa075ec72b06430d8b8d09657da5af27d20fd161715e14da00e8a456",
+      "sha256": "633cb60093cd227d66c960e9b5480d5f2b0f8d0efff259f7715473656c8e0f68",
       "state": "observed"
     },
     {
@@ -275,10 +275,10 @@
       "state": "observed"
     },
     {
-      "bytes": 6438,
+      "bytes": 9037,
       "path": "docs/reference/task-os-report-only-commands.md",
       "reason": "",
-      "sha256": "e22d955a960a5e7b7ca664b61e96b4e0fb4e1b2e4fbd35ffc23a5c84275e5ce0",
+      "sha256": "c7cdac639f02f0a822976eaebe98a669fec43784fdf9bed82e178e95ad9aa798",
       "state": "observed"
     },
     {
