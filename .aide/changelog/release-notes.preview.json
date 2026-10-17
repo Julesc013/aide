@@ -1,147 +1,71 @@
 {
   "follow_up": [
     {
-      "commit": "f2543d317caf",
-      "summary": "Run exact reviewed source and delivered qualification, bounded exercises and promotion checks before integration."
+      "commit": "82d771463a12",
+      "summary": "Run one bounded source job, then qualify actual portable delivery and integration separately."
     },
     {
-      "commit": "e191b8a4c6cf",
-      "summary": "Run exact delivered effect, then promotion preview and qualified integration."
+      "commit": "7c2aec4949cc",
+      "summary": "Run reviewed source42, real five-attempt consumer and delivered42; stop on failure."
     },
     {
-      "commit": "5ee93ea7306a",
-      "summary": "Prepare exact reviewed repair of fixture ignore initialization and absent baseline definitions; preserve all assertions."
-    },
-    {
-      "commit": "ca7bd44a69ff",
-      "summary": "Run the exact repaired qualification once; retain failure without automatic retry, then prepare promotion preview if successful."
-    },
-    {
-      "commit": "f0bef95b14a3",
-      "summary": "Apply only independently accepted fixture correction, then qualify exact changed inputs once."
-    },
-    {
-      "commit": "8f8406558c3a",
-      "summary": "Execute the exact reviewed qualification once, then the reserved promotion preview if successful."
-    },
-    {
-      "commit": "816922b65252",
-      "summary": "Generate and verify the reviewed preview once, then perform exact terminal integration review."
+      "commit": "7d2c41f73357",
+      "summary": "Generate and replay the reviewed preview, then obtain exact terminal integration review."
     }
   ],
   "highlights": [
     {
       "breaking": false,
-      "category": "Changed",
-      "commit": "f2543d317caf",
-      "subject": "feat(review): connect bounded engineering guidance to review packets",
-      "summary": "shared review guidance and packet discovery with missing-reference warnings."
+      "category": "Added",
+      "commit": "82d771463a12",
+      "subject": "feat(effort): observe pinned work attempts and accounting gaps",
+      "summary": "job effort supplied-attempt view with explicit incomplete accounting."
     },
     {
       "breaking": false,
-      "category": "Changed",
-      "commit": "e191b8a4c6cf",
-      "subject": "test(review): retain source outcomes and prepare delivered checks",
-      "summary": "engineering-review qualification evidence and portable delivery preparation."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "5ee93ea7306a",
-      "subject": "test(review): preserve delivered self-test failure before repair",
-      "summary": "original delivered failure and fixture-portability repair scope evidence."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "f0bef95b14a3",
-      "subject": "test(review): retain delivered ledger failure and repair scope",
-      "summary": "preserve delivered fixture-ledger failure and correction scope."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "816922b65252",
-      "subject": "test(review): qualify portable guidance and prepare promotion preview",
-      "summary": "qualified portable engineering review guidance and independent fixture evidence."
+      "category": "Added",
+      "commit": "7d2c41f73357",
+      "subject": "test(effort): qualify source and portable effort observations",
+      "summary": "qualified portable job effort reporting for explicit supplied work sets."
     },
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "ca7bd44a69ff",
-      "subject": "fix(review): preserve portable self-test fixture prerequisites",
-      "summary": "portable self-test fixture initialization for missing source-only inputs."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "8f8406558c3a",
-      "subject": "fix(review): measure self-test ledger from fixture artifacts",
-      "summary": "self-test ledger measurements now come from its own fixture."
+      "commit": "7c2aec4949cc",
+      "subject": "fix(effort): use valid session identity in overlap fixture",
+      "summary": "supplied-usage overlap regression fixture identity."
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "f2543d317caf",
-      "summary": "Guidance does not enforce isolation or establish comparative review quality or savings."
+      "commit": "82d771463a12",
+      "summary": "Source is a candidate; whole-work usage, cost and accepted-outcome time remain unknown."
     },
     {
-      "commit": "e191b8a4c6cf",
-      "summary": "No comparative quality, complete usage or protected-host claim follows; public1.0.0 unchanged."
+      "commit": "7c2aec4949cc",
+      "summary": "Actual portable behavior remains unqualified until this attempt passes."
     },
     {
-      "commit": "5ee93ea7306a",
-      "summary": "Export is unqualified; dev/main remain unchanged. No retry or acceptance is implied by this checkpoint."
-    },
-    {
-      "commit": "ca7bd44a69ff",
-      "summary": "Repair remains unqualified until the managed job passes; public Lite 1.0.0 is unchanged."
-    },
-    {
-      "commit": "f0bef95b14a3",
-      "summary": "Development export remains unqualified; published Lite 1.0.0 and dev/main are unchanged."
-    },
-    {
-      "commit": "8f8406558c3a",
-      "summary": "Development export remains unqualified until the actual delivered checks pass."
-    },
-    {
-      "commit": "816922b65252",
-      "summary": "Desktop-host delivery and native downstream adoption remain separate unresolved prerequisites."
+      "commit": "7d2c41f73357",
+      "summary": "Partial observations do not establish cost savings or task acceptance."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "816922b652520d5a71793b37e00a375eddcec5ce",
-  "source_range": "239558e8a9edd9bc49772d9e3a6876cf35e1c9c5..816922b652520d5a71793b37e00a375eddcec5ce",
+  "source_head": "7d2c41f73357acdda6f0ad5c73331b9df842a408",
+  "source_range": "a0970badeca5b3332505a4158fcfca6b075e07e3..7d2c41f73357acdda6f0ad5c73331b9df842a408",
   "validation_summary": [
     {
-      "commit": "f2543d317caf",
-      "summary": "PASS: doctor, full repository validation, diff check and manual frontmatter/generated-section review."
+      "commit": "82d771463a12",
+      "summary": "PASS: structural validation, static syntax, exact source/effect review at tree200525fe and all895 input pins."
     },
     {
-      "commit": "e191b8a4c6cf",
-      "summary": "PASS: all seven original source methods including selftest, no skips/errors/failures; collected hashes, quiescence and retirement."
+      "commit": "7c2aec4949cc",
+      "summary": "PASS: 41 of 42 original checks, collection digests and retirement."
     },
     {
-      "commit": "5ee93ea7306a",
-      "summary": "PASS: ownership6, export, doctor, repository validation, pack-status, preserved public assets and unchanged post-test pack bytes."
-    },
-    {
-      "commit": "ca7bd44a69ff",
-      "summary": "PASS: independent source/effect review and 907 exact input bindings; diff check."
-    },
-    {
-      "commit": "f0bef95b14a3",
-      "summary": "PASS: eight source methods; ownership six, exporter, doctor, validate and pack status."
-    },
-    {
-      "commit": "8f8406558c3a",
-      "summary": "PASS: independent source/effect review, exact input bindings and diff check."
-    },
-    {
-      "commit": "816922b65252",
-      "summary": "PASS: source8, delivered8, ownership6, exporter, doctor, validation and pack status."
+      "commit": "7d2c41f73357",
+      "summary": "PASS: 42 source and 42 delivered checks without skips; six ownership checks."
     }
   ],
   "warnings": []

@@ -1,0 +1,41 @@
+{
+  "schema": "aide.work-effort.integration-effect.v1",
+  "base": "a0970badeca5b3332505a4158fcfca6b075e07e3",
+  "candidate": "Exact independently reviewed terminal staged tree committed byte-identically; substitute only actual commit/tree",
+  "task_branch": "task/aide-work-effort-01",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "expected_local_dev": "a0970badeca5b3332505a4158fcfca6b075e07e3",
+  "expected_local_main": "a0970badeca5b3332505a4158fcfca6b075e07e3",
+  "expected_remote_dev": "a0970badeca5b3332505a4158fcfca6b075e07e3",
+  "expected_remote_main": "a0970badeca5b3332505a4158fcfca6b075e07e3",
+  "effects": [
+    "Fresh clean helper plan, exact source tree and structured commit range; sole checkout, running dispatch and no active job under shared estate lock. Fetch dev/main only, verify exact local/remote refs and ancestry.",
+    "CAS fast-forward local dev from expected base to accepted candidate, nonforce explicit push, verify remote dev.",
+    "After dev sync, full read-only validation and main..dev structured commit check with retained logs. Recheck source/ref/ownership then CAS main and nonforce explicit push; verify both remote refs.",
+    "After main sync run child run_preview.py verify, checking exact fixed a0970bad..7d2c41f7 three-commit range and all six bytes. Failure stops retirement and preserves actual state.",
+    "After confirmed qualified dev/main refs, switch sole checkout to dev, verify clean and ancestor checks, delete only owned local task/aide-work-effort-01 with branch -d. Branch never published."
+  ],
+  "required_evidence": [
+    "Source42/delivered42, all27 original assertions retained, ownership6 and actual prior-five consumer PASS at7c2aec49.",
+    "Original failed659765c8 retained; successful10ed6b9c and96d7ee46 collection/retirement verified.",
+    "860-file actual export and unchanged published1.0.0 assets; exact preview-result.json.",
+    "Final metadata introduces no product/test/pack changes. Standing campaign delegation and user Git-default instruction permit qualified sync."
+  ],
+  "forbidden": [
+    "force push",
+    "history rewrite",
+    "tag or release changes",
+    "protection bypass",
+    "unrelated branch deletion",
+    "target mutation",
+    "provider/model requests"
+  ],
+  "failure_response": "Record started and completed effects in evidence/integration-result.log; reconcile actual local/remote refs after ambiguity, never blindly repeat. Preserve committed candidate and existing work.",
+  "operational_limits": [
+    "whole-work cost unknown",
+    "installed-host delivery unqualified",
+    "DiskEd ownership pending"
+  ],
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90"
+}

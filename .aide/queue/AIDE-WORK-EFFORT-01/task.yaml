@@ -3,7 +3,7 @@ id: AIDE-WORK-EFFORT-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Observe whole-work effort without inventing missing accounting
 type: implementation
-status: needs_review
+status: passed_with_notes
 admission_ref: ../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/work-effort-admission.md
 admission_sha256: 48adbe02d0aa75eb9b4e4d956725852f93d8a27260e1eb2237a897cbf8d8b001
 scope:

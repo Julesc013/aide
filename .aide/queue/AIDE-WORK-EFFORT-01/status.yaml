@@ -1,7 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-WORK-EFFORT-01
-status: needs_review
-result: SOURCE42_PASS_DELIVERED42_PASS_REAL5_PASS
-jobs_allocated: 2
+status: passed_with_notes
+result: SOURCE42_DELIVERED42_REAL5_PREVIEW_PASS
+jobs_allocated: 3
 maximum_jobs: 3
-next_action: preview_effect_review
+original_failed_job: 659765c8469848118aa8470db7ed8c58
+next_action: exact_terminal_review_then_consult_integration_receipt
+integration_receipt: evidence/integration-result.log
+integration_condition: exact_reviewed_candidate_and_verified_local_remote_refs
+remaining_limits: incomplete_accounting_host_binding_target_ownership

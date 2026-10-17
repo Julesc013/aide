@@ -28,3 +28,5 @@ Source review1 requested two corrections: target-code import boundary and legiti
 Allocation1 consumed:41 PASS/1 fixture error (invalid synthetic session UUID). Actual consumer not reached. Preserve original failure and proposed exact combined allocation2 in qualification-amendment.md. Maximum3 unchanged.
 
 Allocation2 PASS:source42, real-five consumer, ownership6, exporter checks and delivered42. Retired evidence verified; original failed attempt preserved. Allocation3 reserved for existing preview, then exact terminal integration review.
+
+Allocation3 PASS: fixed three-commit preview and exact six-output regeneration. Preimages/collection/retirement verified. All3 allocations consumed. Exact terminal integration review and actual dev/main synchronization remain pending; their result will be written to integration-result.log.

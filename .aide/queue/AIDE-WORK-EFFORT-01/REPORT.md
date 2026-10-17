@@ -18,4 +18,5 @@ separate from process outcomes. This is an observation feature, not a cost model
 performance benchmark or task acceptance authority.
 
 Published Lite1.0.0 unchanged. Actual desktop delivery and target-owned adoption
-remain separate prerequisites. Final preview and exact integration review pending.
+remain separate prerequisites. Final fixed-range preview PASS; exact terminal review and integration effects use
+`evidence/integration-effect.json` and actual `evidence/integration-result.log`.

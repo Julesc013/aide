@@ -13960,3 +13960,7 @@ Prepared bounded P5 job effort view: pure normalization, pinned bounded CLI inpu
 AIDE-WORK-EFFORT-01: source42/delivered42 and five-receipt consumer PASS at
 7c2aec49. Original invalid-fixture failure preserved; published1.0.0 unchanged.
 Preview and reviewed integration remain, with whole-work cost still unknown.
+
+AIDE-WORK-EFFORT-01 qualification closed: preview96d7ee46 PASS, all three
+allocations retired. Final dev/main review and synchronization remain pending. Their actual result
+will be written to the child integration receipt; accounting gaps remain explicit.
