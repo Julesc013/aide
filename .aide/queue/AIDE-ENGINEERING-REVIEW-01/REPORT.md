@@ -25,3 +25,17 @@ changing source; staging then used the exact classified allowed-path list.
 Changed development export and promotion remain unrun. Public Lite1.0.0 remains
 frozen. Host delivery, native DiskEd adoption and complete-outcome accounting stay
 open; this task adds no execution or provider authority.
+
+Allocation2/3 original result FAIL, job46327979667a4d5ba2abf36ac40596a1, sourcee191b8a4.
+Ownership6/export/doctor/validate/pack-status PASS; all858 members remain, exactly
+five payloads plus manifest/checksums changed; public1.0.0 unchanged. Delivered7
+ran with six passes and one failure in existing command/selftest at the unchanged
+verification.result assertion. Original checks and logs are preserved, not relabeled.
+After-failure read-only inventory confirms every pack byte equals the collected
+post-export hashes. Collection digests, quiescence, scratch retirement and
+reservation release verified; worker peak memory238280704bytes.
+
+Static trace identified fixture-only ignore initialization being overwritten and
+absent source-only baseline definitions. The bounded fixture-portability amendment
+is pending independent admission; no retry or source repair has run. Main/dev
+remain239558e8. Current export is a preserved unqualified candidate.

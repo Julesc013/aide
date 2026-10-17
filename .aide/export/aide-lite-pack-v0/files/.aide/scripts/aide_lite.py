@@ -54,6 +54,7 @@ VERIFICATION_POLICY_PATH = ".aide/policies/verification.yaml"
 EVIDENCE_TEMPLATE_PATH = ".aide/verification/evidence-packet.template.md"
 REVIEW_TEMPLATE_PATH = ".aide/verification/review-packet.template.md"
 REVIEW_DECISION_POLICY_PATH = ".aide/verification/review-decision-policy.yaml"
+REVIEW_PROMPT_PATH = ".aide/prompts/evidence-review.md"
 DIFF_SCOPE_POLICY_PATH = ".aide/verification/diff-scope-policy.yaml"
 FILE_REFERENCE_POLICY_PATH = ".aide/verification/file-reference-policy.yaml"
 SECRET_SCAN_POLICY_PATH = ".aide/verification/secret-scan-policy.yaml"
@@ -32077,7 +32078,7 @@ def render_review_packet(
 
 ## Review Objective
 
-Review the current AIDE queue phase from compact evidence only and decide whether it is ready to pass its review gate.
+Review the current AIDE queue phase starting from compact evidence and decide whether it is ready to pass its review gate.
 
 ## Decision Requested
 
@@ -32155,7 +32156,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Reviewer Instructions
 
-- Review only this packet and the referenced evidence when needed.
+- Use `{REVIEW_PROMPT_PATH}` for the shared engineering review procedure.
+- Start from this packet; inspect relevant evidence, source, callers and contracts when needed within authorized access.
 - Do not request full chat history unless the packet is insufficient to judge correctness.
 - Do not re-summarize the whole project.
 - Do not reward scope creep.
@@ -32253,7 +32255,7 @@ def verify_review_packet(repo_root: Path, rel_path: str) -> list[VerificationFin
         findings.append(VerificationFinding("WARN", "review_packet", f"review packet over hard limit: {stats.approx_tokens}", rel_path))
     else:
         findings.append(VerificationFinding("INFO", "review_packet", f"review packet tokens: {stats.approx_tokens}", rel_path))
-    for required_ref in [LATEST_CONTEXT_PACKET_PATH, LATEST_VERIFICATION_REPORT_PATH, REVIEW_DECISION_POLICY_PATH]:
+    for required_ref in [LATEST_CONTEXT_PACKET_PATH, LATEST_VERIFICATION_REPORT_PATH, REVIEW_DECISION_POLICY_PATH, REVIEW_PROMPT_PATH]:
         if required_ref not in text:
             findings.append(VerificationFinding("WARN", "review_packet", f"review ref missing: {required_ref}", rel_path))
     findings.extend(verify_refs_in_text(repo_root, text, rel_path))

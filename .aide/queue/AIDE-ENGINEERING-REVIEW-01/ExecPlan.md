@@ -29,3 +29,7 @@ pass. Intake's lexical install/high/split flag reflects excluded terms; this chi
 explicitly separates source, bounded checks and later reviewed integration.
 
 Allocation1/3 PASS7, original methods retained, collected/retired. Both fresh reviewer exercises completed with intended contract behavior. No source correction followed. Prepare changed portable export; no more reviewer exercises are allocated.
+
+Allocation2 original FAIL retained: six delivered checks pass, existing self-test fails verifier assertion. Static fixture portability diagnosis and narrow amendment prepared; no retry. Preserve refreshed pack candidate and all original evidence before any fix.
+
+Amendment7b8ae471 independently ACCEPTed by /root/review_disked_continuation. Maximum now4, with2 consumed; one new source/refresh/delivered repair qualification and the original preview remain. Freeze the failed export before repair.
