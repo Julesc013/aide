@@ -1,0 +1,7 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-WORK-EFFORT-01
+status: running
+result: SOURCE_PREPARATION
+jobs_allocated: 0
+maximum_jobs: 3
+next_action: exact_source_and_effect_review

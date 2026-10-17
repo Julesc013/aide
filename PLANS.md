@@ -5213,3 +5213,9 @@ and downstream work remain open; this is not whole-programme completion.
 ## Portable Git defaults qualified - 2026-10-17
 
 The installed guard repair and actual exported fresh/customized consumers passed. Integrate this bounded accepted source promptly; next campaign preparation returns to native owner adoption and useful daily coordination. No whole-campaign or new-release completion is implied.
+
+## AIDE-WORK-EFFORT-01
+
+Admitted P5 observation increment: bounded job effort view, real prior-attempt
+consumer, source and portable checks, then reviewed dev/main integration.
+See `.aide/queue/AIDE-WORK-EFFORT-01/ExecPlan.md`; no operational cost claim.

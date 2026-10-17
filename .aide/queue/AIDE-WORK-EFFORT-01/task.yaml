@@ -1,0 +1,35 @@
+schema_version: aide.queue-task.v0
+id: AIDE-WORK-EFFORT-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Observe whole-work effort without inventing missing accounting
+type: implementation
+status: running
+admission_ref: ../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/work-effort-admission.md
+admission_sha256: 48adbe02d0aa75eb9b4e4d956725852f93d8a27260e1eb2237a897cbf8d8b001
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-WORK-EFFORT-01/**
+    - core/execution/work_effort.py
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_work_effort.py
+    - docs/reference/aide-lite-test-runner.md
+    - .aide/commands/catalog.yaml
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/work-effort-admission.md
+    - .aide/intake/latest-*
+    - .aide/context/latest-task-packet.md
+    - .aide/reports/capability-*
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/CHANGELOG.preview.md
+    - .aide/changelog/RELEASE_NOTES.preview.md
+    - .aide/changelog/changelog.preview.json
+    - .aide/changelog/latest-changelog-report.md
+    - .aide/changelog/malformed-commits.md
+    - .aide/changelog/release-notes.preview.json
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+review_gate: exact_source_and_effect_then_qualified_integration
+maximum_jobs: 3

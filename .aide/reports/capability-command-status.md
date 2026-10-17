@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-engineering-review-01`
-- current_commit: `f0bef95b14a3e29c6943c011774dfc1244e3018f`
+- current_branch: `task/aide-work-effort-01`
+- current_commit: `a0970badeca5b3332505a4158fcfca6b075e07e3`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

@@ -3,18 +3,18 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: e01fb12e6927bc96f607aaf6fd411633e2751e45af71c5404fa77a00fd5db4e5
-- raw_prompt_excerpt: AIDE-ENGINEERING-REVIEW-01: strengthen the existing portable evidence-review prompt and aide-review skill with scoped reuse, behavior preservation, compatibility and impact review; connect generated review packets to that prompt and repo...
-- interpreted_goal: Normalize prompt into a bounded install WorkUnit draft: require behavior proof and live-test validation plan before implementation.
+- raw_prompt_hash: dd27bca1f50de58caa65f00012c9329d7e944f8ef0610ebb744d3a296136b841
+- raw_prompt_excerpt: AIDE-WORK-EFFORT-01: extend existing job receipt and usage owners with a bounded read-only whole-work effort view across preparation through cleanup; retain failed attempts, count unique receipts once, keep unavailable cost and elapsed c...
+- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
-- task_class: install
-- risk_class: high
-- sizing_class: live_test_gate
+- task_class: release
+- risk_class: release
+- sizing_class: blocked
 - safe_to_execute: false
 - requires_split: true
-- blocked: false
-- blocker_reason: none
-- next_action: require behavior proof and live-test validation plan before implementation
+- blocked: true
+- blocker_reason: write blocker report and require reviewed authorization before mutation
+- next_action: write blocker report and require reviewed authorization before mutation
 - task_execution: false
 - provider_or_model_calls: none
 - network_calls: none
@@ -24,13 +24,14 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
+- do not publish releases, tags, or assets from prompt alone
 
 ## Repo State Refs
 
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/AIDE-QUALITY-DISCOVERY-01/status.yaml`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/status.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/repo/file-inventory.json`
 - `.aide/repo/latest-repo-intelligence.md`
@@ -47,8 +48,8 @@
 ## Validation Hints
 
 - `git diff --check`
+- `py -3 .aide/scripts/aide_lite.py changelog validate`
 - `py -3 .aide/scripts/aide_lite.py intent validate`
-- `target-local preflight validation; no source-side target mutation`
 
 ## Evidence Hints
 

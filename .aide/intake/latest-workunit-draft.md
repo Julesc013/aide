@@ -1,13 +1,13 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-install-e01fb12e6927
-- title: Install WorkUnit Draft - Require behavior proof and live-test validation plan before implementation
+- workunit_id: draft-release-dd27bca1f50d
+- title: Release WorkUnit Draft - Write blocker report and require reviewed authorization before mutation
 - status: draft
-- task_class: install
-- risk_class: high
-- sizing_class: live_test_gate
-- objective: Normalize prompt into a bounded install WorkUnit draft: require behavior proof and live-test validation plan before implementation.
+- task_class: release
+- risk_class: release
+- sizing_class: blocked
+- objective: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - why: AIDE compiles raw prompts into bounded WorkUnits before execution.
 
 ## Preflight
@@ -19,14 +19,14 @@
 ## Implementation Outline
 
 - Reconcile repo state before editing.
-- require behavior proof and live-test validation plan before implementation
+- write blocker report and require reviewed authorization before mutation
 - Stop at review gates and record evidence before execution.
 
 ## Validation
 
 - git diff --check
+- py -3 .aide/scripts/aide_lite.py changelog validate
 - py -3 .aide/scripts/aide_lite.py intent validate
-- target-local preflight validation; no source-side target mutation
 
 ## Evidence
 
@@ -48,8 +48,9 @@
 - no provider/model/network calls
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
+- do not publish releases, tags, or assets from prompt alone
 
 ## Recovery
 
-- idempotency: prompt_hash:e01fb12e6927bc96f607aaf6fd411633e2751e45af71c5404fa77a00fd5db4e5; status:draft; compile_only:true
+- idempotency: prompt_hash:dd27bca1f50de58caa65f00012c9329d7e944f8ef0610ebb744d3a296136b841; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

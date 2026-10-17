@@ -1,0 +1,32 @@
+{
+  "schema": "aide.work-effort-set.v1",
+  "work_id": "AIDE-ENGINEERING-REVIEW-01",
+  "receipts": [
+    {
+      "path": ".aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/checks-job-result.json",
+      "sha256": "9f6fe175d39c3eeb1ed4ac56dd09198eaf1c3a846de85be593fe85cf0ec7c29e",
+      "phase": "tests"
+    },
+    {
+      "path": ".aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/pack-job-result.json",
+      "sha256": "bb0a7486322a03be19d66b502b93dd35500be3082861c6b7a98dbb73dcfeb82f",
+      "phase": "tests"
+    },
+    {
+      "path": ".aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/repair-job-result.json",
+      "sha256": "39eb820e8332b486b03fed271247a23d18b2a0a05b7399893aecd4a52103fe36",
+      "phase": "repair"
+    },
+    {
+      "path": ".aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/ledger-job-result.json",
+      "sha256": "4d801d0df590a53487ff855c298b0e9c22c8eb645dc0b5f7946fbf80ffea576d",
+      "phase": "repair"
+    },
+    {
+      "path": ".aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/preview-job-result.json",
+      "sha256": "f18be5c31a9921574dbd44ed6b21066d06af867082e7950831d4ed82aebe17a5",
+      "phase": "integration"
+    }
+  ],
+  "usage_roster": null
+}

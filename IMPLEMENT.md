@@ -13952,3 +13952,7 @@ The changelog operation can recognize a completed installed CLI receipt despite 
 ## Portable Git defaults consumer closure - 2026-10-17
 
 Job a0032741 passed full diagnostics and the actual fresh/default and customized-update cases, including both delivered changelog commands after queues. An explicitly reviewed continuation corrected a recipe input/output collision without rebuilding the completed export. Original failures remain retained.
+
+## AIDE-WORK-EFFORT-01
+
+Prepared bounded P5 job effort view: pure normalization, pinned bounded CLI input, all nine phases, failed attempts and unknown accounting. Source qualification pending; no cost or efficiency claim.

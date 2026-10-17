@@ -1,15 +1,15 @@
 # AIDE Latest Task Packet
 
-task_id: AIDE-ENGINEERING-REVIEW-01
+task_id: AIDE-WORK-EFFORT-01
 projection_only: true
 
 ## PHASE
 
-AIDE-ENGINEERING-REVIEW-01 - Strengthen bounded engineering review through existing owners
+AIDE-WORK-EFFORT-01 - Observe whole-work effort without inventing missing accounting
 
 ## GOAL
 
-AIDE-ENGINEERING-REVIEW-01: repair demonstrated portable self-test fixture gaps under amendment7b8ae471; preserve original failure and assertions; qualify source and delivered review checks with separate processes
+Observe whole-work effort without inventing missing accounting
 
 ## WHY
 
@@ -17,9 +17,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/task.yaml` (selected scope and acceptance)
-- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/ExecPlan.md` (continuation; when present)
-- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/status.yaml` (actual state; when present)
+- `.aide/queue/AIDE-WORK-EFFORT-01/task.yaml` (selected scope and acceptance)
+- `.aide/queue/AIDE-WORK-EFFORT-01/ExecPlan.md` (continuation; when present)
+- `.aide/queue/AIDE-WORK-EFFORT-01/status.yaml` (actual state; when present)
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -46,18 +46,16 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/**`
-- `.agents/skills/aide-review/SKILL.md`
-- `.aide/prompts/evidence-review.md`
-- `.aide/verification/review-decision-policy.yaml`
-- `.aide/verification/review-packet.template.md`
+- `.aide/queue/AIDE-WORK-EFFORT-01/**`
+- `core/execution/work_effort.py`
 - `.aide/scripts/aide_lite.py`
-- `.aide/scripts/tests/test_review_pack.py`
-- `docs/reference/evidence-review-workflow.md`
+- `.aide/scripts/tests/test_work_effort.py`
+- `docs/reference/aide-lite-test-runner.md`
+- `.aide/commands/catalog.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
-- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/engineering-review-admission.md`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/work-effort-admission.md`
 - `.aide/intake/latest-*`
 - `.aide/context/latest-task-packet.md`
 - `.aide/reports/capability-*`
@@ -139,8 +137,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 5652
-- approx_tokens: 1413
+- chars: 5339
+- approx_tokens: 1335
 - budget_status: PASS
 - warnings:
   - none

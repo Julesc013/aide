@@ -1,0 +1,1 @@
+Implement the accepted parent work-effort-admission.md within this child allowlist. Preserve all existing efficiency-wait assertions; observations do not change task acceptance. Source, delivered, and real-work evidence remain distinct.

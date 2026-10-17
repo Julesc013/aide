@@ -12,9 +12,9 @@ workflow_plan_ref: docs/roadmap/development-workflows.json
 workflow_plan_acceptance: ACCEPT_WITH_NOTES_922173c8_all_notes_nonblocking_disposed
 operational_next_task: actual_host_delivery_after_qualified_local_exchange
 portable_git_defaults_integration_ref: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/evidence/integration-result.json
-last_completed_task: AIDE-DEPENDENCY-MCP-01
+last_completed_task: AIDE-ENGINEERING-REVIEW-01
 git_defaults_admission_ref: evidence/git-defaults-admission.md
-next_preparation: actual_host_delivery_after_local_interface_qualification
+next_preparation: AIDE-WORK-EFFORT-01_independent_observation_increment
 native_selected_export_result_ref: .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence/native-final-result.json
 planning_amendment_ref: evidence/useful-extensibility-amendment.md
 next_current_view_brief_ref: evidence/current-view-brief.md

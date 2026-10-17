@@ -1194,3 +1194,7 @@ and downstream work remain open; this is not whole-programme completion.
 - [Installed changelog recognition](docs/reference/changelog-preview.md) distinguishes project-owned queues from source admission; [bounded repair](.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/ExecPlan.md) tracks actual qualification.
 
 - [Qualified Git-default consumer outcome](.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/REPORT.md): current evidence, actual tested payload pair and limits. Earlier blocked checkpoints remain historical evidence.
+
+## AIDE-WORK-EFFORT-01
+
+`job effort --work-set PATH [--json]` is documented in `docs/reference/aide-lite-test-runner.md`; candidate qualification is tracked in `.aide/queue/AIDE-WORK-EFFORT-01/ExecPlan.md`.

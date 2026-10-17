@@ -769,3 +769,6 @@ Engineering-review child admitted: existing prompt/skill/packet owners only, wit
 Engineering-review source8/delivered8 and two bounded prompt exercises pass. Two delivered fixture failures are preserved, repaired without weakening assertions. Final preview/integration remain; broader host/target prerequisites are unchanged.
 
 Engineering-review final preview passes over seven commits through 816922b6. Source and delivered behavior remain qualified; terminal integration awaits exact effect review and execution; its verified outcome will be recorded in the child receipt. No installed-worker or downstream-native completion is implied.
+
+AIDE-WORK-EFFORT-01 admitted after engineering-review integration a0970bad.
+Bounded P5 supplied-attempt observation; exact source/effect gates remain.
