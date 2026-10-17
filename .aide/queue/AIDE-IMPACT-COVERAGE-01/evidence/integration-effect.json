@@ -1,0 +1,61 @@
+{
+  "base": "36d388a72b6e6e941ca84c93387d742f85af3064",
+  "candidate": "Exact independently reviewed source and terminal closure staged tree; substitute only actual commit/tree after bounded closure review.",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "effects": [
+    "After exact review, create one structured local qualification/preview-preparation commit with the reviewed exported bytes and evidence. No dev/main effect yet.",
+    "Use commit create dry-run/apply with exact reviewed paths, message hash, task ref, parent and staged tree; check latest and full base..source commit.",
+    "Run at most one existing managed preview job (allocation3, final slot) from the clean exact source commit using preview-job-template.json (substitute only source_commit/source_tree). Check all preimages, current controls and admission. Preserve originals; generate fixed base..source_commit canonical six outputs, validate/status and exact replay. Collect, verify retained hashes and retire. No automatic retry. Before dev/main effects independently review actual preview and only terminal metadata, then commit exact closure and check full base..candidate range.",
+    "Under shared admission/dispatch controls, require running dispatch, no active job, sole checkout, clean exact source, fresh helper plan, expected refs and unchanged qualification branch. Fetch dev/main only and reobserve remote refs.",
+    "CAS fast-forward local dev from base to candidate; nonforce explicit candidate:refs/heads/dev push; verify remote dev.",
+    "Run full read-only structural validate and main..dev commit check after dev sync; preserve output and exact header/exit status. Recheck actual refs, tree and controls. CAS main from base to candidate; nonforce explicit push; verify both remote heads.",
+    "After main sync run this child run_preview.py verify: regenerate fixed base..source_commit in memory and require all six retained outputs byte-identical, exact commit set and zero malformed. Failure stops retirement. Closure metadata is separately checked in the full commit range.",
+    "After both refs verified, switch to dev, verify clean tree and ancestor containment; branch -d only task/aide-impact-coverage-01. It remains local only. Retain other branches."
+  ],
+  "expected_local_dev": "36d388a72b6e6e941ca84c93387d742f85af3064",
+  "expected_local_main": "36d388a72b6e6e941ca84c93387d742f85af3064",
+  "expected_remote_dev": "36d388a72b6e6e941ca84c93387d742f85af3064",
+  "expected_remote_main": "36d388a72b6e6e941ca84c93387d742f85af3064",
+  "failure_response": "Record each started/completed effect in evidence/integration-result.log. Inspect actual state after ambiguity; never repeat an uncertain effect blindly. Stop if refs change or gates fail.",
+  "forbidden": [
+    "force push",
+    "history rewrite",
+    "tag or release effects",
+    "protection mutation or bypass",
+    "unrelated branch deletion",
+    "target mutation",
+    "provider/model requests",
+    "package rebuild"
+  ],
+  "preserved_qualification_commit": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "preserved_qualification_ref": "task/aide-lite-successor-qualification-01",
+  "preview": {
+    "before_hashes_ref": "preview-prior-hashes.json",
+    "canonical_outputs": [
+      ".aide/changelog/CHANGELOG.preview.md",
+      ".aide/changelog/RELEASE_NOTES.preview.md",
+      ".aide/changelog/changelog.preview.json",
+      ".aide/changelog/latest-changelog-report.md",
+      ".aide/changelog/malformed-commits.md",
+      ".aide/changelog/release-notes.preview.json"
+    ],
+    "maximum_jobs": 1,
+    "mode": "existing owner; one managed generation then read-only exact replay",
+    "no_config_changes": true
+  },
+  "remaining_limits": [
+    "Lite 1.1 qualification branch remains separate and its owner/effect gates unchanged.",
+    "Existing desktop host binding, native DiskEd ownership and whole-outcome efficiency remain open."
+  ],
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "required_evidence": [
+    "Source13 and actual delivered13 plus ownership6 PASS without skips; original FAIL preserved.",
+    "Doctor/full structural validate/pack-status PASS; binding CURRENT and capability classification unchanged.",
+    "Same862 pack members, four exact payload changes plus manifest/checksums; published1.0 assets unchanged.",
+    "Named changed-files, validation, remaining-risks and dev-review-packet reference governing prompt.",
+    "Allocation3 fixed-range preview PASS with exact six-output replay and complete range; closure separately checked."
+  ],
+  "schema": "aide.impact-coverage.integration-effect.v1",
+  "task_branch": "task/aide-impact-coverage-01"
+}

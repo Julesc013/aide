@@ -76,3 +76,9 @@ uses the actual source/export root with all assertions retained. Ledger refreshe
 once, classification unchanged and binding CURRENT. Allocation2 proposal combines
 source13 then conditional ownership6/export/delivered13 in fresh processes; ceiling3
 unchanged, no automatic retry. Full failure and controller stops retained.
+
+Allocation2 PASS: source13, ownership6, actual delivered13 without skips. Both jobs
+retired/quiescent, collected digests verified, scratch absent and reservations released.
+Doctor/validate/pack-status pass; same862 pack members, four payloads plus manifest/
+checksums changed, published1.0 unchanged. Prepare allocation3 fixed preview and exact
+integration effect; no dev/main changes yet.

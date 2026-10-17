@@ -1,0 +1,39 @@
+chore(validation): qualify impact advice and prepare promotion
+
+## Summary
+- Record AIDE-IMPACT-COVERAGE-01 source and delivered qualification.
+
+## Why
+- Unavailable change observations must not silently reduce applicable validation.
+- The development export needs evidence from its actual delivered implementation.
+
+## Changed
+- Refresh exactly four portable payloads and manifest/checksums.
+- Retain both the original failed attempt and passing recovery evidence.
+- Update current task and documentation views with precise limits.
+- Prepare the existing fixed-range preview and guarded dev/main effects.
+
+## Validation
+- PASS: source13, ownership6 and delivered13; zero errors or skips.
+- PASS: doctor, structural validate, pack-status, exact payload delta and stable bytes.
+- PASS: two retired/quiescent jobs, collection hashes, scratch absence and reservations.
+- NOT RUN: final preview allocation3 and dev/main integration.
+- WARN: historical global review reference; task-specific review evidence is present.
+
+## Changelog
+- Fixed: Preserve uncertainty and known paths in test-impact planning.
+
+## Risks
+- Heuristic advice is not complete dependency proof or execution authority.
+- No new published release, host support or whole-task savings claim.
+
+## Follow-up
+- Qualify the fixed source-range preview, independently review closure and integrate.
+- Preserve separate Lite1.1 qualification and unrelated task branches.
+
+AIDE-Task: AIDE-IMPACT-COVERAGE-01
+AIDE-Phase: qualified-source-and-preview-preparation
+AIDE-Result: PASS_WITH_PENDING_PROMOTION
+AIDE-Scope: existing-planner-portable-export-and-evidence
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: exact-independent-review-required

@@ -1,0 +1,6 @@
+DECISION: ACCEPT
+Reviewer: /root/review_disked_continuation
+Subject: c24bf8ccaef24e7221bb2ed5a66e2e74baad0a606086615dc881e81e37b3410d
+Effect: c3d1f42c2dfce5ae7234eb35c65763fb9ec006133584010489be3d4a808b8152
+Template: 24f0cc1d464455fe4c4ae2a6116f03aad7c2d1c0e38151f060c73a5692f43aa2
+Scope: exact source checkpoint and allocation1 qualification only. No required fixes. Behavioral qualification unrun; stale capability binding requires later reviewed refresh. Export/integration/completion separately gated.

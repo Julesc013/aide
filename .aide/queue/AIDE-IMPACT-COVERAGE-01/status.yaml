@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 id: AIDE-IMPACT-COVERAGE-01
 status: needs_review
-result: SOURCE_FAILURE_PRESERVED_REPAIR_PREPARED
-next_action: exact_allocation2_source_recovery_and_pack_review
-jobs_allocated: 1
+result: SOURCE_AND_DELIVERED_PASS
+next_action: exact_preview_and_integration_preparation_review
+jobs_allocated: 2
 maximum_jobs: 3

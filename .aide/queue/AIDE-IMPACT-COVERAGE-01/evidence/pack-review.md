@@ -1,0 +1,3 @@
+DECISION: ACCEPT
+Reviewer: /root/review_disked_continuation
+Exact source checkpoint and allocation2 only. Map5f2d28e40adb7aed8db8d6db015b2906e281c05e1273facf1038db65514eaaa6; effectefb5fd12be16669a989138b5057eebcece0a598dea987408cd3586597a737800; templateddbedc8332ad0073f602be9690faf63ce5fa93506e2e6c98e615ca268fdac3af. All21 files/921 pins/862 pack hashes match. No fixes. Qualification unrun; preview/integration separately gated.

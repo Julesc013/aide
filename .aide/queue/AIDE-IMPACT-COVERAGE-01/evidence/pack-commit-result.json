@@ -1,0 +1,31 @@
+{
+  "result": "PASS",
+  "commit": "45f29220a30ddc4af87d80a62755817ab349c1d9",
+  "tree": "543878c9231da7342bfba89b994c4c1de5437b82",
+  "base": "498eb2c09e927e621d862ff98afabdb8d3ca218d",
+  "paths": [
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/ExecPlan.md",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/attempt-01-missing-base-comparison.json",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/attempt-01-source-tests.json",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/attempt-01-source-tests.txt",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/controller-stops.md",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/ledger-preimages.json",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/ledger-refresh.json",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/pack-effect.md",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/pack-job-template.json",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/pack-message.txt",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/pack-source.json",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/prior-pack-inventory.json",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/repair-effect.md",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/repair-review.md",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/repair-source.json",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/source-attempt-01.json",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/run_pack.py",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/status.yaml",
+    ".aide/reports/capability-command-status.md",
+    ".aide/reports/capability-evidence-bindings.json",
+    ".aide/reports/capability-ledger.md",
+    ".aide/scripts/tests/test_x_test_00_validation_tiers.py"
+  ],
+  "review_map": "5f2d28e40adb7aed8db8d6db015b2906e281c05e1273facf1038db65514eaaa6"
+}

@@ -3,10 +3,13 @@
 ## Test-impact observation - 2026-10-18
 
 [AIDE-IMPACT-COVERAGE-01](.aide/queue/AIDE-IMPACT-COVERAGE-01/ExecPlan.md)
-repairs the existing planner's missing-base empty/T0 advice. The candidate preserves
-known paths and mappings while exposing incomplete observation and reconciliation.
-All six original test bodies remain; seven regressions are prepared. Source,
-delivered qualification and integration remain pending exact review.
+corrects missing-base empty/T0 advice in the existing report-only planner. It keeps
+known paths, identifies incomplete observation and requests reconciliation; heuristic
+mapping remains explicit. Source13, delivered13 and ownership6 pass without skips.
+The original failed alias-fixture attempt is retained; its subject now uses the
+admitted source or validated export with every assertion preserved. Doctor, structural
+validation and pack-status pass. Four portable payload files changed; published1.0
+bytes are unchanged. Fixed-range preview and final integration are pending exact review.
 
 
 ## Current memory correction - 2026-10-18

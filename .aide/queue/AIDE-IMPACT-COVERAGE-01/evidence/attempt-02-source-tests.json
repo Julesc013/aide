@@ -1,0 +1,29 @@
+{
+  "subject": "source",
+  "test_ids": [
+    "impact_subject_tests.ValidationTierCommandTests.test_actual_cli_reports_incomplete_observation_in_all_outputs",
+    "impact_subject_tests.ValidationTierCommandTests.test_existing_test_command_remains_selftest_alias",
+    "impact_subject_tests.ValidationTierCommandTests.test_failed_staged_observation_does_not_discard_other_paths",
+    "impact_subject_tests.ValidationTierCommandTests.test_impact_plan_is_plan_not_proof",
+    "impact_subject_tests.ValidationTierCommandTests.test_known_staged_working_and_untracked_paths_keep_existing_mapping",
+    "impact_subject_tests.ValidationTierCommandTests.test_missing_base_retains_known_paths_and_requires_reconciliation",
+    "impact_subject_tests.ValidationTierCommandTests.test_observation_exception_is_unknown_not_empty_scope",
+    "impact_subject_tests.ValidationTierCommandTests.test_slow_report_validate_accepts_example",
+    "impact_subject_tests.ValidationTierCommandTests.test_successful_empty_observation_is_distinct_from_unknown",
+    "impact_subject_tests.ValidationTierCommandTests.test_summary_validate_accepts_compact_and_rejects_raw_log",
+    "impact_subject_tests.ValidationTierCommandTests.test_telemetry_and_handoff_commands_write_reports_without_running_full_suite",
+    "impact_subject_tests.ValidationTierCommandTests.test_tiers_and_tier_plan_are_report_only",
+    "impact_subject_tests.ValidationTierCommandTests.test_unrelated_history_endpoint_fallback_is_explicit"
+  ],
+  "tests_run": 13,
+  "failures": 0,
+  "errors": 0,
+  "skips": [],
+  "inputs": {
+    ".aide/scripts/tests/test_x_test_00_validation_tiers.py": "13ab07444e265c9ab4f524a6640ba88335cc29bafdcdc7370b71c077f54bb642",
+    ".aide/scripts/aide_lite.py": "70c00dde6f25c458478c14755fb600526b7106b3f0e7e36723e5964c7c5aaa09"
+  },
+  "actual_cli": "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\aide_lite.py",
+  "models_requested": 0,
+  "whole_outcome_usage": "unknown"
+}

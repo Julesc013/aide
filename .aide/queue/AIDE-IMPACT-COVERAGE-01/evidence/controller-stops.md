@@ -6,3 +6,6 @@ and only the reviewed source commit proceeded. A later input-pin preflight initi
 iterated a mapping as records and stopped with TypeError before manifest/job launch.
 Corrected controller iteration to path/hash pairs, preserving every pin and effect.
 Neither stop allocated a job or changes the original source-test failure.
+
+Preview-message draft initially exceeded72 subject characters. Strict check rejected
+it before commit; shortened only the draft subject, retaining all structured content.

@@ -30092,67 +30092,41 @@ def test_validation_policy_paths() -> list[str]:
 
 
 def git_diff_name_only(repo_root: Path, from_ref: str) -> tuple[list[str], str]:
-    if not from_ref.strip():
-        return [], "missing_from_ref"
     paths: list[str] = []
+    warnings: list[str] = []
 
-    def add_lines(text: str) -> None:
-        for line in text.splitlines():
+    def observe(args: list[str], label: str) -> bool:
+        try:
+            result = subprocess.run(
+                ["git", "-C", str(repo_root), *args], check=False,
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                text=True, encoding="utf-8",
+            )
+        except OSError as exc:
+            warnings.append(f"{label}: {exc}")
+            return False
+        if result.returncode != 0:
+            warnings.append(f"{label}: {result.stderr.strip() or 'git observation failed'}")
+            return False
+        for line in result.stdout.splitlines():
             rel = normalize_rel(line)
             if rel and rel not in paths:
                 paths.append(rel)
+        return True
 
-    try:
-        result = subprocess.run(
-            ["git", "-C", str(repo_root), "diff", "--name-only", f"{from_ref}...HEAD"],
-            check=False,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
-            encoding="utf-8",
-        )
-    except OSError as exc:
-        return [], str(exc)
-    if result.returncode != 0:
-        try:
-            fallback = subprocess.run(
-                ["git", "-C", str(repo_root), "diff", "--name-only", f"{from_ref}..HEAD"],
-                check=False,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                text=True,
-                encoding="utf-8",
-            )
-        except OSError as exc:
-            return [], str(exc)
-        if fallback.returncode != 0:
-            return [], fallback.stderr.strip() or result.stderr.strip() or "git diff failed"
-        add_lines(fallback.stdout)
-    else:
-        add_lines(result.stdout)
-    extra_commands = [
-        ["git", "-C", str(repo_root), "diff", "--name-only"],
-        ["git", "-C", str(repo_root), "diff", "--name-only", "--cached"],
-        ["git", "-C", str(repo_root), "ls-files", "--others", "--exclude-standard"],
-    ]
-    warnings: list[str] = []
-    for command in extra_commands:
-        try:
-            extra = subprocess.run(
-                command,
-                check=False,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                text=True,
-                encoding="utf-8",
-            )
-        except OSError as exc:
-            warnings.append(str(exc))
-            continue
-        if extra.returncode != 0:
-            warnings.append(extra.stderr.strip() or f"{' '.join(command)} failed")
-            continue
-        add_lines(extra.stdout)
+    if not from_ref.strip():
+        warnings.append("missing_from_ref")
+    elif not observe(["diff", "--name-only", f"{from_ref}...HEAD"], "base_diff_unavailable"):
+        # Endpoint comparison can retain useful paths but does not establish the
+        # requested merge-base observation. Keep the original failure explicit.
+        if observe(["diff", "--name-only", f"{from_ref}..HEAD"], "endpoint_diff_unavailable"):
+            warnings.append("endpoint_comparison_fallback")
+    for args, label in [
+        (["diff", "--name-only"], "working_diff_unavailable"),
+        (["diff", "--name-only", "--cached"], "staged_diff_unavailable"),
+        (["ls-files", "--others", "--exclude-standard"], "untracked_paths_unavailable"),
+    ]:
+        observe(args, label)
     return paths, "; ".join(warnings)
 
 
@@ -30250,8 +30224,19 @@ def build_test_impact_plan(repo_root: Path, from_ref: str) -> dict[str, object]:
     warnings: list[str] = []
     if warning:
         warnings.append(warning)
-    if not changed:
+        # Failed observation is unknown scope, even if a subset was observed.
+        # Reuse the existing conservative fallback; this is not test admission.
+        tiers.append("T2")
+    elif not changed:
         warnings.append("no_changed_paths_detected")
+    observation = "incomplete" if warning else "available"
+    next_action = (
+        "Reconcile the missing changed-path observations before narrowing checks; "
+        "T2 is conservative advice, not complete impact coverage or execution authority."
+        if warning else
+        "Review heuristic mappings and applicable validation obligations; "
+        "observed paths do not establish complete dependency or test coverage."
+    )
     for rel in changed:
         tier, targets, mapped_commands, confidence, reason = impacted_test_mapping_for_path(rel)
         tiers.append(tier)
@@ -30280,6 +30265,9 @@ def build_test_impact_plan(repo_root: Path, from_ref: str) -> dict[str, object]:
         "from_ref": from_ref,
         "mode": "report_only",
         "proof_status": "plan_not_proof",
+        "changed_path_observation": observation,
+        "mapping_coverage": "heuristic_incomplete",
+        "next_action": next_action,
         "changed_paths": changed,
         "recommended_tier": max_test_tier(tiers),
         "entries": entries,
@@ -30295,6 +30283,9 @@ def render_test_impact_plan_md(plan: dict[str, object]) -> str:
         "",
         f"- mode: {plan.get('mode')}",
         f"- proof_status: {plan.get('proof_status')}",
+        f"- changed_path_observation: {plan.get('changed_path_observation')}",
+        f"- mapping_coverage: {plan.get('mapping_coverage')}",
+        f"- next_action: {plan.get('next_action')}",
         f"- from_ref: {plan.get('from_ref')}",
         f"- recommended_tier: {plan.get('recommended_tier')}",
         f"- changed_paths: {len(plan.get('changed_paths', [])) if isinstance(plan.get('changed_paths'), list) else 0}",
@@ -46660,7 +46651,10 @@ def command_test_tier_plan(args: argparse.Namespace) -> int:
 def command_test_impact_plan(args: argparse.Namespace) -> int:
     json_result, md_result, plan = write_test_impact_plan(args.repo_root, args.from_ref)
     print("AIDE Lite test impact-plan")
-    print("result: PASS")
+    print("result: WARN" if plan["changed_path_observation"] == "incomplete" else "result: PASS")
+    print(f"changed_path_observation: {plan['changed_path_observation']}")
+    print(f"mapping_coverage: {plan['mapping_coverage']}")
+    print(f"next_action: {plan['next_action']}")
     print(f"from_ref: {args.from_ref}")
     print(f"recommended_tier: {plan['recommended_tier']}")
     print(f"changed_paths: {len(plan.get('changed_paths', [])) if isinstance(plan.get('changed_paths'), list) else 0}")
