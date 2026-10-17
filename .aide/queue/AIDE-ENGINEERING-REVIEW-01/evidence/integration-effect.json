@@ -1,0 +1,75 @@
+{
+  "schema": "aide.engineering-review.integration-effect.v1",
+  "base": "239558e8a9edd9bc49772d9e3a6876cf35e1c9c5",
+  "candidate": "Exact independently reviewed terminal staged tree, committed byte-identically; substitute only actual commit/tree",
+  "task_branch": "task/aide-engineering-review-01",
+  "expected_local_dev": "239558e8a9edd9bc49772d9e3a6876cf35e1c9c5",
+  "expected_remote_dev": "239558e8a9edd9bc49772d9e3a6876cf35e1c9c5",
+  "expected_local_main": "239558e8a9edd9bc49772d9e3a6876cf35e1c9c5",
+  "expected_remote_main": "239558e8a9edd9bc49772d9e3a6876cf35e1c9c5",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "effects": [
+    "Fresh clean helper plan, exact source/input identities and structured commit checks; confirm sole checkout ownership, no active job, running dispatch under estate lock. Fetch only dev/main and verify exact local/remote refs and ancestor relationships.",
+    "CAS fast-forward local dev from exact base to accepted candidate; nonforce push dev; verify remote ref.",
+    "After dev push, rerun full read-only integration validation and structured main..dev commit check, retain logs. Recheck accepted source and main; CAS fast-forward local main from exact base; nonforce push main; verify both remote dev/main refs.",
+    "After main push, run run_preview.py verify: read-only regeneration at the retained fixed 239558e8..816922b6 range must match every one of the six reviewed bytes and hashes. Retain result with promotion receipt. Failure stops task retirement; preserve actual state.",
+    "After exact confirmations, switch sole checkout to dev; verify clean source/refs and containment, then delete only positively owned local task/aide-engineering-review-01 with git branch -d. It was never published."
+  ],
+  "required_evidence": [
+    "Eight current source review-pack methods PASS at 8f840655, all seven original methods/assertions preserved; one added absence regression includes real summary and ledger scan with empty-ledger refusal.",
+    "Eight actual delivered methods PASS, six ownership checks PASS, export/doctor/full validation/pack status PASS; all858 members accounted for, payloads match source, published assets unchanged.",
+    "Two fresh bounded prompt exercises meet expected behavior; no comparative quality or savings claim. Both original failed delivered attempts retained separately.",
+    "All five allocations collected, quiescent, scratch retired and reservations released; allocation2 and3 failures preserved, allocation4 and5 PASS; no remaining job allocation.",
+    "Final doctor/full validation, diff check and structured base..candidate check PASS; terminal closure changes only evidence/status/preview."
+  ],
+  "exclusions": [
+    "force push",
+    "history rewrite",
+    "remote deletion",
+    "task branch publication",
+    "tags/releases",
+    "protection changes",
+    "target/provider effects",
+    "other branch retirement"
+  ],
+  "recovery": "Changed refs/source, protection refusal or uncertain response require actual-state reconciliation. Preserve candidate and partial receipt; never force or blindly retry. Retire local task only after every exact confirmation.",
+  "preview": {
+    "status": "PASS",
+    "source_head": "816922b652520d5a71793b37e00a375eddcec5ce",
+    "source_range": "239558e8a9edd9bc49772d9e3a6876cf35e1c9c5..816922b652520d5a71793b37e00a375eddcec5ce",
+    "commits": [
+      "816922b652520d5a71793b37e00a375eddcec5ce",
+      "8f8406558c3ad73724f0980687db139f3a346c9c",
+      "f0bef95b14a3e29c6943c011774dfc1244e3018f",
+      "ca7bd44a69fffe053d40ada2edc825fbc427cab8",
+      "5ee93ea7306a1f72168a28ac76b2e137ca1e9266",
+      "e191b8a4c6cf02ddbd1e4bd86711d3ecf584deb5",
+      "f2543d317caf9808ca4eeb0cb81f1ff169173203"
+    ],
+    "malformed_count": 0,
+    "sha256s": {
+      "CHANGELOG.preview.md": "38a15578f8f530473906b9c7e7a2ccce00f04f4066ca9c01d90012075879ac3b",
+      "RELEASE_NOTES.preview.md": "d447f016d903cdd8744c64d6ee3490f860bc8cd9bdd2874a444656e1a2db67d0",
+      "changelog.preview.json": "43ed543ce4b09eda5b4b5f8ab6aded529433e3fc5f06c3720802577f1c7f3235",
+      "latest-changelog-report.md": "1c43eac9f29d6444b8b05c5fb3f663d3cc28d89ae32148130b5fe3955b174c53",
+      "malformed-commits.md": "cef279f1bf6866dc486a380b0932dc553849624959ce057f4c8d772c4a53a7e4",
+      "release-notes.preview.json": "d290d008837f34babdd6700d866e41202067593162eb097faa93b3d835c94264"
+    },
+    "regeneration": "read_only_exact_six_output_comparison",
+    "operations": {
+      "preview": {
+        "exit_code": 0,
+        "log_sha256": "d1db07675042d6305c86c88a877a5857c90d9ca72fd7179055b484e45716ce76"
+      },
+      "validate": {
+        "exit_code": 0,
+        "log_sha256": "eb5ba25320954d7fb10d12867818e67bb7ae7ef3f878daa54c49aeb385b5bc37"
+      },
+      "status": {
+        "exit_code": 0,
+        "log_sha256": "710609fbc50f9980a203fa3aab021c3c42332ad3a215b51edd2ea3205aa13f03"
+      }
+    }
+  }
+}

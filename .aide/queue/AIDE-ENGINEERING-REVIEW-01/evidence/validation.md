@@ -11,4 +11,8 @@ PASS bounded prompt feasibility: two fresh answer-only fictional review exercise
 WARN optional skill-creator validator unavailable (PyYAML absent); manual frontmatter
 and unchanged generated section inspected; no dependency installed.
 Original failed delivered jobs46327979 and781d7788 remain recorded separately.
-NOT RUN promotion preview and final Git integration. Allocation5/5 remains reserved.
+PASS final preview generation, validation, status and exact six-output regeneration
+in job 73f6aea0b29b456287ddf14f65f3aaf6, fixed base 239558e8 through 816922b6;
+seven commits, zero malformed. Prior bytes and collection hashes verified; retired.
+All five finite allocations are consumed. Terminal Git effect remains independently
+reviewed and its actual outcome will be recorded after verification in integration-result.log.

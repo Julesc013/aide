@@ -2,33 +2,49 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 33a377743d86f59fd63a042096063d664e200468..1a342812969951b09f06595c8cda98b6b9082081
-source_head: 1a342812969951b09f06595c8cda98b6b9082081
+source_range: 239558e8a9edd9bc49772d9e3a6876cf35e1c9c5..816922b652520d5a71793b37e00a375eddcec5ce
+source_head: 816922b652520d5a71793b37e00a375eddcec5ce
 preview_only: true
 
 ## Highlights
 
-- Added: quality explain-file --json with explicit unverified freshness and heuristic coverage. (5fa78ca78afb)
-- Added: exported quality explain-file --json with bounded output and explicit evidence limits. (1a3428129699)
-- Changed: quality discovery source evidence and portable qualification preparation. (35a3a9035abc)
+- Changed: shared review guidance and packet discovery with missing-reference warnings. (f2543d317caf)
+- Changed: engineering-review qualification evidence and portable delivery preparation. (e191b8a4c6cf)
+- Changed: original delivered failure and fixture-portability repair scope evidence. (5ee93ea7306a)
+- Changed: preserve delivered fixture-ledger failure and correction scope. (f0bef95b14a3)
+- Changed: qualified portable engineering review guidance and independent fixture evidence. (816922b65252)
+- Fixed: portable self-test fixture initialization for missing source-only inputs. (ca7bd44a69ff)
+- Fixed: self-test ledger measurements now come from its own fixture. (8f8406558c3a)
 
 ## Validation Summary
 
-- 5fa78ca78afb: PASS: doctor, full validation and diff checks; NOT RUN: exact managed fixture run follows independent effect review.
-- 35a3a9035abc: PASS: 23 source methods, zero skips/errors/failures; collection, quiescence and retirement verified. NOT RUN: second export allocation.
-- 1a3428129699: PASS: 23 source methods,16 exported Q38 methods,six ownership checks,export/doctor/validate/pack-status and unchanged published assets. NOT RUN: preview allocation3.
+- f2543d317caf: PASS: doctor, full repository validation, diff check and manual frontmatter/generated-section review.
+- e191b8a4c6cf: PASS: all seven original source methods including selftest, no skips/errors/failures; collected hashes, quiescence and retirement.
+- 5ee93ea7306a: PASS: ownership6, export, doctor, repository validation, pack-status, preserved public assets and unchanged post-test pack bytes.
+- ca7bd44a69ff: PASS: independent source/effect review and 907 exact input bindings; diff check.
+- f0bef95b14a3: PASS: eight source methods; ownership six, exporter, doctor, validate and pack status.
+- 8f8406558c3a: PASS: independent source/effect review, exact input bindings and diff check.
+- 816922b65252: PASS: source8, delivered8, ownership6, exporter, doctor, validation and pack status.
 
 ## Known Risks
 
-- 5fa78ca78afb: Source revision is attribution only; similarity does not prove semantic equivalence or safe extraction.
-- 35a3a9035abc: Unknown freshness and heuristic coverage remain explicit. Source acceptance is not release or native-host qualification.
-- 1a3428129699: No semantic completeness,current-byte freshness,live host delivery or new release qualification is implied.
+- f2543d317caf: Guidance does not enforce isolation or establish comparative review quality or savings.
+- e191b8a4c6cf: No comparative quality, complete usage or protected-host claim follows; public1.0.0 unchanged.
+- 5ee93ea7306a: Export is unqualified; dev/main remain unchanged. No retry or acceptance is implied by this checkpoint.
+- ca7bd44a69ff: Repair remains unqualified until the managed job passes; public Lite 1.0.0 is unchanged.
+- f0bef95b14a3: Development export remains unqualified; published Lite 1.0.0 and dev/main are unchanged.
+- 8f8406558c3a: Development export remains unqualified until the actual delivered checks pass.
+- 816922b65252: Desktop-host delivery and native downstream adoption remain separate unresolved prerequisites.
 
 ## Follow-up
 
-- 5fa78ca78afb: Run admitted checks, qualify changed export, independently review and synchronize dev/main; public1.0.0 unchanged.
-- 35a3a9035abc: Execute independently accepted allocation2, review generated outputs, preview and integrate qualified dev/main.
-- 1a3428129699: Run the independently reviewed preview,then exact terminal integration and remote verification.
+- f2543d317caf: Run exact reviewed source and delivered qualification, bounded exercises and promotion checks before integration.
+- e191b8a4c6cf: Run exact delivered effect, then promotion preview and qualified integration.
+- 5ee93ea7306a: Prepare exact reviewed repair of fixture ignore initialization and absent baseline definitions; preserve all assertions.
+- ca7bd44a69ff: Run the exact repaired qualification once; retain failure without automatic retry, then prepare promotion preview if successful.
+- f0bef95b14a3: Apply only independently accepted fixture correction, then qualify exact changed inputs once.
+- 8f8406558c3a: Execute the exact reviewed qualification once, then the reserved promotion preview if successful.
+- 816922b65252: Generate and verify the reviewed preview once, then perform exact terminal integration review.
 
 ## Warnings
 

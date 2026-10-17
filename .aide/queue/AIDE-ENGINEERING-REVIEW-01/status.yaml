@@ -1,12 +1,15 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-ENGINEERING-REVIEW-01
-status: running
-result: PASS8_SOURCE_PASS8_DELIVERED_PASS2_EXERCISES
-jobs_allocated: 4
+status: passed_with_notes
+result: PASS8_SOURCE_PASS8_DELIVERED_PASS2_EXERCISES_PREVIEW_PASS
+jobs_allocated: 5
 maximum_jobs: 5
 reviewer_exercises_allocated: 2
 maximum_reviewer_exercises: 2
-next_action: exact_preview_then_terminal_integration
+next_action: consult_integration_receipt_then_continue_campaign
 original_failed_jobs:
   - 46327979667a4d5ba2abf36ac40596a1
   - 781d77883c594dd9a246923c6f5d0df1
+integration_receipt: evidence/integration-result.log
+integration_condition: exact_reviewed_candidate_and_verified_local_remote_refs
+remaining_limits: host_binding_target_ownership_whole_outcome_accounting

@@ -51,3 +51,5 @@ Allocation4 PASS: source8, delivered8, ownership6 and complete export checks in 
 Closure preparation stopped on a Windows default-decoding error before root-document writes; resumed with explicit UTF-8. No source or qualification effect changed.
 
 Pre-preview doctor/full validation PASS. Independent review caught mutable preview outputs incorrectly pinned as immutable inputs; moved those hashes to a controller-checked preimage record, with retained-byte verification. Allocation5 has not run.
+
+Allocation 5 PASS: preview generation/validation/status and exact six-output regeneration through 816922b6; seven commits, zero malformed. Prior bytes and retained digests verified; fully retired. All allocations exhausted. Exact terminal source/effect review and verified dev/main synchronization remain; actual effects go in integration-result.log.

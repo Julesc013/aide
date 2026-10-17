@@ -1,7 +1,99 @@
 # Changed files
 
-Planned source surfaces: existing review prompt, manual skill, Q13 policy/template,
-packet renderer/validator and original review-pack tests, reference documentation.
-Queue/plan/intake/capability evidence records accompany the change; portable export
-and preview files are changed only through reviewed existing owners. The exact
-terminal changed-path list will be recorded before integration review.
+Exact task-base 239558e8a9edd9bc49772d9e3a6876cf35e1c9c5 to terminal candidate path list. All source,
+portable payload, generated preview, documentation and task evidence changes are
+within the admitted paths. Original failed observations remain in history and
+separate retained receipts; no published release archive changed.
+
+- `.agents/skills/aide-review/SKILL.md`
+- `.aide/changelog/CHANGELOG.preview.md`
+- `.aide/changelog/RELEASE_NOTES.preview.md`
+- `.aide/changelog/changelog.preview.json`
+- `.aide/changelog/latest-changelog-report.md`
+- `.aide/changelog/malformed-commits.md`
+- `.aide/changelog/release-notes.preview.json`
+- `.aide/context/latest-task-packet.md`
+- `.aide/export/aide-lite-pack-v0/checksums.json`
+- `.aide/export/aide-lite-pack-v0/files/.aide/prompts/evidence-review.md`
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py`
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_review_pack.py`
+- `.aide/export/aide-lite-pack-v0/files/.aide/verification/review-decision-policy.yaml`
+- `.aide/export/aide-lite-pack-v0/files/.aide/verification/review-packet.template.md`
+- `.aide/export/aide-lite-pack-v0/manifest.yaml`
+- `.aide/intake/latest-intent-packet.json`
+- `.aide/intake/latest-intent-packet.md`
+- `.aide/intake/latest-workunit-draft.json`
+- `.aide/intake/latest-workunit-draft.md`
+- `.aide/prompts/evidence-review.md`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/engineering-review-admission.md`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/ExecPlan.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/REPORT.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/admission-review.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/changed-files.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/checks-effect.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/checks-job-result.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/checks-job-template.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/checks-result.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/delivered-result.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/exercises-effect.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/exercises-result.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/fixture-amendment-review.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/fixture-ledger-amendment-review.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/fixture-ledger-amendment.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/fixture-portability-amendment.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/integration-effect.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/ledger-checks-result.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/ledger-delivered-result.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/ledger-effect.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/ledger-job-result.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/ledger-job-template.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/ledger-prior-pack-inventory.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/ledger-qualification.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/ledger-stages.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/pack-effect.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/pack-job-result.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/pack-job-template.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/preview-effect.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/preview-job-result.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/preview-job-template.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/preview-prior-hashes.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/preview-result.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/prior-pack-inventory.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/qualification.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/remaining-risks.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/repair-checks-result.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/repair-delivered-result.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/repair-effect.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/repair-job-result.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/repair-job-template.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/repair-prior-pack-inventory.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/repair-qualification.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/repair-stages.json`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/review-packet.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/evidence/validation.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/exercises/case-a.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/exercises/case-b.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/prompt.md`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/run_checks.py`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/run_ledger.py`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/run_ledger_pack.py`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/run_pack.py`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/run_preview.py`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/run_repair.py`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/run_repair_pack.py`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/status.yaml`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/task.yaml`
+- `.aide/queue/index.yaml`
+- `.aide/reports/capability-command-status.md`
+- `.aide/reports/capability-evidence-bindings.json`
+- `.aide/reports/capability-ledger.md`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_review_pack.py`
+- `.aide/verification/review-decision-policy.yaml`
+- `.aide/verification/review-packet.template.md`
+- `DOCUMENTATION.md`
+- `IMPLEMENT.md`
+- `PLANS.md`
+- `docs/reference/evidence-review-workflow.md`

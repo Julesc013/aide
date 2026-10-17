@@ -2,7 +2,7 @@
 
 ## Engineering review - 2026-10-18
 
-AIDE-ENGINEERING-REVIEW-01 admitted at239558e8 under the existing delegation. Amend existing review owners; do not install upstream plugins or another review authority. Source8 and delivered8 now pass, including repaired self-test fixtures independent of source history. Both original failures are preserved. Exact preview and integration remain next; evidence is retained in the child queue.
+AIDE-ENGINEERING-REVIEW-01 admitted at239558e8 under the existing delegation. Amend existing review owners; do not install upstream plugins or another review authority. Eight source checks and eight delivered checks pass, including self-test fixtures independent of source history. Both original failures are preserved. The seven-commit promotion preview passes; exact integration and remote confirmation remain pending and will be recorded separately in the child receipt.
 
 ## Quality discovery candidate - 2026-10-18
 

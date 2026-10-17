@@ -3,7 +3,7 @@ id: AIDE-ENGINEERING-REVIEW-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Strengthen bounded engineering review through existing owners
 type: implementation
-status: running
+status: passed_with_notes
 admission_ref: ../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/engineering-review-admission.md
 admission_sha256: 4dc6deb4a408bc6803dc4d450abfbfc0e0f595be3b4888b33a27bdb09d8a0c7f
 scope:
