@@ -1,0 +1,35 @@
+test(pack): retain delivered failures and check the actual pack
+
+## Summary
+- Preserve the successful pack refresh and failed source-fixture reconstruction.
+
+## Why
+- Portable artifacts omit source-only import policy; delivered consumption needs the actual pack.
+
+## Changed
+- Commit the exact six-payload generated delta and all original qualification outcomes.
+- Retain fifteen delivered passes and six errors separately from source twenty-one passes.
+- Prepare one unchanged installed regression using the actual pack as its fixture.
+
+## Validation
+- PASS exporter, ownership6, doctor, full validation, checksums and exact payload delta.
+- FAIL delivered source-reconstruction phase: fifteen passes and six fixture errors retained.
+- PASS collection hashes and retirement; direct installed check NOT RUN pending review.
+
+## Changelog
+- Fixed: Deliver accounting under the AIDE-owned script path.
+- Tests: Preserve evidence boundaries and prepare direct installed qualification.
+
+## Risks
+- The generated pack is not complete release qualification; existing archives remain unchanged.
+- Three historical message failures remain unresolved.
+
+## Follow-up
+- Qualify the actual installed pack before rebuilding and testing replacement archives.
+
+AIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
+AIDE-Phase: direct-delivered-fixture-correction
+AIDE-Result: FAIL
+AIDE-Scope: generated pack evidence and one installed consumer
+AIDE-Token-Impact: unknown
+AIDE-Quality-Gate: exact independent amendment source and effect review

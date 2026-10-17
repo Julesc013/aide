@@ -40,3 +40,15 @@ project core preservation, missing-private refusal, re-export, existing extracte
 native workflow and unchanged apply descriptions. Original failure retained.
 Collection hashes, quiescence, scratch and reservation retirement verified.
 Prepare allocation12 owned pack refresh plus delivered21; archives stay unchanged.
+
+Allocation12 jobc658e12a safely retired with original failure preserved. Existing
+export/ownership6/doctor/fullvalidate/packstatus and exact six-payload delta PASS.
+Delivered15 accounting methods PASS; six source-reconstruction fixtures ERROR
+because the portable payload intentionally omits .aide/import/import-policy.yaml.
+All release bytes and post-export pack bytes preserved. Review direct actual-pack
+installed regression; do not rerun source reconstruction or rebuild the pack for it.
+
+Proposed direct-pack correction: preserve source21 and delivered15, execute the
+unchanged installed regression with its fixture bound to the actual pack. No
+source reconstruction, product change or export retry. Maximum27 includes the
+new allocation13; exact amendment/source/effect review remains pending.

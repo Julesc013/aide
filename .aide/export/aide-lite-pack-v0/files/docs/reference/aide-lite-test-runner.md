@@ -104,6 +104,13 @@ The path is repo-relative. Default output is compact text; `--json` includes exa
 job, source and manifest identities. This is a read-only partial observation,
 with exit code 2 for `PARTIAL` and 1 for refused inputs; it cannot mark work done.
 
+The source CLI loads the canonical `core/execution/work_effort.py`. Export projects
+that implementation into `.aide/scripts/aide_work_effort.py` and binds the delivered
+CLI to that AIDE-owned path. Extracted and safely installed copies use this same
+binding; a missing owned module refuses without falling back to project-owned
+`core/`. Safe import continues to exclude broad source roots. These ordinary-file
+checks do not enforce isolation against an unrestricted concurrent writer.
+
 Example work-set shape (replace the placeholder with the receipt's actual hash):
 
 ```json

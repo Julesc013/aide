@@ -1,0 +1,17 @@
+{
+  "before": {
+    "refs/heads/dev": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/main": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/task/aide-lite-successor-qualification-01": "26984567aaad1001067e9e47ca7a461cdecf0b37"
+  },
+  "after": {
+    "refs/heads/dev": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/main": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/task/aide-lite-successor-qualification-01": "447e393b3f87004641b7387c1f33828ac1ee3a85"
+  },
+  "verified": true,
+  "candidate": "447e393b3f87004641b7387c1f33828ac1ee3a85",
+  "latest_message_result": "PASS",
+  "range_result": "FAIL_exact_three_preserved",
+  "main_release_qualified": false
+}

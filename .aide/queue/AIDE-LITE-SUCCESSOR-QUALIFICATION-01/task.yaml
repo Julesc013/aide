@@ -34,4 +34,4 @@ scope:
     - IMPLEMENT.md
     - DOCUMENTATION.md
 review_gate: exact_source_and_effect_then_release_candidate_acceptance
-maximum_jobs: 26
+maximum_jobs: 27
