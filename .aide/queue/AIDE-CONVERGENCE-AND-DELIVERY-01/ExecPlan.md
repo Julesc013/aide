@@ -1,5 +1,15 @@
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
+## Accepted native fixture and next decision - 2026-10-17
+
+DiskEd preparation result 5b0b1be6 has independent ACCEPT. Final job09544ef0
+passes the remaining bounded stages while conserving158passes/two unavailable
+checks and the original wrapper failure. All three jobs are retired. Target235
+files and cleanbase remain unchanged. This closes preparation, not native target
+adoption or the daily-use milestone. Prepare the next exact native-owner effect
+and dependency-ready task-view/coordination work through this existing programme.
+No fourth fixture job, blanket architecture activation or target grant is inferred.
+
 ## Next native consumer preparation - 2026-10-13
 
 Installed fixture closure207553d8 is accepted; source/pack proofs retain their

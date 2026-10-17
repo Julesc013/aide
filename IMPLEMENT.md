@@ -1,5 +1,15 @@
 # AIDE Implementation Log
 
+## Conserved native test results and completed continuation - 2026-10-17
+
+Reviewed repair9ce7d46d corrects task-local test accounting only. Final job09544ef0
+passes remaining manifest/context/export/controlled-stop/resume/default checks,
+reusing the exact original160-case result (158pass,2original skips). Original
+overall exit1 remains. Collections,24stage streams, retirement and unchanged
+DiskEd235files/cleanbase verified. No target/source-postimage/test-oracle change,
+model call or fourth job. See the child REPORT and native-final-result; exact
+terminal review ACCEPT is recorded and real target application is separately gated.
+
 ## Native consumer postimages and acquisition preparation - 2026-10-13
 
 Parent77f06858 records independently accepted preparation a18773ae. New bounded

@@ -1,0 +1,231 @@
+{
+  "schema": "aide.native-final-qualification-result.v1",
+  "job_id": "09544ef06634428aae668469acfeb27f",
+  "source_commit": "9ce7d46d43333efe1d448ffae2b10b401c8e15b1",
+  "source_tree": "7ea019f7e826ce824f6129460f3f1bf339a697db",
+  "status": "PASS_WITH_ENVIRONMENT_SKIPS",
+  "result": {
+    "bytes": 3581,
+    "creation_filetime": 134367056462169006,
+    "exit_code": 0,
+    "io_errors": [],
+    "job_id": "09544ef06634428aae668469acfeb27f",
+    "pid": 11340,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "receipt_sha256": "6f7eb8b8b77a82c303584d6fb64229a7c74d424be42a1a0e7201302a5b1c9bb8",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\09544ef06634428aae668469acfeb27f",
+  "collection_manifest": {
+    "logs": "b8851bf2dc97d7fd05ff939a5b847c1e28927c29e48aad8f404ca00acd2eef2a",
+    "output": "0cae522755d99ebc76bb003a9fda6eb983e1495ab8387f42ee28bc0a9059f0b9"
+  },
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 56037376,
+    "scratch_bytes": 4588867
+  },
+  "retained_bytes": 822578,
+  "qualification_sha256": "a832f93624710ea4518b75dfa2d86b1ac558e498f974fbe674b8ff82c86211a8",
+  "qualification": {
+    "schema": "aide.native-consumer-source-qualification.v1",
+    "status": "PASS_WITH_ENVIRONMENT_SKIPS",
+    "native_work_id": "DE-W000",
+    "native_base": "40ac8ec02778b7c25100421147fc1e107fa14ed5",
+    "counts": {
+      "tests_run": 160,
+      "failures": 0,
+      "errors": 0,
+      "skips": 2,
+      "skipped_cases": [
+        {
+          "test": "test_specctl.PathTests.test_symlink_path_is_refused",
+          "reason": "symlinks unavailable on coordinator"
+        },
+        {
+          "test": "test_specctl.TemporaryBundleTests.test_bootstrap_refuses_symlink_root",
+          "reason": "symlinks unavailable"
+        }
+      ],
+      "dependency_versions": {
+        "PyYAML": "6.0.3",
+        "jsonschema": "4.26.0",
+        "attrs": "26.1.0",
+        "jsonschema-specifications": "2025.9.1",
+        "referencing": "0.37.0",
+        "rpds-py": "2026.5.1",
+        "typing_extensions": "4.16.0"
+      }
+    },
+    "native_test_counts_reused_from_job": "3591d13b81944afd9ea3b437314e855d",
+    "native_tests_reexecuted": false,
+    "stages": [
+      {
+        "stage": "target-base",
+        "exit_code": 0,
+        "elapsed_seconds": 0.045809100003680214,
+        "stdout_bytes": 41,
+        "stdout_sha256": "c58e6fd89b646525586736c782c6751a74d3a661d82c095a751cc5e958aa51fd",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": "target-clean",
+        "exit_code": 0,
+        "elapsed_seconds": 0.07729190000100061,
+        "stdout_bytes": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": "native-index",
+        "exit_code": 0,
+        "elapsed_seconds": 3.002695400005905,
+        "stdout_bytes": 96,
+        "stdout_sha256": "bc64a6c94299433e5576fb12c4e6b2ddac68a4d270d0d8b4b16a63807f665e36",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": "native-manifest",
+        "exit_code": 0,
+        "elapsed_seconds": 1.1733734000008553,
+        "stdout_bytes": 87,
+        "stdout_sha256": "ad3d84411796bdcce9c6d24167213031cd042b37b980a797c62a7a0dc8311647",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": "native-verify-manifest",
+        "exit_code": 0,
+        "elapsed_seconds": 1.0678404000063892,
+        "stdout_bytes": 85,
+        "stdout_sha256": "3e2b2448f5856b2c631408232a31394528dec609ebb37c84c71365ece4b82a8f",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": "fixture-git-init",
+        "exit_code": 0,
+        "elapsed_seconds": 0.05513919997611083,
+        "stdout_bytes": 141,
+        "stdout_sha256": "86f9a42b16787081fffc29bb38ff16e80c04bb74e0b40efc93694e20b0aea9fc",
+        "stderr_bytes": 586,
+        "stderr_sha256": "3e70934f1909b0f5a846d62237fcc1509d733b9fb0321187024723dfc67176d3"
+      },
+      {
+        "stage": "fixture-git-add",
+        "exit_code": 0,
+        "elapsed_seconds": 5.980121200002031,
+        "stdout_bytes": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": "fixture-git-baseline",
+        "exit_code": 0,
+        "elapsed_seconds": 1.0820298999897204,
+        "stdout_bytes": 12520,
+        "stdout_sha256": "6cd74776fc49ff8e4ffe8365e135dde5882ba0a8648d8b986ffc81cc887a440d",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": "controlled-stop-after-completed-export",
+        "exit_code": 75,
+        "elapsed_seconds": 1.4223134999920148,
+        "stdout_bytes": 666,
+        "stdout_sha256": "0e5e6184400ecda40503610c2b39d461159a04194062cac8de22496f437ac145",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": "fresh-process-native-resume",
+        "exit_code": 0,
+        "elapsed_seconds": 1.7765964999853168,
+        "stdout_bytes": 151,
+        "stdout_sha256": "198790a57fae336d7e49f7171a56855c6ee8f726994f2bb1d5ac9f9e17900802",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": "default-all-export",
+        "exit_code": 0,
+        "elapsed_seconds": 1.0804126000148244,
+        "stdout_bytes": 92,
+        "stdout_sha256": "4a7fdab73f2eb7b11645a650ded281d211c543a3deb367f114c3fea6ef6fd32a",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": "target-still-clean",
+        "exit_code": 0,
+        "elapsed_seconds": 0.05043280002428219,
+        "stdout_bytes": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "source_postimages": {
+      "spec/tools/specctl.py": "e5575137ec2e5d790881d5524830c1a8da3e0c5a10d692ecae54327c8c42ba53",
+      "spec/tools/tests/test_specctl.py": "6ca68f60cec7b99dc25a6147308aec248c1a98d184eb6c9b7f979db803ef1501",
+      "spec/development/specctl.md": "41b1a1c0a322ba1679112c67d2841a80c5583da2cc9b42b257e7eea9dc8b06d0"
+    },
+    "original69_test_bodies_conserved": true,
+    "selected_bytes": 2603,
+    "all_export_bytes": 96657,
+    "all_export_records": 36,
+    "target_mutated": false,
+    "global_installation": false,
+    "qualification_network": false,
+    "arbitrary_interruption_qualified": false,
+    "outer_containment_qualified": false,
+    "upstream_runtime_qualified": false,
+    "whole_task_usage": "unknown",
+    "models_requested": 0
+  },
+  "preflight": {
+    "status": "PASS",
+    "source_commit": "9ce7d46d43333efe1d448ffae2b10b401c8e15b1",
+    "source_tree": "7ea019f7e826ce824f6129460f3f1bf339a697db",
+    "template_sha256": "45b3311ddbe581dd843b3a682e98bef3321018e716d242ff606f790800d4f9c3",
+    "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+    "imported_source_hashes": {
+      "core/protocol/__init__.py": "b131e408f459709ebb03c6becc526f09517d2082f536efd643a8b7812ecdd946",
+      "core/protocol/execution_receipt.py": "966e90bbd2c5fef63990bbce62d9150119cc27f62b20e27f8175125e9d6938dc",
+      "core/protocol/process_invocation.py": "aa2d38e6df87b0009f3afff89202f764cce4d81d24bb7cfd2fa72a675894d4de",
+      "core/execution/provider.py": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e",
+      "core/execution/registered_process.py": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+      "core/execution/__init__.py": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5",
+      "core/runtime/continuous_worker/__init__.py": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
+      "core/runtime/continuous_worker/state.py": "9b65b7953cfea7af9444abe6157b5edfe670a46be90211a8cf8d543855d12105",
+      "core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc",
+      "core/execution/managed_workspace.py": "55f1590b37d150088c6023ccf8151adfbc350644e906c64d40b367c4884606d6"
+    },
+    "fresh_shared_admission_required": true,
+    "reused_native_test_job": "3591d13b81944afd9ea3b437314e855d"
+  },
+  "source_effect_review": {
+    "verdict": "ACCEPT",
+    "reviewer": "/root/review_disked_continuation",
+    "head": "126724bebf8440993759b2f6b82e6c02176ea9b2",
+    "tree": "7ea019f7e826ce824f6129460f3f1bf339a697db",
+    "template_sha256": "45b3311ddbe581dd843b3a682e98bef3321018e716d242ff606f790800d4f9c3",
+    "findings": [],
+    "scope": "Exact source repair and one conditional third/final fixture job. Guarded clean checkpoint, source commit/tree substitution only, exact identities and fresh shared admission required. Target application/integration/release and broader claims excluded. Actual final outcome needs review.",
+    "checks": "17 inputs; 235-file native map; 3 unchanged postimages; 69 original methods; retained streams/collections/counts; original overall exit 1 preserved; 158 PASS and 2 original unavailable symlink checks."
+  },
+  "all_collection_hashes_verified": true,
+  "collection_retirement_verified": true,
+  "fresh_target_235_files_and_git_clean": true,
+  "jobs_allocated": 3,
+  "maximum_jobs": 3,
+  "further_jobs_authorized": false,
+  "original_attempt_overall_exit": 1,
+  "whole_task_usage": "unknown",
+  "target_application": "NOT_RUN_UNADMITTED"
+}

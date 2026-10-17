@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+- [Native selected-export outcome](.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/REPORT.md):
+  completed fixture continuation, conserved 158 passes/two unavailable checks,
+  original failure and separate real-target/runtime qualification boundaries.
+
 - [Native selected-export plan](.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/ExecPlan.md): existing DiskEd ownership, conserved original tests and separately gated acquisition/consumer/target effects.
 
 - [Installed fixture result](.aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/evidence/final-result.json): actual 22 stages and conserved 17-test pass; exact outcome acceptance and broader claims remain separate.

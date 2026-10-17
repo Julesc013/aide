@@ -1,0 +1,29 @@
+{
+  "schema": "aide.independent-outcome-review.v1",
+  "reviewer": "/root/review_disked_continuation",
+  "verdict": "ACCEPT",
+  "result_sha256": "5b0b1be6f33b8741f7a6c2712f47a51deed1dd8b8887bf27419223f4f78a3e4f",
+  "source_commit": "9ce7d46d43333efe1d448ffae2b10b401c8e15b1",
+  "job_id": "09544ef06634428aae668469acfeb27f",
+  "actionable_findings": [],
+  "scope": "Source preparation and bounded fixture continuity only; original overall failure and two unavailable symlink checks preserved. All three jobs consumed.",
+  "verified": [
+    "receipt and both collection digests",
+    "24 stage streams and 12 expected stage results",
+    "exact pins and imported source identities",
+    "context and handoff integrity",
+    "36 native identities/scopes/non-authorizing states and selected/default equality",
+    "235 unchanged target inputs and clean base",
+    "quiescence, scratch retirement and reservation release"
+  ],
+  "excluded": [
+    "target application",
+    "broader recovery",
+    "runtime integration",
+    "outer containment",
+    "whole-task efficiency",
+    "support and release"
+  ],
+  "original_reviewed_working_bytes_sha256": "bb86d3dee91d30d352274f40f78b2d2910e6440ebbdd65efe7b56ad4c9ccfb42",
+  "normalization": "UTF-8 LF; JSON semantics unchanged. Exact closure review includes normalized stored result."
+}

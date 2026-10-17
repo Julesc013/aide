@@ -1,7 +1,9 @@
 # Remaining boundaries
 
-Preparation admission is not source or effect acceptance. Native target request,
-grant, exact base/preimages and separately reviewed apply remain required. No
-target mutation, package acquisition, tests or jobs yet. Old integration pin and
-baseline remain unaccepted operationally. Outer containment, full editing and
-recovery, whole cost, supported profile and release still have independent gates.
+Source preparation and its bounded fixture outcome are independently accepted.
+All three permitted jobs are complete and retired; none remain authorized here.
+The original wrapper failure and two unavailable symlink checks remain preserved.
+Native target request, grant, current base/preimages and separately reviewed apply
+remain required. No target mutation occurred. The native baseline and old AIDE
+integration pin remain unqualified operationally. Outer containment, full editing,
+arbitrary recovery, whole cost, support and release retain their separate gates.

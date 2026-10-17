@@ -1,5 +1,13 @@
 # AIDE Planning Index
 
+## Native selected-export fixture outcome - 2026-10-17
+
+[DiskEd preparation](.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/REPORT.md) completed its
+final bounded continuation. The original 158 passes and two unavailable symlink
+checks were reused; the original wrapper failure remains. Exact terminal evidence
+has independent ACCEPT. Real native-owner adoption, actual worker delivery, whole-outcome cost
+and broader recovery remain open; this is not the whole daily-use milestone.
+
 ## Native selected-export consumer preparation - 2026-10-13
 
 Admitted AIDE-DAILY-DISKED-EXPORT-01 retains DiskEd DE-W000 and its native work
