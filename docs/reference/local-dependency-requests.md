@@ -110,8 +110,10 @@ respect the existing coordinator controls. Requests do not create attempts, clai
 workspaces, edit native work or block unrelated native work by themselves.
 
 The source/test/effect record is
-`.aide/queue/AIDE-LOCAL-DEPENDENCY-01/`. Until its terminal evidence says otherwise,
-implementation is a candidate. Local fixture qualification does not establish
+[retained local qualification](../../.aide/queue/AIDE-LOCAL-DEPENDENCY-01/evidence/second-result.json):
+47 actual CLI/API/state test methods passed without skips at cf293cb0; the first
+failed attempt remains linked. Pack closure and integration are pending.
+Local fixture qualification does not establish
 automatic host delivery, authenticated peer identity, isolation, real integration,
 independent cancellation or downstream adoption. Those remain required increments
 of the daily-use workflow. Published Lite assets do not acquire this feature from

@@ -1,0 +1,9 @@
+{
+  "old_path": ".aide/scripts/tests/test_dependency_requests.py",
+  "new_path": ".aide/scripts/tests/test_continuous_worker_requests.py",
+  "sha256": "d2cf61185a2eea24eaebc1bffd3f9a10f3f149f719ec579ea5e9d6c2a63e4ca3",
+  "bytes_identical": true,
+  "prior_result": "evidence/second-result.json",
+  "source_revision": "cf293cb02194890fba5880b7e4087be07d35ca56",
+  "disposition": "same test bytes/assertions; existing exporter runtime-test exclusion; no runtime implementation changes"
+}

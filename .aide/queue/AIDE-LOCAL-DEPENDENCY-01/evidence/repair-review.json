@@ -1,0 +1,15 @@
+{
+  "reviewer": "/root/review_disked_continuation",
+  "verdict": "ACCEPT",
+  "tree": "a2245c79ce4952f2c247aaa4152908bd94fa6660",
+  "template_sha256": "b917df856019ef401d6e8daa95567fc8425c1c1aee634ebf8af0c0c362418e51",
+  "effect_sha256": "225e050c8fe4e4041e5e83ebbea952ce46490243ea20a67ed3a54311a94c0ff7",
+  "allocation": 2,
+  "maximum_jobs": 2,
+  "scope": "source for fixture qualification and exact second/final fixture effect",
+  "integration_blockers": [
+    "stale export provenance",
+    "source-only test distribution"
+  ],
+  "findings": []
+}

@@ -2,9 +2,13 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LOCAL-DEPENDENCY-01
 status: running
 result: PENDING
-classification: first_fixture_failed_repair_under_review
-jobs_allocated: 1
+classification: fixture_passed_pack_closure_pending
+jobs_allocated: 2
 maximum_jobs: 2
-next_action: review_narrow_repair_and_remaining_fixture_allocation
+next_action: review_affected_development_pack_scope
 live_initializations: 0
 live_peer_deliveries: 0
+runtime_fixture_result: PASS_47_no_skips
+runtime_fixture_result_ref: evidence/second-result.json
+original_failure_ref: evidence/first-result.json
+integration_ready: false

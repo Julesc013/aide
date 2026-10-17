@@ -50,3 +50,9 @@ sidecars with an absent or empty DB before the init branch. Added six actual-CLI
 byte/list preservation subcases; all original checks remain. No second job has
 run. Full validation currently retains the two stale development-pack provenance
 findings; separate scoped refresh is required before integration/completion.
+
+Second job 897faaa5 at cf293cb0 passed all 47 methods without skips, including
+six added sidecar preservation subcases. Collection digests, quiescence, scratch
+retirement and released reservation are verified. Original two-job budget is
+exhausted. A bounded same-child amendment proposes the demonstrated development
+pack closure and source-only test classification; no live effects are admitted.

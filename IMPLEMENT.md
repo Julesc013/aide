@@ -5,9 +5,11 @@
 The existing continuous-worker state gains opt-in dependency records through one
 module and CLI. Immutable bindings, revision-bound observations, duplicate-safe
 transactions, finite records and separate return/adoption are implemented as a
-candidate. No live initialization or peer delivery occurred; fixtures remain
-pending exact review. Existing tasks, attempts, effects and broker gates retain
-their owners. Read-only State opening supports inspection without record writes.
+candidate. After independent source/effect review, job 897faaa5 passed 47 methods
+without skips. The first failed run remains preserved; SQLite refusal sidecars
+and fixture connection cleanup were repaired. No live initialization or peer
+delivery occurred. Existing tasks, attempts, effects and broker gates retain
+their owners. Development-pack closure and integration remain pending.
 
 ## Native DiskEd adoption candidate - 2026-10-17
 

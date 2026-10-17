@@ -1,0 +1,14 @@
+{
+  "verdict": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "tree": "192ab795074d54aedf2c119fe5e8f0f96b91ac3f",
+  "template_sha256": "12c5b0ed04738e5742e3f5860a0e93fe93335705e9e5f12c29720477772bc67e",
+  "finding": "Generated export files and six changelog outputs were incorrectly pinned as immutable inputs.",
+  "disposition": "Remove mutable outputs; retain predecessor inventory, source/config/template pins, ownership checks and canonical reservations. Reject input/output overlap before allocation.",
+  "jobs_run": 0,
+  "observed_overlap": {
+    "export_input_paths": 857,
+    "changelog_input_paths": 6,
+    "complete_predecessor_files": 858
+  }
+}

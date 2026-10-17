@@ -15,7 +15,7 @@ assert scratch.is_dir() and output.is_dir() and scratch.parent == output.parent
 assert Path(tempfile.gettempdir()) == scratch
 suite = unittest.TestSuite()
 inputs = {}
-for name in ('test_dependency_requests', 'test_continuous_worker_state'):
+for name in ('test_continuous_worker_requests', 'test_continuous_worker_state'):
     path = root / '.aide/scripts/tests' / (name + '.py')
     inputs[path.relative_to(root).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
     spec = importlib.util.spec_from_file_location(name, path)

@@ -14,6 +14,14 @@ scope:
     - core/runtime/continuous_worker/state.py
     - core/runtime/continuous_worker/__main__.py
     - .aide/scripts/tests/test_dependency_requests.py
+    - .aide/scripts/tests/test_continuous_worker_requests.py
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/CHANGELOG.preview.md
+    - .aide/changelog/RELEASE_NOTES.preview.md
+    - .aide/changelog/changelog.preview.json
+    - .aide/changelog/latest-changelog-report.md
+    - .aide/changelog/malformed-commits.md
+    - .aide/changelog/release-notes.preview.json
     - .aide/scripts/tests/test_continuous_worker_state.py
     - docs/reference/local-dependency-requests.md
     - .aide/queue/AIDE-LOCAL-DEPENDENCY-01/**
@@ -35,3 +43,6 @@ verification:
   live_initializations: 0
   live_peer_deliveries: 0
 review_gate: exact_source_effect_and_terminal_review
+pack_scope_amendment_ref: evidence/pack-scope-amendment.md
+pack_scope_verdict: ACCEPT_9ada38a7
+additional_pack_jobs: 1

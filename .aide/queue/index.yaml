@@ -3998,7 +3998,7 @@ items:
 
   - id: AIDE-LOCAL-DEPENDENCY-01
     status: running
-    planning_state: local_interface_implementation
+    planning_state: local_fixture_passed_pack_closure_pending
     result: PENDING
     title: Record local dependency requests and replies without competing task authority
     task: .aide/queue/AIDE-LOCAL-DEPENDENCY-01/task.yaml

@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
 - current_branch: `task/aide-local-dependency-01`
-- current_commit: `bc47743e3ce5ace2ed37333de6fb4c9b64307821`
+- current_commit: `cf293cb02194890fba5880b7e4087be07d35ca56`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
