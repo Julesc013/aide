@@ -1,0 +1,10 @@
+{
+  "application_and_test_commit": "d43b3298677ee01cb4057d4e107bab2381248bda",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-01/ExecPlan.md": "9b886648b53e8c5fbcff99b0cd0d9eec1b7cbd88926c03fe13f5c7c35d7a1776",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-01/evidence/batch-roster.json": "dcf839f87302fe75785e2810b94f5ddc9fc15dae5cdccd560f7716b7881869a7",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-01/run_checks.py": "40c7878dd3ba13d102f6d868f76194d1d27b46c50ff4a8d7bf06784bdbf0c968",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-01/status.yaml": "929a3188c83c7f1bb70b72247e35a1f66d0053ab4a2eef624ef05e056cac033e",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-01/task.yaml": "afc84e3815e8fa988d511dfeeb59437f7d328a7402351362e5ad955a14d98d75"
+  }
+}

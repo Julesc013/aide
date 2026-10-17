@@ -1,0 +1,39 @@
+{
+  "job_id": "c5aaa6dc22c64798af3d08e19778abe8",
+  "source_commit": "d43b3298677ee01cb4057d4e107bab2381248bda",
+  "result": "INCOMPLETE_TIMEOUT",
+  "exit_code": 124,
+  "retired": true,
+  "log_path": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\c5aaa6dc22c64798af3d08e19778abe8\\output\\source-tests.log",
+  "log_sha256": "8910ebbc07c426153db1823decae0c545018ed9577c28a4e6d293768d24d71b6",
+  "completed_test_ids": [
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_archive_extraction_validation_and_forbidden_paths",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_checksum_mismatch_detection_fails",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_checksum_validation_rejects_stale_and_missing_entries",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_extracted_archives_import_without_source_checkout",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_missing_preview_json_is_blocked_and_release_validate_fails",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_preview_markdown_and_json_must_bind_the_same_source",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_preview_parent_is_bound_only_across_generated_projection",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_archives_are_byte_deterministic",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_asset_index_binds_exact_hashes_and_sizes",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_bundle_fixture_generation_creates_required_artifacts",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_clean_dry_run_deletes_nothing",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_commands_are_local_only_and_no_publish",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_metadata_is_checkout_path_independent",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_policy_and_schema_validation",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_records_clean_source_before_writing_bundle_outputs",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_validate_does_not_rewrite_bundle_metadata",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_validate_rejects_missing_required_file",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_validator_refuses_oversized_pax_before_metadata_parse",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_validator_refuses_unsafe_members_before_extraction",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_validator_rejects_windows_aliases_and_ads_before_extraction",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_release_validator_stops_tar_member_scan_at_bound",
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_stable_candidate_is_distinct_replayable_and_tamper_checked"
+  ],
+  "started_without_completion": [
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_stable_cli_refuses_portable_consumer_without_managed_source_runner"
+  ],
+  "new_successor_tests_run": 0,
+  "collection_hashes_verified": true,
+  "scope": "Per-method terminal observations retained; the whole suite did not pass."
+}

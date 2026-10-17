@@ -30,4 +30,4 @@ scope:
     - IMPLEMENT.md
     - DOCUMENTATION.md
 review_gate: exact_source_and_effect_then_qualified_integration
-maximum_jobs: 3
+maximum_jobs: 8

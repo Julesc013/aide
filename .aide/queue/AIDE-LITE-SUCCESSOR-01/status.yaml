@@ -1,9 +1,9 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-SUCCESSOR-01
-status: running
-result: SOURCE_CANDIDATE_PENDING
+status: needs_review
+result: SOURCE_BATCH_INCOMPLETE_TIMEOUT_22_TERMINAL_PASSES
 owner: aide_campaign
-next_action: prepare_source_and_exact_first_qualification_effect
-jobs_allocated: 0
-maximum_jobs: 3
+next_action: exact_review_then_remaining_source_partitions
+jobs_allocated: 1
+maximum_jobs: 8
 remaining_limits: actual_successor_archives_upgrade_qualification_and_publication_not_admitted

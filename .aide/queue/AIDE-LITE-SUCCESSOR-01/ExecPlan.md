@@ -16,7 +16,9 @@ Baseline33ec403f; admission7c7a3213 independently ACCEPTed by
 4. Exact terminal review precedes guarded task/dev/main integration and remote
    verification. Retire only this owned local branch after confirmed integration.
 
-Maximum3 sequential jobs; failures consume allocations. Before each effect check
+Original maximum3 sequential jobs was amended to8 after the retained first timeout;
+see evidence/partition-amendment.md and its exact verdict. Failures consume allocations.
+Before each effect check
 source, inputs, reservations, pause and unchanged resource configuration. Preserve
 original outcomes; investigate uncertainty before retry. No new provider grant,
 network worker, target operation, daemon, root, privilege, tag or publication.
@@ -33,3 +35,5 @@ Python3.14.7 qualification remains historical. Public Lite1.0.0 stays unchanged.
 Progress: admission accepted without required fixes. Five owned intake/admission
 paths classified, fresh helper plan and idle estate observed, local task branch
 created from33ec403f. No jobs allocated. Implementation and qualification pending.
+
+Allocation1 jobc5aaa6dc timed out at180sec and retired safely; retained22 completed methods and one interrupted method, with38 source methods unfinished. All collection hashes verified, no source/test/asset mutation. Request a finite partition amendment, not an automatic retry or resource-limit increase.
