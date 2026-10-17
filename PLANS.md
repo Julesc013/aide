@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+## Lite promotion metadata blocker - 2026-10-18
+
+Three qualification commit messages fail required bullet/category checks. Preserve the original failures, review the [bounded correction checkpoint](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/commit-format-correction.md), and hold promotion. The remaining five qualification allocations can proceed independently; existing consumer passes remain valid for unchanged bytes.
+
 ## Lite original consumers complete - 2026-10-18
 
 [Actual Lite qualification](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md) has built the1.1.0 candidate and passed all eight original consumer families. Nine allocations are collected and retired. Additional18 forms, actual published-predecessor update/recovery and final replay/review remain; public1.0.0 stays unchanged.

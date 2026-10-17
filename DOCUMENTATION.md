@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+## Qualification commit correction - 2026-10-18
+
+[Correction and bounded sync plan](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/commit-format-correction.md) and [exact original findings](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/commit-format-records.json) explain the current promotion metadata blocker without rewriting history or invalidating unchanged consumer evidence.
+
 ## Lite candidate consumer evidence - 2026-10-18
 
 [Current report](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md) summarizes completed original consumers and remaining release gates. [Exact evidence](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/original-consumers-qualified.json) links immutable job identities, raw-output inventories and normalized summaries.

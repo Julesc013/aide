@@ -13,7 +13,10 @@ review model usage remains unknown. Raw output8,943,180 bytes stays in the exist
 retained store with exact path/hash inventories; compact normalized JSON summaries
 are committed. Public1.0.0 and the frozen1.1.0 candidate bytes remain unchanged.
 
-Full validation and commit/range checks accompany this evidence checkpoint.
+Full repository validation PASS. The accompanying commit/range checks FAIL:
+three messages lack required bullets and a Changelog category. The controller
+initially misread individual PASS lines; see commit-format-correction.md. This
+does not invalidate the unchanged consumer subjects or authorize promotion.
 The global review-reference warning remains classified; this child's explicit
 review packet links .aide/prompts/evidence-review.md and the decision policy.
 No additional form or actual published-predecessor claim is inferred.

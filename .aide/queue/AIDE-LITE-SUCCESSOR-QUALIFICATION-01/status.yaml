@@ -4,6 +4,7 @@ status: running
 result: ORIGINAL8_PASS_ADDITIONS_AND_PREDECESSOR_PENDING
 owner: aide_campaign
 next_action: prepare_additional18_and_actual_predecessor_consumers
+promotion_blocker: three_commit_message_failures_preserved_pending_disposition
 jobs_allocated: 9
 maximum_jobs: 14
 public_release: unchanged_1.0.0

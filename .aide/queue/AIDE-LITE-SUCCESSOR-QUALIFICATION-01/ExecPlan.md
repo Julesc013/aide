@@ -35,3 +35,10 @@ unchanged; current archives, upgrade and release claims are not yet qualified.
 Allocation1 job20da96f5 PASS: four exact1.1.0 assets, all49 prior release members and862 pack files preserved. Exit0, quiescent, collection verified, scratch/reservation retired. CandidateZIP089d75da remains consumer-unqualified. Original8 canaries prepared for independent review; no original assertion or module changed.
 
 Allocations2-9 PASS all eight original consumer families exactly once. Each original module and assertion retained; case6 uses reviewed current-machine config. All results collected/hash-verified, processes quiescent, scratch/reservations retired. See evidence/original-consumers-qualified.json. Important checkpoint651464ae is pushed and remotely verified; dev/main remain4f2c3960. Five slots remain for additions, actual predecessor, recovery, replay and preview.
+
+Correction: strict checks on 4bb6a4f,651464ae,ae26a1c FAIL for missing bullets and
+Changelog category. Individual PASS lines masked the overall FAIL in the first
+controller. Outcome push stopped before effect. Preserve all original failures;
+review a truthful task-only correction checkpoint, use managed commit create,
+and hold promotion. Remaining consumer preparation is independent. See evidence/
+commit-format-correction.md for exact scope and source/effect review sequence.

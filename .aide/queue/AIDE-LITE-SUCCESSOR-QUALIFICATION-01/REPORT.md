@@ -22,4 +22,6 @@ All nine managed allocations (one build and eight consumers) passed, were collec
 
 Remaining: actual additional18 CLI forms and complete56-form mapping; upgrade from published1.0.0 including actual upstream conflict and project resolution; interrupted update/recovery/rollback; frozen archive replay; fixed preview and exact independent release-candidate review. Publication and acquired-byte checks are separately admitted effects.
 
+Promotion is also blocked by three commit-message formatting failures. The controller originally misread individual PASS lines in overall FAIL reports. [The correction record](evidence/commit-format-correction.md) preserves the exact findings and limits any checkpoint sync to the owned task branch. Consumer results and archive bytes remain valid; no historical pass or owner disposition is claimed.
+
 The existing source60/delivered25 checks are reused only for their unchanged subjects. Original synthetic update checks remain distinct from the pending published-predecessor evidence. Dev/main remain at accepted4f2c3960; the important qualification checkpoint is shared on its owned task branch.

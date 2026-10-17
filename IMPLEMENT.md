@@ -1,5 +1,9 @@
 # AIDE Implementation Log
 
+## Commit-check correction - 2026-10-18
+
+The controller incorrectly matched individual PASS lines in overall FAIL reports for 4bb6a4f,651464ae,ae26a1c. Exact messages, failures, original-log hashes and strictly valid correction drafts are preserved in the qualification child. The outcome push stopped before effect; future commits use the existing managed command and exact exit/result checks. Product bytes and all nine managed outcomes are unchanged. Main/release remain gated.
+
 ## Actual Lite original consumer outcome - 2026-10-18
 
 Candidate ZIP089d75da passed adoption/update, lifecycle, context, partial recovery, public CLI, forced restart, managed jobs and Task OS through unchanged canaries on the new host. Each ran once; all collections and retirements verified. The important651464ae task checkpoint is remotely verified; qualified dev/main remain4f2c3960.
