@@ -42,3 +42,8 @@ controller. Outcome push stopped before effect. Preserve all original failures;
 review a truthful task-only correction checkpoint, use managed commit create,
 and hold promotion. Remaining consumer preparation is independent. See evidence/
 commit-format-correction.md for exact scope and source/effect review sequence.
+
+Correction checkpoint b46448f2 is remotely verified on the owned task branch;
+dev/main remain4f2c3960. New managed message PASS; exactly three historical range
+failures remain. Allocation10's actual installed18-form fixture is prepared for
+independent review; no job has launched. See evidence/additions-effect.md.

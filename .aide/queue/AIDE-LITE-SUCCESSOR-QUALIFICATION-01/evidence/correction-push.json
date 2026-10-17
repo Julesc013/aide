@@ -1,0 +1,18 @@
+{
+  "after": {
+    "refs/heads/dev": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/main": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/task/aide-lite-successor-qualification-01": "b46448f2fa4c0668749fdee4d9cff82d74cf3664"
+  },
+  "before": {
+    "refs/heads/dev": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/main": "4f2c39606378492622fa8580152373fffc074d7c",
+    "refs/heads/task/aide-lite-successor-qualification-01": "651464ae3e86b32b11080194d0d06beb88188dd4"
+  },
+  "candidate": "b46448f2fa4c0668749fdee4d9cff82d74cf3664",
+  "latest_message_result": "PASS",
+  "main_release_qualified": false,
+  "purpose": "important blocked qualification checkpoint",
+  "range_result": "FAIL_exact_three_preserved",
+  "verified": true
+}
