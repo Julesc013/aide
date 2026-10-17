@@ -1,9 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-SUCCESSOR-01
-status: needs_review
-result: SOURCE60_DELIVERED24_ONE_INTERRUPTED
+status: passed_with_notes
+result: SOURCE60_DELIVERED25_PREVIEW_PASS
 owner: aide_campaign
-next_action: exact_final_allocation_amendment_review
-jobs_allocated: 7
+acceptance_scope: successor_builder_and_development_pack_only
+next_action: inspect_integration_receipt_and_prepare_actual_release_qualification
+integration_receipt: evidence/integration-result.log
+integration_condition: exact_reviewed_candidate_and_verified_local_remote_refs
+jobs_allocated: 8
 maximum_jobs: 8
 remaining_limits: actual_successor_archives_upgrade_qualification_and_publication_not_admitted

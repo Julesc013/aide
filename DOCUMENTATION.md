@@ -2,7 +2,7 @@
 
 ## Lite successor contract - 2026-10-18
 
-[Release bundle reference](docs/reference/aide-lite-release-bundle.md) explains preserved historical assets, the candidate declaration, limits and release gates. [Qualification map](.aide/queue/AIDE-LITE-SUCCESSOR-01/evidence/qualification-map.md) maps proposed forms to existing owners and required actual-archive evidence.
+[Release bundle reference](docs/reference/aide-lite-release-bundle.md) explains preserved historical assets, the candidate declaration, limits and release gates. [Qualification map](.aide/queue/AIDE-LITE-SUCCESSOR-01/evidence/qualification-map.md) maps proposed forms to existing owners and required actual-archive evidence. [Development validation](.aide/queue/AIDE-LITE-SUCCESSOR-01/evidence/validation.md) records the completed checks and separates them from future release qualification.
 
 ## Continuation reference - 2026-10-18
 

@@ -1,0 +1,90 @@
+[
+  {
+    "result_ref": "checks-job-result.json",
+    "job_id": "c5aaa6dc22c64798af3d08e19778abe8",
+    "exit_code": 124,
+    "reason": "timeout",
+    "collection_hashes": {
+      "logs": "f31980b8c626ac9fab7858493dc9969421b27f6adc89422703bc26e8b1fbae69",
+      "output": "dcf8a75013b11bbc7f79fb8305e186f5c9c75bf0a974767b9cd7efd8b6c5f888"
+    },
+    "retired": true
+  },
+  {
+    "result_ref": "source_remaining-job-result.json",
+    "job_id": "0f2e444d2fc44dc9bc8cd0eb8dd673d0",
+    "exit_code": 0,
+    "reason": "exited",
+    "collection_hashes": {
+      "logs": "19b2a9ad503ed7cf0f17508fe79ab753cd911edcdda4c172ba512207566dbc2e",
+      "output": "fd527b2f1074d8dd63b9252c83848edfbd83d77924be13ace9f593c734911955"
+    },
+    "retired": true
+  },
+  {
+    "result_ref": "source_successor_a-job-result.json",
+    "job_id": "75af9443d7d4413f82e743ac6f10b104",
+    "exit_code": 1,
+    "reason": "exited",
+    "collection_hashes": {
+      "logs": "a443e4dc6d0b24b6c91fb4a53dbefbb1c89ce5a9b5ab119bc9c0659d05ce44bd",
+      "output": "3e2e440ff03da039ccb90f7901459aa1a8420eceb32168f76ffb670fef6aa72c"
+    },
+    "retired": true
+  },
+  {
+    "result_ref": "source_successor_a-repair-job-result.json",
+    "job_id": "c0c86e1b186949f7a47735b8dc4d0982",
+    "exit_code": 0,
+    "reason": "exited",
+    "collection_hashes": {
+      "logs": "b405b002e1316d853be0477cea7381f8abbca70fe833720a3d3f98f9e791d5a6",
+      "output": "eaa3ea3276211f45fbc7e00bf00fa596417dec4dee540b26618815bc5953995a"
+    },
+    "retired": true
+  },
+  {
+    "result_ref": "source_successor_b-repair-job-result.json",
+    "job_id": "cdc8c052a33c455896016e89a2912fc6",
+    "exit_code": 0,
+    "reason": "exited",
+    "collection_hashes": {
+      "logs": "11dd0dc78c181a1ec3c1ec7ca4e7eaaf9665e00a7bf78c53757ee9856e2013d6",
+      "output": "f78cee2a7743d385cafa37743dca1b8f55a9fb897526d93d0cae72d910774271"
+    },
+    "retired": true
+  },
+  {
+    "result_ref": "pack-job-result.json",
+    "job_id": "2304cb09159642d0ae8429e72149206b",
+    "exit_code": 0,
+    "reason": "exited",
+    "collection_hashes": {
+      "output": "938e9a142923affa3a5215152ac0055bf446d2258daad591dace9754ec146f10",
+      "logs": "4b9d164c0638eb36688ff4d51c6e0ba122f1eacd45730573956fb66a843b352a"
+    },
+    "retired": true
+  },
+  {
+    "result_ref": "delivered-b-job-result.json",
+    "job_id": "707f01299df24f07a0b7f22784d639f0",
+    "exit_code": 124,
+    "reason": "timeout",
+    "collection_hashes": {
+      "output": "23c54f333b1e66f17b4bd89261751a6661c6ad61c4f04004c46892d91e385f8b",
+      "logs": "f31980b8c626ac9fab7858493dc9969421b27f6adc89422703bc26e8b1fbae69"
+    },
+    "retired": true
+  },
+  {
+    "result_ref": "preview-job-result.json",
+    "job_id": "b7a8e8eada7144feb919db137aee8420",
+    "exit_code": 0,
+    "reason": "exited",
+    "collection_hashes": {
+      "output": "4cee2e3077127f8a3e258add2bd044804a2d53a867a85013ab6f451eac2f3a81",
+      "logs": "d0ce448f2225a5a1b86c84af033e4a0a29838de9f4e67e2d80b3ca2febd145f5"
+    },
+    "retired": true
+  }
+]

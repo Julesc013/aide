@@ -1,71 +1,128 @@
 {
   "follow_up": [
     {
-      "commit": "3625acf79209",
-      "summary": "Qualify source and actual portable consumer, then separately review integration."
+      "commit": "d43b3298677e",
+      "summary": "Qualify source and delivered code, then exact integration; separately qualify the actual release."
     },
     {
-      "commit": "1cd847805188",
-      "summary": "Run reviewed portable qualification and then prepare independent integration review."
+      "commit": "fac2af0e647e",
+      "summary": "Run the independently reviewed source partitions with fresh guards before each job."
     },
     {
-      "commit": "b5827566fbe2",
-      "summary": "Run the exact reviewed preview, complete terminal review and safely synchronize dev/main."
+      "commit": "5fa02af5d4ca",
+      "summary": "Run repaired groups, then qualify the delivered package through the existing exporter."
+    },
+    {
+      "commit": "e42d4b31215e",
+      "summary": "Complete delivered checks and fixed preview, then obtain terminal integration review."
+    },
+    {
+      "commit": "ca21bb03a92a",
+      "summary": "Finish delivered checks, fixed preview and independent integration review."
+    },
+    {
+      "commit": "2b489c5e6c48",
+      "summary": "Run the reviewed final effect and close evidence before qualified integration."
     }
   ],
   "highlights": [
     {
       "breaking": false,
+      "category": "Added",
+      "commit": "d43b3298677e",
+      "subject": "feat(release): prepare successors without replacing published assets",
+      "summary": "source-maintainer successor declaration with historical preservation and refusal checks."
+    },
+    {
+      "breaking": false,
       "category": "Changed",
-      "commit": "1cd847805188",
-      "subject": "test(task): qualify selected-task continuation and preserved effects",
-      "summary": "selected-task continuation now has source qualification evidence."
+      "commit": "fac2af0e647e",
+      "subject": "test(release): retain passes and partition remaining qualification",
+      "summary": "bounded qualification preserves completed checks across interruption."
     },
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "3625acf79209",
-      "subject": "fix(task): derive continuation advice from the selected WorkUnit",
-      "summary": "task resume-plan no longer declares execution safe or recommends blanket reruns."
+      "commit": "5fa02af5d4ca",
+      "subject": "test(release): bind successor fixtures to refreshed clean packs",
+      "summary": "synthetic successor cases now supply a clean current source pack."
     },
     {
       "breaking": false,
-      "category": "Fixed",
-      "commit": "b5827566fbe2",
-      "subject": "fix(pack): deliver qualified selected-task continuation advice",
-      "summary": "portable task resume-plan preserves selected task state without claiming execution readiness."
+      "category": "Tests",
+      "commit": "e42d4b31215e",
+      "subject": "test(release): close source coverage and prepare delivered checks",
+      "summary": "preserve composed source coverage and prepare portable successor qualification."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "ca21bb03a92a",
+      "subject": "test(release): qualify exported successor behavior and preservation",
+      "summary": "qualify successor behavior in the portable development pack."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "2b489c5e6c48",
+      "subject": "test(release): preserve partial delivery and bound final qualification",
+      "summary": "preserve partial qualification and avoid repeating completed checks."
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "3625acf79209",
-      "summary": "Advice cannot establish live ownership, admission, effects or evidence applicability."
+      "commit": "d43b3298677e",
+      "summary": "Candidate declarations and synthetic tests do not prove actual upgrade compatibility."
     },
     {
-      "commit": "1cd847805188",
-      "summary": "Live worker recovery, installed-host delivery and native consumer ownership remain separate."
+      "commit": "fac2af0e647e",
+      "summary": "No source-suite, delivered-release or upgrade success is claimed yet."
     },
     {
-      "commit": "b5827566fbe2",
-      "summary": "Published Lite1.0.0 assets are unchanged; this is the development pack."
+      "commit": "5fa02af5d4ca",
+      "summary": "Earlier successor passes are not reused after shared fixture changes."
+    },
+    {
+      "commit": "e42d4b31215e",
+      "summary": "Prior timeout and fixture errors remain evidence; no public upgrade claim follows."
+    },
+    {
+      "commit": "ca21bb03a92a",
+      "summary": "The development pack is not a published successor release."
+    },
+    {
+      "commit": "2b489c5e6c48",
+      "summary": "No ninth job or resource-limit change is admitted."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "b5827566fbe270a604907b8c20437a1228373d81",
-  "source_range": "716ec1fd0ad6fb2d3875417c4db7b867a7b393fe..b5827566fbe270a604907b8c20437a1228373d81",
+  "source_head": "2b489c5e6c487ed4690533121e3cb51b496567b1",
+  "source_range": "33ec403f0e4f17af919aa5685855f57760619e7e..2b489c5e6c487ed4690533121e3cb51b496567b1",
   "validation_summary": [
     {
-      "commit": "3625acf79209",
-      "summary": "PASS: doctor, full source validation, syntax and diff checks."
+      "commit": "d43b3298677e",
+      "summary": "PASS: AST, doctor, refreshed full structural validation and diff checks."
     },
     {
-      "commit": "1cd847805188",
-      "summary": "PASS: source63, actual CLI consumer, collection hashes, quiescence and retirement."
+      "commit": "fac2af0e647e",
+      "summary": "PASS: original collection hashes, quiescence, scratch retirement and released reservation."
     },
     {
-      "commit": "b5827566fbe2",
-      "summary": "PASS: source63, delivered61, both CLI consumers, six ownership checks and exporter validation."
+      "commit": "5fa02af5d4ca",
+      "summary": "PASS: original49 terminal results, exact collection and retirement verification."
+    },
+    {
+      "commit": "e42d4b31215e",
+      "summary": "PASS: all 60 source methods, collection hashes, quiescence and retirement."
+    },
+    {
+      "commit": "ca21bb03a92a",
+      "summary": "PASS: ownership 6, exporter, doctor, full validation and pack status."
+    },
+    {
+      "commit": "2b489c5e6c48",
+      "summary": "PASS: 60 source methods and 24 delivered methods with exact evidence identities."
     }
   ],
   "warnings": []

@@ -45,3 +45,5 @@ Allocations4/5 PASS5 and PASS6; source60 is the disjoint union of retained22, co
 Allocation 6 PASS: ownership 6, exporter/doctor/full validation/pack status, declaration resolution and delivered 18. The development pack has 862 files (4,519,259 bytes), with exactly four payload changes and unchanged published assets. Job 2304cb09 retired with collection hashes verified. Prepare remaining delivered 7 as allocation 7.
 
 Allocation 7 timed out after six terminal passes; the last method is incomplete. All prior results and retirement evidence are retained. Review an allocation 8 amendment combining only that unfinished method with the existing fixed preview, without increasing limits or rerunning completed checks.
+
+Allocation 8 PASS: the one remaining delivered method and fixed preview through 2b489c5e. Source 60 and delivered 25 are complete by disjoint exact method identities, with all failed attempts preserved. All eight jobs are collected and retired. The six-commit preview has zero malformed entries and exact regeneration. Terminal review and guarded integration follow integration-effect.json; no actual release qualification is claimed.

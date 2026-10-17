@@ -2,33 +2,45 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 716ec1fd0ad6fb2d3875417c4db7b867a7b393fe..b5827566fbe270a604907b8c20437a1228373d81
-source_head: b5827566fbe270a604907b8c20437a1228373d81
+source_range: 33ec403f0e4f17af919aa5685855f57760619e7e..2b489c5e6c487ed4690533121e3cb51b496567b1
+source_head: 2b489c5e6c487ed4690533121e3cb51b496567b1
 preview_only: true
 
 ## Highlights
 
-- Changed: selected-task continuation now has source qualification evidence. (1cd847805188)
-- Fixed: task resume-plan no longer declares execution safe or recommends blanket reruns. (3625acf79209)
-- Fixed: portable task resume-plan preserves selected task state without claiming execution readiness. (b5827566fbe2)
+- Added: source-maintainer successor declaration with historical preservation and refusal checks. (d43b3298677e)
+- Changed: bounded qualification preserves completed checks across interruption. (fac2af0e647e)
+- Fixed: synthetic successor cases now supply a clean current source pack. (5fa02af5d4ca)
+- Tests: preserve composed source coverage and prepare portable successor qualification. (e42d4b31215e)
+- Tests: qualify successor behavior in the portable development pack. (ca21bb03a92a)
+- Tests: preserve partial qualification and avoid repeating completed checks. (2b489c5e6c48)
 
 ## Validation Summary
 
-- 3625acf79209: PASS: doctor, full source validation, syntax and diff checks.
-- 1cd847805188: PASS: source63, actual CLI consumer, collection hashes, quiescence and retirement.
-- b5827566fbe2: PASS: source63, delivered61, both CLI consumers, six ownership checks and exporter validation.
+- d43b3298677e: PASS: AST, doctor, refreshed full structural validation and diff checks.
+- fac2af0e647e: PASS: original collection hashes, quiescence, scratch retirement and released reservation.
+- 5fa02af5d4ca: PASS: original49 terminal results, exact collection and retirement verification.
+- e42d4b31215e: PASS: all 60 source methods, collection hashes, quiescence and retirement.
+- ca21bb03a92a: PASS: ownership 6, exporter, doctor, full validation and pack status.
+- 2b489c5e6c48: PASS: 60 source methods and 24 delivered methods with exact evidence identities.
 
 ## Known Risks
 
-- 3625acf79209: Advice cannot establish live ownership, admission, effects or evidence applicability.
-- 1cd847805188: Live worker recovery, installed-host delivery and native consumer ownership remain separate.
-- b5827566fbe2: Published Lite1.0.0 assets are unchanged; this is the development pack.
+- d43b3298677e: Candidate declarations and synthetic tests do not prove actual upgrade compatibility.
+- fac2af0e647e: No source-suite, delivered-release or upgrade success is claimed yet.
+- 5fa02af5d4ca: Earlier successor passes are not reused after shared fixture changes.
+- e42d4b31215e: Prior timeout and fixture errors remain evidence; no public upgrade claim follows.
+- ca21bb03a92a: The development pack is not a published successor release.
+- 2b489c5e6c48: No ninth job or resource-limit change is admitted.
 
 ## Follow-up
 
-- 3625acf79209: Qualify source and actual portable consumer, then separately review integration.
-- 1cd847805188: Run reviewed portable qualification and then prepare independent integration review.
-- b5827566fbe2: Run the exact reviewed preview, complete terminal review and safely synchronize dev/main.
+- d43b3298677e: Qualify source and delivered code, then exact integration; separately qualify the actual release.
+- fac2af0e647e: Run the independently reviewed source partitions with fresh guards before each job.
+- 5fa02af5d4ca: Run repaired groups, then qualify the delivered package through the existing exporter.
+- e42d4b31215e: Complete delivered checks and fixed preview, then obtain terminal integration review.
+- ca21bb03a92a: Finish delivered checks, fixed preview and independent integration review.
+- 2b489c5e6c48: Run the reviewed final effect and close evidence before qualified integration.
 
 ## Warnings
 

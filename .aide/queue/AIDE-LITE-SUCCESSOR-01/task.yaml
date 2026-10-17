@@ -3,7 +3,7 @@ id: AIDE-LITE-SUCCESSOR-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Preserve published Lite assets and prepare an additive successor contract
 type: implementation
-status: running
+status: passed_with_notes
 scope:
   allowed_paths:
     - .aide/queue/AIDE-LITE-SUCCESSOR-01/**

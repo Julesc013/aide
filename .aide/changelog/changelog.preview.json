@@ -1,44 +1,17 @@
 {
   "categories": {
-    "Changed": [
-      {
-        "aide_phase": "source-qualified",
-        "aide_result": "PASS",
-        "breaking": false,
-        "category": "Changed",
-        "commit": "1cd847805188",
-        "commit_sha": "1cd8478051888f7a80f891c0ff83af0270c88858",
-        "entry": "selected-task continuation now has source qualification evidence.",
-        "follow_up": "- Run reviewed portable qualification and then prepare independent integration review.\n\nAIDE-Task: AIDE-RESUME-PLAN-01\nAIDE-Phase: source-qualified\nAIDE-Result: PASS\nAIDE-Scope: selected-task-continuation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-effect-review",
-        "risks": "- Live worker recovery, installed-host delivery and native consumer ownership remain separate.",
-        "scope": "task",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "test(task): qualify selected-task continuation and preserved effects",
-        "summary": "selected-task continuation now has source qualification evidence.",
-        "type": "test",
-        "validation": "- PASS: source63, actual CLI consumer, collection hashes, quiescence and retirement.\n- PASS: exact current portable template inputs; behavior remains unchanged since source qualification.\n- NOT RUN: portable61 and fixed-range promotion preview."
-      }
-    ],
-    "Fixed": [
+    "Added": [
       {
         "aide_phase": "source-candidate",
         "aide_result": "NOT-RUN",
         "breaking": false,
-        "category": "Fixed",
-        "commit": "3625acf79209",
-        "commit_sha": "3625acf79209536b0077faf4d1747d70606fbe79",
-        "entry": "task resume-plan no longer declares execution safe or recommends blanket reruns.",
-        "follow_up": "- Qualify source and actual portable consumer, then separately review integration.\n\nAIDE-Task: AIDE-RESUME-PLAN-01\nAIDE-Phase: source-candidate\nAIDE-Result: NOT-RUN\nAIDE-Scope: selected-task-continuation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-review",
-        "risks": "- Advice cannot establish live ownership, admission, effects or evidence applicability.\n- No actual host or target recovery is qualified by this candidate.",
-        "scope": "task",
+        "category": "Added",
+        "commit": "d43b3298677e",
+        "commit_sha": "d43b3298677ee01cb4057d4e107bab2381248bda",
+        "entry": "source-maintainer successor declaration with historical preservation and refusal checks.",
+        "follow_up": "- Qualify source and delivered code, then exact integration; separately qualify the actual release.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-01\nAIDE-Phase: source-candidate\nAIDE-Result: NOT-RUN\nAIDE-Scope: preserved-stable-successor\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-review",
+        "risks": "- Candidate declarations and synthetic tests do not prove actual upgrade compatibility.\n- No live successor archives, tags or publication are admitted by this source change.",
+        "scope": "release",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -48,22 +21,51 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "fix(task): derive continuation advice from the selected WorkUnit",
-        "summary": "task resume-plan no longer declares execution safe or recommends blanket reruns.",
-        "type": "fix",
-        "validation": "- PASS: doctor, full source validation, syntax and diff checks.\n- WARN: existing global review-packet reference warning retained and classified.\n- NOT RUN: source and delivered behavioral qualification; exact source review is recorded separately."
-      },
+        "subject": "feat(release): prepare successors without replacing published assets",
+        "summary": "source-maintainer successor declaration with historical preservation and refusal checks.",
+        "type": "feat",
+        "validation": "- PASS: AST, doctor, refreshed full structural validation and diff checks.\n- Retained: stale evidence failure after review repair, then explicit ledger refresh and passing validation.\n- WARN: existing global review-packet reference warning remains classified.\n- NOT RUN: managed source and delivered qualification; exact review recorded separately."
+      }
+    ],
+    "Changed": [
       {
-        "aide_phase": "portable-qualified",
-        "aide_result": "PASS",
+        "aide_phase": "qualification-partition",
+        "aide_result": "INCOMPLETE",
+        "breaking": false,
+        "category": "Changed",
+        "commit": "fac2af0e647e",
+        "commit_sha": "fac2af0e647e34a5c7a9e40c317fe67ce26d23e0",
+        "entry": "bounded qualification preserves completed checks across interruption.",
+        "follow_up": "- Run the independently reviewed source partitions with fresh guards before each job.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-01\nAIDE-Phase: qualification-partition\nAIDE-Result: INCOMPLETE\nAIDE-Scope: task-local-qualified-execution\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-and-effect-review",
+        "risks": "- No source-suite, delivered-release or upgrade success is claimed yet.\n- Failed partitions consume their allocation and are not automatically retried.",
+        "scope": "release",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "test(release): retain passes and partition remaining qualification",
+        "summary": "bounded qualification preserves completed checks across interruption.",
+        "type": "test",
+        "validation": "- PASS: original collection hashes, quiescence, scratch retirement and released reservation.\n- INCOMPLETE: allocation1 exit124 timeout; original22 terminal passes are preserved.\n- PASS: exact unchanged application/test assertions, AST and diff checks.\n- NOT RUN: remaining source partitions and delivered qualification."
+      }
+    ],
+    "Fixed": [
+      {
+        "aide_phase": "fixture-repair",
+        "aide_result": "NOT-RUN",
         "breaking": false,
         "category": "Fixed",
-        "commit": "b5827566fbe2",
-        "commit_sha": "b5827566fbe270a604907b8c20437a1228373d81",
-        "entry": "portable task resume-plan preserves selected task state without claiming execution readiness.",
-        "follow_up": "- Run the exact reviewed preview, complete terminal review and safely synchronize dev/main.\n\nAIDE-Task: AIDE-RESUME-PLAN-01\nAIDE-Phase: portable-qualified\nAIDE-Result: PASS\nAIDE-Scope: selected-task-continuation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-preview-review",
-        "risks": "- Published Lite1.0.0 assets are unchanged; this is the development pack.\n- Actual host recovery, desktop delivery and downstream ownership remain open.",
-        "scope": "pack",
+        "commit": "5fa02af5d4ca",
+        "commit_sha": "5fa02af5d4ca4ef654b23df2cbe9d82e6c32f902",
+        "entry": "synthetic successor cases now supply a clean current source pack.",
+        "follow_up": "- Run repaired groups, then qualify the delivered package through the existing exporter.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-01\nAIDE-Phase: fixture-repair\nAIDE-Result: NOT-RUN\nAIDE-Scope: successor-test-provenance\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-and-effect-review",
+        "risks": "- Earlier successor passes are not reused after shared fixture changes.\n- No source-suite or release compatibility completion claim yet.",
+        "scope": "release",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -73,30 +75,109 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "fix(pack): deliver qualified selected-task continuation advice",
-        "summary": "portable task resume-plan preserves selected task state without claiming execution readiness.",
-        "type": "fix",
-        "validation": "- PASS: source63, delivered61, both CLI consumers, six ownership checks and exporter validation.\n- PASS: collection hashes, quiescence, scratch absence and reservation release for both jobs.\n- NOT RUN: fixed-range preview and final integration effects."
+        "subject": "test(release): bind successor fixtures to refreshed clean packs",
+        "summary": "synthetic successor cases now supply a clean current source pack.",
+        "type": "test",
+        "validation": "- PASS: original49 terminal results, exact collection and retirement verification.\n- FAIL: original successor attempt has two retained fixture-provenance errors.\n- PASS: AST, diff checks and exact independent repair/effect review.\n- NOT RUN: repaired successor and delivered qualification."
+      }
+    ],
+    "Tests": [
+      {
+        "aide_phase": "source-qualification",
+        "aide_result": "PASS",
+        "breaking": false,
+        "category": "Tests",
+        "commit": "e42d4b31215e",
+        "commit_sha": "e42d4b31215e8ba1889b0be825a9a00e4e8ad987",
+        "entry": "preserve composed source coverage and prepare portable successor qualification.",
+        "follow_up": "- Complete delivered checks and fixed preview, then obtain terminal integration review.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-01\nAIDE-Phase: source-qualification\nAIDE-Result: PASS\nAIDE-Scope: source-evidence-and-delivery-preparation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-and-effect-review",
+        "risks": "- Prior timeout and fixture errors remain evidence; no public upgrade claim follows.\n- Public Lite 1.0.0 assets remain unchanged.",
+        "scope": "release",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "test(release): close source coverage and prepare delivered checks",
+        "summary": "preserve composed source coverage and prepare portable successor qualification.",
+        "type": "test",
+        "validation": "- PASS: all 60 source methods, collection hashes, quiescence and retirement.\n- PASS: immutable input comparison and whitespace checks.\n- Allocation 6 requires the recorded independent exact effect acceptance before execution.\n- NOT RUN: exported successor checks and final fixed-range preview."
+      },
+      {
+        "aide_phase": "delivered-qualification",
+        "aide_result": "PASS",
+        "breaking": false,
+        "category": "Tests",
+        "commit": "ca21bb03a92a",
+        "commit_sha": "ca21bb03a92a96af65109633a5eb3d89ed5f27ab",
+        "entry": "qualify successor behavior in the portable development pack.",
+        "follow_up": "- Finish delivered checks, fixed preview and independent integration review.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-01\nAIDE-Phase: delivered-qualification\nAIDE-Result: PASS\nAIDE-Scope: development-pack-and-evidence\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-and-effect-review",
+        "risks": "- The development pack is not a published successor release.\n- Actual published-predecessor upgrade and current-profile support remain unqualified.",
+        "scope": "release",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "test(release): qualify exported successor behavior and preservation",
+        "summary": "qualify successor behavior in the portable development pack.",
+        "type": "test",
+        "validation": "- PASS: ownership 6, exporter, doctor, full validation and pack status.\n- PASS: delivered 18 methods in 78.053 seconds, exact IDs and no skips.\n- PASS: published asset preservation, payload/source equality, collection hashes and retirement.\n- NOT RUN: delivered seven-method partition and final preview."
+      },
+      {
+        "aide_phase": "final-qualification-preparation",
+        "aide_result": "PARTIAL",
+        "breaking": false,
+        "category": "Tests",
+        "commit": "2b489c5e6c48",
+        "commit_sha": "2b489c5e6c487ed4690533121e3cb51b496567b1",
+        "entry": "preserve partial qualification and avoid repeating completed checks.",
+        "follow_up": "- Run the reviewed final effect and close evidence before qualified integration.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-01\nAIDE-Phase: final-qualification-preparation\nAIDE-Result: PARTIAL\nAIDE-Scope: retained-evidence-and-final-partition\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-and-effect-review",
+        "risks": "- No ninth job or resource-limit change is admitted.\n- Development qualification does not establish a published successor or upgrade support.",
+        "scope": "release",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "test(release): preserve partial delivery and bound final qualification",
+        "summary": "preserve partial qualification and avoid repeating completed checks.",
+        "type": "test",
+        "validation": "- PASS: 60 source methods and 24 delivered methods with exact evidence identities.\n- PASS: allocation 7 collection hashes, retirement and all 1777 unchanged input pins.\n- INCOMPLETE: one delivered method interrupted by the 180-second limit.\n- PASS: AST and whitespace checks; exact final effect requires independent acceptance.\n- NOT RUN: allocation 8 and final integration review."
       }
     ]
   },
   "category_counts": {
+    "Added": 1,
     "Changed": 1,
-    "Fixed": 2
+    "Fixed": 1,
+    "Tests": 3
   },
-  "commit_count": 3,
+  "commit_count": 6,
   "entries": [
     {
       "aide_phase": "source-candidate",
       "aide_result": "NOT-RUN",
       "breaking": false,
-      "category": "Fixed",
-      "commit": "3625acf79209",
-      "commit_sha": "3625acf79209536b0077faf4d1747d70606fbe79",
-      "entry": "task resume-plan no longer declares execution safe or recommends blanket reruns.",
-      "follow_up": "- Qualify source and actual portable consumer, then separately review integration.\n\nAIDE-Task: AIDE-RESUME-PLAN-01\nAIDE-Phase: source-candidate\nAIDE-Result: NOT-RUN\nAIDE-Scope: selected-task-continuation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-review",
-      "risks": "- Advice cannot establish live ownership, admission, effects or evidence applicability.\n- No actual host or target recovery is qualified by this candidate.",
-      "scope": "task",
+      "category": "Added",
+      "commit": "d43b3298677e",
+      "commit_sha": "d43b3298677ee01cb4057d4e107bab2381248bda",
+      "entry": "source-maintainer successor declaration with historical preservation and refusal checks.",
+      "follow_up": "- Qualify source and delivered code, then exact integration; separately qualify the actual release.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-01\nAIDE-Phase: source-candidate\nAIDE-Result: NOT-RUN\nAIDE-Scope: preserved-stable-successor\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-review",
+      "risks": "- Candidate declarations and synthetic tests do not prove actual upgrade compatibility.\n- No live successor archives, tags or publication are admitted by this source change.",
+      "scope": "release",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -106,22 +187,22 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "fix(task): derive continuation advice from the selected WorkUnit",
-      "summary": "task resume-plan no longer declares execution safe or recommends blanket reruns.",
-      "type": "fix",
-      "validation": "- PASS: doctor, full source validation, syntax and diff checks.\n- WARN: existing global review-packet reference warning retained and classified.\n- NOT RUN: source and delivered behavioral qualification; exact source review is recorded separately."
+      "subject": "feat(release): prepare successors without replacing published assets",
+      "summary": "source-maintainer successor declaration with historical preservation and refusal checks.",
+      "type": "feat",
+      "validation": "- PASS: AST, doctor, refreshed full structural validation and diff checks.\n- Retained: stale evidence failure after review repair, then explicit ledger refresh and passing validation.\n- WARN: existing global review-packet reference warning remains classified.\n- NOT RUN: managed source and delivered qualification; exact review recorded separately."
     },
     {
-      "aide_phase": "source-qualified",
-      "aide_result": "PASS",
+      "aide_phase": "qualification-partition",
+      "aide_result": "INCOMPLETE",
       "breaking": false,
       "category": "Changed",
-      "commit": "1cd847805188",
-      "commit_sha": "1cd8478051888f7a80f891c0ff83af0270c88858",
-      "entry": "selected-task continuation now has source qualification evidence.",
-      "follow_up": "- Run reviewed portable qualification and then prepare independent integration review.\n\nAIDE-Task: AIDE-RESUME-PLAN-01\nAIDE-Phase: source-qualified\nAIDE-Result: PASS\nAIDE-Scope: selected-task-continuation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-effect-review",
-      "risks": "- Live worker recovery, installed-host delivery and native consumer ownership remain separate.",
-      "scope": "task",
+      "commit": "fac2af0e647e",
+      "commit_sha": "fac2af0e647e34a5c7a9e40c317fe67ce26d23e0",
+      "entry": "bounded qualification preserves completed checks across interruption.",
+      "follow_up": "- Run the independently reviewed source partitions with fresh guards before each job.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-01\nAIDE-Phase: qualification-partition\nAIDE-Result: INCOMPLETE\nAIDE-Scope: task-local-qualified-execution\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-and-effect-review",
+      "risks": "- No source-suite, delivered-release or upgrade success is claimed yet.\n- Failed partitions consume their allocation and are not automatically retried.",
+      "scope": "release",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -131,22 +212,22 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "test(task): qualify selected-task continuation and preserved effects",
-      "summary": "selected-task continuation now has source qualification evidence.",
+      "subject": "test(release): retain passes and partition remaining qualification",
+      "summary": "bounded qualification preserves completed checks across interruption.",
       "type": "test",
-      "validation": "- PASS: source63, actual CLI consumer, collection hashes, quiescence and retirement.\n- PASS: exact current portable template inputs; behavior remains unchanged since source qualification.\n- NOT RUN: portable61 and fixed-range promotion preview."
+      "validation": "- PASS: original collection hashes, quiescence, scratch retirement and released reservation.\n- INCOMPLETE: allocation1 exit124 timeout; original22 terminal passes are preserved.\n- PASS: exact unchanged application/test assertions, AST and diff checks.\n- NOT RUN: remaining source partitions and delivered qualification."
     },
     {
-      "aide_phase": "portable-qualified",
-      "aide_result": "PASS",
+      "aide_phase": "fixture-repair",
+      "aide_result": "NOT-RUN",
       "breaking": false,
       "category": "Fixed",
-      "commit": "b5827566fbe2",
-      "commit_sha": "b5827566fbe270a604907b8c20437a1228373d81",
-      "entry": "portable task resume-plan preserves selected task state without claiming execution readiness.",
-      "follow_up": "- Run the exact reviewed preview, complete terminal review and safely synchronize dev/main.\n\nAIDE-Task: AIDE-RESUME-PLAN-01\nAIDE-Phase: portable-qualified\nAIDE-Result: PASS\nAIDE-Scope: selected-task-continuation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-preview-review",
-      "risks": "- Published Lite1.0.0 assets are unchanged; this is the development pack.\n- Actual host recovery, desktop delivery and downstream ownership remain open.",
-      "scope": "pack",
+      "commit": "5fa02af5d4ca",
+      "commit_sha": "5fa02af5d4ca4ef654b23df2cbe9d82e6c32f902",
+      "entry": "synthetic successor cases now supply a clean current source pack.",
+      "follow_up": "- Run repaired groups, then qualify the delivered package through the existing exporter.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-01\nAIDE-Phase: fixture-repair\nAIDE-Result: NOT-RUN\nAIDE-Scope: successor-test-provenance\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-and-effect-review",
+      "risks": "- Earlier successor passes are not reused after shared fixture changes.\n- No source-suite or release compatibility completion claim yet.",
+      "scope": "release",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -156,10 +237,85 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "fix(pack): deliver qualified selected-task continuation advice",
-      "summary": "portable task resume-plan preserves selected task state without claiming execution readiness.",
-      "type": "fix",
-      "validation": "- PASS: source63, delivered61, both CLI consumers, six ownership checks and exporter validation.\n- PASS: collection hashes, quiescence, scratch absence and reservation release for both jobs.\n- NOT RUN: fixed-range preview and final integration effects."
+      "subject": "test(release): bind successor fixtures to refreshed clean packs",
+      "summary": "synthetic successor cases now supply a clean current source pack.",
+      "type": "test",
+      "validation": "- PASS: original49 terminal results, exact collection and retirement verification.\n- FAIL: original successor attempt has two retained fixture-provenance errors.\n- PASS: AST, diff checks and exact independent repair/effect review.\n- NOT RUN: repaired successor and delivered qualification."
+    },
+    {
+      "aide_phase": "source-qualification",
+      "aide_result": "PASS",
+      "breaking": false,
+      "category": "Tests",
+      "commit": "e42d4b31215e",
+      "commit_sha": "e42d4b31215e8ba1889b0be825a9a00e4e8ad987",
+      "entry": "preserve composed source coverage and prepare portable successor qualification.",
+      "follow_up": "- Complete delivered checks and fixed preview, then obtain terminal integration review.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-01\nAIDE-Phase: source-qualification\nAIDE-Result: PASS\nAIDE-Scope: source-evidence-and-delivery-preparation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-and-effect-review",
+      "risks": "- Prior timeout and fixture errors remain evidence; no public upgrade claim follows.\n- Public Lite 1.0.0 assets remain unchanged.",
+      "scope": "release",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "test(release): close source coverage and prepare delivered checks",
+      "summary": "preserve composed source coverage and prepare portable successor qualification.",
+      "type": "test",
+      "validation": "- PASS: all 60 source methods, collection hashes, quiescence and retirement.\n- PASS: immutable input comparison and whitespace checks.\n- Allocation 6 requires the recorded independent exact effect acceptance before execution.\n- NOT RUN: exported successor checks and final fixed-range preview."
+    },
+    {
+      "aide_phase": "delivered-qualification",
+      "aide_result": "PASS",
+      "breaking": false,
+      "category": "Tests",
+      "commit": "ca21bb03a92a",
+      "commit_sha": "ca21bb03a92a96af65109633a5eb3d89ed5f27ab",
+      "entry": "qualify successor behavior in the portable development pack.",
+      "follow_up": "- Finish delivered checks, fixed preview and independent integration review.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-01\nAIDE-Phase: delivered-qualification\nAIDE-Result: PASS\nAIDE-Scope: development-pack-and-evidence\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-and-effect-review",
+      "risks": "- The development pack is not a published successor release.\n- Actual published-predecessor upgrade and current-profile support remain unqualified.",
+      "scope": "release",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "test(release): qualify exported successor behavior and preservation",
+      "summary": "qualify successor behavior in the portable development pack.",
+      "type": "test",
+      "validation": "- PASS: ownership 6, exporter, doctor, full validation and pack status.\n- PASS: delivered 18 methods in 78.053 seconds, exact IDs and no skips.\n- PASS: published asset preservation, payload/source equality, collection hashes and retirement.\n- NOT RUN: delivered seven-method partition and final preview."
+    },
+    {
+      "aide_phase": "final-qualification-preparation",
+      "aide_result": "PARTIAL",
+      "breaking": false,
+      "category": "Tests",
+      "commit": "2b489c5e6c48",
+      "commit_sha": "2b489c5e6c487ed4690533121e3cb51b496567b1",
+      "entry": "preserve partial qualification and avoid repeating completed checks.",
+      "follow_up": "- Run the reviewed final effect and close evidence before qualified integration.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-01\nAIDE-Phase: final-qualification-preparation\nAIDE-Result: PARTIAL\nAIDE-Scope: retained-evidence-and-final-partition\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-and-effect-review",
+      "risks": "- No ninth job or resource-limit change is admitted.\n- Development qualification does not establish a published successor or upgrade support.",
+      "scope": "release",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "test(release): preserve partial delivery and bound final qualification",
+      "summary": "preserve partial qualification and avoid repeating completed checks.",
+      "type": "test",
+      "validation": "- PASS: 60 source methods and 24 delivered methods with exact evidence identities.\n- PASS: allocation 7 collection hashes, retirement and all 1777 unchanged input pins.\n- INCOMPLETE: one delivered method interrupted by the 180-second limit.\n- PASS: AST and whitespace checks; exact final effect requires independent acceptance.\n- NOT RUN: allocation 8 and final integration review."
     }
   ],
   "generated_by": "aide-lite",
@@ -170,7 +326,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "b5827566fbe270a604907b8c20437a1228373d81",
-  "source_range": "716ec1fd0ad6fb2d3875417c4db7b867a7b393fe..b5827566fbe270a604907b8c20437a1228373d81",
+  "source_head": "2b489c5e6c487ed4690533121e3cb51b496567b1",
+  "source_range": "33ec403f0e4f17af919aa5685855f57760619e7e..2b489c5e6c487ed4690533121e3cb51b496567b1",
   "warnings": []
 }

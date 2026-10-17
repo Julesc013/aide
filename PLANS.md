@@ -2,7 +2,7 @@
 
 ## Lite successor preparation - 2026-10-18
 
-[AIDE-LITE-SUCCESSOR-01](.aide/queue/AIDE-LITE-SUCCESSOR-01/ExecPlan.md) extends the existing builder with preserved published assets and a proposed additive1.1.0 contract. Source60 is qualified through retained and completed exact methods; development delivery is pending. Actual archives, published1.0.0 upgrades and publication remain separate gates.
+[AIDE-LITE-SUCCESSOR-01](.aide/queue/AIDE-LITE-SUCCESSOR-01/ExecPlan.md) qualifies the existing successor builder and development pack: 60 source checks, 25 affected delivered checks, ownership validation and a fixed six-commit preview pass. The proposed 1.1.0 contract retains 38 CLI forms and adds 18. Published 1.0.0 stays unchanged. Exact integration is pending and will be recorded after the reviewed effect; actual archives, published-predecessor upgrades and publication remain the next release gates.
 
 ## Selected-task continuation - 2026-10-18
 

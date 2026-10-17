@@ -5,7 +5,7 @@ default_concurrency: 1
 canonical_source: .aide/queue
 items:
   - id: AIDE-LITE-SUCCESSOR-01
-    status: running
+    status: passed_with_notes
     title: Preserve published assets and prepare an additive Lite successor
     task: .aide/queue/AIDE-LITE-SUCCESSOR-01/task.yaml
     exec_plan: .aide/queue/AIDE-LITE-SUCCESSOR-01/ExecPlan.md

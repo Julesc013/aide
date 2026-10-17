@@ -1,0 +1,19 @@
+{
+  "tests_run": 1,
+  "failures": 0,
+  "errors": 0,
+  "skips": [],
+  "test_ids": [
+    "test_stable_successor.StableSuccessorTests.test_validator_rejects_coherent_wrong_identity"
+  ],
+  "test_inputs": {
+    ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+    ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+    ".aide/scripts/tests/test_stable_release_admission.py": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+    ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+    ".aide/scripts/tests/test_stable_successor.py": "fc20f6384e7f9e7bd70fd11f80ba804522dcdcb47bc013d3cacee23119110352"
+  },
+  "subject": "delivered",
+  "batch": "delivered_remaining",
+  "scope": "synthetic release lineage; not actual published-predecessor upgrade evidence"
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "aide.lite-successor.integration-effect.v1",
+  "base": "33ec403f0e4f17af919aa5685855f57760619e7e",
+  "candidate": "Exact independently reviewed terminal staged tree committed byte-identically; substitute only actual commit/tree",
+  "task_branch": "task/aide-lite-successor-01",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "expected_local_dev": "33ec403f0e4f17af919aa5685855f57760619e7e",
+  "expected_local_main": "33ec403f0e4f17af919aa5685855f57760619e7e",
+  "expected_remote_dev": "33ec403f0e4f17af919aa5685855f57760619e7e",
+  "expected_remote_main": "33ec403f0e4f17af919aa5685855f57760619e7e",
+  "effects": [
+    "Fresh clean helper plan, exact source tree and full structured commit range; sole checkout, running dispatch and idle estate under shared lock. Fetch dev/main only and verify exact local/remote refs and ancestry.",
+    "CAS fast-forward local dev from expected base to accepted candidate; nonforce exact-SHA push; verify remote dev.",
+    "After dev sync, full read-only validation and main..dev structured commit check with retained logs. Fresh source/ref/ownership/config/estate guards before CAS main and nonforce exact-SHA push. Verify both remote refs.",
+    "After main sync, run child run_preview.py verify. Check fixed 33ec403f..2b489c5e six-commit range and all six bytes. Stop retirement on failure and retain actual state.",
+    "After confirmed qualified dev/main refs, switch sole checkout to dev, verify clean and ancestry, then branch -d only task/aide-lite-successor-01. No task remote branch exists or is created."
+  ],
+  "required_evidence": [
+    "Source 60 composed from retained 22, remaining 27 and repaired 11, with original errors/timeouts preserved.",
+    "Delivered 25 composed from completed 18, retained 6 and final 1; exact method IDs, inputs and no skipped methods.",
+    "Ownership 6, exporter/doctor/full validation/pack status and actual declaration resolution PASS. Pack 862: exactly four payload changes and three metadata changes, original public assets preserved.",
+    "Fixed six-commit preview through 2b489c5e PASS, zero malformed, exact six-output replay. Closure metadata adds no product/test/pack changes; full seven-commit range checked separately.",
+    "All eight jobs collected, hash-verified and retired; no further managed job admitted."
+  ],
+  "forbidden": [
+    "force push",
+    "history rewrite",
+    "tag or release changes",
+    "protection bypass",
+    "unrelated branch deletion",
+    "target mutation",
+    "provider/model requests"
+  ],
+  "failure_response": "Append started/completed effects to integration-result.log with flush/fsync. Inspect actual local/remote effects after ambiguity before any retry. Preserve accepted candidate and existing work.",
+  "operational_limits": [
+    "actual successor archives and published-predecessor upgrade unqualified",
+    "installed-host delivery and read isolation unqualified",
+    "native DiskEd ownership pending",
+    "whole-outcome efficiency unknown"
+  ]
+}
