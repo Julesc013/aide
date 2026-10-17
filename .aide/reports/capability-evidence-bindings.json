@@ -30,10 +30,10 @@
       "state": "observed"
     },
     {
-      "bytes": 5773,
+      "bytes": 5451,
       "path": ".aide/context/latest-task-packet.md",
       "reason": "",
-      "sha256": "9351a472226a25ad9dd51286cc8a98aae2415c74fc860af9f99f3985e798bec8",
+      "sha256": "8fd9437513ccb49be69c083d449f7bb86a77a342dc6a604ab381d7392dbf933d",
       "state": "observed"
     },
     {
@@ -170,10 +170,10 @@
       "state": "observed"
     },
     {
-      "bytes": 2395472,
+      "bytes": 2398000,
       "path": ".aide/scripts/aide_lite.py",
       "reason": "",
-      "sha256": "a804e8ef439cfaf842e9faafe66b07f133d06e6bf4ad75f9fb3b8e8776c9a15c",
+      "sha256": "c680cd09f7c6f3c259d47e9ae6dbfb46fb84868524f378acb426e9531fb6dd62",
       "state": "observed"
     },
     {

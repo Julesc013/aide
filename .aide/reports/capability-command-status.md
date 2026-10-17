@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-git-defaults-01`
-- current_commit: `88fa0008c5670df41e5fc6aa061a519d66f48495`
+- current_branch: `task/aide-installed-changelog-guard-01`
+- current_commit: `7f42f88df495e85eeb94eb3b6a80ad8b2a84ddc7`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

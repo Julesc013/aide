@@ -1,15 +1,15 @@
 # AIDE Latest Task Packet
 
-task_id: AIDE-GIT-DEFAULTS-01
+task_id: AIDE-INSTALLED-CHANGELOG-GUARD-01
 projection_only: true
 
 ## PHASE
 
-AIDE-GIT-DEFAULTS-01 - Make frequent safe integration and local task branches portable defaults
+AIDE-INSTALLED-CHANGELOG-GUARD-01 - Recognize installed changelog work without weakening source admission
 
 ## GOAL
 
-Make frequent safe integration and local task branches portable defaults
+Recognize installed changelog work without weakening source admission
 
 ## WHY
 
@@ -17,9 +17,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-GIT-DEFAULTS-01/task.yaml` (selected scope and acceptance)
-- `.aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md` (continuation; when present)
-- `.aide/queue/AIDE-GIT-DEFAULTS-01/status.yaml` (actual state; when present)
+- `.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/task.yaml` (selected scope and acceptance)
+- `.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/ExecPlan.md` (continuation; when present)
+- `.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/status.yaml` (actual state; when present)
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -46,42 +46,30 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-GIT-DEFAULTS-01/**`
-- `.aide/policies/git-workflow.yaml`
-- `.aide/policies/branch-roles.yaml`
-- `.aide/policies/branch-protection.yaml`
-- `.aide/policies/github-protection.yaml`
-- `.aide/policies/promotion-rules.yaml`
-- `.aide/policies/prune-policy.yaml`
-- `.aide/git/*.yaml`
-- `.aide/git/*.md`
+- `.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/**`
 - `.aide/scripts/aide_lite.py`
-- `.aide/scripts/tests/test_q28_git_workflow.py`
-- `.aide/scripts/tests/test_q29_git_helper.py`
+- `.aide/scripts/tests/test_export_import.py`
 - `.aide/scripts/tests/test_q31_export_pack_governance.py`
-- `.aide/scripts/tests/test_q35_github_advisory.py`
-- `.aide/scripts/tests/test_git_defaults.py`
-- `AGENTS.md`
-- `.aide/adapters/templates/AGENTS.md.template`
-- `docs/reference/git-workflow-policy.md`
-- `docs/reference/git-helper-workflow.md`
-- `docs/reference/branch-roles.md`
-- `docs/reference/github-protection-ci-advisory.md`
+- `.aide/scripts/tests/test_installed_changelog_guard.py`
+- `.aide/reports/capability-*.json`
+- `.aide/reports/capability-*.md`
+- `.aide/export/aide-lite-pack-v0/**`
+- `.aide/changelog/**`
+- `.aide/intake/latest-*`
+- `.aide/context/latest-task-packet.md`
 - `.aide/queue/index.yaml`
+- `.aide/queue/AIDE-GIT-DEFAULTS-01/REPORT.md`
+- `.aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md`
+- `.aide/queue/AIDE-GIT-DEFAULTS-01/status.yaml`
+- `.aide/queue/AIDE-GIT-DEFAULTS-01/evidence/**`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
 - `README.md`
 - `PLANS.md`
 - `IMPLEMENT.md`
 - `DOCUMENTATION.md`
-- `.aide/intake/latest-*`
-- `.aide/context/latest-task-packet.md`
-- `.aide/generated/**`
-- `.aide/github/**`
-- `.aide/reports/capability-*.json`
-- `.aide/reports/capability-*.md`
-- `.aide/verification/latest-verification-report.md`
-- `.aide/export/aide-lite-pack-v0/**`
+- `docs/reference/changelog-preview.md`
+- `docs/reference/git-workflow-policy.md`
 
 ## FORBIDDEN_PATHS
 
@@ -150,8 +138,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 5773
-- approx_tokens: 1444
+- chars: 5451
+- approx_tokens: 1363
 - budget_status: PASS
 - warnings:
   - none

@@ -5166,3 +5166,7 @@ Tag0f293eb6 and pack sourcea17cf4b3 remain distinct immutable identities.
 No code/export/archive or unsupported profile was changed. Broader containment,
 read isolation, actual model editing, whole-outcome efficiency, wider cleanup
 and downstream work remain open; this is not whole-programme completion.
+
+## Installed changelog compatibility repair - 2026-10-17
+
+[AIDE-INSTALLED-CHANGELOG-GUARD-01](.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/ExecPlan.md) restores the existing installed workflow using receipt-based recognition, then qualifies the exported defaults/customization before main promotion. Two bounded jobs; prior failures remain evidence.

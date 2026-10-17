@@ -1,0 +1,11 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-INSTALLED-CHANGELOG-GUARD-01
+status: running
+result: PENDING
+classification: admitted
+review_gate: exact_source_and_each_effect_required
+next_action: prepare_narrow_guard_and_affected_tests
+jobs_allocated: 0
+maximum_jobs: 2
+product_qualified: false
+target_mutated: false

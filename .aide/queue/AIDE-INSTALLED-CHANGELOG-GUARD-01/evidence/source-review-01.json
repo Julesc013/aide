@@ -1,0 +1,7 @@
+{
+  "verdict": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "tree": "4cc73405dd5c557b128c28f7ba508692fb41e9e5",
+  "finding": "Advisory task_os_profile_role misclassifies commented/ambiguous self-hosting identity. Use conservative supported scalar recognition and refusal coverage.",
+  "jobs_allocated": 0
+}

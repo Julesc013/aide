@@ -1,13 +1,13 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-git-fb7ff815d7ec
-- title: Git WorkUnit Draft - Require behavior proof and live-test validation plan before implementation
+- workunit_id: draft-install-1db3857943cb
+- title: Install WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight
 - status: draft
-- task_class: git
+- task_class: install
 - risk_class: governance
-- sizing_class: live_test_gate
-- objective: Normalize prompt into a bounded git WorkUnit draft: require behavior proof and live-test validation plan before implementation.
+- sizing_class: two_shot
+- objective: Normalize prompt into a bounded install WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
 - why: AIDE compiles raw prompts into bounded WorkUnits before execution.
 
 ## Preflight
@@ -19,14 +19,14 @@
 ## Implementation Outline
 
 - Reconcile repo state before editing.
-- require behavior proof and live-test validation plan before implementation
+- draft the smallest safe WorkUnit after repo-state preflight
 - Stop at review gates and record evidence before execution.
 
 ## Validation
 
 - git diff --check
-- py -3 .aide/scripts/aide_lite.py git plan
 - py -3 .aide/scripts/aide_lite.py intent validate
+- target-local preflight validation; no source-side target mutation
 
 ## Evidence
 
@@ -48,9 +48,8 @@
 - no provider/model/network calls
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not merge, push, promote, or prune without reviewed branch plan
 
 ## Recovery
 
-- idempotency: prompt_hash:fb7ff815d7ec9174b3295816b8d0536e25f1a0dcbd0cdbdadfd8a0abe7c43b1f; status:draft; compile_only:true
+- idempotency: prompt_hash:1db3857943cb2185435e9cb4c2c439857ba639fda5ead9a66849fa73f60fdf51; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

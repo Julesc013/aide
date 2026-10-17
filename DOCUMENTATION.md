@@ -1160,3 +1160,5 @@ Tag0f293eb6 and pack sourcea17cf4b3 remain distinct immutable identities.
 No code/export/archive or unsupported profile was changed. Broader containment,
 read isolation, actual model editing, whole-outcome efficiency, wider cleanup
 and downstream work remain open; this is not whole-programme completion.
+
+- [Installed changelog recognition](docs/reference/changelog-preview.md) distinguishes project-owned queues from source admission; [bounded repair](.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/ExecPlan.md) tracks actual qualification.

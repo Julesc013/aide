@@ -1,0 +1,15 @@
+{
+  "before": {
+    "refs/heads/dev": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a",
+    "refs/heads/main": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a"
+  },
+  "candidate": "7f42f88df495e85eeb94eb3b6a80ad8b2a84ddc7",
+  "tree": "c96f35db1e4da54958969b527116f3569d8cf4d0",
+  "push_exit": 0,
+  "push_stdout": "",
+  "push_stderr": "To https://github.com/Julesc013/aide.git\n   6f2abc4c..7f42f88d  dev -> dev\n",
+  "after": {
+    "refs/heads/dev": "7f42f88df495e85eeb94eb3b6a80ad8b2a84ddc7",
+    "refs/heads/main": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a"
+  }
+}

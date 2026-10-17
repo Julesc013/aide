@@ -1,0 +1,52 @@
+schema_version: aide.queue-task.v0
+id: AIDE-INSTALLED-CHANGELOG-GUARD-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Recognize installed changelog work without weakening source admission
+type: implementation
+status: running
+admission_ref: .aide/queue/AIDE-GIT-DEFAULTS-01/evidence/installed-changelog-guard-admission.md
+admission_sha256: a84945d419c2a5e2a7bcaed18ed82b5f83aaa2ea86b824b4f5b7ee334c6bc9fe
+admission_verdict: ACCEPT_by_root_review_disked_continuation
+branch: task/aide-installed-changelog-guard-01
+branch_base: 7f42f88df495e85eeb94eb3b6a80ad8b2a84ddc7
+allowed_paths_source: admission_ref
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_export_import.py
+    - .aide/scripts/tests/test_q31_export_pack_governance.py
+    - .aide/scripts/tests/test_installed_changelog_guard.py
+    - .aide/reports/capability-*.json
+    - .aide/reports/capability-*.md
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/**
+    - .aide/intake/latest-*
+    - .aide/context/latest-task-packet.md
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-GIT-DEFAULTS-01/REPORT.md
+    - .aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md
+    - .aide/queue/AIDE-GIT-DEFAULTS-01/status.yaml
+    - .aide/queue/AIDE-GIT-DEFAULTS-01/evidence/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - README.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/changelog-preview.md
+    - docs/reference/git-workflow-policy.md
+  forbidden_operations:
+    - bypass_source_admission_or_weaken_original_consumer_assertions
+    - real_target_or_provider_effects
+    - published_asset_tag_or_protection_mutation
+    - unreviewed_branch_effects_or_deletion
+acceptance:
+  - Original installed Q31 changelog consumer passes with target-owned queue.
+  - Invalid receipts and damaged source cannot use installed recognition.
+  - Packaging and test admission retain existing boundaries.
+  - Actual exported defaults and project customization pass consumer checks.
+verification:
+  maximum_jobs: 2
+  config_digest: 61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90
+review_gate: independent_source_effect_and_terminal_verdicts

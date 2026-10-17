@@ -1,0 +1,14 @@
+# Installed changelog guard repair
+
+Objective: restore changelog preview in an installed Lite project with its own queue while preserving managed source admission. Extend the existing guard and receipt validation only.
+
+Scope and authority: accepted admission in ../AIDE-GIT-DEFAULTS-01/evidence/installed-changelog-guard-admission.md (a84945d419c2a5e2a7bcaed18ed82b5f83aaa2ea86b824b4f5b7ee334c6bc9fe), parent owner delegation and /root/review_disked_continuation ACCEPT at tree c96f35db. Follow its exact allowlist.
+
+1. Recognize only a validated installed CLI receipt for the changelog operation; refuse source self-hosting identity, pending lifecycle intents, malformed receipts and changed CLI. Preserve project-owned queues and profiles.
+2. Add focused positive/negative tests, retain original Q31 consumer and source guard checks. Independent exact source/effect review precedes one managed qualification job.
+3. Review actual result and an owned export effect; regenerate the development payload, run actual fresh/default and customized-upgrade consumers and original Q31 in the second job. Preserve original evidence and unchanged published assets.
+4. Review terminal results, sync dev and promote main only when applicable required checks pass. No new release or target changes.
+
+Maximum two jobs, unchanged configured limits/reserves. Failure is retained; no implicit third allocation. Source preparation and diagnostics are distinct from dispatch. No new dependency, root, clone, provider spending, deletion or protection change. Current Git-default evidence remains valid for unchanged definitions.
+
+Progress: admission ACCEPT, local branch created from reviewed and remotely verified dev checkpoint 7f42f88d. No source edits or jobs at plan creation.
