@@ -19,3 +19,10 @@ Historical global review-ref warning is nonblocking: the physical prompt exists 
 this task has its own exact review packet. No warning is used to waive a required
 check. Fixed-range preview remains pending allocation3; integration separately gated.
 Model calls requested0; whole-outcome controller/review cost remains unknown.
+
+Allocation3 PASS: job4fbb6b275be64c2686830f6dbeb84718, fixed range36d388a7..5f9bb31a
+contains all three source commits, zero malformed; all six outputs replay exactly.
+Prior-preview bytes match retained preimages. Collection digests verified; retired,
+quiescent, scratch absent and reservation released. Three allocations exhausted;
+no further job authorized. Actual integration and post-dev checks remain conditional
+on exact terminal review and fresh refs.

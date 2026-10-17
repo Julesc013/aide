@@ -1,33 +1,64 @@
 {
   "follow_up": [
     {
-      "commit": "a3ef7e97f0b5",
-      "summary": "Run one reviewed preview allocation, review closure, then integrate dev and main."
+      "commit": "498eb2c09e92",
+      "summary": "Run the exact source job, retain evidence, then qualify the delivered payload."
+    },
+    {
+      "commit": "45f29220a30d",
+      "summary": "Run allocation2 after exact review and fresh admission; retain all outcomes."
+    },
+    {
+      "commit": "5f9bb31a7a84",
+      "summary": "Qualify the fixed source-range preview, independently review closure and integrate."
     }
   ],
   "highlights": [
     {
       "breaking": false,
-      "category": "Docs",
-      "commit": "a3ef7e97f0b5",
-      "subject": "docs(memory): replace obsolete phase routing with current evidence",
-      "summary": "Correct AIDE source-local task context and current-risk references."
+      "category": "Fixed",
+      "commit": "498eb2c09e92",
+      "subject": "fix(validation): preserve uncertainty in test-impact observations",
+      "summary": "Prevent unavailable changed-path observations from appearing unchanged."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "5f9bb31a7a84",
+      "subject": "chore(validation): qualify impact advice and prepare promotion",
+      "summary": "Preserve uncertainty and known paths in test-impact planning."
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "a3ef7e97f0b5",
-      "summary": "This correction does not qualify another runtime, machine, package or release."
+      "commit": "498eb2c09e92",
+      "summary": "Path mappings remain heuristic; T2 does not prove coverage or authorize tests."
+    },
+    {
+      "commit": "45f29220a30d",
+      "summary": "The repaired selftest remains unqualified until its actual run."
+    },
+    {
+      "commit": "5f9bb31a7a84",
+      "summary": "Heuristic advice is not complete dependency proof or execution authority."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0",
-  "source_range": "4f2c39606378492622fa8580152373fffc074d7c..a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0",
+  "source_head": "5f9bb31a7a84255befb74b7a3841d09a045d1646",
+  "source_range": "36d388a72b6e6e941ca84c93387d742f85af3064..5f9bb31a7a84255befb74b7a3841d09a045d1646",
   "validation_summary": [
     {
-      "commit": "a3ef7e97f0b5",
-      "summary": "PASS: 15 local links, 792 approximate tokens and three actual read-only task views."
+      "commit": "498eb2c09e92",
+      "summary": "PASS: original missing-base defect observed without writes."
+    },
+    {
+      "commit": "45f29220a30d",
+      "summary": "Attempt1: 12/13 passed, all seven new regressions passed; original failure retained."
+    },
+    {
+      "commit": "5f9bb31a7a84",
+      "summary": "PASS: source13, ownership6 and delivered13; zero errors or skips."
     }
   ],
   "warnings": []

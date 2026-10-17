@@ -1,0 +1,33 @@
+{
+  "base": "5f9bb31a7a84255befb74b7a3841d09a045d1646",
+  "files": {
+    ".aide/changelog/CHANGELOG.preview.md": "6ce6127b77f45836eede8b8e7cc52143887527c1170f1b20d6fe1e145a70f1fa",
+    ".aide/changelog/RELEASE_NOTES.preview.md": "731404548c61a2cc289637b06c58539a42bbe2f73762d92aa1147d901cfdc9c9",
+    ".aide/changelog/changelog.preview.json": "0862d64dd0d7d9d8130d76db917819459acc19c26e3a6cf270d016bfd5e0c27c",
+    ".aide/changelog/latest-changelog-report.md": "e13b683d1f2b73cd4fb255a8c3111fe8ed1b787c26545d20a0a10f4073a8f9a0",
+    ".aide/changelog/malformed-commits.md": "fc6a91c940c67f5226ff4862e19203c14a20a3a73fc58bb88344530a7aa8c570",
+    ".aide/changelog/release-notes.preview.json": "381ef43c1650ef4f33cae87ec7b9219e0c3171b86e01bc4bd5c05099dd79b248",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md": "930a953ba56423b76e4e86d1040e20ad40b501c124e76b0e97ea5eb615ef09af",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml": "6f9d3dc952a59463a7fe0a375a68e8aa3319d1b0a3293ea9e83c871a32bb45b1",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/ExecPlan.md": "bf0c7da20eaf35f995a0aa5887d93751eab0561a44731e0e6709511d51311457",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/REPORT.md": "8695238f9221f79a16db58fac5fe6ab8897c547873788454934e89435e0bc1c5",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/closure-message.txt": "a1c6de0e3e4599f93ef8666034ad4b65c219d3e3a062de88cdce5ef2c2f29133",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/dev-review-packet.md": "50b82b7795eeb398bf5143a69161c6a4a63eff8af4bfebe9d329ac3d6fb19f85",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/preview-attempt-03.json": "f61a6cd183eeebdf940ced85ddbf580e20d56fac8cae5898972fbc2f8834d9ba",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/preview-commit-result.json": "940671a7a56dd11993623de3de879ad6ef4a581cde1ed1d314e636047bed7c72",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/preview-note-disposition.md": "749f67897fa0ac4513c0390bced48ee427902ee496256100aafe6de04e1925b5",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/preview-result.json": "39cdfea1e18d67d24d7f4dd64d66eb6ef5894bdda934deaad58dc32a18b59085",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/preview-review.md": "061f8244f77a20dab233c2b571c73a12c299a448cabb40c10d9b6403fd7fc130",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/validation.md": "7e75a30008294251309b55b15783ef30d864b3fc90182cd15160e5ce820d4ce0",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/status.yaml": "ac84f592ea82b8c40377ffd2d9b2a4682ec2e2c1f66d0c7d4f52b18f26eba226",
+    ".aide/queue/AIDE-IMPACT-COVERAGE-01/task.yaml": "7f9c61194b87f56cf9638ef12d00d0b6db1833e56bd4382a84e266267079863f",
+    ".aide/queue/index.yaml": "b238166db8f9dfa9bdd52b76a3ac3ec8c9db35f0d744b152c88fcfd92e4e9248",
+    "DOCUMENTATION.md": "0d9d4919ea820604c53c305075617da616b26e8bfc766d63fcbbcbe251d81264",
+    "IMPLEMENT.md": "03a567ee0ec5c1fe307b274421d3d9e233a9d174ccad60e8aaf1c92678bb67a8",
+    "PLANS.md": "67fa4bbd8a2f24ffe762310ba779b2886e743665c9c28fc411ef23d8e0a31033"
+  },
+  "effect_sha256": "dd21682c9a39204c841aa0b76b221567c7d52d569e962cf1b3d01f978c8db7dc",
+  "message_sha256": "a1c6de0e3e4599f93ef8666034ad4b65c219d3e3a062de88cdce5ef2c2f29133",
+  "source_and_pack_qualified_commit": "45f29220a30ddc4af87d80a62755817ab349c1d9",
+  "preview_subject": "36d388a72b6e6e941ca84c93387d742f85af3064..5f9bb31a7a84255befb74b7a3841d09a045d1646"
+}

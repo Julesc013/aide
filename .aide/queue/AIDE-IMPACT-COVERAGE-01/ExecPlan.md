@@ -82,3 +82,9 @@ retired/quiescent, collected digests verified, scratch absent and reservations r
 Doctor/validate/pack-status pass; same862 pack members, four payloads plus manifest/
 checksums changed, published1.0 unchanged. Prepare allocation3 fixed preview and exact
 integration effect; no dev/main changes yet.
+
+Allocation3 PASS and retired: three-commit fixed preview, six exact outputs, zero
+malformed. All3 allocations terminal, original FAIL preserved. Terminal dev-review
+packet includes explicit rubric/gate references. Qualification is complete for this
+bounded source/export change; actual branch effects are recorded only in the guarded
+integration receipt after exact closure acceptance. No further jobs authorized.

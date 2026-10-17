@@ -800,3 +800,8 @@ AIDE-IMPACT-COVERAGE-01 admitted from36d388a7 under P6.impact: missing Git scope
 must not become no-change/T0 advice. Source/tests prepared through existing owners;
 source, delivered and preview jobs remain separately gated. No prior qualification
 is reopened and the preserved Lite1.1 branch remains independently gated.
+
+P6 impact advice qualified through AIDE-IMPACT-COVERAGE-01: source13, ownership6,
+actual delivered13, structural checks and exact preview pass. Original failed alias
+fixture retained; all3 jobs retired. Ref state is governed by the child's actual
+integration receipt. This does not close actual-host/native-adoption/release gates.

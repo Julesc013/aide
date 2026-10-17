@@ -4071,9 +4071,9 @@ items:
     evidence: .aide/queue/AIDE-CURRENT-MEMORY-01/evidence
 
   - id: AIDE-IMPACT-COVERAGE-01
-    status: needs_review
-    result: SOURCE_CANDIDATE
-    planning_state: bounded_conservative_impact_source_candidate
+    status: passed_with_notes
+    result: SOURCE_DELIVERED_AND_PREVIEW_PASS
+    planning_state: qualified_conservative_impact_integration_receipt_required
     title: Preserve unknown coverage in existing test-impact advice
     task: .aide/queue/AIDE-IMPACT-COVERAGE-01/task.yaml
     exec_plan: .aide/queue/AIDE-IMPACT-COVERAGE-01/ExecPlan.md

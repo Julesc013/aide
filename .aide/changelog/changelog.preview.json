@@ -1,17 +1,17 @@
 {
   "categories": {
-    "Docs": [
+    "Fixed": [
       {
-        "aide_phase": "current-memory-correction",
-        "aide_result": "PASS_WITH_NOTES",
+        "aide_phase": "source-candidate",
+        "aide_result": "CANDIDATE",
         "breaking": false,
-        "category": "Docs",
-        "commit": "a3ef7e97f0b5",
-        "commit_sha": "a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0",
-        "entry": "Correct AIDE source-local task context and current-risk references.",
-        "follow_up": "- Run one reviewed preview allocation, review closure, then integrate dev and main.\n- Preserve existing host, downstream ownership and complete-outcome measurement work.\n\nAIDE-Task: AIDE-CURRENT-MEMORY-01\nAIDE-Phase: current-memory-correction\nAIDE-Result: PASS_WITH_NOTES\nAIDE-Scope: source-memory-and-derived-binding\nAIDE-Token-Impact: compact-current-context-no-new-model-runs\nAIDE-Quality-Gate: exact-independent-review-required-before-commit",
-        "risks": "- This correction does not qualify another runtime, machine, package or release.\n- The separate Lite 1.1 candidate retains its original evidence and pending gates.",
-        "scope": "memory",
+        "category": "Fixed",
+        "commit": "498eb2c09e92",
+        "commit_sha": "498eb2c09e927e621d862ff98afabdb8d3ca218d",
+        "entry": "Prevent unavailable changed-path observations from appearing unchanged.",
+        "follow_up": "- Run the exact source job, retain evidence, then qualify the delivered payload.\n- Review actual outputs and Git effects before dev/main promotion.\n\nAIDE-Task: AIDE-IMPACT-COVERAGE-01\nAIDE-Phase: source-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: existing-impact-observation-and-advice\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-source-and-job-review-required",
+        "risks": "- Path mappings remain heuristic; T2 does not prove coverage or authorize tests.\n- This candidate is not a new qualified package or release.",
+        "scope": "validation",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -21,29 +21,82 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "docs(memory): replace obsolete phase routing with current evidence",
-        "summary": "Correct AIDE source-local task context and current-risk references.",
-        "type": "docs",
-        "validation": "- PASS: 15 local links, 792 approximate tokens and three actual read-only task views.\n- PASS: doctor and full structural validation after one reviewed ledger refresh.\n- PASS: capability classification unchanged, protected inputs and scoped diff checks.\n- PRESERVED: initial stale-binding failures and controller bookkeeping stops.\n- NOTE: historical global review-reference warning; no product tests; one promotion preview allocation remains."
+        "subject": "fix(validation): preserve uncertainty in test-impact observations",
+        "summary": "Prevent unavailable changed-path observations from appearing unchanged.",
+        "type": "fix",
+        "validation": "- PASS: original missing-base defect observed without writes.\n- PASS: original six method ASTs unchanged; new source and runner parse.\n- NOT RUN: one exact reviewed source job and later delivered qualification.\n- NOTE: capability binding needs its scoped refresh before structural acceptance."
+      },
+      {
+        "aide_phase": "qualified-source-and-preview-preparation",
+        "aide_result": "PASS_WITH_PENDING_PROMOTION",
+        "breaking": false,
+        "category": "Fixed",
+        "commit": "5f9bb31a7a84",
+        "commit_sha": "5f9bb31a7a84255befb74b7a3841d09a045d1646",
+        "entry": "Preserve uncertainty and known paths in test-impact planning.",
+        "follow_up": "- Qualify the fixed source-range preview, independently review closure and integrate.\n- Preserve separate Lite1.1 qualification and unrelated task branches.\n\nAIDE-Task: AIDE-IMPACT-COVERAGE-01\nAIDE-Phase: qualified-source-and-preview-preparation\nAIDE-Result: PASS_WITH_PENDING_PROMOTION\nAIDE-Scope: existing-planner-portable-export-and-evidence\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-independent-review-required",
+        "risks": "- Heuristic advice is not complete dependency proof or execution authority.\n- No new published release, host support or whole-task savings claim.",
+        "scope": "validation",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "chore(validation): qualify impact advice and prepare promotion",
+        "summary": "Preserve uncertainty and known paths in test-impact planning.",
+        "type": "chore",
+        "validation": "- PASS: source13, ownership6 and delivered13; zero errors or skips.\n- PASS: doctor, structural validate, pack-status, exact payload delta and stable bytes.\n- PASS: two retired/quiescent jobs, collection hashes, scratch absence and reservations.\n- NOT RUN: final preview allocation3 and dev/main integration.\n- WARN: historical global review reference; task-specific review evidence is present."
+      }
+    ],
+    "Internal": [
+      {
+        "aide_phase": "recovery-and-pack-candidate",
+        "aide_result": "CANDIDATE",
+        "breaking": false,
+        "category": "Internal",
+        "commit": "45f29220a30d",
+        "commit_sha": "45f29220a30ddc4af87d80a62755817ab349c1d9",
+        "entry": "Exercise test alias through an admitted source or validated export.",
+        "follow_up": "- Run allocation2 after exact review and fresh admission; retain all outcomes.\n- Qualify preview and integration separately; preserve Lite1.0 and the Lite1.1 branch.\n\nAIDE-Task: AIDE-IMPACT-COVERAGE-01\nAIDE-Phase: recovery-and-pack-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: fixture-repair-existing-export-qualification\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-independent-review-required",
+        "risks": "- The repaired selftest remains unqualified until its actual run.\n- Heuristic impact advice does not prove complete dependency coverage.",
+        "scope": "validation",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "test(validation): qualify impact advice through admitted execution",
+        "summary": "Exercise test alias through an admitted source or validated export.",
+        "type": "test",
+        "validation": "- Attempt1: 12/13 passed, all seven new regressions passed; original failure retained.\n- PASS: collected digests, retirement, absent scratch and released reservation.\n- PASS: one reviewed ledger refresh; classification unchanged, binding CURRENT.\n- NOT RUN: exact allocation2 source13, ownership6 and delivered13."
       }
     ]
   },
   "category_counts": {
-    "Docs": 1
+    "Fixed": 2,
+    "Internal": 1
   },
-  "commit_count": 1,
+  "commit_count": 3,
   "entries": [
     {
-      "aide_phase": "current-memory-correction",
-      "aide_result": "PASS_WITH_NOTES",
+      "aide_phase": "source-candidate",
+      "aide_result": "CANDIDATE",
       "breaking": false,
-      "category": "Docs",
-      "commit": "a3ef7e97f0b5",
-      "commit_sha": "a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0",
-      "entry": "Correct AIDE source-local task context and current-risk references.",
-      "follow_up": "- Run one reviewed preview allocation, review closure, then integrate dev and main.\n- Preserve existing host, downstream ownership and complete-outcome measurement work.\n\nAIDE-Task: AIDE-CURRENT-MEMORY-01\nAIDE-Phase: current-memory-correction\nAIDE-Result: PASS_WITH_NOTES\nAIDE-Scope: source-memory-and-derived-binding\nAIDE-Token-Impact: compact-current-context-no-new-model-runs\nAIDE-Quality-Gate: exact-independent-review-required-before-commit",
-      "risks": "- This correction does not qualify another runtime, machine, package or release.\n- The separate Lite 1.1 candidate retains its original evidence and pending gates.",
-      "scope": "memory",
+      "category": "Fixed",
+      "commit": "498eb2c09e92",
+      "commit_sha": "498eb2c09e927e621d862ff98afabdb8d3ca218d",
+      "entry": "Prevent unavailable changed-path observations from appearing unchanged.",
+      "follow_up": "- Run the exact source job, retain evidence, then qualify the delivered payload.\n- Review actual outputs and Git effects before dev/main promotion.\n\nAIDE-Task: AIDE-IMPACT-COVERAGE-01\nAIDE-Phase: source-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: existing-impact-observation-and-advice\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-source-and-job-review-required",
+      "risks": "- Path mappings remain heuristic; T2 does not prove coverage or authorize tests.\n- This candidate is not a new qualified package or release.",
+      "scope": "validation",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -53,10 +106,60 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "docs(memory): replace obsolete phase routing with current evidence",
-      "summary": "Correct AIDE source-local task context and current-risk references.",
-      "type": "docs",
-      "validation": "- PASS: 15 local links, 792 approximate tokens and three actual read-only task views.\n- PASS: doctor and full structural validation after one reviewed ledger refresh.\n- PASS: capability classification unchanged, protected inputs and scoped diff checks.\n- PRESERVED: initial stale-binding failures and controller bookkeeping stops.\n- NOTE: historical global review-reference warning; no product tests; one promotion preview allocation remains."
+      "subject": "fix(validation): preserve uncertainty in test-impact observations",
+      "summary": "Prevent unavailable changed-path observations from appearing unchanged.",
+      "type": "fix",
+      "validation": "- PASS: original missing-base defect observed without writes.\n- PASS: original six method ASTs unchanged; new source and runner parse.\n- NOT RUN: one exact reviewed source job and later delivered qualification.\n- NOTE: capability binding needs its scoped refresh before structural acceptance."
+    },
+    {
+      "aide_phase": "recovery-and-pack-candidate",
+      "aide_result": "CANDIDATE",
+      "breaking": false,
+      "category": "Internal",
+      "commit": "45f29220a30d",
+      "commit_sha": "45f29220a30ddc4af87d80a62755817ab349c1d9",
+      "entry": "Exercise test alias through an admitted source or validated export.",
+      "follow_up": "- Run allocation2 after exact review and fresh admission; retain all outcomes.\n- Qualify preview and integration separately; preserve Lite1.0 and the Lite1.1 branch.\n\nAIDE-Task: AIDE-IMPACT-COVERAGE-01\nAIDE-Phase: recovery-and-pack-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: fixture-repair-existing-export-qualification\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-independent-review-required",
+      "risks": "- The repaired selftest remains unqualified until its actual run.\n- Heuristic impact advice does not prove complete dependency coverage.",
+      "scope": "validation",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "test(validation): qualify impact advice through admitted execution",
+      "summary": "Exercise test alias through an admitted source or validated export.",
+      "type": "test",
+      "validation": "- Attempt1: 12/13 passed, all seven new regressions passed; original failure retained.\n- PASS: collected digests, retirement, absent scratch and released reservation.\n- PASS: one reviewed ledger refresh; classification unchanged, binding CURRENT.\n- NOT RUN: exact allocation2 source13, ownership6 and delivered13."
+    },
+    {
+      "aide_phase": "qualified-source-and-preview-preparation",
+      "aide_result": "PASS_WITH_PENDING_PROMOTION",
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "5f9bb31a7a84",
+      "commit_sha": "5f9bb31a7a84255befb74b7a3841d09a045d1646",
+      "entry": "Preserve uncertainty and known paths in test-impact planning.",
+      "follow_up": "- Qualify the fixed source-range preview, independently review closure and integrate.\n- Preserve separate Lite1.1 qualification and unrelated task branches.\n\nAIDE-Task: AIDE-IMPACT-COVERAGE-01\nAIDE-Phase: qualified-source-and-preview-preparation\nAIDE-Result: PASS_WITH_PENDING_PROMOTION\nAIDE-Scope: existing-planner-portable-export-and-evidence\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: exact-independent-review-required",
+      "risks": "- Heuristic advice is not complete dependency proof or execution authority.\n- No new published release, host support or whole-task savings claim.",
+      "scope": "validation",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "chore(validation): qualify impact advice and prepare promotion",
+      "summary": "Preserve uncertainty and known paths in test-impact planning.",
+      "type": "chore",
+      "validation": "- PASS: source13, ownership6 and delivered13; zero errors or skips.\n- PASS: doctor, structural validate, pack-status, exact payload delta and stable bytes.\n- PASS: two retired/quiescent jobs, collection hashes, scratch absence and reservations.\n- NOT RUN: final preview allocation3 and dev/main integration.\n- WARN: historical global review reference; task-specific review evidence is present."
     }
   ],
   "generated_by": "aide-lite",
@@ -67,7 +170,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0",
-  "source_range": "4f2c39606378492622fa8580152373fffc074d7c..a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0",
+  "source_head": "5f9bb31a7a84255befb74b7a3841d09a045d1646",
+  "source_range": "36d388a72b6e6e941ca84c93387d742f85af3064..5f9bb31a7a84255befb74b7a3841d09a045d1646",
   "warnings": []
 }

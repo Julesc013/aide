@@ -1,0 +1,36 @@
+docs(validation): close conservative impact qualification
+
+## Summary
+- Close AIDE-IMPACT-COVERAGE-01 qualification with original failure preserved.
+
+## Why
+- Current task views must distinguish qualified behavior from pending branch effects.
+
+## Changed
+- Retain exact three-commit preview and terminal collection evidence.
+- Link the independent review rubric and gate policy in the dev packet.
+- Update task, parent and root records with the bounded result and limitations.
+
+## Validation
+- PASS: source13, ownership6, delivered13, doctor, structural checks and pack-status.
+- PASS: fixed three-commit preview, zero malformed, six exact regenerated outputs.
+- PASS: all three jobs collected and retired; original failed attempt retained.
+- NOT RUN: guarded dev/main sync and its post-dev/post-main checks.
+
+## Changelog
+- Internal: Record qualified conservative impact advice and portable evidence.
+
+## Risks
+- Heuristic coverage and whole-outcome usage remain incomplete.
+- Published Lite1.0 and separate Lite1.1 qualification remain unchanged.
+
+## Follow-up
+- Apply only independently accepted exact integration effect after fresh checks.
+- Continue existing dependency-ready campaign work without reopening unchanged evidence.
+
+AIDE-Task: AIDE-IMPACT-COVERAGE-01
+AIDE-Phase: qualification-closure
+AIDE-Result: PASS_WITH_NOTES
+AIDE-Scope: source-export-preview-evidence-closure
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: exact-independent-closure-and-effect-review

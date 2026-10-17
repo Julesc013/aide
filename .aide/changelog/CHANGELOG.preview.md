@@ -2,20 +2,26 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 4f2c39606378492622fa8580152373fffc074d7c..a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0
-source_head: a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0
-commit_count: 1
+source_range: 36d388a72b6e6e941ca84c93387d742f85af3064..5f9bb31a7a84255befb74b7a3841d09a045d1646
+source_head: 5f9bb31a7a84255befb74b7a3841d09a045d1646
+commit_count: 3
 malformed_count: 0
 preview_only: true
 release_publishing: false
 
 ## Summary
 
-- Docs: 1
+- Fixed: 2
+- Internal: 1
 
-## Docs
+## Fixed
 
-- Correct AIDE source-local task context and current-risk references. (a3ef7e97f0b5 docs(memory): replace obsolete phase routing with current evidence)
+- Prevent unavailable changed-path observations from appearing unchanged. (498eb2c09e92 fix(validation): preserve uncertainty in test-impact observations)
+- Preserve uncertainty and known paths in test-impact planning. (5f9bb31a7a84 chore(validation): qualify impact advice and prepare promotion)
+
+## Internal
+
+- Exercise test alias through an admitted source or validated export. (45f29220a30d test(validation): qualify impact advice through admitted execution)
 
 ## Malformed Commits
 

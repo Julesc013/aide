@@ -2,25 +2,32 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 4f2c39606378492622fa8580152373fffc074d7c..a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0
-source_head: a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0
+source_range: 36d388a72b6e6e941ca84c93387d742f85af3064..5f9bb31a7a84255befb74b7a3841d09a045d1646
+source_head: 5f9bb31a7a84255befb74b7a3841d09a045d1646
 preview_only: true
 
 ## Highlights
 
-- Docs: Correct AIDE source-local task context and current-risk references. (a3ef7e97f0b5)
+- Fixed: Prevent unavailable changed-path observations from appearing unchanged. (498eb2c09e92)
+- Fixed: Preserve uncertainty and known paths in test-impact planning. (5f9bb31a7a84)
 
 ## Validation Summary
 
-- a3ef7e97f0b5: PASS: 15 local links, 792 approximate tokens and three actual read-only task views.
+- 498eb2c09e92: PASS: original missing-base defect observed without writes.
+- 45f29220a30d: Attempt1: 12/13 passed, all seven new regressions passed; original failure retained.
+- 5f9bb31a7a84: PASS: source13, ownership6 and delivered13; zero errors or skips.
 
 ## Known Risks
 
-- a3ef7e97f0b5: This correction does not qualify another runtime, machine, package or release.
+- 498eb2c09e92: Path mappings remain heuristic; T2 does not prove coverage or authorize tests.
+- 45f29220a30d: The repaired selftest remains unqualified until its actual run.
+- 5f9bb31a7a84: Heuristic advice is not complete dependency proof or execution authority.
 
 ## Follow-up
 
-- a3ef7e97f0b5: Run one reviewed preview allocation, review closure, then integrate dev and main.
+- 498eb2c09e92: Run the exact source job, retain evidence, then qualify the delivered payload.
+- 45f29220a30d: Run allocation2 after exact review and fresh admission; retain all outcomes.
+- 5f9bb31a7a84: Qualify the fixed source-range preview, independently review closure and integrate.
 
 ## Warnings
 

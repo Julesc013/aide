@@ -152,3 +152,6 @@ engineering_review_integration_receipt: .aide/queue/AIDE-ENGINEERING-REVIEW-01/e
 
 resume_advice_result_ref: .aide/queue/AIDE-RESUME-PLAN-01/REPORT.md
 resume_advice_integration_receipt: .aide/queue/AIDE-RESUME-PLAN-01/evidence/integration-result.log
+
+impact_coverage_result_ref: .aide/queue/AIDE-IMPACT-COVERAGE-01/REPORT.md
+impact_coverage_integration_receipt: .aide/queue/AIDE-IMPACT-COVERAGE-01/evidence/integration-result.log

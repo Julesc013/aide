@@ -1,0 +1,3 @@
+DECISION: ACCEPT
+Reviewer: /root/review_disked_continuation
+Exact map83b1231d2367cf357afa40b111062a8a613e3d7993dde5d64a340c026a821447; effectdd21682c9a39204c841aa0b76b221567c7d52d569e962cf1b3d01f978c8db7dc; templatedaa44c355e36874d3838b7576b36d20698327e485d19361cc5654c5a514b3a90. Qualified source/export checkpoint and allocation3 only. No required fixes before preview. Before terminal integration review add explicit rubric/review-gate refs. Original attempt1 remains FAIL; integration/retirement separately gated.

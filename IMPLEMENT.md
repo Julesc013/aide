@@ -9,7 +9,9 @@ mapping remains explicit. Source13, delivered13 and ownership6 pass without skip
 The original failed alias-fixture attempt is retained; its subject now uses the
 admitted source or validated export with every assertion preserved. Doctor, structural
 validation and pack-status pass. Four portable payload files changed; published1.0
-bytes are unchanged. Fixed-range preview and final integration are pending exact review.
+bytes are unchanged. The fixed three-commit preview passes with six exact outputs.
+All three jobs are retired; the original failure is preserved. Final integration
+is governed by the exact closure review and observed branch receipt.
 
 
 ## Current memory correction - 2026-10-18
