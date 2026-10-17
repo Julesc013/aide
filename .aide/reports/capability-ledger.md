@@ -3,8 +3,8 @@
 - command: `capability ledger`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-cooperative-review-01`
-- current_commit: `b7eb79cfe3f38480c7131fb6296d367d489337c6`
+- current_branch: `task/aide-quality-discovery-01`
+- current_commit: `33a377743d86f59fd63a042096063d664e200468`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

@@ -1,5 +1,9 @@
 # AIDE Implementation Log
 
+## Quality discovery candidate - 2026-10-18
+
+Added a bounded read-only explanation over the existing ledger and optional retention of computed reuse candidates. Old reports remain valid. No live index regeneration, source scanning or automatic test selection. Fixture and export qualification are pending.
+
 ## Cooperative review preparation - 2026-10-18
 
 Completed one real cooperative review exchange at b7eb79cf using unchanged qualified runtime source and the existing control root. The recipient authored receipt/acceptance/return; sender verified nine references and adopted. One request, six events and unchanged native tables were audited. Two pre-dispatch guard failures are preserved; no extra mutation occurred.

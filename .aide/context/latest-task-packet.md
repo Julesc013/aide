@@ -1,15 +1,15 @@
 # AIDE Latest Task Packet
 
-task_id: AIDE-COOPERATIVE-REVIEW-01
+task_id: AIDE-QUALITY-DISCOVERY-01
 projection_only: true
 
 ## PHASE
 
-AIDE-COOPERATIVE-REVIEW-01 - Complete one actual cooperative readiness review
+AIDE-QUALITY-DISCOVERY-01 - Explain recorded owners helpers and checks
 
 ## GOAL
 
-Complete one actual cooperative readiness review
+Explain recorded owners helpers and checks
 
 ## WHY
 
@@ -17,9 +17,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-COOPERATIVE-REVIEW-01/task.yaml` (selected scope and acceptance)
-- `.aide/queue/AIDE-COOPERATIVE-REVIEW-01/ExecPlan.md` (continuation; when present)
-- `.aide/queue/AIDE-COOPERATIVE-REVIEW-01/status.yaml` (actual state; when present)
+- `.aide/queue/AIDE-QUALITY-DISCOVERY-01/task.yaml` (selected scope and acceptance)
+- `.aide/queue/AIDE-QUALITY-DISCOVERY-01/ExecPlan.md` (continuation; when present)
+- `.aide/queue/AIDE-QUALITY-DISCOVERY-01/status.yaml` (actual state; when present)
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -46,22 +46,29 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-COOPERATIVE-REVIEW-01/**`
+- `.aide/queue/AIDE-QUALITY-DISCOVERY-01/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q38_file_quality.py`
+- `.aide/quality/file-quality-ledger.schema.json`
+- `.aide/reports/file-quality-ledger.schema.json`
+- `docs/reference/file-quality-ledger.md`
 - `.aide/queue/index.yaml`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
-- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/cooperative-review-admission.md`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/quality-discovery-admission.md`
 - `.aide/intake/latest-*`
 - `.aide/context/latest-task-packet.md`
-- `PLANS.md`
-- `IMPLEMENT.md`
-- `DOCUMENTATION.md`
+- `.aide/reports/capability-*`
+- `.aide/export/aide-lite-pack-v0/**`
 - `.aide/changelog/CHANGELOG.preview.md`
 - `.aide/changelog/RELEASE_NOTES.preview.md`
 - `.aide/changelog/changelog.preview.json`
 - `.aide/changelog/latest-changelog-report.md`
 - `.aide/changelog/malformed-commits.md`
 - `.aide/changelog/release-notes.preview.json`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
 
 ## FORBIDDEN_PATHS
 
@@ -130,8 +137,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 5106
-- approx_tokens: 1277
+- chars: 5378
+- approx_tokens: 1345
 - budget_status: PASS
 - warnings:
   - none

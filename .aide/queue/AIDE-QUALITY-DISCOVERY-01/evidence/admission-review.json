@@ -1,0 +1,7 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "subject_sha256": "7343a84ba274e7703ca8f36394aaa58cdb0a7c535f820db8b28dc89cce053300",
+  "findings": [],
+  "scope": "admission only"
+}

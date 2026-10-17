@@ -3,8 +3,8 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 050173bcfdad30cbbe92c5044127ab5f3b2421f4fad0806356dbdc44ddad36bd
-- raw_prompt_excerpt: AIDE-COOPERATIVE-REVIEW-01: use the existing AIDE Requests CLI and already authorized review worker for one real bounded host-delivery readiness review; initialize one explicitly bound ledger in the existing approved control directory af...
+- raw_prompt_hash: 9a56a01c83588045e1208e3aff31d475258fb53b5f6c5fe1de4077cf6d315ccd
+- raw_prompt_excerpt: AIDE-CONVERGENCE-AND-DELIVERY-01: improve the existing read-only quality explain-file command with a compact human and JSON projection of recorded ownership, documentation, likely tests, dependencies and helper reuse candidates; explain...
 - interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release
@@ -31,7 +31,7 @@
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/AIDE-DEPENDENCY-MCP-01/status.yaml`
+- `.aide/queue/AIDE-COOPERATIVE-REVIEW-01/status.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/repo/file-inventory.json`
 - `.aide/repo/latest-repo-intelligence.md`

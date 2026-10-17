@@ -1,0 +1,35 @@
+schema_version: aide.queue-task.v0
+id: AIDE-QUALITY-DISCOVERY-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Explain recorded owners helpers and checks
+type: implementation
+status: running
+admission_ref: ../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/quality-discovery-admission.md
+admission_sha256: 7343a84ba274e7703ca8f36394aaa58cdb0a7c535f820db8b28dc89cce053300
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-QUALITY-DISCOVERY-01/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_q38_file_quality.py
+    - .aide/quality/file-quality-ledger.schema.json
+    - .aide/reports/file-quality-ledger.schema.json
+    - docs/reference/file-quality-ledger.md
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/quality-discovery-admission.md
+    - .aide/intake/latest-*
+    - .aide/context/latest-task-packet.md
+    - .aide/reports/capability-*
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/CHANGELOG.preview.md
+    - .aide/changelog/RELEASE_NOTES.preview.md
+    - .aide/changelog/changelog.preview.json
+    - .aide/changelog/latest-changelog-report.md
+    - .aide/changelog/malformed-commits.md
+    - .aide/changelog/release-notes.preview.json
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+review_gate: exact_source_and_managed_effect_then_qualified_integration
+maximum_jobs: 3

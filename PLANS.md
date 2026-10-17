@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+## Quality discovery - 2026-10-18
+
+[AIDE-QUALITY-DISCOVERY-01](.aide/queue/AIDE-QUALITY-DISCOVERY-01/ExecPlan.md) extends existing Q38 lookup with explained evidence and JSON. Source and delivered-package checks are pending. The prior cooperative review is integrated at33a37774; desktop delivery and DiskEd ownership remain open.
+
 ## Actual cooperative review - 2026-10-18
 
 One real answer-only host-readiness request completed receipt, native acceptance, return and sender-verified adoption through existing Requests. Six lifecycle events and unchanged native state are verified. The one promotion preview passed and retired; exact Git review remains. Desktop delivery and DiskEd ownership stay open.

@@ -1,0 +1,7 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-QUALITY-DISCOVERY-01
+status: running
+result: PENDING
+jobs_allocated: 0
+maximum_jobs: 3
+next_action: implement_and_review_bounded_projection

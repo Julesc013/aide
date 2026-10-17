@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+## Quality discovery reference - 2026-10-18
+
+[File quality reference](docs/reference/file-quality-ledger.md) explains advisory ownership/check/reuse lookup, JSON output, omitted counts and unverified freshness. [Bounded task](.aide/queue/AIDE-QUALITY-DISCOVERY-01/ExecPlan.md) tracks qualification.
+
 ## Cooperative exchange evidence - 2026-10-18
 
 [Observed outcome](.aide/queue/AIDE-COOPERATIVE-REVIEW-01/REPORT.md), [sender verification](.aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/sender-verification.json) and [native answer](.aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/native-answer.md) establish one adopted cooperative review and the missing installed-host connection prerequisite.
