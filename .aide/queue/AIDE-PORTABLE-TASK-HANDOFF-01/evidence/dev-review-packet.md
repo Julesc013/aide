@@ -1,3 +1,3 @@
 # dev-review-packet
 
-Exact source-candidate.json and checks-effect.md govern. Task prompt.md, task.yaml and ExecPlan.md define intent/scope. Review via .aide/prompts/evidence-review.md and .aide/policies/review-gates.yaml. Source checkpoint and first job only; no integration yet.
+Terminal subject: closure-source.json and integration-effect.json. Governing intent/scope: ../prompt.md, ../task.yaml, ../ExecPlan.md. Qualification: ../REPORT.md. Review procedure: .aide/prompts/evidence-review.md; policy: .aide/policies/review-gates.yaml. No waived checks, new release, live target or model effect.

@@ -4098,9 +4098,9 @@ items:
     evidence: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence
 
   - id: AIDE-PORTABLE-TASK-HANDOFF-01
-    status: needs_review
-    result: PENDING
-    planning_state: source_candidate_review
+    status: passed_with_notes
+    result: SOURCE_DELIVERED_INSTALLED_AND_PREVIEW_PASS
+    planning_state: qualified_handoff_integration_receipt_required
     title: Carry bounded task records between sessions
     task: .aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/task.yaml
     exec_plan: .aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/ExecPlan.md

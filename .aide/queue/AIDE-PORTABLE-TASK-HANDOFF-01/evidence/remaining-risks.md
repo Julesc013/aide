@@ -1,3 +1,3 @@
 # remaining-risks
 
-No authenticity, execution authority or atomic capture claim. Worker replacement, native downstream adoption, host binding and whole-task efficiency remain separate. Safe-installed consumer required.
+No authorship, atomic capture, live ownership, execution authority or evidence applicability claim. No automatic worker replacement. Native downstream adoption, desktop-host binding and total controller/review cost remain separate. Published1.0.0 unchanged.

@@ -165,3 +165,6 @@ context_task_selection_result_ref: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/RE
 context_task_selection_integration_receipt: .aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/integration-result.log
 
 # AIDE-PORTABLE-TASK-HANDOFF-01 admitted; bounded source preparation only. Existing native/host gates unchanged.
+
+# Portable task handoff qualified source/delivered/installed; all3jobs retired.
+# Dev/main integration follows child exact effect; native/host gates unchanged.

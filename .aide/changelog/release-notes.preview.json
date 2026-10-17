@@ -1,71 +1,71 @@
 {
   "follow_up": [
     {
-      "commit": "6a50010b7160",
-      "summary": "Qualify source, delivered payload and preview; review integration separately."
+      "commit": "40a5740e7eef",
+      "summary": "Qualify source and actual safe-installed consumers; review integration separately."
     },
     {
-      "commit": "bf15170f5a0d",
-      "summary": "Run one reviewed export job, then preview and separately reviewed integration."
+      "commit": "579925c7c5ee",
+      "summary": "Run reviewed export consumer job and fixed preview before integration review."
     },
     {
-      "commit": "cba99132e729",
-      "summary": "Run final reviewed continuation and review terminal integration separately."
+      "commit": "72d613489ad7",
+      "summary": "Complete fixed preview, terminal review and guarded dev/main synchronization."
     }
   ],
   "highlights": [
     {
       "breaking": false,
-      "category": "Changed",
-      "commit": "bf15170f5a0d",
-      "subject": "test(context): record source proof and prepare delivered qualification",
-      "summary": "Record selected-task context proof and prepare its portable consumer checks."
+      "category": "Added",
+      "commit": "40a5740e7eef",
+      "subject": "feat(task): carry bounded continuation records between sessions",
+      "summary": "Portable task-record export and checksum-bound inspection."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "72d613489ad7",
+      "subject": "test(task): qualify portable and installed task handoff",
+      "summary": "Safe-installed task-record export and read-only comparison."
     },
     {
       "breaking": false,
       "category": "Changed",
-      "commit": "cba99132e729",
-      "subject": "test(context): preserve export and qualify delivered context selection",
-      "summary": "Prepare portable context checks using the already completed export."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "6a50010b7160",
-      "subject": "fix(context): explain the selected task through the existing resolver",
-      "summary": "Context packets follow the recorded task selection and explain uncertainty."
+      "commit": "579925c7c5ee",
+      "subject": "test(task): prepare exported and installed handoff qualification",
+      "summary": "Record task handoff source proof and prepare portable consumer checks."
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "6a50010b7160",
-      "summary": "Recorded selection is not an atomic snapshot, active worker or permission."
+      "commit": "40a5740e7eef",
+      "summary": "Observation is not ownership, authorization, authenticity or atomic capture."
     },
     {
-      "commit": "bf15170f5a0d",
-      "summary": "No active-worker, atomic snapshot, new release or whole-workflow claim."
+      "commit": "579925c7c5ee",
+      "summary": "Bundle inspection does not establish authority, authenticity or atomic capture."
     },
     {
-      "commit": "cba99132e729",
-      "summary": "Source documentation is not an exported pack member; no wider delivery claim."
+      "commit": "72d613489ad7",
+      "summary": "Observations do not transfer worker ownership or execution authority."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "cba99132e729511b497e65ceb4f1c73cc4d6a29a",
-  "source_range": "9a22aa0913965c41685105d0781a70ecad16696c..cba99132e729511b497e65ceb4f1c73cc4d6a29a",
+  "source_head": "72d613489ad7a7429cdeeb49724044789f5308c1",
+  "source_range": "19e237cde0864ca56169a14a7bf8ded5180d6def..72d613489ad7a7429cdeeb49724044789f5308c1",
   "validation_summary": [
     {
-      "commit": "6a50010b7160",
-      "summary": "PASS: syntax and all 17 original binding method ASTs unchanged."
+      "commit": "40a5740e7eef",
+      "summary": "PASS: syntax; 59 existing test methods unchanged; 20 new regressions prepared."
     },
     {
-      "commit": "bf15170f5a0d",
-      "summary": "PASS: source 61, no failures/errors/skips; job fully retired and collection verified."
+      "commit": "579925c7c5ee",
+      "summary": "PASS: source79, no skips; collection and retirement verified; binding CURRENT."
     },
     {
-      "commit": "cba99132e729",
-      "summary": "PASS: source 61; ownership 6; export, doctor, validate and pack status."
+      "commit": "72d613489ad7",
+      "summary": "PASS: source79, delivered79, ownership6; no skips; installed consumer PASS."
     }
   ],
   "warnings": []

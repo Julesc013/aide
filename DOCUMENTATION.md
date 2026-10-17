@@ -1257,3 +1257,8 @@ and downstream work remain open; this is not whole-programme completion.
 ## AIDE-PORTABLE-TASK-HANDOFF-01
 
 Task handoff usage and delivery boundary are documented in docs/reference/task-os-report-only-commands.md; execution evidence belongs to the child.
+
+AIDE-PORTABLE-TASK-HANDOFF-01 qualification: source79/delivered79/ownership6,
+actual safe-installed consumer and fixed preview PASS; all3 jobs retired. See
+`.aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/REPORT.md` for exact scope and receipts.
+Native adoption/host binding/whole-outcome evidence remain separate.

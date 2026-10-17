@@ -14022,4 +14022,9 @@ will be written to the child integration receipt; accounting gaps remain explici
 
 ## AIDE-PORTABLE-TASK-HANDOFF-01
 
-Prepared finite handoff codec, export/inspect CLI, byte-preservation/refusal regressions and safe-installed delivery binding. Runtime qualification pending.
+Initial preparation checkpoint (historical): finite handoff codec, export/inspect CLI, byte-preservation/refusal regressions and safe-installed delivery binding were prepared. Runtime qualification had not run at that checkpoint; the completed results follow below.
+
+AIDE-PORTABLE-TASK-HANDOFF-01 qualification: source79/delivered79/ownership6,
+actual safe-installed consumer and fixed preview PASS; all3 jobs retired. See
+`.aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/REPORT.md` for exact scope and receipts.
+Native adoption/host binding/whole-outcome evidence remain separate.

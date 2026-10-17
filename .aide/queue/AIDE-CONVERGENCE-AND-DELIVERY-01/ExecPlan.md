@@ -833,3 +833,8 @@ review/ref checks and observed integration receipt determine dev/main closure.
 ## AIDE-PORTABLE-TASK-HANDOFF-01
 
 Admitted AIDE-PORTABLE-TASK-HANDOFF-01: finite task-record interchange, source/delivered/safe-installed checks, no live target handoff or worker ownership transfer. Native adoption and actual host binding stay separate.
+
+AIDE-PORTABLE-TASK-HANDOFF-01 qualification: source79/delivered79/ownership6,
+actual safe-installed consumer and fixed preview PASS; all3 jobs retired. See
+`.aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/REPORT.md` for exact scope and receipts.
+Native adoption/host binding/whole-outcome evidence remain separate.

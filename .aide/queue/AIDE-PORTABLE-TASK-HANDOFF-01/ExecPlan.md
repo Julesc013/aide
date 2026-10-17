@@ -84,7 +84,7 @@ Read-only baseline at19e237cd: task-current/resume owners exist; no task-record
 handoff command. Existing WorkUnit protocol and runtime integration handoff solve
 different roles. Existing task-OS reference is exported; protocol envelope and
 workunit_cli are not in Lite, so do not import that dependency tree into Lite.
-Prepared intake only; no implementation, branch, commit or job yet.
+At admission, only intake was prepared; implementation, branch, commit and jobs had not run.
 
 Admission review requested an explicit installed execution profile. This revision
 chooses safe-installed consumers as required acceptance, with a single delivered
@@ -105,3 +105,9 @@ Job80fcc6d4f3694340a5ff10193197260a passed delivered79, ownership6, actual
 safe-installed consumer and preserved real records. Export now864members (helper/
 test added; CLI/reference changed); published assets unchanged. All evidence
 collected and job retired. Fixed preview remains before terminal integration.
+
+Qualification closed: source79/delivered79/ownership6/installed consumer and
+fixed three-commit preview all PASS. All3 jobs retired with exact collections.
+See REPORT.md. Terminal review binds the closure and exact integration effect;
+actual Git refs/receipt determine dev/main sync. Full daily-use qualification,
+native adoption and host binding remain separate; no new release is claimed.

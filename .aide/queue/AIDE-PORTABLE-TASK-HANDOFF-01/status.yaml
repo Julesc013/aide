@@ -1,7 +1,13 @@
 schema_version: aide.queue-status.v0
 id: AIDE-PORTABLE-TASK-HANDOFF-01
-status: needs_review
-result: SOURCE_DELIVERED_INSTALLED_PASS
-planning_state: preview_review
-jobs_allocated: 2
+status: passed_with_notes
+result: SOURCE_DELIVERED_INSTALLED_AND_PREVIEW_PASS
+planning_state: qualified_handoff_integration_receipt_required
+jobs_allocated: 3
 maximum_jobs: 3
+source_tests: 79
+delivered_tests: 79
+ownership_tests: 6
+safe_installed_consumer: passed
+report_ref: REPORT.md
+integration_receipt_ref: evidence/integration-result.log

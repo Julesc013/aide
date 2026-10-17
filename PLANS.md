@@ -5286,3 +5286,8 @@ will be written to the child integration receipt; accounting gaps remain explici
 ## AIDE-PORTABLE-TASK-HANDOFF-01
 
 Portable task-record handoff advances bounded P3 continuation and P8 relay inspection. Safe-installed CLI consumer is mandatory; see the child ExecPlan.
+
+AIDE-PORTABLE-TASK-HANDOFF-01 qualification: source79/delivered79/ownership6,
+actual safe-installed consumer and fixed preview PASS; all3 jobs retired. See
+`.aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/REPORT.md` for exact scope and receipts.
+Native adoption/host binding/whole-outcome evidence remain separate.

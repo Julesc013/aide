@@ -2,33 +2,33 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 9a22aa0913965c41685105d0781a70ecad16696c..cba99132e729511b497e65ceb4f1c73cc4d6a29a
-source_head: cba99132e729511b497e65ceb4f1c73cc4d6a29a
+source_range: 19e237cde0864ca56169a14a7bf8ded5180d6def..72d613489ad7a7429cdeeb49724044789f5308c1
+source_head: 72d613489ad7a7429cdeeb49724044789f5308c1
 preview_only: true
 
 ## Highlights
 
-- Changed: Record selected-task context proof and prepare its portable consumer checks. (bf15170f5a0d)
-- Changed: Prepare portable context checks using the already completed export. (cba99132e729)
-- Fixed: Context packets follow the recorded task selection and explain uncertainty. (6a50010b7160)
+- Added: Portable task-record export and checksum-bound inspection. (40a5740e7eef)
+- Added: Safe-installed task-record export and read-only comparison. (72d613489ad7)
+- Changed: Record task handoff source proof and prepare portable consumer checks. (579925c7c5ee)
 
 ## Validation Summary
 
-- 6a50010b7160: PASS: syntax and all 17 original binding method ASTs unchanged.
-- bf15170f5a0d: PASS: source 61, no failures/errors/skips; job fully retired and collection verified.
-- cba99132e729: PASS: source 61; ownership 6; export, doctor, validate and pack status.
+- 40a5740e7eef: PASS: syntax; 59 existing test methods unchanged; 20 new regressions prepared.
+- 579925c7c5ee: PASS: source79, no skips; collection and retirement verified; binding CURRENT.
+- 72d613489ad7: PASS: source79, delivered79, ownership6; no skips; installed consumer PASS.
 
 ## Known Risks
 
-- 6a50010b7160: Recorded selection is not an atomic snapshot, active worker or permission.
-- bf15170f5a0d: No active-worker, atomic snapshot, new release or whole-workflow claim.
-- cba99132e729: Source documentation is not an exported pack member; no wider delivery claim.
+- 40a5740e7eef: Observation is not ownership, authorization, authenticity or atomic capture.
+- 579925c7c5ee: Bundle inspection does not establish authority, authenticity or atomic capture.
+- 72d613489ad7: Observations do not transfer worker ownership or execution authority.
 
 ## Follow-up
 
-- 6a50010b7160: Qualify source, delivered payload and preview; review integration separately.
-- bf15170f5a0d: Run one reviewed export job, then preview and separately reviewed integration.
-- cba99132e729: Run final reviewed continuation and review terminal integration separately.
+- 40a5740e7eef: Qualify source and actual safe-installed consumers; review integration separately.
+- 579925c7c5ee: Run reviewed export consumer job and fixed preview before integration review.
+- 72d613489ad7: Complete fixed preview, terminal review and guarded dev/main synchronization.
 
 ## Warnings
 

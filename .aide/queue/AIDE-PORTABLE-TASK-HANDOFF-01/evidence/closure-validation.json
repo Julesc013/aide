@@ -1,0 +1,9 @@
+{
+  "command": "py -3 -B .aide/scripts/aide_lite.py validate",
+  "exit_code": 0,
+  "output_capture": "tool_truncated_preserved_suffix",
+  "retained_partial_ref": "closure-validate.log",
+  "full_output_available": false,
+  "prior_full_validation": "attempt-02-qualification.json operations.validate retained stdout",
+  "integration_requirement": "fresh full validate output captured directly to owned log before launch"
+}

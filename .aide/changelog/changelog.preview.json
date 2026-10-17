@@ -1,17 +1,69 @@
 {
   "categories": {
+    "Added": [
+      {
+        "aide_phase": "source-candidate",
+        "aide_result": "CANDIDATE",
+        "breaking": false,
+        "category": "Added",
+        "commit": "40a5740e7eef",
+        "commit_sha": "40a5740e7eef5cdd8c54fd3fc75961d67c482236",
+        "entry": "Portable task-record export and checksum-bound inspection.",
+        "follow_up": "- Qualify source and actual safe-installed consumers; review integration separately.\n\nAIDE-Task: AIDE-PORTABLE-TASK-HANDOFF-01\nAIDE-Phase: source-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: portable-task-record-handoff\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-source-and-job-review-required",
+        "risks": "- Observation is not ownership, authorization, authenticity or atomic capture.\n- Published Lite and live targets remain unchanged.",
+        "scope": "task",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "feat(task): carry bounded continuation records between sessions",
+        "summary": "Portable task-record export and checksum-bound inspection.",
+        "type": "feat",
+        "validation": "- PASS: syntax; 59 existing test methods unchanged; 20 new regressions prepared.\n- NOT RUN: source, delivered and safe-installed runtime qualification."
+      },
+      {
+        "aide_phase": "portable-qualification",
+        "aide_result": "CONSUMER_PASS",
+        "breaking": false,
+        "category": "Added",
+        "commit": "72d613489ad7",
+        "commit_sha": "72d613489ad7a7429cdeeb49724044789f5308c1",
+        "entry": "Safe-installed task-record export and read-only comparison.",
+        "follow_up": "- Complete fixed preview, terminal review and guarded dev/main synchronization.\n\nAIDE-Task: AIDE-PORTABLE-TASK-HANDOFF-01\nAIDE-Phase: portable-qualification\nAIDE-Result: CONSUMER_PASS\nAIDE-Scope: portable-task-record-handoff\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-preview-job-review-required",
+        "risks": "- Observations do not transfer worker ownership or execution authority.\n- Published Lite1.0.0 remains unchanged; this is an additive source capability.",
+        "scope": "task",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "test(task): qualify portable and installed task handoff",
+        "summary": "Safe-installed task-record export and read-only comparison.",
+        "type": "test",
+        "validation": "- PASS: source79, delivered79, ownership6; no skips; installed consumer PASS.\n- PASS: doctor/full validate/pack status; published assets unchanged; jobs retired.\n- NOT RUN: fixed preview and final integration."
+      }
+    ],
     "Changed": [
       {
         "aide_phase": "delivered-preparation",
         "aide_result": "SOURCE_PASS",
         "breaking": false,
         "category": "Changed",
-        "commit": "bf15170f5a0d",
-        "commit_sha": "bf15170f5a0dc41385b732b8d0c0d443dfd55aee",
-        "entry": "Record selected-task context proof and prepare its portable consumer checks.",
-        "follow_up": "- Run one reviewed export job, then preview and separately reviewed integration.\n\nAIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01\nAIDE-Phase: delivered-preparation\nAIDE-Result: SOURCE_PASS\nAIDE-Scope: selected-task-context-portable-consumer\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-delivered-job-review-required",
-        "risks": "- No active-worker, atomic snapshot, new release or whole-workflow claim.",
-        "scope": "context",
+        "commit": "579925c7c5ee",
+        "commit_sha": "579925c7c5ee6f7e353bb076ad02dbbb1285277b",
+        "entry": "Record task handoff source proof and prepare portable consumer checks.",
+        "follow_up": "- Run reviewed export consumer job and fixed preview before integration review.\n\nAIDE-Task: AIDE-PORTABLE-TASK-HANDOFF-01\nAIDE-Phase: delivered-preparation\nAIDE-Result: SOURCE_PASS\nAIDE-Scope: portable-task-record-handoff\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-delivered-job-review-required",
+        "risks": "- Bundle inspection does not establish authority, authenticity or atomic capture.",
+        "scope": "task",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -21,68 +73,16 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "test(context): record source proof and prepare delivered qualification",
-        "summary": "Record selected-task context proof and prepare its portable consumer checks.",
+        "subject": "test(task): prepare exported and installed handoff qualification",
+        "summary": "Record task handoff source proof and prepare portable consumer checks.",
         "type": "test",
-        "validation": "- PASS: source 61, no failures/errors/skips; job fully retired and collection verified.\n- PASS: capability CURRENT with unchanged classification; runner syntax.\n- NOT RUN: actual delivered job and final preview."
-      },
-      {
-        "aide_phase": "delivered-preview-continuation",
-        "aide_result": "EXPORT_PASS_DELIVERED_PENDING",
-        "breaking": false,
-        "category": "Changed",
-        "commit": "cba99132e729",
-        "commit_sha": "cba99132e729511b497e65ceb4f1c73cc4d6a29a",
-        "entry": "Prepare portable context checks using the already completed export.",
-        "follow_up": "- Run final reviewed continuation and review terminal integration separately.\n\nAIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01\nAIDE-Phase: delivered-preview-continuation\nAIDE-Result: EXPORT_PASS_DELIVERED_PENDING\nAIDE-Scope: exact-export-and-fixed-preview\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-continuation-review-required",
-        "risks": "- Source documentation is not an exported pack member; no wider delivery claim.\n- No job-cap increase, live context change, new release or active-worker claim.",
-        "scope": "context",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "test(context): preserve export and qualify delivered context selection",
-        "summary": "Prepare portable context checks using the already completed export.",
-        "type": "test",
-        "validation": "- PASS: source 61; ownership 6; export, doctor, validate and pack status.\n- PASS: exact 862-member inventory, two payloads, original source tests unchanged.\n- NOT RUN: delivered suite and preview; original wrapper failure retained."
-      }
-    ],
-    "Fixed": [
-      {
-        "aide_phase": "source-candidate",
-        "aide_result": "CANDIDATE",
-        "breaking": false,
-        "category": "Fixed",
-        "commit": "6a50010b7160",
-        "commit_sha": "6a50010b7160ea52206edc84c864c016a7ea74c4",
-        "entry": "Context packets follow the recorded task selection and explain uncertainty.",
-        "follow_up": "- Qualify source, delivered payload and preview; review integration separately.\n\nAIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01\nAIDE-Phase: source-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: existing-context-task-selection\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-source-and-job-review-required",
-        "risks": "- Recorded selection is not an atomic snapshot, active worker or permission.\n- No live context regeneration or new qualified release.",
-        "scope": "context",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "fix(context): explain the selected task through the existing resolver",
-        "summary": "Context packets follow the recorded task selection and explain uncertainty.",
-        "type": "fix",
-        "validation": "- PASS: syntax and all 17 original binding method ASTs unchanged.\n- NOT RUN: source and delivered qualification; capability refresh follows review."
+        "validation": "- PASS: source79, no skips; collection and retirement verified; binding CURRENT.\n- PASS: runner syntax and existing export inventory.\n- NOT RUN: delivered/installed consumers and final preview."
       }
     ]
   },
   "category_counts": {
-    "Changed": 2,
-    "Fixed": 1
+    "Added": 2,
+    "Changed": 1
   },
   "commit_count": 3,
   "entries": [
@@ -90,13 +90,13 @@
       "aide_phase": "source-candidate",
       "aide_result": "CANDIDATE",
       "breaking": false,
-      "category": "Fixed",
-      "commit": "6a50010b7160",
-      "commit_sha": "6a50010b7160ea52206edc84c864c016a7ea74c4",
-      "entry": "Context packets follow the recorded task selection and explain uncertainty.",
-      "follow_up": "- Qualify source, delivered payload and preview; review integration separately.\n\nAIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01\nAIDE-Phase: source-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: existing-context-task-selection\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-source-and-job-review-required",
-      "risks": "- Recorded selection is not an atomic snapshot, active worker or permission.\n- No live context regeneration or new qualified release.",
-      "scope": "context",
+      "category": "Added",
+      "commit": "40a5740e7eef",
+      "commit_sha": "40a5740e7eef5cdd8c54fd3fc75961d67c482236",
+      "entry": "Portable task-record export and checksum-bound inspection.",
+      "follow_up": "- Qualify source and actual safe-installed consumers; review integration separately.\n\nAIDE-Task: AIDE-PORTABLE-TASK-HANDOFF-01\nAIDE-Phase: source-candidate\nAIDE-Result: CANDIDATE\nAIDE-Scope: portable-task-record-handoff\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-source-and-job-review-required",
+      "risks": "- Observation is not ownership, authorization, authenticity or atomic capture.\n- Published Lite and live targets remain unchanged.",
+      "scope": "task",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -106,22 +106,22 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "fix(context): explain the selected task through the existing resolver",
-      "summary": "Context packets follow the recorded task selection and explain uncertainty.",
-      "type": "fix",
-      "validation": "- PASS: syntax and all 17 original binding method ASTs unchanged.\n- NOT RUN: source and delivered qualification; capability refresh follows review."
+      "subject": "feat(task): carry bounded continuation records between sessions",
+      "summary": "Portable task-record export and checksum-bound inspection.",
+      "type": "feat",
+      "validation": "- PASS: syntax; 59 existing test methods unchanged; 20 new regressions prepared.\n- NOT RUN: source, delivered and safe-installed runtime qualification."
     },
     {
       "aide_phase": "delivered-preparation",
       "aide_result": "SOURCE_PASS",
       "breaking": false,
       "category": "Changed",
-      "commit": "bf15170f5a0d",
-      "commit_sha": "bf15170f5a0dc41385b732b8d0c0d443dfd55aee",
-      "entry": "Record selected-task context proof and prepare its portable consumer checks.",
-      "follow_up": "- Run one reviewed export job, then preview and separately reviewed integration.\n\nAIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01\nAIDE-Phase: delivered-preparation\nAIDE-Result: SOURCE_PASS\nAIDE-Scope: selected-task-context-portable-consumer\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-delivered-job-review-required",
-      "risks": "- No active-worker, atomic snapshot, new release or whole-workflow claim.",
-      "scope": "context",
+      "commit": "579925c7c5ee",
+      "commit_sha": "579925c7c5ee6f7e353bb076ad02dbbb1285277b",
+      "entry": "Record task handoff source proof and prepare portable consumer checks.",
+      "follow_up": "- Run reviewed export consumer job and fixed preview before integration review.\n\nAIDE-Task: AIDE-PORTABLE-TASK-HANDOFF-01\nAIDE-Phase: delivered-preparation\nAIDE-Result: SOURCE_PASS\nAIDE-Scope: portable-task-record-handoff\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-delivered-job-review-required",
+      "risks": "- Bundle inspection does not establish authority, authenticity or atomic capture.",
+      "scope": "task",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -131,22 +131,22 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "test(context): record source proof and prepare delivered qualification",
-      "summary": "Record selected-task context proof and prepare its portable consumer checks.",
+      "subject": "test(task): prepare exported and installed handoff qualification",
+      "summary": "Record task handoff source proof and prepare portable consumer checks.",
       "type": "test",
-      "validation": "- PASS: source 61, no failures/errors/skips; job fully retired and collection verified.\n- PASS: capability CURRENT with unchanged classification; runner syntax.\n- NOT RUN: actual delivered job and final preview."
+      "validation": "- PASS: source79, no skips; collection and retirement verified; binding CURRENT.\n- PASS: runner syntax and existing export inventory.\n- NOT RUN: delivered/installed consumers and final preview."
     },
     {
-      "aide_phase": "delivered-preview-continuation",
-      "aide_result": "EXPORT_PASS_DELIVERED_PENDING",
+      "aide_phase": "portable-qualification",
+      "aide_result": "CONSUMER_PASS",
       "breaking": false,
-      "category": "Changed",
-      "commit": "cba99132e729",
-      "commit_sha": "cba99132e729511b497e65ceb4f1c73cc4d6a29a",
-      "entry": "Prepare portable context checks using the already completed export.",
-      "follow_up": "- Run final reviewed continuation and review terminal integration separately.\n\nAIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01\nAIDE-Phase: delivered-preview-continuation\nAIDE-Result: EXPORT_PASS_DELIVERED_PENDING\nAIDE-Scope: exact-export-and-fixed-preview\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-continuation-review-required",
-      "risks": "- Source documentation is not an exported pack member; no wider delivery claim.\n- No job-cap increase, live context change, new release or active-worker claim.",
-      "scope": "context",
+      "category": "Added",
+      "commit": "72d613489ad7",
+      "commit_sha": "72d613489ad7a7429cdeeb49724044789f5308c1",
+      "entry": "Safe-installed task-record export and read-only comparison.",
+      "follow_up": "- Complete fixed preview, terminal review and guarded dev/main synchronization.\n\nAIDE-Task: AIDE-PORTABLE-TASK-HANDOFF-01\nAIDE-Phase: portable-qualification\nAIDE-Result: CONSUMER_PASS\nAIDE-Scope: portable-task-record-handoff\nAIDE-Token-Impact: no-model-run-unknown-total-effort\nAIDE-Quality-Gate: independent-preview-job-review-required",
+      "risks": "- Observations do not transfer worker ownership or execution authority.\n- Published Lite1.0.0 remains unchanged; this is an additive source capability.",
+      "scope": "task",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -156,10 +156,10 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "test(context): preserve export and qualify delivered context selection",
-      "summary": "Prepare portable context checks using the already completed export.",
+      "subject": "test(task): qualify portable and installed task handoff",
+      "summary": "Safe-installed task-record export and read-only comparison.",
       "type": "test",
-      "validation": "- PASS: source 61; ownership 6; export, doctor, validate and pack status.\n- PASS: exact 862-member inventory, two payloads, original source tests unchanged.\n- NOT RUN: delivered suite and preview; original wrapper failure retained."
+      "validation": "- PASS: source79, delivered79, ownership6; no skips; installed consumer PASS.\n- PASS: doctor/full validate/pack status; published assets unchanged; jobs retired.\n- NOT RUN: fixed preview and final integration."
     }
   ],
   "generated_by": "aide-lite",
@@ -170,7 +170,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "cba99132e729511b497e65ceb4f1c73cc4d6a29a",
-  "source_range": "9a22aa0913965c41685105d0781a70ecad16696c..cba99132e729511b497e65ceb4f1c73cc4d6a29a",
+  "source_head": "72d613489ad7a7429cdeeb49724044789f5308c1",
+  "source_range": "19e237cde0864ca56169a14a7bf8ded5180d6def..72d613489ad7a7429cdeeb49724044789f5308c1",
   "warnings": []
 }

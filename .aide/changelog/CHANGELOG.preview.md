@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 9a22aa0913965c41685105d0781a70ecad16696c..cba99132e729511b497e65ceb4f1c73cc4d6a29a
-source_head: cba99132e729511b497e65ceb4f1c73cc4d6a29a
+source_range: 19e237cde0864ca56169a14a7bf8ded5180d6def..72d613489ad7a7429cdeeb49724044789f5308c1
+source_head: 72d613489ad7a7429cdeeb49724044789f5308c1
 commit_count: 3
 malformed_count: 0
 preview_only: true
@@ -11,17 +11,17 @@ release_publishing: false
 
 ## Summary
 
-- Changed: 2
-- Fixed: 1
+- Added: 2
+- Changed: 1
+
+## Added
+
+- Portable task-record export and checksum-bound inspection. (40a5740e7eef feat(task): carry bounded continuation records between sessions)
+- Safe-installed task-record export and read-only comparison. (72d613489ad7 test(task): qualify portable and installed task handoff)
 
 ## Changed
 
-- Record selected-task context proof and prepare its portable consumer checks. (bf15170f5a0d test(context): record source proof and prepare delivered qualification)
-- Prepare portable context checks using the already completed export. (cba99132e729 test(context): preserve export and qualify delivered context selection)
-
-## Fixed
-
-- Context packets follow the recorded task selection and explain uncertainty. (6a50010b7160 fix(context): explain the selected task through the existing resolver)
+- Record task handoff source proof and prepare portable consumer checks. (579925c7c5ee test(task): prepare exported and installed handoff qualification)
 
 ## Malformed Commits
 

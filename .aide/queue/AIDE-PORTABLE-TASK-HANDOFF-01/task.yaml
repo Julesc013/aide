@@ -2,7 +2,7 @@ schema_version: aide.queue-task.v0
 id: AIDE-PORTABLE-TASK-HANDOFF-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Carry bounded task records between sessions without transferring authority
-status: needs_review
+status: passed_with_notes
 type: implementation
 scope:
   allowed_paths:
