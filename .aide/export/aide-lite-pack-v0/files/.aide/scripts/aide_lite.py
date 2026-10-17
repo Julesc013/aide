@@ -16,6 +16,7 @@ import fnmatch
 import gzip
 import hashlib
 import importlib
+import importlib.util
 import json
 import math
 import os
@@ -2397,6 +2398,7 @@ PORTABLE_SOURCE_FILES = [
     "core/execution/registered_process.py",
     "core/execution/managed_workspace.py",
     "core/execution/retired_evidence.py",
+    "core/execution/work_effort.py",
     "core/execution/scoped_host.py",
     "core/protocol/__init__.py",
     "core/protocol/execution_receipt.py",
@@ -46022,6 +46024,99 @@ def summarize_codex_usage_attempts(path: Path) -> dict[str, object]:
             "coverage_gaps": sorted(gaps), "raw_prompt_or_response_retained": False}
 
 
+def _work_effort_path(root: Path, relative: object) -> Path:
+    if (not isinstance(relative, str) or len(relative) > 240
+            or not re.fullmatch(r"[A-Za-z0-9._/-]+", relative)
+            or any(part in ("", ".", "..") for part in relative.split("/"))):
+        raise ValueError("work effort requires an explicit contained relative path")
+    path = root / relative
+    _job_wait_root(str(path.parent))
+    return path
+
+
+def _work_effort_module():
+    # Implementation belongs to this CLI, never to the observed evidence root.
+    path = Path(__file__).resolve().parents[2] / "core/execution/work_effort.py"
+    _job_wait_root(str(path.parent))
+    info = path.lstat()
+    if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
+            or getattr(info, "st_file_attributes", 0) & 0x400 or info.st_size > 64 * 1024):
+        raise ValueError("work effort implementation is not an ordinary bounded module")
+    spec = importlib.util.spec_from_file_location("aide_work_effort_view", path)
+    module = importlib.util.module_from_spec(spec)
+    previous = sys.dont_write_bytecode
+    try:
+        sys.dont_write_bytecode = True
+        spec.loader.exec_module(module)
+    finally:
+        sys.dont_write_bytecode = previous
+    return module
+
+
+def summarize_work_effort(repo_root: Path, work_set: str) -> dict[str, object]:
+    """Read only pinned supplied records; no session discovery or receipt paths."""
+    root = _job_wait_root(str(repo_root))
+    module = _work_effort_module()
+
+    def read(relative, maximum, expected=None):
+        result = _job_wait_read_json(_work_effort_path(root, relative), maximum)
+        if result is None:
+            raise ValueError("supplied work effort input is missing")
+        if expected is not None and result[1] != expected:
+            raise ValueError("supplied work effort digest mismatch")
+        return result
+
+    manifest, manifest_sha = read(work_set, 64 * 1024)
+    module.validate_work_set(manifest)
+    observations = []
+    for entry in manifest["receipts"]:
+        receipt, digest = read(entry["path"], 256 * 1024, entry["sha256"])
+        observations.append((receipt, digest, entry["phase"]))
+    usage = None
+    reference = manifest["usage_roster"]
+    if reference is not None:
+        roster, roster_sha = read(reference["path"], 64 * 1024, reference["sha256"])
+        if roster.get("work_id") != manifest["work_id"]:
+            raise ValueError("usage roster work identity mismatch")
+        roster_path = _work_effort_path(root, reference["path"])
+        attempts = roster.get("attempts")
+        if not isinstance(attempts, list) or not 1 <= len(attempts) <= 8:
+            raise ValueError("invalid usage roster attempts")
+        # The existing importer validates the roster and stream contents. Check
+        # ancestor redirections before its resolve(), without implementing counters.
+        for attempt in attempts:
+            if not isinstance(attempt, dict):
+                raise ValueError("invalid usage roster attempt")
+            if attempt.get("stream") is not None:
+                path = _work_effort_path(roster_path.parent, attempt["stream"])
+                info = path.lstat()
+                if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
+                        or getattr(info, "st_file_attributes", 0) & 0x400):
+                    raise ValueError("usage stream is redirected or not ordinary")
+        usage = summarize_codex_usage_attempts(roster_path)
+        if usage["roster_sha256"] != roster_sha or usage["work_id"] != manifest["work_id"]:
+            raise ValueError("usage roster changed during observation")
+    report = module.summarize(manifest["work_id"], observations, manifest_sha, usage)
+    if len(json.dumps(report).encode("utf-8")) > 64 * 1024:
+        raise ValueError("work effort output exceeds bound")
+    return report
+
+
+def command_job_effort(args: argparse.Namespace) -> int:
+    try:
+        report = summarize_work_effort(args.repo_root, args.work_set)
+    except (OSError, ValueError, RecursionError):
+        report = {"schema": "aide.work-effort.v1", "status": "REFUSED",
+                  "reason": "Invalid, missing, redirected, oversized or conflicting supplied evidence; check pins and schema."}
+    if args.json:
+        print(json.dumps(report, sort_keys=True, separators=(",", ":")))
+    elif report["status"] == "REFUSED":
+        print("AIDE work effort: REFUSED\n" + report["reason"])
+    else:
+        print(_work_effort_module().human_report(report))
+    return 1 if report["status"] == "REFUSED" else 2
+
+
 def command_job_usage(args: argparse.Namespace) -> int:
     try:
         if getattr(args, "attempt_set", None):
@@ -47566,6 +47661,10 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     usage_source.add_argument("--stream", action="append", help="Ordinary Codex exec --json file; repeat at most eight times.")
     usage_source.add_argument("--attempt-set", help="Bounded attributed attempt roster JSON; complete-work coverage remains unknown.")
     usage_parser.set_defaults(handler=command_job_usage)
+    effort_parser = job_subparsers.add_parser("effort", help="Observe pinned work receipts; incomplete accounting stays unknown.")
+    effort_parser.add_argument("--work-set", required=True, help="Repo-relative bounded JSON manifest of receipt paths, hashes and phases.")
+    effort_parser.add_argument("--json", action="store_true", help="Machine-readable identities, observations and unknowns.")
+    effort_parser.set_defaults(handler=command_job_effort)
     job_subparsers.add_parser("context", help="Summarize one supplied Codex prompt-input JSON stream without retaining text or starting a model.").set_defaults(handler=command_job_context)
     setup_parser = job_subparsers.add_parser("setup")
     setup_parser.add_argument("--config", required=True, help="Machine-local output config in an approved checkout.")

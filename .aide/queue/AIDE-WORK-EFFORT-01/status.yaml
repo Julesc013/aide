@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-WORK-EFFORT-01
-status: running
-result: SOURCE41_PASS_ONE_FIXTURE_ERROR_PRESERVED
-jobs_allocated: 1
+status: needs_review
+result: SOURCE42_PASS_DELIVERED42_PASS_REAL5_PASS
+jobs_allocated: 2
 maximum_jobs: 3
-next_action: combined_qualification_amendment_review
+next_action: preview_effect_review

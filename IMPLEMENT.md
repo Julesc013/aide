@@ -13956,3 +13956,7 @@ Job a0032741 passed full diagnostics and the actual fresh/default and customized
 ## AIDE-WORK-EFFORT-01
 
 Prepared bounded P5 job effort view: pure normalization, pinned bounded CLI input, all nine phases, failed attempts and unknown accounting. Source qualification pending; no cost or efficiency claim.
+
+AIDE-WORK-EFFORT-01: source42/delivered42 and five-receipt consumer PASS at
+7c2aec49. Original invalid-fixture failure preserved; published1.0.0 unchanged.
+Preview and reviewed integration remain, with whole-work cost still unknown.

@@ -5219,3 +5219,7 @@ The installed guard repair and actual exported fresh/customized consumers passed
 Admitted P5 observation increment: bounded job effort view, real prior-attempt
 consumer, source and portable checks, then reviewed dev/main integration.
 See `.aide/queue/AIDE-WORK-EFFORT-01/ExecPlan.md`; no operational cost claim.
+
+AIDE-WORK-EFFORT-01: source42/delivered42 and five-receipt consumer PASS at
+7c2aec49. Original invalid-fixture failure preserved; published1.0.0 unchanged.
+Preview and reviewed integration remain, with whole-work cost still unknown.

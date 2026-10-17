@@ -1,0 +1,153 @@
+{
+  "job_id": "10ed6b9c638c4d1eafa34110e1d6f683",
+  "source_commit": "7c2aec4949cc916406b4eb3480a93da744a947ba",
+  "source_tree": "959eb07c4334eba6ce7580c40f75bbf73efb6a1e",
+  "results": {
+    "tests.json": {
+      "sha256": "1820612151f1c63bf4d21af909a10cf1a15a92787dcfdcaf356676fa77704ecd",
+      "record": {
+        "tests_run": 42,
+        "failures": 0,
+        "errors": 0,
+        "skips": [],
+        "test_ids": [
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_attempt_roster_attributes_parent_child_review_retry",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_attempt_roster_does_not_attribute_same_session_overlap",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_attempt_roster_preserves_missing_parent_as_unknown",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_attempt_roster_refuses_deep_json_with_cli_result",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_attempt_roster_refuses_duplicate_and_escaping_streams",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_attempt_roster_refuses_non_string_parent_with_cli_result",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_conflicting_terminal_cannot_contribute_known_subtotal",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_import_deduplicates_exact_stream_and_terminal",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_import_marks_resumed_session_ambiguity",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_import_preserves_failed_and_missing_coverage",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_import_refuses_ambiguous_or_altered_usage",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_import_refuses_duplicate_json_keys",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_import_requires_one_started_turn",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_known_subtotal_does_not_turn_missing_into_zero",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_turn_ambiguity_preserves_independent_known_subtotal",
+          "test_efficiency_wait.EfficiencyWaitTests.test_duplicate_receipt_key_cannot_hide_ambiguous_terminal",
+          "test_efficiency_wait.EfficiencyWaitTests.test_failure_oversize_and_redirected_root_cannot_pass",
+          "test_efficiency_wait.EfficiencyWaitTests.test_installed_codex_prompt_input_is_summarized_without_model_turn",
+          "test_efficiency_wait.EfficiencyWaitTests.test_missing_mismatch_and_nonterminal_receipt_cannot_pass",
+          "test_efficiency_wait.EfficiencyWaitTests.test_nonfinite_receipt_number_cannot_pass",
+          "test_efficiency_wait.EfficiencyWaitTests.test_parser_recursion_is_bounded_evidence_failure",
+          "test_efficiency_wait.EfficiencyWaitTests.test_portable_cli_without_source_checkout",
+          "test_efficiency_wait.EfficiencyWaitTests.test_prompt_input_summary_bounds_and_marks_unknown_coverage",
+          "test_efficiency_wait.EfficiencyWaitTests.test_prompt_input_summary_counts_without_echoing_text",
+          "test_efficiency_wait.EfficiencyWaitTests.test_terminal_is_bounded_repeatable_and_read_only",
+          "test_efficiency_wait.EfficiencyWaitTests.test_timeout_is_pending_and_does_not_remove_active",
+          "test_efficiency_wait.EfficiencyWaitTests.test_unchanged_wait_emits_only_terminal_view",
+          "test_work_effort.WorkEffortTests.test_actual_cli_human_json_refusal_and_read_only",
+          "test_work_effort.WorkEffortTests.test_actual_cli_observes_evidence_only_root",
+          "test_work_effort.WorkEffortTests.test_cancel_incomplete_and_unknown_metrics",
+          "test_work_effort.WorkEffortTests.test_conflicting_snapshot_refused",
+          "test_work_effort.WorkEffortTests.test_empty_work_is_unknown_not_zero_cost",
+          "test_work_effort.WorkEffortTests.test_failures_cleanup_missing_phases_and_nonadditive_peaks",
+          "test_work_effort.WorkEffortTests.test_hardlink_input_refused",
+          "test_work_effort.WorkEffortTests.test_identical_duplicate_once_conflicting_phase_refused",
+          "test_work_effort.WorkEffortTests.test_limits_and_invalid_observation_types",
+          "test_work_effort.WorkEffortTests.test_malformed_duplicate_nonfinite_and_size_bounds",
+          "test_work_effort.WorkEffortTests.test_owner_exception_and_interrupted_recovery_keep_unknown_outcome",
+          "test_work_effort.WorkEffortTests.test_path_escape_absolute_and_redirected_ancestor_refused",
+          "test_work_effort.WorkEffortTests.test_pins_work_manifest_source_and_result_identity",
+          "test_work_effort.WorkEffortTests.test_usage_missing_streams_and_work_mismatch",
+          "test_work_effort.WorkEffortTests.test_usage_session_overlap_preserves_unknown_subtotals"
+        ],
+        "test_inputs": {
+          ".aide/scripts/tests/test_efficiency_wait.py": "7cdb606942c1340e7e3512c9e1324aaa08412da7b1efa09275681d652e774294",
+          ".aide/scripts/tests/test_work_effort.py": "bd9044b23c462ec6ac70d0a44255a6cc295fcfcae3853aba7863b8faf3e2a313"
+        },
+        "mode": "work_effort_source_fixtures",
+        "live_deliveries": 0,
+        "models_requested": 0,
+        "whole_task_usage": "unknown"
+      }
+    },
+    "delivered-tests.json": {
+      "sha256": "07b2cf048319951cd70eeb0de6154ffbe127b7029958adea59785b052fe611fd",
+      "record": {
+        "tests_run": 42,
+        "failures": 0,
+        "errors": 0,
+        "skips": [],
+        "test_ids": [
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_attempt_roster_attributes_parent_child_review_retry",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_attempt_roster_does_not_attribute_same_session_overlap",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_attempt_roster_preserves_missing_parent_as_unknown",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_attempt_roster_refuses_deep_json_with_cli_result",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_attempt_roster_refuses_duplicate_and_escaping_streams",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_attempt_roster_refuses_non_string_parent_with_cli_result",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_conflicting_terminal_cannot_contribute_known_subtotal",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_import_deduplicates_exact_stream_and_terminal",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_import_marks_resumed_session_ambiguity",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_import_preserves_failed_and_missing_coverage",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_import_refuses_ambiguous_or_altered_usage",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_import_refuses_duplicate_json_keys",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_import_requires_one_started_turn",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_known_subtotal_does_not_turn_missing_into_zero",
+          "test_efficiency_wait.EfficiencyWaitTests.test_codex_usage_turn_ambiguity_preserves_independent_known_subtotal",
+          "test_efficiency_wait.EfficiencyWaitTests.test_duplicate_receipt_key_cannot_hide_ambiguous_terminal",
+          "test_efficiency_wait.EfficiencyWaitTests.test_failure_oversize_and_redirected_root_cannot_pass",
+          "test_efficiency_wait.EfficiencyWaitTests.test_installed_codex_prompt_input_is_summarized_without_model_turn",
+          "test_efficiency_wait.EfficiencyWaitTests.test_missing_mismatch_and_nonterminal_receipt_cannot_pass",
+          "test_efficiency_wait.EfficiencyWaitTests.test_nonfinite_receipt_number_cannot_pass",
+          "test_efficiency_wait.EfficiencyWaitTests.test_parser_recursion_is_bounded_evidence_failure",
+          "test_efficiency_wait.EfficiencyWaitTests.test_portable_cli_without_source_checkout",
+          "test_efficiency_wait.EfficiencyWaitTests.test_prompt_input_summary_bounds_and_marks_unknown_coverage",
+          "test_efficiency_wait.EfficiencyWaitTests.test_prompt_input_summary_counts_without_echoing_text",
+          "test_efficiency_wait.EfficiencyWaitTests.test_terminal_is_bounded_repeatable_and_read_only",
+          "test_efficiency_wait.EfficiencyWaitTests.test_timeout_is_pending_and_does_not_remove_active",
+          "test_efficiency_wait.EfficiencyWaitTests.test_unchanged_wait_emits_only_terminal_view",
+          "test_work_effort.WorkEffortTests.test_actual_cli_human_json_refusal_and_read_only",
+          "test_work_effort.WorkEffortTests.test_actual_cli_observes_evidence_only_root",
+          "test_work_effort.WorkEffortTests.test_cancel_incomplete_and_unknown_metrics",
+          "test_work_effort.WorkEffortTests.test_conflicting_snapshot_refused",
+          "test_work_effort.WorkEffortTests.test_empty_work_is_unknown_not_zero_cost",
+          "test_work_effort.WorkEffortTests.test_failures_cleanup_missing_phases_and_nonadditive_peaks",
+          "test_work_effort.WorkEffortTests.test_hardlink_input_refused",
+          "test_work_effort.WorkEffortTests.test_identical_duplicate_once_conflicting_phase_refused",
+          "test_work_effort.WorkEffortTests.test_limits_and_invalid_observation_types",
+          "test_work_effort.WorkEffortTests.test_malformed_duplicate_nonfinite_and_size_bounds",
+          "test_work_effort.WorkEffortTests.test_owner_exception_and_interrupted_recovery_keep_unknown_outcome",
+          "test_work_effort.WorkEffortTests.test_path_escape_absolute_and_redirected_ancestor_refused",
+          "test_work_effort.WorkEffortTests.test_pins_work_manifest_source_and_result_identity",
+          "test_work_effort.WorkEffortTests.test_usage_missing_streams_and_work_mismatch",
+          "test_work_effort.WorkEffortTests.test_usage_session_overlap_preserves_unknown_subtotals"
+        ],
+        "test_inputs": {
+          ".aide/scripts/tests/test_efficiency_wait.py": "7cdb606942c1340e7e3512c9e1324aaa08412da7b1efa09275681d652e774294",
+          ".aide/scripts/tests/test_work_effort.py": "bd9044b23c462ec6ac70d0a44255a6cc295fcfcae3853aba7863b8faf3e2a313"
+        },
+        "mode": "work_effort_delivered_fixtures",
+        "live_deliveries": 0,
+        "models_requested": 0,
+        "whole_task_usage": "unknown"
+      }
+    },
+    "ownership-tests.json": {
+      "sha256": "a6cf7e4ddadc235eedf04e5d2971739d575be1b957628d6ff38935c8ddc51b4c",
+      "record": {
+        "errors": 0,
+        "failures": 0,
+        "skips": 0,
+        "tests_run": 6
+      }
+    },
+    "pack-stages.json": {
+      "sha256": "1c7d8b6ff7428f81a9d5769ebd9e79c033de017766496e2b3f1893113e070eca",
+      "record": [
+        {
+          "runner": "run_checks.py",
+          "exit_code": 0
+        },
+        {
+          "runner": "run_pack.py",
+          "exit_code": 0
+        }
+      ]
+    }
+  },
+  "exported_files": 860,
+  "published_archives_changed": false
+}
