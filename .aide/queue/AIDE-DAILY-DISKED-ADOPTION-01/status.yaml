@@ -1,15 +1,20 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-DAILY-DISKED-ADOPTION-01
-status: needs_review
+status: blocked
 result: PENDING
-classification: AIDE_preparation_admitted_native_effect_held
-jobs_allocated: 1
+classification: preparation_qualified_native_owner_pending
+jobs_allocated: 2
 maximum_jobs: 2
-next_action: review_corrected_preparation_and_remaining_allocation
+next_action: resolve_native_writer_ownership_then_review_target_effect
 native_writer_ownership: awaiting_user_clarification
 target_mutated: false
 review_gate: exact_source_effect_required
 
 first_result_ref: evidence/first-result.json
-remaining_allocation_proposal: preparation_retry_only
+remaining_allocations: 0
 actual_target_validation_allocated: false
+
+preparation_result: PASS_WITH_PRESERVED_ATTEMPT
+preparation_result_ref: evidence/second-result.json
+native_candidate_ref: evidence/native-candidate.json
+blocker: active_writer_ownership_not_established

@@ -1,0 +1,62 @@
+{
+  "schema": "aide.native-adoption-candidate.v1",
+  "target": "D:\\Projects\\DiskEd\\disked",
+  "base_revision": "40ac8ec02778b7c25100421147fc1e107fa14ed5",
+  "work_id": "DE-W000",
+  "state": "prepared_not_applied",
+  "writer_ownership": "pending",
+  "grant_activated": false,
+  "postimage_bytes": 182699,
+  "artifacts": {
+    ".aide/handoffs/DE-W000-aide-selected-export-2026-10-17.json": {
+      "source": ".aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/native-proposed/.aide/handoffs/DE-W000-aide-selected-export-2026-10-17.json",
+      "sha256": "315bf6944dbce058ada8566862d5bd17d9c0106545dc383a8de2c2374f79e867",
+      "bytes": 1599,
+      "preimage_sha256": null
+    },
+    ".aide/requests/2026-10-17-aide-selected-export.json": {
+      "source": ".aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/native-proposed/.aide/requests/2026-10-17-aide-selected-export.json",
+      "sha256": "4c70abbfae37200e0b398048872b77df1ed5f83802715f5c5f300307180e5a36",
+      "bytes": 1588,
+      "preimage_sha256": null
+    },
+    "spec/development/specctl.md": {
+      "source": ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/native-proposed/spec/development/specctl.md",
+      "sha256": "41b1a1c0a322ba1679112c67d2841a80c5583da2cc9b42b257e7eea9dc8b06d0",
+      "bytes": 7604,
+      "preimage_sha256": "96b889f6bafeafab42fa8b5500dbca35a591c464e67c75a67080b19113065977"
+    },
+    "spec/generated/index.json": {
+      "source": ".aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/native-proposed/spec/generated/index.json",
+      "sha256": "cc755a86a83a81162bd887aeae7ae0dd0ee76e9ab265ba73817b4410882db5da",
+      "bytes": 36451,
+      "preimage_sha256": "e261262e2c1fc4d8a451431aaff110b61fa50aaaf17baf5b92b77dd167d877e9"
+    },
+    "spec/manifest.json": {
+      "source": ".aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/native-proposed/spec/manifest.json",
+      "sha256": "c8c176e560eb9b7f70c5efba7f0b09ca330b45356e2dffd524c5381f743d7558",
+      "bytes": 37611,
+      "preimage_sha256": "818f38c516d71870ee1ff92e12ba8a1c7ad0e7b33e399c7cb03208fbf058f6ee"
+    },
+    "spec/tools/specctl.py": {
+      "source": ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/native-proposed/spec/tools/specctl.py",
+      "sha256": "e5575137ec2e5d790881d5524830c1a8da3e0c5a10d692ecae54327c8c42ba53",
+      "bytes": 68368,
+      "preimage_sha256": "6533be987ed582f9e644114d42c7a79d79da4cf1b07af49c061934aada2f010e"
+    },
+    "spec/tools/tests/test_specctl.py": {
+      "source": ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/native-proposed/spec/tools/tests/test_specctl.py",
+      "sha256": "6ca68f60cec7b99dc25a6147308aec248c1a98d184eb6c9b7f979db803ef1501",
+      "bytes": 27760,
+      "preimage_sha256": "86f11fb0ab22e61425b3d79e84d8812cbda5dc4a2f1d89709a0ec9f1809f6988"
+    },
+    "spec/work/grants.json": {
+      "source": ".aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/native-proposed/spec/work/grants.json",
+      "sha256": "5c23f99725f88f74fb7b154802bb8665698d1cb43773e951e95541a1858eeb9a",
+      "bytes": 1718,
+      "preimage_sha256": "0af2d1c2bd197ba339a75f918299b71219d601a10f9e8ef9120a2f71b8f595ec"
+    }
+  },
+  "recovery": "Base Git blobs and exact preimages remain available; a future accepted effect must retain recovery outside target before writing. Never overwrite unexpected state.",
+  "future_activation": "Proposed grant/request/handoff need ownership attribution and exact effect qualification before application; any changed bytes require affected checks."
+}

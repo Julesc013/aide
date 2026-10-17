@@ -1,0 +1,10 @@
+{
+  "reviewer": "/root/review_disked_continuation",
+  "verdict": "ACCEPT",
+  "head": "89882a810f890c40e8e9f7a46862c487992a6d8a",
+  "tree": "2fb5f6d03b51ea08001a6b4a58a0d63f00e128cb",
+  "template_sha256": "42598276c741864fb6580b6b73302b1b62b6825fd25c61ef1cad5d99e0aaffa9",
+  "effect_sha256": "7dc2089cc4ca47b8ea544a5ee4804f8220f9bef510cc59764fe181fc6257e59b",
+  "scope": "narrow pinned Git hard-link repair and explicit second preparation allocation; no third job or target effects",
+  "findings": []
+}

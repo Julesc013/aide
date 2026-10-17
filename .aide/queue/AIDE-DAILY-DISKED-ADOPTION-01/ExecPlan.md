@@ -52,3 +52,11 @@ of its active writer is pending. Zero jobs allocated.
   Propose using the remaining second allocation for corrected preparation only,
   with original maximum two retained. Actual target validation needs a later
   explicit finite admission; no requirement is waived.
+
+- Corrected preparation job a08f6eca passed native metadata validation, 872 native
+  structural checks and exact eight-file candidate generation (182,699 bytes).
+  Original 158 passes/two unavailable checks conserved. Both allocated jobs are
+  collected, verified and retired. No target write, grant activation or new native
+  Git effect. Ownership is still pending; future actual-target validation remains
+  required and needs a separate finite admission. Prepare exact AIDE source sharing
+  while independent local dependency-handoff planning can proceed.

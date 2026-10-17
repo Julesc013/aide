@@ -3,7 +3,8 @@
 ## Native DiskEd adoption candidate - 2026-10-17
 
 The existing candidate remains unchanged. Bounded native request/grant/handoff
-postimages are prepared under the new child; no target write or job has run.
+postimages passed native validation and 872 structural checks in job a08f6eca.
+The initial Git preflight failure is preserved; both jobs retired. Target unchanged.
 
 ## Portable Git default candidate - 2026-10-17
 

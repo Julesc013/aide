@@ -1,11 +1,11 @@
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
-## Native owner adoption preparation admitted - 2026-10-17
+## Native owner adoption preparation qualified - 2026-10-17
 
 AIDE-DAILY-DISKED-ADOPTION-01 has exact independent preparation acceptance.
 Native target writes remain held for writer ownership and exact effect review.
-Conserve the original qualified code/tests and complete native metadata first.
-No job or target action follows from admission alone.
+The native metadata/candidate preparation passed; both attempts are retired.
+Target ownership and actual consumer/integration effects remain incomplete.
 
 ## Portable defaults qualified and integrated - 2026-10-17
 
@@ -722,3 +722,11 @@ The exact terminal/default checkpoint and dependent admission received ACCEPT; d
 ## Portable Git default qualification closure
 
 Source and actual fresh/customized consumers are complete; the explicit remaining-stage amendment conserved the export and passed. Main promotion is now a separate exact effect review. Parent campaign remains active; actual owner/downstream adoption, host boundaries and whole-outcome efficiency remain open.
+
+## Native adoption preparation checkpoint - 2026-10-17
+
+The exact candidate and native metadata are qualified; actual DiskEd ownership
+remains pending and target writes are held. Two bounded attempts are retired,
+with the first failure retained. Continue the existing local dependency-handoff
+brief independently; do not repeatedly query the unchanged target or infer an
+answer. The native adoption child remains incomplete and resumable.

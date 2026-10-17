@@ -1,0 +1,33 @@
+{
+  "schema": "aide.native-adoption.source-sharing-effect.v1",
+  "base": "ac0ca3a94a53e5c3470ff556ab889212acab0af9",
+  "candidate": "exact reviewed outcome/metadata successor commit and tree",
+  "expected_local_remote_dev_main": "fe61501b76731565306da90e99344826d28aa0a7",
+  "task_branch": "task/aide-daily-disked-adoption-01",
+  "expected_remote_task_branch": "absent",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "reason_for_task_publication": "Native owner input is pending; retain active resumable work under the owner default for blocked/important task branches.",
+  "required_checks": [
+    "exact source/tree and clean checkout",
+    "fresh helper plan and structured commit range PASS",
+    "full AIDE validate and independent exact outcome/effect ACCEPT",
+    "both jobs collected/retired and no active/pending job with running dispatch",
+    "fresh local/remote refs and ancestry under shared estate lock"
+  ],
+  "effects": [
+    "CAS fast-forward local dev, nonforce push and verify exact remote commit/tree.",
+    "Recheck source/refs then CAS fast-forward local main, nonforce push and verify exact remote commit/tree.",
+    "Verify remote task ref still absent; nonforce publish the existing task branch at the same accepted candidate and set upstream; verify all three remote refs. Retain the active local branch."
+  ],
+  "scope": "AIDE preparation source/evidence only, not target adoption or a release.",
+  "exclusions": [
+    "DiskEd mutation or Git",
+    "grant activation",
+    "force/reset",
+    "branch deletion",
+    "hosting protection",
+    "tags/releases",
+    "new jobs or provider effects"
+  ],
+  "recovery": "If any expected input/ref differs or a response is uncertain, inspect actual effects, preserve work and stop the affected operation. Never force or blindly retry. Record actual results in ignored source-sync-terminal.log; next normal checkpoint may preserve that receipt without recursive commits."
+}

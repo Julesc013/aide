@@ -1,0 +1,1188 @@
+{
+  "schema": "org.disked.spec-index/1",
+  "bundle_version": "0.1.3-proposed.1",
+  "concepts": [
+    {
+      "id": "DE-000",
+      "path": "START-HERE.md",
+      "title": "Start here",
+      "summary": "Read the bundle in task-sized pieces and run its local checks.",
+      "sha256": "sha256:2c9566311b4753b85eb2ffeec715329f25169191716a578ade42c04e4ae51d23",
+      "bytes": 2043,
+      "depends_on": [
+        "DE-002",
+        "DE-080"
+      ],
+      "requirement_ids": []
+    },
+    {
+      "id": "DE-001",
+      "path": "foundation/charter.md",
+      "title": "Product charter and scope",
+      "summary": "Windows-first storage administration with one target-native entrypoint and evidence-qualified operations.",
+      "sha256": "sha256:253ed29da9195b277e6660917dc5195ed2b9618ac8b1d1f31e07c13080632a90",
+      "bytes": 5691,
+      "depends_on": [],
+      "requirement_ids": [
+        "DE-REQ-001-01",
+        "DE-REQ-001-02",
+        "DE-REQ-001-03",
+        "DE-REQ-001-04"
+      ]
+    },
+    {
+      "id": "DE-002",
+      "path": "foundation/authority.md",
+      "title": "Authority, acceptance and source ownership",
+      "summary": "Separate requirements, contracts, implementation facts, evidence and public explanations.",
+      "sha256": "sha256:2dab77cac570aa1317fc816b12f5febc2f33cd8e48486e6edd6b686ecfc889ae",
+      "bytes": 7477,
+      "depends_on": [
+        "DE-001"
+      ],
+      "requirement_ids": [
+        "DE-REQ-002-01",
+        "DE-REQ-002-02"
+      ]
+    },
+    {
+      "id": "DE-003",
+      "path": "foundation/okf-profile.md",
+      "title": "DiskEd OKF authoring profile",
+      "summary": "OKF v0.2 Markdown with namespaced requirements and deterministic machine projections.",
+      "sha256": "sha256:3fd87b008431f39b7062f186de974f0d30c2f9917e6b648a318b42531ea09327",
+      "bytes": 4545,
+      "depends_on": [
+        "DE-002"
+      ],
+      "requirement_ids": [
+        "DE-REQ-003-01",
+        "DE-REQ-003-02",
+        "DE-REQ-003-03"
+      ]
+    },
+    {
+      "id": "DE-004",
+      "path": "foundation/requirements-and-traceability.md",
+      "title": "Requirements and traceability",
+      "summary": "Stable requirement IDs connect decisions, implementation units, test procedures and evidence.",
+      "sha256": "sha256:9977220e8a5402cd023bffa71d54aa329f868219324b6e1d25400ee0001a3b68",
+      "bytes": 4711,
+      "depends_on": [
+        "DE-003"
+      ],
+      "requirement_ids": [
+        "DE-REQ-004-01",
+        "DE-REQ-004-02"
+      ]
+    },
+    {
+      "id": "DE-005",
+      "path": "foundation/glossary.md",
+      "title": "Canonical glossary and naming",
+      "summary": "Unambiguous names for identity, state, effects, evidence and delivery.",
+      "sha256": "sha256:5972cee0fe126b4aeb6946be438cbe9d211e580ecd0e26101dac665954d81bf2",
+      "bytes": 5286,
+      "depends_on": [
+        "DE-001"
+      ],
+      "requirement_ids": [
+        "DE-REQ-005-01"
+      ]
+    },
+    {
+      "id": "DE-010",
+      "path": "architecture/system.md",
+      "title": "System architecture and module boundaries",
+      "summary": "Ports-and-adapters architecture compiled into target-specific product compositions.",
+      "sha256": "sha256:040ac885274f76445ce8415f6d4b2814e162cd0f829ab5c7a70cd4bf80575434",
+      "bytes": 4652,
+      "depends_on": [
+        "DE-001",
+        "DE-005"
+      ],
+      "requirement_ids": [
+        "DE-REQ-010-01",
+        "DE-REQ-010-02",
+        "DE-REQ-010-03"
+      ]
+    },
+    {
+      "id": "DE-011",
+      "path": "architecture/repository.md",
+      "title": "Repository architecture and ownership",
+      "summary": "Root spec authority, deliberate source modules and no duplicated canonical trees.",
+      "sha256": "sha256:1ccea07ed4c7e504693405e5020341a2cb979526dccb4a52131b377807d4a990",
+      "bytes": 5742,
+      "depends_on": [
+        "DE-002",
+        "DE-010"
+      ],
+      "requirement_ids": [
+        "DE-REQ-011-01",
+        "DE-REQ-011-02"
+      ]
+    },
+    {
+      "id": "DE-012",
+      "path": "architecture/languages-and-build.md",
+      "title": "Language, ABI and build policy",
+      "summary": "Small portable C strata with target-qualified native implementations behind stable contracts.",
+      "sha256": "sha256:55ba2b52d51a1945021721422af9ccc2d067c4f61e47118ba9714a423cbf428f",
+      "bytes": 5180,
+      "depends_on": [
+        "DE-010",
+        "DE-011"
+      ],
+      "requirement_ids": [
+        "DE-REQ-012-01",
+        "DE-REQ-012-02",
+        "DE-REQ-012-03"
+      ]
+    },
+    {
+      "id": "DE-013",
+      "path": "architecture/configuration.md",
+      "title": "Configuration, state roots and resource packs",
+      "summary": "Portable payloads remain immutable while state and evidence have explicit ownership.",
+      "sha256": "sha256:ff826ba3c3a13b1e2784d1aede178c7ee9189f459682d2549cb40de4fcd9ad13",
+      "bytes": 4261,
+      "depends_on": [
+        "DE-010"
+      ],
+      "requirement_ids": [
+        "DE-REQ-013-01",
+        "DE-REQ-013-02"
+      ]
+    },
+    {
+      "id": "DE-014",
+      "path": "architecture/component-model.md",
+      "title": "Components and immutable compositions",
+      "summary": "Small static compositions with explicit loader, provider and delivery closures.",
+      "sha256": "sha256:e938515e252873b11151258f666d70a29f7f8a37f173ecb31c3fb69ec744f499",
+      "bytes": 4447,
+      "depends_on": [
+        "DE-010",
+        "DE-012"
+      ],
+      "requirement_ids": [
+        "DE-REQ-014-01",
+        "DE-REQ-014-02"
+      ]
+    },
+    {
+      "id": "DE-015",
+      "path": "architecture/execution-topology.md",
+      "title": "Essential startup and execution roles",
+      "summary": "Keep built-in diagnostics available before probes and bind roles to explicit hosts and resources.",
+      "sha256": "sha256:e7ac7f4f7d6e3acff1f6966b34657d2044dd6ccbde532f1b21d1a6a7de38ab20",
+      "bytes": 3351,
+      "depends_on": [
+        "DE-010",
+        "DE-022"
+      ],
+      "requirement_ids": [
+        "DE-REQ-015-01",
+        "DE-REQ-015-02"
+      ]
+    },
+    {
+      "id": "DE-020",
+      "path": "interaction/invocation.md",
+      "title": "InvocationPolicy v1",
+      "summary": "Deterministic mode routing with explicit overrides and honest ambiguity handling.",
+      "sha256": "sha256:0010936eead78288479094a22230b97ae29ee29cf5c2382ecea8c6a288484805",
+      "bytes": 7784,
+      "depends_on": [
+        "DE-010",
+        "DE-005"
+      ],
+      "requirement_ids": [
+        "DE-REQ-020-01",
+        "DE-REQ-020-02",
+        "DE-REQ-020-03"
+      ]
+    },
+    {
+      "id": "DE-021",
+      "path": "interaction/commands.md",
+      "title": "Command grammar and canonical registry",
+      "summary": "A descriptor-owned CLI shared with TUI and native GUI command discovery.",
+      "sha256": "sha256:594af58d60965941cee12c7ed6857881feb3aa41ba369c8e48cf14fb7febf432",
+      "bytes": 16710,
+      "depends_on": [
+        "DE-020",
+        "DE-005"
+      ],
+      "requirement_ids": [
+        "DE-REQ-021-01",
+        "DE-REQ-021-02",
+        "DE-REQ-021-03",
+        "DE-REQ-021-04",
+        "DE-REQ-021-05",
+        "DE-REQ-021-06"
+      ]
+    },
+    {
+      "id": "DE-022",
+      "path": "interaction/protocol.md",
+      "title": "Machine protocol and transport",
+      "summary": "Versioned envelopes, bounded messages and honest operation outcomes.",
+      "sha256": "sha256:10cc3a6cacfdca0f5b1a5a8386e633da1b8833f1faac03ef9c3533ae98cb2122",
+      "bytes": 5684,
+      "depends_on": [
+        "DE-021",
+        "DE-010"
+      ],
+      "requirement_ids": [
+        "DE-REQ-022-01",
+        "DE-REQ-022-02"
+      ]
+    },
+    {
+      "id": "DE-023",
+      "path": "interaction/presentation.md",
+      "title": "FrontendSession and semantic parity",
+      "summary": "One presentation model for terminal and native visual interfaces.",
+      "sha256": "sha256:65aa4eba30d1b7f5717fc910eeeb24b5895b50c0ca53b47beaa228b9c19bae77",
+      "bytes": 4811,
+      "depends_on": [
+        "DE-021",
+        "DE-022"
+      ],
+      "requirement_ids": [
+        "DE-REQ-023-01",
+        "DE-REQ-023-02"
+      ]
+    },
+    {
+      "id": "DE-024",
+      "path": "interaction/tui-and-gui.md",
+      "title": "TUI and OEM+ GUI experience",
+      "summary": "Task-oriented interfaces with progressive disclosure and accessible fallback.",
+      "sha256": "sha256:5f284f78e83dd8c021db5f6e165d6372701fd7536f62674a5f5a7929cd377373",
+      "bytes": 6671,
+      "depends_on": [
+        "DE-023"
+      ],
+      "requirement_ids": [
+        "DE-REQ-024-01",
+        "DE-REQ-024-02"
+      ]
+    },
+    {
+      "id": "DE-025",
+      "path": "interaction/native-integration.md",
+      "title": "Owned native integration surfaces",
+      "summary": "Thin optional host adapters retain exact local or remote targeting and independent teardown.",
+      "sha256": "sha256:0fee73261af6ce29bfce4a5739a7d6c19b99a0b48401552158cad1ae89ad4381",
+      "bytes": 3200,
+      "depends_on": [
+        "DE-023",
+        "DE-060",
+        "DE-061"
+      ],
+      "requirement_ids": [
+        "DE-REQ-025-01",
+        "DE-REQ-025-02"
+      ]
+    },
+    {
+      "id": "DE-026",
+      "path": "interaction/terminal-session.md",
+      "title": "Terminal sessions and capabilities",
+      "summary": "Channel-specific terminal capabilities, bounded rendering and owned restoration.",
+      "sha256": "sha256:2512eda5d748d1845ba5a3a42fa068029631f0f7cd5967d905457900014809d5",
+      "bytes": 4161,
+      "depends_on": [
+        "DE-020",
+        "DE-045"
+      ],
+      "requirement_ids": [
+        "DE-REQ-026-01",
+        "DE-REQ-026-02"
+      ]
+    },
+    {
+      "id": "DE-027",
+      "path": "interaction/interactive-shell.md",
+      "title": "Interactive command shell",
+      "summary": "Explicit persistent DiskEd sessions over the shared command model.",
+      "sha256": "sha256:3ffbdcce1e7e325a5b95ac5de062070a46dfa95647507b925f13236765b031e7",
+      "bytes": 3998,
+      "depends_on": [
+        "DE-021",
+        "DE-026"
+      ],
+      "requirement_ids": [
+        "DE-REQ-027-01",
+        "DE-REQ-027-02"
+      ]
+    },
+    {
+      "id": "DE-028",
+      "path": "interaction/output-and-progress.md",
+      "title": "Output, progress and completion",
+      "summary": "Separate human display, protocol events, diagnostics and recovery records.",
+      "sha256": "sha256:a9fbe26e48793ad047b60e0f466f8f76443465722e213ac14e6affad15a87975",
+      "bytes": 2879,
+      "depends_on": [
+        "DE-022",
+        "DE-023",
+        "DE-026"
+      ],
+      "requirement_ids": [
+        "DE-REQ-028-01"
+      ]
+    },
+    {
+      "id": "DE-030",
+      "path": "storage/identity-and-graph.md",
+      "title": "Storage graph, identity and leases",
+      "summary": "Layer-aware observations and live target revalidation.",
+      "sha256": "sha256:b3cbd2be9339a3a31fa40c5b107a0894a90273aa18b8ba054fec1ddea4f5b3b5",
+      "bytes": 4997,
+      "depends_on": [
+        "DE-010",
+        "DE-005"
+      ],
+      "requirement_ids": [
+        "DE-REQ-030-01",
+        "DE-REQ-030-02",
+        "DE-REQ-030-03",
+        "DE-REQ-030-04"
+      ]
+    },
+    {
+      "id": "DE-031",
+      "path": "storage/address-spaces.md",
+      "title": "Address spaces, geometry and data fidelity",
+      "summary": "Checked half-open extents and multiple media semantics.",
+      "sha256": "sha256:d0da5c78c0cd0d282ebd535734b1beef4bcabd9736bc200b542713cc82dea48f",
+      "bytes": 4830,
+      "depends_on": [
+        "DE-030"
+      ],
+      "requirement_ids": [
+        "DE-REQ-031-01",
+        "DE-REQ-031-02",
+        "DE-REQ-031-03"
+      ]
+    },
+    {
+      "id": "DE-032",
+      "path": "storage/partition-tables.md",
+      "title": "Partition-map parsing and validation",
+      "summary": "Independent bounded readers for MBR, EBR and GPT before any writer.",
+      "sha256": "sha256:94d7851eeb8b46fbeaad1343ea39866a9ab8e93581d70db0f844167dbfa78ef3",
+      "bytes": 3744,
+      "depends_on": [
+        "DE-030",
+        "DE-031"
+      ],
+      "requirement_ids": [
+        "DE-REQ-032-01",
+        "DE-REQ-032-02",
+        "DE-REQ-032-03"
+      ]
+    },
+    {
+      "id": "DE-033",
+      "path": "storage/providers.md",
+      "title": "Provider roles, admission and upstream reuse",
+      "summary": "Replace implementations without redefining operations or trusting claims as proof.",
+      "sha256": "sha256:3b5c0ac0708d411e2c7c5a18e6194621b8445ec4eee99334be12483b63a4b9f4",
+      "bytes": 4921,
+      "depends_on": [
+        "DE-030",
+        "DE-022"
+      ],
+      "requirement_ids": [
+        "DE-REQ-033-01",
+        "DE-REQ-033-02",
+        "DE-REQ-033-03"
+      ]
+    },
+    {
+      "id": "DE-034",
+      "path": "storage/windows.md",
+      "title": "Windows NT provider strategy",
+      "summary": "Windows-native depth without treating storage restrictions as bypass targets.",
+      "sha256": "sha256:9faafd9d7820bd71f27ca59f9162fd16050cc8120c9735ca363421ca6e87bc87",
+      "bytes": 4732,
+      "depends_on": [
+        "DE-033",
+        "DE-032"
+      ],
+      "requirement_ids": [
+        "DE-REQ-034-01",
+        "DE-REQ-034-02"
+      ]
+    },
+    {
+      "id": "DE-035",
+      "path": "storage/capability-resolution.md",
+      "title": "Explainable capability resolution",
+      "summary": "Keep implementation, qualification, permissions, freshness and resource eligibility independent.",
+      "sha256": "sha256:e61f188887db92cb022c879e9314db44da993b66380ab8993f1d6c08d2faa62f",
+      "bytes": 3058,
+      "depends_on": [
+        "DE-030",
+        "DE-033"
+      ],
+      "requirement_ids": [
+        "DE-REQ-035-01",
+        "DE-REQ-035-02"
+      ]
+    },
+    {
+      "id": "DE-036",
+      "path": "storage/acquisition-consistency.md",
+      "title": "Acquisition consistency and observation effects",
+      "summary": "Distinguish byte capture from point-in-time consistency and separately authorize destination effects.",
+      "sha256": "sha256:aa0461c3088b956bad5403a3339c5bde7de78e3473c726f1fa1de09920d3491c",
+      "bytes": 3151,
+      "depends_on": [
+        "DE-031",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-036-01",
+        "DE-REQ-036-02"
+      ]
+    },
+    {
+      "id": "DE-037",
+      "path": "storage/filesystem-capabilities.md",
+      "title": "Filesystem features and media capabilities",
+      "summary": "Qualify each operation against exact format features, consumers and address-space semantics.",
+      "sha256": "sha256:0e14a26ae1afb9fced49a986d476f376b3f221c90de66b2d3926df70204aee57",
+      "bytes": 2791,
+      "depends_on": [
+        "DE-031",
+        "DE-035"
+      ],
+      "requirement_ids": [
+        "DE-REQ-037-01"
+      ]
+    },
+    {
+      "id": "DE-040",
+      "path": "safety/threat-model.md",
+      "title": "Threat model and trust boundaries",
+      "summary": "Adversarial media, local privilege boundaries and recovery failures are first-class inputs.",
+      "sha256": "sha256:15b7ce0249e06990c181f03240320eb1682dd134be0444b5bd2e720fc915f34c",
+      "bytes": 4817,
+      "depends_on": [
+        "DE-010",
+        "DE-033"
+      ],
+      "requirement_ids": [
+        "DE-REQ-040-01",
+        "DE-REQ-040-02",
+        "DE-REQ-040-03"
+      ]
+    },
+    {
+      "id": "DE-041",
+      "path": "safety/broker-and-authorization.md",
+      "title": "Broker identity and bounded authorization",
+      "summary": "Authenticate the request, exact executable, operator intent and live target.",
+      "sha256": "sha256:3c23c1d37654c613030351609a4410f97d044d1f971878ee24969615019a35d4",
+      "bytes": 4607,
+      "depends_on": [
+        "DE-040",
+        "DE-030",
+        "DE-022"
+      ],
+      "requirement_ids": [
+        "DE-REQ-041-01",
+        "DE-REQ-041-02",
+        "DE-REQ-041-03"
+      ]
+    },
+    {
+      "id": "DE-042",
+      "path": "safety/planning.md",
+      "title": "Planner, action graph and simulation",
+      "summary": "Compile intents into explicit dependencies, resources and recovery obligations.",
+      "sha256": "sha256:6cb36e6459424f8066e8fa1aeb474b69a2a2900ae6d1951691ad6421493d1316",
+      "bytes": 6442,
+      "depends_on": [
+        "DE-030",
+        "DE-033",
+        "DE-041"
+      ],
+      "requirement_ids": [
+        "DE-REQ-042-01",
+        "DE-REQ-042-02",
+        "DE-REQ-042-03",
+        "DE-REQ-042-04"
+      ]
+    },
+    {
+      "id": "DE-043",
+      "path": "safety/journal-and-recovery.md",
+      "title": "Journal, recovery and durability",
+      "summary": "Explicit recovery classes without false transactional or rollback claims.",
+      "sha256": "sha256:813ef4e15afa1bf082217bb7d3db0afe7aaa36c8713dffe0cd753f81f925b8aa",
+      "bytes": 6306,
+      "depends_on": [
+        "DE-042",
+        "DE-041"
+      ],
+      "requirement_ids": [
+        "DE-REQ-043-01",
+        "DE-REQ-043-02",
+        "DE-REQ-043-03"
+      ]
+    },
+    {
+      "id": "DE-044",
+      "path": "safety/verification-and-performance.md",
+      "title": "Independent verification and efficient execution",
+      "summary": "Optimize verified work, never cache away fresh safety checks.",
+      "sha256": "sha256:4cbc6bf225ff53013d24f498be755d0c7e4db11062ddf1e8f915005864cb87e0",
+      "bytes": 4566,
+      "depends_on": [
+        "DE-043",
+        "DE-030"
+      ],
+      "requirement_ids": [
+        "DE-REQ-044-01",
+        "DE-REQ-044-02",
+        "DE-REQ-044-03"
+      ]
+    },
+    {
+      "id": "DE-045",
+      "path": "safety/degraded-operation.md",
+      "title": "Bounded responsiveness and failure containment",
+      "summary": "Bound waiting and resources without treating timeout as proof that effects stopped.",
+      "sha256": "sha256:d9462b59259ee830b719508336573f0a61cf309251be782a5db9b6b53a37c193",
+      "bytes": 3657,
+      "depends_on": [
+        "DE-015",
+        "DE-043"
+      ],
+      "requirement_ids": [
+        "DE-REQ-045-01",
+        "DE-REQ-045-02"
+      ]
+    },
+    {
+      "id": "DE-050",
+      "path": "platforms/windows-targets.md",
+      "title": "Windows target profiles and qualification",
+      "summary": "NT-first builds with explicit loader, runtime, frontend and security limits.",
+      "sha256": "sha256:1cee16f567f9d7966f856f8803b48e1d81aeaff00d41597b5cf5e1c2de9753de",
+      "bytes": 5245,
+      "depends_on": [
+        "DE-012",
+        "DE-020"
+      ],
+      "requirement_ids": [
+        "DE-REQ-050-01",
+        "DE-REQ-050-02",
+        "DE-REQ-050-03"
+      ]
+    },
+    {
+      "id": "DE-051",
+      "path": "platforms/dos-carbon-os2.md",
+      "title": "DOS, JC-DOS, Carbon and OS/2 portability",
+      "summary": "Constrained native profiles without inventing device or BIOS guarantees.",
+      "sha256": "sha256:ad57fdeca817cc83bd049c7cd6be2c8f92a06ac3e4e7e091840f6f434c782c53",
+      "bytes": 6172,
+      "depends_on": [
+        "DE-031",
+        "DE-012"
+      ],
+      "requirement_ids": [
+        "DE-REQ-051-01",
+        "DE-REQ-051-02"
+      ]
+    },
+    {
+      "id": "DE-052",
+      "path": "platforms/other-hosts-and-media.md",
+      "title": "Other hosts and storage domains",
+      "summary": "Preserve the universal direction without making distant ports release blockers.",
+      "sha256": "sha256:356bcc33fe5df2dcc0a3540705bf5ec2b057c7b85243e75b4bb863956bd30b37",
+      "bytes": 4048,
+      "depends_on": [
+        "DE-031",
+        "DE-033",
+        "DE-050"
+      ],
+      "requirement_ids": [
+        "DE-REQ-052-01",
+        "DE-REQ-052-02"
+      ]
+    },
+    {
+      "id": "DE-060",
+      "path": "delivery/composition.md",
+      "title": "Single-entrypoint composition and release identity",
+      "summary": "One product command with explicit dependency, extraction and isolation properties.",
+      "sha256": "sha256:d370f9023ad74e580f314f3f8393528cad1e6b994a5636520dd7df6817064ff0",
+      "bytes": 5549,
+      "depends_on": [
+        "DE-013",
+        "DE-050",
+        "DE-041"
+      ],
+      "requirement_ids": [
+        "DE-REQ-060-01",
+        "DE-REQ-060-02",
+        "DE-REQ-060-03",
+        "DE-REQ-060-04"
+      ]
+    },
+    {
+      "id": "DE-061",
+      "path": "delivery/universal-setup.md",
+      "title": "Universal Setup boundary and installation modes",
+      "summary": "Setup owns software lifecycle; DiskEd owns storage operations.",
+      "sha256": "sha256:f138aae1d6a15a84b915bde320c0e82c96dec82a872a5835ecdd69436a32dcf0",
+      "bytes": 4970,
+      "depends_on": [
+        "DE-060"
+      ],
+      "requirement_ids": [
+        "DE-REQ-061-01",
+        "DE-REQ-061-02"
+      ]
+    },
+    {
+      "id": "DE-062",
+      "path": "delivery/licensing-and-supply-chain.md",
+      "title": "Licensing, provenance and release trust",
+      "summary": "Keep licensing decisions explicit and qualify the actual dependency closure.",
+      "sha256": "sha256:aa15783d38bc9cfffa0c5361095f509f3664ca55289e6730406497b3de22cbbc",
+      "bytes": 4355,
+      "depends_on": [
+        "DE-060",
+        "DE-040"
+      ],
+      "requirement_ids": [
+        "DE-REQ-062-01",
+        "DE-REQ-062-02"
+      ]
+    },
+    {
+      "id": "DE-063",
+      "path": "delivery/deployment-profiles.md",
+      "title": "Deployment effects and state ownership",
+      "summary": "Portable, user, machine and native-package modes declare effects and preservation separately.",
+      "sha256": "sha256:bfa2025ee7b281824b089f293abefb0734fa416c181a4d0781867444624f9b6e",
+      "bytes": 3532,
+      "depends_on": [
+        "DE-013",
+        "DE-061"
+      ],
+      "requirement_ids": [
+        "DE-REQ-063-01",
+        "DE-REQ-063-02"
+      ]
+    },
+    {
+      "id": "DE-064",
+      "path": "delivery/component-acquisition.md",
+      "title": "Provider packages and acquisition policy",
+      "summary": "Separate implementation choice, version selection, source location, ownership and storage admission.",
+      "sha256": "sha256:ef727737491462046c125c00d3662e13e257cbb846b6ccb17d1d7e3c039ef7b5",
+      "bytes": 3216,
+      "depends_on": [
+        "DE-033",
+        "DE-061",
+        "DE-062"
+      ],
+      "requirement_ids": [
+        "DE-REQ-064-01",
+        "DE-REQ-064-02"
+      ]
+    },
+    {
+      "id": "DE-065",
+      "path": "delivery/channels-and-servicing.md",
+      "title": "Distribution channels and servicing owners",
+      "summary": "Generate carriers from finalized payloads and assign one owner to each managed resource.",
+      "sha256": "sha256:7d77862ebc5a30416d1be4e2d78b3348f8e085604c591e3b9f20b018698f155b",
+      "bytes": 3856,
+      "depends_on": [
+        "DE-060",
+        "DE-063"
+      ],
+      "requirement_ids": [
+        "DE-REQ-065-01",
+        "DE-REQ-065-02"
+      ]
+    },
+    {
+      "id": "DE-070",
+      "path": "development/aide-integration.md",
+      "title": "AIDE integration without a second control plane",
+      "summary": "Bounded work, real evidence and projections over pinned upstream contracts.",
+      "sha256": "sha256:1b5897a30029847ce9ced0539a8fbcd8507a9cdfa401d39c1a986cfa76a7cec1",
+      "bytes": 6031,
+      "depends_on": [
+        "DE-002",
+        "DE-004"
+      ],
+      "requirement_ids": [
+        "DE-REQ-070-01",
+        "DE-REQ-070-02",
+        "DE-REQ-070-03"
+      ]
+    },
+    {
+      "id": "DE-071",
+      "path": "development/context-and-handoffs.md",
+      "title": "Context packs, handoffs and retrieval",
+      "summary": "Continue work without carrying the entire conversation or specification into every session.",
+      "sha256": "sha256:61eeeb3903edb0e30ff5e6a4caa0922d60bd3020e3033c9188ddcbda19eae651",
+      "bytes": 6462,
+      "depends_on": [
+        "DE-070",
+        "DE-002"
+      ],
+      "requirement_ids": [
+        "DE-REQ-071-01",
+        "DE-REQ-071-02",
+        "DE-REQ-071-03"
+      ]
+    },
+    {
+      "id": "DE-072",
+      "path": "development/agent-entrypoints.md",
+      "title": "Codex, Claude and chat entrypoints",
+      "summary": "Thin tool-specific adapters over one shared project instruction source.",
+      "sha256": "sha256:d5673a7552f59b1cec1aa5a2b98d727347f8c6f8bf89f95e34e19f19a9ba456a",
+      "bytes": 3355,
+      "depends_on": [
+        "DE-071"
+      ],
+      "requirement_ids": [
+        "DE-REQ-072-01",
+        "DE-REQ-072-02"
+      ]
+    },
+    {
+      "id": "DE-073",
+      "path": "development/documentation.md",
+      "title": "Public documentation and generated reference",
+      "summary": "Docs orient readers while specifications retain normative ownership.",
+      "sha256": "sha256:5f5873704bebb4adf0d3f3b51a47499a4651c5d4d9d93a40b7ab715139e33bc3",
+      "bytes": 3278,
+      "depends_on": [
+        "DE-002",
+        "DE-071"
+      ],
+      "requirement_ids": [
+        "DE-REQ-073-01",
+        "DE-REQ-073-02"
+      ]
+    },
+    {
+      "id": "DE-074",
+      "path": "development/testing-and-ci.md",
+      "title": "Testing, validation and CI strategy",
+      "summary": "Differentiate schema checks, product tests, hardware evidence and recovery qualification.",
+      "sha256": "sha256:d74b0ab539889271e663758243f815326e7fe7192fa6c79665418f249ed908cb",
+      "bytes": 6117,
+      "depends_on": [
+        "DE-004",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-074-01",
+        "DE-REQ-074-02",
+        "DE-REQ-074-03"
+      ]
+    },
+    {
+      "id": "DE-075",
+      "path": "development/governance-and-review.md",
+      "title": "Governance, review and change safety",
+      "summary": "Lean ownership with risk-scaled review rather than ceremonial committees.",
+      "sha256": "sha256:08d57995b82f60f3f45431d5b06dbc455e478407c5c9217902b1f343e4244d51",
+      "bytes": 4431,
+      "depends_on": [
+        "DE-070",
+        "DE-074"
+      ],
+      "requirement_ids": [
+        "DE-REQ-075-01",
+        "DE-REQ-075-02"
+      ]
+    },
+    {
+      "id": "DE-076",
+      "path": "development/specctl.md",
+      "title": "Specification tool contract",
+      "summary": "Local indexing, checks, contexts and safe bootstrap without a product runtime.",
+      "sha256": "sha256:41b1a1c0a322ba1679112c67d2841a80c5583da2cc9b42b257e7eea9dc8b06d0",
+      "bytes": 7604,
+      "depends_on": [
+        "DE-003",
+        "DE-071",
+        "DE-074"
+      ],
+      "requirement_ids": [
+        "DE-REQ-076-01",
+        "DE-REQ-076-02",
+        "DE-REQ-076-03"
+      ]
+    },
+    {
+      "id": "DE-077",
+      "path": "development/artifact-completeness.md",
+      "title": "Artifact completeness and publication checks",
+      "summary": "Verify required content independently of archive integrity and distinguish historical audit claims.",
+      "sha256": "sha256:498fb6bb177d449f3e11ef7618ce487ea7de6b318910fd985ace0bb4f879b5fd",
+      "bytes": 3183,
+      "depends_on": [
+        "DE-004",
+        "DE-060",
+        "DE-074"
+      ],
+      "requirement_ids": [
+        "DE-REQ-077-01",
+        "DE-REQ-077-02"
+      ]
+    },
+    {
+      "id": "DE-078",
+      "path": "development/extension-sdk.md",
+      "title": "Extension tiers and compatibility",
+      "summary": "Stabilize real C/protocol consumers and require conformance without granting implicit privilege.",
+      "sha256": "sha256:e36c13187ccada78c76b87ecb14368c97aa156e045d10b961ba54cfa94b47103",
+      "bytes": 3762,
+      "depends_on": [
+        "DE-012",
+        "DE-033",
+        "DE-023"
+      ],
+      "requirement_ids": [
+        "DE-REQ-078-01"
+      ]
+    },
+    {
+      "id": "DE-079",
+      "path": "development/native-bootstrap.md",
+      "title": "Bounded native bootstrap",
+      "summary": "Exact DE-W010 executable surface, build identity and acceptance boundary.",
+      "sha256": "sha256:6873bf416f823c3cbe69730214e4e49c55db32ac69f35d0354edd5775ddcda97",
+      "bytes": 7110,
+      "depends_on": [
+        "DE-012",
+        "DE-014",
+        "DE-015",
+        "DE-020",
+        "DE-021"
+      ],
+      "requirement_ids": [
+        "DE-REQ-079-01",
+        "DE-REQ-079-02",
+        "DE-REQ-079-03"
+      ]
+    },
+    {
+      "id": "DE-080",
+      "path": "roadmap/implementation.md",
+      "title": "Implementation sequence and first usable release",
+      "summary": "A small Windows-native vertical slice before expanding storage authority.",
+      "sha256": "sha256:a1f4be1dc74fb09728294e09ca54f1e49440f34e0cab96882925bdc5c409935b",
+      "bytes": 8608,
+      "depends_on": [
+        "DE-001",
+        "DE-074",
+        "DE-075"
+      ],
+      "requirement_ids": [
+        "DE-REQ-080-01",
+        "DE-REQ-080-02"
+      ]
+    },
+    {
+      "id": "DE-081",
+      "path": "roadmap/decisions.md",
+      "title": "Decision register and experiments",
+      "summary": "Resolve high-cost ambiguities before treating a proposed baseline as frozen.",
+      "sha256": "sha256:a4914106704231aa888aab85c9465e3a806adb643354fdcb4954bc99533dc2aa",
+      "bytes": 5352,
+      "depends_on": [
+        "DE-080"
+      ],
+      "requirement_ids": [
+        "DE-REQ-081-01",
+        "DE-REQ-081-02"
+      ]
+    },
+    {
+      "id": "DE-082",
+      "path": "roadmap/amendment-review.md",
+      "title": "October amendment reconciliation",
+      "summary": "Disposition of all supplied proposals, conflicting candidate IDs and bounded development readiness.",
+      "sha256": "sha256:f8052d1f5e8a0d82118c3383d7f70f9f3ee4c7dbd81521fd2e474ec6de5e7b29",
+      "bytes": 4699,
+      "depends_on": [
+        "DE-002",
+        "DE-081"
+      ],
+      "requirement_ids": []
+    },
+    {
+      "id": "DE-083",
+      "path": "roadmap/corrective-review.md",
+      "title": "Review corrections at 08a8246",
+      "summary": "Disposition of reproduced tool defects and staged terminal, protocol and asset recommendations.",
+      "sha256": "sha256:f83bf3e7069f6d8d465857c1857c2a7f6446fe3cd706661fb9db96d6a68a83b2",
+      "bytes": 2984,
+      "depends_on": [
+        "DE-002",
+        "DE-076"
+      ],
+      "requirement_ids": []
+    },
+    {
+      "id": "DE-090",
+      "path": "references/research-scope.md",
+      "title": "Research scope and unresolved verification",
+      "summary": "Source provenance distinguishes inspected current files from inherited project discussion.",
+      "sha256": "sha256:b80efbe74da99a5253a41da1ffc13c66c3912be34e15125480d9e426b7cc9f69",
+      "bytes": 4662,
+      "depends_on": [
+        "DE-002",
+        "DE-003"
+      ],
+      "requirement_ids": [
+        "DE-REQ-090-01"
+      ]
+    },
+    {
+      "id": "DE-101",
+      "path": "operations/inventory.md",
+      "title": "Bounded native inventory",
+      "summary": "Independent operation contract for target.inventory.",
+      "sha256": "sha256:02bc6b023cadd6c25f5d4fdac736e7301ccfd17b62e44f686ee6ed4dc9d57f98",
+      "bytes": 2784,
+      "depends_on": [
+        "DE-030",
+        "DE-042",
+        "DE-043",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-101-01"
+      ]
+    },
+    {
+      "id": "DE-102",
+      "path": "operations/map-verify.md",
+      "title": "Read-only partition-map verification",
+      "summary": "Independent operation contract for table.verify.",
+      "sha256": "sha256:f77a581b01a2a4fa49f289ebedf27613451a709a1bf7d1da15326c23d72a38ae",
+      "bytes": 2585,
+      "depends_on": [
+        "DE-030",
+        "DE-042",
+        "DE-043",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-102-01"
+      ]
+    },
+    {
+      "id": "DE-103",
+      "path": "operations/acquire-image.md",
+      "title": "Read-only image acquisition",
+      "summary": "Independent operation contract for image.acquire.",
+      "sha256": "sha256:d868fdc443940d6dbdabe8b4ba8b586304dabd500690574ab1ebb60fd2127b4f",
+      "bytes": 3756,
+      "depends_on": [
+        "DE-030",
+        "DE-042",
+        "DE-043",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-103-01"
+      ]
+    },
+    {
+      "id": "DE-104",
+      "path": "operations/gpt-repair.md",
+      "title": "Explicit GPT-copy repair",
+      "summary": "Independent operation contract for table.gpt.repair.",
+      "sha256": "sha256:299a9801dff070f78d8e24e7803724e918236af81c7758472eedebcfff34bb12",
+      "bytes": 2737,
+      "depends_on": [
+        "DE-030",
+        "DE-042",
+        "DE-043",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-104-01"
+      ]
+    },
+    {
+      "id": "DE-105",
+      "path": "operations/partition-create-delete.md",
+      "title": "Create or delete a partition entry",
+      "summary": "Independent operation contract for partition.edit.plan.",
+      "sha256": "sha256:65232e7b5728b91cd9ff0fd73eb9449ac2d3d1659b618a397a439143edcf1743",
+      "bytes": 3239,
+      "depends_on": [
+        "DE-030",
+        "DE-042",
+        "DE-043",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-105-01"
+      ]
+    },
+    {
+      "id": "DE-106",
+      "path": "operations/grow-right.md",
+      "title": "Grow a partition and filesystem to the right",
+      "summary": "Independent operation contract for filesystem.grow-right.plan.",
+      "sha256": "sha256:0b7bf927d3e25e1f6fd0c4a27ad0d72c20ce1141fed14794ddaf5da6c3a15433",
+      "bytes": 2768,
+      "depends_on": [
+        "DE-030",
+        "DE-042",
+        "DE-043",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-106-01"
+      ]
+    },
+    {
+      "id": "DE-107",
+      "path": "operations/shrink-right.md",
+      "title": "Shrink a filesystem and its container",
+      "summary": "Independent operation contract for filesystem.shrink-right.plan.",
+      "sha256": "sha256:e23ca9d733880223c5b0c1ba8e6a8db6ffe7864f84ddae1d5c9af19fe85d0138",
+      "bytes": 2804,
+      "depends_on": [
+        "DE-030",
+        "DE-042",
+        "DE-043",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-107-01"
+      ]
+    },
+    {
+      "id": "DE-108",
+      "path": "operations/move-copy.md",
+      "title": "Copy or move an extent-backed volume",
+      "summary": "Independent operation contract for partition.move.plan.",
+      "sha256": "sha256:624341386e5632460df2e43d80a52a0b1e0dcbff4c397b3f16248b9fb99d31f3",
+      "bytes": 2944,
+      "depends_on": [
+        "DE-030",
+        "DE-042",
+        "DE-043",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-108-01"
+      ]
+    },
+    {
+      "id": "DE-109",
+      "path": "operations/filesystem-migrate.md",
+      "title": "Filesystem-aware migration and representability",
+      "summary": "Independent operation contract for filesystem.migrate.plan.",
+      "sha256": "sha256:28b74fdcc614282f16edc842069ead324466015d51afdca02cea7716ced1abc1",
+      "bytes": 2794,
+      "depends_on": [
+        "DE-030",
+        "DE-042",
+        "DE-043",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-109-01"
+      ]
+    },
+    {
+      "id": "DE-110",
+      "path": "operations/offline-boot.md",
+      "title": "Offline system and boot-dependent operations",
+      "summary": "Independent operation contract for boot.offline.plan.",
+      "sha256": "sha256:62d3190dd3c37e4f2fc160088890f3ddb877d618da5e4087da5d3c3db38c6582",
+      "bytes": 3960,
+      "depends_on": [
+        "DE-030",
+        "DE-042",
+        "DE-043",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-110-01"
+      ]
+    },
+    {
+      "id": "DE-111",
+      "path": "operations/health-forensics.md",
+      "title": "Health assessment and forensic workflow",
+      "summary": "Independent operation contract for health.assess.",
+      "sha256": "sha256:f084539a249e53a5d43c25d8504d6ae141ef9cc3785a7c3a8a2f2f83fc4709d5",
+      "bytes": 2747,
+      "depends_on": [
+        "DE-030",
+        "DE-042",
+        "DE-043",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-111-01"
+      ]
+    },
+    {
+      "id": "DE-112",
+      "path": "operations/destructive-admin.md",
+      "title": "Sanitize, firmware and advanced administration",
+      "summary": "Independent operation contract for media.destructive.plan.",
+      "sha256": "sha256:5a2c9e799754057b3a56663c09c614bf80cdd05263da16e4579783552f9dbddf",
+      "bytes": 3548,
+      "depends_on": [
+        "DE-030",
+        "DE-042",
+        "DE-043",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-112-01"
+      ]
+    },
+    {
+      "id": "DE-113",
+      "path": "operations/filesystem-format.md",
+      "title": "Create a filesystem through an explicit format plan",
+      "summary": "Formatting is a separately admitted destructive operation with consumer compatibility and verification.",
+      "sha256": "sha256:6304be9eae40a00c4481e4f522b0eb578d5780e2006142c399cb1742f6932498",
+      "bytes": 3663,
+      "depends_on": [
+        "DE-037",
+        "DE-042",
+        "DE-043",
+        "DE-044"
+      ],
+      "requirement_ids": [
+        "DE-REQ-113-01",
+        "DE-REQ-113-02"
+      ]
+    }
+  ]
+}

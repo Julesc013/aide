@@ -1,0 +1,131 @@
+{
+  "schema": "aide.native-adoption-attempt.v1",
+  "status": "PASS_PREPARATION_ONLY",
+  "job_id": "a08f6eca3fcc4011abd1f3f23d228ed6",
+  "source_commit": "ac0ca3a94a53e5c3470ff556ab889212acab0af9",
+  "source_tree": "2fb5f6d03b51ea08001a6b4a58a0d63f00e128cb",
+  "result": {
+    "exit_code": 0,
+    "reason": "exited",
+    "quiescent": true,
+    "bytes": 91,
+    "io_errors": [],
+    "job_id": "a08f6eca3fcc4011abd1f3f23d228ed6",
+    "pid": 12484,
+    "creation_filetime": 134367139189454726
+  },
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\a08f6eca3fcc4011abd1f3f23d228ed6",
+  "receipt_sha256": "85f88590ca048c413743e424ffe7f47fa9ff5390dc3e7d608ca102ef59140b4f",
+  "collection_manifest": {
+    "output": "6e9ebb1d8adefa627e3ac2d15ab7d7eba213af530627129a0b6a9d64161fefae",
+    "logs": "b55c9c1de2f325c6ee15612c542b1af2ee78452aac911bb7af731f993c30bbc2"
+  },
+  "all_collection_hashes_verified": true,
+  "collection_retirement_verified": true,
+  "peaks": {
+    "scratch_bytes": 3501582,
+    "memory_bytes": 39079936,
+    "canonical_bytes": {}
+  },
+  "native_result_sha256": "760745f8cf5c57d0bd99ff220e800cdcf2fcee8fa387857424f4b9cb441a8045",
+  "native_check_sha256": "a507a31e02d4e3ea3d7c03ff6a664c94315565af16c91d0a7b7e1c539dda0f07",
+  "native_check": {
+    "schema": "org.disked.spec-check/1",
+    "status": "PASS",
+    "checks": 872,
+    "concepts": 72,
+    "requirements": 150,
+    "work_units": 36,
+    "schemas": 29,
+    "errors": [],
+    "scope": "Specification structure, local contracts, fixtures and tool projections only.",
+    "not_validated": [
+      "DiskEd runtime",
+      "Windows binaries/GUI",
+      "physical storage",
+      "power-loss recovery",
+      "live AIDE CLI",
+      "Universal Setup integration",
+      "owner acceptance"
+    ]
+  },
+  "preparation": {
+    "schema": "aide.native-adoption-preparation.v1",
+    "status": "PASS",
+    "native_work_id": "DE-W000",
+    "native_base": "40ac8ec02778b7c25100421147fc1e107fa14ed5",
+    "preimages": {
+      ".aide/handoffs/DE-W000-aide-selected-export-2026-10-17.json": null,
+      ".aide/requests/2026-10-17-aide-selected-export.json": null,
+      "spec/development/specctl.md": "96b889f6bafeafab42fa8b5500dbca35a591c464e67c75a67080b19113065977",
+      "spec/generated/index.json": "e261262e2c1fc4d8a451431aaff110b61fa50aaaf17baf5b92b77dd167d877e9",
+      "spec/manifest.json": "818f38c516d71870ee1ff92e12ba8a1c7ad0e7b33e399c7cb03208fbf058f6ee",
+      "spec/tools/specctl.py": "6533be987ed582f9e644114d42c7a79d79da4cf1b07af49c061934aada2f010e",
+      "spec/tools/tests/test_specctl.py": "86f11fb0ab22e61425b3d79e84d8812cbda5dc4a2f1d89709a0ec9f1809f6988",
+      "spec/work/grants.json": "0af2d1c2bd197ba339a75f918299b71219d601a10f9e8ef9120a2f71b8f595ec"
+    },
+    "postimages": {
+      ".aide/handoffs/DE-W000-aide-selected-export-2026-10-17.json": "315bf6944dbce058ada8566862d5bd17d9c0106545dc383a8de2c2374f79e867",
+      ".aide/requests/2026-10-17-aide-selected-export.json": "4c70abbfae37200e0b398048872b77df1ed5f83802715f5c5f300307180e5a36",
+      "spec/development/specctl.md": "41b1a1c0a322ba1679112c67d2841a80c5583da2cc9b42b257e7eea9dc8b06d0",
+      "spec/generated/index.json": "cc755a86a83a81162bd887aeae7ae0dd0ee76e9ab265ba73817b4410882db5da",
+      "spec/manifest.json": "c8c176e560eb9b7f70c5efba7f0b09ca330b45356e2dffd524c5381f743d7558",
+      "spec/tools/specctl.py": "e5575137ec2e5d790881d5524830c1a8da3e0c5a10d692ecae54327c8c42ba53",
+      "spec/tools/tests/test_specctl.py": "6ca68f60cec7b99dc25a6147308aec248c1a98d184eb6c9b7f979db803ef1501",
+      "spec/work/grants.json": "5c23f99725f88f74fb7b154802bb8665698d1cb43773e951e95541a1858eeb9a"
+    },
+    "postimage_bytes": 182699,
+    "native_index": {
+      "files": 25,
+      "changed": [
+        "generated/index.json"
+      ],
+      "mode": "regenerate"
+    },
+    "native_manifest": {
+      "status": "PASS",
+      "mode": "generate",
+      "files": 221,
+      "bytes": 1102293
+    },
+    "native_metadata_validation": "PASS",
+    "reused_test_job": "3591d13b81944afd9ea3b437314e855d",
+    "reused_test_counts": {
+      "tests_run": 160,
+      "failures": 0,
+      "errors": 0,
+      "skips": 2,
+      "skipped_cases": [
+        {
+          "test": "test_specctl.PathTests.test_symlink_path_is_refused",
+          "reason": "symlinks unavailable on coordinator"
+        },
+        {
+          "test": "test_specctl.TemporaryBundleTests.test_bootstrap_refuses_symlink_root",
+          "reason": "symlinks unavailable"
+        }
+      ],
+      "dependency_versions": {
+        "PyYAML": "6.0.3",
+        "jsonschema": "4.26.0",
+        "attrs": "26.1.0",
+        "jsonschema-specifications": "2025.9.1",
+        "referencing": "0.37.0",
+        "rpds-py": "2026.5.1",
+        "typing_extensions": "4.16.0"
+      }
+    },
+    "native_tests_reexecuted": false,
+    "target_mutated": false,
+    "grant_activated": false,
+    "writer_ownership": "pending",
+    "arbitrary_interruption_qualified": false,
+    "whole_task_usage": "unknown",
+    "model_calls": 0,
+    "network_calls": 0,
+    "elapsed_seconds": 5.565995999990264
+  },
+  "jobs_allocated": 2,
+  "maximum_jobs": 2,
+  "actual_target_validation_allocated": false
+}

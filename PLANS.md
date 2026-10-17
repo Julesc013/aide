@@ -4,7 +4,8 @@
 
 AIDE-DAILY-DISKED-ADOPTION-01 prepares actual owner adoption of the conserved
 selected-export candidate. Native writer ownership and exact target effects remain
-held; original fixture evidence and two unavailable checks are preserved.
+held. Exact native metadata/candidate preparation passed; both finite jobs are
+retired. Original fixture evidence and two unavailable checks are preserved.
 
 ## Portable Git defaults - 2026-10-17
 

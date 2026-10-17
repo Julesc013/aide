@@ -4,6 +4,8 @@
 
 [Adoption ExecPlan](.aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/ExecPlan.md) tracks
 preparation, exact target ownership/effects and actual consumer obligations.
+[Prepared outcome](.aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/REPORT.md) links the
+qualified candidate and remaining native ownership input.
 
 - [Portable Git workflow](docs/reference/git-workflow-policy.md): integration
   cadence, project protection choices, task publication and safe retirement.
