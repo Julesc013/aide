@@ -1,5 +1,6 @@
 """Opt-in CLI. No scheduled service or live activation is installed implicitly."""
 import argparse
+from contextlib import closing
 import hashlib
 import json
 import sqlite3
@@ -22,6 +23,33 @@ def dependency_command(args):
         path = require_path(str(root / ("coordinator.sqlite3" + suffix)))
         if path.exists() and (not path.is_file() or path.stat().st_nlink != 1):
             raise Refused("unsafe coordinator state file")
+    database = root / "coordinator.sqlite3"
+    wal = (root / "coordinator.sqlite3-wal").exists()
+    shm = (root / "coordinator.sqlite3-shm").exists()
+    if wal != shm or ((wal or shm) and (not database.exists() or not database.stat().st_size)):
+        raise Refused("incomplete WAL state requires explicit reconciliation")
+
+    def preflight(expected, *, initializing=False):
+        database = root / "coordinator.sqlite3"
+        if not (root / "coordinator.sqlite3-wal").exists() and not (root / "coordinator.sqlite3-shm").exists():
+            # A normal read-only WAL open can create sidecars. This committed-
+            # page snapshot is ONLY a refusal preflight, never operational truth.
+            # Concurrent initialization may conservatively refuse; successful
+            # operations revalidate the live DB below before any record change.
+            with closing(sqlite3.connect(database.as_uri() + "?mode=ro&immutable=1", uri=True)) as db:
+                if db.execute("PRAGMA user_version").fetchone()[0] != 1:
+                    raise Refused("unsupported state schema")
+                row = db.execute("SELECT value FROM meta WHERE key=?", (CONFIG_KEY,)).fetchone()
+                if row is None and not initializing:
+                    raise Refused("dependency interface is not initialized")
+                if row:
+                    config = decode(row[0].encode())
+                    configuration(config, root)
+                    if digest(config) != expected:
+                        raise Refused("configuration digest mismatch")
+        elif not ((root / "coordinator.sqlite3-wal").exists() and (root / "coordinator.sqlite3-shm").exists()):
+            raise Refused("incomplete WAL state requires explicit reconciliation")
+
     payload = None
     if args.command != "request-status":
         with args.input.open("rb") as src:
@@ -35,6 +63,7 @@ def dependency_command(args):
             raise Refused("configuration expired")
         database = root / "coordinator.sqlite3"
         if database.exists() and database.stat().st_size:
+            preflight(digest(payload), initializing=True)
             existing = State(root, read_only=True)
             try:
                 if existing.db.execute("SELECT 1 FROM meta WHERE key=?", (CONFIG_KEY,)).fetchone():
@@ -46,6 +75,7 @@ def dependency_command(args):
     if args.command != "request-init":
         # Refusal must not initialize schema or alter journaling. Validate the
         # existing database and configuration before constructing any writer.
+        preflight(args.configuration_sha256)
         existing = State(root, read_only=True)
         try:
             requests = Requests(existing, args.configuration_sha256)

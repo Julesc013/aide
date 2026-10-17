@@ -1,5 +1,6 @@
 """Independent lifecycle/CLI oracles; all state belongs to disposable fixtures."""
 import concurrent.futures
+from contextlib import closing
 import copy
 import hashlib
 import json
@@ -271,7 +272,7 @@ class DependencyTests(unittest.TestCase):
                 elif kind == "uninitialized":
                     old = State(folder); old.close()
                 else:
-                    with sqlite3.connect(database) as db:
+                    with closing(sqlite3.connect(database, isolation_level=None)) as db:
                         db.execute("CREATE TABLE preserve(value TEXT)")
                         db.execute("INSERT INTO preserve VALUES('owned original')")
                         db.execute("PRAGMA user_version=999")
@@ -286,7 +287,7 @@ class DependencyTests(unittest.TestCase):
 
     def test_cli_configuration_mismatch_preserves_database_and_journal_mode(self):
         self.state.close()
-        with sqlite3.connect(self.root / 'coordinator.sqlite3') as db:
+        with closing(sqlite3.connect(self.root / 'coordinator.sqlite3')) as db:
             db.execute('PRAGMA journal_mode=DELETE')
         database = self.root / 'coordinator.sqlite3'; before = database.read_bytes()
         payload = self.root / 'request.json'
@@ -307,10 +308,29 @@ class DependencyTests(unittest.TestCase):
         self.assertFalse((self.root / 'coordinator.sqlite3-wal').exists())
         self.state = State(self.root)
 
+    def test_explicit_init_preserves_sidecars_with_missing_or_empty_database(self):
+        for empty in (False, True):
+            for sidecars in (("-wal",), ("-shm",), ("-wal", "-shm")):
+                with self.subTest(empty=empty, sidecars=sidecars):
+                    folder = self.root / (str(empty) + "".join(sidecars)); folder.mkdir()
+                    if empty:
+                        (folder / "coordinator.sqlite3").write_bytes(b"")
+                    for suffix in sidecars:
+                        (folder / ("coordinator.sqlite3" + suffix)).write_bytes(b"preserve uncertain state" + suffix.encode())
+                    raw = json.dumps(configuration(folder)).encode()
+                    path = folder / "config.json"; path.write_bytes(raw)
+                    before = {p.name: p.read_bytes() for p in folder.iterdir()}
+                    process = subprocess.run([sys.executable, "-B", "-m", "core.runtime.continuous_worker",
+                        "request-init", "--state-root", str(folder), "--input", str(path),
+                        "--sha256", hashlib.sha256(raw).hexdigest()], cwd=ROOT, capture_output=True, text=True, timeout=15)
+                    self.assertEqual(process.returncode, 2, process.stdout + process.stderr)
+                    self.assertIn("reconciliation", json.loads(process.stdout)["reason"])
+                    self.assertEqual(before, {p.name: p.read_bytes() for p in folder.iterdir()})
+
     def test_explicit_init_preserves_unsupported_database(self):
         folder = self.root / 'unsupported-init'; folder.mkdir()
         database = folder / 'coordinator.sqlite3'
-        with sqlite3.connect(database) as db: db.execute('PRAGMA user_version=999')
+        with closing(sqlite3.connect(database)) as db: db.execute('PRAGMA user_version=999')
         config = configuration(folder); raw = json.dumps(config).encode()
         path = folder / 'config.json'; path.write_bytes(raw)
         before = database.read_bytes()

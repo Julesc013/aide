@@ -2,9 +2,9 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LOCAL-DEPENDENCY-01
 status: running
 result: PENDING
-classification: local_interface_implementation
-jobs_allocated: 0
+classification: first_fixture_failed_repair_under_review
+jobs_allocated: 1
 maximum_jobs: 2
-next_action: implement_then_review_exact_source_and_fixture_effect
+next_action: review_narrow_repair_and_remaining_fixture_allocation
 live_initializations: 0
 live_peer_deliveries: 0

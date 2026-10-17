@@ -1,0 +1,10 @@
+{
+  "verdict": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "tree": "c9eab45f0d4f0c495b69c851b1f462e70d8b43f2",
+  "findings": [
+    "request-init skipped consistency preflight for absent/empty databases with orphan or paired WAL sidecars."
+  ],
+  "disposition": "Refuse inconsistent database/sidecars before branching or opening SQLite; add six actual-CLI byte/list preservation subcases. Original tests remain.",
+  "jobs_run": 0
+}

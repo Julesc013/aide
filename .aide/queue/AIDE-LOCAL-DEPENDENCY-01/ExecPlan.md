@@ -36,3 +36,17 @@ Progress: source base 9605d8e3; sole checkout switched to the admitted local-onl
 task branch after classifying exactly four intake files and the parent admission,
 checking exact dev/main/base and no active job with running dispatch. The published
 DiskEd branch and pending native ownership are unchanged.
+
+First managed job 9a051ea5 ran all 46 cases with one failure and three teardown
+errors. SQLite's normal read-only WAL open created sidecars for an uninitialized
+database; three new fixture connections were not explicitly closed. Original
+assertions remain. Repair uses a committed-page snapshot for refusal preflight
+only, then live schema/config revalidation; it cannot grant operational truth.
+Close fixture connections explicitly. Job collected and retired; one remaining
+allocation requires exact new source/effect review. No live delivery occurred.
+
+Repair review c9eab45f requested one correction before the second job: reject
+sidecars with an absent or empty DB before the init branch. Added six actual-CLI
+byte/list preservation subcases; all original checks remain. No second job has
+run. Full validation currently retains the two stale development-pack provenance
+findings; separate scoped refresh is required before integration/completion.
