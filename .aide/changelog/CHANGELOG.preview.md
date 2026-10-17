@@ -2,26 +2,21 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 8f93cb7e021a5347e71d81a60aae4bd3f8d53602..8513f7f572ed18a5390225b5a9d1d8becbf59318
-source_head: 8513f7f572ed18a5390225b5a9d1d8becbf59318
-commit_count: 3
+source_range: 2194eb6b73ac055bd4c173d1a12ffcf1833f833d..27240f31db863efe7f88f2421e3b67576bcdbe9a
+source_head: 27240f31db863efe7f88f2421e3b67576bcdbe9a
+commit_count: 2
 malformed_count: 0
 preview_only: true
 release_publishing: false
 
 ## Summary
 
-- Added: 1
 - Changed: 2
-
-## Added
-
-- Development candidate for cooperative inbox, status, submit and observation tools. Published Lite assets remain unchanged. (3d7899130501 feat(runtime): expose cooperative dependency tools over stdio)
 
 ## Changed
 
-- Development evidence records local stdio qualification and a bounded metadata closure. No new public release or live worker delivery. (730d43f3e492 chore(pack): prepare exact dependency interface provenance closure)
-- Qualified cooperative stdio source and unchanged Lite payload evidence are retained; main promotion requires a current reviewed preview. Published Lite1.0.0 remains unchanged. (8513f7f572ed chore(runtime): retain qualification and prepare promotion preview)
+- Prepare an actual cooperative readiness review with separate participant receipt, answer and sender adoption. (b7eb79cfe3f3 chore(runtime): prepare one actual cooperative review exchange)
+- Record one real cooperative answer exchange and its installed-host connection prerequisite. (27240f31db86 docs(runtime): retain actual cooperative review and sender adoption)
 
 ## Malformed Commits
 

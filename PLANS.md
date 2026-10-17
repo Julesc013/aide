@@ -2,7 +2,7 @@
 
 ## Actual cooperative review - 2026-10-18
 
-One real answer-only host-readiness request completed receipt, native acceptance, return and sender-verified adoption through existing Requests. Six lifecycle events and unchanged native state are verified. Promotion preview and exact Git review remain; desktop delivery and DiskEd ownership stay open.
+One real answer-only host-readiness request completed receipt, native acceptance, return and sender-verified adoption through existing Requests. Six lifecycle events and unchanged native state are verified. The one promotion preview passed and retired; exact Git review remains. Desktop delivery and DiskEd ownership stay open.
 
 ## Cooperative dependency tools - 2026-10-18
 

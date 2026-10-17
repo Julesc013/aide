@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "source_head": "27240f31db863efe7f88f2421e3b67576bcdbe9a",
+  "source_range": "2194eb6b73ac055bd4c173d1a12ffcf1833f833d..27240f31db863efe7f88f2421e3b67576bcdbe9a",
+  "commits": [
+    "27240f31db863efe7f88f2421e3b67576bcdbe9a",
+    "b7eb79cfe3f38480c7131fb6296d367d489337c6"
+  ],
+  "malformed_count": 0,
+  "sha256s": {
+    "CHANGELOG.preview.md": "b0a5034ad040495acb01e23d959d26449ba283dac8d258d8c1a4cf69e8eb009d",
+    "RELEASE_NOTES.preview.md": "2250c70fe78e30722af24ed013e69d7ee24018cbf3dc6fe87f929353970926da",
+    "changelog.preview.json": "4abaf087597efba4fc500ab43b71b105ffd8b97867234ecbdfc6e6cbc2c34249",
+    "latest-changelog-report.md": "fe40dd29598bccd67cff54079b2db11c94a51faadb08010db0fa54450b510350",
+    "malformed-commits.md": "35c8ec4ec7d5c5187604ccd45306eeb2b6ed2100d09af6f07c17d2c1fca683e2",
+    "release-notes.preview.json": "4ec0e989885d0326e6737e29bb90447990af7202d7bc798176821895bd002fb5"
+  },
+  "regeneration": "read_only_exact_six_output_comparison",
+  "operations": {
+    "preview": {
+      "exit_code": 0,
+      "log_sha256": "8b9e553ee87c73d7b17b41d3049a6387d5fc0348555b6b9f579d35b92ddcabe4"
+    },
+    "validate": {
+      "exit_code": 0,
+      "log_sha256": "eb5ba25320954d7fb10d12867818e67bb7ae7ef3f878daa54c49aeb385b5bc37"
+    },
+    "status": {
+      "exit_code": 0,
+      "log_sha256": "36ced8ea7491b489dec52aff3c661543d12bc7ad77c474a10d6ac89cb1c9a090"
+    }
+  },
+  "job_id": "1d0b58a41abd4eb9ba2ad95965f23480",
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\1d0b58a41abd4eb9ba2ad95965f23480",
+  "source_tree": "3776de02144213d24ce8dc9698205e5f5e709344",
+  "result": {
+    "exit_code": 0,
+    "reason": "exited",
+    "quiescent": true,
+    "bytes": 93,
+    "io_errors": [],
+    "job_id": "1d0b58a41abd4eb9ba2ad95965f23480",
+    "pid": 9428,
+    "creation_filetime": 134367218294707640
+  },
+  "peaks": {
+    "scratch_bytes": 25180,
+    "memory_bytes": 208310272,
+    "canonical_bytes": {
+      ".aide/changelog": 22469
+    }
+  },
+  "collected_manifest": {
+    "output": "85b02b22911b89e1676b33da8bc7748ba04333da03d33f6685ad7ad6136db166",
+    "logs": "1d426f36df5374e76b290613ca158d58fe7748119785edf4dccb9b6a950354ea"
+  },
+  "receipt_sha256": "97bb925b64d4e803e3a10ee05717cca0ef903fa7499263f0e8eb0f7fd2d1f16f",
+  "collection_retirement_verified": true
+}

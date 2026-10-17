@@ -1,0 +1,9 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "tree": "3776de02144213d24ce8dc9698205e5f5e709344",
+  "effect_sha256": "2ff26a32f0faeec19a3832a93c7e39b023c73ebbdb0061d99aad0edbb00c70b9",
+  "template_sha256": "1f621b3954bef1f5e4f1e8d26b7507d734350c06289866baff91f4c23a802af2",
+  "scope": "Exact source and one bounded preview allocation; terminal generated-byte/Git review remains.",
+  "findings": []
+}

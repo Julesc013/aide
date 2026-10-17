@@ -32,11 +32,20 @@ cooperative attribution, not authentication or enforcement. Actual desktop/peer
 delivery, native DiskEd ownership/adoption and the broad daily-use goal remain open.
 
 Product source and all 51 qualified runtime inputs are unchanged. Existing 60-test
-and 858-file pack evidence remains applicable. One separately reviewed promotion
-preview allocation is available; source integration remains subject to exact
-terminal review, current validation and fresh Git state checks.
+and 858-file pack evidence remains applicable. The separately reviewed promotion
+preview allocation has passed and is exhausted; source integration remains subject
+to exact terminal review, current validation and fresh Git state checks.
 
 Closure found one stale capability fingerprint after compact task generation. The
 independently admitted existing-owner refresh changed that binding and historical
 branch/commit headers only; semantic ledger remained identical. Current full
 validation and doctor pass, with initial failures retained.
+
+The promotion preview completed in job 1d0b58a41abd4eb9ba2ad95965f23480. Both
+commits through27240f31 are covered with zero malformed records. All six outputs
+regenerate exactly; collection and retirement are verified. The one allocation is
+exhausted. [Preview result](evidence/preview-result.json) pins the exact bytes.
+[Integration effect](evidence/integration-effect.json) remains proposed at this
+checkpoint; actual ref confirmations are recorded in local ignored
+`evidence/integration-result.log` after execution. Source promotion does not alter
+the published Lite release or qualify installed desktop delivery.

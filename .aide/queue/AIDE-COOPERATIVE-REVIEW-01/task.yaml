@@ -3,7 +3,7 @@ id: AIDE-COOPERATIVE-REVIEW-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Complete one actual cooperative readiness review
 type: operational_qualification
-status: running
+status: passed_with_notes
 admission_ref: ../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/cooperative-review-admission.md
 admission_sha256: 6fb7e3876823e7f30687aa3a6bae91f1b415537355f2203f052dbdf7d4dd2cbc
 scope:

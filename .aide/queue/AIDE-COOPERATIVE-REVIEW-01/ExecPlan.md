@@ -31,7 +31,17 @@ and sender verification. Final audit: six events, one request, no native activat
 All six mutations and five status reads used. Durable state preserved. The useful
 answer requires a supported reachable existing-host endpoint and session binding.
 Two pre-dispatch guard failures are retained; no uncertain effect was repeated.
-One promotion preview allocation remains available, subject to exact source/effect
-review. No runtime fixture rerun or pack rebuild is necessary for unchanged bytes.
+The one promotion preview allocation subsequently passed after exact source/effect
+review and is exhausted. No runtime fixture rerun or pack rebuild was necessary.
 
 Derived metadata amendment b72433d2 accepted: refresh only four existing report paths. Sole stale packet binding corrected; semantic ledger unchanged. Current full validate/doctor and corrected structured message PASS; original failures preserved.
+
+Promotion job 1d0b58a41abd4eb9ba2ad95965f23480 PASS: fixed2194eb6b..27240f31 covers both
+commits, zero malformed records, exact six-output regeneration. Collection digests,
+quiescence and retirement verified. Allocation1/1 exhausted. Final closure changes
+only evidence/status/generated preview outputs; exact terminal integration review
+is next. No new live requests or runtime tests are admitted.
+
+Reusable lesson: generate a compact task packet before refreshing derived source
+bindings and running final validation. Preserve the first stale-binding result;
+refresh through the existing owner, without weakening the current-input check.

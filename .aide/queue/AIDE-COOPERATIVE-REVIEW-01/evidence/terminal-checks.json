@@ -1,0 +1,18 @@
+{
+  "result": "PASS_VALIDATION_AND_COMMIT_CHECKS",
+  "source_checkpoint": "27240f31db863efe7f88f2421e3b67576bcdbe9a",
+  "logs": {
+    "terminal-validation.log": "3a82a94a855be80887a5e534579799984715b438b9935d7b8c81bf6e30b32c9f",
+    "terminal-helper.log": "6ce2b7eca854fce709feae255d420fd1cc2b20aadf0f13297e889cd21ea244c5",
+    "terminal-message-check.log": "f0fb2e3ede22373cc6c40b03b09523977e1d7412ef25ba528b0446ebb6efd33b",
+    "checkpoint-range.log": "9d4cfaaded3ce6adb89ef506df1cfe431d8226b8d93aefdddbbdb74bb5dd896d"
+  },
+  "helper_posture": "dirty_tree_requires_classification for this owned staged candidate; fresh clean plan required after commit and before refs",
+  "preview_result_sha256": "0546f9dd58a8607bc3d6d8df865a9e22c1d2cad13e1749fbbfc3de9409ef4959",
+  "integration_effect_sha256": "7612c87364aeb7391e0625dfce3674d29815ddf83fe2aceabc7b936cc275743b",
+  "source_changes_since_preview": "six generated outputs, evidence/status/root plan only; no executable or policy change",
+  "observed_local_and_remote_dev_main": "2194eb6b73ac055bd4c173d1a12ffcf1833f833d",
+  "remote_task_published": false,
+  "checkout_count": 1,
+  "post_commit_checks": "latest and full base..candidate plus clean helper required before ref effects"
+}

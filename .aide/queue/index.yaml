@@ -4017,9 +4017,9 @@ items:
     evidence: .aide/queue/AIDE-DEPENDENCY-MCP-01/evidence
 
   - id: AIDE-COOPERATIVE-REVIEW-01
-    status: running
-    planning_state: operational_adoption_pass_promotion_pending
-    result: PENDING
+    status: passed_with_notes
+    planning_state: cooperative_adoption_and_preview_qualified_exact_integration_review
+    result: PASS_COOPERATIVE_ADOPTION_AND_PROMOTION_PREVIEW
     title: Complete one actual cooperative readiness review
     task: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/task.yaml
     exec_plan: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/ExecPlan.md

@@ -1,68 +1,16 @@
 {
   "categories": {
-    "Added": [
-      {
-        "aide_phase": "source-for-qualification",
-        "aide_result": "static-pass-behavior-pending",
-        "breaking": false,
-        "category": "Added",
-        "commit": "3d7899130501",
-        "commit_sha": "3d78991305013fb63e5adf0c4c916d9cba00f032",
-        "entry": "Development candidate for cooperative inbox, status, submit and observation tools. Published Lite assets remain unchanged.",
-        "follow_up": "- Run the exact independently accepted fixture effect, conserve outcomes, review qualified integration and continue existing-worker delivery and native downstream adoption.\n\nAIDE-Task: AIDE-DEPENDENCY-MCP-01\nAIDE-Phase: source-for-qualification\nAIDE-Result: static-pass-behavior-pending\nAIDE-Scope: cooperative-stdio-tools-only\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-and-exact-fixture-effect",
-        "risks": "- Bindings are cooperative declarations. Protocol fixtures do not establish installed-client compatibility, automatic wake-up, actual peer delivery or independent verification of reported claims.",
-        "scope": "runtime",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "feat(runtime): expose cooperative dependency tools over stdio",
-        "summary": "Development candidate for cooperative inbox, status, submit and observation tools. Published Lite assets remain unchanged.",
-        "type": "feat",
-        "validation": "- PASS: six Python AST checks, diff checks, registered task packet and full AIDE validate. Behavioral qualification remains pending until the separately reviewed managed fixture effect."
-      }
-    ],
     "Changed": [
       {
-        "aide_phase": "pack-qualification-preparation",
-        "aide_result": "runtime-pass-provenance-pending",
+        "aide_phase": "live-effect-preparation",
+        "aide_result": "prepared-not-activated",
         "breaking": false,
         "category": "Changed",
-        "commit": "730d43f3e492",
-        "commit_sha": "730d43f3e492cef5509ca749e2872f20230b80a5",
-        "entry": "Development evidence records local stdio qualification and a bounded metadata closure. No new public release or live worker delivery.",
-        "follow_up": "- Execute only the exact accepted pack effect, retain all results, then obtain terminal source and integration review.\n\nAIDE-Task: AIDE-DEPENDENCY-MCP-01\nAIDE-Phase: pack-qualification-preparation\nAIDE-Result: runtime-pass-provenance-pending\nAIDE-Scope: existing-export-metadata-only\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-exact-pack-effect",
-        "risks": "- The second allocation is finite and cannot silently accept payload changes. Native client compatibility and actual delivery remain unqualified.",
-        "scope": "pack",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "chore(pack): prepare exact dependency interface provenance closure",
-        "summary": "Development evidence records local stdio qualification and a bounded metadata closure. No new public release or live worker delivery.",
-        "type": "chore",
-        "validation": "- PASS: runtime60 with zero failures/errors/skips, collected/retired, exact input pins and AST/diff checks. FAIL preserved: only the two expected postcommit provenance findings; the separately reviewed pack job is required before integration."
-      },
-      {
-        "aide_phase": "promotion-preview-preparation",
-        "aide_result": "qualified-source-preview-pending",
-        "breaking": false,
-        "category": "Changed",
-        "commit": "8513f7f572ed",
-        "commit_sha": "8513f7f572ed18a5390225b5a9d1d8becbf59318",
-        "entry": "Qualified cooperative stdio source and unchanged Lite payload evidence are retained; main promotion requires a current reviewed preview. Published Lite1.0.0 remains unchanged.",
-        "follow_up": "- Execute only the independently accepted preview job, review all generated outputs, then perform exact qualified dev/main synchronization and read-only postpromotion regeneration.\n\nAIDE-Task: AIDE-DEPENDENCY-MCP-01\nAIDE-Phase: promotion-preview-preparation\nAIDE-Result: qualified-source-preview-pending\nAIDE-Scope: six-generated-preview-outputs\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-exact-preview-effect",
-        "risks": "- Actual existing-worker delivery, installed-client compatibility and downstream adoption remain unqualified. New preview allocation does not reopen runtime/export testing or grant live effects.",
+        "commit": "b7eb79cfe3f3",
+        "commit_sha": "b7eb79cfe3f38480c7131fb6296d367d489337c6",
+        "entry": "Prepare an actual cooperative readiness review with separate participant receipt, answer and sender adoption.",
+        "follow_up": "- Execute only the exact accepted live effect, verify actor-owned evidence, preserve all records, then qualify source promotion separately.\n\nAIDE-Task: AIDE-COOPERATIVE-REVIEW-01\nAIDE-Phase: live-effect-preparation\nAIDE-Result: prepared-not-activated\nAIDE-Scope: bounded-review-exchange\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: exact-independent-live-effect",
+        "risks": "- Cooperative bindings do not authenticate processes or enforce isolation. Automatic desktop delivery and target ownership remain unqualified; controller/reviewer usage is unknown.",
         "scope": "runtime",
         "source_sections_present": [
           "## Summary",
@@ -73,29 +21,53 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "chore(runtime): retain qualification and prepare promotion preview",
-        "summary": "Qualified cooperative stdio source and unchanged Lite payload evidence are retained; main promotion requires a current reviewed preview. Published Lite1.0.0 remains unchanged.",
+        "subject": "chore(runtime): prepare one actual cooperative review exchange",
+        "summary": "Prepare an actual cooperative readiness review with separate participant receipt, answer and sender adoption.",
         "type": "chore",
-        "validation": "- PASS: runtime60 plus ownership6 without failures/errors/skips, export/doctor/validate/pack-status, final full validation, retained digests, AST and diff checks. Terminal source was independently accepted. Main integration remains held pending the separately reviewed applicable preview and exact effect."
+        "validation": "- PASS: doctor, full structural validate, compact task pack and diff checks. Existing runtime and pack evidence remains applicable to unchanged bytes.\n- Exact source/live-effect review is required before initialization or notification; preparation performs neither."
+      },
+      {
+        "aide_phase": "operational-closure-preview-preparation",
+        "aide_result": "operational-PASS-promotion-pending",
+        "breaking": false,
+        "category": "Changed",
+        "commit": "27240f31db86",
+        "commit_sha": "27240f31db863efe7f88f2421e3b67576bcdbe9a",
+        "entry": "Record one real cooperative answer exchange and its installed-host connection prerequisite.",
+        "follow_up": "- Complete the one admitted promotion preview and exact terminal Git review. Installed desktop binding and native DiskEd ownership/adoption remain open; no release or target effect is implied.\n\nAIDE-Task: AIDE-COOPERATIVE-REVIEW-01\nAIDE-Phase: operational-closure-preview-preparation\nAIDE-Result: operational-PASS-promotion-pending\nAIDE-Scope: bounded-operational-evidence-derived-reports\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-exact-preview-effect",
+        "risks": "- Cooperative attribution is not desktop delivery, authentication or containment. Controller/reviewer usage remains unknown. Original guard and stale-binding failures remain preserved.",
+        "scope": "runtime",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "docs(runtime): retain actual cooperative review and sender adoption",
+        "summary": "Record one real cooperative answer exchange and its installed-host connection prerequisite.",
+        "type": "docs",
+        "validation": "- Operational lifecycle and fresh SQLite audit PASS: one request, six events, nine verified references, unchanged native tables. All 51 runtime inputs and 858 pack identities match prior qualified evidence. Current structural checks and exact source/effect review are retained in child evidence before commit and promotion."
       }
     ]
   },
   "category_counts": {
-    "Added": 1,
     "Changed": 2
   },
-  "commit_count": 3,
+  "commit_count": 2,
   "entries": [
     {
-      "aide_phase": "source-for-qualification",
-      "aide_result": "static-pass-behavior-pending",
+      "aide_phase": "live-effect-preparation",
+      "aide_result": "prepared-not-activated",
       "breaking": false,
-      "category": "Added",
-      "commit": "3d7899130501",
-      "commit_sha": "3d78991305013fb63e5adf0c4c916d9cba00f032",
-      "entry": "Development candidate for cooperative inbox, status, submit and observation tools. Published Lite assets remain unchanged.",
-      "follow_up": "- Run the exact independently accepted fixture effect, conserve outcomes, review qualified integration and continue existing-worker delivery and native downstream adoption.\n\nAIDE-Task: AIDE-DEPENDENCY-MCP-01\nAIDE-Phase: source-for-qualification\nAIDE-Result: static-pass-behavior-pending\nAIDE-Scope: cooperative-stdio-tools-only\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-and-exact-fixture-effect",
-      "risks": "- Bindings are cooperative declarations. Protocol fixtures do not establish installed-client compatibility, automatic wake-up, actual peer delivery or independent verification of reported claims.",
+      "category": "Changed",
+      "commit": "b7eb79cfe3f3",
+      "commit_sha": "b7eb79cfe3f38480c7131fb6296d367d489337c6",
+      "entry": "Prepare an actual cooperative readiness review with separate participant receipt, answer and sender adoption.",
+      "follow_up": "- Execute only the exact accepted live effect, verify actor-owned evidence, preserve all records, then qualify source promotion separately.\n\nAIDE-Task: AIDE-COOPERATIVE-REVIEW-01\nAIDE-Phase: live-effect-preparation\nAIDE-Result: prepared-not-activated\nAIDE-Scope: bounded-review-exchange\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: exact-independent-live-effect",
+      "risks": "- Cooperative bindings do not authenticate processes or enforce isolation. Automatic desktop delivery and target ownership remain unqualified; controller/reviewer usage is unknown.",
       "scope": "runtime",
       "source_sections_present": [
         "## Summary",
@@ -106,46 +78,21 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "feat(runtime): expose cooperative dependency tools over stdio",
-      "summary": "Development candidate for cooperative inbox, status, submit and observation tools. Published Lite assets remain unchanged.",
-      "type": "feat",
-      "validation": "- PASS: six Python AST checks, diff checks, registered task packet and full AIDE validate. Behavioral qualification remains pending until the separately reviewed managed fixture effect."
-    },
-    {
-      "aide_phase": "pack-qualification-preparation",
-      "aide_result": "runtime-pass-provenance-pending",
-      "breaking": false,
-      "category": "Changed",
-      "commit": "730d43f3e492",
-      "commit_sha": "730d43f3e492cef5509ca749e2872f20230b80a5",
-      "entry": "Development evidence records local stdio qualification and a bounded metadata closure. No new public release or live worker delivery.",
-      "follow_up": "- Execute only the exact accepted pack effect, retain all results, then obtain terminal source and integration review.\n\nAIDE-Task: AIDE-DEPENDENCY-MCP-01\nAIDE-Phase: pack-qualification-preparation\nAIDE-Result: runtime-pass-provenance-pending\nAIDE-Scope: existing-export-metadata-only\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-exact-pack-effect",
-      "risks": "- The second allocation is finite and cannot silently accept payload changes. Native client compatibility and actual delivery remain unqualified.",
-      "scope": "pack",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "chore(pack): prepare exact dependency interface provenance closure",
-      "summary": "Development evidence records local stdio qualification and a bounded metadata closure. No new public release or live worker delivery.",
+      "subject": "chore(runtime): prepare one actual cooperative review exchange",
+      "summary": "Prepare an actual cooperative readiness review with separate participant receipt, answer and sender adoption.",
       "type": "chore",
-      "validation": "- PASS: runtime60 with zero failures/errors/skips, collected/retired, exact input pins and AST/diff checks. FAIL preserved: only the two expected postcommit provenance findings; the separately reviewed pack job is required before integration."
+      "validation": "- PASS: doctor, full structural validate, compact task pack and diff checks. Existing runtime and pack evidence remains applicable to unchanged bytes.\n- Exact source/live-effect review is required before initialization or notification; preparation performs neither."
     },
     {
-      "aide_phase": "promotion-preview-preparation",
-      "aide_result": "qualified-source-preview-pending",
+      "aide_phase": "operational-closure-preview-preparation",
+      "aide_result": "operational-PASS-promotion-pending",
       "breaking": false,
       "category": "Changed",
-      "commit": "8513f7f572ed",
-      "commit_sha": "8513f7f572ed18a5390225b5a9d1d8becbf59318",
-      "entry": "Qualified cooperative stdio source and unchanged Lite payload evidence are retained; main promotion requires a current reviewed preview. Published Lite1.0.0 remains unchanged.",
-      "follow_up": "- Execute only the independently accepted preview job, review all generated outputs, then perform exact qualified dev/main synchronization and read-only postpromotion regeneration.\n\nAIDE-Task: AIDE-DEPENDENCY-MCP-01\nAIDE-Phase: promotion-preview-preparation\nAIDE-Result: qualified-source-preview-pending\nAIDE-Scope: six-generated-preview-outputs\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-exact-preview-effect",
-      "risks": "- Actual existing-worker delivery, installed-client compatibility and downstream adoption remain unqualified. New preview allocation does not reopen runtime/export testing or grant live effects.",
+      "commit": "27240f31db86",
+      "commit_sha": "27240f31db863efe7f88f2421e3b67576bcdbe9a",
+      "entry": "Record one real cooperative answer exchange and its installed-host connection prerequisite.",
+      "follow_up": "- Complete the one admitted promotion preview and exact terminal Git review. Installed desktop binding and native DiskEd ownership/adoption remain open; no release or target effect is implied.\n\nAIDE-Task: AIDE-COOPERATIVE-REVIEW-01\nAIDE-Phase: operational-closure-preview-preparation\nAIDE-Result: operational-PASS-promotion-pending\nAIDE-Scope: bounded-operational-evidence-derived-reports\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-exact-preview-effect",
+      "risks": "- Cooperative attribution is not desktop delivery, authentication or containment. Controller/reviewer usage remains unknown. Original guard and stale-binding failures remain preserved.",
       "scope": "runtime",
       "source_sections_present": [
         "## Summary",
@@ -156,10 +103,10 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "chore(runtime): retain qualification and prepare promotion preview",
-      "summary": "Qualified cooperative stdio source and unchanged Lite payload evidence are retained; main promotion requires a current reviewed preview. Published Lite1.0.0 remains unchanged.",
-      "type": "chore",
-      "validation": "- PASS: runtime60 plus ownership6 without failures/errors/skips, export/doctor/validate/pack-status, final full validation, retained digests, AST and diff checks. Terminal source was independently accepted. Main integration remains held pending the separately reviewed applicable preview and exact effect."
+      "subject": "docs(runtime): retain actual cooperative review and sender adoption",
+      "summary": "Record one real cooperative answer exchange and its installed-host connection prerequisite.",
+      "type": "docs",
+      "validation": "- Operational lifecycle and fresh SQLite audit PASS: one request, six events, nine verified references, unchanged native tables. All 51 runtime inputs and 858 pack identities match prior qualified evidence. Current structural checks and exact source/effect review are retained in child evidence before commit and promotion."
     }
   ],
   "generated_by": "aide-lite",
@@ -170,7 +117,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "8513f7f572ed18a5390225b5a9d1d8becbf59318",
-  "source_range": "8f93cb7e021a5347e71d81a60aae4bd3f8d53602..8513f7f572ed18a5390225b5a9d1d8becbf59318",
+  "source_head": "27240f31db863efe7f88f2421e3b67576bcdbe9a",
+  "source_range": "2194eb6b73ac055bd4c173d1a12ffcf1833f833d..27240f31db863efe7f88f2421e3b67576bcdbe9a",
   "warnings": []
 }

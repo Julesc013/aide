@@ -2,33 +2,29 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 8f93cb7e021a5347e71d81a60aae4bd3f8d53602..8513f7f572ed18a5390225b5a9d1d8becbf59318
-source_head: 8513f7f572ed18a5390225b5a9d1d8becbf59318
+source_range: 2194eb6b73ac055bd4c173d1a12ffcf1833f833d..27240f31db863efe7f88f2421e3b67576bcdbe9a
+source_head: 27240f31db863efe7f88f2421e3b67576bcdbe9a
 preview_only: true
 
 ## Highlights
 
-- Added: Development candidate for cooperative inbox, status, submit and observation tools. Published Lite assets remain unchanged. (3d7899130501)
-- Changed: Development evidence records local stdio qualification and a bounded metadata closure. No new public release or live worker delivery. (730d43f3e492)
-- Changed: Qualified cooperative stdio source and unchanged Lite payload evidence are retained; main promotion requires a current reviewed preview. Published Lite1.0.0 remains unchanged. (8513f7f572ed)
+- Changed: Prepare an actual cooperative readiness review with separate participant receipt, answer and sender adoption. (b7eb79cfe3f3)
+- Changed: Record one real cooperative answer exchange and its installed-host connection prerequisite. (27240f31db86)
 
 ## Validation Summary
 
-- 3d7899130501: PASS: six Python AST checks, diff checks, registered task packet and full AIDE validate. Behavioral qualification remains pending until the separately reviewed managed fixture effect.
-- 730d43f3e492: PASS: runtime60 with zero failures/errors/skips, collected/retired, exact input pins and AST/diff checks. FAIL preserved: only the two expected postcommit provenance findings; the separately reviewed pack job is required before integration.
-- 8513f7f572ed: PASS: runtime60 plus ownership6 without failures/errors/skips, export/doctor/validate/pack-status, final full validation, retained digests, AST and diff checks. Terminal source was independently accepted. Main integration remains held pending the separately reviewed applicable preview and exact effect.
+- b7eb79cfe3f3: PASS: doctor, full structural validate, compact task pack and diff checks. Existing runtime and pack evidence remains applicable to unchanged bytes.
+- 27240f31db86: Operational lifecycle and fresh SQLite audit PASS: one request, six events, nine verified references, unchanged native tables. All 51 runtime inputs and 858 pack identities match prior qualified evidence. Current structural checks and exact source/effect review are retained in child evidence before commit and promotion.
 
 ## Known Risks
 
-- 3d7899130501: Bindings are cooperative declarations. Protocol fixtures do not establish installed-client compatibility, automatic wake-up, actual peer delivery or independent verification of reported claims.
-- 730d43f3e492: The second allocation is finite and cannot silently accept payload changes. Native client compatibility and actual delivery remain unqualified.
-- 8513f7f572ed: Actual existing-worker delivery, installed-client compatibility and downstream adoption remain unqualified. New preview allocation does not reopen runtime/export testing or grant live effects.
+- b7eb79cfe3f3: Cooperative bindings do not authenticate processes or enforce isolation. Automatic desktop delivery and target ownership remain unqualified; controller/reviewer usage is unknown.
+- 27240f31db86: Cooperative attribution is not desktop delivery, authentication or containment. Controller/reviewer usage remains unknown. Original guard and stale-binding failures remain preserved.
 
 ## Follow-up
 
-- 3d7899130501: Run the exact independently accepted fixture effect, conserve outcomes, review qualified integration and continue existing-worker delivery and native downstream adoption.
-- 730d43f3e492: Execute only the exact accepted pack effect, retain all results, then obtain terminal source and integration review.
-- 8513f7f572ed: Execute only the independently accepted preview job, review all generated outputs, then perform exact qualified dev/main synchronization and read-only postpromotion regeneration.
+- b7eb79cfe3f3: Execute only the exact accepted live effect, verify actor-owned evidence, preserve all records, then qualify source promotion separately.
+- 27240f31db86: Complete the one admitted promotion preview and exact terminal Git review. Installed desktop binding and native DiskEd ownership/adoption remain open; no release or target effect is implied.
 
 ## Warnings
 
