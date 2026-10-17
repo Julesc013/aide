@@ -22,6 +22,15 @@ All nine managed allocations (one build and eight consumers) passed, were collec
 
 Remaining: actual additional18 CLI forms and complete56-form mapping; upgrade from published1.0.0 including actual upstream conflict and project resolution; interrupted update/recovery/rollback; frozen archive replay; fixed preview and exact independent release-candidate review. Publication and acquired-byte checks are separately admitted effects.
 
+Allocation10 failed at installed `job effort`: the CLI returned REFUSED for the supplied fixture. The earlier16 additional forms completed their assertions; JSON effort was not reached. [Original attempt](evidence/additions-first-attempt.json) retains the failure, exact command records and collected output identities. The runner retired the attempt safely. Safe import skips the `core/` dependency used by accounting; contract review and a bounded remedy precede any new attempt. This is not an18-form pass.
+
 Promotion is also blocked by three commit-message formatting failures. The controller originally misread individual PASS lines in overall FAIL reports. [The correction record](evidence/commit-format-correction.md) preserves the exact findings and limits any checkpoint sync to the owned task branch. Consumer results and archive bytes remain valid; no historical pass or owner disposition is claimed.
 
 The existing source60/delivered25 checks are reused only for their unchanged subjects. Original synthetic update checks remain distinct from the pending published-predecessor evidence. Dev/main remain at accepted4f2c3960; the important qualification checkpoint is shared on its owned task branch.
+
+Independent contract review REQUEST_CHANGES confirms both missing safe-import
+dependency and possible project-owned module execution. Proposed exact amendment
+evidence/installed-effort-repair-amendment.md adds only the CLI/export binding,
+focused tests/reference and generated pack. Maximum26 includes all prior attempts;
+no implementation or new job until admission, then exact source/effect review.
+Keep the canonical module, project core exclusion and all original assertions.

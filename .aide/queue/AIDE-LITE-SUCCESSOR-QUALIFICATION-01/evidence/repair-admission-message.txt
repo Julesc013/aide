@@ -1,0 +1,32 @@
+docs(release): preserve installed effort failure and admit repair
+
+## Summary
+- Retain allocation 10 failure and propose the narrow installed dependency repair.
+
+## Why
+- Safe import omits core while the installed command can load project-owned code.
+
+## Changed
+- Preserve raw failure records, completed forms, retirement and independent findings.
+- Bound source/export repair, affected archive checks and task-only continuity sync.
+
+## Validation
+- FAIL allocation 10; first sixteen additive forms completed; all outputs collected.
+- PASS original eight consumers for their unchanged candidate bytes only.
+- NOT RUN proposed repair; exact independent admission review precedes execution.
+
+## Changelog
+- Tests: Preserve the installed effort failure and its affected-check repair plan.
+
+## Risks
+- Candidate remains unqualified; three historical message failures remain unresolved.
+
+## Follow-up
+- Repair owned module delivery and qualify replacement bytes without weakening checks.
+
+AIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
+AIDE-Phase: installed-effort-repair-admission
+AIDE-Result: FAIL
+AIDE-Scope: queue evidence and bounded admission
+AIDE-Token-Impact: unknown
+AIDE-Quality-Gate: independent exact admission review required

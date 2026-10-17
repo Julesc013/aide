@@ -7,6 +7,10 @@ status: running
 scope:
   allowed_paths:
     - .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_work_effort.py
+    - docs/reference/aide-lite-test-runner.md
+    - .aide/export/aide-lite-pack-v0/**
     - .aide/release/stable/aide-lite-v1.1.0.zip
     - .aide/release/stable/aide-lite-v1.1.0.tar.gz
     - .aide/release/stable/aide-lite-v1.1.0.manifest.json
@@ -28,4 +32,4 @@ scope:
     - IMPLEMENT.md
     - DOCUMENTATION.md
 review_gate: exact_source_and_effect_then_release_candidate_acceptance
-maximum_jobs: 14
+maximum_jobs: 26

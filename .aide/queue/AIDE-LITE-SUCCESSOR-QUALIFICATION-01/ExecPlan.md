@@ -47,3 +47,19 @@ Correction checkpoint b46448f2 is remotely verified on the owned task branch;
 dev/main remain4f2c3960. New managed message PASS; exactly three historical range
 failures remain. Allocation10's actual installed18-form fixture is prepared for
 independent review; no job has launched. See evidence/additions-effect.md.
+
+Allocation10 job139f9282 FAILED at installed job effort (exit1 REFUSED, expected2
+PARTIAL). The earlier16 forms and their assertions completed; the JSON effort
+form was not started. Original result, failure streams, per-command records and
+collection hashes are preserved in evidence/additions-first-attempt.json and the
+owned retained store. Quiescence, scratch absence and reservation release verified.
+No retry. Read-only contract review now distinguishes the safe-import module gap
+from the extracted-pack execution profile before any repair or new allocation.
+The original eight archive consumers remain valid for their exact subjects.
+
+Independent contract review REQUEST_CHANGES confirms both missing safe-import
+dependency and possible project-owned module execution. Proposed exact amendment
+evidence/installed-effort-repair-amendment.md adds only the CLI/export binding,
+focused tests/reference and generated pack. Maximum26 includes all prior attempts;
+no implementation or new job until admission, then exact source/effect review.
+Keep the canonical module, project core exclusion and all original assertions.

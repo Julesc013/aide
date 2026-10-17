@@ -127,3 +127,9 @@ verification and retirement only of the integrated owned task branch.
 The original intent's live-test/release classification is retained. This is its
 bounded qualification split, not a claim that the whole campaign, daily-use host
 workflow, native DiskEd adoption or efficiency objective has finished.
+
+## Proposed installed accounting repair amendment
+
+See the child evidence/installed-effort-repair-amendment.md: exact four-path
+expansion and maximum26 allocations, preserving all prior outcomes. Independent
+admission review is required before the proposed implementation or new allocation.

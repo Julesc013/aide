@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import os,sys,tempfile,runpy; tempfile.tempdir=os.environ['AIDE_JOB_TMP']; a=sys.argv[1:]; sys.argv=([a[1],*a[2:]] if a[0]=='-m' else a); runpy.run_module(a[1],run_name='__main__',alter_sys=True) if a[0]=='-m' else runpy.run_path(a[0],run_name='__main__')
+                                                                                                                                                                                                                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 294, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_additions.py", line 230, in <module>
+    main()
+    ~~~~^^
+  File ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_additions.py", line 200, in main
+    human = command('effort-human', 'job', 'effort', '--work-set', 'fixture-work.json', exits=(2,), form='job effort --work-set <path>')
+  File ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_additions.py", line 78, in command
+    result = rec.installed(label, target, *args, exits=exits)
+  File "D:\Projects\AIDE\aide\.aide\queue\AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01\canaries\lifecycle_helper.py", line 185, in installed
+    return self.run(label, target / ".aide/scripts/aide_lite.py", target, *parts, exits=exits, offline_text=offline_text)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_additions.py", line 59, in run
+    assert result.returncode in exits, (label, result.returncode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('effort-human', 1)
