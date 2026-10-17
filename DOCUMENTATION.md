@@ -1,8 +1,8 @@
 # AIDE Documentation Index
 
-## Replacement consumers qualified - 2026-10-18
+## Lite candidate technically accepted - 2026-10-18
 
-[Replacement qualification](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md) records eight original consumer passes and all 18 additions, with 56 actual command mappings and nine retired jobs. [Actual predecessor recovery](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/actual-predecessor-recovery-contract.md) distinguishes existing same-path rollback, cross-version refusal, unchanged-target detach/reinstall and preserved overlay limitations. [Current qualification summary](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/qualification-summary.json) records actual published-predecessor upgrade/recovery and exact archive replay PASS, with all29 jobs retired and prior failures preserved. [Complete104-commit preview](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/fixed-preview-qualified.json) regenerates exactly and retains three unresolved historical records. Owner dispositions and final candidate review still gate promotion. Public1.0.0 and accepted dev/main remain unchanged.
+[Independent technical acceptance](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json) covers the exact 1.1.0 candidate at `3a36366c`, with no required technical fixes or additional tests. Archive contents, all 56 command forms, actual predecessor recovery and retained evidence are reviewed. All 29 jobs are retired; four failed attempts remain preserved. Owner decisions for three historical message failures and separate integration-effect review still gate promotion. Public stable remains 1.0.0; host delivery, native DiskEd adoption and whole-outcome efficiency remain unfinished.
 
 ## Repaired pack and replacement candidate - 2026-10-18
 

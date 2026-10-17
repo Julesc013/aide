@@ -1,6 +1,11 @@
 # Actual Lite 1.1.0 qualification
 
-Current state: Truthful fixed preview29 PASS at55c9408e: full published1.0-to-checkpoint range104 commits, all six outputs regenerate exactly, known three malformed records and raw rangeFAIL preserved. Registry, all53release and863pack members unchanged. All29 allocated jobs are retired; four failed attempts remain. Owner historical-message dispositions, exact final release-candidate review and guarded integration remain; publication/acquisition are separate. No repeated job or observer remains running.
+Current state: Independent technical review accepts the exact candidate at
+3a36366c, with no required technical fixes or additional tests. All 29 allocations
+are retired; four failed attempts remain preserved. Owner decisions for three
+historical commit-message failures still gate promotion. Integration requires a
+separate exact effect review; publication and acquired-byte validation follow in
+their separately admitted phase. Public Lite remains 1.0.0.
 
 Baseline 4f2c39606378492622fa8580152373fffc074d7c. Existing successor builder and
 portable pack are integrated into local/remote dev/main; see evidence/prior-integration.json.
@@ -155,3 +160,23 @@ admission. Stop and preserve any failed attempt; no automatic retry.
 
 
 Truthful fixed preview29 PASS at55c9408e: full published1.0-to-checkpoint range104 commits, all six outputs regenerate exactly, known three malformed records and raw rangeFAIL preserved. Registry, all53release and863pack members unchanged. All29 allocated jobs are retired; four failed attempts remain. Owner historical-message dispositions, exact final release-candidate review and guarded integration remain; publication/acquisition are separate. No repeated job or observer remains running.
+
+## Record independent technical acceptance
+
+Objective: retain the completed technical verdict without implying that owner
+exceptions or release effects have been approved. Scope is this child's review
+evidence and current views, the parent/index, and the three root planning indexes.
+The frozen package, executable source, policy, registry and six preview outputs
+remain unchanged. No additional job is allocated.
+
+1. Record the exact reviewed commit/tree, assets, evidence and nonblocking notes.
+2. Reconcile current status so technical review is complete and the owner decision
+   and integration-effect review remain explicit. Preserve historical outcomes.
+3. Check links, hashes, allowed paths, current-state agreement, the structured
+   commit message and diff. Obtain exact independent source/effect review.
+4. Commit the reviewed record and sync only the existing task branch using fresh
+   shared locks, source/ref/ancestry checks and nonforce push. Preserve the receipt.
+
+Any changed product bytes or additional failed message checks stop this closure.
+No dev/main, tag, publication, target, provider or historical-disposition effect is
+included. The technical verdict is useful independently of the pending owner gate.

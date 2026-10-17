@@ -22,6 +22,7 @@
     "actual56_cli_forms_with_variants": "evidence/replacement-cli-coverage.json",
     "complete_source_history_preview": "evidence/fixed-preview-qualified.json",
     "exact_archive_replay": "evidence/replay-qualified.json",
+    "independent_technical_acceptance": "evidence/technical-acceptance.json",
     "published_predecessor_upgrade_recovery": "evidence/predecessor-qualified-replay-refused.json",
     "replacement_original8_additional18": "evidence/replacement-consumers-qualified.json"
   },
@@ -43,10 +44,16 @@
   "published_version": "1.0.0",
   "remaining": [
     "owner dispositions for three exact historical commit-message failures",
-    "exact independent final release-candidate review",
-    "guarded dev/main integration",
+    "exact integration-effect review and guarded dev/main integration",
     "separately admitted publication and acquired-byte validation"
   ],
-  "status": "CONSUMER_REPLAY_AND_TRUTHFUL_PREVIEW_QUALIFIED_OWNER_DECISION_PENDING",
+  "status": "TECHNICALLY_ACCEPTED_OWNER_DISPOSITIONS_AND_INTEGRATION_EFFECT_PENDING",
+  "technical_review": {
+    "additional_tests_required": false,
+    "required_fixes": 0,
+    "result": "ACCEPT_TECHNICAL_CANDIDATE",
+    "source_commit": "3a36366c052f308a8ecee10d32690ce0cb75cae7",
+    "source_tree": "41c00a93c993c86f6d376fd2f8186f8a66a4fc78"
+  },
   "version": "1.1.0"
 }

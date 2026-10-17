@@ -1,0 +1,19 @@
+{
+  "candidate_commit": "3a36366c052f308a8ecee10d32690ce0cb75cae7",
+  "candidate_tree": "41c00a93c993c86f6d376fd2f8186f8a66a4fc78",
+  "checks": [
+    "exact four asset sizes and hashes unchanged",
+    "five reviewed evidence reference hashes unchanged",
+    "six fixed preview hashes unchanged",
+    "all technical notes classified nonblocking for exact candidate",
+    "owner/integration/publication authority remains false",
+    "child and index current status agree",
+    "strict draft message PASS",
+    "git diff --check PASS",
+    "changed paths inside existing task allowlist"
+  ],
+  "new_jobs": 0,
+  "new_tests": 0,
+  "promotion_gate": "owner exact historical dispositions and separate effect review pending",
+  "result": "PASS_METADATA_CLOSURE_CHECKS"
+}

@@ -1,5 +1,13 @@
 # Lite 1.1.0 candidate qualification
 
+[Independent technical review](evidence/technical-acceptance.json) accepts the exact
+candidate at `3a36366c`, with no required technical fixes or additional tests. The
+review checked the archive contents, all 56 command mappings, published-predecessor
+behavior and collection digests covering 769 retained files across 29 jobs.
+Nonblocking notes preserve the qualified profile and historical evidence. Owner
+decisions for three commit-message failures and separate integration-effect review
+still gate promotion. This is not publication acceptance; stable remains 1.0.0.
+
 The replacement 1.1.0 candidate (ZIP 80b8a875) passes all eight original consumer
 families and all 18 added forms. [Replacement evidence](evidence/replacement-consumers-qualified.json)
 and [56-form mapping](evidence/replacement-cli-coverage.json) retain exact command
@@ -8,7 +16,7 @@ Actual published-predecessor upgrade and recovery now PASS. [Qualified outcomes]
 
 [Exact archive replay](evidence/replay-qualified.json) now PASS: ZIP and TAR reproduce byte for byte; all53 release files and863 pack files remain unchanged. Doctor, full validate, stable validation and pack status pass; the existing advisory missing review-reference warning is retained. The earlier replay reservation refusal remains historical evidence.
 
-[Current qualification summary](evidence/qualification-summary.json) separates demonstrated behavior from open release gates. All29 consumed jobs are retired. [Fixed preview](evidence/fixed-preview-qualified.json) covers104 commits from the published1.0.0 target and regenerates all six outputs exactly. Its three malformed records and original rangeFAIL remain explicit. Owner dispositions, final candidate review and integration remain. Public Lite1.0.0 is unchanged; no1.1.0 publication is claimed.
+[Current qualification summary](evidence/qualification-summary.json) separates demonstrated behavior from open release gates. All29 consumed jobs are retired. [Fixed preview](evidence/fixed-preview-qualified.json) covers104 commits from the published1.0.0 target and regenerates all six outputs exactly. Its three malformed records and original rangeFAIL remain explicit. Owner dispositions and reviewed integration effects remain; technical candidate review is complete. Public Lite1.0.0 is unchanged; no1.1.0 publication is claimed.
 
 The table and original candidate narrative below are historical evidence for
 ZIP 089d75da, not substitutes for the separately linked replacement results.
