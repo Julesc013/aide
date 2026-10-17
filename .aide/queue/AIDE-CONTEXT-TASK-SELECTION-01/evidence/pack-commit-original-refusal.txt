@@ -1,0 +1,3 @@
+AIDE Lite managed commit
+result: REFUSED
+{"apply": false, "branch_advanced": false, "candidate_commit": "", "expected_head": "6a50010b7160ea52206edc84c864c016a7ea74c4", "expected_ref": "refs/heads/task/aide-context-task-selection-01", "expected_tree": "58c600f6c1942d1eccd421615701d343f608c2f7", "message_sha256": "eb1cf729cdc5d2ce57a66bbbb2506ffd0612459c1d06907f25b4485c92641443", "phase": "preflight", "reason": "message failed strict checks: changelog section uses a machine-readable category prefix", "status": "REFUSED"}

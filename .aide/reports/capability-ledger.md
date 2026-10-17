@@ -3,8 +3,8 @@
 - command: `capability ledger`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-outcome-conservation-01`
-- current_commit: `761d284613f5030b45df28cb1f464d660ed6ba9b`
+- current_branch: `task/aide-context-task-selection-01`
+- current_commit: `6a50010b7160ea52206edc84c864c016a7ea74c4`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

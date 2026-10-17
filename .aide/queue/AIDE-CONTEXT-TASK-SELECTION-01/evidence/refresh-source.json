@@ -1,0 +1,16 @@
+{
+  "base": "6a50010b7160ea52206edc84c864c016a7ea74c4",
+  "files": {
+    ".aide/scripts/aide_lite.py": "3cca89eefa075ec72b06430d8b8d09657da5af27d20fd161715e14da00e8a456",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/source-attempt-01.json": "90228ad6b33930821537c30cf44b335622d14e1f096ecfad6a7408005ace2ead",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/attempt-01-source-tests.json": "df8be844263c77490916784522fac123cd938a42d7fcad5d9092dcc002aeb5c2",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/attempt-01-baseline-comparison.json": "dc42356a9dcc695b8939bd0f387eadcd2303d2641135ab010961a9a81df269d6",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/ledger-preimages.json": "82bc6d32285e6d706af79e499e8057ba7f099e39abcb91a82694ad290a4f7fc0",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/evidence/refresh-effect.md": "10f4a2c6c08f2d37aa3bc920b6bb5d769db796b3ba0a98c21b359a315fd30006",
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "0b601d535eb4c69784e5e07d3910bb9ab2181f80ff99c37ae51691dbae476164",
+    ".aide/reports/capability-evidence-bindings.json": "b088ddf561384d19d474881a9d66f163e78402cbdca488bb0b9cd2191b088edb",
+    ".aide/reports/capability-command-status.md": "ca09d71d744453cfd7d5858bcc63e904fcb4a33165083821713ea1fde393f0b1"
+  },
+  "effect_sha256": "10f4a2c6c08f2d37aa3bc920b6bb5d769db796b3ba0a98c21b359a315fd30006"
+}

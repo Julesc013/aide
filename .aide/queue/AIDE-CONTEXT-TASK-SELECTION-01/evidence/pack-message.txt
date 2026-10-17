@@ -1,0 +1,33 @@
+test(context): record source proof and prepare delivered qualification
+
+## Summary
+- Prepare AIDE-CONTEXT-TASK-SELECTION-01 exported consumer qualification.
+
+## Why
+- Source behavior must be demonstrated in the actual portable payload.
+
+## Changed
+- Preserve the 61-test source result and original-versus-candidate comparison.
+- Refresh capability evidence through its reviewed owner without classification changes.
+- Reuse the existing owned exporter and prepare 60 delivered checks.
+
+## Validation
+- PASS: source 61, no failures/errors/skips; job fully retired and collection verified.
+- PASS: capability CURRENT with unchanged classification; runner syntax.
+- NOT RUN: actual delivered job and final preview.
+
+## Changelog
+- Changed: Record selected-task context proof and prepare its portable consumer checks.
+
+## Risks
+- No active-worker, atomic snapshot, new release or whole-workflow claim.
+
+## Follow-up
+- Run one reviewed export job, then preview and separately reviewed integration.
+
+AIDE-Task: AIDE-CONTEXT-TASK-SELECTION-01
+AIDE-Phase: delivered-preparation
+AIDE-Result: SOURCE_PASS
+AIDE-Scope: selected-task-context-portable-consumer
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: independent-delivered-job-review-required
