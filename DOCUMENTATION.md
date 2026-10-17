@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+## Lite successor contract - 2026-10-18
+
+[Release bundle reference](docs/reference/aide-lite-release-bundle.md) explains preserved historical assets, the candidate declaration, limits and release gates. [Qualification map](.aide/queue/AIDE-LITE-SUCCESSOR-01/evidence/qualification-map.md) maps proposed forms to existing owners and required actual-archive evidence.
+
 ## Continuation reference - 2026-10-18
 
 [Task OS commands](docs/reference/task-os-report-only-commands.md) describes selected-task advice, source-linked obligations, evidence reuse and the execution boundary. [Child plan](.aide/queue/AIDE-RESUME-PLAN-01/ExecPlan.md) tracks qualification.

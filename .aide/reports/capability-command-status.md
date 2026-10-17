@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-resume-plan-01`
-- current_commit: `716ec1fd0ad6fb2d3875417c4db7b867a7b393fe`
+- current_branch: `task/aide-lite-successor-01`
+- current_commit: `33ec403f0e4f17af919aa5685855f57760619e7e`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

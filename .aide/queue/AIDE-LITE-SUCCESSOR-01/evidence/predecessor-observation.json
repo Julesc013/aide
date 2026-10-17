@@ -1,0 +1,42 @@
+{
+  "observation_date": "2026-10-18",
+  "release_url": "https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0",
+  "public_rest_observation": {
+    "published_at": "2026-10-08T13:50:35Z",
+    "draft": false,
+    "prerelease": false,
+    "target_commitish": "0f293eb6a99dbd444bfa35016007b13451c49275",
+    "all_four_asset_sizes_and_digests_match": true
+  },
+  "remote_tag_object": "03de245f57add1c3cc134fffe4f21ee68fd03065",
+  "remote_and_local_peeled_tag": "0f293eb6a99dbd444bfa35016007b13451c49275",
+  "archive_source_commit": "a17cf4b3dbec5caa236c62ee2fa23b31aa09c8fc",
+  "archive_source_tree": "450cbd28aed578bbb8990595e2447cf081df2321",
+  "assets": [
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.zip",
+      "size_bytes": 1176436,
+      "sha256": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b"
+    },
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.tar.gz",
+      "size_bytes": 837890,
+      "sha256": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a"
+    },
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.manifest.json",
+      "size_bytes": 4955,
+      "sha256": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb"
+    },
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt",
+      "size_bytes": 274,
+      "sha256": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83"
+    }
+  ],
+  "comparison_evidence": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json",
+  "local_bytes_rechecked": true,
+  "gh_cli_result": "not_authenticated_no_effect",
+  "public_rest_route": "unauthenticated_read_only",
+  "scope": "Historical acquisition/publication identities only; not successor upgrade qualification."
+}

@@ -19155,10 +19155,12 @@ def command_release_bundle(args: argparse.Namespace) -> int:
 
 STABLE_RELEASE_DIR = ".aide/release/stable"
 STABLE_RELEASE_PROFILE = "aide-lite-local-windows"
+STABLE_SUCCESSOR_PATH = ".aide/release/successor-candidate.json"
+STABLE_ASSET_MAX_BYTES = 8 * 1024 * 1024
 
 
 def stable_release_paths(version: str) -> dict[str, str]:
-    if not re.fullmatch(r"(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)", version):
+    if not isinstance(version, str) or len(version) > 32 or not re.fullmatch(r"(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)", version):
         raise ValueError("stable release version must be MAJOR.MINOR.PATCH without leading zeros")
     base = f"{STABLE_RELEASE_DIR}/aide-lite-v{version}"
     return {
@@ -19188,7 +19190,7 @@ def stable_release_cli_forms(repo_root: Path) -> list[str]:
 
 
 def stable_release_source_tree(repo_root: Path, commit: str) -> str:
-    if not re.fullmatch(r"[0-9a-f]{40}", commit):
+    if not isinstance(commit, str) or not re.fullmatch(r"[0-9a-f]{40}", commit):
         raise ValueError("stable release pack source commit is not a full Git object")
     result = subprocess.run(
         ["git", "-C", str(repo_root), "show", "-s", "--format=%T", commit],
@@ -19200,10 +19202,151 @@ def stable_release_source_tree(repo_root: Path, commit: str) -> str:
     return tree
 
 
+def stable_release_record(repo_root: Path, relative: str) -> tuple[dict[str, object], str]:
+    """Bounded, duplicate-free metadata using the existing ordinary-file reader."""
+    data = task_view_read(repo_root, relative, limit=65536)
+    try:
+        value = json.loads(data, object_pairs_hook=_job_wait_unique_object,
+                           parse_constant=_job_wait_reject_constant)
+    except (ValueError, RecursionError) as exc:
+        raise ValueError("invalid stable release metadata") from exc
+    if not isinstance(value, dict):
+        raise ValueError("stable release metadata must be an object")
+    return value, hashlib.sha256(data).hexdigest()
+
+
+def stable_release_contract(repo_root: Path, version: str) -> dict[str, object]:
+    """Resolve a candidate declaration; historical pins are not current-pack checks."""
+    stable_release_paths(version)
+    baseline = stable_release_cli_forms(repo_root)
+    if version == "1.0.0":
+        return {"forms": baseline, "predecessors": [], "preserved": set(), "digest": None}
+    policy = read_text(repo_root / ".aide/policies/release-versioning.yaml")
+    refs = [line for line in policy.splitlines() if line.startswith("successor_candidate_ref:")]
+    if refs != [f"successor_candidate_ref: {STABLE_SUCCESSOR_PATH}"]:
+        raise ValueError("stable successor requires the exact policy candidate reference")
+    record, digest = stable_release_record(repo_root, STABLE_SUCCESSOR_PATH)
+    if (set(record) != {"schema_version", "version", "profile_id", "predecessor",
+                       "additional_cli_forms", "preserved_assets"}
+            or record["schema_version"] != "aide.stable-successor-candidate.v1"
+            or record["version"] != version or record["profile_id"] != STABLE_RELEASE_PROFILE):
+        raise ValueError("unsupported stable successor identity or fields")
+    predecessor = record["predecessor"]
+    if (not isinstance(predecessor, dict) or set(predecessor) != {"version", "tag_commit"}
+            or not isinstance(predecessor["tag_commit"], str)
+            or not re.fullmatch(r"[0-9a-f]{40}", predecessor["tag_commit"])):
+        raise ValueError("invalid predecessor identity")
+    previous = predecessor["version"]
+    stable_release_paths(previous)
+    current_numbers = tuple(map(int, version.split(".")))
+    previous_numbers = tuple(map(int, previous.split(".")))
+    if current_numbers[0] != previous_numbers[0] or current_numbers <= previous_numbers:
+        raise ValueError("successor must increase within the predecessor major version")
+    additions = record["additional_cli_forms"]
+    if (not isinstance(additions, list) or len(additions) > 64
+            or any(not isinstance(form, str) or not form or len(form) > 512
+                   or form != form.strip() or any(ord(c) < 32 for c in form) for form in additions)
+            or len(additions) != len(set(additions)) or set(additions) & set(baseline)):
+        raise ValueError("invalid or duplicate successor CLI forms")
+    forms = baseline + additions
+    assets = record["preserved_assets"]
+    if not isinstance(assets, list) or not 4 <= len(assets) <= 32:
+        raise ValueError("preserved asset list must contain 4 to 32 members")
+    pins: dict[str, dict[str, object]] = {}
+    versions: set[str] = set()
+    total = 0
+    for asset in assets:
+        if (not isinstance(asset, dict) or set(asset) != {"path", "size_bytes", "sha256"}
+                or not isinstance(asset["path"], str) or type(asset["size_bytes"]) is not int
+                or not 0 < asset["size_bytes"] <= STABLE_ASSET_MAX_BYTES
+                or not isinstance(asset["sha256"], str) or not re.fullmatch(r"[0-9a-f]{64}", asset["sha256"])):
+            raise ValueError("invalid preserved asset pin")
+        relative = asset["path"]
+        match = re.fullmatch(re.escape(STABLE_RELEASE_DIR) + r"/aide-lite-v([0-9.]+)\.(zip|tar\.gz|manifest\.json|SHA256SUMS\.txt)", relative)
+        if not match or relative in pins:
+            raise ValueError("unknown or duplicate preserved asset path")
+        old_version = match[1]
+        stable_release_paths(old_version)
+        if tuple(map(int, old_version.split("."))) > previous_numbers:
+            raise ValueError("preserved version is newer than the immediate predecessor")
+        versions.add(old_version)
+        total += asset["size_bytes"]
+        if total > 32 * 1024 * 1024:
+            raise ValueError("preserved assets exceed the finite byte budget")
+        data = task_view_read(repo_root, relative, limit=STABLE_ASSET_MAX_BYTES)
+        if len(data) != asset["size_bytes"] or hashlib.sha256(data).hexdigest() != asset["sha256"]:
+            raise ValueError("preserved asset digest or size mismatch: " + relative)
+        pins[relative] = asset
+    if previous not in versions:
+        raise ValueError("immediate predecessor assets are missing")
+    historical = {}
+    for old_version in sorted(versions):
+        paths = stable_release_paths(old_version)
+        if not set(paths.values()) <= pins.keys():
+            raise ValueError("each preserved version requires all four assets")
+        manifest, _ = stable_release_record(repo_root, paths["manifest"])
+        identity = manifest.get("identity")
+        if (manifest.get("schema_version") != "aide.stable-release-candidate.v1"
+                or manifest.get("status") != "frozen_release_assets" or not isinstance(identity, dict)
+                or identity.get("schema_version") != "aide.stable-release-identity.v1"
+                or identity.get("version") != old_version or identity.get("tag") != f"aide-lite-v{old_version}"
+                or identity.get("profile_id") != STABLE_RELEASE_PROFILE
+                or identity.get("artifact_state") != "immutable_release_payload"
+                or identity.get("intended_channel") != "stable"):
+            raise ValueError("preserved historical manifest identity mismatch")
+        for field in ("source_commit", "source_tree"):
+            if not isinstance(identity.get(field), str) or not re.fullmatch(r"[0-9a-f]{40}", identity[field]):
+                raise ValueError("invalid historical source identity")
+        archives = {key: pins[paths[key]] for key in ("zip", "tar_gz")}
+        if manifest.get("archives") != archives:
+            raise ValueError("historical archive pins disagree with preserved manifest")
+        sums = "".join(f"{pins[paths[key]]['sha256']}  {Path(paths[key]).name}\n"
+                       for key in ("zip", "tar_gz", "manifest"))
+        if task_view_read(repo_root, paths["sha256sums"], limit=4096) != sums.encode("utf-8"):
+            raise ValueError("historical checksum file disagrees with pins")
+        historical[old_version] = identity
+    old_forms = historical[previous].get("public_cli_forms")
+    if (not isinstance(old_forms, list) or not old_forms or len(old_forms) > 128
+            or any(not isinstance(form, str) for form in old_forms)
+            or len(old_forms) != len(set(old_forms)) or not set(old_forms) <= set(forms)):
+        raise ValueError("successor removes or reinterprets a predecessor CLI form")
+    if current_numbers[1] == previous_numbers[1] and set(forms) != set(old_forms):
+        raise ValueError("additional public forms require a minor version increase")
+    tag = f"aide-lite-v{previous}"
+    observed = subprocess.run(["git", "-C", str(repo_root), "rev-parse", "--verify", f"refs/tags/{tag}^{{commit}}"],
+                              check=False, capture_output=True, text=True, encoding="utf-8")
+    tags = subprocess.run(["git", "-C", str(repo_root), "tag", "--list", "aide-lite-v*"],
+                          check=False, capture_output=True, text=True, encoding="utf-8")
+    if (observed.returncode or observed.stdout.strip() != predecessor["tag_commit"] or tags.returncode
+            or set(tags.stdout.splitlines()) - {f"aide-lite-v{v}" for v in versions | {version}}):
+        raise ValueError("local published lineage is missing, changed or undeclared")
+    matrix = [{"version": previous, "tag": tag, "tag_commit": predecessor["tag_commit"],
+               "manifest_sha256": pins[stable_release_paths(previous)["manifest"]]["sha256"],
+               "source_commit": historical[previous]["source_commit"],
+               "source_tree": historical[previous]["source_tree"], "profile_id": STABLE_RELEASE_PROFILE,
+               "assets": [pins[rel] for rel in stable_release_paths(previous).values()]}]
+    return {"forms": forms, "predecessors": matrix, "preserved": set(pins), "digest": digest}
+
+
+def stable_release_output_preflight(repo_root: Path, allowed: set[str]) -> None:
+    for relative in (".aide", ".aide/release", STABLE_RELEASE_DIR):
+        path = repo_root / relative
+        if path.exists() or path.is_symlink():
+            info = path.lstat()
+            if not stat.S_ISDIR(info.st_mode) or getattr(info, "st_file_attributes", 0) & 0x400:
+                raise ValueError("stable release output path is redirected or not a directory")
+    output = repo_root / STABLE_RELEASE_DIR
+    if output.exists():
+        for path in output.iterdir():
+            relative = normalize_rel(path.relative_to(repo_root))
+            if relative not in allowed:
+                raise ValueError("stable release output contains unknown material")
+            task_view_read(repo_root, relative, limit=STABLE_ASSET_MAX_BYTES)
+
+
 def build_stable_release_candidate(repo_root: Path, version: str) -> dict[str, object]:
     paths = stable_release_paths(version)
-    if version != "1.0.0":
-        raise ValueError("this first-stable builder requires 1.0.0 and an empty predecessor matrix")
+    contract = stable_release_contract(repo_root, version)
     existing_tag = subprocess.run(
         ["git", "-C", str(repo_root), "tag", "--list", f"aide-lite-v{version}"],
         check=False, capture_output=True, text=True, encoding="utf-8",
@@ -19211,17 +19354,8 @@ def build_stable_release_candidate(repo_root: Path, version: str) -> dict[str, o
     if existing_tag.returncode != 0 or existing_tag.stdout.strip():
         raise ValueError("stable release tag already exists or local tag state is unavailable")
     output_root = repo_root / STABLE_RELEASE_DIR
-    for path in (repo_root / ".aide", repo_root / ".aide/release", output_root):
-        if path.exists() and (path.is_symlink() or bool(getattr(path, "is_junction", lambda: False)())):
-            raise ValueError("stable release output path is redirected")
     allowed_outputs = set(paths.values())
-    if output_root.exists():
-        for path in output_root.iterdir():
-            if (not path.is_file() or path.is_symlink()
-                    or bool(getattr(path, "is_junction", lambda: False)())
-                    or path.stat().st_nlink != 1
-                    or normalize_rel(path.relative_to(repo_root)) not in allowed_outputs):
-                raise ValueError("stable release output contains unknown or redirected material")
+    stable_release_output_preflight(repo_root, allowed_outputs | contract["preserved"])
     git_ok, changes, _error = git_status_short(repo_root)
     if not git_ok or any(normalize_rel(path).rstrip("/") not in (allowed_outputs | {STABLE_RELEASE_DIR}) for _status, path in changes):
         raise ValueError("stable release build requires clean source outside its exact output files")
@@ -19247,14 +19381,16 @@ def build_stable_release_candidate(repo_root: Path, version: str) -> dict[str, o
         "support_mode": "companion",
         "lifecycle_apply_platform": "Windows only; exact tested environment in effect evidence",
         "offline_scope": "local CLI after archive acquisition; no native network isolation claim",
-        "predecessor_matrix": [],
-        "public_cli_forms": stable_release_cli_forms(repo_root),
+        "predecessor_matrix": contract["predecessors"],
+        "public_cli_forms": contract["forms"],
         "version_policy_sha256": sha256_file(policy_path),
         "source_repo": scalars.get("source_repo", ""),
         "source_commit": source_commit,
         "source_tree": source_tree,
         "source_pack_checksums_sha256": sha256_file(pack_root / "checksums.json"),
     }
+    if contract["digest"] is not None:
+        marker["successor_contract_sha256"] = contract["digest"]
     output_root.mkdir(parents=True, exist_ok=True)
     with public_archive_fixture("aide-stable-pack-") as temp_name:
         projected = Path(temp_name) / RELEASE_ARCHIVE_ROOT
@@ -19294,19 +19430,29 @@ def validate_stable_release_candidate(repo_root: Path, version: str) -> dict[str
     paths = stable_release_paths(version)
     problems: list[str] = []
     try:
-        manifest = json.loads(read_text(repo_root / paths["manifest"]))
+        contract = stable_release_contract(repo_root, version)
+        stable_release_output_preflight(repo_root, set(paths.values()) | contract["preserved"])
+        manifest, _ = stable_release_record(repo_root, paths["manifest"])
         identity = manifest["identity"]
         archives = manifest["archives"]
     except (OSError, ValueError, KeyError, TypeError) as exc:
         return {"result": "FAIL", "problems": [f"stable manifest unavailable or malformed: {exc}"]}
     if not isinstance(manifest, dict) or not isinstance(identity, dict) or not isinstance(archives, dict):
         return {"result": "FAIL", "problems": ["stable manifest fields have invalid types"]}
-    if manifest.get("status") != "frozen_release_assets" or identity.get("version") != version:
+    if (manifest.get("schema_version") != "aide.stable-release-candidate.v1"
+            or manifest.get("status") != "frozen_release_assets" or identity.get("version") != version):
         problems.append("stable candidate identity or status mismatch")
+    if (identity.get("schema_version") != "aide.stable-release-identity.v1"
+            or identity.get("tag") != f"aide-lite-v{version}"
+            or identity.get("release_axis") != "aide_lite_portable_package"):
+        problems.append("stable identity schema, tag or release axis mismatch")
     if identity.get("profile_id") != STABLE_RELEASE_PROFILE or identity.get("artifact_state") != "immutable_release_payload" or identity.get("intended_channel") != "stable":
         problems.append("stable profile identity mismatch")
-    if identity.get("public_cli_forms") != stable_release_cli_forms(repo_root):
+    if identity.get("public_cli_forms") != contract["forms"]:
         problems.append("stable public CLI forms differ from version policy")
+    if (identity.get("predecessor_matrix") != contract["predecessors"]
+            or identity.get("successor_contract_sha256") != contract["digest"]):
+        problems.append("stable successor contract or predecessor identity mismatch")
     if identity.get("version_policy_sha256") != sha256_file(repo_root / ".aide/policies/release-versioning.yaml"):
         problems.append("stable version policy digest mismatch")
     pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
@@ -19326,7 +19472,7 @@ def validate_stable_release_candidate(repo_root: Path, version: str) -> dict[str
     for key in ("zip", "tar_gz"):
         path = repo_root / paths[key]
         recorded = archives.get(key, {}) if isinstance(archives, dict) else {}
-        if not path.is_file() or recorded.get("path") != paths[key]:
+        if not path.is_file() or not isinstance(recorded, dict) or recorded.get("path") != paths[key]:
             problems.append(f"stable {key} asset missing or path mismatch")
             continue
         if recorded.get("sha256") != sha256_file(path) or recorded.get("size_bytes") != path.stat().st_size:

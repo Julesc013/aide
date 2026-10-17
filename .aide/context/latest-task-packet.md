@@ -1,15 +1,15 @@
 # AIDE Latest Task Packet
 
-task_id: AIDE-RESUME-PLAN-01
+task_id: AIDE-LITE-SUCCESSOR-01
 projection_only: true
 
 ## PHASE
 
-AIDE-RESUME-PLAN-01 - Give accurate continuation advice from the selected WorkUnit
+AIDE-LITE-SUCCESSOR-01 - Preserve published Lite assets and prepare an additive successor contract
 
 ## GOAL
 
-Give accurate continuation advice from the selected WorkUnit
+Preserve published Lite assets and prepare an additive successor contract
 
 ## WHY
 
@@ -17,9 +17,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-RESUME-PLAN-01/task.yaml` (selected scope and acceptance)
-- `.aide/queue/AIDE-RESUME-PLAN-01/ExecPlan.md` (continuation; when present)
-- `.aide/queue/AIDE-RESUME-PLAN-01/status.yaml` (actual state; when present)
+- `.aide/queue/AIDE-LITE-SUCCESSOR-01/task.yaml` (selected scope and acceptance)
+- `.aide/queue/AIDE-LITE-SUCCESSOR-01/ExecPlan.md` (continuation; when present)
+- `.aide/queue/AIDE-LITE-SUCCESSOR-01/status.yaml` (actual state; when present)
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -46,14 +46,16 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-RESUME-PLAN-01/**`
+- `.aide/queue/AIDE-LITE-SUCCESSOR-01/**`
 - `.aide/scripts/aide_lite.py`
-- `.aide/scripts/tests/test_resume_plan.py`
-- `docs/reference/task-os-report-only-commands.md`
+- `.aide/scripts/tests/test_stable_successor.py`
+- `.aide/policies/release-versioning.yaml`
+- `.aide/release/successor-candidate.json`
+- `docs/reference/aide-lite-release-bundle.md`
 - `.aide/queue/index.yaml`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
-- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/resume-plan-admission.md`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/lite-successor-admission.md`
 - `.aide/intake/latest-*`
 - `.aide/context/latest-task-packet.md`
 - `.aide/reports/capability-*`
@@ -135,8 +137,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 5276
-- approx_tokens: 1319
+- chars: 5410
+- approx_tokens: 1353
 - budget_status: PASS
 - warnings:
   - none

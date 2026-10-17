@@ -1,5 +1,9 @@
 # AIDE Implementation Log
 
+## Lite successor candidate - 2026-10-18
+
+The existing stable builder now has a bounded successor declaration path, historical asset/manifest checks and lineage binding. The proposed contract retains38 forms and adds18. Qualification is pending; no live stable archive or published asset changed.
+
 ## Continuation candidate - 2026-10-18
 
 The qualified source and portable CLI use the bounded current-task owner for task resume-plan, preserves human report generation, and adds nonmutating JSON. Execution readiness remains unknown; no runtime effects are admitted.

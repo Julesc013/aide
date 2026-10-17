@@ -1,0 +1,51 @@
+{
+  "schema_version": "aide.stable-successor-candidate.v1",
+  "version": "1.1.0",
+  "profile_id": "aide-lite-local-windows",
+  "predecessor": {
+    "version": "1.0.0",
+    "tag_commit": "0f293eb6a99dbd444bfa35016007b13451c49275"
+  },
+  "additional_cli_forms": [
+    "task current",
+    "task current --json",
+    "task current --task-id <ID>",
+    "task current --task-id <ID> --json",
+    "task resume-plan",
+    "task resume-plan --json",
+    "task resume-plan --task-id <ID>",
+    "task resume-plan --task-id <ID> --json",
+    "git policy",
+    "git detect",
+    "git plan",
+    "review-pack",
+    "quality ledger",
+    "quality reuse",
+    "quality explain-file <path>",
+    "quality explain-file <path> --json",
+    "job effort --work-set <path>",
+    "job effort --work-set <path> --json"
+  ],
+  "preserved_assets": [
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.zip",
+      "size_bytes": 1176436,
+      "sha256": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b"
+    },
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.tar.gz",
+      "size_bytes": 837890,
+      "sha256": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a"
+    },
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.manifest.json",
+      "size_bytes": 4955,
+      "sha256": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb"
+    },
+    {
+      "path": ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt",
+      "size_bytes": 274,
+      "sha256": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83"
+    }
+  ]
+}

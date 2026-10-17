@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+## Lite successor preparation - 2026-10-18
+
+[AIDE-LITE-SUCCESSOR-01](.aide/queue/AIDE-LITE-SUCCESSOR-01/ExecPlan.md) extends the existing builder with preserved published assets and a proposed additive1.1.0 contract. Source/synthetic and development delivery qualification come first; actual archives, published1.0.0 upgrades and publication remain separate gates.
+
 ## Selected-task continuation - 2026-10-18
 
 AIDE-RESUME-PLAN-01 corrects unconditional readiness and historical references in the existing resume command. Source63 and delivered61 checks, both CLI consumers, exporter ownership6 and the exact preview pass. The existing integration gates apply; live host recovery remains separate.

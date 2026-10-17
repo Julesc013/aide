@@ -5,7 +5,7 @@
     "Validation and evidence requirements are explicit."
   ],
   "allowed_paths": [
-    ".aide/policies/github-protection.yaml",
+    ".aide/changelog/**",
     ".aide/queue/<workunit>/**"
   ],
   "dependencies": [
@@ -17,7 +17,8 @@
     "changed-files.md",
     "validation.md",
     "remaining-risks.md",
-    "intent-compiler-report.md"
+    "intent-compiler-report.md",
+    "preflight-or-blocker-report.md"
   ],
   "forbidden_paths": [
     ".git/**",
@@ -29,19 +30,20 @@
     "raw response logs",
     "target repositories unless target-local queue authorizes work"
   ],
-  "idempotency": "prompt_hash:4fdfdc67f2a70a86c8beb8fd2548c51731a569c8d738b81b8c2aafe342edee53; status:draft; compile_only:true",
+  "idempotency": "prompt_hash:6b3b152aeaf1a724317f9f2e181f2f54f80034b204ea3f6fba83d2d99a7f406d; status:draft; compile_only:true",
   "implementation_outline": [
     "Reconcile repo state before editing.",
-    "require behavior proof and live-test validation plan before implementation",
+    "block until release gates, tags, and assets are approved",
     "Stop at review gates and record evidence before execution."
   ],
   "non_goals": [
     "no raw prompt execution",
     "no provider/model/network calls",
     "do not bypass queue, branch, evidence, or policy state",
-    "do not execute raw prompt directly"
+    "do not execute raw prompt directly",
+    "do not publish releases, tags, or assets from prompt alone"
   ],
-  "objective": "Normalize prompt into a bounded github WorkUnit draft: require behavior proof and live-test validation plan before implementation.",
+  "objective": "Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.",
   "output_schema": ".aide/intake/workunit-draft.schema.json",
   "preflight": [
     "git status --short",
@@ -49,16 +51,17 @@
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ],
   "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
-  "risk_class": "governance",
+  "risk_class": "release",
   "schema_version": "aide.workunit-draft.v0",
-  "sizing_class": "live_test_gate",
+  "sizing_class": "blocked",
   "status": "draft",
-  "task_class": "github",
-  "title": "Github WorkUnit Draft - Require behavior proof and live-test validation plan before implementation",
+  "task_class": "release",
+  "title": "Release WorkUnit Draft - Block until release gates, tags, and assets are approved",
   "validation": [
     "git diff --check",
+    "py -3 .aide/scripts/aide_lite.py changelog validate",
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ],
   "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-  "workunit_id": "draft-github-4fdfdc67f2a7"
+  "workunit_id": "draft-release-6b3b152aeaf1"
 }
