@@ -1,0 +1,11 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-DAILY-CURRENT-VIEW-01
+status: running
+result: PENDING
+classification: admitted_source_implementation
+review_gate: exact_source_and_managed_effect_pending
+updated_at: 2026-10-17
+jobs_allocated: 0
+maximum_jobs: 2
+owner: AIDE_task_CLI
+next_action: review_frozen_source_and_first_managed_qualification

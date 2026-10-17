@@ -1,0 +1,37 @@
+{
+  "adapter": "python",
+  "cwd": "D:\\Projects\\AIDE\\aide",
+  "executable_sha256": "434b361fe0c5960d404974feed493db47f2603a1ace2574312104fbed0182c6f",
+  "schema": "aide.maintainer-job.v1",
+  "workunit": "AIDE-DAILY-CURRENT-VIEW-01",
+  "owner": "daily-current-view-01",
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    ".aide/queue/AIDE-DAILY-CURRENT-VIEW-01/run_checks.py"
+  ],
+  "source_commit": "cd7b1bcf2013f1c49c533854f34eb08667e6a94a",
+  "source_tree": "c54aa6798cc62d6fc53be5d8acd273cbdd659573",
+  "inputs": {
+    ".aide/context/latest-task-packet.md": "2fa9955110a6a22a22daf27ac2fcd0edc1f802c1740d4dd11c6506cc49ff1854",
+    ".aide/evals/golden-tasks/catalog.yaml": "5cceacc8bc7164029332dcfd554f30f0916d6f09bf29d632bdc63c897ed8b135",
+    ".aide/profile.yaml": "1f53412f852d1033f24652367ad88294328d8755a91fee07dc6f48699d4a5ffe",
+    ".aide/queue/AIDE-DAILY-CURRENT-VIEW-01/run_checks.py": "8f57d26e0e60ecf111796dbbb80e4a8830b61f97aedf0309ee04bdc9ccc44a44",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence/native-final-result.json": "5b0b1be6f33b8741f7a6c2712f47a51deed1dd8b8887bf27419223f4f78a3e4f",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence/native-first-attempt-result.json": "a07d45821c75a800bd8b2bd5bd01c4e147a6c7cb007de180c76f0f900686f3b2",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence/native-outcome-review.json": "b27145797d980d8d958af558fd2a1e28a66743d532d0748b9a99199452ba3a6d",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/status.yaml": "f8ebb1fb9266b420c6bfe1759d7574b3883d24241e6c8067c32242ebaa260a1d",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/task.yaml": "13c3951ef29033b35f7e3b52ed3f51384af705d247242d106d299ad5215310b0",
+    ".aide/queue/index.yaml": "367a617916a7b27416773d431f95770515283194e1ff83cb468609eaaeb764f2",
+    ".aide/scripts/aide_lite.py": "f563d8f3a3ba2fa1234f986632a33bf7eb9d7020232410c9e843474ec74ce21b",
+    ".aide/scripts/tests/test_task_binding.py": "487a384b1632a38bbaf5ce8d6c9079a1789a3b4f9e3a16a3fd1ff9928bb793e0",
+    ".aide/scripts/tests/test_task_current.py": "b62b9e3adb2aad790455e1e64f1c2bbe251ea5405a7f804b70b5077391666b72",
+    ".aide/scripts/tests/test_x_os_01_task_os_commands.py": "388a1da8b6569dae0869972db36521b7c879dcee99460339557f8fc393f8e0fe",
+    "core/execution/__init__.py": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5",
+    "core/execution/managed_workspace.py": "55f1590b37d150088c6023ccf8151adfbc350644e906c64d40b367c4884606d6",
+    "core/execution/provider.py": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e",
+    "core/execution/registered_process.py": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
+    "core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
+    "core/execution/scoped_host.py": "6d8e1fc4b5ac31a4eb741b747b5bcb68c3352d9a81c25e4171f3b3065c6b5036",
+    "core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc"
+  }
+}

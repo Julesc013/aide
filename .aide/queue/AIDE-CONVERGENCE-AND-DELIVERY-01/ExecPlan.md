@@ -1,5 +1,12 @@
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
+## Current-view child admitted - 2026-10-17
+
+Exact packet1ac30691 received independent ACCEPT for bounded child admission and
+was committed ascd7b1bcf. AIDE-DAILY-CURRENT-VIEW-01 is implementing the existing
+read-only task command; source and each qualification effect retain exact review.
+Native target adoption and owner-to-owner delivery remain separate open work.
+
 ## Planning amendment for useful extensibility - 2026-10-17
 
 Objective: reconcile the owner's latest three planning reviews into the existing

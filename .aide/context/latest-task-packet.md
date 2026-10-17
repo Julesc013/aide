@@ -1,15 +1,15 @@
 # AIDE Latest Task Packet
 
-task_id: AIDE-DAILY-DISKED-EXPORT-01
+task_id: AIDE-DAILY-CURRENT-VIEW-01
 projection_only: true
 
 ## PHASE
 
-AIDE-DAILY-DISKED-EXPORT-01 - Prepare and qualify one selected native DiskEd WorkUnit export
+AIDE-DAILY-CURRENT-VIEW-01 - Explain current task outcomes and next actions through the existing CLI
 
 ## GOAL
 
-Prepare and qualify one selected native DiskEd WorkUnit export
+Explain current task outcomes and next actions through the existing CLI
 
 ## WHY
 
@@ -17,9 +17,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/task.yaml` (selected scope and acceptance)
-- `.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/ExecPlan.md` (continuation; when present)
-- `.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/status.yaml` (actual state; when present)
+- `.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/task.yaml` (selected scope and acceptance)
+- `.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/ExecPlan.md` (continuation; when present)
+- `.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/status.yaml` (actual state; when present)
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -46,24 +46,30 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/**`
+- `.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_task_binding.py`
+- `.aide/scripts/tests/test_task_current.py`
+- `.aide/scripts/tests/test_x_os_01_task_os_commands.py`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/generated/**`
 - `.aide/reports/capability-*.json`
 - `.aide/reports/capability-*.md`
+- `.aide/verification/latest-verification-report.md`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
 - `PLANS.md`
 - `IMPLEMENT.md`
 - `DOCUMENTATION.md`
+- `docs/reference/task-packets.md`
 
 ## FORBIDDEN_PATHS
 
 - `.git/**`
+- `.aide.local/**`
 - `.env`
 - `secrets/**`
-- `.aide.local/**`
 - baseline protected paths and effects remain governed by repository policy
 - raw provider credentials, API keys, local caches, raw prompt logs
 - Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
@@ -128,8 +134,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4907
-- approx_tokens: 1227
+- chars: 5185
+- approx_tokens: 1297
 - budget_status: PASS
 - warnings:
   - none

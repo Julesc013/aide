@@ -1,5 +1,13 @@
 # AIDE Implementation Log
 
+## Bounded current-task projection candidate - 2026-10-17
+
+Existing task-current command gains one bounded observation for human and JSON
+views, with explicit named selection, public field provenance and uncertain evidence
+applicability. Original binding/Task OS tests are unchanged; new behavioral oracles
+cover refusal, stale/malformed state and no-write observation. Qualification is
+pending through the unchanged managed runner; no package or target claim.
+
 ## Conserved native test results and completed continuation - 2026-10-17
 
 Reviewed repair9ce7d46d corrects task-local test accounting only. Final job09544ef0

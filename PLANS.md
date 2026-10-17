@@ -1,5 +1,12 @@
 # AIDE Planning Index
 
+## Current-task view - 2026-10-17
+
+[AIDE-DAILY-CURRENT-VIEW-01](.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/ExecPlan.md)
+extends the existing read-only CLI with named selection and human/JSON observation.
+Preserve recorded outcomes, uncertainty and pending obligations. Exact source and
+finite fixture qualification remain under independent review; no runtime activation.
+
 ## Native selected-export fixture outcome - 2026-10-17
 
 [DiskEd preparation](.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/REPORT.md) completed its

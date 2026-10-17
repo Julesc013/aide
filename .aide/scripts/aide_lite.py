@@ -39619,12 +39619,250 @@ def command_task_evidence(args: argparse.Namespace) -> int:
     return 0
 
 
+def task_view_read(repo_root: Path, relative: str, *, limit: int = 131072) -> bytes:
+    """Read one bounded ordinary repository record; never follow a link."""
+    parts = relative.replace("\\", "/").split("/")
+    public_queue_record = (len(parts) == 4 and parts[:2] == [".aide", "queue"]
+                           and parts[-1] in ("task.yaml", "status.yaml"))
+    if (not relative or any(part in ("", ".", "..") or ":" in part
+                           or part.endswith((".", " ")) for part in parts)
+            or quality_secret_or_local_path(relative)
+            or any(part.lower() in (".git", ".codex", ".ssh", ".aide.local")
+                   or part.lower().startswith(".env") for part in parts)
+            or (not public_queue_record and install_rel_is_secret_like(relative))):
+        raise ValueError("unsafe_reference")
+    path = repo_root.resolve()
+    for part in parts:
+        path /= part
+        info = path.lstat()
+        if stat.S_ISLNK(info.st_mode) or getattr(info, "st_file_attributes", 0) & 0x400:
+            raise ValueError("unsafe_reference")
+    if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
+        raise ValueError("unsafe_reference")
+    if info.st_size > limit:
+        raise ValueError("record_too_large")
+    with path.open("rb") as stream:
+        data = stream.read(limit + 1)
+    if len(data) > limit:
+        raise ValueError("record_too_large")
+    return data
+
+
+def task_view_fields(text: str, source: str, issues: list[dict[str, str]]) -> dict[str, object]:
+    """Project supported public fields, not a general YAML loader."""
+    names = {"id", "task_id", "title", "objective", "status", "result", "owner",
+             "responsible_owner", "next_action", "next_slice", "classification",
+             "review_gate", "planning_state", "acceptance_scope", "remaining_obligations",
+             "blocking_input", "blocked_reason", "product_qualified", "target_mutated"}
+    fields: dict[str, object] = {}
+    lines = text.splitlines()
+    def scalar(raw: str) -> object:
+        raw = raw.strip()
+        if len(raw) > 1024 or any(ord(char) < 32 for char in raw):
+            raise ValueError
+        if raw.startswith("#"):
+            return None
+        if raw.startswith('"'):
+            value = json.loads(raw)
+            if not isinstance(value, str) or any(ord(char) < 32 for char in value):
+                raise ValueError
+            return value
+        if raw.startswith("'"):
+            if not re.fullmatch(r"'(?:[^']|'')*'", raw):
+                raise ValueError
+            return raw[1:-1].replace("''", "'")
+        raw = re.split(r"\s+#", raw, maxsplit=1)[0].rstrip()
+        if raw.lower() in ("", "null", "~"):
+            return None
+        if raw.lower() in ("true", "false"):
+            return raw.lower() == "true"
+        if raw.startswith(("[", "{", "!", "&", "*", "|", ">")) or ": " in raw:
+            raise ValueError
+        return raw
+    for index, line in enumerate(lines):
+        if len(issues) >= 32:
+            if issues[-1]["code"] != "issue_limit":
+                issues.append({"code": "issue_limit", "source": source, "field": ""})
+            break
+        if not line or line[0].isspace() or line.startswith("#") or line == "---":
+            continue
+        match = re.fullmatch(r"([A-Za-z_][A-Za-z0-9_-]*):[ \t]*(.*)", line)
+        if not match:
+            issues.append({"code": "malformed_record", "source": source, "field": ""})
+            continue
+        key, raw = match.groups()
+        if len(key) > 128:
+            issues.append({"code": "field_name_limit", "source": source, "field": ""})
+            continue
+        if key not in names and not key.endswith(("_ref", "_sha256")):
+            continue
+        if key in fields:
+            fields[key] = None
+            issues.append({"code": "duplicate_field", "source": source, "field": key})
+            continue
+        if len(fields) >= 64:
+            issues.append({"code": "field_limit", "source": source, "field": ""})
+            break
+        continuation = []
+        for following in lines[index + 1:]:
+            if following and not following[0].isspace():
+                break
+            if following.strip() and not following.lstrip().startswith("#"):
+                continuation.append(following.strip())
+        try:
+            if raw in (">", ">-", "|", "|-"):
+                value = " ".join(continuation)
+                if len(value) > 1024 or any(ord(char) < 32 for char in value):
+                    raise ValueError
+            elif not raw and continuation:
+                if key != "remaining_obligations" or len(continuation) > 16:
+                    raise ValueError
+                if not all(item.startswith("- ") for item in continuation):
+                    raise ValueError
+                value = [scalar(item[2:]) for item in continuation]
+                if not all(isinstance(item, str) for item in value):
+                    raise ValueError
+            elif continuation:
+                raise ValueError
+            else:
+                value = scalar(raw)
+            if value is not None:
+                if key in ("product_qualified", "target_mutated"):
+                    if not isinstance(value, bool):
+                        raise ValueError
+                elif key != "remaining_obligations" and not isinstance(value, str):
+                    raise ValueError
+            fields[key] = value
+        except (ValueError, TypeError):
+            fields[key] = None
+            issues.append({"code": "unsupported_field", "source": source, "field": key})
+    return fields
+
+
+def build_current_task_view(repo_root: Path, task_id: str | None = None) -> dict[str, object]:
+    issues: list[dict[str, str]] = []
+    view: dict[str, object] = {"schema_version": "aide.task-current.v1", "task_id": "",
+        "status": "missing", "result": None, "objective": None, "owner": None,
+        "next_action": None, "remaining_obligations": None, "scope": {},
+        "declared_status": None, "index_status": None, "evidence": [], "sources": {},
+        "issues": issues, "read_only": True, "acceptance_verified": False}
+    def observe(relative: str, *, optional: bool = False, limit: int = 131072) -> str:
+        try:
+            text = task_view_read(repo_root, relative, limit=limit).decode("utf-8-sig")
+            if not text.strip() and not optional:
+                issues.append({"code": "empty_record", "source": relative, "field": ""})
+            return text
+        except FileNotFoundError:
+            if not optional:
+                issues.append({"code": "missing_record", "source": relative, "field": ""})
+        except (OSError, UnicodeError, ValueError) as exc:
+            issues.append({"code": str(exc) if isinstance(exc, ValueError) and not isinstance(exc, UnicodeError)
+                           else "unreadable_record", "source": relative, "field": ""})
+        return ""
+    # Bound and check the existing resolver's fixed input paths before using it.
+    index_text = observe(".aide/queue/index.yaml", optional=True, limit=1048576)
+    packet_text = observe(LATEST_PACKET_PATH, optional=True) if task_id is None else ""
+    if issues:
+        return view
+    try:
+        if task_id is None:
+            raw, explicit = task_packet_identity(packet_text)
+            if explicit and not raw:
+                raise ValueError("invalid declared task identity")
+            task_id = current_task_id(repo_root) or ""
+        if not task_id:
+            return view
+        if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", task_id):
+            raise ValueError("invalid declared task identity")
+        selected = resolve_task_id(repo_root, task_id)
+        if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", selected):
+            raise ValueError("invalid resolved task identity")
+    except ValueError:
+        issues.append({"code": "invalid_identity", "source": LATEST_PACKET_PATH if packet_text else "request", "field": "task_id"})
+        return view
+    task_ref = f".aide/queue/{selected}/task.yaml"
+    status_ref = f".aide/queue/{selected}/status.yaml"
+    task_text = observe(task_ref)
+    if not task_text:
+        return view
+    task = task_view_fields(task_text, task_ref, issues)
+    if task.get("id") != selected:
+        issues.append({"code": "identity_mismatch", "source": task_ref, "field": "id"})
+        return view
+    view["task_id"] = selected
+    status = task_view_fields(observe(status_ref), status_ref, issues)
+    if any(key in status and status[key] != selected for key in ("id", "task_id")):
+        issues.append({"code": "identity_mismatch", "source": status_ref, "field": "task_id"})
+        status = {}
+    sources = {"objective": task_ref, "status": status_ref, "result": status_ref,
+               "scope": status_ref, "declared_status": task_ref, "index_status": ".aide/queue/index.yaml"}
+    view.update(status=status.get("status") if isinstance(status.get("status"), str) else "unknown",
+                result=status.get("result"), objective=task.get("objective") or task.get("title"),
+                declared_status=task.get("status"), sources=sources)
+    for output, keys in {"owner": ("responsible_owner", "owner"), "next_action": ("next_action", "next_slice"),
+                         "remaining_obligations": ("remaining_obligations", "blocking_input", "blocked_reason")}.items():
+        for record, source in ((status, status_ref), (task, task_ref)):
+            found = next((key for key in keys if record.get(key) is not None), None)
+            if found:
+                view[output] = record[found]; sources[output] = source
+                break
+    view["scope"] = {key: status.get(key) for key in
+        ("classification", "acceptance_scope", "review_gate", "product_qualified", "target_mutated")}
+    entries = [item for item in queue_task_blocks(repo_root) if item.get("id") == selected] if index_text else []
+    if len(entries) == 1:
+        view["index_status"] = entries[0].get("status")
+        if view["index_status"] and view["index_status"] != view["status"]:
+            issues.append({"code": "index_status_conflict", "source": ".aide/queue/index.yaml", "field": "status"})
+    elif len(entries) > 1:
+        issues.append({"code": "duplicate_index_identity", "source": ".aide/queue/index.yaml", "field": "id"})
+    refs = [(record, source, key) for record, source in ((task, task_ref), (status, status_ref))
+            for key in sorted(record) if key.endswith("_ref") and record[key] is not None]
+    if len(refs) > 16:
+        issues.append({"code": "reference_limit", "source": status_ref, "field": ""})
+    for record, source, key in refs[:16]:
+        ref = record[key]
+        item = {"field": key, "source": source, "path": None, "availability": "unsafe_reference",
+                "applicability": "unverified"}
+        if isinstance(ref, str):
+            ref = ref.replace("\\", "/")
+            relative = ref if ref.startswith(".aide/") else f".aide/queue/{selected}/{ref}"
+            try:
+                data = task_view_read(repo_root, relative)
+                item.update(path=relative, availability="present")
+                expected = record.get(key[:-4] + "_sha256")
+                if expected is not None:
+                    if not isinstance(expected, str) or not re.fullmatch(r"[a-f0-9]{64}", expected):
+                        item["availability"] = "invalid_digest"
+                    elif hashlib.sha256(data).hexdigest() != expected:
+                        item["availability"] = "digest_mismatch"
+                    else:
+                        item["digest_verified"] = True
+            except FileNotFoundError:
+                item.update(path=relative, availability="missing")
+            except ValueError as exc:
+                item["availability"] = str(exc)
+            except OSError:
+                item["availability"] = "unreadable"
+        view["evidence"].append(item)
+    return view
+
+
 def command_task_current(args: argparse.Namespace) -> int:
-    task_id = current_task_id(args.repo_root) or ""
-    print("AIDE Lite task current")
-    print(f"task_id: {task_id}")
-    print(f"status: {task_status_value(args.repo_root, task_id) if task_id else 'missing'}")
-    return 0 if task_id else 1
+    view = build_current_task_view(args.repo_root, getattr(args, "task_id", None))
+    if getattr(args, "json", False):
+        print(json.dumps(view, indent=2, sort_keys=True, ensure_ascii=True))
+    else:
+        print("AIDE Lite task current")
+        print(f"task_id: {view['task_id']}")
+        print(f"status: {view['status']}")
+        for key in ("result", "objective", "owner", "next_action", "remaining_obligations"):
+            print(f"{key}: {view[key] if view[key] is not None else 'unknown'}")
+        print("scope: " + json.dumps(view["scope"], sort_keys=True))
+        print("evidence: " + (", ".join(f"{item['field']}={item['availability']}" for item in view["evidence"]) or "unknown"))
+        print("evidence_applicability: unverified; recorded outcomes do not verify acceptance")
+        if view["issues"]:
+            print("issues: " + ", ".join(sorted({item["code"] for item in view["issues"]})))
+    return 0 if view["task_id"] else 1
 
 
 def command_blocker_status(args: argparse.Namespace) -> int:
@@ -46312,7 +46550,10 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_evidence_parser = task_subparsers.add_parser("evidence")
     task_evidence_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
     task_evidence_parser.set_defaults(handler=command_task_evidence)
-    task_subparsers.add_parser("current").set_defaults(handler=command_task_current)
+    task_current_parser = task_subparsers.add_parser("current")
+    task_current_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
+    task_current_parser.add_argument("--json", action="store_true", help="Emit a bounded read-only task observation as JSON.")
+    task_current_parser.set_defaults(handler=command_task_current)
 
     blocker_parser = subparsers.add_parser("blocker")
     blocker_subparsers = blocker_parser.add_subparsers(dest="blocker_command", required=True)

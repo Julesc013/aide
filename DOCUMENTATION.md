@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+- [Current-task view](docs/reference/task-packets.md): named human/JSON observation,
+  recorded-status provenance and evidence uncertainty; candidate qualification in
+  [the bounded child](.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/ExecPlan.md).
+
 - [Native selected-export outcome](.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/REPORT.md):
   completed fixture continuation, conserved 158 passes/two unavailable checks,
   original failure and separate real-target/runtime qualification boundaries.

@@ -1,0 +1,57 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DAILY-CURRENT-VIEW-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Explain current task outcomes and next actions through the existing CLI
+type: implementation
+status: running
+objective: Provide bounded read-only human and JSON task views with explicit evidence uncertainty.
+admission:
+  proposal_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/current-view-admission.md
+  sha256: 1ac306915058a308ec856c166b6fe0443d8ff98fce63183b4c34ba00293d06e5
+  reviewer: /root/review_disked_continuation
+  verdict: ACCEPT_admission_only
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-DAILY-CURRENT-VIEW-01/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_task_binding.py
+    - .aide/scripts/tests/test_task_current.py
+    - .aide/scripts/tests/test_x_os_01_task_os_commands.py
+    - .aide/queue/index.yaml
+    - .aide/context/latest-task-packet.md
+    - .aide/generated/**
+    - .aide/reports/capability-*.json
+    - .aide/reports/capability-*.md
+    - .aide/verification/latest-verification-report.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/task-packets.md
+  forbidden_paths:
+    - .git/**
+    - .aide.local/**
+    - .env
+    - secrets/**
+  forbidden_operations:
+    - target_model_network_global_configuration_or_new_runtime_effects
+    - source_restructuring_new_store_or_weakening_original_assertions
+    - export_archive_publication_or_remote_ref_mutation
+acceptance:
+  - Default and explicit identity selection preserve refusal and legacy valid output.
+  - Human and versioned deterministic JSON share one bounded projection.
+  - Recorded outcomes and remaining obligations remain distinct from acceptance.
+  - Missing conflicting malformed unsafe and stale observations remain explicit.
+  - Read-only fixture snapshots and original binding_TaskOS assertions are conserved.
+local_test_effect:
+  maximum_jobs: 2
+  config_digest: 61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90
+  limits: unchanged_existing_runner_config
+  effect_review: exact_clean_source_inputs_and_job_required
+  recovery: collect_verify_quiesce_retire_release
+branch_plan:
+  base: cd7b1bcf2013f1c49c533854f34eb08667e6a94a
+  branch: task/aide-daily-current-view-01
+  helper: ready_dry_run_clean_existing_checkout_no_active_job
+review_gate: source_effect_and_terminal_exact_independent_review

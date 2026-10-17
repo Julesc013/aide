@@ -27,3 +27,31 @@ correctness, filesystem containment, model behavior or release support.
 
 The regression baseline and exact managed test evidence belong to
 [AIDE-DAILY-TASK-BINDING-01](../../.aide/queue/AIDE-DAILY-TASK-BINDING-01/ExecPlan.md).
+
+## Read-only current-task view
+
+`task current` retains its task ID/status prefix and adds a compact recorded
+outcome, objective, owner, next action, remaining obligations and scope.
+Use `task current --task-id PROJECT-WORK-01 --json` for the versioned
+`aide.task-current.v1` projection. Without `--task-id`, existing latest-packet
+selection and legacy fallback apply. Invalid explicit identities refuse rather
+than selecting unrelated work. Both renderings use the same observation.
+
+`status.yaml` supplies current recorded status/result; the task's declaration and
+queue-index projection remain separately identified. Index conflicts, duplicate
+fields, malformed or unsupported public field shapes, and missing records are
+visible issues. Missing owner or next action stays unknown. `needs_review` is not
+acceptance. A passed preparation may still show unperformed target adoption.
+
+This standard-library projection reads supported top-level public scalar fields,
+folded objective text and a simple `remaining_obligations` string list. It does not
+interpret arbitrary YAML tags, aliases or nested policy objects. Reads are bounded
+to 128 KiB per record/reference (1 MiB for the index), 64 projected fields, 16
+references and bounded diagnostics. It refuses private, escaping, linked and
+non-ordinary paths. These are command read guards, not whole-client isolation.
+
+Task-relative or `.aide/` repository-relative `*_ref` values are observed as
+metadata; optional matching `*_sha256` values detect changed bytes. A present file
+or matching digest does not prove acceptance or applicability to current inputs.
+`applicability` remains `unverified`, and `acceptance_verified` remains false.
+No referenced evidence body, private state, status update or execution is emitted.

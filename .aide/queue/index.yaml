@@ -3956,3 +3956,13 @@ items:
     exec_plan: .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/ExecPlan.md
     prompt: .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/prompt.md
     evidence: .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence
+
+  - id: AIDE-DAILY-CURRENT-VIEW-01
+    status: running
+    planning_state: admitted_bounded_projection
+    result: PENDING
+    title: Explain current task outcomes and next actions through the existing CLI
+    task: .aide/queue/AIDE-DAILY-CURRENT-VIEW-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DAILY-CURRENT-VIEW-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DAILY-CURRENT-VIEW-01/prompt.md
+    evidence: .aide/queue/AIDE-DAILY-CURRENT-VIEW-01/evidence

@@ -1,0 +1,11 @@
+{
+  "verdict": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "head": "cd7b1bcf2013f1c49c533854f34eb08667e6a94a",
+  "tree": "f3374085b852688c8572ac60da2c79b654b7f511",
+  "findings": [
+    "Refuse Windows trailing-dot and trailing-space path aliases before filesystem access.",
+    "Treat unquoted comment-only YAML scalars as unknown while retaining quoted hashes."
+  ],
+  "disposition": "Both repaired with behavioral cases; no job launched against rejected subject."
+}
