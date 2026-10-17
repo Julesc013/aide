@@ -1,0 +1,36 @@
+{
+  "tests_run": 18,
+  "failures": 0,
+  "errors": 0,
+  "skips": [],
+  "test_ids": [
+    "test_stable_successor.StableSuccessorTests.test_bad_versions_tags_and_policy_refuse",
+    "test_stable_successor.StableSuccessorTests.test_contract_hardlink_and_reparse_metadata_are_rejected",
+    "test_stable_successor.StableSuccessorTests.test_future_successor_retains_every_older_version",
+    "test_stable_successor.StableSuccessorTests.test_missing_tampered_or_inconsistent_predecessor_refuses",
+    "test_stable_successor.StableSuccessorTests.test_successor_preserves_history_binds_identity_and_replays",
+    "test_stable_release_admission.StableReleaseAdmissionTests.test_build_accepts_release_only_reservation",
+    "test_stable_release_admission.StableReleaseAdmissionTests.test_build_refuses_missing_release_before_asset_effect",
+    "test_stable_release_admission.StableReleaseAdmissionTests.test_shared_packaging_guard_still_requires_export_and_release",
+    "test_stable_release_admission.StableReleaseAdmissionTests.test_validate_accepts_release_only_reservation",
+    "test_stable_release_admission.StableReleaseAdmissionTests.test_validate_refuses_missing_release_before_asset_effect",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_changed_root_preserved_on_cleanup_refusal",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_forged_context_refuses_before_allocation",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_outside_temp_refuses_before_allocation",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_readonly_public_file_retires_without_acl_change",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_real_admitted_public_fixture_is_held_then_retired",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_shared_file_preserved_on_cleanup_refusal",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_unknown_namespace_refuses_before_allocation",
+    "test_public_archive_fixture.PublicArchiveFixtureTests.test_unmanaged_keeps_standard_private_temp"
+  ],
+  "test_inputs": {
+    ".aide/scripts/tests/test_q47_release_bundle.py": "fec4c130047ef539f534b825a7e516c2c16bfe186115ba53548059da4fcd0bd9",
+    ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79",
+    ".aide/scripts/tests/test_stable_release_admission.py": "2391e73f4af7edb338109d43010f32f5a0b197d1b331c80f6369e38b9d955db5",
+    ".aide/scripts/tests/test_public_archive_fixture.py": "c149841374744abbd649ec92f649347959c657b43a61173f259cec08683dca65",
+    ".aide/scripts/tests/test_stable_successor.py": "fc20f6384e7f9e7bd70fd11f80ba804522dcdcb47bc013d3cacee23119110352"
+  },
+  "subject": "delivered",
+  "batch": "delivered_a",
+  "scope": "synthetic release lineage; not actual published-predecessor upgrade evidence"
+}
