@@ -34,10 +34,12 @@ def write(path, value):
 
 
 def main():
-    assert len(sys.argv) == 2 and sys.argv[1] in tuple(map(str, range(8)))
+    assert len(sys.argv) in (2, 3) and sys.argv[1] in tuple(map(str, range(8)))
+    assert sys.argv[2:] in ([], ['--repair'])
     index = int(sys.argv[1])
     assert not subprocess.check_output(['git', 'status', '--porcelain']).strip()
-    subject = json.loads((TASK / 'evidence/build-result.json').read_text(encoding='utf-8'))
+    subject_name = 'build-result-repaired.json' if sys.argv[2:] else 'build-result.json'
+    subject = json.loads((TASK / 'evidence' / subject_name).read_text(encoding='utf-8'))
     for name, value in subject['assets'].items():
         assert sha(ROOT / name) == value['sha256']
     stable = ROOT / '.aide/release/stable'

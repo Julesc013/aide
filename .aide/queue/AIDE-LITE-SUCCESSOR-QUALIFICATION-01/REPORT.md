@@ -1,6 +1,6 @@
 # Lite 1.1.0 candidate qualification
 
-The original candidate passed all eight original consumer families, then exposed an installed accounting defect. The repair now has source and actual delivered-pack evidence; replacement archives and their qualification are next. Historical results below remain valid for their exact bytes. Public Lite 1.0.0 remains unchanged.
+The original candidate passed all eight original consumer families, then exposed an installed accounting defect. The repair has source and actual delivered-pack evidence. Replacement archives now pass build validation; their consumer qualification is next. Historical results below remain valid for their exact bytes. Public Lite 1.0.0 remains unchanged.
 
 | Case | Result | Consumer seconds |
 | --- | --- | ---: |
@@ -60,3 +60,10 @@ unchanged; collection and retirement verified. Source 21 and delivered 15 remain
 separate evidence; the original six source-fixture errors remain. Allocation 14
 prepares replacement candidate build only. All original archive evidence stays
 bound to ZIP 089d75da. Maximum 27 includes all 13 consumed allocations.
+
+Allocation 14 job 7dbcd9fb PASS: replacement ZIP 80b8a875 and three companion
+assets built and validated; all 49 other release members and 863 pack files
+preserved. Collection and retirement verified. The original candidate and its
+passes retain their original identities. Prepare allocations 15-22 original
+cases and 23 additional forms against the replacement bytes; no test launched.
+Actual published predecessor, recovery, replay and preview remain 24-27.

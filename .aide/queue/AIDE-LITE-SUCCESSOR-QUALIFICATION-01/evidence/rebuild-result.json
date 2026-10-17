@@ -1,0 +1,65 @@
+{
+  "allocation": 14,
+  "collected_manifest": {
+    "logs": "54335ff6113d3fe03f4fa955a68a968675160c6dcbf4804a62cc0eba5d34fb40",
+    "output": "f7d6fb513cbd549a8c4bd5f4c9a1decf700f0aa2f4389625da662909aac59b2d"
+  },
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "job_id": "7dbcd9fb60514f6fadba3befd5b86d70",
+  "manifest_digest": "1df7084196185196bfc92d80b4d2d8486628f8058d87a0afe1cf5aa9b3b63341",
+  "output_inventory": {
+    "build-result-repaired.json": {
+      "sha256": "437565dd4d5a0fdd5a1fa1c1f7651faa44143938c4a7e99410b2f3aadc46e7d5",
+      "size_bytes": 8407
+    },
+    "stable-build-process.json": {
+      "sha256": "639555d196002f3cdb7d647370e3b05cc6638c995fc8cd4061f90c2280d08b0b",
+      "size_bytes": 238
+    },
+    "stable-build.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "stable-build.stdout": {
+      "sha256": "d8f77eff30c007ab61f8fb26603d7da0ede2d891b8830344f112ff70221d9b28",
+      "size_bytes": 123
+    },
+    "stable-validate-process.json": {
+      "sha256": "f53298b2c40aad8a5984b97b76b45712e81e61188c81632e88a892c1bbe6b71e",
+      "size_bytes": 241
+    },
+    "stable-validate.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "stable-validate.stdout": {
+      "sha256": "986b22ede5aad84ee9e7c264d9de0161f15805f77720a5a4f6d024bbee07df52",
+      "size_bytes": 50
+    }
+  },
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/release": 6154797
+    },
+    "memory_bytes": 207155200,
+    "scratch_bytes": 4542360
+  },
+  "phase": "retired",
+  "raw_result_sha256": "3364c9b82d855f167c999321a0e4417ce74b998bffff2b80894de5b532070ae2",
+  "reservation_released": true,
+  "result": {
+    "bytes": 73,
+    "creation_filetime": 134367414533246462,
+    "exit_code": 0,
+    "io_errors": [],
+    "job_id": "7dbcd9fb60514f6fadba3befd5b86d70",
+    "pid": 19120,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "retained_receipt_sha256": "3364c9b82d855f167c999321a0e4417ce74b998bffff2b80894de5b532070ae2",
+  "scratch_absent": true,
+  "source_commit": "c5b1a2bf7181101890a95002537ede2cb3f6e3df",
+  "source_tree": "9a060f5951d442d8a2ba4d0103066bf86fd88a53",
+  "status": "PASS_BUILD_ONLY"
+}

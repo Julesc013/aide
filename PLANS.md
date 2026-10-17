@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+## Replacement archives built - 2026-10-18
+
+Allocation 14 passed the existing builder and validator for ZIP 80b8a875 and companions. Other release and development-pack bytes remain unchanged. [Replacement consumer plan](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replacement-consumers-effect.md) retains all original assertions and requires fresh evidence for the new archives. Public 1.0.0 and accepted dev/main remain unchanged.
+
 ## Repaired pack and replacement candidate - 2026-10-18
 
 The installed accounting repair passed source and actual delivered-pack checks. [Allocation 14](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/rebuild-effect.md) prepares replacement unpublished 1.1.0 archives, followed by the original eight families, additions, actual predecessor and recovery, replay and preview. Maximum 27 includes 13 consumed attempts; previous failures and old archive passes retain their identities.

@@ -1,5 +1,9 @@
 # AIDE Implementation Log
 
+## Replacement archives built - 2026-10-18
+
+Allocation 14 passed the existing builder and validator for ZIP 80b8a875 and companions. Other release and development-pack bytes remain unchanged. [Replacement consumer plan](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replacement-consumers-effect.md) retains all original assertions and requires fresh evidence for the new archives. Public 1.0.0 and accepted dev/main remain unchanged.
+
 ## Repaired pack and replacement candidate - 2026-10-18
 
 Allocation 13 passed the unchanged installed regression against the actual refreshed pack: fresh and hostile brownfield installs, human/JSON output, preserved project module and refusal after removing the owned dependency. Collection and retirement verified. The original six source-fixture reconstruction errors remain. Replacement archive construction is prepared; public 1.0.0 is unchanged.

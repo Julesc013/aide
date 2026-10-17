@@ -14,11 +14,13 @@ OUT = Path(os.environ['AIDE_JOB_OUTPUT']).resolve(strict=True)
 
 
 def main():
+    assert sys.argv[1:] in ([], ['--repair'])
     import importlib.util
     spec = importlib.util.spec_from_file_location('successor_common', TASK / 'run_consumer.py')
     common = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(common)
-    subject = json.loads((TASK / 'evidence/build-result.json').read_text())
+    subject_name = 'build-result-repaired.json' if sys.argv[1:] else 'build-result.json'
+    subject = json.loads((TASK / 'evidence' / subject_name).read_text(encoding='utf-8'))
     assert not subprocess.check_output(['git', 'status', '--porcelain']).strip()
     for name, value in subject['assets'].items():
         assert common.sha(ROOT / name) == value['sha256']
