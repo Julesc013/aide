@@ -1,6 +1,6 @@
 ---
 name: aide-review
-description: Review completed AIDE queue items for scope, evidence, validation, policy compliance, and review-gate handling.
+description: Review AIDE queue candidates for correctness, compatibility, reuse, maintainability, evidence and acceptance. Use at a review gate; this skill does not implement fixes or grant execution authority.
 ---
 
 ## Use When
@@ -11,18 +11,28 @@ description: Review completed AIDE queue items for scope, evidence, validation, 
 
 ## Review Checklist
 
+- Read `.aide/prompts/evidence-review.md` for the shared engineering procedure and
+  `.aide/verification/review-decision-policy.yaml` for the decision contract.
+  Start with the packet, then inspect relevant source and affected contracts as
+  needed. Apply project-specific obligations; do not invent a second policy.
 - Compare changed files against allowed and forbidden paths.
 - Read task evidence and confirm validation commands were run.
 - Check that blockers, deferrals, and review gates are explicit.
 - Confirm no unsupported compatibility, support, capability, release, or parity claims were added.
 - Verify generated outputs are deterministic and reviewable where applicable.
 - Confirm `status.yaml` matches the reviewed outcome.
+- State concrete findings with evidence and bounded remedies. Separate blockers
+  from optional improvements; no actionable findings is a valid outcome. Do not
+  make compatibility-preserving adapters or unrelated cleanup automatic blockers.
+- Preserve unknown usage and evidence gaps rather than infer savings or success.
 
 ## Outcomes
 
 - `PASS`: acceptance criteria and validation are satisfied.
 - `PASS_WITH_NOTES`: acceptable, with documented limitations or follow-up work.
 - `REQUEST_CHANGES`: scope, evidence, validation, or policy issues must be fixed before passing.
+- `BLOCKED`: required evidence or an applicable authority/safety prerequisite is
+  unavailable, as defined by the current Q13 decision policy.
 
 <!-- AIDE-GENERATED:BEGIN section=aide-review-source-summary generator=aide-harness-generated-artifacts-v0 version=q05.generated-artifacts.v0 mode=managed-section sources=.aide/profile.yaml,.aide/toolchain.lock,.aide/commands/catalog.yaml,.aide/queue/policy.yaml,.aide/queue/index.yaml,docs/reference/source-of-truth.md,docs/reference/harness-v0.md,docs/reference/generated-artifacts-v0.md fingerprint=sha256:5f1663b2b971d30d1569c153bdb13cac8a00c617eaa89ac50058576f216650e1 manual=outside-only -->
 ## Generated AIDE Source Summary

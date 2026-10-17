@@ -1,0 +1,7 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "subject_sha256": "4dc6deb4a408bc6803dc4d450abfbfc0e0f595be3b4888b33a27bdb09d8a0c7f",
+  "findings": [],
+  "scope": "admission only; later source, reviewer exercises, managed jobs and integration retain exact gates"
+}

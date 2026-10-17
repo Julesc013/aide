@@ -1,0 +1,8 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ENGINEERING-REVIEW-01
+status: running
+jobs_allocated: 0
+maximum_jobs: 3
+reviewer_exercises_allocated: 0
+maximum_reviewer_exercises: 2
+next_action: prepare_source_and_exact_qualification

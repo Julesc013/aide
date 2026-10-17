@@ -42,6 +42,7 @@ class AideLiteReviewPackTests(unittest.TestCase):
         self.assertIn(aide_lite.LATEST_VERIFICATION_REPORT_PATH, text)
         self.assertIn(aide_lite.default_evidence_dir(root), text)
         self.assertIn(aide_lite.REVIEW_DECISION_POLICY_PATH, text)
+        self.assertIn(aide_lite.REVIEW_PROMPT_PATH, text)
         self.assertEqual(packet.budget_status, "PASS")
 
     def test_review_packet_uses_refs_without_inline_source(self) -> None:
@@ -67,6 +68,16 @@ class AideLiteReviewPackTests(unittest.TestCase):
         result, _packet = aide_lite.write_review_packet(root)
         findings = aide_lite.verify_review_packet(root, aide_lite.normalize_rel(result.path.relative_to(root)))
         self.assertTrue(any(finding.severity == "WARN" and "referenced path does not exist" in finding.message for finding in findings))
+
+        # Missing shared guidance must be reported by the real reference checker.
+        (root / aide_lite.REVIEW_PROMPT_PATH).unlink()
+        findings = aide_lite.verify_review_packet(root, aide_lite.normalize_rel(result.path.relative_to(root)))
+        self.assertTrue(any(finding.severity == "WARN" and "referenced path does not exist" in finding.message
+                            and finding.path == aide_lite.REVIEW_PROMPT_PATH for finding in findings))
+        aide_lite.write_text(result.path, aide_lite.read_text(result.path).replace(aide_lite.REVIEW_PROMPT_PATH, "omitted-guidance"))
+        findings = aide_lite.verify_review_packet(root, aide_lite.normalize_rel(result.path.relative_to(root)))
+        self.assertTrue(any(finding.severity == "WARN" and finding.message == f"review ref missing: {aide_lite.REVIEW_PROMPT_PATH}"
+                            for finding in findings))
 
     def test_malformed_review_packet_fails_validation_and_verify_command(self) -> None:
         root = self.make_repo()

@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+## Engineering review - 2026-10-18
+
+Existing engineering review receives a bounded improvement through AIDE-ENGINEERING-REVIEW-01: portable guidance, actual packet references, compatibility and impact reasoning, and proportionate findings. Exact source, behavioral exercises and delivered checks precede integration.
+
 ## Quality discovery - 2026-10-18
 
 [AIDE-QUALITY-DISCOVERY-01](.aide/queue/AIDE-QUALITY-DISCOVERY-01/ExecPlan.md) extends existing Q38 lookup with explained evidence and JSON. All23 source methods and16 delivered Q38 methods pass; the exact promotion preview passes and all three jobs are retired. Qualified integration follows its exact terminal verdict. The prior cooperative review is integrated at33a37774; desktop delivery and DiskEd ownership remain open.

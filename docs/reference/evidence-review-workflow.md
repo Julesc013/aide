@@ -2,7 +2,9 @@
 
 ## Purpose
 
-Q13 adds deterministic review-packet generation so GPT-5.5 or a human reviewer can review compact evidence instead of full chat history, full repo context, broad roadmap dumps, or full diffs by default.
+Q13 adds deterministic review-packet generation so an authorized model or human
+reviewer can begin with compact evidence and inspect relevant code and contracts.
+Packet generation does not call a reviewer or prove semantic correctness.
 
 The primary output is:
 
@@ -48,7 +50,11 @@ It does not inline full source files, full diffs, raw prompt logs, provider keys
 
 ## Review Contract
 
-The canonical GPT-5.5 prompt is `.aide/prompts/evidence-review.md`. The reviewer should use only the review packet unless it is insufficient and return:
+The shared procedure is `.aide/prompts/evidence-review.md`, linked by generated
+packets and the repository's aide-review skill. Missing guidance is reported by
+the packet verifier. Reviewers follow relevant source, callers and compatibility
+obligations when needed, without acquiring execution or mutation authority.
+They return:
 
 ```text
 DECISION:
@@ -65,6 +71,26 @@ Allowed decisions are defined in `.aide/verification/review-decision-policy.yaml
 - `REQUEST_CHANGES`
 - `BLOCKED`
 
-## Deferred Work
+## Proportionate engineering judgment
 
-Q13 does not call GPT-5.5, automate model review, implement LLM-as-judge behavior, perform semantic diff analysis, add exact tokenization, write provider billing records, add golden tasks, implement Gateway/router/cache, or add Runtime/Service/Commander/UI/Mobile/MCP/A2A/host behavior. Q14 adds metadata-only estimated token ledger and savings reporting; Q15 adds deterministic local golden-task quality scaffolding.
+The prompt selects reuse, behavior-preserving refactoring, downstream impact and
+structural reasoning from pinned PStack and Ponytail sources. Its portable source
+links and MIT notices travel with it; no upstream companion skills, model-routing
+rules or plugins are required. Supported compatibility shims remain legitimate.
+Line count and visual similarity are investigation signals, not proof of defects.
+
+Findings state a triggering condition, impact, evidence and bounded remedy.
+Unrelated cleanup does not block acceptance; no actionable findings is valid.
+Unknown total usage remains unknown. Structural packet tests establish wiring,
+not reviewer quality, whole-task savings or universal reliability. Project-owned
+acceptance and tailoring continue to govern imported copies.
+
+## Original Q13 boundary
+
+Q13 does not call models, automate review, implement an LLM judge or semantic diff
+analyzer, add exact tokenization or write provider billing records. This boundary
+does not prohibit an authorized reviewer from reasoning over relevant source.
+Q13 did not add Runtime/Service/Commander/UI/Mobile/MCP/A2A/host behavior; later
+reviewed work retains its own scope. Q14 introduced estimated token ledgers and
+Q15 deterministic local golden-task scaffolding; neither substitutes for measured
+complete outcomes.

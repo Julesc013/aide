@@ -1,15 +1,15 @@
 # AIDE Latest Task Packet
 
-task_id: AIDE-QUALITY-DISCOVERY-01
+task_id: AIDE-ENGINEERING-REVIEW-01
 projection_only: true
 
 ## PHASE
 
-AIDE-QUALITY-DISCOVERY-01 - Explain recorded owners helpers and checks
+AIDE-ENGINEERING-REVIEW-01 - Strengthen bounded engineering review through existing owners
 
 ## GOAL
 
-Explain recorded owners helpers and checks
+AIDE-ENGINEERING-REVIEW-01: improve shared evidence review guidance, packet discovery, compatibility and bounded findings; qualify original review-pack behavior and delivered payload
 
 ## WHY
 
@@ -17,9 +17,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-QUALITY-DISCOVERY-01/task.yaml` (selected scope and acceptance)
-- `.aide/queue/AIDE-QUALITY-DISCOVERY-01/ExecPlan.md` (continuation; when present)
-- `.aide/queue/AIDE-QUALITY-DISCOVERY-01/status.yaml` (actual state; when present)
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/task.yaml` (selected scope and acceptance)
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/ExecPlan.md` (continuation; when present)
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/status.yaml` (actual state; when present)
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -46,16 +46,18 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-QUALITY-DISCOVERY-01/**`
+- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/**`
+- `.agents/skills/aide-review/SKILL.md`
+- `.aide/prompts/evidence-review.md`
+- `.aide/verification/review-decision-policy.yaml`
+- `.aide/verification/review-packet.template.md`
 - `.aide/scripts/aide_lite.py`
-- `.aide/scripts/tests/test_q38_file_quality.py`
-- `.aide/quality/file-quality-ledger.schema.json`
-- `.aide/reports/file-quality-ledger.schema.json`
-- `docs/reference/file-quality-ledger.md`
+- `.aide/scripts/tests/test_review_pack.py`
+- `docs/reference/evidence-review-workflow.md`
 - `.aide/queue/index.yaml`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
-- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/quality-discovery-admission.md`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/engineering-review-admission.md`
 - `.aide/intake/latest-*`
 - `.aide/context/latest-task-packet.md`
 - `.aide/reports/capability-*`
@@ -137,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 5378
-- approx_tokens: 1345
+- chars: 5621
+- approx_tokens: 1406
 - budget_status: PASS
 - warnings:
   - none

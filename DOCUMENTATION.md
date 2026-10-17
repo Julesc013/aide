@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+## Engineering review - 2026-10-18
+
+[Engineering review](docs/reference/evidence-review-workflow.md) describes the existing portable prompt and packet path. The bounded amendment is tracked in [AIDE-ENGINEERING-REVIEW-01](.aide/queue/AIDE-ENGINEERING-REVIEW-01/ExecPlan.md).
+
 ## Quality discovery reference - 2026-10-18
 
 [File quality reference](docs/reference/file-quality-ledger.md) explains advisory ownership/check/reuse lookup, JSON output, omitted counts and unverified freshness. [Qualified outcome](.aide/queue/AIDE-QUALITY-DISCOVERY-01/REPORT.md) records source and delivered checks; the bounded task tracks remaining promotion.

@@ -1,5 +1,9 @@
 # AIDE Implementation Log
 
+## Engineering review - 2026-10-18
+
+AIDE-ENGINEERING-REVIEW-01 admitted at239558e8 under the existing delegation. Amend existing review owners; do not install upstream plugins or another review authority. Validation and evidence are retained in the child queue.
+
 ## Quality discovery candidate - 2026-10-18
 
 Added a bounded read-only explanation over the existing ledger and optional retention of computed reuse candidates. Old reports remain valid. No live index regeneration, source scanning or automatic test selection. All23 source and16 delivered Q38 methods pass, as do six ownership checks and export validation; both managed jobs retired.
