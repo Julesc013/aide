@@ -1,0 +1,30 @@
+{
+  "schema": "aide.review-exercise-observations.v1",
+  "subject_commit": "f2543d317caf9808ca4eeb0cb81f1ff169173203",
+  "prompt_sha256": "91e89727b361e3e9a9dd987d700f09d52814841537f1004556f7ed088890b3c3",
+  "status": "PASS_BOUNDED_FEASIBILITY",
+  "exercises": [
+    {
+      "case": "exercises/case-a.md",
+      "reviewer": "/root/review_exercise_a",
+      "decision": "REQUEST_CHANGES",
+      "observation": "Identified missing task_id in version1 output, viewer KeyError, and producer-only test expectation drift; requested restored wire key and consumer regression within allowed paths.",
+      "expected_contract_met": true,
+      "case_sha256": "e4137dc18f107c62fc59f9f7341e23f8493393daf8c8ed1281bca3e594b851a3"
+    },
+    {
+      "case": "exercises/case-b.md",
+      "reviewer": "/root/review_exercise_b",
+      "decision": "PASS",
+      "observation": "Accepted the internal rename while preserving public keyword and wire field; no required fixes or unrelated restructuring. Recognized supplied independent viewer checks.",
+      "expected_contract_met": true,
+      "case_sha256": "c4d607a4cc26dc9252123eb82638f8f3437c4165130c4e483315542dfef6dd11"
+    }
+  ],
+  "execution": "fresh answer-only contexts; only assigned case and actual prompt read; no tests, source mutation, external calls or delegation reported",
+  "usage": "unknown",
+  "limits": [
+    "fictional scenario validation is not native AIDE evidence",
+    "no matched baseline, comparative quality or efficiency claim"
+  ]
+}

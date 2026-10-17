@@ -27,3 +27,5 @@ The first controller preflight incorrectly stripped the leading status space and
 failed before branch effects; preserving it made the exact same classification
 pass. Intake's lexical install/high/split flag reflects excluded terms; this child
 explicitly separates source, bounded checks and later reviewed integration.
+
+Allocation1/3 PASS7, original methods retained, collected/retired. Both fresh reviewer exercises completed with intended contract behavior. No source correction followed. Prepare changed portable export; no more reviewer exercises are allocated.
