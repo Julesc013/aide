@@ -1,5 +1,18 @@
 # AIDE Implementation Log
 
+## Current memory correction - 2026-10-18
+
+[Current-memory work](.aide/queue/AIDE-CURRENT-MEMORY-01/ExecPlan.md) replaces obsolete
+Q36 routing in packet-referenced source memory with canonical task and release
+references. [Project state](.aide/memory/project-state.md) and
+[open risks](.aide/memory/open-risks.md) distinguish the published Lite profile from
+unfinished platform work. Historical decisions, target templates and product bytes
+are preserved. Targeted checks, doctor and full structural validation pass after one reviewed
+ledger refresh; classification is unchanged. Exact source/effect review and
+integration remain pending. Original failures and the historical warning remain
+in the child evidence.
+
+
 ## Lite successor candidate - 2026-10-18
 
 The existing stable builder now validates bounded successor declarations, preserved historical assets and release lineage. Source 60 and delivered 25 checks pass with every earlier timeout and fixture error retained. The 862-file development pack has exactly four payload changes; six ownership checks, exporter diagnostics and fixed-preview replay pass. All eight managed allocations retired safely. No live stable archive or published asset changed; exact branch integration is pending and will be recorded after the reviewed effect.

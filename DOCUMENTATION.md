@@ -1,5 +1,18 @@
 # AIDE Documentation Index
 
+## Current memory correction - 2026-10-18
+
+[Current-memory work](.aide/queue/AIDE-CURRENT-MEMORY-01/ExecPlan.md) replaces obsolete
+Q36 routing in packet-referenced source memory with canonical task and release
+references. [Project state](.aide/memory/project-state.md) and
+[open risks](.aide/memory/open-risks.md) distinguish the published Lite profile from
+unfinished platform work. Historical decisions, target templates and product bytes
+are preserved. Targeted checks, doctor and full structural validation pass after one reviewed
+ledger refresh; classification is unchanged. Exact source/effect review and
+integration remain pending. Original failures and the historical warning remain
+in the child evidence.
+
+
 ## Lite successor contract - 2026-10-18
 
 [Release bundle reference](docs/reference/aide-lite-release-bundle.md) explains preserved historical assets, the candidate declaration, limits and release gates. [Qualification map](.aide/queue/AIDE-LITE-SUCCESSOR-01/evidence/qualification-map.md) maps proposed forms to existing owners and required actual-archive evidence. [Development validation](.aide/queue/AIDE-LITE-SUCCESSOR-01/evidence/validation.md) records the completed checks and separates them from future release qualification.

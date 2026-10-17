@@ -1,0 +1,23 @@
+{
+  "raw_receipt_sha256": "8c28da4e25f8c15280f705b337c5191a02afd712f37dcb0802064b54f9c637f6",
+  "receipt": {
+    "accepted_base": "4f2c39606378492622fa8580152373fffc074d7c",
+    "after_head": "4f2c39606378492622fa8580152373fffc074d7c",
+    "after_tree": "ff078667ee21c917b345f02e9f67f673776c1423",
+    "before_head": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+    "completed_utc": "2026-10-17T21:39:08.243675+00:00",
+    "preserved_qualification_ref": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+    "remote_before": {
+      "refs/heads/dev": "4f2c39606378492622fa8580152373fffc074d7c",
+      "refs/heads/main": "4f2c39606378492622fa8580152373fffc074d7c",
+      "refs/heads/task/aide-lite-successor-qualification-01": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1"
+    },
+    "remote_mutation": false,
+    "started_utc": "2026-10-17T21:39:07.422680+00:00",
+    "status": "VERIFIED_LOCAL_BRANCH_CREATED",
+    "stderr": "Switched to a new branch 'task/aide-current-memory-01'\n",
+    "stdout": "",
+    "switch_exit_code": 0,
+    "target_ref": "refs/heads/task/aide-current-memory-01"
+  }
+}

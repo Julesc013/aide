@@ -1,0 +1,18 @@
+{
+  "command": [
+    ".aide/scripts/aide_lite.py",
+    "validate"
+  ],
+  "exit_code": 1,
+  "header": [
+    "AIDE Lite validate",
+    "status: FAIL"
+  ],
+  "seconds": 14.035,
+  "findings": [
+    "- FAIL Capability ledger evidence validity: STALE (source_inputs_changed); explicit ledger refresh required otherwise",
+    "- WARN review packet review ref missing: .aide/prompts/evidence-review.md"
+  ],
+  "stdout_sha256": "eeedeb640598a473bb920c3faee3845ee244021b3fd268ec190c56f9c956d208",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

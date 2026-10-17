@@ -1,0 +1,17 @@
+{
+  "accepted_base": "4f2c39606378492622fa8580152373fffc074d7c",
+  "effect_sha256": "cb6f2fa191759ebc78f9932b8945e7754dcb8aa6481fb5cfbe3a2ee993f3b34f",
+  "files": {
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/ExecPlan.md": "9cac7d4d451e0faa4fa6bda9a7960ad955f3528b3dbe3e2f64078e3378aa8f88",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/admission-effect.md": "cb6f2fa191759ebc78f9932b8945e7754dcb8aa6481fb5cfbe3a2ee993f3b34f",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/baseline.json": "49681920b76ef0df3eb8e0c22221e43aa1481711787379680ec2b0f7a44cb2e2",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/latest-intent-packet.json": "168d9f1fa4b0852d7d47db495690dfbd20d3da8be6f39e4d352cf9be858db2be",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/latest-intent-packet.md": "f64127d9c354e72d18517ff7fbb002ff237510016fd0d2b894f320411576d8b9",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/latest-workunit-draft.json": "8e95cfa5a68b700493410ec593df70de1de59d93935af25d30dbe1f4e862ba0b",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/latest-workunit-draft.md": "591ba2dded3b5967b97ef93d19b8f4bd237e4fd278af478ffb40a8f7d55be009",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/prompt.md": "1051c0012fcdf0cf90d0ae506e017a2071e9b2a774a1eba26de2a556b054cfa7",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/status.yaml": "e9cd69f6aa57058f342eca69878650f28c5c2d136f180373afd707252d7e3bc0",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/task.yaml": "166d4bc091fd48b207635c12ac368a2260cf3bd95aa7b331026075a955f34402"
+  },
+  "source_head": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1"
+}

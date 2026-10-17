@@ -1,5 +1,18 @@
 # AIDE Planning Index
 
+## Current memory correction - 2026-10-18
+
+[Current-memory work](.aide/queue/AIDE-CURRENT-MEMORY-01/ExecPlan.md) replaces obsolete
+Q36 routing in packet-referenced source memory with canonical task and release
+references. [Project state](.aide/memory/project-state.md) and
+[open risks](.aide/memory/open-risks.md) distinguish the published Lite profile from
+unfinished platform work. Historical decisions, target templates and product bytes
+are preserved. Targeted checks, doctor and full structural validation pass after one reviewed
+ledger refresh; classification is unchanged. Exact source/effect review and
+integration remain pending. Original failures and the historical warning remain
+in the child evidence.
+
+
 ## Lite successor preparation - 2026-10-18
 
 [AIDE-LITE-SUCCESSOR-01](.aide/queue/AIDE-LITE-SUCCESSOR-01/ExecPlan.md) qualifies the existing successor builder and development pack: 60 source checks, 25 affected delivered checks, ownership validation and a fixed six-commit preview pass. The proposed 1.1.0 contract retains 38 CLI forms and adds 18. Published 1.0.0 stays unchanged. Exact integration is pending and will be recorded after the reviewed effect; actual archives, published-predecessor upgrades and publication remain the next release gates.

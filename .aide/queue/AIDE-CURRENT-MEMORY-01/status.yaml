@@ -1,0 +1,7 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CURRENT-MEMORY-01
+status: needs_review
+result: DOCUMENTATION_CHECKS_PASS_WITH_NOTES
+next_action: independent_source_and_effect_review
+maximum_jobs: 1
+jobs_allocated: 0

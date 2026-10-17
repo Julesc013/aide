@@ -1,0 +1,73 @@
+{
+  "binding": {
+    "changed_refs": [],
+    "qualification": "source_classification_only",
+    "reason": "bound_source_inputs_unchanged",
+    "state": "CURRENT"
+  },
+  "controller_stop": {
+    "cause": "owned result record incorrectly included as unexpected generated path",
+    "classification": "controller bookkeeping, not product failure",
+    "effect": "no generator retry; final checks not yet run",
+    "followup_read_only_stop": "controller used status rather than state for binding; no additional command executed",
+    "stage": "after_successful_single_refresh_before_doctor_final"
+  },
+  "ledger_classification_unchanged": true,
+  "operations": [
+    {
+      "command": [
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "ledger"
+      ],
+      "exit_code": 0,
+      "header": [
+        "AIDE Lite capability ledger",
+        "result: PASS"
+      ],
+      "seconds": 1.3,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "8531d16e44b5c20e59b7ebbd016b07f85bf23baf5d0273b95599fff3cba67004",
+      "warnings": []
+    },
+    {
+      "command": [
+        ".aide/scripts/aide_lite.py",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "header": [
+        "AIDE Lite doctor",
+        "status: PASS"
+      ],
+      "seconds": 14.208,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21",
+      "warnings": []
+    },
+    {
+      "command": [
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "exit_code": 0,
+      "header": [
+        "AIDE Lite validate",
+        "status: PASS"
+      ],
+      "seconds": 14.755,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f660d50fd5191c06fa185b934deb31e41ac7727efcf71b306a17a1cac1f2d262",
+      "warnings": [
+        "- WARN review packet review ref missing: .aide/prompts/evidence-review.md"
+      ]
+    }
+  ],
+  "report_hashes": {
+    ".aide/reports/capability-command-status.md": "e02c31ddd07a39cf38d99cd762f765ebe6d760651691379db14d981c2477203f",
+    ".aide/reports/capability-evidence-bindings.json": "2f35abeaf8846931177319b33bb54aaf331c73160eaece623a5a56afa33de9b5",
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "9e51820f66fe4861aaa6498c1e25742d601b061e9ebc45026d4ad42ba28a89b2"
+  },
+  "status": "PASS"
+}

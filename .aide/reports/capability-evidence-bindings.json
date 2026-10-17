@@ -72,10 +72,10 @@
       "state": "observed"
     },
     {
-      "bytes": 2956,
+      "bytes": 3166,
       "path": ".aide/memory/project-state.md",
       "reason": "",
-      "sha256": "8ec39c10322bddb01cb51d85adaac141350010d7df44a8f20e068ac8c6b80f80",
+      "sha256": "5c49d672303a451060385ce28efd341d80ae7bd831064a0a96cc7f8e9af5ed67",
       "state": "observed"
     },
     {

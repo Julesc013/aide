@@ -1,0 +1,48 @@
+{
+  "accepted_base": "4f2c39606378492622fa8580152373fffc074d7c",
+  "context_route": ".aide/scripts/aide_lite.py task_packet_text includes all three source-local memory files as context references",
+  "defect": [
+    "project-state current phase and next queue path still select Q36",
+    "open-risks treats all releases and runtime work as globally deferred despite later reviewed scoped work"
+  ],
+  "files": {
+    ".aide/import/target-open-risks-template.md": {
+      "accepted_base_sha256": "6e5d82005a6dc949da2ab9073ea550d656120637f7728022aac9e085e2bd7bb9",
+      "observed_worktree_sha256": "6e5d82005a6dc949da2ab9073ea550d656120637f7728022aac9e085e2bd7bb9"
+    },
+    ".aide/import/target-project-state-template.md": {
+      "accepted_base_sha256": "d6c3bffb89f7af6fd2f75ca51514152638345bdd6b87345c6e472c66f08dfbe1",
+      "observed_worktree_sha256": "d6c3bffb89f7af6fd2f75ca51514152638345bdd6b87345c6e472c66f08dfbe1"
+    },
+    ".aide/memory/decisions.md": {
+      "accepted_base_sha256": "2484f79fc3f7a9a6ef79d8281fb07c8c2723a36238e0a66c52913eb2005f3dc7",
+      "observed_worktree_sha256": "2484f79fc3f7a9a6ef79d8281fb07c8c2723a36238e0a66c52913eb2005f3dc7"
+    },
+    ".aide/memory/open-risks.md": {
+      "accepted_base_sha256": "57155cf74ebe1beb07ce758a69f08cb24d8df4d1629fa26e22aa09fef7cb415f",
+      "observed_worktree_sha256": "57155cf74ebe1beb07ce758a69f08cb24d8df4d1629fa26e22aa09fef7cb415f"
+    },
+    ".aide/memory/project-state.md": {
+      "accepted_base_sha256": "8ec39c10322bddb01cb51d85adaac141350010d7df44a8f20e068ac8c6b80f80",
+      "observed_worktree_sha256": "8ec39c10322bddb01cb51d85adaac141350010d7df44a8f20e068ac8c6b80f80"
+    },
+    ".aide/policies/git-workflow.yaml": {
+      "accepted_base_sha256": "eab8e17ac56481ae07ad66a66b14b591de938f9af0c65278b202dd06fa0b784d",
+      "observed_worktree_sha256": "eab8e17ac56481ae07ad66a66b14b591de938f9af0c65278b202dd06fa0b784d"
+    },
+    ".aide/profile.yaml": {
+      "accepted_base_sha256": "1f53412f852d1033f24652367ad88294328d8755a91fee07dc6f48699d4a5ffe",
+      "observed_worktree_sha256": "1f53412f852d1033f24652367ad88294328d8755a91fee07dc6f48699d4a5ffe"
+    },
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json": {
+      "accepted_base_sha256": "36688065fb4356568484615b0abb92f3413c72f5e66895fb267f007b023129e2",
+      "observed_worktree_sha256": "36688065fb4356568484615b0abb92f3413c72f5e66895fb267f007b023129e2"
+    },
+    ".aide/scripts/aide_lite.py": {
+      "accepted_base_sha256": "c57d53d2a478552e3e1c986a8a3f958f4966c33335a86ef7bb869046c6196bf5",
+      "observed_worktree_sha256": "c6a25f40ab9a89cf4f629478fa594fae1f50c253f0fec2739e56b96d6d49b302"
+    }
+  },
+  "preserved_qualification_branch_commit": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "target_boundary": "Importer renders separate target-owned templates and preserves existing target memory; no template changes in this task."
+}

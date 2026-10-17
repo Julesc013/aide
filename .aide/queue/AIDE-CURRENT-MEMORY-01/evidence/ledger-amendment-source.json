@@ -1,0 +1,331 @@
+{
+  "baseline": "4f2c39606378492622fa8580152373fffc074d7c",
+  "changed_binding_refs": [
+    ".aide/memory/project-state.md"
+  ],
+  "effect_sha256": "905d1ed4c6912aa256bec4648dfbc26043d6fe6f66fae5a2146a8b614f36e7d5",
+  "files": {
+    ".aide/memory/open-risks.md": "cfcd7bbb7a76a54125bf600a36c2975c1ed7211c5a2022f4c9735eddae186ce5",
+    ".aide/memory/project-state.md": "5c49d672303a451060385ce28efd341d80ae7bd831064a0a96cc7f8e9af5ed67",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/ExecPlan.md": "1e27cd572b8d125ee50d79cd4cb98820f415a0d21bcb856cad6952f71fae2525",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/admission-effect.md": "cb6f2fa191759ebc78f9932b8945e7754dcb8aa6481fb5cfbe3a2ee993f3b34f",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/admission-review.md": "7964370d7c7ef490850b7414fca1ec47d5765efc7912c5d5c8754d71f38ac089",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/admission-source.json": "4eeb01bd97e348f624a27d573cf116891a5de1d32890202291a305dbf9caee80",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/baseline.json": "49681920b76ef0df3eb8e0c22221e43aa1481711787379680ec2b0f7a44cb2e2",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/branch-transition.json": "7b4b002e9bfc07632ecc1e0a2653bc8f96d485e39f921d54b2efbcb22b489279",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/latest-intent-packet.json": "168d9f1fa4b0852d7d47db495690dfbd20d3da8be6f39e4d352cf9be858db2be",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/latest-intent-packet.md": "f64127d9c354e72d18517ff7fbb002ff237510016fd0d2b894f320411576d8b9",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/latest-workunit-draft.json": "8e95cfa5a68b700493410ec593df70de1de59d93935af25d30dbe1f4e862ba0b",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/latest-workunit-draft.md": "591ba2dded3b5967b97ef93d19b8f4bd237e4fd278af478ffb40a8f7d55be009",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/ledger-refresh-amendment.md": "905d1ed4c6912aa256bec4648dfbc26043d6fe6f66fae5a2146a8b614f36e7d5",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/structural-first-result.json": "1e5cb075c096cb20082ed56fa4b723944af601ac57a81ae254f03f585cd2388f",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/validation.json": "d0d3f87937a81d545e56c07b58920bedc92bedef2895345e2886261deb4dd6d5",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/prompt.md": "1051c0012fcdf0cf90d0ae506e017a2071e9b2a774a1eba26de2a556b054cfa7",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/status.yaml": "00e774260991fa44e08a90dfb986b67787244d374fb275c225057b70c6e11d63",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/task.yaml": "744ce1ef03e834caa6b91ed2651e0e41581623b9d4dc14bf8af982b07b39eb2f",
+    ".aide/reports/capability-command-status.md": "a4afe69138ae33f89d7face42ada9848ca44f37ff04316066b48cc54f1760223",
+    ".aide/reports/capability-evidence-bindings.json": "746c93bdbbe0801cf90f7ad8a1803501a8c4abedd01cc2485d7af3b4b8d8a00e",
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "23bd47794d9ab7189e338766265489e1b2001dc4b736dfda3016fed5c78d1df6",
+    ".aide/scripts/aide_lite.py": "c57d53d2a478552e3e1c986a8a3f958f4966c33335a86ef7bb869046c6196bf5"
+  },
+  "report_write_paths": [
+    ".aide/reports/capability-ledger.json",
+    ".aide/reports/capability-ledger.md",
+    ".aide/reports/capability-evidence-bindings.json",
+    ".aide/reports/capability-command-status.md"
+  ],
+  "source_input_snapshot": {
+    "complete": true,
+    "inputs": [
+      {
+        "bytes": 1249,
+        "path": ".aide/capabilities/capability-evidence-bindings.schema.json",
+        "reason": "",
+        "sha256": "855fb0d7bb4dbe4530465f0d326931e4e6885847e5f79c0b6fa24e878e2e4c05",
+        "state": "observed"
+      },
+      {
+        "bytes": 1137,
+        "path": ".aide/capabilities/capability-observation.schema.json",
+        "reason": "",
+        "sha256": "3ccfa89d19e0ab64ee6f39c863ce06916016d97876469734c55088bed2452f66",
+        "state": "observed"
+      },
+      {
+        "bytes": 1260,
+        "path": ".aide/capabilities/capability-overclaim.schema.json",
+        "reason": "",
+        "sha256": "6ef83500b952ed1311dd168538c856b59f68820a0bb8a22bdac21bc67b1a0d97",
+        "state": "observed"
+      },
+      {
+        "bytes": 7296,
+        "path": ".aide/capabilities/capability-seeds.yaml",
+        "reason": "",
+        "sha256": "46817a46802870980297f9923f6e1d31fd6a9c418ced7ced10283d2e2565fd5f",
+        "state": "observed"
+      },
+      {
+        "bytes": 5410,
+        "path": ".aide/context/latest-task-packet.md",
+        "reason": "",
+        "sha256": "e7327b1f0fd563c855f698b2b6837313286fdc92ff497ea56a5597b889583744",
+        "state": "observed"
+      },
+      {
+        "bytes": 365,
+        "path": ".aide/evals/golden-tasks/capability_command_surface_golden/task.yaml",
+        "reason": "",
+        "sha256": "fa3b484163d5ebbc334fd905f4e5d8bdd211c8594837a16c6656353f6e9f19eb",
+        "state": "observed"
+      },
+      {
+        "bytes": 416,
+        "path": ".aide/evals/golden-tasks/capability_ledger_generation_golden/task.yaml",
+        "reason": "",
+        "sha256": "1c74e7e86fe25b9d3d1d83f43d0e27589d6a7a778236b093923f5755a971e204",
+        "state": "observed"
+      },
+      {
+        "bytes": 361,
+        "path": ".aide/evals/golden-tasks/task_os_command_surface_golden/task.yaml",
+        "reason": "",
+        "sha256": "8b60b4635d143990a90ff06c5bc1ba3c88a0111ca904e61647e761840be30d13",
+        "state": "observed"
+      },
+      {
+        "bytes": 1364,
+        "path": ".aide/examples/task-os/capability-ledger.example.json",
+        "reason": "",
+        "sha256": "25f16b2c96502e84d0e6b5aa1ad83e6de157d9c5e81851dfb76c1c64441622ae",
+        "state": "observed"
+      },
+      {
+        "bytes": 3935,
+        "path": ".aide/ledgers/capability-ledger.schema.json",
+        "reason": "",
+        "sha256": "01015ae941176de469ea16c861049036296b5fc1ac2d88493bec4017b60949fa",
+        "state": "observed"
+      },
+      {
+        "bytes": 3166,
+        "path": ".aide/memory/project-state.md",
+        "reason": "",
+        "sha256": "5c49d672303a451060385ce28efd341d80ae7bd831064a0a96cc7f8e9af5ed67",
+        "state": "observed"
+      },
+      {
+        "bytes": 2448,
+        "path": ".aide/policies/blockers.yaml",
+        "reason": "",
+        "sha256": "c596779a372591084a57e4fecbe57a1befaa7fa12cbaca1cecd8d31f97da3d2f",
+        "state": "observed"
+      },
+      {
+        "bytes": 2947,
+        "path": ".aide/policies/capability-reality.yaml",
+        "reason": "",
+        "sha256": "7fd503b9a3560ee32e5b56cb3fb7a0cddc865f46a42780ceceaa636e18645e18",
+        "state": "observed"
+      },
+      {
+        "bytes": 1931,
+        "path": ".aide/policies/gateway.yaml",
+        "reason": "",
+        "sha256": "4249059143ca8b06af6acbf6c921867b62231f96452041558af2a9d43c587606",
+        "state": "observed"
+      },
+      {
+        "bytes": 1946,
+        "path": ".aide/policies/github-release-draft.yaml",
+        "reason": "",
+        "sha256": "d1422778d37d2d3bf520aa76178ada93e6e616563974a0cbb676335cbe1169cb",
+        "state": "observed"
+      },
+      {
+        "bytes": 4238,
+        "path": ".aide/policies/prompt-normalization.yaml",
+        "reason": "",
+        "sha256": "9c435e0c453978a013ca904a0800aefcd15d3f13694480f1d37d2363943341af",
+        "state": "observed"
+      },
+      {
+        "bytes": 1349,
+        "path": ".aide/policies/repair-loop.yaml",
+        "reason": "",
+        "sha256": "d7a8fb91ae36e393fb99cc7783e83e0cdf53118b617dd709b8a356addc2c3137",
+        "state": "observed"
+      },
+      {
+        "bytes": 2801,
+        "path": ".aide/policies/task-lifecycle.yaml",
+        "reason": "",
+        "sha256": "466fc323ca04aeebfde6f1e8ea72b4ff871092bf197536611f9b1ed4e0a0982d",
+        "state": "observed"
+      },
+      {
+        "bytes": 5203,
+        "path": ".aide/providers/capability-matrix.yaml",
+        "reason": "",
+        "sha256": "8521ec7972c27d05940dfeb458f9fe092b013b0d8fa9ef9211b2ea7e280e7923",
+        "state": "observed"
+      },
+      {
+        "bytes": 5063,
+        "path": ".aide/providers/provider-catalog.yaml",
+        "reason": "",
+        "sha256": "5fe6c86624ed086461936e00f4e192d2c7f737b27151d5c5775e7026fa172474",
+        "state": "observed"
+      },
+      {
+        "bytes": 5041,
+        "path": ".aide/queue/X-OS-02-capability-reality-ledger-v0/task.yaml",
+        "reason": "",
+        "sha256": "b656828983267b477b69733a0b481c0e2cabe1934228676b0a4ec7fcf8ea7fc5",
+        "state": "observed"
+      },
+      {
+        "bytes": 11534,
+        "path": ".aide/release/latest-github-release-draft.json",
+        "reason": "",
+        "sha256": "890ad7031c22b029aca1b48e36c434da5810315d8a8e53cea44e252fc4bc04ec",
+        "state": "observed"
+      },
+      {
+        "bytes": 1030,
+        "path": ".aide/reports/target-work-deferral.md",
+        "reason": "",
+        "sha256": "0c4d5e75e9d7f8bf73a979f995e5f8c30d889864e1fabdc5f2fcd2b355c40f48",
+        "state": "observed"
+      },
+      {
+        "bytes": 3227,
+        "path": ".aide/reports/task-os-command-status.md",
+        "reason": "",
+        "sha256": "df946d2b93198db2b64fd4dcb17329fa1247c89fddc16eb114dd92701a5241dd",
+        "state": "observed"
+      },
+      {
+        "bytes": 2424230,
+        "path": ".aide/scripts/aide_lite.py",
+        "reason": "",
+        "sha256": "c57d53d2a478552e3e1c986a8a3f958f4966c33335a86ef7bb869046c6196bf5",
+        "state": "observed"
+      },
+      {
+        "bytes": 24725,
+        "path": ".aide/scripts/tests/test_x_os_01_task_os_commands.py",
+        "reason": "",
+        "sha256": "388a1da8b6569dae0869972db36521b7c879dcee99460339557f8fc393f8e0fe",
+        "state": "observed"
+      },
+      {
+        "bytes": 24035,
+        "path": ".aide/scripts/tests/test_x_os_02_capability_reality.py",
+        "reason": "",
+        "sha256": "4509355fc87b618c013ac1406e24e5a2181f5ac4c658f89fc0b8eae6a20393ef",
+        "state": "observed"
+      },
+      {
+        "bytes": 22179,
+        "path": "AGENTS.md",
+        "reason": "",
+        "sha256": "0496416183a1b0d8a5e17e9930976eab5decc7dcde10d498a071742205ffb0a6",
+        "state": "observed"
+      },
+      {
+        "bytes": 420,
+        "path": "core/gateway/README.md",
+        "reason": "",
+        "sha256": "14ee4fd07a5e513283d488c40e21b2ebc55a7d32ac42df8c64121f41b78834c7",
+        "state": "observed"
+      },
+      {
+        "bytes": 7628,
+        "path": "docs/reference/README.md",
+        "reason": "",
+        "sha256": "f5ffaf1aec6eb9ee45d258b98b4e36842c8dc51edce099d04e8e7018df3aee3f",
+        "state": "observed"
+      },
+      {
+        "bytes": 4638,
+        "path": "docs/reference/aide-install-model.md",
+        "reason": "",
+        "sha256": "3493a260bbb167554bb7f02b1fc2968fc3be9711974f72d09a58d0d18c4af46b",
+        "state": "observed"
+      },
+      {
+        "bytes": 4190,
+        "path": "docs/reference/aide-repair-model.md",
+        "reason": "",
+        "sha256": "b43e4b3f9ca09f4d18c85c9615e33cd5ba54c2fa6cd353a9cdd8ce475bbf56cb",
+        "state": "observed"
+      },
+      {
+        "bytes": 5423,
+        "path": "docs/reference/aide-rollback-uninstall.md",
+        "reason": "",
+        "sha256": "18eec138eb44df6ee0d079e6bdca391cfeb33a3b3ce835ea1c2503aa9d57c36a",
+        "state": "observed"
+      },
+      {
+        "bytes": 5034,
+        "path": "docs/reference/aide-upgrade-model.md",
+        "reason": "",
+        "sha256": "4205f9ce31990d75c857b00d1de44b2c1ae9d45f18679c162844ba86a8a302e6",
+        "state": "observed"
+      },
+      {
+        "bytes": 5477,
+        "path": "docs/reference/capability-reality-ledger.md",
+        "reason": "",
+        "sha256": "1533b4122dc1666e92058643cc167070a3defab64a57c078fde4574082b7c51e",
+        "state": "observed"
+      },
+      {
+        "bytes": 2992,
+        "path": "docs/reference/gateway-skeleton.md",
+        "reason": "",
+        "sha256": "ca1265dc51d82f6ed29099364f631b0c162bc048ad4e726954e47232c27d147c",
+        "state": "observed"
+      },
+      {
+        "bytes": 4923,
+        "path": "docs/reference/github-release-draft.md",
+        "reason": "",
+        "sha256": "847a5660cd23ec834ededd6c23504911c697a7685d8b1eaaccf0d0744c1efac7",
+        "state": "observed"
+      },
+      {
+        "bytes": 4044,
+        "path": "docs/reference/provider-adapter-v0.md",
+        "reason": "",
+        "sha256": "7dcdd1bc32e4fe512c374a316eca3547987c2dd7c6416844a50e73ad834024b9",
+        "state": "observed"
+      },
+      {
+        "bytes": 5541,
+        "path": "docs/reference/source-of-truth.md",
+        "reason": "",
+        "sha256": "8977a7ebb80ee30e6e42ec66866b0ba5aa545188f670ae4cbf3472bed94a163a",
+        "state": "observed"
+      },
+      {
+        "bytes": 6438,
+        "path": "docs/reference/task-os-report-only-commands.md",
+        "reason": "",
+        "sha256": "e22d955a960a5e7b7ca664b61e96b4e0fb4e1b2e4fbd35ffc23a5c84275e5ce0",
+        "state": "observed"
+      },
+      {
+        "bytes": 3283,
+        "path": "docs/reference/task-os-v0.md",
+        "reason": "",
+        "sha256": "ade87cf01c2e9614a821fb9788144beaf2cf6eb05357e58ea8fb752a77428c23",
+        "state": "observed"
+      }
+    ],
+    "truncated": false
+  }
+}

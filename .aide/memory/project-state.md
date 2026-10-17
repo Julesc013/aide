@@ -1,30 +1,57 @@
 # AIDE Compact Project State
 
-Maximum target length: 1200 approximate tokens under `.aide/policies/token-budget.yaml`.
+This is source-local context, not a second queue or authority. Read the
+[Profile](../profile.yaml), selected task and exact evidence before acting.
+Historical decisions remain in [decisions.md](decisions.md). Maximum target length:
+1,200 approximate tokens under the existing token-budget policy.
 
-## Current Repo Phase
+## Recorded delivery and unfinished platform
 
-AIDE is in a self-hosting reboot and remains pre-product. Q35 now adds report-only GitHub protection and CI advisory policy, commands, generated reports, tests, and export-pack support without GitHub API, workflow, branch, tag, release, provider, model, or network mutation. Q32/Q33 remain target-repository prompts. The current AIDE-local next packet is Q36 Intent Compiler and Prompt Normalization v0.
+At the reviewed 2026-10-18 baseline, [published Lite 1.0.0 evidence](../queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json)
+records a T3 companion profile for the tested local Windows CLI environment.
+The record includes exact artifacts, environment, consumers and exclusions; it
+does not qualify another machine or model-enabled autonomous operation. The wider
+AIDE platform remains partial. Implementation, qualification, support, publication
+and actual use are separate facts.
 
-## Accepted Queue State
+For a later release or candidate, inspect its own task and publication evidence.
+A newer source commit, prepared archive or successful fixture is not publication.
+Do not reconstruct current release state from an old numbered phase summary.
 
-- Q00 through Q08 are accepted foundation records; early phases carry notes but no active AIDE-local `needs_review` blocker.
-- Q09 through Q20 are accepted token-survival, Gateway skeleton, and offline provider-metadata foundation records; live providers, model calls, Gateway forwarding, Runtime, and UI remain deferred.
-- Q21, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, Q34, Q35, and QFIX-03 are accepted or implemented as governance, export/import, branch workflow, changelog-preparation, and GitHub/CI advisory work.
-- Q32 and Q33 must run from Eureka and Dominium respectively; they are not AIDE-local execution items.
+## Select and resume actual work
 
-## Deferred Surfaces
+The [campaign](../queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml) coordinates
+bounded children. Use the selected child identity and its `task.yaml`, `ExecPlan.md`,
+`status.yaml` and evidence. The [queue index](../queue/index.yaml) is the routing
+surface; it does not make every historical unfinished entry the next task.
 
-Live provider adapters, credential setup, local model setup, live model routing, real Gateway proxy forwarding, Runtime, Service, Commander, Mobile, IDE host implementation, MCP/A2A, cloud/team mode, vector DB, semantic cache, provider response cache, autonomous maintenance, and real Dominium output remain deferred until reviewed queue items authorize them.
+The existing commands provide read-only views without writing reports:
 
-## Next Queue Path
+```text
+py -3 .aide/scripts/aide_lite.py task current --task-id <TASK-ID> --json
+py -3 .aide/scripts/aide_lite.py task resume-plan --task-id <TASK-ID> --json
+```
 
-Use `.aide/context/latest-task-packet.md` for Q36 Intent Compiler and Prompt Normalization v0. Q36 must compile raw intent into bounded WorkUnits and must not execute vague prompts directly.
+They report recorded facts and uncertainty; they do not grant execution authority
+or independently prove that a workspace is ready. Inspect the linked evidence
+and applicable ownership, source and effect boundaries before resuming. Preserve
+completed effects and original failed or interrupted attempts.
 
-## Validation Baseline
+The [latest task packet](../context/latest-task-packet.md) is a context projection
+and may describe another task. Match its identity to the selected WorkUnit; do not
+let it or this memory file silently select work. When records conflict, reconcile
+against their exact subjects and observed state rather than infer completion.
 
-After QFIX-03, `py -3 scripts/aide validate`, `doctor`, and `self-check` report zero warnings. Generated artifact drift should be fixed with `py -3 scripts/aide compile --write` only through reviewed work.
+## Context and authority boundaries
 
-## Token-Survival Rule
+[Open risks](open-risks.md) links the continuing execution, adoption and measurement
+limits. Existing grants and reviewed queue scope govern ordinary work; a stale
+summary cannot widen authority or reopen completed qualification. Reuse evidence
+only while the relevant source, inputs and dependencies remain valid.
 
-Future implementation prompts should cite repo refs, repo-map/test-map/context-index refs, compact task packets, verifier reports, review packets, token-ledger summaries, golden-task reports, outcome-controller recommendations, route decisions, cache-key reports, Gateway status reports, provider status reports, evidence packets, and exact line refs. Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, raw prompts/responses, or full files unless exact contents are required for the task. Token reduction is invalid if Q15 golden tasks fail, Q16 recommendations are advisory, Q17 route decisions are advisory, Q18 cache keys remain metadata rather than proof that stale content is safe to reuse, Q19 Gateway status surfaces are local/report-only rather than provider forwarding, and Q20 provider metadata is offline advisory contract data rather than live provider capability proof.
+Load compact task, context, review and evidence references instead of full chat
+history or repository dumps. Keep unknown usage unknown; smaller packets alone
+do not establish whole-task savings. Preserve source-linked useful results and
+project customization. Downstream repositories own their memory: the importer
+uses separate target templates and preserves existing target records. This AIDE
+self-hosting summary must not replace their project state.

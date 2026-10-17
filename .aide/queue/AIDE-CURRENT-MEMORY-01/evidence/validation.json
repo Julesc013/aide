@@ -1,0 +1,200 @@
+{
+  "base": "4f2c39606378492622fa8580152373fffc074d7c",
+  "checks": [
+    "links resolve within this accepted checkout",
+    "published identity and T3 profile match exact existing record",
+    "obsolete next-Q36 routing removed",
+    "historical decisions, target templates, Profile, policy, executable and published evidence unchanged",
+    "actual selected-task JSON views exit0, parse, stay bounded and leave source state unchanged",
+    "git diff --check and allowed paths pass",
+    "single reviewed ledger refresh restores CURRENT source binding without classification change",
+    "doctor and full structural validate exit0 status PASS"
+  ],
+  "doctor_first": {
+    "exit_code": 1,
+    "finding": "validation should be run: run validate and fix failures",
+    "status": "FAIL",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "b19d3fa369d119eac2576113ec34092924b69e7e26f2ef7c0c807815f08b4a8c"
+  },
+  "ledger_classification_unchanged": true,
+  "ledger_refresh_ref": "ledger-refresh-result.json",
+  "limitations": [
+    "No runtime, package, support, release or learning capability is newly qualified.",
+    "Historical qualification remains on the preserved separate task branch."
+  ],
+  "links_checked": [
+    {
+      "from": ".aide/memory/project-state.md",
+      "target": ".aide/profile.yaml"
+    },
+    {
+      "from": ".aide/memory/project-state.md",
+      "target": ".aide/memory/decisions.md"
+    },
+    {
+      "from": ".aide/memory/project-state.md",
+      "target": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json"
+    },
+    {
+      "from": ".aide/memory/project-state.md",
+      "target": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "from": ".aide/memory/project-state.md",
+      "target": ".aide/queue/index.yaml"
+    },
+    {
+      "from": ".aide/memory/project-state.md",
+      "target": ".aide/context/latest-task-packet.md"
+    },
+    {
+      "from": ".aide/memory/project-state.md",
+      "target": ".aide/memory/open-risks.md"
+    },
+    {
+      "from": ".aide/memory/open-risks.md",
+      "target": ".aide/queue/AIDE-SESSION-CONTAINMENT-01/status.yaml"
+    },
+    {
+      "from": ".aide/memory/open-risks.md",
+      "target": ".aide/queue/AIDE-DEPENDENCY-MCP-01/REPORT.md"
+    },
+    {
+      "from": ".aide/memory/open-risks.md",
+      "target": ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/status.yaml"
+    },
+    {
+      "from": ".aide/memory/open-risks.md",
+      "target": ".aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/status.yaml"
+    },
+    {
+      "from": ".aide/memory/open-risks.md",
+      "target": ".aide/queue/AIDE-LITE-EFFICIENCY-01/status.yaml"
+    },
+    {
+      "from": ".aide/memory/open-risks.md",
+      "target": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json"
+    },
+    {
+      "from": ".aide/memory/open-risks.md",
+      "target": ".aide/memory/decisions.md"
+    },
+    {
+      "from": ".aide/memory/open-risks.md",
+      "target": ".aide/profile.yaml"
+    }
+  ],
+  "new_managed_jobs": 0,
+  "new_tests": 0,
+  "observed_memory_sha256": {
+    ".aide/memory/open-risks.md": "cfcd7bbb7a76a54125bf600a36c2975c1ed7211c5a2022f4c9735eddae186ce5",
+    ".aide/memory/project-state.md": "5c49d672303a451060385ce28efd341d80ae7bd831064a0a96cc7f8e9af5ed67"
+  },
+  "project_state_approximate_tokens": 792,
+  "project_state_token_limit": 1600,
+  "readonly_cli_observations": [
+    {
+      "command": [
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "current",
+        "--task-id",
+        "AIDE-CURRENT-MEMORY-01",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 1136,
+      "stdout_sha256": "d78bd4b7bc3001a5020b84c73bd21d7ac602734c636bcb1a7fce35e1974b4b3d",
+      "top_level_keys": [
+        "acceptance_verified",
+        "declared_status",
+        "evidence",
+        "index_status",
+        "issues",
+        "next_action",
+        "objective",
+        "owner",
+        "read_only",
+        "remaining_obligations",
+        "result",
+        "schema_version",
+        "scope",
+        "sources",
+        "status",
+        "task_id"
+      ]
+    },
+    {
+      "command": [
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "resume-plan",
+        "--task-id",
+        "AIDE-CURRENT-MEMORY-01",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 1501,
+      "stdout_sha256": "002a56d84d518bc0849d61a1daf29e8e62261d0c702a439aea0f863a472c1f94",
+      "top_level_keys": [
+        "execution_admitted",
+        "read_only",
+        "reason",
+        "recommendation",
+        "report_only",
+        "safe_to_resume",
+        "schema_version",
+        "task"
+      ]
+    },
+    {
+      "command": [
+        ".aide/scripts/aide_lite.py",
+        "task",
+        "current",
+        "--task-id",
+        "AIDE-DAILY-DISKED-ADOPTION-01",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 2583,
+      "stdout_sha256": "57ee03478aa9c339b31c1a86e9741e0d7dec78fcdd42d499fd050a0302c8c114",
+      "top_level_keys": [
+        "acceptance_verified",
+        "declared_status",
+        "evidence",
+        "index_status",
+        "issues",
+        "next_action",
+        "objective",
+        "owner",
+        "read_only",
+        "remaining_obligations",
+        "result",
+        "schema_version",
+        "scope",
+        "sources",
+        "status",
+        "task_id"
+      ]
+    }
+  ],
+  "result": "PASS_WITH_NOTES",
+  "structural_failure_ref": "structural-first-result.json",
+  "unchanged_inputs": [
+    ".aide/import/target-open-risks-template.md",
+    ".aide/import/target-project-state-template.md",
+    ".aide/memory/decisions.md",
+    ".aide/policies/git-workflow.yaml",
+    ".aide/profile.yaml",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json",
+    ".aide/scripts/aide_lite.py"
+  ],
+  "warnings": [
+    "Historical global review packet ref warning retained; referenced physical prompt exists."
+  ]
+}

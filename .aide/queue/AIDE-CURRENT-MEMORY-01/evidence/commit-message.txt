@@ -1,0 +1,38 @@
+docs(memory): replace obsolete phase routing with current evidence
+
+## Summary
+- Prepare the accepted AIDE-CURRENT-MEMORY-01 correction and finite promotion preview.
+
+## Why
+- Default task context still called Q36 next and the whole product pre-product.
+- Current release, selected work and historical decisions require distinct roles.
+
+## Changed
+- Link compact project state and risks to canonical task and release records.
+- Preserve historical decisions, target-owned templates and all product bytes.
+- Refresh only the existing advisory capability binding after source invalidation.
+
+## Validation
+- PASS: 15 local links, 792 approximate tokens and three actual read-only task views.
+- PASS: doctor and full structural validation after one reviewed ledger refresh.
+- PASS: capability classification unchanged, protected inputs and scoped diff checks.
+- PRESERVED: initial stale-binding failures and controller bookkeeping stops.
+- NOTE: historical global review-reference warning; no product tests; one promotion preview allocation remains.
+
+## Changelog
+- Docs: Correct AIDE source-local task context and current-risk references.
+
+## Risks
+- This correction does not qualify another runtime, machine, package or release.
+- The separate Lite 1.1 candidate retains its original evidence and pending gates.
+
+## Follow-up
+- Run one reviewed preview allocation, review closure, then integrate dev and main.
+- Preserve existing host, downstream ownership and complete-outcome measurement work.
+
+AIDE-Task: AIDE-CURRENT-MEMORY-01
+AIDE-Phase: current-memory-correction
+AIDE-Result: PASS_WITH_NOTES
+AIDE-Scope: source-memory-and-derived-binding
+AIDE-Token-Impact: compact-current-context-no-new-model-runs
+AIDE-Quality-Gate: exact-independent-review-required-before-commit

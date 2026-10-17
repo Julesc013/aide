@@ -1,0 +1,41 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CURRENT-MEMORY-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Correct source-local compact memory used by task packets
+type: documentation
+status: needs_review
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CURRENT-MEMORY-01/**
+    - .aide/memory/project-state.md
+    - .aide/memory/open-risks.md
+    - .aide/changelog/CHANGELOG.preview.md
+    - .aide/changelog/RELEASE_NOTES.preview.md
+    - .aide/changelog/changelog.preview.json
+    - .aide/changelog/latest-changelog-report.md
+    - .aide/changelog/malformed-commits.md
+    - .aide/changelog/release-notes.preview.json
+    - .aide/reports/capability-ledger.json
+    - .aide/reports/capability-ledger.md
+    - .aide/reports/capability-evidence-bindings.json
+    - .aide/reports/capability-command-status.md
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  read_only_paths:
+    - .aide/memory/decisions.md
+    - .aide/import/**
+    - .aide/scripts/**
+    - core/**
+    - .aide/policies/**
+    - .aide/profile.yaml
+    - .aide/export/**
+    - .aide/release/**
+    - .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/**
+  forbidden_paths:
+    - target repositories
+    - .github/**
+review_gate: exact_admission_then_source_and_integration_effect
+maximum_jobs: 1
