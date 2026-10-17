@@ -1,17 +1,17 @@
 {
   "categories": {
-    "Added": [
+    "Changed": [
       {
-        "aide_phase": "source-candidate",
-        "aide_result": "NOT-RUN",
+        "aide_phase": "source-qualified",
+        "aide_result": "PASS",
         "breaking": false,
-        "category": "Added",
-        "commit": "82d771463a12",
-        "commit_sha": "82d771463a12084c8d1990a3f4e05b4412d73337",
-        "entry": "job effort supplied-attempt view with explicit incomplete accounting.",
-        "follow_up": "- Run one bounded source job, then qualify actual portable delivery and integration separately.\n\nAIDE-Task: AIDE-WORK-EFFORT-01\nAIDE-Phase: source-candidate\nAIDE-Result: NOT-RUN\nAIDE-Scope: work-effort-observation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: reviewed-candidate",
-        "risks": "- Source is a candidate; whole-work usage, cost and accepted-outcome time remain unknown.\n- No provider, host-delivery, target or release effects.",
-        "scope": "effort",
+        "category": "Changed",
+        "commit": "1cd847805188",
+        "commit_sha": "1cd8478051888f7a80f891c0ff83af0270c88858",
+        "entry": "selected-task continuation now has source qualification evidence.",
+        "follow_up": "- Run reviewed portable qualification and then prepare independent integration review.\n\nAIDE-Task: AIDE-RESUME-PLAN-01\nAIDE-Phase: source-qualified\nAIDE-Result: PASS\nAIDE-Scope: selected-task-continuation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-effect-review",
+        "risks": "- Live worker recovery, installed-host delivery and native consumer ownership remain separate.",
+        "scope": "task",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -21,49 +21,24 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "feat(effort): observe pinned work attempts and accounting gaps",
-        "summary": "job effort supplied-attempt view with explicit incomplete accounting.",
-        "type": "feat",
-        "validation": "- PASS: structural validation, static syntax, exact source/effect review at tree200525fe and all895 input pins.\n- WARN: pre-existing historical review-packet link warning retained.\n- NOT RUN: source and delivered behavioral qualification; allocation1 is now reviewed."
-      },
-      {
-        "aide_phase": "qualified-preview-candidate",
-        "aide_result": "PASS-WITH-NOTES",
-        "breaking": false,
-        "category": "Added",
-        "commit": "7d2c41f73357",
-        "commit_sha": "7d2c41f73357acdda6f0ad5c73331b9df842a408",
-        "entry": "qualified portable job effort reporting for explicit supplied work sets.",
-        "follow_up": "- Generate and replay the reviewed preview, then obtain exact terminal integration review.\n\nAIDE-Task: AIDE-WORK-EFFORT-01\nAIDE-Phase: qualified-preview-candidate\nAIDE-Result: PASS-WITH-NOTES\nAIDE-Scope: work-effort-observation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: reviewed-qualification",
-        "risks": "- Partial observations do not establish cost savings or task acceptance.\n- Desktop delivery and downstream ownership remain independent prerequisites.",
-        "scope": "effort",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "test(effort): qualify source and portable effort observations",
-        "summary": "qualified portable job effort reporting for explicit supplied work sets.",
+        "subject": "test(task): qualify selected-task continuation and preserved effects",
+        "summary": "selected-task continuation now has source qualification evidence.",
         "type": "test",
-        "validation": "- PASS: 42 source and 42 delivered checks without skips; six ownership checks.\n- PASS: real consumer reports three successful and two failed attempts, all retired, with unknown whole accounting.\n- PASS: export doctor, validate and pack-status; retained digests and public1.0.0 preservation.\n- FAIL: original invalid-fixture attempt remains preserved separately.\n- PASS: independent evidence and exact preview-effect review at treeca586a89.\n- NOT RUN: allocation3 preview and final Git integration."
+        "validation": "- PASS: source63, actual CLI consumer, collection hashes, quiescence and retirement.\n- PASS: exact current portable template inputs; behavior remains unchanged since source qualification.\n- NOT RUN: portable61 and fixed-range promotion preview."
       }
     ],
     "Fixed": [
       {
-        "aide_phase": "portable-candidate",
+        "aide_phase": "source-candidate",
         "aide_result": "NOT-RUN",
         "breaking": false,
         "category": "Fixed",
-        "commit": "7c2aec4949cc",
-        "commit_sha": "7c2aec4949cc916406b4eb3480a93da744a947ba",
-        "entry": "supplied-usage overlap regression fixture identity.",
-        "follow_up": "- Run reviewed source42, real five-attempt consumer and delivered42; stop on failure.\n\nAIDE-Task: AIDE-WORK-EFFORT-01\nAIDE-Phase: portable-candidate\nAIDE-Result: NOT-RUN\nAIDE-Scope: work-effort-observation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: reviewed-candidate",
-        "risks": "- Actual portable behavior remains unqualified until this attempt passes.\n- Whole-work model usage and cost remain unknown.",
-        "scope": "effort",
+        "commit": "3625acf79209",
+        "commit_sha": "3625acf79209536b0077faf4d1747d70606fbe79",
+        "entry": "task resume-plan no longer declares execution safe or recommends blanket reruns.",
+        "follow_up": "- Qualify source and actual portable consumer, then separately review integration.\n\nAIDE-Task: AIDE-RESUME-PLAN-01\nAIDE-Phase: source-candidate\nAIDE-Result: NOT-RUN\nAIDE-Scope: selected-task-continuation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-review",
+        "risks": "- Advice cannot establish live ownership, admission, effects or evidence applicability.\n- No actual host or target recovery is qualified by this candidate.",
+        "scope": "task",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -73,16 +48,41 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "fix(effort): use valid session identity in overlap fixture",
-        "summary": "supplied-usage overlap regression fixture identity.",
+        "subject": "fix(task): derive continuation advice from the selected WorkUnit",
+        "summary": "task resume-plan no longer declares execution safe or recommends blanket reruns.",
         "type": "fix",
-        "validation": "- PASS: 41 of 42 original checks, collection digests and retirement.\n- FAIL: original overlap fixture invalid UUID; actual consumer was not reached.\n- PASS: independent exact repair/effect review of tree959eb07c and all902 input pins.\n- NOT RUN: combined corrected qualification allocation2."
+        "validation": "- PASS: doctor, full source validation, syntax and diff checks.\n- WARN: existing global review-packet reference warning retained and classified.\n- NOT RUN: source and delivered behavioral qualification; exact source review is recorded separately."
+      },
+      {
+        "aide_phase": "portable-qualified",
+        "aide_result": "PASS",
+        "breaking": false,
+        "category": "Fixed",
+        "commit": "b5827566fbe2",
+        "commit_sha": "b5827566fbe270a604907b8c20437a1228373d81",
+        "entry": "portable task resume-plan preserves selected task state without claiming execution readiness.",
+        "follow_up": "- Run the exact reviewed preview, complete terminal review and safely synchronize dev/main.\n\nAIDE-Task: AIDE-RESUME-PLAN-01\nAIDE-Phase: portable-qualified\nAIDE-Result: PASS\nAIDE-Scope: selected-task-continuation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-preview-review",
+        "risks": "- Published Lite1.0.0 assets are unchanged; this is the development pack.\n- Actual host recovery, desktop delivery and downstream ownership remain open.",
+        "scope": "pack",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "fix(pack): deliver qualified selected-task continuation advice",
+        "summary": "portable task resume-plan preserves selected task state without claiming execution readiness.",
+        "type": "fix",
+        "validation": "- PASS: source63, delivered61, both CLI consumers, six ownership checks and exporter validation.\n- PASS: collection hashes, quiescence, scratch absence and reservation release for both jobs.\n- NOT RUN: fixed-range preview and final integration effects."
       }
     ]
   },
   "category_counts": {
-    "Added": 2,
-    "Fixed": 1
+    "Changed": 1,
+    "Fixed": 2
   },
   "commit_count": 3,
   "entries": [
@@ -90,13 +90,13 @@
       "aide_phase": "source-candidate",
       "aide_result": "NOT-RUN",
       "breaking": false,
-      "category": "Added",
-      "commit": "82d771463a12",
-      "commit_sha": "82d771463a12084c8d1990a3f4e05b4412d73337",
-      "entry": "job effort supplied-attempt view with explicit incomplete accounting.",
-      "follow_up": "- Run one bounded source job, then qualify actual portable delivery and integration separately.\n\nAIDE-Task: AIDE-WORK-EFFORT-01\nAIDE-Phase: source-candidate\nAIDE-Result: NOT-RUN\nAIDE-Scope: work-effort-observation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: reviewed-candidate",
-      "risks": "- Source is a candidate; whole-work usage, cost and accepted-outcome time remain unknown.\n- No provider, host-delivery, target or release effects.",
-      "scope": "effort",
+      "category": "Fixed",
+      "commit": "3625acf79209",
+      "commit_sha": "3625acf79209536b0077faf4d1747d70606fbe79",
+      "entry": "task resume-plan no longer declares execution safe or recommends blanket reruns.",
+      "follow_up": "- Qualify source and actual portable consumer, then separately review integration.\n\nAIDE-Task: AIDE-RESUME-PLAN-01\nAIDE-Phase: source-candidate\nAIDE-Result: NOT-RUN\nAIDE-Scope: selected-task-continuation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-review",
+      "risks": "- Advice cannot establish live ownership, admission, effects or evidence applicability.\n- No actual host or target recovery is qualified by this candidate.",
+      "scope": "task",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -106,22 +106,47 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "feat(effort): observe pinned work attempts and accounting gaps",
-      "summary": "job effort supplied-attempt view with explicit incomplete accounting.",
-      "type": "feat",
-      "validation": "- PASS: structural validation, static syntax, exact source/effect review at tree200525fe and all895 input pins.\n- WARN: pre-existing historical review-packet link warning retained.\n- NOT RUN: source and delivered behavioral qualification; allocation1 is now reviewed."
+      "subject": "fix(task): derive continuation advice from the selected WorkUnit",
+      "summary": "task resume-plan no longer declares execution safe or recommends blanket reruns.",
+      "type": "fix",
+      "validation": "- PASS: doctor, full source validation, syntax and diff checks.\n- WARN: existing global review-packet reference warning retained and classified.\n- NOT RUN: source and delivered behavioral qualification; exact source review is recorded separately."
     },
     {
-      "aide_phase": "portable-candidate",
-      "aide_result": "NOT-RUN",
+      "aide_phase": "source-qualified",
+      "aide_result": "PASS",
+      "breaking": false,
+      "category": "Changed",
+      "commit": "1cd847805188",
+      "commit_sha": "1cd8478051888f7a80f891c0ff83af0270c88858",
+      "entry": "selected-task continuation now has source qualification evidence.",
+      "follow_up": "- Run reviewed portable qualification and then prepare independent integration review.\n\nAIDE-Task: AIDE-RESUME-PLAN-01\nAIDE-Phase: source-qualified\nAIDE-Result: PASS\nAIDE-Scope: selected-task-continuation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-effect-review",
+      "risks": "- Live worker recovery, installed-host delivery and native consumer ownership remain separate.",
+      "scope": "task",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "test(task): qualify selected-task continuation and preserved effects",
+      "summary": "selected-task continuation now has source qualification evidence.",
+      "type": "test",
+      "validation": "- PASS: source63, actual CLI consumer, collection hashes, quiescence and retirement.\n- PASS: exact current portable template inputs; behavior remains unchanged since source qualification.\n- NOT RUN: portable61 and fixed-range promotion preview."
+    },
+    {
+      "aide_phase": "portable-qualified",
+      "aide_result": "PASS",
       "breaking": false,
       "category": "Fixed",
-      "commit": "7c2aec4949cc",
-      "commit_sha": "7c2aec4949cc916406b4eb3480a93da744a947ba",
-      "entry": "supplied-usage overlap regression fixture identity.",
-      "follow_up": "- Run reviewed source42, real five-attempt consumer and delivered42; stop on failure.\n\nAIDE-Task: AIDE-WORK-EFFORT-01\nAIDE-Phase: portable-candidate\nAIDE-Result: NOT-RUN\nAIDE-Scope: work-effort-observation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: reviewed-candidate",
-      "risks": "- Actual portable behavior remains unqualified until this attempt passes.\n- Whole-work model usage and cost remain unknown.",
-      "scope": "effort",
+      "commit": "b5827566fbe2",
+      "commit_sha": "b5827566fbe270a604907b8c20437a1228373d81",
+      "entry": "portable task resume-plan preserves selected task state without claiming execution readiness.",
+      "follow_up": "- Run the exact reviewed preview, complete terminal review and safely synchronize dev/main.\n\nAIDE-Task: AIDE-RESUME-PLAN-01\nAIDE-Phase: portable-qualified\nAIDE-Result: PASS\nAIDE-Scope: selected-task-continuation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-preview-review",
+      "risks": "- Published Lite1.0.0 assets are unchanged; this is the development pack.\n- Actual host recovery, desktop delivery and downstream ownership remain open.",
+      "scope": "pack",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -131,35 +156,10 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "fix(effort): use valid session identity in overlap fixture",
-      "summary": "supplied-usage overlap regression fixture identity.",
+      "subject": "fix(pack): deliver qualified selected-task continuation advice",
+      "summary": "portable task resume-plan preserves selected task state without claiming execution readiness.",
       "type": "fix",
-      "validation": "- PASS: 41 of 42 original checks, collection digests and retirement.\n- FAIL: original overlap fixture invalid UUID; actual consumer was not reached.\n- PASS: independent exact repair/effect review of tree959eb07c and all902 input pins.\n- NOT RUN: combined corrected qualification allocation2."
-    },
-    {
-      "aide_phase": "qualified-preview-candidate",
-      "aide_result": "PASS-WITH-NOTES",
-      "breaking": false,
-      "category": "Added",
-      "commit": "7d2c41f73357",
-      "commit_sha": "7d2c41f73357acdda6f0ad5c73331b9df842a408",
-      "entry": "qualified portable job effort reporting for explicit supplied work sets.",
-      "follow_up": "- Generate and replay the reviewed preview, then obtain exact terminal integration review.\n\nAIDE-Task: AIDE-WORK-EFFORT-01\nAIDE-Phase: qualified-preview-candidate\nAIDE-Result: PASS-WITH-NOTES\nAIDE-Scope: work-effort-observation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: reviewed-qualification",
-      "risks": "- Partial observations do not establish cost savings or task acceptance.\n- Desktop delivery and downstream ownership remain independent prerequisites.",
-      "scope": "effort",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "test(effort): qualify source and portable effort observations",
-      "summary": "qualified portable job effort reporting for explicit supplied work sets.",
-      "type": "test",
-      "validation": "- PASS: 42 source and 42 delivered checks without skips; six ownership checks.\n- PASS: real consumer reports three successful and two failed attempts, all retired, with unknown whole accounting.\n- PASS: export doctor, validate and pack-status; retained digests and public1.0.0 preservation.\n- FAIL: original invalid-fixture attempt remains preserved separately.\n- PASS: independent evidence and exact preview-effect review at treeca586a89.\n- NOT RUN: allocation3 preview and final Git integration."
+      "validation": "- PASS: source63, delivered61, both CLI consumers, six ownership checks and exporter validation.\n- PASS: collection hashes, quiescence, scratch absence and reservation release for both jobs.\n- NOT RUN: fixed-range preview and final integration effects."
     }
   ],
   "generated_by": "aide-lite",
@@ -170,7 +170,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "7d2c41f73357acdda6f0ad5c73331b9df842a408",
-  "source_range": "a0970badeca5b3332505a4158fcfca6b075e07e3..7d2c41f73357acdda6f0ad5c73331b9df842a408",
+  "source_head": "b5827566fbe270a604907b8c20437a1228373d81",
+  "source_range": "716ec1fd0ad6fb2d3875417c4db7b867a7b393fe..b5827566fbe270a604907b8c20437a1228373d81",
   "warnings": []
 }

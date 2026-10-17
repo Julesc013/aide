@@ -774,3 +774,5 @@ AIDE-WORK-EFFORT-01 admitted after engineering-review integration a0970bad.
 Bounded P5 supplied-attempt observation; exact source/effect gates remain.
 
 AIDE-RESUME-PLAN-01 admitted from716ec1fd: correct selected-task continuation advice through the existing current-task owner. Exact source/effect qualification remains; host delivery and native owner bindings stay open.
+
+Resume advice qualified: source63, delivered61, both fresh-process consumers, ownership6 and fixed preview PASS. Existing independent integration effect review applies; actual host recovery and downstream ownership remain outstanding.

@@ -2,7 +2,7 @@
 
 ## Selected-task continuation - 2026-10-18
 
-AIDE-RESUME-PLAN-01 corrects unconditional readiness and historical references in the existing resume command. Source63 and delivered61 checks, both CLI consumers and exporter ownership6 pass; exact preview and integration review remain.
+AIDE-RESUME-PLAN-01 corrects unconditional readiness and historical references in the existing resume command. Source63 and delivered61 checks, both CLI consumers, exporter ownership6 and the exact preview pass. The existing integration gates apply; live host recovery remains separate.
 
 ## Engineering review - 2026-10-18
 

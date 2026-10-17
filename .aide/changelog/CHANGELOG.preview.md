@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: a0970badeca5b3332505a4158fcfca6b075e07e3..7d2c41f73357acdda6f0ad5c73331b9df842a408
-source_head: 7d2c41f73357acdda6f0ad5c73331b9df842a408
+source_range: 716ec1fd0ad6fb2d3875417c4db7b867a7b393fe..b5827566fbe270a604907b8c20437a1228373d81
+source_head: b5827566fbe270a604907b8c20437a1228373d81
 commit_count: 3
 malformed_count: 0
 preview_only: true
@@ -11,17 +11,17 @@ release_publishing: false
 
 ## Summary
 
-- Added: 2
-- Fixed: 1
+- Changed: 1
+- Fixed: 2
 
-## Added
+## Changed
 
-- job effort supplied-attempt view with explicit incomplete accounting. (82d771463a12 feat(effort): observe pinned work attempts and accounting gaps)
-- qualified portable job effort reporting for explicit supplied work sets. (7d2c41f73357 test(effort): qualify source and portable effort observations)
+- selected-task continuation now has source qualification evidence. (1cd847805188 test(task): qualify selected-task continuation and preserved effects)
 
 ## Fixed
 
-- supplied-usage overlap regression fixture identity. (7c2aec4949cc fix(effort): use valid session identity in overlap fixture)
+- task resume-plan no longer declares execution safe or recommends blanket reruns. (3625acf79209 fix(task): derive continuation advice from the selected WorkUnit)
+- portable task resume-plan preserves selected task state without claiming execution readiness. (b5827566fbe2 fix(pack): deliver qualified selected-task continuation advice)
 
 ## Malformed Commits
 

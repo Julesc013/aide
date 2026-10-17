@@ -1,71 +1,71 @@
 {
   "follow_up": [
     {
-      "commit": "82d771463a12",
-      "summary": "Run one bounded source job, then qualify actual portable delivery and integration separately."
+      "commit": "3625acf79209",
+      "summary": "Qualify source and actual portable consumer, then separately review integration."
     },
     {
-      "commit": "7c2aec4949cc",
-      "summary": "Run reviewed source42, real five-attempt consumer and delivered42; stop on failure."
+      "commit": "1cd847805188",
+      "summary": "Run reviewed portable qualification and then prepare independent integration review."
     },
     {
-      "commit": "7d2c41f73357",
-      "summary": "Generate and replay the reviewed preview, then obtain exact terminal integration review."
+      "commit": "b5827566fbe2",
+      "summary": "Run the exact reviewed preview, complete terminal review and safely synchronize dev/main."
     }
   ],
   "highlights": [
     {
       "breaking": false,
-      "category": "Added",
-      "commit": "82d771463a12",
-      "subject": "feat(effort): observe pinned work attempts and accounting gaps",
-      "summary": "job effort supplied-attempt view with explicit incomplete accounting."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "7d2c41f73357",
-      "subject": "test(effort): qualify source and portable effort observations",
-      "summary": "qualified portable job effort reporting for explicit supplied work sets."
+      "category": "Changed",
+      "commit": "1cd847805188",
+      "subject": "test(task): qualify selected-task continuation and preserved effects",
+      "summary": "selected-task continuation now has source qualification evidence."
     },
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "7c2aec4949cc",
-      "subject": "fix(effort): use valid session identity in overlap fixture",
-      "summary": "supplied-usage overlap regression fixture identity."
+      "commit": "3625acf79209",
+      "subject": "fix(task): derive continuation advice from the selected WorkUnit",
+      "summary": "task resume-plan no longer declares execution safe or recommends blanket reruns."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "b5827566fbe2",
+      "subject": "fix(pack): deliver qualified selected-task continuation advice",
+      "summary": "portable task resume-plan preserves selected task state without claiming execution readiness."
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "82d771463a12",
-      "summary": "Source is a candidate; whole-work usage, cost and accepted-outcome time remain unknown."
+      "commit": "3625acf79209",
+      "summary": "Advice cannot establish live ownership, admission, effects or evidence applicability."
     },
     {
-      "commit": "7c2aec4949cc",
-      "summary": "Actual portable behavior remains unqualified until this attempt passes."
+      "commit": "1cd847805188",
+      "summary": "Live worker recovery, installed-host delivery and native consumer ownership remain separate."
     },
     {
-      "commit": "7d2c41f73357",
-      "summary": "Partial observations do not establish cost savings or task acceptance."
+      "commit": "b5827566fbe2",
+      "summary": "Published Lite1.0.0 assets are unchanged; this is the development pack."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "7d2c41f73357acdda6f0ad5c73331b9df842a408",
-  "source_range": "a0970badeca5b3332505a4158fcfca6b075e07e3..7d2c41f73357acdda6f0ad5c73331b9df842a408",
+  "source_head": "b5827566fbe270a604907b8c20437a1228373d81",
+  "source_range": "716ec1fd0ad6fb2d3875417c4db7b867a7b393fe..b5827566fbe270a604907b8c20437a1228373d81",
   "validation_summary": [
     {
-      "commit": "82d771463a12",
-      "summary": "PASS: structural validation, static syntax, exact source/effect review at tree200525fe and all895 input pins."
+      "commit": "3625acf79209",
+      "summary": "PASS: doctor, full source validation, syntax and diff checks."
     },
     {
-      "commit": "7c2aec4949cc",
-      "summary": "PASS: 41 of 42 original checks, collection digests and retirement."
+      "commit": "1cd847805188",
+      "summary": "PASS: source63, actual CLI consumer, collection hashes, quiescence and retirement."
     },
     {
-      "commit": "7d2c41f73357",
-      "summary": "PASS: 42 source and 42 delivered checks without skips; six ownership checks."
+      "commit": "b5827566fbe2",
+      "summary": "PASS: source63, delivered61, both CLI consumers, six ownership checks and exporter validation."
     }
   ],
   "warnings": []

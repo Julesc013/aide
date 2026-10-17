@@ -1,11 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-RESUME-PLAN-01
-status: running
-result: SOURCE63_DELIVERED61_CONSUMERS_PASS
+status: passed_with_notes
+result: SOURCE63_DELIVERED61_CONSUMERS_PREVIEW_PASS
 owner: aide_campaign
-next_action: review_fixed_range_preview
-jobs_allocated: 2
+acceptance_scope: selected_task_continuation_advice_source_and_portable
+next_action: inspect_integration_receipt_and_remaining_campaign_obligations
+integration_receipt: evidence/integration-result.log
+integration_condition: exact_reviewed_candidate_and_verified_local_remote_refs
+jobs_allocated: 3
 maximum_jobs: 3
-remaining_obligations:
-  - source_and_portable_consumer_qualification
-  - exact_terminal_review_and_dev_main_integration
+remaining_limits: actual_host_recovery_and_native_adoption_unqualified

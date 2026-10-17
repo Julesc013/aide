@@ -3,7 +3,7 @@ id: AIDE-RESUME-PLAN-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Give accurate continuation advice from the selected WorkUnit
 type: implementation
-status: running
+status: passed_with_notes
 scope:
   allowed_paths:
     - .aide/queue/AIDE-RESUME-PLAN-01/**

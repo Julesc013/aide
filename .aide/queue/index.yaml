@@ -5,7 +5,7 @@ default_concurrency: 1
 canonical_source: .aide/queue
 items:
   - id: AIDE-RESUME-PLAN-01
-    status: running
+    status: passed_with_notes
     title: Accurate selected-task continuation advice
     task: .aide/queue/AIDE-RESUME-PLAN-01/task.yaml
     exec_plan: .aide/queue/AIDE-RESUME-PLAN-01/ExecPlan.md

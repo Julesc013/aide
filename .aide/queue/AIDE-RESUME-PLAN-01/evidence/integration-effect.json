@@ -1,0 +1,42 @@
+{
+  "schema": "aide.resume-plan.integration-effect.v1",
+  "base": "716ec1fd0ad6fb2d3875417c4db7b867a7b393fe",
+  "candidate": "Exact independently reviewed terminal staged tree committed byte-identically; substitute only actual commit/tree",
+  "task_branch": "task/aide-resume-plan-01",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "expected_local_dev": "716ec1fd0ad6fb2d3875417c4db7b867a7b393fe",
+  "expected_local_main": "716ec1fd0ad6fb2d3875417c4db7b867a7b393fe",
+  "expected_remote_dev": "716ec1fd0ad6fb2d3875417c4db7b867a7b393fe",
+  "expected_remote_main": "716ec1fd0ad6fb2d3875417c4db7b867a7b393fe",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "effects": [
+    "Fresh clean helper plan, exact source tree and structured commit range; sole checkout, running dispatch and no active job under shared estate lock. Fetch dev/main only, verify exact local/remote refs and ancestry.",
+    "CAS fast-forward local dev from expected base to accepted candidate, nonforce explicit push, verify remote dev.",
+    "After dev sync, full read-only validation and main..dev structured commit check with retained logs. Recheck source/ref/ownership then CAS main and nonforce explicit push; verify both remote refs.",
+    "After main sync run child run_preview.py verify, checking exact fixed716ec1fd..b5827566 three-commit range and all six bytes. Failure stops retirement and preserves actual state.",
+    "After confirmed qualified dev/main refs, switch sole checkout to dev, verify clean and ancestor checks, delete only owned local task/aide-resume-plan-01 with branch -d. Branch never published."
+  ],
+  "required_evidence": [
+    "Source63 and actual CLI continuation consumer PASS at3625acf7; all51 prior assertions retained.",
+    "Delivered61 and actual CLI consumer, ownership6 and exporter validation PASS at1cd84780; two source-only checks passed on source.",
+    "All three managed jobs collected, hash-verified and retired; pack861 exact three-file payload delta and unchanged published1.0.0 assets.",
+    "Fixed preview716ec1fd..b5827566 PASS, zero malformed, exact six-output replay. Final closure metadata adds no product/test/pack changes; full structured four-commit range checked separately."
+  ],
+  "forbidden": [
+    "force push",
+    "history rewrite",
+    "tag or release changes",
+    "protection bypass",
+    "unrelated branch deletion",
+    "target mutation",
+    "provider/model requests"
+  ],
+  "failure_response": "Record started and completed effects in evidence/integration-result.log; inspect actual local/remote refs after ambiguity, never blindly repeat. Preserve candidate and existing work.",
+  "operational_limits": [
+    "actual host recovery unqualified",
+    "installed-host delivery unqualified",
+    "native DiskEd ownership pending",
+    "whole-outcome efficiency unknown"
+  ]
+}
