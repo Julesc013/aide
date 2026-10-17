@@ -100,6 +100,9 @@
       "test_stable_successor.StableSuccessorTests.test_validator_detects_changed_contract_and_manifest_lineage",
       "test_stable_successor.StableSuccessorTests.test_validator_rejects_coherent_wrong_identity",
       "test_q47_release_bundle.Q47ReleaseBundleTests.test_stable_candidate_is_distinct_replayable_and_tamper_checked"
+    ],
+    "delivered_remaining": [
+      "test_stable_successor.StableSuccessorTests.test_validator_rejects_coherent_wrong_identity"
     ]
   },
   "all_source_test_ids": [

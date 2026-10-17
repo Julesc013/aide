@@ -1,9 +1,9 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-SUCCESSOR-01
 status: needs_review
-result: SOURCE60_AND_DELIVERED18_PASS
+result: SOURCE60_DELIVERED24_ONE_INTERRUPTED
 owner: aide_campaign
-next_action: exact_remaining_delivered_review
-jobs_allocated: 6
+next_action: exact_final_allocation_amendment_review
+jobs_allocated: 7
 maximum_jobs: 8
 remaining_limits: actual_successor_archives_upgrade_qualification_and_publication_not_admitted

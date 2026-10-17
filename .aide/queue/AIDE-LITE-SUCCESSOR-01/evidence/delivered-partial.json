@@ -1,0 +1,21 @@
+{
+  "result": "INCOMPLETE_TIMEOUT_WITH_SIX_COMPLETED",
+  "job_id": "707f01299df24f07a0b7f22784d639f0",
+  "source_commit": "ca21bb03a92a96af65109633a5eb3d89ed5f27ab",
+  "passed_test_ids": [
+    "test_q47_release_bundle.Q47ReleaseBundleTests.test_stable_candidate_is_distinct_replayable_and_tamper_checked",
+    "test_stable_successor.StableSuccessorTests.test_asset_metadata_bounds_duplicates_and_paths",
+    "test_stable_successor.StableSuccessorTests.test_patch_can_preserve_the_same_public_forms",
+    "test_stable_successor.StableSuccessorTests.test_strict_metadata_refuses_without_output",
+    "test_stable_successor.StableSuccessorTests.test_unknown_and_shared_output_members_refuse",
+    "test_stable_successor.StableSuccessorTests.test_validator_detects_changed_contract_and_manifest_lineage"
+  ],
+  "unfinished_test_ids": [
+    "test_stable_successor.StableSuccessorTests.test_validator_rejects_coherent_wrong_identity"
+  ],
+  "events_sha256": "753edc4913d8ba5ee7ee1f2a57108c47a11c5d81c3c0b0020596f7c27b6ed0b3",
+  "log_sha256": "58f270188b8247335e11b5ee582c8348070c6c69029a015d0e116354ed4d999d",
+  "input_pins_unchanged_after_retirement": 1777,
+  "collection_hashes_verified": true,
+  "retired": true
+}
