@@ -1,0 +1,18 @@
+{
+  "request_id": "aide-host-readiness-review-01",
+  "request_sha256": "563713f0c9d4c76f9651074fde4f358f1ef40246e90860a83f5211d4a0dea61d",
+  "actor": {
+    "participant": "sender",
+    "binding_sha256": "41f5d1775d558aa41cae257234317f7654816feb66cef4189a7ce0d03775527a"
+  },
+  "stage": "adopted",
+  "detail": {
+    "returned_sha256": "a72b8100b8eaa7b65060d2812d5e1e5c02fe35a1891eafa7d6e1a66412e2b06d",
+    "verification": [
+      {
+        "ref": ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/sender-verification.json",
+        "sha256": "3772b6c31548da1a9ba3bd7ca7a34767651e7a107aee4aa620631153dee680de"
+      }
+    ]
+  }
+}

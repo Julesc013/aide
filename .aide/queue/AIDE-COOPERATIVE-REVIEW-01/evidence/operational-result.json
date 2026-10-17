@@ -1,0 +1,211 @@
+{
+  "schema": "aide.cooperative-review.result.v1",
+  "status": "PASS",
+  "stage": "adopted",
+  "source_commit": "b7eb79cfe3f38480c7131fb6296d367d489337c6",
+  "source_tree": "7ae7727546eefd6b1fe78ab0eb2bfa9798b13904",
+  "configuration_sha256": "ba1861846131a5279b3a4acc06447ad979f0f66ed04d8f6d8265bb608b9726db",
+  "request_sha256": "563713f0c9d4c76f9651074fde4f358f1ef40246e90860a83f5211d4a0dea61d",
+  "request_id": "aide-host-readiness-review-01",
+  "live_effect_sha256": "605acd5ab02eed750bc7034b5779a8dad1e44f6763f3720289c20ee82f70aa60",
+  "limits_used": {
+    "initializations": 1,
+    "logical_requests": 1,
+    "record_mutations": 6,
+    "status_reads": 5,
+    "notifications": 1,
+    "new_workers": 0,
+    "managed_provider_dispatches": 0
+  },
+  "audit": {
+    "status": "PASS",
+    "counts": {
+      "tasks": 0,
+      "attempts": 0,
+      "effects": 0,
+      "controls": 0,
+      "dependency_requests": 1
+    },
+    "events": [
+      {
+        "seq": 1,
+        "at": 1792247174.3558075,
+        "kind": "dependency_initialized",
+        "body": {
+          "configuration_sha256": "ba1861846131a5279b3a4acc06447ad979f0f66ed04d8f6d8265bb608b9726db"
+        }
+      },
+      {
+        "seq": 2,
+        "at": 1792247175.3238366,
+        "kind": "dependency_recorded",
+        "body": {
+          "actor": {
+            "binding_sha256": "41f5d1775d558aa41cae257234317f7654816feb66cef4189a7ce0d03775527a",
+            "participant": "sender"
+          },
+          "digest": "563713f0c9d4c76f9651074fde4f358f1ef40246e90860a83f5211d4a0dea61d",
+          "id": "aide-host-readiness-review-01"
+        }
+      },
+      {
+        "seq": 3,
+        "at": 1792247311.884946,
+        "kind": "dependency_delivered",
+        "body": {
+          "id": "aide-host-readiness-review-01",
+          "observation_sha256": "e0700d71d34b3d5f412226c92d218cf39f72d6ec997d2fb847de770c32127723"
+        }
+      },
+      {
+        "seq": 4,
+        "at": 1792247313.0286252,
+        "kind": "dependency_accepted",
+        "body": {
+          "id": "aide-host-readiness-review-01",
+          "observation_sha256": "b46e91cb85cb3d72ebde21062808054f305febf613c7df07fb98a63ade85abc1"
+        }
+      },
+      {
+        "seq": 5,
+        "at": 1792247365.4317307,
+        "kind": "dependency_returned",
+        "body": {
+          "id": "aide-host-readiness-review-01",
+          "observation_sha256": "a72b8100b8eaa7b65060d2812d5e1e5c02fe35a1891eafa7d6e1a66412e2b06d"
+        }
+      },
+      {
+        "seq": 6,
+        "at": 1792247663.0997646,
+        "kind": "dependency_adopted",
+        "body": {
+          "id": "aide-host-readiness-review-01",
+          "observation_sha256": "13bd117791999f86cb9a225cc670265e1551ab90be53dc2e866709dc34891af1"
+        }
+      }
+    ],
+    "configuration_sha256": "ba1861846131a5279b3a4acc06447ad979f0f66ed04d8f6d8265bb608b9726db",
+    "database_bytes": 98304,
+    "members": [
+      "admission.lock",
+      "coordinator.sqlite3",
+      "coordinator.sqlite3-shm",
+      "coordinator.sqlite3-wal",
+      "dispatch.lock"
+    ],
+    "next_action": "none_local_observation_complete",
+    "native_activation": false
+  },
+  "verified_reference_files": 9,
+  "runtime_inputs_reused": 51,
+  "runtime_methods_reused": 60,
+  "pack_file_identities_reused": 858,
+  "preserved_preflight_failures": [
+    {
+      "ref": "sender-activation.log",
+      "sha256": "9fa180051d01999ee69e398723debc9ae1742b30d47f0c037e71b3bd9053b5c6",
+      "error": "PermissionError reading admission.lock while held; no CLI mutation launched",
+      "correction": "Observe lock file hashes before acquiring estate lock; keep source/root guards inside"
+    },
+    {
+      "observation": "Sender adoption guard initially hashed the submission envelope instead of its request member; assertion stopped before CLI dispatch. Raw file digest and all runtime pins matched; no status file or mutation existed. Corrected canonical request digest then passed.",
+      "evidence_kind": "faithful transcription of tool error and read-only reconciliation; no raw command stream retained"
+    }
+  ],
+  "local_log_sha256s": {
+    "sender-start.log": "9ddc9f2554c7ea86fe231546c3ea963b5e55447be3dcd65b26eed68eb30bf540",
+    "recipient-status.log": "af433dfef1458c2cead6aaff23b9917ce17d54e79eed4e8a780b663636aaf96f",
+    "recipient-delivered.log": "618872fb607ba235b3c9e8f254c71ec84fe4c3b66deb45c360db7ca3f9b017c4",
+    "recipient-accepted.log": "db8c9645398b95309b8cd4a29cdb9d8682b4f28de54c2b9f851ff05ca3039769",
+    "recipient-before-return.log": "86605029cbbd4189b83275f1a78af04d346737c1d50d8b3f0e32e3fa819c15a2",
+    "recipient-returned.log": "8e1e0c977f0e9f1ca3fcad4926d72af99da0e90f2cfcb6f4698fec7cb5f324e1",
+    "sender-returned-status.log": "2becd85b2be1e8e41835db3e373c13e24cb3788d69c681a4ad02937cc2bd300f",
+    "sender-adoption.log": "11fab77f12089c11e4d3d41b50f7bff9b4b12bc27515f1a2590a37ce6a5971e7",
+    "sender-final-status.log": "d526945e7df036d836897e9b546d430fc37635fa8d80087d59b7220fe0a8dbf4",
+    "sender-final-audit.log": "7c4e7b9965a49dc8f4dcbc712345e7a042c429ada082e99caa01fda0705f089f",
+    "sender-progress.log": "7df7723ad125cd5cb01bac3dae36ea6cc6a4ec0c73e777b4a7990e8f43ec9442",
+    "sender-activation.log": "9fa180051d01999ee69e398723debc9ae1742b30d47f0c037e71b3bd9053b5c6"
+  },
+  "observed_commands": [
+    {
+      "log": "recipient-status.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.2690737000084482
+    },
+    {
+      "log": "recipient-delivered.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.4353473000228405
+    },
+    {
+      "log": "recipient-accepted.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.41198040000745095
+    },
+    {
+      "log": "recipient-before-return.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.27497340002446435
+    },
+    {
+      "log": "recipient-returned.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.4062102999887429
+    },
+    {
+      "log": "sender-returned-status.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.27955890001612715
+    },
+    {
+      "log": "sender-adoption.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.4236465999856591
+    },
+    {
+      "log": "sender-final-status.log",
+      "exit_code": 0,
+      "elapsed_seconds": 0.3003558000200428
+    }
+  ],
+  "native_initial_commands": [
+    {
+      "command": [
+        "request-init",
+        "--state-root",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\control",
+        "--input",
+        ".aide\\queue\\AIDE-COOPERATIVE-REVIEW-01\\evidence\\live-config.log",
+        "--sha256",
+        "0a3f6108638f8e02100d37524f19fd5b1c78d716a64f18eb9b372c65bfc1953b"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.5344800000020768,
+      "stdout_sha256": "e29b532ba2318e1b4b31a628dc2a80ee071ed5d02906822a672a71e47a9f9724",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "request-submit",
+        "--state-root",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\control",
+        "--configuration-sha256",
+        "ba1861846131a5279b3a4acc06447ad979f0f66ed04d8f6d8265bb608b9726db",
+        "--input",
+        ".aide\\queue\\AIDE-COOPERATIVE-REVIEW-01\\evidence\\request.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.7663668000022881,
+      "stdout_sha256": "90df60f0ac06cce0c9ad27303e907d8477647bb5772ca1ac01bbd539a8aeb24d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "usage": {
+    "controller_model": null,
+    "reviewer_model": null,
+    "whole_outcome_cost": null,
+    "efficiency_claim": false
+  },
+  "scope": "One actual cooperative answer exchange; no desktop, external peer, native adoption, authentication or containment qualification."
+}

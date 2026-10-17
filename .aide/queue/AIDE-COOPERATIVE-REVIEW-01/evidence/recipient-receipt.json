@@ -1,0 +1,20 @@
+{
+  "schema": "aide.cooperative-review.recipient-receipt.v1",
+  "request_id": "aide-host-readiness-review-01",
+  "request_sha256": "563713f0c9d4c76f9651074fde4f358f1ef40246e90860a83f5211d4a0dea61d",
+  "actor": {
+    "participant": "reviewer",
+    "binding_sha256": "277ceac88fd185962399603643ec18fd9cc13dac8bf28a34f6ff48318030bded"
+  },
+  "actual_recipient": "/root/review_disked_continuation",
+  "delivery_route": "one authorized collaboration followup to the existing recipient",
+  "received_at_utc": "2026-10-17T14:28:31.139991+00:00",
+  "source_commit": "b7eb79cfe3f38480c7131fb6296d367d489337c6",
+  "source_tree": "7ae7727546eefd6b1fe78ab0eb2bfa9798b13904",
+  "configuration_sha256": "ba1861846131a5279b3a4acc06447ad979f0f66ed04d8f6d8265bb608b9726db",
+  "fresh_status": {
+    "ref": ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/recipient-status.log",
+    "sha256": "af433dfef1458c2cead6aaff23b9917ce17d54e79eed4e8a780b663636aaf96f"
+  },
+  "limitation": "Actual receipt by this cooperative review worker; not proof of installed desktop delivery or authenticated peer isolation."
+}

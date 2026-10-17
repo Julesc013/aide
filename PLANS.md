@@ -2,7 +2,7 @@
 
 ## Actual cooperative review - 2026-10-18
 
-One answer-only host-readiness request will exercise actual root/reviewer receipt, return and adoption through existing Requests. Exact live-effect review precedes initialization; desktop delivery and DiskEd ownership remain open.
+One real answer-only host-readiness request completed receipt, native acceptance, return and sender-verified adoption through existing Requests. Six lifecycle events and unchanged native state are verified. Promotion preview and exact Git review remain; desktop delivery and DiskEd ownership stay open.
 
 ## Cooperative dependency tools - 2026-10-18
 
@@ -10,8 +10,9 @@ One answer-only host-readiness request will exercise actual root/reviewer receip
 
 Metadata closure11d03c41 passed with all payload/checksum bytes unchanged. Both
 managed jobs are retired. The separately admitted promotion-only job ac48e888
-passed current preview generation and exact regeneration; final integration review
-is pending. Actual worker delivery and native adoption remain open.
+passed current preview generation and exact regeneration. Independently reviewed
+2194eb6b reached local/remote dev/main; its task branch was retired. Installed
+desktop delivery and native adoption remain open.
 
 ## Local dependency request/reply - 2026-10-17
 

@@ -4018,7 +4018,7 @@ items:
 
   - id: AIDE-COOPERATIVE-REVIEW-01
     status: running
-    planning_state: exact_live_effect_preparation
+    planning_state: operational_adoption_pass_promotion_pending
     result: PENDING
     title: Complete one actual cooperative readiness review
     task: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/task.yaml

@@ -2,7 +2,7 @@
 
 ## Cooperative exchange evidence - 2026-10-18
 
-[Operational plan](.aide/queue/AIDE-COOPERATIVE-REVIEW-01/ExecPlan.md) and [host observations](.aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/host-observation.json) distinguish a failed default socket probe from command availability and actual worker delivery.
+[Observed outcome](.aide/queue/AIDE-COOPERATIVE-REVIEW-01/REPORT.md), [sender verification](.aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/sender-verification.json) and [native answer](.aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/native-answer.md) establish one adopted cooperative review and the missing installed-host connection prerequisite.
 
 ## Cooperative dependency interface - 2026-10-18
 

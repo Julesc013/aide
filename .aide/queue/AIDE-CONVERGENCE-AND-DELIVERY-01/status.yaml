@@ -138,3 +138,6 @@ cooperative_dependency_interface_result: PASS60_local_stdio_actual_worker_delive
 
 actual_cooperative_review_ref: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/status.yaml
 installed_control_probe: failed_10050_no_unchanged_retry
+
+cooperative_review_result: PASS_adopted_source_b7eb79cf_integration_pending
+cooperative_review_result_ref: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/operational-result.json

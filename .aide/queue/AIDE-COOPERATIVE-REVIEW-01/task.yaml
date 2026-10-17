@@ -18,6 +18,10 @@ scope:
     - PLANS.md
     - IMPLEMENT.md
     - DOCUMENTATION.md
+    - .aide/reports/capability-ledger.json
+    - .aide/reports/capability-ledger.md
+    - .aide/reports/capability-evidence-bindings.json
+    - .aide/reports/capability-command-status.md
     - .aide/changelog/CHANGELOG.preview.md
     - .aide/changelog/RELEASE_NOTES.preview.md
     - .aide/changelog/changelog.preview.json

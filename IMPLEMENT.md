@@ -2,7 +2,7 @@
 
 ## Cooperative review preparation - 2026-10-18
 
-Prepared one real operational exchange using unchanged qualified source and the existing approved control root. No ledger has been initialized and no operational notification sent. Native author identity and acceptance remain separate from transport connection.
+Completed one real cooperative review exchange at b7eb79cf using unchanged qualified runtime source and the existing control root. The recipient authored receipt/acceptance/return; sender verified nine references and adopted. One request, six events and unchanged native tables were audited. Two pre-dispatch guard failures are preserved; no extra mutation occurred.
 
 ## Cooperative dependency tools candidate - 2026-10-18
 
@@ -10,8 +10,9 @@ Extract conservative database preflight/opening for reuse by CLI and participant
 
 Metadata closure11d03c41 passed with all payload/checksum bytes unchanged. Both
 managed jobs are retired. The separately admitted promotion-only job ac48e888
-passed current preview generation and exact regeneration; final integration review
-is pending. Actual worker delivery and native adoption remain open.
+passed current preview generation and exact regeneration. Independently reviewed
+2194eb6b reached local/remote dev/main; its task branch was retired. Installed
+desktop delivery and native adoption remain open.
 
 ## Local dependency interface candidate - 2026-10-17
 

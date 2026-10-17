@@ -1,0 +1,29 @@
+{
+  "request_id": "aide-host-readiness-review-01",
+  "request_sha256": "563713f0c9d4c76f9651074fde4f358f1ef40246e90860a83f5211d4a0dea61d",
+  "actor": {
+    "participant": "reviewer",
+    "binding_sha256": "277ceac88fd185962399603643ec18fd9cc13dac8bf28a34f6ff48318030bded"
+  },
+  "stage": "accepted",
+  "detail": {
+    "native_work": {
+      "ref": ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/native-review-task.md",
+      "sha256": "872590146dbba5c57e511444756837bd4e936ed6015f81f8809f04a2cc480604"
+    },
+    "evidence": [
+      {
+        "ref": ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/recipient-receipt.json",
+        "sha256": "670c443e43385adaa37f70c9bb5e58916d3ac6ca271ec2b38757c0b3d0cb7317"
+      },
+      {
+        "ref": ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/recipient-status.log",
+        "sha256": "af433dfef1458c2cead6aaff23b9917ce17d54e79eed4e8a780b663636aaf96f"
+      },
+      {
+        "ref": ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/recipient-delivered.log",
+        "sha256": "618872fb607ba235b3c9e8f254c71ec84fe4c3b66deb45c360db7ca3f9b017c4"
+      }
+    ]
+  }
+}

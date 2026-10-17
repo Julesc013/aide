@@ -1,0 +1,34 @@
+# Verification checkpoint
+
+PASS: actual recipient delivery/acceptance/return, sender byte/substance verification
+and adopted transition; nine distinct reference files verified. Final audit has
+one request, six events and zero native tasks/attempts/effects/controls. The original
+live effect remains exact; operational source b7eb79cf was unchanged throughout.
+
+PASS: all 51 qualified runtime inputs and 858 pack identities remain identical.
+Existing 60-method qualification is reused; no unchanged runtime test was rerun.
+
+Initial doctor/full validation FAILED solely on the derived capability binding for
+the changed compact task packet. Exact amendment b72433d2 received independent
+ACCEPT. One existing ledger refresh changed only that binding plus report branch/
+commit headers; semantic ledger JSON is identical. Current validate and doctor
+PASS. Both original logs and the refresh result remain retained.
+
+Structured draft check initially FAILED on missing bullet/trailer formatting;
+the corrected v2 draft PASSes. No rejected message was committed. Wrapper AST and
+Git diff whitespace checks PASS. Helper plan completed successfully.
+
+One promotion-preview allocation remains unused, pending exact source/effect
+review. Integration needs current generated preview bytes and separate exact Git
+review. Published assets, desktop delivery and native adoption remain unchanged.
+
+Local ignored log digests:
+
+- closure-validate.log: d56ed5e295ddbb892986e42f9efb6f377491dd0a0f686881e2576e1f40e1411f
+- closure-doctor.log: 42ada420129670dd9a9f22a6a19d875c6573973bdcc076b0e8856f2929621eef
+- ledger-refresh.log: 8848b6ef789fa38921045a3311e9fbacecdbc86cfa808e0b8e838242f5b87059
+- closure-validate-pass.log: 3a82a94a855be80887a5e534579799984715b438b9935d7b8c81bf6e30b32c9f
+- closure-doctor-pass.log: 1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21
+- closure-message-check.log: 8103b1968a9abf446daec67061643bbe0561b2cfca286dc504693b8a5d3b9d59
+- closure-message-check-pass.log: fbc88b1383a1ec15dc4efef9d138b700ea96889b761f70d02a3ce33841b27efc
+- closure-helper.log: 6ce2b7eca854fce709feae255d420fd1cc2b20aadf0f13297e889cd21ea244c5

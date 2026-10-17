@@ -1,0 +1,20 @@
+# Installed Codex delivery readiness
+
+The next useful step is to bind the intended existing Codex session to a reachable, supported host endpoint. The pinned observations establish command availability; they do not yet establish that connection. No new daemon or replacement worker is justified by this evidence.
+
+The supplied observation records Codex 0.162.0-alpha.17.2, an exact executable digest, queue options for a thread and message plus an explicit remote endpoint, and app-server proxy/version commands. It also records one failed connection to the default control socket with Windows error 10050. The observation is a faithful transcription, not a retained raw command stream; I have not repeated or independently re-probed it. That failure applies to the observed default route at that time. It does not establish that the process stopped, that every endpoint is unavailable, or that any alternate endpoint is reachable. [Pinned host observation](host-observation.json)
+
+| Distinction | Evidence available |
+|---|---|
+| Command availability | The pinned local help observation records the relevant queue and app-server commands. |
+| Connection to the intended installed host | Unproven; the one default-socket probe failed. |
+| Recipient receipt | Proven only for this existing cooperative review worker through its actual receipt and fresh ledger observation. |
+| Native acceptance | This worker accepted the bounded answer task. No installed desktop worker has accepted it. |
+
+Before a desktop delivery attempt, its adapter needs three concrete facts: the intended project/workspace and exact session identity; a supported endpoint actually exposed by that same existing host and the permitted connection method; and confirmation that sending the bounded request fits that session's current work and ownership. A process ID or a session UUID alone does not provide those facts. Do not read private account/history files or create another server to guess them.
+
+The smallest follow-on slice should obtain those facts from the owning host's supported registration or connection surface, then qualify one harmless answer-only delivery with a stable request ID. If the existing host exposes a compatible explicit endpoint, the observed queue remote/thread route is a candidate for that qualification. Its mere appearance in help is insufficient to claim that this installed session supports or is reachable through it. If no supported endpoint is supplied, preserve the missing prerequisite and use the already-qualified cooperative request/inbox path at supported worker boundaries; do not repeat the unchanged probe or claim automatic wake-up. This is a proposed conditional next step, not a command run by this review. [Observed command surface and limits](host-observation.json)
+
+Reuse the existing Requests state and participant bindings. Record submission, actual host delivery, recipient receipt, native acceptance, returned answer and sender verification separately. A successful enqueue response must not substitute for the recipient's own acknowledgement. The existing stdio MCP tools provide another interface to that ledger, but do not themselves register an editor, wake it, authenticate peer identity or demonstrate installed-client compatibility. The next slice should bind one actual host route to the qualified lifecycle rather than add a second queue. [Local dependency contract](../../../../docs/reference/local-dependency-requests.md)
+
+This answer satisfies the native readiness-review task: it identifies the connection prerequisite, a conditional route based on the observed interface, the missing evidence and the stop condition. It does not qualify desktop delivery, FacMan/Setup integration, native DiskEd adoption, containment or efficiency. The current operational exchange uses the existing authorized controller and reviewer; their model usage remains unknown, not zero. Sender adoption remains a separate action. [Native acceptance](native-review-task.md), [bounded live effect](live-effect.json)

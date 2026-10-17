@@ -25,6 +25,13 @@ renew expiry silently, create another database or impersonate recipient records.
 The prior failed default-socket observation is terminal for unchanged inputs.
 DiskEd ownership remains pending. Actual desktop-worker delivery stays open.
 
-Progress: source2194eb6b clean; fresh helper, sole checkout, exact local/remote refs
-and running/no-active-job check passed. Guarded local task branch created under
-admission. Live state and notifications have not been activated.
+Progress: exact live effect605acd5a accepted at tree7ae77275 and committed b7eb79cf.
+One initialized request completed all five stages through actual recipient actions
+and sender verification. Final audit: six events, one request, no native activation.
+All six mutations and five status reads used. Durable state preserved. The useful
+answer requires a supported reachable existing-host endpoint and session binding.
+Two pre-dispatch guard failures are retained; no uncertain effect was repeated.
+One promotion preview allocation remains available, subject to exact source/effect
+review. No runtime fixture rerun or pack rebuild is necessary for unchanged bytes.
+
+Derived metadata amendment b72433d2 accepted: refresh only four existing report paths. Sole stale packet binding corrected; semantic ledger unchanged. Current full validate/doctor and corrected structured message PASS; original failures preserved.

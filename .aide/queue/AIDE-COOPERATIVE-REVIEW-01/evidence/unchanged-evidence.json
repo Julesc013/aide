@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "pack_file_count": 858,
+  "all_identity_pins_match": true,
+  "source_manifest": ".aide/queue/AIDE-DEPENDENCY-MCP-01/evidence/refreshed-pack-sha256s.json",
+  "source_manifest_sha256": "56902faced82b26fe0567c88595e201a555b0e9d383485bb9cb335001c301e93",
+  "initial_validation_failures": [
+    "- FAIL Capability ledger evidence validity: STALE (source_inputs_changed); explicit ledger refresh required otherwise"
+  ],
+  "initial_validation_log_sha256": "d56ed5e295ddbb892986e42f9efb6f377491dd0a0f686881e2576e1f40e1411f",
+  "initial_doctor_log_sha256": "42ada420129670dd9a9f22a6a19d875c6573973bdcc076b0e8856f2929621eef"
+}

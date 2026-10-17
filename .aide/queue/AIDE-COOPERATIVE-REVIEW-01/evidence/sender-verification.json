@@ -1,0 +1,40 @@
+{
+  "schema": "aide.cooperative-review.sender-verification.v1",
+  "verifier": "/root",
+  "source_commit": "b7eb79cfe3f38480c7131fb6296d367d489337c6",
+  "source_tree": "7ae7727546eefd6b1fe78ab0eb2bfa9798b13904",
+  "request_id": "aide-host-readiness-review-01",
+  "request_sha256": "563713f0c9d4c76f9651074fde4f358f1ef40246e90860a83f5211d4a0dea61d",
+  "returned_sha256": "a72b8100b8eaa7b65060d2812d5e1e5c02fe35a1891eafa7d6e1a66412e2b06d",
+  "result": "PASS",
+  "checks": [
+    "Fresh CLI observes actual returned stage and exact recipient observations.",
+    "All request, receipt, native acceptance and returned evidence reference bytes match.",
+    "Recipient answer distinguishes observed commands from an unproven installed host connection.",
+    "One failed default-socket observation remains scoped; no unsupported global conclusion.",
+    "Next step requires supported endpoint and exact intended session/workspace ownership binding.",
+    "Cooperative receipt/acceptance does not establish desktop wake-up or isolation.",
+    "Sender independently reviewed substance against bounded native acceptance."
+  ],
+  "verified_references": {
+    ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/host-observation.json": "c5a3f27bb15d749b605c5a5adedd8b7795c9511c45725962d0f6f6fcc776c8d9",
+    "docs/reference/local-dependency-requests.md": "4d57b187ed64fd498eb4a5f4ddba9a648317cd037fa8385d55185a65131585b2",
+    ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/prompt.md": "9bbb1200002107169e12faa460b7cb71ff64037a3152f0e5562a188b60a6e689",
+    ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/recipient-receipt.json": "670c443e43385adaa37f70c9bb5e58916d3ac6ca271ec2b38757c0b3d0cb7317",
+    ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/recipient-status.log": "af433dfef1458c2cead6aaff23b9917ce17d54e79eed4e8a780b663636aaf96f",
+    ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/recipient-delivered.log": "618872fb607ba235b3c9e8f254c71ec84fe4c3b66deb45c360db7ca3f9b017c4",
+    ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/native-review-task.md": "872590146dbba5c57e511444756837bd4e936ed6015f81f8809f04a2cc480604",
+    ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/native-answer.md": "d65eb2a9d615b7610d946d4e95144d9217af875501c8ae5da13bf3b40963e6e3",
+    ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/recipient-before-return.log": "86605029cbbd4189b83275f1a78af04d346737c1d50d8b3f0e32e3fa819c15a2"
+  },
+  "fresh_status": {
+    "ref": ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/sender-returned-status.log",
+    "sha256": "2becd85b2be1e8e41835db3e373c13e24cb3788d69c681a4ad02937cc2bd300f"
+  },
+  "limitations": [
+    "No desktop or peer delivery qualification.",
+    "No native DiskEd adoption.",
+    "Controller/reviewer model usage unknown; no efficiency claim.",
+    "Ledger attribution remains cooperative; claims_independently_verified stays false."
+  ]
+}
