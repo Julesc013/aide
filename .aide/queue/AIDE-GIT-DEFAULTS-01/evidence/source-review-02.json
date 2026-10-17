@@ -1,0 +1,9 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "head": "2ef8ad51a56af6df45358b56a9e0974b7070a5ef",
+  "tree": "7afdd3351fe23c10038e8fc883b34facd988fa33",
+  "template_sha256": "b5f01f1ce1c8f6080f3d7e2a9558f2ffd793efac4dcb91d9959325caa428fd41",
+  "scope": "guarded source checkpoint and first 36-method fixture job only; exact fresh admission; no export/Git remote/prune/target/release effects",
+  "findings": []
+}

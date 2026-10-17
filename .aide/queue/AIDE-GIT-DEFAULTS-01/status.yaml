@@ -2,12 +2,12 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-GIT-DEFAULTS-01
 status: running
 result: PENDING
-classification: portable_default_source_candidate
+classification: source_tests_35_passes_one_stale_fixture_export_pending
 review_gate: exact_source_and_each_effect_required
 owner: AIDE_Git_policy_and_advisory
 next_action: qualify_git_defaults_and_matching_export_before_integration
 early_dev_blocker: existing_development_export_source_provenance_stale_no_ref_effect
-jobs_allocated: 0
+jobs_allocated: 1
 maximum_jobs: 3
 product_qualified: false
 target_mutated: false

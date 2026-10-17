@@ -48,6 +48,7 @@ scope:
     - .aide/reports/capability-*.md
     - .aide/verification/latest-verification-report.md
     - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/**
   forbidden_operations:
     - overwrite_project_customization_or_existing_host_protection
     - force_push_reset_rewrite_blanket_prune_or_unreviewed_remote_effect

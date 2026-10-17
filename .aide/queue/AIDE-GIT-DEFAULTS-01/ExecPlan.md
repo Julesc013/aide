@@ -49,3 +49,10 @@ protection bypass, new roots or unauthorized target operations. Keep published
   test assertions are unchanged, and no job was allocated before the correction.
 - Export qualification and dev/main/deletion effects remain pending. The earlier
   early-dev manifest is a held proposal, not effect authority for changed source.
+- First job retired with 35 passing methods and one stale original report-writing
+  test invocation. All nine new defaults tests passed. Add the existing explicit
+  report flag to the affected test, retain all assertions and rerun only it before
+  the separately reviewed export/consumer effect. Source behavior is unchanged.
+- Include the existing changelog preview owner as an explicit reviewed scope
+  amendment for main promotion. Reserve 7 MiB export plus 1 MiB changelog within
+  the unchanged 8 MiB canonical allowance; no new generator or storage root.

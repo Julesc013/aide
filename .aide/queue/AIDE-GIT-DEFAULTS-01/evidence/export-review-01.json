@@ -1,0 +1,9 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "head": "7cd6d657eaa18e8da5ab9c1b069efc2f50f46cf1",
+  "tree": "f7bb30f12842cca04ace95760f0c3503c2646627",
+  "template_sha256": "068f7ccdbcbc9124918664f7d298f249b299ded24a6a7dc95d9ec961a1959b77",
+  "scope": "Q28 repair and conditional second export/consumer effect; changelog writes excluded",
+  "findings": []
+}
