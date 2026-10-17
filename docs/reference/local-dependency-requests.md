@@ -112,7 +112,9 @@ workspaces, edit native work or block unrelated native work by themselves.
 The source/test/effect record is
 [retained local qualification](../../.aide/queue/AIDE-LOCAL-DEPENDENCY-01/evidence/second-result.json):
 47 actual CLI/API/state test methods passed without skips at cf293cb0; the first
-failed attempt remains linked. Pack closure and integration are pending.
+failed attempt remains linked. [Affected pack closure](../../.aide/queue/AIDE-LOCAL-DEPENDENCY-01/evidence/pack-result.json)
+also passed. The runtime interface remains source-only; the portable pack retains
+its existing capability boundary. Exact integration uses the task evidence.
 Local fixture qualification does not establish
 automatic host delivery, authenticated peer identity, isolation, real integration,
 independent cancellation or downstream adoption. Those remain required increments

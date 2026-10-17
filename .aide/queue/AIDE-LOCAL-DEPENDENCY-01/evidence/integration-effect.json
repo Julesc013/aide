@@ -1,0 +1,37 @@
+{
+  "schema": "aide.local-dependency.integration-effect.v1",
+  "base": "9605d8e333a1da8f113a2a1b44f88427511fbba2",
+  "candidate": "exact independently reviewed terminal staged tree committed unchanged; substitute only actual commit/tree",
+  "task_branch": "task/aide-local-dependency-01",
+  "expected_local_dev": "9605d8e333a1da8f113a2a1b44f88427511fbba2",
+  "expected_remote_dev": "9605d8e333a1da8f113a2a1b44f88427511fbba2",
+  "expected_local_main": "9605d8e333a1da8f113a2a1b44f88427511fbba2",
+  "expected_remote_main": "9605d8e333a1da8f113a2a1b44f88427511fbba2",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "effects": [
+    "Fresh clean helper plan, structured commit checks, exact accepted HEAD/tree, sole worktree ownership, no active/pending job and running dispatch under existing estate lock. Fetch only dev/main, verify expected local/remote refs and ancestor relationships.",
+    "CAS fast-forward local dev from exact base to accepted candidate; nonforce push dev; verify remote commit and known tree.",
+    "Freshly recheck source and main; CAS fast-forward local main from exact base; nonforce push main; verify dev/main exact candidate.",
+    "After both remote confirmations and clean source, switch the sole checkout to local dev; recheck source/ref/worktree ownership. Delete only the positively owned local task/aide-local-dependency-01 with git branch -d after exact containment. It was never published."
+  ],
+  "required_evidence": [
+    "47 runtime methods PASS; exact byte-preserving test rename mapping",
+    "pack job bf4cc1a7 PASS with 6 ownership tests, full validation and actual delivered-State consumer",
+    "generated858file pack matches retained SHA256 map; published assets unchanged",
+    "full final structural validation PASS; structured messages for9605..candidate PASS",
+    "changelog preview covers through1435659b; only reviewed generated/evidence/status closure follows, with its detailed message separately checked"
+  ],
+  "scope": "qualified local cooperative recording and affected development pack; no claim of automatic host delivery, authentication, downstream adoption or new public release",
+  "exclusions": [
+    "force push",
+    "reset or history rewriting",
+    "remote branch deletion",
+    "task branch publication",
+    "tag/release",
+    "protection changes",
+    "new targets/providers",
+    "any other task branch deletion"
+  ],
+  "recovery": "On changed ref, dirty/unknown state, protection refusal or uncertain response inspect actual effects; retain candidate and partial receipt. Stop affected sync, never force or blindly repeat. Local task removal only after all exact confirmations; otherwise preserve it."
+}

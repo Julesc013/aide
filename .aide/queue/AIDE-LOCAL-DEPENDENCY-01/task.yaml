@@ -3,7 +3,7 @@ id: AIDE-LOCAL-DEPENDENCY-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Record local dependency requests and replies without competing task authority
 type: implementation
-status: running
+status: passed_with_notes
 admission_ref: ../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/local-dependency-admission.md
 admission_sha256: ddf08ca19e3bf521a32405f3d0fcc3a7b8e5c28fbce176a20631a3c8d8285308
 admission_verdict: ACCEPT_bounded_admission_only

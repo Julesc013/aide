@@ -9,7 +9,9 @@ candidate. After independent source/effect review, job 897faaa5 passed 47 method
 without skips. The first failed run remains preserved; SQLite refusal sidecars
 and fixture connection cleanup were repaired. No live initialization or peer
 delivery occurred. Existing tasks, attempts, effects and broker gates retain
-their owners. Development-pack closure and integration remain pending.
+their owners. Pack closure passed in bf4cc1a7: ownership, full validation, actual
+delivered-State consumer and changelog checks. Published assets are unchanged.
+Exact integration evidence is retained with the task.
 
 ## Native DiskEd adoption candidate - 2026-10-17
 

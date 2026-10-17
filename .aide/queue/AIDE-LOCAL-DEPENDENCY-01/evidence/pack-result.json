@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "job_id": "bf4cc1a75e394326899cfc3365096c5c",
+  "source_commit": "1435659b220b29e34ea81894644335f13dc209a6",
+  "source_tree": "d7ff48f075ac06c3038753265a0fc21495275414",
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\bf4cc1a75e394326899cfc3365096c5c",
+  "receipt_sha256": "3248b3f686b13b3656189b2435a739522abe5d6bb69ce91e92650029f2ada142",
+  "collected_manifest": {
+    "output": "fe58681f6a2955e182843196b727fe60924c870c14ceff17155ceeeeb1ecdc59",
+    "logs": "27c5cf312745daa705c54c83a52484622b62edb2a2b090af3f1b09377f7ae5c0"
+  },
+  "result": {
+    "exit_code": 0,
+    "reason": "exited",
+    "quiescent": true,
+    "bytes": 3047,
+    "io_errors": [],
+    "job_id": "bf4cc1a75e394326899cfc3365096c5c",
+    "pid": 13828,
+    "creation_filetime": 134367166942946590
+  },
+  "peaks": {
+    "scratch_bytes": 5247405,
+    "memory_bytes": 241045504,
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4421128,
+      ".aide/changelog": 266632
+    }
+  },
+  "collection_retirement_verified": true,
+  "qualification_sha256": "3527d7c24090ae1ac77c0293d1e78db97f38416ea3f0634666ccfe96936e9c08",
+  "operations": {
+    "doctor": {
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 5181,
+      "stdout_sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21"
+    },
+    "export-pack": {
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 292,
+      "stdout_sha256": "7eff5dccc5bb3d8b0476e95fa34d28c4e3ff9b5887996017069d6dd6408413a3"
+    },
+    "pack-status": {
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 216,
+      "stdout_sha256": "6dfead5e9ffb41f8a52d930554e3db5ba710ec78dc87266a9b3d7e5b304bc41d"
+    },
+    "validate": {
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 4894091,
+      "stdout_sha256": "76d3420135b1bbc6882601f8a2dca704346b534171a3a7e224061453de724786"
+    }
+  },
+  "ownership_tests": {
+    "errors": 0,
+    "failures": 0,
+    "skips": 0,
+    "tests_run": 6
+  },
+  "after_files": 858,
+  "after_bytes": 4421128,
+  "published_release_before": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83",
+    "aide-lite-v1.0.0.manifest.json": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb",
+    "aide-lite-v1.0.0.tar.gz": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a",
+    "aide-lite-v1.0.0.zip": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b"
+  },
+  "published_release_after": {
+    "aide-lite-v1.0.0.SHA256SUMS.txt": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83",
+    "aide-lite-v1.0.0.manifest.json": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb",
+    "aide-lite-v1.0.0.tar.gz": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a",
+    "aide-lite-v1.0.0.zip": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b"
+  },
+  "archives_changed": false,
+  "closure": {
+    "status": "PASS",
+    "source_only_exclusion": "PASS",
+    "exported_state_sha256": "c68371ad1b38c355cf4aafa0955ee984ac574e9a1144f9fc68d0616a181d70fd",
+    "live_deliveries": 0,
+    "model_calls": 0,
+    "operations": {
+      "delivered-state": {
+        "exit_code": 0,
+        "stdout_bytes": 77,
+        "stdout_sha256": "08128df74e65b39d271f2d3e6df03290628b540e219ffda43651fd192c4f39e0",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "changelog-preview": {
+        "exit_code": 0,
+        "stdout_bytes": 483,
+        "stdout_sha256": "5df161c825ab23b1f34ed600f82c7bdefc618eb6dfbb514a84c392eb07379671",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "changelog-validate": {
+        "exit_code": 0,
+        "stdout_bytes": 2349,
+        "stdout_sha256": "eb5ba25320954d7fb10d12867818e67bb7ae7ef3f878daa54c49aeb385b5bc37",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "changelog-status": {
+        "exit_code": 0,
+        "stdout_bytes": 309,
+        "stdout_sha256": "2db3da10c855edd28209f9dd1b989f2158fd09ff56c94d77725b28ee652ed83d",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  }
+}

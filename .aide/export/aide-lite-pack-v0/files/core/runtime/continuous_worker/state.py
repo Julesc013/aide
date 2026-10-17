@@ -23,18 +23,26 @@ class Refused(RuntimeError):
 
 
 class State:
-    def __init__(self, root: Path):
+    def __init__(self, root: Path, *, read_only=False):
         self.root = root.resolve()
+        if read_only:
+            self.db = sqlite3.connect((self.root / "coordinator.sqlite3").as_uri() + "?mode=ro",
+                                      uri=True, timeout=10, isolation_level=None)
+            self.db.row_factory = sqlite3.Row
+            if self.db.execute("PRAGMA user_version").fetchone()[0] != 1:
+                self.db.close()
+                raise Refused("unsupported state schema")
+            return
         self.root.mkdir(parents=True, exist_ok=True)
         self.db = sqlite3.connect(self.root / "coordinator.sqlite3", timeout=10, isolation_level=None)
         self.db.row_factory = sqlite3.Row
-        self.db.execute("PRAGMA journal_mode=WAL")
-        self.db.execute("PRAGMA synchronous=FULL")
-        self.db.execute("PRAGMA foreign_keys=ON")
         version = self.db.execute("PRAGMA user_version").fetchone()[0]
         if version not in (0, 1):
             self.db.close()
             raise Refused("unsupported state schema")
+        self.db.execute("PRAGMA journal_mode=WAL")
+        self.db.execute("PRAGMA synchronous=FULL")
+        self.db.execute("PRAGMA foreign_keys=ON")
         self.db.executescript("""
           CREATE TABLE IF NOT EXISTS meta(key TEXT PRIMARY KEY, value TEXT NOT NULL);
           CREATE TABLE IF NOT EXISTS tasks(id TEXT PRIMARY KEY, spec TEXT NOT NULL,

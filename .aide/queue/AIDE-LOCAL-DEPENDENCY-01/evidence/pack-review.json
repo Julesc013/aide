@@ -1,0 +1,9 @@
+{
+  "reviewer": "/root/review_disked_continuation",
+  "verdict": "ACCEPT",
+  "tree": "d7ff48f075ac06c3038753265a0fc21495275414",
+  "template_sha256": "3393a317e04689e0ad0bf57c09d91cfa4bd2337d14ce2ae9e78cae589c3a0972",
+  "effect_sha256": "db65a5191e5a363854919027691396a9e8642fa97818b8ae087e648e1452cdb1",
+  "scope": "source and single additional pack-only effect",
+  "findings": []
+}

@@ -807,7 +807,7 @@
     "files/core/providers/tests/__init__.py": "fa00ddd28dbff411d7189b20793f00e464b26c0bdb9c9144296a3fe14d17c205",
     "files/core/providers/tests/test_provider_contracts.py": "ab9f4f74e08354cad3cbf0fe26bb56ab121fa588a7659b5fb9577b33edf73e8a",
     "files/core/runtime/continuous_worker/__init__.py": "797633dbd08c9cfb4f0d88d6e62c397f4c6b547fc919a8b92bcaf2f7b890c71c",
-    "files/core/runtime/continuous_worker/state.py": "9b65b7953cfea7af9444abe6157b5edfe670a46be90211a8cf8d543855d12105",
+    "files/core/runtime/continuous_worker/state.py": "c68371ad1b38c355cf4aafa0955ee984ac574e9a1144f9fc68d0616a181d70fd",
     "files/core/runtime/continuous_worker/windows_job.py": "77c0b404d7ea3383cd65c052999ed5265f97b97f4be8bc13ae35d7e49f8460fc",
     "files/docs/reference/aide-install-model.md": "3493a260bbb167554bb7f02b1fc2968fc3be9711974f72d09a58d0d18c4af46b",
     "files/docs/reference/aide-lite-release-bundle.md": "c4797c496859e63fae83a4a29a20401aeaf2e02f26513a1daa07019dd1b8ae11",

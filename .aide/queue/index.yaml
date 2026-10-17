@@ -3997,9 +3997,9 @@ items:
     evidence: .aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/evidence
 
   - id: AIDE-LOCAL-DEPENDENCY-01
-    status: running
-    planning_state: local_fixture_passed_pack_closure_pending
-    result: PENDING
+    status: passed_with_notes
+    planning_state: local_records_and_pack_qualified_live_delivery_pending
+    result: PASS
     title: Record local dependency requests and replies without competing task authority
     task: .aide/queue/AIDE-LOCAL-DEPENDENCY-01/task.yaml
     exec_plan: .aide/queue/AIDE-LOCAL-DEPENDENCY-01/ExecPlan.md
