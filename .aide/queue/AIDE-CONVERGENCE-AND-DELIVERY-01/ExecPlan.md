@@ -1,5 +1,25 @@
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
+## Planning amendment for useful extensibility - 2026-10-17
+
+Objective: reconcile the owner's latest three planning reviews into the existing
+P0-P11 delivery plan, preserving their status as review inputs rather than effect
+grants. Scope: this programme's evidence and continuation only. No source, schema,
+dependency, installation, external message or target effects in this amendment.
+Read existing roadmap, module draft, current-task implementation and broker/MCP
+boundaries; retain existing owners and distinguish desired, built and operational.
+Prepare a compact crosswalk and one dependency-ready P0 current-view brief.
+Verify local references, capability IDs, scope, whitespace and structured commit;
+obtain independent planning review before accepting the amendment. Later children
+retain their own implementation, activation and support/release gates. Native
+target adoption and actual host delivery remain open, not blockers to read-only
+current-view work. This plan creates no competing task queue or new architecture.
+
+Prepared references:
+[delivery amendment](evidence/useful-extensibility-amendment.md) and
+[current-view brief](evidence/current-view-brief.md). Implementation remains
+unadmitted; independent review here accepts planning only.
+
 ## Accepted native fixture and next decision - 2026-10-17
 
 DiskEd preparation result 5b0b1be6 has independent ACCEPT. Final job09544ef0

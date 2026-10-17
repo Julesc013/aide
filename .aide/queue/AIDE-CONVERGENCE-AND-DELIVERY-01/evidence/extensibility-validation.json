@@ -1,0 +1,41 @@
+{
+  "status": "PASS_PLANNING_STRUCTURE_ONLY",
+  "source_base": "3caf98aae9c3705a4feda67618c94c8280097e34",
+  "capability_ids_checked": [
+    "P0.current_view",
+    "P1.selected_route",
+    "P10.adaptation",
+    "P10.lesson_correction",
+    "P11.ecosystem",
+    "P2.consumer",
+    "P3.compatibility",
+    "P3.continuation",
+    "P4.requests",
+    "P4.resources",
+    "P5.comparison",
+    "P5.observation",
+    "P6.harvest",
+    "P6.impact",
+    "P6.reuse",
+    "P7.bindings",
+    "P7.role_fixture",
+    "P8.domain_apply",
+    "P8.readonly_view",
+    "P8.relay",
+    "P9.network"
+  ],
+  "all_P0_P11_families_preserved": true,
+  "local_references_checked": [
+    ".aide/scripts/aide_lite.py",
+    "core/runtime/integration_broker/service.py",
+    "core/interop/mcp_server_contract.py",
+    "specs/control-plane/engineering/module-and-implementation-boundaries.md",
+    "docs/roadmap/development-workflows.json",
+    ".aide/scripts/tests/test_task_binding.py",
+    ".aide/scripts/tests/test_x_os_01_task_os_commands.py"
+  ],
+  "scope": "parent evidence and continuation only",
+  "source_code_changed": false,
+  "tests_or_jobs_run_for_planning": false,
+  "implementation_admitted": false
+}
