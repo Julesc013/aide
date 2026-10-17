@@ -1,6 +1,6 @@
 # Lite 1.1.0 candidate qualification
 
-The actual candidate archives and all eight original consumer families pass on the current Windows/Python3.14.8 route. The release is not yet fully qualified or published. Public Lite1.0.0 remains unchanged.
+The original candidate passed all eight original consumer families, then exposed an installed accounting defect. The repair now has source and actual delivered-pack evidence; replacement archives and their qualification are next. Historical results below remain valid for their exact bytes. Public Lite 1.0.0 remains unchanged.
 
 | Case | Result | Consumer seconds |
 | --- | --- | ---: |
@@ -52,3 +52,11 @@ Proposed direct-pack correction: preserve source21 and delivered15, execute the
 unchanged installed regression with its fixture bound to the actual pack. No
 source reconstruction, product change or export retry. Maximum27 includes the
 new allocation13; exact amendment/source/effect review remains pending.
+
+Allocation 13 job 6c32cdff PASS: the actual delivered pack completes the unchanged
+fresh/brownfield installed regression, human and JSON output, hostile core
+preservation/nonexecution and missing-private refusal without fallback. Pack bytes
+unchanged; collection and retirement verified. Source 21 and delivered 15 remain
+separate evidence; the original six source-fixture errors remain. Allocation 14
+prepares replacement candidate build only. All original archive evidence stays
+bound to ZIP 089d75da. Maximum 27 includes all 13 consumed allocations.

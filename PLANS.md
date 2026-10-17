@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+## Repaired pack and replacement candidate - 2026-10-18
+
+The installed accounting repair passed source and actual delivered-pack checks. [Allocation 14](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/rebuild-effect.md) prepares replacement unpublished 1.1.0 archives, followed by the original eight families, additions, actual predecessor and recovery, replay and preview. Maximum 27 includes 13 consumed attempts; previous failures and old archive passes retain their identities.
+
 ## Lite promotion metadata blocker - 2026-10-18
 
 Three qualification commit messages fail required bullet/category checks. Preserve the original failures, review the [bounded correction checkpoint](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/commit-format-correction.md), and hold promotion. The remaining five qualification allocations can proceed independently; existing consumer passes remain valid for unchanged bytes.

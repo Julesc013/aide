@@ -23,14 +23,24 @@ def inventory():
 
 
 def main():
+    assert sys.argv[1:] in ([], ['--repair'])
+    repair = sys.argv[1:] == ['--repair']
     assert not subprocess.check_output(['git', 'status', '--porcelain']).strip()
-    before = json.loads((TASK / 'evidence/release-before.json').read_text(encoding='utf-8'))
+    before_name = 'release-before-rebuild.json' if repair else 'release-before.json'
+    pack_name = 'pack-subject-repaired.json' if repair else 'pack-subject.json'
+    before = json.loads((TASK / 'evidence' / before_name).read_text(encoding='utf-8'))
     assert inventory() == before
-    pack = json.loads((TASK / 'evidence/pack-subject.json').read_text(encoding='utf-8'))
+    pack = json.loads((TASK / 'evidence' / pack_name).read_text(encoding='utf-8'))
     assert all(sha(ROOT / name) == digest for name, digest in pack.items())
     expected = {'.aide/release/stable/aide-lite-v1.1.0.' + suffix
                 for suffix in ('zip', 'tar.gz', 'manifest.json', 'SHA256SUMS.txt')}
-    assert not expected.intersection(before)
+    previous = None
+    if repair:
+        previous = json.loads((TASK / 'evidence/build-result.json').read_text(encoding='utf-8'))
+        assert set(previous['assets']) == expected
+        assert all(before[name] == value for name, value in previous['assets'].items())
+    else:
+        assert not expected.intersection(before)
     for command in ('stable-build', 'stable-validate'):
         argv = [sys.executable, '-B', '.aide/scripts/aide_lite.py',
                 'release', command, '--version', '1.1.0']
@@ -40,8 +50,11 @@ def main():
             'argv': argv, 'exit_code': result.returncode}, indent=2) + '\n', encoding='utf-8')
         assert result.returncode == 0, command + ' failed; raw output retained'
     after = inventory()
-    assert set(after) - set(before) == expected
-    assert all(after[name] == value for name, value in before.items())
+    assert set(after) == set(before) | expected
+    preserved = {name: value for name, value in before.items() if name not in expected}
+    assert all(after[name] == value for name, value in preserved.items())
+    if repair:
+        assert all(after[name] != before[name] for name in expected)
     assert all(sha(ROOT / name) == digest for name, digest in pack.items())
     manifest = json.loads((ROOT / '.aide/release/stable/aide-lite-v1.1.0.manifest.json').read_text(encoding='utf-8'))
     identity = manifest['identity']
@@ -51,12 +64,16 @@ def main():
         cli_sha = hashlib.sha256(archive.read('aide-lite-pack-v0/files/.aide/scripts/aide_lite.py')).hexdigest()
     result = {'status': 'PASS_BUILD_ONLY', 'assets': {name: after[name] for name in sorted(expected)},
               'identity': identity, 'delivered_cli_sha256': cli_sha,
-              'preserved_release_files': len(before), 'preserved_pack_files': len(pack),
+              'preserved_release_files': len(preserved), 'preserved_pack_files': len(pack),
               'consumer_qualification': 'pending', 'public_release': 'unchanged_1.0.0',
               'route': 'existing Windows Job managed resource runner',
               'outer_containment': 'unqualified', 'read_isolation': 'unqualified', 'model_calls': 0}
-    (OUTPUT / 'build-result.json').write_text(json.dumps(result, indent=2, sort_keys=True) + '\n', encoding='utf-8')
-    print('PASS: four new candidate assets; all prior release and pack bytes preserved')
+    if repair:
+        result['superseded_candidate'] = previous['assets']
+        result['prior_candidate_evidence'] = 'preserved; not evidence for replacement bytes'
+    output_name = 'build-result-repaired.json' if repair else 'build-result.json'
+    (OUTPUT / output_name).write_text(json.dumps(result, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+    print('PASS: four candidate assets; all other release and pack bytes preserved')
 
 
 if __name__ == '__main__':

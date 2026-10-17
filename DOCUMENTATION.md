@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+## Repaired pack and replacement candidate - 2026-10-18
+
+[Current qualification](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md) distinguishes source checks, delivered-pack checks and old archive evidence. [Direct installed evidence](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/direct-pack-result.json) supports the repaired private module binding; [replacement build effect](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/rebuild-effect.md) bounds the next candidate.
+
 ## Qualification commit correction - 2026-10-18
 
 [Correction and bounded sync plan](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/commit-format-correction.md) and [exact original findings](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/commit-format-records.json) explain the current promotion metadata blocker without rewriting history or invalidating unchanged consumer evidence.

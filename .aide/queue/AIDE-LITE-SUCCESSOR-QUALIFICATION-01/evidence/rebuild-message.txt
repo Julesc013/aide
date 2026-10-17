@@ -1,0 +1,36 @@
+build(lite): qualify the repaired pack and prepare replacement archives
+
+## Summary
+- Retain the direct installed-pack pass and prepare a bounded replacement candidate.
+
+## Why
+- The delivered accounting dependency repair needs archives with their own qualification.
+
+## Changed
+- Preserve allocation 13 evidence and the original failed source-fixture results.
+- Add an explicit repair mode to the existing build wrapper with frozen input identities.
+- Permit only the four unpublished 1.1.0 candidate paths to change.
+
+## Validation
+- PASS source 21, delivered accounting 15 and direct installed regression 1 on their exact subjects.
+- PASS collected hashes, quiescence, scratch retirement and reservation release.
+- PASS wrapper syntax, exact pack/release inventories and predecessor tag observation.
+- Replacement build NOT RUN before exact independent source and effect review.
+
+## Changelog
+- Tests: Bind the repaired installed-pack regression to actual delivered files.
+- Build: Preserve old candidate evidence while preparing replacement archives.
+
+## Risks
+- Public 1.0.0 is unchanged; new archives require their own consumer qualification.
+- Three historical commit-format failures remain unresolved and promotion stays held.
+
+## Follow-up
+- Build once under the existing resource profile and qualify resulting exact bytes.
+
+AIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
+AIDE-Phase: repaired-candidate-build
+AIDE-Result: PASS
+AIDE-Scope: installed evidence and replacement candidate recipe
+AIDE-Token-Impact: unknown
+AIDE-Quality-Gate: exact independent source and effect review

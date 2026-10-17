@@ -89,3 +89,11 @@ Proposed direct-pack correction: preserve source21 and delivered15, execute the
 unchanged installed regression with its fixture bound to the actual pack. No
 source reconstruction, product change or export retry. Maximum27 includes the
 new allocation13; exact amendment/source/effect review remains pending.
+
+Allocation 13 job 6c32cdff PASS: the actual delivered pack completes the unchanged
+fresh/brownfield installed regression, human and JSON output, hostile core
+preservation/nonexecution and missing-private refusal without fallback. Pack bytes
+unchanged; collection and retirement verified. Source 21 and delivered 15 remain
+separate evidence; the original six source-fixture errors remain. Allocation 14
+prepares replacement candidate build only. All original archive evidence stays
+bound to ZIP 089d75da. Maximum 27 includes all 13 consumed allocations.

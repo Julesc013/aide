@@ -1,0 +1,44 @@
+{
+  "allocation": 13,
+  "archive_qualification": false,
+  "collected_manifest": {
+    "logs": "ecb5bf568048b22a3bd8e4da5a18e15893a9aad91ead847c8f96739618f44e72",
+    "output": "610877effab1963eba9464142fbdddd888a53d6a6a61f4a8044e7fc37d89c666"
+  },
+  "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "job_id": "6c32cdff823945ea91c50c207b8e8741",
+  "manifest_digest": "a744464caddf7c2e56eb71eb25d430de63bc92b8f6d4511c0a7f65b4476312e2",
+  "output_inventory": {
+    "direct-installed-tests.log": {
+      "sha256": "8267bc31ae01823b61fe5e4b8a2021c4e2544089360e0ea30ce1adb35673cc90",
+      "size_bytes": 284
+    },
+    "direct-installed.json": {
+      "sha256": "e78c77a3ba27171518384ba58b0fc8e39b66f5974ccffe175682a61a0ca83c70",
+      "size_bytes": 414
+    }
+  },
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 249221120,
+    "scratch_bytes": 5767147
+  },
+  "phase": "retired",
+  "raw_result_sha256": "4386dadeac2c9fd157f9ae8d6c30a9ff144e2289260a0dda9c70db99df55dd39",
+  "reservation_released": true,
+  "result": {
+    "bytes": 89,
+    "creation_filetime": 134367409404189383,
+    "exit_code": 0,
+    "io_errors": [],
+    "job_id": "6c32cdff823945ea91c50c207b8e8741",
+    "pid": 516,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "retained_receipt_sha256": "4386dadeac2c9fd157f9ae8d6c30a9ff144e2289260a0dda9c70db99df55dd39",
+  "scratch_absent": true,
+  "source_commit": "80897d75ea3a5ca0b585c7c491cc17cb5b3b23a0",
+  "source_tree": "a43303e5f485f856c454763700c3941a661c5abf",
+  "status": "PASS_DIRECT_INSTALLED_PACK"
+}

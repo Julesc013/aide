@@ -1,5 +1,9 @@
 # AIDE Implementation Log
 
+## Repaired pack and replacement candidate - 2026-10-18
+
+Allocation 13 passed the unchanged installed regression against the actual refreshed pack: fresh and hostile brownfield installs, human/JSON output, preserved project module and refusal after removing the owned dependency. Collection and retirement verified. The original six source-fixture reconstruction errors remain. Replacement archive construction is prepared; public 1.0.0 is unchanged.
+
 ## Pack refresh and delivered fixture mismatch - 2026-10-18
 
 Allocation12 refreshed the863-file development pack through the existing owner and passed exact six-payload delta plus preservation checks. Delivered15 accounting methods passed; six source-reconstruction fixtures errored on an intentionally unshipped import-policy source file. The failed attempt is collected and retired. Direct actual-pack installed qualification is under review; no archive changed or failed result overwritten.
