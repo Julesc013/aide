@@ -2,7 +2,7 @@
 
 ## Replacement consumers qualified - 2026-10-18
 
-[Replacement qualification](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md) records eight original consumer passes and all 18 additions, with 56 actual command mappings and nine retired jobs. [Actual predecessor recovery](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/actual-predecessor-recovery-contract.md) distinguishes existing same-path rollback, cross-version refusal, unchanged-target detach/reinstall and preserved overlay limitations. The next three jobs are prepared; public 1.0.0 and dev/main remain unchanged.
+[Replacement qualification](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md) records eight original consumer passes and all 18 additions, with 56 actual command mappings and nine retired jobs. [Actual predecessor recovery](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/actual-predecessor-recovery-contract.md) distinguishes existing same-path rollback, cross-version refusal, unchanged-target detach/reinstall and preserved overlay limitations. Actual-predecessor allocation24 failed during fixture setup after the fresh update passed. [Preserved failure](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-first-attempt.json) and [bounded correction](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-retry-effect.md) retain all assertions and unchanged package bytes; retry is pending exact review. Public 1.0.0 and dev/main remain unchanged.
 
 ## Replacement archives built - 2026-10-18
 

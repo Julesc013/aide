@@ -4,7 +4,10 @@ The replacement 1.1.0 candidate (ZIP 80b8a875) passes all eight original consume
 families and all 18 added forms. [Replacement evidence](evidence/replacement-consumers-qualified.json)
 and [56-form mapping](evidence/replacement-cli-coverage.json) retain exact command
 variants, expected WARN/refusal outcomes, raw-output identities and safe retirement.
-Actual published-predecessor recovery and final release checks remain. Automatic
+Actual published-predecessor recovery and final release checks remain. Allocation24
+failed during fixture setup after the fresh actual update passed;
+[original evidence](evidence/predecessor-first-attempt.json) is retained. The reviewed
+correction will use an actually shipped optional file to test disabled-feature ownership. Automatic
 rollback across changed owned-file sets is unsupported; the next recovery checks
 keep unchanged and customized target states distinct. Public Lite 1.0.0 is unchanged.
 
@@ -87,3 +90,6 @@ replay 26. Automatic rollback across changed owned path sets remains unsupported
 qualify explicit recovery only for an unchanged completed update. Preserve the
 customized overlay state and its manual-reconciliation limit. Preview 27 and
 owner dispositions remain open. No new archive rebuild or publication.
+
+
+Allocation 24 stopped in brownfield fixture setup after fresh actual-predecessor update succeeded. The optional path was absent from both archives; no product defect is established. The original failed result, all command outputs and safe retirement are retained in evidence/predecessor-first-attempt.json. Select the actually shipped optional README and assert its original receipt ownership before project customization. Proposed maximum 28 preserves allocation 24 and assigns retry 25, recovery 26, replay 27 and fixed preview 28. No assertions, package bytes or resource limits change; exact review precedes any retry.

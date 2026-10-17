@@ -1,5 +1,7 @@
 # Actual Lite 1.1.0 qualification
 
+Current state: replacement original8/additional18 PASS; actual-predecessor attempt24 failed during fixture setup. Allocation 24 stopped in brownfield fixture setup after fresh actual-predecessor update succeeded. The optional path was absent from both archives; no product defect is established. The original failed result, all command outputs and safe retirement are retained in evidence/predecessor-first-attempt.json. Select the actually shipped optional README and assert its original receipt ownership before project customization. Proposed maximum 28 preserves allocation 24 and assigns retry 25, recovery 26, replay 27 and fixed preview 28. No assertions, package bytes or resource limits change; exact review precedes any retry.
+
 Baseline 4f2c39606378492622fa8580152373fffc074d7c. Existing successor builder and
 portable pack are integrated into local/remote dev/main; see evidence/prior-integration.json.
 Parent admission a0b3ab0a is independently ACCEPTed. Its complete authority,
@@ -114,3 +116,6 @@ replay 26. Automatic rollback across changed owned path sets remains unsupported
 qualify explicit recovery only for an unchanged completed update. Preserve the
 customized overlay state and its manual-reconciliation limit. Preview 27 and
 owner dispositions remain open. No new archive rebuild or publication.
+
+
+Allocation 24 stopped in brownfield fixture setup after fresh actual-predecessor update succeeded. The optional path was absent from both archives; no product defect is established. The original failed result, all command outputs and safe retirement are retained in evidence/predecessor-first-attempt.json. Select the actually shipped optional README and assert its original receipt ownership before project customization. Proposed maximum 28 preserves allocation 24 and assigns retry 25, recovery 26, replay 27 and fixed preview 28. No assertions, package bytes or resource limits change; exact review precedes any retry.

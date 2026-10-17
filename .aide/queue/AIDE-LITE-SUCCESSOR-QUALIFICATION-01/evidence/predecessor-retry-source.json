@@ -1,0 +1,23 @@
+{
+  "baseline": "eaba809b7513faef2144875c8a1318874ff3d642",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md": "19253a0590aaa2c55832c0b570577476cd53ab7f6fc59c84bec0e7e553736a95",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md": "c28fa36ea0e13dc18769dfcbd3b0f54210dcb4580b8d8bfa82677516513abb96",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-first-attempt.json": "b891839b0750397bf42f4807bafd8c8e44ebc411e0a322239545a847e9ffd0dc",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-retry-effect.md": "ec0c35cf671b83e14ee48ea1920574953c8c630fb684b8ad3c3441032fbe3fe3",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-retry-job-template.json": "4abc35c652b7f782fc4f107e3a795e0a8c6f4e7b11b9a82b4f17081c844c948b",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-retry-message.txt": "f9d4fffc029215c1791beb799d6c3cc6cf440f6e7c38be1e1832b88d09b98bc8",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-review.md": "7f7d4fd94bfba7bb99a633ce2bc8d9993a30cedf541c87fd6867983afa411cf2",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replay-after-retry-job-template.json": "370994eed17afffdfed86555654cb148a44cdf143b6b8228447f573919b5cb81",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_predecessor.py": "3e483bb6bea1138c2edbb9d24d62082fbcd3e1bbba0feed0bef70d5aedece6ff",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/status.yaml": "6ce49f664a4449e2d395623cf1aac628e3095ae8e1ea043501e578460995ef25",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/task.yaml": "b6b9e6a66d318e03283a7662b1b49b94b532e1f021043697d11eb1147a3e7e39",
+    "DOCUMENTATION.md": "7227ab5e5ccff57ff8b57384960ed3f6e69c015b86a1facdb7d9c2e64194f44e",
+    "IMPLEMENT.md": "cec58725388811ef4d3a76a1fa452c5ab1d3e923271bcbd3fdb2cafe1177f38b",
+    "PLANS.md": "4e26853803dd37020533ea85df9bd833b6ac04cf046eb807f7d876ca82a47ecd"
+  },
+  "message_sha256": "f9d4fffc029215c1791beb799d6c3cc6cf440f6e7c38be1e1832b88d09b98bc8",
+  "predecessor_template_sha256": "4abc35c652b7f782fc4f107e3a795e0a8c6f4e7b11b9a82b4f17081c844c948b",
+  "replay_template_sha256": "370994eed17afffdfed86555654cb148a44cdf143b6b8228447f573919b5cb81",
+  "validation": "Failed allocation24 collected and retired; all preceding consumer passes preserved; AST/diff/message check PASS; corrected operational jobs NOT RUN"
+}

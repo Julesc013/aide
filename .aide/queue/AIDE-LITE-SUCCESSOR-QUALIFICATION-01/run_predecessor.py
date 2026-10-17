@@ -12,7 +12,7 @@ TASK = ROOT / '.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01'
 TMP = Path(os.environ['AIDE_JOB_TMP']).resolve(strict=True)
 OUT = Path(os.environ['AIDE_JOB_OUTPUT']).resolve(strict=True)
 POLICY = '.aide/policies/git-workflow.yaml'
-OPTIONAL = '.aide.local.example/secrets/README.md'
+OPTIONAL = '.aide.local.example/README.md'
 
 
 def main():
@@ -99,6 +99,12 @@ def main():
             path.write_bytes(content)
         helper.install(rec, 'brown-old-install', old, brown)
         preserve(brown, project, authored)
+        optional_before = (old / 'files' / OPTIONAL).read_bytes()
+        assert (new / 'files' / OPTIONAL).read_bytes() == optional_before
+        assert (brown / OPTIONAL).read_bytes() == optional_before
+        old_brown_receipt = delivered.load_portable_import_receipt(brown)
+        assert OPTIONAL in old_brown_receipt['managed']
+        assert old_brown_receipt['managed'][OPTIONAL]['installed_digest'] == helper.sha(optional_before)
         controls = {'schema_version': 'aide.project-customizations.v2', 'entries': {},
                     'disabled_features': [{'feature_id': 'local_state_examples',
                                            'rationale': 'Project owns its local examples.'}]}
