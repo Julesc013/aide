@@ -2,7 +2,7 @@
 
 ## Engineering review - 2026-10-18
 
-Existing engineering review receives a bounded improvement through AIDE-ENGINEERING-REVIEW-01: portable guidance, actual packet references, compatibility and impact reasoning, and proportionate findings. Exact source, behavioral exercises and delivered checks precede integration.
+Existing engineering review receives a bounded improvement through AIDE-ENGINEERING-REVIEW-01: portable guidance, actual packet references, compatibility and impact reasoning, and proportionate findings. Source8, delivered8 and two bounded prompt exercises now pass. Final preview and reviewed integration follow; installed-host delivery and native downstream adoption remain separate.
 
 ## Quality discovery - 2026-10-18
 

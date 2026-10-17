@@ -765,3 +765,5 @@ Admitted AIDE-QUALITY-DISCOVERY-01 under P6 independently of pending actual desk
 delivery and DiskEd ownership. Reuse existing Q38 evidence, no new index.
 
 Engineering-review child admitted: existing prompt/skill/packet owners only, with bounded source/delivered qualification and two answer-only exercises. Quality discovery is integrated at239558e8; unresolved host and target prerequisites remain independent.
+
+Engineering-review source8/delivered8 and two bounded prompt exercises pass. Two delivered fixture failures are preserved, repaired without weakening assertions. Final preview/integration remain; broader host/target prerequisites are unchanged.

@@ -44915,7 +44915,11 @@ def _write_minimal_repo(root: Path) -> None:
         write_text(root / rel, read_text(source) if source.exists() else f"schema_version: {rel}\n")
     for rel in Q14_REQUIRED_FILES:
         source = source_root / rel
-        if source.exists():
+        if rel == TOKEN_LEDGER_PATH:
+            # Measure this fixture's artifacts; source history is not evidence
+            # that this independent fixture contains every required surface.
+            write_text(root / rel, "")
+        elif source.exists():
             write_text(root / rel, read_text(source))
         elif rel == TOKEN_BASELINES_PATH:
             # Source reports are intentionally absent from portable packs. These
@@ -45293,7 +45297,8 @@ def run_selftest() -> tuple[bool, list[str]]:
         selftest_record = ledger_record_for_file(root, LATEST_PACKET_PATH, surface="task_packet", run_id="selftest")
         assert selftest_record.approx_tokens > 0
         assert selftest_record.budget_status in {"within_budget", "near_budget", "over_budget"}
-        ledger_result, merged_records, old_records = merge_ledger_records(root, [selftest_record], "selftest")
+        fixture_records = build_ledger_scan_records(root, run_id="selftest")
+        ledger_result, merged_records, old_records = merge_ledger_records(root, fixture_records, "selftest")
         assert ledger_result.action in {"written", "unchanged"}
         assert not old_records or all("raw" not in record.path.lower() for record in old_records)
         read_records = read_ledger_records(root)
@@ -45313,7 +45318,10 @@ def run_selftest() -> tuple[bool, list[str]]:
         definitions = parse_golden_task_catalog(root)
         assert len(definitions) >= 5
         eval_run = run_golden_tasks(root, task_ids=SELFTEST_GOLDEN_TASK_IDS)
-        assert eval_run.result in {"PASS", "WARN"}, ", ".join(task.task_id for task in eval_run.tasks if task.result == "FAIL")
+        assert eval_run.result in {"PASS", "WARN"}, [
+            (task.task_id, task.errors)
+            for task in eval_run.tasks if task.result == "FAIL"
+        ]
         json_result, md_result = write_golden_run_reports(root, eval_run)
         assert json_result.action in {"written", "unchanged"}
         assert md_result.action in {"written", "unchanged"}

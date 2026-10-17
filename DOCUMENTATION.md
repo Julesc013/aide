@@ -2,7 +2,7 @@
 
 ## Engineering review - 2026-10-18
 
-[Engineering review](docs/reference/evidence-review-workflow.md) describes the existing portable prompt and packet path. The bounded amendment is tracked in [AIDE-ENGINEERING-REVIEW-01](.aide/queue/AIDE-ENGINEERING-REVIEW-01/ExecPlan.md).
+[Engineering review](docs/reference/evidence-review-workflow.md) describes the existing portable prompt and packet path. The qualified source/delivered behavior, upstream notices and limitations are tracked in [AIDE-ENGINEERING-REVIEW-01](.aide/queue/AIDE-ENGINEERING-REVIEW-01/ExecPlan.md).
 
 ## Quality discovery reference - 2026-10-18
 

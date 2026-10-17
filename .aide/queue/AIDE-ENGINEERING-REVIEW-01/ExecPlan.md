@@ -45,3 +45,9 @@ Allocation3 original result: source8 PASS, delivered7 PASS/1 FAIL at token-ledge
 Ledger amendment39985f9b independently ACCEPTed. Maximum5:3 consumed, one corrected qualification and preview remain. Original assertions and both failed evidence records are retained.
 
 Prepared ledger correction using the existing scanner; fixture starts empty, regression checks failure before measurement and success after actual CLI scan. Remaining self-test path reviewed: later derived records are explicitly generated; no other concrete missing prerequisite found. Await exact source/effect verdict.
+
+Allocation4 PASS: source8, delivered8, ownership6 and complete export checks in f884f1ba. Every original assertion retained. Both earlier failures preserved; exact source8f840655 now qualifies its delivered bytes. Prepare final preview using unchanged owner, then terminal integration review.
+
+Closure preparation stopped on a Windows default-decoding error before root-document writes; resumed with explicit UTF-8. No source or qualification effect changed.
+
+Pre-preview doctor/full validation PASS. Independent review caught mutable preview outputs incorrectly pinned as immutable inputs; moved those hashes to a controller-checked preimage record, with retained-byte verification. Allocation5 has not run.

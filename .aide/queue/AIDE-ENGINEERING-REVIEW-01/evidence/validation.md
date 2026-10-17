@@ -1,17 +1,14 @@
 # Validation
 
-PASS: source doctor/full validation/diff check; independent source/effect review;
-all seven original review-pack methods including selftest and added reference-gap
-assertions. Managed job7faab3dedf4d4c24afc8cb6a9d8bd1bc collected and retired.
-PASS bounded feasibility: two fresh answer-only fictional review exercises;
-see exercises-result.json. No comparative quality or efficiency claim.
-WARN: skill-creator quick validator unavailable (PyYAML absent); manual frontmatter
-and unchanged generated-section inspection completed. No dependency installed.
-NOT RUN: changed delivered payload and promotion preview. Two allocations remain.
-
-Original allocation2 FAIL1/7 delivered methods (six passes). Ownership6, exporter,
-doctor, validate and pack-status PASS; published assets unchanged. Pack remained
-byte-identical after failed tests. Retained original job46327979667a4d5ba2abf36ac40596a1
-is quiescent, collected and retired. No new qualification allocated yet; amendment
-pending, original preview unused. Detailed original evidence in pack-job-result,
-qualification and delivered-result JSON files.
+PASS current source8 and delivered8, zero errors/failures/skips: managed job
+f884f1baa34344279a0e707e9f447ca8 at source8f840655. Includes every original review
+method and full selftest; added regression checks absent inputs, empty-ledger
+refusal and actual CLI measurement acceptance. Fresh processes separate subjects.
+PASS ownership6, exporter, doctor/full validation, pack-status,858-member accounting,
+source/payload equality and unchanged pack bytes after tests. Public1.0.0 unchanged.
+PASS retained collection hashes, quiescence, scratch retirement and reservation release.
+PASS bounded prompt feasibility: two fresh answer-only fictional review exercises.
+WARN optional skill-creator validator unavailable (PyYAML absent); manual frontmatter
+and unchanged generated section inspected; no dependency installed.
+Original failed delivered jobs46327979 and781d7788 remain recorded separately.
+NOT RUN promotion preview and final Git integration. Allocation5/5 remains reserved.

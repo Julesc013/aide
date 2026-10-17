@@ -147,4 +147,4 @@ quality_discovery_result: PASS23_source_PASS16_delivered_preview_PASS
 quality_discovery_integration_receipt: .aide/queue/AIDE-QUALITY-DISCOVERY-01/evidence/integration-result.log
 
 engineering_review_ref: .aide/queue/AIDE-ENGINEERING-REVIEW-01/status.yaml
-engineering_review_result: admitted_preparing_source
+engineering_review_result: PASS8_source_PASS8_delivered_PASS2_exercises_preview_pending

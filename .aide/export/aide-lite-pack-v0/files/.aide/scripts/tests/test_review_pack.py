@@ -56,7 +56,8 @@ class AideLiteReviewPackTests(unittest.TestCase):
 
     def test_fixture_without_source_ignore_or_baselines_remains_verifiable(self) -> None:
         source = aide_lite.repo_root_from_script()
-        omitted = {source / ".gitignore", source / aide_lite.TOKEN_BASELINES_PATH}
+        omitted = {source / ".gitignore", source / aide_lite.TOKEN_BASELINES_PATH,
+                   source / aide_lite.TOKEN_LEDGER_PATH}
         exists = Path.exists
         with mock.patch.object(Path, "exists", lambda path: False if path in omitted else exists(path)):
             root = self.make_repo()
@@ -69,6 +70,13 @@ class AideLiteReviewPackTests(unittest.TestCase):
         aide_lite.write_review_packet(root)
         summary = aide_lite.write_token_savings_summary(root, [], [])
         self.assertTrue(summary.path.is_file())
+        self.assertEqual(aide_lite.read_ledger_records(root), [])
+        self.assertEqual(aide_lite.run_golden_token_ledger(root).result, "FAIL")
+        with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+            exit_code = aide_lite.main(["--repo-root", str(root), "ledger", "scan"])
+        self.assertEqual(exit_code, 0)
+        measured = aide_lite.run_golden_token_ledger(root)
+        self.assertEqual(measured.result, "PASS", measured.errors)
 
     def test_review_pack_is_deterministic_for_same_state(self) -> None:
         root = self.make_repo()
