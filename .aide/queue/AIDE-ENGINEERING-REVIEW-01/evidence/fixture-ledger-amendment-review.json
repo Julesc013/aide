@@ -1,0 +1,7 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "subject_sha256": "39985f9b65db0232381730ba5575445721bad711009f8394b5fde3c23d563e11",
+  "scope": "one additional changed-input qualification; maximum5 including reserved preview",
+  "findings": []
+}

@@ -39,3 +39,7 @@ Prepared fixture repair: preserve initialized .gitignore; supply synthetic named
 Repair pre-run REQUEST_CHANGES retained for tree8532444c: missing repo_context_baseline would fail the unchanged summary renderer. Added the third synthetic baseline and exercised the real summary path in the absence regression. Child processes now pin owned TEMP through existing bootstrap semantics. No allocation consumed before correction.
 
 Pre-run review of tree186118d7 resolved the source finding but caught stale CLI capability binding after the correction. Refreshed through capability ledger and refreshed all existing template pins. No job consumed.
+
+Allocation3 original result: source8 PASS, delivered7 PASS/1 FAIL at token-ledger-budget-check. Job781d77883c594dd9a246923c6f5d0df1 is collected/retired and pack bytes are preserved. Static trace finds reliance on source historical ledger for three required surfaces. fixture-ledger-amendment.md proposes actual fixture measurement; no new attempt yet.
+
+Ledger amendment39985f9b independently ACCEPTed. Maximum5:3 consumed, one corrected qualification and preview remain. Original assertions and both failed evidence records are retained.

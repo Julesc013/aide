@@ -1,10 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-ENGINEERING-REVIEW-01
 status: running
-result: PASS7_SOURCE_PASS2_EXERCISES_FAIL1_DELIVERED_SELFTEST
-jobs_allocated: 2
-maximum_jobs: 4
+result: PASS8_SOURCE_PASS2_EXERCISES_FAIL1_DELIVERED_LEDGER_GOLDEN
+jobs_allocated: 3
+maximum_jobs: 5
 reviewer_exercises_allocated: 2
 maximum_reviewer_exercises: 2
-next_action: prepare_exact_fixture_repair
+next_action: review_fixture_ledger_amendment
 original_failed_job: 46327979667a4d5ba2abf36ac40596a1

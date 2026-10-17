@@ -44917,6 +44917,29 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists():
             write_text(root / rel, read_text(source))
+        elif rel == TOKEN_BASELINES_PATH:
+            # Source reports are intentionally absent from portable packs. These
+            # synthetic inputs belong only to this disposable self-test fixture.
+            write_text(root / rel, """schema_version: aide.token-baselines.v0
+method: chars_divided_by_4
+all_baselines_are_estimates: true
+baselines:
+  - name: root_history_baseline
+    purpose: Synthetic self-test document baseline.
+    paths:
+      - README.md
+      - AGENTS.md
+  - name: review_baseline
+    purpose: Synthetic self-test review baseline.
+    paths:
+      - .aide/context/latest-task-packet.md
+      - .aide/context/latest-context-packet.md
+  - name: repo_context_baseline
+    purpose: Synthetic self-test context baseline.
+    paths:
+      - README.md
+      - AGENTS.md
+""")
         elif rel.endswith(".jsonl"):
             write_text(root / rel, "")
         else:
@@ -44950,6 +44973,10 @@ def _write_minimal_repo(root: Path) -> None:
             rel = normalize_rel(source.relative_to(source_root))
             write_text(root / rel, read_text(source))
     for rel in Q18_REQUIRED_FILES:
+        if rel == ".gitignore":
+            # Already copied or initialized above; a placeholder would erase
+            # the fixture's local-state rules when the source pack omits it.
+            continue
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
@@ -45244,7 +45271,10 @@ def run_selftest() -> tuple[bool, list[str]]:
         policy_findings = scan_secret_text("Mention api_key as policy text only.\n", ".aide/test.md")
         assert not any(finding.severity == "ERROR" for finding in policy_findings)
         verification = build_verification_report(root, task_packet_path=LATEST_PACKET_PATH)
-        assert verification.result in {"PASS", "WARN"}, verification.result
+        assert verification.result in {"PASS", "WARN"}, [
+            (finding.check, finding.message, finding.path)
+            for finding in verification.findings if finding.severity in {"ERROR", "FAIL"}
+        ]
         rendered_report = render_verification_report(verification)
         assert "## VERIFIER_RESULT" in rendered_report
         assert "print('hello')" not in rendered_report

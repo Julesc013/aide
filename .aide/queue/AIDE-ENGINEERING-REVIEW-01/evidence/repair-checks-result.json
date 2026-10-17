@@ -1,0 +1,23 @@
+{
+  "tests_run": 8,
+  "failures": 0,
+  "errors": 0,
+  "skips": [],
+  "test_ids": [
+    "test_review_pack.AideLiteReviewPackTests.test_fixture_without_source_ignore_or_baselines_remains_verifiable",
+    "test_review_pack.AideLiteReviewPackTests.test_forbidden_prompt_pattern_detection",
+    "test_review_pack.AideLiteReviewPackTests.test_malformed_review_packet_fails_validation_and_verify_command",
+    "test_review_pack.AideLiteReviewPackTests.test_review_pack_command_and_selftest",
+    "test_review_pack.AideLiteReviewPackTests.test_review_pack_creates_required_sections_and_refs",
+    "test_review_pack.AideLiteReviewPackTests.test_review_pack_is_deterministic_for_same_state",
+    "test_review_pack.AideLiteReviewPackTests.test_review_packet_uses_refs_without_inline_source",
+    "test_review_pack.AideLiteReviewPackTests.test_review_packet_validation_warns_when_refs_are_missing"
+  ],
+  "test_inputs": {
+    ".aide/scripts/tests/test_review_pack.py": "b6773ab19031e53c538f152090e4e317321cf8d85640c6fca86592e226d39f75"
+  },
+  "mode": "engineering_review_packet_fixtures",
+  "live_deliveries": 0,
+  "models_requested": 0,
+  "whole_task_usage": "unknown"
+}

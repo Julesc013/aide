@@ -39,3 +39,5 @@ Static trace identified fixture-only ignore initialization being overwritten and
 absent source-only baseline definitions. The bounded fixture-portability amendment
 is pending independent admission; no retry or source repair has run. Main/dev
 remain239558e8. Current export is a preserved unqualified candidate.
+
+Allocation3 original result: source8 PASS, delivered7 PASS/1 FAIL at token-ledger-budget-check. Job781d77883c594dd9a246923c6f5d0df1 is collected/retired and pack bytes are preserved. Static trace finds reliance on source historical ledger for three required surfaces. fixture-ledger-amendment.md proposes actual fixture measurement; no new attempt yet.
