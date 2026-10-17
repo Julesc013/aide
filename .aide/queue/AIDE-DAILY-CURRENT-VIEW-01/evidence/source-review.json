@@ -1,0 +1,9 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "head": "cd7b1bcf2013f1c49c533854f34eb08667e6a94a",
+  "tree": "ff9244732565ea4b9f124b5243ed225e3522ead0",
+  "job_template_sha256": "195d72f97ac01910c737d83c9d08fb0b41c3fca9bbc421b98b8844f7f261ca3c",
+  "scope": "repaired source and first conditional qualification effect; terminal gate retained",
+  "findings": []
+}

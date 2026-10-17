@@ -52,10 +52,9 @@ class CurrentTaskView(unittest.TestCase):
         return aide.build_current_task_view(self.root, identity)
 
     def command(self, *arguments):
-        args = aide.build_parser(self.root).parse_args(['task', 'current', *arguments])
         output = io.StringIO()
         with contextlib.redirect_stdout(output):
-            code = args.handler(args)
+            code = aide.main(['--repo-root', str(self.root), 'task', 'current', *arguments])
         return code, output.getvalue()
 
     def test_preparation_success_preserves_unfinished_native_obligations(self):

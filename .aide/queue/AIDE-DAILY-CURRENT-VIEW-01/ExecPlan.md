@@ -45,3 +45,8 @@ unknown. This task's source acceptance does not qualify a new release or host.
 
 Review f3374085 requested Windows path-alias and comment-only scalar repairs.
 Both are fixed with regression cases; no job ran against the rejected candidate.
+
+Source c7ea89dc and the first effect were independently accepted. First managed
+job 6783c56b retired with eight new-fixture setup errors; all 29 original methods
+passed. The affected repair uses the actual CLI entry point. See first-attempt-
+result.json and repair-effect.md. Product bytes are unchanged. Final job pending.

@@ -5,7 +5,8 @@ result: PENDING
 classification: admitted_source_implementation
 review_gate: exact_source_and_managed_effect_pending
 updated_at: 2026-10-17
-jobs_allocated: 0
+jobs_allocated: 1
 maximum_jobs: 2
 owner: AIDE_task_CLI
-next_action: review_frozen_source_and_first_managed_qualification
+next_action: review_affected_test_entry_point_repair_and_final_attempt
+first_attempt_ref: evidence/first-attempt-result.json

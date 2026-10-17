@@ -10,5 +10,7 @@ ledger refresh has run. Refreshed full validate and doctor both returned exit 0;
 their original and refreshed logs are retained locally. Task packet generation
 also returned exit 0. These structural checks do not replace focused execution.
 
-NOT RUN: focused qualification and three real CLI smoke calls, final source
-acceptance, package qualification, target adoption, host/runtime or release effects.
+First job 6783c56b: 51 methods, zero failures, eight new-fixture setup errors,
+zero skips. All 29 original methods passed. Collection/retirement verified.
+The affected fixture repair and final 22-method/three-smoke job require review.
+No final source outcome, package, target adoption, host/runtime or release claim.

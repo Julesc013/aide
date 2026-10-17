@@ -16,7 +16,7 @@ output = Path(os.environ['AIDE_JOB_OUTPUT'])
 temporary = Path(os.environ['AIDE_JOB_TMP'])
 assert output.is_dir() and temporary.is_dir() and output.parent == temporary.parent
 assert Path(os.environ['TEMP']) == temporary
-modules = ['test_task_binding', 'test_x_os_01_task_os_commands', 'test_task_current']
+modules = ['test_task_current']
 suite = unittest.TestSuite()
 inputs = {}
 for name in modules:
