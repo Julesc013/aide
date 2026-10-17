@@ -1,0 +1,32 @@
+{
+  "base": "4f2c39606378492622fa8580152373fffc074d7c",
+  "effect_sha256": "0dcdc251a4b7f2ace0c691770be69042ea4ed37f4a73279d6298f677c6329a44",
+  "files": {
+    ".aide/changelog/CHANGELOG.preview.md": "b049be4a73d8c5823c786bcd948171dde21b876802a1328e3106c6fa027ee9c4",
+    ".aide/changelog/RELEASE_NOTES.preview.md": "71693c58d3e3b23dd460e18a1a008a575a87168055fb9ec26e8cbbe245ba2a19",
+    ".aide/changelog/changelog.preview.json": "2c4ae1e8d956c74919dc0ea79af344738f1b05f3375279fbcbf83fa5069427a5",
+    ".aide/changelog/latest-changelog-report.md": "7f4f0327a1cab492938f3a8100c9b2c14e162d88d9062f4df539300f8a3bfab2",
+    ".aide/changelog/malformed-commits.md": "f76c5add2a86c029f5f64e7bcdfd336fb58fd922ba5c974c3fe0a0f0f804640d",
+    ".aide/changelog/release-notes.preview.json": "d6ef4cbf808fc0b4ee158209d5295659e9e1feb6253330a19541053e02d7ef6d",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md": "42b390989d11c0a94e1bcdaf06f8221aa0c9452e6f5d1bad6f92f4539c2cb5ac",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/ExecPlan.md": "fc2e7a1a555e97bb501153366c45f7ddaaea49c974d48db0d9bbe5f0912d55d3",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/closure-message.txt": "ddabd362731bf71e3708ede4f65b39a076104628bedc888575465a467c057697",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/dev-review-packet.md": "dd0d08fc061acfdde2a2e9dce38c40ff5d1099031ec917259e2d15b62869c829",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/preview-job-result.json": "a120c3d9d6a5b6e80846e8b46d8fe31e3987ed30270c45cb15d4ed0d56e6169b",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/preview-result.json": "247f8b2d57f0f016dbf8b16d06bb5fc9752171233e606870c75053bf745653bd",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/promotion-review.md": "53869a0680a9bff5a3cbfcbb6f50344224e4348e3dda09bdd67b265df57e42fd",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/source-commit-result.json": "f174555e61be7d245942ef77a29e569427c950b2faa90f46d972960716d781c8",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/validation.json": "bf1933a0a446a7d237c9deadfcd34e19f598cdb2825249679a9d28e88e9ce050",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/evidence/validation.md": "7b07dbacade737ef052d786cf8a568788e3e3d7feb5eb28001278536331e473a",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/status.yaml": "4c0c3ccf798c30abb1518bcabdf7b2fe8630180d38758e33ebd091ba0a3774f6",
+    ".aide/queue/AIDE-CURRENT-MEMORY-01/task.yaml": "1999f2400370f400062927449e4cf6854213d8f0265b4eecadc712754aedb908",
+    ".aide/queue/index.yaml": "225b7a2f599c459043e71bc1df36cf5661578d9b18f8df63dd5abf97fe83a955",
+    "DOCUMENTATION.md": "6403850f19432b5e796489861844a27b8dc87d950d73354a5fb9285c9aea0262",
+    "IMPLEMENT.md": "13857ecf52eebcc199ce9c652c69ce1192563ed7340db3ee9f18e7ad7747f7da",
+    "PLANS.md": "86491bfbbc61250f29bc114271312bd6e1ee4ecdf9509d4bce92835689814691"
+  },
+  "message_sha256": "ddabd362731bf71e3708ede4f65b39a076104628bedc888575465a467c057697",
+  "parent": "a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0",
+  "preview_endpoint": "a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0",
+  "preview_range": "4f2c39606378492622fa8580152373fffc074d7c..a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0"
+}

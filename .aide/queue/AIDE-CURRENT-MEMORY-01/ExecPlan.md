@@ -112,3 +112,13 @@ fixed preview endpoint. Post-main regeneration is the existing read-only exact
 six-output comparison. Original qualification branch and its preview stay in Git.
 The earlier zero-job statements describe the completed prose qualification;
 this one prospective allocation exists only for required promotion evidence.
+
+## Preview and terminal qualification
+
+Source and finite preview amendment ACCEPTed; source committed as a3ef7e97.
+The sole allocation d3354b7b passed the fixed one-commit preview and six-output
+comparison. Collected hashes and original preview preimages verified; retired,
+quiescent, scratch absent, reservation released. The closure records this evidence
+without new source/product changes. It is separate from the fixed preview endpoint
+and will be checked by the full structured integration range. Exact closure review
+must precede dev/main effects; actual outcomes belong to integration-result.log.

@@ -1,7 +1,13 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-CURRENT-MEMORY-01
-status: needs_review
-result: DOCUMENTATION_CHECKS_PASS_WITH_NOTES
-next_action: independent_source_and_effect_review
+status: passed_with_notes
+result: MEMORY_AND_PROMOTION_PREVIEW_PASS
+owner: aide_campaign
+acceptance_scope: source_local_memory_and_derived_reports
+next_action: inspect_exact_review_integration_receipt_and_remaining_campaign_work
+integration_receipt: evidence/integration-result.log
+integration_condition: exact_closure_review_and_verified_local_remote_refs
 maximum_jobs: 1
-jobs_allocated: 0
+jobs_allocated: 1
+further_jobs_authorized: false
+remaining_limits: no_new_runtime_package_or_support_claim

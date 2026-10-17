@@ -4062,9 +4062,9 @@ items:
     evidence: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence
 
   - id: AIDE-CURRENT-MEMORY-01
-    status: needs_review
-    result: DOCUMENTATION_CHECKS_PASS_WITH_NOTES
-    planning_state: bounded_memory_correction_source_review_pending
+    status: passed_with_notes
+    result: MEMORY_AND_PROMOTION_PREVIEW_PASS
+    planning_state: qualified_memory_correction_integration_receipt_required
     title: Correct source-local compact memory used by task packets
     task: .aide/queue/AIDE-CURRENT-MEMORY-01/task.yaml
     exec_plan: .aide/queue/AIDE-CURRENT-MEMORY-01/ExecPlan.md

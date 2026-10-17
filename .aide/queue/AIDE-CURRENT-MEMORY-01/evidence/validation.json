@@ -8,7 +8,9 @@
     "actual selected-task JSON views exit0, parse, stay bounded and leave source state unchanged",
     "git diff --check and allowed paths pass",
     "single reviewed ledger refresh restores CURRENT source binding without classification change",
-    "doctor and full structural validate exit0 status PASS"
+    "doctor and full structural validate exit0 status PASS",
+    "fixed one-commit promotion preview validate/status and six exact outputs PASS",
+    "collection hashes and prior preimages verified; sole allocation retired"
   ],
   "doctor_first": {
     "exit_code": 1,
@@ -85,12 +87,13 @@
       "target": ".aide/profile.yaml"
     }
   ],
-  "new_managed_jobs": 0,
+  "new_managed_jobs": 1,
   "new_tests": 0,
   "observed_memory_sha256": {
     ".aide/memory/open-risks.md": "cfcd7bbb7a76a54125bf600a36c2975c1ed7211c5a2022f4c9735eddae186ce5",
     ".aide/memory/project-state.md": "5c49d672303a451060385ce28efd341d80ae7bd831064a0a96cc7f8e9af5ed67"
   },
+  "preview_ref": "preview-result.json",
   "project_state_approximate_tokens": 792,
   "project_state_token_limit": 1600,
   "readonly_cli_observations": [
@@ -183,6 +186,7 @@
       ]
     }
   ],
+  "receipt_ref": "preview-job-result.json",
   "result": "PASS_WITH_NOTES",
   "structural_failure_ref": "structural-first-result.json",
   "unchanged_inputs": [

@@ -3,7 +3,7 @@ id: AIDE-CURRENT-MEMORY-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Correct source-local compact memory used by task packets
 type: documentation
-status: needs_review
+status: passed_with_notes
 scope:
   allowed_paths:
     - .aide/queue/AIDE-CURRENT-MEMORY-01/**

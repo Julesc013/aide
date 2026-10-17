@@ -790,3 +790,8 @@ views and exact published evidence. Historical decisions and target templates st
 unchanged. This independent documentation child starts from accepted dev 4f2c3960;
 qualified Lite 1.1.0 work is preserved on its separate task branch and retains its
 owner/effect gates. No source, package or runtime requalification is implied.
+
+Current-memory qualification passes: exact source review, compact context/read-only
+views, doctor/full structural validation, one unchanged-classification refresh and
+fixed promotion preview. One allocation retired. Exact closure/integration evidence
+is tracked by the child; the separate Lite 1.1 branch remains preserved.

@@ -1,0 +1,38 @@
+docs(memory): record qualified context and promotion evidence
+
+## Summary
+- Close qualification for AIDE-CURRENT-MEMORY-01 before exact dev/main integration.
+
+## Why
+- Preserve actual preview, collection and retirement evidence with the source fix.
+- Keep the fixed preview subject distinct from its subsequent closure metadata.
+
+## Changed
+- Record independent source/preview acceptance and the actual retired receipt.
+- Retain six canonical preview outputs for fixed 4f2c3960..a3ef7e97.
+- Update task and planning records with qualified scope and integration conditions.
+
+## Validation
+- PASS: source review, doctor, full structural validation and targeted context checks.
+- PASS: one managed preview, validate/status, six-output replay and zero malformed.
+- PASS: collected hashes, preserved originals, quiescence and released reservation.
+- NOTE: original failures and historical review-ref warning remain preserved.
+- NOT RUN: product tests; no changed product behavior requires them.
+
+## Changelog
+- Docs: Record current-memory qualification and exact promotion preview evidence.
+
+## Risks
+- Source promotion does not qualify another package, machine or autonomous route.
+- Fixed preview excludes this closure commit; full commit range covers it separately.
+
+## Follow-up
+- Apply only the independently reviewed dev/main effect and verify actual refs.
+- Preserve the separate Lite 1.1 candidate and remaining campaign obligations.
+
+AIDE-Task: AIDE-CURRENT-MEMORY-01
+AIDE-Phase: evidence-closure
+AIDE-Result: PASS_WITH_NOTES
+AIDE-Scope: exact-preview-and-qualification-records
+AIDE-Token-Impact: no-new-model-run-no-whole-outcome-savings-claim
+AIDE-Quality-Gate: exact-independent-closure-review-required

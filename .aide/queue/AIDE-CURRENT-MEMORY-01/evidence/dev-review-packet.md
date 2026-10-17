@@ -12,3 +12,8 @@ The next review covers the revised source-commit/preview effect. Final dev/main
 acceptance requires actual collected preview evidence and exact closure review.
 No unresolved blocked task is required for this independent correction. Source
 acceptance is not publication or permission to override other project ownership.
+
+Actual evidence is now available in preview-result.json, preview-job-result.json
+and promotion-review.md. The preview covers the source commit only; terminal
+metadata is checked separately in the complete integration range. Review the
+frozen closure-source.json and unchanged integration effect before dev/main.

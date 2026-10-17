@@ -8,9 +8,10 @@ references. [Project state](.aide/memory/project-state.md) and
 [open risks](.aide/memory/open-risks.md) distinguish the published Lite profile from
 unfinished platform work. Historical decisions, target templates and product bytes
 are preserved. Targeted checks, doctor and full structural validation pass after one reviewed
-ledger refresh; classification is unchanged. Exact source/effect review and
-integration remain pending. Original failures and the historical warning remain
-in the child evidence.
+ledger refresh; classification is unchanged. The fixed one-commit promotion
+preview passes and its sole job is retired. Exact closure review and observed
+integration are recorded separately; original failures and the historical warning
+remain in the child evidence.
 
 
 ## Lite successor candidate - 2026-10-18

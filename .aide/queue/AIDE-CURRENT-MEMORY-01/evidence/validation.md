@@ -12,5 +12,8 @@ Original stale-binding failures and controller bookkeeping stops remain recorded
 The historical global review-ref warning is nonblocking; the physical prompt exists.
 
 PASS: strict structured source message and scoped whitespace checks.
-NOT YET RUN: one admitted promotion preview, collection/retirement and post-main
-exact replay. No product tests are required for this prose/report correction.
+PASS: one admitted promotion preview for fixed4f2c3960..a3ef7e97, validate/status,
+all six exact output comparisons and zero malformed commits. Collection hashes,
+prior previews, quiescence, scratch absence and reservation release verified.
+NOT YET RUN: final dev/main effects and post-main exact replay.
+No product tests are required for this prose/report correction.

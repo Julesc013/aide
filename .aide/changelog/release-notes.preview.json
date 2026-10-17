@@ -1,128 +1,33 @@
 {
   "follow_up": [
     {
-      "commit": "d43b3298677e",
-      "summary": "Qualify source and delivered code, then exact integration; separately qualify the actual release."
-    },
-    {
-      "commit": "fac2af0e647e",
-      "summary": "Run the independently reviewed source partitions with fresh guards before each job."
-    },
-    {
-      "commit": "5fa02af5d4ca",
-      "summary": "Run repaired groups, then qualify the delivered package through the existing exporter."
-    },
-    {
-      "commit": "e42d4b31215e",
-      "summary": "Complete delivered checks and fixed preview, then obtain terminal integration review."
-    },
-    {
-      "commit": "ca21bb03a92a",
-      "summary": "Finish delivered checks, fixed preview and independent integration review."
-    },
-    {
-      "commit": "2b489c5e6c48",
-      "summary": "Run the reviewed final effect and close evidence before qualified integration."
+      "commit": "a3ef7e97f0b5",
+      "summary": "Run one reviewed preview allocation, review closure, then integrate dev and main."
     }
   ],
   "highlights": [
     {
       "breaking": false,
-      "category": "Added",
-      "commit": "d43b3298677e",
-      "subject": "feat(release): prepare successors without replacing published assets",
-      "summary": "source-maintainer successor declaration with historical preservation and refusal checks."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "fac2af0e647e",
-      "subject": "test(release): retain passes and partition remaining qualification",
-      "summary": "bounded qualification preserves completed checks across interruption."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "5fa02af5d4ca",
-      "subject": "test(release): bind successor fixtures to refreshed clean packs",
-      "summary": "synthetic successor cases now supply a clean current source pack."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "e42d4b31215e",
-      "subject": "test(release): close source coverage and prepare delivered checks",
-      "summary": "preserve composed source coverage and prepare portable successor qualification."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "ca21bb03a92a",
-      "subject": "test(release): qualify exported successor behavior and preservation",
-      "summary": "qualify successor behavior in the portable development pack."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "2b489c5e6c48",
-      "subject": "test(release): preserve partial delivery and bound final qualification",
-      "summary": "preserve partial qualification and avoid repeating completed checks."
+      "category": "Docs",
+      "commit": "a3ef7e97f0b5",
+      "subject": "docs(memory): replace obsolete phase routing with current evidence",
+      "summary": "Correct AIDE source-local task context and current-risk references."
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "d43b3298677e",
-      "summary": "Candidate declarations and synthetic tests do not prove actual upgrade compatibility."
-    },
-    {
-      "commit": "fac2af0e647e",
-      "summary": "No source-suite, delivered-release or upgrade success is claimed yet."
-    },
-    {
-      "commit": "5fa02af5d4ca",
-      "summary": "Earlier successor passes are not reused after shared fixture changes."
-    },
-    {
-      "commit": "e42d4b31215e",
-      "summary": "Prior timeout and fixture errors remain evidence; no public upgrade claim follows."
-    },
-    {
-      "commit": "ca21bb03a92a",
-      "summary": "The development pack is not a published successor release."
-    },
-    {
-      "commit": "2b489c5e6c48",
-      "summary": "No ninth job or resource-limit change is admitted."
+      "commit": "a3ef7e97f0b5",
+      "summary": "This correction does not qualify another runtime, machine, package or release."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "2b489c5e6c487ed4690533121e3cb51b496567b1",
-  "source_range": "33ec403f0e4f17af919aa5685855f57760619e7e..2b489c5e6c487ed4690533121e3cb51b496567b1",
+  "source_head": "a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0",
+  "source_range": "4f2c39606378492622fa8580152373fffc074d7c..a3ef7e97f0b51931058a0e5ccaeedf87b04fffb0",
   "validation_summary": [
     {
-      "commit": "d43b3298677e",
-      "summary": "PASS: AST, doctor, refreshed full structural validation and diff checks."
-    },
-    {
-      "commit": "fac2af0e647e",
-      "summary": "PASS: original collection hashes, quiescence, scratch retirement and released reservation."
-    },
-    {
-      "commit": "5fa02af5d4ca",
-      "summary": "PASS: original49 terminal results, exact collection and retirement verification."
-    },
-    {
-      "commit": "e42d4b31215e",
-      "summary": "PASS: all 60 source methods, collection hashes, quiescence and retirement."
-    },
-    {
-      "commit": "ca21bb03a92a",
-      "summary": "PASS: ownership 6, exporter, doctor, full validation and pack status."
-    },
-    {
-      "commit": "2b489c5e6c48",
-      "summary": "PASS: 60 source methods and 24 delivered methods with exact evidence identities."
+      "commit": "a3ef7e97f0b5",
+      "summary": "PASS: 15 local links, 792 approximate tokens and three actual read-only task views."
     }
   ],
   "warnings": []
