@@ -34007,7 +34007,9 @@ def command_changelog_preview(args: argparse.Namespace) -> int:
             and (args.repo_root / ".aide/queue/index.yaml").is_file()):
         print("result: REFUSED\nsource changelog output must use .aide/changelog")
         return 1
-    if not source_maintainer_job_guard(args.repo_root, canonical_paths=(".aide/changelog",)):
+    if not source_maintainer_job_guard(
+        args.repo_root, canonical_paths=(".aide/changelog",), installed_changelog=True
+    ):
         return 1
     output_format = getattr(args, "format", "all") or "all"
     data = write_changelog_preview(
@@ -46104,7 +46106,54 @@ def command_managed_job(args: argparse.Namespace) -> int:
         return 1
 
 
-def source_maintainer_job_guard(repo_root: Path, *, packaging: bool = False, canonical_paths=()) -> bool:
+def installed_changelog_identity_valid(repo_root: Path) -> bool:
+    """Recognize a completed portable installation, not a source admission grant."""
+    try:
+        profile = portable_target_path(repo_root, ".aide/profile.yaml")
+        if profile.exists():
+            # The Task OS role projection is advisory. At this boundary accept
+            # only explicit, unambiguous scalar identity (including comments).
+            fields = {}
+            scalar = r"[A-Za-z0-9_.:/<>-]+"
+            for line in read_text(profile).splitlines():
+                if re.match(r"\s*['\"]?<<['\"]?\s*:", line):
+                    return False
+                if not re.match(r"\s*['\"]?profile_(?:id|mode)", line):
+                    continue
+                match = re.fullmatch(
+                    rf"(profile_id|profile_mode):[ \t]*(?:'({scalar})'|\"({scalar})\"|({scalar}))[ \t]*(?:#.*)?",
+                    line,
+                )
+                if match is None or match[1] in fields:
+                    return False
+                fields[match[1]] = next(value for value in match.groups()[1:] if value is not None)
+            if ("profile_id" not in fields or fields["profile_id"] == "aide-self-hosting"
+                    or fields.get("profile_mode") == "self-hosting"):
+                return False
+        for relative in (PORTABLE_IMPORT_INTENT_PATH, PORTABLE_REPAIR_INTENT_PATH,
+                         PORTABLE_REMOVAL_INTENT_PATH):
+            if portable_target_path(repo_root, relative).exists():
+                return False
+        receipt = load_portable_import_receipt(repo_root)
+        if receipt is None:
+            return False
+        relative = ".aide/scripts/aide_lite.py"
+        entry = receipt["managed"].get(relative, {})
+        return (
+            entry.get("kind") == "managed_file"
+            and entry.get("source") == relative
+            and entry.get("ownership") == "aide_portable_managed"
+            and entry.get("installed_digest") == entry.get("source_digest")
+            and target_file_digest(portable_target_path(repo_root, relative))
+                == entry.get("installed_digest")
+        )
+    except (OSError, ValueError, KeyError, TypeError):
+        return False
+
+
+def source_maintainer_job_guard(
+    repo_root: Path, *, packaging: bool = False, canonical_paths=(), installed_changelog: bool = False
+) -> bool:
     # A validated extracted payload can run its portable no-model checks
     # without source-checkout admission. Missing source state alone is never a
     # reason to bypass the guard: it may mean the checkout is damaged.
@@ -46117,6 +46166,10 @@ def source_maintainer_job_guard(repo_root: Path, *, packaging: bool = False, can
             pass
     if not (repo_root / "core/execution/managed_workspace.py").is_file():
         if (repo_root / ".aide/queue/index.yaml").is_file():
+            if (installed_changelog and not packaging
+                    and canonical_paths == (".aide/changelog",)
+                    and installed_changelog_identity_valid(repo_root)):
+                return True
             print("result: REFUSED\nsource checkout has no managed job owner")
             return False
         return True

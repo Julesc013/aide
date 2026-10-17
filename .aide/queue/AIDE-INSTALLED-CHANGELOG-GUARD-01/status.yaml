@@ -1,11 +1,15 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-INSTALLED-CHANGELOG-GUARD-01
-status: running
-result: PENDING
+status: blocked
+result: FAIL_PRESERVED_MUTABLE_OUTPUT_PINNED_AS_INPUT
 classification: admitted
 review_gate: exact_source_and_each_effect_required
-next_action: review_owned_export_and_actual_consumer_effect
-jobs_allocated: 1
-maximum_jobs: 2
+next_action: review_explicit_one_job_remaining_stage_amendment
+jobs_allocated: 2
+maximum_jobs: 3
 product_qualified: false
 target_mutated: false
+
+original_maximum_jobs: 2
+continuation_admission_ref: evidence/continuation-admission.md
+continuation_gate: exact_independent_accept_required

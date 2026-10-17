@@ -3978,9 +3978,9 @@ items:
     evidence: .aide/queue/AIDE-GIT-DEFAULTS-01/evidence
 
   - id: AIDE-INSTALLED-CHANGELOG-GUARD-01
-    status: running
-    planning_state: admitted_narrow_installed_changelog_repair
-    result: PENDING
+    status: blocked
+    planning_state: export_conserved_explicit_continuation_review
+    result: FAIL_PRESERVED_MUTABLE_OUTPUT_PINNED_AS_INPUT
     title: Recognize installed changelog work without weakening source admission
     task: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/task.yaml
     exec_plan: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/ExecPlan.md

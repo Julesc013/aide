@@ -1,0 +1,36 @@
+{
+  "result": "FAIL_PRESERVED_MUTABLE_OUTPUT_PINNED_AS_INPUT",
+  "job_id": "95dce9ff97d74346a3805ef0062428b4",
+  "source_commit": "bbb153e26108b834d18cd9715e71a42a8e81b213",
+  "source_tree": "ac272021cc6018144a77f8531728946230f97096",
+  "ownership_tests": {
+    "errors": 0,
+    "failures": 0,
+    "skips": 0,
+    "tests_run": 6
+  },
+  "export_completed": true,
+  "new_pack_files": 858,
+  "new_pack_bytes": 4420678,
+  "published_assets_unchanged": true,
+  "unrun": [
+    "doctor",
+    "validate",
+    "pack-status",
+    "changelog",
+    "actual consumers"
+  ],
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\95dce9ff97d74346a3805ef0062428b4",
+  "receipt_sha256": "ee022e0999597e3517cf611263a8ab40f85d138b0aa644455c5965263033b77e",
+  "collected_manifest": {
+    "output": "316f02a98b2ec418b4e2b50836d2672880a1276211010ef0ecf5af20966cd39a",
+    "logs": "db8543cf256e9825c3c09baa27a3fbc16444444eedd0c0dc69837a5e29d3e019"
+  },
+  "phase": "retired",
+  "quiescent": true,
+  "scratch_absent": true,
+  "reservation_released": true,
+  "jobs_allocated": 2,
+  "original_maximum": 2,
+  "automatic_retry_authorized": false
+}

@@ -61,14 +61,14 @@ with tarfile.open(fileobj=io.BytesIO(archive)) as source:
         target.write_bytes(data)
         seen.add(relative)
 assert seen == set(inventory['files'])
-inventory_path = EVIDENCE / 'prior-pack-inventory.json'
-current_inventory = json.loads(inventory_path.read_bytes())
-refresh.require_same(current_inventory)
+assert sys.argv[1:] == ['resume'], 'only the separately admitted remaining stages'
 pack = ROOT / refresh.PACK_REL
-sys.argv = [str(ROOT / '.aide/queue/AIDE-DAILY-PACK-REFRESH-01/run_refresh.py'),
-            'refresh', '--inventory', inventory_path.relative_to(ROOT).as_posix(),
-            '--inventory-sha256', hashlib.sha256(inventory_path.read_bytes()).hexdigest()]
-refresh.main()
+expected_pack = json.loads((EVIDENCE / 'refreshed-pack-sha256s.json').read_bytes())
+assert refresh.inventory_bytes(pack) == expected_pack
+for command in ('doctor', 'validate', 'pack-status'):
+    observed = refresh.invoke(command, [sys.executable, '-B',
+                                       str(ROOT / '.aide/scripts/aide_lite.py'), command], OUTPUT)
+    assert observed['exit_code'] == 0, command
 changelog = {}
 for label, args in [
     ('changelog-preview', ['changelog', 'preview', '--range',
@@ -170,4 +170,5 @@ try:
     result['status'] = 'PASS'
 finally:
     (OUTPUT / 'consumer.json').write_bytes((json.dumps(result, indent=2) + '\n').encode())
+assert refresh.inventory_bytes(pack) == expected_pack
 print(json.dumps({'status': result['status'], 'q31_methods_reused': 6, 'whole_task_usage': 'unknown'}))

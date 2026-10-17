@@ -1,0 +1,9 @@
+{
+  "verdict": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "head": "f4f3474dd0583d831b15f67bcf74d0dd5b98282b",
+  "tree": "ac272021cc6018144a77f8531728946230f97096",
+  "template_sha256": "e443f4b2f98086d72b979c98aa1c3bc9e776be0485b8165fedb0caa0e9513b0c",
+  "scope": "second and final owned export/consumer job only",
+  "findings": []
+}

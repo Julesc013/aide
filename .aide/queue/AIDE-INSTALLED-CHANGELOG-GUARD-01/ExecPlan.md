@@ -14,3 +14,5 @@ Maximum two jobs, unchanged configured limits/reserves. Failure is retained; no 
 Progress: admission ACCEPT, local branch created from reviewed and remotely verified dev checkpoint 7f42f88d. No source edits or jobs at plan creation.
 
 - First source review found an advisory-profile parsing gap; repaired before any job. Exact source/effect ACCEPT followed. Job cf7f620d passed all ten methods, including the original Q31 consumer; collection verified and fully retired. Original failed evidence remains. Prepare only the second owned export/consumer job.
+
+- Second job completed the owned export and six ownership tests, then doctor refused because the job recipe incorrectly pinned mutable output checksums. Preserve that failure and exact export. Two allocations are exhausted; propose the explicit one-job continuation amendment for only unrun stages, with no product-source change or rebuild.
