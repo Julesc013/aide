@@ -1,0 +1,26 @@
+{
+  "accepted_source": "2ef8ad51a56af6df45358b56a9e0974b7070a5ef",
+  "source_evidence": {
+    ".aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/evidence/independent-review-922173c8.json": "1b62bec6caed04aa437ccb729cdf3d5ce3ac2c262bf7e3590a9a36d09a82c65c",
+    ".aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-independent-reviews.json": "525e44deb43608edf0a758776e9af017549294368465cb84b6e34de3ef7065cf",
+    ".aide/queue/AIDE-DAILY-TASK-BINDING-01/evidence/independent-review-0a91084f.json": "8a8f50574a0e9428467c8e8b7fde967e3c728e71dfa110d3d4d06984185312b6",
+    ".aide/queue/AIDE-DAILY-PACK-REFRESH-01/evidence/review-replay-outcome-3e5587d9.json": "8c6cd447774df1b7dc4d7aa13d354da0ac2e0e35a2b9d4c268650288bb7da9c4",
+    ".aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/evidence/review-outcome-bcbfa46d.json": "c20da3a49cb46664c18f7cc16b75cb60ec157e4821090dfa4542101a88686d6f",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence/native-outcome-review.json": "b27145797d980d8d958af558fd2a1e28a66743d532d0748b9a99199452ba3a6d",
+    ".aide/queue/AIDE-DAILY-CURRENT-VIEW-01/evidence/final-result.json": "12950bbb6f484703fd491fe236edd1d105c59acc00f815c59aa4da0cf0f9012f"
+  },
+  "current_view_terminal_review": {
+    "verdict": "ACCEPT",
+    "reviewer": "/root/review_disked_continuation",
+    "head": "0f6182d63f0064e6e801b0ff320198fac25d2eb6",
+    "tree": "67d57f23474973d8bb2f565455d15734cbceaa1d",
+    "git_defaults_admission_sha256": "f64a2d4edd2f44bfb794a285777d8343269216429f7fa0f3e1e3a9be258d5f61",
+    "scope": "current-view terminal source closure and bounded Git-defaults admission; each subsequent effect retains exact review",
+    "findings": []
+  },
+  "commits_since_remote_dev": 33,
+  "development_pack_status": "FAIL_preserved_source_commit_mismatch_015de64c_vs_2ef8ad51",
+  "development_pack_checksums_valid": true,
+  "source_promotion_is_release_acceptance": false,
+  "unfinished_git_defaults_product_changes_included": false
+}

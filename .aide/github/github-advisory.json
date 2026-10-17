@@ -10,8 +10,10 @@
         "allow_force_pushes": false,
         "branch": "main",
         "present": true,
-        "recommended": true,
+        "protection_choice": "project_optional",
+        "recommended": false,
         "require_linear_history": false,
+        "require_status_checks": true,
         "required_reviews": 1,
         "role": "canonical"
       },
@@ -19,9 +21,11 @@
         "allow_deletions": false,
         "allow_force_pushes": false,
         "branch": "dev",
-        "present": false,
-        "recommended": true,
+        "present": true,
+        "protection_choice": "normally_unprotected",
+        "recommended": false,
         "require_linear_history": false,
+        "require_status_checks": true,
         "required_reviews": 0,
         "role": "integration"
       },
@@ -30,8 +34,10 @@
         "allow_force_pushes": false,
         "branch": "release/*",
         "present": false,
+        "protection_choice": "project_policy",
         "recommended": true,
         "require_linear_history": false,
+        "require_status_checks": true,
         "required_reviews": 1,
         "role": "release"
       },
@@ -40,26 +46,43 @@
         "allow_force_pushes": false,
         "branch": "hotfix/*",
         "present": false,
+        "protection_choice": "project_policy",
         "recommended": true,
         "require_linear_history": false,
+        "require_status_checks": true,
         "required_reviews": 1,
         "role": "hotfix"
+      },
+      {
+        "allow_deletions": false,
+        "allow_force_pushes": false,
+        "branch": "gh-pages",
+        "present": false,
+        "protection_choice": "project_policy",
+        "recommended": true,
+        "require_linear_history": false,
+        "require_status_checks": null,
+        "required_reviews": null,
+        "role": "deploy"
       }
     ],
-    "current_branch": "main",
-    "current_branch_role": "canonical",
+    "current_branch": "task/aide-git-defaults-01",
+    "current_branch_role": "task",
     "enforce_admins_recommendation": true,
     "generated_by": "aide-lite",
     "github_api_mutation": false,
     "network_calls": false,
+    "policy_issues": [],
+    "preserve_existing_remote_settings": true,
     "preview_only": true,
     "protected_branch_roles": [
-      "canonical",
-      "integration",
-      "release",
-      "deploy"
+      "deploy",
+      "hotfix",
+      "release"
     ],
-    "repo_id": "julesc013/aide",
+    "protection_policy_source": ".aide/policies/branch-protection.yaml",
+    "remote_protection_observed": false,
+    "repo_id": "Julesc013/aide",
     "required_review_gate": true,
     "required_status_checks": [
       "aide-validate",
@@ -80,8 +103,8 @@
   },
   "branch_protection_applied": false,
   "ci": {
-    "current_branch": "main",
-    "current_branch_role": "canonical",
+    "current_branch": "task/aide-git-defaults-01",
+    "current_branch_role": "task",
     "generated_by": "aide-lite",
     "github_api_mutation": false,
     "jobs": [
@@ -172,7 +195,7 @@
       "push_to_main",
       "push_to_dev"
     ],
-    "repo_id": "julesc013/aide",
+    "repo_id": "Julesc013/aide",
     "required_commands": [
       "py -3 scripts/aide validate",
       "py -3 scripts/aide doctor",
@@ -192,12 +215,10 @@
     "workflow_file_written": false,
     "workflow_installation": false
   },
-  "current_branch": "main",
-  "current_branch_role": "canonical",
-  "current_commit": "d5e3e818841931702cd4e2cde49452744afab985",
-  "findings": [
-    "dev integration branch is planned but not detected locally/remotely"
-  ],
+  "current_branch": "task/aide-git-defaults-01",
+  "current_branch_role": "task",
+  "current_commit": "2ef8ad51a56af6df45358b56a9e0974b7070a5ef",
+  "findings": [],
   "generated_by": "aide-lite",
   "github_api_mutation": false,
   "network_calls": false,
@@ -208,7 +229,7 @@
   ],
   "preview_only": true,
   "provider_or_model_calls": false,
-  "recommended_next_action": "review Q35 advisory before any future Q36+ intent work; do not apply GitHub settings until a later reviewed phase",
+  "recommended_next_action": "review project protection choices and current Git evidence; preserve existing settings until a separately authorized apply",
   "release_publishing": false,
   "remote_url_summary": "Julesc013/aide",
   "repo_id": "Julesc013/aide",

@@ -4,8 +4,8 @@
 - advisory_path: `.aide/github/github-advisory.json`
 - protection_plan: `.aide/github/branch-protection-plan.json`
 - ci_advisory: `.aide/github/ci-advisory.json`
-- current_branch: main
-- current_branch_role: canonical
+- current_branch: task/aide-git-defaults-01
+- current_branch_role: task
 - github_api_mutation: false
 - workflow_file_written: false
 - workflow_installation: false

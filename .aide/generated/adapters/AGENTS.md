@@ -1,4 +1,4 @@
-<!-- AIDE-GENERATED:BEGIN section=aide-token-survival-adapter target=codex_agents_md generator=aide-adapter-compiler-v0 version=q24.existing-tool-adapter-compiler.v0 source_template=.aide/adapters/templates/AGENTS.md.template mode=managed_section manual=outside-only fingerprint=sha256:5626ae8bda0d2dc068f8f30d2672caa02a2b9b8d7d7148f90c8bdf98fbe8396b -->
+<!-- AIDE-GENERATED:BEGIN section=aide-token-survival-adapter target=codex_agents_md generator=aide-adapter-compiler-v0 version=q24.existing-tool-adapter-compiler.v0 source_template=.aide/adapters/templates/AGENTS.md.template mode=managed_section manual=outside-only fingerprint=sha256:3b9bc8e7b217856289e98841434bb00302d23dca4a4cf08db7df2e45526b8a30 -->
 ## AIDE Existing-Tool Adapter: Codex
 
 - Use `.aide/context/latest-task-packet.md` as the default task brief.
@@ -11,6 +11,20 @@
   `validate`, and `pack --task "<bounded task>"` when available.
 - For quality-sensitive work, run `verify`, `review-pack`, `eval run`, and
   evidence checks before review or promotion.
+- For Q27-and-later work, use structured commits and run `commit check` when
+  practical.
+- Inspect `task status` or `task inspect` before repeated, partial, or
+  out-of-order queue work.
+- Run `git plan` before branch-sensitive work; do not mutate branches without
+  an explicit helper plan, validation evidence, and operator approval.
+- Follow project-owned Git defaults: coherent detailed commits, frequent validated
+  task-to-dev sync and prompt reviewed main promotion under existing grants.
+- Task branches are short-lived and local unless sharing, importance or blocked
+  continuity warrants publication. Retire remote refs only after preservation,
+  closure, ownership and collaboration checks. Keep active or uncertain work.
+- Main hosting protection is optional and dev normally unprotected in new project
+  defaults; preserve existing protection and project overrides. Never force push
+  or treat disabled hosting protection as permission to bypass acceptance.
 - Treat Gateway and provider surfaces as no-call/report-only unless a future
   reviewed queue phase explicitly enables live execution.
 - Write evidence, preserve manual content, stop at review gates, and report

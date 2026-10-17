@@ -11,7 +11,7 @@
 | `aider` | `preview_only` | `preview_only` | preview generated only; target file is absent |
 | `claude_code` | `preview_only` | `preview_only` | preview generated only; target file is absent |
 | `cline` | `preview_only` | `preview_only` | preview generated only; target file is absent |
-| `codex_agents_md` | `managed_section` | `current` | managed section current |
+| `codex_agents_md` | `managed_section` | `drifted` | managed section body differs |
 | `continue` | `preview_only` | `preview_only` | preview generated only; target file is absent |
 | `cursor` | `preview_only` | `preview_only` | preview generated only; target file is absent |
 | `windsurf` | `preview_only` | `preview_only` | preview generated only; target file is absent |

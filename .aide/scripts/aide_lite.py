@@ -22856,49 +22856,69 @@ def github_expected_ci_commands() -> list[str]:
     ]
 
 
+def github_protection_choices(repo_root: Path) -> tuple[dict[str, dict[str, bool | None]], list[str]]:
+    """Read the existing policy's two/four-space boolean rule fields conservatively."""
+    branches = ("main", "dev", "release/*", "hotfix/*", "gh-pages")
+    keys = ("protect", "require_reviews", "require_status_checks")
+    choices = {branch: {key: None for key in keys} for branch in branches}
+    issues: list[str] = []
+    path = repo_root / BRANCH_PROTECTION_POLICY_PATH
+    if not path.is_file():
+        return choices, ["branch_protection_policy_missing"]
+    text = read_text(path)
+    rules = list(re.finditer(r"(?m)^rules:[ \t]*(.*)$", text))
+    if len(rules) != 1:
+        return choices, ["branch_protection_rules_missing_or_duplicate"]
+    if rules[0].group(1) and not rules[0].group(1).startswith("#"):
+        return choices, ["branch_protection_rules_unsupported_inline_value"]
+    section = text[rules[0].end():]
+    end = re.search(r"(?m)^[^\s#]", section)
+    if end:
+        section = section[:end.start()]
+    blocks = list(re.finditer(r"(?m)^  ([^\s:][^:\r\n]*):[ \t]*(.*)$", section))
+    for branch in branches:
+        selected = [(i, match) for i, match in enumerate(blocks) if match.group(1) == branch]
+        if len(selected) != 1:
+            issues.append(f"{branch}: rule missing or duplicate")
+            continue
+        index, match = selected[0]
+        if match.group(2) and not match.group(2).startswith("#"):
+            issues.append(f"{branch}: unsupported inline rule")
+            continue
+        body = section[match.end():blocks[index + 1].start() if index + 1 < len(blocks) else len(section)]
+        for key in keys:
+            values = re.findall(r"(?m)^    " + key + r":[ \t]*(.*)$", body)
+            if not values and key != "protect":
+                continue
+            if len(values) == 1 and re.fullmatch(r"(?:true|false)(?:[ \t]+#.*)?[ \t]*", values[0]):
+                choices[branch][key] = values[0].split()[0] == "true"
+            else:
+                issues.append(f"{branch}: {key} must be one literal boolean")
+    return choices, issues
+
+
 def make_github_protection_plan(repo_root: Path, state: dict[str, object] | None = None) -> dict[str, object]:
     helper_state = state if state is not None else collect_git_helper_state(repo_root)
     branches = [str(item) for item in helper_state.get("local_branches", []) if isinstance(item, str)]
     remote_branches = [str(item) for item in helper_state.get("remote_branches", []) if isinstance(item, str)]
     normalized = {normalize_branch_for_role(item) for item in [*branches, *remote_branches]}
+    choices, policy_issues = github_protection_choices(repo_root)
     branch_targets = []
-    for branch in ["main", "dev"]:
+    for branch, choice in choices.items():
         branch_targets.append(
             {
                 "branch": branch,
-                "role": classify_branch_role(branch),
-                "present": branch in normalized,
-                "recommended": True,
-                "required_reviews": 1 if branch == "main" else 0,
+                "role": {"release/*": "release", "hotfix/*": "hotfix"}.get(branch, classify_branch_role(branch)),
+                "present": any(fnmatch.fnmatchcase(item, branch) for item in normalized),
+                "recommended": choice["protect"],
+                "protection_choice": "project_optional" if branch == "main" else "normally_unprotected" if branch == "dev" else "project_policy",
+                "required_reviews": int(choice["require_reviews"]) if choice["require_reviews"] is not None else None,
+                "require_status_checks": choice["require_status_checks"],
                 "require_linear_history": False,
                 "allow_force_pushes": False,
                 "allow_deletions": False,
             }
         )
-    branch_targets.extend(
-        [
-            {
-                "branch": "release/*",
-                "role": "release",
-                "present": any(item.startswith("release/") for item in normalized),
-                "recommended": True,
-                "required_reviews": 1,
-                "require_linear_history": False,
-                "allow_force_pushes": False,
-                "allow_deletions": False,
-            },
-            {
-                "branch": "hotfix/*",
-                "role": "hotfix",
-                "present": any(item.startswith("hotfix/") for item in normalized),
-                "recommended": True,
-                "required_reviews": 1,
-                "require_linear_history": False,
-                "allow_force_pushes": False,
-                "allow_deletions": False,
-            },
-        ]
-    )
     required_checks = [
         "aide-validate",
         "aide-lite-validate",
@@ -22914,10 +22934,14 @@ def make_github_protection_plan(repo_root: Path, state: dict[str, object] | None
     return {
         "schema_version": "aide.github-branch-protection-plan.v0",
         "generated_by": GENERATOR_NAME,
-        "repo_id": "julesc013/aide",
+        "repo_id": "not_observed",
         "current_branch": helper_state.get("current_branch", "unknown"),
         "current_branch_role": helper_state.get("current_role", "unknown"),
-        "protected_branch_roles": ["canonical", "integration", "release", "deploy"],
+        "protected_branch_roles": sorted({item["role"] for item in branch_targets if item["recommended"] is True}),
+        "protection_policy_source": BRANCH_PROTECTION_POLICY_PATH,
+        "policy_issues": policy_issues,
+        "remote_protection_observed": False,
+        "preserve_existing_remote_settings": True,
         "branch_targets": branch_targets,
         "required_status_checks": required_checks,
         "required_review_gate": True,
@@ -22977,12 +23001,15 @@ def make_github_advisory(repo_root: Path) -> dict[str, object]:
                 remote_url = parts[1]
                 break
     findings = []
+    repo_id = remote_repo_summary(remote_url)
+    protection["repo_id"] = ci["repo_id"] = repo_id
+    findings.extend(protection["policy_issues"])
     if not any(item.get("branch") == "dev" and item.get("present") for item in protection["branch_targets"] if isinstance(item, dict)):
         findings.append("dev integration branch is planned but not detected locally/remotely")
     return {
         "schema_version": "aide.github-advisory.v0",
         "generated_by": GENERATOR_NAME,
-        "repo_id": remote_repo_summary(remote_url),
+        "repo_id": repo_id,
         "remote_url_summary": remote_repo_summary(remote_url),
         "current_branch": helper_state.get("current_branch", "unknown"),
         "current_commit": helper_state.get("current_commit", "unknown"),
@@ -22993,8 +23020,8 @@ def make_github_advisory(repo_root: Path) -> dict[str, object]:
         "branch_protection": protection,
         "ci": ci,
         "findings": findings,
-        "blockers": [],
-        "recommended_next_action": "review Q35 advisory before any future Q36+ intent work; do not apply GitHub settings until a later reviewed phase",
+        "blockers": list(protection["policy_issues"]),
+        "recommended_next_action": "review project protection choices and current Git evidence; preserve existing settings until a separately authorized apply",
         "github_api_mutation": False,
         "branch_protection_applied": False,
         "workflow_file_written": False,
@@ -23013,7 +23040,7 @@ def render_github_protection_plan_md(plan: dict[str, object]) -> str:
     for item in plan.get("branch_targets", []):
         if isinstance(item, dict):
             target_lines.append(
-                f"- {item.get('branch', '')}: role={item.get('role', '')}; present={str(item.get('present', False)).lower()}; force_push={str(item.get('allow_force_pushes', False)).lower()}; deletion={str(item.get('allow_deletions', False)).lower()}"
+                f"- {item.get('branch', '')}: role={item.get('role', '')}; present={str(item.get('present', False)).lower()}; protection={str(item.get('recommended')).lower() if item.get('recommended') is not None else 'unknown'}; choice={item.get('protection_choice', '')}; force_push={str(item.get('allow_force_pushes', False)).lower()}; deletion={str(item.get('allow_deletions', False)).lower()}"
             )
     check_lines = [f"- {item}" for item in plan.get("required_status_checks", []) if isinstance(item, str)]
     return f"""# AIDE GitHub Branch Protection Plan
@@ -23027,6 +23054,8 @@ def render_github_protection_plan_md(plan: dict[str, object]) -> str:
 - branch_protection_applied: false
 - workflow_file_written: false
 - preview_only: true
+- remote_protection_observed: false
+- policy_issues: {json.dumps(plan.get('policy_issues', []))}
 
 ## Branch Targets
 
@@ -23041,6 +23070,9 @@ def render_github_protection_plan_md(plan: dict[str, object]) -> str:
 This is an advisory plan. Q35 does not call GitHub APIs, create branch
 protection rules, write `.github/workflows`, push branches, create tags, or
 publish releases.
+Project-owned protection choices come from `{BRANCH_PROTECTION_POLICY_PATH}`.
+Existing remote protection is preserved; optional or disabled hosting protection
+does not bypass validation, review, no-force-push or persistent-branch retention.
 """
 
 
@@ -23167,6 +23199,8 @@ def write_github_advisory_reports(repo_root: Path) -> dict[str, object]:
 
 def validate_github_advisory_files(repo_root: Path) -> list[Check]:
     checks: list[Check] = []
+    _choices, policy_issues = github_protection_choices(repo_root)
+    check_pass(checks, not policy_issues, "branch protection choices are explicit: " + "; ".join(policy_issues))
     required_markers = {
         GITHUB_PROTECTION_POLICY_PATH: ["aide.github-protection-policy.v0", "advisory_only", "github_api_mutation: false", "workflow_file_written: false"],
         CI_GATES_POLICY_PATH: ["aide.ci-gates-policy.v0", "advisory_only", "required_gates", "workflow_installation: false"],

@@ -1,5 +1,13 @@
 # AIDE Planning Index
 
+## Portable Git defaults - 2026-10-17
+
+[AIDE-GIT-DEFAULTS-01](.aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md) implements the
+owner's cross-project default through existing policy, advisory and adapter owners.
+The attempted early dev preparation found stale export provenance; no ref was
+changed. Qualify the new defaults and a matching portable export before reviewed
+dev/main synchronization. Remote cleanup retains its own exact ownership gate.
+
 ## Current-task view - 2026-10-17
 
 [AIDE-DAILY-CURRENT-VIEW-01](.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/ExecPlan.md)

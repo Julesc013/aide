@@ -3966,3 +3966,13 @@ items:
     exec_plan: .aide/queue/AIDE-DAILY-CURRENT-VIEW-01/ExecPlan.md
     prompt: .aide/queue/AIDE-DAILY-CURRENT-VIEW-01/prompt.md
     evidence: .aide/queue/AIDE-DAILY-CURRENT-VIEW-01/evidence
+
+  - id: AIDE-GIT-DEFAULTS-01
+    status: running
+    planning_state: admitted_portable_git_defaults_early_dev_sync
+    result: PENDING
+    title: Make frequent safe integration and local task branches portable defaults
+    task: .aide/queue/AIDE-GIT-DEFAULTS-01/task.yaml
+    exec_plan: .aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-GIT-DEFAULTS-01/prompt.md
+    evidence: .aide/queue/AIDE-GIT-DEFAULTS-01/evidence

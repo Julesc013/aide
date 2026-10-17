@@ -3,8 +3,8 @@
 - command: `capability ledger`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-daily-current-view-01`
-- current_commit: `cd7b1bcf2013f1c49c533854f34eb08667e6a94a`
+- current_branch: `task/aide-git-defaults-01`
+- current_commit: `2ef8ad51a56af6df45358b56a9e0974b7070a5ef`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

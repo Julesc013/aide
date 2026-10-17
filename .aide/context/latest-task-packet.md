@@ -1,15 +1,15 @@
 # AIDE Latest Task Packet
 
-task_id: AIDE-DAILY-CURRENT-VIEW-01
+task_id: AIDE-GIT-DEFAULTS-01
 projection_only: true
 
 ## PHASE
 
-AIDE-DAILY-CURRENT-VIEW-01 - Explain current task outcomes and next actions through the existing CLI
+AIDE-GIT-DEFAULTS-01 - Make frequent safe integration and local task branches portable defaults
 
 ## GOAL
 
-Explain current task outcomes and next actions through the existing CLI
+Make frequent safe integration and local task branches portable defaults
 
 ## WHY
 
@@ -17,9 +17,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/task.yaml` (selected scope and acceptance)
-- `.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/ExecPlan.md` (continuation; when present)
-- `.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/status.yaml` (actual state; when present)
+- `.aide/queue/AIDE-GIT-DEFAULTS-01/task.yaml` (selected scope and acceptance)
+- `.aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md` (continuation; when present)
+- `.aide/queue/AIDE-GIT-DEFAULTS-01/status.yaml` (actual state; when present)
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -46,30 +46,46 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/**`
+- `.aide/queue/AIDE-GIT-DEFAULTS-01/**`
+- `.aide/policies/git-workflow.yaml`
+- `.aide/policies/branch-roles.yaml`
+- `.aide/policies/branch-protection.yaml`
+- `.aide/policies/github-protection.yaml`
+- `.aide/policies/promotion-rules.yaml`
+- `.aide/policies/prune-policy.yaml`
+- `.aide/git/*.yaml`
+- `.aide/git/*.md`
 - `.aide/scripts/aide_lite.py`
-- `.aide/scripts/tests/test_task_binding.py`
-- `.aide/scripts/tests/test_task_current.py`
-- `.aide/scripts/tests/test_x_os_01_task_os_commands.py`
+- `.aide/scripts/tests/test_q28_git_workflow.py`
+- `.aide/scripts/tests/test_q29_git_helper.py`
+- `.aide/scripts/tests/test_q31_export_pack_governance.py`
+- `.aide/scripts/tests/test_q35_github_advisory.py`
+- `.aide/scripts/tests/test_git_defaults.py`
+- `AGENTS.md`
+- `.aide/adapters/templates/AGENTS.md.template`
+- `docs/reference/git-workflow-policy.md`
+- `docs/reference/git-helper-workflow.md`
+- `docs/reference/branch-roles.md`
+- `docs/reference/github-protection-ci-advisory.md`
 - `.aide/queue/index.yaml`
-- `.aide/context/latest-task-packet.md`
-- `.aide/generated/**`
-- `.aide/reports/capability-*.json`
-- `.aide/reports/capability-*.md`
-- `.aide/verification/latest-verification-report.md`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
+- `README.md`
 - `PLANS.md`
 - `IMPLEMENT.md`
 - `DOCUMENTATION.md`
-- `docs/reference/task-packets.md`
+- `.aide/intake/latest-*`
+- `.aide/context/latest-task-packet.md`
+- `.aide/generated/**`
+- `.aide/github/**`
+- `.aide/reports/capability-*.json`
+- `.aide/reports/capability-*.md`
+- `.aide/verification/latest-verification-report.md`
+- `.aide/export/aide-lite-pack-v0/**`
 
 ## FORBIDDEN_PATHS
 
-- `.git/**`
-- `.aide.local/**`
-- `.env`
-- `secrets/**`
+
 - baseline protected paths and effects remain governed by repository policy
 - raw provider credentials, API keys, local caches, raw prompt logs
 - Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
@@ -134,8 +150,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 5185
-- approx_tokens: 1297
+- chars: 5773
+- approx_tokens: 1444
 - budget_status: PASS
 - warnings:
   - none

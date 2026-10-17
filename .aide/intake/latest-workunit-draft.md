@@ -1,13 +1,13 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-test-0e57d9472c55
-- title: Test WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight
+- workunit_id: draft-git-fb7ff815d7ec
+- title: Git WorkUnit Draft - Require behavior proof and live-test validation plan before implementation
 - status: draft
-- task_class: test
+- task_class: git
 - risk_class: governance
-- sizing_class: two_shot
-- objective: Normalize prompt into a bounded test WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
+- sizing_class: live_test_gate
+- objective: Normalize prompt into a bounded git WorkUnit draft: require behavior proof and live-test validation plan before implementation.
 - why: AIDE compiles raw prompts into bounded WorkUnits before execution.
 
 ## Preflight
@@ -19,14 +19,14 @@
 ## Implementation Outline
 
 - Reconcile repo state before editing.
-- draft the smallest safe WorkUnit after repo-state preflight
+- require behavior proof and live-test validation plan before implementation
 - Stop at review gates and record evidence before execution.
 
 ## Validation
 
 - git diff --check
+- py -3 .aide/scripts/aide_lite.py git plan
 - py -3 .aide/scripts/aide_lite.py intent validate
-- targeted failing test command after preflight
 
 ## Evidence
 
@@ -34,6 +34,7 @@
 - validation.md
 - remaining-risks.md
 - intent-compiler-report.md
+- preflight-or-blocker-report.md
 
 ## Acceptance
 
@@ -47,8 +48,9 @@
 - no provider/model/network calls
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
+- do not merge, push, promote, or prune without reviewed branch plan
 
 ## Recovery
 
-- idempotency: prompt_hash:0e57d9472c55455c77cd79073c7fe7c9ddf6417a804b478cae4f4737404beb26; status:draft; compile_only:true
+- idempotency: prompt_hash:fb7ff815d7ec9174b3295816b8d0536e25f1a0dcbd0cdbdadfd8a0abe7c43b1f; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

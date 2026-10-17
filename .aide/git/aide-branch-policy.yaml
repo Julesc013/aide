@@ -8,6 +8,8 @@ default_workflow:
   model: trunk_with_dev_integration
   task_branch_landing: task branches land to dev
   promotion_path: dev promotes to main through review
+  cadence: frequent coherent task commits and validated dev sync; prompt qualified main promotion
+  hosting_protection: main optional and dev normally unprotected; preserve existing settings
   release_branch_use: release branches only for published AIDE Lite/CLI/schema lines
 branch_roles:
   main: canonical
@@ -45,7 +47,7 @@ branch_role_semantics:
     role: task
     meaning: bounded work branches
     default_target: dev
-    remote_policy: local by default, remote only when shared or resumable
+    remote_policy: local by default; share important collaborative or blocked continuity checkpoints
   release_branches:
     role: release
     meaning: future published AIDE Lite, CLI, schema, or compatibility lines

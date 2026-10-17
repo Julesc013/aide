@@ -2,7 +2,7 @@
 
 - schema_version: aide.github-ci-advisory.v0
 - generated_by: aide-lite
-- repo_id: julesc013/aide
+- repo_id: Julesc013/aide
 - workflow_installation: false
 - workflow_file_written: false
 - github_api_mutation: false

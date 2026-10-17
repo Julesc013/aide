@@ -1,5 +1,15 @@
 # AIDE Implementation Log
 
+## Portable Git default candidate - 2026-10-17
+
+Generic policy and guidance now express frequent validated integration, optional
+main hosting protection, normally unprotected dev and local short-lived task
+branches. GitHub advisory choices read project policy rather than hard-coded
+main/dev protection, exposing malformed or missing choices. Existing settings
+remain unchanged. Focused behavioral and export/consumer qualification are pending.
+The early dev check's stale-pack provenance and capability-ledger failures remain
+in the child evidence; no remote effect or existing release update has occurred.
+
 ## Bounded current-task projection source outcome - 2026-10-17
 
 Existing task-current command gains one bounded observation for human and JSON

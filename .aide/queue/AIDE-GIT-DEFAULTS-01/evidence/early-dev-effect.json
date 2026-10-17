@@ -1,0 +1,30 @@
+{
+  "schema": "aide.git-defaults.early-dev-effect.v1",
+  "source_base": "2ef8ad51a56af6df45358b56a9e0974b7070a5ef",
+  "candidate": "exact independently accepted metadata successor and its reviewed tree; substitute commit/tree only after guarded commit",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "expected_refs": {
+    "refs/heads/main": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a",
+    "refs/heads/dev": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a"
+  },
+  "expected_local_main": "6f2abc4cd69e0d94f86a00495cb8feeebe20398a",
+  "expected_local_dev": null,
+  "task_branch": "task/aide-git-defaults-01",
+  "publish_task_branch": false,
+  "effects": [
+    "Verify clean candidate, exact reviewed tree and closed source chain ancestry.",
+    "Create local dev at the accepted candidate from the observed remote dev ancestor; retain current task checkout.",
+    "Push only refs/heads/dev non-forcibly, then verify remote hash/tree and set local dev upstream to origin/dev."
+  ],
+  "protected_scope": "No main change, other task ref updates, tag, release, protection, deletion, reset or force push.",
+  "fresh_guards": [
+    "exact HEAD, branch, tree and clean index/worktree",
+    "single checkout and no dev workspace owner",
+    "shared runner dispatch and no active reservation",
+    "fresh remote dev/main and matching local/remote-tracking identities",
+    "source/code/export bytes identical to accepted source base; only reviewed administrative packet/intake/context/index differences"
+  ],
+  "recovery": "If any effect response is uncertain inspect actual local and remote refs before retry; preserve local candidate and do not reset or force. Stop only the affected synchronization if changed source/refs/protection requires new review.",
+  "source_release_boundary": "Old derived pack checksums pass but source provenance is stale; retain that FAIL. Dev source sharing only; no main or distribution claim."
+}

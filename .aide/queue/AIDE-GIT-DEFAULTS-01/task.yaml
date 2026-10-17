@@ -1,0 +1,67 @@
+schema_version: aide.queue-task.v0
+id: AIDE-GIT-DEFAULTS-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Make frequent safe integration and local task branches portable defaults
+type: implementation
+status: running
+objective: Deliver the owner's default Git workflow through existing AIDE and portable policy owners.
+admission_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/git-defaults-admission.md
+admission_sha256: f64a2d4edd2f44bfb794a285777d8343269216429f7fa0f3e1e3a9be258d5f61
+admission_verdict: ACCEPT_by_root_review_disked_continuation
+branch: task/aide-git-defaults-01
+branch_base: 2ef8ad51a56af6df45358b56a9e0974b7070a5ef
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-GIT-DEFAULTS-01/**
+    - .aide/policies/git-workflow.yaml
+    - .aide/policies/branch-roles.yaml
+    - .aide/policies/branch-protection.yaml
+    - .aide/policies/github-protection.yaml
+    - .aide/policies/promotion-rules.yaml
+    - .aide/policies/prune-policy.yaml
+    - .aide/git/*.yaml
+    - .aide/git/*.md
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_q28_git_workflow.py
+    - .aide/scripts/tests/test_q29_git_helper.py
+    - .aide/scripts/tests/test_q31_export_pack_governance.py
+    - .aide/scripts/tests/test_q35_github_advisory.py
+    - .aide/scripts/tests/test_git_defaults.py
+    - AGENTS.md
+    - .aide/adapters/templates/AGENTS.md.template
+    - docs/reference/git-workflow-policy.md
+    - docs/reference/git-helper-workflow.md
+    - docs/reference/branch-roles.md
+    - docs/reference/github-protection-ci-advisory.md
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - README.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - .aide/intake/latest-*
+    - .aide/context/latest-task-packet.md
+    - .aide/generated/**
+    - .aide/github/**
+    - .aide/reports/capability-*.json
+    - .aide/reports/capability-*.md
+    - .aide/verification/latest-verification-report.md
+    - .aide/export/aide-lite-pack-v0/**
+  forbidden_operations:
+    - overwrite_project_customization_or_existing_host_protection
+    - force_push_reset_rewrite_blanket_prune_or_unreviewed_remote_effect
+    - new_clone_storage_root_dependency_model_spending_or_unrelated_target_effect
+    - alter_published_release_assets_tags_or_historical_evidence
+acceptance:
+  - Frequent coherent commits and reviewed sync follow completed useful increments.
+  - Hosting protection choices and project overrides appear accurately in advisory views.
+  - Local task branches and reasoned checkpoint publication are the portable default.
+  - Cleanup distinguishes preserved work from active or uncertain ownership.
+  - A portable fixture receives the defaults and retains explicit customization.
+  - Every live Git or export effect has an exact independent reviewed manifest.
+verification:
+  maximum_jobs: 3
+  config_digest: 61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90
+  limits: unchanged_existing_runner_limits_and_reserves
+review_gate: independent_source_effect_and_terminal_verdicts

@@ -1,5 +1,10 @@
 # AIDE Documentation Index
 
+- [Portable Git workflow](docs/reference/git-workflow-policy.md): integration
+  cadence, project protection choices, task publication and safe retirement.
+  [Current implementation](.aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md) retains
+  focused qualification, export and exact remote-effect gates.
+
 - [Current-task view](docs/reference/task-packets.md): named human/JSON observation,
   recorded-status provenance and evidence uncertainty; source qualification in
   [the bounded child](.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/REPORT.md).

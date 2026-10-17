@@ -123,6 +123,18 @@
 
 ## Git Branch Workflow
 
+- Apply the portable defaults in `.aide/policies/git-workflow.yaml`: make coherent,
+  detailed task commits; assess validated landing and remote sync after useful
+  increments; promote qualified `dev` work to `main` promptly through review.
+- Hosting protection is optional for `main` and usually disabled for `dev` in new
+  project defaults. Preserve existing settings and project overrides. Neither
+  choice permits force pushes, deleting persistent roles, or bypassing checks.
+- Keep task branches short-lived and local unless collaboration, an important
+  checkpoint or blocked continuity warrants publication. Retire remote task refs
+  only after exact preservation, closure, ownership and collaboration checks.
+- Use standing project grants for ordinary authorized work; retain exact review
+  and effect checks without asking for the same permission at every step.
+
 - Run `py -3 .aide/scripts/aide_lite.py git plan` before branch-sensitive work; use `git status` or `git detect` for additional branch context.
 - Treat `main` as canonical accepted truth and `dev` as AIDE's intended shareable integration truth, not release truth.
 - Normal non-trivial work should happen on a bounded task branch; direct edits on `main` are discouraged except explicitly scoped repairs.
@@ -223,7 +235,7 @@
 - Runtime, full Hosts, Gateway, providers, Commander, Mobile, app surfaces, and real Dominium Bridge implementation remain deferred until queue items authorize them.
 <!-- AIDE-GENERATED:END section=aide-self-hosting-summary -->
 
-<!-- AIDE-GENERATED:BEGIN section=aide-token-survival-adapter target=codex_agents_md generator=aide-adapter-compiler-v0 version=q24.existing-tool-adapter-compiler.v0 source_template=.aide/adapters/templates/AGENTS.md.template mode=managed_section manual=outside-only fingerprint=sha256:8f573bef168a6f16af88c7aef03c771d113a5971324cafb15f8b8bed4374c597 -->
+<!-- AIDE-GENERATED:BEGIN section=aide-token-survival-adapter target=codex_agents_md generator=aide-adapter-compiler-v0 version=q24.existing-tool-adapter-compiler.v0 source_template=.aide/adapters/templates/AGENTS.md.template mode=managed_section manual=outside-only fingerprint=sha256:3b9bc8e7b217856289e98841434bb00302d23dca4a4cf08db7df2e45526b8a30 -->
 ## AIDE Existing-Tool Adapter: Codex
 
 - Use `.aide/context/latest-task-packet.md` as the default task brief.
@@ -242,6 +254,14 @@
   out-of-order queue work.
 - Run `git plan` before branch-sensitive work; do not mutate branches without
   an explicit helper plan, validation evidence, and operator approval.
+- Follow project-owned Git defaults: coherent detailed commits, frequent validated
+  task-to-dev sync and prompt reviewed main promotion under existing grants.
+- Task branches are short-lived and local unless sharing, importance or blocked
+  continuity warrants publication. Retire remote refs only after preservation,
+  closure, ownership and collaboration checks. Keep active or uncertain work.
+- Main hosting protection is optional and dev normally unprotected in new project
+  defaults; preserve existing protection and project overrides. Never force push
+  or treat disabled hosting protection as permission to bypass acceptance.
 - Treat Gateway and provider surfaces as no-call/report-only unless a future
   reviewed queue phase explicitly enables live execution.
 - Write evidence, preserve manual content, stop at review gates, and report

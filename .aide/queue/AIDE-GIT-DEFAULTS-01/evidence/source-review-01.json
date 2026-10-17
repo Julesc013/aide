@@ -1,0 +1,10 @@
+{
+  "verdict": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "head": "2ef8ad51a56af6df45358b56a9e0974b7070a5ef",
+  "tree": "b5082b88b30a32c8c8c907c0184bc8ef9902fa87",
+  "template_sha256": "bbee193c9769331a933aa866d81a48e167ca621c5c3074358bae2ad7f9a3b99c",
+  "finding": "Inline duplicate rules and branch headers escaped detection; detect before interpreting supported value syntax.",
+  "disposition": "Recognize all relevant headers then refuse duplicates/unsupported inline values; one regression method covers six shapes.",
+  "jobs_run": 0
+}

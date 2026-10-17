@@ -3,9 +3,9 @@
 - schema_version: aide.github-advisory.v0
 - generated_by: aide-lite
 - repo_id: Julesc013/aide
-- current_branch: main
-- current_commit: d5e3e818841931702cd4e2cde49452744afab985
-- current_branch_role: canonical
+- current_branch: task/aide-git-defaults-01
+- current_commit: 2ef8ad51a56af6df45358b56a9e0974b7070a5ef
+- current_branch_role: task
 - advisory_mode: report_only
 - github_api_mutation: false
 - branch_protection_applied: false
@@ -35,11 +35,11 @@
 
 ## Findings
 
-- dev integration branch is planned but not detected locally/remotely
+- none
 
 ## Recommended Next Action
 
-- review Q35 advisory before any future Q36+ intent work; do not apply GitHub settings until a later reviewed phase
+- review project protection choices and current Git evidence; preserve existing settings until a separately authorized apply
 
 ## Boundary
 

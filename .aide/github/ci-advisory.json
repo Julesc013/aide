@@ -1,6 +1,6 @@
 {
-  "current_branch": "main",
-  "current_branch_role": "canonical",
+  "current_branch": "task/aide-git-defaults-01",
+  "current_branch_role": "task",
   "generated_by": "aide-lite",
   "github_api_mutation": false,
   "jobs": [
@@ -91,7 +91,7 @@
     "push_to_main",
     "push_to_dev"
   ],
-  "repo_id": "julesc013/aide",
+  "repo_id": "Julesc013/aide",
   "required_commands": [
     "py -3 scripts/aide validate",
     "py -3 scripts/aide doctor",
