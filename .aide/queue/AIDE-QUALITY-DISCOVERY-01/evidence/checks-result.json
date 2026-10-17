@@ -1,0 +1,39 @@
+{
+  "tests_run": 23,
+  "failures": 0,
+  "errors": 0,
+  "skips": [],
+  "test_ids": [
+    "test_q37_repo_intelligence.Q37RepoIntelligenceTests.test_classify_source_test_doc_policy_schema_evidence_generated_template_unknown",
+    "test_q37_repo_intelligence.Q37RepoIntelligenceTests.test_detect_python_imports_markdown_links_stale_doc_candidate_and_test_target",
+    "test_q37_repo_intelligence.Q37RepoIntelligenceTests.test_explain_file_command_output",
+    "test_q37_repo_intelligence.Q37RepoIntelligenceTests.test_generate_repo_maps_and_validate_pass_on_fixture",
+    "test_q37_repo_intelligence.Q37RepoIntelligenceTests.test_inventory_fixture_excludes_git_and_aide_local",
+    "test_q37_repo_intelligence.Q37RepoIntelligenceTests.test_repo_commands_report_no_provider_model_network_behavior",
+    "test_q37_repo_intelligence.Q37RepoIntelligenceTests.test_repo_validate_warns_on_unknown_fixture",
+    "test_q38_file_quality.Q38FileQualityTests.test_active_source_without_docs_or_tests_warns",
+    "test_q38_file_quality.Q38FileQualityTests.test_discovery_bounds_human_and_json_output_bytes",
+    "test_q38_file_quality.Q38FileQualityTests.test_discovery_owner_docs_checks_and_unverified_freshness",
+    "test_q38_file_quality.Q38FileQualityTests.test_discovery_refuses_malformed_and_oversized_reports_without_repair",
+    "test_q38_file_quality.Q38FileQualityTests.test_discovery_reports_omitted_relations_and_peers",
+    "test_q38_file_quality.Q38FileQualityTests.test_duplicate_hash_and_repeated_helper_candidates",
+    "test_q38_file_quality.Q38FileQualityTests.test_evidence_and_generated_files_are_exempt",
+    "test_q38_file_quality.Q38FileQualityTests.test_ledger_generation_from_fixture_repo_intelligence",
+    "test_q38_file_quality.Q38FileQualityTests.test_lookup_is_deterministic_and_does_not_require_target_source",
+    "test_q38_file_quality.Q38FileQualityTests.test_old_ledger_and_empty_results_are_not_negative_proof",
+    "test_q38_file_quality.Q38FileQualityTests.test_quality_command_does_not_mutate_source_files",
+    "test_q38_file_quality.Q38FileQualityTests.test_quality_explain_file_command_output",
+    "test_q38_file_quality.Q38FileQualityTests.test_quality_policy_anchor_validation",
+    "test_q38_file_quality.Q38FileQualityTests.test_reuse_links_distinct_helpers_without_claiming_equivalence",
+    "test_q38_file_quality.Q38FileQualityTests.test_stale_doc_and_orphan_candidates_warn",
+    "test_q38_file_quality.Q38FileQualityTests.test_tracked_secret_like_path_fails_hard"
+  ],
+  "test_inputs": {
+    ".aide/scripts/tests/test_q37_repo_intelligence.py": "868fcb7ae9cdb8a63c5b027e6c54fe25caa3420d98f4f82d3f37f39a0895b2c7",
+    ".aide/scripts/tests/test_q38_file_quality.py": "84fbe9ad9dd047527cbd0c999b72fb3c219b7700cd806736c35075c8a6357682"
+  },
+  "mode": "quality_discovery_fixtures",
+  "live_deliveries": 0,
+  "models_requested": 0,
+  "whole_task_usage": "unknown"
+}

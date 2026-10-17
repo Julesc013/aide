@@ -28,3 +28,6 @@ Earlier cooperative review now integrated at33a37774; its receipt is retained.
 Pre-run review REQUEST_CHANGES retained: add CLI input pin, reject malformed
 consumed fields/identities and bound rendered bytes. Corrected before any job;
 23 methods now include both-format 64 KiB refusal and missing-field cases.
+
+Allocation1/3 PASS23 at5fa78ca7, collected and retired. Prepare exact existing-owner
+pack refresh and all16 delivered Q38 methods for allocation2/3.
