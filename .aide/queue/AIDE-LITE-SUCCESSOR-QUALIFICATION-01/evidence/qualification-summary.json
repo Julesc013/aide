@@ -20,6 +20,7 @@
   },
   "evidence": {
     "actual56_cli_forms_with_variants": "evidence/replacement-cli-coverage.json",
+    "complete_source_history_preview": "evidence/fixed-preview-qualified.json",
     "exact_archive_replay": "evidence/replay-qualified.json",
     "published_predecessor_upgrade_recovery": "evidence/predecessor-qualified-replay-refused.json",
     "replacement_original8_additional18": "evidence/replacement-consumers-qualified.json"
@@ -30,22 +31,22 @@
     "actual predecessor allocation24 fixture setup failure",
     "replay27 missing reservation refusal"
   ],
-  "jobs_consumed": 28,
+  "jobs_consumed": 29,
   "limits": [
     "automatic rollback across changed owned path sets unsupported",
     "customized-overlay downgrade requires preserved-state manual reconciliation",
     "native Windows resource route only; outer-client/read isolation unqualified",
-    "native fixtures made zero model calls; controller/review usage and whole-outcome savings unknown"
+    "native fixtures made zero model calls; controller/review usage and whole-outcome savings unknown",
+    "Source-history preview retains three malformed historical messages; it is not approved release notes."
   ],
   "maximum_jobs": 29,
   "published_version": "1.0.0",
   "remaining": [
     "owner dispositions for three exact historical commit-message failures",
-    "fixed changelog preview allocation29 preserving unresolved history and complete published-predecessor range coverage",
     "exact independent final release-candidate review",
     "guarded dev/main integration",
     "separately admitted publication and acquired-byte validation"
   ],
-  "status": "CONSUMER_AND_REPLAY_QUALIFIED_RELEASE_GATES_OPEN",
+  "status": "CONSUMER_REPLAY_AND_TRUTHFUL_PREVIEW_QUALIFIED_OWNER_DECISION_PENDING",
   "version": "1.1.0"
 }

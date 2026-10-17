@@ -1,6 +1,418 @@
 {
   "follow_up": [
     {
+      "commit": "70a7f68e83fd",
+      "summary": "Preserve separate host, efficiency, wider cleanup and downstream outcomes; FacMan product remains paused."
+    },
+    {
+      "commit": "2532954659d7",
+      "summary": "Preserve published Lite1.0.0; continue supported-host, whole-outcome efficiency, ownership-safe cleanup and authorized downstream outcomes without repeat submissions."
+    },
+    {
+      "commit": "f66f9c5b9bb3",
+      "summary": "A supported constrained ordinary editing executor remains necessary; do not replay unchanged refusals."
+    },
+    {
+      "commit": "b064080358c0",
+      "summary": "Establish a supported constrained executor; do not retry these unchanged prerequisites or widen access."
+    },
+    {
+      "commit": "6f2abc4cd69e",
+      "summary": "Discover and qualify the new environment once ready and accessible, then admit bounded local and remote model work."
+    },
+    {
+      "commit": "09afd31ce4be",
+      "summary": "Obtain the independent verdict, then qualify one supported actual route under"
+    },
+    {
+      "commit": "09afd31ce4be",
+      "summary": "Obtain the independent verdict, then qualify one supported actual route under"
+    },
+    {
+      "commit": "09afd31ce4be",
+      "summary": "Obtain the independent verdict, then qualify one supported actual route under"
+    },
+    {
+      "commit": "922173c83e13",
+      "summary": "Resolve reviewer choice, obtain the exact independent verdict and continue the"
+    },
+    {
+      "commit": "922173c83e13",
+      "summary": "Resolve reviewer choice, obtain the exact independent verdict and continue the"
+    },
+    {
+      "commit": "bde3d7103b70",
+      "summary": "Prepare and review exact new-host resource setup and one supported-route qualification."
+    },
+    {
+      "commit": "bde3d7103b70",
+      "summary": "Prepare and review exact new-host resource setup and one supported-route qualification."
+    },
+    {
+      "commit": "18c026dbfffc",
+      "summary": "Review setup/source-check effects, collect passing tests, then review the native effect."
+    },
+    {
+      "commit": "18c026dbfffc",
+      "summary": "Review setup/source-check effects, collect passing tests, then review the native effect."
+    },
+    {
+      "commit": "18c026dbfffc",
+      "summary": "Review setup/source-check effects, collect passing tests, then review the native effect."
+    },
+    {
+      "commit": "8a473d9ceb30",
+      "summary": "Review this result checkpoint; continue independently admitted task-binding work."
+    },
+    {
+      "commit": "8a473d9ceb30",
+      "summary": "Review this result checkpoint; continue independently admitted task-binding work."
+    },
+    {
+      "commit": "7fbf8e11a63b",
+      "summary": "Run and preserve baseline failures, repair existing owners, then verify and review source."
+    },
+    {
+      "commit": "7fbf8e11a63b",
+      "summary": "Run and preserve baseline failures, repair existing owners, then verify and review source."
+    },
+    {
+      "commit": "fc8a68b7884c",
+      "summary": "Run repaired source/compatibility checks, retain results and obtain exact independent review."
+    },
+    {
+      "commit": "fc8a68b7884c",
+      "summary": "Run repaired source/compatibility checks, retain results and obtain exact independent review."
+    },
+    {
+      "commit": "238fa7bc4895",
+      "summary": "Obtain exact independent source review, then admit package refresh/replay before integration."
+    },
+    {
+      "commit": "238fa7bc4895",
+      "summary": "Obtain exact independent source review, then admit package refresh/replay before integration."
+    },
+    {
+      "commit": "0a91084f3822",
+      "summary": "Review exact corrected candidate, then admit package refresh preparation."
+    },
+    {
+      "commit": "0a91084f3822",
+      "summary": "Review exact corrected candidate, then admit package refresh preparation."
+    },
+    {
+      "commit": "36994f461850",
+      "summary": "Prepare the accepted exact export-refresh child and obtain its later reset/dispatch review."
+    },
+    {
+      "commit": "36994f461850",
+      "summary": "Prepare the accepted exact export-refresh child and obtain its later reset/dispatch review."
+    },
+    {
+      "commit": "00f1f428f21a",
+      "summary": "Review exact wrapper/source and conditional first-job effect before any reset."
+    },
+    {
+      "commit": "00f1f428f21a",
+      "summary": "Review exact wrapper/source and conditional first-job effect before any reset."
+    },
+    {
+      "commit": "f8bb46ebe759",
+      "summary": "Review exact corrected subject before the one conditional first job."
+    },
+    {
+      "commit": "f8bb46ebe759",
+      "summary": "Review exact corrected subject before the one conditional first job."
+    },
+    {
+      "commit": "015de64c9d11",
+      "summary": "Review the exact source/amendment/conditional corrected job before another allocation."
+    },
+    {
+      "commit": "015de64c9d11",
+      "summary": "Review the exact source/amendment/conditional corrected job before another allocation."
+    },
+    {
+      "commit": "3f956ce8d62a",
+      "summary": "Review exact staged tree, commit matched result, then prepare separate clean replay."
+    },
+    {
+      "commit": "3f956ce8d62a",
+      "summary": "Review exact staged tree, commit matched result, then prepare separate clean replay."
+    },
+    {
+      "commit": "c15adb159785",
+      "summary": "Review exact frozen source/effect, dispatch once, preserve and review actual outcome."
+    },
+    {
+      "commit": "8abd7186fa1e",
+      "summary": "Obtain exact outcome verdict, close this child, then prepare admitted installed consumer checks."
+    },
+    {
+      "commit": "648116f660e9",
+      "summary": "Prepare admitted installed-binding child with retained operational gates."
+    },
+    {
+      "commit": "cde9d5ad0111",
+      "summary": "Prepare unchanged-owner consumer wrapper, review exact source/effect, then run bounded qualification."
+    },
+    {
+      "commit": "3aac28e6066c",
+      "summary": "Review frozen preparation branch/effect, allocate one conditional job and preserve exact results."
+    },
+    {
+      "commit": "95707b375f35",
+      "summary": "Review exact corrected frozen source/effect, then allocate one conditional first consumer job."
+    },
+    {
+      "commit": "665c8f700df3",
+      "summary": "Review exact repair and final effect, then run only remaining consumer qualification."
+    },
+    {
+      "commit": "665c8f700df3",
+      "summary": "Review exact repair and final effect, then run only remaining consumer qualification."
+    },
+    {
+      "commit": "a90f1330b96d",
+      "summary": "Review exact terminal outcome and close this child before the next dependency-ready real workflow."
+    },
+    {
+      "commit": "207553d8815f",
+      "summary": "Continue the updated Goal through next bounded native consumer and remaining daily-use proofs."
+    },
+    {
+      "commit": "77f06858ffab",
+      "summary": "Prepare the admitted bounded child and exact source/effect candidates under existing owners."
+    },
+    {
+      "commit": "c38b043ef610",
+      "summary": "Independently review exact source/acquisition, then fresh unchanged-config admission."
+    },
+    {
+      "commit": "126724bebf84",
+      "summary": "Obtain exact independent source/effect verdict, then fresh shared admission."
+    },
+    {
+      "commit": "9ce7d46d4333",
+      "summary": "Review exact reuse/source/final effect, then execute final remaining stages through existing runner."
+    },
+    {
+      "commit": "3caf98aae9c3",
+      "summary": "Prepare exact native-owner adoption and dependency-ready daily-use increments."
+    },
+    {
+      "commit": "753de2e3659b",
+      "summary": "Prepare the next bounded child and native-owner effect under existing review gates."
+    },
+    {
+      "commit": "cd7b1bcf2013",
+      "summary": "Implement, qualify and independently review the existing command extension."
+    },
+    {
+      "commit": "c7ea89dcd692",
+      "summary": "Execute the exact reviewed finite job, collect evidence and review the outcome."
+    },
+    {
+      "commit": "0f6182d63f00",
+      "summary": "Run the exact reviewed final attempt and independently review its outcome."
+    },
+    {
+      "commit": "2ef8ad51a56a",
+      "summary": "Implement the admitted Git defaults and qualify each exact integration effect."
+    },
+    {
+      "commit": "2ef8ad51a56a",
+      "summary": "Implement the admitted Git defaults and qualify each exact integration effect."
+    },
+    {
+      "commit": "7cd6d657eaa1",
+      "summary": "Run the bounded reviewed tests, qualify export/adoption/customization, then obtain"
+    },
+    {
+      "commit": "39df07cbee63",
+      "summary": "Run the accepted second job, review actual outcomes and exact generated bytes,"
+    },
+    {
+      "commit": "39df07cbee63",
+      "summary": "Run the accepted second job, review actual outcomes and exact generated bytes,"
+    },
+    {
+      "commit": "88fa0008c567",
+      "summary": "Review actual final outcomes, then synchronize exact accepted dev/main source."
+    },
+    {
+      "commit": "88fa0008c567",
+      "summary": "Review actual final outcomes, then synchronize exact accepted dev/main source."
+    },
+    {
+      "commit": "7f42f88df495",
+      "summary": "Qualify the narrow installed guard repair, then complete actual consumers and main review."
+    },
+    {
+      "commit": "f4f3474dd058",
+      "summary": "Run the reviewed affected job, then qualify the export and downstream defaults."
+    },
+    {
+      "commit": "bbb153e26108",
+      "summary": "Qualify the development export and synchronize the accepted result."
+    },
+    {
+      "commit": "c627b2f0bd00",
+      "summary": "Complete only unrun stages and review actual outcomes before integration."
+    },
+    {
+      "commit": "c02228d0a34c",
+      "summary": "Execute the exact independently reviewed dev/main effects and record observed refs."
+    },
+    {
+      "commit": "c02228d0a34c",
+      "summary": "Execute the exact independently reviewed dev/main effects and record observed refs."
+    },
+    {
+      "commit": "fe61501b7673",
+      "summary": "Continue the parent native owner adoption and daily-use preparation."
+    },
+    {
+      "commit": "89882a810f89",
+      "summary": "Resolve exact source/effect review, qualify preparation, and obtain writer state."
+    },
+    {
+      "commit": "ac0ca3a94a53",
+      "summary": "Review the exact repaired source and second preparation allocation before launch."
+    },
+    {
+      "commit": "9605d8e333a1",
+      "summary": "Resolve native owner input while preparing local broker request/reply work."
+    },
+    {
+      "commit": "bc47743e3ce5",
+      "summary": "Run the exact reviewed managed fixture effect, preserve actual results, independently review outcome and source integration, then continue actual host delivery."
+    },
+    {
+      "commit": "cf293cb02194",
+      "summary": "Run the exact independently reviewed second fixture effect, preserve results, refresh affected pack through separate admission, and review integration."
+    },
+    {
+      "commit": "1435659b220b",
+      "summary": "Run the reviewed pack effect, review generated bytes and outcomes, then qualify dev/main synchronization."
+    },
+    {
+      "commit": "8f93cb7e021a",
+      "summary": "Apply only the independently accepted exact integration effect, then continue actual host-delivery preparation."
+    },
+    {
+      "commit": "8f93cb7e021a",
+      "summary": "Apply only the independently accepted exact integration effect, then continue actual host-delivery preparation."
+    },
+    {
+      "commit": "3d7899130501",
+      "summary": "Run the exact independently accepted fixture effect, conserve outcomes, review qualified integration and continue existing-worker delivery and native downstream adoption."
+    },
+    {
+      "commit": "730d43f3e492",
+      "summary": "Execute only the exact accepted pack effect, retain all results, then obtain terminal source and integration review."
+    },
+    {
+      "commit": "8513f7f572ed",
+      "summary": "Execute only the independently accepted preview job, review all generated outputs, then perform exact qualified dev/main synchronization and read-only postpromotion regeneration."
+    },
+    {
+      "commit": "2194eb6b73ac",
+      "summary": "Apply only reviewed dev/main fast-forwards with fresh admission, run integration validation and read-only postpromotion regeneration, retire only the owned local task branch, then continue actual host delivery."
+    },
+    {
+      "commit": "b7eb79cfe3f3",
+      "summary": "Execute only the exact accepted live effect, verify actor-owned evidence, preserve all records, then qualify source promotion separately."
+    },
+    {
+      "commit": "27240f31db86",
+      "summary": "Complete the one admitted promotion preview and exact terminal Git review. Installed desktop binding and native DiskEd ownership/adoption remain open; no release or target effect is implied."
+    },
+    {
+      "commit": "33a377743d86",
+      "summary": "Observe exact dev/main integration receipts, then qualify a supported existing-host session binding. No new runtime allocation or automatic retry is granted."
+    },
+    {
+      "commit": "5fa78ca78afb",
+      "summary": "Run admitted checks, qualify changed export, independently review and synchronize dev/main; public1.0.0 unchanged."
+    },
+    {
+      "commit": "35a3a9035abc",
+      "summary": "Execute independently accepted allocation2, review generated outputs, preview and integrate qualified dev/main."
+    },
+    {
+      "commit": "1a3428129699",
+      "summary": "Run the independently reviewed preview,then exact terminal integration and remote verification."
+    },
+    {
+      "commit": "239558e8a9ed",
+      "summary": "Confirm exact remote dev/main after qualified integration,retire only this local task branch,and continue dependency-ready campaign work."
+    },
+    {
+      "commit": "f2543d317caf",
+      "summary": "Run exact reviewed source and delivered qualification, bounded exercises and promotion checks before integration."
+    },
+    {
+      "commit": "e191b8a4c6cf",
+      "summary": "Run exact delivered effect, then promotion preview and qualified integration."
+    },
+    {
+      "commit": "5ee93ea7306a",
+      "summary": "Prepare exact reviewed repair of fixture ignore initialization and absent baseline definitions; preserve all assertions."
+    },
+    {
+      "commit": "ca7bd44a69ff",
+      "summary": "Run the exact repaired qualification once; retain failure without automatic retry, then prepare promotion preview if successful."
+    },
+    {
+      "commit": "f0bef95b14a3",
+      "summary": "Apply only independently accepted fixture correction, then qualify exact changed inputs once."
+    },
+    {
+      "commit": "8f8406558c3a",
+      "summary": "Execute the exact reviewed qualification once, then the reserved promotion preview if successful."
+    },
+    {
+      "commit": "816922b65252",
+      "summary": "Generate and verify the reviewed preview once, then perform exact terminal integration review."
+    },
+    {
+      "commit": "a0970badeca5",
+      "summary": "Synchronize reviewed candidate to dev and main with fresh refs and post-dev validation; retain the actual integration receipt."
+    },
+    {
+      "commit": "82d771463a12",
+      "summary": "Run one bounded source job, then qualify actual portable delivery and integration separately."
+    },
+    {
+      "commit": "7c2aec4949cc",
+      "summary": "Run reviewed source42, real five-attempt consumer and delivered42; stop on failure."
+    },
+    {
+      "commit": "7d2c41f73357",
+      "summary": "Generate and replay the reviewed preview, then obtain exact terminal integration review."
+    },
+    {
+      "commit": "716ec1fd0ad6",
+      "summary": "Execute only reviewed guarded synchronization and retain actual remote-ref evidence."
+    },
+    {
+      "commit": "3625acf79209",
+      "summary": "Qualify source and actual portable consumer, then separately review integration."
+    },
+    {
+      "commit": "1cd847805188",
+      "summary": "Run reviewed portable qualification and then prepare independent integration review."
+    },
+    {
+      "commit": "b5827566fbe2",
+      "summary": "Run the exact reviewed preview, complete terminal review and safely synchronize dev/main."
+    },
+    {
+      "commit": "33ec403f0e4f",
+      "summary": "Verify exact local/remote integration receipts and continue the existing campaign's remaining workflows."
+    },
+    {
       "commit": "d43b3298677e",
       "summary": "Qualify source and delivered code, then exact integration; separately qualify the actual release."
     },
@@ -23,15 +435,593 @@
     {
       "commit": "2b489c5e6c48",
       "summary": "Run the reviewed final effect and close evidence before qualified integration."
+    },
+    {
+      "commit": "4f2c39606378",
+      "summary": "Execute exact accepted integration, then prepare actual release qualification under a bounded admission."
+    },
+    {
+      "commit": "4f2c39606378",
+      "summary": "Execute exact accepted integration, then prepare actual release qualification under a bounded admission."
+    },
+    {
+      "commit": "b46448f2fa4c",
+      "summary": "Continue separately reviewed additive and actual-predecessor qualification."
+    },
+    {
+      "commit": "b46448f2fa4c",
+      "summary": "Continue separately reviewed additive and actual-predecessor qualification."
+    },
+    {
+      "commit": "b4613f2d7e33",
+      "summary": "Run the exact reviewed allocation once and retain every outcome."
+    },
+    {
+      "commit": "26984567aaad",
+      "summary": "Repair owned module delivery and qualify replacement bytes without weakening checks."
+    },
+    {
+      "commit": "98b7b2dc86a3",
+      "summary": "Run the focused regressions, then qualify refreshed pack and replacement archive identities."
+    },
+    {
+      "commit": "98b7b2dc86a3",
+      "summary": "Run the focused regressions, then qualify refreshed pack and replacement archive identities."
+    },
+    {
+      "commit": "447e393b3f87",
+      "summary": "Refresh and qualify delivered bytes, then rebuild and qualify the replacement archives."
+    },
+    {
+      "commit": "80897d75ea3a",
+      "summary": "Qualify the actual installed pack before rebuilding and testing replacement archives."
+    },
+    {
+      "commit": "80897d75ea3a",
+      "summary": "Qualify the actual installed pack before rebuilding and testing replacement archives."
+    },
+    {
+      "commit": "c5b1a2bf7181",
+      "summary": "Build once under the existing resource profile and qualify resulting exact bytes."
+    },
+    {
+      "commit": "a4b5d25f64b9",
+      "summary": "Run original families and additions, then actual predecessor, recovery and final checks."
+    },
+    {
+      "commit": "eaba809b7513",
+      "summary": "Run actual predecessor, supported recovery and replay before fixed preview and promotion."
+    },
+    {
+      "commit": "eaba809b7513",
+      "summary": "Run actual predecessor, supported recovery and replay before fixed preview and promotion."
+    },
+    {
+      "commit": "23c0739ed11b",
+      "summary": "Run reviewed allocations25-27 and retain all outcomes before final preview and integration."
+    },
+    {
+      "commit": "23c0739ed11b",
+      "summary": "Run reviewed allocations25-27 and retain all outcomes before final preview and integration."
+    },
+    {
+      "commit": "debd58862209",
+      "summary": "Run exact reserved replay; sync the important task checkpoint without promoting dev/main."
+    },
+    {
+      "commit": "debd58862209",
+      "summary": "Run exact reserved replay; sync the important task checkpoint without promoting dev/main."
+    },
+    {
+      "commit": "a91076f9d683",
+      "summary": "Resolve owner message dispositions, complete fixed preview and final review before integration."
+    },
+    {
+      "commit": "55c9408eb42a",
+      "summary": "Run allocation29, review actual preview outputs and preserve the remaining promotion obligations."
+    },
+    {
+      "commit": "55c9408eb42a",
+      "summary": "Run allocation29, review actual preview outputs and preserve the remaining promotion obligations."
     }
   ],
   "highlights": [
+    {
+      "breaking": false,
+      "category": "Security",
+      "commit": "98b7b2dc86a3",
+      "subject": "fix(pack): bind installed effort to the owned normalizer",
+      "summary": "Prevent installed effort from loading project-owned core code."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "09afd31ce4be",
+      "subject": "docs(docs): prepare daily-use workflow amendment",
+      "summary": "capability-specific daily-use planning and restartable execution briefs."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "18c026dbfffc",
+      "subject": "fix(qualification): bind the actual new-host native prerequisite",
+      "summary": "explicit complete host/backend binding and bounded new-host preparation."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "8a473d9ceb30",
+      "subject": "chore(qualification): preserve the new-host terminal results",
+      "summary": "exact new-host qualification and review evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "7fbf8e11a63b",
+      "subject": "test(tasks): capture selected WorkUnit binding regressions",
+      "summary": "independent selected-task regression preparation."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "fc8a68b7884c",
+      "subject": "fix(tasks): keep selected WorkUnit identity through preparation",
+      "summary": "named task scope documentation and refusal regressions."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "238fa7bc4895",
+      "subject": "chore(tasks): retain task binding qualification evidence",
+      "summary": "exact repaired source and compatibility evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "36994f461850",
+      "subject": "chore(tasks): record exact task binding source acceptance",
+      "summary": "actual source acceptance and durable continuation state."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "00f1f428f21a",
+      "subject": "test(packaging): prepare exact derived export refresh checks",
+      "summary": "bounded current-source export refresh qualification preparation."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "015de64c9d11",
+      "subject": "fix(packaging): bind task imports under isolated managed Python",
+      "summary": "exact startup failure and bounded retry/replay amendment evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "3f956ce8d62a",
+      "subject": "chore(packaging): retain the current source export result",
+      "summary": "exact regenerated result and retained structural evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "c15adb159785",
+      "subject": "chore(packaging): prepare exact final export replay",
+      "summary": "frozen final replay preparation and accepted generated-result evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "8abd7186fa1e",
+      "subject": "chore(packaging): preserve byte-identical final export replay",
+      "summary": "final clean-source derived-export replay evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "cde9d5ad0111",
+      "subject": "test(workflows): prepare installed named-task qualification",
+      "summary": "admitted installed-workflow qualification plan and exact input identities."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "3aac28e6066c",
+      "subject": "test(workflows): prepare shipped binding consumer checks",
+      "summary": "bounded installed consumer candidate with complete command stream retention."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "665c8f700df3",
+      "subject": "test(workflows): preserve shipped pass and fix fixture report paths",
+      "summary": "preserved partial outcomes and bounded completed-test reuse."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "a90f1330b96d",
+      "subject": "test(workflows): preserve installed task workflow outcomes",
+      "summary": "exact installed task-binding fixture and continuation evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "77f06858ffab",
+      "subject": "docs(workflows): prepare native DiskEd selected export admission",
+      "summary": "native selected-export preparation with separately held effects."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "c38b043ef610",
+      "subject": "feat(workflows): prepare native export and pinned test wheels",
+      "summary": "native selected-export preparation; original default and non-authorizing semantics retained."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "126724bebf84",
+      "subject": "test(workflows): prepare offline native consumer qualification",
+      "summary": "held offline consumer effect with original assertions and actual counts."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "3caf98aae9c3",
+      "subject": "docs(workflows): close conserved native export qualification",
+      "summary": "accepted native fixture outcome with conserved original evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "753de2e3659b",
+      "subject": "docs(roadmap): refine useful extensibility and the next task view",
+      "summary": "prospective delivery refinements and a bounded current-view brief."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "cd7b1bcf2013",
+      "subject": "docs(workflows): admit the bounded current task view",
+      "summary": "admitted current-view child preparation packet."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "c7ea89dcd692",
+      "subject": "feat(tasks): explain current outcomes and next actions",
+      "summary": "named read-only task observations and structured output."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "2ef8ad51a56a",
+      "subject": "docs(tasks): close current view and admit portable Git defaults",
+      "summary": "qualified named task observations and explicit evidence uncertainty."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "7cd6d657eaa1",
+      "subject": "feat(git): make safe frequent integration a portable default",
+      "summary": "New project policy defaults and report-only project-aware protection advice."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "39df07cbee63",
+      "subject": "test(git): qualify portable defaults and preserve project choices",
+      "summary": "bounded fresh adoption and project-protection update qualification recipe."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "c02228d0a34c",
+      "subject": "docs(git): close portable default and installed consumer evidence",
+      "summary": "portable default integration cadence and local task-branch policy."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "89882a810f89",
+      "subject": "test(disked): prepare native owner adoption metadata",
+      "summary": "native adoption preparation and exact held effects."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "9605d8e333a1",
+      "subject": "docs(disked): retain qualified native adoption checkpoint",
+      "summary": "resumable native-owner adoption candidate and evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "bc47743e3ce5",
+      "subject": "feat(runtime): record cooperative dependency requests and replies",
+      "summary": "Development candidate: cooperative local dependency request/reply and continuation interface. Published Lite assets are unchanged."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "1435659b220b",
+      "subject": "chore(packaging): qualify local requests and prepare pack closure",
+      "summary": "cooperative local request qualification and affected pack closure recipe."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "8f93cb7e021a",
+      "subject": "feat(runtime): qualify cooperative requests and refresh portable state",
+      "summary": "qualified cooperative dependency request recording and documented continuation boundaries."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "3d7899130501",
+      "subject": "feat(runtime): expose cooperative dependency tools over stdio",
+      "summary": "Development candidate for cooperative inbox, status, submit and observation tools. Published Lite assets remain unchanged."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "5fa78ca78afb",
+      "subject": "feat(quality): explain recorded ownership checks and reuse candidates",
+      "summary": "quality explain-file --json with explicit unverified freshness and heuristic coverage."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "1a3428129699",
+      "subject": "test(quality): qualify exported discovery and prepare promotion",
+      "summary": "exported quality explain-file --json with bounded output and explicit evidence limits."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "82d771463a12",
+      "subject": "feat(effort): observe pinned work attempts and accounting gaps",
+      "summary": "job effort supplied-attempt view with explicit incomplete accounting."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "7d2c41f73357",
+      "subject": "test(effort): qualify source and portable effort observations",
+      "summary": "qualified portable job effort reporting for explicit supplied work sets."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "716ec1fd0ad6",
+      "subject": "docs(effort): close qualified observation increment for integration",
+      "summary": "evidence-qualified supplied-work effort view in the development Lite pack."
+    },
     {
       "breaking": false,
       "category": "Added",
       "commit": "d43b3298677e",
       "subject": "feat(release): prepare successors without replacing published assets",
       "summary": "source-maintainer successor declaration with historical preservation and refusal checks."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "4f2c39606378",
+      "subject": "feat(release): qualify successor preparation for shared development",
+      "summary": "bounded successor preparation preserving historical stable assets and mandatory CLI forms."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "70a7f68e83fd",
+      "subject": "chore(release): record published Lite 1.0.0 and verified acquisition",
+      "summary": "Published AIDE Lite 1.0.0 for the qualified T3 local Windows CLI profile and verified actual acquisition."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "2532954659d7",
+      "subject": "chore(host): record updated Codex configuration qualification",
+      "summary": "Record Codex0.162.0-alpha.2 configuration decoding after the VS Code extension update."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "f66f9c5b9bb3",
+      "subject": "fix(qualification): preserve strict MXC unavailability",
+      "summary": "Qualification diagnostics preserve unsupported native execution and distinguish it from a supported ordinary workflow."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "b064080358c0",
+      "subject": "fix(qualification): bind MXC refusal to actual user executor",
+      "summary": "Native qualification now distinguishes the actual interactive executor from the earlier restricted supervisor."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "6f2abc4cd69e",
+      "subject": "docs(plans): reconcile owner development machine allocation",
+      "summary": "Active campaign routing follows the owner's allocation while preserving machine-specific evidence and remaining gates."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "09afd31ce4be",
+      "subject": "docs(docs): prepare daily-use workflow amendment",
+      "summary": "current release explanation identifies the published local Windows Lite profile."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "3f956ce8d62a",
+      "subject": "chore(packaging): retain the current source export result",
+      "summary": "derived Lite export now corresponds to accepted current source."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "648116f660e9",
+      "subject": "chore(packaging): close accepted derived export qualification",
+      "summary": "current derived-export task is closed against accepted exact evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "207553d8815f",
+      "subject": "chore(workflows): close accepted installed fixture qualification",
+      "summary": "installed fixture task closes against exact accepted outcomes."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "2ef8ad51a56a",
+      "subject": "docs(tasks): close current view and admit portable Git defaults",
+      "summary": "next bounded priority is portable Git defaults and reviewed integration."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "88fa0008c567",
+      "subject": "chore(git): conserve exported defaults and resume remaining checks",
+      "summary": "development export includes tested current-task view and Git defaults."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "7f42f88df495",
+      "subject": "docs(git): preserve consumer failure and admit its narrow repair",
+      "summary": "portable Git defaults carry explicit qualification and integration status."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "c627b2f0bd00",
+      "subject": "test(changelog): conserve export and isolate remaining checks",
+      "summary": "development payload contains the qualified installed-changelog source."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "fe61501b7673",
+      "subject": "docs(git): record accepted dev and main integration",
+      "summary": "current integration status now identifies the observed result."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "730d43f3e492",
+      "subject": "chore(pack): prepare exact dependency interface provenance closure",
+      "summary": "Development evidence records local stdio qualification and a bounded metadata closure. No new public release or live worker delivery."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "8513f7f572ed",
+      "subject": "chore(runtime): retain qualification and prepare promotion preview",
+      "summary": "Qualified cooperative stdio source and unchanged Lite payload evidence are retained; main promotion requires a current reviewed preview. Published Lite1.0.0 remains unchanged."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "2194eb6b73ac",
+      "subject": "chore(runtime): close qualified dependency interface evidence",
+      "summary": "Complete evidence for the qualified local cooperative dependency interface. Published Lite1.0.0 assets remain unchanged."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "b7eb79cfe3f3",
+      "subject": "chore(runtime): prepare one actual cooperative review exchange",
+      "summary": "Prepare an actual cooperative readiness review with separate participant receipt, answer and sender adoption."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "27240f31db86",
+      "subject": "docs(runtime): retain actual cooperative review and sender adoption",
+      "summary": "Record one real cooperative answer exchange and its installed-host connection prerequisite."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "33a377743d86",
+      "subject": "docs(runtime): close cooperative review qualification and preview",
+      "summary": "Retain completed cooperative review and current source promotion evidence; published Lite remains unchanged."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "35a3a9035abc",
+      "subject": "test(quality): retain source checks and prepare portable qualification",
+      "summary": "quality discovery source evidence and portable qualification preparation."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "239558e8a9ed",
+      "subject": "docs(quality): close discovery qualification and promotion evidence",
+      "summary": "quality discovery qualification and source-promotion evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "f2543d317caf",
+      "subject": "feat(review): connect bounded engineering guidance to review packets",
+      "summary": "shared review guidance and packet discovery with missing-reference warnings."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "e191b8a4c6cf",
+      "subject": "test(review): retain source outcomes and prepare delivered checks",
+      "summary": "engineering-review qualification evidence and portable delivery preparation."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "5ee93ea7306a",
+      "subject": "test(review): preserve delivered self-test failure before repair",
+      "summary": "original delivered failure and fixture-portability repair scope evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "f0bef95b14a3",
+      "subject": "test(review): retain delivered ledger failure and repair scope",
+      "summary": "preserve delivered fixture-ledger failure and correction scope."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "816922b65252",
+      "subject": "test(review): qualify portable guidance and prepare promotion preview",
+      "summary": "qualified portable engineering review guidance and independent fixture evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "a0970badeca5",
+      "subject": "docs(review): close qualified review increment for integration",
+      "summary": "qualified engineering-review guidance, portable fixture checks and integration evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "1cd847805188",
+      "subject": "test(task): qualify selected-task continuation and preserved effects",
+      "summary": "selected-task continuation now has source qualification evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "33ec403f0e4f",
+      "subject": "docs(task): close qualified continuation advice for integration",
+      "summary": "qualified continuation advice and portable delivery have complete source and consumer evidence."
     },
     {
       "breaking": false,
@@ -43,9 +1033,219 @@
     {
       "breaking": false,
       "category": "Fixed",
+      "commit": "09afd31ce4be",
+      "subject": "docs(docs): prepare daily-use workflow amendment",
+      "summary": "incomplete current task metadata and explicitly refreshed stale bindings."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "18c026dbfffc",
+      "subject": "fix(qualification): bind the actual new-host native prerequisite",
+      "summary": "task-local Windows native prerequisite command syntax."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "fc8a68b7884c",
+      "subject": "fix(tasks): keep selected WorkUnit identity through preparation",
+      "summary": "selected task identity in compact preparation and changed-file scope verification."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "0a91084f3822",
+      "subject": "chore(tasks): refresh the tested helper evidence binding",
+      "summary": "stale derived source binding for the task preparation helper."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "f8bb46ebe759",
+      "subject": "fix(packaging): preserve unknown asset state on early failure",
+      "summary": "premature unchanged-asset claim in failed export records."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "015de64c9d11",
+      "subject": "fix(packaging): bind task imports under isolated managed Python",
+      "summary": "isolated wrapper sibling module loading."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "95707b375f35",
+      "subject": "test(workflows): correct installed scope refusal oracles",
+      "summary": "proposed installed fixture refusal oracles and bounded contract precision."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "665c8f700df3",
+      "subject": "test(workflows): preserve shipped pass and fix fixture report paths",
+      "summary": "proposed fixture verification-report destinations."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "9ce7d46d4333",
+      "subject": "test(workflows): conserve completed native tests for final recovery",
+      "summary": "task-local count accounting with conserved original native outcomes."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "0f6182d63f00",
+      "subject": "test(tasks): exercise current view through the CLI entry point",
+      "summary": "task-local qualification entry-point setup."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "39df07cbee63",
+      "subject": "test(git): qualify portable defaults and preserve project choices",
+      "summary": "report-writing test invocation follows the existing explicit command flag."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "88fa0008c567",
+      "subject": "chore(git): conserve exported defaults and resume remaining checks",
+      "summary": "stale capability evidence refreshed against actual source inputs."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "f4f3474dd058",
+      "subject": "fix(changelog): recognize installed projects with their own queue",
+      "summary": "installed project queues no longer imply source-checkout identity for changelog previews."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "bbb153e26108",
+      "subject": "test(changelog): qualify source and prepare portable consumers",
+      "summary": "source qualification confirms changelog works after target queue creation."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "c02228d0a34c",
+      "subject": "docs(git): close portable default and installed consumer evidence",
+      "summary": "installed project queues can generate changelog previews without source admission confusion."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "ac0ca3a94a53",
+      "subject": "fix(disked): preserve pinned Git installer link identity",
+      "summary": "task-local preparation no longer rejects the pinned installer layout."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "cf293cb02194",
+      "subject": "fix(runtime): preserve state during dependency request refusal",
+      "summary": "dependency refusal preflight and fixture database cleanup."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "8f93cb7e021a",
+      "subject": "feat(runtime): qualify cooperative requests and refresh portable state",
+      "summary": "delivered state inspection support and refusal preflight behavior, with original failures preserved."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "ca7bd44a69ff",
+      "subject": "fix(review): preserve portable self-test fixture prerequisites",
+      "summary": "portable self-test fixture initialization for missing source-only inputs."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "8f8406558c3a",
+      "subject": "fix(review): measure self-test ledger from fixture artifacts",
+      "summary": "self-test ledger measurements now come from its own fixture."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "7c2aec4949cc",
+      "subject": "fix(effort): use valid session identity in overlap fixture",
+      "summary": "supplied-usage overlap regression fixture identity."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "3625acf79209",
+      "subject": "fix(task): derive continuation advice from the selected WorkUnit",
+      "summary": "task resume-plan no longer declares execution safe or recommends blanket reruns."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "b5827566fbe2",
+      "subject": "fix(pack): deliver qualified selected-task continuation advice",
+      "summary": "portable task resume-plan preserves selected task state without claiming execution readiness."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
       "commit": "5fa02af5d4ca",
       "subject": "test(release): bind successor fixtures to refreshed clean packs",
       "summary": "synthetic successor cases now supply a clean current source pack."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "b46448f2fa4c",
+      "subject": "docs(release): preserve commit-check failures and block promotion",
+      "summary": "Preserve the qualification commit-check failures and correct reporting."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "80897d75ea3a",
+      "subject": "test(pack): retain delivered failures and check the actual pack",
+      "summary": "Deliver accounting under the AIDE-owned script path."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "eaba809b7513",
+      "subject": "test(lite): preserve consumer passes and qualify actual recovery",
+      "summary": "State actual predecessor recovery limits without weakening supported behavior."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "23c0739ed11b",
+      "subject": "test(lite): correct actual predecessor optional-file fixture",
+      "summary": "Preserve failed qualification evidence and remaining recovery obligations."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "debd58862209",
+      "subject": "test(lite): retain predecessor passes and declare replay reservation",
+      "summary": "Record precise rollback limits and preserve the failed replay declaration."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "a91076f9d683",
+      "subject": "docs(lite): close consumer and archive replay evidence",
+      "summary": "Record completed consumer/replay qualification and precise remaining release gates."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "55c9408eb42a",
+      "subject": "test(lite): prepare complete preview with unresolved history visible",
+      "summary": "Separate draft preparation from promotion approval and reconcile current task state."
     },
     {
       "breaking": false,
@@ -67,10 +1267,513 @@
       "commit": "2b489c5e6c48",
       "subject": "test(release): preserve partial delivery and bound final qualification",
       "summary": "preserve partial qualification and avoid repeating completed checks."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "4f2c39606378",
+      "subject": "feat(release): qualify successor preparation for shared development",
+      "summary": "qualify source and development delivery with exact evidence reuse after interruption."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "b46448f2fa4c",
+      "subject": "docs(release): preserve commit-check failures and block promotion",
+      "summary": "Retain original eight consumer passes without inferring release readiness."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "b4613f2d7e33",
+      "subject": "test(release): prepare all additive delivered CLI consumers",
+      "summary": "Prepare all18 additive delivered CLI forms with refusal and state checks."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "26984567aaad",
+      "subject": "docs(release): preserve installed effort failure and admit repair",
+      "summary": "Preserve the installed effort failure and its affected-check repair plan."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "98b7b2dc86a3",
+      "subject": "fix(pack): bind installed effort to the owned normalizer",
+      "summary": "Add actual safe-install preservation and missing-dependency regressions."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "447e393b3f87",
+      "subject": "test(pack): qualify source repair and prepare owned export",
+      "summary": "Record safe-installed and extracted accounting repair evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "80897d75ea3a",
+      "subject": "test(pack): retain delivered failures and check the actual pack",
+      "summary": "Preserve evidence boundaries and prepare direct installed qualification."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "c5b1a2bf7181",
+      "subject": "build(lite): qualify the repaired pack and prepare replacement archives",
+      "summary": "Bind the repaired installed-pack regression to actual delivered files."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "a4b5d25f64b9",
+      "subject": "test(lite): retain repaired archives and bind consumer qualification",
+      "summary": "Bind original and additional consumer checks to replacement identities."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "eaba809b7513",
+      "subject": "test(lite): preserve consumer passes and qualify actual recovery",
+      "summary": "Qualify the replacement archives across the original and additional CLI forms."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "23c0739ed11b",
+      "subject": "test(lite): correct actual predecessor optional-file fixture",
+      "summary": "Exercise disabled optional-file ownership with a real shipped member."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "debd58862209",
+      "subject": "test(lite): retain predecessor passes and declare replay reservation",
+      "summary": "Qualify actual published1.0-to1.1 upgrade and supported recovery."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "55c9408eb42a",
+      "subject": "test(lite): prepare complete preview with unresolved history visible",
+      "summary": "Prepare complete deterministic preview with unresolved historical records retained."
     }
   ],
   "preview_only": true,
   "risk_summary": [
+    {
+      "commit": "70a7f68e83fd",
+      "summary": "Outer shell/editor/plugin routes remain unrestricted; read isolation and whole-outcome efficiency remain unqualified."
+    },
+    {
+      "commit": "2532954659d7",
+      "summary": "Configuration PASS proves no native read/write enforcement or actual model editing; current outer tools remain unrestricted."
+    },
+    {
+      "commit": "f66f9c5b9bb3",
+      "summary": "No native access witnesses, actual model editing, account isolation or unrestricted outer containment are qualified."
+    },
+    {
+      "commit": "b064080358c0",
+      "summary": "Native access witnesses, ordinary model editing, account isolation and unrestricted outer tools remain unqualified."
+    },
+    {
+      "commit": "6f2abc4cd69e",
+      "summary": "The new machine's identity, access, hardware, paths, budgets, tools and model capabilities are unverified."
+    },
+    {
+      "commit": "09afd31ce4be",
+      "summary": "Independent review is pending. The new host has no configured execution pools."
+    },
+    {
+      "commit": "09afd31ce4be",
+      "summary": "Independent review is pending. The new host has no configured execution pools."
+    },
+    {
+      "commit": "09afd31ce4be",
+      "summary": "Independent review is pending. The new host has no configured execution pools."
+    },
+    {
+      "commit": "922173c83e13",
+      "summary": "The whole active goal is incomplete; no runtime, target or release claim follows."
+    },
+    {
+      "commit": "922173c83e13",
+      "summary": "The whole active goal is incomplete; no runtime, target or release claim follows."
+    },
+    {
+      "commit": "bde3d7103b70",
+      "summary": "All three review notes are nonblocking for this source subject and explicitly disposed."
+    },
+    {
+      "commit": "bde3d7103b70",
+      "summary": "All three review notes are nonblocking for this source subject and explicitly disposed."
+    },
+    {
+      "commit": "18c026dbfffc",
+      "summary": "Setup, source tests and native effects need exact independent review and fresh admission."
+    },
+    {
+      "commit": "18c026dbfffc",
+      "summary": "Setup, source tests and native effects need exact independent review and fresh admission."
+    },
+    {
+      "commit": "18c026dbfffc",
+      "summary": "Setup, source tests and native effects need exact independent review and fresh admission."
+    },
+    {
+      "commit": "8a473d9ceb30",
+      "summary": "Earlier unintended default attempt persistent effects remain unknown and unowned."
+    },
+    {
+      "commit": "8a473d9ceb30",
+      "summary": "Earlier unintended default attempt persistent effects remain unknown and unowned."
+    },
+    {
+      "commit": "7fbf8e11a63b",
+      "summary": "No protected filesystem or model route claim follows from trusted tests."
+    },
+    {
+      "commit": "7fbf8e11a63b",
+      "summary": "No protected filesystem or model route claim follows from trusted tests."
+    },
+    {
+      "commit": "fc8a68b7884c",
+      "summary": "Legacy generic fallback is retained only for compatibility and conveys no authority."
+    },
+    {
+      "commit": "fc8a68b7884c",
+      "summary": "Legacy generic fallback is retained only for compatibility and conveys no authority."
+    },
+    {
+      "commit": "238fa7bc4895",
+      "summary": "No whole-task savings, protected/model route or new release claim."
+    },
+    {
+      "commit": "238fa7bc4895",
+      "summary": "No whole-task savings, protected/model route or new release claim."
+    },
+    {
+      "commit": "0a91084f3822",
+      "summary": "No source test replay or change to the provenance assertions."
+    },
+    {
+      "commit": "0a91084f3822",
+      "summary": "No source test replay or change to the provenance assertions."
+    },
+    {
+      "commit": "36994f461850",
+      "summary": "No publication, protected/model route or whole-task savings claim."
+    },
+    {
+      "commit": "36994f461850",
+      "summary": "No publication, protected/model route or whole-task savings claim."
+    },
+    {
+      "commit": "00f1f428f21a",
+      "summary": "Trusted source coordination is required; no malicious-writer or model containment claim."
+    },
+    {
+      "commit": "00f1f428f21a",
+      "summary": "Trusted source coordination is required; no malicious-writer or model containment claim."
+    },
+    {
+      "commit": "f8bb46ebe759",
+      "summary": "No generated export or released byte was changed by this correction."
+    },
+    {
+      "commit": "f8bb46ebe759",
+      "summary": "No generated export or released byte was changed by this correction."
+    },
+    {
+      "commit": "015de64c9d11",
+      "summary": "Attempt-budget amendment is pending review; no reset or reserve change was performed."
+    },
+    {
+      "commit": "015de64c9d11",
+      "summary": "Attempt-budget amendment is pending review; no reset or reserve change was performed."
+    },
+    {
+      "commit": "3f956ce8d62a",
+      "summary": "Generated-result review must precede this commit; replay and consumers remain separate."
+    },
+    {
+      "commit": "3f956ce8d62a",
+      "summary": "Generated-result review must precede this commit; replay and consumers remain separate."
+    },
+    {
+      "commit": "c15adb159785",
+      "summary": "Attempt3of3 is final; failure requires separately admitted repair and no automatic retry."
+    },
+    {
+      "commit": "8abd7186fa1e",
+      "summary": "Exact outcome acceptance remains required; no further attempts are allowed."
+    },
+    {
+      "commit": "648116f660e9",
+      "summary": "This status cannot be used as installed, downstream, integration or release proof."
+    },
+    {
+      "commit": "cde9d5ad0111",
+      "summary": "Exact source/effect review precedes at most two scratch-only jobs."
+    },
+    {
+      "commit": "3aac28e6066c",
+      "summary": "Exact source/effect review remains mandatory before any consumer job."
+    },
+    {
+      "commit": "95707b375f35",
+      "summary": "Structural preparation does not prove runtime outcome or containment."
+    },
+    {
+      "commit": "665c8f700df3",
+      "summary": "Final attempt2of2 requires exact independent repair/effect and actual reuse-evidence review."
+    },
+    {
+      "commit": "665c8f700df3",
+      "summary": "Final attempt2of2 requires exact independent repair/effect and actual reuse-evidence review."
+    },
+    {
+      "commit": "a90f1330b96d",
+      "summary": "Terminal outcome acceptance remains; both attempts spent and no more retries authorised."
+    },
+    {
+      "commit": "207553d8815f",
+      "summary": "No new target grant, containment, whole efficiency or release qualification is inferred."
+    },
+    {
+      "commit": "77f06858ffab",
+      "summary": "Neither compiled intent nor public metadata grants execution or target acceptance."
+    },
+    {
+      "commit": "c38b043ef610",
+      "summary": "Source postimages are proposed only. Acquisition executes no package or target code."
+    },
+    {
+      "commit": "126724bebf84",
+      "summary": "Original conditional symlink-unavailability cases remain explicit gaps if skipped."
+    },
+    {
+      "commit": "9ce7d46d4333",
+      "summary": "Two original symlink tests remain unavailable; no filesystem qualification claimed."
+    },
+    {
+      "commit": "3caf98aae9c3",
+      "summary": "Two original environment-dependent checks remain unavailable."
+    },
+    {
+      "commit": "753de2e3659b",
+      "summary": "Planning acceptance is not implementation admission or proof of capability."
+    },
+    {
+      "commit": "cd7b1bcf2013",
+      "summary": "Source acceptance and each managed effect retain exact review gates."
+    },
+    {
+      "commit": "c7ea89dcd692",
+      "summary": "Observation is not evidence acceptance or whole-client containment."
+    },
+    {
+      "commit": "0f6182d63f00",
+      "summary": "This checkpoint is not final source qualification or distribution acceptance."
+    },
+    {
+      "commit": "2ef8ad51a56a",
+      "summary": "Source qualification does not update a shipped package or prove target adoption."
+    },
+    {
+      "commit": "2ef8ad51a56a",
+      "summary": "Source qualification does not update a shipped package or prove target adoption."
+    },
+    {
+      "commit": "7cd6d657eaa1",
+      "summary": "No remote protection is changed. Unsupported policy boolean forms remain unknown."
+    },
+    {
+      "commit": "39df07cbee63",
+      "summary": "Stale export still blocks integration until the reviewed job succeeds."
+    },
+    {
+      "commit": "39df07cbee63",
+      "summary": "Stale export still blocks integration until the reviewed job succeeds."
+    },
+    {
+      "commit": "88fa0008c567",
+      "summary": "Development export is not a new published release. Final consumer evidence is pending."
+    },
+    {
+      "commit": "88fa0008c567",
+      "summary": "Development export is not a new published release. Final consumer evidence is pending."
+    },
+    {
+      "commit": "7f42f88df495",
+      "summary": "Dev sharing is a classified repairable checkpoint; main and distribution acceptance remain pending."
+    },
+    {
+      "commit": "f4f3474dd058",
+      "summary": "Receipt identity is local consistency, not whole-host isolation."
+    },
+    {
+      "commit": "bbb153e26108",
+      "summary": "The next job is the second and final admitted allocation. No automatic retry."
+    },
+    {
+      "commit": "c627b2f0bd00",
+      "summary": "Original two-job ceiling is exhausted; only exact review of the explicit amendment can authorize continuation."
+    },
+    {
+      "commit": "c02228d0a34c",
+      "summary": "No new release or wider platform qualification; live target adoption and outer containment remain separate."
+    },
+    {
+      "commit": "c02228d0a34c",
+      "summary": "No new release or wider platform qualification; live target adoption and outer containment remain separate."
+    },
+    {
+      "commit": "fe61501b7673",
+      "summary": "No new release, live target adoption or whole-session containment claim."
+    },
+    {
+      "commit": "89882a810f89",
+      "summary": "Native writer ownership remains unresolved; no target mutation is authorized."
+    },
+    {
+      "commit": "ac0ca3a94a53",
+      "summary": "Maximum remains two jobs; actual target validation requires a later admission."
+    },
+    {
+      "commit": "9605d8e333a1",
+      "summary": "Native writer ownership is unresolved; actual adoption remains incomplete."
+    },
+    {
+      "commit": "bc47743e3ce5",
+      "summary": "Local binding declarations are not authentication or process ownership. Recorded claims are not independent verification. Cancellation, binding replacement, actual host delivery and downstream adoption remain unqualified."
+    },
+    {
+      "commit": "cf293cb02194",
+      "summary": "Snapshot preflight is not operational truth; concurrent initialization may conservatively refuse."
+    },
+    {
+      "commit": "1435659b220b",
+      "summary": "This is a cooperative local interface, not automatic host delivery or authentication."
+    },
+    {
+      "commit": "8f93cb7e021a",
+      "summary": "Cooperative records do not authenticate peers or enforce outer-client containment."
+    },
+    {
+      "commit": "8f93cb7e021a",
+      "summary": "Cooperative records do not authenticate peers or enforce outer-client containment."
+    },
+    {
+      "commit": "3d7899130501",
+      "summary": "Bindings are cooperative declarations. Protocol fixtures do not establish installed-client compatibility, automatic wake-up, actual peer delivery or independent verification of reported claims."
+    },
+    {
+      "commit": "730d43f3e492",
+      "summary": "The second allocation is finite and cannot silently accept payload changes. Native client compatibility and actual delivery remain unqualified."
+    },
+    {
+      "commit": "8513f7f572ed",
+      "summary": "Actual existing-worker delivery, installed-client compatibility and downstream adoption remain unqualified. New preview allocation does not reopen runtime/export testing or grant live effects."
+    },
+    {
+      "commit": "2194eb6b73ac",
+      "summary": "Actual installed-worker delivery, client compatibility and native downstream adoption remain open. Participant binding does not confer authentication, isolation or new execution authority."
+    },
+    {
+      "commit": "b7eb79cfe3f3",
+      "summary": "Cooperative bindings do not authenticate processes or enforce isolation. Automatic desktop delivery and target ownership remain unqualified; controller/reviewer usage is unknown."
+    },
+    {
+      "commit": "27240f31db86",
+      "summary": "Cooperative attribution is not desktop delivery, authentication or containment. Controller/reviewer usage remains unknown. Original guard and stale-binding failures remain preserved."
+    },
+    {
+      "commit": "33a377743d86",
+      "summary": "Installed desktop connection, native DiskEd ownership/adoption and whole-outcome efficiency remain open. Source promotion does not certify them."
+    },
+    {
+      "commit": "5fa78ca78afb",
+      "summary": "Source revision is attribution only; similarity does not prove semantic equivalence or safe extraction."
+    },
+    {
+      "commit": "35a3a9035abc",
+      "summary": "Unknown freshness and heuristic coverage remain explicit. Source acceptance is not release or native-host qualification."
+    },
+    {
+      "commit": "1a3428129699",
+      "summary": "No semantic completeness,current-byte freshness,live host delivery or new release qualification is implied."
+    },
+    {
+      "commit": "239558e8a9ed",
+      "summary": "Freshness remains unverified and relationship coverage heuristic. Desktop delivery,DiskEd adoption and public release changes remain outside this increment."
+    },
+    {
+      "commit": "f2543d317caf",
+      "summary": "Guidance does not enforce isolation or establish comparative review quality or savings."
+    },
+    {
+      "commit": "e191b8a4c6cf",
+      "summary": "No comparative quality, complete usage or protected-host claim follows; public1.0.0 unchanged."
+    },
+    {
+      "commit": "5ee93ea7306a",
+      "summary": "Export is unqualified; dev/main remain unchanged. No retry or acceptance is implied by this checkpoint."
+    },
+    {
+      "commit": "ca7bd44a69ff",
+      "summary": "Repair remains unqualified until the managed job passes; public Lite 1.0.0 is unchanged."
+    },
+    {
+      "commit": "f0bef95b14a3",
+      "summary": "Development export remains unqualified; published Lite 1.0.0 and dev/main are unchanged."
+    },
+    {
+      "commit": "8f8406558c3a",
+      "summary": "Development export remains unqualified until the actual delivered checks pass."
+    },
+    {
+      "commit": "816922b65252",
+      "summary": "Desktop-host delivery and native downstream adoption remain separate unresolved prerequisites."
+    },
+    {
+      "commit": "a0970badeca5",
+      "summary": "Original delivered failures remain preserved; complete controller/reviewer usage remains unknown."
+    },
+    {
+      "commit": "82d771463a12",
+      "summary": "Source is a candidate; whole-work usage, cost and accepted-outcome time remain unknown."
+    },
+    {
+      "commit": "7c2aec4949cc",
+      "summary": "Actual portable behavior remains unqualified until this attempt passes."
+    },
+    {
+      "commit": "7d2c41f73357",
+      "summary": "Partial observations do not establish cost savings or task acceptance."
+    },
+    {
+      "commit": "716ec1fd0ad6",
+      "summary": "Whole-work costs and accepted-outcome timing remain unknown."
+    },
+    {
+      "commit": "3625acf79209",
+      "summary": "Advice cannot establish live ownership, admission, effects or evidence applicability."
+    },
+    {
+      "commit": "1cd847805188",
+      "summary": "Live worker recovery, installed-host delivery and native consumer ownership remain separate."
+    },
+    {
+      "commit": "b5827566fbe2",
+      "summary": "Published Lite1.0.0 assets are unchanged; this is the development pack."
+    },
+    {
+      "commit": "33ec403f0e4f",
+      "summary": "Execution readiness, actual host recovery, native adoption and whole-outcome efficiency remain unqualified."
+    },
     {
       "commit": "d43b3298677e",
       "summary": "Candidate declarations and synthetic tests do not prove actual upgrade compatibility."
@@ -94,12 +1797,512 @@
     {
       "commit": "2b489c5e6c48",
       "summary": "No ninth job or resource-limit change is admitted."
+    },
+    {
+      "commit": "4f2c39606378",
+      "summary": "Proposed 1.1.0 remains a candidate contract; public Lite 1.0.0 is unchanged."
+    },
+    {
+      "commit": "4f2c39606378",
+      "summary": "Proposed 1.1.0 remains a candidate contract; public Lite 1.0.0 is unchanged."
+    },
+    {
+      "commit": "b46448f2fa4c",
+      "summary": "Range and changelog metadata gates remain unresolved; dev/main stay unchanged."
+    },
+    {
+      "commit": "b46448f2fa4c",
+      "summary": "Range and changelog metadata gates remain unresolved; dev/main stay unchanged."
+    },
+    {
+      "commit": "b4613f2d7e33",
+      "summary": "Synthetic usage fixtures do not establish whole-task savings or model cost."
+    },
+    {
+      "commit": "26984567aaad",
+      "summary": "Candidate remains unqualified; three historical message failures remain unresolved."
+    },
+    {
+      "commit": "98b7b2dc86a3",
+      "summary": "Replacement pack and archives remain unbuilt and unqualified; historical failures retained."
+    },
+    {
+      "commit": "98b7b2dc86a3",
+      "summary": "Replacement pack and archives remain unbuilt and unqualified; historical failures retained."
+    },
+    {
+      "commit": "447e393b3f87",
+      "summary": "Original candidate remains unqualified; three historical message failures unresolved."
+    },
+    {
+      "commit": "80897d75ea3a",
+      "summary": "The generated pack is not complete release qualification; existing archives remain unchanged."
+    },
+    {
+      "commit": "80897d75ea3a",
+      "summary": "The generated pack is not complete release qualification; existing archives remain unchanged."
+    },
+    {
+      "commit": "c5b1a2bf7181",
+      "summary": "Public 1.0.0 is unchanged; new archives require their own consumer qualification."
+    },
+    {
+      "commit": "a4b5d25f64b9",
+      "summary": "The candidate is unpublished and lacks complete consumer qualification."
+    },
+    {
+      "commit": "eaba809b7513",
+      "summary": "Overlay downgrade remains manual reconciliation; automatic path-set rollback is unsupported."
+    },
+    {
+      "commit": "eaba809b7513",
+      "summary": "Overlay downgrade remains manual reconciliation; automatic path-set rollback is unsupported."
+    },
+    {
+      "commit": "23c0739ed11b",
+      "summary": "Corrected predecessor and final recovery/replay still require execution."
+    },
+    {
+      "commit": "23c0739ed11b",
+      "summary": "Corrected predecessor and final recovery/replay still require execution."
+    },
+    {
+      "commit": "debd58862209",
+      "summary": "Final replay, fixed preview, historical owner dispositions and release gates remain open."
+    },
+    {
+      "commit": "debd58862209",
+      "summary": "Final replay, fixed preview, historical owner dispositions and release gates remain open."
+    },
+    {
+      "commit": "a91076f9d683",
+      "summary": "Candidate1.1.0 remains unpublished and is not promoted to dev/main by this checkpoint."
+    },
+    {
+      "commit": "55c9408eb42a",
+      "summary": "Historical owner dispositions and final release gates remain unresolved."
+    },
+    {
+      "commit": "55c9408eb42a",
+      "summary": "Historical owner dispositions and final release gates remain unresolved."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "2b489c5e6c487ed4690533121e3cb51b496567b1",
-  "source_range": "33ec403f0e4f17af919aa5685855f57760619e7e..2b489c5e6c487ed4690533121e3cb51b496567b1",
+  "source_head": "55c9408eb42a9ad7abecb8477911648e8998ce53",
+  "source_range": "0f293eb6a99dbd444bfa35016007b13451c49275..55c9408eb42a9ad7abecb8477911648e8998ce53",
   "validation_summary": [
+    {
+      "commit": "70a7f68e83fd",
+      "summary": "PASS: Strict exact release ACCEPT preceded one ordinary tag push and one publication; all four downloaded hashes match."
+    },
+    {
+      "commit": "2532954659d7",
+      "summary": "PASS: Managed job8d3b444f: native/backend exit0, exact security configuration decoded, nine full files22,072B collected, scratch and reservation retired."
+    },
+    {
+      "commit": "f66f9c5b9bb3",
+      "summary": "PASS: five pure refusal classification tests; no host or model invocation by these tests."
+    },
+    {
+      "commit": "b064080358c0",
+      "summary": "PASS: five affected pure classifier tests; structural Harness, UTF-8, AST, scope and diff checks."
+    },
+    {
+      "commit": "6f2abc4cd69e",
+      "summary": "PASS: structural Harness validation, UTF-8, JSON meaning/scope and diff checks; full YAML schema checking remains unavailable."
+    },
+    {
+      "commit": "09afd31ce4be",
+      "summary": "Doctor and validate exit zero after preserving the original fourteen failures."
+    },
+    {
+      "commit": "09afd31ce4be",
+      "summary": "Doctor and validate exit zero after preserving the original fourteen failures."
+    },
+    {
+      "commit": "09afd31ce4be",
+      "summary": "Doctor and validate exit zero after preserving the original fourteen failures."
+    },
+    {
+      "commit": "922173c83e13",
+      "summary": "PASS: previous doctor/validate, typed-plan, Harness and exact-child-scope checks."
+    },
+    {
+      "commit": "922173c83e13",
+      "summary": "PASS: previous doctor/validate, typed-plan, Harness and exact-child-scope checks."
+    },
+    {
+      "commit": "bde3d7103b70",
+      "summary": "PASS: independent full-range scope, fourteen added links and retained receipt hashes."
+    },
+    {
+      "commit": "bde3d7103b70",
+      "summary": "PASS: independent full-range scope, fourteen added links and retained receipt hashes."
+    },
+    {
+      "commit": "18c026dbfffc",
+      "summary": "PASS: AST parsing of the three task-local Python files and diff preparation."
+    },
+    {
+      "commit": "18c026dbfffc",
+      "summary": "PASS: AST parsing of the three task-local Python files and diff preparation."
+    },
+    {
+      "commit": "18c026dbfffc",
+      "summary": "PASS: AST parsing of the three task-local Python files and diff preparation."
+    },
+    {
+      "commit": "8a473d9ceb30",
+      "summary": "PASS: eight source checks with zero failures/errors/skips."
+    },
+    {
+      "commit": "8a473d9ceb30",
+      "summary": "PASS: eight source checks with zero failures/errors/skips."
+    },
+    {
+      "commit": "7fbf8e11a63b",
+      "summary": "PASS: independent admission accepts exact scope and at most three ordinary test jobs."
+    },
+    {
+      "commit": "7fbf8e11a63b",
+      "summary": "PASS: independent admission accepts exact scope and at most three ordinary test jobs."
+    },
+    {
+      "commit": "fc8a68b7884c",
+      "summary": "PASS: baseline collection/retirement, source AST and real named packet preparation."
+    },
+    {
+      "commit": "fc8a68b7884c",
+      "summary": "PASS: baseline collection/retirement, source AST and real named packet preparation."
+    },
+    {
+      "commit": "238fa7bc4895",
+      "summary": "PASS: 74 tests, zero failures/errors/skips, sourcefc8a68b7/tree880f44fa."
+    },
+    {
+      "commit": "238fa7bc4895",
+      "summary": "PASS: 74 tests, zero failures/errors/skips, sourcefc8a68b7/tree880f44fa."
+    },
+    {
+      "commit": "0a91084f3822",
+      "summary": "PASS: helper bytes match testedfc8a68b7 and refreshed SHAba7f4957."
+    },
+    {
+      "commit": "0a91084f3822",
+      "summary": "PASS: helper bytes match testedfc8a68b7 and refreshed SHAba7f4957."
+    },
+    {
+      "commit": "36994f461850",
+      "summary": "PASS REUSED: 74 tests for identical production/tests/runner bytes."
+    },
+    {
+      "commit": "36994f461850",
+      "summary": "PASS REUSED: 74 tests for identical production/tests/runner bytes."
+    },
+    {
+      "commit": "00f1f428f21a",
+      "summary": "PASS: actual854-file/240-directory ownership observation and Python AST checks."
+    },
+    {
+      "commit": "00f1f428f21a",
+      "summary": "PASS: actual854-file/240-directory ownership observation and Python AST checks."
+    },
+    {
+      "commit": "f8bb46ebe759",
+      "summary": "PASS: corrected Python AST and input/template consistency."
+    },
+    {
+      "commit": "f8bb46ebe759",
+      "summary": "PASS: corrected Python AST and input/template consistency."
+    },
+    {
+      "commit": "015de64c9d11",
+      "summary": "PASS: complete unchanged prior pack comparison and failed-job collection/retirement."
+    },
+    {
+      "commit": "015de64c9d11",
+      "summary": "PASS: complete unchanged prior pack comparison and failed-job collection/retirement."
+    },
+    {
+      "commit": "3f956ce8d62a",
+      "summary": "PASS: six fixtures, export, doctor, validate and pack-status with no skipped checks."
+    },
+    {
+      "commit": "3f956ce8d62a",
+      "summary": "PASS: six fixtures, export, doctor, validate and pack-status with no skipped checks."
+    },
+    {
+      "commit": "c15adb159785",
+      "summary": "PASS: complete actual855-file inventory and all862manifest pins match."
+    },
+    {
+      "commit": "8abd7186fa1e",
+      "summary": "PASS: six fixtures0fail/error/skip and export, doctor, validate, pack-status."
+    },
+    {
+      "commit": "648116f660e9",
+      "summary": "REUSED: independently verified final replay, every855file byte, four assets and collection/retirement."
+    },
+    {
+      "commit": "cde9d5ad0111",
+      "summary": "PASS: actual complete package hashes, unchanged original17assertions and helperba7."
+    },
+    {
+      "commit": "3aac28e6066c",
+      "summary": "PASS: wrapper AST and complete manifest pins match; source/shipped test bytes unchanged."
+    },
+    {
+      "commit": "95707b375f35",
+      "summary": "PASS: repaired wrapper AST and exact input bindings; no production/shipped assertion changes."
+    },
+    {
+      "commit": "665c8f700df3",
+      "summary": "PASS: original17assertions, safe import, Git baseline and named packet before failure."
+    },
+    {
+      "commit": "665c8f700df3",
+      "summary": "PASS: original17assertions, safe import, Git baseline and named packet before failure."
+    },
+    {
+      "commit": "a90f1330b96d",
+      "summary": "PASS: all22stages match expected exits, including seven intended refusals and specific causes."
+    },
+    {
+      "commit": "207553d8815f",
+      "summary": "REUSED: independently verified22stages/eightreports/PASS17reuse and full collection/retirement."
+    },
+    {
+      "commit": "77f06858ffab",
+      "summary": "PASS: JSON parsing, explicit parent scope and whitespace checks."
+    },
+    {
+      "commit": "c38b043ef610",
+      "summary": "PASS: AST, exact public wheel pins and unchanged original69test method bodies."
+    },
+    {
+      "commit": "126724bebf84",
+      "summary": "PASS: actual seven-wheel hashes and complete collection/retirement."
+    },
+    {
+      "commit": "9ce7d46d4333",
+      "summary": "PASS: every original stage stream/count/digest, quiescence and full retirement verified."
+    },
+    {
+      "commit": "3caf98aae9c3",
+      "summary": "PASS: 12 remaining/setup stages with expected statuses and 24 stream hashes."
+    },
+    {
+      "commit": "753de2e3659b",
+      "summary": "PASS: local references, existing capability IDs, bounded scope and whitespace."
+    },
+    {
+      "commit": "cd7b1bcf2013",
+      "summary": "PASS: exact independent admission review and bounded path/effect inspection."
+    },
+    {
+      "commit": "c7ea89dcd692",
+      "summary": "PASS: AST and unchanged original binding/Task OS test bytes."
+    },
+    {
+      "commit": "0f6182d63f00",
+      "summary": "PASS: original test and product bytes unchanged, collection and retirement."
+    },
+    {
+      "commit": "2ef8ad51a56a",
+      "summary": "PASS: 29 conserved original methods, 22 affected methods and three CLI smokes."
+    },
+    {
+      "commit": "2ef8ad51a56a",
+      "summary": "PASS: 29 conserved original methods, 22 affected methods and three CLI smokes."
+    },
+    {
+      "commit": "7cd6d657eaa1",
+      "summary": "PASS: Adapter generation, capability refresh and github validate passed. Original test"
+    },
+    {
+      "commit": "39df07cbee63",
+      "summary": "PASS: 35 of 36 first-job methods, including all nine new defaults tests."
+    },
+    {
+      "commit": "39df07cbee63",
+      "summary": "PASS: 35 of 36 first-job methods, including all nine new defaults tests."
+    },
+    {
+      "commit": "88fa0008c567",
+      "summary": "PASS: 36 Git/default methods across preserved first and corrected second runs."
+    },
+    {
+      "commit": "88fa0008c567",
+      "summary": "PASS: 36 Git/default methods across preserved first and corrected second runs."
+    },
+    {
+      "commit": "7f42f88df495",
+      "summary": "PASS: 47 completed methods, pack integrity, final managed diagnostics and changelog checks."
+    },
+    {
+      "commit": "f4f3474dd058",
+      "summary": "PASS: syntax inspection and diagnostic doctor after capability refresh."
+    },
+    {
+      "commit": "bbb153e26108",
+      "summary": "PASS: ten native methods, zero failures/errors/skips, verified collection and retirement."
+    },
+    {
+      "commit": "c627b2f0bd00",
+      "summary": "PASS: ten source methods, six ownership tests, export and unchanged published assets."
+    },
+    {
+      "commit": "c02228d0a34c",
+      "summary": "PASS: targeted source and ownership checks, full diagnostics and both actual consumers."
+    },
+    {
+      "commit": "c02228d0a34c",
+      "summary": "PASS: targeted source and ownership checks, full diagnostics and both actual consumers."
+    },
+    {
+      "commit": "fe61501b7673",
+      "summary": "PASS: observed nonforce dev then main synchronization with matching trees."
+    },
+    {
+      "commit": "89882a810f89",
+      "summary": "PASS: all 235 original target inputs remain unchanged at the qualified base."
+    },
+    {
+      "commit": "ac0ca3a94a53",
+      "summary": "PASS: exact Git path/hash/two-link/no-reparse observation and Python import."
+    },
+    {
+      "commit": "9605d8e333a1",
+      "summary": "PASS: preparation job a08f6eca and exact eight-file 182699-byte candidate."
+    },
+    {
+      "commit": "bc47743e3ce5",
+      "summary": "PASS: Doctor, registered task packet, five-source AST and full AIDE validate pass. Exact independent source/effect review ACCEPTs the first separately admitted deterministic fixture job. Behavioral qualification is pending at this source checkpoint; no model or peer contact occurred."
+    },
+    {
+      "commit": "cf293cb02194",
+      "summary": "PASS: AST and diff checks; retained first-attempt collection, quiescence and retirement."
+    },
+    {
+      "commit": "1435659b220b",
+      "summary": "PASS: 47 runtime CLI/API/state methods, no failures/errors/skips; evidence collected and job retired."
+    },
+    {
+      "commit": "8f93cb7e021a",
+      "summary": "PASS: 47 runtime API/CLI/state methods without skips; original failed attempt retained."
+    },
+    {
+      "commit": "8f93cb7e021a",
+      "summary": "PASS: 47 runtime API/CLI/state methods without skips; original failed attempt retained."
+    },
+    {
+      "commit": "3d7899130501",
+      "summary": "PASS: six Python AST checks, diff checks, registered task packet and full AIDE validate. Behavioral qualification remains pending until the separately reviewed managed fixture effect."
+    },
+    {
+      "commit": "730d43f3e492",
+      "summary": "PASS: runtime60 with zero failures/errors/skips, collected/retired, exact input pins and AST/diff checks. FAIL preserved: only the two expected postcommit provenance findings; the separately reviewed pack job is required before integration."
+    },
+    {
+      "commit": "8513f7f572ed",
+      "summary": "PASS: runtime60 plus ownership6 without failures/errors/skips, export/doctor/validate/pack-status, final full validation, retained digests, AST and diff checks. Terminal source was independently accepted. Main integration remains held pending the separately reviewed applicable preview and exact effect."
+    },
+    {
+      "commit": "2194eb6b73ac",
+      "summary": "PASS: runtime60, ownership6, pack metadata closure, preview generation/validation/status, exact regeneration, retained digests, all runtime and pack identities, full structural validation and structured implementation commit range."
+    },
+    {
+      "commit": "b7eb79cfe3f3",
+      "summary": "PASS: doctor, full structural validate, compact task pack and diff checks. Existing runtime and pack evidence remains applicable to unchanged bytes."
+    },
+    {
+      "commit": "27240f31db86",
+      "summary": "Operational lifecycle and fresh SQLite audit PASS: one request, six events, nine verified references, unchanged native tables. All 51 runtime inputs and 858 pack identities match prior qualified evidence. Current structural checks and exact source/effect review are retained in child evidence before commit and promotion."
+    },
+    {
+      "commit": "33a377743d86",
+      "summary": "PASS: one actual adopted request, six events, nine reference files, unchanged native state; 51 runtime and858 pack identities reused. Preview covers both checkpoint commits with zero malformed records and exact six-output regeneration. Full source validation and exact independent review precede integration."
+    },
+    {
+      "commit": "5fa78ca78afb",
+      "summary": "PASS: doctor, full validation and diff checks; NOT RUN: exact managed fixture run follows independent effect review."
+    },
+    {
+      "commit": "35a3a9035abc",
+      "summary": "PASS: 23 source methods, zero skips/errors/failures; collection, quiescence and retirement verified. NOT RUN: second export allocation."
+    },
+    {
+      "commit": "1a3428129699",
+      "summary": "PASS: 23 source methods,16 exported Q38 methods,six ownership checks,export/doctor/validate/pack-status and unchanged published assets. NOT RUN: preview allocation3."
+    },
+    {
+      "commit": "239558e8a9ed",
+      "summary": "PASS: source23,delivered16,ownership6,export and preview regeneration,final doctor/validate,diff check. All jobs collected and retired; no skips."
+    },
+    {
+      "commit": "f2543d317caf",
+      "summary": "PASS: doctor, full repository validation, diff check and manual frontmatter/generated-section review."
+    },
+    {
+      "commit": "e191b8a4c6cf",
+      "summary": "PASS: all seven original source methods including selftest, no skips/errors/failures; collected hashes, quiescence and retirement."
+    },
+    {
+      "commit": "5ee93ea7306a",
+      "summary": "PASS: ownership6, export, doctor, repository validation, pack-status, preserved public assets and unchanged post-test pack bytes."
+    },
+    {
+      "commit": "ca7bd44a69ff",
+      "summary": "PASS: independent source/effect review and 907 exact input bindings; diff check."
+    },
+    {
+      "commit": "f0bef95b14a3",
+      "summary": "PASS: eight source methods; ownership six, exporter, doctor, validate and pack status."
+    },
+    {
+      "commit": "8f8406558c3a",
+      "summary": "PASS: independent source/effect review, exact input bindings and diff check."
+    },
+    {
+      "commit": "816922b65252",
+      "summary": "PASS: source8, delivered8, ownership6, exporter, doctor, validation and pack status."
+    },
+    {
+      "commit": "a0970badeca5",
+      "summary": "PASS: eight source methods, eight delivered methods, six ownership tests and two bounded prompt exercises."
+    },
+    {
+      "commit": "82d771463a12",
+      "summary": "PASS: structural validation, static syntax, exact source/effect review at tree200525fe and all895 input pins."
+    },
+    {
+      "commit": "7c2aec4949cc",
+      "summary": "PASS: 41 of 42 original checks, collection digests and retirement."
+    },
+    {
+      "commit": "7d2c41f73357",
+      "summary": "PASS: 42 source and 42 delivered checks without skips; six ownership checks."
+    },
+    {
+      "commit": "716ec1fd0ad6",
+      "summary": "PASS: source42, delivered42, ownership6 and real five-receipt consumer."
+    },
+    {
+      "commit": "3625acf79209",
+      "summary": "PASS: doctor, full source validation, syntax and diff checks."
+    },
+    {
+      "commit": "1cd847805188",
+      "summary": "PASS: source63, actual CLI consumer, collection hashes, quiescence and retirement."
+    },
+    {
+      "commit": "b5827566fbe2",
+      "summary": "PASS: source63, delivered61, both CLI consumers, six ownership checks and exporter validation."
+    },
+    {
+      "commit": "33ec403f0e4f",
+      "summary": "PASS: source63, delivered61, both CLI consumers, ownership6, exporter checks and exact preview."
+    },
     {
       "commit": "d43b3298677e",
       "summary": "PASS: AST, doctor, refreshed full structural validation and diff checks."
@@ -123,7 +2326,97 @@
     {
       "commit": "2b489c5e6c48",
       "summary": "PASS: 60 source methods and 24 delivered methods with exact evidence identities."
+    },
+    {
+      "commit": "4f2c39606378",
+      "summary": "PASS: source 60, delivered 25, ownership 6, exporter diagnostics and exact payload delta."
+    },
+    {
+      "commit": "4f2c39606378",
+      "summary": "PASS: source 60, delivered 25, ownership 6, exporter diagnostics and exact payload delta."
+    },
+    {
+      "commit": "b46448f2fa4c",
+      "summary": "PASS full repository validate and strict corrected-draft checks."
+    },
+    {
+      "commit": "b46448f2fa4c",
+      "summary": "PASS full repository validate and strict corrected-draft checks."
+    },
+    {
+      "commit": "b4613f2d7e33",
+      "summary": "PASS wrapper syntax and full repository validate."
+    },
+    {
+      "commit": "26984567aaad",
+      "summary": "FAIL allocation 10; first sixteen additive forms completed; all outputs collected."
+    },
+    {
+      "commit": "98b7b2dc86a3",
+      "summary": "PASS syntax and diff checks; full repository validation recorded in source evidence."
+    },
+    {
+      "commit": "98b7b2dc86a3",
+      "summary": "PASS syntax and diff checks; full repository validation recorded in source evidence."
+    },
+    {
+      "commit": "447e393b3f87",
+      "summary": "PASS source21; managed output/log hashes, quiescence and retirement verified."
+    },
+    {
+      "commit": "80897d75ea3a",
+      "summary": "PASS exporter, ownership6, doctor, full validation, checksums and exact payload delta."
+    },
+    {
+      "commit": "80897d75ea3a",
+      "summary": "PASS exporter, ownership6, doctor, full validation, checksums and exact payload delta."
+    },
+    {
+      "commit": "c5b1a2bf7181",
+      "summary": "PASS source 21, delivered accounting 15 and direct installed regression 1 on their exact subjects."
+    },
+    {
+      "commit": "a4b5d25f64b9",
+      "summary": "PASS replacement build and validation; all 49 other release and 863 pack files preserved."
+    },
+    {
+      "commit": "eaba809b7513",
+      "summary": "PASS all nine replacement consumer jobs; collected hashes and retirement verified."
+    },
+    {
+      "commit": "eaba809b7513",
+      "summary": "PASS all nine replacement consumer jobs; collected hashes and retirement verified."
+    },
+    {
+      "commit": "23c0739ed11b",
+      "summary": "PASS collection hashes, quiescence, scratch retirement and reservation release for failed allocation24."
+    },
+    {
+      "commit": "23c0739ed11b",
+      "summary": "PASS collection hashes, quiescence, scratch retirement and reservation release for failed allocation24."
+    },
+    {
+      "commit": "debd58862209",
+      "summary": "PASS allocations25 and26 with collection and retirement verified."
+    },
+    {
+      "commit": "debd58862209",
+      "summary": "PASS allocations25 and26 with collection and retirement verified."
+    },
+    {
+      "commit": "a91076f9d683",
+      "summary": "PASS exact ZIP and TAR regeneration; all53 release and863 pack files preserved."
+    },
+    {
+      "commit": "55c9408eb42a",
+      "summary": "PASS raw full-range inspection:103 commits and exactly three known failures."
+    },
+    {
+      "commit": "55c9408eb42a",
+      "summary": "PASS raw full-range inspection:103 commits and exactly three known failures."
     }
   ],
-  "warnings": []
+  "warnings": [
+    "3 malformed or legacy commits require review"
+  ]
 }

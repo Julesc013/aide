@@ -8,7 +8,7 @@ Actual published-predecessor upgrade and recovery now PASS. [Qualified outcomes]
 
 [Exact archive replay](evidence/replay-qualified.json) now PASS: ZIP and TAR reproduce byte for byte; all53 release files and863 pack files remain unchanged. Doctor, full validate, stable validation and pack status pass; the existing advisory missing review-reference warning is retained. The earlier replay reservation refusal remains historical evidence.
 
-[Current qualification summary](evidence/qualification-summary.json) separates demonstrated behavior from open release gates. All28 consumed jobs are retired. Fixed preview29 is prepared independently of the three historical owner dispositions. It will report those failures without approving them. Final candidate review and integration remain. Public Lite1.0.0 is unchanged; no1.1.0 publication is claimed.
+[Current qualification summary](evidence/qualification-summary.json) separates demonstrated behavior from open release gates. All29 consumed jobs are retired. [Fixed preview](evidence/fixed-preview-qualified.json) covers104 commits from the published1.0.0 target and regenerates all six outputs exactly. Its three malformed records and original rangeFAIL remain explicit. Owner dispositions, final candidate review and integration remain. Public Lite1.0.0 is unchanged; no1.1.0 publication is claimed.
 
 The table and original candidate narrative below are historical evidence for
 ZIP 089d75da, not substitutes for the separately linked replacement results.
@@ -98,3 +98,6 @@ Actual-predecessor upgrade25 and recovery26 PASS with collected and retired evid
 
 
 Actual published-predecessor upgrade/recovery and exact scratch archive replay PASS. All28 consumed jobs are retired; all prior failures remain. Candidate1.1.0 stays unpublished. Pending: owner dispositions for three exact historical message failures, fixed preview29, final independent release review, guarded dev/main integration and separately admitted publication/acquired-byte checks. Important task checkpoint debd5886 is remotely verified; accepted dev/main remain4f2c3960.
+
+
+Truthful fixed preview29 PASS at55c9408e: full published1.0-to-checkpoint range104 commits, all six outputs regenerate exactly, known three malformed records and raw rangeFAIL preserved. Registry, all53release and863pack members unchanged. All29 allocated jobs are retired; four failed attempts remain. Owner historical-message dispositions, exact final release-candidate review and guarded integration remain; publication/acquisition are separate. No repeated job or observer remains running.

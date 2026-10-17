@@ -1,0 +1,30 @@
+{
+  "baseline": "55c9408eb42a9ad7abecb8477911648e8998ce53",
+  "effect_sha256": "6a26fcaa8fd4e88e5664b47a4a7933dc148a196f647be784be91f462102c7a31",
+  "files": {
+    ".aide/changelog/CHANGELOG.preview.md": "7c79b73648909df91ef0248e6d29ef0953014cb150988f53d84eb835679e9c49",
+    ".aide/changelog/RELEASE_NOTES.preview.md": "8feb5bade13b80e4c781f5f24ff83fc95b147d3d45a33036a8d7a231750e5334",
+    ".aide/changelog/changelog.preview.json": "0dece327ac49f72bcdca719b0f75386cb14040bca7b83b113424a31fe225b447",
+    ".aide/changelog/latest-changelog-report.md": "e62528407b03bc6418a467feec4a249cbb0a7110b03e7876412eca7b89cf66e3",
+    ".aide/changelog/malformed-commits.md": "63c499830f697f984ff638f29f879eba2da80ce440aabac05865292c443c1d91",
+    ".aide/changelog/release-notes.preview.json": "bae5094b2aea5013f8ed5df49a28739bbab634f5be79d1e9286d6d5f1c8682aa",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md": "227fb49c84a2058a141f23e3312cef3b4fe4ed41c973dbd6e1dbad06b866ffdd",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml": "fd82218db77835f9dba1813f833ce27dd6da35195c0e6eabe061a993cf6393ed",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md": "6b011462765634ca923af5be595df33e2b5122fc2c9f548577984656d6aba834",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md": "f426e0eb8379338397b0a40ae7a3e65afd4fd9205a8569872c6869092d6d785f",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/closure-checkpoint-push.json": "bedfe47361cb0c332ad3b8290320ec87d364eb713d25adb9630e4f49e511726c",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/fixed-preview-qualified.json": "70b6ef762336df83632e52023d9ab6ded119ab0b318fc9bcaab1ce877ac2f004",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/fixed-preview-retained-inventory.json": "53b4f5beb5f15a26dd650f81c92df4f89a92bd4ef9c2be7b3e7920e726730e27",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/fixed-preview-review.md": "7adea0794df50a65fd187916d9dc1a6766a4e0a5521f87f46e3c7a6b17be93df",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/preview-closure-effect.md": "6a26fcaa8fd4e88e5664b47a4a7933dc148a196f647be784be91f462102c7a31",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/preview-closure-message.txt": "5d03997a81ace2aa273b3c19a772ef761a4573994d7bcf8e2c610863b8cb25ce",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/qualification-summary.json": "7b2a7d356f44bd6448c163bb5b5c8779dfd13f9e62e6054b3f3b4a50a0b98fae",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/status.yaml": "d42cd48b436b300828eb273f679d26c6a6e1926d80afbdb762eb65d3977e11d6",
+    ".aide/queue/index.yaml": "0f6d84a9a64dfd5db64e255f8b8a9af4f3af83f988bca338619b413163650aa0",
+    "DOCUMENTATION.md": "9425785fe70ba1be49f37e469e54c33aab2ea316e944a6e44c0cd78df73fa485",
+    "IMPLEMENT.md": "fcc0f51d2f0a58346f81cc3976462c07810cea470a726535e7efe259a69c4067",
+    "PLANS.md": "283e7b80b4fa5e44936e3ca17c05bf87226279bdf26a258ec6abc747183b22e5"
+  },
+  "message_sha256": "5d03997a81ace2aa273b3c19a772ef761a4573994d7bcf8e2c610863b8cb25ce",
+  "validation": "Actual preview29 PASS_WITH_UNRESOLVED_HISTORY, exactsixdigestmatch, all29retired including4failures; message/diffPASS; no new runtime/package/registry change; final candidate/promotion gates open"
+}

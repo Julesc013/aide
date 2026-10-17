@@ -1,6 +1,6 @@
 # Actual Lite 1.1.0 qualification
 
-Current state: Actual published-predecessor upgrade/recovery and exact scratch archive replay PASS. All28 consumed jobs are retired; all prior failures remain. Candidate1.1.0 stays unpublished. Pending: owner dispositions for three exact historical message failures, fixed preview29, final independent release review, guarded dev/main integration and separately admitted publication/acquired-byte checks. Important task checkpoint debd5886 is remotely verified; accepted dev/main remain4f2c3960.
+Current state: Truthful fixed preview29 PASS at55c9408e: full published1.0-to-checkpoint range104 commits, all six outputs regenerate exactly, known three malformed records and raw rangeFAIL preserved. Registry, all53release and863pack members unchanged. All29 allocated jobs are retired; four failed attempts remain. Owner historical-message dispositions, exact final release-candidate review and guarded integration remain; publication/acquisition are separate. No repeated job or observer remains running.
 
 Baseline 4f2c39606378492622fa8580152373fffc074d7c. Existing successor builder and
 portable pack are integrated into local/remote dev/main; see evidence/prior-integration.json.
@@ -152,3 +152,6 @@ No archive, pack, provider, peer, target or other runtime source change. Existin
 source/payload evidence remains valid for unchanged subjects. Possible blockers:
 new unexpected malformed history, changed source/ref/input identities or resource
 admission. Stop and preserve any failed attempt; no automatic retry.
+
+
+Truthful fixed preview29 PASS at55c9408e: full published1.0-to-checkpoint range104 commits, all six outputs regenerate exactly, known three malformed records and raw rangeFAIL preserved. Registry, all53release and863pack members unchanged. All29 allocated jobs are retired; four failed attempts remain. Owner historical-message dispositions, exact final release-candidate review and guarded integration remain; publication/acquisition are separate. No repeated job or observer remains running.

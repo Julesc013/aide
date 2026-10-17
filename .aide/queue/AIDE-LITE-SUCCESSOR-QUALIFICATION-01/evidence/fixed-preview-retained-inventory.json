@@ -1,0 +1,86 @@
+{
+  "logs/stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "logs/stdin": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "logs/stdout": {
+    "sha256": "3e1268418bd76fd0e16e33c359152b3448f2e65e58cadee86d3f405c59ccd178",
+    "size_bytes": 147
+  },
+  "output/generated-preview/CHANGELOG.preview.md": {
+    "sha256": "7c79b73648909df91ef0248e6d29ef0953014cb150988f53d84eb835679e9c49",
+    "size_bytes": 21293
+  },
+  "output/generated-preview/RELEASE_NOTES.preview.md": {
+    "sha256": "8feb5bade13b80e4c781f5f24ff83fc95b147d3d45a33036a8d7a231750e5334",
+    "size_bytes": 15900
+  },
+  "output/generated-preview/changelog.preview.json": {
+    "sha256": "0dece327ac49f72bcdca719b0f75386cb14040bca7b83b113424a31fe225b447",
+    "size_bytes": 454515
+  },
+  "output/generated-preview/latest-changelog-report.md": {
+    "sha256": "e62528407b03bc6418a467feec4a249cbb0a7110b03e7876412eca7b89cf66e3",
+    "size_bytes": 763
+  },
+  "output/generated-preview/malformed-commits.md": {
+    "sha256": "63c499830f697f984ff638f29f879eba2da80ce440aabac05865292c443c1d91",
+    "size_bytes": 516
+  },
+  "output/generated-preview/release-notes.preview.json": {
+    "sha256": "bae5094b2aea5013f8ed5df49a28739bbab634f5be79d1e9286d6d5f1c8682aa",
+    "size_bytes": 95140
+  },
+  "output/operations.json": {
+    "sha256": "8e38022fc7cc1c425a8b83ab12941cce63ff2b32a0749494a4a575d996ad490d",
+    "size_bytes": 523
+  },
+  "output/preview-result.json": {
+    "sha256": "42d2420da287cfffedc98d658d4a97166f74e8d5d98f98c30b6ea979d7915d9f",
+    "size_bytes": 14564
+  },
+  "output/preview.log": {
+    "sha256": "dc2350aca79ac549e6d532379ff3959a9c62ae1df26deafdedb560d24ee1b504",
+    "size_bytes": 563
+  },
+  "output/prior-preview/CHANGELOG.preview.md": {
+    "sha256": "455b9b7a8cb089745c8e3087f0d5bf179df4bcb29864587dff63c070a85f9cb9",
+    "size_bytes": 1514
+  },
+  "output/prior-preview/RELEASE_NOTES.preview.md": {
+    "sha256": "520adb102ad3cb7d5efe757c9b8ca9973c5ba0d65e10204c2f07c3ce4202b157",
+    "size_bytes": 2742
+  },
+  "output/prior-preview/changelog.preview.json": {
+    "sha256": "3bc6e016aa49c7750200b3e888c45a93e7a96ca2c5e3c71980f253f85abad629",
+    "size_bytes": 20175
+  },
+  "output/prior-preview/latest-changelog-report.md": {
+    "sha256": "0f1a7805327a0f872764a721cefb03410ca99a949d79bdfa994042fa67f76b5a",
+    "size_bytes": 689
+  },
+  "output/prior-preview/malformed-commits.md": {
+    "sha256": "e41749f3afea18a232a5ae4e682ff60f8d0e0a4ccc3380eee284acbb996d87ec",
+    "size_bytes": 212
+  },
+  "output/prior-preview/release-notes.preview.json": {
+    "sha256": "625d7899017c1e4a71f784dcbd29319cc44ac48b1fa39a31b6b971da1d1e84f2",
+    "size_bytes": 4569
+  },
+  "output/raw-range.log": {
+    "sha256": "2fa14e26045a17cd5045ddf5669da821fe4b841b7c28a05c920eabd00c790250",
+    "size_bytes": 9891
+  },
+  "output/status.log": {
+    "sha256": "b1ae09a0598c48571515b25ebf994c9469cc00f275f1a03494dbea37bb36a607",
+    "size_bytes": 450
+  },
+  "output/validate.log": {
+    "sha256": "eb5ba25320954d7fb10d12867818e67bb7ae7ef3f878daa54c49aeb385b5bc37",
+    "size_bytes": 2349
+  }
+}

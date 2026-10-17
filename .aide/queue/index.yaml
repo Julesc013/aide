@@ -4063,8 +4063,8 @@ items:
 
   - id: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
     status: needs_review
-    result: CONSUMER_PREDECESSOR_RECOVERY_REPLAY_PASS
-    planning_state: truthful_fixed_preview_prepared_owner_disposition_independent
+    result: CONSUMER_RECOVERY_REPLAY_PREVIEW_PASS_WITH_UNRESOLVED_HISTORY
+    planning_state: qualified_evidence_and_preview_owner_disposition_pending
     title: Qualify actual additive Lite archives and published predecessor
     task: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md

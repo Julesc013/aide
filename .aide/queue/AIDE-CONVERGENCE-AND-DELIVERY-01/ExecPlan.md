@@ -793,3 +793,6 @@ Preview29 will cover the complete published1.0-to-reviewed-checkpoint range unde
 an explicit200-commit bound, preserve the three exact malformed records and range
 FAIL, and leave dispositions/registry unchanged. Native host and DiskEd ownership
 prerequisites remain independently unresolved; no unchanged environment retry.
+
+
+Truthful fixed preview29 PASS at55c9408e: full published1.0-to-checkpoint range104 commits, all six outputs regenerate exactly, known three malformed records and raw rangeFAIL preserved. Registry, all53release and863pack members unchanged. All29 allocated jobs are retired; four failed attempts remain. Owner historical-message dispositions, exact final release-candidate review and guarded integration remain; publication/acquisition are separate. No repeated job or observer remains running.
