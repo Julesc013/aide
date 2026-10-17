@@ -3985,3 +3985,13 @@ items:
     task: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/task.yaml
     exec_plan: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/ExecPlan.md
     evidence: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/evidence
+
+  - id: AIDE-DAILY-DISKED-ADOPTION-01
+    status: planning
+    planning_state: AIDE_preparation_admitted_native_effect_held
+    result: PENDING
+    title: Adopt conserved selected export through DiskEd native ownership
+    task: .aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/prompt.md
+    evidence: .aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/evidence

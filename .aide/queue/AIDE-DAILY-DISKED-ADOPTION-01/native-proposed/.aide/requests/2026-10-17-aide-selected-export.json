@@ -1,0 +1,35 @@
+{
+  "schema": "org.disked.local-request/1",
+  "work_id": "DE-W000",
+  "base_revision": "40ac8ec02778b7c25100421147fc1e107fa14ed5",
+  "recorded_at": "2026-10-17T12:22:02.983646+00:00",
+  "source": "Jules active AIDE daily-use/downstream-development Goal, with existing DiskEd AGENTS bounded-development request rule; agent transcription, not an owner signature",
+  "interpretation": "Adopt only the already-qualified optional specctl aide-export --work selector; preserve default behavior and all planned/NOT_RUN/false-authority projections. Baseline acceptance and product operations remain separate.",
+  "state": "proposed_target_effect_not_admitted",
+  "writer_ownership": "awaiting_user_clarification",
+  "aide_task": "AIDE-DAILY-DISKED-ADOPTION-01",
+  "prior_qualification": {
+    "aide_task": "AIDE-DAILY-DISKED-EXPORT-01",
+    "job": "09544ef06634428aae668469acfeb27f",
+    "native_tests_reused_from": "3591d13b81944afd9ea3b437314e855d",
+    "passed": 158,
+    "unavailable": 2,
+    "scope": "native preparation fixture only"
+  },
+  "scope": [
+    "spec/tools/specctl.py",
+    "spec/tools/tests/test_specctl.py",
+    "spec/development/specctl.md",
+    "spec/generated/index.json",
+    "spec/manifest.json",
+    "spec/work/grants.json",
+    ".aide/requests/2026-10-17-aide-selected-export.json",
+    ".aide/handoffs/DE-W000-aide-selected-export-2026-10-17.json",
+    ".aide/evidence/2026-10-17-aide-selected-export/**"
+  ],
+  "owner_acceptance": false,
+  "native_product_implementation": false,
+  "physical_devices": false,
+  "elevation": false,
+  "remote_settings_changes": false
+}

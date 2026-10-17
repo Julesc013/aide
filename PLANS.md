@@ -1,5 +1,11 @@
 # AIDE Planning Index
 
+## Native DiskEd adoption preparation - 2026-10-17
+
+AIDE-DAILY-DISKED-ADOPTION-01 prepares actual owner adoption of the conserved
+selected-export candidate. Native writer ownership and exact target effects remain
+held; original fixture evidence and two unavailable checks are preserved.
+
 ## Portable Git defaults - 2026-10-17
 
 [AIDE-GIT-DEFAULTS-01](.aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md) implements the

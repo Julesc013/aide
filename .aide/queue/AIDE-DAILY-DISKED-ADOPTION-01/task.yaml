@@ -1,0 +1,34 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DAILY-DISKED-ADOPTION-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Adopt conserved selected export through DiskEd native ownership
+type: implementation
+status: planning
+admission_ref: ../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/disked-native-adoption-admission.md
+admission_sha256: f9857b2ce0fc80ed10913fc8ea1942adc1e5ad680023f29ec79cd4982d920761
+admission_verdict: ACCEPT_preparation_only
+scope:
+  allowed_paths_source: admission_ref
+  allowed_paths:
+    - .aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/**
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/disked-native-adoption-admission.md
+    - .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/task.yaml
+    - .aide/intake/latest-*
+    - .aide/context/latest-task-packet.md
+    - .aide/generated/**
+    - .aide/reports/capability-*
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  read_only_target: D:/Projects/DiskEd/disked
+  target_mutation: HELD_ownership_and_exact_effect_review
+verification:
+  maximum_jobs: 2
+  config_digest: 61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90
+  admission: exact_source_and_effect_review_before_each_job
+review_gate: exact_source_effect_and_terminal_review
+native_owner: DE-W000
+native_base: 40ac8ec02778b7c25100421147fc1e107fa14ed5

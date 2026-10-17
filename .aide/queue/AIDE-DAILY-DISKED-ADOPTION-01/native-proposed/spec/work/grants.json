@@ -1,0 +1,47 @@
+{
+  "schema": "org.disked.grant-ledger/1",
+  "records": [
+    {
+      "schema": "org.disked.work-grant/1",
+      "work_id": "DE-W000",
+      "base_revision": "40ac8ec02778b7c25100421147fc1e107fa14ed5",
+      "spec_digest": "sha256:818f38c516d71870ee1ff92e12ba8a1c7ad0e7b33e399c7cb03208fbf058f6ee",
+      "grantor": "Proposed transcription of Jules active downstream-development request; activation held for ownership and exact review",
+      "issued_at": "2026-10-17T12:22:02.983646+00:00",
+      "allowed_paths": [
+        "spec/tools/specctl.py",
+        "spec/tools/tests/test_specctl.py",
+        "spec/development/specctl.md",
+        "spec/generated/index.json",
+        "spec/manifest.json",
+        "spec/work/grants.json",
+        ".aide/requests/2026-10-17-aide-selected-export.json",
+        ".aide/handoffs/DE-W000-aide-selected-export-2026-10-17.json",
+        ".aide/evidence/2026-10-17-aide-selected-export/**"
+      ],
+      "allowed_actions": [
+        "bounded selected-export source adoption after exact effect acceptance",
+        "offline native validation and native evidence/handoff recording"
+      ],
+      "forbidden_operations": [
+        "physical-device access",
+        "elevation",
+        "customer-data access",
+        "release signing",
+        "network writes",
+        "baseline acceptance",
+        "changes outside exact reviewed effect",
+        "Git effects without separate exact review"
+      ],
+      "physical_devices": false,
+      "elevation": false,
+      "network": "none",
+      "release_signing": false,
+      "budget": {
+        "max_input_bytes": 8388608,
+        "max_worker_attempts": 2
+      },
+      "expires_at": "2026-10-24T12:22:02.983646+00:00"
+    }
+  ]
+}

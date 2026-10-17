@@ -1,0 +1,33 @@
+{
+  "original_task": ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01",
+  "target": "D:\\Projects\\DiskEd\\disked",
+  "base_revision": "40ac8ec02778b7c25100421147fc1e107fa14ed5",
+  "source_postimages": {
+    "spec/tools/specctl.py": "e5575137ec2e5d790881d5524830c1a8da3e0c5a10d692ecae54327c8c42ba53",
+    "spec/tools/tests/test_specctl.py": "6ca68f60cec7b99dc25a6147308aec248c1a98d184eb6c9b7f979db803ef1501",
+    "spec/development/specctl.md": "41b1a1c0a322ba1679112c67d2841a80c5583da2cc9b42b257e7eea9dc8b06d0"
+  },
+  "metadata_postimages": {
+    "spec/work/grants.json": "5c23f99725f88f74fb7b154802bb8665698d1cb43773e951e95541a1858eeb9a",
+    ".aide/handoffs/DE-W000-aide-selected-export-2026-10-17.json": "315bf6944dbce058ada8566862d5bd17d9c0106545dc383a8de2c2374f79e867",
+    ".aide/requests/2026-10-17-aide-selected-export.json": "4c70abbfae37200e0b398048872b77df1ed5f83802715f5c5f300307180e5a36"
+  },
+  "allowed_native_changes": [
+    "spec/tools/specctl.py",
+    "spec/tools/tests/test_specctl.py",
+    "spec/development/specctl.md",
+    "spec/generated/index.json",
+    "spec/manifest.json",
+    "spec/work/grants.json",
+    ".aide/requests/2026-10-17-aide-selected-export.json",
+    ".aide/handoffs/DE-W000-aide-selected-export-2026-10-17.json",
+    ".aide/evidence/2026-10-17-aide-selected-export/**"
+  ],
+  "fixed_generated_paths": [
+    "spec/generated/index.json",
+    "spec/manifest.json"
+  ],
+  "maximum_prepared_bytes": 2097152,
+  "ownership": "pending",
+  "live_target_effect": "not_admitted"
+}

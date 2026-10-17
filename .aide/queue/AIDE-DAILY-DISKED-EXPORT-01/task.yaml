@@ -3,8 +3,8 @@ id: AIDE-DAILY-DISKED-EXPORT-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Prepare and qualify one selected native DiskEd WorkUnit export
 type: implementation
-status: planning
-result: PENDING
+status: passed_with_notes
+result: PASS_WITH_ENVIRONMENT_SKIPS
 objective: Extend existing DE-W000 specctl ownership for bounded selected export and conserved native evidence.
 authority_basis: explicit_owner_downstream_goal_and_exact_preparation_admission_only
 admission:

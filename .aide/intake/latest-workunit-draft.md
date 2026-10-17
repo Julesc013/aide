@@ -1,13 +1,13 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-install-1db3857943cb
-- title: Install WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight
+- workunit_id: draft-release-203a63a67f07
+- title: Release WorkUnit Draft - Write blocker report and require reviewed authorization before mutation
 - status: draft
-- task_class: install
-- risk_class: governance
-- sizing_class: two_shot
-- objective: Normalize prompt into a bounded install WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
+- task_class: release
+- risk_class: release
+- sizing_class: blocked
+- objective: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - why: AIDE compiles raw prompts into bounded WorkUnits before execution.
 
 ## Preflight
@@ -19,14 +19,14 @@
 ## Implementation Outline
 
 - Reconcile repo state before editing.
-- draft the smallest safe WorkUnit after repo-state preflight
+- write blocker report and require reviewed authorization before mutation
 - Stop at review gates and record evidence before execution.
 
 ## Validation
 
 - git diff --check
+- py -3 .aide/scripts/aide_lite.py changelog validate
 - py -3 .aide/scripts/aide_lite.py intent validate
-- target-local preflight validation; no source-side target mutation
 
 ## Evidence
 
@@ -48,8 +48,9 @@
 - no provider/model/network calls
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
+- do not publish releases, tags, or assets from prompt alone
 
 ## Recovery
 
-- idempotency: prompt_hash:1db3857943cb2185435e9cb4c2c439857ba639fda5ead9a66849fa73f60fdf51; status:draft; compile_only:true
+- idempotency: prompt_hash:203a63a67f0726fc52df086fc7f879b90264bbbd57be23d60e1821cd23ddcc81; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

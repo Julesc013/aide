@@ -1,0 +1,16 @@
+{
+  "reviewer": "/root/review_disked_continuation",
+  "verdict": "ACCEPT",
+  "proposal": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/disked-native-adoption-admission.md",
+  "sha256": "f9857b2ce0fc80ed10913fc8ea1942adc1e5ad680023f29ec79cd4982d920761",
+  "head": "fe61501b76731565306da90e99344826d28aa0a7",
+  "scope": "AIDE-side preparation and named local branch only",
+  "findings": [],
+  "excluded": [
+    "jobs without exact review",
+    "native ownership assumption",
+    "target mutation",
+    "grant activation",
+    "target Git effects"
+  ]
+}

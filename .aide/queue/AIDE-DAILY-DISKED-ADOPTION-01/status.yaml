@@ -1,0 +1,11 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-DAILY-DISKED-ADOPTION-01
+status: planning
+result: PENDING
+classification: AIDE_preparation_admitted_native_effect_held
+jobs_allocated: 0
+maximum_jobs: 2
+next_action: qualify_prepared_native_metadata
+native_writer_ownership: awaiting_user_clarification
+target_mutated: false
+review_gate: exact_source_effect_required

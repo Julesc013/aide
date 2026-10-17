@@ -1,5 +1,10 @@
 # AIDE Implementation Log
 
+## Native DiskEd adoption candidate - 2026-10-17
+
+The existing candidate remains unchanged. Bounded native request/grant/handoff
+postimages are prepared under the new child; no target write or job has run.
+
 ## Portable Git default candidate - 2026-10-17
 
 Generic policy and guidance now express frequent validated integration, optional

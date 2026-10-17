@@ -1,5 +1,10 @@
 # AIDE Documentation Index
 
+## Native DiskEd adoption - 2026-10-17
+
+[Adoption ExecPlan](.aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/ExecPlan.md) tracks
+preparation, exact target ownership/effects and actual consumer obligations.
+
 - [Portable Git workflow](docs/reference/git-workflow-policy.md): integration
   cadence, project protection choices, task publication and safe retirement.
   [Current outcome](.aide/queue/AIDE-GIT-DEFAULTS-01/REPORT.md) retains qualification

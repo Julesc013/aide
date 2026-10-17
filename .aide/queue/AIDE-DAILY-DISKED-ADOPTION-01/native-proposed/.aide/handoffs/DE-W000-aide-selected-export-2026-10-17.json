@@ -1,0 +1,45 @@
+{
+  "schema": "org.disked.handoff/1",
+  "work_id": "DE-W000",
+  "base_revision": "40ac8ec02778b7c25100421147fc1e107fa14ed5",
+  "spec_manifest_digest": "sha256:818f38c516d71870ee1ff92e12ba8a1c7ad0e7b33e399c7cb03208fbf058f6ee",
+  "status": "proposed",
+  "files_read": [
+    "AGENTS.md",
+    "spec/START-HERE.md",
+    "spec/index.md",
+    "spec/work/units.json",
+    "spec/work/grants.json",
+    "spec/schemas/grant.schema.json",
+    "spec/schemas/handoff.schema.json",
+    "spec/development/aide-integration.md",
+    "spec/development/context-and-handoffs.md",
+    "spec/development/specctl.md",
+    "spec/tools/specctl.py"
+  ],
+  "files_changed": [],
+  "summary": "AIDE-side adoption preparation only; no native checkout changes or grant activation. Prior fixture results remain separately scoped in the request.",
+  "tests": [
+    {
+      "command": "python spec/tools/specctl.py check",
+      "cwd": "D:/Projects/DiskEd/disked",
+      "status": "not_run",
+      "exit_code": null,
+      "evidence_path": null
+    },
+    {
+      "command": "python spec/tools/specctl.py aide-export --work DE-W000 --output <owned-job-output>",
+      "cwd": "D:/Projects/DiskEd/disked",
+      "status": "not_run",
+      "exit_code": null,
+      "evidence_path": null
+    }
+  ],
+  "artifacts": [],
+  "blockers": [
+    "Native writer ownership unresolved.",
+    "Exact target effect and Git effects are not admitted."
+  ],
+  "next_safe_step": "Qualify prepared native metadata in AIDE-owned scratch; resolve ownership and independently review exact target effect before applying.",
+  "performed_remote_writes": false
+}
