@@ -1,9 +1,9 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
 status: running
-result: BUILD_PASS_CONSUMERS_PENDING
+result: ORIGINAL8_PASS_ADDITIONS_AND_PREDECESSOR_PENDING
 owner: aide_campaign
-next_action: exact_original_consumer_effect_review
-jobs_allocated: 1
+next_action: prepare_additional18_and_actual_predecessor_consumers
+jobs_allocated: 9
 maximum_jobs: 14
 public_release: unchanged_1.0.0

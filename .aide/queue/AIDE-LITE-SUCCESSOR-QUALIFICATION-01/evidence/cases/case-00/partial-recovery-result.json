@@ -1,0 +1,15 @@
+{
+  "fresh": [
+    "INTERRUPTED",
+    "RECOVERY_REQUIRED",
+    "RECOVERED"
+  ],
+  "network_calls": "none",
+  "project_owned_sha256": "fa44e1b71c730aa4a4b27abfd4ffe867f05a73aa345f2a311e062cc4e264dc9b",
+  "status": "PASS",
+  "update": [
+    "INTERRUPTED",
+    "RECOVERY_REQUIRED",
+    "RECOVERED"
+  ]
+}

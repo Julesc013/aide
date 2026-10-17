@@ -1,0 +1,50 @@
+{
+  "helper_sha256": "3f3140807520b1481181c34e95e06273e2774698cf2d384e42b5b6214f58a181",
+  "install_command_count": 4,
+  "member_count": 862,
+  "network_observation": "Python process socket guard only; native child traffic not observed",
+  "offline_guard_sha256": "f3ca0dc5ad58ca384cfd9ea09be6c3ff93fa787a99968edb8158923e4da2ae40",
+  "script_sha256": "4bce2172cae12c7504e8095e23e8151e07b2a4fd9f34f2f221ad79cc8009cb92",
+  "status": "PASS",
+  "targets": [
+    {
+      "command_log_sha256": [
+        "bf9c85f90dc62fa3652d2cd32a2a64d792a605d41919cbca1fced507db525d24",
+        "34b2d860ebd4a23251c28ee46c6ee0cea1fb8d8d2f29eb0bd9b41ca19aeddf85",
+        "b886653748b948e6e0252b000f8b169a3af78a25493a1335e608096387bc8036"
+      ],
+      "context_sha256": "e5967641860ad0c4f00e37735b2eea4268260f081b83cea2a783878033a22575",
+      "kind": "fresh",
+      "project_owned_sha256": "2d5b810a8da1c68ad1ece9e5fc9e6032f6e8a75b47598cceae7b7f533fb5e85d",
+      "task_packet_sha256": "8978f5177c6c65437b40e219c96461e8f1848974f69e1febdc4c6309d4e1a2b4",
+      "verify_result": "WARN",
+      "verify_warning_categories": [
+        "adapter_drift",
+        "cache_local_state",
+        "diff_scope",
+        "file_references"
+      ],
+      "verify_warning_count": 15
+    },
+    {
+      "command_log_sha256": [
+        "e1ad956e08f6d09c3c25f029a0d114991f374d2ffff1345b59c0c4a59c2a6c52",
+        "e6cd4b4eb7f605a53aa23d11bab0cf26486a3f8a090a5ed26d0d7ccddb2f894c",
+        "33df81b74e956a309e47ab584b3a30325cfa7a1414a210417970c316ad5b814e"
+      ],
+      "context_sha256": "c98fe6773dab777359cc8a23f633616fe7329f3eede48331fdfa5494816b8908",
+      "kind": "brownfield",
+      "project_owned_sha256": "2d5b810a8da1c68ad1ece9e5fc9e6032f6e8a75b47598cceae7b7f533fb5e85d",
+      "task_packet_sha256": "8978f5177c6c65437b40e219c96461e8f1848974f69e1febdc4c6309d4e1a2b4",
+      "verify_result": "WARN",
+      "verify_warning_categories": [
+        "adapter_drift",
+        "cache_local_state",
+        "diff_scope",
+        "file_references"
+      ],
+      "verify_warning_count": 18
+    }
+  ],
+  "zip_sha256": "089d75da1675ad461264d4b526788aeaacac6cde1bcddd94b3d6484fa20c3e36"
+}

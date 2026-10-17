@@ -33,3 +33,5 @@ Progress: child prepared, zero jobs. Build/config review pending. Public1.0.0
 unchanged; current archives, upgrade and release claims are not yet qualified.
 
 Allocation1 job20da96f5 PASS: four exact1.1.0 assets, all49 prior release members and862 pack files preserved. Exit0, quiescent, collection verified, scratch/reservation retired. CandidateZIP089d75da remains consumer-unqualified. Original8 canaries prepared for independent review; no original assertion or module changed.
+
+Allocations2-9 PASS all eight original consumer families exactly once. Each original module and assertion retained; case6 uses reviewed current-machine config. All results collected/hash-verified, processes quiescent, scratch/reservations retired. See evidence/original-consumers-qualified.json. Important checkpoint651464ae is pushed and remotely verified; dev/main remain4f2c3960. Five slots remain for additions, actual predecessor, recovery, replay and preview.

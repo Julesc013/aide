@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+## Lite original consumers complete - 2026-10-18
+
+[Actual Lite qualification](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md) has built the1.1.0 candidate and passed all eight original consumer families. Nine allocations are collected and retired. Additional18 forms, actual published-predecessor update/recovery and final replay/review remain; public1.0.0 stays unchanged.
+
 ## Actual Lite archive qualification - 2026-10-18
 
 Successor development qualification is integrated at4f2c3960 on local/remote dev/main. [Actual qualification](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md) now prepares the additive1.1.0 archives, original eight families, all56 proposed forms and actual published1.0.0 upgrade/conflict/recovery. Public1.0.0 stays unchanged.

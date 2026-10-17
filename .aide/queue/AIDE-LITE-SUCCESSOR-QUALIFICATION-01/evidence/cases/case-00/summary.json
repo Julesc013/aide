@@ -1,0 +1,201 @@
+{
+  "archive_member_count": 862,
+  "archive_sha256": {
+    "tar": "0d6af134c3bcce7726386ef41e0183f3dc88441626b1ec75c20a6c255ed579ac",
+    "zip": "089d75da1675ad461264d4b526788aeaacac6cde1bcddd94b3d6484fa20c3e36"
+  },
+  "brown_receipt_digest": "e15b28f94bd027f808543a73b04cf09b5154a7451a36d64266c9708ad7ca53ac",
+  "bundled_cli_sha256": "c57d53d2a478552e3e1c986a8a3f958f4966c33335a86ef7bb869046c6196bf5",
+  "commands": [
+    {
+      "exit_code": 0,
+      "label": "fresh-v1-preview",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\fresh-v1-preview.json",
+      "sha256": "239843fba67cb6f2e5c3c005f49f347befa979345a1ef9a8a1167413f9ceda82"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-v1-apply",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\fresh-v1-apply.json",
+      "sha256": "2dd676d3be3db7170b331865f06c593c12e53fe637183a88f1e2ff13f30a89fb"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-installed-doctor",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\fresh-installed-doctor.json",
+      "sha256": "626ae0ce82603b19fbdc47ef1305fa3baae8804f1db1c270d80b9b98d855c92f"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-v1-repair-health",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\fresh-v1-repair-health.json",
+      "sha256": "d98c3e79769710e0c9510abf472e578a9b626f7d594758c883c89710c7aa948c"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-disabled-v2-preview",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\fresh-disabled-v2-preview.json",
+      "sha256": "341450317ae220e3142886db33463f518aeb845475294b5407c3b994443092d6"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-disabled-v2-apply",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\fresh-disabled-v2-apply.json",
+      "sha256": "543b74c8093e48b9c07da0eb1bc0b8c9ebc2643252a7c615528c7cc57d1c04b7"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-disabled-v3-preview",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\fresh-disabled-v3-preview.json",
+      "sha256": "13615851ad53435d5f0d1c086576b949036207ad11c5bfd749601a0298d14de3"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-disabled-v3-apply",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\fresh-disabled-v3-apply.json",
+      "sha256": "5398bc554fb746e5fe61b4862926ab47d6b9d86085bcdd86752b0b4adabb75b8"
+    },
+    {
+      "exit_code": 2,
+      "label": "fresh-missing-owned-preview",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\fresh-missing-owned-preview.json",
+      "sha256": "e45ee7dc25201a45007936bbc1f8b66c5a69f1206380db54a6bab4b099a693c3"
+    },
+    {
+      "exit_code": 2,
+      "label": "fresh-missing-owned-apply",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\fresh-missing-owned-apply.json",
+      "sha256": "485feba51b395759a986313c2ff5e4b6144b757234e024aa9ea0513f1c6e6a8f"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-missing-owned-repair-health",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\fresh-missing-owned-repair-health.json",
+      "sha256": "50e026f5e7581a9019a3eb7a3a62c848044285dd7185ca9dfcd7b8da748fc3b1"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-missing-owned-repair-preview",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\fresh-missing-owned-repair-preview.json",
+      "sha256": "bd44aca4162d9eea07c9f6f1f29eb22fa7cf745f654feb8e13968d00870725b9"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-v1-preview",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\brown-v1-preview.json",
+      "sha256": "19f8438b12a984e6377871633120e9f1cd4ecba7696e0b822f8e6c678416adc9"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-v1-apply",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\brown-v1-apply.json",
+      "sha256": "6e961197868dfc4bba5714e040ea1d5556c9fda2fcfd5b021a7653006b5e54b6"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-direct-edit-repair-health",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\brown-direct-edit-repair-health.json",
+      "sha256": "1b77c02c1852b19a5efbe0fa2c7a666e21df20159ae4e059e17c9e5976beb0f7"
+    },
+    {
+      "exit_code": 2,
+      "label": "brown-v2-conflict-preview",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\brown-v2-conflict-preview.json",
+      "sha256": "50f2590dbcc00db706da92c736203699f471e6c75efa0a94fd9b084bcba32e5e"
+    },
+    {
+      "exit_code": 2,
+      "label": "brown-v2-conflict-apply",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\brown-v2-conflict-apply.json",
+      "sha256": "994fec28eda55c23928aa8562a20e74ad5020eb8459563dcb5360a18a445426f"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-v2-resolved-plain-preview",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\brown-v2-resolved-plain-preview.json",
+      "sha256": "12b0a6f4397474cc0fb0a35a44eb6d7709e98543a1b8a7f10f99786759c93341"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-v2-resolved-preview",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\brown-v2-resolved-preview.json",
+      "sha256": "41d68121ade71271479ef818cddf1137d5c05f4cdac5b66dabd2e4eaae839135"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-v2-resolved-apply",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\brown-v2-resolved-apply.json",
+      "sha256": "625cc84f57fc21c27e4479e8e259acd6b1332ccb239c408b7ee82f6c4440c157"
+    },
+    {
+      "exit_code": 2,
+      "label": "brown-v3-conflict-preview",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\brown-v3-conflict-preview.json",
+      "sha256": "b8f247f685c5d92764e8bfddeaff02133728874cc439a7699c085f654167f7a1"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-v3-resolved-preview",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\brown-v3-resolved-preview.json",
+      "sha256": "568fa8a3ead8c823a4866f613243e4c0fbf2ac1be1d05c64c50836ad5e524af7"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-v3-resolved-apply",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\brown-v3-resolved-apply.json",
+      "sha256": "cbfff831d14a3708e9084e5e744f2c6c20c10f320c6105cf023da8062af47c2d"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-agents-overlay-preview",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\brown-agents-overlay-preview.json",
+      "sha256": "7e3f7f235007f9fc0515eb6fdd7f0379da2ee43caa285ed451af034344770e8e"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-agents-overlay-apply",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\brown-agents-overlay-apply.json",
+      "sha256": "dc0a6b2f47c162ac1e1a7c813f87fa5572fd0f1a19cd954708aa8ac1f733a613"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-agents-overlay-repair-health",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\387a6c60d97c46aa963d979f6d138637\\tmp\\case-00\\run-consumer\\brown-agents-overlay-repair-health.json",
+      "sha256": "aa9424d7e22c8fd3d370ca9090425b954a82d95ec9d3ee03fd919d9e012e6ecb"
+    }
+  ],
+  "feedback_created_by_default": false,
+  "fixture_pack_identities": {
+    "v1_exact_candidate": {
+      "checksums_digest": "7fd1aefe8e7946a88e1a96b80b084f5c29e33f1ecad71c2644e5f5eea34da43b",
+      "manifest_digest": "37a83027f9d60f547d99692abd0745090b39e808084fcd02312d166b602b8fa8",
+      "pack_id": "aide-lite-pack-v0",
+      "source_commit": "e42d4b31215e8ba1889b0be825a9a00e4e8ad987"
+    },
+    "v2_synthetic": {
+      "checksums_digest": "6ae5e15d4894d7152d90a1558003d04abd42c32d1abcd33f03c374e7fce04a3d",
+      "manifest_digest": "cc13cc22fe7ee9de939f891b47a1b1594c5b6b844994b1db9767d269fce75406",
+      "pack_id": "aide-lite-pack-v0",
+      "source_commit": "e42d4b31215e8ba1889b0be825a9a00e4e8ad987"
+    },
+    "v3_synthetic": {
+      "checksums_digest": "f464ceb8d15b9938e17738f7039b2a84b03e37a4ecd0f6e656a8171bb61edebe",
+      "manifest_digest": "044d25c7e847a3e983c722aa629a27eaf4e7010be16512c6923677cebaff242d",
+      "pack_id": "aide-lite-pack-v0",
+      "source_commit": "e42d4b31215e8ba1889b0be825a9a00e4e8ad987"
+    }
+  },
+  "fresh_receipt_digest": "0c40782f1d117c3f7dd5968821e462a3a8194d82d0c6db244c3b03d7c397c4e1",
+  "repair_health_statuses": {
+    "agents_overlay": "PRESERVATION_REQUIRED",
+    "direct_edit": "PRESERVATION_REQUIRED",
+    "fresh": "HEALTHY",
+    "missing": "REPAIRABLE"
+  },
+  "resolved_feedback_sha256": "ed4761d12fade5b96b8c9885dbe16315305d08ea0c7aaa763dcec96c61b8a926",
+  "script_sha256": "c8ef2dab903793e2f9ae11c5d8ce6ecebad0c0733b142e8ce85360affac11cba",
+  "source_commit": "e42d4b31215e8ba1889b0be825a9a00e4e8ad987",
+  "source_commit_binding": "manifest_declaration_and_bundled_cli_digest_only",
+  "status": "PASS",
+  "synthetic_versions_are_published_releases": false
+}

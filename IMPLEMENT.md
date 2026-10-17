@@ -1,5 +1,9 @@
 # AIDE Implementation Log
 
+## Actual Lite original consumer outcome - 2026-10-18
+
+Candidate ZIP089d75da passed adoption/update, lifecycle, context, partial recovery, public CLI, forced restart, managed jobs and Task OS through unchanged canaries on the new host. Each ran once; all collections and retirements verified. The important651464ae task checkpoint is remotely verified; qualified dev/main remain4f2c3960.
+
 ## Actual Lite qualification preparation - 2026-10-18
 
 The bounded child retains the prior verified integration receipt and freezes current development-pack and published asset identities. No new archives or consumer jobs have run; exact build/effect review is next.

@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+## Lite candidate consumer evidence - 2026-10-18
+
+[Current report](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md) summarizes completed original consumers and remaining release gates. [Exact evidence](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/original-consumers-qualified.json) links immutable job identities, raw-output inventories and normalized summaries.
+
 ## Actual Lite release evidence - 2026-10-18
 
 [Qualification plan](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md), [prior integration](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/prior-integration.json) and [review packet](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/dev-review-packet.md) separate development qualification from actual release claims.

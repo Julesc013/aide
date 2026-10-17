@@ -1,0 +1,32 @@
+{
+  "cli_sha256": "c57d53d2a478552e3e1c986a8a3f958f4966c33335a86ef7bb869046c6196bf5",
+  "forced_exits": [
+    {
+      "exit_code": 77,
+      "kind": "import-receipt",
+      "log_sha256": "5b1d7a4260bceb661f766d37e7d6e66c4e917002c3b8e8a28007a19dd06149e3",
+      "marker_sha256": "9780b55b7b2122e4111d3adce9e1c252c9dd54cacb180089eafbc99f8fbf24e2"
+    },
+    {
+      "exit_code": 77,
+      "kind": "repair-file",
+      "log_sha256": "eab29ac0c2b653289decca91f4ec862727b6641c88753eca135ce94bcc45484c",
+      "marker_sha256": "ed891bb9a506f4e55cf4abb9dd6ecb450b8581d6f1255662e8b91d72d7bf913f"
+    },
+    {
+      "exit_code": 77,
+      "kind": "removal-receipt",
+      "log_sha256": "e18fe330c744ef9b1c4575feb6e1334fa741fad9838b9b745fe57f35afa34828",
+      "marker_sha256": "8b3c2ba4d4d174f7d19e85f85850f4b450e155fca68bcfc7a1561da8d49a2dd3"
+    }
+  ],
+  "helper_sha256": "3f3140807520b1481181c34e95e06273e2774698cf2d384e42b5b6214f58a181",
+  "import": "RECOVERED",
+  "member_count": 862,
+  "removal": "DETACHED_RECOVERED",
+  "repair": "RECOVERED",
+  "script_sha256": "2dd3b0f8b12a7bc382a71747019ce61ba7938e72b832d1a96d2e807b3e2b005b",
+  "status": "PASS",
+  "synthetic_successor_is_published": false,
+  "zip_sha256": "089d75da1675ad461264d4b526788aeaacac6cde1bcddd94b3d6484fa20c3e36"
+}
