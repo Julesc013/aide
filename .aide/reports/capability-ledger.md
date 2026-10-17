@@ -3,8 +3,8 @@
 - command: `capability ledger`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-work-effort-01`
-- current_commit: `7d2c41f73357acdda6f0ad5c73331b9df842a408`
+- current_branch: `task/aide-resume-plan-01`
+- current_commit: `716ec1fd0ad6fb2d3875417c4db7b867a7b393fe`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

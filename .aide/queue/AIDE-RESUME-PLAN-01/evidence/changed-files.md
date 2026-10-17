@@ -1,0 +1,37 @@
+# Candidate changed files
+
+- .aide/context/latest-task-packet.md
+- .aide/intake/latest-intent-packet.json
+- .aide/intake/latest-intent-packet.md
+- .aide/intake/latest-workunit-draft.json
+- .aide/intake/latest-workunit-draft.md
+- .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+- .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/resume-plan-admission.md
+- .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+- .aide/queue/AIDE-RESUME-PLAN-01/ExecPlan.md
+- .aide/queue/AIDE-RESUME-PLAN-01/evidence/admission-review.md
+- .aide/queue/AIDE-RESUME-PLAN-01/evidence/changed-files.md
+- .aide/queue/AIDE-RESUME-PLAN-01/evidence/checks-job-template.json
+- .aide/queue/AIDE-RESUME-PLAN-01/evidence/dev-review-packet.md
+- .aide/queue/AIDE-RESUME-PLAN-01/evidence/pack-job-template.json
+- .aide/queue/AIDE-RESUME-PLAN-01/evidence/prior-pack-inventory.json
+- .aide/queue/AIDE-RESUME-PLAN-01/evidence/qualification-scope.md
+- .aide/queue/AIDE-RESUME-PLAN-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-RESUME-PLAN-01/evidence/source-effect.md
+- .aide/queue/AIDE-RESUME-PLAN-01/evidence/validation.md
+- .aide/queue/AIDE-RESUME-PLAN-01/prompt.md
+- .aide/queue/AIDE-RESUME-PLAN-01/run_checks.py
+- .aide/queue/AIDE-RESUME-PLAN-01/run_consumer.py
+- .aide/queue/AIDE-RESUME-PLAN-01/run_pack.py
+- .aide/queue/AIDE-RESUME-PLAN-01/status.yaml
+- .aide/queue/AIDE-RESUME-PLAN-01/task.yaml
+- .aide/queue/index.yaml
+- .aide/reports/capability-command-status.md
+- .aide/reports/capability-evidence-bindings.json
+- .aide/reports/capability-ledger.md
+- .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_resume_plan.py
+- DOCUMENTATION.md
+- IMPLEMENT.md
+- PLANS.md
+- docs/reference/task-os-report-only-commands.md

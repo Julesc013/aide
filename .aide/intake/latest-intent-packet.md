@@ -3,18 +3,18 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: dd27bca1f50de58caa65f00012c9329d7e944f8ef0610ebb744d3a296136b841
-- raw_prompt_excerpt: AIDE-WORK-EFFORT-01: extend existing job receipt and usage owners with a bounded read-only whole-work effort view across preparation through cleanup; retain failed attempts, count unique receipts once, keep unavailable cost and elapsed c...
-- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
+- raw_prompt_hash: 4fdfdc67f2a70a86c8beb8fd2548c51731a569c8d738b81b8c2aafe342edee53
+- raw_prompt_excerpt: Continue the existing campaign with a bounded correction to task resume-plan: replace unconditional safe_to_resume and historical task references with the existing selected current-task observation, explicit uncertainty and evidence-reus...
+- interpreted_goal: Normalize prompt into a bounded github WorkUnit draft: require behavior proof and live-test validation plan before implementation.
 - confidence: high
-- task_class: release
-- risk_class: release
-- sizing_class: blocked
+- task_class: github
+- risk_class: governance
+- sizing_class: live_test_gate
 - safe_to_execute: false
 - requires_split: true
-- blocked: true
-- blocker_reason: write blocker report and require reviewed authorization before mutation
-- next_action: write blocker report and require reviewed authorization before mutation
+- blocked: false
+- blocker_reason: none
+- next_action: require behavior proof and live-test validation plan before implementation
 - task_execution: false
 - provider_or_model_calls: none
 - network_calls: none
@@ -24,14 +24,13 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not publish releases, tags, or assets from prompt alone
 
 ## Repo State Refs
 
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/AIDE-ENGINEERING-REVIEW-01/status.yaml`
+- `.aide/queue/AIDE-WORK-EFFORT-01/status.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/repo/file-inventory.json`
 - `.aide/repo/latest-repo-intelligence.md`
@@ -48,7 +47,6 @@
 ## Validation Hints
 
 - `git diff --check`
-- `py -3 .aide/scripts/aide_lite.py changelog validate`
 - `py -3 .aide/scripts/aide_lite.py intent validate`
 
 ## Evidence Hints
@@ -57,4 +55,3 @@
 - `validation.md`
 - `remaining-risks.md`
 - `intent-compiler-report.md`
-- `preflight-or-blocker-report.md`

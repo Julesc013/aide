@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+## Selected-task continuation - 2026-10-18
+
+AIDE-RESUME-PLAN-01 corrects unconditional readiness and historical references in the existing resume command. Source/effect review and portable qualification remain pending.
+
 ## Engineering review - 2026-10-18
 
 Existing engineering review receives a bounded improvement through AIDE-ENGINEERING-REVIEW-01: portable guidance, actual packet references, compatibility and impact reasoning, and proportionate findings. Eight source checks, eight delivered checks, two bounded prompt exercises and the promotion preview pass. Exact reviewed integration is pending; its verified outcome will be recorded in the child receipt. Installed-host delivery and native downstream adoption remain separate.

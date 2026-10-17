@@ -4,6 +4,13 @@ policy: .aide/queue/policy.yaml
 default_concurrency: 1
 canonical_source: .aide/queue
 items:
+  - id: AIDE-RESUME-PLAN-01
+    status: running
+    title: Accurate selected-task continuation advice
+    task: .aide/queue/AIDE-RESUME-PLAN-01/task.yaml
+    exec_plan: .aide/queue/AIDE-RESUME-PLAN-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-RESUME-PLAN-01/prompt.md
+    evidence: .aide/queue/AIDE-RESUME-PLAN-01/evidence
   - id: AIDE-WORK-EFFORT-01
     status: passed_with_notes
     title: Observe whole-work effort without inventing missing accounting

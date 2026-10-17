@@ -6599,27 +6599,32 @@ def task_os_render_requeue_plan(context: dict[str, object], classification: dict
 
 
 def task_os_render_resume_plan(context: dict[str, object]) -> str:
+    plan = context["resume_plan"]
+    view = plan["task"]
     lines = task_os_markdown_header("Task OS Resume Plan", "task resume-plan", context)
     lines.extend(
         [
             "## Current Task",
             "",
-            f"- latest_task_id: `{context.get('latest_task_id', '') or 'unknown'}`",
-            f"- latest_task_status: `{context.get('latest_task_status', '') or 'unknown'}`",
+            f"- latest_task_id: `{view['task_id'] or 'unknown'}`",
+            f"- latest_task_status: `{view['status']}`",
+            *[f"- {key}: {json.dumps(view[key], ensure_ascii=True)}" for key in
+              ("objective", "result", "owner", "next_action", "remaining_obligations", "scope")],
+            f"- recommendation: {plan['recommendation']}",
+            f"- reason: {plan['reason']}",
             "",
             "## Evidence To Inspect",
             "",
-            "- `.aide/context/latest-task-packet.md`",
-            "- `.aide/queue/X-OS-01-aide-task-os-report-only-commands/status.yaml`",
-            "- `.aide/queue/X-OS-01-aide-task-os-report-only-commands/evidence/`",
-            "- `.aide/reports/task-os-*.md`",
+            task_os_bullets(f"{key}: {value}" for key, value in sorted(view["sources"].items())),
+            *["- " + json.dumps(item, sort_keys=True, ensure_ascii=True) for item in view["evidence"]],
+            f"- record_issues: {json.dumps(view['issues'], sort_keys=True, ensure_ascii=True)}",
+            "- evidence_applicability: unverified; a matching digest does not establish acceptance",
             "",
             "## Validation To Run",
             "",
-            "- `py -3 .aide/scripts/aide_lite.py validate`",
-            "- `py -3 .aide/scripts/aide_lite.py test`",
-            "- `py -3 .aide/scripts/aide_lite.py eval run`",
-            "- all Task OS report-only commands",
+            "- inspect recorded checks against the current subject and relevant dependencies",
+            "- retain valid results; run affected required checks after changed or unknown inputs",
+            "- reconcile uncertain effects before retry; do not replay completed effects",
             "",
             "## Must Not Do",
             "",
@@ -6628,7 +6633,9 @@ def task_os_render_resume_plan(context: dict[str, object]) -> str:
             "",
             "## Safe To Resume",
             "",
-            "- yes, if the worktree and queue evidence match this report",
+            "- safe_to_resume: unknown",
+            "- execution_admitted: false; this report does not inspect live owners or effects",
+            "- continue authorized inspection; effect admission belongs to the existing execution owner",
             "",
         ]
     )
@@ -6837,9 +6844,10 @@ def write_task_os_requeue_plan(repo_root: Path) -> tuple[WriteResult, dict[str, 
     return result, data
 
 
-def write_task_os_resume_plan(repo_root: Path) -> tuple[WriteResult, dict[str, object]]:
-    context = task_os_context(repo_root)
-    write_task_os_command_status(repo_root, context)
+def write_task_os_resume_plan(repo_root: Path, task_id: str | None = None) -> tuple[WriteResult, dict[str, object]]:
+    plan = build_task_resume_plan(repo_root, task_id)
+    context = {"repo_root": str(repo_root), "latest_task_id": plan["task"]["task_id"],
+               "latest_task_status": plan["task"]["status"], "resume_plan": plan}
     result = write_text_if_changed(repo_root / TASK_OS_RESUME_PLAN_REPORT_PATH, task_os_render_resume_plan(context))
     return result, context
 
@@ -39657,14 +39665,24 @@ def command_task_requeue_plan(args: argparse.Namespace) -> int:
 
 
 def command_task_resume_plan(args: argparse.Namespace) -> int:
-    result, context = write_task_os_resume_plan(args.repo_root)
+    task_id = getattr(args, "task_id", None)
+    if getattr(args, "json", False):
+        plan = build_task_resume_plan(args.repo_root, task_id)
+        print(json.dumps(plan, sort_keys=True, indent=2, ensure_ascii=True))
+        return 0 if plan["task"]["task_id"] else 1
+    result, context = write_task_os_resume_plan(args.repo_root, task_id)
+    plan = context["resume_plan"]
     print("AIDE Lite task resume-plan")
-    print("result: PASS")
+    print(f"result: {'PASS' if plan['task']['task_id'] else 'MISSING_TASK'}")
     print(f"latest_task_id: {context.get('latest_task_id', '') or 'unknown'}")
+    print(f"latest_task_status: {context['latest_task_status']}")
+    print(f"recommendation: {plan['recommendation']}")
+    print(f"reason: {plan['reason']}")
     print(f"report: {TASK_OS_RESUME_PLAN_REPORT_PATH} ({result.action})")
-    print("safe_to_resume: true")
+    print("safe_to_resume: unknown")
+    print("execution_admitted: false")
     print("report_only: true")
-    return 0
+    return 0 if plan["task"]["task_id"] else 1
 
 
 def command_task_next_plan(args: argparse.Namespace) -> int:
@@ -39977,6 +39995,37 @@ def build_current_task_view(repo_root: Path, task_id: str | None = None) -> dict
                 item["availability"] = "unreadable"
         view["evidence"].append(item)
     return view
+
+
+def build_task_resume_plan(repo_root: Path, task_id: str | None = None) -> dict[str, object]:
+    """Continuation advice over existing observations; never an execution grant."""
+    view = build_current_task_view(repo_root, task_id)
+    status = view["status"]
+    if not view["task_id"] or view["issues"] or any(
+            item["availability"] != "present" for item in view["evidence"]):
+        recommendation = "reconcile_records"
+        reason = "Resolve missing, conflicting or unreadable records; preserve original evidence."
+    elif status in ("passed", "passed_with_notes", "complete", "completed", "superseded"):
+        recommendation = "inspect_completed_evidence"
+        reason = "Inspect recorded acceptance scope and remaining obligations; reuse valid results without replay."
+    elif status in ("blocked", "paused", "deferred"):
+        recommendation = "inspect_unblock_condition"
+        reason = "Inspect the recorded blocker or pause; retry only after a relevant change. Independent work may continue."
+    elif status == "needs_review":
+        recommendation = "inspect_review_gate"
+        reason = "Inspect the existing review decision; passing checks alone do not close the gate."
+    elif status in ("running", "claimed", "failed", "interrupted"):
+        recommendation = "reconcile_attempt"
+        reason = "Determine completed, pending and uncertain effects and current ownership before another attempt."
+    elif status in ("pending", "planning"):
+        recommendation = "inspect_plan"
+        reason = "Inspect the recorded scope and dependencies before admission through the existing owner."
+    else:
+        recommendation = "reconcile_records"
+        reason = "The recorded status has no known continuation rule; inspect it without inferring readiness."
+    return {"schema_version": "aide.task-resume-plan.v1", "task": view,
+            "recommendation": recommendation, "reason": reason, "safe_to_resume": None,
+            "execution_admitted": False, "report_only": True, "read_only": True}
 
 
 def command_task_current(args: argparse.Namespace) -> int:
@@ -46848,7 +46897,10 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_subparsers.add_parser("classify").set_defaults(handler=command_task_classify)
     task_subparsers.add_parser("repair-plan").set_defaults(handler=command_task_repair_plan)
     task_subparsers.add_parser("requeue-plan").set_defaults(handler=command_task_requeue_plan)
-    task_subparsers.add_parser("resume-plan").set_defaults(handler=command_task_resume_plan)
+    task_resume_parser = task_subparsers.add_parser("resume-plan")
+    task_resume_parser.add_argument("--task-id", help="Select an existing WorkUnit instead of the latest packet")
+    task_resume_parser.add_argument("--json", action="store_true", help="Inspect without writing the legacy report")
+    task_resume_parser.set_defaults(handler=command_task_resume_plan)
     task_next_plan_parser = task_subparsers.add_parser("next-plan")
     task_next_plan_parser.add_argument("--write-report", action="store_true", help="Explicitly refresh the tracked Task OS next-plan report")
     task_next_plan_parser.set_defaults(handler=command_task_next_plan)

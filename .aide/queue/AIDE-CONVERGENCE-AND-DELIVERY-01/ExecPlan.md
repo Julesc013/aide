@@ -772,3 +772,5 @@ Engineering-review final preview passes over seven commits through 816922b6. Sou
 
 AIDE-WORK-EFFORT-01 admitted after engineering-review integration a0970bad.
 Bounded P5 supplied-attempt observation; exact source/effect gates remain.
+
+AIDE-RESUME-PLAN-01 admitted from716ec1fd: correct selected-task continuation advice through the existing current-task owner. Exact source/effect qualification remains; host delivery and native owner bindings stay open.

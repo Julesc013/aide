@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+## Continuation reference - 2026-10-18
+
+[Task OS commands](docs/reference/task-os-report-only-commands.md) describes selected-task advice, source-linked obligations, evidence reuse and the execution boundary. [Child plan](.aide/queue/AIDE-RESUME-PLAN-01/ExecPlan.md) tracks qualification.
+
 ## Engineering review - 2026-10-18
 
 [Engineering review](docs/reference/evidence-review-workflow.md) describes the existing portable prompt and packet path. The qualified source/delivered behavior, upstream notices and limitations are tracked in [AIDE-ENGINEERING-REVIEW-01](.aide/queue/AIDE-ENGINEERING-REVIEW-01/ExecPlan.md).
