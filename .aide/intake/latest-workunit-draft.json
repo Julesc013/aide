@@ -5,7 +5,6 @@
     "Validation and evidence requirements are explicit."
   ],
   "allowed_paths": [
-    ".aide/changelog/**",
     ".aide/queue/<workunit>/**"
   ],
   "dependencies": [
@@ -17,8 +16,7 @@
     "changed-files.md",
     "validation.md",
     "remaining-risks.md",
-    "intent-compiler-report.md",
-    "preflight-or-blocker-report.md"
+    "intent-compiler-report.md"
   ],
   "forbidden_paths": [
     ".git/**",
@@ -30,20 +28,19 @@
     "raw response logs",
     "target repositories unless target-local queue authorizes work"
   ],
-  "idempotency": "prompt_hash:6b3b152aeaf1a724317f9f2e181f2f54f80034b204ea3f6fba83d2d99a7f406d; status:draft; compile_only:true",
+  "idempotency": "prompt_hash:12b7ba87e037bc8368aabfbfeadb61d37a26d3c9b7f0ee31f356aa2b01fd2468; status:draft; compile_only:true",
   "implementation_outline": [
     "Reconcile repo state before editing.",
-    "block until release gates, tags, and assets are approved",
+    "require behavior proof and live-test validation plan before implementation",
     "Stop at review gates and record evidence before execution."
   ],
   "non_goals": [
     "no raw prompt execution",
     "no provider/model/network calls",
     "do not bypass queue, branch, evidence, or policy state",
-    "do not execute raw prompt directly",
-    "do not publish releases, tags, or assets from prompt alone"
+    "do not execute raw prompt directly"
   ],
-  "objective": "Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.",
+  "objective": "Normalize prompt into a bounded rollback WorkUnit draft: require behavior proof and live-test validation plan before implementation.",
   "output_schema": ".aide/intake/workunit-draft.schema.json",
   "preflight": [
     "git status --short",
@@ -53,15 +50,14 @@
   "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
   "risk_class": "release",
   "schema_version": "aide.workunit-draft.v0",
-  "sizing_class": "blocked",
+  "sizing_class": "live_test_gate",
   "status": "draft",
-  "task_class": "release",
-  "title": "Release WorkUnit Draft - Block until release gates, tags, and assets are approved",
+  "task_class": "rollback",
+  "title": "Rollback WorkUnit Draft - Require behavior proof and live-test validation plan before implementation",
   "validation": [
     "git diff --check",
-    "py -3 .aide/scripts/aide_lite.py changelog validate",
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ],
   "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-  "workunit_id": "draft-release-6b3b152aeaf1"
+  "workunit_id": "draft-rollback-12b7ba87e037"
 }

@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+## Actual Lite archive qualification - 2026-10-18
+
+Successor development qualification is integrated at4f2c3960 on local/remote dev/main. [Actual qualification](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md) now prepares the additive1.1.0 archives, original eight families, all56 proposed forms and actual published1.0.0 upgrade/conflict/recovery. Public1.0.0 stays unchanged.
+
 ## Lite successor preparation - 2026-10-18
 
 [AIDE-LITE-SUCCESSOR-01](.aide/queue/AIDE-LITE-SUCCESSOR-01/ExecPlan.md) qualifies the existing successor builder and development pack: 60 source checks, 25 affected delivered checks, ownership validation and a fixed six-commit preview pass. The proposed 1.1.0 contract retains 38 CLI forms and adds 18. Published 1.0.0 stays unchanged. Exact integration is pending and will be recorded after the reviewed effect; actual archives, published-predecessor upgrades and publication remain the next release gates.

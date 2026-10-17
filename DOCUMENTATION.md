@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+## Actual Lite release evidence - 2026-10-18
+
+[Qualification plan](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md), [prior integration](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/prior-integration.json) and [review packet](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/dev-review-packet.md) separate development qualification from actual release claims.
+
 ## Lite successor contract - 2026-10-18
 
 [Release bundle reference](docs/reference/aide-lite-release-bundle.md) explains preserved historical assets, the candidate declaration, limits and release gates. [Qualification map](.aide/queue/AIDE-LITE-SUCCESSOR-01/evidence/qualification-map.md) maps proposed forms to existing owners and required actual-archive evidence. [Development validation](.aide/queue/AIDE-LITE-SUCCESSOR-01/evidence/validation.md) records the completed checks and separates them from future release qualification.

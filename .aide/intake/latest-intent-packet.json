@@ -1,10 +1,9 @@
 {
   "allowed_path_hints": [
-    ".aide/changelog/**",
     ".aide/queue/<workunit>/**"
   ],
-  "blocked": true,
-  "blocker_reason": "block until release gates, tags, and assets are approved",
+  "blocked": false,
+  "blocker_reason": "",
   "branch_state_refs": [
     "current_branch:dev",
     "current_role:integration",
@@ -26,8 +25,7 @@
     "changed-files.md",
     "validation.md",
     "remaining-risks.md",
-    "intent-compiler-report.md",
-    "preflight-or-blocker-report.md"
+    "intent-compiler-report.md"
   ],
   "forbidden_path_hints": [
     ".git/**",
@@ -41,8 +39,8 @@
   ],
   "generated_by": "aide-lite",
   "generated_from": "inline_prompt",
-  "interpreted_goal": "Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.",
-  "next_action": "block until release gates, tags, and assets are approved",
+  "interpreted_goal": "Normalize prompt into a bounded rollback WorkUnit draft: require behavior proof and live-test validation plan before implementation.",
+  "next_action": "require behavior proof and live-test validation plan before implementation",
   "notes": [
     "deterministic_local: true",
     "provider_or_model_calls: none",
@@ -51,18 +49,17 @@
     "raw_long_prompt_storage: false",
     "flag:unsafe_prompt"
   ],
-  "raw_prompt_excerpt": "Continue the existing campaign toward a useful additive Lite release for new and existing projects. Extend the existing first-stable builder for an explicitly reviewed same-major successor candidate, preserve all immutable published1.0.0...",
-  "raw_prompt_hash": "6b3b152aeaf1a724317f9f2e181f2f54f80034b204ea3f6fba83d2d99a7f406d",
+  "raw_prompt_excerpt": "Qualify an additive AIDE Lite 1.1.0 candidate from the accepted successor builder and development pack at 4f2c3960. Preserve published 1.0.0 assets, run every original consumer family and all 56 declared CLI forms, and prove actual publi...",
+  "raw_prompt_hash": "12b7ba87e037bc8368aabfbfeadb61d37a26d3c9b7f0ee31f356aa2b01fd2468",
   "rejected_interpretations": [
     "do not bypass queue, branch, evidence, or policy state",
-    "do not execute raw prompt directly",
-    "do not publish releases, tags, or assets from prompt alone"
+    "do not execute raw prompt directly"
   ],
   "repo_state_refs": [
     ".aide/context/latest-context-packet.md",
     ".aide/context/latest-review-packet.md",
     ".aide/context/latest-task-packet.md",
-    ".aide/queue/AIDE-RESUME-PLAN-01/status.yaml",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-01/status.yaml",
     ".aide/queue/index.yaml",
     ".aide/repo/file-inventory.json",
     ".aide/repo/latest-repo-intelligence.md",
@@ -73,7 +70,7 @@
   "risk_class": "release",
   "safe_to_execute": false,
   "schema_version": "aide.intent-packet.v0",
-  "sizing_class": "blocked",
+  "sizing_class": "live_test_gate",
   "suggested_workunit": {
     "acceptance": [
       "WorkUnit scope is bounded and repo-grounded.",
@@ -81,7 +78,6 @@
       "Validation and evidence requirements are explicit."
     ],
     "allowed_paths": [
-      ".aide/changelog/**",
       ".aide/queue/<workunit>/**"
     ],
     "dependencies": [
@@ -93,8 +89,7 @@
       "changed-files.md",
       "validation.md",
       "remaining-risks.md",
-      "intent-compiler-report.md",
-      "preflight-or-blocker-report.md"
+      "intent-compiler-report.md"
     ],
     "forbidden_paths": [
       ".git/**",
@@ -106,20 +101,19 @@
       "raw response logs",
       "target repositories unless target-local queue authorizes work"
     ],
-    "idempotency": "prompt_hash:6b3b152aeaf1a724317f9f2e181f2f54f80034b204ea3f6fba83d2d99a7f406d; status:draft; compile_only:true",
+    "idempotency": "prompt_hash:12b7ba87e037bc8368aabfbfeadb61d37a26d3c9b7f0ee31f356aa2b01fd2468; status:draft; compile_only:true",
     "implementation_outline": [
       "Reconcile repo state before editing.",
-      "block until release gates, tags, and assets are approved",
+      "require behavior proof and live-test validation plan before implementation",
       "Stop at review gates and record evidence before execution."
     ],
     "non_goals": [
       "no raw prompt execution",
       "no provider/model/network calls",
       "do not bypass queue, branch, evidence, or policy state",
-      "do not execute raw prompt directly",
-      "do not publish releases, tags, or assets from prompt alone"
+      "do not execute raw prompt directly"
     ],
-    "objective": "Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.",
+    "objective": "Normalize prompt into a bounded rollback WorkUnit draft: require behavior proof and live-test validation plan before implementation.",
     "output_schema": ".aide/intake/workunit-draft.schema.json",
     "preflight": [
       "git status --short",
@@ -129,22 +123,20 @@
     "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
     "risk_class": "release",
     "schema_version": "aide.workunit-draft.v0",
-    "sizing_class": "blocked",
+    "sizing_class": "live_test_gate",
     "status": "draft",
-    "task_class": "release",
-    "title": "Release WorkUnit Draft - Block until release gates, tags, and assets are approved",
+    "task_class": "rollback",
+    "title": "Rollback WorkUnit Draft - Require behavior proof and live-test validation plan before implementation",
     "validation": [
       "git diff --check",
-      "py -3 .aide/scripts/aide_lite.py changelog validate",
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-    "workunit_id": "draft-release-6b3b152aeaf1"
+    "workunit_id": "draft-rollback-12b7ba87e037"
   },
-  "task_class": "release",
+  "task_class": "rollback",
   "validation_hints": [
     "git diff --check",
-    "py -3 .aide/scripts/aide_lite.py changelog validate",
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ]
 }

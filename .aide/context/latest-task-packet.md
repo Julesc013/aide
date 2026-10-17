@@ -1,15 +1,15 @@
 # AIDE Latest Task Packet
 
-task_id: AIDE-LITE-SUCCESSOR-01
+task_id: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
 projection_only: true
 
 ## PHASE
 
-AIDE-LITE-SUCCESSOR-01 - Preserve published Lite assets and prepare an additive successor contract
+AIDE-LITE-SUCCESSOR-QUALIFICATION-01 - Qualify actual Lite 1.1.0 archives and published predecessor upgrades
 
 ## GOAL
 
-Preserve published Lite assets and prepare an additive successor contract
+Qualify actual Lite 1.1.0 archives and published predecessor upgrades
 
 ## WHY
 
@@ -17,9 +17,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-LITE-SUCCESSOR-01/task.yaml` (selected scope and acceptance)
-- `.aide/queue/AIDE-LITE-SUCCESSOR-01/ExecPlan.md` (continuation; when present)
-- `.aide/queue/AIDE-LITE-SUCCESSOR-01/status.yaml` (actual state; when present)
+- `.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/task.yaml` (selected scope and acceptance)
+- `.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md` (continuation; when present)
+- `.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/status.yaml` (actual state; when present)
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -46,20 +46,18 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-LITE-SUCCESSOR-01/**`
-- `.aide/scripts/aide_lite.py`
-- `.aide/scripts/tests/test_stable_successor.py`
-- `.aide/policies/release-versioning.yaml`
-- `.aide/release/successor-candidate.json`
-- `docs/reference/aide-lite-release-bundle.md`
+- `.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/**`
+- `.aide/release/stable/aide-lite-v1.1.0.zip`
+- `.aide/release/stable/aide-lite-v1.1.0.tar.gz`
+- `.aide/release/stable/aide-lite-v1.1.0.manifest.json`
+- `.aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt`
 - `.aide/queue/index.yaml`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
 - `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
-- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/lite-successor-admission.md`
+- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/lite-successor-qualification-admission.md`
 - `.aide/intake/latest-*`
 - `.aide/context/latest-task-packet.md`
 - `.aide/reports/capability-*`
-- `.aide/export/aide-lite-pack-v0/**`
 - `.aide/changelog/CHANGELOG.preview.md`
 - `.aide/changelog/RELEASE_NOTES.preview.md`
 - `.aide/changelog/changelog.preview.json`
@@ -137,8 +135,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 5410
-- approx_tokens: 1353
+- chars: 5457
+- approx_tokens: 1365
 - budget_status: PASS
 - warnings:
   - none

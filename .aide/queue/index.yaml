@@ -4060,3 +4060,11 @@ items:
     exec_plan: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/ExecPlan.md
     prompt: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/prompt.md
     evidence: .aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence
+
+  - id: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
+    status: running
+    result: PENDING
+    title: Qualify actual additive Lite archives and published predecessor
+    task: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence

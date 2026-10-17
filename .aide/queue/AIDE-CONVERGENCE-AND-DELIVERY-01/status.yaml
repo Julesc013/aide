@@ -14,7 +14,7 @@ operational_next_task: actual_host_delivery_after_qualified_local_exchange
 portable_git_defaults_integration_ref: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/evidence/integration-result.json
 last_completed_task: AIDE-LITE-SUCCESSOR-01
 git_defaults_admission_ref: evidence/git-defaults-admission.md
-next_preparation: actual_Lite_successor_archive_and_published_predecessor_qualification
+next_preparation: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
 native_selected_export_result_ref: .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence/native-final-result.json
 planning_amendment_ref: evidence/useful-extensibility-amendment.md
 next_current_view_brief_ref: evidence/current-view-brief.md

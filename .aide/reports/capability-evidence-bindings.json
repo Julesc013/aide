@@ -30,10 +30,10 @@
       "state": "observed"
     },
     {
-      "bytes": 5410,
+      "bytes": 5457,
       "path": ".aide/context/latest-task-packet.md",
       "reason": "",
-      "sha256": "e7327b1f0fd563c855f698b2b6837313286fdc92ff497ea56a5597b889583744",
+      "sha256": "b6b3cd9a79b17a1fb95161be9177825ed38aedbc35895ec89ebc56f7d4a73b82",
       "state": "observed"
     },
     {
