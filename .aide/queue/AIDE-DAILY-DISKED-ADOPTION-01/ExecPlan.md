@@ -45,3 +45,10 @@ exact parent-edit classification and no-active-job/dispatch checks. The helper's
 dirty-tree condition was the four owned intake files plus the reviewed admission;
 no unrelated edits existed. Target remains read-only at 40ac8ec0. User clarification
 of its active writer is pending. Zero jobs allocated.
+
+- First job 20a98281 failed before native reads/copies: the exact installed Git
+  executable has two hard links; the task-specific preflight required one. Source
+  and native inputs are unchanged. Results collected/verified, scratch retired.
+  Propose using the remaining second allocation for corrected preparation only,
+  with original maximum two retained. Actual target validation needs a later
+  explicit finite admission; no requirement is waived.

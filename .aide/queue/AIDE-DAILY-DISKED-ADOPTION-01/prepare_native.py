@@ -29,12 +29,12 @@ def write(path, value):
     path.write_bytes((json.dumps(value, indent=2) + '\n').encode())
 
 
-def ordinary(path):
+def ordinary(path, *, expected_links=1):
     for ancestor in (path, *path.parents):
         info = ancestor.lstat()
         assert not stat.S_ISLNK(info.st_mode)
         assert not getattr(info, 'st_file_attributes', 0) & 0x400
-    assert path.is_file() and path.stat().st_nlink == 1
+    assert path.is_file() and path.stat().st_nlink == expected_links
 
 
 def main():
@@ -48,7 +48,10 @@ def main():
     project, deps = scratch / 'native-project', scratch / 'native-dependencies'
     project.mkdir(); deps.mkdir()
     git = Path(inputs['git_executable'])
-    ordinary(git); assert sha(git) == inputs['git_executable_sha256']
+    # This pinned installed Git binary has two installer-created hard links.
+    # Source, dependency and evidence inputs retain the single-link requirement.
+    ordinary(git, expected_links=2)
+    assert sha(git) == inputs['git_executable_sha256']
     env = {k: v for k, v in os.environ.items() if not k.startswith('GIT_')}
     env.update(GIT_CONFIG_GLOBAL='NUL', GIT_CONFIG_SYSTEM='NUL', GIT_TERMINAL_PROMPT='0')
 

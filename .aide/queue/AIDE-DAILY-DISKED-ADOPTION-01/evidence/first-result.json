@@ -1,0 +1,34 @@
+{
+  "schema": "aide.native-adoption-attempt.v1",
+  "status": "FAIL_PREPARATION_PREFLIGHT",
+  "job_id": "20a98281492d43388711948e70d0c9d9",
+  "source_commit": "89882a810f890c40e8e9f7a46862c487992a6d8a",
+  "source_tree": "ad31fa3acca20a46a631ed70f714ee8de865b924",
+  "result": {
+    "exit_code": 1,
+    "reason": "exited",
+    "quiescent": true,
+    "bytes": 1266,
+    "io_errors": [],
+    "job_id": "20a98281492d43388711948e70d0c9d9",
+    "pid": 18116,
+    "creation_filetime": 134367137224171840
+  },
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\20a98281492d43388711948e70d0c9d9",
+  "receipt_sha256": "1ea99d3598ef9aad8376de7e96bafa096f75250de9a70b2b0d46f71265216ca1",
+  "collected_manifest": {
+    "output": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs": "e41ece819e908717b295bd605381d0d589a5ec5c4d5d91ca82a9f359d4edfc4f"
+  },
+  "all_collection_hashes_verified": true,
+  "collection_retirement_verified": true,
+  "peaks": {
+    "scratch_bytes": 1406,
+    "memory_bytes": 29741056,
+    "canonical_bytes": {}
+  },
+  "failure": "Exact installed Git has two hard links; preparation wrongly required one. Failure before native input copies or dependency extraction.",
+  "target_mutated": false,
+  "source_review_ref": "evidence/source-review.json",
+  "original_maximum_jobs": 2
+}

@@ -3,7 +3,7 @@ id: AIDE-DAILY-DISKED-ADOPTION-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Adopt conserved selected export through DiskEd native ownership
 type: implementation
-status: planning
+status: needs_review
 admission_ref: ../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/disked-native-adoption-admission.md
 admission_sha256: f9857b2ce0fc80ed10913fc8ea1942adc1e5ad680023f29ec79cd4982d920761
 admission_verdict: ACCEPT_preparation_only
@@ -32,3 +32,6 @@ verification:
 review_gate: exact_source_effect_and_terminal_review
 native_owner: DE-W000
 native_base: 40ac8ec02778b7c25100421147fc1e107fa14ed5
+
+remaining_allocation_amendment_ref: evidence/prepare-retry-effect.md
+actual_target_validation_allocated: false

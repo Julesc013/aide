@@ -1,11 +1,15 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-DAILY-DISKED-ADOPTION-01
-status: planning
+status: needs_review
 result: PENDING
 classification: AIDE_preparation_admitted_native_effect_held
-jobs_allocated: 0
+jobs_allocated: 1
 maximum_jobs: 2
-next_action: qualify_prepared_native_metadata
+next_action: review_corrected_preparation_and_remaining_allocation
 native_writer_ownership: awaiting_user_clarification
 target_mutated: false
 review_gate: exact_source_effect_required
+
+first_result_ref: evidence/first-result.json
+remaining_allocation_proposal: preparation_retry_only
+actual_target_validation_allocated: false

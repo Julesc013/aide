@@ -1,0 +1,17 @@
+{
+  "reviewer": "/root/review_disked_continuation",
+  "verdict": "ACCEPT",
+  "head": "fe61501b76731565306da90e99344826d28aa0a7",
+  "tree": "ad31fa3acca20a46a631ed70f714ee8de865b924",
+  "template_sha256": "4e9f22ab81819f08a2dabb7318cf8a883b625642437d58357cdcfef02c7f3c35",
+  "effect_sha256": "9fed0cf723aa7735f9c2bee08e4e3449899ef93be0d9de0b132d2a47b19dce58",
+  "scope": "exact source and one offline scratch preparation job; source_commit/tree substitution only",
+  "findings": [],
+  "excluded": [
+    "target writes",
+    "grant activation",
+    "ownership resolution",
+    "native Git",
+    "second job"
+  ]
+}
