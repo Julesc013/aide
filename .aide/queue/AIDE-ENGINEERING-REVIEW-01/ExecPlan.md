@@ -43,3 +43,5 @@ Pre-run review of tree186118d7 resolved the source finding but caught stale CLI 
 Allocation3 original result: source8 PASS, delivered7 PASS/1 FAIL at token-ledger-budget-check. Job781d77883c594dd9a246923c6f5d0df1 is collected/retired and pack bytes are preserved. Static trace finds reliance on source historical ledger for three required surfaces. fixture-ledger-amendment.md proposes actual fixture measurement; no new attempt yet.
 
 Ledger amendment39985f9b independently ACCEPTed. Maximum5:3 consumed, one corrected qualification and preview remain. Original assertions and both failed evidence records are retained.
+
+Prepared ledger correction using the existing scanner; fixture starts empty, regression checks failure before measurement and success after actual CLI scan. Remaining self-test path reviewed: later derived records are explicitly generated; no other concrete missing prerequisite found. Await exact source/effect verdict.
