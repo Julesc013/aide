@@ -30,5 +30,16 @@ Pack bytes remained identical after the delivered tests; public1.0.0 assets stay
 unchanged. Job collected, quiescent, scratch absent and reservation released.
 Observed peaks: memory263553024bytes, scratch5395901bytes; pack4436386bytes.
 
-Exact preview and integration remain pending. Actual desktop delivery and native
-DiskEd adoption remain open; this increment qualifies a read-only CLI workflow.
+Allocation3/3, job7e6c5f382643444c909131c9e24c809c, PASS: fixed33a37774..1a342812
+covers all three implementation/package commits, zero malformed records, exact
+six-output regeneration. Collection verified, quiescent and retired. All three
+allocations are consumed; no further jobs/retries are authorized by this child.
+
+Final source/effect review precedes integration. Actual integration confirmation
+belongs in locally retained evidence/integration-result.log, including exact remote
+refs and postpromotion preview replay. This tracked report is the pre-effect
+qualification checkpoint, not a claim of a future push.
+
+Remaining limitations are nonblocking for this scoped lookup: freshness unverified,
+heuristic coverage incomplete, no semantic equivalence claim. Actual desktop
+delivery and native DiskEd adoption remain open. No public release was replaced.

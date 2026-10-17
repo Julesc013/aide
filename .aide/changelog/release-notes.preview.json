@@ -1,52 +1,71 @@
 {
   "follow_up": [
     {
-      "commit": "b7eb79cfe3f3",
-      "summary": "Execute only the exact accepted live effect, verify actor-owned evidence, preserve all records, then qualify source promotion separately."
+      "commit": "5fa78ca78afb",
+      "summary": "Run admitted checks, qualify changed export, independently review and synchronize dev/main; public1.0.0 unchanged."
     },
     {
-      "commit": "27240f31db86",
-      "summary": "Complete the one admitted promotion preview and exact terminal Git review. Installed desktop binding and native DiskEd ownership/adoption remain open; no release or target effect is implied."
+      "commit": "35a3a9035abc",
+      "summary": "Execute independently accepted allocation2, review generated outputs, preview and integrate qualified dev/main."
+    },
+    {
+      "commit": "1a3428129699",
+      "summary": "Run the independently reviewed preview,then exact terminal integration and remote verification."
     }
   ],
   "highlights": [
     {
       "breaking": false,
-      "category": "Changed",
-      "commit": "b7eb79cfe3f3",
-      "subject": "chore(runtime): prepare one actual cooperative review exchange",
-      "summary": "Prepare an actual cooperative readiness review with separate participant receipt, answer and sender adoption."
+      "category": "Added",
+      "commit": "5fa78ca78afb",
+      "subject": "feat(quality): explain recorded ownership checks and reuse candidates",
+      "summary": "quality explain-file --json with explicit unverified freshness and heuristic coverage."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "1a3428129699",
+      "subject": "test(quality): qualify exported discovery and prepare promotion",
+      "summary": "exported quality explain-file --json with bounded output and explicit evidence limits."
     },
     {
       "breaking": false,
       "category": "Changed",
-      "commit": "27240f31db86",
-      "subject": "docs(runtime): retain actual cooperative review and sender adoption",
-      "summary": "Record one real cooperative answer exchange and its installed-host connection prerequisite."
+      "commit": "35a3a9035abc",
+      "subject": "test(quality): retain source checks and prepare portable qualification",
+      "summary": "quality discovery source evidence and portable qualification preparation."
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "b7eb79cfe3f3",
-      "summary": "Cooperative bindings do not authenticate processes or enforce isolation. Automatic desktop delivery and target ownership remain unqualified; controller/reviewer usage is unknown."
+      "commit": "5fa78ca78afb",
+      "summary": "Source revision is attribution only; similarity does not prove semantic equivalence or safe extraction."
     },
     {
-      "commit": "27240f31db86",
-      "summary": "Cooperative attribution is not desktop delivery, authentication or containment. Controller/reviewer usage remains unknown. Original guard and stale-binding failures remain preserved."
+      "commit": "35a3a9035abc",
+      "summary": "Unknown freshness and heuristic coverage remain explicit. Source acceptance is not release or native-host qualification."
+    },
+    {
+      "commit": "1a3428129699",
+      "summary": "No semantic completeness,current-byte freshness,live host delivery or new release qualification is implied."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "27240f31db863efe7f88f2421e3b67576bcdbe9a",
-  "source_range": "2194eb6b73ac055bd4c173d1a12ffcf1833f833d..27240f31db863efe7f88f2421e3b67576bcdbe9a",
+  "source_head": "1a342812969951b09f06595c8cda98b6b9082081",
+  "source_range": "33a377743d86f59fd63a042096063d664e200468..1a342812969951b09f06595c8cda98b6b9082081",
   "validation_summary": [
     {
-      "commit": "b7eb79cfe3f3",
-      "summary": "PASS: doctor, full structural validate, compact task pack and diff checks. Existing runtime and pack evidence remains applicable to unchanged bytes."
+      "commit": "5fa78ca78afb",
+      "summary": "PASS: doctor, full validation and diff checks; NOT RUN: exact managed fixture run follows independent effect review."
     },
     {
-      "commit": "27240f31db86",
-      "summary": "Operational lifecycle and fresh SQLite audit PASS: one request, six events, nine verified references, unchanged native tables. All 51 runtime inputs and 858 pack identities match prior qualified evidence. Current structural checks and exact source/effect review are retained in child evidence before commit and promotion."
+      "commit": "35a3a9035abc",
+      "summary": "PASS: 23 source methods, zero skips/errors/failures; collection, quiescence and retirement verified. NOT RUN: second export allocation."
+    },
+    {
+      "commit": "1a3428129699",
+      "summary": "PASS: 23 source methods,16 exported Q38 methods,six ownership checks,export/doctor/validate/pack-status and unchanged published assets. NOT RUN: preview allocation3."
     }
   ],
   "warnings": []

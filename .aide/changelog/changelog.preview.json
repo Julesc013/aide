@@ -1,17 +1,17 @@
 {
   "categories": {
-    "Changed": [
+    "Added": [
       {
-        "aide_phase": "live-effect-preparation",
-        "aide_result": "prepared-not-activated",
+        "aide_phase": "implementation",
+        "aide_result": "candidate",
         "breaking": false,
-        "category": "Changed",
-        "commit": "b7eb79cfe3f3",
-        "commit_sha": "b7eb79cfe3f38480c7131fb6296d367d489337c6",
-        "entry": "Prepare an actual cooperative readiness review with separate participant receipt, answer and sender adoption.",
-        "follow_up": "- Execute only the exact accepted live effect, verify actor-owned evidence, preserve all records, then qualify source promotion separately.\n\nAIDE-Task: AIDE-COOPERATIVE-REVIEW-01\nAIDE-Phase: live-effect-preparation\nAIDE-Result: prepared-not-activated\nAIDE-Scope: bounded-review-exchange\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: exact-independent-live-effect",
-        "risks": "- Cooperative bindings do not authenticate processes or enforce isolation. Automatic desktop delivery and target ownership remain unqualified; controller/reviewer usage is unknown.",
-        "scope": "runtime",
+        "category": "Added",
+        "commit": "5fa78ca78afb",
+        "commit_sha": "5fa78ca78afb91811119f2e829288f83f624fdd5",
+        "entry": "quality explain-file --json with explicit unverified freshness and heuristic coverage.",
+        "follow_up": "- Run admitted checks, qualify changed export, independently review and synchronize dev/main; public1.0.0 unchanged.\n\nAIDE-Task: AIDE-QUALITY-DISCOVERY-01\nAIDE-Phase: implementation\nAIDE-Result: candidate\nAIDE-Scope: quality-discovery\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: accepted-for-qualification",
+        "risks": "- Source revision is attribution only; similarity does not prove semantic equivalence or safe extraction.",
+        "scope": "quality",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -21,22 +21,22 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "chore(runtime): prepare one actual cooperative review exchange",
-        "summary": "Prepare an actual cooperative readiness review with separate participant receipt, answer and sender adoption.",
-        "type": "chore",
-        "validation": "- PASS: doctor, full structural validate, compact task pack and diff checks. Existing runtime and pack evidence remains applicable to unchanged bytes.\n- Exact source/live-effect review is required before initialization or notification; preparation performs neither."
+        "subject": "feat(quality): explain recorded ownership checks and reuse candidates",
+        "summary": "quality explain-file --json with explicit unverified freshness and heuristic coverage.",
+        "type": "feat",
+        "validation": "- PASS: doctor, full validation and diff checks; NOT RUN: exact managed fixture run follows independent effect review."
       },
       {
-        "aide_phase": "operational-closure-preview-preparation",
-        "aide_result": "operational-PASS-promotion-pending",
+        "aide_phase": "portable-qualification",
+        "aide_result": "PASS23_SOURCE_PASS16_DELIVERED",
         "breaking": false,
-        "category": "Changed",
-        "commit": "27240f31db86",
-        "commit_sha": "27240f31db863efe7f88f2421e3b67576bcdbe9a",
-        "entry": "Record one real cooperative answer exchange and its installed-host connection prerequisite.",
-        "follow_up": "- Complete the one admitted promotion preview and exact terminal Git review. Installed desktop binding and native DiskEd ownership/adoption remain open; no release or target effect is implied.\n\nAIDE-Task: AIDE-COOPERATIVE-REVIEW-01\nAIDE-Phase: operational-closure-preview-preparation\nAIDE-Result: operational-PASS-promotion-pending\nAIDE-Scope: bounded-operational-evidence-derived-reports\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-exact-preview-effect",
-        "risks": "- Cooperative attribution is not desktop delivery, authentication or containment. Controller/reviewer usage remains unknown. Original guard and stale-binding failures remain preserved.",
-        "scope": "runtime",
+        "category": "Added",
+        "commit": "1a3428129699",
+        "commit_sha": "1a342812969951b09f06595c8cda98b6b9082081",
+        "entry": "exported quality explain-file --json with bounded output and explicit evidence limits.",
+        "follow_up": "- Run the independently reviewed preview,then exact terminal integration and remote verification.\n\nAIDE-Task: AIDE-QUALITY-DISCOVERY-01\nAIDE-Phase: portable-qualification\nAIDE-Result: PASS23_SOURCE_PASS16_DELIVERED\nAIDE-Scope: quality-discovery\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: exact-preview-review",
+        "risks": "- No semantic completeness,current-byte freshness,live host delivery or new release qualification is implied.",
+        "scope": "quality",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -46,29 +46,57 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "docs(runtime): retain actual cooperative review and sender adoption",
-        "summary": "Record one real cooperative answer exchange and its installed-host connection prerequisite.",
-        "type": "docs",
-        "validation": "- Operational lifecycle and fresh SQLite audit PASS: one request, six events, nine verified references, unchanged native tables. All 51 runtime inputs and 858 pack identities match prior qualified evidence. Current structural checks and exact source/effect review are retained in child evidence before commit and promotion."
+        "subject": "test(quality): qualify exported discovery and prepare promotion",
+        "summary": "exported quality explain-file --json with bounded output and explicit evidence limits.",
+        "type": "test",
+        "validation": "- PASS: 23 source methods,16 exported Q38 methods,six ownership checks,export/doctor/validate/pack-status and unchanged published assets. NOT RUN: preview allocation3."
+      }
+    ],
+    "Changed": [
+      {
+        "aide_phase": "qualification",
+        "aide_result": "PASS23_PACKAGE_PENDING",
+        "breaking": false,
+        "category": "Changed",
+        "commit": "35a3a9035abc",
+        "commit_sha": "35a3a9035abc2551ea67586b56c3deac41c2dcec",
+        "entry": "quality discovery source evidence and portable qualification preparation.",
+        "follow_up": "- Execute independently accepted allocation2, review generated outputs, preview and integrate qualified dev/main.\n\nAIDE-Task: AIDE-QUALITY-DISCOVERY-01\nAIDE-Phase: qualification\nAIDE-Result: PASS23_PACKAGE_PENDING\nAIDE-Scope: quality-discovery\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: exact-effect-review",
+        "risks": "- Unknown freshness and heuristic coverage remain explicit. Source acceptance is not release or native-host qualification.",
+        "scope": "quality",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "test(quality): retain source checks and prepare portable qualification",
+        "summary": "quality discovery source evidence and portable qualification preparation.",
+        "type": "test",
+        "validation": "- PASS: 23 source methods, zero skips/errors/failures; collection, quiescence and retirement verified. NOT RUN: second export allocation."
       }
     ]
   },
   "category_counts": {
-    "Changed": 2
+    "Added": 2,
+    "Changed": 1
   },
-  "commit_count": 2,
+  "commit_count": 3,
   "entries": [
     {
-      "aide_phase": "live-effect-preparation",
-      "aide_result": "prepared-not-activated",
+      "aide_phase": "implementation",
+      "aide_result": "candidate",
       "breaking": false,
-      "category": "Changed",
-      "commit": "b7eb79cfe3f3",
-      "commit_sha": "b7eb79cfe3f38480c7131fb6296d367d489337c6",
-      "entry": "Prepare an actual cooperative readiness review with separate participant receipt, answer and sender adoption.",
-      "follow_up": "- Execute only the exact accepted live effect, verify actor-owned evidence, preserve all records, then qualify source promotion separately.\n\nAIDE-Task: AIDE-COOPERATIVE-REVIEW-01\nAIDE-Phase: live-effect-preparation\nAIDE-Result: prepared-not-activated\nAIDE-Scope: bounded-review-exchange\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: exact-independent-live-effect",
-      "risks": "- Cooperative bindings do not authenticate processes or enforce isolation. Automatic desktop delivery and target ownership remain unqualified; controller/reviewer usage is unknown.",
-      "scope": "runtime",
+      "category": "Added",
+      "commit": "5fa78ca78afb",
+      "commit_sha": "5fa78ca78afb91811119f2e829288f83f624fdd5",
+      "entry": "quality explain-file --json with explicit unverified freshness and heuristic coverage.",
+      "follow_up": "- Run admitted checks, qualify changed export, independently review and synchronize dev/main; public1.0.0 unchanged.\n\nAIDE-Task: AIDE-QUALITY-DISCOVERY-01\nAIDE-Phase: implementation\nAIDE-Result: candidate\nAIDE-Scope: quality-discovery\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: accepted-for-qualification",
+      "risks": "- Source revision is attribution only; similarity does not prove semantic equivalence or safe extraction.",
+      "scope": "quality",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -78,22 +106,22 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "chore(runtime): prepare one actual cooperative review exchange",
-      "summary": "Prepare an actual cooperative readiness review with separate participant receipt, answer and sender adoption.",
-      "type": "chore",
-      "validation": "- PASS: doctor, full structural validate, compact task pack and diff checks. Existing runtime and pack evidence remains applicable to unchanged bytes.\n- Exact source/live-effect review is required before initialization or notification; preparation performs neither."
+      "subject": "feat(quality): explain recorded ownership checks and reuse candidates",
+      "summary": "quality explain-file --json with explicit unverified freshness and heuristic coverage.",
+      "type": "feat",
+      "validation": "- PASS: doctor, full validation and diff checks; NOT RUN: exact managed fixture run follows independent effect review."
     },
     {
-      "aide_phase": "operational-closure-preview-preparation",
-      "aide_result": "operational-PASS-promotion-pending",
+      "aide_phase": "qualification",
+      "aide_result": "PASS23_PACKAGE_PENDING",
       "breaking": false,
       "category": "Changed",
-      "commit": "27240f31db86",
-      "commit_sha": "27240f31db863efe7f88f2421e3b67576bcdbe9a",
-      "entry": "Record one real cooperative answer exchange and its installed-host connection prerequisite.",
-      "follow_up": "- Complete the one admitted promotion preview and exact terminal Git review. Installed desktop binding and native DiskEd ownership/adoption remain open; no release or target effect is implied.\n\nAIDE-Task: AIDE-COOPERATIVE-REVIEW-01\nAIDE-Phase: operational-closure-preview-preparation\nAIDE-Result: operational-PASS-promotion-pending\nAIDE-Scope: bounded-operational-evidence-derived-reports\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-exact-preview-effect",
-      "risks": "- Cooperative attribution is not desktop delivery, authentication or containment. Controller/reviewer usage remains unknown. Original guard and stale-binding failures remain preserved.",
-      "scope": "runtime",
+      "commit": "35a3a9035abc",
+      "commit_sha": "35a3a9035abc2551ea67586b56c3deac41c2dcec",
+      "entry": "quality discovery source evidence and portable qualification preparation.",
+      "follow_up": "- Execute independently accepted allocation2, review generated outputs, preview and integrate qualified dev/main.\n\nAIDE-Task: AIDE-QUALITY-DISCOVERY-01\nAIDE-Phase: qualification\nAIDE-Result: PASS23_PACKAGE_PENDING\nAIDE-Scope: quality-discovery\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: exact-effect-review",
+      "risks": "- Unknown freshness and heuristic coverage remain explicit. Source acceptance is not release or native-host qualification.",
+      "scope": "quality",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -103,10 +131,35 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "docs(runtime): retain actual cooperative review and sender adoption",
-      "summary": "Record one real cooperative answer exchange and its installed-host connection prerequisite.",
-      "type": "docs",
-      "validation": "- Operational lifecycle and fresh SQLite audit PASS: one request, six events, nine verified references, unchanged native tables. All 51 runtime inputs and 858 pack identities match prior qualified evidence. Current structural checks and exact source/effect review are retained in child evidence before commit and promotion."
+      "subject": "test(quality): retain source checks and prepare portable qualification",
+      "summary": "quality discovery source evidence and portable qualification preparation.",
+      "type": "test",
+      "validation": "- PASS: 23 source methods, zero skips/errors/failures; collection, quiescence and retirement verified. NOT RUN: second export allocation."
+    },
+    {
+      "aide_phase": "portable-qualification",
+      "aide_result": "PASS23_SOURCE_PASS16_DELIVERED",
+      "breaking": false,
+      "category": "Added",
+      "commit": "1a3428129699",
+      "commit_sha": "1a342812969951b09f06595c8cda98b6b9082081",
+      "entry": "exported quality explain-file --json with bounded output and explicit evidence limits.",
+      "follow_up": "- Run the independently reviewed preview,then exact terminal integration and remote verification.\n\nAIDE-Task: AIDE-QUALITY-DISCOVERY-01\nAIDE-Phase: portable-qualification\nAIDE-Result: PASS23_SOURCE_PASS16_DELIVERED\nAIDE-Scope: quality-discovery\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: exact-preview-review",
+      "risks": "- No semantic completeness,current-byte freshness,live host delivery or new release qualification is implied.",
+      "scope": "quality",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "test(quality): qualify exported discovery and prepare promotion",
+      "summary": "exported quality explain-file --json with bounded output and explicit evidence limits.",
+      "type": "test",
+      "validation": "- PASS: 23 source methods,16 exported Q38 methods,six ownership checks,export/doctor/validate/pack-status and unchanged published assets. NOT RUN: preview allocation3."
     }
   ],
   "generated_by": "aide-lite",
@@ -117,7 +170,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "27240f31db863efe7f88f2421e3b67576bcdbe9a",
-  "source_range": "2194eb6b73ac055bd4c173d1a12ffcf1833f833d..27240f31db863efe7f88f2421e3b67576bcdbe9a",
+  "source_head": "1a342812969951b09f06595c8cda98b6b9082081",
+  "source_range": "33a377743d86f59fd63a042096063d664e200468..1a342812969951b09f06595c8cda98b6b9082081",
   "warnings": []
 }

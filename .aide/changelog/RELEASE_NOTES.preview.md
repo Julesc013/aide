@@ -2,29 +2,33 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 2194eb6b73ac055bd4c173d1a12ffcf1833f833d..27240f31db863efe7f88f2421e3b67576bcdbe9a
-source_head: 27240f31db863efe7f88f2421e3b67576bcdbe9a
+source_range: 33a377743d86f59fd63a042096063d664e200468..1a342812969951b09f06595c8cda98b6b9082081
+source_head: 1a342812969951b09f06595c8cda98b6b9082081
 preview_only: true
 
 ## Highlights
 
-- Changed: Prepare an actual cooperative readiness review with separate participant receipt, answer and sender adoption. (b7eb79cfe3f3)
-- Changed: Record one real cooperative answer exchange and its installed-host connection prerequisite. (27240f31db86)
+- Added: quality explain-file --json with explicit unverified freshness and heuristic coverage. (5fa78ca78afb)
+- Added: exported quality explain-file --json with bounded output and explicit evidence limits. (1a3428129699)
+- Changed: quality discovery source evidence and portable qualification preparation. (35a3a9035abc)
 
 ## Validation Summary
 
-- b7eb79cfe3f3: PASS: doctor, full structural validate, compact task pack and diff checks. Existing runtime and pack evidence remains applicable to unchanged bytes.
-- 27240f31db86: Operational lifecycle and fresh SQLite audit PASS: one request, six events, nine verified references, unchanged native tables. All 51 runtime inputs and 858 pack identities match prior qualified evidence. Current structural checks and exact source/effect review are retained in child evidence before commit and promotion.
+- 5fa78ca78afb: PASS: doctor, full validation and diff checks; NOT RUN: exact managed fixture run follows independent effect review.
+- 35a3a9035abc: PASS: 23 source methods, zero skips/errors/failures; collection, quiescence and retirement verified. NOT RUN: second export allocation.
+- 1a3428129699: PASS: 23 source methods,16 exported Q38 methods,six ownership checks,export/doctor/validate/pack-status and unchanged published assets. NOT RUN: preview allocation3.
 
 ## Known Risks
 
-- b7eb79cfe3f3: Cooperative bindings do not authenticate processes or enforce isolation. Automatic desktop delivery and target ownership remain unqualified; controller/reviewer usage is unknown.
-- 27240f31db86: Cooperative attribution is not desktop delivery, authentication or containment. Controller/reviewer usage remains unknown. Original guard and stale-binding failures remain preserved.
+- 5fa78ca78afb: Source revision is attribution only; similarity does not prove semantic equivalence or safe extraction.
+- 35a3a9035abc: Unknown freshness and heuristic coverage remain explicit. Source acceptance is not release or native-host qualification.
+- 1a3428129699: No semantic completeness,current-byte freshness,live host delivery or new release qualification is implied.
 
 ## Follow-up
 
-- b7eb79cfe3f3: Execute only the exact accepted live effect, verify actor-owned evidence, preserve all records, then qualify source promotion separately.
-- 27240f31db86: Complete the one admitted promotion preview and exact terminal Git review. Installed desktop binding and native DiskEd ownership/adoption remain open; no release or target effect is implied.
+- 5fa78ca78afb: Run admitted checks, qualify changed export, independently review and synchronize dev/main; public1.0.0 unchanged.
+- 35a3a9035abc: Execute independently accepted allocation2, review generated outputs, preview and integrate qualified dev/main.
+- 1a3428129699: Run the independently reviewed preview,then exact terminal integration and remote verification.
 
 ## Warnings
 

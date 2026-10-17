@@ -3,7 +3,7 @@ id: AIDE-QUALITY-DISCOVERY-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Explain recorded owners helpers and checks
 type: implementation
-status: running
+status: passed_with_notes
 admission_ref: ../AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/quality-discovery-admission.md
 admission_sha256: 7343a84ba274e7703ca8f36394aaa58cdb0a7c535f820db8b28dc89cce053300
 scope:

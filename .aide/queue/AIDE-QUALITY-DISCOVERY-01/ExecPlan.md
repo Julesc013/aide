@@ -35,3 +35,11 @@ pack refresh and all16 delivered Q38 methods for allocation2/3.
 Allocation2/3 PASS: ownership6, deliveredQ38=16, unchanged public assets and all858
 pack identities accounted for. Collected/retired. Prepare final preview allocation
 at fixed33a37774..accepted package checkpoint; no new source tests necessary.
+
+Allocation3/3 PASS preview at1a342812; exact six bytes regenerated, all jobs retired.
+Terminal source/effect review then qualified dev/main synchronization; actual
+receipt kept locally outside recursive preview closure. All allocations consumed.
+
+Terminal review required the three existing promotion summaries: changed-files,
+validation and remaining-risks. Added from retained evidence without new jobs,
+payload changes or preview regeneration.

@@ -5,7 +5,7 @@ default_concurrency: 1
 canonical_source: .aide/queue
 items:
   - id: AIDE-QUALITY-DISCOVERY-01
-    status: running
+    status: passed_with_notes
     title: Explain recorded owners helpers and checks
     task: .aide/queue/AIDE-QUALITY-DISCOVERY-01/task.yaml
     exec_plan: .aide/queue/AIDE-QUALITY-DISCOVERY-01/ExecPlan.md
