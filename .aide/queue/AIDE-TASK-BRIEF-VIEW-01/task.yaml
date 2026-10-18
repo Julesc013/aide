@@ -1,0 +1,35 @@
+schema_version: aide.queue-task.v0
+id: AIDE-TASK-BRIEF-VIEW-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Read the existing task brief as a safe offline page
+type: implementation
+status: needs_review
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-TASK-BRIEF-VIEW-01/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/task_brief_view.py
+    - .aide/scripts/tests/test_task_brief_view.py
+    - docs/reference/task-packets.md
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/reports/capability-ledger.json
+    - .aide/reports/capability-ledger.md
+    - .aide/reports/capability-evidence-bindings.json
+    - .aide/reports/capability-command-status.md
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/**
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+  forbidden_paths:
+    - live context, quality/repo ledgers, inboxes and runtime host bindings
+    - target repositories and machine configuration
+    - historical task bytes, existing policies and runtime owners
+    - .aide/release/** and .github/**
+verification:
+  maximum_jobs: 3
+  config_digest: 61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90
+  model_requests: 0
+review_gate: exact_admission_source_each_job_and_integration_effect

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "helper",
+    "exit_code": 0,
+    "sha256": "1eb39a1ce4a1b72fecbf193d5981437300a90a55b8aac46e49e8957fad7caeaf",
+    "summary": [
+      "AIDE Lite git plan",
+      "result: blocked",
+      "operation: plan",
+      "current_branch: dev",
+      "current_role: integration"
+    ]
+  },
+  {
+    "name": "doctor",
+    "exit_code": 0,
+    "sha256": "585c64e7eac737c2e172b11d760d884d7c614858c1521bb8941c4e4ffa595f42",
+    "summary": [
+      "AIDE Lite doctor",
+      "status: PASS",
+      "- repo_root: D:/Projects/AIDE/aide",
+      "- PASS required: .aide/policies/token-budget.yaml",
+      "- PASS required: .aide/memory/project-state.md"
+    ]
+  },
+  {
+    "name": "validate",
+    "exit_code": 0,
+    "sha256": "cf44302e0d88fd996496fbc517ac1f956446e1541a1bd4ebccdc007be80e3a8c",
+    "summary": [
+      "AIDE Lite validate",
+      "status: PASS",
+      "checks: 60919; PASS: 60918; WARN: 1; FAIL: 0; OTHER: 0",
+      "- WARN review packet review ref missing: .aide/prompts/evidence-review.md",
+      "omitted PASS details: 60918; use validate --full or --json for all results"
+    ]
+  }
+]

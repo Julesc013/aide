@@ -1,0 +1,11 @@
+feat(task): admit an offline development brief view
+
+Make the existing task/file observation readable as a saved page without a
+server or another state owner. Preserve uncertainty, component evidence and
+the original command behavior through one pure renderer.
+
+Validation: PASS - existing brief owners and baseline doctor/validate inspected
+ NOT RUN - HTML source and installed consumer checks
+Changelog: Internal: Admit bounded offline task brief presentation
+AIDE-Task: AIDE-TASK-BRIEF-VIEW-01
+AIDE-Format: compact-v1

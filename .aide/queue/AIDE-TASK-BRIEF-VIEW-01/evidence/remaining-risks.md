@@ -1,0 +1,1 @@
+**Retained limits:** saved page is not live state, accepted evidence or execution authority. Existing source freshness/coverage/usage limits remain. No browser compatibility, host, downstream adoption, publication or efficiency claim. Escaping, output bounds and inactive content require independent evidence.

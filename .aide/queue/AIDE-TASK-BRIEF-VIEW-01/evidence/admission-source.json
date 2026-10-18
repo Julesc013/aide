@@ -1,0 +1,18 @@
+{
+  "base": "4b4b735ef3f31af4e0d16d622453f814365ef437",
+  "files": {
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/ExecPlan.md": "eb256c1ab3b0c1e58eebb929a1c6f229a88af41ff0acebd463fafa90a419a0de",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/admission-effect.md": "f900887c08d5e5e80a06f8ded60097f57c2e4d9232b3e4b6077bbbb638bf140f",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/admission-message.txt": "175a8a114099e934f5a7f917b120c63b5b07064a357e0be6c4e4702e5f1028a0",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/baseline.json": "67e65f643affab8abdeffc8d03672ca2b785dc5c502cd67974ee20024a7b8dcc",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/changed-files.md": "5147ac94d204720d72a1fea9d8289c73e5795600b1282a5e4ccaf63aa3e68d93",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/dev-review-packet.md": "ded7e1bbe45bdd48fade17527e8ef0a54188ee1dc46912de86bdf4432488330c",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/preflight.json": "0a0984b25cca3496c7c163151306e4ed2248ec7a5b485a0e3b792b8571ecf177",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/remaining-risks.md": "3697024ade198d7c999050d6255f3d1afdc04902c7789943555c2eaa68c1d17b",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/validation.md": "8f1ed6d789dce5424433d75429e67c252aacad0d5f663059a1ab779c36f1ddb5",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/prompt.md": "2b3c6e9939a1443a379411c0e0ae7262515dbb2921dbac4547405aab2e0bdd3e",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml": "06fd82c960829231505645c23206dd7eaac31832e6dff25676f86681cc0ab2d7",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/task.yaml": "c6b4d9d1fda30d9ef7f00d11824012d343ffa09f7a97091c8dbb88b4263fe202"
+  },
+  "message_sha256": "175a8a114099e934f5a7f917b120c63b5b07064a357e0be6c4e4702e5f1028a0"
+}

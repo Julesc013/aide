@@ -1,0 +1,1 @@
+**Preparation only:** doctor and full validation pass with the existing warning retained. Existing brief/continuation owners inspected; all 84 original methods must remain. New source/delivered/installed checks are NOT RUN. Native results and identities will be recorded before promotion.
