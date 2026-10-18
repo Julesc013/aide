@@ -1,0 +1,6 @@
+**Source checkpoint and job 1/3.** Review this exact candidate and compact message.
+Under unchanged config 61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90, shared estate/dispatch locks, running controls and no active job, require clean index, HEAD 8a72f68c693c4a052e24a1d511d6fe329dd42106 and task/aide-dependency-cancellation-01. Exact dirty paths must equal the map plus the map itself. Stage only these files, pin the tree and use managed commit create dry-run/apply with exact message/ref/parent/tree. Preserve receipts; no retry on uncertain commit.
+
+Substitute only resulting source commit/tree in source-job-template.json. Recheck exact clean source and fresh admission through the existing runner. Execute once: original request21, MCP13 and State26 plus cancellation13 methods under unchanged default180-second/1GiB limits. All fixture state uses owned TEMP. Collect retained streams and hashes, prove quiescence, scratch retirement and reservation release. Any failure consumes this slot; no automatic retry.
+
+No live ledger/migration, peer delivery, process cancellation, model, provider, export, release or dev/main/remote effect. Actual CLI/MCP two-request workflow and legacy-reader refusal remain separately reviewed job2. Existing claims and original assertions are unchanged. This source checkpoint is not qualification.

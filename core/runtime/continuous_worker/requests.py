@@ -17,6 +17,8 @@ CONFIG_KEY = "dependency_configuration_v1"
 ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,119}")
 SHA = re.compile(r"[0-9a-f]{64}")
 STAGES = ("recorded", "delivered", "accepted", "returned", "adopted")
+CANCELLATION = ("cancellation_requested", "cancellation_acknowledged")
+DISPOSITIONS = ("not_started", "stopped", "already_completed", "uncertain")
 OBLIGATIONS = {"answer", "candidate", "validated", "integrated_dev", "promoted_main", "published"}
 
 
@@ -77,7 +79,8 @@ def decode(raw):
 def configuration(value, root):
     bounded(value)
     fields(value, "schema state_root participants expires_at max_requests message_bytes")
-    if value["schema"] != "aide.dependency-configuration.v1" or value["state_root"] != str(root):
+    if (value["schema"] not in ("aide.dependency-configuration.v1", "aide.dependency-configuration.v2")
+            or value["state_root"] != str(root)):
         raise Refused("configuration schema or state root mismatch")
     if type(value["expires_at"]) not in (int, float) or not math.isfinite(value["expires_at"]):
         raise Refused("finite configuration expiry required")
@@ -191,29 +194,54 @@ class Requests:
         bounded(message, self.config["message_bytes"])
         fields(message, "request_id request_sha256 actor stage detail")
         stage, detail = message["stage"], message["detail"]
-        if not isinstance(stage, str) or stage not in STAGES[1:]:
+        if not isinstance(stage, str) or stage not in (*STAGES[1:], *CANCELLATION):
             raise Refused("unknown observation stage")
+        if stage in CANCELLATION and self.config["schema"] != "aide.dependency-configuration.v2":
+            raise Refused("cancellation requires explicit v2 configuration")
         with self.state.transaction():
             self.guard()
             row = self.row(message["request_id"])
             if row["digest"] != message["request_sha256"]:
                 raise Refused("request revision mismatch")
             body = json.loads(row["body"])
-            self.actor(message["actor"], body["sender"] if stage == "adopted" else body["recipient"])
+            self.actor(message["actor"], body["sender"] if stage in ("adopted", "cancellation_requested")
+                       else body["recipient"])
             observations = json.loads(row["observations"])
             if stage in observations:
                 if observations[stage] != message:
                     raise Refused("conflicting duplicate observation")
             else:
-                if STAGES.index(stage) != STAGES.index(row["stage"]) + 1:
-                    raise Refused("out-of-order observation")
-                self.validate_detail(stage, detail, body, observations)
+                if stage in CANCELLATION:
+                    self.validate_cancellation(stage, detail, row["stage"], observations)
+                else:
+                    if "cancellation_requested" in observations:
+                        raise Refused("cancellation prevents further advancement; reconcile native effects")
+                    if STAGES.index(stage) != STAGES.index(row["stage"]) + 1:
+                        raise Refused("out-of-order observation")
+                    self.validate_detail(stage, detail, body, observations)
                 observations[stage] = message
                 self.state.db.execute("UPDATE dependency_requests SET stage=?,observations=? WHERE id=?",
-                                      (stage, canonical(observations), body["id"]))
+                                      (row["stage"] if stage in CANCELLATION else stage,
+                                       canonical(observations), body["id"]))
                 self.state.event(None, "dependency_" + stage,
                                  {"id": body["id"], "observation_sha256": digest(message)})
         return self.inspect(message["request_id"])
+
+    @staticmethod
+    def validate_cancellation(stage, detail, current_stage, observations):
+        if stage == "cancellation_requested":
+            fields(detail, "expected_stage reason evidence")
+            if current_stage == "adopted" or detail["expected_stage"] != current_stage:
+                raise Refused("cancellation requires the current pre-adoption stage")
+            text(detail["reason"])
+        else:
+            fields(detail, "cancellation_sha256 disposition evidence")
+            requested = observations.get("cancellation_requested")
+            if requested is None or detail["cancellation_sha256"] != digest(requested):
+                raise Refused("acknowledgement must bind the exact cancellation request")
+            if detail["disposition"] not in DISPOSITIONS:
+                raise Refused("unknown native cancellation disposition")
+        references(detail["evidence"])
 
     @staticmethod
     def validate_detail(stage, detail, body, observations):
@@ -253,8 +281,24 @@ class Requests:
         unmet = {key: value for key, value in claims.items() if value != "PASS"}
         if stage == "returned" and unmet:
             action = "reconcile_unmet_obligations_with_native_owner_before_successor_request"
+        cancellation = {}
+        if self.config["schema"] == "aide.dependency-configuration.v2":
+            cancellation = {"cancellation_state": "none", "cancellation_disposition": None}
+            if "cancellation_requested" in observations:
+                cancellation["cancellation_state"] = "requested"
+                owner, action = body["recipient"], "reconcile_native_effects_and_acknowledge_cancellation"
+                unmet = {key: claims.get(key, "UNKNOWN") for key in body["completion"]
+                         if claims.get(key) != "PASS"}
+            if "cancellation_acknowledged" in observations:
+                disposition = observations["cancellation_acknowledged"]["detail"]["disposition"]
+                cancellation.update(cancellation_state="acknowledged", cancellation_disposition=disposition)
+                if disposition == "uncertain":
+                    owner, action = body["recipient"], "reconcile_uncertain_native_effects"
+                else:
+                    owner, action = body["sender"], "review_native_cancellation_outcome_before_successor_request"
         expired = self.now() >= self.config["expires_at"]
-        return {"schema": "aide.dependency-status.v1", "mode": "cooperative", "id": body["id"],
+        return {"schema": "aide.dependency-status.v2" if cancellation else "aide.dependency-status.v1",
+                "mode": "cooperative", "id": body["id"], **cancellation,
                 "request_sha256": row["digest"], "request": body, "stage": stage,
                 "observations": observations, "next_owner": owner, "next_action": action,
                 "unmet_obligations": unmet,
@@ -276,8 +320,10 @@ class Requests:
             if actor["participant"] not in (body["sender"], body["recipient"]):
                 continue
             status = self.inspect(row["id"])
-            records.append({key: status[key] for key in
-                            ("id", "request_sha256", "stage", "next_owner", "next_action")})
+            keys = ("id", "request_sha256", "stage", "next_owner", "next_action")
+            if "cancellation_state" in status:
+                keys += ("cancellation_state", "cancellation_disposition")
+            records.append({key: status[key] for key in keys})
             if len(records) > limit:
                 break
         return {"mode": "cooperative", "requests": records[:limit],

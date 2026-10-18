@@ -5333,3 +5333,7 @@ Qualified compact-v1 through existing owners: 120 source checks, 71 delivered ch
 ### Retained successor integration ? 18 October 2026
 
 [AIDE-LITE-SUCCESSOR-INTEGRATION-01](.aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/ExecPlan.md) reconciles the held dfae9356 history with current development. Combined-source and actual installed-package checks passed; see the child report and integration receipt for exact dev/main delivery. The original technically accepted 1.1.0 archive remains a frozen candidate. Select and qualify the intended release subject before publication; do not equate old archives with the newer development pack.
+
+### Independent dependency cancellation
+
+[Independent dependency cancellation](.aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/ExecPlan.md) is admitted P4.requests work. Qualify one cancelled request beside independently completed work; preserve pending publication and frozen release subjects.

@@ -1,0 +1,26 @@
+{
+  "base": "8a72f68c693c4a052e24a1d511d6fe329dd42106",
+  "files": {
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md": "f161afd4ff662029c1fdacb3aacc6eedc265ba32cbea1eaa093e5da6d2277ab6",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml": "e34e5ce01cf0e72669c57e5d55d08222316f23cbf37189c6d5c57ca6b4865c0c",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/ExecPlan.md": "49bef4cf6574edda1f2d2095d45bed86deddfb7548065afce85e07d7a9743cf5",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/admission-review.md": "083850063e49b68e2cba16a00c15e9d3da53f80361348c12d19e355ab52f50cd",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/preparation-checks.json": "90f6a65bc3339706e6e256e75c7589dd0ca3154818d213ddde21e708fbe7f447",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/source-effect.md": "29ec9e287ceb5dc687905844c1dbaa7e4c3452e016e0ab60a033db28573ace9a",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/source-job-template.json": "a94eadfbd9c22be6a0f9440dcec4276f30460e58fe44307e4326f8fac7878877",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/source-message.txt": "76aba2187ca0730138063b10c0526dc8b34551a4f77f33a2efdda11c1e15bfc4",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/run_checks.py": "45a9e57831a4c184540cf4f887f9c52c404351e012652d1b2a8b359c67e4208b",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/status.yaml": "273540c0126372144e95d399ec75728dec67f9dfe288878cdb6c17e29ae168c8",
+    ".aide/queue/index.yaml": "7b35e6171ea00b6ee885c81dc6fe69af53a8a94752a856b916e6a92d9afb9b9f",
+    ".aide/scripts/tests/test_continuous_worker_request_cancellation.py": "67635e23cc5b6bb9d5e3b2acb8247961fc144da57c0cb1b7cb5ba632e406226e",
+    "DOCUMENTATION.md": "933a8524d4c646881a4c831385d48efbbf8975e963bce29f43e4ba5b63219539",
+    "IMPLEMENT.md": "a950f2cbde9e1424e4becf93317ffd63d9f18797310ed4957783f35a57ee0d3f",
+    "PLANS.md": "566ca028a163dc27142c513eae2f6c42d95e1beee33acc1657806ddef09f8b71",
+    "core/runtime/continuous_worker/dependency_mcp.py": "032f0f501d7128561de2a8f98c5601d7d5324e551bb084a03106649f58d1ef4e",
+    "core/runtime/continuous_worker/requests.py": "d169d1ab2e4105834a662afd947dc06099d565c467a0a29fb04c2675218ebb60",
+    "docs/reference/local-dependency-requests.md": "83b6aedc9d9685962d4a0be80f042424593321d6071e83a781dc54c3082b24a9"
+  },
+  "message_sha256": "76aba2187ca0730138063b10c0526dc8b34551a4f77f33a2efdda11c1e15bfc4",
+  "effect_sha256": "29ec9e287ceb5dc687905844c1dbaa7e4c3452e016e0ab60a033db28573ace9a",
+  "job_template_sha256": "a94eadfbd9c22be6a0f9440dcec4276f30460e58fe44307e4326f8fac7878877"
+}

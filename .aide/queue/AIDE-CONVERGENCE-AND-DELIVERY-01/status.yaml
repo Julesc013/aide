@@ -194,3 +194,5 @@ successor_frozen_candidate_ref: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01
 
 successor_reconciliation_report: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/REPORT.md
 successor_reconciliation_integration_receipt: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/integration-result.log
+
+dependency_cancellation_ref: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/status.yaml

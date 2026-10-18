@@ -10,7 +10,7 @@ import sqlite3
 import sys
 
 from .request_access import open_requests
-from .requests import MAX_MESSAGE, OBLIGATIONS, decode, fields
+from .requests import CANCELLATION, DISPOSITIONS, MAX_MESSAGE, OBLIGATIONS, STAGES, decode, fields
 from .state import Refused
 
 VERSION = "2025-11-25"
@@ -36,7 +36,11 @@ DETAIL = {"oneOf": [object_schema({"receipt": REFERENCE}),
                     object_schema({"subject": REFERENCE, "claims": {"type": "object",
                                    "additionalProperties": {"enum": ["PASS", "FAILED", "NOT_RUN", "UNKNOWN"]}},
                                    "evidence": REFERENCES}),
-                    object_schema({"returned_sha256": {"type": "string"}, "verification": REFERENCES})]}
+                    object_schema({"returned_sha256": {"type": "string"}, "verification": REFERENCES}),
+                    object_schema({"expected_stage": {"enum": list(STAGES[:-1])},
+                                   "reason": {"type": "string"}, "evidence": REFERENCES}),
+                    object_schema({"cancellation_sha256": {"type": "string"},
+                                   "disposition": {"enum": list(DISPOSITIONS)}, "evidence": REFERENCES})]}
 
 TOOLS = [
     {"name": "dependency_inbox", "description": "List this participant's requests; reading does not acknowledge delivery.",
@@ -50,9 +54,9 @@ TOOLS = [
      "inputSchema": object_schema({"request": REQUEST}),
      "annotations": {"readOnlyHint": False, "destructiveHint": False,
                      "idempotentHint": True, "openWorldHint": False}},
-    {"name": "dependency_observe", "description": "Record an explicit revision-bound delivery/acceptance/return/adoption observation; claims are not independently verified.",
+    {"name": "dependency_observe", "description": "Record a revision-bound lifecycle observation. Cancellation requires v2 configuration; acknowledgement does not stop processes or verify claims.",
      "inputSchema": object_schema({"request_id": {"type": "string"}, "request_sha256": {"type": "string"},
-                                   "stage": {"enum": ["delivered", "accepted", "returned", "adopted"]},
+                                   "stage": {"enum": [*STAGES[1:], *CANCELLATION]},
                                    "detail": DETAIL}),
      "annotations": {"readOnlyHint": False, "destructiveHint": False,
                      "idempotentHint": True, "openWorldHint": False}},

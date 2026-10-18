@@ -874,3 +874,9 @@ unmerged pending its own integration disposition; no historical waiver inferred.
 **Retained successor reconciliation.** AIDE-LITE-SUCCESSOR-INTEGRATION-01 imports the original qualification/evidence and installed-effort repair while preserving newer development source and current generated views. The historical message blocker is resolved by the separately qualified policy; original status at dfae9356 remains historical. Combined-source qualification, export and exact integration are pending.
 
 **Successor source reconciled and qualified.** AIDE-LITE-SUCCESSOR-INTEGRATION-01 preserves dfae9356 ancestry, newer features, all original evidence and frozen archive bytes. Combined source, actual delivered/installed pack and fixed history preview passed; exact sync is recorded by its integration receipt. The next delivery decision is the release subject: original frozen 1.1.0 versus a separately qualified newer archive. Neither source integration nor pack checks silently extend old archive qualification.
+
+**Independent P4.requests increment.** AIDE-DEPENDENCY-CANCELLATION-01 is
+admitted for explicit-v2 cooperative cancellation, not native termination.
+The publication candidate remains preserved on task/aide-lite-successor-publication-01
+at f708e8c6 awaiting interactive authentication. Refresh its ref guards after
+independent integration; do not reuse stale publication effects.

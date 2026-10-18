@@ -1,4 +1,4 @@
-# Local dependency requests
+### Local dependency requests
 
 The optional continuous-worker request interface records a cooperative exchange
 without taking over either project's native task. It uses the existing
@@ -12,7 +12,7 @@ and adoption is the sender's separate observation referencing its own checks.
 Neither participant's statement proves that an external effect actually happened.
 The status always identifies this distinction and returns the next owner/action.
 
-## Opt-in configuration
+**Opt-in configuration**
 
 Use an explicitly owned existing runtime directory, outside disposable workspaces.
 The root must already exist; initialization creates the existing coordinator
@@ -35,13 +35,17 @@ configuration (replace all identities, root, expiry and limits deliberately):
 
 `expires_at` is an absolute Unix timestamp, not a renewable lease. The first
 profile refuses changed configuration/bindings in place. Expiry does not release
-any workspace owner. Replacement and independent cancellation need a later
+any workspace owner. Configuration/binding replacement still needs a separately
 reconciled interface; do not create another database to evade outstanding work.
+For independent cancellation, initialize an explicitly approved new ledger with
+`aide.dependency-configuration.v2` and the same fields. Existing v1 ledgers refuse
+cancellation; changing their configuration in place also refuses. Older readers
+reject v2 rather than overlook a cancellation. There is no automatic migration.
 Maximums are 16 participants, 256 requests and 65,536 bytes per message. These
 bound logical records; they are not a physical filesystem quota. Existing host
 storage admission and resource monitoring remain necessary.
 
-## Commands
+**Commands**
 
 Invoke `python -B -m core.runtime.continuous_worker` with:
 
@@ -100,7 +104,40 @@ action. This profile does not automatically retry, revise, reject or cancel a
 task. An amendment needs a separately attributed native decision and successor;
 changing an existing request ID's body refuses.
 
-## Cooperative MCP tools (qualified local profile)
+**Independent cancellation (explicit v2 configuration)**
+
+Use the same `request-observe` command or `dependency_observe` tool. These
+observations retain the last normal `stage`; they never imply adoption:
+
+| Observation | Actor | Exact detail fields |
+|---|---|---|
+| `cancellation_requested` | Sender | `expected_stage`: current normal stage before adoption; `reason`: nonempty bounded text; `evidence`: references |
+| `cancellation_acknowledged` | Recipient | `cancellation_sha256`: canonical digest of the entire cancellation observation; `disposition`: `not_started`, `stopped`, `already_completed` or `uncertain`; `evidence`: references |
+
+The request digest, participant binding and expected stage must still match at
+the transaction. If normal progress wins a race, inspect it before requesting
+cancellation again. If cancellation wins, further normal advancement refuses.
+Identical observations remain replayable without additional events; conflicting
+retries refuse. All earlier native-work links, return claims and obligations stay
+intact. Unknown completion remains unknown, even when the recipient reports
+`already_completed`. Cancellation does not alter another request.
+
+V2 status uses `aide.dependency-status.v2`; status and inbox add
+`cancellation_state` (`none`, `requested`, `acknowledged`) and
+`cancellation_disposition` (null until acknowledged). While requested, the
+recipient owns reconciliation and acknowledgement. An `uncertain` acknowledgement
+keeps reconciliation with that recipient; other dispositions direct the sender
+to review the native outcome before any separately authorized successor.
+Acknowledgements are immutable observations. Later findings belong in native
+recovery evidence and an attributed successor; they cannot overwrite history.
+
+**An acknowledgement is a participant's claim, not enforced quiescence.** These
+operations do not stop a process, cancel an inference request, release a workspace,
+grant authority, or independently verify effects. Paused/expired controls refuse
+new observations; retained status stays readable. Disconnection does not cancel.
+V1 status and ordinary behavior retain their existing shape and meaning.
+
+**Cooperative MCP tools (qualified local profile)**
 
 The optional source module `core.runtime.continuous_worker.dependency_mcp` exposes
 the same ledger through MCP 2025-11-25 stdio. A launching host supplies the existing
@@ -144,7 +181,7 @@ Installed-client integration,
 automatic wake-up and actual existing-worker delivery require separate evidence;
 connecting a transport does not establish that another worker accepted a request.
 
-## Continuation and qualification
+**Continuation and qualification**
 
 Transactions commit each record with its history event. After an uncertain CLI
 response, inspect the stable ID. Identical replays conserve the record and events;
@@ -161,6 +198,11 @@ also passed. The runtime interface remains source-only; the portable pack retain
 its existing capability boundary. Exact integration uses the task evidence.
 Local fixture qualification does not establish
 automatic host delivery, authenticated peer identity, isolation, real integration,
-independent cancellation or downstream adoption. Those remain required increments
+downstream adoption or native cancellation enforcement. Those remain required increments
 of the daily-use workflow. Published Lite assets do not acquire this feature from
 a source commit alone.
+
+The v2 cooperative cancellation candidate is tracked by
+[AIDE-DEPENDENCY-CANCELLATION-01](../../.aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/ExecPlan.md).
+Its source and actual CLI/MCP qualification are separate from the earlier v1
+evidence; consult the child's status before treating the new behavior as qualified.

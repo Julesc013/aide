@@ -73,3 +73,9 @@ collection. Preserve failures, validate collections and retire only owned scratc
 No blind retry, broader resources, new model calls or repeated unchanged host
 probes. The broader daily-use host, downstream adoption, efficiency and release
 obligations remain open.
+
+**Prepared source.** Explicit v2 configuration, two attributed cancellation
+observations, unchanged normal stage and v1 behavior. Status/inbox expose the
+next responsible owner. Thirteen focused methods plus the original 60 methods
+are prepared for job 1; one actual fresh-process two-request scenario and legacy
+reader refusal remain job 2. No native test has run at this checkpoint.

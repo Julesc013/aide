@@ -4161,3 +4161,10 @@ items:
     task: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/ExecPlan.md
     evidence: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence
+
+  - id: AIDE-DEPENDENCY-CANCELLATION-01
+    title: Independent cooperative dependency cancellation
+    status: needs_review
+    task: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence

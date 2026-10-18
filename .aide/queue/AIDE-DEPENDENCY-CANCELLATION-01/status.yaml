@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-DEPENDENCY-CANCELLATION-01
 status: needs_review
-result: ADMISSION_PREPARED
-next_action: independent_admission_then_bounded_source
+result: SOURCE_PREPARED_UNRUN
+next_action: exact_source_and_first_job_review
 maximum_jobs: 3
 jobs_allocated: 0
 active_jobs: 0

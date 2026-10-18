@@ -14070,3 +14070,7 @@ Applied one frozen cutoff update under the standing owner instruction. Existing 
 ### Retained installed-effort repair ? 18 October 2026
 
 Reconciled the original 98b7b2dc repair in two-parent merge 4edf2b14, retaining dfae9356 ancestry and newer features. The exporter binds effort accounting to its owned helper, avoiding project-owned core. Source 47, delivered 41, ownership six, the actual installed regression and fixed preview passed. The 870-member development pack was refreshed by its existing owner; original qualification and frozen 1.1.0 assets remain unchanged. Exact integration results belong to the child receipt.
+
+### Independent dependency cancellation
+
+Prepared explicit-v2 cancellation through existing Requests and MCP owners, preserving v1 behavior and native ownership. New regression and fresh-process checks await exact source/effect review; no live ledger is changed.
