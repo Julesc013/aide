@@ -2,26 +2,29 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 19e237cde0864ca56169a14a7bf8ded5180d6def..72d613489ad7a7429cdeeb49724044789f5308c1
-source_head: 72d613489ad7a7429cdeeb49724044789f5308c1
-commit_count: 3
+source_range: 21625bd6a5cf9610e3b8a5a586fb1290bcdf6fe8..13edc23c88d5db9440f2256a0b178b3d14f5cc96
+source_head: 13edc23c88d5db9440f2256a0b178b3d14f5cc96
+commit_count: 6
 malformed_count: 0
 preview_only: true
 release_publishing: false
 
 ## Summary
 
-- Added: 2
-- Changed: 1
+- Added: 5
+- Fixed: 1
 
 ## Added
 
-- Portable task-record export and checksum-bound inspection. (40a5740e7eef feat(task): carry bounded continuation records between sessions)
-- Safe-installed task-record export and read-only comparison. (72d613489ad7 test(task): qualify portable and installed task handoff)
+- Compact validation with full text and machine-readable result modes. (c96577f7b079 feat(validation): make complete checks readable in CLI output)
+- Compact validation with full text and machine-readable result modes. (7804bb47d587 test(validation): prepare actual exported output qualification)
+- Compact validation with full text and machine-readable result modes. (28a8033977b6 test(validation): repair portable validation fixture prerequisites)
+- Compact validation with full text and machine-readable result modes. (0dc7d2a0f439 test(validation): supply required project instructions in fixture)
+- Compact validation with full text and machine-readable result modes. (13edc23c88d5 test(validation): qualify delivered output and prepare final preview)
 
-## Changed
+## Fixed
 
-- Record task handoff source proof and prepare portable consumer checks. (579925c7c5ee test(task): prepare exported and installed handoff qualification)
+- Document the bounded repair needed before accepting validation delivery. (ec51458bfed7 test(validation): preserve export failure and bound fixture repair)
 
 ## Malformed Commits
 

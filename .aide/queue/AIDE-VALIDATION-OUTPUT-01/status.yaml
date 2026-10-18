@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 id: AIDE-VALIDATION-OUTPUT-01
-status: needs_review
-result: PENDING
+status: passed_with_notes
+result: SOURCE_DELIVERED_AND_PREVIEW_PASS
 last_attempt: PASS
-next_action: exact_preview_job5_review
-allocations_used: 4
+next_action: exact_terminal_integration_review
+allocations_used: 5

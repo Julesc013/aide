@@ -170,3 +170,6 @@ context_task_selection_integration_receipt: .aide/queue/AIDE-CONTEXT-TASK-SELECT
 # Dev/main integration follows child exact effect; native/host gates unchanged.
 
 # AIDE-VALIDATION-OUTPUT-01: bounded presentation increment admitted; qualification pending.
+
+# AIDE-VALIDATION-OUTPUT-01 qualified: source10/conserved26,delivered36,ownership6; all5retired.
+# Actual60915checks compact241bytes/full4894325; original failures retained; see child REPORT.md.

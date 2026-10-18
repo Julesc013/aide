@@ -1,6 +1,6 @@
 # Malformed Commits
 
-source_range: 19e237cde0864ca56169a14a7bf8ded5180d6def..72d613489ad7a7429cdeeb49724044789f5308c1
+source_range: 21625bd6a5cf9610e3b8a5a586fb1290bcdf6fe8..13edc23c88d5db9440f2256a0b178b3d14f5cc96
 malformed_count: 0
 
 - None.

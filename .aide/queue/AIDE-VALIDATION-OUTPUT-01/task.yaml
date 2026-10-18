@@ -2,7 +2,7 @@ schema_version: aide.queue-task.v0
 id: AIDE-VALIDATION-OUTPUT-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Make complete validation readable without discarding findings
-status: needs_review
+status: passed_with_notes
 type: implementation
 scope:
   allowed_paths:

@@ -1,71 +1,128 @@
 {
   "follow_up": [
     {
-      "commit": "40a5740e7eef",
-      "summary": "Qualify source and actual safe-installed consumers; review integration separately."
+      "commit": "c96577f7b079",
+      "summary": "Qualify source/exported consumers, refresh bindings and review integration."
     },
     {
-      "commit": "579925c7c5ee",
-      "summary": "Run reviewed export consumer job and fixed preview before integration review."
+      "commit": "7804bb47d587",
+      "summary": "Qualify source/exported consumers, refresh bindings and review integration."
     },
     {
-      "commit": "72d613489ad7",
-      "summary": "Complete fixed preview, terminal review and guarded dev/main synchronization."
+      "commit": "ec51458bfed7",
+      "summary": "Prepare exact fixture repair and independently review allocation3; no automatic retry."
+    },
+    {
+      "commit": "28a8033977b6",
+      "summary": "Qualify source/exported consumers, refresh bindings and review integration."
+    },
+    {
+      "commit": "0dc7d2a0f439",
+      "summary": "Qualify source/exported consumers, refresh bindings and review integration."
+    },
+    {
+      "commit": "13edc23c88d5",
+      "summary": "Qualify source/exported consumers, refresh bindings and review integration."
     }
   ],
   "highlights": [
     {
       "breaking": false,
       "category": "Added",
-      "commit": "40a5740e7eef",
-      "subject": "feat(task): carry bounded continuation records between sessions",
-      "summary": "Portable task-record export and checksum-bound inspection."
+      "commit": "c96577f7b079",
+      "subject": "feat(validation): make complete checks readable in CLI output",
+      "summary": "Compact validation with full text and machine-readable result modes."
     },
     {
       "breaking": false,
       "category": "Added",
-      "commit": "72d613489ad7",
-      "subject": "test(task): qualify portable and installed task handoff",
-      "summary": "Safe-installed task-record export and read-only comparison."
+      "commit": "7804bb47d587",
+      "subject": "test(validation): prepare actual exported output qualification",
+      "summary": "Compact validation with full text and machine-readable result modes."
     },
     {
       "breaking": false,
-      "category": "Changed",
-      "commit": "579925c7c5ee",
-      "subject": "test(task): prepare exported and installed handoff qualification",
-      "summary": "Record task handoff source proof and prepare portable consumer checks."
+      "category": "Added",
+      "commit": "28a8033977b6",
+      "subject": "test(validation): repair portable validation fixture prerequisites",
+      "summary": "Compact validation with full text and machine-readable result modes."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "0dc7d2a0f439",
+      "subject": "test(validation): supply required project instructions in fixture",
+      "summary": "Compact validation with full text and machine-readable result modes."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "13edc23c88d5",
+      "subject": "test(validation): qualify delivered output and prepare final preview",
+      "summary": "Compact validation with full text and machine-readable result modes."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "ec51458bfed7",
+      "subject": "test(validation): preserve export failure and bound fixture repair",
+      "summary": "Document the bounded repair needed before accepting validation delivery."
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "40a5740e7eef",
-      "summary": "Observation is not ownership, authorization, authenticity or atomic capture."
+      "commit": "c96577f7b079",
+      "summary": "Consumers parsing individual PASS lines must request --full or --json."
     },
     {
-      "commit": "579925c7c5ee",
-      "summary": "Bundle inspection does not establish authority, authenticity or atomic capture."
+      "commit": "7804bb47d587",
+      "summary": "Consumers parsing individual PASS lines must request --full or --json."
     },
     {
-      "commit": "72d613489ad7",
-      "summary": "Observations do not transfer worker ownership or execution authority."
+      "commit": "ec51458bfed7",
+      "summary": "Failed export is an incomplete candidate; actual output comparison is unrun."
+    },
+    {
+      "commit": "28a8033977b6",
+      "summary": "Consumers parsing individual PASS lines must request --full or --json."
+    },
+    {
+      "commit": "0dc7d2a0f439",
+      "summary": "Consumers parsing individual PASS lines must request --full or --json."
+    },
+    {
+      "commit": "13edc23c88d5",
+      "summary": "Consumers parsing individual PASS lines must request --full or --json."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "72d613489ad7a7429cdeeb49724044789f5308c1",
-  "source_range": "19e237cde0864ca56169a14a7bf8ded5180d6def..72d613489ad7a7429cdeeb49724044789f5308c1",
+  "source_head": "13edc23c88d5db9440f2256a0b178b3d14f5cc96",
+  "source_range": "21625bd6a5cf9610e3b8a5a586fb1290bcdf6fe8..13edc23c88d5db9440f2256a0b178b3d14f5cc96",
   "validation_summary": [
     {
-      "commit": "40a5740e7eef",
-      "summary": "PASS: syntax; 59 existing test methods unchanged; 20 new regressions prepared."
+      "commit": "c96577f7b079",
+      "summary": "PASS structural syntax and unchanged collector/existing-test checks."
     },
     {
-      "commit": "579925c7c5ee",
-      "summary": "PASS: source79, no skips; collection and retirement verified; binding CURRENT."
+      "commit": "7804bb47d587",
+      "summary": "PASS36 source methods with no failures, errors or skips; job fully retired."
     },
     {
-      "commit": "72d613489ad7",
-      "summary": "PASS: source79, delivered79, ownership6; no skips; installed consumer PASS."
+      "commit": "ec51458bfed7",
+      "summary": "PASS ownership6, export, doctor, validate and pack status in attempt2."
+    },
+    {
+      "commit": "28a8033977b6",
+      "summary": "PASS36 source methods with no failures, errors or skips; job fully retired."
+    },
+    {
+      "commit": "0dc7d2a0f439",
+      "summary": "PASS36 source methods with no failures, errors or skips; job fully retired."
+    },
+    {
+      "commit": "13edc23c88d5",
+      "summary": "PASS source10/conserved26, delivered36, ownership6 and actual complete validation."
     }
   ],
   "warnings": []

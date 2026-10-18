@@ -4107,9 +4107,9 @@ items:
     evidence: .aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence
 
   - id: AIDE-VALIDATION-OUTPUT-01
-    status: needs_review
-    result: PENDING
-    planning_state: source_prepared_runtime_unrun
+    status: passed_with_notes
+    result: SOURCE_DELIVERED_AND_PREVIEW_PASS
+    planning_state: qualified_validation_output_integration_receipt_required
     title: Make complete validation readable without discarding findings
     task: .aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml
     exec_plan: .aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md

@@ -841,3 +841,9 @@ Native adoption/host binding/whole-outcome evidence remain separate.
 
 AIDE-VALIDATION-OUTPUT-01 admitted for bounded validation presentation. Full validators
 remain unchanged; source/export qualification and exact integration required.
+
+AIDE-VALIDATION-OUTPUT-01 qualified: 10 rerun and 26 retained source results,
+36 delivered tests, six ownership tests and fixed preview passed. All 60,915
+checks remain: 241 default output bytes versus 4,894,325 full bytes. All five
+jobs retired; original fixture failures remain. See the child REPORT.md;
+exact integration receipt governs sync, and broader campaign limits remain.

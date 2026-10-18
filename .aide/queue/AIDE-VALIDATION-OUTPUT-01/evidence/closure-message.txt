@@ -1,0 +1,34 @@
+feat(validation): deliver concise checks with complete evidence modes
+
+## Summary
+- Close bounded AIDE-VALIDATION-OUTPUT-01 qualification.
+
+## Why
+- Daily validation should expose actionable findings without megabytes of PASS details.
+
+## Changed
+- Qualify concise default, exact legacy --full and lossless ordered JSON.
+- Retain original fixture failures, repairs and exact portable evidence.
+- Prepare safe dev/main synchronization and retirement of this local task branch.
+
+## Validation
+- PASS source10/conserved26, delivered36,ownership6 and actual full/default comparison.
+- PASS60915checks, one warning preserved:4894325full bytes versus241compact bytes.
+- PASS six-commit fixed preview; all five allocations retired and collections verified.
+
+## Changelog
+- Added: Concise validation reports with complete text and machine-readable modes.
+
+## Risks
+- Parsers needing individual PASS lines must choose --full or --json.
+- No speed, cost, broader profile or new release claim; original failures preserved.
+
+## Follow-up
+- Execute separately reviewed dev/main sync and continue dependency-ready campaign work.
+
+AIDE-Task: AIDE-VALIDATION-OUTPUT-01
+AIDE-Phase: qualification-closure
+AIDE-Result: PASS
+AIDE-Scope: validation-output
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: terminal-independent-integration-review-required

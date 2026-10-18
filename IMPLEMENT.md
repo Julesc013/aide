@@ -14033,3 +14033,9 @@ Native adoption/host binding/whole-outcome evidence remain separate.
 
 Prepared concise validation presentation, legacy --full and lossless --json.
 Collectors and existing assertions are unchanged. Runtime qualification pending.
+
+AIDE-VALIDATION-OUTPUT-01 qualified: 10 rerun and 26 retained source results,
+36 delivered tests, six ownership tests and fixed preview passed. All 60,915
+checks remain: 241 default output bytes versus 4,894,325 full bytes. All five
+jobs retired; original fixture failures remain. See the child REPORT.md;
+exact integration receipt governs sync, and broader campaign limits remain.

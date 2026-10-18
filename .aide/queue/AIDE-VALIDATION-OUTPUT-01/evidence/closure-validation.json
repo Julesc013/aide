@@ -1,0 +1,74 @@
+{
+  "result": "PASS",
+  "commands": [
+    {
+      "label": "message",
+      "command": [
+        "commit",
+        "check",
+        "--message-file",
+        ".aide\\queue\\AIDE-VALIDATION-OUTPUT-01\\evidence\\closure-message.txt"
+      ],
+      "exit_code": 0,
+      "bytes": 2472,
+      "sha256": "6a3ac5cfc096d1c04030c3b97738f5c867e7d0b5b24400313611e11982966c54"
+    },
+    {
+      "label": "range",
+      "command": [
+        "commit",
+        "check",
+        "--range",
+        "21625bd6a5cf9610e3b8a5a586fb1290bcdf6fe8..HEAD"
+      ],
+      "exit_code": 0,
+      "bytes": 818,
+      "sha256": "71915fdc19b14cbdefcd64d434c33e454eed6920f8d74ae9eb424966129aecc7"
+    },
+    {
+      "label": "validate",
+      "command": [
+        "validate"
+      ],
+      "exit_code": 0,
+      "bytes": 241,
+      "sha256": "78dedb1db8cbcacf0eb61ee706acea23d6e5de01ef4374c526376aa852dd07f2"
+    },
+    {
+      "label": "doctor",
+      "command": [
+        "doctor"
+      ],
+      "exit_code": 0,
+      "bytes": 5181,
+      "sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21"
+    },
+    {
+      "label": "pack",
+      "command": [
+        "pack-status"
+      ],
+      "exit_code": 0,
+      "bytes": 232,
+      "sha256": "17eb7a713285498d636c31fd8f0e50e9b1a632f16f230bd1f2db48a19f2bb673"
+    },
+    {
+      "label": "fixed_preview",
+      "exit_code": 0,
+      "bytes": 1214,
+      "sha256": "1ce6d3014103b0329c19d5bd92b340b3e1d3edc189ae316fa92b51154bf138be"
+    }
+  ],
+  "binding": {
+    "state": "CURRENT",
+    "reason": "bound_source_inputs_unchanged",
+    "changed_refs": [],
+    "qualification": "source_classification_only"
+  },
+  "all_five_collections_verified": true,
+  "original_failed_exit_codes_preserved": [
+    1,
+    1
+  ],
+  "warning": "Historical global review-packet missing-ref warning remains; current task review packet links existing procedure."
+}

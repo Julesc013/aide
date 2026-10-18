@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "commit": "13edc23c88d5db9440f2256a0b178b3d14f5cc96",
+  "tree": "d84c0c8b1aff4f223c3a862aa6009c58bc393900",
+  "base": "0dc7d2a0f439bab0f826a4118697beeb928a3763",
+  "paths": [
+    ".aide/export/aide-lite-pack-v0/checksums.json",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_aide_lite.py",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_validation_output.py",
+    ".aide/export/aide-lite-pack-v0/manifest.yaml",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-04-actual-output-comparison.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-04-delivered-result.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-04-delivered-tests.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-04-ownership-tests.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-04-qualification.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-04-source-repair-tests.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/preview-effect.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/preview-job-template.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/preview-message.txt",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/preview-prior-hashes.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/preview-source.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-target-attempt-04.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-target-commit-result.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-target-review.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/run_preview.py",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml"
+  ]
+}

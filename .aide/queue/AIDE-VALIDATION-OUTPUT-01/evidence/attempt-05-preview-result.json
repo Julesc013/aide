@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "source_head": "13edc23c88d5db9440f2256a0b178b3d14f5cc96",
+  "source_range": "21625bd6a5cf9610e3b8a5a586fb1290bcdf6fe8..13edc23c88d5db9440f2256a0b178b3d14f5cc96",
+  "commits": [
+    "13edc23c88d5db9440f2256a0b178b3d14f5cc96",
+    "0dc7d2a0f439bab0f826a4118697beeb928a3763",
+    "28a8033977b6ce6ffbf5c73bb11f360573b21b8d",
+    "ec51458bfed7680d3d87e661ffdb97430cc70ffd",
+    "7804bb47d58792c3108b8b5282fb56b3bafbb070",
+    "c96577f7b079a00dbedbb580c289759a21d02fec"
+  ],
+  "malformed_count": 0,
+  "sha256s": {
+    "CHANGELOG.preview.md": "6eaa71f59369db491e47ed036298bee43efce91849ffd9ed27e589300291e2e4",
+    "RELEASE_NOTES.preview.md": "3172e90cadf5fc884f1bcbfd7b7c515b9986f6bc67f2988ef577ed800a9eff9f",
+    "changelog.preview.json": "3dbd7822436a867ae97c371f9e5a72aa7b8a115b51fd6e7d394347a62e4f1a3f",
+    "latest-changelog-report.md": "0b83544e4f862e5e748a0f056eb9fd3ea737347e0cb71a39703e4232772ffc7c",
+    "malformed-commits.md": "0979fe62013ec6180b1794c6eb0800e8a7ec9ac7f95b5f86a07e890a77332819",
+    "release-notes.preview.json": "614153d9668ae2d9c7f7c83cb90d47dde12a1ce08728a1ddb6e4ca50c343dbb2"
+  },
+  "regeneration": "read_only_exact_six_output_comparison",
+  "operations": {
+    "preview": {
+      "exit_code": 0,
+      "log_sha256": "e22cee7e2ee2989e89367c6605f90771bea6ff57c9c2c992221f2a96a8f4eee3"
+    },
+    "validate": {
+      "exit_code": 0,
+      "log_sha256": "eb5ba25320954d7fb10d12867818e67bb7ae7ef3f878daa54c49aeb385b5bc37"
+    },
+    "status": {
+      "exit_code": 0,
+      "log_sha256": "222093e9c06345a789df3bc708d820b9d66a38aa06f387a4f44ac42c7519b4d8"
+    }
+  }
+}

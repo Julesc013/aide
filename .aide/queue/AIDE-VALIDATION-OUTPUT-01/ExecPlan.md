@@ -85,3 +85,8 @@ Job4b0880db0 PASS: source10, delivered36, ownership6, doctor/validate/pack statu
 and actual output comparison. Original26 source methods retained; final865pack
 contains exactly revised two test payloads plus metadata. Full4894325bytes versus
 compact241bytes for60915checks/oneWARN; no cost/speed claim. Preview remains.
+
+Qualification closed: fixed six-commit preview PASS; all5allocations retired and
+collected. Source10/conserved26, delivered36/ownership6 and actual finding
+comparison PASS; failures2/3 retained. See REPORT.md. Exact terminal review and
+actual integration receipt remain required; full campaign is not complete.
