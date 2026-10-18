@@ -7,12 +7,12 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Added",
-        "commit": "55b5aabb94b5",
-        "commit_sha": "55b5aabb94b51ec6998c75a34d6340a6a438b7bf",
-        "entry": "Cooperative dependency cancellation and acknowledgement",
-        "follow_up": "Qualify exact source and CLI/MCP workflow before integration",
+        "commit": "b81589114b2a",
+        "commit_sha": "b81589114b2abf86d219f407e0c1e3fe048be3c1",
+        "entry": "Explicit cooperative dependency session reconciliation",
+        "follow_up": "",
         "message_format": "compact-v1",
-        "risks": "",
+        "risks": "Configuration declarations do not enforce native host quiescence",
         "scope": "requests",
         "source_sections_present": [
           "Body",
@@ -20,12 +20,12 @@
           "Changelog",
           "AIDE-Task",
           "AIDE-Format",
-          "Follow-up"
+          "Risk"
         ],
-        "subject": "feat(requests): record independent dependency cancellation",
-        "summary": "Cooperative dependency cancellation and acknowledgement",
+        "subject": "feat(requests): preserve work across explicit session reconciliation",
+        "summary": "Explicit cooperative dependency session reconciliation",
         "type": "feat",
-        "validation": "PASS - syntax, unchanged original test hashes and scoped diff\nNOT RUN - 73 source checks and fresh-process consumer qualification"
+        "validation": "PASS - syntax, exact scope and original test preservation\nNOT RUN - 88 source methods and fresh CLI/MCP workflow"
       }
     ],
     "Internal": [
@@ -35,9 +35,9 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "8a72f68c693c",
-        "commit_sha": "8a72f68c693c4a052e24a1d511d6fe329dd42106",
-        "entry": "Admit bounded cooperative request cancellation",
+        "commit": "32a9d56aca40",
+        "commit_sha": "32a9d56aca409b4891047a776fdf40399744a48c",
+        "entry": "Admit bounded dependency session reconciliation",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
@@ -49,10 +49,10 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "feat(requests): admit independent cooperative cancellation",
-        "summary": "Admit bounded cooperative request cancellation",
+        "subject": "feat(requests): admit explicit session binding reconciliation",
+        "summary": "Admit bounded dependency session reconciliation",
         "type": "feat",
-        "validation": "PASS - source gap and preserved release/ref inspection\nNOT RUN - cancellation implementation and native qualification"
+        "validation": "PASS - current source gap and exact preserved ref inspection\nNOT RUN - implementation and native qualification"
       },
       {
         "aide_phase": "",
@@ -60,10 +60,10 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "ad6f61bb5ae2",
-        "commit_sha": "ad6f61bb5ae2e5e00a4fe009538ce0f1280c0afe",
-        "entry": "Bind cooperative cancellation consumer qualification",
-        "follow_up": "Run the independently reviewed second job before promotion",
+        "commit": "984b47b6e9d1",
+        "commit_sha": "984b47b6e9d1df9eadee60dff7218d693854da8e",
+        "entry": "Record session reconciliation regression evidence",
+        "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
         "scope": "requests",
@@ -72,13 +72,12 @@
           "Validation",
           "Changelog",
           "AIDE-Task",
-          "AIDE-Format",
-          "Follow-up"
+          "AIDE-Format"
         ],
-        "subject": "test(requests): qualify cancellation beside continuing work",
-        "summary": "Bind cooperative cancellation consumer qualification",
+        "subject": "test(requests): retain passing session reconciliation regressions",
+        "summary": "Record session reconciliation regression evidence",
         "type": "test",
-        "validation": "PASS - 73 source methods; collection and retirement verified\nNOT RUN - fresh-process workflow, old-reader refusal and package identity"
+        "validation": "PASS - 88 methods; verified collection and retirement\nNOT RUN - fresh-process workflow and old-reader continuity"
       },
       {
         "aide_phase": "",
@@ -86,10 +85,10 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "c6dffcccf0a7",
-        "commit_sha": "c6dffcccf0a71f74006dce56558e1feb4c2afff1",
-        "entry": "Record independent cooperative cancellation evidence",
-        "follow_up": "Finish preview and independent terminal integration review",
+        "commit": "09925a0ff6aa",
+        "commit_sha": "09925a0ff6aa14117271a0115baf3f1a47b98aaa",
+        "entry": "Qualify preserved dependency work across session change",
+        "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
         "scope": "requests",
@@ -98,47 +97,20 @@
           "Validation",
           "Changelog",
           "AIDE-Task",
-          "AIDE-Format",
-          "Follow-up"
+          "AIDE-Format"
         ],
-        "subject": "test(requests): record the qualified cancellation workflow",
-        "summary": "Record independent cooperative cancellation evidence",
+        "subject": "test(requests): qualify fresh-session dependency continuation",
+        "summary": "Qualify preserved dependency work across session change",
         "type": "test",
-        "validation": "PASS - 73 source methods; fresh-process workflow; legacy refusal\nPASS - 870 package files, eight release assets and two retired jobs\nNOT RUN - fixed-range promotion preview"
-      },
-      {
-        "aide_phase": "",
-        "aide_result": "",
-        "breaking": false,
-        "breaking_change": "",
-        "category": "Internal",
-        "commit": "a672797ff9cf",
-        "commit_sha": "a672797ff9cf27dc53ef2164322be55d623bdd68",
-        "entry": "Refresh provenance without changing qualified payloads",
-        "follow_up": "Review and run the amended third allocation before integration",
-        "message_format": "compact-v1",
-        "risks": "",
-        "scope": "pack",
-        "source_sections_present": [
-          "Body",
-          "Validation",
-          "Changelog",
-          "AIDE-Task",
-          "AIDE-Format",
-          "Follow-up"
-        ],
-        "subject": "chore(pack): prepare provenance refresh before promotion",
-        "summary": "Refresh provenance without changing qualified payloads",
-        "type": "chore",
-        "validation": "PASS - 74 source and process methods; exact owned pack inventory\nFAIL - two stale pack-provenance checks retained for repair\nNOT RUN - amended final export and preview job"
+        "validation": "PASS - 88 methods; two workflows; legacy-reader compatibility\nPASS - 870 pack files and eight release assets unchanged; both jobs retired\nNOT RUN - final owned export and promotion preview"
       }
     ]
   },
   "category_counts": {
     "Added": 1,
-    "Internal": 4
+    "Internal": 3
   },
-  "commit_count": 5,
+  "commit_count": 4,
   "entries": [
     {
       "aide_phase": "",
@@ -146,9 +118,9 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "8a72f68c693c",
-      "commit_sha": "8a72f68c693c4a052e24a1d511d6fe329dd42106",
-      "entry": "Admit bounded cooperative request cancellation",
+      "commit": "32a9d56aca40",
+      "commit_sha": "32a9d56aca409b4891047a776fdf40399744a48c",
+      "entry": "Admit bounded dependency session reconciliation",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
@@ -160,10 +132,10 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "feat(requests): admit independent cooperative cancellation",
-      "summary": "Admit bounded cooperative request cancellation",
+      "subject": "feat(requests): admit explicit session binding reconciliation",
+      "summary": "Admit bounded dependency session reconciliation",
       "type": "feat",
-      "validation": "PASS - source gap and preserved release/ref inspection\nNOT RUN - cancellation implementation and native qualification"
+      "validation": "PASS - current source gap and exact preserved ref inspection\nNOT RUN - implementation and native qualification"
     },
     {
       "aide_phase": "",
@@ -171,12 +143,12 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Added",
-      "commit": "55b5aabb94b5",
-      "commit_sha": "55b5aabb94b51ec6998c75a34d6340a6a438b7bf",
-      "entry": "Cooperative dependency cancellation and acknowledgement",
-      "follow_up": "Qualify exact source and CLI/MCP workflow before integration",
+      "commit": "b81589114b2a",
+      "commit_sha": "b81589114b2abf86d219f407e0c1e3fe048be3c1",
+      "entry": "Explicit cooperative dependency session reconciliation",
+      "follow_up": "",
       "message_format": "compact-v1",
-      "risks": "",
+      "risks": "Configuration declarations do not enforce native host quiescence",
       "scope": "requests",
       "source_sections_present": [
         "Body",
@@ -184,12 +156,12 @@
         "Changelog",
         "AIDE-Task",
         "AIDE-Format",
-        "Follow-up"
+        "Risk"
       ],
-      "subject": "feat(requests): record independent dependency cancellation",
-      "summary": "Cooperative dependency cancellation and acknowledgement",
+      "subject": "feat(requests): preserve work across explicit session reconciliation",
+      "summary": "Explicit cooperative dependency session reconciliation",
       "type": "feat",
-      "validation": "PASS - syntax, unchanged original test hashes and scoped diff\nNOT RUN - 73 source checks and fresh-process consumer qualification"
+      "validation": "PASS - syntax, exact scope and original test preservation\nNOT RUN - 88 source methods and fresh CLI/MCP workflow"
     },
     {
       "aide_phase": "",
@@ -197,10 +169,10 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "ad6f61bb5ae2",
-      "commit_sha": "ad6f61bb5ae2e5e00a4fe009538ce0f1280c0afe",
-      "entry": "Bind cooperative cancellation consumer qualification",
-      "follow_up": "Run the independently reviewed second job before promotion",
+      "commit": "984b47b6e9d1",
+      "commit_sha": "984b47b6e9d1df9eadee60dff7218d693854da8e",
+      "entry": "Record session reconciliation regression evidence",
+      "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
       "scope": "requests",
@@ -209,13 +181,12 @@
         "Validation",
         "Changelog",
         "AIDE-Task",
-        "AIDE-Format",
-        "Follow-up"
+        "AIDE-Format"
       ],
-      "subject": "test(requests): qualify cancellation beside continuing work",
-      "summary": "Bind cooperative cancellation consumer qualification",
+      "subject": "test(requests): retain passing session reconciliation regressions",
+      "summary": "Record session reconciliation regression evidence",
       "type": "test",
-      "validation": "PASS - 73 source methods; collection and retirement verified\nNOT RUN - fresh-process workflow, old-reader refusal and package identity"
+      "validation": "PASS - 88 methods; verified collection and retirement\nNOT RUN - fresh-process workflow and old-reader continuity"
     },
     {
       "aide_phase": "",
@@ -223,10 +194,10 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "c6dffcccf0a7",
-      "commit_sha": "c6dffcccf0a71f74006dce56558e1feb4c2afff1",
-      "entry": "Record independent cooperative cancellation evidence",
-      "follow_up": "Finish preview and independent terminal integration review",
+      "commit": "09925a0ff6aa",
+      "commit_sha": "09925a0ff6aa14117271a0115baf3f1a47b98aaa",
+      "entry": "Qualify preserved dependency work across session change",
+      "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
       "scope": "requests",
@@ -235,39 +206,12 @@
         "Validation",
         "Changelog",
         "AIDE-Task",
-        "AIDE-Format",
-        "Follow-up"
+        "AIDE-Format"
       ],
-      "subject": "test(requests): record the qualified cancellation workflow",
-      "summary": "Record independent cooperative cancellation evidence",
+      "subject": "test(requests): qualify fresh-session dependency continuation",
+      "summary": "Qualify preserved dependency work across session change",
       "type": "test",
-      "validation": "PASS - 73 source methods; fresh-process workflow; legacy refusal\nPASS - 870 package files, eight release assets and two retired jobs\nNOT RUN - fixed-range promotion preview"
-    },
-    {
-      "aide_phase": "",
-      "aide_result": "",
-      "breaking": false,
-      "breaking_change": "",
-      "category": "Internal",
-      "commit": "a672797ff9cf",
-      "commit_sha": "a672797ff9cf27dc53ef2164322be55d623bdd68",
-      "entry": "Refresh provenance without changing qualified payloads",
-      "follow_up": "Review and run the amended third allocation before integration",
-      "message_format": "compact-v1",
-      "risks": "",
-      "scope": "pack",
-      "source_sections_present": [
-        "Body",
-        "Validation",
-        "Changelog",
-        "AIDE-Task",
-        "AIDE-Format",
-        "Follow-up"
-      ],
-      "subject": "chore(pack): prepare provenance refresh before promotion",
-      "summary": "Refresh provenance without changing qualified payloads",
-      "type": "chore",
-      "validation": "PASS - 74 source and process methods; exact owned pack inventory\nFAIL - two stale pack-provenance checks retained for repair\nNOT RUN - amended final export and preview job"
+      "validation": "PASS - 88 methods; two workflows; legacy-reader compatibility\nPASS - 870 pack files and eight release assets unchanged; both jobs retired\nNOT RUN - final owned export and promotion preview"
     }
   ],
   "generated_by": "aide-lite",
@@ -278,7 +222,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "a672797ff9cf27dc53ef2164322be55d623bdd68",
-  "source_range": "8fe2d12cbc9d91f034cf7f68c58beda09809dc58..a672797ff9cf27dc53ef2164322be55d623bdd68",
+  "source_head": "09925a0ff6aa14117271a0115baf3f1a47b98aaa",
+  "source_range": "ceac70a6fefefde93d2fb7435e8825c173302757..09925a0ff6aa14117271a0115baf3f1a47b98aaa",
   "warnings": []
 }

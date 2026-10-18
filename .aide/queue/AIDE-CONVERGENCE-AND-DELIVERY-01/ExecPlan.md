@@ -892,3 +892,8 @@ preserved and its future effect must refresh stale ref guards.
 AIDE-DEPENDENCY-REBIND-01 is admitted for explicit cooperative configuration
 reconciliation over existing request/state owners. Preserve native work, stale
 writer refusal and independent publication gates; see the child ExecPlan.
+
+**Session reconciliation qualified.** AIDE-DEPENDENCY-REBIND-01 passed88 source
+methods, two actual fresh-process workflows, v1/v2 compatibility, six ownership
+checks and fixed preview. All3 jobs retired. Child REPORT.md and integration
+receipt govern scoped completion; actual host/target/publication gates remain.

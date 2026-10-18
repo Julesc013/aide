@@ -1,0 +1,42 @@
+{
+  "schema": "aide.dependency-rebind.integration-effect.v1",
+  "base": "ceac70a6fefefde93d2fb7435e8825c173302757",
+  "candidate": "Exact closure map; substitute only resulting managed commit/tree.",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "task_branch": "task/aide-dependency-rebind-01",
+  "preserved_qualification_ref": "task/aide-lite-successor-qualification-01",
+  "preserved_qualification_commit": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "preserved_publication_ref": "task/aide-lite-successor-publication-01",
+  "preserved_publication_commit": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+  "known_historical_presentation_failures": [],
+  "effects": [
+    "After exact terminal ACCEPT, managed dry-run/apply commits only closure map and mapped paths with exact message/ref/parent/tree. Strict latest and full base..candidate checks must PASS.",
+    "Under shared estate/dispatch locks require exact config/running controls/no active job, sole checkout, clean candidate/tree, ready helper plan and exact local/remote dev/main base. Preserve both named task refs. Fetch only dev/main without tags and reobserve.",
+    "CAS fast-forward local dev from base to candidate; nonforce explicit candidate:refs/heads/dev push; read back exact remote state.",
+    "Run full validation and strict complete-range check again, recheck controls/refs/tree and remote state. CAS fast-forward main from base; nonforce explicit push; read back both heads.",
+    "Verify exact four-commit preview through 09925a0ff6aa14117271a0115baf3f1a47b98aaa and unchanged867 payload members/eight release assets. Keep exact qualification/publication refs.",
+    "Only after both refs/postchecks pass, switch to dev, verify clean exact task-ref ancestry, delete only this local task branch using branch -d. Verify final local/tracking refs and dfae9356 ancestry."
+  ],
+  "required_evidence": [
+    "88 source methods, two actual CLI/MCP workflows and frozen old-reader v1/v2 compatibility PASS.",
+    "Six ownership checks, existing exporter,doctor,full validate,pack-status and exact fixed preview PASS.",
+    "Only pack manifest source_commit changed; all867 payload/static members and eight frozen release assets unchanged.",
+    "Three jobs retired; every retained collection verified, scratch absent and reservations released.",
+    "Original tests and prior evidence preserved; no limit raised, no live ledger/host/model effects.",
+    "Existing review-reference warning classified; exact complete source range and closure message checks PASS."
+  ],
+  "failure_response": "Retain started/completed command streams and identities. Stop on changed inputs/refs or any failed check; reconcile observed effects before any retry.",
+  "forbidden": [
+    "force push",
+    "history rewrite",
+    "protection change or bypass",
+    "tag/release effects",
+    "unrelated branch deletion",
+    "live target or ledger mutation",
+    "model/provider requests",
+    "package rebuild",
+    "further job allocation"
+  ]
+}

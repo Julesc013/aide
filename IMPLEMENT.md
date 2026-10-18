@@ -14080,3 +14080,8 @@ Implemented explicit-v2 cancellation through existing Requests/MCP owners. Origi
 AIDE-DEPENDENCY-REBIND-01 adds read-only plan/explicit apply through existing
 Requests and CLI, preserving request/native history and rejecting stale plans.
 Qualification is pending; no live ledger or host effect has run.
+
+Dependency reconciliation qualification passed all3 managed jobs: source88,
+two actual CLI/MCP workflows, frozen-reader compatibility, six ownership checks,
+metadata-only export and fixed preview. No live binding/host effect occurred.
+See the child report and observed integration receipt for exact delivery.

@@ -1,56 +1,40 @@
 {
-  "follow_up": [
-    {
-      "commit": "55b5aabb94b5",
-      "summary": "Qualify exact source and CLI/MCP workflow before integration"
-    },
-    {
-      "commit": "ad6f61bb5ae2",
-      "summary": "Run the independently reviewed second job before promotion"
-    },
-    {
-      "commit": "c6dffcccf0a7",
-      "summary": "Finish preview and independent terminal integration review"
-    },
-    {
-      "commit": "a672797ff9cf",
-      "summary": "Review and run the amended third allocation before integration"
-    }
-  ],
+  "follow_up": [],
   "highlights": [
     {
       "breaking": false,
       "category": "Added",
-      "commit": "55b5aabb94b5",
-      "subject": "feat(requests): record independent dependency cancellation",
-      "summary": "Cooperative dependency cancellation and acknowledgement"
+      "commit": "b81589114b2a",
+      "subject": "feat(requests): preserve work across explicit session reconciliation",
+      "summary": "Explicit cooperative dependency session reconciliation"
     }
   ],
   "preview_only": true,
-  "risk_summary": [],
+  "risk_summary": [
+    {
+      "commit": "b81589114b2a",
+      "summary": "Configuration declarations do not enforce native host quiescence"
+    }
+  ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "a672797ff9cf27dc53ef2164322be55d623bdd68",
-  "source_range": "8fe2d12cbc9d91f034cf7f68c58beda09809dc58..a672797ff9cf27dc53ef2164322be55d623bdd68",
+  "source_head": "09925a0ff6aa14117271a0115baf3f1a47b98aaa",
+  "source_range": "ceac70a6fefefde93d2fb7435e8825c173302757..09925a0ff6aa14117271a0115baf3f1a47b98aaa",
   "validation_summary": [
     {
-      "commit": "8a72f68c693c",
-      "summary": "PASS - source gap and preserved release/ref inspection\nNOT RUN - cancellation implementation and native qualification"
+      "commit": "32a9d56aca40",
+      "summary": "PASS - current source gap and exact preserved ref inspection\nNOT RUN - implementation and native qualification"
     },
     {
-      "commit": "55b5aabb94b5",
-      "summary": "PASS - syntax, unchanged original test hashes and scoped diff\nNOT RUN - 73 source checks and fresh-process consumer qualification"
+      "commit": "b81589114b2a",
+      "summary": "PASS - syntax, exact scope and original test preservation\nNOT RUN - 88 source methods and fresh CLI/MCP workflow"
     },
     {
-      "commit": "ad6f61bb5ae2",
-      "summary": "PASS - 73 source methods; collection and retirement verified\nNOT RUN - fresh-process workflow, old-reader refusal and package identity"
+      "commit": "984b47b6e9d1",
+      "summary": "PASS - 88 methods; verified collection and retirement\nNOT RUN - fresh-process workflow and old-reader continuity"
     },
     {
-      "commit": "c6dffcccf0a7",
-      "summary": "PASS - 73 source methods; fresh-process workflow; legacy refusal\nPASS - 870 package files, eight release assets and two retired jobs\nNOT RUN - fixed-range promotion preview"
-    },
-    {
-      "commit": "a672797ff9cf",
-      "summary": "PASS - 74 source and process methods; exact owned pack inventory\nFAIL - two stale pack-provenance checks retained for repair\nNOT RUN - amended final export and preview job"
+      "commit": "09925a0ff6aa",
+      "summary": "PASS - 88 methods; two workflows; legacy-reader compatibility\nPASS - 870 pack files and eight release assets unchanged; both jobs retired\nNOT RUN - final owned export and promotion preview"
     }
   ],
   "warnings": []

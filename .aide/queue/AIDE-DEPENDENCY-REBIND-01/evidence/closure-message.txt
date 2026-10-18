@@ -1,0 +1,14 @@
+feat(requests): qualify dependency continuity across session changes
+
+Preserve accepted work and original actor history when a cooperative
+configuration is explicitly reconciled. Recover committed receipts after
+lost responses and reject stale clients without transferring native authority.
+
+Validation: PASS - 88 methods; two CLI/MCP workflows; v1/v2 compatibility
+ PASS - ownership six; unchanged payload/releases; exact fixed preview
+ PASS - all three managed jobs collected and retired
+Changelog: Added: Qualified explicit dependency session reconciliation
+AIDE-Task: AIDE-DEPENDENCY-REBIND-01
+AIDE-Format: compact-v1
+Risk: Cooperative declarations do not enforce native host quiescence
+Follow-up: Exact reviewed integration; native host and release gates remain

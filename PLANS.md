@@ -5343,3 +5343,7 @@ Qualified independent cooperative cancellation: 73 source methods, actual CLI/MC
 AIDE-DEPENDENCY-REBIND-01 is admitted for explicit cooperative configuration
 reconciliation over existing request/state owners. Preserve native work, stale
 writer refusal and independent publication gates; see the child ExecPlan.
+
+Dependency session continuity is qualified:88 source methods, two fresh-process
+workflows, v1/v2 reader compatibility, ownership6 and fixed preview passed.
+See [the report](.aide/queue/AIDE-DEPENDENCY-REBIND-01/REPORT.md); native host and publication stay separate.

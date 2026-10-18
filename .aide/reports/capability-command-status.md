@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-dependency-cancellation-01`
-- current_commit: `a672797ff9cf27dc53ef2164322be55d623bdd68`
+- current_branch: `task/aide-dependency-rebind-01`
+- current_commit: `09925a0ff6aa14117271a0115baf3f1a47b98aaa`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

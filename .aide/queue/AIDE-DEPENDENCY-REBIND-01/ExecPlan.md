@@ -95,3 +95,9 @@ All870 pack files/eight release assets are unchanged. Jobdcd40a22562d4806b7da946
 was collected/digest-verified and retired. Prepare the final existing owned export
 (provenance only), full validation and fixed preview with 7MiB pack +1MiB preview
 canonical reservation; no additional allocation or archive rebuild.
+
+**Final qualification passed.** Job4e1fc979a31a48659a12f61ae28e4aff passed
+six ownership checks, existing exporter/doctor/full validate/pack-status and
+four-commit exact preview. Only manifest source_commit changed; all867 payload
+members/eight frozen assets remain identical. All3 allocations are retired and
+collected. Terminal exact review/integration is next; no further native job.
