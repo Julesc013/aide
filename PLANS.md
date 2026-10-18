@@ -5347,3 +5347,5 @@ writer refusal and independent publication gates; see the child ExecPlan.
 Dependency session continuity is qualified:88 source methods, two fresh-process
 workflows, v1/v2 reader compatibility, ownership6 and fixed preview passed.
 See [the report](.aide/queue/AIDE-DEPENDENCY-REBIND-01/REPORT.md); native host and publication stay separate.
+
+**Campaign current-state reconciliation.** AIDE-CAMPAIGN-CURRENT-STATE-01 repairs the existing parent view, preserving historical bytes and all unfinished acceptance. One bounded verification job and exact integration review remain.

@@ -14085,3 +14085,5 @@ Dependency reconciliation qualification passed all3 managed jobs: source88,
 two actual CLI/MCP workflows, frozen-reader compatibility, six ownership checks,
 metadata-only export and fixed preview. No live binding/host effect occurred.
 See the child report and observed integration receipt for exact delivery.
+
+**Campaign current-state preparation.** The parent status now names an owner, next action and open obligations within existing reader bounds. CURRENT.md links scoped child evidence; original task/status snapshots and complete ExecPlan history are retained. No runtime or package change.

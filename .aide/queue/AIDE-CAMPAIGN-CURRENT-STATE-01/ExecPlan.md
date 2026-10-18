@@ -46,3 +46,5 @@ no packaging bytes change and all historical failures remain.
 **Stop/recovery.** A changed source/ref or failed check stops the exact effect.
 Preserve its result, reconcile before retry; one allocation maximum. No repeated
 auth/host probes, provider/model calls, target mutation or new storage roots.
+
+**Admission accepted.** Exact map a0f57df7/effect44ee1591 accepted independently; checkpoint1a9f6445 preserves the packet. Current records and one read-only qualification plus fixed-preview job are prepared. No qualification has run.

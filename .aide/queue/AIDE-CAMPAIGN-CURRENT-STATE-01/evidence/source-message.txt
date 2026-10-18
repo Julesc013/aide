@@ -1,0 +1,11 @@
+docs(campaign): expose current outcomes and remaining work
+
+Replace the campaign's accumulated current-state fields with scoped outcomes,
+action owners and six unfinished obligations. Preserve every prior task/status
+byte and the full historical plan; use the existing CLI and child evidence.
+
+Validation: PASS - exact source and preserved-record preparation
+ NOT RUN - actual reconciled CLI and managed qualification
+Changelog: Docs: Clarify current campaign outcomes, owners and prerequisites
+AIDE-Task: AIDE-CAMPAIGN-CURRENT-STATE-01
+AIDE-Format: compact-v1

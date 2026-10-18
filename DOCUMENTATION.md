@@ -1306,3 +1306,5 @@ Current writing guide: [commit discipline](docs/reference/commit-discipline.md),
 - [Dependency session reconciliation](docs/reference/local-dependency-requests.md):
   explicit paused-state renewal/rebinding; source qualification tracked by
   [the WorkUnit](.aide/queue/AIDE-DEPENDENCY-REBIND-01/ExecPlan.md).
+
+**Current campaign:** [.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md) explains scoped delivery, outstanding prerequisites and action owners; existing task/status and child evidence remain authoritative.

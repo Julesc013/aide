@@ -3,7 +3,7 @@ id: AIDE-CAMPAIGN-CURRENT-STATE-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Make the current campaign state actionable without losing history
 type: maintenance
-status: needs_review
+status: running
 scope:
   allowed_paths:
     - .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/**

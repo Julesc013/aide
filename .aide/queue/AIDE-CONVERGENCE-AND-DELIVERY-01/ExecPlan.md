@@ -1,3 +1,5 @@
+**Current campaign view:** [CURRENT.md](CURRENT.md) and status.yaml identify the latest scoped outcomes, open requirements and action owners. The chronological record below is preserved; older next-step statements are historical.
+
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
 ## Native owner adoption preparation qualified - 2026-10-17

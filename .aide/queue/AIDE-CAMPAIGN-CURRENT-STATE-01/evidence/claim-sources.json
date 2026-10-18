@@ -1,0 +1,38 @@
+{
+  "baseline": "29f4bf5c1f23a923b0ea97e1826ab9fff4c734fc",
+  "sources": {
+    ".aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/status.yaml": "5dd35f512d06587ee382e9c3a569f7d2a1f10e02c2f7440aea3c7f95a89f269d",
+    ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json": "36688065fb4356568484615b0abb92f3413c72f5e66895fb267f007b023129e2",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json": "09a80b7743a3e819567ba5b06e416da22e0d45fc3184cbc3ca5f7bccc8055235",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/REPORT.md": "f12e2bc7a9fd7c68c0352ec75d7eb505819792588cb3d9a9bd029da1dbc7858e",
+    ".aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/status.yaml": "298a134a3a4b2f26d2cf41550d285889adf95a2d127b9bd440ca053e2b8ce4a5",
+    ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/native-answer.md": "d65eb2a9d615b7610d946d4e95144d9217af875501c8ae5da13bf3b40963e6e3",
+    ".aide/queue/AIDE-REASONABLE-AUTOMATION-01/status.yaml": "2d5b44eb7941feaf3946bca9896fe53cf1a96a2ece69b34ff2375802aa685155",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/REPORT.md": "2e5c72d4f58ab1391ba3cd21773e75394d29cb4bb060fee771c9c6bed5a82a97",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/REPORT.md": "bc6537151b2e5f9d6af15814ea425708694c4fb22951900c641623fe87f6bb22",
+    ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/REPORT.md": "d066ff9b51941bd496218dd587fa38da51bc26d6a5b26a3eb86bab1e0ebd9949",
+    ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/REPORT.md": "78831cab5380a57258027eb6c7270cfb48cf1f86c79cba31d91d454ba218d53f",
+    ".aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/REPORT.md": "35b25e19888938cf6f89424a6b9d1947bf9f36365706cbff2086d2b4e28074fe",
+    ".aide/queue/AIDE-OUTCOME-CONSERVATION-01/REPORT.md": "604c8d33adb60c45cccce44ad0d10dd716c2078cd85b2776a4cd0f3e7272a5e5",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/REPORT.md": "fec04268d2713171e36db9333fc7abebfa9a2bb924ffde6a970b72d3eacdaca0",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/REPORT.md": "5e3768493bb669eb7b772dded7b377d73a35fa6538e48e5740b3b62878c5a4ef",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/useful-extensibility-amendment.md": "1743a10b56081f9e65cc5b26af339fffd234d4fa4f615564793699d963266748",
+    ".aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence/native-final-result.json": "5b0b1be6f33b8741f7a6c2712f47a51deed1dd8b8887bf27419223f4f78a3e4f",
+    "docs/roadmap/development-workflows.json": "9ba02b3ee57bba069a510ef19093f510161c4a64729df330fbf6351df3907fe2"
+  },
+  "publication": {
+    "commit": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+    "path": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/status.yaml",
+    "sha256": "c8f6b1f93d3e483f8fb03fba7237a53b84ae1b4d5947b4b4aa2b23aa030979fc",
+    "local_snapshot": ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/publication-status-at-f708e8c6.yaml"
+  },
+  "prior_plan_sha256": "5b225c4fe32680e729516c08868f80214dbb6573ccad21cf0973291dcbe444f9",
+  "plan_prefix": "**Current campaign view:** [CURRENT.md](CURRENT.md) and status.yaml identify the latest scoped outcomes, open requirements and action owners. The chronological record below is preserved; older next-step statements are historical.\n\n",
+  "integration_observation": {
+    "result": "PASS",
+    "candidate": "29f4bf5c1f23a923b0ea97e1826ab9fff4c734fc",
+    "operations_completed": 67,
+    "receipt_sha256": "3f61ad86df6599cc044ce08297414aa193fa51ef39e565ac06656b7dee0cbf40",
+    "scope": "Existing ignored local receipt inspected; Git ancestry is reproducible without this local log."
+  }
+}

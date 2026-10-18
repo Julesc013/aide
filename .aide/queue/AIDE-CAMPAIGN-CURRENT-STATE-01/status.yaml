@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-CAMPAIGN-CURRENT-STATE-01
-status: needs_review
-result: ADMISSION_PREPARED
-next_action: exact_admission_then_current_record_reconciliation
+status: running
+result: SOURCE_PREPARED
+next_action: exact_source_and_one_job_review
 maximum_jobs: 1
 jobs_allocated: 0
