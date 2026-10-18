@@ -879,6 +879,7 @@ Q36_REQUIRED_FILES = [
 
 Q36_PORTABLE_SOURCE_FILES = [
     ".aide/scripts/task_handoff.py",
+    ".aide/scripts/quality_symbols.py",
     ".aide/scripts/outcome_lessons.py",
     INTENT_POLICY_PATH,
     WORKUNIT_SIZING_POLICY_PATH,
@@ -12748,6 +12749,148 @@ def command_quality_explain_file(args: argparse.Namespace) -> int:
         rendered = stable_json_text(result) if getattr(args, "json", False) else "\n".join(f"{key}: {value}" for key, value in result.items()) + "\n"
     print(rendered, end="")
     return {"PASS": 0, "MISSING": 1, "INVALID": 2}[result["result"]]
+
+
+
+def quality_symbol_parser():
+    # The helper belongs to this distribution, never the selected project.
+    path = Path(__file__).resolve().with_name("quality_symbols.py")
+    _job_wait_root(str(path.parent))
+    info = path.lstat()
+    if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
+            or getattr(info, "st_file_attributes", 0) & 0x400 or info.st_size > 64 * 1024):
+        raise ValueError("symbol helper is not an ordinary bounded module")
+    spec = importlib.util.spec_from_file_location("aide_quality_symbols", path)
+    module = importlib.util.module_from_spec(spec)
+    previous = sys.dont_write_bytecode
+    try:
+        sys.dont_write_bytecode = True
+        spec.loader.exec_module(module)
+    finally:
+        sys.dont_write_bytecode = previous
+    return module
+
+
+def build_quality_symbol_inspection(repo_root: Path, name: str, paths: list[str]) -> dict:
+    parser = quality_symbol_parser()
+    parser.validate_symbol(name)
+    if not 1 <= len(paths) <= 8:
+        raise ValueError("select one to eight explicit files")
+    selected = []
+    for path in paths:
+        if len(path) > 1024 or any(ord(char) < 32 for char in path):
+            raise ValueError("invalid source path")
+        selected.append("/".join(task_view_reference_parts(path)))
+    if len({path.casefold() for path in selected}) != len(selected):
+        raise ValueError("duplicate or case-colliding source paths")
+
+    def capture(path, limit, *, advisory=False):
+        try:
+            return ("read", task_view_read(repo_root, path, limit=limit))
+        except FileNotFoundError:
+            return ("missing", None)
+        except (OSError, ValueError):
+            if advisory:
+                return ("unreadable", None)
+            raise ValueError("unsafe, unreadable or oversized source input")
+
+    ledger_capture = capture(FILE_QUALITY_LEDGER_JSON_PATH, 16 * 1024 * 1024, advisory=True)
+    ledger = None
+    ledger_state = ledger_capture[0]
+    if ledger_state == "read":
+        try:
+            ledger = json.loads(ledger_capture[1])
+            if not isinstance(ledger, dict):
+                raise ValueError
+            ledger_state = "recorded"
+        except (ValueError, UnicodeError, RecursionError):
+            ledger_state = "invalid"
+    observed = {}
+    files = []
+    total = 0
+    for path in selected:
+        snapshot = capture(path, 4 * 1024 * 1024)
+        observed[path] = snapshot
+        raw = snapshot[1]
+        total += len(raw) if raw is not None else 0
+        if total > 8 * 1024 * 1024:
+            raise ValueError("selected source exceeds 8 MiB")
+        if raw is None:
+            syntax = {"state": "missing", "match_state": "unknown"}
+        elif Path(path).suffix.lower() not in (".py", ".pyi"):
+            syntax = {"state": "unsupported", "match_state": "unknown",
+                      "sha256": hashlib.sha256(raw).hexdigest(), "bytes": len(raw)}
+        else:
+            syntax = parser.inspect_python(raw, name)
+        context = {"state": ledger_state, "freshness": "unverified", "advisory": True}
+        if ledger_state == "recorded":
+            try:
+                context["evidence"] = quality_file_explanation(ledger, path)
+            except (ValueError, TypeError, KeyError, RecursionError):
+                context["state"] = "invalid"
+        files.append({"path": path, "syntax": syntax, "recorded_context": context})
+
+    # Sequential before/after checks detect observed changes, not an atomic
+    # filesystem snapshot or access control against another unrestricted writer.
+    for path, snapshot in observed.items():
+        if capture(path, 4 * 1024 * 1024) != snapshot:
+            raise ValueError("selected source changed during inspection")
+    if capture(FILE_QUALITY_LEDGER_JSON_PATH, 16 * 1024 * 1024, advisory=True) != ledger_capture:
+        raise ValueError("quality ledger changed during inspection")
+    return {
+        "schema_version": "aide.quality-symbol-inspection.v1",
+        "result": "PASS" if all(item["syntax"]["state"] == "parsed" for item in files) else "PARTIAL",
+        "symbol": name, "files": files, "selected_bytes": total, "read_only": True,
+        "ledger_sha256": hashlib.sha256(ledger_capture[1]).hexdigest() if ledger_capture[1] is not None else None,
+        "coverage": "explicit_selected_files_only",
+        "caveats": [
+            "Names, scopes and calls describe syntax; runtime binding, aliases and behavior remain unresolved.",
+            "Not found is not semantic absence; unselected files and unsupported syntax remain outside coverage.",
+            "Recorded owner, documentation and likely tests are advisory; freshness and complete impact are unverified.",
+            "Sequential byte rechecks are not an atomic snapshot; no project code was imported or executed.",
+        ],
+        "next_action": "Inspect the matching definitions and recorded checks before deciding reuse; broaden checks when coverage is incomplete.",
+    }
+
+
+def command_quality_inspect_symbol(args: argparse.Namespace) -> int:
+    try:
+        result = build_quality_symbol_inspection(args.repo_root, args.name, args.path)
+    except (OSError, ValueError, RecursionError) as error:
+        result = {"result": "REFUSED", "reason": str(error), "read_only": True}
+    if args.json:
+        rendered = json.dumps(result, indent=2, sort_keys=True, ensure_ascii=True) + "\n"
+    else:
+        lines = ["AIDE Lite quality inspect-symbol", "result: " + result["result"]]
+        if result["result"] == "REFUSED":
+            lines.append("reason: " + json.dumps(result["reason"], ensure_ascii=True))
+        else:
+            lines += ["symbol: " + json.dumps(result["symbol"], ensure_ascii=True), "coverage: " + result["coverage"],
+                      "ledger_sha256: " + str(result["ledger_sha256"])]
+            for item in result["files"]:
+                syntax = item["syntax"]
+                lines.append(json.dumps(item["path"], ensure_ascii=True) + ": " + syntax["state"]
+                             + "; matches: " + syntax["match_state"])
+                lines.append("  source_sha256: " + str(syntax.get("sha256")))
+                if "parser" in syntax:
+                    lines.append("  parser: " + json.dumps(syntax["parser"], ensure_ascii=True))
+                if "reason" in syntax:
+                    lines.append("  reason: " + syntax["reason"])
+                for key in ("definitions", "calls", "imports"):
+                    if key not in syntax:
+                        continue
+                    for match in syntax[key]["items"]:
+                        lines.append("  " + key + ": " + json.dumps(match, ensure_ascii=True))
+                    lines.append("  " + key + " omitted: " + str(syntax[key]["omitted"]))
+                lines.append("  recorded_context: " + json.dumps(item["recorded_context"], ensure_ascii=True))
+            lines += ["caveat: " + caveat for caveat in result["caveats"]]
+            lines.append("next_action: " + result["next_action"])
+        rendered = "\n".join(lines) + "\n"
+    if len(rendered.encode("utf-8")) > 64 * 1024:
+        result = {"result": "REFUSED", "reason": "output exceeds 64 KiB; select fewer files", "read_only": True}
+        rendered = json.dumps(result, ensure_ascii=True) + "\n"
+    print(rendered, end="")
+    return {"PASS": 0, "PARTIAL": 1, "REFUSED": 2}[result["result"]]
 
 
 def command_quality_report_file(args: argparse.Namespace, title: str, path: str) -> int:
@@ -42113,7 +42256,7 @@ commands:
     notes: index-only deterministic repo inventory and maps; no file moves, deletes, refactors, target mutation, provider/model/network calls, or deletion advice.
   - id: aide-lite-quality
     display_name: AIDE Lite file quality ledger
-    invocation: py -3 .aide/scripts/aide_lite.py quality <ledger|validate|status|explain-file|docs|tests|modules|reuse>
+    invocation: py -3 .aide/scripts/aide_lite.py quality <ledger|validate|status|explain-file|inspect-symbol|docs|tests|modules|reuse>
     command_kind: repo-local-helper
     status: implemented-portable
     owner_component: file-quality-ledger
@@ -47582,6 +47725,11 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     quality_explain_parser.add_argument("path")
     quality_explain_parser.add_argument("--json", action="store_true", help="emit the read-only evidence projection as JSON")
     quality_explain_parser.set_defaults(handler=command_quality_explain_file)
+    quality_symbol = quality_subparsers.add_parser("inspect-symbol", help="inspect syntax in explicit files without executing project code")
+    quality_symbol.add_argument("name")
+    quality_symbol.add_argument("--path", action="append", required=True, help="explicit relative Python file (one to eight)")
+    quality_symbol.add_argument("--json", action="store_true")
+    quality_symbol.set_defaults(handler=command_quality_inspect_symbol)
     quality_subparsers.add_parser("docs").set_defaults(handler=command_quality_docs)
     quality_subparsers.add_parser("tests").set_defaults(handler=command_quality_tests)
     quality_subparsers.add_parser("modules").set_defaults(handler=command_quality_modules)

@@ -5367,3 +5367,10 @@ execution owner, automatic application or vintage host support is implied.
 Source, delivered and installed qualification is complete. The fixed preview and
 three retired jobs preserve exact evidence; see [the report](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md)
 and observed integration receipt for delivery. Full daily-use acceptance remains open.
+
+### Fresh symbol discovery
+
+AIDE-SYMBOL-DISCOVERY-01 extends P6's existing quality owner with bounded fresh
+Python definitions/references and separate recorded context. Source, delivered
+and installed consumer qualification precede integration. Semantic binding,
+complete impact analysis and automatic refactoring remain outside this increment.

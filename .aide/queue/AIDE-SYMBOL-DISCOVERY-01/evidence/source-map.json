@@ -1,0 +1,24 @@
+{
+  "base": "396c300c7eed230c7795f68dd241ea8e296409cd",
+  "files": {
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/ExecPlan.md": "98b2450129393714fc8241f00b61efa41e009cd720d9704c16302ab2d751c9c5",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/source-effect.md": "e0bdcef1e139e8ca93a1f5a332f046e00fedbc40b7ee51fa960b1313e9c09f00",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/source-job-template.json": "df8aa9ce9dff00240d4f389b44b9476b51cd7817881d92e10470273809118d8a",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/source-message.txt": "83b2b65e45cfdc9b47a0f0eb1196dbf293ba5b5dc57327f3791016ec753d1695",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/source-prechecks.json": "30d1a0bb1d8996ba715e0a4633429633672aca06e690aa51366fea63464cbe5f",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/task-packet.md": "20adbc3e367e497fead8bb434606e6e0729802bdd03671b40e2b0b0998ce1259",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/run_checks.py": "bc3fb3cdc6c84ea772c3506fe993d7f9990c7b928e4be2fb6039dd1ca1d2a5c0",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/status.yaml": "5e0d02ab976e74539a55228d985a5f59f1ffc82ccfc6b130f74e382ca4c80bbf",
+    ".aide/queue/index.yaml": "fc66fb6c42810982edc8c2a478b87db38a26e070d5a98ea7a46a03e1f90e7af6",
+    ".aide/scripts/aide_lite.py": "1abc4cd4811ff1077089ed1e6ad7f806d05e2ede3c71d2bd1be7cfc99185890f",
+    ".aide/scripts/quality_symbols.py": "cff8a69e8f2efbe99ee844aa4f475c0cfefbe7ba076b145ba4949daf29829035",
+    ".aide/scripts/tests/test_quality_symbols.py": "c527d092424aea4ce89cce555c2118905096f3dda4af634a65d6863787f9a767",
+    "DOCUMENTATION.md": "412f14022b3ec830cb34c80beb04f9a77dae9e092702ef78f5cafb0209bb1342",
+    "IMPLEMENT.md": "9ebdd98031653d58e0c71a62a5d13f7b9a9a72ffbc990474f569ac5c0d7615d9",
+    "PLANS.md": "310ac25fa65138dd702d8adf9eafa93886547cb2d0c0cd9006f2eb8953433369",
+    "docs/reference/file-quality-ledger.md": "985279c12c2c97e7e48a412ffda968a803da45fe94e00b236bedb081e56e9be3"
+  },
+  "message_sha256": "83b2b65e45cfdc9b47a0f0eb1196dbf293ba5b5dc57327f3791016ec753d1695",
+  "effect_sha256": "e0bdcef1e139e8ca93a1f5a332f046e00fedbc40b7ee51fa960b1313e9c09f00",
+  "job_template_sha256": "df8aa9ce9dff00240d4f389b44b9476b51cd7817881d92e10470273809118d8a"
+}

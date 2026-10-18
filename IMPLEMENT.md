@@ -14108,3 +14108,9 @@ Doctor/full validation/pack status and fixed preview passed; all three jobs reti
 The original capability/export FAIL evidence and review correction remain.
 See [the report](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md) for exact
 subjects and guarded integration. Eight frozen release assets are unchanged.
+
+### Fresh symbol discovery prepared
+
+A pure Python AST helper and the existing quality CLI now prepare explicit-file
+inspection with hashes, bounded lists, advisory context and changed-input refusal.
+All23 original quality/repo tests remain;21 new methods are prepared and unrun.

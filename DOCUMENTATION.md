@@ -1325,3 +1325,10 @@ WorkUnit](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/ExecPlan.md) retains scope,
 qualification and integration evidence. [The completed report](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md)
 records 97 source and 97 delivered checks and installed recovery; no result is applied or accepted
 by inspection.
+
+### Fresh symbol discovery
+
+[File quality](docs/reference/file-quality-ledger.md) describes inspect-symbol,
+fresh syntax versus recorded context and its coverage limits. The
+[WorkUnit](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/ExecPlan.md) binds source and
+installed qualification; syntax evidence does not establish semantic equivalence.

@@ -83,3 +83,10 @@ source97/delivered97/installed recovery and integrated at 118ab7829f300050394dc6
 worktree is clean on dev. Existing host endpoint, target ownership, model budget
 and publication prerequisites have not changed and are not re-probed.
 This packet is preparation; no implementation, job or external effect has run.
+
+**Admission and preparation.** Independent ACCEPT covered map5d0311d2 and
+effect810710f2. Managed checkpoint396c300c preceded implementation. The parser,
+existing CLI composition and21 behavioral methods are prepared; all23 original
+quality/repo methods remain unchanged. Tests have not executed. Source/job review
+precedes allocation. Return0 means selected syntax parsed, with recorded context
+separately advisory; partial source coverage returns1 and refusal returns2.
