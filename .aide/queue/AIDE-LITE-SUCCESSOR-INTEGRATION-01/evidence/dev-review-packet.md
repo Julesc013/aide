@@ -1,0 +1,1 @@
+**Terminal review.** Apply the existing aide-review procedure to REPORT.md, changed-files.md, validation.md, remaining-risks.md and exact attempt evidence. closure-source.json pins this candidate; integration-effect.json and its pinned runner bound branch effects. No new job, archive, release, live target or model request. Actual integration awaits ACCEPT and fresh observations.

@@ -14,7 +14,7 @@ operational_next_task: actual_host_delivery_after_qualified_local_exchange
 portable_git_defaults_integration_ref: .aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/evidence/integration-result.json
 last_completed_task: AIDE-LITE-SUCCESSOR-01
 git_defaults_admission_ref: evidence/git-defaults-admission.md
-next_preparation: reconcile_retained_Lite_successor_with_current_dev_then_review_delivery_effects
+next_preparation: verify_successor_integration_then_select_and_qualify_release_subject
 native_selected_export_result_ref: .aide/queue/AIDE-DAILY-DISKED-EXPORT-01/evidence/native-final-result.json
 planning_amendment_ref: evidence/useful-extensibility-amendment.md
 next_current_view_brief_ref: evidence/current-view-brief.md
@@ -191,3 +191,6 @@ retained_successor_range: PASS_WITH_WARNINGS_18_commits_3_advisories_raw_failure
 
 successor_reconciliation_ref: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/status.yaml
 successor_frozen_candidate_ref: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json
+
+successor_reconciliation_report: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/REPORT.md
+successor_reconciliation_integration_receipt: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/integration-result.log

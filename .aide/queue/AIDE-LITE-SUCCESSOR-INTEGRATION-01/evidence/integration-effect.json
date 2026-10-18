@@ -1,0 +1,48 @@
+{
+  "schema": "aide.successor-reconciliation.integration-effect.v1",
+  "base": "d8001eb81f934cda83e93ae0704f0c60aed675c7",
+  "candidate": "Exact closure map; substitute only resulting managed commit/tree.",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "task_branch": "task/aide-lite-successor-integration-01",
+  "expected_local_dev": "d8001eb81f934cda83e93ae0704f0c60aed675c7",
+  "expected_local_main": "d8001eb81f934cda83e93ae0704f0c60aed675c7",
+  "expected_remote_dev": "d8001eb81f934cda83e93ae0704f0c60aed675c7",
+  "expected_remote_main": "d8001eb81f934cda83e93ae0704f0c60aed675c7",
+  "preserved_qualification_ref": "task/aide-lite-successor-qualification-01",
+  "preserved_qualification_commit": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "effects": [
+    "After exact terminal ACCEPT, commit closure-source.json files plus map through managed dry-run/apply with message/ref/parent/tree pins. Require strict latest PASS and full base..candidate PASS_WITH_WARNINGS with exactly three known historical presentation advisories; preserve raw FAIL evidence.",
+    "Under shared estate/dispatch controls require unchanged config, running dispatch/no active job, sole checkout, clean exact candidate/tree, fresh ready helper plan, expected local/remote dev/main and unchanged qualification ref. Fetch dev/main only with no tags, then reobserve.",
+    "CAS fast-forward local dev from expected base to exact candidate; nonforce explicit candidate:refs/heads/dev push; verify remote dev.",
+    "After dev sync run read-only full validate and repeat the exact full-range check (only the three pinned historical advisories). Recheck controls/refs/tree. CAS main from expected base; nonforce explicit push; verify both remote heads.",
+    "After main sync run run_preview.py verify: exact six-output fixed d8001eb81f934cda83e93ae0704f0c60aed675c7..bfcdeb17f49302eeca4ad0adc0b0081509f8f308 preview, all 22 commits and all 870 qualified pack hashes. Check dfae9356 ancestry in every final local and remote-tracking dev/main ref. Closure is checked independently through the full integration range.",
+    "Only after both refs and postchecks pass, switch to dev, verify clean tree/exact task ref and ancestor, delete only this local task using branch -d. Keep every other branch; task was local-only."
+  ],
+  "required_evidence": [
+    "47 combined-source checks, 41 delivered checks, six ownership checks and actual installed effort regression PASS; no errors/skips.",
+    "Exact two-parent merge retains newer CLI features; full portable CLI projection and original held records verified.",
+    "Existing exporter, doctor, full validation and pack status PASS.",
+    "Fixed complete-range preview retains exactly three malformed/raw failures; six outputs regenerate exactly and all 870 pack hashes match.",
+    "All three native jobs retired and retained collections verified; unchanged 1.0/1.1 assets and qualification branch.",
+    "No release, provider/model, external target or host-qualification effect."
+  ],
+  "failure_response": "Retain started/completed operations and command output hashes in local integration-result.log. Stop on changed inputs/refs or failed checks. Inspect actual effects after uncertainty; never blindly retry.",
+  "forbidden": [
+    "force push",
+    "history rewrite",
+    "tag/release effects",
+    "protection change or bypass",
+    "unrelated branch deletion",
+    "live target mutation",
+    "model/provider requests",
+    "package rebuild",
+    "further job allocation"
+  ],
+  "known_historical_presentation_failures": [
+    "4bb6a4f990c5845a2141a20329168b582b37e8d8",
+    "651464ae3e86b32b11080194d0d06beb88188dd4",
+    "ae26a1ca80b10e87aaee2e4f68545df1c24c59ff"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "source_head": "bfcdeb17f49302eeca4ad0adc0b0081509f8f308",
+  "source_range": "d8001eb81f934cda83e93ae0704f0c60aed675c7..bfcdeb17f49302eeca4ad0adc0b0081509f8f308",
+  "commits": [
+    "bfcdeb17f49302eeca4ad0adc0b0081509f8f308",
+    "02c90d6c7355f2432f381878298938afbbfc62bd",
+    "4edf2b14e340e636889d1f1e18ae14a541685156",
+    "a9afdf6741aec768abd2a511dd79148f3e703445",
+    "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+    "3a36366c052f308a8ecee10d32690ce0cb75cae7",
+    "55c9408eb42a9ad7abecb8477911648e8998ce53",
+    "a91076f9d683d89897a1378a2696d4a840e5437e",
+    "debd588622096047f19871f238580c5e7207849e",
+    "23c0739ed11bd602b2a2f68c4f99a22331272b2d",
+    "eaba809b7513faef2144875c8a1318874ff3d642",
+    "a4b5d25f64b9e0ae3029302511956f5d33652f60",
+    "c5b1a2bf7181101890a95002537ede2cb3f6e3df",
+    "80897d75ea3a5ca0b585c7c491cc17cb5b3b23a0",
+    "447e393b3f87004641b7387c1f33828ac1ee3a85",
+    "98b7b2dc86a36e24f48756cad289e8ec8a03139d",
+    "26984567aaad1001067e9e47ca7a461cdecf0b37",
+    "b4613f2d7e33ca33cc7a466687c43fb91c7f0478",
+    "b46448f2fa4c0668749fdee4d9cff82d74cf3664",
+    "ae26a1ca80b10e87aaee2e4f68545df1c24c59ff",
+    "651464ae3e86b32b11080194d0d06beb88188dd4",
+    "4bb6a4f990c5845a2141a20329168b582b37e8d8"
+  ],
+  "malformed_count": 3,
+  "raw_failure_commits": [
+    "4bb6a4f990c5845a2141a20329168b582b37e8d8",
+    "651464ae3e86b32b11080194d0d06beb88188dd4",
+    "ae26a1ca80b10e87aaee2e4f68545df1c24c59ff"
+  ],
+  "sha256s": {
+    "CHANGELOG.preview.md": "3dbf3a3640bb9d8934e2a0a6db312e7c5a26afd8806f29823f680083c1fccfda",
+    "RELEASE_NOTES.preview.md": "2508374258e51e2505a82ad51f1a08072f69cd67c11cc619b89977591aba728c",
+    "changelog.preview.json": "6b602f66ae80ffe054d5a8a58ecc175f5354c3525131b0c2cad43c2904ede8d1",
+    "latest-changelog-report.md": "769672ccb1267569b2717d2dd3d4fa620a0bceb09e56ca2313ab372c1026644e",
+    "malformed-commits.md": "0113fb031e409aefe601b8b9f0d97c9c73663ac021b52d36ce17062cab2ad04b",
+    "release-notes.preview.json": "5a930ad5eaec542b4b6bc0de48dfaf1e141e67bad88137f734eaab9e0f85d613"
+  },
+  "regeneration": "read_only_exact_six_output_comparison",
+  "historical_failures_preserved": true,
+  "operations": {
+    "preview": {
+      "exit_code": 0,
+      "log_sha256": "5ff40e967927463f15d79cd018c2983fe6300ee4327ce9dbb7bf41a697b72cb4"
+    },
+    "validate": {
+      "exit_code": 0,
+      "log_sha256": "eb5ba25320954d7fb10d12867818e67bb7ae7ef3f878daa54c49aeb385b5bc37"
+    },
+    "status": {
+      "exit_code": 0,
+      "log_sha256": "ab790edb59e5c9e531572a103a6276b3a6d719d05485559fb316846882e2b588"
+    }
+  }
+}

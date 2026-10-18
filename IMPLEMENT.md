@@ -14069,4 +14069,4 @@ Applied one frozen cutoff update under the standing owner instruction. Existing 
 
 ### Retained installed-effort repair ? 18 October 2026
 
-Prepared the original 98b7b2dc repair in a two-parent merge candidate. The exporter binds effort accounting to its owned helper, avoiding project-owned core. Newer source features remain. Current generated views are retained for their owners to refresh; original qualification and frozen 1.1.0 assets are imported unchanged. Combined-source qualification is pending.
+Reconciled the original 98b7b2dc repair in two-parent merge 4edf2b14, retaining dfae9356 ancestry and newer features. The exporter binds effort accounting to its owned helper, avoiding project-owned core. Source 47, delivered 41, ownership six, the actual installed regression and fixed preview passed. The 870-member development pack was refreshed by its existing owner; original qualification and frozen 1.1.0 assets remain unchanged. Exact integration results belong to the child receipt.

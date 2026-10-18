@@ -1,0 +1,51 @@
+AIDE Lite commit range check
+result: FAIL
+range: d8001eb81f934cda83e93ae0704f0c60aed675c7..bfcdeb17f49302eeca4ad0adc0b0081509f8f308
+commit_count: 22
+policy: .aide/policies/commit-messages.yaml
+disposition_policy: .aide/policies/commit-message-dispositions.yaml
+dispositions: disabled
+historical_presentation_boundary: disabled_or_absent
+- 4bb6a4f FAIL test(release): prepare actual Lite successor qualification
+  - FAIL: commit body heading has bullet content: ## Summary
+  - FAIL: commit body heading has bullet content: ## Why
+  - FAIL: commit body heading has bullet content: ## Validation
+  - FAIL: commit body heading has bullet content: ## Changelog
+  - FAIL: commit body heading has bullet content: ## Risks
+  - FAIL: commit body heading has bullet content: ## Follow-up
+  - FAIL: changelog section uses a machine-readable category prefix
+- 651464a FAIL test(release): freeze Lite 1.1.0 candidate for consumer checks
+  - FAIL: commit body heading has bullet content: ## Summary
+  - FAIL: commit body heading has bullet content: ## Why
+  - FAIL: commit body heading has bullet content: ## Validation
+  - FAIL: commit body heading has bullet content: ## Changelog
+  - FAIL: commit body heading has bullet content: ## Risks
+  - FAIL: commit body heading has bullet content: ## Follow-up
+  - FAIL: changelog section uses a machine-readable category prefix
+- ae26a1c FAIL test(release): retain eight passing successor consumer cases
+  - FAIL: commit body heading has bullet content: ## Summary
+  - FAIL: commit body heading has bullet content: ## Why
+  - FAIL: commit body heading has bullet content: ## Validation
+  - FAIL: commit body heading has bullet content: ## Changelog
+  - FAIL: commit body heading has bullet content: ## Risks
+  - FAIL: commit body heading has bullet content: ## Follow-up
+  - FAIL: changelog section uses a machine-readable category prefix
+- b46448f PASS docs(release): preserve commit-check failures and block promotion
+- b4613f2 PASS test(release): prepare all additive delivered CLI consumers
+- 2698456 PASS docs(release): preserve installed effort failure and admit repair
+- 98b7b2d PASS fix(pack): bind installed effort to the owned normalizer
+- 447e393 PASS test(pack): qualify source repair and prepare owned export
+- 80897d7 PASS test(pack): retain delivered failures and check the actual pack
+- c5b1a2b PASS build(lite): qualify the repaired pack and prepare replacement archives
+- a4b5d25 PASS test(lite): retain repaired archives and bind consumer qualification
+- eaba809 PASS test(lite): preserve consumer passes and qualify actual recovery
+- 23c0739 PASS test(lite): correct actual predecessor optional-file fixture
+- debd588 PASS test(lite): retain predecessor passes and declare replay reservation
+- a91076f PASS docs(lite): close consumer and archive replay evidence
+- 55c9408 PASS test(lite): prepare complete preview with unresolved history visible
+- 3a36366 PASS docs(lite): retain complete preview and reconcile qualification state
+- dfae935 PASS docs(lite): record independent technical candidate acceptance
+- a9afdf6 PASS chore(integration): admit retained successor reconciliation
+- 4edf2b1 PASS chore(merge): reconcile the retained Lite successor
+- 02c90d6 PASS test(merge): qualify the combined successor source
+- bfcdeb1 PASS test(delivery): verify the combined installed development pack

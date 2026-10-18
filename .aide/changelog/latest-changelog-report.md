@@ -1,16 +1,19 @@
 # Latest Changelog Report
 
-source_range: f5e674e356196ec4cbfa4e2a4f79805b36fbaa25..4fbfc5c219fa21889017e6b4afb01feef0adb4cc
-source_head: 4fbfc5c219fa21889017e6b4afb01feef0adb4cc
-commit_count: 3
-entry_count: 3
-malformed_count: 0
-highlight_count: 3
+source_range: d8001eb81f934cda83e93ae0704f0c60aed675c7..bfcdeb17f49302eeca4ad0adc0b0081509f8f308
+source_head: bfcdeb17f49302eeca4ad0adc0b0081509f8f308
+commit_count: 22
+entry_count: 26
+malformed_count: 3
+highlight_count: 23
 
 ## Category Counts
 
-- Changed: 1
-- Tests: 2
+- Fixed: 3
+- Security: 1
+- Docs: 7
+- Tests: 12
+- Internal: 3
 
 ## Outputs
 

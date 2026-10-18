@@ -1297,4 +1297,4 @@ Current writing guide: [commit discipline](docs/reference/commit-discipline.md),
 
 - [Historical presentation amendment](.aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/ExecPlan.md): qualified standing-policy application; original failures and separate delivery gates retained. See its REPORT.md for source, delivered and installed evidence.
 
-- [Successor integration](.aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/ExecPlan.md): current reconciliation of the [retained candidate evidence](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md); archive qualification is exact-subject evidence, not qualification of new combined bytes.
+- [Successor integration](.aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/ExecPlan.md): qualified combined-source and installed-pack reconciliation of the [retained candidate evidence](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md); archive qualification is exact-subject evidence, not qualification of new combined bytes.

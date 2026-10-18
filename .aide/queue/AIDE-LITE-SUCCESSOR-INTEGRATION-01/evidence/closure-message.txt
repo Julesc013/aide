@@ -1,0 +1,11 @@
+docs(merge): record qualified successor reconciliation
+
+Retain both histories, original archive evidence and the qualified combined
+development pack. Document exact branch integration and separate release limits.
+
+Validation: PASS - source 47, delivered 41, ownership 6 and installed regression
+ PASS - fixed preview, 870 pack hashes and three worker retirements
+Changelog: Docs: Record successor reconciliation and qualified development delivery
+AIDE-Task: AIDE-LITE-SUCCESSOR-INTEGRATION-01
+AIDE-Format: compact-v1
+Follow-up: Select and qualify the intended release subject before publication

@@ -4146,8 +4146,8 @@ items:
 
   - id: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
     status: needs_review
-    result: TECHNICALLY_ACCEPTED_RECONCILIATION_AND_RELEASE_PENDING
-    planning_state: combined_source_integration_and_publication_pending
+    result: ORIGINAL_AND_COMBINED_SOURCE_QUALIFIED_RELEASE_PENDING
+    planning_state: inspect_reconciliation_integration_receipt_then_prepare_publication
     presentation_policy_resolution: .aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/REPORT.md
     reconciliation_status: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/status.yaml
     title: Qualify actual additive Lite archives and published predecessor
@@ -4157,7 +4157,7 @@ items:
 
   - id: AIDE-LITE-SUCCESSOR-INTEGRATION-01
     title: Reconcile the retained successor with current development
-    status: needs_review
+    status: passed_with_notes
     task: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/ExecPlan.md
     evidence: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence

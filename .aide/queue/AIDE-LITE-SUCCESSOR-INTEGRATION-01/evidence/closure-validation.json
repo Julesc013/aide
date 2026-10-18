@@ -1,0 +1,135 @@
+{
+  "result": "PASS",
+  "commands": [
+    {
+      "label": "message",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        ".aide\\queue\\AIDE-LITE-SUCCESSOR-INTEGRATION-01\\evidence\\closure-message.txt"
+      ],
+      "exit_code": 0,
+      "bytes": 2187,
+      "sha256": "8b63b98f76e476c0babb0a028549a8cfc6de83374583b1ee3f417a9c024f98f5"
+    },
+    {
+      "label": "range",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "d8001eb81f934cda83e93ae0704f0c60aed675c7..HEAD"
+      ],
+      "exit_code": 0,
+      "bytes": 4006,
+      "sha256": "895f80ab04bcd4f7c52358d9e481a612ded0a0e457b8f149dee4304dde37d499"
+    },
+    {
+      "label": "validate",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "exit_code": 0,
+      "bytes": 241,
+      "sha256": "8084fc43cb5383cd8c86024d66aba2cb8218c2b0d31ca208c636a3672dc7fa19"
+    },
+    {
+      "label": "doctor",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "bytes": 5181,
+      "sha256": "585c64e7eac737c2e172b11d760d884d7c614858c1521bb8941c4e4ffa595f42"
+    },
+    {
+      "label": "pack",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "pack-status"
+      ],
+      "exit_code": 0,
+      "bytes": 232,
+      "sha256": "17eb7a713285498d636c31fd8f0e50e9b1a632f16f230bd1f2db48a19f2bb673"
+    },
+    {
+      "label": "capability",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "status"
+      ],
+      "exit_code": 0,
+      "bytes": 489,
+      "sha256": "785e31d49f9a90cab93ba4794712432a1e152e83a44e124988cb243a4f774402"
+    },
+    {
+      "label": "fixed_preview",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/run_preview.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "bytes": 2220,
+      "sha256": "53e98bb3312ec504e58a75a3410178aa217935c1886041856e35038600c1859b"
+    },
+    {
+      "label": "diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "all_three_collections_verified": [
+    "70e5d499bdb64ad6b2113075b7887209",
+    "a9eb1ef8a6604c2684fbaf4b74e31ddc",
+    "28effc749cd14ae2805b3cb4a6208294"
+  ],
+  "all_release_assets_unchanged": true,
+  "incoming_exact_paths_preserved": 216,
+  "two_parent_source_merge_verified": true,
+  "successor_ancestor": true,
+  "range_advisories": [
+    "4bb6a4f",
+    "651464a",
+    "ae26a1c"
+  ],
+  "capability_binding": {
+    "state": "CURRENT",
+    "reason": "bound_source_inputs_unchanged",
+    "changed_refs": [],
+    "qualification": "source_classification_only"
+  },
+  "whole_outcome_usage": "unknown"
+}
