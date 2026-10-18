@@ -1,0 +1,3 @@
+# Independent export acceptance
+
+Reviewer /root/review_disked_continuation ACCEPT map abf30a50be48cba89d7688650de15483db992c138a51a91ed48e6de29d5a491b, effectdf7242bd2058ceaa05ce4f92c88e499bbe456b52dd3c46855de3bd2ba6c18108, templatef7177277f7593bf8a39ac42ef0a6e925c374f7ed10c4b8d270de9f801115ba7f after restoring the existing output reservation. Required fixes none. Exact commit/job2 only; delivered behavior unrun at review, subsequently qualified by retained attempt2.

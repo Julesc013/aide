@@ -1,0 +1,193 @@
+{
+  "status": "PASS",
+  "actual_cli": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\63861df21a0c48529a401b6ad74ea8ca\\tmp\\lesson-consumer-sf1p6g7f\\.aide\\scripts\\aide_lite.py",
+  "core_absent": true,
+  "source_history_absent": true,
+  "helper_entry": {
+    "installed_digest": "11881d38a11d1ba39a11c380aa02c67f91ecb7674824910db22ae10129710a6a",
+    "kind": "managed_file",
+    "local_overlay": false,
+    "ownership": "aide_portable_managed",
+    "source": ".aide/scripts/outcome_lessons.py",
+    "source_digest": "11881d38a11d1ba39a11c380aa02c67f91ecb7674824910db22ae10129710a6a"
+  },
+  "read_only_inventory_preserved": true,
+  "customization_preserved": true,
+  "correction_and_retirement": [
+    {
+      "schema_version": "aide.outcome-lessons-view.v1",
+      "path": "tests/check.py",
+      "selected": [
+        {
+          "id": "project-lesson",
+          "revision": 1,
+          "lesson_sha256": "f65e35fd8c3af221435319e64fe842b8726b0ad380aeabd552b7432a22d56773",
+          "outcome_identity": [
+            "project-review-1",
+            "review",
+            "project-owner"
+          ],
+          "evidence": [
+            {
+              "path": "source.txt",
+              "expected_sha256": "076958ed5e8182bbf8079819d57917295b05062a79fa11c922eceb8f9c7aaca8",
+              "observed_sha256": "076958ed5e8182bbf8079819d57917295b05062a79fa11c922eceb8f9c7aaca8",
+              "state": "matching"
+            }
+          ],
+          "lesson": {
+            "applies_to": [
+              "tests/check.py"
+            ],
+            "evidence": [
+              {
+                "path": "source.txt",
+                "sha256": "076958ed5e8182bbf8079819d57917295b05062a79fa11c922eceb8f9c7aaca8"
+              }
+            ],
+            "id": "project-lesson",
+            "project_metadata": {
+              "retained": true
+            },
+            "required_features": [
+              "advisory_only",
+              "revision_chain",
+              "source_sha256"
+            ],
+            "revision": 1,
+            "schema_version": "aide.outcome-lesson.v1",
+            "state": "active",
+            "summary": "Original project guidance.",
+            "supersedes": null
+          },
+          "selection_reason": "exact_path_and_matching_evidence"
+        }
+      ],
+      "excluded": [],
+      "advisory_only": true,
+      "authorship_verified": false,
+      "semantic_correctness_verified": false,
+      "execution_admitted": false,
+      "writes": false,
+      "ledger_state": "observed",
+      "ledger_sha256": "e904ed72521fc99f69ba41073032edf97c4ab55f5ef75a18c53ad6809f2c860e"
+    },
+    {
+      "schema_version": "aide.outcome-lessons-view.v1",
+      "path": "tests/check.py",
+      "selected": [
+        {
+          "id": "project-lesson",
+          "revision": 2,
+          "lesson_sha256": "dfc8769b1f0cfc58ae301647bcb3f3d4b74af89b7c4ea2bfbfbedd7e28b6ee1f",
+          "outcome_identity": [
+            "project-review-2",
+            "review",
+            "project-owner"
+          ],
+          "evidence": [
+            {
+              "path": "source.txt",
+              "expected_sha256": "076958ed5e8182bbf8079819d57917295b05062a79fa11c922eceb8f9c7aaca8",
+              "observed_sha256": "076958ed5e8182bbf8079819d57917295b05062a79fa11c922eceb8f9c7aaca8",
+              "state": "matching"
+            }
+          ],
+          "lesson": {
+            "applies_to": [
+              "tests/check.py"
+            ],
+            "evidence": [
+              {
+                "path": "source.txt",
+                "sha256": "076958ed5e8182bbf8079819d57917295b05062a79fa11c922eceb8f9c7aaca8"
+              }
+            ],
+            "id": "project-lesson",
+            "project_metadata": {
+              "retained": true
+            },
+            "required_features": [
+              "advisory_only",
+              "revision_chain",
+              "source_sha256"
+            ],
+            "revision": 2,
+            "schema_version": "aide.outcome-lesson.v1",
+            "state": "active",
+            "summary": "Corrected project guidance.",
+            "supersedes": "f65e35fd8c3af221435319e64fe842b8726b0ad380aeabd552b7432a22d56773"
+          },
+          "selection_reason": "exact_path_and_matching_evidence"
+        }
+      ],
+      "excluded": [],
+      "advisory_only": true,
+      "authorship_verified": false,
+      "semantic_correctness_verified": false,
+      "execution_admitted": false,
+      "writes": false,
+      "ledger_state": "observed",
+      "ledger_sha256": "6134d55fbecec02f6d09e0dff7ebc4a92cc064bbd6675be2415b4b9a75dcd26a"
+    },
+    {
+      "schema_version": "aide.outcome-lessons-view.v1",
+      "path": "tests/check.py",
+      "selected": [],
+      "excluded": [
+        {
+          "id": "project-lesson",
+          "revision": 3,
+          "lesson_sha256": "1556512425e46abff727103ce388b61eb319693a404be45ddb50e263ac191e34",
+          "outcome_identity": [
+            "project-review-3",
+            "review",
+            "project-owner"
+          ],
+          "reason": "retired"
+        }
+      ],
+      "advisory_only": true,
+      "authorship_verified": false,
+      "semantic_correctness_verified": false,
+      "execution_admitted": false,
+      "writes": false,
+      "ledger_state": "observed",
+      "ledger_sha256": "19668f1c4de1d6c90ce0a467b1787cee209791307a8720d65fb7c7922b6db97a"
+    }
+  ],
+  "stale_revision": {
+    "schema_version": "aide.outcome-lessons-view.v1",
+    "path": "tests/check.py",
+    "selected": [],
+    "excluded": [
+      {
+        "id": "project-lesson",
+        "revision": 2,
+        "lesson_sha256": "dfc8769b1f0cfc58ae301647bcb3f3d4b74af89b7c4ea2bfbfbedd7e28b6ee1f",
+        "outcome_identity": [
+          "project-review-2",
+          "review",
+          "project-owner"
+        ],
+        "evidence": [
+          {
+            "path": "source.txt",
+            "expected_sha256": "076958ed5e8182bbf8079819d57917295b05062a79fa11c922eceb8f9c7aaca8",
+            "observed_sha256": "5e4a32dce094c43f9302597c957d2b8edf9e0897e3e8161d6cefde4c03d38ef8",
+            "state": "stale"
+          }
+        ],
+        "reason": "evidence_not_current"
+      }
+    ],
+    "advisory_only": true,
+    "authorship_verified": false,
+    "semantic_correctness_verified": false,
+    "execution_admitted": false,
+    "writes": false,
+    "ledger_state": "observed",
+    "ledger_sha256": "6134d55fbecec02f6d09e0dff7ebc4a92cc064bbd6675be2415b4b9a75dcd26a"
+  },
+  "history_sha256": "19668f1c4de1d6c90ce0a467b1787cee209791307a8720d65fb7c7922b6db97a"
+}

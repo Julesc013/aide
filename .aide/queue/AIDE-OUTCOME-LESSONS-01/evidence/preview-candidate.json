@@ -1,0 +1,30 @@
+{
+  "base": "9e60931b88f48d76afd3e291435774618e127f79",
+  "files": {
+    ".aide/export/aide-lite-pack-v0/checksums.json": "ce8458658db0cca30a7358474d1e1406d5ca8895add0ad3801d781085b320418",
+    ".aide/export/aide-lite-pack-v0/export-report.md": "2602d5677842cd042ec6430baed807c1706370313b4ce5b2858b06d8a2041b19",
+    ".aide/export/aide-lite-pack-v0/files/.aide/policies/controller.yaml": "13bcfcd05140ac9a2982d8f96228da9ea2063fd0a9e6993722e46bc403a4689b",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py": "b4439e1910464873d7c0471eebd002a7212cdf3db890461e28e164a35e62fa42",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/outcome_lessons.py": "11881d38a11d1ba39a11c380aa02c67f91ecb7674824910db22ae10129710a6a",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_outcome_lessons.py": "c3a7c7178deb2d80cc8c1429e5ae5ec3d443c80791c3114f586f48800e5c552e",
+    ".aide/export/aide-lite-pack-v0/files/docs/reference/outcome-controller-v0.md": "08de690b9738ea9f9058d58d30abbf2428c133453e25f675219ab156197cd5f8",
+    ".aide/export/aide-lite-pack-v0/manifest.yaml": "f7e1fff8e463d585a9a8c9df9841f6be971946164f16d5382d3083c7d396251f",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/ExecPlan.md": "4b31692b7a5f7e15ca80e715d8d056fb7a534d0520ef9f26f7cd11054dba63a6",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/REPORT.md": "1fe3d6adb30b45ac7cf6f4ff19aef989c8fb4ae5e6a9e54369ee6c81bbdbd739",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/attempt-02-delivered-result.json": "ea745aac81f20947e64cbd0712948d8dd525ca8e650a033a42d771969653368a",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/attempt-02-delivered-tests.json": "f0a26128a9cad9c62ef32a3eb3f78f28497b970979df48d377b45981a557b135",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/attempt-02-installed-consumer.json": "326d77705d51759fbc4065b6854284602bc73387c715680c5b9eb6a515733767",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/attempt-02-ownership-tests.json": "a6cf7e4ddadc235eedf04e5d2971739d575be1b957628d6ff38935c8ddc51b4c",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/attempt-02-qualification.json": "5de619b70ffb82e276f2e631bcccacf56c0cc7706b737e8860eccd37461811de",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/pack-attempt-02.json": "d2a882f7e91f9d6b77e4cfb92d93f4893e233bacba2a93467609fc91486f4509",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/pack-review.md": "6b4e086a992fe9cb92706ef97e8ade7d534569dc7bbd914fbc2a0c63d62a7282",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/preview-effect.md": "5c3c062a27989ab3299b5f9561e1cb9a68ac702e53093750de167f2faf40edce",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/preview-job-template.json": "6317c144ff3f034d5f8bacd6b45d0b4b4d6393a6a7675b888086c7e2c5319194",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/preview-message.txt": "c58c5f189ec7e84a3909ad71db20b5ad044578e00a38ed980f6f6ff2fc03770b",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/run_preview.py": "bf7de4a2c89b7a45a24c51ba05405d0b8573faebc9f99d413da8eef42d6994d3",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/status.yaml": "8bf54ebc701f445e028a3cf2edb3a819947a88ed95fe8a2e7ffccd95f0dfbcc7"
+  },
+  "message_sha256": "c58c5f189ec7e84a3909ad71db20b5ad044578e00a38ed980f6f6ff2fc03770b",
+  "effect_sha256": "5c3c062a27989ab3299b5f9561e1cb9a68ac702e53093750de167f2faf40edce",
+  "job_template_sha256": "6317c144ff3f034d5f8bacd6b45d0b4b4d6393a6a7675b888086c7e2c5319194"
+}

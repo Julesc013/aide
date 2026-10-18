@@ -79,3 +79,15 @@ non_goals:
   - no_automatic_prompt_optimizer
   - no_automatic_policy_rewrite
   - no_automatic_route_rewrite
+
+lesson_selection:
+  command: outcome lessons --path EXACT_PATH
+  mode: read_only_advisory
+  source: existing_outcome_ledger_optional_lesson_metadata
+  identity: stable_id_contiguous_revision_predecessor_digest
+  correction_and_retirement: append_attributed_revision_preserve_original_rows
+  latest_unusable: exclude_without_fallback
+  freshness: exact_evidence_sha256_and_observed_snapshot_recheck
+  unfamiliar_required_semantics: refuse
+  optional_metadata: opaque_preserved_in_revision_identity
+  authority: no_authorship_truth_permission_or_evaluator_change_inferred

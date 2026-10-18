@@ -1,0 +1,34 @@
+test(outcomes): qualify installed lesson correction and retirement
+
+## Summary
+- AIDE-OUTCOME-LESSONS-01 passes source and actual consumer qualification.
+
+## Why
+- Correctable advice must survive portable installation without losing history.
+
+## Changed
+- Retain delivered36, ownership6 and installed consumer evidence.
+- Deliver the scoped helper and reference in the867member development pack.
+- Prepare fixed preview through the existing owner.
+
+## Validation
+- PASS source36, delivered36, ownership6, doctor, full validation and pack status.
+- PASS installed correction, retirement, stale evidence and customization.
+- PASS two job collections and retirement; NOT RUN final preview.
+
+## Changelog
+- Added: Portable source-linked lesson lookup with explicit invalidation.
+
+## Risks
+- Advisory selection does not establish semantic truth or improved model results.
+- Published Lite1.0.0 remains unchanged; wider host and target gates remain.
+
+## Follow-up
+- Run fixed preview, exact terminal review and qualified dev/main sync.
+
+AIDE-Task: AIDE-OUTCOME-LESSONS-01
+AIDE-Phase: consumer-qualification
+AIDE-Result: PASS
+AIDE-Scope: outcome-lessons
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: exact-preview-review-required

@@ -3,4 +3,7 @@ task_id: AIDE-OUTCOME-LESSONS-01
 status: needs_review
 result: PENDING
 review_gate: exact_admission
-next_action: exact_export_and_installed_job_review
+next_action: exact_fixed_preview_review
+
+product_qualified: source_delivered_and_safe_installed_only
+qualification_ref: REPORT.md

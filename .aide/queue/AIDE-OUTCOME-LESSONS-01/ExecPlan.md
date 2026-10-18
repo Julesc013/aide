@@ -73,3 +73,5 @@ Read-only investigation and bounded candidate prepared; no implementation or job
 Admission ACCEPT. Guarded local branch and source preparation complete; no jobs yet.
 
 Source36 and actual source lesson PASS, job5a9a5b8d retired/collected. Existing binding refresh CURRENT; classification unchanged. Delivered and installed tests prepared, not yet run.
+
+Consumer job2 PASS: delivered36/ownership6/exporter checks, actual safe-installed correction/retirement/stale evidence/customization and no-write inventories. Both jobs retired/collected. Fixed preview remains separately gated; published assets unchanged.
