@@ -5370,7 +5370,8 @@ and observed integration receipt for delivery. Full daily-use acceptance remains
 
 ### Fresh symbol discovery
 
-AIDE-SYMBOL-DISCOVERY-01 extends P6's existing quality owner with bounded fresh
-Python definitions/references and separate recorded context. Source, delivered
-and installed consumer qualification precede integration. Semantic binding,
-complete impact analysis and automatic refactoring remain outside this increment.
+AIDE-SYMBOL-DISCOVERY-01's bounded fresh syntax discovery is qualified in source,
+delivered code and a safe-installed consumer. The [report](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md)
+retains the failed export-delta assertion and successful continuation; integration
+has its own exact gate. P6 semantic binding, complete impact analysis and automatic
+refactoring remain open. This increment extends the existing quality owner.

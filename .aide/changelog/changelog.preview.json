@@ -7,13 +7,13 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Added",
-        "commit": "8a6b32ef484f",
-        "commit_sha": "8a6b32ef484f2abddf9c7d3c7ea76946e4d12c2c",
-        "entry": "Inspect offline results against their request and selected inputs",
+        "commit": "41006cce7f8c",
+        "commit_sha": "41006cce7f8ca133fc88b7a850dc5f7791c01ccf",
+        "entry": "Inspect Python definitions and syntax references in selected files",
         "follow_up": "",
         "message_format": "compact-v1",
-        "risks": "Selected files are incomplete dependency coverage; no automatic apply or acceptance",
-        "scope": "handoff",
+        "risks": "Syntax matches do not establish runtime targets or complete test impact",
+        "scope": "quality",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -22,10 +22,10 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "feat(handoff): bind offline results to exact selected inputs",
-        "summary": "Inspect offline results against their request and selected inputs",
+        "subject": "feat(quality): inspect fresh Python symbol evidence",
+        "summary": "Inspect Python definitions and syntax references in selected files",
         "type": "feat",
-        "validation": "PASS - syntax and preserved original test assertions\nFAIL - doctor/validate: changed-source capability binding; reviewed refresh pending\nNOT RUN - 97 source methods and installed qualification"
+        "validation": "PASS - structural parsing and original23 assertions retained\nFAIL - existing capability binding stale; new helper absent from unrefreshed pack\nNOT RUN - source44 and delivered/installed qualification"
       }
     ],
     "Internal": [
@@ -35,13 +35,13 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "a986ce94b103",
-        "commit_sha": "a986ce94b103e9f808422387df35853c3edb7be1",
-        "entry": "Admit bounded offline request and result continuation",
+        "commit": "396c300c7eed",
+        "commit_sha": "396c300c7eed230c7795f68dd241ea8e296409cd",
+        "entry": "Admit bounded helper and reference inspection",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "handoff",
+        "scope": "quality",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -49,10 +49,10 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "feat(handoff): admit bounded offline result exchange",
-        "summary": "Admit bounded offline request and result continuation",
+        "subject": "feat(quality): admit fresh bounded symbol discovery",
+        "summary": "Admit bounded helper and reference inspection",
         "type": "feat",
-        "validation": "PASS - existing handoff source and campaign prerequisites inspected\nNOT RUN - new source and installed consumer qualification"
+        "validation": "PASS - existing quality owners and campaign prerequisites inspected\nNOT RUN - new source and installed consumer qualification"
       },
       {
         "aide_phase": "",
@@ -60,13 +60,13 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "3e2bbd3277ab",
-        "commit_sha": "3e2bbd3277abb5b237a4ff4464fc8b75ef574f8d",
-        "entry": "Prepare portable offline result and recovery qualification",
+        "commit": "0e342967285d",
+        "commit_sha": "0e342967285db0c4b9c3685600d17fc32e8575ba",
+        "entry": "Prepare delivered and installed symbol discovery checks",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "handoff",
+        "scope": "quality",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -74,24 +74,26 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "test(handoff): prepare installed offline result qualification",
-        "summary": "Prepare portable offline result and recovery qualification",
+        "subject": "test(quality): prepare installed symbol discovery qualification",
+        "summary": "Prepare delivered and installed symbol discovery checks",
         "type": "test",
-        "validation": "PASS - source97; original79 retained; job retirement; CURRENT binding\nFAIL - development pack provenance awaits the reviewed export refresh\nNOT RUN - delivered97, installed consumer and final preview"
-      },
+        "validation": "PASS - source44; original23 retained; retired job; CURRENT binding\nFAIL - unrefreshed development pack requires its reviewed exporter\nNOT RUN - delivered44, installed consumer and final preview"
+      }
+    ],
+    "Tests": [
       {
         "aide_phase": "",
         "aide_result": "",
         "breaking": false,
         "breaking_change": "",
-        "category": "Internal",
-        "commit": "a1a45098f87e",
-        "commit_sha": "a1a45098f87eacd12571767ebc0fad1e7932f6d5",
-        "entry": "Preserve installed offline recovery qualification",
+        "category": "Tests",
+        "commit": "ab7ae7c25bda",
+        "commit_sha": "ab7ae7c25bda0f41f069e7a59fbe439feba94865",
+        "entry": "Check the exact generated symbol-discovery command delta",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "handoff",
+        "scope": "quality",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -99,16 +101,17 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "test(handoff): retain installed recovery and final preview checks",
-        "summary": "Preserve installed offline recovery qualification",
-        "type": "test",
-        "validation": "PASS - delivered97; ownership6; installed exchange and real records\nPASS - exporter, doctor, validate, pack-status; eight release assets unchanged\nNOT RUN - final fixed preview"
+        "subject": "fix(quality): account for the generated discovery command",
+        "summary": "Check the exact generated symbol-discovery command delta",
+        "type": "fix",
+        "validation": "PASS - source44; ownership6; export, doctor, validate and pack-status\nFAIL - original job2 expected-payload assertion; failure preserved\nNOT RUN - delivered44, installed consumer and final preview"
       }
     ]
   },
   "category_counts": {
     "Added": 1,
-    "Internal": 3
+    "Internal": 2,
+    "Tests": 1
   },
   "commit_count": 4,
   "entries": [
@@ -118,13 +121,13 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "a986ce94b103",
-      "commit_sha": "a986ce94b103e9f808422387df35853c3edb7be1",
-      "entry": "Admit bounded offline request and result continuation",
+      "commit": "396c300c7eed",
+      "commit_sha": "396c300c7eed230c7795f68dd241ea8e296409cd",
+      "entry": "Admit bounded helper and reference inspection",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "handoff",
+      "scope": "quality",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -132,10 +135,10 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "feat(handoff): admit bounded offline result exchange",
-      "summary": "Admit bounded offline request and result continuation",
+      "subject": "feat(quality): admit fresh bounded symbol discovery",
+      "summary": "Admit bounded helper and reference inspection",
       "type": "feat",
-      "validation": "PASS - existing handoff source and campaign prerequisites inspected\nNOT RUN - new source and installed consumer qualification"
+      "validation": "PASS - existing quality owners and campaign prerequisites inspected\nNOT RUN - new source and installed consumer qualification"
     },
     {
       "aide_phase": "",
@@ -143,13 +146,13 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Added",
-      "commit": "8a6b32ef484f",
-      "commit_sha": "8a6b32ef484f2abddf9c7d3c7ea76946e4d12c2c",
-      "entry": "Inspect offline results against their request and selected inputs",
+      "commit": "41006cce7f8c",
+      "commit_sha": "41006cce7f8ca133fc88b7a850dc5f7791c01ccf",
+      "entry": "Inspect Python definitions and syntax references in selected files",
       "follow_up": "",
       "message_format": "compact-v1",
-      "risks": "Selected files are incomplete dependency coverage; no automatic apply or acceptance",
-      "scope": "handoff",
+      "risks": "Syntax matches do not establish runtime targets or complete test impact",
+      "scope": "quality",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -158,10 +161,10 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "feat(handoff): bind offline results to exact selected inputs",
-      "summary": "Inspect offline results against their request and selected inputs",
+      "subject": "feat(quality): inspect fresh Python symbol evidence",
+      "summary": "Inspect Python definitions and syntax references in selected files",
       "type": "feat",
-      "validation": "PASS - syntax and preserved original test assertions\nFAIL - doctor/validate: changed-source capability binding; reviewed refresh pending\nNOT RUN - 97 source methods and installed qualification"
+      "validation": "PASS - structural parsing and original23 assertions retained\nFAIL - existing capability binding stale; new helper absent from unrefreshed pack\nNOT RUN - source44 and delivered/installed qualification"
     },
     {
       "aide_phase": "",
@@ -169,13 +172,13 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "3e2bbd3277ab",
-      "commit_sha": "3e2bbd3277abb5b237a4ff4464fc8b75ef574f8d",
-      "entry": "Prepare portable offline result and recovery qualification",
+      "commit": "0e342967285d",
+      "commit_sha": "0e342967285db0c4b9c3685600d17fc32e8575ba",
+      "entry": "Prepare delivered and installed symbol discovery checks",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "handoff",
+      "scope": "quality",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -183,24 +186,24 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "test(handoff): prepare installed offline result qualification",
-      "summary": "Prepare portable offline result and recovery qualification",
+      "subject": "test(quality): prepare installed symbol discovery qualification",
+      "summary": "Prepare delivered and installed symbol discovery checks",
       "type": "test",
-      "validation": "PASS - source97; original79 retained; job retirement; CURRENT binding\nFAIL - development pack provenance awaits the reviewed export refresh\nNOT RUN - delivered97, installed consumer and final preview"
+      "validation": "PASS - source44; original23 retained; retired job; CURRENT binding\nFAIL - unrefreshed development pack requires its reviewed exporter\nNOT RUN - delivered44, installed consumer and final preview"
     },
     {
       "aide_phase": "",
       "aide_result": "",
       "breaking": false,
       "breaking_change": "",
-      "category": "Internal",
-      "commit": "a1a45098f87e",
-      "commit_sha": "a1a45098f87eacd12571767ebc0fad1e7932f6d5",
-      "entry": "Preserve installed offline recovery qualification",
+      "category": "Tests",
+      "commit": "ab7ae7c25bda",
+      "commit_sha": "ab7ae7c25bda0f41f069e7a59fbe439feba94865",
+      "entry": "Check the exact generated symbol-discovery command delta",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "handoff",
+      "scope": "quality",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -208,10 +211,10 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "test(handoff): retain installed recovery and final preview checks",
-      "summary": "Preserve installed offline recovery qualification",
-      "type": "test",
-      "validation": "PASS - delivered97; ownership6; installed exchange and real records\nPASS - exporter, doctor, validate, pack-status; eight release assets unchanged\nNOT RUN - final fixed preview"
+      "subject": "fix(quality): account for the generated discovery command",
+      "summary": "Check the exact generated symbol-discovery command delta",
+      "type": "fix",
+      "validation": "PASS - source44; ownership6; export, doctor, validate and pack-status\nFAIL - original job2 expected-payload assertion; failure preserved\nNOT RUN - delivered44, installed consumer and final preview"
     }
   ],
   "generated_by": "aide-lite",
@@ -222,7 +225,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "a1a45098f87eacd12571767ebc0fad1e7932f6d5",
-  "source_range": "66c0b90b6aa0b68cd24659b6279f66b987cb585c..a1a45098f87eacd12571767ebc0fad1e7932f6d5",
+  "source_head": "ab7ae7c25bda0f41f069e7a59fbe439feba94865",
+  "source_range": "118ab7829f300050394dc67a3af943963acfe218..ab7ae7c25bda0f41f069e7a59fbe439feba94865",
   "warnings": []
 }

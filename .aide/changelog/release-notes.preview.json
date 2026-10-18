@@ -4,37 +4,44 @@
     {
       "breaking": false,
       "category": "Added",
-      "commit": "8a6b32ef484f",
-      "subject": "feat(handoff): bind offline results to exact selected inputs",
-      "summary": "Inspect offline results against their request and selected inputs"
+      "commit": "41006cce7f8c",
+      "subject": "feat(quality): inspect fresh Python symbol evidence",
+      "summary": "Inspect Python definitions and syntax references in selected files"
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "ab7ae7c25bda",
+      "subject": "fix(quality): account for the generated discovery command",
+      "summary": "Check the exact generated symbol-discovery command delta"
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "8a6b32ef484f",
-      "summary": "Selected files are incomplete dependency coverage; no automatic apply or acceptance"
+      "commit": "41006cce7f8c",
+      "summary": "Syntax matches do not establish runtime targets or complete test impact"
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "a1a45098f87eacd12571767ebc0fad1e7932f6d5",
-  "source_range": "66c0b90b6aa0b68cd24659b6279f66b987cb585c..a1a45098f87eacd12571767ebc0fad1e7932f6d5",
+  "source_head": "ab7ae7c25bda0f41f069e7a59fbe439feba94865",
+  "source_range": "118ab7829f300050394dc67a3af943963acfe218..ab7ae7c25bda0f41f069e7a59fbe439feba94865",
   "validation_summary": [
     {
-      "commit": "a986ce94b103",
-      "summary": "PASS - existing handoff source and campaign prerequisites inspected\nNOT RUN - new source and installed consumer qualification"
+      "commit": "396c300c7eed",
+      "summary": "PASS - existing quality owners and campaign prerequisites inspected\nNOT RUN - new source and installed consumer qualification"
     },
     {
-      "commit": "8a6b32ef484f",
-      "summary": "PASS - syntax and preserved original test assertions\nFAIL - doctor/validate: changed-source capability binding; reviewed refresh pending\nNOT RUN - 97 source methods and installed qualification"
+      "commit": "41006cce7f8c",
+      "summary": "PASS - structural parsing and original23 assertions retained\nFAIL - existing capability binding stale; new helper absent from unrefreshed pack\nNOT RUN - source44 and delivered/installed qualification"
     },
     {
-      "commit": "3e2bbd3277ab",
-      "summary": "PASS - source97; original79 retained; job retirement; CURRENT binding\nFAIL - development pack provenance awaits the reviewed export refresh\nNOT RUN - delivered97, installed consumer and final preview"
+      "commit": "0e342967285d",
+      "summary": "PASS - source44; original23 retained; retired job; CURRENT binding\nFAIL - unrefreshed development pack requires its reviewed exporter\nNOT RUN - delivered44, installed consumer and final preview"
     },
     {
-      "commit": "a1a45098f87e",
-      "summary": "PASS - delivered97; ownership6; installed exchange and real records\nPASS - exporter, doctor, validate, pack-status; eight release assets unchanged\nNOT RUN - final fixed preview"
+      "commit": "ab7ae7c25bda",
+      "summary": "PASS - source44; ownership6; export, doctor, validate and pack-status\nFAIL - original job2 expected-payload assertion; failure preserved\nNOT RUN - delivered44, installed consumer and final preview"
     }
   ],
   "warnings": []

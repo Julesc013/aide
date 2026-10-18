@@ -14109,8 +14109,12 @@ The original capability/export FAIL evidence and review correction remain.
 See [the report](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md) for exact
 subjects and guarded integration. Eight frozen release assets are unchanged.
 
-### Fresh symbol discovery prepared
+### Fresh symbol discovery qualified
 
-A pure Python AST helper and the existing quality CLI now prepare explicit-file
-inspection with hashes, bounded lists, advisory context and changed-input refusal.
-All23 original quality/repo tests remain;21 new methods are prepared and unrun.
+The existing quality CLI and pure AST helper passed 44 source and 44 delivered
+checks, retaining all 23 original methods. Safe-installed read-only discovery,
+customization, helper ownership, core absence and the independent projection
+oracle passed. The omitted catalogue-delta assertion caused a retained job2
+failure; the reviewed final allocation reused its successful export and source
+checks. Three jobs retired; final validation and fixed preview passed. See the
+[report](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md) for exact scope and integration.

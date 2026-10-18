@@ -1330,5 +1330,7 @@ by inspection.
 
 [File quality](docs/reference/file-quality-ledger.md) describes inspect-symbol,
 fresh syntax versus recorded context and its coverage limits. The
-[WorkUnit](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/ExecPlan.md) binds source and
-installed qualification; syntax evidence does not establish semantic equivalence.
+[WorkUnit](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/ExecPlan.md) and
+[qualified report](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md) bind source and
+installed evidence, including preserved failure/recovery. Syntax evidence does
+not establish semantic equivalence.

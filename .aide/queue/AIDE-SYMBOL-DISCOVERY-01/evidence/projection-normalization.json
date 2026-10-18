@@ -1,0 +1,41 @@
+{
+  "result": "PASS",
+  "reason": "Repository text policy normalizes CRLF; preserve raw collected bytes and bind normalized tracked projections.",
+  "superseded_closure_map_sha256": "247702583175419f9251107d3c0f951e503c806c3b3a5559cf4848c572c505e7",
+  "retained_job": "3a66dbce3d86426495876c8685509f20",
+  "transformation": "CRLF to LF only",
+  "files": [
+    {
+      "projection": ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/attempt-03-delivered-result.json",
+      "retained_original": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\3a66dbce3d86426495876c8685509f20\\output\\delivered-result.json",
+      "raw_sha256": "ab6d64bbb18499b0bd2e55ccf3c01972fb082a1b353c546cc4f00cfffc90bbe7",
+      "normalized_sha256": "c404ea26be32a43f1592c72d83230a3ce1d11d90c9a496848b7d29d46d4df2e1",
+      "git_filtered_blob": "6b376999c718425d12a831b931b59acaa1dac735",
+      "json_equal": true
+    },
+    {
+      "projection": ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/attempt-03-delivered-tests.json",
+      "retained_original": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\3a66dbce3d86426495876c8685509f20\\output\\delivered-tests.json",
+      "raw_sha256": "58f53e57089dcabcf47be22a5eb031480cc2393d49569c82d4d219a9faf42cd1",
+      "normalized_sha256": "6db416e201289022bd8bf5c3de420ae2531e24e4f745c25644ca49e7de0c01fb",
+      "git_filtered_blob": "06e0bdae1dcf288ad4ff6cd23c7e362319197065",
+      "json_equal": true
+    },
+    {
+      "projection": ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/attempt-03-installed-consumer.json",
+      "retained_original": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\3a66dbce3d86426495876c8685509f20\\output\\installed-consumer.json",
+      "raw_sha256": "fbc55a7031d909ec23a8c92183b5dc800f62d3ae92c906a8a8dcf3fdc93c3745",
+      "normalized_sha256": "14c4d1d6457be6168a8c852b9e4bf5eb7dfe7d326a9179c30348724f4793341d",
+      "git_filtered_blob": "c3aadb0813f6e78f786798e7be0bcfdb76fa1b78",
+      "json_equal": true
+    },
+    {
+      "projection": ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/attempt-03-qualification.json",
+      "retained_original": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\3a66dbce3d86426495876c8685509f20\\output\\qualification.json",
+      "raw_sha256": "431c10f336c3178cc96fef382df94ad7e45536f04f1d9d4264a34c813554dd3f",
+      "normalized_sha256": "5befb37da50be96dd835b7c9298f204f13ec8f978afe4a199afd41c48cf94c28",
+      "git_filtered_blob": "b6ee215617c31eaf49eb9edfc7a18ee95c8b7602",
+      "json_equal": true
+    }
+  ]
+}

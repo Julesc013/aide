@@ -1,0 +1,75 @@
+{
+  "result": "PASS",
+  "observations": {
+    "installed": {
+      "sha256": "a008b39a160c8f493c02ad0b95457f4d1932e9a68d589b5a840764e392843456",
+      "definition": {
+        "decorated": false,
+        "end_line": 42132,
+        "kind": "function",
+        "line": 42122,
+        "name": "portable_cli_text",
+        "parameters": {
+          "items": [
+            {
+              "kind": "positional_or_keyword",
+              "name": "source"
+            }
+          ],
+          "omitted": 0
+        },
+        "qualified_name": "portable_cli_text",
+        "scope": "<module>"
+      },
+      "call_locations": [
+        42625
+      ],
+      "recorded_context_state": "missing"
+    },
+    "real-source": {
+      "sha256": "1abc4cd4811ff1077089ed1e6ad7f806d05e2ede3c71d2bd1be7cfc99185890f",
+      "definition": {
+        "decorated": false,
+        "end_line": 42132,
+        "kind": "function",
+        "line": 42122,
+        "name": "portable_cli_text",
+        "parameters": {
+          "items": [
+            {
+              "kind": "positional_or_keyword",
+              "name": "source"
+            }
+          ],
+          "omitted": 0
+        },
+        "qualified_name": "portable_cli_text",
+        "scope": "<module>"
+      },
+      "call_locations": [
+        42625
+      ],
+      "recorded_context_state": "recorded"
+    }
+  },
+  "helper_receipt": {
+    "installed_digest": "cff8a69e8f2efbe99ee844aa4f475c0cfefbe7ba076b145ba4949daf29829035",
+    "kind": "managed_file",
+    "local_overlay": false,
+    "ownership": "aide_portable_managed",
+    "source": ".aide/scripts/quality_symbols.py",
+    "source_digest": "cff8a69e8f2efbe99ee844aa4f475c0cfefbe7ba076b145ba4949daf29829035"
+  },
+  "independent_projection_binding_oracle": true,
+  "one_intentional_binding_line_changed": 44,
+  "customization_preserved": true,
+  "core_absent": true,
+  "fresh_process_read_only": true,
+  "source_inputs_unchanged": {
+    ".aide/scripts/aide_lite.py": "1abc4cd4811ff1077089ed1e6ad7f806d05e2ede3c71d2bd1be7cfc99185890f",
+    ".aide/scripts/quality_symbols.py": "cff8a69e8f2efbe99ee844aa4f475c0cfefbe7ba076b145ba4949daf29829035",
+    "docs/reference/file-quality-ledger.md": "985279c12c2c97e7e48a412ffda968a803da45fe94e00b236bedb081e56e9be3",
+    ".aide/reports/file-quality-ledger.json": "fa63e5a98682e243d8a8e64d6eb2b059f1cf38fb6f13bfa56b3ff1663c81d643"
+  },
+  "semantic_resolution_claimed": false
+}

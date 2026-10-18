@@ -2,8 +2,8 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 66c0b90b6aa0b68cd24659b6279f66b987cb585c..a1a45098f87eacd12571767ebc0fad1e7932f6d5
-source_head: a1a45098f87eacd12571767ebc0fad1e7932f6d5
+source_range: 118ab7829f300050394dc67a3af943963acfe218..ab7ae7c25bda0f41f069e7a59fbe439feba94865
+source_head: ab7ae7c25bda0f41f069e7a59fbe439feba94865
 commit_count: 4
 malformed_count: 0
 preview_only: true
@@ -12,29 +12,33 @@ release_publishing: false
 ## Summary
 
 - Added: 1
-- Internal: 3
+- Tests: 1
+- Internal: 2
 
 ## Added
 
-- Inspect offline results against their request and selected inputs (8a6b32ef484f feat(handoff): bind offline results to exact selected inputs)
-  - **Validation:** PASS - syntax and preserved original test assertions
-    FAIL - doctor/validate: changed-source capability binding; reviewed refresh pending
-    NOT RUN - 97 source methods and installed qualification
-  - **Risk:** Selected files are incomplete dependency coverage; no automatic apply or acceptance
+- Inspect Python definitions and syntax references in selected files (41006cce7f8c feat(quality): inspect fresh Python symbol evidence)
+  - **Validation:** PASS - structural parsing and original23 assertions retained
+    FAIL - existing capability binding stale; new helper absent from unrefreshed pack
+    NOT RUN - source44 and delivered/installed qualification
+  - **Risk:** Syntax matches do not establish runtime targets or complete test impact
+
+## Tests
+
+- Check the exact generated symbol-discovery command delta (ab7ae7c25bda fix(quality): account for the generated discovery command)
+  - **Validation:** PASS - source44; ownership6; export, doctor, validate and pack-status
+    FAIL - original job2 expected-payload assertion; failure preserved
+    NOT RUN - delivered44, installed consumer and final preview
 
 ## Internal
 
-- Admit bounded offline request and result continuation (a986ce94b103 feat(handoff): admit bounded offline result exchange)
-  - **Validation:** PASS - existing handoff source and campaign prerequisites inspected
+- Admit bounded helper and reference inspection (396c300c7eed feat(quality): admit fresh bounded symbol discovery)
+  - **Validation:** PASS - existing quality owners and campaign prerequisites inspected
     NOT RUN - new source and installed consumer qualification
-- Prepare portable offline result and recovery qualification (3e2bbd3277ab test(handoff): prepare installed offline result qualification)
-  - **Validation:** PASS - source97; original79 retained; job retirement; CURRENT binding
-    FAIL - development pack provenance awaits the reviewed export refresh
-    NOT RUN - delivered97, installed consumer and final preview
-- Preserve installed offline recovery qualification (a1a45098f87e test(handoff): retain installed recovery and final preview checks)
-  - **Validation:** PASS - delivered97; ownership6; installed exchange and real records
-    PASS - exporter, doctor, validate, pack-status; eight release assets unchanged
-    NOT RUN - final fixed preview
+- Prepare delivered and installed symbol discovery checks (0e342967285d test(quality): prepare installed symbol discovery qualification)
+  - **Validation:** PASS - source44; original23 retained; retired job; CURRENT binding
+    FAIL - unrefreshed development pack requires its reviewed exporter
+    NOT RUN - delivered44, installed consumer and final preview
 
 ## Malformed Commits
 

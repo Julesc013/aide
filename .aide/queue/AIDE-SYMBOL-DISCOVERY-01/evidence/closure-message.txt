@@ -1,0 +1,12 @@
+test(quality): qualify installed symbol discovery
+
+Verify the new inspection command in delivered and safe-installed Lite, including
+a real helper reuse decision and an independent projection oracle. Preserve the
+failed catalogue-delta attempt and reuse completed export work in its continuation.
+
+Validation: PASS - source44, delivered44, ownership6 and installed read-only discovery
+ PASS - independent projection oracle; doctor, validate, pack-status and fixed preview
+ PASS - three retired jobs; 872 verified pack members; eight frozen assets unchanged
+Changelog: Tests: Qualify installed symbol discovery with preserved failure recovery
+AIDE-Task: AIDE-SYMBOL-DISCOVERY-01
+AIDE-Format: compact-v1

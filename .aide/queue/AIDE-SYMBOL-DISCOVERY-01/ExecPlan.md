@@ -110,3 +110,10 @@ consumer with the required final preview. It verifies and reuses the exact
 successful export and source44; it does not repeat export or product source tests.
 All original acceptance checks remain, within unchanged caps/reserves and the
 original three-job ceiling. This recovery needs its own exact review.
+
+**Technical closure.** Final job3 passed at ab7ae7c25bda0f41f069e7a59fbe439feba94865: all 44 delivered methods,
+safe-installed discovery and independent projection oracle, full validation and
+fixed four-commit preview. Source44 and job2's completed export were reused by
+exact hashes; its overall failure stays retained. All three jobs retired with
+verified collections. No further allocation. REPORT.md records exact limits;
+terminal integration remains an independently reviewed effect.

@@ -2,31 +2,32 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 66c0b90b6aa0b68cd24659b6279f66b987cb585c..a1a45098f87eacd12571767ebc0fad1e7932f6d5
-source_head: a1a45098f87eacd12571767ebc0fad1e7932f6d5
+source_range: 118ab7829f300050394dc67a3af943963acfe218..ab7ae7c25bda0f41f069e7a59fbe439feba94865
+source_head: ab7ae7c25bda0f41f069e7a59fbe439feba94865
 preview_only: true
 
 ## Highlights
 
-- Added: Inspect offline results against their request and selected inputs (8a6b32ef484f)
+- Added: Inspect Python definitions and syntax references in selected files (41006cce7f8c)
+- Tests: Check the exact generated symbol-discovery command delta (ab7ae7c25bda)
 
 ## Validation Summary
 
-- a986ce94b103: PASS - existing handoff source and campaign prerequisites inspected
+- 396c300c7eed: PASS - existing quality owners and campaign prerequisites inspected
   NOT RUN - new source and installed consumer qualification
-- 8a6b32ef484f: PASS - syntax and preserved original test assertions
-  FAIL - doctor/validate: changed-source capability binding; reviewed refresh pending
-  NOT RUN - 97 source methods and installed qualification
-- 3e2bbd3277ab: PASS - source97; original79 retained; job retirement; CURRENT binding
-  FAIL - development pack provenance awaits the reviewed export refresh
-  NOT RUN - delivered97, installed consumer and final preview
-- a1a45098f87e: PASS - delivered97; ownership6; installed exchange and real records
-  PASS - exporter, doctor, validate, pack-status; eight release assets unchanged
-  NOT RUN - final fixed preview
+- 41006cce7f8c: PASS - structural parsing and original23 assertions retained
+  FAIL - existing capability binding stale; new helper absent from unrefreshed pack
+  NOT RUN - source44 and delivered/installed qualification
+- 0e342967285d: PASS - source44; original23 retained; retired job; CURRENT binding
+  FAIL - unrefreshed development pack requires its reviewed exporter
+  NOT RUN - delivered44, installed consumer and final preview
+- ab7ae7c25bda: PASS - source44; ownership6; export, doctor, validate and pack-status
+  FAIL - original job2 expected-payload assertion; failure preserved
+  NOT RUN - delivered44, installed consumer and final preview
 
 ## Known Risks
 
-- 8a6b32ef484f: Selected files are incomplete dependency coverage; no automatic apply or acceptance
+- 41006cce7f8c: Syntax matches do not establish runtime targets or complete test impact
 
 ## Follow-up
 
