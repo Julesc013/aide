@@ -40,7 +40,7 @@ with good and broken input; compare all modes and verify no file mutation.
 4. Existing fixed changelog preview and terminal review; fresh safe dev/main
    synchronization and retirement of this local task branch only.
 
-Maximum three separately admitted jobs using unchanged existing config and roots:
+Maximum four separately admitted jobs (amended after the retained attempt2 failure) using unchanged existing config and roots:
 180 seconds, 1 GiB memory, 32 MiB scratch, 8 MiB retained, 4 GiB memory reserves.
 Preserve full logs within caps (do not retain redundant huge JSON and text).
 No model calls, release/archive mutation, extra checkout or target effect.
@@ -66,3 +66,8 @@ regressions prepared, with27 existing Lite/review assertions unchanged. No job y
 Source36 passed atc96577f7; job9ae9171364374dfd80d14f91fc630453 retired,
 collections verified and scratch absent. Existing capability binding refreshed
 once after exact review: CURRENT, classification unchanged. Export still unrun.
+
+Attempt2 FAILED_PRESERVED after successful export/ownership/doctor/validate/pack
+checks. Delivered36 had one fixture error and one positive-fixture failure; full
+comparison unrun. See evidence/repair-plan.md. Request bounded fixture scope and
+allocation amendment; no repair or repeat execution until exact review.

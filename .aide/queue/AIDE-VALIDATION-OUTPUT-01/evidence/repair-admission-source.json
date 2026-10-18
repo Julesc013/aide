@@ -1,0 +1,25 @@
+{
+  "base": "7804bb47d58792c3108b8b5282fb56b3bafbb070",
+  "files": {
+    ".aide/export/aide-lite-pack-v0/checksums.json": "88e0cc58f0e76e3f07167bb21fea328cba435b5ea8e024da373d562a5e3bd8f9",
+    ".aide/export/aide-lite-pack-v0/export-report.md": "5fc06a1e65ad4ffe03196b1ab322b342c875998def807b7b153df6621c79ba20",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py": "d422047cc3dda22b6f66a993af3f14ec789b4405b965f11004b61739012a9158",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_validation_output.py": "695de650fd310a92bbf7b25b2798e06ebb459a509cc538274032cfa9bd5fb3ae",
+    ".aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite.md": "19df46bba51784453edab85c054ccc4b953f99028744c2ddd9435bc027dd0e8b",
+    ".aide/export/aide-lite-pack-v0/manifest.yaml": "631227c362dcfbba29f527171346fa316b6700549f6b57484abce385e81997f0",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md": "7cbc87310f5320e5c8525f8b8caa93984edc6f76b6fabe39fe2e6b15888880d6",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-02-delivered-tests.json": "ed2117aab6730459c517d30b25c520cb199c9f30930913894077cf4d69ffe087",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-02-ownership-tests.json": "a6cf7e4ddadc235eedf04e5d2971739d575be1b957628d6ff38935c8ddc51b4c",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-02-qualification.json": "e30d517f7f2118bcd21a763da5edbe9fcb35f3f7b975aee28d8c43256990d395",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/pack-attempt-02.json": "04100647c69d8ee1fee42c7399e813d0c7eabd27c7c4e821327085a5e3447fa1",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/pack-commit-result.json": "532c2a6af5ad080feadf10dfbbe81f7aeadd6123c6e822e1ff471caf238d530f",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/pack-review.md": "021a369d7b3c3e57792c51dc064887024141b7ad51c921010a9957152416c627",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-admission-effect.md": "0bc1be743f0e29e5e2320627bd9fac1575038f8833f9e809758da86d6c982a09",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-admission-message.txt": "9c64c31b48a550bf7f10a79e8a576beca59e42c0e3abb014d01966c49b12a105",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-plan.md": "62813a81c60bfd4c420daec1ccd311b5ed281808b686256f940e77ba4b370d83",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml": "962641c92812a46a02d5dad43522081193a2c04e60b1296eab38078bbb592a24",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml": "29711745d64bd26e463b25492785c15618ae58795c3ad7f4e8449e11198af594"
+  },
+  "effect_sha256": "0bc1be743f0e29e5e2320627bd9fac1575038f8833f9e809758da86d6c982a09",
+  "message_sha256": "9c64c31b48a550bf7f10a79e8a576beca59e42c0e3abb014d01966c49b12a105"
+}

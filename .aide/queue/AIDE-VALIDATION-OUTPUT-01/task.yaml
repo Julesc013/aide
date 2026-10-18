@@ -9,6 +9,7 @@ scope:
     - .aide/queue/AIDE-VALIDATION-OUTPUT-01/**
     - .aide/scripts/aide_lite.py
     - .aide/scripts/tests/test_validation_output.py
+    - .aide/scripts/tests/test_aide_lite.py
     - docs/reference/aide-lite.md
     - .aide/queue/index.yaml
     - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
@@ -35,4 +36,4 @@ scope:
     - .github/**
     - machine configuration
 review_gate: exact_admission_source_each_job_and_integration_effect
-maximum_jobs: 3
+maximum_jobs: 4

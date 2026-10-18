@@ -1,0 +1,33 @@
+test(validation): preserve export failure and bound fixture repair
+
+## Summary
+- Preserve AIDE-VALIDATION-OUTPUT-01 failed delivered attempt and repair scope.
+
+## Why
+- Source-oriented fixture assumptions prevented delivered qualification.
+
+## Changed
+- Retain generated865-member candidate, original errors and all job receipts.
+- Admit two fixture repairs, source10/repaired delivered36 and fourth-job preview.
+
+## Validation
+- PASS ownership6, export, doctor, validate and pack status in attempt2.
+- FAIL delivered36: one fixture error and one positive-case failure; no skips.
+- PASS retired/quiescent, collection verified and scratch absent.
+
+## Changelog
+- Fixed: Document the bounded repair needed before accepting validation delivery.
+
+## Risks
+- Failed export is an incomplete candidate; actual output comparison is unrun.
+- Existing product validators and all test assertions remain required.
+
+## Follow-up
+- Prepare exact fixture repair and independently review allocation3; no automatic retry.
+
+AIDE-Task: AIDE-VALIDATION-OUTPUT-01
+AIDE-Phase: failure-preservation
+AIDE-Result: FAILED_PRESERVED
+AIDE-Scope: validation-fixture-repair
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: exact-repair-admission-required

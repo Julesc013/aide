@@ -1,0 +1,28 @@
+{
+  "result": "PASS",
+  "commit": "7804bb47d58792c3108b8b5282fb56b3bafbb070",
+  "tree": "e89d91bd94f2680edd522ef36d3d0d0c49f3a237",
+  "base": "c96577f7b079a00dbedbb580c289759a21d02fec",
+  "paths": [
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-01-source-tests.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/ledger-preimages.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/ledger-refresh.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/pack-effect.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/pack-job-template.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/pack-message.txt",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/pack-source.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/prior-pack-inventory.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/refresh-effect.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/refresh-review.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/refresh-source.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/source-attempt-01.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/source-commit-result.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/source-review.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/run_pack.py",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml",
+    ".aide/reports/capability-command-status.md",
+    ".aide/reports/capability-evidence-bindings.json",
+    ".aide/reports/capability-ledger.md"
+  ]
+}
