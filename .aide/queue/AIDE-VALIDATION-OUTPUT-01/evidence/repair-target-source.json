@@ -1,0 +1,19 @@
+{
+  "base": "28a8033977b6ce6ffbf5c73bb11f360573b21b8d",
+  "files": {
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md": "77a1cd6402a7793bf6e36320b5a9277c69305871daf27e0d5eabcbdccd8e295b",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-03-source-repair-tests.json": "0ba10e6d2a450167b15ac5e62ebde8fa7d31ab635bb0159203ab041ce785939b",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-attempt-03.json": "971eb699053fcd997cda7b8a6fd0d4342f4b367b7cca0aa4a312f98aeeac403a",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-commit-result.json": "c5436a02483551f87ebef5b1fc95dd5940d45854740947891da08f4fab610c8d",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-review.md": "43761263d586b49f3b1d93a727f1708336772b8b22c0a3fbc096cb454a6b9693",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-target-effect.md": "34dfeb4974114d56fc746d91d8dcb6c2e0b38eed80e50926618a555a3c8d0d85",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-target-job-template.json": "6ab9ca7a1a99596602ebe7f338e8b9a83cf5a24dc5b8a433e720c95bac40b4f9",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-target-message.txt": "fc2f523226ed18ab14065e883be25c14c8238891189cac899d72a430851267a0",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml": "1e549220c000e3286f90e94a858ce265052994217110f96faeef3bcb568c13fe",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml": "c360c76f65756f0039aa27244ef3177e5b11807d6ca8fcbd8a629a7d55b784bf",
+    ".aide/scripts/tests/test_validation_output.py": "3f36cff74aea1d1205ee664d4bc4f38bfbecf5ce930268419fe4512a31b5e90d"
+  },
+  "effect_sha256": "34dfeb4974114d56fc746d91d8dcb6c2e0b38eed80e50926618a555a3c8d0d85",
+  "message_sha256": "fc2f523226ed18ab14065e883be25c14c8238891189cac899d72a430851267a0",
+  "template_sha256": "6ab9ca7a1a99596602ebe7f338e8b9a83cf5a24dc5b8a433e720c95bac40b4f9"
+}

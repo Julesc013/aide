@@ -1,0 +1,35 @@
+test(validation): supply required project instructions in fixture
+
+## Summary
+- Repair the explicit AGENTS target missing from the ordinary-project fixture.
+
+## Why
+- Successful validation emitted4.9MB and obscured its actionable warning.
+
+## Changed
+- Add ordinary manual AGENTS.md to the isolated validation fixture.
+- Preserve attempt3 failure and admit corrected qualification4 plus preview5.
+
+## Validation
+- PASS36 source methods with no failures, errors or skips; job fully retired.
+- PASS refreshed binding CURRENT with unchanged classifications.
+- PASS syntax and26 unchanged source-method preservation; product source unchanged.
+- FAIL attempt3 source10: missing AGENTS target;9others passed, no skips.
+- PASS failure retirement/collection and no export effects; corrected runtime checks pending.
+
+## Changelog
+- Added: Compact validation with full text and machine-readable result modes.
+
+## Risks
+- Consumers parsing individual PASS lines must request --full or --json.
+- Output reduction does not establish speed, cost or broader qualification.
+
+## Follow-up
+- Qualify source/exported consumers, refresh bindings and review integration.
+
+AIDE-Task: AIDE-VALIDATION-OUTPUT-01
+AIDE-Phase: fixture-repair
+AIDE-Result: PENDING
+AIDE-Scope: validation-output
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: exact-source-and-job-review-required

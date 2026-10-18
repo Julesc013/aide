@@ -40,7 +40,7 @@ with good and broken input; compare all modes and verify no file mutation.
 4. Existing fixed changelog preview and terminal review; fresh safe dev/main
    synchronization and retirement of this local task branch only.
 
-Maximum four separately admitted jobs (amended after the retained attempt2 failure) using unchanged existing config and roots:
+Maximum five separately admitted jobs (amended after retained fixture failures2/3) using unchanged existing config and roots:
 180 seconds, 1 GiB memory, 32 MiB scratch, 8 MiB retained, 4 GiB memory reserves.
 Preserve full logs within caps (do not retain redundant huge JSON and text).
 No model calls, release/archive mutation, extra checkout or target effect.
@@ -75,3 +75,8 @@ allocation amendment; no repair or repeat execution until exact review.
 Repair amendment ACCEPT, failed candidate checkpointedec51458b. Two fixture
 repairs prepared without product/validator changes. Source10 + owned test-only
 refresh + delivered36 + actual comparison are pending exact allocation3 review.
+
+Attempt3 stopped before export: source10 had one failing positive fixture because
+AGENTS.md was missing. Parsed findings now retained. Add ordinary manual AGENTS.md
+only; no validator weakening. Request finite ceiling5: corrected qualification4
+and separate preview5. Existing failed attempts remain; no automatic retry.

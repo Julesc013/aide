@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "commit": "28a8033977b6ce6ffbf5c73bb11f360573b21b8d",
+  "tree": "0708d62d46ed01d349b897f7438db090b5eb410e",
+  "base": "ec51458bfed7680d3d87e661ffdb97430cc70ffd",
+  "paths": [
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-admission-commit-result.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-admission-review.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-effect.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-job-template.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-message.txt",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-pack-inventory.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-source.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-structural.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/run_checks.py",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/run_pack.py",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml",
+    ".aide/scripts/tests/test_aide_lite.py",
+    ".aide/scripts/tests/test_validation_output.py"
+  ]
+}

@@ -92,6 +92,7 @@ class ValidationOutputTests(unittest.TestCase):
     def test_actual_cli_modes_agree_on_valid_and_broken_repository(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
+            (root / 'AGENTS.md').write_text('# Project instructions\n', encoding='utf-8')
             # An ordinary project owns its memory and has no AIDE-source phase
             # markers. The source selftest helper seeds unrelated phase reports.
             for relative in aide.REQUIRED_FILES:

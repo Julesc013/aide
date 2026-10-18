@@ -36,4 +36,4 @@ scope:
     - .github/**
     - machine configuration
 review_gate: exact_admission_source_each_job_and_integration_effect
-maximum_jobs: 4
+maximum_jobs: 5
