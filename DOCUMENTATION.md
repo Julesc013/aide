@@ -1359,3 +1359,10 @@ qualify the existing saved page at1280x1800 and480x1800 in installed
 Edge155.0.4283.62 headless software rendering. The
 [WorkUnit](.aide/queue/AIDE-TASK-BRIEF-BROWSER-01/ExecPlan.md) records unchanged
 product evidence and visual limits; interaction and accessibility remain unqualified.
+
+### Task evidence read budgets
+
+[Task packets](docs/reference/task-packets.md) distinguishes small record reads
+from bounded streaming evidence inspection. The
+[qualification report](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/REPORT.md) records
+source/delivered/installed behavior, safe paths and unchanged acceptance boundaries.

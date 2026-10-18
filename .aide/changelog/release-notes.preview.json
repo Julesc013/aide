@@ -3,36 +3,33 @@
   "highlights": [
     {
       "breaking": false,
-      "category": "Tests",
-      "commit": "d251898a2264",
-      "subject": "test(view): capture the saved brief in installed Edge",
-      "summary": "Prepare bounded Edge rendering qualification of saved task briefs"
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "cfd197a936e9",
-      "subject": "test(view): retain desktop and narrow browser observations",
-      "summary": "Retain installed Edge task-brief rendering evidence"
+      "category": "Fixed",
+      "commit": "347668a4a507",
+      "subject": "fix(task): stream retained evidence within a separate bound",
+      "summary": "Inspect larger task receipts without losing safe evidence paths"
     }
   ],
   "preview_only": true,
   "risk_summary": [],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "cfd197a936e9709021c2194bc881d37c65e938df",
-  "source_range": "ad1f67f1b0f4079038d6600752d3132b7714a692..cfd197a936e9709021c2194bc881d37c65e938df",
+  "source_head": "6a08eb32efeb68ff88b3456897c871f23be30c67",
+  "source_range": "bbc80a8cac1f278eccbc236e40f71144db7f88d3..6a08eb32efeb68ff88b3456897c871f23be30c67",
   "validation_summary": [
     {
-      "commit": "47b4537189b0",
-      "summary": "PASS - repository, installed browser metadata and scoped policy observation\nNOT RUN - browser launch, screenshot review and final preview"
+      "commit": "51ce6c7bbf7e",
+      "summary": "PASS - actual receipt sizes and reader behavior inspected\nNOT RUN - source, delivered and installed regression checks"
     },
     {
-      "commit": "d251898a2264",
-      "summary": "PASS - Python syntax, scoped diff and exact input inspection\nNOT RUN - browser captures and visual review"
+      "commit": "347668a4a507",
+      "summary": "PASS - syntax and scoped diff checks\nNOT RUN - 168 source checks and actual predecessor/task comparisons"
     },
     {
-      "commit": "cfd197a936e9",
-      "summary": "PASS - two browser captures, dimensions, DOM and owned-job retirement\nPASS - actual viewport inspection; NOT RUN - final preview"
+      "commit": "3f7ce8edf826",
+      "summary": "PASS - source168, actual comparisons, retirement, CURRENT binding\nFAIL - export drift awaits its reviewed refresh\nNOT RUN - delivered168, installed consumer and final preview"
+    },
+    {
+      "commit": "6a08eb32efeb",
+      "summary": "PASS - source168, delivered168, ownership6 and installed consumer\nPASS - actual task continuity, customization and independent projection oracle\nNOT RUN - final preview; new browser rendering is outside this reader change"
     }
   ],
   "warnings": []

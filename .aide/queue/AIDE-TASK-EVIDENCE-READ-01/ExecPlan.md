@@ -94,3 +94,14 @@ native adoption remains outstanding. Pack875, customization, core absence,
 helper receipts and independent binding-line oracle passed. Records and target
 bytes stayed unchanged. Both jobs retired; eight frozen assets remain unchanged.
 Only final preview and terminal integration remain.
+
+**Qualification complete.** Final job bd851a8bc8c44aaea494ab568ffd9b45 verified
+retained evidence and the fixed four-commit preview through 6a08eb32efeb68ff88b3456897c871f23be30c67.
+All three jobs retired; no further allocation. Source168/delivered168/ownership6,
+actual installed observations,875 pack hashes and eight frozen assets passed.
+Terminal review/integration remain separate; actual refs and receipt own delivery.
+
+**Retrospective.** The defect was a mismatch between small structured record
+limits and larger retained receipts. Shared path validation and streamed hashing
+solve it without a new reader authority, index, frontend or acceptance shortcut.
+The preserved predecessor comparison demonstrates the actual behavioral change.

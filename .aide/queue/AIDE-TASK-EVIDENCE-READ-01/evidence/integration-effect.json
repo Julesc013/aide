@@ -1,0 +1,51 @@
+{
+  "schema": "aide.task-evidence-read.integration-effect.v1",
+  "base": "bbc80a8cac1f278eccbc236e40f71144db7f88d3",
+  "candidate": "Exact closure map; substitute only resulting managed commit/tree.",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "task_branch": "task/aide-task-evidence-read-01",
+  "preserved_qualification_ref": "task/aide-lite-successor-qualification-01",
+  "preserved_qualification_commit": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "preserved_publication_ref": "task/aide-lite-successor-publication-01",
+  "preserved_publication_commit": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+  "known_historical_presentation_failures": [],
+  "effects": [
+    "After exact terminal ACCEPT, managed dry-run/apply commits only closure map and mapped paths with exact message/ref/parent/tree. Strict latest and full base..candidate checks must PASS.",
+    "Under shared estate/dispatch locks require exact config/running controls/no active job, sole checkout, clean candidate/tree, ready helper plan and exact local/remote dev/main base. Preserve both named task refs. Fetch only dev/main without tags and reobserve.",
+    "CAS fast-forward local dev from base to candidate; nonforce explicit candidate:refs/heads/dev push; read back exact remote state.",
+    "Run full validation and strict complete-range check again, recheck controls/refs/tree and remote state. CAS fast-forward main from base; nonforce explicit push; read back both heads.",
+    "Verify fixed four-commit preview through 6a08eb32efeb68ff88b3456897c871f23be30c67; three retired attempts; source168/delivered168/ownership6, small-output compatibility, actual large-evidence continuity and installed complete HTML/JSON, customization and independent binding oracle;875 pack members/eight frozen assets. Preserve both successor refs.",
+    "Only after both refs/postchecks pass, switch to dev, verify clean exact task-ref ancestry, delete only this local task branch using branch -d. Verify final local/tracking refs and dfae9356 ancestry."
+  ],
+  "required_evidence": [
+    "168 source and168 delivered methods,162 originals unchanged; zero failures/errors/skips.",
+    "Six ownership checks, safe install without core, customization, helper receipts, binding-line oracle and unchanged selected records.",
+    "Predecessor reproduces actual oversized failure; new current/resume/brief and complete source/installed observation agree. Small-evidence text/JSON byte-identical.",
+    "Three jobs collected/digest-verified/retired, no scratch/released reservations; no more allocations.",
+    "Full validation/doctor/pack status/fixed four-commit preview PASS; original structural failures and existing warning retained.",
+    "875 development pack hashes and eight frozen assets verified; full commit range/closure message PASS. No new host/browser/model/release claim."
+  ],
+  "failure_response": "Retain started/completed command streams and identities. Stop on changed inputs/refs or any failed check; reconcile observed effects before any retry.",
+  "forbidden": [
+    "force push",
+    "history rewrite",
+    "protection change or bypass",
+    "tag/release effects",
+    "unrelated branch deletion",
+    "live target or ledger mutation",
+    "model/provider requests",
+    "package rebuild",
+    "further job allocation"
+  ],
+  "controller": {
+    "path": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/integration-runner.log",
+    "sha256": "d2d3705de3a601ee3fef1355793dab7eb5232e029e86b7ef51667d7c49dcf223",
+    "prior_path": ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/integration-runner.log",
+    "prior_sha256": "e034b886bb69ee1abce25077a3b3a623b5a65954b581ad42a3120aa105e20d93",
+    "permitted_substitutions": [
+      "Only task path AIDE-TASK-BRIEF-SYMBOL-01 to AIDE-TASK-EVIDENCE-READ-01. Closure commit/tree from exact managed receipt; all other controller bytes unchanged."
+    ]
+  }
+}

@@ -14146,3 +14146,13 @@ Actual root/independent screenshot reviews passed visible layout and wrapping;
 below-fold content and accessibility remain unqualified. Both jobs retired and
 the fixed preview passed. Product,875-member pack and eight frozen assets unchanged.
 [Report and captures](.aide/queue/AIDE-TASK-BRIEF-BROWSER-01/REPORT.md).
+
+### Retained task evidence remains inspectable
+
+The existing task reader hashes evidence up to 1 MiB in 64-KiB chunks while
+keeping record limits and path guards. Safe oversized references retain their
+paths. All 168 source and 168 delivered checks passed, preserving 162 originals.
+The actual prior failure and installed behavior are demonstrated; customization,
+unfinished adoption and non-authority fields remain. Three jobs retired, 875 pack
+members verified and eight frozen assets unchanged.
+[Report](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/REPORT.md).

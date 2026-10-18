@@ -5401,3 +5401,12 @@ Edge155.0.4283.62 at desktop/narrow viewports. DOM and independent visual checks
 passed; lower content, interaction and accessibility remain open. Two jobs retired,
 unchanged product evidence reused. [Report](.aide/queue/AIDE-TASK-BRIEF-BROWSER-01/REPORT.md)
 binds exact scope and the separately reviewed integration effect.
+
+### Bounded task evidence inspection qualified
+
+[AIDE-TASK-EVIDENCE-READ-01](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/ExecPlan.md)
+corrects the actual large-receipt task-view failure through the existing reader.
+Source168, delivered168, ownership6 and installed consumers passed; small-evidence
+output is unchanged. [Evidence](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/REPORT.md)
+separates readable bytes, applicable evidence and acceptance. Guarded integration
+remains distinct from publication, live host qualification and native adoption.

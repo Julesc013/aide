@@ -1,0 +1,12 @@
+fix(task): qualify bounded retained-evidence inspection
+
+Preserve larger qualification receipts in current/resume/brief observations
+without loading their bodies. Keep record limits, safe paths, digest checks
+and unfinished obligations across source and installed workflows.
+
+Validation: PASS - 168 source,168 delivered and six ownership checks
+ PASS - actual predecessor failure, small-output compatibility and installed consumers
+ PASS - three retired jobs,875 pack hashes,fixed preview; eight frozen assets unchanged
+Changelog: Fixed: Keep retained task receipts usable within a bounded evidence budget
+AIDE-Task: AIDE-TASK-EVIDENCE-READ-01
+AIDE-Format: compact-v1

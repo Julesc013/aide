@@ -1,8 +1,15 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-TASK-EVIDENCE-READ-01
-status: needs_review
+status: passed
 result: SOURCE_AND_INSTALLED_PASS
-next_action: exact final preview review
-maximum_jobs: 3
-jobs_allocated: 2
 product_qualified: true
+qualification_scope: bounded Windows CLI evidence observation; no new acceptance or execution authority
+next_action: exact terminal technical review and guarded dev/main integration
+maximum_jobs: 3
+jobs_allocated: 3
+jobs_retired: 3
+model_requests: 0
+whole_outcome_usage: unknown
+source_ref: evidence/source-attempt-01.json
+delivered_ref: evidence/pack-attempt-02.json
+preview_ref: evidence/preview-attempt-03.json

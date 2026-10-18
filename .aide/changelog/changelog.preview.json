@@ -1,5 +1,32 @@
 {
   "categories": {
+    "Fixed": [
+      {
+        "aide_phase": "",
+        "aide_result": "",
+        "breaking": false,
+        "breaking_change": "",
+        "category": "Fixed",
+        "commit": "347668a4a507",
+        "commit_sha": "347668a4a507105e71736d00d5e6ba7331c1fe79",
+        "entry": "Inspect larger task receipts without losing safe evidence paths",
+        "follow_up": "",
+        "message_format": "compact-v1",
+        "risks": "",
+        "scope": "task",
+        "source_sections_present": [
+          "Body",
+          "Validation",
+          "Changelog",
+          "AIDE-Task",
+          "AIDE-Format"
+        ],
+        "subject": "fix(task): stream retained evidence within a separate bound",
+        "summary": "Inspect larger task receipts without losing safe evidence paths",
+        "type": "fix",
+        "validation": "PASS - syntax and scoped diff checks\nNOT RUN - 168 source checks and actual predecessor/task comparisons"
+      }
+    ],
     "Internal": [
       {
         "aide_phase": "",
@@ -7,13 +34,13 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "47b4537189b0",
-        "commit_sha": "47b4537189b02ea8a0cf0e43fee6f18f2b8ac4a9",
-        "entry": "Prepare bounded saved task view browser qualification",
+        "commit": "51ce6c7bbf7e",
+        "commit_sha": "51ce6c7bbf7eaabeb1ffd5f08619b3d60ab4add3",
+        "entry": "Admit bounded task evidence reader correction",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "view",
+        "scope": "task",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -21,51 +48,24 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "test(view): prepare actual browser qualification",
-        "summary": "Prepare bounded saved task view browser qualification",
-        "type": "test",
-        "validation": "PASS - repository, installed browser metadata and scoped policy observation\nNOT RUN - browser launch, screenshot review and final preview"
-      }
-    ],
-    "Tests": [
-      {
-        "aide_phase": "",
-        "aide_result": "",
-        "breaking": false,
-        "breaking_change": "",
-        "category": "Tests",
-        "commit": "d251898a2264",
-        "commit_sha": "d251898a226446da628aec72d96143fc0292c1a0",
-        "entry": "Prepare bounded Edge rendering qualification of saved task briefs",
-        "follow_up": "",
-        "message_format": "compact-v1",
-        "risks": "",
-        "scope": "view",
-        "source_sections_present": [
-          "Body",
-          "Validation",
-          "Changelog",
-          "AIDE-Task",
-          "AIDE-Format"
-        ],
-        "subject": "test(view): capture the saved brief in installed Edge",
-        "summary": "Prepare bounded Edge rendering qualification of saved task briefs",
-        "type": "test",
-        "validation": "PASS - Python syntax, scoped diff and exact input inspection\nNOT RUN - browser captures and visual review"
+        "subject": "fix(task): admit bounded inspection of larger evidence",
+        "summary": "Admit bounded task evidence reader correction",
+        "type": "fix",
+        "validation": "PASS - actual receipt sizes and reader behavior inspected\nNOT RUN - source, delivered and installed regression checks"
       },
       {
         "aide_phase": "",
         "aide_result": "",
         "breaking": false,
         "breaking_change": "",
-        "category": "Tests",
-        "commit": "cfd197a936e9",
-        "commit_sha": "cfd197a936e9709021c2194bc881d37c65e938df",
-        "entry": "Retain installed Edge task-brief rendering evidence",
+        "category": "Internal",
+        "commit": "3f7ce8edf826",
+        "commit_sha": "3f7ce8edf82669a5533c601d844c222341beb053",
+        "entry": "Prepare delivered and installed evidence reader qualification",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "view",
+        "scope": "task",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -73,18 +73,43 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "test(view): retain desktop and narrow browser observations",
-        "summary": "Retain installed Edge task-brief rendering evidence",
+        "subject": "test(task): prepare installed evidence reader checks",
+        "summary": "Prepare delivered and installed evidence reader qualification",
         "type": "test",
-        "validation": "PASS - two browser captures, dimensions, DOM and owned-job retirement\nPASS - actual viewport inspection; NOT RUN - final preview"
+        "validation": "PASS - source168, actual comparisons, retirement, CURRENT binding\nFAIL - export drift awaits its reviewed refresh\nNOT RUN - delivered168, installed consumer and final preview"
+      },
+      {
+        "aide_phase": "",
+        "aide_result": "",
+        "breaking": false,
+        "breaking_change": "",
+        "category": "Internal",
+        "commit": "6a08eb32efeb",
+        "commit_sha": "6a08eb32efeb68ff88b3456897c871f23be30c67",
+        "entry": "Retain installed evidence reader qualification",
+        "follow_up": "",
+        "message_format": "compact-v1",
+        "risks": "",
+        "scope": "task",
+        "source_sections_present": [
+          "Body",
+          "Validation",
+          "Changelog",
+          "AIDE-Task",
+          "AIDE-Format"
+        ],
+        "subject": "test(task): qualify installed large-evidence inspection",
+        "summary": "Retain installed evidence reader qualification",
+        "type": "test",
+        "validation": "PASS - source168, delivered168, ownership6 and installed consumer\nPASS - actual task continuity, customization and independent projection oracle\nNOT RUN - final preview; new browser rendering is outside this reader change"
       }
     ]
   },
   "category_counts": {
-    "Internal": 1,
-    "Tests": 2
+    "Fixed": 1,
+    "Internal": 3
   },
-  "commit_count": 3,
+  "commit_count": 4,
   "entries": [
     {
       "aide_phase": "",
@@ -92,13 +117,13 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "47b4537189b0",
-      "commit_sha": "47b4537189b02ea8a0cf0e43fee6f18f2b8ac4a9",
-      "entry": "Prepare bounded saved task view browser qualification",
+      "commit": "51ce6c7bbf7e",
+      "commit_sha": "51ce6c7bbf7eaabeb1ffd5f08619b3d60ab4add3",
+      "entry": "Admit bounded task evidence reader correction",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "view",
+      "scope": "task",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -106,24 +131,24 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "test(view): prepare actual browser qualification",
-      "summary": "Prepare bounded saved task view browser qualification",
-      "type": "test",
-      "validation": "PASS - repository, installed browser metadata and scoped policy observation\nNOT RUN - browser launch, screenshot review and final preview"
+      "subject": "fix(task): admit bounded inspection of larger evidence",
+      "summary": "Admit bounded task evidence reader correction",
+      "type": "fix",
+      "validation": "PASS - actual receipt sizes and reader behavior inspected\nNOT RUN - source, delivered and installed regression checks"
     },
     {
       "aide_phase": "",
       "aide_result": "",
       "breaking": false,
       "breaking_change": "",
-      "category": "Tests",
-      "commit": "d251898a2264",
-      "commit_sha": "d251898a226446da628aec72d96143fc0292c1a0",
-      "entry": "Prepare bounded Edge rendering qualification of saved task briefs",
+      "category": "Fixed",
+      "commit": "347668a4a507",
+      "commit_sha": "347668a4a507105e71736d00d5e6ba7331c1fe79",
+      "entry": "Inspect larger task receipts without losing safe evidence paths",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "view",
+      "scope": "task",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -131,24 +156,24 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "test(view): capture the saved brief in installed Edge",
-      "summary": "Prepare bounded Edge rendering qualification of saved task briefs",
-      "type": "test",
-      "validation": "PASS - Python syntax, scoped diff and exact input inspection\nNOT RUN - browser captures and visual review"
+      "subject": "fix(task): stream retained evidence within a separate bound",
+      "summary": "Inspect larger task receipts without losing safe evidence paths",
+      "type": "fix",
+      "validation": "PASS - syntax and scoped diff checks\nNOT RUN - 168 source checks and actual predecessor/task comparisons"
     },
     {
       "aide_phase": "",
       "aide_result": "",
       "breaking": false,
       "breaking_change": "",
-      "category": "Tests",
-      "commit": "cfd197a936e9",
-      "commit_sha": "cfd197a936e9709021c2194bc881d37c65e938df",
-      "entry": "Retain installed Edge task-brief rendering evidence",
+      "category": "Internal",
+      "commit": "3f7ce8edf826",
+      "commit_sha": "3f7ce8edf82669a5533c601d844c222341beb053",
+      "entry": "Prepare delivered and installed evidence reader qualification",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "view",
+      "scope": "task",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -156,10 +181,35 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "test(view): retain desktop and narrow browser observations",
-      "summary": "Retain installed Edge task-brief rendering evidence",
+      "subject": "test(task): prepare installed evidence reader checks",
+      "summary": "Prepare delivered and installed evidence reader qualification",
       "type": "test",
-      "validation": "PASS - two browser captures, dimensions, DOM and owned-job retirement\nPASS - actual viewport inspection; NOT RUN - final preview"
+      "validation": "PASS - source168, actual comparisons, retirement, CURRENT binding\nFAIL - export drift awaits its reviewed refresh\nNOT RUN - delivered168, installed consumer and final preview"
+    },
+    {
+      "aide_phase": "",
+      "aide_result": "",
+      "breaking": false,
+      "breaking_change": "",
+      "category": "Internal",
+      "commit": "6a08eb32efeb",
+      "commit_sha": "6a08eb32efeb68ff88b3456897c871f23be30c67",
+      "entry": "Retain installed evidence reader qualification",
+      "follow_up": "",
+      "message_format": "compact-v1",
+      "risks": "",
+      "scope": "task",
+      "source_sections_present": [
+        "Body",
+        "Validation",
+        "Changelog",
+        "AIDE-Task",
+        "AIDE-Format"
+      ],
+      "subject": "test(task): qualify installed large-evidence inspection",
+      "summary": "Retain installed evidence reader qualification",
+      "type": "test",
+      "validation": "PASS - source168, delivered168, ownership6 and installed consumer\nPASS - actual task continuity, customization and independent projection oracle\nNOT RUN - final preview; new browser rendering is outside this reader change"
     }
   ],
   "generated_by": "aide-lite",
@@ -170,7 +220,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "cfd197a936e9709021c2194bc881d37c65e938df",
-  "source_range": "ad1f67f1b0f4079038d6600752d3132b7714a692..cfd197a936e9709021c2194bc881d37c65e938df",
+  "source_head": "6a08eb32efeb68ff88b3456897c871f23be30c67",
+  "source_range": "bbc80a8cac1f278eccbc236e40f71144db7f88d3..6a08eb32efeb68ff88b3456897c871f23be30c67",
   "warnings": []
 }

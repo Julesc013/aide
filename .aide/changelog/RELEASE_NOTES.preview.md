@@ -2,23 +2,26 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: ad1f67f1b0f4079038d6600752d3132b7714a692..cfd197a936e9709021c2194bc881d37c65e938df
-source_head: cfd197a936e9709021c2194bc881d37c65e938df
+source_range: bbc80a8cac1f278eccbc236e40f71144db7f88d3..6a08eb32efeb68ff88b3456897c871f23be30c67
+source_head: 6a08eb32efeb68ff88b3456897c871f23be30c67
 preview_only: true
 
 ## Highlights
 
-- Tests: Prepare bounded Edge rendering qualification of saved task briefs (d251898a2264)
-- Tests: Retain installed Edge task-brief rendering evidence (cfd197a936e9)
+- Fixed: Inspect larger task receipts without losing safe evidence paths (347668a4a507)
 
 ## Validation Summary
 
-- 47b4537189b0: PASS - repository, installed browser metadata and scoped policy observation
-  NOT RUN - browser launch, screenshot review and final preview
-- d251898a2264: PASS - Python syntax, scoped diff and exact input inspection
-  NOT RUN - browser captures and visual review
-- cfd197a936e9: PASS - two browser captures, dimensions, DOM and owned-job retirement
-  PASS - actual viewport inspection; NOT RUN - final preview
+- 51ce6c7bbf7e: PASS - actual receipt sizes and reader behavior inspected
+  NOT RUN - source, delivered and installed regression checks
+- 347668a4a507: PASS - syntax and scoped diff checks
+  NOT RUN - 168 source checks and actual predecessor/task comparisons
+- 3f7ce8edf826: PASS - source168, actual comparisons, retirement, CURRENT binding
+  FAIL - export drift awaits its reviewed refresh
+  NOT RUN - delivered168, installed consumer and final preview
+- 6a08eb32efeb: PASS - source168, delivered168, ownership6 and installed consumer
+  PASS - actual task continuity, customization and independent projection oracle
+  NOT RUN - final preview; new browser rendering is outside this reader change
 
 ## Known Risks
 

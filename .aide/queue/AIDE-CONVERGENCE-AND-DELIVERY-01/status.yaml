@@ -9,7 +9,7 @@ responsible_owner: AIDE campaign controller; project owners retain target accept
 acceptance_scope: Partial exact-subject qualifications; daily-use and full platform acceptance remain open
 product_qualified: false
 observed_at: 2026-10-18
-observed_source_checkpoint: 8965309a17fddbe4408b11c16371b89a31014807
+observed_source_checkpoint: 6a08eb32efeb68ff88b3456897c871f23be30c67
 next_action: Prepare the next dependency-ready brief under existing P6/P8 owners; resume release, host or native adoption only after its recorded prerequisite changes.
 remaining_obligations:
   - Actual supported host delivery and bounded ordinary editing with interruption/recovery
@@ -31,7 +31,7 @@ outer_filesystem_permission: unrestricted_not_whole_session_containment
 unchanged_blockers_stop_independent_work: false
 authority: Existing owner delegation and exact independent source/effect gates; status grants nothing new
 current_state_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
-current_state_sha256: 178c3e8f751cd2b052841f3e4b826d0f5ea54b9d93cec9db93c16c1cb6d72eb3
+current_state_sha256: 4a4ca4f26a6a5a8d4b0889f41436ca527dce069afa581e06f69f2c7a7dd5fe3d
 historical_status_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-status.yaml
 historical_status_sha256: 797b885d9b9beee5a17435210f002cfba91ff344eef227af6ceca2dd32214384
 historical_task_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-task.yaml
@@ -50,3 +50,4 @@ symbol_discovery_ref: .aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md
 task_brief_view_ref: .aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md
 task_brief_symbol_ref: .aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/REPORT.md
 task_brief_browser_ref: .aide/queue/AIDE-TASK-BRIEF-BROWSER-01/REPORT.md
+task_evidence_read_ref: .aide/queue/AIDE-TASK-EVIDENCE-READ-01/REPORT.md

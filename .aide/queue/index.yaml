@@ -4225,3 +4225,10 @@ items:
   status: passed
   path: .aide/queue/AIDE-TASK-BRIEF-BROWSER-01
   parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+
+- id: AIDE-TASK-EVIDENCE-READ-01
+  title: Inspect retained task evidence without loading large bodies
+  type: implementation
+  status: passed
+  path: .aide/queue/AIDE-TASK-EVIDENCE-READ-01
+  parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
