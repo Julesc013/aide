@@ -1,0 +1,13 @@
+test(merge): qualify the combined successor source
+
+The retained effort-accounting repair and newer compact-message behavior pass
+together. Prepare the owned development export and its installed consumer checks.
+
+Validation: PASS - 21 accounting/export and 26 compact-message checks, no skips
+ PASS - exact merge parents, message, collection and worker retirement
+ NOT RUN - combined delivered pack and integration
+Changelog: Internal: Qualify retained successor changes against current development
+AIDE-Task: AIDE-LITE-SUCCESSOR-INTEGRATION-01
+AIDE-Format: compact-v1
+Risk: Frozen 1.1.0 assets retain their original qualification only
+Follow-up: Verify the actual development pack before dev/main integration

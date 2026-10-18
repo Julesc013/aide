@@ -26,3 +26,5 @@
 **Recovery.** Stop on subject, ref or scope drift. Preserve partial Git operations and every worker result. No blind retry, force push, automatic merge abort/reset, or deletion of uncertain work. Inspect actual index and refs after interrupted effects.
 
 **Merge prepared.** Admission accepted; metadata checkpoint a9afdf67 retains exact local starting state. Standard no-commit merge reported 18 conflicts, all confined to declared generated/planning files. Resolution keeps 29 current paths, combines five source/test/reference paths and preserves 216 incoming paths exactly. Original assets and retained qualification remain unchanged. The source diff is 130 insertions and three deletions across five files; runtime verification remains pending.
+
+**Combined source qualified.** Exact two-parent checkpoint 4edf2b14 passed the unchanged 21 accounting/export and 26 compact-message checks in job 70e5d499bdb64ad6b2113075b7887209. Collection and retirement verified. The original held history is now an ancestor of the local task branch; dev/main remain unchanged pending delivered-pack and integration evidence.

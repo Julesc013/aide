@@ -1,0 +1,9 @@
+{
+  "command": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-B",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_effort_repair.py"
+  ],
+  "state": "completed",
+  "exit_code": 0
+}

@@ -1,8 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-SUCCESSOR-INTEGRATION-01
 status: needs_review
-result: MERGE_PREPARED
-next_action: exact_two_parent_checkpoint_and_source_job_review
+result: COMBINED_SOURCE_PASS
+next_action: exact_pack_checkpoint_and_job_review
 maximum_jobs: 3
-jobs_allocated: 0
+jobs_allocated: 1
 active_jobs: 0
+source_commit: 4edf2b14e340e636889d1f1e18ae14a541685156
+source_job: 70e5d499bdb64ad6b2113075b7887209

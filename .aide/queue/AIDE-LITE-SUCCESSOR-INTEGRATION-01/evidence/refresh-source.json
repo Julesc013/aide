@@ -1,0 +1,10 @@
+{
+  "base": "4edf2b14e340e636889d1f1e18ae14a541685156",
+  "files": {
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "100db106100c460b6f36eca5d9bd006171a9b04c6b73b19564f59e45e691234d",
+    ".aide/reports/capability-evidence-bindings.json": "6951662a0379e5379c60830bae9bc80893d4030a77f6b574ebb3e03493f0e581",
+    ".aide/reports/capability-command-status.md": "e11681dfaf511424cefe7f1f8df8a0c03e6f279b721db314db2fdadea615778c"
+  },
+  "effect_sha256": "a2e825e20d4e45b005c0419269942c5d0e1282a9aefa1ffe981ab55f6ff9ed1b"
+}

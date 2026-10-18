@@ -1,0 +1,33 @@
+{
+  "base": "4edf2b14e340e636889d1f1e18ae14a541685156",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/ExecPlan.md": "3b6c379102e2c94a6689fc9d793b8a74dc25485093fef767dcfe8710ab6bf063",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/attempt-01-accounting-process.json": "8355ae7f16a1241c7ae0aae7f3622a21f51784e7e56d3610b25b5d9bd181fd33",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/attempt-01-accounting-tests-events.jsonl": "7967f0839f3842b48da45379d3d368e091b2c958533a4aa9642f544fc7c0cff8",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/attempt-01-accounting-tests.json": "ac893c3662a2cca17e8fbf30bc6ec9d932f28bf1f853b940a8d780dee7dc2511",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/attempt-01-compact-tests.json": "731f016539f054bd1dbfa771f0725c2661d5226ad179da2091d47f422cab655c",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/attempt-01-source-result.json": "eaa3894ca8c94de9d1360544c4c1588f21e14762d645c3ea1294bf3e5e19bbf2",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/pack-effect.md": "60d088bd3486a4aa85d39adab7549b1a27c3761369c1f09a3f22f4dcc7bb0b2e",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/pack-job-template.json": "3adc41480da49859ff04144aeaf59d1ad74ed28ee8431887b88b320e4e27f94b",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/pack-message.txt": "f4876810c23e122610ad2f28e66f22430066da74538e42efc68e32df4fdc3d9e",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/prior-pack-inventory.json": "7b3defd544fbb4d404839797b2fd46f703be710ed4c0c10b7a27c830ec92fa6e",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/refresh-effect.md": "a2e825e20d4e45b005c0419269942c5d0e1282a9aefa1ffe981ab55f6ff9ed1b",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/refresh-preimages/capability-command-status.md": "e11681dfaf511424cefe7f1f8df8a0c03e6f279b721db314db2fdadea615778c",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/refresh-preimages/capability-evidence-bindings.json": "6951662a0379e5379c60830bae9bc80893d4030a77f6b574ebb3e03493f0e581",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/refresh-preimages/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/refresh-preimages/capability-ledger.md": "100db106100c460b6f36eca5d9bd006171a9b04c6b73b19564f59e45e691234d",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/refresh-result.json": "d0391f02fcb711aa4de949df1227ce458545990ffe6ae5d106ef00a74d3250fb",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/refresh-review.md": "daf3e8a94ae2497aee9a1f1e9a25088b3238c5e3988ef569d8d93bb972dc2a5e",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/refresh-source.json": "64587f175f5db80f2caec2dc6e36e7309829d2bbe25d0ac21792a86597802ebc",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/source-attempt-01.json": "3ece58a5bbe789c0661cc1a2b1b346c3f6517bf86c20678208c25497b240ca21",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/source-review.md": "6044c7048a16a1de5b85d48c51cf5d6a64044c1817eced855825e3242e5302d7",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/run_pack.py": "7274337ac6d369fcfeb1178016467c6680ad3cf260cee5c8f652b5f98d9b1fa6",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/status.yaml": "56f1a59207b86589b74da5b006a7d28256a6b9a4cc8189d9d32ea05110a98fd3",
+    ".aide/reports/capability-command-status.md": "2e2eea625f4185d442ced6c9145f34e2353be157addedb4762d3b89e4e88e51c",
+    ".aide/reports/capability-evidence-bindings.json": "69a22609cc46a1d4be4b6d0780294d97b437f44487d9dffcff3f3623fa9d0efc",
+    ".aide/reports/capability-ledger.md": "0fe2e6e3394978d5524c9d9b5d2245cd14d5ccfcfffa9161d1058dcdfe5a073d"
+  },
+  "message_sha256": "f4876810c23e122610ad2f28e66f22430066da74538e42efc68e32df4fdc3d9e",
+  "effect_sha256": "60d088bd3486a4aa85d39adab7549b1a27c3761369c1f09a3f22f4dcc7bb0b2e",
+  "job_template_sha256": "3adc41480da49859ff04144aeaf59d1ad74ed28ee8431887b88b320e4e27f94b"
+}

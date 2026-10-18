@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-historical-presentation-boundary-02`
-- current_commit: `4fbfc5c219fa21889017e6b4afb01feef0adb4cc`
+- current_branch: `task/aide-lite-successor-integration-01`
+- current_commit: `4edf2b14e340e636889d1f1e18ae14a541685156`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
