@@ -93,3 +93,19 @@ map4dfaae54/effectf900887c; managed checkpoint e839648c preceded source edits.
 The pure renderer, existing CLI option and20 behavioral checks are prepared.
 All84 prior brief/current/resume/quality/lesson methods remain unchanged.
 New tests are not run. Exact source/job review precedes the first allocation.
+
+**Source observed.** Job d54ad4cd2c9d40ff975ff016cea27901 at3fbf0484 passed104
+methods, with all84 originals retained, no failures/errors/skips. An actual
+AIDE-VALIDATION-OUTPUT-01 brief produced matching HTML/JSON observations and
+unchanged selected records. All streams and collected outputs verified; the job
+retired quiescent with scratch absent and reservation released. Tracked projections
+record any CRLF-to-LF normalization while preserving original retained bytes.
+Browser rendering and delivered/installed qualification remain unrun.
+
+**Delivery prepared.** Exact refresh review c4793856/fb421c2a permitted one
+existing ledger invocation. Classifications stayed byte-identical and binding
+is CURRENT; remaining FAILs identify unrefreshed pack/helper/provenance.
+The second allocation is prepared for874 pack members, delivered104 and a real
+safe-installed project plus real-source projection. It preserves unfinished
+target adoption and compares complete HTML/JSON with independent inactive-markup
+and binding-line assertions. This preparation is not executed qualification.

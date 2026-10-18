@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "task_id": "AIDE-VALIDATION-OUTPUT-01",
+  "source_records": {
+    ".aide/controller/outcome-ledger.jsonl": "50ef4662abccc26199fae681086650797b0ba94b0c11e4b31191cd5277e152a9",
+    ".aide/reports/file-quality-ledger.json": "fa63e5a98682e243d8a8e64d6eb2b059f1cf38fb6f13bfa56b3ff1663c81d643",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml": "fc552ebe58aebb3b6787428f4d15efa4960387d91c99bdcc11ac578c50bd9b76",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml": "7c13a159ebb163a533c19e3d310ffce37c595945ec960c6f638fcc28aeedb82c"
+  },
+  "canonical_observation_sha256": "b4bc287526c8f0901d2ef64298e237c319b0915486236c6b5b4965b78704a4e8",
+  "html_sha256": "05420e13656121991a92c9c991ba40d041f6b2ca443a3b47075a0b4c0f18170f",
+  "recorded_state": "PARTIAL",
+  "browser_render": "NOT_RUN",
+  "source_records_unchanged": true
+}

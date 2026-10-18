@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-TASK-BRIEF-VIEW-01
 status: needs_review
-result: PENDING
-next_action: exact source and first native job review
+result: SOURCE_PASS
+next_action: exact owned-export and installed-consumer job review
 maximum_jobs: 3
-jobs_allocated: 0
+jobs_allocated: 1
 product_qualified: false

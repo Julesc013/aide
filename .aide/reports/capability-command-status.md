@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-symbol-discovery-01`
-- current_commit: `41006cce7f8ca133fc88b7a850dc5f7791c01ccf`
+- current_branch: `task/aide-task-brief-view-01`
+- current_commit: `3fbf048454b06fdc40b341243e01c69cc0fef5b1`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

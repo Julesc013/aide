@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;; style-src &#x27;sha256-F6/+j31rdjVaMi6GOdwP1/cuZURFeOqrUQxoW9ItiGA=&#x27;"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AIDE task brief</title><style>html{color:#182434;background:#f4f6f8;font:16px/1.55 system-ui,sans-serif}
+body{max-width:72rem;margin:0 auto;padding:2rem 1rem}
+h1{font-size:1.65rem;line-height:1.25;margin:.35rem 0 1rem}
+h2{font-size:1.15rem;margin:0 0 .8rem}
+p{margin:.5rem 0}main{display:grid;gap:1rem}
+section,details{background:#fff;border:1px solid #c5ced8;border-radius:.5rem;padding:1rem}
+header,footer{margin-bottom:1.2rem}footer{margin-top:1.2rem}
+.kicker{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.notice{border-left:.3rem solid #685000;padding-left:1rem}
+.fields{display:grid;grid-template-columns:minmax(8rem,1fr) minmax(0,3fr);gap:.45rem 1rem;margin:0}
+dt{font-weight:650}dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+code,pre{font: .86rem/1.5 ui-monospace,Consolas,monospace;overflow-wrap:anywhere;white-space:pre-wrap}
+summary{font-weight:650;cursor:pointer}summary:focus-visible{outline:3px solid #174fa3;outline-offset:4px}
+li{margin:.35rem 0}.muted{color:#4e5b6b}.identity{font-size:.8rem}
+@media(max-width:42rem){body{padding:1rem .7rem}.fields{display:block}dt{margin-top:.6rem}dd{margin-top:.15rem}}
+@media print{html{background:white;color:black}body{max-width:none;padding:0}section,details{break-inside:avoid}}
+</style></head><body><header><p class="kicker">AIDE / development brief</p><h1>One task, its context and next action</h1><p class="notice">Saved observation: <strong>PARTIAL</strong>. This page is not live state. Rerun the brief to refresh it.</p></header><main><section><h2>Next action</h2><p>inspect_completed_evidence</p></section><section><h2>Recorded task</h2><dl class="fields"><dt>Task</dt><dd>AIDE-VALIDATION-OUTPUT-01</dd><dt>Objective</dt><dd>Make complete validation readable without discarding findings</dd><dt>Selected file</dt><dd>.aide/scripts/tests/test_validation_output.py</dd><dt>Task owner</dt><dd>unknown</dd><dt>Recorded status</dt><dd>passed_with_notes</dd><dt>Recorded result</dt><dd>SOURCE_DELIVERED_AND_PREVIEW_PASS</dd><dt>Recorded next action</dt><dd>exact_terminal_integration_review</dd><dt>Scope record</dt><dd>.aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml</dd></dl><p class="muted">Recorded success does not establish acceptance or finish remaining obligations.</p></section><section><h2>Continuation and remaining work</h2><dl class="fields"><dt>Recommendation</dt><dd>inspect_completed_evidence</dd><dt>Reason</dt><dd>Inspect recorded acceptance scope and remaining obligations; reuse valid results without replay.</dd><dt>Remaining obligations</dt><dd>unknown</dd></dl></section><section><h2>File context</h2><dl class="fields"><dt>File owner</dt><dd>unknown</dd><dt>Quality observation</dt><dd>MISSING</dd><dt>Freshness</dt><dd>unverified</dd><dt>Coverage</dt><dd>unindexed</dd></dl><p class="muted">Relations are advisory; incomplete information cannot narrow required checks.</p></section><section><h2>Evidence and lessons</h2><dl class="fields"><dt>Task evidence availability</dt><dd>[]</dd><dt>Lesson observation</dt><dd>observed</dd><dt>Selected lessons</dt><dd>1</dd><dt>Excluded lessons</dt><dd>0</dd></dl><p class="muted">Presence and matching hashes do not verify applicability, authorship or correctness.</p></section><details><summary>File relations and reuse candidates</summary><pre>{
+  &quot;caveats&quot;: [
+    &quot;Report revision is attribution, not current-byte verification.&quot;,
+    &quot;Missing links do not establish absence; do not narrow checks solely from this view.&quot;,
+    &quot;Similarity does not prove shared semantics or authorize refactoring.&quot;
+  ],
+  &quot;coverage&quot;: &quot;unindexed&quot;,
+  &quot;freshness&quot;: &quot;unverified&quot;,
+  &quot;ledger&quot;: &quot;.aide/reports/file-quality-ledger.json&quot;,
+  &quot;next_action&quot;: &quot;inspect the target and existing inventory; no file record was found&quot;,
+  &quot;path&quot;: &quot;.aide/scripts/tests/test_validation_output.py&quot;,
+  &quot;result&quot;: &quot;MISSING&quot;,
+  &quot;schema_version&quot;: &quot;aide.quality-explanation.v1&quot;,
+  &quot;source_commit&quot;: &quot;d71b40a99c56afa4b5a207d5949f199be684e033&quot;
+}</pre></details><details><summary>Selected and excluded lessons, with reasons</summary><pre>{
+  &quot;advisory_only&quot;: true,
+  &quot;authorship_verified&quot;: false,
+  &quot;excluded&quot;: [],
+  &quot;execution_admitted&quot;: false,
+  &quot;ledger_sha256&quot;: &quot;50ef4662abccc26199fae681086650797b0ba94b0c11e4b31191cd5277e152a9&quot;,
+  &quot;ledger_state&quot;: &quot;observed&quot;,
+  &quot;path&quot;: &quot;.aide/scripts/tests/test_validation_output.py&quot;,
+  &quot;schema_version&quot;: &quot;aide.outcome-lessons-view.v1&quot;,
+  &quot;selected&quot;: [
+    {
+      &quot;evidence&quot;: [
+        {
+          &quot;expected_sha256&quot;: &quot;3f36cff74aea1d1205ee664d4bc4f38bfbecf5ce930268419fe4512a31b5e90d&quot;,
+          &quot;observed_sha256&quot;: &quot;3f36cff74aea1d1205ee664d4bc4f38bfbecf5ce930268419fe4512a31b5e90d&quot;,
+          &quot;path&quot;: &quot;.aide/scripts/tests/test_validation_output.py&quot;,
+          &quot;state&quot;: &quot;matching&quot;
+        },
+        {
+          &quot;expected_sha256&quot;: &quot;14c80d1d26ce2b87b8982bdb58edfc4962b104048898e4ae14c63aedfd288c50&quot;,
+          &quot;observed_sha256&quot;: &quot;14c80d1d26ce2b87b8982bdb58edfc4962b104048898e4ae14c63aedfd288c50&quot;,
+          &quot;path&quot;: &quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/REPORT.md&quot;,
+          &quot;state&quot;: &quot;matching&quot;
+        }
+      ],
+      &quot;id&quot;: &quot;portable-validation-fixture&quot;,
+      &quot;lesson&quot;: {
+        &quot;applies_to&quot;: [
+          &quot;.aide/scripts/tests/test_validation_output.py&quot;,
+          &quot;.aide/scripts/tests/test_aide_lite.py&quot;
+        ],
+        &quot;evidence&quot;: [
+          {
+            &quot;path&quot;: &quot;.aide/scripts/tests/test_validation_output.py&quot;,
+            &quot;sha256&quot;: &quot;3f36cff74aea1d1205ee664d4bc4f38bfbecf5ce930268419fe4512a31b5e90d&quot;
+          },
+          {
+            &quot;path&quot;: &quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/REPORT.md&quot;,
+            &quot;sha256&quot;: &quot;14c80d1d26ce2b87b8982bdb58edfc4962b104048898e4ae14c63aedfd288c50&quot;
+          }
+        ],
+        &quot;id&quot;: &quot;portable-validation-fixture&quot;,
+        &quot;required_features&quot;: [
+          &quot;advisory_only&quot;,
+          &quot;revision_chain&quot;,
+          &quot;source_sha256&quot;
+        ],
+        &quot;revision&quot;: 1,
+        &quot;schema_version&quot;: &quot;aide.outcome-lesson.v1&quot;,
+        &quot;state&quot;: &quot;active&quot;,
+        &quot;summary&quot;: &quot;Use a minimal target-owned fixture for portable validation: include manual AGENTS.md and explicit delivered import policy; source-only historical phase reports are not ordinary consumer prerequisites. Preserve failed attempts and all semantic assertions.&quot;,
+        &quot;supersedes&quot;: null
+      },
+      &quot;lesson_sha256&quot;: &quot;9d1943467cc9d23627070e1db20a5cc8be79b12e447629b0b00792a7f9b22406&quot;,
+      &quot;outcome_identity&quot;: [
+        &quot;lesson.portable-validation-fixture.v1&quot;,
+        &quot;AIDE-OUTCOME-LESSONS-01&quot;,
+        &quot;retained_validation_fixture_evidence&quot;
+      ],
+      &quot;revision&quot;: 1,
+      &quot;selection_reason&quot;: &quot;exact_path_and_matching_evidence&quot;
+    }
+  ],
+  &quot;semantic_correctness_verified&quot;: false,
+  &quot;writes&quot;: false
+}</pre></details><details><summary>Task evidence, scope and continuation</summary><pre>{
+  &quot;execution_admitted&quot;: false,
+  &quot;read_only&quot;: true,
+  &quot;reason&quot;: &quot;Inspect recorded acceptance scope and remaining obligations; reuse valid results without replay.&quot;,
+  &quot;recommendation&quot;: &quot;inspect_completed_evidence&quot;,
+  &quot;report_only&quot;: true,
+  &quot;safe_to_resume&quot;: null,
+  &quot;schema_version&quot;: &quot;aide.task-resume-plan.v1&quot;,
+  &quot;task&quot;: {
+    &quot;acceptance_verified&quot;: false,
+    &quot;declared_status&quot;: &quot;passed_with_notes&quot;,
+    &quot;evidence&quot;: [],
+    &quot;index_status&quot;: &quot;passed_with_notes&quot;,
+    &quot;issues&quot;: [],
+    &quot;next_action&quot;: &quot;exact_terminal_integration_review&quot;,
+    &quot;objective&quot;: &quot;Make complete validation readable without discarding findings&quot;,
+    &quot;owner&quot;: null,
+    &quot;read_only&quot;: true,
+    &quot;remaining_obligations&quot;: null,
+    &quot;result&quot;: &quot;SOURCE_DELIVERED_AND_PREVIEW_PASS&quot;,
+    &quot;schema_version&quot;: &quot;aide.task-current.v1&quot;,
+    &quot;scope&quot;: {
+      &quot;acceptance_scope&quot;: null,
+      &quot;classification&quot;: null,
+      &quot;product_qualified&quot;: null,
+      &quot;review_gate&quot;: null,
+      &quot;target_mutated&quot;: null
+    },
+    &quot;selection&quot;: {
+      &quot;mode&quot;: &quot;explicit_request&quot;,
+      &quot;source&quot;: &quot;request&quot;
+    },
+    &quot;sources&quot;: {
+      &quot;declared_status&quot;: &quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml&quot;,
+      &quot;index_status&quot;: &quot;.aide/queue/index.yaml&quot;,
+      &quot;next_action&quot;: &quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml&quot;,
+      &quot;objective&quot;: &quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml&quot;,
+      &quot;result&quot;: &quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml&quot;,
+      &quot;scope&quot;: &quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml&quot;,
+      &quot;status&quot;: &quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml&quot;
+    },
+    &quot;status&quot;: &quot;passed_with_notes&quot;,
+    &quot;task_id&quot;: &quot;AIDE-VALIDATION-OUTPUT-01&quot;
+  }
+}</pre></details><details><summary>Source-record identities</summary><pre>{
+  &quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml&quot;: &quot;7c13a159ebb163a533c19e3d310ffce37c595945ec960c6f638fcc28aeedb82c&quot;,
+  &quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml&quot;: &quot;fc552ebe58aebb3b6787428f4d15efa4960387d91c99bdcc11ac578c50bd9b76&quot;,
+  &quot;.aide/queue/index.yaml&quot;: &quot;541857916f66bea3502dbd10400abc489ae4b9f44a446d52f90213f413175594&quot;
+}</pre></details><section><h2>Observation limits</h2><p>No execution or acceptance authority. Whole-work usage remains unknown.</p><ul><li>No edit permission or task acceptance is established.</li><li>Quality links are incomplete and their freshness is unverified; do not narrow required checks.</li><li>Lessons retain unverified authorship and semantic correctness.</li><li>Missing information does not establish absence; no indexes were generated.</li></ul></section><details><summary>Complete observation / JSON</summary><pre id="observation-json">{&quot;acceptance_verified&quot;:false,&quot;continuation&quot;:{&quot;execution_admitted&quot;:false,&quot;read_only&quot;:true,&quot;reason&quot;:&quot;Inspect recorded acceptance scope and remaining obligations; reuse valid results without replay.&quot;,&quot;recommendation&quot;:&quot;inspect_completed_evidence&quot;,&quot;report_only&quot;:true,&quot;safe_to_resume&quot;:null,&quot;schema_version&quot;:&quot;aide.task-resume-plan.v1&quot;,&quot;task&quot;:{&quot;acceptance_verified&quot;:false,&quot;declared_status&quot;:&quot;passed_with_notes&quot;,&quot;evidence&quot;:[],&quot;index_status&quot;:&quot;passed_with_notes&quot;,&quot;issues&quot;:[],&quot;next_action&quot;:&quot;exact_terminal_integration_review&quot;,&quot;objective&quot;:&quot;Make complete validation readable without discarding findings&quot;,&quot;owner&quot;:null,&quot;read_only&quot;:true,&quot;remaining_obligations&quot;:null,&quot;result&quot;:&quot;SOURCE_DELIVERED_AND_PREVIEW_PASS&quot;,&quot;schema_version&quot;:&quot;aide.task-current.v1&quot;,&quot;scope&quot;:{&quot;acceptance_scope&quot;:null,&quot;classification&quot;:null,&quot;product_qualified&quot;:null,&quot;review_gate&quot;:null,&quot;target_mutated&quot;:null},&quot;selection&quot;:{&quot;mode&quot;:&quot;explicit_request&quot;,&quot;source&quot;:&quot;request&quot;},&quot;sources&quot;:{&quot;declared_status&quot;:&quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml&quot;,&quot;index_status&quot;:&quot;.aide/queue/index.yaml&quot;,&quot;next_action&quot;:&quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml&quot;,&quot;objective&quot;:&quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml&quot;,&quot;result&quot;:&quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml&quot;,&quot;scope&quot;:&quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml&quot;,&quot;status&quot;:&quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml&quot;},&quot;status&quot;:&quot;passed_with_notes&quot;,&quot;task_id&quot;:&quot;AIDE-VALIDATION-OUTPUT-01&quot;}},&quot;execution_admitted&quot;:false,&quot;lesson_state&quot;:&quot;observed&quot;,&quot;lessons&quot;:{&quot;advisory_only&quot;:true,&quot;authorship_verified&quot;:false,&quot;excluded&quot;:[],&quot;execution_admitted&quot;:false,&quot;ledger_sha256&quot;:&quot;50ef4662abccc26199fae681086650797b0ba94b0c11e4b31191cd5277e152a9&quot;,&quot;ledger_state&quot;:&quot;observed&quot;,&quot;path&quot;:&quot;.aide/scripts/tests/test_validation_output.py&quot;,&quot;schema_version&quot;:&quot;aide.outcome-lessons-view.v1&quot;,&quot;selected&quot;:[{&quot;evidence&quot;:[{&quot;expected_sha256&quot;:&quot;3f36cff74aea1d1205ee664d4bc4f38bfbecf5ce930268419fe4512a31b5e90d&quot;,&quot;observed_sha256&quot;:&quot;3f36cff74aea1d1205ee664d4bc4f38bfbecf5ce930268419fe4512a31b5e90d&quot;,&quot;path&quot;:&quot;.aide/scripts/tests/test_validation_output.py&quot;,&quot;state&quot;:&quot;matching&quot;},{&quot;expected_sha256&quot;:&quot;14c80d1d26ce2b87b8982bdb58edfc4962b104048898e4ae14c63aedfd288c50&quot;,&quot;observed_sha256&quot;:&quot;14c80d1d26ce2b87b8982bdb58edfc4962b104048898e4ae14c63aedfd288c50&quot;,&quot;path&quot;:&quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/REPORT.md&quot;,&quot;state&quot;:&quot;matching&quot;}],&quot;id&quot;:&quot;portable-validation-fixture&quot;,&quot;lesson&quot;:{&quot;applies_to&quot;:[&quot;.aide/scripts/tests/test_validation_output.py&quot;,&quot;.aide/scripts/tests/test_aide_lite.py&quot;],&quot;evidence&quot;:[{&quot;path&quot;:&quot;.aide/scripts/tests/test_validation_output.py&quot;,&quot;sha256&quot;:&quot;3f36cff74aea1d1205ee664d4bc4f38bfbecf5ce930268419fe4512a31b5e90d&quot;},{&quot;path&quot;:&quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/REPORT.md&quot;,&quot;sha256&quot;:&quot;14c80d1d26ce2b87b8982bdb58edfc4962b104048898e4ae14c63aedfd288c50&quot;}],&quot;id&quot;:&quot;portable-validation-fixture&quot;,&quot;required_features&quot;:[&quot;advisory_only&quot;,&quot;revision_chain&quot;,&quot;source_sha256&quot;],&quot;revision&quot;:1,&quot;schema_version&quot;:&quot;aide.outcome-lesson.v1&quot;,&quot;state&quot;:&quot;active&quot;,&quot;summary&quot;:&quot;Use a minimal target-owned fixture for portable validation: include manual AGENTS.md and explicit delivered import policy; source-only historical phase reports are not ordinary consumer prerequisites. Preserve failed attempts and all semantic assertions.&quot;,&quot;supersedes&quot;:null},&quot;lesson_sha256&quot;:&quot;9d1943467cc9d23627070e1db20a5cc8be79b12e447629b0b00792a7f9b22406&quot;,&quot;outcome_identity&quot;:[&quot;lesson.portable-validation-fixture.v1&quot;,&quot;AIDE-OUTCOME-LESSONS-01&quot;,&quot;retained_validation_fixture_evidence&quot;],&quot;revision&quot;:1,&quot;selection_reason&quot;:&quot;exact_path_and_matching_evidence&quot;}],&quot;semantic_correctness_verified&quot;:false,&quot;writes&quot;:false},&quot;limitations&quot;:[&quot;No edit permission or task acceptance is established.&quot;,&quot;Quality links are incomplete and their freshness is unverified; do not narrow required checks.&quot;,&quot;Lessons retain unverified authorship and semantic correctness.&quot;,&quot;Missing information does not establish absence; no indexes were generated.&quot;],&quot;next_action&quot;:&quot;inspect_completed_evidence&quot;,&quot;path&quot;:&quot;.aide/scripts/tests/test_validation_output.py&quot;,&quot;quality&quot;:{&quot;caveats&quot;:[&quot;Report revision is attribution, not current-byte verification.&quot;,&quot;Missing links do not establish absence; do not narrow checks solely from this view.&quot;,&quot;Similarity does not prove shared semantics or authorize refactoring.&quot;],&quot;coverage&quot;:&quot;unindexed&quot;,&quot;freshness&quot;:&quot;unverified&quot;,&quot;ledger&quot;:&quot;.aide/reports/file-quality-ledger.json&quot;,&quot;next_action&quot;:&quot;inspect the target and existing inventory; no file record was found&quot;,&quot;path&quot;:&quot;.aide/scripts/tests/test_validation_output.py&quot;,&quot;result&quot;:&quot;MISSING&quot;,&quot;schema_version&quot;:&quot;aide.quality-explanation.v1&quot;,&quot;source_commit&quot;:&quot;d71b40a99c56afa4b5a207d5949f199be684e033&quot;},&quot;read_only&quot;:true,&quot;result&quot;:&quot;PARTIAL&quot;,&quot;schema_version&quot;:&quot;aide.task-brief.v1&quot;,&quot;scope_ref&quot;:&quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml&quot;,&quot;snapshot&quot;:&quot;bounded_sequential_observations&quot;,&quot;task_record_sha256s&quot;:{&quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml&quot;:&quot;7c13a159ebb163a533c19e3d310ffce37c595945ec960c6f638fcc28aeedb82c&quot;,&quot;.aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml&quot;:&quot;fc552ebe58aebb3b6787428f4d15efa4960387d91c99bdcc11ac578c50bd9b76&quot;,&quot;.aide/queue/index.yaml&quot;:&quot;541857916f66bea3502dbd10400abc489ae4b9f44a446d52f90213f413175594&quot;},&quot;usage_coverage&quot;:&quot;unknown&quot;}</pre></details></main><footer><p class="identity">Observation SHA-256 (canonical JSON): <code>b4bc287526c8f0901d2ef64298e237c319b0915486236c6b5b4965b78704a4e8</code></p><p class="muted">Project records own the work. This page contains no actions, scripts or remote resources.</p></footer></body></html>

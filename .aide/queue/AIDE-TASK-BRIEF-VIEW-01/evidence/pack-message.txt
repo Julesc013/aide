@@ -1,0 +1,12 @@
+test(task): prepare installed offline brief qualification
+
+Check the saved task view through an actual safe-installed package and preserve
+project-owned records and customization. Compare complete HTML observations with
+JSON and source evidence while retaining unfinished downstream obligations.
+
+Validation: PASS - source104, actual AIDE observation, retirement and CURRENT binding
+ FAIL - unrefreshed development export requires its reviewed owner
+ NOT RUN - delivered104, installed consumer and final preview
+Changelog: Internal: Prepare delivered and installed offline task view checks
+AIDE-Task: AIDE-TASK-BRIEF-VIEW-01
+AIDE-Format: compact-v1
