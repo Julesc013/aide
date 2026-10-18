@@ -1,9 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-MINI-WORKER-01
 status: running
-result: ACQUISITION_SOURCE_PREPARED
+result: ACQUISITION_REPAIR_PREPARED
 responsible_owner: AIDE execution adapter owner
-next_action: Exact review then one acquisition-only managed job
+next_action: Review bounded metadata correction and exact retained-byte reuse
 maximum_jobs: 4
-jobs_allocated: 0
+jobs_allocated: 1
+original_attempt_result: FAIL_metadata_size_guard_retained_retired
 product_qualified: false

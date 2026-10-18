@@ -1,0 +1,17 @@
+{
+  "job_id": "a6c38b9b343642c6a4d22f74d66e8247",
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\a6c38b9b343642c6a4d22f74d66e8247",
+  "files": {
+    "mini_swe_agent-2.4.6-py3-none-any.whl": "a35463c553ac825c7773b03cfa69cd44958e3af20155dcc5711fdf9e4c67cd54",
+    "pydantic-2.14.1-py3-none-any.whl": "9195d967ec791692a04438115466764fb8b9a27b31f14a760437694f40d6b454"
+  },
+  "original_attempt_sha256": "9e1fb73e9da6d6552966e4c67d035c211a3c523ba78adffbddc823b34aeb4ae1",
+  "original_result": "FAIL metadata_size_guard",
+  "collection_verified": true,
+  "metadata_observation": {
+    "pydantic_bytes": 133006,
+    "prior_limit": 131072,
+    "proposed_limit": 262144,
+    "metadata_sha256": "4d4c8e8d5e6a27d5208f0d7949f25628e6747133034969d4d1399b1ad5394036"
+  }
+}

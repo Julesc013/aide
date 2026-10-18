@@ -13,7 +13,7 @@ fixtures without a provider SDK or network calls during execution. Keep source-o
 Keep upstream wheel bytes unchanged and retain their notices. No fork, substitute DefaultAgent,
 fake dependency, generic package manager or competing scheduler.
 
-The initial recipe pins Mini2.4.6 and the complete imports required by its
+The initial recipe pins Mini 2.4.6 and the complete imports required by its
 DefaultAgent entry path. It is deliberately not an installation of Mini's full
 declared CLI/provider/benchmark dependency set. Do not claim pip check, general
 Mini CLI or provider compatibility. Inspect the actual acquired modules and
@@ -52,7 +52,7 @@ dependency may break ordinary Lite use. A replaced recipe needs its own evidence
 
 **Bounds and stop conditions.** At most four reviewed existing managed allocations:
 one acquisition, two execution/lifecycle allocations and one final qualification.
-No retry by default. Current180s/1GiB worker/32MiB scratch/8MiB retained, memory/commit
+No retry by default. Current 180s/1GiB worker/32MiB scratch/8MiB retained, memory/commit
 and disk reserves, root layout and shared locks stay unchanged. If actual archive
 or import size does not fit, retain the observation and review a measured amendment.
 No broad installation, arbitrary shell, live provider/model request, SDK fallback,
@@ -60,8 +60,26 @@ new endpoint, target mutation, auth probe, publication or release-archive rebuil
 A future real model-backed coding attempt and matched comparison remain required
 for operational claims and need a fresh finite applicable model grant.
 
-**Admission complete.**3932731e checkpoints the accepted packet. The acquisition
-source is prepared for14 exact wheels totalling4,716,392 bytes, with redirects
+**Admission complete.** 3932731e checkpoints the accepted packet. The acquisition
+source is prepared for 14 exact wheels totalling 4,716,392 bytes, with redirects
 refused, no installation/import, bounded ZIP metadata/member inspection and
 six selected immutable upstream source/license comparisons. The DiskEd
 RefuseRedirect implementation is reused by exact source import. No job has run.
+
+**Original acquisition retained.** Job a6c38b9b343642c6a4d22f74d66e8247 failed on
+Pydantic's 133,006-byte metadata against the 128KiB parsing guard. Mini's exact
+artifact and six source/license matches passed. Both acquired wheel hashes,
+full collection and retirement are verified. No artifact code ran.
+
+A proposed exact continuation reuses those two files, downloads only the remaining
+12, and raises the per-metadata limit to 256KiB while preserving every other check
+and current job cap. Allocation 1 is consumed. Keep the total 4 allocation ceiling:
+one continuation, one combined execution/lifecycle fixture allocation and one
+final qualification allocation remain. No required scenario is removed or passed
+by this sequencing change; review any inability to fit before execution.
+
+**Dependency spelling corrected before dispatch.** Focused review found that
+PyPI JSON declarations are not byte-identical to artifact metadata strings.
+The new exact metadata pins preserve both observations, add full metadata hashes,
+and retain all dependency checks. Five artifacts have equivalent representation
+differences. The earlier repair was rejected; allocation 2 has not run.

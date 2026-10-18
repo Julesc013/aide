@@ -1,0 +1,19 @@
+{
+  "base": "c5077b95ca50e8e44d85789e6efd7e80bc828c6f",
+  "files": {
+    ".aide/queue/AIDE-MINI-WORKER-01/ExecPlan.md": "25060d1e3fd428966e94fd82c497979d8650fce3cdc261fb065a6e13cc6f1929",
+    ".aide/queue/AIDE-MINI-WORKER-01/acquire_wheels.py": "e7b58f42fdda6ea10b37a409ad7f5f03970dd861c7dd698f5b68ca630ffcd271",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/acquisition-attempt-01.json": "9e1fb73e9da6d6552966e4c67d035c211a3c523ba78adffbddc823b34aeb4ae1",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/acquisition-partial-01.json": "4d9b3fefefa92c4ca2a12950bef4bbbf1338bbf038a8429d2532823221227bd7",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/acquisition-repair-effect.md": "d60b0f9629784f26b5513fccb28f6ec657bde086d27596a43756ea395ef6a8d5",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/acquisition-repair-job-template.json": "4659385894e0217f967873d1345ef1f083958138e3f748e3719854c98d4022f4",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/acquisition-repair-message.txt": "017dc15c698fd64391383a97f4ee09ae09842c745bcaf86849290879e5a98350",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/acquisition-reuse.json": "db5828b6681259258cabcc899be81b4730e516b8fd3ff5494ef9075f9075ef42",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/acquisition-review.md": "e7721d16df36d15e0758b7a497e0cea28f3186c6d6504778a977d4000af0c065",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/wheel-metadata.json": "83948fd5ce00abce331ce644d7c516b14bb5c4719836d90da2872a7df213ba6c",
+    ".aide/queue/AIDE-MINI-WORKER-01/status.yaml": "f19ca5d68fec77b76e07fd7786a9482906ba9b45f9b8c47b33e57118b67431c4"
+  },
+  "message_sha256": "017dc15c698fd64391383a97f4ee09ae09842c745bcaf86849290879e5a98350",
+  "effect_sha256": "d60b0f9629784f26b5513fccb28f6ec657bde086d27596a43756ea395ef6a8d5",
+  "job_template_sha256": "4659385894e0217f967873d1345ef1f083958138e3f748e3719854c98d4022f4"
+}

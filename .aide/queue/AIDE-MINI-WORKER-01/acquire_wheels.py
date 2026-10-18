@@ -26,7 +26,14 @@ spec.loader.exec_module(prior)
 
 def main():
     expected = json.loads((TASK / "evidence/wheel-inputs.json").read_text(encoding="utf-8"))
+    metadata_pins = json.loads((TASK / "evidence/wheel-metadata.json").read_text(encoding="utf-8"))
+    assert metadata_pins["source_manifest_sha256"] == hashlib.sha256(
+        (TASK / "evidence/wheel-inputs.json").read_bytes()).hexdigest()
+    metadata_by_file = {row["filename"]: row for row in metadata_pins["wheels"]}
+    assert len(metadata_by_file) == len(metadata_pins["wheels"]) == expected["wheel_count"]
+    assert set(metadata_by_file) == {wheel["filename"] for wheel in expected["wheels"]}
     pins = json.loads((TASK / "evidence/upstream-source-pins.json").read_text(encoding="utf-8"))
+    reuse = json.loads((TASK / "evidence/acquisition-reuse.json").read_text(encoding="utf-8"))
     output = Path(os.environ["AIDE_JOB_OUTPUT"])
     assert len(expected["wheels"]) == expected["wheel_count"] == 14
     assert sum(w["bytes"] for w in expected["wheels"]) == expected["compressed_bytes"] == 4716392
@@ -55,10 +62,23 @@ def main():
         filename = wheel["filename"]
         assert re.fullmatch(r"[A-Za-z0-9_.-]+\.whl", filename)
         assert filename == urllib.parse.unquote(url.path.rsplit("/", 1)[1])
-        with opener.open(wheel["url"], timeout=15) as response:
-            if response.headers.get("Content-Length") is not None:
-                assert int(response.headers["Content-Length"]) == wheel["bytes"]
-            data = response.read(wheel["bytes"] + 1)
+        if filename in reuse["files"]:
+            from core.execution.managed_workspace import ordinary
+            source = Path(reuse["retained"]) / "output" / filename
+            assert reuse["job_id"] == "a6c38b9b343642c6a4d22f74d66e8247"
+            assert Path(reuse["retained"]) == Path("D:/Projects/AIDE/.aide.local/execution/retained") / reuse["job_id"]
+            assert reuse["files"][filename] == wheel["sha256"]
+            assert ordinary(source).st_size == wheel["bytes"]
+            for parent in source.parents:
+                ordinary(parent, directory=True)
+            data = source.read_bytes()
+            origin = "reused_verified_retained_bytes"
+        else:
+            with opener.open(wheel["url"], timeout=15) as response:
+                if response.headers.get("Content-Length") is not None:
+                    assert int(response.headers["Content-Length"]) == wheel["bytes"]
+                data = response.read(wheel["bytes"] + 1)
+            origin = "exact_https_download"
         with (output / filename).open("xb") as stream:
             stream.write(data)
         assert len(data) == wheel["bytes"]
@@ -81,12 +101,18 @@ def main():
                     assert key not in seen_paths, "cross-wheel path collision"
                     seen_paths.add(key)
             metadata = [m for m in entries if m.filename.endswith(".dist-info/METADATA")]
-            assert len(metadata) == 1 and metadata[0].file_size <= 131072
-            headers = email.parser.BytesParser().parsebytes(archive.read(metadata[0]))
+            assert len(metadata) == 1 and metadata[0].file_size <= 262144
+            metadata_pin = metadata_by_file[filename]
+            assert metadata_pin["wheel_sha256"] == wheel["sha256"]
+            raw_metadata = archive.read(metadata[0])
+            assert len(raw_metadata) == metadata_pin["metadata_bytes"]
+            assert hashlib.sha256(raw_metadata).hexdigest() == metadata_pin["metadata_sha256"]
+            headers = email.parser.BytesParser().parsebytes(raw_metadata)
             normalize = lambda value: re.sub(r"[-_.]+", "-", value).lower()
             assert normalize(headers["Name"]) == normalize(wheel["name"])
             assert headers["Version"] == wheel["version"]
-            assert sorted(headers.get_all("Requires-Dist", [])) == sorted(wheel["requires_dist"])
+            assert headers.get("Requires-Python") == metadata_pin["requires_python"] == wheel["requires_python"]
+            assert sorted(headers.get_all("Requires-Dist", [])) == sorted(metadata_pin["requires_dist"])
             licenses = [m for m in entries if ".dist-info/" in m.filename
                         and any(token in m.filename.rsplit("/", 1)[-1].upper()
                                 for token in ("LICENSE", "LICENCE", "NOTICE", "COPYING", "AUTHORS"))]
@@ -111,6 +137,8 @@ def main():
                     source_matches.append({"wheel_path": name, "source_path": pin["path"],
                                            "sha256": pin["sha256"]})
             rows.append({**wheel, "status": "PASS_EXACT_BYTES_METADATA",
+                         "origin": origin,
+                         "artifact_metadata": metadata_pin,
                          "unpacked_bytes": unpacked, "members": len(entries),
                          "notices": notices, "upstream_source_matches": source_matches})
         save("PASS" if len(rows) == expected["wheel_count"] else "INCOMPLETE")
