@@ -5314,13 +5314,14 @@ preview passed; all three jobs retired. See
 The development pack has 867 members; published Lite 1.0.0 is unchanged.
 Exact integration review and observed receipts govern dev/main synchronization.
 
-## AIDE-TASK-DEVELOPMENT-BRIEF-01
+### AIDE-TASK-DEVELOPMENT-BRIEF-01
 
-Prepare one read-only task/file brief through existing continuation, quality and
-lesson readers. Source, actual delivered/installed qualification and exact
-integration remain pending. See
-[ExecPlan](.aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/ExecPlan.md).
+Qualified 84 source checks, 84 delivered checks and a safe-installed project brief that agrees
+with existing continuation, quality and lesson readers. Missing/invalid records
+remain explicit; no execution authority is granted. Joint preview passed.
+See [combined qualification](.aide/queue/AIDE-COMPACT-COMMUNICATION-01/REPORT.md);
+the integration receipt establishes dev/main sync.
 
 ### AIDE-COMPACT-COMMUNICATION-01
 
-Implement compact communication through existing commit/check/changelog owners; preserve legacy evidence and qualify source plus portable consumers.
+Qualified compact-v1 through existing owners: 120 source checks, 71 delivered checks, six ownership checks, safe-installed consumer and fixed preview passed. Legacy failures remain. See the combined qualification report; exact integration is recorded separately.

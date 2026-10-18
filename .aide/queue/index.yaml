@@ -4125,14 +4125,14 @@ items:
 
   - id: AIDE-TASK-DEVELOPMENT-BRIEF-01
     title: Connect task continuation, ownership and current lessons
-    status: running
+    status: passed_with_notes
     task: .aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/task.yaml
     exec_plan: .aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/ExecPlan.md
     evidence: .aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence
 
   - id: AIDE-COMPACT-COMMUNICATION-01
     title: Compact complete change communication
-    status: running
+    status: passed_with_notes
     task: .aide/queue/AIDE-COMPACT-COMMUNICATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-COMPACT-COMMUNICATION-01/ExecPlan.md
     evidence: .aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence

@@ -1,0 +1,13 @@
+docs(delivery): record qualified communication and task briefs
+
+Record source, delivered and safe-installed evidence for compact change
+communication and the task brief. Preserve original review findings and
+historical failures; keep publication and held successor integration separate.
+
+Validation: PASS - 120 source, 84 retained brief, 155 delivered and 6 ownership checks
+ PASS - installed consumer, fixed preview, 869 pack hashes, four worker retirements
+Changelog: Docs: Record qualified compact communication and task brief delivery
+AIDE-Task: AIDE-COMPACT-COMMUNICATION-01
+AIDE-Format: compact-v1
+Risk: Published assets and unqualified host routes retain their existing limits
+Follow-up: Independently review exact dev/main integration and verify remote refs

@@ -2,33 +2,42 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 3dad27442fcf13e70cd02e633c6a38380b1e4959..f2184db7d4fc539c27887e2cea2bd3c73d409d36
-source_head: f2184db7d4fc539c27887e2cea2bd3c73d409d36
+source_range: cf7b401d5bc7db6aadcc67a37ce392736589e619..2ac87ddbe50252ffbf64b8a131e02a73e2ea3acb
+source_head: 2ac87ddbe50252ffbf64b8a131e02a73e2ea3acb
 preview_only: true
 
 ## Highlights
 
-- Added: outcome lessons --path with human and JSON views. (99f91f6ceee9)
-- Added: Portable source-linked lesson lookup with explicit invalidation. (f2184db7d4fc)
-- Changed: Prepared portable qualification for current lesson retrieval. (9e60931b88f4)
+- Added: Read-only task brief with compact human and structured component views. (d8645cec9272)
+- Added: Compose task continuation, file context and current lessons in one brief (2ac87ddbe502)
+- Changed: Default to compact commits and proportionate change descriptions (b6b12ff324a7)
+- Changed: Author compact commits with complete validation and changelog facts (2ac87ddbe502)
 
 ## Validation Summary
 
-- 99f91f6ceee9: PASS syntax and diff checks; NOT RUN source36 and actual lesson job.
-- 9e60931b88f4: PASS source36, actual lesson, preserved ledger prefix and job retirement.
-- f2184db7d4fc: PASS source36, delivered36, ownership6, doctor, full validation and pack status.
+- d8645cec9272: PASS syntax, preserved 66-method identity and diff checks.
+- b6b12ff324a7: PASS - Python AST and diff checks; NOT RUN - runtime qualification
+- 14ee101b5176: PASS - source120 and preserved brief84; NOT RUN - delivery job
+- 2ac87ddbe502: PASS - delivered71 communication,84 brief,6 ownership and installed consumer
+  PASS - doctor,full validate,pack status and two retired collections
+  NOT RUN - fixed preview and integration
+- 2ac87ddbe502: PASS - delivered71 communication,84 brief,6 ownership and installed consumer
+  PASS - doctor,full validate,pack status and two retired collections
+  NOT RUN - fixed preview and integration
 
 ## Known Risks
 
-- 99f91f6ceee9: Declared active lessons do not establish correctness or authorship.
-- 9e60931b88f4: Matching evidence establishes bytes, not semantic correctness or permission.
-- f2184db7d4fc: Advisory selection does not establish semantic truth or improved model results.
+- d8645cec9272: Sequential observations are not atomic isolation or semantic validation.
+- b6b12ff324a7: Source candidate; portable consumers and integration remain unqualified
+- 2ac87ddbe502: Published Lite1.0.0 is unchanged; full host isolation remains unqualified
+- 2ac87ddbe502: Published Lite1.0.0 is unchanged; full host isolation remains unqualified
 
 ## Follow-up
 
-- 99f91f6ceee9: Qualify source, delivered and installed behavior before integration.
-- 9e60931b88f4: Run the reviewed consumer job, then qualify preview and integration.
-- f2184db7d4fc: Run fixed preview, exact terminal review and qualified dev/main sync.
+- d8645cec9272: Qualify source and actual delivered/installed consumers before integration.
+- 14ee101b5176: Run the reviewed delivery job and retain its exact outcome
+- 2ac87ddbe502: Check the fixed preview and independently review integration
+- 2ac87ddbe502: Check the fixed preview and independently review integration
 
 ## Warnings
 

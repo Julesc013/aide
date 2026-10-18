@@ -1,0 +1,124 @@
+{
+  "result": "PASS",
+  "commands": [
+    {
+      "label": "message",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        ".aide\\queue\\AIDE-COMPACT-COMMUNICATION-01\\evidence\\closure-message.txt"
+      ],
+      "exit_code": 0,
+      "bytes": 2182,
+      "sha256": "28599926e1f58d7bdb4455dc806fbb923b2a4bc26852fdbd906d61fdd6ae001f"
+    },
+    {
+      "label": "range",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "cf7b401d5bc7db6aadcc67a37ce392736589e619..HEAD"
+      ],
+      "exit_code": 0,
+      "bytes": 650,
+      "sha256": "b19bd6a43fe8787a0e5462cb2d2fbe692a783bc3444b9f715f7cf28475d9064e"
+    },
+    {
+      "label": "validate",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "exit_code": 0,
+      "bytes": 241,
+      "sha256": "8084fc43cb5383cd8c86024d66aba2cb8218c2b0d31ca208c636a3672dc7fa19"
+    },
+    {
+      "label": "doctor",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "bytes": 5181,
+      "sha256": "585c64e7eac737c2e172b11d760d884d7c614858c1521bb8941c4e4ffa595f42"
+    },
+    {
+      "label": "pack",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "pack-status"
+      ],
+      "exit_code": 0,
+      "bytes": 232,
+      "sha256": "17eb7a713285498d636c31fd8f0e50e9b1a632f16f230bd1f2db48a19f2bb673"
+    },
+    {
+      "label": "capability",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "status"
+      ],
+      "exit_code": 0,
+      "bytes": 489,
+      "sha256": "785e31d49f9a90cab93ba4794712432a1e152e83a44e124988cb243a4f774402"
+    },
+    {
+      "label": "fixed_preview",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/run_preview.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "bytes": 1116,
+      "sha256": "5a018ad41cbb1a66f69f97f2300915d4ab19a90206e4052e5c703c06a9babbab"
+    },
+    {
+      "label": "diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "bytes": 146,
+      "sha256": "62215649ddc8d5d85e6e162a455ab7f856bd0b7fee1e3471ffadf886073d8d6d"
+    }
+  ],
+  "all_four_collections_verified": [
+    "ed26460b64bd48718a47eb2713c9ea71",
+    "f459259129cf4a17b5204883c3f4c449",
+    "1b434ab20baa47d480fd6366cd59809a",
+    "d73bfe9dcfff4902a2f76affff974b48"
+  ],
+  "published_release_unchanged": true,
+  "historical_dispositions_unchanged": true,
+  "whole_outcome_usage": "unknown",
+  "warning": "Existing global review-packet reference warning retained; exact task review uses current procedure and evidence."
+}

@@ -78,3 +78,9 @@ six ownership checks, exporter/doctor/full validation/pack status and actual
 safe-installed consumer. All869 exact pack members preserved; project instructions
 and notes retained. Mixed history keeps original failure and multiline NOT RUN.
 Collection and retirement verified; fixed preview and integration remain pending.
+
+### Qualification complete; exact integration pending
+Fixed four-commit preview and869pack identity checks passed in retired job
+1b434ab20baa47d480fd6366cd59809a. Combined REPORT.md and integration-effect.json
+under AIDE-COMPACT-COMMUNICATION-01 govern terminal review. No extra product
+rerun or allocation; publication and held successor remain separate.

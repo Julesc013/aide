@@ -859,3 +859,10 @@ prerequisites remain separate; observed integration receipts establish sync.
 Admitted AIDE-TASK-DEVELOPMENT-BRIEF-01 under P0/P6: connect existing continuation,
 file ownership/check facts and current lessons in one explicit task/file view.
 No new authority/store/scan. Actual host and native target prerequisites remain.
+
+### Compact communication and task brief qualified
+Source120 plus retained brief84, delivered71+84, ownership6 and safe-installed
+consumer passed. Fixed preview and four worker retirements verified. Combined
+REPORT.md under AIDE-COMPACT-COMMUNICATION-01 records limits; exact effect and
+observed receipt govern dev/main sync. dfae9356 is deliberately preserved and
+unmerged pending its own integration disposition; no historical waiver inferred.

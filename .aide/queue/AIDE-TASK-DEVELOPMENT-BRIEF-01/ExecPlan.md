@@ -91,3 +91,9 @@ All three independent readers matched; missing/malformed records remained explic
 project instructions and notes survived, and read-only calls preserved inventory.
 This allocation belongs to the communication child, not a duplicate brief job.
 Fixed preview and exact combined integration remain pending.
+
+### Qualification complete; exact integration pending
+Fixed four-commit preview and869pack identity checks passed in retired job
+1b434ab20baa47d480fd6366cd59809a. Combined REPORT.md and integration-effect.json
+under AIDE-COMPACT-COMMUNICATION-01 govern terminal review. No extra product
+rerun or allocation; publication and held successor remain separate.
