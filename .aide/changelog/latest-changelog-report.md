@@ -1,17 +1,16 @@
 # Latest Changelog Report
 
-source_range: 118ab7829f300050394dc67a3af943963acfe218..ab7ae7c25bda0f41f069e7a59fbe439feba94865
-source_head: ab7ae7c25bda0f41f069e7a59fbe439feba94865
+source_range: 4b4b735ef3f31af4e0d16d622453f814365ef437..7d8aece064eba5ddbfa93bda1b515e7d3835000e
+source_head: 7d8aece064eba5ddbfa93bda1b515e7d3835000e
 commit_count: 4
 entry_count: 4
 malformed_count: 0
-highlight_count: 2
+highlight_count: 1
 
 ## Category Counts
 
 - Added: 1
-- Tests: 1
-- Internal: 2
+- Internal: 3
 
 ## Outputs
 

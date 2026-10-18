@@ -2,32 +2,31 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 118ab7829f300050394dc67a3af943963acfe218..ab7ae7c25bda0f41f069e7a59fbe439feba94865
-source_head: ab7ae7c25bda0f41f069e7a59fbe439feba94865
+source_range: 4b4b735ef3f31af4e0d16d622453f814365ef437..7d8aece064eba5ddbfa93bda1b515e7d3835000e
+source_head: 7d8aece064eba5ddbfa93bda1b515e7d3835000e
 preview_only: true
 
 ## Highlights
 
-- Added: Inspect Python definitions and syntax references in selected files (41006cce7f8c)
-- Tests: Check the exact generated symbol-discovery command delta (ab7ae7c25bda)
+- Added: Render existing task briefs as inactive offline HTML pages (3fbf048454b0)
 
 ## Validation Summary
 
-- 396c300c7eed: PASS - existing quality owners and campaign prerequisites inspected
-  NOT RUN - new source and installed consumer qualification
-- 41006cce7f8c: PASS - structural parsing and original23 assertions retained
-  FAIL - existing capability binding stale; new helper absent from unrefreshed pack
-  NOT RUN - source44 and delivered/installed qualification
-- 0e342967285d: PASS - source44; original23 retained; retired job; CURRENT binding
-  FAIL - unrefreshed development pack requires its reviewed exporter
-  NOT RUN - delivered44, installed consumer and final preview
-- ab7ae7c25bda: PASS - source44; ownership6; export, doctor, validate and pack-status
-  FAIL - original job2 expected-payload assertion; failure preserved
-  NOT RUN - delivered44, installed consumer and final preview
+- e839648c9ffd: PASS - existing brief owners and baseline doctor/validate inspected
+  NOT RUN - HTML source and installed consumer checks
+- 3fbf048454b0: PASS - structural parsing and original84 assertions retained
+  FAIL - new renderer absent from unrefreshed pack; capability binding stale
+  NOT RUN - source104 and delivered/installed qualification
+- aa7f59554402: PASS - source104, actual AIDE observation, retirement and CURRENT binding
+  FAIL - unrefreshed development export requires its reviewed owner
+  NOT RUN - delivered104, installed consumer and final preview
+- 7d8aece064eb: PASS - source104, delivered104, ownership6 and actual installed consumer
+  PASS - customization, read-only observations and independent projection oracle
+  NOT RUN - final preview; browser rendering remains unqualified
 
 ## Known Risks
 
-- 41006cce7f8c: Syntax matches do not establish runtime targets or complete test impact
+- 3fbf048454b0: Saved observations can become stale; browser compatibility is unqualified
 
 ## Follow-up
 

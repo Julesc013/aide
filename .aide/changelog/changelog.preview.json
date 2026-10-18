@@ -7,13 +7,13 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Added",
-        "commit": "41006cce7f8c",
-        "commit_sha": "41006cce7f8ca133fc88b7a850dc5f7791c01ccf",
-        "entry": "Inspect Python definitions and syntax references in selected files",
+        "commit": "3fbf048454b0",
+        "commit_sha": "3fbf048454b06fdc40b341243e01c69cc0fef5b1",
+        "entry": "Render existing task briefs as inactive offline HTML pages",
         "follow_up": "",
         "message_format": "compact-v1",
-        "risks": "Syntax matches do not establish runtime targets or complete test impact",
-        "scope": "quality",
+        "risks": "Saved observations can become stale; browser compatibility is unqualified",
+        "scope": "task",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -22,10 +22,10 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "feat(quality): inspect fresh Python symbol evidence",
-        "summary": "Inspect Python definitions and syntax references in selected files",
+        "subject": "feat(task): present development briefs as offline HTML",
+        "summary": "Render existing task briefs as inactive offline HTML pages",
         "type": "feat",
-        "validation": "PASS - structural parsing and original23 assertions retained\nFAIL - existing capability binding stale; new helper absent from unrefreshed pack\nNOT RUN - source44 and delivered/installed qualification"
+        "validation": "PASS - structural parsing and original84 assertions retained\nFAIL - new renderer absent from unrefreshed pack; capability binding stale\nNOT RUN - source104 and delivered/installed qualification"
       }
     ],
     "Internal": [
@@ -35,13 +35,13 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "396c300c7eed",
-        "commit_sha": "396c300c7eed230c7795f68dd241ea8e296409cd",
-        "entry": "Admit bounded helper and reference inspection",
+        "commit": "e839648c9ffd",
+        "commit_sha": "e839648c9ffd06262e03f43f2f73206ea51b6cae",
+        "entry": "Admit bounded offline task brief presentation",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "quality",
+        "scope": "task",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -49,10 +49,10 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "feat(quality): admit fresh bounded symbol discovery",
-        "summary": "Admit bounded helper and reference inspection",
+        "subject": "feat(task): admit an offline development brief view",
+        "summary": "Admit bounded offline task brief presentation",
         "type": "feat",
-        "validation": "PASS - existing quality owners and campaign prerequisites inspected\nNOT RUN - new source and installed consumer qualification"
+        "validation": "PASS - existing brief owners and baseline doctor/validate inspected\nNOT RUN - HTML source and installed consumer checks"
       },
       {
         "aide_phase": "",
@@ -60,13 +60,13 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "0e342967285d",
-        "commit_sha": "0e342967285db0c4b9c3685600d17fc32e8575ba",
-        "entry": "Prepare delivered and installed symbol discovery checks",
+        "commit": "aa7f59554402",
+        "commit_sha": "aa7f59554402aa14a5632f6d82c1829daaab59b7",
+        "entry": "Prepare delivered and installed offline task view checks",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "quality",
+        "scope": "task",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -74,26 +74,24 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "test(quality): prepare installed symbol discovery qualification",
-        "summary": "Prepare delivered and installed symbol discovery checks",
+        "subject": "test(task): prepare installed offline brief qualification",
+        "summary": "Prepare delivered and installed offline task view checks",
         "type": "test",
-        "validation": "PASS - source44; original23 retained; retired job; CURRENT binding\nFAIL - unrefreshed development pack requires its reviewed exporter\nNOT RUN - delivered44, installed consumer and final preview"
-      }
-    ],
-    "Tests": [
+        "validation": "PASS - source104, actual AIDE observation, retirement and CURRENT binding\nFAIL - unrefreshed development export requires its reviewed owner\nNOT RUN - delivered104, installed consumer and final preview"
+      },
       {
         "aide_phase": "",
         "aide_result": "",
         "breaking": false,
         "breaking_change": "",
-        "category": "Tests",
-        "commit": "ab7ae7c25bda",
-        "commit_sha": "ab7ae7c25bda0f41f069e7a59fbe439feba94865",
-        "entry": "Check the exact generated symbol-discovery command delta",
+        "category": "Internal",
+        "commit": "7d8aece064eb",
+        "commit_sha": "7d8aece064eba5ddbfa93bda1b515e7d3835000e",
+        "entry": "Retain delivered offline task brief qualification",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "quality",
+        "scope": "task",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -101,17 +99,16 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "fix(quality): account for the generated discovery command",
-        "summary": "Check the exact generated symbol-discovery command delta",
-        "type": "fix",
-        "validation": "PASS - source44; ownership6; export, doctor, validate and pack-status\nFAIL - original job2 expected-payload assertion; failure preserved\nNOT RUN - delivered44, installed consumer and final preview"
+        "subject": "test(task): qualify the delivered offline task brief",
+        "summary": "Retain delivered offline task brief qualification",
+        "type": "test",
+        "validation": "PASS - source104, delivered104, ownership6 and actual installed consumer\nPASS - customization, read-only observations and independent projection oracle\nNOT RUN - final preview; browser rendering remains unqualified"
       }
     ]
   },
   "category_counts": {
     "Added": 1,
-    "Internal": 2,
-    "Tests": 1
+    "Internal": 3
   },
   "commit_count": 4,
   "entries": [
@@ -121,13 +118,13 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "396c300c7eed",
-      "commit_sha": "396c300c7eed230c7795f68dd241ea8e296409cd",
-      "entry": "Admit bounded helper and reference inspection",
+      "commit": "e839648c9ffd",
+      "commit_sha": "e839648c9ffd06262e03f43f2f73206ea51b6cae",
+      "entry": "Admit bounded offline task brief presentation",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "quality",
+      "scope": "task",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -135,10 +132,10 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "feat(quality): admit fresh bounded symbol discovery",
-      "summary": "Admit bounded helper and reference inspection",
+      "subject": "feat(task): admit an offline development brief view",
+      "summary": "Admit bounded offline task brief presentation",
       "type": "feat",
-      "validation": "PASS - existing quality owners and campaign prerequisites inspected\nNOT RUN - new source and installed consumer qualification"
+      "validation": "PASS - existing brief owners and baseline doctor/validate inspected\nNOT RUN - HTML source and installed consumer checks"
     },
     {
       "aide_phase": "",
@@ -146,13 +143,13 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Added",
-      "commit": "41006cce7f8c",
-      "commit_sha": "41006cce7f8ca133fc88b7a850dc5f7791c01ccf",
-      "entry": "Inspect Python definitions and syntax references in selected files",
+      "commit": "3fbf048454b0",
+      "commit_sha": "3fbf048454b06fdc40b341243e01c69cc0fef5b1",
+      "entry": "Render existing task briefs as inactive offline HTML pages",
       "follow_up": "",
       "message_format": "compact-v1",
-      "risks": "Syntax matches do not establish runtime targets or complete test impact",
-      "scope": "quality",
+      "risks": "Saved observations can become stale; browser compatibility is unqualified",
+      "scope": "task",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -161,10 +158,10 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "feat(quality): inspect fresh Python symbol evidence",
-      "summary": "Inspect Python definitions and syntax references in selected files",
+      "subject": "feat(task): present development briefs as offline HTML",
+      "summary": "Render existing task briefs as inactive offline HTML pages",
       "type": "feat",
-      "validation": "PASS - structural parsing and original23 assertions retained\nFAIL - existing capability binding stale; new helper absent from unrefreshed pack\nNOT RUN - source44 and delivered/installed qualification"
+      "validation": "PASS - structural parsing and original84 assertions retained\nFAIL - new renderer absent from unrefreshed pack; capability binding stale\nNOT RUN - source104 and delivered/installed qualification"
     },
     {
       "aide_phase": "",
@@ -172,13 +169,13 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "0e342967285d",
-      "commit_sha": "0e342967285db0c4b9c3685600d17fc32e8575ba",
-      "entry": "Prepare delivered and installed symbol discovery checks",
+      "commit": "aa7f59554402",
+      "commit_sha": "aa7f59554402aa14a5632f6d82c1829daaab59b7",
+      "entry": "Prepare delivered and installed offline task view checks",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "quality",
+      "scope": "task",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -186,24 +183,24 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "test(quality): prepare installed symbol discovery qualification",
-      "summary": "Prepare delivered and installed symbol discovery checks",
+      "subject": "test(task): prepare installed offline brief qualification",
+      "summary": "Prepare delivered and installed offline task view checks",
       "type": "test",
-      "validation": "PASS - source44; original23 retained; retired job; CURRENT binding\nFAIL - unrefreshed development pack requires its reviewed exporter\nNOT RUN - delivered44, installed consumer and final preview"
+      "validation": "PASS - source104, actual AIDE observation, retirement and CURRENT binding\nFAIL - unrefreshed development export requires its reviewed owner\nNOT RUN - delivered104, installed consumer and final preview"
     },
     {
       "aide_phase": "",
       "aide_result": "",
       "breaking": false,
       "breaking_change": "",
-      "category": "Tests",
-      "commit": "ab7ae7c25bda",
-      "commit_sha": "ab7ae7c25bda0f41f069e7a59fbe439feba94865",
-      "entry": "Check the exact generated symbol-discovery command delta",
+      "category": "Internal",
+      "commit": "7d8aece064eb",
+      "commit_sha": "7d8aece064eba5ddbfa93bda1b515e7d3835000e",
+      "entry": "Retain delivered offline task brief qualification",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "quality",
+      "scope": "task",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -211,10 +208,10 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "fix(quality): account for the generated discovery command",
-      "summary": "Check the exact generated symbol-discovery command delta",
-      "type": "fix",
-      "validation": "PASS - source44; ownership6; export, doctor, validate and pack-status\nFAIL - original job2 expected-payload assertion; failure preserved\nNOT RUN - delivered44, installed consumer and final preview"
+      "subject": "test(task): qualify the delivered offline task brief",
+      "summary": "Retain delivered offline task brief qualification",
+      "type": "test",
+      "validation": "PASS - source104, delivered104, ownership6 and actual installed consumer\nPASS - customization, read-only observations and independent projection oracle\nNOT RUN - final preview; browser rendering remains unqualified"
     }
   ],
   "generated_by": "aide-lite",
@@ -225,7 +222,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "ab7ae7c25bda0f41f069e7a59fbe439feba94865",
-  "source_range": "118ab7829f300050394dc67a3af943963acfe218..ab7ae7c25bda0f41f069e7a59fbe439feba94865",
+  "source_head": "7d8aece064eba5ddbfa93bda1b515e7d3835000e",
+  "source_range": "4b4b735ef3f31af4e0d16d622453f814365ef437..7d8aece064eba5ddbfa93bda1b515e7d3835000e",
   "warnings": []
 }

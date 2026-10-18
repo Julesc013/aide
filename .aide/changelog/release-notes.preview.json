@@ -4,44 +4,37 @@
     {
       "breaking": false,
       "category": "Added",
-      "commit": "41006cce7f8c",
-      "subject": "feat(quality): inspect fresh Python symbol evidence",
-      "summary": "Inspect Python definitions and syntax references in selected files"
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "ab7ae7c25bda",
-      "subject": "fix(quality): account for the generated discovery command",
-      "summary": "Check the exact generated symbol-discovery command delta"
+      "commit": "3fbf048454b0",
+      "subject": "feat(task): present development briefs as offline HTML",
+      "summary": "Render existing task briefs as inactive offline HTML pages"
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "41006cce7f8c",
-      "summary": "Syntax matches do not establish runtime targets or complete test impact"
+      "commit": "3fbf048454b0",
+      "summary": "Saved observations can become stale; browser compatibility is unqualified"
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "ab7ae7c25bda0f41f069e7a59fbe439feba94865",
-  "source_range": "118ab7829f300050394dc67a3af943963acfe218..ab7ae7c25bda0f41f069e7a59fbe439feba94865",
+  "source_head": "7d8aece064eba5ddbfa93bda1b515e7d3835000e",
+  "source_range": "4b4b735ef3f31af4e0d16d622453f814365ef437..7d8aece064eba5ddbfa93bda1b515e7d3835000e",
   "validation_summary": [
     {
-      "commit": "396c300c7eed",
-      "summary": "PASS - existing quality owners and campaign prerequisites inspected\nNOT RUN - new source and installed consumer qualification"
+      "commit": "e839648c9ffd",
+      "summary": "PASS - existing brief owners and baseline doctor/validate inspected\nNOT RUN - HTML source and installed consumer checks"
     },
     {
-      "commit": "41006cce7f8c",
-      "summary": "PASS - structural parsing and original23 assertions retained\nFAIL - existing capability binding stale; new helper absent from unrefreshed pack\nNOT RUN - source44 and delivered/installed qualification"
+      "commit": "3fbf048454b0",
+      "summary": "PASS - structural parsing and original84 assertions retained\nFAIL - new renderer absent from unrefreshed pack; capability binding stale\nNOT RUN - source104 and delivered/installed qualification"
     },
     {
-      "commit": "0e342967285d",
-      "summary": "PASS - source44; original23 retained; retired job; CURRENT binding\nFAIL - unrefreshed development pack requires its reviewed exporter\nNOT RUN - delivered44, installed consumer and final preview"
+      "commit": "aa7f59554402",
+      "summary": "PASS - source104, actual AIDE observation, retirement and CURRENT binding\nFAIL - unrefreshed development export requires its reviewed owner\nNOT RUN - delivered104, installed consumer and final preview"
     },
     {
-      "commit": "ab7ae7c25bda",
-      "summary": "PASS - source44; ownership6; export, doctor, validate and pack-status\nFAIL - original job2 expected-payload assertion; failure preserved\nNOT RUN - delivered44, installed consumer and final preview"
+      "commit": "7d8aece064eb",
+      "summary": "PASS - source104, delivered104, ownership6 and actual installed consumer\nPASS - customization, read-only observations and independent projection oracle\nNOT RUN - final preview; browser rendering remains unqualified"
     }
   ],
   "warnings": []

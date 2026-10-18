@@ -3,7 +3,7 @@ id: AIDE-TASK-BRIEF-VIEW-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Read the existing task brief as a safe offline page
 type: implementation
-status: needs_review
+status: passed
 scope:
   allowed_paths:
     - .aide/queue/AIDE-TASK-BRIEF-VIEW-01/**

@@ -14119,8 +14119,12 @@ failure; the reviewed final allocation reused its successful export and source
 checks. Three jobs retired; final validation and fixed preview passed. See the
 [report](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md) for exact scope and integration.
 
-### Offline task brief view prepared
+### Offline task brief view qualified
 
-A pure stdlib HTML renderer and --html option reuse the existing brief unchanged.
-All84 original methods remain;20 new behavioral checks are prepared and unrun.
-No browser process, server, project writes or execution authority is added.
+The pure stdlib renderer and --html option passed 104 source and 104 delivered
+checks, retaining all 84 originals. Real AIDE and safe-installed HTML/JSON
+observations match; customization, helper ownership, read-only behavior and the
+independent projection oracle passed. Three jobs retired, the fixed preview
+passed and eight frozen assets remain unchanged. Browser rendering is untested.
+See the [report](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md) for exact evidence
+and guarded integration; no browser/server or execution authority is added.

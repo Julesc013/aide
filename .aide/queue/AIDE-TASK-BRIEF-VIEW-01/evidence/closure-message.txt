@@ -1,0 +1,13 @@
+feat(task): qualify the offline brief view
+
+Present the existing task observation as a compact saved HTML page. Preserve
+the complete JSON, recorded uncertainty and remaining obligations without
+launching a browser or granting execution authority.
+
+Validation: PASS - 104 source tests, 104 delivered tests and six ownership checks
+ PASS - actual AIDE and safe-installed HTML/JSON equality, customization and projection oracle
+ PASS - three retired jobs, 874 package hashes, fixed preview; eight frozen assets unchanged
+ NOT RUN - browser rendering and browser compatibility
+Changelog: Added: Read the existing task brief as a bounded offline HTML page
+AIDE-Task: AIDE-TASK-BRIEF-VIEW-01
+AIDE-Format: compact-v1

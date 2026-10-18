@@ -5380,5 +5380,7 @@ refactoring remain open. This increment extends the existing quality owner.
 
 AIDE-TASK-BRIEF-VIEW-01 advances P8.readonly_view through the existing task brief:
 one inactive saved page, exact component observations and preserved uncertainty.
-Source, delivered and installed qualification precede integration; live Workbench,
-actual host binding and native downstream acceptance remain separate.
+Source 104, delivered 104 and actual installed qualification passed. The
+[report](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md) binds the fixed preview and
+three retired jobs. Integration has its exact gate; browser rendering, live
+Workbench, actual host binding and native downstream acceptance remain separate.

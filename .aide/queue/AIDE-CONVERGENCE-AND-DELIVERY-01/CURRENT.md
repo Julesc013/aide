@@ -1,6 +1,6 @@
 ### Current campaign: useful daily operation remains the finish line
 
-**Observed checkpoint: 18 October 2026, source ab7ae7c2.** This is the human
+**Observed checkpoint: 18 October 2026, source 7d8aece0.** This is the human
 explanation of this campaign's existing task/status records. Child evidence owns
 its exact technical claims; current Git and remote refs own branch state. This
 dated view is not a release, live host observation or new execution grant.
@@ -16,14 +16,16 @@ runtime work; the frozen archive does not acquire these features.
 [1.1.0 acceptance](../AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json),
 [combined-source qualification](../AIDE-LITE-SUCCESSOR-INTEGRATION-01/REPORT.md).
 
-**Source delivery.** Offline result exchange synchronized local and remote
-dev/main at 118ab782, including dfae9356. Fresh symbol discovery is qualified
-at the dated checkpoint above; its separate integration effect and actual Git
-refs establish delivery. Historical presentation and failed qualification records
-remain preserved. Qualification branch dfae9356 and publication branch f708e8c6
-remain important; publication is separate. Do not replay old integration effects.
+**Source delivery.** Fresh symbol discovery synchronized local and remote
+dev/main at 4b4b735e, including dfae9356. Offline task brief presentation is
+qualified at the dated checkpoint above; its separate integration effect and
+actual Git refs establish delivery. Historical presentation and failed
+qualification records remain preserved. Qualification branch dfae9356 and
+publication branch f708e8c6 remain important; publication is separate.
+Do not replay old integration effects.
 [Policy resolution](../AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/REPORT.md),
 [retained successor](../AIDE-LITE-SUCCESSOR-INTEGRATION-01/REPORT.md),
+[offline task brief](../AIDE-TASK-BRIEF-VIEW-01/REPORT.md),
 [fresh symbol discovery](../AIDE-SYMBOL-DISCOVERY-01/REPORT.md),
 [offline exchange](../AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md),
 [optional Mini fixture](../AIDE-MINI-WORKER-01/REPORT.md).
@@ -32,7 +34,7 @@ remain important; publication is separate. Do not replay old integration effects
 
 | Daily-use part | Evidence and its limit |
 |---|---|
-| Start and explain | Current-task, selected context and development brief connect existing task, file ownership/check and lesson records. This campaign record repair makes its own current view usable; it does not infer acceptance from readable metadata. |
+| Start and explain | Current-task, selected context and development brief connect existing task, file ownership/check and lesson records. A saved inactive HTML view preserves the complete observation and remaining obligations. Readability does not establish acceptance; browser rendering remains unqualified. |
 | Work and verify | Source, delivered and safe-installed fixtures qualify bounded Lite behaviors. One cooperative answer request was completed by the existing review worker; pinned Mini passed 15 native fixture scenarios without model calls. Ordinary protected model-driven editing on this desktop remains unqualified. |
 | Interrupt and resume | Native lifecycle recovery, portable task/request/result handoff and cooperative cancellation/session replacement have scoped evidence. File interchange and a declared binding replacement do not take over an editor or transfer a workspace. |
 | Conserve | Recorded reuse discovery, bounded fresh Python syntax inspection, outcome preservation and source-linked lesson correction/retirement are qualified at their recorded subjects. Semantic reuse decisions and learned improvement still require independent evidence. |

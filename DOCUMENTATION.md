@@ -1339,5 +1339,7 @@ not establish semantic equivalence.
 
 [Task packets](docs/reference/task-packets.md) defines the saved HTML observation,
 output boundaries and unchanged text/JSON behavior. The
-[WorkUnit](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/ExecPlan.md) owns qualification;
-a saved page is not a live task state or evidence of browser support.
+[WorkUnit](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/ExecPlan.md) and
+[qualified report](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md) bind source,
+delivered and installed evidence. A saved page is not live state or evidence of
+browser support.
