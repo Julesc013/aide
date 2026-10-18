@@ -1,0 +1,15 @@
+test(delivery): verify compact messages and briefs after installation
+
+The refreshed development pack preserves project instructions and uses its
+owned CLI, policy and template. Installed history keeps legacy failures and
+multiline validation details; task briefs agree with the existing readers.
+
+Validation: PASS - delivered71 communication,84 brief,6 ownership and installed consumer
+ PASS - doctor,full validate,pack status and two retired collections
+ NOT RUN - fixed preview and integration
+Changelog: Changed: Author compact commits with complete validation and changelog facts
+Changelog: Added: Compose task continuation, file context and current lessons in one brief
+AIDE-Task: AIDE-COMPACT-COMMUNICATION-01
+AIDE-Format: compact-v1
+Risk: Published Lite1.0.0 is unchanged; full host isolation remains unqualified
+Follow-up: Check the fixed preview and independently review integration

@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-COMPACT-COMMUNICATION-01
 status: needs_review
-result: SOURCE_120_PASS
-next_action: exact_pack_checkpoint_and_job_review
+result: SOURCE_DELIVERED_AND_INSTALLED_PASS
+next_action: exact_preview_checkpoint_and_job_review
 maximum_jobs: 3
-jobs_allocated: 1
+jobs_allocated: 2
 active_jobs: 0

@@ -83,3 +83,11 @@ Source84 and actual consumer passed at d8645cec; job retired, evidence preserved
 User-requested compact communication is the next dependent increment on this
 owned branch. Reviewed binding refresh was not executed; recheck its subject
 after this increment. Delivered/installed, preview and integration remain.
+
+### Joint delivered and installed qualification
+Compact communication job2 f459259129cf4a17b5204883c3f4c449 passed84 delivered
+brief checks plus an actual safe-installed project-owned task/file/lesson brief.
+All three independent readers matched; missing/malformed records remained explicit,
+project instructions and notes survived, and read-only calls preserved inventory.
+This allocation belongs to the communication child, not a duplicate brief job.
+Fixed preview and exact combined integration remain pending.

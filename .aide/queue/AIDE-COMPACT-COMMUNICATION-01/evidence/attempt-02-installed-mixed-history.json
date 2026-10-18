@@ -1,0 +1,138 @@
+{
+  "schema_version": "aide.changelog-preview.v0",
+  "generated_by": "aide-lite",
+  "source_range": "HEAD latest 3 commits",
+  "source_head": "4ac9625884d480830aa805b38bcfa7fb1cb889af",
+  "commit_count": 3,
+  "malformed_count": 1,
+  "category_counts": {
+    "Added": 1,
+    "Fixed": 1
+  },
+  "categories": {
+    "Added": [
+      {
+        "commit_sha": "a6b6768264cc9594eabc082fdaf53a84504d1d84",
+        "commit": "a6b6768264cc",
+        "subject": "policy(aide): define structured commit recovery",
+        "type": "policy",
+        "scope": "aide",
+        "breaking": false,
+        "category": "Added",
+        "summary": "commit-message enforcement for future AIDE-managed work.",
+        "entry": "commit-message enforcement for future AIDE-managed work.",
+        "validation": "- `py -3 .aide/scripts/aide_lite.py commit check --message-file fixture`: PASS.",
+        "risks": "- Local Git hooks still require explicit opt-in.",
+        "follow_up": "- Use range checks before branch promotion.\n\nAIDE-Task: Q27-commit-discipline-workunit-recovery-v0\nAIDE-Phase: Q27\nAIDE-Result: PASS\nAIDE-Scope: commit\nAIDE-Token-Impact: lower-history-reconstruction-cost\nAIDE-Quality-Gate: commit-check-pass",
+        "aide_phase": "Q27",
+        "aide_result": "PASS",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ]
+      }
+    ],
+    "Fixed": [
+      {
+        "commit_sha": "802f6213785df39a1bcc3438e4101e1d39872c2d",
+        "commit": "802f6213785d",
+        "subject": "fix(consumer): preserve the project result",
+        "type": "fix",
+        "scope": "consumer",
+        "breaking": false,
+        "validation": "PASS - focused fixture\nNOT RUN - native device operation",
+        "risks": "",
+        "follow_up": "",
+        "category": "Fixed",
+        "summary": "Preserve the accepted project result",
+        "entry": "Preserve the accepted project result",
+        "message_format": "compact-v1",
+        "aide_phase": "",
+        "aide_result": "",
+        "source_sections_present": [
+          "Body",
+          "Validation",
+          "Changelog",
+          "AIDE-Task",
+          "AIDE-Format"
+        ],
+        "breaking_change": ""
+      }
+    ]
+  },
+  "entries": [
+    {
+      "commit_sha": "a6b6768264cc9594eabc082fdaf53a84504d1d84",
+      "commit": "a6b6768264cc",
+      "subject": "policy(aide): define structured commit recovery",
+      "type": "policy",
+      "scope": "aide",
+      "breaking": false,
+      "category": "Added",
+      "summary": "commit-message enforcement for future AIDE-managed work.",
+      "entry": "commit-message enforcement for future AIDE-managed work.",
+      "validation": "- `py -3 .aide/scripts/aide_lite.py commit check --message-file fixture`: PASS.",
+      "risks": "- Local Git hooks still require explicit opt-in.",
+      "follow_up": "- Use range checks before branch promotion.\n\nAIDE-Task: Q27-commit-discipline-workunit-recovery-v0\nAIDE-Phase: Q27\nAIDE-Result: PASS\nAIDE-Scope: commit\nAIDE-Token-Impact: lower-history-reconstruction-cost\nAIDE-Quality-Gate: commit-check-pass",
+      "aide_phase": "Q27",
+      "aide_result": "PASS",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ]
+    },
+    {
+      "commit_sha": "802f6213785df39a1bcc3438e4101e1d39872c2d",
+      "commit": "802f6213785d",
+      "subject": "fix(consumer): preserve the project result",
+      "type": "fix",
+      "scope": "consumer",
+      "breaking": false,
+      "validation": "PASS - focused fixture\nNOT RUN - native device operation",
+      "risks": "",
+      "follow_up": "",
+      "category": "Fixed",
+      "summary": "Preserve the accepted project result",
+      "entry": "Preserve the accepted project result",
+      "message_format": "compact-v1",
+      "aide_phase": "",
+      "aide_result": "",
+      "source_sections_present": [
+        "Body",
+        "Validation",
+        "Changelog",
+        "AIDE-Task",
+        "AIDE-Format"
+      ],
+      "breaking_change": ""
+    }
+  ],
+  "malformed_commits": [
+    {
+      "commit_sha": "4ac9625884d480830aa805b38bcfa7fb1cb889af",
+      "commit": "4ac9625884d4",
+      "subject": "policy(aide): define structured commit recovery",
+      "reasons": [
+        "missing_changelog_category"
+      ],
+      "reason": "missing_changelog_category",
+      "legacy": false,
+      "ignored": false
+    }
+  ],
+  "warnings": [],
+  "preview_only": true,
+  "release_publishing": false,
+  "network_calls": "none",
+  "provider_or_model_calls": "none"
+}
