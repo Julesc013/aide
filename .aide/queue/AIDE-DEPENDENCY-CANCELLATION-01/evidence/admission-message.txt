@@ -1,0 +1,11 @@
+feat(requests): admit independent cooperative cancellation
+
+Prepare sender cancellation and recipient acknowledgement through the
+existing request ledger, CLI and MCP tools. Preserve prior work and other
+requests; require explicit new semantics without upgrading live ledgers.
+
+Validation: PASS - source gap and preserved release/ref inspection
+ NOT RUN - cancellation implementation and native qualification
+Changelog: Internal: Admit bounded cooperative request cancellation
+AIDE-Task: AIDE-DEPENDENCY-CANCELLATION-01
+AIDE-Format: compact-v1
