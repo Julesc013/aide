@@ -5375,3 +5375,10 @@ delivered code and a safe-installed consumer. The [report](.aide/queue/AIDE-SYMB
 retains the failed export-delta assertion and successful continuation; integration
 has its own exact gate. P6 semantic binding, complete impact analysis and automatic
 refactoring remain open. This increment extends the existing quality owner.
+
+### Offline task brief view
+
+AIDE-TASK-BRIEF-VIEW-01 advances P8.readonly_view through the existing task brief:
+one inactive saved page, exact component observations and preserved uncertainty.
+Source, delivered and installed qualification precede integration; live Workbench,
+actual host binding and native downstream acceptance remain separate.

@@ -1,0 +1,26 @@
+{
+  "base": "e839648c9ffd06262e03f43f2f73206ea51b6cae",
+  "files": {
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/ExecPlan.md": "c61a94b2f8bdd61e35b849280e0b93ea2740fda30215922534094c4757019070",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/original-tests.json": "cb69cdc585f433b9fa5da7f147de89272da3492c54cb478435bc539a11d577ad",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/source-effect.md": "af1880687543f31927998c09bd114a2206edf831a0b6b738f90d504ce132c49e",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/source-job-template.json": "c5f78a65f521b63a8b0dd352005a5255a84de1fea068d29406aaabcc08b032a1",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/source-message.txt": "52ef37a061f319c2682e7138d4fe259b8741a95d4af5463df462af30e362d918",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/source-prechecks.json": "556e04997950d02d27fe0866887e9a7b92225ec4bf03823733b4e49f307e900e",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/structural-checks.json": "1bd1d9a9f7f579b48ad4f4c35f6354fb60b34730364aa6f87a53bb456428503a",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/task-packet.md": "4ae906267e7a4ae535303b37a4506ec82c3418f1835a4ec55d71bed276827d62",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/run_checks.py": "a061b87b02c31d1f0b79a23b9a232dcde71664c6263f5a49de8be86e24e1cb4e",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml": "d5405021bab348d8589054a581b70272d10e73c119b2db4d621ef1c2ec9b6353",
+    ".aide/queue/index.yaml": "541857916f66bea3502dbd10400abc489ae4b9f44a446d52f90213f413175594",
+    ".aide/scripts/aide_lite.py": "bdc5af5216fd7d8f76d46cb407e3c746a744bc21841f7e24cbbb9e178d3fb67d",
+    ".aide/scripts/task_brief_view.py": "860feefe244dfcd4cf835f03471e9d738a73b4677119803d4fe82aaa8c75a533",
+    ".aide/scripts/tests/test_task_brief_view.py": "55b3ba3642fb5c33093638a3fa428d9891bbf7b0b78b6c9c62b48ca8f227048f",
+    "DOCUMENTATION.md": "5dce86d3634d8bc8998ac96c1734acb37132bb2b4e0b457f1b7e9983ec1cb545",
+    "IMPLEMENT.md": "75c63bd7a3e632a7678214c0fcbacace5e5bb8cdd23bc6a274c7378154bef98f",
+    "PLANS.md": "caf66d40e8396d75e0c2c22fb6153a6cb7ac16bc056ccfebaf6e76663b57e9f4",
+    "docs/reference/task-packets.md": "63abc3d085c55d274e7766aff614e5cb7ef61b9473f9c62e9caf3f85c49fa42f"
+  },
+  "message_sha256": "52ef37a061f319c2682e7138d4fe259b8741a95d4af5463df462af30e362d918",
+  "effect_sha256": "af1880687543f31927998c09bd114a2206edf831a0b6b738f90d504ce132c49e",
+  "job_template_sha256": "c5f78a65f521b63a8b0dd352005a5255a84de1fea068d29406aaabcc08b032a1"
+}

@@ -2,7 +2,7 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-TASK-BRIEF-VIEW-01
 status: needs_review
 result: PENDING
-next_action: exact independent admission before local task branch or implementation
+next_action: exact source and first native job review
 maximum_jobs: 3
 jobs_allocated: 0
 product_qualified: false

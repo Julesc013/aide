@@ -87,3 +87,9 @@ The helper plan now sees only this prepared child packet as dirty. The host,
 native downstream ownership, publication authentication and prior model-phase
 prerequisites have not changed; no unchanged probe was run. New product checks
 are NOT RUN. This packet alone admits no implementation or native execution.
+
+**Admission and source preparation.** Independent admission ACCEPT covered
+map4dfaae54/effectf900887c; managed checkpoint e839648c preceded source edits.
+The pure renderer, existing CLI option and20 behavioral checks are prepared.
+All84 prior brief/current/resume/quality/lesson methods remain unchanged.
+New tests are not run. Exact source/job review precedes the first allocation.

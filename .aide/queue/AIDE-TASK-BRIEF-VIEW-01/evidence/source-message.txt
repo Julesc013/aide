@@ -1,0 +1,13 @@
+feat(task): present development briefs as offline HTML
+
+Read the existing task, file context and remaining obligations in one saved page.
+Retain the complete observation and its identity while keeping project text inert,
+output bounded and execution authority unchanged.
+
+Validation: PASS - structural parsing and original84 assertions retained
+ FAIL - new renderer absent from unrefreshed pack; capability binding stale
+ NOT RUN - source104 and delivered/installed qualification
+Changelog: Added: Render existing task briefs as inactive offline HTML pages
+Risk: Saved observations can become stale; browser compatibility is unqualified
+AIDE-Task: AIDE-TASK-BRIEF-VIEW-01
+AIDE-Format: compact-v1

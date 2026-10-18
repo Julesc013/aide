@@ -1,0 +1,7 @@
+{
+  ".aide/scripts/tests/test_task_brief.py": "57ac060081fd9da111e2cbf278ba8269f3ddd8f2792ac663852c5197383cc8c4",
+  ".aide/scripts/tests/test_task_current.py": "e95ed8f9adbdf5c772436b754494b4821abe96c433b8f84817ec05a5ac2d0db3",
+  ".aide/scripts/tests/test_resume_plan.py": "640ebedcd268f7a1dfcb8012aec32d0b05605a729e277ba996b460d9712253d7",
+  ".aide/scripts/tests/test_q38_file_quality.py": "84fbe9ad9dd047527cbd0c999b72fb3c219b7700cd806736c35075c8a6357682",
+  ".aide/scripts/tests/test_outcome_lessons.py": "c3a7c7178deb2d80cc8c1429e5ae5ec3d443c80791c3114f586f48800e5c552e"
+}

@@ -94,3 +94,33 @@ atomic snapshot or hostile-writer isolation. Output is capped at 64 KiB. Human
 output quotes project text and reports omitted links/lessons; JSON carries details.
 Hashes establish bytes, and lesson authorship/correctness remain unverified.
 Whole-work usage is unknown. This command does not qualify a new host or release.
+
+### Offline task brief page
+
+Add `--html` to the same explicit `task brief --task-id ID --path FILE` request
+to print a self-contained page to stdout. It is mutually exclusive with `--json`;
+existing text/JSON behavior and observation exit codes remain unchanged. Save
+stdout to a path you choose and open it separately. AIDE does not create a file,
+launch a browser, start a server or refresh the page automatically.
+
+The page leads with the next action, recorded task and remaining obligations.
+Expandable sections retain file relations, reuse candidates, evidence availability,
+selected/excluded lessons and source-record hashes. The complete canonical JSON
+observation and its SHA-256 remain available, including fields omitted from short
+summaries. A saved observation can become stale; its digest identifies its bytes,
+not their correctness, current applicability or authority.
+
+Project values are escaped text. Controls and direction characters display as
+escapes; no project value becomes a URL, style, attribute or markup. The page has
+no scripts, forms, frames, remote assets or actionable file links. Fixed styles
+are allowed by an exact CSP hash. Escaping and inactive markup remain necessary
+regardless of browser CSP support. See the [CSP metadata reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/http-equiv),
+[style hash documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/style-src)
+and [native disclosure element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details).
+
+The existing brief is limited to 64 KiB; the ASCII HTML document is limited to
+512 KiB. An unsafe/oversize presentation returns exit 1 with a small refusal
+page rather than partial advice. A missing distribution renderer returns exit 1
+on stderr without emitting a false observation; text/JSON remain independent.
+Whole-work usage remains unknown. This view does not grant execution or acceptance,
+qualify a browser or vintage host, or establish live Workbench integration.

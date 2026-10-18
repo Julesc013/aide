@@ -14118,3 +14118,9 @@ oracle passed. The omitted catalogue-delta assertion caused a retained job2
 failure; the reviewed final allocation reused its successful export and source
 checks. Three jobs retired; final validation and fixed preview passed. See the
 [report](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md) for exact scope and integration.
+
+### Offline task brief view prepared
+
+A pure stdlib HTML renderer and --html option reuse the existing brief unchanged.
+All84 original methods remain;20 new behavioral checks are prepared and unrun.
+No browser process, server, project writes or execution authority is added.

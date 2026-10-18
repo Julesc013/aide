@@ -1334,3 +1334,10 @@ fresh syntax versus recorded context and its coverage limits. The
 [qualified report](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md) bind source and
 installed evidence, including preserved failure/recovery. Syntax evidence does
 not establish semantic equivalence.
+
+### Offline task brief presentation
+
+[Task packets](docs/reference/task-packets.md) defines the saved HTML observation,
+output boundaries and unchanged text/JSON behavior. The
+[WorkUnit](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/ExecPlan.md) owns qualification;
+a saved page is not a live task state or evidence of browser support.

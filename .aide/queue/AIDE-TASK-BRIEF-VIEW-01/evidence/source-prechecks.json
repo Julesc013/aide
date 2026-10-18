@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "check": "doctor",
+      "exit_code": 1,
+      "sha256": "20ed121a4a800922d8e21b9e7dc5b38c8a212405fa9cf6e987f97248cc93a64a"
+    },
+    {
+      "check": "validate",
+      "exit_code": 1,
+      "sha256": "c6b13543963b6a3b19dc4538070a571417e3b92319186b8e102396f6ddeb1f13"
+    },
+    {
+      "check": "message",
+      "exit_code": 0,
+      "sha256": "049c88e1ced174b1218f7c35d571b1c8982d44bee67d7783732dc3991d816573"
+    },
+    {
+      "check": "diff",
+      "exit_code": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "tests_run": false,
+  "classified_failures": [
+    "new renderer not yet exported (pack and manifest)",
+    "existing source evidence binding stale after source change"
+  ]
+}
