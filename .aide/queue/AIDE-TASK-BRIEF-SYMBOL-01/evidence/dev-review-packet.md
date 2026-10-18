@@ -1,0 +1,3 @@
+**Current decision:** exact bounded admission only. Later promotion requires completed source and installed evidence and an exact pinned controller/effect.
+
+Read [task](../task.yaml), [ExecPlan](../ExecPlan.md), [changed files](changed-files.md), [validation](validation.md), [risks](remaining-risks.md), [review procedure](../../../prompts/evidence-review.md), [decision policy](../../../verification/review-decision-policy.yaml), [review gates](../../../policies/review-gates.yaml) and [promotion rules](../../../policies/promotion-rules.yaml). Existing delegation replaces routine owner responses, not independent technical verdicts.

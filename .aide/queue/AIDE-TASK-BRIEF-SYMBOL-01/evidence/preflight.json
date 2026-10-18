@@ -1,0 +1,53 @@
+[
+  {
+    "name": "helper",
+    "exit_code": 0,
+    "sha256": "b946a58f17278e6204e8ec4ebfc0b4fc238341193cf820fcac54eccd588d1379",
+    "summary": [
+      "AIDE Lite git plan",
+      "result: blocked",
+      "operation: plan",
+      "current_branch: dev",
+      "current_role: integration",
+      "dry_run: true"
+    ]
+  },
+  {
+    "name": "doctor",
+    "exit_code": 0,
+    "sha256": "0b8696637e0634e1e5fe88ec124858fae1ad5c607ba3b8aa1ab7d063fab289e7",
+    "summary": [
+      "AIDE Lite doctor",
+      "status: PASS",
+      "- repo_root: D:/Projects/AIDE/aide",
+      "- PASS required: .aide/policies/token-budget.yaml",
+      "- PASS required: .aide/memory/project-state.md",
+      "- PASS required: .aide/memory/decisions.md"
+    ]
+  },
+  {
+    "name": "validate",
+    "exit_code": 0,
+    "sha256": "306374f6f1ba3ba6997e0e4e1b9ea608058315a34695b965874aed83d3bed1d3",
+    "summary": [
+      "AIDE Lite validate",
+      "status: PASS",
+      "checks: 60921; PASS: 60920; WARN: 1; FAIL: 0; OTHER: 0",
+      "- WARN review packet review ref missing: .aide/prompts/evidence-review.md",
+      "omitted PASS details: 60920; use validate --full or --json for all results"
+    ]
+  },
+  {
+    "name": "message",
+    "exit_code": 0,
+    "sha256": "060bebfa0c4725bef12b2cc46e60f73edaa1a0d17a49e34ef00a76a9b5f6fe68",
+    "summary": [
+      "AIDE Lite commit check",
+      "result: PASS",
+      "source: .aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/admission-message.txt",
+      "policy: .aide/policies/commit-messages.yaml",
+      "standard: .aide/reports/aide-commit-message-standard.md",
+      "- PASS compact subject follows type[(scope)][!]: description"
+    ]
+  }
+]

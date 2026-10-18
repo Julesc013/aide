@@ -1,0 +1,1 @@
+**Prepared scope:** existing CLI composition and HTML presentation, one new test module, source reference, existing export and task evidence. No product implementation changed. Exact source maps will bind subsequent candidates.

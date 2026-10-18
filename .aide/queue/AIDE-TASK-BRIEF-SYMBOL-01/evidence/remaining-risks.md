@@ -1,0 +1,1 @@
+**Limits:** fresh syntax does not resolve runtime binding or semantic equivalence; recorded ownership/tests stay advisory. No broad impact narrowing, browser support, host containment, model efficiency or native downstream adoption claim. Existing gates and resource bounds apply.

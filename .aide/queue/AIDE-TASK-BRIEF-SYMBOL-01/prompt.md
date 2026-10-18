@@ -1,0 +1,1 @@
+Connect existing fresh symbol inspection to the explicit task brief through optional symbol and related-file selection. Reuse the current owners, preserve default output and uncertainty, qualify actual source and installed workflows, then integrate through the existing campaign gates.
