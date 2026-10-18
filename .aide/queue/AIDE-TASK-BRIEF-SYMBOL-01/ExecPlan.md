@@ -113,3 +113,13 @@ authored installed helper/caller fixtures and the actual source task. It preserv
 PARTIAL/reconcile observations and native adoption obligations. Full HTML/JSON,
 inactive markup, read-only files and independent projection binding are checked.
 Preparation does not establish delivered qualification.
+
+**Delivered and installed observed.** Exact pack review preceded its checkpoint
+and second retired job (identities retained in pack-attempt-02.json).
+Ownership6, export/doctor/validate/pack-status, delivered77 and actual installed
+helper/caller observations passed. The real AIDE task matched its source JSON
+and HTML with PARTIAL/reconcile state retained. Pack875, customization/coreabsence,
+two helper ownership receipts and independent projection binding passed.
+Selected records and target bytes stayed unchanged; both jobs retired with
+verified collections and eight frozen assets unchanged. Only final preview and
+terminal integration remain. Browser rendering remains unrun.

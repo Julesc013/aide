@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: aa7f59554402aa14a5632f6d82c1829daaab59b7
+source_commit: 11ddefd53794a8b0c3d48e3a346daf9f51e1fcc9
 source_dirty_state: false
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -732,6 +732,7 @@ included_files:
   - files/.aide/scripts/tests/test_stable_successor.py
   - files/.aide/scripts/tests/test_task_binding.py
   - files/.aide/scripts/tests/test_task_brief.py
+  - files/.aide/scripts/tests/test_task_brief_symbols.py
   - files/.aide/scripts/tests/test_task_brief_view.py
   - files/.aide/scripts/tests/test_task_current.py
   - files/.aide/scripts/tests/test_task_handoff.py

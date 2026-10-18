@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;; style-src &#x27;sha256-F6/+j31rdjVaMi6GOdwP1/cuZURFeOqrUQxoW9ItiGA=&#x27;"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AIDE task brief</title><style>html{color:#182434;background:#f4f6f8;font:16px/1.55 system-ui,sans-serif}
+body{max-width:72rem;margin:0 auto;padding:2rem 1rem}
+h1{font-size:1.65rem;line-height:1.25;margin:.35rem 0 1rem}
+h2{font-size:1.15rem;margin:0 0 .8rem}
+p{margin:.5rem 0}main{display:grid;gap:1rem}
+section,details{background:#fff;border:1px solid #c5ced8;border-radius:.5rem;padding:1rem}
+header,footer{margin-bottom:1.2rem}footer{margin-top:1.2rem}
+.kicker{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.notice{border-left:.3rem solid #685000;padding-left:1rem}
+.fields{display:grid;grid-template-columns:minmax(8rem,1fr) minmax(0,3fr);gap:.45rem 1rem;margin:0}
+dt{font-weight:650}dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+code,pre{font: .86rem/1.5 ui-monospace,Consolas,monospace;overflow-wrap:anywhere;white-space:pre-wrap}
+summary{font-weight:650;cursor:pointer}summary:focus-visible{outline:3px solid #174fa3;outline-offset:4px}
+li{margin:.35rem 0}.muted{color:#4e5b6b}.identity{font-size:.8rem}
+@media(max-width:42rem){body{padding:1rem .7rem}.fields{display:block}dt{margin-top:.6rem}dd{margin-top:.15rem}}
+@media print{html{background:white;color:black}body{max-width:none;padding:0}section,details{break-inside:avoid}}
+</style></head><body><header><p class="kicker">AIDE / development brief</p><h1>One task, its context and next action</h1><p class="notice">Saved observation: <strong>OBSERVED</strong>. This page is not live state. Rerun the brief to refresh it.</p></header><main><section><h2>Next action</h2><p>inspect_completed_evidence</p></section><section><h2>Recorded task</h2><dl class="fields"><dt>Task</dt><dd>PROJECT-SYMBOL-01</dd><dt>Objective</dt><dd>Preserve the project &lt;contract&gt;</dd><dt>Selected file</dt><dd>src/repair.py</dd><dt>Task owner</dt><dd>project-team</dd><dt>Recorded status</dt><dd>passed</dd><dt>Recorded result</dt><dd>FIXTURE_PASS</dd><dt>Recorded next action</dt><dd>verify_adoption</dd><dt>Scope record</dt><dd>.aide/queue/PROJECT-SYMBOL-01/task.yaml</dd></dl><p class="muted">Recorded success does not establish acceptance or finish remaining obligations.</p></section><section><h2>Continuation and remaining work</h2><dl class="fields"><dt>Recommendation</dt><dd>inspect_completed_evidence</dd><dt>Reason</dt><dd>Inspect recorded acceptance scope and remaining obligations; reuse valid results without replay.</dd><dt>Remaining obligations</dt><dd>[&quot;native_adoption&quot;]</dd></dl></section><section><h2>File context</h2><dl class="fields"><dt>File owner</dt><dd>project-module</dd><dt>Quality observation</dt><dd>PASS</dd><dt>Freshness</dt><dd>unverified</dd><dt>Coverage</dt><dd>heuristic_incomplete</dd></dl><dl class="fields"><dt>docs_refs</dt><dd>{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded documentation link&quot;,&quot;state&quot;:&quot;not_found&quot;}</dd></dl><dl class="fields"><dt>test_refs</dt><dd>{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;heuristic likely test target; not an executed check&quot;,&quot;state&quot;:&quot;not_found&quot;}</dd></dl><dl class="fields"><dt>dependency_refs</dt><dd>{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded local reference; not complete impact analysis&quot;,&quot;state&quot;:&quot;not_found&quot;}</dd></dl><dl class="fields"><dt>warnings</dt><dd>{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded quality warning&quot;,&quot;state&quot;:&quot;not_found&quot;}</dd></dl><dl class="fields"><dt>exemptions</dt><dd>{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded lifecycle exemption&quot;,&quot;state&quot;:&quot;not_found&quot;}</dd></dl><p class="muted">Relations are advisory; incomplete information cannot narrow required checks.</p></section><section><h2>Fresh helper evidence</h2><dl class="fields"><dt>Symbol</dt><dd>helper</dd><dt>Coverage</dt><dd>explicit_selected_files_only</dd></dl><p class="muted">Syntax matches do not resolve runtime binding or justify fewer checks.</p><dl class="fields"><dt>Source</dt><dd>src/repair.py</dd><dt>Selection reason</dt><dd>task_target</dd><dt>Parse state</dt><dd>parsed</dd><dt>Match state</dt><dd>found</dd><dt>Source SHA-256</dt><dd>b9a8774fa8eb52736b97d1b69d7635fe1f2af3e23cb7bc50853da9c683896de1</dd><dt>Locations</dt><dd>[&quot;definitions line 1: helper&quot;]</dd><dt>Omitted matches</dt><dd>0</dd></dl><dl class="fields"><dt>Source</dt><dd>tests/consumer.py</dd><dt>Selection reason</dt><dd>explicit_related_source</dd><dt>Parse state</dt><dd>parsed</dd><dt>Match state</dt><dd>found</dd><dt>Source SHA-256</dt><dd>fc73bcc19d8fc3dd49800c81aec963677b34512b6eabbd901124a3aa17016ad7</dd><dt>Locations</dt><dd>[&quot;calls line 2: contract&quot;]</dd><dt>Omitted matches</dt><dd>0</dd></dl></section><details><summary>Fresh syntax locations, omissions and recorded context</summary><pre>{
+  &quot;caveats&quot;: [
+    &quot;Names, scopes and calls describe syntax; runtime binding, aliases and behavior remain unresolved.&quot;,
+    &quot;Not found is not semantic absence; unselected files and unsupported syntax remain outside coverage.&quot;,
+    &quot;Recorded owner, documentation and likely tests are advisory; freshness and complete impact are unverified.&quot;,
+    &quot;Sequential byte rechecks are not an atomic snapshot; no project code was imported or executed.&quot;
+  ],
+  &quot;coverage&quot;: &quot;explicit_selected_files_only&quot;,
+  &quot;files&quot;: [
+    {
+      &quot;path&quot;: &quot;src/repair.py&quot;,
+      &quot;recorded_context&quot;: {
+        &quot;advisory&quot;: true,
+        &quot;evidence&quot;: {
+          &quot;caveats&quot;: [
+            &quot;Report revision is attribution, not current-byte verification.&quot;,
+            &quot;Missing links do not establish absence; do not narrow checks solely from this view.&quot;,
+            &quot;Similarity does not prove shared semantics or authorize refactoring.&quot;
+          ],
+          &quot;coverage&quot;: &quot;heuristic_incomplete&quot;,
+          &quot;freshness&quot;: &quot;unverified&quot;,
+          &quot;kind&quot;: &quot;source&quot;,
+          &quot;ledger&quot;: &quot;.aide/reports/file-quality-ledger.json&quot;,
+          &quot;owner&quot;: &quot;project-module&quot;,
+          &quot;path&quot;: &quot;src/repair.py&quot;,
+          &quot;quality_level&quot;: &quot;documented&quot;,
+          &quot;recommended_next_action&quot;: &quot;inspect&quot;,
+          &quot;relations&quot;: {
+            &quot;dependency_refs&quot;: {
+              &quot;items&quot;: [],
+              &quot;omitted&quot;: 0,
+              &quot;reason&quot;: &quot;recorded local reference; not complete impact analysis&quot;,
+              &quot;state&quot;: &quot;not_found&quot;
+            },
+            &quot;docs_refs&quot;: {
+              &quot;items&quot;: [],
+              &quot;omitted&quot;: 0,
+              &quot;reason&quot;: &quot;recorded documentation link&quot;,
+              &quot;state&quot;: &quot;not_found&quot;
+            },
+            &quot;exemptions&quot;: {
+              &quot;items&quot;: [],
+              &quot;omitted&quot;: 0,
+              &quot;reason&quot;: &quot;recorded lifecycle exemption&quot;,
+              &quot;state&quot;: &quot;not_found&quot;
+            },
+            &quot;test_refs&quot;: {
+              &quot;items&quot;: [],
+              &quot;omitted&quot;: 0,
+              &quot;reason&quot;: &quot;heuristic likely test target; not an executed check&quot;,
+              &quot;state&quot;: &quot;not_found&quot;
+            },
+            &quot;warnings&quot;: {
+              &quot;items&quot;: [],
+              &quot;omitted&quot;: 0,
+              &quot;reason&quot;: &quot;recorded quality warning&quot;,
+              &quot;state&quot;: &quot;not_found&quot;
+            }
+          },
+          &quot;result&quot;: &quot;PASS&quot;,
+          &quot;reuse&quot;: {
+            &quot;items&quot;: [],
+            &quot;omitted&quot;: 0,
+            &quot;state&quot;: &quot;unindexed&quot;
+          },
+          &quot;schema_version&quot;: &quot;aide.quality-explanation.v1&quot;,
+          &quot;source_commit&quot;: &quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;,
+          &quot;status&quot;: &quot;active&quot;
+        },
+        &quot;freshness&quot;: &quot;unverified&quot;,
+        &quot;state&quot;: &quot;recorded&quot;
+      },
+      &quot;syntax&quot;: {
+        &quot;bytes&quot;: 40,
+        &quot;calls&quot;: {
+          &quot;items&quot;: [],
+          &quot;omitted&quot;: 0
+        },
+        &quot;definitions&quot;: {
+          &quot;items&quot;: [
+            {
+              &quot;decorated&quot;: false,
+              &quot;end_line&quot;: 2,
+              &quot;kind&quot;: &quot;function&quot;,
+              &quot;line&quot;: 1,
+              &quot;name&quot;: &quot;helper&quot;,
+              &quot;parameters&quot;: {
+                &quot;items&quot;: [
+                  {
+                    &quot;kind&quot;: &quot;positional_or_keyword&quot;,
+                    &quot;name&quot;: &quot;value&quot;
+                  }
+                ],
+                &quot;omitted&quot;: 0
+              },
+              &quot;qualified_name&quot;: &quot;helper&quot;,
+              &quot;scope&quot;: &quot;&lt;module&gt;&quot;
+            }
+          ],
+          &quot;omitted&quot;: 0
+        },
+        &quot;imports&quot;: {
+          &quot;items&quot;: [],
+          &quot;omitted&quot;: 0
+        },
+        &quot;match_state&quot;: &quot;found&quot;,
+        &quot;parser&quot;: {
+          &quot;grammar&quot;: [
+            3,
+            14
+          ],
+          &quot;implementation&quot;: &quot;CPython&quot;,
+          &quot;version&quot;: &quot;3.14.8&quot;
+        },
+        &quot;sha256&quot;: &quot;b9a8774fa8eb52736b97d1b69d7635fe1f2af3e23cb7bc50853da9c683896de1&quot;,
+        &quot;state&quot;: &quot;parsed&quot;
+      }
+    },
+    {
+      &quot;path&quot;: &quot;tests/consumer.py&quot;,
+      &quot;recorded_context&quot;: {
+        &quot;advisory&quot;: true,
+        &quot;evidence&quot;: {
+          &quot;caveats&quot;: [
+            &quot;Report revision is attribution, not current-byte verification.&quot;,
+            &quot;Missing links do not establish absence; do not narrow checks solely from this view.&quot;,
+            &quot;Similarity does not prove shared semantics or authorize refactoring.&quot;
+          ],
+          &quot;coverage&quot;: &quot;heuristic_incomplete&quot;,
+          &quot;freshness&quot;: &quot;unverified&quot;,
+          &quot;kind&quot;: &quot;source&quot;,
+          &quot;ledger&quot;: &quot;.aide/reports/file-quality-ledger.json&quot;,
+          &quot;owner&quot;: &quot;project-module&quot;,
+          &quot;path&quot;: &quot;tests/consumer.py&quot;,
+          &quot;quality_level&quot;: &quot;documented&quot;,
+          &quot;recommended_next_action&quot;: &quot;inspect&quot;,
+          &quot;relations&quot;: {
+            &quot;dependency_refs&quot;: {
+              &quot;items&quot;: [],
+              &quot;omitted&quot;: 0,
+              &quot;reason&quot;: &quot;recorded local reference; not complete impact analysis&quot;,
+              &quot;state&quot;: &quot;not_found&quot;
+            },
+            &quot;docs_refs&quot;: {
+              &quot;items&quot;: [],
+              &quot;omitted&quot;: 0,
+              &quot;reason&quot;: &quot;recorded documentation link&quot;,
+              &quot;state&quot;: &quot;not_found&quot;
+            },
+            &quot;exemptions&quot;: {
+              &quot;items&quot;: [],
+              &quot;omitted&quot;: 0,
+              &quot;reason&quot;: &quot;recorded lifecycle exemption&quot;,
+              &quot;state&quot;: &quot;not_found&quot;
+            },
+            &quot;test_refs&quot;: {
+              &quot;items&quot;: [],
+              &quot;omitted&quot;: 0,
+              &quot;reason&quot;: &quot;heuristic likely test target; not an executed check&quot;,
+              &quot;state&quot;: &quot;not_found&quot;
+            },
+            &quot;warnings&quot;: {
+              &quot;items&quot;: [],
+              &quot;omitted&quot;: 0,
+              &quot;reason&quot;: &quot;recorded quality warning&quot;,
+              &quot;state&quot;: &quot;not_found&quot;
+            }
+          },
+          &quot;result&quot;: &quot;PASS&quot;,
+          &quot;reuse&quot;: {
+            &quot;items&quot;: [],
+            &quot;omitted&quot;: 0,
+            &quot;state&quot;: &quot;unindexed&quot;
+          },
+          &quot;schema_version&quot;: &quot;aide.quality-explanation.v1&quot;,
+          &quot;source_commit&quot;: &quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;,
+          &quot;status&quot;: &quot;active&quot;
+        },
+        &quot;freshness&quot;: &quot;unverified&quot;,
+        &quot;state&quot;: &quot;recorded&quot;
+      },
+      &quot;syntax&quot;: {
+        &quot;bytes&quot;: 38,
+        &quot;calls&quot;: {
+          &quot;items&quot;: [
+            {
+              &quot;end_line&quot;: 2,
+              &quot;form&quot;: &quot;attribute&quot;,
+              &quot;identifier&quot;: &quot;helper&quot;,
+              &quot;line&quot;: 2,
+              &quot;resolution&quot;: &quot;unresolved&quot;,
+              &quot;scope&quot;: &quot;contract&quot;
+            }
+          ],
+          &quot;omitted&quot;: 0
+        },
+        &quot;definitions&quot;: {
+          &quot;items&quot;: [],
+          &quot;omitted&quot;: 0
+        },
+        &quot;imports&quot;: {
+          &quot;items&quot;: [],
+          &quot;omitted&quot;: 0
+        },
+        &quot;match_state&quot;: &quot;found&quot;,
+        &quot;parser&quot;: {
+          &quot;grammar&quot;: [
+            3,
+            14
+          ],
+          &quot;implementation&quot;: &quot;CPython&quot;,
+          &quot;version&quot;: &quot;3.14.8&quot;
+        },
+        &quot;sha256&quot;: &quot;fc73bcc19d8fc3dd49800c81aec963677b34512b6eabbd901124a3aa17016ad7&quot;,
+        &quot;state&quot;: &quot;parsed&quot;
+      }
+    }
+  ],
+  &quot;ledger_sha256&quot;: &quot;567bc9daf0f6213e782e2b7bf0f133d9f6a5d3e665e2368693261c9ff36756f4&quot;,
+  &quot;next_action&quot;: &quot;Inspect the matching definitions and recorded checks before deciding reuse; broaden checks when coverage is incomplete.&quot;,
+  &quot;read_only&quot;: true,
+  &quot;result&quot;: &quot;PASS&quot;,
+  &quot;schema_version&quot;: &quot;aide.quality-symbol-inspection.v1&quot;,
+  &quot;selected_bytes&quot;: 78,
+  &quot;symbol&quot;: &quot;helper&quot;
+}</pre></details><section><h2>Evidence and lessons</h2><dl class="fields"><dt>Task evidence availability</dt><dd>[]</dd><dt>Lesson observation</dt><dd>observed</dd><dt>Selected lessons</dt><dd>0</dd><dt>Excluded lessons</dt><dd>0</dd></dl><p class="muted">Presence and matching hashes do not verify applicability, authorship or correctness.</p></section><details><summary>File relations and reuse candidates</summary><pre>{
+  &quot;caveats&quot;: [
+    &quot;Report revision is attribution, not current-byte verification.&quot;,
+    &quot;Missing links do not establish absence; do not narrow checks solely from this view.&quot;,
+    &quot;Similarity does not prove shared semantics or authorize refactoring.&quot;
+  ],
+  &quot;coverage&quot;: &quot;heuristic_incomplete&quot;,
+  &quot;freshness&quot;: &quot;unverified&quot;,
+  &quot;kind&quot;: &quot;source&quot;,
+  &quot;ledger&quot;: &quot;.aide/reports/file-quality-ledger.json&quot;,
+  &quot;owner&quot;: &quot;project-module&quot;,
+  &quot;path&quot;: &quot;src/repair.py&quot;,
+  &quot;quality_level&quot;: &quot;documented&quot;,
+  &quot;recommended_next_action&quot;: &quot;inspect&quot;,
+  &quot;relations&quot;: {
+    &quot;dependency_refs&quot;: {
+      &quot;items&quot;: [],
+      &quot;omitted&quot;: 0,
+      &quot;reason&quot;: &quot;recorded local reference; not complete impact analysis&quot;,
+      &quot;state&quot;: &quot;not_found&quot;
+    },
+    &quot;docs_refs&quot;: {
+      &quot;items&quot;: [],
+      &quot;omitted&quot;: 0,
+      &quot;reason&quot;: &quot;recorded documentation link&quot;,
+      &quot;state&quot;: &quot;not_found&quot;
+    },
+    &quot;exemptions&quot;: {
+      &quot;items&quot;: [],
+      &quot;omitted&quot;: 0,
+      &quot;reason&quot;: &quot;recorded lifecycle exemption&quot;,
+      &quot;state&quot;: &quot;not_found&quot;
+    },
+    &quot;test_refs&quot;: {
+      &quot;items&quot;: [],
+      &quot;omitted&quot;: 0,
+      &quot;reason&quot;: &quot;heuristic likely test target; not an executed check&quot;,
+      &quot;state&quot;: &quot;not_found&quot;
+    },
+    &quot;warnings&quot;: {
+      &quot;items&quot;: [],
+      &quot;omitted&quot;: 0,
+      &quot;reason&quot;: &quot;recorded quality warning&quot;,
+      &quot;state&quot;: &quot;not_found&quot;
+    }
+  },
+  &quot;result&quot;: &quot;PASS&quot;,
+  &quot;reuse&quot;: {
+    &quot;items&quot;: [],
+    &quot;omitted&quot;: 0,
+    &quot;state&quot;: &quot;unindexed&quot;
+  },
+  &quot;schema_version&quot;: &quot;aide.quality-explanation.v1&quot;,
+  &quot;source_commit&quot;: &quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;,
+  &quot;status&quot;: &quot;active&quot;
+}</pre></details><details><summary>Selected and excluded lessons, with reasons</summary><pre>{
+  &quot;advisory_only&quot;: true,
+  &quot;authorship_verified&quot;: false,
+  &quot;excluded&quot;: [],
+  &quot;execution_admitted&quot;: false,
+  &quot;ledger_sha256&quot;: &quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;,
+  &quot;ledger_state&quot;: &quot;observed&quot;,
+  &quot;path&quot;: &quot;src/repair.py&quot;,
+  &quot;schema_version&quot;: &quot;aide.outcome-lessons-view.v1&quot;,
+  &quot;selected&quot;: [],
+  &quot;semantic_correctness_verified&quot;: false,
+  &quot;writes&quot;: false
+}</pre></details><details><summary>Task evidence, scope and continuation</summary><pre>{
+  &quot;execution_admitted&quot;: false,
+  &quot;read_only&quot;: true,
+  &quot;reason&quot;: &quot;Inspect recorded acceptance scope and remaining obligations; reuse valid results without replay.&quot;,
+  &quot;recommendation&quot;: &quot;inspect_completed_evidence&quot;,
+  &quot;report_only&quot;: true,
+  &quot;safe_to_resume&quot;: null,
+  &quot;schema_version&quot;: &quot;aide.task-resume-plan.v1&quot;,
+  &quot;task&quot;: {
+    &quot;acceptance_verified&quot;: false,
+    &quot;declared_status&quot;: null,
+    &quot;evidence&quot;: [],
+    &quot;index_status&quot;: null,
+    &quot;issues&quot;: [],
+    &quot;next_action&quot;: &quot;verify_adoption&quot;,
+    &quot;objective&quot;: &quot;Preserve the project &lt;contract&gt;&quot;,
+    &quot;owner&quot;: &quot;project-team&quot;,
+    &quot;read_only&quot;: true,
+    &quot;remaining_obligations&quot;: [
+      &quot;native_adoption&quot;
+    ],
+    &quot;result&quot;: &quot;FIXTURE_PASS&quot;,
+    &quot;schema_version&quot;: &quot;aide.task-current.v1&quot;,
+    &quot;scope&quot;: {
+      &quot;acceptance_scope&quot;: null,
+      &quot;classification&quot;: null,
+      &quot;product_qualified&quot;: null,
+      &quot;review_gate&quot;: null,
+      &quot;target_mutated&quot;: null
+    },
+    &quot;selection&quot;: {
+      &quot;mode&quot;: &quot;explicit_request&quot;,
+      &quot;source&quot;: &quot;request&quot;
+    },
+    &quot;sources&quot;: {
+      &quot;declared_status&quot;: &quot;.aide/queue/PROJECT-SYMBOL-01/task.yaml&quot;,
+      &quot;index_status&quot;: &quot;.aide/queue/index.yaml&quot;,
+      &quot;next_action&quot;: &quot;.aide/queue/PROJECT-SYMBOL-01/status.yaml&quot;,
+      &quot;objective&quot;: &quot;.aide/queue/PROJECT-SYMBOL-01/task.yaml&quot;,
+      &quot;owner&quot;: &quot;.aide/queue/PROJECT-SYMBOL-01/task.yaml&quot;,
+      &quot;remaining_obligations&quot;: &quot;.aide/queue/PROJECT-SYMBOL-01/status.yaml&quot;,
+      &quot;result&quot;: &quot;.aide/queue/PROJECT-SYMBOL-01/status.yaml&quot;,
+      &quot;scope&quot;: &quot;.aide/queue/PROJECT-SYMBOL-01/status.yaml&quot;,
+      &quot;status&quot;: &quot;.aide/queue/PROJECT-SYMBOL-01/status.yaml&quot;
+    },
+    &quot;status&quot;: &quot;passed&quot;,
+    &quot;task_id&quot;: &quot;PROJECT-SYMBOL-01&quot;
+  }
+}</pre></details><details><summary>Source-record identities</summary><pre>{
+  &quot;.aide/queue/PROJECT-SYMBOL-01/status.yaml&quot;: &quot;c8336ac7b384689f2c98361ecebe03d70ed46a3f8619ac8f191ea7165a0afabf&quot;,
+  &quot;.aide/queue/PROJECT-SYMBOL-01/task.yaml&quot;: &quot;53eaf312f34da8d8e6d99225dd25d250282eebaa4c0fd424d7f4ce5e590756af&quot;,
+  &quot;.aide/queue/index.yaml&quot;: null,
+  &quot;.aide/reports/file-quality-ledger.json&quot;: &quot;567bc9daf0f6213e782e2b7bf0f133d9f6a5d3e665e2368693261c9ff36756f4&quot;
+}</pre></details><section><h2>Observation limits</h2><p>No execution or acceptance authority. Whole-work usage remains unknown.</p><ul><li>No edit permission or task acceptance is established.</li><li>Quality links are incomplete and their freshness is unverified; do not narrow required checks.</li><li>Lessons retain unverified authorship and semantic correctness.</li><li>Missing information does not establish absence; no indexes were generated.</li><li>Fresh syntax covers selected files only; runtime binding, alias behavior and semantic equivalence remain unresolved.</li></ul></section><details><summary>Complete observation / JSON</summary><pre id="observation-json">{&quot;acceptance_verified&quot;:false,&quot;continuation&quot;:{&quot;execution_admitted&quot;:false,&quot;read_only&quot;:true,&quot;reason&quot;:&quot;Inspect recorded acceptance scope and remaining obligations; reuse valid results without replay.&quot;,&quot;recommendation&quot;:&quot;inspect_completed_evidence&quot;,&quot;report_only&quot;:true,&quot;safe_to_resume&quot;:null,&quot;schema_version&quot;:&quot;aide.task-resume-plan.v1&quot;,&quot;task&quot;:{&quot;acceptance_verified&quot;:false,&quot;declared_status&quot;:null,&quot;evidence&quot;:[],&quot;index_status&quot;:null,&quot;issues&quot;:[],&quot;next_action&quot;:&quot;verify_adoption&quot;,&quot;objective&quot;:&quot;Preserve the project &lt;contract&gt;&quot;,&quot;owner&quot;:&quot;project-team&quot;,&quot;read_only&quot;:true,&quot;remaining_obligations&quot;:[&quot;native_adoption&quot;],&quot;result&quot;:&quot;FIXTURE_PASS&quot;,&quot;schema_version&quot;:&quot;aide.task-current.v1&quot;,&quot;scope&quot;:{&quot;acceptance_scope&quot;:null,&quot;classification&quot;:null,&quot;product_qualified&quot;:null,&quot;review_gate&quot;:null,&quot;target_mutated&quot;:null},&quot;selection&quot;:{&quot;mode&quot;:&quot;explicit_request&quot;,&quot;source&quot;:&quot;request&quot;},&quot;sources&quot;:{&quot;declared_status&quot;:&quot;.aide/queue/PROJECT-SYMBOL-01/task.yaml&quot;,&quot;index_status&quot;:&quot;.aide/queue/index.yaml&quot;,&quot;next_action&quot;:&quot;.aide/queue/PROJECT-SYMBOL-01/status.yaml&quot;,&quot;objective&quot;:&quot;.aide/queue/PROJECT-SYMBOL-01/task.yaml&quot;,&quot;owner&quot;:&quot;.aide/queue/PROJECT-SYMBOL-01/task.yaml&quot;,&quot;remaining_obligations&quot;:&quot;.aide/queue/PROJECT-SYMBOL-01/status.yaml&quot;,&quot;result&quot;:&quot;.aide/queue/PROJECT-SYMBOL-01/status.yaml&quot;,&quot;scope&quot;:&quot;.aide/queue/PROJECT-SYMBOL-01/status.yaml&quot;,&quot;status&quot;:&quot;.aide/queue/PROJECT-SYMBOL-01/status.yaml&quot;},&quot;status&quot;:&quot;passed&quot;,&quot;task_id&quot;:&quot;PROJECT-SYMBOL-01&quot;}},&quot;execution_admitted&quot;:false,&quot;lesson_state&quot;:&quot;observed&quot;,&quot;lessons&quot;:{&quot;advisory_only&quot;:true,&quot;authorship_verified&quot;:false,&quot;excluded&quot;:[],&quot;execution_admitted&quot;:false,&quot;ledger_sha256&quot;:&quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;,&quot;ledger_state&quot;:&quot;observed&quot;,&quot;path&quot;:&quot;src/repair.py&quot;,&quot;schema_version&quot;:&quot;aide.outcome-lessons-view.v1&quot;,&quot;selected&quot;:[],&quot;semantic_correctness_verified&quot;:false,&quot;writes&quot;:false},&quot;limitations&quot;:[&quot;No edit permission or task acceptance is established.&quot;,&quot;Quality links are incomplete and their freshness is unverified; do not narrow required checks.&quot;,&quot;Lessons retain unverified authorship and semantic correctness.&quot;,&quot;Missing information does not establish absence; no indexes were generated.&quot;,&quot;Fresh syntax covers selected files only; runtime binding, alias behavior and semantic equivalence remain unresolved.&quot;],&quot;next_action&quot;:&quot;inspect_completed_evidence&quot;,&quot;path&quot;:&quot;src/repair.py&quot;,&quot;quality&quot;:{&quot;caveats&quot;:[&quot;Report revision is attribution, not current-byte verification.&quot;,&quot;Missing links do not establish absence; do not narrow checks solely from this view.&quot;,&quot;Similarity does not prove shared semantics or authorize refactoring.&quot;],&quot;coverage&quot;:&quot;heuristic_incomplete&quot;,&quot;freshness&quot;:&quot;unverified&quot;,&quot;kind&quot;:&quot;source&quot;,&quot;ledger&quot;:&quot;.aide/reports/file-quality-ledger.json&quot;,&quot;owner&quot;:&quot;project-module&quot;,&quot;path&quot;:&quot;src/repair.py&quot;,&quot;quality_level&quot;:&quot;documented&quot;,&quot;recommended_next_action&quot;:&quot;inspect&quot;,&quot;relations&quot;:{&quot;dependency_refs&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded local reference; not complete impact analysis&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;docs_refs&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded documentation link&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;exemptions&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded lifecycle exemption&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;test_refs&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;heuristic likely test target; not an executed check&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;warnings&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded quality warning&quot;,&quot;state&quot;:&quot;not_found&quot;}},&quot;result&quot;:&quot;PASS&quot;,&quot;reuse&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;state&quot;:&quot;unindexed&quot;},&quot;schema_version&quot;:&quot;aide.quality-explanation.v1&quot;,&quot;source_commit&quot;:&quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;,&quot;status&quot;:&quot;active&quot;},&quot;read_only&quot;:true,&quot;result&quot;:&quot;OBSERVED&quot;,&quot;schema_version&quot;:&quot;aide.task-brief.v1&quot;,&quot;scope_ref&quot;:&quot;.aide/queue/PROJECT-SYMBOL-01/task.yaml&quot;,&quot;snapshot&quot;:&quot;bounded_sequential_observations&quot;,&quot;symbol_inspection&quot;:{&quot;caveats&quot;:[&quot;Names, scopes and calls describe syntax; runtime binding, aliases and behavior remain unresolved.&quot;,&quot;Not found is not semantic absence; unselected files and unsupported syntax remain outside coverage.&quot;,&quot;Recorded owner, documentation and likely tests are advisory; freshness and complete impact are unverified.&quot;,&quot;Sequential byte rechecks are not an atomic snapshot; no project code was imported or executed.&quot;],&quot;coverage&quot;:&quot;explicit_selected_files_only&quot;,&quot;files&quot;:[{&quot;path&quot;:&quot;src/repair.py&quot;,&quot;recorded_context&quot;:{&quot;advisory&quot;:true,&quot;evidence&quot;:{&quot;caveats&quot;:[&quot;Report revision is attribution, not current-byte verification.&quot;,&quot;Missing links do not establish absence; do not narrow checks solely from this view.&quot;,&quot;Similarity does not prove shared semantics or authorize refactoring.&quot;],&quot;coverage&quot;:&quot;heuristic_incomplete&quot;,&quot;freshness&quot;:&quot;unverified&quot;,&quot;kind&quot;:&quot;source&quot;,&quot;ledger&quot;:&quot;.aide/reports/file-quality-ledger.json&quot;,&quot;owner&quot;:&quot;project-module&quot;,&quot;path&quot;:&quot;src/repair.py&quot;,&quot;quality_level&quot;:&quot;documented&quot;,&quot;recommended_next_action&quot;:&quot;inspect&quot;,&quot;relations&quot;:{&quot;dependency_refs&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded local reference; not complete impact analysis&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;docs_refs&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded documentation link&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;exemptions&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded lifecycle exemption&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;test_refs&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;heuristic likely test target; not an executed check&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;warnings&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded quality warning&quot;,&quot;state&quot;:&quot;not_found&quot;}},&quot;result&quot;:&quot;PASS&quot;,&quot;reuse&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;state&quot;:&quot;unindexed&quot;},&quot;schema_version&quot;:&quot;aide.quality-explanation.v1&quot;,&quot;source_commit&quot;:&quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;,&quot;status&quot;:&quot;active&quot;},&quot;freshness&quot;:&quot;unverified&quot;,&quot;state&quot;:&quot;recorded&quot;},&quot;syntax&quot;:{&quot;bytes&quot;:40,&quot;calls&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0},&quot;definitions&quot;:{&quot;items&quot;:[{&quot;decorated&quot;:false,&quot;end_line&quot;:2,&quot;kind&quot;:&quot;function&quot;,&quot;line&quot;:1,&quot;name&quot;:&quot;helper&quot;,&quot;parameters&quot;:{&quot;items&quot;:[{&quot;kind&quot;:&quot;positional_or_keyword&quot;,&quot;name&quot;:&quot;value&quot;}],&quot;omitted&quot;:0},&quot;qualified_name&quot;:&quot;helper&quot;,&quot;scope&quot;:&quot;&lt;module&gt;&quot;}],&quot;omitted&quot;:0},&quot;imports&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0},&quot;match_state&quot;:&quot;found&quot;,&quot;parser&quot;:{&quot;grammar&quot;:[3,14],&quot;implementation&quot;:&quot;CPython&quot;,&quot;version&quot;:&quot;3.14.8&quot;},&quot;sha256&quot;:&quot;b9a8774fa8eb52736b97d1b69d7635fe1f2af3e23cb7bc50853da9c683896de1&quot;,&quot;state&quot;:&quot;parsed&quot;}},{&quot;path&quot;:&quot;tests/consumer.py&quot;,&quot;recorded_context&quot;:{&quot;advisory&quot;:true,&quot;evidence&quot;:{&quot;caveats&quot;:[&quot;Report revision is attribution, not current-byte verification.&quot;,&quot;Missing links do not establish absence; do not narrow checks solely from this view.&quot;,&quot;Similarity does not prove shared semantics or authorize refactoring.&quot;],&quot;coverage&quot;:&quot;heuristic_incomplete&quot;,&quot;freshness&quot;:&quot;unverified&quot;,&quot;kind&quot;:&quot;source&quot;,&quot;ledger&quot;:&quot;.aide/reports/file-quality-ledger.json&quot;,&quot;owner&quot;:&quot;project-module&quot;,&quot;path&quot;:&quot;tests/consumer.py&quot;,&quot;quality_level&quot;:&quot;documented&quot;,&quot;recommended_next_action&quot;:&quot;inspect&quot;,&quot;relations&quot;:{&quot;dependency_refs&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded local reference; not complete impact analysis&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;docs_refs&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded documentation link&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;exemptions&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded lifecycle exemption&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;test_refs&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;heuristic likely test target; not an executed check&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;warnings&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded quality warning&quot;,&quot;state&quot;:&quot;not_found&quot;}},&quot;result&quot;:&quot;PASS&quot;,&quot;reuse&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;state&quot;:&quot;unindexed&quot;},&quot;schema_version&quot;:&quot;aide.quality-explanation.v1&quot;,&quot;source_commit&quot;:&quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;,&quot;status&quot;:&quot;active&quot;},&quot;freshness&quot;:&quot;unverified&quot;,&quot;state&quot;:&quot;recorded&quot;},&quot;syntax&quot;:{&quot;bytes&quot;:38,&quot;calls&quot;:{&quot;items&quot;:[{&quot;end_line&quot;:2,&quot;form&quot;:&quot;attribute&quot;,&quot;identifier&quot;:&quot;helper&quot;,&quot;line&quot;:2,&quot;resolution&quot;:&quot;unresolved&quot;,&quot;scope&quot;:&quot;contract&quot;}],&quot;omitted&quot;:0},&quot;definitions&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0},&quot;imports&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0},&quot;match_state&quot;:&quot;found&quot;,&quot;parser&quot;:{&quot;grammar&quot;:[3,14],&quot;implementation&quot;:&quot;CPython&quot;,&quot;version&quot;:&quot;3.14.8&quot;},&quot;sha256&quot;:&quot;fc73bcc19d8fc3dd49800c81aec963677b34512b6eabbd901124a3aa17016ad7&quot;,&quot;state&quot;:&quot;parsed&quot;}}],&quot;ledger_sha256&quot;:&quot;567bc9daf0f6213e782e2b7bf0f133d9f6a5d3e665e2368693261c9ff36756f4&quot;,&quot;next_action&quot;:&quot;Inspect the matching definitions and recorded checks before deciding reuse; broaden checks when coverage is incomplete.&quot;,&quot;read_only&quot;:true,&quot;result&quot;:&quot;PASS&quot;,&quot;schema_version&quot;:&quot;aide.quality-symbol-inspection.v1&quot;,&quot;selected_bytes&quot;:78,&quot;symbol&quot;:&quot;helper&quot;},&quot;symbol_selection&quot;:[{&quot;path&quot;:&quot;src/repair.py&quot;,&quot;reason&quot;:&quot;task_target&quot;},{&quot;path&quot;:&quot;tests/consumer.py&quot;,&quot;reason&quot;:&quot;explicit_related_source&quot;}],&quot;task_record_sha256s&quot;:{&quot;.aide/queue/PROJECT-SYMBOL-01/status.yaml&quot;:&quot;c8336ac7b384689f2c98361ecebe03d70ed46a3f8619ac8f191ea7165a0afabf&quot;,&quot;.aide/queue/PROJECT-SYMBOL-01/task.yaml&quot;:&quot;53eaf312f34da8d8e6d99225dd25d250282eebaa4c0fd424d7f4ce5e590756af&quot;,&quot;.aide/queue/index.yaml&quot;:null,&quot;.aide/reports/file-quality-ledger.json&quot;:&quot;567bc9daf0f6213e782e2b7bf0f133d9f6a5d3e665e2368693261c9ff36756f4&quot;},&quot;usage_coverage&quot;:&quot;unknown&quot;}</pre></details></main><footer><p class="identity">Observation SHA-256 (canonical JSON): <code>9e7a57ad267235544d863a5d4dfa499e7023483cbc91ee40776a0ea54c630ef8</code></p><p class="muted">Project records own the work. This page contains no actions, scripts or remote resources.</p></footer></body></html>
