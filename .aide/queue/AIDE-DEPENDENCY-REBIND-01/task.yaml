@@ -1,0 +1,38 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DEPENDENCY-REBIND-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Preserve pending dependency work across an explicit session replacement
+type: implementation
+status: needs_review
+scope:
+  allowed_paths:
+    - core/runtime/continuous_worker/requests.py
+    - core/runtime/continuous_worker/__main__.py
+    - core/runtime/continuous_worker/request_access.py
+    - .aide/scripts/tests/test_continuous_worker_request_rebinding.py
+    - docs/reference/local-dependency-requests.md
+    - .aide/queue/AIDE-DEPENDENCY-REBIND-01/**
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - .aide/reports/capability-command-status.md
+    - .aide/reports/capability-evidence-bindings.json
+    - .aide/reports/capability-ledger.md
+    - .aide/reports/capability-ledger.json
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/**
+  forbidden_paths:
+    - live ledgers or participant configuration, target repositories or native worker bindings
+    - State schema, MCP administration, scheduling, process control or runner configuration
+    - original test assertions, frozen release assets or pending publication branch
+    - provider/model calls, new services, credentials or new storage roots
+verification:
+  maximum_jobs: 3
+  config_digest: 61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90
+  live_initializations: 0
+  live_peer_deliveries: 0
+  admission: exact_source_and_effect_review_before_each_job
+review_gate: exact_admission_source_effect_and_terminal_review

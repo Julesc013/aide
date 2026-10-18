@@ -1,0 +1,17 @@
+{
+  "base": "ceac70a6fefefde93d2fb7435e8825c173302757",
+  "files": {
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/ExecPlan.md": "9191bd6cf53c9450bf7355af390816c51397c501f054d3c0accbefde6a8ce7e8",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/prompt.md": "ced41097447e58915e0289ecb1914f8571dcb308e38754fdae20660eda12d5c0",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/status.yaml": "50101eeb20d56c15889857087d4a3c4053c63b6e41c5d593e9017e00699c1f97",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/task.yaml": "4ab8d37be3f962044407212052e53528af188bab18eaadb306886ccd4ea2aa56",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/admission-effect.md": "ee349f3be1a359b4f326b36307460c4548a6b2d1fe8ea2207b4ef306b1fb2ee0",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/admission-message.txt": "003ce5841aa6bc3adf19e732c63f51559f94442a8ac68660705215994c52ee05",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/baseline.json": "3994da0c0f2cde1c4d6554c5be26acd7bda5155ea6953c0b8a971852c86fc19c",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/design-review.md": "4ad0c2ac7c5c895a1b75bda7274f04dd6da6745aa420edc7b9f1a33901cc7bdc",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/latest-intent-packet.json": "05c1f2afa91a25c8aed4a1516d5362eb39aff74d4d0e7589e7187fb2bb59e27c",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/latest-workunit-draft.json": "f2f88b1ee6515caac356e23f3ebd381fc46a0526c3bc596584922b7494773897"
+  },
+  "message_sha256": "003ce5841aa6bc3adf19e732c63f51559f94442a8ac68660705215994c52ee05",
+  "effect_sha256": "ee349f3be1a359b4f326b36307460c4548a6b2d1fe8ea2207b4ef306b1fb2ee0"
+}

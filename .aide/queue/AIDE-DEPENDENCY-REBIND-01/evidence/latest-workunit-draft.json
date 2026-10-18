@@ -1,0 +1,64 @@
+{
+  "acceptance": [
+    "WorkUnit scope is bounded and repo-grounded.",
+    "Rejected unsafe interpretations are recorded.",
+    "Validation and evidence requirements are explicit."
+  ],
+  "allowed_paths": [
+    ".aide/policies/github-protection.yaml",
+    ".aide/queue/<workunit>/**"
+  ],
+  "dependencies": [
+    "repo_policy",
+    "queue_state",
+    "branch_state"
+  ],
+  "evidence": [
+    "changed-files.md",
+    "validation.md",
+    "remaining-risks.md",
+    "intent-compiler-report.md"
+  ],
+  "forbidden_paths": [
+    ".git/**",
+    ".github/**",
+    ".aide.local/**",
+    ".env",
+    "secrets/**",
+    "raw prompt logs",
+    "raw response logs",
+    "target repositories unless target-local queue authorizes work"
+  ],
+  "idempotency": "prompt_hash:ced41097447e58915e0289ecb1914f8571dcb308e38754fdae20660eda12d5c0; status:draft; compile_only:true",
+  "implementation_outline": [
+    "Reconcile repo state before editing.",
+    "require behavior proof and live-test validation plan before implementation",
+    "Stop at review gates and record evidence before execution."
+  ],
+  "non_goals": [
+    "no raw prompt execution",
+    "no provider/model/network calls",
+    "do not bypass queue, branch, evidence, or policy state",
+    "do not execute raw prompt directly"
+  ],
+  "objective": "Normalize prompt into a bounded github WorkUnit draft: require behavior proof and live-test validation plan before implementation.",
+  "output_schema": ".aide/intake/workunit-draft.schema.json",
+  "preflight": [
+    "git status --short",
+    "py -3 .aide/scripts/aide_lite.py task inspect",
+    "py -3 .aide/scripts/aide_lite.py intent validate"
+  ],
+  "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
+  "risk_class": "security",
+  "schema_version": "aide.workunit-draft.v0",
+  "sizing_class": "live_test_gate",
+  "status": "draft",
+  "task_class": "github",
+  "title": "Github WorkUnit Draft - Require behavior proof and live-test validation plan before implementation",
+  "validation": [
+    "git diff --check",
+    "py -3 .aide/scripts/aide_lite.py intent validate"
+  ],
+  "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
+  "workunit_id": "draft-github-ced41097447e"
+}

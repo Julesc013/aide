@@ -1,0 +1,13 @@
+{
+  "base": "ceac70a6fefefde93d2fb7435e8825c173302757",
+  "remote_refs": {
+    "refs/heads/dev": "ceac70a6fefefde93d2fb7435e8825c173302757",
+    "refs/heads/main": "ceac70a6fefefde93d2fb7435e8825c173302757",
+    "refs/heads/task/aide-lite-successor-publication-01": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+    "refs/heads/task/aide-lite-successor-qualification-01": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1"
+  },
+  "previous_goal_turn": "no progress: status confirmation only; independent next safe action selected",
+  "gap": "Requests.initialize refuses changed configuration; expired bindings cannot resume pending requests in place",
+  "owner": "existing Requests and State transaction/events; existing CLI and access preflight",
+  "publication": "authentication pending; do not poll unchanged state or reuse stale ref guards"
+}
