@@ -92,3 +92,11 @@ Native task/attempt/effect/control data stayed unchanged. The exact old reader
 accepted v1 and refused v2 without mutation. All870 development-pack files and
 eight release assets matched existing qualification. Job9147b6b0f7e74d33bfdf5303e56499f7
 was collected, verified and retired. Prepare fixed-range preview as job3.
+
+**Final-job amendment.** Read-only full validation found two existing pack
+provenance failures (60914PASS, one existing review-reference warning).
+The directory-based source rule includes source-only test changes. All payload
+bytes are unchanged. Use the existing owned exporter before the fixed preview
+in the remaining job3, retaining its six ownership checks and complete failure.
+Only manifest/checksum/report metadata may differ; all867 payload/static files
+and eight frozen release assets must remain exact. No fourth allocation.
