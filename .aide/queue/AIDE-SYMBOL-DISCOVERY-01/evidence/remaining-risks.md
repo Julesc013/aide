@@ -1,0 +1,1 @@
+**Retained limits:** syntax matches are not runtime binding or semantic equivalence; selected files are incomplete coverage; recorded owner/test relations remain advisory. No project execution, automatic refactor or narrowed test acceptance. Host/adoption/publication and whole-outcome efficiency remain separate. Qualification is pending.

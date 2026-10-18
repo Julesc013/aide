@@ -1,0 +1,1 @@
+**Preparation only.** Existing owners and recorded quality behavior inspected. All 23 Q37/Q38 tests must remain; new source and installed checks are NOT RUN. Native jobs, collection/retirement and final validation will be recorded here with exact subjects. No product claim is accepted.

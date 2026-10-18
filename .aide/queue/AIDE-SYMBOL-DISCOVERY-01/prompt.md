@@ -1,0 +1,1 @@
+Extend AIDE's existing quality discovery with bounded fresh Python symbol evidence: exact definitions, syntax-matched calls/imports and existing recorded owner/test/documentation context. Preserve old behavior, explain uncertainty, qualify source and installed use, and integrate safely through existing campaign gates.

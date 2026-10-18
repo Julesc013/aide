@@ -1,0 +1,1 @@
+**Planned scope:** existing quality CLI, one pure Python syntax helper, focused tests/reference and portable delivery. Queue/evidence/root documentation record exact outcomes. No implementation has changed yet; exact source maps will bind the candidate.
