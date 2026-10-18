@@ -1289,3 +1289,7 @@ Prepare one read-only task/file brief through existing continuation, quality and
 lesson readers. Source, actual delivered/installed qualification and exact
 integration remain pending. See
 [ExecPlan](.aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/ExecPlan.md).
+
+### AIDE-COMPACT-COMMUNICATION-01
+
+Current writing guide: [commit discipline](docs/reference/commit-discipline.md), covering commits, PRs, merge records and review comments through existing portable policy/template owners.

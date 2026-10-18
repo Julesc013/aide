@@ -1,0 +1,11 @@
+policy(commit): adopt compact change communication
+
+Seven mandatory headings repeat information and obscure the useful facts.
+Add compact-v1 through the existing checker and changelog reader, retain
+legacy behavior, and document concise PR, merge and review communication.
+
+Validation: PASS - Python AST and diff checks; NOT RUN - runtime qualification
+Changelog: Changed: Default to compact commits and proportionate change descriptions
+Risk: Source candidate; portable consumers and integration remain unqualified
+AIDE-Task: AIDE-COMPACT-COMMUNICATION-01
+AIDE-Format: compact-v1

@@ -4471,7 +4471,115 @@ def parse_commit_trailers(message: str) -> dict[str, str]:
     return dict(reversed(list(trailers.items())))
 
 
+def commit_unfenced_lines(text: str) -> list[tuple[int, str]]:
+    """Metadata and presentation checks ignore examples in fenced code."""
+    result: list[tuple[int, str]] = []
+    fence = ""
+    for index, line in enumerate(text.splitlines()):
+        marker = re.match(r"^ {0,3}(`{3,}|~{3,})(.*)$", line)
+        if marker:
+            token = marker.group(1)
+            if not fence and not (token[0] == "`" and "`" in marker.group(2)):
+                fence = token
+            elif fence and token[0] == fence[0] and len(token) >= len(fence) and not marker.group(2).strip():
+                fence = ""
+            continue
+        if not fence:
+            result.append((index, line))
+    return result
+
+
+def has_compact_commit_marker(text: str) -> bool:
+    return any(re.match(r"^AIDE-Format\s*:", line, re.IGNORECASE)
+               for _, line in commit_unfenced_lines(text))
+
+
+def parse_compact_commit(text: str) -> tuple[dict[str, object], list[Check]]:
+    """One compact-v1 reader for checking and changelog projection; no inference."""
+    lines = text.replace("\r\n", "\n").replace("\r", "\n").rstrip().split("\n")
+    visible = dict(commit_unfenced_lines("\n".join(lines)))
+    end = len(lines)
+    while end and (not lines[end - 1].strip() or lines[end - 1].startswith("#")):
+        end -= 1
+    trailing_comments = "\n".join(lines[end:]).strip()
+    lines = lines[:end]
+    checks: list[Check] = []
+    subject = lines[0] if lines else ""
+    info = parse_conventional_subject(subject)
+    check_pass(checks, bool(info["valid"]), "compact subject follows type[(scope)][!]: description")
+    check_pass(checks, info["type"] in COMMIT_ALLOWED_TYPES | {"style"}, "compact commit type is allowed")
+    check_pass(checks, bool(info["summary"]) and str(info["summary"]).lower() not in COMMIT_VAGUE_SUMMARIES,
+               "compact subject describes a specific change")
+    check_warn(checks, len(subject) <= 72, "compact subject fits the 72-character guideline")
+    check_warn(checks, not subject.endswith("."), "compact subject omits a trailing period")
+    check_pass(checks, len(lines) > 2 and not lines[1].strip(), "compact subject has a blank separator")
+    start = len(lines) - 1
+    while start > 0 and lines[start - 1].strip():
+        start -= 1
+    fields: dict[str, list[str]] = {}
+    last = ""
+    trailer = re.compile(r"^([A-Za-z][A-Za-z0-9-]*|BREAKING CHANGE):[ \t]*(.*)$")
+    valid_block = start > 1
+    for index in range(start, len(lines)):
+        line = lines[index]
+        match = trailer.fullmatch(line) if index in visible else None
+        if match:
+            key, value = match.groups()
+            last = "BREAKING CHANGE" if key == "BREAKING-CHANGE" else key
+            fields.setdefault(last, []).append(value)
+        elif last and line.startswith((" ", "\t")) and index in visible:
+            fields[last][-1] += "\n" + line.strip()
+        else:
+            valid_block = False
+    check_pass(checks, valid_block, "compact metadata is one final trailer block")
+    for key in ("AIDE-Format", "AIDE-Task", "Validation"):
+        values = fields.get(key, [])
+        check_pass(checks, len(values) == 1 and bool(values[0].strip()), f"compact singleton present: {key}")
+    for key in ("Risk", "Follow-up", "BREAKING CHANGE", *COMMIT_TRAILERS):
+        check_pass(checks, len(fields.get(key, [])) <= 1, f"compact singleton is unambiguous: {key}")
+    check_pass(checks, fields.get("AIDE-Format") == ["compact-v1"], "compact format is supported")
+    markers = [i for i, line in visible.items() if re.match(r"^AIDE-Format\s*:", line, re.IGNORECASE)]
+    check_pass(checks, len(markers) == 1 and markers[0] >= start, "compact format marker occurs once in trailers")
+    reserved = {"AIDE-Format", "AIDE-Task", "Validation", "Changelog", "Risk", "Follow-up", "BREAKING CHANGE", "BREAKING-CHANGE"}
+    check_pass(checks, not any((match := trailer.fullmatch(line)) and match.group(1) in reserved
+                              for i, line in visible.items() if 2 <= i < start),
+               "compact metadata is not duplicated or misplaced in prose")
+    body = "\n".join(lines[2:start]).strip()
+    prose = "\n".join(line for i, line in visible.items() if 2 <= i < start).strip()
+    check_pass(checks, bool(re.search(r"[A-Za-z0-9]", prose)) and prose.lower() not in {"todo", "tbd", "none"},
+               "compact body explains the change and rationale")
+    validation = "\n".join(fields.get("Validation", []))
+    check_pass(checks, bool(re.match(r"^(?:PASS|WARN|FAIL|NOT RUN)\b[ \t:;-]+\S", validation)),
+               "compact validation names an outcome and the actual checks or reason")
+    entries: dict[str, list[str]] = {}
+    for value in fields.get("Changelog", []):
+        category, separator, detail = value.partition(":")
+        valid = bool(separator and category in COMMIT_CHANGELOG_CATEGORIES and detail.strip())
+        check_pass(checks, valid, "compact changelog has a known category and description")
+        if valid:
+            entries.setdefault(category, []).append(detail.strip())
+    check_pass(checks, bool(entries), "compact changelog records at least one explicit entry")
+    breaking = "\n".join(fields.get("BREAKING CHANGE", []))
+    check_pass(checks, not info["breaking"] or bool(breaking.strip()), "compact breaking marker has an impact and migration explanation")
+    check_pass(checks, "BREAKING CHANGE" not in fields or bool(breaking.strip()), "compact breaking footer is not empty")
+    check_warn(checks, not any(re.match(r"^ {0,3}#{1,2}\s", line) for _, line in visible.items()),
+               "compact presentation avoids H1/H2; use plain text or H3/H4")
+    check_pass(checks, not any(ord(c) < 32 and c not in "\n\r\t" for c in text), "compact message excludes control characters")
+    for forbidden in ("raw_prompt_body", "raw_response_body", "begin private key", "openai_api_key",
+                      "anthropic_api_key", "deepseek_api_key", "sk-ant"):
+        check_pass(checks, forbidden not in text.lower(), f"commit message excludes {forbidden}")
+    return {"subject": subject, "info": info, "body": body, "fields": fields,
+            "entries": entries, "validation": validation, "breaking": bool(info["breaking"] or breaking),
+            "trailing_comments": trailing_comments}, checks
+
+
 def validate_commit_message_text(text: str) -> list[Check]:
+    if has_compact_commit_marker(text):
+        return parse_compact_commit(text)[1]
+    return validate_legacy_commit_message_text(text)
+
+
+def validate_legacy_commit_message_text(text: str) -> list[Check]:
     message = strip_commit_message_comments(text)
     lines = message.splitlines()
     checks: list[Check] = []
@@ -4534,6 +4642,8 @@ def commit_message_result(checks: Iterable[Check]) -> str:
 
 def normalize_commit_draft(message: str) -> str:
     """Mechanical layout only; never invent headings, claims or trailers."""
+    if has_compact_commit_marker(message):
+        return message.replace("\r\n", "\n").replace("\r", "\n").rstrip("\n") + "\n"
     lines = message.replace("\r\n", "\n").replace("\r", "\n").split("\n")
     headings = {heading.lower(): heading for heading in COMMIT_REQUIRED_BODY_HEADINGS}
     fence = ""
@@ -5050,8 +5160,11 @@ def evaluate_historical_commit_disposition(
     return result
 
 
+COMPACT_COMMIT_TEMPLATE = 'fix(component): describe the resulting behavior\n\nExplain the concrete problem and why this change solves it. Add bullets\nonly for distinct effects. Include material compatibility or recovery\ndetails when needed; omit empty sections.\n\nValidation: NOT RUN - replace with actual checks, outcomes or reason\nChangelog: Fixed: describe the user or operator impact\nAIDE-Task: <queue-id>\nAIDE-Format: compact-v1\n'
+
+
 def render_commit_template() -> str:
-    return read_text(repo_root_from_script() / COMMIT_TEMPLATE_PATH) if (repo_root_from_script() / COMMIT_TEMPLATE_PATH).exists() else COMMIT_GOOD_EXAMPLE
+    return read_text(repo_root_from_script() / COMMIT_TEMPLATE_PATH) if (repo_root_from_script() / COMMIT_TEMPLATE_PATH).exists() else COMPACT_COMMIT_TEMPLATE
 
 
 def current_hook_path(repo_root: Path) -> str:
@@ -5112,6 +5225,9 @@ def parse_conventional_subject(subject: str) -> dict[str, object]:
 
 
 def extract_changelog_entries(message: str) -> dict[str, list[str]]:
+    if has_compact_commit_marker(message):
+        parsed, checks = parse_compact_commit(message)
+        return parsed["entries"] if result_from_checks(checks) != "FAIL" else {}
     entries = {category: [] for category in COMMIT_CHANGELOG_CATEGORIES}
     section = markdown_heading_body(strip_commit_message_comments(message), "## Changelog")
     for line in section.splitlines():
@@ -5204,7 +5320,37 @@ def first_meaningful_line(text: str) -> str:
     return ""
 
 
+def compact_commit_for_changelog(commit_hash: str, subject: str, message: str) -> dict[str, object]:
+    parsed, checks = parse_compact_commit(message)
+    check_pass(checks, parsed["subject"] == subject, "compact subject matches the Git record")
+    info, fields = parsed["info"], parsed["fields"]
+    trailers = {key: "\n".join(values) for key, values in fields.items()}
+    failures = [check.message for check in checks if check.severity == "FAIL"]
+    sections = ["Body", *fields]
+    common = {"commit_sha": commit_hash, "commit": commit_hash[:12], "subject": subject,
+              "type": info["type"], "scope": info["scope"], "breaking": parsed["breaking"],
+              "validation": parsed["validation"], "risks": trailers.get("Risk", ""),
+              "follow_up": trailers.get("Follow-up", "")}
+    entries = []
+    if not failures:
+        for category, values in parsed["entries"].items():
+            for value in values:
+                entries.append({**common, "category": category, "summary": value, "entry": value,
+                                "message_format": "compact-v1",
+                                "aide_phase": trailers.get("AIDE-Phase", ""),
+                                "aide_result": trailers.get("AIDE-Result", ""),
+                                "source_sections_present": sections,
+                                "breaking_change": trailers.get("BREAKING CHANGE", "")})
+    return {**common, "summary": info["summary"], "trailers": trailers,
+            "sections_present": sections, "entries": entries, "malformed": bool(failures),
+            "malformed_reasons": failures, "warnings": [c.message for c in checks if c.severity == "WARN"],
+            "legacy": False, "ignored": False, "message_format": "compact-v1",
+            "trailing_comments": parsed["trailing_comments"]}
+
+
 def parse_commit_for_changelog(commit_hash: str, subject: str, message: str) -> dict[str, object]:
+    if has_compact_commit_marker(message):
+        return compact_commit_for_changelog(commit_hash, subject, message)
     clean = strip_commit_message_comments(message)
     subject_info = parse_conventional_subject(subject)
     trailers = parse_commit_trailers(clean)
@@ -5376,10 +5522,17 @@ def make_release_notes_preview_data(changelog_data: dict[str, object]) -> dict[s
     validation_summary = []
     risk_summary = []
     follow_up = []
+    breaking_changes = []
     for entry in entries:
-        validation_text = markdown_block_summary(str(entry.get("validation", "")), fallback="")
-        risk_text = markdown_block_summary(str(entry.get("risks", "")), fallback="")
-        follow_text = markdown_block_summary(str(entry.get("follow_up", "")), fallback="")
+        compact = entry.get("message_format") == "compact-v1"
+        def detail(key: str) -> str:
+            value = str(entry.get(key, ""))
+            return value.strip() if compact else markdown_block_summary(value, fallback="")
+        validation_text, risk_text, follow_text = detail("validation"), detail("risks"), detail("follow_up")
+        if compact and entry.get("breaking_change"):
+            item = {"commit": entry.get("commit", ""), "summary": entry["breaking_change"]}
+            if item not in breaking_changes:
+                breaking_changes.append(item)
         if validation_text:
             validation_summary.append({"commit": entry.get("commit", ""), "summary": validation_text})
         if risk_text and risk_text.lower() not in {"none", "`none`"}:
@@ -5397,6 +5550,7 @@ def make_release_notes_preview_data(changelog_data: dict[str, object]) -> dict[s
         "validation_summary": validation_summary,
         "risk_summary": risk_summary,
         "follow_up": follow_up,
+        **({"breaking_changes": breaking_changes} if breaking_changes else {}),
         "warnings": warnings,
         "preview_only": True,
     }
@@ -5437,6 +5591,12 @@ def render_changelog_preview(data: dict[str, object]) -> str:
                 if isinstance(item, dict):
                     breaking = " BREAKING" if item.get("breaking") else ""
                     lines.append(f"- {item.get('summary') or item.get('entry', '')} ({item.get('commit', '')} {item.get('subject', '')}{breaking})")
+                    if item.get("message_format") == "compact-v1":
+                        for key, label in (("validation", "Validation"), ("risks", "Risk"),
+                                           ("follow_up", "Follow-up"), ("breaking_change", "Breaking change")):
+                            if item.get(key):
+                                text = str(item[key]).replace("\n", "\n    ")
+                                lines.append(f"  - **{label}:** {text}")
             lines.append("")
     else:
         lines.extend(["## No Structured Entries", "", "- No structured changelog entries found in range.", ""])
@@ -5475,12 +5635,18 @@ def render_release_notes_preview(data: dict[str, object], release_data: dict[str
                 lines.append(f"- {item.get('category', 'Changed')}: {item.get('summary', '')} ({item.get('commit', '')}{breaking})")
     else:
         lines.append("- No release highlights were extracted from structured changelog entries.")
+    if release.get("breaking_changes"):
+        lines.extend(["", "### Breaking changes and migration", ""])
+        for item in release["breaking_changes"]:
+            text = str(item["summary"]).replace("\n", "\n  ")
+            lines.append(f"- {item['commit']}: {text}")
     lines.extend(["", "## Validation Summary", ""])
     validation = release.get("validation_summary", [])
     if isinstance(validation, list) and validation:
         for item in validation[:10]:
             if isinstance(item, dict):
-                lines.append(f"- {item.get('commit', '')}: {item.get('summary', '')}")
+                text = str(item.get('summary', '')).replace("\n", "\n  ")
+                lines.append(f"- {item.get('commit', '')}: {text}")
     else:
         lines.append("- No validation summaries were extracted.")
     lines.extend(["", "## Known Risks", ""])
@@ -5488,7 +5654,8 @@ def render_release_notes_preview(data: dict[str, object], release_data: dict[str
     if isinstance(risks, list) and risks:
         for item in risks[:10]:
             if isinstance(item, dict):
-                lines.append(f"- {item.get('commit', '')}: {item.get('summary', '')}")
+                text = str(item.get('summary', '')).replace("\n", "\n  ")
+                lines.append(f"- {item.get('commit', '')}: {text}")
     else:
         lines.append("- No risk summaries were extracted.")
     lines.extend(["", "## Follow-up", ""])
@@ -5496,7 +5663,8 @@ def render_release_notes_preview(data: dict[str, object], release_data: dict[str
     if isinstance(follow, list) and follow:
         for item in follow[:10]:
             if isinstance(item, dict):
-                lines.append(f"- {item.get('commit', '')}: {item.get('summary', '')}")
+                text = str(item.get('summary', '')).replace("\n", "\n  ")
+                lines.append(f"- {item.get('commit', '')}: {text}")
     else:
         lines.append("- No follow-up summaries were extracted.")
     warnings = release.get("warnings", [])
@@ -34292,7 +34460,7 @@ def command_commit_create(args: argparse.Namespace) -> int:
 def command_commit_template(args: argparse.Namespace) -> int:
     template_path = args.repo_root / COMMIT_TEMPLATE_PATH
     if not template_path.exists():
-        write_text_if_changed(template_path, COMMIT_GOOD_EXAMPLE)
+        write_text_if_changed(template_path, COMPACT_COMMIT_TEMPLATE)
     text = read_text(template_path)
     if args.output:
         target = safe_repo_path(args.repo_root, args.output)

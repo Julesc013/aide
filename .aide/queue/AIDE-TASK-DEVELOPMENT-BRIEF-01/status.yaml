@@ -1,6 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-TASK-DEVELOPMENT-BRIEF-01
-status: needs_review
-result: PENDING
-next_action: exact_source_and_first_job_review
-review_gate: exact_source_and_job
+status: running
+result: SOURCE_84_AND_ACTUAL_CONSUMER_PASS
+next_action: delivered_and_installed_qualification_after_compact_communication_source
+source_commit: d8645cec927221f2c4478af97cdc2d5c453868f6
+source_job: d73bfe9dcfff4902a2f76affff974b48
+jobs_allocated: 1
+maximum_jobs: 3
+active_jobs: 0

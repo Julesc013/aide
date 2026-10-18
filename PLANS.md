@@ -5320,3 +5320,7 @@ Prepare one read-only task/file brief through existing continuation, quality and
 lesson readers. Source, actual delivered/installed qualification and exact
 integration remain pending. See
 [ExecPlan](.aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/ExecPlan.md).
+
+### AIDE-COMPACT-COMMUNICATION-01
+
+Implement compact communication through existing commit/check/changelog owners; preserve legacy evidence and qualify source plus portable consumers.

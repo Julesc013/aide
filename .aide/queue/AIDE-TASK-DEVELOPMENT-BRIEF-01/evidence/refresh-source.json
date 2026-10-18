@@ -1,0 +1,11 @@
+{
+  "base": "d8645cec927221f2c4478af97cdc2d5c453868f6",
+  "files": {
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/source-review.md": "78bbe79b2a1f0e38c171c054c7361a49519aa159a972e2c581608cdb6145a044",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/source-attempt-01.json": "be85060abe24d8d965a5cd372342717385c6bdb912973bea31f8fa213fa359e7",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/attempt-01-source-tests.json": "9d551afd2d9921608a20a758ec07558bd349faf747e2e1db293c3dda157ae963",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/attempt-01-actual-brief.json": "4679785f50445f487a5ae082877b0b5c16f8b1c617b2aae65e3277a92482a4a9",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/refresh-effect.md": "21dcb8aa3a5302f903a0807ee999a750658c69ba3cc3336fc324dc92802adbb5"
+  },
+  "effect_sha256": "21dcb8aa3a5302f903a0807ee999a750658c69ba3cc3336fc324dc92802adbb5"
+}

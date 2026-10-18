@@ -1,0 +1,1 @@
+**REQUEST_CHANGES.** Reviewer /root/review_disked_continuation for source0c57e295/effect49050e1f. All34 files/953 pins matched. Three required fixes: obsolete live-template H2 assertion; multiline validation and breaking migration lost downstream; Git editor comment block rejected by hook. No tests or effects occurred. Original candidate identity retained.

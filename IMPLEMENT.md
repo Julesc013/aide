@@ -14057,3 +14057,7 @@ Prepare one read-only task/file brief through existing continuation, quality and
 lesson readers. Source, actual delivered/installed qualification and exact
 integration remain pending. See
 [ExecPlan](.aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/ExecPlan.md).
+
+### AIDE-COMPACT-COMMUNICATION-01
+
+Prepared compact-v1 parser, policy, template and researched commit/PR/merge/comment guidance. Legacy assertions retained. Runtime qualification pending.

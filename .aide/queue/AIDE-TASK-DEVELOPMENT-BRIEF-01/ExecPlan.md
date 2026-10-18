@@ -77,3 +77,9 @@ Admission ACCEPT. Guarded local branch created. Source adds the composing CLI an
 shared guarded quality reader; existing field semantics remain. New 18 methods
 plus 66 conserved methods are prepared; none executed yet. Actual source lookup
 will consume the completed validation WorkUnit and its retained fixture lesson.
+
+### Current checkpoint
+Source84 and actual consumer passed at d8645cec; job retired, evidence preserved.
+User-requested compact communication is the next dependent increment on this
+owned branch. Reviewed binding refresh was not executed; recheck its subject
+after this increment. Delivered/installed, preview and integration remain.

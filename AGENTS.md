@@ -114,7 +114,8 @@
 
 - Create at least one commit after each completed queued prompt when Git is available.
 - Use detailed commit messages that identify prompt id, scope, key changes, verification status, and blocked or deferred notes.
-- For AIDE-managed queued work, use `type(scope): summary` subjects and structured Markdown bodies with `## Summary`, `## Why`, `## Changed`, `## Validation`, `## Changelog`, `## Risks`, and `## Follow-up`.
+- For new AIDE-managed queued commits, use the compact-v1 template and checks in `docs/reference/commit-discipline.md`: specific Conventional Commit subject, concise rationale, observed validation, explicit changelog and task trailers. Preserve legacy history.
+- For PRs, merges and review comments, lead with outcome and reason; use short prose, bold labels, bullets and inline code. Use H3/H4 only when useful, without H1/H2 defaults. Include material limitations and next actions; omit repeated summaries and empty sections.
 - Run `py -3 .aide/scripts/aide_lite.py commit check --latest` or a range check before treating Q27-and-later commits as release/changelog-ready.
 - Use `py -3 .aide/scripts/aide_lite.py changelog preview`, `changelog validate`, and `changelog status` for release-draft evidence; these outputs are preview-only and must not be treated as official release notes.
 - Use `.aide/policies/task-resumption.yaml`, `.aide/policies/work-units.yaml`, and `.aide/policies/recovery.yaml` before asking the user about repeated, partial, duplicate, or out-of-order queue prompts.

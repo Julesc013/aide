@@ -1,0 +1,39 @@
+schema_version: aide.queue-task.v0
+id: AIDE-COMPACT-COMMUNICATION-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Compact complete change communication
+type: implementation
+status: needs_review
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-COMPACT-COMMUNICATION-01/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_compact_communication.py
+    - .aide/scripts/tests/test_q27_commit_recovery.py
+    - .aide/policies/commit-messages.yaml
+    - .aide/git/commit-template.md
+    - .aide/reports/aide-commit-message-standard.md
+    - docs/reference/commit-discipline.md
+    - docs/reference/changelog-preview.md
+    - AGENTS.md
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - .aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/status.yaml
+    - .aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/ExecPlan.md
+    - .aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/reports/capability-ledger.json
+    - .aide/reports/capability-ledger.md
+    - .aide/reports/capability-evidence-bindings.json
+    - .aide/reports/capability-command-status.md
+  forbidden_paths:
+    - historical Git objects and disposition registry
+    - existing tests except the live-template assertion in Q27
+    - frozen release assets
+    - target repositories and hosting settings
+review_gate: exact_admission_source_jobs_and_integration
+maximum_jobs: 3
