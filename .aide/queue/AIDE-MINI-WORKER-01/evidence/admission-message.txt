@@ -1,0 +1,11 @@
+feat(worker): admit optional Mini harness qualification
+
+The selected Python has no Mini worker binding. Pin its actual upstream loop
+and selected import recipe before exercising deterministic disposable work
+through the existing managed execution owner.
+
+Validation: PASS - current source/refs and exact PyPI artifact metadata
+ NOT RUN - artifact acquisition, imports and worker qualification
+Changelog: Internal: Admit bounded optional Mini worker integration
+AIDE-Task: AIDE-MINI-WORKER-01
+AIDE-Format: compact-v1

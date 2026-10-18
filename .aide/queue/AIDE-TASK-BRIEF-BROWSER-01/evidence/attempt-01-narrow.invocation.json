@@ -1,0 +1,46 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+    "--headless",
+    "--disable-gpu",
+    "--force-device-scale-factor=1",
+    "--window-size=480,1800",
+    "--timeout=5000",
+    "--screenshot=D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\61d5a1f0d34e4bc7b2cf157e9abf65d0\\output\\narrow.png",
+    "--dump-dom",
+    "--user-data-dir=D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\61d5a1f0d34e4bc7b2cf157e9abf65d0\\tmp\\narrow\\profile",
+    "--disk-cache-dir=D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\61d5a1f0d34e4bc7b2cf157e9abf65d0\\tmp\\narrow\\cache",
+    "--crash-dumps-dir=D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\61d5a1f0d34e4bc7b2cf157e9abf65d0\\tmp\\narrow\\crash",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "--disable-background-networking",
+    "--disable-component-update",
+    "--disable-default-apps",
+    "--disable-sync",
+    "--disable-extensions",
+    "--metrics-recording-only",
+    "--proxy-server=http://127.0.0.1:9",
+    "--proxy-bypass-list=<-loopback>",
+    "file:///D:/Projects/AIDE/.aide.local/execution/scratch/61d5a1f0d34e4bc7b2cf157e9abf65d0/output/offline-brief.html"
+  ],
+  "cwd": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\61d5a1f0d34e4bc7b2cf157e9abf65d0\\tmp\\narrow",
+  "state": "completed",
+  "exit_code": 0,
+  "environment_values": "sanitized allowlist with owned user/temp directories",
+  "network_isolation": "not_established; flags and proxy advisory only",
+  "elapsed_seconds": 4.340055300039239,
+  "files": {
+    "narrow.dom": {
+      "bytes": 39826,
+      "sha256": "cbff9711e9200dc53ee88f6800f448107a4629dd92295ef48eda4c338519193d"
+    },
+    "narrow.stderr": {
+      "bytes": 581,
+      "sha256": "2ee1f1e2d1ca8dad94adbfa60137c80e43144d3d38a8803c8edfc9a6a059ca58"
+    },
+    "narrow.png": {
+      "bytes": 74656,
+      "sha256": "430ddfbd3d4ffd308e5bfbdfbf47679a9e232c37468b5ba0f103972d3f3d6d6c"
+    }
+  }
+}

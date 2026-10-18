@@ -1,0 +1,19 @@
+{
+  "base": "75b9612ab6d7e84a2045afa7ab3a6aa2360a503b",
+  "files": {
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/ExecPlan.md": "415e2ef7d15b56899aab5a4cf7f8b745c305264df661bdca125b75eb41420172",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/admission-effect.md": "262460eef14fa7b8bc72f8142adfdea0ad4e19f96d5a63347bd111dd8eefc997",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/admission-message.txt": "a774075301d745dbf04bd8ba5d303cb1c58b38b6c1f2da05bd2139a15d50e0d3",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/baseline.json": "c2b20f81c09f510cbcb73704efad5c1f42fb00e10be3db5be48f95187c10e189",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/changed-files.md": "31006c04cec4835a18b2df0800415eafb2cabfd60406b6f48741f4209588ddbd",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/dev-review-packet.md": "ded7e1bbe45bdd48fade17527e8ef0a54188ee1dc46912de86bdf4432488330c",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/preflight.json": "fe6637bd20eee0c75d206dc06700c2f8b442532c11a42bf28135d066f9463d0e",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/remaining-risks.md": "0558ab00d9935fa2c27428cd9fab1f786ed3ad3b45ca21fd249db44c4711838d",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/validation.md": "dabe2655af1ee039f0d74412123e9b047610c8bc5fdc80893d620de595e5cda5",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/prompt.md": "4c83a1d7615382f6fdcbdc3bfc540a77a870d296ecca07ea5753635c825c0792",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/status.yaml": "1b1b941134bc4a3e724267791c4be049ba0879c79038dbf5da7de2b7e0f23543",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/task.yaml": "f153f6e77739fc4bd00fc9d5efd7a0cf89ddc2d594628743d545adc74d4ae934"
+  },
+  "effect_sha256": "262460eef14fa7b8bc72f8142adfdea0ad4e19f96d5a63347bd111dd8eefc997",
+  "message_sha256": "a774075301d745dbf04bd8ba5d303cb1c58b38b6c1f2da05bd2139a15d50e0d3"
+}

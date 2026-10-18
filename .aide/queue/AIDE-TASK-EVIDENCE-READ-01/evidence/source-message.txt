@@ -1,0 +1,11 @@
+fix(task): stream retained evidence within a separate bound
+
+Qualification receipts can exceed the task YAML budget. Hash evidence in
+64-KiB chunks up to 1 MiB, retain safe oversized paths, and keep record
+limits and path guards unchanged. Readability never grants acceptance.
+
+Validation: PASS - syntax and scoped diff checks
+ NOT RUN - 168 source checks and actual predecessor/task comparisons
+Changelog: Fixed: Inspect larger task receipts without losing safe evidence paths
+AIDE-Task: AIDE-TASK-EVIDENCE-READ-01
+AIDE-Format: compact-v1

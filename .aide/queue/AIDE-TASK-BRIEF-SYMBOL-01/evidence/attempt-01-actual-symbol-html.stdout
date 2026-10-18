@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;; style-src &#x27;sha256-F6/+j31rdjVaMi6GOdwP1/cuZURFeOqrUQxoW9ItiGA=&#x27;"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AIDE task brief</title><style>html{color:#182434;background:#f4f6f8;font:16px/1.55 system-ui,sans-serif}
+body{max-width:72rem;margin:0 auto;padding:2rem 1rem}
+h1{font-size:1.65rem;line-height:1.25;margin:.35rem 0 1rem}
+h2{font-size:1.15rem;margin:0 0 .8rem}
+p{margin:.5rem 0}main{display:grid;gap:1rem}
+section,details{background:#fff;border:1px solid #c5ced8;border-radius:.5rem;padding:1rem}
+header,footer{margin-bottom:1.2rem}footer{margin-top:1.2rem}
+.kicker{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.notice{border-left:.3rem solid #685000;padding-left:1rem}
+.fields{display:grid;grid-template-columns:minmax(8rem,1fr) minmax(0,3fr);gap:.45rem 1rem;margin:0}
+dt{font-weight:650}dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+code,pre{font: .86rem/1.5 ui-monospace,Consolas,monospace;overflow-wrap:anywhere;white-space:pre-wrap}
+summary{font-weight:650;cursor:pointer}summary:focus-visible{outline:3px solid #174fa3;outline-offset:4px}
+li{margin:.35rem 0}.muted{color:#4e5b6b}.identity{font-size:.8rem}
+@media(max-width:42rem){body{padding:1rem .7rem}.fields{display:block}dt{margin-top:.6rem}dd{margin-top:.15rem}}
+@media print{html{background:white;color:black}body{max-width:none;padding:0}section,details{break-inside:avoid}}
+</style></head><body><header><p class="kicker">AIDE / development brief</p><h1>One task, its context and next action</h1><p class="notice">Saved observation: <strong>PARTIAL</strong>. This page is not live state. Rerun the brief to refresh it.</p></header><main><section><h2>Next action</h2><p>reconcile_records</p></section><section><h2>Recorded task</h2><dl class="fields"><dt>Task</dt><dd>AIDE-TASK-BRIEF-VIEW-01</dd><dt>Objective</dt><dd>Read the existing task brief as a safe offline page</dd><dt>Selected file</dt><dd>.aide/scripts/aide_lite.py</dd><dt>Task owner</dt><dd>unknown</dd><dt>Recorded status</dt><dd>passed</dd><dt>Recorded result</dt><dd>SOURCE_AND_INSTALLED_PASS</dd><dt>Recorded next action</dt><dd>exact terminal technical review and guarded dev/main integration</dd><dt>Scope record</dt><dd>.aide/queue/AIDE-TASK-BRIEF-VIEW-01/task.yaml</dd></dl><p class="muted">Recorded success does not establish acceptance or finish remaining obligations.</p></section><section><h2>Continuation and remaining work</h2><dl class="fields"><dt>Recommendation</dt><dd>reconcile_records</dd><dt>Reason</dt><dd>Resolve missing, conflicting or unreadable records; preserve original evidence.</dd><dt>Remaining obligations</dt><dd>unknown</dd></dl></section><section><h2>File context</h2><dl class="fields"><dt>File owner</dt><dd>AIDE Lite</dd><dt>Quality observation</dt><dd>PASS</dd><dt>Freshness</dt><dd>unverified</dd><dt>Coverage</dt><dd>heuristic_incomplete</dd></dl><dl class="fields"><dt>docs_refs</dt><dd>{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded documentation link&quot;,&quot;state&quot;:&quot;not_found&quot;}</dd></dl><dl class="fields"><dt>test_refs</dt><dd>{&quot;items&quot;:[&quot;.aide/scripts/tests/test_adapter_compiler.py&quot;,&quot;.aide/scripts/tests/test_aide_lite.py&quot;,&quot;.aide/scripts/tests/test_cache_local_state.py&quot;,&quot;.aide/scripts/tests/test_export_import.py&quot;,&quot;.aide/scripts/tests/test_gateway_commands.py&quot;,&quot;.aide/scripts/tests/test_golden_tasks.py&quot;,&quot;.aide/scripts/tests/test_outcome_controller.py&quot;,&quot;.aide/scripts/tests/test_provider_adapter.py&quot;,&quot;.aide/scripts/tests/test_q27_commit_recovery.py&quot;,&quot;.aide/scripts/tests/test_q28_git_workflow.py&quot;,&quot;.aide/scripts/tests/test_q29_git_helper.py&quot;,&quot;.aide/scripts/tests/test_q30_aide_dev_main_policy.py&quot;,&quot;.aide/scripts/tests/test_q31_export_pack_governance.py&quot;,&quot;.aide/scripts/tests/test_q34_changelog_release.py&quot;,&quot;.aide/scripts/tests/test_q35_github_advisory.py&quot;,&quot;.aide/scripts/tests/test_q36_intent_compiler.py&quot;,&quot;.aide/scripts/tests/test_q37_repo_intelligence.py&quot;,&quot;.aide/scripts/tests/test_q38_file_quality.py&quot;,&quot;.aide/scripts/tests/test_review_pack.py&quot;,&quot;.aide/scripts/tests/test_router_profile.py&quot;],&quot;omitted&quot;:2,&quot;reason&quot;:&quot;heuristic likely test target; not an executed check&quot;,&quot;state&quot;:&quot;found&quot;}</dd></dl><dl class="fields"><dt>dependency_refs</dt><dd>{&quot;items&quot;:[&quot;AGENTS.md&quot;,&quot;DOCUMENTATION.md&quot;,&quot;IMPLEMENT.md&quot;,&quot;PLANS.md&quot;,&quot;README.md&quot;,&quot;ROADMAP.md&quot;,&quot;bridges&quot;,&quot;core&quot;,&quot;core/compat&quot;,&quot;core/compat/tests/test_compat_baseline.py&quot;,&quot;core/compat/version_registry.py&quot;,&quot;core/gateway&quot;,&quot;core/gateway/README.md&quot;,&quot;core/gateway/__init__.py&quot;,&quot;core/gateway/gateway_status.py&quot;,&quot;core/gateway/server.py&quot;,&quot;core/harness&quot;,&quot;core/harness/commands.py&quot;,&quot;core/harness/tests/test_aide_harness.py&quot;,&quot;core/harness/tests/test_aide_lite.py&quot;],&quot;omitted&quot;:36,&quot;reason&quot;:&quot;recorded local reference; not complete impact analysis&quot;,&quot;state&quot;:&quot;found&quot;}</dd></dl><dl class="fields"><dt>warnings</dt><dd>{&quot;items&quot;:[&quot;large_module_candidate&quot;,&quot;missing_doc_candidate&quot;,&quot;mixed_purpose_candidate&quot;,&quot;orphan_candidate&quot;,&quot;public_surface_missing_doc_candidate&quot;,&quot;reuse_candidate&quot;],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded quality warning&quot;,&quot;state&quot;:&quot;found&quot;}</dd></dl><dl class="fields"><dt>exemptions</dt><dd>{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded lifecycle exemption&quot;,&quot;state&quot;:&quot;not_found&quot;}</dd></dl><p class="muted">Relations are advisory; incomplete information cannot narrow required checks.</p></section><section><h2>Fresh helper evidence</h2><dl class="fields"><dt>Symbol</dt><dd>build_task_development_brief</dd><dt>Coverage</dt><dd>explicit_selected_files_only</dd></dl><p class="muted">Syntax matches do not resolve runtime binding or justify fewer checks.</p><dl class="fields"><dt>Source</dt><dd>.aide/scripts/aide_lite.py</dd><dt>Selection reason</dt><dd>task_target</dd><dt>Parse state</dt><dd>parsed</dd><dt>Match state</dt><dd>found</dd><dt>Source SHA-256</dt><dd>c06ddcc9f5f2f6771789623ba706075731f3fc5b529f147d63ff980430bb2e91</dd><dt>Locations</dt><dd>[&quot;definitions line 40809: build_task_development_brief&quot;,&quot;calls line 40973: command_task_brief&quot;]</dd><dt>Omitted matches</dt><dd>0</dd></dl><dl class="fields"><dt>Source</dt><dd>.aide/scripts/tests/test_task_brief.py</dd><dt>Selection reason</dt><dd>explicit_related_source</dd><dt>Parse state</dt><dd>parsed</dd><dt>Match state</dt><dd>found</dd><dt>Source SHA-256</dt><dd>57ac060081fd9da111e2cbf278ba8269f3ddd8f2792ac663852c5197383cc8c4</dd><dt>Locations</dt><dd>[&quot;calls line 64: TaskBriefTests.view&quot;,&quot;calls line 133: TaskBriefTests.test_missing_task_does_not_read_auxiliary_records&quot;,&quot;calls line 146: TaskBriefTests.test_unsafe_or_noncanonical_paths_refuse_before_auxiliary_reads&quot;]</dd><dt>Omitted matches</dt><dd>0</dd></dl></section><details><summary>Fresh syntax locations, omissions and recorded context</summary><pre>{
+  &quot;caveats&quot;: [
+    &quot;Names, scopes and calls describe syntax; runtime binding, aliases and behavior remain unresolved.&quot;,
+    &quot;Not found is not semantic absence; unselected files and unsupported syntax remain outside coverage.&quot;,
+    &quot;Recorded owner, documentation and likely tests are advisory; freshness and complete impact are unverified.&quot;,
+    &quot;Sequential byte rechecks are not an atomic snapshot; no project code was imported or executed.&quot;
+  ],
+  &quot;coverage&quot;: &quot;explicit_selected_files_only&quot;,
+  &quot;files&quot;: [
+    {
+      &quot;path&quot;: &quot;.aide/scripts/aide_lite.py&quot;,
+      &quot;recorded_context&quot;: {
+        &quot;advisory&quot;: true,
+        &quot;evidence&quot;: {
+          &quot;caveats&quot;: [
+            &quot;Report revision is attribution, not current-byte verification.&quot;,
+            &quot;Missing links do not establish absence; do not narrow checks solely from this view.&quot;,
+            &quot;Similarity does not prove shared semantics or authorize refactoring.&quot;
+          ],
+          &quot;coverage&quot;: &quot;heuristic_incomplete&quot;,
+          &quot;freshness&quot;: &quot;unverified&quot;,
+          &quot;kind&quot;: &quot;tool&quot;,
+          &quot;ledger&quot;: &quot;.aide/reports/file-quality-ledger.json&quot;,
+          &quot;owner&quot;: &quot;AIDE Lite&quot;,
+          &quot;path&quot;: &quot;.aide/scripts/aide_lite.py&quot;,
+          &quot;quality_level&quot;: &quot;warn&quot;,
+          &quot;recommended_next_action&quot;: &quot;Inspect references and owner before any future refactor; do not delete from Q38 evidence.&quot;,
+          &quot;relations&quot;: {
+            &quot;dependency_refs&quot;: {
+              &quot;items&quot;: [
+                &quot;AGENTS.md&quot;,
+                &quot;DOCUMENTATION.md&quot;,
+                &quot;IMPLEMENT.md&quot;,
+                &quot;PLANS.md&quot;,
+                &quot;README.md&quot;,
+                &quot;ROADMAP.md&quot;,
+                &quot;bridges&quot;,
+                &quot;core&quot;,
+                &quot;core/compat&quot;,
+                &quot;core/compat/tests/test_compat_baseline.py&quot;,
+                &quot;core/compat/version_registry.py&quot;,
+                &quot;core/gateway&quot;,
+                &quot;core/gateway/README.md&quot;,
+                &quot;core/gateway/__init__.py&quot;,
+                &quot;core/gateway/gateway_status.py&quot;,
+                &quot;core/gateway/server.py&quot;,
+                &quot;core/harness&quot;,
+                &quot;core/harness/commands.py&quot;,
+                &quot;core/harness/tests/test_aide_harness.py&quot;,
+                &quot;core/harness/tests/test_aide_lite.py&quot;
+              ],
+              &quot;omitted&quot;: 36,
+              &quot;reason&quot;: &quot;recorded local reference; not complete impact analysis&quot;,
+              &quot;state&quot;: &quot;found&quot;
+            },
+            &quot;docs_refs&quot;: {
+              &quot;items&quot;: [],
+              &quot;omitted&quot;: 0,
+              &quot;reason&quot;: &quot;recorded documentation link&quot;,
+              &quot;state&quot;: &quot;not_found&quot;
+            },
+            &quot;exemptions&quot;: {
+              &quot;items&quot;: [],
+              &quot;omitted&quot;: 0,
+              &quot;reason&quot;: &quot;recorded lifecycle exemption&quot;,
+              &quot;state&quot;: &quot;not_found&quot;
+            },
+            &quot;test_refs&quot;: {
+              &quot;items&quot;: [
+                &quot;.aide/scripts/tests/test_adapter_compiler.py&quot;,
+                &quot;.aide/scripts/tests/test_aide_lite.py&quot;,
+                &quot;.aide/scripts/tests/test_cache_local_state.py&quot;,
+                &quot;.aide/scripts/tests/test_export_import.py&quot;,
+                &quot;.aide/scripts/tests/test_gateway_commands.py&quot;,
+                &quot;.aide/scripts/tests/test_golden_tasks.py&quot;,
+                &quot;.aide/scripts/tests/test_outcome_controller.py&quot;,
+                &quot;.aide/scripts/tests/test_provider_adapter.py&quot;,
+                &quot;.aide/scripts/tests/test_q27_commit_recovery.py&quot;,
+                &quot;.aide/scripts/tests/test_q28_git_workflow.py&quot;,
+                &quot;.aide/scripts/tests/test_q29_git_helper.py&quot;,
+                &quot;.aide/scripts/tests/test_q30_aide_dev_main_policy.py&quot;,
+                &quot;.aide/scripts/tests/test_q31_export_pack_governance.py&quot;,
+                &quot;.aide/scripts/tests/test_q34_changelog_release.py&quot;,
+                &quot;.aide/scripts/tests/test_q35_github_advisory.py&quot;,
+                &quot;.aide/scripts/tests/test_q36_intent_compiler.py&quot;,
+                &quot;.aide/scripts/tests/test_q37_repo_intelligence.py&quot;,
+                &quot;.aide/scripts/tests/test_q38_file_quality.py&quot;,
+                &quot;.aide/scripts/tests/test_review_pack.py&quot;,
+                &quot;.aide/scripts/tests/test_router_profile.py&quot;
+              ],
+              &quot;omitted&quot;: 2,
+              &quot;reason&quot;: &quot;heuristic likely test target; not an executed check&quot;,
+              &quot;state&quot;: &quot;found&quot;
+            },
+            &quot;warnings&quot;: {
+              &quot;items&quot;: [
+                &quot;large_module_candidate&quot;,
+                &quot;missing_doc_candidate&quot;,
+                &quot;mixed_purpose_candidate&quot;,
+                &quot;orphan_candidate&quot;,
+                &quot;public_surface_missing_doc_candidate&quot;,
+                &quot;reuse_candidate&quot;
+              ],
+              &quot;omitted&quot;: 0,
+              &quot;reason&quot;: &quot;recorded quality warning&quot;,
+              &quot;state&quot;: &quot;found&quot;
+            }
+          },
+          &quot;result&quot;: &quot;PASS&quot;,
+          &quot;reuse&quot;: {
+            &quot;items&quot;: [],
+            &quot;omitted&quot;: 0,
+            &quot;state&quot;: &quot;unindexed&quot;
+          },
+          &quot;schema_version&quot;: &quot;aide.quality-explanation.v1&quot;,
+          &quot;source_commit&quot;: &quot;d71b40a99c56afa4b5a207d5949f199be684e033&quot;,
+          &quot;status&quot;: &quot;active&quot;
+        },
+        &quot;freshness&quot;: &quot;unverified&quot;,
+        &quot;state&quot;: &quot;recorded&quot;
+      },
+      &quot;syntax&quot;: {
+        &quot;bytes&quot;: 2481732,
+        &quot;calls&quot;: {
+          &quot;items&quot;: [
+            {
+              &quot;end_line&quot;: 40975,
+              &quot;form&quot;: &quot;name&quot;,
+              &quot;identifier&quot;: &quot;build_task_development_brief&quot;,
+              &quot;line&quot;: 40973,
+              &quot;resolution&quot;: &quot;unresolved&quot;,
+              &quot;scope&quot;: &quot;command_task_brief&quot;
+            }
+          ],
+          &quot;omitted&quot;: 0
+        },
+        &quot;definitions&quot;: {
+          &quot;items&quot;: [
+            {
+              &quot;decorated&quot;: false,
+              &quot;end_line&quot;: 40890,
+              &quot;kind&quot;: &quot;function&quot;,
+              &quot;line&quot;: 40809,
+              &quot;name&quot;: &quot;build_task_development_brief&quot;,
+              &quot;parameters&quot;: {
+                &quot;items&quot;: [
+                  {
+                    &quot;kind&quot;: &quot;positional_or_keyword&quot;,
+                    &quot;name&quot;: &quot;repo_root&quot;
+                  },
+                  {
+                    &quot;kind&quot;: &quot;positional_or_keyword&quot;,
+                    &quot;name&quot;: &quot;task_id&quot;
+                  },
+                  {
+                    &quot;kind&quot;: &quot;positional_or_keyword&quot;,
+                    &quot;name&quot;: &quot;path&quot;
+                  },
+                  {
+                    &quot;kind&quot;: &quot;keyword_only&quot;,
+                    &quot;name&quot;: &quot;symbol&quot;
+                  },
+                  {
+                    &quot;kind&quot;: &quot;keyword_only&quot;,
+                    &quot;name&quot;: &quot;related_paths&quot;
+                  }
+                ],
+                &quot;omitted&quot;: 0
+              },
+              &quot;qualified_name&quot;: &quot;build_task_development_brief&quot;,
+              &quot;scope&quot;: &quot;&lt;module&gt;&quot;
+            }
+          ],
+          &quot;omitted&quot;: 0
+        },
+        &quot;imports&quot;: {
+          &quot;items&quot;: [],
+          &quot;omitted&quot;: 0
+        },
+        &quot;match_state&quot;: &quot;found&quot;,
+        &quot;parser&quot;: {
+          &quot;grammar&quot;: [
+            3,
+            14
+          ],
+          &quot;implementation&quot;: &quot;CPython&quot;,
+          &quot;version&quot;: &quot;3.14.8&quot;
+        },
+        &quot;sha256&quot;: &quot;c06ddcc9f5f2f6771789623ba706075731f3fc5b529f147d63ff980430bb2e91&quot;,
+        &quot;state&quot;: &quot;parsed&quot;
+      }
+    },
+    {
+      &quot;path&quot;: &quot;.aide/scripts/tests/test_task_brief.py&quot;,
+      &quot;recorded_context&quot;: {
+        &quot;advisory&quot;: true,
+        &quot;evidence&quot;: {
+          &quot;caveats&quot;: [
+            &quot;Report revision is attribution, not current-byte verification.&quot;,
+            &quot;Missing links do not establish absence; do not narrow checks solely from this view.&quot;,
+            &quot;Similarity does not prove shared semantics or authorize refactoring.&quot;
+          ],
+          &quot;coverage&quot;: &quot;unindexed&quot;,
+          &quot;freshness&quot;: &quot;unverified&quot;,
+          &quot;ledger&quot;: &quot;.aide/reports/file-quality-ledger.json&quot;,
+          &quot;next_action&quot;: &quot;inspect the target and existing inventory; no file record was found&quot;,
+          &quot;path&quot;: &quot;.aide/scripts/tests/test_task_brief.py&quot;,
+          &quot;result&quot;: &quot;MISSING&quot;,
+          &quot;schema_version&quot;: &quot;aide.quality-explanation.v1&quot;,
+          &quot;source_commit&quot;: &quot;d71b40a99c56afa4b5a207d5949f199be684e033&quot;
+        },
+        &quot;freshness&quot;: &quot;unverified&quot;,
+        &quot;state&quot;: &quot;recorded&quot;
+      },
+      &quot;syntax&quot;: {
+        &quot;bytes&quot;: 12249,
+        &quot;calls&quot;: {
+          &quot;items&quot;: [
+            {
+              &quot;end_line&quot;: 64,
+              &quot;form&quot;: &quot;attribute&quot;,
+              &quot;identifier&quot;: &quot;build_task_development_brief&quot;,
+              &quot;line&quot;: 64,
+              &quot;resolution&quot;: &quot;unresolved&quot;,
+              &quot;scope&quot;: &quot;TaskBriefTests.view&quot;
+            },
+            {
+              &quot;end_line&quot;: 133,
+              &quot;form&quot;: &quot;attribute&quot;,
+              &quot;identifier&quot;: &quot;build_task_development_brief&quot;,
+              &quot;line&quot;: 133,
+              &quot;resolution&quot;: &quot;unresolved&quot;,
+              &quot;scope&quot;: &quot;TaskBriefTests.test_missing_task_does_not_read_auxiliary_records&quot;
+            },
+            {
+              &quot;end_line&quot;: 146,
+              &quot;form&quot;: &quot;attribute&quot;,
+              &quot;identifier&quot;: &quot;build_task_development_brief&quot;,
+              &quot;line&quot;: 146,
+              &quot;resolution&quot;: &quot;unresolved&quot;,
+              &quot;scope&quot;: &quot;TaskBriefTests.test_unsafe_or_noncanonical_paths_refuse_before_auxiliary_reads&quot;
+            }
+          ],
+          &quot;omitted&quot;: 0
+        },
+        &quot;definitions&quot;: {
+          &quot;items&quot;: [],
+          &quot;omitted&quot;: 0
+        },
+        &quot;imports&quot;: {
+          &quot;items&quot;: [],
+          &quot;omitted&quot;: 0
+        },
+        &quot;match_state&quot;: &quot;found&quot;,
+        &quot;parser&quot;: {
+          &quot;grammar&quot;: [
+            3,
+            14
+          ],
+          &quot;implementation&quot;: &quot;CPython&quot;,
+          &quot;version&quot;: &quot;3.14.8&quot;
+        },
+        &quot;sha256&quot;: &quot;57ac060081fd9da111e2cbf278ba8269f3ddd8f2792ac663852c5197383cc8c4&quot;,
+        &quot;state&quot;: &quot;parsed&quot;
+      }
+    }
+  ],
+  &quot;ledger_sha256&quot;: &quot;fa63e5a98682e243d8a8e64d6eb2b059f1cf38fb6f13bfa56b3ff1663c81d643&quot;,
+  &quot;next_action&quot;: &quot;Inspect the matching definitions and recorded checks before deciding reuse; broaden checks when coverage is incomplete.&quot;,
+  &quot;read_only&quot;: true,
+  &quot;result&quot;: &quot;PASS&quot;,
+  &quot;schema_version&quot;: &quot;aide.quality-symbol-inspection.v1&quot;,
+  &quot;selected_bytes&quot;: 2493981,
+  &quot;symbol&quot;: &quot;build_task_development_brief&quot;
+}</pre></details><section><h2>Evidence and lessons</h2><dl class="fields"><dt>Task evidence availability</dt><dd>[{&quot;applicability&quot;:&quot;unverified&quot;,&quot;availability&quot;:&quot;present&quot;,&quot;field&quot;:&quot;delivered_ref&quot;,&quot;path&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/pack-attempt-02.json&quot;,&quot;source&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;},{&quot;applicability&quot;:&quot;unverified&quot;,&quot;availability&quot;:&quot;record_too_large&quot;,&quot;field&quot;:&quot;preview_ref&quot;,&quot;path&quot;:null,&quot;source&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;},{&quot;applicability&quot;:&quot;unverified&quot;,&quot;availability&quot;:&quot;present&quot;,&quot;field&quot;:&quot;source_ref&quot;,&quot;path&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/source-attempt-01.json&quot;,&quot;source&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;}]</dd><dt>Lesson observation</dt><dd>observed</dd><dt>Selected lessons</dt><dd>0</dd><dt>Excluded lessons</dt><dd>1</dd></dl><p class="muted">Presence and matching hashes do not verify applicability, authorship or correctness.</p></section><details><summary>File relations and reuse candidates</summary><pre>{
+  &quot;caveats&quot;: [
+    &quot;Report revision is attribution, not current-byte verification.&quot;,
+    &quot;Missing links do not establish absence; do not narrow checks solely from this view.&quot;,
+    &quot;Similarity does not prove shared semantics or authorize refactoring.&quot;
+  ],
+  &quot;coverage&quot;: &quot;heuristic_incomplete&quot;,
+  &quot;freshness&quot;: &quot;unverified&quot;,
+  &quot;kind&quot;: &quot;tool&quot;,
+  &quot;ledger&quot;: &quot;.aide/reports/file-quality-ledger.json&quot;,
+  &quot;owner&quot;: &quot;AIDE Lite&quot;,
+  &quot;path&quot;: &quot;.aide/scripts/aide_lite.py&quot;,
+  &quot;quality_level&quot;: &quot;warn&quot;,
+  &quot;recommended_next_action&quot;: &quot;Inspect references and owner before any future refactor; do not delete from Q38 evidence.&quot;,
+  &quot;relations&quot;: {
+    &quot;dependency_refs&quot;: {
+      &quot;items&quot;: [
+        &quot;AGENTS.md&quot;,
+        &quot;DOCUMENTATION.md&quot;,
+        &quot;IMPLEMENT.md&quot;,
+        &quot;PLANS.md&quot;,
+        &quot;README.md&quot;,
+        &quot;ROADMAP.md&quot;,
+        &quot;bridges&quot;,
+        &quot;core&quot;,
+        &quot;core/compat&quot;,
+        &quot;core/compat/tests/test_compat_baseline.py&quot;,
+        &quot;core/compat/version_registry.py&quot;,
+        &quot;core/gateway&quot;,
+        &quot;core/gateway/README.md&quot;,
+        &quot;core/gateway/__init__.py&quot;,
+        &quot;core/gateway/gateway_status.py&quot;,
+        &quot;core/gateway/server.py&quot;,
+        &quot;core/harness&quot;,
+        &quot;core/harness/commands.py&quot;,
+        &quot;core/harness/tests/test_aide_harness.py&quot;,
+        &quot;core/harness/tests/test_aide_lite.py&quot;
+      ],
+      &quot;omitted&quot;: 36,
+      &quot;reason&quot;: &quot;recorded local reference; not complete impact analysis&quot;,
+      &quot;state&quot;: &quot;found&quot;
+    },
+    &quot;docs_refs&quot;: {
+      &quot;items&quot;: [],
+      &quot;omitted&quot;: 0,
+      &quot;reason&quot;: &quot;recorded documentation link&quot;,
+      &quot;state&quot;: &quot;not_found&quot;
+    },
+    &quot;exemptions&quot;: {
+      &quot;items&quot;: [],
+      &quot;omitted&quot;: 0,
+      &quot;reason&quot;: &quot;recorded lifecycle exemption&quot;,
+      &quot;state&quot;: &quot;not_found&quot;
+    },
+    &quot;test_refs&quot;: {
+      &quot;items&quot;: [
+        &quot;.aide/scripts/tests/test_adapter_compiler.py&quot;,
+        &quot;.aide/scripts/tests/test_aide_lite.py&quot;,
+        &quot;.aide/scripts/tests/test_cache_local_state.py&quot;,
+        &quot;.aide/scripts/tests/test_export_import.py&quot;,
+        &quot;.aide/scripts/tests/test_gateway_commands.py&quot;,
+        &quot;.aide/scripts/tests/test_golden_tasks.py&quot;,
+        &quot;.aide/scripts/tests/test_outcome_controller.py&quot;,
+        &quot;.aide/scripts/tests/test_provider_adapter.py&quot;,
+        &quot;.aide/scripts/tests/test_q27_commit_recovery.py&quot;,
+        &quot;.aide/scripts/tests/test_q28_git_workflow.py&quot;,
+        &quot;.aide/scripts/tests/test_q29_git_helper.py&quot;,
+        &quot;.aide/scripts/tests/test_q30_aide_dev_main_policy.py&quot;,
+        &quot;.aide/scripts/tests/test_q31_export_pack_governance.py&quot;,
+        &quot;.aide/scripts/tests/test_q34_changelog_release.py&quot;,
+        &quot;.aide/scripts/tests/test_q35_github_advisory.py&quot;,
+        &quot;.aide/scripts/tests/test_q36_intent_compiler.py&quot;,
+        &quot;.aide/scripts/tests/test_q37_repo_intelligence.py&quot;,
+        &quot;.aide/scripts/tests/test_q38_file_quality.py&quot;,
+        &quot;.aide/scripts/tests/test_review_pack.py&quot;,
+        &quot;.aide/scripts/tests/test_router_profile.py&quot;
+      ],
+      &quot;omitted&quot;: 2,
+      &quot;reason&quot;: &quot;heuristic likely test target; not an executed check&quot;,
+      &quot;state&quot;: &quot;found&quot;
+    },
+    &quot;warnings&quot;: {
+      &quot;items&quot;: [
+        &quot;large_module_candidate&quot;,
+        &quot;missing_doc_candidate&quot;,
+        &quot;mixed_purpose_candidate&quot;,
+        &quot;orphan_candidate&quot;,
+        &quot;public_surface_missing_doc_candidate&quot;,
+        &quot;reuse_candidate&quot;
+      ],
+      &quot;omitted&quot;: 0,
+      &quot;reason&quot;: &quot;recorded quality warning&quot;,
+      &quot;state&quot;: &quot;found&quot;
+    }
+  },
+  &quot;result&quot;: &quot;PASS&quot;,
+  &quot;reuse&quot;: {
+    &quot;items&quot;: [],
+    &quot;omitted&quot;: 0,
+    &quot;state&quot;: &quot;unindexed&quot;
+  },
+  &quot;schema_version&quot;: &quot;aide.quality-explanation.v1&quot;,
+  &quot;source_commit&quot;: &quot;d71b40a99c56afa4b5a207d5949f199be684e033&quot;,
+  &quot;status&quot;: &quot;active&quot;
+}</pre></details><details><summary>Selected and excluded lessons, with reasons</summary><pre>{
+  &quot;advisory_only&quot;: true,
+  &quot;authorship_verified&quot;: false,
+  &quot;excluded&quot;: [
+    {
+      &quot;id&quot;: &quot;portable-validation-fixture&quot;,
+      &quot;lesson_sha256&quot;: &quot;9d1943467cc9d23627070e1db20a5cc8be79b12e447629b0b00792a7f9b22406&quot;,
+      &quot;outcome_identity&quot;: [
+        &quot;lesson.portable-validation-fixture.v1&quot;,
+        &quot;AIDE-OUTCOME-LESSONS-01&quot;,
+        &quot;retained_validation_fixture_evidence&quot;
+      ],
+      &quot;reason&quot;: &quot;out_of_scope&quot;,
+      &quot;revision&quot;: 1
+    }
+  ],
+  &quot;execution_admitted&quot;: false,
+  &quot;ledger_sha256&quot;: &quot;50ef4662abccc26199fae681086650797b0ba94b0c11e4b31191cd5277e152a9&quot;,
+  &quot;ledger_state&quot;: &quot;observed&quot;,
+  &quot;path&quot;: &quot;.aide/scripts/aide_lite.py&quot;,
+  &quot;schema_version&quot;: &quot;aide.outcome-lessons-view.v1&quot;,
+  &quot;selected&quot;: [],
+  &quot;semantic_correctness_verified&quot;: false,
+  &quot;writes&quot;: false
+}</pre></details><details><summary>Task evidence, scope and continuation</summary><pre>{
+  &quot;execution_admitted&quot;: false,
+  &quot;read_only&quot;: true,
+  &quot;reason&quot;: &quot;Resolve missing, conflicting or unreadable records; preserve original evidence.&quot;,
+  &quot;recommendation&quot;: &quot;reconcile_records&quot;,
+  &quot;report_only&quot;: true,
+  &quot;safe_to_resume&quot;: null,
+  &quot;schema_version&quot;: &quot;aide.task-resume-plan.v1&quot;,
+  &quot;task&quot;: {
+    &quot;acceptance_verified&quot;: false,
+    &quot;declared_status&quot;: &quot;passed&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;applicability&quot;: &quot;unverified&quot;,
+        &quot;availability&quot;: &quot;present&quot;,
+        &quot;field&quot;: &quot;delivered_ref&quot;,
+        &quot;path&quot;: &quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/pack-attempt-02.json&quot;,
+        &quot;source&quot;: &quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;
+      },
+      {
+        &quot;applicability&quot;: &quot;unverified&quot;,
+        &quot;availability&quot;: &quot;record_too_large&quot;,
+        &quot;field&quot;: &quot;preview_ref&quot;,
+        &quot;path&quot;: null,
+        &quot;source&quot;: &quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;
+      },
+      {
+        &quot;applicability&quot;: &quot;unverified&quot;,
+        &quot;availability&quot;: &quot;present&quot;,
+        &quot;field&quot;: &quot;source_ref&quot;,
+        &quot;path&quot;: &quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/source-attempt-01.json&quot;,
+        &quot;source&quot;: &quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;
+      }
+    ],
+    &quot;index_status&quot;: &quot;passed&quot;,
+    &quot;issues&quot;: [],
+    &quot;next_action&quot;: &quot;exact terminal technical review and guarded dev/main integration&quot;,
+    &quot;objective&quot;: &quot;Read the existing task brief as a safe offline page&quot;,
+    &quot;owner&quot;: null,
+    &quot;read_only&quot;: true,
+    &quot;remaining_obligations&quot;: null,
+    &quot;result&quot;: &quot;SOURCE_AND_INSTALLED_PASS&quot;,
+    &quot;schema_version&quot;: &quot;aide.task-current.v1&quot;,
+    &quot;scope&quot;: {
+      &quot;acceptance_scope&quot;: null,
+      &quot;classification&quot;: null,
+      &quot;product_qualified&quot;: true,
+      &quot;review_gate&quot;: null,
+      &quot;target_mutated&quot;: null
+    },
+    &quot;selection&quot;: {
+      &quot;mode&quot;: &quot;explicit_request&quot;,
+      &quot;source&quot;: &quot;request&quot;
+    },
+    &quot;sources&quot;: {
+      &quot;declared_status&quot;: &quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/task.yaml&quot;,
+      &quot;index_status&quot;: &quot;.aide/queue/index.yaml&quot;,
+      &quot;next_action&quot;: &quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;,
+      &quot;objective&quot;: &quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/task.yaml&quot;,
+      &quot;result&quot;: &quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;,
+      &quot;scope&quot;: &quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;,
+      &quot;status&quot;: &quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;
+    },
+    &quot;status&quot;: &quot;passed&quot;,
+    &quot;task_id&quot;: &quot;AIDE-TASK-BRIEF-VIEW-01&quot;
+  }
+}</pre></details><details><summary>Source-record identities</summary><pre>{
+  &quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;: &quot;4816e6f9feea53c93c0358229828488b8e73315173f4e00b3b67444514f70cd0&quot;,
+  &quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/task.yaml&quot;: &quot;0a2038b6b6727465ccec717f10c0289cf5bc11a12c96282d06cd64e6f5222b3d&quot;,
+  &quot;.aide/queue/index.yaml&quot;: &quot;588f59944b5f1110df9b3aa249f31d5afecc66ffa4b58402a56fd67363e1361e&quot;,
+  &quot;.aide/reports/file-quality-ledger.json&quot;: &quot;fa63e5a98682e243d8a8e64d6eb2b059f1cf38fb6f13bfa56b3ff1663c81d643&quot;
+}</pre></details><section><h2>Observation limits</h2><p>No execution or acceptance authority. Whole-work usage remains unknown.</p><ul><li>No edit permission or task acceptance is established.</li><li>Quality links are incomplete and their freshness is unverified; do not narrow required checks.</li><li>Lessons retain unverified authorship and semantic correctness.</li><li>Missing information does not establish absence; no indexes were generated.</li><li>Fresh syntax covers selected files only; runtime binding, alias behavior and semantic equivalence remain unresolved.</li></ul></section><details><summary>Complete observation / JSON</summary><pre id="observation-json">{&quot;acceptance_verified&quot;:false,&quot;continuation&quot;:{&quot;execution_admitted&quot;:false,&quot;read_only&quot;:true,&quot;reason&quot;:&quot;Resolve missing, conflicting or unreadable records; preserve original evidence.&quot;,&quot;recommendation&quot;:&quot;reconcile_records&quot;,&quot;report_only&quot;:true,&quot;safe_to_resume&quot;:null,&quot;schema_version&quot;:&quot;aide.task-resume-plan.v1&quot;,&quot;task&quot;:{&quot;acceptance_verified&quot;:false,&quot;declared_status&quot;:&quot;passed&quot;,&quot;evidence&quot;:[{&quot;applicability&quot;:&quot;unverified&quot;,&quot;availability&quot;:&quot;present&quot;,&quot;field&quot;:&quot;delivered_ref&quot;,&quot;path&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/pack-attempt-02.json&quot;,&quot;source&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;},{&quot;applicability&quot;:&quot;unverified&quot;,&quot;availability&quot;:&quot;record_too_large&quot;,&quot;field&quot;:&quot;preview_ref&quot;,&quot;path&quot;:null,&quot;source&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;},{&quot;applicability&quot;:&quot;unverified&quot;,&quot;availability&quot;:&quot;present&quot;,&quot;field&quot;:&quot;source_ref&quot;,&quot;path&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/source-attempt-01.json&quot;,&quot;source&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;}],&quot;index_status&quot;:&quot;passed&quot;,&quot;issues&quot;:[],&quot;next_action&quot;:&quot;exact terminal technical review and guarded dev/main integration&quot;,&quot;objective&quot;:&quot;Read the existing task brief as a safe offline page&quot;,&quot;owner&quot;:null,&quot;read_only&quot;:true,&quot;remaining_obligations&quot;:null,&quot;result&quot;:&quot;SOURCE_AND_INSTALLED_PASS&quot;,&quot;schema_version&quot;:&quot;aide.task-current.v1&quot;,&quot;scope&quot;:{&quot;acceptance_scope&quot;:null,&quot;classification&quot;:null,&quot;product_qualified&quot;:true,&quot;review_gate&quot;:null,&quot;target_mutated&quot;:null},&quot;selection&quot;:{&quot;mode&quot;:&quot;explicit_request&quot;,&quot;source&quot;:&quot;request&quot;},&quot;sources&quot;:{&quot;declared_status&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/task.yaml&quot;,&quot;index_status&quot;:&quot;.aide/queue/index.yaml&quot;,&quot;next_action&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;,&quot;objective&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/task.yaml&quot;,&quot;result&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;,&quot;scope&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;,&quot;status&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;},&quot;status&quot;:&quot;passed&quot;,&quot;task_id&quot;:&quot;AIDE-TASK-BRIEF-VIEW-01&quot;}},&quot;execution_admitted&quot;:false,&quot;lesson_state&quot;:&quot;observed&quot;,&quot;lessons&quot;:{&quot;advisory_only&quot;:true,&quot;authorship_verified&quot;:false,&quot;excluded&quot;:[{&quot;id&quot;:&quot;portable-validation-fixture&quot;,&quot;lesson_sha256&quot;:&quot;9d1943467cc9d23627070e1db20a5cc8be79b12e447629b0b00792a7f9b22406&quot;,&quot;outcome_identity&quot;:[&quot;lesson.portable-validation-fixture.v1&quot;,&quot;AIDE-OUTCOME-LESSONS-01&quot;,&quot;retained_validation_fixture_evidence&quot;],&quot;reason&quot;:&quot;out_of_scope&quot;,&quot;revision&quot;:1}],&quot;execution_admitted&quot;:false,&quot;ledger_sha256&quot;:&quot;50ef4662abccc26199fae681086650797b0ba94b0c11e4b31191cd5277e152a9&quot;,&quot;ledger_state&quot;:&quot;observed&quot;,&quot;path&quot;:&quot;.aide/scripts/aide_lite.py&quot;,&quot;schema_version&quot;:&quot;aide.outcome-lessons-view.v1&quot;,&quot;selected&quot;:[],&quot;semantic_correctness_verified&quot;:false,&quot;writes&quot;:false},&quot;limitations&quot;:[&quot;No edit permission or task acceptance is established.&quot;,&quot;Quality links are incomplete and their freshness is unverified; do not narrow required checks.&quot;,&quot;Lessons retain unverified authorship and semantic correctness.&quot;,&quot;Missing information does not establish absence; no indexes were generated.&quot;,&quot;Fresh syntax covers selected files only; runtime binding, alias behavior and semantic equivalence remain unresolved.&quot;],&quot;next_action&quot;:&quot;reconcile_records&quot;,&quot;path&quot;:&quot;.aide/scripts/aide_lite.py&quot;,&quot;quality&quot;:{&quot;caveats&quot;:[&quot;Report revision is attribution, not current-byte verification.&quot;,&quot;Missing links do not establish absence; do not narrow checks solely from this view.&quot;,&quot;Similarity does not prove shared semantics or authorize refactoring.&quot;],&quot;coverage&quot;:&quot;heuristic_incomplete&quot;,&quot;freshness&quot;:&quot;unverified&quot;,&quot;kind&quot;:&quot;tool&quot;,&quot;ledger&quot;:&quot;.aide/reports/file-quality-ledger.json&quot;,&quot;owner&quot;:&quot;AIDE Lite&quot;,&quot;path&quot;:&quot;.aide/scripts/aide_lite.py&quot;,&quot;quality_level&quot;:&quot;warn&quot;,&quot;recommended_next_action&quot;:&quot;Inspect references and owner before any future refactor; do not delete from Q38 evidence.&quot;,&quot;relations&quot;:{&quot;dependency_refs&quot;:{&quot;items&quot;:[&quot;AGENTS.md&quot;,&quot;DOCUMENTATION.md&quot;,&quot;IMPLEMENT.md&quot;,&quot;PLANS.md&quot;,&quot;README.md&quot;,&quot;ROADMAP.md&quot;,&quot;bridges&quot;,&quot;core&quot;,&quot;core/compat&quot;,&quot;core/compat/tests/test_compat_baseline.py&quot;,&quot;core/compat/version_registry.py&quot;,&quot;core/gateway&quot;,&quot;core/gateway/README.md&quot;,&quot;core/gateway/__init__.py&quot;,&quot;core/gateway/gateway_status.py&quot;,&quot;core/gateway/server.py&quot;,&quot;core/harness&quot;,&quot;core/harness/commands.py&quot;,&quot;core/harness/tests/test_aide_harness.py&quot;,&quot;core/harness/tests/test_aide_lite.py&quot;],&quot;omitted&quot;:36,&quot;reason&quot;:&quot;recorded local reference; not complete impact analysis&quot;,&quot;state&quot;:&quot;found&quot;},&quot;docs_refs&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded documentation link&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;exemptions&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded lifecycle exemption&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;test_refs&quot;:{&quot;items&quot;:[&quot;.aide/scripts/tests/test_adapter_compiler.py&quot;,&quot;.aide/scripts/tests/test_aide_lite.py&quot;,&quot;.aide/scripts/tests/test_cache_local_state.py&quot;,&quot;.aide/scripts/tests/test_export_import.py&quot;,&quot;.aide/scripts/tests/test_gateway_commands.py&quot;,&quot;.aide/scripts/tests/test_golden_tasks.py&quot;,&quot;.aide/scripts/tests/test_outcome_controller.py&quot;,&quot;.aide/scripts/tests/test_provider_adapter.py&quot;,&quot;.aide/scripts/tests/test_q27_commit_recovery.py&quot;,&quot;.aide/scripts/tests/test_q28_git_workflow.py&quot;,&quot;.aide/scripts/tests/test_q29_git_helper.py&quot;,&quot;.aide/scripts/tests/test_q30_aide_dev_main_policy.py&quot;,&quot;.aide/scripts/tests/test_q31_export_pack_governance.py&quot;,&quot;.aide/scripts/tests/test_q34_changelog_release.py&quot;,&quot;.aide/scripts/tests/test_q35_github_advisory.py&quot;,&quot;.aide/scripts/tests/test_q36_intent_compiler.py&quot;,&quot;.aide/scripts/tests/test_q37_repo_intelligence.py&quot;,&quot;.aide/scripts/tests/test_q38_file_quality.py&quot;,&quot;.aide/scripts/tests/test_review_pack.py&quot;,&quot;.aide/scripts/tests/test_router_profile.py&quot;],&quot;omitted&quot;:2,&quot;reason&quot;:&quot;heuristic likely test target; not an executed check&quot;,&quot;state&quot;:&quot;found&quot;},&quot;warnings&quot;:{&quot;items&quot;:[&quot;large_module_candidate&quot;,&quot;missing_doc_candidate&quot;,&quot;mixed_purpose_candidate&quot;,&quot;orphan_candidate&quot;,&quot;public_surface_missing_doc_candidate&quot;,&quot;reuse_candidate&quot;],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded quality warning&quot;,&quot;state&quot;:&quot;found&quot;}},&quot;result&quot;:&quot;PASS&quot;,&quot;reuse&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;state&quot;:&quot;unindexed&quot;},&quot;schema_version&quot;:&quot;aide.quality-explanation.v1&quot;,&quot;source_commit&quot;:&quot;d71b40a99c56afa4b5a207d5949f199be684e033&quot;,&quot;status&quot;:&quot;active&quot;},&quot;read_only&quot;:true,&quot;result&quot;:&quot;PARTIAL&quot;,&quot;schema_version&quot;:&quot;aide.task-brief.v1&quot;,&quot;scope_ref&quot;:&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/task.yaml&quot;,&quot;snapshot&quot;:&quot;bounded_sequential_observations&quot;,&quot;symbol_inspection&quot;:{&quot;caveats&quot;:[&quot;Names, scopes and calls describe syntax; runtime binding, aliases and behavior remain unresolved.&quot;,&quot;Not found is not semantic absence; unselected files and unsupported syntax remain outside coverage.&quot;,&quot;Recorded owner, documentation and likely tests are advisory; freshness and complete impact are unverified.&quot;,&quot;Sequential byte rechecks are not an atomic snapshot; no project code was imported or executed.&quot;],&quot;coverage&quot;:&quot;explicit_selected_files_only&quot;,&quot;files&quot;:[{&quot;path&quot;:&quot;.aide/scripts/aide_lite.py&quot;,&quot;recorded_context&quot;:{&quot;advisory&quot;:true,&quot;evidence&quot;:{&quot;caveats&quot;:[&quot;Report revision is attribution, not current-byte verification.&quot;,&quot;Missing links do not establish absence; do not narrow checks solely from this view.&quot;,&quot;Similarity does not prove shared semantics or authorize refactoring.&quot;],&quot;coverage&quot;:&quot;heuristic_incomplete&quot;,&quot;freshness&quot;:&quot;unverified&quot;,&quot;kind&quot;:&quot;tool&quot;,&quot;ledger&quot;:&quot;.aide/reports/file-quality-ledger.json&quot;,&quot;owner&quot;:&quot;AIDE Lite&quot;,&quot;path&quot;:&quot;.aide/scripts/aide_lite.py&quot;,&quot;quality_level&quot;:&quot;warn&quot;,&quot;recommended_next_action&quot;:&quot;Inspect references and owner before any future refactor; do not delete from Q38 evidence.&quot;,&quot;relations&quot;:{&quot;dependency_refs&quot;:{&quot;items&quot;:[&quot;AGENTS.md&quot;,&quot;DOCUMENTATION.md&quot;,&quot;IMPLEMENT.md&quot;,&quot;PLANS.md&quot;,&quot;README.md&quot;,&quot;ROADMAP.md&quot;,&quot;bridges&quot;,&quot;core&quot;,&quot;core/compat&quot;,&quot;core/compat/tests/test_compat_baseline.py&quot;,&quot;core/compat/version_registry.py&quot;,&quot;core/gateway&quot;,&quot;core/gateway/README.md&quot;,&quot;core/gateway/__init__.py&quot;,&quot;core/gateway/gateway_status.py&quot;,&quot;core/gateway/server.py&quot;,&quot;core/harness&quot;,&quot;core/harness/commands.py&quot;,&quot;core/harness/tests/test_aide_harness.py&quot;,&quot;core/harness/tests/test_aide_lite.py&quot;],&quot;omitted&quot;:36,&quot;reason&quot;:&quot;recorded local reference; not complete impact analysis&quot;,&quot;state&quot;:&quot;found&quot;},&quot;docs_refs&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded documentation link&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;exemptions&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded lifecycle exemption&quot;,&quot;state&quot;:&quot;not_found&quot;},&quot;test_refs&quot;:{&quot;items&quot;:[&quot;.aide/scripts/tests/test_adapter_compiler.py&quot;,&quot;.aide/scripts/tests/test_aide_lite.py&quot;,&quot;.aide/scripts/tests/test_cache_local_state.py&quot;,&quot;.aide/scripts/tests/test_export_import.py&quot;,&quot;.aide/scripts/tests/test_gateway_commands.py&quot;,&quot;.aide/scripts/tests/test_golden_tasks.py&quot;,&quot;.aide/scripts/tests/test_outcome_controller.py&quot;,&quot;.aide/scripts/tests/test_provider_adapter.py&quot;,&quot;.aide/scripts/tests/test_q27_commit_recovery.py&quot;,&quot;.aide/scripts/tests/test_q28_git_workflow.py&quot;,&quot;.aide/scripts/tests/test_q29_git_helper.py&quot;,&quot;.aide/scripts/tests/test_q30_aide_dev_main_policy.py&quot;,&quot;.aide/scripts/tests/test_q31_export_pack_governance.py&quot;,&quot;.aide/scripts/tests/test_q34_changelog_release.py&quot;,&quot;.aide/scripts/tests/test_q35_github_advisory.py&quot;,&quot;.aide/scripts/tests/test_q36_intent_compiler.py&quot;,&quot;.aide/scripts/tests/test_q37_repo_intelligence.py&quot;,&quot;.aide/scripts/tests/test_q38_file_quality.py&quot;,&quot;.aide/scripts/tests/test_review_pack.py&quot;,&quot;.aide/scripts/tests/test_router_profile.py&quot;],&quot;omitted&quot;:2,&quot;reason&quot;:&quot;heuristic likely test target; not an executed check&quot;,&quot;state&quot;:&quot;found&quot;},&quot;warnings&quot;:{&quot;items&quot;:[&quot;large_module_candidate&quot;,&quot;missing_doc_candidate&quot;,&quot;mixed_purpose_candidate&quot;,&quot;orphan_candidate&quot;,&quot;public_surface_missing_doc_candidate&quot;,&quot;reuse_candidate&quot;],&quot;omitted&quot;:0,&quot;reason&quot;:&quot;recorded quality warning&quot;,&quot;state&quot;:&quot;found&quot;}},&quot;result&quot;:&quot;PASS&quot;,&quot;reuse&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0,&quot;state&quot;:&quot;unindexed&quot;},&quot;schema_version&quot;:&quot;aide.quality-explanation.v1&quot;,&quot;source_commit&quot;:&quot;d71b40a99c56afa4b5a207d5949f199be684e033&quot;,&quot;status&quot;:&quot;active&quot;},&quot;freshness&quot;:&quot;unverified&quot;,&quot;state&quot;:&quot;recorded&quot;},&quot;syntax&quot;:{&quot;bytes&quot;:2481732,&quot;calls&quot;:{&quot;items&quot;:[{&quot;end_line&quot;:40975,&quot;form&quot;:&quot;name&quot;,&quot;identifier&quot;:&quot;build_task_development_brief&quot;,&quot;line&quot;:40973,&quot;resolution&quot;:&quot;unresolved&quot;,&quot;scope&quot;:&quot;command_task_brief&quot;}],&quot;omitted&quot;:0},&quot;definitions&quot;:{&quot;items&quot;:[{&quot;decorated&quot;:false,&quot;end_line&quot;:40890,&quot;kind&quot;:&quot;function&quot;,&quot;line&quot;:40809,&quot;name&quot;:&quot;build_task_development_brief&quot;,&quot;parameters&quot;:{&quot;items&quot;:[{&quot;kind&quot;:&quot;positional_or_keyword&quot;,&quot;name&quot;:&quot;repo_root&quot;},{&quot;kind&quot;:&quot;positional_or_keyword&quot;,&quot;name&quot;:&quot;task_id&quot;},{&quot;kind&quot;:&quot;positional_or_keyword&quot;,&quot;name&quot;:&quot;path&quot;},{&quot;kind&quot;:&quot;keyword_only&quot;,&quot;name&quot;:&quot;symbol&quot;},{&quot;kind&quot;:&quot;keyword_only&quot;,&quot;name&quot;:&quot;related_paths&quot;}],&quot;omitted&quot;:0},&quot;qualified_name&quot;:&quot;build_task_development_brief&quot;,&quot;scope&quot;:&quot;&lt;module&gt;&quot;}],&quot;omitted&quot;:0},&quot;imports&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0},&quot;match_state&quot;:&quot;found&quot;,&quot;parser&quot;:{&quot;grammar&quot;:[3,14],&quot;implementation&quot;:&quot;CPython&quot;,&quot;version&quot;:&quot;3.14.8&quot;},&quot;sha256&quot;:&quot;c06ddcc9f5f2f6771789623ba706075731f3fc5b529f147d63ff980430bb2e91&quot;,&quot;state&quot;:&quot;parsed&quot;}},{&quot;path&quot;:&quot;.aide/scripts/tests/test_task_brief.py&quot;,&quot;recorded_context&quot;:{&quot;advisory&quot;:true,&quot;evidence&quot;:{&quot;caveats&quot;:[&quot;Report revision is attribution, not current-byte verification.&quot;,&quot;Missing links do not establish absence; do not narrow checks solely from this view.&quot;,&quot;Similarity does not prove shared semantics or authorize refactoring.&quot;],&quot;coverage&quot;:&quot;unindexed&quot;,&quot;freshness&quot;:&quot;unverified&quot;,&quot;ledger&quot;:&quot;.aide/reports/file-quality-ledger.json&quot;,&quot;next_action&quot;:&quot;inspect the target and existing inventory; no file record was found&quot;,&quot;path&quot;:&quot;.aide/scripts/tests/test_task_brief.py&quot;,&quot;result&quot;:&quot;MISSING&quot;,&quot;schema_version&quot;:&quot;aide.quality-explanation.v1&quot;,&quot;source_commit&quot;:&quot;d71b40a99c56afa4b5a207d5949f199be684e033&quot;},&quot;freshness&quot;:&quot;unverified&quot;,&quot;state&quot;:&quot;recorded&quot;},&quot;syntax&quot;:{&quot;bytes&quot;:12249,&quot;calls&quot;:{&quot;items&quot;:[{&quot;end_line&quot;:64,&quot;form&quot;:&quot;attribute&quot;,&quot;identifier&quot;:&quot;build_task_development_brief&quot;,&quot;line&quot;:64,&quot;resolution&quot;:&quot;unresolved&quot;,&quot;scope&quot;:&quot;TaskBriefTests.view&quot;},{&quot;end_line&quot;:133,&quot;form&quot;:&quot;attribute&quot;,&quot;identifier&quot;:&quot;build_task_development_brief&quot;,&quot;line&quot;:133,&quot;resolution&quot;:&quot;unresolved&quot;,&quot;scope&quot;:&quot;TaskBriefTests.test_missing_task_does_not_read_auxiliary_records&quot;},{&quot;end_line&quot;:146,&quot;form&quot;:&quot;attribute&quot;,&quot;identifier&quot;:&quot;build_task_development_brief&quot;,&quot;line&quot;:146,&quot;resolution&quot;:&quot;unresolved&quot;,&quot;scope&quot;:&quot;TaskBriefTests.test_unsafe_or_noncanonical_paths_refuse_before_auxiliary_reads&quot;}],&quot;omitted&quot;:0},&quot;definitions&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0},&quot;imports&quot;:{&quot;items&quot;:[],&quot;omitted&quot;:0},&quot;match_state&quot;:&quot;found&quot;,&quot;parser&quot;:{&quot;grammar&quot;:[3,14],&quot;implementation&quot;:&quot;CPython&quot;,&quot;version&quot;:&quot;3.14.8&quot;},&quot;sha256&quot;:&quot;57ac060081fd9da111e2cbf278ba8269f3ddd8f2792ac663852c5197383cc8c4&quot;,&quot;state&quot;:&quot;parsed&quot;}}],&quot;ledger_sha256&quot;:&quot;fa63e5a98682e243d8a8e64d6eb2b059f1cf38fb6f13bfa56b3ff1663c81d643&quot;,&quot;next_action&quot;:&quot;Inspect the matching definitions and recorded checks before deciding reuse; broaden checks when coverage is incomplete.&quot;,&quot;read_only&quot;:true,&quot;result&quot;:&quot;PASS&quot;,&quot;schema_version&quot;:&quot;aide.quality-symbol-inspection.v1&quot;,&quot;selected_bytes&quot;:2493981,&quot;symbol&quot;:&quot;build_task_development_brief&quot;},&quot;symbol_selection&quot;:[{&quot;path&quot;:&quot;.aide/scripts/aide_lite.py&quot;,&quot;reason&quot;:&quot;task_target&quot;},{&quot;path&quot;:&quot;.aide/scripts/tests/test_task_brief.py&quot;,&quot;reason&quot;:&quot;explicit_related_source&quot;}],&quot;task_record_sha256s&quot;:{&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml&quot;:&quot;4816e6f9feea53c93c0358229828488b8e73315173f4e00b3b67444514f70cd0&quot;,&quot;.aide/queue/AIDE-TASK-BRIEF-VIEW-01/task.yaml&quot;:&quot;0a2038b6b6727465ccec717f10c0289cf5bc11a12c96282d06cd64e6f5222b3d&quot;,&quot;.aide/queue/index.yaml&quot;:&quot;588f59944b5f1110df9b3aa249f31d5afecc66ffa4b58402a56fd67363e1361e&quot;,&quot;.aide/reports/file-quality-ledger.json&quot;:&quot;fa63e5a98682e243d8a8e64d6eb2b059f1cf38fb6f13bfa56b3ff1663c81d643&quot;},&quot;usage_coverage&quot;:&quot;unknown&quot;}</pre></details></main><footer><p class="identity">Observation SHA-256 (canonical JSON): <code>8557b71a217119c608eaa0d0ce6ad211e3ef50525841f3dbc87b441869e34a35</code></p><p class="muted">Project records own the work. This page contains no actions, scripts or remote resources.</p></footer></body></html>

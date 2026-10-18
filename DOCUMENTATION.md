@@ -1299,6 +1299,72 @@ Current writing guide: [commit discipline](docs/reference/commit-discipline.md),
 
 - [Successor integration](.aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/ExecPlan.md): qualified combined-source and installed-pack reconciliation of the [retained candidate evidence](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md); archive qualification is exact-subject evidence, not qualification of new combined bytes.
 
-- [Lite successor publication](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md):
-  exact frozen release, readable notes and postpublication acquisition plan.
-  Current state and remaining authentication/effect gates are in its status record.
+### Independent dependency cancellation
+
+[Local dependency requests](docs/reference/local-dependency-requests.md) describes explicit-v2 cancellation and compatibility. [Qualification report](.aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/REPORT.md) records passing source/CLI/MCP checks, preserved failures and cooperative limits.
+
+- [Dependency session reconciliation](docs/reference/local-dependency-requests.md):
+  explicit paused-state renewal/rebinding; source qualification tracked by
+  [the WorkUnit](.aide/queue/AIDE-DEPENDENCY-REBIND-01/ExecPlan.md).
+
+**Current campaign:** [.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md) explains scoped delivery, outstanding prerequisites and action owners; existing task/status and child evidence remain authoritative.
+
+### Optional Mini worker qualification
+
+[Adapter scope and recovery](docs/reference/mini-worker.md) explains the optional
+source binding, exact imports and fixture boundary.
+[Bounded work](.aide/queue/AIDE-MINI-WORKER-01/ExecPlan.md) retains the acquisition
+outcomes and completed scoped fixture qualification, integrated at 66c0b90b.
+That Mini increment left Lite exports and frozen archives unchanged.
+
+### Offline result exchange
+
+[Task handoff commands](docs/reference/task-os-report-only-commands.md) describe
+source-input-bound requests and candidate result inspection. [The bounded
+WorkUnit](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/ExecPlan.md) retains scope,
+qualification and integration evidence. [The completed report](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md)
+records 97 source and 97 delivered checks and installed recovery; no result is applied or accepted
+by inspection.
+
+### Fresh symbol discovery
+
+[File quality](docs/reference/file-quality-ledger.md) describes inspect-symbol,
+fresh syntax versus recorded context and its coverage limits. The
+[WorkUnit](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/ExecPlan.md) and
+[qualified report](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md) bind source and
+installed evidence, including preserved failure/recovery. Syntax evidence does
+not establish semantic equivalence.
+
+### Offline task brief presentation
+
+[Task packets](docs/reference/task-packets.md) defines the saved HTML observation,
+output boundaries and unchanged text/JSON behavior. The
+[WorkUnit](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/ExecPlan.md) and
+[qualified report](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md) bind source,
+delivered and installed evidence. A saved page is not live state or evidence of
+browser support.
+
+### Task brief with selected helper evidence
+
+[Task packets](docs/reference/task-packets.md) describes optional symbol selection
+and retained uncertainty. The [WorkUnit](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/ExecPlan.md)
+and [report](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/REPORT.md) bind source,
+delivered and installed qualification. Existing quality inspection remains the
+source owner; semantic impact and runtime resolution remain unqualified.
+
+### Task brief browser evidence
+
+[Observed profile and captures](.aide/queue/AIDE-TASK-BRIEF-BROWSER-01/REPORT.md)
+qualify the existing saved page at1280x1800 and480x1800 in installed
+Edge155.0.4283.62 headless software rendering. The
+[WorkUnit](.aide/queue/AIDE-TASK-BRIEF-BROWSER-01/ExecPlan.md) records unchanged
+product evidence and visual limits; interaction and accessibility remain unqualified.
+
+### Task evidence read budgets
+
+[Task packets](docs/reference/task-packets.md) distinguishes small record reads
+from bounded streaming evidence inspection. The
+[qualification report](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/REPORT.md) records
+source/delivered/installed behavior, safe paths and unchanged acceptance boundaries.
+
+- [Lite successor publication](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md): frozen1.1.0 delivery, pre-tag documentation, readable release/download presentation and acquired-byte acceptance. Authentication is established; exact refreshed effects remain pending.

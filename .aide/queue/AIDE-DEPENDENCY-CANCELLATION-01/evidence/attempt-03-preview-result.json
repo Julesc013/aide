@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "source_head": "a672797ff9cf27dc53ef2164322be55d623bdd68",
+  "source_range": "8fe2d12cbc9d91f034cf7f68c58beda09809dc58..a672797ff9cf27dc53ef2164322be55d623bdd68",
+  "commits": [
+    "a672797ff9cf27dc53ef2164322be55d623bdd68",
+    "c6dffcccf0a71f74006dce56558e1feb4c2afff1",
+    "ad6f61bb5ae2e5e00a4fe009538ce0f1280c0afe",
+    "55b5aabb94b51ec6998c75a34d6340a6a438b7bf",
+    "8a72f68c693c4a052e24a1d511d6fe329dd42106"
+  ],
+  "malformed_count": 0,
+  "sha256s": {
+    "CHANGELOG.preview.md": "702834a8347b9309ab83a8e6d4ac26fc00b49cffb00f4f79c19cb04176eeb77c",
+    "RELEASE_NOTES.preview.md": "342a2cbfa29828fb8ecfc49f7d45e7c2c8b862320970d2a16bba5beca5d6bfcf",
+    "changelog.preview.json": "ed8749655b6acfee320f54901503a7bd8f457bfa0ffd208e694a5d73435d99b2",
+    "latest-changelog-report.md": "1c6ded98ebce09c42b7446f494fb37f1626548d996fc78d5984c3df27fadc287",
+    "malformed-commits.md": "a0dc264d6e50137638f028edfe7b97436bdeb583ddfba0597f0413d313da9293",
+    "release-notes.preview.json": "358ed6d4f493fad675bbec96db42044a67914c333c8fff6e71bb2fb126d09640"
+  },
+  "regeneration": "read_only_exact_six_output_comparison",
+  "operations": {
+    "preview": {
+      "exit_code": 0,
+      "stdout_bytes": 519,
+      "stdout_sha256": "8c4a17de2174e2ad06cde03123950cc40ed5ffa9e398a5b57e80fbd899185976",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "preview-validate": {
+      "exit_code": 0,
+      "stdout_bytes": 2349,
+      "stdout_sha256": "eb5ba25320954d7fb10d12867818e67bb7ae7ef3f878daa54c49aeb385b5bc37",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "preview-status": {
+      "exit_code": 0,
+      "stdout_bytes": 348,
+      "stdout_sha256": "7a4ccdc04c183c70d557c60028a1068b14146e0ddd7cc0072a52818c5da4f50b",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "pack_metadata_changed": [
+    ".aide/export/aide-lite-pack-v0/manifest.yaml"
+  ],
+  "pack_payload_unchanged": 867,
+  "frozen_release_files_unchanged": 8
+}

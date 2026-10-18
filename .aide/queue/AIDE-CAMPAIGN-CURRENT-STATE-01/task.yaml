@@ -1,0 +1,27 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CAMPAIGN-CURRENT-STATE-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Make the current campaign state actionable without losing history
+type: maintenance
+status: passed_with_notes
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/task.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - .aide/changelog/**
+  forbidden_paths:
+    - runtime source, tests, policies or generated contract bindings
+    - historical evidence, child task records or existing ExecPlan history
+    - exported pack, frozen archives, publication branch or target repositories
+    - authentication, provider/model calls, host enrollment or live ledgers
+verification:
+  maximum_jobs: 1
+  config_digest: 61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90
+review_gate: exact_admission_source_effect_and_integration_review

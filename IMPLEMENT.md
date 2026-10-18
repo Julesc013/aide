@@ -14071,11 +14071,92 @@ Applied one frozen cutoff update under the standing owner instruction. Existing 
 
 Reconciled the original 98b7b2dc repair in two-parent merge 4edf2b14, retaining dfae9356 ancestry and newer features. The exporter binds effort accounting to its owned helper, avoiding project-owned core. Source 47, delivered 41, ownership six, the actual installed regression and fixed preview passed. The 870-member development pack was refreshed by its existing owner; original qualification and frozen 1.1.0 assets remain unchanged. Exact integration results belong to the child receipt.
 
-### Qualified successor release preparation ? 18 October 2026
+### Independent dependency cancellation
 
-Prepared the bounded publication packet, readable notes and tag annotation for
-frozen Lite 1.1.0. The acquisition wrapper reuses the original case 0 and recovery
-assertions plus existing stream capture and owned-fixture retirement.
-No release assets were rebuilt. No tag/publication/download/native effect ran.
-See the child preparation validation and review for exact scope; GitHub CLI
-interactive authentication is an outstanding prerequisite.
+Implemented explicit-v2 cancellation through existing Requests/MCP owners. Original v1 behavior and 60 regressions remain unchanged; 13 new methods, one fresh-process consumer and six ownership checks passed. Existing exporter refreshed only manifest provenance; no payload or release bytes changed. All three jobs retired.
+
+### Dependency reconciliation prepared
+
+AIDE-DEPENDENCY-REBIND-01 adds read-only plan/explicit apply through existing
+Requests and CLI, preserving request/native history and rejecting stale plans.
+Qualification is pending; no live ledger or host effect has run.
+
+Dependency reconciliation qualification passed all3 managed jobs: source88,
+two actual CLI/MCP workflows, frozen-reader compatibility, six ownership checks,
+metadata-only export and fixed preview. No live binding/host effect occurred.
+See the child report and observed integration receipt for exact delivery.
+
+**Campaign current-state preparation.** The parent status now names an owner, next action and open obligations within existing reader bounds. CURRENT.md links scoped child evidence; original task/status snapshots and complete ExecPlan history are retained. No runtime or package change.
+
+**Campaign current-state qualified.** Actual current/resume CLI, full validation, unchanged pack/release bytes and exact preview passed at7059f9b0; the single job is collected and retired. Parent history/requirements remain intact. See AIDE-CAMPAIGN-CURRENT-STATE-01/REPORT.md for scope and exact integration boundary.
+
+### AIDE-MINI-WORKER-01: Acquisition and optional binding
+
+The unchanged upstream DefaultAgent passed 15 native repair/refusal/recovery
+scenarios through the optional binding at e2902c21. Final passive compatibility,
+evidence preservation, unchanged 870 pack/eight release files and exact five-commit
+preview passed at cf77e790. All four jobs are retired, including the preserved
+initial acquisition failure. No model request, global install or target effect.
+See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md); the integration receipt will
+record the actual Git effects after terminal acceptance.
+
+### Offline result exchange qualified
+
+97 source and 97 delivered checks, six ownership checks, safe-installed partial/result
+continuation, replay, changed-input detection and real Mini record transfer passed.
+Doctor/full validation/pack status and fixed preview passed; all three jobs retired.
+The original capability/export FAIL evidence and review correction remain.
+See [the report](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md) for exact
+subjects and guarded integration. Eight frozen release assets are unchanged.
+
+### Fresh symbol discovery qualified
+
+The existing quality CLI and pure AST helper passed 44 source and 44 delivered
+checks, retaining all 23 original methods. Safe-installed read-only discovery,
+customization, helper ownership, core absence and the independent projection
+oracle passed. The omitted catalogue-delta assertion caused a retained job2
+failure; the reviewed final allocation reused its successful export and source
+checks. Three jobs retired; final validation and fixed preview passed. See the
+[report](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md) for exact scope and integration.
+
+### Offline task brief view qualified
+
+The pure stdlib renderer and --html option passed 104 source and 104 delivered
+checks, retaining all 84 originals. Real AIDE and safe-installed HTML/JSON
+observations match; customization, helper ownership, read-only behavior and the
+independent projection oracle passed. Three jobs retired, the fixed preview
+passed and eight frozen assets remain unchanged. Browser rendering is untested.
+See the [report](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md) for exact evidence
+and guarded integration; no browser/server or execution authority is added.
+
+### Combined task and fresh helper evidence qualified
+
+The existing brief optionally composes the unchanged inspector. All 77 source
+and 77 delivered methods passed, preserving 59 originals. Default formats match
+the predecessor bytes; actual helper/caller and source/installed observations
+agree. Customization, uncertainty and unfinished obligations remain visible.
+Three jobs retired; 875 package hashes and eight frozen assets verified.
+See the [report](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/REPORT.md). No new parser,
+index, service or execution authority is added.
+
+### Actual task-brief browser qualification
+
+Two installed Edge155.0.4283.62 captures preserved the complete saved observation.
+Actual root/independent screenshot reviews passed visible layout and wrapping;
+below-fold content and accessibility remain unqualified. Both jobs retired and
+the fixed preview passed. Product,875-member pack and eight frozen assets unchanged.
+[Report and captures](.aide/queue/AIDE-TASK-BRIEF-BROWSER-01/REPORT.md).
+
+### Retained task evidence remains inspectable
+
+The existing task reader hashes evidence up to 1 MiB in 64-KiB chunks while
+keeping record limits and path guards. Safe oversized references retain their
+paths. All 168 source and 168 delivered checks passed, preserving 162 originals.
+The actual prior failure and installed behavior are demonstrated; customization,
+unfinished adoption and non-authority fields remain. Three jobs retired, 875 pack
+members verified and eight frozen assets unchanged.
+[Report](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/REPORT.md).
+
+### Successor publication resumption ? 18 October 2026
+
+The existing release packet is being reconciled with current dev after operator-supplied authentication. Pre-tag documentation/TODO/changelog, unwrapped public Markdown and human download labels are required. Published1.0.0 presentation has an explicit metadata-only correction scope. Frozen assets and original qualification remain unchanged; publication and acquired-byte acceptance are pending.

@@ -1,0 +1,12 @@
+feat(requests): record independent dependency cancellation
+
+Keep normal progress and native work intact while the sender requests
+cancellation and the recipient reports its outcome. Require explicit v2
+configuration; preserve v1 behavior and reject silent migration.
+
+Validation: PASS - syntax, unchanged original test hashes and scoped diff
+ NOT RUN - 73 source checks and fresh-process consumer qualification
+Changelog: Added: Cooperative dependency cancellation and acknowledgement
+AIDE-Task: AIDE-DEPENDENCY-CANCELLATION-01
+AIDE-Format: compact-v1
+Follow-up: Qualify exact source and CLI/MCP workflow before integration

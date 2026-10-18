@@ -1,0 +1,12 @@
+test(requests): qualify cancellation beside continuing work
+
+Retain the passing source regression and prepare a fresh-process CLI/MCP
+exchange plus immutable old-reader refusal. Reuse exact unchanged package
+and release evidence without rebuilding their bytes.
+
+Validation: PASS - 73 source methods; collection and retirement verified
+ NOT RUN - fresh-process workflow, old-reader refusal and package identity
+Changelog: Internal: Bind cooperative cancellation consumer qualification
+AIDE-Task: AIDE-DEPENDENCY-CANCELLATION-01
+AIDE-Format: compact-v1
+Follow-up: Run the independently reviewed second job before promotion

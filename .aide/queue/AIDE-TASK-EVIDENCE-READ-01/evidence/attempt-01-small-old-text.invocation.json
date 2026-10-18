@@ -1,0 +1,26 @@
+{
+  "command": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-I",
+    "D:\\Projects\\AIDE\\aide\\.aide\\export\\aide-lite-pack-v0\\files\\.aide\\scripts\\aide_lite.py",
+    "--repo-root",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\cb8f978da79f4746bfcdbf0e8285cb4c\\tmp\\evidence-small-qztpfejd",
+    "task",
+    "current",
+    "--task-id",
+    "PROJECT-WORK-01"
+  ],
+  "cwd": "D:\\Projects\\AIDE\\aide",
+  "state": "completed",
+  "exit_code": 0,
+  "streams": {
+    "small-old-text.stdout": {
+      "bytes": 491,
+      "sha256": "e65baf35c844a729737a645e5f357bef66dd14cf3852d325a65fcf80c8c5873c"
+    },
+    "small-old-text.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

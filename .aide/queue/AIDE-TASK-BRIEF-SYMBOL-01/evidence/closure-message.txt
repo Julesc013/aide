@@ -1,0 +1,13 @@
+feat(task): qualify helper evidence in task briefs
+
+Connect explicit helper selection with existing task, ownership and lesson
+records. Show fresh definitions/callers and uncertainty while preserving default
+output and unfinished obligations across source and installed workflows.
+
+Validation: PASS - 77 source tests, 77 delivered tests and six ownership checks
+ PASS - default byte compatibility, actual source/installed consumers and customization
+ PASS - three retired jobs, 875 package hashes, fixed preview; eight frozen assets unchanged
+ NOT RUN - semantic impact analysis and browser rendering
+Changelog: Added: Optional fresh helper and related-source evidence in task briefs
+AIDE-Task: AIDE-TASK-BRIEF-SYMBOL-01
+AIDE-Format: compact-v1

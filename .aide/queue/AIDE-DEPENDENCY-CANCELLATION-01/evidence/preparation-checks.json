@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "scope": "source preparation only; no native tests",
+  "syntax_files": [
+    "core/runtime/continuous_worker/requests.py",
+    "core/runtime/continuous_worker/dependency_mcp.py",
+    ".aide/scripts/tests/test_continuous_worker_request_cancellation.py",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/run_checks.py"
+  ],
+  "original_test_hashes": {
+    "test_continuous_worker_requests.py": "d2cf61185a2eea24eaebc1bffd3f9a10f3f149f719ec579ea5e9d6c2a63e4ca3",
+    "test_continuous_worker_mcp.py": "280d21b0f106eb6953e9b0e0f1ae0de7bdf046e4968002b4c74e4b7d817a2223",
+    "test_continuous_worker_state.py": "d5756dcd987df58986442c31499489503ea6cd46a7bc9d90933ee3f793f08149"
+  }
+}

@@ -1,0 +1,11 @@
+feat(task): include selected helper evidence in briefs
+
+Reuse the existing symbol inspector when a helper is explicitly selected.
+Keep current source facts beside advisory ownership, tests and lessons;
+preserve default output and unresolved runtime behavior.
+
+Validation: PASS - syntax and scoped diff inspection
+ NOT RUN - 77 source checks and actual/default predecessor comparisons
+Changelog: Added: Optional fresh helper and related-source evidence in task briefs
+AIDE-Task: AIDE-TASK-BRIEF-SYMBOL-01
+AIDE-Format: compact-v1

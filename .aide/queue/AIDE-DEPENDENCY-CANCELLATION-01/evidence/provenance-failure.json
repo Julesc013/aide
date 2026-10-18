@@ -1,0 +1,10 @@
+{
+  "result": "FAIL_PRESERVED",
+  "phase": "read_only_preparation",
+  "jobs_consumed": 0,
+  "source_commit": "ad6f61bb5ae2e5e00a4fe009538ce0f1280c0afe",
+  "raw_output_sha256": "4eaa8599a961ceda3a647377051d671880b6213618394eb59d2844f6c3c467a3",
+  "output": "AIDE Lite validate\r\nstatus: FAIL\r\nchecks: 60917; PASS: 60914; WARN: 1; FAIL: 2; OTHER: 0\r\n- FAIL export pack provenance problem: manifest source_commit 02c90d6c7355f2432f381878298938afbbfc62bd does not match current HEAD ad6f61bb5ae2e5e00a4fe009538ce0f1280c0afe\r\n- FAIL pack-status problem: manifest source_commit 02c90d6c7355f2432f381878298938afbbfc62bd does not match current HEAD ad6f61bb5ae2e5e00a4fe009538ce0f1280c0afe\r\n- WARN review packet review ref missing: .aide/prompts/evidence-review.md\r\nomitted PASS details: 60914; use validate --full or --json for all results\r\n",
+  "cause": "pack_source_ancestor_has_unchanged_inputs checks portable directory prefixes; new source-only test is within .aide/scripts/tests, so ancestry reuse refuses even with identical delivered payload",
+  "disposition": "existing exporter refresh under amended third job; preserve payload and frozen archives; no provenance-rule change"
+}

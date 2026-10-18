@@ -1,0 +1,14 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-DEPENDENCY-CANCELLATION-01
+status: passed_with_notes
+result: SOURCE_CLI_MCP_LEGACY_AND_PREVIEW_PASS
+review_gate: exact_terminal_integration
+next_action: inspect_integration_receipt_and_remote_refs
+maximum_jobs: 3
+jobs_allocated: 3
+active_jobs: 0
+qualification_ref: REPORT.md
+integration_receipt: evidence/integration-result.log
+source_commit: 55b5aabb94b51ec6998c75a34d6340a6a438b7bf
+workflow_commit: ad6f61bb5ae2e5e00a4fe009538ce0f1280c0afe
+preview_commit: a672797ff9cf27dc53ef2164322be55d623bdd68

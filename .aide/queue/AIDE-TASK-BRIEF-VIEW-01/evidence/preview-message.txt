@@ -1,0 +1,12 @@
+test(task): qualify the delivered offline task brief
+
+Source and installed observations preserve the same complete task data and
+remaining obligations. Retain exact passing evidence and finish the fixed
+changelog preview before terminal review and integration.
+
+Validation: PASS - source104, delivered104, ownership6 and actual installed consumer
+ PASS - customization, read-only observations and independent projection oracle
+ NOT RUN - final preview; browser rendering remains unqualified
+Changelog: Internal: Retain delivered offline task brief qualification
+AIDE-Task: AIDE-TASK-BRIEF-VIEW-01
+AIDE-Format: compact-v1

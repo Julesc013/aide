@@ -1,0 +1,12 @@
+test(task): qualify installed helper evidence in briefs
+
+Retain complete source and installed observations, exact helper/caller locations
+and unchanged default output. Finish the fixed changelog preview before review
+and integration.
+
+Validation: PASS - source77, delivered77, ownership6 and installed consumer
+ PASS - default compatibility, customization and independent projection oracle
+ NOT RUN - final preview; browser rendering remains unqualified
+Changelog: Internal: Retain installed helper brief qualification
+AIDE-Task: AIDE-TASK-BRIEF-SYMBOL-01
+AIDE-Format: compact-v1

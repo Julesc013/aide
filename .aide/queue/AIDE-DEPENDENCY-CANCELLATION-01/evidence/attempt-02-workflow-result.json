@@ -1,0 +1,15 @@
+{
+  "tests_run": 1,
+  "failures": 0,
+  "errors": 0,
+  "skips": [],
+  "result": "PASS",
+  "old_reader_source": "8fe2d12cbc9d91f034cf7f68c58beda09809dc58",
+  "old_reader_sha256": "87ba68e7aefb3521956dafa00f3570ffa0ca9df2ef9ea6975ff20a21cf703cf8",
+  "old_reader_v2_refused": true,
+  "pack_files_unchanged": 870,
+  "release_files_unchanged": 8,
+  "live_deliveries": 0,
+  "models_requested": 0,
+  "native_cancellation_enforced": false
+}

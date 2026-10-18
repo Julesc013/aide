@@ -1,0 +1,126 @@
+{
+  "acceptance_verified": false,
+  "declared_status": "running",
+  "evidence": [
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "digest_verified": true,
+      "field": "current_state_ref",
+      "path": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "effort_ref",
+      "path": ".aide/queue/AIDE-REASONABLE-AUTOMATION-01/status.yaml",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "digest_verified": true,
+      "field": "historical_status_ref",
+      "path": ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-status.yaml",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "digest_verified": true,
+      "field": "historical_task_ref",
+      "path": ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-task.yaml",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "host_readiness_ref",
+      "path": ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/native-answer.md",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "native_adoption_ref",
+      "path": ".aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/status.yaml",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "planning_qualification_ref",
+      "path": ".aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/status.yaml",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "published_profile_ref",
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "request_continuity_ref",
+      "path": ".aide/queue/AIDE-DEPENDENCY-REBIND-01/REPORT.md",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "successor_qualification_ref",
+      "path": ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "successor_reconciliation_ref",
+      "path": ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/REPORT.md",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    }
+  ],
+  "index_status": "running",
+  "issues": [],
+  "next_action": "Prepare the next dependency-ready brief under existing P6/P7/P8 owners; resume release, host or native adoption only after its recorded prerequisite changes.",
+  "objective": "Preserve every initial contribution, reconcile verified private source material into live AIDE truth in reviewable increments, continue existing implementations, integrate only qualified work, and prepare an honestly scoped release without weakening existing gates.",
+  "owner": "AIDE campaign controller; project owners retain target acceptance",
+  "read_only": true,
+  "remaining_obligations": [
+    "Actual supported host delivery and bounded ordinary editing with interruption/recovery",
+    "DiskEd writer ownership, target effect review and native downstream acceptance preserving customization",
+    "Frozen 1.1.0 publication and acquired-byte checks after authentication and refreshed effect review",
+    "Whole-outcome effort accounting and matched accepted work; missing usage stays unknown",
+    "Repeated AIDE and downstream daily-use workflows with conserved results and controlled failure recovery",
+    "Remaining P0-P11 capability families under existing plan and independent implementation/activation/qualification gates"
+  ],
+  "result": "PENDING",
+  "schema_version": "aide.task-current.v1",
+  "scope": {
+    "acceptance_scope": "Partial exact-subject qualifications; daily-use and full platform acceptance remain open",
+    "classification": "admitted",
+    "product_qualified": false,
+    "review_gate": "admitted_by_owner",
+    "target_mutated": null
+  },
+  "selection": {
+    "mode": "explicit_request",
+    "source": "request"
+  },
+  "sources": {
+    "declared_status": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/task.yaml",
+    "index_status": ".aide/queue/index.yaml",
+    "next_action": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml",
+    "objective": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/task.yaml",
+    "owner": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml",
+    "remaining_obligations": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml",
+    "result": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml",
+    "scope": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml",
+    "status": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+  },
+  "status": "running",
+  "task_id": "AIDE-CONVERGENCE-AND-DELIVERY-01"
+}

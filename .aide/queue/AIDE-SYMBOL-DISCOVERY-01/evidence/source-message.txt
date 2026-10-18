@@ -1,0 +1,13 @@
+feat(quality): inspect fresh Python symbol evidence
+
+Find definitions, syntax references and recorded owner/test context in explicitly
+selected files before adding another helper. Preserve unresolved semantics,
+partial coverage and source identities without executing project code.
+
+Validation: PASS - structural parsing and original23 assertions retained
+ FAIL - existing capability binding stale; new helper absent from unrefreshed pack
+ NOT RUN - source44 and delivered/installed qualification
+Changelog: Added: Inspect Python definitions and syntax references in selected files
+Risk: Syntax matches do not establish runtime targets or complete test impact
+AIDE-Task: AIDE-SYMBOL-DISCOVERY-01
+AIDE-Format: compact-v1

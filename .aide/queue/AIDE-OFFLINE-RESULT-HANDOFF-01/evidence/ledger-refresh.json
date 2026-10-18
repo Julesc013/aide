@@ -1,0 +1,26 @@
+{
+  "result": "BINDING_CURRENT_VALIDATION_PENDING_EXPORT",
+  "classification_unchanged": true,
+  "after": {
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "c91920e2eaf226a3a03bc17370c8c9cf929a52af7f18b1864463622ee4ffac41",
+    ".aide/reports/capability-evidence-bindings.json": "2960caebe1982d5c6c1e858974025834be1af215928c23ca6eeb88ad4fd1a240",
+    ".aide/reports/capability-command-status.md": "dcbf83c5afdf348c55304e5938170f8394df85dc913e9b4fa9e24d7a0bd06db4"
+  },
+  "output_sha256": "8848b6ef789fa38921045a3311e9fbacecdbc86cfa808e0b8e838242f5b87059",
+  "binding": {
+    "state": "CURRENT",
+    "reason": "bound_source_inputs_unchanged",
+    "changed_refs": [],
+    "qualification": "source_classification_only"
+  },
+  "prior_doctor": {
+    "exit_code": 1,
+    "output_sha256": "20ed121a4a800922d8e21b9e7dc5b38c8a212405fa9cf6e987f97248cc93a64a"
+  },
+  "note": "Correction: doctor calls validate_repo directly, not a cached summary. Fresh validation now fails only two pack provenance assertions because exported source inputs changed at the committed source checkpoint. The reviewed owned exporter must refresh development bytes before these assertions can pass. Earlier binding and doctor/validation FAIL results retained; no assertion weakened.",
+  "validate": {
+    "exit_code": 1,
+    "output_sha256": "b2c641dc061cad9f293c66657799e61298ad4d05fdc70015af6150f6441f50ec"
+  }
+}

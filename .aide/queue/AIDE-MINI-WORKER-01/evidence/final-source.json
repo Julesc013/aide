@@ -1,0 +1,21 @@
+{
+  "base": "e2902c21c5d2cc23ed559867b87a0a2be7e02caf",
+  "files": {
+    ".aide/queue/AIDE-MINI-WORKER-01/ExecPlan.md": "744a22833e79ce0ae90f2e8e6ad721d15ed219db4e524460968ca1257a79fd97",
+    ".aide/queue/AIDE-MINI-WORKER-01/REPORT.md": "c4fa76dd55d25f3cfba989d47acd9a845935d2c2e62873d00b03b2fc10604f56",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/attempt-03-fixture-result.json": "2033633bf99e5364ad9e26e249644834afe7bba1f16d16e7907f70c7fbb6f7e0",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/attempt-03-stages.json": "71526fb258f1ad3ae542374f9753c7d1ec5ac7294069236820c1bebf9eaea344",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/final-effect.md": "c53c0f94a803e5ee6d616811fc56257036de993d32bb3afd8fc0efe8bf42bd68",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/final-job-template.json": "b9775eda8757e13dd1288f075accb75672c9358bd3f068358f1575964b9c5982",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/final-message.txt": "4b1ab133cdb483da5fec9959c54adb0989daf4edbb39105c3361b6884653a48d",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/fixture-attempt-03.json": "cd8601729465329dab2e452ff75d57620a4966ff25f87896c4279ef20ef8262f",
+    ".aide/queue/AIDE-MINI-WORKER-01/run_checks.py": "02478d734064757ae61240b690c0717026a36ad9980e6d48afe1a72c5ca13103",
+    ".aide/queue/AIDE-MINI-WORKER-01/status.yaml": "d09a3365f57e1a136575fe7b0a3ac4a0d6f0355753550e51f71bbf02a625c58f",
+    "IMPLEMENT.md": "a6509cab4f7e702bc764cb5b7d1854d2f8a58c80b39c77591f4750d9c6ddbeef",
+    "PLANS.md": "66a5d15a67bbc601b9d8a3789e21dbfaa583d56193f389fbb7bd04d778c07bde",
+    "docs/reference/mini-worker.md": "773a9da12aef2fc073746e4e71aa97a341ef0c4e2d1a7ea536bb30fc1104297f"
+  },
+  "message_sha256": "4b1ab133cdb483da5fec9959c54adb0989daf4edbb39105c3361b6884653a48d",
+  "effect_sha256": "c53c0f94a803e5ee6d616811fc56257036de993d32bb3afd8fc0efe8bf42bd68",
+  "job_template_sha256": "b9775eda8757e13dd1288f075accb75672c9358bd3f068358f1575964b9c5982"
+}

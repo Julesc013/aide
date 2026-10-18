@@ -1,0 +1,22 @@
+{
+  "base": "118ab7829f300050394dc67a3af943963acfe218",
+  "files": {
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/ExecPlan.md": "940859c35cf69e7767ee131dec40e6eddc9116f1c92ab2b97b6c7cc77db9ced1",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/admission-effect.md": "810710f2aa2412a8f2690408d312c41db7982d803b6815555568e784fd3d0ead",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/admission-message.txt": "23ce4f886a0babaa8f636ec634c2edf5006ad74e8ea958f36ccd2f33c199a6c9",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/baseline.json": "94f5518c4f8924e27fe6359d53528c95da36aaad1d57845d2b5d012b17fbf16c",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/changed-files.md": "27a4817e3aa8300350c090963430411e85db66a1d22c7409377a3b18f2ba1f1b",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/dev-review-packet.md": "c307c8c6ffe038a60a7ea60a2714b31839b5aa0f3d03511927d7a5643dec3e33",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/latest-intent-packet.json": "fe45d89c425b7bffd510cb19e009ce4464c58d49f69d07505ed5a4a0b08539e4",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/latest-intent-packet.md": "1b444eacab924f15361b53b6342d0e36f28f1138fcf118af8de2bb0b290fa779",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/latest-workunit-draft.json": "cceb65a61ba5664ff4d08649772c135e16ce7cc909ba43a3550db4d2180379dc",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/latest-workunit-draft.md": "194194e8d2bffb690de85210da9b22c669c51881486376990c686f2f03f49762",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/remaining-risks.md": "07ba1bb2aedc09d2d828c7d7cfc0581b4045198ef8cb05ad2628e2774ddb9b8e",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/validation.md": "f7d36222e4e350a3a8618e2038d079d5e68127120548bd1d33d234a66f7a5c4f",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/prompt.md": "aff48aac1e15dc1eb426e021b6a6592cef26a6f5b9e5398a6c2217bd4c31b091",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/status.yaml": "756e8d76c1aa614861cbae6f0968cc12f2ff38b5cf004f11e3ed4d9e75cd2971",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/task.yaml": "907e8e8c3c285abf31d56419d501131625564ea4739637f0845ee2f4b5ab4f3b"
+  },
+  "message_sha256": "23ce4f886a0babaa8f636ec634c2edf5006ad74e8ea958f36ccd2f33c199a6c9",
+  "effect_sha256": "810710f2aa2412a8f2690408d312c41db7982d803b6815555568e784fd3d0ead"
+}

@@ -1,0 +1,1 @@
+Fix the observed task-view evidence-size mismatch through the existing reader. Preserve bounded reads, path guards, hashes, incomplete evidence, and non-authorizing continuation. Qualify source and installed behavior and integrate under campaign gates. Do not reopen published qualification or unrelated blockers.

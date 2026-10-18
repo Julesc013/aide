@@ -1,0 +1,51 @@
+{
+  "schema": "aide.task-brief-symbol.integration-effect.v1",
+  "base": "75b9612ab6d7e84a2045afa7ab3a6aa2360a503b",
+  "candidate": "Exact closure map; substitute only resulting managed commit/tree.",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "task_branch": "task/aide-task-brief-symbol-01",
+  "preserved_qualification_ref": "task/aide-lite-successor-qualification-01",
+  "preserved_qualification_commit": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "preserved_publication_ref": "task/aide-lite-successor-publication-01",
+  "preserved_publication_commit": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+  "known_historical_presentation_failures": [],
+  "effects": [
+    "After exact terminal ACCEPT, managed dry-run/apply commits only closure map and mapped paths with exact message/ref/parent/tree. Strict latest and full base..candidate checks must PASS.",
+    "Under shared estate/dispatch locks require exact config/running controls/no active job, sole checkout, clean candidate/tree, ready helper plan and exact local/remote dev/main base. Preserve both named task refs. Fetch only dev/main without tags and reobserve.",
+    "CAS fast-forward local dev from base to candidate; nonforce explicit candidate:refs/heads/dev push; read back exact remote state.",
+    "Run full validation and strict complete-range check again, recheck controls/refs/tree and remote state. CAS fast-forward main from base; nonforce explicit push; read back both heads.",
+    "Verify exact four-commit preview through 8965309a17fddbe4408b11c16371b89a31014807; three retired successful attempts; source77/delivered77/ownership6, unchanged default bytes, actual helper and installed full HTML/JSON equality, customization, remaining obligations and independent projection oracle; 875 pack members and eight frozen assets. Preserve both named successor refs.",
+    "Only after both refs/postchecks pass, switch to dev, verify clean exact task-ref ancestry, delete only this local task branch using branch -d. Verify final local/tracking refs and dfae9356 ancestry."
+  ],
+  "required_evidence": [
+    "77 source and77 delivered methods, all59 originals unchanged; zero failures/errors/skips.",
+    "Six ownership checks; actual safe install, core absence, customization, two helper ownership receipts, independent binding-line oracle, unchanged records/no bytecode.",
+    "Default text/JSON/HTML byte-identical to predecessor; actual helper/caller and source/installed full observation equal. Actual task PARTIAL/reconcile and unfinished adoption preserved.",
+    "Three jobs collected/digest-verified/retired with scratch absent/reservations released; no further allocation.",
+    "Doctor/full validation/pack status/fixed four-commit preview PASS; original structural FAIL and advisory warning retained.",
+    "875 development-pack hashes and eight frozen assets unchanged; source range/closure message PASS. Semantic/browser/host/model/release limits retained."
+  ],
+  "failure_response": "Retain started/completed command streams and identities. Stop on changed inputs/refs or any failed check; reconcile observed effects before any retry.",
+  "forbidden": [
+    "force push",
+    "history rewrite",
+    "protection change or bypass",
+    "tag/release effects",
+    "unrelated branch deletion",
+    "live target or ledger mutation",
+    "model/provider requests",
+    "package rebuild",
+    "further job allocation"
+  ],
+  "controller": {
+    "path": ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/integration-runner.log",
+    "sha256": "e034b886bb69ee1abce25077a3b3a623b5a65954b581ad42a3120aa105e20d93",
+    "prior_path": ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/integration-runner.log",
+    "prior_sha256": "5b1dce76b33ebae3975bf0338f75bc481e201be38ef56fe9f2bd259a4d5bc8f0",
+    "permitted_substitutions": [
+      "Only task path AIDE-TASK-BRIEF-VIEW-01 to AIDE-TASK-BRIEF-SYMBOL-01. Closure commit/tree from exact managed receipt; all other controller bytes unchanged."
+    ]
+  }
+}

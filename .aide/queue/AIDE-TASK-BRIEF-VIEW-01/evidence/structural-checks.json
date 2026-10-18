@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "parsed": [
+    ".aide/scripts/aide_lite.py",
+    ".aide/scripts/task_brief_view.py",
+    ".aide/scripts/tests/test_task_brief_view.py",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/run_checks.py"
+  ],
+  "original84_files_byte_identical": true,
+  "new_test_methods": 20,
+  "tests_run": false
+}

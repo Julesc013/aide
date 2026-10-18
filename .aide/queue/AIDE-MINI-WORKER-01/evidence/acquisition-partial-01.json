@@ -1,0 +1,103 @@
+{
+  "schema": "aide.mini-worker.acquisition.v1",
+  "status": "INCOMPLETE",
+  "wheels": [
+    {
+      "name": "mini-swe-agent",
+      "version": "2.4.6",
+      "filename": "mini_swe_agent-2.4.6-py3-none-any.whl",
+      "bytes": 115037,
+      "sha256": "a35463c553ac825c7773b03cfa69cd44958e3af20155dcc5711fdf9e4c67cd54",
+      "url": "https://files.pythonhosted.org/packages/a2/00/a2f454775f69f540ab529c5f5e35d672f6491f0e6edab7cb196a0d2a0e2e/mini_swe_agent-2.4.6-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/mini-swe-agent/2.4.6/json",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "pyyaml",
+        "requests",
+        "jinja2",
+        "pydantic>=2.0",
+        "litellm!=1.82.7,!=1.82.8,>=1.75.5",
+        "tenacity",
+        "rich",
+        "python-dotenv",
+        "typer",
+        "platformdirs",
+        "textual",
+        "prompt_toolkit",
+        "datasets",
+        "openai!=1.100.0,!=1.100.1",
+        "mini-swe-agent[dev]; extra == \"full\"",
+        "swe-rex>=1.4.0; extra == \"full\"",
+        "mini-swe-agent[modal]; extra == \"full\"",
+        "mini-swe-agent[contree]; extra == \"full\"",
+        "modal; extra == \"modal\"",
+        "boto3; extra == \"modal\"",
+        "pytest; extra == \"dev\"",
+        "pytest-cov; extra == \"dev\"",
+        "pytest-asyncio; extra == \"dev\"",
+        "pytest-xdist; extra == \"dev\"",
+        "pre-commit; extra == \"dev\"",
+        "ruff; extra == \"dev\"",
+        "mkdocs-include-markdown-plugin; extra == \"dev\"",
+        "mkdocstrings[python]>=0.18; extra == \"dev\"",
+        "mike; extra == \"dev\"",
+        "mkdocs-material; extra == \"dev\"",
+        "mkdocs-glightbox; extra == \"dev\"",
+        "mkdocs-redirects; extra == \"dev\"",
+        "portkey-ai; extra == \"dev\"",
+        "swe-rex; extra == \"dev\"",
+        "contree-sdk>=0.2.0; extra == \"contree\""
+      ],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "unpacked_bytes": 296029,
+      "members": 76,
+      "notices": [
+        {
+          "path": "mini_swe_agent-2.4.6.dist-info/licenses/LICENSE.md",
+          "bytes": 1094,
+          "sha256": "0f796e58f91d1c07bb2c1b1d0f8bf3a83017c3a5dec1bdc6fae733b2cd2e875b"
+        }
+      ],
+      "upstream_source_matches": [
+        {
+          "wheel_path": "minisweagent/__init__.py",
+          "source_path": "src/minisweagent/__init__.py",
+          "sha256": "0a708308b1b62cc020b60799c3d54f665845f795b3f0c4fdac787c96a38d12c7"
+        },
+        {
+          "wheel_path": "minisweagent/agents/default.py",
+          "source_path": "src/minisweagent/agents/default.py",
+          "sha256": "e8ef8aa365942d739c2ec5cb0879f60f377d2dc2de8ec670aaedf3bafb45a4c2"
+        },
+        {
+          "wheel_path": "minisweagent/exceptions.py",
+          "source_path": "src/minisweagent/exceptions.py",
+          "sha256": "0590393c56bee873c79a691dcb4f15cb39c85f1658598b84bfb295bfde56921d"
+        },
+        {
+          "wheel_path": "minisweagent/utils/serialize.py",
+          "source_path": "src/minisweagent/utils/serialize.py",
+          "sha256": "3035b27cfeffdf91117c72bc8131340bd9c5f67a3010baeb4ecd6b0c7406f462"
+        },
+        {
+          "wheel_path": "minisweagent/utils/log.py",
+          "source_path": "src/minisweagent/utils/log.py",
+          "sha256": "aee0cc34a32b542f4d3ef09e1f03b7418cf98ec54d506401d9d4401003c05a9f"
+        },
+        {
+          "wheel_path": "mini_swe_agent-2.4.6.dist-info/licenses/LICENSE.md",
+          "source_path": "LICENSE.md",
+          "sha256": "0f796e58f91d1c07bb2c1b1d0f8bf3a83017c3a5dec1bdc6fae733b2cd2e875b"
+        }
+      ]
+    }
+  ],
+  "compressed_bytes": 115037,
+  "unpacked_bytes": 296029,
+  "archive_members": 76,
+  "selected_profile": "deterministic custom Model and Environment; not full declared Mini installation",
+  "downloaded_code_executed": false,
+  "global_installation": false,
+  "model_requests": 0,
+  "authenticity_qualification": "not_claimed"
+}

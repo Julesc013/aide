@@ -4162,9 +4162,80 @@ items:
     exec_plan: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/ExecPlan.md
     evidence: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence
 
-  - id: AIDE-LITE-SUCCESSOR-PUBLICATION-01
-    title: Publish and acquire the qualified Lite successor
-    status: needs_review
-    task: .aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/task.yaml
-    exec_plan: .aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md
-    evidence: .aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence
+  - id: AIDE-DEPENDENCY-CANCELLATION-01
+    title: Independent cooperative dependency cancellation
+    status: passed_with_notes
+    task: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence
+
+  - id: AIDE-DEPENDENCY-REBIND-01
+    title: Preserve pending requests across explicit session reconciliation
+    status: passed_with_notes
+    task: .aide/queue/AIDE-DEPENDENCY-REBIND-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DEPENDENCY-REBIND-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence
+
+  - id: AIDE-CAMPAIGN-CURRENT-STATE-01
+    title: Make the current campaign state actionable without losing history
+    status: passed_with_notes
+    task: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence
+
+- id: AIDE-MINI-WORKER-01
+  title: Qualify one optional upstream Mini worker fixture
+  type: implementation
+  status: passed
+  path: .aide/queue/AIDE-MINI-WORKER-01
+  parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+  description: Exact upstream DefaultAgent acquisition and source-only deterministic fixture under existing managed execution; no live model/provider route or full Mini CLI qualification.
+
+- id: AIDE-OFFLINE-RESULT-HANDOFF-01
+  title: Return offline work against exact request and source inputs
+  type: implementation
+  status: passed
+  path: .aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01
+  parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+
+- id: AIDE-SYMBOL-DISCOVERY-01
+  title: Inspect fresh Python syntax before choosing reuse
+  type: implementation
+  status: passed
+  path: .aide/queue/AIDE-SYMBOL-DISCOVERY-01
+  parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+
+- id: AIDE-TASK-BRIEF-VIEW-01
+  title: Read the existing task brief as a safe offline page
+  type: implementation
+  status: passed
+  path: .aide/queue/AIDE-TASK-BRIEF-VIEW-01
+  parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+
+- id: AIDE-TASK-BRIEF-SYMBOL-01
+  title: Inspect an existing helper within its task brief
+  type: implementation
+  status: passed
+  path: .aide/queue/AIDE-TASK-BRIEF-SYMBOL-01
+  parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+
+- id: AIDE-TASK-BRIEF-BROWSER-01
+  title: Qualify the saved task brief in the installed Windows browser
+  type: qualification
+  status: passed
+  path: .aide/queue/AIDE-TASK-BRIEF-BROWSER-01
+  parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+
+- id: AIDE-TASK-EVIDENCE-READ-01
+  title: Inspect retained task evidence without loading large bodies
+  type: implementation
+  status: passed
+  path: .aide/queue/AIDE-TASK-EVIDENCE-READ-01
+  parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+
+- id: AIDE-LITE-SUCCESSOR-PUBLICATION-01
+  title: Publish the qualified successor with coherent release documentation
+  type: release
+  status: needs_review
+  path: .aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01
+  parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

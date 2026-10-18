@@ -1,0 +1,155 @@
+{
+  "acceptance_verified": false,
+  "declared_status": "running",
+  "evidence": [
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "actual_cooperative_review_ref",
+      "path": ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/status.yaml",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "actual_user_strict_mxc_ref",
+      "path": ".aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "capability_evidence_validity_ref",
+      "path": ".aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/REPORT.md",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "compact_communication_result_ref",
+      "path": ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/REPORT.md",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "context_task_selection_ref",
+      "path": ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/status.yaml",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "context_task_selection_result_ref",
+      "path": ".aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/REPORT.md",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "cooperative_dependency_interface_ref",
+      "path": ".aide/queue/AIDE-DEPENDENCY-MCP-01/REPORT.md",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "cooperative_review_result_ref",
+      "path": ".aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/operational-result.json",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "current_client_configuration_ref",
+      "path": ".aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/changed-backend-qualification.json",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "current_delivery_checkpoint_ref",
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-package-qualified.json",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "current_outer_client_capability_ref",
+      "path": ".aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "current_qualification_ref",
+      "path": ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/REPORT.md",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "current_removal_effect_ref",
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-effect.json",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "current_removal_results_ref",
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-results.md",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "current_removal_technical_acceptance_ref",
+      "path": ".aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-acceptance.json",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "current_strict_mxc_prerequisite_ref",
+      "path": ".aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    }
+  ],
+  "index_status": "running",
+  "issues": [
+    {
+      "code": "reference_limit",
+      "field": "",
+      "source": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+    }
+  ],
+  "next_action": null,
+  "objective": "Preserve every initial contribution, reconcile verified private source material into live AIDE truth in reviewable increments, continue existing implementations, integrate only qualified work, and prepare an honestly scoped release without weakening existing gates.",
+  "owner": null,
+  "read_only": true,
+  "remaining_obligations": "actual_selected_route_qualification_whole_usage_and_target_owned_admission_remain",
+  "result": "PENDING",
+  "schema_version": "aide.task-current.v1",
+  "scope": {
+    "acceptance_scope": null,
+    "classification": "admitted",
+    "product_qualified": null,
+    "review_gate": "admitted_by_owner",
+    "target_mutated": null
+  },
+  "selection": {
+    "mode": "explicit_request",
+    "source": "request"
+  },
+  "sources": {
+    "declared_status": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/task.yaml",
+    "index_status": ".aide/queue/index.yaml",
+    "objective": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/task.yaml",
+    "remaining_obligations": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml",
+    "result": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml",
+    "scope": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml",
+    "status": ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+  },
+  "status": "running",
+  "task_id": "AIDE-CONVERGENCE-AND-DELIVERY-01"
+}

@@ -1,0 +1,15 @@
+{
+  "base": "29f4bf5c1f23a923b0ea97e1826ab9fff4c734fc",
+  "previous_turn": "progress: integration completed and verified",
+  "refs": {
+    "refs/heads/dev": "29f4bf5c1f23a923b0ea97e1826ab9fff4c734fc",
+    "refs/heads/main": "29f4bf5c1f23a923b0ea97e1826ab9fff4c734fc",
+    "refs/heads/task/aide-lite-successor-publication-01": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+    "refs/heads/task/aide-lite-successor-qualification-01": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1"
+  },
+  "prior_files": {
+    "task.yaml": "9d686a19f9b774b218f9284be0bb11cf38b288dc725f32c7d0ad7bbab37e789a",
+    "status.yaml": "797b885d9b9beee5a17435210f002cfba91ff344eef227af6ceca2dd32214384"
+  },
+  "observed_gap": "Current campaign observation has reference_limit, null next_action and null owner; stale pending and old host facts mixed with later completions."
+}

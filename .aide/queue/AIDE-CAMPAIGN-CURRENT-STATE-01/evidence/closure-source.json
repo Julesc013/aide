@@ -1,0 +1,43 @@
+{
+  "base": "7059f9b0cfd490415e86e01d5c5c68fd7a695430",
+  "files": {
+    ".aide/changelog/CHANGELOG.preview.md": "cb9dfc58c06f500f6d628144b240e09090b78943d4a46caaa53770e4bb9216bd",
+    ".aide/changelog/RELEASE_NOTES.preview.md": "2c4711a06c3be9f746907e19231a393f0abce582d984f1418271053074ffd5b9",
+    ".aide/changelog/changelog.preview.json": "ac0b8630fb883adc11d54ee2107fe44e1efdd4bbb080b397d9cd48419d1e91bd",
+    ".aide/changelog/latest-changelog-report.md": "24d5ff2cec3b2dc54892796ff4ef89bec944094890706fca314b196d4dc1b226",
+    ".aide/changelog/malformed-commits.md": "746641bea094826efa7b467ddf9421985def9848efb897074a83e0a7f4b62b71",
+    ".aide/changelog/release-notes.preview.json": "7ee078fda6ae872e5738b1281c83cf817686efdaefd67f0bfb0231be480a77aa",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/ExecPlan.md": "4a70436a9a30ad9f8374a568d12af941c5a53b72cbd201671327afb01fb53347",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/REPORT.md": "542c64359cfeb580b85956135c062b4075cb5e8e7d1a5df0e9bc2a558c23dc7c",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/attempt-01-preview-result.json": "bd420a0f4f3708986753f805fe59ff9ed1fb85d45976ddee7536431a988eb938",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/attempt-01-qualification.json": "8181fc9d69b4c1b766f74dc4be7210ffa90f19b98621cdc7d8a7575eafc02a53",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/changed-files.md": "b121265725e92c03b94b052975990321294db65a7e6b727b2cfab93a5981ae6c",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/closure-message.txt": "da38770d08ab907c920d0a353db9a83c5d202213ff8f2e4b77241e22d9b41cef",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/closure-scope-repair.json": "c8dbf059e1deda980ab3b3bc5a0e8d7108e60706875d1a84044612afc0364791",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/closure-validation.json": "5dc7322666108c26271601b0c152045594a87ab22f24e3a51cd33249209da641",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/current-qualified.json": "dffed30d542c086f7a164e134c5fc789c85d8a0ad726c5de4c1429043cc526d0",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/dev-review-packet.md": "8ea0af1a28d5629d2b62f27e5924963d3de31f1b8adcf1b54d5fd470ee0f46d0",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/integration-effect.json": "97e571e0af20aebff69e1870711666bb3d8c643505515988f316190a576090b5",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/pack-qualified.txt": "2d5c0e4deb58a0327e18397b9f68ec498d389d30402672d25a7628d5217a59d5",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/remaining-risks.md": "0ef1bee36915e595b1f7e380b64175e2f0678d312c4b90925fc04de9d92052b8",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/resume-qualified.json": "1265145a9880ed805b79f8c0b74be6dc85bfd35bce546ce1dcedb1bfd27e0338",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/source-attempt-01.json": "77e8c16dc85bc27a803ba41e3a5b3546f1c23a8175945731de80861f379dfc0b",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/source-review.md": "935daa31f1e5c53605a3acd7ac0bb1ceee3f2f533e9b735b2dd1bfed4984c987",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/validation-qualified.txt": "4d0f483657d4b13d111ec9acff2a7cebc433b9154e33fb663e1313b2e05ca3f0",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/validation.md": "4aae58dcad41cf3f83728bf829fb3893c0609783b0eb953fa2e331993e227228",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/status.yaml": "1cd3d9d743791a93a7c6adfa19229086ddbebcf3e03a57271dcf548e2207719c",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/task.yaml": "62bdf9851be3b34cbe3f5665da547ea84de7e5c500bcd4374f6a8d01faa001e1",
+    ".aide/queue/index.yaml": "bc7e8ae1a2f33178986c98047f7e82db5d27000400c95d31887613ba3ebc3dd9",
+    "IMPLEMENT.md": "d1fbff079035e3ccbc4899d1926525a314e420d6d7b3e667bd66764f042af9da",
+    "PLANS.md": "7abcf6353754fcb29342d7cbaf217ffa502a2ce23ec5c091da12542a8f957a17"
+  },
+  "message_sha256": "da38770d08ab907c920d0a353db9a83c5d202213ff8f2e4b77241e22d9b41cef",
+  "effect_sha256": "97e571e0af20aebff69e1870711666bb3d8c643505515988f316190a576090b5",
+  "integration_runner_sha256": "65b407832a6e3a002024ac1520ece35808c7e59708ccb66720f7c6de0c9ad873",
+  "pre_normalization_manifest": {
+    "commit": "452e9807160de50d6346005956697e97cedec254",
+    "path": ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/closure-source.json",
+    "sha256": "4440d66eafd1cc5a92721ed16e0bae9098ad6060e831721682d537561797ca2d"
+  },
+  "evidence_text_normalization": "Five captured text/JSON projections use repository LF; original worker collection and raw identities are preserved in normalization.json."
+}

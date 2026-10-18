@@ -1,0 +1,11 @@
+feat(handoff): admit bounded offline result exchange
+
+Task handoffs preserve work descriptions but cannot return an attempt against
+the exact request and selected source inputs. Extend the existing codec and CLI
+without transferring authority or adding another execution owner.
+
+Validation: PASS - existing handoff source and campaign prerequisites inspected
+ NOT RUN - new source and installed consumer qualification
+Changelog: Internal: Admit bounded offline request and result continuation
+AIDE-Task: AIDE-OFFLINE-RESULT-HANDOFF-01
+AIDE-Format: compact-v1

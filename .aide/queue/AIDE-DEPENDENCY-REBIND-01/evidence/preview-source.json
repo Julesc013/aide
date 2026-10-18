@@ -1,0 +1,17 @@
+{
+  "base": "984b47b6e9d1df9eadee60dff7218d693854da8e",
+  "files": {
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/ExecPlan.md": "df4d14873bc5e5242ebbda6a016e01fbde5d056f69f4775ae6c8db00eee4389f",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/attempt-02-workflow-result.json": "b86bb744fb2437e6d25e06b5e375979240c7aa03ac0e4584b515687861879643",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/attempt-02-workflow-tests.json": "9c57cf22f3b7447e22338163c92bc56254a15a65a62fccb83259a866dbcc86aa",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/preview-job-template.json": "0743da3b4dd9925df4e5ca60f48d6370e95c747d2cf7acf0dc27ef4fa3e3c7df",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/preview-message.txt": "5408b6b6dc594d5ecdd3129ffcbc07fdd2e866d0bac3dc8cb34fc9ad38935640",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/prior-pack-inventory.json": "3db57418b988090ebbbd366341797926512fb0e5011527de5491937274cf84c8",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/workflow-attempt-02.json": "24cca3babcb3b5822fd875974646586e29a400e70d249b426e1d1bfdba7197a3",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/workflow-review.md": "aac0bf133c4b3d777931207d9217cc387ddbbc72fc4fe88d60c935d0f588a1ed",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/run_preview.py": "e3ef602411d5e597f58f1be3ec4dd61e7e159d883feb67dcdd5f7b9251e5cf6b",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/status.yaml": "a996febd8072e406b07c848a33941a3ec80c5d5c6c97f8c637ff64f16c4a9268"
+  },
+  "message_sha256": "5408b6b6dc594d5ecdd3129ffcbc07fdd2e866d0bac3dc8cb34fc9ad38935640",
+  "job_template_sha256": "0743da3b4dd9925df4e5ca60f48d6370e95c747d2cf7acf0dc27ef4fa3e3c7df"
+}

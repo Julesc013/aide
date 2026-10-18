@@ -1,0 +1,13 @@
+chore(pack): prepare provenance refresh before promotion
+
+The existing ancestry check covers source-only test directories, so the
+unchanged development payload needs refreshed provenance. Reuse the owned
+exporter and fixed preview in the remaining job; retain the failed check.
+
+Validation: PASS - 74 source and process methods; exact owned pack inventory
+ FAIL - two stale pack-provenance checks retained for repair
+ NOT RUN - amended final export and preview job
+Changelog: Internal: Refresh provenance without changing qualified payloads
+AIDE-Task: AIDE-DEPENDENCY-CANCELLATION-01
+AIDE-Format: compact-v1
+Follow-up: Review and run the amended third allocation before integration

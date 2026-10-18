@@ -1,0 +1,20 @@
+{
+  "base": "8fe2d12cbc9d91f034cf7f68c58beda09809dc58",
+  "current_checkout": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+  "preserved_pending_release": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+  "remote_refs": {
+    "refs/heads/dev": "8fe2d12cbc9d91f034cf7f68c58beda09809dc58",
+    "refs/heads/main": "8fe2d12cbc9d91f034cf7f68c58beda09809dc58",
+    "refs/heads/task/aide-lite-successor-publication-01": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094"
+  },
+  "previous_goal_turn": "progress: release preparation accepted, committed and remote-preserved",
+  "external_prerequisite": "interactive release API authentication still pending; do not poll unchanged state",
+  "independent_work": "P4.requests cooperative cancellation; existing Requests owns lifecycle",
+  "existing_runtime_tests": [
+    "test_continuous_worker_requests.py",
+    "test_continuous_worker_mcp.py",
+    "test_continuous_worker_state.py"
+  ],
+  "implementation_gap": "Requests.STAGES permits only recorded/delivered/accepted/returned/adopted; no per-request cancellation or acknowledgement",
+  "mini_readiness": "Ollama command installed; narrowly queried process names and default manifest directory did not identify a ready model route. No server, model or provider invoked; no global absence claim."
+}

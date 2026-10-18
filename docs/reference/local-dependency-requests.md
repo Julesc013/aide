@@ -1,4 +1,4 @@
-# Local dependency requests
+### Local dependency requests
 
 The optional continuous-worker request interface records a cooperative exchange
 without taking over either project's native task. It uses the existing
@@ -12,7 +12,7 @@ and adoption is the sender's separate observation referencing its own checks.
 Neither participant's statement proves that an external effect actually happened.
 The status always identifies this distinction and returns the next owner/action.
 
-## Opt-in configuration
+**Opt-in configuration**
 
 Use an explicitly owned existing runtime directory, outside disposable workspaces.
 The root must already exist; initialization creates the existing coordinator
@@ -33,15 +33,20 @@ configuration (replace all identities, root, expiry and limits deliberately):
 }
 ```
 
-`expires_at` is an absolute Unix timestamp, not a renewable lease. The first
-profile refuses changed configuration/bindings in place. Expiry does not release
-any workspace owner. Replacement and independent cancellation need a later
-reconciled interface; do not create another database to evade outstanding work.
+`expires_at` is an absolute Unix timestamp, not an automatically renewed lease.
+Initialization refuses changed configuration/bindings in place. Expiry does not
+release any workspace owner. Use the explicit reconciliation operation below
+for a reviewed expiry extension or session replacement; do not create another
+database to evade outstanding work.
+For independent cancellation, initialize an explicitly approved new ledger with
+`aide.dependency-configuration.v2` and the same fields. Existing v1 ledgers refuse
+cancellation; initialization cannot change their schema or configuration. Older readers
+reject v2 rather than overlook a cancellation. There is no automatic migration.
 Maximums are 16 participants, 256 requests and 65,536 bytes per message. These
 bound logical records; they are not a physical filesystem quota. Existing host
 storage admission and resource monitoring remain necessary.
 
-## Commands
+**Commands**
 
 Invoke `python -B -m core.runtime.continuous_worker` with:
 
@@ -51,6 +56,7 @@ Invoke `python -B -m core.runtime.continuous_worker` with:
 | `request-submit` | `--state-root ROOT --configuration-sha256 DIGEST --input MESSAGE` | Records one immutable request or returns the existing identical request |
 | `request-observe` | Same common arguments and a MESSAGE | Records one attributed, revision-bound stage observation |
 | `request-status` | `--state-root ROOT --configuration-sha256 DIGEST --request-id ID` | Opens the database read-only and returns the current record, limitations and next action |
+| `request-reconfigure` | `--state-root ROOT --configuration-sha256 DIGEST --input PROPOSAL` | Read-only reconciliation plan; explicit apply uses the returned PLAN plus `--apply --sha256 RAW_PLAN_SHA256` |
 
 All outputs are JSON. Refusal exits 2. These commands require direct access to the
 local state, so this is a cooperative trusted-caller profile, not a multi-user
@@ -100,7 +106,91 @@ action. This profile does not automatically retry, revise, reject or cancel a
 task. An amendment needs a separately attributed native decision and successor;
 changing an existing request ID's body refuses.
 
-## Cooperative MCP tools (qualified local profile)
+**Independent cancellation (explicit v2 configuration)**
+
+Use the same `request-observe` command or `dependency_observe` tool. These
+observations retain the last normal `stage`; they never imply adoption:
+
+| Observation | Actor | Exact detail fields |
+|---|---|---|
+| `cancellation_requested` | Sender | `expected_stage`: current normal stage before adoption; `reason`: nonempty bounded text; `evidence`: references |
+| `cancellation_acknowledged` | Recipient | `cancellation_sha256`: canonical digest of the entire cancellation observation; `disposition`: `not_started`, `stopped`, `already_completed` or `uncertain`; `evidence`: references |
+
+The request digest, participant binding and expected stage must still match at
+the transaction. If normal progress wins a race, inspect it before requesting
+cancellation again. If cancellation wins, further normal advancement refuses.
+Identical observations remain replayable without additional events; conflicting
+retries refuse. All earlier native-work links, return claims and obligations stay
+intact. Unknown completion remains unknown, even when the recipient reports
+`already_completed`. Cancellation does not alter another request.
+
+V2 status uses `aide.dependency-status.v2`; status and inbox add
+`cancellation_state` (`none`, `requested`, `acknowledged`) and
+`cancellation_disposition` (null until acknowledged). While requested, the
+recipient owns reconciliation and acknowledgement. An `uncertain` acknowledgement
+keeps reconciliation with that recipient; other dispositions direct the sender
+to review the native outcome before any separately authorized successor.
+Acknowledgements are immutable observations. Later findings belong in native
+recovery evidence and an attributed successor; they cannot overwrite history.
+
+**An acknowledgement is a participant's claim, not enforced quiescence.** These
+operations do not stop a process, cancel an inference request, release a workspace,
+grant authority, or independently verify effects. Paused/expired controls refuse
+new observations; retained status stays readable. Disconnection does not cancel.
+V1 status and ordinary behavior retain their existing shape and meaning.
+
+**Explicit session reconciliation (source CLI)**
+
+The same ledger can preserve pending work across expiry renewal or replacement
+of a declared host/session. This operation is deliberately absent from participant
+MCP tools. Its operator-facing placement is not authentication: direct filesystem
+access remains a trusted cooperative boundary.
+
+First reconcile native work and external effects under their owners' authority.
+Then use the existing `pause-dispatch` control. Both preview and apply require
+that mode, no active native attempt and no unresolved effect intent. Neither
+operation stops an external editor, proves quiescence or transfers a workspace.
+
+The PROPOSAL contains exactly `configuration` (the proposed complete configuration),
+`decision` (one attributed native decision reference) and `evidence` (one to 32
+references). References have the same `ref`/`sha256` shape used above; the command
+does not open them or certify their claims. Keep schema, state root, participant
+names, repository, owner, workspace and resource bounds unchanged. A changed
+host/session requires exactly one generation increment; unaffected bindings keep
+their generation. The resulting expiry must be future-valid and never shortened.
+An otherwise identical configuration refuses as a no-op. V1/v2 schema conversion,
+workspace relocation and ownership transfer are outside this operation.
+
+Preview opens a consistent read transaction and returns an
+`aide.dependency-reconfiguration-plan.v1` object. It binds the current configuration,
+proposal/decision and a streamed digest of sorted logical ledger rows, including
+full control and event history. It contains no ledger dump. A 32 MiB snapshot limit
+and 16 reconciliation limit bound this profile; exceeding them requires a separately
+reviewed continuation path, never deletion of records to evade a bound.
+
+Inspect the plan and supply that exact file with `--apply` and its raw SHA256.
+Apply rechecks inside one immediate transaction, preserves all dependency/native
+records, replaces only the configuration and appends an immutable receipt to
+existing events. A pause/resume/pause cycle, changed request, native state or
+event invalidates an unapplied plan. The coordinator remains paused. Resume is a
+separate existing operator action after checking the replacement's actual route.
+
+After a lost response, the plan already contains both configuration identities.
+Try the exact plan with the proposed configuration's canonical digest as the CLI
+pin: if that plan is committed and still current, it returns the original receipt
+without another event, even if later ordinary work progressed. If the old pin is
+still current, inspect and revalidate before apply. Conflicting or superseded plans
+refuse. Do not initialize a replacement database or assume a failed response means
+the operation did not happen.
+
+All old configuration pins refuse on fresh CLI/MCP calls, and cached writers
+recheck before mutation even after explicit resume. Retained observations keep
+their original actor bindings; the new session continues unfinished stages.
+Reconciliation grants no execution authority, native effect verification or
+automatic worker wake-up. Native tests and their exact scope are recorded in the
+[reconciliation WorkUnit](../../.aide/queue/AIDE-DEPENDENCY-REBIND-01/ExecPlan.md).
+
+**Cooperative MCP tools (qualified local profile)**
 
 The optional source module `core.runtime.continuous_worker.dependency_mcp` exposes
 the same ledger through MCP 2025-11-25 stdio. A launching host supplies the existing
@@ -144,7 +234,7 @@ Installed-client integration,
 automatic wake-up and actual existing-worker delivery require separate evidence;
 connecting a transport does not establish that another worker accepted a request.
 
-## Continuation and qualification
+**Continuation and qualification**
 
 Transactions commit each record with its history event. After an uncertain CLI
 response, inspect the stable ID. Identical replays conserve the record and events;
@@ -161,6 +251,11 @@ also passed. The runtime interface remains source-only; the portable pack retain
 its existing capability boundary. Exact integration uses the task evidence.
 Local fixture qualification does not establish
 automatic host delivery, authenticated peer identity, isolation, real integration,
-independent cancellation or downstream adoption. Those remain required increments
+downstream adoption or native cancellation enforcement. Those remain required increments
 of the daily-use workflow. Published Lite assets do not acquire this feature from
 a source commit alone.
+
+The [v2 qualification](../../.aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/REPORT.md)
+passed 73 source methods, an actual fresh-process CLI/MCP two-request workflow
+and exact old-reader refusal. These are local cooperative fixture results;
+native termination, host delivery and live downstream adoption remain separate.

@@ -1,0 +1,45 @@
+AIDE Lite task brief
+observation: PARTIAL
+task: "AIDE-TASK-BRIEF-VIEW-01"
+file: ".aide/scripts/aide_lite.py"
+recorded_objective: "Read the existing task brief as a safe offline page"
+recorded_status: "passed"
+recorded_result: "SOURCE_AND_INSTALLED_PASS"
+recorded_owner: "unknown"
+recorded_next_action: "exact terminal technical review and guarded dev/main integration"
+recorded_remaining_obligations: "unknown"
+continuation: reconcile_records
+reason: Resolve missing, conflicting or unreadable records; preserve original evidence.
+scope_ref: ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/task.yaml"
+file_owner: "AIDE Lite"
+quality: PASS; freshness unverified; coverage incomplete
+docs_refs: "not_found"; recorded documentation link
+omitted: 0
+test_refs: "found"; heuristic likely test target; not an executed check
+- ".aide/scripts/tests/test_adapter_compiler.py"
+- ".aide/scripts/tests/test_aide_lite.py"
+- ".aide/scripts/tests/test_cache_local_state.py"
+omitted: 19
+dependency_refs: "found"; recorded local reference; not complete impact analysis
+- "AGENTS.md"
+- "DOCUMENTATION.md"
+- "IMPLEMENT.md"
+omitted: 53
+warnings: "found"; recorded quality warning
+- "large_module_candidate"
+- "missing_doc_candidate"
+- "mixed_purpose_candidate"
+omitted: 3
+exemptions: "not_found"; recorded lifecycle exemption
+omitted: 0
+reuse: "unindexed"; inspect --json for candidates
+omitted reuse candidates: 0
+task evidence: "delivered_ref"="present", "preview_ref"="record_too_large", "source_ref"="present"
+lessons: observed; 0 selected; 1 excluded
+omitted lessons: 0; exclusion reasons and hashes: --json
+next_action: reconcile_records
+usage: unknown; no execution or acceptance authority
+No edit permission or task acceptance is established.
+Quality links are incomplete and their freshness is unverified; do not narrow required checks.
+Lessons retain unverified authorship and semantic correctness.
+Missing information does not establish absence; no indexes were generated.

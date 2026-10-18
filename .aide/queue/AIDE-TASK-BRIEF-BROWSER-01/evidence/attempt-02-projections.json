@@ -1,0 +1,16 @@
+[
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\815add6e4eaa42d093796d52b6ab3ef0\\output\\evidence-verification.json",
+    "projection": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-02-evidence-verification.json",
+    "raw_sha256": "48df5c35f6b761d2eb53dafb17127c9790468b919aef77da9f2d7fc969e7a6a4",
+    "projection_sha256": "48df5c35f6b761d2eb53dafb17127c9790468b919aef77da9f2d7fc969e7a6a4",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\815add6e4eaa42d093796d52b6ab3ef0\\output\\preview-result.json",
+    "projection": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-02-preview-result.json",
+    "raw_sha256": "0e047a0cfacd663dcfc5c670145b184353c488a62b43f414c337f495cf579a70",
+    "projection_sha256": "0e047a0cfacd663dcfc5c670145b184353c488a62b43f414c337f495cf579a70",
+    "transformation": "byte-identical"
+  }
+]

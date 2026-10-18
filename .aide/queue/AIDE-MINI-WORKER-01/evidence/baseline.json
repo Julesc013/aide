@@ -1,0 +1,15 @@
+{
+  "base": "fcaa9e1e2230cf1fc14cfa5edde05cad0ce27971",
+  "previous_turn": "progress: campaign current-state repair qualified and synchronized",
+  "refs": {
+    "refs/heads/dev": "fcaa9e1e2230cf1fc14cfa5edde05cad0ce27971",
+    "refs/heads/main": "fcaa9e1e2230cf1fc14cfa5edde05cad0ce27971",
+    "refs/heads/task/aide-lite-successor-publication-01": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+    "refs/heads/task/aide-lite-successor-qualification-01": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1"
+  },
+  "config_sha256": "9f2bbd09de0059356b0c9bef53b3f52ab4344a747533b9d896faa2b9442422c3",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "python": "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+  "python_sha256": "434b361fe0c5960d404974feed493db47f2603a1ace2574312104fbed0182c6f",
+  "observed_gap": "Mini and its selected optional dependencies are absent; no real upstream worker binding is yet qualified."
+}

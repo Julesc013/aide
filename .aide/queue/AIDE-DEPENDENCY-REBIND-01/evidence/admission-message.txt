@@ -1,0 +1,11 @@
+feat(requests): admit explicit session binding reconciliation
+
+Preserve pending dependency work when a cooperative session changes or its
+configuration expires. Reuse the existing ledger and controls with an exact
+paused-state plan, immutable reconciliation receipt and stale-writer refusal.
+
+Validation: PASS - current source gap and exact preserved ref inspection
+ NOT RUN - implementation and native qualification
+Changelog: Internal: Admit bounded dependency session reconciliation
+AIDE-Task: AIDE-DEPENDENCY-REBIND-01
+AIDE-Format: compact-v1

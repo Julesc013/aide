@@ -1,0 +1,17 @@
+{
+  "base": "51ce6c7bbf7eaabeb1ffd5f08619b3d60ab4add3",
+  "files": {
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/ExecPlan.md": "a3c185205a2edb4e1fa660814a18c9603ba33dc0cf6e7f56d52d702c39b6ac54",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/source-effect.md": "243cc8f777947177a8a73e50300fdd9ba4cbe1e6d6783c1a3bf714522e18b2d6",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/source-job-template.json": "94ec19a364733102dcca00eda2afe60e5bc031570d049222b284ee26c3143693",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/source-message.txt": "4e90737e7357ac6268665daae3519ede2d8a22e788d72f3ab85233996d4e43b8",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/source-prechecks.json": "83e617d7deca553ce0bd790a0b6b7185e621b8a55cbd41db275a1d84d07aaf62",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/run_checks.py": "0afa97200c64ad7783347681cd1fbd8da53c8e4e8a3fa7999bb8b430f187c6ef",
+    ".aide/scripts/aide_lite.py": "14adb0c90b3003e8986b0f74b6605a8d71157aeaabe6a5952d13b7b9307a61c1",
+    ".aide/scripts/tests/test_task_current.py": "ed51bc431eb3cfca507b8fb27d9e764ffa65adcaff519904009deb8bc6e89367",
+    "docs/reference/task-packets.md": "6f61de2148c456d4bb93685840c3a589405dc77211a5a60def9447af40ce5ee1"
+  },
+  "effect_sha256": "243cc8f777947177a8a73e50300fdd9ba4cbe1e6d6783c1a3bf714522e18b2d6",
+  "message_sha256": "4e90737e7357ac6268665daae3519ede2d8a22e788d72f3ab85233996d4e43b8",
+  "template_sha256": "94ec19a364733102dcca00eda2afe60e5bc031570d049222b284ee26c3143693"
+}

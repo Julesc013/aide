@@ -1,0 +1,28 @@
+{
+  "command": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-I",
+    "-B",
+    "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\aide_lite.py",
+    "task",
+    "brief",
+    "--task-id",
+    "AIDE-VALIDATION-OUTPUT-01",
+    "--path",
+    ".aide/scripts/tests/test_validation_output.py",
+    "--json"
+  ],
+  "cwd": "D:\\Projects\\AIDE\\aide",
+  "state": "completed",
+  "exit_code": 2,
+  "streams": {
+    "actual-brief.json": {
+      "bytes": 5103,
+      "sha256": "6a662bba800fdf3c85193c421fbefd1bcb2668a5f5a20ec19db8ee7b8f493e9c"
+    },
+    "actual-brief-json.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

@@ -5334,11 +5334,83 @@ Qualified compact-v1 through existing owners: 120 source checks, 71 delivered ch
 
 [AIDE-LITE-SUCCESSOR-INTEGRATION-01](.aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/ExecPlan.md) reconciles the held dfae9356 history with current development. Combined-source and actual installed-package checks passed; see the child report and integration receipt for exact dev/main delivery. The original technically accepted 1.1.0 archive remains a frozen candidate. Select and qualify the intended release subject before publication; do not equate old archives with the newer development pack.
 
-### Qualified successor publication ? 18 October 2026
+### Independent dependency cancellation
 
-[AIDE-LITE-SUCCESSOR-PUBLICATION-01](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md)
-prepares publication of unchanged, qualified Lite 1.1.0. Its accepted ancestor
-tag is distinct from payload source and current development. Exact release review,
-authenticated access, publication and acquired-byte acceptance remain required.
-Newer compact communication, task briefs, handoff and lessons need a subsequent
-qualified release; they are not silently included in 1.1.0.
+Qualified independent cooperative cancellation: 73 source methods, actual CLI/MCP two-request continuation, legacy-reader refusal and final preview passed. Source-only scope and integration evidence are in the [child report](.aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/REPORT.md).
+
+### Dependency session continuity
+
+AIDE-DEPENDENCY-REBIND-01 is admitted for explicit cooperative configuration
+reconciliation over existing request/state owners. Preserve native work, stale
+writer refusal and independent publication gates; see the child ExecPlan.
+
+Dependency session continuity is qualified:88 source methods, two fresh-process
+workflows, v1/v2 reader compatibility, ownership6 and fixed preview passed.
+See [the report](.aide/queue/AIDE-DEPENDENCY-REBIND-01/REPORT.md); native host and publication stay separate.
+
+**Campaign current-state reconciliation.** AIDE-CAMPAIGN-CURRENT-STATE-01 repairs the existing parent view, preserving historical bytes and all unfinished acceptance. The single verification job passed and retired. Exact integration awaits terminal review; the child receipt will record actual effects. Full campaign acceptance remains open.
+
+### AIDE-MINI-WORKER-01: Optional upstream worker
+
+Exact acquisition, 15 native lifecycle scenarios, passive compatibility,
+unchanged pack/release checks and fixed preview passed. All four jobs retired;
+original failures remain. See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md).
+Exact reviewed Git effects govern delivery. Real model work and release claims
+remain separate; the larger daily-use campaign remains open.
+
+### Offline result continuation
+
+AIDE-OFFLINE-RESULT-HANDOFF-01 extends the existing portable task codec with
+selected-input request identity and returned candidate observations. Source,
+delivered and safe-installed qualification precede guarded integration. No new
+execution owner, automatic application or vintage host support is implied.
+Source, delivered and installed qualification is complete. The fixed preview and
+three retired jobs preserve exact evidence; see [the report](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md)
+and observed integration receipt for delivery. Full daily-use acceptance remains open.
+
+### Fresh symbol discovery
+
+AIDE-SYMBOL-DISCOVERY-01's bounded fresh syntax discovery is qualified in source,
+delivered code and a safe-installed consumer. The [report](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md)
+retains the failed export-delta assertion and successful continuation; integration
+has its own exact gate. P6 semantic binding, complete impact analysis and automatic
+refactoring remain open. This increment extends the existing quality owner.
+
+### Offline task brief view
+
+AIDE-TASK-BRIEF-VIEW-01 advances P8.readonly_view through the existing task brief:
+one inactive saved page, exact component observations and preserved uncertainty.
+Source 104, delivered 104 and actual installed qualification passed. The
+[report](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md) binds the fixed preview and
+three retired jobs. Integration has its exact gate; browser rendering, live
+Workbench, actual host binding and native downstream acceptance remain separate.
+
+### Fresh helper evidence in the task brief
+
+AIDE-TASK-BRIEF-SYMBOL-01 connects the existing task and source-inspection owners.
+Optional explicit symbol/related-file selection retains ordinary brief behavior.
+Source77, delivered77 and actual installed consumers passed with unchanged
+default output. The [report](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/REPORT.md) binds
+three retired jobs and the fixed preview. Guarded integration remains separate
+from complete semantic impact, native adoption and protected host editing.
+
+### Saved task view: observed browser profile
+
+AIDE-TASK-BRIEF-BROWSER-01 qualifies the unchanged saved real-task page in
+Edge155.0.4283.62 at desktop/narrow viewports. DOM and independent visual checks
+passed; lower content, interaction and accessibility remain open. Two jobs retired,
+unchanged product evidence reused. [Report](.aide/queue/AIDE-TASK-BRIEF-BROWSER-01/REPORT.md)
+binds exact scope and the separately reviewed integration effect.
+
+### Bounded task evidence inspection qualified
+
+[AIDE-TASK-EVIDENCE-READ-01](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/ExecPlan.md)
+corrects the actual large-receipt task-view failure through the existing reader.
+Source168, delivered168, ownership6 and installed consumers passed; small-evidence
+output is unchanged. [Evidence](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/REPORT.md)
+separates readable bytes, applicable evidence and acceptance. Guarded integration
+remains distinct from publication, live host qualification and native adoption.
+
+### Successor publication and release documentation ? 18 October 2026
+
+[AIDE-LITE-SUCCESSOR-PUBLICATION-01](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md) resumes frozen1.1.0 delivery after authentication. Before a new tag, reconcile README/docs/TODO/PLANS/ROADMAP/changelog and validate exact claims. Correct1.0.0 presentation without changing its assets or tag. Source, effect, integration and acquired-byte gates remain; newer development features require their own subsequent release.

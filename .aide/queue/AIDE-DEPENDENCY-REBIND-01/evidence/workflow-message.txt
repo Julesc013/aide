@@ -1,0 +1,11 @@
+test(requests): retain passing session reconciliation regressions
+
+All original request tests and new reconciliation methods pass. Prepare
+fresh CLI/MCP continuation and frozen-reader compatibility checks while
+preserving native records and immutable release assets.
+
+Validation: PASS - 88 methods; verified collection and retirement
+ NOT RUN - fresh-process workflow and old-reader continuity
+Changelog: Internal: Record session reconciliation regression evidence
+AIDE-Task: AIDE-DEPENDENCY-REBIND-01
+AIDE-Format: compact-v1

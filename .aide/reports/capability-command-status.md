@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-lite-successor-integration-01`
-- current_commit: `bfcdeb17f49302eeca4ad0adc0b0081509f8f308`
+- current_branch: `task/aide-task-evidence-read-01`
+- current_commit: `347668a4a507105e71736d00d5e6ba7331c1fe79`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

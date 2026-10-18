@@ -1,0 +1,34 @@
+{
+  "result": "PASS",
+  "task_id": "AIDE-TASK-BRIEF-VIEW-01",
+  "source_records": {
+    ".aide/controller/outcome-ledger.jsonl": "50ef4662abccc26199fae681086650797b0ba94b0c11e4b31191cd5277e152a9",
+    ".aide/reports/file-quality-ledger.json": "fa63e5a98682e243d8a8e64d6eb2b059f1cf38fb6f13bfa56b3ff1663c81d643",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/task.yaml": "0a2038b6b6727465ccec717f10c0289cf5bc11a12c96282d06cd64e6f5222b3d",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml": "4816e6f9feea53c93c0358229828488b8e73315173f4e00b3b67444514f70cd0",
+    ".aide/queue/index.yaml": "588f59944b5f1110df9b3aa249f31d5afecc66ffa4b58402a56fd67363e1361e",
+    ".aide/scripts/aide_lite.py": "c06ddcc9f5f2f6771789623ba706075731f3fc5b529f147d63ff980430bb2e91",
+    ".aide/scripts/tests/test_task_brief.py": "57ac060081fd9da111e2cbf278ba8269f3ddd8f2792ac663852c5197383cc8c4"
+  },
+  "canonical_observation_sha256": "8557b71a217119c608eaa0d0ce6ad211e3ef50525841f3dbc87b441869e34a35",
+  "default_predecessor_comparison": {
+    "text": {
+      "exit_code": 2,
+      "sha256": "c91caabea121e5f07f6c859da9bdfe9d096b36907edc9a9c3d07d035450fc3b3",
+      "byte_identical": true
+    },
+    "json": {
+      "exit_code": 2,
+      "sha256": "9c1367dcb17de9655251e8896fba71790503d4d2a7fdc3c469e52c68e1f3fd10",
+      "byte_identical": true
+    },
+    "html": {
+      "exit_code": 2,
+      "sha256": "81708fb22d80031556f57670f0b89190b9b710d4f8b12be428073b0304bc0ea0",
+      "byte_identical": true
+    }
+  },
+  "source_records_unchanged": true,
+  "actual_definition_and_consumer": true,
+  "browser_render": "NOT_RUN"
+}

@@ -879,6 +879,8 @@ Q36_REQUIRED_FILES = [
 
 Q36_PORTABLE_SOURCE_FILES = [
     ".aide/scripts/task_handoff.py",
+    ".aide/scripts/quality_symbols.py",
+    ".aide/scripts/task_brief_view.py",
     ".aide/scripts/outcome_lessons.py",
     INTENT_POLICY_PATH,
     WORKUNIT_SIZING_POLICY_PATH,
@@ -12748,6 +12750,148 @@ def command_quality_explain_file(args: argparse.Namespace) -> int:
         rendered = stable_json_text(result) if getattr(args, "json", False) else "\n".join(f"{key}: {value}" for key, value in result.items()) + "\n"
     print(rendered, end="")
     return {"PASS": 0, "MISSING": 1, "INVALID": 2}[result["result"]]
+
+
+
+def quality_symbol_parser():
+    # The helper belongs to this distribution, never the selected project.
+    path = Path(__file__).resolve().with_name("quality_symbols.py")
+    _job_wait_root(str(path.parent))
+    info = path.lstat()
+    if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
+            or getattr(info, "st_file_attributes", 0) & 0x400 or info.st_size > 64 * 1024):
+        raise ValueError("symbol helper is not an ordinary bounded module")
+    spec = importlib.util.spec_from_file_location("aide_quality_symbols", path)
+    module = importlib.util.module_from_spec(spec)
+    previous = sys.dont_write_bytecode
+    try:
+        sys.dont_write_bytecode = True
+        spec.loader.exec_module(module)
+    finally:
+        sys.dont_write_bytecode = previous
+    return module
+
+
+def build_quality_symbol_inspection(repo_root: Path, name: str, paths: list[str]) -> dict:
+    parser = quality_symbol_parser()
+    parser.validate_symbol(name)
+    if not 1 <= len(paths) <= 8:
+        raise ValueError("select one to eight explicit files")
+    selected = []
+    for path in paths:
+        if len(path) > 1024 or any(ord(char) < 32 for char in path):
+            raise ValueError("invalid source path")
+        selected.append("/".join(task_view_reference_parts(path)))
+    if len({path.casefold() for path in selected}) != len(selected):
+        raise ValueError("duplicate or case-colliding source paths")
+
+    def capture(path, limit, *, advisory=False):
+        try:
+            return ("read", task_view_read(repo_root, path, limit=limit))
+        except FileNotFoundError:
+            return ("missing", None)
+        except (OSError, ValueError):
+            if advisory:
+                return ("unreadable", None)
+            raise ValueError("unsafe, unreadable or oversized source input")
+
+    ledger_capture = capture(FILE_QUALITY_LEDGER_JSON_PATH, 16 * 1024 * 1024, advisory=True)
+    ledger = None
+    ledger_state = ledger_capture[0]
+    if ledger_state == "read":
+        try:
+            ledger = json.loads(ledger_capture[1])
+            if not isinstance(ledger, dict):
+                raise ValueError
+            ledger_state = "recorded"
+        except (ValueError, UnicodeError, RecursionError):
+            ledger_state = "invalid"
+    observed = {}
+    files = []
+    total = 0
+    for path in selected:
+        snapshot = capture(path, 4 * 1024 * 1024)
+        observed[path] = snapshot
+        raw = snapshot[1]
+        total += len(raw) if raw is not None else 0
+        if total > 8 * 1024 * 1024:
+            raise ValueError("selected source exceeds 8 MiB")
+        if raw is None:
+            syntax = {"state": "missing", "match_state": "unknown"}
+        elif Path(path).suffix.lower() not in (".py", ".pyi"):
+            syntax = {"state": "unsupported", "match_state": "unknown",
+                      "sha256": hashlib.sha256(raw).hexdigest(), "bytes": len(raw)}
+        else:
+            syntax = parser.inspect_python(raw, name)
+        context = {"state": ledger_state, "freshness": "unverified", "advisory": True}
+        if ledger_state == "recorded":
+            try:
+                context["evidence"] = quality_file_explanation(ledger, path)
+            except (ValueError, TypeError, KeyError, RecursionError):
+                context["state"] = "invalid"
+        files.append({"path": path, "syntax": syntax, "recorded_context": context})
+
+    # Sequential before/after checks detect observed changes, not an atomic
+    # filesystem snapshot or access control against another unrestricted writer.
+    for path, snapshot in observed.items():
+        if capture(path, 4 * 1024 * 1024) != snapshot:
+            raise ValueError("selected source changed during inspection")
+    if capture(FILE_QUALITY_LEDGER_JSON_PATH, 16 * 1024 * 1024, advisory=True) != ledger_capture:
+        raise ValueError("quality ledger changed during inspection")
+    return {
+        "schema_version": "aide.quality-symbol-inspection.v1",
+        "result": "PASS" if all(item["syntax"]["state"] == "parsed" for item in files) else "PARTIAL",
+        "symbol": name, "files": files, "selected_bytes": total, "read_only": True,
+        "ledger_sha256": hashlib.sha256(ledger_capture[1]).hexdigest() if ledger_capture[1] is not None else None,
+        "coverage": "explicit_selected_files_only",
+        "caveats": [
+            "Names, scopes and calls describe syntax; runtime binding, aliases and behavior remain unresolved.",
+            "Not found is not semantic absence; unselected files and unsupported syntax remain outside coverage.",
+            "Recorded owner, documentation and likely tests are advisory; freshness and complete impact are unverified.",
+            "Sequential byte rechecks are not an atomic snapshot; no project code was imported or executed.",
+        ],
+        "next_action": "Inspect the matching definitions and recorded checks before deciding reuse; broaden checks when coverage is incomplete.",
+    }
+
+
+def command_quality_inspect_symbol(args: argparse.Namespace) -> int:
+    try:
+        result = build_quality_symbol_inspection(args.repo_root, args.name, args.path)
+    except (OSError, ValueError, RecursionError) as error:
+        result = {"result": "REFUSED", "reason": str(error), "read_only": True}
+    if args.json:
+        rendered = json.dumps(result, indent=2, sort_keys=True, ensure_ascii=True) + "\n"
+    else:
+        lines = ["AIDE Lite quality inspect-symbol", "result: " + result["result"]]
+        if result["result"] == "REFUSED":
+            lines.append("reason: " + json.dumps(result["reason"], ensure_ascii=True))
+        else:
+            lines += ["symbol: " + json.dumps(result["symbol"], ensure_ascii=True), "coverage: " + result["coverage"],
+                      "ledger_sha256: " + str(result["ledger_sha256"])]
+            for item in result["files"]:
+                syntax = item["syntax"]
+                lines.append(json.dumps(item["path"], ensure_ascii=True) + ": " + syntax["state"]
+                             + "; matches: " + syntax["match_state"])
+                lines.append("  source_sha256: " + str(syntax.get("sha256")))
+                if "parser" in syntax:
+                    lines.append("  parser: " + json.dumps(syntax["parser"], ensure_ascii=True))
+                if "reason" in syntax:
+                    lines.append("  reason: " + syntax["reason"])
+                for key in ("definitions", "calls", "imports"):
+                    if key not in syntax:
+                        continue
+                    for match in syntax[key]["items"]:
+                        lines.append("  " + key + ": " + json.dumps(match, ensure_ascii=True))
+                    lines.append("  " + key + " omitted: " + str(syntax[key]["omitted"]))
+                lines.append("  recorded_context: " + json.dumps(item["recorded_context"], ensure_ascii=True))
+            lines += ["caveat: " + caveat for caveat in result["caveats"]]
+            lines.append("next_action: " + result["next_action"])
+        rendered = "\n".join(lines) + "\n"
+    if len(rendered.encode("utf-8")) > 64 * 1024:
+        result = {"result": "REFUSED", "reason": "output exceeds 64 KiB; select fewer files", "read_only": True}
+        rendered = json.dumps(result, ensure_ascii=True) + "\n"
+    print(rendered, end="")
+    return {"PASS": 0, "PARTIAL": 1, "REFUSED": 2}[result["result"]]
 
 
 def command_quality_report_file(args: argparse.Namespace, title: str, path: str) -> int:
@@ -40184,8 +40328,8 @@ def task_view_reference_parts(relative: str) -> list[str]:
     return parts
 
 
-def task_view_read(repo_root: Path, relative: str, *, limit: int = 131072) -> bytes:
-    """Read one bounded ordinary repository record; never follow a link."""
+def task_view_path(repo_root: Path, relative: str, *, limit: int) -> Path:
+    """Check one ordinary repository path and its observed size before opening."""
     parts = task_view_reference_parts(relative)
     path = repo_root.resolve()
     for part in parts:
@@ -40197,11 +40341,31 @@ def task_view_read(repo_root: Path, relative: str, *, limit: int = 131072) -> by
         raise ValueError("unsafe_reference")
     if info.st_size > limit:
         raise ValueError("record_too_large")
+    return path
+
+
+def task_view_read(repo_root: Path, relative: str, *, limit: int = 131072) -> bytes:
+    """Read one bounded ordinary repository record; never follow a link."""
+    path = task_view_path(repo_root, relative, limit=limit)
     with path.open("rb") as stream:
         data = stream.read(limit + 1)
     if len(data) > limit:
         raise ValueError("record_too_large")
     return data
+
+
+def task_view_digest(repo_root: Path, relative: str, *, limit: int = 1048576) -> str:
+    """Hash bounded evidence without retaining its body in the task observation."""
+    path = task_view_path(repo_root, relative, limit=limit)
+    digest = hashlib.sha256()
+    consumed = 0
+    with path.open("rb") as stream:
+        while chunk := stream.read(min(65536, limit + 1 - consumed)):
+            consumed += len(chunk)
+            if consumed > limit:
+                raise ValueError("record_too_large")
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def task_view_fields(text: str, source: str, issues: list[dict[str, str]]) -> dict[str, object]:
@@ -40388,13 +40552,13 @@ def build_current_task_view(repo_root: Path, task_id: str | None = None) -> dict
             ref = ref.replace("\\", "/")
             relative = ref if ref.startswith(".aide/") else f".aide/queue/{selected}/{ref}"
             try:
-                data = task_view_read(repo_root, relative)
+                actual_digest = task_view_digest(repo_root, relative)
                 item.update(path=relative, availability="present")
                 expected = record.get(key[:-4] + "_sha256")
                 if expected is not None:
                     if not isinstance(expected, str) or not re.fullmatch(r"[a-f0-9]{64}", expected):
                         item["availability"] = "invalid_digest"
-                    elif hashlib.sha256(data).hexdigest() != expected:
+                    elif actual_digest != expected:
                         item["availability"] = "digest_mismatch"
                     else:
                         item["digest_verified"] = True
@@ -40402,6 +40566,8 @@ def build_current_task_view(repo_root: Path, task_id: str | None = None) -> dict
                 item.update(path=relative, availability="missing")
             except ValueError as exc:
                 item["availability"] = str(exc)
+                if str(exc) == "record_too_large":
+                    item["path"] = relative
             except OSError:
                 item["availability"] = "unreadable"
         view["evidence"].append(item)
@@ -40491,6 +40657,8 @@ def command_task_handoff_export(args: argparse.Namespace) -> int:
     codec = task_handoff_codec()
     paths = codec.record_paths(args.task_id)
     before = task_handoff_records(args.repo_root, paths)
+    selected = getattr(args, "input", None)
+    inputs = task_handoff_capture(args.repo_root, codec.input_paths(selected)) if selected else {}
     if before[paths[0]] is None:
         raise ValueError("task record missing")
     continuation = build_task_resume_plan(args.repo_root, args.task_id)
@@ -40505,10 +40673,17 @@ def command_task_handoff_export(args: argparse.Namespace) -> int:
               "task_id": args.task_id, "records": records,
               "source": {"git_head": commit if re.fullmatch(r"[a-f0-9]{40}|[a-f0-9]{64}", commit) else None},
               "continuation": continuation, "read_only": True, "execution_admitted": False}
+    if selected:
+        bundle.update(schema_version=codec.REQUEST_SCHEMA,
+                      required_features=sorted(codec.REQUEST_REQUIRED),
+                      inputs={path: codec.record(raw) for path, raw in inputs.items()})
     validate_handoff_identity(bundle)
     data = codec.encode(bundle)
     if before != task_handoff_records(args.repo_root, paths):
         raise ValueError("task records changed during export")
+    if selected and (inputs != task_handoff_capture(args.repo_root, selected)
+                     or commit != safe_git_head_commit(args.repo_root)):
+        raise ValueError("selected inputs changed during export")
     print(data.decode("ascii"), end="")
     return 0
 
@@ -40517,6 +40692,8 @@ def command_task_handoff_inspect(args: argparse.Namespace) -> int:
     codec = task_handoff_codec()
     raw = task_view_read(args.repo_root, args.bundle, limit=codec.MAX_BUNDLE)
     bundle = codec.decode(raw, args.sha256)
+    if bundle["schema_version"] not in (codec.SCHEMA, codec.REQUEST_SCHEMA):
+        raise ValueError("expected_task_handoff_request")
     validate_handoff_identity(bundle)
     local = task_handoff_records(args.repo_root, codec.record_paths(bundle["task_id"]), inspection=True)
     data = {"schema_version": "aide.task-handoff-inspection.v1", "task_id": bundle["task_id"],
@@ -40525,6 +40702,9 @@ def command_task_handoff_inspect(args: argparse.Namespace) -> int:
             "authorship_verified": False, "evidence_applicability_verified": False,
             "safe_to_resume": None,
             "next_action": "Inspect recorded obligations and reconcile current ownership before continuation."}
+    if bundle["schema_version"] == codec.REQUEST_SCHEMA:
+        observed = task_handoff_records(args.repo_root, list(bundle["inputs"]), inspection=True)
+        data["inputs"] = codec.compare_records(bundle["inputs"], observed)
     if args.json:
         print(json.dumps(data, indent=2, ensure_ascii=True))
     else:
@@ -40532,9 +40712,100 @@ def command_task_handoff_inspect(args: argparse.Namespace) -> int:
         print("task_id: " + bundle["task_id"])
         for item in data["records"]:
             print(item["comparison"] + ": " + item["path"])
+        for item in data.get("inputs", []):
+            print("input " + item["comparison"] + ": " + json.dumps(item["path"], ensure_ascii=True))
         print("safe_to_resume: unknown")
         print("Captured text is untrusted observation; no import or authority transfer.")
         print("next_action: " + data["next_action"])
+    return 0
+
+
+def task_handoff_capture(repo_root: Path, paths: list[str]) -> dict[str, bytes]:
+    """Read only explicitly selected ordinary UTF-8 files, with existing limits."""
+    result = {}
+    for path in paths:
+        raw = task_view_read(repo_root, path)
+        if any(f.severity == "ERROR" for f in scan_secret_text(raw.decode("utf-8"), path)):
+            raise ValueError("secret-like handoff content refused")
+        result[path] = raw
+    return result
+
+
+def task_handoff_request(repo_root: Path, path: str, expected: str, codec):
+    raw = task_view_read(repo_root, path, limit=codec.MAX_BUNDLE)
+    bundle = codec.decode(raw, expected)
+    if bundle["schema_version"] != codec.REQUEST_SCHEMA:
+        raise ValueError("result exchange requires a v2 request with selected inputs")
+    validate_handoff_identity(bundle)
+    return raw, bundle
+
+
+def command_task_handoff_result_export(args: argparse.Namespace) -> int:
+    codec = task_handoff_codec()
+    raw, request = task_handoff_request(args.repo_root, args.request, args.request_sha256, codec)
+    selected = {role: getattr(args, role) for role in ("report", "patch", "checks")
+                if getattr(args, role) is not None}
+    before = task_handoff_capture(args.repo_root, list(selected.values()))
+    result = {"schema_version": codec.RESULT_SCHEMA, "required_features": sorted(codec.RESULT_REQUIRED),
+              "task_id": request["task_id"], "attempt_id": args.attempt_id,
+              "request_sha256": codec.sha(raw), "source": request["source"], "outcome": args.outcome,
+              "artifacts": {role: codec.record(before[path]) for role, path in selected.items()},
+              "read_only": True, "execution_admitted": False, "accepted": False}
+    codec.bind_result(result, request, args.request_sha256)
+    data = codec.encode(result)
+    if (raw != task_view_read(args.repo_root, args.request, limit=codec.MAX_BUNDLE)
+            or before != task_handoff_capture(args.repo_root, list(selected.values()))):
+        raise ValueError("result inputs changed during export")
+    print(data.decode("ascii"), end="")
+    return 0
+
+
+def command_task_handoff_result_inspect(args: argparse.Namespace) -> int:
+    codec = task_handoff_codec()
+    request_raw, request = task_handoff_request(args.repo_root, args.request, args.request_sha256, codec)
+    result_raw = task_view_read(args.repo_root, args.result, limit=codec.MAX_BUNDLE)
+    result = codec.decode(result_raw, args.result_sha256)
+    codec.bind_result(result, request, args.request_sha256)
+    paths = codec.record_paths(request["task_id"])
+    records = task_handoff_records(args.repo_root, paths, inspection=True)
+    inputs = task_handoff_records(args.repo_root, list(request["inputs"]), inspection=True)
+    compared = codec.compare_records(request["inputs"], inputs)
+    states = {item["comparison"] for item in compared}
+    state = "matching" if states == {"matching"} else ("changed" if "changed" in states else "unavailable")
+    commit = safe_git_head_commit(args.repo_root)
+    source_commit = request["source"].get("git_head")
+    commit_state = ("unknown" if source_commit is None or not re.fullmatch(r"[a-f0-9]{40}|[a-f0-9]{64}", commit)
+                    else "matching" if commit == source_commit else "different")
+    if (request_raw != task_view_read(args.repo_root, args.request, limit=codec.MAX_BUNDLE)
+            or result_raw != task_view_read(args.repo_root, args.result, limit=codec.MAX_BUNDLE)
+            or records != task_handoff_records(args.repo_root, paths, inspection=True)
+            or inputs != task_handoff_records(args.repo_root, list(request["inputs"]), inspection=True)
+            or commit != safe_git_head_commit(args.repo_root)):
+        raise ValueError("receiving inputs changed during inspection")
+    data = {"schema_version": "aide.task-handoff-result-inspection.v1",
+            "task_id": request["task_id"], "attempt_id": result["attempt_id"],
+            "request_sha256": args.request_sha256, "result_sha256": args.result_sha256,
+            "recorded_outcome": result["outcome"], "selected_input_state": state,
+            "source_commit_comparison": commit_state, "records": codec.compare(request, records),
+            "inputs": compared, "captured_result": result, "read_only": True,
+            "execution_admitted": False, "accepted": False, "safe_to_apply": None,
+            "authorship_verified": False, "evidence_applicability_verified": False,
+            "next_action": ("Reconcile changed or unavailable inputs before reviewing returned work."
+                            if state != "matching" else
+                            "Review returned work, source revision, task state, permissions and applicable checks."),
+            "limitations": "Selected inputs are incomplete dependency coverage; checksums do not prove authorship or acceptance."}
+    if args.json:
+        print(json.dumps(data, ensure_ascii=True, sort_keys=True, separators=(",", ":")))
+    else:
+        print("AIDE Lite offline result inspection")
+        for key in ("task_id", "attempt_id", "recorded_outcome", "selected_input_state", "source_commit_comparison"):
+            print(key + ": " + json.dumps(data[key], ensure_ascii=True))
+        for item in compared:
+            print(item["comparison"] + ": " + json.dumps(item["path"], ensure_ascii=True))
+        print("artifacts: " + ", ".join(sorted(result["artifacts"])))
+        print("safe_to_apply: unknown; accepted: false")
+        print("next_action: " + data["next_action"])
+        print(data["limitations"])
     return 0
 
 
@@ -40557,7 +40828,9 @@ def command_task_current(args: argparse.Namespace) -> int:
     return 0 if view["task_id"] else 1
 
 
-def build_task_development_brief(repo_root: Path, task_id: str, path: str) -> dict[str, object]:
+def build_task_development_brief(repo_root: Path, task_id: str, path: str, *,
+                                 symbol: str | None = None,
+                                 related_paths: list[str] | None = None) -> dict[str, object]:
     """Compose existing advisory readers for one explicit task and file."""
     boundary = {"schema_version": "aide.task-brief.v1", "read_only": True,
                 "execution_admitted": False, "acceptance_verified": False,
@@ -40568,6 +40841,8 @@ def build_task_development_brief(repo_root: Path, task_id: str, path: str) -> di
                 "next_action": "reconcile the selected records before requesting another brief"}
 
     try:
+        if related_paths and symbol is None:
+            return refused("related source selection requires an explicit symbol")
         if not isinstance(task_id, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,127}", task_id):
             return refused("an explicit exact task identity is required")
         outcome_lessons_codec().relative_path(path)
@@ -40577,7 +40852,10 @@ def build_task_development_brief(repo_root: Path, task_id: str, path: str) -> di
 
         def records():
             observed = {}
-            for ref, limit in ((task_ref, 131072), (status_ref, 131072), (".aide/queue/index.yaml", 1048576)):
+            refs = [(task_ref, 131072), (status_ref, 131072), (".aide/queue/index.yaml", 1048576)]
+            if symbol is not None:
+                refs.append((FILE_QUALITY_LEDGER_JSON_PATH, 16 * 1024 * 1024))
+            for ref, limit in refs:
                 try:
                     observed[ref] = task_view_read(repo_root, ref, limit=limit)
                 except FileNotFoundError:
@@ -40596,10 +40874,17 @@ def build_task_development_brief(repo_root: Path, task_id: str, path: str) -> di
         except (OSError, ValueError, RecursionError):
             lessons = None
             lesson_state = "invalid"
+        inspection = None
+        if symbol is not None:
+            inspection = build_quality_symbol_inspection(repo_root, symbol, [path, *(related_paths or [])])
+            captured = before[FILE_QUALITY_LEDGER_JSON_PATH]
+            if inspection["ledger_sha256"] != (hashlib.sha256(captured).hexdigest() if captured is not None else None):
+                return refused("quality ledger changed while assembling the brief")
         if before != records():
             return refused("selected task records changed while assembling the brief")
         partial = (quality["result"] != "PASS" or lesson_state != "observed"
-                   or any(item["availability"] != "present" for item in task["evidence"]))
+                   or any(item["availability"] != "present" for item in task["evidence"])
+                   or (inspection is not None and inspection["result"] != "PASS"))
         invalid = quality["result"] == "INVALID" or lesson_state == "invalid"
         result = {**boundary, "result": "PARTIAL" if partial else "OBSERVED", "path": path,
                   "continuation": continuation, "quality": quality, "lessons": lessons,
@@ -40612,6 +40897,14 @@ def build_task_development_brief(repo_root: Path, task_id: str, path: str) -> di
                                   "Quality links are incomplete and their freshness is unverified; do not narrow required checks.",
                                   "Lessons retain unverified authorship and semantic correctness.",
                                   "Missing information does not establish absence; no indexes were generated."]}
+        if inspection is not None:
+            result["symbol_inspection"] = inspection
+            result["symbol_selection"] = [
+                {"path": item["path"], "reason": "task_target" if index == 0 else "explicit_related_source"}
+                for index, item in enumerate(inspection["files"])
+            ]
+            result["limitations"].append(
+                "Fresh syntax covers selected files only; runtime binding, alias behavior and semantic equivalence remain unresolved.")
         if len(json.dumps(result, ensure_ascii=True, allow_nan=False).encode("ascii")) > 65536:
             return refused("brief exceeds the 64 KiB output bound; inspect the component views separately")
         return result
@@ -40653,15 +40946,73 @@ def render_task_development_brief(data: dict[str, object]) -> str:
     lines.extend("- " + quote(item["id"]) + f" revision {item['revision']}: " + quote(item["lesson"]["summary"])
                  for item in lessons["selected"][:3])
     lines.append("omitted lessons: " + str(max(0, len(lessons["selected"]) - 3)) + "; exclusion reasons and hashes: --json")
+    inspection = data.get("symbol_inspection")
+    if inspection is not None:
+        lines.extend(["fresh symbol: " + quote(inspection["symbol"]),
+                      "source coverage: " + inspection["coverage"] + "; runtime binding unresolved"])
+        for item, selection in zip(inspection["files"], data["symbol_selection"]):
+            syntax = item["syntax"]
+            lines.append(quote(item["path"]) + ": " + syntax["state"] + "; matches: "
+                         + syntax["match_state"] + "; selected: " + selection["reason"])
+            displayed = 0
+            omitted = 0
+            for group in ("definitions", "calls", "imports"):
+                bucket = syntax.get(group, {"items": [], "omitted": 0})
+                for match in bucket["items"]:
+                    if displayed < 3:
+                        lines.append("- " + group + " line " + str(match["line"]) + ": "
+                                     + quote(match.get("qualified_name", match["scope"])))
+                        displayed += 1
+                    else:
+                        omitted += 1
+                omitted += bucket["omitted"]
+            lines.append("omitted source matches: " + str(omitted) + "; complete locations and hashes: --json")
     lines.extend(["next_action: " + data["next_action"], "usage: unknown; no execution or acceptance authority",
                   *data["limitations"]])
     return "\n".join(lines)
 
 
+def task_brief_renderer():
+    # Renderer comes from this distribution, not the selected project.
+    path = Path(__file__).resolve().with_name("task_brief_view.py")
+    _job_wait_root(str(path.parent))
+    info = path.lstat()
+    if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
+            or getattr(info, "st_file_attributes", 0) & 0x400 or info.st_size > 64 * 1024):
+        raise ValueError("brief renderer is not an ordinary bounded module")
+    spec = importlib.util.spec_from_file_location("aide_task_brief_view", path)
+    module = importlib.util.module_from_spec(spec)
+    previous = sys.dont_write_bytecode
+    try:
+        sys.dont_write_bytecode = True
+        spec.loader.exec_module(module)
+    finally:
+        sys.dont_write_bytecode = previous
+    return module
+
+
 def command_task_brief(args: argparse.Namespace) -> int:
-    data = build_task_development_brief(args.repo_root, args.task_id, args.path)
-    print(json.dumps(data, ensure_ascii=True, sort_keys=True, separators=(",", ":")) if args.json
-          else render_task_development_brief(data))
+    data = build_task_development_brief(args.repo_root, args.task_id, args.path,
+                                      symbol=getattr(args, "symbol", None),
+                                      related_paths=getattr(args, "related_path", None))
+    if getattr(args, "html", False):
+        try:
+            renderer = task_brief_renderer()
+        except (OSError, ValueError, ImportError):
+            print("AIDE task brief HTML unavailable: restore the distribution-owned renderer.", file=sys.stderr)
+            return 1
+        try:
+            rendered = renderer.render(data)
+        except ValueError:
+            data = {"schema_version": "aide.task-brief.v1", "result": "REFUSED",
+                    "acceptance_verified": False, "execution_admitted": False,
+                    "reason": "The observation cannot be safely presented within HTML bounds.",
+                    "next_action": "Inspect the existing text or JSON brief and reconcile its inputs."}
+            rendered = renderer.render(data)
+        print(rendered, end="")
+    else:
+        print(json.dumps(data, ensure_ascii=True, sort_keys=True, separators=(",", ":")) if args.json
+              else render_task_development_brief(data))
     return {"OBSERVED": 0, "PARTIAL": 2, "REFUSED": 1}[data["result"]]
 
 
@@ -42008,7 +42359,7 @@ commands:
     notes: index-only deterministic repo inventory and maps; no file moves, deletes, refactors, target mutation, provider/model/network calls, or deletion advice.
   - id: aide-lite-quality
     display_name: AIDE Lite file quality ledger
-    invocation: py -3 .aide/scripts/aide_lite.py quality <ledger|validate|status|explain-file|docs|tests|modules|reuse>
+    invocation: py -3 .aide/scripts/aide_lite.py quality <ledger|validate|status|explain-file|inspect-symbol|docs|tests|modules|reuse>
     command_kind: repo-local-helper
     status: implemented-portable
     owner_component: file-quality-ledger
@@ -47477,6 +47828,11 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     quality_explain_parser.add_argument("path")
     quality_explain_parser.add_argument("--json", action="store_true", help="emit the read-only evidence projection as JSON")
     quality_explain_parser.set_defaults(handler=command_quality_explain_file)
+    quality_symbol = quality_subparsers.add_parser("inspect-symbol", help="inspect syntax in explicit files without executing project code")
+    quality_symbol.add_argument("name")
+    quality_symbol.add_argument("--path", action="append", required=True, help="explicit relative Python file (one to eight)")
+    quality_symbol.add_argument("--json", action="store_true")
+    quality_symbol.set_defaults(handler=command_quality_inspect_symbol)
     quality_subparsers.add_parser("docs").set_defaults(handler=command_quality_docs)
     quality_subparsers.add_parser("tests").set_defaults(handler=command_quality_tests)
     quality_subparsers.add_parser("modules").set_defaults(handler=command_quality_modules)
@@ -47663,19 +48019,41 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_brief_parser = task_subparsers.add_parser("brief")
     task_brief_parser.add_argument("--task-id", required=True, help="Exact existing task identity.")
     task_brief_parser.add_argument("--path", required=True, help="One canonical repository-relative file path.")
-    task_brief_parser.add_argument("--json", action="store_true", help="Show component observations and limitations.")
+    task_brief_parser.add_argument("--symbol", help="Inspect one Python identifier in the selected source.")
+    task_brief_parser.add_argument("--related-path", action="append",
+                                   help="Explicit related source for --symbol (at most seven).")
+    task_brief_output = task_brief_parser.add_mutually_exclusive_group()
+    task_brief_output.add_argument("--json", action="store_true", help="Show component observations and limitations.")
+    task_brief_output.add_argument("--html", action="store_true", help="Print an inactive offline HTML observation to stdout.")
     task_brief_parser.set_defaults(handler=command_task_brief)
 
     handoff_parser = task_subparsers.add_parser("handoff")
     handoff_commands = handoff_parser.add_subparsers(dest="handoff_command", required=True)
     handoff_export = handoff_commands.add_parser("export")
     handoff_export.add_argument("--task-id", required=True)
+    handoff_export.add_argument("--input", action="append", help="Explicit UTF-8 input; repeat up to eight times for a v2 request")
     handoff_export.set_defaults(handler=command_task_handoff_export)
     handoff_inspect = handoff_commands.add_parser("inspect")
     handoff_inspect.add_argument("--bundle", required=True, help="Repository-relative ordinary JSON file")
     handoff_inspect.add_argument("--sha256", required=True, help="Expected exact bundle SHA-256")
     handoff_inspect.add_argument("--json", action="store_true")
     handoff_inspect.set_defaults(handler=command_task_handoff_inspect)
+    result_export = handoff_commands.add_parser("result-export")
+    result_export.add_argument("--request", required=True)
+    result_export.add_argument("--request-sha256", required=True)
+    result_export.add_argument("--attempt-id", required=True)
+    result_export.add_argument("--outcome", required=True, choices=("submitted", "failed", "interrupted"))
+    result_export.add_argument("--report", required=True, help="Bounded UTF-8 report; untrusted observation")
+    result_export.add_argument("--patch", help="Optional UTF-8 candidate patch; never applied")
+    result_export.add_argument("--checks", help="Optional UTF-8 check record; contents are not verified here")
+    result_export.set_defaults(handler=command_task_handoff_result_export)
+    result_inspect = handoff_commands.add_parser("result-inspect")
+    result_inspect.add_argument("--request", required=True)
+    result_inspect.add_argument("--request-sha256", required=True)
+    result_inspect.add_argument("--result", required=True)
+    result_inspect.add_argument("--result-sha256", required=True)
+    result_inspect.add_argument("--json", action="store_true")
+    result_inspect.set_defaults(handler=command_task_handoff_result_inspect)
 
     blocker_parser = subparsers.add_parser("blocker")
     blocker_subparsers = blocker_parser.add_subparsers(dest="blocker_command", required=True)

@@ -1,0 +1,14 @@
+{
+  "base": "452e9807160de50d6346005956697e97cedec254",
+  "files": {
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/REPORT.md": "542c64359cfeb580b85956135c062b4075cb5e8e7d1a5df0e9bc2a558c23dc7c",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/closure-source.json": "8ac394ed1376e001af79458540507413521f4e4b5cc4ac89e934f0cde5d2419e",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/normalization-message.txt": "d178895a4d42d12b9a3975a2535a21ef9705b9ddea6dfdc26ded8fe04e4cd859",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/normalization.json": "8d4283b7acc6a21e53d8824a75b523e5ec2352af947f1584dc7199a34c9e6e98",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/validation.md": "4aae58dcad41cf3f83728bf829fb3893c0609783b0eb953fa2e331993e227228"
+  },
+  "message_sha256": "d178895a4d42d12b9a3975a2535a21ef9705b9ddea6dfdc26ded8fe04e4cd859",
+  "integration_effect_sha256": "97e571e0af20aebff69e1870711666bb3d8c643505515988f316190a576090b5",
+  "integration_runner_sha256": "65b407832a6e3a002024ac1520ece35808c7e59708ccb66720f7c6de0c9ad873",
+  "scope": "Exact evidence-only fix-forward; original closure map remains preserved in452e9807. Final integration substitutes only this managed commit/tree."
+}

@@ -1,0 +1,12 @@
+fix(quality): account for the generated discovery command
+
+The export qualified, but its expected delta omitted the derived command
+catalogue. Pin the exact one-line addition and reuse completed export checks.
+Finish delivered and installed checks plus the preview in the last allocation.
+
+Validation: PASS - source44; ownership6; export, doctor, validate and pack-status
+ FAIL - original job2 expected-payload assertion; failure preserved
+ NOT RUN - delivered44, installed consumer and final preview
+Changelog: Tests: Check the exact generated symbol-discovery command delta
+AIDE-Task: AIDE-SYMBOL-DISCOVERY-01
+AIDE-Format: compact-v1

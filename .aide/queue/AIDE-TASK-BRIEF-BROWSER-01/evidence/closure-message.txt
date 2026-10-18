@@ -1,0 +1,12 @@
+test(view): qualify saved task-brief browser viewports
+
+Record actual desktop and narrow Edge rendering with complete observation
+equality and independent screenshot review. Preserve the saved PARTIAL state
+and qualify only visible content; lower details and accessibility remain open.
+
+Validation: PASS - two Edge captures, complete DOM and viewport visual reviews
+ PASS - two retired jobs, fixed three-commit preview and unchanged product evidence
+ NOT RUN - keyboard/screen-reader behavior and below-fold visual details
+Changelog: Tests: Qualify saved task brief viewports in Edge155.0.4283.62
+AIDE-Task: AIDE-TASK-BRIEF-BROWSER-01
+AIDE-Format: compact-v1

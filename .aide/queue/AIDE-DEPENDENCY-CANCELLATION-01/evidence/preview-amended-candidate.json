@@ -1,0 +1,19 @@
+{
+  "base": "c6dffcccf0a71f74006dce56558e1feb4c2afff1",
+  "files": {
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/ExecPlan.md": "60253a93fa87edfdba700636645efa763d51abad08015627be75ab3efa90d8b6",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/preview-amended-effect.md": "225f171c949ff19e8d5da79d72ef6dbe2e5a44f5a3db242530d714a08e0cbd45",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/preview-amended-initial-candidate.json": "4a76cae3231825a1f9e2b793fdf475a77557d12e064fb61b3ea88d73fa809c52",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/preview-amended-initial-job-template.json": "31e337ab793e47772d89a5e8256639f26260b33f3036da909e62198194670fd6",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/preview-amended-job-template.json": "ee2f601b47b456574f664838e788e9eb20a906cc6739eb4d93ce726cd56989ee",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/preview-amended-message.txt": "9da66bc205d51bc1904022eb2a7bdc4e21957b463caea200b00ad128a41e24cb",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/preview-amendment-repair.md": "8987d750e68284529b420bfc6cd31e9016cd35a0222f0e42a806644231f60fb4",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/preview-first-review.md": "9ca4aa498779704401f0539c4ec72a24d9934cd3a7de480c0be136214c3eca3d",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/prior-pack-inventory.json": "4f654f7055e4bceb079499029128fdc65e9bd4379da36d789989ce4956e886c4",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/provenance-failure.json": "a6fc766fba05206a74c7d5deacad5b1598cfaeb9927de8b3ef57d7eacd9e8a0d",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/run_preview.py": "3ad5447522ab757184fa6e00fffd0f6e0fd5a9459ec039253cf06bd48d34f0fd"
+  },
+  "message_sha256": "9da66bc205d51bc1904022eb2a7bdc4e21957b463caea200b00ad128a41e24cb",
+  "effect_sha256": "225f171c949ff19e8d5da79d72ef6dbe2e5a44f5a3db242530d714a08e0cbd45",
+  "job_template_sha256": "ee2f601b47b456574f664838e788e9eb20a906cc6739eb4d93ce726cd56989ee"
+}

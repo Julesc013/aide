@@ -3,11 +3,11 @@ id: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Converge, qualify, and deliver AIDE through bounded reviewed work
 type: programme
 status: running
-planning_state: source_documentation_aligned_bulk_qualification_held
+planning_state: scoped_daily_use_foundations_qualified_full_workflow_incomplete
 result: PENDING
 review_gate: admitted_by_owner
 created_at: 2026-09-21
-updated_at: 2026-09-21
+updated_at: 2026-10-18
 authorizes_implementation: true
 approved_candidate_manifest_sha256: eaf650073734b7cb3c55084b63bddb7cb055a5a30f862f3e907b8ee95d2b3c15
 authorization_basis: >

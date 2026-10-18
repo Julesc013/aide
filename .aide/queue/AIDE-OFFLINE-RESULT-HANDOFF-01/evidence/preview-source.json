@@ -1,0 +1,27 @@
+{
+  "base": "3e2bbd3277abb5b237a4ff4464fc8b75ef574f8d",
+  "files": {
+    ".aide/export/aide-lite-pack-v0/checksums.json": "b64c3182d6709799c8509eda252c899c6cff5431df9681959f95e54c375cf223",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py": "405e10a885c9720996f65b2109c45b6831248c9ce008265c6904b0e11c7d3f84",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/task_handoff.py": "cb508c38f5e46587685844c603eae33a485cd8e5d70daf556940f851a8b8ada0",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_task_handoff.py": "50225b2cf4723da72c81a6db91fe944b0bf9d338557cc7be0751ff42941a1a1e",
+    ".aide/export/aide-lite-pack-v0/files/docs/reference/task-os-report-only-commands.md": "bb1c1d9948a3858e93860dd9eef867f926897df698bd3b3a00c99b590e8ae4ee",
+    ".aide/export/aide-lite-pack-v0/manifest.yaml": "a1132cd2afd48fa49529ac1b4759dfbe4adc910560f521ce6384a5536a834b84",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/ExecPlan.md": "1436df5bcd7f5fcf4db33d370baa9ff819aa164287432792a6f6987bba94d545",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/attempt-02-delivered-result.json": "72ff9a819a90eb69b68cf146a512536b24d19494009caeff778c41818f9a13b2",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/attempt-02-delivered-tests.json": "cdceb4d9052031c4e3ef809c05a6d52f6ccae1463545e6ab08c3ca79b8970599",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/attempt-02-installed-consumer.json": "8ec6785176d6734b3201c5220713ef349d3f3bfa383d112e72b2f869dc6b32fb",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/attempt-02-ownership-tests.json": "a6cf7e4ddadc235eedf04e5d2971739d575be1b957628d6ff38935c8ddc51b4c",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/attempt-02-qualification.json": "4e7257b1b9922f125a7da7c3966d6247eeccec6e7970c7f264fd38f3c6736336",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/attempt-02-real-record-consumer.json": "d1c2a6eb51cce770fef01879ccaa66df07cb819a7631bac131b2b11e024d1d0e",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/pack-attempt-02.json": "ee525b54b74ab9ab4ce29a5e04625fafd9f1f63b267ab7f711dbde9f26638794",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/preview-effect.md": "e00ac4524eb59a66cdb1a131e74fad1487f995fe658651a2966dde1e54ce9743",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/preview-job-template.json": "01fad83d1ff552fa67d79fd401943342953d1787aac7a48e3549a820fcedb442",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/preview-message.txt": "43729c70c364dbec2b22dc0d95045fb0a11004a881aaad8638f2853a47000443",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/run_preview.py": "97867fae7a4952030a14a05a2905315aa4db15ff5371a5cff4ef1839118e78fb",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/status.yaml": "32da72cda79582ca711e67adee9603d5a9d725037031660ff602339bfe321f34"
+  },
+  "effect_sha256": "e00ac4524eb59a66cdb1a131e74fad1487f995fe658651a2966dde1e54ce9743",
+  "message_sha256": "43729c70c364dbec2b22dc0d95045fb0a11004a881aaad8638f2853a47000443",
+  "template_sha256": "01fad83d1ff552fa67d79fd401943342953d1787aac7a48e3549a820fcedb442"
+}

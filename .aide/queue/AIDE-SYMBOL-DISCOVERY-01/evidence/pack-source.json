@@ -1,0 +1,25 @@
+{
+  "base": "41006cce7f8ca133fc88b7a850dc5f7791c01ccf",
+  "files": {
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/ExecPlan.md": "436fd9aadd3de53711f314eabd82df93041b018fff819df431998240ae887c18",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/attempt-01-source-tests.json": "e7517ebfd82b577f6c3905c29eadd162440b17a33c3a0f18111193adedafb84e",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/ledger-preimages.json": "68015701dd62779490718fbca693584708f22b44a8f02255782a4292dca9814d",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/ledger-refresh.json": "fa5d0439f42fe87ffa5d40bd8b44fff372903147b79114f2a710f8a9b03078f4",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/pack-effect.md": "2f136c8fb07569803d74b2d34a1d537f43c74294fe1f720a6a0138af19279654",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/pack-job-template.json": "bf4609cc4ec1ef175a31746792b903113214532505cc7779f694e7e3c49ee708",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/pack-message.txt": "23ed889b9d065046e3d09b39aa7a6589d747d428eb5432570a8768fa29ad24de",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/prior-pack-inventory.json": "bea5f256cefe1e248c5e46acf0a7a1912d4a8e255222c1aed70ecefa94c34a1f",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/refresh-effect.md": "df75e7d41b9ca12a63ef68b2fe18a05b470a671d3e9345a6e0a8a21d291ce42a",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/refresh-source.json": "dba83ef00d6cafa2e0939004b33ddd8e60c715afa8a176d773f4dbd9984d39d6",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/release-preimages.json": "78e635772cbdc413922c00a727573b73ea36e12431037da16ad58db03773bb33",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/source-attempt-01.json": "beb7a089a69caf3c59d7aab1d3626afca7e7d5971a6dc13879bad61e3e505d59",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/run_pack.py": "d06280621dc92c33b5b5af6872483e1bfdf3354816eca6d3eb2345a35acdbb40",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/status.yaml": "4b2b23882a16c584e85cb04c16095e125cceced3478d58567ea2eeedba54e97a",
+    ".aide/reports/capability-command-status.md": "26a20eed3d088ecd0d56146e03e2b3254d302f867797b9243be271cec2a1c319",
+    ".aide/reports/capability-evidence-bindings.json": "12c90806f229a8b10a172ffc30dbeccbff1d204411ce433d878f379bbd53f3de",
+    ".aide/reports/capability-ledger.md": "fdf1737e035dde01617a970e42db715a515f65630e3d21277bdb189d2d708d2c"
+  },
+  "effect_sha256": "2f136c8fb07569803d74b2d34a1d537f43c74294fe1f720a6a0138af19279654",
+  "message_sha256": "23ed889b9d065046e3d09b39aa7a6589d747d428eb5432570a8768fa29ad24de",
+  "template_sha256": "bf4609cc4ec1ef175a31746792b903113214532505cc7779f694e7e3c49ee708"
+}

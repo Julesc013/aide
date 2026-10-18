@@ -1,0 +1,13 @@
+test(worker): retain Mini lifecycle results and final checks
+
+All 15 native scenarios passed through the real upstream loop and existing
+host. Preserve candidate and partial postimages, launch observations and
+independent receipts. Prepare passive compatibility and immutable-artifact
+checks with the existing fixed promotion preview.
+
+Validation: PASS - 15 native scenarios, collection and retirement
+ NOT RUN - final passive compatibility, artifact checks and preview
+Changelog: Tests: Qualify optional Mini repair, refusal and recovery fixtures
+Risk: Deterministic source fixture only; no live model or isolation claim
+AIDE-Task: AIDE-MINI-WORKER-01
+AIDE-Format: compact-v1

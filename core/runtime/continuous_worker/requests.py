@@ -5,6 +5,7 @@ Participant bindings are declarations; the local caller is not authenticated.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import re
@@ -17,7 +18,11 @@ CONFIG_KEY = "dependency_configuration_v1"
 ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,119}")
 SHA = re.compile(r"[0-9a-f]{64}")
 STAGES = ("recorded", "delivered", "accepted", "returned", "adopted")
+CANCELLATION = ("cancellation_requested", "cancellation_acknowledged")
+DISPOSITIONS = ("not_started", "stopped", "already_completed", "uncertain")
 OBLIGATIONS = {"answer", "candidate", "validated", "integrated_dev", "promoted_main", "published"}
+RECONFIGURED = "dependency_reconfigured"
+SNAPSHOT_BYTES = 32 * 1024 * 1024
 
 
 def fields(value, names):
@@ -77,7 +82,8 @@ def decode(raw):
 def configuration(value, root):
     bounded(value)
     fields(value, "schema state_root participants expires_at max_requests message_bytes")
-    if value["schema"] != "aide.dependency-configuration.v1" or value["state_root"] != str(root):
+    if (value["schema"] not in ("aide.dependency-configuration.v1", "aide.dependency-configuration.v2")
+            or value["state_root"] != str(root)):
         raise Refused("configuration schema or state root mismatch")
     if type(value["expires_at"]) not in (int, float) or not math.isfinite(value["expires_at"]):
         raise Refused("finite configuration expiry required")
@@ -143,6 +149,107 @@ class Requests:
         if actor["participant"] != expected or binding is None or actor["binding_sha256"] != digest(binding):
             raise Refused("wrong participant or stale binding")
 
+    def _replacement(self, proposed):
+        configuration(proposed, self.state.root)
+        for name in ("schema", "state_root", "max_requests", "message_bytes"):
+            if proposed[name] != self.config[name]:
+                raise Refused("reconciliation cannot change schema, root or resource bounds")
+        if set(proposed["participants"]) != set(self.config["participants"]):
+            raise Refused("reconciliation cannot change participant identities")
+        for name, old in self.config["participants"].items():
+            new = proposed["participants"][name]
+            if any(new[key] != old[key] for key in ("repository", "owner", "workspace")):
+                raise Refused("reconciliation cannot transfer native ownership")
+            changed = any(new[key] != old[key] for key in ("host", "session"))
+            if new["generation"] != old["generation"] + int(changed):
+                raise Refused("replacement needs exactly one generation increment")
+        if proposed["expires_at"] < self.config["expires_at"] or proposed["expires_at"] <= self.now():
+            raise Refused("replacement expiry must be future-valid and never shortened")
+        if proposed == self.config:
+            raise Refused("configuration is unchanged")
+
+    def _reconciliation_guard(self):
+        row = self.state.db.execute("SELECT value FROM meta WHERE key=?", (CONFIG_KEY,)).fetchone()
+        if row is None or row[0] != canonical(self.config):
+            raise Refused("configuration changed")
+        if self.state.mode() != "pause-dispatch":
+            raise Refused("configuration reconciliation requires pause-dispatch")
+        if self.state.active() is not None:
+            raise Refused("native attempt still active; reconcile it first")
+        if self.state.db.execute("SELECT 1 FROM effects WHERE status != 'observed' LIMIT 1").fetchone():
+            raise Refused("native effect remains unresolved")
+
+    def _snapshot_digest(self):
+        """Stream a finite logical snapshot; caller holds the read/write transaction."""
+        result, size = hashlib.sha256(), 0
+        for table, key in (("meta", "key"), ("dependency_requests", "id"), ("tasks", "id"),
+                           ("attempts", "id"), ("effects", "id"), ("controls", "seq"), ("events", "seq")):
+            result.update((table + "\n").encode())
+            for row in self.state.db.execute(f"SELECT * FROM {table} ORDER BY {key}"):
+                raw = canonical(list(row)).encode("utf-8")
+                size += len(raw)
+                if size > SNAPSHOT_BYTES:
+                    raise Refused("reconciliation snapshot exceeds 32 MiB")
+                result.update(len(raw).to_bytes(8, "big"))
+                result.update(raw)
+        return result.hexdigest()
+
+    def _reconfiguration_plan(self, proposal):
+        bounded(proposal)
+        fields(proposal, "configuration decision evidence")
+        references([proposal["decision"]])
+        references(proposal["evidence"])
+        self._reconciliation_guard()
+        self._replacement(proposal["configuration"])
+        if self.state.db.execute("SELECT COUNT(*) FROM events WHERE kind=?", (RECONFIGURED,)).fetchone()[0] >= 16:
+            raise Refused("configuration reconciliation allowance exhausted")
+        plan = {"schema": "aide.dependency-reconfiguration-plan.v1",
+                "configuration_sha256": digest(self.config), **proposal,
+                "snapshot_sha256": self._snapshot_digest()}
+        bounded(plan)
+        return plan
+
+    def reconfiguration_plan(self, proposal):
+        """Read-only preview, including for an expired configuration; no authority grant."""
+        self.state.db.execute("BEGIN")
+        try:
+            return self._reconfiguration_plan(proposal)
+        finally:
+            self.state.db.execute("ROLLBACK")
+
+    def reconfigure(self, plan):
+        """Explicit cooperative administration. Never resumes or changes native ownership."""
+        bounded(plan)
+        fields(plan, "schema configuration_sha256 configuration decision evidence snapshot_sha256")
+        if plan["schema"] != "aide.dependency-reconfiguration-plan.v1":
+            raise Refused("unknown reconciliation plan schema")
+        identity(plan["configuration_sha256"], SHA)
+        identity(plan["snapshot_sha256"], SHA)
+        pin = digest(plan)
+        with self.state.transaction():
+            # Recovery is an observation of a committed receipt, not another apply.
+            for row in self.state.db.execute("SELECT body FROM events WHERE kind=? ORDER BY seq", (RECONFIGURED,)):
+                receipt = json.loads(row[0])
+                if receipt["plan_sha256"] == pin:
+                    current = self.state.db.execute("SELECT value FROM meta WHERE key=?", (CONFIG_KEY,)).fetchone()
+                    if receipt["plan"] != plan or current is None or current[0] != canonical(plan["configuration"]):
+                        raise Refused("reconciliation receipt was superseded or conflicts")
+                    return receipt
+            if plan["configuration_sha256"] != digest(self.config):
+                raise Refused("reconciliation needs the exact previous configuration")
+            proposal = {key: plan[key] for key in ("configuration", "decision", "evidence")}
+            if self._reconfiguration_plan(proposal) != plan:
+                raise Refused("reconciliation snapshot changed; inspect before replanning")
+            receipt = {"schema": "aide.dependency-reconfiguration-receipt.v1",
+                       "plan": plan, "plan_sha256": pin, "previous_configuration": self.config,
+                       "configuration_sha256": digest(plan["configuration"]),
+                       "bindings": {name: digest(binding) for name, binding in plan["configuration"]["participants"].items()},
+                       "mode": "cooperative", "execution_authorized": False,
+                       "limitation": "Recorded reconciliation only; no native ownership or host quiescence is inferred."}
+            self.state.db.execute("UPDATE meta SET value=? WHERE key=?", (canonical(plan["configuration"]), CONFIG_KEY))
+            self.state.event(None, RECONFIGURED, receipt)
+        return receipt
+
     def row(self, request_id):
         identity(request_id)
         row = self.state.db.execute("SELECT * FROM dependency_requests WHERE id=?", (request_id,)).fetchone()
@@ -191,29 +298,54 @@ class Requests:
         bounded(message, self.config["message_bytes"])
         fields(message, "request_id request_sha256 actor stage detail")
         stage, detail = message["stage"], message["detail"]
-        if not isinstance(stage, str) or stage not in STAGES[1:]:
+        if not isinstance(stage, str) or stage not in (*STAGES[1:], *CANCELLATION):
             raise Refused("unknown observation stage")
+        if stage in CANCELLATION and self.config["schema"] != "aide.dependency-configuration.v2":
+            raise Refused("cancellation requires explicit v2 configuration")
         with self.state.transaction():
             self.guard()
             row = self.row(message["request_id"])
             if row["digest"] != message["request_sha256"]:
                 raise Refused("request revision mismatch")
             body = json.loads(row["body"])
-            self.actor(message["actor"], body["sender"] if stage == "adopted" else body["recipient"])
+            self.actor(message["actor"], body["sender"] if stage in ("adopted", "cancellation_requested")
+                       else body["recipient"])
             observations = json.loads(row["observations"])
             if stage in observations:
                 if observations[stage] != message:
                     raise Refused("conflicting duplicate observation")
             else:
-                if STAGES.index(stage) != STAGES.index(row["stage"]) + 1:
-                    raise Refused("out-of-order observation")
-                self.validate_detail(stage, detail, body, observations)
+                if stage in CANCELLATION:
+                    self.validate_cancellation(stage, detail, row["stage"], observations)
+                else:
+                    if "cancellation_requested" in observations:
+                        raise Refused("cancellation prevents further advancement; reconcile native effects")
+                    if STAGES.index(stage) != STAGES.index(row["stage"]) + 1:
+                        raise Refused("out-of-order observation")
+                    self.validate_detail(stage, detail, body, observations)
                 observations[stage] = message
                 self.state.db.execute("UPDATE dependency_requests SET stage=?,observations=? WHERE id=?",
-                                      (stage, canonical(observations), body["id"]))
+                                      (row["stage"] if stage in CANCELLATION else stage,
+                                       canonical(observations), body["id"]))
                 self.state.event(None, "dependency_" + stage,
                                  {"id": body["id"], "observation_sha256": digest(message)})
         return self.inspect(message["request_id"])
+
+    @staticmethod
+    def validate_cancellation(stage, detail, current_stage, observations):
+        if stage == "cancellation_requested":
+            fields(detail, "expected_stage reason evidence")
+            if current_stage == "adopted" or detail["expected_stage"] != current_stage:
+                raise Refused("cancellation requires the current pre-adoption stage")
+            text(detail["reason"])
+        else:
+            fields(detail, "cancellation_sha256 disposition evidence")
+            requested = observations.get("cancellation_requested")
+            if requested is None or detail["cancellation_sha256"] != digest(requested):
+                raise Refused("acknowledgement must bind the exact cancellation request")
+            if detail["disposition"] not in DISPOSITIONS:
+                raise Refused("unknown native cancellation disposition")
+        references(detail["evidence"])
 
     @staticmethod
     def validate_detail(stage, detail, body, observations):
@@ -253,8 +385,24 @@ class Requests:
         unmet = {key: value for key, value in claims.items() if value != "PASS"}
         if stage == "returned" and unmet:
             action = "reconcile_unmet_obligations_with_native_owner_before_successor_request"
+        cancellation = {}
+        if self.config["schema"] == "aide.dependency-configuration.v2":
+            cancellation = {"cancellation_state": "none", "cancellation_disposition": None}
+            if "cancellation_requested" in observations:
+                cancellation["cancellation_state"] = "requested"
+                owner, action = body["recipient"], "reconcile_native_effects_and_acknowledge_cancellation"
+                unmet = {key: claims.get(key, "UNKNOWN") for key in body["completion"]
+                         if claims.get(key) != "PASS"}
+            if "cancellation_acknowledged" in observations:
+                disposition = observations["cancellation_acknowledged"]["detail"]["disposition"]
+                cancellation.update(cancellation_state="acknowledged", cancellation_disposition=disposition)
+                if disposition == "uncertain":
+                    owner, action = body["recipient"], "reconcile_uncertain_native_effects"
+                else:
+                    owner, action = body["sender"], "review_native_cancellation_outcome_before_successor_request"
         expired = self.now() >= self.config["expires_at"]
-        return {"schema": "aide.dependency-status.v1", "mode": "cooperative", "id": body["id"],
+        return {"schema": "aide.dependency-status.v2" if cancellation else "aide.dependency-status.v1",
+                "mode": "cooperative", "id": body["id"], **cancellation,
                 "request_sha256": row["digest"], "request": body, "stage": stage,
                 "observations": observations, "next_owner": owner, "next_action": action,
                 "unmet_obligations": unmet,
@@ -276,8 +424,10 @@ class Requests:
             if actor["participant"] not in (body["sender"], body["recipient"]):
                 continue
             status = self.inspect(row["id"])
-            records.append({key: status[key] for key in
-                            ("id", "request_sha256", "stage", "next_owner", "next_action")})
+            keys = ("id", "request_sha256", "stage", "next_owner", "next_action")
+            if "cancellation_state" in status:
+                keys += ("cancellation_state", "cancellation_disposition")
+            records.append({key: status[key] for key in keys})
             if len(records) > limit:
                 break
         return {"mode": "cooperative", "requests": records[:limit],

@@ -1,0 +1,31 @@
+{
+  "base": "3fbf048454b06fdc40b341243e01c69cc0fef5b1",
+  "files": {
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/ExecPlan.md": "1d1dcedc42897ff4915c1cb81c7b6c8ea1d7419375b1e94d7ac02fa62e840d49",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/attempt-01-actual-brief-html.invocation.json": "9912518e4c7ccd58da4337c5386c15f62e5d46391304ad4206dcc5e7edafcda0",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/attempt-01-actual-brief-json.invocation.json": "41737f911a206c8e48385caf2ba6a37f8809ac9bf09303be691b41e23ea53143",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/attempt-01-actual-brief.html": "6d2c0021de4400309593b868f6ba0d400dff45c6cb32b1914d7fff317bb9dbd5",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/attempt-01-actual-brief.json": "058f868068b91a668139f8d95a9ed9edf6f68b3adac35fcc00e70903f27192e0",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/attempt-01-actual-consumer.json": "9430e5b086edb9cecdbfc332d2c0ba03e6003075f6d117338a11eaa729ca2335",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/attempt-01-projections.json": "3f3358702dfd637a5a88b48f6f36d390ae367d151c5ad5f62a8f3db9a7dc883c",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/attempt-01-source-tests.json": "238382c62e42a1c91b3b874a6f55f8d6a40f0d31029163e55411fda3c24d810a",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/ledger-preimages.json": "a3dd90cba00f63b16ea74c9819a6dd2d5e635c8914db4d108d3c98f068f46d90",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/ledger-refresh.json": "3650431c606a778e2ac46a6fc5fc917bdc37f00f9c83adadb295bd5eb179b4a1",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/pack-effect.md": "1fa2fa8314d6a48f9382f34602bd547401537d519d0c742dc0d519fe98a2bf06",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/pack-job-template.json": "02d5e4d4d4766fb945e527e9a3129d0b3e489f0432eb13eeb75c0bf8f6513371",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/pack-message.txt": "8109f0e67529e4767356bc1e352e814e7c8d46eab1a18a7f3ac8b227db3f00f8",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/prior-pack-inventory.json": "c6f67ab72e11a652aa09f7a899484df47aa3340caa32ccc31eff82ba98ff2a32",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/refresh-effect.md": "fb421c2a28ee01905a33e6592aa6a7153818013d8f2b1a01912c432a288b1b88",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/refresh-source.json": "c4793856620d6b4422d3e6629ce449a65521ee59ac4875259bfe0a7d9111fe63",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/release-preimages.json": "78e635772cbdc413922c00a727573b73ea36e12431037da16ad58db03773bb33",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/evidence/source-attempt-01.json": "dcc58b9f38e269c44e12a688c44e2240add3b1510813ae0b910f72185641445d",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/run_pack.py": "1b3a5814f6fee1665fda6f36871eb01c17fa98a315f6e4f22b575a8b46fdc8cc",
+    ".aide/queue/AIDE-TASK-BRIEF-VIEW-01/status.yaml": "f387f375aff6765928655417e9916f6237a50e57e38ef6263d2c7d7081e9c67c",
+    ".aide/reports/capability-command-status.md": "00512ca62ce34439cafe91d5020132de771ee2d1176f0abdeb80f41fdab5e5ef",
+    ".aide/reports/capability-evidence-bindings.json": "30c76f6a5f3a0a5d0667988dcc4149e92b5a89657f56e6cc49c2d094b24e784a",
+    ".aide/reports/capability-ledger.md": "e1f80b71f0fd7a85a446faa17c856b9c13d56ec3e7f888c1f04beb6b9f36411c"
+  },
+  "effect_sha256": "1fa2fa8314d6a48f9382f34602bd547401537d519d0c742dc0d519fe98a2bf06",
+  "message_sha256": "8109f0e67529e4767356bc1e352e814e7c8d46eab1a18a7f3ac8b227db3f00f8",
+  "template_sha256": "02d5e4d4d4766fb945e527e9a3129d0b3e489f0432eb13eeb75c0bf8f6513371"
+}

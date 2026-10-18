@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-DEPENDENCY-REBIND-01
+status: passed_with_notes
+result: SOURCE_WORKFLOW_AND_PREVIEW_PASS
+planning_state: qualified_terminal_integration_review_required
+maximum_jobs: 3
+jobs_allocated: 3
+active_jobs: 0
+source_result: 88_methods_pass_no_skips
+workflow_result: two_fresh_process_workflows_and_v1_v2_compatibility_pass
+preview_result: four_commits_six_outputs_exact
+integration_receipt: evidence/integration-result.log
+live_reconfiguration: not_performed

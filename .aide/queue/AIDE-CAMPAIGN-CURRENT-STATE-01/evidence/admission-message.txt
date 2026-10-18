@@ -1,0 +1,11 @@
+docs(campaign): admit current-state reconciliation
+
+The campaign view loses its next action behind accumulated historical fields.
+Preserve original records and reconcile current responsibilities and open
+acceptance requirements using the existing task view.
+
+Validation: PASS - actual current view and exact branch inspection
+ NOT RUN - reconciled records and qualification
+Changelog: Internal: Admit bounded campaign current-state maintenance
+AIDE-Task: AIDE-CAMPAIGN-CURRENT-STATE-01
+AIDE-Format: compact-v1

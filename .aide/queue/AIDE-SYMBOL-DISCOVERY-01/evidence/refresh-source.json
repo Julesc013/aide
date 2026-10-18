@@ -1,0 +1,16 @@
+{
+  "base": "41006cce7f8ca133fc88b7a850dc5f7791c01ccf",
+  "files": {
+    ".aide/scripts/aide_lite.py": "1abc4cd4811ff1077089ed1e6ad7f806d05e2ede3c71d2bd1be7cfc99185890f",
+    ".aide/scripts/quality_symbols.py": "cff8a69e8f2efbe99ee844aa4f475c0cfefbe7ba076b145ba4949daf29829035",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/source-attempt-01.json": "beb7a089a69caf3c59d7aab1d3626afca7e7d5971a6dc13879bad61e3e505d59",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/attempt-01-source-tests.json": "e7517ebfd82b577f6c3905c29eadd162440b17a33c3a0f18111193adedafb84e",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/ledger-preimages.json": "68015701dd62779490718fbca693584708f22b44a8f02255782a4292dca9814d",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/refresh-effect.md": "df75e7d41b9ca12a63ef68b2fe18a05b470a671d3e9345a6e0a8a21d291ce42a",
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "c91920e2eaf226a3a03bc17370c8c9cf929a52af7f18b1864463622ee4ffac41",
+    ".aide/reports/capability-evidence-bindings.json": "2960caebe1982d5c6c1e858974025834be1af215928c23ca6eeb88ad4fd1a240",
+    ".aide/reports/capability-command-status.md": "dcbf83c5afdf348c55304e5938170f8394df85dc913e9b4fa9e24d7a0bd06db4"
+  },
+  "effect_sha256": "df75e7d41b9ca12a63ef68b2fe18a05b470a671d3e9345a6e0a8a21d291ce42a"
+}

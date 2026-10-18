@@ -1,0 +1,50 @@
+[
+  {
+    "label": "diff",
+    "exit_code": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary": []
+  },
+  {
+    "label": "message",
+    "exit_code": 0,
+    "sha256": "16431780ee75c435ff36cc31bd1fda142aac7097dae11d12bc3f3de5f1c99510",
+    "summary": [
+      "AIDE Lite commit check",
+      "result: PASS",
+      "source: .aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/source-message.txt",
+      "policy: .aide/policies/commit-messages.yaml",
+      "standard: .aide/reports/aide-commit-message-standard.md",
+      "- PASS compact subject follows type[(scope)][!]: description",
+      "- PASS compact commit type is allowed",
+      "- PASS compact subject describes a specific change"
+    ]
+  },
+  {
+    "label": "doctor",
+    "exit_code": 0,
+    "sha256": "0b8696637e0634e1e5fe88ec124858fae1ad5c607ba3b8aa1ab7d063fab289e7",
+    "summary": [
+      "AIDE Lite doctor",
+      "status: PASS",
+      "- repo_root: D:/Projects/AIDE/aide",
+      "- PASS required: .aide/policies/token-budget.yaml",
+      "- PASS required: .aide/memory/project-state.md",
+      "- PASS required: .aide/memory/decisions.md",
+      "- PASS required: .aide/memory/open-risks.md",
+      "- PASS required: .aide/prompts/compact-task.md"
+    ]
+  },
+  {
+    "label": "validate",
+    "exit_code": 0,
+    "sha256": "306374f6f1ba3ba6997e0e4e1b9ea608058315a34695b965874aed83d3bed1d3",
+    "summary": [
+      "AIDE Lite validate",
+      "status: PASS",
+      "checks: 60921; PASS: 60920; WARN: 1; FAIL: 0; OTHER: 0",
+      "- WARN review packet review ref missing: .aide/prompts/evidence-review.md",
+      "omitted PASS details: 60920; use validate --full or --json for all results"
+    ]
+  }
+]

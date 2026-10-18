@@ -1,0 +1,58 @@
+{
+  "acceptance_verified": false,
+  "declared_status": "passed",
+  "evidence": [
+    {
+      "applicability": "unverified",
+      "availability": "record_too_large",
+      "field": "preview_ref",
+      "path": null,
+      "source": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "record_too_large",
+      "field": "source_ref",
+      "path": null,
+      "source": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/status.yaml"
+    },
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "visual_ref",
+      "path": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/visual-review.json",
+      "source": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/status.yaml"
+    }
+  ],
+  "index_status": "passed",
+  "issues": [],
+  "next_action": "exact terminal technical review and guarded dev/main integration",
+  "objective": "Qualify the saved task brief in the installed Windows browser",
+  "owner": null,
+  "read_only": true,
+  "remaining_obligations": null,
+  "result": "OBSERVED_VIEWPORTS_PASS",
+  "schema_version": "aide.task-current.v1",
+  "scope": {
+    "acceptance_scope": null,
+    "classification": null,
+    "product_qualified": true,
+    "review_gate": null,
+    "target_mutated": null
+  },
+  "selection": {
+    "mode": "explicit_request",
+    "source": "request"
+  },
+  "sources": {
+    "declared_status": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/task.yaml",
+    "index_status": ".aide/queue/index.yaml",
+    "next_action": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/status.yaml",
+    "objective": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/task.yaml",
+    "result": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/status.yaml",
+    "scope": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/status.yaml",
+    "status": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/status.yaml"
+  },
+  "status": "passed",
+  "task_id": "AIDE-TASK-BRIEF-BROWSER-01"
+}

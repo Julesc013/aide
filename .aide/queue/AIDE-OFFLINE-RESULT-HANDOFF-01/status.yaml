@@ -1,0 +1,9 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-OFFLINE-RESULT-HANDOFF-01
+status: passed
+result: PASS
+next_action: guarded integration after exact terminal review; then existing dependency-ready campaign work
+maximum_jobs: 3
+jobs_allocated: 3
+product_qualified: true
+qualification_scope: exact offline text exchange in source and safe-installed Windows fixtures; no release or live host claim

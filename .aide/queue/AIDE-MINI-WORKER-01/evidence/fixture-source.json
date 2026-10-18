@@ -1,0 +1,25 @@
+{
+  "base": "5b0af5ecf9027d8e09093b3b59f372d9462f39fa",
+  "files": {
+    ".aide/queue/AIDE-MINI-WORKER-01/ExecPlan.md": "266e42618759e9680ffca3b1cb7da5cd3b5f845c2d8f723e4ce553aaed191e9a",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/acquisition-repair-attempt-02.json": "c752c5b26efc76465fdc6802105bdbb000e0ee37c34960534b159275eca170c3",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/acquisition-result.json": "9d66ed8d9dade36fba31c369b55fbed6664167c12a4170b1b62d377e5daec2e9",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/attempt-02-acquisition.json": "ccb1b41d26ab3c754f43210536cb523f766ec6c0abdd0a04b3b104b992ae7c57",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/dependency-recipe.json": "4a0304eb6cb5467bc00c98f8847f20a5e30d86461a46cbb79fc4258938aca61b",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/fixture-effect.md": "fcac078c9352406a1f0d5f6c12b6c6040833de62caca73e441bc77da2bb35cde",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/fixture-job-template.json": "03e373ff501468df0c3345a306ad6b14a676dd43684705bd610ea6e3deaa8b6e",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/fixture-message.txt": "8d83b6dac4eeceef4fa18557acbb24987ef951cd331f5a6eb4767d974fb85e16",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/fixture-review.md": "ca612ab8c78f04dd109e3bb9db72970b75136afeace8dd4b63b796744a794050",
+    ".aide/queue/AIDE-MINI-WORKER-01/qualify_worker.py": "9f8a2db2f1fb02d5926611deef7b3de48eac5c2d1b651f84a0f148cdccf2f1a1",
+    ".aide/queue/AIDE-MINI-WORKER-01/status.yaml": "8dbd8b01a69e112d250ffd03f12debb608fe9cf3979f4b86d42696095d4eb9be",
+    "DOCUMENTATION.md": "1a603629573f20a07d5f768b2ea25a120c3d57aa665a87b5d8863d4a41174c80",
+    "IMPLEMENT.md": "fd4c45be3731bdb8e951acefa51eccae1274240351911179ab89c440b740369d",
+    "PLANS.md": "61be5f741e5ecb4072600a1db20a07297db0de44871cfaff4accc26e7601f091",
+    "core/execution/mini_worker.py": "029c70f39938f12e74c2b375854023876b4edc9b720a143bd44476e95ebbfa69",
+    "core/execution/tests/test_mini_worker.py": "7b9951ac5c06be684b7dcfbf7ce7418582219244eec2460e19c835e1936573ab",
+    "docs/reference/mini-worker.md": "be184454d6ec0551e354fb30648073665bc2ec8540fb25756ca53442fbff8d23"
+  },
+  "message_sha256": "8d83b6dac4eeceef4fa18557acbb24987ef951cd331f5a6eb4767d974fb85e16",
+  "effect_sha256": "fcac078c9352406a1f0d5f6c12b6c6040833de62caca73e441bc77da2bb35cde",
+  "job_template_sha256": "03e373ff501468df0c3345a306ad6b14a676dd43684705bd610ea6e3deaa8b6e"
+}

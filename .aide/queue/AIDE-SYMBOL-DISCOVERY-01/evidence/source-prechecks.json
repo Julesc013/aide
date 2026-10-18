@@ -1,0 +1,25 @@
+{
+  "checks": [
+    {
+      "check": "doctor",
+      "exit_code": 1,
+      "sha256": "20ed121a4a800922d8e21b9e7dc5b38c8a212405fa9cf6e987f97248cc93a64a"
+    },
+    {
+      "check": "validate",
+      "exit_code": 1,
+      "sha256": "32de4fc91fd7f2118c8cb1900c9e91fc8b5c5cd27dcb7c0aa5a4dfbedf276f7f"
+    },
+    {
+      "check": "message",
+      "exit_code": 0,
+      "sha256": "528fe0b44037390c18e55cb97983190777438cb1dee86e636d081ced14c4f18f"
+    }
+  ],
+  "original_tests_ast_unchanged": {
+    ".aide/scripts/tests/test_q37_repo_intelligence.py": "868fcb7ae9cdb8a63c5b027e6c54fe25caa3420d98f4f82d3f37f39a0895b2c7",
+    ".aide/scripts/tests/test_q38_file_quality.py": "84fbe9ad9dd047527cbd0c999b72fb3c219b7700cd806736c35075c8a6357682"
+  },
+  "new_methods": 21,
+  "tests_run": false
+}

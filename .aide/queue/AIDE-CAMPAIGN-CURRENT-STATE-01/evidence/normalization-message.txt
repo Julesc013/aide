@@ -1,0 +1,10 @@
+docs(evidence): bind captured text to committed line endings
+
+Record both original worker and Git-normalized identities for five captured
+outputs. Preserve raw collections and original closure history while making
+the manifest verifiable from a fresh checkout.
+
+Validation: PASS - five exact CRLF-to-LF transformations; unchanged results
+Changelog: Internal: Clarify retained and committed evidence identities
+AIDE-Task: AIDE-CAMPAIGN-CURRENT-STATE-01
+AIDE-Format: compact-v1

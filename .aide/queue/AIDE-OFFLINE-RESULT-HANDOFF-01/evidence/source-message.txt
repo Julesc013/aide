@@ -1,0 +1,13 @@
+feat(handoff): bind offline results to exact selected inputs
+
+Preserve the v1 handoff and add explicit v2 requests with bounded source inputs.
+Return reports, candidate patches and check records against an exact request;
+inspect current inputs and task state before reviewing any returned work.
+
+Validation: PASS - syntax and preserved original test assertions
+ FAIL - doctor/validate: changed-source capability binding; reviewed refresh pending
+ NOT RUN - 97 source methods and installed qualification
+Changelog: Added: Inspect offline results against their request and selected inputs
+Risk: Selected files are incomplete dependency coverage; no automatic apply or acceptance
+AIDE-Task: AIDE-OFFLINE-RESULT-HANDOFF-01
+AIDE-Format: compact-v1

@@ -1,0 +1,11 @@
+feat(task): admit fresh helper evidence in task briefs
+
+Join existing task context and bounded symbol discovery so a developer can
+inspect an existing helper and its references in one read-only observation.
+Preserve ordinary briefs and unresolved evidence without another index.
+
+Validation: PASS - existing owners and exact baseline inspected
+ NOT RUN - combined source and installed workflow checks
+Changelog: Internal: Admit optional fresh symbol evidence in task briefs
+AIDE-Task: AIDE-TASK-BRIEF-SYMBOL-01
+AIDE-Format: compact-v1

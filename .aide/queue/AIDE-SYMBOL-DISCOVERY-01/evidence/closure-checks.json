@@ -1,0 +1,74 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "label": "diff",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/closure-check-diff.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "message",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-SYMBOL-DISCOVERY-01\\evidence\\closure-message.txt"
+      ],
+      "exit_code": 0,
+      "log": ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/closure-check-message.log",
+      "sha256": "be9cb9998bcdfff3eb5732e916a3978767e9d4c23107973c8bfa41e1a5cfb5a8"
+    },
+    {
+      "label": "range",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "118ab7829f300050394dc67a3af943963acfe218..HEAD"
+      ],
+      "exit_code": 0,
+      "log": ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/closure-check-range.log",
+      "sha256": "37adc5e3d47b6f0799bd994724134ea8f55930d6ff78c4dba9ac78ae6c0c3c3d"
+    },
+    {
+      "label": "validate",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "exit_code": 0,
+      "log": ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/closure-check-validate.log",
+      "sha256": "cf44302e0d88fd996496fbc517ac1f956446e1541a1bd4ebccdc007be80e3a8c"
+    },
+    {
+      "label": "preview",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/run_preview.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "log": ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/closure-check-preview.log",
+      "sha256": "5298e14d2b821b2bdeeefd14ea458c35e5ec46276573e5b58c59e0cab3fed7a3"
+    }
+  ]
+}

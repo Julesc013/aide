@@ -1,0 +1,17 @@
+{
+  "base": "8fe2d12cbc9d91f034cf7f68c58beda09809dc58",
+  "previous_checkout": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+  "files": {
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/ExecPlan.md": "5d5aea0f828a03f7d1871c347c63048b2417e12f60251ef4d4125efffc5d6820",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/prompt.md": "96e58170f1dff5ef7efa62237019e1478de2d8293bbdc90ef1b6b71e43f3e9ca",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/status.yaml": "3830be1d90aa04d6d7895dfeac8e3ad002b35425d9e920e0d42c5afc92cbcbb6",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/task.yaml": "641cc6b5cab24910714297eb992c09e8fefd718bb96d3fee08396a3b55d30083",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/admission-effect.md": "1c2c3a6ee931d3572e668b2b0222476be459b36ab0c3872d20ca2009d63743e7",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/admission-message.txt": "388ba3342293cea37943d53c28ae4238e1b36b377f45dc9f18b10673c71a1c88",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/baseline.json": "567da4b75793468191dc827c6bd08fe2679857ad33ae0d43f4a698c64447265e",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/latest-intent-packet.json": "91a516fff221539397ed163884a12b28e891a4d4d7639e8a17dcd389658f2c39",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/latest-workunit-draft.json": "aedfcb9d4f97d2fb0ad714cb733ccd7f95d53f96b4bfdda52cab3a7abc740bd8"
+  },
+  "message_sha256": "388ba3342293cea37943d53c28ae4238e1b36b377f45dc9f18b10673c71a1c88",
+  "effect_sha256": "1c2c3a6ee931d3572e668b2b0222476be459b36ab0c3872d20ca2009d63743e7"
+}

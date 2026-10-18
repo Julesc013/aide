@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "source_head": "09925a0ff6aa14117271a0115baf3f1a47b98aaa",
+  "source_range": "ceac70a6fefefde93d2fb7435e8825c173302757..09925a0ff6aa14117271a0115baf3f1a47b98aaa",
+  "commits": [
+    "09925a0ff6aa14117271a0115baf3f1a47b98aaa",
+    "984b47b6e9d1df9eadee60dff7218d693854da8e",
+    "b81589114b2abf86d219f407e0c1e3fe048be3c1",
+    "32a9d56aca409b4891047a776fdf40399744a48c"
+  ],
+  "malformed_count": 0,
+  "sha256s": {
+    "CHANGELOG.preview.md": "77ec64b917052124b54a14033ca3201fe4a038fbd482d6bb4a7f9aa5f0e3d36a",
+    "RELEASE_NOTES.preview.md": "ae71da37206f41a8d6849b18581e796072809ab6739ad902d08a5cf077edb332",
+    "changelog.preview.json": "1a168e02317c2751d380c7cd2d3a1321fb3076e3e3f94f556200012bb0878734",
+    "latest-changelog-report.md": "f002d55c9ad2aefc694f42d62139c39e76be9d01a29fc649eb7afafa17ca836c",
+    "malformed-commits.md": "1aa7b48cd8bc0c4e4e036bb57a7dd56c1507f77df33864ef86cfc78c6d572537",
+    "release-notes.preview.json": "c77a7ce7ba29dd0a8316efc1f98cf4861daee3b2c125e711e67f7623e0c7733e"
+  },
+  "regeneration": "read_only_exact_six_output_comparison",
+  "operations": {
+    "preview": {
+      "exit_code": 0,
+      "stdout_bytes": 519,
+      "stdout_sha256": "8653c855283ac79977abdc1d46a5a3c2440342ad4c0ca6f4e11786a892a6fba6",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "preview-validate": {
+      "exit_code": 0,
+      "stdout_bytes": 2349,
+      "stdout_sha256": "eb5ba25320954d7fb10d12867818e67bb7ae7ef3f878daa54c49aeb385b5bc37",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "preview-status": {
+      "exit_code": 0,
+      "stdout_bytes": 348,
+      "stdout_sha256": "616ec0edd492d663167b31219770ee2a028f9c837c5c6966b87e569b91286d29",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "pack_metadata_changed": [
+    ".aide/export/aide-lite-pack-v0/manifest.yaml"
+  ],
+  "pack_payload_unchanged": 867,
+  "frozen_release_files_unchanged": 8
+}

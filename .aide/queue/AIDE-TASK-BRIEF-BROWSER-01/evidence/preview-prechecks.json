@@ -1,0 +1,12 @@
+[
+  {
+    "label": "diff",
+    "exit_code": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "label": "message",
+    "exit_code": 0,
+    "sha256": "5e20c3987976f9d3b40bbc025e386e3219f55a80514bb804ea8fcdeffe1720af"
+  }
+]

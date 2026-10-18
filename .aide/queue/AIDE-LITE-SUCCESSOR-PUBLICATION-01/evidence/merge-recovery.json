@@ -1,0 +1,57 @@
+{
+  "result": "RECONCILIATION_CANDIDATE",
+  "head": "6728db41ed6a67e7f25429f53632682814f380d2",
+  "merge_head": "ecff55da6db49d63c4a3718b726f96d3cd74e6e9",
+  "staged_tree": "649986c2457a9d4357e67737f386be2dadfa51ba",
+  "original_full_check_exit": 2,
+  "original_full_check_sha256": "0cac0b9fb84597da47e8bd132c09c0e70058220273664f5a481d319b62de958b",
+  "inherited": {
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_task_brief_symbols.py": {
+      "staged_blob": "b795dd1f0d84405144585d9d00471dca7fe6d716",
+      "accepted_dev_blob": "b795dd1f0d84405144585d9d00471dca7fe6d716",
+      "classification": "inherited presentation finding; byte-identical accepted dev input"
+    },
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/run_checks.py": {
+      "staged_blob": "71a18e31175aba4d2ed78246c3bda2fb8558b3ab",
+      "accepted_dev_blob": "71a18e31175aba4d2ed78246c3bda2fb8558b3ab",
+      "classification": "inherited presentation finding; byte-identical accepted dev input"
+    },
+    ".aide/queue/AIDE-MINI-WORKER-01/acquire_wheels.py": {
+      "staged_blob": "0fcb7767f22d8c5f84bfea409dc1039e5fe4d983",
+      "accepted_dev_blob": "0fcb7767f22d8c5f84bfea409dc1039e5fe4d983",
+      "classification": "inherited presentation finding; byte-identical accepted dev input"
+    },
+    ".aide/queue/AIDE-MINI-WORKER-01/qualify_worker.py": {
+      "staged_blob": "c520defd1ab4030aa2f379d3e59185d7710c808f",
+      "accepted_dev_blob": "c520defd1ab4030aa2f379d3e59185d7710c808f",
+      "classification": "inherited presentation finding; byte-identical accepted dev input"
+    },
+    ".aide/queue/AIDE-MINI-WORKER-01/run_checks.py": {
+      "staged_blob": "f7c2f6e48699099b2952fdb51bf1cef9a1cf04d3",
+      "accepted_dev_blob": "f7c2f6e48699099b2952fdb51bf1cef9a1cf04d3",
+      "classification": "inherited presentation finding; byte-identical accepted dev input"
+    },
+    ".aide/scripts/tests/test_task_brief_symbols.py": {
+      "staged_blob": "b795dd1f0d84405144585d9d00471dca7fe6d716",
+      "accepted_dev_blob": "b795dd1f0d84405144585d9d00471dca7fe6d716",
+      "classification": "inherited presentation finding; byte-identical accepted dev input"
+    },
+    "core/execution/mini_worker.py": {
+      "staged_blob": "9410f028ea278807e2a306e2adfb03053a0ed0ea",
+      "accepted_dev_blob": "9410f028ea278807e2a306e2adfb03053a0ed0ea",
+      "classification": "inherited presentation finding; byte-identical accepted dev input"
+    },
+    "core/execution/tests/test_mini_worker.py": {
+      "staged_blob": "aa0cb08b41c602e6e1e32fdd55729fa03a0162fa",
+      "accepted_dev_blob": "aa0cb08b41c602e6e1e32fdd55729fa03a0162fa",
+      "classification": "inherited presentation finding; byte-identical accepted dev input"
+    },
+    "docs/reference/mini-worker.md": {
+      "staged_blob": "8e58f8a50ad7b26d48f175d4e31cd6987770f02c",
+      "accepted_dev_blob": "8e58f8a50ad7b26d48f175d4e31cd6987770f02c",
+      "classification": "inherited presentation finding; byte-identical accepted dev input"
+    }
+  },
+  "six_resolution_check_exit": 0,
+  "next_action": "independent recovery disposition then two-parent commit; no merge rerun or source cleanup"
+}

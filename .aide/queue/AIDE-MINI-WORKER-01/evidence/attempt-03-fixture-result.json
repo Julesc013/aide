@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "scenarios": 15,
+  "source_commit": "e2902c21c5d2cc23ed559867b87a0a2be7e02caf",
+  "recipe_sha256": "85a7eefbb9b13c5b149ca0fea91f3361956a339325b557dd9fb63b5d3a807cb8",
+  "real_model_requests": 0,
+  "actual_upstream_default_agent": true,
+  "fixture_only": true,
+  "candidate_automatically_accepted": false,
+  "network_calls": 0,
+  "global_installation": false,
+  "filesystem_read_isolation_qualified": false
+}

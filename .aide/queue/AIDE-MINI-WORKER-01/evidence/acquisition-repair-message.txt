@@ -1,0 +1,13 @@
+fix(worker): pin artifact metadata and reuse acquired wheels
+
+Keep original PyPI declarations while checking exact wheel metadata bytes
+and dependency strings. Five artifacts use different equivalent spellings.
+Raise the finite metadata guard to 256 KiB for the observed Pydantic size,
+reuse both verified downloads, and preserve the failed first attempt.
+
+Validation: PASS - 14 metadata observations; two retained archive matches;
+ original collection, retirement and exact artifact hashes; syntax and diff checks
+ NOT RUN - acquisition continuation and worker imports
+Changelog: Internal: Correct Mini metadata expectations and preserve acquired work
+AIDE-Task: AIDE-MINI-WORKER-01
+AIDE-Format: compact-v1

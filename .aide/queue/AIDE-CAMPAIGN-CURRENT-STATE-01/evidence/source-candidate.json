@@ -1,0 +1,27 @@
+{
+  "base": "1a9f6445a874f38ccc1b6fa5da8e882cb260e214",
+  "files": {
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/ExecPlan.md": "411c4029ce21175ad9c5edcf6b1d0c06ef2261184aa711535f4f2821828cb2f4",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/admission-review.md": "46dffeabbec6d29f87bcc074b66f642205dec0a33095ab436516118bd65c33ce",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/claim-sources.json": "34267ad9712a270cb1d630c44dd5ca3c5ffcb01b06b0291c66f1312ada6f3ef2",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/immutable-inventory.json": "de28689ede94d608c2f89a298375893e640611c026e912af7d4d484f24b7c8d3",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/publication-status-at-f708e8c6.yaml": "c8f6b1f93d3e483f8fb03fba7237a53b84ae1b4d5947b4b4aa2b23aa030979fc",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/source-job-template.json": "a85bb8a6937943198916f4868ed7d5b1e414c9539c32f09f2fdad53e11c0ac83",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/source-message.txt": "3769783ce5e96cedcb0bfc092c24ab4220abe2735db61edf7af12ec768835d14",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/run_checks.py": "14fc81b63a3d32228d7a9f90f9a14586d21403d6e8b7b1b620b516d62f8d73a8",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/status.yaml": "cb81ea3bc5a1fa8ad21d1d4e4d6be5122a88c275bad4dc79806bf02ee25fa362",
+    ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/task.yaml": "ea1cdd85ea49e176a8c0354bb94be6581a4ea3e1c9bc72936b4553440e69389f",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md": "cacdc5cb49311c5e0d51dc4ff9ced45f054c78b371d03623dfd99f488a69e592",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md": "e4bde163054789fa99e5b67d1250959d2f763b478b1e7f79dc03979c59199c8b",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml": "3987369874ef419b4b1aa832c402bbbc19ce23b57a0b157f670d93b36d49a61c",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/task.yaml": "ee7726bd2aa68c2388b6936ddac455c832fc2b9ec5b3c6080a366daf99343100",
+    ".aide/queue/index.yaml": "4c29a930a0b7a302c8a1b215121cf6ed0b0695677c59b8e7e1d480d08b0d5f87",
+    "DOCUMENTATION.md": "7b39d9d8d98ef6ebe64912085d933ebbaadf21096971ff9a919dc528447ab8a4",
+    "IMPLEMENT.md": "4b7bd4210766fb615c7a6007405892d01323e900e767db9660eb559d97fb7436",
+    "PLANS.md": "8ced08f5b78e43beca3ab5f8f52b329967c40aaaa00d4aa2c696e6ef1708167d"
+  },
+  "message_sha256": "3769783ce5e96cedcb0bfc092c24ab4220abe2735db61edf7af12ec768835d14",
+  "job_template_sha256": "a85bb8a6937943198916f4868ed7d5b1e414c9539c32f09f2fdad53e11c0ac83",
+  "max_allocations": 1,
+  "qualification_run": false
+}

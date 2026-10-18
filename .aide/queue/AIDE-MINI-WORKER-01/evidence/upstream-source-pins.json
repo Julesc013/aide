@@ -1,0 +1,42 @@
+{
+  "source": "a83fcae82d2a08f0ee0c688f9d137b3566c097f8",
+  "files": [
+    {
+      "path": "src/minisweagent/__init__.py",
+      "bytes": 2371,
+      "sha256": "0a708308b1b62cc020b60799c3d54f665845f795b3f0c4fdac787c96a38d12c7",
+      "url": "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/a83fcae82d2a08f0ee0c688f9d137b3566c097f8/src/minisweagent/__init__.py"
+    },
+    {
+      "path": "src/minisweagent/agents/default.py",
+      "bytes": 8043,
+      "sha256": "e8ef8aa365942d739c2ec5cb0879f60f377d2dc2de8ec670aaedf3bafb45a4c2",
+      "url": "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/a83fcae82d2a08f0ee0c688f9d137b3566c097f8/src/minisweagent/agents/default.py"
+    },
+    {
+      "path": "src/minisweagent/exceptions.py",
+      "bytes": 729,
+      "sha256": "0590393c56bee873c79a691dcb4f15cb39c85f1658598b84bfb295bfde56921d",
+      "url": "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/a83fcae82d2a08f0ee0c688f9d137b3566c097f8/src/minisweagent/exceptions.py"
+    },
+    {
+      "path": "src/minisweagent/utils/serialize.py",
+      "bytes": 938,
+      "sha256": "3035b27cfeffdf91117c72bc8131340bd9c5f67a3010baeb4ecd6b0c7406f462",
+      "url": "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/a83fcae82d2a08f0ee0c688f9d137b3566c097f8/src/minisweagent/utils/serialize.py"
+    },
+    {
+      "path": "src/minisweagent/utils/log.py",
+      "bytes": 996,
+      "sha256": "aee0cc34a32b542f4d3ef09e1f03b7418cf98ec54d506401d9d4401003c05a9f",
+      "url": "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/a83fcae82d2a08f0ee0c688f9d137b3566c097f8/src/minisweagent/utils/log.py"
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 1094,
+      "sha256": "0f796e58f91d1c07bb2c1b1d0f8bf3a83017c3a5dec1bdc6fae733b2cd2e875b",
+      "url": "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/a83fcae82d2a08f0ee0c688f9d137b3566c097f8/LICENSE.md"
+    }
+  ],
+  "scope": "Match selected wheel entry-path bytes and license to immutable upstream source; no signature/provenance attestation claim."
+}

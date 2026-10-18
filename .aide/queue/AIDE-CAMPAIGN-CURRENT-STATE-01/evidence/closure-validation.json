@@ -1,0 +1,102 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "check": "message",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        ".aide\\queue\\AIDE-CAMPAIGN-CURRENT-STATE-01\\evidence\\closure-message.txt"
+      ],
+      "exit_code": 0,
+      "sha256": "d98e27dcf66c9dd1f00a5763af95552e9bc1e4dbeec47aa928c0dab4eb72d600",
+      "bytes": 2183
+    },
+    {
+      "check": "range",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "29f4bf5c1f23a923b0ea97e1826ab9fff4c734fc..HEAD"
+      ],
+      "exit_code": 0,
+      "sha256": "c8964c7b0a267df5b268ecca1af2dfd8f84962f04c78e989f2a4c63630aa893d",
+      "bytes": 470
+    },
+    {
+      "check": "validate",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "exit_code": 0,
+      "sha256": "8084fc43cb5383cd8c86024d66aba2cb8218c2b0d31ca208c636a3672dc7fa19",
+      "bytes": 241
+    },
+    {
+      "check": "capability",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "status"
+      ],
+      "exit_code": 0,
+      "sha256": "785e31d49f9a90cab93ba4794712432a1e152e83a44e124988cb243a4f774402",
+      "bytes": 489
+    },
+    {
+      "check": "preservation_preview",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide\\queue\\AIDE-CAMPAIGN-CURRENT-STATE-01\\run_checks.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "sha256": "c9cf1f5e54106a2147c5ec6257f3f48acbd207875a1743a3324cbef0b76ed039",
+      "bytes": 1383
+    },
+    {
+      "check": "diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "job": "d0345a4ad5ca49a8aeabf64bb0393fd0",
+  "collection_verified": true,
+  "scratch_absent": true,
+  "reservation_released": true,
+  "capability_binding": {
+    "state": "CURRENT",
+    "reason": "bound_source_inputs_unchanged",
+    "changed_refs": [],
+    "qualification": "source_classification_only"
+  },
+  "warning": "Existing review-reference WARN retained; referenced file exists.",
+  "whole_task_usage": "unknown",
+  "scope_repair_ref": "evidence/closure-scope-repair.json",
+  "derived_report_restored": true
+}

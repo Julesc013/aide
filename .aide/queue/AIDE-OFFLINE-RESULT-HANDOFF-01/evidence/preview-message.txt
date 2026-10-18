@@ -1,0 +1,12 @@
+test(handoff): retain installed recovery and final preview checks
+
+The development pack and safe-installed CLI now exchange interrupted and
+completed candidate results against exact selected inputs. Preserve those
+outcomes and qualify the final changelog without repeating unchanged work.
+
+Validation: PASS - delivered97; ownership6; installed exchange and real records
+ PASS - exporter, doctor, validate, pack-status; eight release assets unchanged
+ NOT RUN - final fixed preview
+Changelog: Internal: Preserve installed offline recovery qualification
+AIDE-Task: AIDE-OFFLINE-RESULT-HANDOFF-01
+AIDE-Format: compact-v1

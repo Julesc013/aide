@@ -1,0 +1,1 @@
+Add a safe offline HTML rendering to the existing explicit task development brief. Preserve its exact data, uncertainty, read-only behavior and exit semantics; qualify source and installed consumers, then synchronize through existing campaign gates.

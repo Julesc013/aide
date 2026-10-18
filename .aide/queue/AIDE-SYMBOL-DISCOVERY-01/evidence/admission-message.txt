@@ -1,0 +1,11 @@
+feat(quality): admit fresh bounded symbol discovery
+
+Recorded name matches do not show current definitions or explain references.
+Extend the existing quality owner with explicit source evidence and uncertainty,
+using the existing portable CLI and validation route.
+
+Validation: PASS - existing quality owners and campaign prerequisites inspected
+ NOT RUN - new source and installed consumer qualification
+Changelog: Internal: Admit bounded helper and reference inspection
+AIDE-Task: AIDE-SYMBOL-DISCOVERY-01
+AIDE-Format: compact-v1

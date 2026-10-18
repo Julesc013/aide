@@ -1,3 +1,5 @@
+**Current campaign view:** [CURRENT.md](CURRENT.md) and status.yaml identify the latest scoped outcomes, open requirements and action owners. The chronological record below is preserved; older next-step statements are historical.
+
 # AIDE-CONVERGENCE-AND-DELIVERY-01
 
 ## Native owner adoption preparation qualified - 2026-10-17
@@ -875,8 +877,27 @@ unmerged pending its own integration disposition; no historical waiver inferred.
 
 **Successor source reconciled and qualified.** AIDE-LITE-SUCCESSOR-INTEGRATION-01 preserves dfae9356 ancestry, newer features, all original evidence and frozen archive bytes. Combined source, actual delivered/installed pack and fixed history preview passed; exact sync is recorded by its integration receipt. The next delivery decision is the release subject: original frozen 1.1.0 versus a separately qualified newer archive. Neither source integration nor pack checks silently extend old archive qualification.
 
-**18 October ? successor publication preparation.** Local and remote dev/main
-at 8fe2d12c include the retained dfae9356 qualification. Prepare the unchanged
-1.1.0 archive under AIDE-LITE-SUCCESSOR-PUBLICATION-01; a separately reviewed effect
-will tag that accepted ancestor, not the newer payload. Authentication remains
-external. Newer adopter defaults need a later qualified release.
+**Independent P4.requests increment.** AIDE-DEPENDENCY-CANCELLATION-01 is
+admitted for explicit-v2 cooperative cancellation, not native termination.
+The publication candidate remains preserved on task/aide-lite-successor-publication-01
+at f708e8c6 awaiting interactive authentication. Refresh its ref guards after
+independent integration; do not reuse stale publication effects.
+
+**Cancellation qualification complete.** See the child report: all73 source
+methods, one actual CLI/MCP consumer, legacy refusal, six ownership checks and
+fixed preview passed. All three jobs retired. Source-only scope is retained;
+actual branch delivery is recorded separately. Pending publication refs remain
+preserved and its future effect must refresh stale ref guards.
+
+### Dependency session continuity
+
+AIDE-DEPENDENCY-REBIND-01 is admitted for explicit cooperative configuration
+reconciliation over existing request/state owners. Preserve native work, stale
+writer refusal and independent publication gates; see the child ExecPlan.
+
+**Session reconciliation qualified.** AIDE-DEPENDENCY-REBIND-01 passed88 source
+methods, two actual fresh-process workflows, v1/v2 compatibility, six ownership
+checks and fixed preview. All3 jobs retired. Child REPORT.md and integration
+receipt govern scoped completion; actual host/target/publication gates remain.
+
+**Successor publication resumed ? 18 October 2026.** The user supplied GitHub CLI authentication and requires pre-tag documentation, a root TODO.md, concise unwrapped release notes and descriptive download labels. The existing publication WorkUnit is refreshing exact effects; frozen1.1.0 archives remain unchanged. Published1.0.0 presentation will receive a separately reviewed metadata-only repair. No publication is implied by this preparation.

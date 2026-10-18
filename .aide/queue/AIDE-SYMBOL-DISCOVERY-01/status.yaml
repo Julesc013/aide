@@ -1,0 +1,11 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-SYMBOL-DISCOVERY-01
+status: passed
+result: PASS
+next_action: guarded dev/main integration after exact terminal review; then dependency-ready campaign work
+maximum_jobs: 3
+jobs_allocated: 3
+product_qualified: true
+
+retained_failure: job2 unexpected derived command catalogue delta; completed export reused only by exact evidence
+qualification_scope: bounded source and safe-installed Windows CLI syntax inspection; semantic binding and release claims excluded

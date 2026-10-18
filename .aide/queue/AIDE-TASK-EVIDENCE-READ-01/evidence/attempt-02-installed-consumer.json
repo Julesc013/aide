@@ -1,0 +1,63 @@
+{
+  "result": "PASS",
+  "observations": {
+    "installed": {
+      "state": "OBSERVED",
+      "task_id": "PROJECT-EVIDENCE-01",
+      "observation_sha256": "3d3acea81d368118dfdfc6f3cc3bd3e8fa0a39a83205be37b53b93fd3f834f10",
+      "html_sha256": "0c2494a642bb04bef455f1dbcb19328b6d1c99471c88370c87146ed22788ab61",
+      "complete_json_equal": true,
+      "inactive_markup": true,
+      "execution_admitted": false
+    },
+    "real-source": {
+      "state": "OBSERVED",
+      "task_id": "AIDE-TASK-BRIEF-BROWSER-01",
+      "observation_sha256": "b8a4f66fe4eafa6bb51f2229f63f1c9d7d4d34199cb215519a2816871ff207c3",
+      "html_sha256": "07abecfb827b8173d7034b5d9654cfa470a747cf9e46006c8fa49af1cb997215",
+      "complete_json_equal": true,
+      "inactive_markup": true,
+      "execution_admitted": false
+    }
+  },
+  "helper_receipts": {
+    ".aide/scripts/task_brief_view.py": {
+      "installed_digest": "b30b75771adf418f413084241e555427624a3b0c87d59b0070569124fbc04059",
+      "kind": "managed_file",
+      "local_overlay": false,
+      "ownership": "aide_portable_managed",
+      "source": ".aide/scripts/task_brief_view.py",
+      "source_digest": "b30b75771adf418f413084241e555427624a3b0c87d59b0070569124fbc04059"
+    },
+    ".aide/scripts/task_handoff.py": {
+      "installed_digest": "cb508c38f5e46587685844c603eae33a485cd8e5d70daf556940f851a8b8ada0",
+      "kind": "managed_file",
+      "local_overlay": false,
+      "ownership": "aide_portable_managed",
+      "source": ".aide/scripts/task_handoff.py",
+      "source_digest": "cb508c38f5e46587685844c603eae33a485cd8e5d70daf556940f851a8b8ada0"
+    }
+  },
+  "independent_projection_binding_oracle": true,
+  "one_intentional_binding_line_changed": 44,
+  "customization_preserved": true,
+  "core_absent": true,
+  "fresh_process_read_only": true,
+  "source_inputs_unchanged": {
+    ".aide/scripts/aide_lite.py": "14adb0c90b3003e8986b0f74b6605a8d71157aeaabe6a5952d13b7b9307a61c1",
+    ".aide/scripts/task_brief_view.py": "b30b75771adf418f413084241e555427624a3b0c87d59b0070569124fbc04059",
+    ".aide/scripts/task_handoff.py": "cb508c38f5e46587685844c603eae33a485cd8e5d70daf556940f851a8b8ada0",
+    "docs/reference/task-packets.md": "6f61de2148c456d4bb93685840c3a589405dc77211a5a60def9447af40ce5ee1",
+    ".aide/reports/file-quality-ledger.json": "fa63e5a98682e243d8a8e64d6eb2b059f1cf38fb6f13bfa56b3ff1663c81d643",
+    ".aide/controller/outcome-ledger.jsonl": "50ef4662abccc26199fae681086650797b0ba94b0c11e4b31191cd5277e152a9",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/task.yaml": "415988827bccae7e551848b1affd096fc4b4fb9bb71413477ab2da5bc5321307",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/status.yaml": "ffdc4f8bb40f80dc729954f696f2e4c84a055c7fb96ce15d7de3497ccf6d02d2",
+    ".aide/queue/index.yaml": "1f902e3ebd40af6d1e08a46091705502ad1b336e8e5eba2c65dba68e6b9123cb",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/source-attempt-01.json": "0d8e630cc5c84fa1655273787aefe803eaa8997c580f756ccd36cf2176f6ef45",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/preview-attempt-02.json": "d52f925644bc785c1e0a5c5f2c1fff2f7aaca7892f786a0341edcff59e332755",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/visual-review.json": "ae869c85e337dcc8f25e15dac29ef00a02a8b61e590711d868653f56fecce444"
+  },
+  "large_evidence_verified": true,
+  "browser_render": "NOT_RUN",
+  "execution_authority": false
+}

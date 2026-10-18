@@ -1,0 +1,21 @@
+{
+  "reviewer": "/root/review_disked_continuation",
+  "findings": "In-progress terminal review found derived capability report outside allowlist and premature PLANS integration wording. Neither invalidates the qualified subject.",
+  "report_path": ".aide/reports/capability-command-status.md",
+  "generated_sha256": "201e990133f5078bbaf6643b67af0e624e17fed758a5cdbda4811925f04a22fd",
+  "restored_head_sha256": "4bf446cd79d8efa1ea4c5ffd6122f1f14535be80dbdaf6b9daea96b6491c4646",
+  "exact_two_header_delta": [
+    [
+      5,
+      "- current_branch: `task/aide-dependency-rebind-01`",
+      "- current_branch: `task/aide-campaign-current-state-01`"
+    ],
+    [
+      6,
+      "- current_commit: `09925a0ff6aa14117271a0115baf3f1a47b98aaa`",
+      "- current_commit: `7059f9b0cfd490415e86e01d5c5c68fd7a695430`"
+    ]
+  ],
+  "disposition": "Retain generated report in ignored evidence, restore exact HEAD bytes, keep semantic CURRENT observation. No scope expansion or new job. Correct PLANS to pending integration.",
+  "qualification_rerun": false
+}
