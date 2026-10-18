@@ -1,0 +1,27 @@
+{
+  "command": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-I",
+    "D:\\Projects\\AIDE\\aide\\.aide\\scripts\\aide_lite.py",
+    "--repo-root",
+    "D:\\Projects\\AIDE\\aide",
+    "task",
+    "current",
+    "--task-id",
+    "AIDE-TASK-BRIEF-BROWSER-01",
+    "--json"
+  ],
+  "cwd": "D:\\Projects\\AIDE\\aide",
+  "state": "completed",
+  "exit_code": 0,
+  "streams": {
+    "actual-current.stdout": {
+      "bytes": 2099,
+      "sha256": "136eb7fd01226ada5d22491fe04499f57d640056b0716d35f265f47a264e9b9b"
+    },
+    "actual-current.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

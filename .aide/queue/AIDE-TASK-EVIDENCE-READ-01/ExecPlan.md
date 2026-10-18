@@ -73,3 +73,15 @@ draft. Prior turn completed browser qualification and dev/main integration.
 
 **Progress update.** Independent admission accepted the exact nine-file map.
 Admission committed at51ce6c7b; source preparation is in progress.
+
+**Source observed.** Source checkpoint 347668a4 passed all168 methods, actual
+large-evidence paths/continuation and complete HTML/JSON equality. Small-evidence text/JSON match the predecessor; actual large receipts are now readable.
+Jobcb8f978da79f4746bfcdbf0e8285cb4c retired quiescent; all collection digests
+verified, scratch absent and reservation released. Original structural FAIL stays.
+Only the existing four-output capability binding refresh is now proposed.
+
+**Delivery prepared.** Reviewed existing capability refresh kept classifications
+unchanged and made source binding CURRENT. The second allocation targets the
+same875 pack members, delivered168 and an independent installed large-evidence
+fixture. Actual source/installed observations must agree completely. This
+preparation does not establish delivered qualification.

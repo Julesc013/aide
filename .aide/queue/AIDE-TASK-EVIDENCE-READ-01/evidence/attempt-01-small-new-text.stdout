@@ -1,0 +1,12 @@
+AIDE Lite task current
+task_id: PROJECT-WORK-01
+status: passed
+selection: {"mode": "explicit_request", "source": "request"}
+result: FIXTURE
+objective: Preserve small evidence
+owner: unknown
+next_action: unknown
+remaining_obligations: unknown
+scope: {"acceptance_scope": null, "classification": null, "product_qualified": null, "review_gate": null, "target_mutated": null}
+evidence: final_ref=present
+evidence_applicability: unverified; recorded outcomes do not verify acceptance

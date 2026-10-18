@@ -1,0 +1,43 @@
+{
+  "acceptance_verified": false,
+  "declared_status": null,
+  "evidence": [
+    {
+      "applicability": "unverified",
+      "availability": "present",
+      "field": "final_ref",
+      "path": ".aide/queue/PROJECT-WORK-01/result.txt",
+      "source": ".aide/queue/PROJECT-WORK-01/status.yaml"
+    }
+  ],
+  "index_status": null,
+  "issues": [],
+  "next_action": null,
+  "objective": "Preserve small evidence",
+  "owner": null,
+  "read_only": true,
+  "remaining_obligations": null,
+  "result": "FIXTURE",
+  "schema_version": "aide.task-current.v1",
+  "scope": {
+    "acceptance_scope": null,
+    "classification": null,
+    "product_qualified": null,
+    "review_gate": null,
+    "target_mutated": null
+  },
+  "selection": {
+    "mode": "explicit_request",
+    "source": "request"
+  },
+  "sources": {
+    "declared_status": ".aide/queue/PROJECT-WORK-01/task.yaml",
+    "index_status": ".aide/queue/index.yaml",
+    "objective": ".aide/queue/PROJECT-WORK-01/task.yaml",
+    "result": ".aide/queue/PROJECT-WORK-01/status.yaml",
+    "scope": ".aide/queue/PROJECT-WORK-01/status.yaml",
+    "status": ".aide/queue/PROJECT-WORK-01/status.yaml"
+  },
+  "status": "passed",
+  "task_id": "PROJECT-WORK-01"
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\actual-brief-html.invocation.json",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-brief-html.invocation.json",
+    "raw_sha256": "f6db3e47f5039247c5f64c5c4171a577f8157da914f70ef221432d3eb6503833",
+    "projection_sha256": "f6db3e47f5039247c5f64c5c4171a577f8157da914f70ef221432d3eb6503833",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\actual-brief-html.stdout",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-brief-html.stdout",
+    "raw_sha256": "07abecfb827b8173d7034b5d9654cfa470a747cf9e46006c8fa49af1cb997215",
+    "projection_sha256": "9155933ee0f960edbff924aa5adbd670eb99bbec349f5e92f0b3386787c86ab7",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\actual-brief-json.invocation.json",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-brief-json.invocation.json",
+    "raw_sha256": "0ce016efa75b5074e51907f802607db283d2ec0f01c36283229affb49d2b43a9",
+    "projection_sha256": "0ce016efa75b5074e51907f802607db283d2ec0f01c36283229affb49d2b43a9",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\actual-brief-json.stdout",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-brief-json.stdout",
+    "raw_sha256": "ed9522d402b39bbc084b41873a616e7c99d87ebbc3c0526d69a6bc50bb8c8216",
+    "projection_sha256": "fd885e1bab8ffa75daebdc7507140886e8967d3b023692b9bb7d93f7b20048a5",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\actual-consumer.json",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-consumer.json",
+    "raw_sha256": "34cd22791396229ecef8890cbe74ea90e43be61456437db0cb0d0ff0afbb3763",
+    "projection_sha256": "34cd22791396229ecef8890cbe74ea90e43be61456437db0cb0d0ff0afbb3763",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\actual-current.invocation.json",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-current.invocation.json",
+    "raw_sha256": "eb24170c22ec39c553fdfb443dd5d34a187f077afcd8813a52f02dc61af23c36",
+    "projection_sha256": "eb24170c22ec39c553fdfb443dd5d34a187f077afcd8813a52f02dc61af23c36",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\actual-current.stdout",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-current.stdout",
+    "raw_sha256": "136eb7fd01226ada5d22491fe04499f57d640056b0716d35f265f47a264e9b9b",
+    "projection_sha256": "7788bc612673136078b1edf07fe7d455021900f636492e889fe63cbddc705d36",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\actual-old-current.invocation.json",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-old-current.invocation.json",
+    "raw_sha256": "216f160051c93063e11a68305ef13a8ea25ca4b7fc3bbd6ed21149e93574f3ab",
+    "projection_sha256": "216f160051c93063e11a68305ef13a8ea25ca4b7fc3bbd6ed21149e93574f3ab",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\actual-old-current.stdout",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-old-current.stdout",
+    "raw_sha256": "824d5e47288232ce05e5e96222f02c334e0cbb2efbbf2ba07c29c3f8e8ef99b9",
+    "projection_sha256": "6928591c1a69019afaf028f137075aec49895bcb2f8974c3fb88102a90700bd9",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\actual-resume.invocation.json",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-resume.invocation.json",
+    "raw_sha256": "6b34a1d811457c20e3297a735934219840926c2b1c83fb4b19f239d5a794c59a",
+    "projection_sha256": "6b34a1d811457c20e3297a735934219840926c2b1c83fb4b19f239d5a794c59a",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\actual-resume.stdout",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-resume.stdout",
+    "raw_sha256": "7ff1bfe9bc9e3b8934f5b11c3c30743745ae37e96634fab214e9d1f84a751b81",
+    "projection_sha256": "012afc1d102377c2fc60d7f1f7cea8e42e5d8284900f3b2432631d7d37c1f067",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\small-new-json.invocation.json",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-new-json.invocation.json",
+    "raw_sha256": "8cea8b0949783c6ada1159e852fbd06cd2fd962f73e7ecf128ed8979e1bf696d",
+    "projection_sha256": "8cea8b0949783c6ada1159e852fbd06cd2fd962f73e7ecf128ed8979e1bf696d",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\small-new-json.stdout",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-new-json.stdout",
+    "raw_sha256": "2950d0c811a402961b95c6cc8af2fe2c9bcd25c099634c62bdc9ab9d93d29708",
+    "projection_sha256": "cbb832e43e0ce79aa6c531884d2caeca4ef6f2e27b19b0f261722b6ebc410b54",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\small-new-text.invocation.json",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-new-text.invocation.json",
+    "raw_sha256": "b492da37d5d216489cfe84ab35f7e8ac9b099d23e539f323f3745d8972872189",
+    "projection_sha256": "b492da37d5d216489cfe84ab35f7e8ac9b099d23e539f323f3745d8972872189",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\small-new-text.stdout",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-new-text.stdout",
+    "raw_sha256": "e65baf35c844a729737a645e5f357bef66dd14cf3852d325a65fcf80c8c5873c",
+    "projection_sha256": "bca1d2baafe1db3ae9dfb87395d16d22fb6a4b650435e5b39953677c0cc4c0e3",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\small-old-json.invocation.json",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-old-json.invocation.json",
+    "raw_sha256": "589258b3b62f15c56cea9900068854140c0d71aa7fdb46d84b526d19e615ae54",
+    "projection_sha256": "589258b3b62f15c56cea9900068854140c0d71aa7fdb46d84b526d19e615ae54",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\small-old-json.stdout",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-old-json.stdout",
+    "raw_sha256": "2950d0c811a402961b95c6cc8af2fe2c9bcd25c099634c62bdc9ab9d93d29708",
+    "projection_sha256": "cbb832e43e0ce79aa6c531884d2caeca4ef6f2e27b19b0f261722b6ebc410b54",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\small-old-text.invocation.json",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-old-text.invocation.json",
+    "raw_sha256": "eaf141ca7dc22a88c6cfe53907e864b3ff4c3cecbb57cb64f9517bd063f5043b",
+    "projection_sha256": "eaf141ca7dc22a88c6cfe53907e864b3ff4c3cecbb57cb64f9517bd063f5043b",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\small-old-text.stdout",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-old-text.stdout",
+    "raw_sha256": "e65baf35c844a729737a645e5f357bef66dd14cf3852d325a65fcf80c8c5873c",
+    "projection_sha256": "bca1d2baafe1db3ae9dfb87395d16d22fb6a4b650435e5b39953677c0cc4c0e3",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\cb8f978da79f4746bfcdbf0e8285cb4c\\output\\source-tests.json",
+    "projection": ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-source-tests.json",
+    "raw_sha256": "35cf47b004ad8d82db39d623fd73784ab303d27a419bfda31f7c52f1ad1de4e1",
+    "projection_sha256": "35cf47b004ad8d82db39d623fd73784ab303d27a419bfda31f7c52f1ad1de4e1",
+    "transformation": "byte-identical"
+  }
+]

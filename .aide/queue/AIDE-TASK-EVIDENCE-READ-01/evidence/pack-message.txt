@@ -1,0 +1,12 @@
+test(task): prepare installed evidence reader checks
+
+Carry bounded receipt inspection through the actual development package and
+a safe-installed consumer. Preserve project customization and unfinished
+adoption while comparing the real task's complete observation with source.
+
+Validation: PASS - source168, actual comparisons, retirement, CURRENT binding
+ FAIL - export drift awaits its reviewed refresh
+ NOT RUN - delivered168, installed consumer and final preview
+Changelog: Internal: Prepare delivered and installed evidence reader qualification
+AIDE-Task: AIDE-TASK-EVIDENCE-READ-01
+AIDE-Format: compact-v1

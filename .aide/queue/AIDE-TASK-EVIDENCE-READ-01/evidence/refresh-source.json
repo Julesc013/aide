@@ -1,0 +1,32 @@
+{
+  "base": "347668a4a507105e71736d00d5e6ba7331c1fe79",
+  "files": {
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/ExecPlan.md": "3a8c21adf61b68fecc385e7482080cbd27af71368a5edd396e33fe5d4ad87789",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-brief-html.invocation.json": "f6db3e47f5039247c5f64c5c4171a577f8157da914f70ef221432d3eb6503833",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-brief-html.stdout": "9155933ee0f960edbff924aa5adbd670eb99bbec349f5e92f0b3386787c86ab7",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-brief-json.invocation.json": "0ce016efa75b5074e51907f802607db283d2ec0f01c36283229affb49d2b43a9",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-brief-json.stdout": "fd885e1bab8ffa75daebdc7507140886e8967d3b023692b9bb7d93f7b20048a5",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-consumer.json": "34cd22791396229ecef8890cbe74ea90e43be61456437db0cb0d0ff0afbb3763",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-current.invocation.json": "eb24170c22ec39c553fdfb443dd5d34a187f077afcd8813a52f02dc61af23c36",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-current.stdout": "7788bc612673136078b1edf07fe7d455021900f636492e889fe63cbddc705d36",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-old-current.invocation.json": "216f160051c93063e11a68305ef13a8ea25ca4b7fc3bbd6ed21149e93574f3ab",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-old-current.stdout": "6928591c1a69019afaf028f137075aec49895bcb2f8974c3fb88102a90700bd9",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-resume.invocation.json": "6b34a1d811457c20e3297a735934219840926c2b1c83fb4b19f239d5a794c59a",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-actual-resume.stdout": "012afc1d102377c2fc60d7f1f7cea8e42e5d8284900f3b2432631d7d37c1f067",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-projections.json": "d2a733f9fb985e2a7fde9bd49dbb1c9848fb46a383dba723c261454211b56067",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-new-json.invocation.json": "8cea8b0949783c6ada1159e852fbd06cd2fd962f73e7ecf128ed8979e1bf696d",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-new-json.stdout": "cbb832e43e0ce79aa6c531884d2caeca4ef6f2e27b19b0f261722b6ebc410b54",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-new-text.invocation.json": "b492da37d5d216489cfe84ab35f7e8ac9b099d23e539f323f3745d8972872189",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-new-text.stdout": "bca1d2baafe1db3ae9dfb87395d16d22fb6a4b650435e5b39953677c0cc4c0e3",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-old-json.invocation.json": "589258b3b62f15c56cea9900068854140c0d71aa7fdb46d84b526d19e615ae54",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-old-json.stdout": "cbb832e43e0ce79aa6c531884d2caeca4ef6f2e27b19b0f261722b6ebc410b54",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-old-text.invocation.json": "eaf141ca7dc22a88c6cfe53907e864b3ff4c3cecbb57cb64f9517bd063f5043b",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-small-old-text.stdout": "bca1d2baafe1db3ae9dfb87395d16d22fb6a4b650435e5b39953677c0cc4c0e3",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/attempt-01-source-tests.json": "35cf47b004ad8d82db39d623fd73784ab303d27a419bfda31f7c52f1ad1de4e1",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/ledger-preimages.json": "4e3fa2af3489c1da19ca28365d972f417d131eeed762ab2b35c24f8b30b23701",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/refresh-effect.md": "1ae3d08e3aedbb3116e766bf1590dfe3c246d9d713cf83fd30a0c95802d1f0ab",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/source-attempt-01.json": "1bd948b1999ef111d5e5c9e77105fe5004dd20d713d30cb8df31146e3997d500",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/status.yaml": "0af60a92a9299fc95965cb39ab50fd54b8333941885acf4b6fd917a9878dcc88"
+  },
+  "effect_sha256": "1ae3d08e3aedbb3116e766bf1590dfe3c246d9d713cf83fd30a0c95802d1f0ab"
+}
