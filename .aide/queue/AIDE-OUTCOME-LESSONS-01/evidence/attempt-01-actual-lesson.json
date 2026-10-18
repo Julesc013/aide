@@ -1,0 +1,66 @@
+{
+  "schema_version": "aide.outcome-lessons-view.v1",
+  "path": ".aide/scripts/tests/test_validation_output.py",
+  "selected": [
+    {
+      "id": "portable-validation-fixture",
+      "revision": 1,
+      "lesson_sha256": "9d1943467cc9d23627070e1db20a5cc8be79b12e447629b0b00792a7f9b22406",
+      "outcome_identity": [
+        "lesson.portable-validation-fixture.v1",
+        "AIDE-OUTCOME-LESSONS-01",
+        "retained_validation_fixture_evidence"
+      ],
+      "evidence": [
+        {
+          "path": ".aide/scripts/tests/test_validation_output.py",
+          "expected_sha256": "3f36cff74aea1d1205ee664d4bc4f38bfbecf5ce930268419fe4512a31b5e90d",
+          "observed_sha256": "3f36cff74aea1d1205ee664d4bc4f38bfbecf5ce930268419fe4512a31b5e90d",
+          "state": "matching"
+        },
+        {
+          "path": ".aide/queue/AIDE-VALIDATION-OUTPUT-01/REPORT.md",
+          "expected_sha256": "14c80d1d26ce2b87b8982bdb58edfc4962b104048898e4ae14c63aedfd288c50",
+          "observed_sha256": "14c80d1d26ce2b87b8982bdb58edfc4962b104048898e4ae14c63aedfd288c50",
+          "state": "matching"
+        }
+      ],
+      "lesson": {
+        "applies_to": [
+          ".aide/scripts/tests/test_validation_output.py",
+          ".aide/scripts/tests/test_aide_lite.py"
+        ],
+        "evidence": [
+          {
+            "path": ".aide/scripts/tests/test_validation_output.py",
+            "sha256": "3f36cff74aea1d1205ee664d4bc4f38bfbecf5ce930268419fe4512a31b5e90d"
+          },
+          {
+            "path": ".aide/queue/AIDE-VALIDATION-OUTPUT-01/REPORT.md",
+            "sha256": "14c80d1d26ce2b87b8982bdb58edfc4962b104048898e4ae14c63aedfd288c50"
+          }
+        ],
+        "id": "portable-validation-fixture",
+        "required_features": [
+          "advisory_only",
+          "revision_chain",
+          "source_sha256"
+        ],
+        "revision": 1,
+        "schema_version": "aide.outcome-lesson.v1",
+        "state": "active",
+        "summary": "Use a minimal target-owned fixture for portable validation: include manual AGENTS.md and explicit delivered import policy; source-only historical phase reports are not ordinary consumer prerequisites. Preserve failed attempts and all semantic assertions.",
+        "supersedes": null
+      },
+      "selection_reason": "exact_path_and_matching_evidence"
+    }
+  ],
+  "excluded": [],
+  "advisory_only": true,
+  "authorship_verified": false,
+  "semantic_correctness_verified": false,
+  "execution_admitted": false,
+  "writes": false,
+  "ledger_state": "observed",
+  "ledger_sha256": "50ef4662abccc26199fae681086650797b0ba94b0c11e4b31191cd5277e152a9"
+}

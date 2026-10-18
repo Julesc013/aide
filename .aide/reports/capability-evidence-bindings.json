@@ -170,10 +170,10 @@
       "state": "observed"
     },
     {
-      "bytes": 2436827,
+      "bytes": 2441175,
       "path": ".aide/scripts/aide_lite.py",
       "reason": "",
-      "sha256": "d422047cc3dda22b6f66a993af3f14ec789b4405b965f11004b61739012a9158",
+      "sha256": "b4439e1910464873d7c0471eebd002a7212cdf3db890461e28e164a35e62fa42",
       "state": "observed"
     },
     {

@@ -71,3 +71,5 @@ Lite successor owner decisions and whole-outcome measurements remain separate.
 Read-only investigation and bounded candidate prepared; no implementation or job.
 
 Admission ACCEPT. Guarded local branch and source preparation complete; no jobs yet.
+
+Source36 and actual source lesson PASS, job5a9a5b8d retired/collected. Existing binding refresh CURRENT; classification unchanged. Delivered and installed tests prepared, not yet run.

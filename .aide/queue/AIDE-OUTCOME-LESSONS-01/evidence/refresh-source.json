@@ -1,0 +1,11 @@
+{
+  "base": "99f91f6ceee9af76ac1cf40e610db5c11b88753d",
+  "files": {
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/source-review.md": "b024a8eec9299e137e0c08cdab7efa07e11e9511cfb3d6f7f91f3a8a3307aad9",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/source-attempt-01.json": "05f60aa794a7d690cf0e453f989cc33ddefa77583838248f491cd47fcc6204b6",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/attempt-01-source-tests.json": "363cf6a7514c641eec937b9fff2e284cc46a25a5cefb8f124fc734c363c3447c",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/attempt-01-actual-lesson.json": "d0682c9f38be8479c45f556860a8085a7a8f260b1c4926d3fa29d5aeff54eb29",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/refresh-effect.md": "455b658667d54a214117a657c6c72f52138b381db13e645c1ec4f9bd39a36b40"
+  },
+  "effect_sha256": "455b658667d54a214117a657c6c72f52138b381db13e645c1ec4f9bd39a36b40"
+}

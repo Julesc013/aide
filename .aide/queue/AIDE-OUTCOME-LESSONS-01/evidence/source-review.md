@@ -1,0 +1,3 @@
+# Independent source acceptance
+
+Reviewer /root/review_disked_continuation ACCEPT map e51eb7c62c5b45238ddc8eedf11b1db3f7e99ebf916eb4e5851be4dae9dcca20, effect c8e258df2acbc43da875aaaa620d1eb60d2cf4997ca30af944396ff4fa0c112d and template7e212b94c26eade40df2bbb5fb81952b8a21ddcaeca78d5d248a7de4e800b189. Both original findings resolved; no remaining fixes. Job1 only, no release/learning-effectiveness claim.

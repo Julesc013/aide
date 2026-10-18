@@ -1,0 +1,27 @@
+{
+  "base": "99f91f6ceee9af76ac1cf40e610db5c11b88753d",
+  "files": {
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/ExecPlan.md": "81e9c5a3dfe9ec822842c034601a6d9eb4f3d41bbb22465e73e2d49da9b32310",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/attempt-01-actual-lesson.json": "d0682c9f38be8479c45f556860a8085a7a8f260b1c4926d3fa29d5aeff54eb29",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/attempt-01-source-tests.json": "363cf6a7514c641eec937b9fff2e284cc46a25a5cefb8f124fc734c363c3447c",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/pack-effect.md": "df7242bd2058ceaa05ce4f92c88e499bbe456b52dd3c46855de3bd2ba6c18108",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/pack-job-template.json": "f7177277f7593bf8a39ac42ef0a6e925c374f7ed10c4b8d270de9f801115ba7f",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/pack-message.txt": "993d8a91557d8c69113375b39eddf034bfea3a55ba601c207e61bc8cfdba5190",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/prior-pack-inventory.json": "671f8ed72c0dc0dbee2f9016862843001faac78e4158e8294b6033c249cfb58e",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/refresh-effect.md": "455b658667d54a214117a657c6c72f52138b381db13e645c1ec4f9bd39a36b40",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/refresh-result.json": "01623a11cd9f379dee5b2ad3886ab5aa491c729c2ef0127986ca3b0a786b53e3",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/refresh-review.md": "b508ce2afd5e3c87d6e95546a236824e70df3d4577fc2279cdcdde7babbb463c",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/refresh-source.json": "b6b7954c1d7a2fbe3a059acc9d1a4c05ceacffb46057711a836a6235add2153d",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/source-attempt-01.json": "05f60aa794a7d690cf0e453f989cc33ddefa77583838248f491cd47fcc6204b6",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/source-review.md": "b024a8eec9299e137e0c08cdab7efa07e11e9511cfb3d6f7f91f3a8a3307aad9",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/run_pack.py": "73a955f020103d7b931201a9da8b9cf8ab123f077b71d75f9e9e0928823731c3",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/status.yaml": "48c8f17f44abfb7b38b4eae299b923f3c57c2e41404f6618e69ec7d500c215f6",
+    ".aide/reports/capability-command-status.md": "54248947f9cd70194e5bc86e28b5f7e1d91e0a93039dd24d29b86b7cd42694c8",
+    ".aide/reports/capability-evidence-bindings.json": "975478435c44310b2931ae00c0c27df18167bddefe58a064487b6662a49e8c48",
+    ".aide/reports/capability-ledger.md": "ba55611a8610026df78e65f59a3044c3ddcbbd3af3da88777fa67ab71794a4a8",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/pack-review-repair.md": "d9530dbdbd1d6745ae40555937268320f2fe8a5c3b02d761c97492b986236460"
+  },
+  "message_sha256": "993d8a91557d8c69113375b39eddf034bfea3a55ba601c207e61bc8cfdba5190",
+  "effect_sha256": "df7242bd2058ceaa05ce4f92c88e499bbe456b52dd3c46855de3bd2ba6c18108",
+  "job_template_sha256": "f7177277f7593bf8a39ac42ef0a6e925c374f7ed10c4b8d270de9f801115ba7f"
+}

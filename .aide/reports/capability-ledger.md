@@ -3,8 +3,8 @@
 - command: `capability ledger`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-validation-output-01`
-- current_commit: `c96577f7b079a00dbedbb580c289759a21d02fec`
+- current_branch: `task/aide-outcome-lessons-01`
+- current_commit: `99f91f6ceee9af76ac1cf40e610db5c11b88753d`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
