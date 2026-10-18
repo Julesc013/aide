@@ -79,3 +79,9 @@ observations, unchanged normal stage and v1 behavior. Status/inbox expose the
 next responsible owner. Thirteen focused methods plus the original 60 methods
 are prepared for job 1; one actual fresh-process two-request scenario and legacy
 reader refusal remain job 2. No native test has run at this checkpoint.
+
+**Job 1 passed.** Source55b5aabb: all73 methods passed without skips.
+Worker683ea8c5cdd6494fa575cec354f2731b was collected, digest-verified and
+retired with scratch absent and reservation released. Original60 methods are
+unchanged. The separate fresh-process workflow and frozen old-reader checks are
+prepared for job2; no live coordination or native cancellation claim is made.

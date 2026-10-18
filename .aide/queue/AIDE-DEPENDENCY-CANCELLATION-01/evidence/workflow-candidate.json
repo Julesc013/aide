@@ -1,0 +1,17 @@
+{
+  "base": "55b5aabb94b51ec6998c75a34d6340a6a438b7bf",
+  "files": {
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/ExecPlan.md": "f61da36fa9e060a117c6a16f19125123fe864bf37a7191b9fcf3b65420c012e5",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/attempt-01-tests.json": "8de3039776c1806ae6c7d2a0dc466534ebb19f8b100422a9abe956ace198ef8b",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/source-attempt-01.json": "38d530617d277213c482c46be36aa62d9b82d970c633a7b70dbae3f39bf52c5d",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/source-review.md": "1e7c95f57ee0b68887cdeb6af25109892cb7adc4a66e8d8b881fdaddc8202519",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/workflow-effect.md": "9703af250fa10ff4d69b937ad49e96bc17e80206c142778de54a00cd4cc4e474",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/workflow-job-template.json": "bfcc68c1045a53675d58b7d42612807678db2861520b10af763a50bd62bed785",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/workflow-message.txt": "fd883e4b59e5e753892e90a96325e6bbc8d21f7b82a88b192a5a6e912c6030b2",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/run_workflow.py": "f4369ac8b92ce4ac506a8bd50e53d3e8f797f8b47e26da9b000e7bb7e6cba98f",
+    ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/status.yaml": "0b298a958d7331b4d767ab7f7e247b93d59555a7f9261e26e61ec61b435fca00"
+  },
+  "message_sha256": "fd883e4b59e5e753892e90a96325e6bbc8d21f7b82a88b192a5a6e912c6030b2",
+  "effect_sha256": "9703af250fa10ff4d69b937ad49e96bc17e80206c142778de54a00cd4cc4e474",
+  "job_template_sha256": "bfcc68c1045a53675d58b7d42612807678db2861520b10af763a50bd62bed785"
+}
