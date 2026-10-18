@@ -1,0 +1,31 @@
+{
+  "base": "b6b12ff324a751c13214715c37f8a6bb87ee333c",
+  "files": {
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/ExecPlan.md": "7c78fc72472e359de55cc8cac624669c0060ee63aa7c58089c8b8129a3257f0d",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/attempt-01-source-tests.json": "277f60ea097370aff2f20a62f05754acb86625f589667976a16de19e3ebfe3eb",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/pack-candidate-v1.json": "e288d7b991783df81bf6d6c34345823da7b29c860ecdd5996f11dda942e6469c",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/pack-effect.md": "9f9be051e87eafd901f6f3f1dbf0b4b07b4027a50fbe5cc215849f10fa355f54",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/pack-job-template.json": "fd8927a60efbce4c454efca3a495667ac71b452d942f6f570ae2bdbb67f2bafd",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/pack-message.txt": "473ec988a24777bc4525ad13ce1cde74368f3db85b7a47bda36d511f0782c97a",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/pack-review-v1.md": "fb4c83f2518bf0988a3690d4fdd9371235664cdb63324db9d5758b58fb9a7f55",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/prior-pack-inventory.json": "b861a205784f9d17f6b4a75bfc4d277bf11affce151238d0d05abdfa3106d03a",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/refresh-effect.md": "d5ea769d3e80cada7dced16f034133626fae9de0a8a5e1859339998a6f0bea67",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/refresh-preimages/capability-command-status.md": "2abee1d5bcc5ac089c4d585fa533d1fde8d97f5bc9e1263417b8e9c320e9bc00",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/refresh-preimages/capability-evidence-bindings.json": "975478435c44310b2931ae00c0c27df18167bddefe58a064487b6662a49e8c48",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/refresh-preimages/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/refresh-preimages/capability-ledger.md": "ba55611a8610026df78e65f59a3044c3ddcbbd3af3da88777fa67ab71794a4a8",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/refresh-result.json": "401e2f7ecbef3890dd1a73b1ad27e2208e5b1eade5a2fb5a3d073c530a484e48",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/refresh-review.md": "94f6885822db7ed148575c214bcd1fbdeb8c93c7766410ec5a8415397f4a3ee9",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/refresh-source.json": "9b3627b7622bcbec4af5d356f76aaa5dfb0530d23dc3966c2f649faee629af98",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/source-attempt-01.json": "99cccb9564f9cf03e6f5b0fa14b59bc32883033560b3fbe2223adfd8131163f1",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/evidence/source-review.md": "03d8b5b21f85a2d2aaae356ca9eded24a8021af152850d2560978e342d089cbf",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/run_pack.py": "c01efe57cc665f765029d587036e6b041e4d661ad36ba66197b6a52fa1aac52f",
+    ".aide/queue/AIDE-COMPACT-COMMUNICATION-01/status.yaml": "7b44d33fe2f2d37a410ac9bf0c1d6bea17ab0d6a8d142fce1fb36bb9b5500acb",
+    ".aide/reports/capability-command-status.md": "4ffedeb32749abcb0c38ff0f3e316be62adbc4130aec06654a2ca8a36995ef30",
+    ".aide/reports/capability-evidence-bindings.json": "6951662a0379e5379c60830bae9bc80893d4030a77f6b574ebb3e03493f0e581",
+    ".aide/reports/capability-ledger.md": "100db106100c460b6f36eca5d9bd006171a9b04c6b73b19564f59e45e691234d"
+  },
+  "message_sha256": "473ec988a24777bc4525ad13ce1cde74368f3db85b7a47bda36d511f0782c97a",
+  "effect_sha256": "9f9be051e87eafd901f6f3f1dbf0b4b07b4027a50fbe5cc215849f10fa355f54",
+  "job_template_sha256": "fd8927a60efbce4c454efca3a495667ac71b452d942f6f570ae2bdbb67f2bafd"
+}

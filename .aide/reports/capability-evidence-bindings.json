@@ -170,10 +170,10 @@
       "state": "observed"
     },
     {
-      "bytes": 2441175,
+      "bytes": 2459383,
       "path": ".aide/scripts/aide_lite.py",
       "reason": "",
-      "sha256": "b4439e1910464873d7c0471eebd002a7212cdf3db890461e28e164a35e62fa42",
+      "sha256": "aed2bc631bbe173f041b73a8742ced40fa9867d27efa67f6eb7035aca7f43280",
       "state": "observed"
     },
     {
@@ -191,10 +191,10 @@
       "state": "observed"
     },
     {
-      "bytes": 22179,
+      "bytes": 22500,
       "path": "AGENTS.md",
       "reason": "",
-      "sha256": "0496416183a1b0d8a5e17e9930976eab5decc7dcde10d498a071742205ffb0a6",
+      "sha256": "ad5f1efe1c1714e3b142726e062e12c66c709109d988d44a960fefa23113ba84",
       "state": "observed"
     },
     {

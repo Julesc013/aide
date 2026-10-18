@@ -1,0 +1,11 @@
+test(delivery): qualify compact communication in installed projects
+
+Carry the reviewed source through the existing portable exporter and a
+safe-installed project. Include the pending task brief in the same delivery
+check so downstream behavior is tested against the final combined source.
+
+Validation: PASS - source120 and preserved brief84; NOT RUN - delivery job
+Changelog: Internal: Prepare installed communication and brief qualification
+AIDE-Task: AIDE-COMPACT-COMMUNICATION-01
+AIDE-Format: compact-v1
+Follow-up: Run the reviewed delivery job and retain its exact outcome

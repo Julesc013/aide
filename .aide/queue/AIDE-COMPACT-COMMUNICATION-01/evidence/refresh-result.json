@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "classification_unchanged": true,
+  "before": {
+    "capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    "capability-ledger.md": "ba55611a8610026df78e65f59a3044c3ddcbbd3af3da88777fa67ab71794a4a8",
+    "capability-evidence-bindings.json": "975478435c44310b2931ae00c0c27df18167bddefe58a064487b6662a49e8c48",
+    "capability-command-status.md": "2abee1d5bcc5ac089c4d585fa533d1fde8d97f5bc9e1263417b8e9c320e9bc00"
+  },
+  "after": {
+    "capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    "capability-ledger.md": "100db106100c460b6f36eca5d9bd006171a9b04c6b73b19564f59e45e691234d",
+    "capability-evidence-bindings.json": "6951662a0379e5379c60830bae9bc80893d4030a77f6b574ebb3e03493f0e581",
+    "capability-command-status.md": "4ffedeb32749abcb0c38ff0f3e316be62adbc4130aec06654a2ca8a36995ef30"
+  },
+  "binding": {
+    "state": "CURRENT",
+    "reason": "bound_source_inputs_unchanged",
+    "changed_refs": [],
+    "qualification": "source_classification_only"
+  }
+}
