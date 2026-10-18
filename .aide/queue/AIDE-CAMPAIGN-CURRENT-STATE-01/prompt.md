@@ -1,0 +1,1 @@
+Reconcile the existing campaign current status and next action from exact child evidence. Preserve every historical record byte, all unfinished daily-use requirements and independent effect gates. Use the existing task current/resume views, not a new store or reader. No runtime, target, model, host, release or authentication effects.
