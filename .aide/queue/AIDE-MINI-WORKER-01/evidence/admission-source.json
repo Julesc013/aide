@@ -1,0 +1,17 @@
+{
+  "base": "fcaa9e1e2230cf1fc14cfa5edde05cad0ce27971",
+  "files": {
+    ".aide/queue/AIDE-MINI-WORKER-01/ExecPlan.md": "89a74902131fa376fae1eaed0db81a4403c85badac43da1779603ea8a3a5913a",
+    ".aide/queue/AIDE-MINI-WORKER-01/prompt.md": "eb78f6f8be9df815a94c139c3bc6fde88b4c30b9739a83dd6b860dfe7404ef54",
+    ".aide/queue/AIDE-MINI-WORKER-01/status.yaml": "e2bd4e70ceaadc270d327074ce6c0bd7f6b581c862cf3df46b7f4001b7632a33",
+    ".aide/queue/AIDE-MINI-WORKER-01/task.yaml": "50e5236231a68cd8d2544efc3c7f6c9bd2539062751810e78ac14ecef748c182",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/admission-effect.md": "02483d85ffcfea6a64b0a0772ff18a930ef8e07711c673300d856585421b61f7",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/admission-message.txt": "632d09f90cae9ee094d87d207feb1a0746ee6a5d6c677314a91e10a70aa4bd89",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/baseline.json": "98e1a80781385c9d9ff28cb1a431e53b35df91bc8a6f52cd9a3baee2a2fce87d",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/latest-intent-packet.json": "32fc1603ad63f5a2f33b4ba6e3ad4c626565aaa92f35421f353170e969532d71",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/latest-workunit-draft.json": "d9e9a6c02f3c5a46bd4e9a4115c35c7e8c4cf453a811cd885c4258e370e05085",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/wheel-inputs.json": "14d9d289eea2dfceae3c844d50ade58cd8f96772902a9096bad2ae05db7193ad"
+  },
+  "message_sha256": "632d09f90cae9ee094d87d207feb1a0746ee6a5d6c677314a91e10a70aa4bd89",
+  "effect_sha256": "02483d85ffcfea6a64b0a0772ff18a930ef8e07711c673300d856585421b61f7"
+}

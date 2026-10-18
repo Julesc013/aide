@@ -1,0 +1,27 @@
+schema_version: aide.queue-task.v0
+id: AIDE-MINI-WORKER-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Qualify one optional upstream Mini worker fixture
+type: implementation
+status: needs_review
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-MINI-WORKER-01/**
+    - core/execution/mini_worker.py
+    - core/execution/tests/test_mini_worker.py
+    - docs/reference/mini-worker.md
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - .aide/changelog/**
+  forbidden_paths:
+    - existing runtime owners, policies, historical task bytes and generated contract bindings
+    - exported pack and frozen archives
+    - unrelated repositories, live ledgers, endpoints and user configuration
+verification:
+  maximum_jobs: 4
+  config_digest: 61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90
+  model_requests: 0
+  acquired_code_execution: separately_reviewed_after_exact_acquisition
+review_gate: exact_admission_source_job_effect_and_integration_review
