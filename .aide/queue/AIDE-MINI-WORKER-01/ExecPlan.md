@@ -99,3 +99,19 @@ scratch, then uses the existing WindowsJobHost for 15 sequential fresh-process
 scenarios, including failure, interruption, read/submit continuation and owned
 descendant cancellation. No acquired code has executed yet. All fixture inputs,
 effects and nested caps require the next exact review. No new execution owner.
+
+**Actual loop fixture passed.** Independent ACCEPT covered source 7c7048b6,
+effect fcac078c and template 03e373ff after the two evidence fixes. Checkpoint
+e2902c21 preceded job 5d7059f3407440ea95c2ef1dd70128fb. All 15 scenarios passed:
+14 completed unittest cases without failures/skips and one parent-verified
+process-tree cancellation. Fourteen fixed test processes made no real model calls.
+Actual postimages, candidate patch, per-child launch/observations, trajectories
+and independent receipts are retained. Interrupted evidence was unchanged after
+read/submit continuation; forced cancellation correctly leaves INCOMPLETE.
+
+Collection hashes, quiescence, scratch absence and released reservation are
+verified. Observed worker peak was 71,970,816 bytes; scratch peak 15,397,222 bytes.
+These are native worker observations, not whole-client or model efficiency claims.
+Allocation 4 is prepared for passive import, evidence/unchanged package checks,
+doctor/full validation/pack provenance and the existing fixed changelog preview.
+It will not rerun the completed fixture or rebuild any package.

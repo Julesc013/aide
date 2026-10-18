@@ -5352,8 +5352,8 @@ See [the report](.aide/queue/AIDE-DEPENDENCY-REBIND-01/REPORT.md); native host a
 
 ### AIDE-MINI-WORKER-01: Optional upstream worker
 
-Exact acquisition passed and retained all original outcomes. The source-only
-adapter and 15 offline lifecycle scenarios are prepared for independent review.
-Two of four native allocations are consumed; no acquired code has run.
-See [ExecPlan](.aide/queue/AIDE-MINI-WORKER-01/ExecPlan.md). Live model work,
+Exact acquisition and 15 native lifecycle scenarios passed with preserved
+failure/recovery evidence. Three of four allocations are consumed. Final passive
+compatibility, unchanged artifact checks and fixed preview are prepared.
+See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md). Real model work,
 integration and release claims remain separate.

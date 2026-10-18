@@ -14092,11 +14092,11 @@ See the child report and observed integration receipt for exact delivery.
 
 ### AIDE-MINI-WORKER-01: Acquisition and optional binding
 
-The 14 pinned wheels passed archive, exact metadata and notice checks. Preserve
-the original failed attempt and rejected repair; the reviewed continuation
-reused both existing downloads. Both jobs are collected and retired.
+The upstream DefaultAgent binding passed 15 actual offline lifecycle scenarios,
+including independent code-repair acceptance, interruption/continuation and
+owned descendant cancellation. Full collection and retirement are verified.
+The original acquisition failure and rejected proposals remain.
 
-Prepared a thin DefaultAgent binding and 15 offline file-change/lifecycle
-scenarios using existing supervision. Syntax and diff checks passed; imported
-execution remains unrun pending exact review. No provider, target, pack or
-release artifact changed. See the WorkUnit for exact receipts and source pins.
+Source e2902c21 is the execution subject. Final passive compatibility, immutable
+pack/release checks and fixed preview are prepared; exact integration remains
+separate. See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md).

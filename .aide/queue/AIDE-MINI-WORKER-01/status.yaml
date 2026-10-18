@@ -1,10 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-MINI-WORKER-01
 status: running
-result: ACQUISITION_PASSED_FIXTURE_PREPARED
+result: FIFTEEN_NATIVE_FIXTURES_PASSED_FINAL_CHECKS_PENDING
 responsible_owner: AIDE execution adapter owner
-next_action: Review exact optional adapter and fifteen offline lifecycle scenarios
+next_action: Review final evidence, passive compatibility and fixed preview job
 maximum_jobs: 4
-jobs_allocated: 2
+jobs_allocated: 3
 original_attempt_result: FAIL_metadata_size_guard_retained_retired
-product_qualified: false
+product_qualified: fixture_only

@@ -2,7 +2,7 @@
 
 **Current scope:** an optional source adapter for pinned upstream
 mini-SWE-agent 2.4.6 DefaultAgent, with deterministic Model/Environment fixtures.
-Acquisition is verified. Execution qualification is pending; no model-backed
+Acquisition and 15 native lifecycle scenarios passed; no model-backed
 coding outcome, general Mini CLI installation or supported provider route is claimed.
 
 The adapter keeps the upstream loop unchanged. AIDE's existing managed job and
@@ -45,12 +45,14 @@ its qualified process/memory/time/output limits. It does not turn outer editors
 or shells into confined routes. No global install, live service, autonomous
 dispatch, source merge or release effect is supplied by this module.
 
-**Qualification plan.** Fifteen fresh-process scenarios cover disabled/changed/
+**Qualified fixture.** Fifteen fresh-process scenarios at e2902c21 cover disabled/changed/
 missing/wrong-version inputs, preloaded dependencies, finite limits, duplicate
 attempts, an independently checked file repair and patch, malformed actions,
 environment failure, step exhaustion, interruption, continuation without repeated
 effects, and cancellation of an owned process tree with partial evidence.
-The test is source-only under core/execution/tests; it is excluded from Lite
-exports and the frozen release archives. Actual outcomes belong to the task
-evidence; this plan is not a test pass.
+Fourteen completed unittest cases and one parent-checked cancellation passed
+without failures or skips on Windows / Python 3.14.8. All original outcomes are
+retained. The tests are source-only under core/execution/tests, excluded from
+Lite exports and frozen archives. See the task report for exact evidence and
+pending final compatibility/integration checks.
 
