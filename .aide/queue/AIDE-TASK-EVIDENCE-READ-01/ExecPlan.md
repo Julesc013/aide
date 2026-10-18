@@ -70,3 +70,6 @@ may continue when another route remains blocked.
 
 **Progress.** Packet prepared; no implementation or execution authorized by this
 draft. Prior turn completed browser qualification and dev/main integration.
+
+**Progress update.** Independent admission accepted the exact nine-file map.
+Admission committed at51ce6c7b; source preparation is in progress.

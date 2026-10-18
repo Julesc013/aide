@@ -40328,8 +40328,8 @@ def task_view_reference_parts(relative: str) -> list[str]:
     return parts
 
 
-def task_view_read(repo_root: Path, relative: str, *, limit: int = 131072) -> bytes:
-    """Read one bounded ordinary repository record; never follow a link."""
+def task_view_path(repo_root: Path, relative: str, *, limit: int) -> Path:
+    """Check one ordinary repository path and its observed size before opening."""
     parts = task_view_reference_parts(relative)
     path = repo_root.resolve()
     for part in parts:
@@ -40341,11 +40341,31 @@ def task_view_read(repo_root: Path, relative: str, *, limit: int = 131072) -> by
         raise ValueError("unsafe_reference")
     if info.st_size > limit:
         raise ValueError("record_too_large")
+    return path
+
+
+def task_view_read(repo_root: Path, relative: str, *, limit: int = 131072) -> bytes:
+    """Read one bounded ordinary repository record; never follow a link."""
+    path = task_view_path(repo_root, relative, limit=limit)
     with path.open("rb") as stream:
         data = stream.read(limit + 1)
     if len(data) > limit:
         raise ValueError("record_too_large")
     return data
+
+
+def task_view_digest(repo_root: Path, relative: str, *, limit: int = 1048576) -> str:
+    """Hash bounded evidence without retaining its body in the task observation."""
+    path = task_view_path(repo_root, relative, limit=limit)
+    digest = hashlib.sha256()
+    consumed = 0
+    with path.open("rb") as stream:
+        while chunk := stream.read(min(65536, limit + 1 - consumed)):
+            consumed += len(chunk)
+            if consumed > limit:
+                raise ValueError("record_too_large")
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def task_view_fields(text: str, source: str, issues: list[dict[str, str]]) -> dict[str, object]:
@@ -40532,13 +40552,13 @@ def build_current_task_view(repo_root: Path, task_id: str | None = None) -> dict
             ref = ref.replace("\\", "/")
             relative = ref if ref.startswith(".aide/") else f".aide/queue/{selected}/{ref}"
             try:
-                data = task_view_read(repo_root, relative)
+                actual_digest = task_view_digest(repo_root, relative)
                 item.update(path=relative, availability="present")
                 expected = record.get(key[:-4] + "_sha256")
                 if expected is not None:
                     if not isinstance(expected, str) or not re.fullmatch(r"[a-f0-9]{64}", expected):
                         item["availability"] = "invalid_digest"
-                    elif hashlib.sha256(data).hexdigest() != expected:
+                    elif actual_digest != expected:
                         item["availability"] = "digest_mismatch"
                     else:
                         item["digest_verified"] = True
@@ -40546,6 +40566,8 @@ def build_current_task_view(repo_root: Path, task_id: str | None = None) -> dict
                 item.update(path=relative, availability="missing")
             except ValueError as exc:
                 item["availability"] = str(exc)
+                if str(exc) == "record_too_large":
+                    item["path"] = relative
             except OSError:
                 item["availability"] = "unreadable"
         view["evidence"].append(item)

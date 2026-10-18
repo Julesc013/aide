@@ -46,8 +46,13 @@ acceptance. A passed preparation may still show unperformed target adoption.
 This standard-library projection reads supported top-level public scalar fields,
 folded objective text and a simple `remaining_obligations` string list. It does not
 interpret arbitrary YAML tags, aliases or nested policy objects. Reads are bounded
-to 128 KiB per record/reference (1 MiB for the index), 64 projected fields, 16
-references and bounded diagnostics. It refuses private, escaping, linked and
+to 128 KiB per task/status record (1 MiB for the index), 64 projected fields, 16
+references and bounded diagnostics. Evidence hashing uses at most 64-KiB chunks
+and a separate 1-MiB limit per reference: at most 16 MiB plus one overflow-detection
+byte per reference. Metadata oversize refuses before opening; growth past the
+limit also refuses. Oversized ordinary evidence retains its safe path for
+inspection; private or redirected paths remain withheld. Other record readers
+keep their existing limits. It refuses private, escaping, linked and
 non-ordinary paths. These are command read guards, not whole-client isolation.
 
 Task-relative or `.aide/` repository-relative `*_ref` values are observed as
