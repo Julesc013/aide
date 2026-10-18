@@ -1,37 +1,28 @@
-**AIDE Lite 1.1.0** adds task continuation views, Git policy inspection,
-review and reuse reports, and work-effort summaries to the local CLI. It also
-fixes effort reporting in adopted projects so it uses AIDE's installed helper.
+Task continuation, review/reuse reports and effort summaries for the qualified local Windows CLI.
 
-- **Added:** the 18 command forms listed in the attached manifest, including
-  `task current`, `task resume-plan`, `git policy`, `review-pack`, `quality reuse`
-  and `job effort`. The 38 previously declared forms remain in the contract.
-- **Upgrade:** tested from the actual published 1.0.0 package with project
-  customization, direct edits, upstream conflicts, recorded resolutions,
-  interrupted imports and recovery. Inspect the dry-run plan before applying;
-  preserve the original packs and project state for recovery.
-- **Qualified profile:** T3 companion local Windows CLI, tested on Windows 10
-  build 19045 with Python 3.14.8. The manifest lists all 56 qualified forms.
-  Other command forms, hosts and environments have no new support claim.
-- **Limits:** automatic rollback across changed owned-path sets and automatic
-  downgrade of customized overlays are outside this profile. Preserve state
-  and reconcile those cases manually. Outer editor/shell containment, read
-  isolation, autonomous model operation and whole-task efficiency remain
-  unqualified.
+### Changes
 
-**Download** either the ZIP or TAR archive, plus the manifest and checksum file.
-Both archives contain the same `aide-lite-pack-v0` payload. Verify its SHA-256
-before use; archive identity and the exact predecessor are in the manifest.
+- **Added:** 18 declared command forms, including `task current`, `task resume-plan`, `git policy`, `review-pack`, `quality reuse` and `job effort`. The manifest lists all 56 qualified forms.
+- **Fixed:** effort reporting in adopted projects now uses AIDE’s installed helper.
+- **Upgrade checked:** the actual published 1.0.0 package, project customization, direct edits, upstream conflicts, recorded resolutions and interrupted-import recovery.
+- **Retained:** all 38 prior public forms and the original eight consumer cases. Earlier failed or interrupted observations remain in the evidence.
 
-**Provenance:** payload source `447e393b3f87004641b7387c1f33828ac1ee3a85`;
-technical review `3a36366c052f308a8ecee10d32690ce0cb75cae7`;
-release tag target `dfae9356241dda6a03e2cc48cf9acb245c9a6be1`.
-The tag retains the qualification history for those exact payload bytes.
-[Qualification evidence](https://github.com/Julesc013/aide/blob/dfae9356241dda6a03e2cc48cf9acb245c9a6be1/.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json)
-records the tested behavior and retained failures. Its historical integration
-and presentation prerequisites were subsequently resolved in
-[`8fe2d12c`](https://github.com/Julesc013/aide/commit/8fe2d12cbc9d91f034cf7f68c58beda09809dc58).
-Published-asset acquisition is a separate postpublication check.
+### Downloads
 
-Newer development features, including compact communication defaults, task
-briefs, portable handoffs and outcome lessons, are reserved for a subsequent
-qualified release. They are not included in these frozen 1.1.0 archives.
+| Download | Purpose |
+| --- | --- |
+| [ZIP package](https://github.com/Julesc013/aide/releases/download/aide-lite-v1.1.0/aide-lite-v1.1.0.zip) | Recommended archive for Windows. |
+| [TAR.GZ package](https://github.com/Julesc013/aide/releases/download/aide-lite-v1.1.0/aide-lite-v1.1.0.tar.gz) | The same portable payload in tar format. |
+| [SHA-256 checksums](https://github.com/Julesc013/aide/releases/download/aide-lite-v1.1.0/aide-lite-v1.1.0.SHA256SUMS.txt) | Verify the archive before extraction. |
+| [Release manifest](https://github.com/Julesc013/aide/releases/download/aide-lite-v1.1.0/aide-lite-v1.1.0.manifest.json) | Exact source, artifact and qualified-profile identities. |
+
+**Install or update:** verify the chosen archive, extract outside your project, and follow the included `install.md`. Preview an update before applying it; retain the original packages, project state and recorded conflict resolutions. GitHub’s automatic source archives are repository snapshots; use the portable packages above for installation.
+
+### Qualified profile and known limits
+
+- **Profile:** T3 Limited Support, local Windows CLI; qualified on Windows 10 build 19045 with Python 3.14.8. The manifest defines the exact supported forms and environment.
+- **Recovery limits:** automatic rollback across changed owned-path sets and automatic downgrade of customized overlays are outside this profile. Preserve state and reconcile those cases manually.
+- **Open qualification:** outer editor/shell containment, read isolation, autonomous model operation and whole-task efficiency remain open.
+- **Development continues:** newer compact communication defaults, task briefs, portable handoffs and outcome lessons are reserved for a subsequent qualified release; these frozen packages do not contain them.
+
+**Evidence:** [technical acceptance](https://github.com/Julesc013/aide/blob/dfae9356241dda6a03e2cc48cf9acb245c9a6be1/.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json). Payload source: `447e393b3f87004641b7387c1f33828ac1ee3a85`. The release tag identifies the reviewed publication checkpoint; the manifest identifies the original package build. Downloaded-asset acceptance is recorded separately after publication.

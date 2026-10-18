@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "checks": {
+    "release-1.0.0-notes.md": {
+      "sha256": "d17d91036b085ee0fbf6dc47958bf66d4e5bcbe410098b85e2c81a46b123e51e",
+      "manual_prose_wraps": 0,
+      "duplicated_title": false,
+      "download_links": 4,
+      "github_gfm_render": "PASS",
+      "render_sha256": "7cf7ac5c7b412238218f893cb380ebb8fbf314c44e05626f9f1280f633075b0a"
+    },
+    "release-notes.md": {
+      "sha256": "c8b720acb936ddc3d302d93f7c1bc4f3a7da9f39d8385c4cc05ec3103b461eff",
+      "manual_prose_wraps": 0,
+      "duplicated_title": false,
+      "download_links": 4,
+      "github_gfm_render": "PASS",
+      "render_sha256": "c15ca2bfb8c8a3cfc79e079c3c079da13a6fc5ecc59eda90b98576ac26795ed5"
+    }
+  },
+  "prior_probe": "Original literal <table> check refused attributed HTML; actual rendered HTML retained and semantic tag parser now verifies table/H3/no-BR/no-title-duplication. No repeated 1.0 render request."
+}

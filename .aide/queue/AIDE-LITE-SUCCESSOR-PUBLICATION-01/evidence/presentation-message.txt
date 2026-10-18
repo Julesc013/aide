@@ -1,0 +1,9 @@
+docs(release): prepare readable release pages and download labels
+
+Use concise release sections and four titled downloads, with one physical line per paragraph or bullet. Preserve the published 1.0.0 body and exact asset metadata before its five bounded presentation updates. The 1.1.0 draft uses the same style; publication remains separately gated.
+
+Validation: PASS - GitHub GFM renders both bodies without duplicated title or hard breaks
+ NOT RUN - remote metadata updates and all 1.1.0 publication effects
+Changelog: Docs: Improve release notes and human download labels
+AIDE-Task: AIDE-LITE-SUCCESSOR-PUBLICATION-01
+AIDE-Format: compact-v1
