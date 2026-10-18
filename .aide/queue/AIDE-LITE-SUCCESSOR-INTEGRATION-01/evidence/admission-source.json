@@ -1,0 +1,20 @@
+{
+  "base": "d8001eb81f934cda83e93ae0704f0c60aed675c7",
+  "other": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/ExecPlan.md": "d2d110f373e1cb0839920a7d74b932db60cfd10608ddf9e666543e7e39e3b370",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/prompt.md": "6b61f2a7ab1650d134380d82e69f4a96227d4278bb5132a35806bb4ee1ed6fb8",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/status.yaml": "098034f625c5f4465dec37c63714aa813ae3d8870b00e1e7e0383ef3a550dd46",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/task.yaml": "7229de523025db5829a5c758f8740ad82b6dea5fce7b9c846ba8ec333c1be99c",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/admission-effect.md": "80ff29ede54cd331bf06f73b01db905236b0072569fbb4f02ed956c648876b30",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/admission-message.txt": "77b4a66b7cf206f7b5560e743f28fcc3316ddd904e307ba8baaaee96082a1d62",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/incoming-subject.json": "91fd901f19b73ccb0c35afe439edd60384f5601bd215c4b36482159096c35b9b",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/initial-refs.json": "f01978245d8efc258f8302ddb1574b73e558d5d600e651b0b930291f84bc3cfa",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/latest-intent-packet.json": "5d44c602175e6c567f0545ed8bf93cbb6ce1bca3c8738af0fcbd6ff7322dc651",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/latest-workunit-draft.json": "c9ab7aff845304ad3bc7caf2d9faf3bfa73880e4ddc582fcc4c36eb94a38f40b",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/preserved-status.yaml": "b8edc3efd7b580ca4b008cf37ca671f81d985d1337aeffb9e03c4aa0c0933d46",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/preserved-technical-acceptance.json": "09a80b7743a3e819567ba5b06e416da22e0d45fc3184cbc3ca5f7bccc8055235"
+  },
+  "message_sha256": "77b4a66b7cf206f7b5560e743f28fcc3316ddd904e307ba8baaaee96082a1d62",
+  "effect_sha256": "80ff29ede54cd331bf06f73b01db905236b0072569fbb4f02ed956c648876b30"
+}

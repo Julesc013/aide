@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
+status: needs_review
+result: TECHNICALLY_ACCEPTED_OWNER_DISPOSITIONS_PENDING
+owner: aide_campaign
+next_action: owner_exact_message_dispositions_then_integration_effect_review
+promotion_blocker: three_commit_message_failures_preserved_pending_disposition
+jobs_allocated: 29
+maximum_jobs: 29
+active_jobs: 0
+public_release: unchanged_1.0.0
+technical_review: accepted_exact_candidate
+technical_review_ref: evidence/technical-acceptance.json

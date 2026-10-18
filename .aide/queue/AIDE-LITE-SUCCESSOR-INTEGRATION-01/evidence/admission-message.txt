@@ -1,0 +1,10 @@
+chore(integration): admit retained successor reconciliation
+
+Prepare a bounded merge of the accepted historical successor with current
+development. Preserve both histories, newer features and frozen archive
+evidence while qualifying the actual combined source and installed package.
+
+Validation: PASS - clean refs and read-only overlap inspection; NOT RUN - combined qualification
+Changelog: Internal: Admit retained successor integration with preserved evidence
+AIDE-Task: AIDE-LITE-SUCCESSOR-INTEGRATION-01
+AIDE-Format: compact-v1

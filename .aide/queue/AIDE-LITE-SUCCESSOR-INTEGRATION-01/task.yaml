@@ -1,0 +1,37 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LITE-SUCCESSOR-INTEGRATION-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Reconcile the retained successor with current development
+type: integration
+status: needs_review
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/**
+    - .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_aide_lite.py
+    - .aide/scripts/tests/test_export_import.py
+    - .aide/scripts/tests/test_work_effort.py
+    - docs/reference/aide-lite-test-runner.md
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/lite-successor-qualification-admission.md
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/**
+    - .aide/reports/capability-command-status.md
+    - .aide/reports/capability-evidence-bindings.json
+    - .aide/reports/capability-ledger.md
+    - .aide/reports/capability-ledger.json
+    - .aide/context/latest-task-packet.md
+    - .aide/intake/latest-*
+    - .aide/release/stable/aide-lite-v1.1.0.*
+  forbidden_paths:
+    - changing historical Git objects or original qualification evidence
+    - rebuilding frozen release archives or publishing assets
+    - unrelated targets, hosting settings, providers or execution configuration
+review_gate: exact_admission_merge_candidate_jobs_and_integration
+maximum_jobs: 3
