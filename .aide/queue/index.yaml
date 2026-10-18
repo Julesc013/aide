@@ -4190,3 +4190,10 @@ items:
   path: .aide/queue/AIDE-MINI-WORKER-01
   parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
   description: Exact upstream DefaultAgent acquisition and source-only deterministic fixture under existing managed execution; no live model/provider route or full Mini CLI qualification.
+
+- id: AIDE-OFFLINE-RESULT-HANDOFF-01
+  title: Return offline work against exact request and source inputs
+  type: implementation
+  status: needs_review
+  path: .aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01
+  parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

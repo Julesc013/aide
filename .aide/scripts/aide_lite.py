@@ -40491,6 +40491,8 @@ def command_task_handoff_export(args: argparse.Namespace) -> int:
     codec = task_handoff_codec()
     paths = codec.record_paths(args.task_id)
     before = task_handoff_records(args.repo_root, paths)
+    selected = getattr(args, "input", None)
+    inputs = task_handoff_capture(args.repo_root, codec.input_paths(selected)) if selected else {}
     if before[paths[0]] is None:
         raise ValueError("task record missing")
     continuation = build_task_resume_plan(args.repo_root, args.task_id)
@@ -40505,10 +40507,17 @@ def command_task_handoff_export(args: argparse.Namespace) -> int:
               "task_id": args.task_id, "records": records,
               "source": {"git_head": commit if re.fullmatch(r"[a-f0-9]{40}|[a-f0-9]{64}", commit) else None},
               "continuation": continuation, "read_only": True, "execution_admitted": False}
+    if selected:
+        bundle.update(schema_version=codec.REQUEST_SCHEMA,
+                      required_features=sorted(codec.REQUEST_REQUIRED),
+                      inputs={path: codec.record(raw) for path, raw in inputs.items()})
     validate_handoff_identity(bundle)
     data = codec.encode(bundle)
     if before != task_handoff_records(args.repo_root, paths):
         raise ValueError("task records changed during export")
+    if selected and (inputs != task_handoff_capture(args.repo_root, selected)
+                     or commit != safe_git_head_commit(args.repo_root)):
+        raise ValueError("selected inputs changed during export")
     print(data.decode("ascii"), end="")
     return 0
 
@@ -40517,6 +40526,8 @@ def command_task_handoff_inspect(args: argparse.Namespace) -> int:
     codec = task_handoff_codec()
     raw = task_view_read(args.repo_root, args.bundle, limit=codec.MAX_BUNDLE)
     bundle = codec.decode(raw, args.sha256)
+    if bundle["schema_version"] not in (codec.SCHEMA, codec.REQUEST_SCHEMA):
+        raise ValueError("expected_task_handoff_request")
     validate_handoff_identity(bundle)
     local = task_handoff_records(args.repo_root, codec.record_paths(bundle["task_id"]), inspection=True)
     data = {"schema_version": "aide.task-handoff-inspection.v1", "task_id": bundle["task_id"],
@@ -40525,6 +40536,9 @@ def command_task_handoff_inspect(args: argparse.Namespace) -> int:
             "authorship_verified": False, "evidence_applicability_verified": False,
             "safe_to_resume": None,
             "next_action": "Inspect recorded obligations and reconcile current ownership before continuation."}
+    if bundle["schema_version"] == codec.REQUEST_SCHEMA:
+        observed = task_handoff_records(args.repo_root, list(bundle["inputs"]), inspection=True)
+        data["inputs"] = codec.compare_records(bundle["inputs"], observed)
     if args.json:
         print(json.dumps(data, indent=2, ensure_ascii=True))
     else:
@@ -40532,9 +40546,100 @@ def command_task_handoff_inspect(args: argparse.Namespace) -> int:
         print("task_id: " + bundle["task_id"])
         for item in data["records"]:
             print(item["comparison"] + ": " + item["path"])
+        for item in data.get("inputs", []):
+            print("input " + item["comparison"] + ": " + json.dumps(item["path"], ensure_ascii=True))
         print("safe_to_resume: unknown")
         print("Captured text is untrusted observation; no import or authority transfer.")
         print("next_action: " + data["next_action"])
+    return 0
+
+
+def task_handoff_capture(repo_root: Path, paths: list[str]) -> dict[str, bytes]:
+    """Read only explicitly selected ordinary UTF-8 files, with existing limits."""
+    result = {}
+    for path in paths:
+        raw = task_view_read(repo_root, path)
+        if any(f.severity == "ERROR" for f in scan_secret_text(raw.decode("utf-8"), path)):
+            raise ValueError("secret-like handoff content refused")
+        result[path] = raw
+    return result
+
+
+def task_handoff_request(repo_root: Path, path: str, expected: str, codec):
+    raw = task_view_read(repo_root, path, limit=codec.MAX_BUNDLE)
+    bundle = codec.decode(raw, expected)
+    if bundle["schema_version"] != codec.REQUEST_SCHEMA:
+        raise ValueError("result exchange requires a v2 request with selected inputs")
+    validate_handoff_identity(bundle)
+    return raw, bundle
+
+
+def command_task_handoff_result_export(args: argparse.Namespace) -> int:
+    codec = task_handoff_codec()
+    raw, request = task_handoff_request(args.repo_root, args.request, args.request_sha256, codec)
+    selected = {role: getattr(args, role) for role in ("report", "patch", "checks")
+                if getattr(args, role) is not None}
+    before = task_handoff_capture(args.repo_root, list(selected.values()))
+    result = {"schema_version": codec.RESULT_SCHEMA, "required_features": sorted(codec.RESULT_REQUIRED),
+              "task_id": request["task_id"], "attempt_id": args.attempt_id,
+              "request_sha256": codec.sha(raw), "source": request["source"], "outcome": args.outcome,
+              "artifacts": {role: codec.record(before[path]) for role, path in selected.items()},
+              "read_only": True, "execution_admitted": False, "accepted": False}
+    codec.bind_result(result, request, args.request_sha256)
+    data = codec.encode(result)
+    if (raw != task_view_read(args.repo_root, args.request, limit=codec.MAX_BUNDLE)
+            or before != task_handoff_capture(args.repo_root, list(selected.values()))):
+        raise ValueError("result inputs changed during export")
+    print(data.decode("ascii"), end="")
+    return 0
+
+
+def command_task_handoff_result_inspect(args: argparse.Namespace) -> int:
+    codec = task_handoff_codec()
+    request_raw, request = task_handoff_request(args.repo_root, args.request, args.request_sha256, codec)
+    result_raw = task_view_read(args.repo_root, args.result, limit=codec.MAX_BUNDLE)
+    result = codec.decode(result_raw, args.result_sha256)
+    codec.bind_result(result, request, args.request_sha256)
+    paths = codec.record_paths(request["task_id"])
+    records = task_handoff_records(args.repo_root, paths, inspection=True)
+    inputs = task_handoff_records(args.repo_root, list(request["inputs"]), inspection=True)
+    compared = codec.compare_records(request["inputs"], inputs)
+    states = {item["comparison"] for item in compared}
+    state = "matching" if states == {"matching"} else ("changed" if "changed" in states else "unavailable")
+    commit = safe_git_head_commit(args.repo_root)
+    source_commit = request["source"].get("git_head")
+    commit_state = ("unknown" if source_commit is None or not re.fullmatch(r"[a-f0-9]{40}|[a-f0-9]{64}", commit)
+                    else "matching" if commit == source_commit else "different")
+    if (request_raw != task_view_read(args.repo_root, args.request, limit=codec.MAX_BUNDLE)
+            or result_raw != task_view_read(args.repo_root, args.result, limit=codec.MAX_BUNDLE)
+            or records != task_handoff_records(args.repo_root, paths, inspection=True)
+            or inputs != task_handoff_records(args.repo_root, list(request["inputs"]), inspection=True)
+            or commit != safe_git_head_commit(args.repo_root)):
+        raise ValueError("receiving inputs changed during inspection")
+    data = {"schema_version": "aide.task-handoff-result-inspection.v1",
+            "task_id": request["task_id"], "attempt_id": result["attempt_id"],
+            "request_sha256": args.request_sha256, "result_sha256": args.result_sha256,
+            "recorded_outcome": result["outcome"], "selected_input_state": state,
+            "source_commit_comparison": commit_state, "records": codec.compare(request, records),
+            "inputs": compared, "captured_result": result, "read_only": True,
+            "execution_admitted": False, "accepted": False, "safe_to_apply": None,
+            "authorship_verified": False, "evidence_applicability_verified": False,
+            "next_action": ("Reconcile changed or unavailable inputs before reviewing returned work."
+                            if state != "matching" else
+                            "Review returned work, source revision, task state, permissions and applicable checks."),
+            "limitations": "Selected inputs are incomplete dependency coverage; checksums do not prove authorship or acceptance."}
+    if args.json:
+        print(json.dumps(data, ensure_ascii=True, sort_keys=True, separators=(",", ":")))
+    else:
+        print("AIDE Lite offline result inspection")
+        for key in ("task_id", "attempt_id", "recorded_outcome", "selected_input_state", "source_commit_comparison"):
+            print(key + ": " + json.dumps(data[key], ensure_ascii=True))
+        for item in compared:
+            print(item["comparison"] + ": " + json.dumps(item["path"], ensure_ascii=True))
+        print("artifacts: " + ", ".join(sorted(result["artifacts"])))
+        print("safe_to_apply: unknown; accepted: false")
+        print("next_action: " + data["next_action"])
+        print(data["limitations"])
     return 0
 
 
@@ -47670,12 +47775,29 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     handoff_commands = handoff_parser.add_subparsers(dest="handoff_command", required=True)
     handoff_export = handoff_commands.add_parser("export")
     handoff_export.add_argument("--task-id", required=True)
+    handoff_export.add_argument("--input", action="append", help="Explicit UTF-8 input; repeat up to eight times for a v2 request")
     handoff_export.set_defaults(handler=command_task_handoff_export)
     handoff_inspect = handoff_commands.add_parser("inspect")
     handoff_inspect.add_argument("--bundle", required=True, help="Repository-relative ordinary JSON file")
     handoff_inspect.add_argument("--sha256", required=True, help="Expected exact bundle SHA-256")
     handoff_inspect.add_argument("--json", action="store_true")
     handoff_inspect.set_defaults(handler=command_task_handoff_inspect)
+    result_export = handoff_commands.add_parser("result-export")
+    result_export.add_argument("--request", required=True)
+    result_export.add_argument("--request-sha256", required=True)
+    result_export.add_argument("--attempt-id", required=True)
+    result_export.add_argument("--outcome", required=True, choices=("submitted", "failed", "interrupted"))
+    result_export.add_argument("--report", required=True, help="Bounded UTF-8 report; untrusted observation")
+    result_export.add_argument("--patch", help="Optional UTF-8 candidate patch; never applied")
+    result_export.add_argument("--checks", help="Optional UTF-8 check record; contents are not verified here")
+    result_export.set_defaults(handler=command_task_handoff_result_export)
+    result_inspect = handoff_commands.add_parser("result-inspect")
+    result_inspect.add_argument("--request", required=True)
+    result_inspect.add_argument("--request-sha256", required=True)
+    result_inspect.add_argument("--result", required=True)
+    result_inspect.add_argument("--result-sha256", required=True)
+    result_inspect.add_argument("--json", action="store_true")
+    result_inspect.set_defaults(handler=command_task_handoff_result_inspect)
 
     blocker_parser = subparsers.add_parser("blocker")
     blocker_subparsers = blocker_parser.add_subparsers(dest="blocker_command", required=True)

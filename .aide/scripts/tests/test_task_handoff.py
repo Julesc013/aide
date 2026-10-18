@@ -243,5 +243,291 @@ class TaskHandoff(unittest.TestCase):
         self.assertEqual(before, self.snapshot())
 
 
+
+class OfflineResults(unittest.TestCase):
+    setUp = TaskHandoff.setUp
+    write = TaskHandoff.write
+    snapshot = TaskHandoff.snapshot
+    command = TaskHandoff.command
+
+    def request(self):
+        self.write('src/owner.py', b'def total(a, b):\r\n    return a - b\r\n')
+        code, text, err = self.command('export', '--task-id', self.task, '--input', 'src/owner.py')
+        self.assertEqual(code, 0, err)
+        raw = text.encode('ascii')
+        self.write('request.json', raw)
+        return raw
+
+    def reply(self, request, outcome='submitted', attempt='attempt-1'):
+        self.write('report.txt', '\ufeffRepair candidate; caf\u00e9\r\n'.encode('utf-8'))
+        self.write('candidate.patch', b'-    return a - b\n+    return a + b\n')
+        self.write('checks.json', b'{"result":"PASS","coverage":"selected cases only"}\n')
+        code, text, err = self.command(
+            'result-export', '--request', 'request.json', '--request-sha256', codec.sha(request),
+            '--attempt-id', attempt, '--outcome', outcome, '--report', 'report.txt',
+            '--patch', 'candidate.patch', '--checks', 'checks.json')
+        self.assertEqual(code, 0, err)
+        raw = text.encode('ascii')
+        self.write('result.json', raw)
+        return raw
+
+    def inspect_result(self, request, result, expected=0):
+        code, text, err = self.command(
+            'result-inspect', '--request', 'request.json', '--request-sha256', codec.sha(request),
+            '--result', 'result.json', '--result-sha256', codec.sha(result), '--json')
+        self.assertEqual(code, expected, err)
+        if expected:
+            self.assertEqual(text, '')
+            return None
+        return json.loads(text)
+
+    def test_default_remains_v1_and_selected_inputs_make_v2(self):
+        code, text, err = self.command('export', '--task-id', self.task)
+        self.assertEqual(code, 0, err)
+        old = json.loads(text)
+        new = json.loads(self.request())
+        self.assertEqual(old['schema_version'], 'aide.task-handoff.v1')
+        self.assertNotIn('inputs', old)
+        self.assertEqual(new['schema_version'], 'aide.task-handoff.v2')
+        self.assertEqual(new['records'], old['records'])
+        self.assertIn('selected_input_sha256', new['required_features'])
+
+    def test_request_and_result_preserve_bytes_without_writes(self):
+        request = self.request()
+        result = self.reply(request)
+        before = self.snapshot()
+        observed = self.inspect_result(request, result)
+        self.assertEqual(observed['selected_input_state'], 'matching')
+        self.assertEqual(observed['source_commit_comparison'], 'unknown')
+        self.assertEqual(observed['captured_result']['artifacts']['report']['text'].encode('utf-8'),
+                         before['report.txt'])
+        self.assertEqual(json.loads(request)['inputs']['src/owner.py']['text'].encode(),
+                         before['src/owner.py'])
+        self.assertEqual(observed['captured_result']['artifacts']['patch']['text'].encode(),
+                         before['candidate.patch'])
+        for key in ('execution_admitted', 'accepted', 'authorship_verified', 'evidence_applicability_verified'):
+            self.assertIs(observed[key], False)
+        self.assertIsNone(observed['safe_to_apply'])
+        self.assertEqual(before, self.snapshot())
+        self.assertTrue(request.isascii() and result.isascii())
+
+    def test_failed_and_interrupted_outputs_remain_candidates(self):
+        request = self.request()
+        for outcome in ('failed', 'interrupted', 'submitted'):
+            result = self.reply(request, outcome, 'attempt-' + outcome)
+            data = self.inspect_result(request, result)
+            self.assertEqual(data['recorded_outcome'], outcome)
+            self.assertEqual(data['attempt_id'], 'attempt-' + outcome)
+            self.assertFalse(data['accepted'])
+            self.assertIn('patch', data['captured_result']['artifacts'])
+
+    def test_declared_inputs_and_task_changes_are_distinct(self):
+        request = self.request()
+        result = self.reply(request)
+        self.write(self.paths[1], b'status: running\n')
+        data = self.inspect_result(request, result)
+        self.assertEqual(data['records'][1]['comparison'], 'changed')
+        self.assertEqual(data['selected_input_state'], 'matching')
+        self.write('src/owner.py', b'changed\n')
+        self.assertEqual(self.inspect_result(request, result)['selected_input_state'], 'changed')
+        (self.root / 'src/owner.py').unlink()
+        data = self.inspect_result(request, result)
+        self.assertEqual((data['selected_input_state'], data['inputs'][0]['comparison']), ('unavailable', 'missing'))
+        self.write('src/owner.py', b'new\n')
+        os.link(self.root / 'src/owner.py', self.root / 'alias')
+        self.assertEqual(self.inspect_result(request, result)['inputs'][0]['comparison'], 'unsafe_or_unreadable')
+
+    def test_source_revision_comparison_is_separate(self):
+        request = self.request()
+        original = json.loads(request)
+        for source, current, expected in [('a' * 40, 'a' * 40, 'matching'),
+                                          ('a' * 40, 'b' * 40, 'different'),
+                                          (None, 'a' * 40, 'unknown')]:
+            bundle = {**original, 'source': {'git_head': source}}
+            request = codec.encode(bundle)
+            self.write('request.json', request)
+            result = self.reply(request)
+            with patch.object(aide, 'safe_git_head_commit', return_value=current):
+                data = self.inspect_result(request, result)
+            self.assertEqual(data['source_commit_comparison'], expected)
+            self.assertIsNone(data['safe_to_apply'])
+
+    def test_wrong_request_task_and_provenance_refuse(self):
+        request = self.request()
+        result = json.loads(self.reply(request))
+        for change in ({'task_id': 'another-task'}, {'source': {'git_head': 'a' * 40}},
+                       {'request_sha256': '1' * 64}, {'schema_version': codec.SCHEMA}):
+            changed = json.dumps({**result, **change}).encode()
+            self.write('result.json', changed)
+            self.inspect_result(request, changed, expected=1)
+
+    def test_corrupt_or_partial_transfer_refuses_even_with_new_outer_digest(self):
+        request = self.request()
+        result = self.reply(request)
+        changed = json.loads(result)
+        changed['artifacts']['patch']['text'] += 'altered'
+        variants = [result[:-10], b'\xff', json.dumps(changed).encode(),
+                    result.replace(b'"accepted":false', b'"accepted":false,"accepted":false'),
+                    b'[' * 1000 + b']' * 1000]
+        for raw in variants:
+            with self.subTest(raw=raw[:30]):
+                self.write('result.json', raw)
+                self.inspect_result(request, raw, expected=1)
+        self.write('result.json', result)
+        self.write('request.json', request[:-10])
+        self.inspect_result(request, result, expected=1)
+
+    def test_required_features_refuse_and_optional_data_roundtrips(self):
+        request = json.loads(self.request())
+        request['extension'] = {'future': ['preserved', 1]}
+        request['inputs']['src/owner.py']['extension'] = 'kept'
+        raw = codec.encode(request)
+        self.write('request.json', raw)
+        result = json.loads(self.reply(raw))
+        result['extension'] = {'future': None}
+        result['artifacts']['report']['extension'] = 'kept'
+        encoded = codec.encode(result)
+        self.assertEqual(codec.decode(encoded, codec.sha(encoded)), result)
+        self.write('result.json', encoded)
+        self.assertEqual(self.inspect_result(raw, encoded)['captured_result'], result)
+        for bundle in (request, result):
+            with self.assertRaises(ValueError):
+                codec.encode({**bundle, 'required_features': bundle['required_features'] + ['future']})
+
+    def test_forged_acceptance_and_artifact_roles_refuse(self):
+        request = self.request()
+        result = json.loads(self.reply(request))
+        for change in ({'accepted': True}, {'execution_admitted': True}, {'read_only': False},
+                       {'outcome': 'accepted'}, {'attempt_id': '../escape'},
+                       {'artifacts': {'script': codec.record(b'execute')}},
+                       {'artifacts': {'report': codec.record(b'  ')}}):
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                codec.encode({**result, **change})
+
+    def test_input_names_and_count_refuse_ambiguity(self):
+        for paths in ([], ['A.py', 'a.py'], ['../outside'], ['/absolute'], ['C:/drive'],
+                      ['a\\b'], ['a//b'], ['a.'], ['a '], ['NUL.txt'], ['src/COM1'],
+                      ['a\nb'], ['e\u0301.py'], ['a' * 257], ['file' + str(x) for x in range(9)]):
+            with self.subTest(paths=paths), self.assertRaises(ValueError):
+                codec.input_paths(paths)
+        self.assertEqual(codec.input_paths(['src/caf\u00e9.py']), ['src/caf\u00e9.py'])
+
+    def test_export_refuses_missing_private_linked_or_large_inputs(self):
+        self.request()
+        for path, raw in [('missing', None), ('.env', b'x'), ('private.txt', ('sk-' + 'z' * 32).encode()),
+                          ('big.txt', b'x' * (codec.MAX_RECORD + 1)), ('invalid.txt', b'\xff')]:
+            if raw is not None:
+                self.write(path, raw)
+            code, text, err = self.command('export', '--task-id', self.task, '--input', path)
+            self.assertEqual((code, text), (1, ''))
+            self.assertNotIn('z' * 32, err)
+        os.link(self.root / 'src/owner.py', self.root / 'linked')
+        self.assertEqual(self.command('export', '--task-id', self.task, '--input', 'src/owner.py')[0], 1)
+
+    def test_result_export_refuses_invalid_report_without_partial_output(self):
+        request = self.request()
+        for raw in (b'', b'\xff', b'x' * (codec.MAX_RECORD + 1), ('sk-' + 'z' * 32).encode()):
+            self.write('report.txt', raw)
+            code, text, err = self.command(
+                'result-export', '--request', 'request.json', '--request-sha256', codec.sha(request),
+                '--attempt-id', 'a1', '--outcome', 'failed', '--report', 'report.txt')
+            self.assertEqual((code, text), (1, ''))
+            self.assertNotIn('z' * 32, err)
+
+    def test_changed_input_during_export_refuses(self):
+        self.request()
+        original = aide.task_handoff_capture
+        calls = 0
+        def capture(*args):
+            nonlocal calls
+            calls += 1
+            if calls == 2:
+                self.write('src/owner.py', b'concurrent edit\n')
+            return original(*args)
+        with patch.object(aide, 'task_handoff_capture', capture):
+            code, text, _ = self.command('export', '--task-id', self.task, '--input', 'src/owner.py')
+        self.assertEqual((code, text), (1, ''))
+
+    def test_changed_result_input_during_export_refuses(self):
+        request = self.request()
+        self.write('report.txt', b'original\n')
+        original = aide.task_handoff_capture
+        calls = 0
+        def capture(*args):
+            nonlocal calls
+            calls += 1
+            if calls == 2:
+                self.write('report.txt', b'concurrent edit\n')
+            return original(*args)
+        with patch.object(aide, 'task_handoff_capture', capture):
+            code, text, _ = self.command(
+                'result-export', '--request', 'request.json', '--request-sha256', codec.sha(request),
+                '--attempt-id', 'a1', '--outcome', 'interrupted', '--report', 'report.txt')
+        self.assertEqual((code, text), (1, ''))
+
+    def test_changed_receiver_during_inspection_refuses(self):
+        request = self.request()
+        result = self.reply(request)
+        original = aide.task_handoff_records
+        calls = 0
+        def records(*args, **kwargs):
+            nonlocal calls
+            calls += 1
+            if calls == 3:
+                self.write('src/owner.py', b'changed after observation\n')
+            return original(*args, **kwargs)
+        with patch.object(aide, 'task_handoff_records', records):
+            self.inspect_result(request, result, expected=1)
+
+    def test_v1_request_cannot_bind_a_result_and_result_is_not_request(self):
+        code, text, _ = self.command('export', '--task-id', self.task)
+        self.assertEqual(code, 0)
+        self.write('v1.json', text.encode())
+        self.write('report.txt', b'answer')
+        code, output, _ = self.command(
+            'result-export', '--request', 'v1.json', '--request-sha256', codec.sha(text.encode()),
+            '--attempt-id', 'a1', '--outcome', 'submitted', '--report', 'report.txt')
+        self.assertEqual((code, output), (1, ''))
+        request = self.request()
+        result = self.reply(request)
+        self.assertEqual(self.command('inspect', '--bundle', 'result.json', '--sha256', codec.sha(result))[0], 1)
+
+    def test_fresh_process_replay_is_read_only(self):
+        request = self.request()
+        result = self.reply(request, 'interrupted')
+        cli = self.write('.aide/scripts/aide_lite.py', Path(aide.__file__).read_bytes())
+        self.write('.aide/scripts/task_handoff.py', Path(codec.__file__).read_bytes())
+        before = self.snapshot()
+        prefix = [sys.executable, '-I', str(cli), '--repo-root', str(self.root), 'task', 'handoff']
+        arguments = ['result-inspect', '--request', 'request.json', '--request-sha256', codec.sha(request),
+                     '--result', 'result.json', '--result-sha256', codec.sha(result), '--json']
+        outputs = []
+        for _ in range(2):
+            completed = subprocess.run(prefix + arguments, capture_output=True, timeout=15)
+            self.assertEqual(completed.returncode, 0, completed.stderr)
+            outputs.append(completed.stdout)
+        self.assertEqual(outputs[0], outputs[1])
+        self.assertEqual(json.loads(outputs[0])['recorded_outcome'], 'interrupted')
+        self.assertEqual(before, self.snapshot())
+
+    def test_bounded_report_only_result_and_text_explanation(self):
+        request = self.request()
+        self.write('report.txt', b'Failed before a patch; preserve this observation.\n')
+        code, text, err = self.command(
+            'result-export', '--request', 'request.json', '--request-sha256', codec.sha(request),
+            '--attempt-id', 'a1', '--outcome', 'failed', '--report', 'report.txt')
+        self.assertEqual(code, 0, err)
+        result = text.encode()
+        self.write('result.json', result)
+        self.assertEqual(set(json.loads(result)['artifacts']), {'report'})
+        code, text, err = self.command(
+            'result-inspect', '--request', 'request.json', '--request-sha256', codec.sha(request),
+            '--result', 'result.json', '--result-sha256', codec.sha(result))
+        self.assertEqual(code, 0, err)
+        self.assertIn('next_action:', text)
+        self.assertIn('safe_to_apply: unknown; accepted: false', text)
+        self.assertNotIn('Failed before a patch', text)
+
+
 if __name__ == '__main__':
     unittest.main()

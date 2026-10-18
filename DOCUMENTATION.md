@@ -1316,3 +1316,10 @@ source binding, exact imports and fixture boundary.
 [Bounded work](.aide/queue/AIDE-MINI-WORKER-01/ExecPlan.md) retains the acquisition
 outcomes and completed scoped fixture qualification; exact integration review is
 pending. Lite exports and frozen archives are unchanged.
+
+### Offline result exchange
+
+[Task handoff commands](docs/reference/task-os-report-only-commands.md) describe
+source-input-bound requests and candidate result inspection. [The bounded
+WorkUnit](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/ExecPlan.md) retains scope,
+qualification and integration evidence; no result is applied or accepted by inspection.

@@ -1,0 +1,24 @@
+{
+  "base": "a986ce94b103e9f808422387df35853c3edb7be1",
+  "files": {
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/ExecPlan.md": "6aec3a476423acf1f990643ec5b34f5858c03a380237d87b2ed5aa57418d81c5",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/source-effect.md": "1f8848bfa988b0b20a0d04967847d7a92f623fe40f06cce1e9d176639fc876a5",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/source-job-template.json": "8439eee9d86eff73b3f22c2d8ba73bafc8d62f6b94db55a75ca0407651c37e4d",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/source-message.txt": "f080e5d699c641e438c8fd5a866e1ec02e823e99e17232018d33e390df045c53",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/source-prechecks.json": "bbe8dfef05792c2b93b725f10b36ecd499448772c8bb60c0f02151464d8a715a",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/task-packet.md": "0250408b498b3dda433a5f762eb377e91066a821fdeecc9eec1655888b27f4ba",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/run_checks.py": "9223e5d4c3ac5b149dde7029d5ebf24d583befcf1a41c4dd6b94b5ffc82f5ac2",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/status.yaml": "697420ddbda305fa78b1aa9fff9c65170f1a40bc2f0be518a415093611130988",
+    ".aide/queue/index.yaml": "242253744f5c2dce51579509031c42e7f2b8e16768a077af7d41c8e5d979881c",
+    ".aide/scripts/aide_lite.py": "5778da9a1fbdc8311a03a040e541f44da6b45269b57ff1c8afe389d446051061",
+    ".aide/scripts/task_handoff.py": "cb508c38f5e46587685844c603eae33a485cd8e5d70daf556940f851a8b8ada0",
+    ".aide/scripts/tests/test_task_handoff.py": "50225b2cf4723da72c81a6db91fe944b0bf9d338557cc7be0751ff42941a1a1e",
+    "DOCUMENTATION.md": "b2ba2954b6dfb13da01300150bebb0ed82101a5941303224c31f8ea54cc0bc1f",
+    "IMPLEMENT.md": "490f94e9b4a84d429b249db741441c40f728c53acb032446d14f9906656cf5b1",
+    "PLANS.md": "576bbd87407556bc32b2d84016f27ea2d1975f5b62953feb2de37946962aec4d",
+    "docs/reference/task-os-report-only-commands.md": "bb1c1d9948a3858e93860dd9eef867f926897df698bd3b3a00c99b590e8ae4ee"
+  },
+  "message_sha256": "f080e5d699c641e438c8fd5a866e1ec02e823e99e17232018d33e390df045c53",
+  "effect_sha256": "1f8848bfa988b0b20a0d04967847d7a92f623fe40f06cce1e9d176639fc876a5",
+  "job_template_sha256": "8439eee9d86eff73b3f22c2d8ba73bafc8d62f6b94db55a75ca0407651c37e4d"
+}

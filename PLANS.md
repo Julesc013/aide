@@ -5357,3 +5357,10 @@ unchanged pack/release checks and fixed preview passed. All four jobs retired;
 original failures remain. See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md).
 Exact reviewed Git effects govern delivery. Real model work and release claims
 remain separate; the larger daily-use campaign remains open.
+
+### Offline result continuation
+
+AIDE-OFFLINE-RESULT-HANDOFF-01 extends the existing portable task codec with
+selected-input request identity and returned candidate observations. Source,
+delivered and safe-installed qualification precede guarded integration. No new
+execution owner, automatic application or vintage host support is implied.

@@ -14099,3 +14099,10 @@ preview passed at cf77e790. All four jobs are retired, including the preserved
 initial acquisition failure. No model request, global install or target effect.
 See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md); the integration receipt will
 record the actual Git effects after terminal acceptance.
+
+### Offline result exchange prepared
+
+The existing task handoff codec/CLI now prepares explicit v2 input-bound requests
+and bounded reports/patches/check records. Fresh inspection separates current
+task and selected-input changes. Original v1 behavior and assertions are retained;
+97 source methods and installed qualification remain unrun pending review.

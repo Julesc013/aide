@@ -73,3 +73,9 @@ valid for that exact fixture; real model use is unqualified. Existing portable
 handoff carries only task/status/plan, so the requested result loop is absent.
 Unchanged host, DiskEd ownership and publication prerequisites are not re-probed.
 This packet is preparation; implementation and execution await exact admission.
+
+**Admission and preparation.** Independent ACCEPT covered map 6a0fd5c9 and
+effect 6f952707. Managed checkpoint a986ce94 preceded source work. The existing
+codec/CLI now prepares v2 input-bound requests and candidate result export/inspection.
+All 79 original tests are retained with 18 new methods; none has executed yet.
+Source/job review is required before the first allocation.

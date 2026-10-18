@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "check": "doctor",
+      "exit_code": 1,
+      "sha256": "20ed121a4a800922d8e21b9e7dc5b38c8a212405fa9cf6e987f97248cc93a64a"
+    },
+    {
+      "check": "validate",
+      "exit_code": 1,
+      "sha256": "522798fecdffa95062229f4d86a04d37b94bb4b7d6df804e5791ce6855967684"
+    },
+    {
+      "check": "message",
+      "exit_code": 0,
+      "sha256": "e7d36048becde9f643526e6ead4d1a657db9be1f742a53136d85873536106d25"
+    }
+  ],
+  "classification": "doctor/validate fail only stale capability evidence binding; explicit reviewed refresh required before delivery/integration; one existing warning retained",
+  "original_class_ast_unchanged": true,
+  "new_methods": 18,
+  "tests_run": false,
+  "preparation_note": "Initial AST comparison decoded git output with the Windows default; repeating that static comparison with explicit UTF-8 confirmed original class unchanged. No test/job was allocated."
+}
