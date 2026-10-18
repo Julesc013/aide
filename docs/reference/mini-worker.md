@@ -54,5 +54,5 @@ Fourteen completed unittest cases and one parent-checked cancellation passed
 without failures or skips on Windows / Python 3.14.8. All original outcomes are
 retained. The tests are source-only under core/execution/tests, excluded from
 Lite exports and frozen archives. See the task report for exact evidence and
-pending final compatibility/integration checks.
+final passive/immutable-artifact checks. Integration uses a separately reviewed effect.
 

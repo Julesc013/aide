@@ -14092,11 +14092,10 @@ See the child report and observed integration receipt for exact delivery.
 
 ### AIDE-MINI-WORKER-01: Acquisition and optional binding
 
-The upstream DefaultAgent binding passed 15 actual offline lifecycle scenarios,
-including independent code-repair acceptance, interruption/continuation and
-owned descendant cancellation. Full collection and retirement are verified.
-The original acquisition failure and rejected proposals remain.
-
-Source e2902c21 is the execution subject. Final passive compatibility, immutable
-pack/release checks and fixed preview are prepared; exact integration remains
-separate. See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md).
+The unchanged upstream DefaultAgent passed 15 native repair/refusal/recovery
+scenarios through the optional binding at e2902c21. Final passive compatibility,
+evidence preservation, unchanged 870 pack/eight release files and exact five-commit
+preview passed at cf77e790. All four jobs are retired, including the preserved
+initial acquisition failure. No model request, global install or target effect.
+See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md); the integration receipt will
+record the actual Git effects after terminal acceptance.

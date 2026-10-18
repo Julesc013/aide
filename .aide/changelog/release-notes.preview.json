@@ -3,25 +3,53 @@
   "highlights": [
     {
       "breaking": false,
-      "category": "Docs",
-      "commit": "7059f9b0cfd4",
-      "subject": "docs(campaign): expose current outcomes and remaining work",
-      "summary": "Clarify current campaign outcomes, owners and prerequisites"
+      "category": "Added",
+      "commit": "e2902c21c5d2",
+      "subject": "feat(worker): bind Mini to supervised offline attempts",
+      "summary": "Prepare optional Mini worker binding and lifecycle fixtures"
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "cf77e790a0b9",
+      "subject": "test(worker): retain Mini lifecycle results and final checks",
+      "summary": "Qualify optional Mini repair, refusal and recovery fixtures"
     }
   ],
   "preview_only": true,
-  "risk_summary": [],
-  "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "7059f9b0cfd490415e86e01d5c5c68fd7a695430",
-  "source_range": "29f4bf5c1f23a923b0ea97e1826ab9fff4c734fc..7059f9b0cfd490415e86e01d5c5c68fd7a695430",
-  "validation_summary": [
+  "risk_summary": [
     {
-      "commit": "1a9f6445a874",
-      "summary": "PASS - actual current view and exact branch inspection\nNOT RUN - reconciled records and qualification"
+      "commit": "e2902c21c5d2",
+      "summary": "Fixture scope; no live model route or filesystem isolation claim"
     },
     {
-      "commit": "7059f9b0cfd4",
-      "summary": "PASS - exact source and preserved-record preparation\nNOT RUN - actual reconciled CLI and managed qualification"
+      "commit": "cf77e790a0b9",
+      "summary": "Deterministic source fixture only; no live model or isolation claim"
+    }
+  ],
+  "schema_version": "aide.release-notes-preview.v0",
+  "source_head": "cf77e790a0b973fd68dec12f667698d16cfbe883",
+  "source_range": "fcaa9e1e2230cf1fc14cfa5edde05cad0ce27971..cf77e790a0b973fd68dec12f667698d16cfbe883",
+  "validation_summary": [
+    {
+      "commit": "3932731edba6",
+      "summary": "PASS - current source/refs and exact PyPI artifact metadata\nNOT RUN - artifact acquisition, imports and worker qualification"
+    },
+    {
+      "commit": "c5077b95ca50",
+      "summary": "PASS - admission review, exact artifact/source pins and static script checks\nNOT RUN - wheel acquisition, dependency imports and worker qualification"
+    },
+    {
+      "commit": "5b0af5ecf902",
+      "summary": "PASS - 14 metadata observations; two retained archive matches;\noriginal collection, retirement and exact artifact hashes; syntax and diff checks\nNOT RUN - acquisition continuation and worker imports"
+    },
+    {
+      "commit": "e2902c21c5d2",
+      "summary": "PASS - exact 14-wheel acquisition, collection and retirement;\nsyntax and diff checks\nNOT RUN - 15 offline execution scenarios and final qualification"
+    },
+    {
+      "commit": "cf77e790a0b9",
+      "summary": "PASS - 15 native scenarios, collection and retirement\nNOT RUN - final passive compatibility, artifact checks and preview"
     }
   ],
   "warnings": []

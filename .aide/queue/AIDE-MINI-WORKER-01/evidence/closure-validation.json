@@ -1,0 +1,103 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "check": "message",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        ".aide\\queue\\AIDE-MINI-WORKER-01\\evidence\\closure-message.txt"
+      ],
+      "exit_code": 0,
+      "sha256": "3b943b3cd4d29e9dd6ff8455c3fb8cd3b83dfeefd19f591eba6202450aee8d97",
+      "bytes": 2130
+    },
+    {
+      "check": "range",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "fcaa9e1e2230cf1fc14cfa5edde05cad0ce27971..HEAD"
+      ],
+      "exit_code": 0,
+      "sha256": "d36d7008a8e143313583e3cfbaa109ace9f3429a388938eac5492992faaab050",
+      "bytes": 685
+    },
+    {
+      "check": "validate",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "exit_code": 0,
+      "sha256": "4d0f483657d4b13d111ec9acff2a7cebc433b9154e33fb663e1313b2e05ca3f0",
+      "bytes": 236
+    },
+    {
+      "check": "preservation-preview",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide\\queue\\AIDE-MINI-WORKER-01\\run_checks.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "sha256": "4b2f1cf9048bb281a3917ba41a5089ebc7a738a46e8a07b1fbd96730aebcc2dc",
+      "bytes": 1439
+    },
+    {
+      "check": "diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "check": "metadata-validate",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "exit_code": 0,
+      "sha256": "8084fc43cb5383cd8c86024d66aba2cb8218c2b0d31ca208c636a3672dc7fa19",
+      "bytes": 241
+    },
+    {
+      "check": "metadata-diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "metadata_link_check": {
+    "result": "PASS",
+    "files": 4,
+    "method": "All relative Markdown destinations resolve; no H1/H2 headings."
+  }
+}

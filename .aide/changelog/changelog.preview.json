@@ -1,30 +1,31 @@
 {
   "categories": {
-    "Docs": [
+    "Added": [
       {
         "aide_phase": "",
         "aide_result": "",
         "breaking": false,
         "breaking_change": "",
-        "category": "Docs",
-        "commit": "7059f9b0cfd4",
-        "commit_sha": "7059f9b0cfd490415e86e01d5c5c68fd7a695430",
-        "entry": "Clarify current campaign outcomes, owners and prerequisites",
+        "category": "Added",
+        "commit": "e2902c21c5d2",
+        "commit_sha": "e2902c21c5d2cc23ed559867b87a0a2be7e02caf",
+        "entry": "Prepare optional Mini worker binding and lifecycle fixtures",
         "follow_up": "",
         "message_format": "compact-v1",
-        "risks": "",
-        "scope": "campaign",
+        "risks": "Fixture scope; no live model route or filesystem isolation claim",
+        "scope": "worker",
         "source_sections_present": [
           "Body",
           "Validation",
           "Changelog",
+          "Risk",
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "docs(campaign): expose current outcomes and remaining work",
-        "summary": "Clarify current campaign outcomes, owners and prerequisites",
-        "type": "docs",
-        "validation": "PASS - exact source and preserved-record preparation\nNOT RUN - actual reconciled CLI and managed qualification"
+        "subject": "feat(worker): bind Mini to supervised offline attempts",
+        "summary": "Prepare optional Mini worker binding and lifecycle fixtures",
+        "type": "feat",
+        "validation": "PASS - exact 14-wheel acquisition, collection and retirement;\nsyntax and diff checks\nNOT RUN - 15 offline execution scenarios and final qualification"
       }
     ],
     "Internal": [
@@ -34,13 +35,13 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "1a9f6445a874",
-        "commit_sha": "1a9f6445a874f38ccc1b6fa5da8e882cb260e214",
-        "entry": "Admit bounded campaign current-state maintenance",
+        "commit": "3932731edba6",
+        "commit_sha": "3932731edba6d55f5bcce076bacf1a3bcd95a7ff",
+        "entry": "Admit bounded optional Mini worker integration",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "campaign",
+        "scope": "worker",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -48,18 +49,97 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "docs(campaign): admit current-state reconciliation",
-        "summary": "Admit bounded campaign current-state maintenance",
-        "type": "docs",
-        "validation": "PASS - actual current view and exact branch inspection\nNOT RUN - reconciled records and qualification"
+        "subject": "feat(worker): admit optional Mini harness qualification",
+        "summary": "Admit bounded optional Mini worker integration",
+        "type": "feat",
+        "validation": "PASS - current source/refs and exact PyPI artifact metadata\nNOT RUN - artifact acquisition, imports and worker qualification"
+      },
+      {
+        "aide_phase": "",
+        "aide_result": "",
+        "breaking": false,
+        "breaking_change": "",
+        "category": "Internal",
+        "commit": "c5077b95ca50",
+        "commit_sha": "c5077b95ca50e8e44d85789e6efd7e80bc828c6f",
+        "entry": "Prepare bounded Mini worker dependency acquisition",
+        "follow_up": "",
+        "message_format": "compact-v1",
+        "risks": "",
+        "scope": "worker",
+        "source_sections_present": [
+          "Body",
+          "Validation",
+          "Changelog",
+          "AIDE-Task",
+          "AIDE-Format"
+        ],
+        "subject": "feat(worker): prepare pinned Mini dependency acquisition",
+        "summary": "Prepare bounded Mini worker dependency acquisition",
+        "type": "feat",
+        "validation": "PASS - admission review, exact artifact/source pins and static script checks\nNOT RUN - wheel acquisition, dependency imports and worker qualification"
+      },
+      {
+        "aide_phase": "",
+        "aide_result": "",
+        "breaking": false,
+        "breaking_change": "",
+        "category": "Internal",
+        "commit": "5b0af5ecf902",
+        "commit_sha": "5b0af5ecf9027d8e09093b3b59f372d9462f39fa",
+        "entry": "Correct Mini metadata expectations and preserve acquired work",
+        "follow_up": "",
+        "message_format": "compact-v1",
+        "risks": "",
+        "scope": "worker",
+        "source_sections_present": [
+          "Body",
+          "Validation",
+          "Changelog",
+          "AIDE-Task",
+          "AIDE-Format"
+        ],
+        "subject": "fix(worker): pin artifact metadata and reuse acquired wheels",
+        "summary": "Correct Mini metadata expectations and preserve acquired work",
+        "type": "fix",
+        "validation": "PASS - 14 metadata observations; two retained archive matches;\noriginal collection, retirement and exact artifact hashes; syntax and diff checks\nNOT RUN - acquisition continuation and worker imports"
+      }
+    ],
+    "Tests": [
+      {
+        "aide_phase": "",
+        "aide_result": "",
+        "breaking": false,
+        "breaking_change": "",
+        "category": "Tests",
+        "commit": "cf77e790a0b9",
+        "commit_sha": "cf77e790a0b973fd68dec12f667698d16cfbe883",
+        "entry": "Qualify optional Mini repair, refusal and recovery fixtures",
+        "follow_up": "",
+        "message_format": "compact-v1",
+        "risks": "Deterministic source fixture only; no live model or isolation claim",
+        "scope": "worker",
+        "source_sections_present": [
+          "Body",
+          "Validation",
+          "Changelog",
+          "Risk",
+          "AIDE-Task",
+          "AIDE-Format"
+        ],
+        "subject": "test(worker): retain Mini lifecycle results and final checks",
+        "summary": "Qualify optional Mini repair, refusal and recovery fixtures",
+        "type": "test",
+        "validation": "PASS - 15 native scenarios, collection and retirement\nNOT RUN - final passive compatibility, artifact checks and preview"
       }
     ]
   },
   "category_counts": {
-    "Docs": 1,
-    "Internal": 1
+    "Added": 1,
+    "Internal": 3,
+    "Tests": 1
   },
-  "commit_count": 2,
+  "commit_count": 5,
   "entries": [
     {
       "aide_phase": "",
@@ -67,13 +147,13 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "1a9f6445a874",
-      "commit_sha": "1a9f6445a874f38ccc1b6fa5da8e882cb260e214",
-      "entry": "Admit bounded campaign current-state maintenance",
+      "commit": "3932731edba6",
+      "commit_sha": "3932731edba6d55f5bcce076bacf1a3bcd95a7ff",
+      "entry": "Admit bounded optional Mini worker integration",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "campaign",
+      "scope": "worker",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -81,24 +161,24 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "docs(campaign): admit current-state reconciliation",
-      "summary": "Admit bounded campaign current-state maintenance",
-      "type": "docs",
-      "validation": "PASS - actual current view and exact branch inspection\nNOT RUN - reconciled records and qualification"
+      "subject": "feat(worker): admit optional Mini harness qualification",
+      "summary": "Admit bounded optional Mini worker integration",
+      "type": "feat",
+      "validation": "PASS - current source/refs and exact PyPI artifact metadata\nNOT RUN - artifact acquisition, imports and worker qualification"
     },
     {
       "aide_phase": "",
       "aide_result": "",
       "breaking": false,
       "breaking_change": "",
-      "category": "Docs",
-      "commit": "7059f9b0cfd4",
-      "commit_sha": "7059f9b0cfd490415e86e01d5c5c68fd7a695430",
-      "entry": "Clarify current campaign outcomes, owners and prerequisites",
+      "category": "Internal",
+      "commit": "c5077b95ca50",
+      "commit_sha": "c5077b95ca50e8e44d85789e6efd7e80bc828c6f",
+      "entry": "Prepare bounded Mini worker dependency acquisition",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "campaign",
+      "scope": "worker",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -106,10 +186,87 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "docs(campaign): expose current outcomes and remaining work",
-      "summary": "Clarify current campaign outcomes, owners and prerequisites",
-      "type": "docs",
-      "validation": "PASS - exact source and preserved-record preparation\nNOT RUN - actual reconciled CLI and managed qualification"
+      "subject": "feat(worker): prepare pinned Mini dependency acquisition",
+      "summary": "Prepare bounded Mini worker dependency acquisition",
+      "type": "feat",
+      "validation": "PASS - admission review, exact artifact/source pins and static script checks\nNOT RUN - wheel acquisition, dependency imports and worker qualification"
+    },
+    {
+      "aide_phase": "",
+      "aide_result": "",
+      "breaking": false,
+      "breaking_change": "",
+      "category": "Internal",
+      "commit": "5b0af5ecf902",
+      "commit_sha": "5b0af5ecf9027d8e09093b3b59f372d9462f39fa",
+      "entry": "Correct Mini metadata expectations and preserve acquired work",
+      "follow_up": "",
+      "message_format": "compact-v1",
+      "risks": "",
+      "scope": "worker",
+      "source_sections_present": [
+        "Body",
+        "Validation",
+        "Changelog",
+        "AIDE-Task",
+        "AIDE-Format"
+      ],
+      "subject": "fix(worker): pin artifact metadata and reuse acquired wheels",
+      "summary": "Correct Mini metadata expectations and preserve acquired work",
+      "type": "fix",
+      "validation": "PASS - 14 metadata observations; two retained archive matches;\noriginal collection, retirement and exact artifact hashes; syntax and diff checks\nNOT RUN - acquisition continuation and worker imports"
+    },
+    {
+      "aide_phase": "",
+      "aide_result": "",
+      "breaking": false,
+      "breaking_change": "",
+      "category": "Added",
+      "commit": "e2902c21c5d2",
+      "commit_sha": "e2902c21c5d2cc23ed559867b87a0a2be7e02caf",
+      "entry": "Prepare optional Mini worker binding and lifecycle fixtures",
+      "follow_up": "",
+      "message_format": "compact-v1",
+      "risks": "Fixture scope; no live model route or filesystem isolation claim",
+      "scope": "worker",
+      "source_sections_present": [
+        "Body",
+        "Validation",
+        "Changelog",
+        "Risk",
+        "AIDE-Task",
+        "AIDE-Format"
+      ],
+      "subject": "feat(worker): bind Mini to supervised offline attempts",
+      "summary": "Prepare optional Mini worker binding and lifecycle fixtures",
+      "type": "feat",
+      "validation": "PASS - exact 14-wheel acquisition, collection and retirement;\nsyntax and diff checks\nNOT RUN - 15 offline execution scenarios and final qualification"
+    },
+    {
+      "aide_phase": "",
+      "aide_result": "",
+      "breaking": false,
+      "breaking_change": "",
+      "category": "Tests",
+      "commit": "cf77e790a0b9",
+      "commit_sha": "cf77e790a0b973fd68dec12f667698d16cfbe883",
+      "entry": "Qualify optional Mini repair, refusal and recovery fixtures",
+      "follow_up": "",
+      "message_format": "compact-v1",
+      "risks": "Deterministic source fixture only; no live model or isolation claim",
+      "scope": "worker",
+      "source_sections_present": [
+        "Body",
+        "Validation",
+        "Changelog",
+        "Risk",
+        "AIDE-Task",
+        "AIDE-Format"
+      ],
+      "subject": "test(worker): retain Mini lifecycle results and final checks",
+      "summary": "Qualify optional Mini repair, refusal and recovery fixtures",
+      "type": "test",
+      "validation": "PASS - 15 native scenarios, collection and retirement\nNOT RUN - final passive compatibility, artifact checks and preview"
     }
   ],
   "generated_by": "aide-lite",
@@ -120,7 +277,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "7059f9b0cfd490415e86e01d5c5c68fd7a695430",
-  "source_range": "29f4bf5c1f23a923b0ea97e1826ab9fff4c734fc..7059f9b0cfd490415e86e01d5c5c68fd7a695430",
+  "source_head": "cf77e790a0b973fd68dec12f667698d16cfbe883",
+  "source_range": "fcaa9e1e2230cf1fc14cfa5edde05cad0ce27971..cf77e790a0b973fd68dec12f667698d16cfbe883",
   "warnings": []
 }

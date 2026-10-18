@@ -3,7 +3,7 @@ id: AIDE-MINI-WORKER-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Qualify one optional upstream Mini worker fixture
 type: implementation
-status: running
+status: passed
 scope:
   allowed_paths:
     - .aide/queue/AIDE-MINI-WORKER-01/**

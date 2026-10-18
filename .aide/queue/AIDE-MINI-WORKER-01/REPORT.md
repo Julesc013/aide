@@ -16,7 +16,7 @@ receipts and the patch are retained under job 5d7059f3407440ea95c2ef1dd70128fb.
 
 The 14-wheel acquisition passed exact archive/metadata/notices and six selected
 source/license comparisons. The original metadata-size failure and two rejected
-pre-execution proposals remain visible. All three allocated jobs are collected,
+pre-execution proposals remain visible. The first three jobs are collected,
 quiescent and retired; no process reservation or scratch remains. The worker's
 observed peak was 71,970,816 bytes and scratch peak 15,397,222 bytes.
 
@@ -26,7 +26,13 @@ isolation. No upstream loop was forked, no package was globally installed, no
 model request was made, and no target or live endpoint was changed. Model usage
 remains unknown in the generic receipt; fixture invocation counts are not billing.
 
-Final passive compatibility, unchanged pack/release checks and fixed promotion
-preview are pending. Exact terminal review and observed Git receipts govern
-integration. A real model task and matched comparison require a separate finite
-approved route; this fixture grants none.
+**Final checks passed.** At cf77e790, passive import loaded no optional SDK.
+Doctor, full structural validation and pack provenance passed; validation retained
+one existing review-reference warning and no failures. All 870 development-pack
+files and eight frozen release assets are unchanged. The fixed five-commit
+preview regenerated all six outputs exactly with no malformed messages. The
+fourth job is collected and retired; all four allocations are consumed.
+
+Exact terminal review and observed Git receipts govern integration. A real model
+task and matched comparison require a separate finite approved route; this
+fixture grants none. Published Lite 1.0.0 and held 1.1.0 assets are unchanged.

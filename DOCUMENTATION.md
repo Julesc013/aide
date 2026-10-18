@@ -1314,4 +1314,5 @@ Current writing guide: [commit discipline](docs/reference/commit-discipline.md),
 [Adapter scope and recovery](docs/reference/mini-worker.md) explains the optional
 source binding, exact imports and fixture boundary.
 [Bounded work](.aide/queue/AIDE-MINI-WORKER-01/ExecPlan.md) retains the acquisition
-outcomes and pending execution review. Lite exports and frozen archives are unchanged.
+outcomes and completed scoped fixture qualification; exact integration review is
+pending. Lite exports and frozen archives are unchanged.

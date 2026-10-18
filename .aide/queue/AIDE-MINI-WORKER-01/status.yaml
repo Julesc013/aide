@@ -1,10 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-MINI-WORKER-01
-status: running
-result: FIFTEEN_NATIVE_FIXTURES_PASSED_FINAL_CHECKS_PENDING
+status: passed
+result: PASS_PINNED_OPTIONAL_WORKER_FIXTURE
 responsible_owner: AIDE execution adapter owner
-next_action: Review final evidence, passive compatibility and fixed preview job
+next_action: Exact reviewed integration; live model workflow remains separately bounded
 maximum_jobs: 4
-jobs_allocated: 3
+jobs_allocated: 4
+jobs_retired: 4
 original_attempt_result: FAIL_metadata_size_guard_retained_retired
 product_qualified: fixture_only
+live_model_route_qualified: false

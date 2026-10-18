@@ -4186,7 +4186,7 @@ items:
 - id: AIDE-MINI-WORKER-01
   title: Qualify one optional upstream Mini worker fixture
   type: implementation
-  status: running
+  status: passed
   path: .aide/queue/AIDE-MINI-WORKER-01
   parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
   description: Exact upstream DefaultAgent acquisition and source-only deterministic fixture under existing managed execution; no live model/provider route or full Mini CLI qualification.

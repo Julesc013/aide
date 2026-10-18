@@ -2,24 +2,34 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 29f4bf5c1f23a923b0ea97e1826ab9fff4c734fc..7059f9b0cfd490415e86e01d5c5c68fd7a695430
-source_head: 7059f9b0cfd490415e86e01d5c5c68fd7a695430
+source_range: fcaa9e1e2230cf1fc14cfa5edde05cad0ce27971..cf77e790a0b973fd68dec12f667698d16cfbe883
+source_head: cf77e790a0b973fd68dec12f667698d16cfbe883
 preview_only: true
 
 ## Highlights
 
-- Docs: Clarify current campaign outcomes, owners and prerequisites (7059f9b0cfd4)
+- Added: Prepare optional Mini worker binding and lifecycle fixtures (e2902c21c5d2)
+- Tests: Qualify optional Mini repair, refusal and recovery fixtures (cf77e790a0b9)
 
 ## Validation Summary
 
-- 1a9f6445a874: PASS - actual current view and exact branch inspection
-  NOT RUN - reconciled records and qualification
-- 7059f9b0cfd4: PASS - exact source and preserved-record preparation
-  NOT RUN - actual reconciled CLI and managed qualification
+- 3932731edba6: PASS - current source/refs and exact PyPI artifact metadata
+  NOT RUN - artifact acquisition, imports and worker qualification
+- c5077b95ca50: PASS - admission review, exact artifact/source pins and static script checks
+  NOT RUN - wheel acquisition, dependency imports and worker qualification
+- 5b0af5ecf902: PASS - 14 metadata observations; two retained archive matches;
+  original collection, retirement and exact artifact hashes; syntax and diff checks
+  NOT RUN - acquisition continuation and worker imports
+- e2902c21c5d2: PASS - exact 14-wheel acquisition, collection and retirement;
+  syntax and diff checks
+  NOT RUN - 15 offline execution scenarios and final qualification
+- cf77e790a0b9: PASS - 15 native scenarios, collection and retirement
+  NOT RUN - final passive compatibility, artifact checks and preview
 
 ## Known Risks
 
-- No risk summaries were extracted.
+- e2902c21c5d2: Fixture scope; no live model route or filesystem isolation claim
+- cf77e790a0b9: Deterministic source fixture only; no live model or isolation claim
 
 ## Follow-up
 

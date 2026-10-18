@@ -115,3 +115,17 @@ These are native worker observations, not whole-client or model efficiency claim
 Allocation 4 is prepared for passive import, evidence/unchanged package checks,
 doctor/full validation/pack provenance and the existing fixed changelog preview.
 It will not rerun the completed fixture or rebuild any package.
+
+**Final qualification passed.** Independent ACCEPT covered final source 1c66c2f5,
+effect c53c0f94 and template b9775eda. At cf77e790, final job
+0eeddda5a8fa47ce99750c162f1a30c0 verified prior collections, all 15 scenario records,
+passive import without optional SDKs, doctor/full validation/pack provenance and
+all 870 development-pack / eight frozen-release hashes. The fixed five-commit
+fcaa9e1e..cf77e790 preview passed with six exact regeneration outputs.
+Full validation retains one existing review-reference warning and no failure.
+
+The fourth job is collected/quiescent/retired; all four allocations are consumed.
+No additional job or repeated fixture is authorized. This closes the scoped
+deterministic binding qualification. Exact terminal review and separately guarded
+dev/main synchronization remain required; model-backed coding, new recipes and
+whole-outcome comparison are outside this fixture's acceptance.

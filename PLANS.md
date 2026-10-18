@@ -5352,8 +5352,8 @@ See [the report](.aide/queue/AIDE-DEPENDENCY-REBIND-01/REPORT.md); native host a
 
 ### AIDE-MINI-WORKER-01: Optional upstream worker
 
-Exact acquisition and 15 native lifecycle scenarios passed with preserved
-failure/recovery evidence. Three of four allocations are consumed. Final passive
-compatibility, unchanged artifact checks and fixed preview are prepared.
-See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md). Real model work,
-integration and release claims remain separate.
+Exact acquisition, 15 native lifecycle scenarios, passive compatibility,
+unchanged pack/release checks and fixed preview passed. All four jobs retired;
+original failures remain. See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md).
+Exact reviewed Git effects govern delivery. Real model work and release claims
+remain separate; the larger daily-use campaign remains open.

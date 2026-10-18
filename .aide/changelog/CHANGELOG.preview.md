@@ -2,29 +2,46 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 29f4bf5c1f23a923b0ea97e1826ab9fff4c734fc..7059f9b0cfd490415e86e01d5c5c68fd7a695430
-source_head: 7059f9b0cfd490415e86e01d5c5c68fd7a695430
-commit_count: 2
+source_range: fcaa9e1e2230cf1fc14cfa5edde05cad0ce27971..cf77e790a0b973fd68dec12f667698d16cfbe883
+source_head: cf77e790a0b973fd68dec12f667698d16cfbe883
+commit_count: 5
 malformed_count: 0
 preview_only: true
 release_publishing: false
 
 ## Summary
 
-- Docs: 1
-- Internal: 1
+- Added: 1
+- Tests: 1
+- Internal: 3
 
-## Docs
+## Added
 
-- Clarify current campaign outcomes, owners and prerequisites (7059f9b0cfd4 docs(campaign): expose current outcomes and remaining work)
-  - **Validation:** PASS - exact source and preserved-record preparation
-    NOT RUN - actual reconciled CLI and managed qualification
+- Prepare optional Mini worker binding and lifecycle fixtures (e2902c21c5d2 feat(worker): bind Mini to supervised offline attempts)
+  - **Validation:** PASS - exact 14-wheel acquisition, collection and retirement;
+    syntax and diff checks
+    NOT RUN - 15 offline execution scenarios and final qualification
+  - **Risk:** Fixture scope; no live model route or filesystem isolation claim
+
+## Tests
+
+- Qualify optional Mini repair, refusal and recovery fixtures (cf77e790a0b9 test(worker): retain Mini lifecycle results and final checks)
+  - **Validation:** PASS - 15 native scenarios, collection and retirement
+    NOT RUN - final passive compatibility, artifact checks and preview
+  - **Risk:** Deterministic source fixture only; no live model or isolation claim
 
 ## Internal
 
-- Admit bounded campaign current-state maintenance (1a9f6445a874 docs(campaign): admit current-state reconciliation)
-  - **Validation:** PASS - actual current view and exact branch inspection
-    NOT RUN - reconciled records and qualification
+- Admit bounded optional Mini worker integration (3932731edba6 feat(worker): admit optional Mini harness qualification)
+  - **Validation:** PASS - current source/refs and exact PyPI artifact metadata
+    NOT RUN - artifact acquisition, imports and worker qualification
+- Prepare bounded Mini worker dependency acquisition (c5077b95ca50 feat(worker): prepare pinned Mini dependency acquisition)
+  - **Validation:** PASS - admission review, exact artifact/source pins and static script checks
+    NOT RUN - wheel acquisition, dependency imports and worker qualification
+- Correct Mini metadata expectations and preserve acquired work (5b0af5ecf902 fix(worker): pin artifact metadata and reuse acquired wheels)
+  - **Validation:** PASS - 14 metadata observations; two retained archive matches;
+    original collection, retirement and exact artifact hashes; syntax and diff checks
+    NOT RUN - acquisition continuation and worker imports
 
 ## Malformed Commits
 

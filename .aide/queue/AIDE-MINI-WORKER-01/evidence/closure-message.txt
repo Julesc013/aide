@@ -1,0 +1,13 @@
+chore(worker): close scoped Mini fixture qualification
+
+Retain the real-loop repair and lifecycle evidence, original acquisition failure
+and corrected review findings. Record passive compatibility and unchanged Lite
+artifacts without promoting the fixture into a live model or support claim.
+
+Validation: PASS - 15 native scenarios; passive import; doctor and pack provenance;
+ exact five-commit preview; all four collections and retirements
+ WARN - one existing review-reference warning in structural validation
+Changelog: Internal: Close pinned Mini fixture evidence and preserve release boundaries
+Follow-up: Separate approved model-backed task and matched comparison
+AIDE-Task: AIDE-MINI-WORKER-01
+AIDE-Format: compact-v1
