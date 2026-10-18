@@ -1,0 +1,9 @@
+test(release): continue unfinished documentation checks
+
+Retain the original timeout and its 25 completed source methods. Run only five unfinished source methods and the original delivered package stages through the existing 600-second profile; preserve all assertions, reservations and resource reserves.
+
+Validation: PASS - collection hashes, retirement and exact original inputs
+ NOT RUN - bounded continuation and installed default checks
+Changelog: Changed: Preserve partial qualification and continue unfinished checks
+AIDE-Task: AIDE-LITE-SUCCESSOR-PUBLICATION-01
+AIDE-Format: compact-v1

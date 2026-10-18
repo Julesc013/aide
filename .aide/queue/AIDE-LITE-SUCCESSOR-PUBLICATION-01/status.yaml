@@ -9,5 +9,5 @@ presentation_1_0_ref: evidence/published-1.0.0-presentation.json
 product_qualified: false
 publication_executed: false
 acquired_consumer: NOT_RUN
-jobs_allocated: 0
-maximum_jobs: 2
+jobs_allocated: 1
+maximum_jobs: 3

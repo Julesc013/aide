@@ -1,0 +1,11 @@
+### Documentation qualification continuation
+
+**Original outcome:** job `586d4ad910764c86b6a92c00af927d72` reached its 180-second deadline after 25 individually completed source methods; five source methods and all package stages remained unfinished. The retired job is quiescent, scratch is absent, reservations are released and its full collection hashes were verified. It is incomplete, never a PASS.
+
+**Bounded repair:** preserve the original runner/effect/template and all 961 input bytes. A new wrapper validates that complete collection and exact inputs, parses exactly 25 unique `ok` testcase IDs, runs only the five unfinished source methods, then delegates to the unchanged original runner for fixed preview, ownership/export, 30 delivered methods and installed project preservation. No assertion is removed. These are composed per-method results, not an entirely green original parent job.
+
+**Resources:** one fresh continuation through the existing unmodified 600-second qualification configuration, digest `fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33`; 1GiB memory, 64MiB scratch, 16MiB retained, 16 processes and 15,000 files. Keep the 4GiB physical/commit and 10GiB disk reserves. Canonical outputs remain exactly 7MiB export plus 1MiB previews. No configuration file, reserve, root or privilege changes. No automatic retry.
+
+**Admission amendment:** maximum three native allocations in this publication WorkUnit: original incomplete attempt, this continuation and the separately reviewed original acquired-byte consumer. This replaces the prior two-allocation ceiling for the demonstrated timeout only; it does not reopen completed qualification or permit further attempts.
+
+**Checkpoint/effect:** exact independent ACCEPT, then managed commit of the continuation map and mapped paths with exact message/ref/parent/tree. Substitute only that resulting commit/tree in the frozen continuation template. Fresh hashes, clean source, shared running/no-active controls and established native admission are mandatory. Collect and retire every outcome. No integration, tag, network, release, provider/model or live-target effect is included. Those remain separately gated.

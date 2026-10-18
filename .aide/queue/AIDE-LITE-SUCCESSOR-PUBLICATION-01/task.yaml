@@ -32,9 +32,10 @@ scope:
     - rewriting historical qualification records, Git history or existing tags
     - credential extraction, unrelated resources, new spending or protection bypass
 review_gate: exact_admission_source_publication_acquisition_and_integration
-maximum_jobs: 2
+maximum_jobs: 3
 job_allocation:
-  - one development-pack and fixed-preview qualification under unchanged default caps
+  - original default-profile documentation attempt, incomplete at the 180-second deadline
+  - one unfinished-check and package continuation under the unchanged existing 600-second profile
   - one acquired-byte original consumer under the existing qualified 600-second profile
 historical_presentation_effect:
   release: aide-lite-v1.0.0

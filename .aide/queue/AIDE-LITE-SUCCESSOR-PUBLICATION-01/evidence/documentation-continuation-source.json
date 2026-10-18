@@ -1,0 +1,17 @@
+{
+  "base": "3abb6086a075da3601a2c4f177fc171e8633ab09",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md": "13fd0ccf7e402f8d4b6807a1f649f9aabf75d076704ab4e833e08ad9d96b6484",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/continue_documentation_checks.py": "730b56532fb23ff654a938872c8cb1b6f6ff23d6b881e10ebcffd76d6d3ae47b",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-attempt-01.json": "435a6e744729585124f619c058d83a29618234bf9140336b7ad6a38bfb3ae5a6",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-continuation-effect.md": "106a005b504e3f4c92115929fafc7ea5409088491e49752464c8bffd7e3be231",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-continuation-job-template.json": "2d2828a4117202e0cdfd800b82871f0068a5219fb7aeb47f7bc185b53c184dc2",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-continuation-message.txt": "e34dd753c97d249d14c44fe3ccc123f3fde35624b70cf725dd1562879ae8f1b2",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-source-review.md": "8537bdde63bbfc7617eac2305daf19548732dfd474cfc8ccdc9df573ead02497",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/status.yaml": "447bae33411ac611876e2db921b106424ba3b692dd7dcd23a9b2b4904e527e68",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/task.yaml": "b2f30386009f654448a4c9c9d01cae8ba8628ab7340f536d0a8577b26325f326"
+  },
+  "effect_sha256": "106a005b504e3f4c92115929fafc7ea5409088491e49752464c8bffd7e3be231",
+  "message_sha256": "e34dd753c97d249d14c44fe3ccc123f3fde35624b70cf725dd1562879ae8f1b2",
+  "template_sha256": "2d2828a4117202e0cdfd800b82871f0068a5219fb7aeb47f7bc185b53c184dc2"
+}
