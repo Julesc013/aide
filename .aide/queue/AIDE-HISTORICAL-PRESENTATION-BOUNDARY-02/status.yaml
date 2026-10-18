@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02
 status: needs_review
-result: PREPARED
-next_action: exact_source_checkpoint_and_job_review
+result: SOURCE_45_AND_ACTUAL_HISTORY_PASS
+next_action: exact_pack_checkpoint_and_job_review
 maximum_jobs: 3
-jobs_allocated: 0
+jobs_allocated: 1
 active_jobs: 0

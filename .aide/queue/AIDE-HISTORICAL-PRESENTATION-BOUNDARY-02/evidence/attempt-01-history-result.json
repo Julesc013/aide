@@ -1,0 +1,35 @@
+{
+  "result": "PASS",
+  "range": "f5e674e356196ec4cbfa4e2a4f79805b36fbaa25..dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "boundary": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "prior_boundary_preserved": true,
+  "commits": 18,
+  "presentation_failures": [
+    "4bb6a4f990c5845a2141a20329168b582b37e8d8",
+    "651464ae3e86b32b11080194d0d06beb88188dd4",
+    "ae26a1ca80b10e87aaee2e4f68545df1c24c59ff"
+  ],
+  "commands": {
+    "advisory": {
+      "exit_code": 0,
+      "affected": [
+        "4bb6a4f",
+        "651464a",
+        "ae26a1c"
+      ]
+    },
+    "raw": {
+      "exit_code": 1,
+      "affected": [
+        "4bb6a4f",
+        "651464a",
+        "ae26a1c"
+      ]
+    }
+  },
+  "raw_failures_preserved": true,
+  "changelog_byte_semantics_unchanged": true,
+  "objects_and_registry_unchanged": true,
+  "new_latest_strict_pass": true,
+  "models_requested": 0
+}

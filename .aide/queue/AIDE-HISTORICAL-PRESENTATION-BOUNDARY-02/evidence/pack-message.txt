@@ -1,0 +1,10 @@
+test(commit): qualify historical policy in installed projects
+
+The actual retained range preserves three raw failures and unchanged changelog
+data. Check the exported policy in an independent project so a source cutoff
+cannot silently become that project's historical authority.
+
+Validation: PASS - 45 regressions and exact 18-commit history; NOT RUN - delivery
+Changelog: Tests: Qualify project-owned historical presentation boundaries
+AIDE-Task: AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02
+AIDE-Format: compact-v1
