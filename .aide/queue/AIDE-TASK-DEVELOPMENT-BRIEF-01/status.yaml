@@ -1,0 +1,6 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-TASK-DEVELOPMENT-BRIEF-01
+status: needs_review
+result: PENDING
+next_action: exact_source_and_first_job_review
+review_gate: exact_source_and_job

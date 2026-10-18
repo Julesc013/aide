@@ -1,0 +1,28 @@
+{
+  "base": "cf7b401d5bc7db6aadcc67a37ce392736589e619",
+  "unchanged_test_modules": {
+    ".aide/scripts/tests/test_task_current.py": {
+      "sha256": "e95ed8f9adbdf5c772436b754494b4821abe96c433b8f84817ec05a5ac2d0db3",
+      "methods": 22
+    },
+    ".aide/scripts/tests/test_resume_plan.py": {
+      "sha256": "640ebedcd268f7a1dfcb8012aec32d0b05605a729e277ba996b460d9712253d7",
+      "methods": 12
+    },
+    ".aide/scripts/tests/test_q38_file_quality.py": {
+      "sha256": "84fbe9ad9dd047527cbd0c999b72fb3c219b7700cd806736c35075c8a6357682",
+      "methods": 16
+    },
+    ".aide/scripts/tests/test_outcome_lessons.py": {
+      "sha256": "c3a7c7178deb2d80cc8c1429e5ae5ec3d443c80791c3114f586f48800e5c552e",
+      "methods": 16
+    }
+  },
+  "existing_product_owners": [
+    "build_task_resume_plan",
+    "quality_file_explanation",
+    "build_outcome_lessons"
+  ],
+  "actual_consumer_task": "AIDE-VALIDATION-OUTPUT-01",
+  "actual_consumer_path": ".aide/scripts/tests/test_validation_output.py"
+}

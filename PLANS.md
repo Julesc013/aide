@@ -5313,3 +5313,10 @@ preview passed; all three jobs retired. See
 [usage contract](docs/reference/outcome-controller-v0.md).
 The development pack has 867 members; published Lite 1.0.0 is unchanged.
 Exact integration review and observed receipts govern dev/main synchronization.
+
+## AIDE-TASK-DEVELOPMENT-BRIEF-01
+
+Prepare one read-only task/file brief through existing continuation, quality and
+lesson readers. Source, actual delivered/installed qualification and exact
+integration remain pending. See
+[ExecPlan](.aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/ExecPlan.md).

@@ -855,3 +855,7 @@ actual safe-installed correction/retirement and fixed preview; all three jobs
 retired. The 867-member development pack preserves target customization and
 excludes source history. See child REPORT.md. Native host/adoption and release
 prerequisites remain separate; observed integration receipts establish sync.
+
+Admitted AIDE-TASK-DEVELOPMENT-BRIEF-01 under P0/P6: connect existing continuation,
+file ownership/check facts and current lessons in one explicit task/file view.
+No new authority/store/scan. Actual host and native target prerequisites remain.

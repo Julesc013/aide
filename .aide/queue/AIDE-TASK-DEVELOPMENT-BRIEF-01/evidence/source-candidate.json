@@ -1,0 +1,32 @@
+{
+  "base": "cf7b401d5bc7db6aadcc67a37ce392736589e619",
+  "files": {
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md": "f42486577f4a5e9c653de862fc3f43e94dab24c93e225836ae1e61be970f3745",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml": "a247013613a7180bf593b7a966022b4753d147fbd52c91379e6652617fa6bd4b",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/ExecPlan.md": "cd487ba1dcd238b56c01850d080b2bc7b28260bfa0868de4e54908b73c1f4faa",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/admission-effect.md": "cd0b6bd30f8c7b78f7b079a449797b8b8b8d27b4b3ced87e8ce3c6a95592d4c1",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/admission-review.md": "96f71d786464819abd51385796bd6f83ba44e0bed82ce29a762eab6e36c1cf5a",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/admission-source.json": "4d4dbdc2d7a7fd88aeb32f293af52c73bb31d509802604d793dac59ddb849742",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/baseline.json": "fc75e11b357adc82ccf867349936ef2b1fdd2992faeed5616cd3a584ef6a5892",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/branch-transition.json": "d13c03942b419cd4a2c984742253cb7975713652e45e07bcc1b69c1b93578085",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/checks-effect.md": "8497fe79f789a4f1244ba90b05dd33bede874162669c669eefca48c4e5a76569",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/checks-job-template.json": "c2406d8a683eef72232d97dadb28c5035c4f1f3cc2e528f5a287aedf4c8e399e",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/latest-intent-packet.json": "c2e60a8c8e0db6e2cc9715d01ff4451954d6e799572e0bcd40f6f08b80d05cca",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/latest-workunit-draft.json": "3db0535c8d9aed017376a34c697ab102d2a1e0df2cab6ecec7e463a2a5e65492",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/source-message.txt": "f5f2b763cfed3021ceb2e7b54c4d05766a66057e0cb132d47e87002dcb1b7a88",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/prompt.md": "c7dc5bc5b6645fd44291d8bc7b974d821bee9ced0bdc4d6e56d3c69da3713096",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/run_checks.py": "d71857b823c6e7e4cdae6c206ec0dfea268c80c6f8d3ece85645fbd7244e63e6",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/status.yaml": "553c697d9c56436c253094e2ddfff92a20f8e5c2626a695729aeb3133b8b214e",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/task.yaml": "4fc58b599571d114221d76e991d9e7a2c9daccb29079994eb12b9c92f032bff1",
+    ".aide/queue/index.yaml": "eae35e216335f64855e092785fa37d0b1bd88517b846453c3b69e318168da832",
+    ".aide/scripts/aide_lite.py": "289c017c71149a83d9391d4c0e0b1ea1be44091b83ecae0704a6b3a5f7846559",
+    ".aide/scripts/tests/test_task_brief.py": "57ac060081fd9da111e2cbf278ba8269f3ddd8f2792ac663852c5197383cc8c4",
+    "DOCUMENTATION.md": "0ab3ff2f0a1b880d2f85fb77bf611153899b8245329991df419e7f6dd802251c",
+    "IMPLEMENT.md": "010aa63aaf241d32295d2185f1ecfb03d4c1174b028b96b583e977ebf8a9ab10",
+    "PLANS.md": "63ee72de47f2a8cf336f7c3a579fd3d2447d1932c3f0d2345592693449c0a7bd",
+    "docs/reference/task-packets.md": "50fc00897b4d59ccefff27e589ee8040624611a0e0708b9ac7a7b4a7f1159bcf"
+  },
+  "effect_sha256": "8497fe79f789a4f1244ba90b05dd33bede874162669c669eefca48c4e5a76569",
+  "message_sha256": "f5f2b763cfed3021ceb2e7b54c4d05766a66057e0cb132d47e87002dcb1b7a88",
+  "job_template_sha256": "c2406d8a683eef72232d97dadb28c5035c4f1f3cc2e528f5a287aedf4c8e399e"
+}

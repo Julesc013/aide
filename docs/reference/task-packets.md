@@ -55,3 +55,42 @@ metadata; optional matching `*_sha256` values detect changed bytes. A present fi
 or matching digest does not prove acceptance or applicability to current inputs.
 `applicability` remains `unverified`, and `acceptance_verified` remains false.
 No referenced evidence body, private state, status update or execution is emitted.
+
+## One development brief
+
+Use an explicit task and file to combine the existing continuation, file-quality
+and current-lesson views without generating reports or changing project state:
+
+```text
+py -3 .aide/scripts/aide_lite.py task brief --task-id PROJECT-WORK-01 --path src/repair.py
+py -3 .aide/scripts/aide_lite.py task brief --task-id PROJECT-WORK-01 --path src/repair.py --json
+```
+
+The brief shows the recorded task outcome and next action, continuation advice,
+the file's recorded owner and likely checks, reuse coverage and current lessons.
+Task ownership and file ownership remain distinct. Scope is a reference to the
+owning task, not an inferred permission. Inspect that task and its applicable
+policy before acting. No worker, model, test, scan or index generation is started.
+
+JSON uses `aide.task-brief.v1` and retains the three component observations,
+task-record hashes and their limitations. `OBSERVED` (exit 0) means the component
+observations were assembled; it does not establish acceptance, current quality
+coverage or permission. `PARTIAL` (exit 2) identifies missing/invalid auxiliary
+information or unavailable task evidence. `REFUSED` (exit 1) supplies no combined
+advice after unsafe identity/path input, inconsistent task records or overflow.
+Missing quality data is unindexed, not proof of no dependencies. Invalid auxiliary
+data calls for reconciliation. A stale or retired lesson never restores old advice.
+
+Task identity is exact rather than an alias or latest-packet fallback. The selected
+path is one canonical repository-relative file name; it may name a planned file.
+Its source content is not read merely to look up metadata. Existing exclusions
+reject private/local paths. The shared quality reader checks ordinary files and
+ancestors, refusing redirected or multiply linked reports rather than following them.
+
+All existing reader bounds remain: task/status 128 KiB each, index 1 MiB, quality
+report 16 MiB, and the lesson reader's finite ledger/evidence limits. Task records
+are compared before and after assembly; this detects observed change, not an
+atomic snapshot or hostile-writer isolation. Output is capped at 64 KiB. Human
+output quotes project text and reports omitted links/lessons; JSON carries details.
+Hashes establish bytes, and lesson authorship/correctness remain unverified.
+Whole-work usage is unknown. This command does not qualify a new host or release.

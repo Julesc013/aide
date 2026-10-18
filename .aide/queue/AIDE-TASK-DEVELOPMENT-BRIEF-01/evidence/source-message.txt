@@ -1,0 +1,33 @@
+feat(tasks): compose a bounded development brief from existing views
+
+## Summary
+- Prepare AIDE-TASK-DEVELOPMENT-BRIEF-01 source and qualification.
+
+## Why
+- Developers need current task, existing ownership/checks and lessons together.
+
+## Changed
+- Compose existing continuation, quality and lesson readers for explicit task/file.
+- Share the guarded quality reader; preserve unverified coverage and authority.
+- Add 18 composition, refusal, no-write and actual CLI regression methods.
+
+## Validation
+- PASS syntax, preserved 66-method identity and diff checks.
+- NOT RUN source 84 and actual source consumer; exact qualification review pending.
+
+## Changelog
+- Added: Read-only task brief with compact human and structured component views.
+
+## Risks
+- Sequential observations are not atomic isolation or semantic validation.
+- Quality coverage, authorship and whole-work usage remain unverified.
+
+## Follow-up
+- Qualify source and actual delivered/installed consumers before integration.
+
+AIDE-Task: AIDE-TASK-DEVELOPMENT-BRIEF-01
+AIDE-Phase: source-preparation
+AIDE-Result: PENDING
+AIDE-Scope: task-development-brief
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: exact-source-and-job-review-required

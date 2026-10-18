@@ -4122,3 +4122,10 @@ items:
     task: .aide/queue/AIDE-OUTCOME-LESSONS-01/task.yaml
     exec_plan: .aide/queue/AIDE-OUTCOME-LESSONS-01/ExecPlan.md
     evidence: .aide/queue/AIDE-OUTCOME-LESSONS-01/evidence
+
+  - id: AIDE-TASK-DEVELOPMENT-BRIEF-01
+    title: Connect task continuation, ownership and current lessons
+    status: running
+    task: .aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/task.yaml
+    exec_plan: .aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence

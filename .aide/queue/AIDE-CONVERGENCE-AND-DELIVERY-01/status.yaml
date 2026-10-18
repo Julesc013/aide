@@ -178,3 +178,5 @@ context_task_selection_integration_receipt: .aide/queue/AIDE-CONTEXT-TASK-SELECT
 
 outcome_lessons_result_ref: .aide/queue/AIDE-OUTCOME-LESSONS-01/REPORT.md
 outcome_lessons_integration_receipt: .aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/integration-result.log
+
+# AIDE-TASK-DEVELOPMENT-BRIEF-01 admitted; source qualification pending.

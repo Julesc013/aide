@@ -12532,14 +12532,10 @@ def quality_file_explanation(ledger: dict[str, object], rel: str) -> dict[str, o
     return result
 
 
-def command_quality_explain_file(args: argparse.Namespace) -> int:
-    rel = normalize_rel(args.path)
+def build_quality_file_explanation(repo_root: Path, rel: str) -> dict[str, object]:
+    """Share the bounded report reader; never scan or regenerate source facts."""
     try:
-        # This lookup reads one bounded report, never target source or new indexes.
-        with (args.repo_root / FILE_QUALITY_LEDGER_JSON_PATH).open("rb") as stream:
-            raw = stream.read(16 * 1024 * 1024 + 1)
-        if len(raw) > 16 * 1024 * 1024:
-            raise ValueError("quality ledger exceeds the 16 MiB lookup limit")
+        raw = task_view_read(repo_root, FILE_QUALITY_LEDGER_JSON_PATH, limit=16 * 1024 * 1024)
         ledger = json.loads(raw)
         if not isinstance(ledger, dict):
             raise ValueError("quality ledger must be an object")
@@ -12550,6 +12546,11 @@ def command_quality_explain_file(args: argparse.Namespace) -> int:
     except (OSError, ValueError, RecursionError) as error:
         result = {"result": "INVALID", "path": rel, "error": str(error),
                   "next_action": "inspect the retained report; no regeneration was attempted"}
+    return result
+
+
+def command_quality_explain_file(args: argparse.Namespace) -> int:
+    result = build_quality_file_explanation(args.repo_root, normalize_rel(args.path))
     if getattr(args, "json", False):
         rendered = stable_json_text(result)
     else:
@@ -39996,8 +39997,8 @@ def command_task_evidence(args: argparse.Namespace) -> int:
     return 0
 
 
-def task_view_read(repo_root: Path, relative: str, *, limit: int = 131072) -> bytes:
-    """Read one bounded ordinary repository record; never follow a link."""
+def task_view_reference_parts(relative: str) -> list[str]:
+    """Validate a public reference without reading its target."""
     parts = relative.replace("\\", "/").split("/")
     public_queue_record = (len(parts) == 4 and parts[:2] == [".aide", "queue"]
                            and parts[-1] in ("task.yaml", "status.yaml"))
@@ -40008,6 +40009,12 @@ def task_view_read(repo_root: Path, relative: str, *, limit: int = 131072) -> by
                    or part.lower().startswith(".env") for part in parts)
             or (not public_queue_record and install_rel_is_secret_like(relative))):
         raise ValueError("unsafe_reference")
+    return parts
+
+
+def task_view_read(repo_root: Path, relative: str, *, limit: int = 131072) -> bytes:
+    """Read one bounded ordinary repository record; never follow a link."""
+    parts = task_view_reference_parts(relative)
     path = repo_root.resolve()
     for part in parts:
         path /= part
@@ -40376,6 +40383,114 @@ def command_task_current(args: argparse.Namespace) -> int:
         if view["issues"]:
             print("issues: " + ", ".join(sorted({item["code"] for item in view["issues"]})))
     return 0 if view["task_id"] else 1
+
+
+def build_task_development_brief(repo_root: Path, task_id: str, path: str) -> dict[str, object]:
+    """Compose existing advisory readers for one explicit task and file."""
+    boundary = {"schema_version": "aide.task-brief.v1", "read_only": True,
+                "execution_admitted": False, "acceptance_verified": False,
+                "usage_coverage": "unknown", "snapshot": "bounded_sequential_observations"}
+
+    def refused(reason):
+        return {**boundary, "result": "REFUSED", "reason": reason,
+                "next_action": "reconcile the selected records before requesting another brief"}
+
+    try:
+        if not isinstance(task_id, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,127}", task_id):
+            return refused("an explicit exact task identity is required")
+        outcome_lessons_codec().relative_path(path)
+        task_view_reference_parts(path)
+        task_ref = f".aide/queue/{task_id}/task.yaml"
+        status_ref = f".aide/queue/{task_id}/status.yaml"
+
+        def records():
+            observed = {}
+            for ref, limit in ((task_ref, 131072), (status_ref, 131072), (".aide/queue/index.yaml", 1048576)):
+                try:
+                    observed[ref] = task_view_read(repo_root, ref, limit=limit)
+                except FileNotFoundError:
+                    observed[ref] = None
+            return observed
+
+        before = records()
+        continuation = build_task_resume_plan(repo_root, task_id)
+        task = continuation["task"]
+        if task["task_id"] != task_id or task["issues"] or before[task_ref] is None or before[status_ref] is None:
+            return refused("selected task records are missing, conflicting or invalid")
+        quality = build_quality_file_explanation(repo_root, path)
+        try:
+            lessons = build_outcome_lessons(repo_root, path)
+            lesson_state = lessons["ledger_state"]
+        except (OSError, ValueError, RecursionError):
+            lessons = None
+            lesson_state = "invalid"
+        if before != records():
+            return refused("selected task records changed while assembling the brief")
+        partial = (quality["result"] != "PASS" or lesson_state != "observed"
+                   or any(item["availability"] != "present" for item in task["evidence"]))
+        invalid = quality["result"] == "INVALID" or lesson_state == "invalid"
+        result = {**boundary, "result": "PARTIAL" if partial else "OBSERVED", "path": path,
+                  "continuation": continuation, "quality": quality, "lessons": lessons,
+                  "lesson_state": lesson_state,
+                  "task_record_sha256s": {ref: hashlib.sha256(data).hexdigest() if data is not None else None
+                                         for ref, data in before.items()},
+                  "scope_ref": task_ref,
+                  "next_action": "reconcile invalid auxiliary records" if invalid else continuation["recommendation"],
+                  "limitations": ["No edit permission or task acceptance is established.",
+                                  "Quality links are incomplete and their freshness is unverified; do not narrow required checks.",
+                                  "Lessons retain unverified authorship and semantic correctness.",
+                                  "Missing information does not establish absence; no indexes were generated."]}
+        if len(json.dumps(result, ensure_ascii=True, allow_nan=False).encode("ascii")) > 65536:
+            return refused("brief exceeds the 64 KiB output bound; inspect the component views separately")
+        return result
+    except (OSError, ValueError, RecursionError):
+        return refused("unsafe, unreadable or invalid selected input")
+
+
+def render_task_development_brief(data: dict[str, object]) -> str:
+    def quote(value, limit=320):
+        text = value if isinstance(value, str) else json.dumps(value, ensure_ascii=True)
+        omitted = max(0, len(text) - limit)
+        return json.dumps(text[:limit], ensure_ascii=True) + (f" (+{omitted} characters; see --json)" if omitted else "")
+
+    lines = ["AIDE Lite task brief", "observation: " + data["result"]]
+    if data["result"] == "REFUSED":
+        return "\n".join([*lines, "reason: " + data["reason"], "next_action: " + data["next_action"]])
+    continuation = data["continuation"]
+    task = continuation["task"]
+    lines.extend(["task: " + quote(task["task_id"]), "file: " + quote(data["path"])])
+    for key in ("objective", "status", "result", "owner", "next_action", "remaining_obligations"):
+        lines.append("recorded_" + key + ": " + quote(task[key] if task[key] is not None else "unknown"))
+    lines.extend(["continuation: " + continuation["recommendation"], "reason: " + continuation["reason"],
+                  "scope_ref: " + quote(data["scope_ref"]), "file_owner: " + quote(data["quality"].get("owner", "unknown")),
+                  "quality: " + data["quality"]["result"] + "; freshness unverified; coverage incomplete"])
+    for name, relation in data["quality"].get("relations", {}).items():
+        lines.append(name + ": " + quote(relation["state"]) + "; " + relation["reason"])
+        lines.extend("- " + quote(ref) for ref in relation["items"][:3])
+        lines.append("omitted: " + str(relation["omitted"] + max(0, len(relation["items"]) - 3)))
+    reuse = data["quality"].get("reuse", {})
+    lines.append("reuse: " + quote(reuse.get("state", "unknown")) + "; inspect --json for candidates")
+    for item in reuse.get("items", [])[:3]:
+        lines.append("- " + item["reason"] + ": " + quote(item["match"]) + "; peers: "
+                     + quote(item["peers"]["items"][:3]))
+    lines.append("omitted reuse candidates: " + str(reuse.get("omitted", 0) + max(0, len(reuse.get("items", [])) - 3)))
+    lines.append("task evidence: " + (", ".join(quote(item["field"]) + "=" + quote(item["availability"])
+                                             for item in task["evidence"]) or "unknown"))
+    lessons = data["lessons"] or {"selected": [], "excluded": []}
+    lines.append("lessons: " + data["lesson_state"] + f"; {len(lessons['selected'])} selected; {len(lessons['excluded'])} excluded")
+    lines.extend("- " + quote(item["id"]) + f" revision {item['revision']}: " + quote(item["lesson"]["summary"])
+                 for item in lessons["selected"][:3])
+    lines.append("omitted lessons: " + str(max(0, len(lessons["selected"]) - 3)) + "; exclusion reasons and hashes: --json")
+    lines.extend(["next_action: " + data["next_action"], "usage: unknown; no execution or acceptance authority",
+                  *data["limitations"]])
+    return "\n".join(lines)
+
+
+def command_task_brief(args: argparse.Namespace) -> int:
+    data = build_task_development_brief(args.repo_root, args.task_id, args.path)
+    print(json.dumps(data, ensure_ascii=True, sort_keys=True, separators=(",", ":")) if args.json
+          else render_task_development_brief(data))
+    return {"OBSERVED": 0, "PARTIAL": 2, "REFUSED": 1}[data["result"]]
 
 
 def command_blocker_status(args: argparse.Namespace) -> int:
@@ -47350,6 +47465,12 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_current_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
     task_current_parser.add_argument("--json", action="store_true", help="Emit a bounded read-only task observation as JSON.")
     task_current_parser.set_defaults(handler=command_task_current)
+
+    task_brief_parser = task_subparsers.add_parser("brief")
+    task_brief_parser.add_argument("--task-id", required=True, help="Exact existing task identity.")
+    task_brief_parser.add_argument("--path", required=True, help="One canonical repository-relative file path.")
+    task_brief_parser.add_argument("--json", action="store_true", help="Show component observations and limitations.")
+    task_brief_parser.set_defaults(handler=command_task_brief)
 
     handoff_parser = task_subparsers.add_parser("handoff")
     handoff_commands = handoff_parser.add_subparsers(dest="handoff_command", required=True)

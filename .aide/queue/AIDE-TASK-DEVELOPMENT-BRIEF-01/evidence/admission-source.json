@@ -1,0 +1,14 @@
+{
+  "base": "cf7b401d5bc7db6aadcc67a37ce392736589e619",
+  "files": {
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/admission-effect.md": "cd0b6bd30f8c7b78f7b079a449797b8b8b8d27b4b3ced87e8ce3c6a95592d4c1",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/baseline.json": "fc75e11b357adc82ccf867349936ef2b1fdd2992faeed5616cd3a584ef6a5892",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/latest-intent-packet.json": "c2e60a8c8e0db6e2cc9715d01ff4451954d6e799572e0bcd40f6f08b80d05cca",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/evidence/latest-workunit-draft.json": "3db0535c8d9aed017376a34c697ab102d2a1e0df2cab6ecec7e463a2a5e65492",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/ExecPlan.md": "b9b34c46d8152237ef21ceb703b3490f3b1eeb9d226bb79949c93e3f17dd5b09",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/prompt.md": "c7dc5bc5b6645fd44291d8bc7b974d821bee9ced0bdc4d6e56d3c69da3713096",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/status.yaml": "3e00e89f5daeea6c03d29a4acd66074943f37120b9f21664ba8d81cdeee67265",
+    ".aide/queue/AIDE-TASK-DEVELOPMENT-BRIEF-01/task.yaml": "4fc58b599571d114221d76e991d9e7a2c9daccb29079994eb12b9c92f032bff1"
+  },
+  "effect_sha256": "cd0b6bd30f8c7b78f7b079a449797b8b8b8d27b4b3ced87e8ce3c6a95592d4c1"
+}
