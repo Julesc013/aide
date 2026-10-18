@@ -14066,3 +14066,7 @@ Implemented compact-v1 parser, policy, template and researched commit/PR/merge/c
 ### Historical presentation boundary qualification ? 18 October 2026
 
 Applied one frozen cutoff update under the standing owner instruction. Existing parser, classifier, registry, original Git objects and release assets remain unchanged. The 45 source and 45 delivered regressions, actual 18-commit comparison, six ownership checks, safe-installed consumer and fixed preview passed. Three jobs retired; exact integration is recorded in the child receipt.
+
+### Retained installed-effort repair ? 18 October 2026
+
+Prepared the original 98b7b2dc repair in a two-parent merge candidate. The exporter binds effort accounting to its owned helper, avoiding project-owned core. Newer source features remain. Current generated views are retained for their owners to refresh; original qualification and frozen 1.1.0 assets are imported unchanged. Combined-source qualification is pending.

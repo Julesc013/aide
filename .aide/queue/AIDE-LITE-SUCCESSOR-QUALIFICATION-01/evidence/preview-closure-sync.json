@@ -1,0 +1,28 @@
+{
+  "receipt": {
+    "after": {
+      "refs/heads/dev": "4f2c39606378492622fa8580152373fffc074d7c",
+      "refs/heads/main": "4f2c39606378492622fa8580152373fffc074d7c",
+      "refs/heads/task/aide-lite-successor-qualification-01": "3a36366c052f308a8ecee10d32690ce0cb75cae7"
+    },
+    "before": {
+      "refs/heads/dev": "4f2c39606378492622fa8580152373fffc074d7c",
+      "refs/heads/main": "4f2c39606378492622fa8580152373fffc074d7c",
+      "refs/heads/task/aide-lite-successor-qualification-01": "a91076f9d683d89897a1378a2696d4a840e5437e"
+    },
+    "checkout_clean": true,
+    "completed_utc": "2026-10-17T21:21:17.970278+00:00",
+    "dev_main_unchanged": true,
+    "force": false,
+    "preflight_note": "Initial local-only guard stopped before network due to owner-name case; verified existing exact origin Julesc013/aide.",
+    "push_exit_code": 0,
+    "push_stderr": "To https://github.com/Julesc013/aide.git\n   a91076f9..3a36366c  3a36366c052f308a8ecee10d32690ce0cb75cae7 -> task/aide-lite-successor-qualification-01\n",
+    "push_stdout": "",
+    "review_tree": "41c00a93c993c86f6d376fd2f8186f8a66a4fc78",
+    "source_commit": "3a36366c052f308a8ecee10d32690ce0cb75cae7",
+    "started_utc": "2026-10-17T21:21:13.747702+00:00",
+    "status": "VERIFIED_TASK_ONLY_SYNC",
+    "task_ref": "refs/heads/task/aide-lite-successor-qualification-01"
+  },
+  "receipt_sha256": "639f87da17bf2af03d9ce3648a97e0f6fd5ce1d28e08b6ee5ac0de9bea64e7f3"
+}

@@ -1,0 +1,13 @@
+{
+  "candidate": "4f2c39606378492622fa8580152373fffc074d7c",
+  "event": "completed",
+  "local_dev": "4f2c39606378492622fa8580152373fffc074d7c",
+  "local_main": "4f2c39606378492622fa8580152373fffc074d7c",
+  "public_release_unchanged": "1.0.0",
+  "remote_dev": "4f2c39606378492622fa8580152373fffc074d7c",
+  "remote_main": "4f2c39606378492622fa8580152373fffc074d7c",
+  "status": "PASS",
+  "task_branch_retired": true,
+  "time_unix_ns": 1792261662237554800,
+  "tree": "ff078667ee21c917b345f02e9f67f673776c1423"
+}

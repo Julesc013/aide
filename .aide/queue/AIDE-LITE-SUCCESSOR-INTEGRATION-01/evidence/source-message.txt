@@ -1,0 +1,12 @@
+chore(merge): reconcile the retained Lite successor
+
+Retain both histories and the original installed-effort repair while preserving
+newer development features. Keep current generated views for their existing
+owners to refresh; preserve the old candidate assets and qualification.
+
+Validation: PASS - exact incoming assets,evidence and source composition
+ NOT RUN - combined source and installed-package qualification
+Changelog: Internal: Reconcile retained successor history with current development
+AIDE-Task: AIDE-LITE-SUCCESSOR-INTEGRATION-01
+AIDE-Format: compact-v1
+Follow-up: Qualify the combined source and development pack before integration

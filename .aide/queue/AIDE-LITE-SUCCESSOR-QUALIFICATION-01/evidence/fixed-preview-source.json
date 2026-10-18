@@ -1,0 +1,24 @@
+{
+  "baseline": "a91076f9d683d89897a1378a2696d4a840e5437e",
+  "effect_sha256": "829aa7c56561903eeed861b18526939e2301663a8b47c9833ac4f9e1a3bc6b34",
+  "files": {
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md": "dad2cb10c2c011b4936250965d80e2c265401d19a11d7d5b549baccf4fdc73b3",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml": "41fe99d43c125c83ae194653dd9d0019b5c3ff26004a7d51a701c1771fb41410",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md": "7d333251c78ab24072217d9e2039fe3a6339a417f6d77416c598be7c64abf9de",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md": "38302a20f105030f7b3f740a9bc2e0df93aa888f8dfee385688b03531ef6d2ac",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/fixed-preview-effect.md": "829aa7c56561903eeed861b18526939e2301663a8b47c9833ac4f9e1a3bc6b34",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/fixed-preview-job-template.json": "464369062493f9d6cf53e65844153419950cadc82f4ad8133c06a9777395aeeb",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/fixed-preview-message.txt": "e83debbbfe3c2c86a4d265fcaf001524285a9df8b58bdc0fe753a572fd7e4d30",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/preview-interpretation.md": "741b30ad1d5e4040fdc094402bc2f37117674d6f4c715e3c846133544255ed56",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/qualification-summary.json": "a4e41a36c6513f774e4034d5e46e1ff21a7b8a9983b2cf19bca615f90d9bb860",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_fixed_preview.py": "12a30abd5ecbdfc0b3c4ebe74e6a97bab147ac3bc40b7dde523ecf36c7891734",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/status.yaml": "1c310650f1331552594613c2e07cffbb1530f5e6cfe0f2508b11343895558b76",
+    ".aide/queue/index.yaml": "c6439b1174967bf0b61e9df80231d6036602f832efd7ba05887d144d72eedad7",
+    "DOCUMENTATION.md": "d2c5667f27cd0e670ed66ccf71bc2869c8abcb2875af9d48b7a5639998c20a9d",
+    "IMPLEMENT.md": "92621292ef01129a598cbe603e959673350b24c73e8df443bd18bc3a9cb53c39",
+    "PLANS.md": "6261a60e2e570557c54c20c59392e2a68653bb5e844b218decb7ae446e9b14e1"
+  },
+  "message_sha256": "e83debbbfe3c2c86a4d265fcaf001524285a9df8b58bdc0fe753a572fd7e4d30",
+  "template_sha256": "464369062493f9d6cf53e65844153419950cadc82f4ad8133c06a9777395aeeb",
+  "validation": "AST/message/map/diff PASS; full range103 raw inspection exactlyknown3FAIL; read-only sixoutputsize579018; actual29 NOT RUN; policy/registry/product/archive unchanged"
+}

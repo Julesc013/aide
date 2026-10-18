@@ -1,0 +1,20 @@
+{
+  "automatic_downgrade": "unsupported; preserve for manual reconciliation",
+  "protected_policy_operation": {
+    "action": "preserve_project_overlay",
+    "installed_digest": "09ffe8d62aec135c8d3ca82026f44678052296c2ecf579550df7d68e3e6e64f7",
+    "kind": "managed_file",
+    "observation": "managed_file_bytes",
+    "observed_digest": "09ffe8d62aec135c8d3ca82026f44678052296c2ecf579550df7d68e3e6e64f7",
+    "ownership": "project_overlay_on_aide_managed",
+    "ownership_basis": "digest_validated_portable_import_receipt",
+    "preserves_authored_content": false,
+    "removal_candidate": false,
+    "source": ".aide/policies/git-workflow.yaml",
+    "state": "recorded_project_overlay",
+    "target": ".aide/policies/git-workflow.yaml",
+    "target_file_digest": "09ffe8d62aec135c8d3ca82026f44678052296c2ecf579550df7d68e3e6e64f7"
+  },
+  "removal_apply_performed": false,
+  "state": "resolved_overlay_and_disabled_optional_features"
+}

@@ -1,0 +1,27 @@
+{
+  "additions_template_sha256": "7b21e40a2f8b26f2a84443a4681d4c63d37a7c338a3f9d6c9f143be9a47709ac",
+  "baseline": "c5b1a2bf7181101890a95002537ede2cb3f6e3df",
+  "consumer_template_sha256": "d903e66cc12f55124da767387f6ef0ac5abe301370c91183548e4831ba07c07a",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md": "170ab59b9b5b2e376558b1998f772d61bf627c75cc1296290bf64ca08d08dc7f",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md": "213da72324508c6f53dea933e247f68f7a1fe0e4e249766dfe9baff17968bde0",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/build-result-repaired.json": "10dc1a7be3834678d8e12c6b1e73cad9289a2778bb3b46b7efff7cdfb2d61143",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/rebuild-result.json": "c2ff813a50b7193acf38268da7d3c8535fa089f5efe387dcdb928be5ff5e365d",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/rebuild-review.md": "1a58c70fdb4bacde6713d10398d097e795bdb493a1495bfe9d9f978ca73ac7ba",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replacement-additions-job-template.json": "7b21e40a2f8b26f2a84443a4681d4c63d37a7c338a3f9d6c9f143be9a47709ac",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replacement-consumer-job-template.json": "d903e66cc12f55124da767387f6ef0ac5abe301370c91183548e4831ba07c07a",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replacement-consumers-effect.md": "45ce4be0671c317c906c1c67d37a2c57b8ec32ad07294843677aaccb7d744c3d",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replacement-message.txt": "cec80386d657ee01876027829d5155d2d7d7fe69e5169a2447d4f22d9966ffb5",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_additions.py": "204d949dc552003bc15ab64b8ef36729c59debf5a24c2e1c5be7a561b5956821",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_consumer.py": "f2c6acc11f26df9eebca6cae169326a0ca51a674e71f37d58f7971d19eb51f56",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/status.yaml": "c8d0cf578fdacd005927572713385adc167a791df579bd79f242230e14992fea",
+    ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt": "01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e",
+    ".aide/release/stable/aide-lite-v1.1.0.manifest.json": "38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f",
+    ".aide/release/stable/aide-lite-v1.1.0.tar.gz": "7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44",
+    ".aide/release/stable/aide-lite-v1.1.0.zip": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc",
+    "IMPLEMENT.md": "95d19b10ea7d962657900d189c3f51694fe35be8a22c5e66916ef53b2977adf7",
+    "PLANS.md": "06df052f10157e7c8f90f9c1c096f549360ebf2458bc14a5fdc642565639fa39"
+  },
+  "message_sha256": "cec80386d657ee01876027829d5155d2d7d7fe69e5169a2447d4f22d9966ffb5",
+  "validation": "Replacement build and collected retirement PASS; all49release/863pack preserved; prior product validation reused; AST/diff/message PASS; replacement consumers NOT RUN"
+}

@@ -1,0 +1,123 @@
+{
+  "assets": {
+    ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt": {
+      "sha256": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.0.0.manifest.json": {
+      "sha256": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb",
+      "size_bytes": 4955
+    },
+    ".aide/release/stable/aide-lite-v1.0.0.tar.gz": {
+      "sha256": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a",
+      "size_bytes": 837890
+    },
+    ".aide/release/stable/aide-lite-v1.0.0.zip": {
+      "sha256": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b",
+      "size_bytes": 1176436
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt": {
+      "sha256": "01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.manifest.json": {
+      "sha256": "38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f",
+      "size_bytes": 6957
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.tar.gz": {
+      "sha256": "7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44",
+      "size_bytes": 885826
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.zip": {
+      "sha256": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc",
+      "size_bytes": 1231497
+    }
+  },
+  "candidate": "1.1.0",
+  "checks": [
+    "fresh_published_predecessor_update",
+    "real_changed_upstream_conflict_refuses_without_writes",
+    "explicit_combined_resolution_and_project_controls_preserved",
+    "actual_resolved_interruption_wrong_input_refusal_and_exact_recovery",
+    "customized_overlay_preserved_without_detach_or_receipt_deletion"
+  ],
+  "commands": [
+    {
+      "exit_code": 0,
+      "label": "fresh-old-install-preview",
+      "record_sha256": "bd053a2b6ade80f34d4a5c45b263144fc2de58e2d52eeeb5adb06deb29ddce5a"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-old-install-apply",
+      "record_sha256": "c68666aabb74b007486234532c4d2ea8a6daa1bf1b212af882056e15a7f7cb08"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-actual-update-preview",
+      "record_sha256": "a6504939801789c1f6caaaeabeb6403d168e1624847b88eb510ed8fb75b34e9a"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-actual-update-apply",
+      "record_sha256": "40d98413f54e4c0cbaea8b6e787a1428aa23a40ea2b51cd079d16704e19cfd00"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-old-install-preview",
+      "record_sha256": "6e2dd16810bd651d4c4f2919a18e5d8d00563534141d8b9d9d41e7b19324b7af"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-old-install-apply",
+      "record_sha256": "b0e84d78176632cac1c8a6d7735083052c6d50b2110eb99e0b6e8ec0c2b6a263"
+    },
+    {
+      "exit_code": 2,
+      "label": "brown-conflict-preview",
+      "record_sha256": "94d119d5ec4c7fb8af7acf12f05f15f8c9da9ad70998c1f577dc9a4d97e92353"
+    },
+    {
+      "exit_code": 2,
+      "label": "brown-conflict-apply",
+      "record_sha256": "f4e4419042f928c8be9d2c27b2896daa68e6dda53e5ebe740821cde6918dc03b"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-resolved-preview",
+      "record_sha256": "a5cf7a1f8654c97aeb9fefb1a21c7e499c7b34540cac97008303645086ff5fa2"
+    },
+    {
+      "exit_code": 3,
+      "label": "resolved-ordinary",
+      "record_sha256": "bbe68d10377132d16c1779acb57cc79cab4fa7288578e49afedeca94eb4ac902"
+    },
+    {
+      "exit_code": 3,
+      "label": "resolved-wrong-plan",
+      "record_sha256": "56ef66fd86a06ef587b24e9bd9c32813e6268e6f5e25381fdee569ad2983916b"
+    },
+    {
+      "exit_code": 3,
+      "label": "resolved-changed-input",
+      "record_sha256": "eaee607d91e7b1b6465e4eb05fdb129a624f5d9fc9a59d752f40d2511efe6cbd"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-resolved-recovery",
+      "record_sha256": "29b7f0209d2972564b6b683a45c78937a24ca3d61d6fb0290fa53337a5245d24"
+    },
+    {
+      "exit_code": 2,
+      "label": "customized-removal-boundary",
+      "record_sha256": "d251d79011ed70e7e2ff406d5fbccf264c0957e1610b0437bfb2afe5140fd2aa"
+    }
+  ],
+  "fixture_retired": true,
+  "mode": "upgrade",
+  "model_calls": 0,
+  "new_policy_sha256": "eab8e17ac56481ae07ad66a66b14b591de938f9af0c65278b202dd06fa0b784d",
+  "old_policy_sha256": "41bf7bcc170dc4d91ef93dc7140afb2fb7b471c5343f460bfc9d2fcb8ecb955b",
+  "published_predecessor": "1.0.0",
+  "status": "PASS"
+}

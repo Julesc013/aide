@@ -1,0 +1,218 @@
+{
+  "api_interruption_evidence": {
+    "label": "repair-post-write-interruption",
+    "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\repair-post-write-interruption.json",
+    "sha256": "7f28df9b77f5c4224d19eca4023ceba8f12e2fdb68cd52ccc230d6aca733b550",
+    "status": "INTERRUPTED"
+  },
+  "brown_removal": "DETACHED",
+  "changed_brown": "PARTIAL_REMOVAL",
+  "commands": [
+    {
+      "exit_code": 0,
+      "label": "repair-install-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\repair-install-preview.json",
+      "sha256": "fce9bffd877d9273c49a10e7e4e74e354e2c48023a0dada7592acb770957a1ae"
+    },
+    {
+      "exit_code": 0,
+      "label": "repair-install-apply",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\repair-install-apply.json",
+      "sha256": "ab12740c473ca1110829d8f18eb09f2aa8005fe7acb73c0bf90c37d32f39c84d"
+    },
+    {
+      "exit_code": 0,
+      "label": "repair-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\repair-preview.json",
+      "sha256": "8784775d6cdd0ac2649d45f10162fbff6b08e5be8dddb0d931d1fe8b3ef3e4d3"
+    },
+    {
+      "exit_code": 3,
+      "label": "repair-wrong-plan",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\repair-wrong-plan.json",
+      "sha256": "e80cba6650cb4de55277834e99275ee8bc2e40aac011e6a890304f2a3d954c83"
+    },
+    {
+      "exit_code": 2,
+      "label": "repair-rival-refusal",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\repair-rival-refusal.json",
+      "sha256": "15bed1534a4ca06846c03a61e9c38a1769d1b35034d4303b1d382e2f2a349e5b"
+    },
+    {
+      "exit_code": 0,
+      "label": "repair-repreview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\repair-repreview.json",
+      "sha256": "8784775d6cdd0ac2649d45f10162fbff6b08e5be8dddb0d931d1fe8b3ef3e4d3"
+    },
+    {
+      "exit_code": 0,
+      "label": "repair-apply",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\repair-apply.json",
+      "sha256": "a8eea08e8cbaa948bba4b4091f8d88d09642f56e5cb6628a8afe9e7cd0aecfc3"
+    },
+    {
+      "exit_code": 0,
+      "label": "repair-restart-install-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\repair-restart-install-preview.json",
+      "sha256": "593af4bbda27d3c3feaef01e821e8ecc4bcb19e5ff799462d6ad30a75d5d79dc"
+    },
+    {
+      "exit_code": 0,
+      "label": "repair-restart-install-apply",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\repair-restart-install-apply.json",
+      "sha256": "e7ef554ef4eb8cdb8b2deceea2584186f2d4a78b7486ba504a338e8e0c4c32c6"
+    },
+    {
+      "exit_code": 3,
+      "label": "repair-restart-preview-refusal",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\repair-restart-preview-refusal.json",
+      "sha256": "6bd81bfb393e679ccfeeef5f89ec2206df7c398bde3b8575c8a17d63340cc91c"
+    },
+    {
+      "exit_code": 0,
+      "label": "repair-restart-resume",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\repair-restart-resume.json",
+      "sha256": "7e4bbc5175603d7438a28c65a9fa1f52ce3e4537d4495016f66e1478f39db791"
+    },
+    {
+      "exit_code": 0,
+      "label": "rollback-v1-install-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\rollback-v1-install-preview.json",
+      "sha256": "d8b0901e08e73903645f5d4735ea915432189d3cf878ef6bfed7e10909f86558"
+    },
+    {
+      "exit_code": 0,
+      "label": "rollback-v1-install-apply",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\rollback-v1-install-apply.json",
+      "sha256": "74229d243a45ba299c8cf2bd32f8abd7e121113f80544c16e9b49a900ea193e0"
+    },
+    {
+      "exit_code": 0,
+      "label": "rollback-v2-update-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\rollback-v2-update-preview.json",
+      "sha256": "4cab3cd03ac7585839ce27d3cf90dfd5ecace24a769a71adae7280496b8c7f15"
+    },
+    {
+      "exit_code": 0,
+      "label": "rollback-v2-update-apply",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\rollback-v2-update-apply.json",
+      "sha256": "15535a6729154fe46b89e5f640b346b65557a78ecdb1ddf76180295f85296d55"
+    },
+    {
+      "exit_code": 0,
+      "label": "rollback-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\rollback-preview.json",
+      "sha256": "16c05b4c9027c595c19886f08373f9ffe84d8e7d55f5ca5767951a44ebb77924"
+    },
+    {
+      "exit_code": 3,
+      "label": "rollback-wrong-plan",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\rollback-wrong-plan.json",
+      "sha256": "2e49635dce7b5288377135c2654cdae0037bb90629b79e9c3049e3e3d0bf428d"
+    },
+    {
+      "exit_code": 0,
+      "label": "rollback-apply",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\rollback-apply.json",
+      "sha256": "d01168d8ad4e71ac111f2a396ed166a82d9af32a1ff9920c3e9bd56c68ab05ed"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-removal-install-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\fresh-removal-install-preview.json",
+      "sha256": "8341f59f3c93aecc1f6ff279fc636f54f873a9133038b3918b67babc2ab0bd28"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-removal-install-apply",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\fresh-removal-install-apply.json",
+      "sha256": "c903483ef943680600f138b43b0b0e98d84292edfb3f3c1d19ef6dc94a0eea11"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-removal-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\fresh-removal-preview.json",
+      "sha256": "66049481ff431cd3463bd2453be80e965745d6d08845f62779e716ef03277db2"
+    },
+    {
+      "exit_code": 3,
+      "label": "fresh-removal-wrong-plan",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\fresh-removal-wrong-plan.json",
+      "sha256": "2aa80885824983aefd70c5ba82de44f517977658983606fa4ad2b78ee663f388"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-removal-apply",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\fresh-removal-apply.json",
+      "sha256": "fa8f9bbc688f7eb8b02d45a2874d14b55689640f01a17cb0a37be2604459a371"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-removal-install-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\brown-removal-install-preview.json",
+      "sha256": "491e99b0ea96528583dc3ee9df7cbf660b6eddc81b5c227a6ba2b22102752a2d"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-removal-install-apply",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\brown-removal-install-apply.json",
+      "sha256": "8e5b26ba11915b5013a09216ac9a676961be3f21323f261ffa2720632d54a131"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-removal-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\brown-removal-preview.json",
+      "sha256": "e9eeff26b66ad8301bac54e0b34c2fe60186f50237fd262d1f6258a3c61eb88c"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-removal-apply",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\brown-removal-apply.json",
+      "sha256": "4b5d2dcad4c4f2403e7e9cccfaa36dd8eab29182fb918b98f01f5c63521b1506"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-changed-install-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\brown-changed-install-preview.json",
+      "sha256": "c1721919bc2001089b8427ab619940498fc60d7f9ed05d5ae32e44a4ad4c848d"
+    },
+    {
+      "exit_code": 0,
+      "label": "brown-changed-install-apply",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\brown-changed-install-apply.json",
+      "sha256": "5f1361540d08cb36966cf427b1df89352c93a84b2d9853e54022a0af1e045253"
+    },
+    {
+      "exit_code": 2,
+      "label": "brown-changed-plan",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\brown-changed-plan.json",
+      "sha256": "8212618ffdaefae98c442cc34ef8ad5b6f714899d287e2dfcc54d0b5c6d23650"
+    },
+    {
+      "exit_code": 2,
+      "label": "brown-changed-apply",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\brown-changed-apply.json",
+      "sha256": "7c52914e19bb837584221bd1d4b39f8ff069c15bbdd1bca4ccd31d95b00ae99b"
+    }
+  ],
+  "fresh_removal": "DETACHED",
+  "helper_sha256": "3f3140807520b1481181c34e95e06273e2774698cf2d384e42b5b6214f58a181",
+  "manifest_source_commit_declaration": "e42d4b31215e8ba1889b0be825a9a00e4e8ad987",
+  "member_count": 862,
+  "repair_applied": true,
+  "repair_restart": "RECOVERED",
+  "rival_preserved": true,
+  "rollback_status": "ROLLED_BACK",
+  "script_sha256": "08ab80da60664556f16d9ba63ce9ba08f24060327de1316dad0a80ce4118dfb1",
+  "status": "PASS",
+  "synthetic_successor_is_published": false,
+  "synthetic_v2": {
+    "changed_path": ".aide/prompts/compact-task.md",
+    "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\f145eaefc88848a2ba97fdf55ecf7073\\tmp\\case-01\\run-lifecycle\\synthetic-rollback-v2",
+    "v1_payload_sha256": "b09467f8c47a4f8d90341e94a978104f982b6ecea7e1a9e051ba41b289b9ff9f",
+    "v2_checksums_sha256": "f35c005b07978f33129d62c320a82b9feca02ba9f95e6c4356e23aaf9553b086",
+    "v2_payload_sha256": "fb0df54cc12865133ca2ef75369567b2a93621b56442ac5ca943f8335013cacb"
+  },
+  "zip": "D:\\Projects\\AIDE\\aide\\.aide\\release\\stable\\aide-lite-v1.1.0.zip",
+  "zip_sha256": "089d75da1675ad461264d4b526788aeaacac6cde1bcddd94b3d6484fa20c3e36"
+}

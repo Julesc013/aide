@@ -1,0 +1,37 @@
+{
+  "allocation": 11,
+  "archive_qualification": false,
+  "collected_manifest": {
+    "logs": "3fcc9a3ee7c4149b6bfe957b1ad61e09d8efd92e4872e57b90413bf138eab28d",
+    "output": "d6d8e0b9248b0d03361ba07fd8a70b71b1b094c8cf9778a549608044c7314d91"
+  },
+  "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "events_sha256": "7967f0839f3842b48da45379d3d368e091b2c958533a4aa9642f544fc7c0cff8",
+  "job_id": "595f6ad03835446180ed549a15d7ab59",
+  "manifest_digest": "bf00e3d44750e8e1a6337350c0c9c881f4ce1e28fc644ccd18abef1f7296bd87",
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 289488896,
+    "scratch_bytes": 16039600
+  },
+  "phase": "retired",
+  "raw_result_sha256": "451325265bf3b7abfbf4c6d6b8e41be5154b27f819465ebaf60a563daef04297",
+  "reservation_released": true,
+  "result": {
+    "bytes": 77,
+    "creation_filetime": 134367402340084067,
+    "exit_code": 0,
+    "io_errors": [],
+    "job_id": "595f6ad03835446180ed549a15d7ab59",
+    "pid": 8200,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "retained_receipt_sha256": "451325265bf3b7abfbf4c6d6b8e41be5154b27f819465ebaf60a563daef04297",
+  "scratch_absent": true,
+  "source_commit": "98b7b2dc86a36e24f48756cad289e8ec8a03139d",
+  "source_tree": "504050126ab0e3030d9be202d7386ff58641dfa3",
+  "status": "PASS_21_SOURCE_CHECKS",
+  "tests_log_sha256": "e315b05bf5a0b4d9f6023641b6113a37ec3c62c9363f8b5b9da8b2d6268ed034",
+  "tests_sha256": "ff7783802787a3ce88b92f576731eea45a3eed938af96ca257d1332a07420a65"
+}

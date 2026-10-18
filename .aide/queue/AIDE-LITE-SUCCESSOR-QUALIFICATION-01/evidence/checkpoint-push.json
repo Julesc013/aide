@@ -1,0 +1,19 @@
+{
+  "observations": [
+    {
+      "candidate": "651464ae3e86b32b11080194d0d06beb88188dd4",
+      "event": "before_push",
+      "observed_remote_absent": true,
+      "ref": "refs/heads/task/aide-lite-successor-qualification-01"
+    },
+    {
+      "candidate": "651464ae3e86b32b11080194d0d06beb88188dd4",
+      "dev_main_unchanged": "4f2c39606378492622fa8580152373fffc074d7c",
+      "event": "verified",
+      "qualified_release": false,
+      "ref": "refs/heads/task/aide-lite-successor-qualification-01",
+      "remote": "651464ae3e86b32b11080194d0d06beb88188dd4\trefs/heads/task/aide-lite-successor-qualification-01"
+    }
+  ],
+  "purpose": "important qualification checkpoint; release not yet qualified"
+}

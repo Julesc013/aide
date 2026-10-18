@@ -1,0 +1,23 @@
+{
+  "baseline": "3a36366c052f308a8ecee10d32690ce0cb75cae7",
+  "effect_sha256": "1452bc4a19593af48d1b3748b114d35cf6a5a70becd09eafbabceaf8c285f6e3",
+  "files": {
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md": "f1cfd127fa91906d154399724db8990377c41bf9a3a6fd57f6a49f99bb08b6bd",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml": "91d9e2b45075d4839fad63f3dc4c9da05a4340c3c087bcd01aaf261fca13d89c",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md": "92b4c72dc7ee04ed856aae474b8ee50fd9e40412c8cb8cd8bd086eed11382a58",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md": "55639e498b4892a4a8ac2e99447f0503105ba52643bca49336089cd597cd6429",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/preview-closure-sync.json": "760404547af201596c2d90d7588890d44093dcd00b26dac21d9be1e1605544da",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/qualification-summary.json": "df5844040e936c3f7fde06a05b7ea3955016c5d5501ead39a3ade7bb7f9c7633",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json": "09a80b7743a3e819567ba5b06e416da22e0d45fc3184cbc3ca5f7bccc8055235",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-review-effect.md": "1452bc4a19593af48d1b3748b114d35cf6a5a70becd09eafbabceaf8c285f6e3",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-review-message.txt": "029287172855575c3aadb97c8848e66c33c260750457fcc4a1b24c1aad80577f",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-review-validation.json": "4032e89a4140e98e177df1d9e31791e1eeb056566172b340750b467e1c4b6065",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/status.yaml": "b8edc3efd7b580ca4b008cf37ca671f81d985d1337aeffb9e03c4aa0c0933d46",
+    ".aide/queue/index.yaml": "718c26ca1d5ae8e9fcf5464c630de09667363a76932eb4695884583805176dc8",
+    "DOCUMENTATION.md": "73f82aa8c605e622c3d31b0e010653fe0f7a82af4678379260e8ff160ceef153",
+    "IMPLEMENT.md": "1d8f21280eaf3d1750c7c3c5d03bb6c87813dbb4269837c95926898d8605d6f1",
+    "PLANS.md": "c67a2ddf9e7f7d27ea35171f7e4eb5168e44b0b9b6743e53d25e31446242b729"
+  },
+  "message_sha256": "029287172855575c3aadb97c8848e66c33c260750457fcc4a1b24c1aad80577f",
+  "validation_ref": ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-review-validation.json"
+}

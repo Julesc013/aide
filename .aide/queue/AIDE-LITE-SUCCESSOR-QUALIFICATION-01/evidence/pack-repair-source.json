@@ -1,0 +1,20 @@
+{
+  "baseline": "98b7b2dc86a36e24f48756cad289e8ec8a03139d",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md": "666993f4664389324118c487601553daa1cb63070ebb6dee94674e8b99d6ee6e",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md": "2cdafcacad23aba803831938221137217b53dd447157151f6f664b50f8ed2f73",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/effort-repair-result.json": "2c6374e0b4f19c3abd6d48be73212a8e5fef6f3813c7a8fe1b761d6e1d0794bd",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/effort-repair-review.md": "a700bf31f7632cef98f4fd7b0ec9ed01ba4e0eb1bc0e46ac6916219e270b8af4",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/effort-repair-tests.json": "ff7783802787a3ce88b92f576731eea45a3eed938af96ca257d1332a07420a65",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/pack-before-effort-repair.json": "2ea7f82b13b9580968e54d4bde6e5e83976a592865529b05fef15a769f42c943",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/pack-repair-effect.md": "b08feb2b87ec580422dbb3e0d9d6cda05f990f58711db91dc87c5f470251cc0d",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/pack-repair-job-template.json": "ccb70bf06d82a49fa7fd5201dc1f87f6d336122f190618b96b592b564beb24f4",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/pack-repair-message.txt": "a622180de423a22a6f3580c31feed3c8c7d61f008123d8ad21936785fc5a8280",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_pack_repair.py": "9a99fdae89430ae5deb3b4bd0a182fcfe7a8f1eabb47ad8043ed6c13e1aeec49",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/status.yaml": "3ea22ee5d5303c74c5b5ce45dbc62c8e59dc38c16a7dbce430517ff666f4cf8e",
+    "IMPLEMENT.md": "d34232e06a0bee12be824aa5461705b3ac6c5e51a49bb219d3abd677eb3fb87f"
+  },
+  "message_sha256": "a622180de423a22a6f3580c31feed3c8c7d61f008123d8ad21936785fc5a8280",
+  "template_sha256": "ccb70bf06d82a49fa7fd5201dc1f87f6d336122f190618b96b592b564beb24f4",
+  "validation": "source21 PASS, owned inventory PASS, AST/diff/strict message PASS; prior full validate reused (no new app changes); allocation12 NOT RUN"
+}

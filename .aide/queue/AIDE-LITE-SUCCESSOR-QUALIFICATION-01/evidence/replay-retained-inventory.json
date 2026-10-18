@@ -1,0 +1,54 @@
+{
+  "logs/stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "logs/stdin": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "logs/stdout": {
+    "sha256": "db630533a1304a511c1ba02b7e1091c7e4a4576350c61c3c40e845320790d024",
+    "size_bytes": 61
+  },
+  "output/doctor.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/doctor.stdout": {
+    "sha256": "1135890d41d10a4d546978ab7b8e7b5992d80f1931cf4b21e6da6e411ed5ea21",
+    "size_bytes": 5181
+  },
+  "output/operations.json": {
+    "sha256": "3e9aa3e74579844eb21d51bab6d399af279bd4424b421849059666840765351e",
+    "size_bytes": 1663
+  },
+  "output/pack-status.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/pack-status.stdout": {
+    "sha256": "17eb7a713285498d636c31fd8f0e50e9b1a632f16f230bd1f2db48a19f2bb673",
+    "size_bytes": 232
+  },
+  "output/replay-result.json": {
+    "sha256": "150cb3a385de2da5285d9351d023779a67ab1cd15937857efc9653e65957141f",
+    "size_bytes": 8828
+  },
+  "output/stable-validate.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/stable-validate.stdout": {
+    "sha256": "986b22ede5aad84ee9e7c264d9de0161f15805f77720a5a4f6d024bbee07df52",
+    "size_bytes": 50
+  },
+  "output/validate.stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "output/validate.stdout": {
+    "sha256": "a65d1b09d1901d492fa59d33855b368569f71673c9908f13b557df2738c91f0d",
+    "size_bytes": 4894198
+  }
+}

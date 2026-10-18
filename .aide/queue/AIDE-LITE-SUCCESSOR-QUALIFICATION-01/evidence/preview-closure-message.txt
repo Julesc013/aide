@@ -1,0 +1,36 @@
+docs(lite): retain complete preview and reconcile qualification state
+
+## Summary
+- Record the complete fixed-range preview with unresolved historical failures visible.
+
+## Why
+- Reviewable release evidence can be completed before the pending owner decision.
+
+## Changed
+- Retain all six exact preview outputs and104-commit coverage with three malformed records.
+- Record original job evidence, raw range failure and unchanged registry/package identities.
+- Reconcile child, parent and queue views with all29 allocations retired.
+
+## Validation
+- PASS allocation29 preview generation, validation, status and exact six-output regeneration.
+- PASS full104-commit categorized/malformed/ignored coverage and exact historical identities.
+- FAIL raw message range as expected for the three preserved records; owner decision pending.
+- PASS unchanged53 release files,863 pack files, collection and retirement.
+- NOT RUN final release-candidate acceptance, integration or publication.
+
+## Changelog
+- Docs: Preserve complete source-history preview and distinguish its success from release approval.
+
+## Risks
+- Three historical formatting decisions and final candidate review still gate promotion.
+- Source-history preview is not an expanded support claim or official release notes.
+
+## Follow-up
+- Resolve the existing exact owner decisions, then review and integrate the qualified candidate.
+
+AIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
+AIDE-Phase: fixed-preview-evidence-closure
+AIDE-Result: PARTIAL
+AIDE-Scope: generated preview and qualification records
+AIDE-Token-Impact: unknown
+AIDE-Quality-Gate: independent source and effect review

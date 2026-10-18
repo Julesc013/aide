@@ -4143,3 +4143,21 @@ items:
     task: .aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/task.yaml
     exec_plan: .aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/ExecPlan.md
     evidence: .aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence
+
+  - id: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
+    status: needs_review
+    result: TECHNICALLY_ACCEPTED_RECONCILIATION_AND_RELEASE_PENDING
+    planning_state: combined_source_integration_and_publication_pending
+    presentation_policy_resolution: .aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/REPORT.md
+    reconciliation_status: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/status.yaml
+    title: Qualify actual additive Lite archives and published predecessor
+    task: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence
+
+  - id: AIDE-LITE-SUCCESSOR-INTEGRATION-01
+    title: Reconcile the retained successor with current development
+    status: needs_review
+    task: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence

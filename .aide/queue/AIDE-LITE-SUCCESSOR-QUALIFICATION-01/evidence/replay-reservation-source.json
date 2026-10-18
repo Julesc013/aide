@@ -1,0 +1,28 @@
+{
+  "baseline": "23c0739ed11bd602b2a2f68c4f99a22331272b2d",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md": "64eb4958eb4174edb97e4aca34f70b4788c137db40508b97f69b327a9e6ec72c",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md": "f1a7a1e7590272adf76cb2d34dde53f51def46badadba37a9fe1e11aa44314c6",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-qualified-replay-refused.json": "168c1da189f4476562624bcca1912c717740f746b4d68185ebc06ffe8c07d021",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-results/recovery/retained-inventory.json": "cb763d4f63f4598278766aa56886cf5688827cfe28cef84b0494faeb2a67535e",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-results/recovery/separate-recovery.json": "bf8160ed64517f7bb733e7689f8adcaa24c84b978124079506d6d07d81a9e639",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-results/recovery/summary.json": "aff6563809b1b51273bd4d1176bc6ec4dd41831b63ada966b85ad63c6eb359db",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-results/replay/retained-inventory.json": "a6f0229d42a05fa6189b7dcb13ff194a2e4cd4e622bc9d57ead4e66ac0142cd3",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-results/upgrade-retry/customized-recovery-limitation.json": "4c2526d321bc46acdfb881aade8a72401b334983497e7deea5a48c510a4563db",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-results/upgrade-retry/resolved-overlay.json": "59086c9e28f211eb32fcc0acd2783a58adc16a859d9d62d03326845cbd4488ca",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-results/upgrade-retry/retained-inventory.json": "96f4bc11d595e77c08694b0d2fb188f0a6b11648eeab12bfc763029a457b9de6",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-results/upgrade-retry/summary.json": "a8361e30deaa758821d119f71f0c3b86c77b00f2cddb59cd31004579b3393cfc",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-retry-review.md": "ff2f83594ef3a928180ab601cd767b16835e9847f99186f2a06d796ee8b4ebdd",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replay-reservation-effect.md": "fdbf9e8ab60cdcdad46b91e38d46b032eaf1d246372be0d3b51dde9f8990d851",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replay-reservation-message.txt": "430cfde9a35c3c2a4d573fbdde38508e134c38fa04851a7ba7d4d07d264baa0c",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replay-reserved-job-template.json": "a9271052a8850c559c0e75a252c68e8e9bb30c9479aeef9f771d47c26c6177af",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/status.yaml": "61ad19b2714bdfa699e945b440b1b7e160e14cce6d3f8f04bcca0d5556653918",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/task.yaml": "d3ae36b0b625ebc3ceb98aaf01fe353126dca17f39906258c8ae95988a97f4e4",
+    "DOCUMENTATION.md": "243e3073a79a541505e6e578c134f70ad36d50ce9e7f4d2c21c0c2d1cd77928e",
+    "IMPLEMENT.md": "797c1223707b4f9e721508d7d1b847d8f6ead8ae181f1dafbd5c95f51003fb25",
+    "PLANS.md": "bccc77d660f9f714ca82d691939d0a67a6e76193f572d3bce82bf91c5d2c60b4"
+  },
+  "message_sha256": "430cfde9a35c3c2a4d573fbdde38508e134c38fa04851a7ba7d4d07d264baa0c",
+  "template_sha256": "a9271052a8850c559c0e75a252c68e8e9bb30c9479aeef9f771d47c26c6177af",
+  "validation": "Actual predecessor25 and recovery26 PASS; replay27 missing reservation refusal retained; unchanged replay wrapper; AST/message/diff PASS; corrected effect NOT RUN"
+}

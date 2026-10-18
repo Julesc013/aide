@@ -1,0 +1,198 @@
+{
+  ".aide/release/README.md": {
+    "sha256": "18d1f17a94a4cc9b51c9e68b63dbccbc333bae15b31fc89fc4ad17ecf6dda506",
+    "size_bytes": 802
+  },
+  ".aide/release/dist/CHANGELOG.preview.md": {
+    "sha256": "4545f947e4e987c6c7b3964e144275d26f46902c4d591b701ce94400c34ceb63",
+    "size_bytes": 7283
+  },
+  ".aide/release/dist/RELEASE_NOTES.preview.md": {
+    "sha256": "08ea8ce62126cb699a2d042ca6417e9c3cab29ff91750599d250285d3b229bca",
+    "size_bytes": 3730
+  },
+  ".aide/release/dist/SHA256SUMS.txt": {
+    "sha256": "01c7cf01924842431473dc6534a936ae6cd708899d2f7701a58fe623ac9f6118",
+    "size_bytes": 604
+  },
+  ".aide/release/dist/aide-lite-pack-v0.checksums.json": {
+    "sha256": "b1ee06ee283c4a70b0ade96fbf1332794ea0e7f01c106f16c3195847dfacfc1d",
+    "size_bytes": 1132
+  },
+  ".aide/release/dist/aide-lite-pack-v0.tar.gz": {
+    "sha256": "6818535c9b0330018834ad736a21e9471f57063927d92c084cedc11d73412f52",
+    "size_bytes": 783502
+  },
+  ".aide/release/dist/aide-lite-pack-v0.zip": {
+    "sha256": "6f6414c04721db7d91a17171a7062c69ed08ae498ad24f9345ebade9e0e9df9a",
+    "size_bytes": 1117188
+  },
+  ".aide/release/dist/install.md": {
+    "sha256": "b419951cd60cebc31b9116e3f178adef71516e9b46825b1185ef443781cf7fb7",
+    "size_bytes": 2434
+  },
+  ".aide/release/dist/manifest.yaml": {
+    "sha256": "de5438d8a85e41015f194dfe2a9de374572146cc004f6d0bc5d3389d5251f67b",
+    "size_bytes": 1406
+  },
+  ".aide/release/dist/release-assets.json": {
+    "sha256": "48900e90e78aa44ba19539b3fd3ee226c3a08342446a6f5a46a1cdc7d0d34fb2",
+    "size_bytes": 4080
+  },
+  ".aide/release/dist/release-provenance.json": {
+    "sha256": "7cfad84873ed6eb21a671a018a44db60ba872bbbd8e332e35e8ee96a0cfbee79",
+    "size_bytes": 1448
+  },
+  ".aide/release/dist/release-validation.json": {
+    "sha256": "a457b73f186db89c3fe444ba17864cfef2e0662ce5c12d808652cc24ed43ffd7",
+    "size_bytes": 3846
+  },
+  ".aide/release/dist/release-validation.md": {
+    "sha256": "aa0c336c3c2c0ded2747876f3517034f31dafd8f2a0f077274e0eb89ad649182",
+    "size_bytes": 238
+  },
+  ".aide/release/github-release-asset.schema.json": {
+    "sha256": "f1a36ee04e329ed9889f8f46db6eebedeee31427905b0867dab9e572b2388d67",
+    "size_bytes": 796
+  },
+  ".aide/release/github-release-assets.json": {
+    "sha256": "b371d40e3e19bf27f21a2bfa705556ce96965e495d9bbf5fa1ad3ce088f521ce",
+    "size_bytes": 6203
+  },
+  ".aide/release/github-release-checklist.json": {
+    "sha256": "88b045f6f30257a050e93552c5b4515fbbfeefcadb3ba2a7e3939cf38fa2a655",
+    "size_bytes": 2764
+  },
+  ".aide/release/github-release-checklist.md": {
+    "sha256": "c96d6e74339ac6cfd3d70317298bf1d48e4930462d127637a75e0542a7a5cae2",
+    "size_bytes": 1553
+  },
+  ".aide/release/github-release-checklist.schema.json": {
+    "sha256": "f9abdf973dd2d1438c054733467d0dea6ca151596ead4c50fa4dea90c6a5912d",
+    "size_bytes": 861
+  },
+  ".aide/release/github-release-draft-validation.json": {
+    "sha256": "b0a000ccaacf5cf162926e0ec12e1b3fa3f3d35e7e6847d75d913cce4eb42fd2",
+    "size_bytes": 1094
+  },
+  ".aide/release/github-release-draft-validation.md": {
+    "sha256": "f745797911d8a7a9ba227e0620b493af1b090b9854701d0811f7c18495340f4b",
+    "size_bytes": 303
+  },
+  ".aide/release/github-release-draft-validation.schema.json": {
+    "sha256": "a03b8a0da4ebac798d9a246c2fe744cd07a4964767a90e1e1511c42c6bd9270c",
+    "size_bytes": 872
+  },
+  ".aide/release/github-release-draft.json": {
+    "sha256": "890ad7031c22b029aca1b48e36c434da5810315d8a8e53cea44e252fc4bc04ec",
+    "size_bytes": 11534
+  },
+  ".aide/release/github-release-draft.md": {
+    "sha256": "d44263023e3f52c7f920da8a6914b11c61cdaf8f7233149b471927b5a6513156",
+    "size_bytes": 4264
+  },
+  ".aide/release/github-release-draft.schema.json": {
+    "sha256": "64278aa9add88ca75d453b43ec91125632cfb00fac739c3955a9c88abbbd89fe",
+    "size_bytes": 1186
+  },
+  ".aide/release/github-release-publication-boundary.md": {
+    "sha256": "fca91a9c6bb78eb595423b549c93bb89c5105a4f33fb70289668cb456049421a",
+    "size_bytes": 407
+  },
+  ".aide/release/github-release-publication-boundary.schema.json": {
+    "sha256": "5ae7e9e8a83423662f8a24d7ce400149676857ea37e9f59331255095e77beef6",
+    "size_bytes": 908
+  },
+  ".aide/release/github-release-upload-plan.json": {
+    "sha256": "4a5197024fc855f0d349f0e9e14ca8b1fb4d926e668702d391286d1c83b6632a",
+    "size_bytes": 6976
+  },
+  ".aide/release/github-release-upload-plan.md": {
+    "sha256": "f85a82eafca6e6ca2882a02ea2b29c31fd938222a597bbc69bf3a012e264fc71",
+    "size_bytes": 2211
+  },
+  ".aide/release/github-release-upload-plan.schema.json": {
+    "sha256": "065de4bd4986386bef42e2073557f826970ea59b3cc354c280b11d9a47317f2c",
+    "size_bytes": 801
+  },
+  ".aide/release/latest-github-release-draft.json": {
+    "sha256": "890ad7031c22b029aca1b48e36c434da5810315d8a8e53cea44e252fc4bc04ec",
+    "size_bytes": 11534
+  },
+  ".aide/release/latest-github-release-draft.md": {
+    "sha256": "d44263023e3f52c7f920da8a6914b11c61cdaf8f7233149b471927b5a6513156",
+    "size_bytes": 4264
+  },
+  ".aide/release/latest-release-artifacts.json": {
+    "sha256": "48900e90e78aa44ba19539b3fd3ee226c3a08342446a6f5a46a1cdc7d0d34fb2",
+    "size_bytes": 4080
+  },
+  ".aide/release/latest-release-bundle.json": {
+    "sha256": "45ef79b578a77c6acbc25ba3a273565e8560b3a2297572890e714325e023c15a",
+    "size_bytes": 11660
+  },
+  ".aide/release/latest-release-bundle.md": {
+    "sha256": "5c504e973c2c508ffe3c58a6dc749093d1e1d82133eae903b8cd39cd55561070",
+    "size_bytes": 356
+  },
+  ".aide/release/latest-release-provenance.md": {
+    "sha256": "7d8cbee64b99d1e94f6c10e597731c52280685ab76d8c90854b754e713b74f24",
+    "size_bytes": 427
+  },
+  ".aide/release/latest-release-validation.md": {
+    "sha256": "aa0c336c3c2c0ded2747876f3517034f31dafd8f2a0f077274e0eb89ad649182",
+    "size_bytes": 238
+  },
+  ".aide/release/release-asset.schema.json": {
+    "sha256": "10fc408a56a4eea7dc04c3f36ede966a97614e29a6e900150e03cdc9494100cd",
+    "size_bytes": 740
+  },
+  ".aide/release/release-bundle-report.schema.json": {
+    "sha256": "dfa61f89f435255485b5d303661cfa3f1275c10806307b028b867284c6de4fb3",
+    "size_bytes": 648
+  },
+  ".aide/release/release-bundle.schema.json": {
+    "sha256": "077a79d4a51a710379033fddd5e9eb94eba90db96f0723f50b5d34865c97269c",
+    "size_bytes": 1116
+  },
+  ".aide/release/release-checksums.schema.json": {
+    "sha256": "f93a40451d12a74494c59a63ff00191c9a61b77a9915aab3c9bf49012d5c47bd",
+    "size_bytes": 542
+  },
+  ".aide/release/release-install-notes.schema.json": {
+    "sha256": "8e63b9881049664df1286e8b2c5c099efd06c5e5a3c1b3f3295572b47bff660e",
+    "size_bytes": 720
+  },
+  ".aide/release/release-manifest.schema.json": {
+    "sha256": "3532fda57489d2842bd4e9ad88012aad15d3c3a6e948a68fb200cf142bda7424",
+    "size_bytes": 674
+  },
+  ".aide/release/release-provenance.schema.json": {
+    "sha256": "9bb988e0ae3de3a350be8ae4ab387cdd50c8c587a0eb36f1bb3605540837828f",
+    "size_bytes": 1015
+  },
+  ".aide/release/release-validation.schema.json": {
+    "sha256": "de2f80c0bbba10970e88ed81e22c417f685f1507266cf6e8a2852768120b9f07",
+    "size_bytes": 667
+  },
+  ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt": {
+    "sha256": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83",
+    "size_bytes": 274
+  },
+  ".aide/release/stable/aide-lite-v1.0.0.manifest.json": {
+    "sha256": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb",
+    "size_bytes": 4955
+  },
+  ".aide/release/stable/aide-lite-v1.0.0.tar.gz": {
+    "sha256": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a",
+    "size_bytes": 837890
+  },
+  ".aide/release/stable/aide-lite-v1.0.0.zip": {
+    "sha256": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b",
+    "size_bytes": 1176436
+  },
+  ".aide/release/successor-candidate.json": {
+    "sha256": "2623c47f8d60b41f9f584f2a1da730d9b6898c3026a6e45420433a98028cc152",
+    "size_bytes": 1581
+  }
+}

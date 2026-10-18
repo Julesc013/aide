@@ -1,0 +1,82 @@
+{
+  "case-05/import-pending.json": {
+    "sha256": "ce4a8ca92bf215e43316c4c7917ebe59f334cf5d93403583e326c6e4babff1bb",
+    "size_bytes": 1554
+  },
+  "case-05/import-preview.json": {
+    "sha256": "aa22e924489a23f220910e3288f928d6c0d79891bb23c4ddbb3e75b2baf9b96c",
+    "size_bytes": 101410
+  },
+  "case-05/import-receipt.child.json": {
+    "sha256": "4b91dff9a2592d67389dd279bd8687e546c6e73d08f399cff2b1f21e21980cbd",
+    "size_bytes": 933
+  },
+  "case-05/import-resume.json": {
+    "sha256": "22aad2e9df58b9f15de8807dd716208249c03de975ae27ec5ce818f1192b602b",
+    "size_bytes": 1589
+  },
+  "case-05/process.json": {
+    "sha256": "caa55ad74c94c7fc951a11339cf7dc7dfa9523de14ac02989c6bff2d0b370942",
+    "size_bytes": 619
+  },
+  "case-05/removal-install-apply.json": {
+    "sha256": "bc0df4198a3276c5c53c16841f000ab6df523530c6137b47f8e23f3dec0e05bd",
+    "size_bytes": 1582
+  },
+  "case-05/removal-install-preview.json": {
+    "sha256": "8c8372b4a205a5edda725ed30e9e9a79dfdd73ccded2bad8e2cc408d8fdb9c64",
+    "size_bytes": 101400
+  },
+  "case-05/removal-preview.json": {
+    "sha256": "f4a24f9832a50560a42a5fbfc281676b61026697d91fa0f0c7f6bd980586f50b",
+    "size_bytes": 762891
+  },
+  "case-05/removal-receipt.child.json": {
+    "sha256": "dff9d7f35ec2329d0436d70f73cae2c4179d58e415a6d789356b472f7aceb9ea",
+    "size_bytes": 930
+  },
+  "case-05/removal-resume.json": {
+    "sha256": "fdf94da3416f681b86cf25fa85c694f0e392cbe106fcc5d618ab2b327feb3521",
+    "size_bytes": 1025
+  },
+  "case-05/repair-file.child.json": {
+    "sha256": "08ed670803eab39bf057978f868e6f2ea285a6fbb29dab97f00775fdd9a841e4",
+    "size_bytes": 921
+  },
+  "case-05/repair-install-apply.json": {
+    "sha256": "5577ad28534a197a1d1766cbcbec3d324a6566230482b00a6283640b2cd067be",
+    "size_bytes": 1580
+  },
+  "case-05/repair-install-preview.json": {
+    "sha256": "3018d3a6f552cccb849b67262f464c4a0674b0c0c7e92a79578df2e4af7a6b12",
+    "size_bytes": 101398
+  },
+  "case-05/repair-pending.json": {
+    "sha256": "19fc7819d64c447bc6c3c6667d2a522a876c6cdb47ff1cf5b1843a8faa019d23",
+    "size_bytes": 1347
+  },
+  "case-05/repair-preview.json": {
+    "sha256": "be430b4fd3800af8542b04ee3ffc5b39f92e3deaccac338aed38fe25303202f6",
+    "size_bytes": 1280
+  },
+  "case-05/repair-resume.json": {
+    "sha256": "d32980902e738b2986d4991477d4acb7d56a58a9a2a2458296e22a1d495f6aa5",
+    "size_bytes": 1416
+  },
+  "case-05/stderr.log": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "case-05/stdout.log": {
+    "sha256": "bfb954bfd8f2eff3c9b5b9105f87a8e93d2653e55e8c76b0a12593e61eeac9f2",
+    "size_bytes": 246
+  },
+  "case-05/summary.json": {
+    "sha256": "db0e749d41f82b28d6340e9b8c4d25796343101bae14349df02e744cc35bf885",
+    "size_bytes": 1310
+  },
+  "consumer-result.json": {
+    "sha256": "b8838aa0b1aea0be4c28147c40cb45cbd8ac924a1f2680392ff7b0acc25ffcae",
+    "size_bytes": 1142
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "tests_run": 21,
+  "failures": 0,
+  "errors": 6,
+  "skips": [],
+  "test_ids": [
+    "test_work_effort.WorkEffortTests.test_actual_cli_human_json_refusal_and_read_only",
+    "test_work_effort.WorkEffortTests.test_actual_cli_observes_evidence_only_root",
+    "test_work_effort.WorkEffortTests.test_cancel_incomplete_and_unknown_metrics",
+    "test_work_effort.WorkEffortTests.test_conflicting_snapshot_refused",
+    "test_work_effort.WorkEffortTests.test_empty_work_is_unknown_not_zero_cost",
+    "test_work_effort.WorkEffortTests.test_export_binding_drift_refuses_before_reset",
+    "test_work_effort.WorkEffortTests.test_failures_cleanup_missing_phases_and_nonadditive_peaks",
+    "test_work_effort.WorkEffortTests.test_hardlink_input_refused",
+    "test_work_effort.WorkEffortTests.test_identical_duplicate_once_conflicting_phase_refused",
+    "test_work_effort.WorkEffortTests.test_limits_and_invalid_observation_types",
+    "test_work_effort.WorkEffortTests.test_malformed_duplicate_nonfinite_and_size_bounds",
+    "test_work_effort.WorkEffortTests.test_owner_exception_and_interrupted_recovery_keep_unknown_outcome",
+    "test_work_effort.WorkEffortTests.test_path_escape_absolute_and_redirected_ancestor_refused",
+    "test_work_effort.WorkEffortTests.test_pins_work_manifest_source_and_result_identity",
+    "test_work_effort.WorkEffortTests.test_safe_installed_effort_preserves_project_core_and_never_falls_back",
+    "test_work_effort.WorkEffortTests.test_usage_missing_streams_and_work_mismatch",
+    "test_work_effort.WorkEffortTests.test_usage_session_overlap_preserves_unknown_subtotals",
+    "test_export_import.ExportImportTests.test_export_checksums_match_and_are_deterministic",
+    "test_export_import.ExportImportTests.test_import_safe_mode_skips_broad_source_roots",
+    "test_export_import.ExportImportTests.test_extracted_export_pack_waits_and_runs_job_without_source_checkout",
+    "test_aide_lite.AideLiteWorkflowTests.test_portable_apply_descriptions_match_shipped_modules"
+  ],
+  "test_inputs": {
+    ".aide/scripts/tests/test_work_effort.py": "54ebcc09f035d4d2b7791784039ebaffe64a2ef315ae1cf63455c940583531ec",
+    ".aide/scripts/tests/test_export_import.py": "7008820345679e7b6127e499ebedbfb7d6334f3eb129ecdbeb8a8b2676ec0b4a",
+    ".aide/scripts/tests/test_aide_lite.py": "d1637800816e53e90e9b3663357311351f9e8e93104b5a2303149f786eab752c"
+  },
+  "models_requested": 0,
+  "subject": "source accounting and generated minimal safe-install fixtures",
+  "archive_qualification": false
+}

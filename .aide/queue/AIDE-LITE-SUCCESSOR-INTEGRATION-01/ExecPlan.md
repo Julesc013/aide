@@ -24,3 +24,5 @@
 **Acceptance.** Combined source and actual safe-installed package use AIDE's owned effort normalizer, refuse missing owned code without running project core, preserve project customization and newer commands, and retain both histories. Original archive qualification remains tied to its original inputs. New combined release work is a later bounded effect.
 
 **Recovery.** Stop on subject, ref or scope drift. Preserve partial Git operations and every worker result. No blind retry, force push, automatic merge abort/reset, or deletion of uncertain work. Inspect actual index and refs after interrupted effects.
+
+**Merge prepared.** Admission accepted; metadata checkpoint a9afdf67 retains exact local starting state. Standard no-commit merge reported 18 conflicts, all confined to declared generated/planning files. Resolution keeps 29 current paths, combines five source/test/reference paths and preserves 216 incoming paths exactly. Original assets and retained qualification remain unchanged. The source diff is 130 insertions and three deletions across five files; runtime verification remains pending.

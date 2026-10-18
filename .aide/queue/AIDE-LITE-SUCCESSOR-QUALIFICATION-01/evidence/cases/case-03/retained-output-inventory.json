@@ -1,0 +1,66 @@
+{
+  "case-03/fresh-cli-recover.json": {
+    "sha256": "0d7c00ae72a6b58d6fd0570f7223575126761e4522d40d5ef8a80615e5e2b9ce",
+    "size_bytes": 1526
+  },
+  "case-03/fresh-ordinary-refusal.json": {
+    "sha256": "e8e4dbc22df3ad19fae1b294d7abd51bee937d0540103e9804e467b17a46afdf",
+    "size_bytes": 1410
+  },
+  "case-03/fresh-wrong-plan-refusal.json": {
+    "sha256": "40e5ebf3bf86b50c167d4462f8eb459770bd54da86f8eda42c6590edb7e93856",
+    "size_bytes": 1531
+  },
+  "case-03/predecessor-feedback-preview.json": {
+    "sha256": "ec8505d24f336f1e19f537fde773611e0cae923958fbbd82402822047d312a7b",
+    "size_bytes": 107187
+  },
+  "case-03/process.json": {
+    "sha256": "e6c7ed4eae766b54464d39711cb825e430960df25a2f574cdb305c43292b3251",
+    "size_bytes": 844
+  },
+  "case-03/resolved-changed-input-refusal.json": {
+    "sha256": "ab614056cf74ea921ee272864fccc3db0a77fe346f4dfab148a7256fffb8c23b",
+    "size_bytes": 1969
+  },
+  "case-03/resolved-cli-recover.json": {
+    "sha256": "455d787b74577f762ed1e54cb8b8434edec2d26b45dc84997a06567e2777e85d",
+    "size_bytes": 1964
+  },
+  "case-03/resolved-ordinary-refusal.json": {
+    "sha256": "7fca2bd9ba3bb57f778cf308151b6ec6043ee1f2747cd0bc8e0a210cb927171d",
+    "size_bytes": 1848
+  },
+  "case-03/stderr.log": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "case-03/stdout.log": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "case-03/summary.json": {
+    "sha256": "b5c1dca30e15b3b768383c40f673cd6c80a8d7acc5d705d631ba4b34f21a971c",
+    "size_bytes": 4196
+  },
+  "case-03/update-cli-recover.json": {
+    "sha256": "1ab9a71b333c34a7395586139caa5c3d0302dd7449991f3d2321b2194e3a27e9",
+    "size_bytes": 1781
+  },
+  "case-03/update-feedback.json": {
+    "sha256": "7053a90a6bc3a46c814f2d758c5ea904446db1c6b5b2ee01c7272b215106a96d",
+    "size_bytes": 3686
+  },
+  "case-03/update-ordinary-refusal.json": {
+    "sha256": "b8184522beec4de933a0c9a982b016d92b2d6437ef17226c27ac9ea0bec37820",
+    "size_bytes": 1665
+  },
+  "case-03/update-wrong-plan-refusal.json": {
+    "sha256": "8732ece11d783640018a2d34cf59e2f69c0ca5dc8d475136ca0b3d33ac89db67",
+    "size_bytes": 1786
+  },
+  "consumer-result.json": {
+    "sha256": "fcfd64d157941c79d6ae4d4e423ce1da10867dfe73f119fb35f1ff1eb539ec90",
+    "size_bytes": 1142
+  }
+}

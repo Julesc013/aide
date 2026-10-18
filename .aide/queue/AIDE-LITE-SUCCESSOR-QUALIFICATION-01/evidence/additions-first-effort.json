@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-I",
+    "-B",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\139f9282fdab4caf8d3bdd4c1bc3fd1d\\tmp\\case-additions\\target\\.aide\\scripts\\aide_lite.py",
+    "--repo-root",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\139f9282fdab4caf8d3bdd4c1bc3fd1d\\tmp\\case-additions\\target",
+    "job",
+    "effort",
+    "--work-set",
+    "fixture-work.json"
+  ],
+  "cwd": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\139f9282fdab4caf8d3bdd4c1bc3fd1d\\tmp\\case-additions\\target",
+  "exit_code": 1,
+  "stderr": "",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout": "AIDE work effort: REFUSED\nInvalid, missing, redirected, oversized or conflicting supplied evidence; check pins and schema.\n",
+  "stdout_sha256": "47a11643f69d7d11e2225bfecca10fa1228659b8039464de6cd45246cb38e237"
+}

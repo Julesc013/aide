@@ -1,0 +1,80 @@
+{
+  "commands": [
+    {
+      "exit_code": 0,
+      "label": "fresh-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a472aad18840478b9d5b83006e2b3ecb\\tmp\\case-04\\public-cli\\fresh-preview.json",
+      "sha256": "28eafcc307ce794368bb4f270a481a96f3ad40d9c10031241cc4c9982cd704e0"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-apply",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a472aad18840478b9d5b83006e2b3ecb\\tmp\\case-04\\public-cli\\fresh-apply.json",
+      "sha256": "66a94df54cd6a555c216d14654734ab6754f760e0856c0c443752a0bf09c0bcc"
+    },
+    {
+      "exit_code": 0,
+      "label": "ordinary-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a472aad18840478b9d5b83006e2b3ecb\\tmp\\case-04\\public-cli\\ordinary-preview.json",
+      "sha256": "217dfdacf4685feee016679da4af9fdceb0883647dc0bd335bc7c80010e24d0e"
+    },
+    {
+      "exit_code": 0,
+      "label": "explicit-feedback",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a472aad18840478b9d5b83006e2b3ecb\\tmp\\case-04\\public-cli\\explicit-feedback.json",
+      "sha256": "c18f16a5b09a8440a0b265c8461cb43bd662235e90471955ea5c92db0dd1e776"
+    },
+    {
+      "exit_code": 1,
+      "label": "feedback-without-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a472aad18840478b9d5b83006e2b3ecb\\tmp\\case-04\\public-cli\\feedback-without-preview.json",
+      "sha256": "fe5043ecae9b3e72db6e8d989ef7062db3d94fa85654b87c65e9a18e04f4bad4"
+    },
+    {
+      "exit_code": 0,
+      "label": "installed-validate",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a472aad18840478b9d5b83006e2b3ecb\\tmp\\case-04\\public-cli\\installed-validate.json",
+      "sha256": "1d52fea79347415689ff9e8aac881ba18a739ab7631a6c08071a1191ec004b64"
+    },
+    {
+      "exit_code": 1,
+      "label": "empty-task-status",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a472aad18840478b9d5b83006e2b3ecb\\tmp\\case-04\\public-cli\\empty-task-status.json",
+      "sha256": "307dc77f94a9aae3342636650018e0db5357594e8724d4179f79a6e42abe35c9"
+    },
+    {
+      "exit_code": 1,
+      "label": "empty-task-inspect",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a472aad18840478b9d5b83006e2b3ecb\\tmp\\case-04\\public-cli\\empty-task-inspect.json",
+      "sha256": "fe89981300e777f635e339fe1988cb178749561b340e90c7ce50fd8088e20210"
+    },
+    {
+      "exit_code": 0,
+      "label": "task-status",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a472aad18840478b9d5b83006e2b3ecb\\tmp\\case-04\\public-cli\\task-status.json",
+      "sha256": "faabcd8102adfc62c2e71fc080cf48b4c2efa32363d3bf5534c251685480a696"
+    },
+    {
+      "exit_code": 0,
+      "label": "task-inspect",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a472aad18840478b9d5b83006e2b3ecb\\tmp\\case-04\\public-cli\\task-inspect.json",
+      "sha256": "26d9ce3cb28193eea0c1053c9a19a5a4b37ecd28559c0c0b0bd8b6131820b727"
+    }
+  ],
+  "empty_inspect_exit": 1,
+  "empty_status_exit": 1,
+  "explanations": 4,
+  "explicit_exit": 0,
+  "feedback_sha256": "6e2b886b01c1c565fcc96d1f1d71b045e159b942fe2b87d94c37cb94711c00e2",
+  "inspection_mutated": false,
+  "installed_source_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+  "members": 863,
+  "ordinary_exit": 0,
+  "project_owned_sha256": "20d8b8d1dde9b992d32f801eb3b096fc2432ebec8c0257e7cd16e31148b5181a",
+  "refused_exit": 1,
+  "status": "PASS",
+  "task_inspect_exit": 0,
+  "task_status_exit": 0,
+  "validate_exit": 0,
+  "zip_sha256": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc"
+}

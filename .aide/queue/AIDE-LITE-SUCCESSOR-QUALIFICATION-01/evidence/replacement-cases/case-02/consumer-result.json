@@ -1,0 +1,30 @@
+{
+  "assets": {
+    ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt": {
+      "sha256": "01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.manifest.json": {
+      "sha256": "38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f",
+      "size_bytes": 6957
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.tar.gz": {
+      "sha256": "7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44",
+      "size_bytes": 885826
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.zip": {
+      "sha256": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc",
+      "size_bytes": 1231497
+    }
+  },
+  "case": 2,
+  "fixture_retired": true,
+  "historical_restricted_account_route": "not exercised",
+  "model_calls": 0,
+  "original_assertions": "unchanged",
+  "outer_containment": "unqualified",
+  "read_isolation": "unqualified",
+  "route": "current Windows Job managed resource runner",
+  "status": "PASS",
+  "summary_sha256": "76127c40ef26feb7c929487c778682612f93d9eb1df9d499e8ebd0cd3b31072b"
+}

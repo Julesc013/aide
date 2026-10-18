@@ -1,0 +1,24 @@
+{
+  "baseline": "80897d75ea3a5ca0b585c7c491cc17cb5b3b23a0",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md": "82893dce5f2010bc9e78b9cb8e55182b5f49af57ba81b1d55ad744a10ea88364",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md": "64091827575d71551877564ff591f4599feb0759fbee045f537a95fe717ed87c",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/direct-pack-result.json": "aad1238c36fff7bc94c5e15d35a343e45b807d09b248d1143d1bd1507a2951f5",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/direct-pack-review.md": "e6e46bf05e92daf49464f165d3fdba1b4f4c7a906baf1b3502e347d79406923c",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/direct-pack-tests.json": "9f9fcf1b84b5ef2647caefc25b5dc9db4631ec32c7e78d04c540140454f11cf6",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/pack-subject-repaired.json": "bec12aed4c19dabfab824c569b02d10e0bc946923d4df1fae818eaf2255c8155",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/rebuild-effect.md": "81c86a7b9c9a1103efdf1af61fc1648fff72f1065dd0ce3beec9f0e717f08c21",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/rebuild-job-template.json": "2259baec6e4f9636eaff65a2ff849fa4a8e53f28a7f2af40ead9a28ea7113416",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/rebuild-message.txt": "2b09f29c7a3c90231516894812841b71cb7dc620883b0bcd411a55aa28a1622f",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/rebuild-tag-observation.json": "7602cb497d10b4b00cd0c1154a9aebd544db224dc3a4bfe0959778246e8d3d95",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/release-before-rebuild.json": "8d7c6e2be095fdc6edeac0d69df0497b05c55a56ab7128f1a78599d4f0af150d",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_build.py": "94d7fcd2e5499b4d4d0a5ce1a5baa3d48cd351e8e435f129a9e8071c60861e6c",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/status.yaml": "2b477651f462b638cc00319a4766ca6597cf3c8d0ce7dc123df66901f7eb372e",
+    "DOCUMENTATION.md": "0c206856088be8a69923b102b939524dcd0b0c9a5a311106fcad6f80a9a5666c",
+    "IMPLEMENT.md": "34f5e7aa83797c160bd9feec9fa3b112c9fea7e409131118a6f1f8ee108a1324",
+    "PLANS.md": "199099f8a7cdfec8671ae4a69a35a5cc0daf8b87d446a4ed1a6e3850386b6ed0"
+  },
+  "message_sha256": "2b09f29c7a3c90231516894812841b71cb7dc620883b0bcd411a55aa28a1622f",
+  "template_sha256": "2259baec6e4f9636eaff65a2ff849fa4a8e53f28a7f2af40ead9a28ea7113416",
+  "validation": "Source21, delivered15, direct actual-installed1 PASS on distinct subjects; original6 fixtureERROR retained; collection/retirement verified; AST, frozen identities and tags PASS; allocation14 NOT RUN"
+}

@@ -1,0 +1,13 @@
+{
+  "archive_qualification": false,
+  "delivered_test_sha256": "54ebcc09f035d4d2b7791784039ebaffe64a2ef315ae1cf63455c940583531ec",
+  "errors": 0,
+  "failures": 0,
+  "fixture": "actual_owned_development_pack",
+  "model_calls": 0,
+  "pack_unchanged": true,
+  "skipped": 0,
+  "status": "PASS",
+  "test_method": "test_safe_installed_effort_preserves_project_core_and_never_falls_back",
+  "tests_run": 1
+}

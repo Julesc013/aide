@@ -1,0 +1,21 @@
+{
+  "baseline": "b4613f2d7e33ca33cc7a466687c43fb91c7f0478",
+  "effect": "installed-effort-repair-amendment.md admission and exact task-only checkpoint push; no implementation or job",
+  "files": {
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/lite-successor-qualification-admission.md": "dce14526fe3a6d47ce041ac2b4529a019134da39bc5362520865053bd55d11a7",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md": "5f9b59b850d8278f58f8c785e6b1fdbdedc79d634ebebfcd54c10a757a44bf37",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md": "94cf1e1361019528b1017ddfbfba6936ef9c255e10b937baca7757c5be949e02",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/additions-first-attempt.json": "9b0b1170bc3bf036f70956a70f2ac7b76d7e262766db789c6c60cfb3c7de3186",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/additions-first-effort.json": "3bfe96dc3c0d70e591371da1a417299cd434f7e4fe4a4b2b9e242ac11a50a02e",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/additions-first-failure.txt": "0fc45032bd1d7441a6f6b90e71d3403ba09afbf8babb0916e9d24ff6b6ce553a",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/additions-review.md": "15cee0ef76ff39203d760f7dbd650fe7de9ae4f43b6dfa99ad743ca8cf68fbf3",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/installed-effort-repair-amendment.md": "15c46ff49c7dd3ecff9f3712ab8f99b13818741f6c057aa971b2e075f57f4cb3",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/repair-admission-message.txt": "a58eb0f8b92188774258263df021989dc6c7bc3755996da33c868b8ff886bbb5",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/status.yaml": "67aa587ce94205f38df4ce78c7af92553f6bcf76b27843ccb299821598219676",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/task.yaml": "2fab5fd2b31c05b43968ce59193c4f79977906c99be044a352888d62ed4ff884",
+    "IMPLEMENT.md": "f9b431cda3e8f625370c490cac134799a810c8b493ac22c1d7df3a89638b12fc"
+  },
+  "message_sha256": "a58eb0f8b92188774258263df021989dc6c7bc3755996da33c868b8ff886bbb5",
+  "validation_exit": 0,
+  "validation_log_sha256": "08990a5d5a24d834ccfd5099a9748247ef76b85d7699ffed7d38f2a62b4781d1"
+}

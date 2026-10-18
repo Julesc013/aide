@@ -1,0 +1,111 @@
+{
+  "assets": {
+    ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt": {
+      "sha256": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.0.0.manifest.json": {
+      "sha256": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb",
+      "size_bytes": 4955
+    },
+    ".aide/release/stable/aide-lite-v1.0.0.tar.gz": {
+      "sha256": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a",
+      "size_bytes": 837890
+    },
+    ".aide/release/stable/aide-lite-v1.0.0.zip": {
+      "sha256": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b",
+      "size_bytes": 1176436
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt": {
+      "sha256": "01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.manifest.json": {
+      "sha256": "38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f",
+      "size_bytes": 6957
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.tar.gz": {
+      "sha256": "7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44",
+      "size_bytes": 885826
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.zip": {
+      "sha256": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc",
+      "size_bytes": 1231497
+    }
+  },
+  "candidate": "1.1.0",
+  "checks": [
+    "actual_interrupted_upgrade_refusal_and_exact_cli_recovery",
+    "actual_cross_version_rollback_refusal_preserves_target",
+    "supported_unchanged_target_detach_and_published_reinstall_recovery"
+  ],
+  "commands": [
+    {
+      "exit_code": 0,
+      "label": "recovery-old-install-preview",
+      "record_sha256": "7cf3b254f2d195eb8f580121df1701ff921b8f6f8f975c349c769852a20449a1"
+    },
+    {
+      "exit_code": 0,
+      "label": "recovery-old-install-apply",
+      "record_sha256": "e3f2030da47bcdcec7554d5ac85aaaa9cb95cced1b7c5eb29f25474f4ea8e63a"
+    },
+    {
+      "exit_code": 3,
+      "label": "recovery-ordinary",
+      "record_sha256": "eb4a0c1078fd36b84a47ea83655dc7fe8acb1b77ffda13bb0c46659f16700c05"
+    },
+    {
+      "exit_code": 3,
+      "label": "recovery-wrong-plan",
+      "record_sha256": "5f39a7781b0a376b9db8f3d23075629695cec61c4e401fee107e8a3c49a7b6bd"
+    },
+    {
+      "exit_code": 0,
+      "label": "recovery-exact",
+      "record_sha256": "cb0c21677c1d80b102201928e708c8ede63a6110767c7bc8964469bbcb658781"
+    },
+    {
+      "exit_code": 1,
+      "label": "actual-path-change-rollback-preview",
+      "record_sha256": "c349398e35d817a4dd10ac029f98f89de6225ecf7695eb7034b8df203d3586a0"
+    },
+    {
+      "exit_code": 1,
+      "label": "actual-path-change-rollback-apply",
+      "record_sha256": "c90f059b9cc4a4cf3b4878d480faf9b44b5a5efabbf38675f3b1800e629eebb3"
+    },
+    {
+      "exit_code": 0,
+      "label": "downgrade-detach-preview",
+      "record_sha256": "638615e013978e811c2c89e2304c39674940355997cb2b0c5e63560f394f4b0e"
+    },
+    {
+      "exit_code": 3,
+      "label": "downgrade-detach-wrong-plan",
+      "record_sha256": "718622cd869ec477f1cf91e027af816b3f4725a517d558dbd127449c8461d720"
+    },
+    {
+      "exit_code": 0,
+      "label": "downgrade-detach-exact",
+      "record_sha256": "4eb62bb26b6a05af40a314c1f4dca0940e7fdb13cb856dc9678389017d1d5432"
+    },
+    {
+      "exit_code": 0,
+      "label": "downgrade-published-reinstall-preview",
+      "record_sha256": "e844c27cff719efb572f100ce3917056d7dfb4302105c6c0b43670a5f4ec1996"
+    },
+    {
+      "exit_code": 0,
+      "label": "downgrade-published-reinstall-apply",
+      "record_sha256": "aebf077a376c45bd188552d090d31d17edf79221413c322ed5e088cc5c915a27"
+    }
+  ],
+  "fixture_retired": true,
+  "mode": "recovery",
+  "model_calls": 0,
+  "new_policy_sha256": "eab8e17ac56481ae07ad66a66b14b591de938f9af0c65278b202dd06fa0b784d",
+  "old_policy_sha256": "41bf7bcc170dc4d91ef93dc7140afb2fb7b471c5343f460bfc9d2fcb8ecb955b",
+  "published_predecessor": "1.0.0",
+  "status": "PASS"
+}

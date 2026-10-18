@@ -1,0 +1,320 @@
+{
+  "assets": {
+    ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt": {
+      "sha256": "01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.manifest.json": {
+      "sha256": "38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f",
+      "size_bytes": 6957
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.tar.gz": {
+      "sha256": "7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44",
+      "size_bytes": 885826
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.zip": {
+      "sha256": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc",
+      "size_bytes": 1231497
+    }
+  },
+  "commands": [
+    {
+      "exit_code": 0,
+      "label": "install-preview",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\install-preview.json",
+      "sha256": "2e58e83941b96008c66df32bb23516089c9f1d73bf20a160d9babd58269573e2"
+    },
+    {
+      "exit_code": 0,
+      "label": "install-apply",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\install-apply.json",
+      "sha256": "97b29b1b4911f291d66f3e6dae543728ecbb2230c0b813e855bd48716635873a"
+    },
+    {
+      "exit_code": 0,
+      "label": "current-False-False",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\current-False-False.json",
+      "sha256": "a6332689d547eae07b9676761ea4ac9cc984cd0726688c61e972cee26e90130d"
+    },
+    {
+      "exit_code": 0,
+      "label": "current-False-True",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\current-False-True.json",
+      "sha256": "7810b217664523a1ba2f7cd483ac422a92ce294dafa16c428149efd7aeb64dd3"
+    },
+    {
+      "exit_code": 0,
+      "label": "current-True-False",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\current-True-False.json",
+      "sha256": "5387287b375052100403eb9466f2ea4a88055fb1ac5426eb247f24d7cfc5f3c1"
+    },
+    {
+      "exit_code": 0,
+      "label": "current-True-True",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\current-True-True.json",
+      "sha256": "160c19752333bfd5f70b7842b7ff3332813196284ab3cb3e1f119b57e071cffb"
+    },
+    {
+      "exit_code": 0,
+      "label": "resume-plan-False-False",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\resume-plan-False-False.json",
+      "sha256": "320bd89a1fcd2fee6072aa7341d31087a2cf5bae459430c67e2d2b4e7006645e"
+    },
+    {
+      "exit_code": 0,
+      "label": "resume-plan-False-True",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\resume-plan-False-True.json",
+      "sha256": "fac060e84a20279a09c4650af046a160a8a0cc49b01265c21fac235342b5577e"
+    },
+    {
+      "exit_code": 0,
+      "label": "resume-plan-True-False",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\resume-plan-True-False.json",
+      "sha256": "3c87cdba812c827f0cc99e8083916c9ab03996434779b3252b998905c286baa6"
+    },
+    {
+      "exit_code": 0,
+      "label": "resume-plan-True-True",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\resume-plan-True-True.json",
+      "sha256": "db10291624f5c56279e1700e1e5846987acddccbdb0dea7c373df40f38c3dae6"
+    },
+    {
+      "exit_code": 1,
+      "label": "current-escape",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\current-escape.json",
+      "sha256": "c7e35a0219241cf0565c09b43f99c0ee6c435c250ec260ce491ba348d543b796"
+    },
+    {
+      "exit_code": 1,
+      "label": "resume-plan-escape",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\resume-plan-escape.json",
+      "sha256": "a2a75cb3cc89fd10eb28d2b8c73da997983be1047aba95c8495b9a536d849633"
+    },
+    {
+      "exit_code": 1,
+      "label": "current-broken-default",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\current-broken-default.json",
+      "sha256": "c61e63d2a914d34b56c5ef2f4604de310ad81a5d21c9d1acf5b4f65afbcfab3e"
+    },
+    {
+      "exit_code": 0,
+      "label": "current-explicit-survives",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\current-explicit-survives.json",
+      "sha256": "160c19752333bfd5f70b7842b7ff3332813196284ab3cb3e1f119b57e071cffb"
+    },
+    {
+      "exit_code": 1,
+      "label": "resume-plan-broken-default",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\resume-plan-broken-default.json",
+      "sha256": "18488ec70b6c11ac81bd7d876f173666ab3f278e68427f79ecf4e0d6bc9ebdd0"
+    },
+    {
+      "exit_code": 0,
+      "label": "resume-plan-explicit-survives",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\resume-plan-explicit-survives.json",
+      "sha256": "db10291624f5c56279e1700e1e5846987acddccbdb0dea7c373df40f38c3dae6"
+    },
+    {
+      "exit_code": 0,
+      "label": "git-policy",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\git-policy.json",
+      "sha256": "f397be277c1efcd7e29bb1a2b45b29fa8fa5ce4ba6efbc4790c4e1d0b9798580"
+    },
+    {
+      "exit_code": 0,
+      "label": "git-detect",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\git-detect.json",
+      "sha256": "cbb38d92dc0cbe1addd9728031635677356187e8fe184ce21a1364c4c7c67609"
+    },
+    {
+      "exit_code": 0,
+      "label": "git-plan",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\git-plan.json",
+      "sha256": "36f5ef5c87314e60a609313843e758240c05ab35a9a055b6cddbfd32050d88ea"
+    },
+    {
+      "exit_code": 0,
+      "label": "git-project-override",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\git-project-override.json",
+      "sha256": "f397be277c1efcd7e29bb1a2b45b29fa8fa5ce4ba6efbc4790c4e1d0b9798580"
+    },
+    {
+      "exit_code": 0,
+      "label": "review-pack",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\review-pack.json",
+      "sha256": "fa6ed875238bbc0b587526200cf8fd623d9e5dcd41e29bc003889400ce47ab1b"
+    },
+    {
+      "exit_code": 0,
+      "label": "quality-ledger",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\quality-ledger.json",
+      "sha256": "8ecff47b637844a89728852fea55613d07296118802e346fcf3426adb4773f70"
+    },
+    {
+      "exit_code": 0,
+      "label": "quality-reuse",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\quality-reuse.json",
+      "sha256": "c416ab31161e26bc007a9472bff623648f4a21adc02e2f537fe2804c7d78dc0a"
+    },
+    {
+      "exit_code": 0,
+      "label": "quality-human",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\quality-human.json",
+      "sha256": "14dd5716d7642a6d5a6546bfcdafcbc26fec36611fc9a246eeadcd5897916a63"
+    },
+    {
+      "exit_code": 0,
+      "label": "quality-json",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\quality-json.json",
+      "sha256": "d0d12bce8cc90dc0986d229d248462a327276e89b9a73703fd2a05924aa29299"
+    },
+    {
+      "exit_code": 1,
+      "label": "quality-unindexed",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\quality-unindexed.json",
+      "sha256": "481727216126fcc25da1ca3058735a29b125de41f34874a87f712f8526dcdf3b"
+    },
+    {
+      "exit_code": 0,
+      "label": "quality-stale",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\quality-stale.json",
+      "sha256": "d0d12bce8cc90dc0986d229d248462a327276e89b9a73703fd2a05924aa29299"
+    },
+    {
+      "exit_code": 2,
+      "label": "effort-human",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\effort-human.json",
+      "sha256": "50e3507f095e6c324ec298854a7b2ab5d7db80e85daa4357011faa02ef54c286"
+    },
+    {
+      "exit_code": 2,
+      "label": "effort-json",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\effort-json.json",
+      "sha256": "622dece0e6a83ec7aaa502fdda16d81cd7b4404006ada37c126b29c3c5e27804"
+    },
+    {
+      "exit_code": 1,
+      "label": "effort-escape",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\effort-escape.json",
+      "sha256": "fe0e2dc8b777afea85841a17ebf956ea77435c06508171b55a59ff58dfd032c7"
+    },
+    {
+      "exit_code": 1,
+      "label": "effort-changed-input",
+      "path": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\a9f7c73da09c4867bc9d6a8310edd8d4\\output\\effort-changed-input.json",
+      "sha256": "31c00f12d4f46ed244fe55cadafe0e0e03d44ded3dcc95aa7bc0afcf2517435e"
+    }
+  ],
+  "fixture_retired": true,
+  "forms": {
+    "git detect": {
+      "allowed_report_writes": [],
+      "command": "git-detect",
+      "exit_code": 0
+    },
+    "git plan": {
+      "allowed_report_writes": [],
+      "command": "git-plan",
+      "exit_code": 0
+    },
+    "git policy": {
+      "allowed_report_writes": [],
+      "command": "git-policy",
+      "exit_code": 0
+    },
+    "job effort --work-set <path>": {
+      "allowed_report_writes": [],
+      "command": "effort-human",
+      "exit_code": 2
+    },
+    "job effort --work-set <path> --json": {
+      "allowed_report_writes": [],
+      "command": "effort-json",
+      "exit_code": 2
+    },
+    "quality explain-file <path>": {
+      "allowed_report_writes": [],
+      "command": "quality-human",
+      "exit_code": 0
+    },
+    "quality explain-file <path> --json": {
+      "allowed_report_writes": [],
+      "command": "quality-json",
+      "exit_code": 0
+    },
+    "quality ledger": {
+      "allowed_report_writes": [
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/reports/file-quality-summary.md",
+        ".aide/reports/module-quality-report.md",
+        ".aide/reports/docs-consistency-report.md",
+        ".aide/reports/test-coverage-map.md",
+        ".aide/reports/reuse-modularity-report.md"
+      ],
+      "command": "quality-ledger",
+      "exit_code": 0
+    },
+    "quality reuse": {
+      "allowed_report_writes": [],
+      "command": "quality-reuse",
+      "exit_code": 0
+    },
+    "review-pack": {
+      "allowed_report_writes": [
+        ".aide/context/latest-review-packet.md"
+      ],
+      "command": "review-pack",
+      "exit_code": 0
+    },
+    "task current": {
+      "allowed_report_writes": [],
+      "command": "current-False-False",
+      "exit_code": 0
+    },
+    "task current --json": {
+      "allowed_report_writes": [],
+      "command": "current-False-True",
+      "exit_code": 0
+    },
+    "task current --task-id <ID>": {
+      "allowed_report_writes": [],
+      "command": "current-True-False",
+      "exit_code": 0
+    },
+    "task current --task-id <ID> --json": {
+      "allowed_report_writes": [],
+      "command": "current-True-True",
+      "exit_code": 0
+    },
+    "task resume-plan": {
+      "allowed_report_writes": [
+        ".aide/reports/task-os-resume-plan.md"
+      ],
+      "command": "resume-plan-False-False",
+      "exit_code": 0
+    },
+    "task resume-plan --json": {
+      "allowed_report_writes": [],
+      "command": "resume-plan-False-True",
+      "exit_code": 0
+    },
+    "task resume-plan --task-id <ID>": {
+      "allowed_report_writes": [
+        ".aide/reports/task-os-resume-plan.md"
+      ],
+      "command": "resume-plan-True-False",
+      "exit_code": 0
+    },
+    "task resume-plan --task-id <ID> --json": {
+      "allowed_report_writes": [],
+      "command": "resume-plan-True-True",
+      "exit_code": 0
+    }
+  },
+  "installed_cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+  "model_calls": 0,
+  "release_qualification": "other gates pending",
+  "status": "PASS",
+  "usage_fixture": "synthetic",
+  "whole_task_cost": null
+}

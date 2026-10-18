@@ -1,0 +1,22 @@
+{
+  "baseline": "debd588622096047f19871f238580c5e7207849e",
+  "effect_sha256": "0c2d38c3402deb71c162160fa1d06a01741a715f590422ea23a8aa28940f3ee6",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md": "3d0567652972185f698b15332ccc7b59e649e936222c92cd3537484c6b14a7a0",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md": "3a410ae344e005c81c32fa391c6e746e17f76f4cd4ab10c76fe8cdfec267ce5a",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/closure-effect.md": "0c2d38c3402deb71c162160fa1d06a01741a715f590422ea23a8aa28940f3ee6",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/closure-message.txt": "e63ca9d30d2cc5c8852ef573bb583b209caf41161b5a8d61c55cce1c1fe42c2c",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/qualification-summary.json": "0c0d8a3400e2042fe7f3701e8ed933a6b2c7c870b81d70114abd77a934db0583",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replay-checkpoint-push.json": "67c36c28cac80116fc99e5a49851b7f250071d1bf8a6159cba78d2d700fa8b79",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replay-qualified.json": "2d9a998fac8d0dd911d9f5dd7104c369bf20e27d7adc9aad9839e35b690713ba",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replay-reservation-review.md": "6bdee626c9783df169685b42b5df65634c523fa19a8244e5e1769898da3a9f01",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replay-retained-inventory.json": "ad28d3d91df356610084d8e882b644f8f9dd81fe0ec4bf711f92955b3fe32739",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/status.yaml": "e484037d49390b7636864a975f4ca643d8c16bf46e961dcd5c82ccc1c0313d99",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/task.yaml": "e0ebf68e730aaf3e3f6c8eeb65a43df4d272eda3d7f7ad600cd92db05d056075",
+    "DOCUMENTATION.md": "e1abab7338905a69f371e2615fd3b0d997da27ef2d9a703210cd08982f7ca552",
+    "IMPLEMENT.md": "356a60e13e9ed5e5f98717e8c316718c4586aa4c6639220e3de1e0b1844e9244",
+    "PLANS.md": "9875ad5fa974e1ec91f1faab66305eba4af1d0ce45f09913d32b9690ed101422"
+  },
+  "message_sha256": "e63ca9d30d2cc5c8852ef573bb583b209caf41161b5a8d61c55cce1c1fe42c2c",
+  "validation": "All28 original records retired, four failed exits preserved; exact replay PASS; message/diff checks PASS; no product/package change; final release gates open"
+}

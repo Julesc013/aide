@@ -1,0 +1,36 @@
+docs(lite): close consumer and archive replay evidence
+
+## Summary
+- Record the qualified consumer, published-predecessor recovery and exact archive replay outcomes.
+
+## Why
+- A concise current view must distinguish demonstrated behavior from pending release decisions.
+
+## Changed
+- Retain allocation28 replay identity, operation results, output inventory and safe retirement.
+- Link all applicable consumer evidence and preserved failures in one current summary.
+- Keep fixed preview, historical dispositions, final review and publication obligations explicit.
+
+## Validation
+- PASS exact ZIP and TAR regeneration; all53 release and863 pack files preserved.
+- PASS doctor, full validate, stable validation and pack status; one existing advisory retained.
+- PASS collection hashes, quiescence, scratch retirement and reservation release.
+- PASS prior replacement consumers and actual predecessor upgrade/recovery for their exact subjects.
+- NOT RUN fixed preview29 and final release effects; historical message dispositions pending.
+
+## Changelog
+- Docs: Record completed consumer/replay qualification and precise remaining release gates.
+
+## Risks
+- Candidate1.1.0 remains unpublished and is not promoted to dev/main by this checkpoint.
+- Outer-client/read isolation and whole-outcome efficiency remain unqualified.
+
+## Follow-up
+- Resolve owner message dispositions, complete fixed preview and final review before integration.
+
+AIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
+AIDE-Phase: consumer-replay-evidence-closure
+AIDE-Result: PARTIAL
+AIDE-Scope: qualification evidence and current documentation
+AIDE-Token-Impact: unknown
+AIDE-Quality-Gate: independent source and effect review

@@ -1,0 +1,159 @@
+{
+  "assets": {
+    ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt": {
+      "sha256": "01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.manifest.json": {
+      "sha256": "38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f",
+      "size_bytes": 6957
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.tar.gz": {
+      "sha256": "7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44",
+      "size_bytes": 885826
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.zip": {
+      "sha256": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc",
+      "size_bytes": 1231497
+    }
+  },
+  "consumer_qualification": "pending",
+  "delivered_cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+  "identity": {
+    "artifact_state": "immutable_release_payload",
+    "intended_channel": "stable",
+    "lifecycle_apply_platform": "Windows only; exact tested environment in effect evidence",
+    "offline_scope": "local CLI after archive acquisition; no native network isolation claim",
+    "predecessor_matrix": [
+      {
+        "assets": [
+          {
+            "path": ".aide/release/stable/aide-lite-v1.0.0.zip",
+            "sha256": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b",
+            "size_bytes": 1176436
+          },
+          {
+            "path": ".aide/release/stable/aide-lite-v1.0.0.tar.gz",
+            "sha256": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a",
+            "size_bytes": 837890
+          },
+          {
+            "path": ".aide/release/stable/aide-lite-v1.0.0.manifest.json",
+            "sha256": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb",
+            "size_bytes": 4955
+          },
+          {
+            "path": ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt",
+            "sha256": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83",
+            "size_bytes": 274
+          }
+        ],
+        "manifest_sha256": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb",
+        "profile_id": "aide-lite-local-windows",
+        "source_commit": "a17cf4b3dbec5caa236c62ee2fa23b31aa09c8fc",
+        "source_tree": "450cbd28aed578bbb8990595e2447cf081df2321",
+        "tag": "aide-lite-v1.0.0",
+        "tag_commit": "0f293eb6a99dbd444bfa35016007b13451c49275",
+        "version": "1.0.0"
+      }
+    ],
+    "profile_id": "aide-lite-local-windows",
+    "public_cli_forms": [
+      "doctor",
+      "validate",
+      "context",
+      "pack --task <task>",
+      "verify --evidence <evidence-path>",
+      "task inspect",
+      "task status",
+      "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+      "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+      "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+      "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+      "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+      "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+      "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+      "plan-removal --target <target>",
+      "apply-removal --target <target> --expect-plan <digest>",
+      "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+      "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+      "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+      "job inspect --config <local-config> --manifest <job-json>",
+      "job run --config <local-config> --manifest <job-json>",
+      "job run --config <local-config> --manifest <job-json> --full",
+      "job recover --config <local-config>",
+      "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+      "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>",
+      "job usage --stream <codex-exec-jsonl>",
+      "job usage --attempt-set <attempt-roster-json>",
+      "job context",
+      "task current",
+      "task current --json",
+      "task current --task-id <ID>",
+      "task current --task-id <ID> --json",
+      "task resume-plan",
+      "task resume-plan --json",
+      "task resume-plan --task-id <ID>",
+      "task resume-plan --task-id <ID> --json",
+      "git policy",
+      "git detect",
+      "git plan",
+      "review-pack",
+      "quality ledger",
+      "quality reuse",
+      "quality explain-file <path>",
+      "quality explain-file <path> --json",
+      "job effort --work-set <path>",
+      "job effort --work-set <path> --json"
+    ],
+    "release_axis": "aide_lite_portable_package",
+    "schema_version": "aide.stable-release-identity.v1",
+    "source_commit": "447e393b3f87004641b7387c1f33828ac1ee3a85",
+    "source_pack_checksums_sha256": "fc457bbee3ccd3f9dd534c33cbf538135f41b57752e66a48d287be4a9cce3b70",
+    "source_repo": "julesc013/aide",
+    "source_tree": "e9407c08ecd5e640a4c3223d2cf8a0cbfdd8636d",
+    "successor_contract_sha256": "2623c47f8d60b41f9f584f2a1da730d9b6898c3026a6e45420433a98028cc152",
+    "support_mode": "companion",
+    "support_tier_candidate": "T3",
+    "tag": "aide-lite-v1.1.0",
+    "version": "1.1.0",
+    "version_policy_sha256": "ab4f891d8cc3f6c9f60a0b3cab6feaf0eed119ec856eba5036e5314c89abc1f6"
+  },
+  "model_calls": 0,
+  "outer_containment": "unqualified",
+  "preserved_pack_files": 863,
+  "preserved_release_files": 49,
+  "prior_candidate_evidence": "preserved; not evidence for replacement bytes",
+  "public_release": "unchanged_1.0.0",
+  "read_isolation": "unqualified",
+  "route": "existing Windows Job managed resource runner",
+  "status": "PASS_BUILD_ONLY",
+  "superseded_candidate": {
+    ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt": {
+      "sha256": "a332877c62c47ec98fdd3e6d4906fdaa249560137f381b26ffcf503a7dcc8ee1",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.manifest.json": {
+      "sha256": "01d55f36cc12e6b6c49cf73b3c8c9e07429c180b6f433c7ecaf2e5c41f82c3f7",
+      "size_bytes": 6957
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.tar.gz": {
+      "sha256": "0d6af134c3bcce7726386ef41e0183f3dc88441626b1ec75c20a6c255ed579ac",
+      "size_bytes": 881284
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.zip": {
+      "sha256": "089d75da1675ad461264d4b526788aeaacac6cde1bcddd94b3d6484fa20c3e36",
+      "size_bytes": 1226709
+    }
+  }
+}

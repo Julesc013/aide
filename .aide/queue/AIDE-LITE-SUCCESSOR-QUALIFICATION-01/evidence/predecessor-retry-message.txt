@@ -1,0 +1,35 @@
+test(lite): correct actual predecessor optional-file fixture
+
+## Summary
+- Preserve the failed actual-predecessor attempt and correct its optional-file setup.
+
+## Why
+- The selected optional path was absent from both real archives, so setup failed before customization checks.
+
+## Changed
+- Select a shipped optional member and assert archive bytes and old receipt ownership before customization.
+- Retain original failure, completed observations, collection and retirement evidence.
+- Prepare one bounded retry and the unrun recovery/replay effects under unchanged profiles.
+
+## Validation
+- PASS collection hashes, quiescence, scratch retirement and reservation release for failed allocation24.
+- FAIL original predecessor fixture setup; no product defect is established.
+- PASS syntax and diff checks; corrected operational checks remain NOT RUN until exact review.
+
+## Changelog
+- Tests: Exercise disabled optional-file ownership with a real shipped member.
+- Docs: Preserve failed qualification evidence and remaining recovery obligations.
+
+## Risks
+- Corrected predecessor and final recovery/replay still require execution.
+- Historical owner dispositions and release gates remain open.
+
+## Follow-up
+- Run reviewed allocations25-27 and retain all outcomes before final preview and integration.
+
+AIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
+AIDE-Phase: actual-predecessor-fixture-correction
+AIDE-Result: PARTIAL
+AIDE-Scope: fixture and retained qualification evidence
+AIDE-Token-Impact: unknown
+AIDE-Quality-Gate: exact independent source and effect review

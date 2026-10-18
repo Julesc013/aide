@@ -188,3 +188,6 @@ task_brief_result_ref: .aide/queue/AIDE-COMPACT-COMMUNICATION-01/REPORT.md
 historical_presentation_amendment_ref: .aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/REPORT.md
 historical_presentation_integration_receipt: .aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/integration-result.log
 retained_successor_range: PASS_WITH_WARNINGS_18_commits_3_advisories_raw_failures_preserved
+
+successor_reconciliation_ref: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/status.yaml
+successor_frozen_candidate_ref: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json

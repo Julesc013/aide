@@ -1,0 +1,36 @@
+test(lite): preserve consumer passes and qualify actual recovery
+
+## Summary
+- Retain the replacement consumer evidence and prepare actual predecessor recovery.
+
+## Why
+- Published predecessor behavior and precise recovery limits need actual archive evidence.
+
+## Changed
+- Preserve all eight original and eighteen additional passes with a 56-form command map.
+- Prepare real upgrade and interrupted resolution cases using published 1.0.0.
+- Distinguish path-set rollback refusal from explicit unchanged-target detach and reinstall.
+- Prepare scratch-only deterministic replay through existing release owners.
+
+## Validation
+- PASS all nine replacement consumer jobs; collected hashes and retirement verified.
+- PASS exact command mapping, with expected warnings and refusals retained.
+- PASS syntax and diff checks; predecessor and replay jobs NOT RUN pending review.
+
+## Changelog
+- Tests: Qualify the replacement archives across the original and additional CLI forms.
+- Docs: State actual predecessor recovery limits without weakening supported behavior.
+
+## Risks
+- Overlay downgrade remains manual reconciliation; automatic path-set rollback is unsupported.
+- Three historical message dispositions and final release gates remain open.
+
+## Follow-up
+- Run actual predecessor, supported recovery and replay before fixed preview and promotion.
+
+AIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01
+AIDE-Phase: actual-predecessor-recovery
+AIDE-Result: PASS
+AIDE-Scope: consumer evidence and bounded recovery recipes
+AIDE-Token-Impact: unknown
+AIDE-Quality-Gate: exact independent source and effect review

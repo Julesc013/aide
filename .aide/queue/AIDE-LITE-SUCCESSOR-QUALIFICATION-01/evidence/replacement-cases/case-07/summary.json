@@ -1,0 +1,9 @@
+{
+  "default_report_unchanged": true,
+  "delivered_cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+  "explicit_report_changed": true,
+  "lifecycle_apply_authorized": false,
+  "schema": "aide.taskos-delivered-inspection-canary.v1",
+  "status": "PASS",
+  "zip_sha256": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc"
+}

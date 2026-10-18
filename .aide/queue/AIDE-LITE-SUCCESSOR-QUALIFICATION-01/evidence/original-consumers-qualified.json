@@ -1,0 +1,333 @@
+{
+  "assets": {
+    ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt": {
+      "sha256": "a332877c62c47ec98fdd3e6d4906fdaa249560137f381b26ffcf503a7dcc8ee1",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.manifest.json": {
+      "sha256": "01d55f36cc12e6b6c49cf73b3c8c9e07429c180b6f433c7ecaf2e5c41f82c3f7",
+      "size_bytes": 6957
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.tar.gz": {
+      "sha256": "0d6af134c3bcce7726386ef41e0183f3dc88441626b1ec75c20a6c255ed579ac",
+      "size_bytes": 881284
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.zip": {
+      "sha256": "089d75da1675ad461264d4b526788aeaacac6cde1bcddd94b3d6484fa20c3e36",
+      "size_bytes": 1226709
+    }
+  },
+  "cases": [
+    {
+      "allocation": 2,
+      "case": 0,
+      "collected_manifest": {
+        "logs": "feb3f41c2da21de906ff52585c7be4274826941938b0eff20ab5c12c0701e3bb",
+        "output": "864275f962edd7bc49e69b737d6a9e02f223c8f2f6e4dde6a6a143f05a4b6735"
+      },
+      "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+      "elapsed_consumer_seconds": 245.23,
+      "job_id": "387a6c60d97c46aa963d979f6d138637",
+      "manifest_digest": "f679dd51756f9e8514ea5d2511b139307ed9eedb3ad3103f3b1c7f4ff3c54192",
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 312311808,
+        "scratch_bytes": 35243265
+      },
+      "phase": "retired",
+      "raw_controller_receipt_sha256": "9a6f5260766a045c3cce9d6eec6f645838b6bdbc83e317dd3bc92f4549dac320",
+      "raw_output_bytes": 3067966,
+      "reservation_released": true,
+      "result": {
+        "bytes": 65,
+        "creation_filetime": 134367365900599490,
+        "exit_code": 0,
+        "io_errors": [],
+        "job_id": "387a6c60d97c46aa963d979f6d138637",
+        "pid": 1856,
+        "quiescent": true,
+        "reason": "exited"
+      },
+      "retained_path": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\387a6c60d97c46aa963d979f6d138637",
+      "retained_receipt_sha256": "5a240385fca269de0ac0fb9326ebe38af8e45e9cc75f7fcb8cba8a426a73ea1b",
+      "scratch_absent": true,
+      "source_commit": "651464ae3e86b32b11080194d0d06beb88188dd4",
+      "source_tree": "2790b74e2569032cc6f0aa5e1d102503110d9a69",
+      "summary_original_sha256": "c1da94c22f951cb343f9d342e15bd338a07a4a94a083ac1cb9f99a80d59204a7",
+      "summary_ref": "evidence/cases/case-00/summary.json"
+    },
+    {
+      "allocation": 3,
+      "case": 1,
+      "collected_manifest": {
+        "logs": "9a4d4ccb6a487fbd1306d08c6b6521399a81f198cac0a6b8bd9f0342f69908b7",
+        "output": "a2765ad546c59a67767737ac02d22e25f03b6c20e17987964561e262235ba9e1"
+      },
+      "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+      "elapsed_consumer_seconds": 311.72,
+      "job_id": "f145eaefc88848a2ba97fdf55ecf7073",
+      "manifest_digest": "f97c8e8e353af172f2e4a18c9de3ed125af1dd88762656eff32e38c44d9e5e8c",
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 260915200,
+        "scratch_bytes": 30079056
+      },
+      "phase": "retired",
+      "raw_controller_receipt_sha256": "2ccb385a6cf4d2793e0fcebd3166440be92c1d2b8f981f6a6e8f8f8f218c5a05",
+      "raw_output_bytes": 4176383,
+      "reservation_released": true,
+      "result": {
+        "bytes": 65,
+        "creation_filetime": 134367368424567473,
+        "exit_code": 0,
+        "io_errors": [],
+        "job_id": "f145eaefc88848a2ba97fdf55ecf7073",
+        "pid": 11268,
+        "quiescent": true,
+        "reason": "exited"
+      },
+      "retained_path": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\f145eaefc88848a2ba97fdf55ecf7073",
+      "retained_receipt_sha256": "790091fe74b4d15fc587b19f65d82364a17dae34d634f7877712fa55d14f63eb",
+      "scratch_absent": true,
+      "source_commit": "651464ae3e86b32b11080194d0d06beb88188dd4",
+      "source_tree": "2790b74e2569032cc6f0aa5e1d102503110d9a69",
+      "summary_original_sha256": "fa668ad6588b4033f8af4c9db795bc2cd2ad6f7a573b83b056b88d8587fd0833",
+      "summary_ref": "evidence/cases/case-01/summary.json"
+    },
+    {
+      "allocation": 4,
+      "case": 2,
+      "collected_manifest": {
+        "logs": "ac07c1a79f2e16084a1cac96ae294f9688c6b05ac29cf5ce44f9335902a017c4",
+        "output": "c16f5214d52fd31ef692ef021d215902e45f0d7bac65c7d922101b58341173dc"
+      },
+      "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+      "elapsed_consumer_seconds": 110.446,
+      "job_id": "a6e0d5062b01449191d76127d956a38a",
+      "manifest_digest": "43ff7252c2daf73010e6eff7b46c1232c58d50cdbab2a0f83152da1c58381850",
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 238325760,
+        "scratch_bytes": 14604438
+      },
+      "phase": "retired",
+      "raw_controller_receipt_sha256": "7f93f11358af37b379ec534981cc57b6022cf48f825ab200a11038329311ef04",
+      "raw_output_bytes": 219722,
+      "reservation_released": true,
+      "result": {
+        "bytes": 65,
+        "creation_filetime": 134367371608381866,
+        "exit_code": 0,
+        "io_errors": [],
+        "job_id": "a6e0d5062b01449191d76127d956a38a",
+        "pid": 3992,
+        "quiescent": true,
+        "reason": "exited"
+      },
+      "retained_path": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\a6e0d5062b01449191d76127d956a38a",
+      "retained_receipt_sha256": "9364da1bb6ae152a45980334acd51289a5dc573d801967af3dd2737e618b0ed9",
+      "scratch_absent": true,
+      "source_commit": "651464ae3e86b32b11080194d0d06beb88188dd4",
+      "source_tree": "2790b74e2569032cc6f0aa5e1d102503110d9a69",
+      "summary_original_sha256": "9af73c21b06053ce6d6485f6f75ba76eaa2de86d5cf9fe92068821490b42ea34",
+      "summary_ref": "evidence/cases/case-02/summary.json"
+    },
+    {
+      "allocation": 5,
+      "case": 3,
+      "collected_manifest": {
+        "logs": "95ca1c2bc6541003d7577dfb8cbfaaf5eb5b3e59455c9893e2d2ae192a91e49b",
+        "output": "13f2d7a1c7768761ea2ca07330a3dd53ed9cecd9f723c1dec8e4dce7ff33ee88"
+      },
+      "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+      "elapsed_consumer_seconds": 103.0,
+      "job_id": "9b6a45fe16974ea088d0455647dda7ba",
+      "manifest_digest": "6ac18a4a533a23be374166df77571115a7768193a2c3babb0bb747e90748e6c7",
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 312492032,
+        "scratch_bytes": 23471803
+      },
+      "phase": "retired",
+      "raw_controller_receipt_sha256": "7cde58b9468151c98267934cb4fd9d7d651fdf40aba6557be6183896d893a9f2",
+      "raw_output_bytes": 132535,
+      "reservation_released": true,
+      "result": {
+        "bytes": 65,
+        "creation_filetime": 134367372758554466,
+        "exit_code": 0,
+        "io_errors": [],
+        "job_id": "9b6a45fe16974ea088d0455647dda7ba",
+        "pid": 6372,
+        "quiescent": true,
+        "reason": "exited"
+      },
+      "retained_path": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\9b6a45fe16974ea088d0455647dda7ba",
+      "retained_receipt_sha256": "cdce360233d7f5cf7ac040dfdc7209917a104c7d96b62b1510503dc65886111a",
+      "scratch_absent": true,
+      "source_commit": "651464ae3e86b32b11080194d0d06beb88188dd4",
+      "source_tree": "2790b74e2569032cc6f0aa5e1d102503110d9a69",
+      "summary_original_sha256": "b5c1dca30e15b3b768383c40f673cd6c80a8d7acc5d705d631ba4b34f21a971c",
+      "summary_ref": "evidence/cases/case-03/summary.json"
+    },
+    {
+      "allocation": 6,
+      "case": 4,
+      "collected_manifest": {
+        "logs": "b0649da3f7baebf0f1095fbca88d06244a49af7f61db3219d309ee940cfe7702",
+        "output": "731c54215e775c6f2a6d93487cb3cd79886db39a575a2b5b5f0cbe8e205a7248"
+      },
+      "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+      "elapsed_consumer_seconds": 55.054,
+      "job_id": "f3350f2681f24fb586025b417bd581a0",
+      "manifest_digest": "04393e523d67632a09c26f12f392698c6155b9e57a3a0b91b94b7fab092f3ddd",
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 233365504,
+        "scratch_bytes": 6042218
+      },
+      "phase": "retired",
+      "raw_controller_receipt_sha256": "94aa03fc9965e736102a8201da6ac455c70d4fdf963a7c0a74a969c52913962d",
+      "raw_output_bytes": 225269,
+      "reservation_released": true,
+      "result": {
+        "bytes": 65,
+        "creation_filetime": 134367373842572255,
+        "exit_code": 0,
+        "io_errors": [],
+        "job_id": "f3350f2681f24fb586025b417bd581a0",
+        "pid": 17424,
+        "quiescent": true,
+        "reason": "exited"
+      },
+      "retained_path": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\f3350f2681f24fb586025b417bd581a0",
+      "retained_receipt_sha256": "dedd8a2c438ae8be1595dba066ae2fea35b32cb0956525b87f1e4cf3f84247ef",
+      "scratch_absent": true,
+      "source_commit": "651464ae3e86b32b11080194d0d06beb88188dd4",
+      "source_tree": "2790b74e2569032cc6f0aa5e1d102503110d9a69",
+      "summary_original_sha256": "a1bd25c24525bf330644ac7520584b2b3081693b6f451df427c11f50358ce951",
+      "summary_ref": "evidence/cases/case-04/summary.json"
+    },
+    {
+      "allocation": 7,
+      "case": 5,
+      "collected_manifest": {
+        "logs": "6cb7d49462992110886f2bd90bac9d5807481519682751b7b528d69483644f1f",
+        "output": "15efbaec8214160df78a29035ae4ee17b989079f36f1f9f05e399333ae49d4d2"
+      },
+      "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+      "elapsed_consumer_seconds": 131.855,
+      "job_id": "4dc09e0f58904d76b4c1a3a4e22ea918",
+      "manifest_digest": "93d24eb4011ce507ffbc533017d36b44a6d783903c1e1d7403e9364d23d09dc3",
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 277012480,
+        "scratch_bytes": 18101881
+      },
+      "phase": "retired",
+      "raw_controller_receipt_sha256": "b1ad7256baf0219b407404fd01dd88b6a5d43c322521b1dadb3c7c851ed71602",
+      "raw_output_bytes": 1083466,
+      "reservation_released": true,
+      "result": {
+        "bytes": 65,
+        "creation_filetime": 134367374431166957,
+        "exit_code": 0,
+        "io_errors": [],
+        "job_id": "4dc09e0f58904d76b4c1a3a4e22ea918",
+        "pid": 16572,
+        "quiescent": true,
+        "reason": "exited"
+      },
+      "retained_path": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\4dc09e0f58904d76b4c1a3a4e22ea918",
+      "retained_receipt_sha256": "d059889d0ef89065f2ec7da631fcb5ed5bdb2e6b34d971c2b98a30a627519e45",
+      "scratch_absent": true,
+      "source_commit": "651464ae3e86b32b11080194d0d06beb88188dd4",
+      "source_tree": "2790b74e2569032cc6f0aa5e1d102503110d9a69",
+      "summary_original_sha256": "563a787c0e37e0e1fef2aa7e39a495dfd6dcfc1eeab09ad10ae9f358d1530c55",
+      "summary_ref": "evidence/cases/case-05/summary.json"
+    },
+    {
+      "allocation": 8,
+      "case": 6,
+      "collected_manifest": {
+        "logs": "72d3131ee7bf55820c6304919f7e5a9ee8f4ad01454d5292398eade6e87f6829",
+        "output": "729a4f225d9ac797dd328965a88d7af6fa5d28a2a956069d24ba8f23a30288c5"
+      },
+      "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+      "elapsed_consumer_seconds": 14.377,
+      "job_id": "552a133273034dafa732c0e9340af0f6",
+      "manifest_digest": "894cc7f0d7a45a70a2db410192f3de902e1e58d20c53f00d197c77cf1fdeb740",
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 251383808,
+        "scratch_bytes": 35794
+      },
+      "phase": "retired",
+      "raw_controller_receipt_sha256": "ad26cefc1dd29cc9768fb83cc53260d39058e8d81897f5809150f728c81778e9",
+      "raw_output_bytes": 35589,
+      "reservation_released": true,
+      "result": {
+        "bytes": 65,
+        "creation_filetime": 134367375797462503,
+        "exit_code": 0,
+        "io_errors": [],
+        "job_id": "552a133273034dafa732c0e9340af0f6",
+        "pid": 16984,
+        "quiescent": true,
+        "reason": "exited"
+      },
+      "retained_path": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\552a133273034dafa732c0e9340af0f6",
+      "retained_receipt_sha256": "f4f34a5a1f1df5abffee88aa4039e6bb85d70b41e5d489bdcb974ec133d7ebde",
+      "scratch_absent": true,
+      "source_commit": "651464ae3e86b32b11080194d0d06beb88188dd4",
+      "source_tree": "2790b74e2569032cc6f0aa5e1d102503110d9a69",
+      "summary_original_sha256": "e1ba7dfae4f4ac647796a116c664e618596f9dc7420d55ff89ddefdb0e6b28f0",
+      "summary_ref": "evidence/cases/case-06/summary.json"
+    },
+    {
+      "allocation": 9,
+      "case": 7,
+      "collected_manifest": {
+        "logs": "daec2bb0066f9199b76486ba246d8b1cb3ce4faa561c314b6b51edf2f2b7c3af",
+        "output": "6b35422094bd256a4c403d2ef4a485ad900b1f359e8b2cc99fa2e1264920e770"
+      },
+      "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+      "elapsed_consumer_seconds": 1.941,
+      "job_id": "1b50d7682b334ee8982cbc76e613d8e4",
+      "manifest_digest": "430eadeef94eb6fd6be1e54edb48cfffd7e6d6e84a7fba344187b39203d9bf71",
+      "peaks": {
+        "canonical_bytes": {},
+        "memory_bytes": 224362496,
+        "scratch_bytes": 2455
+      },
+      "phase": "retired",
+      "raw_controller_receipt_sha256": "986b79df00d73073034a6fd74aacaac824a29e18fe66c2198f00efd905bb2ee6",
+      "raw_output_bytes": 2250,
+      "reservation_released": true,
+      "result": {
+        "bytes": 65,
+        "creation_filetime": 134367375970847387,
+        "exit_code": 0,
+        "io_errors": [],
+        "job_id": "1b50d7682b334ee8982cbc76e613d8e4",
+        "pid": 2384,
+        "quiescent": true,
+        "reason": "exited"
+      },
+      "retained_path": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\1b50d7682b334ee8982cbc76e613d8e4",
+      "retained_receipt_sha256": "a669469a17f1b04f4f9ee3b80dfdb3361533c8c0836a236a3d1d0b12c9d91824",
+      "scratch_absent": true,
+      "source_commit": "651464ae3e86b32b11080194d0d06beb88188dd4",
+      "source_tree": "2790b74e2569032cc6f0aa5e1d102503110d9a69",
+      "summary_original_sha256": "dcb4ff13cb7fe0a4e466d52d18d392f00cb9c9a04b3ec2fa3337e54d4b067557",
+      "summary_ref": "evidence/cases/case-07/summary.json"
+    }
+  ],
+  "next": "additional18, actual published predecessor update/recovery, replay, final review",
+  "original38_form_mapping": "pending explicit command mapping; do not infer complete56 coverage",
+  "publication": "not_performed",
+  "source_canaries": "unchanged original modules; case6 CONFIG only to reviewed current-machine fixture",
+  "status": "PASS_ORIGINAL8",
+  "summary_projection": "JSON normalized to LF; original bytes preserved under each immutable retained output inventory",
+  "whole_model_cost": null
+}

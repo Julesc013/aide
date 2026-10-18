@@ -79,6 +79,7 @@ class AideLiteWorkflowTests(unittest.TestCase):
         for relative in (
             ".aide/templates/portable-apply/README.md",
             ".aide/templates/portable-apply/__init__.py",
+            "core/execution/work_effort.py",
         ):
             target = root / relative
             target.parent.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,150 @@
+{
+  "case-01/brown-changed-apply.json": {
+    "sha256": "7c52914e19bb837584221bd1d4b39f8ff069c15bbdd1bca4ccd31d95b00ae99b",
+    "size_bytes": 52182
+  },
+  "case-01/brown-changed-install-apply.json": {
+    "sha256": "5f1361540d08cb36966cf427b1df89352c93a84b2d9853e54022a0af1e045253",
+    "size_bytes": 1607
+  },
+  "case-01/brown-changed-install-preview.json": {
+    "sha256": "c1721919bc2001089b8427ab619940498fc60d7f9ed05d5ae32e44a4ad4c848d",
+    "size_bytes": 101345
+  },
+  "case-01/brown-changed-plan.json": {
+    "sha256": "8212618ffdaefae98c442cc34ef8ad5b6f714899d287e2dfcc54d0b5c6d23650",
+    "size_bytes": 762116
+  },
+  "case-01/brown-removal-apply.json": {
+    "sha256": "4b5d2dcad4c4f2403e7e9cccfaa36dd8eab29182fb918b98f01f5c63521b1506",
+    "size_bytes": 52149
+  },
+  "case-01/brown-removal-install-apply.json": {
+    "sha256": "8e5b26ba11915b5013a09216ac9a676961be3f21323f261ffa2720632d54a131",
+    "size_bytes": 1591
+  },
+  "case-01/brown-removal-install-preview.json": {
+    "sha256": "491e99b0ea96528583dc3ee9df7cbf660b6eddc81b5c227a6ba2b22102752a2d",
+    "size_bytes": 101329
+  },
+  "case-01/brown-removal-preview.json": {
+    "sha256": "e9eeff26b66ad8301bac54e0b34c2fe60186f50237fd262d1f6258a3c61eb88c",
+    "size_bytes": 762055
+  },
+  "case-01/fresh-removal-apply.json": {
+    "sha256": "fa8f9bbc688f7eb8b02d45a2874d14b55689640f01a17cb0a37be2604459a371",
+    "size_bytes": 52149
+  },
+  "case-01/fresh-removal-install-apply.json": {
+    "sha256": "c903483ef943680600f138b43b0b0e98d84292edfb3f3c1d19ef6dc94a0eea11",
+    "size_bytes": 1591
+  },
+  "case-01/fresh-removal-install-preview.json": {
+    "sha256": "8341f59f3c93aecc1f6ff279fc636f54f873a9133038b3918b67babc2ab0bd28",
+    "size_bytes": 101329
+  },
+  "case-01/fresh-removal-preview.json": {
+    "sha256": "66049481ff431cd3463bd2453be80e965745d6d08845f62779e716ef03277db2",
+    "size_bytes": 762055
+  },
+  "case-01/fresh-removal-wrong-plan.json": {
+    "sha256": "2aa80885824983aefd70c5ba82de44f517977658983606fa4ad2b78ee663f388",
+    "size_bytes": 987
+  },
+  "case-01/process.json": {
+    "sha256": "6412288f197ba3337535ec647ea98bc100c73593e9b8f24ec9d32631964e86c0",
+    "size_bytes": 694
+  },
+  "case-01/repair-apply.json": {
+    "sha256": "a8eea08e8cbaa948bba4b4091f8d88d09642f56e5cb6628a8afe9e7cd0aecfc3",
+    "size_bytes": 1370
+  },
+  "case-01/repair-install-apply.json": {
+    "sha256": "ab12740c473ca1110829d8f18eb09f2aa8005fe7acb73c0bf90c37d32f39c84d",
+    "size_bytes": 1589
+  },
+  "case-01/repair-install-preview.json": {
+    "sha256": "fce9bffd877d9273c49a10e7e4e74e354e2c48023a0dada7592acb770957a1ae",
+    "size_bytes": 101327
+  },
+  "case-01/repair-post-write-interruption.json": {
+    "sha256": "7f28df9b77f5c4224d19eca4023ceba8f12e2fdb68cd52ccc230d6aca733b550",
+    "size_bytes": 367
+  },
+  "case-01/repair-preview.json": {
+    "sha256": "8784775d6cdd0ac2649d45f10162fbff6b08e5be8dddb0d931d1fe8b3ef3e4d3",
+    "size_bytes": 1293
+  },
+  "case-01/repair-repreview.json": {
+    "sha256": "8784775d6cdd0ac2649d45f10162fbff6b08e5be8dddb0d931d1fe8b3ef3e4d3",
+    "size_bytes": 1293
+  },
+  "case-01/repair-restart-install-apply.json": {
+    "sha256": "e7ef554ef4eb8cdb8b2deceea2584186f2d4a78b7486ba504a338e8e0c4c32c6",
+    "size_bytes": 1605
+  },
+  "case-01/repair-restart-install-preview.json": {
+    "sha256": "593af4bbda27d3c3feaef01e821e8ecc4bcb19e5ff799462d6ad30a75d5d79dc",
+    "size_bytes": 101343
+  },
+  "case-01/repair-restart-preview-refusal.json": {
+    "sha256": "6bd81bfb393e679ccfeeef5f89ec2206df7c398bde3b8575c8a17d63340cc91c",
+    "size_bytes": 1368
+  },
+  "case-01/repair-restart-resume.json": {
+    "sha256": "7e4bbc5175603d7438a28c65a9fa1f52ce3e4537d4495016f66e1478f39db791",
+    "size_bytes": 1437
+  },
+  "case-01/repair-rival-refusal.json": {
+    "sha256": "15bed1534a4ca06846c03a61e9c38a1769d1b35034d4303b1d382e2f2a349e5b",
+    "size_bytes": 1428
+  },
+  "case-01/repair-wrong-plan.json": {
+    "sha256": "e80cba6650cb4de55277834e99275ee8bc2e40aac011e6a890304f2a3d954c83",
+    "size_bytes": 1373
+  },
+  "case-01/rollback-apply.json": {
+    "sha256": "d01168d8ad4e71ac111f2a396ed166a82d9af32a1ff9920c3e9bd56c68ab05ed",
+    "size_bytes": 493730
+  },
+  "case-01/rollback-preview.json": {
+    "sha256": "16c05b4c9027c595c19886f08373f9ffe84d8e7d55f5ca5767951a44ebb77924",
+    "size_bytes": 488638
+  },
+  "case-01/rollback-v1-install-apply.json": {
+    "sha256": "74229d243a45ba299c8cf2bd32f8abd7e121113f80544c16e9b49a900ea193e0",
+    "size_bytes": 1603
+  },
+  "case-01/rollback-v1-install-preview.json": {
+    "sha256": "d8b0901e08e73903645f5d4735ea915432189d3cf878ef6bfed7e10909f86558",
+    "size_bytes": 101341
+  },
+  "case-01/rollback-v2-update-apply.json": {
+    "sha256": "15535a6729154fe46b89e5f640b346b65557a78ecdb1ddf76180295f85296d55",
+    "size_bytes": 1876
+  },
+  "case-01/rollback-v2-update-preview.json": {
+    "sha256": "4cab3cd03ac7585839ce27d3cf90dfd5ecace24a769a71adae7280496b8c7f15",
+    "size_bytes": 105672
+  },
+  "case-01/rollback-wrong-plan.json": {
+    "sha256": "2e49635dce7b5288377135c2654cdae0037bb90629b79e9c3049e3e3d0bf428d",
+    "size_bytes": 1354
+  },
+  "case-01/stderr.log": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "case-01/stdout.log": {
+    "sha256": "9f231cb8b90f85df86873290699d1de2df0803eea760576398e72e539065e131",
+    "size_bytes": 270
+  },
+  "case-01/summary.json": {
+    "sha256": "fa668ad6588b4033f8af4c9db795bc2cd2ad6f7a573b83b056b88d8587fd0833",
+    "size_bytes": 11785
+  },
+  "consumer-result.json": {
+    "sha256": "9f1f53831b1fa09af350d60878438044a2570921c0c9dc7a3573b6695af61a83",
+    "size_bytes": 1142
+  }
+}

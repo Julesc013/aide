@@ -1,0 +1,15 @@
+{
+  "baseline": "b46448f2fa4c0668749fdee4d9cff82d74cf3664",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md": "6c435695a2695499085a34ba71daa0a82b17090562230abfc42bc2e4310b507f",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/additions-effect.md": "654f24d304df9060706dc97f178143f6cbe19c5436abee614ac00335e7136d12",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/additions-job-template.json": "d3308d57345a891aed9b90fba24099476daf5532e5ef03da81c005f3d71b1059",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/correction-push.json": "69884acf592ce5a9fbabef9bc5488625a547f81a1ffbbbed11ad562bc48bc029",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/correction-review.md": "a67a0f0639b9cd7099909b670901e33c835648050a81a7f0c37c58dff8d2791d",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_additions.py": "ee261e797c8d74bc3301a1ac6f7b65b4f227c39a428ad576b0bf5692af92e578"
+  },
+  "message_sha256": "863ce718ae561cfdc74d63502a53f4d30a8688afdd1461e9e45fb9fc375b3959",
+  "template_sha256": "d3308d57345a891aed9b90fba24099476daf5532e5ef03da81c005f3d71b1059",
+  "validation": "syntax and full validate PASS; allocation10 NOT RUN; range FAIL exact three; review repair: raw streams retained before dispatch and empty fixture hooks/signing disabled; rebound AST PASS",
+  "validation_log_sha256": "112e5ce09a5e82160f072e01ad6e66d797037f493a5841c28d28379d5b9ccf0b"
+}

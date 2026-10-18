@@ -5329,3 +5329,7 @@ Qualified compact-v1 through existing owners: 120 source checks, 71 delivered ch
 ### Historical presentation boundary ? 18 October 2026
 
 [AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02](.aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/ExecPlan.md) qualifies standing presentation-only history policy at the preserved successor checkpoint. Source, delivered and installed checks passed with original failures retained. See its REPORT.md and integration receipt. Reconcile the successor with current development next; merge and release remain separate effects.
+
+### Retained successor integration ? 18 October 2026
+
+[AIDE-LITE-SUCCESSOR-INTEGRATION-01](.aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/ExecPlan.md) reconciles the held dfae9356 history with current development. Source and installed-package checks precede dev/main sync. Its original technically accepted 1.1.0 archive remains a frozen candidate; publication and qualification of a newer combined release remain separate.

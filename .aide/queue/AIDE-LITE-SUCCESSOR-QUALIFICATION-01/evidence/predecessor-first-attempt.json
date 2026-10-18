@@ -1,0 +1,133 @@
+{
+  "allocation": 24,
+  "collected_manifest": {
+    "logs": "4090799822830bb9f4556964f770075bbdfeb7c0b1e53c173221ebef61a75966",
+    "output": "071f273ff9d28236ea160dd6836bf966797782b5f23e8c526cf8878bcf5a059a"
+  },
+  "completed_observations": [
+    "fresh published1.0 install",
+    "fresh actual1.0 to1.1 update",
+    "brownfield published1.0 install"
+  ],
+  "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "failure": "Project optional example selected a path absent from both published and candidate archives; write failed before brownfield conflict/recovery checks.",
+  "job_id": "5823eafeb71442d08c2d86c6fc8d27ce",
+  "manifest_digest": "8dbc25f1dee0861ab9b817523c0f0945874bd96bf5fe4e435659e0f7bdad9804",
+  "not_run": [
+    "brownfield conflict/resolution/recovery",
+    "recovery allocation25",
+    "replay allocation26"
+  ],
+  "original_failure_preserved": true,
+  "peaks": {
+    "canonical_bytes": {},
+    "memory_bytes": 244826112,
+    "scratch_bytes": 18299062
+  },
+  "phase": "retired",
+  "product_defect_established": false,
+  "raw_result_sha256": "9d82af130ed32988f6a3d40a2c017a1ff303a6baed484d8b33cb38997f626861",
+  "reservation_released": true,
+  "result": {
+    "bytes": 1788,
+    "creation_filetime": 134367434620258812,
+    "exit_code": 1,
+    "io_errors": [],
+    "job_id": "5823eafeb71442d08c2d86c6fc8d27ce",
+    "pid": 18452,
+    "quiescent": true,
+    "reason": "exited"
+  },
+  "retained_inventory": {
+    "logs/stderr": {
+      "sha256": "58e33d14e482632572f946fb8cfbd93ad62179b28441fb016c3f7eaedceec303",
+      "size_bytes": 1788
+    },
+    "logs/stdin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "logs/stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "output/brown-old-install-apply.json": {
+      "sha256": "e027d463ad8e600d1b47ce840a87816e2a8d3c2bc0814bd718b78b4f151807b2",
+      "size_bytes": 1132
+    },
+    "output/brown-old-install-apply.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "output/brown-old-install-apply.stdout": {
+      "sha256": "091a51222c510cc255d2ebf269ae8e4a3724733334efd2c301981a70225c7cf3",
+      "size_bytes": 548
+    },
+    "output/brown-old-install-preview.json": {
+      "sha256": "c6074cf8cdf4265b45e06f2a00855bdb5cff974c6ca7a21f5bbda3745654eb97",
+      "size_bytes": 1055
+    },
+    "output/brown-old-install-preview.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "output/brown-old-install-preview.stdout": {
+      "sha256": "8b5f624c4c062da16fcdf31302340ac62bad541fc07c1fcffa7392a784ea8dd3",
+      "size_bytes": 99553
+    },
+    "output/fresh-actual-update-apply.json": {
+      "sha256": "e641b04306578adcd84e07741f5385c90cd9b6cc9c776a3ac195de403fccdcc4",
+      "size_bytes": 1301
+    },
+    "output/fresh-actual-update-apply.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "output/fresh-actual-update-apply.stdout": {
+      "sha256": "f91e5212f67aba64f819ce8e48cb7724783229f5a67e9b826cf7a12522d960d5",
+      "size_bytes": 673
+    },
+    "output/fresh-actual-update-preview.json": {
+      "sha256": "a653ee6468016a3afb924919c9c87cb0366eb8c5a3c1e125cf383b6ef562f1c4",
+      "size_bytes": 1224
+    },
+    "output/fresh-actual-update-preview.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "output/fresh-actual-update-preview.stdout": {
+      "sha256": "2bde724d2c2c4d76fbb33d8f3a1c9d0e363eb2e0113c1439e5e31f93e03296db",
+      "size_bytes": 104686
+    },
+    "output/fresh-old-install-apply.json": {
+      "sha256": "6fae24efe51dd7c9af32c0f5af7ea317f48fae8f20499e091c13116bba380e62",
+      "size_bytes": 1132
+    },
+    "output/fresh-old-install-apply.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "output/fresh-old-install-apply.stdout": {
+      "sha256": "f14cb56c040edf73da80b71541d814d8c6c93409b6072d7f328917989fe9608f",
+      "size_bytes": 548
+    },
+    "output/fresh-old-install-preview.json": {
+      "sha256": "20a01760e46ab6d9e73716fc3275650c61392f8623514c48e617cfcaea45c729",
+      "size_bytes": 1055
+    },
+    "output/fresh-old-install-preview.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "output/fresh-old-install-preview.stdout": {
+      "sha256": "a90fd5204e695e0f2cb71118e8976ca5d748d18fcf9b978430a3044993e05d8d",
+      "size_bytes": 99553
+    }
+  },
+  "retained_path": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\5823eafeb71442d08c2d86c6fc8d27ce",
+  "retained_receipt_sha256": "19de6e3d1bec9a3c689ff124086261e7689dfeee2077feae82bc977caa935c2b",
+  "scratch_absent": true,
+  "source_commit": "eaba809b7513faef2144875c8a1318874ff3d642",
+  "source_tree": "3fc1ec27d3f1949b2c755b6dbdd9a24a71678c27",
+  "status": "FAILED_FIXTURE_SETUP"
+}

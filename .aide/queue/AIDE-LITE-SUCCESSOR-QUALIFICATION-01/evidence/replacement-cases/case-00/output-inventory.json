@@ -1,0 +1,134 @@
+{
+  "case-00/brown-agents-overlay-apply.json": {
+    "sha256": "4a4f7d5b78cc59ff8a481be45e2587ddb2c42114269cfc24e3bd80ad2a2a23b0",
+    "size_bytes": 1506
+  },
+  "case-00/brown-agents-overlay-preview.json": {
+    "sha256": "d2f4be28999da5c8817d6c2ca053494e0af25803025013964130299e3e741c3e",
+    "size_bytes": 106713
+  },
+  "case-00/brown-agents-overlay-repair-health.json": {
+    "sha256": "069751e9023fdf1943b3a8e05d1baa2a0d0e1c851a6d2abcc39b10a5db9e3c41",
+    "size_bytes": 467662
+  },
+  "case-00/brown-direct-edit-repair-health.json": {
+    "sha256": "492d94e554eaa0c7894246c6257f2121641433c3b9776ac4ba823f4902127e96",
+    "size_bytes": 467711
+  },
+  "case-00/brown-v1-apply.json": {
+    "sha256": "7d5205d29d30c94e72238845fdb74693eb98cd1505a2d7c7d07785d84cd612cb",
+    "size_bytes": 1567
+  },
+  "case-00/brown-v1-preview.json": {
+    "sha256": "7e0fad5fe4db8d215b53863e66fc69dcc48c94afb373e153385638f87fc4deb4",
+    "size_bytes": 101385
+  },
+  "case-00/brown-v2-conflict-apply.json": {
+    "sha256": "b174d7a64e9f512af994fdf58c97583a9193f7f8630dc05752186ff79e30cdb2",
+    "size_bytes": 1815
+  },
+  "case-00/brown-v2-conflict-preview.json": {
+    "sha256": "2fc14255b33115ea44b7f37f1a45fbe516ddaf602735ecac6b06e6258ae95805",
+    "size_bytes": 107070
+  },
+  "case-00/brown-v2-resolved-apply.json": {
+    "sha256": "47ad13ce361c63dc78ddb2709743f9ed661b2d0f03807f7da32a7fff19faf6a2",
+    "size_bytes": 2020
+  },
+  "case-00/brown-v2-resolved-feedback.json": {
+    "sha256": "c633d700d440115f51b2ad969d89725b4091913d686cef104eed3de630577135",
+    "size_bytes": 3706
+  },
+  "case-00/brown-v2-resolved-plain-preview.json": {
+    "sha256": "b6042a555a9b4f299f7f69564e857c0cd5d459d337fcf04b6a2c44fe7a15d83d",
+    "size_bytes": 105905
+  },
+  "case-00/brown-v2-resolved-preview.json": {
+    "sha256": "d8f4fd9e1462b3e1603899ecbd43dc334cac5cff4c46eeef169f2d86cf424bfe",
+    "size_bytes": 107572
+  },
+  "case-00/brown-v3-conflict-preview.json": {
+    "sha256": "edab7bde357bb3932facda670b171aba48ec36213abd4a2c89fdd478aa1e4486",
+    "size_bytes": 107031
+  },
+  "case-00/brown-v3-resolved-apply.json": {
+    "sha256": "3039027ef904b7507d70a7ec923b33d6026ce2101aad5f4e46b9bff08dd85ba0",
+    "size_bytes": 1981
+  },
+  "case-00/brown-v3-resolved-preview.json": {
+    "sha256": "eec370649080dfa02d0b8235a8512a791d8db336b0e41afccdec4aa159c60fbc",
+    "size_bytes": 107203
+  },
+  "case-00/fresh-disabled-v2-apply.json": {
+    "sha256": "65ec0e064ee6633c53736ab6803abaff4fdde713a528a4ef5dbd1a87c1b4a0aa",
+    "size_bytes": 1799
+  },
+  "case-00/fresh-disabled-v2-preview.json": {
+    "sha256": "d879b2b066bff09b5bcab5f1add10cf772f5268ee4d6c9dfe46acb9f6425b1ec",
+    "size_bytes": 108412
+  },
+  "case-00/fresh-disabled-v3-apply.json": {
+    "sha256": "6b3d99604dfe913871755b79710f28403b44e2f56266279359af4a359a7d6781",
+    "size_bytes": 1760
+  },
+  "case-00/fresh-disabled-v3-preview.json": {
+    "sha256": "5222ef907f156d0614bb40025f2cea7db299576c157347a8c3ee311b51b33b6f",
+    "size_bytes": 105689
+  },
+  "case-00/fresh-installed-doctor.json": {
+    "sha256": "00d045a26c9f11314a0684a49a1f0cc27d812a9e246b2e0782da01dc9012fad5",
+    "size_bytes": 5823
+  },
+  "case-00/fresh-missing-owned-apply.json": {
+    "sha256": "735ae10901af195a170ab5938b7bab5fccd931dcdc577924db56c664a27bdef6",
+    "size_bytes": 1492
+  },
+  "case-00/fresh-missing-owned-preview.json": {
+    "sha256": "6ec443be4039d370d67cf840be131143885fa405be859e371086733117ac9ec0",
+    "size_bytes": 105425
+  },
+  "case-00/fresh-missing-owned-repair-health.json": {
+    "sha256": "1be32cbee7b0f745de037bffd0c21e0b9f25975903da8bc6bf8d797c72d07cef",
+    "size_bytes": 464345
+  },
+  "case-00/fresh-missing-owned-repair-preview.json": {
+    "sha256": "f70c0b77d85133c7949eeab28f385fcaa09c8f25a019759e64aed08d6761d81b",
+    "size_bytes": 1214
+  },
+  "case-00/fresh-v1-apply.json": {
+    "sha256": "0067f82df8e3b84b9895373780a41dfc28f492f3bb706e125ce475c35668bd87",
+    "size_bytes": 1552
+  },
+  "case-00/fresh-v1-preview.json": {
+    "sha256": "b61dc61f6447a151abcc22e4cb121cda04af3ccfa721edda018b551cd8da93df",
+    "size_bytes": 101370
+  },
+  "case-00/fresh-v1-repair-health.json": {
+    "sha256": "a9a22072bed0946a4dd473516be8c656b0582fd09dc824d7f9a4af7912ed1552",
+    "size_bytes": 467581
+  },
+  "case-00/partial-recovery-result.json": {
+    "sha256": "9239bd512b9b73cfcc9d32a2cabe874cbc8997342dd89cd3cef05f0a19f70554",
+    "size_bytes": 316
+  },
+  "case-00/process.json": {
+    "sha256": "c925e6ce6a42eafe2dc1e7df8a87b65d207e31acd0de0db9d98c482a73f3924b",
+    "size_bytes": 1060
+  },
+  "case-00/stderr.log": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size_bytes": 0
+  },
+  "case-00/stdout.log": {
+    "sha256": "16bf8dcb062797f45566cc9e0b0d301d2c0fef875a2178d6606428d6949b9773",
+    "size_bytes": 509
+  },
+  "case-00/summary.json": {
+    "sha256": "783714be2baf3d3eea4867b333c1a6b0d69ed55ed432d619f774448dd281cb22",
+    "size_bytes": 10739
+  },
+  "consumer-result.json": {
+    "sha256": "46d0a7e2ae923d23f3103c3d8dd4cb288fdf2f62ac86fdf3a02c82cd05b09845",
+    "size_bytes": 1142
+  }
+}

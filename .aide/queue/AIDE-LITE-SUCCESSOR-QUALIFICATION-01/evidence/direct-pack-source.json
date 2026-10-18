@@ -1,0 +1,31 @@
+{
+  "baseline": "447e393b3f87004641b7387c1f33828ac1ee3a85",
+  "files": {
+    ".aide/export/aide-lite-pack-v0/checksums.json": "fc457bbee3ccd3f9dd534c33cbf538135f41b57752e66a48d287be4a9cce3b70",
+    ".aide/export/aide-lite-pack-v0/export-report.md": "9e6a9573700cec8d167f901a56570b815ec98377b9316d8ae4b0d35f8ea58c70",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_work_effort.py": "ba2c825d7a364ef575792b36d9f0770921779903ff5aae4869c2144d37721170",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_aide_lite.py": "d1637800816e53e90e9b3663357311351f9e8e93104b5a2303149f786eab752c",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_export_import.py": "7008820345679e7b6127e499ebedbfb7d6334f3eb129ecdbeb8a8b2676ec0b4a",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_work_effort.py": "54ebcc09f035d4d2b7791784039ebaffe64a2ef315ae1cf63455c940583531ec",
+    ".aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md": "4cec1175aeb513444bb88e6ebea42c12b833f635fc9b8341ab590d79e1de0719",
+    ".aide/export/aide-lite-pack-v0/manifest.yaml": "2fab33a79e2d65d6e9e675b24f8bfa98774d6c2b410faf8a8bc500405d49492c",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/ExecPlan.md": "549cb962dd7bc2f65bd11ef6912d0809edc687d76f123d35d16150867cc0bed4",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/REPORT.md": "260f0168e26480dda03cdd01e8e22e39893028a87025c43fff602e782aa10b66",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/direct-pack-check-amendment.md": "a8f3b0eee14cc6debe051f9c43e1204e882acd129c2c15fa9b4852fe85d7ca34",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/direct-pack-job-template.json": "84cdf59afb4536fa200a5b1036c70a518405b4d31191a69d6326bead1d4f7b6a",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/direct-pack-message.txt": "33b08eddbd962feb316062943603a74f1de5bd4299ca5498a1fc83666e56e59f",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/pack-repair-first-pack-repair-delta.json": "af8788f4c2b4a15bd43468ae560680ad09f10d0c7a83bc6f7772dc9b207b9feb",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/pack-repair-first-qualification.json": "e0cf8e5a473ba5754c05d7539f8135d6d23e333b7ca7d3137bd657568147f036",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/pack-repair-first-result.json": "45021006bb9cfa9c03d1500cbcb9c0cf7e8ca80563c4fb85e2ad02bc1e0b2e9d",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/pack-repair-first-tests.json": "c9fb4f423f9bf99244e19ddb3e4c3ea8ace29af210f7d04ba6cc3f7804e481f3",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/pack-repair-push.json": "83afd974c5f8910e405f83a69161ee432c6923aed69435aad8bbf893f19ef815",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/run_direct_pack_effort.py": "bc0d30fb7c95cc7c8cdc20996d4eb61805ead3b30dde91c29af7043d8ded836e",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/status.yaml": "e5c1a6db4f89d7f80b4be1ee14ce3b8af43a7cae135044198f4b1d9a72e1082f",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/task.yaml": "7530ad9f740d4bb871bfec7278f7cdff7caa6686464f352215111ee524265015",
+    "IMPLEMENT.md": "b3d50a77cd3fcbd4c1681526a03c05309de95403bb0e35b3dcb1daff323a83d4"
+  },
+  "message_sha256": "33b08eddbd962feb316062943603a74f1de5bd4299ca5498a1fc83666e56e59f",
+  "template_sha256": "84cdf59afb4536fa200a5b1036c70a518405b4d31191a69d6326bead1d4f7b6a",
+  "validation": "export/ownership6/doctor/fullvalidate/exact6payloaddelta PASS; delivered15 PASS6fixtureERROR; AST/diff/message PASS; direct installed allocation13 NOT RUN"
+}
