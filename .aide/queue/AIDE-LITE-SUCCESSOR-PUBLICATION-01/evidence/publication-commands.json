@@ -1,0 +1,168 @@
+{
+  "execution": "NOT_EXECUTED",
+  "repository": "Julesc013/aide",
+  "baseline_dev_main": "8fe2d12cbc9d91f034cf7f68c58beda09809dc58",
+  "tag_target": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "operations": [
+    {
+      "id": "authenticated_repository",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "api",
+        "repos/Julesc013/aide",
+        "--jq",
+        "{full_name,permissions,archived,disabled}"
+      ],
+      "timeout_seconds": 30,
+      "expected": "correct repository, not archived/disabled, authenticated push permission; no credentials displayed"
+    },
+    {
+      "id": "authenticated_release_absence",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "api",
+        "--paginate",
+        "repos/Julesc013/aide/releases?per_page=100",
+        "--jq",
+        ".[] | {id,tag_name,draft,prerelease,published_at}"
+      ],
+      "timeout_seconds": 60,
+      "expected": "successful authenticated complete enumeration: only retained release406882845/aide-lite-v1.0.0, non-draft/non-prerelease with timestamp2026-10-08T13:50:35Z; no candidate draft or newer stable release. Unexpected release state requires review; failure is not absence."
+    },
+    {
+      "id": "fresh_refs",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "--tags",
+        "origin",
+        "refs/heads/dev",
+        "refs/heads/main",
+        "refs/tags/aide-lite-v1.1.0",
+        "refs/tags/aide-lite-v1.1.0^{}",
+        "refs/tags/aide-lite-v1.0.0",
+        "refs/tags/aide-lite-v1.0.0^{}"
+      ],
+      "timeout_seconds": 30,
+      "expected": "dev/main exact baseline8fe2d12; target tag absent locally and remotely; preserve 1.0 tag object03de245f57add1c3cc134fffe4f21ee68fd03065 and peeled target0f293eb6a99dbd444bfa35016007b13451c49275"
+    },
+    {
+      "id": "annotate_tag",
+      "argv": [
+        "git",
+        "-c",
+        "tag.gpgSign=false",
+        "tag",
+        "-a",
+        "aide-lite-v1.1.0",
+        "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+        "-F",
+        ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/tag-message.txt"
+      ],
+      "timeout_seconds": 30,
+      "expected": "new annotated object, exact target/tree/message; preserve object ID before push"
+    },
+    {
+      "id": "push_tag",
+      "argv": [
+        "git",
+        "push",
+        "origin",
+        "refs/tags/aide-lite-v1.1.0:refs/tags/aide-lite-v1.1.0"
+      ],
+      "timeout_seconds": 60,
+      "expected": "ordinary nonforce push; read back tag object and peeled target"
+    },
+    {
+      "id": "create_draft",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "release",
+        "create",
+        "aide-lite-v1.1.0",
+        "--repo",
+        "Julesc013/aide",
+        "--draft",
+        "--verify-tag",
+        "--target",
+        "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+        "--title",
+        "AIDE Lite 1.1.0",
+        "--notes-file",
+        ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/release-notes.md"
+      ],
+      "timeout_seconds": 60,
+      "expected": "one draft, exact title/body/tag; capture release ID and reobserve before upload"
+    },
+    {
+      "id": "upload_exact_assets",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "release",
+        "upload",
+        "aide-lite-v1.1.0",
+        ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt",
+        ".aide/release/stable/aide-lite-v1.1.0.manifest.json",
+        ".aide/release/stable/aide-lite-v1.1.0.tar.gz",
+        ".aide/release/stable/aide-lite-v1.1.0.zip",
+        "--repo",
+        "Julesc013/aide"
+      ],
+      "timeout_seconds": 120,
+      "expected": "exact four assets, no clobber; observe IDs/names/sizes/state and SHA256 digests from authenticated release API"
+    },
+    {
+      "id": "publish",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "release",
+        "edit",
+        "aide-lite-v1.1.0",
+        "--repo",
+        "Julesc013/aide",
+        "--draft=false",
+        "--prerelease=false",
+        "--latest",
+        "--verify-tag"
+      ],
+      "timeout_seconds": 60,
+      "expected": "same release ID, exact title/body/tag/four asset IDs, published_at present and draft/prerelease false; reobserve tag and dev/main"
+    },
+    {
+      "id": "acquire",
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/acquire.py"
+      ],
+      "timeout_seconds": 200,
+      "expected": "four new files and acquisition receipt; no retry or overwrite; verify size/hash, preserve partial output"
+    },
+    {
+      "id": "native_consumer",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "job",
+        "run",
+        "--config",
+        ".aide.local/lite-successor-qualification-execution.json",
+        "--manifest",
+        ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-job-manifest.log",
+        "--full"
+      ],
+      "timeout_seconds": 660,
+      "expected": "one allocated job, original case0/recovery PASS, full collected manifest verified, retired, quiescent, reservations released and scratch absent"
+    }
+  ],
+  "readback_api": [
+    "C:\\Program Files\\GitHub CLI\\gh.exe",
+    "api",
+    "repos/Julesc013/aide/releases/tags/aide-lite-v1.1.0"
+  ],
+  "ambiguous_effect": "stop and inspect actual state; no automatic retry, retag, replacement or release deletion"
+}

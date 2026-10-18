@@ -1,0 +1,122 @@
+{
+  "result": "PASS_PREPARATION_ONLY",
+  "checks": [
+    {
+      "check": "syntax:acquire.py",
+      "result": "PASS"
+    },
+    {
+      "check": "syntax:run_acquired_consumer.py",
+      "result": "PASS"
+    },
+    {
+      "check": "assets_evidence_notes_56_forms_ancestry_consumer_inputs",
+      "result": "PASS",
+      "inputs": 70
+    },
+    {
+      "check": "HTTPS_redirect_boundaries",
+      "result": "PASS",
+      "allowed": 3,
+      "refused": 5
+    },
+    {
+      "check": "offline_acquisition_success",
+      "result": "PASS",
+      "actual_network_calls": 0
+    },
+    {
+      "check": "offline_acquisition_oversized",
+      "result": "PASS",
+      "actual_network_calls": 0
+    },
+    {
+      "check": "offline_acquisition_short",
+      "result": "PASS",
+      "actual_network_calls": 0
+    },
+    {
+      "check": "offline_acquisition_hash",
+      "result": "PASS",
+      "actual_network_calls": 0
+    },
+    {
+      "check": "offline_acquisition_length",
+      "result": "PASS",
+      "actual_network_calls": 0
+    },
+    {
+      "check": "offline_acquisition_existing",
+      "result": "PASS",
+      "actual_network_calls": 0
+    },
+    {
+      "check": "original_canary_owners_unchanged",
+      "result": "PASS"
+    },
+    {
+      "check": "commit_message",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        ".aide\\queue\\AIDE-LITE-SUCCESSOR-PUBLICATION-01\\evidence\\preparation-message.txt"
+      ],
+      "result": "PASS",
+      "log_sha256": "a425ed93c68e0cb3e71bd17fd85696bd0f289f4411a6f6e03b98dd0752325ed2",
+      "log_bytes": 2191
+    },
+    {
+      "check": "validate",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "result": "PASS",
+      "log_sha256": "8084fc43cb5383cd8c86024d66aba2cb8218c2b0d31ca208c636a3672dc7fa19",
+      "log_bytes": 241
+    },
+    {
+      "check": "doctor",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "doctor"
+      ],
+      "result": "PASS",
+      "log_sha256": "585c64e7eac737c2e172b11d760d884d7c614858c1521bb8941c4e4ffa595f42",
+      "log_bytes": 5181
+    },
+    {
+      "check": "diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "result": "PASS",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "log_bytes": 0
+    }
+  ],
+  "native_jobs_allocated": 0,
+  "actual_network_calls": 0,
+  "remaining": [
+    "authenticated access and draft absence",
+    "strict exact effect review",
+    "tag/upload/publication",
+    "downloaded byte checks and one native original consumer",
+    "reviewed outcome integration"
+  ],
+  "limits": "Offline fake transport checks and syntax do not establish operational publication or acquisition.",
+  "known_warning": "Existing missing review reference .aide/prompts/evidence-review.md; governing review skill and child packet are present. Full validation60917 checks:60916 PASS,1 WARN,0 FAIL."
+}

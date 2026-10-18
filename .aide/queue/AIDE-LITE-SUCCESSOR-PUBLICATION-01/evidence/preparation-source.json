@@ -1,0 +1,30 @@
+{
+  "base": "b1db5633c9241dae80fcc2893f223784d25cfc7b",
+  "files": {
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md": "81eac946e8d348263af995833064c0addb24c6f9b19a3f3d49cab047c5e03fdc",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml": "dc12fe1fc75afa1ea967af3bc2fc38a0ce7d6d387bef7e0e0e1e1748a28bb8c7",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md": "aa87882d3f344261206200fb3916cf91630048e04ba91c5bb4e8d099203d5bbe",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/acquire.py": "3dd875a389f46015ff0518c8c21dafc3a403f3c7855e520a2374c9946265b7e4",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/admission-checkpoint.json": "3051b3167209bf28b2ba0c8d448f94053f2ee4d277b4444966dc348cb09a09a6",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/admission-review.json": "d35376367d1c0fef4b0e9ea8302209a60e611878fd8d2099d0e614dfd3c38976",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-job-template.json": "fe4894b575293da51c95b3df90c72575c2dfd04709f4ad4f5018b0a39ee29892",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/preparation-message.txt": "7d59faf0d9c871be43e6bb2d4b0d10559cfd0704617fe95cd5bf323abf168f1d",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/preparation-validation.json": "42a813a23b168cdaf8ef30cc8832ff60af7380b2af38605b4c3f4c54855c7d13",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/publication-commands.json": "9ef1fd0750bc25c1214633d086f750e459c937709fc2d6bc937c722eee9677dd",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/publication-effect.md": "696490216f8888e9419faca32ece831b530da6aedbf6cbd3234a6c09e4c1f7e3",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/release-bindings.json": "b8d60fc2dcdfb3db05114cc6efe3a8a6aa23f81b2e458eed601687cff8dcb727",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/release-notes.md": "b8434e30ade3661929707a66db23d0256deac8662e0b4f00f19c07c09bb06a79",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/run_acquired_consumer.py": "955982a3a16b0b471b26a0ae7b289ebefb51d9d757a0788b343b0fd48cb0e200",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/status.yaml": "c8f6b1f93d3e483f8fb03fba7237a53b84ae1b4d5947b4b4aa2b23aa030979fc",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/tag-message.txt": "f4f8cec4cbe8dac97ba39e5304e87f348a3c71deb2fad85685583a6f07475c52",
+    ".aide/queue/index.yaml": "bbb2dde56816213b5177e40faf04b61e15123b5844244f01a29598baf69c1f43",
+    "DOCUMENTATION.md": "b48748faad51739f77ef94ea9b3aab008acea12cc2537f77a00012d2a64f83f4",
+    "IMPLEMENT.md": "4d319bcd2a33e2500d752e950804c6545a02d4a8545c9f30c7af686aef68c9f8",
+    "PLANS.md": "c485b8ec51138fa1b7813a9830dfe86d37e59ac4c228a7c62992434bd3f75d22"
+  },
+  "message_sha256": "7d59faf0d9c871be43e6bb2d4b0d10559cfd0704617fe95cd5bf323abf168f1d",
+  "effect_sha256": "696490216f8888e9419faca32ece831b530da6aedbf6cbd3234a6c09e4c1f7e3",
+  "effect_commands_sha256": "9ef1fd0750bc25c1214633d086f750e459c937709fc2d6bc937c722eee9677dd",
+  "existing_qualified_assets": "unchanged; exact identities in release-bindings.json",
+  "operational_execution": "not run"
+}

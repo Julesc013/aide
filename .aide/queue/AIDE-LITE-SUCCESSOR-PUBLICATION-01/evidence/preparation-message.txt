@@ -1,0 +1,12 @@
+chore(release): prepare exact successor publication and acquisition
+
+Bind frozen 1.1.0 assets to their accepted qualification ancestor, retain
+the original consumer assertions, and prepare explicit release/recovery steps.
+Newer development features remain outside this archive's claims.
+
+Validation: PASS - preparation checks recorded in evidence/preparation-validation.json
+ NOT RUN - authenticated publication, downloads and acquired-byte consumer
+Changelog: Internal: Prepare reviewed successor release and acquisition
+AIDE-Task: AIDE-LITE-SUCCESSOR-PUBLICATION-01
+AIDE-Format: compact-v1
+Follow-up: Authenticate GitHub CLI; recheck exact refs and release absence before effects

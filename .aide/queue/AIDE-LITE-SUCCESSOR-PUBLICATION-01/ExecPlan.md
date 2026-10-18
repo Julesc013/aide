@@ -59,3 +59,10 @@ of hard whole-host quota. No wait/model polling on unchanged authentication.
 Receipt every operation before and after execution. On lost acknowledgements,
 inspect tag/release/assets before any next action; do not replay effects blindly.
 Do not create a tag until publication access and the exact effect are ready.
+
+**Preparation progress.** Admission ACCEPT and managed checkpoint b1db5633
+establish the sole local task branch. Notes, annotation, exact command manifest,
+frozen qualification bindings and original-case acquisition wrapper are prepared.
+No tag, network effect, download or native job has executed. Authentication remains
+required. Source and effect review must cover the frozen preparation map before
+any of those effects. Use the existing runner/config and original canaries.

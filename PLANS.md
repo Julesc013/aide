@@ -5333,3 +5333,12 @@ Qualified compact-v1 through existing owners: 120 source checks, 71 delivered ch
 ### Retained successor integration ? 18 October 2026
 
 [AIDE-LITE-SUCCESSOR-INTEGRATION-01](.aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/ExecPlan.md) reconciles the held dfae9356 history with current development. Combined-source and actual installed-package checks passed; see the child report and integration receipt for exact dev/main delivery. The original technically accepted 1.1.0 archive remains a frozen candidate. Select and qualify the intended release subject before publication; do not equate old archives with the newer development pack.
+
+### Qualified successor publication ? 18 October 2026
+
+[AIDE-LITE-SUCCESSOR-PUBLICATION-01](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md)
+prepares publication of unchanged, qualified Lite 1.1.0. Its accepted ancestor
+tag is distinct from payload source and current development. Exact release review,
+authenticated access, publication and acquired-byte acceptance remain required.
+Newer compact communication, task briefs, handoff and lessons need a subsequent
+qualified release; they are not silently included in 1.1.0.

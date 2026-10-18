@@ -1,0 +1,15 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_map_sha256": "628ce67252d97dea951956b7d5d315794c259302affcb2b7cce95242c369cd86",
+  "effect_sha256": "4f3a3aef943eb2f24d142aa653e64fecf5c18cd98ac411cf45dd0030ef348438",
+  "scope": "Local admission and preparation only",
+  "required_fixes": [],
+  "not_authorized": [
+    "publication",
+    "acquisition",
+    "job",
+    "remote push",
+    "dev/main integration"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "version": "1.1.0",
+  "tag": "aide-lite-v1.1.0",
+  "archive_source": "447e393b3f87004641b7387c1f33828ac1ee3a85",
+  "archive_source_tree": "e9407c08ecd5e640a4c3223d2cf8a0cbfdd8636d",
+  "technical_review": "3a36366c052f308a8ecee10d32690ce0cb75cae7",
+  "tag_target": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "tag_tree": "cc683ca7a325fe06ee88db9837083cedb59f61b3",
+  "assets": {
+    ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt": {
+      "sha256": "01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.manifest.json": {
+      "sha256": "38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f",
+      "size_bytes": 6957
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.tar.gz": {
+      "sha256": "7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44",
+      "size_bytes": 885826
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.zip": {
+      "sha256": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc",
+      "size_bytes": 1231497
+    }
+  },
+  "qualified_evidence": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/fixed-preview-qualified.json": "70b6ef762336df83632e52023d9ab6ded119ab0b318fc9bcaab1ce877ac2f004",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/predecessor-qualified-replay-refused.json": "168c1da189f4476562624bcca1912c717740f746b4d68185ebc06ffe8c07d021",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replacement-cli-coverage.json": "f3b8eeb22794daae77a40ae69a6cbb578e05a969c8b2e8b3e478e0e52c63461a",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replacement-consumers-qualified.json": "fa954de55ce50cfd4cd52ccb2949b81ab5c53a18d2e1d6e985561a3e1ac4f658",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replay-qualified.json": "2d9a998fac8d0dd911d9f5dd7104c369bf20e27d7adc9aad9839e35b690713ba",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json": "09a80b7743a3e819567ba5b06e416da22e0d45fc3184cbc3ca5f7bccc8055235",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/qualification-summary.json": "df5844040e936c3f7fde06a05b7ea3955016c5d5501ead39a3ade7bb7f9c7633",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/build-result-repaired.json": "10dc1a7be3834678d8e12c6b1e73cad9289a2778bb3b46b7efff7cdfb2d61143",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/closure-validation.json": "f67e43997e705e940a41e62c21d2e8ef29ebed6cb03557642604b0971db58525",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/REPORT.md": "5e3768493bb669eb7b772dded7b377d73a35fa6538e48e5740b3b62878c5a4ef"
+  },
+  "environment": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.14.8 (tags/v3.14.8:8e6e75d, Sep 30 2026, 18:19:33) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "executable_sha256": "434b361fe0c5960d404974feed493db47f2603a1ace2574312104fbed0182c6f",
+    "consumer_config_ref": ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/consumer-config.json",
+    "consumer_config_sha256": "b73f055a31c0b62ed66e9f1ad2dcd3dae4b6f443296ac80fb7cce301e09d8815"
+  },
+  "public_forms_ref": ".aide/release/stable/aide-lite-v1.1.0.manifest.json",
+  "form_acceptance_ref": ".aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/replacement-cli-coverage.json",
+  "public_form_count": 56,
+  "publication_state": "NOT_EXECUTED",
+  "acquired_consumer_state": "NOT_EXECUTED",
+  "historical_failures": "three raw presentation failures retained; advisory policy adopted separately",
+  "release_notes_sha256": "b8434e30ade3661929707a66db23d0256deac8662e0b4f00f19c07c09bb06a79",
+  "tag_message_sha256": "f4f8cec4cbe8dac97ba39e5304e87f348a3c71deb2fad85685583a6f07475c52"
+}
