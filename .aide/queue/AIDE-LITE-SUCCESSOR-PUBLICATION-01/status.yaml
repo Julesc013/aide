@@ -1,0 +1,9 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LITE-SUCCESSOR-PUBLICATION-01
+status: needs_review
+result: ADMISSION_PREPARED
+next_action: independent_admission_then_concrete_release_packet
+maximum_jobs: 1
+jobs_allocated: 0
+active_jobs: 0
+publication_prerequisite: github_cli_interactive_authentication

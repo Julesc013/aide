@@ -1,0 +1,72 @@
+{
+  "decision": "publish_frozen_qualified_1.1.0_then_qualify_subsequent_additions",
+  "archive_source": "447e393b3f87004641b7387c1f33828ac1ee3a85",
+  "archive_source_tree": "e9407c08ecd5e640a4c3223d2cf8a0cbfdd8636d",
+  "technical_review_commit": "3a36366c052f308a8ecee10d32690ce0cb75cae7",
+  "proposed_tag_target": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "proposed_tag_tree": "cc683ca7a325fe06ee88db9837083cedb59f61b3",
+  "all_three_ancestors_of_main": true,
+  "assets": {
+    ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt": {
+      "sha256": "01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.manifest.json": {
+      "sha256": "38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f",
+      "size_bytes": 6957
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.tar.gz": {
+      "sha256": "7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44",
+      "size_bytes": 885826
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.zip": {
+      "sha256": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc",
+      "size_bytes": 1231497
+    }
+  },
+  "frozen_members": 863,
+  "development_members": 870,
+  "development_added": [
+    "files/.aide.local.example/secrets/README.md",
+    "files/.aide/scripts/outcome_lessons.py",
+    "files/.aide/scripts/task_handoff.py",
+    "files/.aide/scripts/tests/test_compact_communication.py",
+    "files/.aide/scripts/tests/test_outcome_lessons.py",
+    "files/.aide/scripts/tests/test_task_brief.py",
+    "files/.aide/scripts/tests/test_task_handoff.py",
+    "files/.aide/scripts/tests/test_validation_output.py"
+  ],
+  "development_removed": [
+    "stable-release.json"
+  ],
+  "development_changed": [
+    "checksums.json",
+    "export-report.md",
+    "files/.aide/git/commit-template.md",
+    "files/.aide/policies/commit-messages.yaml",
+    "files/.aide/policies/controller.yaml",
+    "files/.aide/policies/impacted-tests.yaml",
+    "files/.aide/reports/aide-commit-message-standard.md",
+    "files/.aide/scripts/aide_lite.py",
+    "files/.aide/scripts/tests/test_aide_lite.py",
+    "files/.aide/scripts/tests/test_outcome_controller.py",
+    "files/.aide/scripts/tests/test_q27_commit_recovery.py",
+    "files/.aide/scripts/tests/test_task_binding.py",
+    "files/.aide/scripts/tests/test_x_test_00_validation_tiers.py",
+    "files/docs/reference/aide-lite.md",
+    "files/docs/reference/changelog-preview.md",
+    "files/docs/reference/commit-discipline.md",
+    "files/docs/reference/impacted-test-planning.md",
+    "files/docs/reference/outcome-controller-v0.md",
+    "files/docs/reference/task-os-report-only-commands.md",
+    "manifest.yaml"
+  ],
+  "later_features_not_claimed": [
+    "compact communication",
+    "task briefs",
+    "portable task handoff",
+    "outcome lessons",
+    "compact validation output"
+  ],
+  "newest_adopter_defaults_delivery_complete": false
+}

@@ -1,0 +1,22 @@
+{
+  "base": "8fe2d12cbc9d91f034cf7f68c58beda09809dc58",
+  "tag_target": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md": "d7447febc91e8fad1a7af8b3fc3519fe491157ea2cfa3f771c1fc00b5a24f66f",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/prompt.md": "97b6f576ea5ac32f47db6884e2fa05e9624704008b67ed0a8d80e311f0137665",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/status.yaml": "8cd7daa5648f399d7191cc7636fddcbf1c7cafa528fe9191702d6f14f394701f",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/task.yaml": "a89adf81da6f2862c9f66f3e17837052776b10e345fcff05c7847d142439a2b8",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/admission-effect.md": "4f3a3aef943eb2f24d142aa653e64fecf5c18cd98ac411cf45dd0030ef348438",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/admission-message.txt": "f1e75872ed96c3e5cb0adec2ecd05c3143359742de89024fcb3c2c0f3f528c8f",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/environment.json": "8fa6032267f04ea9eea812b8b1c983217cfbd19644c872cd11bdd566b619182f",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/initial-refs.json": "227e04fa7b98487eb7d3c77ab33ffe45899f693e15454e5dea49303bbe8209a2",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/initial-tags.json": "47e0caa357e6e6f0991fe6e5722c786f6c04e6128e982c3f361bd63320e665f7",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/latest-intent-packet.json": "d3ea1dda27a255352dc55a2015d3b7b538d352b741b2d1f60bc29a3521749982",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/latest-workunit-draft.json": "6e2c03a5ec239aa34c3aeecdfa9c5103f05800927b06e461e33a21aca8916620",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/publication-access.json": "2184f31a8a53ad04b327b574a3b822d7884fa97e4a53af30ed9a276bd787581b",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/release-selection.json": "996f4e9cec2cfea2fd28e7c56e67b1eaa5531402ad93b83d302fb5d2db4549cc",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/selection-review.md": "c7f1d76ba0eb8f11c40f2bef0eb3039223b95c7bfaabe3f623e30905902fa882"
+  },
+  "message_sha256": "f1e75872ed96c3e5cb0adec2ecd05c3143359742de89024fcb3c2c0f3f528c8f",
+  "effect_sha256": "4f3a3aef943eb2f24d142aa653e64fecf5c18cd98ac411cf45dd0030ef348438"
+}

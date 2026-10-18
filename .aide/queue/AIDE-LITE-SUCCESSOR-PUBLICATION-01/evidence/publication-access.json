@@ -1,0 +1,16 @@
+{
+  "observed": "2026-10-18",
+  "git_push_route": "working; prior exact sync receipt retained",
+  "github_cli": "installed, not authenticated; gh release list refused before request",
+  "connected_github_tools": "no release create/upload endpoint exposed",
+  "public_release_observation": [
+    {
+      "tag": "aide-lite-v1.0.0",
+      "id": 406882845,
+      "published_at": "2026-10-08T13:50:35Z"
+    }
+  ],
+  "draft_release_absence": "unknown without authenticated inspection",
+  "required_change": "owner completes interactive GitHub CLI authentication on this machine; never paste token into chat",
+  "secret_extraction_performed": false
+}
