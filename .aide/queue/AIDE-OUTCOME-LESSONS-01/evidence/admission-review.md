@@ -1,0 +1,3 @@
+# Independent admission
+
+Reviewer /root/review_disked_continuation ACCEPT map b66b41542ed9899f47f25a67fb99d3b585de7e703d16f170406253b2f66ed843 and effect7069998c543cf6210aa73ec91786ec3197bebed8c91eb50d35925d9cf7f318eb. No fixes. Retrieval is not correctness/authorship/model improvement. Later effects reviewed separately.

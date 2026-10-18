@@ -1,0 +1,64 @@
+{
+  "schema_version": "aide.workunit-draft.v0",
+  "workunit_id": "draft-context-38301a895421",
+  "title": "Context WorkUnit Draft - Require behavior proof and live-test validation plan before implementation",
+  "objective": "Normalize prompt into a bounded context WorkUnit draft: require behavior proof and live-test validation plan before implementation.",
+  "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
+  "task_class": "context",
+  "risk_class": "governance",
+  "sizing_class": "live_test_gate",
+  "allowed_paths": [
+    ".aide/context/**",
+    ".aide/queue/<workunit>/**"
+  ],
+  "forbidden_paths": [
+    ".git/**",
+    ".github/**",
+    ".aide.local/**",
+    ".env",
+    "secrets/**",
+    "raw prompt logs",
+    "raw response logs",
+    "target repositories unless target-local queue authorizes work"
+  ],
+  "dependencies": [
+    "repo_policy",
+    "queue_state",
+    "branch_state"
+  ],
+  "preflight": [
+    "git status --short",
+    "py -3 .aide/scripts/aide_lite.py task inspect",
+    "py -3 .aide/scripts/aide_lite.py intent validate"
+  ],
+  "implementation_outline": [
+    "Reconcile repo state before editing.",
+    "require behavior proof and live-test validation plan before implementation",
+    "Stop at review gates and record evidence before execution."
+  ],
+  "validation": [
+    "git diff --check",
+    "py -3 .aide/scripts/aide_lite.py intent validate"
+  ],
+  "evidence": [
+    "changed-files.md",
+    "validation.md",
+    "remaining-risks.md",
+    "intent-compiler-report.md"
+  ],
+  "acceptance": [
+    "WorkUnit scope is bounded and repo-grounded.",
+    "Rejected unsafe interpretations are recorded.",
+    "Validation and evidence requirements are explicit."
+  ],
+  "non_goals": [
+    "no raw prompt execution",
+    "no provider/model/network calls",
+    "do not bypass queue, branch, evidence, or policy state",
+    "do not execute raw prompt directly"
+  ],
+  "output_schema": ".aide/intake/workunit-draft.schema.json",
+  "idempotency": "prompt_hash:38301a89542183c94133e0e2111d3deb41a5ba29c185dee1a3b7872fbede779c; status:draft; compile_only:true",
+  "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
+  "status": "draft"
+}

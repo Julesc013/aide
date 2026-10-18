@@ -1,0 +1,7 @@
+{
+  "base": "3dad27442fcf13e70cd02e633c6a38380b1e4959",
+  "existing_outcome_tests": "8ddf490f5255976bf2fe23737cf5a976bd3ec316382e3c9b21419604aae2f15c",
+  "ledger_sha256": "295ed35c4526f3d50dff31e8a4dc311acbe48110abfe7f1ef07c2e5580edef60",
+  "ledger_bytes": 2777,
+  "completed_validation_report": ".aide/queue/AIDE-VALIDATION-OUTPUT-01/REPORT.md"
+}

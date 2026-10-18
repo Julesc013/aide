@@ -1,0 +1,40 @@
+schema_version: aide.queue-task.v0
+id: AIDE-OUTCOME-LESSONS-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Retrieve current source-linked lessons and invalidate superseded guidance
+type: implementation
+status: needs_review
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-OUTCOME-LESSONS-01/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/outcome_lessons.py
+    - .aide/scripts/tests/test_outcome_lessons.py
+    - .aide/policies/controller.yaml
+    - .aide/controller/outcome-ledger.jsonl
+    - docs/reference/outcome-controller-v0.md
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - .aide/reports/capability-ledger.json
+    - .aide/reports/capability-ledger.md
+    - .aide/reports/capability-evidence-bindings.json
+    - .aide/reports/capability-command-status.md
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/CHANGELOG.preview.md
+    - .aide/changelog/RELEASE_NOTES.preview.md
+    - .aide/changelog/changelog.preview.json
+    - .aide/changelog/latest-changelog-report.md
+    - .aide/changelog/malformed-commits.md
+    - .aide/changelog/release-notes.preview.json
+  forbidden_paths:
+    - original outcome rows and attempts
+    - target repositories
+    - .aide/release/**
+    - .github/**
+    - machine configuration
+review_gate: exact_admission_source_each_job_and_integration_effect
+maximum_jobs: 3

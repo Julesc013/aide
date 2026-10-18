@@ -1,0 +1,143 @@
+{
+  "schema_version": "aide.intent-packet.v0",
+  "generated_by": "aide-lite",
+  "generated_from": "bounded-campaign-continuation",
+  "raw_prompt_hash": "38301a89542183c94133e0e2111d3deb41a5ba29c185dee1a3b7872fbede779c",
+  "raw_prompt_excerpt": "# Source-linked, correctable lessons Continue the existing campaign P6.harvest/P10.lesson_correction. Make useful prior work discoverable as scoped, current, advisory lessons through the existing outcome ledger. Preserve original observa...",
+  "interpreted_goal": "Normalize prompt into a bounded context WorkUnit draft: require behavior proof and live-test validation plan before implementation.",
+  "confidence": "high",
+  "task_class": "context",
+  "risk_class": "governance",
+  "sizing_class": "live_test_gate",
+  "safe_to_execute": false,
+  "requires_split": true,
+  "blocked": false,
+  "blocker_reason": "",
+  "canonical_sources": [
+    ".aide/policies/intent.yaml",
+    ".aide/policies/prompt-normalization.yaml",
+    ".aide/policies/recovery.yaml",
+    ".aide/policies/risk-classes.yaml",
+    ".aide/policies/task-classes.yaml",
+    ".aide/policies/task-resumption.yaml",
+    ".aide/policies/work-units.yaml",
+    ".aide/policies/workunit-sizing.yaml"
+  ],
+  "repo_state_refs": [
+    ".aide/context/latest-context-packet.md",
+    ".aide/context/latest-review-packet.md",
+    ".aide/context/latest-task-packet.md",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-01/status.yaml",
+    ".aide/queue/index.yaml",
+    ".aide/repo/file-inventory.json",
+    ".aide/repo/latest-repo-intelligence.md",
+    ".aide/reports/file-quality-ledger.json",
+    ".aide/reports/file-quality-summary.md"
+  ],
+  "branch_state_refs": [
+    "current_branch:dev",
+    "current_role:integration",
+    "workflow:trunk_with_dev_integration",
+    "worktree_dirty:true"
+  ],
+  "rejected_interpretations": [
+    "do not bypass queue, branch, evidence, or policy state",
+    "do not execute raw prompt directly"
+  ],
+  "allowed_path_hints": [
+    ".aide/context/**",
+    ".aide/queue/<workunit>/**"
+  ],
+  "forbidden_path_hints": [
+    ".git/**",
+    ".github/**",
+    ".aide.local/**",
+    ".env",
+    "secrets/**",
+    "raw prompt logs",
+    "raw response logs",
+    "target repositories unless target-local queue authorizes work"
+  ],
+  "validation_hints": [
+    "git diff --check",
+    "py -3 .aide/scripts/aide_lite.py intent validate"
+  ],
+  "evidence_hints": [
+    "changed-files.md",
+    "validation.md",
+    "remaining-risks.md",
+    "intent-compiler-report.md"
+  ],
+  "suggested_workunit": {
+    "schema_version": "aide.workunit-draft.v0",
+    "workunit_id": "draft-context-38301a895421",
+    "title": "Context WorkUnit Draft - Require behavior proof and live-test validation plan before implementation",
+    "objective": "Normalize prompt into a bounded context WorkUnit draft: require behavior proof and live-test validation plan before implementation.",
+    "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
+    "task_class": "context",
+    "risk_class": "governance",
+    "sizing_class": "live_test_gate",
+    "allowed_paths": [
+      ".aide/context/**",
+      ".aide/queue/<workunit>/**"
+    ],
+    "forbidden_paths": [
+      ".git/**",
+      ".github/**",
+      ".aide.local/**",
+      ".env",
+      "secrets/**",
+      "raw prompt logs",
+      "raw response logs",
+      "target repositories unless target-local queue authorizes work"
+    ],
+    "dependencies": [
+      "repo_policy",
+      "queue_state",
+      "branch_state"
+    ],
+    "preflight": [
+      "git status --short",
+      "py -3 .aide/scripts/aide_lite.py task inspect",
+      "py -3 .aide/scripts/aide_lite.py intent validate"
+    ],
+    "implementation_outline": [
+      "Reconcile repo state before editing.",
+      "require behavior proof and live-test validation plan before implementation",
+      "Stop at review gates and record evidence before execution."
+    ],
+    "validation": [
+      "git diff --check",
+      "py -3 .aide/scripts/aide_lite.py intent validate"
+    ],
+    "evidence": [
+      "changed-files.md",
+      "validation.md",
+      "remaining-risks.md",
+      "intent-compiler-report.md"
+    ],
+    "acceptance": [
+      "WorkUnit scope is bounded and repo-grounded.",
+      "Rejected unsafe interpretations are recorded.",
+      "Validation and evidence requirements are explicit."
+    ],
+    "non_goals": [
+      "no raw prompt execution",
+      "no provider/model/network calls",
+      "do not bypass queue, branch, evidence, or policy state",
+      "do not execute raw prompt directly"
+    ],
+    "output_schema": ".aide/intake/workunit-draft.schema.json",
+    "idempotency": "prompt_hash:38301a89542183c94133e0e2111d3deb41a5ba29c185dee1a3b7872fbede779c; status:draft; compile_only:true",
+    "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
+    "status": "draft"
+  },
+  "next_action": "require behavior proof and live-test validation plan before implementation",
+  "notes": [
+    "deterministic_local: true",
+    "provider_or_model_calls: none",
+    "network_calls: none",
+    "task_execution: false",
+    "raw_long_prompt_storage: false"
+  ]
+}

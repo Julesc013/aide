@@ -1,0 +1,42 @@
+{
+  "before_sha256": "295ed35c4526f3d50dff31e8a4dc311acbe48110abfe7f1ef07c2e5580edef60",
+  "before_bytes": 2777,
+  "after_sha256": "50ef4662abccc26199fae681086650797b0ba94b0c11e4b31191cd5277e152a9",
+  "original_prefix_preserved": true,
+  "appended_record": {
+    "run_id": "lesson.portable-validation-fixture.v1",
+    "phase": "AIDE-OUTCOME-LESSONS-01",
+    "source": "retained_validation_fixture_evidence",
+    "result": "WARN",
+    "failure_class": "validation_failure",
+    "severity": "warning",
+    "notes": "Two original fixture failures preserved in the referenced qualification. Lesson is advisory.",
+    "lesson": {
+      "schema_version": "aide.outcome-lesson.v1",
+      "id": "portable-validation-fixture",
+      "revision": 1,
+      "state": "active",
+      "summary": "Use a minimal target-owned fixture for portable validation: include manual AGENTS.md and explicit delivered import policy; source-only historical phase reports are not ordinary consumer prerequisites. Preserve failed attempts and all semantic assertions.",
+      "applies_to": [
+        ".aide/scripts/tests/test_validation_output.py",
+        ".aide/scripts/tests/test_aide_lite.py"
+      ],
+      "evidence": [
+        {
+          "path": ".aide/scripts/tests/test_validation_output.py",
+          "sha256": "3f36cff74aea1d1205ee664d4bc4f38bfbecf5ce930268419fe4512a31b5e90d"
+        },
+        {
+          "path": ".aide/queue/AIDE-VALIDATION-OUTPUT-01/REPORT.md",
+          "sha256": "14c80d1d26ce2b87b8982bdb58edfc4962b104048898e4ae14c63aedfd288c50"
+        }
+      ],
+      "supersedes": null,
+      "required_features": [
+        "advisory_only",
+        "revision_chain",
+        "source_sha256"
+      ]
+    }
+  }
+}

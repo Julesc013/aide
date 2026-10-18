@@ -1,0 +1,32 @@
+feat(outcomes): retrieve scoped current lessons with revision history
+
+## Summary
+- AIDE-OUTCOME-LESSONS-01 prepares current source-linked advisory retrieval.
+
+## Why
+- Retained notes need applicability, correction and retirement semantics.
+
+## Changed
+- Add finite pure lesson selection and a read-only portable CLI.
+- Preserve previous outcomes and append one source-linked fixture lesson.
+- Add correction, refusal, freshness and separate-process CLI regressions.
+
+## Validation
+- PASS syntax and diff checks; NOT RUN source36 and actual lesson job.
+
+## Changelog
+- Added: outcome lessons --path with human and JSON views.
+
+## Risks
+- Declared active lessons do not establish correctness or authorship.
+- Snapshot checks do not enforce isolation against arbitrary writers.
+
+## Follow-up
+- Qualify source, delivered and installed behavior before integration.
+
+AIDE-Task: AIDE-OUTCOME-LESSONS-01
+AIDE-Phase: source-preparation
+AIDE-Result: PENDING
+AIDE-Scope: outcome-lessons
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: exact-source-and-job-review-required

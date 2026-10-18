@@ -14039,3 +14039,9 @@ AIDE-VALIDATION-OUTPUT-01 qualified: 10 rerun and 26 retained source results,
 checks remain: 241 default output bytes versus 4,894,325 full bytes. All five
 jobs retired; original fixture failures remain. See the child REPORT.md;
 exact integration receipt governs sync, and broader campaign limits remain.
+
+## AIDE-OUTCOME-LESSONS-01
+
+Bounded current lesson selection in the existing outcome ledger; correction and
+retirement preserve prior rows and invalidate selection. Source/delivered/installed
+qualification and integration remain pending. See .aide/queue/AIDE-OUTCOME-LESSONS-01/ExecPlan.md.

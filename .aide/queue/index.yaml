@@ -4114,3 +4114,10 @@ items:
     task: .aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml
     exec_plan: .aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md
     evidence: .aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence
+
+  - id: AIDE-OUTCOME-LESSONS-01
+    title: Source-linked correctable lesson selection
+    status: running
+    task: .aide/queue/AIDE-OUTCOME-LESSONS-01/task.yaml
+    exec_plan: .aide/queue/AIDE-OUTCOME-LESSONS-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-OUTCOME-LESSONS-01/evidence

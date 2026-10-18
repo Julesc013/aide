@@ -1,0 +1,14 @@
+{
+  "base": "3dad27442fcf13e70cd02e633c6a38380b1e4959",
+  "files": {
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/admission-effect.md": "7069998c543cf6210aa73ec91786ec3197bebed8c91eb50d35925d9cf7f318eb",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/baseline.json": "88c426aba26e0040ee880680660f05dbe0b62faf5f80e155b4e9305b2aed6045",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/latest-intent-packet.json": "9492bc398beaed88b96ef6910064cbe904b3f1fe0b5dd1078f67454525f95f08",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/latest-workunit-draft.json": "7546e4f485b74e7233193ff8424ef3fc9e27e7a63093004308306fb225b5bb89",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/ExecPlan.md": "c8af2900c9fc165435875d576910c13c9b1b606ae8c6f4021f5383e7cec381ce",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/prompt.md": "38301a89542183c94133e0e2111d3deb41a5ba29c185dee1a3b7872fbede779c",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/status.yaml": "67e0ff291bd5cd52f9eb2f34af86db1e36eab06cc663a0cb0bb0a9a23279c849",
+    ".aide/queue/AIDE-OUTCOME-LESSONS-01/task.yaml": "d2dc603f32dfbd39702b6514eae4bcd064c51a1e2c2930a4cd02142d6d6acc8e"
+  },
+  "effect_sha256": "7069998c543cf6210aa73ec91786ec3197bebed8c91eb50d35925d9cf7f318eb"
+}

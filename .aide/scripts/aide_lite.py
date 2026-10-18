@@ -876,6 +876,7 @@ Q36_REQUIRED_FILES = [
 
 Q36_PORTABLE_SOURCE_FILES = [
     ".aide/scripts/task_handoff.py",
+    ".aide/scripts/outcome_lessons.py",
     INTENT_POLICY_PATH,
     WORKUNIT_SIZING_POLICY_PATH,
     TASK_CLASSES_POLICY_PATH,
@@ -40683,6 +40684,93 @@ def command_git_prune(args: argparse.Namespace) -> int:
     return 0 if dry_run or plan.get("status") == "applied" else 1
 
 
+def outcome_lessons_codec():
+    # Bind to the executing distribution, never a selected project's module.
+    path = Path(__file__).resolve().with_name("outcome_lessons.py")
+    _job_wait_root(str(path.parent))
+    info = path.lstat()
+    if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
+            or getattr(info, "st_file_attributes", 0) & 0x400 or info.st_size > 65536):
+        raise ValueError("outcome lesson helper is not an ordinary bounded module")
+    spec = importlib.util.spec_from_file_location("aide_outcome_lessons", path)
+    module = importlib.util.module_from_spec(spec)
+    previous = sys.dont_write_bytecode
+    try:
+        sys.dont_write_bytecode = True
+        spec.loader.exec_module(module)
+    finally:
+        sys.dont_write_bytecode = previous
+    return module
+
+
+def build_outcome_lessons(repo_root: Path, path: str) -> dict[str, object]:
+    codec = outcome_lessons_codec()
+    codec.relative_path(path)
+    try:
+        raw = task_view_read(repo_root, OUTCOME_LEDGER_PATH, limit=codec.MAX_LEDGER)
+    except FileNotFoundError:
+        result = codec.select([], path, None)
+        return {**result, "ledger_state": "missing", "ledger_sha256": None}
+    lines = raw.decode("utf-8").splitlines()
+    if len(lines) > 2048:
+        raise ValueError("outcome lesson ledger row limit exceeded")
+    records = []
+    for number, line in enumerate(lines, 1):
+        if not line.strip():
+            continue
+        try:
+            data = json.loads(line, object_pairs_hook=_outcome_json_object,
+                              parse_constant=_outcome_json_constant)
+            json.dumps(data, allow_nan=False)
+            outcome_record_from_dict(data)
+            records.append(data)
+        except (TypeError, ValueError, RecursionError) as exc:
+            raise ValueError(f"invalid lesson ledger row {number}: {type(exc).__name__}") from exc
+    observations = {}
+
+    def read_evidence(relative):
+        try:
+            data = task_view_read(repo_root, relative, limit=codec.MAX_EVIDENCE)
+            return "observed", hashlib.sha256(data).hexdigest()
+        except FileNotFoundError:
+            return "missing", None
+        except (OSError, ValueError):
+            return "unsafe_or_unreadable", None
+
+    def observe(relative):
+        if relative not in observations:
+            if len(observations) >= 128:
+                raise ValueError("lesson evidence read limit exceeded")
+            observations[relative] = read_evidence(relative)
+        return observations[relative]
+
+    try:
+        result = codec.select(records, path, observe)
+    except (RecursionError, TypeError) as exc:
+        raise ValueError("invalid lesson metadata structure") from exc
+    if raw != task_view_read(repo_root, OUTCOME_LEDGER_PATH, limit=codec.MAX_LEDGER):
+        raise ValueError("outcome ledger changed during lesson selection")
+    if any(read_evidence(relative) != value for relative, value in observations.items()):
+        raise ValueError("lesson evidence changed during selection")
+    return {**result, "ledger_state": "observed", "ledger_sha256": hashlib.sha256(raw).hexdigest()}
+
+
+def command_outcome_lessons(args: argparse.Namespace) -> int:
+    result = build_outcome_lessons(args.repo_root, args.path)
+    if args.json:
+        print(json.dumps(result, indent=2, ensure_ascii=True))
+    else:
+        print("AIDE Lite outcome lessons")
+        print("ledger: " + result["ledger_state"])
+        print(f"selected: {len(result['selected'])}; excluded: {len(result['excluded'])}")
+        for item in result["selected"]:
+            print(f"- {item['id']} revision {item['revision']}: " + json.dumps(item["lesson"]["summary"], ensure_ascii=True))
+        for item in result["excluded"]:
+            print(f"- {item['id']} revision {item['revision']}: {item['reason']}")
+        print("Advisory observations only; no authorship, semantic correctness or execution authority established.")
+    return 0
+
+
 def command_outcome_add(args: argparse.Namespace) -> int:
     record = make_outcome_record(
         args.repo_root,
@@ -47924,6 +48012,10 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     outcome_add_parser.set_defaults(handler=command_outcome_add)
 
     outcome_subparsers.add_parser("report").set_defaults(handler=command_outcome_report)
+    outcome_lessons_parser = outcome_subparsers.add_parser("lessons", help="Read current source-linked advice for one exact project path.")
+    outcome_lessons_parser.add_argument("--path", required=True)
+    outcome_lessons_parser.add_argument("--json", action="store_true")
+    outcome_lessons_parser.set_defaults(handler=command_outcome_lessons)
 
     optimize_parser = subparsers.add_parser("optimize")
     optimize_subparsers = optimize_parser.add_subparsers(dest="optimize_command", required=True)

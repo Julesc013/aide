@@ -1,0 +1,6 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-OUTCOME-LESSONS-01
+status: needs_review
+result: PENDING
+review_gate: exact_admission
+next_action: exact_source_and_first_job_review

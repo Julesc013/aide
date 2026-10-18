@@ -173,3 +173,5 @@ context_task_selection_integration_receipt: .aide/queue/AIDE-CONTEXT-TASK-SELECT
 
 # AIDE-VALIDATION-OUTPUT-01 qualified: source10/conserved26,delivered36,ownership6; all5retired.
 # Actual60915checks compact241bytes/full4894325; original failures retained; see child REPORT.md.
+
+# AIDE-OUTCOME-LESSONS-01 admitted: source-linked lesson correction/retirement over existing outcomes; qualification pending. Native/host gates unchanged.
