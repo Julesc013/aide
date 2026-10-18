@@ -1262,3 +1262,6 @@ AIDE-PORTABLE-TASK-HANDOFF-01 qualification: source79/delivered79/ownership6,
 actual safe-installed consumer and fixed preview PASS; all3 jobs retired. See
 `.aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/REPORT.md` for exact scope and receipts.
 Native adoption/host binding/whole-outcome evidence remain separate.
+
+- [Validation output modes](docs/reference/aide-lite.md): concise human output,
+  complete text and structured results; qualification in `.aide/queue/AIDE-VALIDATION-OUTPUT-01/`.

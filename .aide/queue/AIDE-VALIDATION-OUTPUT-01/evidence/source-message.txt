@@ -1,0 +1,32 @@
+feat(validation): make complete checks readable in CLI output
+
+## Summary
+- Prepare AIDE-VALIDATION-OUTPUT-01 with compact, full and JSON validation output.
+
+## Why
+- Successful validation emitted4.9MB and obscured its actionable warning.
+
+## Changed
+- Default to counts and every non-PASS finding; retain exact legacy --full.
+- Add ordered lossless JSON and nine regression methods; preserve validators.
+
+## Validation
+- PASS structural syntax and unchanged collector/existing-test checks.
+- Runtime36 methods prepared for separately admitted managed job; not yet run.
+
+## Changelog
+- Added: Compact validation with full text and machine-readable result modes.
+
+## Risks
+- Consumers parsing individual PASS lines must request --full or --json.
+- Output reduction does not establish speed, cost or broader qualification.
+
+## Follow-up
+- Qualify source/exported consumers, refresh bindings and review integration.
+
+AIDE-Task: AIDE-VALIDATION-OUTPUT-01
+AIDE-Phase: source-preparation
+AIDE-Result: PENDING
+AIDE-Scope: validation-output
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: exact-source-and-job-review-required

@@ -1,0 +1,16 @@
+{
+  "base": "21625bd6a5cf9610e3b8a5a586fb1290bcdf6fe8",
+  "files": {
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/admission-effect.md": "8a600763e5892bc4a10e0ca850767c3d67fc1881eafde102c374931429403425",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/baseline.json": "f6de3f499fd085bcced211e07850bb144db23386443d34d3c3bbc0fb8320ea5b",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/latest-intent-packet.json": "bbe9e7a3130b0bc6fa572cb85cb29fd715311965ef51d8f0d64b7e5b4d2d6eda",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/latest-intent-packet.md": "dbea0c4043a7c545637b9dbdeb224669b33e2f96c42d7a5316c41af36b0b4882",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/latest-workunit-draft.json": "344e30f7799d440452cab65848835d8e937b77f41ab7cd63e71a03aba71d91dd",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/latest-workunit-draft.md": "eb393cd8a23b013996b9cc4b3f187c4df551ef4450f2a52af99b13dacaa95c3c",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md": "456ce64526c2570f2887536b70d60c2f43d97d934707e5de4096c973ef9d6bdb",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/prompt.md": "a6f126a02a451a289f94a7f0512aab0fa2795333cc3bcda1dd9f7d48df983f98",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml": "1299a4b47d58fbfcd57598390907f26532366d8ca7e06e7f1905e29ea8d8aaa4",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml": "eefd8682970ed44a9947567d47ef7755694df6c34ff2625f6ddf67a80a6e54a1"
+  },
+  "effect_sha256": "8a600763e5892bc4a10e0ca850767c3d67fc1881eafde102c374931429403425"
+}

@@ -1,0 +1,18 @@
+{
+  "base": "21625bd6a5cf9610e3b8a5a586fb1290bcdf6fe8",
+  "tree": "2cbdd61bacfb1a286ebdaea7b35a834ab9092209",
+  "retained_validation": {
+    "path": ".aide\\queue\\AIDE-PORTABLE-TASK-HANDOFF-01\\evidence\\integration-validate-after-dev.log",
+    "sha256": "21086476610d82cb61eae1736076944bc6276b15237e128fcb5324d1b700add4",
+    "bytes": 4894357,
+    "findings": 60915,
+    "pass": 60914,
+    "warn": 1
+  },
+  "inputs": {
+    ".aide/scripts/aide_lite.py": "633cb60093cd227d66c960e9b5480d5f2b0f8d0efff259f7715473656c8e0f68",
+    ".aide/scripts/tests/test_aide_lite.py": "6c9a00d60930f5376f76eeb3e6de26ed3a510c377a69da810f8b5d3f845dc582",
+    ".aide/scripts/tests/test_review_pack.py": "66d3269ff56790ea714fd53ac3c7295ca33923d20495f6e68f5a168d4cc4d698",
+    "docs/reference/aide-lite.md": "f88e5c4344054f91f7eb88c9107dfc5562a8af084565ebbf02cff116addca7b5"
+  }
+}

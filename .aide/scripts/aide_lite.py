@@ -33830,7 +33830,30 @@ def command_doctor(args: argparse.Namespace) -> int:
 
 def command_validate(args: argparse.Namespace) -> int:
     ok, messages = validate_repo(args.repo_root)
-    return print_messages("AIDE Lite validate", ok, messages)
+    if getattr(args, "full", False):
+        return print_messages("AIDE Lite validate", ok, messages)
+    counts = dict.fromkeys(("PASS", "WARN", "FAIL", "OTHER"), 0)
+    findings = []
+    for message in messages:
+        severity = message.partition(" ")[0]
+        severity = severity if severity in ("PASS", "WARN", "FAIL") else "OTHER"
+        counts[severity] += 1
+        if severity != "PASS":
+            findings.append(message)
+    if getattr(args, "json", False):
+        print(json.dumps({"schema": "aide.validation-result.v1",
+                          "status": "PASS" if ok else "FAIL",
+                          "total": len(messages), "counts": counts,
+                          "messages": messages}, ensure_ascii=True))
+    else:
+        print("AIDE Lite validate")
+        print(f"status: {'PASS' if ok else 'FAIL'}")
+        print(f"checks: {len(messages)}; " + "; ".join(
+            f"{severity}: {count}" for severity, count in counts.items()))
+        for message in findings:
+            print(f"- {message}")
+        print(f"omitted PASS details: {counts['PASS']}; use validate --full or --json for all results")
+    return 0 if ok else 1
 
 
 def command_estimate(args: argparse.Namespace) -> int:
@@ -46895,7 +46918,11 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     subparsers.add_parser("doctor").set_defaults(handler=command_doctor)
-    subparsers.add_parser("validate").set_defaults(handler=command_validate)
+    validate_parser = subparsers.add_parser("validate")
+    validate_output = validate_parser.add_mutually_exclusive_group()
+    validate_output.add_argument("--full", action="store_true", help="Print every check in the legacy text format.")
+    validate_output.add_argument("--json", action="store_true", help="Print one JSON object containing every check.")
+    validate_parser.set_defaults(handler=command_validate)
 
     estimate_parser = subparsers.add_parser("estimate")
     estimate_parser.add_argument("--file", required=True)

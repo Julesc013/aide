@@ -1,0 +1,38 @@
+schema_version: aide.queue-task.v0
+id: AIDE-VALIDATION-OUTPUT-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Make complete validation readable without discarding findings
+status: needs_review
+type: implementation
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-VALIDATION-OUTPUT-01/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_validation_output.py
+    - docs/reference/aide-lite.md
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - .aide/reports/capability-ledger.json
+    - .aide/reports/capability-ledger.md
+    - .aide/reports/capability-evidence-bindings.json
+    - .aide/reports/capability-command-status.md
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/CHANGELOG.preview.md
+    - .aide/changelog/RELEASE_NOTES.preview.md
+    - .aide/changelog/changelog.preview.json
+    - .aide/changelog/latest-changelog-report.md
+    - .aide/changelog/malformed-commits.md
+    - .aide/changelog/release-notes.preview.json
+  forbidden_paths:
+    - validation collector semantics
+    - live context outputs
+    - target repositories
+    - .aide/release/**
+    - .github/**
+    - machine configuration
+review_gate: exact_admission_source_each_job_and_integration_effect
+maximum_jobs: 3

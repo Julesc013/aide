@@ -168,3 +168,5 @@ context_task_selection_integration_receipt: .aide/queue/AIDE-CONTEXT-TASK-SELECT
 
 # Portable task handoff qualified source/delivered/installed; all3jobs retired.
 # Dev/main integration follows child exact effect; native/host gates unchanged.
+
+# AIDE-VALIDATION-OUTPUT-01: bounded presentation increment admitted; qualification pending.

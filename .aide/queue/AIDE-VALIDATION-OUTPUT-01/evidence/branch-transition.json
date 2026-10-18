@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "base": "21625bd6a5cf9610e3b8a5a586fb1290bcdf6fe8",
+  "branch": "task/aide-validation-output-01",
+  "remote_effects": false,
+  "dirty_classification": "exact reviewed child preparation only",
+  "prior_preflight": "incorrect ready_dry_run assertion refused before effect; helper dirty_tree requires explicit classification, satisfied by exact map"
+}

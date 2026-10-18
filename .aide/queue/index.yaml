@@ -4105,3 +4105,12 @@ items:
     task: .aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/task.yaml
     exec_plan: .aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/ExecPlan.md
     evidence: .aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/evidence
+
+  - id: AIDE-VALIDATION-OUTPUT-01
+    status: needs_review
+    result: PENDING
+    planning_state: source_prepared_runtime_unrun
+    title: Make complete validation readable without discarding findings
+    task: .aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence
