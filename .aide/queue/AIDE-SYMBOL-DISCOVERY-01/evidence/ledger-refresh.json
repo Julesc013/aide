@@ -1,0 +1,25 @@
+{
+  "result": "BINDING_CURRENT_VALIDATION_PENDING_EXPORT",
+  "classification_unchanged": true,
+  "after": {
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "fdf1737e035dde01617a970e42db715a515f65630e3d21277bdb189d2d708d2c",
+    ".aide/reports/capability-evidence-bindings.json": "12c90806f229a8b10a172ffc30dbeccbff1d204411ce433d878f379bbd53f3de",
+    ".aide/reports/capability-command-status.md": "26a20eed3d088ecd0d56146e03e2b3254d302f867797b9243be271cec2a1c319"
+  },
+  "output_sha256": "8848b6ef789fa38921045a3311e9fbacecdbc86cfa808e0b8e838242f5b87059",
+  "binding": {
+    "state": "CURRENT",
+    "reason": "bound_source_inputs_unchanged",
+    "changed_refs": [],
+    "qualification": "source_classification_only"
+  },
+  "doctor": {
+    "exit_code": 1,
+    "output_sha256": "20ed121a4a800922d8e21b9e7dc5b38c8a212405fa9cf6e987f97248cc93a64a"
+  },
+  "validate": {
+    "exit_code": 1,
+    "output_sha256": "6c60c9ac889f94fca7b7e1cbc541ea445436f48b6f5203d96582c3035dd488a4"
+  }
+}

@@ -90,3 +90,10 @@ existing CLI composition and21 behavioral methods are prepared; all23 original
 quality/repo methods remain unchanged. Tests have not executed. Source/job review
 precedes allocation. Return0 means selected syntax parsed, with recorded context
 separately advisory; partial source coverage returns1 and refusal returns2.
+
+**Source observed.** Source44 passed at41006cce with no failures/errors/skips;
+all23 original assertions remain. Job537aee25 retired with collection verified,
+scratch absent and reservation released. Reviewed capability refresh preserved
+classification bytes and restored CURRENT binding. Original validation failures
+remain until the next reviewed export reconciles the added helper and provenance.
+Prepared delivered44 and installed portable_cli_text consumer remain unrun.

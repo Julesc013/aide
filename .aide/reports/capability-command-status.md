@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-offline-result-handoff-01`
-- current_commit: `8a6b32ef484f2abddf9c7d3c7ea76946e4d12c2c`
+- current_branch: `task/aide-symbol-discovery-01`
+- current_commit: `41006cce7f8ca133fc88b7a850dc5f7791c01ccf`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

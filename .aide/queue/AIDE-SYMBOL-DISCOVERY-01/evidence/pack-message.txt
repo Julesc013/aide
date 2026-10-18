@@ -1,0 +1,12 @@
+test(quality): prepare installed symbol discovery qualification
+
+Qualify fresh helper discovery in delivered code and a safe-installed project.
+Use the actual portable CLI projection as a reuse case, with an independent
+expected-binding assertion and preserved project customization.
+
+Validation: PASS - source44; original23 retained; retired job; CURRENT binding
+ FAIL - unrefreshed development pack requires its reviewed exporter
+ NOT RUN - delivered44, installed consumer and final preview
+Changelog: Internal: Prepare delivered and installed symbol discovery checks
+AIDE-Task: AIDE-SYMBOL-DISCOVERY-01
+AIDE-Format: compact-v1
