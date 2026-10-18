@@ -238,3 +238,87 @@ class WorkEffortTests(unittest.TestCase):
             capture_output=True, text=True, timeout=15)
         self.assertEqual(result.returncode, 2, result.stderr)
         self.assertEqual(json.loads(result.stdout)["attempt_count"], 0)
+
+    def export_fixture(self):
+        spec = importlib.util.spec_from_file_location(
+            "effort_export_fixture", Path(__file__).with_name("test_export_import.py"))
+        fixture = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(fixture)
+        helper = fixture.ExportImportTests()
+        self.addCleanup(helper.doCleanups)
+        source = helper.make_source_repo(minimal_recovery=True)
+        return source, helper.build_pack(source)
+
+    def test_safe_installed_effort_preserves_project_core_and_never_falls_back(self):
+        source, pack = self.export_fixture()
+        private = ".aide/scripts/aide_work_effort.py"
+        self.assertEqual((pack / "files" / private).read_text(encoding="utf-8"),
+                         (source / "core/execution/work_effort.py").read_text(encoding="utf-8"))
+        self.receipt(exit_code=1)
+        for hostile in (False, True):
+            with self.subTest(hostile_project_core=hostile):
+                target = self.root / ("brownfield" if hostile else "fresh")
+                target.mkdir()
+                core = target / "core/execution/work_effort.py"
+                if hostile:
+                    core.parent.mkdir(parents=True)
+                    core.write_text("from pathlib import Path\nPath(__file__).with_name('EXECUTED').write_text('bad')\nraise RuntimeError('project code executed')\n", encoding="utf-8")
+                result = lite.apply_import_pack(pack, target)
+                self.assertEqual(result["status"], "APPLIED")
+                self.assertEqual(core.exists(), hostile)
+                (target / "job.json").write_bytes((self.root / "job.json").read_bytes())
+                (target / "work.json").write_text(json.dumps(self.manifest), encoding="utf-8")
+                command = [sys.executable, "-I", "-B", str(target / ".aide/scripts/aide_lite.py"),
+                           "--repo-root", str(target), "job", "effort", "--work-set", "work.json"]
+                def snapshot():
+                    return {p.relative_to(target).as_posix(): p.read_bytes()
+                            for p in target.rglob("*") if p.is_file()}
+                before = snapshot()
+                for machine in (False, True):
+                    run = subprocess.run(command + (["--json"] if machine else []),
+                                         capture_output=True, text=True, timeout=15)
+                    self.assertEqual(run.returncode, 2, run.stdout + run.stderr)
+                    if machine:
+                        self.assertEqual(json.loads(run.stdout)["execution_outcomes"]["FAILED"], 1)
+                    else:
+                        self.assertIn("1 failed", run.stdout)
+                        self.assertIn("accounting unknown", run.stdout)
+                    self.assertEqual(snapshot(), before)
+                refused = subprocess.run(command[:-1] + ["../work.json", "--json"],
+                                         capture_output=True, text=True, timeout=15)
+                self.assertEqual(refused.returncode, 1)
+                self.assertEqual(json.loads(refused.stdout)["status"], "REFUSED")
+                self.assertEqual(snapshot(), before)
+                # An absent owned dependency must refuse even when project core exists.
+                (target / private).unlink()
+                before = snapshot()
+                for machine in (False, True):
+                    refused = subprocess.run(command + (["--json"] if machine else []),
+                                             capture_output=True, text=True, timeout=15)
+                    self.assertEqual(refused.returncode, 1, refused.stdout + refused.stderr)
+                    self.assertIn("REFUSED", refused.stdout)
+                    self.assertEqual(snapshot(), before)
+                self.assertFalse(core.with_name("EXECUTED").exists())
+
+    def test_export_binding_drift_refuses_before_reset(self):
+        source, pack = self.export_fixture()
+        before = {p.relative_to(pack).as_posix(): p.read_bytes()
+                  for p in pack.rglob("*") if p.is_file()}
+        script = source / ".aide/scripts/aide_lite.py"
+        original = script.read_text(encoding="utf-8")
+        projected = (pack / "files/.aide/scripts/aide_lite.py").read_text(encoding="utf-8")
+        self.assertEqual(lite.portable_cli_text(projected), projected)
+        binding = "WORK_EFFORT_MODULE_PATH = " + json.dumps(lite.WORK_EFFORT_MODULE_PATH)
+        for changed in (original.replace(binding, "# absent binding"), original + "\n" + binding + "\n",
+                        original.replace(binding, 'WORK_EFFORT_MODULE_PATH = "project/arbitrary.py"')):
+            script.write_text(changed, encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "binding"):
+                lite.build_export_pack(source)
+            self.assertEqual(before, {p.relative_to(pack).as_posix(): p.read_bytes()
+                                    for p in pack.rglob("*") if p.is_file()})
+        script.write_text(original, encoding="utf-8")
+        (source / "core/execution/work_effort.py").unlink()
+        with self.assertRaises(FileNotFoundError):
+            lite.build_export_pack(source)
+        self.assertEqual(before, {p.relative_to(pack).as_posix(): p.read_bytes()
+                                for p in pack.rglob("*") if p.is_file()})

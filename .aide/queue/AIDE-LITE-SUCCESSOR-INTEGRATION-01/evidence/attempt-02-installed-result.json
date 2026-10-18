@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "tests_run": 1,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "test_method": "test_safe_installed_effort_preserves_project_core_and_never_falls_back",
+  "fixture": "actual_owned_combined_development_pack"
+}

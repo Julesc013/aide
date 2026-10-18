@@ -1,0 +1,14 @@
+test(delivery): verify the combined installed development pack
+
+The owned effort helper works after safe installation without replacing
+project core. The delivered CLI preserves the newer compact-message behavior
+and all current source features through its declared export projection.
+
+Validation: PASS - 41 delivered checks, 6 ownership checks and installed regression
+ PASS - exporter, doctor, full validation, pack status and worker retirement
+ NOT RUN - fixed combined-history preview and remote integration
+Changelog: Fixed: Deliver effort accounting through an owned portable helper
+AIDE-Task: AIDE-LITE-SUCCESSOR-INTEGRATION-01
+AIDE-Format: compact-v1
+Risk: The frozen 1.1.0 archives differ from this development pack
+Follow-up: Preserve historical warnings and verify exact dev/main integration
