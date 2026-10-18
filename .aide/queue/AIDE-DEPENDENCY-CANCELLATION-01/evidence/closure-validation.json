@@ -1,0 +1,132 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "check": "message",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-DEPENDENCY-CANCELLATION-01\\evidence\\closure-message.txt"
+      ],
+      "exit_code": 0,
+      "sha256": "f27ef7c6d1c8e0755cc963baba7f5b751f4817a60aeadfe1b8ae1d71d747f02b",
+      "bytes": 2184
+    },
+    {
+      "check": "range",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "8fe2d12cbc9d91f034cf7f68c58beda09809dc58..HEAD"
+      ],
+      "exit_code": 0,
+      "sha256": "9231092d20e518dc877faef30619185110a90b5c2ba07e98ca3e9fea346915ba",
+      "bytes": 702
+    },
+    {
+      "check": "validate",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "exit_code": 0,
+      "sha256": "8084fc43cb5383cd8c86024d66aba2cb8218c2b0d31ca208c636a3672dc7fa19",
+      "bytes": 241
+    },
+    {
+      "check": "doctor",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "sha256": "585c64e7eac737c2e172b11d760d884d7c614858c1521bb8941c4e4ffa595f42",
+      "bytes": 5181
+    },
+    {
+      "check": "pack",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "pack-status"
+      ],
+      "exit_code": 0,
+      "sha256": "6dfead5e9ffb41f8a52d930554e3db5ba710ec78dc87266a9b3d7e5b304bc41d",
+      "bytes": 216
+    },
+    {
+      "check": "capability",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "status"
+      ],
+      "exit_code": 0,
+      "sha256": "785e31d49f9a90cab93ba4794712432a1e152e83a44e124988cb243a4f774402",
+      "bytes": 489
+    },
+    {
+      "check": "fixed_preview",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/run_preview.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "sha256": "d7cc884a0749432396a04919441670060931bc3e84b5bcc5cb8badb70610d2ed",
+      "bytes": 1165
+    },
+    {
+      "check": "diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "jobs": [
+    "683ea8c5cdd6494fa575cec354f2731b",
+    "9147b6b0f7e74d33bfdf5303e56499f7",
+    "bb58bd259b9a464fabb27a2048ac4773"
+  ],
+  "all_collections_verified": true,
+  "source_and_workflow_inputs_unchanged": true,
+  "pack_files": 870,
+  "payload_files_unchanged": 867,
+  "release_files_unchanged": 8,
+  "capability_binding": {
+    "state": "CURRENT",
+    "reason": "bound_source_inputs_unchanged",
+    "changed_refs": [],
+    "qualification": "source_classification_only"
+  },
+  "existing_warning": "missing .aide/prompts/evidence-review.md",
+  "whole_outcome_model_usage": "unknown"
+}

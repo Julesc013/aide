@@ -100,3 +100,11 @@ bytes are unchanged. Use the existing owned exporter before the fixed preview
 in the remaining job3, retaining its six ownership checks and complete failure.
 Only manifest/checksum/report metadata may differ; all867 payload/static files
 and eight frozen release assets must remain exact. No fourth allocation.
+
+**Job 3 passed.** Existing exporter changed only manifest source_commit;
+all867 payload/static members and eight frozen release assets stayed identical.
+Six ownership methods, exporter/doctor/full validation/pack-status and fixed
+five-commit preview passed. All six preview outputs regenerate exactly. Worker
+bb58bd259b9a464fabb27a2048ac4773 retired; collection/scratch/reservation verified.
+All three allocations are used. Source qualification is complete; exact terminal
+review and observed integration receipt govern dev/main synchronization.

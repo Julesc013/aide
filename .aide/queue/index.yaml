@@ -4164,7 +4164,7 @@ items:
 
   - id: AIDE-DEPENDENCY-CANCELLATION-01
     title: Independent cooperative dependency cancellation
-    status: needs_review
+    status: passed_with_notes
     task: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/ExecPlan.md
     evidence: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence

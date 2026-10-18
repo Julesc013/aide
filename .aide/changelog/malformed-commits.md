@@ -1,11 +1,9 @@
 # Malformed Commits
 
-source_range: d8001eb81f934cda83e93ae0704f0c60aed675c7..bfcdeb17f49302eeca4ad0adc0b0081509f8f308
-malformed_count: 3
+source_range: 8fe2d12cbc9d91f034cf7f68c58beda09809dc58..a672797ff9cf27dc53ef2164322be55d623bdd68
+malformed_count: 0
 
-- 4bb6a4f990c5 test(release): prepare actual Lite successor qualification: missing_changelog_category
-- 651464ae3e86 test(release): freeze Lite 1.1.0 candidate for consumer checks: missing_changelog_category
-- ae26a1ca80b1 test(release): retain eight passing successor consumer cases: missing_changelog_category
+- None.
 
 release_promotion_requires_review: true
 history_rewritten: false

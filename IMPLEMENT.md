@@ -14073,4 +14073,4 @@ Reconciled the original 98b7b2dc repair in two-parent merge 4edf2b14, retaining 
 
 ### Independent dependency cancellation
 
-Prepared explicit-v2 cancellation through existing Requests and MCP owners, preserving v1 behavior and native ownership. New regression and fresh-process checks await exact source/effect review; no live ledger is changed.
+Implemented explicit-v2 cancellation through existing Requests/MCP owners. Original v1 behavior and 60 regressions remain unchanged; 13 new methods, one fresh-process consumer and six ownership checks passed. Existing exporter refreshed only manifest provenance; no payload or release bytes changed. All three jobs retired.

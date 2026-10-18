@@ -1301,4 +1301,4 @@ Current writing guide: [commit discipline](docs/reference/commit-discipline.md),
 
 ### Independent dependency cancellation
 
-[Local dependency requests](docs/reference/local-dependency-requests.md) documents v1 compatibility, explicit-v2 cancellation observations and their cooperative limits. Qualification status belongs to [the child](.aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/status.yaml).
+[Local dependency requests](docs/reference/local-dependency-requests.md) describes explicit-v2 cancellation and compatibility. [Qualification report](.aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/REPORT.md) records passing source/CLI/MCP checks, preserved failures and cooperative limits.

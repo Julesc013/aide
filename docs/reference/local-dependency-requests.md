@@ -202,7 +202,7 @@ downstream adoption or native cancellation enforcement. Those remain required in
 of the daily-use workflow. Published Lite assets do not acquire this feature from
 a source commit alone.
 
-The v2 cooperative cancellation candidate is tracked by
-[AIDE-DEPENDENCY-CANCELLATION-01](../../.aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/ExecPlan.md).
-Its source and actual CLI/MCP qualification are separate from the earlier v1
-evidence; consult the child's status before treating the new behavior as qualified.
+The [v2 qualification](../../.aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/REPORT.md)
+passed 73 source methods, an actual fresh-process CLI/MCP two-request workflow
+and exact old-reader refusal. These are local cooperative fixture results;
+native termination, host delivery and live downstream adoption remain separate.

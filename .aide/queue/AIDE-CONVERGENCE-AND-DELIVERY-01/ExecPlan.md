@@ -880,3 +880,9 @@ admitted for explicit-v2 cooperative cancellation, not native termination.
 The publication candidate remains preserved on task/aide-lite-successor-publication-01
 at f708e8c6 awaiting interactive authentication. Refresh its ref guards after
 independent integration; do not reuse stale publication effects.
+
+**Cancellation qualification complete.** See the child report: all73 source
+methods, one actual CLI/MCP consumer, legacy refusal, six ownership checks and
+fixed preview passed. All three jobs retired. Source-only scope is retained;
+actual branch delivery is recorded separately. Pending publication refs remain
+preserved and its future effect must refresh stale ref guards.

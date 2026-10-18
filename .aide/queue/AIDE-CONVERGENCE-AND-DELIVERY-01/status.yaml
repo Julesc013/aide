@@ -196,3 +196,6 @@ successor_reconciliation_report: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/
 successor_reconciliation_integration_receipt: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/evidence/integration-result.log
 
 dependency_cancellation_ref: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/status.yaml
+
+dependency_cancellation_result_ref: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/REPORT.md
+dependency_cancellation_integration_receipt: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/integration-result.log

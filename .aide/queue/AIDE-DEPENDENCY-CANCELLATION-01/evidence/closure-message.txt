@@ -1,0 +1,14 @@
+feat(requests): qualify cooperative cancellation and recovery
+
+Cancel one dependency request while unrelated work completes. Preserve v1
+compatibility, prior evidence and native authority; report uncertain effects
+without inferring termination or successful adoption.
+
+Validation: PASS - 73 source methods; fresh CLI/MCP workflow; legacy refusal
+ PASS - six ownership checks; unchanged payload/releases; fixed preview
+ PASS - all three jobs collected and retired; original failures retained
+Changelog: Added: Qualified opt-in cooperative dependency cancellation
+AIDE-Task: AIDE-DEPENDENCY-CANCELLATION-01
+AIDE-Format: compact-v1
+Risk: Cooperative observations do not enforce native process termination
+Follow-up: Use exact reviewed integration; retain separate host/release gates

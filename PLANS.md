@@ -5336,4 +5336,4 @@ Qualified compact-v1 through existing owners: 120 source checks, 71 delivered ch
 
 ### Independent dependency cancellation
 
-[Independent dependency cancellation](.aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/ExecPlan.md) is admitted P4.requests work. Qualify one cancelled request beside independently completed work; preserve pending publication and frozen release subjects.
+Qualified independent cooperative cancellation: 73 source methods, actual CLI/MCP two-request continuation, legacy-reader refusal and final preview passed. Source-only scope and integration evidence are in the [child report](.aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/REPORT.md).
