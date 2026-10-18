@@ -1,0 +1,23 @@
+{
+  "base": "84966d045fc37243a1b394d380903e8eda46cc1e",
+  "files": {
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/ExecPlan.md": "e157c665e0b217570745bb00e007affb1c4864ff37c65443019fecdef1e3bfbf",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/source-effect.md": "65eb9ffa8e1e9b562aeef7986023bbdc657a419269c168ceb942a2b2068ad6dd",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/source-job-template.json": "39b7704bd2b519209de698bde4351122974afeefe4bb41aa17e763f60d2b162b",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/source-message.txt": "7db8a25bb0b7268be179407f616abd14da7f327715937a01bdb926d7770ba60c",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/source-prechecks.json": "742df63d11214e64a17f54aa0e71e5b06f22e933e6226c65332ff423117bf525",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/run_checks.py": "550a0ab174fa028edb93c5a03f01f06fabe0332d402f9afefe8aa9872a1a1edb",
+    ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/status.yaml": "dd8b9d5f706c2a3ecf4c0757c2510a78dd874ad966e83f172249de10d6d57b39",
+    ".aide/queue/index.yaml": "588f59944b5f1110df9b3aa249f31d5afecc66ffa4b58402a56fd67363e1361e",
+    ".aide/scripts/aide_lite.py": "c06ddcc9f5f2f6771789623ba706075731f3fc5b529f147d63ff980430bb2e91",
+    ".aide/scripts/task_brief_view.py": "b30b75771adf418f413084241e555427624a3b0c87d59b0070569124fbc04059",
+    ".aide/scripts/tests/test_task_brief_symbols.py": "954913888e385eb20ab6a9fecda9e389740cf19364f46595eeee038a068086f9",
+    "DOCUMENTATION.md": "959bf72e8a3a678339f964252ce601d405c2d858bc296da8c43dead7eaef34be",
+    "IMPLEMENT.md": "4cbe72ea629ff7e583bc4763212b4be8e3ebf0e35e94da446811989215e24636",
+    "PLANS.md": "47e77e546d9ddcbb901c6cc055d41e26887ed2b421792e287cdbff6c4b702658",
+    "docs/reference/task-packets.md": "62fe1f5969e26e053c04909ba140e958147b69511a74a983ca4aa8a34ee64dd0"
+  },
+  "effect_sha256": "65eb9ffa8e1e9b562aeef7986023bbdc657a419269c168ceb942a2b2068ad6dd",
+  "message_sha256": "7db8a25bb0b7268be179407f616abd14da7f327715937a01bdb926d7770ba60c",
+  "template_sha256": "39b7704bd2b519209de698bde4351122974afeefe4bb41aa17e763f60d2b162b"
+}

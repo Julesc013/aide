@@ -40806,7 +40806,9 @@ def command_task_current(args: argparse.Namespace) -> int:
     return 0 if view["task_id"] else 1
 
 
-def build_task_development_brief(repo_root: Path, task_id: str, path: str) -> dict[str, object]:
+def build_task_development_brief(repo_root: Path, task_id: str, path: str, *,
+                                 symbol: str | None = None,
+                                 related_paths: list[str] | None = None) -> dict[str, object]:
     """Compose existing advisory readers for one explicit task and file."""
     boundary = {"schema_version": "aide.task-brief.v1", "read_only": True,
                 "execution_admitted": False, "acceptance_verified": False,
@@ -40817,6 +40819,8 @@ def build_task_development_brief(repo_root: Path, task_id: str, path: str) -> di
                 "next_action": "reconcile the selected records before requesting another brief"}
 
     try:
+        if related_paths and symbol is None:
+            return refused("related source selection requires an explicit symbol")
         if not isinstance(task_id, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,127}", task_id):
             return refused("an explicit exact task identity is required")
         outcome_lessons_codec().relative_path(path)
@@ -40826,7 +40830,10 @@ def build_task_development_brief(repo_root: Path, task_id: str, path: str) -> di
 
         def records():
             observed = {}
-            for ref, limit in ((task_ref, 131072), (status_ref, 131072), (".aide/queue/index.yaml", 1048576)):
+            refs = [(task_ref, 131072), (status_ref, 131072), (".aide/queue/index.yaml", 1048576)]
+            if symbol is not None:
+                refs.append((FILE_QUALITY_LEDGER_JSON_PATH, 16 * 1024 * 1024))
+            for ref, limit in refs:
                 try:
                     observed[ref] = task_view_read(repo_root, ref, limit=limit)
                 except FileNotFoundError:
@@ -40845,10 +40852,17 @@ def build_task_development_brief(repo_root: Path, task_id: str, path: str) -> di
         except (OSError, ValueError, RecursionError):
             lessons = None
             lesson_state = "invalid"
+        inspection = None
+        if symbol is not None:
+            inspection = build_quality_symbol_inspection(repo_root, symbol, [path, *(related_paths or [])])
+            captured = before[FILE_QUALITY_LEDGER_JSON_PATH]
+            if inspection["ledger_sha256"] != (hashlib.sha256(captured).hexdigest() if captured is not None else None):
+                return refused("quality ledger changed while assembling the brief")
         if before != records():
             return refused("selected task records changed while assembling the brief")
         partial = (quality["result"] != "PASS" or lesson_state != "observed"
-                   or any(item["availability"] != "present" for item in task["evidence"]))
+                   or any(item["availability"] != "present" for item in task["evidence"])
+                   or (inspection is not None and inspection["result"] != "PASS"))
         invalid = quality["result"] == "INVALID" or lesson_state == "invalid"
         result = {**boundary, "result": "PARTIAL" if partial else "OBSERVED", "path": path,
                   "continuation": continuation, "quality": quality, "lessons": lessons,
@@ -40861,6 +40875,14 @@ def build_task_development_brief(repo_root: Path, task_id: str, path: str) -> di
                                   "Quality links are incomplete and their freshness is unverified; do not narrow required checks.",
                                   "Lessons retain unverified authorship and semantic correctness.",
                                   "Missing information does not establish absence; no indexes were generated."]}
+        if inspection is not None:
+            result["symbol_inspection"] = inspection
+            result["symbol_selection"] = [
+                {"path": item["path"], "reason": "task_target" if index == 0 else "explicit_related_source"}
+                for index, item in enumerate(inspection["files"])
+            ]
+            result["limitations"].append(
+                "Fresh syntax covers selected files only; runtime binding, alias behavior and semantic equivalence remain unresolved.")
         if len(json.dumps(result, ensure_ascii=True, allow_nan=False).encode("ascii")) > 65536:
             return refused("brief exceeds the 64 KiB output bound; inspect the component views separately")
         return result
@@ -40902,6 +40924,27 @@ def render_task_development_brief(data: dict[str, object]) -> str:
     lines.extend("- " + quote(item["id"]) + f" revision {item['revision']}: " + quote(item["lesson"]["summary"])
                  for item in lessons["selected"][:3])
     lines.append("omitted lessons: " + str(max(0, len(lessons["selected"]) - 3)) + "; exclusion reasons and hashes: --json")
+    inspection = data.get("symbol_inspection")
+    if inspection is not None:
+        lines.extend(["fresh symbol: " + quote(inspection["symbol"]),
+                      "source coverage: " + inspection["coverage"] + "; runtime binding unresolved"])
+        for item, selection in zip(inspection["files"], data["symbol_selection"]):
+            syntax = item["syntax"]
+            lines.append(quote(item["path"]) + ": " + syntax["state"] + "; matches: "
+                         + syntax["match_state"] + "; selected: " + selection["reason"])
+            displayed = 0
+            omitted = 0
+            for group in ("definitions", "calls", "imports"):
+                bucket = syntax.get(group, {"items": [], "omitted": 0})
+                for match in bucket["items"]:
+                    if displayed < 3:
+                        lines.append("- " + group + " line " + str(match["line"]) + ": "
+                                     + quote(match.get("qualified_name", match["scope"])))
+                        displayed += 1
+                    else:
+                        omitted += 1
+                omitted += bucket["omitted"]
+            lines.append("omitted source matches: " + str(omitted) + "; complete locations and hashes: --json")
     lines.extend(["next_action: " + data["next_action"], "usage: unknown; no execution or acceptance authority",
                   *data["limitations"]])
     return "\n".join(lines)
@@ -40927,7 +40970,9 @@ def task_brief_renderer():
 
 
 def command_task_brief(args: argparse.Namespace) -> int:
-    data = build_task_development_brief(args.repo_root, args.task_id, args.path)
+    data = build_task_development_brief(args.repo_root, args.task_id, args.path,
+                                      symbol=getattr(args, "symbol", None),
+                                      related_paths=getattr(args, "related_path", None))
     if getattr(args, "html", False):
         try:
             renderer = task_brief_renderer()
@@ -47952,6 +47997,9 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_brief_parser = task_subparsers.add_parser("brief")
     task_brief_parser.add_argument("--task-id", required=True, help="Exact existing task identity.")
     task_brief_parser.add_argument("--path", required=True, help="One canonical repository-relative file path.")
+    task_brief_parser.add_argument("--symbol", help="Inspect one Python identifier in the selected source.")
+    task_brief_parser.add_argument("--related-path", action="append",
+                                   help="Explicit related source for --symbol (at most seven).")
     task_brief_output = task_brief_parser.add_mutually_exclusive_group()
     task_brief_output.add_argument("--json", action="store_true", help="Show component observations and limitations.")
     task_brief_output.add_argument("--html", action="store_true", help="Print an inactive offline HTML observation to stdout.")

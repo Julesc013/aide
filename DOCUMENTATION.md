@@ -1343,3 +1343,9 @@ output boundaries and unchanged text/JSON behavior. The
 [qualified report](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md) bind source,
 delivered and installed evidence. A saved page is not live state or evidence of
 browser support.
+
+### Task brief with selected helper evidence
+
+[Task packets](docs/reference/task-packets.md) describes optional symbol selection
+and retained uncertainty. The [WorkUnit](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/ExecPlan.md)
+owns combined qualification; existing quality inspection remains the source owner.

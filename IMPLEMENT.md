@@ -14128,3 +14128,10 @@ independent projection oracle passed. Three jobs retired, the fixed preview
 passed and eight frozen assets remain unchanged. Browser rendering is untested.
 See the [report](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md) for exact evidence
 and guarded integration; no browser/server or execution authority is added.
+
+### Combined task and fresh helper evidence prepared
+
+The existing brief composes the unchanged symbol inspector only when requested.
+Text and HTML expose locations and uncertainty alongside the complete observation.
+The 59 existing directly affected tests remain; 18 new composition checks are
+prepared but unrun. No parser, index, service or execution authority is added.

@@ -93,8 +93,29 @@ def _page(data, canonical):
         for name, relation in quality.get("relations", {}).items():
             # Names are project data too; no names become element IDs or attributes.
             content.append(_fields([(name, relation)]))
+        content.append("<p class=\"muted\">Relations are advisory; incomplete information cannot narrow required checks.</p></section>")
+        inspection = data.get("symbol_inspection")
+        if inspection is not None:
+            content += ["<section><h2>Fresh helper evidence</h2>",
+                        _fields([("Symbol", inspection["symbol"]), ("Coverage", inspection["coverage"])]),
+                        "<p class=\"muted\">Syntax matches do not resolve runtime binding or justify fewer checks.</p>"]
+            for item, selection in zip(inspection["files"], data["symbol_selection"]):
+                syntax = item["syntax"]
+                groups = [syntax.get(name, {"items": [], "omitted": 0})
+                          for name in ("definitions", "calls", "imports")]
+                locations = [f"{name} line {match['line']}: "
+                             + match.get("qualified_name", match["scope"])
+                             for name, group in zip(("definitions", "calls", "imports"), groups)
+                             for match in group["items"]]
+                content.append(_fields([
+                    ("Source", item["path"]), ("Selection reason", selection["reason"]),
+                    ("Parse state", syntax["state"]), ("Match state", syntax["match_state"]),
+                    ("Source SHA-256", syntax.get("sha256")),
+                    ("Locations", locations[:3]),
+                    ("Omitted matches", max(0, len(locations) - 3) + sum(group["omitted"] for group in groups)),
+                ]))
+            content += ["</section>", _details("Fresh syntax locations, omissions and recorded context", inspection)]
         content += [
-            "<p class=\"muted\">Relations are advisory; incomplete information cannot narrow required checks.</p></section>",
             "<section><h2>Evidence and lessons</h2>",
             _fields([("Task evidence availability", task.get("evidence")),
                      ("Lesson observation", data.get("lesson_state")),

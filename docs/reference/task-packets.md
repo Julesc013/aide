@@ -124,3 +124,27 @@ page rather than partial advice. A missing distribution renderer returns exit 1
 on stderr without emitting a false observation; text/JSON remain independent.
 Whole-work usage remains unknown. This view does not grant execution or acceptance,
 qualify a browser or vintage host, or establish live Workbench integration.
+
+### Optional fresh helper evidence
+
+Add `--symbol NAME` to `task brief` to inspect that identifier in the primary
+`--path`. Repeat `--related-path FILE` for up to seven explicitly selected
+related files. Related paths require a symbol. Without these options, the
+existing brief and its text/JSON/HTML output remain unchanged; no symbol source
+is read automatically.
+
+The brief reuses `quality inspect-symbol`: current definitions, calls and import
+declarations carry locations, exact source hashes and parser identity. Selection
+reasons identify the task target and explicitly requested related source.
+Recorded owners, test links and lessons remain separate advisory evidence.
+
+Missing, unsupported or invalid Python source yields a partial observation.
+Unsafe/duplicate selections, changed records or oversized combined output refuse.
+Task records and the shared quality ledger are checked across composition;
+source rechecks retain the inspector's sequential observation boundary.
+The 64 KiB data and 512 KiB HTML limits remain. No directory scan, code execution,
+new index, model call or browser launch is implied.
+
+Names and syntax references do not resolve runtime binding, aliases, equivalence
+or complete impact. Missing matches do not establish absence. Broaden validation
+when coverage is incomplete; this view cannot narrow mandatory checks.

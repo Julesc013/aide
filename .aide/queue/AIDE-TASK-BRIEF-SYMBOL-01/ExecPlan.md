@@ -91,3 +91,10 @@ target ownership, publication authentication and model-phase conditions have no
 observed change and are not re-probed. This is a dependency-ready contribution to
 the full daily-use milestone, which remains incomplete. No new implementation or
 qualification has run.
+
+**Admission and candidate.** Exact admission c86aca18/262460ee preceded managed
+checkpoint 84966d04. Optional CLI composition and pure presentation are prepared,
+with 18 new checks and all 59 directly affected originals unchanged. The source
+runner compares every default output format byte-for-byte with the unchanged
+predecessor distribution on the same actual task. A runner quotation typo was
+caught and repaired by syntax parsing before any execution. New checks are unrun.

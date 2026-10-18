@@ -5384,3 +5384,10 @@ Source 104, delivered 104 and actual installed qualification passed. The
 [report](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md) binds the fixed preview and
 three retired jobs. Integration has its exact gate; browser rendering, live
 Workbench, actual host binding and native downstream acceptance remain separate.
+
+### Fresh helper evidence in the task brief
+
+AIDE-TASK-BRIEF-SYMBOL-01 connects the existing task and source-inspection owners.
+Optional explicit symbol/related-file selection retains ordinary brief behavior.
+Source and installed acceptance precede guarded integration; complete semantic
+impact, native downstream adoption and protected host editing remain separate.
