@@ -59,3 +59,9 @@ No broad installation, arbitrary shell, live provider/model request, SDK fallbac
 new endpoint, target mutation, auth probe, publication or release-archive rebuild.
 A future real model-backed coding attempt and matched comparison remain required
 for operational claims and need a fresh finite applicable model grant.
+
+**Admission complete.**3932731e checkpoints the accepted packet. The acquisition
+source is prepared for14 exact wheels totalling4,716,392 bytes, with redirects
+refused, no installation/import, bounded ZIP metadata/member inspection and
+six selected immutable upstream source/license comparisons. The DiskEd
+RefuseRedirect implementation is reused by exact source import. No job has run.

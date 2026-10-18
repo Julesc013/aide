@@ -1,0 +1,11 @@
+feat(worker): prepare pinned Mini dependency acquisition
+
+Use exact public wheels for the selected upstream DefaultAgent import recipe.
+Inspect artifact metadata, archive bounds, notices and immutable source matches
+before allowing any third-party code to run in the optional worker fixture.
+
+Validation: PASS - admission review, exact artifact/source pins and static script checks
+ NOT RUN - wheel acquisition, dependency imports and worker qualification
+Changelog: Internal: Prepare bounded Mini worker dependency acquisition
+AIDE-Task: AIDE-MINI-WORKER-01
+AIDE-Format: compact-v1

@@ -1,9 +1,9 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-MINI-WORKER-01
-status: needs_review
-result: ADMISSION_PREPARED
+status: running
+result: ACQUISITION_SOURCE_PREPARED
 responsible_owner: AIDE execution adapter owner
-next_action: Exact admission then acquisition-only source/effect review
+next_action: Exact review then one acquisition-only managed job
 maximum_jobs: 4
 jobs_allocated: 0
 product_qualified: false

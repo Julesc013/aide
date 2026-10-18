@@ -4182,3 +4182,11 @@ items:
     task: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/task.yaml
     exec_plan: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/ExecPlan.md
     evidence: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence
+
+- id: AIDE-MINI-WORKER-01
+  title: Qualify one optional upstream Mini worker fixture
+  type: implementation
+  status: running
+  path: .aide/queue/AIDE-MINI-WORKER-01
+  parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+  description: Exact upstream DefaultAgent acquisition and source-only deterministic fixture under existing managed execution; no live model/provider route or full Mini CLI qualification.

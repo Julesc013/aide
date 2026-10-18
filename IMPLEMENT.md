@@ -14089,3 +14089,10 @@ See the child report and observed integration receipt for exact delivery.
 **Campaign current-state preparation.** The parent status now names an owner, next action and open obligations within existing reader bounds. CURRENT.md links scoped child evidence; original task/status snapshots and complete ExecPlan history are retained. No runtime or package change.
 
 **Campaign current-state qualified.** Actual current/resume CLI, full validation, unchanged pack/release bytes and exact preview passed at7059f9b0; the single job is collected and retired. Parent history/requirements remain intact. See AIDE-CAMPAIGN-CURRENT-STATE-01/REPORT.md for scope and exact integration boundary.
+
+### AIDE-MINI-WORKER-01 ? Acquisition preparation
+
+Added the exact14-wheel selected import recipe and acquisition-only script.
+It reuses the DiskEd no-redirect policy, verifies fixed artifacts and notices,
+and matches selected wheel source against immutable upstream. No acquired code
+has run; no optional runtime implementation is claimed yet.

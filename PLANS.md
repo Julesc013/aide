@@ -5349,3 +5349,10 @@ workflows, v1/v2 reader compatibility, ownership6 and fixed preview passed.
 See [the report](.aide/queue/AIDE-DEPENDENCY-REBIND-01/REPORT.md); native host and publication stay separate.
 
 **Campaign current-state reconciliation.** AIDE-CAMPAIGN-CURRENT-STATE-01 repairs the existing parent view, preserving historical bytes and all unfinished acceptance. The single verification job passed and retired. Exact integration awaits terminal review; the child receipt will record actual effects. Full campaign acceptance remains open.
+
+### AIDE-MINI-WORKER-01 ? Optional upstream worker
+
+Admitted P7 fixture work uses unmodified pinned DefaultAgent and the existing
+managed Python owner. Exact artifact acquisition precedes offline real-loop
+qualification. Selected imports, configuration effects and resources must be
+observed; live model work remains separate. See[ExecPlan](.aide/queue/AIDE-MINI-WORKER-01/ExecPlan.md).

@@ -1308,3 +1308,9 @@ Current writing guide: [commit discipline](docs/reference/commit-discipline.md),
   [the WorkUnit](.aide/queue/AIDE-DEPENDENCY-REBIND-01/ExecPlan.md).
 
 **Current campaign:** [.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md) explains scoped delivery, outstanding prerequisites and action owners; existing task/status and child evidence remain authoritative.
+
+### Optional Mini worker qualification
+
+[Bounded work](.aide/queue/AIDE-MINI-WORKER-01/ExecPlan.md) records the exact upstream
+recipe, isolated fixture plan and operational limits. It remains source-only;
+Lite exports and frozen release artifacts are unchanged.
