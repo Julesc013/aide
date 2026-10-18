@@ -1,1 +1,1 @@
-**Prepared only:** task packet and exact admission evidence. No product or browser state changed.
+**Scope:** task-local browser qualification, exact retained screenshots/DOM and evidence, fixed changelog preview, queue/parent status and root indexes. Existing product,875-member pack and eight frozen assets are unchanged.

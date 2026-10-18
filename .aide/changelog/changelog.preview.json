@@ -1,32 +1,5 @@
 {
   "categories": {
-    "Added": [
-      {
-        "aide_phase": "",
-        "aide_result": "",
-        "breaking": false,
-        "breaking_change": "",
-        "category": "Added",
-        "commit": "b4bbc7f97934",
-        "commit_sha": "b4bbc7f9793466e2376a8c639720b7bc06f370bd",
-        "entry": "Optional fresh helper and related-source evidence in task briefs",
-        "follow_up": "",
-        "message_format": "compact-v1",
-        "risks": "",
-        "scope": "task",
-        "source_sections_present": [
-          "Body",
-          "Validation",
-          "Changelog",
-          "AIDE-Task",
-          "AIDE-Format"
-        ],
-        "subject": "feat(task): include selected helper evidence in briefs",
-        "summary": "Optional fresh helper and related-source evidence in task briefs",
-        "type": "feat",
-        "validation": "PASS - syntax and scoped diff inspection\nNOT RUN - 77 source checks and actual/default predecessor comparisons"
-      }
-    ],
     "Internal": [
       {
         "aide_phase": "",
@@ -34,13 +7,13 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "84966d045fc3",
-        "commit_sha": "84966d045fc37243a1b394d380903e8eda46cc1e",
-        "entry": "Admit optional fresh symbol evidence in task briefs",
+        "commit": "47b4537189b0",
+        "commit_sha": "47b4537189b02ea8a0cf0e43fee6f18f2b8ac4a9",
+        "entry": "Prepare bounded saved task view browser qualification",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "task",
+        "scope": "view",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -48,24 +21,51 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "feat(task): admit fresh helper evidence in task briefs",
-        "summary": "Admit optional fresh symbol evidence in task briefs",
-        "type": "feat",
-        "validation": "PASS - existing owners and exact baseline inspected\nNOT RUN - combined source and installed workflow checks"
+        "subject": "test(view): prepare actual browser qualification",
+        "summary": "Prepare bounded saved task view browser qualification",
+        "type": "test",
+        "validation": "PASS - repository, installed browser metadata and scoped policy observation\nNOT RUN - browser launch, screenshot review and final preview"
+      }
+    ],
+    "Tests": [
+      {
+        "aide_phase": "",
+        "aide_result": "",
+        "breaking": false,
+        "breaking_change": "",
+        "category": "Tests",
+        "commit": "d251898a2264",
+        "commit_sha": "d251898a226446da628aec72d96143fc0292c1a0",
+        "entry": "Prepare bounded Edge rendering qualification of saved task briefs",
+        "follow_up": "",
+        "message_format": "compact-v1",
+        "risks": "",
+        "scope": "view",
+        "source_sections_present": [
+          "Body",
+          "Validation",
+          "Changelog",
+          "AIDE-Task",
+          "AIDE-Format"
+        ],
+        "subject": "test(view): capture the saved brief in installed Edge",
+        "summary": "Prepare bounded Edge rendering qualification of saved task briefs",
+        "type": "test",
+        "validation": "PASS - Python syntax, scoped diff and exact input inspection\nNOT RUN - browser captures and visual review"
       },
       {
         "aide_phase": "",
         "aide_result": "",
         "breaking": false,
         "breaking_change": "",
-        "category": "Internal",
-        "commit": "11ddefd53794",
-        "commit_sha": "11ddefd53794a8b0c3d48e3a346daf9f51e1fcc9",
-        "entry": "Prepare delivered and installed helper brief qualification",
+        "category": "Tests",
+        "commit": "cfd197a936e9",
+        "commit_sha": "cfd197a936e9709021c2194bc881d37c65e938df",
+        "entry": "Retain installed Edge task-brief rendering evidence",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "task",
+        "scope": "view",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -73,43 +73,18 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "test(task): prepare installed helper brief checks",
-        "summary": "Prepare delivered and installed helper brief qualification",
+        "subject": "test(view): retain desktop and narrow browser observations",
+        "summary": "Retain installed Edge task-brief rendering evidence",
         "type": "test",
-        "validation": "PASS - source77, actual/default comparisons, retirement and CURRENT binding\nFAIL - unrefreshed export requires its reviewed owner\nNOT RUN - delivered77, installed consumer and final preview"
-      },
-      {
-        "aide_phase": "",
-        "aide_result": "",
-        "breaking": false,
-        "breaking_change": "",
-        "category": "Internal",
-        "commit": "8965309a17fd",
-        "commit_sha": "8965309a17fddbe4408b11c16371b89a31014807",
-        "entry": "Retain installed helper brief qualification",
-        "follow_up": "",
-        "message_format": "compact-v1",
-        "risks": "",
-        "scope": "task",
-        "source_sections_present": [
-          "Body",
-          "Validation",
-          "Changelog",
-          "AIDE-Task",
-          "AIDE-Format"
-        ],
-        "subject": "test(task): qualify installed helper evidence in briefs",
-        "summary": "Retain installed helper brief qualification",
-        "type": "test",
-        "validation": "PASS - source77, delivered77, ownership6 and installed consumer\nPASS - default compatibility, customization and independent projection oracle\nNOT RUN - final preview; browser rendering remains unqualified"
+        "validation": "PASS - two browser captures, dimensions, DOM and owned-job retirement\nPASS - actual viewport inspection; NOT RUN - final preview"
       }
     ]
   },
   "category_counts": {
-    "Added": 1,
-    "Internal": 3
+    "Internal": 1,
+    "Tests": 2
   },
-  "commit_count": 4,
+  "commit_count": 3,
   "entries": [
     {
       "aide_phase": "",
@@ -117,13 +92,13 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "84966d045fc3",
-      "commit_sha": "84966d045fc37243a1b394d380903e8eda46cc1e",
-      "entry": "Admit optional fresh symbol evidence in task briefs",
+      "commit": "47b4537189b0",
+      "commit_sha": "47b4537189b02ea8a0cf0e43fee6f18f2b8ac4a9",
+      "entry": "Prepare bounded saved task view browser qualification",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "task",
+      "scope": "view",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -131,74 +106,24 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "feat(task): admit fresh helper evidence in task briefs",
-      "summary": "Admit optional fresh symbol evidence in task briefs",
-      "type": "feat",
-      "validation": "PASS - existing owners and exact baseline inspected\nNOT RUN - combined source and installed workflow checks"
-    },
-    {
-      "aide_phase": "",
-      "aide_result": "",
-      "breaking": false,
-      "breaking_change": "",
-      "category": "Added",
-      "commit": "b4bbc7f97934",
-      "commit_sha": "b4bbc7f9793466e2376a8c639720b7bc06f370bd",
-      "entry": "Optional fresh helper and related-source evidence in task briefs",
-      "follow_up": "",
-      "message_format": "compact-v1",
-      "risks": "",
-      "scope": "task",
-      "source_sections_present": [
-        "Body",
-        "Validation",
-        "Changelog",
-        "AIDE-Task",
-        "AIDE-Format"
-      ],
-      "subject": "feat(task): include selected helper evidence in briefs",
-      "summary": "Optional fresh helper and related-source evidence in task briefs",
-      "type": "feat",
-      "validation": "PASS - syntax and scoped diff inspection\nNOT RUN - 77 source checks and actual/default predecessor comparisons"
-    },
-    {
-      "aide_phase": "",
-      "aide_result": "",
-      "breaking": false,
-      "breaking_change": "",
-      "category": "Internal",
-      "commit": "11ddefd53794",
-      "commit_sha": "11ddefd53794a8b0c3d48e3a346daf9f51e1fcc9",
-      "entry": "Prepare delivered and installed helper brief qualification",
-      "follow_up": "",
-      "message_format": "compact-v1",
-      "risks": "",
-      "scope": "task",
-      "source_sections_present": [
-        "Body",
-        "Validation",
-        "Changelog",
-        "AIDE-Task",
-        "AIDE-Format"
-      ],
-      "subject": "test(task): prepare installed helper brief checks",
-      "summary": "Prepare delivered and installed helper brief qualification",
+      "subject": "test(view): prepare actual browser qualification",
+      "summary": "Prepare bounded saved task view browser qualification",
       "type": "test",
-      "validation": "PASS - source77, actual/default comparisons, retirement and CURRENT binding\nFAIL - unrefreshed export requires its reviewed owner\nNOT RUN - delivered77, installed consumer and final preview"
+      "validation": "PASS - repository, installed browser metadata and scoped policy observation\nNOT RUN - browser launch, screenshot review and final preview"
     },
     {
       "aide_phase": "",
       "aide_result": "",
       "breaking": false,
       "breaking_change": "",
-      "category": "Internal",
-      "commit": "8965309a17fd",
-      "commit_sha": "8965309a17fddbe4408b11c16371b89a31014807",
-      "entry": "Retain installed helper brief qualification",
+      "category": "Tests",
+      "commit": "d251898a2264",
+      "commit_sha": "d251898a226446da628aec72d96143fc0292c1a0",
+      "entry": "Prepare bounded Edge rendering qualification of saved task briefs",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "task",
+      "scope": "view",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -206,10 +131,35 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "test(task): qualify installed helper evidence in briefs",
-      "summary": "Retain installed helper brief qualification",
+      "subject": "test(view): capture the saved brief in installed Edge",
+      "summary": "Prepare bounded Edge rendering qualification of saved task briefs",
       "type": "test",
-      "validation": "PASS - source77, delivered77, ownership6 and installed consumer\nPASS - default compatibility, customization and independent projection oracle\nNOT RUN - final preview; browser rendering remains unqualified"
+      "validation": "PASS - Python syntax, scoped diff and exact input inspection\nNOT RUN - browser captures and visual review"
+    },
+    {
+      "aide_phase": "",
+      "aide_result": "",
+      "breaking": false,
+      "breaking_change": "",
+      "category": "Tests",
+      "commit": "cfd197a936e9",
+      "commit_sha": "cfd197a936e9709021c2194bc881d37c65e938df",
+      "entry": "Retain installed Edge task-brief rendering evidence",
+      "follow_up": "",
+      "message_format": "compact-v1",
+      "risks": "",
+      "scope": "view",
+      "source_sections_present": [
+        "Body",
+        "Validation",
+        "Changelog",
+        "AIDE-Task",
+        "AIDE-Format"
+      ],
+      "subject": "test(view): retain desktop and narrow browser observations",
+      "summary": "Retain installed Edge task-brief rendering evidence",
+      "type": "test",
+      "validation": "PASS - two browser captures, dimensions, DOM and owned-job retirement\nPASS - actual viewport inspection; NOT RUN - final preview"
     }
   ],
   "generated_by": "aide-lite",
@@ -220,7 +170,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "8965309a17fddbe4408b11c16371b89a31014807",
-  "source_range": "75b9612ab6d7e84a2045afa7ab3a6aa2360a503b..8965309a17fddbe4408b11c16371b89a31014807",
+  "source_head": "cfd197a936e9709021c2194bc881d37c65e938df",
+  "source_range": "ad1f67f1b0f4079038d6600752d3132b7714a692..cfd197a936e9709021c2194bc881d37c65e938df",
   "warnings": []
 }

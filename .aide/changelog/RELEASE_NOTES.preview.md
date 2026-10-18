@@ -2,26 +2,23 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 75b9612ab6d7e84a2045afa7ab3a6aa2360a503b..8965309a17fddbe4408b11c16371b89a31014807
-source_head: 8965309a17fddbe4408b11c16371b89a31014807
+source_range: ad1f67f1b0f4079038d6600752d3132b7714a692..cfd197a936e9709021c2194bc881d37c65e938df
+source_head: cfd197a936e9709021c2194bc881d37c65e938df
 preview_only: true
 
 ## Highlights
 
-- Added: Optional fresh helper and related-source evidence in task briefs (b4bbc7f97934)
+- Tests: Prepare bounded Edge rendering qualification of saved task briefs (d251898a2264)
+- Tests: Retain installed Edge task-brief rendering evidence (cfd197a936e9)
 
 ## Validation Summary
 
-- 84966d045fc3: PASS - existing owners and exact baseline inspected
-  NOT RUN - combined source and installed workflow checks
-- b4bbc7f97934: PASS - syntax and scoped diff inspection
-  NOT RUN - 77 source checks and actual/default predecessor comparisons
-- 11ddefd53794: PASS - source77, actual/default comparisons, retirement and CURRENT binding
-  FAIL - unrefreshed export requires its reviewed owner
-  NOT RUN - delivered77, installed consumer and final preview
-- 8965309a17fd: PASS - source77, delivered77, ownership6 and installed consumer
-  PASS - default compatibility, customization and independent projection oracle
-  NOT RUN - final preview; browser rendering remains unqualified
+- 47b4537189b0: PASS - repository, installed browser metadata and scoped policy observation
+  NOT RUN - browser launch, screenshot review and final preview
+- d251898a2264: PASS - Python syntax, scoped diff and exact input inspection
+  NOT RUN - browser captures and visual review
+- cfd197a936e9: PASS - two browser captures, dimensions, DOM and owned-job retirement
+  PASS - actual viewport inspection; NOT RUN - final preview
 
 ## Known Risks
 

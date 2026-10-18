@@ -5393,3 +5393,11 @@ Source77, delivered77 and actual installed consumers passed with unchanged
 default output. The [report](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/REPORT.md) binds
 three retired jobs and the fixed preview. Guarded integration remains separate
 from complete semantic impact, native adoption and protected host editing.
+
+### Saved task view: observed browser profile
+
+AIDE-TASK-BRIEF-BROWSER-01 qualifies the unchanged saved real-task page in
+Edge155.0.4283.62 at desktop/narrow viewports. DOM and independent visual checks
+passed; lower content, interaction and accessibility remain open. Two jobs retired,
+unchanged product evidence reused. [Report](.aide/queue/AIDE-TASK-BRIEF-BROWSER-01/REPORT.md)
+binds exact scope and the separately reviewed integration effect.

@@ -4218,3 +4218,10 @@ items:
   status: passed
   path: .aide/queue/AIDE-TASK-BRIEF-SYMBOL-01
   parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+
+- id: AIDE-TASK-BRIEF-BROWSER-01
+  title: Qualify the saved task brief in the installed Windows browser
+  type: qualification
+  status: passed
+  path: .aide/queue/AIDE-TASK-BRIEF-BROWSER-01
+  parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

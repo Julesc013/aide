@@ -49,3 +49,4 @@ offline_result_ref: .aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md
 symbol_discovery_ref: .aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md
 task_brief_view_ref: .aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md
 task_brief_symbol_ref: .aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/REPORT.md
+task_brief_browser_ref: .aide/queue/AIDE-TASK-BRIEF-BROWSER-01/REPORT.md

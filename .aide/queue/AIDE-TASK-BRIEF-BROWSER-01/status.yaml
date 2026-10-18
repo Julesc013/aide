@@ -1,9 +1,15 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-TASK-BRIEF-BROWSER-01
-status: needs_review
+status: passed
 result: OBSERVED_VIEWPORTS_PASS
-next_action: exact fixed preview source and effect review
+product_qualified: true
+qualification_scope: saved real-task page in Edge155.0.4283.62 headless software at1280x1800 and480x1800; viewport visuals only
+next_action: exact terminal technical review and guarded dev/main integration
 maximum_jobs: 2
-jobs_allocated: 1
-product_qualified: false
-qualification_scope: observed Edge155.0.4283.62 headless viewports only
+jobs_allocated: 2
+source_ref: .aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/source-attempt-01.json
+preview_ref: .aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/preview-attempt-02.json
+visual_ref: .aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/visual-review.json
+browser_interaction: unqualified
+accessibility: unqualified
+whole_outcome_usage: unknown

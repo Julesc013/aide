@@ -1,0 +1,51 @@
+{
+  "schema": "aide.task-brief-browser.integration-effect.v1",
+  "base": "ad1f67f1b0f4079038d6600752d3132b7714a692",
+  "candidate": "Exact closure map; substitute only resulting managed commit/tree.",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "task_branch": "task/aide-task-brief-browser-01",
+  "preserved_qualification_ref": "task/aide-lite-successor-qualification-01",
+  "preserved_qualification_commit": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "preserved_publication_ref": "task/aide-lite-successor-publication-01",
+  "preserved_publication_commit": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+  "known_historical_presentation_failures": [],
+  "effects": [
+    "After exact terminal ACCEPT, managed dry-run/apply commits only closure map and mapped paths with exact message/ref/parent/tree. Strict latest and full base..candidate checks must PASS.",
+    "Under shared estate/dispatch locks require exact config/running controls/no active job, sole checkout, clean candidate/tree, ready helper plan and exact local/remote dev/main base. Preserve both named task refs. Fetch only dev/main without tags and reobserve.",
+    "CAS fast-forward local dev from base to candidate; nonforce explicit candidate:refs/heads/dev push; read back exact remote state.",
+    "Run full validation and strict complete-range check again, recheck controls/refs/tree and remote state. CAS fast-forward main from base; nonforce explicit push; read back both heads.",
+    "Verify exact three-commit preview throughcfd197a936e9709021c2194bc881d37c65e938df; two retired successful jobs and complete collections; actual DOM/PNG and bounded visual verdicts; reused product evidence,875 pack members and eight frozen assets. Preserve both named successor refs.",
+    "Only after both refs/postchecks pass, switch to dev, verify clean exact task-ref ancestry, delete only this local task branch using branch -d. Verify final local/tracking refs and dfae9356 ancestry."
+  ],
+  "required_evidence": [
+    "Actual installed Edge155.0.4283.62 captures at1280x1800 and480x1800 with complete accepted JSON/title/CSP equality and both screenshot reviews.",
+    "924 browser file identities and both registry-view policy guards unchanged at execution; visible content only, lower details/accessibility remain unqualified.",
+    "Two jobs collected/digest-verified/quiescent/retired with scratch absent and reservations released; no further allocation.",
+    "Unchanged source77/delivered77/ownership6 and installed consumer evidence reused;875 pack members and eight frozen release assets verified.",
+    "Full validation/doctor/pack status/strict messages and fixed three-commit six-output preview PASS; original global review-ref WARN retained.",
+    "No product source, package, archive or authority change; browser flags do not establish filesystem/network isolation."
+  ],
+  "failure_response": "Retain started/completed command streams and identities. Stop on changed inputs/refs or any failed check; reconcile observed effects before any retry.",
+  "forbidden": [
+    "force push",
+    "history rewrite",
+    "protection change or bypass",
+    "tag/release effects",
+    "unrelated branch deletion",
+    "live target or ledger mutation",
+    "model/provider requests",
+    "package rebuild",
+    "further job allocation"
+  ],
+  "controller": {
+    "path": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/integration-runner.log",
+    "sha256": "e167e7534aaaff4ed384d5f873835842ed5a25eec87584c445befdae63465264",
+    "prior_path": ".aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/evidence/integration-runner.log",
+    "prior_sha256": "e034b886bb69ee1abce25077a3b3a623b5a65954b581ad42a3120aa105e20d93",
+    "permitted_substitutions": [
+      "Only task path AIDE-TASK-BRIEF-SYMBOL-01 to AIDE-TASK-BRIEF-BROWSER-01 and final receipt preview-attempt-03.json to preview-attempt-02.json. Closure commit/tree from exact managed receipt; other controller logic unchanged."
+    ]
+  }
+}

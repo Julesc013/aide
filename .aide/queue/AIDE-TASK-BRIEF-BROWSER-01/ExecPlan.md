@@ -84,3 +84,17 @@ content remains visually unqualified; dense context JSON is a future usability
 candidate, not a hidden failure. Peak memory330,760,192 and scratch15,582,850 bytes.
 Collection verified, quiescent retirement, scratch absent and reservation released.
 Only final preview allocation2 and terminal integration remain for this task.
+
+**Closure evidence.** Final job815add6e4eaa42d093796d52b6ab3ef0 passed retained
+evidence checks and fixed three-commit preview throughcfd197a9. Both jobs are
+retired/collected, scratch absent and reservations released. The existing
+source/delivered/installed evidence,875 pack files and eight frozen assets remain
+valid for unchanged bytes. Both allocations are exhausted; no further job.
+Final candidate and exact integration controller/effect remain independently
+reviewed gates. Candidate passed status describes completed qualification, not
+an unobserved push. Actual remote refs and integration receipt own delivery.
+
+**Retrospective.** Actual browser evidence closes the previous parser-only gap
+for two viewports without changing product code or introducing a frontend.
+Dense context JSON deserves later consumer-led simplification. Lower content,
+interaction and accessibility remain unqualified. No broad rerun or scope claim.

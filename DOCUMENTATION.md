@@ -1351,3 +1351,11 @@ and retained uncertainty. The [WorkUnit](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/E
 and [report](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/REPORT.md) bind source,
 delivered and installed qualification. Existing quality inspection remains the
 source owner; semantic impact and runtime resolution remain unqualified.
+
+### Task brief browser evidence
+
+[Observed profile and captures](.aide/queue/AIDE-TASK-BRIEF-BROWSER-01/REPORT.md)
+qualify the existing saved page at1280x1800 and480x1800 in installed
+Edge155.0.4283.62 headless software rendering. The
+[WorkUnit](.aide/queue/AIDE-TASK-BRIEF-BROWSER-01/ExecPlan.md) records unchanged
+product evidence and visual limits; interaction and accessibility remain unqualified.

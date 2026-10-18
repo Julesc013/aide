@@ -1,0 +1,114 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "label": "diff",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/closure-check-diff.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "message",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-TASK-BRIEF-BROWSER-01\\evidence\\closure-message.txt"
+      ],
+      "exit_code": 0,
+      "log": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/closure-check-message.log",
+      "sha256": "0dc675fd725ec9ee33f4325131ceeb508aeb99d16c87e8136c1c7f298b33f009"
+    },
+    {
+      "label": "range",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "ad1f67f1b0f4079038d6600752d3132b7714a692..HEAD"
+      ],
+      "exit_code": 0,
+      "log": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/closure-check-range.log",
+      "sha256": "7ddc6158ba17dcdc8ff92a443bbbc8f55c61bcb141a837d1dfd1c583e32c2d57"
+    },
+    {
+      "label": "validate",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "exit_code": 0,
+      "log": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/closure-check-validate.log",
+      "sha256": "be6b6f03e72a9ed259664ae6465bfb36de0d451860a5dab2b651106d55353aac"
+    },
+    {
+      "label": "doctor",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "log": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/closure-check-doctor.log",
+      "sha256": "585c64e7eac737c2e172b11d760d884d7c614858c1521bb8941c4e4ffa595f42"
+    },
+    {
+      "label": "pack-status",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "pack-status"
+      ],
+      "exit_code": 0,
+      "log": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/closure-check-pack-status.log",
+      "sha256": "17eb7a713285498d636c31fd8f0e50e9b1a632f16f230bd1f2db48a19f2bb673"
+    },
+    {
+      "label": "helper",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "plan"
+      ],
+      "exit_code": 0,
+      "log": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/closure-check-helper.log",
+      "sha256": "e0bea65c04a6b4513944282b194f96bca01f123107653743f22b6148a977be7e"
+    },
+    {
+      "label": "evidence-preview",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/run_preview.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "log": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/closure-check-evidence-preview.log",
+      "sha256": "d32d73254380280f20be738f52293a0f17a318938ec4667da0a3eaef0671753f"
+    }
+  ]
+}
