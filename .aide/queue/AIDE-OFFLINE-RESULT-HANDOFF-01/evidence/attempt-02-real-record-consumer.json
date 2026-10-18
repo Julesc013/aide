@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "task": "AIDE-MINI-WORKER-01",
+  "source_sha256s": {
+    ".aide/queue/AIDE-MINI-WORKER-01/task.yaml": "c30f7f1e2d361b4d5751a9e45476098732e9702ee2fa0e2f7209a78eb5e509c5",
+    ".aide/queue/AIDE-MINI-WORKER-01/status.yaml": "dd21b10af7a40e30b24ba0afc81073fac3fb25032701d65b6db8661a13dc6439",
+    ".aide/queue/AIDE-MINI-WORKER-01/ExecPlan.md": "852eba62b02ccdb322ecef35fd26d91b506bcc318a95b417f367bdac815ad022",
+    ".aide/queue/AIDE-MINI-WORKER-01/REPORT.md": "b8361670d609055131f53bd6a9f595353b2aa71c7b94ddd46f279cd6ea8c3ea4",
+    ".aide/queue/AIDE-MINI-WORKER-01/evidence/attempt-03-fixture-result.json": "2033633bf99e5364ad9e26e249644834afe7bba1f16d16e7907f70c7fbb6f7e0",
+    "docs/reference/mini-worker.md": "1e423390814267878986c9820eab7fe98777e8d1cc092c8261c97f63c3ccb2de"
+  },
+  "source_records_unchanged": true,
+  "request_sha256": "2bc31a189e32b4b1143f7487514f48b60df0ec2a90b200db9a13a6104d7ec073",
+  "result_sha256": "a04a63a2e1459d021c72704da8bcd87a3ed259f1ca60732ce1b5a2d33dfae12c",
+  "existing_evidence_transferred_not_requalified": true
+}

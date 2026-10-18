@@ -87,3 +87,12 @@ CURRENT source. Original FAIL observations remain. Fresh validation identifies
 only two development-pack provenance failures caused by changed exported inputs;
 the next reviewed export must reconcile them and pass validation. The installed
 consumer runner is prepared; no delivery or product acceptance is claimed yet.
+
+**Delivered outcome.** Job2 passed all97 delivered methods and the actual installed
+consumer exchange at3e2bbd32. Ownership6, safe install, preserved customization,
+partial attempt/resume without repeated edit, read-only replay, stale-base refusal
+and real Mini record transfer passed. Eight release assets remain unchanged.
+Exporter/doctor/validate/pack-status PASS resolved the retained provenance FAIL.
+Independent review corrected the pre-launch CLI byte assertion to the existing
+portable projection; other payloads retain exact source equality. The final job
+will reuse valid outcomes, verify870pack members and generate a fixed preview.

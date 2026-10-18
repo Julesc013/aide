@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "source_task": "OFFLINE-CONSUMER-01",
+  "request_sha256": "d6c4139e5005459d06a3d2c33e39f8d600e4712217888817ddf3607e3ad2f085",
+  "partial_result_sha256": "d14dc471ea36df27810c626789f668d27fdc6df0bdda15581799f430b88a3d0a",
+  "result_sha256": "724642f362906db18fd074dd94efc4c72dc440a680ae64771048432196fa6695",
+  "source_repair_tests": 3,
+  "partial_preserved": true,
+  "continuation_without_repeated_edit": true,
+  "read_only_replay": true,
+  "changed_base_detected": true,
+  "truncation_refused": true,
+  "customization_preserved": true,
+  "core_absent": true,
+  "auto_apply_or_accept": false,
+  "helper_receipt": {
+    "installed_digest": "cb508c38f5e46587685844c603eae33a485cd8e5d70daf556940f851a8b8ada0",
+    "kind": "managed_file",
+    "local_overlay": false,
+    "ownership": "aide_portable_managed",
+    "source": ".aide/scripts/task_handoff.py",
+    "source_digest": "cb508c38f5e46587685844c603eae33a485cd8e5d70daf556940f851a8b8ada0"
+  }
+}
