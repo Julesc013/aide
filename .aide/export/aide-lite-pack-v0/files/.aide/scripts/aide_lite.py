@@ -880,6 +880,7 @@ Q36_REQUIRED_FILES = [
 Q36_PORTABLE_SOURCE_FILES = [
     ".aide/scripts/task_handoff.py",
     ".aide/scripts/quality_symbols.py",
+    ".aide/scripts/task_brief_view.py",
     ".aide/scripts/outcome_lessons.py",
     INTENT_POLICY_PATH,
     WORKUNIT_SIZING_POLICY_PATH,
@@ -40906,10 +40907,45 @@ def render_task_development_brief(data: dict[str, object]) -> str:
     return "\n".join(lines)
 
 
+def task_brief_renderer():
+    # Renderer comes from this distribution, not the selected project.
+    path = Path(__file__).resolve().with_name("task_brief_view.py")
+    _job_wait_root(str(path.parent))
+    info = path.lstat()
+    if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1
+            or getattr(info, "st_file_attributes", 0) & 0x400 or info.st_size > 64 * 1024):
+        raise ValueError("brief renderer is not an ordinary bounded module")
+    spec = importlib.util.spec_from_file_location("aide_task_brief_view", path)
+    module = importlib.util.module_from_spec(spec)
+    previous = sys.dont_write_bytecode
+    try:
+        sys.dont_write_bytecode = True
+        spec.loader.exec_module(module)
+    finally:
+        sys.dont_write_bytecode = previous
+    return module
+
+
 def command_task_brief(args: argparse.Namespace) -> int:
     data = build_task_development_brief(args.repo_root, args.task_id, args.path)
-    print(json.dumps(data, ensure_ascii=True, sort_keys=True, separators=(",", ":")) if args.json
-          else render_task_development_brief(data))
+    if getattr(args, "html", False):
+        try:
+            renderer = task_brief_renderer()
+        except (OSError, ValueError, ImportError):
+            print("AIDE task brief HTML unavailable: restore the distribution-owned renderer.", file=sys.stderr)
+            return 1
+        try:
+            rendered = renderer.render(data)
+        except ValueError:
+            data = {"schema_version": "aide.task-brief.v1", "result": "REFUSED",
+                    "acceptance_verified": False, "execution_admitted": False,
+                    "reason": "The observation cannot be safely presented within HTML bounds.",
+                    "next_action": "Inspect the existing text or JSON brief and reconcile its inputs."}
+            rendered = renderer.render(data)
+        print(rendered, end="")
+    else:
+        print(json.dumps(data, ensure_ascii=True, sort_keys=True, separators=(",", ":")) if args.json
+              else render_task_development_brief(data))
     return {"OBSERVED": 0, "PARTIAL": 2, "REFUSED": 1}[data["result"]]
 
 
@@ -47916,7 +47952,9 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_brief_parser = task_subparsers.add_parser("brief")
     task_brief_parser.add_argument("--task-id", required=True, help="Exact existing task identity.")
     task_brief_parser.add_argument("--path", required=True, help="One canonical repository-relative file path.")
-    task_brief_parser.add_argument("--json", action="store_true", help="Show component observations and limitations.")
+    task_brief_output = task_brief_parser.add_mutually_exclusive_group()
+    task_brief_output.add_argument("--json", action="store_true", help="Show component observations and limitations.")
+    task_brief_output.add_argument("--html", action="store_true", help="Print an inactive offline HTML observation to stdout.")
     task_brief_parser.set_defaults(handler=command_task_brief)
 
     handoff_parser = task_subparsers.add_parser("handoff")

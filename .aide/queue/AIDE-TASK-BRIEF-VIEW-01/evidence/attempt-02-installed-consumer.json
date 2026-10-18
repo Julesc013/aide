@@ -1,0 +1,48 @@
+{
+  "result": "PASS",
+  "observations": {
+    "installed": {
+      "state": "OBSERVED",
+      "task_id": "PROJECT-VIEW-01",
+      "observation_sha256": "a1afe94e3200c3dd67d152c4a9553af0110c331c47d83c71385a4dc6016459a8",
+      "html_sha256": "69bfd66f3b00e084e996d118c7eb1e81d62cb9cb97f814e5e6b93b3cfba8cd23",
+      "complete_json_equal": true,
+      "inactive_markup": true,
+      "execution_admitted": false
+    },
+    "real-source": {
+      "state": "PARTIAL",
+      "task_id": "AIDE-VALIDATION-OUTPUT-01",
+      "observation_sha256": "b4bc287526c8f0901d2ef64298e237c319b0915486236c6b5b4965b78704a4e8",
+      "html_sha256": "05420e13656121991a92c9c991ba40d041f6b2ca443a3b47075a0b4c0f18170f",
+      "complete_json_equal": true,
+      "inactive_markup": true,
+      "execution_admitted": false
+    }
+  },
+  "helper_receipt": {
+    "installed_digest": "860feefe244dfcd4cf835f03471e9d738a73b4677119803d4fe82aaa8c75a533",
+    "kind": "managed_file",
+    "local_overlay": false,
+    "ownership": "aide_portable_managed",
+    "source": ".aide/scripts/task_brief_view.py",
+    "source_digest": "860feefe244dfcd4cf835f03471e9d738a73b4677119803d4fe82aaa8c75a533"
+  },
+  "independent_projection_binding_oracle": true,
+  "one_intentional_binding_line_changed": 44,
+  "customization_preserved": true,
+  "core_absent": true,
+  "fresh_process_read_only": true,
+  "source_inputs_unchanged": {
+    ".aide/scripts/aide_lite.py": "bdc5af5216fd7d8f76d46cb407e3c746a744bc21841f7e24cbbb9e178d3fb67d",
+    ".aide/scripts/task_brief_view.py": "860feefe244dfcd4cf835f03471e9d738a73b4677119803d4fe82aaa8c75a533",
+    "docs/reference/task-packets.md": "63abc3d085c55d274e7766aff614e5cb7ef61b9473f9c62e9caf3f85c49fa42f",
+    ".aide/reports/file-quality-ledger.json": "fa63e5a98682e243d8a8e64d6eb2b059f1cf38fb6f13bfa56b3ff1663c81d643",
+    ".aide/controller/outcome-ledger.jsonl": "50ef4662abccc26199fae681086650797b0ba94b0c11e4b31191cd5277e152a9",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml": "fc552ebe58aebb3b6787428f4d15efa4960387d91c99bdcc11ac578c50bd9b76",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml": "7c13a159ebb163a533c19e3d310ffce37c595945ec960c6f638fcc28aeedb82c",
+    ".aide/queue/index.yaml": "541857916f66bea3502dbd10400abc489ae4b9f44a446d52f90213f413175594"
+  },
+  "browser_render": "NOT_RUN",
+  "execution_authority": false
+}

@@ -109,3 +109,13 @@ The second allocation is prepared for874 pack members, delivered104 and a real
 safe-installed project plus real-source projection. It preserves unfinished
 target adoption and compares complete HTML/JSON with independent inactive-markup
 and binding-line assertions. This preparation is not executed qualification.
+
+**Delivered and installed observed.** Exact pack review37b22cd5/1fa2fa83 preceded
+checkpointaa7f5955 and job9a07806e. Ownership6, export/doctor/validate/pack-status,
+delivered104 and actual safe-installed/real-source HTML+JSON observations passed.
+The source-only doc expectation and missing input pin were corrected before any
+job allocation; both review findings remain retained. Pack has874 exact members;
+manual customization/core absence/helper ownership and independent single-line
+projection oracle passed. Selected records and target bytes were unchanged.
+Both jobs retired with verified collections; eight frozen assets are unchanged.
+Only final preview job3 and terminal integration remain. Browser render unrun.
