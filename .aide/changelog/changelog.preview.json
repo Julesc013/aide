@@ -7,25 +7,24 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Added",
-        "commit": "3fbf048454b0",
-        "commit_sha": "3fbf048454b06fdc40b341243e01c69cc0fef5b1",
-        "entry": "Render existing task briefs as inactive offline HTML pages",
+        "commit": "b4bbc7f97934",
+        "commit_sha": "b4bbc7f9793466e2376a8c639720b7bc06f370bd",
+        "entry": "Optional fresh helper and related-source evidence in task briefs",
         "follow_up": "",
         "message_format": "compact-v1",
-        "risks": "Saved observations can become stale; browser compatibility is unqualified",
+        "risks": "",
         "scope": "task",
         "source_sections_present": [
           "Body",
           "Validation",
           "Changelog",
-          "Risk",
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "feat(task): present development briefs as offline HTML",
-        "summary": "Render existing task briefs as inactive offline HTML pages",
+        "subject": "feat(task): include selected helper evidence in briefs",
+        "summary": "Optional fresh helper and related-source evidence in task briefs",
         "type": "feat",
-        "validation": "PASS - structural parsing and original84 assertions retained\nFAIL - new renderer absent from unrefreshed pack; capability binding stale\nNOT RUN - source104 and delivered/installed qualification"
+        "validation": "PASS - syntax and scoped diff inspection\nNOT RUN - 77 source checks and actual/default predecessor comparisons"
       }
     ],
     "Internal": [
@@ -35,9 +34,9 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "e839648c9ffd",
-        "commit_sha": "e839648c9ffd06262e03f43f2f73206ea51b6cae",
-        "entry": "Admit bounded offline task brief presentation",
+        "commit": "84966d045fc3",
+        "commit_sha": "84966d045fc37243a1b394d380903e8eda46cc1e",
+        "entry": "Admit optional fresh symbol evidence in task briefs",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
@@ -49,10 +48,10 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "feat(task): admit an offline development brief view",
-        "summary": "Admit bounded offline task brief presentation",
+        "subject": "feat(task): admit fresh helper evidence in task briefs",
+        "summary": "Admit optional fresh symbol evidence in task briefs",
         "type": "feat",
-        "validation": "PASS - existing brief owners and baseline doctor/validate inspected\nNOT RUN - HTML source and installed consumer checks"
+        "validation": "PASS - existing owners and exact baseline inspected\nNOT RUN - combined source and installed workflow checks"
       },
       {
         "aide_phase": "",
@@ -60,9 +59,9 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "aa7f59554402",
-        "commit_sha": "aa7f59554402aa14a5632f6d82c1829daaab59b7",
-        "entry": "Prepare delivered and installed offline task view checks",
+        "commit": "11ddefd53794",
+        "commit_sha": "11ddefd53794a8b0c3d48e3a346daf9f51e1fcc9",
+        "entry": "Prepare delivered and installed helper brief qualification",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
@@ -74,10 +73,10 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "test(task): prepare installed offline brief qualification",
-        "summary": "Prepare delivered and installed offline task view checks",
+        "subject": "test(task): prepare installed helper brief checks",
+        "summary": "Prepare delivered and installed helper brief qualification",
         "type": "test",
-        "validation": "PASS - source104, actual AIDE observation, retirement and CURRENT binding\nFAIL - unrefreshed development export requires its reviewed owner\nNOT RUN - delivered104, installed consumer and final preview"
+        "validation": "PASS - source77, actual/default comparisons, retirement and CURRENT binding\nFAIL - unrefreshed export requires its reviewed owner\nNOT RUN - delivered77, installed consumer and final preview"
       },
       {
         "aide_phase": "",
@@ -85,9 +84,9 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "7d8aece064eb",
-        "commit_sha": "7d8aece064eba5ddbfa93bda1b515e7d3835000e",
-        "entry": "Retain delivered offline task brief qualification",
+        "commit": "8965309a17fd",
+        "commit_sha": "8965309a17fddbe4408b11c16371b89a31014807",
+        "entry": "Retain installed helper brief qualification",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
@@ -99,10 +98,10 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "test(task): qualify the delivered offline task brief",
-        "summary": "Retain delivered offline task brief qualification",
+        "subject": "test(task): qualify installed helper evidence in briefs",
+        "summary": "Retain installed helper brief qualification",
         "type": "test",
-        "validation": "PASS - source104, delivered104, ownership6 and actual installed consumer\nPASS - customization, read-only observations and independent projection oracle\nNOT RUN - final preview; browser rendering remains unqualified"
+        "validation": "PASS - source77, delivered77, ownership6 and installed consumer\nPASS - default compatibility, customization and independent projection oracle\nNOT RUN - final preview; browser rendering remains unqualified"
       }
     ]
   },
@@ -118,9 +117,9 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "e839648c9ffd",
-      "commit_sha": "e839648c9ffd06262e03f43f2f73206ea51b6cae",
-      "entry": "Admit bounded offline task brief presentation",
+      "commit": "84966d045fc3",
+      "commit_sha": "84966d045fc37243a1b394d380903e8eda46cc1e",
+      "entry": "Admit optional fresh symbol evidence in task briefs",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
@@ -132,10 +131,10 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "feat(task): admit an offline development brief view",
-      "summary": "Admit bounded offline task brief presentation",
+      "subject": "feat(task): admit fresh helper evidence in task briefs",
+      "summary": "Admit optional fresh symbol evidence in task briefs",
       "type": "feat",
-      "validation": "PASS - existing brief owners and baseline doctor/validate inspected\nNOT RUN - HTML source and installed consumer checks"
+      "validation": "PASS - existing owners and exact baseline inspected\nNOT RUN - combined source and installed workflow checks"
     },
     {
       "aide_phase": "",
@@ -143,25 +142,24 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Added",
-      "commit": "3fbf048454b0",
-      "commit_sha": "3fbf048454b06fdc40b341243e01c69cc0fef5b1",
-      "entry": "Render existing task briefs as inactive offline HTML pages",
+      "commit": "b4bbc7f97934",
+      "commit_sha": "b4bbc7f9793466e2376a8c639720b7bc06f370bd",
+      "entry": "Optional fresh helper and related-source evidence in task briefs",
       "follow_up": "",
       "message_format": "compact-v1",
-      "risks": "Saved observations can become stale; browser compatibility is unqualified",
+      "risks": "",
       "scope": "task",
       "source_sections_present": [
         "Body",
         "Validation",
         "Changelog",
-        "Risk",
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "feat(task): present development briefs as offline HTML",
-      "summary": "Render existing task briefs as inactive offline HTML pages",
+      "subject": "feat(task): include selected helper evidence in briefs",
+      "summary": "Optional fresh helper and related-source evidence in task briefs",
       "type": "feat",
-      "validation": "PASS - structural parsing and original84 assertions retained\nFAIL - new renderer absent from unrefreshed pack; capability binding stale\nNOT RUN - source104 and delivered/installed qualification"
+      "validation": "PASS - syntax and scoped diff inspection\nNOT RUN - 77 source checks and actual/default predecessor comparisons"
     },
     {
       "aide_phase": "",
@@ -169,9 +167,9 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "aa7f59554402",
-      "commit_sha": "aa7f59554402aa14a5632f6d82c1829daaab59b7",
-      "entry": "Prepare delivered and installed offline task view checks",
+      "commit": "11ddefd53794",
+      "commit_sha": "11ddefd53794a8b0c3d48e3a346daf9f51e1fcc9",
+      "entry": "Prepare delivered and installed helper brief qualification",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
@@ -183,10 +181,10 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "test(task): prepare installed offline brief qualification",
-      "summary": "Prepare delivered and installed offline task view checks",
+      "subject": "test(task): prepare installed helper brief checks",
+      "summary": "Prepare delivered and installed helper brief qualification",
       "type": "test",
-      "validation": "PASS - source104, actual AIDE observation, retirement and CURRENT binding\nFAIL - unrefreshed development export requires its reviewed owner\nNOT RUN - delivered104, installed consumer and final preview"
+      "validation": "PASS - source77, actual/default comparisons, retirement and CURRENT binding\nFAIL - unrefreshed export requires its reviewed owner\nNOT RUN - delivered77, installed consumer and final preview"
     },
     {
       "aide_phase": "",
@@ -194,9 +192,9 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "7d8aece064eb",
-      "commit_sha": "7d8aece064eba5ddbfa93bda1b515e7d3835000e",
-      "entry": "Retain delivered offline task brief qualification",
+      "commit": "8965309a17fd",
+      "commit_sha": "8965309a17fddbe4408b11c16371b89a31014807",
+      "entry": "Retain installed helper brief qualification",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
@@ -208,10 +206,10 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "test(task): qualify the delivered offline task brief",
-      "summary": "Retain delivered offline task brief qualification",
+      "subject": "test(task): qualify installed helper evidence in briefs",
+      "summary": "Retain installed helper brief qualification",
       "type": "test",
-      "validation": "PASS - source104, delivered104, ownership6 and actual installed consumer\nPASS - customization, read-only observations and independent projection oracle\nNOT RUN - final preview; browser rendering remains unqualified"
+      "validation": "PASS - source77, delivered77, ownership6 and installed consumer\nPASS - default compatibility, customization and independent projection oracle\nNOT RUN - final preview; browser rendering remains unqualified"
     }
   ],
   "generated_by": "aide-lite",
@@ -222,7 +220,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "7d8aece064eba5ddbfa93bda1b515e7d3835000e",
-  "source_range": "4b4b735ef3f31af4e0d16d622453f814365ef437..7d8aece064eba5ddbfa93bda1b515e7d3835000e",
+  "source_head": "8965309a17fddbe4408b11c16371b89a31014807",
+  "source_range": "75b9612ab6d7e84a2045afa7ab3a6aa2360a503b..8965309a17fddbe4408b11c16371b89a31014807",
   "warnings": []
 }

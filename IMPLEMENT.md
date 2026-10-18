@@ -14129,9 +14129,12 @@ passed and eight frozen assets remain unchanged. Browser rendering is untested.
 See the [report](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md) for exact evidence
 and guarded integration; no browser/server or execution authority is added.
 
-### Combined task and fresh helper evidence prepared
+### Combined task and fresh helper evidence qualified
 
-The existing brief composes the unchanged symbol inspector only when requested.
-Text and HTML expose locations and uncertainty alongside the complete observation.
-The 59 existing directly affected tests remain; 18 new composition checks are
-prepared but unrun. No parser, index, service or execution authority is added.
+The existing brief optionally composes the unchanged inspector. All 77 source
+and 77 delivered methods passed, preserving 59 originals. Default formats match
+the predecessor bytes; actual helper/caller and source/installed observations
+agree. Customization, uncertainty and unfinished obligations remain visible.
+Three jobs retired; 875 package hashes and eight frozen assets verified.
+See the [report](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/REPORT.md). No new parser,
+index, service or execution authority is added.

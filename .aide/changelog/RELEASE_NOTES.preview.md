@@ -2,31 +2,30 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 4b4b735ef3f31af4e0d16d622453f814365ef437..7d8aece064eba5ddbfa93bda1b515e7d3835000e
-source_head: 7d8aece064eba5ddbfa93bda1b515e7d3835000e
+source_range: 75b9612ab6d7e84a2045afa7ab3a6aa2360a503b..8965309a17fddbe4408b11c16371b89a31014807
+source_head: 8965309a17fddbe4408b11c16371b89a31014807
 preview_only: true
 
 ## Highlights
 
-- Added: Render existing task briefs as inactive offline HTML pages (3fbf048454b0)
+- Added: Optional fresh helper and related-source evidence in task briefs (b4bbc7f97934)
 
 ## Validation Summary
 
-- e839648c9ffd: PASS - existing brief owners and baseline doctor/validate inspected
-  NOT RUN - HTML source and installed consumer checks
-- 3fbf048454b0: PASS - structural parsing and original84 assertions retained
-  FAIL - new renderer absent from unrefreshed pack; capability binding stale
-  NOT RUN - source104 and delivered/installed qualification
-- aa7f59554402: PASS - source104, actual AIDE observation, retirement and CURRENT binding
-  FAIL - unrefreshed development export requires its reviewed owner
-  NOT RUN - delivered104, installed consumer and final preview
-- 7d8aece064eb: PASS - source104, delivered104, ownership6 and actual installed consumer
-  PASS - customization, read-only observations and independent projection oracle
+- 84966d045fc3: PASS - existing owners and exact baseline inspected
+  NOT RUN - combined source and installed workflow checks
+- b4bbc7f97934: PASS - syntax and scoped diff inspection
+  NOT RUN - 77 source checks and actual/default predecessor comparisons
+- 11ddefd53794: PASS - source77, actual/default comparisons, retirement and CURRENT binding
+  FAIL - unrefreshed export requires its reviewed owner
+  NOT RUN - delivered77, installed consumer and final preview
+- 8965309a17fd: PASS - source77, delivered77, ownership6 and installed consumer
+  PASS - default compatibility, customization and independent projection oracle
   NOT RUN - final preview; browser rendering remains unqualified
 
 ## Known Risks
 
-- 3fbf048454b0: Saved observations can become stale; browser compatibility is unqualified
+- No risk summaries were extracted.
 
 ## Follow-up
 

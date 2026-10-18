@@ -5389,5 +5389,7 @@ Workbench, actual host binding and native downstream acceptance remain separate.
 
 AIDE-TASK-BRIEF-SYMBOL-01 connects the existing task and source-inspection owners.
 Optional explicit symbol/related-file selection retains ordinary brief behavior.
-Source and installed acceptance precede guarded integration; complete semantic
-impact, native downstream adoption and protected host editing remain separate.
+Source77, delivered77 and actual installed consumers passed with unchanged
+default output. The [report](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/REPORT.md) binds
+three retired jobs and the fixed preview. Guarded integration remains separate
+from complete semantic impact, native adoption and protected host editing.

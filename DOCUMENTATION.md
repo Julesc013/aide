@@ -1348,4 +1348,6 @@ browser support.
 
 [Task packets](docs/reference/task-packets.md) describes optional symbol selection
 and retained uncertainty. The [WorkUnit](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/ExecPlan.md)
-owns combined qualification; existing quality inspection remains the source owner.
+and [report](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/REPORT.md) bind source,
+delivered and installed qualification. Existing quality inspection remains the
+source owner; semantic impact and runtime resolution remain unqualified.
