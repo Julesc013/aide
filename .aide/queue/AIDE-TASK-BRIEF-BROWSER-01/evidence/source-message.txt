@@ -1,0 +1,11 @@
+test(view): capture the saved brief in installed Edge
+
+Exercise actual desktop and narrow rendering of the qualified inactive page.
+Keep browser identity, complete observations and original failures traceable;
+inspect screenshots independently before claiming readable rendering.
+
+Validation: PASS - Python syntax, scoped diff and exact input inspection
+ NOT RUN - browser captures and visual review
+Changelog: Tests: Prepare bounded Edge rendering qualification of saved task briefs
+AIDE-Task: AIDE-TASK-BRIEF-BROWSER-01
+AIDE-Format: compact-v1

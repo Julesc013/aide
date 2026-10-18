@@ -71,3 +71,7 @@ helper plan, control locks, local/remote refs, post-dev validation and post-main
 evidence checks precede completion. Preserve dfae9356/f708e8c6. Publication,
 desktop agent delivery, actual DiskEd adoption and whole-outcome efficiency stay
 open. No overall percentage or whole-task saving is inferred.
+
+**Progress.** Admission accepted independently and committed at47b45371.
+The task-local capture runner and job1 effect are prepared. Source syntax and
+input checks are separate from actual browser launch and visual inspection.

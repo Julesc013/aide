@@ -1,0 +1,15 @@
+{
+  "base": "47b4537189b02ea8a0cf0e43fee6f18f2b8ac4a9",
+  "files": {
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/ExecPlan.md": "c02e24e9e5d62ecdd35e26858dd5c4a8e9eec4851b0e7660f0a85011ef83e941",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/source-effect.md": "2af0310cd22d77fc8d67889c940d2fbb630df0c600ce27dad3094050fb736fea",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/source-job-template.json": "a2d537bb1704ebf9c1d93337748555abc55dd8b6a71971b2462d3b140288ee32",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/source-message.txt": "d887e51e24e548a117fa78fd7799c319dfd5dd0038939154ccacae03897524dd",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/source-prechecks.json": "4cf3497467a264192fde1e8409a1e755c8f706dae6c30c78e6bd8fdd476f8b7f",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/run_browser.py": "d13fcac4230b24ec54159ad15305e99b8fa70f35daef1123d66ed7121c4b3098",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/status.yaml": "a5d5926cef49ed636bcf77af952dc9de94d269f355c7673b27d3a9ef2b9b95c3"
+  },
+  "effect_sha256": "2af0310cd22d77fc8d67889c940d2fbb630df0c600ce27dad3094050fb736fea",
+  "message_sha256": "d887e51e24e548a117fa78fd7799c319dfd5dd0038939154ccacae03897524dd",
+  "template_sha256": "a2d537bb1704ebf9c1d93337748555abc55dd8b6a71971b2462d3b140288ee32"
+}
