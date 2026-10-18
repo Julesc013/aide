@@ -1,0 +1,24 @@
+{
+  "base": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/merge-message.txt": "5c02ae912a575d706ebc8a4418bc97ef8a60cdff3c9a45f6c9b9d0372de4a639",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/merge-resolution-map.json": "07c9c2a13eb60380594a9bf0fde2dff9ab95a4ad69e41113db7a58317d8eebaf",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/merge-resolutions/01.md": "7cec7bb0f4c935c8c18c2b891e19320452a8f262bf1468346259676f71adad1c",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/merge-resolutions/02.md": "5131430ea23019fb04385d7059a482f4f4245cbd9de8594af56c61de4b9b4b3a",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/merge-resolutions/03.md": "d77d673c55a205b7f3bb71cd255b6c7358607d57d4594ac6cb165537bdc1aedd",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/merge-resolutions/04.md": "cf896d11929fb340d9f666d110c985d29cd3ccffa047c086abe2269f0d1dc140",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/merge-resolutions/05.md": "95d965949a58ba343c1d81c0f69c69340de55228192a710effa1d59f2b424705",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/merge-resolutions/06.md": "309ebf992b0750a826a3ce48825ffdf88a4f819b8bd12f225ea5d6be66f39d91",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/prior-task-scope.yaml": "a89adf81da6f2862c9f66f3e17837052776b10e345fcff05c7847d142439a2b8",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-1.0.0-before.json": "80514ef601e6ccf4b78960b6afbc5d024dc83b5108d08a3804edb3cf86f7dc08",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-1.0.0-before.md": "44a74eba2cce44a519a4cbc1781df20eacc4ba6cafafdb9af16d97e54500ec50",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/resumption-amendment.md": "a27ff785da317c2d54aa31bef6f9de12addb5276f1b6779cadc836fb28e47c23",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/resumption-effect.md": "b1f0d3215870b373a4c5d1d050a6eaf1a20ca0c1737b78320cf1a24e96b8d9cb",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/resumption-message.txt": "0ffaa0baddff5c6cc02730cea561072b0ac6b2668c59277beb814c1228978928",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/status.yaml": "d565e74f395a1ef22a0f4f32a3ea3e07fc9054b7361dc549162e1a5902673eca",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/task.yaml": "39d4688327e63235da59a23585a88f16b607700a806cf8d9b8f0989af2ec2dde"
+  },
+  "effect_sha256": "b1f0d3215870b373a4c5d1d050a6eaf1a20ca0c1737b78320cf1a24e96b8d9cb",
+  "message_sha256": "0ffaa0baddff5c6cc02730cea561072b0ac6b2668c59277beb814c1228978928",
+  "merge_message_sha256": "5c02ae912a575d706ebc8a4418bc97ef8a60cdff3c9a45f6c9b9d0372de4a639"
+}

@@ -1,9 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-SUCCESSOR-PUBLICATION-01
 status: needs_review
-result: EXACT_PREPARATION_REVIEW_PENDING
-next_action: exact_review_then_authenticated_preflight
-maximum_jobs: 1
+result: AUTHENTICATED_RESUMPTION_CANDIDATE
+next_action: exact resumption and six-file merge review
+authentication: operator supplied; active Julesc013 account confirmed read-only
+publication_executed: false
+presentation_1_0_executed: false
 jobs_allocated: 0
-active_jobs: 0
-publication_prerequisite: github_cli_interactive_authentication
+maximum_jobs: 2

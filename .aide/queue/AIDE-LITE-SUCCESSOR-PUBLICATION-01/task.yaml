@@ -1,13 +1,25 @@
 schema_version: aide.queue-task.v0
 id: AIDE-LITE-SUCCESSOR-PUBLICATION-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
-title: Publish and acquire the qualified Lite successor
+title: Publish the qualified successor with coherent release documentation
 type: release
 status: needs_review
 scope:
   allowed_paths:
     - .aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/**
     - .aide/queue/index.yaml
+    - README.md
+    - TODO.md
+    - ROADMAP.md
+    - CHANGELOG.md
+    - governance/release-policy.md
+    - packaging/release-policy.md
+    - docs/reference/commit-discipline.md
+    - docs/reference/git-workflow-policy.md
+    - .aide/policies/release-checklist.yaml
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/**
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
     - PLANS.md
     - IMPLEMENT.md
     - DOCUMENTATION.md
@@ -16,8 +28,16 @@ scope:
     - .aide/release/acquired-aide-lite-v1.1.0.log/**
   forbidden_paths:
     - rebuilding or overwriting any frozen archive
-    - changing product source, tests, default execution config or support claims
+    - changing executable product source, tests, default execution config or support claims
     - rewriting historical qualification records, Git history or existing tags
     - credential extraction, unrelated resources, new spending or protection bypass
 review_gate: exact_admission_source_publication_acquisition_and_integration
-maximum_jobs: 1
+maximum_jobs: 2
+job_allocation:
+  - one development-pack and fixed-preview qualification under unchanged default caps
+  - one acquired-byte original consumer under the existing qualified 600-second profile
+historical_presentation_effect:
+  release: aide-lite-v1.0.0
+  fields: body and four asset labels only
+  immutable: title, tag, publication state and time, asset IDs/names/bytes/digests
+

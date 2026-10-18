@@ -1,0 +1,9 @@
+chore(release): resume publication with documentation gates
+
+Authentication is established. Admit a root TODO, current pre-tag docs and changelog, unwrapped release notes and download labels. Preserve the original packet, frozen assets and the separate unqualified readability checkpoint.
+
+Validation: PASS - auth, branch/ref observation and conflict-only merge preview
+ NOT RUN - revised source, export, publication and acquired-byte checks
+Changelog: Internal: Resume qualified Lite publication with current documentation
+AIDE-Task: AIDE-LITE-SUCCESSOR-PUBLICATION-01
+AIDE-Format: compact-v1

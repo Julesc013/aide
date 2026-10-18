@@ -1,0 +1,23 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LITE-SUCCESSOR-PUBLICATION-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Publish and acquire the qualified Lite successor
+type: release
+status: needs_review
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/release/acquired-aide-lite-v1.1.0.log/**
+  forbidden_paths:
+    - rebuilding or overwriting any frozen archive
+    - changing product source, tests, default execution config or support claims
+    - rewriting historical qualification records, Git history or existing tags
+    - credential extraction, unrelated resources, new spending or protection bypass
+review_gate: exact_admission_source_publication_acquisition_and_integration
+maximum_jobs: 1

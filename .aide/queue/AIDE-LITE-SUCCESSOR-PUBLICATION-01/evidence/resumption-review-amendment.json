@@ -1,0 +1,8 @@
+{
+  "reviewer": "/root/review_disked_continuation",
+  "decision": "required fix before acceptance",
+  "finding": "Queue resolution appended an old indented shape beneath the current column-zero item list",
+  "remedy": "Use current id/title/type/status/path/parent_task shape; preserve rejected map and index candidate",
+  "execution": "NOT_RUN",
+  "transcription": "root record of actual independent message"
+}

@@ -1,0 +1,9 @@
+chore(release): reconcile publication preparation with dev
+
+Preserve the publication packet and current development history. Resolve six planning/status/documentation conflicts from exact reviewed dev-based candidates, retaining publication navigation and the new documentation requirements.
+
+Validation: PASS - reviewed six-file resolution map and frozen asset identities
+ NOT RUN - final release docs, publication and acquired-byte acceptance
+Changelog: Internal: Reconcile successor publication with current development
+AIDE-Task: AIDE-LITE-SUCCESSOR-PUBLICATION-01
+AIDE-Format: compact-v1
