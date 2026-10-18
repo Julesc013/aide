@@ -1,0 +1,17 @@
+{
+  "base": "b81589114b2abf86d219f407e0c1e3fe048be3c1",
+  "files": {
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/ExecPlan.md": "86a6fede1589fe71906b2d9625890804606dc808db5a12a774098dce61ca1dfc",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/attempt-01-tests.json": "59a62553088d97629394e6acc7765b643e868797cb1504891bcbf1301eb8aa55",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/source-attempt-01.json": "2edeb82ba8e3deb3fba47e96cdb9079fea6667f8dbe246f1c47a16b569e2f13c",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/source-review.md": "d0b041c803652a2974a3bb70741fe7b5edba459a0499fbd7b8e10b1688414429",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/workflow-job-template.json": "07a8372632f8b121771ffe118e9690f31b04c4fe281448584e102e466a0bd49d",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/workflow-message.txt": "1ac89448cb6613dc679b77c76133c2c9c83b55f16b6707e46bd62c89eb88bc3a",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/workflow-qualification-inputs.json": "420f1ed97d18c01122dc5f99750ba2a986e5e8b3edc8957f734d0ece11c43797",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/run_workflow.py": "39703c3f4fa39f94dc546181c947bc24d88241767cb49d95852532b2c645e8c6",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/status.yaml": "ecec88c2e15ec38e18d6f7ba02a9a08c7b6f1175361fae7e03f939e10e4f3e82",
+    "docs/reference/local-dependency-requests.md": "de289872fc5b2fe3646cd5d5a0c196914549058a9679d6c4a9947ba0d3e44a1c"
+  },
+  "message_sha256": "1ac89448cb6613dc679b77c76133c2c9c83b55f16b6707e46bd62c89eb88bc3a",
+  "job_template_sha256": "07a8372632f8b121771ffe118e9690f31b04c4fe281448584e102e466a0bd49d"
+}

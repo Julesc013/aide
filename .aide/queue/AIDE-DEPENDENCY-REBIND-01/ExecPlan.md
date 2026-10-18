@@ -79,3 +79,11 @@ root, paid inference, recurring polling or unqualified downstream adoption.
 53409138 and local effect ee349f3b. Managed checkpoint32a9d56a is retained.
 Fifteen focused methods and the original73 methods are prepared; no native tests
 have run. A separate actual fresh-process workflow remains job2.
+
+**Source job passed.** At b8158911, all88 methods passed without skips.
+Job9066a297c95d463ea73d3169b2ed675d is quiescent, collected/digest-verified and
+retired; scratch and reservation are gone. The reviewer\'s nonblocking wording
+note is clarified: initialization refuses schema/config changes; explicit
+reconciliation is separate. Product code and tests are unchanged for job2.
+Prepared two actual fresh-process workflows plus frozen old-reader v1/v2
+continuity and exact870 pack/eight release checks. No live ledger effect.

@@ -40,7 +40,7 @@ for a reviewed expiry extension or session replacement; do not create another
 database to evade outstanding work.
 For independent cancellation, initialize an explicitly approved new ledger with
 `aide.dependency-configuration.v2` and the same fields. Existing v1 ledgers refuse
-cancellation; changing their configuration in place also refuses. Older readers
+cancellation; initialization cannot change their schema or configuration. Older readers
 reject v2 rather than overlook a cancellation. There is no automatic migration.
 Maximums are 16 participants, 256 requests and 65,536 bytes per message. These
 bound logical records; they are not a physical filesystem quota. Existing host
