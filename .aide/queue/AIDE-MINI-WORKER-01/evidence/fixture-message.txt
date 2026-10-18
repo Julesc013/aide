@@ -1,0 +1,14 @@
+feat(worker): bind Mini to supervised offline attempts
+
+Keep the pinned upstream loop replaceable. Verify optional dependencies before
+import, preserve work and attempt identities independently, and treat completion
+as candidate submission. Prepare disposable repair, refusal and recovery cases
+under the existing managed Windows host.
+
+Validation: PASS - exact 14-wheel acquisition, collection and retirement;
+ syntax and diff checks
+ NOT RUN - 15 offline execution scenarios and final qualification
+Changelog: Added: Prepare optional Mini worker binding and lifecycle fixtures
+Risk: Fixture scope; no live model route or filesystem isolation claim
+AIDE-Task: AIDE-MINI-WORKER-01
+AIDE-Format: compact-v1

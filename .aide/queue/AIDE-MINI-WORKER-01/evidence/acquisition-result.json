@@ -1,0 +1,741 @@
+{
+  "schema": "aide.mini-worker.acquisition.v1",
+  "status": "PASS",
+  "wheels": [
+    {
+      "name": "mini-swe-agent",
+      "version": "2.4.6",
+      "filename": "mini_swe_agent-2.4.6-py3-none-any.whl",
+      "bytes": 115037,
+      "sha256": "a35463c553ac825c7773b03cfa69cd44958e3af20155dcc5711fdf9e4c67cd54",
+      "url": "https://files.pythonhosted.org/packages/a2/00/a2f454775f69f540ab529c5f5e35d672f6491f0e6edab7cb196a0d2a0e2e/mini_swe_agent-2.4.6-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/mini-swe-agent/2.4.6/json",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "pyyaml",
+        "requests",
+        "jinja2",
+        "pydantic>=2.0",
+        "litellm!=1.82.7,!=1.82.8,>=1.75.5",
+        "tenacity",
+        "rich",
+        "python-dotenv",
+        "typer",
+        "platformdirs",
+        "textual",
+        "prompt_toolkit",
+        "datasets",
+        "openai!=1.100.0,!=1.100.1",
+        "mini-swe-agent[dev]; extra == \"full\"",
+        "swe-rex>=1.4.0; extra == \"full\"",
+        "mini-swe-agent[modal]; extra == \"full\"",
+        "mini-swe-agent[contree]; extra == \"full\"",
+        "modal; extra == \"modal\"",
+        "boto3; extra == \"modal\"",
+        "pytest; extra == \"dev\"",
+        "pytest-cov; extra == \"dev\"",
+        "pytest-asyncio; extra == \"dev\"",
+        "pytest-xdist; extra == \"dev\"",
+        "pre-commit; extra == \"dev\"",
+        "ruff; extra == \"dev\"",
+        "mkdocs-include-markdown-plugin; extra == \"dev\"",
+        "mkdocstrings[python]>=0.18; extra == \"dev\"",
+        "mike; extra == \"dev\"",
+        "mkdocs-material; extra == \"dev\"",
+        "mkdocs-glightbox; extra == \"dev\"",
+        "mkdocs-redirects; extra == \"dev\"",
+        "portkey-ai; extra == \"dev\"",
+        "swe-rex; extra == \"dev\"",
+        "contree-sdk>=0.2.0; extra == \"contree\""
+      ],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "origin": "reused_verified_retained_bytes",
+      "artifact_metadata": {
+        "filename": "mini_swe_agent-2.4.6-py3-none-any.whl",
+        "wheel_sha256": "a35463c553ac825c7773b03cfa69cd44958e3af20155dcc5711fdf9e4c67cd54",
+        "metadata_url": "https://files.pythonhosted.org/packages/a2/00/a2f454775f69f540ab529c5f5e35d672f6491f0e6edab7cb196a0d2a0e2e/mini_swe_agent-2.4.6-py3-none-any.whl.metadata",
+        "metadata_bytes": 14675,
+        "metadata_sha256": "70969b38427738414d526b3662ac2323a17feb4e2ed8f75933a43ff84db9fc74",
+        "name": "mini-swe-agent",
+        "version": "2.4.6",
+        "requires_python": ">=3.10",
+        "requires_dist": [
+          "pyyaml",
+          "requests",
+          "jinja2",
+          "pydantic>=2.0",
+          "litellm!=1.82.7,!=1.82.8,>=1.75.5",
+          "tenacity",
+          "rich",
+          "python-dotenv",
+          "typer",
+          "platformdirs",
+          "textual",
+          "prompt_toolkit",
+          "datasets",
+          "openai!=1.100.0,!=1.100.1",
+          "mini-swe-agent[dev]; extra == \"full\"",
+          "swe-rex>=1.4.0; extra == \"full\"",
+          "mini-swe-agent[modal]; extra == \"full\"",
+          "mini-swe-agent[contree]; extra == \"full\"",
+          "modal; extra == \"modal\"",
+          "boto3; extra == \"modal\"",
+          "pytest; extra == \"dev\"",
+          "pytest-cov; extra == \"dev\"",
+          "pytest-asyncio; extra == \"dev\"",
+          "pytest-xdist; extra == \"dev\"",
+          "pre-commit; extra == \"dev\"",
+          "ruff; extra == \"dev\"",
+          "mkdocs-include-markdown-plugin; extra == \"dev\"",
+          "mkdocstrings[python]>=0.18; extra == \"dev\"",
+          "mike; extra == \"dev\"",
+          "mkdocs-material; extra == \"dev\"",
+          "mkdocs-glightbox; extra == \"dev\"",
+          "mkdocs-redirects; extra == \"dev\"",
+          "portkey-ai; extra == \"dev\"",
+          "swe-rex; extra == \"dev\"",
+          "contree-sdk>=0.2.0; extra == \"contree\""
+        ],
+        "original_declarations_equal": true,
+        "retained_archive_metadata_match": true
+      },
+      "unpacked_bytes": 296029,
+      "members": 76,
+      "notices": [
+        {
+          "path": "mini_swe_agent-2.4.6.dist-info/licenses/LICENSE.md",
+          "bytes": 1094,
+          "sha256": "0f796e58f91d1c07bb2c1b1d0f8bf3a83017c3a5dec1bdc6fae733b2cd2e875b"
+        }
+      ],
+      "upstream_source_matches": [
+        {
+          "wheel_path": "minisweagent/__init__.py",
+          "source_path": "src/minisweagent/__init__.py",
+          "sha256": "0a708308b1b62cc020b60799c3d54f665845f795b3f0c4fdac787c96a38d12c7"
+        },
+        {
+          "wheel_path": "minisweagent/agents/default.py",
+          "source_path": "src/minisweagent/agents/default.py",
+          "sha256": "e8ef8aa365942d739c2ec5cb0879f60f377d2dc2de8ec670aaedf3bafb45a4c2"
+        },
+        {
+          "wheel_path": "minisweagent/exceptions.py",
+          "source_path": "src/minisweagent/exceptions.py",
+          "sha256": "0590393c56bee873c79a691dcb4f15cb39c85f1658598b84bfb295bfde56921d"
+        },
+        {
+          "wheel_path": "minisweagent/utils/serialize.py",
+          "source_path": "src/minisweagent/utils/serialize.py",
+          "sha256": "3035b27cfeffdf91117c72bc8131340bd9c5f67a3010baeb4ecd6b0c7406f462"
+        },
+        {
+          "wheel_path": "minisweagent/utils/log.py",
+          "source_path": "src/minisweagent/utils/log.py",
+          "sha256": "aee0cc34a32b542f4d3ef09e1f03b7418cf98ec54d506401d9d4401003c05a9f"
+        },
+        {
+          "wheel_path": "mini_swe_agent-2.4.6.dist-info/licenses/LICENSE.md",
+          "source_path": "LICENSE.md",
+          "sha256": "0f796e58f91d1c07bb2c1b1d0f8bf3a83017c3a5dec1bdc6fae733b2cd2e875b"
+        }
+      ]
+    },
+    {
+      "name": "pydantic",
+      "version": "2.14.1",
+      "filename": "pydantic-2.14.1-py3-none-any.whl",
+      "bytes": 488106,
+      "sha256": "9195d967ec791692a04438115466764fb8b9a27b31f14a760437694f40d6b454",
+      "url": "https://files.pythonhosted.org/packages/35/ea/a56b9fe5066f3537b7882f77e9c5dfb26d8c2eefdaed9b5fc73d57b4dc22/pydantic-2.14.1-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/pydantic/2.14.1/json",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "annotated-types>=0.6.0",
+        "pydantic-core==2.50.1",
+        "typing-extensions>=4.16.0",
+        "typing-inspection>=0.4.4",
+        "email-validator>=2.0.0; extra == \"email\"",
+        "tzdata; platform_system == \"Windows\" and extra == \"timezone\""
+      ],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "origin": "reused_verified_retained_bytes",
+      "artifact_metadata": {
+        "filename": "pydantic-2.14.1-py3-none-any.whl",
+        "wheel_sha256": "9195d967ec791692a04438115466764fb8b9a27b31f14a760437694f40d6b454",
+        "metadata_url": "https://files.pythonhosted.org/packages/35/ea/a56b9fe5066f3537b7882f77e9c5dfb26d8c2eefdaed9b5fc73d57b4dc22/pydantic-2.14.1-py3-none-any.whl.metadata",
+        "metadata_bytes": 133006,
+        "metadata_sha256": "4d4c8e8d5e6a27d5208f0d7949f25628e6747133034969d4d1399b1ad5394036",
+        "name": "pydantic",
+        "version": "2.14.1",
+        "requires_python": ">=3.10",
+        "requires_dist": [
+          "annotated-types>=0.6.0",
+          "pydantic-core==2.50.1",
+          "typing-extensions>=4.16.0",
+          "typing-inspection>=0.4.4",
+          "email-validator>=2.0.0; extra == 'email'",
+          "tzdata; (platform_system == 'Windows') and extra == 'timezone'"
+        ],
+        "original_declarations_equal": false,
+        "retained_archive_metadata_match": true
+      },
+      "unpacked_bytes": 1964433,
+      "members": 111,
+      "notices": [
+        {
+          "path": "pydantic-2.14.1.dist-info/licenses/LICENSE",
+          "bytes": 1129,
+          "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3"
+        }
+      ],
+      "upstream_source_matches": []
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.2.4",
+      "filename": "python_dotenv-1.2.4-py3-none-any.whl",
+      "bytes": 23266,
+      "sha256": "42269a8a5b3fd54ffa6f3d84b18abed50064717576b4ecf03dc4a55d8aa04fdc",
+      "url": "https://files.pythonhosted.org/packages/60/d1/38f3a3405989a89ac18390803e70c6ad7c7760da4f9b83cbeca0c44a0c72/python_dotenv-1.2.4-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/python-dotenv/1.2.4/json",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "click>=5.0; extra == \"cli\""
+      ],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "origin": "exact_https_download",
+      "artifact_metadata": {
+        "filename": "python_dotenv-1.2.4-py3-none-any.whl",
+        "wheel_sha256": "42269a8a5b3fd54ffa6f3d84b18abed50064717576b4ecf03dc4a55d8aa04fdc",
+        "metadata_url": "https://files.pythonhosted.org/packages/60/d1/38f3a3405989a89ac18390803e70c6ad7c7760da4f9b83cbeca0c44a0c72/python_dotenv-1.2.4-py3-none-any.whl.metadata",
+        "metadata_bytes": 29979,
+        "metadata_sha256": "87cfee6042412d48df1100ea7822684988c3f2b79de7a250f4717f4df3026d6f",
+        "name": "python-dotenv",
+        "version": "1.2.4",
+        "requires_python": ">=3.10",
+        "requires_dist": [
+          "click>=5.0; extra == \"cli\""
+        ],
+        "original_declarations_equal": true,
+        "retained_archive_metadata_match": null
+      },
+      "unpacked_bytes": 65897,
+      "members": 15,
+      "notices": [
+        {
+          "path": "python_dotenv-1.2.4.dist-info/licenses/LICENSE",
+          "bytes": 1556,
+          "sha256": "80619b7049f08c81683ad0e01f08f257a840652dd71ee83146d36658c7d2c2b9"
+        }
+      ],
+      "upstream_source_matches": []
+    },
+    {
+      "name": "jinja2",
+      "version": "3.1.6",
+      "filename": "jinja2-3.1.6-py3-none-any.whl",
+      "bytes": 134899,
+      "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67",
+      "url": "https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/jinja2/3.1.6/json",
+      "requires_python": ">=3.7",
+      "requires_dist": [
+        "MarkupSafe>=2.0",
+        "Babel>=2.7; extra == \"i18n\""
+      ],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "origin": "exact_https_download",
+      "artifact_metadata": {
+        "filename": "jinja2-3.1.6-py3-none-any.whl",
+        "wheel_sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67",
+        "metadata_url": "https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl.metadata",
+        "metadata_bytes": 2871,
+        "metadata_sha256": "68c5548fb67c4132a13898d9b31ec50c6bea2abdd915d921f214355c3a6499c8",
+        "name": "Jinja2",
+        "version": "3.1.6",
+        "requires_python": ">=3.7",
+        "requires_dist": [
+          "MarkupSafe>=2.0",
+          "Babel>=2.7 ; extra == \"i18n\""
+        ],
+        "original_declarations_equal": false,
+        "retained_archive_metadata_match": null
+      },
+      "unpacked_bytes": 496892,
+      "members": 31,
+      "notices": [
+        {
+          "path": "jinja2-3.1.6.dist-info/licenses/LICENSE.txt",
+          "bytes": 1475,
+          "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b"
+        }
+      ],
+      "upstream_source_matches": []
+    },
+    {
+      "name": "rich",
+      "version": "15.0.0",
+      "filename": "rich-15.0.0-py3-none-any.whl",
+      "bytes": 310654,
+      "sha256": "33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb",
+      "url": "https://files.pythonhosted.org/packages/82/3b/64d4899d73f91ba49a8c18a8ff3f0ea8f1c1d75481760df8c68ef5235bf5/rich-15.0.0-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/rich/15.0.0/json",
+      "requires_python": ">=3.9.0",
+      "requires_dist": [
+        "ipywidgets<9,>=7.5.1; extra == \"jupyter\"",
+        "markdown-it-py>=2.2.0",
+        "pygments<3.0.0,>=2.13.0"
+      ],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "origin": "exact_https_download",
+      "artifact_metadata": {
+        "filename": "rich-15.0.0-py3-none-any.whl",
+        "wheel_sha256": "33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb",
+        "metadata_url": "https://files.pythonhosted.org/packages/82/3b/64d4899d73f91ba49a8c18a8ff3f0ea8f1c1d75481760df8c68ef5235bf5/rich-15.0.0-py3-none-any.whl.metadata",
+        "metadata_bytes": 18445,
+        "metadata_sha256": "fad34fc603fac4481bf81f8dd629492fc302c0ec31909c86644751512afb2e3b",
+        "name": "rich",
+        "version": "15.0.0",
+        "requires_python": ">=3.9.0",
+        "requires_dist": [
+          "ipywidgets (>=7.5.1,<9) ; extra == \"jupyter\"",
+          "markdown-it-py (>=2.2.0)",
+          "pygments (>=2.13.0,<3.0.0)"
+        ],
+        "original_declarations_equal": false,
+        "retained_archive_metadata_match": null
+      },
+      "unpacked_bytes": 1245816,
+      "members": 105,
+      "notices": [
+        {
+          "path": "rich-15.0.0.dist-info/licenses/LICENSE",
+          "bytes": 1056,
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15"
+        }
+      ],
+      "upstream_source_matches": []
+    },
+    {
+      "name": "platformdirs",
+      "version": "4.13.4",
+      "filename": "platformdirs-4.13.4-py3-none-any.whl",
+      "bytes": 32782,
+      "sha256": "502ce08e9d36cf90579ee44e1e764838842fa658e4975ef47344fd053011d2c8",
+      "url": "https://files.pythonhosted.org/packages/58/51/5614d0537dd830ca64d95a2f254bd66bdf3ac61d41cffcccaec62121fcfd/platformdirs-4.13.4-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/platformdirs/4.13.4/json",
+      "requires_python": ">=3.11",
+      "requires_dist": [],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "origin": "exact_https_download",
+      "artifact_metadata": {
+        "filename": "platformdirs-4.13.4-py3-none-any.whl",
+        "wheel_sha256": "502ce08e9d36cf90579ee44e1e764838842fa658e4975ef47344fd053011d2c8",
+        "metadata_url": "https://files.pythonhosted.org/packages/58/51/5614d0537dd830ca64d95a2f254bd66bdf3ac61d41cffcccaec62121fcfd/platformdirs-4.13.4-py3-none-any.whl.metadata",
+        "metadata_bytes": 5468,
+        "metadata_sha256": "5dc7385b38731209be10dd450b8524ac6a005652eb151d294949e44156a0a45f",
+        "name": "platformdirs",
+        "version": "4.13.4",
+        "requires_python": ">=3.11",
+        "requires_dist": [],
+        "original_declarations_equal": true,
+        "retained_archive_metadata_match": null
+      },
+      "unpacked_bytes": 151776,
+      "members": 18,
+      "notices": [
+        {
+          "path": "platformdirs-4.13.4.dist-info/licenses/LICENSE",
+          "bytes": 1089,
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        }
+      ],
+      "upstream_source_matches": []
+    },
+    {
+      "name": "pydantic-core",
+      "version": "2.50.1",
+      "filename": "pydantic_core-2.50.1-cp314-cp314-win_amd64.whl",
+      "bytes": 2171586,
+      "sha256": "d32f3acc081cc3923386d88f422cde8892335e95f034e0104bb4cf9310d9915f",
+      "url": "https://files.pythonhosted.org/packages/14/4c/350a2415209c43d670eb71d3c040f332c04a30583d39e311b05c7ac15762/pydantic_core-2.50.1-cp314-cp314-win_amd64.whl",
+      "metadata_url": "https://pypi.org/pypi/pydantic-core/2.50.1/json",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "typing-extensions>=4.16.0"
+      ],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "origin": "exact_https_download",
+      "artifact_metadata": {
+        "filename": "pydantic_core-2.50.1-cp314-cp314-win_amd64.whl",
+        "wheel_sha256": "d32f3acc081cc3923386d88f422cde8892335e95f034e0104bb4cf9310d9915f",
+        "metadata_url": "https://files.pythonhosted.org/packages/14/4c/350a2415209c43d670eb71d3c040f332c04a30583d39e311b05c7ac15762/pydantic_core-2.50.1-cp314-cp314-win_amd64.whl.metadata",
+        "metadata_bytes": 6650,
+        "metadata_sha256": "790c40c25f95db9b18e1d4b5ae75979ce6027b15d6f924c042553252ff43328f",
+        "name": "pydantic_core",
+        "version": "2.50.1",
+        "requires_python": ">=3.10",
+        "requires_dist": [
+          "typing-extensions>=4.16.0"
+        ],
+        "original_declarations_equal": true,
+        "retained_archive_metadata_match": null
+      },
+      "unpacked_bytes": 5917140,
+      "members": 11,
+      "notices": [
+        {
+          "path": "pydantic_core-2.50.1.dist-info/licenses/LICENSE",
+          "bytes": 1101,
+          "sha256": "fbe7f615f18d135c07000e5a86325db27f42c7729699ef166ac1f7a3f4586bf4"
+        }
+      ],
+      "upstream_source_matches": []
+    },
+    {
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+      "bytes": 45571,
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/typing-extensions/4.16.0/json",
+      "requires_python": ">=3.9",
+      "requires_dist": [],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "origin": "exact_https_download",
+      "artifact_metadata": {
+        "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+        "wheel_sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+        "metadata_url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl.metadata",
+        "metadata_bytes": 3310,
+        "metadata_sha256": "b05084ca1d50879865178d9fff9fabeab61bdfb1f361bfbde95421ffc8f9be46",
+        "name": "typing_extensions",
+        "version": "4.16.0",
+        "requires_python": ">=3.9",
+        "requires_dist": [],
+        "original_declarations_equal": true,
+        "retained_archive_metadata_match": null
+      },
+      "unpacked_bytes": 182767,
+      "members": 5,
+      "notices": [
+        {
+          "path": "typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+          "bytes": 13936,
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        }
+      ],
+      "upstream_source_matches": []
+    },
+    {
+      "name": "typing-inspection",
+      "version": "0.4.4",
+      "filename": "typing_inspection-0.4.4-py3-none-any.whl",
+      "bytes": 14750,
+      "sha256": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147",
+      "url": "https://files.pythonhosted.org/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/typing-inspection/0.4.4/json",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "typing-extensions>=4.15.0"
+      ],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "origin": "exact_https_download",
+      "artifact_metadata": {
+        "filename": "typing_inspection-0.4.4-py3-none-any.whl",
+        "wheel_sha256": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147",
+        "metadata_url": "https://files.pythonhosted.org/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl.metadata",
+        "metadata_bytes": 2554,
+        "metadata_sha256": "bad3d9e6342ef6750cf5128ec942327b8bebdce0b6e4d6f67cb15b27ae5118da",
+        "name": "typing-inspection",
+        "version": "0.4.4",
+        "requires_python": ">=3.10",
+        "requires_dist": [
+          "typing-extensions>=4.15.0"
+        ],
+        "original_declarations_equal": true,
+        "retained_archive_metadata_match": null
+      },
+      "unpacked_bytes": 54538,
+      "members": 9,
+      "notices": [
+        {
+          "path": "typing_inspection-0.4.4.dist-info/licenses/LICENSE",
+          "bytes": 1090,
+          "sha256": "804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3"
+        }
+      ],
+      "upstream_source_matches": []
+    },
+    {
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "filename": "annotated_types-0.8.0-py3-none-any.whl",
+      "bytes": 13427,
+      "sha256": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0",
+      "url": "https://files.pythonhosted.org/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/annotated-types/0.8.0/json",
+      "requires_python": ">=3.10",
+      "requires_dist": [],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "origin": "exact_https_download",
+      "artifact_metadata": {
+        "filename": "annotated_types-0.8.0-py3-none-any.whl",
+        "wheel_sha256": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0",
+        "metadata_url": "https://files.pythonhosted.org/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl.metadata",
+        "metadata_bytes": 15009,
+        "metadata_sha256": "614985b278f601b8ef863f82783b991cc3ada4b89f592eb71c7c48c5f2ef2298",
+        "name": "annotated-types",
+        "version": "0.8.0",
+        "requires_python": ">=3.10",
+        "requires_dist": [],
+        "original_declarations_equal": true,
+        "retained_archive_metadata_match": null
+      },
+      "unpacked_bytes": 36347,
+      "members": 7,
+      "notices": [
+        {
+          "path": "annotated_types-0.8.0.dist-info/licenses/LICENSE",
+          "bytes": 1083,
+          "sha256": "fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d"
+        }
+      ],
+      "upstream_source_matches": []
+    },
+    {
+      "name": "markupsafe",
+      "version": "3.0.4",
+      "filename": "markupsafe-3.0.4-cp314-cp314-win_amd64.whl",
+      "bytes": 14501,
+      "sha256": "c1bc67752d5f21013cfe430df4062441714eab79f65a6a05e01505957e9c35fe",
+      "url": "https://files.pythonhosted.org/packages/80/f0/5792ff768a410f93ee3f84fc19345295ffc352d2c936b424cb37e514714c/markupsafe-3.0.4-cp314-cp314-win_amd64.whl",
+      "metadata_url": "https://pypi.org/pypi/markupsafe/3.0.4/json",
+      "requires_python": ">=3.9",
+      "requires_dist": [],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "origin": "exact_https_download",
+      "artifact_metadata": {
+        "filename": "markupsafe-3.0.4-cp314-cp314-win_amd64.whl",
+        "wheel_sha256": "c1bc67752d5f21013cfe430df4062441714eab79f65a6a05e01505957e9c35fe",
+        "metadata_url": "https://files.pythonhosted.org/packages/80/f0/5792ff768a410f93ee3f84fc19345295ffc352d2c936b424cb37e514714c/markupsafe-3.0.4-cp314-cp314-win_amd64.whl.metadata",
+        "metadata_bytes": 2764,
+        "metadata_sha256": "08fa79954ab288d778b0fee4f0e6c7dbc869e545a415747d1324622465d3b08d",
+        "name": "MarkupSafe",
+        "version": "3.0.4",
+        "requires_python": ">=3.9",
+        "requires_dist": [],
+        "original_declarations_equal": true,
+        "retained_archive_metadata_match": null
+      },
+      "unpacked_bytes": 35603,
+      "members": 11,
+      "notices": [
+        {
+          "path": "markupsafe-3.0.4.dist-info/licenses/LICENSE.txt",
+          "bytes": 1503,
+          "sha256": "4631ec0db5fd90a547e336817264c6798214338146f8ac94b4a57f96ee8c9ec4"
+        }
+      ],
+      "upstream_source_matches": []
+    },
+    {
+      "name": "markdown-it-py",
+      "version": "4.2.0",
+      "filename": "markdown_it_py-4.2.0-py3-none-any.whl",
+      "bytes": 91687,
+      "sha256": "9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a",
+      "url": "https://files.pythonhosted.org/packages/b3/81/4da04ced5a082363ecfa159c010d200ecbd959ae410c10c0264a38cac0f5/markdown_it_py-4.2.0-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/markdown-it-py/4.2.0/json",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "mdurl~=0.1",
+        "psutil; extra == \"benchmarking\"",
+        "pytest; extra == \"benchmarking\"",
+        "pytest-benchmark; extra == \"benchmarking\"",
+        "commonmark~=0.9; extra == \"compare\"",
+        "markdown~=3.4; extra == \"compare\"",
+        "mistletoe~=1.0; extra == \"compare\"",
+        "mistune~=3.0; extra == \"compare\"",
+        "panflute~=2.3; extra == \"compare\"",
+        "markdown-it-pyrs; extra == \"compare\"",
+        "linkify-it-py<3,>=1; extra == \"linkify\"",
+        "mdit-py-plugins>=0.5.0; extra == \"plugins\"",
+        "gprof2dot; extra == \"profiling\"",
+        "mdit-py-plugins>=0.5.0; extra == \"rtd\"",
+        "myst-parser; extra == \"rtd\"",
+        "pyyaml; extra == \"rtd\"",
+        "sphinx; extra == \"rtd\"",
+        "sphinx-copybutton; extra == \"rtd\"",
+        "sphinx-design; extra == \"rtd\"",
+        "sphinx-book-theme~=1.0; extra == \"rtd\"",
+        "jupyter_sphinx; extra == \"rtd\"",
+        "ipykernel; extra == \"rtd\"",
+        "coverage; extra == \"testing\"",
+        "pytest; extra == \"testing\"",
+        "pytest-cov; extra == \"testing\"",
+        "pytest-regressions; extra == \"testing\"",
+        "pytest-timeout; extra == \"testing\"",
+        "requests; extra == \"testing\""
+      ],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "origin": "exact_https_download",
+      "artifact_metadata": {
+        "filename": "markdown_it_py-4.2.0-py3-none-any.whl",
+        "wheel_sha256": "9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a",
+        "metadata_url": "https://files.pythonhosted.org/packages/b3/81/4da04ced5a082363ecfa159c010d200ecbd959ae410c10c0264a38cac0f5/markdown_it_py-4.2.0-py3-none-any.whl.metadata",
+        "metadata_bytes": 7410,
+        "metadata_sha256": "72c36ff516755443b1ecb61e17b2567a990230b49a504b0eb0c42d5f82448a9c",
+        "name": "markdown-it-py",
+        "version": "4.2.0",
+        "requires_python": ">=3.10",
+        "requires_dist": [
+          "mdurl~=0.1",
+          "psutil ; extra == \"benchmarking\"",
+          "pytest ; extra == \"benchmarking\"",
+          "pytest-benchmark ; extra == \"benchmarking\"",
+          "commonmark~=0.9 ; extra == \"compare\"",
+          "markdown~=3.4 ; extra == \"compare\"",
+          "mistletoe~=1.0 ; extra == \"compare\"",
+          "mistune~=3.0 ; extra == \"compare\"",
+          "panflute~=2.3 ; extra == \"compare\"",
+          "markdown-it-pyrs ; extra == \"compare\"",
+          "linkify-it-py>=1,<3 ; extra == \"linkify\"",
+          "mdit-py-plugins>=0.5.0 ; extra == \"plugins\"",
+          "gprof2dot ; extra == \"profiling\"",
+          "mdit-py-plugins>=0.5.0 ; extra == \"rtd\"",
+          "myst-parser ; extra == \"rtd\"",
+          "pyyaml ; extra == \"rtd\"",
+          "sphinx ; extra == \"rtd\"",
+          "sphinx-copybutton ; extra == \"rtd\"",
+          "sphinx-design ; extra == \"rtd\"",
+          "sphinx-book-theme~=1.0 ; extra == \"rtd\"",
+          "jupyter_sphinx ; extra == \"rtd\"",
+          "ipykernel ; extra == \"rtd\"",
+          "coverage ; extra == \"testing\"",
+          "pytest ; extra == \"testing\"",
+          "pytest-cov ; extra == \"testing\"",
+          "pytest-regressions ; extra == \"testing\"",
+          "pytest-timeout ; extra == \"testing\"",
+          "requests ; extra == \"testing\""
+        ],
+        "original_declarations_equal": false,
+        "retained_archive_metadata_match": null
+      },
+      "unpacked_bytes": 244684,
+      "members": 74,
+      "notices": [
+        {
+          "path": "markdown_it_py-4.2.0.dist-info/licenses/LICENSE",
+          "bytes": 1078,
+          "sha256": "4a2260d6e2cd0f5a151a1e86dbfe7d3ed552b1e2beabf9941c1ba5c49cbce484"
+        },
+        {
+          "path": "markdown_it_py-4.2.0.dist-info/licenses/LICENSE.markdown-it",
+          "bytes": 1073,
+          "sha256": "792c48c5a849a15fdf9e37e8bcf9e6d1dd13b32b46c642a748a0a46a9919d473"
+        }
+      ],
+      "upstream_source_matches": []
+    },
+    {
+      "name": "pygments",
+      "version": "2.21.0",
+      "filename": "pygments-2.21.0-py3-none-any.whl",
+      "bytes": 1250147,
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+      "url": "https://files.pythonhosted.org/packages/71/46/17f022dd3e953bf20a04a028a21ec746d942f8d2af30fa0f124fa0e6a684/pygments-2.21.0-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/pygments/2.21.0/json",
+      "requires_python": ">=3.9",
+      "requires_dist": [
+        "colorama>=0.4.6; extra == \"windows-terminal\""
+      ],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "origin": "exact_https_download",
+      "artifact_metadata": {
+        "filename": "pygments-2.21.0-py3-none-any.whl",
+        "wheel_sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+        "metadata_url": "https://files.pythonhosted.org/packages/71/46/17f022dd3e953bf20a04a028a21ec746d942f8d2af30fa0f124fa0e6a684/pygments-2.21.0-py3-none-any.whl.metadata",
+        "metadata_bytes": 2527,
+        "metadata_sha256": "1dde075570136774c706bf0009183a793fe0ee262e4a5590cc6eff8453eedd43",
+        "name": "Pygments",
+        "version": "2.21.0",
+        "requires_python": ">=3.9",
+        "requires_dist": [
+          "colorama>=0.4.6; extra == 'windows-terminal'"
+        ],
+        "original_declarations_equal": false,
+        "retained_archive_metadata_match": null
+      },
+      "unpacked_bytes": 4621166,
+      "members": 349,
+      "notices": [
+        {
+          "path": "pygments-2.21.0.dist-info/licenses/AUTHORS",
+          "bytes": 11048,
+          "sha256": "71a83872ad82f57be692cf827e048e2cd51d45169cfa1ea3f28706d97a872c0f"
+        },
+        {
+          "path": "pygments-2.21.0.dist-info/licenses/LICENSE",
+          "bytes": 1331,
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        }
+      ],
+      "upstream_source_matches": []
+    },
+    {
+      "name": "mdurl",
+      "version": "0.1.2",
+      "filename": "mdurl-0.1.2-py3-none-any.whl",
+      "bytes": 9979,
+      "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8",
+      "url": "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/mdurl/0.1.2/json",
+      "requires_python": ">=3.7",
+      "requires_dist": [],
+      "status": "PASS_EXACT_BYTES_METADATA",
+      "origin": "exact_https_download",
+      "artifact_metadata": {
+        "filename": "mdurl-0.1.2-py3-none-any.whl",
+        "wheel_sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8",
+        "metadata_url": "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl.metadata",
+        "metadata_bytes": 1638,
+        "metadata_sha256": "b53b29d48f499367053fda3c81e7ce27d2558380ebbf83e66023b02eb7ddd25d",
+        "name": "mdurl",
+        "version": "0.1.2",
+        "requires_python": ">=3.7",
+        "requires_dist": [],
+        "original_declarations_equal": true,
+        "retained_archive_metadata_match": null
+      },
+      "unpacked_bytes": 23308,
+      "members": 11,
+      "notices": [
+        {
+          "path": "mdurl-0.1.2.dist-info/LICENSE",
+          "bytes": 2338,
+          "sha256": "7c605df6e28667a9603118e98274f64a49ce3eed0d26fccce9534a345e0ef955"
+        }
+      ],
+      "upstream_source_matches": []
+    }
+  ],
+  "compressed_bytes": 4716392,
+  "unpacked_bytes": 15336396,
+  "archive_members": 833,
+  "selected_profile": "deterministic custom Model and Environment; not full declared Mini installation",
+  "downloaded_code_executed": false,
+  "global_installation": false,
+  "model_requests": 0,
+  "authenticity_qualification": "not_claimed",
+  "job_id": "67a60fa03cfc4ddd9483e7fa86c190e6",
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\67a60fa03cfc4ddd9483e7fa86c190e6",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "source_commit": "5b0af5ecf9027d8e09093b3b59f372d9462f39fa",
+  "source_tree": "3b5075fd69aefddfa3fa0e8acc08745ca19b8fd1",
+  "collection_retirement_verified": true,
+  "receipt_sha256": "c752c5b26efc76465fdc6802105bdbb000e0ee37c34960534b159275eca170c3",
+  "source_report_sha256": "ccb1b41d26ab3c754f43210536cb523f766ec6c0abdd0a04b3b104b992ae7c57"
+}

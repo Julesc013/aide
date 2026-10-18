@@ -83,3 +83,19 @@ PyPI JSON declarations are not byte-identical to artifact metadata strings.
 The new exact metadata pins preserve both observations, add full metadata hashes,
 and retain all dependency checks. Five artifacts have equivalent representation
 differences. The earlier repair was rejected; allocation 2 has not run.
+
+**Acquisition complete.** Exact repair map ac95c598, effect d60b0f96 and template
+46593858 received independent ACCEPT. Checkpoint 5b0af5ec preceded continuation
+job 67a60fa03cfc4ddd9483e7fa86c190e6. All 14 wheels passed exact archive/metadata/
+notice checks; Mini's six immutable source/license comparisons passed. Expanded
+size is 15,336,396 bytes in 833 members. Collection hashes, quiescence, scratch
+absence and released reservation are verified. Two job allocations are consumed.
+
+**Prepared execution.** The optional source adapter imports Mini only in a new
+isolated enabled attempt after exact recipe verification. It keeps identities and
+unknown usage separate from the upstream trajectory and never grants acceptance.
+The task-local offline harness extracts only the acquired fixed bytes into owned
+scratch, then uses the existing WindowsJobHost for 15 sequential fresh-process
+scenarios, including failure, interruption, read/submit continuation and owned
+descendant cancellation. No acquired code has executed yet. All fixture inputs,
+effects and nested caps require the next exact review. No new execution owner.

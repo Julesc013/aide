@@ -14090,9 +14090,13 @@ See the child report and observed integration receipt for exact delivery.
 
 **Campaign current-state qualified.** Actual current/resume CLI, full validation, unchanged pack/release bytes and exact preview passed at7059f9b0; the single job is collected and retired. Parent history/requirements remain intact. See AIDE-CAMPAIGN-CURRENT-STATE-01/REPORT.md for scope and exact integration boundary.
 
-### AIDE-MINI-WORKER-01 ? Acquisition preparation
+### AIDE-MINI-WORKER-01: Acquisition and optional binding
 
-Added the exact14-wheel selected import recipe and acquisition-only script.
-It reuses the DiskEd no-redirect policy, verifies fixed artifacts and notices,
-and matches selected wheel source against immutable upstream. No acquired code
-has run; no optional runtime implementation is claimed yet.
+The 14 pinned wheels passed archive, exact metadata and notice checks. Preserve
+the original failed attempt and rejected repair; the reviewed continuation
+reused both existing downloads. Both jobs are collected and retired.
+
+Prepared a thin DefaultAgent binding and 15 offline file-change/lifecycle
+scenarios using existing supervision. Syntax and diff checks passed; imported
+execution remains unrun pending exact review. No provider, target, pack or
+release artifact changed. See the WorkUnit for exact receipts and source pins.

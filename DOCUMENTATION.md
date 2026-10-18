@@ -1311,6 +1311,7 @@ Current writing guide: [commit discipline](docs/reference/commit-discipline.md),
 
 ### Optional Mini worker qualification
 
-[Bounded work](.aide/queue/AIDE-MINI-WORKER-01/ExecPlan.md) records the exact upstream
-recipe, isolated fixture plan and operational limits. It remains source-only;
-Lite exports and frozen release artifacts are unchanged.
+[Adapter scope and recovery](docs/reference/mini-worker.md) explains the optional
+source binding, exact imports and fixture boundary.
+[Bounded work](.aide/queue/AIDE-MINI-WORKER-01/ExecPlan.md) retains the acquisition
+outcomes and pending execution review. Lite exports and frozen archives are unchanged.
