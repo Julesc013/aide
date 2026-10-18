@@ -1,0 +1,80 @@
+{
+  "additional_tests_required": false,
+  "assets": {
+    ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt": {
+      "sha256": "01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.manifest.json": {
+      "sha256": "38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f",
+      "size_bytes": 6957
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.tar.gz": {
+      "sha256": "7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44",
+      "size_bytes": 885826
+    },
+    ".aide/release/stable/aide-lite-v1.1.0.zip": {
+      "sha256": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc",
+      "size_bytes": 1231497
+    }
+  },
+  "evidence": {
+    "evidence/fixed-preview-qualified.json": {
+      "sha256": "70b6ef762336df83632e52023d9ab6ded119ab0b318fc9bcaab1ce877ac2f004"
+    },
+    "evidence/predecessor-qualified-replay-refused.json": {
+      "sha256": "168c1da189f4476562624bcca1912c717740f746b4d68185ebc06ffe8c07d021"
+    },
+    "evidence/replacement-cli-coverage.json": {
+      "sha256": "f3b8eeb22794daae77a40ae69a6cbb578e05a969c8b2e8b3e478e0e52c63461a"
+    },
+    "evidence/replacement-consumers-qualified.json": {
+      "sha256": "fa954de55ce50cfd4cd52ccb2949b81ab5c53a18d2e1d6e985561a3e1ac4f658"
+    },
+    "evidence/replay-qualified.json": {
+      "sha256": "2d9a998fac8d0dd911d9f5dd7104c369bf20e27d7adc9aad9839e35b690713ba"
+    }
+  },
+  "integration_authorized_by_this_review": false,
+  "nonblocking_note_dispositions": [
+    {
+      "classification": "nonblocking_for_this_exact_technical_candidate",
+      "disposition": "The prompt is physically present and the current child packet supplies the governing review reference. Preserve the historical warning; no global packet repair is necessary for this verdict.",
+      "note": "Historical global review packet reports a missing review reference."
+    },
+    {
+      "classification": "nonblocking_for_this_exact_technical_candidate",
+      "disposition": "Retain explicit exclusions for outer-client/read isolation, cross-path automatic rollback, customized-overlay automatic downgrade, whole-session model accounting and efficiency savings. No broader claim or required check is deferred.",
+      "note": "Qualification covers the declared Windows companion profile only."
+    },
+    {
+      "classification": "nonblocking_for_this_exact_technical_candidate",
+      "disposition": "Keep the frozen 104-commit range explicit. Commit 3a36366c is separately inspected and strictly format-checked; no executable, export, archive or policy byte changed. Future effect review must account for later metadata commits.",
+      "note": "The preview excludes the evidence-only closure commit."
+    }
+  ],
+  "owner_disposition_granted": false,
+  "publication_authorized_by_this_review": false,
+  "published_version": "1.0.0",
+  "required_technical_fixes": [],
+  "review_activity": "Read-only source and evidence inspection; no tests, jobs, mutations, network or provider calls.",
+  "reviewed_commit": "3a36366c052f308a8ecee10d32690ce0cb75cae7",
+  "reviewed_tree": "41c00a93c993c86f6d376fd2f8186f8a66a4fc78",
+  "reviewer": "/root/review_disked_continuation",
+  "reviewer_wording": "ACCEPT ? technical candidate only (PASS_WITH_NOTES).",
+  "scope": "Independent final technical review of the frozen Lite 1.1.0 Windows companion candidate; no integration or publication effect.",
+  "unresolved_promotion_prerequisites": [
+    "Owner exact historical-message dispositions for 4bb6a4f990c5845a2141a20329168b582b37e8d8, 651464ae3e86b32b11080194d0d06beb88188dd4 and ae26a1ca80b10e87aaee2e4f68545df1c24c59ff.",
+    "Separate exact integration-effect review and fresh source/ref/recovery guards.",
+    "Separately admitted publication and subsequent acquired-byte validation."
+  ],
+  "verdict": "ACCEPT_TECHNICAL_CANDIDATE",
+  "verified_by_reviewer": [
+    "ZIP and TAR contain identical file bytes; all 860 declared checksums and three excluded metadata files agree with the embedded identity and external manifest.",
+    "All 56 unique forms match the manifest and actual retained command hashes, argument suffixes and exit states; 38 original forms and 18 additions are preserved.",
+    "Private installed effort module has no fallback to project core. Source 21, delivered 15 and actual-pack installed regression results remain distinct; the six delivered source-fixture errors are retained.",
+    "Actual published predecessor upgrade, customization conflicts, refusal without mutation, interrupted recovery and protected overlays match their stated acceptance. Different-path rollback refuses; unchanged-state detach/reinstall passes.",
+    "All 29 retained receipts match projections and collection digests covering 769 files. Every job is retired and quiescent, reservations released, four failed attempts preserved.",
+    "Exact archive replay passes. The 104-commit preview ends at 55c9408e with three unresolved malformed records and raw range FAIL. The separately inspected 105th commit 3a36366c changes metadata/output only."
+  ]
+}

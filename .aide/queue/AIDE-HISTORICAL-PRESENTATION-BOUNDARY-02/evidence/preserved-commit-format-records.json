@@ -1,0 +1,200 @@
+{
+  "original_logs": {
+    "outcome-commit-check.log": {
+      "normalized_text": "AIDE Lite commit check\nresult: FAIL\nsource: git log -1 --pretty=%B\npolicy: .aide/policies/commit-messages.yaml\nstandard: .aide/reports/aide-commit-message-standard.md\n- PASS commit subject is present\n- PASS commit subject is 72 characters or fewer\n- PASS commit subject follows type(scope): summary\n- PASS commit type is allowed: test\n- PASS commit subject has no trailing period\n- PASS commit subject is not a vague placeholder\n- PASS commit summary is specific enough\n- PASS commit body is present\n- PASS blank line separates subject and Markdown body\n- PASS commit body contains heading: ## Summary\n- PASS commit body heading has content: ## Summary\n- FAIL commit body heading has bullet content: ## Summary\n- PASS commit body contains heading: ## Why\n- PASS commit body heading has content: ## Why\n- FAIL commit body heading has bullet content: ## Why\n- PASS commit body contains heading: ## Changed\n- PASS commit body heading has content: ## Changed\n- PASS commit body heading has bullet content: ## Changed\n- PASS commit body contains heading: ## Validation\n- PASS commit body heading has content: ## Validation\n- FAIL commit body heading has bullet content: ## Validation\n- PASS commit body contains heading: ## Changelog\n- PASS commit body heading has content: ## Changelog\n- FAIL commit body heading has bullet content: ## Changelog\n- PASS commit body contains heading: ## Risks\n- PASS commit body heading has content: ## Risks\n- FAIL commit body heading has bullet content: ## Risks\n- PASS commit body contains heading: ## Follow-up\n- PASS commit body heading has content: ## Follow-up\n- FAIL commit body heading has bullet content: ## Follow-up\n- PASS validation section records PASS/WARN/FAIL/NOT RUN outcome\n- FAIL changelog section uses a machine-readable category prefix\n- PASS commit trailer present: AIDE-Task\n- PASS commit trailer present: AIDE-Phase\n- PASS commit trailer present: AIDE-Result\n- PASS commit trailer present: AIDE-Scope\n- PASS commit trailer present: AIDE-Token-Impact\n- PASS commit trailer present: AIDE-Quality-Gate\n- PASS commit message excludes raw_prompt_body\n- PASS commit message excludes raw_response_body\n- PASS commit message excludes begin private key\n- PASS commit message excludes openai_api_key\n- PASS commit message excludes anthropic_api_key\n- PASS commit message excludes deepseek_api_key\n- PASS commit message excludes sk-ant\n",
+      "raw_sha256": "04a0c73dd70e86849ac8c9cb8bd772c88d83f582dc05e2f132a9ca63569af034"
+    },
+    "outcome-range-check.log": {
+      "normalized_text": "AIDE Lite commit range check\nresult: FAIL\nrange: 4f2c39606378492622fa8580152373fffc074d7c..HEAD\ncommit_count: 3\npolicy: .aide/policies/commit-messages.yaml\ndisposition_policy: .aide/policies/commit-message-dispositions.yaml\ndispositions: loaded\nhistorical_presentation_boundary: 143ed76134c7fa19b8954e6061df3c1799206403\n- 4bb6a4f FAIL test(release): prepare actual Lite successor qualification\n  - FAIL: commit body heading has bullet content: ## Summary\n  - FAIL: commit body heading has bullet content: ## Why\n  - FAIL: commit body heading has bullet content: ## Validation\n  - FAIL: commit body heading has bullet content: ## Changelog\n  - FAIL: commit body heading has bullet content: ## Risks\n  - FAIL: commit body heading has bullet content: ## Follow-up\n  - FAIL: changelog section uses a machine-readable category prefix\n  - disposition_id: <none>\n  - disposition_status: missing\n  - disposition_error: no exact disposition record for commit\n- 651464a FAIL test(release): freeze Lite 1.1.0 candidate for consumer checks\n  - FAIL: commit body heading has bullet content: ## Summary\n  - FAIL: commit body heading has bullet content: ## Why\n  - FAIL: commit body heading has bullet content: ## Validation\n  - FAIL: commit body heading has bullet content: ## Changelog\n  - FAIL: commit body heading has bullet content: ## Risks\n  - FAIL: commit body heading has bullet content: ## Follow-up\n  - FAIL: changelog section uses a machine-readable category prefix\n  - disposition_id: <none>\n  - disposition_status: missing\n  - disposition_error: no exact disposition record for commit\n- ae26a1c FAIL test(release): retain eight passing successor consumer cases\n  - FAIL: commit body heading has bullet content: ## Summary\n  - FAIL: commit body heading has bullet content: ## Why\n  - FAIL: commit body heading has bullet content: ## Validation\n  - FAIL: commit body heading has bullet content: ## Changelog\n  - FAIL: commit body heading has bullet content: ## Risks\n  - FAIL: commit body heading has bullet content: ## Follow-up\n  - FAIL: changelog section uses a machine-readable category prefix\n  - disposition_id: <none>\n  - disposition_status: missing\n  - disposition_error: no exact disposition record for commit\n",
+      "raw_sha256": "05ccf97ee10a91c0bedc21c915ab15fbaed5fecc56f972e0b656b12653ede4bb"
+    }
+  },
+  "records": [
+    {
+      "changelog": {
+        "breaking": false,
+        "commit": "4bb6a4f990c5",
+        "commit_sha": "4bb6a4f990c5845a2141a20329168b582b37e8d8",
+        "entries": [],
+        "follow_up": "Run one reviewed build, preserve original results, then independently admit exact consumer effects. No tag or publication in this child.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01\nAIDE-Phase: build-preparation\nAIDE-Result: prepared\nAIDE-Scope: queue,release-evidence\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-effect-review",
+        "ignored": false,
+        "legacy": false,
+        "malformed": true,
+        "malformed_reasons": [
+          "missing_changelog_category"
+        ],
+        "risks": "No archive consumer, update, publication, outer containment or read-isolation qualification yet. Global review-packet warning remains classified with explicit rubric links in this child.",
+        "scope": "release",
+        "sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "test(release): prepare actual Lite successor qualification",
+        "summary": "prepare actual Lite successor qualification",
+        "trailers": {
+          "AIDE-Phase": "build-preparation",
+          "AIDE-Quality-Gate": "independent-source-effect-review",
+          "AIDE-Result": "prepared",
+          "AIDE-Scope": "queue,release-evidence",
+          "AIDE-Task": "AIDE-LITE-SUCCESSOR-QUALIFICATION-01",
+          "AIDE-Token-Impact": "unknown"
+        },
+        "type": "test",
+        "validation": "Doctor and rebound full validation PASS; wrapper syntax and exact input identities checked. Initial stale capability failure retained and refreshed through the existing owner. Independent source/effect verdict retained separately before execution.",
+        "warnings": []
+      },
+      "commit": "4bb6a4f990c5845a2141a20329168b582b37e8d8",
+      "corrected_draft": "test(release): prepare actual Lite successor qualification\n\n## Summary\n- Admit AIDE-LITE-SUCCESSOR-QUALIFICATION-01 and prepare its exact build.\n\n## Why\n- The integrated development pack needs actual archive and published-predecessor evidence before a stable successor claim.\n\n## Changed\n- Record bounded scope, fourteen finite allocations and preserved original consumer obligations.\n- Freeze pack and published asset identities, observed tag state and prior verified integration.\n- Reuse the existing stable builder with four exact new outputs and raw retained results.\n- Prepare the task-scoped consumer profile without changing default reserves or roots.\n\n## Validation\n- Doctor and rebound full validation PASS; wrapper syntax and exact input identities checked. Initial stale capability failure retained and refreshed through the existing owner. Independent source/effect verdict retained separately before execution.\n\n## Changelog\n- Tests: Prepare qualification of additive Lite 1.1.0, retaining all 38 original CLI forms and 18 proposed additions.\n\n## Risks\n- No archive consumer, update, publication, outer containment or read-isolation qualification yet. Global review-packet warning remains classified with explicit rubric links in this child.\n\n## Follow-up\n- Run one reviewed build, preserve original results, then independently admit exact consumer effects. No tag or publication in this child.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01\nAIDE-Phase: build-preparation\nAIDE-Result: prepared\nAIDE-Scope: queue,release-evidence\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-effect-review\n",
+      "disposition": "not_accepted",
+      "draft_result": "PASS",
+      "draft_sha256": "9048217fd101e74ddab3e6e7ba826e65efe69250619a1a494e4ee02c9ac8ab37",
+      "failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Validation",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "changelog section uses a machine-readable category prefix"
+      ],
+      "history_rewritten": false,
+      "message_sha256": "943d29bf5bfc521eae1c6a0464a8db1794115061857154f2406aa9cde0856c7e",
+      "original_message": "test(release): prepare actual Lite successor qualification\n\n## Summary\nAdmit AIDE-LITE-SUCCESSOR-QUALIFICATION-01 and prepare its exact build.\n\n## Why\nThe integrated development pack needs actual archive and published-predecessor evidence before a stable successor claim.\n\n## Changed\n- Record bounded scope, fourteen finite allocations and preserved original consumer obligations.\n- Freeze pack and published asset identities, observed tag state and prior verified integration.\n- Reuse the existing stable builder with four exact new outputs and raw retained results.\n- Prepare the task-scoped consumer profile without changing default reserves or roots.\n\n## Validation\nDoctor and rebound full validation PASS; wrapper syntax and exact input identities checked. Initial stale capability failure retained and refreshed through the existing owner. Independent source/effect verdict retained separately before execution.\n\n## Changelog\nPrepare qualification of additive Lite 1.1.0, retaining all 38 original CLI forms and 18 proposed additions.\n\n## Risks\nNo archive consumer, update, publication, outer containment or read-isolation qualification yet. Global review-packet warning remains classified with explicit rubric links in this child.\n\n## Follow-up\nRun one reviewed build, preserve original results, then independently admit exact consumer effects. No tag or publication in this child.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01\nAIDE-Phase: build-preparation\nAIDE-Result: prepared\nAIDE-Scope: queue,release-evidence\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-effect-review\n",
+      "original_result": "FAIL",
+      "parents": [
+        "4f2c39606378492622fa8580152373fffc074d7c"
+      ],
+      "presentation_only_classification": true,
+      "tree": "4efe3e6df7dd3e5fdd96a69922a5ee8fe8ed4d3f"
+    },
+    {
+      "changelog": {
+        "breaking": false,
+        "commit": "651464ae3e86",
+        "commit_sha": "651464ae3e86b32b11080194d0d06beb88188dd4",
+        "entries": [],
+        "follow_up": "Run cases0 through7 sequentially once under fresh admission. Preserve every outcome and stop on failure. An important task checkpoint may be shared under its exact reviewed nonforce push effect; no dev/main promotion yet.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01\nAIDE-Phase: original-consumers\nAIDE-Result: build-pass-consumers-prepared\nAIDE-Scope: release-assets,queue-evidence\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-effect-review",
+        "ignored": false,
+        "legacy": false,
+        "malformed": true,
+        "malformed_reasons": [
+          "missing_changelog_category"
+        ],
+        "risks": "Consumer, actual published-predecessor upgrade, replay and publication acceptance remain pending. Read isolation and outer containment remain unqualified.",
+        "scope": "release",
+        "sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "test(release): freeze Lite 1.1.0 candidate for consumer checks",
+        "summary": "freeze Lite 1.1.0 candidate for consumer checks",
+        "trailers": {
+          "AIDE-Phase": "original-consumers",
+          "AIDE-Quality-Gate": "independent-source-effect-review",
+          "AIDE-Result": "build-pass-consumers-prepared",
+          "AIDE-Scope": "release-assets,queue-evidence",
+          "AIDE-Task": "AIDE-LITE-SUCCESSOR-QUALIFICATION-01",
+          "AIDE-Token-Impact": "unknown"
+        },
+        "type": "test",
+        "validation": "Build allocation1 PASS, exact collection hashes verified, job quiescent and retired. Wrapper syntax and input pins pass; unchanged source60 and delivered25 evidence reused. Full current validation and independent source/effect review retained separately.",
+        "warnings": []
+      },
+      "commit": "651464ae3e86b32b11080194d0d06beb88188dd4",
+      "corrected_draft": "test(release): freeze Lite 1.1.0 candidate for consumer checks\n\n## Summary\n- Freeze the actual successor candidate and prepare all eight original consumer families.\n\n## Why\n- Development checks cannot establish behavior of the actual release archives or preserve published-predecessor compatibility by declaration alone.\n\n## Changed\n- Record the successful four-asset build and immutable predecessor/pack preservation.\n- Retain raw job receipt and normalized human-readable result projections.\n- Select unchanged original canaries through a bounded per-case adapter.\n- Bind current-machine fixture configuration and exact archive inputs without claiming historical account containment.\n\n## Validation\n- Build allocation1 PASS, exact collection hashes verified, job quiescent and retired. Wrapper syntax and input pins pass; unchanged source60 and delivered25 evidence reused. Full current validation and independent source/effect review retained separately.\n\n## Changelog\n- Tests: Prepare actual consumer qualification of Lite 1.1.0 candidate ZIP089d75da, retaining all original lifecycle obligations.\n\n## Risks\n- Consumer, actual published-predecessor upgrade, replay and publication acceptance remain pending. Read isolation and outer containment remain unqualified.\n\n## Follow-up\n- Run cases0 through7 sequentially once under fresh admission. Preserve every outcome and stop on failure. An important task checkpoint may be shared under its exact reviewed nonforce push effect; no dev/main promotion yet.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01\nAIDE-Phase: original-consumers\nAIDE-Result: build-pass-consumers-prepared\nAIDE-Scope: release-assets,queue-evidence\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-effect-review\n",
+      "disposition": "not_accepted",
+      "draft_result": "PASS",
+      "draft_sha256": "d4d64be418285c75e424a53d508ee705e538b865aad61758cc121a7749b236de",
+      "failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Validation",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "changelog section uses a machine-readable category prefix"
+      ],
+      "history_rewritten": false,
+      "message_sha256": "68edd941921cf01fd647f236eb6a00b24bda3a7a8c75c5e6316d5b939e952ebc",
+      "original_message": "test(release): freeze Lite 1.1.0 candidate for consumer checks\n\n## Summary\nFreeze the actual successor candidate and prepare all eight original consumer families.\n\n## Why\nDevelopment checks cannot establish behavior of the actual release archives or preserve published-predecessor compatibility by declaration alone.\n\n## Changed\n- Record the successful four-asset build and immutable predecessor/pack preservation.\n- Retain raw job receipt and normalized human-readable result projections.\n- Select unchanged original canaries through a bounded per-case adapter.\n- Bind current-machine fixture configuration and exact archive inputs without claiming historical account containment.\n\n## Validation\nBuild allocation1 PASS, exact collection hashes verified, job quiescent and retired. Wrapper syntax and input pins pass; unchanged source60 and delivered25 evidence reused. Full current validation and independent source/effect review retained separately.\n\n## Changelog\nPrepare actual consumer qualification of Lite 1.1.0 candidate ZIP089d75da, retaining all original lifecycle obligations.\n\n## Risks\nConsumer, actual published-predecessor upgrade, replay and publication acceptance remain pending. Read isolation and outer containment remain unqualified.\n\n## Follow-up\nRun cases0 through7 sequentially once under fresh admission. Preserve every outcome and stop on failure. An important task checkpoint may be shared under its exact reviewed nonforce push effect; no dev/main promotion yet.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01\nAIDE-Phase: original-consumers\nAIDE-Result: build-pass-consumers-prepared\nAIDE-Scope: release-assets,queue-evidence\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-source-effect-review\n",
+      "original_result": "FAIL",
+      "parents": [
+        "4bb6a4f990c5845a2141a20329168b582b37e8d8"
+      ],
+      "presentation_only_classification": true,
+      "tree": "2790b74e2569032cc6f0aa5e1d102503110d9a69"
+    },
+    {
+      "changelog": {
+        "breaking": false,
+        "commit": "ae26a1ca80b1",
+        "commit_sha": "ae26a1ca80b10e87aaee2e4f68545df1c24c59ff",
+        "entries": [],
+        "follow_up": "Prepare the five remaining bounded qualification allocations. Publish this important checkpoint only to the exact owned task ref under the accepted effect; dev/main remain at4f2c3960 until full candidate acceptance.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01\nAIDE-Phase: original-consumer-outcome\nAIDE-Result: pass-original8\nAIDE-Scope: qualification-evidence,documentation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-evidence-review",
+        "ignored": false,
+        "legacy": false,
+        "malformed": true,
+        "malformed_reasons": [
+          "missing_changelog_category"
+        ],
+        "risks": "Additional18 forms, actual published-predecessor update/conflict/recovery, archive replay, final review and publication remain pending. Whole-task model cost and outer/read containment remain unqualified.",
+        "scope": "release",
+        "sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "test(release): retain eight passing successor consumer cases",
+        "summary": "retain eight passing successor consumer cases",
+        "trailers": {
+          "AIDE-Phase": "original-consumer-outcome",
+          "AIDE-Quality-Gate": "independent-evidence-review",
+          "AIDE-Result": "pass-original8",
+          "AIDE-Scope": "qualification-evidence,documentation",
+          "AIDE-Task": "AIDE-LITE-SUCCESSOR-QUALIFICATION-01",
+          "AIDE-Token-Impact": "unknown"
+        },
+        "type": "test",
+        "validation": "All eight original canaries PASS exactly once, plus prior build PASS. Collected output/log hashes reverified; every job quiescent, scratch absent and reservation released. Full repository validation and diff checks PASS. All prior release, candidate archive and development pack bytes remain unchanged. The known global review-reference warning is explicitly classified.",
+        "warnings": []
+      },
+      "commit": "ae26a1ca80b10e87aaee2e4f68545df1c24c59ff",
+      "corrected_draft": "test(release): retain eight passing successor consumer cases\n\n## Summary\n- Record all eight original consumer families passing against exact Lite 1.1.0 candidate bytes.\n\n## Why\n- Each release claim needs actual consumer behavior, preserved outcomes and clear remaining obligations before stable promotion.\n\n## Changed\n- Record adoption/update, lifecycle, context, partial recovery, public CLI, restart, managed jobs and Task OS outcomes.\n- Link immutable raw receipts and complete output inventories while committing compact normalized summaries.\n- Retain the verified important-checkpoint push and update current planning and documentation views.\n- Record nine retired parent allocations and five remaining qualification slots.\n\n## Validation\n- All eight original canaries PASS exactly once, plus prior build PASS. Collected output/log hashes reverified; every job quiescent, scratch absent and reservation released. Full repository validation and diff checks PASS. All prior release, candidate archive and development pack bytes remain unchanged. The known global review-reference warning is explicitly classified.\n\n## Changelog\n- Tests: Establish the original consumer baseline for the additive Lite 1.1.0 candidate on the current Windows route.\n\n## Risks\n- Additional18 forms, actual published-predecessor update/conflict/recovery, archive replay, final review and publication remain pending. Whole-task model cost and outer/read containment remain unqualified.\n\n## Follow-up\n- Prepare the five remaining bounded qualification allocations. Publish this important checkpoint only to the exact owned task ref under the accepted effect; dev/main remain at4f2c3960 until full candidate acceptance.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01\nAIDE-Phase: original-consumer-outcome\nAIDE-Result: pass-original8\nAIDE-Scope: qualification-evidence,documentation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-evidence-review\n",
+      "disposition": "not_accepted",
+      "draft_result": "PASS",
+      "draft_sha256": "fa00c1ef2a1ab6c51b55cee86307505ab33bb607539fd2b01f0b65f9e3fe1b0b",
+      "failed_checks": [
+        "commit body heading has bullet content: ## Summary",
+        "commit body heading has bullet content: ## Why",
+        "commit body heading has bullet content: ## Validation",
+        "commit body heading has bullet content: ## Changelog",
+        "commit body heading has bullet content: ## Risks",
+        "commit body heading has bullet content: ## Follow-up",
+        "changelog section uses a machine-readable category prefix"
+      ],
+      "history_rewritten": false,
+      "message_sha256": "4ef6dd444dd34ee2d1a46fa4f58727a9d87f903beb38089b6bfe41a0fef3ec10",
+      "original_message": "test(release): retain eight passing successor consumer cases\n\n## Summary\nRecord all eight original consumer families passing against exact Lite 1.1.0 candidate bytes.\n\n## Why\nEach release claim needs actual consumer behavior, preserved outcomes and clear remaining obligations before stable promotion.\n\n## Changed\n- Record adoption/update, lifecycle, context, partial recovery, public CLI, restart, managed jobs and Task OS outcomes.\n- Link immutable raw receipts and complete output inventories while committing compact normalized summaries.\n- Retain the verified important-checkpoint push and update current planning and documentation views.\n- Record nine retired parent allocations and five remaining qualification slots.\n\n## Validation\nAll eight original canaries PASS exactly once, plus prior build PASS. Collected output/log hashes reverified; every job quiescent, scratch absent and reservation released. Full repository validation and diff checks PASS. All prior release, candidate archive and development pack bytes remain unchanged. The known global review-reference warning is explicitly classified.\n\n## Changelog\nEstablish the original consumer baseline for the additive Lite 1.1.0 candidate on the current Windows route.\n\n## Risks\nAdditional18 forms, actual published-predecessor update/conflict/recovery, archive replay, final review and publication remain pending. Whole-task model cost and outer/read containment remain unqualified.\n\n## Follow-up\nPrepare the five remaining bounded qualification allocations. Publish this important checkpoint only to the exact owned task ref under the accepted effect; dev/main remain at4f2c3960 until full candidate acceptance.\n\nAIDE-Task: AIDE-LITE-SUCCESSOR-QUALIFICATION-01\nAIDE-Phase: original-consumer-outcome\nAIDE-Result: pass-original8\nAIDE-Scope: qualification-evidence,documentation\nAIDE-Token-Impact: unknown\nAIDE-Quality-Gate: independent-evidence-review\n",
+      "original_result": "FAIL",
+      "parents": [
+        "651464ae3e86b32b11080194d0d06beb88188dd4"
+      ],
+      "presentation_only_classification": true,
+      "tree": "b8535e4cc0aa445a695183fe6d717850bbd9bf38"
+    }
+  ]
+}

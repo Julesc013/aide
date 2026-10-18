@@ -5325,3 +5325,7 @@ the integration receipt establishes dev/main sync.
 ### AIDE-COMPACT-COMMUNICATION-01
 
 Qualified compact-v1 through existing owners: 120 source checks, 71 delivered checks, six ownership checks, safe-installed consumer and fixed preview passed. Legacy failures remain. See the combined qualification report; exact integration is recorded separately.
+
+### Historical presentation boundary ? 18 October 2026
+
+[AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02](.aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/ExecPlan.md) applies standing presentation-only history policy to the preserved successor checkpoint. Qualify the exact held range, strict future behavior and portable policy before integration. Successor merge and release remain separate effects.

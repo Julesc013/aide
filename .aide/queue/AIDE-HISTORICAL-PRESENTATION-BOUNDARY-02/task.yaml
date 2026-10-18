@@ -1,0 +1,27 @@
+schema_version: aide.queue-task.v0
+id: AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Apply standing historical presentation policy to the retained successor
+type: policy
+status: needs_review
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/**
+    - .aide/policies/commit-messages.yaml
+    - docs/reference/commit-discipline.md
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/changelog/**
+    - .aide/reports/capability-command-status.md
+  forbidden_paths:
+    - historical Git objects and exact disposition registry
+    - product implementation and existing tests
+    - stable release assets and target repositories
+    - hosting settings and provider access
+review_gate: exact_admission_source_jobs_and_integration
+maximum_jobs: 3

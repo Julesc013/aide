@@ -1,0 +1,28 @@
+{
+  "adapter": "python",
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/run_checks.py"
+  ],
+  "cwd": "D:\\Projects\\AIDE\\aide",
+  "executable_sha256": "434b361fe0c5960d404974feed493db47f2603a1ace2574312104fbed0182c6f",
+  "inputs": {
+    ".aide/scripts/aide_lite.py": "aed2bc631bbe173f041b73a8742ced40fa9867d27efa67f6eb7035aca7f43280",
+    ".aide/scripts/tests/test_q27_commit_recovery.py": "4e8bc424c580427d52778beb7b4da66d4091c88f7c3cda568b1c9d5c6891db49",
+    ".aide/scripts/tests/test_q34_changelog_release.py": "17aaf6a8950a651c8d671387d966bdc98af7a0deb39f44aa5b7a060b31fc431b",
+    ".aide/hooks/commit-msg": "2ed3a2a7deca28ccbc8a48113db266a655d0bd4008b92588a94349da053e140a",
+    ".aide/git/commit-template.md": "a928a34aa0a53fa118e3bc4f602fcff677f351933824189af89e19431223b10b",
+    ".aide/git/commit-message-dispositions.json": "c52b1a3143b2f77b411114f9720029f4de1cf6a94cd78812637ac5c7438a6717",
+    ".aide/policies/commit-messages.yaml": "82595e4e906397cc54d6a4d531756db294a5fc36ad11ce2c01fbfab3ae209741",
+    ".aide/policies/commit-message-dispositions.yaml": "d41ea7ce2d269cbb97a855bb348f6e445ceee1a424c4557d83ac754befc7ef22",
+    ".aide/changelog/config.yaml": "7c9c825f1dba7df4ec6ea4a4f4d88246d80b26fd35be71f7b954e32eaf67ff74",
+    "docs/reference/commit-discipline.md": "6dc7ef9890740e0c178ca359cb967deab0af1cbd2c824602aeec648ad366d212",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/run_checks.py": "2c79e869a8a96b68f7965fb63891dabde3e1fe99b4c9f5b1408c63eb718f141d",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/history-before.json": "839cbc250edaf36682a961c123adbc003dc50a0fd23ec40df1e5b1e2beba79e5"
+  },
+  "owner": "historical-presentation-source-01",
+  "schema": "aide.maintainer-job.v1",
+  "source_commit": "RESULTING_REVIEWED_COMMIT",
+  "source_tree": "RESULTING_REVIEWED_TREE",
+  "workunit": "AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02"
+}

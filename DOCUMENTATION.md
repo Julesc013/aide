@@ -1294,3 +1294,5 @@ the integration receipt establishes dev/main sync.
 ### AIDE-COMPACT-COMMUNICATION-01
 
 Current writing guide: [commit discipline](docs/reference/commit-discipline.md), covering commits, PRs, merge records and review comments through existing portable policy/template owners.
+
+- [Historical presentation amendment](.aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/ExecPlan.md): bounded standing-policy application; original failures and separate delivery gates retained.

@@ -1,0 +1,11 @@
+policy(commit): apply the reviewed historical presentation boundary
+
+Extend the existing frozen cutoff to the retained successor checkpoint under
+the standing instruction. Preserve original failures, malformed changelog
+records and strict future checks without inventing individual waivers.
+
+Validation: PASS - immutable object and registry snapshot; NOT RUN - native qualification
+Changelog: Changed: Extend the reviewed source historical presentation cutoff
+AIDE-Task: AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02
+AIDE-Format: compact-v1
+Follow-up: Qualify the exact history range and delivered policy before integration

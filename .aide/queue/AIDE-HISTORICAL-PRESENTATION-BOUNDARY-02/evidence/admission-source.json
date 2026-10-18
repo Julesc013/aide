@@ -1,0 +1,17 @@
+{
+  "base": "f5e674e356196ec4cbfa4e2a4f79805b36fbaa25",
+  "files": {
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/ExecPlan.md": "fa6aa5aff8cae46dd0653e14763e0763ff1462ae4989ad8f4428d3e48a74976c",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/prompt.md": "9177bdb83d8e7dc5b03bae53df4e98e1bdd194fb1760648b435cb2518ae10f0f",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/status.yaml": "af2b754bc9c9f22f2e3578ba0f63b9e1db6f2e843379b5d8644524a6c6d8327b",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/task.yaml": "87c292d7ac308f6a22dc7b370d3491153c52c5e13c83f3f89cdd2a4ca7ae3fb3",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/admission-effect.md": "ec59e00a41da0172e0d87d96e32cd01ca19c02f878d0e3532a03abf7b2d8e0c2",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/authority-and-reconciliation.md": "bc6d2935c8c9fcb45589de055dd165920634179ae29b3a56a9039e9ef43fa0b1",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/latest-intent-packet.json": "f9fccbea8d2f4005a3d98f0b2fdf95bfcf8774ee9e0783c00befd420a8899f69",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/latest-workunit-draft.json": "eef2c2fcdef5b25deed3dfeb7f7690e9e3a30e500df776b68153f032cd580744",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/preserved-commit-format-records.json": "3df8aeef3f272b6988ec6897e20bdcbce7535a4ff92b259c180cc233b7195aa9",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/preserved-status.yaml": "b8edc3efd7b580ca4b008cf37ca671f81d985d1337aeffb9e03c4aa0c0933d46",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/preserved-technical-acceptance.json": "09a80b7743a3e819567ba5b06e416da22e0d45fc3184cbc3ca5f7bccc8055235"
+  },
+  "effect_sha256": "ec59e00a41da0172e0d87d96e32cd01ca19c02f878d0e3532a03abf7b2d8e0c2"
+}
