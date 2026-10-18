@@ -1,0 +1,18 @@
+{
+  "base": "66c0b90b6aa0b68cd24659b6279f66b987cb585c",
+  "files": {
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/ExecPlan.md": "706be9f4e32ee3e475b3b8888e1c073dd28c6db91cad7629bb47e6a2ba625503",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/admission-effect.md": "6f952707eb1ad7d8717c3819a50ba1a7d5a79eb07e4b7557f9e4f2f8235a1e73",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/admission-message.txt": "9f4ff2dc10116c5f1b4adf848e2a87708b4875d8223d59fc0dcd84dbe71da942",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/baseline.json": "f2759d5bccf469b6a6fd1ca29b32fa19fca56de7b7f1acbc76f493f1034abded",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/latest-intent-packet.json": "58ab7791355a8fdc43d76e7f8b61c9884405994d703351ec81e7575fc1d91f9d",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/latest-intent-packet.md": "7af5007a37d86418fe8ae8d3631b25d716f74cd9b47521fa19db55b40131b505",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/latest-workunit-draft.json": "a6b23553efa12a47427a33f263d5f2a8977dcd09afb058e00214848688640589",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/latest-workunit-draft.md": "ca71fe1830b04c58553f80133bf6fa01b73d47c7687d210d93313b543a402bcb",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/prompt.md": "e2a27de7537b2c3cc5376f99c4db6b09bc758a0104968e47fe4d123858944acf",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/status.yaml": "9e3106012130afc7e92f0a9cae16773636d97751db849bb059266549515ab6e1",
+    ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/task.yaml": "ba5f6acd962996d0ddc26d170ab003c3c88477ec260ca52f9a59f15ccdd3d161"
+  },
+  "message_sha256": "9f4ff2dc10116c5f1b4adf848e2a87708b4875d8223d59fc0dcd84dbe71da942",
+  "effect_sha256": "6f952707eb1ad7d8717c3819a50ba1a7d5a79eb07e4b7557f9e4f2f8235a1e73"
+}

@@ -1,0 +1,8 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-OFFLINE-RESULT-HANDOFF-01
+status: needs_review
+result: PENDING
+next_action: exact bounded admission
+maximum_jobs: 3
+jobs_allocated: 0
+product_qualified: false

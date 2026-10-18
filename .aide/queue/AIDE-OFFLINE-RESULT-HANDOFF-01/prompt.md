@@ -1,0 +1,1 @@
+Extend the existing portable task handoff with bounded offline request/result exchange tied to exact selected source inputs. Preserve old behavior, failed work, customization and independent acceptance; qualify source and installed use, then integrate safely through the existing campaign gates.
