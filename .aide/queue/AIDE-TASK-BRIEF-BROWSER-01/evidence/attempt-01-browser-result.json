@@ -1,0 +1,84 @@
+{
+  "schema": "aide.browser-render-observation.v1",
+  "result": "CAPTURE_AND_DOM_PASS_PENDING_VISUAL_REVIEW",
+  "browser": "Microsoft Edge",
+  "version": "155.0.4283.62",
+  "page_sha256": "1f94ec712588598462260770eac8bf00ce0e8d3a3fe80b3f6b353d3fae4c8721",
+  "captures": [
+    {
+      "label": "desktop",
+      "dimensions": [
+        1280,
+        1800
+      ],
+      "dom_sha256": "cbff9711e9200dc53ee88f6800f448107a4629dd92295ef48eda4c338519193d",
+      "screenshot_sha256": "dea763f6b637182db5f5f882da4e596b7ffdfced0b61b988c43aca9bd62dc478",
+      "exit_code": 0,
+      "complete_observation_equal": true
+    },
+    {
+      "label": "narrow",
+      "dimensions": [
+        480,
+        1800
+      ],
+      "dom_sha256": "cbff9711e9200dc53ee88f6800f448107a4629dd92295ef48eda4c338519193d",
+      "screenshot_sha256": "430ddfbd3d4ffd308e5bfbdfbf47679a9e232c37468b5ba0f103972d3f3d6d6c",
+      "exit_code": 0,
+      "complete_observation_equal": true
+    }
+  ],
+  "model_requests": 0,
+  "visual_review": "PENDING",
+  "accessibility": "NOT_QUALIFIED",
+  "before": {
+    "files_verified": 924,
+    "policy_guards": [
+      {
+        "hive": "HKLM",
+        "view": 512,
+        "policy_root_present": false
+      },
+      {
+        "hive": "HKLM",
+        "view": 256,
+        "policy_root_present": false
+      },
+      {
+        "hive": "HKCU",
+        "view": 512,
+        "policy_root_present": false
+      },
+      {
+        "hive": "HKCU",
+        "view": 256,
+        "policy_root_present": false
+      }
+    ]
+  },
+  "after": {
+    "files_verified": 924,
+    "policy_guards": [
+      {
+        "hive": "HKLM",
+        "view": 512,
+        "policy_root_present": false
+      },
+      {
+        "hive": "HKLM",
+        "view": 256,
+        "policy_root_present": false
+      },
+      {
+        "hive": "HKCU",
+        "view": 512,
+        "policy_root_present": false
+      },
+      {
+        "hive": "HKCU",
+        "view": 256,
+        "policy_root_present": false
+      }
+    ]
+  }
+}

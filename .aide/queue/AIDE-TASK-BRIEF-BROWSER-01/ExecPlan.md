@@ -75,3 +75,12 @@ open. No overall percentage or whole-task saving is inferred.
 **Progress.** Admission accepted independently and committed at47b45371.
 The task-local capture runner and job1 effect are prepared. Source syntax and
 input checks are separate from actual browser launch and visual inspection.
+
+**Observed browser result.** Job61d5a1f0d34e4bc7b2cf157e9abf65d0 passed both
+captures at1280x1800 and480x1800 with complete embedded observation equality.
+Browser924 files/policy guards remained unchanged. Root and independent reviewer
+inspected actual PNGs and accepted the visible viewports. Lower helper/details
+content remains visually unqualified; dense context JSON is a future usability
+candidate, not a hidden failure. Peak memory330,760,192 and scratch15,582,850 bytes.
+Collection verified, quiescent retirement, scratch absent and reservation released.
+Only final preview allocation2 and terminal integration remain for this task.

@@ -1,0 +1,28 @@
+{
+  "base": "d251898a226446da628aec72d96143fc0292c1a0",
+  "files": {
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/ExecPlan.md": "a4ff449db8a5ff8a591046d3d2dd730850d74763794ee3cb69d9dde9702e5264",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-browser-result.json": "9e1c5e4384034d514d323bee666287a58f0f0195854f1c121684c15eea2e6923",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-desktop.dom": "4423fbdd57e64279193ab54396f6cc8a67008ebca80ea3ddee8a764ccf081679",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-desktop.invocation.json": "99c0d00237f282785263635bc8fb0f086673e943f84bee98a3f04a48da6d499e",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-desktop.png": "dea763f6b637182db5f5f882da4e596b7ffdfced0b61b988c43aca9bd62dc478",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-narrow.dom": "4423fbdd57e64279193ab54396f6cc8a67008ebca80ea3ddee8a764ccf081679",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-narrow.invocation.json": "3953eb6d01382b2c579081b63204d85058d264e79ce52057ddf4a12b57369533",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-narrow.png": "430ddfbd3d4ffd308e5bfbdfbf47679a9e232c37468b5ba0f103972d3f3d6d6c",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-projections.json": "366296d26d2d412145a66acfd2b669971c085c08e4732d9c1a7c998a821e37ab",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/pre-preview-verification.json": "48df5c35f6b761d2eb53dafb17127c9790468b919aef77da9f2d7fc969e7a6a4",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/preview-effect.md": "a04c0354419099a1f517eb9920c1d251196311784421f8458eea783d67b03c6f",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/preview-job-template.json": "abcf8121619ab9aeeb20462244559d3ebd92ac220210b697a4c4daee8f880438",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/preview-message.txt": "52426e3004ebd8105c52c092979b7a008848372089ed513cfdcf461cc23d6c33",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/preview-prechecks.json": "9163831bbf7b151bda41171c40ed9e6715a306fa73b35d0338a52dd0a1eb5d18",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/preview-preimages.json": "3864abd7c336277b972364e1c4543ddaf9c5586ddce158d0b6ab335d342817bd",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/source-attempt-01.json": "0d8e630cc5c84fa1655273787aefe803eaa8997c580f756ccd36cf2176f6ef45",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/visual-review-root.json": "f2f05470459dccb473a45453dc72736d23e3df4610c8704bfc4cd6a3cadcc854",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/visual-review.json": "ae869c85e337dcc8f25e15dac29ef00a02a8b61e590711d868653f56fecce444",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/run_preview.py": "4ad1b80f0517fab94970c60171bd21972c96252a89b9817e22b2191415efbed5",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/status.yaml": "8cd0ca07a2162acc1bd9e566e6e232cea5f440ffacb9e26bf53eddcccc5b2c96"
+  },
+  "effect_sha256": "a04c0354419099a1f517eb9920c1d251196311784421f8458eea783d67b03c6f",
+  "message_sha256": "52426e3004ebd8105c52c092979b7a008848372089ed513cfdcf461cc23d6c33",
+  "template_sha256": "abcf8121619ab9aeeb20462244559d3ebd92ac220210b697a4c4daee8f880438"
+}

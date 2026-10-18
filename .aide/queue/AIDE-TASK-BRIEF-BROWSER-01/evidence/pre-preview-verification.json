@@ -1,0 +1,23 @@
+{
+  "result": "PASS",
+  "reused_product_evidence": {
+    "source_tests": 77,
+    "delivered_tests": 77,
+    "ownership_tests": 6,
+    "pack_members": 875,
+    "actual_source_and_installed_consumers": "PASS",
+    "retired_jobs_verified": 2,
+    "release_assets_unchanged": 8,
+    "browser_render": "NOT_RUN",
+    "models_requested": 0,
+    "whole_outcome_usage": "unknown"
+  },
+  "browser": "Microsoft Edge",
+  "version": "155.0.4283.62",
+  "capture_and_visual_review": "PASS",
+  "captures": 2,
+  "retired_jobs_verified": 1,
+  "models_requested": 0,
+  "whole_outcome_usage": "unknown",
+  "accessibility": "NOT_QUALIFIED"
+}

@@ -1,0 +1,11 @@
+test(view): retain desktop and narrow browser observations
+
+Installed Edge rendered the unchanged saved task page with complete DOM
+observation equality. Preserve actual screenshots, bounded visual findings
+and owned-job retirement before closing the fixed evidence preview.
+
+Validation: PASS - two browser captures, dimensions, DOM and owned-job retirement
+ PASS - actual viewport inspection; NOT RUN - final preview
+Changelog: Tests: Retain installed Edge task-brief rendering evidence
+AIDE-Task: AIDE-TASK-BRIEF-BROWSER-01
+AIDE-Format: compact-v1

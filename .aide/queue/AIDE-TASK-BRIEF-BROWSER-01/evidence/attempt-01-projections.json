@@ -1,0 +1,51 @@
+[
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\61d5a1f0d34e4bc7b2cf157e9abf65d0\\output\\browser-result.json",
+    "projection": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-browser-result.json",
+    "raw_sha256": "9e1c5e4384034d514d323bee666287a58f0f0195854f1c121684c15eea2e6923",
+    "projection_sha256": "9e1c5e4384034d514d323bee666287a58f0f0195854f1c121684c15eea2e6923",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\61d5a1f0d34e4bc7b2cf157e9abf65d0\\output\\desktop.dom",
+    "projection": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-desktop.dom",
+    "raw_sha256": "cbff9711e9200dc53ee88f6800f448107a4629dd92295ef48eda4c338519193d",
+    "projection_sha256": "4423fbdd57e64279193ab54396f6cc8a67008ebca80ea3ddee8a764ccf081679",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\61d5a1f0d34e4bc7b2cf157e9abf65d0\\output\\desktop.invocation.json",
+    "projection": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-desktop.invocation.json",
+    "raw_sha256": "99c0d00237f282785263635bc8fb0f086673e943f84bee98a3f04a48da6d499e",
+    "projection_sha256": "99c0d00237f282785263635bc8fb0f086673e943f84bee98a3f04a48da6d499e",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\61d5a1f0d34e4bc7b2cf157e9abf65d0\\output\\desktop.png",
+    "projection": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-desktop.png",
+    "raw_sha256": "dea763f6b637182db5f5f882da4e596b7ffdfced0b61b988c43aca9bd62dc478",
+    "projection_sha256": "dea763f6b637182db5f5f882da4e596b7ffdfced0b61b988c43aca9bd62dc478",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\61d5a1f0d34e4bc7b2cf157e9abf65d0\\output\\narrow.dom",
+    "projection": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-narrow.dom",
+    "raw_sha256": "cbff9711e9200dc53ee88f6800f448107a4629dd92295ef48eda4c338519193d",
+    "projection_sha256": "4423fbdd57e64279193ab54396f6cc8a67008ebca80ea3ddee8a764ccf081679",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\61d5a1f0d34e4bc7b2cf157e9abf65d0\\output\\narrow.invocation.json",
+    "projection": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-narrow.invocation.json",
+    "raw_sha256": "3953eb6d01382b2c579081b63204d85058d264e79ce52057ddf4a12b57369533",
+    "projection_sha256": "3953eb6d01382b2c579081b63204d85058d264e79ce52057ddf4a12b57369533",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\61d5a1f0d34e4bc7b2cf157e9abf65d0\\output\\narrow.png",
+    "projection": ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/attempt-01-narrow.png",
+    "raw_sha256": "430ddfbd3d4ffd308e5bfbdfbf47679a9e232c37468b5ba0f103972d3f3d6d6c",
+    "projection_sha256": "430ddfbd3d4ffd308e5bfbdfbf47679a9e232c37468b5ba0f103972d3f3d6d6c",
+    "transformation": "byte-identical"
+  }
+]

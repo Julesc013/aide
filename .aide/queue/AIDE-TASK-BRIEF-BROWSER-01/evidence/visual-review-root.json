@@ -1,0 +1,31 @@
+{
+  "result": "PASS_VISIBLE_VIEWPORTS",
+  "reviewer": "/root",
+  "screenshots": {
+    "desktop": {
+      "sha256": "dea763f6b637182db5f5f882da4e596b7ffdfced0b61b988c43aca9bd62dc478",
+      "observations": [
+        "Saved PARTIAL notice and reconcile_records next action are visible.",
+        "Task identity, selected file and recorded-success caveat remain visible.",
+        "Text wraps within cards without observed overlap or horizontal clipping.",
+        "Fresh helper heading and selected symbol visible near bottom; remaining details below fold."
+      ]
+    },
+    "narrow": {
+      "sha256": "430ddfbd3d4ffd308e5bfbdfbf47679a9e232c37468b5ba0f103972d3f3d6d6c",
+      "observations": [
+        "Saved PARTIAL notice and reconcile_records next action are visible.",
+        "Task identity, selected file and recorded-success caveat remain visible.",
+        "Text wraps within cards without observed overlap or horizontal clipping.",
+        "Fields stack into one column; lower source/helper details are below captured viewport."
+      ]
+    }
+  },
+  "scope": "Observed saved page at1280x1800 and480x1800 in Edge155.0.4283.62 software headless rendering.",
+  "limits": [
+    "Viewport captures do not inspect every below-fold detail.",
+    "Keyboard, screen-reader and interactive details behavior not tested.",
+    "Dense serialized context is readable but could be simplified in separately scoped UX work.",
+    "No general browser/accessibility/host isolation claim."
+  ]
+}

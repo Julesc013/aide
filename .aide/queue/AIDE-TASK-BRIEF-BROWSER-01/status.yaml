@@ -1,8 +1,9 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-TASK-BRIEF-BROWSER-01
 status: needs_review
-result: SOURCE_AND_BROWSER_EFFECT_PREPARED
-next_action: exact independent source and browser effect review
+result: OBSERVED_VIEWPORTS_PASS
+next_action: exact fixed preview source and effect review
 maximum_jobs: 2
-jobs_allocated: 0
+jobs_allocated: 1
 product_qualified: false
+qualification_scope: observed Edge155.0.4283.62 headless viewports only
