@@ -1,0 +1,12 @@
+test(task): prepare installed helper brief checks
+
+Exercise explicit helper evidence through a safe-installed package and the
+actual AIDE task. Preserve customization, unresolved calls and unfinished
+obligations while checking the complete observation against source evidence.
+
+Validation: PASS - source77, actual/default comparisons, retirement and CURRENT binding
+ FAIL - unrefreshed export requires its reviewed owner
+ NOT RUN - delivered77, installed consumer and final preview
+Changelog: Internal: Prepare delivered and installed helper brief qualification
+AIDE-Task: AIDE-TASK-BRIEF-SYMBOL-01
+AIDE-Format: compact-v1

@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-task-brief-view-01`
-- current_commit: `3fbf048454b06fdc40b341243e01c69cc0fef5b1`
+- current_branch: `task/aide-task-brief-symbol-01`
+- current_commit: `b4bbc7f9793466e2376a8c639720b7bc06f370bd`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

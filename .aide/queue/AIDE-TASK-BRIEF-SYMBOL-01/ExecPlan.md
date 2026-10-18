@@ -98,3 +98,18 @@ with 18 new checks and all 59 directly affected originals unchanged. The source
 runner compares every default output format byte-for-byte with the unchanged
 predecessor distribution on the same actual task. A runner quotation typo was
 caught and repaired by syntax parsing before any execution. New checks are unrun.
+
+**Source observed.** Source checkpoint b4bbc7f9 passed all77 methods, actual
+helper/consumer locations and complete HTML/JSON equality. Default text, JSON
+and HTML match the frozen predecessor bytes on the same actual task.
+Job69f7be85541f4a998911e9ccaa821609 retired quiescent; all collection digests
+verified, scratch absent and reservation released. Original structural FAIL stays.
+Only the existing four-output capability binding refresh is now proposed.
+
+**Delivery prepared.** Exact refresh review3083de05/fd4ae5e5 permitted one
+existing ledger invocation. Classifications stayed byte-identical and binding
+is CURRENT. The second allocation targets875 members, delivered77, independently
+authored installed helper/caller fixtures and the actual source task. It preserves
+PARTIAL/reconcile observations and native adoption obligations. Full HTML/JSON,
+inactive markup, read-only files and independent projection binding are checked.
+Preparation does not establish delivered qualification.
