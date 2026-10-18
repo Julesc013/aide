@@ -849,3 +849,9 @@ jobs retired; original fixture failures remain. See the child REPORT.md;
 exact integration receipt governs sync, and broader campaign limits remain.
 
 AIDE-OUTCOME-LESSONS-01 admitted: source-linked lesson correction/retirement over existing outcomes; qualification pending. Native/host gates unchanged.
+
+AIDE-OUTCOME-LESSONS-01 qualified source 36, delivered 36, ownership six,
+actual safe-installed correction/retirement and fixed preview; all three jobs
+retired. The 867-member development pack preserves target customization and
+excludes source history. See child REPORT.md. Native host/adoption and release
+prerequisites remain separate; observed integration receipts establish sync.

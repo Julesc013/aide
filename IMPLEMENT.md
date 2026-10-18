@@ -14042,6 +14042,11 @@ exact integration receipt governs sync, and broader campaign limits remain.
 
 ## AIDE-OUTCOME-LESSONS-01
 
-Bounded current lesson selection in the existing outcome ledger; correction and
-retirement preserve prior rows and invalidate selection. Source/delivered/installed
-qualification and integration remain pending. See .aide/queue/AIDE-OUTCOME-LESSONS-01/ExecPlan.md.
+Qualified read-only lesson selection in the existing outcome ledger. Corrections,
+retirement and stale evidence exclude superseded advice while retaining history.
+Source 36, delivered 36, ownership six, actual safe-installed consumer and fixed
+preview passed; all three jobs retired. See
+[qualification report](.aide/queue/AIDE-OUTCOME-LESSONS-01/REPORT.md) and
+[usage contract](docs/reference/outcome-controller-v0.md).
+The development pack has 867 members; published Lite 1.0.0 is unchanged.
+Exact integration review and observed receipts govern dev/main synchronization.

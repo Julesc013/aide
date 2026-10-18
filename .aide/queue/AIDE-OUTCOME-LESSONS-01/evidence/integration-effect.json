@@ -1,0 +1,44 @@
+{
+  "schema": "aide.outcome-lessons.integration-effect.v1",
+  "base": "3dad27442fcf13e70cd02e633c6a38380b1e4959",
+  "candidate": "Exact closure map; substitute only resulting managed commit/tree.",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "task_branch": "task/aide-outcome-lessons-01",
+  "expected_local_dev": "3dad27442fcf13e70cd02e633c6a38380b1e4959",
+  "expected_local_main": "3dad27442fcf13e70cd02e633c6a38380b1e4959",
+  "expected_remote_dev": "3dad27442fcf13e70cd02e633c6a38380b1e4959",
+  "expected_remote_main": "3dad27442fcf13e70cd02e633c6a38380b1e4959",
+  "preserved_qualification_ref": "task/aide-lite-successor-qualification-01",
+  "preserved_qualification_commit": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "effects": [
+    "After exact terminal ACCEPT, commit closure-source.json files plus map through managed dry-run/apply with message/ref/parent/tree pins. Check latest and full base..candidate range.",
+    "Under shared estate/dispatch controls require unchanged config, running dispatch/no active job, sole checkout, clean exact candidate/tree, fresh ready helper plan, expected local/remote dev/main and unchanged qualification ref. Fetch dev/main only with no tags, then reobserve.",
+    "CAS fast-forward local dev from expected base to exact candidate; nonforce explicit candidate:refs/heads/dev push; verify remote dev.",
+    "After dev sync run read-only full validate and full base..candidate commit check. Recheck controls/refs/tree. CAS main from expected base; nonforce explicit push; verify both remote heads.",
+    "After main sync run run_preview.py verify: read-only exact six-output fixed 3dad2744..f2184db7 three-commit replay plus 867 qualified pack hashes. Closure independently checked through the full range.",
+    "Only after both refs and postchecks pass, switch to dev, verify clean tree/exact task ref and ancestor, delete only this local task using branch -d. Keep every other branch; task was local-only."
+  ],
+  "required_evidence": [
+    "Source 36 and delivered 36 PASS, no skips; all 20 existing outcome methods unchanged.",
+    "Actual source lesson selected; original 2777 ledger bytes retained as exact prefix.",
+    "Actual safe-installed revision correction/retirement, stale exclusion, customization, ownership/hash and no source-history transfer PASS.",
+    "Complete inventories unchanged around three revision lookups; separate stale lookup asserts exclusion.",
+    "Existing exporter ownership six, doctor, complete validate and pack-status PASS; binding CURRENT and classification unchanged.",
+    "867 exact pack hashes; helper/test added, CLI/policy/reference updated; published Lite 1.0.0 unchanged.",
+    "Fixed three-commit preview PASS; all three jobs retired and collections verified; scratch absent and reservations released."
+  ],
+  "failure_response": "Retain started/completed operations and command output hashes in local integration-result.log. Stop on changed inputs/refs or failed checks. Inspect actual effects after uncertainty; never blindly retry.",
+  "forbidden": [
+    "force push",
+    "history rewrite",
+    "tag/release effects",
+    "protection change or bypass",
+    "unrelated branch deletion",
+    "live target mutation",
+    "model/provider requests",
+    "package rebuild",
+    "further job allocation"
+  ]
+}

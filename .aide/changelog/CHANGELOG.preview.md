@@ -2,29 +2,26 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: 21625bd6a5cf9610e3b8a5a586fb1290bcdf6fe8..13edc23c88d5db9440f2256a0b178b3d14f5cc96
-source_head: 13edc23c88d5db9440f2256a0b178b3d14f5cc96
-commit_count: 6
+source_range: 3dad27442fcf13e70cd02e633c6a38380b1e4959..f2184db7d4fc539c27887e2cea2bd3c73d409d36
+source_head: f2184db7d4fc539c27887e2cea2bd3c73d409d36
+commit_count: 3
 malformed_count: 0
 preview_only: true
 release_publishing: false
 
 ## Summary
 
-- Added: 5
-- Fixed: 1
+- Added: 2
+- Changed: 1
 
 ## Added
 
-- Compact validation with full text and machine-readable result modes. (c96577f7b079 feat(validation): make complete checks readable in CLI output)
-- Compact validation with full text and machine-readable result modes. (7804bb47d587 test(validation): prepare actual exported output qualification)
-- Compact validation with full text and machine-readable result modes. (28a8033977b6 test(validation): repair portable validation fixture prerequisites)
-- Compact validation with full text and machine-readable result modes. (0dc7d2a0f439 test(validation): supply required project instructions in fixture)
-- Compact validation with full text and machine-readable result modes. (13edc23c88d5 test(validation): qualify delivered output and prepare final preview)
+- outcome lessons --path with human and JSON views. (99f91f6ceee9 feat(outcomes): retrieve scoped current lessons with revision history)
+- Portable source-linked lesson lookup with explicit invalidation. (f2184db7d4fc test(outcomes): qualify installed lesson correction and retirement)
 
-## Fixed
+## Changed
 
-- Document the bounded repair needed before accepting validation delivery. (ec51458bfed7 test(validation): preserve export failure and bound fixture repair)
+- Prepared portable qualification for current lesson retrieval. (9e60931b88f4 test(outcomes): qualify source and prepare installed lesson consumers)
 
 ## Malformed Commits
 

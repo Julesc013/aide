@@ -1,128 +1,71 @@
 {
   "follow_up": [
     {
-      "commit": "c96577f7b079",
-      "summary": "Qualify source/exported consumers, refresh bindings and review integration."
+      "commit": "99f91f6ceee9",
+      "summary": "Qualify source, delivered and installed behavior before integration."
     },
     {
-      "commit": "7804bb47d587",
-      "summary": "Qualify source/exported consumers, refresh bindings and review integration."
+      "commit": "9e60931b88f4",
+      "summary": "Run the reviewed consumer job, then qualify preview and integration."
     },
     {
-      "commit": "ec51458bfed7",
-      "summary": "Prepare exact fixture repair and independently review allocation3; no automatic retry."
-    },
-    {
-      "commit": "28a8033977b6",
-      "summary": "Qualify source/exported consumers, refresh bindings and review integration."
-    },
-    {
-      "commit": "0dc7d2a0f439",
-      "summary": "Qualify source/exported consumers, refresh bindings and review integration."
-    },
-    {
-      "commit": "13edc23c88d5",
-      "summary": "Qualify source/exported consumers, refresh bindings and review integration."
+      "commit": "f2184db7d4fc",
+      "summary": "Run fixed preview, exact terminal review and qualified dev/main sync."
     }
   ],
   "highlights": [
     {
       "breaking": false,
       "category": "Added",
-      "commit": "c96577f7b079",
-      "subject": "feat(validation): make complete checks readable in CLI output",
-      "summary": "Compact validation with full text and machine-readable result modes."
+      "commit": "99f91f6ceee9",
+      "subject": "feat(outcomes): retrieve scoped current lessons with revision history",
+      "summary": "outcome lessons --path with human and JSON views."
     },
     {
       "breaking": false,
       "category": "Added",
-      "commit": "7804bb47d587",
-      "subject": "test(validation): prepare actual exported output qualification",
-      "summary": "Compact validation with full text and machine-readable result modes."
+      "commit": "f2184db7d4fc",
+      "subject": "test(outcomes): qualify installed lesson correction and retirement",
+      "summary": "Portable source-linked lesson lookup with explicit invalidation."
     },
     {
       "breaking": false,
-      "category": "Added",
-      "commit": "28a8033977b6",
-      "subject": "test(validation): repair portable validation fixture prerequisites",
-      "summary": "Compact validation with full text and machine-readable result modes."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "0dc7d2a0f439",
-      "subject": "test(validation): supply required project instructions in fixture",
-      "summary": "Compact validation with full text and machine-readable result modes."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "13edc23c88d5",
-      "subject": "test(validation): qualify delivered output and prepare final preview",
-      "summary": "Compact validation with full text and machine-readable result modes."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "ec51458bfed7",
-      "subject": "test(validation): preserve export failure and bound fixture repair",
-      "summary": "Document the bounded repair needed before accepting validation delivery."
+      "category": "Changed",
+      "commit": "9e60931b88f4",
+      "subject": "test(outcomes): qualify source and prepare installed lesson consumers",
+      "summary": "Prepared portable qualification for current lesson retrieval."
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "c96577f7b079",
-      "summary": "Consumers parsing individual PASS lines must request --full or --json."
+      "commit": "99f91f6ceee9",
+      "summary": "Declared active lessons do not establish correctness or authorship."
     },
     {
-      "commit": "7804bb47d587",
-      "summary": "Consumers parsing individual PASS lines must request --full or --json."
+      "commit": "9e60931b88f4",
+      "summary": "Matching evidence establishes bytes, not semantic correctness or permission."
     },
     {
-      "commit": "ec51458bfed7",
-      "summary": "Failed export is an incomplete candidate; actual output comparison is unrun."
-    },
-    {
-      "commit": "28a8033977b6",
-      "summary": "Consumers parsing individual PASS lines must request --full or --json."
-    },
-    {
-      "commit": "0dc7d2a0f439",
-      "summary": "Consumers parsing individual PASS lines must request --full or --json."
-    },
-    {
-      "commit": "13edc23c88d5",
-      "summary": "Consumers parsing individual PASS lines must request --full or --json."
+      "commit": "f2184db7d4fc",
+      "summary": "Advisory selection does not establish semantic truth or improved model results."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "13edc23c88d5db9440f2256a0b178b3d14f5cc96",
-  "source_range": "21625bd6a5cf9610e3b8a5a586fb1290bcdf6fe8..13edc23c88d5db9440f2256a0b178b3d14f5cc96",
+  "source_head": "f2184db7d4fc539c27887e2cea2bd3c73d409d36",
+  "source_range": "3dad27442fcf13e70cd02e633c6a38380b1e4959..f2184db7d4fc539c27887e2cea2bd3c73d409d36",
   "validation_summary": [
     {
-      "commit": "c96577f7b079",
-      "summary": "PASS structural syntax and unchanged collector/existing-test checks."
+      "commit": "99f91f6ceee9",
+      "summary": "PASS syntax and diff checks; NOT RUN source36 and actual lesson job."
     },
     {
-      "commit": "7804bb47d587",
-      "summary": "PASS36 source methods with no failures, errors or skips; job fully retired."
+      "commit": "9e60931b88f4",
+      "summary": "PASS source36, actual lesson, preserved ledger prefix and job retirement."
     },
     {
-      "commit": "ec51458bfed7",
-      "summary": "PASS ownership6, export, doctor, validate and pack status in attempt2."
-    },
-    {
-      "commit": "28a8033977b6",
-      "summary": "PASS36 source methods with no failures, errors or skips; job fully retired."
-    },
-    {
-      "commit": "0dc7d2a0f439",
-      "summary": "PASS36 source methods with no failures, errors or skips; job fully retired."
-    },
-    {
-      "commit": "13edc23c88d5",
-      "summary": "PASS source10/conserved26, delivered36, ownership6 and actual complete validation."
+      "commit": "f2184db7d4fc",
+      "summary": "PASS source36, delivered36, ownership6, doctor, full validation and pack status."
     }
   ],
   "warnings": []

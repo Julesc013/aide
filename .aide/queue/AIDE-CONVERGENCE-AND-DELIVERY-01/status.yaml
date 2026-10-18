@@ -175,3 +175,6 @@ context_task_selection_integration_receipt: .aide/queue/AIDE-CONTEXT-TASK-SELECT
 # Actual60915checks compact241bytes/full4894325; original failures retained; see child REPORT.md.
 
 # AIDE-OUTCOME-LESSONS-01 admitted: source-linked lesson correction/retirement over existing outcomes; qualification pending. Native/host gates unchanged.
+
+outcome_lessons_result_ref: .aide/queue/AIDE-OUTCOME-LESSONS-01/REPORT.md
+outcome_lessons_integration_receipt: .aide/queue/AIDE-OUTCOME-LESSONS-01/evidence/integration-result.log

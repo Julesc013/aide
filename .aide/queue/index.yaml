@@ -4117,7 +4117,8 @@ items:
 
   - id: AIDE-OUTCOME-LESSONS-01
     title: Source-linked correctable lesson selection
-    status: running
+    status: passed_with_notes
+    result: SOURCE_DELIVERED_INSTALLED_AND_PREVIEW_PASS
     task: .aide/queue/AIDE-OUTCOME-LESSONS-01/task.yaml
     exec_plan: .aide/queue/AIDE-OUTCOME-LESSONS-01/ExecPlan.md
     evidence: .aide/queue/AIDE-OUTCOME-LESSONS-01/evidence

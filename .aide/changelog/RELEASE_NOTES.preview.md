@@ -2,45 +2,33 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: 21625bd6a5cf9610e3b8a5a586fb1290bcdf6fe8..13edc23c88d5db9440f2256a0b178b3d14f5cc96
-source_head: 13edc23c88d5db9440f2256a0b178b3d14f5cc96
+source_range: 3dad27442fcf13e70cd02e633c6a38380b1e4959..f2184db7d4fc539c27887e2cea2bd3c73d409d36
+source_head: f2184db7d4fc539c27887e2cea2bd3c73d409d36
 preview_only: true
 
 ## Highlights
 
-- Added: Compact validation with full text and machine-readable result modes. (c96577f7b079)
-- Added: Compact validation with full text and machine-readable result modes. (7804bb47d587)
-- Added: Compact validation with full text and machine-readable result modes. (28a8033977b6)
-- Added: Compact validation with full text and machine-readable result modes. (0dc7d2a0f439)
-- Added: Compact validation with full text and machine-readable result modes. (13edc23c88d5)
-- Fixed: Document the bounded repair needed before accepting validation delivery. (ec51458bfed7)
+- Added: outcome lessons --path with human and JSON views. (99f91f6ceee9)
+- Added: Portable source-linked lesson lookup with explicit invalidation. (f2184db7d4fc)
+- Changed: Prepared portable qualification for current lesson retrieval. (9e60931b88f4)
 
 ## Validation Summary
 
-- c96577f7b079: PASS structural syntax and unchanged collector/existing-test checks.
-- 7804bb47d587: PASS36 source methods with no failures, errors or skips; job fully retired.
-- ec51458bfed7: PASS ownership6, export, doctor, validate and pack status in attempt2.
-- 28a8033977b6: PASS36 source methods with no failures, errors or skips; job fully retired.
-- 0dc7d2a0f439: PASS36 source methods with no failures, errors or skips; job fully retired.
-- 13edc23c88d5: PASS source10/conserved26, delivered36, ownership6 and actual complete validation.
+- 99f91f6ceee9: PASS syntax and diff checks; NOT RUN source36 and actual lesson job.
+- 9e60931b88f4: PASS source36, actual lesson, preserved ledger prefix and job retirement.
+- f2184db7d4fc: PASS source36, delivered36, ownership6, doctor, full validation and pack status.
 
 ## Known Risks
 
-- c96577f7b079: Consumers parsing individual PASS lines must request --full or --json.
-- 7804bb47d587: Consumers parsing individual PASS lines must request --full or --json.
-- ec51458bfed7: Failed export is an incomplete candidate; actual output comparison is unrun.
-- 28a8033977b6: Consumers parsing individual PASS lines must request --full or --json.
-- 0dc7d2a0f439: Consumers parsing individual PASS lines must request --full or --json.
-- 13edc23c88d5: Consumers parsing individual PASS lines must request --full or --json.
+- 99f91f6ceee9: Declared active lessons do not establish correctness or authorship.
+- 9e60931b88f4: Matching evidence establishes bytes, not semantic correctness or permission.
+- f2184db7d4fc: Advisory selection does not establish semantic truth or improved model results.
 
 ## Follow-up
 
-- c96577f7b079: Qualify source/exported consumers, refresh bindings and review integration.
-- 7804bb47d587: Qualify source/exported consumers, refresh bindings and review integration.
-- ec51458bfed7: Prepare exact fixture repair and independently review allocation3; no automatic retry.
-- 28a8033977b6: Qualify source/exported consumers, refresh bindings and review integration.
-- 0dc7d2a0f439: Qualify source/exported consumers, refresh bindings and review integration.
-- 13edc23c88d5: Qualify source/exported consumers, refresh bindings and review integration.
+- 99f91f6ceee9: Qualify source, delivered and installed behavior before integration.
+- 9e60931b88f4: Run the reviewed consumer job, then qualify preview and integration.
+- f2184db7d4fc: Run fixed preview, exact terminal review and qualified dev/main sync.
 
 ## Warnings
 

@@ -1,0 +1,36 @@
+feat(outcomes): deliver correctable source-linked lesson retrieval
+
+## Summary
+- Close AIDE-OUTCOME-LESSONS-01 qualification and prepare safe integration.
+
+## Why
+- Useful failure lessons should remain discoverable without reviving stale advice.
+
+## Changed
+- Add bounded read-only lesson selection over the existing outcome ledger.
+- Preserve source history, project customization and explicit unknown correctness.
+- Qualify correction, retirement and stale-evidence exclusion in installed CLI use.
+
+## Validation
+- PASS source 36, delivered 36, existing ownership six; no skipped checks.
+- PASS actual source lesson and safe-installed revision/customization checks.
+- PASS fixed three-commit preview; all three jobs retired and collected.
+- PASS unchanged 20 prior outcome methods and 867-member export identity.
+
+## Changelog
+- Added: Source-linked advisory lesson retrieval with correction and retirement.
+
+## Risks
+- Structural and hash checks do not establish authorship or semantic correctness.
+- No model-performance, whole-cost, new release or broader containment claim.
+
+## Follow-up
+- Execute separately reviewed dev/main sync and retire only this local task branch.
+- Continue dependency-ready campaign work; preserve target/host/release gates.
+
+AIDE-Task: AIDE-OUTCOME-LESSONS-01
+AIDE-Phase: qualification-closure
+AIDE-Result: PASS
+AIDE-Scope: outcome-lessons
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: terminal-independent-integration-review-required

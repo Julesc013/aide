@@ -3,7 +3,7 @@ id: AIDE-OUTCOME-LESSONS-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Retrieve current source-linked lessons and invalidate superseded guidance
 type: implementation
-status: needs_review
+status: passed_with_notes
 scope:
   allowed_paths:
     - .aide/queue/AIDE-OUTCOME-LESSONS-01/**

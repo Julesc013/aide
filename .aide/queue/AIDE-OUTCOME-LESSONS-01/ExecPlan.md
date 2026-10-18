@@ -75,3 +75,9 @@ Admission ACCEPT. Guarded local branch and source preparation complete; no jobs 
 Source36 and actual source lesson PASS, job5a9a5b8d retired/collected. Existing binding refresh CURRENT; classification unchanged. Delivered and installed tests prepared, not yet run.
 
 Consumer job2 PASS: delivered36/ownership6/exporter checks, actual safe-installed correction/retirement/stale evidence/customization and no-write inventories. Both jobs retired/collected. Fixed preview remains separately gated; published assets unchanged.
+
+Fixed preview job 3 passed for the exact three-commit range; all six outputs
+regenerate exactly. All three collections verified and jobs retired. REPORT.md
+narrows inventory claims to the actual revision lookup oracles. Closure/source
+and integration effects are separately reviewed; fresh observed refs and the
+integration receipt determine sync completion. No additional allocation.
