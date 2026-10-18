@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "full_bytes": 4894325,
+  "compact_bytes": 241,
+  "full_sha256": "289d066ee4b026ca8e5592fe9c697ccb947c1513f46278a97291110533e46b8a",
+  "compact_sha256": "78dedb1db8cbcacf0eb61ee706acea23d6e5de01ef4374c526376aa852dd07f2",
+  "counts": {
+    "PASS": 60914,
+    "WARN": 1,
+    "FAIL": 0,
+    "OTHER": 0
+  },
+  "nonpass_messages": [
+    "WARN review packet review ref missing: .aide/prompts/evidence-review.md"
+  ],
+  "all_nonpass_preserved": true,
+  "cost_and_speed_savings": "not_measured"
+}

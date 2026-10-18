@@ -1,0 +1,26 @@
+{
+  "subject": "source-repair",
+  "test_ids": [
+    "validation_test_validation_output.ValidationOutputTests.test_actual_cli_modes_agree_on_valid_and_broken_repository",
+    "validation_test_validation_output.ValidationOutputTests.test_all_modes_preserve_validator_failure_even_without_messages",
+    "validation_test_validation_output.ValidationOutputTests.test_compact_keeps_all_nonpass_findings_and_counts",
+    "validation_test_validation_output.ValidationOutputTests.test_empty_result_is_explicit_without_invented_findings",
+    "validation_test_validation_output.ValidationOutputTests.test_full_is_exact_legacy_text_for_success_and_failure",
+    "validation_test_validation_output.ValidationOutputTests.test_json_is_lossless_ordered_and_versioned",
+    "validation_test_validation_output.ValidationOutputTests.test_large_pass_list_does_not_hide_late_failure_or_warning",
+    "validation_test_validation_output.ValidationOutputTests.test_multiline_nonpass_details_are_not_truncated",
+    "validation_test_validation_output.ValidationOutputTests.test_parser_rejects_combined_modes",
+    "validation_test_aide_lite.AideLiteWorkflowTests.test_portable_apply_descriptions_match_shipped_modules"
+  ],
+  "tests_run": 10,
+  "failures": 0,
+  "errors": 0,
+  "skips": [],
+  "inputs": {
+    ".aide/scripts/tests/test_validation_output.py": "3f36cff74aea1d1205ee664d4bc4f38bfbecf5ce930268419fe4512a31b5e90d",
+    ".aide/scripts/tests/test_aide_lite.py": "a19fc45e81504d6b4e57ba9ee5e9819cb9bd0963ef3c385c4edb84ae9c07e724",
+    ".aide/scripts/aide_lite.py": "d422047cc3dda22b6f66a993af3f14ec789b4405b965f11004b61739012a9158"
+  },
+  "models_requested": 0,
+  "whole_outcome_usage": "unknown"
+}

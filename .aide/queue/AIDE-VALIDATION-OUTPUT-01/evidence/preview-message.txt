@@ -1,0 +1,33 @@
+test(validation): qualify delivered output and prepare final preview
+
+## Summary
+- Qualify final source and delivered validation presentation after retained fixture failures.
+
+## Why
+- Successful validation emitted4.9MB and obscured its actionable warning.
+
+## Changed
+- Record repaired source10/conserved26, delivered36, ownership6 and output comparison.
+- Preserve exact865pack and prepare fixed six-commit preview.
+
+## Validation
+- PASS source10/conserved26, delivered36, ownership6 and actual complete validation.
+- PASS full4894325bytes to compact241bytes with60915checks and one warning retained.
+- PASS all four allocations retired; original fixture failures2/3 preserved.
+
+## Changelog
+- Added: Compact validation with full text and machine-readable result modes.
+
+## Risks
+- Consumers parsing individual PASS lines must request --full or --json.
+- Output reduction does not establish speed, cost or broader qualification.
+
+## Follow-up
+- Qualify source/exported consumers, refresh bindings and review integration.
+
+AIDE-Task: AIDE-VALIDATION-OUTPUT-01
+AIDE-Phase: delivered-qualification
+AIDE-Result: PASS
+AIDE-Scope: validation-output
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: exact-source-and-job-review-required

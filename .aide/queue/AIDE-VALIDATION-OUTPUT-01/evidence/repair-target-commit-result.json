@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "commit": "0dc7d2a0f439bab0f826a4118697beeb928a3763",
+  "tree": "55ee91045974487488df9e4d00751ef54a36cfe6",
+  "base": "28a8033977b6ce6ffbf5c73bb11f360573b21b8d",
+  "paths": [
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-03-source-repair-tests.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-attempt-03.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-commit-result.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-review.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-target-effect.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-target-job-template.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-target-message.txt",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-target-source.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml",
+    ".aide/scripts/tests/test_validation_output.py"
+  ]
+}

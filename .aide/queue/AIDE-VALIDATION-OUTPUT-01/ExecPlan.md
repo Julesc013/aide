@@ -80,3 +80,8 @@ Attempt3 stopped before export: source10 had one failing positive fixture becaus
 AGENTS.md was missing. Parsed findings now retained. Add ordinary manual AGENTS.md
 only; no validator weakening. Request finite ceiling5: corrected qualification4
 and separate preview5. Existing failed attempts remain; no automatic retry.
+
+Job4b0880db0 PASS: source10, delivered36, ownership6, doctor/validate/pack status
+and actual output comparison. Original26 source methods retained; final865pack
+contains exactly revised two test payloads plus metadata. Full4894325bytes versus
+compact241bytes for60915checks/oneWARN; no cost/speed claim. Preview remains.
