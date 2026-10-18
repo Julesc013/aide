@@ -1,0 +1,1 @@
+**Admission only.** Review task.yaml, ExecPlan.md, baseline.json, browser-observation.json, admission-source.json and admission-effect.md. No runtime or integration acceptance follows from this packet.

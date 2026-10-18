@@ -1,0 +1,29 @@
+schema_version: aide.queue-task.v0
+id: AIDE-TASK-BRIEF-BROWSER-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Qualify the saved task brief in the installed Windows browser
+type: qualification
+status: needs_review
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-TASK-BRIEF-BROWSER-01/**
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - .aide/changelog/**
+  read_only_external:
+    - C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe
+    - C:/Program Files (x86)/Microsoft/Edge/Application/155.0.4283.62/**
+    - scoped Microsoft Edge policy-presence guards
+  forbidden:
+    - product source, policies, export and release assets
+    - existing browser profiles, private account files and browser configuration
+    - unrelated projects, existing browser processes and desktop sessions
+verification:
+  maximum_jobs: 2
+  config_digest: 61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90
+  model_requests: 0
+review_gate: exact_admission_source_browser_effect_and_integration

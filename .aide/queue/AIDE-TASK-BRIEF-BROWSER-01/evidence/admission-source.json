@@ -1,0 +1,19 @@
+{
+  "base": "ad1f67f1b0f4079038d6600752d3132b7714a692",
+  "files": {
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/ExecPlan.md": "b281d83859c1ef080cad944e29380d3d5596c607d9755773f50582214bcb6103",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/admission-effect.md": "799808b769b18bee2e6dd4c2282ba0f9295b74e3132e406711e6f02f31fe1d29",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/admission-message.txt": "f4e57606941a64c11ad523bd124504d64a5fd8de1a829fb7aa5d3639ac13582e",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/baseline.json": "b69cabe1cd37dd6357af0a729f702d82f8d71809f210e4479c6d2f391c08c00b",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/browser-observation.json": "b4788f8f289d0d3107ed4781b4991f0180826f4b71ab48e1a757365f81bd28a8",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/changed-files.md": "cfb3ff52a925d77a0125267aeb287c1cd64286fd0b773328f7b10e65091fae03",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/dev-review-packet.md": "1681dd6145db656321c8ea3e76e9aa041fe2a6632ec36e06acaf15e92f745f58",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/remaining-risks.md": "9fd56cee24607098d8d184dec14d519da5d3ba51fd8778b937c71f70a801f787",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/evidence/validation.md": "4eef7f8f3b891342b879bbcbccc11d3041597d122ed70e50ebbf3be600df13a5",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/prompt.md": "fd67e35a075ddb8ffd6f91c6ea3b70245ca0e493db90594c773e1267f9243561",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/status.yaml": "5cbd4bc3fce5e1493adb8fedf2ca04e8725a2b7357d6ad3c27ab6fc8d2a08476",
+    ".aide/queue/AIDE-TASK-BRIEF-BROWSER-01/task.yaml": "6b55a18c41ccc4abbecb5d662e335b3d4dc8f7406e0ad453cd62d471b9b40ab6"
+  },
+  "effect_sha256": "799808b769b18bee2e6dd4c2282ba0f9295b74e3132e406711e6f02f31fe1d29",
+  "message_sha256": "f4e57606941a64c11ad523bd124504d64a5fd8de1a829fb7aa5d3639ac13582e"
+}

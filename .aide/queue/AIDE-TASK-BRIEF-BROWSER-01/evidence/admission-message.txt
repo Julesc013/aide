@@ -1,0 +1,11 @@
+test(view): prepare actual browser qualification
+
+Check the saved real-task brief in one installed Windows Edge profile.
+Reuse exact source and package evidence; preserve limits and capture actual
+DOM and screenshots before making any browser rendering claim.
+
+Validation: PASS - repository, installed browser metadata and scoped policy observation
+ NOT RUN - browser launch, screenshot review and final preview
+Changelog: Internal: Prepare bounded saved task view browser qualification
+AIDE-Task: AIDE-TASK-BRIEF-BROWSER-01
+AIDE-Format: compact-v1

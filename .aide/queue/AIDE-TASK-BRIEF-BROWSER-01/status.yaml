@@ -1,0 +1,8 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-TASK-BRIEF-BROWSER-01
+status: needs_review
+result: ADMISSION_PREPARED
+next_action: exact task admission review
+maximum_jobs: 2
+jobs_allocated: 0
+product_qualified: false
