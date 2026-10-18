@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-dependency-rebind-01`
-- current_commit: `09925a0ff6aa14117271a0115baf3f1a47b98aaa`
+- current_branch: `task/aide-offline-result-handoff-01`
+- current_commit: `8a6b32ef484f2abddf9c7d3c7ea76946e4d12c2c`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

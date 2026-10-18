@@ -3,8 +3,8 @@
 - command: `capability ledger`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-lite-successor-integration-01`
-- current_commit: `4edf2b14e340e636889d1f1e18ae14a541685156`
+- current_branch: `task/aide-offline-result-handoff-01`
+- current_commit: `8a6b32ef484f2abddf9c7d3c7ea76946e4d12c2c`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

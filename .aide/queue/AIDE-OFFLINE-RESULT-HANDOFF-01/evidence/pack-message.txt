@@ -1,0 +1,12 @@
+test(handoff): prepare installed offline result qualification
+
+Bind returned work to the request in the portable delivery, including interrupted
+attempts and changed source inputs. Preserve existing task behavior and project
+customization while using the installed CLI without core dependencies.
+
+Validation: PASS - source97; original79 retained; job retirement; CURRENT binding
+ FAIL - development pack provenance awaits the reviewed export refresh
+ NOT RUN - delivered97, installed consumer and final preview
+Changelog: Internal: Prepare portable offline result and recovery qualification
+AIDE-Task: AIDE-OFFLINE-RESULT-HANDOFF-01
+AIDE-Format: compact-v1

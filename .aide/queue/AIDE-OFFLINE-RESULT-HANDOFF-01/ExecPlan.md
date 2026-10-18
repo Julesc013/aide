@@ -79,3 +79,11 @@ effect 6f952707. Managed checkpoint a986ce94 preceded source work. The existing
 codec/CLI now prepares v2 input-bound requests and candidate result export/inspection.
 All 79 original tests are retained with 18 new methods; none has executed yet.
 Source/job review is required before the first allocation.
+
+**Observed source qualification.** Job22564f4c passed97 tests at8a6b32ef,
+including all79 original assertions, and retired with collection verified.
+The accepted existing ledger refresh preserved classifications and now binds
+CURRENT source. Original FAIL observations remain. Fresh validation identifies
+only two development-pack provenance failures caused by changed exported inputs;
+the next reviewed export must reconcile them and pass validation. The installed
+consumer runner is prepared; no delivery or product acceptance is claimed yet.
