@@ -868,3 +868,5 @@ observed receipt govern dev/main sync. dfae9356 is deliberately preserved and
 unmerged pending its own integration disposition; no historical waiver inferred.
 
 **Historical delivery blocker.** Child AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02 is admitted to qualify a frozen presentation-only cutoff extension under existing standing direction. This does not invent individual owner decisions or integrate the held successor.
+
+**Historical blocker resolved within the reviewed policy candidate.** AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02 qualified the exact 18-commit range with three advisories and preserved raw failures. No individual owner dispositions were invented. Source, delivered, installed and preview checks passed. After exact policy integration, prepare the retained successor merge against current source; do not replace newer development work with its older pack.

@@ -1,8 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02
-status: needs_review
-result: SOURCE_DELIVERED_AND_INSTALLED_PASS
-next_action: exact_preview_checkpoint_and_job_review
+status: passed_with_notes
+result: SOURCE_DELIVERED_INSTALLED_AND_PREVIEW_PASS
+review_gate: exact_terminal_integration
+next_action: exact_terminal_integration_review
 maximum_jobs: 3
-jobs_allocated: 2
+jobs_allocated: 3
 active_jobs: 0
+qualification_ref: REPORT.md
+integration_receipt: evidence/integration-result.log

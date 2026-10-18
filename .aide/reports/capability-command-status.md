@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-task-development-brief-01`
-- current_commit: `2ac87ddbe50252ffbf64b8a131e02a73e2ea3acb`
+- current_branch: `task/aide-historical-presentation-boundary-02`
+- current_commit: `4fbfc5c219fa21889017e6b4afb01feef0adb4cc`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

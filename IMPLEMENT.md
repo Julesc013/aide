@@ -14063,6 +14063,6 @@ the integration receipt establishes dev/main sync.
 
 Implemented compact-v1 parser, policy, template and researched commit/PR/merge/comment guidance. 120 source checks, 71 delivered checks, six ownership checks, installed consumer and fixed preview passed. The development pack of 869 members also qualifies the pending brief. Historical failures and published assets remain unchanged.
 
-### Historical presentation boundary preparation ? 18 October 2026
+### Historical presentation boundary qualification ? 18 October 2026
 
-Prepared one frozen cutoff update and explanatory reference under the standing owner instruction. Existing parser, classifier, registry, original Git objects and release assets remain unchanged. Existing45 regressions and actual18-commit checks are prepared; no native result is claimed yet.
+Applied one frozen cutoff update under the standing owner instruction. Existing parser, classifier, registry, original Git objects and release assets remain unchanged. The 45 source and 45 delivered regressions, actual 18-commit comparison, six ownership checks, safe-installed consumer and fixed preview passed. Three jobs retired; exact integration is recorded in the child receipt.

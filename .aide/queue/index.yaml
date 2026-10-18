@@ -4139,7 +4139,7 @@ items:
 
   - id: AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02
     title: Apply standing historical presentation policy to the retained successor
-    status: needs_review
+    status: passed_with_notes
     task: .aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/task.yaml
     exec_plan: .aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/ExecPlan.md
     evidence: .aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence

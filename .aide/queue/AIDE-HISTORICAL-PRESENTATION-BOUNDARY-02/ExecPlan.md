@@ -22,3 +22,5 @@
 **Source qualified.** Job6291aea1f9a0487599de0bf21a84a254 passed45 existing checks and the actual18-commit range. Exactly three advisories, raw FAIL and unchanged malformed changelog records were retained. Original objects and registry match; all outputs verified and worker retired. Portable qualification is prepared, not yet run.
 
 **Delivery qualified.** Existing six ownership checks, exporter/doctor/validate/pack status and45 delivered regressions passed. The safe-installed consumer preserved manual content and rejected foreign historical authority; explicit local adoption worked while raw/latest stayed strict. All869 members are pinned, with exactly two changed payloads. Collection and retirement verified; fixed preview remains pending.
+
+**Qualification complete; integration pending.** Source and delivered checks, exact retained history, safe installation and the fixed three-commit preview passed. All three workers retired and collections were verified. REPORT.md records the qualified scope; integration-effect.json governs exact dev/main sync. The retained successor merge remains separate.

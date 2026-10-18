@@ -3,7 +3,7 @@ id: AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Apply standing historical presentation policy to the retained successor
 type: policy
-status: needs_review
+status: passed_with_notes
 scope:
   allowed_paths:
     - .aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/**

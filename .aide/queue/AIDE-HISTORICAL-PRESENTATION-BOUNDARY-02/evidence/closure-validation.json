@@ -1,0 +1,122 @@
+{
+  "result": "PASS",
+  "commands": [
+    {
+      "label": "message",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        ".aide\\queue\\AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02\\evidence\\closure-message.txt"
+      ],
+      "exit_code": 0,
+      "bytes": 2193,
+      "sha256": "4e018e84010afa302e6c1f3e4a7449b7e072befdf41c1fc8b855139902fc844d"
+    },
+    {
+      "label": "range",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "f5e674e356196ec4cbfa4e2a4f79805b36fbaa25..HEAD"
+      ],
+      "exit_code": 0,
+      "bytes": 569,
+      "sha256": "b880869b0450409d27ca3c16eeb972c321442f8d7a70bf77f03f46ba158726cf"
+    },
+    {
+      "label": "validate",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "exit_code": 0,
+      "bytes": 241,
+      "sha256": "8084fc43cb5383cd8c86024d66aba2cb8218c2b0d31ca208c636a3672dc7fa19"
+    },
+    {
+      "label": "doctor",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "bytes": 5181,
+      "sha256": "585c64e7eac737c2e172b11d760d884d7c614858c1521bb8941c4e4ffa595f42"
+    },
+    {
+      "label": "pack",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "pack-status"
+      ],
+      "exit_code": 0,
+      "bytes": 232,
+      "sha256": "17eb7a713285498d636c31fd8f0e50e9b1a632f16f230bd1f2db48a19f2bb673"
+    },
+    {
+      "label": "capability",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "capability",
+        "status"
+      ],
+      "exit_code": 0,
+      "bytes": 489,
+      "sha256": "785e31d49f9a90cab93ba4794712432a1e152e83a44e124988cb243a4f774402"
+    },
+    {
+      "label": "fixed_preview",
+      "command": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/run_preview.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "bytes": 1067,
+      "sha256": "3b4047968bbe8e7873d0e6b0a6d67d704ef1e03e81cfa63140e660c0dea2778f"
+    },
+    {
+      "label": "diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "all_three_collections_verified": [
+    "6291aea1f9a0487599de0bf21a84a254",
+    "0a75c0c2a54d426097d4e5031cbe694c",
+    "776b7c55c9f74cc7b47022ed4745fcbf"
+  ],
+  "published_release_unchanged": true,
+  "historical_dispositions_and_product_code_unchanged": true,
+  "whole_outcome_usage": "unknown"
+}

@@ -1,94 +1,50 @@
 {
   "follow_up": [
     {
-      "commit": "d8645cec9272",
-      "summary": "Qualify source and actual delivered/installed consumers before integration."
-    },
-    {
-      "commit": "14ee101b5176",
-      "summary": "Run the reviewed delivery job and retain its exact outcome"
-    },
-    {
-      "commit": "2ac87ddbe502",
-      "summary": "Check the fixed preview and independently review integration"
-    },
-    {
-      "commit": "2ac87ddbe502",
-      "summary": "Check the fixed preview and independently review integration"
+      "commit": "046cfb94c3f5",
+      "summary": "Qualify the exact history range and delivered policy before integration"
     }
   ],
   "highlights": [
     {
       "breaking": false,
-      "category": "Added",
-      "commit": "d8645cec9272",
-      "subject": "feat(tasks): compose a bounded development brief from existing views",
-      "summary": "Read-only task brief with compact human and structured component views."
-    },
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "2ac87ddbe502",
-      "subject": "test(delivery): verify compact messages and briefs after installation",
-      "summary": "Compose task continuation, file context and current lessons in one brief"
-    },
-    {
-      "breaking": false,
       "category": "Changed",
-      "commit": "b6b12ff324a7",
-      "subject": "policy(commit): adopt compact change communication",
-      "summary": "Default to compact commits and proportionate change descriptions"
+      "commit": "046cfb94c3f5",
+      "subject": "policy(commit): apply the reviewed historical presentation boundary",
+      "summary": "Extend the reviewed source historical presentation cutoff"
     },
     {
       "breaking": false,
-      "category": "Changed",
-      "commit": "2ac87ddbe502",
-      "subject": "test(delivery): verify compact messages and briefs after installation",
-      "summary": "Author compact commits with complete validation and changelog facts"
+      "category": "Tests",
+      "commit": "4fd58583b24c",
+      "subject": "test(commit): qualify historical policy in installed projects",
+      "summary": "Qualify project-owned historical presentation boundaries"
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "4fbfc5c219fa",
+      "subject": "test(commit): retain installed historical policy qualification",
+      "summary": "Verify historical advisory boundaries after safe installation"
     }
   ],
   "preview_only": true,
-  "risk_summary": [
-    {
-      "commit": "d8645cec9272",
-      "summary": "Sequential observations are not atomic isolation or semantic validation."
-    },
-    {
-      "commit": "b6b12ff324a7",
-      "summary": "Source candidate; portable consumers and integration remain unqualified"
-    },
-    {
-      "commit": "2ac87ddbe502",
-      "summary": "Published Lite1.0.0 is unchanged; full host isolation remains unqualified"
-    },
-    {
-      "commit": "2ac87ddbe502",
-      "summary": "Published Lite1.0.0 is unchanged; full host isolation remains unqualified"
-    }
-  ],
+  "risk_summary": [],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "2ac87ddbe50252ffbf64b8a131e02a73e2ea3acb",
-  "source_range": "cf7b401d5bc7db6aadcc67a37ce392736589e619..2ac87ddbe50252ffbf64b8a131e02a73e2ea3acb",
+  "source_head": "4fbfc5c219fa21889017e6b4afb01feef0adb4cc",
+  "source_range": "f5e674e356196ec4cbfa4e2a4f79805b36fbaa25..4fbfc5c219fa21889017e6b4afb01feef0adb4cc",
   "validation_summary": [
     {
-      "commit": "d8645cec9272",
-      "summary": "PASS syntax, preserved 66-method identity and diff checks."
+      "commit": "046cfb94c3f5",
+      "summary": "PASS - immutable object and registry snapshot; NOT RUN - native qualification"
     },
     {
-      "commit": "b6b12ff324a7",
-      "summary": "PASS - Python AST and diff checks; NOT RUN - runtime qualification"
+      "commit": "4fd58583b24c",
+      "summary": "PASS - 45 regressions and exact 18-commit history; NOT RUN - delivery"
     },
     {
-      "commit": "14ee101b5176",
-      "summary": "PASS - source120 and preserved brief84; NOT RUN - delivery job"
-    },
-    {
-      "commit": "2ac87ddbe502",
-      "summary": "PASS - delivered71 communication,84 brief,6 ownership and installed consumer\nPASS - doctor,full validate,pack status and two retired collections\nNOT RUN - fixed preview and integration"
-    },
-    {
-      "commit": "2ac87ddbe502",
-      "summary": "PASS - delivered71 communication,84 brief,6 ownership and installed consumer\nPASS - doctor,full validate,pack status and two retired collections\nNOT RUN - fixed preview and integration"
+      "commit": "4fbfc5c219fa",
+      "summary": "PASS - 45 source and 45 delivered regressions, actual history and installed consumer\nPASS - six ownership checks, exporter, doctor, validate and pack status\nNOT RUN - fixed preview and integration"
     }
   ],
   "warnings": []

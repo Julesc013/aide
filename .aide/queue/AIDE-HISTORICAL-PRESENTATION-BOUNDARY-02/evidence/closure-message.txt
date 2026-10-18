@@ -1,0 +1,12 @@
+docs(commit): record qualified historical policy delivery
+
+Retain source, delivered and installed evidence for the reviewed cutoff.
+Original historical failures remain visible, while project-owned adoption
+and strict prospective checks are verified independently.
+
+Validation: PASS - 45 source,45 delivered,6 ownership,actual history and installed consumer
+ PASS - fixed three-commit preview,869 pack hashes and three worker retirements
+Changelog: Docs: Record qualified historical presentation policy and delivery limits
+AIDE-Task: AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02
+AIDE-Format: compact-v1
+Follow-up: Reconcile the preserved successor with current development separately

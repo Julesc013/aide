@@ -5328,4 +5328,4 @@ Qualified compact-v1 through existing owners: 120 source checks, 71 delivered ch
 
 ### Historical presentation boundary ? 18 October 2026
 
-[AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02](.aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/ExecPlan.md) applies standing presentation-only history policy to the preserved successor checkpoint. Qualify the exact held range, strict future behavior and portable policy before integration. Successor merge and release remain separate effects.
+[AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02](.aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/ExecPlan.md) qualifies standing presentation-only history policy at the preserved successor checkpoint. Source, delivered and installed checks passed with original failures retained. See its REPORT.md and integration receipt. Reconcile the successor with current development next; merge and release remain separate effects.
