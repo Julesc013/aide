@@ -35,3 +35,8 @@ independent acceptance and fresh Git/resource guards. The local ignored
 evidence/integration-result.log records actual dev/main updates and task-branch
 retirement; this report does not predeclare a successful push. Both release
 branches remain preserved. Parent CURRENT.md remains a dated source checkpoint.
+
+**Evidence encoding.** Git stores the five captured text/JSON projections with
+LF line endings. normalization.json records raw worker and committed identities;
+original retained collection bytes remain unchanged. No result or qualification
+was rerun or reinterpreted.

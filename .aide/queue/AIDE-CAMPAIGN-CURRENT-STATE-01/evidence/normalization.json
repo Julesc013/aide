@@ -1,0 +1,77 @@
+{
+  "result": "PASS_TEXT_EQUIVALENCE",
+  "original_closure": {
+    "result": "PASS",
+    "commit": "452e9807160de50d6346005956697e97cedec254",
+    "tree": "0cc53e2ceeecf6dbf4e0246b0b75c8560c39c642",
+    "base": "7059f9b0cfd490415e86e01d5c5c68fd7a695430",
+    "paths": [
+      ".aide/changelog/CHANGELOG.preview.md",
+      ".aide/changelog/RELEASE_NOTES.preview.md",
+      ".aide/changelog/changelog.preview.json",
+      ".aide/changelog/latest-changelog-report.md",
+      ".aide/changelog/malformed-commits.md",
+      ".aide/changelog/release-notes.preview.json",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/ExecPlan.md",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/REPORT.md",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/attempt-01-preview-result.json",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/attempt-01-qualification.json",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/changed-files.md",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/closure-message.txt",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/closure-scope-repair.json",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/closure-source.json",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/closure-validation.json",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/current-qualified.json",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/dev-review-packet.md",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/integration-effect.json",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/pack-qualified.txt",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/remaining-risks.md",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/resume-qualified.json",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/source-attempt-01.json",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/source-review.md",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/validation-qualified.txt",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/validation.md",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/status.yaml",
+      ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/task.yaml",
+      ".aide/queue/index.yaml",
+      "IMPLEMENT.md",
+      "PLANS.md"
+    ]
+  },
+  "original_manifest_sha256": "4440d66eafd1cc5a92721ed16e0bae9098ad6060e831721682d537561797ca2d",
+  "changes": [
+    {
+      "path": ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/attempt-01-qualification.json",
+      "retained_projection_sha256": "763ad543a93d1f9821bf121515bf12fa2f11c37fc3c5684e5371b1b595bfc230",
+      "git_blob_sha256": "8181fc9d69b4c1b766f74dc4be7210ffa90f19b98621cdc7d8a7575eafc02a53",
+      "transformation": "CRLF to LF only"
+    },
+    {
+      "path": ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/current-qualified.json",
+      "retained_projection_sha256": "8734df78e370c08178837f9dfc41479dd0df4ff8050c3bd8779fb5d799b4478a",
+      "git_blob_sha256": "dffed30d542c086f7a164e134c5fc789c85d8a0ad726c5de4c1429043cc526d0",
+      "transformation": "CRLF to LF only"
+    },
+    {
+      "path": ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/pack-qualified.txt",
+      "retained_projection_sha256": "17eb7a713285498d636c31fd8f0e50e9b1a632f16f230bd1f2db48a19f2bb673",
+      "git_blob_sha256": "2d5c0e4deb58a0327e18397b9f68ec498d389d30402672d25a7628d5217a59d5",
+      "transformation": "CRLF to LF only"
+    },
+    {
+      "path": ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/resume-qualified.json",
+      "retained_projection_sha256": "2309bf5c7d4bb023e08d2d0bb128bb30e7f6b73dc3e7529d2a05a6abbd161473",
+      "git_blob_sha256": "1265145a9880ed805b79f8c0b74be6dc85bfd35bce546ce1dcedb1bfd27e0338",
+      "transformation": "CRLF to LF only"
+    },
+    {
+      "path": ".aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/validation-qualified.txt",
+      "retained_projection_sha256": "8084fc43cb5383cd8c86024d66aba2cb8218c2b0d31ca208c636a3672dc7fa19",
+      "git_blob_sha256": "4d0f483657d4b13d111ec9acff2a7cebc433b9154e33fb663e1313b2e05ca3f0",
+      "transformation": "CRLF to LF only"
+    }
+  ],
+  "native_job_rerun": false,
+  "original_collection": "source-attempt-01.json and retained collected_manifest preserve original worker bytes",
+  "scope": "Fix forward evidence identities only; no outcome changed."
+}

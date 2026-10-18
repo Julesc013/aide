@@ -20,3 +20,8 @@ headers outside this task allowlist. Exact HEAD bytes were restored; the generat
 observation is retained locally and its CURRENT binding result remains valid.
 No runtime, package or native qualification changed. PLANS integration wording is
 explicitly pending. See closure-scope-repair.json.
+
+Post-commit identity check found five CRLF-to-LF Git normalizations. The exact
+raw/committed identities and text equivalence are retained in normalization.json;
+the closure manifest now names committed projection bytes. Worker collection,
+qualification, preview and all package bytes are unchanged.
