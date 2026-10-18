@@ -85,3 +85,10 @@ Worker683ea8c5cdd6494fa575cec354f2731b was collected, digest-verified and
 retired with scratch absent and reservation released. Original60 methods are
 unchanged. The separate fresh-process workflow and frozen old-reader checks are
 prepared for job2; no live coordination or native cancellation claim is made.
+
+**Job 2 passed.** At ad6f61bb, actual fresh CLI/MCP processes cancelled and
+acknowledged one request as uncertain while a second completed adoption.
+Native task/attempt/effect/control data stayed unchanged. The exact old reader
+accepted v1 and refused v2 without mutation. All870 development-pack files and
+eight release assets matched existing qualification. Job9147b6b0f7e74d33bfdf5303e56499f7
+was collected, verified and retired. Prepare fixed-range preview as job3.

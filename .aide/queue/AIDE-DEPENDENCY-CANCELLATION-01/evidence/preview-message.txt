@@ -1,0 +1,13 @@
+test(requests): record the qualified cancellation workflow
+
+Fresh CLI and MCP processes preserve a cancelled request while another
+completes adoption. The original reader refuses v2 semantics explicitly;
+qualified package and release bytes remain unchanged.
+
+Validation: PASS - 73 source methods; fresh-process workflow; legacy refusal
+ PASS - 870 package files, eight release assets and two retired jobs
+ NOT RUN - fixed-range promotion preview
+Changelog: Internal: Record independent cooperative cancellation evidence
+AIDE-Task: AIDE-DEPENDENCY-CANCELLATION-01
+AIDE-Format: compact-v1
+Follow-up: Finish preview and independent terminal integration review

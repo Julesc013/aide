@@ -1,9 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-DEPENDENCY-CANCELLATION-01
 status: needs_review
-result: SOURCE_73_PASS_WORKFLOW_PREPARED
-next_action: exact_second_job_review
+result: SOURCE_AND_CLI_MCP_WORKFLOW_PASS
+next_action: exact_fixed_preview_review
 maximum_jobs: 3
-jobs_allocated: 1
+jobs_allocated: 2
 active_jobs: 0
 source_commit: 55b5aabb94b51ec6998c75a34d6340a6a438b7bf
+workflow_commit: ad6f61bb5ae2e5e00a4fe009538ce0f1280c0afe
