@@ -14100,9 +14100,11 @@ initial acquisition failure. No model request, global install or target effect.
 See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md); the integration receipt will
 record the actual Git effects after terminal acceptance.
 
-### Offline result exchange prepared
+### Offline result exchange qualified
 
-The existing task handoff codec/CLI now prepares explicit v2 input-bound requests
-and bounded reports/patches/check records. Fresh inspection separates current
-task and selected-input changes. Original v1 behavior and assertions are retained;
-97 source methods and installed qualification remain unrun pending review.
+97 source and 97 delivered checks, six ownership checks, safe-installed partial/result
+continuation, replay, changed-input detection and real Mini record transfer passed.
+Doctor/full validation/pack status and fixed preview passed; all three jobs retired.
+The original capability/export FAIL evidence and review correction remain.
+See [the report](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md) for exact
+subjects and guarded integration. Eight frozen release assets are unchanged.

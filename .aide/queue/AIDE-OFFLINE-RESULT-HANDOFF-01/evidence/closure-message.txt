@@ -1,0 +1,12 @@
+feat(handoff): qualify recoverable offline result exchange
+
+Return bounded work against exact request and selected source identities from
+safe-installed Lite. Preserve interrupted attempts and customization; inspection
+exposes changed inputs without applying a patch or accepting a worker's claim.
+
+Validation: PASS - source97, delivered97, ownership6 and installed recovery/replay
+ PASS - real-record transfer; doctor, validate, pack-status and fixed preview
+ PASS - three retired jobs; 870 qualified pack members; eight frozen assets unchanged
+Changelog: Added: Offline input-bound requests and candidate result inspection
+AIDE-Task: AIDE-OFFLINE-RESULT-HANDOFF-01
+AIDE-Format: compact-v1

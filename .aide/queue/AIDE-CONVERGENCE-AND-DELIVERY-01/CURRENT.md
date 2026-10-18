@@ -1,6 +1,6 @@
 ### Current campaign: useful daily operation remains the finish line
 
-**Observed checkpoint: 18 October 2026, source 29f4bf5c.** This is the human
+**Observed checkpoint: 18 October 2026, source a1a45098.** This is the human
 explanation of this campaign's existing task/status records. Child evidence owns
 its exact technical claims; current Git and remote refs own branch state. This
 dated view is not a release, live host observation or new execution grant.
@@ -16,23 +16,25 @@ runtime work; the frozen archive does not acquire these features.
 [1.1.0 acceptance](../AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json),
 [combined-source qualification](../AIDE-LITE-SUCCESSOR-INTEGRATION-01/REPORT.md).
 
-**Source delivery.** The last verified synchronization put local and remote dev
-and main at 29f4bf5c, including dfae9356. The old historical formatting blocker
-was resolved through the reviewed presentation policy; original failures were
-preserved. Source integration is complete for that checkpoint, independently of
-publication. The qualification branch at dfae9356 and publication branch at
-f708e8c6 are preserved; do not replay old integration effects.
+**Source delivery.** Mini's fixture increment synchronized local and remote
+dev/main at 66c0b90b, including dfae9356. Offline result exchange is now qualified
+at the dated checkpoint above and has a separately reviewed integration effect;
+actual Git refs and its receipt establish delivery. The historical formatting
+blocker was resolved through reviewed presentation policy; original failures
+remain. Qualification branch dfae9356 and publication branch f708e8c6 are
+preserved. Publication is separate; do not replay old integration effects.
 [Policy resolution](../AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/REPORT.md),
 [retained successor](../AIDE-LITE-SUCCESSOR-INTEGRATION-01/REPORT.md),
-[latest scoped outcome](../AIDE-DEPENDENCY-REBIND-01/REPORT.md).
+[offline exchange](../AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md),
+[optional Mini fixture](../AIDE-MINI-WORKER-01/REPORT.md).
 
 **What is established**
 
 | Daily-use part | Evidence and its limit |
 |---|---|
 | Start and explain | Current-task, selected context and development brief connect existing task, file ownership/check and lesson records. This campaign record repair makes its own current view usable; it does not infer acceptance from readable metadata. |
-| Work and verify | Source, delivered and safe-installed fixtures qualify bounded Lite behaviors. One cooperative answer request was completed by the existing review worker. Ordinary protected model-driven editing on this desktop remains unqualified. |
-| Interrupt and resume | Native lifecycle recovery, portable task handoff and cooperative cancellation/session replacement have scoped evidence. File interchange and a declared binding replacement do not take over an editor or transfer a workspace. |
+| Work and verify | Source, delivered and safe-installed fixtures qualify bounded Lite behaviors. One cooperative answer request was completed by the existing review worker; pinned Mini passed 15 native fixture scenarios without model calls. Ordinary protected model-driven editing on this desktop remains unqualified. |
+| Interrupt and resume | Native lifecycle recovery, portable task/request/result handoff and cooperative cancellation/session replacement have scoped evidence. File interchange and a declared binding replacement do not take over an editor or transfer a workspace. |
 | Conserve | Reuse discovery, outcome preservation and source-linked lesson correction/retirement are qualified at their recorded subjects. Semantic reuse decisions and learned improvement still require independent evidence. |
 | Consume | Safe-installed fixtures preserve project customization; DiskEd selected-export preparation passed 158 checks with two original symlink checks unavailable. Actual native DiskEd application/adoption remains pending ownership. |
 | Measure | Available child/job effort and explicit unknown coverage are recorded. The observed 7.8263% child-input reduction is not a whole-outcome saving; controller/review/repair coverage remains incomplete. |
@@ -68,12 +70,13 @@ since that packet make its old effect guards stale. [Host readiness](../AIDE-COO
 
 **What can proceed independently.** Preserve the existing P0-P11 capability
 dependencies and queue owners. The existing extensibility amendment identifies
-P7 launch/failure/cancellation/collection fixtures for a replaceable worker,
-P6 explainable semantic reuse and P8 read-only/offline views as bounded candidates.
-Prepare the next dependency-ready brief against its actual owner and available
-route; these are candidates, not admitted tasks. Mini-SWE remains an optional
-pinned worker proposal. A live model attempt, training, new provider, desktop
-endpoint or unrelated project mutation is not authorized by this status view.
+P6 explainable semantic reuse and P8 read-only views as bounded candidates.
+P7's pinned Mini 2.4.6 optional worker fixture and P3/P8's offline input/result
+exchange now have scoped qualification; neither proves live model performance,
+native vintage support or the whole daily-use milestone. Prepare the next
+dependency-ready brief against its existing owner and available route. A live
+model attempt, training, new provider, desktop endpoint or unrelated project
+mutation is not authorized by this status view.
 [Existing sequence and boundaries](evidence/useful-extensibility-amendment.md),
 [accepted planning amendment](../AIDE-DAILY-USE-PLAN-AMENDMENT-01/status.yaml),
 [capability relationships](../../../docs/roadmap/development-workflows.json).

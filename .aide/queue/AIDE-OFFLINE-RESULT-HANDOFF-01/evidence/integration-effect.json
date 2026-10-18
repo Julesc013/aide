@@ -1,0 +1,55 @@
+{
+  "schema": "aide.offline-result-handoff.integration-effect.v1",
+  "base": "66c0b90b6aa0b68cd24659b6279f66b987cb585c",
+  "candidate": "Exact closure map; substitute only resulting managed commit/tree.",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "task_branch": "task/aide-offline-result-handoff-01",
+  "preserved_qualification_ref": "task/aide-lite-successor-qualification-01",
+  "preserved_qualification_commit": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "preserved_publication_ref": "task/aide-lite-successor-publication-01",
+  "preserved_publication_commit": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+  "known_historical_presentation_failures": [],
+  "effects": [
+    "After exact terminal ACCEPT, managed dry-run/apply commits only closure map and mapped paths with exact message/ref/parent/tree. Strict latest and full base..candidate checks must PASS.",
+    "Under shared estate/dispatch locks require exact config/running controls/no active job, sole checkout, clean candidate/tree, ready helper plan and exact local/remote dev/main base. Preserve both named task refs. Fetch only dev/main without tags and reobserve.",
+    "CAS fast-forward local dev from base to candidate; nonforce explicit candidate:refs/heads/dev push; read back exact remote state.",
+    "Run full validation and strict complete-range check again, recheck controls/refs/tree and remote state. CAS fast-forward main from base; nonforce explicit push; read back both heads.",
+    "Verify exact four-commit preview through a1a45098f87eacd12571767ebc0fad1e7932f6d5, both source/delivered retired collections and the final third receipt, source97/delivered97/installed exchange and unchanged870 qualified pack/eight frozen release assets. Preserve both named task refs.",
+    "Only after both refs/postchecks pass, switch to dev, verify clean exact task-ref ancestry, delete only this local task branch using branch -d. Verify final local/tracking refs and dfae9356 ancestry."
+  ],
+  "required_evidence": [
+    "Source97 and delivered97 with original79 retained; zero failures/errors/skips.",
+    "Ownership6, actual safe install with core absent/customization preserved, offline partial/resume/replay/stale/truncated and real-record transfer.",
+    "All three jobs collected/digest-verified/retired; scratch absent/reservations released; no further allocation.",
+    "Doctor/full validation/pack status and fixed four-commit preview passed; original warning and earlier FAIL retained.",
+    "870 qualified development pack members and eight unchanged release assets; no new provider or live target effect.",
+    "Strict complete source range and closure message PASS; original release/host/model boundaries remain."
+  ],
+  "failure_response": "Retain started/completed command streams and identities. Stop on changed inputs/refs or any failed check; reconcile observed effects before any retry.",
+  "forbidden": [
+    "force push",
+    "history rewrite",
+    "protection change or bypass",
+    "tag/release effects",
+    "unrelated branch deletion",
+    "live target or ledger mutation",
+    "model/provider requests",
+    "package rebuild",
+    "further job allocation"
+  ],
+  "controller": {
+    "path": ".aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/evidence/integration-runner.log",
+    "sha256": "6a3f46370cdc671bb8b2a9e54b4a6cd53f38daea1dbc546dd57d33031b854b6c",
+    "prior_path": ".aide/queue/AIDE-MINI-WORKER-01/evidence/integration-runner.log",
+    "prior_sha256": "0e1ed4ee4caec829761db3fd83d6dd708cad8e816a79d57c13f29489894de0d3",
+    "permitted_substitutions": [
+      "Task path MINI-WORKER to OFFLINE-RESULT-HANDOFF.",
+      "Postcheck run_checks.py verify to current run_preview.py verify and final fourth receipt to current third.",
+      "Expected effect SHA supplied as one exact argument; effect pins controller and controller checks its own path/hash.",
+      "Insert repository module path for execution of the pinned file instead of stdin.",
+      "Closure candidate/tree are read from the exact managed closure receipt; no other substitutions."
+    ]
+  }
+}

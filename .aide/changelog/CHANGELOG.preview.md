@@ -2,9 +2,9 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: fcaa9e1e2230cf1fc14cfa5edde05cad0ce27971..cf77e790a0b973fd68dec12f667698d16cfbe883
-source_head: cf77e790a0b973fd68dec12f667698d16cfbe883
-commit_count: 5
+source_range: 66c0b90b6aa0b68cd24659b6279f66b987cb585c..a1a45098f87eacd12571767ebc0fad1e7932f6d5
+source_head: a1a45098f87eacd12571767ebc0fad1e7932f6d5
+commit_count: 4
 malformed_count: 0
 preview_only: true
 release_publishing: false
@@ -12,36 +12,29 @@ release_publishing: false
 ## Summary
 
 - Added: 1
-- Tests: 1
 - Internal: 3
 
 ## Added
 
-- Prepare optional Mini worker binding and lifecycle fixtures (e2902c21c5d2 feat(worker): bind Mini to supervised offline attempts)
-  - **Validation:** PASS - exact 14-wheel acquisition, collection and retirement;
-    syntax and diff checks
-    NOT RUN - 15 offline execution scenarios and final qualification
-  - **Risk:** Fixture scope; no live model route or filesystem isolation claim
-
-## Tests
-
-- Qualify optional Mini repair, refusal and recovery fixtures (cf77e790a0b9 test(worker): retain Mini lifecycle results and final checks)
-  - **Validation:** PASS - 15 native scenarios, collection and retirement
-    NOT RUN - final passive compatibility, artifact checks and preview
-  - **Risk:** Deterministic source fixture only; no live model or isolation claim
+- Inspect offline results against their request and selected inputs (8a6b32ef484f feat(handoff): bind offline results to exact selected inputs)
+  - **Validation:** PASS - syntax and preserved original test assertions
+    FAIL - doctor/validate: changed-source capability binding; reviewed refresh pending
+    NOT RUN - 97 source methods and installed qualification
+  - **Risk:** Selected files are incomplete dependency coverage; no automatic apply or acceptance
 
 ## Internal
 
-- Admit bounded optional Mini worker integration (3932731edba6 feat(worker): admit optional Mini harness qualification)
-  - **Validation:** PASS - current source/refs and exact PyPI artifact metadata
-    NOT RUN - artifact acquisition, imports and worker qualification
-- Prepare bounded Mini worker dependency acquisition (c5077b95ca50 feat(worker): prepare pinned Mini dependency acquisition)
-  - **Validation:** PASS - admission review, exact artifact/source pins and static script checks
-    NOT RUN - wheel acquisition, dependency imports and worker qualification
-- Correct Mini metadata expectations and preserve acquired work (5b0af5ecf902 fix(worker): pin artifact metadata and reuse acquired wheels)
-  - **Validation:** PASS - 14 metadata observations; two retained archive matches;
-    original collection, retirement and exact artifact hashes; syntax and diff checks
-    NOT RUN - acquisition continuation and worker imports
+- Admit bounded offline request and result continuation (a986ce94b103 feat(handoff): admit bounded offline result exchange)
+  - **Validation:** PASS - existing handoff source and campaign prerequisites inspected
+    NOT RUN - new source and installed consumer qualification
+- Prepare portable offline result and recovery qualification (3e2bbd3277ab test(handoff): prepare installed offline result qualification)
+  - **Validation:** PASS - source97; original79 retained; job retirement; CURRENT binding
+    FAIL - development pack provenance awaits the reviewed export refresh
+    NOT RUN - delivered97, installed consumer and final preview
+- Preserve installed offline recovery qualification (a1a45098f87e test(handoff): retain installed recovery and final preview checks)
+  - **Validation:** PASS - delivered97; ownership6; installed exchange and real records
+    PASS - exporter, doctor, validate, pack-status; eight release assets unchanged
+    NOT RUN - final fixed preview
 
 ## Malformed Commits
 

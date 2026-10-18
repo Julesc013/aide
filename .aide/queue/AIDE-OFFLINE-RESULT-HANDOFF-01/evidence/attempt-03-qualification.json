@@ -1,0 +1,31 @@
+{
+  "result": "PASS",
+  "source_tests": 97,
+  "delivered_tests": 97,
+  "pack_members": 870,
+  "release_assets_unchanged": 8,
+  "source_and_delivered_jobs_retired": true,
+  "models_requested": 0,
+  "whole_outcome_usage": "unknown",
+  "preview": {
+    "status": "PASS",
+    "source_head": "a1a45098f87eacd12571767ebc0fad1e7932f6d5",
+    "source_range": "66c0b90b6aa0b68cd24659b6279f66b987cb585c..a1a45098f87eacd12571767ebc0fad1e7932f6d5",
+    "commits": [
+      "a1a45098f87eacd12571767ebc0fad1e7932f6d5",
+      "3e2bbd3277abb5b237a4ff4464fc8b75ef574f8d",
+      "8a6b32ef484f2abddf9c7d3c7ea76946e4d12c2c",
+      "a986ce94b103e9f808422387df35853c3edb7be1"
+    ],
+    "malformed_count": 0,
+    "sha256s": {
+      "CHANGELOG.preview.md": "5d566c6555b0cc95c4ae3e8d5dd46eca8ec0e9e814c4935c1c40bba790b398f4",
+      "RELEASE_NOTES.preview.md": "4632b530a00d98af177ab40dc9745a7dfa5ccd6cbbb25833cf34e90194e8d3d7",
+      "changelog.preview.json": "cb4553c3381e8a0a349b56726f652ea1607fc88250d5ae9a6e107bd9b7c0738e",
+      "latest-changelog-report.md": "fac426912cd821db9c424c126cc2a0b6e93dbe29ed1883a1f4061b3d323604bb",
+      "malformed-commits.md": "29101f115e00f524338866a7a5c4d207b2721d19732e7922f4833502a978bd95",
+      "release-notes.preview.json": "62c1205d28b196cd7caf20907919eed17da929606d9c99fb57d86a79a6a94b39"
+    },
+    "regeneration": "read_only_exact_six_output_comparison"
+  }
+}

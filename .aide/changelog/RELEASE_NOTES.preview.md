@@ -2,34 +2,31 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: fcaa9e1e2230cf1fc14cfa5edde05cad0ce27971..cf77e790a0b973fd68dec12f667698d16cfbe883
-source_head: cf77e790a0b973fd68dec12f667698d16cfbe883
+source_range: 66c0b90b6aa0b68cd24659b6279f66b987cb585c..a1a45098f87eacd12571767ebc0fad1e7932f6d5
+source_head: a1a45098f87eacd12571767ebc0fad1e7932f6d5
 preview_only: true
 
 ## Highlights
 
-- Added: Prepare optional Mini worker binding and lifecycle fixtures (e2902c21c5d2)
-- Tests: Qualify optional Mini repair, refusal and recovery fixtures (cf77e790a0b9)
+- Added: Inspect offline results against their request and selected inputs (8a6b32ef484f)
 
 ## Validation Summary
 
-- 3932731edba6: PASS - current source/refs and exact PyPI artifact metadata
-  NOT RUN - artifact acquisition, imports and worker qualification
-- c5077b95ca50: PASS - admission review, exact artifact/source pins and static script checks
-  NOT RUN - wheel acquisition, dependency imports and worker qualification
-- 5b0af5ecf902: PASS - 14 metadata observations; two retained archive matches;
-  original collection, retirement and exact artifact hashes; syntax and diff checks
-  NOT RUN - acquisition continuation and worker imports
-- e2902c21c5d2: PASS - exact 14-wheel acquisition, collection and retirement;
-  syntax and diff checks
-  NOT RUN - 15 offline execution scenarios and final qualification
-- cf77e790a0b9: PASS - 15 native scenarios, collection and retirement
-  NOT RUN - final passive compatibility, artifact checks and preview
+- a986ce94b103: PASS - existing handoff source and campaign prerequisites inspected
+  NOT RUN - new source and installed consumer qualification
+- 8a6b32ef484f: PASS - syntax and preserved original test assertions
+  FAIL - doctor/validate: changed-source capability binding; reviewed refresh pending
+  NOT RUN - 97 source methods and installed qualification
+- 3e2bbd3277ab: PASS - source97; original79 retained; job retirement; CURRENT binding
+  FAIL - development pack provenance awaits the reviewed export refresh
+  NOT RUN - delivered97, installed consumer and final preview
+- a1a45098f87e: PASS - delivered97; ownership6; installed exchange and real records
+  PASS - exporter, doctor, validate, pack-status; eight release assets unchanged
+  NOT RUN - final fixed preview
 
 ## Known Risks
 
-- e2902c21c5d2: Fixture scope; no live model route or filesystem isolation claim
-- cf77e790a0b9: Deterministic source fixture only; no live model or isolation claim
+- 8a6b32ef484f: Selected files are incomplete dependency coverage; no automatic apply or acceptance
 
 ## Follow-up
 

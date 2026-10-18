@@ -5364,3 +5364,6 @@ AIDE-OFFLINE-RESULT-HANDOFF-01 extends the existing portable task codec with
 selected-input request identity and returned candidate observations. Source,
 delivered and safe-installed qualification precede guarded integration. No new
 execution owner, automatic application or vintage host support is implied.
+Source, delivered and installed qualification is complete. The fixed preview and
+three retired jobs preserve exact evidence; see [the report](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md)
+and observed integration receipt for delivery. Full daily-use acceptance remains open.

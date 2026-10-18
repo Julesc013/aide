@@ -7,13 +7,13 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Added",
-        "commit": "e2902c21c5d2",
-        "commit_sha": "e2902c21c5d2cc23ed559867b87a0a2be7e02caf",
-        "entry": "Prepare optional Mini worker binding and lifecycle fixtures",
+        "commit": "8a6b32ef484f",
+        "commit_sha": "8a6b32ef484f2abddf9c7d3c7ea76946e4d12c2c",
+        "entry": "Inspect offline results against their request and selected inputs",
         "follow_up": "",
         "message_format": "compact-v1",
-        "risks": "Fixture scope; no live model route or filesystem isolation claim",
-        "scope": "worker",
+        "risks": "Selected files are incomplete dependency coverage; no automatic apply or acceptance",
+        "scope": "handoff",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -22,10 +22,10 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "feat(worker): bind Mini to supervised offline attempts",
-        "summary": "Prepare optional Mini worker binding and lifecycle fixtures",
+        "subject": "feat(handoff): bind offline results to exact selected inputs",
+        "summary": "Inspect offline results against their request and selected inputs",
         "type": "feat",
-        "validation": "PASS - exact 14-wheel acquisition, collection and retirement;\nsyntax and diff checks\nNOT RUN - 15 offline execution scenarios and final qualification"
+        "validation": "PASS - syntax and preserved original test assertions\nFAIL - doctor/validate: changed-source capability binding; reviewed refresh pending\nNOT RUN - 97 source methods and installed qualification"
       }
     ],
     "Internal": [
@@ -35,13 +35,13 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "3932731edba6",
-        "commit_sha": "3932731edba6d55f5bcce076bacf1a3bcd95a7ff",
-        "entry": "Admit bounded optional Mini worker integration",
+        "commit": "a986ce94b103",
+        "commit_sha": "a986ce94b103e9f808422387df35853c3edb7be1",
+        "entry": "Admit bounded offline request and result continuation",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "worker",
+        "scope": "handoff",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -49,10 +49,10 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "feat(worker): admit optional Mini harness qualification",
-        "summary": "Admit bounded optional Mini worker integration",
+        "subject": "feat(handoff): admit bounded offline result exchange",
+        "summary": "Admit bounded offline request and result continuation",
         "type": "feat",
-        "validation": "PASS - current source/refs and exact PyPI artifact metadata\nNOT RUN - artifact acquisition, imports and worker qualification"
+        "validation": "PASS - existing handoff source and campaign prerequisites inspected\nNOT RUN - new source and installed consumer qualification"
       },
       {
         "aide_phase": "",
@@ -60,13 +60,13 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "c5077b95ca50",
-        "commit_sha": "c5077b95ca50e8e44d85789e6efd7e80bc828c6f",
-        "entry": "Prepare bounded Mini worker dependency acquisition",
+        "commit": "3e2bbd3277ab",
+        "commit_sha": "3e2bbd3277abb5b237a4ff4464fc8b75ef574f8d",
+        "entry": "Prepare portable offline result and recovery qualification",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "worker",
+        "scope": "handoff",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -74,72 +74,43 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "feat(worker): prepare pinned Mini dependency acquisition",
-        "summary": "Prepare bounded Mini worker dependency acquisition",
-        "type": "feat",
-        "validation": "PASS - admission review, exact artifact/source pins and static script checks\nNOT RUN - wheel acquisition, dependency imports and worker qualification"
-      },
-      {
-        "aide_phase": "",
-        "aide_result": "",
-        "breaking": false,
-        "breaking_change": "",
-        "category": "Internal",
-        "commit": "5b0af5ecf902",
-        "commit_sha": "5b0af5ecf9027d8e09093b3b59f372d9462f39fa",
-        "entry": "Correct Mini metadata expectations and preserve acquired work",
-        "follow_up": "",
-        "message_format": "compact-v1",
-        "risks": "",
-        "scope": "worker",
-        "source_sections_present": [
-          "Body",
-          "Validation",
-          "Changelog",
-          "AIDE-Task",
-          "AIDE-Format"
-        ],
-        "subject": "fix(worker): pin artifact metadata and reuse acquired wheels",
-        "summary": "Correct Mini metadata expectations and preserve acquired work",
-        "type": "fix",
-        "validation": "PASS - 14 metadata observations; two retained archive matches;\noriginal collection, retirement and exact artifact hashes; syntax and diff checks\nNOT RUN - acquisition continuation and worker imports"
-      }
-    ],
-    "Tests": [
-      {
-        "aide_phase": "",
-        "aide_result": "",
-        "breaking": false,
-        "breaking_change": "",
-        "category": "Tests",
-        "commit": "cf77e790a0b9",
-        "commit_sha": "cf77e790a0b973fd68dec12f667698d16cfbe883",
-        "entry": "Qualify optional Mini repair, refusal and recovery fixtures",
-        "follow_up": "",
-        "message_format": "compact-v1",
-        "risks": "Deterministic source fixture only; no live model or isolation claim",
-        "scope": "worker",
-        "source_sections_present": [
-          "Body",
-          "Validation",
-          "Changelog",
-          "Risk",
-          "AIDE-Task",
-          "AIDE-Format"
-        ],
-        "subject": "test(worker): retain Mini lifecycle results and final checks",
-        "summary": "Qualify optional Mini repair, refusal and recovery fixtures",
+        "subject": "test(handoff): prepare installed offline result qualification",
+        "summary": "Prepare portable offline result and recovery qualification",
         "type": "test",
-        "validation": "PASS - 15 native scenarios, collection and retirement\nNOT RUN - final passive compatibility, artifact checks and preview"
+        "validation": "PASS - source97; original79 retained; job retirement; CURRENT binding\nFAIL - development pack provenance awaits the reviewed export refresh\nNOT RUN - delivered97, installed consumer and final preview"
+      },
+      {
+        "aide_phase": "",
+        "aide_result": "",
+        "breaking": false,
+        "breaking_change": "",
+        "category": "Internal",
+        "commit": "a1a45098f87e",
+        "commit_sha": "a1a45098f87eacd12571767ebc0fad1e7932f6d5",
+        "entry": "Preserve installed offline recovery qualification",
+        "follow_up": "",
+        "message_format": "compact-v1",
+        "risks": "",
+        "scope": "handoff",
+        "source_sections_present": [
+          "Body",
+          "Validation",
+          "Changelog",
+          "AIDE-Task",
+          "AIDE-Format"
+        ],
+        "subject": "test(handoff): retain installed recovery and final preview checks",
+        "summary": "Preserve installed offline recovery qualification",
+        "type": "test",
+        "validation": "PASS - delivered97; ownership6; installed exchange and real records\nPASS - exporter, doctor, validate, pack-status; eight release assets unchanged\nNOT RUN - final fixed preview"
       }
     ]
   },
   "category_counts": {
     "Added": 1,
-    "Internal": 3,
-    "Tests": 1
+    "Internal": 3
   },
-  "commit_count": 5,
+  "commit_count": 4,
   "entries": [
     {
       "aide_phase": "",
@@ -147,13 +118,13 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "3932731edba6",
-      "commit_sha": "3932731edba6d55f5bcce076bacf1a3bcd95a7ff",
-      "entry": "Admit bounded optional Mini worker integration",
+      "commit": "a986ce94b103",
+      "commit_sha": "a986ce94b103e9f808422387df35853c3edb7be1",
+      "entry": "Admit bounded offline request and result continuation",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "worker",
+      "scope": "handoff",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -161,60 +132,10 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "feat(worker): admit optional Mini harness qualification",
-      "summary": "Admit bounded optional Mini worker integration",
+      "subject": "feat(handoff): admit bounded offline result exchange",
+      "summary": "Admit bounded offline request and result continuation",
       "type": "feat",
-      "validation": "PASS - current source/refs and exact PyPI artifact metadata\nNOT RUN - artifact acquisition, imports and worker qualification"
-    },
-    {
-      "aide_phase": "",
-      "aide_result": "",
-      "breaking": false,
-      "breaking_change": "",
-      "category": "Internal",
-      "commit": "c5077b95ca50",
-      "commit_sha": "c5077b95ca50e8e44d85789e6efd7e80bc828c6f",
-      "entry": "Prepare bounded Mini worker dependency acquisition",
-      "follow_up": "",
-      "message_format": "compact-v1",
-      "risks": "",
-      "scope": "worker",
-      "source_sections_present": [
-        "Body",
-        "Validation",
-        "Changelog",
-        "AIDE-Task",
-        "AIDE-Format"
-      ],
-      "subject": "feat(worker): prepare pinned Mini dependency acquisition",
-      "summary": "Prepare bounded Mini worker dependency acquisition",
-      "type": "feat",
-      "validation": "PASS - admission review, exact artifact/source pins and static script checks\nNOT RUN - wheel acquisition, dependency imports and worker qualification"
-    },
-    {
-      "aide_phase": "",
-      "aide_result": "",
-      "breaking": false,
-      "breaking_change": "",
-      "category": "Internal",
-      "commit": "5b0af5ecf902",
-      "commit_sha": "5b0af5ecf9027d8e09093b3b59f372d9462f39fa",
-      "entry": "Correct Mini metadata expectations and preserve acquired work",
-      "follow_up": "",
-      "message_format": "compact-v1",
-      "risks": "",
-      "scope": "worker",
-      "source_sections_present": [
-        "Body",
-        "Validation",
-        "Changelog",
-        "AIDE-Task",
-        "AIDE-Format"
-      ],
-      "subject": "fix(worker): pin artifact metadata and reuse acquired wheels",
-      "summary": "Correct Mini metadata expectations and preserve acquired work",
-      "type": "fix",
-      "validation": "PASS - 14 metadata observations; two retained archive matches;\noriginal collection, retirement and exact artifact hashes; syntax and diff checks\nNOT RUN - acquisition continuation and worker imports"
+      "validation": "PASS - existing handoff source and campaign prerequisites inspected\nNOT RUN - new source and installed consumer qualification"
     },
     {
       "aide_phase": "",
@@ -222,13 +143,13 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Added",
-      "commit": "e2902c21c5d2",
-      "commit_sha": "e2902c21c5d2cc23ed559867b87a0a2be7e02caf",
-      "entry": "Prepare optional Mini worker binding and lifecycle fixtures",
+      "commit": "8a6b32ef484f",
+      "commit_sha": "8a6b32ef484f2abddf9c7d3c7ea76946e4d12c2c",
+      "entry": "Inspect offline results against their request and selected inputs",
       "follow_up": "",
       "message_format": "compact-v1",
-      "risks": "Fixture scope; no live model route or filesystem isolation claim",
-      "scope": "worker",
+      "risks": "Selected files are incomplete dependency coverage; no automatic apply or acceptance",
+      "scope": "handoff",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -237,36 +158,60 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "feat(worker): bind Mini to supervised offline attempts",
-      "summary": "Prepare optional Mini worker binding and lifecycle fixtures",
+      "subject": "feat(handoff): bind offline results to exact selected inputs",
+      "summary": "Inspect offline results against their request and selected inputs",
       "type": "feat",
-      "validation": "PASS - exact 14-wheel acquisition, collection and retirement;\nsyntax and diff checks\nNOT RUN - 15 offline execution scenarios and final qualification"
+      "validation": "PASS - syntax and preserved original test assertions\nFAIL - doctor/validate: changed-source capability binding; reviewed refresh pending\nNOT RUN - 97 source methods and installed qualification"
     },
     {
       "aide_phase": "",
       "aide_result": "",
       "breaking": false,
       "breaking_change": "",
-      "category": "Tests",
-      "commit": "cf77e790a0b9",
-      "commit_sha": "cf77e790a0b973fd68dec12f667698d16cfbe883",
-      "entry": "Qualify optional Mini repair, refusal and recovery fixtures",
+      "category": "Internal",
+      "commit": "3e2bbd3277ab",
+      "commit_sha": "3e2bbd3277abb5b237a4ff4464fc8b75ef574f8d",
+      "entry": "Prepare portable offline result and recovery qualification",
       "follow_up": "",
       "message_format": "compact-v1",
-      "risks": "Deterministic source fixture only; no live model or isolation claim",
-      "scope": "worker",
+      "risks": "",
+      "scope": "handoff",
       "source_sections_present": [
         "Body",
         "Validation",
         "Changelog",
-        "Risk",
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "test(worker): retain Mini lifecycle results and final checks",
-      "summary": "Qualify optional Mini repair, refusal and recovery fixtures",
+      "subject": "test(handoff): prepare installed offline result qualification",
+      "summary": "Prepare portable offline result and recovery qualification",
       "type": "test",
-      "validation": "PASS - 15 native scenarios, collection and retirement\nNOT RUN - final passive compatibility, artifact checks and preview"
+      "validation": "PASS - source97; original79 retained; job retirement; CURRENT binding\nFAIL - development pack provenance awaits the reviewed export refresh\nNOT RUN - delivered97, installed consumer and final preview"
+    },
+    {
+      "aide_phase": "",
+      "aide_result": "",
+      "breaking": false,
+      "breaking_change": "",
+      "category": "Internal",
+      "commit": "a1a45098f87e",
+      "commit_sha": "a1a45098f87eacd12571767ebc0fad1e7932f6d5",
+      "entry": "Preserve installed offline recovery qualification",
+      "follow_up": "",
+      "message_format": "compact-v1",
+      "risks": "",
+      "scope": "handoff",
+      "source_sections_present": [
+        "Body",
+        "Validation",
+        "Changelog",
+        "AIDE-Task",
+        "AIDE-Format"
+      ],
+      "subject": "test(handoff): retain installed recovery and final preview checks",
+      "summary": "Preserve installed offline recovery qualification",
+      "type": "test",
+      "validation": "PASS - delivered97; ownership6; installed exchange and real records\nPASS - exporter, doctor, validate, pack-status; eight release assets unchanged\nNOT RUN - final fixed preview"
     }
   ],
   "generated_by": "aide-lite",
@@ -277,7 +222,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "cf77e790a0b973fd68dec12f667698d16cfbe883",
-  "source_range": "fcaa9e1e2230cf1fc14cfa5edde05cad0ce27971..cf77e790a0b973fd68dec12f667698d16cfbe883",
+  "source_head": "a1a45098f87eacd12571767ebc0fad1e7932f6d5",
+  "source_range": "66c0b90b6aa0b68cd24659b6279f66b987cb585c..a1a45098f87eacd12571767ebc0fad1e7932f6d5",
   "warnings": []
 }

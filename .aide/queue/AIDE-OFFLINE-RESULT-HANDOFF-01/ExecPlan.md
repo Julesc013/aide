@@ -96,3 +96,10 @@ Exporter/doctor/validate/pack-status PASS resolved the retained provenance FAIL.
 Independent review corrected the pre-launch CLI byte assertion to the existing
 portable projection; other payloads retain exact source equality. The final job
 will reuse valid outcomes, verify870pack members and generate a fixed preview.
+
+**Technical closure.** Final job3 passed ata1a45098f87eacd12571767ebc0fad1e7932f6d5; all97 source/delivered
+methods, installed exchange and retained failures remain intact. Fixed four-commit
+preview, doctor/full validation/pack status,870pack/eightasset preservation passed.
+All three allocations retired with collection verified. No further job allocation.
+REPORT.md records exact scope. Guarded integration remains an exact reviewed effect;
+the local integration-result.log and Git refs establish its actual outcome.

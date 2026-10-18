@@ -1314,12 +1314,14 @@ Current writing guide: [commit discipline](docs/reference/commit-discipline.md),
 [Adapter scope and recovery](docs/reference/mini-worker.md) explains the optional
 source binding, exact imports and fixture boundary.
 [Bounded work](.aide/queue/AIDE-MINI-WORKER-01/ExecPlan.md) retains the acquisition
-outcomes and completed scoped fixture qualification; exact integration review is
-pending. Lite exports and frozen archives are unchanged.
+outcomes and completed scoped fixture qualification, integrated at 66c0b90b.
+That Mini increment left Lite exports and frozen archives unchanged.
 
 ### Offline result exchange
 
 [Task handoff commands](docs/reference/task-os-report-only-commands.md) describe
 source-input-bound requests and candidate result inspection. [The bounded
 WorkUnit](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/ExecPlan.md) retains scope,
-qualification and integration evidence; no result is applied or accepted by inspection.
+qualification and integration evidence. [The completed report](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md)
+records 97 source and 97 delivered checks and installed recovery; no result is applied or accepted
+by inspection.

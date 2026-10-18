@@ -4,52 +4,37 @@
     {
       "breaking": false,
       "category": "Added",
-      "commit": "e2902c21c5d2",
-      "subject": "feat(worker): bind Mini to supervised offline attempts",
-      "summary": "Prepare optional Mini worker binding and lifecycle fixtures"
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "cf77e790a0b9",
-      "subject": "test(worker): retain Mini lifecycle results and final checks",
-      "summary": "Qualify optional Mini repair, refusal and recovery fixtures"
+      "commit": "8a6b32ef484f",
+      "subject": "feat(handoff): bind offline results to exact selected inputs",
+      "summary": "Inspect offline results against their request and selected inputs"
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "e2902c21c5d2",
-      "summary": "Fixture scope; no live model route or filesystem isolation claim"
-    },
-    {
-      "commit": "cf77e790a0b9",
-      "summary": "Deterministic source fixture only; no live model or isolation claim"
+      "commit": "8a6b32ef484f",
+      "summary": "Selected files are incomplete dependency coverage; no automatic apply or acceptance"
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "cf77e790a0b973fd68dec12f667698d16cfbe883",
-  "source_range": "fcaa9e1e2230cf1fc14cfa5edde05cad0ce27971..cf77e790a0b973fd68dec12f667698d16cfbe883",
+  "source_head": "a1a45098f87eacd12571767ebc0fad1e7932f6d5",
+  "source_range": "66c0b90b6aa0b68cd24659b6279f66b987cb585c..a1a45098f87eacd12571767ebc0fad1e7932f6d5",
   "validation_summary": [
     {
-      "commit": "3932731edba6",
-      "summary": "PASS - current source/refs and exact PyPI artifact metadata\nNOT RUN - artifact acquisition, imports and worker qualification"
+      "commit": "a986ce94b103",
+      "summary": "PASS - existing handoff source and campaign prerequisites inspected\nNOT RUN - new source and installed consumer qualification"
     },
     {
-      "commit": "c5077b95ca50",
-      "summary": "PASS - admission review, exact artifact/source pins and static script checks\nNOT RUN - wheel acquisition, dependency imports and worker qualification"
+      "commit": "8a6b32ef484f",
+      "summary": "PASS - syntax and preserved original test assertions\nFAIL - doctor/validate: changed-source capability binding; reviewed refresh pending\nNOT RUN - 97 source methods and installed qualification"
     },
     {
-      "commit": "5b0af5ecf902",
-      "summary": "PASS - 14 metadata observations; two retained archive matches;\noriginal collection, retirement and exact artifact hashes; syntax and diff checks\nNOT RUN - acquisition continuation and worker imports"
+      "commit": "3e2bbd3277ab",
+      "summary": "PASS - source97; original79 retained; job retirement; CURRENT binding\nFAIL - development pack provenance awaits the reviewed export refresh\nNOT RUN - delivered97, installed consumer and final preview"
     },
     {
-      "commit": "e2902c21c5d2",
-      "summary": "PASS - exact 14-wheel acquisition, collection and retirement;\nsyntax and diff checks\nNOT RUN - 15 offline execution scenarios and final qualification"
-    },
-    {
-      "commit": "cf77e790a0b9",
-      "summary": "PASS - 15 native scenarios, collection and retirement\nNOT RUN - final passive compatibility, artifact checks and preview"
+      "commit": "a1a45098f87e",
+      "summary": "PASS - delivered97; ownership6; installed exchange and real records\nPASS - exporter, doctor, validate, pack-status; eight release assets unchanged\nNOT RUN - final fixed preview"
     }
   ],
   "warnings": []
