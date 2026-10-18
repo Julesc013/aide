@@ -199,3 +199,5 @@ dependency_cancellation_ref: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/status.
 
 dependency_cancellation_result_ref: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/REPORT.md
 dependency_cancellation_integration_receipt: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence/integration-result.log
+
+dependency_rebind_ref: .aide/queue/AIDE-DEPENDENCY-REBIND-01/status.yaml

@@ -74,3 +74,8 @@ Native quiescence, external authentication and automatic wake-up remain unclaime
 admission/collection/retirement only. Preserve failures; stop on an unexplained
 changed subject, failed required check or review finding. No new server, storage
 root, paid inference, recurring polling or unqualified downstream adoption.
+
+**Admission and source prepared.** Independent admission accepted the exact map
+53409138 and local effect ee349f3b. Managed checkpoint32a9d56a is retained.
+Fifteen focused methods and the original73 methods are prepared; no native tests
+have run. A separate actual fresh-process workflow remains job2.

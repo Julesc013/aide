@@ -3,7 +3,7 @@ id: AIDE-DEPENDENCY-REBIND-01
 parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 title: Preserve pending dependency work across an explicit session replacement
 type: implementation
-status: needs_review
+status: running
 scope:
   allowed_paths:
     - core/runtime/continuous_worker/requests.py

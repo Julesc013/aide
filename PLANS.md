@@ -5337,3 +5337,9 @@ Qualified compact-v1 through existing owners: 120 source checks, 71 delivered ch
 ### Independent dependency cancellation
 
 Qualified independent cooperative cancellation: 73 source methods, actual CLI/MCP two-request continuation, legacy-reader refusal and final preview passed. Source-only scope and integration evidence are in the [child report](.aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/REPORT.md).
+
+### Dependency session continuity
+
+AIDE-DEPENDENCY-REBIND-01 is admitted for explicit cooperative configuration
+reconciliation over existing request/state owners. Preserve native work, stale
+writer refusal and independent publication gates; see the child ExecPlan.

@@ -1302,3 +1302,7 @@ Current writing guide: [commit discipline](docs/reference/commit-discipline.md),
 ### Independent dependency cancellation
 
 [Local dependency requests](docs/reference/local-dependency-requests.md) describes explicit-v2 cancellation and compatibility. [Qualification report](.aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/REPORT.md) records passing source/CLI/MCP checks, preserved failures and cooperative limits.
+
+- [Dependency session reconciliation](docs/reference/local-dependency-requests.md):
+  explicit paused-state renewal/rebinding; source qualification tracked by
+  [the WorkUnit](.aide/queue/AIDE-DEPENDENCY-REBIND-01/ExecPlan.md).

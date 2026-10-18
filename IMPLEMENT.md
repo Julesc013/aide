@@ -14074,3 +14074,9 @@ Reconciled the original 98b7b2dc repair in two-parent merge 4edf2b14, retaining 
 ### Independent dependency cancellation
 
 Implemented explicit-v2 cancellation through existing Requests/MCP owners. Original v1 behavior and 60 regressions remain unchanged; 13 new methods, one fresh-process consumer and six ownership checks passed. Existing exporter refreshed only manifest provenance; no payload or release bytes changed. All three jobs retired.
+
+### Dependency reconciliation prepared
+
+AIDE-DEPENDENCY-REBIND-01 adds read-only plan/explicit apply through existing
+Requests and CLI, preserving request/native history and rejecting stale plans.
+Qualification is pending; no live ledger or host effect has run.

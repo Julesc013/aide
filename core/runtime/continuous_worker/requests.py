@@ -5,6 +5,7 @@ Participant bindings are declarations; the local caller is not authenticated.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import re
@@ -20,6 +21,8 @@ STAGES = ("recorded", "delivered", "accepted", "returned", "adopted")
 CANCELLATION = ("cancellation_requested", "cancellation_acknowledged")
 DISPOSITIONS = ("not_started", "stopped", "already_completed", "uncertain")
 OBLIGATIONS = {"answer", "candidate", "validated", "integrated_dev", "promoted_main", "published"}
+RECONFIGURED = "dependency_reconfigured"
+SNAPSHOT_BYTES = 32 * 1024 * 1024
 
 
 def fields(value, names):
@@ -145,6 +148,107 @@ class Requests:
         binding = self.config["participants"].get(actor["participant"])
         if actor["participant"] != expected or binding is None or actor["binding_sha256"] != digest(binding):
             raise Refused("wrong participant or stale binding")
+
+    def _replacement(self, proposed):
+        configuration(proposed, self.state.root)
+        for name in ("schema", "state_root", "max_requests", "message_bytes"):
+            if proposed[name] != self.config[name]:
+                raise Refused("reconciliation cannot change schema, root or resource bounds")
+        if set(proposed["participants"]) != set(self.config["participants"]):
+            raise Refused("reconciliation cannot change participant identities")
+        for name, old in self.config["participants"].items():
+            new = proposed["participants"][name]
+            if any(new[key] != old[key] for key in ("repository", "owner", "workspace")):
+                raise Refused("reconciliation cannot transfer native ownership")
+            changed = any(new[key] != old[key] for key in ("host", "session"))
+            if new["generation"] != old["generation"] + int(changed):
+                raise Refused("replacement needs exactly one generation increment")
+        if proposed["expires_at"] < self.config["expires_at"] or proposed["expires_at"] <= self.now():
+            raise Refused("replacement expiry must be future-valid and never shortened")
+        if proposed == self.config:
+            raise Refused("configuration is unchanged")
+
+    def _reconciliation_guard(self):
+        row = self.state.db.execute("SELECT value FROM meta WHERE key=?", (CONFIG_KEY,)).fetchone()
+        if row is None or row[0] != canonical(self.config):
+            raise Refused("configuration changed")
+        if self.state.mode() != "pause-dispatch":
+            raise Refused("configuration reconciliation requires pause-dispatch")
+        if self.state.active() is not None:
+            raise Refused("native attempt still active; reconcile it first")
+        if self.state.db.execute("SELECT 1 FROM effects WHERE status != 'observed' LIMIT 1").fetchone():
+            raise Refused("native effect remains unresolved")
+
+    def _snapshot_digest(self):
+        """Stream a finite logical snapshot; caller holds the read/write transaction."""
+        result, size = hashlib.sha256(), 0
+        for table, key in (("meta", "key"), ("dependency_requests", "id"), ("tasks", "id"),
+                           ("attempts", "id"), ("effects", "id"), ("controls", "seq"), ("events", "seq")):
+            result.update((table + "\n").encode())
+            for row in self.state.db.execute(f"SELECT * FROM {table} ORDER BY {key}"):
+                raw = canonical(list(row)).encode("utf-8")
+                size += len(raw)
+                if size > SNAPSHOT_BYTES:
+                    raise Refused("reconciliation snapshot exceeds 32 MiB")
+                result.update(len(raw).to_bytes(8, "big"))
+                result.update(raw)
+        return result.hexdigest()
+
+    def _reconfiguration_plan(self, proposal):
+        bounded(proposal)
+        fields(proposal, "configuration decision evidence")
+        references([proposal["decision"]])
+        references(proposal["evidence"])
+        self._reconciliation_guard()
+        self._replacement(proposal["configuration"])
+        if self.state.db.execute("SELECT COUNT(*) FROM events WHERE kind=?", (RECONFIGURED,)).fetchone()[0] >= 16:
+            raise Refused("configuration reconciliation allowance exhausted")
+        plan = {"schema": "aide.dependency-reconfiguration-plan.v1",
+                "configuration_sha256": digest(self.config), **proposal,
+                "snapshot_sha256": self._snapshot_digest()}
+        bounded(plan)
+        return plan
+
+    def reconfiguration_plan(self, proposal):
+        """Read-only preview, including for an expired configuration; no authority grant."""
+        self.state.db.execute("BEGIN")
+        try:
+            return self._reconfiguration_plan(proposal)
+        finally:
+            self.state.db.execute("ROLLBACK")
+
+    def reconfigure(self, plan):
+        """Explicit cooperative administration. Never resumes or changes native ownership."""
+        bounded(plan)
+        fields(plan, "schema configuration_sha256 configuration decision evidence snapshot_sha256")
+        if plan["schema"] != "aide.dependency-reconfiguration-plan.v1":
+            raise Refused("unknown reconciliation plan schema")
+        identity(plan["configuration_sha256"], SHA)
+        identity(plan["snapshot_sha256"], SHA)
+        pin = digest(plan)
+        with self.state.transaction():
+            # Recovery is an observation of a committed receipt, not another apply.
+            for row in self.state.db.execute("SELECT body FROM events WHERE kind=? ORDER BY seq", (RECONFIGURED,)):
+                receipt = json.loads(row[0])
+                if receipt["plan_sha256"] == pin:
+                    current = self.state.db.execute("SELECT value FROM meta WHERE key=?", (CONFIG_KEY,)).fetchone()
+                    if receipt["plan"] != plan or current is None or current[0] != canonical(plan["configuration"]):
+                        raise Refused("reconciliation receipt was superseded or conflicts")
+                    return receipt
+            if plan["configuration_sha256"] != digest(self.config):
+                raise Refused("reconciliation needs the exact previous configuration")
+            proposal = {key: plan[key] for key in ("configuration", "decision", "evidence")}
+            if self._reconfiguration_plan(proposal) != plan:
+                raise Refused("reconciliation snapshot changed; inspect before replanning")
+            receipt = {"schema": "aide.dependency-reconfiguration-receipt.v1",
+                       "plan": plan, "plan_sha256": pin, "previous_configuration": self.config,
+                       "configuration_sha256": digest(plan["configuration"]),
+                       "bindings": {name: digest(binding) for name, binding in plan["configuration"]["participants"].items()},
+                       "mode": "cooperative", "execution_authorized": False,
+                       "limitation": "Recorded reconciliation only; no native ownership or host quiescence is inferred."}
+            self.state.db.execute("UPDATE meta SET value=? WHERE key=?", (canonical(plan["configuration"]), CONFIG_KEY))
+            self.state.event(None, RECONFIGURED, receipt)
+        return receipt
 
     def row(self, request_id):
         identity(request_id)

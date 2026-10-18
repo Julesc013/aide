@@ -1,0 +1,12 @@
+feat(requests): preserve work across explicit session reconciliation
+
+Bind a paused ledger snapshot to a reviewed configuration replacement.
+Retain requests and actor history, fence stale writers, and recover an
+already-applied plan through its immutable receipt without resuming work.
+
+Validation: PASS - syntax, exact scope and original test preservation
+ NOT RUN - 88 source methods and fresh CLI/MCP workflow
+Changelog: Added: Explicit cooperative dependency session reconciliation
+AIDE-Task: AIDE-DEPENDENCY-REBIND-01
+AIDE-Format: compact-v1
+Risk: Configuration declarations do not enforce native host quiescence

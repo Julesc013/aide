@@ -1,0 +1,26 @@
+{
+  "base": "32a9d56aca409b4891047a776fdf40399744a48c",
+  "files": {
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md": "dc2b0d5d3814c372fa55410274e55b7a4d53a4c05cf9a6fd23800e357c90c5a2",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml": "65c5d11caa57e8802ba8706d9b88a2f6b24181689881b5016b4d2e6708fe02d8",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/ExecPlan.md": "0c1af361964fe75f3b087bba0b5bc74d93a088e08c125291155a473e9681413a",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/source-job-template.json": "a4ecc84fd3086cf79860d81eb8831c66e65c2e98f8e3526bb3fcde97f8fd7bd1",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence/source-message.txt": "3fda77892916efbc8ff49a95bb2bc40bc106075ab2c13f1d36aa54580ea822f5",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/run_checks.py": "fcf06f9e2365e8723d1b9013663ab53c25cff405318f13ed2e7cfcecd4fb0cc3",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/status.yaml": "323ccae18f8c509117a57daf2ef6400688c0196905c2778c6ac6c12a886e201c",
+    ".aide/queue/AIDE-DEPENDENCY-REBIND-01/task.yaml": "00d8e98e95e33815736d99b2ee48dbb8b84072bec850cbbcfcbe4783c1e98b6c",
+    ".aide/queue/index.yaml": "70fea4faa927d42da644219ed17060412598d62046f0d43c8bd0953f865d8da4",
+    ".aide/scripts/tests/test_continuous_worker_request_rebinding.py": "004c1c6ca2f2236dcc208a24922f4fda213fd927957bda272df37ca11ebd0e25",
+    "DOCUMENTATION.md": "be78840ae0a1d0ff413f4cc2a9fd79c490c148ab6c61b98430ea4aa773a96d69",
+    "IMPLEMENT.md": "09b27a06827973b12f34dc8540c7d7a07fbf1e755772293a26e200f5c9d412e9",
+    "PLANS.md": "95047a3ed8c79e7eaa24315aca8037476cc1f3724854983f0000abc88597aabc",
+    "core/runtime/continuous_worker/__main__.py": "012b8c77d7eac30fb7882474d74e826e4f04bde59b37b19da0c557224670727b",
+    "core/runtime/continuous_worker/requests.py": "a2da4dd108dd1d02b61e65ea2c619d8156e9be5eb6210ca0d933a018ad7fa530",
+    "docs/reference/local-dependency-requests.md": "d1b3153a4807783ed1d10ed753ca6d30c0440f4ca2a3f539eaeb4ba071b0586b"
+  },
+  "message_sha256": "3fda77892916efbc8ff49a95bb2bc40bc106075ab2c13f1d36aa54580ea822f5",
+  "job_template_sha256": "a4ecc84fd3086cf79860d81eb8831c66e65c2e98f8e3526bb3fcde97f8fd7bd1",
+  "original_test_methods": 73,
+  "new_test_methods": 15,
+  "native_tests_run": false
+}

@@ -4168,3 +4168,10 @@ items:
     task: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/ExecPlan.md
     evidence: .aide/queue/AIDE-DEPENDENCY-CANCELLATION-01/evidence
+
+  - id: AIDE-DEPENDENCY-REBIND-01
+    title: Preserve pending requests across explicit session reconciliation
+    status: running
+    task: .aide/queue/AIDE-DEPENDENCY-REBIND-01/task.yaml
+    exec_plan: .aide/queue/AIDE-DEPENDENCY-REBIND-01/ExecPlan.md
+    evidence: .aide/queue/AIDE-DEPENDENCY-REBIND-01/evidence

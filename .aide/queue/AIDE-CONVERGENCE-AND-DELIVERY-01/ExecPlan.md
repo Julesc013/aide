@@ -886,3 +886,9 @@ methods, one actual CLI/MCP consumer, legacy refusal, six ownership checks and
 fixed preview passed. All three jobs retired. Source-only scope is retained;
 actual branch delivery is recorded separately. Pending publication refs remain
 preserved and its future effect must refresh stale ref guards.
+
+### Dependency session continuity
+
+AIDE-DEPENDENCY-REBIND-01 is admitted for explicit cooperative configuration
+reconciliation over existing request/state owners. Preserve native work, stale
+writer refusal and independent publication gates; see the child ExecPlan.

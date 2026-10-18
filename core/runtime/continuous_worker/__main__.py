@@ -43,6 +43,14 @@ def dependency_command(args):
             return Requests.initialize(state, payload)
         finally:
             state.close()
+    if args.command == "request-reconfigure":
+        if args.apply:
+            if not args.sha256 or hashlib.sha256(raw).hexdigest() != args.sha256:
+                raise Refused("reconciliation plan input digest mismatch")
+        elif args.sha256:
+            raise Refused("plan digest is only used with --apply")
+        with open_requests(root, args.configuration_sha256, write=args.apply) as requests:
+            return requests.reconfigure(payload) if args.apply else requests.reconfiguration_plan(payload)
     with open_requests(root, args.configuration_sha256,
                        write=args.command != "request-status") as requests:
         if args.command == "request-status":
@@ -55,13 +63,16 @@ def dependency_command(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
-    for name in ("request-init", "request-submit", "request-observe", "request-status"):
+    for name in ("request-init", "request-submit", "request-observe", "request-status", "request-reconfigure"):
         p = sub.add_parser(name, help="cooperative local records; no worker dispatch")
         p.add_argument("--state-root", type=Path, required=True)
         if name == "request-init":
             p.add_argument("--sha256", required=True)
         else:
             p.add_argument("--configuration-sha256", required=True)
+        if name == "request-reconfigure":
+            p.add_argument("--apply", action="store_true", help="apply the exact previously inspected plan")
+            p.add_argument("--sha256", help="raw plan file digest required for apply")
         if name == "request-status":
             p.add_argument("--request-id", required=True)
         else:

@@ -33,10 +33,11 @@ configuration (replace all identities, root, expiry and limits deliberately):
 }
 ```
 
-`expires_at` is an absolute Unix timestamp, not a renewable lease. The first
-profile refuses changed configuration/bindings in place. Expiry does not release
-any workspace owner. Configuration/binding replacement still needs a separately
-reconciled interface; do not create another database to evade outstanding work.
+`expires_at` is an absolute Unix timestamp, not an automatically renewed lease.
+Initialization refuses changed configuration/bindings in place. Expiry does not
+release any workspace owner. Use the explicit reconciliation operation below
+for a reviewed expiry extension or session replacement; do not create another
+database to evade outstanding work.
 For independent cancellation, initialize an explicitly approved new ledger with
 `aide.dependency-configuration.v2` and the same fields. Existing v1 ledgers refuse
 cancellation; changing their configuration in place also refuses. Older readers
@@ -55,6 +56,7 @@ Invoke `python -B -m core.runtime.continuous_worker` with:
 | `request-submit` | `--state-root ROOT --configuration-sha256 DIGEST --input MESSAGE` | Records one immutable request or returns the existing identical request |
 | `request-observe` | Same common arguments and a MESSAGE | Records one attributed, revision-bound stage observation |
 | `request-status` | `--state-root ROOT --configuration-sha256 DIGEST --request-id ID` | Opens the database read-only and returns the current record, limitations and next action |
+| `request-reconfigure` | `--state-root ROOT --configuration-sha256 DIGEST --input PROPOSAL` | Read-only reconciliation plan; explicit apply uses the returned PLAN plus `--apply --sha256 RAW_PLAN_SHA256` |
 
 All outputs are JSON. Refusal exits 2. These commands require direct access to the
 local state, so this is a cooperative trusted-caller profile, not a multi-user
@@ -136,6 +138,57 @@ operations do not stop a process, cancel an inference request, release a workspa
 grant authority, or independently verify effects. Paused/expired controls refuse
 new observations; retained status stays readable. Disconnection does not cancel.
 V1 status and ordinary behavior retain their existing shape and meaning.
+
+**Explicit session reconciliation (source CLI)**
+
+The same ledger can preserve pending work across expiry renewal or replacement
+of a declared host/session. This operation is deliberately absent from participant
+MCP tools. Its operator-facing placement is not authentication: direct filesystem
+access remains a trusted cooperative boundary.
+
+First reconcile native work and external effects under their owners' authority.
+Then use the existing `pause-dispatch` control. Both preview and apply require
+that mode, no active native attempt and no unresolved effect intent. Neither
+operation stops an external editor, proves quiescence or transfers a workspace.
+
+The PROPOSAL contains exactly `configuration` (the proposed complete configuration),
+`decision` (one attributed native decision reference) and `evidence` (one to 32
+references). References have the same `ref`/`sha256` shape used above; the command
+does not open them or certify their claims. Keep schema, state root, participant
+names, repository, owner, workspace and resource bounds unchanged. A changed
+host/session requires exactly one generation increment; unaffected bindings keep
+their generation. The resulting expiry must be future-valid and never shortened.
+An otherwise identical configuration refuses as a no-op. V1/v2 schema conversion,
+workspace relocation and ownership transfer are outside this operation.
+
+Preview opens a consistent read transaction and returns an
+`aide.dependency-reconfiguration-plan.v1` object. It binds the current configuration,
+proposal/decision and a streamed digest of sorted logical ledger rows, including
+full control and event history. It contains no ledger dump. A 32 MiB snapshot limit
+and 16 reconciliation limit bound this profile; exceeding them requires a separately
+reviewed continuation path, never deletion of records to evade a bound.
+
+Inspect the plan and supply that exact file with `--apply` and its raw SHA256.
+Apply rechecks inside one immediate transaction, preserves all dependency/native
+records, replaces only the configuration and appends an immutable receipt to
+existing events. A pause/resume/pause cycle, changed request, native state or
+event invalidates an unapplied plan. The coordinator remains paused. Resume is a
+separate existing operator action after checking the replacement's actual route.
+
+After a lost response, the plan already contains both configuration identities.
+Try the exact plan with the proposed configuration's canonical digest as the CLI
+pin: if that plan is committed and still current, it returns the original receipt
+without another event, even if later ordinary work progressed. If the old pin is
+still current, inspect and revalidate before apply. Conflicting or superseded plans
+refuse. Do not initialize a replacement database or assume a failed response means
+the operation did not happen.
+
+All old configuration pins refuse on fresh CLI/MCP calls, and cached writers
+recheck before mutation even after explicit resume. Retained observations keep
+their original actor bindings; the new session continues unfinished stages.
+Reconciliation grants no execution authority, native effect verification or
+automatic worker wake-up. Native tests and their exact scope are recorded in the
+[reconciliation WorkUnit](../../.aide/queue/AIDE-DEPENDENCY-REBIND-01/ExecPlan.md).
 
 **Cooperative MCP tools (qualified local profile)**
 
