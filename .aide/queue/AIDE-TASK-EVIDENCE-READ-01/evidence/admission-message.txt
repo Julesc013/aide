@@ -1,0 +1,11 @@
+fix(task): admit bounded inspection of larger evidence
+
+Task views reject preserved qualification receipts above the YAML record
+budget, losing paths and recommending unnecessary record reconciliation.
+Keep record limits and use a separate finite streaming evidence budget.
+
+Validation: PASS - actual receipt sizes and reader behavior inspected
+ NOT RUN - source, delivered and installed regression checks
+Changelog: Internal: Admit bounded task evidence reader correction
+AIDE-Task: AIDE-TASK-EVIDENCE-READ-01
+AIDE-Format: compact-v1

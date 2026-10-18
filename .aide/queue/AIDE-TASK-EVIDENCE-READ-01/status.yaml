@@ -1,0 +1,8 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-TASK-EVIDENCE-READ-01
+status: needs_review
+result: ADMISSION_CANDIDATE
+product_qualified: false
+next_action: independent bounded admission review
+jobs_allocated: 0
+maximum_jobs: 3

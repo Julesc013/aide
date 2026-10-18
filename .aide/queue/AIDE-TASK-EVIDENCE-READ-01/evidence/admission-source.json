@@ -1,0 +1,16 @@
+{
+  "base": "bbc80a8cac1f278eccbc236e40f71144db7f88d3",
+  "files": {
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/ExecPlan.md": "a926143f61d6aa1d67b1ddbe698c59af6ab300190bec38ebf6a51b4f8666c95e",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/admission-effect.md": "236b77dd0c1a947d828d7ad7dd815c5fe6ace69ae1683a87f185847bd52e4c04",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/admission-message.txt": "be3d04c560ca0f0cdf9218f76511351c3a0239d9d40e848c475efc188d0167fb",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/baseline.json": "6dd7ae5983f099151cd1c1e488f514fdecebfa5a9ccd59c4e9c2f2b6229a850a",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/observed-before.json": "6928591c1a69019afaf028f137075aec49895bcb2f8974c3fb88102a90700bd9",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/evidence/preflight.json": "2e147f1f694bf6769c75f90cbe870a51a1e68f088cfd06b4bf77bf0a85dc3525",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/prompt.md": "5d0811fcfddb6431139896a97934f95909c5445c4b9431c2e97932c10569be4e",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/status.yaml": "88e942edf1f74783cfa777f21a68e9f3fd36245292a3ef8f5f0ab1a56489ca33",
+    ".aide/queue/AIDE-TASK-EVIDENCE-READ-01/task.yaml": "b764f70398b20939c46f258681ea715c791cb2d6a9eb1d8a389daa9153bf584f"
+  },
+  "effect_sha256": "236b77dd0c1a947d828d7ad7dd815c5fe6ace69ae1683a87f185847bd52e4c04",
+  "message_sha256": "be3d04c560ca0f0cdf9218f76511351c3a0239d9d40e848c475efc188d0167fb"
+}
