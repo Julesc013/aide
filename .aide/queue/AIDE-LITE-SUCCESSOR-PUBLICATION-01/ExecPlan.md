@@ -1,5 +1,11 @@
 ### Publish the qualified Lite successor
 
+**Current - 18 October 2026.** GitHub CLI authentication is established. The publication branch is reconciled with current dev; 1.0.0 presentation correction passed exact readback, preserving tag and asset identities. Frozen 1.1.0 remains qualified and unpublished. The user now requires README/docs/TODO/PLANS/ROADMAP/changelog reconciliation before every tag, logical public Markdown paragraphs, concise release sections and human download labels.
+
+**Next.** Review the prepared documentation/default checklist and one finite development-export/preview allocation. Then integrate the qualified documentation checkpoint into dev/main, refresh exact tag/publication effects and publish the four frozen assets with labels. Complete the one original acquired-byte consumer and update current outcomes. The new tag must cover the reviewed documentation checkpoint while explicitly identifying the original frozen payload source in the manifest; the old historical-ancestor tag proposal below is superseded.
+
+**Preserved plan.** The original preparation and its original prerequisites follow as historical context. [Resumption amendment](evidence/resumption-amendment.md) governs the changed scope and ordering; each source/effect still needs exact independent acceptance.
+
 **Objective.** Deliver frozen 1.1.0 and prove acquisition works, then continue the
 newer adopter-default release separately. The previous goal turn made progress:
 dfae9356 was integrated, combined source/pack qualified and dev/main synced at8fe2d12.

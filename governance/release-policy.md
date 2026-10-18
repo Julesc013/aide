@@ -1,55 +1,38 @@
-# AIDE Release Policy
+### Release policy
 
-## Current Phase
+**Current product state:** AIDE Lite 1.0.0 is published for its recorded local Windows CLI profile. Frozen 1.1.0 is technically qualified and awaits publication and acquired-byte acceptance. The [changelog](../CHANGELOG.md), [current campaign](../.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md) and exact release evidence distinguish package delivery from newer development and the unfinished platform.
 
-The repository has implemented and integrated AIDE Lite source, but has not
-qualified or published a stable AIDE release. `dev` is integration progress;
-`main` and an immutable release tag require separate exact review and evidence.
-The first stable Lite profile is a bounded Windows local CLI and portable-pack
-contract target, not a whole-product readiness claim.
+**Before every new tag**
 
-## Phase Gate
+1. Reconcile the README, relevant docs, root TODO, PLANS, ROADMAP and CHANGELOG with the exact intended release. Preserve historical records and classify remaining work accurately.
+2. Confirm the public contract, version, qualified profile, predecessor/migration obligations, source and artifact identities, applicable checks and independent review. Resolve contradictory current claims before tagging.
+3. Review concise release notes and human download labels. Use one physical line per paragraph or bullet in public Markdown; preserve structural breaks, code and explicitly required vintage-format exports. Let the renderer wrap prose.
+4. Integrate the reviewed checkpoint through the project’s authorized Git workflow. Reobserve source/tree, refs, assets, permissions and the exact tag effect immediately before mutation.
+5. Publish immutable assets, verify remote tag/release/asset identities, download the deliverables and complete applicable consumer acceptance. Refresh the current docs/checklist with observed outcomes.
 
-- Continue implementation through bounded queue WorkUnits and the applicable
-  independent technical gates. A contract or local preview does not qualify
-  release behavior.
-- Stable publication requires a reviewed public compatibility and version
-  rule, exact supported profile, final source and asset identity, mandatory
-  behavioral/consumer evidence, and a separate release-effect review.
-- Host, native, hosted, model-enabled, and non-Windows lifecycle apply claims
-  require their own evidence; they are not inherited from Lite qualification.
+These are the default AIDE-managed release requirements, including adopting projects. Project-owned document mappings and stronger rules take precedence; identify an absent or inapplicable surface explicitly rather than invent completed work. The filesystem queue owns work and acceptance; TODO is a compact navigation/checklist surface, PLANS holds detailed execution intent, and ROADMAP preserves direction. A report or preview never authorizes publication.
 
-## Release Naming Rule
+**Versions and names**
 
-- Release artifacts may contain exact version names, release channels, or target identifiers when that makes the deliverable precise.
-- This does not change the source naming law: source directories remain based on compatibility technology or host contract rather than exact versions.
+| Identity | Default |
+| --- | --- |
+| Product version | SemVer for an independently released deliverable and its declared public contract. |
+| Lite tag / title | `aide-lite-v1.1.0` / **AIDE Lite 1.1.0**. |
+| Prerelease | `aide-lite-v1.2.0-rc.1` / **AIDE Lite 1.2.0 RC 1**, when actually qualified and admitted. |
+| Bundled components and archive formats | Share the product release version. |
+| Independent extensions/runtimes | Separate versions only when independently packaged, released and governed by their own compatibility contract. |
+| Whole repository source | Exact Git commit/tree; no separate numerical version for every internal module. |
+| Schemas, protocols and profiles | Their own compatibility identities, recorded in the release manifest. |
 
-## Historical Phase Order
+Use patch versions for compatible fixes, minor versions for compatible additions and major versions for incompatible public-contract changes with reviewed migration/refusal and recovery. A commit type or breaking marker does not itself authorize a version bump. Source directories retain compatibility-technology names rather than release/version ranges.
 
-The bootstrap plan ordered work as follows; this list is historical context,
-not a current release gate or a claim that every phase is complete:
+**Release presentation and provenance**
 
-1. inventory
-2. matrix
-3. scaffold
-4. harness
-5. shared core
-6. adapters
-7. environments
-8. evals
-9. packaging
+- Keep the GitHub title short: product and version. Start the body with a useful summary, then a few H3/H4 sections, grouped change bullets, downloads, upgrade guidance and material limitations. Do not repeat the release title in the body.
+- Give every downloadable deliverable a clear display label and a stable, machine-friendly filename. Identify platform/architecture only when it distinguishes real payloads. A label change must preserve asset identity and content.
+- Record tag object/target/tree, payload source/tree, exact hashes and qualification separately. A frozen package may retain an earlier payload source when the reviewed tag identifies a later qualification/publication checkpoint; make the distinction explicit. GitHub’s automatic source archives are repository snapshots, not the portable install package.
+- Published package bytes and existing tags are immutable. Presentation-only metadata corrections require a scoped review, preserved preimages and readback; they must not replace assets, rename files, retag or imply fresh product qualification.
+- Support claims bind exact profiles and evidence. Lite acceptance does not confer host, native, hosted, model-enabled or non-Windows lifecycle support, whole-session containment or measured whole-outcome savings.
+- Keep Q47/Q48 local bundles and drafts marked preview-only. Signing, notarization, protection changes and publication effects need their own actual authority and evidence.
 
-## Governance Rule
-
-- Governance and release policy are binding during this phase.
-- No release artifact should imply broad compatibility before inventory, matrices, evals, and packaging evidence exist.
-- Q47/Q48 local bundles and drafts remain preview-only, no-publish evidence.
-  A later frozen release-effect WorkUnit must verify the published bytes and
-  downloaded consumers before a stable claim is complete.
-- `release stable-build --version 1.0.0` creates a separate first-stable
-  **candidate** from a clean validated pack under `.aide/release/stable/`.
-  It embeds version, profile, source and policy identity in the archives and
-  validates their hashes and safe extraction. This command does not publish,
-  create a tag or convert Q47/Q48 preview outputs into public assets. The
-  release-effect WorkUnit must still pass final consumers and independent
-  technical `ACCEPT` before delegated external effects.
+**History:** the bootstrap sequence—inventory, matrices, scaffolding, harness, shared core, adapters, environments, evaluations and packaging—remains planning history. Current releases proceed through the qualified capability and contract gates above.

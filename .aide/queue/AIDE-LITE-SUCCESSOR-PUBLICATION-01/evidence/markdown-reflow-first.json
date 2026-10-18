@@ -1,0 +1,79 @@
+{
+  "README.md": {
+    "before_sha256": "aa260994388b7ff1f53a68263e47d5d51c4a858ee917d2a181e3c55a00cf580f",
+    "after_sha256": "aa260994388b7ff1f53a68263e47d5d51c4a858ee917d2a181e3c55a00cf580f",
+    "before_lines": 580,
+    "after_lines": 580,
+    "tokens_and_fenced_blocks_preserved": true
+  },
+  "PLANS.md": {
+    "before_sha256": "0b932db5375f9f26124e4885c83aab7a46da2c92833770822d8a8246d65a4084",
+    "after_sha256": "0b932db5375f9f26124e4885c83aab7a46da2c92833770822d8a8246d65a4084",
+    "before_lines": 5422,
+    "after_lines": 5422,
+    "tokens_and_fenced_blocks_preserved": true
+  },
+  "IMPLEMENT.md": {
+    "before_sha256": "436d8f05a188e369c42c15592f716470a89c3a0f27b1dba66f2c872186eb3a45",
+    "after_sha256": "436d8f05a188e369c42c15592f716470a89c3a0f27b1dba66f2c872186eb3a45",
+    "before_lines": 14170,
+    "after_lines": 14170,
+    "tokens_and_fenced_blocks_preserved": true
+  },
+  "DOCUMENTATION.md": {
+    "before_sha256": "6b04cc29a7571bd1ddd1961816f55672b58d8e906c4ad8ae8955415ba59a2023",
+    "after_sha256": "6b04cc29a7571bd1ddd1961816f55672b58d8e906c4ad8ae8955415ba59a2023",
+    "before_lines": 1379,
+    "after_lines": 1379,
+    "tokens_and_fenced_blocks_preserved": true
+  },
+  "ROADMAP.md": {
+    "before_sha256": "f5380cbbb0e04e1dbdbec3957d8112fe21200fe4a5183d83105f01f2949905f2",
+    "after_sha256": "f5380cbbb0e04e1dbdbec3957d8112fe21200fe4a5183d83105f01f2949905f2",
+    "before_lines": 169,
+    "after_lines": 169,
+    "tokens_and_fenced_blocks_preserved": true
+  },
+  "CHANGELOG.md": {
+    "before_sha256": "fd3c59ca0bf29c79523c1b15953aae75c8dc44f68580c857015cfa51c912a6ed",
+    "after_sha256": "fd3c59ca0bf29c79523c1b15953aae75c8dc44f68580c857015cfa51c912a6ed",
+    "before_lines": 31,
+    "after_lines": 31,
+    "tokens_and_fenced_blocks_preserved": true
+  },
+  "TODO.md": {
+    "before_sha256": "e771f1fc26461b10c5de918da92b0a5e42a1178cd467d2c88b0ffcad022c5189",
+    "after_sha256": "e771f1fc26461b10c5de918da92b0a5e42a1178cd467d2c88b0ffcad022c5189",
+    "before_lines": 29,
+    "after_lines": 29,
+    "tokens_and_fenced_blocks_preserved": true
+  },
+  "docs/reference/commit-discipline.md": {
+    "before_sha256": "6724a751d1df836865585002b9cb60a0280def58d08a19e2c93036070d931a29",
+    "after_sha256": "6724a751d1df836865585002b9cb60a0280def58d08a19e2c93036070d931a29",
+    "before_lines": 269,
+    "after_lines": 269,
+    "tokens_and_fenced_blocks_preserved": true
+  },
+  "docs/reference/git-workflow-policy.md": {
+    "before_sha256": "e07c0aefc22731eb7f5c893b5b31334a4166e1b3552b645f4a29dc7dbb558b07",
+    "after_sha256": "e07c0aefc22731eb7f5c893b5b31334a4166e1b3552b645f4a29dc7dbb558b07",
+    "before_lines": 116,
+    "after_lines": 116,
+    "tokens_and_fenced_blocks_preserved": true
+  },
+  "governance/release-policy.md": {
+    "before_sha256": "ef2b3cd4e14d73b14182de88a8e09b27f4045cf98c93a7fb3cfabb9cf5c6e7e4",
+    "after_sha256": "ef2b3cd4e14d73b14182de88a8e09b27f4045cf98c93a7fb3cfabb9cf5c6e7e4",
+    "before_lines": 38,
+    "after_lines": 38,
+    "tokens_and_fenced_blocks_preserved": true
+  },
+  "packaging/release-policy.md": {
+    "before_sha256": "0b75ae5f47be3da231f9e924aee15d44f1705b11fd21f93aa291d274cd4c141b",
+    "after_sha256": "0b75ae5f47be3da231f9e924aee15d44f1705b11fd21f93aa291d274cd4c141b",
+    "before_lines": 15,
+    "after_lines": 15,
+    "tokens_and_fenced_blocks_preserved": true
+  }
+}

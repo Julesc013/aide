@@ -1,18 +1,15 @@
-# Packaging And Release Policy
+### Packaging and release shape
 
-## Current Phase
+AIDE Lite has a published portable package for its exact local Windows CLI profile. Other host, native-extension and service shapes remain declarations or planned capabilities until their own build, compatibility, consumer and release evidence exists. [Release policy](../governance/release-policy.md) governs versions, pre-tag documentation, publication and acquired-byte acceptance.
 
-The repository is still in a pre-product and bootstrap phase. This phase defines packaging and release shape only. It does not create packaging automation, signed artifacts, or release binaries.
+**Deliverables**
 
-## Phase Rules
+- ZIP and TAR.GZ archives may carry the same portable payload; use one product version and verify both exact identities.
+- Manifests and checksum files accompany the downloadable packages. Retain stable machine filenames and meaningful human display labels.
+- A release title identifies product/version once. The body presents grouped changes, upgrade instructions, downloads and relevant limitations with logical paragraphs and compact lists.
+- Packaging matrices and catalogs describe maintenance/support posture; they do not establish shipment, signing or parity.
+- Historical and archival lanes may use different packaging or fixed-width transport profiles. Apply those requirements to explicit outputs rather than hard-wrapping canonical public Markdown.
 
-- Packaging records may define artifact classes, manifest placeholders, release channels, and signing posture.
-- Packaging records must not imply that artifacts are currently built or shipped unless actual release work later records them.
-- Release records belong in this area only when they reflect real packaging activity.
-- Future phases may add manifests, signing flows, notarization procedures, and actual artifact generation when implementation maturity supports them.
+**Ownership and preservation:** project customization, task history, evidence and unknown ownership remain protected by the applicable lifecycle contracts. New pack contents or metadata do not silently widen support. Preserve frozen/public artifacts and their provenance; new bytes require a new qualified subject.
 
-## Repository Posture
-
-- Final release artifacts are not stored in Git by default.
-- Packaging matrices and catalogs express posture, not shipment.
-- Historical or archival lanes may use different release shapes than modern native-extension lanes.
+The original bootstrap packaging placeholders remain history. Actual release records must identify what was built, qualified, published and acquired.

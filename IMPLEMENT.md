@@ -2,49 +2,20 @@
 
 ## Selected-task context - 2026-10-18
 
-[Context qualification](.aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/REPORT.md)
-records source 61, delivered 60, ownership 6 and exact preview passes. The existing
-resolver now provides consistent recorded selection, status and uncertainty to
-context packets. All three jobs retired; the original wrapper failure is retained.
-Two payload files changed in the 862-member pack; the reference remains source-only.
-Published 1.0.0 and live context outputs are unchanged. Reviewed effects and actual
-Git refs establish integration; this qualification is not a new release.
+[Context qualification](.aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/REPORT.md) records source 61, delivered 60, ownership 6 and exact preview passes. The existing resolver now provides consistent recorded selection, status and uncertainty to context packets. All three jobs retired; the original wrapper failure is retained. Two payload files changed in the 862-member pack; the reference remains source-only. Published 1.0.0 and live context outputs are unchanged. Reviewed effects and actual Git refs establish integration; this qualification is not a new release.
 
 ## Outcome conservation - 2026-10-18
 
-[Outcome qualification](.aide/queue/AIDE-OUTCOME-CONSERVATION-01/REPORT.md) records
-source20, delivered20, ownership6 and exact promotion-preview passes. The portable
-CLI preserves project metadata and refuses lossy ledger updates. All three jobs are
-retired; the original failed fixture run remains. Four payloads changed; published1.0
-and the live ledger remain unchanged. Exact reviewed effects and observed Git refs
-determine integration; this record establishes qualification, not a new release.
+[Outcome qualification](.aide/queue/AIDE-OUTCOME-CONSERVATION-01/REPORT.md) records source20, delivered20, ownership6 and exact promotion-preview passes. The portable CLI preserves project metadata and refuses lossy ledger updates. All three jobs are retired; the original failed fixture run remains. Four payloads changed; published1.0 and the live ledger remain unchanged. Exact reviewed effects and observed Git refs determine integration; this record establishes qualification, not a new release.
 
 ## Test-impact observation - 2026-10-18
 
-[AIDE-IMPACT-COVERAGE-01](.aide/queue/AIDE-IMPACT-COVERAGE-01/ExecPlan.md)
-corrects missing-base empty/T0 advice in the existing report-only planner. It keeps
-known paths, identifies incomplete observation and requests reconciliation; heuristic
-mapping remains explicit. Source13, delivered13 and ownership6 pass without skips.
-The original failed alias-fixture attempt is retained; its subject now uses the
-admitted source or validated export with every assertion preserved. Doctor, structural
-validation and pack-status pass. Four portable payload files changed; published1.0
-bytes are unchanged. The fixed three-commit preview passes with six exact outputs.
-All three jobs are retired; the original failure is preserved. Final integration
-is governed by the exact closure review and observed branch receipt.
+[AIDE-IMPACT-COVERAGE-01](.aide/queue/AIDE-IMPACT-COVERAGE-01/ExecPlan.md) corrects missing-base empty/T0 advice in the existing report-only planner. It keeps known paths, identifies incomplete observation and requests reconciliation; heuristic mapping remains explicit. Source13, delivered13 and ownership6 pass without skips. The original failed alias-fixture attempt is retained; its subject now uses the admitted source or validated export with every assertion preserved. Doctor, structural validation and pack-status pass. Four portable payload files changed; published1.0 bytes are unchanged. The fixed three-commit preview passes with six exact outputs. All three jobs are retired; the original failure is preserved. Final integration is governed by the exact closure review and observed branch receipt.
 
 
 ## Current memory correction - 2026-10-18
 
-[Current-memory work](.aide/queue/AIDE-CURRENT-MEMORY-01/ExecPlan.md) replaces obsolete
-Q36 routing in packet-referenced source memory with canonical task and release
-references. [Project state](.aide/memory/project-state.md) and
-[open risks](.aide/memory/open-risks.md) distinguish the published Lite profile from
-unfinished platform work. Historical decisions, target templates and product bytes
-are preserved. Targeted checks, doctor and full structural validation pass after one reviewed
-ledger refresh; classification is unchanged. The fixed one-commit promotion
-preview passes and its sole job is retired. Exact closure review and observed
-integration are recorded separately; original failures and the historical warning
-remain in the child evidence.
+[Current-memory work](.aide/queue/AIDE-CURRENT-MEMORY-01/ExecPlan.md) replaces obsolete Q36 routing in packet-referenced source memory with canonical task and release references. [Project state](.aide/memory/project-state.md) and [open risks](.aide/memory/open-risks.md) distinguish the published Lite profile from unfinished platform work. Historical decisions, target templates and product bytes are preserved. Targeted checks, doctor and full structural validation pass after one reviewed ledger refresh; classification is unchanged. The fixed one-commit promotion preview passes and its sole job is retired. Exact closure review and observed integration are recorded separately; original failures and the historical warning remain in the child evidence.
 
 
 ## Lite successor candidate - 2026-10-18
@@ -71,732 +42,266 @@ Completed one real cooperative review exchange at b7eb79cf using unchanged quali
 
 Extract conservative database preflight/opening for reuse by CLI and participant-bound MCP tools. Add inbox discovery without acknowledgements; preserve existing lifecycle authority and every regression. Exact source/effect review admitted job eb166a5c: all 60 methods passed without skips. Outgoing frame limits were corrected before the first run. Collection and retirement are verified; no live configuration, initialization or peer contact occurred.
 
-Metadata closure11d03c41 passed with all payload/checksum bytes unchanged. Both
-managed jobs are retired. The separately admitted promotion-only job ac48e888
-passed current preview generation and exact regeneration. Independently reviewed
-2194eb6b reached local/remote dev/main; its task branch was retired. Installed
-desktop delivery and native adoption remain open.
+Metadata closure11d03c41 passed with all payload/checksum bytes unchanged. Both managed jobs are retired. The separately admitted promotion-only job ac48e888 passed current preview generation and exact regeneration. Independently reviewed 2194eb6b reached local/remote dev/main; its task branch was retired. Installed desktop delivery and native adoption remain open.
 
 ## Local dependency interface candidate - 2026-10-17
 
-The existing continuous-worker state gains opt-in dependency records through one
-module and CLI. Immutable bindings, revision-bound observations, duplicate-safe
-transactions, finite records and separate return/adoption are implemented as a
-candidate. After independent source/effect review, job 897faaa5 passed 47 methods
-without skips. The first failed run remains preserved; SQLite refusal sidecars
-and fixture connection cleanup were repaired. No live initialization or peer
-delivery occurred. Existing tasks, attempts, effects and broker gates retain
-their owners. Pack closure passed in bf4cc1a7: ownership, full validation, actual
-delivered-State consumer and changelog checks. Published assets are unchanged.
-Exact integration evidence is retained with the task.
+The existing continuous-worker state gains opt-in dependency records through one module and CLI. Immutable bindings, revision-bound observations, duplicate-safe transactions, finite records and separate return/adoption are implemented as a candidate. After independent source/effect review, job 897faaa5 passed 47 methods without skips. The first failed run remains preserved; SQLite refusal sidecars and fixture connection cleanup were repaired. No live initialization or peer delivery occurred. Existing tasks, attempts, effects and broker gates retain their owners. Pack closure passed in bf4cc1a7: ownership, full validation, actual delivered-State consumer and changelog checks. Published assets are unchanged. Exact integration evidence is retained with the task.
 
 ## Native DiskEd adoption candidate - 2026-10-17
 
-The existing candidate remains unchanged. Bounded native request/grant/handoff
-postimages passed native validation and 872 structural checks in job a08f6eca.
-The initial Git preflight failure is preserved; both jobs retired. Target unchanged.
+The existing candidate remains unchanged. Bounded native request/grant/handoff postimages passed native validation and 872 structural checks in job a08f6eca. The initial Git preflight failure is preserved; both jobs retired. Target unchanged.
 
 ## Portable Git default candidate - 2026-10-17
 
-Generic policy and guidance now express frequent validated integration, optional
-main hosting protection, normally unprotected dev and local short-lived task
-branches. GitHub advisory choices read project policy rather than hard-coded
-main/dev protection, exposing malformed or missing choices. Existing settings
-remain unchanged. All nine new behavior methods and 38 other methods have passing
-evidence. The pack is rebuilt and validated; original failures remain preserved.
-The dependent installed-queue repair and actual default/customized-update proof
-now pass. Original attempts and their failures remain; all jobs are retired.
-Exact independent review accepted tree cb3aa255; c02228d0 then reached local and
-remote dev/main by checked nonforce fast-forwards. The durable integration receipt
-records both effects. No published release was changed.
+Generic policy and guidance now express frequent validated integration, optional main hosting protection, normally unprotected dev and local short-lived task branches. GitHub advisory choices read project policy rather than hard-coded main/dev protection, exposing malformed or missing choices. Existing settings remain unchanged. All nine new behavior methods and 38 other methods have passing evidence. The pack is rebuilt and validated; original failures remain preserved. The dependent installed-queue repair and actual default/customized-update proof now pass. Original attempts and their failures remain; all jobs are retired. Exact independent review accepted tree cb3aa255; c02228d0 then reached local and remote dev/main by checked nonforce fast-forwards. The durable integration receipt records both effects. No published release was changed.
 
 ## Bounded current-task projection source outcome - 2026-10-17
 
-Existing task-current command gains one bounded observation for human and JSON
-views, with explicit named selection, public field provenance and uncertain evidence
-applicability. Original binding/Task OS tests are unchanged; new behavioral oracles
-cover refusal, stale/malformed state and no-write observation. The first run's
-eight fixture setup errors remain; its 29 original passes are conserved. The final
-run passed 22 affected methods and three CLI smokes. Both jobs retired cleanly;
-no package or target claim. The parent also records the owner's portable Git
-defaults request as the next bounded child proposal, not an applied remote policy.
+Existing task-current command gains one bounded observation for human and JSON views, with explicit named selection, public field provenance and uncertain evidence applicability. Original binding/Task OS tests are unchanged; new behavioral oracles cover refusal, stale/malformed state and no-write observation. The first run's eight fixture setup errors remain; its 29 original passes are conserved. The final run passed 22 affected methods and three CLI smokes. Both jobs retired cleanly; no package or target claim. The parent also records the owner's portable Git defaults request as the next bounded child proposal, not an applied remote policy.
 
 ## Conserved native test results and completed continuation - 2026-10-17
 
-Reviewed repair9ce7d46d corrects task-local test accounting only. Final job09544ef0
-passes remaining manifest/context/export/controlled-stop/resume/default checks,
-reusing the exact original160-case result (158pass,2original skips). Original
-overall exit1 remains. Collections,24stage streams, retirement and unchanged
-DiskEd235files/cleanbase verified. No target/source-postimage/test-oracle change,
-model call or fourth job. See the child REPORT and native-final-result; exact
-terminal review ACCEPT is recorded and real target application is separately gated.
+Reviewed repair9ce7d46d corrects task-local test accounting only. Final job09544ef0 passes remaining manifest/context/export/controlled-stop/resume/default checks, reusing the exact original160-case result (158pass,2original skips). Original overall exit1 remains. Collections,24stage streams, retirement and unchanged DiskEd235files/cleanbase verified. No target/source-postimage/test-oracle change, model call or fourth job. See the child REPORT and native-final-result; exact terminal review ACCEPT is recorded and real target application is separately gated.
 
 ## Native consumer postimages and acquisition preparation - 2026-10-13
 
-Parent77f06858 records independently accepted preparation a18773ae. New bounded
-child prepares three DiskEd postimages inside AIDE only; exporter/CLI selector,
-five tests and existing tool contract. Original69method bodies are unchanged;
-AST/pins and Harness149checks PASS. Seven631366-byte public wheel inputs and a
-nonexecuting acquisition wrapper are frozen for review. No packages/jobs/target
-effects yet. Existing stale capability failure is retained and its derived owner
-refreshed in scope; no production/policy/export change.
+Parent77f06858 records independently accepted preparation a18773ae. New bounded child prepares three DiskEd postimages inside AIDE only; exporter/CLI selector, five tests and existing tool contract. Original69method bodies are unchanged; AST/pins and Harness149checks PASS. Seven631366-byte public wheel inputs and a nonexecuting acquisition wrapper are frozen for review. No packages/jobs/target effects yet. Existing stale capability failure is retained and its derived owner refreshed in scope; no production/policy/export change.
 
 ## Installed fixture acceptance and conservation - 2026-10-13
 
-All22actual stages/eight reports and exact original17PASS reuse received independent
-ACCEPT; terminal commita90f1330 passes structured checks. Preserve original overall
-failure and every actual source/effect/result. No further jobs under this child.
-Real target/native authority, broader recovery, whole cost and release remain open.
+All22actual stages/eight reports and exact original17PASS reuse received independent ACCEPT; terminal commita90f1330 passes structured checks. Preserve original overall failure and every actual source/effect/result. No further jobs under this child. Real target/native authority, broader recovery, whole cost and release remain open.
 
 ## Actual installed fixture qualification - 2026-10-12
 
-Final jobc4a7aaa7 passes imported named task/scope/refusal, preserved work, TaskOS
-and default review evidence with same-task separate-process continuity. Original
-17PASS and overall first failure remain; no duplicated test execution. Full22stage
-streams/eight reports/collection verified; scratch/reservation retired. Outcome
-review required, no general client/real-target/platform/release qualification.
+Final jobc4a7aaa7 passes imported named task/scope/refusal, preserved work, TaskOS and default review evidence with same-task separate-process continuity. Original 17PASS and overall first failure remain; no duplicated test execution. Full22stage streams/eight reports/collection verified; scratch/reservation retired. Outcome review required, no general client/real-target/platform/release qualification.
 
 ## Installed workflow plan-first routing - 2026-10-12
 
-Accepted current-export closure648116f6 permits the next admitted qualification
-preparation. Parent intent compilation preserves a conservative negative-keyword
-release classification; exact bounded queue authority governs preparation only.
-Four parent-authorised intake outputs are coordinated in this change; no policy,
-production, archive, real-target or model effect. Consumer checks remain unrun.
+Accepted current-export closure648116f6 permits the next admitted qualification preparation. Parent intent compilation preserves a conservative negative-keyword release classification; exact bounded queue authority governs preparation only. Four parent-authorised intake outputs are coordinated in this change; no policy, production, archive, real-target or model effect. Consumer checks remain unrun.
 
 ## Derived-export qualification closure - 2026-10-12
 
-Final replay terminal outcome receives exact independent ACCEPT, preserved in
-review-replay-outcome-3e5587d9.json, and guarded commit8abd7186. Status passed is
-limited to current derived export, not installed, downstream or release evidence.
+Final replay terminal outcome receives exact independent ACCEPT, preserved in review-replay-outcome-3e5587d9.json, and guarded commit8abd7186. Status passed is limited to current derived export, not installed, downstream or release evidence.
 
 ## Final export replay verification - 2026-10-12
 
-Independently accepted effectc15adb15 completed final job0135cdc9. Six fixtures,
-four commands, all855pack bytes and four unchanged published assets pass. Complete
-collection hashes/receipt checked; owned scratch retired and reservation released.
-Source74PASS reused; no further retry allowance or installed/release claim.
+Independently accepted effectc15adb15 completed final job0135cdc9. Six fixtures, four commands, all855pack bytes and four unchanged published assets pass. Complete collection hashes/receipt checked; owned scratch retired and reservation released. Source74PASS reused; no further retry allowance or installed/release claim.
 
 ## Derived export generated-result acceptance - 2026-10-12
 
-Independent review required two record corrections, both repaired without rerun
-or changing generated bytes. Corrected tree837ea92b has ACCEPT and guarded local
-commit3f956ce8. Fresh855-file inventory and three metadata preimages prepare the
-separate final replay. All original reviews/results remain; no replay effect yet.
+Independent review required two record corrections, both repaired without rerun or changing generated bytes. Corrected tree837ea92b has ACCEPT and guarded local commit3f956ce8. Fresh855-file inventory and three metadata preimages prepare the separate final replay. All original reviews/results remain; no replay effect yet.
 
 ## Current export structural result — 2026-10-12
 
-Corrected jobc74e8a7f passed six ownership checks, rebuilt only the positively
-owned export and passed doctor/validate/pack-status. The855-file/4.37MB result
-matches retained hashes; published Lite1.0.0 assets remain byte-identical. Full
-validation output and verified collection/retirement are preserved. Original
-startup failure remains. Generated-result review and clean replay are next;
-consumer/integration/release and broader daily-use requirements stay open.
+Corrected jobc74e8a7f passed six ownership checks, rebuilt only the positively owned export and passed doctor/validate/pack-status. The855-file/4.37MB result matches retained hashes; published Lite1.0.0 assets remain byte-identical. Full validation output and verified collection/retirement are preserved. Original startup failure remains. Generated-result review and clean replay are next; consumer/integration/release and broader daily-use requirements stay open.
 
 ## Derived export isolated-import correction — 2026-10-12
 
-One independently admitted export attempt failed before fixtures/reset because
-the managed isolated runpy route omits sibling module search. The job retired
-with full output retained, and actual prior pack comparison remains unchanged.
-Correct the task-local wrapper to load its two pinned files explicitly. Three
-total bounded attempts are proposed for preserved failure, corrected refresh
-and required replay; limits/reserves and executor remain unchanged, review held.
+One independently admitted export attempt failed before fixtures/reset because the managed isolated runpy route omits sibling module search. The job retired with full output retained, and actual prior pack comparison remains unchanged. Correct the task-local wrapper to load its two pinned files explicitly. Three total bounded attempts are proposed for preserved failure, corrected refresh and required replay; limits/reserves and executor remain unchanged, review held.
 
 ## Derived export qualification preparation — 2026-10-12
 
-Prepared task-local oracles/orchestration around the unchanged exporter and
-managed owner. Read-only preflight verifies854 tracked/checksummed files and240
-directories totaling4.35MB, with prior metadata/Git identities preserved. Source
-AST passes; fixtures and reset/dispatch remain unrun and held for exact review.
-Published archives and actual generated export contents remain unchanged.
+Prepared task-local oracles/orchestration around the unchanged exporter and managed owner. Read-only preflight verifies854 tracked/checksummed files and240 directories totaling4.35MB, with prior metadata/Git identities preserved. Source AST passes; fixtures and reset/dispatch remain unrun and held for exact review. Published archives and actual generated export contents remain unchanged.
 
 ## Daily task-binding acceptance — 2026-10-12
 
-Independent source review accepts0a91084f with no required fixes and one explicit
-source-only nonblocking note for the preserved export provenance failures. The
-selected task now owns preparation, verification and default review evidence.
-Actual74 tests pass; original eight failures and both retired jobs remain intact.
-Current package regeneration/replay and integration are separately gated.
+Independent source review accepts0a91084f with no required fixes and one explicit source-only nonblocking note for the preserved export provenance failures. The selected task now owns preparation, verification and default review evidence. Actual74 tests pass; original eight failures and both retired jobs remain intact. Current package regeneration/replay and integration are separately gated.
 
 ## Daily task-binding source result — 2026-10-12
 
-Existing task identity, packet preparation, verification scope and default review
-evidence now follow the selected WorkUnit. The original baseline retains8 failed
-assertions; repaired frozen source passes74 focused/legacy tests without skips.
-Both jobs collected and retired safely. Exact source acceptance is pending;
-doctor/validate preserve stale current-export provenance failures, so no current
-package or release qualification follows. See the child's verification.json.
+Existing task identity, packet preparation, verification scope and default review evidence now follow the selected WorkUnit. The original baseline retains8 failed assertions; repaired frozen source passes74 focused/legacy tests without skips. Both jobs collected and retired safely. Exact source acceptance is pending; doctor/validate preserve stale current-export provenance failures, so no current package or release qualification follows. See the child's verification.json.
 
 ## Daily task-binding regression preparation — 2026-10-12
 
-Prepared the admitted task and ten regression oracles for named WorkUnit meaning,
-scope selection, refusal and legacy behavior. Production source is unchanged for
-the baseline managed run. Actual tests remain pending; the task-local wrapper
-uses only named modules, existing resource owner and retained output.
+Prepared the admitted task and ten regression oracles for named WorkUnit meaning, scope selection, refusal and legacy behavior. Production source is unchanged for the baseline managed run. Actual tests remain pending; the task-local wrapper uses only named modules, existing resource owner and retained output.
 
 ## 2026-10-12 — SESSION new-host operational checkpoint
 
-Existing managed setup configured the selected GUNMETAL-WIN resource roots and
-finite reserves after exact independent review. Eight pure source checks passed;
-one separately reviewed strict MXC prerequisite returned native-unavailable
-before canaries. Both jobs collected and retired safely. Full outputs and exact
-review/receipt identities are preserved in the SESSION new-host evidence.
-No ordinary/model editing or whole-session containment claim follows. The
-admitted task-binding repair continues independently; no unchanged native replay.
+Existing managed setup configured the selected GUNMETAL-WIN resource roots and finite reserves after exact independent review. Eight pure source checks passed; one separately reviewed strict MXC prerequisite returned native-unavailable before canaries. Both jobs collected and retired safely. Full outputs and exact review/receipt identities are preserved in the SESSION new-host evidence. No ordinary/model editing or whole-session containment claim follows. The admitted task-binding repair continues independently; no unchanged native replay.
 
 ## New-host qualification preparation — 2026-10-12
 
-Prepared the [exact SESSION effect](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-effect.md)
-for fresh local configuration, eight pure source checks and a later strict native
-prerequisite. Existing runtime/process-owner code is unchanged. The task-local
-probe corrects the Windows pseudo-subcommand and accepts an explicit complete
-backend/hash/identity binding; original old-host results stay preserved.
-AST/diff preparation checks pass; actual source tests and native qualification
-are not yet run. One mistaken help invocation attempted an absent executable and
-is preserved with unknown persistent effects, without a containment claim.
-Setup/check and native effect reviews are separate; no model or target effect.
+Prepared the [exact SESSION effect](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-effect.md) for fresh local configuration, eight pure source checks and a later strict native prerequisite. Existing runtime/process-owner code is unchanged. The task-local probe corrects the Windows pseudo-subcommand and accepts an explicit complete backend/hash/identity binding; original old-host results stay preserved. AST/diff preparation checks pass; actual source tests and native qualification are not yet run. One mistaken help invocation attempted an absent executable and is preserved with unknown persistent effects, without a containment claim. Setup/check and native effect reviews are separate; no model or target effect.
 
 ## Daily-use planning candidate — 2026-10-12
 
-Prepared the owner's workflow amendment through
-[AIDE-DAILY-USE-PLAN-AMENDMENT-01](.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md).
-The existing roadmap now gives capability-specific relationships, eight daily-use
-acceptance phases, immediate accounting/usability/reuse and three horizons.
-Its adjacent JSON is advisory navigation, not another task authority. README and
-Profile current focus identify published Lite1.0.0; the old roadmap checkpoint is
-explicitly historical. Original release bytes and specification drafts are unchanged.
+Prepared the owner's workflow amendment through [AIDE-DAILY-USE-PLAN-AMENDMENT-01](.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md). The existing roadmap now gives capability-specific relationships, eight daily-use acceptance phases, immediate accounting/usability/reuse and three horizons. Its adjacent JSON is advisory navigation, not another task authority. README and Profile current focus identify published Lite1.0.0; the old roadmap checkpoint is explicitly historical. Original release bytes and specification drafts are unchanged.
 
-Baseline doctor/validate results are preserved in task evidence: validate found
-13 missing task-packet sections and stale capability input bindings. An explicit
-current packet and derived projection refresh are planned; validation never
-silently refreshes its subject. One host metadata observation identifies the
-actual new machine and changed Python; no model/native qualification occurred.
-Final doctor/validate passed with no failure/warning lines. Plan checks cover22
-capabilities/eight phases and reject six invalid plans. Exact child scope/link
-checks pass; the built-in verifier's18 wrong-task scope warnings remain disclosed.
-Independent acceptance and operational/target effects remain outstanding.
+Baseline doctor/validate results are preserved in task evidence: validate found 13 missing task-packet sections and stale capability input bindings. An explicit current packet and derived projection refresh are planned; validation never silently refreshes its subject. One host metadata observation identifies the actual new machine and changed Python; no model/native qualification occurred. Final doctor/validate passed with no failure/warning lines. Plan checks cover22 capabilities/eight phases and reject six invalid plans. Exact child scope/link checks pass; the built-in verifier's18 wrong-task scope warnings remain disclosed. Independent acceptance and operational/target effects remain outstanding.
 
 ## Owner machine allocation reconciled - 2026-10-09
 
-The owner's new AIDE/DiskEd development machine and existing-machine
-FacMan/UniSetup/Syspane allocation now govern the active SESSION/parent brief,
-queue state and planning indexes. [Owner-direction record](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/owner-machine-allocation-2026-10-09.json)
-separates reported intent from unverified new host/model capabilities. Current
-MXC failures, runtime, release assets and original qualification remain unchanged.
-The three known canonical project checkouts were observed clean; no target
-mutation, writer-liveness or automatic project-task admission follows. This
-slice uses structural and exact source/ref checks, with no executable test,
-model/native replay, setup, migration or new provider implementation.
+The owner's new AIDE/DiskEd development machine and existing-machine FacMan/UniSetup/Syspane allocation now govern the active SESSION/parent brief, queue state and planning indexes. [Owner-direction record](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/owner-machine-allocation-2026-10-09.json) separates reported intent from unverified new host/model capabilities. Current MXC failures, runtime, release assets and original qualification remain unchanged. The three known canonical project checkouts were observed clean; no target mutation, writer-liveness or automatic project-task admission follows. This slice uses structural and exact source/ref checks, with no executable test, model/native replay, setup, migration or new provider implementation.
 
 ## Actual user-context MXC prerequisite - 2026-10-09
 
-The probe now selects the exact reviewed Jules executor explicitly, preserving
-its original restricted-account default. One independently admitted stock Job
-run73e70426 returned wrapper0/backend1: native MXC unavailable before fixtures.
-[Full qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json)
-preserves8 files6,954B, scratch2,635B/memory32,804,864B peaks and verified
-retirement/release. Counter4 unchanged; no model, fallback or persistent setup.
-Five pure classifier tests passed. A preview lookup was corrected before
-execution; its original unexecuted inputs are preserved. The original nested
-failure remains unchanged. Runtime/CLI/release bytes are unaffected.
+The probe now selects the exact reviewed Jules executor explicitly, preserving its original restricted-account default. One independently admitted stock Job run73e70426 returned wrapper0/backend1: native MXC unavailable before fixtures. [Full qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json) preserves8 files6,954B, scratch2,635B/memory32,804,864B peaks and verified retirement/release. Counter4 unchanged; no model, fallback or persistent setup. Five pure classifier tests passed. A preview lookup was corrected before execution; its original unexecuted inputs are preserved. The original nested failure remains unchanged. Runtime/CLI/release bytes are unaffected.
 
 ## Strict MXC attempt and classification repair - 2026-10-09
 
-One independently admitted job22c30b48 returned worker/backend1 with
-"native MXC is unavailable on this executor" before the harmless workload.
-[Reconciliation](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json)
-preserves original FAIL,9 full files8,242B and exact retirement. Peak scratch
-was4,230B and Job memory49,020,928B; dispatch counter4 remains unchanged.
-The helper now recognizes the exact early refusal as unavailable; five pure
-classification tests pass, with no runtime replay or changed substantive gate.
-No model/account/setup/ref/release effect follows from this test.
+One independently admitted job22c30b48 returned worker/backend1 with "native MXC is unavailable on this executor" before the harmless workload. [Reconciliation](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json) preserves original FAIL,9 full files8,242B and exact retirement. Peak scratch was4,230B and Job memory49,020,928B; dispatch counter4 remains unchanged. The helper now recognizes the exact early refusal as unavailable; five pure classification tests pass, with no runtime replay or changed substantive gate. No model/account/setup/ref/release effect follows from this test.
 
 ## Changed host configuration - 2026-10-09
 
-The active VS Code extension26.1002.51308/backend0.162.0-alpha.2 differs from
-prior0.160. One managed configuration-only probe passed initialize/config-read,
-native/backend exit0, full9-file22,072B collection and retirement. No Codex thread,
-app-server command or model was requested; counter4, D roots/reserves and published Lite
-assets/tag remain unchanged. [Exact qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/changed-backend-qualification.json)
-records the new fingerprint and keeps native enforcement, account isolation,
-actual model editing and outer containment unqualified. Implicit Windows
-sandbox setup must be separately reviewed before a real workflow; decoder
-PASS cannot authorize that effect. Operative runtime and release payload identities remain unchanged.
+The active VS Code extension26.1002.51308/backend0.162.0-alpha.2 differs from prior0.160. One managed configuration-only probe passed initialize/config-read, native/backend exit0, full9-file22,072B collection and retirement. No Codex thread, app-server command or model was requested; counter4, D roots/reserves and published Lite assets/tag remain unchanged. [Exact qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/changed-backend-qualification.json) records the new fingerprint and keeps native enforcement, account isolation, actual model editing and outer containment unqualified. Implicit Windows sandbox setup must be separately reviewed before a real workflow; decoder PASS cannot authorize that effect. Operative runtime and release payload identities remain unchanged.
 
 ## Current consumer partial qualification - 2026-10-08
 
-Current cases0/2/3/4/6 passed with127 full retained files/5,019,290B; every
-allocated job collected results, proved quiescence, retired scratch and released
-its reservation. Cases1/5 remain incomplete memory-guard outcomes. A reviewed
-600s stronger-headroom observer allocated no retry and stopped. Four exact
-lossless custodies saved19,290,575 logical retained bytes. Runtime, source71,
-archive bytes, roots and reserves were not changed or replayed.
-[Exact witness](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-partial.json)
-keeps old subjects and material release/host/efficiency gaps visible.
+Current cases0/2/3/4/6 passed with127 full retained files/5,019,290B; every allocated job collected results, proved quiescence, retired scratch and released its reservation. Cases1/5 remain incomplete memory-guard outcomes. A reviewed 600s stronger-headroom observer allocated no retry and stopped. Four exact lossless custodies saved19,290,575 logical retained bytes. Runtime, source71, archive bytes, roots and reserves were not changed or replayed. [Exact witness](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-consumer-partial.json) keeps old subjects and material release/host/efficiency gaps visible.
 
 ## Affected candidate assets - 2026-10-08
 
-Build/validate passed once; native parent9226e567 remains FAIL before delivered
-tests. Read-only tailf8caebb0 passed ten unchanged external-harness assertions
-against current ZIPa4787e1e/TAR efcc1f83. Its384MiB cap preserves both4GiB reserves;
-full8-file270,832B custody, scratch retirement and reservation release verified.
-Sampled tail scratch7,693B/Job memory125,169,664B are this job's observations.
-[Exact witness](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-package-qualified.json)
-retains the parent failure and preallocation refusal. No model, successful-step
-replay or stable publication; old consumer proofs remain bound to old assets.
+Build/validate passed once; native parent9226e567 remains FAIL before delivered tests. Read-only tailf8caebb0 passed ten unchanged external-harness assertions against current ZIPa4787e1e/TAR efcc1f83. Its384MiB cap preserves both4GiB reserves; full8-file270,832B custody, scratch retirement and reservation release verified. Sampled tail scratch7,693B/Job memory125,169,664B are this job's observations. [Exact witness](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-current-package-qualified.json) retains the parent failure and preallocation refusal. No model, successful-step replay or stable publication; old consumer proofs remain bound to old assets.
 
 ## Affected runner export - 2026-10-08
 
-Pinned restricted jobcd314f54 refreshed only four portable export files from
-clean a17cf4b3. All851 derivations/849 immutable inputs/full six-file255,912B
-custody verified; sampled scratch2,247B and Job memory219,385,856B. Scratch
-retired and its lease released. Source71 was not rerun. The unchanged four
-stable assets exclude this repair until the separate affected build qualifies.
-[Exact witness](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-payload-export-qualified.json)
-and release plan retain the actual unsupported host/read and release gates.
+Pinned restricted jobcd314f54 refreshed only four portable export files from clean a17cf4b3. All851 derivations/849 immutable inputs/full six-file255,912B custody verified; sampled scratch2,247B and Job memory219,385,856B. Scratch retired and its lease released. Source71 was not rerun. The unchanged four stable assets exclude this repair until the separate affected build qualifies. [Exact witness](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/candidate-payload-export-qualified.json) and release plan retain the actual unsupported host/read and release gates.
 
 ## Ordinary CLI profile qualification and refusal guard - 2026-10-08
 
-The existing-account authority and eleven cosmetic historical dispositions
-are resolved under owner-directed proportionate automation; published history
-and substantive gates remain intact. The opt-in sparse task candidate keeps
-canonical source, executing runtime, private state and counters outside model
-write authority. Legacy read-only behavior and request identities are preserved.
+The existing-account authority and eleven cosmetic historical dispositions are resolved under owner-directed proportionate automation; published history and substantive gates remain intact. The opt-in sparse task candidate keeps canonical source, executing runtime, private state and counters outside model write authority. Legacy read-only behavior and request identities are preserved.
 
-All71 managed-workspace tests passed under the unchanged pinned restricted
-worker, including10 new candidate/refusal regressions; no skips or model calls.
-Job3690aaad collected evidence, retired scratch and released its reservation.
-Sampled scratch30,356B and backend Job memory258,473,984B are this observation.
-The earlier69-test run and original rejected read grant remain preserved.
+All71 managed-workspace tests passed under the unchanged pinned restricted worker, including10 new candidate/refusal regressions; no skips or model calls. Job3690aaad collected evidence, retired scratch and released its reservation. Sampled scratch30,356B and backend Job memory258,473,984B are this observation. The earlier69-test run and original rejected read grant remain preserved.
 
-The single0.160.0 live attempt2a1ffe93 failed before session creation because
-the elevated Windows sandbox requires effective root read. No guide edit,
-local-tool exclusion or model usage witness occurred; all11 inputs stayed
-unchanged. Native1 and35,630B across8 retained files are preserved; scratch
-and reservations retired. Admission counter4 retains all earlier identities.
-A scoped private configuration records that exact unsupported backend hash,
-so changed prompts refuse before allocation, counters or launch. An absent
-entry does not certify another backend. No replay or read-scope widening.
+The single0.160.0 live attempt2a1ffe93 failed before session creation because the elevated Windows sandbox requires effective root read. No guide edit, local-tool exclusion or model usage witness occurred; all11 inputs stayed unchanged. Native1 and35,630B across8 retained files are preserved; scratch and reservations retired. Admission counter4 retains all earlier identities. A scoped private configuration records that exact unsupported backend hash, so changed prompts refuse before allocation, counters or launch. An absent entry does not certify another backend. No replay or read-scope widening.
 
-Current VS Code tools remain unrestricted. Broker-tool memory/account metadata
-attribution, hard disk quotas, ordinary model editing and whole-outcome cost
-remain unqualified. Existing four stable assets are unchanged and exclude this
-new optional mode; affected payload qualification and exact tag/publication/
-downloaded-consumer gates remain open. Source integration is separate from
-release certification; its actual terminal journal owns the resulting refs.
+Current VS Code tools remain unrestricted. Broker-tool memory/account metadata attribution, hard disk quotas, ordinary model editing and whole-outcome cost remain unqualified. Existing four stable assets are unchanged and exclude this new optional mode; affected payload qualification and exact tag/publication/ downloaded-consumer gates remain open. Source integration is separate from release certification; its actual terminal journal owns the resulting refs.
 
-[Runner reference](docs/reference/aide-lite-test-runner.md) and
-[SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) bind the
-source,71-test terminal and retained actual host failure. No broad suite,
-archive rebuild, additional model request, checkout or storage root was made.
+[Runner reference](docs/reference/aide-lite-test-runner.md) and [SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) bind the source,71-test terminal and retained actual host failure. No broad suite, archive rebuild, additional model request, checkout or storage root was made.
 
 ## Current consumer completion and capture repair - 2026-10-08
 
-All eight current-archive consumer cases passed across eight distinct jobs.
-The38 public forms have39 nonjob and12 job records (51 unique witnesses).
-Case6 uses a disclosed512MiB probe fixture and the tested capture reorder;
-the original2GiB selection remains unqualified. Both4GiB reserves,1GiB
-outer Job cap and existing D pools remain unchanged. Four failures and the
-diagnostic remain preserved. All scratch/reservations retired;207 passing
-retainedfiles total9,006,685B. Max scratch30,272,565B and Jobmemory331,825,152B
-are distinct observations. Controller/review usage remains unknown.
+All eight current-archive consumer cases passed across eight distinct jobs. The38 public forms have39 nonjob and12 job records (51 unique witnesses). Case6 uses a disclosed512MiB probe fixture and the tested capture reorder; the original2GiB selection remains unqualified. Both4GiB reserves,1GiB outer Job cap and existing D pools remain unchanged. Four failures and the diagnostic remain preserved. All scratch/reservations retired;207 passing retainedfiles total9,006,685B. Max scratch30,272,565B and Jobmemory331,825,152B are distinct observations. Controller/review usage remains unknown.
 
-[Exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-qualified.json)
-binds assets, source epochs, custody and detailed local command-proof references.
-The canary now saves the response before its unchanged failure assertion; both
-failure/success capture checks and real job-form consumer passed. It is excluded
-from the archive, so no export/archive or completed-consumer replay occurred.
-Ordinary constrained editing/read isolation, whole-outcome efficiency and exact
-stable release-effect/publication/downloaded-consumer gates remain open. Actual
-source effects belong to the terminal journal; older sections retain their epochs.
+[Exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-qualified.json) binds assets, source epochs, custody and detailed local command-proof references. The canary now saves the response before its unchanged failure assertion; both failure/success capture checks and real job-form consumer passed. It is excluded from the archive, so no export/archive or completed-consumer replay occurred. Ordinary constrained editing/read isolation, whole-outcome efficiency and exact stable release-effect/publication/downloaded-consumer gates remain open. Actual source effects belong to the terminal journal; older sections retain their epochs.
 
 ## Owner-directed proportionate automation - 2026-10-07
 
-Current affected candidate qualification is complete: 49 source tests, 49 delivered
-commit cases across distinct jobs (47 completed before the preserved memory
-refusal plus two passing tail cases), and 10 actual delivered automation cases.
-ZIP822cbd42/TAR ef2c086e contain the clean6c37 export, 854 equal members/851
-checksums. [Exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-package-qualified.json)
-records custody, unchanged assertions, explicit Q27 fixture support and
-retirement. No completed suite/build was replayed for the tail, no memory reserve
-was reduced, and no model call occurred in this archive phase. Old consumer
-evidence is not rebound. Ordinary constrained editing/read isolation, whole-
-outcome efficiency, current-byte consumers and final exact release publication/
-acquisition remain separate. Source ref effects belong to the terminal journal;
-source sync does not create a stable release.
+Current affected candidate qualification is complete: 49 source tests, 49 delivered commit cases across distinct jobs (47 completed before the preserved memory refusal plus two passing tail cases), and 10 actual delivered automation cases. ZIP822cbd42/TAR ef2c086e contain the clean6c37 export, 854 equal members/851 checksums. [Exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-package-qualified.json) records custody, unchanged assertions, explicit Q27 fixture support and retirement. No completed suite/build was replayed for the tail, no memory reserve was reduced, and no model call occurred in this archive phase. Old consumer evidence is not rebound. Ordinary constrained editing/read isolation, whole- outcome efficiency, current-byte consumers and final exact release publication/ acquisition remain separate. Source ref effects belong to the terminal journal; source sync does not create a stable release.
 
-The existing range checker now distinguishes presentation-only faults within
-an explicit immutable history boundary from missing/ambiguous content, secrets,
-unknown failures and future commits. Original strict findings and raw mode are
-preserved; published history and exception records are untouched. New guarded
-commits remain strict and draft repairs must preserve facts. The existing runner
-refuses API/third-party accounts and override fields; dedicated regressions are
-qualified with its existing authenticated fixture/retirement lifecycle.
-No new supervisor, checkout, global client setting or billing route is introduced.
-The [bounded task](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/ExecPlan.md) owns actual
-qualification and finite local allowance. No stable release claim is made.
+The existing range checker now distinguishes presentation-only faults within an explicit immutable history boundary from missing/ambiguous content, secrets, unknown failures and future commits. Original strict findings and raw mode are preserved; published history and exception records are untouched. New guarded commits remain strict and draft repairs must preserve facts. The existing runner refuses API/third-party accounts and override fields; dedicated regressions are qualified with its existing authenticated fixture/retirement lifecycle. No new supervisor, checkout, global client setting or billing route is introduced. The [bounded task](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/ExecPlan.md) owns actual qualification and finite local allowance. No stable release claim is made.
 
-Actual affected qualification:47 tests passed,11 immutable historical messages
-became advisories, original findings/registry/history stayed intact, and full
-collection/scratch retirement/reservation release were verified. The initial
-metadata admission refusal remains preserved; no worker ran in that attempt.
+Actual affected qualification:47 tests passed,11 immutable historical messages became advisories, original findings/registry/history stayed intact, and full collection/scratch retirement/reservation release were verified. The initial metadata admission refusal remains preserved; no worker ran in that attempt.
 
-The signed-in canary and one matched causal-review pair completed with verified
-collection and retirement. Both answers satisfy the same five criteria under
-independent review; known child input fell14809→13650 (7.8263%), output368→361,
-cached input0both. All three finite turns are consumed. Usage is PARTIAL and
-whole-outcome cost remains unknown; no general savings or containment claim.
-See [actual observation](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/evidence/matched-summary.json).
+The signed-in canary and one matched causal-review pair completed with verified collection and retirement. Both answers satisfy the same five criteria under independent review; known child input fell14809→13650 (7.8263%), output368→361, cached input0both. All three finite turns are consumed. Usage is PARTIAL and whole-outcome cost remains unknown; no general savings or containment claim. See [actual observation](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/evidence/matched-summary.json).
 
-New-draft mechanical preview passed six focused checks with verified collection
-and retirement. It emits a prepared message/digest after strict validation,
-without inventing substance or changing files/history. The [task report](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/REPORT.md)
-and source-sync terminal own the bounded outcome and actual ref effects.
+New-draft mechanical preview passed six focused checks with verified collection and retirement. It emits a prepared message/digest after strict validation, without inventing substance or changing files/history. The [task report](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/REPORT.md) and source-sync terminal own the bounded outcome and actual ref effects.
 
 
-The affected portable pack was refreshed by one scoped export job from clean
-source6c37af95:854 members/851 checksummed exact derivations,4,341,317 logical
-bytes. Full collection and scratch/reservation retirement verified; only eight
-expected export files changed. The first read-only selection refusal allocated
-nothing and remains preserved. [Export evidence](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-export-qualified.json)
-records the export-time result. The then-existing ZIP/TAR stayed unchanged
-during export; the later affected qualification is recorded above. Final
-release effects remain separate. Current integration refs belong to the effect terminal journal.
+The affected portable pack was refreshed by one scoped export job from clean source6c37af95:854 members/851 checksummed exact derivations,4,341,317 logical bytes. Full collection and scratch/reservation retirement verified; only eight expected export files changed. The first read-only selection refusal allocated nothing and remains preserved. [Export evidence](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-export-qualified.json) records the export-time result. The then-existing ZIP/TAR stayed unchanged during export; the later affected qualification is recorded above. Final release effects remain separate. Current integration refs belong to the effect terminal journal.
 
 ## Current actual-client launch repair - 2026-10-07
 
-The existing task-local launcher now pins the actual VS Code extension and its
-0.160.0 backend instead of substituting the older standalone 0.145.0. Bounded
-streamed identity checks, conflicting legacy-setting refusals and disabled
-integration rendering preserve user defaults. No global configuration changed.
-The helper uses isolated owned state, bounded RPC streams, stopped-reader and
-process proofs, and harmless disabled transport fixtures. It starts no model.
+The existing task-local launcher now pins the actual VS Code extension and its 0.160.0 backend instead of substituting the older standalone 0.145.0. Bounded streamed identity checks, conflicting legacy-setting refusals and disabled integration rendering preserve user defaults. No global configuration changed. The helper uses isolated owned state, bounded RPC streams, stopped-reader and process proofs, and harmless disabled transport fixtures. It starts no model.
 
-Configuration decoding has independent ACCEPT_WITH_NOTES: nine security checks,
-three refusal checks and eight mutation oracles agree. Original admission refusal,
-MCP fixture startup failure and corrected native FAIL remain intact. Backend exit0
-is distinct from helper exit1; accepting documented unset metadata does not waive
-any path rule. No additional native replay. The corrected job retained13,161B,
-sampled2,752,968B scratch and62,124,032B Job memory, with full custody and retirement.
-Other peaks are separate; no whole-campaign/physical-recovery claim is made.
+Configuration decoding has independent ACCEPT_WITH_NOTES: nine security checks, three refusal checks and eight mutation oracles agree. Original admission refusal, MCP fixture startup failure and corrected native FAIL remain intact. Backend exit0 is distinct from helper exit1; accepting documented unset metadata does not waive any path rule. No additional native replay. The corrected job retained13,161B, sampled2,752,968B scratch and62,124,032B Job memory, with full custody and retirement. Other peaks are separate; no whole-campaign/physical-recovery claim is made.
 
-The only cross-cutting generated change is the compiler-owned manifest fingerprint
-required by the queue index update. Task, parent and root records retain uncovered
-routes and independent owner/release gates. Existing four release assets and
-published history are unchanged. The active conversation still has unrestricted
-tools; ordinary model editing/read isolation/whole-session containment remain open.
+The only cross-cutting generated change is the compiler-owned manifest fingerprint required by the queue index update. Task, parent and root records retain uncovered routes and independent owner/release gates. Existing four release assets and published history are unchanged. The active conversation still has unrestricted tools; ordinary model editing/read isolation/whole-session containment remain open.
 
 ## Historical consumer qualification and unchanged replay - 2026-10-06
 
-Fixed original4-7 tail50ff passed after preserving e928's900s timeout and exact
-completed1-3; case0 remains f37a. The adapter preserves worker/canary bytes,
-assertions,600s caps and strict retirement, adding bounded phase validation and
-explicit elapsed times. Full current38 forms/39 non-job/12 job/51 unique witnesses
-bind actual argv/status/hash and fresh process identities; no old job counters
-are inherited. Replaye863 passed stable-build/stable-validate once with all4assets,
-854export/48release maps unchanged. Full collections, quiescence and scratch/
-reservation retirement verify. Tail retains1,350,685B, replay21,275B; sampled
-scratch17,957,874B/8,338B remain separate observations.
+Fixed original4-7 tail50ff passed after preserving e928's900s timeout and exact completed1-3; case0 remains f37a. The adapter preserves worker/canary bytes, assertions,600s caps and strict retirement, adding bounded phase validation and explicit elapsed times. Full current38 forms/39 non-job/12 job/51 unique witnesses bind actual argv/status/hash and fresh process identities; no old job counters are inherited. Replaye863 passed stable-build/stable-validate once with all4assets, 854export/48release maps unchanged. Full collections, quiescence and scratch/ reservation retirement verify. Tail retains1,350,685B, replay21,275B; sampled scratch17,957,874B/8,338B remain separate observations.
 
-This bounded metadata closure updates only release planning/status/report/curated
-summary, parent/index/root docs and compiler-owned manifest. Product modules,
-original tests/canaries, assets/export, profiles and historical registry stay exact.
-Source49/delivered49, delivered41-with-data and source60 evidence are reused at
-their real epochs. All three custody subjects preserve unique evidence; e928 saved
-4,034,259 logical bytes separately from earlier two7,367,008. Refused9f28 remains.
-The managed commit draft's CRLF rejection happened before commit creation;
-exact LF correction preserved staged scope. Published66 remains unchanged.
+This bounded metadata closure updates only release planning/status/report/curated summary, parent/index/root docs and compiler-owned manifest. Product modules, original tests/canaries, assets/export, profiles and historical registry stay exact. Source49/delivered49, delivered41-with-data and source60 evidence are reused at their real epochs. All three custody subjects preserve unique evidence; e928 saved 4,034,259 logical bytes separately from earlier two7,367,008. Refused9f28 remains. The managed commit draft's CRLF rejection happened before commit creation; exact LF correction preserved staged scope. Published66 remains unchanged.
 
-Exact source/ref terminal records own later integration. Source-only sync grants
-no stable certification, model permission, historical decision or containment.
-Outer tools remain unrestricted; disk/shared admission monitored; host/matched
-usage and final publication/downloads pending. Older entries retain their subjects.
+Exact source/ref terminal records own later integration. Source-only sync grants no stable certification, model permission, historical decision or containment. Outer tools remain unrestricted; disk/shared admission monitored; host/matched usage and final publication/downloads pending. Older entries retain their subjects.
 
 ## Historical source repair/export checkpoint — 2026-10-06
 
-Bounded live zero-link reobservations preserve strict collection and existing
-link/type/resource refusals. Source60 and original normal CLI10 passed under
-the exact replacement runtime; complete collection and retirement accepted.
-Guarded commit27338811 passed exact message/tree/parent/latest checks, then one
-reviewed atomic nonforce push synchronized main/dev/task with88 pairs matching.
+Bounded live zero-link reobservations preserve strict collection and existing link/type/resource refusals. Source60 and original normal CLI10 passed under the exact replacement runtime; complete collection and retirement accepted. Guarded commit27338811 passed exact message/tree/parent/latest checks, then one reviewed atomic nonforce push synchronized main/dev/task with88 pairs matching.
 
-Job971a2045 refreshed only the affected portable export under pinned302688:
-854 members,851 verified checksums, four changed files, clean273 source,
-2,194B sampled scratch/218,923,008B Job memory/114,954B retained. The worker and
-native parent exited0, scratch retired, reservation released. Postexecution
-wrapper assumptions were corrected from exact existing receipts/maps without
-replaying the job; original failures are retained. This small index/report
-update reflects that actual delivery dependency change. Product/tests/helpers
-remain the source-qualified bytes. [Release report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
-owns exact export identities and the still-held old archive; no release claim.
+Job971a2045 refreshed only the affected portable export under pinned302688: 854 members,851 verified checksums, four changed files, clean273 source, 2,194B sampled scratch/218,923,008B Job memory/114,954B retained. The worker and native parent exited0, scratch retired, reservation released. Postexecution wrapper assumptions were corrected from exact existing receipts/maps without replaying the job; original failures are retained. This small index/report update reflects that actual delivery dependency change. Product/tests/helpers remain the source-qualified bytes. [Release report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) owns exact export identities and the still-held old archive; no release claim.
 
 ## Historical export-only checkpoint — 2026-10-06
 
-Guarded commitsc23dbddd/75e6c40f and exact source/ref terminal accepted;88 corresponding
-branch pairs matched,85 other tips preserved. One separately reviewed managed
-export job32c656ee completed parent/worker0 with clean75 provenance,854 members,
-851 checksums and new CLI/core/test bytes. Current doctor73/validate60,911 PASS;
-old FAIL2 and dependent doctor failure are superseded for this exact export.
-Full streams/receipt/collection and retirement verify. Retained114,318 logical
-bytes include the full844-input receipt; sampled scratch2,202 and peak memory
-218,652,672 are separate observations. Installed profiles/runtime/held4assets
-unchanged. No hard/global quota, outer containment or whole-efficiency claim.
-[Current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) separates
-new payload checks from old archive evidence and external stable gates.
+Guarded commitsc23dbddd/75e6c40f and exact source/ref terminal accepted;88 corresponding branch pairs matched,85 other tips preserved. One separately reviewed managed export job32c656ee completed parent/worker0 with clean75 provenance,854 members, 851 checksums and new CLI/core/test bytes. Current doctor73/validate60,911 PASS; old FAIL2 and dependent doctor failure are superseded for this exact export. Full streams/receipt/collection and retirement verify. Retained114,318 logical bytes include the full844-input receipt; sampled scratch2,202 and peak memory 218,652,672 are separate observations. Installed profiles/runtime/held4assets unchanged. No hard/global quota, outer containment or whole-efficiency claim. [Current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) separates new payload checks from old archive evidence and external stable gates.
 
 ## 2026-10-05 managed commit prevention admitted
 
 New owner instruction addresses malformed messages at entry. Exact child admission977f1cfb is ACCEPT_WITH_NOTES/all notes nonblocking and disposed. The four compiler outputs are classified; compiler blocked composite result is retained. Work reuses task/d2 checkout, unchanged supervisor/pools/limits, with source/native/actual local commit reviewed separately. Published66 cannot use the proposed unpublished amendment.
 
-The revised public `commit create` and shared core passed49 new real Git/CLI and
-23 unchanged Q27 tests in jobdc7003a7; both exits0, no skips. Independent result
-acceptance binds c5672710/b1116014. Strict messages precede object creation;
-verified objects precede prepared HEAD/branch advancement. Reaping uncertainty
-preserves the owned index lock. Exact metadata-read retries preserve admission.
-All failed native attempts are terminal and retired; they are not hidden by the
-passing result. Final job retained17,206 logical bytes, sampled29,856 scratch bytes
-and322,293,760 peak memory bytes; scratch absent/reservation released.
+The revised public `commit create` and shared core passed49 new real Git/CLI and 23 unchanged Q27 tests in jobdc7003a7; both exits0, no skips. Independent result acceptance binds c5672710/b1116014. Strict messages precede object creation; verified objects precede prepared HEAD/branch advancement. Reaping uncertainty preserves the owned index lock. Exact metadata-read retries preserve admission. All failed native attempts are terminal and retired; they are not hidden by the passing result. Final job retained17,206 logical bytes, sampled29,856 scratch bytes and322,293,760 peak memory bytes; scratch absent/reservation released.
 
-Four existing capability-report paths were admitted by45425f4d solely to refresh
-source classification after CLI/task-brief bytes changed. This minimal cross-cutting
-closeout does not requalify old functional evidence. The original supervisor,
-storage, limits, live dispositions and four held release assets remain unchanged.
-Actual guarded commit c23dbddd completed: tree881e8c8e, parentd2c8e831,
-exact message267b92a8, apply/latest exits0 and working/index bytes preserved.
-Independent acceptance d7c13814 binds terminal916edade. This task's preventive
-workflow objective is closed. The minimal queue/current-index closeout changes
-no capability-bound input. Current post-commit validation has60,909 PASS and
-two held-export source-provenance failures; doctor reports the dependent failure.
-These remain payload gates, not waived current PASS. Earlier accepted structural
-proof retains its original checkpoint. Later ref/payload effects keep separate gates.
+Four existing capability-report paths were admitted by45425f4d solely to refresh source classification after CLI/task-brief bytes changed. This minimal cross-cutting closeout does not requalify old functional evidence. The original supervisor, storage, limits, live dispositions and four held release assets remain unchanged. Actual guarded commit c23dbddd completed: tree881e8c8e, parentd2c8e831, exact message267b92a8, apply/latest exits0 and working/index bytes preserved. Independent acceptance d7c13814 binds terminal916edade. This task's preventive workflow objective is closed. The minimal queue/current-index closeout changes no capability-bound input. Current post-commit validation has60,909 PASS and two held-export source-provenance failures; doctor reports the dependent failure. These remain payload gates, not waived current PASS. Earlier accepted structural proof retains its original checkpoint. Later ref/payload effects keep separate gates.
 
 ## Actual delivered qualification and coherent closeout — 2026-10-05
 
-Remaining7 current consumers,38-form map and byte-identical replay are accepted.
-Thin delivered verifier reused original extraction/retirement and18+23 tests with
-explicit bound non-executable fixture data; all41 passed, all original852 archive
-files unchanged, complete collection and retirement independently accepted.
-The source-oriented fixture and count findings were resolved before dispatch;
-UTF8 plan restoration and CRLF reader correction preserve original history and
-raw bytes. No rejected/native job replay or changed assertion. Eight distinct
-lossless custody operations preserved all original evidence/failures and saved
-36264832logical bytes, physical recovery unknown. Authoritative reports/plans/
-queue/capability views are aligned in this bounded closeout. Existing source
-67/native23 proof remains exact-input reused, not rerun. Source-only ref sync is
-a separate exact effect; stable publication and outer containment unfinished.
-[Full outcome](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+Remaining7 current consumers,38-form map and byte-identical replay are accepted. Thin delivered verifier reused original extraction/retirement and18+23 tests with explicit bound non-executable fixture data; all41 passed, all original852 archive files unchanged, complete collection and retirement independently accepted. The source-oriented fixture and count findings were resolved before dispatch; UTF8 plan restoration and CRLF reader correction preserve original history and raw bytes. No rejected/native job replay or changed assertion. Eight distinct lossless custody operations preserved all original evidence/failures and saved 36264832logical bytes, physical recovery unknown. Authoritative reports/plans/ queue/capability views are aligned in this bounded closeout. Existing source 67/native23 proof remains exact-input reused, not rerun. Source-only ref sync is a separate exact effect; stable publication and outer containment unfinished. [Full outcome](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
 
 ## Actual lossless retirement and current consumer — 2026-10-05
 
-Reviewed source771684bc applied exactly3 owned custody transitions once; complete
-archives/anchors/lookup/raw retirement verified, failedexit1 history preserved,
-14244309 logical bytes released. First current-asset consumer job8c9d3a83 then
-passed as CodexSandboxOffline with complete collection/retirement and independent
-acceptance. Retained3051862/sample33528294/memory331915264;26138 sampled scratch
-margin is narrow and not a hard peak. Both reader errors are recorded; native
-work was not repeated. Source67/native23 inputs, assets and25pins unchanged.
-[Full outcome](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md). No remaining7,
-new-custody, promotion, tag/publication, whole-containment or physical-savings claim.
-Older dated entries remain their original execution-time snapshots.
+Reviewed source771684bc applied exactly3 owned custody transitions once; complete archives/anchors/lookup/raw retirement verified, failedexit1 history preserved, 14244309 logical bytes released. First current-asset consumer job8c9d3a83 then passed as CodexSandboxOffline with complete collection/retirement and independent acceptance. Retained3051862/sample33528294/memory331915264;26138 sampled scratch margin is narrow and not a hard peak. Both reader errors are recorded; native work was not repeated. Source67/native23 inputs, assets and25pins unchanged. [Full outcome](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md). No remaining7, new-custody, promotion, tag/publication, whole-containment or physical-savings claim. Older dated entries remain their original execution-time snapshots.
 
 ## 2026-10-05 current custody archive build accepted
 
-One restricted native build on f3312a04/treeb5a3bd2e passed both stable commands.
-Current ZIP55665b2f/TARfce561ca contain852 equal file members and849 verified
-archive checksums, including qualified custody/current CLI. Complete collection,
-quiescence, noIO, scratch retirement and reservation release verify. Independent
-result ACCEPT_WITH_NOTES has all notes disposed. Zero source tests replayed;
-67/native23 evidence retains exact unchanged-input scope. Retained16772logical
-bytes/sample8499/memory251400192, release growth23127logical; no physical/global
-quota or outer containment claim. Consumers/replay/promotion/source-ref effects
-and stable publication remain separately gated. Original config held.
-[Full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+One restricted native build on f3312a04/treeb5a3bd2e passed both stable commands. Current ZIP55665b2f/TARfce561ca contain852 equal file members and849 verified archive checksums, including qualified custody/current CLI. Complete collection, quiescence, noIO, scratch retirement and reservation release verify. Independent result ACCEPT_WITH_NOTES has all notes disposed. Zero source tests replayed; 67/native23 evidence retains exact unchanged-input scope. Retained16772logical bytes/sample8499/memory251400192, release growth23127logical; no physical/global quota or outer containment claim. Consumers/replay/promotion/source-ref effects and stable publication remain separately gated. Original config held. [Full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
 
 
 ## 2026-10-05 clean custody export accepted
 
-Pure export jobc1aca2e0 at cf234547 produced actual clean provenance and849
-verified checksums; complete collection and retirement independently accepted,
-all notes nonblocking/disposed. Only manifestchanged;9189 retained logical bytes,
-zero test replay. Existing67 operative and23 custody proofs remain scoped.
-Archive build/currentconsumers/replay/runtimepromotion/integration/publication
-remain separate. Current7132 ZIP predates custody; outer session unrestricted.
-See [current full report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+Pure export jobc1aca2e0 at cf234547 produced actual clean provenance and849 verified checksums; complete collection and retirement independently accepted, all notes nonblocking/disposed. Only manifestchanged;9189 retained logical bytes, zero test replay. Existing67 operative and23 custody proofs remain scoped. Archive build/currentconsumers/replay/runtimepromotion/integration/publication remain separate. Current7132 ZIP predates custody; outer session unrestricted. See [current full report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
 
 
 ## 2026-10-05 custody payload current source accepted
 
-Current restricted job1b3224cd at eea174be passed67 fresh checks, export and full
-validation, no warnings/skips. Independent result ACCEPT_WITH_NOTES, all notes
-nonblocking/disposed; complete collection/receipt and retirement verify.
-The849-entry export includes custody but truthfully records dirty provenance;
-freeze this result/checkpoint documentation, then separately review one clean
-export effect before archive build. Reuse67 only unchanged operative inputs.
-Source C4 native23 and two live custody operations remain qualified;7,921,599
-logical bytes saved. No current C4 archive/integration/stable/whole-session claim.
-See [full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+Current restricted job1b3224cd at eea174be passed67 fresh checks, export and full validation, no warnings/skips. Independent result ACCEPT_WITH_NOTES, all notes nonblocking/disposed; complete collection/receipt and retirement verify. The849-entry export includes custody but truthfully records dirty provenance; freeze this result/checkpoint documentation, then separately review one clean export effect before archive build. Reuse67 only unchanged operative inputs. Source C4 native23 and two live custody operations remain qualified;7,921,599 logical bytes saved. No current C4 archive/integration/stable/whole-session claim. See [full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
 
 
 ## 2026-10-05 current capability payload source qualification completed
 
-Current scoped job e188c5d7 on9badd6f9 passed export/full validation and18 newly
-executed C1 tests. All49 preceding checks are explicitly reused only on their
-six identical input hashes; whole priorFAIL stays preserved. Complete raw
-trees/receipt/process and ten real CLI frames/52 source inputs/all847 pack
-checksums verified; scratch retired/reservation released. Original config and
-four old assets remain unchanged; archive still predates C1. See
-[full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
-Exact998a4d19 result/source closeout received independent ACCEPT_WITH_NOTES;
-all notes are nonblocking/disposed. New asset/build/current-consumer effects
-require their own exact review.
-Outer controller/read isolation, retained lifecycle, historical/live/matched
-efficiency/publication and wider cleanup remain explicit independent gates.
+Current scoped job e188c5d7 on9badd6f9 passed export/full validation and18 newly executed C1 tests. All49 preceding checks are explicitly reused only on their six identical input hashes; whole priorFAIL stays preserved. Complete raw trees/receipt/process and ten real CLI frames/52 source inputs/all847 pack checksums verified; scratch retired/reservation released. Original config and four old assets remain unchanged; archive still predates C1. See [full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md). Exact998a4d19 result/source closeout received independent ACCEPT_WITH_NOTES; all notes are nonblocking/disposed. New asset/build/current-consumer effects require their own exact review. Outer controller/read isolation, retained lifecycle, historical/live/matched efficiency/publication and wider cleanup remain explicit independent gates.
 
 
 ## 2026-10-05 source admission refusal preserved; budget estimate corrected
 
-The af6d35cf corrective source job was refused before worker launch. No new
-validation/test process or scratch allocation is inferred from the API's
-requested-write flag. Existing canonical occupancy and doubled log/staging
-reservation are now included in the exact arithmetic. A proposed
-configuration narrows only scratch to4MiB for18 C1 checks plus export/
-full validation;49 packaging checks remain explicitly reused. Logs/result/
-export reservation, original config/assets and256MiB ceiling stay unchanged.
+The af6d35cf corrective source job was refused before worker launch. No new validation/test process or scratch allocation is inferred from the API's requested-write flag. Existing canonical occupancy and doubled log/staging reservation are now included in the exact arithmetic. A proposed configuration narrows only scratch to4MiB for18 C1 checks plus export/ full validation;49 packaging checks remain explicitly reused. Logs/result/ export reservation, original config/assets and256MiB ceiling stay unchanged.
 
 
 ## 2026-10-05 capability projection repair; source qualification still pending
 
-Four exactly reviewed existing capability commands completed once, within the
-nine declared projection paths. Current derived binding covers41 public inputs;
-source classifications remain distinct from runtime/host/support authority.
-The earlier native49 PASS/export with full-validation14 FAIL stays preserved.
-A separately reviewed corrective native slice will reuse those49 only on six
-identical hashes and execute export/full validation plus18 current C1 checks.
-Original config/assets/pools remain unchanged; outer shell remains unrestricted.
+Four exactly reviewed existing capability commands completed once, within the nine declared projection paths. Current derived binding covers41 public inputs; source classifications remain distinct from runtime/host/support authority. The earlier native49 PASS/export with full-validation14 FAIL stays preserved. A separately reviewed corrective native slice will reuse those49 only on six identical hashes and execute export/full validation plus18 current C1 checks. Original config/assets/pools remain unchanged; outer shell remains unrestricted.
 
 
 ## 2026-10-05 capability payload partial source correction
 
-The native source job passed49 checks and export, then failed full validation
-on13 packet-section omissions and the legacy unbound capability ledger. The
-packet is restored through the existing generator; exact9 report refresh is
-awaiting independent scope/effect review. Full collected trees and retirement
-are verified;18 C1 checks remain unrun for this new payload. Reuse only verified
-unchanged49 inputs on the separately reviewed corrective native phase. Stable
-assets/config/supervisor and all release/host/model gates remain unchanged.
+The native source job passed49 checks and export, then failed full validation on13 packet-section omissions and the legacy unbound capability ledger. The packet is restored through the existing generator; exact9 report refresh is awaiting independent scope/effect review. Full collected trees and retirement are verified;18 C1 checks remain unrun for this new payload. Reuse only verified unchanged49 inputs on the separately reviewed corrective native phase. Stable assets/config/supervisor and all release/host/model gates remain unchanged.
 
 ## 2026-10-05 capability payload qualification entry
 
-Prepared a tiny task-owned entry that selects the existing qualified worker,
-changing only its source-proof owner. The first local export envelope retains
-49 checks/export/full validation, re-exercises18 current-input C1 checks and reuses unchanged71 core
-proof, and leaves current four stable assets/original configuration untouched.
-No native effect has run from this preparation. Exact independent source/effect
-review and fresh locked admission precede dispatch; later archive effects are
-separate. No new runner, checkout, storage pool or model invocation.
+Prepared a tiny task-owned entry that selects the existing qualified worker, changing only its source-proof owner. The first local export envelope retains 49 checks/export/full validation, re-exercises18 current-input C1 checks and reuses unchanged71 core proof, and leaves current four stable assets/original configuration untouched. No native effect has run from this preparation. Exact independent source/effect review and fresh locked admission precede dispatch; later archive effects are separate. No new runner, checkout, storage pool or model invocation.
 
 ## 2026-10-05 stale capability evidence baseline and candidate
 
-The existing restricted worker reproduced two precise baseline assertions in
-jobbd3e4e248d6a4342b4867275d878060d, then collected and retired successfully.
-The C1 candidate preserves the v0 ledger, adds finite derived source bindings
-and honest CURRENT/STALE/UNKNOWN status, and removes automatic regeneration
-from capability validation. Exact reviewed source4067179b passed18 checks and ten actual CLI calls in
-jobce5a5508b3104df0a9a3441f22768616. Stale validation preserved evidence,
-explicit refresh restored CURRENT, full collected hashes passed, and scratch/
-reservation retired. Final source/ref closeout remains separately reviewed.
-Only this coherence entry, its scoped reference guide and task records change
-across root documentation. Existing immutable assets contain older source.
+The existing restricted worker reproduced two precise baseline assertions in jobbd3e4e248d6a4342b4867275d878060d, then collected and retired successfully. The C1 candidate preserves the v0 ledger, adds finite derived source bindings and honest CURRENT/STALE/UNKNOWN status, and removes automatic regeneration from capability validation. Exact reviewed source4067179b passed18 checks and ten actual CLI calls in jobce5a5508b3104df0a9a3441f22768616. Stale validation preserved evidence, explicit refresh restored CURRENT, full collected hashes passed, and scratch/ reservation retired. Final source/ref closeout remains separately reviewed. Only this coherence entry, its scoped reference guide and task records change across root documentation. Existing immutable assets contain older source.
 
 ## 2026-10-03 scoped command qualification
 
-`AIDE-SESSION-CONTAINMENT-01` records the owner's immediate containment priority
-and a task-local adapter to the existing frozen exported job owner. Initial
-native-sandbox qualification passed process membership and write boundaries,
-but failed the requested supervisor-config read exclusion; both failures remain
-recorded. A repository-only validation then passed under the observed write and
-process boundaries, with 4/4 resource regressions and complete bounded logs.
-The supervisor now suppresses bytecode before frozen imports; its exactly
-identified caches were retired. All four attempts retired scratch and released
-reservations. Read isolation and the outer session remain unqualified; see
-the task's evidence/outcome.md.
-No production runner or release bytes changed. The refreshed compact task
-packet is the minimal cross-cutting generated context change for this child.
+`AIDE-SESSION-CONTAINMENT-01` records the owner's immediate containment priority and a task-local adapter to the existing frozen exported job owner. Initial native-sandbox qualification passed process membership and write boundaries, but failed the requested supervisor-config read exclusion; both failures remain recorded. A repository-only validation then passed under the observed write and process boundaries, with 4/4 resource regressions and complete bounded logs. The supervisor now suppresses bytecode before frozen imports; its exactly identified caches were retired. All four attempts retired scratch and released reservations. Read isolation and the outer session remain unqualified; see the task's evidence/outcome.md. No production runner or release bytes changed. The refreshed compact task packet is the minimal cross-cutting generated context change for this child.
 
 ## 2026-09-29 Codex worker result binding
 
-The existing worker now refuses malformed or ambiguous `codex exec --json`
-turn histories before using a verdict or usage. Source `9dccd27f` and its
-test-only oracle correction `1497a7e2` passed 23 state and 32 pipeline cases
-under the D owner. The initial 22/23 assertion failure remains retained;
-exact receipts are in `.aide/queue/AIDE-CODEX-DISPATCH-GATE-01/evidence/one-turn-result-boundary-2026-09-29.md`.
-Independent review and live Codex effect qualification remain open.
+The existing worker now refuses malformed or ambiguous `codex exec --json` turn histories before using a verdict or usage. Source `9dccd27f` and its test-only oracle correction `1497a7e2` passed 23 state and 32 pipeline cases under the D owner. The initial 22/23 assertion failure remains retained; exact receipts are in `.aide/queue/AIDE-CODEX-DISPATCH-GATE-01/evidence/one-turn-result-boundary-2026-09-29.md`. Independent review and live Codex effect qualification remain open.
 
 ## 2026-09-29 extracted Lite job attachment qualification
 
-The existing efficiency consumer test now reattaches through delivered
-`job wait` to the real bounded job it ran, verifies the retained receipt and
-source identity, and refuses a changed manifest digest. Test-only candidate
-`3796ad33` passed 1/1 under the shared D owner with scratch retired and its
-reservation released. The exact receipt and limits are in
-`.aide/queue/AIDE-LITE-EFFICIENCY-01/evidence/delivered-wait-attachment-2026-09-29.md`.
-Live Codex mediation and final release bytes remain unqualified.
+The existing efficiency consumer test now reattaches through delivered `job wait` to the real bounded job it ran, verifies the retained receipt and source identity, and refuses a changed manifest digest. Test-only candidate `3796ad33` passed 1/1 under the shared D owner with scratch retired and its reservation released. The exact receipt and limits are in `.aide/queue/AIDE-LITE-EFFICIENCY-01/evidence/delivered-wait-attachment-2026-09-29.md`. Live Codex mediation and final release bytes remain unqualified.
 
 ## 2026-09-28 live scratch hardlink observation repair
 
-AIDE's managed runner stopped a real interrupted-removal test when its
-atomic file creation briefly exposed two hardlink names in owned scratch.
-The quiescent failed job `85fd0fe0b4c44ea99c64b2547046db95` was
-reconciled through AIDE after exact duplicate-temp ownership checks; its
-scratch and reservation were retired. The monitor now counts regular
-multi-link files conservatively during live scratch sampling only when every
-link name is observed within owned scratch; collection and cleanup keep
-strict single-link checks. Initial focused, end-to-end and 28-test suite
-results passed, but independent review rejected the unbounded first exception.
-The narrowed ownership check and outside-link regression in `d2b587eb`
-passed 3 focused checks, all
-29 runner tests and the public end-to-end removal retry through the managed
-D runner; independent scoped rereview ACCEPTED it for dev source integration.
-The scan remains sampled rather than an OS sandbox. Frozen Lite 1.0.0 assets
-have not changed.
+AIDE's managed runner stopped a real interrupted-removal test when its atomic file creation briefly exposed two hardlink names in owned scratch. The quiescent failed job `85fd0fe0b4c44ea99c64b2547046db95` was reconciled through AIDE after exact duplicate-temp ownership checks; its scratch and reservation were retired. The monitor now counts regular multi-link files conservatively during live scratch sampling only when every link name is observed within owned scratch; collection and cleanup keep strict single-link checks. Initial focused, end-to-end and 28-test suite results passed, but independent review rejected the unbounded first exception. The narrowed ownership check and outside-link regression in `d2b587eb` passed 3 focused checks, all 29 runner tests and the public end-to-end removal retry through the managed D runner; independent scoped rereview ACCEPTED it for dev source integration. The scan remains sampled rather than an OS sandbox. Frozen Lite 1.0.0 assets have not changed.
 
 ## 2026-09-28 removal rename-gap recovery
 
-On `task/aide-removal-rename-recovery-01`, the Windows removal retry now
-restores an exact authored `AGENTS.md` backup after interruption between
-rename and link, provided the backup digest and recorded single-link file
-identity match and the target name is still absent. Legacy intents without
-that identity return safe recovery refusal. The focused and adjacent managed
-D tests passed, and independent scoped rereview ACCEPTED source `526dfb51`
-for dev integration. The frozen Lite 1.0.0 release bytes are unaffected;
-source integration or release inclusion needs its own exact effect handling.
+On `task/aide-removal-rename-recovery-01`, the Windows removal retry now restores an exact authored `AGENTS.md` backup after interruption between rename and link, provided the backup digest and recorded single-link file identity match and the target name is still absent. Legacy intents without that identity return safe recovery refusal. The focused and adjacent managed D tests passed, and independent scoped rereview ACCEPTED source `526dfb51` for dev integration. The frozen Lite 1.0.0 release bytes are unaffected; source integration or release inclusion needs its own exact effect handling.
 
 ## 2026-09-28 stable Lite release-effect policy repair
 
-Recorded independent REQUEST_CHANGES for `d5df63c5`, widened only the
-release-effect WorkUnit's exact allowed policy path, and split pre-effect
-release acceptance from postpublication downloaded-byte verification. Q47/Q48
-preview and no-publish behavior remains scoped to those projections. The
-stable assets embed the version-policy hash and require regeneration and
-focused new-byte qualification before a superseding exact release review.
+Recorded independent REQUEST_CHANGES for `d5df63c5`, widened only the release-effect WorkUnit's exact allowed policy path, and split pre-effect release acceptance from postpublication downloaded-byte verification. Q47/Q48 preview and no-publish behavior remains scoped to those projections. The stable assets embed the version-policy hash and require regeneration and focused new-byte qualification before a superseding exact release review.
 
-The policy-bound pack was regenerated at `720a9e00` and distinct stable assets
-at `bed505ab`. Managed D jobs passed build, validation, zero-change replay,
-fresh/brownfield import/customization, lifecycle, context/offline, partial
-recovery, public CLI/feedback, forced child exits and 36 current-policy
-Q47/Q48 tests. All scratch retired and reservations released. The revised
-effect manifest binds 28 public forms to 39 retained command logs. Prior
-110 importer passes remain source regression history because six metadata
-inputs changed; they do not replace exact new-byte qualification.
+The policy-bound pack was regenerated at `720a9e00` and distinct stable assets at `bed505ab`. Managed D jobs passed build, validation, zero-change replay, fresh/brownfield import/customization, lifecycle, context/offline, partial recovery, public CLI/feedback, forced child exits and 36 current-policy Q47/Q48 tests. All scratch retired and reservations released. The revised effect manifest binds 28 public forms to 39 retained command logs. Prior 110 importer passes remain source regression history because six metadata inputs changed; they do not replace exact new-byte qualification.
 
-Independent exact release ACCEPT for `719abf66` is retained in D control and
-queue evidence. The task branch and remote dev were observed at that same
-commit after a fast-forward. A mandatory `commit check --range main..dev`
-then returned FAIL for ten 2026-09-21 historical messages; three previously
-accepted owner dispositions applied only to their exact commits. Main, tag
-and publication were not attempted. The ten-record packet binds full Git
-objects, trees, parents, message digests and all 117 failed checker results;
-actual owner decisions remain required before structured dispositions.
+Independent exact release ACCEPT for `719abf66` is retained in D control and queue evidence. The task branch and remote dev were observed at that same commit after a fast-forward. A mandatory `commit check --range main..dev` then returned FAIL for ten 2026-09-21 historical messages; three previously accepted owner dispositions applied only to their exact commits. Main, tag and publication were not attempted. The ten-record packet binds full Git objects, trees, parents, message digests and all 117 failed checker results; actual owner decisions remain required before structured dispositions.
 
 ## AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
 
@@ -804,120 +309,49 @@ Resumed the campaign for a bounded current-status/spec-root alignment in the reu
 
 ## 2026-09-26 dev synchronization checkpoint
 
-Reviewed campaign source was fast-forwarded from e88b1c2e to 53be4fc4;
-remaining historical evidence is preserved without malformed commit ancestry.
-The release and project rollout plan is in
-[the closeout report](.aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/evidence/repo-release-rollout-report.md).
-This is source/evidence integration only. Main, release assets and deployments
-are unchanged; final qualification remains open and development stays stopped.
+Reviewed campaign source was fast-forwarded from e88b1c2e to 53be4fc4; remaining historical evidence is preserved without malformed commit ancestry. The release and project rollout plan is in [the closeout report](.aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/evidence/repo-release-rollout-report.md). This is source/evidence integration only. Main, release assets and deployments are unchanged; final qualification remains open and development stays stopped.
 
 ## 2026-09-26 predecessor feedback boundary repair
 
-The independent f0eabe41 policy review found a genuine source mismatch:
-feedback could write into a supplied predecessor pack. The existing
-customization WorkUnit now passes that pack to the shared output guard,
-normalizes all protected roots, and refuses output inside any supplied pack
-or target. Existing helper callers without a predecessor remain compatible.
-Tiny CLI/path tests use the real writer and input identity with only the
-expensive import plan injected; no full archive is generated. A real Windows
-junction checks the predecessor alias. Original source acceptance remains
-historical; changed bytes require superseding review and delivered qualification.
-The contract WorkUnit scopes saved-plan guarantees to partial continuation,
-preserving completed/no-effect reconciliation without claiming payload replay.
-Frozen source c6d104f6 received independent ACCEPT_WITH_NOTES; three affected
-tests and 28 parser forms pass. The follow-up retains final archive and
-combined-source integration gates. No permanent bulk pool is configured.
+The independent f0eabe41 policy review found a genuine source mismatch: feedback could write into a supplied predecessor pack. The existing customization WorkUnit now passes that pack to the shared output guard, normalizes all protected roots, and refuses output inside any supplied pack or target. Existing helper callers without a predecessor remain compatible. Tiny CLI/path tests use the real writer and input identity with only the expensive import plan injected; no full archive is generated. A real Windows junction checks the predecessor alias. Original source acceptance remains historical; changed bytes require superseding review and delivered qualification. The contract WorkUnit scopes saved-plan guarantees to partial continuation, preserving completed/no-effect reconciliation without claiming payload replay. Frozen source c6d104f6 received independent ACCEPT_WITH_NOTES; three affected tests and 28 parser forms pass. The follow-up retains final archive and combined-source integration gates. No permanent bulk pool is configured.
 
 ## Work Item: AIDE-STABLE-RELEASE-CONTRACT-01 (admission only)
 
-Admitted a bounded child of `AIDE-CONVERGENCE-AND-DELIVERY-01` for stable
-version, public compatibility, Lite support-profile, and campaign-scoped
-publication-route contract work. The admission changes only task/index,
-task-relevant intake, and planning/execution records. Intent compile blocked
-raw release execution and required a split; this packet contains the contract
-slice. Root controller scope review is in `evidence/controller-admission.md`;
-validation and limits are in `evidence/admission.md`. Policy/source
-changes, version choice, exact release bytes, main promotion, tag, upload,
-publication, and consumer qualification remain future reviewed work.
+Admitted a bounded child of `AIDE-CONVERGENCE-AND-DELIVERY-01` for stable version, public compatibility, Lite support-profile, and campaign-scoped publication-route contract work. The admission changes only task/index, task-relevant intake, and planning/execution records. Intent compile blocked raw release execution and required a split; this packet contains the contract slice. Root controller scope review is in `evidence/controller-admission.md`; validation and limits are in `evidence/admission.md`. Policy/source changes, version choice, exact release bytes, main promotion, tag, upload, publication, and consumer qualification remain future reviewed work.
 
 ## Work Item: AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01 (backup review repair)
 
-The independent review of `d5b44626` found that a failed authored AGENTS
-replacement could leave its original backup while retry still retired the
-receipt and intent. This source repair binds the backup's Windows file identity
-and exact preimage digest to the intent, classifies any remaining backup as
-unresolved, and holds the verified AGENTS postimage while anchored cleanup
-precedes receipt retirement. Eight affected authored-section tests pass,
-including altered and same-byte substituted backups. Canonical validation
-still reports stale generated-pack provenance on this source-only branch;
-regeneration and combined acceptance remain for integration. Details and log
-hashes are in the task's `evidence/d5b44626-backup-review-repair-validation.md`.
+The independent review of `d5b44626` found that a failed authored AGENTS replacement could leave its original backup while retry still retired the receipt and intent. This source repair binds the backup's Windows file identity and exact preimage digest to the intent, classifies any remaining backup as unresolved, and holds the verified AGENTS postimage while anchored cleanup precedes receipt retirement. Eight affected authored-section tests pass, including altered and same-byte substituted backups. Canonical validation still reports stale generated-pack provenance on this source-only branch; regeneration and combined acceptance remain for integration. Details and log hashes are in the task's `evidence/d5b44626-backup-review-repair-validation.md`.
 
 ## Work Item: AIDE-DELIVERED-PACK-CUSTOMIZATION-01
 
 ### Status
 
-The earlier local candidate `37daa862` was superseded after a dry-run recovery
-finding. A repaired replacement source is being qualified; dev is unchanged.
+The earlier local candidate `37daa862` was superseded after a dry-run recovery finding. A repaired replacement source is being qualified; dev is unchanged.
 
 ### Changed Paths
 
-`.aide/scripts/aide_lite.py`, its export/import tests,
-`docs/reference/cross-repo-pack-export-import.md`, and this task's queue,
-planning, and evidence records.
+`.aide/scripts/aide_lite.py`, its export/import tests, `docs/reference/cross-repo-pack-export-import.md`, and this task's queue, planning, and evidence records.
 
 ### Rationale and design
 
-The importer already preserves target-owned template outputs and refuses a
-locally modified managed file before payload writes. An optional project-owned
-`.aide/customizations.json` now binds a rationale to the current observed file
-digest. `--explain` reports ownership decisions and keeps absent or stale
-rationale unknown. `--feedback-out` creates a local manual-share packet only
-when explicitly requested with `--dry-run`; it cannot write inside the pack or
-target. Rationale never grants update authority.
+The importer already preserves target-owned template outputs and refuses a locally modified managed file before payload writes. An optional project-owned `.aide/customizations.json` now binds a rationale to the current observed file digest. `--explain` reports ownership decisions and keeps absent or stale rationale unknown. `--feedback-out` creates a local manual-share packet only when explicitly requested with `--dry-run`; it cannot write inside the pack or target. Rationale never grants update authority.
 
 ### Verification
 
-The full export/import suite passed 27/27 in 292.756 seconds. After adding
-digest fields to the explanations, the two affected tests passed again (one
-each in 20.320 and 19.481 seconds). Q47 18/18, Q48 11/11, and Q31 6/6
-passed. The extracted old-to-new ZIP consumer preserved project bytes and
-produced local opt-in feedback. Release generation replayed zero of 44 files
-from the committed projection; canonical validate, doctor, pack-status, and
-asset checks passed. `git diff --check` passed. Exact identities and logs are
-in this WorkUnit's validation evidence.
+The full export/import suite passed 27/27 in 292.756 seconds. After adding digest fields to the explanations, the two affected tests passed again (one each in 20.320 and 19.481 seconds). Q47 18/18, Q48 11/11, and Q31 6/6 passed. The extracted old-to-new ZIP consumer preserved project bytes and produced local opt-in feedback. Release generation replayed zero of 44 files from the committed projection; canonical validate, doctor, pack-status, and asset checks passed. `git diff --check` passed. Exact identities and logs are in this WorkUnit's validation evidence.
 
 ### Risks and follow-up
 
-This slice explains and preserves customization. A conflict still requires an
-explicit resolution workflow; it does not silently merge unknown edits.
-Repair, rollback, and removal apply behavior and stable publication remain
-separate release obligations.
+This slice explains and preserves customization. A conflict still requires an explicit resolution workflow; it does not silently merge unknown edits. Repair, rollback, and removal apply behavior and stable publication remain separate release obligations.
 
 ### Superseding recovery repair
 
-Read-only preview now leaves a pending import intent and receipt unchanged for
-completed, no-effect, and partial recovery classifications. Feedback export
-refuses these incomplete plans. The importer rejects a checksummed pack payload
-that attempts to provide project-owned `.aide/customizations.json`. Recorded
-rationale is shown only if both the plan preimage and current target bytes match
-the project-authored digest. The full 28-case suite passed after the recovery
-repair; final focused checks for customization, pending intent, and reserved
-metadata passed after the remaining boundary changes. Rebuilt artifact and
-consumer evidence will supersede the earlier archive results.
+Read-only preview now leaves a pending import intent and receipt unchanged for completed, no-effect, and partial recovery classifications. Feedback export refuses these incomplete plans. The importer rejects a checksummed pack payload that attempts to provide project-owned `.aide/customizations.json`. Recorded rationale is shown only if both the plan preimage and current target bytes match the project-authored digest. The full 28-case suite passed after the recovery repair; final focused checks for customization, pending intent, and reserved metadata passed after the remaining boundary changes. Rebuilt artifact and consumer evidence will supersede the earlier archive results.
 
-The importer also normalizes Windows case and trailing-dot/space forms before
-comparing reserved project/import paths. A checksummed uppercase payload
-alias was refused with existing project metadata preserved. This refinement
-is a later source delta and requires one final archive refresh.
+The importer also normalizes Windows case and trailing-dot/space forms before comparing reserved project/import paths. A checksummed uppercase payload alias was refused with existing project metadata preserved. This refinement is a later source delta and requires one final archive refresh.
 
-The final source delta and generated archive are qualified at `8cad56c0`.
-The 29 import, 18 release, 11 draft, and 6 governance tests passed on final
-source. The extracted ZIP proved project-owned preservation, direct-edit
-conflict refusal, opt-in local feedback, read-only pending-intent preview, and
-explicit recovery. Current pack provenance and clean-tree 44-file release
-replay pass; exact hashes and limits are in `validation-final.md`. Queue review
-and dev integration remain pending.
+The final source delta and generated archive are qualified at `8cad56c0`. The 29 import, 18 release, 11 draft, and 6 governance tests passed on final source. The extracted ZIP proved project-owned preservation, direct-edit conflict refusal, opt-in local feedback, read-only pending-intent preview, and explicit recovery. Current pack provenance and clean-tree 44-file release replay pass; exact hashes and limits are in `validation-final.md`. Queue review and dev integration remain pending.
 
 ## Purpose
 
@@ -960,108 +394,64 @@ and dev integration remain pending.
 
 ## Work Item: AIDE-RELEASE-METADATA-INTEGRITY-01
 
-Status: fresh exact review accepted source candidate `853d1c7a`; evidence
-descendant `f77ecba2` fast-forwarded to remote `dev` on 2026-09-24.
+Status: fresh exact review accepted source candidate `853d1c7a`; evidence descendant `f77ecba2` fast-forwarded to remote `dev` on 2026-09-24.
 
 Planned changes:
 
 - make repository and bundle identity independent of the checkout path;
 - remove asset-index dependency cycles and validate exact final hashes/sizes;
 - block stale changelog and release-note previews from publish candidates;
-- retain deterministic archives, extracted consumer behavior, and all
-  no-publish boundaries.
+- retain deterministic archives, extracted consumer behavior, and all no-publish boundaries.
 
 Implemented:
 
-- release identity and provenance now come from the export-pack manifest rather
-  than the checkout directory or task branch;
-- checksum and asset indexes require exact file-set, SHA-256, and byte-size
-  closure without self-referential dependency cycles;
-- stale or missing changelog/release-note previews become explicit blocked
-  placeholders and are not publication candidates;
-- 60 adjacent export, import, Q47, and Q48 tests pass, including tamper,
-  cross-checkout, ancestry, and build/validate byte-convergence regressions;
-- preview source binding now requires matching Markdown and JSON identities and
-  refuses malformed JSON, while ancestry checks ignore Git replacement objects;
-- the independent review of `2819a63e` remains preserved as
-  `REQUEST_CHANGES`; its three findings were repaired and requalified;
+- release identity and provenance now come from the export-pack manifest rather than the checkout directory or task branch;
+- checksum and asset indexes require exact file-set, SHA-256, and byte-size closure without self-referential dependency cycles;
+- stale or missing changelog/release-note previews become explicit blocked placeholders and are not publication candidates;
+- 60 adjacent export, import, Q47, and Q48 tests pass, including tamper, cross-checkout, ancestry, and build/validate byte-convergence regressions;
+- preview source binding now requires matching Markdown and JSON identities and refuses malformed JSON, while ancestry checks ignore Git replacement objects;
+- the independent review of `2819a63e` remains preserved as `REQUEST_CHANGES`; its three findings were repaired and requalified;
 - canonical validation and doctor pass;
-- final ZIP and tar.gz bytes pass fresh and brownfield consumer canaries,
-  idempotent reruns, target-local doctor, and authored-content preservation;
+- final ZIP and tar.gz bytes pass fresh and brownfield consumer canaries, idempotent reruns, target-local doctor, and authored-content preservation;
 - all 44 release files are unchanged by a second bundle/validate/draft cycle.
-- artifact checkpoint `dd1f39f3` is followed by a complete post-commit bundle,
-  validate, draft, and draft-validate projection with
-  `PASS_SOURCE_ANCESTOR`; a second complete cycle changes zero of 44 files.
+- artifact checkpoint `dd1f39f3` is followed by a complete post-commit bundle, validate, draft, and draft-validate projection with `PASS_SOURCE_ANCESTOR`; a second complete cycle changes zero of 44 files.
 
-Remaining: commit and cleanly replay the new exactly named artifact/projection
-chain, then obtain independent rereview and integrate into `dev`. Main promotion,
-tagging, upload, and release publication remain separate retained gates.
+Remaining: commit and cleanly replay the new exactly named artifact/projection chain, then obtain independent rereview and integrate into `dev`. Main promotion, tagging, upload, and release publication remain separate retained gates.
 
-Independent rereview of `9f4bbc0a` proved that deleting a paired preview JSON
-still allowed Markdown alone to become publish-candidate and noted that
-`198a87d2` named a superseded local checkpoint. The repair now requires both
-representations to exist, parse, and agree. Deletion regressions for both
-preview families pass through bundle, release validation, draft generation,
-and draft validation. The complete repaired matrix passes 60 tests: 6 Q31,
-25 export/import, 18 Q47, and 11 Q48, with no failures or skips. A newly
-generated source/artifact/projection chain will supersede the stale narrative
-before rereview.
+Independent rereview of `9f4bbc0a` proved that deleting a paired preview JSON still allowed Markdown alone to become publish-candidate and noted that `198a87d2` named a superseded local checkpoint. The repair now requires both representations to exist, parse, and agree. Deletion regressions for both preview families pass through bundle, release validation, draft generation, and draft validation. The complete repaired matrix passes 60 tests: 6 Q31, 25 export/import, 18 Q47, and 11 Q48, with no failures or skips. A newly generated source/artifact/projection chain will supersede the stale narrative before rereview.
 
-Replacement source `f147c905` and preview checkpoint `1397b703` now generate a
-bundle whose ZIP is
-`dfd344260ee39afc0fff833f266e480c3c59f74e083da986c5ed3685a25d61c7`
-(977452 bytes) and tar.gz is
-`57d382171974b92febe79f4a4f865dc8e386fe03213b36a2b6deff8a0c317aaa`
-(649415 bytes). Both extracted archives pass fresh/brownfield import,
-idempotent rerun, doctor, and authored-content preservation. All 44 release
-files remain byte-identical on a second complete pre-commit cycle.
+Replacement source `f147c905` and preview checkpoint `1397b703` now generate a bundle whose ZIP is `dfd344260ee39afc0fff833f266e480c3c59f74e083da986c5ed3685a25d61c7` (977452 bytes) and tar.gz is `57d382171974b92febe79f4a4f865dc8e386fe03213b36a2b6deff8a0c317aaa` (649415 bytes). Both extracted archives pass fresh/brownfield import, idempotent rerun, doctor, and authored-content preservation. All 44 release files remain byte-identical on a second complete pre-commit cycle.
 
-Artifact checkpoint `7897f7de` is followed by a complete post-commit bundle,
-validate, draft, and draft-validate projection with
-`PASS_SOURCE_ANCESTOR`. A second complete cycle changes zero of 44 files. The
-projection commit message names `7897f7de` directly, superseding the stale
-identity narrative without rewriting published history.
+Artifact checkpoint `7897f7de` is followed by a complete post-commit bundle, validate, draft, and draft-validate projection with `PASS_SOURCE_ANCESTOR`. A second complete cycle changes zero of 44 files. The projection commit message names `7897f7de` directly, superseding the stale identity narrative without rewriting published history.
 
-Committed projection `d6642c3d` replays the complete generator cycle with zero
-changed files and a clean tree. Canonical validate, doctor, diff checks, and all
-four replacement commit messages pass.
+Committed projection `d6642c3d` replays the complete generator cycle with zero changed files and a clean tree. Canonical validate, doctor, diff checks, and all four replacement commit messages pass.
 
 ## Work Item: AIDE-INTEGRATE-DISTRIBUTION-FIXTURE-PORTABILITY-01
 
-Status: independently reviewed and integrated into `dev`; commit-bound portable
-artifact refresh pending.
+Status: independently reviewed and integrated into `dev`; commit-bound portable artifact refresh pending.
 
 Changed:
 
-- preserved source candidate `e73ac0b269df3a47214588ae2d025d1b97f2f2c7` as
-  the second parent of merge `7aab31bc1bc747484d80c662d20e218bb93d1f5b`;
+- preserved source candidate `e73ac0b269df3a47214588ae2d025d1b97f2f2c7` as the second parent of merge `7aab31bc1bc747484d80c662d20e218bb93d1f5b`;
 - centralized portable fixture path classification and alias refusal;
-- hardened bounded snapshot reads, static link/reparse/hardlink/special-file
-  refusal, restore preflight, and exclusive add-file creation;
+- hardened bounded snapshot reads, static link/reparse/hardlink/special-file refusal, restore preflight, and exclusive add-file creation;
 - retained 126 focused portability regressions and explicit fixture-only docs;
 - added the bounded integration WorkUnit and evidence.
-- integrated the reviewed candidate through two-parent commit
-  `bb689227c6a65292f4728d7ae0f8759c22e77bd3`.
+- integrated the reviewed candidate through two-parent commit `bb689227c6a65292f4728d7ae0f8759c22e77bd3`.
 
 Verification:
 
-- 126 focused tests reported 118 passes and eight explicit symlink/FIFO host
-  skips; 157 adjacent distribution tests reported 149 passes, the same eight
-  skips, and zero failures;
+- 126 focused tests reported 118 passes and eight explicit symlink/FIFO host skips; 157 adjacent distribution tests reported 149 passes, the same eight skips, and zero failures;
 - AIDE Lite `test` passed;
-- canonical `validate` and `pack-status` report only expected commit-bound
-  portable-pack provenance drift pending post-integration refresh.
+- canonical `validate` and `pack-status` report only expected commit-bound portable-pack provenance drift pending post-integration refresh.
 
-Remaining: post-integration pack refresh and an authorized disposable Windows
-profile for skipped link cases.
+Remaining: post-integration pack refresh and an authorized disposable Windows profile for skipped link cases.
 
 ## Work Item: AIDE-CW-GITHUB-TARGET-QUALIFICATION-01
 
 ### Status
 
-Completed bounded source repair at `e378d38e`. A fresh exact review accepted
-local source integration with notes; evidence descendant `d81d953a` preserves
-that review. Hosted qualification remains open.
+Completed bounded source repair at `e378d38e`. A fresh exact review accepted local source integration with notes; evidence descendant `d81d953a` preserves that review. Hosted qualification remains open.
 
 ### Changed Paths
 
@@ -1074,18 +464,13 @@ that review. Hosted qualification remains open.
 
 ### Rationale
 
-The independent review preserved at `b8fb89b` found that a documented GitHub
-workflow-run `path@ref` value, including the OpenAPI repository-prefixed form,
-was rejected before provenance could reach durable observation or bridge input.
+The independent review preserved at `b8fb89b` found that a documented GitHub workflow-run `path@ref` value, including the OpenAPI repository-prefixed form, was rejected before provenance could reach durable observation or bridge input.
 
 ### Notable Design Decisions
 
-- Normalize only exact relative or exact target-repository-prefixed workflow
-  selectors to a bare workflow path and full branch ref.
-- Bind `workflow_ref` to the admitted request branch and `workflow_sha` to the
-  admitted candidate commit in the immutable plan.
-- Preserve the existing classification: workflow provenance is locally checked
-  and monitored, not a destination-side compare-and-swap guarantee.
+- Normalize only exact relative or exact target-repository-prefixed workflow selectors to a bare workflow path and full branch ref.
+- Bind `workflow_ref` to the admitted request branch and `workflow_sha` to the admitted candidate commit in the immutable plan.
+- Preserve the existing classification: workflow provenance is locally checked and monitored, not a destination-side compare-and-swap guarantee.
 
 ### Verification
 
@@ -1093,62 +478,25 @@ was rejected before provenance could reach durable observation or bridge input.
 - 21 durable PR/staged-broker tests passed.
 - 12 registered-provider-bridge tests passed.
 - 19 bounded GitHub HTTP tests passed.
-- 37 integration-broker tests executed: 36 passed and one retained Windows
-  symlink test was skipped.
+- 37 integration-broker tests executed: 36 passed and one retained Windows symlink test was skipped.
 - `git diff --check` passed.
 
 ### Remaining Issues
 
-- Independent rereview, restricted broker identity, target configuration,
-  hosted adversarial races, and protected-host qualification remain open.
-- Canonical validation still reports stale export-pack provenance at
-  `b3e5c7aa`; this unintegrated task branch does not refresh release artifacts.
+- Independent rereview, restricted broker identity, target configuration, hosted adversarial races, and protected-host qualification remain open.
+- Canonical validation still reports stale export-pack provenance at `b3e5c7aa`; this unintegrated task branch does not refresh release artifacts.
 
 ### Effective-Rules Rereview Repair
 
-Independent rereview of `963dcc7d` returned `REQUEST_CHANGES` because the
-branch-rules endpoint was represented as complete ruleset bodies and included
-the non-dev ruleset that excludes `refs/heads/dev`. Effective observations now
-use individual endpoint-shaped rules bound to source type, source repository,
-and ruleset id. Expected rules come only from observed rulesets whose exact
-conditions apply to dev. Missing, duplicate, extra, wrong-source,
-wrong-ruleset, excluded-ruleset, and parameter-drift cases refuse closed. The
-focused suite passes 50 tests. All five affected suites execute 139 cases: 138
-pass, zero fail, and one privilege-dependent Windows symlink case is skipped.
-Fresh exact review accepted the repaired source for local dev integration with
-notes. The inherited export-pack provenance mismatch remains a combined-source
-artifact-refresh obligation. No hosted settings or credentials were changed.
+Independent rereview of `963dcc7d` returned `REQUEST_CHANGES` because the branch-rules endpoint was represented as complete ruleset bodies and included the non-dev ruleset that excludes `refs/heads/dev`. Effective observations now use individual endpoint-shaped rules bound to source type, source repository, and ruleset id. Expected rules come only from observed rulesets whose exact conditions apply to dev. Missing, duplicate, extra, wrong-source, wrong-ruleset, excluded-ruleset, and parameter-drift cases refuse closed. The focused suite passes 50 tests. All five affected suites execute 139 cases: 138 pass, zero fail, and one privilege-dependent Windows symlink case is skipped. Fresh exact review accepted the repaired source for local dev integration with notes. The inherited export-pack provenance mismatch remains a combined-source artifact-refresh obligation. No hosted settings or credentials were changed.
 
 ## Work Item: AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01
 
-The owner directed release-first then target-source integration. The accepted
-release repair reached remote `dev` at `f77ecba2` with canonical validate,
-doctor, release validate, and draft validate passing. This bounded task merges
-the fresh-reviewed target source and its evidence descendant into that dev
-ancestry, retaining both coordination histories and the repaired release
-generator. Nine combined suites executed 199 cases: 198 passed and one existing
-Windows symlink privilege case skipped. The combined candidate reached remote
-`dev` at `9cc4bb06`, tree `8afadda5`, after derived-artifact qualification.
-Hosted GitHub effects, main, tags, and publication
-remain separately gated.
+The owner directed release-first then target-source integration. The accepted release repair reached remote `dev` at `f77ecba2` with canonical validate, doctor, release validate, and draft validate passing. This bounded task merges the fresh-reviewed target source and its evidence descendant into that dev ancestry, retaining both coordination histories and the repaired release generator. Nine combined suites executed 199 cases: 198 passed and one existing Windows symlink privilege case skipped. The combined candidate reached remote `dev` at `9cc4bb06`, tree `8afadda5`, after derived-artifact qualification. Hosted GitHub effects, main, tags, and publication remain separately gated.
 
 ## Work Item: AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01
 
-The committed combined source initially failed only inherited export-pack
-provenance. Changelog previews were rebound to source `4deeed08`, then the
-current release generator built the portable pack and local bundle from clean
-checkpoint `66ef462c`. Artifact commit `cda504b9` preserves those bytes.
-The first complete post-commit cycle advanced provenance to
-`PASS_SOURCE_ANCESTOR`; a second cycle changed zero of 44 release files.
-Nine asset hashes and sizes and seven checksum records match actual files.
-Canonical validate and doctor pass after projection. Final projection commit,
-clean replay, and direct consumers now pass: committed projection `d4bd4938`
-replays all four generators with zero of 44 files changed, and exact ZIP/tar.gz
-fresh/brownfield imports apply, rerun without changes, preserve authored content,
-and pass target-local doctor. The actual dev checkout replayed all four
-generators with zero of 44 release files changed and passed pack-status,
-canonical validate, doctor, and exact asset checks. No hosted
-setting, main, tag, upload, or publication effect occurred.
+The committed combined source initially failed only inherited export-pack provenance. Changelog previews were rebound to source `4deeed08`, then the current release generator built the portable pack and local bundle from clean checkpoint `66ef462c`. Artifact commit `cda504b9` preserves those bytes. The first complete post-commit cycle advanced provenance to `PASS_SOURCE_ANCESTOR`; a second cycle changed zero of 44 release files. Nine asset hashes and sizes and seven checksum records match actual files. Canonical validate and doctor pass after projection. Final projection commit, clean replay, and direct consumers now pass: committed projection `d4bd4938` replays all four generators with zero of 44 files changed, and exact ZIP/tar.gz fresh/brownfield imports apply, rerun without changes, preserve authored content, and pass target-local doctor. The actual dev checkout replayed all four generators with zero of 44 release files changed and passed pack-status, canonical validate, doctor, and exact asset checks. No hosted setting, main, tag, upload, or publication effect occurred.
 
 ## Work Item: AIDE-ACCEPT-UPDATE-RECEIPT-V0-01
 
@@ -1469,9 +817,7 @@ Accepted meaning:
 no-apply dry-run distribution update planning contract
 ```
 
-The acceptance records the accepted operation classes, conflict/manual-review
-model, fail-closed semantics, predecessor dependency model, warnings, explicit
-non-capabilities, and downstream-use boundary.
+The acceptance records the accepted operation classes, conflict/manual-review model, fail-closed semantics, predecessor dependency model, warnings, explicit non-capabilities, and downstream-use boundary.
 
 Result:
 
@@ -1487,12 +833,7 @@ Recommended next task:
 AIDE-BUILD-ROLLBACK-BUNDLE-V0-01
 ```
 
-No UpdatePlan implementation, DistributionManifest implementation, ProjectLock
-implementation, OwnershipLedger implementation, InstallRecord implementation,
-or MigrationRecord implementation was changed. RollbackBundle, UpdateReceipt,
-DistributionApplyEngine, target mutation, release publication, tags, uploads,
-GitHub Releases, provider/model/network calls, runtime, branch/worktree
-automation, canaries, and apply behavior were not started by this acceptance.
+No UpdatePlan implementation, DistributionManifest implementation, ProjectLock implementation, OwnershipLedger implementation, InstallRecord implementation, or MigrationRecord implementation was changed. RollbackBundle, UpdateReceipt, DistributionApplyEngine, target mutation, release publication, tags, uploads, GitHub Releases, provider/model/network calls, runtime, branch/worktree automation, canaries, and apply behavior were not started by this acceptance.
 
 ## Work Item: AIDE-CHECK-UPDATE-PLAN-V1-01
 
@@ -1511,15 +852,11 @@ Checked:
 - source build commit `b773e2d9ca3063242d817642a5f587712847936b`;
 - source task status, evidence, and routing;
 - UpdatePlan schema, helper, CLI commands, fixtures, tests, and reports;
-- predecessor compatibility for DistributionManifest, ProjectLock,
-  OwnershipLedger, InstallRecord, and MigrationRecord;
+- predecessor compatibility for DistributionManifest, ProjectLock, OwnershipLedger, InstallRecord, and MigrationRecord;
 - all 15 operation classes in schema/helper with check-local positive probes;
-- 23 fail-closed probes covering ownership, path, predecessor, digest,
-  rollback, required-feature, apply-claim, target-mutation, and
-  source-output misuse cases;
+- 23 fail-closed probes covering ownership, path, predecessor, digest, rollback, required-feature, apply-claim, target-mutation, and source-output misuse cases;
 - 29 fixture cases including the required positive and negative matrices;
-- report and evidence hygiene for local absolute paths, secret-like material,
-  and source-output-as-target-truth.
+- report and evidence hygiene for local absolute paths, secret-like material, and source-output-as-target-truth.
 
 Result:
 
@@ -1532,10 +869,8 @@ missing_evidence: 0
 Warnings:
 
 - UpdatePlan v1 remains proposed until acceptance.
-- Same-session independence is reduced, though no implementation repair was
-  performed.
-- Standalone PyYAML is unavailable; AIDE-native task validation covered queue
-  YAML.
+- Same-session independence is reduced, though no implementation repair was performed.
+- Standalone PyYAML is unavailable; AIDE-native task validation covered queue YAML.
 - The live projection carries fail-closed unknown and never-touch conflicts.
 
 Recommended next task:
@@ -1544,13 +879,7 @@ Recommended next task:
 AIDE-ACCEPT-UPDATE-PLAN-V1-01
 ```
 
-No UpdatePlan implementation, DistributionManifest implementation, ProjectLock
-implementation, OwnershipLedger implementation, InstallRecord implementation,
-or MigrationRecord implementation was changed. RollbackBundle, UpdateReceipt,
-DistributionApplyEngine, self-consumer fixture, canaries, target mutation,
-release publication, tags, uploads, GitHub Releases, provider/model/network
-calls, runtime, branch/worktree automation, and apply behavior were not
-started.
+No UpdatePlan implementation, DistributionManifest implementation, ProjectLock implementation, OwnershipLedger implementation, InstallRecord implementation, or MigrationRecord implementation was changed. RollbackBundle, UpdateReceipt, DistributionApplyEngine, self-consumer fixture, canaries, target mutation, release publication, tags, uploads, GitHub Releases, provider/model/network calls, runtime, branch/worktree automation, and apply behavior were not started.
 
 ## Work Item: AIDE-BUILD-UPDATE-PLAN-V1-01
 
@@ -1572,21 +901,12 @@ Changed:
 Implemented:
 
 - UpdatePlan v1 schema and deterministic helper/projection report;
-- binding to accepted DistributionManifest, ProjectLock, OwnershipLedger,
-  InstallRecord, and MigrationRecord refs/digests;
-- planned operation vocabulary for managed files, managed sections,
-  preservation, regeneration, manual review, and refusal;
-- semantic validation that fails closed for unknown ownership, never-touch
-  updates, project-owned/local-only/project-overlay/runtime/evidence-only
-  overwrite attempts, case collisions, symlink/reparse uncertainty, unsafe
-  paths, predecessor mismatches, missing rollback requirements, unknown
-  required features/extensions, source-output-as-target-truth, apply claims,
-  and target mutation claims;
+- binding to accepted DistributionManifest, ProjectLock, OwnershipLedger, InstallRecord, and MigrationRecord refs/digests;
+- planned operation vocabulary for managed files, managed sections, preservation, regeneration, manual review, and refusal;
+- semantic validation that fails closed for unknown ownership, never-touch updates, project-owned/local-only/project-overlay/runtime/evidence-only overwrite attempts, case collisions, symlink/reparse uncertainty, unsafe paths, predecessor mismatches, missing rollback requirements, unknown required features/extensions, source-output-as-target-truth, apply claims, and target mutation claims;
 - fixture coverage for required positive and negative cases;
-- AIDE Lite `update-plan status`, `update-plan project`, and
-  `update-plan validate` commands;
-- generated status, projection, validation, fixture matrix, conflict summary,
-  and no-apply boundary reports.
+- AIDE Lite `update-plan status`, `update-plan project`, and `update-plan validate` commands;
+- generated status, projection, validation, fixture matrix, conflict summary, and no-apply boundary reports.
 
 Result:
 
@@ -1603,11 +923,7 @@ Recommended next task:
 AIDE-CHECK-UPDATE-PLAN-V1-01
 ```
 
-No update apply, install apply, migration apply, repair apply, rollback apply,
-uninstall apply, target scan authority, target repository mutation, release
-archive creation, release publication, tags, uploads, GitHub Releases,
-provider/model/network calls, runtime, Workbench, Commander, Omnigent,
-branch/worktree automation, project canary, or promotion was implemented.
+No update apply, install apply, migration apply, repair apply, rollback apply, uninstall apply, target scan authority, target repository mutation, release archive creation, release publication, tags, uploads, GitHub Releases, provider/model/network calls, runtime, Workbench, Commander, Omnigent, branch/worktree automation, project canary, or promotion was implemented.
 
 ## Work Item: AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
 
@@ -1634,9 +950,7 @@ Changed:
 
 Implemented:
 
-- projection-only `Principal`, `AdmissionRecord`, `PolicyDecision`,
-  `CapabilityGrant`, `DelegationRecord`, `RevocationRecord`, and
-  `AuthorizationEvaluation` records;
+- projection-only `Principal`, `AdmissionRecord`, `PolicyDecision`, `CapabilityGrant`, `DelegationRecord`, `RevocationRecord`, and `AuthorizationEvaluation` records;
 - exact-digest admission fields and explicit conformance/admission separation;
 - policy and grant separation;
 - narrowing-only delegation and revocation projection fields;
@@ -1659,11 +973,7 @@ Recommended next task:
 AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
 ```
 
-No live identity, credentials, secrets, OIDC/IAM, live policy engine, live
-grants, runtime enforcement, worker execution, transaction approval,
-Service/runtime behavior, provider/model/network calls, preview/apply/rollback,
-repository mutation, branch/worktree automation, GitHub mutation, release, or
-promotion was implemented.
+No live identity, credentials, secrets, OIDC/IAM, live policy engine, live grants, runtime enforcement, worker execution, transaction approval, Service/runtime behavior, provider/model/network calls, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion was implemented.
 
 ## Work Item: AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01
 
@@ -1689,9 +999,7 @@ Accepted meaning:
 bounded fixture-backed LocalProcessExecutionHost v0 reference capability
 ```
 
-The acceptance preserves the complete source chain, including the historical
-`REQUEST_CHANGES` check records, and records `ACCEPTED_WITH_WARNINGS`,
-`material_finding_count: 0`, and `missing_evidence: 0`.
+The acceptance preserves the complete source chain, including the historical `REQUEST_CHANGES` check records, and records `ACCEPTED_WITH_WARNINGS`, `material_finding_count: 0`, and `missing_evidence: 0`.
 
 Recommended next task:
 
@@ -1699,11 +1007,7 @@ Recommended next task:
 AIDE-BUILD-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
 ```
 
-This acceptance did not repair implementation, accept arbitrary command
-execution, accept a generic worker harness, start autonomous AI worker behavior,
-create Service/runtime or Workbench/MCP behavior, call provider/model/network
-surfaces, implement preview/apply/rollback, mutate repositories, create
-branches/worktrees, call GitHub, release, or promote.
+This acceptance did not repair implementation, accept arbitrary command execution, accept a generic worker harness, start autonomous AI worker behavior, create Service/runtime or Workbench/MCP behavior, call provider/model/network surfaces, implement preview/apply/rollback, mutate repositories, create branches/worktrees, call GitHub, release, or promote.
 
 ## Work Item: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
 
@@ -1717,8 +1021,7 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The independent check harness exercised the Repair 02 behavior as system under
-test and found no remaining material findings.
+The independent check harness exercised the Repair 02 behavior as system under test and found no remaining material findings.
 
 Closed source findings:
 
@@ -1741,11 +1044,7 @@ Recommended next task:
 AIDE-ACCEPT-LOCAL-PROCESS-EXECUTION-HOST-V0-01
 ```
 
-This check did not repair implementation, accept the capability, modify
-`RegisteredProcessExecutionProvider v0`, alter the accepted ExecutionHost
-contract, mutate source repair reports, create `.aide.local` Service state,
-start Workbench/MCP/provider/model/network behavior, mutate repositories, create
-branches/worktrees, call GitHub, release, or promote.
+This check did not repair implementation, accept the capability, modify `RegisteredProcessExecutionProvider v0`, alter the accepted ExecutionHost contract, mutate source repair reports, create `.aide.local` Service state, start Workbench/MCP/provider/model/network behavior, mutate repositories, create branches/worktrees, call GitHub, release, or promote.
 
 ## Work Item: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
 
@@ -1762,25 +1061,17 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-Repair 02 targets the seven material assertions from
-`AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01` and preserves the
-already-closed disposable workspace and descriptor-scope findings.
+Repair 02 targets the seven material assertions from `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01` and preserves the already-closed disposable workspace and descriptor-scope findings.
 
 Implemented:
 
-- deterministic lexical path classification for POSIX, Windows drive, UNC, and
-  rooted Windows path forms before filesystem resolution;
-- stable separation of absolute, traversal, workspace escape, symlink/reparse,
-  artifact path, and artifact link refusals;
-- duplicate terminal event classification as
-  `AIDE_LOCAL_PROCESS_HOST_DUPLICATE_TERMINAL_EVENT`;
-- explicit WorkerRun state, terminal-state, and transition constants including
-  `cancelled` and `reconciliation_required`;
+- deterministic lexical path classification for POSIX, Windows drive, UNC, and rooted Windows path forms before filesystem resolution;
+- stable separation of absolute, traversal, workspace escape, symlink/reparse, artifact path, and artifact link refusals;
+- duplicate terminal event classification as `AIDE_LOCAL_PROCESS_HOST_DUPLICATE_TERMINAL_EVENT`;
+- explicit WorkerRun state, terminal-state, and transition constants including `cancelled` and `reconciliation_required`;
 - duplicate artifact declaration refusal;
-- final artifact access revalidation and verified-byte content-addressed report
-  persistence through temporary files and atomic replacement;
-- expanded focused behavioral tests for path containment, event streams,
-  artifact integrity, and lifecycle transitions.
+- final artifact access revalidation and verified-byte content-addressed report persistence through temporary files and atomic replacement;
+- expanded focused behavioral tests for path containment, event streams, artifact integrity, and lifecycle transitions.
 
 Validation run so far:
 
@@ -1800,11 +1091,7 @@ Recommended next task:
 AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02
 ```
 
-No `RegisteredProcessExecutionProvider v0`, accepted ExecutionHost contract,
-protocol schema, fixture worker, interop domain, host adapter, `.aide.local`
-Service state, provider/model/network behavior, Workbench/MCP behavior,
-preview/apply/rollback, repository mutation, branch/worktree automation, GitHub
-mutation, release, or promotion was implemented or modified.
+No `RegisteredProcessExecutionProvider v0`, accepted ExecutionHost contract, protocol schema, fixture worker, interop domain, host adapter, `.aide.local` Service state, provider/model/network behavior, Workbench/MCP behavior, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion was implemented or modified.
 
 ## Work Item: AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01
 
@@ -1824,10 +1111,7 @@ Accepted exactly:
 execution_host_contract_v0
 ```
 
-The accepted scope is projection-only: ExecutionHost descriptor, run binding,
-event, artifact, approval, usage, v0 operation vocabulary, false-boundary
-fields, explicit non-capabilities, and the AIDE Lite
-`execution-host status/project/validate` projection surface.
+The accepted scope is projection-only: ExecutionHost descriptor, run binding, event, artifact, approval, usage, v0 operation vocabulary, false-boundary fields, explicit non-capabilities, and the AIDE Lite `execution-host status/project/validate` projection surface.
 
 Recommended next task:
 
@@ -1835,12 +1119,7 @@ Recommended next task:
 AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-01
 ```
 
-No live ExecutionHost, LocalProcessExecutionHost, RemoteExecutionHost, worker
-execution, worker harness, scheduler, provider/model/network call,
-Service/runtime behavior, Workbench behavior, PreviewSession,
-DevelopmentTransaction, PatchTransaction apply, repository mutation,
-branch/worktree mutation, GitHub mutation, release, or promotion was accepted
-or implemented.
+No live ExecutionHost, LocalProcessExecutionHost, RemoteExecutionHost, worker execution, worker harness, scheduler, provider/model/network call, Service/runtime behavior, Workbench behavior, PreviewSession, DevelopmentTransaction, PatchTransaction apply, repository mutation, branch/worktree mutation, GitHub mutation, release, or promotion was accepted or implemented.
 
 ## Work Item: AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01
 
@@ -1854,21 +1133,14 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The check independently reviewed `AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01`
-at commit `4a1f1aa` and found zero material findings. It verified the
-projection-only contract boundary, schema kind discrimination, six projection
-records, capability-execution separation, operation vocabulary, false-boundary
-fields, explicit non-capabilities, CLI status/project/validate behavior,
-parser rejection of `execution-host run`, report truthfulness, deterministic
-reruns, and leak hygiene.
+The check independently reviewed `AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01` at commit `4a1f1aa` and found zero material findings. It verified the projection-only contract boundary, schema kind discrimination, six projection records, capability-execution separation, operation vocabulary, false-boundary fields, explicit non-capabilities, CLI status/project/validate behavior, parser rejection of `execution-host run`, report truthfulness, deterministic reruns, and leak hygiene.
 
 Accepted warnings:
 
 - reduced independence because the same Codex thread also built the source task;
 - projection-only contract with no live host;
 - no separate external Draft 2020-12 validator installation;
-- nested Python launcher selection differs on this host, so the harness used the
-  active interpreter path and scrubbed it from evidence.
+- nested Python launcher selection differs on this host, so the harness used the active interpreter path and scrubbed it from evidence.
 
 Recommended next task:
 
@@ -1876,12 +1148,7 @@ Recommended next task:
 AIDE-ACCEPT-EXECUTION-HOST-CONTRACT-V0-01
 ```
 
-No implementation was repaired. No live ExecutionHost, LocalProcessExecutionHost,
-RemoteExecutionHost, worker execution, worker harness, scheduler,
-provider/model/network call, Service/runtime behavior, Workbench behavior,
-PreviewSession, DevelopmentTransaction, PatchTransaction apply, repository
-mutation, branch/worktree mutation, GitHub mutation, release, or promotion was
-implemented or accepted.
+No implementation was repaired. No live ExecutionHost, LocalProcessExecutionHost, RemoteExecutionHost, worker execution, worker harness, scheduler, provider/model/network call, Service/runtime behavior, Workbench behavior, PreviewSession, DevelopmentTransaction, PatchTransaction apply, repository mutation, branch/worktree mutation, GitHub mutation, release, or promotion was implemented or accepted.
 
 ## Work Item: AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01
 
@@ -1909,10 +1176,7 @@ The build defines projection-only records for:
 - `ExecutionHostApproval`
 - `ExecutionHostUsage`
 
-The contract reserves the v0 operation vocabulary for future host work and
-records `registered_process_execution_provider_v0` as a distinct deterministic
-capability-execution provider rather than collapsing it into worker/session
-execution.
+The contract reserves the v0 operation vocabulary for future host work and records `registered_process_execution_provider_v0` as a distinct deterministic capability-execution provider rather than collapsing it into worker/session execution.
 
 Recommended next task:
 
@@ -1920,12 +1184,7 @@ Recommended next task:
 AIDE-CHECK-EXECUTION-HOST-CONTRACT-V0-01
 ```
 
-No live ExecutionHost, LocalProcessExecutionHost, RemoteExecutionHost, worker
-execution, worker harness, scheduler, provider/model/network call,
-Service/runtime behavior, Workbench behavior, PreviewSession,
-DevelopmentTransaction, PatchTransaction apply, repository mutation,
-branch/worktree mutation, GitHub mutation, release, or promotion was
-implemented.
+No live ExecutionHost, LocalProcessExecutionHost, RemoteExecutionHost, worker execution, worker harness, scheduler, provider/model/network call, Service/runtime behavior, Workbench behavior, PreviewSession, DevelopmentTransaction, PatchTransaction apply, repository mutation, branch/worktree mutation, GitHub mutation, release, or promotion was implemented.
 
 ## Work Item: AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
 
@@ -1945,10 +1204,7 @@ Accepted exactly:
 registered_process_execution_provider_v0
 ```
 
-The accepted scope is deterministic, pre-registered, shell-free local process
-capability execution with immutable specs, precondition checks, bounded
-timeout/output capture, stream scrubbing, state-probe hooks, decoder hooks,
-`ProcessExecutionReceipt`, `CapabilityOutcome`, and fail-closed behavior.
+The accepted scope is deterministic, pre-registered, shell-free local process capability execution with immutable specs, precondition checks, bounded timeout/output capture, stream scrubbing, state-probe hooks, decoder hooks, `ProcessExecutionReceipt`, `CapabilityOutcome`, and fail-closed behavior.
 
 Recommended next task:
 
@@ -1956,14 +1212,9 @@ Recommended next task:
 AIDE-BUILD-EXECUTION-HOST-CONTRACT-V0-01
 ```
 
-Warnings remain for unsupported cancellation, child-process-tree termination,
-persistent idempotency, resource quotas, streaming artifact storage, unproven
-non-Git state providers, and Eureka's implicit public-alpha smoke schema.
+Warnings remain for unsupported cancellation, child-process-tree termination, persistent idempotency, resource quotas, streaming artifact storage, unproven non-Git state providers, and Eureka's implicit public-alpha smoke schema.
 
-No arbitrary command execution, worker execution, ExecutionHost,
-provider/model/network call, Service/runtime behavior, Workbench behavior,
-preview/apply/rollback, repository mutation, branch/worktree automation, GitHub
-mutation, release, or promotion was accepted or implemented.
+No arbitrary command execution, worker execution, ExecutionHost, provider/model/network call, Service/runtime behavior, Workbench behavior, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion was accepted or implemented.
 
 ## Work Item: AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01
 
@@ -1996,10 +1247,7 @@ Recommended next task:
 AIDE-ACCEPT-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
 ```
 
-No implementation repair, provider acceptance, second live Eureka invocation,
-provider-core mutation, Eureka or Dominium mutation, provider/model/network call,
-worker runtime, Service, Workbench implementation, preview/apply/rollback,
-branch/worktree automation, GitHub mutation, release, or promotion was performed.
+No implementation repair, provider acceptance, second live Eureka invocation, provider-core mutation, Eureka or Dominium mutation, provider/model/network call, worker runtime, Service, Workbench implementation, preview/apply/rollback, branch/worktree automation, GitHub mutation, release, or promotion was performed.
 
 ## Work Item: AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01
 
@@ -2016,15 +1264,9 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The build adds a thin Eureka public-alpha read-only process adapter over the
-unchanged proposed `RegisteredProcessExecutionProvider v0`. It deliberately
-does not edit provider core, neutral process protocol files, the accepted AIDE
-self-validation adapter, the Dominium adapter, or the Eureka checkout.
+The build adds a thin Eureka public-alpha read-only process adapter over the unchanged proposed `RegisteredProcessExecutionProvider v0`. It deliberately does not edit provider core, neutral process protocol files, the accepted AIDE self-validation adapter, the Dominium adapter, or the Eureka checkout.
 
-The requested `scripts/validate_public_alpha_readonly.py --json` command is not
-present in the pinned local Eureka checkout. The build therefore selects
-`scripts/public_alpha_smoke.py --json` as the narrowest existing Eureka-owned
-read-only JSON command and records that substitution as a warning.
+The requested `scripts/validate_public_alpha_readonly.py --json` command is not present in the pinned local Eureka checkout. The build therefore selects `scripts/public_alpha_smoke.py --json` as the narrowest existing Eureka-owned read-only JSON command and records that substitution as a warning.
 
 Recommended next task:
 
@@ -2032,10 +1274,7 @@ Recommended next task:
 AIDE-CHECK-EUREKA-READONLY-PROCESS-ADAPTER-01
 ```
 
-No provider acceptance, generic arbitrary-command interface, provider/model or
-network call, worker execution, Service/runtime, Workbench behavior,
-preview/apply/rollback, source or target repository mutation, branch/worktree
-automation, GitHub mutation, release, or promotion was performed.
+No provider acceptance, generic arbitrary-command interface, provider/model or network call, worker execution, Service/runtime, Workbench behavior, preview/apply/rollback, source or target repository mutation, branch/worktree automation, GitHub mutation, release, or promotion was performed.
 
 ## Work Item: AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
 
@@ -2068,11 +1307,7 @@ Recommended next task:
 AIDE-BUILD-EUREKA-READONLY-PROCESS-ADAPTER-01
 ```
 
-No implementation repair, provider acceptance, Eureka build, arbitrary command
-runner, provider-core mutation, Dominium or target-repository mutation,
-provider/model/network call, worker runtime, Service, Workbench implementation,
-preview/apply/rollback, branch/worktree automation, GitHub mutation, release, or
-promotion was performed.
+No implementation repair, provider acceptance, Eureka build, arbitrary command runner, provider-core mutation, Dominium or target-repository mutation, provider/model/network call, worker runtime, Service, Workbench implementation, preview/apply/rollback, branch/worktree automation, GitHub mutation, release, or promotion was performed.
 
 ## Work Item: AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
 
@@ -2089,21 +1324,15 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The build adds a thin AIDE self-validation adapter over the unchanged proposed
-`RegisteredProcessExecutionProvider v0`. The successful proof invokes the exact
-allowlisted AIDE Lite validate process through the shared provider and records:
+The build adds a thin AIDE self-validation adapter over the unchanged proposed `RegisteredProcessExecutionProvider v0`. The successful proof invokes the exact allowlisted AIDE Lite validate process through the shared provider and records:
 
 - `ProcessExecutionReceipt`;
 - `CapabilityOutcome`;
 - typed result mapping from AIDE Lite validate stdout;
-- before/after AIDE state evidence with no mutation observed within declared
-  probe coverage;
+- before/after AIDE state evidence with no mutation observed within declared probe coverage;
 - EvidencePacket, EventRecord, projection, and human-readable reports.
 
-Focused fake-runner tests cover exact argv, required environment constraints,
-exactly-one process accounting, zero-launch unsupported and wrong-revision
-refusals, timeout/malformed/nonzero mappings, deterministic projections,
-scrubbing, and mutation detection.
+Focused fake-runner tests cover exact argv, required environment constraints, exactly-one process accounting, zero-launch unsupported and wrong-revision refusals, timeout/malformed/nonzero mappings, deterministic projections, scrubbing, and mutation detection.
 
 Recommended next task:
 
@@ -2111,11 +1340,7 @@ Recommended next task:
 AIDE-CHECK-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
 ```
 
-The provider remains proposed and unaccepted. This build does not implement a
-generic command runner, mutate provider core, add Eureka behavior, mutate
-Dominium or target repositories, call provider/model/network services, run
-workers, start Service or Workbench behavior, preview/apply/rollback, mutate
-GitHub, create branches/worktrees, release, or promote.
+The provider remains proposed and unaccepted. This build does not implement a generic command runner, mutate provider core, add Eureka behavior, mutate Dominium or target repositories, call provider/model/network services, run workers, start Service or Workbench behavior, preview/apply/rollback, mutate GitHub, create branches/worktrees, release, or promote.
 
 ## Work Item: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
 
@@ -2129,8 +1354,7 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The check found zero remaining material findings from the repaired
-registered-process provider. Independent behavior evidence confirms:
+The check found zero remaining material findings from the repaired registered-process provider. Independent behavior evidence confirms:
 
 - binding mismatches launch zero processes;
 - valid launch accounting and launch metadata are per invocation;
@@ -2138,8 +1362,7 @@ registered-process provider. Independent behavior evidence confirms:
 - state-probe failures fail closed without typed domain result preservation;
 - process cancellation is explicitly unsupported in v0.
 
-The check also reconfirms generic provider source cleanliness, Dominium parity,
-scrubbed task/report surfaces, and proposed-only provider status.
+The check also reconfirms generic provider source cleanliness, Dominium parity, scrubbed task/report surfaces, and proposed-only provider status.
 
 Recommended next task:
 
@@ -2147,11 +1370,7 @@ Recommended next task:
 AIDE-BUILD-AIDE-SELF-VALIDATION-PROCESS-ADAPTER-01
 ```
 
-No implementation repair, provider acceptance, cancellation implementation, live
-Dominium command rerun, Dominium or target-repository mutation,
-provider/model/network call, worker runtime, Service, Workbench implementation,
-preview/apply/rollback, branch/worktree automation, GitHub mutation, release, or
-promotion was performed.
+No implementation repair, provider acceptance, cancellation implementation, live Dominium command rerun, Dominium or target-repository mutation, provider/model/network call, worker runtime, Service, Workbench implementation, preview/apply/rollback, branch/worktree automation, GitHub mutation, release, or promotion was performed.
 
 ## Work Item: AIDE-DOCS-TENTATIVE-PRODUCT-VISION-ROADMAP-01
 
@@ -2167,13 +1386,7 @@ Changed:
 - `IMPLEMENT.md`
 - `DOCUMENTATION.md`
 
-The document captures the current product direction as AIDE as universal
-development control plane, compatibility kernel, governance fabric, and living
-project twin. It keeps Omnigent as a candidate replaceable ExecutionHost
-package, separates role-specific extension interfaces, explicitly separates
-capability execution from worker execution, and records TranslationReceipt,
-knowledge fabric, Project Twin, and preview-first mutation as future planning
-concepts.
+The document captures the current product direction as AIDE as universal development control plane, compatibility kernel, governance fabric, and living project twin. It keeps Omnigent as a candidate replaceable ExecutionHost package, separates role-specific extension interfaces, explicitly separates capability execution from worker execution, and records TranslationReceipt, knowledge fabric, Project Twin, and preview-first mutation as future planning concepts.
 
 Recommended next task:
 
@@ -2181,11 +1394,7 @@ Recommended next task:
 AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
 ```
 
-No provider acceptance, repair-check execution, ExecutionHost implementation,
-Omnigent integration, runtime, Workbench, worker execution, provider/model or
-network call, live MCP/A2A/ACP behavior, preview/apply/rollback, Dominium or
-target-repository mutation, branch/worktree automation, GitHub mutation, release,
-or promotion was performed.
+No provider acceptance, repair-check execution, ExecutionHost implementation, Omnigent integration, runtime, Workbench, worker execution, provider/model or network call, live MCP/A2A/ACP behavior, preview/apply/rollback, Dominium or target-repository mutation, branch/worktree automation, GitHub mutation, release, or promotion was performed.
 
 ## Work Item: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
 
@@ -2201,18 +1410,15 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The repair closes the five material findings from
-`AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01`:
+The repair closes the five material findings from `AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01`:
 
 - mismatched capability/provider/spec bindings now fail closed before launch;
 - valid launch receipts now report current invocation launch count and metadata;
-- decoder exceptions and undecoded outcomes no longer report complete
-  validation/evidence axes;
+- decoder exceptions and undecoded outcomes no longer report complete validation/evidence axes;
 - state-probe failures fail closed without preserving typed domain results;
 - process cancellation is explicitly declared unsupported in v0.
 
-Focused provider tests and Dominium parity tests pass. The provider remains
-proposed and unaccepted.
+Focused provider tests and Dominium parity tests pass. The provider remains proposed and unaccepted.
 
 Recommended next task:
 
@@ -2220,11 +1426,7 @@ Recommended next task:
 AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
 ```
 
-No provider acceptance, cancellation implementation, live Dominium command
-rerun, Dominium or target-repository mutation, provider/model/network call,
-worker runtime, Service, Workbench implementation, preview/apply/rollback,
-branch/worktree automation, GitHub mutation, release, or promotion was
-performed.
+No provider acceptance, cancellation implementation, live Dominium command rerun, Dominium or target-repository mutation, provider/model/network call, worker runtime, Service, Workbench implementation, preview/apply/rollback, branch/worktree automation, GitHub mutation, release, or promotion was performed.
 
 ## Work Item: AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
 
@@ -2238,20 +1440,15 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `REQUEST_CHANGES`. The check confirms source build evidence
-completeness, generic provider/protocol domain-scan cleanliness, no committed
-absolute-path or secret-like leakage in source build reports/evidence, and
-Dominium parity preservation.
+The result is `REQUEST_CHANGES`. The check confirms source build evidence completeness, generic provider/protocol domain-scan cleanliness, no committed absolute-path or secret-like leakage in source build reports/evidence, and Dominium parity preservation.
 
 It records five material provider safety findings:
 
 - mismatched capability/provider bindings still launch a process;
-- receipt launcher accounting and launch metadata are cumulative or stale when
-  a provider instance is reused;
+- receipt launcher accounting and launch metadata are cumulative or stale when a provider instance is reused;
 - decoder exceptions report complete validation and evidence axes;
 - state-probe failures can still report a complete typed result;
-- cancellation is neither implemented nor declared as an explicit
-  non-capability.
+- cancellation is neither implemented nor declared as an explicit non-capability.
 
 Recommended next task:
 
@@ -2259,10 +1456,7 @@ Recommended next task:
 AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-REPAIR-01
 ```
 
-No implementation repair, provider acceptance, live Dominium rerun, Dominium or
-target-repository mutation, provider/model/network call, worker runtime,
-Service, Workbench implementation, preview/apply/rollback, branch/worktree
-automation, GitHub mutation, release, or promotion was performed.
+No implementation repair, provider acceptance, live Dominium rerun, Dominium or target-repository mutation, provider/model/network call, worker runtime, Service, Workbench implementation, preview/apply/rollback, branch/worktree automation, GitHub mutation, release, or promotion was performed.
 
 ## Work Item: AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
 
@@ -2289,18 +1483,9 @@ The proposed capability is:
 registered_process_execution_provider_v0
 ```
 
-The provider introduces neutral CapabilityInvocation, CapabilityBinding,
-ExecutionProvider, RegisteredProcessExecutionProvider, OutputDecoder,
-CapabilityOutcome, ProcessExecutionReceipt, and evidence/event projection
-shapes. The generic provider owns shell-free bounded process launch mechanics,
-preconditions, timeout, controlled environment, state probes, stream scrubbing,
-decoder invocation, neutral receipts, and fake-runner test seams.
+The provider introduces neutral CapabilityInvocation, CapabilityBinding, ExecutionProvider, RegisteredProcessExecutionProvider, OutputDecoder, CapabilityOutcome, ProcessExecutionReceipt, and evidence/event projection shapes. The generic provider owns shell-free bounded process launch mechanics, preconditions, timeout, controlled environment, state probes, stream scrubbing, decoder invocation, neutral receipts, and fake-runner test seams.
 
-The Dominium registered validation backend is now a thin domain adapter over
-the generic provider. The accepted observable boundary is preserved: one
-launcher call, exact argv, `shell=False`, typed Dominium refusal semantics,
-declared probe-scoped no-mutation observation, and no aggregate-validation
-success claim. The live Dominium command was not rerun.
+The Dominium registered validation backend is now a thin domain adapter over the generic provider. The accepted observable boundary is preserved: one launcher call, exact argv, `shell=False`, typed Dominium refusal semantics, declared probe-scoped no-mutation observation, and no aggregate-validation success claim. The live Dominium command was not rerun.
 
 Recommended next task:
 
@@ -2308,10 +1493,7 @@ Recommended next task:
 AIDE-CHECK-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
 ```
 
-This build does not accept the provider, implement a universal execution
-ontology, arbitrary-command CLI, runtime, worker, provider/model/network
-behavior, preview/apply/rollback, target-repository mutation, branch/worktree
-automation, GitHub mutation, release, or promotion.
+This build does not accept the provider, implement a universal execution ontology, arbitrary-command CLI, runtime, worker, provider/model/network behavior, preview/apply/rollback, target-repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
 
 ## Work Item: AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
 
@@ -2331,11 +1513,7 @@ The result is `ACCEPTED_WITH_WARNINGS`. The accepted capability is exactly:
 dominium_registered_validation_command_boundary_invocation_v0
 ```
 
-This accepts one narrowly registered Dominium validation command-boundary
-invocation through one bounded local process boundary with repository preflight,
-exact argv, `shell=False`, environment constraints, timeout, typed result or
-refusal capture, declared state-probe comparison, evidence, and event
-projection.
+This accepts one narrowly registered Dominium validation command-boundary invocation through one bounded local process boundary with repository preflight, exact argv, `shell=False`, environment constraints, timeout, typed result or refusal capture, declared state-probe comparison, evidence, and event projection.
 
 Preserved warnings:
 
@@ -2351,11 +1529,7 @@ Recommended next task:
 AIDE-BUILD-REGISTERED-PROCESS-EXECUTION-PROVIDER-V0-01
 ```
 
-No implementation code, active backend reports, predecessor evidence, Dominium
-files, live Dominium invocation, generic provider behavior, provider/model/network
-call, worker runtime, Service, Workbench implementation, preview/apply/rollback,
-repository mutation, branch/worktree automation, GitHub mutation, release, or
-promotion was performed.
+No implementation code, active backend reports, predecessor evidence, Dominium files, live Dominium invocation, generic provider behavior, provider/model/network call, worker runtime, Service, Workbench implementation, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion was performed.
 
 ## Work Item: AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01
 
@@ -2369,17 +1543,13 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS` with `material_finding_count: 0`. The check
-verified that active reports use:
+The result is `PASS_WITH_WARNINGS` with `material_finding_count: 0`. The check verified that active reports use:
 
 ```text
 dominium_registered_validation_command_boundary_invocation_v0
 ```
 
-It also verified that the old label appears only as superseded or historical
-data, predecessor evidence was not rewritten, boundary classifications remain
-separate, the domain result is still a typed refusal, and aggregate validation
-success is not claimed.
+It also verified that the old label appears only as superseded or historical data, predecessor evidence was not rewritten, boundary classifications remain separate, the domain result is still a typed refusal, and aggregate validation success is not claimed.
 
 Recommended next task:
 
@@ -2387,11 +1557,7 @@ Recommended next task:
 AIDE-ACCEPT-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
 ```
 
-No implementation repair, active report rewrite, live Dominium command rerun,
-Dominium mutation, generic provider behavior, provider/model/network call,
-worker runtime, Service, Workbench implementation, preview/apply/rollback,
-repository mutation, branch/worktree automation, GitHub mutation, release, or
-promotion was performed.
+No implementation repair, active report rewrite, live Dominium command rerun, Dominium mutation, generic provider behavior, provider/model/network call, worker runtime, Service, Workbench implementation, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion was performed.
 
 ## Work Item: AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01
 
@@ -2415,14 +1581,9 @@ The active capability label is now:
 dominium_registered_validation_command_boundary_invocation_v0
 ```
 
-The prior label `live_dominium_validation_command_readonly_v0` is preserved as
-superseded or historical data only. Active reports now separate process start,
-launcher call count, structured output parsing, registered command boundary,
-service-adapter boundary, aggregate-validation execution, aggregate-validation
-success, typed refusal, and probe-scoped mutation observation.
+The prior label `live_dominium_validation_command_readonly_v0` is preserved as superseded or historical data only. Active reports now separate process start, launcher call count, structured output parsing, registered command boundary, service-adapter boundary, aggregate-validation execution, aggregate-validation success, typed refusal, and probe-scoped mutation observation.
 
-The active reports were regenerated from saved invocation artifacts. The live
-Dominium CLI was not rerun and the Dominium checkout remained unchanged.
+The active reports were regenerated from saved invocation artifacts. The live Dominium CLI was not rerun and the Dominium checkout remained unchanged.
 
 Recommended next task:
 
@@ -2430,10 +1591,7 @@ Recommended next task:
 AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01
 ```
 
-No capability acceptance, generic provider extraction, provider/model/network
-call, worker runtime, Service, Workbench implementation, preview/apply/rollback,
-repository mutation, branch/worktree automation, GitHub mutation, release, or
-promotion was performed.
+No capability acceptance, generic provider extraction, provider/model/network call, worker runtime, Service, Workbench implementation, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion was performed.
 
 ## Work Item: AIDE-CHECK-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
 
@@ -2447,13 +1605,7 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `REQUEST_CHANGES`. The independent check proves the live
-registered Dominium command boundary, typed refusal origin, no-fixture executor
-claim, Dominium service-adapter refusal path, unchanged Dominium state, and
-scrubbed generated reports. It records one material finding: the proposed
-capability label `live_dominium_validation_command_readonly_v0` should be
-relabelled before acceptance because the observed result is a typed refusal,
-not successful aggregate validation.
+The result is `REQUEST_CHANGES`. The independent check proves the live registered Dominium command boundary, typed refusal origin, no-fixture executor claim, Dominium service-adapter refusal path, unchanged Dominium state, and scrubbed generated reports. It records one material finding: the proposed capability label `live_dominium_validation_command_readonly_v0` should be relabelled before acceptance because the observed result is a typed refusal, not successful aggregate validation.
 
 Recommended next task:
 
@@ -2461,10 +1613,7 @@ Recommended next task:
 AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-RELABEL-01
 ```
 
-The check did not repair implementation, rerun the live Dominium CLI, mutate
-Dominium, broaden dispatch, implement Workbench/Service/runtime behavior, call
-providers/models/network, run workers, preview/apply/rollback, mutate
-repositories, create branches/worktrees, mutate GitHub, release, or promote.
+The check did not repair implementation, rerun the live Dominium CLI, mutate Dominium, broaden dispatch, implement Workbench/Service/runtime behavior, call providers/models/network, run workers, preview/apply/rollback, mutate repositories, create branches/worktrees, mutate GitHub, release, or promote.
 
 ## Work Item: AIDE-BUILD-DOMINIUM-REGISTERED-VALIDATION-BACKEND-01
 
@@ -2482,11 +1631,7 @@ Changed:
 - `.aide/scripts/aide_lite.py`
 - `.aide/scripts/tests/test_aide_dominium_registered_validation_backend.py`
 
-This task builds a separate registered validation backend so the accepted
-`fixture_backed_dominium_validation_adapter` remains unchanged. The intended
-proof is one shell-free subprocess invocation of the Dominium-owned
-`dominium.validation.run` CLI boundary against a pinned clean local checkout,
-with normalized AIDE evidence and no Dominium mutation.
+This task builds a separate registered validation backend so the accepted `fixture_backed_dominium_validation_adapter` remains unchanged. The intended proof is one shell-free subprocess invocation of the Dominium-owned `dominium.validation.run` CLI boundary against a pinned clean local checkout, with normalized AIDE evidence and no Dominium mutation.
 
 Result:
 
@@ -2494,11 +1639,7 @@ Result:
 PASS_WITH_WARNINGS
 ```
 
-The backend entered the Dominium CLI process exactly once and parsed stdout JSON
-from `dominium.validation.run`. Dominium returned a typed refusal because the
-aggregate validation suite service is not bound in this Workbench validation
-slice. That proves the live command boundary and service-adapter path were
-reached; it does not prove successful aggregate validation.
+The backend entered the Dominium CLI process exactly once and parsed stdout JSON from `dominium.validation.run`. Dominium returned a typed refusal because the aggregate validation suite service is not bound in this Workbench validation slice. That proves the live command boundary and service-adapter path were reached; it does not prove successful aggregate validation.
 
 Validation:
 
@@ -2532,14 +1673,9 @@ The result is `ACCEPTED_WITH_WARNINGS`. The accepted capability is exactly:
 fixture_backed_dominium_validation_adapter
 ```
 
-Acceptance preserves the source check's authority distinction: the completed
-slice proves a registered, local, read-only, fixture-backed adapter path and
-does not prove live Dominium-owned `dominium.validation.run` command execution.
+Acceptance preserves the source check's authority distinction: the completed slice proves a registered, local, read-only, fixture-backed adapter path and does not prove live Dominium-owned `dominium.validation.run` command execution.
 
-No implementation, fixture, build report, check report, Dominium checkout,
-Workbench, Service/runtime, worker, provider/model/network, preview/apply,
-rollback, source or target mutation, branch/worktree automation, GitHub
-mutation, release, or promotion behavior was modified or accepted.
+No implementation, fixture, build report, check report, Dominium checkout, Workbench, Service/runtime, worker, provider/model/network, preview/apply, rollback, source or target mutation, branch/worktree automation, GitHub mutation, release, or promotion behavior was modified or accepted.
 
 Recommended next task:
 
@@ -2559,14 +1695,7 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS` with `material_finding_count: 0`. The check
-independently verifies the source build at
-`8d8f511c77388b96118eb530f5361090b66911c1`, instruments the fixture-backed
-success executor, verifies unsupported and malformed requests do not enter that
-executor, recomputes workspace digests, checks deterministic clean reruns,
-scans for local path and secret leakage, and validates the generated
-ContextDescriptor, ContextPack, WorkUnit, EvidencePacket, EventRecord, and
-false-boundary claims.
+The result is `PASS_WITH_WARNINGS` with `material_finding_count: 0`. The check independently verifies the source build at `8d8f511c77388b96118eb530f5361090b66911c1`, instruments the fixture-backed success executor, verifies unsupported and malformed requests do not enter that executor, recomputes workspace digests, checks deterministic clean reruns, scans for local path and secret leakage, and validates the generated ContextDescriptor, ContextPack, WorkUnit, EvidencePacket, EventRecord, and false-boundary claims.
 
 The check deliberately classifies the achieved capability as:
 
@@ -2574,8 +1703,7 @@ The check deliberately classifies the achieved capability as:
 fixture_backed_dominium_validation_adapter
 ```
 
-It does not prove live Dominium-owned `dominium.validation.run` execution, and
-acceptance must not claim that stronger capability.
+It does not prove live Dominium-owned `dominium.validation.run` execution, and acceptance must not claim that stronger capability.
 
 Recommended next task:
 
@@ -2600,26 +1728,11 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS`. The build adds a narrow Dominium WorkUnit
-validation slice that creates a temporary fixture workspace, projects a
-ContextDescriptor and ContextPack, builds a WorkUnit, performs exactly one
-registered local read-only `dominium.validation.run` capability invocation, and
-records the typed result as EvidencePacket, EventRecord, and deterministic
-read-only projection evidence.
+The result is `PASS_WITH_WARNINGS`. The build adds a narrow Dominium WorkUnit validation slice that creates a temporary fixture workspace, projects a ContextDescriptor and ContextPack, builds a WorkUnit, performs exactly one registered local read-only `dominium.validation.run` capability invocation, and records the typed result as EvidencePacket, EventRecord, and deterministic read-only projection evidence.
 
-The adapter intentionally refuses unsupported capability IDs with typed refusal
-data and does not provide a shell fallback, private tool bypass, broad Dominium
-dispatcher, provider/model/network call, worker execution, Workbench behavior,
-Service runtime, preview/apply/rollback, PatchTransaction apply, repository
-mutation, branch/worktree automation, GitHub mutation, release, or promotion.
+The adapter intentionally refuses unsupported capability IDs with typed refusal data and does not provide a shell fallback, private tool bypass, broad Dominium dispatcher, provider/model/network call, worker execution, Workbench behavior, Service runtime, preview/apply/rollback, PatchTransaction apply, repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
 
-Verification passed for compile, focused WorkUnit validation tests,
-`dominium-workunit-validation status/run/validate`, task inspect/evidence,
-WorkUnit inspect, diff checks, broad `aide_lite.py validate`, and the latest
-Repair 04/05 Dominium seam suites. The full historical
-`test_aide_dominium_readonly_seam*.py` discovery and four older exact-pattern
-historical seam modules timed out under bounded reruns, so those are recorded as
-warning-class unproven checks rather than passes.
+Verification passed for compile, focused WorkUnit validation tests, `dominium-workunit-validation status/run/validate`, task inspect/evidence, WorkUnit inspect, diff checks, broad `aide_lite.py validate`, and the latest Repair 04/05 Dominium seam suites. The full historical `test_aide_dominium_readonly_seam*.py` discovery and four older exact-pattern historical seam modules timed out under bounded reruns, so those are recorded as warning-class unproven checks rather than passes.
 
 Recommended next task:
 
@@ -2895,17 +2008,9 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS`. The task builds the
-`minimal_a2a_agent_card_contract` slice as a deterministic contract-only
-projection for an inactive A2A agent-card shape, read-only future skill
-catalogue, security/authentication boundary, refusal mappings, conformance
-expectations, structural validation, inspection, and reporting.
+The result is `PASS_WITH_WARNINGS`. The task builds the `minimal_a2a_agent_card_contract` slice as a deterministic contract-only projection for an inactive A2A agent-card shape, read-only future skill catalogue, security/authentication boundary, refusal mappings, conformance expectations, structural validation, inspection, and reporting.
 
-No A2A endpoint, agent registration, authentication, authorization, task
-delegation, worker execution, provider/model/network call, Host Contract,
-Dominium Bridge, Workbench, Runtime, Service, PatchTransaction apply,
-branch/worktree automation, GitHub mutation, release, promotion, or
-target-repository mutation was implemented.
+No A2A endpoint, agent registration, authentication, authorization, task delegation, worker execution, provider/model/network call, Host Contract, Dominium Bridge, Workbench, Runtime, Service, PatchTransaction apply, branch/worktree automation, GitHub mutation, release, promotion, or target-repository mutation was implemented.
 
 Recommended next task:
 
@@ -2925,26 +2030,11 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `ACCEPTED_WITH_WARNINGS`. The accepted capability is
-`minimal_mcp_server_contract`: a deterministic, contract-only projection of the
-pinned MCP `2025-11-25` and JSON-RPC `2.0` subset for AIDE catalogues,
-fixtures, refusal mappings, transport expectations, authorization expectations,
-conformance expectations, structural validation, inspection, and reporting.
+The result is `ACCEPTED_WITH_WARNINGS`. The accepted capability is `minimal_mcp_server_contract`: a deterministic, contract-only projection of the pinned MCP `2025-11-25` and JSON-RPC `2.0` subset for AIDE catalogues, fixtures, refusal mappings, transport expectations, authorization expectations, conformance expectations, structural validation, inspection, and reporting.
 
-The original failed check remains historical evidence. Its two material
-findings were repaired and independently rechecked: absent pagination cursor
-fields are omitted, present cursor values must be strings, and the
-resource-not-found fixture uses `-32002` while custom AIDE refusal codes remain
-unchanged.
+The original failed check remains historical evidence. Its two material findings were repaired and independently rechecked: absent pagination cursor fields are omitted, present cursor values must be strings, and the resource-not-found fixture uses `-32002` while custom AIDE refusal codes remain unchanged.
 
-No MCP schema, helper, focused test, fixture, build report, failed-check report,
-repair report, repair-check report, accepted Interop Export artifact, runtime,
-provider, worker, host, VCS, network, GitHub, release, or target-repository file
-was modified. No live MCP server, transport, endpoint, authorization, resource
-serving, prompt serving, tool execution, worker dispatch, provider/model call,
-PatchTransaction apply, branch/worktree automation, A2A, Host Contract,
-Dominium Bridge, Workbench, Runtime, Service, release, promotion, or production
-readiness was implemented.
+No MCP schema, helper, focused test, fixture, build report, failed-check report, repair report, repair-check report, accepted Interop Export artifact, runtime, provider, worker, host, VCS, network, GitHub, release, or target-repository file was modified. No live MCP server, transport, endpoint, authorization, resource serving, prompt serving, tool execution, worker dispatch, provider/model call, PatchTransaction apply, branch/worktree automation, A2A, Host Contract, Dominium Bridge, Workbench, Runtime, Service, release, promotion, or production readiness was implemented.
 
 Recommended next task:
 
@@ -2964,20 +2054,11 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS` with zero material findings. The check
-independently verified that absent pagination cursor fields are omitted, present
-cursor values are strings, `resource-not-found-refusal.json` uses `-32002`, and
-custom AIDE refusal codes remain unchanged.
+The result is `PASS_WITH_WARNINGS` with zero material findings. The check independently verified that absent pagination cursor fields are omitted, present cursor values are strings, `resource-not-found-refusal.json` uses `-32002`, and custom AIDE refusal codes remain unchanged.
 
-The check also verified temporary invalid cursor/error mutations fail
-validation, JSON-RPC fixture shape remains intact, focused MCP tests pass,
-projection remains deterministic, accepted Interop Export artifacts and failed
-check reports remain unchanged, and no runtime behavior was added.
+The check also verified temporary invalid cursor/error mutations fail validation, JSON-RPC fixture shape remains intact, focused MCP tests pass, projection remains deterministic, accepted Interop Export artifacts and failed check reports remain unchanged, and no runtime behavior was added.
 
-No MCP helper, schema, focused test, fixture, build report, repair report,
-failed-check report, accepted predecessor artifact, generated OKF page, runtime,
-provider, worker, host, VCS, network, GitHub, release, or target-repository file
-was modified.
+No MCP helper, schema, focused test, fixture, build report, repair report, failed-check report, accepted predecessor artifact, generated OKF page, runtime, provider, worker, host, VCS, network, GitHub, release, or target-repository file was modified.
 
 Recommended next task:
 
@@ -3003,23 +2084,11 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The repair fixes the two material findings from
-`AIDE-CHECK-MCP-SERVER-CONTRACT-01`: optional pagination cursor fields are now
-omitted when absent and validated as strings when present, and the
-resource-not-found fixture now uses the pinned MCP Resources error code
-`-32002`.
+The repair fixes the two material findings from `AIDE-CHECK-MCP-SERVER-CONTRACT-01`: optional pagination cursor fields are now omitted when absent and validated as strings when present, and the resource-not-found fixture now uses the pinned MCP Resources error code `-32002`.
 
-The failed independent check was preserved. The repair also adds focused
-regressions for null and non-string cursors, valid opaque string cursors,
-resource-not-found code enforcement, preserved custom AIDE refusal codes,
-JSON-RPC identity, ID alignment, deterministic projection, and unsupported
-command rejection.
+The failed independent check was preserved. The repair also adds focused regressions for null and non-string cursors, valid opaque string cursors, resource-not-found code enforcement, preserved custom AIDE refusal codes, JSON-RPC identity, ID alignment, deterministic projection, and unsupported command rejection.
 
-No live MCP server, transport, endpoint, authorization, resource serving,
-prompt serving, tool execution, worker dispatch, provider/model/network call,
-A2A, Host Contract, Dominium Bridge, Workbench, Runtime, Service,
-PatchTransaction apply, branch/worktree automation, GitHub mutation, release,
-promotion, or target-repository mutation was implemented.
+No live MCP server, transport, endpoint, authorization, resource serving, prompt serving, tool execution, worker dispatch, provider/model/network call, A2A, Host Contract, Dominium Bridge, Workbench, Runtime, Service, PatchTransaction apply, branch/worktree automation, GitHub mutation, release, promotion, or target-repository mutation was implemented.
 
 Recommended next task:
 
@@ -3039,21 +2108,12 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `FAILED_VALIDATION`. The source chain is valid and the build
-evidence reports `missing_evidence: 0`, but independent fixture review found
-two material MCP standards-alignment defects:
+The result is `FAILED_VALIDATION`. The source chain is valid and the build evidence reports `missing_evidence: 0`, but independent fixture review found two material MCP standards-alignment defects:
 
-- list request/result fixtures emit `null` for optional `cursor` or
-  `nextCursor` fields;
-- `resource-not-found-refusal.json` uses `-32043` instead of the pinned MCP
-  resource-not-found code `-32002`.
+- list request/result fixtures emit `null` for optional `cursor` or `nextCursor` fields;
+- `resource-not-found-refusal.json` uses `-32043` instead of the pinned MCP resource-not-found code `-32002`.
 
-The check did not repair the MCP schema, helper, tests, fixtures, build reports,
-or accepted predecessor records. No server, transport, endpoint, authorization,
-resource serving, prompt serving, tool execution, worker dispatch,
-provider/model/network call, PatchTransaction apply, branch/worktree
-automation, GitHub mutation, release, promotion, or target-repository mutation
-occurred.
+The check did not repair the MCP schema, helper, tests, fixtures, build reports, or accepted predecessor records. No server, transport, endpoint, authorization, resource serving, prompt serving, tool execution, worker dispatch, provider/model/network call, PatchTransaction apply, branch/worktree automation, GitHub mutation, release, promotion, or target-repository mutation occurred.
 
 Recommended next task:
 
@@ -3073,17 +2133,9 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `ACCEPTED_WITH_WARNINGS`. The accepted capability is
-`static_interop_export_previews`: deterministic, manifest-backed, preview-only
-interop artifacts for AGENTS, Claude, Copilot, Aider, MCP manifest, and A2A
-agent-card formats.
+The result is `ACCEPTED_WITH_WARNINGS`. The accepted capability is `static_interop_export_previews`: deterministic, manifest-backed, preview-only interop artifacts for AGENTS, Claude, Copilot, Aider, MCP manifest, and A2A agent-card formats.
 
-Acceptance does not install instruction files, overwrite live `AGENTS.md` or
-`CLAUDE.md`, write `.github` Copilot files, install Aider configuration, start
-MCP or A2A, contact external tools, execute workers, call providers/models or
-network services, implement Host Contract, implement Dominium Bridge, implement
-Workbench, apply PatchTransactions, create branches/worktrees, mutate GitHub,
-publish releases, or mutate target repositories.
+Acceptance does not install instruction files, overwrite live `AGENTS.md` or `CLAUDE.md`, write `.github` Copilot files, install Aider configuration, start MCP or A2A, contact external tools, execute workers, call providers/models or network services, implement Host Contract, implement Dominium Bridge, implement Workbench, apply PatchTransactions, create branches/worktrees, mutate GitHub, publish releases, or mutate target repositories.
 
 Recommended next task:
 
@@ -3103,16 +2155,9 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS`. The check independently verifies the
-static interop export build for complete source-chain evidence, preview artifact
-presence, SHA-256 hash binding, JSON parseability, manifest/report consistency,
-queue-authority wording, explicit non-capability boundaries, and build-artifact
-immutability.
+The result is `PASS_WITH_WARNINGS`. The check independently verifies the static interop export build for complete source-chain evidence, preview artifact presence, SHA-256 hash binding, JSON parseability, manifest/report consistency, queue-authority wording, explicit non-capability boundaries, and build-artifact immutability.
 
-No material findings were identified. No static preview artifact, build report,
-implementation file, schema, helper, test, accepted predecessor, generated OKF
-page, runtime, provider, host, VCS, GitHub, release, or target-repository file
-was modified.
+No material findings were identified. No static preview artifact, build report, implementation file, schema, helper, test, accepted predecessor, generated OKF page, runtime, provider, host, VCS, GitHub, release, or target-repository file was modified.
 
 Recommended next task:
 
@@ -3135,17 +2180,9 @@ Changed:
 - `DOCUMENTATION.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS`. The task creates preview-only exports for
-agent-facing guidance, Claude-facing guidance, Copilot-style instructions,
-Aider-style config, an MCP manifest preview, and an A2A agent-card preview.
-Artifact hashes are recorded in `.aide/interop/exports/manifest.json` and the
-interop export reports.
+The result is `PASS_WITH_WARNINGS`. The task creates preview-only exports for agent-facing guidance, Claude-facing guidance, Copilot-style instructions, Aider-style config, an MCP manifest preview, and an A2A agent-card preview. Artifact hashes are recorded in `.aide/interop/exports/manifest.json` and the interop export reports.
 
-No accepted interop capability, live MCP server, live A2A endpoint, Host
-Contract, Dominium Bridge conformance, Workbench, Commander, Service, runtime,
-worker execution, provider/model/network/Gateway/GitHub call, PatchTransaction
-apply, branch/worktree automation, release, promotion, or target-repository
-mutation was implemented.
+No accepted interop capability, live MCP server, live A2A endpoint, Host Contract, Dominium Bridge conformance, Workbench, Commander, Service, runtime, worker execution, provider/model/network/Gateway/GitHub call, PatchTransaction apply, branch/worktree automation, release, promotion, or target-repository mutation was implemented.
 
 Recommended next task:
 
@@ -3167,23 +2204,11 @@ Changed:
 - `DOCUMENTATION.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS`. The task records the 2026-06-19 through
-2026-06-20 architecture synthesis as an intent-to-transaction roadmap update:
-AIDE coordinates and proves, domains own product semantics, capability
-providers execute admitted deterministic operations, and hosts present shared
-WorkUnit, transaction, evidence, and event state.
+The result is `PASS_WITH_WARNINGS`. The task records the 2026-06-19 through 2026-06-20 architecture synthesis as an intent-to-transaction roadmap update: AIDE coordinates and proves, domains own product semantics, capability providers execute admitted deterministic operations, and hosts present shared WorkUnit, transaction, evidence, and event state.
 
-The update preserves `AIDE-BUILD-INTEROP-EXPORTS-01` as the live serialized
-next AIDE task after ContextPack v2 acceptance. Future candidate lanes are
-recorded for an AIDE/Dominium integration charter, CapabilityInvocation, Host
-Contract v0, Dominium Bridge manifest and conformance, a validation slice,
-DevelopmentTransaction, PreviewSession, and read-only Workbench.
+The update preserves `AIDE-BUILD-INTEROP-EXPORTS-01` as the live serialized next AIDE task after ContextPack v2 acceptance. Future candidate lanes are recorded for an AIDE/Dominium integration charter, CapabilityInvocation, Host Contract v0, Dominium Bridge manifest and conformance, a validation slice, DevelopmentTransaction, PreviewSession, and read-only Workbench.
 
-No schema, helper, command, test, Host Contract, Host SDK, CapabilityInvocation,
-DevelopmentTransaction, PreviewSession, ShadowWorkspace, Dominium Bridge
-conformance, Workbench, Commander, Service, runtime, worker execution,
-provider/model/network call, branch/worktree automation, PatchTransaction
-apply, target mutation, release, or promotion was implemented.
+No schema, helper, command, test, Host Contract, Host SDK, CapabilityInvocation, DevelopmentTransaction, PreviewSession, ShadowWorkspace, Dominium Bridge conformance, Workbench, Commander, Service, runtime, worker execution, provider/model/network call, branch/worktree automation, PatchTransaction apply, target mutation, release, or promotion was implemented.
 
 Recommended next task:
 
@@ -3203,16 +2228,9 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `ACCEPTED_WITH_WARNINGS`. The task accepts only
-`context_pack_v2` as a deterministic projection capability for source/report
-references by path and hash, structural validation subset, inspection, and
-reporting.
+The result is `ACCEPTED_WITH_WARNINGS`. The task accepts only `context_pack_v2` as a deterministic projection capability for source/report references by path and hash, structural validation subset, inspection, and reporting.
 
-The original blocked ContextPack build/check records remain historical evidence
-and were not rewritten. The acceptance does not call models, providers, Gateway,
-or network services; generate embeddings; execute agents, workers, or commands;
-admit or trust adapters; apply patches; mutate target repositories; or implement
-runtime behavior.
+The original blocked ContextPack build/check records remain historical evidence and were not rewritten. The acceptance does not call models, providers, Gateway, or network services; generate embeddings; execute agents, workers, or commands; admit or trust adapters; apply patches; mutate target repositories; or implement runtime behavior.
 
 Recommended next task:
 
@@ -3232,17 +2250,9 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS`. The check independently reviewed the
-resume ContextPack v2 build for source-chain integrity, schema/helper alignment,
-source hash binding, deterministic projection, source immutability, section and
-reference shape, authority boundaries, CLI fail-closed behavior, report
-consistency, and complete evidence.
+The result is `PASS_WITH_WARNINGS`. The check independently reviewed the resume ContextPack v2 build for source-chain integrity, schema/helper alignment, source hash binding, deterministic projection, source immutability, section and reference shape, authority boundaries, CLI fail-closed behavior, report consistency, and complete evidence.
 
-No material findings were identified. The original blocked
-`AIDE-CHECK-CONTEXTPACK-V2-01` record remains historical evidence and was not
-rewritten. No ContextPack v2 implementation, schema, tests, build reports,
-runtime, adapter, provider, host, VCS, branch/worktree, GitHub, release,
-promotion, or target-repository file was intentionally changed.
+No material findings were identified. The original blocked `AIDE-CHECK-CONTEXTPACK-V2-01` record remains historical evidence and was not rewritten. No ContextPack v2 implementation, schema, tests, build reports, runtime, adapter, provider, host, VCS, branch/worktree, GitHub, release, promotion, or target-repository file was intentionally changed.
 
 Recommended next task:
 
@@ -3267,16 +2277,9 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS`. The task builds the minimal
-`context_pack_v2` slice as a deterministic evidence-bound projection record for
-bounded queue, protocol, report, OKF, Reconciler, capability, conformance, and
-explicit non-capability context.
+The result is `PASS_WITH_WARNINGS`. The task builds the minimal `context_pack_v2` slice as a deterministic evidence-bound projection record for bounded queue, protocol, report, OKF, Reconciler, capability, conformance, and explicit non-capability context.
 
-The original blocked `AIDE-BUILD-CONTEXTPACK-V2-01` record remains historical
-evidence and was not rewritten. The slice does not call models, providers,
-Gateway, or network services; generate embeddings; execute agents, workers, or
-commands; admit or trust adapters; apply patches; mutate target repositories;
-or implement runtime behavior.
+The original blocked `AIDE-BUILD-CONTEXTPACK-V2-01` record remains historical evidence and was not rewritten. The slice does not call models, providers, Gateway, or network services; generate embeddings; execute agents, workers, or commands; admit or trust adapters; apply patches; mutate target repositories; or implement runtime behavior.
 
 Recommended next task:
 
@@ -3296,16 +2299,9 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `ACCEPTED_WITH_WARNINGS`. The task accepts only
-`minimal_adapter_manifest_schema` as a declaration-only capability for
-representation, projection, structural validation, reference linkage,
-declaration inspection, and reporting.
+The result is `ACCEPTED_WITH_WARNINGS`. The task accepts only `minimal_adapter_manifest_schema` as a declaration-only capability for representation, projection, structural validation, reference linkage, declaration inspection, and reporting.
 
-The original blocked `AIDE-ACCEPT-ADAPTER-MANIFEST-01` record remains
-historical evidence and was not rewritten. The acceptance does not admit or
-trust adapters, execute workers/tests, create sandboxes, resolve credentials,
-call providers/models/network/Gateway/GitHub, create branches/worktrees, apply
-patches, mutate target repositories, or implement runtime behavior.
+The original blocked `AIDE-ACCEPT-ADAPTER-MANIFEST-01` record remains historical evidence and was not rewritten. The acceptance does not admit or trust adapters, execute workers/tests, create sandboxes, resolve credentials, call providers/models/network/Gateway/GitHub, create branches/worktrees, apply patches, mutate target repositories, or implement runtime behavior.
 
 Recommended next task:
 
@@ -3325,20 +2321,11 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS`. The check independently reviewed the resume
-AdapterManifest build for schema/helper alignment, ReferenceID forms,
-declaration-only authority boundaries, deterministic projection, CLI behavior,
-complete evidence, and report consistency.
+The result is `PASS_WITH_WARNINGS`. The check independently reviewed the resume AdapterManifest build for schema/helper alignment, ReferenceID forms, declaration-only authority boundaries, deterministic projection, CLI behavior, complete evidence, and report consistency.
 
-No material findings were identified. The original blocked
-`AIDE-CHECK-ADAPTER-MANIFEST-01` record remains historical evidence and was not
-rewritten.
+No material findings were identified. The original blocked `AIDE-CHECK-ADAPTER-MANIFEST-01` record remains historical evidence and was not rewritten.
 
-No AdapterManifest implementation, schema, focused test, build report, runtime,
-adapter execution, provider, host, VCS, OKF, branch/worktree, GitHub, release,
-promotion, or target-repository file was intentionally changed. No admission,
-trust, approval, apply, rollback, policy, credential, network, or execution
-behavior was added.
+No AdapterManifest implementation, schema, focused test, build report, runtime, adapter execution, provider, host, VCS, OKF, branch/worktree, GitHub, release, promotion, or target-repository file was intentionally changed. No admission, trust, approval, apply, rollback, policy, credential, network, or execution behavior was added.
 
 Recommended next task:
 
@@ -3363,21 +2350,11 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS`. The task builds the minimal
-`minimal_adapter_manifest_schema` slice as a declaration-only protocol record
-for adapter integration shape, prerequisites, reference linkage, projection,
-inspection, validation, and reporting.
+The result is `PASS_WITH_WARNINGS`. The task builds the minimal `minimal_adapter_manifest_schema` slice as a declaration-only protocol record for adapter integration shape, prerequisites, reference linkage, projection, inspection, validation, and reporting.
 
-The original blocked `AIDE-BUILD-ADAPTER-MANIFEST-01` record remains historical
-evidence and was not rewritten. The slice does not admit, trust, execute,
-launch, sandbox, resolve credentials, call providers, call network services,
-mutate GitHub, create branches/worktrees, apply patches, mutate target
-repositories, or implement runtime behavior.
+The original blocked `AIDE-BUILD-ADAPTER-MANIFEST-01` record remains historical evidence and was not rewritten. The slice does not admit, trust, execute, launch, sandbox, resolve credentials, call providers, call network services, mutate GitHub, create branches/worktrees, apply patches, mutate target repositories, or implement runtime behavior.
 
-Focused AdapterManifest tests and CLI validation pass with warnings. The
-warnings are deliberate: AdapterManifest remains unaccepted, admission/trust and
-execution are absent, and JSON Schema validation remains a bounded local subset
-plus semantic checks.
+Focused AdapterManifest tests and CLI validation pass with warnings. The warnings are deliberate: AdapterManifest remains unaccepted, admission/trust and execution are absent, and JSON Schema validation remains a bounded local subset plus semantic checks.
 
 Recommended next task:
 
@@ -3397,20 +2374,11 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `ACCEPTED_WITH_WARNINGS`. The task accepts only the repaired
-`minimal_patch_transaction_schema` capability as a no-apply protocol slice for
-representation, projection, structural validation, scope validation, reference
-linkage, inspection, and reporting.
+The result is `ACCEPTED_WITH_WARNINGS`. The task accepts only the repaired `minimal_patch_transaction_schema` capability as a no-apply protocol slice for representation, projection, structural validation, scope validation, reference linkage, inspection, and reporting.
 
-The original blocked `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` record remains
-historical evidence and was not rewritten. The build/check/repair/repair-check
-chain remains preserved.
+The original blocked `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` record remains historical evidence and was not rewritten. The build/check/repair/repair-check chain remains preserved.
 
-No PatchTransaction implementation, schema, focused test, original blocked
-acceptance record, failed-check report, repair report, CapabilityManifest record,
-runtime, adapter, provider, host, VCS, OKF, branch/worktree, GitHub, release,
-promotion, or target-repository file was intentionally changed. No approval,
-apply, rollback, policy, admission, or trust behavior was added.
+No PatchTransaction implementation, schema, focused test, original blocked acceptance record, failed-check report, repair report, CapabilityManifest record, runtime, adapter, provider, host, VCS, OKF, branch/worktree, GitHub, release, promotion, or target-repository file was intentionally changed. No approval, apply, rollback, policy, admission, or trust behavior was added.
 
 Recommended next task:
 
@@ -3430,24 +2398,14 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS`. The check independently confirms the
-PatchTransaction repair closes both material path-scope defects:
+The result is `PASS_WITH_WARNINGS`. The check independently confirms the PatchTransaction repair closes both material path-scope defects:
 
 - drive-prefixed relative paths now fail closed;
-- duplicate-normalized entries now fail closed in `allowed_paths`,
-  `forbidden_paths`, and `declared_changed_paths`.
+- duplicate-normalized entries now fail closed in `allowed_paths`, `forbidden_paths`, and `declared_changed_paths`.
 
-Diagnostics preserve both original conflicting values and the shared canonical
-path. Existing scope protections remain intact, unsupported execution-like CLI
-operations fail closed, repeated projection is deterministic, and source inputs
-remain unchanged. The original failed check and the already-blocked downstream
-tasks remain historical records.
+Diagnostics preserve both original conflicting values and the shared canonical path. Existing scope protections remain intact, unsupported execution-like CLI operations fail closed, repeated projection is deterministic, and source inputs remain unchanged. The original failed check and the already-blocked downstream tasks remain historical records.
 
-No PatchTransaction implementation, schema, focused test, failed-check report,
-repair report, blocked downstream task, runtime, adapter, provider, host, VCS,
-OKF, branch/worktree, GitHub, release, promotion, or target-repository file was
-intentionally changed. No approval, apply, rollback, policy, admission, or trust
-behavior was added.
+No PatchTransaction implementation, schema, focused test, failed-check report, repair report, blocked downstream task, runtime, adapter, provider, host, VCS, OKF, branch/worktree, GitHub, release, promotion, or target-repository file was intentionally changed. No approval, apply, rollback, policy, admission, or trust behavior was added.
 
 Recommended next task:
 
@@ -3469,24 +2427,14 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS`. The repair addresses the two material
-findings from `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01`:
+The result is `PASS_WITH_WARNINGS`. The repair addresses the two material findings from `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01`:
 
 - drive-prefixed relative paths such as `C:repo/file.txt` now fail validation;
-- duplicate-normalized declarations such as `src//file.py` and `src/file.py`
-  now fail validation.
+- duplicate-normalized declarations such as `src//file.py` and `src/file.py` now fail validation.
 
-The repair adds focused regression tests and preserves PatchTransaction as a
-schema/projection/validation-only no-apply record. No PatchTransaction schema,
-CLI dispatch, build/check evidence, accepted predecessor, runtime, adapter,
-provider, host, VCS, OKF, branch/worktree, GitHub, release, promotion, or
-target-repository file was intentionally changed. No approval, apply, rollback,
-policy, admission, or trust behavior was added.
+The repair adds focused regression tests and preserves PatchTransaction as a schema/projection/validation-only no-apply record. No PatchTransaction schema, CLI dispatch, build/check evidence, accepted predecessor, runtime, adapter, provider, host, VCS, OKF, branch/worktree, GitHub, release, promotion, or target-repository file was intentionally changed. No approval, apply, rollback, policy, admission, or trust behavior was added.
 
-A follow-up prompt alignment pass expanded duplicate diagnostics to include both
-original inputs and the shared canonical path, added explicit drive-prefix and
-duplicate-normalization regression coverage, and completed the stricter repair
-report set.
+A follow-up prompt alignment pass expanded duplicate diagnostics to include both original inputs and the shared canonical path, added explicit drive-prefix and duplicate-normalization regression coverage, and completed the stricter repair report set.
 
 Recommended next task:
 
@@ -3506,18 +2454,9 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `BLOCKED`. The prompt required the ContextPack v2 build result to
-be `PASS` or `PASS_WITH_WARNINGS`, but live queue truth shows
-`AIDE-BUILD-CONTEXTPACK-V2-01` is `BLOCKED` and recommends
-`AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+The result is `BLOCKED`. The prompt required the ContextPack v2 build result to be `PASS` or `PASS_WITH_WARNINGS`, but live queue truth shows `AIDE-BUILD-CONTEXTPACK-V2-01` is `BLOCKED` and recommends `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
 
-The check did not execute ContextPack v2 schema/helper/projection/CLI/test,
-digest, budget, path-scope, rendering, or v0 compatibility review because no
-passed ContextPack v2 build exists. No ContextPack implementation, repair,
-schema, helper, CLI dispatch, focused tests, projection, generated pack, accepted
-record, OKF page, model call, embedding generation, adapter/provider selection,
-agent/worker execution, PatchTransaction apply, target-repository mutation,
-release, or promotion was intentionally changed or performed.
+The check did not execute ContextPack v2 schema/helper/projection/CLI/test, digest, budget, path-scope, rendering, or v0 compatibility review because no passed ContextPack v2 build exists. No ContextPack implementation, repair, schema, helper, CLI dispatch, focused tests, projection, generated pack, accepted record, OKF page, model call, embedding generation, adapter/provider selection, agent/worker execution, PatchTransaction apply, target-repository mutation, release, or promotion was intentionally changed or performed.
 
 Recommended next task:
 
@@ -3537,17 +2476,9 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `BLOCKED`. The prompt required AdapterManifest acceptance to be
-`ACCEPTED` or `ACCEPTED_WITH_WARNINGS` and PatchTransaction acceptance to remain
-accepted, but live queue truth shows `AIDE-ACCEPT-ADAPTER-MANIFEST-01` and
-`AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` are both `BLOCKED`.
+The result is `BLOCKED`. The prompt required AdapterManifest acceptance to be `ACCEPTED` or `ACCEPTED_WITH_WARNINGS` and PatchTransaction acceptance to remain accepted, but live queue truth shows `AIDE-ACCEPT-ADAPTER-MANIFEST-01` and `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` are both `BLOCKED`.
 
-ContextPack v2 implementation was not started. No ContextPack schema, helper,
-CLI dispatch, focused tests, deterministic pack projection, context-pack
-output, model call, embedding generation, adapter/provider selection, agent or
-worker execution, command execution beyond validation, PatchTransaction apply,
-credential resolution, branch/worktree automation, target-repository mutation,
-release, or promotion was intentionally changed or performed.
+ContextPack v2 implementation was not started. No ContextPack schema, helper, CLI dispatch, focused tests, deterministic pack projection, context-pack output, model call, embedding generation, adapter/provider selection, agent or worker execution, command execution beyond validation, PatchTransaction apply, credential resolution, branch/worktree automation, target-repository mutation, release, or promotion was intentionally changed or performed.
 
 Recommended next task:
 
@@ -3567,16 +2498,9 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `BLOCKED`. The prompt required AdapterManifest build/check to be
-`PASS` or `PASS_WITH_WARNINGS` and PatchTransaction acceptance to remain
-accepted, but live queue truth shows both AdapterManifest source tasks are
-`BLOCKED` and `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` is also `BLOCKED`.
+The result is `BLOCKED`. The prompt required AdapterManifest build/check to be `PASS` or `PASS_WITH_WARNINGS` and PatchTransaction acceptance to remain accepted, but live queue truth shows both AdapterManifest source tasks are `BLOCKED` and `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` is also `BLOCKED`.
 
-AdapterManifest is not accepted by this task. No AdapterManifest schema,
-helper, CLI dispatch, focused tests, projection, manifest records, adapter
-admission, adapter trust, worker/test execution, provider/model/network call,
-branch/worktree automation, PatchTransaction apply, target-repository mutation,
-release, or promotion was intentionally changed or performed.
+AdapterManifest is not accepted by this task. No AdapterManifest schema, helper, CLI dispatch, focused tests, projection, manifest records, adapter admission, adapter trust, worker/test execution, provider/model/network call, branch/worktree automation, PatchTransaction apply, target-repository mutation, release, or promotion was intentionally changed or performed.
 
 Recommended next task:
 
@@ -3596,18 +2520,9 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `BLOCKED`. The prompt required the AdapterManifest build result to
-be `PASS` or `PASS_WITH_WARNINGS`, but live queue truth shows
-`AIDE-BUILD-ADAPTER-MANIFEST-01` is `BLOCKED` and recommends
-`AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+The result is `BLOCKED`. The prompt required the AdapterManifest build result to be `PASS` or `PASS_WITH_WARNINGS`, but live queue truth shows `AIDE-BUILD-ADAPTER-MANIFEST-01` is `BLOCKED` and recommends `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
 
-The check did not execute AdapterManifest schema/helper/projection/CLI/test
-review because no passed AdapterManifest build exists. No AdapterManifest
-implementation, repair, schema, helper, CLI dispatch, focused tests, projection,
-adapter execution, endpoint contact, credential resolution, admission, trust,
-provider/model/network call, branch/worktree automation, PatchTransaction apply,
-target-repository mutation, release, or promotion was intentionally changed or
-performed.
+The check did not execute AdapterManifest schema/helper/projection/CLI/test review because no passed AdapterManifest build exists. No AdapterManifest implementation, repair, schema, helper, CLI dispatch, focused tests, projection, adapter execution, endpoint contact, credential resolution, admission, trust, provider/model/network call, branch/worktree automation, PatchTransaction apply, target-repository mutation, release, or promotion was intentionally changed or performed.
 
 Recommended next task:
 
@@ -3627,16 +2542,9 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `BLOCKED`. The prompt required PatchTransaction acceptance to be
-`ACCEPTED` or `ACCEPTED_WITH_WARNINGS`, but live queue truth shows
-`AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` is `BLOCKED` after the independent
-check reported `FAILED_VALIDATION`.
+The result is `BLOCKED`. The prompt required PatchTransaction acceptance to be `ACCEPTED` or `ACCEPTED_WITH_WARNINGS`, but live queue truth shows `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` is `BLOCKED` after the independent check reported `FAILED_VALIDATION`.
 
-AdapterManifest implementation was not started. No AdapterManifest schema,
-helper, CLI dispatch, focused tests, projection, manifest records, adapter
-admission, adapter trust, worker/test execution, provider/model/network call,
-branch/worktree automation, PatchTransaction apply, target-repository mutation,
-release, or promotion was intentionally changed or performed.
+AdapterManifest implementation was not started. No AdapterManifest schema, helper, CLI dispatch, focused tests, projection, manifest records, adapter admission, adapter trust, worker/test execution, provider/model/network call, branch/worktree automation, PatchTransaction apply, target-repository mutation, release, or promotion was intentionally changed or performed.
 
 Recommended next task:
 
@@ -3656,20 +2564,14 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `BLOCKED`. Live queue evidence shows the build task is complete
-with `missing_evidence: 0`, but the independent check result is
-`FAILED_VALIDATION` and recommends
-`AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+The result is `BLOCKED`. Live queue evidence shows the build task is complete with `missing_evidence: 0`, but the independent check result is `FAILED_VALIDATION` and recommends `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
 
-PatchTransaction is not accepted by this task. The failed check is preserved,
-including the two material path-scope findings:
+PatchTransaction is not accepted by this task. The failed check is preserved, including the two material path-scope findings:
 
 - `path_scope_drive_prefixed_relative_accepted`;
 - `path_scope_duplicate_normalization_accepted`.
 
-No implementation, schema, helper, test, build/check report, accepted
-predecessor, runtime, adapter, provider, host, VCS, OKF, branch/worktree,
-GitHub, release, promotion, or target-repository file was intentionally changed.
+No implementation, schema, helper, test, build/check report, accepted predecessor, runtime, adapter, provider, host, VCS, OKF, branch/worktree, GitHub, release, promotion, or target-repository file was intentionally changed.
 
 Recommended next task:
 
@@ -3689,23 +2591,14 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `FAILED_VALIDATION`. The check verified the build source chain,
-complete build evidence, sample patch artifact digest binding, report
-consistency, lifecycle/no-apply invariants, authority boundaries, unsupported
-execution-command closure, canonical repeated projection, and source
-immutability.
+The result is `FAILED_VALIDATION`. The check verified the build source chain, complete build evidence, sample patch artifact digest binding, report consistency, lifecycle/no-apply invariants, authority boundaries, unsupported execution-command closure, canonical repeated projection, and source immutability.
 
 The check found two material path-scope fail-closed defects:
 
-- drive-prefixed relative paths such as `C:repo/file.txt` are accepted as valid
-  repository-relative scope;
-- duplicate-normalized declared paths such as `src//file.py` and `src/file.py`
-  are accepted without an ambiguity error.
+- drive-prefixed relative paths such as `C:repo/file.txt` are accepted as valid repository-relative scope;
+- duplicate-normalized declared paths such as `src//file.py` and `src/file.py` are accepted without an ambiguity error.
 
-No implementation, schema, helper, test, build report, accepted predecessor,
-runtime, adapter, provider, host, VCS, OKF, branch/worktree, GitHub, release,
-promotion, or target-repository file was intentionally changed. Acceptance is
-blocked until a bounded repair is built and independently rechecked.
+No implementation, schema, helper, test, build report, accepted predecessor, runtime, adapter, provider, host, VCS, OKF, branch/worktree, GitHub, release, promotion, or target-repository file was intentionally changed. Acceptance is blocked until a bounded repair is built and independently rechecked.
 
 Recommended next task:
 
@@ -3730,24 +2623,11 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS`. The slice defines a deterministic
-PatchTransaction record for a proposed bounded mutation, validates ReferenceID
-syntax, digest shape and binding, fail-closed scope rules, lifecycle/no-apply
-consistency, required capability and ConformanceResult refs, explicit
-non-capabilities, deterministic projection, and source immutability.
+The result is `PASS_WITH_WARNINGS`. The slice defines a deterministic PatchTransaction record for a proposed bounded mutation, validates ReferenceID syntax, digest shape and binding, fail-closed scope rules, lifecycle/no-apply consistency, required capability and ConformanceResult refs, explicit non-capabilities, deterministic projection, and source immutability.
 
-The generated example is synthetic and writes only reports under
-`.aide/reports/patch-transaction/`, including a sample `unified_diff` artifact.
-It does not apply a patch, mutate a target repository, grant approval, evaluate
-policy, roll back, admit or trust a subject, activate profiles, run workers,
-implement AdapterManifest or ContextPack v2, call providers/models/network/
-Gateway/GitHub, create branches/worktrees, publish releases, or promote
-anything.
+The generated example is synthetic and writes only reports under `.aide/reports/patch-transaction/`, including a sample `unified_diff` artifact. It does not apply a patch, mutate a target repository, grant approval, evaluate policy, roll back, admit or trust a subject, activate profiles, run workers, implement AdapterManifest or ContextPack v2, call providers/models/network/ Gateway/GitHub, create branches/worktrees, publish releases, or promote anything.
 
-Validation covered Python compile checks, 22 focused tests, `patch-transaction`
-status/project/validate, predecessor validators, task inspect/evidence, broad
-AIDE validation, JSON parsing, deterministic projection comparison, source
-immutability, secret-like scan, Git diff checks, and commit policy checks.
+Validation covered Python compile checks, 22 focused tests, `patch-transaction` status/project/validate, predecessor validators, task inspect/evidence, broad AIDE validation, JSON parsing, deterministic projection comparison, source immutability, secret-like scan, Git diff checks, and commit policy checks.
 
 Recommended next task:
 
@@ -3757,8 +2637,7 @@ AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
 
 ## Work Item: AIDE-OPERATIONAL-HEALTH-PAUSE-01
 
-Completed for review as a report-only operational-health pause before
-PatchTransaction.
+Completed for review as a report-only operational-health pause before PatchTransaction.
 
 Changed:
 
@@ -3768,39 +2647,19 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The result is `PASS_WITH_WARNINGS`. The pause confirms that live queue truth is
-unambiguous after `AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01`, the accepted
-ConformanceResult digest chain remains intact, the historical failed digest
-check remains preserved, and the accepted result still binds to the pristine
-accepted ConformanceProfile payload using `sha256-canonical-json-v1`.
+The result is `PASS_WITH_WARNINGS`. The pause confirms that live queue truth is unambiguous after `AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01`, the accepted ConformanceResult digest chain remains intact, the historical failed digest check remains preserved, and the accepted result still binds to the pristine accepted ConformanceProfile payload using `sha256-canonical-json-v1`.
 
-Operational warning debt remains: many historical queue entries still show
-`needs_review`, generated status/task packet surfaces can be stale, ReportIndex
-tracks 479 reports with 70 ambiguity records, GeneratedOutputLedger tracks 1381
-classified candidates with 67 unknown-generator records, OKF lint reports one
-stale-context finding, and Reconciler remains report-only with four
-warning-class findings.
+Operational warning debt remains: many historical queue entries still show `needs_review`, generated status/task packet surfaces can be stale, ReportIndex tracks 479 reports with 70 ambiguity records, GeneratedOutputLedger tracks 1381 classified candidates with 67 unknown-generator records, OKF lint reports one stale-context finding, and Reconciler remains report-only with four warning-class findings.
 
-No blocker was found for beginning `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01` as
-a schema-only, no-apply, inspectable mutation-record task. This work does not
-implement PatchTransaction, repair protocols, activate profiles, execute
-conformance cases, admit or trust subjects, create AdapterManifest or
-ContextPack v2, run workers, implement runtime/Test Broker/Service/Commander/
-Workbench, call providers/models/network/Gateway/GitHub, mutate branches or
-target repositories, publish releases, or promote anything.
+No blocker was found for beginning `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01` as a schema-only, no-apply, inspectable mutation-record task. This work does not implement PatchTransaction, repair protocols, activate profiles, execute conformance cases, admit or trust subjects, create AdapterManifest or ContextPack v2, run workers, implement runtime/Test Broker/Service/Commander/ Workbench, call providers/models/network/Gateway/GitHub, mutate branches or target repositories, publish releases, or promote anything.
 
-Validation covered git state and diff checks, predecessor validators,
-OKF/Reconciler checks, ReportIndex/GeneratedOutputLedger/Track B JSON parse
-checks, task inspect/evidence, broad AIDE validation, health-report JSON
-parsing, secret-like scan, generated churn cleanup, and commit policy checks.
+Validation covered git state and diff checks, predecessor validators, OKF/Reconciler checks, ReportIndex/GeneratedOutputLedger/Track B JSON parse checks, task inspect/evidence, broad AIDE validation, health-report JSON parsing, secret-like scan, generated churn cleanup, and commit policy checks.
 
-Recommended next gated task:
-`AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01`.
+Recommended next gated task: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01`.
 
 ## Work Item: AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01
 
-Completed for review as the acceptance/consolidation gate for the minimal
-ConformanceResult schema capability.
+Completed for review as the acceptance/consolidation gate for the minimal ConformanceResult schema capability.
 
 Changed:
 
@@ -3810,44 +2669,21 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The acceptance result is `ACCEPTED_WITH_WARNINGS`. It accepts only the
-evidence-projected, runnerless ConformanceResult record
-`aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01`
-for profile `aide://conformance-profile/minimal_capability_manifest-v1.0.0`.
+The acceptance result is `ACCEPTED_WITH_WARNINGS`. It accepts only the evidence-projected, runnerless ConformanceResult record `aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01` for profile `aide://conformance-profile/minimal_capability_manifest-v1.0.0`.
 
-The historical failed digest check remains preserved as
-`AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01` with result `FAILED_VALIDATION`. The
-accepted digest after repair is
-`sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70`,
-using `sha256-canonical-json-v1` over the pristine accepted ConformanceProfile
-payload.
+The historical failed digest check remains preserved as `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01` with result `FAILED_VALIDATION`. The accepted digest after repair is `sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70`, using `sha256-canonical-json-v1` over the pristine accepted ConformanceProfile payload.
 
-The accepted record remains bounded: case results count 10, required cases
-count 8, aggregate outcome `PASS_WITH_WARNINGS`, record valid true, record
-complete true, and profile requirements satisfied true. These facts do not
-activate the profile, admit the subject, or grant trust.
+The accepted record remains bounded: case results count 10, required cases count 8, aggregate outcome `PASS_WITH_WARNINGS`, record valid true, record complete true, and profile requirements satisfied true. These facts do not activate the profile, admit the subject, or grant trust.
 
-The acceptance deliberately avoids implementation repair, schema/helper/test
-changes, conformance runner, case execution, automatic observation collection,
-profile activation, admission, subject trust, adapter admission/execution,
-PatchTransaction, AdapterManifest, ContextPack v2, runtime, Service, Commander,
-provider/model/Gateway/network/GitHub calls, branch/worktree automation, target
-apply, release, promotion, production readiness, and broad autonomous runtime
-behavior.
+The acceptance deliberately avoids implementation repair, schema/helper/test changes, conformance runner, case execution, automatic observation collection, profile activation, admission, subject trust, adapter admission/execution, PatchTransaction, AdapterManifest, ContextPack v2, runtime, Service, Commander, provider/model/Gateway/network/GitHub calls, branch/worktree automation, target apply, release, promotion, production readiness, and broad autonomous runtime behavior.
 
-Validation covered JSON parsing for acceptance and predecessor reports, Python
-compile checks, focused ConformanceResult tests, ConformanceResult/Profile/
-CapabilityManifest validators, task inspect/evidence checks, broad AIDE
-validation, diff checks, secret-like scan, generated churn cleanup, and commit
-policy validation.
+Validation covered JSON parsing for acceptance and predecessor reports, Python compile checks, focused ConformanceResult tests, ConformanceResult/Profile/ CapabilityManifest validators, task inspect/evidence checks, broad AIDE validation, diff checks, secret-like scan, generated churn cleanup, and commit policy validation.
 
-Recommended next gated task:
-`AIDE-OPERATIONAL-HEALTH-PAUSE-01`.
+Recommended next gated task: `AIDE-OPERATIONAL-HEALTH-PAUSE-01`.
 
 ## Work Item: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
 
-Checked for review as the independent gate after
-`AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`.
+Checked for review as the independent gate after `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`.
 
 Changed:
 
@@ -3857,40 +2693,21 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The check result is `PASS_WITH_WARNINGS`. The historical failed check remains
-preserved with recorded digest
-`sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8`
-and raw-profile digest
-`sha256:76da87d6325184fc1cd948e07068ff431b0fc075ab2f6e3a2a71b78ca5fadd7d`.
+The check result is `PASS_WITH_WARNINGS`. The historical failed check remains preserved with recorded digest `sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8` and raw-profile digest `sha256:76da87d6325184fc1cd948e07068ff431b0fc075ab2f6e3a2a71b78ca5fadd7d`.
 
-The repaired ConformanceResult now records profile digest
-`sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70`.
-Independent recomputation with `hashlib.sha256` over the pristine accepted
-profile payload using `sha256-canonical-json-v1` produced the same digest.
+The repaired ConformanceResult now records profile digest `sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70`. Independent recomputation with `hashlib.sha256` over the pristine accepted profile payload using `sha256-canonical-json-v1` produced the same digest.
 
-Negative checks confirm that an incorrect digest fails validation, a changed
-profile payload changes the digest, and lifecycle-warning mutation on a profile
-copy does not become authoritative digest source. Projection remains
-deterministic and does not mutate the accepted profile source.
+Negative checks confirm that an incorrect digest fails validation, a changed profile payload changes the digest, and lifecycle-warning mutation on a profile copy does not become authoritative digest source. Projection remains deterministic and does not mutate the accepted profile source.
 
-Semantic impact remains bounded. Case results, aggregate outcome, record
-completeness, profile satisfaction, execution state, admission state, subject
-admission, and trust remain unchanged. The result remains evidence-projected,
-runnerless, inactive, not admitted, and not trusted.
+Semantic impact remains bounded. Case results, aggregate outcome, record completeness, profile satisfaction, execution state, admission state, subject admission, and trust remain unchanged. The result remains evidence-projected, runnerless, inactive, not admitted, and not trusted.
 
-Validation covered Python compile checks, focused ConformanceResult tests,
-`conformance-result status/project/validate`, independent digest recomputation,
-bad-digest validation, copy-mutation checks, repeated projection determinism,
-generated report parsing, task inspect/evidence, predecessor validators, broad
-AIDE validation, diff checks, secret-like scan, and generated churn cleanup.
+Validation covered Python compile checks, focused ConformanceResult tests, `conformance-result status/project/validate`, independent digest recomputation, bad-digest validation, copy-mutation checks, repeated projection determinism, generated report parsing, task inspect/evidence, predecessor validators, broad AIDE validation, diff checks, secret-like scan, and generated churn cleanup.
 
-Recommended next gated task:
-`AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01`.
+Recommended next gated task: `AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01`.
 
 ## Work Item: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
 
-Completed for review as a bounded repair to the ConformanceResult profile digest
-binding defect found by `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01`.
+Completed for review as a bounded repair to the ConformanceResult profile digest binding defect found by `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01`.
 
 Changed:
 
@@ -3903,42 +2720,21 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The root cause was that `load_accepted_conformance_profile()` appended a
-candidate-lifecycle warning into the loaded profile object before
-`profile_digest()` was computed. Projection and validation then both used the
-same warning-mutated in-memory profile representation, allowing a false-positive
-digest match.
+The root cause was that `load_accepted_conformance_profile()` appended a candidate-lifecycle warning into the loaded profile object before `profile_digest()` was computed. Projection and validation then both used the same warning-mutated in-memory profile representation, allowing a false-positive digest match.
 
-The repair adds a pristine profile loader, defines `sha256-canonical-json-v1`
-using sorted compact UTF-8 JSON, computes the result digest from the pristine
-accepted profile payload, and validates against a freshly loaded pristine
-profile source. The corrected digest is
-`sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70`.
+The repair adds a pristine profile loader, defines `sha256-canonical-json-v1` using sorted compact UTF-8 JSON, computes the result digest from the pristine accepted profile payload, and validates against a freshly loaded pristine profile source. The corrected digest is `sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70`.
 
-Regression tests now independently compute the expected digest with
-`hashlib.sha256` and canonical `json.dumps`, verify lifecycle-warning mutation
-on a copy cannot validate the pristine-bound result, prove digest changes when
-the pristine payload changes, and confirm projection/validation do not mutate
-the profile source.
+Regression tests now independently compute the expected digest with `hashlib.sha256` and canonical `json.dumps`, verify lifecycle-warning mutation on a copy cannot validate the pristine-bound result, prove digest changes when the pristine payload changes, and confirm projection/validation do not mutate the profile source.
 
-Semantic impact was intentionally limited. Case results, aggregate outcome,
-record completeness, profile satisfaction, admission state, and trust state
-remain unchanged. The result remains evidence-projected, runnerless, not
-activated, not admitted, and not trusted.
+Semantic impact was intentionally limited. Case results, aggregate outcome, record completeness, profile satisfaction, admission state, and trust state remain unchanged. The result remains evidence-projected, runnerless, not activated, not admitted, and not trusted.
 
-Validation covered Python compile checks, focused ConformanceResult tests,
-`conformance-result project/validate`, independent digest recomputation,
-repeated projection determinism, generated report parsing, task
-inspect/evidence, predecessor validators, broad AIDE validation, source
-mutation review, diff checks, secret-like scan, and commit policy validation.
+Validation covered Python compile checks, focused ConformanceResult tests, `conformance-result project/validate`, independent digest recomputation, repeated projection determinism, generated report parsing, task inspect/evidence, predecessor validators, broad AIDE validation, source mutation review, diff checks, secret-like scan, and commit policy validation.
 
-Remaining required work is an independent recheck:
-`AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`.
+Remaining required work is an independent recheck: `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`.
 
 ## Work Item: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
 
-Checked for review as the independent gate after
-`AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01`.
+Checked for review as the independent gate after `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01`.
 
 Changed:
 
@@ -3948,42 +2744,19 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The check result is `FAILED_VALIDATION`. The source ConformanceResult records
-profile digest
-`sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8`,
-but independent recomputation against the raw accepted ConformanceProfile
-report payload produced
-`sha256:76da87d6325184fc1cd948e07068ff431b0fc075ab2f6e3a2a71b78ca5fadd7d`.
+The check result is `FAILED_VALIDATION`. The source ConformanceResult records profile digest `sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8`, but independent recomputation against the raw accepted ConformanceProfile report payload produced `sha256:76da87d6325184fc1cd948e07068ff431b0fc075ab2f6e3a2a71b78ca5fadd7d`.
 
-The material finding is `profile_digest_mismatch`. The helper loads the
-accepted profile, appends a lifecycle warning to the in-memory profile, and then
-computes and validates the digest against that mutated view. That makes the
-current validator report a false-positive digest match for the built result.
+The material finding is `profile_digest_mismatch`. The helper loads the accepted profile, appends a lifecycle warning to the in-memory profile, and then computes and validates the digest against that mutated view. That makes the current validator report a false-positive digest match for the built result.
 
-The check did not repair the implementation. Schema shape, result inventory,
-case-result binding, required-case aggregation, evidence projection, evidence
-links, admission/trust separation, CLI surface, generated reports, and
-forbidden-operation boundaries were reviewed and recorded as evidence.
+The check did not repair the implementation. Schema shape, result inventory, case-result binding, required-case aggregation, evidence projection, evidence links, admission/trust separation, CLI surface, generated reports, and forbidden-operation boundaries were reviewed and recorded as evidence.
 
-Validation covered preflight predecessor validators, check-report JSON parsing,
-task inspect/evidence checks, `conformance-result status/validate`, broad AIDE
-validation, independent digest recomputation, generated-report churn
-containment, secret-like scan, diff whitespace checks, and commit policy
-validation.
+Validation covered preflight predecessor validators, check-report JSON parsing, task inspect/evidence checks, `conformance-result status/validate`, broad AIDE validation, independent digest recomputation, generated-report churn containment, secret-like scan, diff whitespace checks, and commit policy validation.
 
-Remaining required work is a bounded repair task:
-`AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`. The repair must make the
-profile digest bind to the raw accepted profile payload, add regression coverage
-for raw-profile digest recomputation, regenerate the result/reports, and then
-rerun this check chain. ConformanceResult acceptance, PatchTransaction, adapter
-work, runtime, provider/model/network/Gateway calls, target apply,
-branch/worktree automation, release, and promotion remain deferred.
+Remaining required work is a bounded repair task: `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`. The repair must make the profile digest bind to the raw accepted profile payload, add regression coverage for raw-profile digest recomputation, regenerate the result/reports, and then rerun this check chain. ConformanceResult acceptance, PatchTransaction, adapter work, runtime, provider/model/network/Gateway calls, target apply, branch/worktree automation, release, and promotion remain deferred.
 
 ## Work Item: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
 
-Completed for review as the first minimal evidence-projected
-`ConformanceResult` slice for the accepted `minimal_capability_manifest`
-ConformanceProfile candidate.
+Completed for review as the first minimal evidence-projected `ConformanceResult` slice for the accepted `minimal_capability_manifest` ConformanceProfile candidate.
 
 Changed:
 
@@ -3998,38 +2771,17 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The implemented result ref is
-`aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01`.
-It binds to profile
-`aide://conformance-profile/minimal_capability_manifest-v1.0.0`, records a
-stable profile digest, projects one case result per accepted profile case, and
-aggregates the current evidence state as `PASS_WITH_WARNINGS`.
+The implemented result ref is `aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01`. It binds to profile `aide://conformance-profile/minimal_capability_manifest-v1.0.0`, records a stable profile digest, projects one case result per accepted profile case, and aggregates the current evidence state as `PASS_WITH_WARNINGS`.
 
-The model keeps `record_valid`, `profile_requirements_satisfied`, and
-admission/trust state independent. The first projection records
-`record_valid: true`, `record_complete: true`, and
-`profile_requirements_satisfied: true`, while preserving
-`execution_performed: false`, `runner_ref: null`, `admission_performed: false`,
-`subject_admitted: false`, and `trusted: false`.
+The model keeps `record_valid`, `profile_requirements_satisfied`, and admission/trust state independent. The first projection records `record_valid: true`, `record_complete: true`, and `profile_requirements_satisfied: true`, while preserving `execution_performed: false`, `runner_ref: null`, `admission_performed: false`, `subject_admitted: false`, and `trusted: false`.
 
-Validation covered Python compile, focused ConformanceResult tests,
-`conformance-result status/project/validate`, generated report JSON parsing,
-task inspect/evidence checks, predecessor validators, broad repository
-validation, generated-report churn containment, secret-like scan, diff
-whitespace checks, and commit policy validation.
+Validation covered Python compile, focused ConformanceResult tests, `conformance-result status/project/validate`, generated report JSON parsing, task inspect/evidence checks, predecessor validators, broad repository validation, generated-report churn containment, secret-like scan, diff whitespace checks, and commit policy validation.
 
-Remaining deliberate deferrals: conformance runner, case execution, command
-execution, automatic result collection, profile activation, conformance
-admission, subject admission, trust grants, adapter admission/execution,
-PatchTransaction, AdapterManifest, ContextPack v2, runtime, worker execution,
-provider/model/network/Gateway calls, target apply, branch/worktree automation,
-release, promotion, production readiness, and broad autonomous runtime behavior.
+Remaining deliberate deferrals: conformance runner, case execution, command execution, automatic result collection, profile activation, conformance admission, subject admission, trust grants, adapter admission/execution, PatchTransaction, AdapterManifest, ContextPack v2, runtime, worker execution, provider/model/network/Gateway calls, target apply, branch/worktree automation, release, promotion, production readiness, and broad autonomous runtime behavior.
 
 ## Work Item: AIDE-ACCEPT-CONFORMANCE-PROFILE-01
 
-Accepted for review as the consolidation gate over
-`AIDE-BUILD-CONFORMANCE-PROFILE-01` and
-`AIDE-CHECK-CONFORMANCE-PROFILE-01`.
+Accepted for review as the consolidation gate over `AIDE-BUILD-CONFORMANCE-PROFILE-01` and `AIDE-CHECK-CONFORMANCE-PROFILE-01`.
 
 Changed:
 
@@ -4039,40 +2791,19 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The accepted capability is `minimal_conformance_profile`: versioned
-ConformanceProfile schema, profile-scoped ConformanceCase model, deterministic
-candidate profile projection, profile and case indexes, required/optional/
-advisory requirement semantics, fail-closed required-case aggregation policy,
-evidence requirement declarations, versioning and compatibility policy,
-CapabilityManifest subject integration, Track B governance evidence integration,
-and `conformance-profile status/project/validate` CLI.
+The accepted capability is `minimal_conformance_profile`: versioned ConformanceProfile schema, profile-scoped ConformanceCase model, deterministic candidate profile projection, profile and case indexes, required/optional/ advisory requirement semantics, fail-closed required-case aggregation policy, evidence requirement declarations, versioning and compatibility policy, CapabilityManifest subject integration, Track B governance evidence integration, and `conformance-profile status/project/validate` CLI.
 
-The result is `ACCEPTED_WITH_WARNINGS`. The profile
-`aide://conformance-profile/minimal_capability_manifest-v1.0.0` remains
-`candidate` and inactive. No ConformanceResult was generated, no cases were
-executed, no conformance runner was added, no admission was performed,
-`minimal_capability_manifest` was not admitted by conformance, and no trust was
-granted.
+The result is `ACCEPTED_WITH_WARNINGS`. The profile `aide://conformance-profile/minimal_capability_manifest-v1.0.0` remains `candidate` and inactive. No ConformanceResult was generated, no cases were executed, no conformance runner was added, no admission was performed, `minimal_capability_manifest` was not admitted by conformance, and no trust was granted.
 
-Warnings remain non-blocking for the profile-only boundary, deferred
-ConformanceResult, deferred runner/execution/admission, inline case modeling
-rather than a separate `$defs` block, stale generated latest-task-packet drift,
-and later PatchTransaction, AdapterManifest, ContextPack v2, adapter, runtime,
-provider, target apply, branch/worktree, release, and promotion layers.
+Warnings remain non-blocking for the profile-only boundary, deferred ConformanceResult, deferred runner/execution/admission, inline case modeling rather than a separate `$defs` block, stale generated latest-task-packet drift, and later PatchTransaction, AdapterManifest, ContextPack v2, adapter, runtime, provider, target apply, branch/worktree, release, and promotion layers.
 
-Validation covered Python compile, focused ConformanceProfile tests,
-`conformance-profile status/validate`, profile/check/acceptance report JSON
-parsing, task inspect/evidence checks, predecessor validators, broad repository
-validation, generated-report churn containment, secret-like scan, diff
-whitespace checks, and commit policy validation.
+Validation covered Python compile, focused ConformanceProfile tests, `conformance-profile status/validate`, profile/check/acceptance report JSON parsing, task inspect/evidence checks, predecessor validators, broad repository validation, generated-report churn containment, secret-like scan, diff whitespace checks, and commit policy validation.
 
-The next recommended queue task is exactly
-`AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01`.
+The next recommended queue task is exactly `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01`.
 
 ## Work Item: AIDE-CHECK-CONFORMANCE-PROFILE-01
 
-Checked for review as the independent gate after
-`AIDE-BUILD-CONFORMANCE-PROFILE-01`.
+Checked for review as the independent gate after `AIDE-BUILD-CONFORMANCE-PROFILE-01`.
 
 Changed:
 
@@ -4082,39 +2813,15 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The check reviewed the candidate profile
-`aide://conformance-profile/minimal_capability_manifest-v1.0.0` for subject
-`aide://capability/minimal_capability_manifest`. It confirmed 10 profile-scoped
-cases: 8 required, 1 optional, and 1 advisory.
+The check reviewed the candidate profile `aide://conformance-profile/minimal_capability_manifest-v1.0.0` for subject `aide://capability/minimal_capability_manifest`. It confirmed 10 profile-scoped cases: 8 required, 1 optional, and 1 advisory.
 
-The result is `PASS_WITH_WARNINGS`. No blockers were found. Non-blocking
-warnings remain for deferred ConformanceResult, conformance runner/execution,
-admission/trust promotion, adapter admission/execution, PatchTransaction,
-AdapterManifest, ContextPack v2, runtime surfaces, target apply,
-branch/worktree automation, release/promotion, production readiness, stale
-`.aide/context/latest-task-packet.md`, and inline schema case modeling rather
-than a separate `$defs` block.
+The result is `PASS_WITH_WARNINGS`. No blockers were found. Non-blocking warnings remain for deferred ConformanceResult, conformance runner/execution, admission/trust promotion, adapter admission/execution, PatchTransaction, AdapterManifest, ContextPack v2, runtime surfaces, target apply, branch/worktree automation, release/promotion, production readiness, stale `.aide/context/latest-task-packet.md`, and inline schema case modeling rather than a separate `$defs` block.
 
-The work deliberately avoids implementation repair, ConformanceResult,
-conformance execution, conformance admission, automatic admission, policy
-decision, adapter admission, adapter execution, capability execution, runtime
-capability registry, scheduler, leases, supervisor, runtime, Service,
-Commander, PatchTransaction, AdapterManifest, ContextPack v2, Test Broker
-runtime, async execution, worker execution, provider adapters, branch/worktree
-automation, target apply, active apply, rollback execution, uninstall execution,
-release, promotion, GitHub mutation, Gateway calls, network calls,
-model/provider calls, target repo mutation, production readiness, release
-readiness, and broad autonomous runtime behavior.
+The work deliberately avoids implementation repair, ConformanceResult, conformance execution, conformance admission, automatic admission, policy decision, adapter admission, adapter execution, capability execution, runtime capability registry, scheduler, leases, supervisor, runtime, Service, Commander, PatchTransaction, AdapterManifest, ContextPack v2, Test Broker runtime, async execution, worker execution, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, and broad autonomous runtime behavior.
 
-Validation covered Python compile, focused ConformanceProfile tests,
-`conformance-profile status/project/validate`, predecessor protocol validators,
-report JSON parsing, task inspect/evidence checks, determinism/source-mutation
-sentinel, broad repository validation, diff whitespace checks, generated-report
-churn containment, secret-like scan, and commit policy validation.
+Validation covered Python compile, focused ConformanceProfile tests, `conformance-profile status/project/validate`, predecessor protocol validators, report JSON parsing, task inspect/evidence checks, determinism/source-mutation sentinel, broad repository validation, diff whitespace checks, generated-report churn containment, secret-like scan, and commit policy validation.
 
-The next recommended queue task is exactly
-`AIDE-ACCEPT-CONFORMANCE-PROFILE-01`; if accepted, proceed to
-`AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01`.
+The next recommended queue task is exactly `AIDE-ACCEPT-CONFORMANCE-PROFILE-01`; if accepted, proceed to `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01`.
 
 ## Work Item: AIDE-BUILD-CONFORMANCE-PROFILE-01
 
@@ -4141,11 +2848,7 @@ The new profile targets the accepted `minimal_capability_manifest` capability:
 - `lifecycle`: `candidate`
 - `subject.ref`: `aide://capability/minimal_capability_manifest`
 
-The helper builds one deterministic candidate profile with profile-scoped
-ConformanceCase records, fail-closed aggregation policy for required cases,
-warning-only handling for unknown optional/advisory evaluators, evidence
-requirements, profile/case indexes, projection reports, validation reports, and
-explicit non-capabilities.
+The helper builds one deterministic candidate profile with profile-scoped ConformanceCase records, fail-closed aggregation policy for required cases, warning-only handling for unknown optional/advisory evaluators, evidence requirements, profile/case indexes, projection reports, validation reports, and explicit non-capabilities.
 
 The CLI now exposes:
 
@@ -4153,23 +2856,11 @@ The CLI now exposes:
 - `conformance-profile project`
 - `conformance-profile validate`
 
-The work deliberately avoids ConformanceResult, conformance runner/execution,
-admission policy, automatic admission, adapter admission/execution, capability
-execution, runtime capability registry, PatchTransaction, AdapterManifest,
-ContextPack v2, scheduler, leases, supervisor, Test Broker runtime, worker
-execution, provider/model/Gateway/network calls, branch/worktree automation,
-target apply, active apply, release, promotion, target repo mutation, production
-readiness, release readiness, and broad autonomous runtime behavior.
+The work deliberately avoids ConformanceResult, conformance runner/execution, admission policy, automatic admission, adapter admission/execution, capability execution, runtime capability registry, PatchTransaction, AdapterManifest, ContextPack v2, scheduler, leases, supervisor, Test Broker runtime, worker execution, provider/model/Gateway/network calls, branch/worktree automation, target apply, active apply, release, promotion, target repo mutation, production readiness, release readiness, and broad autonomous runtime behavior.
 
-Validation covered Python compile checks, focused ConformanceProfile unit tests,
-`conformance-profile status/project/validate`, JSON parsing for generated
-reports, predecessor validators, task inspect/evidence checks, broad AIDE
-validation, diff whitespace checks, generated churn containment, and commit
-policy validation.
+Validation covered Python compile checks, focused ConformanceProfile unit tests, `conformance-profile status/project/validate`, JSON parsing for generated reports, predecessor validators, task inspect/evidence checks, broad AIDE validation, diff whitespace checks, generated churn containment, and commit policy validation.
 
-The result is `PASS_WITH_WARNINGS` because the profile defines requirements but
-does not execute them. The next recommended queue task is exactly
-`AIDE-CHECK-CONFORMANCE-PROFILE-01`.
+The result is `PASS_WITH_WARNINGS` because the profile defines requirements but does not execute them. The next recommended queue task is exactly `AIDE-CHECK-CONFORMANCE-PROFILE-01`.
 
 ## Work Item: AIDE-ADOPT-APACHE-2-LICENSE-01
 
@@ -4191,37 +2882,17 @@ Changed:
 - `.aide/queue/AIDE-ADOPT-APACHE-2-LICENSE-01/**`
 - `.aide/queue/index.yaml`
 
-The repository now has a standard Apache License, Version 2.0 (`Apache-2.0`)
-packet rather than the previous no-public-license README warning.
+The repository now has a standard Apache License, Version 2.0 (`Apache-2.0`) packet rather than the previous no-public-license README warning.
 
-The new legal docs preserve a permissive open-source posture for use,
-redistribution, modification, forks, packaging, hosted use, commercial use,
-adapters, integrations, protocols, schemas, templates, and docs. They keep
-remaining boundaries in notices, Apache-2.0 patent and warranty terms,
-trademark/project identity policy, generated-output policy, contribution policy,
-and governance.
+The new legal docs preserve a permissive open-source posture for use, redistribution, modification, forks, packaging, hosted use, commercial use, adapters, integrations, protocols, schemas, templates, and docs. They keep remaining boundaries in notices, Apache-2.0 patent and warranty terms, trademark/project identity policy, generated-output policy, contribution policy, and governance.
 
-Generated outputs are explicitly bounded: AIDE does not claim ownership of a
-target repository or repo-local facts, metadata, analysis, docs, patches, OKF
-pages, WorkUnits, WorkerRuns, TestJobs, EvidencePackets, EventRecords,
-ContextPacks, or reports produced from that repository, except that copied AIDE
-material remains Apache-2.0 and third-party material keeps its own terms.
+Generated outputs are explicitly bounded: AIDE does not claim ownership of a target repository or repo-local facts, metadata, analysis, docs, patches, OKF pages, WorkUnits, WorkerRuns, TestJobs, EvidencePackets, EventRecords, ContextPacks, or reports produced from that repository, except that copied AIDE material remains Apache-2.0 and third-party material keeps its own terms.
 
-Contribution guidance now records inbound=outbound under Apache-2.0, optional
-DCO sign-off, no default CLA requirement, and provenance expectations for
-AI-assisted contributions.
+Contribution guidance now records inbound=outbound under Apache-2.0, optional DCO sign-off, no default CLA requirement, and provenance expectations for AI-assisted contributions.
 
-The work deliberately avoids runtime behavior changes, protocol schema changes,
-support-tier or capability-level changes, generated-output source-truth
-promotion, release publication, tags, GitHub mutation, branch creation or
-promotion, provider/model/network calls, target-repository mutation, trademark
-registration, CLA adoption, and legal-advice claims.
+The work deliberately avoids runtime behavior changes, protocol schema changes, support-tier or capability-level changes, generated-output source-truth promotion, release publication, tags, GitHub mutation, branch creation or promotion, provider/model/network calls, target-repository mutation, trademark registration, CLA adoption, and legal-advice claims.
 
-Validation covered AIDE doctor, AIDE validation, intent validation, task
-inspect/evidence checks, diff whitespace checks, changed-file review, generated
-helper drift containment, and post-commit commit-policy validation. Counsel
-review remains recommended before public release or commercial/legal
-publication decisions.
+Validation covered AIDE doctor, AIDE validation, intent validation, task inspect/evidence checks, diff whitespace checks, changed-file review, generated helper drift containment, and post-commit commit-policy validation. Counsel review remains recommended before public release or commercial/legal publication decisions.
 
 ## Work Item: AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01
 
@@ -4523,35 +3194,17 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The slice adds an envelope-backed `EvidencePacket` helper with required
-metadata/spec/status validation, claim and validation status enums, explicit
-non-capability preservation, unknown optional field tolerance, and unknown
-required capability fail-closed behavior.
+The slice adds an envelope-backed `EvidencePacket` helper with required metadata/spec/status validation, claim and validation status enums, explicit non-capability preservation, unknown optional field tolerance, and unknown required capability fail-closed behavior.
 
-Generated projections convert accepted lifecycle fixture runner reports,
-lifecycle acceptance, contract-envelope validation, and contract-envelope
-acceptance into additive EvidencePacket JSON files. Source reports remain
-canonical and are not destructively migrated.
+Generated projections convert accepted lifecycle fixture runner reports, lifecycle acceptance, contract-envelope validation, and contract-envelope acceptance into additive EvidencePacket JSON files. Source reports remain canonical and are not destructively migrated.
 
-The AIDE Lite changes are thin dispatch only: `evidence-packet status`,
-`evidence-packet project --source accepted-slices`, and `evidence-packet
-validate` call into `core/protocol/evidence_packet.py`.
+The AIDE Lite changes are thin dispatch only: `evidence-packet status`, `evidence-packet project --source accepted-slices`, and `evidence-packet validate` call into `core/protocol/evidence_packet.py`.
 
-The work deliberately avoids a full evidence engine, EvidenceStore, WorkUnit
-schema or CLI, TestJob schema, Test Broker, Checkpoint, PromotionPolicy,
-Service, Commander, provider adapters, branch/worktree automation, target
-apply, active apply, rollback execution, release, promotion, network, Gateway,
-GitHub mutation, and model/provider calls.
+The work deliberately avoids a full evidence engine, EvidenceStore, WorkUnit schema or CLI, TestJob schema, Test Broker, Checkpoint, PromotionPolicy, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, promotion, network, Gateway, GitHub mutation, and model/provider calls.
 
-Validation is recorded in
-`.aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/evidence/validation.md`.
-Focused EvidencePacket tests currently cover 35 helper, schema, projection, CLI,
-compatibility, and overclaiming checks.
+Validation is recorded in `.aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/evidence/validation.md`. Focused EvidencePacket tests currently cover 35 helper, schema, projection, CLI, compatibility, and overclaiming checks.
 
-Remaining issues are intentionally scoped: EvidencePacket is minimal and
-`v1alpha1`, full JSON Schema Draft 2020-12 validation is deferred, and the
-evidence engine/WorkUnit/TestJob/Test Broker layers remain future work after
-independent review and acceptance.
+Remaining issues are intentionally scoped: EvidencePacket is minimal and `v1alpha1`, full JSON Schema Draft 2020-12 validation is deferred, and the evidence engine/WorkUnit/TestJob/Test Broker layers remain future work after independent review and acceptance.
 
 ## Work Item: AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01
 
@@ -4569,33 +3222,15 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The hardening loads `.aide/protocol/aide-envelope.schema.json` during
-`contract-envelope validate`, executes a stdlib-only minimal JSON Schema subset
-validator against generated envelope projections, and checks that the schema's
-required public fields and basic types align with the helper validator.
+The hardening loads `.aide/protocol/aide-envelope.schema.json` during `contract-envelope validate`, executes a stdlib-only minimal JSON Schema subset validator against generated envelope projections, and checks that the schema's required public fields and basic types align with the helper validator.
 
-Validation reports now state whether the schema file exists, loaded, parsed,
-whether schema validation executed, which validation mode was used, whether
-schema/helper alignment was checked, and which limitations remain. The CLI
-prints those same status fields without moving runtime logic into
-`.aide/scripts/aide_lite.py`.
+Validation reports now state whether the schema file exists, loaded, parsed, whether schema validation executed, which validation mode was used, whether schema/helper alignment was checked, and which limitations remain. The CLI prints those same status fields without moving runtime logic into `.aide/scripts/aide_lite.py`.
 
-Focused tests now cover schema parsing, required public fields, schema-based
-missing-field and wrong-type rejection, unknown optional field tolerance,
-unknown required capability fail-closed behavior, lifecycle run/verify
-projection agreement, malformed projection rejection, alignment success and
-failure, and validation report fields.
+Focused tests now cover schema parsing, required public fields, schema-based missing-field and wrong-type rejection, unknown optional field tolerance, unknown required capability fail-closed behavior, lifecycle run/verify projection agreement, malformed projection rejection, alignment success and failure, and validation report fields.
 
-The work deliberately avoids a full JSON Schema engine, EvidencePacket schema,
-WorkUnit schema or CLI, TestJob schema, Test Broker, Service, Commander,
-providers, branch/worktree automation, target apply, active repo apply,
-rollback execution, release, promotion, network, Gateway, GitHub mutation, and
-model/provider calls.
+The work deliberately avoids a full JSON Schema engine, EvidencePacket schema, WorkUnit schema or CLI, TestJob schema, Test Broker, Service, Commander, providers, branch/worktree automation, target apply, active repo apply, rollback execution, release, promotion, network, Gateway, GitHub mutation, and model/provider calls.
 
-Validation is recorded under
-`.aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01/evidence/validation.md`.
-The next expected action is independent review via
-`AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01`.
+Validation is recorded under `.aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01/evidence/validation.md`. The next expected action is independent review via `AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01`.
 
 ## Work Item: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01
 
@@ -4616,41 +3251,17 @@ Changed:
 - `IMPLEMENT.md`
 - `DOCUMENTATION.md`
 
-The task creates one protocol-shaped vertical slice rather than a kernel
-scaffold. The runner loads the canonical `install-managed-section` fixture,
-copies it into `.aide/reports/lifecycle-fixture-runner/workspaces/latest`,
-applies the scoped managed-section transaction there, verifies the latest
-completed run report, and emits rollback-compatible report evidence.
+The task creates one protocol-shaped vertical slice rather than a kernel scaffold. The runner loads the canonical `install-managed-section` fixture, copies it into `.aide/reports/lifecycle-fixture-runner/workspaces/latest`, applies the scoped managed-section transaction there, verifies the latest completed run report, and emits rollback-compatible report evidence.
 
-The implementation keeps `.aide/scripts/aide_lite.py` limited to parser and
-dispatch wiring. Runner behavior is isolated behind small local seams:
-`ScenarioLoader`, `TransactionCompiler`, `ScopedExecutor`, `FixtureVerifier`,
-and `EvidenceReporter`.
+The implementation keeps `.aide/scripts/aide_lite.py` limited to parser and dispatch wiring. Runner behavior is isolated behind small local seams: `ScenarioLoader`, `TransactionCompiler`, `ScopedExecutor`, `FixtureVerifier`, and `EvidenceReporter`.
 
-The path-jail check resolves every mutating path under the temp workspace and
-rejects absolute paths, parent traversal, wildcard paths, root mutation, and
-symlink escapes. The emitted reports label the capability as
-`fixture_temp_apply_only` and explicitly deny active repo apply, target repo
-apply, general lifecycle apply, rollback execution, uninstall execution,
-release readiness, and production readiness.
+The path-jail check resolves every mutating path under the temp workspace and rejects absolute paths, parent traversal, wildcard paths, root mutation, and symlink escapes. The emitted reports label the capability as `fixture_temp_apply_only` and explicitly deny active repo apply, target repo apply, general lifecycle apply, rollback execution, uninstall execution, release readiness, and production readiness.
 
-The implementation deliberately avoids AIDE kernel scaffolding, service,
-Commander, provider adapters, branch/worktree automation, target-repo
-mutation, network/model/Gateway calls, OpenTelemetry, SARIF, SPDX,
-CycloneDX, SLSA, in-toto, OpenAPI, rollback execution, uninstall execution,
-and release behavior.
+The implementation deliberately avoids AIDE kernel scaffolding, service, Commander, provider adapters, branch/worktree automation, target-repo mutation, network/model/Gateway calls, OpenTelemetry, SARIF, SPDX, CycloneDX, SLSA, in-toto, OpenAPI, rollback execution, uninstall execution, and release behavior.
 
-Validation is recorded under
-`.aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/validation.md`.
-The next expected action is independent review via
-`AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01`.
+Validation is recorded under `.aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/validation.md`. The next expected action is independent review via `AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01`.
 
-A follow-up alignment pass for the attached full build prompt added stable
-`verify.json` / `verify.md` aliases, runner-level future and unfinished work
-reports, six additional task-local evidence files, expanded negative
-capability labels for service/Commander/provider-adapter readiness, and
-focused tests for unsupported scenario/mode rejection, rollback non-execution,
-report aliases, and the CLI-dispatch boundary.
+A follow-up alignment pass for the attached full build prompt added stable `verify.json` / `verify.md` aliases, runner-level future and unfinished work reports, six additional task-local evidence files, expanded negative capability labels for service/Commander/provider-adapter readiness, and focused tests for unsupported scenario/mode rejection, rollback non-execution, report aliases, and the CLI-dispatch boundary.
 
 ## Work Item: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
 
@@ -4666,22 +3277,13 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The hardening adds required run-report field checks, forbidden true
-readiness/apply/rollback flag checks, rollback-compatible record parsing, and
-rollback record truth checks during `lifecycle-fixture verify`.
+The hardening adds required run-report field checks, forbidden true readiness/apply/rollback flag checks, rollback-compatible record parsing, and rollback record truth checks during `lifecycle-fixture verify`.
 
-Focused tests now cover unsupported operation and malformed plan rejection,
-overclaiming fail-closed behavior, malformed rollback record fail-closed
-behavior, missing required run fields, empty/wildcard path-jail rejection, and
-missing managed-section marker failure.
+Focused tests now cover unsupported operation and malformed plan rejection, overclaiming fail-closed behavior, malformed rollback record fail-closed behavior, missing required run fields, empty/wildcard path-jail rejection, and missing managed-section marker failure.
 
-The implementation deliberately avoids service, Commander, provider adapters,
-branch/worktree automation, target repo apply, active repo apply, rollback
-execution, uninstall execution, release, promotion, network, Gateway, GitHub
-mutation, and model/provider calls.
+The implementation deliberately avoids service, Commander, provider adapters, branch/worktree automation, target repo apply, active repo apply, rollback execution, uninstall execution, release, promotion, network, Gateway, GitHub mutation, and model/provider calls.
 
-Validation is recorded under
-`.aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence/validation.md`.
+Validation is recorded under `.aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence/validation.md`.
 
 ## Work Item: AIDE-BUILD-CONTRACT-ENVELOPE-01
 
@@ -4700,19 +3302,11 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The slice adds a small `apiVersion` / `kind` / `metadata` / `spec` /
-`status` envelope helper, SemVer-like compatibility validation, unknown
-optional-field tolerance, unknown required-capability rejection, and additive
-projections for the accepted lifecycle fixture run, verify, and acceptance
-reports.
+The slice adds a small `apiVersion` / `kind` / `metadata` / `spec` / `status` envelope helper, SemVer-like compatibility validation, unknown optional-field tolerance, unknown required-capability rejection, and additive projections for the accepted lifecycle fixture run, verify, and acceptance reports.
 
-The implementation deliberately avoids full kernel schemas, WorkUnit CLI, Test
-Broker, Service, Commander, provider adapters, branch/worktree automation,
-target repo apply, active repo apply, rollback execution, uninstall execution,
-release, promotion, network, Gateway, GitHub mutation, and model/provider calls.
+The implementation deliberately avoids full kernel schemas, WorkUnit CLI, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target repo apply, active repo apply, rollback execution, uninstall execution, release, promotion, network, Gateway, GitHub mutation, and model/provider calls.
 
-Validation is recorded under
-`.aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/validation.md`.
+Validation is recorded under `.aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/validation.md`.
 
 ## Work Item: AI-LONG-TURN-OPERATING-PROTOCOL-00
 
@@ -4729,20 +3323,11 @@ Changed:
 - `PLANS.md`
 - `IMPLEMENT.md`
 
-The attached prompt was compiled through AIDE intake before implementation.
-The broader prompt was blocked by the deterministic compiler because it mixed
-docs work with branch-sensitive and publication-class language, so this
-WorkUnit records a safe docs-only split. The protocol adds templates for
-single-task, connected-queue, and long-turn prompts plus commit cadence,
-validation ladder, stop conditions, evidence rules, final report format, and
-failure recovery guidance.
+The attached prompt was compiled through AIDE intake before implementation. The broader prompt was blocked by the deterministic compiler because it mixed docs work with branch-sensitive and publication-class language, so this WorkUnit records a safe docs-only split. The protocol adds templates for single-task, connected-queue, and long-turn prompts plus commit cadence, validation ladder, stop conditions, evidence rules, final report format, and failure recovery guidance.
 
-The implementation deliberately avoids runtime behavior, branch mutation,
-publication action, target-repo mutation, provider/model calls, Gateway calls,
-network calls, external discovery execution, and evidence fabrication.
+The implementation deliberately avoids runtime behavior, branch mutation, publication action, target-repo mutation, provider/model calls, Gateway calls, network calls, external discovery execution, and evidence fabrication.
 
-Validation is recorded under
-`.aide/queue/AI-LONG-TURN-OPERATING-PROTOCOL-00/evidence/validation.md`.
+Validation is recorded under `.aide/queue/AI-LONG-TURN-OPERATING-PROTOCOL-00/evidence/validation.md`.
 
 ## Work Item: AIDE-REVIEW-APPLY-00
 
@@ -4801,21 +3386,11 @@ Changed:
 - `.aide/tasks/README.md`
 - `.aide/ledgers/README.md`
 
-X-OS-01 adds `task status`, `task classify`, `task repair-plan`,
-`task requeue-plan`, `task resume-plan`, `blocker status`, `blocker classify`,
-`wave status`, `wave plan`, `checkpoint status`, and `checkpoint plan`.
-The commands write deterministic `.aide/reports/task-os-*` evidence and
-surface lifecycle, blocker, repair, requeue, resume, wave, checkpoint, and
-next-plan information without executing tasks or applying repairs.
+X-OS-01 adds `task status`, `task classify`, `task repair-plan`, `task requeue-plan`, `task resume-plan`, `blocker status`, `blocker classify`, `wave status`, `wave plan`, `checkpoint status`, and `checkpoint plan`. The commands write deterministic `.aide/reports/task-os-*` evidence and surface lifecycle, blocker, repair, requeue, resume, wave, checkpoint, and next-plan information without executing tasks or applying repairs.
 
-The implementation deliberately keeps task execution, scheduler/worker
-behavior, repair apply, requeue apply, checkpoint apply, branch/worktree
-mutation, GitHub mutation, release publication, target-repo mutation,
-provider/model calls, and network calls out of scope.
+The implementation deliberately keeps task execution, scheduler/worker behavior, repair apply, requeue apply, checkpoint apply, branch/worktree mutation, GitHub mutation, release publication, target-repo mutation, provider/model calls, and network calls out of scope.
 
-Validation is recorded under
-`.aide/queue/X-OS-01-aide-task-os-report-only-commands/evidence/validation.md`.
-X-OS-02 remains the next planned Task OS phase for Capability Reality Ledger v0.
+Validation is recorded under `.aide/queue/X-OS-01-aide-task-os-report-only-commands/evidence/validation.md`. X-OS-02 remains the next planned Task OS phase for Capability Reality Ledger v0.
 
 ## Work Item: X-OS-00
 
@@ -4842,19 +3417,13 @@ Changed:
 - `docs/reference/blocker-and-repair-model.md`
 - `docs/reference/checkpoint-and-promotion-model.md`
 
-X-OS-00 defines lifecycle state, blocker, repair, wave, checkpoint, branch
-provenance, and capability reality contracts, plus examples and local
-validation. It does not add a `task-os` command group, execute repairs,
-operate workers, mutate branches, mutate target repositories, call
-providers/models/network services, merge, promote, publish releases, or apply
-changes outside the source policy/schema/docs/eval surface.
+X-OS-00 defines lifecycle state, blocker, repair, wave, checkpoint, branch provenance, and capability reality contracts, plus examples and local validation. It does not add a `task-os` command group, execute repairs, operate workers, mutate branches, mutate target repositories, call providers/models/network services, merge, promote, publish releases, or apply changes outside the source policy/schema/docs/eval surface.
 
 The next expected phase is X-OS-01 Task OS report-only commands.
 
 ## Work Item: Q48
 
-Implemented for review as local-only GitHub Release draft generation from the
-Q47 AIDE Lite release bundle.
+Implemented for review as local-only GitHub Release draft generation from the Q47 AIDE Lite release bundle.
 
 Changed:
 
@@ -4869,22 +3438,15 @@ Changed:
 - `.aide/evals/golden-tasks/**`
 - `docs/reference/github-release-draft.md`
 
-Q48 generates local draft Markdown/JSON, asset lists with checksums, no-upload
-plans, publication checklists, publication-boundary reports, and draft
-validation. It does not create tags, call GitHub APIs, create GitHub Releases,
-upload assets, publish packages, mutate branches, install CI, mutate target
-repos, call providers/models/network, or apply install/repair/upgrade/rollback/
-uninstall actions.
+Q48 generates local draft Markdown/JSON, asset lists with checksums, no-upload plans, publication checklists, publication-boundary reports, and draft validation. It does not create tags, call GitHub APIs, create GitHub Releases, upload assets, publish packages, mutate branches, install CI, mutate target repos, call providers/models/network, or apply install/repair/upgrade/rollback/ uninstall actions.
 
-The next phase is Q49 Dominium Fresh Install Preflight, because target install
-readiness still needs target-local evidence.
+The next phase is Q49 Dominium Fresh Install Preflight, because target install readiness still needs target-local evidence.
 
 ## Work Item: Q47
 
 ### Status
 
-Implemented for review as local-only AIDE Lite release bundle generation and
-validation.
+Implemented for review as local-only AIDE Lite release bundle generation and validation.
 
 ### Scope
 
@@ -4902,45 +3464,28 @@ validation.
 
 ### Rationale
 
-Q47 turns the validated portable AIDE Lite Pack into local downloadable
-artifacts before any public release draft or publication work. The bundle must
-be inspectable, checksummed, extractable, and explicit about its no-publish and
-no-apply boundaries before target installation or upgrade phases can use it as
-a stable source.
+Q47 turns the validated portable AIDE Lite Pack into local downloadable artifacts before any public release draft or publication work. The bundle must be inspectable, checksummed, extractable, and explicit about its no-publish and no-apply boundaries before target installation or upgrade phases can use it as a stable source.
 
 ### Notable Design Decisions
 
-The release command surface uses Python standard-library archive, checksum, and
-temporary extraction support only. Archives are built from
-`.aide/export/aide-lite-pack-v0/`, not from arbitrary source paths, and release
-validation rejects forbidden archive paths such as `.git/`, `.aide.local/`,
-`.env`, secrets, and raw prompt or response logs.
+The release command surface uses Python standard-library archive, checksum, and temporary extraction support only. Archives are built from `.aide/export/aide-lite-pack-v0/`, not from arbitrary source paths, and release validation rejects forbidden archive paths such as `.git/`, `.aide.local/`, `.env`, secrets, and raw prompt or response logs.
 
 ### Tradeoffs
 
-Q47 can generate `.zip` and `.tar.gz` archives locally, but it deliberately
-does not publish them, tag a commit, upload artifacts, create a GitHub Release,
-or install AIDE into a target repository. Release notes and changelog copies
-remain preview-only.
+Q47 can generate `.zip` and `.tar.gz` archives locally, but it deliberately does not publish them, tag a commit, upload artifacts, create a GitHub Release, or install AIDE into a target repository. Release notes and changelog copies remain preview-only.
 
 ### Verification
 
-Q47 evidence records release bundle generation, archive extraction validation,
-checksum verification, forbidden-path checks, targeted release tests, golden
-tasks, pack-status, and broader AIDE validation.
+Q47 evidence records release bundle generation, archive extraction validation, checksum verification, forbidden-path checks, targeted release tests, golden tasks, pack-status, and broader AIDE validation.
 
 ### Regressions Avoided
 
-No Git tag, GitHub Release, artifact upload, branch mutation, target-repo
-mutation, active CI installation, install/repair/upgrade/rollback/uninstall
-apply, provider/model/network call, or release publication is introduced.
+No Git tag, GitHub Release, artifact upload, branch mutation, target-repo mutation, active CI installation, install/repair/upgrade/rollback/uninstall apply, provider/model/network call, or release publication is introduced.
 
 ### Remaining Issues
 
-- Q47 is local bundle generation only; Q48 is needed for GitHub Release draft
-  planning.
-- Target repositories still need their own install, repair, upgrade, rollback,
-  or uninstall preflights.
+- Q47 is local bundle generation only; Q48 is needed for GitHub Release draft planning.
+- Target repositories still need their own install, repair, upgrade, rollback, or uninstall preflights.
 - Apply-capable install and upgrade behavior remains future-gated.
 
 ## Work Item: QFIX-05
@@ -4959,27 +3504,21 @@ Implemented for review as a bounded release-readiness warning reconciliation.
 
 ### Rationale
 
-The broad request to make every prior task production-ready cannot safely bypass
-AIDE queue law or review gates. QFIX-05 inventories the current state, fixes the
-mechanical generated-manifest warning, and records the remaining release
-blockers explicitly.
+The broad request to make every prior task production-ready cannot safely bypass AIDE queue law or review gates. QFIX-05 inventories the current state, fixes the mechanical generated-manifest warning, and records the remaining release blockers explicitly.
 
 ### Notable Design Decisions
 
 - Preserved Q36-Q46 and QFIX-04 as `needs_review`.
 - Used the deterministic Harness compiler for generated artifact refresh.
-- Treated release publication, tag creation, GitHub mutation, branch mutation,
-  target repo mutation, and provider/model/network calls as out of scope.
+- Treated release publication, tag creation, GitHub mutation, branch mutation, target repo mutation, and provider/model/network calls as out of scope.
 
 ### Verification
 
-Validation is recorded in
-`.aide/queue/QFIX-05-release-readiness-warning-reconciliation/evidence/validation.md`.
+Validation is recorded in `.aide/queue/QFIX-05-release-readiness-warning-reconciliation/evidence/validation.md`.
 
 ### Remaining Issues
 
-Immediate public release is still blocked by review gates and the future Q48
-release-draft phase.
+Immediate public release is still blocked by review gates and the future Q48 release-draft phase.
 
 ## Work Item: QFIX-04
 
@@ -4997,36 +3536,28 @@ Implemented for review as a bounded AIDE Lite selftest performance hotfix.
 
 ### Rationale
 
-The broad performance request was not safe to execute as a speculative
-repo-wide rewrite. Profiling identified one concrete hot path: AIDE Lite
-`test`/`selftest` spent most of its time running the full golden-task catalog,
-even though full catalog validation is already available through `eval run`.
+The broad performance request was not safe to execute as a speculative repo-wide rewrite. Profiling identified one concrete hot path: AIDE Lite `test`/`selftest` spent most of its time running the full golden-task catalog, even though full catalog validation is already available through `eval run`.
 
 ### Notable Design Decisions
 
 - Kept full `eval run` behavior intact.
 - Limited selftest golden coverage to a representative smoke set.
-- Reused one context compilation result for snapshot, index, and context
-  assertions.
+- Reused one context compilation result for snapshot, index, and context assertions.
 - Avoided repeated path normalization in ignore matching.
 
 ### Verification
 
-Validation is recorded in
-`.aide/queue/QFIX-04-aide-lite-selftest-performance/evidence/validation.md`.
+Validation is recorded in `.aide/queue/QFIX-04-aide-lite-selftest-performance/evidence/validation.md`.
 
 ### Remaining Issues
 
-This is not a complete performance program. Follow-up WorkUnits should target
-full golden-task data caching, inventory scan reuse, and harness subprocess
-overhead.
+This is not a complete performance program. Follow-up WorkUnits should target full golden-task data caching, inventory scan reuse, and harness subprocess overhead.
 
 ## Work Item: Q46
 
 ### Status
 
-Implemented for review as deterministic rollback and uninstall observe/plan/
-dry-run planning with preservation-first ownership gates.
+Implemented for review as deterministic rollback and uninstall observe/plan/ dry-run planning with preservation-first ownership gates.
 
 ### Scope
 
@@ -5049,54 +3580,35 @@ dry-run planning with preservation-first ownership gates.
 
 ### Rationale
 
-Q46 closes the no-apply install governance loop created by Q43-Q45. Future
-target installs, repairs, and upgrades need explicit rollback and uninstall
-contracts before any target mutation can be reviewed as reversible.
+Q46 closes the no-apply install governance loop created by Q43-Q45. Future target installs, repairs, and upgrades need explicit rollback and uninstall contracts before any target mutation can be reviewed as reversible.
 
 ### Notable Design Decisions
 
-The framework is deterministic, repo-local, Python standard-library only, and
-no-apply in Q46. Rollback and uninstall read install ownership ledgers and prior
-install, upgrade, or repair plans when present, but missing ownership evidence
-does not become removal permission. Unknown ownership is preserved, blocked, or
-sent to manual review.
+The framework is deterministic, repo-local, Python standard-library only, and no-apply in Q46. Rollback and uninstall read install ownership ledgers and prior install, upgrade, or repair plans when present, but missing ownership evidence does not become removal permission. Unknown ownership is preserved, blocked, or sent to manual review.
 
 ### Tradeoffs
 
-The current AIDE-source rollback and uninstall plans are conservative. They may
-list many portable-file future candidates, but all operations carry
-`apply_allowed: false`, deletion and managed-section removal are disabled by
-default, and target-specific state is preserved.
+The current AIDE-source rollback and uninstall plans are conservative. They may list many portable-file future candidates, but all operations carry `apply_allowed: false`, deletion and managed-section removal are disabled by default, and target-specific state is preserved.
 
 ### Verification
 
-Q46 evidence records rollback observe/plan/dry-run/validate/status/classes/
-explain commands, uninstall observe/plan/dry-run/validate/status/classes/
-explain commands, targeted Q46 tests, golden tasks, pack-status, and broader
-AIDE validation.
+Q46 evidence records rollback observe/plan/dry-run/validate/status/classes/ explain commands, uninstall observe/plan/dry-run/validate/status/classes/ explain commands, targeted Q46 tests, golden tasks, pack-status, and broader AIDE validation.
 
 ### Regressions Avoided
 
-No rollback apply, uninstall apply, install apply, repair apply, upgrade apply,
-delete, overwrite, managed-section removal, migration apply, file move,
-reference rewrite, target-repo mutation, branch mutation, provider/model/network
-call, release publishing, or source-generated rollback/uninstall plan export is
-introduced.
+No rollback apply, uninstall apply, install apply, repair apply, upgrade apply, delete, overwrite, managed-section removal, migration apply, file move, reference rewrite, target-repo mutation, branch mutation, provider/model/network call, release publishing, or source-generated rollback/uninstall plan export is introduced.
 
 ### Remaining Issues
 
-- Q46 is planning only; rollback apply, uninstall apply, and release bundle
-  behavior remain future phases.
+- Q46 is planning only; rollback apply, uninstall apply, and release bundle behavior remain future phases.
 - Target repositories must generate their own rollback and uninstall plans.
-- Q47 AIDE Lite Release Bundle v0 is needed before a release-shaped portable
-  bundle can be reviewed.
+- Q47 AIDE Lite Release Bundle v0 is needed before a release-shaped portable bundle can be reviewed.
 
 ## Work Item: Q45
 
 ### Status
 
-Implemented for review as deterministic observe-current/observe-source/compare/
-plan/dry-run upgrade planning and compatibility reporting.
+Implemented for review as deterministic observe-current/observe-source/compare/ plan/dry-run upgrade planning and compatibility reporting.
 
 ### Scope
 
@@ -5115,52 +3627,35 @@ plan/dry-run upgrade planning and compatibility reporting.
 
 ### Rationale
 
-Q45 turns Q43 install planning and Q44 repair diagnosis into upgrade planning
-infrastructure. Future target upgrades can compare current installed AIDE state
-to a source pack, preserve target-specific memory and evidence, classify
-compatibility, and dry-run candidate updates before any target file is changed.
+Q45 turns Q43 install planning and Q44 repair diagnosis into upgrade planning infrastructure. Future target upgrades can compare current installed AIDE state to a source pack, preserve target-specific memory and evidence, classify compatibility, and dry-run candidate updates before any target file is changed.
 
 ### Notable Design Decisions
 
-The framework is deterministic, repo-local, Python standard-library only, and
-no-apply in Q45. It reads export-pack manifests and payloads when present,
-preserves target queue, memory, evidence, generated target state, target golden
-tasks, manual guidance, and existing tools, and writes generated planning
-outputs under `.aide/upgrade/`.
+The framework is deterministic, repo-local, Python standard-library only, and no-apply in Q45. It reads export-pack manifests and payloads when present, preserves target queue, memory, evidence, generated target state, target golden tasks, manual guidance, and existing tools, and writes generated planning outputs under `.aide/upgrade/`.
 
 ### Tradeoffs
 
-Compatibility classification is structural and conservative. When evidence is
-uncertain, the plan uses warning, preserve, skip, manual review, or future
-migration language rather than treating a difference as safe to apply.
+Compatibility classification is structural and conservative. When evidence is uncertain, the plan uses warning, preserve, skip, manual review, or future migration language rather than treating a difference as safe to apply.
 
 ### Verification
 
-Q45 evidence records upgrade observe-current/observe-source/compare/plan/
-dry-run/validate/status/compatibility/conflicts/migrations/explain commands,
-targeted Q45 tests, golden tasks, pack-status, and broader AIDE validation.
+Q45 evidence records upgrade observe-current/observe-source/compare/plan/ dry-run/validate/status/compatibility/conflicts/migrations/explain commands, targeted Q45 tests, golden tasks, pack-status, and broader AIDE validation.
 
 ### Regressions Avoided
 
-No upgrade apply, install apply, repair apply, overwrite, delete, migration
-apply, file move, reference rewrite, target-repo mutation, branch mutation,
-provider/model/network call, release publishing, or source-generated upgrade
-plan export is introduced.
+No upgrade apply, install apply, repair apply, overwrite, delete, migration apply, file move, reference rewrite, target-repo mutation, branch mutation, provider/model/network call, release publishing, or source-generated upgrade plan export is introduced.
 
 ### Remaining Issues
 
-- Q45 is planning only; upgrade apply, rollback, uninstall, and release bundle
-  behavior remain future phases.
+- Q45 is planning only; upgrade apply, rollback, uninstall, and release bundle behavior remain future phases.
 - Target repositories must generate their own upgrade observations and plans.
-- Q46 Rollback / Uninstall Model v0 is needed before future apply phases can
-  rely on reversible target mutation contracts.
+- Q46 Rollback / Uninstall Model v0 is needed before future apply phases can rely on reversible target mutation contracts.
 
 ## Work Item: Q44
 
 ### Status
 
-Implemented for review as deterministic observe/diagnose/plan/dry-run repair
-planning and advisory doctor reporting.
+Implemented for review as deterministic observe/diagnose/plan/dry-run repair planning and advisory doctor reporting.
 
 ### Scope
 
@@ -5179,37 +3674,22 @@ planning and advisory doctor reporting.
 
 ### Rationale
 
-Q44 turns Q43 install planning, conflict reporting, preservation rules, and
-pack references into repair diagnosis infrastructure. Future target repairs can
-be observed, classified, planned, dry-run, and reviewed before any target file
-is changed.
+Q44 turns Q43 install planning, conflict reporting, preservation rules, and pack references into repair diagnosis infrastructure. Future target repairs can be observed, classified, planned, dry-run, and reviewed before any target file is changed.
 
 ### Notable Design Decisions
 
-The framework is deterministic, repo-local, Python standard-library only, and
-no-apply in Q44. It reads install artifacts and pack files when present, writes
-generated planning outputs under `.aide/repair/`, preserves target memory,
-queue, evidence, docs, tools, and manual content, and treats local state,
-secrets, unsupported schemas, and source-state contamination as blockers or
-manual-review issues rather than automatic repair work.
+The framework is deterministic, repo-local, Python standard-library only, and no-apply in Q44. It reads install artifacts and pack files when present, writes generated planning outputs under `.aide/repair/`, preserves target memory, queue, evidence, docs, tools, and manual content, and treats local state, secrets, unsupported schemas, and source-state contamination as blockers or manual-review issues rather than automatic repair work.
 
 ### Verification
 
-Q44 evidence records repair observe/diagnose/plan/dry-run/validate/status/
-classes/doctor/explain commands, targeted unit tests, golden tasks, AIDE Lite
-validation, export-pack regeneration, pack-status, diff checks, core unittest
-suites where available, and secret scan results.
+Q44 evidence records repair observe/diagnose/plan/dry-run/validate/status/ classes/doctor/explain commands, targeted unit tests, golden tasks, AIDE Lite validation, export-pack regeneration, pack-status, diff checks, core unittest suites where available, and secret scan results.
 
 ### Remaining Issues
 
-- Q44 is planning only; repair apply, upgrade, rollback, uninstall, and install
-  apply behavior remain future work.
-- Repair classification is heuristic and must be reviewed before target
-  mutation.
-- Target repositories must generate their own `.aide/repair/latest-*` outputs;
-  AIDE source-generated repair outputs are not portable target truth.
-- Q45 Upgrade Model v0 is needed before upgrade decisions can use repair
-  diagnosis and install preservation evidence.
+- Q44 is planning only; repair apply, upgrade, rollback, uninstall, and install apply behavior remain future work.
+- Repair classification is heuristic and must be reviewed before target mutation.
+- Target repositories must generate their own `.aide/repair/latest-*` outputs; AIDE source-generated repair outputs are not portable target truth.
+- Q45 Upgrade Model v0 is needed before upgrade decisions can use repair diagnosis and install preservation evidence.
 
 ## Work Item: Q43
 
@@ -5234,37 +3714,22 @@ Implemented for review as deterministic observe/plan/dry-run install planning.
 
 ### Rationale
 
-Q43 turns Q37-Q42 repo, quality, refactor, root, tool, and map evidence into
-install planning infrastructure. Future target installs can be observed,
-planned, dry-run, reviewed, and checked for preservation, ownership, conflicts,
-mandatory migration candidates, and verification before any target file is
-changed.
+Q43 turns Q37-Q42 repo, quality, refactor, root, tool, and map evidence into install planning infrastructure. Future target installs can be observed, planned, dry-run, reviewed, and checked for preservation, ownership, conflicts, mandatory migration candidates, and verification before any target file is changed.
 
 ### Notable Design Decisions
 
-The framework is deterministic, repo-local, Python standard-library only, and
-no-apply in Q43. It reads the current portable pack when present, writes
-generated planning outputs under `.aide/install/`, preserves target memory,
-queue, evidence, docs, tools, and manual content, and treats source-generated
-state as evidence to regenerate locally rather than target truth.
+The framework is deterministic, repo-local, Python standard-library only, and no-apply in Q43. It reads the current portable pack when present, writes generated planning outputs under `.aide/install/`, preserves target memory, queue, evidence, docs, tools, and manual content, and treats source-generated state as evidence to regenerate locally rather than target truth.
 
 ### Verification
 
-Q43 evidence records install observe/plan/dry-run/validate/status/ownership/
-conflicts/explain commands, targeted unit tests, golden tasks, AIDE Lite
-validation, export-pack regeneration, pack-status, diff checks, core unittest
-suites where available, and secret scan results.
+Q43 evidence records install observe/plan/dry-run/validate/status/ownership/ conflicts/explain commands, targeted unit tests, golden tasks, AIDE Lite validation, export-pack regeneration, pack-status, diff checks, core unittest suites where available, and secret scan results.
 
 ### Remaining Issues
 
-- Q43 is planning only; install apply, repair, upgrade, rollback, and uninstall
-  behavior remain future work.
-- Conflict and ownership classification is heuristic and must be reviewed before
-  target mutation.
-- Target repositories must generate their own `.aide/install/latest-*` outputs;
-  AIDE source-generated install outputs are not portable target truth.
-- Q44 Repair / Doctor Model v0 is needed before repair decisions can consume
-  Q43 conflict and preservation evidence.
+- Q43 is planning only; install apply, repair, upgrade, rollback, and uninstall behavior remain future work.
+- Conflict and ownership classification is heuristic and must be reviewed before target mutation.
+- Target repositories must generate their own `.aide/install/latest-*` outputs; AIDE source-generated install outputs are not portable target truth.
+- Q44 Repair / Doctor Model v0 is needed before repair decisions can consume Q43 conflict and preservation evidence.
 
 ## Work Item: Q42
 
@@ -5295,46 +3760,28 @@ Implemented for review as deterministic no-apply map and alias planning.
 
 ### Rationale
 
-Q42 turns Q37 repo intelligence, Q38 quality evidence, Q39 refactor controls,
-Q40 root evidence, and Q41 tool preservation plans into map-level planning
-evidence. Future install, repair, upgrade, rollback, root recycling, and tool
-absorption phases can cite candidate path mappings before any file move,
-salvage extraction, alias, shim, or reference rewrite is considered.
+Q42 turns Q37 repo intelligence, Q38 quality evidence, Q39 refactor controls, Q40 root evidence, and Q41 tool preservation plans into map-level planning evidence. Future install, repair, upgrade, rollback, root recycling, and tool absorption phases can cite candidate path mappings before any file move, salvage extraction, alias, shim, or reference rewrite is considered.
 
 ### Notable Design Decisions
 
-The framework is deterministic, repo-local, Python standard-library only, and
-candidate-only in Q42. It writes current move/salvage/alias/rewrite/ledger
-draft artifacts under `.aide/refactors/`, but every current entry remains
-`apply_allowed: false`. It never moves files, deletes files, rewrites
-references, creates aliases or shims, applies maps, mutates branches, mutates
-target repos, calls providers/models/network services, or treats
-`drop_candidate` as deletion approval.
+The framework is deterministic, repo-local, Python standard-library only, and candidate-only in Q42. It writes current move/salvage/alias/rewrite/ledger draft artifacts under `.aide/refactors/`, but every current entry remains `apply_allowed: false`. It never moves files, deletes files, rewrites references, creates aliases or shims, applies maps, mutates branches, mutates target repos, calls providers/models/network services, or treats `drop_candidate` as deletion approval.
 
 ### Verification
 
-Final Q42 evidence records Harness validation, AIDE Lite validation, repo,
-quality, refactor, roots, tools, and map commands, Q42 unit tests, golden tasks,
-export-pack regeneration, pack-status, core unittest suites, diff checks, and
-secret scan results.
+Final Q42 evidence records Harness validation, AIDE Lite validation, repo, quality, refactor, roots, tools, and map commands, Q42 unit tests, golden tasks, export-pack regeneration, pack-status, core unittest suites, diff checks, and secret scan results.
 
 ### Remaining Issues
 
-- Q42 is candidate planning only; no concrete Dominium, Eureka, or AIDE root
-  migration is implemented.
-- Current move-map generation is intentionally sparse until a future reviewed
-  task selects a concrete root or target path plan.
-- No alias, shim, salvage extraction, reference rewrite, install, repair,
-  upgrade, rollback, or apply behavior exists yet.
-- Target repositories must generate their own maps after import; source
-  `.aide/refactors/current-*` outputs are not portable target truth.
+- Q42 is candidate planning only; no concrete Dominium, Eureka, or AIDE root migration is implemented.
+- Current move-map generation is intentionally sparse until a future reviewed task selects a concrete root or target path plan.
+- No alias, shim, salvage extraction, reference rewrite, install, repair, upgrade, rollback, or apply behavior exists yet.
+- Target repositories must generate their own maps after import; source `.aide/refactors/current-*` outputs are not portable target truth.
 
 ## Work Item: Q41
 
 ### Status
 
-Implemented for review as deterministic no-execution existing-tool absorption
-planning.
+Implemented for review as deterministic no-execution existing-tool absorption planning.
 
 ### Scope
 
@@ -5354,37 +3801,22 @@ planning.
 
 ### Rationale
 
-Q41 turns Q37 repo intelligence, Q38 quality evidence, Q39 refactor controls,
-and Q40 root evidence into tool-level planning evidence. Future target repos
-can discover XStack, AuditX, RepoX, TestX, project validators, scripts,
-command catalogs, and CI wrappers before AIDE decides whether to keep, wrap,
-adapt, extract, convert, shim, or leave them for review.
+Q41 turns Q37 repo intelligence, Q38 quality evidence, Q39 refactor controls, and Q40 root evidence into tool-level planning evidence. Future target repos can discover XStack, AuditX, RepoX, TestX, project validators, scripts, command catalogs, and CI wrappers before AIDE decides whether to keep, wrap, adapt, extract, convert, shim, or leave them for review.
 
 ### Notable Design Decisions
 
-The framework is deterministic, repo-local, Python standard-library only, and
-no-execution in Q41. It writes `.aide/tools/` inventory, classification, wrap
-plan, adapter map, and risk outputs. It never executes unknown tools, deletes
-tools, renames tools, migrates tools, actively wraps tools, mutates branches,
-mutates target repos, calls providers/models/network services, or treats
-`drop_candidate` as deletion approval.
+The framework is deterministic, repo-local, Python standard-library only, and no-execution in Q41. It writes `.aide/tools/` inventory, classification, wrap plan, adapter map, and risk outputs. It never executes unknown tools, deletes tools, renames tools, migrates tools, actively wraps tools, mutates branches, mutates target repos, calls providers/models/network services, or treats `drop_candidate` as deletion approval.
 
 ### Verification
 
-Final Q41 evidence records Harness validation, AIDE Lite validation, repo,
-quality, refactor, roots, and tools commands, Q41 unit tests, golden tasks,
-export-pack regeneration, pack-status, core unittest suites, diff checks, and
-secret scan results.
+Final Q41 evidence records Harness validation, AIDE Lite validation, repo, quality, refactor, roots, and tools commands, Q41 unit tests, golden tasks, export-pack regeneration, pack-status, core unittest suites, diff checks, and secret scan results.
 
 ### Remaining Issues
 
-- Q41 is advisory planning only; no concrete Dominium XStack/AuditX/RepoX/TestX
-  or Eureka validator absorption is implemented.
-- No active wrappers, current move maps, salvage maps, path aliases, install,
-  upgrade, rollback, or apply behavior exists yet.
+- Q41 is advisory planning only; no concrete Dominium XStack/AuditX/RepoX/TestX or Eureka validator absorption is implemented.
+- No active wrappers, current move maps, salvage maps, path aliases, install, upgrade, rollback, or apply behavior exists yet.
 - Tool capabilities and risks are deterministic heuristics, not semantic proof.
-- Target repositories must generate their own tool inventories after import;
-  source-generated `.aide/tools/latest-*` outputs are not portable target truth.
+- Target repositories must generate their own tool inventories after import; source-generated `.aide/tools/latest-*` outputs are not portable target truth.
 
 ## Work Item: Q40
 
@@ -5410,35 +3842,22 @@ Implemented for review as deterministic no-apply root recycling planning.
 
 ### Rationale
 
-Q40 turns Q37 repo intelligence, Q38 quality evidence, and Q39 refactor
-controls into root-level planning evidence. Future root cleanup can now start
-with deterministic root inventory, root status, risk, exception, and per-file
-fate candidates instead of broad folder movement or deletion prompts.
+Q40 turns Q37 repo intelligence, Q38 quality evidence, and Q39 refactor controls into root-level planning evidence. Future root cleanup can now start with deterministic root inventory, root status, risk, exception, and per-file fate candidates instead of broad folder movement or deletion prompts.
 
 ### Notable Design Decisions
 
-The framework is deterministic, repo-local, Python standard-library only, and
-no-apply in Q40. It writes `.aide/roots/` inventory, classification, plan,
-exception, and risk outputs. It never moves roots, deletes files, rewrites
-references, applies maps, absorbs tools, mutates branches, mutates target
-repos, calls providers/models/network services, or treats `drop_candidate` as
-deletion approval.
+The framework is deterministic, repo-local, Python standard-library only, and no-apply in Q40. It writes `.aide/roots/` inventory, classification, plan, exception, and risk outputs. It never moves roots, deletes files, rewrites references, applies maps, absorbs tools, mutates branches, mutates target repos, calls providers/models/network services, or treats `drop_candidate` as deletion approval.
 
 ### Verification
 
-Final Q40 evidence records Harness validation, AIDE Lite validation, repo,
-quality, refactor, and roots commands, Q40 unit tests, golden tasks,
-export-pack regeneration, pack-status, core unittest suites, diff checks, and
-secret scan results.
+Final Q40 evidence records Harness validation, AIDE Lite validation, repo, quality, refactor, and roots commands, Q40 unit tests, golden tasks, export-pack regeneration, pack-status, core unittest suites, diff checks, and secret scan results.
 
 ### Remaining Issues
 
 - Q40 is dry-run planning only; existing tool absorption starts in Q41.
-- No real current move map, salvage map, path alias, tool absorption, install,
-  upgrade, rollback, or apply behavior exists yet.
+- No real current move map, salvage map, path alias, tool absorption, install, upgrade, rollback, or apply behavior exists yet.
 - Root risks and file fates are deterministic heuristics, not semantic proof.
-- Target repositories must generate their own root inventories after import;
-  source-generated `.aide/roots/latest-*` outputs are not portable target truth.
+- Target repositories must generate their own root inventories after import; source-generated `.aide/roots/latest-*` outputs are not portable target truth.
 
 ## Work Item: Q39
 
@@ -5463,36 +3882,21 @@ Implemented for review as deterministic no-apply refactor planning.
 
 ### Rationale
 
-Q39 turns Q37 repo intelligence and Q38 quality evidence into a governed
-planning substrate for future structural change. Refactors can now be expressed
-as dry-run plans with operations, risks, validation, evidence, rollback notes,
-move maps, salvage maps, path aliases, and migration-ledger records before any
-future apply phase is considered.
+Q39 turns Q37 repo intelligence and Q38 quality evidence into a governed planning substrate for future structural change. Refactors can now be expressed as dry-run plans with operations, risks, validation, evidence, rollback notes, move maps, salvage maps, path aliases, and migration-ledger records before any future apply phase is considered.
 
 ### Notable Design Decisions
 
-The refactor control plane is deterministic, repo-local, Python
-standard-library only, and no-apply in Q39. It writes `.aide/refactors/`
-readiness/example artifacts and schema records. It never moves, deletes,
-rewrites references, applies migrations, mutates branches, mutates target
-repos, calls providers/models/network services, or treats `drop_candidate` as
-deletion approval.
+The refactor control plane is deterministic, repo-local, Python standard-library only, and no-apply in Q39. It writes `.aide/refactors/` readiness/example artifacts and schema records. It never moves, deletes, rewrites references, applies migrations, mutates branches, mutates target repos, calls providers/models/network services, or treats `drop_candidate` as deletion approval.
 
 ### Verification
 
-Final Q39 evidence records Harness validation, AIDE Lite validation, repo and
-quality prerequisite commands, refactor commands, Q39 unit tests, golden tasks,
-export-pack regeneration, pack-status, core unittest suites, diff checks, and
-secret scan results.
+Final Q39 evidence records Harness validation, AIDE Lite validation, repo and quality prerequisite commands, refactor commands, Q39 unit tests, golden tasks, export-pack regeneration, pack-status, core unittest suites, diff checks, and secret scan results.
 
 ### Remaining Issues
 
 - Q39 is dry-run planning only; concrete root recycling starts in Q40.
-- No real current move map, salvage map, path alias, tool absorption, install,
-  upgrade, rollback, or apply behavior exists yet.
-- Target repositories must generate their own refactor readiness after import;
-  source-generated `.aide/refactors/latest-*` outputs are not portable target
-  truth.
+- No real current move map, salvage map, path alias, tool absorption, install, upgrade, rollback, or apply behavior exists yet.
+- Target repositories must generate their own refactor readiness after import; source-generated `.aide/refactors/latest-*` outputs are not portable target truth.
 
 ## Work Item: Q38
 
@@ -5521,32 +3925,22 @@ Implemented for review as deterministic file quality measurement.
 
 ### Rationale
 
-Q38 turns Q37 repo intelligence into advisory quality evidence so future
-WorkUnits can target small, bounded ownership, documentation, test, stale-link,
-generated-boundary, module, and reuse issues instead of broad cleanup prompts.
+Q38 turns Q37 repo intelligence into advisory quality evidence so future WorkUnits can target small, bounded ownership, documentation, test, stale-link, generated-boundary, module, and reuse issues instead of broad cleanup prompts.
 
 ### Notable Design Decisions
 
-The ledger is deterministic, repo-local, Python standard-library only, and
-advisory-only. It writes `.aide/reports/` quality JSON/Markdown outputs and
-uses warning/candidate language. It never moves, deletes, refactors, migrates,
-calls providers/models/network services, mutates target repos, or auto-fixes
-source, docs, or tests.
+The ledger is deterministic, repo-local, Python standard-library only, and advisory-only. It writes `.aide/reports/` quality JSON/Markdown outputs and uses warning/candidate language. It never moves, deletes, refactors, migrates, calls providers/models/network services, mutates target repos, or auto-fixes source, docs, or tests.
 
 ### Verification
 
-Final Q38 evidence records Harness validation, AIDE Lite validation, repo and
-quality commands, Q38 unit tests, golden tasks, export-pack regeneration,
-pack-status, core unittest suites, diff checks, and secret scan results.
+Final Q38 evidence records Harness validation, AIDE Lite validation, repo and quality commands, Q38 unit tests, golden tasks, export-pack regeneration, pack-status, core unittest suites, diff checks, and secret scan results.
 
 ### Remaining Issues
 
 - Quality records are deterministic heuristics, not semantic quality proof.
 - Warning counts are advisory and require future WorkUnits or human review.
 - Orphan and reuse candidates are not deletion candidates.
-- Target repositories must generate their own quality ledgers after import;
-  source-generated `.aide/reports/file-quality-*` outputs are not portable
-  target truth.
+- Target repositories must generate their own quality ledgers after import; source-generated `.aide/reports/file-quality-*` outputs are not portable target truth.
 
 ## Work Item: Q37
 
@@ -5571,42 +3965,27 @@ Implemented for review as deterministic repo intelligence indexing.
 
 ### Rationale
 
-Q37 gives future WorkUnits a deterministic repo-state substrate so they do not
-rediscover the file tree through long prompts or chat memory. The generated
-indexes classify tracked files, owners, references, tests, docs, generated
-artifacts, and conservative orphan candidates before later quality or refactor
-phases act.
+Q37 gives future WorkUnits a deterministic repo-state substrate so they do not rediscover the file tree through long prompts or chat memory. The generated indexes classify tracked files, owners, references, tests, docs, generated artifacts, and conservative orphan candidates before later quality or refactor phases act.
 
 ### Notable Design Decisions
 
-The indexer is deterministic, repo-local, Python standard-library only, and
-index-only. It reads git-tracked files when available, falls back to a bounded
-filesystem walk, excludes `.git` and `.aide.local/`, computes hashes and sizes,
-and writes `.aide/repo` JSON/Markdown outputs. It never moves, deletes,
-refactors, migrates, calls providers/models/network services, mutates target
-repos, or treats orphan candidates as deletion advice.
+The indexer is deterministic, repo-local, Python standard-library only, and index-only. It reads git-tracked files when available, falls back to a bounded filesystem walk, excludes `.git` and `.aide.local/`, computes hashes and sizes, and writes `.aide/repo` JSON/Markdown outputs. It never moves, deletes, refactors, migrates, calls providers/models/network services, mutates target repos, or treats orphan candidates as deletion advice.
 
 ### Verification
 
-Final Q37 evidence records Harness validation, AIDE Lite validation, repo
-commands, Q37 unit tests, golden tasks, export-pack regeneration, pack-status,
-core unittest suites, diff checks, and secret scan results.
+Final Q37 evidence records Harness validation, AIDE Lite validation, repo commands, Q37 unit tests, golden tasks, export-pack regeneration, pack-status, core unittest suites, diff checks, and secret scan results.
 
 ### Remaining Issues
 
-- Classification, dependency, test, and doc-link maps are heuristic and
-  conservative.
-- Unknown files and orphan candidates require Q38/Q39 follow-up before any
-  quality judgment or refactor action.
-- Target repositories must generate their own repo intelligence after import;
-  source-generated `.aide/repo/*.json` outputs are not portable target truth.
+- Classification, dependency, test, and doc-link maps are heuristic and conservative.
+- Unknown files and orphan candidates require Q38/Q39 follow-up before any quality judgment or refactor action.
+- Target repositories must generate their own repo intelligence after import; source-generated `.aide/repo/*.json` outputs are not portable target truth.
 
 ## Work Item: Q36
 
 ### Status
 
-Implemented for review as deterministic intent compilation and prompt
-normalization.
+Implemented for review as deterministic intent compilation and prompt normalization.
 
 ### Scope
 
@@ -5625,34 +4004,21 @@ normalization.
 
 ### Rationale
 
-Q36 closes the raw-prompt execution gap left after Q27-Q35 governance work.
-Raw prompts such as `next`, `fix everything`, `clean up the repo`, destructive
-delete requests, Git promotion requests, release requests, and target install
-requests now compile into reviewable intent packets and WorkUnit drafts before
-any implementation work can begin.
+Q36 closes the raw-prompt execution gap left after Q27-Q35 governance work. Raw prompts such as `next`, `fix everything`, `clean up the repo`, destructive delete requests, Git promotion requests, release requests, and target install requests now compile into reviewable intent packets and WorkUnit drafts before any implementation work can begin.
 
 ### Notable Design Decisions
 
-The compiler is deterministic, repo-local, Python standard-library only, and
-compile-only. It reads repo policy, queue/latest-task state, and local branch
-state; stores a prompt hash plus bounded excerpt; writes latest intent packet
-and WorkUnit draft artifacts; and never calls providers, models, outbound
-network services, GitHub APIs, Gateway forwarding, target repos, or branch
-mutation commands.
+The compiler is deterministic, repo-local, Python standard-library only, and compile-only. It reads repo policy, queue/latest-task state, and local branch state; stores a prompt hash plus bounded excerpt; writes latest intent packet and WorkUnit draft artifacts; and never calls providers, models, outbound network services, GitHub APIs, Gateway forwarding, target repos, or branch mutation commands.
 
 ### Verification
 
-Final Q36 evidence records Harness validation, AIDE Lite validation, targeted
-intent prompts, Q36 unit tests, golden tasks, export-pack regeneration,
-pack-status, core unittest suites, diff checks, and secret scan results.
+Final Q36 evidence records Harness validation, AIDE Lite validation, targeted intent prompts, Q36 unit tests, golden tasks, export-pack regeneration, pack-status, core unittest suites, diff checks, and secret scan results.
 
 ### Remaining Issues
 
 - Classification confidence is heuristic and intentionally conservative.
-- Q37 should add a Repo Intelligence Index so future intent packets can cite
-  richer repo-local ownership and quality data.
-- Q36 does not execute compiled WorkUnits, mutate targets, publish releases,
-  apply GitHub/CI settings, or run provider/model/network calls.
+- Q37 should add a Repo Intelligence Index so future intent packets can cite richer repo-local ownership and quality data.
+- Q36 does not execute compiled WorkUnits, mutate targets, publish releases, apply GitHub/CI settings, or run provider/model/network calls.
 
 ## Work Item: Q35
 
@@ -5675,35 +4041,25 @@ Implemented as report-only GitHub protection and CI advisory tooling.
 
 ### Rationale
 
-QCHECK-03 found Q35 missing, which left the GitHub command family unavailable
-and kept Q36 planning conditional. Q35 closes that AIDE-local blocker by adding
-advisory policies, generated reports, commands, tests, and export-pack support.
+QCHECK-03 found Q35 missing, which left the GitHub command family unavailable and kept Q36 planning conditional. Q35 closes that AIDE-local blocker by adding advisory policies, generated reports, commands, tests, and export-pack support.
 
 ### Notable Design Decisions
 
-The Q35 command family is deliberately report-only. It writes `.aide/github`
-advisory artifacts but does not call GitHub APIs, create `.github/workflows`,
-activate CI, mutate branches, push, create tags, publish releases, or call
-providers/models/network.
+The Q35 command family is deliberately report-only. It writes `.aide/github` advisory artifacts but does not call GitHub APIs, create `.github/workflows`, activate CI, mutate branches, push, create tags, publish releases, or call providers/models/network.
 
 ### Verification
 
-The final Q35 evidence records the full command set. Required gates include
-Harness validate/doctor/self-check, AIDE Lite validate/test/selftest/eval,
-GitHub advisory commands, commit check, changelog validate, Git policy,
-export-pack, pack-status, core unittest suites, and secret scan.
+The final Q35 evidence records the full command set. Required gates include Harness validate/doctor/self-check, AIDE Lite validate/test/selftest/eval, GitHub advisory commands, commit check, changelog validate, Git policy, export-pack, pack-status, core unittest suites, and secret scan.
 
 ### Remaining Issues
 
-Active GitHub protection and CI installation remain future apply-capable work
-that requires dry-run evidence, rollback, operator approval, and review gates.
+Active GitHub protection and CI installation remain future apply-capable work that requires dry-run evidence, rollback, operator approval, and review gates.
 
 ## Work Item: QFIX-03
 
 ### Status
 
-Implemented as warning and review reconciliation; accepted with notes in the
-queue state.
+Implemented as warning and review reconciliation; accepted with notes in the queue state.
 
 ### Scope
 
@@ -5724,29 +4080,15 @@ queue state.
 
 ### Implementation Notes
 
-QFIX-03 resolved the stale generated-manifest warning, reconciled completed
-review-gated queue items from task-local evidence, and converted Q25-Q31/Q34
-from pending review to `passed_with_notes`. The review reconciliation explicitly
-does not claim product readiness, live provider/model calls, release readiness,
-target-repo mutation, live branch mutation, or generated outputs as canonical
-truth.
+QFIX-03 resolved the stale generated-manifest warning, reconciled completed review-gated queue items from task-local evidence, and converted Q25-Q31/Q34 from pending review to `passed_with_notes`. The review reconciliation explicitly does not claim product readiness, live provider/model calls, release readiness, target-repo mutation, live branch mutation, or generated outputs as canonical truth.
 
-Q34 changelog preview now treats malformed or legacy history as reportable
-review findings rather than a command-level warning. The malformed commit report
-and JSON counts remain in place so old history is not hidden.
+Q34 changelog preview now treats malformed or legacy history as reportable review findings rather than a command-level warning. The malformed commit report and JSON counts remain in place so old history is not hidden.
 
-Harness doctor/self-check guidance reported the reconciled queue state and
-pointed to Q35 at the time of QFIX-03, rather than stale Q25/Q26/Q27 review guidance. The token ledger
-now distinguishes hard budget warnings from near-budget watchlist entries and
-uses an explicit eval-report budget for the 30-task golden report.
+Harness doctor/self-check guidance reported the reconciled queue state and pointed to Q35 at the time of QFIX-03, rather than stale Q25/Q26/Q27 review guidance. The token ledger now distinguishes hard budget warnings from near-budget watchlist entries and uses an explicit eval-report budget for the 30-task golden report.
 
 ### Verification Notes
 
-QFIX-03 reruns Harness validation, AIDE Lite validation/test/selftest/eval,
-commit checks, changelog preview/validate/status, pack export/status, and core
-unit test suites. Final Harness and AIDE Lite validation report PASS with no
-WARN/FAIL checks. Detailed results are recorded in
-`.aide/queue/QFIX-03-warning-review-reconciliation/evidence/validation.md`.
+QFIX-03 reruns Harness validation, AIDE Lite validation/test/selftest/eval, commit checks, changelog preview/validate/status, pack export/status, and core unit test suites. Final Harness and AIDE Lite validation report PASS with no WARN/FAIL checks. Detailed results are recorded in `.aide/queue/QFIX-03-warning-review-reconciliation/evidence/validation.md`.
 
 ### Regressions Avoided
 
@@ -5778,41 +4120,24 @@ Implemented, awaiting review.
 
 ### Implementation Notes
 
-Q34 turns Q27 structured commit bodies into deterministic preview artifacts:
-`CHANGELOG.preview.md`, `RELEASE_NOTES.preview.md`, matching JSON files,
-`malformed-commits.md`, and `latest-changelog-report.md`. The parser reads
-Conventional Commit subjects, structured Markdown sections, changelog category
-bullets, AIDE trailers, legacy semi-structured commits, merge commits, and
-breaking-change markers. Malformed or legacy commits warn and remain visible;
-history is not rewritten.
+Q34 turns Q27 structured commit bodies into deterministic preview artifacts: `CHANGELOG.preview.md`, `RELEASE_NOTES.preview.md`, matching JSON files, `malformed-commits.md`, and `latest-changelog-report.md`. The parser reads Conventional Commit subjects, structured Markdown sections, changelog category bullets, AIDE trailers, legacy semi-structured commits, merge commits, and breaking-change markers. Malformed or legacy commits warn and remain visible; history is not rewritten.
 
-The command surface is preview-only: `changelog preview` writes drafts,
-`changelog validate` checks policy/templates/output shape, and
-`changelog status` summarizes the latest preview. No tags, GitHub Releases,
-release publishing, branch mutation, provider/model calls, or network calls
-are introduced.
+The command surface is preview-only: `changelog preview` writes drafts, `changelog validate` checks policy/templates/output shape, and `changelog status` summarizes the latest preview. No tags, GitHub Releases, release publishing, branch mutation, provider/model calls, or network calls are introduced.
 
 ### Verification Notes
 
-- Q34 targeted tests cover subject parsing, structured section extraction,
-  trailer parsing, category bullets, legacy/malformed commits, merge commits,
-  fixture Git history preview generation, JSON shape, and preview-only text.
-- Q34 golden tasks cover changelog preview, release-note preview, malformed
-  commit reporting, and JSON preview shape.
+- Q34 targeted tests cover subject parsing, structured section extraction, trailer parsing, category bullets, legacy/malformed commits, merge commits, fixture Git history preview generation, JSON shape, and preview-only text.
+- Q34 golden tasks cover changelog preview, release-note preview, malformed commit reporting, and JSON preview shape.
 - Final validation is recorded under Q34 evidence.
 
 ### Regressions Avoided
 
-- No official `CHANGELOG.md` promotion, release publishing, tag creation,
-  GitHub Release creation, branch mutation, provider/model call, network call,
-  or history rewrite.
-- Export pack support includes changelog policy/config/templates but excludes
-  source-generated preview outputs as target truth.
+- No official `CHANGELOG.md` promotion, release publishing, tag creation, GitHub Release creation, branch mutation, provider/model call, network call, or history rewrite.
+- Export pack support includes changelog policy/config/templates but excludes source-generated preview outputs as target truth.
 
 ### Follow-Up
 
-- Q35 should add GitHub protection and CI advisory policy without applying
-  GitHub settings or publishing releases.
+- Q35 should add GitHub protection and CI advisory policy without applying GitHub settings or publishing releases.
 
 ## Work Item: Q31
 
@@ -5832,40 +4157,25 @@ Implemented, awaiting review.
 
 ### Implementation Notes
 
-Q31 makes the portable AIDE Lite Pack carry the generic governance introduced
-by Q27 through Q30: structured commit policy, hook/template support,
-changelog preview, task resumption, WorkUnit and recovery policy, branch role
-policy, promotion/sync/prune policy, project workflow profiles, and dry-run
-Git helper policy. The export boundary stays target-safe: AIDE queue history,
-generated context and reports, AIDE-specific branch policy, workflow detection
-outputs, latest helper plans, changelog previews, local state, secrets, raw
-prompts, and raw responses remain excluded.
+Q31 makes the portable AIDE Lite Pack carry the generic governance introduced by Q27 through Q30: structured commit policy, hook/template support, changelog preview, task resumption, WorkUnit and recovery policy, branch role policy, promotion/sync/prune policy, project workflow profiles, and dry-run Git helper policy. The export boundary stays target-safe: AIDE queue history, generated context and reports, AIDE-specific branch policy, workflow detection outputs, latest helper plans, changelog previews, local state, secrets, raw prompts, and raw responses remain excluded.
 
-Safe import keeps hook installation opt-in. Imported target repos receive the
-hook template under `.aide/hooks/commit-msg`, but `.git/hooks/` is not written.
-Target repos must run their own `git detect`, `git plan`, snapshot, index, and
-pack commands after import so target state is generated locally.
+Safe import keeps hook installation opt-in. Imported target repos receive the hook template under `.aide/hooks/commit-msg`, but `.git/hooks/` is not written. Target repos must run their own `git detect`, `git plan`, snapshot, index, and pack commands after import so target state is generated locally.
 
 ### Verification Notes
 
-- Q31 targeted tests cover manifest inclusion, source-state exclusion, safe
-  fixture import, hook non-installation, commit check pass/fail behavior, and
-  imported Git policy/detect/plan commands.
-- AIDE Lite Q31 golden tasks cover pack inclusion/exclusion and fixture import
-  governance command behavior.
+- Q31 targeted tests cover manifest inclusion, source-state exclusion, safe fixture import, hook non-installation, commit check pass/fail behavior, and imported Git policy/detect/plan commands.
+- AIDE Lite Q31 golden tasks cover pack inclusion/exclusion and fixture import governance command behavior.
 - Final validation is recorded under Q31 evidence.
 
 ### Regressions Avoided
 
-- No Eureka, Dominium, external repo, GitHub, branch, provider, model, or
-  network mutation.
+- No Eureka, Dominium, external repo, GitHub, branch, provider, model, or network mutation.
 - No exported AIDE-specific live branch detection or helper-plan state.
 - No automatic hook installation in imported target repositories.
 
 ### Follow-Up
 
-- Q32 should sync Eureka from the canonical Q31 pack and regenerate
-  Eureka-local reports.
+- Q32 should sync Eureka from the canonical Q31 pack and regenerate Eureka-local reports.
 - Q33 should sync Dominium after Q32 evidence is available.
 
 ## Work Item: Q30
@@ -5888,37 +4198,25 @@ Implemented, awaiting review.
 
 ### Implementation Notes
 
-Q30 records the AIDE repository's own branch policy on top of the generic Q28
-roles and Q29 helpers. `main` is canonical accepted truth. `dev` is the intended
-shareable integration branch and is explicitly not canonical release truth.
-Bounded work lands to `dev`; `dev` promotes to `main` only through review,
-validation, commit, changelog, pack, and secret-scan gates.
+Q30 records the AIDE repository's own branch policy on top of the generic Q28 roles and Q29 helpers. `main` is canonical accepted truth. `dev` is the intended shareable integration branch and is explicitly not canonical release truth. Bounded work lands to `dev`; `dev` promotes to `main` only through review, validation, commit, changelog, pack, and secret-scan gates.
 
-Current local evidence shows `main` exists locally and as `origin/main`, while
-`dev` is absent locally and remotely. Q30 therefore generates a future explicit
-operator plan for creating and pushing `dev`, but does not run those commands.
+Current local evidence shows `main` exists locally and as `origin/main`, while `dev` is absent locally and remotely. Q30 therefore generates a future explicit operator plan for creating and pushing `dev`, but does not run those commands.
 
 ### Verification Notes
 
-- Q30 targeted tests cover policy parsing, main/dev role validation, no-live-
-  mutation posture, missing-dev planning, existing-dev classification,
-  promotion-gate anchors, and Q30 golden tasks.
-- AIDE Lite Git policy, detect, status, and plan commands now include the
-  AIDE-specific branch policy and generated dev/main plan artifacts.
+- Q30 targeted tests cover policy parsing, main/dev role validation, no-live- mutation posture, missing-dev planning, existing-dev classification, promotion-gate anchors, and Q30 golden tasks.
+- AIDE Lite Git policy, detect, status, and plan commands now include the AIDE-specific branch policy and generated dev/main plan artifacts.
 - Final validation is recorded under Q30 evidence.
 
 ### Regressions Avoided
 
 - No live AIDE branch creation, deletion, merge, push, prune, or promotion.
-- No GitHub API calls, CI activation, release publishing, provider/model calls,
-  or outbound network behavior.
-- AIDE-specific live branch detection artifacts are not exported as target repo
-  truth.
+- No GitHub API calls, CI activation, release publishing, provider/model calls, or outbound network behavior.
+- AIDE-specific live branch detection artifacts are not exported as target repo truth.
 
 ### Follow-Up
 
-- Q31 should export and synchronize the generic Git/commit workflow support
-  without treating AIDE's live dev/main plan as target-repo truth.
+- Q31 should export and synchronize the generic Git/commit workflow support without treating AIDE's live dev/main plan as target-repo truth.
 - Q35 or later should add GitHub protection and CI advisory/application layers.
 
 ## Work Item: Q29
@@ -5942,40 +4240,25 @@ Implemented, awaiting review.
 
 ### Implementation Notes
 
-Q29 adds dry-run-first Git helper plans for sync, land, promote, and prune
-actions. Live AIDE branch mutation remains out of scope: Q29 does not create
-`dev`, merge into `main`, push remotes, delete live branches, or run GitHub
-mutation. The mutating paths are implemented behind explicit `--apply` and
-tested only inside temporary Git fixture repositories with fixture-local Git
-user/email configuration.
+Q29 adds dry-run-first Git helper plans for sync, land, promote, and prune actions. Live AIDE branch mutation remains out of scope: Q29 does not create `dev`, merge into `main`, push remotes, delete live branches, or run GitHub mutation. The mutating paths are implemented behind explicit `--apply` and tested only inside temporary Git fixture repositories with fixture-local Git user/email configuration.
 
-The helper safety model records repo root, current branch, dirty state,
-local/remote branches, upstream status, branch roles, protected roles, policy
-readiness, ancestor containment, ahead/behind state where available, and
-unpushed protected branches where feasible. Unknown or dirty states block
-land/promote mutation. Prune eligibility requires ancestor containment and
-never includes canonical, integration, release, or deploy roles.
+The helper safety model records repo root, current branch, dirty state, local/remote branches, upstream status, branch roles, protected roles, policy readiness, ancestor containment, ahead/behind state where available, and unpushed protected branches where feasible. Unknown or dirty states block land/promote mutation. Prune eligibility requires ancestor containment and never includes canonical, integration, release, or deploy roles.
 
 ### Verification Notes
 
-- Q29 targeted fixture tests cover task-to-dev land, dev-to-main promote,
-  contained branch prune, unmerged prune refusal, protected branch refusal,
-  dirty-tree blocks, unknown-role blocks, and no remote push execution.
-- Q29 golden tasks cover helper policy anchors, land/promote plan docs, prune
-  guards, and live-repo no-mutation defaults.
+- Q29 targeted fixture tests cover task-to-dev land, dev-to-main promote, contained branch prune, unmerged prune refusal, protected branch refusal, dirty-tree blocks, unknown-role blocks, and no remote push execution.
+- Q29 golden tasks cover helper policy anchors, land/promote plan docs, prune guards, and live-repo no-mutation defaults.
 - Final validation is recorded under Q29 evidence.
 
 ### Regressions Avoided
 
 - No live AIDE branch creation, deletion, merge, push, prune, or promotion.
 - No force-push support.
-- No GitHub API calls, CI activation, release publishing, provider/model calls,
-  or outbound network behavior.
+- No GitHub API calls, CI activation, release publishing, provider/model calls, or outbound network behavior.
 
 ### Follow-Up
 
-- Q30 should decide and apply the AIDE-specific `dev`/`main` policy posture if
-  appropriate.
+- Q30 should decide and apply the AIDE-specific `dev`/`main` policy posture if appropriate.
 - Q35 or later should add GitHub protection and CI advisory/application layers.
 
 ## Work Item: Q28
@@ -6003,25 +4286,19 @@ Implemented and awaiting review.
 
 ### Rationale
 
-Q28 makes branch state understandable before branch automation exists. It reduces
-future prompt and review cost by giving agents a deterministic way to identify
-`main` as canonical truth, `dev` as integration truth, task/review/release/hotfix
-roles, and the policy gates that later helpers must enforce.
+Q28 makes branch state understandable before branch automation exists. It reduces future prompt and review cost by giving agents a deterministic way to identify `main` as canonical truth, `dev` as integration truth, task/review/release/hotfix roles, and the policy gates that later helpers must enforce.
 
 ### Notable Design Decisions
 
-- Detection is local and report-only; it does not fetch, merge, push, prune,
-  delete, create branches, or call GitHub.
-- `dev` is useful as shareable integration truth but is not canonical release
-  truth.
+- Detection is local and report-only; it does not fetch, merge, push, prune, delete, create branches, or call GitHub.
+- `dev` is useful as shareable integration truth but is not canonical release truth.
 - Unknown roles and dirty trees produce conservative recommendations.
 - Pruning is policy-only and requires future ancestor-containment proof.
 
 ### Tradeoffs
 
 - Local detection cannot prove GitHub branch protection or remote freshness.
-- Full merge/land/promote behavior is deferred to Q29 so policy can be reviewed
-  before mutation helpers exist.
+- Full merge/land/promote behavior is deferred to Q29 so policy can be reviewed before mutation helpers exist.
 
 ### Verification
 
@@ -6030,10 +4307,8 @@ roles, and the policy gates that later helpers must enforce.
 
 ### Regressions Avoided
 
-- No live branch creation, deletion, merge, push, prune, fetch, or GitHub API
-  mutation.
-- No provider/model calls, network calls, CI creation, release publishing, or
-  product runtime change.
+- No live branch creation, deletion, merge, push, prune, fetch, or GitHub API mutation.
+- No provider/model calls, network calls, CI creation, release publishing, or product runtime change.
 
 ### Remaining Issues
 
@@ -6066,10 +4341,7 @@ Implemented and awaiting review.
 
 ### Rationale
 
-Q27 makes commits and queue tasks recoverable from repository state. It reduces
-future token cost by allowing agents to validate commit bodies, preview
-changelog entries, detect no-op duplicate tasks, and resume partial work without
-replaying long prompt history.
+Q27 makes commits and queue tasks recoverable from repository state. It reduces future token cost by allowing agents to validate commit bodies, preview changelog entries, detect no-op duplicate tasks, and resume partial work without replaying long prompt history.
 
 ### Notable Design Decisions
 
@@ -8002,11 +6274,7 @@ Needs Review.
 
 ### Rationale
 
-Q17 makes AIDE's future model/tool choice evidence-based before any live routing
-exists. It reads compact task/context packets and local verifier, token,
-golden-task, review, and outcome signals, then writes advisory route decisions
-with a route class, hard-floor status, quality gates, evidence sources, and
-fallback guidance.
+Q17 makes AIDE's future model/tool choice evidence-based before any live routing exists. It reads compact task/context packets and local verifier, token, golden-task, review, and outcome signals, then writes advisory route decisions with a route class, hard-floor status, quality gates, evidence sources, and fallback guidance.
 
 ### Notable Design Decisions
 
@@ -8019,14 +6287,7 @@ fallback guidance.
 
 ### Verification
 
-Q17 validation covered Harness validate/doctor/self-check, Harness and
-Compatibility tests, AIDE Lite doctor/validate/snapshot/index/context/verify
-/review-pack/ledger scan/ledger report/eval list/eval run/eval report/outcome
-report/optimize suggest/route list/route validate/route explain/pack/estimate
-/selftest, direct `.aide/scripts/tests` discovery, documented hidden-directory
-discovery behavior, `git diff --check`, and targeted secret scanning. Detailed
-command output is recorded in
-`.aide/queue/Q17-router-profile-v0/evidence/validation.md`.
+Q17 validation covered Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite doctor/validate/snapshot/index/context/verify /review-pack/ledger scan/ledger report/eval list/eval run/eval report/outcome report/optimize suggest/route list/route validate/route explain/pack/estimate /selftest, direct `.aide/scripts/tests` discovery, documented hidden-directory discovery behavior, `git diff --check`, and targeted secret scanning. Detailed command output is recorded in `.aide/queue/Q17-router-profile-v0/evidence/validation.md`.
 
 ### Regressions Avoided
 
@@ -8115,55 +6376,33 @@ Implemented and awaiting review.
 
 ### Rationale
 
-Q19 creates a safe local Gateway boundary after Q09-Q18 established compact
-context, verification, review packets, token accounting, golden tasks,
-advisory outcomes, advisory routes, cache keys, and local-state policy. It
-exposes those local signals before any provider adapter or live proxy exists.
+Q19 creates a safe local Gateway boundary after Q09-Q18 established compact context, verification, review packets, token accounting, golden tasks, advisory outcomes, advisory routes, cache keys, and local-state policy. It exposes those local signals before any provider adapter or live proxy exists.
 
 ### Notable Design Decisions
 
-- Added `.aide/policies/gateway.yaml` with local skeleton, report-only, and
-  no-provider-forwarding operating mode.
-- Added `.aide/gateway/` architecture, endpoint, lifecycle, security-boundary,
-  and latest-status artifacts.
-- Added `core/gateway/gateway_status.py` for compact health, status, route,
-  summaries, and version payloads.
+- Added `.aide/policies/gateway.yaml` with local skeleton, report-only, and no-provider-forwarding operating mode.
+- Added `.aide/gateway/` architecture, endpoint, lifecycle, security-boundary, and latest-status artifacts.
+- Added `core/gateway/gateway_status.py` for compact health, status, route, summaries, and version payloads.
 - Added `core/gateway/server.py` as a localhost-only stdlib HTTP skeleton.
-- Added AIDE Lite `gateway status`, `gateway endpoints`, `gateway smoke`, and
-  `gateway serve`.
-- Integrated Gateway readiness into AIDE Lite validation, doctor, verification,
-  review-packet summaries, and selftest.
+- Added AIDE Lite `gateway status`, `gateway endpoints`, `gateway smoke`, and `gateway serve`.
+- Integrated Gateway readiness into AIDE Lite validation, doctor, verification, review-packet summaries, and selftest.
 
 ### Verification
 
-Q19 validation covers Harness validate/doctor/self-check, Harness and
-Compatibility tests, core Gateway tests, AIDE Lite
-doctor/validate/snapshot/index/context/verify/review-pack/ledger/eval/outcome/
-optimize/route/cache/gateway/pack/estimate/selftest, Gateway endpoint smoke,
-`git check-ignore .aide.local/`, `git diff --check`, and targeted secret
-scanning. Detailed command output is recorded in
-`.aide/queue/Q19-gateway-architecture-skeleton/evidence/validation.md`.
+Q19 validation covers Harness validate/doctor/self-check, Harness and Compatibility tests, core Gateway tests, AIDE Lite doctor/validate/snapshot/index/context/verify/review-pack/ledger/eval/outcome/ optimize/route/cache/gateway/pack/estimate/selftest, Gateway endpoint smoke, `git check-ignore .aide.local/`, `git diff --check`, and targeted secret scanning. Detailed command output is recorded in `.aide/queue/Q19-gateway-architecture-skeleton/evidence/validation.md`.
 
 ### Regressions Avoided
 
-- No provider calls, model calls, outbound network calls, or real Gateway proxy
-  forwarding were introduced.
-- No OpenAI-compatible or Anthropic-compatible forwarding endpoints were
-  implemented.
-- No raw prompts, raw responses, provider credentials, `.env` contents,
-  `.aide.local` state, local traces, or real cache blobs were committed.
-- No Runtime, Service, Commander, UI, Mobile, MCP/A2A, provider adapter, or
-  autonomous loop was introduced.
+- No provider calls, model calls, outbound network calls, or real Gateway proxy forwarding were introduced.
+- No OpenAI-compatible or Anthropic-compatible forwarding endpoints were implemented.
+- No raw prompts, raw responses, provider credentials, `.env` contents, `.aide.local` state, local traces, or real cache blobs were committed.
+- No Runtime, Service, Commander, UI, Mobile, MCP/A2A, provider adapter, or autonomous loop was introduced.
 
 ### Remaining Issues
 
 - Q19 awaits independent review.
-- The skeleton is not a production Gateway and has no authentication,
-  authorization, live route execution, service manager, provider adapters,
-  provider billing, or exact tokenizer.
-- Q20 Provider Adapter v0 remains the next bounded phase and must still respect
-  `.aide.local/`, no raw prompt/response storage, verifier/golden-task gates,
-  and Gateway safety policy.
+- The skeleton is not a production Gateway and has no authentication, authorization, live route execution, service manager, provider adapters, provider billing, or exact tokenizer.
+- Q20 Provider Adapter v0 remains the next bounded phase and must still respect `.aide.local/`, no raw prompt/response storage, verifier/golden-task gates, and Gateway safety policy.
 
 ## Work Item: Q20 Provider Adapter v0
 
@@ -8188,54 +6427,31 @@ Implemented and awaiting review.
 
 ### Rationale
 
-Q20 defines provider adapters as offline contracts before any live provider
-execution exists. Provider routing can reduce token waste only when provider
-families, privacy posture, credential boundaries, capability metadata, and
-hard-floor rules are explicit and testable.
+Q20 defines provider adapters as offline contracts before any live provider execution exists. Provider routing can reduce token waste only when provider families, privacy posture, credential boundaries, capability metadata, and hard-floor rules are explicit and testable.
 
 ### Notable Design Decisions
 
-- Added `.aide/policies/provider-adapters.yaml` with offline-contracts-only,
-  metadata-validation-only, and no-provider-calls operating mode.
-- Added `.aide/providers/` catalog, capability matrix, adapter contract, static
-  status, and latest provider status reports.
-- Added `core/providers/**` standard-library dataclasses, catalog parsing,
-  validation, status rendering, and offline probe helpers.
-- Added AIDE Lite `provider list`, `provider status`, `provider validate`,
-  `provider contract`, and `provider probe --offline`.
-- Integrated provider readiness into AIDE Lite validation, verification,
-  doctor, selftest, review-packet summaries, advisory route notes, and Gateway
-  status summaries.
+- Added `.aide/policies/provider-adapters.yaml` with offline-contracts-only, metadata-validation-only, and no-provider-calls operating mode.
+- Added `.aide/providers/` catalog, capability matrix, adapter contract, static status, and latest provider status reports.
+- Added `core/providers/**` standard-library dataclasses, catalog parsing, validation, status rendering, and offline probe helpers.
+- Added AIDE Lite `provider list`, `provider status`, `provider validate`, `provider contract`, and `provider probe --offline`.
+- Integrated provider readiness into AIDE Lite validation, verification, doctor, selftest, review-packet summaries, advisory route notes, and Gateway status summaries.
 
 ### Verification
 
-Q20 validation covers Harness validate/doctor/self-check, Harness,
-Compatibility, Gateway, and Provider tests, AIDE Lite
-doctor/validate/snapshot/index/context/verify/review-pack/ledger/eval/outcome/
-optimize/route/cache/gateway/provider/pack/estimate/selftest,
-`git check-ignore .aide.local/`, `git diff --check`, and targeted secret
-scanning. Detailed command output is recorded in
-`.aide/queue/Q20-provider-adapter-v0/evidence/validation.md`.
+Q20 validation covers Harness validate/doctor/self-check, Harness, Compatibility, Gateway, and Provider tests, AIDE Lite doctor/validate/snapshot/index/context/verify/review-pack/ledger/eval/outcome/ optimize/route/cache/gateway/provider/pack/estimate/selftest, `git check-ignore .aide.local/`, `git diff --check`, and targeted secret scanning. Detailed command output is recorded in `.aide/queue/Q20-provider-adapter-v0/evidence/validation.md`.
 
 ### Regressions Avoided
 
-- No live provider calls, model calls, outbound network calls, provider probes,
-  credential setup, or Gateway forwarding were introduced.
-- No raw prompts, raw responses, provider credentials, `.env` contents,
-  `.aide.local` state, local traces, provider response caches, or real cache
-  blobs were committed.
-- No Runtime, Service, Commander, UI, Mobile, MCP/A2A, local model setup,
-  provider billing, exact tokenizer, automatic GPT review, automatic repair, or
-  autonomous loop was introduced.
+- No live provider calls, model calls, outbound network calls, provider probes, credential setup, or Gateway forwarding were introduced.
+- No raw prompts, raw responses, provider credentials, `.env` contents, `.aide.local` state, local traces, provider response caches, or real cache blobs were committed.
+- No Runtime, Service, Commander, UI, Mobile, MCP/A2A, local model setup, provider billing, exact tokenizer, automatic GPT review, automatic repair, or autonomous loop was introduced.
 
 ### Remaining Issues
 
 - Q20 awaits independent review.
-- Capability metadata is conservative contract metadata, not measured provider
-  performance, availability, pricing, latency, or quality evidence.
-- Future live provider work still needs explicit reviewed phases for
-  credentials, provider probes, Gateway forwarding, provider response caching,
-  billing, and exact capability validation.
+- Capability metadata is conservative contract metadata, not measured provider performance, availability, pricing, latency, or quality evidence.
+- Future live provider work still needs explicit reviewed phases for credentials, provider probes, Gateway forwarding, provider response caching, billing, and exact capability validation.
 - Q21 Existing Tool Adapter Compiler v0 remains the next bounded phase.
 
 ## Work Item: QFIX-01 Foundation Review Reconciliation
@@ -8268,34 +6484,24 @@ Implemented and awaiting review.
 
 ### Rationale
 
-QCHECK found that Q09-Q20 existed and mostly worked, but future agents would
-still waste context on stale source-of-truth records. QFIX-01 accepts the
-token-survival foundation with notes, fixes Q18 drift, updates profile and
-self-check guidance, and records QFIX-02 as the next repair before Q21.
+QCHECK found that Q09-Q20 existed and mostly worked, but future agents would still waste context on stale source-of-truth records. QFIX-01 accepts the token-survival foundation with notes, fixes Q18 drift, updates profile and self-check guidance, and records QFIX-02 as the next repair before Q21.
 
 ### Reconciliation Decisions
 
 - Q09-Q20 are accepted with notes, not marked flawless.
 - Q18 task/status drift is fixed.
-- `.aide/profile.yaml` now describes the post-token-foundation reconciliation
-  state rather than stale Q09 focus.
-- `scripts/aide self-check` no longer recommends stale Q09 once Q09-Q20 are
-  accepted.
+- `.aide/profile.yaml` now describes the post-token-foundation reconciliation state rather than stale Q09 focus.
+- `scripts/aide self-check` no longer recommends stale Q09 once Q09-Q20 are accepted.
 - Gateway and provider surfaces remain no-call/report-only or offline metadata.
 
 ### Verification
 
-Baseline validation before edits covered Harness validate/doctor/self-check,
-AIDE Lite doctor/validate/verify/eval/route/cache/provider checks, Harness,
-Compatibility, Gateway, and Provider tests, and the known failing
-`.aide/scripts/tests` discovery command. Final validation is recorded in
-`.aide/queue/QFIX-01-foundation-review-reconciliation/evidence/validation.md`.
+Baseline validation before edits covered Harness validate/doctor/self-check, AIDE Lite doctor/validate/verify/eval/route/cache/provider checks, Harness, Compatibility, Gateway, and Provider tests, and the known failing `.aide/scripts/tests` discovery command. Final validation is recorded in `.aide/queue/QFIX-01-foundation-review-reconciliation/evidence/validation.md`.
 
 ### Remaining Issues
 
 - QFIX-01 itself still requires review.
-- QFIX-02 must repair standard `.aide/scripts/tests` discovery and a routine
-  runner.
+- QFIX-02 must repair standard `.aide/scripts/tests` discovery and a routine runner.
 - Token savings remain estimated, not billing truth.
 - Golden tasks remain substrate quality gates, not arbitrary coding-task proof.
 - Cross-repo pack export/import and Eureka/Dominium pilots remain future work.
@@ -8321,41 +6527,26 @@ Implemented and awaiting review.
 
 ### Rationale
 
-The QCHECK audit and QFIX-01 evidence showed that the AIDE Lite suite passed
-when run with the direct discovery form but failed under
-`py -3 -m unittest discover -s .aide/scripts/tests -t .`. That failure made
-validation feel broken even though the tests were healthy. QFIX-02 makes
-`py -3 .aide/scripts/aide_lite.py test` the canonical validation command and
-documents the old `-t .` form as non-canonical for the hidden `.aide` path.
+The QCHECK audit and QFIX-01 evidence showed that the AIDE Lite suite passed when run with the direct discovery form but failed under `py -3 -m unittest discover -s .aide/scripts/tests -t .`. That failure made validation feel broken even though the tests were healthy. QFIX-02 makes `py -3 .aide/scripts/aide_lite.py test` the canonical validation command and documents the old `-t .` form as non-canonical for the hidden `.aide` path.
 
 ### Implementation Notes
 
 - Added `test` as a stable alias over the existing internal selftest runner.
 - Preserved `selftest` as a compatibility command.
-- Added tests for import-without-CLI-side-effects, `test` pass behavior,
-  controlled failure return code, command catalog truth, and Harness next-step
-  guidance while QFIX-02 is active.
-- Kept the supported raw unittest command as
-  `py -3 -m unittest discover -s .aide/scripts/tests`.
-- Did not add package markers under `.aide/` or move AIDE Lite into a Python
-  package.
+- Added tests for import-without-CLI-side-effects, `test` pass behavior, controlled failure return code, command catalog truth, and Harness next-step guidance while QFIX-02 is active.
+- Kept the supported raw unittest command as `py -3 -m unittest discover -s .aide/scripts/tests`.
+- Did not add package markers under `.aide/` or move AIDE Lite into a Python package.
 
 ### Verification
 
-Final validation is recorded in
-`.aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/validation.md`.
-Key checks include Harness validate/doctor/self-check, AIDE Lite
-doctor/validate/test/selftest, supported `.aide/scripts/tests` discovery,
-Harness/Compatibility/Gateway/Provider tests, `git diff --check`, and targeted
-secret scans.
+Final validation is recorded in `.aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/validation.md`. Key checks include Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest, supported `.aide/scripts/tests` discovery, Harness/Compatibility/Gateway/Provider tests, `git diff --check`, and targeted secret scans.
 
 ### Remaining Issues
 
 - QFIX-02 itself still requires review.
 - The old `-t .` discovery command remains invalid/non-canonical by design.
 - Q21 Cross-Repo Pack Export / Import v0 is next after QFIX-02 review.
-- Token savings remain estimated, and no arbitrary coding-task quality proof is
-  introduced.
+- Token savings remain estimated, and no arbitrary coding-task quality proof is introduced.
 - No Gateway/provider/model runtime behavior is introduced.
 
 ## Work Item: Q21 Cross-Repo Pack Export / Import v0
@@ -8379,57 +6570,33 @@ Implemented and awaiting review.
 
 ### Rationale
 
-Q21 makes the token-survival foundation portable before the first real
-Eureka/Dominium pilots. It prevents manual broad copying from contaminating
-target repos with AIDE source identity, queue history, generated context,
-reports, latest status artifacts, local state, raw prompts, raw responses, or
-secrets.
+Q21 makes the token-survival foundation portable before the first real Eureka/Dominium pilots. It prevents manual broad copying from contaminating target repos with AIDE source identity, queue history, generated context, reports, latest status artifacts, local state, raw prompts, raw responses, or secrets.
 
 ### Notable Design Decisions
 
-- Added `.aide/policies/export-import.yaml` to define the portable pack
-  include/exclude boundary.
-- Added `.aide/import/**` target-neutral templates for profile, project state,
-  decisions, open risks, and import reports.
+- Added `.aide/policies/export-import.yaml` to define the portable pack include/exclude boundary.
+- Added `.aide/import/**` target-neutral templates for profile, project state, decisions, open risks, and import reports.
 - Added AIDE Lite `export-pack`, `import-pack`, and `pack-status` commands.
-- Generated `.aide/export/aide-lite-pack-v0/` with manifest, checksums, install
-  docs, import policy, export report, and portable `files/`.
-- Import preserves manual `AGENTS.md` content through a managed portable
-  section, creates target-specific placeholders when absent, and ensures
-  `.aide.local/` remains ignored.
-- Fixture validation uses temporary local repositories only; real Eureka and
-  Dominium imports remain Q22/Q23.
+- Generated `.aide/export/aide-lite-pack-v0/` with manifest, checksums, install docs, import policy, export report, and portable `files/`.
+- Import preserves manual `AGENTS.md` content through a managed portable section, creates target-specific placeholders when absent, and ensures `.aide.local/` remains ignored.
+- Fixture validation uses temporary local repositories only; real Eureka and Dominium imports remain Q22/Q23.
 
 ### Verification
 
-Q21 validation covers Harness validate/doctor/self-check, AIDE Lite
-doctor/validate/test/selftest/export-pack/pack-status/import-pack dry-run and
-import, fixture target doctor/snapshot/index/pack/estimate, AIDE Lite
-export/import unit tests, Harness/Compatibility/Gateway/Provider tests,
-`git check-ignore .aide.local/`, `git diff --check`, and targeted secret
-scanning. Detailed command output is recorded in
-`.aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/validation.md`.
+Q21 validation covers Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/export-pack/pack-status/import-pack dry-run and import, fixture target doctor/snapshot/index/pack/estimate, AIDE Lite export/import unit tests, Harness/Compatibility/Gateway/Provider tests, `git check-ignore .aide.local/`, `git diff --check`, and targeted secret scanning. Detailed command output is recorded in `.aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/validation.md`.
 
 ### Regressions Avoided
 
 - No real Eureka or Dominium repositories were mutated.
-- No source repo `.aide/profile.yaml`, `.aide/queue/**`, source memory,
-  generated context, reports, controller ledgers, route/cache/Gateway/provider
-  latest status artifacts, eval runs, `.aide.local/`, `.env`, secrets, raw
-  prompts, or raw responses were copied into the portable pack.
-- No provider calls, model calls, network calls, Gateway forwarding, Runtime,
-  Service, Commander, UI, Mobile, MCP/A2A, existing-tool adapter compiler, or
-  autonomous loop was introduced.
+- No source repo `.aide/profile.yaml`, `.aide/queue/**`, source memory, generated context, reports, controller ledgers, route/cache/Gateway/provider latest status artifacts, eval runs, `.aide.local/`, `.env`, secrets, raw prompts, or raw responses were copied into the portable pack.
+- No provider calls, model calls, network calls, Gateway forwarding, Runtime, Service, Commander, UI, Mobile, MCP/A2A, existing-tool adapter compiler, or autonomous loop was introduced.
 
 ### Remaining Issues
 
 - Q21 awaits independent review.
-- Fixture import proves portability mechanics only; Q22 and Q23 must measure
-  real target-repo token savings and quality preservation.
-- Target-specific profile and memory placeholders still require human or
-  project-specific completion after import.
-- Exact tokenizer, provider billing, live provider execution, and existing-tool
-  adapter compiler work remain deferred.
+- Fixture import proves portability mechanics only; Q22 and Q23 must measure real target-repo token savings and quality preservation.
+- Target-specific profile and memory placeholders still require human or project-specific completion after import.
+- Exact tokenizer, provider billing, live provider execution, and existing-tool adapter compiler work remain deferred.
 
 ## Work Item: Q24 Existing Tool Adapter Compiler v0
 
@@ -8453,50 +6620,28 @@ Implemented and awaiting review.
 
 ### Rationale
 
-Most AIDE users will reach AIDE first through existing coding tools rather than
-through a future Gateway or Service. Q24 compiles AIDE's compact-packet,
-context, validation, evidence, review-gate, local-state, and no-provider-call
-rules into concise tool-specific guidance for Codex, Claude Code, Aider, Cline,
-Continue, Cursor, and Windsurf.
+Most AIDE users will reach AIDE first through existing coding tools rather than through a future Gateway or Service. Q24 compiles AIDE's compact-packet, context, validation, evidence, review-gate, local-state, and no-provider-call rules into concise tool-specific guidance for Codex, Claude Code, Aider, Cline, Continue, Cursor, and Windsurf.
 
 ### Implementation Notes
 
-- Added `.aide/policies/adapters.yaml` for template-compiler-only operation,
-  generated or preview outputs, managed-section rules, drift detection, and
-  no-runtime/no-provider/no-network safety.
-- Added `.aide/adapters/targets.yaml` and templates for Codex/AGENTS, Claude
-  Code, Aider, Cline, Continue, Cursor, and Windsurf.
-- Added AIDE Lite `adapter list`, `adapter render`, `adapter preview`,
-  `adapter validate`, `adapter drift`, and `adapter generate` commands.
-- Kept `adapt` backward-compatible as a deterministic shortcut for the safe
-  `AGENTS.md` managed section.
-- Generated adapter previews under `.aide/generated/adapters/**` and updated
-  only the managed section in root `AGENTS.md`.
-- Updated the portable AIDE Lite Pack to include adapter templates and policy
-  so target repos can generate local guidance after import.
+- Added `.aide/policies/adapters.yaml` for template-compiler-only operation, generated or preview outputs, managed-section rules, drift detection, and no-runtime/no-provider/no-network safety.
+- Added `.aide/adapters/targets.yaml` and templates for Codex/AGENTS, Claude Code, Aider, Cline, Continue, Cursor, and Windsurf.
+- Added AIDE Lite `adapter list`, `adapter render`, `adapter preview`, `adapter validate`, `adapter drift`, and `adapter generate` commands.
+- Kept `adapt` backward-compatible as a deterministic shortcut for the safe `AGENTS.md` managed section.
+- Generated adapter previews under `.aide/generated/adapters/**` and updated only the managed section in root `AGENTS.md`.
+- Updated the portable AIDE Lite Pack to include adapter templates and policy so target repos can generate local guidance after import.
 
 ### Verification
 
-Final validation is recorded in
-`.aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/validation.md`.
-Key checks include Harness validate/doctor/self-check, AIDE Lite
-doctor/validate/test/selftest, adapter list/render/preview/validate/drift,
-deterministic `adapt`, export-pack refresh, AIDE Lite adapter compiler tests,
-full AIDE Lite test discovery, Harness/Compatibility/Gateway/Provider tests,
-`git diff --check`, `.aide.local/` ignore verification, and targeted secret
-scan.
+Final validation is recorded in `.aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/validation.md`. Key checks include Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest, adapter list/render/preview/validate/drift, deterministic `adapt`, export-pack refresh, AIDE Lite adapter compiler tests, full AIDE Lite test discovery, Harness/Compatibility/Gateway/Provider tests, `git diff --check`, `.aide.local/` ignore verification, and targeted secret scan.
 
 ### Remaining Issues
 
 - Q24 itself still requires review.
-- Q22 and Q23 target-pilot evidence is now present in the sibling Eureka and
-  Dominium repositories and awaits target-repo review. Q24 evidence was
-  refreshed read-only to record those pilot results, but generated adapter
-  outputs still need target-tool usage evidence.
+- Q22 and Q23 target-pilot evidence is now present in the sibling Eureka and Dominium repositories and awaits target-repo review. Q24 evidence was refreshed read-only to record those pilot results, but generated adapter outputs still need target-tool usage evidence.
 - Non-AGENTS tool outputs are preview-only.
 - Generated guidance is advisory and depends on each tool reading it.
-- Exact tokenizer, provider billing, live provider execution, Gateway
-  forwarding, IDE extensions, and runtime enforcement remain deferred.
+- Exact tokenizer, provider billing, live provider execution, Gateway forwarding, IDE extensions, and runtime enforcement remain deferred.
 
 ## Work Item: Q24 Post-Pilot Evidence Refresh
 
@@ -8506,16 +6651,10 @@ Evidence and documentation refresh completed; Q24 remains `needs_review`.
 
 ### Notes
 
-- Inspected `D:\Projects\Eureka\eureka` read-only and found
-  `EUREKA-AIDE-PILOT-01` at `needs_review` with a 948 approximate-token task
-  packet versus a 68,647 approximate-token baseline.
-- Inspected `D:\Projects\Dominium\dominium` read-only and found
-  `DOMINIUM-AIDE-PILOT-01` at `needs_review` with a 1,087 approximate-token
-  task packet versus a 110,115 approximate-token doctrine-heavy baseline.
-- Updated Q24 evidence and compact root docs to stop saying target-pilot
-  evidence is absent.
-- Did not change adapter compiler code, templates, targets, generated root/tool
-  outputs, Gateway/provider behavior, or any Eureka/Dominium file.
+- Inspected `D:\Projects\Eureka\eureka` read-only and found `EUREKA-AIDE-PILOT-01` at `needs_review` with a 948 approximate-token task packet versus a 68,647 approximate-token baseline.
+- Inspected `D:\Projects\Dominium\dominium` read-only and found `DOMINIUM-AIDE-PILOT-01` at `needs_review` with a 1,087 approximate-token task packet versus a 110,115 approximate-token doctrine-heavy baseline.
+- Updated Q24 evidence and compact root docs to stop saying target-pilot evidence is absent.
+- Did not change adapter compiler code, templates, targets, generated root/tool outputs, Gateway/provider behavior, or any Eureka/Dominium file.
 
 ## Work Item: Q25 Importer Scope And State Truth Repair
 
@@ -8539,44 +6678,26 @@ Implemented and awaiting review.
 
 ### Rationale
 
-The cross-repo readiness audit showed that AIDE had real target-pilot
-token-reduction evidence, but broad handoff was blocked by pack-status failure,
-stale pack provenance, an importer that planned optional broad roots by
-default, and state surfaces that still pointed at QFIX/Q21-era next work.
+The cross-repo readiness audit showed that AIDE had real target-pilot token-reduction evidence, but broad handoff was blocked by pack-status failure, stale pack provenance, an importer that planned optional broad roots by default, and state surfaces that still pointed at QFIX/Q21-era next work.
 
 ### Implementation Notes
 
-- Changed pack checksums to cover payload and static pack docs while excluding
-  mutable `manifest.yaml`, `checksums.json`, and `export-report.md` metadata.
+- Changed pack checksums to cover payload and static pack docs while excluding mutable `manifest.yaml`, `checksums.json`, and `export-report.md` metadata.
 - Regenerated `.aide/export/aide-lite-pack-v0/` so `pack-status` passes.
-- Made `import-pack` default to safe mode, report exact dry-run planned writes,
-  skip optional broad `core/` and `docs/` roots by default, and keep `--mode
-  full` explicit for reviewed local fixtures.
-- Preserved manual `AGENTS.md` merge behavior and target-specific profile or
-  memory template generation.
-- Refreshed `.aide/profile.yaml`, command catalog truth, and Harness
-  self-check guidance so Q25 review or Q26 handover is now recommended instead
-  of stale QFIX-02/Q21 followups.
+- Made `import-pack` default to safe mode, report exact dry-run planned writes, skip optional broad `core/` and `docs/` roots by default, and keep `--mode full` explicit for reviewed local fixtures.
+- Preserved manual `AGENTS.md` merge behavior and target-specific profile or memory template generation.
+- Refreshed `.aide/profile.yaml`, command catalog truth, and Harness self-check guidance so Q25 review or Q26 handover is now recommended instead of stale QFIX-02/Q21 followups.
 - Generated the Q26 Eureka Pilot Review And Handover task packet.
 
 ### Verification
 
-Q25 validation covers AIDE Lite export/import tests, canonical AIDE Lite test,
-export-pack regeneration, pack-status, import-pack dry-run/write into temporary
-fixtures, imported fixture doctor/snapshot/index/pack, Harness
-validate/doctor/self-check, Harness/Compatibility/Gateway/Provider tests,
-`git diff --check`, `.aide.local/` ignore verification, and targeted secret
-scan. Detailed command output is recorded in
-`.aide/queue/Q25-importer-scope-and-state-truth-repair/evidence/validation.md`.
+Q25 validation covers AIDE Lite export/import tests, canonical AIDE Lite test, export-pack regeneration, pack-status, import-pack dry-run/write into temporary fixtures, imported fixture doctor/snapshot/index/pack, Harness validate/doctor/self-check, Harness/Compatibility/Gateway/Provider tests, `git diff --check`, `.aide.local/` ignore verification, and targeted secret scan. Detailed command output is recorded in `.aide/queue/Q25-importer-scope-and-state-truth-repair/evidence/validation.md`.
 
 ### Remaining Issues
 
 - Q25 itself requires review before Q26 Eureka handover.
-- Fixture import proves the safer importer behavior but does not replace target
-  pilot review.
-- Dominium-specific golden tasks, exact tokenizer/provider billing, live
-  Gateway/provider runtime, and broad adapter-output target-tool usage evidence
-  remain future work.
+- Fixture import proves the safer importer behavior but does not replace target pilot review.
+- Dominium-specific golden tasks, exact tokenizer/provider billing, live Gateway/provider runtime, and broad adapter-output target-tool usage evidence remain future work.
 
 ## Work Item: Q25 Fix-Forward Pack Integrity Revalidation
 
@@ -8586,30 +6707,16 @@ Implemented and awaiting review as part of Q25.
 
 ### Notes
 
-- Added the missing documentation-only `.aide.local.example/secrets/README.md`
-  required by the Q18 local-state validation surface.
-- Kept real `secrets/**` ignored while adding a narrow `.gitignore` exception
-  only for `.aide.local.example/secrets/README.md`.
-- Tightened `validate_pack_checksums` so `pack-status` fails if a payload file
-  exists in the export pack without a checksum entry.
-- Added tests for unchecksummed payload detection and for exporting the safe
-  local-state secrets README.
-- Regenerated `.aide/export/aide-lite-pack-v0/`; the pack now reports 123
-  included files, 126 checksums, and `pack-status` passes.
-- Re-ran safe import dry-run/write fixtures; safe mode planned/wrote 106 files,
-  skipped optional broad roots, preserved manual `AGENTS.md`, imported the safe
-  secrets README, and did not copy `core/` or `docs/`.
+- Added the missing documentation-only `.aide.local.example/secrets/README.md` required by the Q18 local-state validation surface.
+- Kept real `secrets/**` ignored while adding a narrow `.gitignore` exception only for `.aide.local.example/secrets/README.md`.
+- Tightened `validate_pack_checksums` so `pack-status` fails if a payload file exists in the export pack without a checksum entry.
+- Added tests for unchecksummed payload detection and for exporting the safe local-state secrets README.
+- Regenerated `.aide/export/aide-lite-pack-v0/`; the pack now reports 123 included files, 126 checksums, and `pack-status` passes.
+- Re-ran safe import dry-run/write fixtures; safe mode planned/wrote 106 files, skipped optional broad roots, preserved manual `AGENTS.md`, imported the safe secrets README, and did not copy `core/` or `docs/`.
 
 ### Verification
 
-Final verification used
-`C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe` (Python 3.12.9).
-AIDE Lite validate/test, export-pack, pack-status, import fixtures,
-`.aide/scripts/tests` discovery, Harness/Compatibility/Gateway/Provider tests,
-Q26 task-packet generation, diff check, ignore checks, and targeted secret
-scans passed. The later Q26 handover refresh regenerated the Harness
-generated manifest; remaining Harness warnings are review gates rather than
-Q25 pack/import blockers.
+Final verification used `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe` (Python 3.12.9). AIDE Lite validate/test, export-pack, pack-status, import fixtures, `.aide/scripts/tests` discovery, Harness/Compatibility/Gateway/Provider tests, Q26 task-packet generation, diff check, ignore checks, and targeted secret scans passed. The later Q26 handover refresh regenerated the Harness generated manifest; remaining Harness warnings are review gates rather than Q25 pack/import blockers.
 
 ## Work Item: Q26 Eureka Pilot Review And Handover
 
@@ -8632,46 +6739,33 @@ Implemented and awaiting review.
 
 ### Rationale
 
-After Q25 repaired pack integrity, provenance, and safe import scope, AIDE still
-had no explicit Q26 review packet and still showed Q27-Q29 as active blockers
-from the pre-repair state. Q26 records the Eureka pilot handover checkpoint and
-clears those stale active blockers without pretending Q27-Q29 are implemented.
+After Q25 repaired pack integrity, provenance, and safe import scope, AIDE still had no explicit Q26 review packet and still showed Q27-Q29 as active blockers from the pre-repair state. Q26 records the Eureka pilot handover checkpoint and clears those stale active blockers without pretending Q27-Q29 are implemented.
 
 ### Implementation Notes
 
 - Added the Q26 queue packet, evidence, status, prompt, and ExecPlan.
-- Reviewed the sibling Eureka repository read-only and recorded current pilot
-  evidence and validation posture.
+- Reviewed the sibling Eureka repository read-only and recorded current pilot evidence and validation posture.
 - Marked earlier Q27, Q28, and Q29 blocked attempts as superseded redo records.
-- Updated profile and self-check guidance so the next sequence is Q25 review,
-  Q26 review, then Q27 Commit Discipline And WorkUnit Recovery v0 redo.
+- Updated profile and self-check guidance so the next sequence is Q25 review, Q26 review, then Q27 Commit Discipline And WorkUnit Recovery v0 redo.
 - Regenerated the latest task packet for Q27 redo.
 - Refreshed the generated manifest after source-truth changes.
 
 ### Verification
 
-Q26 validation covers AIDE Harness validate/doctor/self-check, AIDE Lite
-validate/test/pack-status, read-only Eureka doctor/validate/task estimate,
-Eureka diff and architecture checks, diff check, `.aide.local/` ignore checks,
-and targeted secret scans. Detailed command output is recorded in
-`.aide/queue/Q26-eureka-pilot-review-and-handover/evidence/validation.md`.
+Q26 validation covers AIDE Harness validate/doctor/self-check, AIDE Lite validate/test/pack-status, read-only Eureka doctor/validate/task estimate, Eureka diff and architecture checks, diff check, `.aide.local/` ignore checks, and targeted secret scans. Detailed command output is recorded in `.aide/queue/Q26-eureka-pilot-review-and-handover/evidence/validation.md`.
 
 ### Remaining Issues
 
 - Q25 and Q26 require review before their outputs are accepted.
-- Q27, Q28, and Q29 are not implemented; their old blocked attempts are only
-  superseded so they can be redone from the repaired baseline.
-- Eureka and Dominium target-pilot evidence remains target-repo evidence and is
-  not a broad product-readiness claim.
-- Exact tokenizer/provider billing, live provider/model execution, branch
-  workflow helpers, and CI enforcement remain future work.
+- Q27, Q28, and Q29 are not implemented; their old blocked attempts are only superseded so they can be redone from the repaired baseline.
+- Eureka and Dominium target-pilot evidence remains target-repo evidence and is not a broad product-readiness claim.
+- Exact tokenizer/provider billing, live provider/model execution, branch workflow helpers, and CI enforcement remain future work.
 
 ## Work Item: Q25 Pack Provenance Revalidation
 
 ### Status
 
-Implemented as a Q25 fix-forward and awaiting Q25 review with the rest of the
-repair packet.
+Implemented as a Q25 fix-forward and awaiting Q25 review with the rest of the repair packet.
 
 ### Changed Paths
 
@@ -8683,28 +6777,19 @@ repair packet.
 
 ### Rationale
 
-Repeated Q25 validation confirmed that checksum validation was coherent, but
-`pack-status` still needed an explicit provenance guard. A stale clean
-`manifest.yaml` must fail instead of being accepted merely because mutable
-metadata is excluded from payload checksums.
+Repeated Q25 validation confirmed that checksum validation was coherent, but `pack-status` still needed an explicit provenance guard. A stale clean `manifest.yaml` must fail instead of being accepted merely because mutable metadata is excluded from payload checksums.
 
 ### Implementation Notes
 
 - Added manifest scalar parsing and pack provenance validation to AIDE Lite.
 - Included provenance status in `validate` and `pack-status`.
-- Treated explicit dirty-source provenance as reportable and non-failing while
-  failing stale clean provenance, missing fields, and malformed dirty-state
-  values.
+- Treated explicit dirty-source provenance as reportable and non-failing while failing stale clean provenance, missing fields, and malformed dirty-state values.
 - Regenerated the export pack so target imports receive the hardened checker.
-- Recorded the new convention in Q25 evidence and the cross-repo import
-  reference.
+- Recorded the new convention in Q25 evidence and the cross-repo import reference.
 
 ### Verification
 
-Targeted export/import tests, full `.aide/scripts/tests` discovery, AIDE Lite
-validate/test/pack-status, Harness validate/doctor/self-check, Harness,
-Compatibility, Gateway, and Provider unit suites, regenerated safe-import
-fixture smoke, diff check, ignore checks, and targeted secret scans passed.
+Targeted export/import tests, full `.aide/scripts/tests` discovery, AIDE Lite validate/test/pack-status, Harness validate/doctor/self-check, Harness, Compatibility, Gateway, and Provider unit suites, regenerated safe-import fixture smoke, diff check, ignore checks, and targeted secret scans passed.
 
 ## Work Item: X-OS-02 Capability Reality Ledger v0
 
@@ -8907,37 +6992,24 @@ Implemented with warnings and awaiting review.
 
 ### Rationale
 
-After Reconciler acceptance, AIDE needs a durable declaration surface that
-summarizes the accepted protocol/report capabilities without turning those
-declarations into conformance proof, admission, or execution authority.
+After Reconciler acceptance, AIDE needs a durable declaration surface that summarizes the accepted protocol/report capabilities without turning those declarations into conformance proof, admission, or execution authority.
 
 ### Implementation Notes
 
 - Added an envelope-shaped CapabilityManifest schema.
-- Added a deterministic helper that projects 11 accepted capabilities and
-  preserves accepted-with-warnings plus metadata/report/projection/runtime and
-  mutating semantics.
-- Added thin AIDE Lite `capability-manifest status`, `project`, and `validate`
-  commands.
-- Added focused tests for schema, reports, refs, CLI dispatch, status flags,
-  conformance placeholders, future non-acceptance, and overclaiming boundaries.
+- Added a deterministic helper that projects 11 accepted capabilities and preserves accepted-with-warnings plus metadata/report/projection/runtime and mutating semantics.
+- Added thin AIDE Lite `capability-manifest status`, `project`, and `validate` commands.
+- Added focused tests for schema, reports, refs, CLI dispatch, status flags, conformance placeholders, future non-acceptance, and overclaiming boundaries.
 
 ### Verification
 
-Focused CapabilityManifest tests, Python compile checks, CapabilityManifest CLI
-status/project/validate, JSON parsing, predecessor validators, task
-inspect/evidence, broad validation, and diff checks are recorded in
-`.aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/validation.md`.
+Focused CapabilityManifest tests, Python compile checks, CapabilityManifest CLI status/project/validate, JSON parsing, predecessor validators, task inspect/evidence, broad validation, and diff checks are recorded in `.aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/validation.md`.
 
 ### Remaining Issues
 
 - CapabilityManifest declares capability state but does not prove conformance.
-- ConformanceProfile, ConformanceResult, admission, adapter execution, runtime
-  registry, PatchTransaction, AdapterManifest, ContextPack v2, provider/model
-  calls, network/Gateway/GitHub behavior, branch/worktree automation, target
-  apply, active apply, release, and production readiness remain deferred.
-- Stale latest-task-packet drift and OKF source-hash drift remain warning-class
-  Reconciler findings.
+- ConformanceProfile, ConformanceResult, admission, adapter execution, runtime registry, PatchTransaction, AdapterManifest, ContextPack v2, provider/model calls, network/Gateway/GitHub behavior, branch/worktree automation, target apply, active apply, release, and production readiness remain deferred.
+- Stale latest-task-packet drift and OKF source-hash drift remain warning-class Reconciler findings.
 
 ## Work Item: AIDE-CHECK-CAPABILITY-MANIFEST-01 Independent Check For Minimal CapabilityManifest
 
@@ -8954,40 +7026,25 @@ Checked with warnings and awaiting review.
 
 ### Rationale
 
-The CapabilityManifest build completed with warnings. A separate check gate
-verifies that the slice declares capability state only and does not imply
-conformance, admission, execution, runtime authority, or production readiness.
+The CapabilityManifest build completed with warnings. A separate check gate verifies that the slice declares capability state only and does not imply conformance, admission, execution, runtime authority, or production readiness.
 
 ### Implementation Notes
 
-- Added a check queue item, ExecPlan, prompt, status file, and task-local
-  evidence.
+- Added a check queue item, ExecPlan, prompt, status file, and task-local evidence.
 - Added aggregate check reports under `.aide/reports/capability-manifest-check/`.
-- Recorded `PASS_WITH_WARNINGS`, preserved the check-only and
-  no-implementation-authority boundary, and recommended
-  `AIDE-ACCEPT-CAPABILITY-MANIFEST-01`.
-- Restored validation-generated report churn outside the check deliverable
-  before writing check artifacts.
+- Recorded `PASS_WITH_WARNINGS`, preserved the check-only and no-implementation-authority boundary, and recommended `AIDE-ACCEPT-CAPABILITY-MANIFEST-01`.
+- Restored validation-generated report churn outside the check deliverable before writing check artifacts.
 
 ### Verification
 
-CapabilityManifest CLI status/project/validate, focused CapabilityManifest
-tests, Python compile checks, JSON parsing, predecessor validators, task
-inspect/evidence checks, broad validation, Git diff checks, and commit policy
-checks are recorded in
-`.aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/validation.md`.
+CapabilityManifest CLI status/project/validate, focused CapabilityManifest tests, Python compile checks, JSON parsing, predecessor validators, task inspect/evidence checks, broad validation, Git diff checks, and commit policy checks are recorded in `.aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/validation.md`.
 
 ### Remaining Issues
 
 - This check does not accept the CapabilityManifest build.
 - CapabilityManifest declares capability state but does not prove conformance.
-- ConformanceProfile, ConformanceResult, conformance admission, adapter
-  admission, adapter execution, capability execution, runtime registry,
-  PatchTransaction, AdapterManifest, ContextPack v2, provider/model calls,
-  network/Gateway/GitHub behavior, branch/worktree automation, target apply,
-  active apply, release, and production readiness remain deferred.
-- Stale latest-task-packet drift and OKF source-hash drift remain warning-class
-  Reconciler findings.
+- ConformanceProfile, ConformanceResult, conformance admission, adapter admission, adapter execution, capability execution, runtime registry, PatchTransaction, AdapterManifest, ContextPack v2, provider/model calls, network/Gateway/GitHub behavior, branch/worktree automation, target apply, active apply, release, and production readiness remain deferred.
+- Stale latest-task-packet drift and OKF source-hash drift remain warning-class Reconciler findings.
 
 ## Work Item: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
 
@@ -9008,38 +7065,25 @@ Completed with warnings and awaiting review.
 
 ### Rationale
 
-The 2026-06-17 structure note and live AIDE doctrine both point away from an
-immediate file shuffle. The next safe step is a bounded current-truth audit that
-uses existing repo/root/refactor report-only machinery and records root
-authority candidates before any future move map or source-truth change.
+The 2026-06-17 structure note and live AIDE doctrine both point away from an immediate file shuffle. The next safe step is a bounded current-truth audit that uses existing repo/root/refactor report-only machinery and records root authority candidates before any future move map or source-truth change.
 
 ### Implementation Notes
 
-- Added the queue packet, ExecPlan, prompt, initial status, and initial scope
-  evidence.
-- Marked the task `check_only`, `report_only`, and
-  `authorizes_implementation: false`.
-- Refreshed repo intelligence, root recycling, refactor map, Task OS, Git plan,
-  and Reconciler report-only surfaces.
+- Added the queue packet, ExecPlan, prompt, initial status, and initial scope evidence.
+- Marked the task `check_only`, `report_only`, and `authorizes_implementation: false`.
+- Refreshed repo intelligence, root recycling, refactor map, Task OS, Git plan, and Reconciler report-only surfaces.
 - Wrote current-state and root authority candidate reports plus a planning note.
-- Forbid file moves, deletes, reference rewrites, new top-level root creation,
-  source-truth mutation, branch mutation, target-repo mutation, GitHub mutation,
-  release work, provider/model calls, and network calls.
+- Forbid file moves, deletes, reference rewrites, new top-level root creation, source-truth mutation, branch mutation, target-repo mutation, GitHub mutation, release work, provider/model calls, and network calls.
 
 ### Verification
 
-Doctor, broad validation, task pack, Git plan, Task OS status, repo
-inventory/status/validate, roots inventory/classify/plan/status/validate,
-refactor status/map-status/validate-map, Reconciler status/report/validate, and
-task evidence checks are recorded in the task-local evidence.
+Doctor, broad validation, task pack, Git plan, Task OS status, repo inventory/status/validate, roots inventory/classify/plan/status/validate, refactor status/map-status/validate-map, Reconciler status/report/validate, and task evidence checks are recorded in the task-local evidence.
 
 ### Remaining Issues
 
 - Root authority contracts are not written yet.
-- README, OKF, generated context, and some historical task metadata still have
-  stale status or next-task wording.
-- No future structural moves, root creation, docs repair, OKF refresh, or root
-  contract changes are authorized by this audit.
+- README, OKF, generated context, and some historical task metadata still have stale status or next-task wording.
+- No future structural moves, root creation, docs repair, OKF refresh, or root contract changes are authorized by this audit.
 
 ## Work Item: AIDE-STRUCTURE-01-root-authority-contracts
 
@@ -9063,39 +7107,26 @@ Completed with warnings and awaiting review.
 
 ### Rationale
 
-Track B needs explicit root authority before any structural migration. The
-previous audit identified root candidates and overlap risks; this task records
-the contract layer that future status sync, fate maps, interop policy, and
-root-plan tasks can use.
+Track B needs explicit root authority before any structural migration. The previous audit identified root candidates and overlap risks; this task records the contract layer that future status sync, fate maps, interop policy, and root-plan tasks can use.
 
 ### Implementation Notes
 
 - Added a queue packet, ExecPlan, prompt, status file, and task-local evidence.
 - Added a machine-readable root authority policy.
 - Added a human-readable root authority governance note.
-- Added a repository layout reference with a closed root model, overlap report,
-  candidate target structure, migration rules, validation plan, and follow-up
-  prompts.
+- Added a repository layout reference with a closed root model, overlap report, candidate target structure, migration rules, validation plan, and follow-up prompts.
 - Added root-authority contract reports.
-- Preserved no-apply boundaries for file moves, deletes, reference rewrites,
-  aliases, shims, new top-level roots, generated-output source-truth promotion,
-  branch mutation, target-repo mutation, provider/model calls, network calls,
-  release work, and Track A protocol feature implementation.
+- Preserved no-apply boundaries for file moves, deletes, reference rewrites, aliases, shims, new top-level roots, generated-output source-truth promotion, branch mutation, target-repo mutation, provider/model calls, network calls, release work, and Track A protocol feature implementation.
 
 ### Verification
 
-Doctor, broad validation, Task OS status, task inspect/evidence, diff checks,
-and commit policy checks are recorded in the task-local evidence.
+Doctor, broad validation, Task OS status, task inspect/evidence, diff checks, and commit policy checks are recorded in the task-local evidence.
 
 ### Remaining Issues
 
-- This task creates reviewable root contracts; it does not accept them beyond
-  the local `needs_review` queue gate.
-- Status/docs drift, OKF refresh, and stale README wording remain for
-  `AIDE-STRUCTURE-02-status-doc-sync`.
-- `shared`, `platforms`, `research`, `specs`, `.agents`, `.codex`, and
-  add-only root candidates still need separate Track B tasks before movement or
-  expansion.
+- This task creates reviewable root contracts; it does not accept them beyond the local `needs_review` queue gate.
+- Status/docs drift, OKF refresh, and stale README wording remain for `AIDE-STRUCTURE-02-status-doc-sync`.
+- `shared`, `platforms`, `research`, `specs`, `.agents`, `.codex`, and add-only root candidates still need separate Track B tasks before movement or expansion.
 
 ## Work Item: AIDE-BUILD-REPO-LAYOUT-INVENTORY-01
 
@@ -9116,33 +7147,24 @@ Completed with warnings and awaiting review.
 
 ### Rationale
 
-Track B needs concrete layout evidence before any rationalization prompt. This
-task records current `.aide` and `core` pressure points, especially
-`.aide/reports` path assumptions, without applying migration.
+Track B needs concrete layout evidence before any rationalization prompt. This task records current `.aide` and `core` pressure points, especially `.aide/reports` path assumptions, without applying migration.
 
 ### Implementation Notes
 
 - Added a report-only queue packet, ExecPlan, prompt, status, and evidence.
-- Added layout inventory, recommendations, and migration-risk reports under
-  `.aide/reports/repo-layout/`.
+- Added layout inventory, recommendations, and migration-risk reports under `.aide/reports/repo-layout/`.
 - Recorded duplicate naming between `.aide`, `core`, and top-level roots.
-- Recorded `.aide/reports` top-level files, report directories, mixed lifecycle
-  suffixes, and flat report path assumption counts.
-- Did not generate a rationalization/apply prompt because design review has not
-  accepted the inventory.
+- Recorded `.aide/reports` top-level files, report directories, mixed lifecycle suffixes, and flat report path assumption counts.
+- Did not generate a rationalization/apply prompt because design review has not accepted the inventory.
 
 ### Verification
 
-Doctor, broad validation, repo/roots/refactor status commands, Task OS status,
-task inspect/evidence, JSON parsing, diff checks, and commit policy checks are
-recorded in the task-local evidence.
+Doctor, broad validation, repo/roots/refactor status commands, Task OS status, task inspect/evidence, JSON parsing, diff checks, and commit policy checks are recorded in the task-local evidence.
 
 ### Remaining Issues
 
-- `.aide/reports` remains flat and mixed by design until a report index and
-  no-apply reference map exist.
-- `core/runtime`, `core/sdk`, and `core/control` are tiny stubs and must not
-  grow without explicit queue authority.
+- `.aide/reports` remains flat and mixed by design until a report index and no-apply reference map exist.
+- `core/runtime`, `core/sdk`, and `core/control` are tiny stubs and must not grow without explicit queue authority.
 - Tracked `.aide/tmp` files need a fate decision before naming cleanup.
 - Future rationalization still requires check and acceptance gates.
 
@@ -9168,9 +7190,7 @@ Completed with warnings and awaiting review.
 
 ### Rationale
 
-AIDE needs an explicit self-management doctrine before Track B turns structure,
-knowledge, docs, queue, evidence, generated-output, and migration-safety
-findings into future protocol objects or apply-capable work.
+AIDE needs an explicit self-management doctrine before Track B turns structure, knowledge, docs, queue, evidence, generated-output, and migration-safety findings into future protocol objects or apply-capable work.
 
 ### Implementation Notes
 
@@ -9179,23 +7199,17 @@ findings into future protocol objects or apply-capable work.
 - Added `docs/reference/aide-self-management.md`.
 - Added self-management charter, object-backlog, and queue-sequence reports.
 - Added a root-authority note linking self-management doctrine.
-- Kept `AIDE_SELF_PROFILE` as proposed doctrine; `.aide/profile.yaml` was not
-  mutated.
+- Kept `AIDE_SELF_PROFILE` as proposed doctrine; `.aide/profile.yaml` was not mutated.
 
 ### Verification
 
-Doctor, broad validation, Task OS status, task inspect/evidence, JSON parsing,
-diff checks, and commit policy checks are recorded in task-local evidence.
+Doctor, broad validation, Task OS status, task inspect/evidence, JSON parsing, diff checks, and commit policy checks are recorded in task-local evidence.
 
 ### Remaining Issues
 
-- RootAuthorityManifest, RepoLayoutInventory protocol shape,
-  DocTruthReconciler, OKF drift reports, GeneratedOutputLedger,
-  QueueHealthReport, StructureTransaction, and CLI commands remain future queue
-  work.
+- RootAuthorityManifest, RepoLayoutInventory protocol shape, DocTruthReconciler, OKF drift reports, GeneratedOutputLedger, QueueHealthReport, StructureTransaction, and CLI commands remain future queue work.
 - No generated outputs were refreshed or promoted.
-- No filesystem mutation, queue acceptance, branch mutation, target mutation,
-  runtime/provider behavior, or release work is authorized.
+- No filesystem mutation, queue acceptance, branch mutation, target mutation, runtime/provider behavior, or release work is authorized.
 
 ## Work Item: AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
 
@@ -9217,34 +7231,25 @@ Completed with warnings and awaiting review.
 
 ### Rationale
 
-The self-management charter is foundational Track B law. It needs an
-independent check before acceptance, and this check provides the first reusable
-Track B governance-check pattern without formalizing a protocol schema or CLI.
+The self-management charter is foundational Track B law. It needs an independent check before acceptance, and this check provides the first reusable Track B governance-check pattern without formalizing a protocol schema or CLI.
 
 ### Implementation Notes
 
 - Added a check-only queue packet, ExecPlan, prompt, status, and evidence.
 - Added Markdown and JSON self-management check reports.
 - Added GovernanceFinding-shaped findings JSON as a report convention only.
-- Verified charter consistency, boundaries, evidence completeness, validation
-  posture, dirty-state classification, and next-task routing.
+- Verified charter consistency, boundaries, evidence completeness, validation posture, dirty-state classification, and next-task routing.
 - Recommended `AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01` next.
 
 ### Verification
 
-Doctor, broad validation, task inspect/evidence, JSON/YAML parsing,
-GovernanceFinding JSON parsing, Markdown/JSON finding agreement, diff checks,
-and commit policy checks are recorded in task-local evidence.
+Doctor, broad validation, task inspect/evidence, JSON/YAML parsing, GovernanceFinding JSON parsing, Markdown/JSON finding agreement, diff checks, and commit policy checks are recorded in task-local evidence.
 
 ### Remaining Issues
 
-- GovernanceFinding remains a report convention only; no schema, helper,
-  library, or CLI command was implemented.
-- Documentation truth, OKF drift, generated-output ledger, queue health,
-  evidence lifecycle, schema lifecycle, tools/scripts, tests/fixtures/evals,
-  and safety/secrets remain future report-only surfaces.
-- The `.aide/queue/index.yaml` line-ending warning remains tracked as
-  pre-existing/mixed-EOL hygiene, not a charter authority failure.
+- GovernanceFinding remains a report convention only; no schema, helper, library, or CLI command was implemented.
+- Documentation truth, OKF drift, generated-output ledger, queue health, evidence lifecycle, schema lifecycle, tools/scripts, tests/fixtures/evals, and safety/secrets remain future report-only surfaces.
+- The `.aide/queue/index.yaml` line-ending warning remains tracked as pre-existing/mixed-EOL hygiene, not a charter authority failure.
 
 ## Work Item: AIDE-ACCEPT-CAPABILITY-MANIFEST-01
 
@@ -9262,39 +7267,25 @@ Completed with warnings and awaiting review.
 
 ### Rationale
 
-Track B B1 is complete and explicitly routes back to Track A. The live queue
-recommended `AIDE-ACCEPT-CAPABILITY-MANIFEST-01`, but the acceptance task
-surfaces were missing. This task materializes the missing acceptance packet,
-accepts only the declaration-only CapabilityManifest capability, and routes
-next work to ConformanceProfile.
+Track B B1 is complete and explicitly routes back to Track A. The live queue recommended `AIDE-ACCEPT-CAPABILITY-MANIFEST-01`, but the acceptance task surfaces were missing. This task materializes the missing acceptance packet, accepts only the declaration-only CapabilityManifest capability, and routes next work to ConformanceProfile.
 
 ### Implementation Notes
 
 - Added the acceptance queue packet, ExecPlan, prompt, status, and evidence.
 - Added acceptance JSON and Markdown reports.
 - Classified all CapabilityManifest warnings as non-blocking or deferred.
-- Preserved the boundary that CapabilityManifest declares capability state but
-  does not prove conformance, admit adapters, execute capabilities, or authorize
-  runtime behavior.
-- Generated the first Track A prompt batch without executing the
-  ConformanceProfile tasks.
+- Preserved the boundary that CapabilityManifest declares capability state but does not prove conformance, admit adapters, execute capabilities, or authorize runtime behavior.
+- Generated the first Track A prompt batch without executing the ConformanceProfile tasks.
 
 ### Verification
 
-Acceptance JSON parsing, predecessor CapabilityManifest JSON parsing, focused
-CapabilityManifest tests, CapabilityManifest CLI status/project/validate, task
-inspect/evidence checks, predecessor validators, broad validation, diff checks,
-and commit policy checks are recorded in task-local evidence.
+Acceptance JSON parsing, predecessor CapabilityManifest JSON parsing, focused CapabilityManifest tests, CapabilityManifest CLI status/project/validate, task inspect/evidence checks, predecessor validators, broad validation, diff checks, and commit policy checks are recorded in task-local evidence.
 
 ### Remaining Issues
 
 - ConformanceProfile and ConformanceResult remain future work.
-- PatchTransaction, AdapterManifest, ContextPack v2, runtime, workers,
-  provider/model/network/Gateway/GitHub behavior, branch/worktree automation,
-  target apply, active apply, release, and production readiness remain
-  deferred.
-- Generated latest-task-packet drift remains warning-class debt; queue truth
-  remains canonical.
+- PatchTransaction, AdapterManifest, ContextPack v2, runtime, workers, provider/model/network/Gateway/GitHub behavior, branch/worktree automation, target apply, active apply, release, and production readiness remain deferred.
+- Generated latest-task-packet drift remains warning-class debt; queue truth remains canonical.
 
 ## Work Item: AIDE-BUILD-MCP-SERVER-CONTRACT-01
 
@@ -9316,45 +7307,24 @@ Completed with warnings and awaiting review.
 
 ### Rationale
 
-After static interop export preview acceptance, the next serialized queue task
-requires a bounded MCP server contract projection. The slice records how a
-future MCP server may project selected AIDE resources, tools, prompts, refusals,
-transport expectations, authorization expectations, and conformance
-expectations without making MCP a live runtime or AIDE authority.
+After static interop export preview acceptance, the next serialized queue task requires a bounded MCP server contract projection. The slice records how a future MCP server may project selected AIDE resources, tools, prompts, refusals, transport expectations, authorization expectations, and conformance expectations without making MCP a live runtime or AIDE authority.
 
 ### Implementation Notes
 
 - Added an envelope-shaped MCP server contract schema.
-- Added `core/interop/mcp_server_contract.py` to project deterministic contract,
-  catalogue, JSON-RPC fixture, refusal, transport, authorization, conformance,
-  and report artifacts.
+- Added `core/interop/mcp_server_contract.py` to project deterministic contract, catalogue, JSON-RPC fixture, refusal, transport, authorization, conformance, and report artifacts.
 - Added thin AIDE Lite `mcp-server-contract status/project/validate` dispatch.
-- Added focused tests for protocol version pinning, JSON-RPC fixtures,
-  catalogue validation, read-only tool boundaries, refusal mapping, transport
-  and authorization non-implementation, deterministic projection, source
-  immutability, unsupported command rejection, and explicit non-capabilities.
-- Preserved the warning that the future `aide://interop/...` ReferenceID kind is
-  advisory only; global ReferenceID authority was not broadened.
+- Added focused tests for protocol version pinning, JSON-RPC fixtures, catalogue validation, read-only tool boundaries, refusal mapping, transport and authorization non-implementation, deterministic projection, source immutability, unsupported command rejection, and explicit non-capabilities.
+- Preserved the warning that the future `aide://interop/...` ReferenceID kind is advisory only; global ReferenceID authority was not broadened.
 
 ### Verification
 
-Python compile checks, focused MCP contract tests, MCP contract
-status/project/validate, predecessor validators, task inspect/evidence, broad
-validation, JSON parsing, deterministic projection checks, source immutability
-checks, unsupported command probes, secret-like scans, diff checks, and commit
-policy checks are recorded in
-`.aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-01/evidence/validation.md`.
+Python compile checks, focused MCP contract tests, MCP contract status/project/validate, predecessor validators, task inspect/evidence, broad validation, JSON parsing, deterministic projection checks, source immutability checks, unsupported command probes, secret-like scans, diff checks, and commit policy checks are recorded in `.aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-01/evidence/validation.md`.
 
 ### Remaining Issues
 
 - MCP remains contract-only and projection-only.
-- Live MCP server, stdio/HTTP transport, endpoint binding, sessions,
-  authentication, OAuth, credential handling, resource serving, prompt serving,
-  tool execution, client roots, sampling, elicitation, adapter/worker/runtime
-  execution, provider/model/network/Gateway/GitHub behavior, PatchTransaction
-  apply, target mutation, branch/worktree automation, A2A, Host Contract,
-  Dominium Bridge, Workbench, release, promotion, and production readiness
-  remain deferred.
+- Live MCP server, stdio/HTTP transport, endpoint binding, sessions, authentication, OAuth, credential handling, resource serving, prompt serving, tool execution, client roots, sampling, elicitation, adapter/worker/runtime execution, provider/model/network/Gateway/GitHub behavior, PatchTransaction apply, target mutation, branch/worktree automation, A2A, Host Contract, Dominium Bridge, Workbench, release, promotion, and production readiness remain deferred.
 
 ## Work Item: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-01
 
@@ -9379,44 +7349,29 @@ Completed with warnings and awaiting review.
 
 ### Rationale
 
-The independent seam check found 18 bounded material defects. This repair fixes
-those defects inside the existing offline read-only seam rather than advancing
-to acceptance or implementing downstream runtime behavior.
+The independent seam check found 18 bounded material defects. This repair fixes those defects inside the existing offline read-only seam rather than advancing to acceptance or implementing downstream runtime behavior.
 
 ### Implementation Notes
 
 - Added exact repository identity parsing and rejection for lookalike remotes.
-- Added shared integrity helpers for source snapshot, record, projection-index,
-  and bundle self-digest finalization.
-- Preserved bounded diagnostic/refusal registry projection while disclosing
-  native counts, projected counts, omitted counts, and omitted-ID digests.
-- Tightened the public schema and semantic validator for record cardinality,
-  required fields, source revision binding, reference closure, semantic owners,
-  read-only capability boundaries, event ordering, and native
-  diagnostic/refusal registry alignment.
-- Replaced compact negative fixture descriptions with replayable JSON-pointer
-  operation fixtures.
-- Made conformance checks expectation-specific instead of aggregate validation
-  propagation.
+- Added shared integrity helpers for source snapshot, record, projection-index, and bundle self-digest finalization.
+- Preserved bounded diagnostic/refusal registry projection while disclosing native counts, projected counts, omitted counts, and omitted-ID digests.
+- Tightened the public schema and semantic validator for record cardinality, required fields, source revision binding, reference closure, semantic owners, read-only capability boundaries, event ordering, and native diagnostic/refusal registry alignment.
+- Replaced compact negative fixture descriptions with replayable JSON-pointer operation fixtures.
+- Made conformance checks expectation-specific instead of aggregate validation propagation.
 - Made demo timing truthful and added a read-only operation observation ledger.
 - Added a focused repair regression suite covering the material findings.
 
 ### Verification
 
-Python compile, the original seam test suite, repair regression tests, live seam
-demo, live seam validation, and Dominium immutability checks passed during the
-repair. Final diff, broad validation, task evidence, secret scan, and commit
-policy checks are recorded in the repair task evidence.
+Python compile, the original seam test suite, repair regression tests, live seam demo, live seam validation, and Dominium immutability checks passed during the repair. Final diff, broad validation, task evidence, secret scan, and commit policy checks are recorded in the repair task evidence.
 
 ### Remaining Issues
 
 - The seam remains offline and read-only.
-- SeamBundle remains generated projection evidence, not canonical Dominium
-  truth.
+- SeamBundle remains generated projection evidence, not canonical Dominium truth.
 - Local Dominium remains clean but behind `origin/main` by 24 commits.
-- Host runtime, Host SDK, Workbench, bridge runtime, service, transport,
-  provider/model/network calls, worker execution, preview/apply/rollback, and
-  mutation remain absent.
+- Host runtime, Host SDK, Workbench, bridge runtime, service, transport, provider/model/network calls, worker execution, preview/apply/rollback, and mutation remain absent.
 - Independent repair check is still required before acceptance.
 
 ## Work Item: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
@@ -9444,43 +7399,28 @@ Completed with warnings and awaiting review.
 
 ### Rationale
 
-The independent Repair 01 check left ten targeted material gaps. This second
-repair fixes those gaps without changing the seam's authority boundary or
-advancing to the independent check/acceptance gate.
+The independent Repair 01 check left ten targeted material gaps. This second repair fixes those gaps without changing the seam's authority boundary or advancing to the independent check/acceptance gate.
 
 ### Implementation Notes
 
-- Added full diagnostic/refusal registry provenance disclosure, including
-  source path, digest, Git object metadata, source revision, projected IDs,
-  omitted IDs, and truncation disclosure.
-- Replaced the loose public seam schema record references with kind-specific
-  record/spec definitions and false-boundary status constraints.
-- Hardened replayable negative fixtures so expected error codes must all be
-  observed and executable fixture operations are refused.
-- Added assertion-level conformance evidence and preserved aggregate-only
-  conformance as `NOT_PROVEN`.
-- Extended the demo operation ledger with allowed operation counts, required
-  operation families, family descriptions, and instrumentation methods.
-- Added a runtime dependency manifest and isolated cross-process CLI
-  portability proof.
-- Updated the CLI validate path to validate an existing bundle instead of
-  rerunning the full projection when reports already exist.
+- Added full diagnostic/refusal registry provenance disclosure, including source path, digest, Git object metadata, source revision, projected IDs, omitted IDs, and truncation disclosure.
+- Replaced the loose public seam schema record references with kind-specific record/spec definitions and false-boundary status constraints.
+- Hardened replayable negative fixtures so expected error codes must all be observed and executable fixture operations are refused.
+- Added assertion-level conformance evidence and preserved aggregate-only conformance as `NOT_PROVEN`.
+- Extended the demo operation ledger with allowed operation counts, required operation families, family descriptions, and instrumentation methods.
+- Added a runtime dependency manifest and isolated cross-process CLI portability proof.
+- Updated the CLI validate path to validate an existing bundle instead of rerunning the full projection when reports already exist.
 
 ### Verification
 
-Python compilation, base seam tests, Repair 01 regression tests, Repair 02
-regression tests, live seam project/validate/diff/demo, portability proof,
-Dominium immutability checks, JSON parsing, task evidence checks, broad
-validation, secret-like scan, diff checks, and commit policy checks are
-recorded in the Repair 02 evidence.
+Python compilation, base seam tests, Repair 01 regression tests, Repair 02 regression tests, live seam project/validate/diff/demo, portability proof, Dominium immutability checks, JSON parsing, task evidence checks, broad validation, secret-like scan, diff checks, and commit policy checks are recorded in the Repair 02 evidence.
 
 ### Remaining Issues
 
 - The seam remains offline and read-only.
 - Local Dominium remains clean but behind `origin/main` by 24 commits.
 - Independent Repair 02 check is still required before acceptance.
-- Runtime, Workbench, bridge runtime, service, transport, provider/model/network
-  calls, worker execution, preview/apply/rollback, and mutation remain absent.
+- Runtime, Workbench, bridge runtime, service, transport, provider/model/network calls, worker execution, preview/apply/rollback, and mutation remain absent.
 
 ## Work Item: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-REPAIR-02
 
@@ -9498,29 +7438,23 @@ Completed as a check-only task and awaiting review.
 
 ### Rationale
 
-Repair 02 required a final independent verification before acceptance. The
-check keeps historical evidence intact and does not repair or rewrite the seam.
+Repair 02 required a final independent verification before acceptance. The check keeps historical evidence intact and does not repair or rewrite the seam.
 
 ### Implementation Notes
 
 - Added a task-local independent check harness and consolidated reports.
-- Classified `14` material finding(s), preserving the check-only
-  boundary.
+- Classified `14` material finding(s), preserving the check-only boundary.
 - Recommended exactly `AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03`.
 
 ### Verification
 
-The task evidence records the independent harness outputs, focused tests,
-Dominium immutability comparison, broad validation, diff checks, secret scan,
-and commit policy check.
+The task evidence records the independent harness outputs, focused tests, Dominium immutability comparison, broad validation, diff checks, secret scan, and commit policy check.
 
 ### Remaining Issues
 
 - Repair 02 is not accepted.
 - A bounded Repair 03 is required before another acceptance attempt.
-- The seam remains offline and read-only; runtime, Workbench, bridge runtime,
-  service, transport, provider/model/network calls, worker execution,
-  preview/apply/rollback, and mutation remain absent.
+- The seam remains offline and read-only; runtime, Workbench, bridge runtime, service, transport, provider/model/network calls, worker execution, preview/apply/rollback, and mutation remain absent.
 
 ## Work Item: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-REPAIR-03
 
@@ -9829,14 +7763,11 @@ Completed with warnings and awaiting independent review.
 
 ### Rationale
 
-The accepted ExecutionHost contract was projection-only. This build adds the
-smallest live reference host slice: one exact local reference worker process
-launched through the accepted registered-process provider.
+The accepted ExecutionHost contract was projection-only. This build adds the smallest live reference host slice: one exact local reference worker process launched through the accepted registered-process provider.
 
 ### Implementation Notes
 
-- Added `core/execution/local_process_host.py` as a bounded reference
-  LocalProcessExecutionHost.
+- Added `core/execution/local_process_host.py` as a bounded reference LocalProcessExecutionHost.
 - Added one committed deterministic fixture worker.
 - Added AIDE Lite `local-process-execution-host status/run/validate` commands.
 - Used `RegisteredProcessExecutionProvider v0` unchanged for shell-free process launch, receipt, outcome, stream summaries, timeout handling, and state probing.
@@ -9845,17 +7776,13 @@ launched through the accepted registered-process provider.
 
 ### Verification
 
-Initial validation passed for focused tests, compile checks, the live bounded
-host run, and local host report validation. Final validation is recorded in
-task-local evidence before commit.
+Initial validation passed for focused tests, compile checks, the live bounded host run, and local host report validation. Final validation is recorded in task-local evidence before commit.
 
 ### Remaining Issues
 
 - Independent check is still required before acceptance.
 - The host is a bounded reference fixture only, not a generic worker harness.
-- Cancellation, durable idempotency, streaming artifact storage, resource quotas,
-  worker leases, scheduler, supervisor, Service/runtime, and Workbench behavior
-  remain unimplemented.
+- Cancellation, durable idempotency, streaming artifact storage, resource quotas, worker leases, scheduler, supervisor, Service/runtime, and Workbench behavior remain unimplemented.
 
 ## Work Item: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-01
 
@@ -9873,18 +7800,12 @@ Completed with `REQUEST_CHANGES` and awaiting review.
 
 ### Rationale
 
-The source build passed its own tests and broad validation, but the requested
-check boundary is stronger than the source proof. It requires disposable
-workspace containment, escape guards, event-stream truth, artifact integrity,
-lifecycle validation, and no-overclaiming before acceptance can proceed.
+The source build passed its own tests and broad validation, but the requested check boundary is stronger than the source proof. It requires disposable workspace containment, escape guards, event-stream truth, artifact integrity, lifecycle validation, and no-overclaiming before acceptance can proceed.
 
 ### Implementation Notes
 
-- Created the check task packet, ExecPlan, prompt, status, evidence root, and
-  check reports.
-- Added a task-local independent source-inspection harness that reads source
-  task packets and generated reports without importing production
-  `core.execution.local_process_host`.
+- Created the check task packet, ExecPlan, prompt, status, evidence root, and check reports.
+- Added a task-local independent source-inspection harness that reads source task packets and generated reports without importing production `core.execution.local_process_host`.
 - Recorded six material findings:
   - disposable worker workspace not proven;
   - path traversal, symlink, and reparse-point escape guards not proven;
@@ -9897,18 +7818,12 @@ lifecycle validation, and no-overclaiming before acceptance can proceed.
 
 ### Verification
 
-Validation passed for the source local host tests, registered-process provider
-tests, ExecutionHost contract tests, AIDE self-validation adapter tests,
-Dominium registered validation backend tests, Eureka readonly process adapter
-tests, source task inspect/evidence, local host validation, broad AIDE
-validation, diff checks, and path/secret scan of check evidence.
+Validation passed for the source local host tests, registered-process provider tests, ExecutionHost contract tests, AIDE self-validation adapter tests, Dominium registered validation backend tests, Eureka readonly process adapter tests, source task inspect/evidence, local host validation, broad AIDE validation, diff checks, and path/secret scan of check evidence.
 
 ### Remaining Issues
 
-- `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01` is required before
-  local process ExecutionHost acceptance.
-- The later trust, local Service, durable WorkerRun, and read-only MCP stdio
-  phases were not started.
+- `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01` is required before local process ExecutionHost acceptance.
+- The later trust, local Service, durable WorkerRun, and read-only MCP stdio phases were not started.
 
 ## Work Item: AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01
 
@@ -9930,39 +7845,26 @@ Completed with `PASS_WITH_WARNINGS` and awaiting independent repair check.
 
 ### Rationale
 
-The independent check found that the source local process host build proved one
-process launch but did not materially prove disposable workspace containment,
-escape rejection, raw event truth, content-addressed artifact persistence,
-WorkerRun lifecycle validation, or an accurately bounded host descriptor.
+The independent check found that the source local process host build proved one process launch but did not materially prove disposable workspace containment, escape rejection, raw event truth, content-addressed artifact persistence, WorkerRun lifecycle validation, or an accurately bounded host descriptor.
 
 ### Implementation Notes
 
-- Staged the committed reference worker into a disposable temporary workspace
-  outside the source checkout before invoking it.
-- Changed the fixture output from a single JSON object to an NDJSON event
-  stream and added fail-closed event parsing.
-- Persisted the raw event stream and declared worker artifact under
-  content-addressed report paths.
-- Added path containment checks for absolute paths, traversal, symlinks, and
-  visible Windows reparse points.
+- Staged the committed reference worker into a disposable temporary workspace outside the source checkout before invoking it.
+- Changed the fixture output from a single JSON object to an NDJSON event stream and added fail-closed event parsing.
+- Persisted the raw event stream and declared worker artifact under content-addressed report paths.
+- Added path containment checks for absolute paths, traversal, symlinks, and visible Windows reparse points.
 - Added WorkerRun lifecycle transition validation from raw events.
-- Narrowed the descriptor to `probe` and `create_run`, with all other
-  ExecutionHost operations explicitly unsupported.
-- Kept `RegisteredProcessExecutionProvider v0` and the accepted ExecutionHost
-  contract unchanged.
+- Narrowed the descriptor to `probe` and `create_run`, with all other ExecutionHost operations explicitly unsupported.
+- Kept `RegisteredProcessExecutionProvider v0` and the accepted ExecutionHost contract unchanged.
 
 ### Verification
 
-Initial repair verification passed for compile checks, focused local-host tests,
-and one live `aide_lite.py local-process-execution-host run`. Final validation
-is recorded in task-local evidence before commit.
+Initial repair verification passed for compile checks, focused local-host tests, and one live `aide_lite.py local-process-execution-host run`. Final validation is recorded in task-local evidence before commit.
 
 ### Remaining Issues
 
-- `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01` is required before
-  local process ExecutionHost acceptance.
-- This remains `local_process_execution_host_fixture_v0`; it is not a generic
-  worker harness or Service/runtime implementation.
+- `AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01` is required before local process ExecutionHost acceptance.
+- This remains `local_process_execution_host_fixture_v0`; it is not a generic worker harness or Service/runtime implementation.
 
 ## Work Item: AIDE-CHECK-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-01
 
@@ -9980,34 +7882,23 @@ Completed with `REQUEST_CHANGES` and awaiting review.
 
 ### Rationale
 
-The repair build materially improved the fixture host, but acceptance requires
-an independent check of the exact six original findings. The check remained
-strictly check-only and did not repair implementation.
+The repair build materially improved the fixture host, but acceptance requires an independent check of the exact six original findings. The check remained strictly check-only and did not repair implementation.
 
 ### Implementation Notes
 
-- Added a check task packet, status, prompt, ExecPlan, and evidence-local
-  harness.
-- Verified source chain, source result, six repair dispositions, and latest
-  repair diff scope.
-- Confirmed two source findings are closed: disposable workspace evidence and
-  descriptor operation scope.
-- Recorded seven material assertions across four open source findings:
-  path containment, raw event stream, artifact integrity, and WorkerRun
-  lifecycle.
-- Stopped the serialized wave before acceptance, trust, Service, durable
-  WorkerRun, or MCP work.
+- Added a check task packet, status, prompt, ExecPlan, and evidence-local harness.
+- Verified source chain, source result, six repair dispositions, and latest repair diff scope.
+- Confirmed two source findings are closed: disposable workspace evidence and descriptor operation scope.
+- Recorded seven material assertions across four open source findings: path containment, raw event stream, artifact integrity, and WorkerRun lifecycle.
+- Stopped the serialized wave before acceptance, trust, Service, durable WorkerRun, or MCP work.
 
 ### Verification
 
-The evidence-local harness produced `REQUEST_CHANGES` with
-`material_finding_count: 7` and `missing_evidence: 0`. Final validation is
-recorded in task-local evidence before commit.
+The evidence-local harness produced `REQUEST_CHANGES` with `material_finding_count: 7` and `missing_evidence: 0`. Final validation is recorded in task-local evidence before commit.
 
 ### Remaining Issues
 
-- `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02` is required before
-  LocalProcessExecutionHost v0 acceptance.
+- `AIDE-BUILD-LOCAL-PROCESS-EXECUTION-HOST-V0-REPAIR-02` is required before LocalProcessExecutionHost v0 acceptance.
 
 ## Work Item: AIDE-CHECK-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
 
@@ -10025,37 +7916,23 @@ Completed with `PASS_WITH_WARNINGS` and awaiting review.
 
 ### Rationale
 
-The trust contract build stopped at `needs_review` with projection-only trust
-and authorization records. Acceptance requires an independent check of the
-authority boundaries, negative refusal matrix, deterministic projections, and
-non-capability claims.
+The trust contract build stopped at `needs_review` with projection-only trust and authorization records. Acceptance requires an independent check of the authority boundaries, negative refusal matrix, deterministic projections, and non-capability claims.
 
 ### Implementation Notes
 
 - Added a check-only task packet and evidence-local independent harness.
-- Reviewed source build status, schema/projection alignment, stable AIDE refs,
-  exact digest binding, authority-record separation, scope/delegation bounds,
-  revocation/expiry/use-budget fail-closed refusal coverage, and runtime versus
-  transaction approval separation.
-- Confirmed all live identity, credential, policy engine, live grant, runtime
-  enforcement, Service, worker, provider/model, network, mutation, release, and
-  promotion flags remain false.
+- Reviewed source build status, schema/projection alignment, stable AIDE refs, exact digest binding, authority-record separation, scope/delegation bounds, revocation/expiry/use-budget fail-closed refusal coverage, and runtime versus transaction approval separation.
+- Confirmed all live identity, credential, policy engine, live grant, runtime enforcement, Service, worker, provider/model, network, mutation, release, and promotion flags remain false.
 - Preserved projection-only warnings and routed to the acceptance task.
 
 ### Verification
 
-The independent harness produced `PASS_WITH_WARNINGS` with 12 passing
-assertions, `material_finding_count: 0`, and `missing_evidence: 0`. Focused
-trust tests, trust status/validate, compileall, deterministic projection rerun,
-and broad validation passed.
+The independent harness produced `PASS_WITH_WARNINGS` with 12 passing assertions, `material_finding_count: 0`, and `missing_evidence: 0`. Focused trust tests, trust status/validate, compileall, deterministic projection rerun, and broad validation passed.
 
 ### Remaining Issues
 
-- `AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01` is required before the
-  trust contract is accepted.
-- Live identity, credentials, live policy engine, live grants, runtime
-  enforcement, Service/runtime behavior, and transaction approval remain out of
-  scope.
+- `AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01` is required before the trust contract is accepted.
+- Live identity, credentials, live policy engine, live grants, runtime enforcement, Service/runtime behavior, and transaction approval remain out of scope.
 
 ## Work Item: AIDE-ACCEPT-TRUST-AND-AUTHORIZATION-CONTRACT-V0-01
 
@@ -10073,28 +7950,18 @@ Completed with `ACCEPTED_WITH_WARNINGS` and awaiting review.
 
 ### Rationale
 
-The trust contract build and independent check both reported
-`PASS_WITH_WARNINGS`, zero material findings, and complete evidence. This
-acceptance consolidates the achieved capability without broadening it into live
-enforcement or runtime behavior.
+The trust contract build and independent check both reported `PASS_WITH_WARNINGS`, zero material findings, and complete evidence. This acceptance consolidates the achieved capability without broadening it into live enforcement or runtime behavior.
 
 ### Implementation Notes
 
-- Added an acceptance task packet, evidence, reports, and an evidence-local
-  acceptance review script.
+- Added an acceptance task packet, evidence, reports, and an evidence-local acceptance review script.
 - Accepted exactly `trust_and_authorization_contract_v0` as projection-only.
-- Preserved non-capabilities for identity, credentials, OIDC/IAM, live policy
-  engine, live grants, runtime enforcement, Service/runtime behavior, worker
-  execution, transaction approval, provider/model/network calls, mutation,
-  GitHub behavior, release, and promotion.
+- Preserved non-capabilities for identity, credentials, OIDC/IAM, live policy engine, live grants, runtime enforcement, Service/runtime behavior, worker execution, transaction approval, provider/model/network calls, mutation, GitHub behavior, release, and promotion.
 - Routed next work to `AIDE-BUILD-LOCAL-SERVICE-FOUNDATION-V0-01`.
 
 ### Verification
 
-The acceptance review script produced `ACCEPTED_WITH_WARNINGS` with zero
-material findings and `missing_evidence: 0`. Final task inspect/evidence, trust
-validation, broad validation, leak scans, diff checks, and commit-policy check
-are recorded in task-local evidence.
+The acceptance review script produced `ACCEPTED_WITH_WARNINGS` with zero material findings and `missing_evidence: 0`. Final task inspect/evidence, trust validation, broad validation, leak scans, diff checks, and commit-policy check are recorded in task-local evidence.
 
 ### Remaining Issues
 
@@ -10120,37 +7987,23 @@ Completed with `PASS_WITH_WARNINGS` and awaiting review.
 
 ### Rationale
 
-After accepting projection-only trust contracts, AIDE needs a small durable local
-coordination substrate before trust enforcement or durable WorkerRun slices. The
-build implements local storage primitives only, without network or runtime
-authority expansion.
+After accepting projection-only trust contracts, AIDE needs a small durable local coordination substrate before trust enforcement or durable WorkerRun slices. The build implements local storage primitives only, without network or runtime authority expansion.
 
 ### Implementation Notes
 
-- Added `core/service` with SQLite migrations, object storage, monotonic events,
-  cursor acknowledgments, idempotency records, artifact metadata, and a local
-  content-addressed artifact store.
-- Added fixture-only `aide_lite.py local-service` commands for status,
-  init-fixture, fixture, validate, and reset-fixture.
-- Added focused tests for migrations, version conflicts, atomic object/event
-  writes, event reads, cursors, idempotency, artifact integrity, persistence,
-  corruption refusal, boundary flags, and CLI fixture initialization.
-- Generated local-service reports under
-  `.aide/reports/local-service-foundation-v0/`.
+- Added `core/service` with SQLite migrations, object storage, monotonic events, cursor acknowledgments, idempotency records, artifact metadata, and a local content-addressed artifact store.
+- Added fixture-only `aide_lite.py local-service` commands for status, init-fixture, fixture, validate, and reset-fixture.
+- Added focused tests for migrations, version conflicts, atomic object/event writes, event reads, cursors, idempotency, artifact integrity, persistence, corruption refusal, boundary flags, and CLI fixture initialization.
+- Generated local-service reports under `.aide/reports/local-service-foundation-v0/`.
 
 ### Verification
 
-Focused local service tests pass. `local-service init-fixture`, `fixture`,
-`status`, and `validate` report `PASS_WITH_WARNINGS`. Final compileall,
-regression tests, task inspect/evidence, broad validation, local-state boundary
-checks, leak scans, diff checks, and commit-policy validation are recorded in
-task-local evidence.
+Focused local service tests pass. `local-service init-fixture`, `fixture`, `status`, and `validate` report `PASS_WITH_WARNINGS`. Final compileall, regression tests, task inspect/evidence, broad validation, local-state boundary checks, leak scans, diff checks, and commit-policy validation are recorded in task-local evidence.
 
 ### Remaining Issues
 
 - `AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01` is required before acceptance.
-- Service remains local, no-network, single-machine, at-least-once only, and
-  does not execute workers or enforce trust.
+- Service remains local, no-network, single-machine, at-least-once only, and does not execute workers or enforce trust.
 
 ## Work Item: AIDE-CHECK-LOCAL-SERVICE-FOUNDATION-V0-01
 
@@ -10168,33 +8021,22 @@ Completed with `PASS_WITH_WARNINGS` and awaiting review.
 
 ### Rationale
 
-The Local Service foundation build stopped at `needs_review` and required an
-independent check before acceptance. This task verifies the proposed capability
-without modifying production code or source build reports.
+The Local Service foundation build stopped at `needs_review` and required an independent check before acceptance. This task verifies the proposed capability without modifying production code or source build reports.
 
 ### Implementation Notes
 
 - Added a check task packet, check reports, and an evidence-local harness.
-- The harness independently exercised fresh temporary SQLite/object/event,
-  cursor, idempotency, artifact, persistence, future-migration, corruption, and
-  CLI boundary behavior.
-- The check preserved no-network, no-worker, no-enforcement, no-MCP,
-  no-Workbench, no-provider/model, no-preview/apply, no-mutation boundaries.
+- The harness independently exercised fresh temporary SQLite/object/event, cursor, idempotency, artifact, persistence, future-migration, corruption, and CLI boundary behavior.
+- The check preserved no-network, no-worker, no-enforcement, no-MCP, no-Workbench, no-provider/model, no-preview/apply, no-mutation boundaries.
 
 ### Verification
 
-The independent harness produced `PASS_WITH_WARNINGS`, zero material findings,
-and `missing_evidence: 0`. Focused local service tests, public local-service
-commands, source/check task inspect and evidence, broad validation, diff checks,
-local-state boundary checks, and leak scans are recorded in task-local evidence.
+The independent harness produced `PASS_WITH_WARNINGS`, zero material findings, and `missing_evidence: 0`. Focused local service tests, public local-service commands, source/check task inspect and evidence, broad validation, diff checks, local-state boundary checks, and leak scans are recorded in task-local evidence.
 
 ### Remaining Issues
 
-- `AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01` is required before the
-  capability is accepted.
-- Scheduler, worker execution, capability execution, trust enforcement, MCP,
-  Workbench, exactly-once delivery, provider/model calls, preview/apply, and
-  rollback remain non-capabilities.
+- `AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01` is required before the capability is accepted.
+- Scheduler, worker execution, capability execution, trust enforcement, MCP, Workbench, exactly-once delivery, provider/model calls, preview/apply, and rollback remain non-capabilities.
 
 ## Work Item: AIDE-ACCEPT-LOCAL-SERVICE-FOUNDATION-V0-01
 
@@ -10212,33 +8054,23 @@ Completed with `ACCEPTED_WITH_WARNINGS` and awaiting review.
 
 ### Rationale
 
-The Local Service foundation build and independent check both passed with
-warnings, zero material findings, and complete evidence. This acceptance
-consolidates the exact achieved capability without broadening it into runtime
-scheduling, enforcement, or interoperability behavior.
+The Local Service foundation build and independent check both passed with warnings, zero material findings, and complete evidence. This acceptance consolidates the exact achieved capability without broadening it into runtime scheduling, enforcement, or interoperability behavior.
 
 ### Implementation Notes
 
 - Added an acceptance task packet, evidence, reports, and acceptance review.
 - Accepted exactly `local_service_foundation_v0`.
-- Preserved explicit non-capabilities for scheduler, worker execution,
-  capability execution, authorization enforcement, network API, MCP, Workbench,
-  distributed state, exactly-once delivery, provider/model calls,
-  preview/apply/rollback, mutation, GitHub behavior, release, and promotion.
+- Preserved explicit non-capabilities for scheduler, worker execution, capability execution, authorization enforcement, network API, MCP, Workbench, distributed state, exactly-once delivery, provider/model calls, preview/apply/rollback, mutation, GitHub behavior, release, and promotion.
 - Routed next work to `AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01`.
 
 ### Verification
 
-The acceptance review produced `ACCEPTED_WITH_WARNINGS`, zero material findings,
-and `missing_evidence: 0`. Final source/check/accept task inspect and evidence,
-local-service validation, broad validation, leak scans, diff checks, and
-commit-policy check are recorded in task-local evidence.
+The acceptance review produced `ACCEPTED_WITH_WARNINGS`, zero material findings, and `missing_evidence: 0`. Final source/check/accept task inspect and evidence, local-service validation, broad validation, leak scans, diff checks, and commit-policy check are recorded in task-local evidence.
 
 ### Remaining Issues
 
 - Local trust enforcement is the next serialized task.
-- Worker execution, scheduling, MCP, Workbench, provider/model calls,
-  preview/apply/rollback, and distributed state remain future work.
+- Worker execution, scheduling, MCP, Workbench, provider/model calls, preview/apply/rollback, and distributed state remain future work.
 
 ## Work Item: AIDE-BUILD-LOCAL-TRUST-ENFORCEMENT-V0-01
 
@@ -10260,39 +8092,24 @@ Completed with `PASS_WITH_WARNINGS` and awaiting review.
 
 ### Rationale
 
-The accepted trust contract is projection-only, and the accepted local Service
-does not enforce authorization. This task adds the first deterministic local
-enforcement slice by evaluating trust records, persisting the decision, and
-consuming a one-use grant through local Service state.
+The accepted trust contract is projection-only, and the accepted local Service does not enforce authorization. This task adds the first deterministic local enforcement slice by evaluating trust records, persisting the decision, and consuming a one-use grant through local Service state.
 
 ### Implementation Notes
 
 - Added `core/service/local_trust_enforcement.py`.
-- Reused `trust_authorization.evaluate_authorization` rather than duplicating
-  policy/refusal logic.
-- Persisted support records, AuthorizationEvaluation, evaluation event,
-  grant-consumption event, and idempotency record in a local SQLite transaction.
-- Added AIDE Lite `local-trust status`, `fixture`, `validate`, and
-  `reset-fixture` commands.
-- Added focused tests for allowed evaluation, idempotent replay, final-use
-  exhaustion, refusal matrix coverage, restart persistence, and false
-  process/network/worker/provider boundaries.
+- Reused `trust_authorization.evaluate_authorization` rather than duplicating policy/refusal logic.
+- Persisted support records, AuthorizationEvaluation, evaluation event, grant-consumption event, and idempotency record in a local SQLite transaction.
+- Added AIDE Lite `local-trust status`, `fixture`, `validate`, and `reset-fixture` commands.
+- Added focused tests for allowed evaluation, idempotent replay, final-use exhaustion, refusal matrix coverage, restart persistence, and false process/network/worker/provider boundaries.
 
 ### Verification
 
-Focused local trust tests pass. `local-trust fixture`, `status`, and
-`validate` report `PASS_WITH_WARNINGS`. Final compileall, trust/local-service
-regressions, task inspect/evidence, broad validation, local-state boundary
-checks, leak scans, diff checks, and commit-policy validation are recorded in
-task-local evidence.
+Focused local trust tests pass. `local-trust fixture`, `status`, and `validate` report `PASS_WITH_WARNINGS`. Final compileall, trust/local-service regressions, task inspect/evidence, broad validation, local-state boundary checks, leak scans, diff checks, and commit-policy validation are recorded in task-local evidence.
 
 ### Remaining Issues
 
 - `AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01` is required before acceptance.
-- External IAM, credentials, secrets, OIDC, remote policy engines, distributed
-  authorization, worker execution, transaction approval, provider/model calls,
-  network calls, preview/apply/rollback, and repository mutation remain
-  non-capabilities.
+- External IAM, credentials, secrets, OIDC, remote policy engines, distributed authorization, worker execution, transaction approval, provider/model calls, network calls, preview/apply/rollback, and repository mutation remain non-capabilities.
 
 ## Work Item: AIDE-CHECK-LOCAL-TRUST-ENFORCEMENT-V0-01
 
@@ -10310,35 +8127,22 @@ Completed with `PASS_WITH_WARNINGS` and awaiting review.
 
 ### Rationale
 
-The local trust enforcement build proposed the first local enforcement slice
-over the accepted trust contracts and accepted local Service foundation. This
-check independently verifies that the slice behaves as claimed before any
-acceptance task can consolidate the capability.
+The local trust enforcement build proposed the first local enforcement slice over the accepted trust contracts and accepted local Service foundation. This check independently verifies that the slice behaves as claimed before any acceptance task can consolidate the capability.
 
 ### Implementation Notes
 
 - Added an independent check task packet and report set.
-- Added an evidence-local harness that uses the local-trust module as the
-  system under test but directly inspects the resulting SQLite state, event
-  rows, idempotency records, refusal matrix, false-boundary fields, CLI output,
-  determinism, and source report scrub status.
+- Added an evidence-local harness that uses the local-trust module as the system under test but directly inspects the resulting SQLite state, event rows, idempotency records, refusal matrix, false-boundary fields, CLI output, determinism, and source report scrub status.
 - Recorded no material findings and routed to acceptance.
 
 ### Verification
 
-The independent harness passed with 10 material assertions, zero material
-findings, and `missing_evidence: 0`. Final focused tests, broad validation,
-task inspect/evidence, diff checks, leak scans, and commit-policy validation
-are recorded in task-local evidence.
+The independent harness passed with 10 material assertions, zero material findings, and `missing_evidence: 0`. Final focused tests, broad validation, task inspect/evidence, diff checks, leak scans, and commit-policy validation are recorded in task-local evidence.
 
 ### Remaining Issues
 
-- `AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01` is required before this proposed
-  capability is accepted.
-- External IAM, credentials, secrets, OIDC, remote policy engines, process
-  launch, worker execution, transaction approval, provider/model calls, network
-  calls, preview/apply/rollback, repository mutation, GitHub mutation, release,
-  and promotion remain non-capabilities.
+- `AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01` is required before this proposed capability is accepted.
+- External IAM, credentials, secrets, OIDC, remote policy engines, process launch, worker execution, transaction approval, provider/model calls, network calls, preview/apply/rollback, repository mutation, GitHub mutation, release, and promotion remain non-capabilities.
 
 ## Work Item: AIDE-ACCEPT-LOCAL-TRUST-ENFORCEMENT-V0-01
 
@@ -10356,36 +8160,23 @@ Completed with `ACCEPTED_WITH_WARNINGS` and awaiting review.
 
 ### Rationale
 
-The local trust enforcement build and independent check both passed with
-warnings, zero material findings, and complete evidence. This task consolidates
-the exact accepted capability without broadening it into external identity,
-worker execution, transaction approval, network behavior, or mutation.
+The local trust enforcement build and independent check both passed with warnings, zero material findings, and complete evidence. This task consolidates the exact accepted capability without broadening it into external identity, worker execution, transaction approval, network behavior, or mutation.
 
 ### Implementation Notes
 
 - Added an acceptance task packet, evidence, reports, and accepted boundary.
 - Accepted exactly `local_trust_enforcement_v0`.
-- Preserved explicit non-capabilities for external IAM, credentials, secrets,
-  OIDC, remote policy engines, process launch, worker execution, transaction
-  approval, provider/model calls, network calls, preview/apply/rollback,
-  repository mutation, GitHub mutation, release, and promotion.
+- Preserved explicit non-capabilities for external IAM, credentials, secrets, OIDC, remote policy engines, process launch, worker execution, transaction approval, provider/model calls, network calls, preview/apply/rollback, repository mutation, GitHub mutation, release, and promotion.
 - Routed next work to `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`.
 
 ### Verification
 
-Acceptance evidence records `ACCEPTED_WITH_WARNINGS`, zero material findings,
-and `missing_evidence: 0`. Final source build/check/accept task inspect and
-evidence, local-trust validation, broad validation, scoped leak scans, diff
-checks, and commit-policy validation are recorded in task-local evidence.
+Acceptance evidence records `ACCEPTED_WITH_WARNINGS`, zero material findings, and `missing_evidence: 0`. Final source build/check/accept task inspect and evidence, local-trust validation, broad validation, scoped leak scans, diff checks, and commit-policy validation are recorded in task-local evidence.
 
 ### Remaining Issues
 
 - Durable local WorkerRun integration is the next serialized build gate.
-- External IAM, credentials, secrets, OIDC, remote policy engines, process
-  launch, worker execution beyond accepted fixture-host proof, transaction
-  approval, provider/model calls, network calls, preview/apply/rollback,
-  repository mutation, GitHub mutation, release, and promotion remain future
-  work.
+- External IAM, credentials, secrets, OIDC, remote policy engines, process launch, worker execution beyond accepted fixture-host proof, transaction approval, provider/model calls, network calls, preview/apply/rollback, repository mutation, GitHub mutation, release, and promotion remain future work.
 
 ## Work Item: AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
 
@@ -10406,39 +8197,24 @@ Completed with `PASS_WITH_WARNINGS` and awaiting review.
 
 ### Rationale
 
-The accepted local Service, local trust enforcement, registered process
-provider, and fixture LocalProcessExecutionHost needed one composed vertical
-slice that records a WorkerRun observation durably before the system moves
-toward broader worker-runtime work.
+The accepted local Service, local trust enforcement, registered process provider, and fixture LocalProcessExecutionHost needed one composed vertical slice that records a WorkerRun observation durably before the system moves toward broader worker-runtime work.
 
 ### Implementation Notes
 
-- Added `core/service/durable_worker_run.py` as a narrow composition layer over
-  existing accepted components.
-- Added `durable-worker-run status`, `fixture`, `validate`, and
-  `reset-fixture` AIDE Lite commands.
-- Persisted WorkUnit, WorkerRun, host outcome, EvidencePacket, EventRecord,
-  monotonic local Service events, idempotency, and content-addressed artifact
-  metadata into temporary local Service state.
-- Added focused tests using a fake runner and ran one live fixture command for
-  committed reports.
+- Added `core/service/durable_worker_run.py` as a narrow composition layer over existing accepted components.
+- Added `durable-worker-run status`, `fixture`, `validate`, and `reset-fixture` AIDE Lite commands.
+- Persisted WorkUnit, WorkerRun, host outcome, EvidencePacket, EventRecord, monotonic local Service events, idempotency, and content-addressed artifact metadata into temporary local Service state.
+- Added focused tests using a fake runner and ran one live fixture command for committed reports.
 - Routed next work to `AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01`.
 
 ### Verification
 
-Focused durable WorkerRun tests, compileall, the live durable-worker-run
-fixture and validation commands, and regression checks are recorded in
-task-local evidence.
+Focused durable WorkerRun tests, compileall, the live durable-worker-run fixture and validation commands, and regression checks are recorded in task-local evidence.
 
 ### Remaining Issues
 
-- Independent check and acceptance remain required before
-  `durable_local_worker_run_slice_v0` is accepted.
-- This remains fixture-backed and local only. It does not implement a general
-  worker harness, autonomous AI worker, scheduler, leases, persistent daemon,
-  Workbench/MCP runtime, provider/model calls, network calls,
-  preview/apply/rollback, transaction approval, repository mutation, GitHub
-  mutation, release, or promotion.
+- Independent check and acceptance remain required before `durable_local_worker_run_slice_v0` is accepted.
+- This remains fixture-backed and local only. It does not implement a general worker harness, autonomous AI worker, scheduler, leases, persistent daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, GitHub mutation, release, or promotion.
 
 ## Work Item: AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
 
@@ -10456,33 +8232,22 @@ Completed with `REQUEST_CHANGES` and awaiting review.
 
 ### Rationale
 
-The durable local WorkerRun build was complete, warning-bearing, and routed to
-an independent check. The check needed to verify durable Service persistence,
-host process accounting, idempotency, artifacts, evidence, EventRecord
-truthfulness, and non-capability boundaries without repairing implementation.
+The durable local WorkerRun build was complete, warning-bearing, and routed to an independent check. The check needed to verify durable Service persistence, host process accounting, idempotency, artifacts, evidence, EventRecord truthfulness, and non-capability boundaries without repairing implementation.
 
 ### Implementation Notes
 
 - Added a check task packet and independent task-local harness.
 - Ran a fresh durable fixture as the system under test with `write_reports=False`.
-- Independently inspected temporary SQLite objects, events, idempotency rows,
-  artifact metadata, raw event stream integrity, false-boundary values, and
-  committed report consistency.
+- Independently inspected temporary SQLite objects, events, idempotency rows, artifact metadata, raw event stream integrity, false-boundary values, and committed report consistency.
 - Preserved the failed evidence and routed to a bounded repair task.
 
 ### Verification
 
-The independent harness recorded `REQUEST_CHANGES`, `material_finding_count: 1`,
-and `missing_evidence: 0`. The fresh fixture still proved one process call,
-authorization before launch, grant consumption, monotonic events, idempotent
-replay without a second launch, artifact integrity, and false-boundary
-preservation.
+The independent harness recorded `REQUEST_CHANGES`, `material_finding_count: 1`, and `missing_evidence: 0`. The fresh fixture still proved one process call, authorization before launch, grant consumption, monotonic events, idempotent replay without a second launch, artifact integrity, and false-boundary preservation.
 
 ### Remaining Issues
 
-- `event_record_result_consistency`: `.aide/reports/durable-local-worker-run-slice-v0/fixture-report.json`
-  records `host_result: PASS`, but `.aide/reports/durable-local-worker-run-slice-v0/event-record.json`
-  records `spec.payload.result: null`.
+- `event_record_result_consistency`: `.aide/reports/durable-local-worker-run-slice-v0/fixture-report.json` records `host_result: PASS`, but `.aide/reports/durable-local-worker-run-slice-v0/event-record.json` records `spec.payload.result: null`.
 - Next task: `AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01`.
 
 ## Work Item: AIDE-BUILD-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01
@@ -10504,33 +8269,22 @@ Completed with `PASS_WITH_WARNINGS` and awaiting review.
 
 ### Rationale
 
-The independent durable WorkerRun check found that the committed EventRecord
-payload dropped the observed host result, even though the fixture report and
-EventRecord status both recorded `PASS`.
+The independent durable WorkerRun check found that the committed EventRecord payload dropped the observed host result, even though the fixture report and EventRecord status both recorded `PASS`.
 
 ### Implementation Notes
 
-- Updated EventRecord payload generation to use the live host result when
-  available and fall back to normalized fixture-report `host_result`.
-- Added a focused regression assertion that `build_event_record(report)`
-  preserves `PASS`.
+- Updated EventRecord payload generation to use the live host result when available and fall back to normalized fixture-report `host_result`.
+- Added a focused regression assertion that `build_event_record(report)` preserves `PASS`.
 - Regenerated durable WorkerRun reports and added repair evidence/reports.
 
 ### Verification
 
-The regenerated fixture report records `host_result: PASS`; the regenerated
-EventRecord records `spec.payload.result: PASS`. Focused tests, durable
-validation, and compileall passed before final validation.
+The regenerated fixture report records `host_result: PASS`; the regenerated EventRecord records `spec.payload.result: PASS`. Focused tests, durable validation, and compileall passed before final validation.
 
 ### Remaining Issues
 
-- Independent repair check remains required before accepting
-  `durable_local_worker_run_slice_v0`.
-- The durable WorkerRun slice remains fixture-backed and does not implement a
-  general worker harness, autonomous AI worker, scheduler, leases, persistent
-  daemon, Workbench/MCP runtime, provider/model calls, network calls,
-  preview/apply/rollback, transaction approval, repository mutation, GitHub
-  mutation, release, or promotion.
+- Independent repair check remains required before accepting `durable_local_worker_run_slice_v0`.
+- The durable WorkerRun slice remains fixture-backed and does not implement a general worker harness, autonomous AI worker, scheduler, leases, persistent daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, GitHub mutation, release, or promotion.
 
 ## Work Item: AIDE-CHECK-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-REPAIR-01
 
@@ -10548,36 +8302,25 @@ Completed with `PASS_WITH_WARNINGS` and awaiting review.
 
 ### Rationale
 
-The durable WorkerRun repair claimed to close the single material finding from
-the independent check. A separate check was needed to verify the closure without
-repairing implementation or accepting the capability.
+The durable WorkerRun repair claimed to close the single material finding from the independent check. A separate check was needed to verify the closure without repairing implementation or accepting the capability.
 
 ### Implementation Notes
 
 - Added a check-only task packet and independent task-local harness.
 - Verified the source check recorded exactly one material finding.
-- Verified Repair 01 records `PASS_WITH_WARNINGS`, `material_finding_count: 0`,
-  `missing_evidence: 0`, and this check as its next task.
-- Verified the durable WorkerRun EventRecord payload result now matches the
-  fixture report `host_result: PASS`.
+- Verified Repair 01 records `PASS_WITH_WARNINGS`, `material_finding_count: 0`, `missing_evidence: 0`, and this check as its next task.
+- Verified the durable WorkerRun EventRecord payload result now matches the fixture report `host_result: PASS`.
 - Verified source/test coverage for the normalized `host_result` case.
 - Verified false-boundary and source/workspace unchanged claims remain narrow.
 
 ### Verification
 
-The independent harness recorded `PASS_WITH_WARNINGS`,
-`material_finding_count: 0`, and `missing_evidence: 0`. Focused durable tests,
-durable validation, task inspect/evidence, and broad validation passed.
+The independent harness recorded `PASS_WITH_WARNINGS`, `material_finding_count: 0`, and `missing_evidence: 0`. Focused durable tests, durable validation, task inspect/evidence, and broad validation passed.
 
 ### Remaining Issues
 
-- `durable_local_worker_run_slice_v0` remains unaccepted until the acceptance
-  task runs.
-- The slice remains fixture-backed and does not implement a general worker
-  harness, autonomous AI worker, scheduler, leases, persistent daemon,
-  Workbench/MCP runtime, provider/model calls, network calls,
-  preview/apply/rollback, transaction approval, repository mutation, GitHub
-  mutation, release, or promotion.
+- `durable_local_worker_run_slice_v0` remains unaccepted until the acceptance task runs.
+- The slice remains fixture-backed and does not implement a general worker harness, autonomous AI worker, scheduler, leases, persistent daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, GitHub mutation, release, or promotion.
 
 ## Work Item: AIDE-ACCEPT-DURABLE-LOCAL-WORKER-RUN-SLICE-V0-01
 
@@ -10595,34 +8338,23 @@ Completed with `ACCEPTED_WITH_WARNINGS` and awaiting review.
 
 ### Rationale
 
-The durable WorkerRun source chain had completed the required build, check,
-repair, and independent repair check sequence. The repair check verified the
-single original material finding was closed, preserved failed-check evidence,
-and routed to acceptance.
+The durable WorkerRun source chain had completed the required build, check, repair, and independent repair check sequence. The repair check verified the single original material finding was closed, preserved failed-check evidence, and routed to acceptance.
 
 ### Implementation Notes
 
 - Added an acceptance-only task packet and acceptance reports.
 - Accepted exactly `durable_local_worker_run_slice_v0`.
-- Preserved the narrow accepted boundary: fixture-backed local durable WorkerRun
-  recording through accepted local Service, trust, registered-process, and
-  LocalProcessExecutionHost fixture slices.
-- Routed next queue work to a bounded distribution/update protocol planning
-  task because the 25 June 2026 handoff's earlier local-trust gate reference is
-  stale relative to live queue truth.
+- Preserved the narrow accepted boundary: fixture-backed local durable WorkerRun recording through accepted local Service, trust, registered-process, and LocalProcessExecutionHost fixture slices.
+- Routed next queue work to a bounded distribution/update protocol planning task because the 25 June 2026 handoff's earlier local-trust gate reference is stale relative to live queue truth.
 
 ### Verification
 
-Durable WorkerRun validation, task inspect/evidence checks, broad validation,
-and diff checks are recorded in the task-local evidence.
+Durable WorkerRun validation, task inspect/evidence checks, broad validation, and diff checks are recorded in the task-local evidence.
 
 ### Remaining Issues
 
 - The accepted capability remains fixture-backed and local only.
-- It does not implement a general worker harness, autonomous AI worker, remote
-  ExecutionHost, scheduler, leases, persistent daemon, Workbench/MCP runtime,
-  provider/model calls, network calls, preview/apply/rollback, transaction
-  approval, repository mutation, GitHub mutation, release, or promotion.
+- It does not implement a general worker harness, autonomous AI worker, remote ExecutionHost, scheduler, leases, persistent daemon, Workbench/MCP runtime, provider/model calls, network calls, preview/apply/rollback, transaction approval, repository mutation, GitHub mutation, release, or promotion.
 
 ## Work Item: AIDE-PLAN-DISTRIBUTION-UPDATE-PROTOCOL-V1-01
 
@@ -10640,38 +8372,24 @@ Completed with `PASS_WITH_WARNINGS` and awaiting review.
 
 ### Rationale
 
-The durable local WorkerRun slice is accepted, and live queue truth routes next
-to distribution/update planning. The plan normalizes existing Q43-Q48 install,
-repair, upgrade, rollback/uninstall, release bundle, and release-draft work
-instead of replacing it with a greenfield distribution design.
+The durable local WorkerRun slice is accepted, and live queue truth routes next to distribution/update planning. The plan normalizes existing Q43-Q48 install, repair, upgrade, rollback/uninstall, release bundle, and release-draft work instead of replacing it with a greenfield distribution design.
 
 ### Implementation Notes
 
 - Added the plan-only task packet and reports.
 - Inventoried existing no-apply/no-publish Q43-Q48 surfaces.
-- Defined the distribution object dependency graph, compatibility map,
-  source-of-truth map, ownership taxonomy, lifecycle state machines, migration
-  rules, refusal registry, artifact/source/channel model, rollout rings,
-  fixture matrix, security invariants, and public release gates.
-- Selected `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01` as the exact first build
-  task because downstream lock, ledger, record, plan, rollback, and receipt
-  objects require a stable distribution identity.
+- Defined the distribution object dependency graph, compatibility map, source-of-truth map, ownership taxonomy, lifecycle state machines, migration rules, refusal registry, artifact/source/channel model, rollout rings, fixture matrix, security invariants, and public release gates.
+- Selected `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01` as the exact first build task because downstream lock, ledger, record, plan, rollback, and receipt objects require a stable distribution identity.
 
 ### Verification
 
-Install, repair, upgrade, rollback, uninstall, release-bundle, and release-draft
-status/validation commands passed in their existing no-apply/no-publish modes.
-Task inspect/evidence, broad validation, diff checks, and scoped leak checks are
-recorded in the task-local evidence.
+Install, repair, upgrade, rollback, uninstall, release-bundle, and release-draft status/validation commands passed in their existing no-apply/no-publish modes. Task inspect/evidence, broad validation, diff checks, and scoped leak checks are recorded in the task-local evidence.
 
 ### Remaining Issues
 
 - This task is planning only and does not accept public release readiness.
-- Real ScreenSave, Eureka, and Dominium canary installation/update behavior was
-  not executed in this task.
-- All install/update/repair/rollback/uninstall apply, release publication,
-  GitHub mutation, target repository mutation, Workbench/MCP runtime, and
-  source-change preview/apply/rollback behavior remains unimplemented.
+- Real ScreenSave, Eureka, and Dominium canary installation/update behavior was not executed in this task.
+- All install/update/repair/rollback/uninstall apply, release publication, GitHub mutation, target repository mutation, Workbench/MCP runtime, and source-change preview/apply/rollback behavior remains unimplemented.
 
 ## Work Item: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-01
 
@@ -10694,40 +8412,25 @@ Completed with `PASS_WITH_WARNINGS` and awaiting review.
 
 ### Rationale
 
-The accepted distribution/update protocol v1 plan selected
-`DistributionManifest v1` as the first build dependency. Downstream ProjectLock,
-OwnershipLedger, InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle,
-and UpdateReceipt objects need stable distribution identity before apply behavior
-can be safely designed.
+The accepted distribution/update protocol v1 plan selected `DistributionManifest v1` as the first build dependency. Downstream ProjectLock, OwnershipLedger, InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle, and UpdateReceipt objects need stable distribution identity before apply behavior can be safely designed.
 
 ### Implementation Notes
 
 - Added a Draft 2020-12 schema for `DistributionManifest`.
-- Added `core/protocol/distribution_manifest.py` for deterministic projection,
-  canonical digest calculation, validation, fixture generation, and report
-  writing.
-- Added AIDE Lite `distribution-manifest status`, `project`, and `validate`
-  commands.
-- Generated valid and invalid fixture corpus covering source kinds, protocol
-  ranges, required features, migrations, forbidden members, duplicates, digests,
-  checksums, signatures, SBOM claims, and reordered input.
-- Projected existing Q47 release bundle evidence into distribution identity and
-  treated Q48 release-draft material as publication-review evidence only.
+- Added `core/protocol/distribution_manifest.py` for deterministic projection, canonical digest calculation, validation, fixture generation, and report writing.
+- Added AIDE Lite `distribution-manifest status`, `project`, and `validate` commands.
+- Generated valid and invalid fixture corpus covering source kinds, protocol ranges, required features, migrations, forbidden members, duplicates, digests, checksums, signatures, SBOM claims, and reordered input.
+- Projected existing Q47 release bundle evidence into distribution identity and treated Q48 release-draft material as publication-review evidence only.
 
 ### Verification
 
-Focused tests pass. `distribution-manifest status`, `project`, and `validate`
-pass with warnings and `error_count: 0`. Broader validation is recorded in
-task-local evidence.
+Focused tests pass. `distribution-manifest status`, `project`, and `validate` pass with warnings and `error_count: 0`. Broader validation is recorded in task-local evidence.
 
 ### Remaining Issues
 
-- `distribution_manifest_v1` remains proposed until independent check and
-  acceptance.
+- `distribution_manifest_v1` remains proposed until independent check and acceptance.
 - Existing Q47 release artifacts remain local preview/no-publish evidence.
-- Signature verification, SBOM generation, install/update apply, release
-  publication, target mutation, Workbench/MCP runtime, provider/model calls, and
-  promotion remain unimplemented.
+- Signature verification, SBOM generation, install/update apply, release publication, target mutation, Workbench/MCP runtime, provider/model calls, and promotion remain unimplemented.
 
 ## Work Item: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-01
 
@@ -10745,26 +8448,18 @@ Completed with `REQUEST_CHANGES` and awaiting review.
 
 ### Rationale
 
-The DistributionManifest v1 build proposed a new distribution identity object
-over Q47 local release evidence. A check-only gate was required before any
-acceptance or downstream ProjectLock work could depend on that identity.
+The DistributionManifest v1 build proposed a new distribution identity object over Q47 local release evidence. A check-only gate was required before any acceptance or downstream ProjectLock work could depend on that identity.
 
 ### Implementation Notes
 
 - Added a check-only task packet and report set.
-- Added a task-local independent harness that recomputes digests without using
-  the production digest helper as authority.
-- Exercised the live manifest helper as the system under test for adversarial
-  schema, digest, component, artifact, checksum, protocol, and contamination
-  probes.
-- Preserved the check boundary; no production code, schema, fixture, or source
-  report was repaired.
+- Added a task-local independent harness that recomputes digests without using the production digest helper as authority.
+- Exercised the live manifest helper as the system under test for adversarial schema, digest, component, artifact, checksum, protocol, and contamination probes.
+- Preserved the check boundary; no production code, schema, fixture, or source report was repaired.
 
 ### Verification
 
-The independent harness recorded `REQUEST_CHANGES`,
-`material_finding_count: 9`, `missing_evidence: 0`, and routed to
-`AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01`.
+The independent harness recorded `REQUEST_CHANGES`, `material_finding_count: 9`, `missing_evidence: 0`, and routed to `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01`.
 
 ### Remaining Issues
 
@@ -10778,10 +8473,7 @@ The independent harness recorded `REQUEST_CHANGES`,
 - `contamination.forbidden_members_silently_filtered`
 - `fixture.required_coverage_incomplete`
 
-No implementation repair, DistributionManifest acceptance, ProjectLock work,
-install/update/repair/rollback/uninstall apply, release publication, target
-mutation, Workbench/MCP runtime, provider/model call, source-change
-preview/apply/rollback, or promotion was performed.
+No implementation repair, DistributionManifest acceptance, ProjectLock work, install/update/repair/rollback/uninstall apply, release publication, target mutation, Workbench/MCP runtime, provider/model call, source-change preview/apply/rollback, or promotion was performed.
 
 ## Work Item: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-01
 
@@ -10803,42 +8495,30 @@ Completed with `PASS_WITH_WARNINGS` and awaiting independent repair check.
 
 ### Rationale
 
-The independent check found nine material defects in the proposed
-DistributionManifest v1 identity. The repair closes only those defects and
-preserves the review boundary before acceptance or ProjectLock work.
+The independent check found nine material defects in the proposed DistributionManifest v1 identity. The repair closes only those defects and preserves the review boundary before acceptance or ProjectLock work.
 
 ### Implementation Notes
 
-- Added task-local turn context, allowed paths, finding matrix, validation
-  plan, stop conditions, and campaign state before production edits.
-- Added explicit `extensions` schema surfaces while keeping canonical objects
-  closed.
+- Added task-local turn context, allowed paths, finding matrix, validation plan, stop conditions, and campaign state before production edits.
+- Added explicit `extensions` schema surfaces while keeping canonical objects closed.
 - Removed mutable `status` from distribution identity digest input.
-- Added component content-digest recomputation, artifact-ref closure,
-  component-id uniqueness, dependency closure, and cycle detection.
-- Added local artifact byte-count, digest, media-type, compression, checksum,
-  and path-containment validation.
+- Added component content-digest recomputation, artifact-ref closure, component-id uniqueness, dependency closure, and cycle detection.
+- Added local artifact byte-count, digest, media-type, compression, checksum, and path-containment validation.
 - Rejected malformed release artifact paths before filesystem access.
 - Added checksum value comparison and basename-collision checks.
 - Added exact protocol range and reader/writer compatibility validation.
-- Changed local-directory inventory to record forbidden members as
-  contamination rather than silently filtering.
+- Changed local-directory inventory to record forbidden members as contamination rather than silently filtering.
 - Expanded the committed fixture corpus for the required repair matrix.
 
 ### Verification
 
-Focused DistributionManifest tests and `distribution-manifest validate` pass
-with warnings and `error_count: 0`. Broad validation is recorded in task-local
-evidence.
+Focused DistributionManifest tests and `distribution-manifest validate` pass with warnings and `error_count: 0`. Broad validation is recorded in task-local evidence.
 
 ### Remaining Issues
 
-- `distribution_manifest_v1` remains proposed until independent repair check
-  and acceptance.
+- `distribution_manifest_v1` remains proposed until independent repair check and acceptance.
 - ProjectLock v0 has not started.
-- Install/update/repair/rollback/uninstall apply, release publication, target
-  mutation, Workbench/MCP runtime, provider/model calls, source-change
-  preview/apply/rollback, and promotion remain unimplemented.
+- Install/update/repair/rollback/uninstall apply, release publication, target mutation, Workbench/MCP runtime, provider/model calls, source-change preview/apply/rollback, and promotion remain unimplemented.
 
 ## Work Item: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-01
 
@@ -10856,99 +8536,55 @@ Completed with `REQUEST_CHANGES` and stopped the serialized distribution wave.
 
 ### Rationale
 
-Repair 01 reported all nine DistributionManifest v1 check findings closed, but
-the queue required independent repair verification before acceptance or
-ProjectLock v0 work could begin.
+Repair 01 reported all nine DistributionManifest v1 check findings closed, but the queue required independent repair verification before acceptance or ProjectLock v0 work could begin.
 
 ### Implementation Notes
 
 - Added a check-only queue task and report directory.
-- Added a task-local independent checker that recomputes digests, probes
-  extension and identity behavior, exercises component/artifact/checksum/path
-  validation, and checks protocol range, contamination, fixture coverage, Q47
-  mapping, and non-capability claims.
-- Corrected the check harness during the task so its own allowed outputs and
-  source literals were not counted as material implementation defects.
-- Preserved the check boundary; no production code, schema, fixture, manifest
-  report, Q43-Q48 implementation, acceptance task, ProjectLock task, target
-  repository, release publication, or apply behavior was changed.
+- Added a task-local independent checker that recomputes digests, probes extension and identity behavior, exercises component/artifact/checksum/path validation, and checks protocol range, contamination, fixture coverage, Q47 mapping, and non-capability claims.
+- Corrected the check harness during the task so its own allowed outputs and source literals were not counted as material implementation defects.
+- Preserved the check boundary; no production code, schema, fixture, manifest report, Q43-Q48 implementation, acceptance task, ProjectLock task, target repository, release publication, or apply behavior was changed.
 
 ### Verification
 
-The independent check recorded `REQUEST_CHANGES`, `material_finding_count: 4`,
-`missing_evidence: 0`, and recommends exactly
-`AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02`.
+The independent check recorded `REQUEST_CHANGES`, `material_finding_count: 4`, `missing_evidence: 0`, and recommends exactly `AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02`.
 
-Validation receipts recorded passing focused DistributionManifest tests,
-DistributionManifest status/project/validate, Q43-Q48 validation/status
-commands, release validation, release draft validation, task inspect/evidence,
-broad `aide_lite.py validate`, diff checks, and leak scans.
+Validation receipts recorded passing focused DistributionManifest tests, DistributionManifest status/project/validate, Q43-Q48 validation/status commands, release validation, release draft validation, task inspect/evidence, broad `aide_lite.py validate`, diff checks, and leak scans.
 
 ### Remaining Issues
 
-- `protocol.future_major_not_implicitly_accepted`: `protocol_range.max: 2.x`
-  is accepted for v1 without explicit future-major support.
-- `contamination.forbidden_path_classification_complete`: forbidden target-root
-  export-pack members under `files/` are not fully classified.
-- `contamination.directory_forbidden_members_recorded`: nested forbidden
-  directory members under `files/` are not recorded as contamination.
-- `fixture.future_major_protocol_fixture_present`: the fixture corpus has no
-  direct invalid future-major protocol-range fixture.
+- `protocol.future_major_not_implicitly_accepted`: `protocol_range.max: 2.x` is accepted for v1 without explicit future-major support.
+- `contamination.forbidden_path_classification_complete`: forbidden target-root export-pack members under `files/` are not fully classified.
+- `contamination.directory_forbidden_members_recorded`: nested forbidden directory members under `files/` are not recorded as contamination.
+- `fixture.future_major_protocol_fixture_present`: the fixture corpus has no direct invalid future-major protocol-range fixture.
 
-DistributionManifest acceptance, ProjectLock v0, OwnershipLedger v1,
-InstallRecord v0, install/update/repair/rollback/uninstall apply, release
-publication, target mutation, Workbench/MCP runtime, provider/model calls,
-worker execution, and promotion remain blocked pending Repair 02.
+DistributionManifest acceptance, ProjectLock v0, OwnershipLedger v1, InstallRecord v0, install/update/repair/rollback/uninstall apply, release publication, target mutation, Workbench/MCP runtime, provider/model calls, worker execution, and promotion remain blocked pending Repair 02.
 
 ## Work Item: AIDE-BUILD-DISTRIBUTION-MANIFEST-V1-REPAIR-02
 
 ### Summary
 
-Completed the bounded second repair for DistributionManifest v1 after the
-Repair 01 check left four material findings open.
+Completed the bounded second repair for DistributionManifest v1 after the Repair 01 check left four material findings open.
 
 ### Implementation Notes
 
-- Added the Repair 02 queue task, status, ExecPlan, prompt, task-local turn
-  context, finding matrix, allowed paths, validation plan, stop conditions, and
-  campaign state.
-- Tightened protocol-range validation so v1 rejects future-major maximums such
-  as `2.x` and `2.0.0` unless a future reviewed contract explicitly supports
-  them.
-- Added component-level future-major compatibility rejection through optional
-  `max_reader_version`, `max_writer_version`, and `protocol_range` checks.
-- Added target-root classification for the accepted `files/` package prefix so
-  `files/.aide.local/**`, `files/.env`, generated `.aide/context/latest-*`,
-  generated `.aide/reports/**`, generated latest state, logs, caches, secrets,
-  and raw prompt/response members are rejected against their installed view.
-- Preserved exact allowed packaged report-reference files already present in
-  the current Q47 preview pack while keeping generated report trees forbidden.
-- Added structured directory inventory reporting so forbidden members are
-  retained in contamination evidence instead of disappearing from the clean
-  digest input.
-- Added direct invalid fixtures for future-major protocol cases:
-  `protocol-range-max-2x`, `protocol-range-max-2-0-0`,
-  `protocol-range-min-2-0-0`, and `component-protocol-future-major`.
-- Added focused tests for protocol semantics, `files/` target-root
-  classification, nested directory contamination, and future-major fixture
-  validation.
-- Generated Repair 02 reports for protocol range, contamination
-  classification, directory contamination, fixture coverage, finding
-  disposition, status, and next-task routing.
+- Added the Repair 02 queue task, status, ExecPlan, prompt, task-local turn context, finding matrix, allowed paths, validation plan, stop conditions, and campaign state.
+- Tightened protocol-range validation so v1 rejects future-major maximums such as `2.x` and `2.0.0` unless a future reviewed contract explicitly supports them.
+- Added component-level future-major compatibility rejection through optional `max_reader_version`, `max_writer_version`, and `protocol_range` checks.
+- Added target-root classification for the accepted `files/` package prefix so `files/.aide.local/**`, `files/.env`, generated `.aide/context/latest-*`, generated `.aide/reports/**`, generated latest state, logs, caches, secrets, and raw prompt/response members are rejected against their installed view.
+- Preserved exact allowed packaged report-reference files already present in the current Q47 preview pack while keeping generated report trees forbidden.
+- Added structured directory inventory reporting so forbidden members are retained in contamination evidence instead of disappearing from the clean digest input.
+- Added direct invalid fixtures for future-major protocol cases: `protocol-range-max-2x`, `protocol-range-max-2-0-0`, `protocol-range-min-2-0-0`, and `component-protocol-future-major`.
+- Added focused tests for protocol semantics, `files/` target-root classification, nested directory contamination, and future-major fixture validation.
+- Generated Repair 02 reports for protocol range, contamination classification, directory contamination, fixture coverage, finding disposition, status, and next-task routing.
 
 ### Verification
 
-Initial compile and focused DistributionManifest tests passed after a narrow
-allowlist was added for the current Q47 preview pack's exact packaged report
-reference records. Full validation is recorded with the task evidence and final
-task report.
+Initial compile and focused DistributionManifest tests passed after a narrow allowlist was added for the current Q47 preview pack's exact packaged report reference records. Full validation is recorded with the task evidence and final task report.
 
 ### Remaining Issues
 
-DistributionManifest v1 remains proposed until independent Repair 02 check and
-acceptance. ProjectLock v0, OwnershipLedger v1, install/update apply, release
-publication, target mutation, Workbench/MCP runtime, provider/model calls,
-worker execution, preview/apply/rollback, and promotion were not started.
+DistributionManifest v1 remains proposed until independent Repair 02 check and acceptance. ProjectLock v0, OwnershipLedger v1, install/update apply, release publication, target mutation, Workbench/MCP runtime, provider/model calls, worker execution, preview/apply/rollback, and promotion were not started.
 
 ## Work Item: AIDE-CHECK-DISTRIBUTION-MANIFEST-V1-REPAIR-02
 
@@ -10958,34 +8594,20 @@ Completed the independent check-only review for Repair 02.
 
 ### Implementation Notes
 
-- Added the check task packet and reports without modifying implementation,
-  schema, fixture, helper, or test code.
-- Used a check-local protocol range expectation to verify current v1 ranges,
-  exact `1.0.0`, lower `0.9.0`, future-major maxima, malformed ranges,
-  inverted ranges, min above current, component future-major constraints, and
-  unknown required future-major features.
-- Independently checked `files/` target-root contamination classification,
-  allowed controls, and unknown-prefix behavior.
-- Built a temporary directory contamination fixture and verified forbidden
-  members remain recorded with source member, target member, packaging prefix,
-  reason, and refusal code.
-- Verified the four future-major invalid fixtures exist, are mentioned by
-  tests, load from disk, and fail with `distribution.unsupported_protocol_range`.
-- Rechecked Repair 01 regression surfaces, Q47/Q48 boundaries, and explicit
-  non-capabilities.
+- Added the check task packet and reports without modifying implementation, schema, fixture, helper, or test code.
+- Used a check-local protocol range expectation to verify current v1 ranges, exact `1.0.0`, lower `0.9.0`, future-major maxima, malformed ranges, inverted ranges, min above current, component future-major constraints, and unknown required future-major features.
+- Independently checked `files/` target-root contamination classification, allowed controls, and unknown-prefix behavior.
+- Built a temporary directory contamination fixture and verified forbidden members remain recorded with source member, target member, packaging prefix, reason, and refusal code.
+- Verified the four future-major invalid fixtures exist, are mentioned by tests, load from disk, and fail with `distribution.unsupported_protocol_range`.
+- Rechecked Repair 01 regression surfaces, Q47/Q48 boundaries, and explicit non-capabilities.
 
 ### Verification
 
-Validation receipts record passing focused DistributionManifest tests,
-DistributionManifest validate, Q43-Q48 no-apply/no-publish validators, task
-inspect/evidence, broad `aide_lite.py validate`, JSON parsing, path and secret
-scans, diff checks, and commit-policy check.
+Validation receipts record passing focused DistributionManifest tests, DistributionManifest validate, Q43-Q48 no-apply/no-publish validators, task inspect/evidence, broad `aide_lite.py validate`, JSON parsing, path and secret scans, diff checks, and commit-policy check.
 
 ### Remaining Issues
 
-DistributionManifest v1 is still not accepted in this check task. The next
-serialized task is `AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01`; ProjectLock v0
-remains blocked until acceptance is complete.
+DistributionManifest v1 is still not accepted in this check task. The next serialized task is `AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01`; ProjectLock v0 remains blocked until acceptance is complete.
 
 ## Work Item: AIDE-ACCEPT-DISTRIBUTION-MANIFEST-V1-01
 
@@ -10996,28 +8618,17 @@ Accepted exactly `distribution_manifest_v1` with warnings.
 ### Implementation Notes
 
 - Added the acceptance-only queue task and acceptance reports.
-- Accepted DistributionManifest v1 only as stable, deterministic, portable
-  distribution identity and metadata for one local AIDE distribution.
-- Recorded the accepted boundary for components, artifacts, digests, protocol
-  ranges, compatibility boundaries, provenance references, placeholder SBOM and
-  signature boundaries, source-contamination handling, and explicit
-  non-capabilities.
-- Preserved non-capabilities for ProjectLock, OwnershipLedger, InstallRecord,
-  migration/update/rollback objects, install/update apply, target mutation,
-  public release readiness, release publication, signatures, SBOM generation,
-  network, provider/model calls, worker execution, and Workbench/MCP runtime.
+- Accepted DistributionManifest v1 only as stable, deterministic, portable distribution identity and metadata for one local AIDE distribution.
+- Recorded the accepted boundary for components, artifacts, digests, protocol ranges, compatibility boundaries, provenance references, placeholder SBOM and signature boundaries, source-contamination handling, and explicit non-capabilities.
+- Preserved non-capabilities for ProjectLock, OwnershipLedger, InstallRecord, migration/update/rollback objects, install/update apply, target mutation, public release readiness, release publication, signatures, SBOM generation, network, provider/model calls, worker execution, and Workbench/MCP runtime.
 
 ### Verification
 
-Validation receipts record DistributionManifest validation, Q43-Q48 no-apply
-and no-publish validators, task inspect/evidence, broad `aide_lite.py validate`,
-JSON parsing, path and secret scans, diff checks, and commit-policy check.
+Validation receipts record DistributionManifest validation, Q43-Q48 no-apply and no-publish validators, task inspect/evidence, broad `aide_lite.py validate`, JSON parsing, path and secret scans, diff checks, and commit-policy check.
 
 ### Remaining Issues
 
-ProjectLock v0 was not started in this acceptance task. The next serialized
-task is `AIDE-BUILD-PROJECT-LOCK-V0-01`.
-source-change preview/apply/rollback, and promotion remain blocked.
+ProjectLock v0 was not started in this acceptance task. The next serialized task is `AIDE-BUILD-PROJECT-LOCK-V0-01`. source-change preview/apply/rollback, and promotion remain blocked.
 
 ## Work Item: AIDE-BUILD-PROJECT-LOCK-V0-01
 
@@ -11028,32 +8639,17 @@ Built the proposed `project_lock_v0` protocol slice.
 ### Implementation Notes
 
 - Added a Draft 2020-12 ProjectLock schema with explicit extension maps.
-- Added `core/protocol/project_lock.py` for deterministic lock projection,
-  digesting, fixture generation, validation, reports, and non-capability
-  boundaries.
-- Added `project-lock status`, `project-lock project`, and `project-lock
-  validate` AIDE Lite commands.
-- Added focused ProjectLock tests and a valid/invalid fixture corpus covering
-  digest binding, accepted DistributionManifest binding, component selection,
-  optional component explicitness, dependency closure, channel versus digest
-  authority, overlay/path/secret/source-state refusals, unknown required
-  features, and extension round-trip.
+- Added `core/protocol/project_lock.py` for deterministic lock projection, digesting, fixture generation, validation, reports, and non-capability boundaries.
+- Added `project-lock status`, `project-lock project`, and `project-lock validate` AIDE Lite commands.
+- Added focused ProjectLock tests and a valid/invalid fixture corpus covering digest binding, accepted DistributionManifest binding, component selection, optional component explicitness, dependency closure, channel versus digest authority, overlay/path/secret/source-state refusals, unknown required features, and extension round-trip.
 
 ### Verification
 
-Validation receipts record focused ProjectLock tests, ProjectLock
-status/project/validate, DistributionManifest regression validation, Q43-Q48
-no-apply/no-publish validators, task inspect/evidence, broad
-`aide_lite.py validate`, JSON parsing, path and secret scans, diff checks, and
-commit-policy check.
+Validation receipts record focused ProjectLock tests, ProjectLock status/project/validate, DistributionManifest regression validation, Q43-Q48 no-apply/no-publish validators, task inspect/evidence, broad `aide_lite.py validate`, JSON parsing, path and secret scans, diff checks, and commit-policy check.
 
 ### Remaining Issues
 
-ProjectLock v0 remains proposed until independent check and acceptance. It does
-not implement install truth, install/update apply, admission, authorization,
-target mutation, release publication, network/provider calls, runtime, or
-OwnershipLedger v1. The next serialized task is
-`AIDE-CHECK-PROJECT-LOCK-V0-01`.
+ProjectLock v0 remains proposed until independent check and acceptance. It does not implement install truth, install/update apply, admission, authorization, target mutation, release publication, network/provider calls, runtime, or OwnershipLedger v1. The next serialized task is `AIDE-CHECK-PROJECT-LOCK-V0-01`.
 
 ## Work Item: AIDE-CHECK-PROJECT-LOCK-V0-01
 
@@ -11065,26 +8661,17 @@ Independently checked the proposed `project_lock_v0` build.
 
 - Added the check-only queue task and ProjectLock check reports.
 - Recomputed ProjectLock identity with a check-local canonicalizer.
-- Verified mutable status, queue routing, and selected channel are outside
-  ProjectLock identity while semantic lock fields remain identity-bound.
-- Verified the selected accepted DistributionManifest digest, manifest payload
-  digest, selected component digest, selected artifact refs, and dependency
-  closure.
-- Reviewed the valid/invalid fixture corpus and explicit non-capability
-  boundary.
+- Verified mutable status, queue routing, and selected channel are outside ProjectLock identity while semantic lock fields remain identity-bound.
+- Verified the selected accepted DistributionManifest digest, manifest payload digest, selected component digest, selected artifact refs, and dependency closure.
+- Reviewed the valid/invalid fixture corpus and explicit non-capability boundary.
 
 ### Verification
 
-Validation includes source task inspect/evidence, the check-local digest and
-fixture probe, focused ProjectLock tests, broad `aide_lite.py validate`, task
-inspect/evidence for the check task, diff checks, and commit-policy check.
+Validation includes source task inspect/evidence, the check-local digest and fixture probe, focused ProjectLock tests, broad `aide_lite.py validate`, task inspect/evidence for the check task, diff checks, and commit-policy check.
 
 ### Remaining Issues
 
-ProjectLock v0 remains unaccepted until `AIDE-ACCEPT-PROJECT-LOCK-V0-01`.
-The check does not implement or accept install truth, install/update apply,
-admission, authorization, target mutation, release publication, runtime, or
-OwnershipLedger v1.
+ProjectLock v0 remains unaccepted until `AIDE-ACCEPT-PROJECT-LOCK-V0-01`. The check does not implement or accept install truth, install/update apply, admission, authorization, target mutation, release publication, runtime, or OwnershipLedger v1.
 
 ## Work Item: AIDE-ACCEPT-PROJECT-LOCK-V0-01
 
@@ -11095,26 +8682,17 @@ Accepted exactly `project_lock_v0` with warnings.
 ### Implementation Notes
 
 - Added the acceptance-only queue task and acceptance reports.
-- Accepted ProjectLock v0 only as a target-owned distribution selection and
-  binding object.
-- Recorded the accepted boundary for accepted DistributionManifest digest,
-  manifest payload digest, selected component digest, selected artifact refs,
-  dependency closure, informational channel, optional extension preservation,
-  and required feature/extension refusal.
-- Preserved non-capabilities for install truth, install/update/apply, admission,
-  authorization, target mutation, release publication, runtime, OwnershipLedger,
-  InstallRecord, and downstream distribution behavior.
+- Accepted ProjectLock v0 only as a target-owned distribution selection and binding object.
+- Recorded the accepted boundary for accepted DistributionManifest digest, manifest payload digest, selected component digest, selected artifact refs, dependency closure, informational channel, optional extension preservation, and required feature/extension refusal.
+- Preserved non-capabilities for install truth, install/update/apply, admission, authorization, target mutation, release publication, runtime, OwnershipLedger, InstallRecord, and downstream distribution behavior.
 
 ### Verification
 
-Validation includes source build/check task inspection, ProjectLock validation,
-task inspect/evidence, broad `aide_lite.py validate`, diff checks, and
-commit-policy check.
+Validation includes source build/check task inspection, ProjectLock validation, task inspect/evidence, broad `aide_lite.py validate`, diff checks, and commit-policy check.
 
 ### Remaining Issues
 
-OwnershipLedger v1 has not been started in this acceptance task. The next
-serialized task is `AIDE-BUILD-OWNERSHIP-LEDGER-V1-01`.
+OwnershipLedger v1 has not been started in this acceptance task. The next serialized task is `AIDE-BUILD-OWNERSHIP-LEDGER-V1-01`.
 
 ## Work Item: AIDE-BUILD-OWNERSHIP-LEDGER-V1-01
 
@@ -11125,220 +8703,128 @@ Built the proposed `ownership_ledger_v1` protocol slice.
 ### Implementation Notes
 
 - Added a Draft 2020-12 OwnershipLedger schema with explicit extension maps.
-- Added `core/protocol/ownership_ledger.py` for deterministic ledger projection,
-  digesting, taxonomy validation, fixture generation, validation, reports, and
-  non-capability boundaries.
-- Added `ownership-ledger status`, `ownership-ledger project`, and
-  `ownership-ledger validate` AIDE Lite commands.
-- Added focused tests and a valid/invalid fixture corpus covering ProjectLock
-  binding, taxonomy completeness, duplicate records, unknown classes, vendor
-  digest requirements, managed-section identity, unknown/never-touch no-apply
-  policy, unsafe paths, source latest contamination, unknown required features,
-  and required extension rejection.
+- Added `core/protocol/ownership_ledger.py` for deterministic ledger projection, digesting, taxonomy validation, fixture generation, validation, reports, and non-capability boundaries.
+- Added `ownership-ledger status`, `ownership-ledger project`, and `ownership-ledger validate` AIDE Lite commands.
+- Added focused tests and a valid/invalid fixture corpus covering ProjectLock binding, taxonomy completeness, duplicate records, unknown classes, vendor digest requirements, managed-section identity, unknown/never-touch no-apply policy, unsafe paths, source latest contamination, unknown required features, and required extension rejection.
 
 ### Verification
 
-Initial validation passed focused OwnershipLedger tests, py_compile, and
-`ownership-ledger validate`. Final validation receipts are recorded in task
-evidence.
+Initial validation passed focused OwnershipLedger tests, py_compile, and `ownership-ledger validate`. Final validation receipts are recorded in task evidence.
 
 ### Remaining Issues
 
-OwnershipLedger v1 remains proposed until independent check and acceptance. It
-does not implement install truth, install/update apply, admission,
-authorization, target mutation, release publication, runtime, InstallRecord, or
-UpdatePlan.
+OwnershipLedger v1 remains proposed until independent check and acceptance. It does not implement install truth, install/update apply, admission, authorization, target mutation, release publication, runtime, InstallRecord, or UpdatePlan.
 
 ## Work Item: AIDE-CHECK-OWNERSHIP-LEDGER-V1-01
 
 ### Summary
 
-Independently checked the proposed `ownership_ledger_v1` build and returned
-`REQUEST_CHANGES`.
+Independently checked the proposed `ownership_ledger_v1` build and returned `REQUEST_CHANGES`.
 
 ### Implementation Notes
 
 - Added the check-only queue task and OwnershipLedger check reports.
-- Recomputed the OwnershipLedger digest independently and confirmed the current
-  compact source projection is deterministic.
-- Verified the eleven ownership classes are present and no apply behavior is
-  implemented.
-- Found five material gaps against the requested downstream oracle:
-  incomplete file-entry fields, incomplete managed-section fields, missing Q43
-  migration, incomplete conflict detection, and incomplete fixture coverage.
-- Stopped the serialized wave before acceptance, InstallRecord, MigrationRecord,
-  UpdatePlan, and RollbackBundle.
+- Recomputed the OwnershipLedger digest independently and confirmed the current compact source projection is deterministic.
+- Verified the eleven ownership classes are present and no apply behavior is implemented.
+- Found five material gaps against the requested downstream oracle: incomplete file-entry fields, incomplete managed-section fields, missing Q43 migration, incomplete conflict detection, and incomplete fixture coverage.
+- Stopped the serialized wave before acceptance, InstallRecord, MigrationRecord, UpdatePlan, and RollbackBundle.
 
 ### Verification
 
-Validation included source task inspect/evidence, OwnershipLedger
-status/project/validate, the failing `migrate-q43` CLI probe, check-local field
-and collision probes, py_compile, focused OwnershipLedger tests, predecessor
-DistributionManifest and ProjectLock validation, Q43-Q48 no-apply/no-publish
-validators, and broad `aide_lite.py validate`.
+Validation included source task inspect/evidence, OwnershipLedger status/project/validate, the failing `migrate-q43` CLI probe, check-local field and collision probes, py_compile, focused OwnershipLedger tests, predecessor DistributionManifest and ProjectLock validation, Q43-Q48 no-apply/no-publish validators, and broad `aide_lite.py validate`.
 
 ### Remaining Issues
 
-The next serialized task is
-`AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01`. No production implementation was
-repaired in this check task.
+The next serialized task is `AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01`. No production implementation was repaired in this check task.
 
 ## Work Item: AIDE-BUILD-OWNERSHIP-LEDGER-V1-REPAIR-01
 
 ### Summary
 
-Completed the bounded repair for the five OwnershipLedger v1 material findings
-and stopped at the independent repair-check gate.
+Completed the bounded repair for the five OwnershipLedger v1 material findings and stopped at the independent repair-check gate.
 
 ### Implementation Notes
 
-- Added task-local turn context, finding matrix, allowed paths, validation plan,
-  stop conditions, and campaign state before production edits.
-- Expanded OwnershipLedger records with file-entry fields for owner, source,
-  digest, observed target digest, portability role, preservation policy,
-  operation constraints, platform/case notes, deterministic observation times,
-  and supersession refs.
-- Expanded managed-section records with containing file, section identity,
-  marker format, marker/content digests, preimage requirements, update
-  constraints, and manual-outside-only preservation policy.
-- Added semantic validation for missing owners, vendor source refs, observed
-  digest mismatch, distribution mutability, missing evidence, unresolved
-  symlink/reparse entries, duplicate target paths, case-fold collisions,
-  file-section conflicts, overlapping sections, nested ambiguity, and section
-  marker/identity failures.
-- Added deterministic Q43 ownership-class migration projection and
-  `ownership-ledger migrate-q43`.
-- Expanded the fixture corpus with direct valid class fixtures, managed-section
-  preservation fixture, Q43 migration fixtures, and invalid direct cases for the
-  repaired refusal behavior.
+- Added task-local turn context, finding matrix, allowed paths, validation plan, stop conditions, and campaign state before production edits.
+- Expanded OwnershipLedger records with file-entry fields for owner, source, digest, observed target digest, portability role, preservation policy, operation constraints, platform/case notes, deterministic observation times, and supersession refs.
+- Expanded managed-section records with containing file, section identity, marker format, marker/content digests, preimage requirements, update constraints, and manual-outside-only preservation policy.
+- Added semantic validation for missing owners, vendor source refs, observed digest mismatch, distribution mutability, missing evidence, unresolved symlink/reparse entries, duplicate target paths, case-fold collisions, file-section conflicts, overlapping sections, nested ambiguity, and section marker/identity failures.
+- Added deterministic Q43 ownership-class migration projection and `ownership-ledger migrate-q43`.
+- Expanded the fixture corpus with direct valid class fixtures, managed-section preservation fixture, Q43 migration fixtures, and invalid direct cases for the repaired refusal behavior.
 - Generated OwnershipLedger Repair 01 report matrices and next-task routing.
 
 ### Verification
 
-Focused OwnershipLedger tests pass. `ownership-ledger status`, `project`,
-`validate`, and `migrate-q43` pass with warnings; ProjectLock and
-DistributionManifest regression validation pass with warnings; broad
-`aide_lite.py validate` passes.
+Focused OwnershipLedger tests pass. `ownership-ledger status`, `project`, `validate`, and `migrate-q43` pass with warnings; ProjectLock and DistributionManifest regression validation pass with warnings; broad `aide_lite.py validate` passes.
 
 ### Remaining Issues
 
-OwnershipLedger v1 remains proposed until independent Repair 01 check and
-acceptance. InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle,
-distribution apply, canaries, target mutation, release publication, runtime,
-provider/model calls, Workbench/MCP behavior, preview/apply/rollback, and
-promotion were not started.
+OwnershipLedger v1 remains proposed until independent Repair 01 check and acceptance. InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle, distribution apply, canaries, target mutation, release publication, runtime, provider/model calls, Workbench/MCP behavior, preview/apply/rollback, and promotion were not started.
 
 ## Work Item: AIDE-CHECK-OWNERSHIP-LEDGER-V1-REPAIR-01
 
 ### Summary
 
-Completed the independent Repair 01 check for OwnershipLedger v1 and stopped at
-the acceptance gate.
+Completed the independent Repair 01 check for OwnershipLedger v1 and stopped at the acceptance gate.
 
 ### Implementation Notes
 
 - Added the check-only queue task and check report directory.
-- Verified the five source findings exactly match the five Repair 01
-  dispositions.
-- Ran a check-local harness that independently reviews committed reports,
-  recomputes check-local digests, inspects schema alignment, exercises direct
-  repaired SUT probes, and verifies fixture/refusal coverage.
-- Confirmed file-entry contract fields, managed-section contract fields, Q43
-  migration projection, conflict-model refusals, and fixture coverage are
-  closed.
-- Preserved explicit non-capabilities: no implementation repair, no acceptance,
-  no InstallRecord/MigrationRecord/UpdatePlan/RollbackBundle, no apply behavior,
-  no target mutation, no publication, no network/provider/model behavior, no
-  runtime, and no promotion.
+- Verified the five source findings exactly match the five Repair 01 dispositions.
+- Ran a check-local harness that independently reviews committed reports, recomputes check-local digests, inspects schema alignment, exercises direct repaired SUT probes, and verifies fixture/refusal coverage.
+- Confirmed file-entry contract fields, managed-section contract fields, Q43 migration projection, conflict-model refusals, and fixture coverage are closed.
+- Preserved explicit non-capabilities: no implementation repair, no acceptance, no InstallRecord/MigrationRecord/UpdatePlan/RollbackBundle, no apply behavior, no target mutation, no publication, no network/provider/model behavior, no runtime, and no promotion.
 
 ### Verification
 
-The independent harness passed focused OwnershipLedger tests,
-`ownership-ledger status/project/validate/migrate-q43`, ProjectLock and
-DistributionManifest regression validation, and broad `aide_lite.py validate`.
-Final task evidence records outer validation, diff checks, and commit policy.
+The independent harness passed focused OwnershipLedger tests, `ownership-ledger status/project/validate/migrate-q43`, ProjectLock and DistributionManifest regression validation, and broad `aide_lite.py validate`. Final task evidence records outer validation, diff checks, and commit policy.
 
 ### Remaining Issues
 
-OwnershipLedger v1 remains proposed until the acceptance-only task completes.
-The next serialized task is `AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01`.
+OwnershipLedger v1 remains proposed until the acceptance-only task completes. The next serialized task is `AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01`.
 
 ## Work Item: AIDE-ACCEPT-OWNERSHIP-LEDGER-V1-01
 
 ### Summary
 
-Accepted exactly `ownership_ledger_v1` with warnings and stopped before
-downstream distribution objects.
+Accepted exactly `ownership_ledger_v1` with warnings and stopped before downstream distribution objects.
 
 ### Implementation Notes
 
 - Added the acceptance-only queue task and acceptance reports.
-- Accepted OwnershipLedger v1 only as target ownership classification and
-  preservation metadata over accepted DistributionManifest v1 and ProjectLock
-  v0.
-- Recorded the accepted boundary for eleven ownership classes, file-entry
-  contract fields, managed-section contract fields, Q43 projection-only
-  migration behavior, conflict/refusal model, fixture coverage, warnings, and
-  explicit non-capabilities.
-- Added `ownership-ledger-downstream-use.md` so later distribution objects know
-  what they may cite and what they must not infer.
-- Preserved non-capabilities for install/update/repair/rollback/uninstall
-  apply, migration apply, target scan authority, target mutation, project
-  canaries, release readiness, release publication, tags, uploads, GitHub
-  Releases, runtime, worker execution, provider/model/network behavior,
-  Workbench, Commander, preview/apply/rollback, branch/worktree automation, and
-  promotion.
+- Accepted OwnershipLedger v1 only as target ownership classification and preservation metadata over accepted DistributionManifest v1 and ProjectLock v0.
+- Recorded the accepted boundary for eleven ownership classes, file-entry contract fields, managed-section contract fields, Q43 projection-only migration behavior, conflict/refusal model, fixture coverage, warnings, and explicit non-capabilities.
+- Added `ownership-ledger-downstream-use.md` so later distribution objects know what they may cite and what they must not infer.
+- Preserved non-capabilities for install/update/repair/rollback/uninstall apply, migration apply, target scan authority, target mutation, project canaries, release readiness, release publication, tags, uploads, GitHub Releases, runtime, worker execution, provider/model/network behavior, Workbench, Commander, preview/apply/rollback, branch/worktree automation, and promotion.
 
 ### Verification
 
-Validation receipts record JSON parsing, compileall, focused OwnershipLedger
-tests, OwnershipLedger status/project/validate/migrate-q43, DistributionManifest
-and ProjectLock regression validation, Q43-Q48 no-apply/no-publish validators,
-task inspect/evidence for source and acceptance tasks, broad
-`aide_lite.py validate`, path and secret-like scans, diff checks, and
-post-commit commit-policy check as the final gate for the completed commit.
+Validation receipts record JSON parsing, compileall, focused OwnershipLedger tests, OwnershipLedger status/project/validate/migrate-q43, DistributionManifest and ProjectLock regression validation, Q43-Q48 no-apply/no-publish validators, task inspect/evidence for source and acceptance tasks, broad `aide_lite.py validate`, path and secret-like scans, diff checks, and post-commit commit-policy check as the final gate for the completed commit.
 
 ### Remaining Issues
 
-InstallRecord v0 has not been started. The next serialized task is
-`AIDE-BUILD-INSTALL-RECORD-V0-01`.
+InstallRecord v0 has not been started. The next serialized task is `AIDE-BUILD-INSTALL-RECORD-V0-01`.
 
 ## Work Item: AIDE-DISTRIBUTION-SAFETY-WAVE-01
 
 ### Summary
 
-Materialized the Distribution Safety Wave controller and stopped before
-InstallRecord implementation.
+Materialized the Distribution Safety Wave controller and stopped before InstallRecord implementation.
 
 ### Implementation Notes
 
-- Added the wave-control queue task, status, ExecPlan, prompt, and task-local
-  evidence.
-- Added distribution-safety wave reports covering the dependency map, object
-  responsibility map, no-apply/no-publish boundary, validation matrix,
-  repair-routing matrix, stop-condition matrix, canary ordering rationale, wave
-  summary, and next-task prompt.
-- Confirmed live repo truth shows `main` and `origin/main` both at the accepted
-  OwnershipLedger commit, so the wave can start from accepted local and origin
-  truth.
-- Preserved the wave as planning and queue materialization only. InstallRecord,
-  MigrationRecord, UpdatePlan, RollbackBundle, UpdateReceipt,
-  DistributionApplyEngine, self-consumer fixture, ScreenSave/Eureka/Dominium
-  canaries, local canary archive, public readiness, target mutation, release
-  publication, provider/model/network calls, runtime, Workbench, Commander,
-  Omnigent, and branch/worktree automation were not started.
+- Added the wave-control queue task, status, ExecPlan, prompt, and task-local evidence.
+- Added distribution-safety wave reports covering the dependency map, object responsibility map, no-apply/no-publish boundary, validation matrix, repair-routing matrix, stop-condition matrix, canary ordering rationale, wave summary, and next-task prompt.
+- Confirmed live repo truth shows `main` and `origin/main` both at the accepted OwnershipLedger commit, so the wave can start from accepted local and origin truth.
+- Preserved the wave as planning and queue materialization only. InstallRecord, MigrationRecord, UpdatePlan, RollbackBundle, UpdateReceipt, DistributionApplyEngine, self-consumer fixture, ScreenSave/Eureka/Dominium canaries, local canary archive, public readiness, target mutation, release publication, provider/model/network calls, runtime, Workbench, Commander, Omnigent, and branch/worktree automation were not started.
 
 ### Verification
 
-Validation receipts record generated JSON/YAML parsing, task inspect/evidence,
-broad `aide_lite.py validate`, generated-report and evidence scans for local
-paths, secret-like material, and source-output misuse, diff checks, and
-post-commit commit-policy check.
+Validation receipts record generated JSON/YAML parsing, task inspect/evidence, broad `aide_lite.py validate`, generated-report and evidence scans for local paths, secret-like material, and source-output misuse, diff checks, and post-commit commit-policy check.
 
 ### Remaining Issues
 
-The wave controller stops at `needs_review`. The next serialized task is
-`AIDE-BUILD-INSTALL-RECORD-V0-01`.
+The wave controller stops at `needs_review`. The next serialized task is `AIDE-BUILD-INSTALL-RECORD-V0-01`.
 
 ## Work Item: AIDE-BUILD-INSTALL-RECORD-V0-01
 
@@ -11348,33 +8834,19 @@ Built InstallRecord v0 as a no-apply distribution-safety protocol slice.
 
 ### Implementation Notes
 
-- Added the InstallRecord v0 schema, helper, CLI commands, fixture corpus,
-  focused tests, generated reports, queue packet, and task-local evidence.
-- InstallRecord binds the accepted DistributionManifest, ProjectLock, and
-  OwnershipLedger by refs and digests.
-- The record models install mode/source, observed existing state, installed
-  component refs, installed file-entry refs, installed managed-section refs,
-  validation refs, evidence refs, warnings, explicit non-capabilities,
-  deterministic creator/timestamp metadata, and extension maps.
-- Semantic validation fails closed for missing predecessor refs, predecessor
-  mismatches, unknown installed refs, apply authority claims, target mutation
-  claims, unknown required features, absolute paths, traversal paths,
-  source-output misuse, missing evidence, digest mismatch, and unknown required
-  extensions.
+- Added the InstallRecord v0 schema, helper, CLI commands, fixture corpus, focused tests, generated reports, queue packet, and task-local evidence.
+- InstallRecord binds the accepted DistributionManifest, ProjectLock, and OwnershipLedger by refs and digests.
+- The record models install mode/source, observed existing state, installed component refs, installed file-entry refs, installed managed-section refs, validation refs, evidence refs, warnings, explicit non-capabilities, deterministic creator/timestamp metadata, and extension maps.
+- Semantic validation fails closed for missing predecessor refs, predecessor mismatches, unknown installed refs, apply authority claims, target mutation claims, unknown required features, absolute paths, traversal paths, source-output misuse, missing evidence, digest mismatch, and unknown required extensions.
 - Unknown optional features and extensions are preserved and tolerated.
 
 ### Verification
 
-Validation receipts record compileall, focused InstallRecord tests,
-`install-record status`, `install-record project`, `install-record validate`,
-predecessor regression validation, Q43-Q48 no-apply/no-publish validators,
-broad `aide_lite.py validate`, task inspect/evidence, path and secret-like
-scans, source-output misuse scan, diff checks, and commit-policy check.
+Validation receipts record compileall, focused InstallRecord tests, `install-record status`, `install-record project`, `install-record validate`, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad `aide_lite.py validate`, task inspect/evidence, path and secret-like scans, source-output misuse scan, diff checks, and commit-policy check.
 
 ### Remaining Issues
 
-InstallRecord v0 remains proposed until independent check and acceptance. The
-next serialized task is `AIDE-CHECK-INSTALL-RECORD-V0-01`.
+InstallRecord v0 remains proposed until independent check and acceptance. The next serialized task is `AIDE-CHECK-INSTALL-RECORD-V0-01`.
 
 ## Work Item: AIDE-CHECK-INSTALL-RECORD-V0-01
 
@@ -11394,17 +8866,11 @@ Independently checked InstallRecord v0 build output.
 
 ### Verification
 
-Validation receipts record JSON parse, compileall, focused InstallRecord tests,
-`install-record status`, `install-record project`, `install-record validate`,
-predecessor regression validation, Q43-Q48 no-apply/no-publish validators,
-broad `aide_lite.py validate`, build and check task inspect/evidence, path and
-secret-like scans, source-output misuse scan, diff checks, and commit-policy
-check.
+Validation receipts record JSON parse, compileall, focused InstallRecord tests, `install-record status`, `install-record project`, `install-record validate`, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad `aide_lite.py validate`, build and check task inspect/evidence, path and secret-like scans, source-output misuse scan, diff checks, and commit-policy check.
 
 ### Remaining Issues
 
-InstallRecord v0 remains proposed until acceptance. The next serialized task is
-`AIDE-ACCEPT-INSTALL-RECORD-V0-01`.
+InstallRecord v0 remains proposed until acceptance. The next serialized task is `AIDE-ACCEPT-INSTALL-RECORD-V0-01`.
 
 ## Work Item: AIDE-ACCEPT-INSTALL-RECORD-V0-01
 
@@ -11414,30 +8880,18 @@ Accepted InstallRecord v0 as a no-apply install-state record capability.
 
 ### Implementation Notes
 
-- Confirmed the build/check chain completed with `material_finding_count: 0`
-  and `missing_evidence: 0`.
-- Accepted only `install_record_v0` as protocol schema, helper/projection,
-  semantic validation, CLI status/project/validate commands, fixture corpus,
-  focused tests, and source evidence reports.
-- Added acceptance reports and downstream-use guidance under
-  `.aide/reports/install-record-v0-acceptance/**`.
-- Did not modify InstallRecord implementation, DistributionManifest
-  implementation, ProjectLock implementation, OwnershipLedger implementation,
-  release archives, target repos, provider/model/network surfaces,
-  branch/worktree automation, or apply behavior.
+- Confirmed the build/check chain completed with `material_finding_count: 0` and `missing_evidence: 0`.
+- Accepted only `install_record_v0` as protocol schema, helper/projection, semantic validation, CLI status/project/validate commands, fixture corpus, focused tests, and source evidence reports.
+- Added acceptance reports and downstream-use guidance under `.aide/reports/install-record-v0-acceptance/**`.
+- Did not modify InstallRecord implementation, DistributionManifest implementation, ProjectLock implementation, OwnershipLedger implementation, release archives, target repos, provider/model/network surfaces, branch/worktree automation, or apply behavior.
 
 ### Verification
 
-Validation receipts record JSON parse, compileall, focused InstallRecord tests,
-`install-record status`, `install-record project`, `install-record validate`,
-predecessor regression validation, Q43-Q48 no-apply/no-publish validators,
-broad `aide_lite.py validate`, task inspect/evidence, path and secret-like
-scans, source-output misuse scan, diff checks, and commit-policy check.
+Validation receipts record JSON parse, compileall, focused InstallRecord tests, `install-record status`, `install-record project`, `install-record validate`, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad `aide_lite.py validate`, task inspect/evidence, path and secret-like scans, source-output misuse scan, diff checks, and commit-policy check.
 
 ### Remaining Issues
 
-MigrationRecord v0 has not been started. The next serialized task is
-`AIDE-BUILD-MIGRATION-RECORD-V0-01`.
+MigrationRecord v0 has not been started. The next serialized task is `AIDE-BUILD-MIGRATION-RECORD-V0-01`.
 
 ## Work Item: AIDE-BUILD-MIGRATION-RECORD-V0-01
 
@@ -11447,35 +8901,19 @@ Built MigrationRecord v0 as a no-apply distribution-safety protocol slice.
 
 ### Implementation Notes
 
-- Added the MigrationRecord v0 schema, helper, CLI commands, fixture corpus,
-  focused tests, generated reports, queue packet, and task-local evidence.
-- MigrationRecord binds accepted InstallRecord v0 by source object ref, source
-  schema version, input digest, and deterministic output digest.
-- The record models migration kind, migration plan ref, field mapping summary,
-  unknown field disposition, manual review items, risk class, validation refs,
-  rollback requirements, evidence refs, explicit non-capabilities, required and
-  optional features, no-apply status, and extension maps.
-- Semantic validation fails closed for missing source object, missing input
-  digest, output digest mismatch, unknown required features/extensions,
-  destructive migration without rollback requirements, ambiguous migration
-  without manual review, source latest output misuse, source output as target
-  truth, missing evidence, apply authority claims, target mutation claims, and
-  digest mismatch.
+- Added the MigrationRecord v0 schema, helper, CLI commands, fixture corpus, focused tests, generated reports, queue packet, and task-local evidence.
+- MigrationRecord binds accepted InstallRecord v0 by source object ref, source schema version, input digest, and deterministic output digest.
+- The record models migration kind, migration plan ref, field mapping summary, unknown field disposition, manual review items, risk class, validation refs, rollback requirements, evidence refs, explicit non-capabilities, required and optional features, no-apply status, and extension maps.
+- Semantic validation fails closed for missing source object, missing input digest, output digest mismatch, unknown required features/extensions, destructive migration without rollback requirements, ambiguous migration without manual review, source latest output misuse, source output as target truth, missing evidence, apply authority claims, target mutation claims, and digest mismatch.
 - Unknown optional features and extensions are preserved and tolerated.
 
 ### Verification
 
-Validation receipts record compileall, focused MigrationRecord tests,
-`migration-record status`, `migration-record project`, `migration-record
-validate`, predecessor regression validation, Q43-Q48 no-apply/no-publish
-validators, broad `aide_lite.py validate`, task inspect/evidence, path and
-secret-like scans, source-output misuse scan, diff checks, and commit-policy
-check.
+Validation receipts record compileall, focused MigrationRecord tests, `migration-record status`, `migration-record project`, `migration-record validate`, predecessor regression validation, Q43-Q48 no-apply/no-publish validators, broad `aide_lite.py validate`, task inspect/evidence, path and secret-like scans, source-output misuse scan, diff checks, and commit-policy check.
 
 ### Remaining Issues
 
-MigrationRecord v0 remains proposed until independent check and acceptance. The
-next serialized task is `AIDE-CHECK-MIGRATION-RECORD-V0-01`.
+MigrationRecord v0 remains proposed until independent check and acceptance. The next serialized task is `AIDE-CHECK-MIGRATION-RECORD-V0-01`.
 
 ## Work Item: AIDE-CHECK-MIGRATION-RECORD-V0-01
 
@@ -11486,16 +8924,12 @@ Independently checked MigrationRecord v0 and requested changes.
 ### Implementation Notes
 
 - Checked commit `91ab45763130e609d46353fc3e9ca8933a16e532`.
-- Found one material report-safety issue: generated fixture matrix and
-  validation reports contain local absolute fixture paths.
-- Did not repair implementation, accept MigrationRecord v0, begin UpdatePlan,
-  mutate targets, publish releases, call provider/model/network services, or
-  start runtime/canary work.
+- Found one material report-safety issue: generated fixture matrix and validation reports contain local absolute fixture paths.
+- Did not repair implementation, accept MigrationRecord v0, begin UpdatePlan, mutate targets, publish releases, call provider/model/network services, or start runtime/canary work.
 
 ### Verification
 
-Validation confirmed the build commands pass, but the report path leak scan
-fails.
+Validation confirmed the build commands pass, but the report path leak scan fails.
 
 ### Remaining Issues
 
@@ -11516,14 +8950,11 @@ Repaired MigrationRecord v0 report path leakage.
 
 ### Verification
 
-Compileall, focused MigrationRecord tests, `migration-record project`,
-`migration-record validate`, and corrected local absolute path scan passed.
+Compileall, focused MigrationRecord tests, `migration-record project`, `migration-record validate`, and corrected local absolute path scan passed.
 
 ### Remaining Issues
 
-MigrationRecord v0 remains proposed until independent repair check and
-acceptance. The next serialized task is
-`AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01`.
+MigrationRecord v0 remains proposed until independent repair check and acceptance. The next serialized task is `AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01`.
 
 ## Work Item: AIDE-CHECK-MIGRATION-RECORD-V0-REPAIR-01
 
@@ -11535,21 +8966,16 @@ Independently checked the MigrationRecord v0 repair.
 
 - Verified the repair closes `migration_record.fixture_report_absolute_paths`.
 - Confirmed focused tests and `migration-record validate` pass.
-- Confirmed generated MigrationRecord reports no longer contain local absolute
-  fixture paths.
-- Did not modify implementation, accept MigrationRecord v0, begin UpdatePlan,
-  mutate targets, publish releases, call provider/model/network services, or
-  start runtime/canary work.
+- Confirmed generated MigrationRecord reports no longer contain local absolute fixture paths.
+- Did not modify implementation, accept MigrationRecord v0, begin UpdatePlan, mutate targets, publish releases, call provider/model/network services, or start runtime/canary work.
 
 ### Verification
 
-Focused MigrationRecord tests, MigrationRecord validation, path scan,
-task inspect/evidence, and diff checks passed.
+Focused MigrationRecord tests, MigrationRecord validation, path scan, task inspect/evidence, and diff checks passed.
 
 ### Remaining Issues
 
-MigrationRecord v0 remains proposed until acceptance. The next serialized task
-is `AIDE-ACCEPT-MIGRATION-RECORD-V0-01`.
+MigrationRecord v0 remains proposed until acceptance. The next serialized task is `AIDE-ACCEPT-MIGRATION-RECORD-V0-01`.
 
 ## Work Item: AIDE-ACCEPT-MIGRATION-RECORD-V0-01
 
@@ -11559,26 +8985,18 @@ Accepted MigrationRecord v0 as no-apply migration decision metadata.
 
 ### Implementation Notes
 
-- Confirmed the build/check/repair/repair-check chain completed with zero
-  material findings and zero missing evidence.
-- Accepted only schema, helper/projection, semantic validation, CLI commands,
-  fixture corpus, focused tests, source evidence reports, and the path-rendering
-  repair.
+- Confirmed the build/check/repair/repair-check chain completed with zero material findings and zero missing evidence.
+- Accepted only schema, helper/projection, semantic validation, CLI commands, fixture corpus, focused tests, source evidence reports, and the path-rendering repair.
 - Added acceptance reports and downstream-use guidance.
-- Did not modify implementation, begin UpdatePlan, perform migration apply,
-  mutate targets, publish releases, call provider/model/network services, or
-  start runtime/canary work.
+- Did not modify implementation, begin UpdatePlan, perform migration apply, mutate targets, publish releases, call provider/model/network services, or start runtime/canary work.
 
 ### Verification
 
-Validation receipts record focused tests, MigrationRecord validation, path scan,
-Q43-Q48 no-apply/no-publish validators, broad validation, task
-inspect/evidence, diff checks, and commit-policy check.
+Validation receipts record focused tests, MigrationRecord validation, path scan, Q43-Q48 no-apply/no-publish validators, broad validation, task inspect/evidence, diff checks, and commit-policy check.
 
 ### Remaining Issues
 
-UpdatePlan v1 has not been started. The next serialized task is
-`AIDE-BUILD-UPDATE-PLAN-V1-01`.
+UpdatePlan v1 has not been started. The next serialized task is `AIDE-BUILD-UPDATE-PLAN-V1-01`.
 
 ## Work Item: AIDE-BUILD-DISTRIBUTION-APPLY-ENGINE-V0-01
 
@@ -12001,21 +9419,11 @@ Status: local foundation verified for review. The new integration_broker package
 
 ### AIDE-CW-INTEGRATION-BROKER-01 qualified transport continuation
 
-Reviewed local v1 checkpoint f06bcd75aafeab175202a89ea1d69c815b7bd911 binds
-frozen delta/preparation recovery/coordinator v1. Continue exact-generation
-effect validation, external delegated authority and bounded branch/PR/check
-observation transport under the task ExecPlan. Real host/store and atomic
-target merge qualification remain open; AIDE has no current hosted workflows
-or branch rules. No operational activation or settings mutation is claimed.
+Reviewed local v1 checkpoint f06bcd75aafeab175202a89ea1d69c815b7bd911 binds frozen delta/preparation recovery/coordinator v1. Continue exact-generation effect validation, external delegated authority and bounded branch/PR/check observation transport under the task ExecPlan. Real host/store and atomic target merge qualification remain open; AIDE has no current hosted workflows or branch rules. No operational activation or settings mutation is claimed.
 
 ### Broker delegated-core review and evidence custody
 
-Independent root review passed for both source increments, including eight
-prepared-effect/capsule tests and 13 current issuer/PR tests. The historical
-107-test baseline and later PR identity correction have separate source binds.
-The scoped local checkpoint preserves original review and validation bytes in
-qualified-core-evidence.zip with explicit LF projection hashes for Git. No
-provider dispatcher, isolated host or qualified target is installed by this step.
+Independent root review passed for both source increments, including eight prepared-effect/capsule tests and 13 current issuer/PR tests. The historical 107-test baseline and later PR identity correction have separate source binds. The scoped local checkpoint preserves original review and validation bytes in qualified-core-evidence.zip with explicit LF projection hashes for Git. No provider dispatcher, isolated host or qualified target is installed by this step.
 
 ### Staged broker continuation
 
@@ -12023,401 +9431,194 @@ Added typed staged transport routing to Broker.reconcile while preserving legacy
 
 ### Registered provider child boundary
 
-Added an internal pinned JSON bridge and a separate WAL/FULL call ledger under
-AIDE-CW-INTEGRATION-BROKER-01. Exact read-attempt tokens and mutation intents
-precede child dispatch; source/qualification/deadline checks run before creation
-and during bounded execution. Retained response artifacts and named Job recovery
-preserve uncertain effects without replay. The small shared changes expose the
-read token and a separate provider-lock scope while preserving default worker
-locking. All 43 current Windows/staged/lock tests passed in 155.576 seconds; doctor,
-validate and source-only export checks also passed. Exact source-bound evidence
-is recorded in the task. Independent root source review and all 11 replayed
-bridge tests passed with unchanged hashes. No operational provider
-implementation or qualification is installed.
+Added an internal pinned JSON bridge and a separate WAL/FULL call ledger under AIDE-CW-INTEGRATION-BROKER-01. Exact read-attempt tokens and mutation intents precede child dispatch; source/qualification/deadline checks run before creation and during bounded execution. Retained response artifacts and named Job recovery preserve uncertain effects without replay. The small shared changes expose the read token and a separate provider-lock scope while preserving default worker locking. All 43 current Windows/staged/lock tests passed in 155.576 seconds; doctor, validate and source-only export checks also passed. Exact source-bound evidence is recorded in the task. Independent root source review and all 11 replayed bridge tests passed with unchanged hashes. No operational provider implementation or qualification is installed.
 
 ### Bounded raw GitHub observations
 
-Added a fixed-origin finite REST reader, Actions provenance mapper and exact
-PR/Git observation collector under AIDE-CW-INTEGRATION-BROKER-01. Twenty-six
-offline tests pass, including null/duplicate/truncated responses, wrong refs or
-forks, rerun and late-target drift, expired-authority observe-only recovery and
-immutable merged parents. No HTTP client, credential reader or target policy
-is installed; policy pins remain absent. Thirteen disposable local Git graph
-experiments identify the strict-check premises and same-OID retarget counterexample.
-Exact source review and actual host/server acceptance remain separate gates.
+Added a fixed-origin finite REST reader, Actions provenance mapper and exact PR/Git observation collector under AIDE-CW-INTEGRATION-BROKER-01. Twenty-six offline tests pass, including null/duplicate/truncated responses, wrong refs or forks, rerun and late-target drift, expired-authority observe-only recovery and immutable merged parents. No HTTP client, credential reader or target policy is installed; policy pins remain absent. Thirteen disposable local Git graph experiments identify the strict-check premises and same-OID retarget counterexample. Exact source review and actual host/server acceptance remain separate gates.
 
-The independent review identified a normal queued-check publication window.
-That window now yields wait_checks with incomplete provenance, preserving
-automatic polling; completed successful checks still require the actual run
-and attempt job. A durable pending-to-complete regression confirms no mutation
-intent is created while evidence is incomplete.
+The independent review identified a normal queued-check publication window. That window now yields wait_checks with incomplete provenance, preserving automatic polling; completed successful checks still require the actual run and attempt job. A durable pending-to-complete regression confirms no mutation intent is created while evidence is incomplete.
 
 ## AIDE-CW-INTEGRATION-BROKER-01: fixed HTTPS observation mechanism
 
-Added a fixed api.github.com TLS GET reader, finite socket/qualification monitor
-and bounded HTTP/1.1 response framing. A protected observation host/credential
-lease is required and absent by default. Nineteen real loopback TLS tests cover
-certificate/hostname denial, revocation/expiry before and during dispatch,
-redirect/proxy refusal, bounded framing and secret reflection without user
-credentials or machine trust changes. Source is frozen for independent review;
-all 26 prior raw-observation tests pass. Operational host/principal/target
-qualification and the complete broker task remain open. See the broker ExecPlan
-and docs/reference/integration-broker-core.md for the exact mechanism and limits.
+Added a fixed api.github.com TLS GET reader, finite socket/qualification monitor and bounded HTTP/1.1 response framing. A protected observation host/credential lease is required and absent by default. Nineteen real loopback TLS tests cover certificate/hostname denial, revocation/expiry before and during dispatch, redirect/proxy refusal, bounded framing and secret reflection without user credentials or machine trust changes. Source is frozen for independent review; all 26 prior raw-observation tests pass. Operational host/principal/target qualification and the complete broker task remain open. See the broker ExecPlan and docs/reference/integration-broker-core.md for the exact mechanism and limits.
 
 ## AIDE-CW-ISOLATED-HOST-01: bounded native host mechanism
 
-The H1 native mechanism has one passing exact local probe after three retained
-FAIL attempts. Zero-capability AppContainer token/owned Job, scratch write,
-protected read/write/DACL/controller refusals, stable package non-exemption and
-the same-address network diagnostic/control conjunction passed. Raw 10060 still
-means timeout; diagnostic 2 means missing internetClient. Source27, existing
-actual Job10 and ordinary native3 tests pass and were independently replayed.
-The fourth child exited0/exited/quiescent. All four packets retain exact bytes.
-The host WorkUnit remains running/PENDING: private Python/Git/Codex, isolated
-fault/recovery cells, model channel, credential host and activation remain open.
+The H1 native mechanism has one passing exact local probe after three retained FAIL attempts. Zero-capability AppContainer token/owned Job, scratch write, protected read/write/DACL/controller refusals, stable package non-exemption and the same-address network diagnostic/control conjunction passed. Raw 10060 still means timeout; diagnostic 2 means missing internetClient. Source27, existing actual Job10 and ordinary native3 tests pass and were independently replayed. The fourth child exited0/exited/quiescent. All four packets retain exact bytes. The host WorkUnit remains running/PENDING: private Python/Git/Codex, isolated fault/recovery cells, model channel, credential host and activation remain open.
 
-Grants use exact held create-only objects and retained profile intents. The
-initial DOS-volume alias refusal retained no effects; local-volume resolution
-preserves no-reparse traversal. Earlier network pending, timeout-only and
-loopback-NETISO_NONE observations remain FAIL. The pinned-interface run used
-252/256 bounded read-only observations. No network settings changed.
+Grants use exact held create-only objects and retained profile intents. The initial DOS-volume alias refusal retained no effects; local-volume resolution preserves no-reparse traversal. Earlier network pending, timeout-only and loopback-NETISO_NONE observations remain FAIL. The pinned-interface run used 252/256 bounded read-only observations. No network settings changed.
 
 ## H2 source admission
 
-The active H1/H2 task now continues from 454e41aa with a separately bounded
-streaming image API and synthetic denial/recovery tests. The prior native PASS
-remains source-bound historical evidence; no real tool copying, package grants,
-isolated runtime or activation is included. The task ExecPlan owns exact scope.
+The active H1/H2 task now continues from 454e41aa with a separately bounded streaming image API and synthetic denial/recovery tests. The prior native PASS remains source-bound historical evidence; no real tool copying, package grants, isolated runtime or activation is included. The task ExecPlan owns exact scope.
 
-Image source now uses immutable bounded plans, separate streaming and retained
-relative-handle reservations. Independent NT/Win32 and 8.3 overlap findings were
-reproduced and fixed, with both original packets retained. All 63 tests and the
-independent replay pass. Native image grants/loading remain unqualified.
+Image source now uses immutable bounded plans, separate streaming and retained relative-handle reservations. Independent NT/Win32 and 8.3 overlap findings were reproduced and fixed, with both original packets retained. All 63 tests and the independent replay pass. Native image grants/loading remain unqualified.
 
 ## H2 Python recipe source admission
 
-Continue from 06f2546f on the same owned branch under ROOT's accepted proposal
-16b243f4. Implement a bounded AMD64 import/delay/forwarder parser first, then the
-exact named private/system/API-set recipe and deterministic ZIP_STORED/_pth
-builder. Add a truthful generated-byte kind without changing v1 source identity.
-Use the proposed finite parse/closure/member/byte bounds and malformed-input,
-unknown-dependency, alias, mutation and deterministic-custody tests. Keep current
-image/H1/candidate bounds. No real tool copying, package grant, profile, private
-runtime launch or activation is admitted here. Freeze exact source for review.
+Continue from 06f2546f on the same owned branch under ROOT's accepted proposal 16b243f4. Implement a bounded AMD64 import/delay/forwarder parser first, then the exact named private/system/API-set recipe and deterministic ZIP_STORED/_pth builder. Add a truthful generated-byte kind without changing v1 source identity. Use the proposed finite parse/closure/member/byte bounds and malformed-input, unknown-dependency, alias, mutation and deterministic-custody tests. Keep current image/H1/candidate bounds. No real tool copying, package grant, profile, private runtime launch or activation is admitted here. Freeze exact source for review.
 
 ### Focused dependency contract module
 
-Keep the exact named SystemContract and recursive PE dependency validation in
-windows_python_contract.py with test_continuous_worker_python_contract.py.
-This separates dependency admission from the deterministic library-byte builder
-and avoids growing a combined parser/contract/archive module. The two paths are
-within the accepted Python recipe objective and now explicit in allowed_paths;
-no new runtime, native or effect authority is added. The original proposal and
-image-source checkpoint remain unchanged.
+Keep the exact named SystemContract and recursive PE dependency validation in windows_python_contract.py with test_continuous_worker_python_contract.py. This separates dependency admission from the deterministic library-byte builder and avoids growing a combined parser/contract/archive module. The two paths are within the accepted Python recipe objective and now explicit in allowed_paths; no new runtime, native or effect authority is added. The original proposal and image-source checkpoint remain unchanged.
 
 ### Reviewed Python recipe checkpoint
 
-Independent review h2-python-independent-final-review.json passed exact eight
-source files and repeated all 95 tests, 24 v1 differential cases, an independent
-12-member ZIP wire oracle and 1,024 deterministic malformed-PE mutations without
-unexpected exceptions. The source checkpoint remains partial: actual Windows
-optional-delay-table compatibility, native/API mappings and restricted Python
-startup remain open. Preserve the immutable mutation RED and all original review
-bytes in compact custody. Do not stage provider-owned entry records/index or
-raw multi-megabyte logs. No actual tool copy, package grant or loader effect is
-admitted by this checkpoint. The SDK addendum clarifies that timestamp0 means
-unbound even when an optional bound-IAT pointer is nonzero; the next metadata
-slice will target that exact observed layout and retain existing bounds.
+Independent review h2-python-independent-final-review.json passed exact eight source files and repeated all 95 tests, 24 v1 differential cases, an independent 12-member ZIP wire oracle and 1,024 deterministic malformed-PE mutations without unexpected exceptions. The source checkpoint remains partial: actual Windows optional-delay-table compatibility, native/API mappings and restricted Python startup remain open. Preserve the immutable mutation RED and all original review bytes in compact custody. Do not stage provider-owned entry records/index or raw multi-megabyte logs. No actual tool copy, package grant or loader effect is admitted by this checkpoint. The SDK addendum clarifies that timestamp0 means unbound even when an optional bound-IAT pointer is nonzero; the next metadata slice will target that exact observed layout and retain existing bounds.
 
 ## Optional delay metadata continuation
 
-Continue from 830bf30d under evidence/h2-delay-source-plan.md. Only the PE reader
-and direct tests change. Preserve the95-test recipe checkpoint and initial actual
-Windows refusals; this slice supports the observed unbound timestamp0 optional
-table layout under finite lookup/IAT spans, without any loader/image effects.
+Continue from 830bf30d under evidence/h2-delay-source-plan.md. Only the PE reader and direct tests change. Preserve the95-test recipe checkpoint and initial actual Windows refusals; this slice supports the observed unbound timestamp0 optional table layout under finite lookup/IAT spans, without any loader/image effects.
 
-The optional-delay source passed independent exact-source assurance and 101 tests,
-including actual numeric symbol bounds and unchanged Windows byte-stream replay.
-The current checkpoint preserves the original refusals and the unqualified native
-API/loader boundary; all capacity limits and external effect authority remain.
+The optional-delay source passed independent exact-source assurance and 101 tests, including actual numeric symbol bounds and unchanged Windows byte-stream replay. The current checkpoint preserves the original refusals and the unqualified native API/loader boundary; all capacity limits and external effect authority remain.
 
 ## H2 system observation source admission
 
-Continue from 236da6c2 under evidence/h2-system-observation-source-plan.md. Build
-the bounded native object/resource-mapping observation seam and direct injected
-refusal/ownership tests. Keep existing private source and recipe caps; preserve
-the full 180-name API inventory and pending actual contextual/native/loader proof.
-No actual DLL mapping, tool copy, grant, profile or isolated Python effect is
-admitted in this source slice. Freeze exact source for independent review.
+Continue from 236da6c2 under evidence/h2-system-observation-source-plan.md. Build the bounded native object/resource-mapping observation seam and direct injected refusal/ownership tests. Keep existing private source and recipe caps; preserve the full 180-name API inventory and pending actual contextual/native/loader proof. No actual DLL mapping, tool copy, grant, profile or isolated Python effect is admitted in this source slice. Freeze exact source for independent review.
 
 ## Frozen system observation source
 
-The h2-system-source-manifest.json packet binds two new files and 32 injected
-observer tests. All 133 selected tests pass, including unchanged PE/recipe/image/
-security/owned Job regressions. Reservation and intent acknowledgements bind
-exact canonical request hashes, and known handles are retained for one owned
-release before post-call guard failures can occur. Source remains frozen for
-independent review. Actual native object/API observations, durable controller
-journal authenticity, external process deadlines and loader qualification remain
-open; no selected DLL mapping, copy, grant or isolated Python effect occurred.
+The h2-system-source-manifest.json packet binds two new files and 32 injected observer tests. All 133 selected tests pass, including unchanged PE/recipe/image/ security/owned Job regressions. Reservation and intent acknowledgements bind exact canonical request hashes, and known handles are retained for one owned release before post-call guard failures can occur. Source remains frozen for independent review. Actual native object/API observations, durable controller journal authenticity, external process deadlines and loader qualification remain open; no selected DLL mapping, copy, grant or isolated Python effect occurred.
 
 ## System observation review repairs
 
-Preserve the original 133-test source and the independent/author REDs in
-h2-system-before-review-evidence.zip. Revised source binds clocks before and
-after guards, checks final result freshness and serialization after cleanup,
-refuses arbitrary-precision temporal fields as typed input, and requires the
-mapped native spelling to match the freshly held object observation. All 138
-selected tests pass (37 injected observer plus unchanged 101 regressions). The
-source is frozen for independent re-review; no actual mapping, private image or
-grant effect has run, and native/API/loader qualification remains open.
+Preserve the original 133-test source and the independent/author REDs in h2-system-before-review-evidence.zip. Revised source binds clocks before and after guards, checks final result freshness and serialization after cleanup, refuses arbitrary-precision temporal fields as typed input, and requires the mapped native spelling to match the freshly held object observation. All 138 selected tests pass (37 injected observer plus unchanged 101 regressions). The source is frozen for independent re-review; no actual mapping, private image or grant effect has run, and native/API/loader qualification remains open.
 
 ## Reviewed system observation source checkpoint
 
-Independent review h2-system-independent-final-review.json passes the exact
-source2 and 138-test replay plus 17 additional probes. Those include the retained
-original failures, actual numeric adapter-operation bounds and fully mocked
-native allocation/release failures. Source/dependency/index hashes and the
-original 36-member failure archive match. Preserve those raw bytes in checkpoint
-custody. This is a partial source checkpoint: actual public native input facts,
-API-resource observations, full bounded closure and restricted Python loading
-remain unqualified. No selected DLL mappings, image copies or grants occurred.
+Independent review h2-system-independent-final-review.json passes the exact source2 and 138-test replay plus 17 additional probes. Those include the retained original failures, actual numeric adapter-operation bounds and fully mocked native allocation/release failures. Source/dependency/index hashes and the original 36-member failure archive match. Preserve those raw bytes in checkpoint custody. This is a partial source checkpoint: actual public native input facts, API-resource observations, full bounded closure and restricted Python loading remain unqualified. No selected DLL mappings, image copies or grants occurred.
 
 ## H2 public native input driver preparation
 
-Continue AIDE-CW-ISOLATED-HOST-01 from reviewed observer 0c7788fd. The task-owned
-h2-input-driver-plan.md bounds read-facts driver/controller and injected tests;
-no actual native-input effect occurs before exact source/effect review.
+Continue AIDE-CW-ISOLATED-HOST-01 from reviewed observer 0c7788fd. The task-owned h2-input-driver-plan.md bounds read-facts driver/controller and injected tests; no actual native-input effect occurs before exact source/effect review.
 
 ## Reviewed H2 public native input facts
 
-The task-owned read-facts driver passed 67 injected tests and independent
-73-test review. One exact ordinary Job child then matched all eight historical
-DLL hashes across 8,306,752 bytes, with 167 calls, nine closes and clean exit/
-quiescence. ROOT independently verified original artifacts and source binding.
-The checkpoint remains partial: no contextual API mapping, private loader,
-OS/controller provenance or operational activation is claimed.
+The task-owned read-facts driver passed 67 injected tests and independent 73-test review. One exact ordinary Job child then matched all eight historical DLL hashes across 8,306,752 bytes, with 167 calls, nine closes and clean exit/ quiescence. ROOT independently verified original artifacts and source binding. The checkpoint remains partial: no contextual API mapping, private loader, OS/controller provenance or operational activation is claimed.
 
 ## H2 two-API feasibility source
 
-Continue from local N1 checkpoint 2a44f17e with three task-owned resource probe/
-controller/test files. Reuse reviewed observer and N1 mechanisms; no actual
-DLL mapping, image or grant effect is part of this source implementation.
+Continue from local N1 checkpoint 2a44f17e with three task-owned resource probe/ controller/test files. Reuse reviewed observer and N1 mechanisms; no actual DLL mapping, image or grant effect is part of this source implementation.
 
 ## 2026-09-21 - Control-plane work, effect, and identity contracts
 
-- Added live desired-state contracts for WorkUnits and immutable attempts,
-  capability invocation and effect declarations, and qualified identities and
-  digests.
-- Replaced candidate `UR-*` authority with attributable source aliases and
-  stable live `AIDE-WORK-*`, `AIDE-CAP-*`, and `AIDE-ID-*` requirement IDs.
-- Preserved the filesystem queue, existing schemas, architecture, boot-slice,
-  policy, and review gates; no runtime capability or behavioral qualification
-  is claimed.
-- Updated control-plane and root documentation navigation and recorded the
-  bounded WorkUnit evidence for this adoption increment.
+- Added live desired-state contracts for WorkUnits and immutable attempts, capability invocation and effect declarations, and qualified identities and digests.
+- Replaced candidate `UR-*` authority with attributable source aliases and stable live `AIDE-WORK-*`, `AIDE-CAP-*`, and `AIDE-ID-*` requirement IDs.
+- Preserved the filesystem queue, existing schemas, architecture, boot-slice, policy, and review gates; no runtime capability or behavioral qualification is claimed.
+- Updated control-plane and root documentation navigation and recorded the bounded WorkUnit evidence for this adoption increment.
 
 ## 2026-09-21 - Explicit control-plane draft import
 
-- Imported 34 previously external design chapters into their intended
-  `specs/control-plane/` topic directories.
-- Added `draft-import.md` and `import-manifest.json` for navigation and exact
-  source/destination identity.
+- Imported 34 previously external design chapters into their intended `specs/control-plane/` topic directories.
+- Added `draft-import.md` and `import-manifest.json` for navigation and exact source/destination identity.
 - Preserved all six adopted foundation contracts byte-for-byte.
-- Retained 244 proposed requirement aliases and 244 matching acceptance designs
-  as explicitly unrun review inputs, not live `AIDE-*` requirements.
-- Excluded the import ZIP, baseline capture, verifier tools, patch, private
-  archives, and bulk generated registers from the repository.
+- Retained 244 proposed requirement aliases and 244 matching acceptance designs as explicitly unrun review inputs, not live `AIDE-*` requirements.
+- Excluded the import ZIP, baseline capture, verifier tools, patch, private archives, and bulk generated registers from the repository.
 
 ## 2026-09-21 - Observation-bound broker dispatch
 
-- Passed each mutation's exact stage-selecting observation and canonical digest
-  into the registered child envelope.
-- Revalidated the observation against the durable latest record, stage intent,
-  plan, and pure decision before reservation and while the child runs.
-- Added refusal tests for missing, altered-digest, and changed-actor bindings;
-  no provider-call directory is created in those cases.
-- Verified that submitted acknowledgements remain pending until a later
-  authoritative observation advances or closes the request.
-- The affected suites ran 120 cases: 119 passed and one symlink case was skipped
-  because this Windows process lacks symlink-creation privilege.
-- No live provider, credential, network, protected-host, target, or release
-  effect ran; full broker completion remains false.
+- Passed each mutation's exact stage-selecting observation and canonical digest into the registered child envelope.
+- Revalidated the observation against the durable latest record, stage intent, plan, and pure decision before reservation and while the child runs.
+- Added refusal tests for missing, altered-digest, and changed-actor bindings; no provider-call directory is created in those cases.
+- Verified that submitted acknowledgements remain pending until a later authoritative observation advances or closes the request.
+- The affected suites ran 120 cases: 119 passed and one symlink case was skipped because this Windows process lacks symlink-creation privilege.
+- No live provider, credential, network, protected-host, target, or release effect ran; full broker completion remains false.
 
 ## 2026-09-22 - Delivered pack import closure
 
-- Reproduced and fixed a release archive defect where forbidden-path filtering
-  left stale entries in the embedded checksum register.
-- Added a deterministic permitted-payload projection that regenerates manifest,
-  checksums, and export reporting before ZIP and tar.gz creation.
-- Upgraded release validation from extraction shape checks to exact checksum and
-  manifest/payload closure, plus executable isolated consumer tests.
-- Corrected export and release provenance so generator-created output changes
-  do not falsely describe clean source as dirty.
-- Qualified both exact archives in fresh disposable Git repositories: 814 safe
-  writes, zero conflicts, 16 intentional broad-root skips, and target-local
-  `doctor` PASS for each format.
-- Preserved no-publish boundaries: no tag, upload, GitHub Release, network API,
-  active CI, main mutation, or real target-project mutation occurred.
+- Reproduced and fixed a release archive defect where forbidden-path filtering left stale entries in the embedded checksum register.
+- Added a deterministic permitted-payload projection that regenerates manifest, checksums, and export reporting before ZIP and tar.gz creation.
+- Upgraded release validation from extraction shape checks to exact checksum and manifest/payload closure, plus executable isolated consumer tests.
+- Corrected export and release provenance so generator-created output changes do not falsely describe clean source as dirty.
+- Qualified both exact archives in fresh disposable Git repositories: 814 safe writes, zero conflicts, 16 intentional broad-root skips, and target-local `doctor` PASS for each format.
+- Preserved no-publish boundaries: no tag, upload, GitHub Release, network API, active CI, main mutation, or real target-project mutation occurred.
 
 ## 2026-09-22 - Ownership-aware delivered pack update
 
-- Extended the existing portable importer instead of creating a second
-  lifecycle implementation.
-- Added exact installed baselines for managed files and the portable managed
-  `AGENTS.md` section.
+- Extended the existing portable importer instead of creating a second lifecycle implementation.
+- Added exact installed baselines for managed files and the portable managed `AGENTS.md` section.
 - Added validated predecessor-pack proof for older receipt-less installations.
-- Added conflict-first update preflight, exact preview/apply digests, atomic
-  writes, durable interruption intent, and conservative recovery classes.
-- Proved local edits, unknown ownership, tampered predecessor bytes, stale
-  previews, and partial effects refuse closed in disposable consumers.
+- Added conflict-first update preflight, exact preview/apply digests, atomic writes, durable interruption intent, and conservative recovery classes.
+- Proved local edits, unknown ownership, tampered predecessor bytes, stale previews, and partial effects refuse closed in disposable consumers.
 - Proved extracted ZIP and tar.gz CLIs persist receipts and rerun as no-ops.
-- Retained real target, source self-update, main, tag, upload, publication,
-  repair, rollback, uninstall, and full stable-release gates.
+- Retained real target, source self-update, main, tag, upload, publication, repair, rollback, uninstall, and full stable-release gates.
 
 ## 2026-09-22 - Fixed GitHub expected-head merge source
 
-- Added a pure synchronous merge request builder that revalidates the exact
-  stage observation and always supplies the admitted candidate as `sha` with
-  ordinary `merge` semantics.
-- Added bounded response classification for success and 405/409/422 refusal;
-  success remains `submitted`, never observed integration.
-- Added local adversarial coverage for changed base, head, actor, policy and
-  merge-contract facts. The focused suite passes 31 tests.
-- Added no network sender, credential path, settings/workflow mutation or hosted
-  effect. Base/ref, actor, policy, principal and ruleset atomicity remain open.
+- Added a pure synchronous merge request builder that revalidates the exact stage observation and always supplies the admitted candidate as `sha` with ordinary `merge` semantics.
+- Added bounded response classification for success and 405/409/422 refusal; success remains `submitted`, never observed integration.
+- Added local adversarial coverage for changed base, head, actor, policy and merge-contract facts. The focused suite passes 31 tests.
+- Added no network sender, credential path, settings/workflow mutation or hosted effect. Base/ref, actor, policy, principal and ruleset atomicity remain open.
 
 ## 2026-09-22 - GitHub target-policy review source
 
-- Added a pure desired/current policy comparator and deterministic review-plan
-  builder with no network or apply path.
-- Bound the desired target to ordinary PR merges, one strict app-bound check,
-  immutable request branches, no dev bypass, and owner-only non-dev bypass.
-- Separated destination-enforced controls from local preconditions and
-  unsupported atomicity claims.
-- Refused incomplete visibility, excess permissions, identity/provenance drift,
-  unknown rules, malformed or unbounded observations, and partial operations.
-- Refreshed read-only GitHub state and emitted a blocked zero-operation plan;
-  96 affected tests pass, while hosted effects remain unrun.
+- Added a pure desired/current policy comparator and deterministic review-plan builder with no network or apply path.
+- Bound the desired target to ordinary PR merges, one strict app-bound check, immutable request branches, no dev bypass, and owner-only non-dev bypass.
+- Separated destination-enforced controls from local preconditions and unsupported atomicity claims.
+- Refused incomplete visibility, excess permissions, identity/provenance drift, unknown rules, malformed or unbounded observations, and partial operations.
+- Refreshed read-only GitHub state and emitted a blocked zero-operation plan; 96 affected tests pass, while hosted effects remain unrun.
 
 ## 2026-09-22 - GitHub workflow-source binding repair
 
-- Preserved two independent `REQUEST_CHANGES` rounds, including the finding
-  that required-workflow rules are unavailable for the user-owned target.
-- Removed the target-inapplicable workflow ruleset operation and retained only
-  the narrower server-enforced app-bound required status check.
-- Bound exact workflow path/event/head, workflow run id/attempt, check run id,
-  and check suite id through the admitted plan, raw observation, durable
-  decision, and registered bridge fixtures.
-- Classified exact workflow provenance as local/monitored and its unavailable
-  server enforcement and same-app/name collision exclusion as unsupported.
-- Passed 135 affected tests with one retained Windows symlink privilege skip;
-  no GitHub setting, workflow, credential, ref, merge, tag, or release changed.
+- Preserved two independent `REQUEST_CHANGES` rounds, including the finding that required-workflow rules are unavailable for the user-owned target.
+- Removed the target-inapplicable workflow ruleset operation and retained only the narrower server-enforced app-bound required status check.
+- Bound exact workflow path/event/head, workflow run id/attempt, check run id, and check suite id through the admitted plan, raw observation, durable decision, and registered bridge fixtures.
+- Classified exact workflow provenance as local/monitored and its unavailable server enforcement and same-app/name collision exclusion as unsupported.
+- Passed 135 affected tests with one retained Windows symlink privilege skip; no GitHub setting, workflow, credential, ref, merge, tag, or release changed.
 
 ## 2026-09-22 - Broker runtime dev integration
 
-- Preserved the full published broker line at `75da3310` through a two-parent
-  merge instead of discarding, flattening, or selectively recreating it.
-- Reconciled fourteen coordination and documentation conflicts while retaining
-  the newer delivered-pack import/update and repository-neutrality work on dev.
-- Passed 312 runtime cases with one explicit privilege-dependent skip, 25
-  portable import/update cases, 10 release-bundle cases, and canonical doctor
-  and candidate-tree validation checks.
+- Preserved the full published broker line at `75da3310` through a two-parent merge instead of discarding, flattening, or selectively recreating it.
+- Reconciled fourteen coordination and documentation conflicts while retaining the newer delivered-pack import/update and repository-neutrality work on dev.
+- Passed 312 runtime cases with one explicit privilege-dependent skip, 25 portable import/update cases, 10 release-bundle cases, and canonical doctor and candidate-tree validation checks.
 - Published dev at `bed5a57aed4f7686de4b9137dbb3afc8e7995436`.
-- Post-commit validation then identified stale portable-pack source provenance;
-  the bounded pack-refresh task regenerated the export identity, local bundle,
-  and preview draft from clean landed dev and closed their checksum derivation.
-- Final pack, release, draft, canonical validation, and doctor checks pass. The
-  artifacts remain local no-publish outputs rather than a public release.
-- Kept live providers, credentials, hosted effects, protected-host closeout,
-  main promotion, tagging, and release publication outside this integration.
+- Post-commit validation then identified stale portable-pack source provenance; the bounded pack-refresh task regenerated the export identity, local bundle, and preview draft from clean landed dev and closed their checksum derivation.
+- Final pack, release, draft, canonical validation, and doctor checks pass. The artifacts remain local no-publish outputs rather than a public release.
+- Kept live providers, credentials, hosted effects, protected-host closeout, main promotion, tagging, and release publication outside this integration.
 
 ## 2026-09-22 - Distribution fixture Windows alias repair
 
-- Preserved the exact published portability source through a two-parent merge
-  onto current `dev` and ran it in the complete Windows checkout.
-- Independent review reproduced a high-severity 8.3 short-name alias mutation
-  that the original case/Unicode collision checks did not detect.
-- Required every existing path component to match an exact enumerated
-  directory-entry name before reads or writes.
-- Added an actual `GetShortPathNameW` regression proving both path resolution
-  and operation execution refuse the alias without changing the long-name file.
-- Passed 126 focused and 157 adjacent tests with the same eight explicit
-  symlink/FIFO host limitations; exact repair rereview remains pending.
+- Preserved the exact published portability source through a two-parent merge onto current `dev` and ran it in the complete Windows checkout.
+- Independent review reproduced a high-severity 8.3 short-name alias mutation that the original case/Unicode collision checks did not detect.
+- Required every existing path component to match an exact enumerated directory-entry name before reads or writes.
+- Added an actual `GetShortPathNameW` regression proving both path resolution and operation execution refuse the alias without changing the long-name file.
+- Passed 126 focused and 157 adjacent tests with the same eight explicit symlink/FIFO host limitations; exact repair rereview remains pending.
 
 ## 2026-09-22 - Exact historical commit-message dispositions
 
-- Added range-only exact disposition evaluation without changing the strict
-  commit-message validator used by latest, message-file, and hook checks.
-- Bound accepted records to full commit/tree/parent identities, canonical
-  message and failed-check identities, fixed scope and decision, responsible
-  reviewer/date, content-hashed decision/evidence files, and record digest.
-- Added explicit raw mode and preserved original failures under the distinct
-  `DISPOSITIONED` result rather than claiming historical messages pass.
-- Added adversarial disposable-Git coverage for altered identity, evidence,
-  scope, decision, authority, duplicate, unknown, proposed, and raw cases.
-- Added two exact proposed records for initial blockers, then a third after
-  isolated-host source qualification exposed another historical body failure.
-- Repaired independent-review findings by disabling replacement objects for
-  traversal and message reads, validating every registry entry, requiring an
-  exact structured decision by an allowlisted accountable reviewer, rejecting
-  out-of-window dates, and adding adversarial regression coverage.
-- Fresh exact review of `59b886db` accepted mechanism source with notes;
-  the owner separately accepted A/B/C on 2026-09-25. The date-only guard now
-  recognizes an AEST calendar date already begun globally, with independent
-  delta review and 23 focused tests. Raw 1/13/1 failures remain visible.
-- The old branch's generated outputs were discarded during integration; the
-  current dev generator must produce qualified combined artifacts. No product,
-  native, hosted, main, or publication acceptance follows from dispositions.
+- Added range-only exact disposition evaluation without changing the strict commit-message validator used by latest, message-file, and hook checks.
+- Bound accepted records to full commit/tree/parent identities, canonical message and failed-check identities, fixed scope and decision, responsible reviewer/date, content-hashed decision/evidence files, and record digest.
+- Added explicit raw mode and preserved original failures under the distinct `DISPOSITIONED` result rather than claiming historical messages pass.
+- Added adversarial disposable-Git coverage for altered identity, evidence, scope, decision, authority, duplicate, unknown, proposed, and raw cases.
+- Added two exact proposed records for initial blockers, then a third after isolated-host source qualification exposed another historical body failure.
+- Repaired independent-review findings by disabling replacement objects for traversal and message reads, validating every registry entry, requiring an exact structured decision by an allowlisted accountable reviewer, rejecting out-of-window dates, and adding adversarial regression coverage.
+- Fresh exact review of `59b886db` accepted mechanism source with notes; the owner separately accepted A/B/C on 2026-09-25. The date-only guard now recognizes an AEST calendar date already begun globally, with independent delta review and 23 focused tests. Raw 1/13/1 failures remain visible.
+- The old branch's generated outputs were discarded during integration; the current dev generator must produce qualified combined artifacts. No product, native, hosted, main, or publication acceptance follows from dispositions.
 ## 2026-09-22 - Supported Windows API-set query source
 
 - Preserved the retained failed two-API resource effect without replay.
-- Added a separate consumed-once `GetApiSetModuleBaseName` adapter and query
-  session with exact build, name, clock, guard, journal, HRESULT, and output
-  validation.
-- Raised the explicit API-set contract ceiling from 128 to 256 to contain the
-  observed 180-name Python closure without partitioning or omission.
-- Kept physical-host, protected-authority, restricted-loader, private-image,
-  grant, AppContainer, credential, network, and activation claims false.
+- Added a separate consumed-once `GetApiSetModuleBaseName` adapter and query session with exact build, name, clock, guard, journal, HRESULT, and output validation.
+- Raised the explicit API-set contract ceiling from 128 to 256 to contain the observed 180-name Python closure without partitioning or omission.
+- Kept physical-host, protected-authority, restricted-loader, private-image, grant, AppContainer, credential, network, and activation claims false.
 - Passed 142 affected source/regression tests; no actual native query ran.
 
 ## 2026-09-22 - Receipt-backed delivered pack removal planning
 
-- Added the portable `plan-removal` command with human-readable and stable JSON
-  output, exact receipt validation, observed-state and plan digests, and no
-  apply or deletion path.
-- Classified unchanged recorded files and the portable `AGENTS.md` section as
-  future-only candidates while preserving authored content, local edits,
-  missing state, target-owned paths, and unknown ownership.
-- Strengthened receipt entry validation for safe targets, exact ownership,
-  supported kinds, and SHA-256 digest shape.
+- Added the portable `plan-removal` command with human-readable and stable JSON output, exact receipt validation, observed-state and plan digests, and no apply or deletion path.
+- Classified unchanged recorded files and the portable `AGENTS.md` section as future-only candidates while preserving authored content, local edits, missing state, target-owned paths, and unknown ownership.
+- Strengthened receipt entry validation for safe targets, exact ownership, supported kinds, and SHA-256 digest shape.
 - Passed 28 import/lifecycle tests and 10 release-bundle tests.
-- Rebuilt and exercised the exact ZIP and tar.gz archives offline; both
-  imported successfully, reported 809 candidates, and left target-tree bytes
-  unchanged during planning.
-- Published the qualified task line with no live target, deletion, main, tag,
-  upload, publication, network, provider, or model effect.
-- Retained one exact commit-message conformance failure at `486e81cd` without
-  rewriting history; dev integration awaits its separately scoped disposition.
+- Rebuilt and exercised the exact ZIP and tar.gz archives offline; both imported successfully, reported 809 candidates, and left target-tree bytes unchanged during planning.
+- Published the qualified task line with no live target, deletion, main, tag, upload, publication, network, provider, or model effect.
+- Retained one exact commit-message conformance failure at `486e81cd` without rewriting history; dev integration awaits its separately scoped disposition.
 
 ## 2026-09-25 - Removal planner combined dev candidate
 
-- Accepted the owner's exact historical disposition B while retaining all 13
-  raw formatting failures, then merged old removal history with current dev in
-  source commit `1a25e33e`.
-- Regenerated portable and local release bytes with the current generator;
-  the combined candidate `2819385a` has source-ancestor pack provenance.
-- Passed 32 combined import tests, 18 release tests, 11 draft tests, 11
-  changelog tests, 6 governance tests, canonical checks, 831 pack and 7 release
-  independent checksums, equal 833-file ZIP/tar payloads, and fresh/brownfield
-  extracted ZIP consumer checks. A post-commit replay changed zero of 44
-  tracked release files.
-- Independent exact-candidate review returned ACCEPT_WITH_NOTES for dev source
-  integration. The receipt remains local ownership evidence only; future
-  removal apply requires effect-time revalidation. A normal non-force push
-  advanced remote dev to `ae0e29e98eb436136f1d62d7830a4d8b20251b32`,
-  matching the local primary and task integration branch; GitHub's ref endpoint
-  returned the same object.
+- Accepted the owner's exact historical disposition B while retaining all 13 raw formatting failures, then merged old removal history with current dev in source commit `1a25e33e`.
+- Regenerated portable and local release bytes with the current generator; the combined candidate `2819385a` has source-ancestor pack provenance.
+- Passed 32 combined import tests, 18 release tests, 11 draft tests, 11 changelog tests, 6 governance tests, canonical checks, 831 pack and 7 release independent checksums, equal 833-file ZIP/tar payloads, and fresh/brownfield extracted ZIP consumer checks. A post-commit replay changed zero of 44 tracked release files.
+- Independent exact-candidate review returned ACCEPT_WITH_NOTES for dev source integration. The receipt remains local ownership evidence only; future removal apply requires effect-time revalidation. A normal non-force push advanced remote dev to `ae0e29e98eb436136f1d62d7830a4d8b20251b32`, matching the local primary and task integration branch; GitHub's ref endpoint returned the same object.
 
 ## Delivered-pack owned repair apply candidate (2026-09-25)
 
@@ -12427,1179 +9628,341 @@ Owner review found a final-write race in the first candidate. The repair now pub
 
 ## 2026-09-25 - Owned-file repair race closure candidate
 
-- Superseding source `45c5ce91` serializes effectful first imports and repairs,
-  pins Windows ancestors for missing-file repair publication, and removes the
-  exact repair intent through a verified opened handle. The worker's full
-  importer suite passed 39/39; independent focused rereview accepted this
-  exact source for dev integration.
-- Canonical validation on the source branch still reports old generated-pack
-  provenance. Combined artifact generation, actual consumer qualification,
-  dev integration, and broader importer/lifecycle safety remain pending.
+- Superseding source `45c5ce91` serializes effectful first imports and repairs, pins Windows ancestors for missing-file repair publication, and removes the exact repair intent through a verified opened handle. The worker's full importer suite passed 39/39; independent focused rereview accepted this exact source for dev integration.
+- Canonical validation on the source branch still reports old generated-pack provenance. Combined artifact generation, actual consumer qualification, dev integration, and broader importer/lifecycle safety remain pending.
 
 ## 2026-09-25 - Owned repair combined dev integration
 
-- Merged accepted repair source with current dev removal planning and release
-  machinery in `71501c6b`, retaining both parent histories. The combined
-  importer suite passed 42/42 and release-adjacent suites passed 46/46.
-- Generated and converged local ZIP/tar release bytes from source `71501c6b`.
-  Two extracted offline consumers passed import, owned-file repair, installed
-  doctor, read-only removal planning, and direct-edit preservation. A full
-  postcommit replay changed zero of 44 release files.
-- Independent exact candidate review accepted `e4697aaa` for dev source and
-  local artifact integration with notes. A normal fast-forward push advanced
-  remote dev to `6b4007d06546fe234f96730751d94d7c540a223e`, confirmed by
-  Git and GitHub. Full importer write safety, removal/rollback apply,
-  native/hosted qualification, main, and publication remain open.
-- A subsequent Windows staging check exposed a possible second-writer race
-  in the repair helper's `mkstemp` publication path. This is a new
-  fix-forward safety blocker pending an exact dev regression and review;
-  no main or release effect used these bytes.
+- Merged accepted repair source with current dev removal planning and release machinery in `71501c6b`, retaining both parent histories. The combined importer suite passed 42/42 and release-adjacent suites passed 46/46.
+- Generated and converged local ZIP/tar release bytes from source `71501c6b`. Two extracted offline consumers passed import, owned-file repair, installed doctor, read-only removal planning, and direct-edit preservation. A full postcommit replay changed zero of 44 release files.
+- Independent exact candidate review accepted `e4697aaa` for dev source and local artifact integration with notes. A normal fast-forward push advanced remote dev to `6b4007d06546fe234f96730751d94d7c540a223e`, confirmed by Git and GitHub. Full importer write safety, removal/rollback apply, native/hosted qualification, main, and publication remain open.
+- A subsequent Windows staging check exposed a possible second-writer race in the repair helper's `mkstemp` publication path. This is a new fix-forward safety blocker pending an exact dev regression and review; no main or release effect used these bytes.
 
 ## 2026-09-25 - Exclusive Windows repair staging candidate
 
-- Source `e215698a` replaces the repair helper's writable CRT temporary with
-  an exclusive Windows handle held through no-replace publication. It deletes
-  the owned stage through that handle, including descriptor setup failures.
-  A rival writer failed for both intent and payload staging; the exact source
-  passed 11 focused and 44 full importer tests. Independent security review
-  accepted this source for dev integration with an uncertainty note.
-- The local pack and release drafts were regenerated from clean source
-  `e215698a` and passed bundle, validation, and draft checks. Consumer checks,
-  postcommit replay, and dev integration remain open. A post-link cleanup
-  failure is an uncertain effect and retains recovery obligations; safe import
-  writes and complete lifecycle behavior remain separate work.
-- The tested ZIP/tar subsequently passed independent fresh/brownfield
-  consumers and delivered-script race checks. A full postcommit replay changed
-  zero of 44 release files. Fast-forward integration advanced local and remote
-  dev to `10a16afb` (tree `8a64880c`), observed through Git and GitHub.
-  This closes the staging-race WorkUnit for dev; it does not accept main,
-  publication, or complete lifecycle behavior.
+- Source `e215698a` replaces the repair helper's writable CRT temporary with an exclusive Windows handle held through no-replace publication. It deletes the owned stage through that handle, including descriptor setup failures. A rival writer failed for both intent and payload staging; the exact source passed 11 focused and 44 full importer tests. Independent security review accepted this source for dev integration with an uncertainty note.
+- The local pack and release drafts were regenerated from clean source `e215698a` and passed bundle, validation, and draft checks. Consumer checks, postcommit replay, and dev integration remain open. A post-link cleanup failure is an uncertain effect and retains recovery obligations; safe import writes and complete lifecycle behavior remain separate work.
+- The tested ZIP/tar subsequently passed independent fresh/brownfield consumers and delivered-script race checks. A full postcommit replay changed zero of 44 release files. Fast-forward integration advanced local and remote dev to `10a16afb` (tree `8a64880c`), observed through Git and GitHub. This closes the staging-race WorkUnit for dev; it does not accept main, publication, or complete lifecycle behavior.
 ## 2026-09-25 - Portable importer parent substitution regression
 
-- Added a deterministic disposable Windows junction test at the importer
-  staging boundary. The current importer wrote a managed prompt into an
-  outside sibling directory after the parent was replaced, so the no-outside-
-  write assertion failed as intended. The temporary fixture was cleaned.
-- The test is retained as the repair oracle; no importer source fix, delivered
-  artifact claim, or real target effect is recorded yet.
+- Added a deterministic disposable Windows junction test at the importer staging boundary. The current importer wrote a managed prompt into an outside sibling directory after the parent was replaced, so the no-outside- write assertion failed as intended. The temporary fixture was cleaned.
+- The test is retained as the repair oracle; no importer source fix, delivered artifact claim, or real target effect is recorded yet.
 
 ## 2026-09-25 - Portable importer racing-leaf regression
 
-- Added a disposable import test for a new managed file and an update whose
-  target leaf is edited after preimage validation. Current source overwrote the
-  concurrent project bytes in both cases, so the test failed as intended.
-- Retained the test as the effect-time ownership oracle. No importer source fix
-  or delivered-artifact acceptance is recorded yet.
+- Added a disposable import test for a new managed file and an update whose target leaf is edited after preimage validation. Current source overwrote the concurrent project bytes in both cases, so the test failed as intended.
+- Retained the test as the effect-time ownership oracle. No importer source fix or delivered-artifact acceptance is recorded yet.
 
 ## 2026-09-25 - Portable importer intent parent substitution regression
 
-- A disposable Windows junction substitution before import-intent staging made
-  the current importer write its intent to an outside sibling. The one-test
-  baseline failed as intended and left no real target effect.
-- The repair must anchor metadata as well as managed payload writes. No source
-  repair or delivered-artifact acceptance is recorded by this regression.
+- A disposable Windows junction substitution before import-intent staging made the current importer write its intent to an outside sibling. The one-test baseline failed as intended and left no real target effect.
+- The repair must anchor metadata as well as managed payload writes. No source repair or delivered-artifact acceptance is recorded by this regression.
 ## 2026-09-25 - Partial receipt-owned removal apply checkpoint
 
-- Source checkpoint `cd636c9c` adds exact-plan Windows removal of unchanged
-  receipt-owned regular files through a pinned, same-handle digest/delete path.
-  It keeps a recoverable intent and refuses changed leaves, junctions, hard
-  links, and competing writers. The portable runner, authored content,
-  `AGENTS.md` section, and receipt remain.
-- Six adversarial tests passed with a frozen in-memory copy of the pending
-  shared repair helper; three existing planner tests and one installed-runner
-  check passed. Direct branch apply fails at the absent helper dependency.
-  Complete detach, combined-source/consumer qualification, independent review,
-  and dev integration remain pending. The CLI reports `PARTIAL_REMOVAL`.
+- Source checkpoint `cd636c9c` adds exact-plan Windows removal of unchanged receipt-owned regular files through a pinned, same-handle digest/delete path. It keeps a recoverable intent and refuses changed leaves, junctions, hard links, and competing writers. The portable runner, authored content, `AGENTS.md` section, and receipt remain.
+- Six adversarial tests passed with a frozen in-memory copy of the pending shared repair helper; three existing planner tests and one installed-runner check passed. Direct branch apply fails at the absent helper dependency. Complete detach, combined-source/consumer qualification, independent review, and dev integration remain pending. The CLI reports `PARTIAL_REMOVAL`.
 
 ## 2026-09-25 - Combined removal artifact guidance repair
 
-- Combined source `00966855` and its extracted ZIP/tar consumers passed the
-  bounded Windows removal behavior checks, but independent artifact review
-  rejected both generated install guides. They still described removal as
-  planning only, which would mislead consumers of the delivered pack.
-- Superseded both guide generators in `.aide/scripts/aide_lite.py` and added a
-  focused regression to assert that exported and outer release guidance explain
-  exact-plan Windows apply, authored-content preservation, partial results,
-  interruption recovery, and non-Windows limits. The rejected bytes remain in
-  external scratch evidence. New source, artifact, and consumer validation
-  must precede dev integration.
-- Scoped source review then found two wording ambiguities: the planner's
-  `apply_allowed: false` marker refers to the read-only planning command, and
-  a change after earlier deletions begins yields `RECOVERY_REQUIRED`, not a
-  blanket no-effect refusal. Clarified both generated guides and strengthened
-  the regression before regenerating superseding bytes.
-- Clean source `49318d50` generated a new ZIP/tar pair. The corrected guides,
-  checksum/provenance projection, Q31/Q47 suites, and 27-command extracted
-  consumer canary passed. Independent artifact review accepted those exact
-  local bytes with Windows, authored-section, and effect-injection limits.
-  Post-commit replay and dev integration remain open.
-- Post-commit projection converged without changing the reviewed ZIP/tar, and
-  the four-command replay changed zero of 44 release files. The exact-source
-  importer suite passed 68/68. Independent review accepted `a60b8cb0` for a
-  normal dev fast-forward; local Git, remote Git and GitHub observed that ref.
-  The removal WorkUnit stays open for authored brownfield managed-section
-  detach, which the current apply intentionally preserves.
+- Combined source `00966855` and its extracted ZIP/tar consumers passed the bounded Windows removal behavior checks, but independent artifact review rejected both generated install guides. They still described removal as planning only, which would mislead consumers of the delivered pack.
+- Superseded both guide generators in `.aide/scripts/aide_lite.py` and added a focused regression to assert that exported and outer release guidance explain exact-plan Windows apply, authored-content preservation, partial results, interruption recovery, and non-Windows limits. The rejected bytes remain in external scratch evidence. New source, artifact, and consumer validation must precede dev integration.
+- Scoped source review then found two wording ambiguities: the planner's `apply_allowed: false` marker refers to the read-only planning command, and a change after earlier deletions begins yields `RECOVERY_REQUIRED`, not a blanket no-effect refusal. Clarified both generated guides and strengthened the regression before regenerating superseding bytes.
+- Clean source `49318d50` generated a new ZIP/tar pair. The corrected guides, checksum/provenance projection, Q31/Q47 suites, and 27-command extracted consumer canary passed. Independent artifact review accepted those exact local bytes with Windows, authored-section, and effect-injection limits. Post-commit replay and dev integration remain open.
+- Post-commit projection converged without changing the reviewed ZIP/tar, and the four-command replay changed zero of 44 release files. The exact-source importer suite passed 68/68. Independent review accepted `a60b8cb0` for a normal dev fast-forward; local Git, remote Git and GitHub observed that ref. The removal WorkUnit stays open for authored brownfield managed-section detach, which the current apply intentionally preserves.
 
 ## 2026-09-25 - Exact predecessor delivered-pack rollback candidate
 
-- Added `rollback-pack` preview/apply for a completed safe-mode update whose
-  current receipt binds the exact validated predecessor and whose safe payload
-  target set matches. The path uses the existing import transaction and
-  refuses stale plans, changed target bytes, wrong packs, path-set changes,
-  and unresolved prior intents.
-- Five disposable rollback tests and two existing importer regressions passed
-  in the isolated task worktree. The child WorkUnit records exact logs and
-  hashes. This is a source candidate only: independent review, combined-source
-  qualification, extracted artifacts, and wider rollback coverage remain open.
+- Added `rollback-pack` preview/apply for a completed safe-mode update whose current receipt binds the exact validated predecessor and whose safe payload target set matches. The path uses the existing import transaction and refuses stale plans, changed target bytes, wrong packs, path-set changes, and unresolved prior intents.
+- Five disposable rollback tests and two existing importer regressions passed in the isolated task worktree. The child WorkUnit records exact logs and hashes. This is a source candidate only: independent review, combined-source qualification, extracted artifacts, and wider rollback coverage remain open.
 
 ## 2026-09-25 - Rollback pack reparse-boundary review repair
 
-- Independent review of committed rollback source `23422130` reproduced a
-  checksum-valid `pack/files` junction that the new safe-target enumerator
-  followed into an outside fixture. The exact source received REQUEST_CHANGES;
-  importer effect-time checks limit overwrite risk, but the declared pack
-  containment boundary was not met.
-- Added a failing Windows regression for payload-root and pack-root junctions,
-  then made rollback refuse reparse roots and metadata before checksum reads.
-  Focused tests and a superseding independent review are required before any
-  combined artifact or dev effect.
-- The root/payload junction regression failed against `23422130` and passed
-  after the guard. Six focused rollback tests passed in 177.988s; compilation
-  and diff checks passed. Isolated canonical validation reports only the
-  expected stale generated-pack provenance, which this source-only WorkUnit
-  does not overwrite. Exact source delta rereview remains pending.
+- Independent review of committed rollback source `23422130` reproduced a checksum-valid `pack/files` junction that the new safe-target enumerator followed into an outside fixture. The exact source received REQUEST_CHANGES; importer effect-time checks limit overwrite risk, but the declared pack containment boundary was not met.
+- Added a failing Windows regression for payload-root and pack-root junctions, then made rollback refuse reparse roots and metadata before checksum reads. Focused tests and a superseding independent review are required before any combined artifact or dev effect.
+- The root/payload junction regression failed against `23422130` and passed after the guard. Six focused rollback tests passed in 177.988s; compilation and diff checks passed. Isolated canonical validation reports only the expected stale generated-pack provenance, which this source-only WorkUnit does not overwrite. Exact source delta rereview remains pending.
 
 ## 2026-09-25 - Combined rollback/removal intent gate
 
-- Merged independently accepted rollback source `33824b36` into the combined
-  lifecycle task branch, preserving current-dev removal and release machinery.
-- A real interrupted-removal regression failed against that merge because
-  rollback preview reached the import guard and diagnosed removal recovery as
-  import recovery. An early validated removal-intent guard now refuses both
-  rollback preview and apply before interpreting the import receipt.
-- The exact regression passed after repair; broader combined tests, delivered
-  artifacts, consumer checks, independent review, and dev integration remain
-  open. No target outside disposable tests or remote ref was changed.
+- Merged independently accepted rollback source `33824b36` into the combined lifecycle task branch, preserving current-dev removal and release machinery.
+- A real interrupted-removal regression failed against that merge because rollback preview reached the import guard and diagnosed removal recovery as import recovery. An early validated removal-intent guard now refuses both rollback preview and apply before interpreting the import receipt.
+- The exact regression passed after repair; broader combined tests, delivered artifacts, consumer checks, independent review, and dev integration remain open. No target outside disposable tests or remote ref was changed.
 ## 2026-09-25 - Authored AGENTS managed-section removal source
 
-- Added Windows-only anchored replacement of the exact receipt-owned AIDE
-  block inside authored `AGENTS.md`, preserving every byte outside the block.
-  The removal intent binds an exact preview snapshot, source and result
-  digests; interruption retains classification and receipt evidence.
-- Fixed CRLF observation so a receipt-owned block installed in authored CRLF
-  text remains recognizable. A verified postimage handle denies competing
-  writes through receipt retirement. Changed, duplicate, unknown or racing
-  content fails closed.
-- Twenty-two focused removal tests and canonical `validate` passed. Source
-  review, regenerated artifact consumers and dev integration remain pending.
+- Added Windows-only anchored replacement of the exact receipt-owned AIDE block inside authored `AGENTS.md`, preserving every byte outside the block. The removal intent binds an exact preview snapshot, source and result digests; interruption retains classification and receipt evidence.
+- Fixed CRLF observation so a receipt-owned block installed in authored CRLF text remains recognizable. A verified postimage handle denies competing writes through receipt retirement. Changed, duplicate, unknown or racing content fails closed.
+- Twenty-two focused removal tests and canonical `validate` passed. Source review, regenerated artifact consumers and dev integration remain pending.
 
 ## 2026-09-25 - Combined lifecycle consumer finding and rollback repair
 
-- Combined source `723322cf` merged accepted rollback and authored-section
-  removal histories and passed 9 focused importer cases, 202 Q27-Q48 fixture
-  tests, canonical validation, and a clean-source local ZIP/tar projection.
-  An extracted consumer then found that authored CRLF `AGENTS.md` caused
-  rollback preview to reject a valid receipt. The exact local candidate was
-  rejected, its bytes and report were retained externally, and the incomplete
-  full importer run was stopped without claiming a pass.
-- A new Windows regression failed on the exact defect and passed after rollback
-  accepted only the pack's exact managed block rendered with LF or CRLF. It
-  still refuses changed blocks and forged receipts. The child WorkUnit records
-  hashes. Wider tests, independent delta review, new artifacts and dev
-  integration remain pending.
+- Combined source `723322cf` merged accepted rollback and authored-section removal histories and passed 9 focused importer cases, 202 Q27-Q48 fixture tests, canonical validation, and a clean-source local ZIP/tar projection. An extracted consumer then found that authored CRLF `AGENTS.md` caused rollback preview to reject a valid receipt. The exact local candidate was rejected, its bytes and report were retained externally, and the incomplete full importer run was stopped without claiming a pass.
+- A new Windows regression failed on the exact defect and passed after rollback accepted only the pack's exact managed block rendered with LF or CRLF. It still refuses changed blocks and forged receipts. The child WorkUnit records hashes. Wider tests, independent delta review, new artifacts and dev integration remain pending.
 
 ## 2026-09-25 - Superseding local lifecycle artifact candidate
 
-- Source `9a0843c3` received independent delta ACCEPT. The full importer suite
-  passed 85/85, affected Q31/Q34/Q47/Q48 suites passed 6/11/18/11, and
-  canonical `validate` and `doctor` passed.
-- Current-source local ZIP/tar and release draft generation passed. An
-  independent 49-command extracted consumer canary accepted the exact local
-  bytes with notes after fresh and authored brownfield full detach, exact
-  predecessor rollback, direct-edit refusal, backup recovery, effect-time
-  preservation and interruption recovery. Its synthetic v2 pack is a
-  disposable update fixture, not a published predecessor.
-- The exact source, asset hashes, commands, log digests and limitations are in
-  the combined lifecycle WorkUnit. Artifact projection, postcommit replay,
-  independent dev-effect review and remote integration remain open. No main,
-  tag, publication, native or hosted effect occurred.
+- Source `9a0843c3` received independent delta ACCEPT. The full importer suite passed 85/85, affected Q31/Q34/Q47/Q48 suites passed 6/11/18/11, and canonical `validate` and `doctor` passed.
+- Current-source local ZIP/tar and release draft generation passed. An independent 49-command extracted consumer canary accepted the exact local bytes with notes after fresh and authored brownfield full detach, exact predecessor rollback, direct-edit refusal, backup recovery, effect-time preservation and interruption recovery. Its synthetic v2 pack is a disposable update fixture, not a published predecessor.
+- The exact source, asset hashes, commands, log digests and limitations are in the combined lifecycle WorkUnit. Artifact projection, postcommit replay, independent dev-effect review and remote integration remain open. No main, tag, publication, native or hosted effect occurred.
 
 ## 2026-09-25 - Lifecycle artifact projection convergence
 
-- Artifact projection `db765053` and release metadata convergence `0c048b3b`
-  preserve the exact source `9a0843c3` and fixed ZIP/tar bytes. The first
-  postcommit replay changed only 20 release metadata and draft paths to record
-  clean-ancestor provenance.
-- A second bundle, validate, draft and draft-validate replay from clean HEAD
-  changed zero of 44 tracked release paths. Canonical validation, doctor and
-  pack status passed. The WorkUnit binds exact hashes and external logs.
-- Independent exact dev-effect review and observed remote `dev` are pending.
-  These local preview artifacts are not stable release publication.
+- Artifact projection `db765053` and release metadata convergence `0c048b3b` preserve the exact source `9a0843c3` and fixed ZIP/tar bytes. The first postcommit replay changed only 20 release metadata and draft paths to record clean-ancestor provenance.
+- A second bundle, validate, draft and draft-validate replay from clean HEAD changed zero of 44 tracked release paths. Canonical validation, doctor and pack status passed. The WorkUnit binds exact hashes and external logs.
+- Independent exact dev-effect review and observed remote `dev` are pending. These local preview artifacts are not stable release publication.
 
 ## 2026-09-25 - Combined lifecycle source and artifacts integrated into dev
 
-- Independent exact `7e8816b6` artifact/dev-effect review returned
-  `ACCEPT_WITH_NOTES`. A final clean-candidate replay changed zero of 44
-  release files. The 12-commit range passed structured message checks.
-- After current-base, clean-worktree and authenticated identity checks, the
-  primary checkout fast-forwarded `dev` to `7e8816b6`, tree `94fe10b6`,
-  and pushed it normally. Git and GitHub ref reads observed that exact remote
-  value; `main` remained `aec53b1d`. The WorkUnit records review/report and
-  archive hashes.
-- This closes the bounded lifecycle integration task with warnings about
-  unqualified product profiles and public release. The parent campaign remains
-  active for three-way update, disabled features and final release work.
+- Independent exact `7e8816b6` artifact/dev-effect review returned `ACCEPT_WITH_NOTES`. A final clean-candidate replay changed zero of 44 release files. The 12-commit range passed structured message checks.
+- After current-base, clean-worktree and authenticated identity checks, the primary checkout fast-forwarded `dev` to `7e8816b6`, tree `94fe10b6`, and pushed it normally. Git and GitHub ref reads observed that exact remote value; `main` remained `aec53b1d`. The WorkUnit records review/report and archive hashes.
+- This closes the bounded lifecycle integration task with warnings about unqualified product profiles and public release. The parent campaign remains active for three-way update, disabled features and final release work.
 
 ## 2026-09-25 - Stable Lite release contract source candidate
 
-- In `AIDE-STABLE-RELEASE-CONTRACT-01`, defined a conditional Lite package
-  SemVer rule separate from `aide-lite-pack-v0`, with an enumerated candidate
-  Windows local CLI and support profile. No final version, tag, shipping tier,
-  source, or asset identity was selected; final manifest and consumer gates
-  remain open.
-- Narrowly aligned queue, review and publication policies with the recorded
-  campaign owner delegation. Exact independent technical verdicts, classified
-  notes, machine checks and fresh effect manifests remain mandatory. Q47/Q48
-  preview-only output and no-publish rules remain unchanged.
-- Updated existing product/release/reference documents. This candidate changes
-  policy/contract source only and awaits independent exact review before dev
-  integration; verification and limitations are in the task evidence.
+- In `AIDE-STABLE-RELEASE-CONTRACT-01`, defined a conditional Lite package SemVer rule separate from `aide-lite-pack-v0`, with an enumerated candidate Windows local CLI and support profile. No final version, tag, shipping tier, source, or asset identity was selected; final manifest and consumer gates remain open.
+- Narrowly aligned queue, review and publication policies with the recorded campaign owner delegation. Exact independent technical verdicts, classified notes, machine checks and fresh effect manifests remain mandatory. Q47/Q48 preview-only output and no-publish rules remain unchanged.
+- Updated existing product/release/reference documents. This candidate changes policy/contract source only and awaits independent exact review before dev integration; verification and limitations are in the task evidence.
 
 ## 2026-09-25 - Stable Lite contract review repair
 
-- Exact `aa3bcfec` technical review requested changes because committed
-  pack-status, validate and doctor failed export provenance, the public CLI
-  omitted predecessor/conflict options, and release verdict strictness was
-  ambiguous. The failed exact review is retained as evidence.
-- Merged accepted `dev@a32535a2` at `060de472`, preserving both planning
-  histories and the current update/repair implementation. Superseding source
-  now lists required import pack/target/predecessor/resolution operands and
-  explicitly requires a strict `ACCEPT` for the first stable release.
-- This source-only branch cannot regenerate `.aide/export/**` or
-  `.aide/release/**` under its WorkUnit scope. Those outputs need a separately
-  bounded projection and passing committed-candidate checks before dev effect.
+- Exact `aa3bcfec` technical review requested changes because committed pack-status, validate and doctor failed export provenance, the public CLI omitted predecessor/conflict options, and release verdict strictness was ambiguous. The failed exact review is retained as evidence.
+- Merged accepted `dev@a32535a2` at `060de472`, preserving both planning histories and the current update/repair implementation. Superseding source now lists required import pack/target/predecessor/resolution operands and explicitly requires a strict `ACCEPT` for the first stable release.
+- This source-only branch cannot regenerate `.aide/export/**` or `.aide/release/**` under its WorkUnit scope. Those outputs need a separately bounded projection and passing committed-candidate checks before dev effect.
 
 ## 2026-09-25 - Stable Lite contract projection admission
 
-- Created a separate integration WorkUnit for current export/release preview
-  projection from `4315a813` after `dev@a32535a2`, with exact source-review,
-  artifact, replay, canonical and dev-effect gates.
-- Admission changed queue and planning records only; generation, technical
-  acceptance, dev mutation, main and publication remain unperformed.
+- Created a separate integration WorkUnit for current export/release preview projection from `4315a813` after `dev@a32535a2`, with exact source-review, artifact, replay, canonical and dev-effect gates.
+- Admission changed queue and planning records only; generation, technical acceptance, dev mutation, main and publication remain unperformed.
 
 ## 2026-09-25 - Stable Lite contract preview dev integration
 
-- Independent source rereview accepted exact `d38e5839`. From clean source
-  `8365aa61`, serial export/changelog/bundle/draft generation produced local
-  ZIP `8c4fbef7…` and tar `11c95b9c…`; 25 extracted consumer commands passed
-  with five expected refusals, and Q47/Q48 passed 18/18 and 11/11.
-- Projection `d0bfa404` retained those archive bytes. Its first post-commit
-  release replay changed 18 metadata files and failed zero diff; explicit
-  convergence at `2defcad5` replayed four commands with zero changes.
-  Committed pack-status, validate and doctor passed; ten commit messages in
-  the dev range passed. Independent artifact review accepted the local
-  preview with notes and gave conditional dev-effect GO.
-- After fresh clean worktree, identity, exact hash, ancestry and four-ref
-  checks, local `dev` fast-forward and normal push exited 0. Local, tracking,
-  ls-remote and GitHub API all observed `2defcad5`, tree `14b13c20`.
-  This closeout records exact hashes, commands and remaining release work in
-  the two WorkUnits; it adds no new runtime or archive bytes.
+- Independent source rereview accepted exact `d38e5839`. From clean source `8365aa61`, serial export/changelog/bundle/draft generation produced local ZIP `8c4fbef7…` and tar `11c95b9c…`; 25 extracted consumer commands passed with five expected refusals, and Q47/Q48 passed 18/18 and 11/11.
+- Projection `d0bfa404` retained those archive bytes. Its first post-commit release replay changed 18 metadata files and failed zero diff; explicit convergence at `2defcad5` replayed four commands with zero changes. Committed pack-status, validate and doctor passed; ten commit messages in the dev range passed. Independent artifact review accepted the local preview with notes and gave conditional dev-effect GO.
+- After fresh clean worktree, identity, exact hash, ancestry and four-ref checks, local `dev` fast-forward and normal push exited 0. Local, tracking, ls-remote and GitHub API all observed `2defcad5`, tree `14b13c20`. This closeout records exact hashes, commands and remaining release work in the two WorkUnits; it adds no new runtime or archive bytes.
 
 ## 2026-09-25 - Delivered Windows Lite prequalification admission
 
-- Created a bounded evaluation WorkUnit from `dev@b3a001be` for exact local
-  preview installed lifecycle, restart, context and evidence consumers.
-  Source and generated release outputs remain read-only in this slice.
-- In a new disposable fresh target, extracted-ZIP safe import preview/apply
-  exited 0 with 816 writes, followed by installed `context`, `pack --task`,
-  and `verify` exits 0. `verify` reported 15 warnings and zero errors; the
-  earlier cloned post-tamper target's verify failure is retained as invalid
-  baseline evidence. A separate lifecycle canary continues in scratch.
+- Created a bounded evaluation WorkUnit from `dev@b3a001be` for exact local preview installed lifecycle, restart, context and evidence consumers. Source and generated release outputs remain read-only in this slice.
+- In a new disposable fresh target, extracted-ZIP safe import preview/apply exited 0 with 816 writes, followed by installed `context`, `pack --task`, and `verify` exits 0. `verify` reported 15 warnings and zero errors; the earlier cloned post-tamper target's verify failure is retained as invalid baseline evidence. A separate lifecycle canary continues in scratch.
 ## 2026-09-25 - Project-owned successive update source candidate
 
-- The three-way update WorkUnit reproduced two current defects on its admitted
-  `dev@d4b67c96` base: missing `resolutions` API and implicit recreation of
-  a missing receipt-owned file. Its red log hashes are in the WorkUnit.
-- The task worktree now implements manual exact-plan resolution, v2 receipt
-  overlays, explicit optional-example disable survival, guarded Windows input
-  reads, conservative repair/removal/rollback interactions and explanations.
-  It changes the importer, its tests and user guide only; no new generated
-  export/release bytes or target outside disposable tests were produced.
-- Fourteen focused tests passed on the preceding source hash; two cases
-  affected by the final non-Windows guard passed on final source. The WorkUnit
-  binds commands, file/log hashes and limitations. Independent review, full
-  suite, artifact/consumer gates and dev integration remain pending.
+- The three-way update WorkUnit reproduced two current defects on its admitted `dev@d4b67c96` base: missing `resolutions` API and implicit recreation of a missing receipt-owned file. Its red log hashes are in the WorkUnit.
+- The task worktree now implements manual exact-plan resolution, v2 receipt overlays, explicit optional-example disable survival, guarded Windows input reads, conservative repair/removal/rollback interactions and explanations. It changes the importer, its tests and user guide only; no new generated export/release bytes or target outside disposable tests were produced.
+- Fourteen focused tests passed on the preceding source hash; two cases affected by the final non-Windows guard passed on final source. The WorkUnit binds commands, file/log hashes and limitations. Independent review, full suite, artifact/consumer gates and dev integration remain pending.
 
 ## 2026-09-25 - Correct receipt-owned CRLF updates after independent review
 
-- The independent review of `acbcb9c8` returned `REQUEST_CHANGES`: an authored
-  CRLF `AGENTS.md` block with a valid managed receipt falsely conflicted when
-  upstream changed. The frozen report and disposable reproduction are bound
-  in the three-way update WorkUnit; the interrupted broad test had no result.
-- A new exact regression failed for both v1 and v2 receipts before the repair.
-  The source now uses observed installed-block identity and validated ownership
-  rather than requiring installed and source digests to match. An unrelated
-  update retains non-overlay ownership; a direct edit records an overlay and
-  a later upstream change conflicts without writes. The extended regression
-  passed; full importer, independent delta review, generated artifacts and
-  dev integration remain pending.
+- The independent review of `acbcb9c8` returned `REQUEST_CHANGES`: an authored CRLF `AGENTS.md` block with a valid managed receipt falsely conflicted when upstream changed. The frozen report and disposable reproduction are bound in the three-way update WorkUnit; the interrupted broad test had no result.
+- A new exact regression failed for both v1 and v2 receipts before the repair. The source now uses observed installed-block identity and validated ownership rather than requiring installed and source digests to match. An unrelated update retains non-overlay ownership; a direct edit records an overlay and a later upstream change conflicts without writes. The extended regression passed; full importer, independent delta review, generated artifacts and dev integration remain pending.
 
 ## 2026-09-25 - Bind automatic updates to the exact predecessor pack
 
-- Review of the first CRLF repair found that a re-digested receipt could
-  relabel a direct managed-section edit and permit overwrite. An independent
-  disposable probe confirmed it with and without a predecessor; a second
-  probe confirmed the same pre-existing class for an ordinary managed file.
-- Red regressions reproduced both overwrite decisions. Automatic managed
-  updates now require a checksum-validated predecessor whose exact payload
-  matches the receipt's claimed source and installed baseline. Without that
-  pack, changed upstream content conflicts. The portable and delivered guides
-  state the old-pack requirement. Three focused tests passed on the repaired
-  source; full importer, independent review, artifacts and dev effect remain.
+- Review of the first CRLF repair found that a re-digested receipt could relabel a direct managed-section edit and permit overwrite. An independent disposable probe confirmed it with and without a predecessor; a second probe confirmed the same pre-existing class for an ordinary managed file.
+- Red regressions reproduced both overwrite decisions. Automatic managed updates now require a checksum-validated predecessor whose exact payload matches the receipt's claimed source and installed baseline. Without that pack, changed upstream content conflicts. The portable and delivered guides state the old-pack requirement. Three focused tests passed on the repaired source; full importer, independent review, artifacts and dev effect remain.
 
 ## 2026-09-25 - Admit installed Lite repair-health implementation
 
-- A bounded WorkUnit and separate task worktree were created from reviewed
-  update source `12758e07` while that source's full importer suite runs in a
-  different worktree. The new task is limited to read-only installed-target
-  diagnosis and existing one-file repair eligibility; its external extracted
-  ZIP probe is red because the command is absent.
-- No source implementation, real-target mutation, generated pack/release
-  artifact, dev effect or public release is claimed at this admission.
+- A bounded WorkUnit and separate task worktree were created from reviewed update source `12758e07` while that source's full importer suite runs in a different worktree. The new task is limited to read-only installed-target diagnosis and existing one-file repair eligibility; its external extracted ZIP probe is red because the command is absent.
+- No source implementation, real-target mutation, generated pack/release artifact, dev effect or public release is claimed at this admission.
 
 ## 2026-09-25 - Qualify combined three-way update and repair-health previews
 
-- Merged the independently accepted update and repair-health source/tests in
-  `99a9e54d`, preserving the exact repaired importer bytes and corrected test
-  fixture. The full importer suite passed 100/100; Q31/Q34/Q47/Q48 passed
-  6/6, 11/11, 18/18 and 11/11.
-- Regenerated export, changelog, release bundle and draft from clean source.
-  Release validation, draft validation, canonical validate/doctor/pack-status
-  passed; the local ZIP/tar hashes and logs are in the two WorkUnit evidence
-  records. The extracted canary passed 25 commands in disposable fresh and
-  brownfield consumers, with expected conservative refusals.
-- Independent artifact review accepted the exact local previews with notes:
-  synthetic V2/V3 packs, CLI-only source-byte binding, and unqualified
-  repair/rollback/removal apply, hostile/OS-level network and publication
-  paths remain separate. The generated projection awaits a frozen commit,
-  replay and exact `dev` effect review; no public release is claimed.
+- Merged the independently accepted update and repair-health source/tests in `99a9e54d`, preserving the exact repaired importer bytes and corrected test fixture. The full importer suite passed 100/100; Q31/Q34/Q47/Q48 passed 6/6, 11/11, 18/18 and 11/11.
+- Regenerated export, changelog, release bundle and draft from clean source. Release validation, draft validation, canonical validate/doctor/pack-status passed; the local ZIP/tar hashes and logs are in the two WorkUnit evidence records. The extracted canary passed 25 commands in disposable fresh and brownfield consumers, with expected conservative refusals.
+- Independent artifact review accepted the exact local previews with notes: synthetic V2/V3 packs, CLI-only source-byte binding, and unqualified repair/rollback/removal apply, hostile/OS-level network and publication paths remain separate. The generated projection awaits a frozen commit, replay and exact `dev` effect review; no public release is claimed.
 
 ## 2026-09-25 - Integrate qualified combined update and repair health into dev
 
-- Committed exact local preview projection `d137f936`. The first post-commit
-  full export/changelog replay changed generated source identities and failed
-  its zero-change gate; that output remains recorded. A bounded release-only
-  metadata convergence at `54b9d45e` preserved reviewed archive hashes,
-  passed bundle/validate/draft/draft-validate and then replayed those four
-  commands with zero tracked changes.
-- Exact independent effect review issued conditional GO for FF local dev and
-  normal push only. Fresh Windows `Jules`/GitHub `Julesc013`, clean worktrees,
-  base/candidate ancestry and local/origin/remote/API refs passed. Both
-  operations exited 0; all observed `dev` identities became full `54b9d45e`,
-  tree `ffbaecee`, with a clean primary worktree. The two WorkUnits hold exact
-  logs, hashes and effect manifest. Main/tag/publication and stable profile
-  qualification remain open.
+- Committed exact local preview projection `d137f936`. The first post-commit full export/changelog replay changed generated source identities and failed its zero-change gate; that output remains recorded. A bounded release-only metadata convergence at `54b9d45e` preserved reviewed archive hashes, passed bundle/validate/draft/draft-validate and then replayed those four commands with zero tracked changes.
+- Exact independent effect review issued conditional GO for FF local dev and normal push only. Fresh Windows `Jules`/GitHub `Julesc013`, clean worktrees, base/candidate ancestry and local/origin/remote/API refs passed. Both operations exited 0; all observed `dev` identities became full `54b9d45e`, tree `ffbaecee`, with a clean primary worktree. The two WorkUnits hold exact logs, hashes and effect manifest. Main/tag/publication and stable profile qualification remain open.
 
 ## 2026-09-25 - Evaluate installed Windows Lite preview consumers
 
-- Ran extracted local ZIP safe import in a clean target and then installed
-  `context`, `pack --task`, and `verify`: all exited 0; verify reported zero
-  errors and 15 classified warnings. No development checkout runner was used.
-- An external exact-ZIP canary ran 31 delivered CLI commands for owned repair,
-  fault-injected restart recovery, synthetic V2 rollback, full fresh and
-  authored brownfield detach, and changed-file partial removal. Independent
-  read-only review accepted the exact passing run with notes. Its first run
-  timed out in the helper during a later import; that attempt remains separate.
-- A fresh installed `task status` exposed an empty-queue report-truth defect:
-  `task_count: 0` but incidental `Q17` latest task and X-OS-01 next-work
-  suggestion. Recorded source cause and exact log in the evaluation WorkUnit.
-  Product source and release assets stayed untouched; a bounded source repair
-  and final delivered-byte rerun are next.
-- The independent evidence reviewer accepted `b4501028` with notes and
-  identified the evaluation task's explicit dev-mutation prohibition. A
-  separate integration WorkUnit was admitted at the same source head for an
-  exact effect review. Its admission changes only queue/docs metadata; no ref,
-  product source or archive effect is claimed.
-- The integration WorkUnit's exact `a7254d7d` candidate passed pack-status,
-  validate, doctor, task inspect and a four-commit range check, with unchanged
-  ZIP/tar. An independent effect reviewer issued conditional GO for local dev
-  FF plus normal push. Fresh Windows identity, GitHub account, clean
-  worktrees, archive hashes, ancestry, locks and four dev refs matched the
-  reviewed manifest. The FF and normal push exited 0; observed local,
-  tracking, remote and API dev all became `a7254d7d`, tree `f5d019ed`.
-  The external logs and hashes are bound in the integration evidence. Main,
-  tag, publication and the Task OS source defect remain open.
-- The evidence-only closeout `d292253b` received independent
-  `ACCEPT_WITH_NOTES`, a fresh exact preflight, local dev fast-forward, normal
-  push and observed local/tracking/remote/API equality. From that clean dev,
-  a separate Task OS source repair WorkUnit was admitted. Its red clean-target
-  regression reproduced incidental `X-OS-01` identity. A narrow parser and
-  empty-queue selection repair passes 9 focused Task OS, 5 capability,
-  canonical validate and doctor checks. Independent review accepted exact
-  `f00d937e` with notes. Artifact projection and dev effect remain separate.
-  The review identified a
-  release-blocking nonempty target queue routing gap; that separate source
-  repair precedes the next artifact projection.
-- Admitted `AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01` from evidence-only
-  `04caefe6` to make one-item installed target queue advice project-owned.
-  A red regression found `X-OS-01` advice for one target-owned WorkUnit.
-  The narrow source selector now requires exact AIDE self-hosting queue
-  records; all 10 focused tests pass, preserving source post-apply routing.
-  Canonical validate/doctor correctly report stale export provenance until a
-  separate generator projection. Independent `e88a1468` review exposed a
-  copied source-ID collision and static next-plan advice. The superseding
-  profile-aware source repair passes 11 focused tests. Its exact review found
-  a false copied-ID reason and requested changes; a narrow reason repair and
-  explicit regression assertion pass the same 11 tests. Independent rereview
-  accepted `52e1f194` with notes. No generated artifact or dev effect occurred.
-- Admitted `AIDE-STABLE-LITE-DRAFT-TRUTH-01` from evidence closeout
-  `75406123` to correct source-generated local release draft lifecycle claims.
-  A red regression reproduced the obsolete plan-only claim. The Q48 source
-  now distinguishes legacy planners from bounded exact-plan Windows apply
-  candidates without changing no-publish semantics; all 12 Q48 tests pass.
-  Canonical validate/doctor retain the old-export provenance failure until
-  current-generator projection. Generated outputs were not edited here.
-  Independent source review accepted exact `bc1867a0`, tree `edf8f273`,
-  with notes. The old draft text and stale export provenance remain blocking
-  artifact/dev effect gates, so this evidence-only closeout preserves the
-  reviewed source while routing to a separate current-generator projection.
-- Admitted `AIDE-STABLE-LITE-CURRENT-PROJECTION-01` on a dedicated worktree
-  from `59286688`. This admission only defines generated-output scope and
-  executable checks; no archive regeneration or integration has occurred.
-- From clean admission `0509e161`, regenerated 39 bounded preview output
-  paths. Six generation commands, canonical checks, 18 Q47, 12 Q48 and 11
-  Task OS tests passed. The 25-command extracted ZIP/tar consumer passed with
-  833 matching members; a separate four-command installed Task OS canary
-  passed after correcting an external oracle that confused packet and queue
-  IDs. ZIP `68f8b3cc` and tar `d0b42456` remain local previews. Commit,
-  replay, independent artifact/effect review and dev integration are pending.
-  Projection commit `dc8697e3` retains the consumer-tested archive hashes.
-  First four-command replay exited 0 but changed 18 release metadata paths;
-  its zero-change gate failed, so bounded metadata convergence is next.
-  Metadata commit `10fd7a20` retained archive hashes. Its four-command
-  replay changed zero files, and committed pack-status, validate, doctor and
-  11-commit policy range passed. Exact artifact/effect review is next; no
-  dev/main/public release effect occurred.
-  Evidence-only `22257dc6` also replayed without changes. Its independent
-  artifact/effect review requested changes: the cited 11-commit range belonged
-  to `10fd7a20`, while `22257dc6` has 12; status still said replay was open.
-  Exact 12-commit range passed. Repairing those records and rechecking the
-  final effect subject precedes dev integration; artifact bytes stay frozen.
-  Focused independent rereview accepted exact `6e8af2bd` with notes and
-  conditional dev GO. Fresh identity/ref/lock/archive preflight passed; the
-  local `dev` FF and normal push exited 0 and all four observed refs matched
-  `6e8af2bd`, tree `a964b2e2`. The 31-command supplemental local Windows
-  lifecycle canary also passed on the same ZIP and its logs were hash-audited.
-  Final supported profile, main, tag, public release and downloaded-byte
-  acceptance remain open.
-- Admitted `AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01` from the observed
-  `dev@e88b1c2e` forced-restart checkpoint. A red regression reproduced the
-  missing explicit recovery option. The candidate now stores a full original
-  import-plan snapshot in new intents and offers Windows-only
-  `--recover-partial --expect-plan` reconciliation. It binds the current and
-  predecessor packs, prior receipt, controls, resolutions, original decisions
-  and every target pre/postimage; anchored single-link guards hold existing
-  postimages through receipt publication. Implicit retries and older intents
-  retain safe refusal. Focused fresh/update, second-interruption, wrong-input,
-  rival, linked-file and resolution-change regressions pass. The full importer
-  suite, independent source review, delivered archive checks, dev integration
-  and stable release remain open.
-  Independent review rejected exact source `547ea2b0`: a recomputed target
-  intent could relabel an authored file as AIDE-owned and overwrite it, and
-  project controls could change during receipt publication without retaining
-  recovery state. The superseding source checks complete payload coverage and
-  per-kind ownership/action against the prior receipt and predecessor, then
-  rechecks controls and resolution bytes before intent retirement. Regressions
-  now pass for both defects and for omission of an included pack path. Full
-  suite, rereview and artifact qualification remain open.
-  Rereview rejected `052a0a92` for a remaining input race at intent retirement.
-  The next source uses verified controls/resolution handles through final
-  publication; missing controls use an exclusive CREATE_NEW, DELETE_ON_CLOSE
-  reservation. A second-process write was denied, abrupt child exit cleaned
-  the reservation, and controls/resolution boundary regressions passed. The
-  full suite on the rejected subject was stopped; new exact review remains
-  required before running the full suite and projecting archives.
+- Ran extracted local ZIP safe import in a clean target and then installed `context`, `pack --task`, and `verify`: all exited 0; verify reported zero errors and 15 classified warnings. No development checkout runner was used.
+- An external exact-ZIP canary ran 31 delivered CLI commands for owned repair, fault-injected restart recovery, synthetic V2 rollback, full fresh and authored brownfield detach, and changed-file partial removal. Independent read-only review accepted the exact passing run with notes. Its first run timed out in the helper during a later import; that attempt remains separate.
+- A fresh installed `task status` exposed an empty-queue report-truth defect: `task_count: 0` but incidental `Q17` latest task and X-OS-01 next-work suggestion. Recorded source cause and exact log in the evaluation WorkUnit. Product source and release assets stayed untouched; a bounded source repair and final delivered-byte rerun are next.
+- The independent evidence reviewer accepted `b4501028` with notes and identified the evaluation task's explicit dev-mutation prohibition. A separate integration WorkUnit was admitted at the same source head for an exact effect review. Its admission changes only queue/docs metadata; no ref, product source or archive effect is claimed.
+- The integration WorkUnit's exact `a7254d7d` candidate passed pack-status, validate, doctor, task inspect and a four-commit range check, with unchanged ZIP/tar. An independent effect reviewer issued conditional GO for local dev FF plus normal push. Fresh Windows identity, GitHub account, clean worktrees, archive hashes, ancestry, locks and four dev refs matched the reviewed manifest. The FF and normal push exited 0; observed local, tracking, remote and API dev all became `a7254d7d`, tree `f5d019ed`. The external logs and hashes are bound in the integration evidence. Main, tag, publication and the Task OS source defect remain open.
+- The evidence-only closeout `d292253b` received independent `ACCEPT_WITH_NOTES`, a fresh exact preflight, local dev fast-forward, normal push and observed local/tracking/remote/API equality. From that clean dev, a separate Task OS source repair WorkUnit was admitted. Its red clean-target regression reproduced incidental `X-OS-01` identity. A narrow parser and empty-queue selection repair passes 9 focused Task OS, 5 capability, canonical validate and doctor checks. Independent review accepted exact `f00d937e` with notes. Artifact projection and dev effect remain separate. The review identified a release-blocking nonempty target queue routing gap; that separate source repair precedes the next artifact projection.
+- Admitted `AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01` from evidence-only `04caefe6` to make one-item installed target queue advice project-owned. A red regression found `X-OS-01` advice for one target-owned WorkUnit. The narrow source selector now requires exact AIDE self-hosting queue records; all 10 focused tests pass, preserving source post-apply routing. Canonical validate/doctor correctly report stale export provenance until a separate generator projection. Independent `e88a1468` review exposed a copied source-ID collision and static next-plan advice. The superseding profile-aware source repair passes 11 focused tests. Its exact review found a false copied-ID reason and requested changes; a narrow reason repair and explicit regression assertion pass the same 11 tests. Independent rereview accepted `52e1f194` with notes. No generated artifact or dev effect occurred.
+- Admitted `AIDE-STABLE-LITE-DRAFT-TRUTH-01` from evidence closeout `75406123` to correct source-generated local release draft lifecycle claims. A red regression reproduced the obsolete plan-only claim. The Q48 source now distinguishes legacy planners from bounded exact-plan Windows apply candidates without changing no-publish semantics; all 12 Q48 tests pass. Canonical validate/doctor retain the old-export provenance failure until current-generator projection. Generated outputs were not edited here. Independent source review accepted exact `bc1867a0`, tree `edf8f273`, with notes. The old draft text and stale export provenance remain blocking artifact/dev effect gates, so this evidence-only closeout preserves the reviewed source while routing to a separate current-generator projection.
+- Admitted `AIDE-STABLE-LITE-CURRENT-PROJECTION-01` on a dedicated worktree from `59286688`. This admission only defines generated-output scope and executable checks; no archive regeneration or integration has occurred.
+- From clean admission `0509e161`, regenerated 39 bounded preview output paths. Six generation commands, canonical checks, 18 Q47, 12 Q48 and 11 Task OS tests passed. The 25-command extracted ZIP/tar consumer passed with 833 matching members; a separate four-command installed Task OS canary passed after correcting an external oracle that confused packet and queue IDs. ZIP `68f8b3cc` and tar `d0b42456` remain local previews. Commit, replay, independent artifact/effect review and dev integration are pending. Projection commit `dc8697e3` retains the consumer-tested archive hashes. First four-command replay exited 0 but changed 18 release metadata paths; its zero-change gate failed, so bounded metadata convergence is next. Metadata commit `10fd7a20` retained archive hashes. Its four-command replay changed zero files, and committed pack-status, validate, doctor and 11-commit policy range passed. Exact artifact/effect review is next; no dev/main/public release effect occurred. Evidence-only `22257dc6` also replayed without changes. Its independent artifact/effect review requested changes: the cited 11-commit range belonged to `10fd7a20`, while `22257dc6` has 12; status still said replay was open. Exact 12-commit range passed. Repairing those records and rechecking the final effect subject precedes dev integration; artifact bytes stay frozen. Focused independent rereview accepted exact `6e8af2bd` with notes and conditional dev GO. Fresh identity/ref/lock/archive preflight passed; the local `dev` FF and normal push exited 0 and all four observed refs matched `6e8af2bd`, tree `a964b2e2`. The 31-command supplemental local Windows lifecycle canary also passed on the same ZIP and its logs were hash-audited. Final supported profile, main, tag, public release and downloaded-byte acceptance remain open.
+- Admitted `AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01` from the observed `dev@e88b1c2e` forced-restart checkpoint. A red regression reproduced the missing explicit recovery option. The candidate now stores a full original import-plan snapshot in new intents and offers Windows-only `--recover-partial --expect-plan` reconciliation. It binds the current and predecessor packs, prior receipt, controls, resolutions, original decisions and every target pre/postimage; anchored single-link guards hold existing postimages through receipt publication. Implicit retries and older intents retain safe refusal. Focused fresh/update, second-interruption, wrong-input, rival, linked-file and resolution-change regressions pass. The full importer suite, independent source review, delivered archive checks, dev integration and stable release remain open. Independent review rejected exact source `547ea2b0`: a recomputed target intent could relabel an authored file as AIDE-owned and overwrite it, and project controls could change during receipt publication without retaining recovery state. The superseding source checks complete payload coverage and per-kind ownership/action against the prior receipt and predecessor, then rechecks controls and resolution bytes before intent retirement. Regressions now pass for both defects and for omission of an included pack path. Full suite, rereview and artifact qualification remain open. Rereview rejected `052a0a92` for a remaining input race at intent retirement. The next source uses verified controls/resolution handles through final publication; missing controls use an exclusive CREATE_NEW, DELETE_ON_CLOSE reservation. A second-process write was denied, abrupt child exit cleaned the reservation, and controls/resolution boundary regressions passed. The full suite on the rejected subject was stopped; new exact review remains required before running the full suite and projecting archives.
 
 ## Campaign resource correction, 2026-09-26
 
-Reused the partial-import checkout for AIDE-CAMPAIGN-RESOURCE-CLEANUP-01.
-Retired twelve inspected inactive checkouts with supported Git removal while
-retaining branch objects; unknown/timed-out resources remain protected. Stopped
-a positively identified abandoned read-only scanner child. Extended the existing
-execution owner and Windows Job host with source-bound maintainer jobs, explicit
-storage/volume identity, finite reservations, one shared OS admission lock,
-code-driven resource monitoring, bounded logs, durable process identity,
-collection and retirement. git detect/plan now inspect without report writes;
-projections require --write-reports. Twelve small Windows regressions passed;
-an actual ten-case AIDE host suite also ran through the bounded path. Exact
-receipts are task-local. Final source review/replay, permanent pool resolution,
-heavy importer qualification and delivered-release proof remain outstanding.
+Reused the partial-import checkout for AIDE-CAMPAIGN-RESOURCE-CLEANUP-01. Retired twelve inspected inactive checkouts with supported Git removal while retaining branch objects; unknown/timed-out resources remain protected. Stopped a positively identified abandoned read-only scanner child. Extended the existing execution owner and Windows Job host with source-bound maintainer jobs, explicit storage/volume identity, finite reservations, one shared OS admission lock, code-driven resource monitoring, bounded logs, durable process identity, collection and retirement. git detect/plan now inspect without report writes; projections require --write-reports. Twelve small Windows regressions passed; an actual ten-case AIDE host suite also ran through the bounded path. Exact receipts are task-local. Final source review/replay, permanent pool resolution, heavy importer qualification and delivered-release proof remain outstanding.
 
-Resource repair checkpoint: 33 worktrees retired with refs retained, three
-remain. Preserved the independent REQUEST_CHANGES against 5ea1f7cd; lexical
-existence checks now refuse broken reparse roots, and source maintainer commands
-require actual named-Job membership with bound CLI inputs. Packaging remains
-paused pending canonical-output reservation qualification. Seventeen focused
-Windows cases pass; superseding review and final bounded replay remain open.
+Resource repair checkpoint: 33 worktrees retired with refs retained, three remain. Preserved the independent REQUEST_CHANGES against 5ea1f7cd; lexical existence checks now refuse broken reparse roots, and source maintainer commands require actual named-Job membership with bound CLI inputs. Packaging remains paused pending canonical-output reservation qualification. Seventeen focused Windows cases pass; superseding review and final bounded replay remain open.
 
-The exact 11226a6e source received independent ACCEPT_WITH_NOTES; actual bounded
-host replay passed ten tests, scratch absent/reservation released. Added finite
-job reservations and sampling for the generator's existing source output roots
-and evaluation runs. Canonical outputs are retained, never disposable cleanup
-targets; missing placement/allowance refuses. Twenty-two focused cases pass,
-including fast output overrun and separate volume admission. Exact extension
-review and permanent placement remain required before bulk packaging/tests.
+The exact 11226a6e source received independent ACCEPT_WITH_NOTES; actual bounded host replay passed ten tests, scratch absent/reservation released. Added finite job reservations and sampling for the generator's existing source output roots and evaluation runs. Canonical outputs are retained, never disposable cleanup targets; missing placement/allowance refuses. Twenty-two focused cases pass, including fast output overrun and separate volume admission. Exact extension review and permanent placement remain required before bulk packaging/tests.
 
-Canonical review of 8acfecc4 exposed a crash-before-final-check gap. Both normal
-completion and recovery now qualify source output size/identity, preserve the
-original process result, and retain canonical bytes on failure. Ten affected
-tests pass without skips (13.276s); exact superseding review remains required.
-The last inactive checkout was retired with its two unique evidence-only commits
-and branch preserved. Thirty-four checkouts retired, two physical checkouts left.
+Canonical review of 8acfecc4 exposed a crash-before-final-check gap. Both normal completion and recovery now qualify source output size/identity, preserve the original process result, and retain canonical bytes on failure. Ten affected tests pass without skips (13.276s); exact superseding review remains required. The last inactive checkout was retired with its two unique evidence-only commits and branch preserved. Thirty-four checkouts retired, two physical checkouts left.
 
-The real bounded importer batch timed out at 180s after two completed cases;
-the isolated controls publication/retirement case passed in 112.647s. Stack
-samples showed fsync/path resolution and cleanup rather than a hang. To reduce
-repeated fixture work, only the six pack-based partial recovery boundary tests
-now select a smaller valid multi-file fixture; their assertions, production
-flushes and Windows handle behavior are unchanged. The missing-controls process
-case needs no pack. Full export/archive/consumer tests retain full fixtures.
-This oracle change requires actual seven-case validation and narrow review.
+The real bounded importer batch timed out at 180s after two completed cases; the isolated controls publication/retirement case passed in 112.647s. Stack samples showed fsync/path resolution and cleanup rather than a hang. To reduce repeated fixture work, only the six pack-based partial recovery boundary tests now select a smaller valid multi-file fixture; their assertions, production flushes and Windows handle behavior are unchanged. The missing-controls process case needs no pack. Full export/archive/consumer tests retain full fixtures. This oracle change requires actual seven-case validation and narrow review.
 
-The frozen e87386e5 oracle received independent ACCEPT_WITH_NOTES; all seven
-admitted cases passed in 25.090s, scratch absent and reservation released.
-Task status now uses its existing context collector without report writes by
-default; --write-reports preserves the existing generators. Two focused tests
-pass (7.978s); a real checkout query returned exit0 with unchanged Git state.
-Parent routing and its existing coverage control now point to the resource and
-partial-import dependencies. No new master specification or permanent layout
-was introduced; full Task OS check and exact query review remain next.
+The frozen e87386e5 oracle received independent ACCEPT_WITH_NOTES; all seven admitted cases passed in 25.090s, scratch absent and reservation released. Task status now uses its existing context collector without report writes by default; --write-reports preserves the existing generators. Two focused tests pass (7.978s); a real checkout query returned exit0 with unchanged Git state. Parent routing and its existing coverage control now point to the resource and partial-import dependencies. No new master specification or permanent layout was introduced; full Task OS check and exact query review remain next.
 
-Independent review accepted the exact 0302b18c task-status reader delta.
-Its bounded Task OS suite passed 11/11 in 10.084s, but an existing golden test
-generated fifteen source reports. Those known derived writes were identified
-and restored individually to unchanged HEAD. The same golden runners now use
-real source context with only report destinations redirected to admitted scratch;
-all original assertions remain and actual source-report byte/mtime equality is
-checked. The corrected suite passed 11/11 in 8.554s, no skips, through the
-bounded owner, with no source-report changes, retired scratch and released
-reservations. Exact source/input bindings, raw-log hashes and review scopes are
-in the resource task. Permanent bulk placement and full delivered qualification
-remain unresolved; this source checkpoint does not claim activation or release.
+Independent review accepted the exact 0302b18c task-status reader delta. Its bounded Task OS suite passed 11/11 in 10.084s, but an existing golden test generated fifteen source reports. Those known derived writes were identified and restored individually to unchanged HEAD. The same golden runners now use real source context with only report destinations redirected to admitted scratch; all original assertions remain and actual source-report byte/mtime equality is checked. The corrected suite passed 11/11 in 8.554s, no skips, through the bounded owner, with no source-report changes, retired scratch and released reservations. Exact source/input bindings, raw-log hashes and review scopes are in the resource task. Permanent bulk placement and full delivered qualification remain unresolved; this source checkpoint does not claim activation or release.
 
-The frozen e185d289 golden-placement delta received independent
-ACCEPT_WITH_NOTES after frozen AST, all declared code hashes and actual raw-log
-verification. Source acceptance and the precommit-context limitation are recorded
-without relabeling tests as a clean HEAD run. The subsequent closeout is evidence
-only; task-ref preservation is owner delegated. Dev/main and release stay unchanged.
+The frozen e185d289 golden-placement delta received independent ACCEPT_WITH_NOTES after frozen AST, all declared code hashes and actual raw-log verification. Source acceptance and the precommit-context limitation are recorded without relabeling tests as a clean HEAD run. The subsequent closeout is evidence only; task-ref preservation is owner delegated. Dev/main and release stay unchanged.
 
-Resource continuation retired two exact prior ZIP expansions from completed
-customization consumers. The read-only bounded proof checked frozen Git custody,
-every archive member and the complete ordinary directory inventory. Native
-removal rechecked aliases, nested repositories, containment, inactivity and
-retained archives. 1,662 duplicate files (6,882,832 logical bytes) were removed;
-both ZIPs, target/failure fixtures and records remain. Compact effect and prior
-remote-checkpoint receipts are canonical task evidence. Unknown consumers and
-permanent placement remain unresolved; no product source or bulk job changed.
+Resource continuation retired two exact prior ZIP expansions from completed customization consumers. The read-only bounded proof checked frozen Git custody, every archive member and the complete ordinary directory inventory. Native removal rechecked aliases, nested repositories, containment, inactivity and retained archives. 1,662 duplicate files (6,882,832 logical bytes) were removed; both ZIPs, target/failure fixtures and records remain. Compact effect and prior remote-checkpoint receipts are canonical task evidence. Unknown consumers and permanent placement remain unresolved; no product source or bulk job changed.
 
 ## AIDE-STABLE-RELEASE-CONTRACT-01: customization interface follow-up
 
-The candidate public CLI excluded --feedback-out and omitted --explain despite
-implemented, owner-requested customization workflows. Added six explicit dry-run
-forms and referenced project-owned v1/v2 metadata, unknown rationale, disabled
-intent and separately authorized sharing. Actual unchanged parser rejected bare
-pack --task and verify --evidence forms; required argument placeholders are now
-explicit. All 25 forms parse, handlers invoked zero, Git state unchanged during
-checking. Existing source/canaries remain their original evidence; this syntax
-check does not qualify behavior or archives. First qualified 1.0.0 selection still
-requires a frozen manifest and fresh history. No version/tag/public effect, bulk
-job, new workspace or release regeneration occurred. Frozen delta review is next.
+The candidate public CLI excluded --feedback-out and omitted --explain despite implemented, owner-requested customization workflows. Added six explicit dry-run forms and referenced project-owned v1/v2 metadata, unknown rationale, disabled intent and separately authorized sharing. Actual unchanged parser rejected bare pack --task and verify --evidence forms; required argument placeholders are now explicit. All 25 forms parse, handlers invoked zero, Git state unchanged during checking. Existing source/canaries remain their original evidence; this syntax check does not qualify behavior or archives. First qualified 1.0.0 selection still requires a frozen manifest and fresh history. No version/tag/public effect, bulk job, new workspace or release regeneration occurred. Frozen delta review is next.
 
-The follow-up also enumerates the accepted saved partial-import recovery
-interface: original digest, packs, mode and resolution files; changed/legacy
-inputs remain refusals. All 28 final candidate forms parse without handlers.
-The earlier 25-form result stays separately bound, not relabeled as 28 cases.
+The follow-up also enumerates the accepted saved partial-import recovery interface: original digest, packs, mode and resolution files; changed/legacy inputs remain refusals. All 28 final candidate forms parse without handlers. The earlier 25-form result stays separately bound, not relabeled as 28 cases.
 
 ## Resource placement activation - 2026-09-28
 
-Recorded the owner instruction `use E:\Temporary`, created only AIDE-owned
-subroots there, and configured ignored local execution settings in both remaining
-checkouts. Distinct-root/volume/capacity inspection passes without report writes.
-No runtime code changed; full integrated importer qualification is the next effect.
+Recorded the owner instruction `use E:\Temporary`, created only AIDE-owned subroots there, and configured ignored local execution settings in both remaining checkouts. Distinct-root/volume/capacity inspection passes without report writes. No runtime code changed; full integrated importer qualification is the next effect.
 
 ## Exact D execution placement and diagnostic correction - 2026-09-28
 
-The owner's later explicit selection supersedes E for new jobs. Created only
-`D:\Projects\AIDE\.aide.local\execution\{scratch,retained,control}` and wrote
-identical ignored local configuration in the two existing checkouts. Actual D
-volume identity and capacity passed read-only runner inspection with 10 GiB
-disk and 4 GiB physical/commit reserves, 1 GiB scratch, 256 MiB retained,
-512 MiB canonical, 2 GiB memory, 16 MiB log, 3600 second, 32 process and
-100,000 entry limits. D control retains the exact old E configuration and
-attempt identity for collection; no new intensive job overlaps it.
+The owner's later explicit selection supersedes E for new jobs. Created only `D:\Projects\AIDE\.aide.local\execution\{scratch,retained,control}` and wrote identical ignored local configuration in the two existing checkouts. Actual D volume identity and capacity passed read-only runner inspection with 10 GiB disk and 4 GiB physical/commit reserves, 1 GiB scratch, 256 MiB retained, 512 MiB canonical, 2 GiB memory, 16 MiB log, 3600 second, 32 process and 100,000 entry limits. D control retains the exact old E configuration and attempt identity for collection; no new intensive job overlaps it.
 
-The installed-consumer warning probe identified a misleading message in
-`cache_status_checks`: it said a cache report exists when the WARN condition
-meant it was absent. The message now reflects actual existence, preserving
-WARN severity. The prior consumer warnings remain unqualified for release;
-At placement setup, changed-source tests and old-attempt collection were pending.
+The installed-consumer warning probe identified a misleading message in `cache_status_checks`: it said a cache report exists when the WARN condition meant it was absent. The message now reflects actual existence, preserving WARN severity. The prior consumer warnings remain unqualified for release; At placement setup, changed-source tests and old-attempt collection were pending.
 
-The E full-importer attempt completed 99 cases before active scratch
-observation raced a disappearing test fixture. Its five retained files were
-copied to D with bit-identical SHA-256; E originals remain. The runner now
-permits transient absence only while sampling live scratch. A red one-case
-test reproduced the race; the green one-case test, 26 runner tests and 9 cache
-tests passed through D, each with scratch retirement and reservation release.
-Exact job and receipt identities are in the resource task evidence. Full
-importer and current delivered-byte qualification remain open.
+The E full-importer attempt completed 99 cases before active scratch observation raced a disappearing test fixture. Its five retained files were copied to D with bit-identical SHA-256; E originals remain. The runner now permits transient absence only while sampling live scratch. A red one-case test reproduced the race; the green one-case test, 26 runner tests and 9 cache tests passed through D, each with scratch retirement and reservation release. Exact job and receipt identities are in the resource task evidence. Full importer and current delivered-byte qualification remain open.
 
-Frozen `8040b10a` received a narrow independent ACCEPT_WITH_NOTES. The
-reviewer confirmed live-scratch-only tolerance and strict evidence scans, and
-noted focused queued-directory scan test coverage for follow-up. Two D runner
-jobs covered all 110 importer methods exactly once: 54/54 and 56/56 passed,
-no skips. Both preserved bounded logs, retired scratch and released the shared
-reservation. The source checkout remained clean. Exact manifests, receipts,
-hashes and limits are in the resource task evidence. Current generated pack,
-delivered-byte consumers and stable release are still pending.
+Frozen `8040b10a` received a narrow independent ACCEPT_WITH_NOTES. The reviewer confirmed live-scratch-only tolerance and strict evidence scans, and noted focused queued-directory scan test coverage for follow-up. Two D runner jobs covered all 110 importer methods exactly once: 54/54 and 56/56 passed, no skips. Both preserved bounded logs, retired scratch and released the shared reservation. The source checkout remained clean. Exact manifests, receipts, hashes and limits are in the resource task evidence. Current generated pack, delivered-byte consumers and stable release are still pending.
 
-Fast-forwarded reviewed, partition-qualified source to local and remote
-`dev@1d3d9fe1` after fresh refs, clean worktrees, AIDE Git plan and four-commit
-range check passed. The remote ref readback matched. Admitted the next bounded
-projection WorkUnit in the existing checkout to regenerate and qualify current
-delivered bytes. No new physical worktree, tag, main promotion or release was
-created by this source integration.
+Fast-forwarded reviewed, partition-qualified source to local and remote `dev@1d3d9fe1` after fresh refs, clean worktrees, AIDE Git plan and four-commit range check passed. The remote ref readback matched. Admitted the next bounded projection WorkUnit in the existing checkout to regenerate and qualify current delivered bytes. No new physical worktree, tag, main promotion or release was created by this source integration.
 
-Generated the current portable pack, changelog preview, local release bundle
-and draft from clean `84e4a733` source using six serial D-managed jobs with
-canonical output reservations. All exited zero and retired scratch. Release
-and draft validation report PASS with zero blockers/warnings; pack-status,
-changelog validate/status, release status, doctor and validate also exited
-zero. Current ZIP/tar SHA-256 and all job receipts are in the projection task.
-The bytes are still local preview outputs; committed replay and delivered
-consumer qualification are pending.
+Generated the current portable pack, changelog preview, local release bundle and draft from clean `84e4a733` source using six serial D-managed jobs with canonical output reservations. All exited zero and retired scratch. Release and draft validation report PASS with zero blockers/warnings; pack-status, changelog validate/status, release status, doctor and validate also exited zero. Current ZIP/tar SHA-256 and all job receipts are in the projection task. The bytes are still local preview outputs; committed replay and delivered consumer qualification are pending.
 
-The current projection subsequently converged release-only metadata at
-`49c7a04a`. Four release commands replayed from clean `e7c1760e` with zero
-tracked/untracked changes; the pack reported `PASS_SOURCE_ANCESTOR`. The frozen
-ZIP/tar hashes are `af8bf103...`/`f0111bd8...`. One D-managed delivered-byte
-job passed 25 fresh/brownfield command oracles and explicit fresh/update
-partial recovery, peaked at 33.3 MB scratch, retained 2.89 MB of logs, retired
-scratch and released its reservation. Independent exact artifact/effect review
-returned ACCEPT_WITH_NOTES for dev only; local and remote dev both read back
-`e7c1760e`, tree `ff4bbfaf`. No main, tag or publication effect occurred.
+The current projection subsequently converged release-only metadata at `49c7a04a`. Four release commands replayed from clean `e7c1760e` with zero tracked/untracked changes; the pack reported `PASS_SOURCE_ANCESTOR`. The frozen ZIP/tar hashes are `af8bf103...`/`f0111bd8...`. One D-managed delivered-byte job passed 25 fresh/brownfield command oracles and explicit fresh/update partial recovery, peaked at 33.3 MB scratch, retained 2.89 MB of logs, retired scratch and released its reservation. Independent exact artifact/effect review returned ACCEPT_WITH_NOTES for dev only; local and remote dev both read back `e7c1760e`, tree `ff4bbfaf`. No main, tag or publication effect occurred.
 
-After its separate evidence-only closeout passed another clean four-command
-replay and six-commit policy range, local and remote dev both reached
-`33abef7f`. Admitted the next qualification WorkUnit on a logical branch in
-the same checkout, with current generated bytes read-only and all disposable
-consumer work bound to the shared D runner.
+After its separate evidence-only closeout passed another clean four-command replay and six-commit policy range, local and remote dev both reached `33abef7f`. Admitted the next qualification WorkUnit on a logical branch in the same checkout, with current generated bytes read-only and all disposable consumer work bound to the shared D runner.
 
-The current ZIP passed 31 lifecycle command outcomes and three forced-exit
-recoveries; fresh and Git brownfield context/evidence commands also exited
-zero. The latter exposed a concrete cross-cutting runner defect: readonly Git
-loose objects prevented scratch retirement after retained custody. The exact
-owned job was recovered without replay. The existing runner now checks the
-whole owned scratch for ordinary bounded entries after custody verification,
-then clears readonly attributes before removal. A Windows regression and the
-full 27-test runner suite passed under D; a real Git fixture created three
-readonly objects and the repaired runner retired all three. Independent review
-remains required before integrating this runner source into dev.
+The current ZIP passed 31 lifecycle command outcomes and three forced-exit recoveries; fresh and Git brownfield context/evidence commands also exited zero. The latter exposed a concrete cross-cutting runner defect: readonly Git loose objects prevented scratch retirement after retained custody. The exact owned job was recovered without replay. The existing runner now checks the whole owned scratch for ordinary bounded entries after custody verification, then clears readonly attributes before removal. A Windows regression and the full 27-test runner suite passed under D; a real Git fixture created three readonly objects and the repaired runner retired all three. Independent review remains required before integrating this runner source into dev.
 
-Independent exact review later returned ACCEPT_WITH_NOTES for dev integration
-of `cf0c4434`, retaining the external hostile-writer race and missing
-interrupted-chmod regression as notes. The reviewer verified retained D job
-receipts but did not rerun tests; review custody is in the WorkUnit evidence.
+Independent exact review later returned ACCEPT_WITH_NOTES for dev integration of `cf0c4434`, retaining the external hostile-writer race and missing interrupted-chmod regression as notes. The reviewer verified retained D job receipts but did not rerun tests; review custody is in the WorkUnit evidence.
 
-Local and remote dev were observed at `b7f59542` after a normal fast-forward
-push. An additional D-managed current ZIP canary passed the public explanation
-and explicit local feedback forms, refused feedback without dry run, retained
-the project-owned file and installed source unchanged, then retired scratch.
-The WorkUnit holds exact manifest, oracle, summary and receipt hashes.
+Local and remote dev were observed at `b7f59542` after a normal fast-forward push. An additional D-managed current ZIP canary passed the public explanation and explicit local feedback forms, refused feedback without dry run, retained the project-owned file and installed source unchanged, then retired scratch. The WorkUnit holds exact manifest, oracle, summary and receipt hashes.
 
-The next current-source importer partition passed 54/54 cases in a D-managed
-job, peaked at 20.7 MB scratch and 248.2 MB memory, and retired cleanly. The
-prior 56/56 partition is reused with identical importer CLI/test hashes,
-Python executable and D configuration; its differing per-job environment
-digest and 11 changed non-importer inputs are explicitly classified in the
-WorkUnit. This is source qualification, not final shipped-byte acceptance.
+The next current-source importer partition passed 54/54 cases in a D-managed job, peaked at 20.7 MB scratch and 248.2 MB memory, and retired cleanly. The prior 56/56 partition is reused with identical importer CLI/test hashes, Python executable and D configuration; its differing per-job environment digest and 11 changed non-importer inputs are explicitly classified in the WorkUnit. This is source qualification, not final shipped-byte acceptance.
 
-The delivered CLI task forms were exercised in a fresh disposable target.
-The first canary wrongly expected empty-state success, and the corrected
-diagnostic confirmed documented exit one with no mutation. A final D-managed
-job passed empty and populated task status/inspection, including an exact
-project-owned task and non-mutating target snapshot; its scratch retired.
-Exact failed and passing job identities are retained in the WorkUnit.
+The delivered CLI task forms were exercised in a fresh disposable target. The first canary wrongly expected empty-state success, and the corrected diagnostic confirmed documented exit one with no mutation. A final D-managed job passed empty and populated task status/inspection, including an exact project-owned task and non-mutating target snapshot; its scratch retired. Exact failed and passing job identities are retained in the WorkUnit.
 
-The delivered ZIP/tar pair also passed a seven-command public partial-import
-recovery canary: fresh and predecessor update each refused ordinary/wrong-plan
-replay and recovered only under the exact original plan digest; a
-predecessor-bound feedback preview created a local manual-only packet with
-digest-bound explanations. The synthetic predecessor is a fixture. The D job
-retired scratch and released its reservation; exact hashes are in the WorkUnit.
+The delivered ZIP/tar pair also passed a seven-command public partial-import recovery canary: fresh and predecessor update each refused ordinary/wrong-plan replay and recovered only under the exact original plan digest; a predecessor-bound feedback preview created a local manual-only packet with digest-bound explanations. The synthetic predecessor is a fixture. The D job retired scratch and released its reservation; exact hashes are in the WorkUnit.
 
-An exact-option 25-command extracted ZIP/tar consumer rerun passed with
-explicit safe mode on import paths and an opt-in, digest-bound feedback packet
-for a project-selected resolution. Installed `validate` exited zero in a
-separate fresh-target job but warned about absent generated task and AGENTS
-managed content; those warnings remain visible in WorkUnit release evidence.
-Both D jobs retired scratch and released reservations.
+An exact-option 25-command extracted ZIP/tar consumer rerun passed with explicit safe mode on import paths and an opt-in, digest-bound feedback packet for a project-selected resolution. Installed `validate` exited zero in a separate fresh-target job but warned about absent generated task and AGENTS managed content; those warnings remain visible in WorkUnit release evidence. Both D jobs retired scratch and released reservations.
 
-The installed CLI then passed the resolved partial-update recovery form in a
-disposable V3 fixture. Ordinary replay and a changed resolution input refused;
-the exact saved plan and original resolution recovered while preserving
-project-owned and selected bytes. The final ten-command D job retired scratch
-and is bound in the WorkUnit evidence.
+The installed CLI then passed the resolved partial-update recovery form in a disposable V3 fixture. Ordinary replay and a changed resolution input refused; the exact saved plan and original resolution recovered while preserving project-owned and selected bytes. The final ten-command D job retired scratch and is bound in the WorkUnit evidence.
 
-2026-09-28 local-preview review closeout: preserved the independent
-`ACCEPT_WITH_NOTES` for exact `4dcd896b`/`b8ae4507` with external transcription
-SHA-256 and classified notes in the local-preview WorkUnit. Closed only the
-preview qualification and admitted a separate bounded stable release-effect
-WorkUnit. No product source, preview assets, main, tag or public release changed
-in this evidence-only increment. Verified source/tree, external review hash,
-local/remote dev identity, `git diff --check` and queue packet structure.
+2026-09-28 local-preview review closeout: preserved the independent `ACCEPT_WITH_NOTES` for exact `4dcd896b`/`b8ae4507` with external transcription SHA-256 and classified notes in the local-preview WorkUnit. Closed only the preview qualification and admitted a separate bounded stable release-effect WorkUnit. No product source, preview assets, main, tag or public release changed in this evidence-only increment. Verified source/tree, external review hash, local/remote dev identity, `git diff --check` and queue packet structure.
 
-2026-09-28 first-stable candidate source: added `release stable-build` and
-`stable-validate` to AIDE Lite with version/profile/source-policy binding,
-versioned archives and checksums under the existing release root. Kept Q47/Q48
-previews no-publish. Archive validation now rejects unsafe members and bounded
-size before extraction; the focused regression covers escape/link refusal,
-distinct bytes, deterministic replay, tamper and exact-output recovery. The
-D-managed Q47/Q48 group passed 33 tests in 62.246 seconds, peaked at 3.11 MB
-scratch and retired it; a final focused one-test run also passed. The current
-WorkUnit awaits independent source/security review. Final pack regeneration,
-stable asset consumers, release ACCEPT and external effects are not yet run.
+2026-09-28 first-stable candidate source: added `release stable-build` and `stable-validate` to AIDE Lite with version/profile/source-policy binding, versioned archives and checksums under the existing release root. Kept Q47/Q48 previews no-publish. Archive validation now rejects unsafe members and bounded size before extraction; the focused regression covers escape/link refusal, distinct bytes, deterministic replay, tamper and exact-output recovery. The D-managed Q47/Q48 group passed 33 tests in 62.246 seconds, peaked at 3.11 MB scratch and retired it; a final focused one-test run also passed. The current WorkUnit awaits independent source/security review. Final pack regeneration, stable asset consumers, release ACCEPT and external effects are not yet run.
 
-2026-09-28 stable candidate qualification: independent source reviews first
-rejected unsafe NTFS ADS/aliases and pre-parse tar PAX allocation, then
-accepted exact repaired source `59db02a0` for dev. The repaired builder
-rejected crafted ZIP/tar aliases and oversized PAX before extraction; 36
-Q47/Q48 tests passed on its final code. Dev fast-forwarded to `a6725d83`
-and was observed remotely. A current portable pack, committed changelog
-preview and Q47/Q48 no-publish projections were generated through serial D
-jobs; bundle/draft post-commit replay changed zero files. A separate local
-1.0.0 ZIP/tar/manifest/checksum set was frozen at `92da9573`, validated and
-replayed with zero byte changes. Exact stable-byte canaries passed 25
-fresh/brownfield commands, 31 lifecycle commands, fresh/brownfield
-context/offline, three real child exits, ten installed recovery/feedback
-forms and installed validate/task inspection. Current importer shards passed
-54/54 and 56/56 cases. All listed jobs retired scratch and released their
-reservations. The release-effect manifest records receipt hashes and the
-remaining warning/offline limits. The candidate subsequently received
-independent ACCEPT and reached dev; main, tag, publication and downloaded
-consumer effects remain gated by historical message dispositions.
+2026-09-28 stable candidate qualification: independent source reviews first rejected unsafe NTFS ADS/aliases and pre-parse tar PAX allocation, then accepted exact repaired source `59db02a0` for dev. The repaired builder rejected crafted ZIP/tar aliases and oversized PAX before extraction; 36 Q47/Q48 tests passed on its final code. Dev fast-forwarded to `a6725d83` and was observed remotely. A current portable pack, committed changelog preview and Q47/Q48 no-publish projections were generated through serial D jobs; bundle/draft post-commit replay changed zero files. A separate local 1.0.0 ZIP/tar/manifest/checksum set was frozen at `92da9573`, validated and replayed with zero byte changes. Exact stable-byte canaries passed 25 fresh/brownfield commands, 31 lifecycle commands, fresh/brownfield context/offline, three real child exits, ten installed recovery/feedback forms and installed validate/task inspection. Current importer shards passed 54/54 and 56/56 cases. All listed jobs retired scratch and released their reservations. The release-effect manifest records receipt hashes and the remaining warning/offline limits. The candidate subsequently received independent ACCEPT and reached dev; main, tag, publication and downloaded consumer effects remain gated by historical message dispositions.
 
-2026-09-28 selected-root setup: added `job setup` to the existing managed
-workspace runner. An explicit local selection validates approved parent,
-source boundaries, redirects, actual volume IDs, shared checkout configuration,
-finite limits and combined config/job disk allowance before publishing one
-machine-local config. Equal existing config is read-only; setup never chooses a
-fallback drive. Six new focused cases and the 35-case managed suite passed in
-the shared D runner (job `4c93fecbc9544747902b5225e0f16db3`); scratch was
-retired and the reservation released. A commit-bound rerun passed the same
-35 cases (job `48c84ef70d2c494bb46a4ec7079532d5`) and independent review
-accepted exact source `5152798b` with notes. Dev integration remains separate
-from the frozen Lite release; its accepted source/assets were not changed.
+2026-09-28 selected-root setup: added `job setup` to the existing managed workspace runner. An explicit local selection validates approved parent, source boundaries, redirects, actual volume IDs, shared checkout configuration, finite limits and combined config/job disk allowance before publishing one machine-local config. Equal existing config is read-only; setup never chooses a fallback drive. Six new focused cases and the 35-case managed suite passed in the shared D runner (job `4c93fecbc9544747902b5225e0f16db3`); scratch was retired and the reservation released. A commit-bound rerun passed the same 35 cases (job `48c84ef70d2c494bb46a4ec7079532d5`) and independent review accepted exact source `5152798b` with notes. Dev integration remains separate from the frozen Lite release; its accepted source/assets were not changed.
 
-2026-09-28 partial rollback continuation: `rollback-pack` now reports the
-saved recovery digest only for a safe-mode rollback-direction intent and
-accepts explicit `--recover-partial` with that exact digest. It delegates to
-the existing guarded importer under the lifecycle lock, returning
-`ROLLED_BACK_RECOVERED` only after receipt/intent reconciliation. The new
-installed-CLI test covers wrong direction/digest, a rival edit and preserved
-authored bytes; eight affected rollback cases and a CLI junction case passed
-under the D runner. This is source work awaiting independent review and
-delivered-byte qualification, not a change to the accepted Lite release.
+2026-09-28 partial rollback continuation: `rollback-pack` now reports the saved recovery digest only for a safe-mode rollback-direction intent and accepts explicit `--recover-partial` with that exact digest. It delegates to the existing guarded importer under the lifecycle lock, returning `ROLLED_BACK_RECOVERED` only after receipt/intent reconciliation. The new installed-CLI test covers wrong direction/digest, a rival edit and preserved authored bytes; eight affected rollback cases and a CLI junction case passed under the D runner. This is source work awaiting independent review and delivered-byte qualification, not a change to the accepted Lite release.
 
-The first independent review requested changes: an interrupted reverse
-import could bypass rollback receipt and path-set checks. A failing
-reverse-import regression reproduced that case. The follow-up shares the
-completed receipt baseline predicate with ordinary rollback and refuses
-partial recovery when safe payload paths differ. The focused regression
-passes; superseding exact review and broader affected tests remain open.
+The first independent review requested changes: an interrupted reverse import could bypass rollback receipt and path-set checks. A failing reverse-import regression reproduced that case. The follow-up shares the completed receipt baseline predicate with ordinary rollback and refuses partial recovery when safe payload paths differ. The focused regression passes; superseding exact review and broader affected tests remain open.
 
-The superseding commit `72d1438e` then passed the eight-case rollback matrix
-under the shared D runner (782.001 seconds, peak memory 263 MB, peak scratch
-22 MB, scratch retired). Independent rereview accepted this exact source for
-dev integration. The branch remains separate while Lite 1.0.0 frozen assets
-await their release gate; delivered-byte qualification is still required.
+The superseding commit `72d1438e` then passed the eight-case rollback matrix under the shared D runner (782.001 seconds, peak memory 263 MB, peak scratch 22 MB, scratch retired). Independent rereview accepted this exact source for dev integration. The branch remains separate while Lite 1.0.0 frozen assets await their release gate; delivered-byte qualification is still required.
 
-The post-Lite integration candidate merged accepted managed setup and
-rollback source without changing frozen dev or release artifacts. Its 35-case
-managed suite passed. The long rollback suite was interrupted by the runner's
-strict scratch-link monitor during an intentional junction fixture; AIDE
-recovered that job after two verified in-scratch junction entries were removed.
-The junction case then passed alone. A seven-case split stopped on an unnamed
-unexpected scratch member after four printed passes; it was retired with a
-failed result. The runner refusal now records the relative member path and
-file attributes without relaxing its safety predicate. A focused scanner
-test passes; identify the member and finish combined qualification before
-claiming this changed source accepted.
+The post-Lite integration candidate merged accepted managed setup and rollback source without changing frozen dev or release artifacts. Its 35-case managed suite passed. The long rollback suite was interrupted by the runner's strict scratch-link monitor during an intentional junction fixture; AIDE recovered that job after two verified in-scratch junction entries were removed. The junction case then passed alone. A seven-case split stopped on an unnamed unexpected scratch member after four printed passes; it was retired with a failed result. The runner refusal now records the relative member path and file attributes without relaxing its safety predicate. A focused scanner test passes; identify the member and finish combined qualification before claiming this changed source accepted.
 
-The final combined source `f5b77e01` passed 35 managed-runner cases and all
-eight rollback cases as separately admitted D jobs. Every final job retired
-scratch and released its reservation; a receipt-hash summary binds the eight
-rollback cases to that exact source. Independent rereview accepted the narrow
-runner diagnostic delta and combined source for later dev integration. The
-two monitor-stopped long jobs remain failed evidence. Dev and frozen Lite
-assets were not changed.
+The final combined source `f5b77e01` passed 35 managed-runner cases and all eight rollback cases as separately admitted D jobs. Every final job retired scratch and released its reservation; a receipt-hash summary binds the eight rollback cases to that exact source. Independent rereview accepted the narrow runner diagnostic delta and combined source for later dev integration. The two monitor-stopped long jobs remain failed evidence. Dev and frozen Lite assets were not changed.
 
-The current frozen Lite ZIP `a762c816…` passed a delivered-byte brownfield
-mid-removal canary under managed D job `539db05c6c2c4c389a42b6d2e8ce186f`.
-After a child exited immediately following one owned unlink, a fresh CLI
-resumed to `DETACHED`; authored and project-owned bytes remained intact.
-Scratch retired and the reservation released. Independent exact review
-accepted this as one local Windows interruption proof only. The first harness
-attempt failed on an unsupported import flag; the corrected canary and its
-receipt hashes are recorded in the campaign evidence. Product source, frozen
-release asset, dev and main were unchanged.
+The current frozen Lite ZIP `a762c816…` passed a delivered-byte brownfield mid-removal canary under managed D job `539db05c6c2c4c389a42b6d2e8ce186f`. After a child exited immediately following one owned unlink, a fresh CLI resumed to `DETACHED`; authored and project-owned bytes remained intact. Scratch retired and the reservation released. Independent exact review accepted this as one local Windows interruption proof only. The first harness attempt failed on an unsupported import flag; the corrected canary and its receipt hashes are recorded in the campaign evidence. Product source, frozen release asset, dev and main were unchanged.
 
-The first portable efficiency increment added read-only `job wait` and made
-`job run` emit a compact outcome by default (`--full` retains detailed output).
-Frozen source `f30bbad2` passed six synthetic cases and one actual export
-inclusion case through the bounded D runner; exact receipt hashes, measured
-resource peaks and limits are in `AIDE-LITE-EFFICIENCY-01/evidence`.
-Independent `/root/stable_effect_review` accepted source integration and the
-bounded local effect. The exported archive, host dispatch/pause boundary,
-total model usage and release bytes remain unqualified.
+The first portable efficiency increment added read-only `job wait` and made `job run` emit a compact outcome by default (`--full` retains detailed output). Frozen source `f30bbad2` passed six synthetic cases and one actual export inclusion case through the bounded D runner; exact receipt hashes, measured resource peaks and limits are in `AIDE-LITE-EFFICIENCY-01/evidence`. Independent `/root/stable_effect_review` accepted source integration and the bounded local effect. The exported archive, host dispatch/pause boundary, total model usage and release bytes remain unqualified.
 
-A targeted export-consumer regression now builds the normal fixture pack,
-validates checksums, extracts its archive and invokes delivered Lite. The first
-D job failed on an incorrect test assumption that portable `core` was absent;
-the delivered observer itself returned PASS. Test-only `45c143de` removed that
-assertion, and a second bounded D job passed 1/1 with scratch retired. Exact
-attempt receipts and the release boundary are in the WorkUnit evidence.
+A targeted export-consumer regression now builds the normal fixture pack, validates checksums, extracts its archive and invokes delivered Lite. The first D job failed on an incorrect test assumption that portable `core` was absent; the delivered observer itself returned PASS. Test-only `45c143de` removed that assertion, and a second bounded D job passed 1/1 with scratch retired. Exact attempt receipts and the release boundary are in the WorkUnit evidence.
 
-Lite now imports bounded Codex `exec --json` usage without a model call or raw
-message echo. The first source `728e61a2` passed its tests but independent
-review found ambiguous turn undercounting. Fix-forward `fe8bca8b` requires one
-turn start, marks ambiguity partial and withholds aggregate totals. Its 11-case
-managed suite and extracted-pack consumer case passed, with scratch retired;
-independent delta review accepted the source. The exact receipts and missing
-real-host/release evidence are in the efficiency WorkUnit.
+Lite now imports bounded Codex `exec --json` usage without a model call or raw message echo. The first source `728e61a2` passed its tests but independent review found ambiguous turn undercounting. Fix-forward `fe8bca8b` requires one turn start, marks ambiguity partial and withholds aggregate totals. Its 11-case managed suite and extracted-pack consumer case passed, with scratch retired; independent delta review accepted the source. The exact receipts and missing real-host/release evidence are in the efficiency WorkUnit.
 
-The independently reviewed post-Lite source candidate `28492e00` was
-fast-forwarded from `76e17a4c` into local and remote `dev` on 2026-09-29.
-No merge resolution changed source. The exact effect and remaining release
-qualification are recorded in the efficiency WorkUnit; `main` was untouched.
+The independently reviewed post-Lite source candidate `28492e00` was fast-forwarded from `76e17a4c` into local and remote `dev` on 2026-09-29. No merge resolution changed source. The exact effect and remaining release qualification are recorded in the efficiency WorkUnit; `main` was untouched.
 
-The Windows continuous worker now serializes operator pause/cancellation with
-the final suspended-child resume in its existing Codex launch path. Source
-`a8c9935e` passed 31 D-managed pipeline cases, including two stale-control
-injections, and received independent dev-only ACCEPT. The reviewed source
-fast-forwarded local and remote `dev`; real Codex and portable Lite host
-effects remain separate qualification work. Exact receipt and limits are in
-`AIDE-CODEX-DISPATCH-GATE-01/evidence`.
+The Windows continuous worker now serializes operator pause/cancellation with the final suspended-child resume in its existing Codex launch path. Source `a8c9935e` passed 31 D-managed pipeline cases, including two stale-control injections, and received independent dev-only ACCEPT. The reviewed source fast-forwarded local and remote `dev`; real Codex and portable Lite host effects remain separate qualification work. Exact receipt and limits are in `AIDE-CODEX-DISPATCH-GATE-01/evidence`.
 
-The Lite efficiency WorkUnit now exports the existing Windows managed job
-owner and direct dependencies. The first source candidate passed an extracted
-ZIP job test but independent review found a missing-index admission bypass.
-Superseding source `26f343b7` requires a validated extracted pack for portable
-admission; the D-managed delivered-job and missing-index regressions passed
-2/2, with scratch retired. Independent review accepted dev source integration.
-This does not qualify a real Codex effect or stable release bytes.
-The accepted source and evidence fast-forwarded local and remote `dev` to
-`b9aad160`; `main` remains at its prior release head.
+The Lite efficiency WorkUnit now exports the existing Windows managed job owner and direct dependencies. The first source candidate passed an extracted ZIP job test but independent review found a missing-index admission bypass. Superseding source `26f343b7` requires a validated extracted pack for portable admission; the D-managed delivered-job and missing-index regressions passed 2/2, with scratch retired. Independent review accepted dev source integration. This does not qualify a real Codex effect or stable release bytes. The accepted source and evidence fast-forwarded local and remote `dev` to `b9aad160`; `main` remains at its prior release head.
 
-Lite `job context` now summarizes a supplied Codex prompt-input stream without
-echoing raw text or starting a model. Two failed host-oracle attempts exposed
-the installed CLI's `input_text` shape; superseding `b4f250f7` passed three
-D-managed cases including the real no-model debugger stream. Independent
-review accepted dev source integration. Extracted-pack verification and live
-host usage remain open.
+Lite `job context` now summarizes a supplied Codex prompt-input stream without echoing raw text or starting a model. Two failed host-oracle attempts exposed the installed CLI's `input_text` shape; superseding `b4f250f7` passed three D-managed cases including the real no-model debugger stream. Independent review accepted dev source integration. Extracted-pack verification and live host usage remain open.
 
 ## 2026-09-29 isolated-host API-set observation source integration
 
-The reviewed `RtlGetVersion` repair, one-use API-set query controller and
-ordinary-loader observation source are merged from the retained native-host
-task branch into the current AIDE source lineage. Their independent source
-reviews accepted `d995783a`, `f1c9223e` and `b682ba7d` for source only.
-The Windows 10.0.19045 host lacks the documented L2 API-set query export;
-the loader route can execute DLL initialization before its returned-path
-check. No API-set query, ordinary-loader effect, restricted worker or
-operational activation is qualified by this merge. Current combined-source
-tests and a source integration review are required before release use.
+The reviewed `RtlGetVersion` repair, one-use API-set query controller and ordinary-loader observation source are merged from the retained native-host task branch into the current AIDE source lineage. Their independent source reviews accepted `d995783a`, `f1c9223e` and `b682ba7d` for source only. The Windows 10.0.19045 host lacks the documented L2 API-set query export; the loader route can execute DLL initialization before its returned-path check. No API-set query, ordinary-loader effect, restricted worker or operational activation is qualified by this merge. Current combined-source tests and a source integration review are required before release use.
 
 ## 2026-09-29 portable Codex usage JSON integrity
 
-The portable `job usage` importer now rejects duplicate JSON object keys in
-event and nested token-counter records, preventing last-value-wins accounting.
-Source `8a12605d` passed 15 D-managed focused cases with retired scratch and
-received independent dev-only ACCEPT under `AIDE-LITE-EFFICIENCY-01`. Live
-host usage and final release bytes remain separate qualification work.
+The portable `job usage` importer now rejects duplicate JSON object keys in event and nested token-counter records, preventing last-value-wins accounting. Source `8a12605d` passed 15 D-managed focused cases with retired scratch and received independent dev-only ACCEPT under `AIDE-LITE-EFFICIENCY-01`. Live host usage and final release bytes remain separate qualification work.
 
 ## 2026-09-29 one-turn Codex host source binding
 
-The existing managed Windows job owner now accepts one bounded `codex_exec`
-adapter. It requires an exact machine-local ChatGPT model/effort permission and
-finite admitted-turn budget, source-bound packet/schema, pause-safe child
-resume, ordinary executable parent, and retained input charged to the log and
-disk reserve. Ambiguous local JSON keys fail closed. Candidate `67e1d572`
-passed 46/46 D-managed synthetic tests with retired scratch; independent
-`/root/native_os_build_review` ACCEPTed dev source integration. Two earlier
-REQUEST_CHANGES and two failed D runs remain in the WorkUnit evidence. No live
-model request, JSONL verdict or final Lite asset was qualified by this source
-increment.
+The existing managed Windows job owner now accepts one bounded `codex_exec` adapter. It requires an exact machine-local ChatGPT model/effort permission and finite admitted-turn budget, source-bound packet/schema, pause-safe child resume, ordinary executable parent, and retained input charged to the log and disk reserve. Ambiguous local JSON keys fail closed. Candidate `67e1d572` passed 46/46 D-managed synthetic tests with retired scratch; independent `/root/native_os_build_review` ACCEPTed dev source integration. Two earlier REQUEST_CHANGES and two failed D runs remain in the WorkUnit evidence. No live model request, JSONL verdict or final Lite asset was qualified by this source increment.
 
-The next extracted Lite fixture now calls the delivered `job run` path with a
-source-bound synthetic Codex manifest. It refuses missing local model
-permission before scratch allocation, then still proves the Python job,
-wait, usage and context paths. Superseding test `8b0cba06` passed 1/1 under
-the D owner with retired scratch and independent dev test ACCEPT. The first
-inspector-only test was rejected as a weak effect oracle; its receipt remains
-in `AIDE-LITE-EFFICIENCY-01/evidence`. This does not qualify a live turn or a
-canonical release asset.
+The next extracted Lite fixture now calls the delivered `job run` path with a source-bound synthetic Codex manifest. It refuses missing local model permission before scratch allocation, then still proves the Python job, wait, usage and context paths. Superseding test `8b0cba06` passed 1/1 under the D owner with retired scratch and independent dev test ACCEPT. The first inspector-only test was rejected as a weak effect oracle; its receipt remains in `AIDE-LITE-EFFICIENCY-01/evidence`. This does not qualify a live turn or a canonical release asset.
 
 ## 2026-09-29 current-source Lite candidate refresh
 
-The changelog preview's selected revision now supplies its `source_head`.
-Independent review found and the source repaired mixed `--range`/`--to` and
-open-ended range binding; exact `46fe61d7` received source ACCEPT. A clean
-preview at `4491c2cb` supplied a rebuilt portable pack, whose checksums,
-provenance, boundary and postcommit replay passed. Local 1.0.0 assets at
-`df372b3a` passed bounded build, validation and zero-change replay. Six
-serial exact-byte consumers passed fresh/brownfield, lifecycle,
-context/offline, partial, public CLI and forced restart checks, with scratch
-retired. Current Q47/Q48 passed 36 tests. Local release preview and draft
-also validated and replayed without tracked changes. The current effect
-manifest in the release WorkUnit binds receipts, assets and 28 public forms;
-independent current release review, live one-turn model qualification, ten
-historical owner decisions, main, tag and publication remain pending.
+The changelog preview's selected revision now supplies its `source_head`. Independent review found and the source repaired mixed `--range`/`--to` and open-ended range binding; exact `46fe61d7` received source ACCEPT. A clean preview at `4491c2cb` supplied a rebuilt portable pack, whose checksums, provenance, boundary and postcommit replay passed. Local 1.0.0 assets at `df372b3a` passed bounded build, validation and zero-change replay. Six serial exact-byte consumers passed fresh/brownfield, lifecycle, context/offline, partial, public CLI and forced restart checks, with scratch retired. Current Q47/Q48 passed 36 tests. Local release preview and draft also validated and replayed without tracked changes. The current effect manifest in the release WorkUnit binds receipts, assets and 28 public forms; independent current release review, live one-turn model qualification, ten historical owner decisions, main, tag and publication remain pending.
 
 ## 2026-09-29 portable Lite job-form effect repair
 
-The exported runner guide described a usable `job` interface that was absent
-from the 28-form stable matrix. Policy source `20710eac` adds nine exact forms
-and option variants, yielding 37. Changelog preview, pack, stable assets,
-release view and draft were regenerated in source order. Their post-commit
-replays changed zero tracked files. The rebuilt ZIP passed ten delivered job
-observations in a fresh disposable Git project under the approved D scratch
-root; six serial final-byte consumers passed fresh/brownfield, lifecycle,
-context/offline, partial, public CLI and forced restart. The focused Q47/Q48
-suite passed 36 tests. Each managed job retired scratch and released its
-reservation. The superseding effect manifest binds current assets, receipts
-and all 37 forms for independent review. Live model execution, main history
-decisions, publication and downloaded-byte qualification remain open.
-Independent exact review accepted the local technical effect and dev
-integration. Local and remote dev fast-forwarded to `3e12aeb0`, while main
-remained at `aec53b1d`. A supplemental 46-case managed workspace suite passed.
-The full `main..dev` validator still reports ten historical message failures.
+The exported runner guide described a usable `job` interface that was absent from the 28-form stable matrix. Policy source `20710eac` adds nine exact forms and option variants, yielding 37. Changelog preview, pack, stable assets, release view and draft were regenerated in source order. Their post-commit replays changed zero tracked files. The rebuilt ZIP passed ten delivered job observations in a fresh disposable Git project under the approved D scratch root; six serial final-byte consumers passed fresh/brownfield, lifecycle, context/offline, partial, public CLI and forced restart. The focused Q47/Q48 suite passed 36 tests. Each managed job retired scratch and released its reservation. The superseding effect manifest binds current assets, receipts and all 37 forms for independent review. Live model execution, main history decisions, publication and downloaded-byte qualification remain open. Independent exact review accepted the local technical effect and dev integration. Local and remote dev fast-forwarded to `3e12aeb0`, while main remained at `aec53b1d`. A supplemental 46-case managed workspace suite passed. The full `main..dev` validator still reports ten historical message failures.
 
 ## 2026-09-29 portable usage known-subtotal integrity
 
-The `job usage` parser no longer converts wholly missing token categories
-into a known zero. Completion plus failure in one stream is now a terminal
-conflict and cannot contribute to known subtotals. Two new synthetic cases
-failed against the old behavior, then the 17-case D-managed focused suite
-passed. No model was called. At that checkpoint, the accepted 1.0.0 asset
-effect remained pinned to the earlier script bytes.
+The `job usage` parser no longer converts wholly missing token categories into a known zero. Completion plus failure in one stream is now a terminal conflict and cannot contribute to known subtotals. Two new synthetic cases failed against the old behavior, then the 17-case D-managed focused suite passed. No model was called. At that checkpoint, the accepted 1.0.0 asset effect remained pinned to the earlier script bytes.
 
-The independent source review accepted the usage repair for dev integration,
-now observed at `dev@8912eab9`. A single source-to-byte refresh built a new
-portable pack and unpublished stable candidate. Pack and stable postcommit
-replays changed zero tracked files; six serial consumers, ten extracted job
-observations and the 36-case Q47/Q48 suite passed under approved D roots.
-Preview bundle and draft jobs validated locally. Current hashes and receipts
-are retained in the release WorkUnit. Exact view replay and independent
-effect review remain before further integration; no model turn or publication
-occurred.
+The independent source review accepted the usage repair for dev integration, now observed at `dev@8912eab9`. A single source-to-byte refresh built a new portable pack and unpublished stable candidate. Pack and stable postcommit replays changed zero tracked files; six serial consumers, ten extracted job observations and the 36-case Q47/Q48 suite passed under approved D roots. Preview bundle and draft jobs validated locally. Current hashes and receipts are retained in the release WorkUnit. Exact view replay and independent effect review remain before further integration; no model turn or publication occurred.
 
-The first current-source effect review accepted dev source/artifact
-integration but requested the 37-form release-policy mapping before local
-technical effect acceptance. The manifest now binds 39 current consumer
-outputs and ten extracted job observations to the exact 37 advertised forms.
-All output paths, digests, exit codes and observed text were checked against
-retained current-byte jobs. This was an evidence-only repair; the six
-consumers and 36 release tests were not repeated.
+The first current-source effect review accepted dev source/artifact integration but requested the 37-form release-policy mapping before local technical effect acceptance. The manifest now binds 39 current consumer outputs and ten extracted job observations to the exact 37 advertised forms. All output paths, digests, exit codes and observed text were checked against retained current-byte jobs. This was an evidence-only repair; the six consumers and 36 release tests were not repeated.
 
-Scoped independent rereview accepted the repaired local technical effect
-at `ae08a6be`. Six commit messages passed the integration range check;
-local and remote dev fast-forwarded from `8912eab9` to `ae08a6be` without
-force. The remote ref and local tree were observed and retained in the
-release WorkUnit. This is source/artifact integration and local technical
-acceptance only; main, tag, publication, downloaded-byte and live-model
-qualification remain open.
+Scoped independent rereview accepted the repaired local technical effect at `ae08a6be`. Six commit messages passed the integration range check; local and remote dev fast-forwarded from `8912eab9` to `ae08a6be` without force. The remote ref and local tree were observed and retained in the release WorkUnit. This is source/artifact integration and local technical acceptance only; main, tag, publication, downloaded-byte and live-model qualification remain open.
 
-Closed the resource-cleanup WorkUnit after verifying reviewed setup source
-`5152798b` in dev, identical machine-local D execution configuration in
-both checkouts and actual bounded export, stable-build and 36-test receipts.
-All three observed jobs exited quiescently with scratch absent and shared
-reservations released. The earlier 34 worktree retirements remain tied to
-their exact receipts. Disk free-space changes were observed, not attributed
-wholly to AIDE; monitored reservations are not filesystem quotas.
+Closed the resource-cleanup WorkUnit after verifying reviewed setup source `5152798b` in dev, identical machine-local D execution configuration in both checkouts and actual bounded export, stable-build and 36-test receipts. All three observed jobs exited quiescently with scratch absent and shared reservations released. The earlier 34 worktree retirements remain tied to their exact receipts. Disk free-space changes were observed, not attributed wholly to AIDE; monitored reservations are not filesystem quotas.
 
-Corrected the portable Codex usage importer so an ambiguous turn in one
-session cannot erase the known subtotal of a different, valid session. The
-ambiguous stream remains excluded and full totals remain unknown. A D-managed
-red run isolated the regression; all 18 focused tests passed after repair.
-Independent review accepted exact source `9c391d25` for integration. A coherent
-release-byte refresh remains pending; the accepted dev release artifacts still
-bind their earlier source.
+Corrected the portable Codex usage importer so an ambiguous turn in one session cannot erase the known subtotal of a different, valid session. The ambiguous stream remains excluded and full totals remain unknown. A D-managed red run isolated the regression; all 18 focused tests passed after repair. Independent review accepted exact source `9c391d25` for integration. A coherent release-byte refresh remains pending; the accepted dev release artifacts still bind their earlier source.
 
-The accepted turn-boundary usage repair is in remote `dev@fe65f48c`. A single
-current-source pack and unpublished stable asset refresh passed deterministic
-postcommit replays. Six serial delivered-byte consumers, ten extracted `job`
-forms and 36 release tests passed under approved D execution roots. A preview
-bundle correctly rejected notes from a later source revision; rebinding the
-notes to the export source fixed the local bundle and draft, and their
-postcommit replays changed zero tracked files. The new 37-form effect manifest
-awaits independent review; main and publication gates remain open.
+The accepted turn-boundary usage repair is in remote `dev@fe65f48c`. A single current-source pack and unpublished stable asset refresh passed deterministic postcommit replays. Six serial delivered-byte consumers, ten extracted `job` forms and 36 release tests passed under approved D execution roots. A preview bundle correctly rejected notes from a later source revision; rebinding the notes to the export source fixed the local bundle and draft, and their postcommit replays changed zero tracked files. The new 37-form effect manifest awaits independent review; main and publication gates remain open.
 
-Independent review accepted exact current-byte effect packet `de308dd7` for
-dev integration and local technical effect. The reviewer verified four assets,
-runner receipts, 37 forms and 49 evidence references, without rerunning tests
-or performing a live model turn. The verdict remains local; external release
-gates are unchanged.
+Independent review accepted exact current-byte effect packet `de308dd7` for dev integration and local technical effect. The reviewer verified four assets, runner receipts, 37 forms and 49 evidence references, without rerunning tests or performing a live model turn. The verdict remains local; external release gates are unchanged.
 
-The eight accepted current-byte commits fast-forwarded local and remote dev
-to `d5a84c10`, tree `50058036`; remote identity and clean local state were
-observed. The full `main..dev` check still reports exactly ten unresolved
-historical message failures. No main promotion or publication occurred.
+The eight accepted current-byte commits fast-forwarded local and remote dev to `d5a84c10`, tree `50058036`; remote identity and clean local state were observed. The full `main..dev` check still reports exactly ten unresolved historical message failures. No main promotion or publication occurred.
 
 ## 2026-09-29 bounded attempt attribution for Lite usage
 
-Extended the existing portable `job usage` importer with a read-only attempt
-roster. It validates role and parent links, bounded relative stream paths and
-SHA-256 identities, then reports known usage subtotals by parent, child,
-review, retry, repair and overhead role. Missing streams and same-session
-ambiguity remain explicit; the command never claims complete work usage or
-internal host model requests from a supplied roster. Four focused new tests
-were red before implementation; the D-managed 22-case suite passed after it.
-The test job retired scratch and released its reservation. Exact source review,
-dev integration, changed-byte release qualification and live host binding are
-still separate gates.
+Extended the existing portable `job usage` importer with a read-only attempt roster. It validates role and parent links, bounded relative stream paths and SHA-256 identities, then reports known usage subtotals by parent, child, review, retry, repair and overhead role. Missing streams and same-session ambiguity remain explicit; the command never claims complete work usage or internal host model requests from a supplied roster. Four focused new tests were red before implementation; the D-managed 22-case suite passed after it. The test job retired scratch and released its reservation. Exact source review, dev integration, changed-byte release qualification and live host binding are still separate gates.
 
-Exact-source review of the first attempt-roster candidate found two malformed
-input crashes: non-string parent links and deeply nested JSON. The new cases
-reproduced both failures; the importer now validates every parent link before
-cycle traversal and converts JSON recursion failure to structured `REFUSED`.
-The D-managed focused suite passed 24/24 after repair. The original review
-remains `REQUEST_CHANGES`; a scoped superseding review accepted exact source
-`8f10a66b` for dev integration. The reviewer did not rerun tests or qualify
-delivered bytes or live host behavior.
+Exact-source review of the first attempt-roster candidate found two malformed input crashes: non-string parent links and deeply nested JSON. The new cases reproduced both failures; the importer now validates every parent link before cycle traversal and converts JSON recursion failure to structured `REFUSED`. The D-managed focused suite passed 24/24 after repair. The original review remains `REQUEST_CHANGES`; a scoped superseding review accepted exact source `8f10a66b` for dev integration. The reviewer did not rerun tests or qualify delivered bytes or live host behavior.
 
-The source-bound Lite 1.0.0 attribution projection was refreshed through the
-existing release generator. The 38-form assets, six disposable current-byte
-consumer journeys, twelve job-form observations, Q47/Q48 36-case suite, and
-zero-change export/stable/bundle/draft replays passed. Independent review
-accepted the exact local effect at `a681da82` for dev integration; the
-eleven-commit range passed policy and remote `dev` was observed at `b11af55d`.
-This is local technical acceptance, not a live model or published release.
+The source-bound Lite 1.0.0 attribution projection was refreshed through the existing release generator. The 38-form assets, six disposable current-byte consumer journeys, twelve job-form observations, Q47/Q48 36-case suite, and zero-change export/stable/bundle/draft replays passed. Independent review accepted the exact local effect at `a681da82` for dev integration; the eleven-commit range passed policy and remote `dev` was observed at `b11af55d`. This is local technical acceptance, not a live model or published release.
 
 ## 2026-09-29 final redundant AIDE checkout retirement
 
-Retired the clean partial-import-recovery physical checkout through `git
-worktree remove` without force. Its exact `e18f983b` branch and remote ref
-remain, and that commit is already in remote `dev`. The checkout contained
-only a duplicate ignored local execution configuration and Python bytecode
-caches beyond tracked files. D: free space increased by 134,991,872 bytes
-during the operation. The surviving ignored configuration now names only the
-primary working root and passed the existing loader. The compact exact
-receipt is under `AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/`; no release
-artifact or product source changed.
+Retired the clean partial-import-recovery physical checkout through `git worktree remove` without force. Its exact `e18f983b` branch and remote ref remain, and that commit is already in remote `dev`. The checkout contained only a duplicate ignored local execution configuration and Python bytecode caches beyond tracked files. D: free space increased by 134,991,872 bytes during the operation. The surviving ignored configuration now names only the primary working root and passed the existing loader. The compact exact receipt is under `AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/evidence/`; no release artifact or product source changed.
 
 ## 2026-09-29 mediated Codex request repeat guard candidate
 
-The existing managed Windows Job owner now records a bounded fingerprint of
-each admitted Codex request in its dispatch state. An unchanged request,
-including one relabeled with another owner or one whose host outcome is
-uncertain, refuses before another scratch allocation or turn admission.
-Prior positive-count dispatch state without request identities also refuses
-Codex admission pending reconciliation. A changed bound model/effort remains
-eligible under matching local permission and finite budget. The first
-D-managed regression failed because the old owner launched the duplicate;
-the repaired focused Codex suite passed 11/11, and the full managed-workspace
-suite passed 50/50; both retired scratch and released reservations. Independent
-review, delivered bytes and live-model effects remain separate gates.
+The existing managed Windows Job owner now records a bounded fingerprint of each admitted Codex request in its dispatch state. An unchanged request, including one relabeled with another owner or one whose host outcome is uncertain, refuses before another scratch allocation or turn admission. Prior positive-count dispatch state without request identities also refuses Codex admission pending reconciliation. A changed bound model/effort remains eligible under matching local permission and finite budget. The first D-managed regression failed because the old owner launched the duplicate; the repaired focused Codex suite passed 11/11, and the full managed-workspace suite passed 50/50; both retired scratch and released reservations. Independent review, delivered bytes and live-model effects remain separate gates.
 
-The first exact source review requested changes: Windows case-only aliases in
-`cwd`, prompt/schema names and input keys produced different raw-string
-fingerprints for the same files. A D-managed alias regression reproduced the
-second turn; the repair binds the working directory by filesystem identity,
-uses input content and prompt/schema roles, and rejects duplicate input file
-identities. The focused alias case passed under the D owner. This supersedes
-the first source candidate; full-suite and exact rereview follow.
+The first exact source review requested changes: Windows case-only aliases in `cwd`, prompt/schema names and input keys produced different raw-string fingerprints for the same files. A D-managed alias regression reproduced the second turn; the repair binds the working directory by filesystem identity, uses input content and prompt/schema roles, and rejects duplicate input file identities. The focused alias case passed under the D owner. This supersedes the first source candidate; full-suite and exact rereview follow.
 
-The superseding full managed-workspace suite passed 51/51 in one bounded D
-job with no skips, scratch absent and reservation released. The reviewed
-source subject still needs an independent verdict and changed-byte Lite
-qualification; these synthetic hosts made no live model request.
+The superseding full managed-workspace suite passed 51/51 in one bounded D job with no skips, scratch absent and reservation released. The reviewed source subject still needs an independent verdict and changed-byte Lite qualification; these synthetic hosts made no live model request.
 
-The reviewer accepted source `48235e9a`/tree `be0db1b9` for dev integration.
-The review closeout fast-forwarded local and remote dev to `3cc6bf13`/tree
-`f55b5859`. An extracted-pack consumer passed 1/1 on that integrated source.
-The new pack commit is `f26fa5b3`; stable assets are `8e9c1c0c`, with ZIP
-SHA-256 `798f44df7898072bb763090ce02317614837775f60ac813ee8c25c0188b2ac5d`.
-Pack and stable postcommit replays changed zero tracked files. Six serial
-current-byte consumer jobs passed with retired scratch and released
-reservations; the delivered job-form canary passed 12 observations and Q47/Q48
-passed 36/36. The preview view commit is `6861954b`; changelog, bundle and
-draft replays changed zero tracked files. A first Q47 bundle failed on a stale
-changelog source head and was repaired by regenerating that projection.
-The D runner refused `.aide/changelog` as an unrecognized canonical output;
-the small changelog command ran directly through the existing deterministic
-CLI. Exact job and asset bindings are in the stable-effect WorkUnit. This is
-a local candidate pending independent release review, not published bytes.
+The reviewer accepted source `48235e9a`/tree `be0db1b9` for dev integration. The review closeout fast-forwarded local and remote dev to `3cc6bf13`/tree `f55b5859`. An extracted-pack consumer passed 1/1 on that integrated source. The new pack commit is `f26fa5b3`; stable assets are `8e9c1c0c`, with ZIP SHA-256 `798f44df7898072bb763090ce02317614837775f60ac813ee8c25c0188b2ac5d`. Pack and stable postcommit replays changed zero tracked files. Six serial current-byte consumer jobs passed with retired scratch and released reservations; the delivered job-form canary passed 12 observations and Q47/Q48 passed 36/36. The preview view commit is `6861954b`; changelog, bundle and draft replays changed zero tracked files. A first Q47 bundle failed on a stale changelog source head and was repaired by regenerating that projection. The D runner refused `.aide/changelog` as an unrecognized canonical output; the small changelog command ran directly through the existing deterministic CLI. Exact job and asset bindings are in the stable-effect WorkUnit. This is a local candidate pending independent release review, not published bytes.
 
-The subsequent bounded changelog source slice adds `.aide/changelog` to the
-existing runner's finite canonical output roots and guards default source
-preview generation behind admitted Windows Job custody. The first regression
-failed on the old unknown-destination rule; the repair passed 52/52 runner
-tests. A real D-managed preview passed with 191,602 observed canonical bytes,
-zero tracked drift and retired scratch. An existing Q34 test was found to
-rewrite six tracked previews; its output is now isolated under `AIDE_JOB_TMP`,
-and the rerun passed 12/12 with no tracked preview changes. This is source-only
-work awaiting independent review; the accepted 1.0.0 assets remain frozen.
+The subsequent bounded changelog source slice adds `.aide/changelog` to the existing runner's finite canonical output roots and guards default source preview generation behind admitted Windows Job custody. The first regression failed on the old unknown-destination rule; the repair passed 52/52 runner tests. A real D-managed preview passed with 191,602 observed canonical bytes, zero tracked drift and retired scratch. An existing Q34 test was found to rewrite six tracked previews; its output is now isolated under `AIDE_JOB_TMP`, and the rerun passed 12/12 with no tracked preview changes. This is source-only work awaiting independent review; the accepted 1.0.0 assets remain frozen.
 
-The first independent source review requested changes because the revised Q34
-test required `AIDE_JOB_TMP` and broke documented raw discovery. Its focused
-raw test now passes without that variable, and the D-managed Q34 suite still
-passes 12/12 without tracked preview drift. The production guard and runner
-code are unchanged from the first reviewed subject; a focused rereview is
-pending on the test and documentation repair.
+The first independent source review requested changes because the revised Q34 test required `AIDE_JOB_TMP` and broke documented raw discovery. Its focused raw test now passes without that variable, and the D-managed Q34 suite still passes 12/12 without tracked preview drift. The production guard and runner code are unchanged from the first reviewed subject; a focused rereview is pending on the test and documentation repair.
 
-The accepted bounded changelog source reached `dev@cbe6c78b`. From that
-source, the current-runner release WorkUnit generated and committed the pack,
-four stable 1.0.0 assets, changelog projection and Q47/Q48 preview views.
-The exact local packet is `release-effect-manifest-1.0.0-current-runner.json`;
-ZIP SHA-256 `27948415530f260479c249b2d8cc956792eff4c77a524f0225f61f1f3f2ef7b1`.
-D-managed checks passed: 52/52 runner source tests, 12/12 Q34 cases, 36/36
-Q47/Q48 cases, 12 delivered job forms and six serial current-byte consumers.
-Postcommit export, stable, changelog, bundle and draft replays changed zero
-tracked files. All named jobs retired scratch and released reservations.
-This packet awaits independent exact-byte technical review and `dev`
-integration; it does not establish main promotion or a published release.
-Independent `/root/stable_effect_review` accepted exact `222fa60e`/tree
-`c8554266` for dev integration after read-only evidence and lineage checks.
-Its limits are in the WorkUnit review record; final effect acceptance and
-main/tag/publication remain separate gates.
+The accepted bounded changelog source reached `dev@cbe6c78b`. From that source, the current-runner release WorkUnit generated and committed the pack, four stable 1.0.0 assets, changelog projection and Q47/Q48 preview views. The exact local packet is `release-effect-manifest-1.0.0-current-runner.json`; ZIP SHA-256 `27948415530f260479c249b2d8cc956792eff4c77a524f0225f61f1f3f2ef7b1`. D-managed checks passed: 52/52 runner source tests, 12/12 Q34 cases, 36/36 Q47/Q48 cases, 12 delivered job forms and six serial current-byte consumers. Postcommit export, stable, changelog, bundle and draft replays changed zero tracked files. All named jobs retired scratch and released reservations. This packet awaits independent exact-byte technical review and `dev` integration; it does not establish main promotion or a published release. Independent `/root/stable_effect_review` accepted exact `222fa60e`/tree `c8554266` for dev integration after read-only evidence and lineage checks. Its limits are in the WorkUnit review record; final effect acceptance and main/tag/publication remain separate gates.
 
-Local and remote `dev` fast-forwarded from `cbe6c78b` to `a9e0c5db`/tree
-`824f6197` after the exact technical dev verdict. The checkout is clean and
-the local stable ZIP remains SHA-256 `27948415…`. A full 559-commit
-`main..dev` message check failed on exactly ten pre-existing owner-only
-historical records. No main, tag or publication action was taken. The release
-WorkUnit now records the additional exported efficiency/actual-host proof
-required by the latest owner amendment before final stable acceptance.
+Local and remote `dev` fast-forwarded from `cbe6c78b` to `a9e0c5db`/tree `824f6197` after the exact technical dev verdict. The checkout is clean and the local stable ZIP remains SHA-256 `27948415…`. A full 559-commit `main..dev` message check failed on exactly ten pre-existing owner-only historical records. No main, tag or publication action was taken. The release WorkUnit now records the additional exported efficiency/actual-host proof required by the latest owner amendment before final stable acceptance.
 
-The efficiency WorkUnit added a bounded current-ZIP/installed-Codex context
-canary at `43c5e95e`. D job `b55340cb` passed against the frozen ZIP:
-delivered Lite `job context` parsed 23,093 bytes of real debugger JSON to a
-1,397-byte retained summary, with 21,928 visible text bytes and no raw prompt
-output. Only the CLI was extracted, scratch was retired and no model turn ran.
-This tests one delivered host-debugger boundary, not actual usage or quality;
-focused technical review remains pending.
+The efficiency WorkUnit added a bounded current-ZIP/installed-Codex context canary at `43c5e95e`. D job `b55340cb` passed against the frozen ZIP: delivered Lite `job context` parsed 23,093 bytes of real debugger JSON to a 1,397-byte retained summary, with 21,928 visible text bytes and no raw prompt output. Only the CLI was extracted, scratch was retired and no model turn ran. This tests one delivered host-debugger boundary, not actual usage or quality; focused technical review remains pending.
 
-The exact first canary evidence subject received REQUEST_CHANGES for a
-committed user-specific executable path and prompt read/hash race. Superseding
-`a706e2e8` repaired both. D job `61a3bb4a` passed against the unchanged ZIP,
-retained one 1,397-byte summary, observed peak memory 379,236,352 bytes and
-peak scratch 1,609 bytes, then retired scratch and released its reservation.
-Independent `/root/stable_effect_review` accepted the repaired exact subject
-for dev integration and limited no-model host evidence. No model turn ran.
+The exact first canary evidence subject received REQUEST_CHANGES for a committed user-specific executable path and prompt read/hash race. Superseding `a706e2e8` repaired both. D job `61a3bb4a` passed against the unchanged ZIP, retained one 1,397-byte summary, observed peak memory 379,236,352 bytes and peak scratch 1,609 bytes, then retired scratch and released its reservation. Independent `/root/stable_effect_review` accepted the repaired exact subject for dev integration and limited no-model host evidence. No model turn ran.
 
-The four-commit accepted task lineage fast-forwarded `dev@f5512404` to
-`3cd57cb4`, tree `579366cb5dacf4`, and the remote ref was observed at that
-full commit after a non-force push. The stable ZIP bytes remained unchanged.
+The four-commit accepted task lineage fast-forwarded `dev@f5512404` to `3cd57cb4`, tree `579366cb5dacf4`, and the remote ref was observed at that full commit after a non-force push. The stable ZIP bytes remained unchanged.
 
 ## 2026-10-03 scoped worker entry implementation
 
@@ -13623,168 +9986,59 @@ Prepared exact 84-name ref inventory: 43 equal, 40 local-only, one remote-only, 
 
 Applied reviewed42-ref non-force atomic push and local tracking counterpart; retained100 commands. Added task-local profile/render helper and harmless route probe with complete fixture retirement and no model/threads. Bounded storage discovery preserved unknown candidates; scratch empty. Product/export/accepted ZIP/original config unchanged.
 
-Reconciled the completed 4265f52b closeout status without replaying the merge.
-Small receipt/file-identity/Git metadata observations distinguish one private
-archive under two hard-linked names, one linked Universal worktree and two
-independent checkouts. Unknown disposal and recovery coverage are preserved;
-no deletion, new workspace, host probe, model invocation or release effect.
+Reconciled the completed 4265f52b closeout status without replaying the merge. Small receipt/file-identity/Git metadata observations distinguish one private archive under two hard-linked names, one linked Universal worktree and two independent checkouts. Unknown disposal and recovery coverage are preserved; no deletion, new workspace, host probe, model invocation or release effect.
 
 ## 2026-10-04 architecture/specification and status reconciliation
 
-Read the supplied architecture review and compared existing chapter owners,
-source and recorded queue reviews. Appended proposed refinements to 19 topic
-files without changing original UR/UC text or adopted requirements. Retained
-the historical import receipt and added current Git-LF amendment provenance.
-Corrected README/Profile/roadmap claims about already present declaration,
-projection and bounded runtime foundations. The core/runtime README is the
-minimal cross-cutting correction: its Q02 placeholder description contradicted
-current worker/broker source, so history is preserved and current scope clarified.
-The development plan and full report separate independent local candidates
-from host/model/network/learning/scale qualification. No runtime behavior,
-source archive, machine setting, release or target effect is introduced.
+Read the supplied architecture review and compared existing chapter owners, source and recorded queue reviews. Appended proposed refinements to 19 topic files without changing original UR/UC text or adopted requirements. Retained the historical import receipt and added current Git-LF amendment provenance. Corrected README/Profile/roadmap claims about already present declaration, projection and bounded runtime foundations. The core/runtime README is the minimal cross-cutting correction: its Q02 placeholder description contradicted current worker/broker source, so history is preserved and current scope clarified. The development plan and full report separate independent local candidates from host/model/network/learning/scale qualification. No runtime behavior, source archive, machine setting, release or target effect is introduced.
 
-Frozen documentation afd9dfdc received independent ACCEPT_WITH_NOTES for source
-and dev-only integration; custody, proposal and operational-limit notes remain
-explicitly nonblocking for that bounded effect. Closeout records preserve their
-dispositions and require focused exact rereview before the dev move.
+Frozen documentation afd9dfdc received independent ACCEPT_WITH_NOTES for source and dev-only integration; custody, proposal and operational-limit notes remain explicitly nonblocking for that bounded effect. Closeout records preserve their dispositions and require focused exact rereview before the dev move.
 
 ## 2026-10-04 inspect-only execution boundary
 
-Added a configuration-bound execution_boundary projection to successful job
-inspection. Prepared host metadata avoids stale early-read configuration claims;
-identity mismatch refuses without fallback. Legacy Jobs remain resource controls,
-not filesystem confinement. Seven regressions cover command behavior, refusals,
-unknown data and source changes. Actual managed qualification is recorded in
-AIDE-JOB-SCOPE-DIAGNOSTICS-01; execution permissions and the accepted runtime
-archive remain unchanged.
+Added a configuration-bound execution_boundary projection to successful job inspection. Prepared host metadata avoids stale early-read configuration claims; identity mismatch refuses without fallback. Legacy Jobs remain resource controls, not filesystem confinement. Seven regressions cover command behavior, refusals, unknown data and source changes. Actual managed qualification is recorded in AIDE-JOB-SCOPE-DIAGNOSTICS-01; execution permissions and the accepted runtime archive remain unchanged.
 
-Independent review of 52938981 found an older-adapter missing-method exception
-that escaped the structured refusal. The fix adds a callable interface guard and
-one no-fallback regression; the first 70-test receipt is retained. The repaired
-source 092ebc59 passed job 67879a9f with 71 tests, export and full validation.
-Both retained result-tree hashes, retirement and all 844 payload checksums were
-verified. Exact superseding review remains required before dev integration;
-main, stable archive and operator configuration are unchanged. Exact 9d339b0c
-source/export/dev-effect review returned ACCEPT_WITH_NOTES, closing the older
-interface blocker. Notes preserve configuration-only, source-consumer and
-operational/usage limits. The metadata closeout requires focused exact review
-and fresh effect guards before the dev-only move.
+Independent review of 52938981 found an older-adapter missing-method exception that escaped the structured refusal. The fix adds a callable interface guard and one no-fallback regression; the first 70-test receipt is retained. The repaired source 092ebc59 passed job 67879a9f with 71 tests, export and full validation. Both retained result-tree hashes, retirement and all 844 payload checksums were verified. Exact superseding review remains required before dev integration; main, stable archive and operator configuration are unchanged. Exact 9d339b0c source/export/dev-effect review returned ACCEPT_WITH_NOTES, closing the older interface blocker. Notes preserve configuration-only, source-consumer and operational/usage limits. The metadata closeout requires focused exact review and fresh effect guards before the dev-only move.
 
 ## 2026-10-04 qualified source main integration
 
-The diagnostic dev effect at exact 9b1d1844 is verified with 86 matching branch
-pairs and 84 preserved unrelated tips. AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02 now
-prepares the separately reviewed main/dev/task effect. This metadata-only child
-reuses qualified source/payload checks and changes no execution, release asset,
-operator setting or historical disposition. Fresh guards precede applying refs.
-Independent exact de7bfb2b review returned ACCEPT_WITH_NOTES with no blocker.
-The actual verdict and preserved limits are recorded in the child evidence;
-the added current REPORT and closeout receive focused exact review before
-fresh guarded main/dev/task application and retained terminal verification.
+The diagnostic dev effect at exact 9b1d1844 is verified with 86 matching branch pairs and 84 preserved unrelated tips. AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02 now prepares the separately reviewed main/dev/task effect. This metadata-only child reuses qualified source/payload checks and changes no execution, release asset, operator setting or historical disposition. Fresh guards precede applying refs. Independent exact de7bfb2b review returned ACCEPT_WITH_NOTES with no blocker. The actual verdict and preserved limits are recorded in the child evidence; the added current REPORT and closeout receive focused exact review before fresh guarded main/dev/task application and retained terminal verification.
 
 ## 2026-10-04 current asset qualification admission
 
-Source main/dev synchronization at bf559c0a is terminally verified. The next
-child addresses actual stale ZIP bytes: the existing guard prohibits a worker
-from overwriting its archive supervisor. Select the already supported pinned
-export-runtime mode for release-only qualification, keeping that runtime
-read-only. No runner/guard change or additional storage layout is introduced.
-Local assets, their old Git custody and every subsequent pin/effect are explicit.
+Source main/dev synchronization at bf559c0a is terminally verified. The next child addresses actual stale ZIP bytes: the existing guard prohibits a worker from overwriting its archive supervisor. Select the already supported pinned export-runtime mode for release-only qualification, keeping that runtime read-only. No runner/guard change or additional storage layout is introduced. Local assets, their old Git custody and every subsequent pin/effect are explicit.
 
 ### Current candidate admission repair
 
-The first reviewed export-supervised build retired with no asset change because
-stable-build requested an unnecessary export write reservation. The same
-WorkUnit now bounds two explicit release-only admission calls and five
-regressions; the supervising-runtime overlap guard remains unchanged. Original
-archive supervision qualifies source/export before any build retry.
+The first reviewed export-supervised build retired with no asset change because stable-build requested an unnecessary export write reservation. The same WorkUnit now bounds two explicit release-only admission calls and five regressions; the supervising-runtime overlap guard remains unchanged. Original archive supervision qualifies source/export before any build retry.
 
 ## 2026-10-05 qualified current local Lite checkpoint
 
-AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 is locally qualified and integrated.
-Two demonstrated release-only admission/public-fixture defects were repaired;
-49 affected checks/no skips, export/full validation,846 checksums,8 current-byte
-consumers,38 public forms/39 outputs plus12 job observations, Task OS and
-byte-identical four-asset replay passed. All owned scratch and reservations
-retired. Source/build, local asset, narrow original runtime pin/probe and exact
-21f8677d main/dev/task integration each received independent acceptance with
-explicitly nonblocking disposed notes.88 corresponding pairs match;85 other
-tips preserved. Final metadata synchronization receives its own exact review.
+AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 is locally qualified and integrated. Two demonstrated release-only admission/public-fixture defects were repaired; 49 affected checks/no skips, export/full validation,846 checksums,8 current-byte consumers,38 public forms/39 outputs plus12 job observations, Task OS and byte-identical four-asset replay passed. All owned scratch and reservations retired. Source/build, local asset, narrow original runtime pin/probe and exact 21f8677d main/dev/task integration each received independent acceptance with explicitly nonblocking disposed notes.88 corresponding pairs match;85 other tips preserved. Final metadata synchronization receives its own exact review.
 
-Only the original archive SHA/additive24th module changed; paths, limits,
-account route and canonical scope are identical. Original entry7b2c4eba passed
-as CodexSandboxOffline and retired. Supervisor/output separation and overlap
-guard remain. Failed attempts and same-job recovery are retained; prior assets
-have exact Git custody without another backup. REPORT.md and frozen proof/
-review/receipt files in that queue task are the current evidence references.
+Only the original archive SHA/additive24th module changed; paths, limits, account route and canonical scope are identical. Original entry7b2c4eba passed as CodexSandboxOffline and retired. Supervisor/output separation and overlap guard remain. Failed attempts and same-job recovery are retained; prior assets have exact Git custody without another backup. REPORT.md and frozen proof/ review/receipt files in that queue task are the current evidence references.
 
-The 19 proposed topic amendments preserve 244 UR/UC statements and
-remain separate from semantic adoption. Current planning/context/parent records
-now describe completed local qualification accurately. This minimal cross-doc
-closeout adds the existing roadmap checkpoint for consistency; no new feature
-is admitted. Unchanged core/host71 evidence and product checks are reused.
+The 19 proposed topic amendments preserve 244 UR/UC statements and remain separate from semantic adoption. Current planning/context/parent records now describe completed local qualification accurately. This minimal cross-doc closeout adds the existing roadmap checkpoint for consistency; no new feature is admitted. Unchanged core/host71 evidence and product checks are reused.
 
-Outer-client/read containment, hard quota, ten historical decisions, live/matched
-efficiency, stable tag/publication/downloaded consumers/adoption and wider disk
-cleanup remain open. Shared D storage is configured; FacMan stays paused. A
-local1.0.0 candidate and source promotion do not certify complete AIDE delivery.
+Outer-client/read containment, hard quota, ten historical decisions, live/matched efficiency, stable tag/publication/downloaded consumers/adoption and wider disk cleanup remain open. Shared D storage is configured; FacMan stays paused. A local1.0.0 candidate and source promotion do not certify complete AIDE delivery.
 
-Generated-pack checkout repair: the first source synchronization exposed four
-CRLF-to-LF checksum mismatches. Exact qualified ZIP bytes were restored under
-a separately reviewed generated-pack-only .gitattributes -text override. All
-846 working entries and24 immutable supervisor pins match; staged Git checksum
-verification precedes the final exact review. Original assets/proofs and source
-semantics are unchanged. This additional bounded diff prevents recurrence on
-checkout; no full rebuild or unchanged behavioral suite is required.
+Generated-pack checkout repair: the first source synchronization exposed four CRLF-to-LF checksum mismatches. Exact qualified ZIP bytes were restored under a separately reviewed generated-pack-only .gitattributes -text override. All 846 working entries and24 immutable supervisor pins match; staged Git checksum verification precedes the final exact review. Original assets/proofs and source semantics are unchanged. This additional bounded diff prevents recurrence on checkout; no full rebuild or unchanged behavioral suite is required.
 
 ## 2026-10-05 bounded storage custody result
 
-AIDE-SESSION-CONTAINMENT-01 inspected one previously recorded Universal
-linked worktree through the pinned managed worker: three tracked source
-modifications, no untracked names,31 ignored names and7,794,943 logical bytes.
-The worktree is preserved; no deletion or reclaimed space is claimed. Output/
-log digests, scratch retirement and reservation release are verified. Raw
-Windows cached identity/link counts are invalid and normalized to unknown;
-a fresh-stat correction passed one tiny owned native regression fixture.
-No target replay, new checkout, asset rebuild or original selection change.
-Read-only native acceptance does not close the outer-client, historical, live
-model, efficiency or stable-publication gates. Rejected preflights remain in
-the task's Git/evidence history. See [storage report](.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md).
-The current qualification WorkUnit adds only this SESSION evidence/helper
-closure to its source-sync allowlist; exact independent final source/effect
-review remains required. This cross-cutting record prevents native acceptance
-being mistaken for integration or whole-session acceptance.
+AIDE-SESSION-CONTAINMENT-01 inspected one previously recorded Universal linked worktree through the pinned managed worker: three tracked source modifications, no untracked names,31 ignored names and7,794,943 logical bytes. The worktree is preserved; no deletion or reclaimed space is claimed. Output/ log digests, scratch retirement and reservation release are verified. Raw Windows cached identity/link counts are invalid and normalized to unknown; a fresh-stat correction passed one tiny owned native regression fixture. No target replay, new checkout, asset rebuild or original selection change. Read-only native acceptance does not close the outer-client, historical, live model, efficiency or stable-publication gates. Rejected preflights remain in the task's Git/evidence history. See [storage report](.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md). The current qualification WorkUnit adds only this SESSION evidence/helper closure to its source-sync allowlist; exact independent final source/effect review remains required. This cross-cutting record prevents native acceptance being mistaken for integration or whole-session acceptance.
 
 
 ## 2026-10-05 current-byte removal boundary qualification
 
-Three native consumer jobs qualified the unchanged removal canary at0/1/50
-on current accepted ZIP4a45922b. Actual child77 boundaries, fresh-process
-DETACHED recovery and authored/project-owned preservation passed. Full
-output/log digests and each scratch/reservation retirement are verified.
-Peak scratch8,329,339 bytes per job; three retained sets total20,527 logical
-bytes. Original assets/a241 configuration/24-pin supervisor remain unchanged.
-Earlier old-ZIP evidence is preserved; no archive rebuild, broad suite replay
-or model invocation was required. Exact source/ref review remains distinct
-from stable/publication, host, history, live/efficiency and wider cleanup gates.
-See [results](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-results.md)
-and its ExecPlan for the source-only three-ref synchronization.
+Three native consumer jobs qualified the unchanged removal canary at0/1/50 on current accepted ZIP4a45922b. Actual child77 boundaries, fresh-process DETACHED recovery and authored/project-owned preservation passed. Full output/log digests and each scratch/reservation retirement are verified. Peak scratch8,329,339 bytes per job; three retained sets total20,527 logical bytes. Original assets/a241 configuration/24-pin supervisor remain unchanged. Earlier old-ZIP evidence is preserved; no archive rebuild, broad suite replay or model invocation was required. Exact source/ref review remains distinct from stable/publication, host, history, live/efficiency and wider cleanup gates. See [results](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-results.md) and its ExecPlan for the source-only three-ref synchronization.
 
 
 ## 2026-10-05 capability evidence validity repair admission
 
-AIDE-CAPABILITY-EVIDENCE-VALIDITY-01 prepares a bounded first C1 increment in
-the existing report-only ledger/status/validate owner. Current classification
-trusts seed state/file presence without invalidating retained reports when
-those inputs change. Preserve v0 ledger semantics and all operational gates;
-add finite public-input binding and prove a meaningful managed CLI workflow.
-Exact child admission precedes implementation. Current archive and pinned D
-supervisor stay unchanged; new source requires later asset requalification.
-See its ExecPlan; no broader feature campaign or second status authority.
+AIDE-CAPABILITY-EVIDENCE-VALIDITY-01 prepares a bounded first C1 increment in the existing report-only ledger/status/validate owner. Current classification trusts seed state/file presence without invalidating retained reports when those inputs change. Preserve v0 ledger semantics and all operational gates; add finite public-input binding and prove a meaningful managed CLI workflow. Exact child admission precedes implementation. Current archive and pinned D supervisor stay unchanged; new source requires later asset requalification. See its ExecPlan; no broader feature campaign or second status authority.
 
-The new child registration changes Q05's source fingerprint. Its six existing
-managed outputs are narrowly allowed for compile after admission; manual
-sections stay preserved and source acceptance requires drift-free validation.
+The new child registration changes Q05's source fingerprint. Its six existing managed outputs are narrowly allowed for compile after admission; manual sections stay preserved and source acceptance requires drift-free validation.
 
 
 ## 2026-10-05 Current-payload local build preparation
@@ -13797,172 +10051,73 @@ Prepared the smallest existing build selection and effect after accepted current
 Job2edf313a on frozenf0c05f09/tree7043c3be passed stable-build/stable-validate under the existing scoped worker. Complete retained trees and850 identical archive members/847 release checksums/24 supervisor hashes were verified;15,862 retained bytes, scratch absent, reservation released. Only four assets changed. Read-only verifier expectations were corrected without native replay. Consumer/replay/runtime/integration/publication gates remain open.
 
 
-Real Jules/Julesc013 authentication and fresh fetch/maps passed for the prepared
-source-only integration. The pre-freeze helper correctly blocked the known dirty
-build/record diff; no ref mutation followed. Require clean frozen readiness and
-exact independent artifact/source/ref review before the delegated effect.
+Real Jules/Julesc013 authentication and fresh fetch/maps passed for the prepared source-only integration. The pre-freeze helper correctly blocked the known dirty build/record diff; no ref mutation followed. Require clean frozen readiness and exact independent artifact/source/ref review before the delegated effect.
 
 ## 2026-10-05 lossless retired evidence custody implementation candidate
 
-Added finite custody operations to the existing job command family. Original
-receipts remain untouched; full archive verification precedes raw-copy retirement.
-Pending custody blocks allocation through the preexisting active.json latch.
-Scope remains the admitted C4 child; source/native/live effects still require
-exact qualification. Tests21 are authored, not run. Current candidate7132 and
-original held runtime selection are unchanged; outer routes remain unrestricted.
+Added finite custody operations to the existing job command family. Original receipts remain untouched; full archive verification precedes raw-copy retirement. Pending custody blocks allocation through the preexisting active.json latch. Scope remains the admitted C4 child; source/native/live effects still require exact qualification. Tests21 are authored, not run. Current candidate7132 and original held runtime selection are unchanged; outer routes remain unrestricted.
 
 ## 2026-10-05 actual custody fixture qualification
 
-Jobc1ae2a93 on50c0ac2b passed22 checks as CodexSandboxOffline, no failures/errors/
-skips. Receipt0fd680e9 and complete raw trees verified, fixtures/scratch retired,
-reservation released;9620logical retained bytes. Earlier unexecuted21-test
-effect REQUEST_CHANGES remains preserved; only revised independently accepted
-effectae629dc4 ran. Original runtime/current candidate unchanged. Live custody
-and affected binding/export refresh/integration remain separately gated.
+Jobc1ae2a93 on50c0ac2b passed22 checks as CodexSandboxOffline, no failures/errors/ skips. Receipt0fd680e9 and complete raw trees verified, fixtures/scratch retired, reservation released;9620logical retained bytes. Earlier unexecuted21-test effect REQUEST_CHANGES remains preserved; only revised independently accepted effectae629dc4 ran. Original runtime/current candidate unchanged. Live custody and affected binding/export refresh/integration remain separately gated.
 
 ## 2026-10-05 real custody CLI namespace repair verified
 
-The first live read-only plan exposed a package namespace gap after the
-genuine22-test pass; no effects occurred. Explicit source-module loading with
-unchanged selected owner fixed the route. Independently admitted23-test native
-job30c71836 passed including actual CLI lifecycle, receiptb27ccc96/rawtrees
-verified,9959logical bytes retained, scratch/reservation retired. Two old
-consumer plans preserve receipts and fit exact staging; live custody remains
-separately gated. No asset/original config/ref/publication change.
+The first live read-only plan exposed a package namespace gap after the genuine22-test pass; no effects occurred. Explicit source-module loading with unchanged selected owner fixed the route. Independently admitted23-test native job30c71836 passed including actual CLI lifecycle, receiptb27ccc96/rawtrees verified,9959logical bytes retained, scratch/reservation retired. Two old consumer plans preserve receipts and fit exact staging; live custody remains separately gated. No asset/original config/ref/publication change.
 
 ## 2026-10-05 actual lossless custody and retirement
 
-Independently accepted source8339181c/tree41f1fd1d/effect1cbca7a2 processed
-only dc069cd9 and eff8ab1f serially as Jules. Full archives verified before
-redundant raw retirement; original receipt/owner bytes and collection digests
-unchanged, bounded lookup equal and active/.next absent. Savings7921599logical
-bytes; postflight6201 pool entries,total224863629, scratch0. No physical
-recovery, host containment, archive rebuild, ref mutation or publication claim.
-Native23 regression proof remains separate and genuine. Source projection
-refresh/integration and delivered acceptance require their own bounded review.
+Independently accepted source8339181c/tree41f1fd1d/effect1cbca7a2 processed only dc069cd9 and eff8ab1f serially as Jules. Full archives verified before redundant raw retirement; original receipt/owner bytes and collection digests unchanged, bounded lookup equal and active/.next absent. Savings7921599logical bytes; postflight6201 pool entries,total224863629, scratch0. No physical recovery, host containment, archive rebuild, ref mutation or publication claim. Native23 regression proof remains separate and genuine. Source projection refresh/integration and delivered acceptance require their own bounded review.
 
 ## 2026-10-05 compact template coherence correction
 
-Independent supporting-scope admission83300fad permits one cross-cutting
-documentation correction: append TOKEN_ESTIMATE/approx_tokens to the existing
-compact template. Executable requirements and original text remain unchanged.
-The concrete current packet passes the actual Lite verifier. Exact resulting
-source review is required; the5d report effect remains unexecuted after change.
+Independent supporting-scope admission83300fad permits one cross-cutting documentation correction: append TOKEN_ESTIMATE/approx_tokens to the existing compact template. Executable requirements and original text remain unchanged. The concrete current packet passes the actual Lite verifier. Exact resulting source review is required; the5d report effect remains unexecuted after change.
 
 ## 2026-10-05 exact derived capability refresh after custody
 
-Accepted effectcf09b043 on c8351859 ran scan/ledger/overclaim-report/validate
-once, all exit0; only6/9 allowed report files changed. Complete41-input binding
-and full raw outputs retained; source/original config/assets unchanged. Current
-C4 maintenance is qualified; separately reviewed native source/export work is
-prepared, not dispatched. No source/ref/archive/publication effect inferred.
+Accepted effectcf09b043 on c8351859 ran scan/ledger/overclaim-report/validate once, all exit0; only6/9 allowed report files changed. Complete41-input binding and full raw outputs retained; source/original config/assets unchanged. Current C4 maintenance is qualified; separately reviewed native source/export work is prepared, not dispatched. No source/ref/archive/publication effect inferred.
 
 
 ## Current held release binding — preparation, 2026-10-05
 
-Added queue-local read-only release_binding.py and refusal fixtures to detect
-stale archive/evidence identities before future release review. The current
-packet retains all external gates and explicit delivered-test fixture limits.
-AST checks only at preparation; tests/native execution not yet run. Existing
-archives, product source,25 supervisor pins and executing configuration unchanged.
-Exact independent native review is required before qualification.
+Added queue-local read-only release_binding.py and refusal fixtures to detect stale archive/evidence identities before future release review. The current packet retains all external gates and explicit delivered-test fixture limits. AST checks only at preparation; tests/native execution not yet run. Existing archives, product source,25 supervisor pins and executing configuration unchanged. Exact independent native review is required before qualification.
 
 ## Current held release binding — actual qualification, 2026-10-05
 
-Repaired two demonstrated qualification defects: private Windows fixture ACLs
-now use the existing authenticated public_archive_fixture lifecycle; contradictory
-blocking review notes are refused with a regression. Baseline66/tree4b plus exact
-working overlay was independently reviewed for local verification only. Existing
-974151a5 config/25 pinned supervisor members admitted one effect6a76948a.
+Repaired two demonstrated qualification defects: private Windows fixture ACLs now use the existing authenticated public_archive_fixture lifecycle; contradictory blocking review notes are refused with a regression. Baseline66/tree4b plus exact working overlay was independently reviewed for local verification only. Existing 974151a5 config/25 pinned supervisor members admitted one effect6a76948a.
 
-Jobb38c6cf0 passed17 tests/no errors/failures/skips, current checker0/HELD and old
-checker1/REFUSED. Full streams/receipt/11 retained files16,966B and collection
-digests were checked; scratch retired and reservation released. Actual result
-ddce4396 independently accepted with notes, all disposed.42inputs/fourassets/pins
-and configurations are unchanged. Sampled scratch7,456B/memory225,296,384B are
-not disk-quota or cost-reduction proof; Windows principal was not separately
-observed. No model/ref/tag/runtime/publication effect or archive regeneration.
+Jobb38c6cf0 passed17 tests/no errors/failures/skips, current checker0/HELD and old checker1/REFUSED. Full streams/receipt/11 retained files16,966B and collection digests were checked; scratch retired and reservation released. Actual result ddce4396 independently accepted with notes, all disposed.42inputs/fourassets/pins and configurations are unchanged. Sampled scratch7,456B/memory225,296,384B are not disk-quota or cost-reduction proof; Windows principal was not separately observed. No model/ref/tag/runtime/publication effect or archive regeneration.
 
-Preparation commit66 message-format FAIL was caused here. Original commit and
-failure are preserved; corrected message-file precheck passes. Required owner
-message-only exception is pending, so no amendment or integration was executed.
-These local fixes/evidence do not waive that failure or historical release gates.
+Preparation commit66 message-format FAIL was caused here. Original commit and failure are preserved; corrected message-file precheck passes. Required owner message-only exception is pending, so no amendment or integration was executed. These local fixes/evidence do not waive that failure or historical release gates.
 
 ## Current binding documentation verification
 
-Actualgit diff --check/AST/42-input identities/result-review bindings/new links
-and explicit13-path scope checks pass. Read-only Lite verify exits0 with WARN9
-and ERROR0, because its global active-scope resolver selects the session-
-containment WorkUnit despite the passed release task packet. Full raw output
-and the exact warning paths are retained; no all-clear or warning waiver is
-claimed. Explicit WorkUnit scope selection is a bounded candidate follow-up,
-not a new implementation, CLI change or reason to replay accepted source tests.
+Actualgit diff --check/AST/42-input identities/result-review bindings/new links and explicit13-path scope checks pass. Read-only Lite verify exits0 with WARN9 and ERROR0, because its global active-scope resolver selects the session- containment WorkUnit despite the passed release task packet. Full raw output and the exact warning paths are retained; no all-clear or warning waiver is claimed. Explicit WorkUnit scope selection is a bounded candidate follow-up, not a new implementation, CLI change or reason to replay accepted source tests.
 
 ## Campaign risk checkpoint precedence correction — 2026-10-05
 
-The remaining-risk register still led with the earlier37024570/49-check snapshot.
-Labelled that preserved snapshot as historical and placed the accepted935 source
-synchronization/current67-check/8-consumer/38-form/41-delivered/17-binding record
-first. This cross-cutting documentation correction prevents readers from treating
-old evidence as current. Original receipts and external/message-format gates
-are retained. Existing admitted parent-risk/engineering-log paths only; no test,
-archive, executable, source-ref, runtime or publication changes.
+The remaining-risk register still led with the earlier37024570/49-check snapshot. Labelled that preserved snapshot as historical and placed the accepted935 source synchronization/current67-check/8-consumer/38-form/41-delivered/17-binding record first. This cross-cutting documentation correction prevents readers from treating old evidence as current. Original receipts and external/message-format gates are retained. Existing admitted parent-risk/engineering-log paths only; no test, archive, executable, source-ref, runtime or publication changes.
 
 ## Normal corrective commit route — policy clarification
 
-The earlier stop treated amendment of66 as the needed route. Independent
-fix-forward admissionb38c00f8 permits a normal corrective child commit preserving
-66, consistent with AGENTS121 and existing-history policy127. No owner exception
-is required for that route and none is assumed. Proposed messagec114e8d9 actual
-precheckPASS; fulloriginal-aec range checked all681commits and stillFAILS11, the
-originalten plus66. Exact source-only integration remains eligible under existing
-owner authority but needs subsequent clean source/ref-effect acceptance. Canonical
-next-action docs now distinguish source fix-forward from amendment and stable
-history certification. Product/runtime/archive/source-input bytes are unchanged.
+The earlier stop treated amendment of66 as the needed route. Independent fix-forward admissionb38c00f8 permits a normal corrective child commit preserving 66, consistent with AGENTS121 and existing-history policy127. No owner exception is required for that route and none is assumed. Proposed messagec114e8d9 actual precheckPASS; fulloriginal-aec range checked all681commits and stillFAILS11, the originalten plus66. Exact source-only integration remains eligible under existing owner authority but needs subsequent clean source/ref-effect acceptance. Canonical next-action docs now distinguish source fix-forward from amendment and stable history certification. Product/runtime/archive/source-input bytes are unchanged.
 
 ## Exact pending historical-message packet — 2026-10-05
 
-After independently accepted source-only648 sync, admission4ab77e24 authorized
-a finite22-file owner-gate preparation. Existing helpers inspected all682
-commits from the originalaec release base: actual commit-check exits1/FAIL11,
-with three existing accepted decisions and14 preserved raw-format failures.
-Created11 fully bound proposed records and11 proposed decision files, plus
-exact failures and owner-readable approval text. Reviewer/date fields remain
-empty. Proposed registry17835710 and its combination with existing3 records
-validate structurally; each new record evaluates effective:false. Verification
-6013ec7d binds the actual full stdout/stderr and exact canonical identities.
+After independently accepted source-only648 sync, admission4ab77e24 authorized a finite22-file owner-gate preparation. Existing helpers inspected all682 commits from the originalaec release base: actual commit-check exits1/FAIL11, with three existing accepted decisions and14 preserved raw-format failures. Created11 fully bound proposed records and11 proposed decision files, plus exact failures and owner-readable approval text. Reviewer/date fields remain empty. Proposed registry17835710 and its combination with existing3 records validate structurally; each new record evaluates effective:false. Verification 6013ec7d binds the actual full stdout/stderr and exact canonical identities.
 
-The live registry/policy remain unchanged. No self-approval, historical rewrite,
-AIDE-managed model/worker dispatch, archive replay, runtime or release effect occurred. New
-evidence files total52,284 logical bytes, not an archive or replacement pool.
-Remaining source/packet/normal-commit/ref-effect gates and eventual actual owner
-activation remain distinct. This corrects the formerly incomplete ten-record
-owner input by explicitly including immutable published66 without amendment.
+The live registry/policy remain unchanged. No self-approval, historical rewrite, AIDE-managed model/worker dispatch, archive replay, runtime or release effect occurred. New evidence files total52,284 logical bytes, not an archive or replacement pool. Remaining source/packet/normal-commit/ref-effect gates and eventual actual owner activation remain distinct. This corrects the formerly incomplete ten-record owner input by explicitly including immutable published66 without amendment.
 
-Controller/review calls are outside this native-dispatch observation; actual
-usage is unknown. Zero managed dispatches do not prove zero whole-outcome cost
-or efficiency improvement. No token-estimate figure is treated as actual usage.
+Controller/review calls are outside this native-dispatch observation; actual usage is unknown. Zero managed dispatches do not prove zero whole-outcome cost or efficiency improvement. No token-estimate figure is treated as actual usage.
 
 ## Historical packet source-summary correction — 2026-10-05
 
-Independent clean-source/ref review of4ee52a95/3006e3cc returned REQUEST_CHANGES
-for one stale current-report row: it incorrectly left935 as latest sync and66
-unpublished. No ref effect ran. Correct the row to accepted648/terminal8f9 and
-label the new exact11 packet as a preparation snapshot awaiting its own source
-gate; subsequent actual effects belong to their terminal receipt. All proposal
-identities, live registry, qualified inputs/assets/configs and88/85 maps passed.
-This bounded two-document normal fix-forward retains the rejected subject and
-reuses those unchanged checks, without history rewrite, test/archive replay or
-owner approval. Exact corrected source/ref review still precedes any sync.
+Independent clean-source/ref review of4ee52a95/3006e3cc returned REQUEST_CHANGES for one stale current-report row: it incorrectly left935 as latest sync and66 unpublished. No ref effect ran. Correct the row to accepted648/terminal8f9 and label the new exact11 packet as a preparation snapshot awaiting its own source gate; subsequent actual effects belong to their terminal receipt. All proposal identities, live registry, qualified inputs/assets/configs and88/85 maps passed. This bounded two-document normal fix-forward retains the rejected subject and reuses those unchanged checks, without history rewrite, test/archive replay or owner approval. Exact corrected source/ref review still precedes any sync.
 
 
 ### AIDE-STABLE-LITE-RELEASE-EFFECT-01: retained timeout and capture repair — 2026-10-06
 
-Payload job5e24c5a8 timed out before build, retired cleanly and preserved all
-assets. Repair the existing qualification helper to stream child output and
-retain failure metadata. Keep full payload checksums and authenticated fixture
-checks; narrow only redundant manifest inputs. New changed native attempt
-needs its exact gate. Tests/native result and new archives remain pending.
+Payload job5e24c5a8 timed out before build, retired cleanly and preserved all assets. Repair the existing qualification helper to stream child output and retain failure metadata. Keep full payload checksums and authenticated fixture checks; narrow only redundant manifest inputs. New changed native attempt needs its exact gate. Tests/native result and new archives remain pending.
 
 
 ## Current consumer resource outcome - 2026-10-08
@@ -13971,32 +10126,12 @@ Original case0/26 records passed; two middle memory-guard failures retained with
 
 ## Current Lite consumers and required replay - 2026-10-09
 
-All8 current-package cases now pass original assertions. New restart5,
-TaskOS7 and lifecycle1 jobs completed serially; full38-form/51-record coverage
-was checked against actual argv/status/hash records. The coverage helper's
-hash-domain/type mistakes and failed attempts remain retained. Case5's worker
-passed, but its initial1MiB collection failed32,695B over allowance; reviewed
-quiescent2MiB collection preserved26 files and retired scratch without rerun.
-The required replay then passed once with unchanged4 assets/854 export/48
-release preimages. Initial preallocation replay failures remain; the obsolete
-extension read root was removed with all limits/reserves/storage unchanged.
-Source71/delivered10 were reused. The current source/ref effect journal is the
-actual commit receipt; stable acceptance/publication and downloaded consumers
-are not inferred from this metadata closeout.
+All8 current-package cases now pass original assertions. New restart5, TaskOS7 and lifecycle1 jobs completed serially; full38-form/51-record coverage was checked against actual argv/status/hash records. The coverage helper's hash-domain/type mistakes and failed attempts remain retained. Case5's worker passed, but its initial1MiB collection failed32,695B over allowance; reviewed quiescent2MiB collection preserved26 files and retired scratch without rerun. The required replay then passed once with unchanged4 assets/854 export/48 release preimages. Initial preallocation replay failures remain; the obsolete extension read root was removed with all limits/reserves/storage unchanged. Source71/delivered10 were reused. The current source/ref effect journal is the actual commit receipt; stable acceptance/publication and downloaded consumers are not inferred from this metadata closeout.
 
 
 ## Published Lite profile - 2026-10-09
 
-[AIDE Lite1.0.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0)
-is published for the qualified localWindows T3 profile. Strict release ACCEPT,
-all4downloaded asset hashes and unchanged fresh/brownfield acquisition/update/
-recovery acceptance passed; full collection, scratch retirement and reservation
-release are recorded in the [existing report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
-and [exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json).
-Tag0f293eb6 and pack sourcea17cf4b3 remain distinct immutable identities.
-No code/export/archive or unsupported profile was changed. Broader containment,
-read isolation, actual model editing, whole-outcome efficiency, wider cleanup
-and downstream work remain open; this is not whole-programme completion.
+[AIDE Lite1.0.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0) is published for the qualified localWindows T3 profile. Strict release ACCEPT, all4downloaded asset hashes and unchanged fresh/brownfield acquisition/update/ recovery acceptance passed; full collection, scratch retirement and reservation release are recorded in the [existing report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and [exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json). Tag0f293eb6 and pack sourcea17cf4b3 remain distinct immutable identities. No code/export/archive or unsupported profile was changed. Broader containment, read isolation, actual model editing, whole-outcome efficiency, wider cleanup and downstream work remain open; this is not whole-programme completion.
 
 ## Installed changelog guard source candidate - 2026-10-17
 
@@ -14012,52 +10147,29 @@ Job a0032741 passed full diagnostics and the actual fresh/default and customized
 
 Prepared bounded P5 job effort view: pure normalization, pinned bounded CLI input, all nine phases, failed attempts and unknown accounting. Source qualification pending; no cost or efficiency claim.
 
-AIDE-WORK-EFFORT-01: source42/delivered42 and five-receipt consumer PASS at
-7c2aec49. Original invalid-fixture failure preserved; published1.0.0 unchanged.
-Preview and reviewed integration remain, with whole-work cost still unknown.
+AIDE-WORK-EFFORT-01: source42/delivered42 and five-receipt consumer PASS at 7c2aec49. Original invalid-fixture failure preserved; published1.0.0 unchanged. Preview and reviewed integration remain, with whole-work cost still unknown.
 
-AIDE-WORK-EFFORT-01 qualification closed: preview96d7ee46 PASS, all three
-allocations retired. Final dev/main review and synchronization remain pending. Their actual result
-will be written to the child integration receipt; accounting gaps remain explicit.
+AIDE-WORK-EFFORT-01 qualification closed: preview96d7ee46 PASS, all three allocations retired. Final dev/main review and synchronization remain pending. Their actual result will be written to the child integration receipt; accounting gaps remain explicit.
 
 ## AIDE-PORTABLE-TASK-HANDOFF-01
 
 Initial preparation checkpoint (historical): finite handoff codec, export/inspect CLI, byte-preservation/refusal regressions and safe-installed delivery binding were prepared. Runtime qualification had not run at that checkpoint; the completed results follow below.
 
-AIDE-PORTABLE-TASK-HANDOFF-01 qualification: source79/delivered79/ownership6,
-actual safe-installed consumer and fixed preview PASS; all3 jobs retired. See
-`.aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/REPORT.md` for exact scope and receipts.
-Native adoption/host binding/whole-outcome evidence remain separate.
+AIDE-PORTABLE-TASK-HANDOFF-01 qualification: source79/delivered79/ownership6, actual safe-installed consumer and fixed preview PASS; all3 jobs retired. See `.aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/REPORT.md` for exact scope and receipts. Native adoption/host binding/whole-outcome evidence remain separate.
 
 ## AIDE-VALIDATION-OUTPUT-01
 
-Prepared concise validation presentation, legacy --full and lossless --json.
-Collectors and existing assertions are unchanged. Runtime qualification pending.
+Prepared concise validation presentation, legacy --full and lossless --json. Collectors and existing assertions are unchanged. Runtime qualification pending.
 
-AIDE-VALIDATION-OUTPUT-01 qualified: 10 rerun and 26 retained source results,
-36 delivered tests, six ownership tests and fixed preview passed. All 60,915
-checks remain: 241 default output bytes versus 4,894,325 full bytes. All five
-jobs retired; original fixture failures remain. See the child REPORT.md;
-exact integration receipt governs sync, and broader campaign limits remain.
+AIDE-VALIDATION-OUTPUT-01 qualified: 10 rerun and 26 retained source results, 36 delivered tests, six ownership tests and fixed preview passed. All 60,915 checks remain: 241 default output bytes versus 4,894,325 full bytes. All five jobs retired; original fixture failures remain. See the child REPORT.md; exact integration receipt governs sync, and broader campaign limits remain.
 
 ## AIDE-OUTCOME-LESSONS-01
 
-Qualified read-only lesson selection in the existing outcome ledger. Corrections,
-retirement and stale evidence exclude superseded advice while retaining history.
-Source 36, delivered 36, ownership six, actual safe-installed consumer and fixed
-preview passed; all three jobs retired. See
-[qualification report](.aide/queue/AIDE-OUTCOME-LESSONS-01/REPORT.md) and
-[usage contract](docs/reference/outcome-controller-v0.md).
-The development pack has 867 members; published Lite 1.0.0 is unchanged.
-Exact integration review and observed receipts govern dev/main synchronization.
+Qualified read-only lesson selection in the existing outcome ledger. Corrections, retirement and stale evidence exclude superseded advice while retaining history. Source 36, delivered 36, ownership six, actual safe-installed consumer and fixed preview passed; all three jobs retired. See [qualification report](.aide/queue/AIDE-OUTCOME-LESSONS-01/REPORT.md) and [usage contract](docs/reference/outcome-controller-v0.md). The development pack has 867 members; published Lite 1.0.0 is unchanged. Exact integration review and observed receipts govern dev/main synchronization.
 
 ### AIDE-TASK-DEVELOPMENT-BRIEF-01
 
-Qualified 84 source checks, 84 delivered checks and a safe-installed project brief that agrees
-with existing continuation, quality and lesson readers. Missing/invalid records
-remain explicit; no execution authority is granted. Joint preview passed.
-See [combined qualification](.aide/queue/AIDE-COMPACT-COMMUNICATION-01/REPORT.md);
-the integration receipt establishes dev/main sync.
+Qualified 84 source checks, 84 delivered checks and a safe-installed project brief that agrees with existing continuation, quality and lesson readers. Missing/invalid records remain explicit; no execution authority is granted. Joint preview passed. See [combined qualification](.aide/queue/AIDE-COMPACT-COMMUNICATION-01/REPORT.md); the integration receipt establishes dev/main sync.
 
 ### AIDE-COMPACT-COMMUNICATION-01
 
@@ -14077,14 +10189,9 @@ Implemented explicit-v2 cancellation through existing Requests/MCP owners. Origi
 
 ### Dependency reconciliation prepared
 
-AIDE-DEPENDENCY-REBIND-01 adds read-only plan/explicit apply through existing
-Requests and CLI, preserving request/native history and rejecting stale plans.
-Qualification is pending; no live ledger or host effect has run.
+AIDE-DEPENDENCY-REBIND-01 adds read-only plan/explicit apply through existing Requests and CLI, preserving request/native history and rejecting stale plans. Qualification is pending; no live ledger or host effect has run.
 
-Dependency reconciliation qualification passed all3 managed jobs: source88,
-two actual CLI/MCP workflows, frozen-reader compatibility, six ownership checks,
-metadata-only export and fixed preview. No live binding/host effect occurred.
-See the child report and observed integration receipt for exact delivery.
+Dependency reconciliation qualification passed all3 managed jobs: source88, two actual CLI/MCP workflows, frozen-reader compatibility, six ownership checks, metadata-only export and fixed preview. No live binding/host effect occurred. See the child report and observed integration receipt for exact delivery.
 
 **Campaign current-state preparation.** The parent status now names an owner, next action and open obligations within existing reader bounds. CURRENT.md links scoped child evidence; original task/status snapshots and complete ExecPlan history are retained. No runtime or package change.
 
@@ -14092,71 +10199,40 @@ See the child report and observed integration receipt for exact delivery.
 
 ### AIDE-MINI-WORKER-01: Acquisition and optional binding
 
-The unchanged upstream DefaultAgent passed 15 native repair/refusal/recovery
-scenarios through the optional binding at e2902c21. Final passive compatibility,
-evidence preservation, unchanged 870 pack/eight release files and exact five-commit
-preview passed at cf77e790. All four jobs are retired, including the preserved
-initial acquisition failure. No model request, global install or target effect.
-See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md); the integration receipt will
-record the actual Git effects after terminal acceptance.
+The unchanged upstream DefaultAgent passed 15 native repair/refusal/recovery scenarios through the optional binding at e2902c21. Final passive compatibility, evidence preservation, unchanged 870 pack/eight release files and exact five-commit preview passed at cf77e790. All four jobs are retired, including the preserved initial acquisition failure. No model request, global install or target effect. See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md); the integration receipt will record the actual Git effects after terminal acceptance.
 
 ### Offline result exchange qualified
 
-97 source and 97 delivered checks, six ownership checks, safe-installed partial/result
-continuation, replay, changed-input detection and real Mini record transfer passed.
-Doctor/full validation/pack status and fixed preview passed; all three jobs retired.
-The original capability/export FAIL evidence and review correction remain.
-See [the report](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md) for exact
-subjects and guarded integration. Eight frozen release assets are unchanged.
+97 source and 97 delivered checks, six ownership checks, safe-installed partial/result continuation, replay, changed-input detection and real Mini record transfer passed. Doctor/full validation/pack status and fixed preview passed; all three jobs retired. The original capability/export FAIL evidence and review correction remain. See [the report](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md) for exact subjects and guarded integration. Eight frozen release assets are unchanged.
 
 ### Fresh symbol discovery qualified
 
-The existing quality CLI and pure AST helper passed 44 source and 44 delivered
-checks, retaining all 23 original methods. Safe-installed read-only discovery,
-customization, helper ownership, core absence and the independent projection
-oracle passed. The omitted catalogue-delta assertion caused a retained job2
-failure; the reviewed final allocation reused its successful export and source
-checks. Three jobs retired; final validation and fixed preview passed. See the
-[report](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md) for exact scope and integration.
+The existing quality CLI and pure AST helper passed 44 source and 44 delivered checks, retaining all 23 original methods. Safe-installed read-only discovery, customization, helper ownership, core absence and the independent projection oracle passed. The omitted catalogue-delta assertion caused a retained job2 failure; the reviewed final allocation reused its successful export and source checks. Three jobs retired; final validation and fixed preview passed. See the [report](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md) for exact scope and integration.
 
 ### Offline task brief view qualified
 
-The pure stdlib renderer and --html option passed 104 source and 104 delivered
-checks, retaining all 84 originals. Real AIDE and safe-installed HTML/JSON
-observations match; customization, helper ownership, read-only behavior and the
-independent projection oracle passed. Three jobs retired, the fixed preview
-passed and eight frozen assets remain unchanged. Browser rendering is untested.
-See the [report](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md) for exact evidence
-and guarded integration; no browser/server or execution authority is added.
+The pure stdlib renderer and --html option passed 104 source and 104 delivered checks, retaining all 84 originals. Real AIDE and safe-installed HTML/JSON observations match; customization, helper ownership, read-only behavior and the independent projection oracle passed. Three jobs retired, the fixed preview passed and eight frozen assets remain unchanged. Browser rendering is untested. See the [report](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md) for exact evidence and guarded integration; no browser/server or execution authority is added.
 
 ### Combined task and fresh helper evidence qualified
 
-The existing brief optionally composes the unchanged inspector. All 77 source
-and 77 delivered methods passed, preserving 59 originals. Default formats match
-the predecessor bytes; actual helper/caller and source/installed observations
-agree. Customization, uncertainty and unfinished obligations remain visible.
-Three jobs retired; 875 package hashes and eight frozen assets verified.
-See the [report](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/REPORT.md). No new parser,
-index, service or execution authority is added.
+The existing brief optionally composes the unchanged inspector. All 77 source and 77 delivered methods passed, preserving 59 originals. Default formats match the predecessor bytes; actual helper/caller and source/installed observations agree. Customization, uncertainty and unfinished obligations remain visible. Three jobs retired; 875 package hashes and eight frozen assets verified. See the [report](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/REPORT.md). No new parser, index, service or execution authority is added.
 
 ### Actual task-brief browser qualification
 
-Two installed Edge155.0.4283.62 captures preserved the complete saved observation.
-Actual root/independent screenshot reviews passed visible layout and wrapping;
-below-fold content and accessibility remain unqualified. Both jobs retired and
-the fixed preview passed. Product,875-member pack and eight frozen assets unchanged.
-[Report and captures](.aide/queue/AIDE-TASK-BRIEF-BROWSER-01/REPORT.md).
+Two installed Edge155.0.4283.62 captures preserved the complete saved observation. Actual root/independent screenshot reviews passed visible layout and wrapping; below-fold content and accessibility remain unqualified. Both jobs retired and the fixed preview passed. Product,875-member pack and eight frozen assets unchanged. [Report and captures](.aide/queue/AIDE-TASK-BRIEF-BROWSER-01/REPORT.md).
 
 ### Retained task evidence remains inspectable
 
-The existing task reader hashes evidence up to 1 MiB in 64-KiB chunks while
-keeping record limits and path guards. Safe oversized references retain their
-paths. All 168 source and 168 delivered checks passed, preserving 162 originals.
-The actual prior failure and installed behavior are demonstrated; customization,
-unfinished adoption and non-authority fields remain. Three jobs retired, 875 pack
-members verified and eight frozen assets unchanged.
-[Report](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/REPORT.md).
+The existing task reader hashes evidence up to 1 MiB in 64-KiB chunks while keeping record limits and path guards. Safe oversized references retain their paths. All 168 source and 168 delivered checks passed, preserving 162 originals. The actual prior failure and installed behavior are demonstrated; customization, unfinished adoption and non-authority fields remain. Three jobs retired, 875 pack members verified and eight frozen assets unchanged. [Report](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/REPORT.md).
 
 ### Successor publication resumption ? 18 October 2026
 
 The existing release packet is being reconciled with current dev after operator-supplied authentication. Pre-tag documentation/TODO/changelog, unwrapped public Markdown and human download labels are required. Published1.0.0 presentation has an explicit metadata-only correction scope. Frozen assets and original qualification remain unchanged; publication and acquired-byte acceptance are pending.
+
+### Release presentation and documentation defaults - 18 October 2026
+
+Reconciled the publication branch with current dev in two-parent commit a5aecad6. Six planning/status/docs conflicts use reviewed dev-based resolutions; nine inherited blank-at-EOF findings remain byte-identical accepted dev inputs and are independently nonblocking. Source/package code and frozen assets were preserved.
+
+Corrected the published 1.0.0 body and four display labels through the reviewed controller at d914e910. All18 operations and stream hashes were checked; release/tag identity, publication time, stable flags, four asset IDs/names/sizes/digests and eight local frozen assets remain intact. [Observed result](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-1.0.0-presentation.json) records the outcome.
+
+Prepared a root TODO, populated human changelog, current roadmap/README and default pre-tag documentation/presentation rules. Public Markdown uses logical paragraphs and bullets without manual column wrapping. Development export and source/consumer qualification of these documentation defaults remain pending; 1.1.0 is not yet published.

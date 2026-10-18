@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "repairs": [
+    "Portable guide links use delivered references/policy, avoiding source-only governance links",
+    "TODO records legacy preview policy-projection gap without claiming automatic tag enforcement"
+  ],
+  "source_validation": "prior full precheck retained; final native validation covers the repaired documentation bytes",
+  "linked_portable_files_present": true
+}

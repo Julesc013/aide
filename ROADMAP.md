@@ -1,36 +1,26 @@
 # AIDE Roadmap
 
-## Current development boundary — 2026-10-04
+### Current direction - 18 October 2026
 
-Source synchronization is complete; corresponding branches retain their own
-tips. The bounded worker and local Windows lifecycle have source and recorded
-qualification, while ordinary outer-client containment, live/matched efficiency
-and stable publication remain separate unfinished gates. The release Goal is
-dormant. Declaration/projection baselines such as CapabilityManifest,
-ConformanceProfile/Result, AdapterManifest, PatchTransaction and ContextPack v2
-exist; they should not be queued again as wholly missing features.
+**Released:** AIDE Lite 1.0.0 for its exact local Windows CLI profile. **Qualified, unpublished:** frozen 1.1.0, including 56 forms and actual published-predecessor upgrade/recovery. Newer source and development-pack features retain their own evidence and remain outside those frozen archives.
 
-Independent work can improve source-linked truth projections, codecs, checkpoint
-preservation, explainable status, resource/retirement planning and extension
-conformance fixtures. The [staged development plan](docs/roadmap/staged-expansion-roadmap.md)
-defines candidate boundaries, dependencies and acceptance. The
-[full report](.aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md) gives current
-evidence and proposal dispositions. Networked execution, shared inference,
-training and tenant-aware service operation need separate profile qualification;
-they do not enlarge the first Windows Lite release contract.
+**Next finish line:** repeatable useful work in AIDE and one downstream project, with interruption recovery, preserved customization and reusable results, clear ownership/resources and complete-outcome accounting. The [current campaign view](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md) links the evidence and blockers; [TODO.md](TODO.md) provides a compact checklist and [PLANS.md](PLANS.md) holds detailed work.
 
-The phase records below preserve foundation history and host-lane intent. Their
-earlier deferred labels do not erase later bounded implementation, and no phase
-name implies shipping, modern IDE parity or an available native environment.
+| Horizon | Focus | Acceptance still needed |
+| --- | --- | --- |
+| Now | Publish the qualified Lite successor; prove a useful host and downstream workflow; improve concise context/reuse and initial cost observation. | Exact publication/acquired bytes, supported existing-host binding, downstream writer ownership and actual accepted work. |
+| Next | Portable continuity, shared resource/request ownership, better intelligence/harvest and another materially different execution binding. | The same work survives interruption, client change, customization and controlled concurrency. |
+| Later | Richer Workbench/domain authoring, vintage/offline reach, networked teams, controlled learning and contributor/deployment profiles. | Capability-specific implementation, activation, support and release evidence; no uniform host parity. |
 
-## 2026-09-26 dev synchronization checkpoint
+The [staged workflow roadmap](docs/roadmap/staged-expansion-roadmap.md) and its [capability relationships](docs/roadmap/development-workflows.json) distinguish implementation prerequisites, activation gates, qualification gates and preferred sequencing. P0-P11 remain navigation over existing owners; they are not one mandatory Lite release or a competing task queue. Bounded read-only views, semantic reuse investigation and lesson correction can proceed when their own dependencies are ready.
 
-Reviewed campaign source was fast-forwarded from e88b1c2e to 53be4fc4;
-remaining historical evidence is preserved without malformed commit ancestry.
-The release and project rollout plan is in
-[the closeout report](.aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/evidence/repo-release-rollout-report.md).
-This is source/evidence integration only. Main, release assets and deployments
-are unchanged; final qualification remains open and development stays stopped.
+**Release discipline:** before every new tag, reconcile README/docs/TODO/PLANS/ROADMAP/changelog, validate exact release claims, review the tag/effect and verify acquired bytes after publication. Product versions identify independently released deliverables; source commits, schemas and profiles retain their separate identities. See [release policy](governance/release-policy.md).
+
+The phase records below preserve foundation history and host-lane intent. Their earlier deferred labels do not erase later scoped implementation, and completed scaffolding does not establish a shipping product or modern IDE parity.
+
+### Historical synchronization checkpoint - 26 September 2026
+
+Reviewed campaign source was fast-forwarded from e88b1c2e to 53be4fc4; remaining historical evidence is preserved without malformed commit ancestry. The release and project rollout plan is in [the closeout report](.aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/evidence/repo-release-rollout-report.md). This is source/evidence integration only. Main, release assets and deployments are unchanged; final qualification remains open and development stays stopped.
 
 ## Scope And Limits
 

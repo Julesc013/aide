@@ -1,0 +1,119 @@
+{
+  "result": "PASS",
+  "prior_probe": "First overescaped regex left files unchanged; original audit retained. Corrected logical-line parser and independent split-token/fenced-block/idempotence checks applied.",
+  "files": {
+    "README.md": {
+      "before_sha256": "aa260994388b7ff1f53a68263e47d5d51c4a858ee917d2a181e3c55a00cf580f",
+      "before_lines": 580,
+      "after_lines": 497,
+      "whitespace_only_reflow": true,
+      "tokens_and_fenced_blocks_preserved": true,
+      "idempotent": true,
+      "reflow_after_sha256": "27c38f004dcec8aa868e4e1a565a3c33935e73e3fa1765bdb8c4ef2b237828f0",
+      "final_source_sha256": "27c38f004dcec8aa868e4e1a565a3c33935e73e3fa1765bdb8c4ef2b237828f0"
+    },
+    "PLANS.md": {
+      "before_sha256": "0b932db5375f9f26124e4885c83aab7a46da2c92833770822d8a8246d65a4084",
+      "before_lines": 5422,
+      "after_lines": 4200,
+      "whitespace_only_reflow": true,
+      "tokens_and_fenced_blocks_preserved": true,
+      "idempotent": true,
+      "reflow_after_sha256": "21c03021839d5756cad206ec580692f243effeefceaa7a336dcbc5d440f8fbe5",
+      "final_source_sha256": "21c03021839d5756cad206ec580692f243effeefceaa7a336dcbc5d440f8fbe5"
+    },
+    "IMPLEMENT.md": {
+      "before_sha256": "436d8f05a188e369c42c15592f716470a89c3a0f27b1dba66f2c872186eb3a45",
+      "before_lines": 14170,
+      "after_lines": 10238,
+      "whitespace_only_reflow": true,
+      "tokens_and_fenced_blocks_preserved": true,
+      "idempotent": true,
+      "reflow_after_sha256": "105bc0d7b332b512fea474c59aff923e14bfa645d41adf93630db795d1dbc293",
+      "final_source_sha256": "105bc0d7b332b512fea474c59aff923e14bfa645d41adf93630db795d1dbc293"
+    },
+    "DOCUMENTATION.md": {
+      "before_sha256": "6b04cc29a7571bd1ddd1961816f55672b58d8e906c4ad8ae8955415ba59a2023",
+      "before_lines": 1379,
+      "after_lines": 795,
+      "whitespace_only_reflow": true,
+      "tokens_and_fenced_blocks_preserved": true,
+      "idempotent": true,
+      "reflow_after_sha256": "9591e17c0aa6081614b4313ad1e2c815f5806ab3a79db7b732f0df8f52781fcf",
+      "final_source_sha256": "9591e17c0aa6081614b4313ad1e2c815f5806ab3a79db7b732f0df8f52781fcf"
+    },
+    "ROADMAP.md": {
+      "before_sha256": "f5380cbbb0e04e1dbdbec3957d8112fe21200fe4a5183d83105f01f2949905f2",
+      "before_lines": 169,
+      "after_lines": 164,
+      "whitespace_only_reflow": true,
+      "tokens_and_fenced_blocks_preserved": true,
+      "idempotent": true,
+      "reflow_after_sha256": "f8448a768fbefb0c2eed007dee772a733ec6d781d4988d3d6baa23014cd8ad03",
+      "final_source_sha256": "f8448a768fbefb0c2eed007dee772a733ec6d781d4988d3d6baa23014cd8ad03"
+    },
+    "CHANGELOG.md": {
+      "before_sha256": "fd3c59ca0bf29c79523c1b15953aae75c8dc44f68580c857015cfa51c912a6ed",
+      "before_lines": 31,
+      "after_lines": 31,
+      "whitespace_only_reflow": true,
+      "tokens_and_fenced_blocks_preserved": true,
+      "idempotent": true,
+      "reflow_after_sha256": "fd3c59ca0bf29c79523c1b15953aae75c8dc44f68580c857015cfa51c912a6ed",
+      "final_source_sha256": "fd3c59ca0bf29c79523c1b15953aae75c8dc44f68580c857015cfa51c912a6ed"
+    },
+    "TODO.md": {
+      "before_sha256": "e771f1fc26461b10c5de918da92b0a5e42a1178cd467d2c88b0ffcad022c5189",
+      "before_lines": 29,
+      "after_lines": 29,
+      "whitespace_only_reflow": true,
+      "tokens_and_fenced_blocks_preserved": true,
+      "idempotent": true,
+      "reflow_after_sha256": "e771f1fc26461b10c5de918da92b0a5e42a1178cd467d2c88b0ffcad022c5189",
+      "final_source_sha256": "99b1e1038b8a8b688f1383a7f76c993c3c0e5f41747aac049c6a0a80f221cf6d",
+      "later_intentional_changes": "portable link correction or explicitly listed TODO follow-up; reviewed separately from whitespace-only reflow"
+    },
+    "docs/reference/commit-discipline.md": {
+      "before_sha256": "6724a751d1df836865585002b9cb60a0280def58d08a19e2c93036070d931a29",
+      "before_lines": 269,
+      "after_lines": 118,
+      "whitespace_only_reflow": true,
+      "tokens_and_fenced_blocks_preserved": true,
+      "idempotent": true,
+      "reflow_after_sha256": "1407038388d261ca763a4e6a2d4951b4f06bdf03d60244898d7f75e973c06d47",
+      "final_source_sha256": "2b7d735b365458f4ec1ef3ff5390fa0668a5924e94966dc8e3bb13ffe97779fb",
+      "later_intentional_changes": "portable link correction or explicitly listed TODO follow-up; reviewed separately from whitespace-only reflow"
+    },
+    "docs/reference/git-workflow-policy.md": {
+      "before_sha256": "e07c0aefc22731eb7f5c893b5b31334a4166e1b3552b645f4a29dc7dbb558b07",
+      "before_lines": 116,
+      "after_lines": 82,
+      "whitespace_only_reflow": true,
+      "tokens_and_fenced_blocks_preserved": true,
+      "idempotent": true,
+      "reflow_after_sha256": "6f789e6e7d2a8a0efc30fed7618416159c812a7c5f941f3b5f79f4926c5b5826",
+      "final_source_sha256": "b31a9565ff79a7052899461f1de0c2f02e8451d43fe17186a82f43b41bea8f2b",
+      "later_intentional_changes": "portable link correction or explicitly listed TODO follow-up; reviewed separately from whitespace-only reflow"
+    },
+    "governance/release-policy.md": {
+      "before_sha256": "ef2b3cd4e14d73b14182de88a8e09b27f4045cf98c93a7fb3cfabb9cf5c6e7e4",
+      "before_lines": 38,
+      "after_lines": 38,
+      "whitespace_only_reflow": true,
+      "tokens_and_fenced_blocks_preserved": true,
+      "idempotent": true,
+      "reflow_after_sha256": "ef2b3cd4e14d73b14182de88a8e09b27f4045cf98c93a7fb3cfabb9cf5c6e7e4",
+      "final_source_sha256": "ef2b3cd4e14d73b14182de88a8e09b27f4045cf98c93a7fb3cfabb9cf5c6e7e4"
+    },
+    "packaging/release-policy.md": {
+      "before_sha256": "0b75ae5f47be3da231f9e924aee15d44f1705b11fd21f93aa291d274cd4c141b",
+      "before_lines": 15,
+      "after_lines": 15,
+      "whitespace_only_reflow": true,
+      "tokens_and_fenced_blocks_preserved": true,
+      "idempotent": true,
+      "reflow_after_sha256": "0b75ae5f47be3da231f9e924aee15d44f1705b11fd21f93aa291d274cd4c141b",
+      "final_source_sha256": "0b75ae5f47be3da231f9e924aee15d44f1705b11fd21f93aa291d274cd4c141b"
+    }
+  }
+}

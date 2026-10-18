@@ -1,10 +1,13 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-SUCCESSOR-PUBLICATION-01
 status: needs_review
-result: AUTHENTICATED_RESUMPTION_CANDIDATE
-next_action: exact resumption and six-file merge review
-authentication: operator supplied; active Julesc013 account confirmed read-only
+result: PRE_TAG_DOCUMENTATION_CANDIDATE
+next_action: exact documentation/default export and preview review
+authentication: active Julesc013 account confirmed
+presentation_1_0_executed: true
+presentation_1_0_ref: evidence/published-1.0.0-presentation.json
+product_qualified: false
 publication_executed: false
-presentation_1_0_executed: false
+acquired_consumer: NOT_RUN
 jobs_allocated: 0
 maximum_jobs: 2

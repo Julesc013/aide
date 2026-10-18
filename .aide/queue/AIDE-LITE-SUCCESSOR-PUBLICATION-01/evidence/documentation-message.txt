@@ -1,0 +1,10 @@
+docs(release): reconcile pre-tag docs and add the root TODO
+
+Add a concise queue-linked TODO and populate the human changelog. Update README, roadmap and release policy to distinguish published Lite, the qualified successor and newer development. Make public Markdown use logical lines and require current docs, readable notes and titled downloads before each tag.
+
+Validation: PASS - whitespace-only reflow preserves tokens and fenced code; 1.0 metadata readback
+ NOT RUN - source/delivered30, owned export, installed defaults and fixed preview
+Changelog: Docs: Add TODO and reconcile release documentation and changelog
+Changelog: Changed: Require pre-tag documentation and readable release presentation
+AIDE-Task: AIDE-LITE-SUCCESSOR-PUBLICATION-01
+AIDE-Format: compact-v1

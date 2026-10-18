@@ -1,14 +1,10 @@
 # AIDE
 
-![coverage](https://badgen.net/static/coverage/not%20much/F73)
-![code style](https://badgen.net/static/code%20style/mine/999)
+![coverage](https://badgen.net/static/coverage/not%20much/F73) ![code style](https://badgen.net/static/code%20style/mine/999)
 
 **AIDE is a portable agentic development control plane for real repositories.**
 
-AIDE helps repositories develop and maintain themselves. It turns development
-work into protocol objects, evidence packets, event records, and
-OKF-compatible knowledge so humans, agents, tests, IDEs, scripts, and legacy
-environments can coordinate through one repo-native control plane.
+AIDE helps repositories develop and maintain themselves. It turns development work into protocol objects, evidence packets, event records, and OKF-compatible knowledge so humans, agents, tests, IDEs, scripts, and legacy environments can coordinate through one repo-native control plane.
 
 ```text
                     +--------------------------+
@@ -34,58 +30,27 @@ environments can coordinate through one repo-native control plane.
  +-------------+          +-------------+          +-------------+
 ```
 
-AIDE is not an AI editor, a VS Code competitor, a Codex wrapper, a prompt pack,
-a RAG system, or a project-management tool.
+AIDE is not an AI editor, a VS Code competitor, a Codex wrapper, a prompt pack, a RAG system, or a project-management tool.
 
 **AIDE is the system around agents.**
 
 ## Status
 
-AIDE Lite **1.0.0 is published** as `aide-lite-v1.0.0`, from release commit
-`0f293eb6`. Its declared profile is `aide-lite-local-windows`, **T3 Limited
-Support**, qualified on Windows 10 build 19045 / Python 3.14.7. The
-[release](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0) and
-[recorded qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
-bind the delivered bytes, all eight consumer cases, 38 public forms, replay and
-downloaded-asset checks. Development source and release payload identities are
-separate.
+AIDE Lite **1.0.0 is published** as `aide-lite-v1.0.0`, from release commit `0f293eb6`. Its declared profile is `aide-lite-local-windows`, **T3 Limited Support**, qualified on Windows 10 build 19045 / Python 3.14.7. The [release](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0) and [recorded qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) bind the delivered bytes, all eight consumer cases, 38 public forms, replay and downloaded-asset checks. Development source and release payload identities are separate.
 
-The source includes the self-hosting queue, context and evidence tools,
-portable import/update, project-owned customization, owned repair,
-rollback/removal and partial-import recovery. A bounded maintainer runner
-provides explicit storage admission, finite resource limits and retirement;
-real build/test use requires configured local pools. Worker, isolation and
-integration-broker foundations also have source and focused test evidence.
+**Next release:** frozen Lite **1.1.0 is technically qualified and awaiting publication**, with 56 public forms and upgrade checks against the actual published 1.0.0 package. [Qualification](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json) and the [publication WorkUnit](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md) identify its exact bytes and remaining delivery checks. Newer development features require a subsequent qualified release.
 
-The full AIDE campaign remains active. The bounded worker has recorded
-validation and retirement evidence; ordinary model-assisted editing and
-outer-client read/write containment still need actual-route qualification.
-Whole-outcome efficiency, wider ownership-aware cleanup and downstream
-daily-use acceptance remain open. Service, Commander, Workshop/Workbench and
-broader host/provider interfaces require their own qualification. The local
-Windows Lite profile and its limits are defined in
-[product scope and profiles](specs/control-plane/product/scope-and-profiles.md).
+**Find the next action:** [TODO](TODO.md) is the short current checklist; [PLANS](PLANS.md) holds detailed work, [ROADMAP](ROADMAP.md) describes direction, [CHANGELOG](CHANGELOG.md) records release changes, and [DOCUMENTATION](DOCUMENTATION.md) indexes the docs. The filesystem queue remains the authority for work and acceptance.
 
-The next milestone is a useful development workflow in AIDE and one downstream
-project, with interruption recovery, preserved customization, reusable results
-and clear accounting. The [workflow roadmap](docs/roadmap/staged-expansion-roadmap.md)
-separates implementation prerequisites, activation gates, claim evidence and
-preferred sequencing. Planning status is not operational acceptance.
+The source includes the self-hosting queue, context and evidence tools, portable import/update, project-owned customization, owned repair, rollback/removal and partial-import recovery. A bounded maintainer runner provides explicit storage admission, finite resource limits and retirement; real build/test use requires configured local pools. Worker, isolation and integration-broker foundations also have source and focused test evidence.
 
-The [portable Git workflow](docs/reference/git-workflow-policy.md) defaults to
-short-lived local task branches, detailed coherent commits, frequent validated
-integration into `dev`, and prompt reviewed promotion to `main`. Publish task
-branches when collaboration, an important checkpoint or blocked continuity needs
-them; retire obsolete remote refs only after preservation and ownership checks.
-New-project hosting protection is optional for `main` and normally disabled for
-`dev`. Existing project overrides and hosting protections are preserved. These
-defaults guide authorized work; they do not activate an unattended Git service.
+The full AIDE campaign remains active. The bounded worker has recorded validation and retirement evidence; ordinary model-assisted editing and outer-client read/write containment still need actual-route qualification. Whole-outcome efficiency, wider ownership-aware cleanup and downstream daily-use acceptance remain open. Service, Commander, Workshop/Workbench and broader host/provider interfaces require their own qualification. The local Windows Lite profile and its limits are defined in [product scope and profiles](specs/control-plane/product/scope-and-profiles.md).
 
-The [Git-default qualification](.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/REPORT.md)
-passes fresh adoption, explicit customization conflict/resolution, and installed
-changelog generation after project queue creation. Original failures remain in
-evidence. These results qualify the development pack on the observed native route;
-published 1.0.0 assets retain their original identity.
+The next milestone is a useful development workflow in AIDE and one downstream project, with interruption recovery, preserved customization, reusable results and clear accounting. The [workflow roadmap](docs/roadmap/staged-expansion-roadmap.md) separates implementation prerequisites, activation gates, claim evidence and preferred sequencing. Planning status is not operational acceptance.
+
+The [portable Git workflow](docs/reference/git-workflow-policy.md) defaults to short-lived local task branches, detailed coherent commits, frequent validated integration into `dev`, and prompt reviewed promotion to `main`. Publish task branches when collaboration, an important checkpoint or blocked continuity needs them; retire obsolete remote refs only after preservation and ownership checks. New-project hosting protection is optional for `main` and normally disabled for `dev`. Existing project overrides and hosting protections are preserved. These defaults guide authorized work; they do not activate an unattended Git service.
+
+The [Git-default qualification](.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/REPORT.md) passes fresh adoption, explicit customization conflict/resolution, and installed changelog generation after project queue creation. Original failures remain in evidence. These results qualify the development pack on the observed native route; published 1.0.0 assets retain their original identity.
 
 AIDE's short doctrine:
 
@@ -126,15 +91,11 @@ AIDE is designed around a different model. The repository keeps durable state:
 
 Agents become bounded workers inside that control plane.
 
-AIDE's promise is not that agents never fail. AIDE's promise is that failures
-become structured work, claims require evidence, knowledge compounds, and safe
-progress can continue without tying the whole repo to one fragile agent
-session.
+AIDE's promise is not that agents never fail. AIDE's promise is that failures become structured work, claims require evidence, knowledge compounds, and safe progress can continue without tying the whole repo to one fragile agent session.
 
 ## Core Idea
 
-The target operating loop is below. Current bounded foundations do not establish
-whole-session containment or a continuously productive unattended service.
+The target operating loop is below. Current bounded foundations do not establish whole-session containment or a continuously productive unattended service.
 
 ```text
 AIDE runs continuously.
@@ -174,10 +135,7 @@ goal
 -> PatchTransaction review later
 ```
 
-The current repository models these objects and includes bounded local process,
-transaction, lifecycle and worker foundations. Declaration/schema/projection
-checks do not qualify a general scheduler, async test broker or unattended
-promotion loop. See the scope and evidence in the current reconciliation report.
+The current repository models these objects and includes bounded local process, transaction, lifecycle and worker foundations. Declaration/schema/projection checks do not qualify a general scheduler, async test broker or unattended promotion loop. See the scope and evidence in the current reconciliation report.
 
 ## How AIDE Works
 
@@ -213,12 +171,9 @@ AIDE is not the agent. AIDE is the system around the agent.
 
 ## OKF Knowledge Plane
 
-AIDE uses an OKF-compatible knowledge bundle because project knowledge should be
-portable, readable, versionable, and useful to both humans and agents.
+AIDE uses an OKF-compatible knowledge bundle because project knowledge should be portable, readable, versionable, and useful to both humans and agents.
 
-Instead of forcing every agent to rediscover repo facts from raw files, AIDE
-compiles what the repo knows into markdown concept pages with YAML frontmatter.
-That gives the repo a shared explanation layer:
+Instead of forcing every agent to rediscover repo facts from raw files, AIDE compiles what the repo knows into markdown concept pages with YAML frontmatter. That gives the repo a shared explanation layer:
 
 - current state
 - architecture decisions
@@ -236,9 +191,7 @@ Evidence proves.
 OKF knowledge explains.
 ```
 
-OKF pages are readable markdown with YAML frontmatter. They help humans and
-agents understand the repo, but they do not replace protocol objects, queue
-truth, EventRecords, ReferenceIDs, or EvidencePackets.
+OKF pages are readable markdown with YAML frontmatter. They help humans and agents understand the repo, but they do not replace protocol objects, queue truth, EventRecords, ReferenceIDs, or EvidencePackets.
 
 Current local bundle shape:
 
@@ -253,11 +206,7 @@ Current local bundle shape:
 `-- risks/
 ```
 
-The knowledge plane is influenced by the LLM Wiki pattern: maintain a
-persistent, interlinked markdown wiki that accumulates synthesis over time
-instead of repeatedly retrieving raw files for every question. In AIDE, that
-wiki is not the source of execution truth. It is the repo's compiled explanation
-layer.
+The knowledge plane is influenced by the LLM Wiki pattern: maintain a persistent, interlinked markdown wiki that accumulates synthesis over time instead of repeatedly retrieving raw files for every question. In AIDE, that wiki is not the source of execution truth. It is the repo's compiled explanation layer.
 
 ## Agentic Development Workflow
 
@@ -278,8 +227,7 @@ goal
 -> promotion
 ```
 
-AIDE should not rely on one long-running agent session. The durable process is
-AIDE. Agents are disposable workers.
+AIDE should not rely on one long-running agent session. The durable process is AIDE. Agents are disposable workers.
 
 ## Multi-IDE And Legacy Support
 
@@ -309,16 +257,13 @@ legacy IDE / workspace
 -> host-side review / apply
 ```
 
-The old IDE does not need to run a first-party agent binary. It only needs a
-bridge. The current repo has host-lane proof records and skeletons, not complete
-legacy IDE products.
+The old IDE does not need to run a first-party agent binary. It only needs a bridge. The current repo has host-lane proof records and skeletons, not complete legacy IDE products.
 
 ## Workshop / Workbench Vision
 
 AIDE is also intended to support visual development.
 
-For a game, engine, or complex software project, a first-class
-Workshop/Workbench module should show:
+For a game, engine, or complex software project, a first-class Workshop/Workbench module should show:
 
 - WorkUnits
 - WorkerRuns
@@ -332,8 +277,7 @@ Workshop/Workbench module should show:
 - capability graph
 - checkpoint readiness
 
-The Workshop should be a visual operating surface over AIDE, not a separate
-authority layer. It is planned, not implemented.
+The Workshop should be a visual operating surface over AIDE, not a separate authority layer. It is planned, not implemented.
 
 ## Safety And Truth Model
 
@@ -362,8 +306,7 @@ governance and policy
 -> chat history
 ```
 
-Generated downstream artifacts are outputs, not source-of-truth records, unless
-a reviewed policy explicitly says otherwise.
+Generated downstream artifacts are outputs, not source-of-truth records, unless a reviewed policy explicitly says otherwise.
 
 ## Current Roadmap
 
@@ -392,11 +335,7 @@ provider adapters
 checkpoint / promotion runtime
 ```
 
-The [staged development plan](docs/roadmap/staged-expansion-roadmap.md) separates
-dependency-ready local work from host/model/network qualification and larger
-deployments. The [full reconciliation report](.aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md)
-links current claims to source and recorded evidence. Candidates are not admitted
-runtime work or calendar promises.
+The [staged development plan](docs/roadmap/staged-expansion-roadmap.md) separates dependency-ready local work from host/model/network qualification and larger deployments. The [full reconciliation report](.aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md) links current claims to source and recorded evidence. Candidates are not admitted runtime work or calendar promises.
 
 ## Implementation Status
 
@@ -436,8 +375,7 @@ py -3 .aide/scripts/aide_lite.py okf status
 py -3 .aide/scripts/aide_lite.py okf validate
 ```
 
-For non-trivial work, use the filesystem queue under `.aide/queue/` or compile
-an intent packet before implementation:
+For non-trivial work, use the filesystem queue under `.aide/queue/` or compile an intent packet before implementation:
 
 ```powershell
 py -3 .aide/scripts/aide_lite.py intent compile --prompt "<bounded task>"
@@ -461,12 +399,7 @@ Durable repo contract:
 
 Local/runtime state should stay outside committed source control:
 
-The following illustrates roles, not a directory-creation instruction. Each
-qualified deployment selects approved local roots and one authoritative writer;
-database and event-file examples cannot independently own the same objects.
-The current maintainer runner uses its existing ignored execution configuration
-and approved shared storage. A new task reuses that selection rather than
-creating another pool, clone or root layout.
+The following illustrates roles, not a directory-creation instruction. Each qualified deployment selects approved local roots and one authoritative writer; database and event-file examples cannot independently own the same objects. The current maintainer runner uses its existing ignored execution configuration and approved shared storage. A new task reuses that selection rather than creating another pool, clone or root layout.
 
 ```text
 .aide.local/
@@ -491,8 +424,7 @@ Other important roots:
 - `inventory/` and `matrices/`: exact version, support, capability, and verification records
 - `environments/`, `labs/`, `evals/`, and `packaging/`: environment, prototype, verification, and release-shape records
 
-Committed `.aide/` content should describe repo truth and portable project law.
-Volatile runtime state should remain outside normal committed source control.
+Committed `.aide/` content should describe repo truth and portable project law. Volatile runtime state should remain outside normal committed source control.
 
 ## Design Principles
 
@@ -519,9 +451,7 @@ AIDE is not:
 - a VS Code-only extension
 - a Codex-only tool
 
-AIDE can generate repo guidance and context for tools such as Codex, Claude
-Code, Gemini CLI, local scripts, CI, and human workers. Provider-specific
-integrations are adapters. They are not the AIDE architecture.
+AIDE can generate repo guidance and context for tools such as Codex, Claude Code, Gemini CLI, local scripts, CI, and human workers. Provider-specific integrations are adapters. They are not the AIDE architecture.
 
 ## Influences And References
 
@@ -530,10 +460,7 @@ integrations are adapters. They are not the AIDE architecture.
 - [LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)
 - [Codex `AGENTS.md` guidance](https://developers.openai.com/codex/guides/agents-md)
 
-OKF is useful to AIDE because it is portable markdown plus frontmatter, not a
-new mandatory runtime. The LLM Wiki pattern is useful because it treats
-knowledge as a persistent, compounding artifact. `AGENTS.md` is useful as a
-tool guidance export target, not as AIDE's internal ontology.
+OKF is useful to AIDE because it is portable markdown plus frontmatter, not a new mandatory runtime. The LLM Wiki pattern is useful because it treats knowledge as a persistent, compounding artifact. `AGENTS.md` is useful as a tool guidance export target, not as AIDE's internal ontology.
 
 ## Contributing
 
@@ -557,20 +484,14 @@ Each non-trivial change should produce:
 - remaining risks
 - next recommended task
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md) before
-making substantial changes.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md) before making substantial changes.
 
 ## License
 
 AIDE is licensed under the Apache License, Version 2.0 (`Apache-2.0`).
 
-You may use, modify, fork, redistribute, package, integrate, and build on AIDE,
-including for personal, research, nonprofit, educational, commercial, and hosted
-uses, subject to the license terms.
+You may use, modify, fork, redistribute, package, integrate, and build on AIDE, including for personal, research, nonprofit, educational, commercial, and hosted uses, subject to the license terms.
 
-AIDE project names, logos, and branding are not licensed for misleading or
-official use. See [NOTICE.md](NOTICE.md) and [TRADEMARKS.md](TRADEMARKS.md).
+AIDE project names, logos, and branding are not licensed for misleading or official use. See [NOTICE.md](NOTICE.md) and [TRADEMARKS.md](TRADEMARKS.md).
 
-Generated outputs are addressed in [GENERATED_OUTPUTS.md](GENERATED_OUTPUTS.md):
-your repo content remains yours, and AIDE does not claim ownership over
-repo-local outputs generated from your own project.
+Generated outputs are addressed in [GENERATED_OUTPUTS.md](GENERATED_OUTPUTS.md): your repo content remains yours, and AIDE does not claim ownership over repo-local outputs generated from your own project.

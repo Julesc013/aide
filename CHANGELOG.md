@@ -1,15 +1,31 @@
-# Changelog
+### Changelog
 
-This file is the baseline for future changelog entries. It does not backfill the bootstrap history that already lives in `PLANS.md` and `IMPLEMENT.md`.
+Release entries describe the delivered Lite package and its declared compatibility profile. Newer source remains **Unreleased** until its own package qualification. Release dates use Australia/Sydney; exact timestamps, source revisions and asset hashes remain in the linked evidence.
 
-## Format
+#### Unreleased
 
-Use short sections only when a future change is intentionally recorded here:
+- **Added:** compact task briefs, optional fresh Python helper inspection, an inactive HTML view, portable task/result handoff, source-linked lessons and cooperative dependency interfaces, qualified only for their recorded subjects.
+- **Fixed:** bounded streaming inspection of larger retained task evidence, preserving safe paths and useful continuation advice.
+- **Changed:** compact commit/PR communication and short-lived task branches with reviewed, frequent dev/main synchronization.
+- **Docs:** root TODO and pre-tag documentation reconciliation; public Markdown uses logical paragraphs without manual column wrapping. Releases use concise sections, titled downloads and exact artifact links.
+- **Still open:** actual desktop editing/containment, native downstream adoption, complete effort comparisons and repeated daily-use acceptance. The saved readability candidate remains unqualified.
 
-- implementation changes
-- structural or governance changes
-- research or matrix changes
+#### AIDE Lite 1.1.0 — Qualified; publication pending
 
-## Unreleased
+- **Added:** 18 public command forms for task continuation, Git policy inspection, review/reuse reporting and effort summaries; 56 qualified forms in total.
+- **Fixed:** installed effort reporting resolves AIDE’s owned helper in adopted projects.
+- **Upgrade:** qualified against the actual published 1.0.0 package, including customization, direct edits, conflicts, recorded resolutions and interrupted-import recovery.
+- **Profile:** T3 Limited Support, local Windows CLI; Windows 10 build 19045 and Python 3.14.8.
+- **Limits:** automatic rollback across changed owned-path sets and automatic downgrade of customized overlays require retained-state manual recovery. Broader host/model operation and whole-outcome savings remain unqualified.
+- **Evidence:** [technical acceptance](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json), [publication and acquisition plan](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md). Newer development features above are outside these frozen archives.
 
-No changelog entries recorded yet.
+#### AIDE Lite 1.0.0 — 9 October 2026
+
+- **Added:** first stable portable Lite package, with 38 declared public forms for local adoption, customization, inspection and lifecycle operations.
+- **Lifecycle:** safe import, three-way updates/conflicts, partial-import recovery, owned-file repair, rollback and removal.
+- **Profile:** T3 Limited Support, local Windows CLI; Windows 10 build 19045 and Python 3.14.7.
+- **Compatibility:** first published version; update qualification used synthetic predecessor fixtures.
+- **Known warnings:** fresh-fixture validation and context verification may report classified optional-content/cache/fixture-scope warnings; inspect the results before using them as evidence.
+- **Downloads and evidence:** [GitHub release](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0), [qualification and acquired-asset checks](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+
+Earlier foundation history remains in [IMPLEMENT.md](IMPLEMENT.md) and [PLANS.md). Human release summaries are distinct from the detailed, generated changelog previews under `.aide/changelog/`.

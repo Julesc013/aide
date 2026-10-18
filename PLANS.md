@@ -1,50 +1,27 @@
 # AIDE Planning Index
 
+### Current work
+
+Start with [TODO.md](TODO.md) and the [campaign view](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md). The canonical queue owns each WorkUnit's scope, status, evidence and acceptance; this index preserves detailed and dated planning history. [ROADMAP.md](ROADMAP.md) and [specs](specs/) retain long-term intent.
+
+**Active release:** [AIDE-LITE-SUCCESSOR-PUBLICATION-01](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md) has authenticated access and a completed 1.0.0 presentation repair. Before tagging frozen 1.1.0, reconcile the README/docs/TODO/PLANS/ROADMAP/changelog, qualify the changed development documentation defaults, review exact integration/publication and verify acquired bytes. The unqualified readability checkpoint remains on its local task branch for later resumption.
+
 ## Selected-task context - 2026-10-18
 
-[Context qualification](.aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/REPORT.md)
-records source 61, delivered 60, ownership 6 and exact preview passes. The existing
-resolver now provides consistent recorded selection, status and uncertainty to
-context packets. All three jobs retired; the original wrapper failure is retained.
-Two payload files changed in the 862-member pack; the reference remains source-only.
-Published 1.0.0 and live context outputs are unchanged. Reviewed effects and actual
-Git refs establish integration; this qualification is not a new release.
+[Context qualification](.aide/queue/AIDE-CONTEXT-TASK-SELECTION-01/REPORT.md) records source 61, delivered 60, ownership 6 and exact preview passes. The existing resolver now provides consistent recorded selection, status and uncertainty to context packets. All three jobs retired; the original wrapper failure is retained. Two payload files changed in the 862-member pack; the reference remains source-only. Published 1.0.0 and live context outputs are unchanged. Reviewed effects and actual Git refs establish integration; this qualification is not a new release.
 
 ## Outcome conservation - 2026-10-18
 
-[Outcome qualification](.aide/queue/AIDE-OUTCOME-CONSERVATION-01/REPORT.md) records
-source20, delivered20, ownership6 and exact promotion-preview passes. The portable
-CLI preserves project metadata and refuses lossy ledger updates. All three jobs are
-retired; the original failed fixture run remains. Four payloads changed; published1.0
-and the live ledger remain unchanged. Exact reviewed effects and observed Git refs
-determine integration; this record establishes qualification, not a new release.
+[Outcome qualification](.aide/queue/AIDE-OUTCOME-CONSERVATION-01/REPORT.md) records source20, delivered20, ownership6 and exact promotion-preview passes. The portable CLI preserves project metadata and refuses lossy ledger updates. All three jobs are retired; the original failed fixture run remains. Four payloads changed; published1.0 and the live ledger remain unchanged. Exact reviewed effects and observed Git refs determine integration; this record establishes qualification, not a new release.
 
 ## Test-impact observation - 2026-10-18
 
-[AIDE-IMPACT-COVERAGE-01](.aide/queue/AIDE-IMPACT-COVERAGE-01/ExecPlan.md)
-corrects missing-base empty/T0 advice in the existing report-only planner. It keeps
-known paths, identifies incomplete observation and requests reconciliation; heuristic
-mapping remains explicit. Source13, delivered13 and ownership6 pass without skips.
-The original failed alias-fixture attempt is retained; its subject now uses the
-admitted source or validated export with every assertion preserved. Doctor, structural
-validation and pack-status pass. Four portable payload files changed; published1.0
-bytes are unchanged. The fixed three-commit preview passes with six exact outputs.
-All three jobs are retired; the original failure is preserved. Final integration
-is governed by the exact closure review and observed branch receipt.
+[AIDE-IMPACT-COVERAGE-01](.aide/queue/AIDE-IMPACT-COVERAGE-01/ExecPlan.md) corrects missing-base empty/T0 advice in the existing report-only planner. It keeps known paths, identifies incomplete observation and requests reconciliation; heuristic mapping remains explicit. Source13, delivered13 and ownership6 pass without skips. The original failed alias-fixture attempt is retained; its subject now uses the admitted source or validated export with every assertion preserved. Doctor, structural validation and pack-status pass. Four portable payload files changed; published1.0 bytes are unchanged. The fixed three-commit preview passes with six exact outputs. All three jobs are retired; the original failure is preserved. Final integration is governed by the exact closure review and observed branch receipt.
 
 
 ## Current memory correction - 2026-10-18
 
-[Current-memory work](.aide/queue/AIDE-CURRENT-MEMORY-01/ExecPlan.md) replaces obsolete
-Q36 routing in packet-referenced source memory with canonical task and release
-references. [Project state](.aide/memory/project-state.md) and
-[open risks](.aide/memory/open-risks.md) distinguish the published Lite profile from
-unfinished platform work. Historical decisions, target templates and product bytes
-are preserved. Targeted checks, doctor and full structural validation pass after one reviewed
-ledger refresh; classification is unchanged. The fixed one-commit promotion
-preview passes and its sole job is retired. Exact closure review and observed
-integration are recorded separately; original failures and the historical warning
-remain in the child evidence.
+[Current-memory work](.aide/queue/AIDE-CURRENT-MEMORY-01/ExecPlan.md) replaces obsolete Q36 routing in packet-referenced source memory with canonical task and release references. [Project state](.aide/memory/project-state.md) and [open risks](.aide/memory/open-risks.md) distinguish the published Lite profile from unfinished platform work. Historical decisions, target templates and product bytes are preserved. Targeted checks, doctor and full structural validation pass after one reviewed ledger refresh; classification is unchanged. The fixed one-commit promotion preview passes and its sole job is retired. Exact closure review and observed integration are recorded separately; original failures and the historical warning remain in the child evidence.
 
 
 ## Lite successor preparation - 2026-10-18
@@ -71,558 +48,224 @@ One real answer-only host-readiness request completed receipt, native acceptance
 
 [AIDE-DEPENDENCY-MCP-01](.aide/queue/AIDE-DEPENDENCY-MCP-01/ExecPlan.md) adds a bounded participant inbox and stdio tools over existing Requests. Local records are integrated at 8f93cb7e; this child passed all 60 runtime/protocol methods, including actual subprocess exchange. Existing-worker delivery and native DiskEd adoption remain mandatory follow-ons.
 
-Metadata closure11d03c41 passed with all payload/checksum bytes unchanged. Both
-managed jobs are retired. The separately admitted promotion-only job ac48e888
-passed current preview generation and exact regeneration. Independently reviewed
-2194eb6b reached local/remote dev/main; its task branch was retired. Installed
-desktop delivery and native adoption remain open.
+Metadata closure11d03c41 passed with all payload/checksum bytes unchanged. Both managed jobs are retired. The separately admitted promotion-only job ac48e888 passed current preview generation and exact regeneration. Independently reviewed 2194eb6b reached local/remote dev/main; its task branch was retired. Installed desktop delivery and native adoption remain open.
 
 ## Local dependency request/reply - 2026-10-17
 
-[AIDE-LOCAL-DEPENDENCY-01](.aide/queue/AIDE-LOCAL-DEPENDENCY-01/ExecPlan.md) implements
-the first cooperative local exchange under existing runtime state. Native work
-retains authority; actual host delivery, independent cancellation and downstream
-adoption remain follow-ons. The actual CLI/API/state fixture run passed 47 methods
-with no skips; original failure is retained. Affected development-pack closure
-also passed, including actual delivered-State verification. Exact Git integration
-review applies; DiskEd ownership remains independently pending.
+[AIDE-LOCAL-DEPENDENCY-01](.aide/queue/AIDE-LOCAL-DEPENDENCY-01/ExecPlan.md) implements the first cooperative local exchange under existing runtime state. Native work retains authority; actual host delivery, independent cancellation and downstream adoption remain follow-ons. The actual CLI/API/state fixture run passed 47 methods with no skips; original failure is retained. Affected development-pack closure also passed, including actual delivered-State verification. Exact Git integration review applies; DiskEd ownership remains independently pending.
 
 ## Native DiskEd adoption preparation - 2026-10-17
 
-AIDE-DAILY-DISKED-ADOPTION-01 prepares actual owner adoption of the conserved
-selected-export candidate. Native writer ownership and exact target effects remain
-held. Exact native metadata/candidate preparation passed; both finite jobs are
-retired. Original fixture evidence and two unavailable checks are preserved.
+AIDE-DAILY-DISKED-ADOPTION-01 prepares actual owner adoption of the conserved selected-export candidate. Native writer ownership and exact target effects remain held. Exact native metadata/candidate preparation passed; both finite jobs are retired. Original fixture evidence and two unavailable checks are preserved.
 
 ## Portable Git defaults - 2026-10-17
 
-[AIDE-GIT-DEFAULTS-01](.aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md) implements the
-owner's cross-project default through existing policy, advisory and adapter owners.
-The defaults and actual fresh/customized consumers are qualified. The dependent
-installed-changelog repair passes the original assertion and both delivered CLI
-checks. Original attempt evidence remains. Independently reviewed c02228d0 reached
-local and remote dev/main with matching trees. The dependent repair REPORT links
-the observed receipt; native owner adoption preparation remains next.
+[AIDE-GIT-DEFAULTS-01](.aide/queue/AIDE-GIT-DEFAULTS-01/ExecPlan.md) implements the owner's cross-project default through existing policy, advisory and adapter owners. The defaults and actual fresh/customized consumers are qualified. The dependent installed-changelog repair passes the original assertion and both delivered CLI checks. Original attempt evidence remains. Independently reviewed c02228d0 reached local and remote dev/main with matching trees. The dependent repair REPORT links the observed receipt; native owner adoption preparation remains next.
 
 ## Current-task view - 2026-10-17
 
-[AIDE-DAILY-CURRENT-VIEW-01](.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/ExecPlan.md)
-extends the existing read-only CLI with named selection and human/JSON observation.
-It preserves recorded outcomes, uncertainty and pending obligations. All 51 required
-methods have passing evidence across two retained attempts, plus three CLI smokes.
-No package or runtime qualification follows. The owner's next priority is the
-[portable Git default](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/git-defaults-admission.md)
-and frequent reviewed dev/main synchronization, including project overrides and
-safe remote task-branch retirement.
+[AIDE-DAILY-CURRENT-VIEW-01](.aide/queue/AIDE-DAILY-CURRENT-VIEW-01/ExecPlan.md) extends the existing read-only CLI with named selection and human/JSON observation. It preserves recorded outcomes, uncertainty and pending obligations. All 51 required methods have passing evidence across two retained attempts, plus three CLI smokes. No package or runtime qualification follows. The owner's next priority is the [portable Git default](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/git-defaults-admission.md) and frequent reviewed dev/main synchronization, including project overrides and safe remote task-branch retirement.
 
 ## Native selected-export fixture outcome - 2026-10-17
 
-[DiskEd preparation](.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/REPORT.md) completed its
-final bounded continuation. The original 158 passes and two unavailable symlink
-checks were reused; the original wrapper failure remains. Exact terminal evidence
-has independent ACCEPT. Real native-owner adoption, actual worker delivery, whole-outcome cost
-and broader recovery remain open; this is not the whole daily-use milestone.
+[DiskEd preparation](.aide/queue/AIDE-DAILY-DISKED-EXPORT-01/REPORT.md) completed its final bounded continuation. The original 158 passes and two unavailable symlink checks were reused; the original wrapper failure remains. Exact terminal evidence has independent ACCEPT. Real native-owner adoption, actual worker delivery, whole-outcome cost and broader recovery remain open; this is not the whole daily-use milestone.
 
 ## Native selected-export consumer preparation - 2026-10-13
 
-Admitted AIDE-DAILY-DISKED-EXPORT-01 retains DiskEd DE-W000 and its native work
-catalogue. Prepare optional selected export through existing specctl, conserving
-original69test methods and adding five independent cases. Seven pinned test wheels
-are observed; acquisition and actual source/consumer/target effects remain held
-for exact review. No target mutation or replacement AIDE queue. Continue the open
-daily-use Goal; broader editing, recovery, whole cost and release remain separate.
+Admitted AIDE-DAILY-DISKED-EXPORT-01 retains DiskEd DE-W000 and its native work catalogue. Prepare optional selected export through existing specctl, conserving original69test methods and adding five independent cases. Seven pinned test wheels are observed; acquisition and actual source/consumer/target effects remain held for exact review. No target mutation or replacement AIDE queue. Continue the open daily-use Goal; broader editing, recovery, whole cost and release remain separate.
 
 ## Accepted installed fixture and remaining daily-use proof - 2026-10-13
 
-Exact fixture outcomebcbfa46d is independently ACCEPTed at local commita90f1330.
-Continue native target-owned ordinary work and controlled recovery/accounting;
-fixture completion is not full daily-use or release completion.
+Exact fixture outcomebcbfa46d is independently ACCEPTed at local commita90f1330. Continue native target-owned ordinary work and controlled recovery/accounting; fixture completion is not full daily-use or release completion.
 
 ## Actual installed workflow and retained work - 2026-10-12
 
-Final installed fixture job passes22stages with valid17-test reuse; exact outcome
-review closes the child. Real downstream consumption and broader recovery/cost/
-containment/integration claims remain independent, with no more consumer retries.
+Final installed fixture job passes22stages with valid17-test reuse; exact outcome review closes the child. Real downstream consumption and broader recovery/cost/ containment/integration claims remain independent, with no more consumer retries.
 
 ## Installed named-task workflow preparation - 2026-10-12
 
-[AIDE-DAILY-INSTALLED-BINDING-01](.aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/ExecPlan.md)
-is preparation-admitted through exact5824d3e. Plan first, preserve17original
-assertions and prepare real CLI scope/refusal/continuation in owned fixtures.
-No operational consumer effect is admitted before exact source/effect review.
+[AIDE-DAILY-INSTALLED-BINDING-01](.aide/queue/AIDE-DAILY-INSTALLED-BINDING-01/ExecPlan.md) is preparation-admitted through exact5824d3e. Plan first, preserve17original assertions and prepare real CLI scope/refusal/continuation in owned fixtures. No operational consumer effect is admitted before exact source/effect review.
 
 ## Accepted current export and next installed workflow - 2026-10-12
 
-DAILY-PACK-REFRESH exact outcome3e5587d9 is independently ACCEPTed at8abd7186.
-Current export qualification is complete. Continue admitted5824d3e installed
-binding preparation; consumer operations remain separately reviewed and unrun.
+DAILY-PACK-REFRESH exact outcome3e5587d9 is independently ACCEPTed at8abd7186. Current export qualification is complete. Continue admitted5824d3e installed binding preparation; consumer operations remain separately reviewed and unrun.
 
 ## Final export replay actual result - 2026-10-12
 
-Job0135cdc9 passes six fixtures and full structural checks and reproduces every
-pack byte. Exact outcome acceptance/closure is next; all three attempts are spent.
-Installed-binding preparation proposal5824d3e is independently accepted, with
-operational qualification held behind accepted replay and its own exact effect.
+Job0135cdc9 passes six fixtures and full structural checks and reproduces every pack byte. Exact outcome acceptance/closure is next; all three attempts are spent. Installed-binding preparation proposal5824d3e is independently accepted, with operational qualification held behind accepted replay and its own exact effect.
 
 ## Final export replay preparation - 2026-10-12
 
-Exact generated outcome is independently accepted and guarded-committed at
-3f956ce8. Fresh complete ownership and separately preserved metadata pin the
-last authorised replay attempt; source/effect acceptance remains held. Installed
-consumer and downstream tasks, integration and release remain separate.
+Exact generated outcome is independently accepted and guarded-committed at 3f956ce8. Fresh complete ownership and separately preserved metadata pin the last authorised replay attempt; source/effect acceptance remains held. Installed consumer and downstream tasks, integration and release remain separate.
 
 ## Current export proof and replay gate — 2026-10-12
 
-Actual corrected refresh passes six ownership checks and all structural commands.
-Review the exact generated result and commit it before the third/final attempt,
-which is reserved for separately reviewed clean-subject byte replay. Published
-assets and original failure evidence remain unchanged; installed consumer and
-downstream acceptance remain separate.
+Actual corrected refresh passes six ownership checks and all structural commands. Review the exact generated result and commit it before the third/final attempt, which is reserved for separately reviewed clean-subject byte replay. Published assets and original failure evidence remain unchanged; installed consumer and downstream acceptance remain separate.
 
 ## Derived export refresh preparation — 2026-10-12
 
-[AIDE-DAILY-PACK-REFRESH-01](.aide/queue/AIDE-DAILY-PACK-REFRESH-01/ExecPlan.md)
-is admitted for preparation after task-binding source acceptance. Actual prior
-ownership is recorded; thin wrapper, six refusal fixtures and exact effect await
-review before any generated-content reset. Later replay and consumer/integration
-remain separate subjects.
+[AIDE-DAILY-PACK-REFRESH-01](.aide/queue/AIDE-DAILY-PACK-REFRESH-01/ExecPlan.md) is admitted for preparation after task-binding source acceptance. Actual prior ownership is recorded; thin wrapper, six refusal fixtures and exact effect await review before any generated-content reset. Later replay and consumer/integration remain separate subjects.
 
 ## Accepted daily task-binding source — 2026-10-12
 
-Source0a91084f is independently accepted after74 tests and one derived-binding
-repair. Continue separately admitted current-export refresh/replay; package and
-integration claims remain gated by the preserved provenance failures.
+Source0a91084f is independently accepted after74 tests and one derived-binding repair. Continue separately admitted current-export refresh/replay; package and integration claims remain gated by the preserved provenance failures.
 
 ## Daily task-binding implementation — 2026-10-12
 
-[AIDE-DAILY-TASK-BINDING-01](.aide/queue/AIDE-DAILY-TASK-BINDING-01/ExecPlan.md)
-has independent bounded admission. First preserve regressions against unchanged
-source, then repair named-task briefs and packet-bound verification through their
-existing owners. Exact source acceptance and integration remain separate.
+[AIDE-DAILY-TASK-BINDING-01](.aide/queue/AIDE-DAILY-TASK-BINDING-01/ExecPlan.md) has independent bounded admission. First preserve regressions against unchanged source, then repair named-task briefs and packet-bound verification through their existing owners. Exact source acceptance and integration remain separate.
 
 ## 2026-10-12 — New-host terminal and next useful task
 
-SESSION new-host setup/source checks pass; strict MXC is unavailable on the exact
-tested executor. Both jobs retired. Continue the admitted daily task-binding
-repair through the existing managed test owner; retain all native/outer-client,
-downstream, efficiency and release gates. Exact SESSION results:
-[new-host qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-qualification.json).
+SESSION new-host setup/source checks pass; strict MXC is unavailable on the exact tested executor. Both jobs retired. Continue the admitted daily task-binding repair through the existing managed test owner; retain all native/outer-client, downstream, efficiency and release gates. Exact SESSION results: [new-host qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/new-host-qualification.json).
 
 ## Actual new-host qualification — 2026-10-12
 
-The [existing SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md)
-prepares exact resource setup and a pure source-check job on GUNMETAL-WIN using
-the existing owner and established D resource family. The task-local native
-probe now supports a complete explicit host/executable binding and the installed
-Windows command syntax. Source checks precede a separately reviewed, at-most-one
-strict MXC prerequisite. No model or Full Access fallback is admitted; a native
-refusal holds only that route. The accepted daily-use planning review remains
-bound to922173c8; useful deterministic work continues through bounded owners.
+The [existing SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) prepares exact resource setup and a pure source-check job on GUNMETAL-WIN using the existing owner and established D resource family. The task-local native probe now supports a complete explicit host/executable binding and the installed Windows command syntax. Source checks precede a separately reviewed, at-most-one strict MXC prerequisite. No model or Full Access fallback is admitted; a native refusal holds only that route. The accepted daily-use planning review remains bound to922173c8; useful deterministic work continues through bounded owners.
 
 ## Useful daily development — 2026-10-12
 
-The owner requested execution of the reviewed workflow plan. The
-[existing campaign](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md)
-routes the [bounded planning amendment](.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md)
-before actual-route qualification and target-owned consumption. The
-[roadmap](docs/roadmap/staged-expansion-roadmap.md) and its
-[advisory dependency view](docs/roadmap/development-workflows.json) preserve
-P0-P11/C1-C12, separate implementation/activation/claim gates from preferred
-sequencing, and define start/work/verify/interrupt/resume/conserve/consume/explain
-acceptance. Whole-outcome observation, understandable output and selective reuse
-begin with the first workflow. This candidate awaits independent review.
+The owner requested execution of the reviewed workflow plan. The [existing campaign](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md) routes the [bounded planning amendment](.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md) before actual-route qualification and target-owned consumption. The [roadmap](docs/roadmap/staged-expansion-roadmap.md) and its [advisory dependency view](docs/roadmap/development-workflows.json) preserve P0-P11/C1-C12, separate implementation/activation/claim gates from preferred sequencing, and define start/work/verify/interrupt/resume/conserve/consume/explain acceptance. Whole-outcome observation, understandable output and selective reuse begin with the first workflow. This candidate awaits independent review.
 
-Actual host metadata is GUNMETAL-WIN, i7-7700K, approximately32GiB RAM,
-GTX1050Ti, Windows10 build19045/Python3.14.8. Metadata is not route qualification.
-Released Lite1.0.0, prior failures and five reused plus three completed consumers
-remain preserved. No target implementation, model call or release effect follows
-from this planning amendment.
+Actual host metadata is GUNMETAL-WIN, i7-7700K, approximately32GiB RAM, GTX1050Ti, Windows10 build19045/Python3.14.8. Metadata is not route qualification. Released Lite1.0.0, prior failures and five reused plus three completed consumers remain preserved. No target implementation, model call or release effect follows from this planning amendment.
 
 ## Owner machine allocation - 2026-10-09
 
-The owner is installing Windows on another machine for AIDE and DiskEd
-development, including practical tests of local agents and remote models.
-This machine is intended for continued FacMan, UniSetup, Syspane and related
-project work. Their implementation should follow each project's own tasks.
+The owner is installing Windows on another machine for AIDE and DiskEd development, including practical tests of local agents and remote models. This machine is intended for continued FacMan, UniSetup, Syspane and related project work. Their implementation should follow each project's own tasks.
 
-The new machine's identity, hardware, checkout paths, storage budgets, client
-permissions and model capabilities are not yet verified. Qualify them locally;
-the current machine's paths and failed MXC checks are not evidence about it.
-Select local models after discovering its available hardware. Existing spending
-limits remain: no new paid service or API billing route is authorized by this
-development allocation. DiskEd storage tests should use disposable disk images
-before physical-device operations. This records owner intent, not completed
-setup, provider support, a migration, or a new execution architecture.
+The new machine's identity, hardware, checkout paths, storage budgets, client permissions and model capabilities are not yet verified. Qualify them locally; the current machine's paths and failed MXC checks are not evidence about it. Select local models after discovering its available hardware. Existing spending limits remain: no new paid service or API billing route is authorized by this development allocation. DiskEd storage tests should use disposable disk images before physical-device operations. This records owner intent, not completed setup, provider support, a migration, or a new execution architecture.
 
 ## Actual user-context MXC result - 2026-10-09
 
-[Actual Jules qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json)
-records strict MXC refusal before fixtures under the existing stock Windows Job
-owner. This changed-executor test made zero model calls, collected8 files6,954B
-and retired/released all scratch/reservations. Both tested contexts now have
-negative evidence; native isolation and ordinary editing remain unqualified.
-No unchanged replay or fallback is authorized. A supported constrained executor
-is the remaining setup dependency; Lite1.0.0's existing publication stays valid.
+[Actual Jules qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json) records strict MXC refusal before fixtures under the existing stock Windows Job owner. This changed-executor test made zero model calls, collected8 files6,954B and retired/released all scratch/reservations. Both tested contexts now have negative evidence; native isolation and ordinary editing remain unqualified. No unchanged replay or fallback is authorized. A supported constrained executor is the remaining setup dependency; Lite1.0.0's existing publication stays valid.
 
 ## Native MXC prerequisite - 2026-10-09
 
-The [exact prerequisite](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json)
-records the tested executor's native MXC unavailability before fixture execution.
-The original failure is preserved; no model, fallback or replay occurred.
-A supported constrained ordinary editing executor remains necessary. Reuse
-valid Lite1.0.0 evidence and the previous decoder; this negative result does
-not qualify read isolation or unrestricted outer tools. Whole-outcome
-efficiency, ownership-safe wider cleanup and downstream adoption remain open.
+The [exact prerequisite](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json) records the tested executor's native MXC unavailability before fixture execution. The original failure is preserved; no model, fallback or replay occurred. A supported constrained ordinary editing executor remains necessary. Reuse valid Lite1.0.0 evidence and the previous decoder; this negative result does not qualify read isolation or unrestricted outer tools. Whole-outcome efficiency, ownership-safe wider cleanup and downstream adoption remain open.
 
 ## Changed host configuration - 2026-10-09
 
-The active VS Code extension26.1002.51308/backend0.162.0-alpha.2 differs from
-prior0.160. One managed configuration-only probe passed initialize/config-read,
-native/backend exit0, full9-file22,072B collection and retirement. No Codex thread,
-app-server command or model was requested; counter4, D roots/reserves and published Lite
-assets/tag remain unchanged. [Exact qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/changed-backend-qualification.json)
-records the new fingerprint and keeps native enforcement, account isolation,
-actual model editing and outer containment unqualified. Implicit Windows
-sandbox setup must be separately reviewed before a real workflow; decoder
-PASS cannot authorize that effect. Operative runtime and release payload identities remain unchanged.
+The active VS Code extension26.1002.51308/backend0.162.0-alpha.2 differs from prior0.160. One managed configuration-only probe passed initialize/config-read, native/backend exit0, full9-file22,072B collection and retirement. No Codex thread, app-server command or model was requested; counter4, D roots/reserves and published Lite assets/tag remain unchanged. [Exact qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/changed-backend-qualification.json) records the new fingerprint and keeps native enforcement, account isolation, actual model editing and outer containment unqualified. Implicit Windows sandbox setup must be separately reviewed before a real workflow; decoder PASS cannot authorize that effect. Operative runtime and release payload identities remain unchanged.
 
 ## Current consumer partial qualification - 2026-10-08
 
-The [release plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md)
-retains five current-archive PASS cases, two reconciled memory-aborted consumers
-and a finite600s stronger-headroom wait that submitted no job. Preserve accepted
-results and original failures; remaining lifecycle/restart checks require a
-relevant capacity change and exact finite admission. Local Lite release gates
-remain separate from ordinary host/model and whole-outcome efficiency work.
+The [release plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) retains five current-archive PASS cases, two reconciled memory-aborted consumers and a finite600s stronger-headroom wait that submitted no job. Preserve accepted results and original failures; remaining lifecycle/restart checks require a relevant capacity change and exact finite admission. Local Lite release gates remain separate from ordinary host/model and whole-outcome efficiency work.
 
 ## Affected candidate assets - 2026-10-08
 
-The [release plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md)
-records completed archive generation/validation and ten passing delivered
-assertions in a separate read-only tail. Preserve the failed parent and admission
-refusal; source71 is reused. Integrate the four candidate assets and retain the
-applicable current-byte consumer, ordinary host, efficiency and publication gates.
-Earlier dated entries retain their original payload subjects.
+The [release plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) records completed archive generation/validation and ten passing delivered assertions in a separate read-only tail. Preserve the failed parent and admission refusal; source71 is reused. Integrate the four candidate assets and retain the applicable current-byte consumer, ordinary host, efficiency and publication gates. Earlier dated entries retain their original payload subjects.
 
 ## Affected runner export - 2026-10-08
 
-The [release plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md)
-records the qualified current runner export and separate pending archive
-build/external delivered assertions. Source71 is reused unchanged; actual
-model editing remains unqualified. Existing archives and their consumer
-evidence stay bound to original bytes. No new model or publication effect.
+The [release plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) records the qualified current runner export and separate pending archive build/external delivered assertions. Source71 is reused unchanged; actual model editing remains unqualified. Existing archives and their consumer evidence stay bound to original bytes. No new model or publication effect.
 
 ## Ordinary CLI profile qualification and refusal guard - 2026-10-08
 
-71 managed-workspace tests passed. The observed0.160.0 root-deny startup
-failure now has a tested preallocation refusal guard; no model replay or access
-widening. [SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md)
-keeps the exact failed live attempt, retired resources and supported-host
-requirement. Integrate reviewed source; affected release payload qualification
-and final publication remain separate. Current outer tools remain unrestricted.
+71 managed-workspace tests passed. The observed0.160.0 root-deny startup failure now has a tested preallocation refusal guard; no model replay or access widening. [SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) keeps the exact failed live attempt, retired resources and supported-host requirement. Integrate reviewed source; affected release payload qualification and final publication remain separate. Current outer tools remain unrestricted.
 
 ## Ordinary managed CLI candidate workflow - 2026-10-08
 
-Source preparation is admitted under the existing
-[SESSION WorkUnit](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) to add an
-explicit sparse candidate write mode to the currently read-only managed Codex
-route. Existing account, spent identities, D pools and finite resource limits
-remain. Actual editing, required checks and excluded-path tool witnesses need
-separately accepted native/runtime/model effects. This does not change the
-unrestricted VS Code thread or certify a stable release.
+Source preparation is admitted under the existing [SESSION WorkUnit](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) to add an explicit sparse candidate write mode to the currently read-only managed Codex route. Existing account, spent identities, D pools and finite resource limits remain. Actual editing, required checks and excluded-path tool witnesses need separately accepted native/runtime/model effects. This does not change the unrestricted VS Code thread or certify a stable release.
 
 ## Current consumer completion and capture repair - 2026-10-08
 
-All eight current-archive consumer cases passed across eight distinct jobs.
-The38 public forms have39 nonjob and12 job records (51 unique witnesses).
-Case6 uses a disclosed512MiB probe fixture and the tested capture reorder;
-the original2GiB selection remains unqualified. Both4GiB reserves,1GiB
-outer Job cap and existing D pools remain unchanged. Four failures and the
-diagnostic remain preserved. All scratch/reservations retired;207 passing
-retainedfiles total9,006,685B. Max scratch30,272,565B and Jobmemory331,825,152B
-are distinct observations. Controller/review usage remains unknown.
+All eight current-archive consumer cases passed across eight distinct jobs. The38 public forms have39 nonjob and12 job records (51 unique witnesses). Case6 uses a disclosed512MiB probe fixture and the tested capture reorder; the original2GiB selection remains unqualified. Both4GiB reserves,1GiB outer Job cap and existing D pools remain unchanged. Four failures and the diagnostic remain preserved. All scratch/reservations retired;207 passing retainedfiles total9,006,685B. Max scratch30,272,565B and Jobmemory331,825,152B are distinct observations. Controller/review usage remains unknown.
 
-[Exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-qualified.json)
-binds assets, source epochs, custody and detailed local command-proof references.
-The canary now saves the response before its unchanged failure assertion; both
-failure/success capture checks and real job-form consumer passed. It is excluded
-from the archive, so no export/archive or completed-consumer replay occurred.
-Ordinary constrained editing/read isolation, whole-outcome efficiency and exact
-stable release-effect/publication/downloaded-consumer gates remain open. Actual
-source effects belong to the terminal journal; older sections retain their epochs.
+[Exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-consumer-qualified.json) binds assets, source epochs, custody and detailed local command-proof references. The canary now saves the response before its unchanged failure assertion; both failure/success capture checks and real job-form consumer passed. It is excluded from the archive, so no export/archive or completed-consumer replay occurred. Ordinary constrained editing/read isolation, whole-outcome efficiency and exact stable release-effect/publication/downloaded-consumer gates remain open. Actual source effects belong to the terminal journal; older sections retain their epochs.
 
 ## Proportionate automation - 2026-10-07
 
-Current affected candidate qualification is complete: 49 source tests, 49 delivered
-commit cases across distinct jobs (47 completed before the preserved memory
-refusal plus two passing tail cases), and 10 actual delivered automation cases.
-ZIP822cbd42/TAR ef2c086e contain the clean6c37 export, 854 equal members/851
-checksums. [Exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-package-qualified.json)
-records custody, unchanged assertions, explicit Q27 fixture support and
-retirement. No completed suite/build was replayed for the tail, no memory reserve
-was reduced, and no model call occurred in this archive phase. Old consumer
-evidence is not rebound. Ordinary constrained editing/read isolation, whole-
-outcome efficiency, current-byte consumers and final exact release publication/
-acquisition remain separate. Source ref effects belong to the terminal journal;
-source sync does not create a stable release.
+Current affected candidate qualification is complete: 49 source tests, 49 delivered commit cases across distinct jobs (47 completed before the preserved memory refusal plus two passing tail cases), and 10 actual delivered automation cases. ZIP822cbd42/TAR ef2c086e contain the clean6c37 export, 854 equal members/851 checksums. [Exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-current-package-qualified.json) records custody, unchanged assertions, explicit Q27 fixture support and retirement. No completed suite/build was replayed for the tail, no memory reserve was reduced, and no model call occurred in this archive phase. Old consumer evidence is not rebound. Ordinary constrained editing/read isolation, whole- outcome efficiency, current-byte consumers and final exact release publication/ acquisition remain separate. Source ref effects belong to the terminal journal; source sync does not create a stable release.
 
-The owner's new instruction removes individual cosmetic-history approval and
-ordinary existing-account test permission as unresolved inputs. The bounded
-[automation plan](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/ExecPlan.md) implements
-frozen-history presentation advisories with strict substantive/new-message
-checks, finite signed-in ChatGPT qualification and existing owned retirement.
-Constrained ordinary client editing, whole-outcome accounting and exact release effects
-remain technical work. Changed checker/policy bytes require affected payload
-refresh; the previous Lite archives retain their original evidence identity.
-Older dated status sections below describe their original checkpoints.
+The owner's new instruction removes individual cosmetic-history approval and ordinary existing-account test permission as unresolved inputs. The bounded [automation plan](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/ExecPlan.md) implements frozen-history presentation advisories with strict substantive/new-message checks, finite signed-in ChatGPT qualification and existing owned retirement. Constrained ordinary client editing, whole-outcome accounting and exact release effects remain technical work. Changed checker/policy bytes require affected payload refresh; the previous Lite archives retain their original evidence identity. Older dated status sections below describe their original checkpoints.
 
-Actual affected qualification:47 tests passed,11 immutable historical messages
-became advisories, original findings/registry/history stayed intact, and full
-collection/scratch retirement/reservation release were verified. The initial
-metadata admission refusal remains preserved; no worker ran in that attempt.
+Actual affected qualification:47 tests passed,11 immutable historical messages became advisories, original findings/registry/history stayed intact, and full collection/scratch retirement/reservation release were verified. The initial metadata admission refusal remains preserved; no worker ran in that attempt.
 
-The signed-in canary and one matched causal-review pair completed with verified
-collection and retirement. Both answers satisfy the same five criteria under
-independent review; known child input fell14809→13650 (7.8263%), output368→361,
-cached input0both. All three finite turns are consumed. Usage is PARTIAL and
-whole-outcome cost remains unknown; no general savings or containment claim.
-See [actual observation](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/evidence/matched-summary.json).
+The signed-in canary and one matched causal-review pair completed with verified collection and retirement. Both answers satisfy the same five criteria under independent review; known child input fell14809→13650 (7.8263%), output368→361, cached input0both. All three finite turns are consumed. Usage is PARTIAL and whole-outcome cost remains unknown; no general savings or containment claim. See [actual observation](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/evidence/matched-summary.json).
 
-New-draft mechanical preview passed six focused checks with verified collection
-and retirement. It emits a prepared message/digest after strict validation,
-without inventing substance or changing files/history. The [task report](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/REPORT.md)
-and source-sync terminal own the bounded outcome and actual ref effects.
+New-draft mechanical preview passed six focused checks with verified collection and retirement. It emits a prepared message/digest after strict validation, without inventing substance or changing files/history. The [task report](.aide/queue/AIDE-REASONABLE-AUTOMATION-01/REPORT.md) and source-sync terminal own the bounded outcome and actual ref effects.
 
 
-The affected portable pack was refreshed by one scoped export job from clean
-source6c37af95:854 members/851 checksummed exact derivations,4,341,317 logical
-bytes. Full collection and scratch/reservation retirement verified; only eight
-expected export files changed. The first read-only selection refusal allocated
-nothing and remains preserved. [Export evidence](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-export-qualified.json)
-records the export-time result. The then-existing ZIP/TAR stayed unchanged
-during export; the later affected qualification is recorded above. Final
-release effects remain separate. Current integration refs belong to the effect terminal journal.
+The affected portable pack was refreshed by one scoped export job from clean source6c37af95:854 members/851 checksummed exact derivations,4,341,317 logical bytes. Full collection and scratch/reservation retirement verified; only eight expected export files changed. The first read-only selection refusal allocated nothing and remains preserved. [Export evidence](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/automation-export-qualified.json) records the export-time result. The then-existing ZIP/TAR stayed unchanged during export; the later affected qualification is recorded above. Final release effects remain separate. Current integration refs belong to the effect terminal journal.
 
 ## Current client launch qualification - 2026-10-07
 
-The actual client is VS Code Codex extension 26.930.41038/backend 0.160.0.
-The [containment plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md)
-closes its pinned launch repair and configuration-only decoding slice with
-independent acceptance. Its original native FAIL remains; no model was started.
-Current shell/editor/integration routes remain unrestricted. Client identity is
-resolved; effective profile setup and ordinary model edit/test/collect are not.
+The actual client is VS Code Codex extension 26.930.41038/backend 0.160.0. The [containment plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) closes its pinned launch repair and configuration-only decoding slice with independent acceptance. Its original native FAIL remains; no model was started. Current shell/editor/integration routes remain unrestricted. Client identity is resolved; effective profile setup and ordinary model edit/test/collect are not.
 
-The qualified source slice uses one guarded commit and exact source-only sync;
-its terminal journal owns actual refs. Existing local Lite assets/evidence remain
-unchanged. Eleven historical dispositions, bounded live permission, matched
-efficiency and final stable effect/acquisition stay separate. No repeated suites,
-worktrees, storage discovery or filler tasks while these inputs remain unchanged.
+The qualified source slice uses one guarded commit and exact source-only sync; its terminal journal owns actual refs. Existing local Lite assets/evidence remain unchanged. Eleven historical dispositions, bounded live permission, matched efficiency and final stable effect/acquisition stay separate. No repeated suites, worktrees, storage discovery or filler tasks while these inputs remain unchanged.
 
 ## Historical local Lite qualification and integration - 2026-10-06
 
-Current ZIP8280a38f/TAR3b417de4 passed affected source49/delivered49 without
-overlays, delivered41 with explicit data fixtures, all eight original consumers,
-38 public forms/39 non-job outputs/12 job observations and unchanged-byte replay.
-[Qualification summary](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-package-qualified.json)
-and [full report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) bind exact
-subjects. e928 retains its whole-job timeout; completed1-3 are reused honestly,
-not replayed or relabelled. Tail50ff and replaye863 have full collection/retirement.
+Current ZIP8280a38f/TAR3b417de4 passed affected source49/delivered49 without overlays, delivered41 with explicit data fixtures, all eight original consumers, 38 public forms/39 non-job outputs/12 job observations and unchanged-byte replay. [Qualification summary](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/zero-link-current-package-qualified.json) and [full report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) bind exact subjects. e928 retains its whole-job timeout; completed1-3 are reused honestly, not replayed or relabelled. Tail50ff and replaye863 have full collection/retirement.
 
-Next: substantive result acceptance, one bounded metadata closure/guarded commit
-and exact nonforce source-only main/dev/existing-task sync, preserving85 other
-tips. Consult the release WorkUnit's exact source-sync terminal for actual refs.
-No unchanged suite/archive regeneration or post-sync status commit. Historical11,
-live/matched efficiency, constrained outer client and stable publication/downloads
-remain independent. Candidate C2/C3/C9/C11 and further C8/C10 stay bounded future
-work in the existing roadmap; FacMan product stays paused. Older entries retain
-their named historical subjects.
+Next: substantive result acceptance, one bounded metadata closure/guarded commit and exact nonforce source-only main/dev/existing-task sync, preserving85 other tips. Consult the release WorkUnit's exact source-sync terminal for actual refs. No unchanged suite/archive regeneration or post-sync status commit. Historical11, live/matched efficiency, constrained outer client and stable publication/downloads remain independent. Candidate C2/C3/C9/C11 and further C8/C10 stay bounded future work in the existing roadmap; FacMan product stays paused. Older entries retain their named historical subjects.
 
 ## Historical repaired export checkpoint — 2026-10-06
 
-The [resource repair](.aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/REPORT.md)
-is source60/normal CLI10 qualified. Guarded commit27338811 is synchronized to
-local/remote main, dev and task;88 corresponding pairs match,85other tips stay.
-The affected export job971a2045 now includes the exact repaired scanner:
-854 members/851 checksums, four changed generated files, clean273 provenance.
+The [resource repair](.aide/queue/AIDE-CAMPAIGN-RESOURCE-CLEANUP-01/REPORT.md) is source60/normal CLI10 qualified. Guarded commit27338811 is synchronized to local/remote main, dev and task;88 corresponding pairs match,85other tips stay. The affected export job971a2045 now includes the exact repaired scanner: 854 members/851 checksums, four changed generated files, clean273 provenance.
 
-Next: finish its exact export commit, build and qualify repaired archives,
-then affected delivered/consumer/form evidence and unchanged replay through the
-[release plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md).
-Held ZIP5cba still contains the old scanner. Historical11, live/matched
-qualification, outer-client setup and stable publication remain separate;
-unchanged blockers do not admit repetitive status work. FacMan stays paused.
+Next: finish its exact export commit, build and qualify repaired archives, then affected delivered/consumer/form evidence and unchanged replay through the [release plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md). Held ZIP5cba still contains the old scanner. Historical11, live/matched qualification, outer-client setup and stable publication remain separate; unchanged blockers do not admit repetitive status work. FacMan stays paused.
 
 ## Historical managed commit delivery checkpoint — 2026-10-06
 
-The [managed commit WorkUnit](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/ExecPlan.md)
-has accepted72-test native evidence and completed actual guarded source commit
-c23dbddd. Exact tree/parent/message, unchanged working/index bytes and latest
-message PASS are independently accepted. The child objective is closed; current
-queue/root closeout and source-only branch sync retain exact effect reviews.
-[Report](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/REPORT.md) and terminal records
-own current delivery. Stable release remains separate. The affected export-only job32c656ee now
-passes854-member/851-checksum and clean75 provenance checks; doctor73 and
-validate60,911 passed with zero warnings/failures. [Current payload plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md)
-owns the separately gated affected release and delivered commit checks. Old ZIP556
-remains qualified for its original scope and lacks the new command. Published66 and proposed owner
-decisions remain unchanged. Older dated entries below are snapshots.
+The [managed commit WorkUnit](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/ExecPlan.md) has accepted72-test native evidence and completed actual guarded source commit c23dbddd. Exact tree/parent/message, unchanged working/index bytes and latest message PASS are independently accepted. The child objective is closed; current queue/root closeout and source-only branch sync retain exact effect reviews. [Report](.aide/queue/AIDE-MANAGED-COMMIT-CREATE-01/REPORT.md) and terminal records own current delivery. Stable release remains separate. The affected export-only job32c656ee now passes854-member/851-checksum and clean75 provenance checks; doctor73 and validate60,911 passed with zero warnings/failures. [Current payload plan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) owns the separately gated affected release and delivered commit checks. Old ZIP556 remains qualified for its original scope and lacks the new command. Published66 and proposed owner decisions remain unchanged. Older dated entries below are snapshots.
 
 ## Current plan — 2026-10-05
 
-Source-only main/dev/task64874d3f synchronization is independently accepted:
-88 corresponding pairs match,85 other branch tips preserved. Current ZIP55665b2f
-retains8 consumers/38forms/delivered41-with-fixtures/replay and native17 local
-bindings. Qualified operative inputs/assets/configs are unchanged.
+Source-only main/dev/task64874d3f synchronization is independently accepted: 88 corresponding pairs match,85 other branch tips preserved. Current ZIP55665b2f retains8 consumers/38forms/delivered41-with-fixtures/replay and native17 local bindings. Qualified operative inputs/assets/configs are unchanged.
 
-Prepare and review the [complete exact11 owner packet](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/historical-current-owner-packet.md).
-All new decisions are proposed, blank-reviewed and ineffective; the live three
-accepted records remain unchanged. Actual682-range FAIL11 remains a release gate.
-Normal source commit/sync require exact review; owner activation is separate.
-[Full report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and
-[ExecPlan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) own details.
+Prepare and review the [complete exact11 owner packet](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/historical-current-owner-packet.md). All new decisions are proposed, blank-reviewed and ineffective; the live three accepted records remain unchanged. Actual682-range FAIL11 remains a release gate. Normal source commit/sync require exact review; owner activation is separate. [Full report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and [ExecPlan](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/ExecPlan.md) own details.
 
-Outer client, live permission/matched efficiency, final stable release/download
-verification and wider cleanup remain open. C2/C3/C9/C11 and further C8/C10 are
-bounded candidates, not blanket adoption. FacMan product development stays paused.
-Older dated entries preserve historical execution-time snapshots.
+Outer client, live permission/matched efficiency, final stable release/download verification and wider cleanup remain open. C2/C3/C9/C11 and further C8/C10 are bounded candidates, not blanket adoption. FacMan product development stays paused. Older dated entries preserve historical execution-time snapshots.
 
 ## 2026-10-05 current custody archive build accepted
 
-One restricted native build on f3312a04/treeb5a3bd2e passed both stable commands.
-Current ZIP55665b2f/TARfce561ca contain852 equal file members and849 verified
-archive checksums, including qualified custody/current CLI. Complete collection,
-quiescence, noIO, scratch retirement and reservation release verify. Independent
-result ACCEPT_WITH_NOTES has all notes disposed. Zero source tests replayed;
-67/native23 evidence retains exact unchanged-input scope. Retained16772logical
-bytes/sample8499/memory251400192, release growth23127logical; no physical/global
-quota or outer containment claim. Consumers/replay/promotion/source-ref effects
-and stable publication remain separately gated. Original config held.
-[Full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+One restricted native build on f3312a04/treeb5a3bd2e passed both stable commands. Current ZIP55665b2f/TARfce561ca contain852 equal file members and849 verified archive checksums, including qualified custody/current CLI. Complete collection, quiescence, noIO, scratch retirement and reservation release verify. Independent result ACCEPT_WITH_NOTES has all notes disposed. Zero source tests replayed; 67/native23 evidence retains exact unchanged-input scope. Retained16772logical bytes/sample8499/memory251400192, release growth23127logical; no physical/global quota or outer containment claim. Consumers/replay/promotion/source-ref effects and stable publication remain separately gated. Original config held. [Full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
 
 
 ## 2026-10-05 clean custody export accepted
 
-Pure export jobc1aca2e0 at cf234547 produced actual clean provenance and849
-verified checksums; complete collection and retirement independently accepted,
-all notes nonblocking/disposed. Only manifestchanged;9189 retained logical bytes,
-zero test replay. Existing67 operative and23 custody proofs remain scoped.
-Archive build/currentconsumers/replay/runtimepromotion/integration/publication
-remain separate. Current7132 ZIP predates custody; outer session unrestricted.
-See [current full report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+Pure export jobc1aca2e0 at cf234547 produced actual clean provenance and849 verified checksums; complete collection and retirement independently accepted, all notes nonblocking/disposed. Only manifestchanged;9189 retained logical bytes, zero test replay. Existing67 operative and23 custody proofs remain scoped. Archive build/currentconsumers/replay/runtimepromotion/integration/publication remain separate. Current7132 ZIP predates custody; outer session unrestricted. See [current full report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
 
 
 ## 2026-10-05 custody payload current source accepted
 
-Current restricted job1b3224cd at eea174be passed67 fresh checks, export and full
-validation, no warnings/skips. Independent result ACCEPT_WITH_NOTES, all notes
-nonblocking/disposed; complete collection/receipt and retirement verify.
-The849-entry export includes custody but truthfully records dirty provenance;
-freeze this result/checkpoint documentation, then separately review one clean
-export effect before archive build. Reuse67 only unchanged operative inputs.
-Source C4 native23 and two live custody operations remain qualified;7,921,599
-logical bytes saved. No current C4 archive/integration/stable/whole-session claim.
-See [full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
+Current restricted job1b3224cd at eea174be passed67 fresh checks, export and full validation, no warnings/skips. Independent result ACCEPT_WITH_NOTES, all notes nonblocking/disposed; complete collection/receipt and retirement verify. The849-entry export includes custody but truthfully records dirty provenance; freeze this result/checkpoint documentation, then separately review one clean export effect before archive build. Reuse67 only unchanged operative inputs. Source C4 native23 and two live custody operations remain qualified;7,921,599 logical bytes saved. No current C4 archive/integration/stable/whole-session claim. See [full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
 
 
 ## 2026-10-05 current capability payload source qualification completed
 
-Current scoped job e188c5d7 on9badd6f9 passed export/full validation and18 newly
-executed C1 tests. All49 preceding checks are explicitly reused only on their
-six identical input hashes; whole priorFAIL stays preserved. Complete raw
-trees/receipt/process and ten real CLI frames/52 source inputs/all847 pack
-checksums verified; scratch retired/reservation released. Original config and
-four old assets remain unchanged; archive still predates C1. See
-[full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
-Exact998a4d19 result/source closeout received independent ACCEPT_WITH_NOTES;
-all notes are nonblocking/disposed. New asset/build/current-consumer effects
-require their own exact review.
-Outer controller/read isolation, retained lifecycle, historical/live/matched
-efficiency/publication and wider cleanup remain explicit independent gates.
+Current scoped job e188c5d7 on9badd6f9 passed export/full validation and18 newly executed C1 tests. All49 preceding checks are explicitly reused only on their six identical input hashes; whole priorFAIL stays preserved. Complete raw trees/receipt/process and ten real CLI frames/52 source inputs/all847 pack checksums verified; scratch retired/reservation released. Original config and four old assets remain unchanged; archive still predates C1. See [full current report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md). Exact998a4d19 result/source closeout received independent ACCEPT_WITH_NOTES; all notes are nonblocking/disposed. New asset/build/current-consumer effects require their own exact review. Outer controller/read isolation, retained lifecycle, historical/live/matched efficiency/publication and wider cleanup remain explicit independent gates.
 
 
 ## 2026-10-05 source admission refusal preserved; budget estimate corrected
 
-The af6d35cf corrective source job was refused before worker launch. No new
-validation/test process or scratch allocation is inferred from the API's
-requested-write flag. Existing canonical occupancy and doubled log/staging
-reservation are now included in the exact arithmetic. A proposed
-configuration narrows only scratch to4MiB for18 C1 checks plus export/
-full validation;49 packaging checks remain explicitly reused. Logs/result/
-export reservation, original config/assets and256MiB ceiling stay unchanged.
+The af6d35cf corrective source job was refused before worker launch. No new validation/test process or scratch allocation is inferred from the API's requested-write flag. Existing canonical occupancy and doubled log/staging reservation are now included in the exact arithmetic. A proposed configuration narrows only scratch to4MiB for18 C1 checks plus export/ full validation;49 packaging checks remain explicitly reused. Logs/result/ export reservation, original config/assets and256MiB ceiling stay unchanged.
 
 
 ## 2026-10-05 capability projection repair; source qualification still pending
 
-Four exactly reviewed existing capability commands completed once, within the
-nine declared projection paths. Current derived binding covers41 public inputs;
-source classifications remain distinct from runtime/host/support authority.
-The earlier native49 PASS/export with full-validation14 FAIL stays preserved.
-A separately reviewed corrective native slice will reuse those49 only on six
-identical hashes and execute export/full validation plus18 current C1 checks.
-Original config/assets/pools remain unchanged; outer shell remains unrestricted.
+Four exactly reviewed existing capability commands completed once, within the nine declared projection paths. Current derived binding covers41 public inputs; source classifications remain distinct from runtime/host/support authority. The earlier native49 PASS/export with full-validation14 FAIL stays preserved. A separately reviewed corrective native slice will reuse those49 only on six identical hashes and execute export/full validation plus18 current C1 checks. Original config/assets/pools remain unchanged; outer shell remains unrestricted.
 
 
 ## 2026-10-05 capability payload partial source correction
 
-The native source job passed49 checks and export, then failed full validation
-on13 packet-section omissions and the legacy unbound capability ledger. The
-packet is restored through the existing generator; exact9 report refresh is
-awaiting independent scope/effect review. Full collected trees and retirement
-are verified;18 C1 checks remain unrun for this new payload. Reuse only verified
-unchanged49 inputs on the separately reviewed corrective native phase. Stable
-assets/config/supervisor and all release/host/model gates remain unchanged.
+The native source job passed49 checks and export, then failed full validation on13 packet-section omissions and the legacy unbound capability ledger. The packet is restored through the existing generator; exact9 report refresh is awaiting independent scope/effect review. Full collected trees and retirement are verified;18 C1 checks remain unrun for this new payload. Reuse only verified unchanged49 inputs on the separately reviewed corrective native phase. Stable assets/config/supervisor and all release/host/model gates remain unchanged.
 
 ## 2026-10-05 capability payload refresh
 
-The existing release-effect WorkUnit refreshes the local candidate after C1
-source/native acceptance and e3f14e85 source synchronization. First exact
-source/native envelope:49 current CLI release/fixture/admission checks, export
-and full validation using the unchanged old pinned supervisor. Asset build,
-current-byte consumers/replay and runtime promotion remain separately reviewed
-phases. Existing256MiB budget, roots and all historical/live/outer/publication
-gates remain unchanged; see the release-effect ExecPlan.
+The existing release-effect WorkUnit refreshes the local candidate after C1 source/native acceptance and e3f14e85 source synchronization. First exact source/native envelope:49 current CLI release/fixture/admission checks, export and full validation using the unchanged old pinned supervisor. Asset build, current-byte consumers/replay and runtime promotion remain separately reviewed phases. Existing256MiB budget, roots and all historical/live/outer/publication gates remain unchanged; see the release-effect ExecPlan.
 
 ## 2026-10-05 capability evidence freshness repair
 
-[AIDE-CAPABILITY-EVIDENCE-VALIDITY-01](.aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/ExecPlan.md)
-is the admitted narrow C1 increment after qualified current-archive interruptions
-and source sync. Managed baseline reproduced stale-evidence and missing-code
-overclaims. The bounded binding/status/retained-validation repair then passed
-18 checks and ten real CLI calls through the pinned restricted worker, with
-full collected hashes and retirement. Final source synchronization is a
-separate reviewed effect; release payload refresh remains necessary. Existing host, efficiency, owner
-disposition and stable publication gates remain separate. No new worktree,
-layout or archive.
+[AIDE-CAPABILITY-EVIDENCE-VALIDITY-01](.aide/queue/AIDE-CAPABILITY-EVIDENCE-VALIDITY-01/ExecPlan.md) is the admitted narrow C1 increment after qualified current-archive interruptions and source sync. Managed baseline reproduced stale-evidence and missing-code overclaims. The bounded binding/status/retained-validation repair then passed 18 checks and ten real CLI calls through the pinned restricted worker, with full collected hashes and retirement. Final source synchronization is a separate reviewed effect; release payload refresh remains necessary. Existing host, efficiency, owner disposition and stable publication gates remain separate. No new worktree, layout or archive.
 
 ## 2026-10-03 session containment qualification
 
-`AIDE-SESSION-CONTAINMENT-01` follows the owner's priority correction. Qualify
-one necessary validation through the installed scoped command host and existing
-pinned job owner, using configured D storage. Its ExecPlan records the actual
-outer-session, aggregate-budget and tool-route gaps. No new worktree or archive;
-local command qualification does not establish whole-session containment.
+`AIDE-SESSION-CONTAINMENT-01` follows the owner's priority correction. Qualify one necessary validation through the installed scoped command host and existing pinned job owner, using configured D storage. Its ExecPlan records the actual outer-session, aggregate-budget and tool-route gaps. No new worktree or archive; local command qualification does not establish whole-session containment.
 
 ## 2026-09-28 stable Lite release-effect repair
 
-Independent review of the exact `d5df63c5` effect returned REQUEST_CHANGES.
-The existing release-effect WorkUnit repairs the version-policy activation
-stage and per-form CLI evidence binding, then regenerates and qualifies exact
-policy-bound bytes before a superseding release ACCEPT. Main/tag/publication
-remain stopped. See its ExecPlan and review evidence.
-The revised policy-bound candidate at `bed505ab` passed focused new-byte
-qualification and proceeded to superseding exact independent release review.
-That ACCEPT arrived for `719abf66` and remote dev now matches. Main/tag/
-publication are blocked by ten exact historical message failures in the
-mandatory `main..dev` commit range. The existing release-effect task holds
-one accountable owner decision packet and the repair sequence.
-On 2026-09-28 the reviewed authored-file recovery entered a superseding
-source-bound Lite 1.0.0 local candidate. Independent exact technical ACCEPT
-was recorded for `aaa53fa5`; local and remote `dev` then fast-forwarded to
-`e0636ddb` with the evidence-only closeout. The stable ZIP/tar and local
-preview/draft passed new-byte consumers and postcommit replay. The same ten
-historical message decisions still gate main promotion; publication and
-downloaded-byte verification have not occurred. The release task's exact
-manifest and integration observation supersede older local-preview summaries.
+Independent review of the exact `d5df63c5` effect returned REQUEST_CHANGES. The existing release-effect WorkUnit repairs the version-policy activation stage and per-form CLI evidence binding, then regenerates and qualifies exact policy-bound bytes before a superseding release ACCEPT. Main/tag/publication remain stopped. See its ExecPlan and review evidence. The revised policy-bound candidate at `bed505ab` passed focused new-byte qualification and proceeded to superseding exact independent release review. That ACCEPT arrived for `719abf66` and remote dev now matches. Main/tag/ publication are blocked by ten exact historical message failures in the mandatory `main..dev` commit range. The existing release-effect task holds one accountable owner decision packet and the repair sequence. On 2026-09-28 the reviewed authored-file recovery entered a superseding source-bound Lite 1.0.0 local candidate. Independent exact technical ACCEPT was recorded for `aaa53fa5`; local and remote `dev` then fast-forwarded to `e0636ddb` with the evidence-only closeout. The stable ZIP/tar and local preview/draft passed new-byte consumers and postcommit replay. The same ten historical message decisions still gate main promotion; publication and downloaded-byte verification have not occurred. The release task's exact manifest and integration observation supersede older local-preview summaries.
 
 ## AIDE-STABLE-DOCUMENTATION-ALIGNMENT-01
 
@@ -630,33 +273,17 @@ Bounded release documentation alignment follows the resumed Goal; existing sourc
 
 ## 2026-09-26 dev synchronization checkpoint
 
-Reviewed campaign source was fast-forwarded from e88b1c2e to 53be4fc4;
-remaining historical evidence is preserved without malformed commit ancestry.
-The release and project rollout plan is in
-[the closeout report](.aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/evidence/repo-release-rollout-report.md).
-This is source/evidence integration only. Main, release assets and deployments
-are unchanged; final qualification remains open and development stays stopped.
+Reviewed campaign source was fast-forwarded from e88b1c2e to 53be4fc4; remaining historical evidence is preserved without malformed commit ancestry. The release and project rollout plan is in [the closeout report](.aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/evidence/repo-release-rollout-report.md). This is source/evidence integration only. Main, release assets and deployments are unchanged; final qualification remains open and development stays stopped.
 
 ## AIDE-DELIVERED-PACK-CUSTOMIZATION-01: Delivered customization
 
-2026-09-26 follow-up: repair the independently identified predecessor-pack
-feedback output boundary in the existing task checkout. Tiny fixtures and the
-bounded execution owner validate rejection and external output; the original
-8cad56c0 acceptance remains historical, and archive qualification remains open.
+2026-09-26 follow-up: repair the independently identified predecessor-pack feedback output boundary in the existing task checkout. Tiny fixtures and the bounded execution owner validate rejection and external output; the original 8cad56c0 acceptance remains historical, and archive qualification remains open.
 
-- Status: final local candidate `8cad56c0` qualified with 29 import, 18
-  release, 11 draft, and 6 governance tests plus extracted ZIP and clean
-  44-file replay. Prior `37daa862` is superseded. Dev is unchanged; exact
-  queue review remains open.
-- Objective: explain project-owned preservation and conflicting updates with
-  exact-byte optional rationale and opt-in local feedback.
-- Scope and dependencies: see the bounded queue ExecPlan and mandatory-profile
-  gap matrix. Combined release/target dev is the source base; no live target or
-  hosted effect is admitted.
-- Verification: source conflict/preservation tests, extracted-pack consumer,
-  canonical checks, and current-generator replay.
-- Blockers: historical owner dispositions, full lifecycle apply behavior,
-  native/hosted qualification, and exact publication remain separate gates.
+- Status: final local candidate `8cad56c0` qualified with 29 import, 18 release, 11 draft, and 6 governance tests plus extracted ZIP and clean 44-file replay. Prior `37daa862` is superseded. Dev is unchanged; exact queue review remains open.
+- Objective: explain project-owned preservation and conflicting updates with exact-byte optional rationale and opt-in local feedback.
+- Scope and dependencies: see the bounded queue ExecPlan and mandatory-profile gap matrix. Combined release/target dev is the source base; no live target or hosted effect is admitted.
+- Verification: source conflict/preservation tests, extracted-pack consumer, canonical checks, and current-generator replay.
+- Blockers: historical owner dispositions, full lifecycle apply behavior, native/hosted qualification, and exact publication remain separate gates.
 
 ## Purpose
 
@@ -732,16 +359,11 @@ bounded execution owner validate rejection and external output; the original
 
 - Title: Define the bounded stable release contract and publication route.
 - Status: bounded contract work admitted and running; technical source review pending.
-- Objective: establish a reviewed version/public compatibility rule, first
-  stable Lite support profile, and narrow campaign-scoped release route.
-- Scope: the exact existing policy, adopted profile, and reference-doc owners
-  in the child `task.yaml`; admission edits only queue/intake/plan records.
-- Dependencies: 2026-09-25 owner delegation, read-only release history, final
-  mandatory-profile evidence, and independent technical review.
-- Verification: task inspect and diff checks for admission; contract and
-  support validation before later exact candidate review.
-- Blockers: version and final release bytes remain unchosen; Q47/Q48 are
-  preview-only, and main/tag/publication require a separate frozen effect.
+- Objective: establish a reviewed version/public compatibility rule, first stable Lite support profile, and narrow campaign-scoped release route.
+- Scope: the exact existing policy, adopted profile, and reference-doc owners in the child `task.yaml`; admission edits only queue/intake/plan records.
+- Dependencies: 2026-09-25 owner delegation, read-only release history, final mandatory-profile evidence, and independent technical review.
+- Verification: task inspect and diff checks for admission; contract and support validation before later exact candidate review.
+- Blockers: version and final release bytes remain unchosen; Q47/Q48 are preview-only, and main/tag/publication require a separate frozen effect.
 
 ### Plan ID: AIDE-RELEASE-METADATA-INTEGRITY-01
 
@@ -4049,19 +3671,11 @@ Status: active, exact dev base bfb86c12b9e6d2970024d29c57ba629994ec43cc. Impleme
 
 ### AIDE-CW-INTEGRATION-BROKER-01 qualified transport continuation
 
-Reviewed local v1 checkpoint f06bcd75aafeab175202a89ea1d69c815b7bd911 binds
-frozen delta/preparation recovery/coordinator v1. Continue exact-generation
-effect validation, external delegated authority and bounded branch/PR/check
-observation transport under the task ExecPlan. Real host/store and atomic
-target merge qualification remain open; AIDE has no current hosted workflows
-or branch rules. No operational activation or settings mutation is claimed.
+Reviewed local v1 checkpoint f06bcd75aafeab175202a89ea1d69c815b7bd911 binds frozen delta/preparation recovery/coordinator v1. Continue exact-generation effect validation, external delegated authority and bounded branch/PR/check observation transport under the task ExecPlan. Real host/store and atomic target merge qualification remain open; AIDE has no current hosted workflows or branch rules. No operational activation or settings mutation is claimed.
 
 ### Broker delegated-core source checkpoint
 
-AIDE-CW-INTEGRATION-BROKER-01 now has independent exact-source review for the
-prepared-effect guard, controller capsule, finite issuer and durable PR intent
-core. Continue qualified provider adapter and stage reconciliation under the
-same active WorkUnit; full broker and operational qualification remain open.
+AIDE-CW-INTEGRATION-BROKER-01 now has independent exact-source review for the prepared-effect guard, controller capsule, finite issuer and durable PR intent core. Continue qualified provider adapter and stage reconciliation under the same active WorkUnit; full broker and operational qualification remain open.
 
 ### Staged broker continuation
 
@@ -4069,930 +3683,308 @@ Staged broker reconciliation now connects the reviewed local contracts. Validate
 
 ### Registered provider bridge continuation
 
-AIDE-CW-INTEGRATION-BROKER-01 continues from reviewed staged checkpoint
-fe233c4611d5dfd02eac5c8460b828c9c8c1c450 with a fixed-command JSON bridge,
-separate durable call reservations and real Windows refusal/recovery tests.
-Freeze and independently review the exact source before checkpointing. Actual
-provider fact normalization, protected host/store and exact-base server
-qualification remain required; operational activation remains false.
+AIDE-CW-INTEGRATION-BROKER-01 continues from reviewed staged checkpoint fe233c4611d5dfd02eac5c8460b828c9c8c1c450 with a fixed-command JSON bridge, separate durable call reservations and real Windows refusal/recovery tests. Freeze and independently review the exact source before checkpointing. Actual provider fact normalization, protected host/store and exact-base server qualification remain required; operational activation remains false.
 
 ### Broker provider facts and concrete completion dependencies
 
-Continue from reviewed/pushed 8c3df653 with raw GitHub response normalization,
-actual check/run/attempt provenance and immutable merged-object reconciliation.
-AIDE-CW-GITHUB-TARGET-QUALIFICATION-01 admits exact policy/principal/workflow
-preparation and hosted adversarial acceptance without installing settings.
-AIDE-CW-ISOLATED-HOST-01 names AppContainer, owned-root ACL, network and denial
-probes. Provider/source preparation starts independently; full broker closure
-requires actual host and target qualification before the existing live pilot.
+Continue from reviewed/pushed 8c3df653 with raw GitHub response normalization, actual check/run/attempt provenance and immutable merged-object reconciliation. AIDE-CW-GITHUB-TARGET-QUALIFICATION-01 admits exact policy/principal/workflow preparation and hosted adversarial acceptance without installing settings. AIDE-CW-ISOLATED-HOST-01 names AppContainer, owned-root ACL, network and denial probes. Provider/source preparation starts independently; full broker closure requires actual host and target qualification before the existing live pilot.
 
 ### Fixed HTTPS observation reader
 
-Continue AIDE-CW-INTEGRATION-BROKER-01 from independently reviewed 57e28fac
-with an actual fixed-origin TLS reader, absent protected credential lease and
-real disposable local TLS denial tests. The exact task ExecPlan defines finite
-DNS/connect/read budgets and no real credentials, live provider calls or host
-configuration changes. Operational host/principal/target acceptance stays open.
+Continue AIDE-CW-INTEGRATION-BROKER-01 from independently reviewed 57e28fac with an actual fixed-origin TLS reader, absent protected credential lease and real disposable local TLS denial tests. The exact task ExecPlan defines finite DNS/connect/read budgets and no real credentials, live provider calls or host configuration changes. Operational host/principal/target acceptance stays open.
 
-Current programme steering additionally authorizes qualified alpha.6, alpha.x
-and beta.1 milestone tags/releases, changelogs, TODO/release notes, docs, sync
-and normal merges, followed by the final 0.1 implemented/absent/public-gap
-report. This supersedes the earlier blanket publication exclusion. Actual
-human/game/signing/platform/host/target evidence is still required; the HTTPS
-checkpoint performs no release or operational activation.
+Current programme steering additionally authorizes qualified alpha.6, alpha.x and beta.1 milestone tags/releases, changelogs, TODO/release notes, docs, sync and normal merges, followed by the final 0.1 implemented/absent/public-gap report. This supersedes the earlier blanket publication exclusion. Actual human/game/signing/platform/host/target evidence is still required; the HTTPS checkpoint performs no release or operational activation.
 
 ### H1 native AppContainer host mechanism
 
-The H1 native mechanism has one passing exact local probe after three retained
-FAIL attempts. Zero-capability AppContainer token/owned Job, scratch write,
-protected read/write/DACL/controller refusals, stable package non-exemption and
-the same-address network diagnostic/control conjunction passed. Raw 10060 still
-means timeout; diagnostic 2 means missing internetClient. Source27, existing
-actual Job10 and ordinary native3 tests pass and were independently replayed.
-The fourth child exited0/exited/quiescent. All four packets retain exact bytes.
-The host WorkUnit remains running/PENDING: private Python/Git/Codex, isolated
-fault/recovery cells, model channel, credential host and activation remain open.
+The H1 native mechanism has one passing exact local probe after three retained FAIL attempts. Zero-capability AppContainer token/owned Job, scratch write, protected read/write/DACL/controller refusals, stable package non-exemption and the same-address network diagnostic/control conjunction passed. Raw 10060 still means timeout; diagnostic 2 means missing internetClient. Source27, existing actual Job10 and ordinary native3 tests pass and were independently replayed. The fourth child exited0/exited/quiescent. All four packets retain exact bytes. The host WorkUnit remains running/PENDING: private Python/Git/Codex, isolated fault/recovery cells, model channel, credential host and activation remain open.
 
 ## H2 bounded private-image source
 
-The active H1/H2 task now continues from 454e41aa with a separately bounded
-streaming image API and synthetic denial/recovery tests. The prior native PASS
-remains source-bound historical evidence; no real tool copying, package grants,
-isolated runtime or activation is included. The task ExecPlan owns exact scope.
+The active H1/H2 task now continues from 454e41aa with a separately bounded streaming image API and synthetic denial/recovery tests. The prior native PASS remains source-bound historical evidence; no real tool copying, package grants, isolated runtime or activation is included. The task ExecPlan owns exact scope.
 
-The image preparation checkpoint has independent source assurance and 63 passing
-tests. Exact held-parent reservations, stream bounds and failure custody are
-complete for this source slice. The accepted Python closure proposal is next;
-the task and operational host qualification remain open.
+The image preparation checkpoint has independent source assurance and 63 passing tests. Exact held-parent reservations, stream bounds and failure custody are complete for this source slice. The accepted Python closure proposal is next; the task and operational host qualification remain open.
 
 ## H2 Python recipe source admission
 
-Continue from 06f2546f on the same owned branch under ROOT's accepted proposal
-16b243f4. Implement a bounded AMD64 import/delay/forwarder parser first, then the
-exact named private/system/API-set recipe and deterministic ZIP_STORED/_pth
-builder. Add a truthful generated-byte kind without changing v1 source identity.
-Use the proposed finite parse/closure/member/byte bounds and malformed-input,
-unknown-dependency, alias, mutation and deterministic-custody tests. Keep current
-image/H1/candidate bounds. No real tool copying, package grant, profile, private
-runtime launch or activation is admitted here. Freeze exact source for review.
+Continue from 06f2546f on the same owned branch under ROOT's accepted proposal 16b243f4. Implement a bounded AMD64 import/delay/forwarder parser first, then the exact named private/system/API-set recipe and deterministic ZIP_STORED/_pth builder. Add a truthful generated-byte kind without changing v1 source identity. Use the proposed finite parse/closure/member/byte bounds and malformed-input, unknown-dependency, alias, mutation and deterministic-custody tests. Keep current image/H1/candidate bounds. No real tool copying, package grant, profile, private runtime launch or activation is admitted here. Freeze exact source for review.
 
 ### Reviewed Python recipe checkpoint
 
-Independent review h2-python-independent-final-review.json passed exact eight
-source files and repeated all 95 tests, 24 v1 differential cases, an independent
-12-member ZIP wire oracle and 1,024 deterministic malformed-PE mutations without
-unexpected exceptions. The source checkpoint remains partial: actual Windows
-optional-delay-table compatibility, native/API mappings and restricted Python
-startup remain open. Preserve the immutable mutation RED and all original review
-bytes in compact custody. Do not stage provider-owned entry records/index or
-raw multi-megabyte logs. No actual tool copy, package grant or loader effect is
-admitted by this checkpoint. The SDK addendum clarifies that timestamp0 means
-unbound even when an optional bound-IAT pointer is nonzero; the next metadata
-slice will target that exact observed layout and retain existing bounds.
+Independent review h2-python-independent-final-review.json passed exact eight source files and repeated all 95 tests, 24 v1 differential cases, an independent 12-member ZIP wire oracle and 1,024 deterministic malformed-PE mutations without unexpected exceptions. The source checkpoint remains partial: actual Windows optional-delay-table compatibility, native/API mappings and restricted Python startup remain open. Preserve the immutable mutation RED and all original review bytes in compact custody. Do not stage provider-owned entry records/index or raw multi-megabyte logs. No actual tool copy, package grant or loader effect is admitted by this checkpoint. The SDK addendum clarifies that timestamp0 means unbound even when an optional bound-IAT pointer is nonzero; the next metadata slice will target that exact observed layout and retain existing bounds.
 
 ## Optional delay metadata source evidence
 
-The two-file h2-delay-source-manifest.json binds the PE reader/direct regression
-increment after 830bf30d. All 101 source/ordinary tests pass. Eight unchanged named
-Windows DLL byte streams now parse under the explicit RVA/timestamp0 optional
-bound-IAT layout, without loading or mapping inspected DLLs. The original
-refusals and pre-fix synthetic failures remain retained. Actual native system/API
-mapping and restricted Python bootstrap remain unqualified; the observed 180
-API-set names exceed the unchanged 128-row contract ceiling and need a separately
-reviewed exact admission decision. The source is frozen for independent review.
+The two-file h2-delay-source-manifest.json binds the PE reader/direct regression increment after 830bf30d. All 101 source/ordinary tests pass. Eight unchanged named Windows DLL byte streams now parse under the explicit RVA/timestamp0 optional bound-IAT layout, without loading or mapping inspected DLLs. The original refusals and pre-fix synthetic failures remain retained. Actual native system/API mapping and restricted Python bootstrap remain unqualified; the observed 180 API-set names exceed the unchanged 128-row contract ceiling and need a separately reviewed exact admission decision. The source is frozen for independent review.
 
-Independent exact-source review passed the 101-test replay, real numeric symbol
-limits and the same eight ordinary byte-stream observations. Receipt
-h2-delay-independent-final-review.json binds the exact source and raw proof.
-The optional-delay checkpoint remains partial; native/API/loader gates stay open.
+Independent exact-source review passed the 101-test replay, real numeric symbol limits and the same eight ordinary byte-stream observations. Receipt h2-delay-independent-final-review.json binds the exact source and raw proof. The optional-delay checkpoint remains partial; native/API/loader gates stay open.
 
 ## H2 system observation source admission
 
-Continue from 236da6c2 under evidence/h2-system-observation-source-plan.md. Build
-the bounded native object/resource-mapping observation seam and direct injected
-refusal/ownership tests. Keep existing private source and recipe caps; preserve
-the full 180-name API inventory and pending actual contextual/native/loader proof.
-No actual DLL mapping, tool copy, grant, profile or isolated Python effect is
-admitted in this source slice. Freeze exact source for independent review.
+Continue from 236da6c2 under evidence/h2-system-observation-source-plan.md. Build the bounded native object/resource-mapping observation seam and direct injected refusal/ownership tests. Keep existing private source and recipe caps; preserve the full 180-name API inventory and pending actual contextual/native/loader proof. No actual DLL mapping, tool copy, grant, profile or isolated Python effect is admitted in this source slice. Freeze exact source for independent review.
 
 ## Frozen system observation source
 
-The h2-system-source-manifest.json packet binds two new files and 32 injected
-observer tests. All 133 selected tests pass, including unchanged PE/recipe/image/
-security/owned Job regressions. Reservation and intent acknowledgements bind
-exact canonical request hashes, and known handles are retained for one owned
-release before post-call guard failures can occur. Source remains frozen for
-independent review. Actual native object/API observations, durable controller
-journal authenticity, external process deadlines and loader qualification remain
-open; no selected DLL mapping, copy, grant or isolated Python effect occurred.
+The h2-system-source-manifest.json packet binds two new files and 32 injected observer tests. All 133 selected tests pass, including unchanged PE/recipe/image/ security/owned Job regressions. Reservation and intent acknowledgements bind exact canonical request hashes, and known handles are retained for one owned release before post-call guard failures can occur. Source remains frozen for independent review. Actual native object/API observations, durable controller journal authenticity, external process deadlines and loader qualification remain open; no selected DLL mapping, copy, grant or isolated Python effect occurred.
 
 ## System observation review repairs
 
-Preserve the original 133-test source and the independent/author REDs in
-h2-system-before-review-evidence.zip. Revised source binds clocks before and
-after guards, checks final result freshness and serialization after cleanup,
-refuses arbitrary-precision temporal fields as typed input, and requires the
-mapped native spelling to match the freshly held object observation. All 138
-selected tests pass (37 injected observer plus unchanged 101 regressions). The
-source is frozen for independent re-review; no actual mapping, private image or
-grant effect has run, and native/API/loader qualification remains open.
+Preserve the original 133-test source and the independent/author REDs in h2-system-before-review-evidence.zip. Revised source binds clocks before and after guards, checks final result freshness and serialization after cleanup, refuses arbitrary-precision temporal fields as typed input, and requires the mapped native spelling to match the freshly held object observation. All 138 selected tests pass (37 injected observer plus unchanged 101 regressions). The source is frozen for independent re-review; no actual mapping, private image or grant effect has run, and native/API/loader qualification remains open.
 
 ## Reviewed system observation source checkpoint
 
-Independent review h2-system-independent-final-review.json passes the exact
-source2 and 138-test replay plus 17 additional probes. Those include the retained
-original failures, actual numeric adapter-operation bounds and fully mocked
-native allocation/release failures. Source/dependency/index hashes and the
-original 36-member failure archive match. Preserve those raw bytes in checkpoint
-custody. This is a partial source checkpoint: actual public native input facts,
-API-resource observations, full bounded closure and restricted Python loading
-remain unqualified. No selected DLL mappings, image copies or grants occurred.
+Independent review h2-system-independent-final-review.json passes the exact source2 and 138-test replay plus 17 additional probes. Those include the retained original failures, actual numeric adapter-operation bounds and fully mocked native allocation/release failures. Source/dependency/index hashes and the original 36-member failure archive match. Preserve those raw bytes in checkpoint custody. This is a partial source checkpoint: actual public native input facts, API-resource observations, full bounded closure and restricted Python loading remain unqualified. No selected DLL mappings, image copies or grants occurred.
 
-- AIDE-CW-ISOLATED-HOST-01: prepare the bounded eight-DLL read-facts driver under
-  its evidence/h2-input-driver-plan.md; actual effect and loader gates remain open.
-- AIDE-CW-ISOLATED-HOST-01: checkpoint the independently reviewed eight-DLL
-  read-facts result; then separately propose two-API feasibility. The consumed
-  input effect is not replayable, and full closure/private loading remain open.
-- AIDE-CW-ISOLATED-HOST-01: implement task-owned two-API feasibility source and
-  injected tests under h2-resource-source-plan.md; actual mappings stay gated.
+- AIDE-CW-ISOLATED-HOST-01: prepare the bounded eight-DLL read-facts driver under its evidence/h2-input-driver-plan.md; actual effect and loader gates remain open.
+- AIDE-CW-ISOLATED-HOST-01: checkpoint the independently reviewed eight-DLL read-facts result; then separately propose two-API feasibility. The consumed input effect is not replayable, and full closure/private loading remain open.
+- AIDE-CW-ISOLATED-HOST-01: implement task-owned two-API feasibility source and injected tests under h2-resource-source-plan.md; actual mappings stay gated.
 
 ## Specification convergence: work, effects, and identity
 
-`AIDE-SPEC-WORK-EFFECT-IDENTITY-01` extends the adopted control-plane
-foundation with bounded WorkUnit/attempt, capability/effect, and
-identity/digest contracts. The private S21 package remains external review
-input. The slice changes no queue or wire schema, grants no runtime authority,
-and records desired acceptance cases as not run. Navigation, source
-dispositions, preserved-path checks, and queue validation are required before
-the increment is treated as complete.
+`AIDE-SPEC-WORK-EFFECT-IDENTITY-01` extends the adopted control-plane foundation with bounded WorkUnit/attempt, capability/effect, and identity/digest contracts. The private S21 package remains external review input. The slice changes no queue or wire schema, grants no runtime authority, and records desired acceptance cases as not run. Navigation, source dispositions, preserved-path checks, and queue validation are required before the increment is treated as complete.
 
 ## Specification convergence: explicit draft import
 
-`AIDE-SPEC-DRAFT-IMPORT-01` places the remaining 34 generated control-plane
-chapters in their intended topic directories as proposed drafts. The six
-adopted contracts remain unchanged. The imported `UR-*` requirements and
-`UC-*` acceptance designs stay source aliases pending bounded semantic review;
-their presence does not authorize implementation or establish qualification.
-Private archives, bulk registers, captured baselines, package tools, and patch
-files remain outside the repository.
+`AIDE-SPEC-DRAFT-IMPORT-01` places the remaining 34 generated control-plane chapters in their intended topic directories as proposed drafts. The six adopted contracts remain unchanged. The imported `UR-*` requirements and `UC-*` acceptance designs stay source aliases pending bounded semantic review; their presence does not authorize implementation or establish qualification. Private archives, bulk registers, captured baselines, package tools, and patch files remain outside the repository.
 
 ## Broker observation-bound dispatch
 
-`AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01` completes the internal binding
-from a durable stage-selecting observation to the registered mutation child.
-The exact observation and digest are revalidated against the latest ledger row,
-stage intent, and decision before and during child execution. The parent broker
-remains active for operational provider, protected host/store, credential,
-target-policy, and hosted acceptance work.
+`AIDE-BROKER-OBSERVATION-DISPATCH-BINDING-01` completes the internal binding from a durable stage-selecting observation to the registered mutation child. The exact observation and digest are revalidated against the latest ledger row, stage intent, and decision before and during child execution. The parent broker remains active for operational provider, protected host/store, credential, target-policy, and hosted acceptance work.
 
 ## Delivered pack import closure
 
-`AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01` closes the first stable-delivery product
-slice. Release archives are projected from permitted payload, receive truthful
-manifest and checksum closure, and execute their own importer without the AIDE
-source checkout. Clean source provenance is observed before export mutation and
-is inherited by release records. Exact ZIP and tar.gz candidates are locally
-qualified and integrated on `dev`; main, tagging, upload, publication, and the
-remaining stable-release profile retain separate gates.
+`AIDE-DELIVERED-PACK-IMPORT-CLOSURE-01` closes the first stable-delivery product slice. Release archives are projected from permitted payload, receive truthful manifest and checksum closure, and execute their own importer without the AIDE source checkout. Clean source provenance is observed before export mutation and is inherited by release records. Exact ZIP and tar.gz candidates are locally qualified and integrated on `dev`; main, tagging, upload, publication, and the remaining stable-release profile retain separate gates.
 
 ## Delivered pack safe update
 
-`AIDE-DELIVERED-PACK-SAFE-UPDATE-01` advances the next lifecycle slice on an
-isolated task branch. It adds exact target-local baseline receipts,
-conflict-first three-way byte comparison, deterministic preview/apply binding,
-validated predecessor-pack proof, and interruption evidence to the existing
-portable importer. Exact extracted ZIP and tar.gz consumers, interruption and
-conflict fixtures, and the combined candidate pass; the task is integrated on
-`dev`. Qualification is limited to disposable consumers. Source self-update,
-real-project rollout, main, tags, upload, publication, repair, rollback,
-uninstall, and full stable closure remain separate work and review gates.
+`AIDE-DELIVERED-PACK-SAFE-UPDATE-01` advances the next lifecycle slice on an isolated task branch. It adds exact target-local baseline receipts, conflict-first three-way byte comparison, deterministic preview/apply binding, validated predecessor-pack proof, and interruption evidence to the existing portable importer. Exact extracted ZIP and tar.gz consumers, interruption and conflict fixtures, and the combined candidate pass; the task is integrated on `dev`. Qualification is limited to disposable consumers. Source self-update, real-project rollout, main, tags, upload, publication, repair, rollback, uninstall, and full stable closure remain separate work and review gates.
 
 ## Delivered pack removal planning
 
-`AIDE-DELIVERED-PACK-REMOVAL-PLAN-01` adds deterministic receipt-backed
-`plan-removal` behavior to the existing portable CLI. It validates exact
-managed ownership, identifies only unchanged recorded bytes as future removal
-candidates, treats the portable `AGENTS.md` block separately from authored
-content, and preserves changed, missing, target-owned, and unknown state. The
-28-case import suite, 10-case release suite, and exact extracted ZIP/tar.gz
-consumer canaries pass with no planner writes. The qualified task branch is
-published; exact historical disposition B for malformed published commit
-`486e81cd` was accepted on 2026-09-25 while raw failures remain visible.
-Current-dev source/artifact integration was independently accepted at combined
-candidate `2819385a` and observed on remote `dev@ae0e29e9`.
-The extracted ZIP fresh/brownfield consumers and zero-change 44-file release
-replay pass. No removal apply, live
-target mutation, main promotion, tag, upload, or publication is included.
+`AIDE-DELIVERED-PACK-REMOVAL-PLAN-01` adds deterministic receipt-backed `plan-removal` behavior to the existing portable CLI. It validates exact managed ownership, identifies only unchanged recorded bytes as future removal candidates, treats the portable `AGENTS.md` block separately from authored content, and preserves changed, missing, target-owned, and unknown state. The 28-case import suite, 10-case release suite, and exact extracted ZIP/tar.gz consumer canaries pass with no planner writes. The qualified task branch is published; exact historical disposition B for malformed published commit `486e81cd` was accepted on 2026-09-25 while raw failures remain visible. Current-dev source/artifact integration was independently accepted at combined candidate `2819385a` and observed on remote `dev@ae0e29e9`. The extracted ZIP fresh/brownfield consumers and zero-change 44-file release replay pass. No removal apply, live target mutation, main promotion, tag, upload, or publication is included.
 
 ## Delivered pack importer write boundary
 
-`AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01` is a bounded stable-lifecycle
-repair from remote `dev@5dfa75e6`. Current import validates target paths and
-later writes by pathname; a parent junction substituted at that boundary may
-redirect a managed payload. First prove the race in a disposable target, then
-reuse the separately reviewed owned-repair pinned-parent mechanism for the
-importer. Exact preview, receipt, ownership, interruption, update, delivered
-archive, and independent integration checks remain required. No real target
-effect, main promotion, or publication is included in this task.
+`AIDE-DELIVERED-PACK-SAFE-IMPORT-WRITES-01` is a bounded stable-lifecycle repair from remote `dev@5dfa75e6`. Current import validates target paths and later writes by pathname; a parent junction substituted at that boundary may redirect a managed payload. First prove the race in a disposable target, then reuse the separately reviewed owned-repair pinned-parent mechanism for the importer. Exact preview, receipt, ownership, interruption, update, delivered archive, and independent integration checks remain required. No real target effect, main promotion, or publication is included in this task.
 
 ## GitHub expected-head target source
 
-`AIDE-CW-GITHUB-TARGET-QUALIFICATION-01` is now running on a bounded source
-slice. Implement the fixed synchronous ordinary-merge request with the exact
-candidate SHA as GitHub's expected-head predicate, and keep a successful response
-at submitted until later observation proves integration. Continue next with exact
-policy, workflow and principal observation/review. Expected-base enforcement,
-settings apply, hosted races and protected-host qualification remain open.
+`AIDE-CW-GITHUB-TARGET-QUALIFICATION-01` is now running on a bounded source slice. Implement the fixed synchronous ordinary-merge request with the exact candidate SHA as GitHub's expected-head predicate, and keep a successful response at submitted until later observation proves integration. Continue next with exact policy, workflow and principal observation/review. Expected-base enforcement, settings apply, hosted races and protected-host qualification remain open.
 
-The next target-policy source slice is implemented as a pure desired/current
-comparator and review-plan builder. Current AIDE evidence reproduces a blocked,
-zero-operation plan because the restricted broker principal and workflow/check
-app identities do not exist. The source and 96 affected tests can proceed to
-independent review; workflow installation, settings apply, and hosted races
-remain separate exact gates.
+The next target-policy source slice is implemented as a pure desired/current comparator and review-plan builder. Current AIDE evidence reproduces a blocked, zero-operation plan because the restricted broker principal and workflow/check app identities do not exist. The source and 96 affected tests can proceed to independent review; workflow installation, settings apply, and hosted races remain separate exact gates.
 
-Independent rereview of later exact candidate `963dcc7d` retained the workflow
-`path@ref` repair but rejected its effective-rule representation. The active
-repair uses endpoint-shaped individual rules, includes only rulesets applicable
-to `refs/heads/dev`, and passes 50 focused cases. The complete affected matrix
-executes 139 cases: 138 pass and one privilege-dependent Windows symlink case
-is skipped. Fresh exact review of `e378d38e` accepts local source integration
-with notes. `AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01` merges that source into
-the accepted release-integrity `dev` at `f77ecba2`; nine combined suites ran
-199 cases with 198 passes and one Windows privilege skip. The inherited
-pack-provenance refresh has generated local artifacts from source `66ef462c`
-through `AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01`. The first post-artifact cycle
-advanced to `PASS_SOURCE_ANCESTOR`, and a second changed zero of 44 files.
-Projection `d4bd4938` replays all four generators with zero changed files;
-fresh ZIP and brownfield tar.gz consumers apply, rerun idempotently, preserve
-authored content, and pass target-local doctor. The qualified candidate
-fast-forwarded to remote `dev` at `9cc4bb06`, tree `8afadda5`; the actual dev
-checkout replayed zero of 44 release files and passed canonical checks. Hosted settings,
-credentials, and races retain separate gates.
+Independent rereview of later exact candidate `963dcc7d` retained the workflow `path@ref` repair but rejected its effective-rule representation. The active repair uses endpoint-shaped individual rules, includes only rulesets applicable to `refs/heads/dev`, and passes 50 focused cases. The complete affected matrix executes 139 cases: 138 pass and one privilege-dependent Windows symlink case is skipped. Fresh exact review of `e378d38e` accepts local source integration with notes. `AIDE-CW-GITHUB-TARGET-DEV-INTEGRATION-01` merges that source into the accepted release-integrity `dev` at `f77ecba2`; nine combined suites ran 199 cases with 198 passes and one Windows privilege skip. The inherited pack-provenance refresh has generated local artifacts from source `66ef462c` through `AIDE-CW-GITHUB-TARGET-PACK-REFRESH-01`. The first post-artifact cycle advanced to `PASS_SOURCE_ANCESTOR`, and a second changed zero of 44 files. Projection `d4bd4938` replays all four generators with zero changed files; fresh ZIP and brownfield tar.gz consumers apply, rerun idempotently, preserve authored content, and pass target-local doctor. The qualified candidate fast-forwarded to remote `dev` at `9cc4bb06`, tree `8afadda5`; the actual dev checkout replayed zero of 44 release files and passed canonical checks. Hosted settings, credentials, and races retain separate gates.
 
 ## Broker runtime dev integration
 
-`AIDE-CW-BROKER-DEV-INTEGRATION-01` has landed. The exact published source
-`75da33108995ba63fc7148c6b4137349d7013798` is now retained in `dev` through
-two-parent landing `bed5a57aed4f7686de4b9137dbb3afc8e7995436`. Combined
-runtime, portable lifecycle, and release-bundle tests pass within their recorded
-scope. Post-commit validation required a clean-source portable-pack provenance
-refresh before this integration task closes. That refresh is now complete
-through `AIDE-BROKER-DEV-PACK-REFRESH-01` and dev landing `088b20ba`; final
-canonical validation passes. Continue the parent broker, isolated-host, and
-GitHub target tasks for operational qualification; this integration does not
-authorize live effects or public release.
+`AIDE-CW-BROKER-DEV-INTEGRATION-01` has landed. The exact published source `75da33108995ba63fc7148c6b4137349d7013798` is now retained in `dev` through two-parent landing `bed5a57aed4f7686de4b9137dbb3afc8e7995436`. Combined runtime, portable lifecycle, and release-bundle tests pass within their recorded scope. Post-commit validation required a clean-source portable-pack provenance refresh before this integration task closes. That refresh is now complete through `AIDE-BROKER-DEV-PACK-REFRESH-01` and dev landing `088b20ba`; final canonical validation passes. Continue the parent broker, isolated-host, and GitHub target tasks for operational qualification; this integration does not authorize live effects or public release.
 
 ## Exact historical commit-message dispositions
 
-`AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01` adds a general fail-closed range-check
-mechanism for immutable historical message failures. Records bind full Git
-objects, canonical message and failed-check identities, narrow scope, review
-authority, content-hashed decision/evidence files, and their own canonical
-digest. The three current blocker records received separate explicit owner
-acceptance on 2026-09-25; their raw failures remain visible.
-Independent review found replacement-ref, accountable-decision, whole-registry,
-and range-whitespace defects; the source repair adds adversarial regressions.
-Fresh exact review of `59b886db` accepts mechanism source integration with
-notes: the old branch's generated release snapshot fails draft validation after
-release validation and must be regenerated through current dev machinery.
-The owner decisions are bound to exact structured artifacts and content hashes.
-The exact historical source and decision branch was merged onto customization
-dev with both parent histories preserved. Current generator outputs were
-regenerated from the combined source, and the frozen candidate `7c12fc40`
-passed post-commit replay and independent source/artifact review with notes.
-The separate evidence-only closeout passed its narrow check. Remote and local
-dev were observed at `5ac617b37b5778193b1c2cc7c63e0cc12c98ec09`, tree
-`56921686952f334e92532bd2ad350b0d80d5328c`. Do not rewrite the
-historical messages. Historical-dependent removal and host source are being
-integrated in separate bounded branches;
-mandatory lifecycle apply remains unimplemented.
+`AIDE-HISTORICAL-COMMIT-DISPOSITIONS-01` adds a general fail-closed range-check mechanism for immutable historical message failures. Records bind full Git objects, canonical message and failed-check identities, narrow scope, review authority, content-hashed decision/evidence files, and their own canonical digest. The three current blocker records received separate explicit owner acceptance on 2026-09-25; their raw failures remain visible. Independent review found replacement-ref, accountable-decision, whole-registry, and range-whitespace defects; the source repair adds adversarial regressions. Fresh exact review of `59b886db` accepts mechanism source integration with notes: the old branch's generated release snapshot fails draft validation after release validation and must be regenerated through current dev machinery. The owner decisions are bound to exact structured artifacts and content hashes. The exact historical source and decision branch was merged onto customization dev with both parent histories preserved. Current generator outputs were regenerated from the combined source, and the frozen candidate `7c12fc40` passed post-commit replay and independent source/artifact review with notes. The separate evidence-only closeout passed its narrow check. Remote and local dev were observed at `5ac617b37b5778193b1c2cc7c63e0cc12c98ec09`, tree `56921686952f334e92532bd2ad350b0d80d5328c`. Do not rewrite the historical messages. Historical-dependent removal and host source are being integrated in separate bounded branches; mandatory lifecycle apply remains unimplemented.
 ## Isolated-host API-set query source
 
-The H2 continuation now has frozen source for supported Windows API-set host
-queries. It preserves the consumed resource-map failure, fits the observed
-180-name closure inside explicit 256-row/257-call bounds, and passes 142
-affected tests. The exact repair received independent source review with 140
-permitted tests, and historical message disposition C is owner-accepted.
-Combined dev source and local artifacts received separate exact reviews through
-candidate `a4ee0f32`; evidence-only closeout `a55b804b` passed a narrow check,
-and remote/local dev were observed at that commit (tree `9f687687`). Before any
-real host query,
-physical host bytes, private loading, grants, and activation remain open.
+The H2 continuation now has frozen source for supported Windows API-set host queries. It preserves the consumed resource-map failure, fits the observed 180-name closure inside explicit 256-row/257-call bounds, and passes 142 affected tests. The exact repair received independent source review with 140 permitted tests, and historical message disposition C is owner-accepted. Combined dev source and local artifacts received separate exact reviews through candidate `a4ee0f32`; evidence-only closeout `a55b804b` passed a narrow check, and remote/local dev were observed at that commit (tree `9f687687`). Before any real host query, physical host bytes, private loading, grants, and activation remain open.
 
 ## Delivered-pack owned repair apply (2026-09-25)
 
 `AIDE-DELIVERED-PACK-OWNED-REPAIR-APPLY-01` implements one explicit repair of a missing receipt-owned file from the exact validated delivered pack in a disposable consumer. Exact source `45c5ce91` (tree `b119a52d`) passed 39 importer tests and independent focused rereview. Integrate it with current dev while preserving the newer release generator and removal planner, then regenerate and qualify combined portable/release artifacts. Managed-section repair, modified-file reconciliation, rollback, removal, importer write safety, live-target adoption, and publication remain separate work.
 
-The combined owned repair candidate `e4697aaa` passed 42 importer and 46
-release-adjacent tests, two extracted archive consumers, zero-change replay
-of 44 release files, and independent dev-integration review. Remote dev was
-observed at `6b4007d0` after a normal fast-forward push. The next critical
-path is importer write safety, then wider lifecycle apply and final release
-qualification. This bounded dev result does not accept main or publication.
-After integration, an adversarial check found that Windows may admit a
-second writer to the repair helper's `mkstemp` staging file before no-replace
-publication. Fix and independently review that race before relying on repair
-write safety; the earlier dev integration is not stable-release acceptance.
+The combined owned repair candidate `e4697aaa` passed 42 importer and 46 release-adjacent tests, two extracted archive consumers, zero-change replay of 44 release files, and independent dev-integration review. Remote dev was observed at `6b4007d0` after a normal fast-forward push. The next critical path is importer write safety, then wider lifecycle apply and final release qualification. This bounded dev result does not accept main or publication. After integration, an adversarial check found that Windows may admit a second writer to the repair helper's `mkstemp` staging file before no-replace publication. Fix and independently review that race before relying on repair write safety; the earlier dev integration is not stable-release acceptance.
 
-The exclusive-handle repair staging source `e215698a` passed the exact 44-test
-importer suite and received independent ACCEPT_WITH_NOTES for dev source
-integration. Its local pack and release projection is under artifact consumer
-and postcommit replay qualification before a dev fast-forward. The accepted
-safe-import branch `0dfb2931` needs a separate combined-source merge that
-retains this newer repair helper and the lifecycle lock. Neither result closes
-mandatory removal, rollback, native/hosted, main, or publication gates.
+The exclusive-handle repair staging source `e215698a` passed the exact 44-test importer suite and received independent ACCEPT_WITH_NOTES for dev source integration. Its local pack and release projection is under artifact consumer and postcommit replay qualification before a dev fast-forward. The accepted safe-import branch `0dfb2931` needs a separate combined-source merge that retains this newer repair helper and the lifecycle lock. Neither result closes mandatory removal, rollback, native/hosted, main, or publication gates.
 
-The repair staging projection passed independent offline ZIP/tar consumers,
-eight delivered-script race cases, and a zero-change replay of 44 release
-files. Local/remote dev now agree at `10a16afb`; the staging WorkUnit is
-closed with retained cleanup uncertainty. Safe import `0dfb2931` and
-conditional removal remain dependency-ready candidates, not integrated dev.
+The repair staging projection passed independent offline ZIP/tar consumers, eight delivered-script race cases, and a zero-change replay of 44 release files. Local/remote dev now agree at `10a16afb`; the staging WorkUnit is closed with retained cleanup uncertainty. Safe import `0dfb2931` and conditional removal remain dependency-ready candidates, not integrated dev.
 ## 2026-09-25: Receipt-owned delivered-pack removal apply
 
-- `AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01` is admitted on a bounded task
-  branch from `dev@5dfa75e6`. It implements actual removal after the integrated
-  read-only planner, with receipt/plan binding, effect-time ownership,
-  preservation and interruption recovery. The separate importer and repair
-  safety work must be reconciled before integrated artifact qualification.
-- Source checkpoint `cd636c9c` implements a Windows-only, receipt-owned
-  regular-file removal slice. It intentionally reports `PARTIAL_REMOVAL` and
-  preserves the portable runner, managed `AGENTS.md` section, and receipt.
-  Direct combined-source tests, complete detach, independent review, and dev
-  integration remain open.
-- The combined Windows source later passed 68/68 importer tests, 27 extracted
-  consumer commands, independent artifact and exact dev-effect reviews, and
-  zero-diff replay of 44 release files. Local and remote dev now agree at
-  `a60b8cb0`. Fresh full detach works for an exact generated scaffold;
-  authored brownfield `AGENTS.md` remains a partial removal until anchored
-  managed-section detach is implemented and qualified.
+- `AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01` is admitted on a bounded task branch from `dev@5dfa75e6`. It implements actual removal after the integrated read-only planner, with receipt/plan binding, effect-time ownership, preservation and interruption recovery. The separate importer and repair safety work must be reconciled before integrated artifact qualification.
+- Source checkpoint `cd636c9c` implements a Windows-only, receipt-owned regular-file removal slice. It intentionally reports `PARTIAL_REMOVAL` and preserves the portable runner, managed `AGENTS.md` section, and receipt. Direct combined-source tests, complete detach, independent review, and dev integration remain open.
+- The combined Windows source later passed 68/68 importer tests, 27 extracted consumer commands, independent artifact and exact dev-effect reviews, and zero-diff replay of 44 release files. Local and remote dev now agree at `a60b8cb0`. Fresh full detach works for an exact generated scaffold; authored brownfield `AGENTS.md` remains a partial removal until anchored managed-section detach is implemented and qualified.
 
 ## Exact predecessor delivered-pack rollback apply (2026-09-25)
 
-`AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01` is a bounded Windows source candidate
-from `dev@b05ba7d5`. It uses the validated predecessor pack, exact receipt
-lineage, equal safe payload targets, and current-byte checks to restore a
-completed update through the existing import transaction. Source tests and
-documentation are recorded in the child WorkUnit. Changed payload sets,
-unavailable predecessor bytes, interrupted mixed effects, combined source,
-delivered artifacts, and independent review remain open gates.
+`AIDE-DELIVERED-PACK-ROLLBACK-APPLY-01` is a bounded Windows source candidate from `dev@b05ba7d5`. It uses the validated predecessor pack, exact receipt lineage, equal safe payload targets, and current-byte checks to restore a completed update through the existing import transaction. Source tests and documentation are recorded in the child WorkUnit. Changed payload sets, unavailable predecessor bytes, interrupted mixed effects, combined source, delivered artifacts, and independent review remain open gates.
 
-The first committed source `23422130` received independent REQUEST_CHANGES:
-the safe-pack enumerator followed a checksum-valid junction at `pack/files`.
-Repair and rerun the exact Windows boundary regression, obtain a scoped source
-rereview, then combine with current dev. The combined source must block rollback
-while a removal intent is pending and must regenerate artifacts from the
-current accepted generator before dev integration.
-The repaired source passes six focused rollback tests and awaits independent
-delta rereview. Its isolated pack still has old provenance by design; final
-validation belongs on combined source with regenerated artifacts.
+The first committed source `23422130` received independent REQUEST_CHANGES: the safe-pack enumerator followed a checksum-valid junction at `pack/files`. Repair and rerun the exact Windows boundary regression, obtain a scoped source rereview, then combine with current dev. The combined source must block rollback while a removal intent is pending and must regenerate artifacts from the current accepted generator before dev integration. The repaired source passes six focused rollback tests and awaits independent delta rereview. Its isolated pack still has old provenance by design; final validation belongs on combined source with regenerated artifacts.
 
-The independent source rereview accepted `33824b36`. Combined lifecycle task
-`AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01` now preserves that ancestry and
-closes the pending-removal rollback preview guard with a red/green Windows
-regression. Authored-section removal source `2c4c9089` has separate independent
-source acceptance but still needs combination, current-generator artifacts,
-extracted consumers, replay and exact dev-effect review. Neither source result
-establishes stable release readiness.
-- The authored-section detach source candidate in
-  `AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01` now passes focused tests, but
-  still needs independent review, combined-source qualification and delivered
-  artifact canaries before dev integration or a broader removal claim.
+The independent source rereview accepted `33824b36`. Combined lifecycle task `AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01` now preserves that ancestry and closes the pending-removal rollback preview guard with a red/green Windows regression. Authored-section removal source `2c4c9089` has separate independent source acceptance but still needs combination, current-generator artifacts, extracted consumers, replay and exact dev-effect review. Neither source result establishes stable release readiness.
+- The authored-section detach source candidate in `AIDE-DELIVERED-PACK-OWNED-REMOVAL-APPLY-01` now passes focused tests, but still needs independent review, combined-source qualification and delivered artifact canaries before dev integration or a broader removal claim.
 
-The combined lifecycle source `723322cf` passed focused tests and produced a
-local ZIP/tar projection, but an extracted brownfield consumer found a real
-CRLF `AGENTS.md` rollback refusal. Exact rejected bytes and the independent
-finding are retained. A red/green regression now guards the narrow source
-repair. Complete the affected suite, obtain delta review, regenerate the pack
-from clean superseding source, and rerun the full consumer/replay gates before
-any `dev` effect. The stable release goal remains open.
+The combined lifecycle source `723322cf` passed focused tests and produced a local ZIP/tar projection, but an extracted brownfield consumer found a real CRLF `AGENTS.md` rollback refusal. Exact rejected bytes and the independent finding are retained. A red/green regression now guards the narrow source repair. Complete the affected suite, obtain delta review, regenerate the pack from clean superseding source, and rerun the full consumer/replay gates before any `dev` effect. The stable release goal remains open.
 
-Superseding source `9a0843c3` has independent source ACCEPT, 85/85 full
-importer cases, 46 affected release-adjacent cases and independent acceptance
-of 49 delivered CLI consumer commands on the exact local ZIP/tar. Commit the
-projection, converge and replay the 44 release files, then obtain an exact
-dev-effect review and observe remote integration. Next implement the genuine
-three-way update/disabled-feature workflow from the campaign coverage matrix.
+Superseding source `9a0843c3` has independent source ACCEPT, 85/85 full importer cases, 46 affected release-adjacent cases and independent acceptance of 49 delivered CLI consumer commands on the exact local ZIP/tar. Commit the projection, converge and replay the 44 release files, then obtain an exact dev-effect review and observe remote integration. Next implement the genuine three-way update/disabled-feature workflow from the campaign coverage matrix.
 
 ## 2026-09-25 - Combined lifecycle dev integration checkpoint
 
-- `AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01` passed its bounded source,
-  extracted consumer, release replay and exact dev-effect gates. Remote `dev`
-  was observed at `7e8816b6`, tree `94fe10b6`; `main` remains unchanged.
-- The parent campaign remains active. Its next executable gap is a project
-  supplied three-way update resolution with successive upstream versions and
-  explicit optional-feature disable preservation, followed by final delivered
-  consumers and release qualification.
+- `AIDE-DELIVERED-PACK-LIFECYCLE-COMBINED-01` passed its bounded source, extracted consumer, release replay and exact dev-effect gates. Remote `dev` was observed at `7e8816b6`, tree `94fe10b6`; `main` remains unchanged.
+- The parent campaign remains active. Its next executable gap is a project supplied three-way update resolution with successive upstream versions and explicit optional-feature disable preservation, followed by final delivered consumers and release qualification.
 
 ## 2026-09-25 - Stable Lite contract candidate
 
-- `AIDE-STABLE-RELEASE-CONTRACT-01` now proposes a conditional SemVer rule and
-  enumerated `aide-lite-local-windows` public CLI/profile boundary. First
-  `1.0.0` remains conditional on fresh complete release history and a final
-  frozen manifest; this candidate selects no final tag or release bytes.
-- Campaign-only queue and review routing reflects the recorded owner
-  delegation while retaining independent exact technical and effect verdicts.
-  The candidate awaits review. Mandatory behavior, final installed assets,
-  predecessor consumers, main/tag/release effects and downloaded checks remain
-  later WorkUnit gates. Q47/Q48 outputs remain previews.
+- `AIDE-STABLE-RELEASE-CONTRACT-01` now proposes a conditional SemVer rule and enumerated `aide-lite-local-windows` public CLI/profile boundary. First `1.0.0` remains conditional on fresh complete release history and a final frozen manifest; this candidate selects no final tag or release bytes.
+- Campaign-only queue and review routing reflects the recorded owner delegation while retaining independent exact technical and effect verdicts. The candidate awaits review. Mandatory behavior, final installed assets, predecessor consumers, main/tag/release effects and downloaded checks remain later WorkUnit gates. Q47/Q48 outputs remain previews.
 
 ## 2026-09-25 - Stable Lite contract repair after exact review
 
-- `aa3bcfec` received `REQUEST_CHANGES`. Current `dev@a32535a2` is merged
-  at `060de472`; the superseding source addresses the predecessor/conflict
-  CLI boundary and makes first-release technical `ACCEPT` strictness explicit.
-- Committed pack-status, validate and doctor failures are retained. The
-  contract WorkUnit owns source and documentation only; a separate projection
-  WorkUnit must refresh derived export/release outputs, pass exact checks and
-  obtain appropriate review before dev integration.
+- `aa3bcfec` received `REQUEST_CHANGES`. Current `dev@a32535a2` is merged at `060de472`; the superseding source addresses the predecessor/conflict CLI boundary and makes first-release technical `ACCEPT` strictness explicit.
+- Committed pack-status, validate and doctor failures are retained. The contract WorkUnit owns source and documentation only; a separate projection WorkUnit must refresh derived export/release outputs, pass exact checks and obtain appropriate review before dev integration.
 
 ## 2026-09-25 - Stable Lite contract projection WorkUnit
 
-- `AIDE-STABLE-CONTRACT-PROJECTION-01` is admitted from frozen contract
-  repair `4315a813` after current `dev@a32535a2`. It owns only generated
-  export/changelog/release preview outputs and bounded queue/evidence records.
-- Its dependency is independent exact source acceptance. Then regenerate,
-  qualify committed artifact provenance and zero-change replay, obtain
-  independent artifact/dev-effect review and perform only qualified dev
-  integration. Main/tag/publication remain later gates.
+- `AIDE-STABLE-CONTRACT-PROJECTION-01` is admitted from frozen contract repair `4315a813` after current `dev@a32535a2`. It owns only generated export/changelog/release preview outputs and bounded queue/evidence records.
+- Its dependency is independent exact source acceptance. Then regenerate, qualify committed artifact provenance and zero-change replay, obtain independent artifact/dev-effect review and perform only qualified dev integration. Main/tag/publication remain later gates.
 
 ## 2026-09-25 - Stable Lite contract preview integrated in dev
 
-- Exact contract source `d38e5839` received independent technical `ACCEPT`.
-  Projection candidate `2defcad5` preserved clean-source ZIP/tar bytes,
-  passed 25 extracted consumer commands, committed canonical checks and a
-  zero-change four-command release replay; independent review gave conditional
-  GO for dev only.
-- Fresh effect checks passed. One writer fast-forwarded and normally pushed
-  `dev@2defcad5`, tree `14b13c20`; local/tracking/ls-remote/GitHub API refs
-  matched. Source and projection WorkUnits close with warnings about the
-  unqualified stable profile, version, main, publication and downloaded
-  consumers. The next critical path is final declared-platform lifecycle,
-  restart, offline and context/evidence qualification from frozen bytes.
+- Exact contract source `d38e5839` received independent technical `ACCEPT`. Projection candidate `2defcad5` preserved clean-source ZIP/tar bytes, passed 25 extracted consumer commands, committed canonical checks and a zero-change four-command release replay; independent review gave conditional GO for dev only.
+- Fresh effect checks passed. One writer fast-forwarded and normally pushed `dev@2defcad5`, tree `14b13c20`; local/tracking/ls-remote/GitHub API refs matched. Source and projection WorkUnits close with warnings about the unqualified stable profile, version, main, publication and downloaded consumers. The next critical path is final declared-platform lifecycle, restart, offline and context/evidence qualification from frozen bytes.
 
 ## 2026-09-25 - Delivered Windows Lite prequalification
 
-- `AIDE-STABLE-LITE-CONSUMER-PREQUAL-01` is admitted from clean
-  `dev@b3a001be`. It binds current local preview ZIP/tar bytes and runs only
-  new disposable Windows consumers; product source and generated release
-  outputs remain read-only until a concrete defect is scoped separately.
-- Clean extracted-ZIP safe import wrote 816 owned paths. The installed
-  `context`, `pack --task`, and `verify` path exited 0 with zero verifier
-  errors; optional-report/no-Git warnings remain explicit. At admission the
-  lifecycle canary was still running. Final downloaded release bytes and
-  stable support acceptance remain later gates.
-- The separate 31-command Windows lifecycle canary passed against the same
-  local ZIP and received independent `ACCEPT_WITH_NOTES` for that exact
-  preview. It exercised repair apply/restart, synthetic V2 rollback, and
-  receipt-owned fresh/brownfield removal. The first helper-limited run timed
-  out and remains failed evidence; the queue record supplies the correct hash
-  that the reviewer identified. No final/published acceptance follows.
-- Clean installed `task status` exposed a report-truth defect: an empty target
-  queue appears with incidental `Q17` and an AIDE-source-specific X-OS-01 next
-  task. The evaluation task records it and routes a bounded source repair;
-  final offline, real-version and downloaded-byte qualification remains open.
-- Independent `b4501028` evidence review accepted with notes but withheld a
-  direct dev effect because the evaluation WorkUnit forbids it. The bounded
-  `AIDE-STABLE-LITE-CONSUMER-DEV-INTEGRATION-01` WorkUnit now owns the exact
-  integration candidate, effect review, ref checks and closeout; source repair
-  follows that checkpoint.
-- The separate WorkUnit froze candidate `a7254d7d`, tree `f5d019ed`, with
-  four structured commits and 22 queue/docs paths. Canonical checks passed;
-  independent exact effect review gave conditional GO for a local FF and
-  normal push only. Fresh preflight passed, both effects exited 0, and local,
-  tracking, remote and API `dev` all showed `a7254d7d` afterward. This
-  closeout evidence awaits its own review; Task OS source repair is next.
-- After the reviewed closeout reached observed `dev@d292253b`, bounded
-  `AIDE-STABLE-LITE-TASK-TRUTH-01` was admitted to repair the installed
-  empty-target `Q17`/`X-OS-01` report-truth defect. It owns source/tests and
-  a reference note only; artifact projection and dev effect are separate.
-  Its red regression reproduced incidental identity promotion; the narrow
-  source fix and affected tests pass. Independent review accepted exact
-  `f00d937e` with notes and found a release-blocking one-item target queue
-  recommendation gap. `AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01` owns that narrow
-  follow-up before the next artifact projection. Its one-item regression was
-  red, then all 10 focused tests passed after source routing was limited to
-  exact self-hosting queue records. Canonical validate/doctor still fail on
-  stale export provenance, which the later projection must clear. Independent
-  review accepted `e88a1468` with notes about ID collisions and static
-  next-plan fields. The superseding profile-aware repair passes 11 tests and
-  received `REQUEST_CHANGES` for a false reason in the copied-ID case. That
-  reason is repaired and the 11 tests pass again; focused independent
-  rereview accepted exact `52e1f194` with notes. Projection is next.
-  Before projection, `AIDE-STABLE-LITE-DRAFT-TRUTH-01` addresses obsolete Q48
-  draft text that still describes all lifecycle commands as planning-only.
-  Its source scope is bounded; current-generator outputs and dev effect stay
-  in the later projection task. The stale wording regression was red, then
-  12 Q48 tests passed; source review is next. Canonical validate/doctor remain
-  red on stale export provenance until projection.
+- `AIDE-STABLE-LITE-CONSUMER-PREQUAL-01` is admitted from clean `dev@b3a001be`. It binds current local preview ZIP/tar bytes and runs only new disposable Windows consumers; product source and generated release outputs remain read-only until a concrete defect is scoped separately.
+- Clean extracted-ZIP safe import wrote 816 owned paths. The installed `context`, `pack --task`, and `verify` path exited 0 with zero verifier errors; optional-report/no-Git warnings remain explicit. At admission the lifecycle canary was still running. Final downloaded release bytes and stable support acceptance remain later gates.
+- The separate 31-command Windows lifecycle canary passed against the same local ZIP and received independent `ACCEPT_WITH_NOTES` for that exact preview. It exercised repair apply/restart, synthetic V2 rollback, and receipt-owned fresh/brownfield removal. The first helper-limited run timed out and remains failed evidence; the queue record supplies the correct hash that the reviewer identified. No final/published acceptance follows.
+- Clean installed `task status` exposed a report-truth defect: an empty target queue appears with incidental `Q17` and an AIDE-source-specific X-OS-01 next task. The evaluation task records it and routes a bounded source repair; final offline, real-version and downloaded-byte qualification remains open.
+- Independent `b4501028` evidence review accepted with notes but withheld a direct dev effect because the evaluation WorkUnit forbids it. The bounded `AIDE-STABLE-LITE-CONSUMER-DEV-INTEGRATION-01` WorkUnit now owns the exact integration candidate, effect review, ref checks and closeout; source repair follows that checkpoint.
+- The separate WorkUnit froze candidate `a7254d7d`, tree `f5d019ed`, with four structured commits and 22 queue/docs paths. Canonical checks passed; independent exact effect review gave conditional GO for a local FF and normal push only. Fresh preflight passed, both effects exited 0, and local, tracking, remote and API `dev` all showed `a7254d7d` afterward. This closeout evidence awaits its own review; Task OS source repair is next.
+- After the reviewed closeout reached observed `dev@d292253b`, bounded `AIDE-STABLE-LITE-TASK-TRUTH-01` was admitted to repair the installed empty-target `Q17`/`X-OS-01` report-truth defect. It owns source/tests and a reference note only; artifact projection and dev effect are separate. Its red regression reproduced incidental identity promotion; the narrow source fix and affected tests pass. Independent review accepted exact `f00d937e` with notes and found a release-blocking one-item target queue recommendation gap. `AIDE-STABLE-LITE-TARGET-QUEUE-NEXT-01` owns that narrow follow-up before the next artifact projection. Its one-item regression was red, then all 10 focused tests passed after source routing was limited to exact self-hosting queue records. Canonical validate/doctor still fail on stale export provenance, which the later projection must clear. Independent review accepted `e88a1468` with notes about ID collisions and static next-plan fields. The superseding profile-aware repair passes 11 tests and received `REQUEST_CHANGES` for a false reason in the copied-ID case. That reason is repaired and the 11 tests pass again; focused independent rereview accepted exact `52e1f194` with notes. Projection is next. Before projection, `AIDE-STABLE-LITE-DRAFT-TRUTH-01` addresses obsolete Q48 draft text that still describes all lifecycle commands as planning-only. Its source scope is bounded; current-generator outputs and dev effect stay in the later projection task. The stale wording regression was red, then 12 Q48 tests passed; source review is next. Canonical validate/doctor remain red on stale export provenance until projection.
 ## 2026-09-25 - Successive project-owned update WorkUnit
 
-- `AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01` is admitted from clean remote
-  `dev@d4b67c96` on a bounded task branch. Its ExecPlan binds red regressions,
-  manual exact-plan resolution, versioned overlay/disable receipts, two-pack
-  survival, review, delivered consumer validation and replay before dev effect.
-- Root retains integration and generated-artifact ownership. Product source
-  work starts with the prepared test-only patch; public-release gates remain
-  with the parent campaign.
+- `AIDE-DELIVERED-PACK-THREE-WAY-UPDATE-01` is admitted from clean remote `dev@d4b67c96` on a bounded task branch. Its ExecPlan binds red regressions, manual exact-plan resolution, versioned overlay/disable receipts, two-pack survival, review, delivered consumer validation and replay before dev effect.
+- Root retains integration and generated-artifact ownership. Product source work starts with the prepared test-only patch; public-release gates remain with the parent campaign.
 
 ## 2026-09-25 - Installed Lite repair-health WorkUnit
 
-- `AIDE-DELIVERED-PACK-REPAIR-HEALTH-01` is admitted on a task worktree from
-  independently reviewed update source `12758e07`. It provides one read-only
-  installed-target health command, using the exact pack and receipt to explain
-  supported one-file repair eligibility and conservative refusal classes.
-- The external extracted-CLI red probe and catalogue are bound in its
-  ExecPlan. Source work may proceed independently; dev integration waits for
-  the three-way update's full qualification and combined artifact review.
+- `AIDE-DELIVERED-PACK-REPAIR-HEALTH-01` is admitted on a task worktree from independently reviewed update source `12758e07`. It provides one read-only installed-target health command, using the exact pack and receipt to explain supported one-file repair eligibility and conservative refusal classes.
+- The external extracted-CLI red probe and catalogue are bound in its ExecPlan. Source work may proceed independently; dev integration waits for the three-way update's full qualification and combined artifact review.
 
 ## 2026-09-25 - Combined update and repair-health artifact candidate
 
-- Combined source `99a9e54d` passed 100/100 importer cases and affected
-  Q31/Q34/Q47/Q48 suites. From clean source, the current generator produced
-  local preview ZIP/tar bytes with passing provenance and canonical checks.
-- A 25-command extracted-archive consumer canary passed fresh, successive
-  synthetic updates, disabled-feature preservation, brownfield conflict
-  resolution and read-only health states. Independent exact artifact review
-  accepted those bounded bytes with classified preview limits.
-- Next commit the projection, prove post-commit replay and obtain exact `dev`
-  effect review. Stable profile, main, tag and publication gates remain with
-  `AIDE-CONVERGENCE-AND-DELIVERY-01`.
+- Combined source `99a9e54d` passed 100/100 importer cases and affected Q31/Q34/Q47/Q48 suites. From clean source, the current generator produced local preview ZIP/tar bytes with passing provenance and canonical checks.
+- A 25-command extracted-archive consumer canary passed fresh, successive synthetic updates, disabled-feature preservation, brownfield conflict resolution and read-only health states. Independent exact artifact review accepted those bounded bytes with classified preview limits.
+- Next commit the projection, prove post-commit replay and obtain exact `dev` effect review. Stable profile, main, tag and publication gates remain with `AIDE-CONVERGENCE-AND-DELIVERY-01`.
 
 ## 2026-09-25 - Combined update and repair-health dev effect
 
-- Projection `d137f936` and metadata convergence `54b9d45e` retained the
-  independently reviewed ZIP/tar bytes. Four-command derived replay changed
-  zero tracked files; the earlier full export/changelog replay failure is
-  preserved. Canonical checks and 12-commit range policy passed.
-- Independent exact effect review issued conditional GO. After fresh clean
-  worktree, identity and remote-ref checks, one writer fast-forwarded and
-  normally pushed `dev@54b9d45e`; local, tracking, remote and GitHub API refs
-  matched. The two bounded WorkUnits are integrated; parent release gates
-  remain open. Next repair the stable contract candidate against this source.
+- Projection `d137f936` and metadata convergence `54b9d45e` retained the independently reviewed ZIP/tar bytes. Four-command derived replay changed zero tracked files; the earlier full export/changelog replay failure is preserved. Canonical checks and 12-commit range policy passed.
+- Independent exact effect review issued conditional GO. After fresh clean worktree, identity and remote-ref checks, one writer fast-forwarded and normally pushed `dev@54b9d45e`; local, tracking, remote and GitHub API refs matched. The two bounded WorkUnits are integrated; parent release gates remain open. Next repair the stable contract candidate against this source.
 
 ## 2026-09-25 - Task OS and Q48 accepted source handoff
 
-- Exact Task OS source `52e1f194` and Q48 draft source `bc1867a0` have
-  independent accepted-with-notes verdicts. Their source lineage descends
-  from `dev@d292253b`; generated pack and release preview outputs are stale.
-- Next admit one current-generator projection for export, changelog, bundle
-  and draft; require committed zero-change release replay, installed target
-  queue consumers, canonical checks, independent exact artifact/effect review
-  and one-writer `dev` integration. Final release gates remain separate.
+- Exact Task OS source `52e1f194` and Q48 draft source `bc1867a0` have independent accepted-with-notes verdicts. Their source lineage descends from `dev@d292253b`; generated pack and release preview outputs are stale.
+- Next admit one current-generator projection for export, changelog, bundle and draft; require committed zero-change release replay, installed target queue consumers, canonical checks, independent exact artifact/effect review and one-writer `dev` integration. Final release gates remain separate.
 
 ## 2026-09-25 - Current Lite artifact projection
 
-- `AIDE-STABLE-LITE-CURRENT-PROJECTION-01` is admitted from clean accepted
-  source lineage `59286688`. One generator writer will refresh export,
-  changelog, bundle and local draft; installed target queue proof, committed
-  replay, canonical checks and independent exact artifact/dev effect review
-  precede a normal `dev` push. Main and publication remain separate.
+- `AIDE-STABLE-LITE-CURRENT-PROJECTION-01` is admitted from clean accepted source lineage `59286688`. One generator writer will refresh export, changelog, bundle and local draft; installed target queue proof, committed replay, canonical checks and independent exact artifact/dev effect review precede a normal `dev` push. Main and publication remain separate.
 
 ## 2026-09-26 - Current Lite projection dev closeout
 
-- Independent focused review accepted exact `6e8af2bd` with notes after an
-  earlier evidence-record REQUEST_CHANGES. One-writer local fast-forward and
-  normal push placed that candidate in `dev`; local, tracking, remote and API
-  identities matched. The current ZIP/tar and 25-command update,
-  four-command installed Task OS and 31-command lifecycle consumers are local
-  preview evidence. Next qualify the exact first stable Lite command/profile,
-  forced restart/offline and final bytes before release acceptance.
+- Independent focused review accepted exact `6e8af2bd` with notes after an earlier evidence-record REQUEST_CHANGES. One-writer local fast-forward and normal push placed that candidate in `dev`; local, tracking, remote and API identities matched. The current ZIP/tar and 25-command update, four-command installed Task OS and 31-command lifecycle consumers are local preview evidence. Next qualify the exact first stable Lite command/profile, forced restart/offline and final bytes before release acceptance.
 
 ## 2026-09-26 - Delivered Lite forced restart qualification
 
-- `AIDE-STABLE-LITE-FORCED-RESTART-01` owns an exact local ZIP consumer
-  qualification after abrupt child-process exit. It will observe pending
-  intents, safe new-process reconciliation, authored-byte preservation and
-  remaining gaps. Generated bytes remain read-only; independent technical
-  review precedes a truthful `dev` evidence closeout.
-- Exact local ZIP processes recovered after import, repair, rollback and
-  removal completion boundaries. A real first-payload import exit was retained
-  as `partial`: fresh preview/apply refused replay without changing bytes.
-  Independent canary and focused evidence-effect reviews accepted the exact
-  local result with notes. One-writer dev fast-forward and normal push reached
-  `e88b1c2e`; an initially stale GitHub API read matched on subsequent
-  uncached git/ref and branch reads. Partial-import source work remains.
+- `AIDE-STABLE-LITE-FORCED-RESTART-01` owns an exact local ZIP consumer qualification after abrupt child-process exit. It will observe pending intents, safe new-process reconciliation, authored-byte preservation and remaining gaps. Generated bytes remain read-only; independent technical review precedes a truthful `dev` evidence closeout.
+- Exact local ZIP processes recovered after import, repair, rollback and removal completion boundaries. A real first-payload import exit was retained as `partial`: fresh preview/apply refused replay without changing bytes. Independent canary and focused evidence-effect reviews accepted the exact local result with notes. One-writer dev fast-forward and normal push reached `e88b1c2e`; an initially stale GitHub API read matched on subsequent uncached git/ref and branch reads. Partial-import source work remains.
 
 ## 2026-09-26 - Partial portable import recovery source
 
-- `AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01` is admitted from
-  `dev@e88b1c2e` after the independently reviewed forced-restart evidence
-  fast-forward and normal push. The exact first-payload process exit retained
-  an intent and safely refused replay. This task will add an explicit guarded
-  partial reconciliation, preserve older intents as refusal, seek independent
-  source review, and qualify newly generated delivered bytes separately.
+- `AIDE-STABLE-LITE-PARTIAL-IMPORT-RECOVERY-01` is admitted from `dev@e88b1c2e` after the independently reviewed forced-restart evidence fast-forward and normal push. The exact first-payload process exit retained an intent and safely refused replay. This task will add an explicit guarded partial reconciliation, preserve older intents as refusal, seek independent source review, and qualify newly generated delivered bytes separately.
 
 ## 2026-09-26 - Campaign resource cleanup
 
-- `AIDE-CAMPAIGN-RESOURCE-CLEANUP-01` takes priority after the owner reported
-  resource and organization damage. D has 1.81 GB free. Reuse the current
-  checkout, reclaim clean retained-ref worktrees and evidenced disposable
-  payloads, then enforce resource preflight and automatic cleanup in AIDE.
-- Checkpoint: 34 inactive checkouts retired with exact refs retained; two
-  physical checkouts remain. Resource source, focused recovery fixture and
-  default inspection changes have scoped independent acceptance. Seven focused
-  product cases pass; the corrected 11-case Task OS suite passes through the
-  bounded owner without rewriting source reports. Permanent bulk placement,
-  full importer/current-generator qualification, integration and release remain
-  open. See the task's resource-checkpoint.md and exact run/review receipts.
-- Continuation: retired two byte-identical consumer expansions while retaining
-  their committed-custody ZIP originals and unique sibling state. Permanent
-  storage configuration remains absent; no bulk job or fallback was admitted.
+- `AIDE-CAMPAIGN-RESOURCE-CLEANUP-01` takes priority after the owner reported resource and organization damage. D has 1.81 GB free. Reuse the current checkout, reclaim clean retained-ref worktrees and evidenced disposable payloads, then enforce resource preflight and automatic cleanup in AIDE.
+- Checkpoint: 34 inactive checkouts retired with exact refs retained; two physical checkouts remain. Resource source, focused recovery fixture and default inspection changes have scoped independent acceptance. Seven focused product cases pass; the corrected 11-case Task OS suite passes through the bounded owner without rewriting source reports. Permanent bulk placement, full importer/current-generator qualification, integration and release remain open. See the task's resource-checkpoint.md and exact run/review receipts.
+- Continuation: retired two byte-identical consumer expansions while retaining their committed-custody ZIP originals and unique sibling state. Permanent storage configuration remains absent; no bulk job or fallback was admitted.
 
-- 2026-09-28 placement continuation: the owner selected exact shared D
-  execution roots beneath `D:\Projects\AIDE\.aide.local\execution` for new
-  jobs. Both existing checkout configs validate against the actual D volume.
-  Collect the already-running E-bound importer attempt with its preserved
-  original config before admitting a D job. Then run changed-source checks,
-  current package generation and delivered-byte consumers in dependency order.
-- E attempt retired after 99 completed importer cases due a live scratch scan
-  race. The D-bound monitor repair passed a red/green regression, 26 runner
-  cases and 9 cache cases. Obtain narrow independent source review, then run
-  the 110 importer cases in bounded partitions on frozen source before current
-  package and delivered-byte qualification.
-- Frozen `8040b10a` received independent ACCEPT_WITH_NOTES. Two D jobs passed
-  all 110 importer methods in disjoint 54/56 partitions, no skips, with
-  scratch retirement and reservation release. Integrate current source after
-  ref validation, then project/qualify current pack and delivered consumers.
-- Source integration reached local and remote `dev@1d3d9fe1`. The bounded
-  `AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01` now owns current export,
-  release preview, installed consumers and committed replay; public release
-  remains a later exact gate.
-- The accepted generator ran six serial D-managed commands from clean
-  `84e4a733` source. Current local ZIP/tar, release validation, draft validation
-  and canonical checks pass. Commit exact outputs, prove post-commit replay,
-  then test delivered bytes in disposable consumers before artifact review.
+- 2026-09-28 placement continuation: the owner selected exact shared D execution roots beneath `D:\Projects\AIDE\.aide.local\execution` for new jobs. Both existing checkout configs validate against the actual D volume. Collect the already-running E-bound importer attempt with its preserved original config before admitting a D job. Then run changed-source checks, current package generation and delivered-byte consumers in dependency order.
+- E attempt retired after 99 completed importer cases due a live scratch scan race. The D-bound monitor repair passed a red/green regression, 26 runner cases and 9 cache cases. Obtain narrow independent source review, then run the 110 importer cases in bounded partitions on frozen source before current package and delivered-byte qualification.
+- Frozen `8040b10a` received independent ACCEPT_WITH_NOTES. Two D jobs passed all 110 importer methods in disjoint 54/56 partitions, no skips, with scratch retirement and reservation release. Integrate current source after ref validation, then project/qualify current pack and delivered consumers.
+- Source integration reached local and remote `dev@1d3d9fe1`. The bounded `AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01` now owns current export, release preview, installed consumers and committed replay; public release remains a later exact gate.
+- The accepted generator ran six serial D-managed commands from clean `84e4a733` source. Current local ZIP/tar, release validation, draft validation and canonical checks pass. Commit exact outputs, prove post-commit replay, then test delivered bytes in disposable consumers before artifact review.
 
 ## 2026-09-26 - Stable customization contract follow-up
 
-- Resume AIDE-STABLE-RELEASE-CONTRACT-01 in the existing task checkout under
-  campaign delegation. Retain initial source/projection acceptance and dev history.
-- Candidate CLI now includes existing explanation and explicit local-feedback
-  forms for fresh/update/resolution previews, with project-owned v1/v2 metadata.
-- Actual parser validation found two incomplete argument forms and repaired them;
-  all 25 declared forms now parse without handlers or fixture allocation.
-- Freeze and independently review this policy/doc delta. Final archive/profile
-  qualification and public activation remain gated; permanent bulk pool is absent.
+- Resume AIDE-STABLE-RELEASE-CONTRACT-01 in the existing task checkout under campaign delegation. Retain initial source/projection acceptance and dev history.
+- Candidate CLI now includes existing explanation and explicit local-feedback forms for fresh/update/resolution previews, with project-owned v1/v2 metadata.
+- Actual parser validation found two incomplete argument forms and repaired them; all 25 declared forms now parse without handlers or fixture allocation.
+- Freeze and independently review this policy/doc delta. Final archive/profile qualification and public activation remain gated; permanent bulk pool is absent.
 
 ## Owner-selected integrated qualification storage - 2026-09-28
 
-The owner initially selected E:\Temporary. The later explicit D shared-root
-selection superseded that for new jobs. Both existing checkouts now use the
-same configured D scratch/retained/control roots and finite runner limits.
-The incomplete E job was collected; all subsequent importer, generator and
-consumer jobs here used D, with scratch retirement and reservation release.
+The owner initially selected E:\Temporary. The later explicit D shared-root selection superseded that for new jobs. Both existing checkouts now use the same configured D scratch/retained/control roots and finite runner limits. The incomplete E job was collected; all subsequent importer, generator and consumer jobs here used D, with scratch retirement and reservation release.
 
 ## 2026-09-28 - Reviewed partial-recovery preview integrated
 
-- AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01 passed committed four-command
-  zero-change replay and a 25-command extracted ZIP/tar fresh/brownfield
-  canary, plus fresh/update explicit partial recovery. The independent exact
-  artifact review accepted local dev integration with notes; local and remote
-  dev reached `e7c1760e`. These are local preview bytes. The parent campaign
-  still owns remaining lifecycle restart points, offline/context qualification,
-  final profile freeze, release review, main/tag/publication and downloaded
-  consumer verification.
+- AIDE-STABLE-LITE-PARTIAL-RECOVERY-PROJECTION-01 passed committed four-command zero-change replay and a 25-command extracted ZIP/tar fresh/brownfield canary, plus fresh/update explicit partial recovery. The independent exact artifact review accepted local dev integration with notes; local and remote dev reached `e7c1760e`. These are local preview bytes. The parent campaign still owns remaining lifecycle restart points, offline/context qualification, final profile freeze, release review, main/tag/publication and downloaded consumer verification.
 
-- The next bounded WorkUnit, AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01,
-  reuses the current ZIP and D-managed runner for remaining Windows lifecycle,
-  restart, context and offline release obligations. It will record actual
-  pass/fail evidence before any final version/profile freeze.
+- The next bounded WorkUnit, AIDE-STABLE-LITE-RELEASE-QUALIFICATION-01, reuses the current ZIP and D-managed runner for remaining Windows lifecycle, restart, context and offline release obligations. It will record actual pass/fail evidence before any final version/profile freeze.
 
-- Its current-byte lifecycle and forced-exit canaries passed. Fresh and Git
-  brownfield installed context/evidence commands also exited zero, but the
-  runner could not initially retire readonly Git objects. Exact owned-job
-  recovery completed. A narrow runner fix passed 27 focused tests and a real
-  Git-backed cleanup canary under the configured D roots. The source repair
-  was independently accepted with notes and integrated into dev.
+- Its current-byte lifecycle and forced-exit canaries passed. Fresh and Git brownfield installed context/evidence commands also exited zero, but the runner could not initially retire readonly Git objects. Exact owned-job recovery completed. A narrow runner fix passed 27 focused tests and a real Git-backed cleanup canary under the configured D roots. The source repair was independently accepted with notes and integrated into dev.
 
 ## 2026-09-28 - Local preview closed; stable release subject admitted
 
-The exact local-preview WorkUnit at `4dcd896b` received independent
-`ACCEPT_WITH_NOTES` and closes as `passed_with_notes`. Warnings, offline scope,
-synthetic predecessors and runner limits remain explicit release obligations.
-`AIDE-STABLE-LITE-RELEASE-EFFECT-01` owns a separate non-preview source/asset
-freeze, final consumer checks, independent release `ACCEPT`, delegated
-main/tag/publication and downloaded-byte verification. Continue under the
-shared D runner; do not create another physical checkout or relabel Q47/Q48
-preview outputs.
+The exact local-preview WorkUnit at `4dcd896b` received independent `ACCEPT_WITH_NOTES` and closes as `passed_with_notes`. Warnings, offline scope, synthetic predecessors and runner limits remain explicit release obligations. `AIDE-STABLE-LITE-RELEASE-EFFECT-01` owns a separate non-preview source/asset freeze, final consumer checks, independent release `ACCEPT`, delegated main/tag/publication and downloaded-byte verification. Continue under the shared D runner; do not create another physical checkout or relabel Q47/Q48 preview outputs.
 
-The first source increment adds a distinct stable candidate builder and
-validator while preserving Q47/Q48 preview outputs. It classifies the prior
-installed warning evidence, rejects unsafe archive members before extraction,
-and passes 33 Q47/Q48 tests plus a focused recovery test under the D runner.
-Seek exact source/security review before regenerating pack and asset bytes.
+The first source increment adds a distinct stable candidate builder and validator while preserving Q47/Q48 preview outputs. It classifies the prior installed warning evidence, rejects unsafe archive members before extraction, and passes 33 Q47/Q48 tests plus a focused recovery test under the D runner. Seek exact source/security review before regenerating pack and asset bytes.
 
-The archive-safety repair received independent source acceptance at
-`59db02a0` and was integrated into dev at `a6725d83`. The current portable
-pack, Q47/Q48 local previews and separate 1.0.0 stable candidate bytes are
-generated. Stable asset commit `92da9573` passed byte-identical post-commit
-replay and the local Windows delivered-byte matrix: 110 importer tests,
-fresh/brownfield, lifecycle, forced exits, context/offline and installed
-recovery/feedback/validate/task forms. The exact effect manifest and review
-packet are in `AIDE-STABLE-LITE-RELEASE-EFFECT-01`. The exact Lite candidate
-has since been independently accepted and integrated into dev. Historical
-message dispositions still gate main promotion, tagging, publication and
-downloaded-byte verification. The wider programme remains active.
+The archive-safety repair received independent source acceptance at `59db02a0` and was integrated into dev at `a6725d83`. The current portable pack, Q47/Q48 local previews and separate 1.0.0 stable candidate bytes are generated. Stable asset commit `92da9573` passed byte-identical post-commit replay and the local Windows delivered-byte matrix: 110 importer tests, fresh/brownfield, lifecycle, forced exits, context/offline and installed recovery/feedback/validate/task forms. The exact effect manifest and review packet are in `AIDE-STABLE-LITE-RELEASE-EFFECT-01`. The exact Lite candidate has since been independently accepted and integrated into dev. Historical message dispositions still gate main promotion, tagging, publication and downloaded-byte verification. The wider programme remains active.
 
-The resource follow-up in `AIDE-CAMPAIGN-RESOURCE-CLEANUP-01` adds selected-root
-setup to the existing bounded runner. Its final source-input managed suite
-passed 35 cases; the two existing D checkout configs remained unchanged on
-setup. Independent review accepted exact source `5152798b` with notes. Keep
-the setup task branch available while preserving the accepted Lite release
-bytes; a prepublication integration requires an exact release delta decision.
+The resource follow-up in `AIDE-CAMPAIGN-RESOURCE-CLEANUP-01` adds selected-root setup to the existing bounded runner. Its final source-input managed suite passed 35 cases; the two existing D checkout configs remained unchanged on setup. Independent review accepted exact source `5152798b` with notes. Keep the setup task branch available while preserving the accepted Lite release bytes; a prepublication integration requires an exact release delta decision.
 
-The bounded `AIDE-DELIVERED-PACK-ROLLBACK-RECOVERY-01` source slice adds an
-explicit continuation for a partial portable rollback through the existing
-guarded importer. The affected eight-case rollback matrix and a CLI junction
-probe pass through the shared D runner. Obtain exact source review before
-integration; the frozen Lite 1.0.0 acceptance remains tied to its older bytes.
+The bounded `AIDE-DELIVERED-PACK-ROLLBACK-RECOVERY-01` source slice adds an explicit continuation for a partial portable rollback through the existing guarded importer. The affected eight-case rollback matrix and a CLI junction probe pass through the shared D runner. Obtain exact source review before integration; the frozen Lite 1.0.0 acceptance remains tied to its older bytes.
 
-The first source review requested a path-set and receipt-lineage repair for
-pending rollback. Its regression is now green on the shared baseline check.
-Complete the affected rerun and exact superseding review before considering
-dev integration; the stable asset freeze remains unchanged.
+The first source review requested a path-set and receipt-lineage repair for pending rollback. Its regression is now green on the shared baseline check. Complete the affected rerun and exact superseding review before considering dev integration; the stable asset freeze remains unchanged.
 
-`72d1438e` now has eight passing affected cases and independent source
-ACCEPT. Preserve its reachable task branch while the frozen Lite 1.0.0
-release gate is resolved; then integrate or qualify an exact release delta.
+`72d1438e` now has eight passing affected cases and independent source ACCEPT. Preserve its reachable task branch while the frozen Lite 1.0.0 release gate is resolved; then integrate or qualify an exact release delta.
 
-The post-Lite integration candidate preserves both accepted branch histories.
-Its managed suite passed, but the rollback matrix encountered two runner
-monitor refusals, both reconciled without discarding required results.
-Finish narrow runner diagnosis, the remaining combined rollback cases and
-independent review of any changed source before moving `dev`. The frozen
-release candidate remains separate.
+The post-Lite integration candidate preserves both accepted branch histories. Its managed suite passed, but the rollback matrix encountered two runner monitor refusals, both reconciled without discarding required results. Finish narrow runner diagnosis, the remaining combined rollback cases and independent review of any changed source before moving `dev`. The frozen release candidate remains separate.
 
-`f5b77e01` now has 35 passing managed cases, eight passing rollback shards
-and independent combined-source ACCEPT. Keep it reachable as the post-Lite
-integration candidate while exact historical message decisions gate the
-frozen Lite main promotion. Revalidate refs and integrated effects before a
-later dev move; new release bytes require their own qualification.
+`f5b77e01` now has 35 passing managed cases, eight passing rollback shards and independent combined-source ACCEPT. Keep it reachable as the post-Lite integration candidate while exact historical message decisions gate the frozen Lite main promotion. Revalidate refs and integrated effects before a later dev move; new release bytes require their own qualification.
 
-The current Lite ZIP SHA-256 `a762c816â€¦` now has one accepted local Windows
-mid-removal child-exit canary on `task/aide-post-lite-source-integration-01`.
-It preserves authored brownfield bytes and resumes removal through a fresh
-delivered CLI. This supplemental evidence does not move dev or qualify remote
-download; complete the exact main-history decision and release effect first.
+The current Lite ZIP SHA-256 `a762c816â€¦` now has one accepted local Windows mid-removal child-exit canary on `task/aide-post-lite-source-integration-01`. It preserves authored brownfield bytes and resumes removal through a fresh delivered CLI. This supplemental evidence does not move dev or qualify remote download; complete the exact main-history decision and release effect first.
 
-The owner made execution efficiency a release requirement on 2026-09-28. The
-first Lite increment at `f30bbad2` has accepted source review and local D-runner
-evidence for quiet deterministic job waiting and bounded outcome views. Next
-qualify exact exported Lite bytes, then a supported host binding and actual
-usage/outcome accounting. No new release claim follows from this first slice.
+The owner made execution efficiency a release requirement on 2026-09-28. The first Lite increment at `f30bbad2` has accepted source review and local D-runner evidence for quiet deterministic job waiting and bounded outcome views. Next qualify exact exported Lite bytes, then a supported host binding and actual usage/outcome accounting. No new release claim follows from this first slice.
 
-The next source increment `fe8bca8b` adds bounded import of supplied Codex
-`exec --json` usage. Independent review accepted the repaired turn counting;
-the first version was rejected and remains visible. Qualify a real host stream
-and pause-aware dispatch before claiming measured savings or release readiness.
+The next source increment `fe8bca8b` adds bounded import of supplied Codex `exec --json` usage. Independent review accepted the repaired turn counting; the first version was rejected and remains visible. Qualify a real host stream and pause-aware dispatch before claiming measured savings or release readiness.
 
-`AIDE-CODEX-DISPATCH-GATE-01` now owns one source-only Windows worker repair:
-serialize operator pause against the existing suspended-child dispatch point.
-Use synthetic process tests under the D runner; no live model or Lite export
-claim follows. The portable host binding remains a separate release gap.
+`AIDE-CODEX-DISPATCH-GATE-01` now owns one source-only Windows worker repair: serialize operator pause against the existing suspended-child dispatch point. Use synthetic process tests under the D runner; no live model or Lite export claim follows. The portable host binding remains a separate release gap.
 
-The next Lite efficiency slice exports the existing bounded Windows job owner
-and direct dependencies in extracted Lite. A disposable Git consumer must run
-one finite Python job through those delivered bytes while safe target import
-continues to skip broad `core/**` files. This reuses one owner, not a new pool.
+The next Lite efficiency slice exports the existing bounded Windows job owner and direct dependencies in extracted Lite. A disposable Git consumer must run one finite Python job through those delivered bytes while safe target import continues to skip broad `core/**` files. This reuses one owner, not a new pool.
 
-For the host-context efficiency slice, Lite will parse one bounded supplied
-Codex prompt-input JSON stream without launching a model or exposing text.
-The installed-host probe and synthetic privacy/refusal tests run under the
-configured D owner. Exact host-call mediation and release acceptance stay gated.
+For the host-context efficiency slice, Lite will parse one bounded supplied Codex prompt-input JSON stream without launching a model or exposing text. The installed-host probe and synthetic privacy/refusal tests run under the configured D owner. Exact host-call mediation and release acceptance stay gated.
 
-The one-turn Codex job adapter now reuses the bounded Windows owner. Exact
-`67e1d572` passed 46/46 D-managed synthetic cases and independent source
-review for dev integration. Local model permission, finite admitted turns,
-pause epoch, executable parent, retained input and storage reserves are bound.
-Live turn/JSONL, exported Lite and release-byte qualification remain next.
+The one-turn Codex job adapter now reuses the bounded Windows owner. Exact `67e1d572` passed 46/46 D-managed synthetic cases and independent source review for dev integration. Local model permission, finite admitted turns, pause epoch, executable parent, retained input and storage reserves are bound. Live turn/JSONL, exported Lite and release-byte qualification remain next.
 
-The campaign's separate mid-removal canary on clean `dev@2aaee82e` passed a
-real child exit after the first owned deletion from the frozen local 1.0.0 ZIP,
-then resumed to `DETACHED` with authored and project-owned bytes preserved.
-The job retired scratch under the approved D runner. Its reviewed evidence is
-now integrated into dev as historical qualification; a new release effect
-must qualify current bytes before publication.
+The campaign's separate mid-removal canary on clean `dev@2aaee82e` passed a real child exit after the first owned deletion from the frozen local 1.0.0 ZIP, then resumed to `DETACHED` with authored and project-owned bytes preserved. The job retired scratch under the approved D runner. Its reviewed evidence is now integrated into dev as historical qualification; a new release effect must qualify current bytes before publication.
 
-The retained isolated-host branch contributes source-reviewed OS-build
-provenance, a one-use API-set query controller and an ordinary-loader
-observation adapter to the current dev integration candidate. The local
-Windows 10.0.19045 host lacks the documented L2 query export. The loader
-source passed injected tests and independent source review, but its actual
-load is unadmitted because DLL initialization can precede path validation.
-Run combined-source tests and integration review; keep native effects and
-worker activation separate from the bounded Lite release profile.
+The retained isolated-host branch contributes source-reviewed OS-build provenance, a one-use API-set query controller and an ordinary-loader observation adapter to the current dev integration candidate. The local Windows 10.0.19045 host lacks the documented L2 query export. The loader source passed injected tests and independent source review, but its actual load is unadmitted because DLL initialization can precede path validation. Run combined-source tests and integration review; keep native effects and worker activation separate from the bounded Lite release profile.
 
-The refreshed Lite candidate from the reviewed changelog source has local
-pack, stable-asset, six-consumer and preview/draft checks complete. Review
-the exact current release-effect manifest for dev source integration, then
-qualify the live one-turn host path if the owner admits it. The ten exact
-historical message decisions still gate main promotion; release publication
-also requires current technical acceptance, remote-byte and downloaded-byte
-checks. Keep the wider AIDE programme active beyond any bounded Lite release.
+The refreshed Lite candidate from the reviewed changelog source has local pack, stable-asset, six-consumer and preview/draft checks complete. Review the exact current release-effect manifest for dev source integration, then qualify the live one-turn host path if the owner admits it. The ten exact historical message decisions still gate main promotion; release publication also requires current technical acceptance, remote-byte and downloaded-byte checks. Keep the wider AIDE programme active beyond any bounded Lite release.
 
-The superseding Lite job-form candidate now declares 37 public forms and has
-new local asset and consumer evidence. Ten delivered job observations passed
-in a fresh disposable Git project; six final-byte consumer jobs and the
-36-case release suite passed. Post-commit pack, asset, preview and draft
-replays were unchanged. Independent exact review accepted the local effect
-and dev integration; local and remote dev now include it. The live turn and
-ten exact historical message decisions remain before main and publication.
+The superseding Lite job-form candidate now declares 37 public forms and has new local asset and consumer evidence. Ten delivered job observations passed in a fresh disposable Git project; six final-byte consumer jobs and the 36-case release suite passed. Post-commit pack, asset, preview and draft replays were unchanged. Independent exact review accepted the local effect and dev integration; local and remote dev now include it. The live turn and ten exact historical message decisions remain before main and publication.
 
-One bounded Lite efficiency source repair addresses false zero known-token
-subtotals and contradictory terminal events in `job usage`. Two synthetic
-regressions failed before the change; all 17 focused D-managed cases passed
-after it. Independent source review accepted the exact commit, now in
-`dev@8912eab9` as an intermediate checkpoint. The current portable pack
-and unpublished 1.0.0 assets were regenerated. Six serial consumers, ten
-delivered job observations and 36 Q47/Q48 tests passed. Exact view replay
-changed zero tracked files, and technical rereview accepted the repaired
-37-form current-byte effect. Local and remote `dev@0cacf204` include the
-exact qualified candidate and its evidence closeout. Main promotion, tag
-and publication remain gated by the ten historical decisions and live-model
-qualification.
+One bounded Lite efficiency source repair addresses false zero known-token subtotals and contradictory terminal events in `job usage`. Two synthetic regressions failed before the change; all 17 focused D-managed cases passed after it. Independent source review accepted the exact commit, now in `dev@8912eab9` as an intermediate checkpoint. The current portable pack and unpublished 1.0.0 assets were regenerated. Six serial consumers, ten delivered job observations and 36 Q47/Q48 tests passed. Exact view replay changed zero tracked files, and technical rereview accepted the repaired 37-form current-byte effect. Local and remote `dev@0cacf204` include the exact qualified candidate and its evidence closeout. Main promotion, tag and publication remain gated by the ten historical decisions and live-model qualification.
 
-The AIDE campaign resource-cleanup child is closed with notes: 35 owned
-worktrees were retired while unique work remained reachable; the reviewed
-selected-root source is in dev; the sole remaining checkout uses approved D
-configuration; current export, stable-build and release-test jobs passed
-with retired scratch and released reservations. This does not close the
-parent release or remove the per-job resource preflight requirement.
+The AIDE campaign resource-cleanup child is closed with notes: 35 owned worktrees were retired while unique work remained reachable; the reviewed selected-root source is in dev; the sole remaining checkout uses approved D configuration; current export, stable-build and release-test jobs passed with retired scratch and released reservations. This does not close the parent release or remove the per-job resource preflight requirement.
 
-The next bounded efficiency increment guards the mediated Codex launch path
-against a repeated unchanged request. Keep its admitted fingerprints in the
-existing finite dispatch record, refuse unknown legacy request history, and
-require changed bound inputs or model/effort for another turn. Normalize
-Windows path aliases through stable filesystem identity and input content.
-Verify with
-synthetic Windows Job tests, exact source review and a changed-byte Lite
-release qualification before any new stable claim. Live model effects retain
-their separate local permission gate.
+The next bounded efficiency increment guards the mediated Codex launch path against a repeated unchanged request. Keep its admitted fingerprints in the existing finite dispatch record, refuse unknown legacy request history, and require changed bound inputs or model/effort for another turn. Normalize Windows path aliases through stable filesystem identity and input content. Verify with synthetic Windows Job tests, exact source review and a changed-byte Lite release qualification before any new stable claim. Live model effects retain their separate local permission gate.
 
-The superseding repeat guard received independent dev-source ACCEPT and is
-observed in remote `dev@3cc6bf13`. Its changed-byte Lite pack, local 1.0.0
-assets and Q47/Q48 previews have been regenerated once, validated and replayed
-without tracked changes. Six exact-byte consumer jobs, 12 delivered job forms
-and 36 Q47/Q48 tests passed. The current candidate is on
-`task/aide-lite-efficiency-release-01` awaiting an exact independent technical
-release review. The ten owner-only historical dispositions gate main; live
-model effects remain a separate wider-campaign qualification.
+The superseding repeat guard received independent dev-source ACCEPT and is observed in remote `dev@3cc6bf13`. Its changed-byte Lite pack, local 1.0.0 assets and Q47/Q48 previews have been regenerated once, validated and replayed without tracked changes. Six exact-byte consumer jobs, 12 delivered job forms and 36 Q47/Q48 tests passed. The current candidate is on `task/aide-lite-efficiency-release-01` awaiting an exact independent technical release review. The ten owner-only historical dispositions gate main; live model effects remain a separate wider-campaign qualification.
 
-That exact release subject `9cfa91da` received independent local technical
-**ACCEPT**. It and the evidence closeout reached remote `dev` through
-`2dfc7e98`; the parent campaign now points to current effect manifest SHA-256
-`8c64893c`. Six exact-byte consumers, 12 delivered job observations, 36
-Q47/Q48 cases, 51 source cases and zero-change replays bind this changed-byte
-candidate. The full `main..dev` check still fails on ten owner-only historical
-messages, so main/tag/publication/downloaded-byte verification remain next
-release steps after those decisions. Continue separate host and whole-outcome
-efficiency work without changing the frozen 1.0.0 subject silently.
+That exact release subject `9cfa91da` received independent local technical **ACCEPT**. It and the evidence closeout reached remote `dev` through `2dfc7e98`; the parent campaign now points to current effect manifest SHA-256 `8c64893c`. Six exact-byte consumers, 12 delivered job observations, 36 Q47/Q48 cases, 51 source cases and zero-change replays bind this changed-byte candidate. The full `main..dev` check still fails on ten owner-only historical messages, so main/tag/publication/downloaded-byte verification remain next release steps after those decisions. Continue separate host and whole-outcome efficiency work without changing the frozen 1.0.0 subject silently.
 
-The next source-only efficiency slice repairs the observed changelog runner
-gap. Default source-checkout preview generation now requires an admitted D
-job with a finite `.aide/changelog` canonical reservation. A Q34 test that
-rewrote six tracked previews was moved to an isolated D temporary output.
-The source branch passed 52 managed-workspace cases, 12 Q34 cases and a real
-bounded changelog generation with zero tracked drift. Independent source
-review and dev integration remain pending; frozen 1.0.0 assets are unchanged.
+The next source-only efficiency slice repairs the observed changelog runner gap. Default source-checkout preview generation now requires an admitted D job with a finite `.aide/changelog` canonical reservation. A Q34 test that rewrote six tracked previews was moved to an isolated D temporary output. The source branch passed 52 managed-workspace cases, 12 Q34 cases and a real bounded changelog generation with zero tracked drift. Independent source review and dev integration remain pending; frozen 1.0.0 assets are unchanged.
 
-The first changelog admission subject was rejected for a raw Q34 test
-regression; the superseding test/docs repair passed raw and D-managed paths.
-Independent source review ACCEPTed exact `0063ab23`, now in remote `dev`
-through `c0e07b08`. The older accepted 1.0.0 asset hash is unchanged; any
-replacement release bytes require their own build and qualification.
+The first changelog admission subject was rejected for a raw Q34 test regression; the superseding test/docs repair passed raw and D-managed paths. Independent source review ACCEPTed exact `0063ab23`, now in remote `dev` through `c0e07b08`. The older accepted 1.0.0 asset hash is unchanged; any replacement release bytes require their own build and qualification.
 
-The current-runner 1.0.0 candidate now has a new exact local effect packet
-under `AIDE-STABLE-LITE-RELEASE-EFFECT-01`. Its ZIP hash is `27948415`;
-six current-byte consumers, 12 delivered job forms and 36 Q47/Q48 cases
-passed under the D owner, with zero-change generator replay. Independent
-technical review is next, then qualified `dev` integration. Main, tag and
-publication still require the ten unresolved exact owner dispositions.
-Independent exact technical review accepted `222fa60e` for dev source and
-artifact integration. Recheck the graph and fast-forward dev; preserve final
-release-effect acceptance and the owner-only main gate separately.
+The current-runner 1.0.0 candidate now has a new exact local effect packet under `AIDE-STABLE-LITE-RELEASE-EFFECT-01`. Its ZIP hash is `27948415`; six current-byte consumers, 12 delivered job forms and 36 Q47/Q48 cases passed under the D owner, with zero-change generator replay. Independent technical review is next, then qualified `dev` integration. Main, tag and publication still require the ten unresolved exact owner dispositions. Independent exact technical review accepted `222fa60e` for dev source and artifact integration. Recheck the graph and fast-forward dev; preserve final release-effect acceptance and the owner-only main gate separately.
 
-Remote `dev@a9e0c5db` now contains the accepted current-runner candidate;
-the single checkout is clean and the four asset digests are unchanged. The
-complete `main..dev` commit check still fails on exactly ten historical
-owner-only dispositions. The efficiency-priority amendment adds exported Lite
-and actual-host outcome evidence to final stable acceptance; this candidate's
-synthetic host and local consumer checks do not prove that outcome. Continue
-the existing efficiency WorkUnit without altering the frozen release subject.
+Remote `dev@a9e0c5db` now contains the accepted current-runner candidate; the single checkout is clean and the four asset digests are unchanged. The complete `main..dev` commit check still fails on exactly ten historical owner-only dispositions. The efficiency-priority amendment adds exported Lite and actual-host outcome evidence to final stable acceptance; this candidate's synthetic host and local consumer checks do not prove that outcome. Continue the existing efficiency WorkUnit without altering the frozen release subject.
 
-The current ZIP's delivered `job context` parser now has one real installed
-Codex debugger consumer under the D job owner. Only the CLI was extracted;
-the job passed, retained one bounded summary and retired scratch. It made no
-model request. Focused review is next; live turn and measured quality/cost
-still gate the efficiency release claim.
+The current ZIP's delivered `job context` parser now has one real installed Codex debugger consumer under the D job owner. Only the CLI was extracted; the job passed, retained one bounded summary and retired scratch. It made no model request. Focused review is next; live turn and measured quality/cost still gate the efficiency release claim.
 
-Independent review requested changes to the first host context canary. The
-superseding `a706e2e8` test takes the installed executable from ignored local
-configuration and hashes one bounded prompt buffer. A new D job passed and
-retired scratch. Focused independent delta review accepted that exact source
-for dev integration; actual model use and matched outcome proof remain open.
-Remote `dev@3cd57cb4` now contains that limited no-model result with the
-current stable ZIP bytes unchanged.
+Independent review requested changes to the first host context canary. The superseding `a706e2e8` test takes the installed executable from ignored local configuration and hashes one bounded prompt buffer. A new D job passed and retired scratch. Focused independent delta review accepted that exact source for dev integration; actual model use and matched outcome proof remain open. Remote `dev@3cd57cb4` now contains that limited no-model result with the current stable ZIP bytes unchanged.
 
 ## 2026-10-03 scoped public job entry
 
@@ -5014,123 +4006,45 @@ AIDE-MAIN-BRANCH-SYNC-01 scopes the direct owner request to independently review
 
 Main/dev source synchronization is verified at20d27d78 with84 matching branch pairs. Ordinary-host profile configuration passes; normal shell excludes harmless reads/writes, native filesystem API does not. Actual client scope setup precedes real-task qualification; historical release base remains aec53b1d.
 
-The accepted 4265f52b closeout and three-ref followup also completed with all
-84 pairs matched. Repeated source-sync instructions reuse that outcome; stable
-release gates remain open. Bounded ownership reconciliation preserves the
-private hard links, distinct Git checkouts and unqualified toolchain material.
+The accepted 4265f52b closeout and three-ref followup also completed with all 84 pairs matched. Repeated source-sync instructions reuse that outcome; stable release gates remain open. Bounded ownership reconciliation preserves the private hard links, distinct Git checkouts and unqualified toolchain material.
 
 ## 2026-10-04 architecture reconciliation and independent development
 
-AIDE-ARCHITECTURE-RECONCILIATION-01 is the owner-requested documentation split
-over the 3d186d05 integrated baseline. The blocked release Goal stays dormant.
-Nineteen existing topic owners receive proposed refinements; original requirements
-and cases remain preserved. The staged expansion plan defines C1â€“C12 candidates
-with consumers, dependencies and acceptance; no runtime implementation is admitted
-by that table. First priorities are truthful projections/explainable operations,
-compatibility, portable checkpoints and ownership-aware resource planning.
-REPORT.md in the queue packet contains source-linked current capabilities,
-proposal dispositions, unresolved operational gates and verification limitations.
+AIDE-ARCHITECTURE-RECONCILIATION-01 is the owner-requested documentation split over the 3d186d05 integrated baseline. The blocked release Goal stays dormant. Nineteen existing topic owners receive proposed refinements; original requirements and cases remain preserved. The staged expansion plan defines C1â€“C12 candidates with consumers, dependencies and acceptance; no runtime implementation is admitted by that table. First priorities are truthful projections/explainable operations, compatibility, portable checkpoints and ownership-aware resource planning. REPORT.md in the queue packet contains source-linked current capabilities, proposal dispositions, unresolved operational gates and verification limitations.
 
 ## 2026-10-04 managed inspection boundary
 
-AIDE-JOB-SCOPE-DIAGNOSTICS-01 implements the first bounded C8 projection over
-e3e6f8bc. Existing inspect fields/refusals are preserved; configured worker
-placement and run-only aggregate admission are separated from unverified outer
-routes. Existing scoped worker validation and exact export generation provide
-qualification; host setup, model and release gates remain independent.
-Repaired source 092ebc59 passed the 71-test managed run; exact 9d339b0c source
-and dev-only effect received ACCEPT_WITH_NOTES. Focused metadata closeout and
-fresh guards precede dev integration. This completes one bounded C8 increment,
-not the whole candidate, client setup or stable publication.
+AIDE-JOB-SCOPE-DIAGNOSTICS-01 implements the first bounded C8 projection over e3e6f8bc. Existing inspect fields/refusals are preserved; configured worker placement and run-only aggregate admission are separated from unverified outer routes. Existing scoped worker validation and exact export generation provide qualification; host setup, model and release gates remain independent. Repaired source 092ebc59 passed the 71-test managed run; exact 9d339b0c source and dev-only effect received ACCEPT_WITH_NOTES. Focused metadata closeout and fresh guards precede dev integration. This completes one bounded C8 increment, not the whole candidate, client setup or stable publication.
 
 ## 2026-10-04 qualified source main integration
 
-AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02 admits a separately reviewed source-only
-main/dev/task effect over accepted dev 9b1d1844. Reuse architecture and repaired
-71-test diagnostic qualification. Preserve unrelated tips, proposed/adopted
-boundaries, original historical release baseline and all operational gates.
-Exact de7bfb2b source/main-dev-task effect is accepted with nonblocking notes;
-the metadata closeout and current report require focused exact review before
-fresh guarded application. Unchanged product/payload qualification is reused.
+AIDE-QUALIFIED-SOURCE-MAIN-SYNC-02 admits a separately reviewed source-only main/dev/task effect over accepted dev 9b1d1844. Reuse architecture and repaired 71-test diagnostic qualification. Preserve unrelated tips, proposed/adopted boundaries, original historical release baseline and all operational gates. Exact de7bfb2b source/main-dev-task effect is accepted with nonblocking notes; the metadata closeout and current report require focused exact review before fresh guarded application. Unchanged product/payload qualification is reused.
 
 ## 2026-10-05 qualified current local Lite checkpoint
 
-AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 is locally qualified and integrated.
-Two demonstrated release-only admission/public-fixture defects were repaired;
-49 affected checks/no skips, export/full validation,846 checksums,8 current-byte
-consumers,38 public forms/39 outputs plus12 job observations, Task OS and
-byte-identical four-asset replay passed. All owned scratch and reservations
-retired. Source/build, local asset, narrow original runtime pin/probe and exact
-21f8677d main/dev/task integration each received independent acceptance with
-explicitly nonblocking disposed notes.88 corresponding pairs match;85 other
-tips preserved. Final metadata synchronization receives its own exact review.
+AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01 is locally qualified and integrated. Two demonstrated release-only admission/public-fixture defects were repaired; 49 affected checks/no skips, export/full validation,846 checksums,8 current-byte consumers,38 public forms/39 outputs plus12 job observations, Task OS and byte-identical four-asset replay passed. All owned scratch and reservations retired. Source/build, local asset, narrow original runtime pin/probe and exact 21f8677d main/dev/task integration each received independent acceptance with explicitly nonblocking disposed notes.88 corresponding pairs match;85 other tips preserved. Final metadata synchronization receives its own exact review.
 
-Only the original archive SHA/additive24th module changed; paths, limits,
-account route and canonical scope are identical. Original entry7b2c4eba passed
-as CodexSandboxOffline and retired. Supervisor/output separation and overlap
-guard remain. Failed attempts and same-job recovery are retained; prior assets
-have exact Git custody without another backup. REPORT.md and frozen proof/
-review/receipt files in that queue task are the current evidence references.
+Only the original archive SHA/additive24th module changed; paths, limits, account route and canonical scope are identical. Original entry7b2c4eba passed as CodexSandboxOffline and retired. Supervisor/output separation and overlap guard remain. Failed attempts and same-job recovery are retained; prior assets have exact Git custody without another backup. REPORT.md and frozen proof/ review/receipt files in that queue task are the current evidence references.
 
-The 19 proposed topic amendments preserve 244 UR/UC statements and
-remain separate from semantic adoption. Current planning/context/parent records
-now describe completed local qualification accurately. This minimal cross-doc
-closeout adds the existing roadmap checkpoint for consistency; no new feature
-is admitted. Unchanged core/host71 evidence and product checks are reused.
+The 19 proposed topic amendments preserve 244 UR/UC statements and remain separate from semantic adoption. Current planning/context/parent records now describe completed local qualification accurately. This minimal cross-doc closeout adds the existing roadmap checkpoint for consistency; no new feature is admitted. Unchanged core/host71 evidence and product checks are reused.
 
-Outer-client/read containment, hard quota, ten historical decisions, live/matched
-efficiency, stable tag/publication/downloaded consumers/adoption and wider disk
-cleanup remain open. Shared D storage is configured; FacMan stays paused. A
-local1.0.0 candidate and source promotion do not certify complete AIDE delivery.
+Outer-client/read containment, hard quota, ten historical decisions, live/matched efficiency, stable tag/publication/downloaded consumers/adoption and wider disk cleanup remain open. Shared D storage is configured; FacMan stays paused. A local1.0.0 candidate and source promotion do not certify complete AIDE delivery.
 
-Generated-pack checkout repair: the first source synchronization exposed four
-CRLF-to-LF checksum mismatches. Exact qualified ZIP bytes were restored under
-a separately reviewed generated-pack-only .gitattributes -text override. All
-846 working entries and24 immutable supervisor pins match; staged Git checksum
-verification precedes the final exact review. Original assets/proofs and source
-semantics are unchanged. This additional bounded diff prevents recurrence on
-checkout; no full rebuild or unchanged behavioral suite is required.
+Generated-pack checkout repair: the first source synchronization exposed four CRLF-to-LF checksum mismatches. Exact qualified ZIP bytes were restored under a separately reviewed generated-pack-only .gitattributes -text override. All 846 working entries and24 immutable supervisor pins match; staged Git checksum verification precedes the final exact review. Original assets/proofs and source semantics are unchanged. This additional bounded diff prevents recurrence on checkout; no full rebuild or unchanged behavioral suite is required.
 
 ## 2026-10-05 bounded storage custody result
 
-AIDE-SESSION-CONTAINMENT-01 inspected one previously recorded Universal
-linked worktree through the pinned managed worker: three tracked source
-modifications, no untracked names,31 ignored names and7,794,943 logical bytes.
-The worktree is preserved; no deletion or reclaimed space is claimed. Output/
-log digests, scratch retirement and reservation release are verified. Raw
-Windows cached identity/link counts are invalid and normalized to unknown;
-a fresh-stat correction passed one tiny owned native regression fixture.
-No target replay, new checkout, asset rebuild or original selection change.
-Read-only native acceptance does not close the outer-client, historical, live
-model, efficiency or stable-publication gates. Rejected preflights remain in
-the task's Git/evidence history. See [storage report](.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md).
+AIDE-SESSION-CONTAINMENT-01 inspected one previously recorded Universal linked worktree through the pinned managed worker: three tracked source modifications, no untracked names,31 ignored names and7,794,943 logical bytes. The worktree is preserved; no deletion or reclaimed space is claimed. Output/ log digests, scratch retirement and reservation release are verified. Raw Windows cached identity/link counts are invalid and normalized to unknown; a fresh-stat correction passed one tiny owned native regression fixture. No target replay, new checkout, asset rebuild or original selection change. Read-only native acceptance does not close the outer-client, historical, live model, efficiency or stable-publication gates. Rejected preflights remain in the task's Git/evidence history. See [storage report](.aide/queue/AIDE-SESSION-CONTAINMENT-01/STORAGE-REPORT.md).
 
 
 ## 2026-10-05 current-byte removal boundary qualification
 
-Three native consumer jobs qualified the unchanged removal canary at0/1/50
-on current accepted ZIP4a45922b. Actual child77 boundaries, fresh-process
-DETACHED recovery and authored/project-owned preservation passed. Full
-output/log digests and each scratch/reservation retirement are verified.
-Peak scratch8,329,339 bytes per job; three retained sets total20,527 logical
-bytes. Original assets/a241 configuration/24-pin supervisor remain unchanged.
-Earlier old-ZIP evidence is preserved; no archive rebuild, broad suite replay
-or model invocation was required. Exact source/ref review remains distinct
-from stable/publication, host, history, live/efficiency and wider cleanup gates.
-See [results](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-results.md)
-and its ExecPlan for the source-only three-ref synchronization.
+Three native consumer jobs qualified the unchanged removal canary at0/1/50 on current accepted ZIP4a45922b. Actual child77 boundaries, fresh-process DETACHED recovery and authored/project-owned preservation passed. Full output/log digests and each scratch/reservation retirement are verified. Peak scratch8,329,339 bytes per job; three retained sets total20,527 logical bytes. Original assets/a241 configuration/24-pin supervisor remain unchanged. Earlier old-ZIP evidence is preserved; no archive rebuild, broad suite replay or model invocation was required. Exact source/ref review remains distinct from stable/publication, host, history, live/efficiency and wider cleanup gates. See [results](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/current-removal-results.md) and its ExecPlan for the source-only three-ref synchronization.
 
 
 ## 2026-10-05 capability evidence validity repair admission
 
-AIDE-CAPABILITY-EVIDENCE-VALIDITY-01 prepares a bounded first C1 increment in
-the existing report-only ledger/status/validate owner. Current classification
-trusts seed state/file presence without invalidating retained reports when
-those inputs change. Preserve v0 ledger semantics and all operational gates;
-add finite public-input binding and prove a meaningful managed CLI workflow.
-Exact child admission precedes implementation. Current archive and pinned D
-supervisor stay unchanged; new source requires later asset requalification.
-See its ExecPlan; no broader feature campaign or second status authority.
+AIDE-CAPABILITY-EVIDENCE-VALIDITY-01 prepares a bounded first C1 increment in the existing report-only ledger/status/validate owner. Current classification trusts seed state/file presence without invalidating retained reports when those inputs change. Preserve v0 ledger semantics and all operational gates; add finite public-input binding and prove a meaningful managed CLI workflow. Exact child admission precedes implementation. Current archive and pinned D supervisor stay unchanged; new source requires later asset requalification. See its ExecPlan; no broader feature campaign or second status authority.
 
 
 ## 2026-10-05 Current-payload build follows accepted source
@@ -5143,92 +4057,41 @@ The stable release-effect WorkUnit now prepares an exact local build from the cu
 The existing release-effect WorkUnit now has one verified native current-payload build/validation and complete retirement. ZIP7132a540 contains the capability repair. Exact artifact/source review and feasible retained-data/consumer phase scheduling are next; all eight consumer cases and full outputs remain required. The original archive pin is held stale; no runtime/ref/publication effect follows automatically.
 
 
-The exact current-build source-only integration is prepared under the owner
-sync instruction and campaign delegation. Fresh observed88 branch maps retain
-85 other tips. Independent artifact/source/ref review and clean helper readiness
-precede normal dev/main fast-forward and atomic three-ref push; stable and
-consumer certification remain open.
+The exact current-build source-only integration is prepared under the owner sync instruction and campaign delegation. Fresh observed88 branch maps retain 85 other tips. Independent artifact/source/ref review and clean helper readiness precede normal dev/main fast-forward and atomic three-ref push; stable and consumer certification remain open.
 
 ## 2026-10-05 retired evidence custody source admission
 
-The bounded C4 child AIDE-RETIRED-EVIDENCE-CUSTODY-01 received independent
-source-admission ACCEPT. It preserves complete retired evidence and receipts
-using finite compressed custody, explicit lookup and the unchanged owner latch.
-Twenty-one source regressions/native fixture are prepared, not yet executed.
-No live custody, reclaimed bytes, candidate refresh or release approval.
+The bounded C4 child AIDE-RETIRED-EVIDENCE-CUSTODY-01 received independent source-admission ACCEPT. It preserves complete retired evidence and receipts using finite compressed custody, explicit lookup and the unchanged owner latch. Twenty-one source regressions/native fixture are prepared, not yet executed. No live custody, reclaimed bytes, candidate refresh or release approval.
 
 ## 2026-10-05 retired evidence custody native result
 
-C4 source fixtures22 passed once on50c0ac2b under the current7132/24-pin
-restricted owner. Complete raw evidence and retirement verified;9620 logical
-bytes retained. No live custody, reclaimed space, source integration or release
-claim. [Full custody report](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md)
-records exact source/effect/result and unchanged consumer acceptance.
+C4 source fixtures22 passed once on50c0ac2b under the current7132/24-pin restricted owner. Complete raw evidence and retirement verified;9620 logical bytes retained. No live custody, reclaimed space, source integration or release claim. [Full custody report](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md) records exact source/effect/result and unchanged consumer acceptance.
 
 ## 2026-10-05 actual public custody route qualified
 
-Corrected pinned-package namespace selection without replacing the24-source
-supervisor. Job30c71836 on dca12298 passed23 checks including actual public
-plan/read/apply/verify/read, complete collected evidence and retirement verified.
-Two original consumer jobs now have exact feasible read-only custody plans;
-no live transition/reclaimed capacity. Source/live-effect reviews remain
-required, as do current consumer acceptance and stale projection refresh.
+Corrected pinned-package namespace selection without replacing the24-source supervisor. Job30c71836 on dca12298 passed23 checks including actual public plan/read/apply/verify/read, complete collected evidence and retirement verified. Two original consumer jobs now have exact feasible read-only custody plans; no live transition/reclaimed capacity. Source/live-effect reviews remain required, as do current consumer acceptance and stale projection refresh.
 
 ## 2026-10-05 exact two-job custody released managed capacity
 
-The separately accepted C4 effect on source8339181c completed both exact old
-consumer-job transitions. Complete bytes, collection digests and original
-receipts remain available through verified custody lookup. Redundant raw copies
-retired and pending state cleared;7921599logical bytes saved. Existing pool now
-uses224863629 of268435456bytes. Physical allocated recovery is unmeasured.
-[Custody report](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md) records
-actual worker/admin scopes. Next is affected report/export/source qualification,
-then exact source integration and current consumers; archive7132 does not
-contain custody. Outer-client, historical/model, matched efficiency, release
-and wider cleanup gates remain independent.
+The separately accepted C4 effect on source8339181c completed both exact old consumer-job transitions. Complete bytes, collection digests and original receipts remain available through verified custody lookup. Redundant raw copies retired and pending state cleared;7921599logical bytes saved. Existing pool now uses224863629 of268435456bytes. Physical allocated recovery is unmeasured. [Custody report](.aide/queue/AIDE-RETIRED-EVIDENCE-CUSTODY-01/REPORT.md) records actual worker/admin scopes. Next is affected report/export/source qualification, then exact source integration and current consumers; archive7132 does not contain custody. Outer-client, historical/model, matched efficiency, release and wider cleanup gates remain independent.
 
 ## 2026-10-05 qualified custody; affected delivery source next
 
-C4 native23/live2 and template/sourcec8351859 are independently accepted; all
-notes disposed. The existing release task's exact report refresh passed once
-with6/9 changes and complete41-input current binding. Next separately reviewed
-worker49+18/export/fullvalidate uses current7132 supervisor and original pools,
-no49 reuse after CLI change. Current ZIP predates custody; no integration or
-release claim. See both WorkUnit reports for current and historical identities.
+C4 native23/live2 and template/sourcec8351859 are independently accepted; all notes disposed. The existing release task's exact report refresh passed once with6/9 changes and complete41-input current binding. Next separately reviewed worker49+18/export/fullvalidate uses current7132 supervisor and original pools, no49 reuse after CLI change. Current ZIP predates custody; no integration or release claim. See both WorkUnit reports for current and historical identities.
 
 
 ## Current release binding qualification — 2026-10-05
 
-The existing stable-effect WorkUnit admits a pure current asset/evidence checker,
-small refusal fixtures and a separately named HELD packet. Baseline935 is already
-source-synchronized. Local binding qualification passed17 refusal tests and
-current0/HELD plus stale1/REFUSED, with exact independent source/effect/result
-acceptance and verified collection/retirement. Preparation commit66 message
-fails policy; independent normal fix-forward admission permits a valid corrective
-child commit preserving66 without an amendment exception. Full681-commit range
-still FAILS11; later release dispositions remain separate. Fixes/closeout are
-local pending exact clean source/ref review and source-only sync. Old manifests remain
-historical; no stable/model/runtime/publication gate is waived. See the WorkUnit
-ExecPlan and current-release-binding-result.json/result-review.json.
+The existing stable-effect WorkUnit admits a pure current asset/evidence checker, small refusal fixtures and a separately named HELD packet. Baseline935 is already source-synchronized. Local binding qualification passed17 refusal tests and current0/HELD plus stale1/REFUSED, with exact independent source/effect/result acceptance and verified collection/retirement. Preparation commit66 message fails policy; independent normal fix-forward admission permits a valid corrective child commit preserving66 without an amendment exception. Full681-commit range still FAILS11; later release dispositions remain separate. Fixes/closeout are local pending exact clean source/ref review and source-only sync. Old manifests remain historical; no stable/model/runtime/publication gate is waived. See the WorkUnit ExecPlan and current-release-binding-result.json/result-review.json.
 
 ## Bounded verification scope-selection follow-up
 
-Current closeout retained actualverify WARN9/ERROR0: --task-packet validates the
-brief but active_scope_task_path still selects AIDE-SESSION-CONTAINMENT-01 for
-diff scopes. Exact release WorkUnit13-path admission check passes independently.
-Candidate C10 work: make the requested WorkUnit explicit for scope verification
-and prove blocked streams do not substitute their scope for another admitted
-stream. This is a concrete candidate, not CLI implementation/adoption authority;
-source/pack qualification must be rebound only if its future change affects them.
+Current closeout retained actualverify WARN9/ERROR0: --task-packet validates the brief but active_scope_task_path still selects AIDE-SESSION-CONTAINMENT-01 for diff scopes. Exact release WorkUnit13-path admission check passes independently. Candidate C10 work: make the requested WorkUnit explicit for scope verification and prove blocked streams do not substitute their scope for another admitted stream. This is a concrete candidate, not CLI implementation/adoption authority; source/pack qualification must be rebound only if its future change affects them.
 
 
 ### AIDE-STABLE-LITE-RELEASE-EFFECT-01: retained timeout and capture repair — 2026-10-06
 
-Payload job5e24c5a8 timed out before build, retired cleanly and preserved all
-assets. Repair the existing qualification helper to stream child output and
-retain failure metadata. Keep full payload checksums and authenticated fixture
-checks; narrow only redundant manifest inputs. New changed native attempt
-needs its exact gate. Tests/native result and new archives remain pending.
+Payload job5e24c5a8 timed out before build, retired cleanly and preserved all assets. Repair the existing qualification helper to stream child output and retain failure metadata. Keep full payload checksums and authenticated fixture checks; narrow only redundant manifest inputs. New changed native attempt needs its exact gate. Tests/native result and new archives remain pending.
 
 
 ## Current automation consumer partial - 2026-10-08
@@ -5237,29 +4100,12 @@ New-byte case0 passed; middle and one recovery stopped before completion on the4
 
 ## Current Lite qualification closeout - 2026-10-09
 
-The current package has all8 original consumers PASS with38 forms/51 output
-records,207 retained files/11,067,390B and one unchanged four-asset replay.
-Only unfinished5,7,1 ran; prior incomplete/failing attempts remain preserved.
-Case5 needed exact collection-only recovery, not a worker rerun. Existing roots,
-aggregate/caps/reserves and dispatcher4 remain. See the stable WorkUnit's
-current matrix, replay and ExecPlan. One guarded metadata/source sync closes
-this slice; exact stable ACCEPT and publication/acquisition remain next.
-Outer containment/read isolation, ordinary modeled work, full efficiency and
-wider cleanup remain separate unfinished parent outcomes.
+The current package has all8 original consumers PASS with38 forms/51 output records,207 retained files/11,067,390B and one unchanged four-asset replay. Only unfinished5,7,1 ran; prior incomplete/failing attempts remain preserved. Case5 needed exact collection-only recovery, not a worker rerun. Existing roots, aggregate/caps/reserves and dispatcher4 remain. See the stable WorkUnit's current matrix, replay and ExecPlan. One guarded metadata/source sync closes this slice; exact stable ACCEPT and publication/acquisition remain next. Outer containment/read isolation, ordinary modeled work, full efficiency and wider cleanup remain separate unfinished parent outcomes.
 
 
 ## Published Lite profile - 2026-10-09
 
-[AIDE Lite1.0.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0)
-is published for the qualified localWindows T3 profile. Strict release ACCEPT,
-all4downloaded asset hashes and unchanged fresh/brownfield acquisition/update/
-recovery acceptance passed; full collection, scratch retirement and reservation
-release are recorded in the [existing report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
-and [exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json).
-Tag0f293eb6 and pack sourcea17cf4b3 remain distinct immutable identities.
-No code/export/archive or unsupported profile was changed. Broader containment,
-read isolation, actual model editing, whole-outcome efficiency, wider cleanup
-and downstream work remain open; this is not whole-programme completion.
+[AIDE Lite1.0.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0) is published for the qualified localWindows T3 profile. Strict release ACCEPT, all4downloaded asset hashes and unchanged fresh/brownfield acquisition/update/ recovery acceptance passed; full collection, scratch retirement and reservation release are recorded in the [existing report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and [exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json). Tag0f293eb6 and pack sourcea17cf4b3 remain distinct immutable identities. No code/export/archive or unsupported profile was changed. Broader containment, read isolation, actual model editing, whole-outcome efficiency, wider cleanup and downstream work remain open; this is not whole-programme completion.
 
 ## Installed changelog compatibility repair - 2026-10-17
 
@@ -5271,56 +4117,31 @@ The installed guard repair and actual exported fresh/customized consumers passed
 
 ## AIDE-WORK-EFFORT-01
 
-Admitted P5 observation increment: bounded job effort view, real prior-attempt
-consumer, source and portable checks, then reviewed dev/main integration.
-See `.aide/queue/AIDE-WORK-EFFORT-01/ExecPlan.md`; no operational cost claim.
+Admitted P5 observation increment: bounded job effort view, real prior-attempt consumer, source and portable checks, then reviewed dev/main integration. See `.aide/queue/AIDE-WORK-EFFORT-01/ExecPlan.md`; no operational cost claim.
 
-AIDE-WORK-EFFORT-01: source42/delivered42 and five-receipt consumer PASS at
-7c2aec49. Original invalid-fixture failure preserved; published1.0.0 unchanged.
-Preview and reviewed integration remain, with whole-work cost still unknown.
+AIDE-WORK-EFFORT-01: source42/delivered42 and five-receipt consumer PASS at 7c2aec49. Original invalid-fixture failure preserved; published1.0.0 unchanged. Preview and reviewed integration remain, with whole-work cost still unknown.
 
-AIDE-WORK-EFFORT-01 qualification closed: preview96d7ee46 PASS, all three
-allocations retired. Final dev/main review and synchronization remain pending. Their actual result
-will be written to the child integration receipt; accounting gaps remain explicit.
+AIDE-WORK-EFFORT-01 qualification closed: preview96d7ee46 PASS, all three allocations retired. Final dev/main review and synchronization remain pending. Their actual result will be written to the child integration receipt; accounting gaps remain explicit.
 
 ## AIDE-PORTABLE-TASK-HANDOFF-01
 
 Portable task-record handoff advances bounded P3 continuation and P8 relay inspection. Safe-installed CLI consumer is mandatory; see the child ExecPlan.
 
-AIDE-PORTABLE-TASK-HANDOFF-01 qualification: source79/delivered79/ownership6,
-actual safe-installed consumer and fixed preview PASS; all3 jobs retired. See
-`.aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/REPORT.md` for exact scope and receipts.
-Native adoption/host binding/whole-outcome evidence remain separate.
+AIDE-PORTABLE-TASK-HANDOFF-01 qualification: source79/delivered79/ownership6, actual safe-installed consumer and fixed preview PASS; all3 jobs retired. See `.aide/queue/AIDE-PORTABLE-TASK-HANDOFF-01/REPORT.md` for exact scope and receipts. Native adoption/host binding/whole-outcome evidence remain separate.
 
 ## AIDE-VALIDATION-OUTPUT-01
 
-Make full validation readable through existing CLI modes; source/delivered tests
-and exact safe integration. See `.aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md`.
+Make full validation readable through existing CLI modes; source/delivered tests and exact safe integration. See `.aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md`.
 
-AIDE-VALIDATION-OUTPUT-01 qualified: 10 rerun and 26 retained source results,
-36 delivered tests, six ownership tests and fixed preview passed. All 60,915
-checks remain: 241 default output bytes versus 4,894,325 full bytes. All five
-jobs retired; original fixture failures remain. See the child REPORT.md;
-exact integration receipt governs sync, and broader campaign limits remain.
+AIDE-VALIDATION-OUTPUT-01 qualified: 10 rerun and 26 retained source results, 36 delivered tests, six ownership tests and fixed preview passed. All 60,915 checks remain: 241 default output bytes versus 4,894,325 full bytes. All five jobs retired; original fixture failures remain. See the child REPORT.md; exact integration receipt governs sync, and broader campaign limits remain.
 
 ## AIDE-OUTCOME-LESSONS-01
 
-Qualified read-only lesson selection in the existing outcome ledger. Corrections,
-retirement and stale evidence exclude superseded advice while retaining history.
-Source 36, delivered 36, ownership six, actual safe-installed consumer and fixed
-preview passed; all three jobs retired. See
-[qualification report](.aide/queue/AIDE-OUTCOME-LESSONS-01/REPORT.md) and
-[usage contract](docs/reference/outcome-controller-v0.md).
-The development pack has 867 members; published Lite 1.0.0 is unchanged.
-Exact integration review and observed receipts govern dev/main synchronization.
+Qualified read-only lesson selection in the existing outcome ledger. Corrections, retirement and stale evidence exclude superseded advice while retaining history. Source 36, delivered 36, ownership six, actual safe-installed consumer and fixed preview passed; all three jobs retired. See [qualification report](.aide/queue/AIDE-OUTCOME-LESSONS-01/REPORT.md) and [usage contract](docs/reference/outcome-controller-v0.md). The development pack has 867 members; published Lite 1.0.0 is unchanged. Exact integration review and observed receipts govern dev/main synchronization.
 
 ### AIDE-TASK-DEVELOPMENT-BRIEF-01
 
-Qualified 84 source checks, 84 delivered checks and a safe-installed project brief that agrees
-with existing continuation, quality and lesson readers. Missing/invalid records
-remain explicit; no execution authority is granted. Joint preview passed.
-See [combined qualification](.aide/queue/AIDE-COMPACT-COMMUNICATION-01/REPORT.md);
-the integration receipt establishes dev/main sync.
+Qualified 84 source checks, 84 delivered checks and a safe-installed project brief that agrees with existing continuation, quality and lesson readers. Missing/invalid records remain explicit; no execution authority is granted. Joint preview passed. See [combined qualification](.aide/queue/AIDE-COMPACT-COMMUNICATION-01/REPORT.md); the integration receipt establishes dev/main sync.
 
 ### AIDE-COMPACT-COMMUNICATION-01
 
@@ -5340,76 +4161,39 @@ Qualified independent cooperative cancellation: 73 source methods, actual CLI/MC
 
 ### Dependency session continuity
 
-AIDE-DEPENDENCY-REBIND-01 is admitted for explicit cooperative configuration
-reconciliation over existing request/state owners. Preserve native work, stale
-writer refusal and independent publication gates; see the child ExecPlan.
+AIDE-DEPENDENCY-REBIND-01 is admitted for explicit cooperative configuration reconciliation over existing request/state owners. Preserve native work, stale writer refusal and independent publication gates; see the child ExecPlan.
 
-Dependency session continuity is qualified:88 source methods, two fresh-process
-workflows, v1/v2 reader compatibility, ownership6 and fixed preview passed.
-See [the report](.aide/queue/AIDE-DEPENDENCY-REBIND-01/REPORT.md); native host and publication stay separate.
+Dependency session continuity is qualified:88 source methods, two fresh-process workflows, v1/v2 reader compatibility, ownership6 and fixed preview passed. See [the report](.aide/queue/AIDE-DEPENDENCY-REBIND-01/REPORT.md); native host and publication stay separate.
 
 **Campaign current-state reconciliation.** AIDE-CAMPAIGN-CURRENT-STATE-01 repairs the existing parent view, preserving historical bytes and all unfinished acceptance. The single verification job passed and retired. Exact integration awaits terminal review; the child receipt will record actual effects. Full campaign acceptance remains open.
 
 ### AIDE-MINI-WORKER-01: Optional upstream worker
 
-Exact acquisition, 15 native lifecycle scenarios, passive compatibility,
-unchanged pack/release checks and fixed preview passed. All four jobs retired;
-original failures remain. See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md).
-Exact reviewed Git effects govern delivery. Real model work and release claims
-remain separate; the larger daily-use campaign remains open.
+Exact acquisition, 15 native lifecycle scenarios, passive compatibility, unchanged pack/release checks and fixed preview passed. All four jobs retired; original failures remain. See [report](.aide/queue/AIDE-MINI-WORKER-01/REPORT.md). Exact reviewed Git effects govern delivery. Real model work and release claims remain separate; the larger daily-use campaign remains open.
 
 ### Offline result continuation
 
-AIDE-OFFLINE-RESULT-HANDOFF-01 extends the existing portable task codec with
-selected-input request identity and returned candidate observations. Source,
-delivered and safe-installed qualification precede guarded integration. No new
-execution owner, automatic application or vintage host support is implied.
-Source, delivered and installed qualification is complete. The fixed preview and
-three retired jobs preserve exact evidence; see [the report](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md)
-and observed integration receipt for delivery. Full daily-use acceptance remains open.
+AIDE-OFFLINE-RESULT-HANDOFF-01 extends the existing portable task codec with selected-input request identity and returned candidate observations. Source, delivered and safe-installed qualification precede guarded integration. No new execution owner, automatic application or vintage host support is implied. Source, delivered and installed qualification is complete. The fixed preview and three retired jobs preserve exact evidence; see [the report](.aide/queue/AIDE-OFFLINE-RESULT-HANDOFF-01/REPORT.md) and observed integration receipt for delivery. Full daily-use acceptance remains open.
 
 ### Fresh symbol discovery
 
-AIDE-SYMBOL-DISCOVERY-01's bounded fresh syntax discovery is qualified in source,
-delivered code and a safe-installed consumer. The [report](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md)
-retains the failed export-delta assertion and successful continuation; integration
-has its own exact gate. P6 semantic binding, complete impact analysis and automatic
-refactoring remain open. This increment extends the existing quality owner.
+AIDE-SYMBOL-DISCOVERY-01's bounded fresh syntax discovery is qualified in source, delivered code and a safe-installed consumer. The [report](.aide/queue/AIDE-SYMBOL-DISCOVERY-01/REPORT.md) retains the failed export-delta assertion and successful continuation; integration has its own exact gate. P6 semantic binding, complete impact analysis and automatic refactoring remain open. This increment extends the existing quality owner.
 
 ### Offline task brief view
 
-AIDE-TASK-BRIEF-VIEW-01 advances P8.readonly_view through the existing task brief:
-one inactive saved page, exact component observations and preserved uncertainty.
-Source 104, delivered 104 and actual installed qualification passed. The
-[report](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md) binds the fixed preview and
-three retired jobs. Integration has its exact gate; browser rendering, live
-Workbench, actual host binding and native downstream acceptance remain separate.
+AIDE-TASK-BRIEF-VIEW-01 advances P8.readonly_view through the existing task brief: one inactive saved page, exact component observations and preserved uncertainty. Source 104, delivered 104 and actual installed qualification passed. The [report](.aide/queue/AIDE-TASK-BRIEF-VIEW-01/REPORT.md) binds the fixed preview and three retired jobs. Integration has its exact gate; browser rendering, live Workbench, actual host binding and native downstream acceptance remain separate.
 
 ### Fresh helper evidence in the task brief
 
-AIDE-TASK-BRIEF-SYMBOL-01 connects the existing task and source-inspection owners.
-Optional explicit symbol/related-file selection retains ordinary brief behavior.
-Source77, delivered77 and actual installed consumers passed with unchanged
-default output. The [report](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/REPORT.md) binds
-three retired jobs and the fixed preview. Guarded integration remains separate
-from complete semantic impact, native adoption and protected host editing.
+AIDE-TASK-BRIEF-SYMBOL-01 connects the existing task and source-inspection owners. Optional explicit symbol/related-file selection retains ordinary brief behavior. Source77, delivered77 and actual installed consumers passed with unchanged default output. The [report](.aide/queue/AIDE-TASK-BRIEF-SYMBOL-01/REPORT.md) binds three retired jobs and the fixed preview. Guarded integration remains separate from complete semantic impact, native adoption and protected host editing.
 
 ### Saved task view: observed browser profile
 
-AIDE-TASK-BRIEF-BROWSER-01 qualifies the unchanged saved real-task page in
-Edge155.0.4283.62 at desktop/narrow viewports. DOM and independent visual checks
-passed; lower content, interaction and accessibility remain open. Two jobs retired,
-unchanged product evidence reused. [Report](.aide/queue/AIDE-TASK-BRIEF-BROWSER-01/REPORT.md)
-binds exact scope and the separately reviewed integration effect.
+AIDE-TASK-BRIEF-BROWSER-01 qualifies the unchanged saved real-task page in Edge155.0.4283.62 at desktop/narrow viewports. DOM and independent visual checks passed; lower content, interaction and accessibility remain open. Two jobs retired, unchanged product evidence reused. [Report](.aide/queue/AIDE-TASK-BRIEF-BROWSER-01/REPORT.md) binds exact scope and the separately reviewed integration effect.
 
 ### Bounded task evidence inspection qualified
 
-[AIDE-TASK-EVIDENCE-READ-01](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/ExecPlan.md)
-corrects the actual large-receipt task-view failure through the existing reader.
-Source168, delivered168, ownership6 and installed consumers passed; small-evidence
-output is unchanged. [Evidence](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/REPORT.md)
-separates readable bytes, applicable evidence and acceptance. Guarded integration
-remains distinct from publication, live host qualification and native adoption.
+[AIDE-TASK-EVIDENCE-READ-01](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/ExecPlan.md) corrects the actual large-receipt task-view failure through the existing reader. Source168, delivered168, ownership6 and installed consumers passed; small-evidence output is unchanged. [Evidence](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/REPORT.md) separates readable bytes, applicable evidence and acceptance. Guarded integration remains distinct from publication, live host qualification and native adoption.
 
 ### Successor publication and release documentation ? 18 October 2026
 
