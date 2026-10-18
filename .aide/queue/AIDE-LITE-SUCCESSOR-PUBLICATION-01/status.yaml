@@ -1,13 +1,13 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-SUCCESSOR-PUBLICATION-01
 status: needs_review
-result: PRE_TAG_DOCUMENTATION_CANDIDATE
-next_action: exact documentation/default export and preview review
+result: PRE_TAG_DOCUMENTATION_QUALIFIED_RELEASE_REVIEW
+next_action: exact qualified integration, tag/publication and acquired-byte consumer review
 authentication: active Julesc013 account confirmed
 presentation_1_0_executed: true
 presentation_1_0_ref: evidence/published-1.0.0-presentation.json
 product_qualified: false
 publication_executed: false
 acquired_consumer: NOT_RUN
-jobs_allocated: 1
+jobs_allocated: 2
 maximum_jobs: 3

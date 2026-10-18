@@ -1,0 +1,14 @@
+{
+  "tests_run": 30,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "inputs": {
+    ".aide/scripts/tests/test_q31_export_pack_governance.py": "201edea2ac37a174f9384b06fe7a138b3880d5573eae06d4fdf93f8accd0b80b",
+    ".aide/scripts/tests/test_q34_changelog_release.py": "17aaf6a8950a651c8d671387d966bdc98af7a0deb39f44aa5b7a060b31fc431b",
+    ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79"
+  },
+  "fixture_inputs": {
+    "pack/import-policy.yaml": "d1ec0ff25cd147736853e03181536480463fc58fc8db1fd39306278d89d89e13"
+  }
+}

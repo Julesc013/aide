@@ -7,7 +7,7 @@ Release entries describe the delivered Lite package and its declared compatibili
 - **Added:** compact task briefs, optional fresh Python helper inspection, an inactive HTML view, portable task/result handoff, source-linked lessons and cooperative dependency interfaces, qualified only for their recorded subjects.
 - **Fixed:** bounded streaming inspection of larger retained task evidence, preserving safe paths and useful continuation advice.
 - **Changed:** compact commit/PR communication and short-lived task branches with reviewed, frequent dev/main synchronization.
-- **Docs:** root TODO and pre-tag documentation reconciliation; public Markdown uses logical paragraphs without manual column wrapping. Releases use concise sections, titled downloads and exact artifact links.
+- **Docs:** explicit cross-platform/vintage direction, root TODO and pre-tag documentation reconciliation; public Markdown uses logical paragraphs without manual column wrapping. Releases use concise sections, titled downloads and exact artifact links.
 - **Still open:** actual desktop editing/containment, native downstream adoption, complete effort comparisons and repeated daily-use acceptance. The saved readability candidate remains unqualified.
 
 #### AIDE Lite 1.1.0 — Qualified; publication pending
@@ -28,4 +28,4 @@ Release entries describe the delivered Lite package and its declared compatibili
 - **Known warnings:** fresh-fixture validation and context verification may report classified optional-content/cache/fixture-scope warnings; inspect the results before using them as evidence.
 - **Downloads and evidence:** [GitHub release](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0), [qualification and acquired-asset checks](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md).
 
-Earlier foundation history remains in [IMPLEMENT.md](IMPLEMENT.md) and [PLANS.md). Human release summaries are distinct from the detailed, generated changelog previews under `.aide/changelog/`.
+Earlier foundation history remains in [IMPLEMENT.md](IMPLEMENT.md) and [PLANS.md](PLANS.md). Human release summaries are distinct from the detailed, generated changelog previews under `.aide/changelog/`.

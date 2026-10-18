@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+### Pre-tag documentation and platform reach - 18 October 2026
+
+Documentation/default qualification composes 25 retained source passes with five newly completed methods, all 30 delivered checks, six ownership checks and an installed-project preservation fixture. Both jobs are retired; the original timeout is incomplete. The 875-member development pack carries the new default release checklist and communication/Git references; all eight frozen release assets are unchanged. Windows priority and broader Linux/macOS/BSD/Solaris/Unix/DOS/OS/2/future platform intent are explicit in the root roadmap, with qualification per profile. The exact 1.1.0 publication/acquisition and dev/main effect is prepared for independent review; no tag or publication is claimed. [WorkUnit](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md)
+
 ### Current work
 
 Start with [TODO.md](TODO.md) and the [campaign view](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md). The canonical queue owns each WorkUnit's scope, status, evidence and acceptance; this index preserves detailed and dated planning history. [ROADMAP.md](ROADMAP.md) and [specs](specs/) retain long-term intent.

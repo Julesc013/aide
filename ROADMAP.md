@@ -18,6 +18,22 @@ The [staged workflow roadmap](docs/roadmap/staged-expansion-roadmap.md) and its 
 
 The phase records below preserve foundation history and host-lane intent. Their earlier deferred labels do not erase later scoped implementation, and completed scaffolding does not establish a shipping product or modern IDE parity.
 
+### Platform reach
+
+Windows has priority for the current operator and the first qualified Lite profile. The product architecture spans other operating systems through one shared core and qualified adapters.
+
+| Platform family | Planned participation | Evidence required before claiming support |
+| --- | --- | --- |
+| Windows | Retain the qualified Lite profile; qualify additional native and host routes separately. | Exact package, OS/toolchain, operations and enforcement profile. |
+| Linux and macOS | Next bounded companion/CLI and execution-backend candidates. | Real OS runs for adoption, customization, update/recovery, process cancellation and applicable resource limits. |
+| BSD, Solaris and other Unix systems | Reuse portable mechanisms; adapt only actual platform differences. | Exact system/toolchain and filesystem, permissions, locking, process and resource behavior; Linux success does not establish these profiles. |
+| DOS, OS/2 and other constrained or vintage systems | A native subset where feasible, or inspectable file/offline relay to an authorized companion. | Exact encoding, filenames, size limits, toolchain and interrupted-exchange recovery; distinguish local capability from companion-provided work. |
+| Additional and future systems | Bind demonstrated capabilities to the existing contracts and profile model. | Conformance, declared limitations and repeatable consumer evidence for the proposed route. |
+
+Keep OS APIs and enforcement in existing platform backends. Do not require every client or target to run modern Python, a model, an IDE extension, containers or a service. Capability negotiation must expose unavailable operations and differing guarantees, including read access, cancellation and isolation; a relay cannot silently claim native enforcement. Shared semantic behavior, local execution, target builds and readable artifacts receive separate evidence. Exact support remains in the existing [support matrix](matrices/support-matrix.yaml), [platform reach](matrices/platform-reach.yaml), support tiers and host capability levels.
+
+This is planned reach, not a universal compatibility claim or a new release prerequisite for unchanged profiles. Admit concrete port/conformance increments through the existing queue, alongside dependency-ready daily-use work. Preserve the existing [host/legacy design](specs/control-plane/interop/native-and-legacy-hosts.md) and its draft/adoption boundaries.
+
 ### Historical synchronization checkpoint - 26 September 2026
 
 Reviewed campaign source was fast-forwarded from e88b1c2e to 53be4fc4; remaining historical evidence is preserved without malformed commit ancestry. The release and project rollout plan is in [the closeout report](.aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/evidence/repo-release-rollout-report.md). This is source/evidence integration only. Main, release assets and deployments are unchanged; final qualification remains open and development stays stopped.

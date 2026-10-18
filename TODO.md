@@ -17,6 +17,7 @@
 - [ ] Release newer development features only after their exact package/profile qualification: compact communication, task briefs, handoff, lessons and cooperative interfaces.
 - [ ] Prove one real pinned Mini worker attempt and a small matched comparison when an approved route and finite live-model budget are admitted.
 - [ ] Improve reuse/impact decisions, lightweight harvest and portable continuation through existing owners; preserve unknown, unindexed and stale evidence.
+- [ ] Qualify platform participation beyond Windows: bounded Linux/macOS profiles, then evidence-driven BSD/Solaris/Unix adaptations and DOS/OS/2/vintage native or offline-companion paths. Preserve common work/protocol semantics and declare each profile’s limits. [Platform reach](ROADMAP.md#platform-reach)
 - [ ] Expand host bindings, read-only Workbench/offline access, domain authoring, networked collaboration and controlled learning through their capability-specific gates.
 
 - [ ] Bring the legacy report-only release preview into line with the current checklist policy. Current release WorkUnits check the documentation gate explicitly; the preview does not automatically intercept tags.

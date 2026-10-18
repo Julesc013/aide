@@ -2,26 +2,35 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: bbc80a8cac1f278eccbc236e40f71144db7f88d3..6a08eb32efeb68ff88b3456897c871f23be30c67
-source_head: 6a08eb32efeb68ff88b3456897c871f23be30c67
+source_range: ecff55da6db49d63c4a3718b726f96d3cd74e6e9..75f9127dff3be6cad51a4fa7cdac69c0c600f9c0
+source_head: 75f9127dff3be6cad51a4fa7cdac69c0c600f9c0
 preview_only: true
 
 ## Highlights
 
-- Fixed: Inspect larger task receipts without losing safe evidence paths (347668a4a507)
+- Changed: Require pre-tag documentation and readable release presentation (3abb6086a075)
+- Changed: Preserve partial qualification and continue unfinished checks (75f9127dff3b)
+- Docs: Improve release notes and human download labels (d914e9109cd2)
+- Docs: Add TODO and reconcile release documentation and changelog (3abb6086a075)
 
 ## Validation Summary
 
-- 51ce6c7bbf7e: PASS - actual receipt sizes and reader behavior inspected
-  NOT RUN - source, delivered and installed regression checks
-- 347668a4a507: PASS - syntax and scoped diff checks
-  NOT RUN - 168 source checks and actual predecessor/task comparisons
-- 3f7ce8edf826: PASS - source168, actual comparisons, retirement, CURRENT binding
-  FAIL - export drift awaits its reviewed refresh
-  NOT RUN - delivered168, installed consumer and final preview
-- 6a08eb32efeb: PASS - source168, delivered168, ownership6 and installed consumer
-  PASS - actual task continuity, customization and independent projection oracle
-  NOT RUN - final preview; new browser rendering is outside this reader change
+- b1db5633c924: PASS - asset identities, accepted ancestry and release-scope comparison
+  NOT RUN - publication, downloads and acquired-byte consumer
+- f708e8c658d9: PASS - preparation checks recorded in evidence/preparation-validation.json
+  NOT RUN - authenticated publication, downloads and acquired-byte consumer
+- 6728db41ed6a: PASS - auth, branch/ref observation and conflict-only merge preview
+  NOT RUN - revised source, export, publication and acquired-byte checks
+- a5aecad6d8f6: PASS - reviewed six-file resolution map and frozen asset identities
+  NOT RUN - final release docs, publication and acquired-byte acceptance
+- d914e9109cd2: PASS - GitHub GFM renders both bodies without duplicated title or hard breaks
+  NOT RUN - remote metadata updates and all 1.1.0 publication effects
+- 3abb6086a075: PASS - whitespace-only reflow preserves tokens and fenced code; 1.0 metadata readback
+  NOT RUN - source/delivered30, owned export, installed defaults and fixed preview
+- 3abb6086a075: PASS - whitespace-only reflow preserves tokens and fenced code; 1.0 metadata readback
+  NOT RUN - source/delivered30, owned export, installed defaults and fixed preview
+- 75f9127dff3b: PASS - collection hashes, retirement and exact original inputs
+  NOT RUN - bounded continuation and installed default checks
 
 ## Known Risks
 
@@ -29,7 +38,8 @@ preview_only: true
 
 ## Follow-up
 
-- No follow-up summaries were extracted.
+- b1db5633c924: Review the exact release packet and establish publication authentication
+- f708e8c658d9: Authenticate GitHub CLI; recheck exact refs and release absence before effects
 
 ## Warnings
 

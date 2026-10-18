@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "scope": "documentation/default development pack and fixed preview only",
+  "source_coverage": {
+    "reused_completed": 25,
+    "newly_passed": 5,
+    "total": 30
+  },
+  "delivered_methods": 30,
+  "ownership_checks": 6,
+  "installed_documents_preserved": [
+    "AGENTS.md",
+    "TODO.md",
+    "PLANS.md",
+    "ROADMAP.md",
+    "CHANGELOG.md"
+  ],
+  "pack_members": 875,
+  "frozen_assets_unchanged": 8,
+  "original_attempt_status": "INCOMPLETE_TIMEOUT",
+  "attempts": {
+    "documentation-attempt-01.json": "435a6e744729585124f619c058d83a29618234bf9140336b7ad6a38bfb3ae5a6",
+    "documentation-attempt-02.json": "4a7bac441d7e36717310836e3500bda4ea19d69f5ebd5f829c27fc0fab7bd5cf"
+  },
+  "proofs": {
+    "documentation-02-source-tests.json": "5eeaad02680f0866fc2ebb5d9280afdb999f03ca4fd3bbe0d5b964790089aa00",
+    "documentation-02-delivered-tests.json": "b8187a8bd0346ce45f6bda624cd02e6ffaeaaccd5af692e605adcb3032f0ae52",
+    "documentation-02-installed-documentation.json": "fe46903b2db487a5c9a3d06f3eb0b6f9c6c53fd9fe3c296ad19ba530bb8a8cdb",
+    "documentation-02-documentation-result.json": "a2a1411fc74c5f2b72cd7c169dfb30384f09860390a3ac92cb4cf7743225d578"
+  },
+  "preview_source": "75f9127dff3be6cad51a4fa7cdac69c0c600f9c0",
+  "preview_excludes": "later export/outcome/publication-preparation commits; final strict range checks cover their formatting",
+  "profile": "Existing unmodified 600-second qualification profile for continuation",
+  "automatic_tag_enforcement": false,
+  "model_requests": 0,
+  "whole_outcome_usage": "unknown"
+}

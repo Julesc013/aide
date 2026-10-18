@@ -1,0 +1,9 @@
+AIDE Lite pack-status
+pack: .aide/export/aide-lite-pack-v0
+exists: true
+checksums_valid: true
+provenance_result: DIRTY_SOURCE_RECORDED
+boundary_result: PASS
+checksum_problems: 0
+provenance_problems: 0
+boundary_violations: 0

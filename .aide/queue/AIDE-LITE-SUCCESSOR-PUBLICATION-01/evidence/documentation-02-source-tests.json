@@ -1,0 +1,49 @@
+{
+  "tests_run": 5,
+  "reused_completed": 25,
+  "coverage_methods": 30,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "inputs": {
+    ".aide/scripts/tests/test_q31_export_pack_governance.py": "201edea2ac37a174f9384b06fe7a138b3880d5573eae06d4fdf93f8accd0b80b",
+    ".aide/scripts/tests/test_q34_changelog_release.py": "17aaf6a8950a651c8d671387d966bdc98af7a0deb39f44aa5b7a060b31fc431b",
+    ".aide/scripts/tests/test_q48_github_release_draft.py": "9e64617635d1edfa34e8162415f5f51651a2ce65bb91474b67fab02384659b79"
+  },
+  "prior_job_id": "586d4ad910764c86b6a92c00af927d72",
+  "prior_log_sha256": "022766e903454c621fc79fe6f1432e8429b68a7a47361aa32acc023e5f226356",
+  "reused_ids": [
+    "source_test_q31_export_pack_governance.Q31ExportPackGovernanceTests.test_export_policy_names_q27_to_q30_governance_classes",
+    "source_test_q31_export_pack_governance.Q31ExportPackGovernanceTests.test_exported_checksums_validate",
+    "source_test_q31_export_pack_governance.Q31ExportPackGovernanceTests.test_fixture_import_runs_governance_commands_without_hook_install",
+    "source_test_q31_export_pack_governance.Q31ExportPackGovernanceTests.test_manifest_excludes_source_branch_state",
+    "source_test_q31_export_pack_governance.Q31ExportPackGovernanceTests.test_manifest_includes_commit_task_and_git_governance",
+    "source_test_q31_export_pack_governance.Q31ExportPackGovernanceTests.test_q31_golden_tasks_pass",
+    "source_test_q34_changelog_release.Q34ChangelogReleaseTests.test_changelog_validate_passes_for_current_repo_outputs",
+    "source_test_q34_changelog_release.Q34ChangelogReleaseTests.test_detect_legacy_semi_structured_commit_as_warning",
+    "source_test_q34_changelog_release.Q34ChangelogReleaseTests.test_detect_malformed_commit_body",
+    "source_test_q34_changelog_release.Q34ChangelogReleaseTests.test_generate_markdown_and_json_previews_from_fixture_repo",
+    "source_test_q34_changelog_release.Q34ChangelogReleaseTests.test_handle_merge_commit_as_ignored",
+    "source_test_q34_changelog_release.Q34ChangelogReleaseTests.test_malformed_report_contains_malformed_fixture",
+    "source_test_q34_changelog_release.Q34ChangelogReleaseTests.test_parse_aide_trailers",
+    "source_test_q34_changelog_release.Q34ChangelogReleaseTests.test_parse_breaking_marker",
+    "source_test_q34_changelog_release.Q34ChangelogReleaseTests.test_parse_structured_body_sections_trailers_and_categories",
+    "source_test_q34_changelog_release.Q34ChangelogReleaseTests.test_parse_valid_conventional_subject",
+    "source_test_q34_changelog_release.Q34ChangelogReleaseTests.test_preview_source_head_follows_selected_revision",
+    "source_test_q34_changelog_release.Q34ChangelogReleaseTests.test_preview_text_does_not_publish_or_tag",
+    "source_test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_assets_include_hashes_and_upload_plan_is_no_upload",
+    "source_test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_commands_generate_local_only_outputs",
+    "source_test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_draft_distinguishes_legacy_planners_from_exact_plan_apply",
+    "source_test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_draft_provenance_uses_pack_identity_not_checkout_path",
+    "source_test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_draft_validate_rejects_checksum_mismatch",
+    "source_test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_draft_validate_rejects_implied_published_state",
+    "source_test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_fixture_bundle_produces_draft_markdown_and_json"
+  ],
+  "executed_ids": [
+    "source_test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_missing_preview_json_blocks_draft_and_draft_validate",
+    "source_test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_missing_required_asset_creates_blocker",
+    "source_test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_policy_and_schema_validation",
+    "source_test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_publication_boundary_is_false_and_advisory_only",
+    "source_test_q48_github_release_draft.Q48GitHubReleaseDraftTests.test_stale_previews_are_not_publish_candidates"
+  ]
+}

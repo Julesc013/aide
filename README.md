@@ -4,6 +4,8 @@
 
 **AIDE is a portable agentic development control plane for real repositories.**
 
+**Platform scope:** Windows, Linux, macOS, BSD, Solaris/Unix, DOS, OS/2 and future operating systems belong in AIDE’s design scope. Shared work records and protocols stay independent of OS and editor; native adapters, local companions and offline relays provide different ways to participate. Each profile records its actual capabilities and qualification. The published Windows profile is one starting point in that wider programme. [Platform plan](ROADMAP.md#platform-reach)
+
 AIDE helps repositories develop and maintain themselves. It turns development work into protocol objects, evidence packets, event records, and OKF-compatible knowledge so humans, agents, tests, IDEs, scripts, and legacy environments can coordinate through one repo-native control plane.
 
 ```text

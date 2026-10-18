@@ -1,19 +1,19 @@
 {
   "categories": {
-    "Fixed": [
+    "Changed": [
       {
         "aide_phase": "",
         "aide_result": "",
         "breaking": false,
         "breaking_change": "",
-        "category": "Fixed",
-        "commit": "347668a4a507",
-        "commit_sha": "347668a4a507105e71736d00d5e6ba7331c1fe79",
-        "entry": "Inspect larger task receipts without losing safe evidence paths",
+        "category": "Changed",
+        "commit": "3abb6086a075",
+        "commit_sha": "3abb6086a075da3601a2c4f177fc171e8633ab09",
+        "entry": "Require pre-tag documentation and readable release presentation",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "task",
+        "scope": "release",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -21,10 +21,87 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "fix(task): stream retained evidence within a separate bound",
-        "summary": "Inspect larger task receipts without losing safe evidence paths",
-        "type": "fix",
-        "validation": "PASS - syntax and scoped diff checks\nNOT RUN - 168 source checks and actual predecessor/task comparisons"
+        "subject": "docs(release): reconcile pre-tag docs and add the root TODO",
+        "summary": "Require pre-tag documentation and readable release presentation",
+        "type": "docs",
+        "validation": "PASS - whitespace-only reflow preserves tokens and fenced code; 1.0 metadata readback\nNOT RUN - source/delivered30, owned export, installed defaults and fixed preview"
+      },
+      {
+        "aide_phase": "",
+        "aide_result": "",
+        "breaking": false,
+        "breaking_change": "",
+        "category": "Changed",
+        "commit": "75f9127dff3b",
+        "commit_sha": "75f9127dff3be6cad51a4fa7cdac69c0c600f9c0",
+        "entry": "Preserve partial qualification and continue unfinished checks",
+        "follow_up": "",
+        "message_format": "compact-v1",
+        "risks": "",
+        "scope": "release",
+        "source_sections_present": [
+          "Body",
+          "Validation",
+          "Changelog",
+          "AIDE-Task",
+          "AIDE-Format"
+        ],
+        "subject": "test(release): continue unfinished documentation checks",
+        "summary": "Preserve partial qualification and continue unfinished checks",
+        "type": "test",
+        "validation": "PASS - collection hashes, retirement and exact original inputs\nNOT RUN - bounded continuation and installed default checks"
+      }
+    ],
+    "Docs": [
+      {
+        "aide_phase": "",
+        "aide_result": "",
+        "breaking": false,
+        "breaking_change": "",
+        "category": "Docs",
+        "commit": "d914e9109cd2",
+        "commit_sha": "d914e9109cd27d0e5e00d6b3648dae344d4c5412",
+        "entry": "Improve release notes and human download labels",
+        "follow_up": "",
+        "message_format": "compact-v1",
+        "risks": "",
+        "scope": "release",
+        "source_sections_present": [
+          "Body",
+          "Validation",
+          "Changelog",
+          "AIDE-Task",
+          "AIDE-Format"
+        ],
+        "subject": "docs(release): prepare readable release pages and download labels",
+        "summary": "Improve release notes and human download labels",
+        "type": "docs",
+        "validation": "PASS - GitHub GFM renders both bodies without duplicated title or hard breaks\nNOT RUN - remote metadata updates and all 1.1.0 publication effects"
+      },
+      {
+        "aide_phase": "",
+        "aide_result": "",
+        "breaking": false,
+        "breaking_change": "",
+        "category": "Docs",
+        "commit": "3abb6086a075",
+        "commit_sha": "3abb6086a075da3601a2c4f177fc171e8633ab09",
+        "entry": "Add TODO and reconcile release documentation and changelog",
+        "follow_up": "",
+        "message_format": "compact-v1",
+        "risks": "",
+        "scope": "release",
+        "source_sections_present": [
+          "Body",
+          "Validation",
+          "Changelog",
+          "AIDE-Task",
+          "AIDE-Format"
+        ],
+        "subject": "docs(release): reconcile pre-tag docs and add the root TODO",
+        "summary": "Add TODO and reconcile release documentation and changelog",
+        "type": "docs",
+        "validation": "PASS - whitespace-only reflow preserves tokens and fenced code; 1.0 metadata readback\nNOT RUN - source/delivered30, owned export, installed defaults and fixed preview"
       }
     ],
     "Internal": [
@@ -34,24 +111,25 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "51ce6c7bbf7e",
-        "commit_sha": "51ce6c7bbf7eaabeb1ffd5f08619b3d60ab4add3",
-        "entry": "Admit bounded task evidence reader correction",
-        "follow_up": "",
+        "commit": "b1db5633c924",
+        "commit_sha": "b1db5633c9241dae80fcc2893f223784d25cfc7b",
+        "entry": "Admit bounded publication of the qualified Lite successor",
+        "follow_up": "Review the exact release packet and establish publication authentication",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "task",
+        "scope": "release",
         "source_sections_present": [
           "Body",
           "Validation",
           "Changelog",
           "AIDE-Task",
-          "AIDE-Format"
+          "AIDE-Format",
+          "Follow-up"
         ],
-        "subject": "fix(task): admit bounded inspection of larger evidence",
-        "summary": "Admit bounded task evidence reader correction",
-        "type": "fix",
-        "validation": "PASS - actual receipt sizes and reader behavior inspected\nNOT RUN - source, delivered and installed regression checks"
+        "subject": "chore(release): admit frozen successor publication",
+        "summary": "Admit bounded publication of the qualified Lite successor",
+        "type": "chore",
+        "validation": "PASS - asset identities, accepted ancestry and release-scope comparison\nNOT RUN - publication, downloads and acquired-byte consumer"
       },
       {
         "aide_phase": "",
@@ -59,24 +137,25 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "3f7ce8edf826",
-        "commit_sha": "3f7ce8edf82669a5533c601d844c222341beb053",
-        "entry": "Prepare delivered and installed evidence reader qualification",
-        "follow_up": "",
+        "commit": "f708e8c658d9",
+        "commit_sha": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+        "entry": "Prepare reviewed successor release and acquisition",
+        "follow_up": "Authenticate GitHub CLI; recheck exact refs and release absence before effects",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "task",
+        "scope": "release",
         "source_sections_present": [
           "Body",
           "Validation",
           "Changelog",
           "AIDE-Task",
-          "AIDE-Format"
+          "AIDE-Format",
+          "Follow-up"
         ],
-        "subject": "test(task): prepare installed evidence reader checks",
-        "summary": "Prepare delivered and installed evidence reader qualification",
-        "type": "test",
-        "validation": "PASS - source168, actual comparisons, retirement, CURRENT binding\nFAIL - export drift awaits its reviewed refresh\nNOT RUN - delivered168, installed consumer and final preview"
+        "subject": "chore(release): prepare exact successor publication and acquisition",
+        "summary": "Prepare reviewed successor release and acquisition",
+        "type": "chore",
+        "validation": "PASS - preparation checks recorded in evidence/preparation-validation.json\nNOT RUN - authenticated publication, downloads and acquired-byte consumer"
       },
       {
         "aide_phase": "",
@@ -84,13 +163,13 @@
         "breaking": false,
         "breaking_change": "",
         "category": "Internal",
-        "commit": "6a08eb32efeb",
-        "commit_sha": "6a08eb32efeb68ff88b3456897c871f23be30c67",
-        "entry": "Retain installed evidence reader qualification",
+        "commit": "6728db41ed6a",
+        "commit_sha": "6728db41ed6a67e7f25429f53632682814f380d2",
+        "entry": "Resume qualified Lite publication with current documentation",
         "follow_up": "",
         "message_format": "compact-v1",
         "risks": "",
-        "scope": "task",
+        "scope": "release",
         "source_sections_present": [
           "Body",
           "Validation",
@@ -98,18 +177,44 @@
           "AIDE-Task",
           "AIDE-Format"
         ],
-        "subject": "test(task): qualify installed large-evidence inspection",
-        "summary": "Retain installed evidence reader qualification",
-        "type": "test",
-        "validation": "PASS - source168, delivered168, ownership6 and installed consumer\nPASS - actual task continuity, customization and independent projection oracle\nNOT RUN - final preview; new browser rendering is outside this reader change"
+        "subject": "chore(release): resume publication with documentation gates",
+        "summary": "Resume qualified Lite publication with current documentation",
+        "type": "chore",
+        "validation": "PASS - auth, branch/ref observation and conflict-only merge preview\nNOT RUN - revised source, export, publication and acquired-byte checks"
+      },
+      {
+        "aide_phase": "",
+        "aide_result": "",
+        "breaking": false,
+        "breaking_change": "",
+        "category": "Internal",
+        "commit": "a5aecad6d8f6",
+        "commit_sha": "a5aecad6d8f685aaaa6e0defb4eee6969035f921",
+        "entry": "Reconcile successor publication with current development",
+        "follow_up": "",
+        "message_format": "compact-v1",
+        "risks": "",
+        "scope": "release",
+        "source_sections_present": [
+          "Body",
+          "Validation",
+          "Changelog",
+          "AIDE-Task",
+          "AIDE-Format"
+        ],
+        "subject": "chore(release): reconcile publication preparation with dev",
+        "summary": "Reconcile successor publication with current development",
+        "type": "chore",
+        "validation": "PASS - reviewed six-file resolution map and frozen asset identities\nNOT RUN - final release docs, publication and acquired-byte acceptance"
       }
     ]
   },
   "category_counts": {
-    "Fixed": 1,
-    "Internal": 3
+    "Changed": 2,
+    "Docs": 2,
+    "Internal": 4
   },
-  "commit_count": 4,
+  "commit_count": 7,
   "entries": [
     {
       "aide_phase": "",
@@ -117,49 +222,25 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "51ce6c7bbf7e",
-      "commit_sha": "51ce6c7bbf7eaabeb1ffd5f08619b3d60ab4add3",
-      "entry": "Admit bounded task evidence reader correction",
-      "follow_up": "",
+      "commit": "b1db5633c924",
+      "commit_sha": "b1db5633c9241dae80fcc2893f223784d25cfc7b",
+      "entry": "Admit bounded publication of the qualified Lite successor",
+      "follow_up": "Review the exact release packet and establish publication authentication",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "task",
+      "scope": "release",
       "source_sections_present": [
         "Body",
         "Validation",
         "Changelog",
         "AIDE-Task",
-        "AIDE-Format"
+        "AIDE-Format",
+        "Follow-up"
       ],
-      "subject": "fix(task): admit bounded inspection of larger evidence",
-      "summary": "Admit bounded task evidence reader correction",
-      "type": "fix",
-      "validation": "PASS - actual receipt sizes and reader behavior inspected\nNOT RUN - source, delivered and installed regression checks"
-    },
-    {
-      "aide_phase": "",
-      "aide_result": "",
-      "breaking": false,
-      "breaking_change": "",
-      "category": "Fixed",
-      "commit": "347668a4a507",
-      "commit_sha": "347668a4a507105e71736d00d5e6ba7331c1fe79",
-      "entry": "Inspect larger task receipts without losing safe evidence paths",
-      "follow_up": "",
-      "message_format": "compact-v1",
-      "risks": "",
-      "scope": "task",
-      "source_sections_present": [
-        "Body",
-        "Validation",
-        "Changelog",
-        "AIDE-Task",
-        "AIDE-Format"
-      ],
-      "subject": "fix(task): stream retained evidence within a separate bound",
-      "summary": "Inspect larger task receipts without losing safe evidence paths",
-      "type": "fix",
-      "validation": "PASS - syntax and scoped diff checks\nNOT RUN - 168 source checks and actual predecessor/task comparisons"
+      "subject": "chore(release): admit frozen successor publication",
+      "summary": "Admit bounded publication of the qualified Lite successor",
+      "type": "chore",
+      "validation": "PASS - asset identities, accepted ancestry and release-scope comparison\nNOT RUN - publication, downloads and acquired-byte consumer"
     },
     {
       "aide_phase": "",
@@ -167,24 +248,25 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "3f7ce8edf826",
-      "commit_sha": "3f7ce8edf82669a5533c601d844c222341beb053",
-      "entry": "Prepare delivered and installed evidence reader qualification",
-      "follow_up": "",
+      "commit": "f708e8c658d9",
+      "commit_sha": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+      "entry": "Prepare reviewed successor release and acquisition",
+      "follow_up": "Authenticate GitHub CLI; recheck exact refs and release absence before effects",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "task",
+      "scope": "release",
       "source_sections_present": [
         "Body",
         "Validation",
         "Changelog",
         "AIDE-Task",
-        "AIDE-Format"
+        "AIDE-Format",
+        "Follow-up"
       ],
-      "subject": "test(task): prepare installed evidence reader checks",
-      "summary": "Prepare delivered and installed evidence reader qualification",
-      "type": "test",
-      "validation": "PASS - source168, actual comparisons, retirement, CURRENT binding\nFAIL - export drift awaits its reviewed refresh\nNOT RUN - delivered168, installed consumer and final preview"
+      "subject": "chore(release): prepare exact successor publication and acquisition",
+      "summary": "Prepare reviewed successor release and acquisition",
+      "type": "chore",
+      "validation": "PASS - preparation checks recorded in evidence/preparation-validation.json\nNOT RUN - authenticated publication, downloads and acquired-byte consumer"
     },
     {
       "aide_phase": "",
@@ -192,13 +274,13 @@
       "breaking": false,
       "breaking_change": "",
       "category": "Internal",
-      "commit": "6a08eb32efeb",
-      "commit_sha": "6a08eb32efeb68ff88b3456897c871f23be30c67",
-      "entry": "Retain installed evidence reader qualification",
+      "commit": "6728db41ed6a",
+      "commit_sha": "6728db41ed6a67e7f25429f53632682814f380d2",
+      "entry": "Resume qualified Lite publication with current documentation",
       "follow_up": "",
       "message_format": "compact-v1",
       "risks": "",
-      "scope": "task",
+      "scope": "release",
       "source_sections_present": [
         "Body",
         "Validation",
@@ -206,10 +288,135 @@
         "AIDE-Task",
         "AIDE-Format"
       ],
-      "subject": "test(task): qualify installed large-evidence inspection",
-      "summary": "Retain installed evidence reader qualification",
+      "subject": "chore(release): resume publication with documentation gates",
+      "summary": "Resume qualified Lite publication with current documentation",
+      "type": "chore",
+      "validation": "PASS - auth, branch/ref observation and conflict-only merge preview\nNOT RUN - revised source, export, publication and acquired-byte checks"
+    },
+    {
+      "aide_phase": "",
+      "aide_result": "",
+      "breaking": false,
+      "breaking_change": "",
+      "category": "Internal",
+      "commit": "a5aecad6d8f6",
+      "commit_sha": "a5aecad6d8f685aaaa6e0defb4eee6969035f921",
+      "entry": "Reconcile successor publication with current development",
+      "follow_up": "",
+      "message_format": "compact-v1",
+      "risks": "",
+      "scope": "release",
+      "source_sections_present": [
+        "Body",
+        "Validation",
+        "Changelog",
+        "AIDE-Task",
+        "AIDE-Format"
+      ],
+      "subject": "chore(release): reconcile publication preparation with dev",
+      "summary": "Reconcile successor publication with current development",
+      "type": "chore",
+      "validation": "PASS - reviewed six-file resolution map and frozen asset identities\nNOT RUN - final release docs, publication and acquired-byte acceptance"
+    },
+    {
+      "aide_phase": "",
+      "aide_result": "",
+      "breaking": false,
+      "breaking_change": "",
+      "category": "Docs",
+      "commit": "d914e9109cd2",
+      "commit_sha": "d914e9109cd27d0e5e00d6b3648dae344d4c5412",
+      "entry": "Improve release notes and human download labels",
+      "follow_up": "",
+      "message_format": "compact-v1",
+      "risks": "",
+      "scope": "release",
+      "source_sections_present": [
+        "Body",
+        "Validation",
+        "Changelog",
+        "AIDE-Task",
+        "AIDE-Format"
+      ],
+      "subject": "docs(release): prepare readable release pages and download labels",
+      "summary": "Improve release notes and human download labels",
+      "type": "docs",
+      "validation": "PASS - GitHub GFM renders both bodies without duplicated title or hard breaks\nNOT RUN - remote metadata updates and all 1.1.0 publication effects"
+    },
+    {
+      "aide_phase": "",
+      "aide_result": "",
+      "breaking": false,
+      "breaking_change": "",
+      "category": "Docs",
+      "commit": "3abb6086a075",
+      "commit_sha": "3abb6086a075da3601a2c4f177fc171e8633ab09",
+      "entry": "Add TODO and reconcile release documentation and changelog",
+      "follow_up": "",
+      "message_format": "compact-v1",
+      "risks": "",
+      "scope": "release",
+      "source_sections_present": [
+        "Body",
+        "Validation",
+        "Changelog",
+        "AIDE-Task",
+        "AIDE-Format"
+      ],
+      "subject": "docs(release): reconcile pre-tag docs and add the root TODO",
+      "summary": "Add TODO and reconcile release documentation and changelog",
+      "type": "docs",
+      "validation": "PASS - whitespace-only reflow preserves tokens and fenced code; 1.0 metadata readback\nNOT RUN - source/delivered30, owned export, installed defaults and fixed preview"
+    },
+    {
+      "aide_phase": "",
+      "aide_result": "",
+      "breaking": false,
+      "breaking_change": "",
+      "category": "Changed",
+      "commit": "3abb6086a075",
+      "commit_sha": "3abb6086a075da3601a2c4f177fc171e8633ab09",
+      "entry": "Require pre-tag documentation and readable release presentation",
+      "follow_up": "",
+      "message_format": "compact-v1",
+      "risks": "",
+      "scope": "release",
+      "source_sections_present": [
+        "Body",
+        "Validation",
+        "Changelog",
+        "AIDE-Task",
+        "AIDE-Format"
+      ],
+      "subject": "docs(release): reconcile pre-tag docs and add the root TODO",
+      "summary": "Require pre-tag documentation and readable release presentation",
+      "type": "docs",
+      "validation": "PASS - whitespace-only reflow preserves tokens and fenced code; 1.0 metadata readback\nNOT RUN - source/delivered30, owned export, installed defaults and fixed preview"
+    },
+    {
+      "aide_phase": "",
+      "aide_result": "",
+      "breaking": false,
+      "breaking_change": "",
+      "category": "Changed",
+      "commit": "75f9127dff3b",
+      "commit_sha": "75f9127dff3be6cad51a4fa7cdac69c0c600f9c0",
+      "entry": "Preserve partial qualification and continue unfinished checks",
+      "follow_up": "",
+      "message_format": "compact-v1",
+      "risks": "",
+      "scope": "release",
+      "source_sections_present": [
+        "Body",
+        "Validation",
+        "Changelog",
+        "AIDE-Task",
+        "AIDE-Format"
+      ],
+      "subject": "test(release): continue unfinished documentation checks",
+      "summary": "Preserve partial qualification and continue unfinished checks",
       "type": "test",
-      "validation": "PASS - source168, delivered168, ownership6 and installed consumer\nPASS - actual task continuity, customization and independent projection oracle\nNOT RUN - final preview; new browser rendering is outside this reader change"
+      "validation": "PASS - collection hashes, retirement and exact original inputs\nNOT RUN - bounded continuation and installed default checks"
     }
   ],
   "generated_by": "aide-lite",
@@ -220,7 +427,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "6a08eb32efeb68ff88b3456897c871f23be30c67",
-  "source_range": "bbc80a8cac1f278eccbc236e40f71144db7f88d3..6a08eb32efeb68ff88b3456897c871f23be30c67",
+  "source_head": "75f9127dff3be6cad51a4fa7cdac69c0c600f9c0",
+  "source_range": "ecff55da6db49d63c4a3718b726f96d3cd74e6e9..75f9127dff3be6cad51a4fa7cdac69c0c600f9c0",
   "warnings": []
 }

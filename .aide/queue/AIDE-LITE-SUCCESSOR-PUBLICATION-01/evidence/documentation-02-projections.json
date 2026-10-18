@@ -1,0 +1,86 @@
+[
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\38290891109f4ec6bd2155bf0c95c393\\output\\continuation-result.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-02-continuation-result.json",
+    "raw_sha256": "54ddf5f6fd8b84dfe09a978ed15f9b4d1c7be6de2477e7d29b35a2d676f16ff2",
+    "projection_sha256": "54ddf5f6fd8b84dfe09a978ed15f9b4d1c7be6de2477e7d29b35a2d676f16ff2",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\38290891109f4ec6bd2155bf0c95c393\\output\\delivered-tests.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-02-delivered-tests.json",
+    "raw_sha256": "b8187a8bd0346ce45f6bda624cd02e6ffaeaaccd5af692e605adcb3032f0ae52",
+    "projection_sha256": "b8187a8bd0346ce45f6bda624cd02e6ffaeaaccd5af692e605adcb3032f0ae52",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\38290891109f4ec6bd2155bf0c95c393\\output\\doctor.stdout",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-02-doctor.stdout",
+    "raw_sha256": "585c64e7eac737c2e172b11d760d884d7c614858c1521bb8941c4e4ffa595f42",
+    "projection_sha256": "0b8696637e0634e1e5fe88ec124858fae1ad5c607ba3b8aa1ab7d063fab289e7",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\38290891109f4ec6bd2155bf0c95c393\\output\\documentation-result.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-02-documentation-result.json",
+    "raw_sha256": "a2a1411fc74c5f2b72cd7c169dfb30384f09860390a3ac92cb4cf7743225d578",
+    "projection_sha256": "a2a1411fc74c5f2b72cd7c169dfb30384f09860390a3ac92cb4cf7743225d578",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\38290891109f4ec6bd2155bf0c95c393\\output\\export-pack.stdout",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-02-export-pack.stdout",
+    "raw_sha256": "55fd6b9d8a9cf52620993404107828777bee11d2fc5f3d931a94661c377a67f6",
+    "projection_sha256": "f8c8490e553f8dbfc31e2f15abd6f7880dda9c190067e075aad942de8e2af271",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\38290891109f4ec6bd2155bf0c95c393\\output\\installed-documentation.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-02-installed-documentation.json",
+    "raw_sha256": "fe46903b2db487a5c9a3d06f3eb0b6f9c6c53fd9fe3c296ad19ba530bb8a8cdb",
+    "projection_sha256": "fe46903b2db487a5c9a3d06f3eb0b6f9c6c53fd9fe3c296ad19ba530bb8a8cdb",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\38290891109f4ec6bd2155bf0c95c393\\output\\ownership-tests.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-02-ownership-tests.json",
+    "raw_sha256": "a6cf7e4ddadc235eedf04e5d2971739d575be1b957628d6ff38935c8ddc51b4c",
+    "projection_sha256": "7a92b9be040cef9b06d833e29ba6a2157b39ec99aa110afee5e2693e2320bb12",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\38290891109f4ec6bd2155bf0c95c393\\output\\pack-status.stdout",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-02-pack-status.stdout",
+    "raw_sha256": "8a84a5ad70abf02c5ec93d09f445f619c295050bc7a9455c1c81338ec1dfb131",
+    "projection_sha256": "93c22fefe64112f98edddc6c0b3fecf68bf0f3d0adc7bb0c8a4e11fadbe44ea2",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\38290891109f4ec6bd2155bf0c95c393\\output\\preview-result.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-02-preview-result.json",
+    "raw_sha256": "b9e4ae0497d0249c2f5a436cf97c302b985d7899ba6787be5bc58bbfaae9cda8",
+    "projection_sha256": "b9e4ae0497d0249c2f5a436cf97c302b985d7899ba6787be5bc58bbfaae9cda8",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\38290891109f4ec6bd2155bf0c95c393\\output\\qualification.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-02-qualification.json",
+    "raw_sha256": "3afc5468b97dd7becbf3014c0366e34a0be22d64f8f90c1311f49bdce4584ce2",
+    "projection_sha256": "3afc5468b97dd7becbf3014c0366e34a0be22d64f8f90c1311f49bdce4584ce2",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\38290891109f4ec6bd2155bf0c95c393\\output\\source-tests.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-02-source-tests.json",
+    "raw_sha256": "5eeaad02680f0866fc2ebb5d9280afdb999f03ca4fd3bbe0d5b964790089aa00",
+    "projection_sha256": "5eeaad02680f0866fc2ebb5d9280afdb999f03ca4fd3bbe0d5b964790089aa00",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\38290891109f4ec6bd2155bf0c95c393\\output\\validate.stdout",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/documentation-02-validate.stdout",
+    "raw_sha256": "be6b6f03e72a9ed259664ae6465bfb36de0d451860a5dab2b651106d55353aac",
+    "projection_sha256": "306374f6f1ba3ba6997e0e4e1b9ea608058315a34695b965874aed83d3bed1d3",
+    "transformation": "CRLF to LF only"
+  }
+]

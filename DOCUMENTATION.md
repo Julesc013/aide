@@ -1,5 +1,7 @@
 # AIDE Documentation Index
 
+**Platform direction:** [ROADMAP platform reach](ROADMAP.md#platform-reach) links the existing support/reach records and native/legacy design. Windows release qualification and the wider product architecture remain separate.
+
 ### Current planning and release entry points
 
 - [TODO](TODO.md): compact current checklist, blockers and next owners; canonical task state remains in the filesystem queue.

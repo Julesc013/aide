@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "managed_defaults": {
+    ".aide/policies/release-checklist.yaml": "fca9eaf5eead2c7b1ad2b8e702c18d5dd3b333ea845e8e1b159218067e6dc9a1",
+    "docs/reference/commit-discipline.md": "2b7d735b365458f4ec1ef3ff5390fa0668a5924e94966dc8e3bb13ffe97779fb",
+    "docs/reference/git-workflow-policy.md": "b31a9565ff79a7052899461f1de0c2f02e8451d43fe17186a82f43b41bea8f2b"
+  },
+  "project_owned_documents_preserved": [
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "PLANS.md",
+    "ROADMAP.md",
+    "TODO.md"
+  ],
+  "core_absent": true,
+  "scope": "documentation and policy transfer; no automatic tag enforcement or publication"
+}

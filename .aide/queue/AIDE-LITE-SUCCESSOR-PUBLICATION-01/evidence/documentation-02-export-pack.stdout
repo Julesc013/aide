@@ -1,0 +1,9 @@
+AIDE Lite export-pack
+pack: .aide/export/aide-lite-pack-v0
+manifest: .aide/export/aide-lite-pack-v0/manifest.yaml
+checksums: .aide/export/aide-lite-pack-v0/checksums.json
+included_files: 869
+checksum_count: 872
+boundary_result: PASS
+provider_or_model_calls: none
+network_calls: none

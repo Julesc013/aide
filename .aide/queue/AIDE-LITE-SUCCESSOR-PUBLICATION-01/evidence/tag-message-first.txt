@@ -1,0 +1,17 @@
+AIDE Lite 1.1.0: qualified local Windows companion CLI
+
+Tag the accepted qualification ancestor dfae9356241dda6a03e2cc48cf9acb245c9a6be1.
+Archive source is 447e393b3f87004641b7387c1f33828ac1ee3a85, tree
+e9407c08ecd5e640a4c3223d2cf8a0cbfdd8636d; technical review is
+3a36366c052f308a8ecee10d32690ce0cb75cae7. The tag is not the payload source.
+
+ZIP SHA256: 80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc
+TAR SHA256: 7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44
+Manifest SHA256: 38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f
+Checksums SHA256: 01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e
+
+Profile: T3 local Windows companion CLI, Windows 10 build 19045 / Python 3.14.8.
+Contract: 56 exact forms; actual published 1.0.0 predecessor qualification.
+Limits: changed-path rollback and customized-overlay downgrade need manual
+reconciliation; outer-client containment and read isolation remain unqualified.
+Newer development features and whole-task efficiency are not release claims.

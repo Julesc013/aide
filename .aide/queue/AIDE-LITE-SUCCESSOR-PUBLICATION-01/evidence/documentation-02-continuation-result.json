@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "original_attempt": "586d4ad910764c86b6a92c00af927d72",
+  "original_status": "INCOMPLETE_TIMEOUT",
+  "reused_source_methods": 25,
+  "new_source_methods": 5,
+  "delivered_methods": 30,
+  "semantic_assertions": "unchanged",
+  "configuration": "existing unmodified 600-second qualification profile"
+}
