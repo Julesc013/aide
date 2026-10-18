@@ -1,0 +1,13 @@
+docs(campaign): qualify actionable current-state records
+
+The campaign view now exposes its owner, next action and unfinished obligations
+without overflowing historical references. Original records and all qualified
+package bytes remain intact.
+
+Validation: PASS - actual current/resume CLI; history and claim pins; doctor;
+ full validation 60,917 with 60,916 PASS, one existing WARN and zero FAIL; pack status; exact preview;
+ complete job collection and retirement
+Changelog: Docs: Make current campaign outcomes and remaining work discoverable
+Risk: Dated evidence does not establish live host, target or release acceptance
+AIDE-Task: AIDE-CAMPAIGN-CURRENT-STATE-01
+AIDE-Format: compact-v1

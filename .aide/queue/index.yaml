@@ -4178,7 +4178,7 @@ items:
 
   - id: AIDE-CAMPAIGN-CURRENT-STATE-01
     title: Make the current campaign state actionable without losing history
-    status: running
+    status: passed_with_notes
     task: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/task.yaml
     exec_plan: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/ExecPlan.md
     evidence: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence

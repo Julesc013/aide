@@ -48,3 +48,12 @@ Preserve its result, reconcile before retry; one allocation maximum. No repeated
 auth/host probes, provider/model calls, target mutation or new storage roots.
 
 **Admission accepted.** Exact map a0f57df7/effect44ee1591 accepted independently; checkpoint1a9f6445 preserves the packet. Current records and one read-only qualification plus fixed-preview job are prepared. No qualification has run.
+
+**Qualification complete.** At7059f9b0, actual human/JSON current and JSON resume
+passed with11 available refs, no issues, explicit owner/action and six unfinished
+obligations. All18 claim sources and21 narrative links verified. Original records,
+870 pack files/eight release assets stayed byte-identical. Full validation60917:
+60916PASS,1existingWARN,0FAIL. Fixed preview covers both commits through7059f9b0
+and regenerates exactly. Jobd0345a4ad5ca49a8aeabf64bb0393fd0 is collected,
+digest-verified and retired, scratch absent/reservation released. The sole
+allocation is exhausted. Exact closure review and observed integration remain.

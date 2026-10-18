@@ -2,37 +2,29 @@
 
 This file is generated from local Git history and is a preview only.
 
-source_range: ceac70a6fefefde93d2fb7435e8825c173302757..09925a0ff6aa14117271a0115baf3f1a47b98aaa
-source_head: 09925a0ff6aa14117271a0115baf3f1a47b98aaa
-commit_count: 4
+source_range: 29f4bf5c1f23a923b0ea97e1826ab9fff4c734fc..7059f9b0cfd490415e86e01d5c5c68fd7a695430
+source_head: 7059f9b0cfd490415e86e01d5c5c68fd7a695430
+commit_count: 2
 malformed_count: 0
 preview_only: true
 release_publishing: false
 
 ## Summary
 
-- Added: 1
-- Internal: 3
+- Docs: 1
+- Internal: 1
 
-## Added
+## Docs
 
-- Explicit cooperative dependency session reconciliation (b81589114b2a feat(requests): preserve work across explicit session reconciliation)
-  - **Validation:** PASS - syntax, exact scope and original test preservation
-    NOT RUN - 88 source methods and fresh CLI/MCP workflow
-  - **Risk:** Configuration declarations do not enforce native host quiescence
+- Clarify current campaign outcomes, owners and prerequisites (7059f9b0cfd4 docs(campaign): expose current outcomes and remaining work)
+  - **Validation:** PASS - exact source and preserved-record preparation
+    NOT RUN - actual reconciled CLI and managed qualification
 
 ## Internal
 
-- Admit bounded dependency session reconciliation (32a9d56aca40 feat(requests): admit explicit session binding reconciliation)
-  - **Validation:** PASS - current source gap and exact preserved ref inspection
-    NOT RUN - implementation and native qualification
-- Record session reconciliation regression evidence (984b47b6e9d1 test(requests): retain passing session reconciliation regressions)
-  - **Validation:** PASS - 88 methods; verified collection and retirement
-    NOT RUN - fresh-process workflow and old-reader continuity
-- Qualify preserved dependency work across session change (09925a0ff6aa test(requests): qualify fresh-session dependency continuation)
-  - **Validation:** PASS - 88 methods; two workflows; legacy-reader compatibility
-    PASS - 870 pack files and eight release assets unchanged; both jobs retired
-    NOT RUN - final owned export and promotion preview
+- Admit bounded campaign current-state maintenance (1a9f6445a874 docs(campaign): admit current-state reconciliation)
+  - **Validation:** PASS - actual current view and exact branch inspection
+    NOT RUN - reconciled records and qualification
 
 ## Malformed Commits
 

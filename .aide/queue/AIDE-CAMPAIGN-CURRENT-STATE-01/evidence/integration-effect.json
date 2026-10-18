@@ -1,0 +1,43 @@
+{
+  "schema": "aide.campaign-current-state.integration-effect.v1",
+  "base": "29f4bf5c1f23a923b0ea97e1826ab9fff4c734fc",
+  "candidate": "Exact closure map; substitute only resulting managed commit/tree.",
+  "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "remote": "origin",
+  "remote_url": "https://github.com/Julesc013/aide.git",
+  "task_branch": "task/aide-campaign-current-state-01",
+  "preserved_qualification_ref": "task/aide-lite-successor-qualification-01",
+  "preserved_qualification_commit": "dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+  "preserved_publication_ref": "task/aide-lite-successor-publication-01",
+  "preserved_publication_commit": "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+  "known_historical_presentation_failures": [],
+  "effects": [
+    "After exact terminal ACCEPT, managed dry-run/apply commits only closure map and mapped paths with exact message/ref/parent/tree. Strict latest and full base..candidate checks must PASS.",
+    "Under shared estate/dispatch locks require exact config/running controls/no active job, sole checkout, clean candidate/tree, ready helper plan and exact local/remote dev/main base. Preserve both named task refs. Fetch only dev/main without tags and reobserve.",
+    "CAS fast-forward local dev from base to candidate; nonforce explicit candidate:refs/heads/dev push; read back exact remote state.",
+    "Run full validation and strict complete-range check again, recheck controls/refs/tree and remote state. CAS fast-forward main from base; nonforce explicit push; read back both heads.",
+    "Verify exact two-commit preview through7059f9b0cfd490415e86e01d5c5c68fd7a695430, preserved parent records and all870 development-pack files/eight frozen release assets. Preserve both named task refs.",
+    "Only after both refs/postchecks pass, switch to dev, verify clean exact task-ref ancestry, delete only this local task branch using branch -d. Verify final local/tracking refs and dfae9356 ancestry."
+  ],
+  "required_evidence": [
+    "Actual current human/JSON and resume JSON PASS: no issues,11 available refs,owner/action and six unfinished obligations; read_only/unverified/no execution grant.",
+    "Original task/status bytes and complete historical ExecPlan preserved; original task objective/authority/scope/gates unchanged.",
+    "Eighteen claim pins and21 local links; dated external facts not reprobed or broadened.",
+    "Doctor/full validate/pack status and exact fixed preview PASS; existing warning retained.",
+    "All870 pack files and eight release assets unchanged; no exporter or product effect.",
+    "One job collected/digest-verified/retired, scratch absent/reservation released.",
+    "Strict complete source range and closure message PASS; no new allocation."
+  ],
+  "failure_response": "Retain started/completed command streams and identities. Stop on changed inputs/refs or any failed check; reconcile observed effects before any retry.",
+  "forbidden": [
+    "force push",
+    "history rewrite",
+    "protection change or bypass",
+    "tag/release effects",
+    "unrelated branch deletion",
+    "live target or ledger mutation",
+    "model/provider requests",
+    "package rebuild",
+    "further job allocation"
+  ]
+}

@@ -5348,4 +5348,4 @@ Dependency session continuity is qualified:88 source methods, two fresh-process
 workflows, v1/v2 reader compatibility, ownership6 and fixed preview passed.
 See [the report](.aide/queue/AIDE-DEPENDENCY-REBIND-01/REPORT.md); native host and publication stay separate.
 
-**Campaign current-state reconciliation.** AIDE-CAMPAIGN-CURRENT-STATE-01 repairs the existing parent view, preserving historical bytes and all unfinished acceptance. One bounded verification job and exact integration review remain.
+**Campaign current-state reconciliation.** AIDE-CAMPAIGN-CURRENT-STATE-01 repairs the existing parent view, preserving historical bytes and all unfinished acceptance. The single verification job passed and retired. Exact integration awaits terminal review; the child receipt will record actual effects. Full campaign acceptance remains open.

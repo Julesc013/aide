@@ -1,7 +1,14 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-CAMPAIGN-CURRENT-STATE-01
-status: running
-result: SOURCE_PREPARED
-next_action: exact_source_and_one_job_review
+status: passed_with_notes
+result: CURRENT_VIEW_HISTORY_AND_PREVIEW_QUALIFIED
+next_action: exact_integration_then_continue_parent_requirements
+acceptance_scope: Campaign records and existing CLI observation only; no new product or host qualification
+qualification_ref: evidence/attempt-01-qualification.json
+preview_ref: evidence/attempt-01-preview-result.json
 maximum_jobs: 1
-jobs_allocated: 0
+jobs_allocated: 1
+active_jobs: 0
+retirement: complete_collection_verified_scratch_absent_reservation_released
+integration_receipt: evidence/integration-result.log
+remaining_obligations: Full campaign requirements remain in the parent current view.

@@ -3,38 +3,25 @@
   "highlights": [
     {
       "breaking": false,
-      "category": "Added",
-      "commit": "b81589114b2a",
-      "subject": "feat(requests): preserve work across explicit session reconciliation",
-      "summary": "Explicit cooperative dependency session reconciliation"
+      "category": "Docs",
+      "commit": "7059f9b0cfd4",
+      "subject": "docs(campaign): expose current outcomes and remaining work",
+      "summary": "Clarify current campaign outcomes, owners and prerequisites"
     }
   ],
   "preview_only": true,
-  "risk_summary": [
-    {
-      "commit": "b81589114b2a",
-      "summary": "Configuration declarations do not enforce native host quiescence"
-    }
-  ],
+  "risk_summary": [],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "09925a0ff6aa14117271a0115baf3f1a47b98aaa",
-  "source_range": "ceac70a6fefefde93d2fb7435e8825c173302757..09925a0ff6aa14117271a0115baf3f1a47b98aaa",
+  "source_head": "7059f9b0cfd490415e86e01d5c5c68fd7a695430",
+  "source_range": "29f4bf5c1f23a923b0ea97e1826ab9fff4c734fc..7059f9b0cfd490415e86e01d5c5c68fd7a695430",
   "validation_summary": [
     {
-      "commit": "32a9d56aca40",
-      "summary": "PASS - current source gap and exact preserved ref inspection\nNOT RUN - implementation and native qualification"
+      "commit": "1a9f6445a874",
+      "summary": "PASS - actual current view and exact branch inspection\nNOT RUN - reconciled records and qualification"
     },
     {
-      "commit": "b81589114b2a",
-      "summary": "PASS - syntax, exact scope and original test preservation\nNOT RUN - 88 source methods and fresh CLI/MCP workflow"
-    },
-    {
-      "commit": "984b47b6e9d1",
-      "summary": "PASS - 88 methods; verified collection and retirement\nNOT RUN - fresh-process workflow and old-reader continuity"
-    },
-    {
-      "commit": "09925a0ff6aa",
-      "summary": "PASS - 88 methods; two workflows; legacy-reader compatibility\nPASS - 870 pack files and eight release assets unchanged; both jobs retired\nNOT RUN - final owned export and promotion preview"
+      "commit": "7059f9b0cfd4",
+      "summary": "PASS - exact source and preserved-record preparation\nNOT RUN - actual reconciled CLI and managed qualification"
     }
   ],
   "warnings": []

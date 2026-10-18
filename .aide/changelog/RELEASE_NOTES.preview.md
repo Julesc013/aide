@@ -2,29 +2,24 @@
 
 This is a deterministic preview only. It does not publish a release.
 
-source_range: ceac70a6fefefde93d2fb7435e8825c173302757..09925a0ff6aa14117271a0115baf3f1a47b98aaa
-source_head: 09925a0ff6aa14117271a0115baf3f1a47b98aaa
+source_range: 29f4bf5c1f23a923b0ea97e1826ab9fff4c734fc..7059f9b0cfd490415e86e01d5c5c68fd7a695430
+source_head: 7059f9b0cfd490415e86e01d5c5c68fd7a695430
 preview_only: true
 
 ## Highlights
 
-- Added: Explicit cooperative dependency session reconciliation (b81589114b2a)
+- Docs: Clarify current campaign outcomes, owners and prerequisites (7059f9b0cfd4)
 
 ## Validation Summary
 
-- 32a9d56aca40: PASS - current source gap and exact preserved ref inspection
-  NOT RUN - implementation and native qualification
-- b81589114b2a: PASS - syntax, exact scope and original test preservation
-  NOT RUN - 88 source methods and fresh CLI/MCP workflow
-- 984b47b6e9d1: PASS - 88 methods; verified collection and retirement
-  NOT RUN - fresh-process workflow and old-reader continuity
-- 09925a0ff6aa: PASS - 88 methods; two workflows; legacy-reader compatibility
-  PASS - 870 pack files and eight release assets unchanged; both jobs retired
-  NOT RUN - final owned export and promotion preview
+- 1a9f6445a874: PASS - actual current view and exact branch inspection
+  NOT RUN - reconciled records and qualification
+- 7059f9b0cfd4: PASS - exact source and preserved-record preparation
+  NOT RUN - actual reconciled CLI and managed qualification
 
 ## Known Risks
 
-- b81589114b2a: Configuration declarations do not enforce native host quiescence
+- No risk summaries were extracted.
 
 ## Follow-up
 
