@@ -97,3 +97,16 @@ scratch absent and reservation released. Reviewed capability refresh preserved
 classification bytes and restored CURRENT binding. Original validation failures
 remain until the next reviewed export reconciles the added helper and provenance.
 Prepared delivered44 and installed portable_cli_text consumer remain unrun.
+
+**Failure and precise continuation.** Job2/64640393 at0e342967 completed ownership6,
+export/doctor/validation/pack-status, then failed the task-runner delta assertion
+before delivered tests. The command catalogue correctly gained inspect-symbol,
+but the expected payload set omitted it. Original overall FAIL and all evidence
+remain. Product source is unchanged. The exact catalogue preimage and one-line
+transformation are now explicit; no generic allowance replaces the assertion.
+
+The remaining third allocation combines the unstarted delivered44/installed
+consumer with the required final preview. It verifies and reuses the exact
+successful export and source44; it does not repeat export or product source tests.
+All original acceptance checks remain, within unchanged caps/reserves and the
+original three-job ceiling. This recovery needs its own exact review.

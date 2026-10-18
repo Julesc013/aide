@@ -1,0 +1,28 @@
+{
+  "base": "0e342967285db0c4b9c3685600d17fc32e8575ba",
+  "files": {
+    ".aide/export/aide-lite-pack-v0/checksums.json": "35f3ba1fc6798ff6f82b3a9620f20302cf1e93c05d00fb6944a3fd642cdd3b61",
+    ".aide/export/aide-lite-pack-v0/export-report.md": "523542aaca6f8f6cbac4abb0514e2999042bd947659478404491f7f43c6a751c",
+    ".aide/export/aide-lite-pack-v0/files/.aide/commands/catalog.yaml": "c6bde379b3d62bd680fd5bb49e2ffa5da13ca70804e797ddb9a97440ed58e83e",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py": "a008b39a160c8f493c02ad0b95457f4d1932e9a68d589b5a840764e392843456",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/quality_symbols.py": "cff8a69e8f2efbe99ee844aa4f475c0cfefbe7ba076b145ba4949daf29829035",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_quality_symbols.py": "c527d092424aea4ce89cce555c2118905096f3dda4af634a65d6863787f9a767",
+    ".aide/export/aide-lite-pack-v0/files/docs/reference/file-quality-ledger.md": "985279c12c2c97e7e48a412ffda968a803da45fe94e00b236bedb081e56e9be3",
+    ".aide/export/aide-lite-pack-v0/manifest.yaml": "0557e7d04cc87924692e3d84d2a16e7c1361ec48f82edff7616cc7c6bfdf2354",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/ExecPlan.md": "f2e23e4b61a7bddf374e9b659e6670be09af8c1152b49d9e5b64e283e319ba4b",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/attempt-02-ownership-tests.json": "a6cf7e4ddadc235eedf04e5d2971739d575be1b957628d6ff38935c8ddc51b4c",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/attempt-02-qualification.json": "a1af46fe46a421215fe7bb6a883d4a127a038b999fc7770e59e52635c361cf73",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/catalog-preimage.yaml": "6a80938cd764fc49832c32936b76ee999502e57b7c86c27b1e0290c5d55ab7a4",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/failure-analysis.json": "ab5df5830872bdabb56eb988e7c11cc956a2c83dc1df292d7f33b552f20bfceb",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/pack-attempt-02.json": "b366236869e704db9b9207712baf6805313c14c131904e4219e7f00515e0564f",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/preview-effect.md": "64b2ce22c7a94816e9667113675ad5e0f75fb355e8bb8708aa4c58519df88cb8",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/preview-job-template.json": "ccdb222adb2862532035cda53ae5aef3df84ac5482eba4e9b2b2b22659e2f297",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/evidence/preview-message.txt": "9c33bd4d49d9b079a461cef4fd2af4e152b2263f8e88c0c4a643a40ec2be7c49",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/run_pack.py": "4c7134998c3183c1f6606f1bc082bfac20c6dbe2d31d8c39090fe725aecc8e50",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/run_preview.py": "ad0aae9955b2b6a5b13fa300d7b693072439fbac656317d9df4d84a544c260f8",
+    ".aide/queue/AIDE-SYMBOL-DISCOVERY-01/status.yaml": "7ddab7335341dc89aaed2b3df6240e0aed58d5bec7c34a77a50cb576c1f7f465"
+  },
+  "effect_sha256": "64b2ce22c7a94816e9667113675ad5e0f75fb355e8bb8708aa4c58519df88cb8",
+  "message_sha256": "9c33bd4d49d9b079a461cef4fd2af4e152b2263f8e88c0c4a643a40ec2be7c49",
+  "template_sha256": "ccdb222adb2862532035cda53ae5aef3df84ac5482eba4e9b2b2b22659e2f297"
+}

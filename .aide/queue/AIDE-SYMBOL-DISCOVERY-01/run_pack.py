@@ -46,18 +46,44 @@ assert all(sha(ROOT / p) == h for p, h in release_before.items())
 refresh = load('symbol_refresh', ROOT / '.aide/queue/AIDE-DAILY-PACK-REFRESH-01/run_refresh.py')
 inventory = TASK / 'evidence/prior-pack-inventory.json'
 before = json.loads(inventory.read_text(encoding='utf-8'))
-sys.argv = [__file__, 'refresh', '--inventory', str(inventory.relative_to(ROOT)),
-            '--inventory-sha256', sha(inventory)]
-refresh.main()
+# Reuse the completed export from failed job2; do not invoke reset/export again.
+sys.path.insert(0, str(ROOT))
+from core.execution.managed_workspace import content_digest, load_config
+e = TASK / "evidence"
+retired = json.loads((e / "pack-attempt-02.json").read_text(encoding="utf-8"))
+assert retired["phase"] == "retired" and retired["result"]["exit_code"] == 1
+assert retired["result"]["quiescent"] and retired["scratch_absent"] and retired["reservation_released"]
+_, roots, _ = load_config(ROOT / ".aide.local/execution.json")
+assert not (roots["scratch"] / retired["job_id"]).exists()
+for name, digest in retired["collected_manifest"].items():
+    assert content_digest(Path(retired["retained"]) / name) == digest
+completed = json.loads((e / "attempt-02-qualification.json").read_text(encoding="utf-8"))
+assert completed == json.loads((Path(retired["retained"]) / "output/qualification.json").read_text(encoding="utf-8"))
+assert completed["status"] == "PASS" and completed["after_files"] == 872
+assert all(item["exit_code"] == 0 for item in completed["operations"].values())
+assert completed["ownership_tests"] == {"tests_run": 6, "failures": 0, "errors": 0, "skips": 0}
 pack = ROOT / refresh.PACK_REL
 after = refresh.inventory_bytes(pack)
-old = {name: entry['sha256'] for name, entry in before['files'].items()}
-changed = {'files/.aide/scripts/aide_lite.py', 'files/docs/reference/file-quality-ledger.md'}
-added = {'files/.aide/scripts/quality_symbols.py', 'files/.aide/scripts/tests/test_quality_symbols.py'}
+assert after == completed["after_sha256s"]
+source_checks = json.loads((e / "attempt-01-source-tests.json").read_text(encoding="utf-8"))
+assert source_checks["tests_run"] == 44 and not any(source_checks[k] for k in ["errors","failures","skips"])
+for path, digest in source_checks["inputs"].items():
+    assert sha(ROOT / path) == digest
+old = {name: entry["sha256"] for name, entry in before["files"].items()}
+changed = {"files/.aide/scripts/aide_lite.py", "files/docs/reference/file-quality-ledger.md",
+           "files/.aide/commands/catalog.yaml"}
+added = {"files/.aide/scripts/quality_symbols.py", "files/.aide/scripts/tests/test_quality_symbols.py"}
 assert set(after) - set(old) == added and not (set(old) - set(after))
 assert {name for name in old if old[name] != after[name]} - refresh.EXCLUDED == changed
+catalog = "files/.aide/commands/catalog.yaml"
+prior_catalog = (e / "catalog-preimage.yaml").read_bytes()
+assert hashlib.sha256(prior_catalog).hexdigest() == old[catalog]
+old_invocation = b"quality <ledger|validate|status|explain-file|docs|tests|modules|reuse>"
+new_invocation = b"quality <ledger|validate|status|explain-file|inspect-symbol|docs|tests|modules|reuse>"
+assert prior_catalog.count(old_invocation) == 1
+assert (pack / catalog).read_bytes() == prior_catalog.replace(old_invocation, new_invocation)
 source_cli = load('symbol_source_projection', ROOT / '.aide/scripts/aide_lite.py')
-for name in changed | added:
+for name in (changed | added) - {catalog}:
     source = ROOT / name.removeprefix('files/')
     expected = (source_cli.portable_cli_text(source.read_text(encoding='utf-8')).encode('utf-8')
                 if name == 'files/.aide/scripts/aide_lite.py' else source.read_bytes())
@@ -133,3 +159,23 @@ assert refresh.inventory_bytes(pack) == after and len(after) == 872
     "pack_members": len(after), "pack_sha256s": after, "models_requested": 0,
 }, indent=2) + "\n", encoding="utf-8")
 print(json.dumps({"status":"PASS", "delivered_tests":44, "safe_installed_consumer":"PASS"}))
+
+
+# Complete the final preview in this remaining allocation; the successful export
+# and source tests above are reused, not repeated.
+for label, args in [("final-doctor", ["doctor"]), ("final-validation", ["validate"]), ("final-pack-status", ["pack-status"])]:
+    invoke(label, [sys.executable, "-B", ".aide/scripts/aide_lite.py", *args])
+preview = load("symbol_final_preview", ROOT / ".aide/queue/AIDE-DEPENDENCY-MCP-01/run_preview.py")
+preview.BASE = "118ab7829f300050394dc67a3af943963acfe218"
+sys.argv = [str(TASK / "run_pack.py"), "generate"]
+preview.main()
+assert refresh.inventory_bytes(pack) == after
+assert all(sha(ROOT / path) == digest for path,digest in source_checks["inputs"].items())
+assert all(sha(ROOT / p) == h for p,h in release_before.items())
+(OUTPUT / "qualification.json").write_text(json.dumps({
+    "result": "PASS", "source_tests_reused": 44, "delivered_tests": 44,
+    "installed_consumer": "PASS", "prior_failed_job_preserved": retired["job_id"],
+    "completed_export_reused": True, "export_repeated": False,
+    "catalogue_exact_delta": True, "preview": preview.verify(), "models_requested": 0,
+    "whole_outcome_usage": "unknown",
+}, indent=2) + "\n", encoding="utf-8")

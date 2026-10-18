@@ -1,0 +1,23 @@
+{
+  "result": "FAILED_ATTEMPT_PRESERVED",
+  "job_id": "64640393e8164835b2dd0341ac7f92ff",
+  "exit_code": 1,
+  "failure": "run_pack.py expected changed-payload set omitted the derived command catalogue",
+  "completed": [
+    "ownership6",
+    "export-pack",
+    "doctor",
+    "validate",
+    "pack-status"
+  ],
+  "not_started": [
+    "delivered44",
+    "installed_consumer",
+    "final_preview"
+  ],
+  "exact_catalogue_change": "one quality invocation gains inspect-symbol; all other bytes unchanged",
+  "catalogue_preimage_sha256": "6a80938cd764fc49832c32936b76ee999502e57b7c86c27b1e0290c5d55ab7a4",
+  "catalogue_postimage_sha256": "c6bde379b3d62bd680fd5bb49e2ffa5da13ca70804e797ddb9a97440ed58e83e",
+  "product_source_changed": false,
+  "recovery": "reuse exact completed export and source44; remaining job3 runs delivered/installed and final preview; no export retry"
+}

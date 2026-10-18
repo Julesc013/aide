@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 3e2bbd3277abb5b237a4ff4464fc8b75ef574f8d
+source_commit: 0e342967285db0c4b9c3685600d17fc32e8575ba
 source_dirty_state: false
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -684,6 +684,7 @@ included_files:
   - files/.aide/scripts/aide_lite.py
   - files/.aide/scripts/aide_work_effort.py
   - files/.aide/scripts/outcome_lessons.py
+  - files/.aide/scripts/quality_symbols.py
   - files/.aide/scripts/task_handoff.py
   - files/.aide/scripts/tests/test_adapter_compiler.py
   - files/.aide/scripts/tests/test_aide_apply_00_transaction_model.py
@@ -721,6 +722,7 @@ included_files:
   - files/.aide/scripts/tests/test_q46_rollback_uninstall.py
   - files/.aide/scripts/tests/test_q47_release_bundle.py
   - files/.aide/scripts/tests/test_q48_github_release_draft.py
+  - files/.aide/scripts/tests/test_quality_symbols.py
   - files/.aide/scripts/tests/test_resume_plan.py
   - files/.aide/scripts/tests/test_retired_evidence.py
   - files/.aide/scripts/tests/test_review_pack.py
