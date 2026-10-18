@@ -1,0 +1,12 @@
+test(task): qualify installed large-evidence inspection
+
+Source and installed task views retain readable qualification receipts,
+digest checks and unfinished obligations. Small-evidence output matches the
+predecessor. Finish the fixed preview before reviewed integration.
+
+Validation: PASS - source168, delivered168, ownership6 and installed consumer
+ PASS - actual task continuity, customization and independent projection oracle
+ NOT RUN - final preview; new browser rendering is outside this reader change
+Changelog: Internal: Retain installed evidence reader qualification
+AIDE-Task: AIDE-TASK-EVIDENCE-READ-01
+AIDE-Format: compact-v1

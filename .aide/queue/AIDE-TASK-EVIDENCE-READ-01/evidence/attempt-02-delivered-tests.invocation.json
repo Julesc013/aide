@@ -1,0 +1,21 @@
+{
+  "command": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-B",
+    "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-TASK-EVIDENCE-READ-01\\run_checks.py",
+    "D:\\Projects\\AIDE\\aide\\.aide\\export\\aide-lite-pack-v0\\files"
+  ],
+  "cwd": "D:\\Projects\\AIDE\\aide",
+  "state": "completed",
+  "exit_code": 0,
+  "streams": {
+    "delivered-tests.stdout": {
+      "bytes": 58,
+      "sha256": "fa902b0896b2bfdfdaacf568c51e94caaa56037413b86ee70b612586c392ac5e"
+    },
+    "delivered-tests.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

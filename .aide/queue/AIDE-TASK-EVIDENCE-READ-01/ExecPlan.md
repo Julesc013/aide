@@ -85,3 +85,12 @@ unchanged and made source binding CURRENT. The second allocation targets the
 same875 pack members, delivered168 and an independent installed large-evidence
 fixture. Actual source/installed observations must agree completely. This
 preparation does not establish delivered qualification.
+
+**Delivered and installed observed.** Ownership6, export/doctor/validate/
+pack-status, delivered168 and installed consumers passed. The real task's
+complete source/installed observation agrees and recommends inspecting completed
+evidence. Large fixture evidence has verified bytes and unverified applicability;
+native adoption remains outstanding. Pack875, customization, core absence,
+helper receipts and independent binding-line oracle passed. Records and target
+bytes stayed unchanged. Both jobs retired; eight frozen assets remain unchanged.
+Only final preview and terminal integration remain.
