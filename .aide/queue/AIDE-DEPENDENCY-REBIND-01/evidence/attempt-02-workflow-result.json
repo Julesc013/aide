@@ -1,0 +1,14 @@
+{
+  "tests_run": 2,
+  "failures": 0,
+  "errors": 0,
+  "skips": [],
+  "result": "PASS",
+  "legacy_schemas_preserved": 2,
+  "old_reader_sha256": "d169d1ab2e4105834a662afd947dc06099d565c467a0a29fb04c2675218ebb60",
+  "pack_files_unchanged": 870,
+  "release_files_unchanged": 8,
+  "live_reconfigurations": 0,
+  "models_requested": 0,
+  "native_ownership_transferred": false
+}

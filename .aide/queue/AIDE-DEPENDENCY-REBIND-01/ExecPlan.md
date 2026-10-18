@@ -87,3 +87,11 @@ note is clarified: initialization refuses schema/config changes; explicit
 reconciliation is separate. Product code and tests are unchanged for job2.
 Prepared two actual fresh-process workflows plus frozen old-reader v1/v2
 continuity and exact870 pack/eight release checks. No live ledger effect.
+
+**Workflow job passed.** At984b47b6, fresh CLI/MCP replacement and the original
+cancellation workflow passed. Frozen prior readers preserve v1/v2 renewal semantics,
+reject old configuration/cached writers and accept explicitly current pins.
+All870 pack files/eight release assets are unchanged. Jobdcd40a22562d4806b7da946dec485b50
+was collected/digest-verified and retired. Prepare the final existing owned export
+(provenance only), full validation and fixed preview with 7MiB pack +1MiB preview
+canonical reservation; no additional allocation or archive rebuild.

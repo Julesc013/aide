@@ -1,0 +1,12 @@
+test(requests): qualify fresh-session dependency continuation
+
+Fresh CLI and MCP processes preserve accepted work across explicit session
+replacement. Frozen v1/v2 readers retain compatibility and reject obsolete
+pins. Prepare owned provenance refresh and fixed integration preview.
+
+Validation: PASS - 88 methods; two workflows; legacy-reader compatibility
+ PASS - 870 pack files and eight release assets unchanged; both jobs retired
+ NOT RUN - final owned export and promotion preview
+Changelog: Internal: Qualify preserved dependency work across session change
+AIDE-Task: AIDE-DEPENDENCY-REBIND-01
+AIDE-Format: compact-v1

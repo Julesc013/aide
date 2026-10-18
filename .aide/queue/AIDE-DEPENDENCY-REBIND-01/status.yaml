@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-DEPENDENCY-REBIND-01
 status: running
-result: SOURCE88_PASS_WORKFLOW_PREPARED
-next_action: exact_workflow_job_review
+result: SOURCE88_AND_FRESH_WORKFLOW_PASS
+next_action: exact_final_export_preview_review
 maximum_jobs: 3
-jobs_allocated: 1
+jobs_allocated: 2
 active_jobs: 0
