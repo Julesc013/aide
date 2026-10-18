@@ -1,0 +1,27 @@
+{
+  "base": "c96577f7b079a00dbedbb580c289759a21d02fec",
+  "files": {
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md": "b242c654ebbcbe58142df32994aba86f35ab2a1a9f1584a4a254c06b17b420e6",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-01-source-tests.json": "681970537d806380528762dcaebaa0fd79a37b42a51169b92154e0f68163e0b7",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/ledger-preimages.json": "dc25be7504e2b996c95193493f69b214a0765830a4ad8f165c88d988787e8f0b",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/ledger-refresh.json": "2efc2ef77ebbedd75678ad86848a6715def0f054552d9b70cdc92b3e1c9f7ea7",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/pack-effect.md": "79500597a210e9abe9914840fc68fa696df21087d7546df8e72d9f2bfe8e290d",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/pack-job-template.json": "e727983c35383fa820fd42eeb0cc04ca852881c85750b062487afb5e4c7ef01f",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/pack-message.txt": "6ef05079c42ed835a861e26849d688802d982debb2003715139e1f1f4b58b41a",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/prior-pack-inventory.json": "49fe3161279e16e597bc2b23570588cd879756e8f0e2d74bc04f96cd596b67ae",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/refresh-effect.md": "fff18f8fa90797c97420a16bc0f7f71d4ad70ece296ee778173ead86c89629aa",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/refresh-review.md": "3d3b529a0399d2475f35e5e7b2400f4098338c0aedfab673c1eb07d11c6bf958",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/refresh-source.json": "7de31e46da4b6631a95e552a30705fc898cd5a99bdfdae2acc8f7c3405533a13",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/source-attempt-01.json": "89038766a4e497350fe290270898aed226677ea02a4a4d43e9cd40be4a756b18",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/source-commit-result.json": "4da4e78454c746a9e4772915f56c47579cc24d5b8235502b65c96f56a736a875",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/source-review.md": "2e0fa0241ab2cea90fc35f8fb809cba9461524cd085d5676966ccc98c7312fad",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/run_pack.py": "2f9e5333b28fdadb2bfa20df25f4f225f8bca536d06bcc538145ce1c6762e9f7",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml": "0be7c304a461743a495ba3290ae14c2e8dc23826191c22d71a374d9e9bdf628c",
+    ".aide/reports/capability-command-status.md": "94a967e4337719e74bed840d24f95855fe7e3f494763fc445c489e62f8504a6f",
+    ".aide/reports/capability-evidence-bindings.json": "f8bc1a309c1e828413be87e9df9e304164e37f8929e5b02cba01ed37dc95de8c",
+    ".aide/reports/capability-ledger.md": "6638f601a76536b8e702d0f991445155cf3215190f53a51d427a084e4a63469b"
+  },
+  "effect_sha256": "79500597a210e9abe9914840fc68fa696df21087d7546df8e72d9f2bfe8e290d",
+  "message_sha256": "6ef05079c42ed835a861e26849d688802d982debb2003715139e1f1f4b58b41a",
+  "template_sha256": "e727983c35383fa820fd42eeb0cc04ca852881c85750b062487afb5e4c7ef01f"
+}

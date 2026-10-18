@@ -1,0 +1,33 @@
+test(validation): prepare actual exported output qualification
+
+## Summary
+- Record source36 PASS and prepare actual portable validation consumers.
+
+## Why
+- Successful validation emitted4.9MB and obscured its actionable warning.
+
+## Changed
+- Preserve source job retirement and exact independent review evidence.
+- Bind current source classifications and prepare owned export/output comparison.
+
+## Validation
+- PASS36 source methods with no failures, errors or skips; job fully retired.
+- PASS refreshed binding CURRENT with unchanged classifications.
+- Export and actual full-output comparison prepared, not yet run.
+
+## Changelog
+- Added: Compact validation with full text and machine-readable result modes.
+
+## Risks
+- Consumers parsing individual PASS lines must request --full or --json.
+- Output reduction does not establish speed, cost or broader qualification.
+
+## Follow-up
+- Qualify source/exported consumers, refresh bindings and review integration.
+
+AIDE-Task: AIDE-VALIDATION-OUTPUT-01
+AIDE-Phase: export-preparation
+AIDE-Result: PENDING
+AIDE-Scope: validation-output
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: exact-source-and-job-review-required

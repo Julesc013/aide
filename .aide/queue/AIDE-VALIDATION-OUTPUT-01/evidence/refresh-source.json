@@ -1,0 +1,16 @@
+{
+  "base": "c96577f7b079a00dbedbb580c289759a21d02fec",
+  "files": {
+    ".aide/scripts/aide_lite.py": "d422047cc3dda22b6f66a993af3f14ec789b4405b965f11004b61739012a9158",
+    "docs/reference/aide-lite.md": "19df46bba51784453edab85c054ccc4b953f99028744c2ddd9435bc027dd0e8b",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/source-attempt-01.json": "89038766a4e497350fe290270898aed226677ea02a4a4d43e9cd40be4a756b18",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-01-source-tests.json": "681970537d806380528762dcaebaa0fd79a37b42a51169b92154e0f68163e0b7",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/ledger-preimages.json": "dc25be7504e2b996c95193493f69b214a0765830a4ad8f165c88d988787e8f0b",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/refresh-effect.md": "fff18f8fa90797c97420a16bc0f7f71d4ad70ece296ee778173ead86c89629aa",
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "3cb013e29f9fa17478d89d0091f70315613f4b61ac46318a18b38876b08d2094",
+    ".aide/reports/capability-evidence-bindings.json": "324c29816141c49202a4d4c7402aabff41597dd1f53651de1220ae854a61e6a3",
+    ".aide/reports/capability-command-status.md": "611a24adb977432e47a99813ff1ba3eb38815654ca13de4b98f9db50f556db48"
+  },
+  "effect_sha256": "fff18f8fa90797c97420a16bc0f7f71d4ad70ece296ee778173ead86c89629aa"
+}

@@ -62,3 +62,7 @@ and authorizes no release. No implementation, branch or job performed yet.
 
 Admission ACCEPT; guarded local branch prepared. Source presentation and nine
 regressions prepared, with27 existing Lite/review assertions unchanged. No job yet.
+
+Source36 passed atc96577f7; job9ae9171364374dfd80d14f91fc630453 retired,
+collections verified and scratch absent. Existing capability binding refreshed
+once after exact review: CURRENT, classification unchanged. Export still unrun.

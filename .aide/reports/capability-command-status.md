@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-portable-task-handoff-01`
-- current_commit: `40a5740e7eef5cdd8c54fd3fc75961d67c482236`
+- current_branch: `task/aide-validation-output-01`
+- current_commit: `c96577f7b079a00dbedbb580c289759a21d02fec`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

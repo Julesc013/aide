@@ -2,5 +2,5 @@ schema_version: aide.queue-status.v0
 id: AIDE-VALIDATION-OUTPUT-01
 status: needs_review
 result: PENDING
-next_action: exact_source_and_first_job_review
-allocations_used: 0
+next_action: exact_export_job_review
+allocations_used: 1

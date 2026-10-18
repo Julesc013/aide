@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "classification_unchanged": true,
+  "after": {
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "6638f601a76536b8e702d0f991445155cf3215190f53a51d427a084e4a63469b",
+    ".aide/reports/capability-evidence-bindings.json": "f8bc1a309c1e828413be87e9df9e304164e37f8929e5b02cba01ed37dc95de8c",
+    ".aide/reports/capability-command-status.md": "94a967e4337719e74bed840d24f95855fe7e3f494763fc445c489e62f8504a6f"
+  },
+  "output_sha256": "8848b6ef789fa38921045a3311e9fbacecdbc86cfa808e0b8e838242f5b87059",
+  "binding": {
+    "state": "CURRENT",
+    "reason": "bound_source_inputs_unchanged",
+    "changed_refs": [],
+    "qualification": "source_classification_only"
+  }
+}
