@@ -1,0 +1,12 @@
+test(commit): retain installed historical policy qualification
+
+The portable policy keeps an unrelated project's history strict until that
+project adopts its own local boundary. Original failures, new-message checks
+and manual project content remain intact.
+
+Validation: PASS - 45 source and 45 delivered regressions, actual history and installed consumer
+ PASS - six ownership checks, exporter, doctor, validate and pack status
+ NOT RUN - fixed preview and integration
+Changelog: Tests: Verify historical advisory boundaries after safe installation
+AIDE-Task: AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02
+AIDE-Format: compact-v1

@@ -150,6 +150,14 @@ the full immutable `historical_presentation_advisory_through` object in
 strict. Target repositories must adopt their own local boundary; AIDE's
 source checkpoint is not a target decision.
 
+The reviewed 18 October amendment advances the source cutoff from `143ed761`
+to `dfae9356241dda6a03e2cc48cf9acb245c9a6be1`, under the existing standing
+instruction. [The amendment](../../.aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/ExecPlan.md)
+preserves the original cutoff and every failed observation in history.
+This is a bounded policy adoption, not individual owner acceptance of messages.
+The retained successor still requires separate integration and release checks;
+missing changelog categories remain visible and are never invented.
+
 The conservative syntax classifier permits missing bullets/trailers,
 category formatting, outcome-label casing, subject length/trailing period
 and separating whitespace only when all substantive sections contain text

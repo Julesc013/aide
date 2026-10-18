@@ -1,0 +1,24 @@
+{
+  "base": "4fd58583b24c950dd712e8960779b29dff576259",
+  "files": {
+    ".aide/export/aide-lite-pack-v0/checksums.json": "4568494465de40fb0aafa47c63230c2508e2b86011ac9ec0e2a2e11bde91c491",
+    ".aide/export/aide-lite-pack-v0/files/.aide/policies/commit-messages.yaml": "82595e4e906397cc54d6a4d531756db294a5fc36ad11ce2c01fbfab3ae209741",
+    ".aide/export/aide-lite-pack-v0/files/docs/reference/commit-discipline.md": "6dc7ef9890740e0c178ca359cb967deab0af1cbd2c824602aeec648ad366d212",
+    ".aide/export/aide-lite-pack-v0/manifest.yaml": "0e4e8bc32d73c8f7e2bbb1e9e564c44b08916dea9a2f829b02704c5b28f4d17d",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/ExecPlan.md": "2e5bde8bc723aa310fa169d6665466044f9375b6e67a04cd000ed3c6fa5f709f",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/attempt-02-delivered-regressions.json": "ce9e2be2b471143a45dfad9e1443a841530b58b24fa9fef11f2b1c476df2fdea",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/attempt-02-delivered-result.json": "dfdec60a8c2831ad01813000586704b2bf85e8c2902173c18ad73b955ef1585e",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/attempt-02-ownership-tests.json": "a6cf7e4ddadc235eedf04e5d2971739d575be1b957628d6ff38935c8ddc51b4c",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/attempt-02-qualification.json": "67709d120d49ec7c83174e703df0f080a85b96ab02a731fa2f6fcadc261b692f",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/pack-attempt-02.json": "deb0fe5a134888cf7b905b30f1293166a5025d80ea013b31c2de03002d98341a",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/pack-review.md": "b90cc3d1748bd2a207bd8fa53930434e597e62ed20e9a6372d2afbd93d9749a0",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/preview-effect.md": "5a53ece31f23fc7ba26692b985b4dd6437256e13e6e07ef5e84a2ae5094672d3",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/preview-job-template.json": "37c07749d5141f2c3f50eca02ac240cb0d0af2b72a20a65ec9edfb822a1f8a01",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/evidence/preview-message.txt": "9a3882e1cca4f9eace5f59f54f507c5ab5713cf08751e59f217e29995956db65",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/run_preview.py": "1c596c5dbb96a5e024cd758c97e63552c1bce33ee897506995a97fb0217d445c",
+    ".aide/queue/AIDE-HISTORICAL-PRESENTATION-BOUNDARY-02/status.yaml": "a653b025167c396b055d4818d182ca4e1379c266232f69bea2e0b4d1dba9d424"
+  },
+  "message_sha256": "9a3882e1cca4f9eace5f59f54f507c5ab5713cf08751e59f217e29995956db65",
+  "effect_sha256": "5a53ece31f23fc7ba26692b985b4dd6437256e13e6e07ef5e84a2ae5094672d3",
+  "job_template_sha256": "37c07749d5141f2c3f50eca02ac240cb0d0af2b72a20a65ec9edfb822a1f8a01"
+}
