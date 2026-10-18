@@ -1,0 +1,13 @@
+{
+  "syntax": "PASS",
+  "product_unchanged": true,
+  "existing_method_changed": "test_portable_apply_descriptions_match_shipped_modules",
+  "other_source_methods_conserved": 26,
+  "binding": {
+    "state": "CURRENT",
+    "reason": "bound_source_inputs_unchanged",
+    "changed_refs": [],
+    "qualification": "source_classification_only"
+  },
+  "runtime_repair_tests": "NOT_RUN"
+}

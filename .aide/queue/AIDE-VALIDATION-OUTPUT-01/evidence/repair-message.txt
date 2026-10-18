@@ -1,0 +1,34 @@
+test(validation): repair portable validation fixture prerequisites
+
+## Summary
+- Repair two fixture prerequisites after preserved delivered attempt2 failure.
+
+## Why
+- Successful validation emitted4.9MB and obscured its actionable warning.
+
+## Changed
+- Build an ordinary-project fixture without historical source phase markers.
+- Supply re-export fixture policy from the selected source or exact pack root.
+
+## Validation
+- PASS36 source methods with no failures, errors or skips; job fully retired.
+- PASS refreshed binding CURRENT with unchanged classifications.
+- PASS syntax and26 unchanged source-method preservation; product source unchanged.
+- Source10, delivered36 and actual full-output comparison prepared, not yet rerun.
+
+## Changelog
+- Added: Compact validation with full text and machine-readable result modes.
+
+## Risks
+- Consumers parsing individual PASS lines must request --full or --json.
+- Output reduction does not establish speed, cost or broader qualification.
+
+## Follow-up
+- Qualify source/exported consumers, refresh bindings and review integration.
+
+AIDE-Task: AIDE-VALIDATION-OUTPUT-01
+AIDE-Phase: fixture-repair
+AIDE-Result: PENDING
+AIDE-Scope: validation-output
+AIDE-Token-Impact: no-model-run-unknown-total-effort
+AIDE-Quality-Gate: exact-source-and-job-review-required

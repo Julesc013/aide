@@ -47,8 +47,10 @@ def invoke(label, command, cwd=ROOT):
     return stdout.read_bytes()
 
 
+invoke('source-repair', [sys.executable, '-B', str(TASK / 'run_checks.py'), '--repair'])
+
 refresh = load('handoff_refresh', ROOT / '.aide/queue/AIDE-DAILY-PACK-REFRESH-01/run_refresh.py')
-inventory = TASK / 'evidence/prior-pack-inventory.json'
+inventory = TASK / 'evidence/repair-pack-inventory.json'
 before = json.loads(inventory.read_text(encoding='utf-8'))
 sys.argv = [__file__, 'refresh', '--inventory', str(inventory.relative_to(ROOT)),
             '--inventory-sha256', refresh.sha(inventory)]
@@ -56,8 +58,8 @@ refresh.main()
 pack = ROOT / refresh.PACK_REL
 after = refresh.inventory_bytes(pack)
 old = {name: entry['sha256'] for name, entry in before['files'].items()}
-added = {'files/.aide/scripts/tests/test_validation_output.py'}
-changed = {'files/.aide/scripts/aide_lite.py', 'files/docs/reference/aide-lite.md'}
+added = set()
+changed = {'files/.aide/scripts/tests/test_validation_output.py', 'files/.aide/scripts/tests/test_aide_lite.py'}
 assert set(after) == set(old) | added and not added.intersection(old)
 assert {name for name in old if old[name] != after[name]} - refresh.EXCLUDED == changed
 for name in added | changed:
@@ -88,7 +90,7 @@ measurement = {'status': 'PASS', 'full_bytes': len(full), 'compact_bytes': len(c
 (OUTPUT / 'actual-output-comparison.json').write_text(json.dumps(measurement, indent=2) + '\n', encoding='utf-8')
 assert refresh.inventory_bytes(pack) == after
 (OUTPUT / 'delivered-result.json').write_text(json.dumps(
-    {'status': 'PASS', 'delivered_tests': 36, 'ownership_tests': 6,
+    {'status': 'PASS', 'source_repair_tests': 10, 'delivered_tests': 36, 'ownership_tests': 6,
      'added': sorted(added), 'changed_payload': sorted(changed), 'after_sha256s': after,
      'actual_output_comparison': measurement, 'models_requested': 0}, indent=2) + '\n', encoding='utf-8')
 print(json.dumps({'status': 'PASS', 'delivered_tests': 36, 'actual_output_comparison': measurement}))

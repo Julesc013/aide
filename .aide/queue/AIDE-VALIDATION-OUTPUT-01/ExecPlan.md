@@ -71,3 +71,7 @@ Attempt2 FAILED_PRESERVED after successful export/ownership/doctor/validate/pack
 checks. Delivered36 had one fixture error and one positive-fixture failure; full
 comparison unrun. See evidence/repair-plan.md. Request bounded fixture scope and
 allocation amendment; no repair or repeat execution until exact review.
+
+Repair amendment ACCEPT, failed candidate checkpointedec51458b. Two fixture
+repairs prepared without product/validator changes. Source10 + owned test-only
+refresh + delivered36 + actual comparison are pending exact allocation3 review.

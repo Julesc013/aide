@@ -1,0 +1,21 @@
+{
+  "base": "ec51458bfed7680d3d87e661ffdb97430cc70ffd",
+  "files": {
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md": "63735355a174a28059b248318bb353ec408305fbd799ebc80dfd557ca76356f9",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-admission-commit-result.json": "4776aac94fa82b50258930d46a8b76c8a6c538ad2b512f679a7c727aebf68f14",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-admission-review.md": "f4e9bf23afdaf8b5dd951b85b246bc9adbfea00915a5354f7340d5cab6a4c70c",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-effect.md": "e4b8e5684f126ce2c506f3ceb2c5a4bd2df56c865f5d40b505d24b92af2537d5",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-job-template.json": "466a37784bacb126740f3c833dabc2cda531d58ec968bf78c8d71bcb9acd47ba",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-message.txt": "b3260f8d5c5b5a3388e4b0a2290cb0747addd1bc43017ea727c703925f7e36d7",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-pack-inventory.json": "114357d41a84b8f7d2b3cbb0b779d9b1d1958849ebdc23a54b2f2e879b3c4510",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-structural.json": "c47a6ce4b7c15e89b019cb0abe24ee11faa5fa95546e7ad836162c3818d85c92",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/run_checks.py": "0cada18eb582961290e73359c01b3565cb4140bd32be120f5f404fe15569eaad",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/run_pack.py": "0aebfe3a0a9f3874ca68b5ea67ca3c72aef8a2c57db4b2bef87866ce3142cdf8",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml": "f53b40d12192bd416e2e39ae9e701961cb6b9f86a1583c8fc68ce257f49ab660",
+    ".aide/scripts/tests/test_aide_lite.py": "a19fc45e81504d6b4e57ba9ee5e9819cb9bd0963ef3c385c4edb84ae9c07e724",
+    ".aide/scripts/tests/test_validation_output.py": "9087b2c0b4ebad53c5151938dc6e1cb6837a046aec70bb9f753c8bda39d59245"
+  },
+  "effect_sha256": "e4b8e5684f126ce2c506f3ceb2c5a4bd2df56c865f5d40b505d24b92af2537d5",
+  "message_sha256": "b3260f8d5c5b5a3388e4b0a2290cb0747addd1bc43017ea727c703925f7e36d7",
+  "template_sha256": "466a37784bacb126740f3c833dabc2cda531d58ec968bf78c8d71bcb9acd47ba"
+}

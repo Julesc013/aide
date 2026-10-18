@@ -3,5 +3,5 @@ id: AIDE-VALIDATION-OUTPUT-01
 status: needs_review
 result: PENDING
 last_attempt: FAILED_PRESERVED
-next_action: exact_repair_amendment_and_failure_checkpoint_review
+next_action: exact_repair_source_and_job3_review
 allocations_used: 2

@@ -92,10 +92,15 @@ class ValidationOutputTests(unittest.TestCase):
     def test_actual_cli_modes_agree_on_valid_and_broken_repository(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            aide._write_minimal_repo(root)
-            aide.run_context(root)
-            aide.write_task_packet(root, 'Validate presentation fixture')
-            aide.adapt_agents(root)
+            # An ordinary project owns its memory and has no AIDE-source phase
+            # markers. The source selftest helper seeds unrelated phase reports.
+            for relative in aide.REQUIRED_FILES:
+                destination = root / relative
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                if relative.startswith('.aide/memory/'):
+                    destination.write_text('# Project fixture\n', encoding='utf-8')
+                else:
+                    destination.write_bytes((ROOT / relative).read_bytes())
             def inventory():
                 return {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                         for p in root.rglob('*') if p.is_file()}
@@ -111,7 +116,7 @@ class ValidationOutputTests(unittest.TestCase):
                             cwd=root, capture_output=True, text=True, encoding='utf-8', timeout=30)
                     data = json.loads(results[('--json',)].stdout)
                     expected_code = 1 if broken else 0
-                    self.assertEqual([r.returncode for r in results.values()], [expected_code] * 3)
+                    self.assertEqual([r.returncode for r in results.values()], [expected_code] * 3, data)
                     self.assertTrue(all(not r.stderr for r in results.values()))
                     expected_full = 'AIDE Lite validate\nstatus: ' + data['status'] + '\n'
                     expected_full += ''.join('- ' + m + '\n' for m in data['messages'])

@@ -1,0 +1,27 @@
+{
+  "result": "PASS",
+  "commit": "ec51458bfed7680d3d87e661ffdb97430cc70ffd",
+  "tree": "007e7ab84647f42e5605b48c75ae33d6197a88a4",
+  "base": "7804bb47d58792c3108b8b5282fb56b3bafbb070",
+  "paths": [
+    ".aide/export/aide-lite-pack-v0/checksums.json",
+    ".aide/export/aide-lite-pack-v0/export-report.md",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_validation_output.py",
+    ".aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite.md",
+    ".aide/export/aide-lite-pack-v0/manifest.yaml",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/ExecPlan.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-02-delivered-tests.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-02-ownership-tests.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/attempt-02-qualification.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/pack-attempt-02.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/pack-commit-result.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/pack-review.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-admission-effect.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-admission-message.txt",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-admission-source.json",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/evidence/repair-plan.md",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/status.yaml",
+    ".aide/queue/AIDE-VALIDATION-OUTPUT-01/task.yaml"
+  ]
+}
