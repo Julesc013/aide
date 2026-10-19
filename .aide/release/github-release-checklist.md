@@ -1,10 +1,10 @@
-# GitHub Release Publication Checklist
+### GitHub Release Publication Checklist
 
 - checklist_id: aide-lite-pack-v0-github-draft-6d6cfc61c34517ba-checklist
 - source_commit: 6d6cfc61c34517bab7ef88128bea126515528f3a
 - no_publish: true
 
-## Checks
+#### Checks
 - [source repo state] branch checked: recorded (not-recorded-in-pack)
 - [source repo state] source commit recorded: recorded (6d6cfc61c34517bab7ef88128bea126515528f3a)
 - [source repo state] dirty state recorded: recorded (false)
@@ -19,14 +19,17 @@
 - [security gates] no local state or secret assets: required (targeted secret scan)
 - [target install caveats] target install readiness not claimed: pass (Q49/Q50/Q54/Q55 remain future work)
 
-## Blockers
+#### Blockers
 - none
 
-## Warnings
+#### Warnings
 - none
 
-## Manual Review Required
-- review release body
+#### Manual Review Required
+- reconcile README, relevant docs, TODO, PLANS, ROADMAP and CHANGELOG for the exact tag
+- distinguish released, qualified-unpublished, development and remaining work
+- review release body without duplicated title or manual prose wrapping
+- review human download labels and stable filenames
 - review suggested tag
 - review asset list
 - review known risks

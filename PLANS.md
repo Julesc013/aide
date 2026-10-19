@@ -4212,3 +4212,5 @@ AIDE-TASK-BRIEF-BROWSER-01 qualifies the unchanged saved real-task page in Edge1
 ### Current-policy release checklist
 
 AIDE-RELEASE-CHECKLIST-PROJECTION-01 corrects the existing report-only checklist, validators and stale-cache reader using the canonical project policy. One separately reviewed finite qualification allocation covers source, development export, installed preservation and fixed preview. Frozen Lite 1.1.0 stays unchanged; actual host participation and downstream ownership remain independent prerequisites.
+
+**Checklist qualification:** AIDE-RELEASE-CHECKLIST-PROJECTION-01 passed 21 source tests, 21 delivered tests, ownership and installed preservation/refusal cases in one retired allocation. Published Lite 1.1.0 is unchanged; exact terminal integration is recorded separately. [Report](.aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/REPORT.md).

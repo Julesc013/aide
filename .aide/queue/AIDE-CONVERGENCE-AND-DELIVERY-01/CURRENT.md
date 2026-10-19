@@ -4,7 +4,7 @@
 
 **Released product.** [AIDE Lite 1.1.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.1.0), T3 local Windows CLI, 56 forms. Tag checkpoint `9cead252` and manifest payload source `447e393b` are separate. Four labelled assets match frozen hashes; the original downloaded-byte adoption/recovery consumer passed and retired. [Delivery proof](../AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-lite-1.1.0-qualified.json). Lite 1.0.0, original qualification and failed/incomplete observations remain preserved.
 
-**Development.** Newer task views, communication defaults, context/symbol discovery, handoffs, lessons and cooperative worker features retain their scoped source/delivered/installed evidence. They are outside frozen 1.1.0. The unqualified readability checkpoint `8cd2236f` remains on its local task branch; it has run no jobs. The [release closeout](../AIDE-LITE-SUCCESSOR-PUBLICATION-01/REPORT.md) records publication, consumer and pending source-outcome integration separately.
+**Development.** Newer task views, communication defaults, context/symbol discovery, handoffs, lessons and cooperative worker features retain their scoped source/delivered/installed evidence. They are outside frozen 1.1.0. The unqualified readability checkpoint `8cd2236f` remains on its local task branch; it has run no jobs. The [release closeout](../AIDE-LITE-SUCCESSOR-PUBLICATION-01/REPORT.md) records publication and consumer separately. Its outcome reached local/remote dev/main at c4357fc0; the [retained Git receipt](../AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/prior-release-integration.json) records that completed sync.
 
 | Next useful outcome | Remaining condition and owner |
 | --- | --- |
@@ -21,3 +21,5 @@
 **Platform reach.** Windows has operator priority and the first qualified Lite profile. Linux, macOS, BSD, Solaris/Unix, DOS, OS/2 and future systems remain in scope through shared semantics and qualified native, companion or offline routes. [Platform plan](../../../ROADMAP.md#platform-reach). Each actual support claim requires its own environment/capability evidence.
 
 **Continue without rediscovery.** Reuse exact valid results and original partial successes. No repeated unchanged host/resource probes, new watcher, replacement checkout, implicit model allowance or unrelated cleanup. Finite code owns waiting/collection/retirement. Missing external prerequisites do not stop independent authorized work. There is no defensible overall platform completion percentage.
+
+**Concrete policy correction qualified:** the [current-policy release checklist](../AIDE-RELEASE-CHECKLIST-PROJECTION-01/REPORT.md) passed source, delivered and installed checks in one retired allocation. It projects existing requirements and refuses stale/missing reports. This development increment is outside frozen 1.1.0; final Git receipt establishes its source delivery. Native downstream ownership and actual host participation remain open.

@@ -1,0 +1,10 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "95fdd89cab1f38ea870614372fe286de436832959cca0f526611193d32ab2943",
+  "effect_sha256": "0268b26f9c4a4ac2eee09083b9b16d02fde9f64034e3936474a5222924ca5933",
+  "job_template_sha256": "913a850464b138c1e03994f4eda99f853ce7ade96fcfc1c3c018e8f6a5d1f751",
+  "required_fixes": [],
+  "qualification_at_verdict": "NOT_RUN",
+  "scope": "exact source checkpoint plus one native allocation; no integration acceptance"
+}

@@ -1,0 +1,32 @@
+{
+  "subject": "D:\\Projects\\AIDE\\aide\\.aide\\export\\aide-lite-pack-v0\\files",
+  "test_ids": [
+    "delivered_q48.Q48ChecklistProjectionTests.test_cached_cli_accepts_current_projection_without_claiming_publication",
+    "delivered_q48.Q48ChecklistProjectionTests.test_cached_cli_refuses_stale_policy_without_rewriting_or_dispatching",
+    "delivered_q48.Q48ChecklistProjectionTests.test_cli_reports_missing_checklist_without_generating_files",
+    "delivered_q48.Q48ChecklistProjectionTests.test_current_policy_exposes_documentation_and_download_obligations",
+    "delivered_q48.Q48ChecklistProjectionTests.test_markdown_uses_small_headings_and_one_logical_line_per_item",
+    "delivered_q48.Q48ChecklistProjectionTests.test_missing_empty_and_blank_items_block_without_mutating_inputs",
+    "delivered_q48.Q48ChecklistProjectionTests.test_project_items_keep_their_order_and_replace_defaults",
+    "delivered_q48.Q48ChecklistProjectionTests.test_valid_older_policy_retains_its_original_seven_items",
+    "delivered_q48.Q48ChecklistProjectionTests.test_validator_and_golden_reject_omitted_or_reordered_policy_items",
+    "delivered_q48.Q48GitHubReleaseDraftTests.test_assets_include_hashes_and_upload_plan_is_no_upload",
+    "delivered_q48.Q48GitHubReleaseDraftTests.test_commands_generate_local_only_outputs",
+    "delivered_q48.Q48GitHubReleaseDraftTests.test_draft_distinguishes_legacy_planners_from_exact_plan_apply",
+    "delivered_q48.Q48GitHubReleaseDraftTests.test_draft_provenance_uses_pack_identity_not_checkout_path",
+    "delivered_q48.Q48GitHubReleaseDraftTests.test_draft_validate_rejects_checksum_mismatch",
+    "delivered_q48.Q48GitHubReleaseDraftTests.test_draft_validate_rejects_implied_published_state",
+    "delivered_q48.Q48GitHubReleaseDraftTests.test_fixture_bundle_produces_draft_markdown_and_json",
+    "delivered_q48.Q48GitHubReleaseDraftTests.test_missing_preview_json_blocks_draft_and_draft_validate",
+    "delivered_q48.Q48GitHubReleaseDraftTests.test_missing_required_asset_creates_blocker",
+    "delivered_q48.Q48GitHubReleaseDraftTests.test_policy_and_schema_validation",
+    "delivered_q48.Q48GitHubReleaseDraftTests.test_publication_boundary_is_false_and_advisory_only",
+    "delivered_q48.Q48GitHubReleaseDraftTests.test_stale_previews_are_not_publish_candidates"
+  ],
+  "tests_run": 21,
+  "failures": 0,
+  "errors": 0,
+  "skips": [],
+  "cli_sha256": "b2bc60f0bc0c82b1355b4c80b7218f38449ed7898c020d52e68302b6b83e7310",
+  "test_sha256": "64f55bf21a8c022f6fdbcb4e68cd8029473f083759ae0314dda02b142235899d"
+}

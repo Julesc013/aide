@@ -6,6 +6,7 @@ Release entries describe the delivered Lite package and its declared compatibili
 
 - **Added:** compact task briefs, optional fresh Python helper inspection, an inactive HTML view, portable task/result handoff, source-linked lessons and cooperative dependency interfaces, qualified only for their recorded subjects.
 - **Fixed:** bounded streaming inspection of larger retained task evidence, preserving safe paths and useful continuation advice.
+- **Fixed:** release checklists project current project policy and reject missing, empty or stale projections; a missing report no longer regenerates a draft implicitly.
 - **Changed:** compact commit/PR communication and short-lived task branches with reviewed, frequent dev/main synchronization.
 - **Docs:** explicit cross-platform/vintage direction, root TODO and pre-tag documentation reconciliation; public Markdown uses logical paragraphs without manual column wrapping. Releases use concise sections, titled downloads and exact artifact links.
 - **Still open:** actual desktop editing/containment, native downstream adoption, complete effort comparisons and repeated daily-use acceptance. The saved readability candidate remains unqualified.

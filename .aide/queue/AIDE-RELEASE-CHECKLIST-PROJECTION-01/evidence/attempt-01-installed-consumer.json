@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "customization_preserved": [
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "PLANS.md",
+    "ROADMAP.md",
+    "TODO.md"
+  ],
+  "agents_manual_prefix_preserved": true,
+  "agents_complete_postimport_bytes_preserved": true,
+  "core_absent": true,
+  "fresh_process_current_repeat_stale_tailored_empty_missing": true,
+  "current_call_read_only": true,
+  "native_downstream_adoption": false,
+  "installed_cli_sha256": "b2bc60f0bc0c82b1355b4c80b7218f38449ed7898c020d52e68302b6b83e7310",
+  "manual_items": [
+    "reconcile README, relevant docs, TODO, PLANS, ROADMAP and CHANGELOG for the exact tag",
+    "distinguish released, qualified-unpublished, development and remaining work",
+    "review release body without duplicated title or manual prose wrapping",
+    "review human download labels and stable filenames",
+    "review suggested tag",
+    "review asset list",
+    "review known risks",
+    "review target install caveats",
+    "decide whether this is pre-release/draft/stable",
+    "decide whether to publish"
+  ]
+}

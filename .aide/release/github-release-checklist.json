@@ -82,7 +82,10 @@
     }
   ],
   "manual_review_required": [
-    "review release body",
+    "reconcile README, relevant docs, TODO, PLANS, ROADMAP and CHANGELOG for the exact tag",
+    "distinguish released, qualified-unpublished, development and remaining work",
+    "review release body without duplicated title or manual prose wrapping",
+    "review human download labels and stable filenames",
     "review suggested tag",
     "review asset list",
     "review known risks",

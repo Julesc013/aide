@@ -1,0 +1,107 @@
+[
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\baseline-mismatch.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-baseline-mismatch.json",
+    "raw_sha256": "784e6cf9f4874816f36599925f8528beb754f32894db72b5b5b19f60567cbbf3",
+    "projection_sha256": "784e6cf9f4874816f36599925f8528beb754f32894db72b5b5b19f60567cbbf3",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\delivered-tests.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-delivered-tests.json",
+    "raw_sha256": "018203596aaf5aa7771e3f5d6cd34c6c47c006b6c5c56f466a0cb567a7a9f93e",
+    "projection_sha256": "018203596aaf5aa7771e3f5d6cd34c6c47c006b6c5c56f466a0cb567a7a9f93e",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\installed-consumer.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-installed-consumer.json",
+    "raw_sha256": "ecc7edc9d51876b79f85a5e935e77d96781cdc02dff0e523be5fd5444e4d9c4b",
+    "projection_sha256": "ecc7edc9d51876b79f85a5e935e77d96781cdc02dff0e523be5fd5444e4d9c4b",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\installed-current.invocation.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-installed-current.invocation.json",
+    "raw_sha256": "2439155e84cd6a93ca71394d8c5e5dfa51957d6898c008722be3243be05a48c1",
+    "projection_sha256": "2439155e84cd6a93ca71394d8c5e5dfa51957d6898c008722be3243be05a48c1",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\installed-empty.invocation.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-installed-empty.invocation.json",
+    "raw_sha256": "104c86c145db9b437fb8833dd13b2331d844197e1bbfc9033f58369f38c1860c",
+    "projection_sha256": "104c86c145db9b437fb8833dd13b2331d844197e1bbfc9033f58369f38c1860c",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\installed-missing.invocation.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-installed-missing.invocation.json",
+    "raw_sha256": "832ac83c2cfc68127f7d60987f43fc197f59bf0cb9ec327be6f23a6dc2ffb6b0",
+    "projection_sha256": "832ac83c2cfc68127f7d60987f43fc197f59bf0cb9ec327be6f23a6dc2ffb6b0",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\installed-repeat.invocation.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-installed-repeat.invocation.json",
+    "raw_sha256": "fba97b2b76b59227f8e61d50a8d9e54332b960053ac67b4ce0c58fd769e2cc71",
+    "projection_sha256": "fba97b2b76b59227f8e61d50a8d9e54332b960053ac67b4ce0c58fd769e2cc71",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\installed-stale.invocation.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-installed-stale.invocation.json",
+    "raw_sha256": "cdbbac58fe2c2182c307fd97bddc0b353309de168152aad921587bec29dcde28",
+    "projection_sha256": "cdbbac58fe2c2182c307fd97bddc0b353309de168152aad921587bec29dcde28",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\installed-tailored.invocation.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-installed-tailored.invocation.json",
+    "raw_sha256": "9784453e92e176ed08b8755088c80d86f5286dcd9f6deef2375850ef569ce639",
+    "projection_sha256": "9784453e92e176ed08b8755088c80d86f5286dcd9f6deef2375850ef569ce639",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\ownership-tests.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-ownership-tests.json",
+    "raw_sha256": "a6cf7e4ddadc235eedf04e5d2971739d575be1b957628d6ff38935c8ddc51b4c",
+    "projection_sha256": "7a92b9be040cef9b06d833e29ba6a2157b39ec99aa110afee5e2693e2320bb12",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\preview-result.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-preview-result.json",
+    "raw_sha256": "4aca8c91d341f22a437f25e70873d6535f7c191ee908687a35e2de51fe36fed1",
+    "projection_sha256": "4aca8c91d341f22a437f25e70873d6535f7c191ee908687a35e2de51fe36fed1",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\qualification.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-qualification.json",
+    "raw_sha256": "9c1893526625e4dcb4a66650b8918bb2c319e8e5ad5d9cf86f8b652c11f7e0f5",
+    "projection_sha256": "9c1893526625e4dcb4a66650b8918bb2c319e8e5ad5d9cf86f8b652c11f7e0f5",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\qualified.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-qualified.json",
+    "raw_sha256": "d03acbcdea979a0c59933de0eefaee52bfe9bef76541343ac880e37314be58fe",
+    "projection_sha256": "d03acbcdea979a0c59933de0eefaee52bfe9bef76541343ac880e37314be58fe",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\report-refresh.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-report-refresh.json",
+    "raw_sha256": "b48469e30969f2e4d388fe9834e54a1e4317b3a92689a3e1e563dfd9161bea5c",
+    "projection_sha256": "b48469e30969f2e4d388fe9834e54a1e4317b3a92689a3e1e563dfd9161bea5c",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\10312d7821d64922b2f59fd653b4c094\\output\\source-tests.json",
+    "projection": ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/attempt-01-source-tests.json",
+    "raw_sha256": "26696ee8ef871d8e4c49431e44dc99d722cfd08d65e2d12025370a4c5836a127",
+    "projection_sha256": "26696ee8ef871d8e4c49431e44dc99d722cfd08d65e2d12025370a4c5836a127",
+    "transformation": "byte-identical"
+  }
+]

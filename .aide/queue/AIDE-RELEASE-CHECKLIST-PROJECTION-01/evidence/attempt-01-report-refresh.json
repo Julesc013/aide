@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "preimages": {
+    ".aide/release/github-release-draft-validation.json": "b0a000ccaacf5cf162926e0ec12e1b3fa3f3d35e7e6847d75d913cce4eb42fd2",
+    ".aide/release/github-release-checklist.json": "88b045f6f30257a050e93552c5b4515fbbfeefcadb3ba2a7e3939cf38fa2a655",
+    ".aide/release/github-release-checklist.md": "c96d6e74339ac6cfd3d70317298bf1d48e4930462d127637a75e0542a7a5cae2",
+    ".aide/release/github-release-draft-validation.md": "f745797911d8a7a9ba227e0620b493af1b090b9854701d0811f7c18495340f4b"
+  },
+  "postimages": {
+    ".aide/release/github-release-draft-validation.json": "b0a000ccaacf5cf162926e0ec12e1b3fa3f3d35e7e6847d75d913cce4eb42fd2",
+    ".aide/release/github-release-checklist.json": "74e3cedb7d115f275dd2d0f389adcc24df6a53570477f031d68c23971e75556a",
+    ".aide/release/github-release-checklist.md": "96d4a5aeb42dd479f0a9a9231339c5fa65d9ca33681e16ec194706b6241b41ba",
+    ".aide/release/github-release-draft-validation.md": "f745797911d8a7a9ba227e0620b493af1b090b9854701d0811f7c18495340f4b"
+  },
+  "other_release_files_unchanged": 54,
+  "legacy_bundle_source_preserved": "6d6cfc61c34517bab7ef88128bea126515528f3a",
+  "policy_sha256": "fca9eaf5eead2c7b1ad2b8e702c18d5dd3b333ea845e8e1b159218067e6dc9a1",
+  "source_cli_sha256": "2e071a3fed7d2a968341170dcab66fb07c4f65add15450dd23333a9985db1bdc"
+}

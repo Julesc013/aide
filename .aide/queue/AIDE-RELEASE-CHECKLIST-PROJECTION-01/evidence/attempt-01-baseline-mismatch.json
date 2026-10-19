@@ -1,0 +1,27 @@
+{
+  "prior_items": [
+    "review release body",
+    "review suggested tag",
+    "review asset list",
+    "review known risks",
+    "review target install caveats",
+    "decide whether this is pre-release/draft/stable",
+    "decide whether to publish"
+  ],
+  "current_items": [
+    "reconcile README, relevant docs, TODO, PLANS, ROADMAP and CHANGELOG for the exact tag",
+    "distinguish released, qualified-unpublished, development and remaining work",
+    "review release body without duplicated title or manual prose wrapping",
+    "review human download labels and stable filenames",
+    "review suggested tag",
+    "review asset list",
+    "review known risks",
+    "review target install caveats",
+    "decide whether this is pre-release/draft/stable",
+    "decide whether to publish"
+  ],
+  "prior_cli_sha256": "8eb4ba7ab0dfce18130a4ce7e8a0c5ec65af4a04286b91a52ac87faed77293a7",
+  "policy_sha256": "fca9eaf5eead2c7b1ad2b8e702c18d5dd3b333ea845e8e1b159218067e6dc9a1",
+  "other_fields_equal": true,
+  "prior_qualification_repeated": false
+}

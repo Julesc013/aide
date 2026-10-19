@@ -1,0 +1,9 @@
+fix(release): qualify and deliver the current-policy checklist
+
+Complete source, delivered and installed qualification for the existing policy-driven checklist. Preserve the original tests, review findings, legacy report provenance and published archives; retain the exact retired attempt and refreshed export. Reconcile current TODO, changelog and campaign views.
+
+Validation: PASS - 21 source tests, 21 delivered tests, six ownership checks, installed current/repeat/tailored/refusal cases, doctor, validate and fixed preview
+Changelog: Fixed: Keep release checklist review requirements aligned with project policy
+Risk: Development-only; published Lite 1.1.0 and wider host/downstream claims are unchanged
+AIDE-Task: AIDE-RELEASE-CHECKLIST-PROJECTION-01
+AIDE-Format: compact-v1

@@ -20,7 +20,9 @@
 - [ ] Qualify platform participation beyond Windows: bounded Linux/macOS profiles, then evidence-driven BSD/Solaris/Unix adaptations and DOS/OS/2/vintage native or offline-companion paths. Preserve common work/protocol semantics and declare each profile’s limits. [Platform reach](ROADMAP.md#platform-reach)
 - [ ] Expand host bindings, read-only Workbench/offline access, domain authoring, networked collaboration and controlled learning through their capability-specific gates.
 
-- [ ] Bring the legacy report-only release preview into line with the current checklist policy. Current release WorkUnits check the documentation gate explicitly; the preview does not automatically intercept tags.
+- [x] Project the current checklist policy through the existing report-only release preview, validator and stale-cache reader. [Source/delivered/installed evidence](.aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/REPORT.md). Development-only; tags are not automatically intercepted.
+
+- [ ] Audit accumulated remote task branches and retire only completed, fully integrated refs after checking ownership, open work and evidence links. Preserve active, blocked, important and persistent refs; no broad pruning is part of the checklist correction.
 
 **Before every new tag**
 

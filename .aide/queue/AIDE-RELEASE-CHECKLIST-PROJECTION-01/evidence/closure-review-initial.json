@@ -1,0 +1,13 @@
+{
+  "decision": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "1f2371f21e8f1adba8b48cae2dc21079fc4765af7adafa7ed849046efceb72a3",
+  "effect_sha256": "918c569348273200a14577e90910ad5af2092c5ca78beacaf6ae4914d63ca193",
+  "controller_sha256": "6836cada5210db273207d045e2010b69dbbf7b8a32c8501be8f9405afe617730",
+  "required_fixes": [
+    "Add four named promotion records and procedure links",
+    "Fetch/re-observe exact targets before each branch effect",
+    "Require post-dev full validation and main..dev commit checks before main"
+  ],
+  "disposition": "Repaired as metadata/controller only; all product qualification reused. Explicit latest-commit check also retained per promotion policy."
+}

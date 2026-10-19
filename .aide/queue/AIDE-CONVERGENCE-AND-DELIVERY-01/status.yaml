@@ -9,8 +9,8 @@ responsible_owner: AIDE campaign controller; project owners retain target accept
 acceptance_scope: Partial exact-subject qualifications; daily-use and full platform acceptance remain open
 product_qualified: false
 observed_at: 2026-10-19
-observed_source_checkpoint: d04fd33313f4ef1affc30c6458be5d96f1bdcd66
-next_action: Integrate verified release outcome docs, then resolve actual host/target ownership and complete useful downstream/dependency work with recovery.
+observed_source_checkpoint: 1ac0b37c4833a9fc97e9785d6e2834974ea96057
+next_action: Resolve actual host/target ownership and complete useful downstream/dependency work with recovery; independently integrate the qualified checklist correction.
 remaining_obligations:
   - Actual supported host delivery and bounded ordinary editing with interruption/recovery
   - DiskEd writer ownership, target effect review and native downstream acceptance preserving customization
@@ -20,7 +20,7 @@ remaining_obligations:
 published_lite: 1.1.0 exact local Windows profile;1.0.0 retained
 qualified_unpublished_lite: none; newer development features remain unreleased
 preserved_publication_branch: task/aide-lite-successor-publication-01
-preserved_publication_commit: d04fd33313f4ef1affc30c6458be5d96f1bdcd66
+preserved_publication_commit: c4357fc0fa150db5fc715a5365c52140a920d36b
 publication_prerequisite: complete_for_frozen_1_1_0
 publication_effect: completed_after_existing_draft_recovery
 native_adoption_prerequisite: active_writer_ownership_not_established
@@ -30,7 +30,7 @@ outer_filesystem_permission: unrestricted_not_whole_session_containment
 unchanged_blockers_stop_independent_work: false
 authority: Existing owner delegation and exact independent source/effect gates; status grants nothing new
 current_state_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
-current_state_sha256: 0a88edc3c885647aa1282abaddcce86dd510b6d731c3334dfa054d7439bf37c9
+current_state_sha256: 9d6cc6799fdf32b7d8fdf8a82140762399f2affe5ee835d7823bffbb695210f1
 historical_status_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-status.yaml
 historical_status_sha256: 797b885d9b9beee5a17435210f002cfba91ff344eef227af6ceca2dd32214384
 historical_task_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-task.yaml
@@ -58,3 +58,5 @@ publication_resumption_source: d914e9109cd27d0e5e00d6b3648dae344d4c5412
 release_presentation_1_0_ref: .aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-1.0.0-presentation.json
 successor_published_proof: .aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-lite-1.1.0-qualified.json
 continuation_priorities_ref: .aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/continuation-priorities.json
+
+release_checklist_ref: .aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/REPORT.md

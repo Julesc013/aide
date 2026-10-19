@@ -1,0 +1,24 @@
+{
+  "validate": {
+    "chunk_id": "ec365a",
+    "wall_time_seconds": 0.0000182,
+    "exit_code": 0,
+    "original_token_count": 61,
+    "output": "AIDE Lite validate\r\nstatus: PASS\r\nchecks: 60922; PASS: 60921; WARN: 1; FAIL: 0; OTHER: 0\r\n- WARN review packet review ref missing: .aide/prompts/evidence-review.md\r\nomitted PASS details: 60921; use validate --full or --json for all results\r\n"
+  },
+  "pack_status": {
+    "chunk_id": "2cc3a8",
+    "wall_time_seconds": 2.9440784,
+    "exit_code": 0,
+    "original_token_count": 59,
+    "output": "AIDE Lite pack-status\r\npack: .aide/export/aide-lite-pack-v0\r\nexists: true\r\nchecksums_valid: true\r\nprovenance_result: DIRTY_SOURCE_RECORDED\r\nboundary_result: PASS\r\nchecksum_problems: 0\r\nprovenance_problems: 0\r\nboundary_violations: 0\r\n"
+  },
+  "commit_message_and_whitespace": {
+    "chunk_id": "0c7559",
+    "wall_time_seconds": 1.5476007,
+    "exit_code": 0,
+    "original_token_count": 548,
+    "output": "AIDE Lite commit check\r\nresult: PASS\r\nsource: .aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/closure-message.txt\r\npolicy: .aide/policies/commit-messages.yaml\r\nstandard: .aide/reports/aide-commit-message-standard.md\r\n- PASS compact subject follows type[(scope)][!]: description\r\n- PASS compact commit type is allowed\r\n- PASS compact subject describes a specific change\r\n- PASS compact subject fits the 72-character guideline\r\n- PASS compact subject omits a trailing period\r\n- PASS compact subject has a blank separator\r\n- PASS compact metadata is one final trailer block\r\n- PASS compact singleton present: AIDE-Format\r\n- PASS compact singleton present: AIDE-Task\r\n- PASS compact singleton present: Validation\r\n- PASS compact singleton is unambiguous: Risk\r\n- PASS compact singleton is unambiguous: Follow-up\r\n- PASS compact singleton is unambiguous: BREAKING CHANGE\r\n- PASS compact singleton is unambiguous: AIDE-Task\r\n- PASS compact singleton is unambiguous: AIDE-Phase\r\n- PASS compact singleton is unambiguous: AIDE-Result\r\n- PASS compact singleton is unambiguous: AIDE-Scope\r\n- PASS compact singleton is unambiguous: AIDE-Token-Impact\r\n- PASS compact singleton is unambiguous: AIDE-Quality-Gate\r\n- PASS compact format is supported\r\n- PASS compact format marker occurs once in trailers\r\n- PASS compact metadata is not duplicated or misplaced in prose\r\n- PASS compact body explains the change and rationale\r\n- PASS compact validation names an outcome and the actual checks or reason\r\n- PASS compact changelog has a known category and description\r\n- PASS compact changelog records at least one explicit entry\r\n- PASS compact breaking marker has an impact and migration explanation\r\n- PASS compact breaking footer is not empty\r\n- PASS compact presentation avoids H1/H2; use plain text or H3/H4\r\n- PASS compact message excludes control characters\r\n- PASS commit message excludes raw_prompt_body\r\n- PASS commit message excludes raw_response_body\r\n- PASS commit message excludes begin private key\r\n- PASS commit message excludes openai_api_key\r\n- PASS commit message excludes anthropic_api_key\r\n- PASS commit message excludes deepseek_api_key\r\n- PASS commit message excludes sk-ant\r\n"
+  },
+  "note": "One existing review-ref WARN retained; no failures. The subsequent report wording and TODO-only edit do not change qualified code or package payloads; terminal controller validates the actual final committed candidate again."
+}

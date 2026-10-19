@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "job_id": "10312d7821d64922b2f59fd653b4c094",
+  "source_tests": 21,
+  "delivered_tests": 21,
+  "ownership_tests": 6,
+  "installed_consumer": "PASS",
+  "retired": true,
+  "projections": 15,
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/changelog": 27979,
+      ".aide/export/aide-lite-pack-v0": 4807979,
+      ".aide/release": 8281147
+    },
+    "memory_bytes": 317014016,
+    "scratch_bytes": 1523542
+  },
+  "models_requested": 0,
+  "whole_outcome_usage": "unknown"
+}

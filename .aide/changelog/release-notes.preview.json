@@ -1,81 +1,23 @@
 {
-  "follow_up": [
-    {
-      "commit": "b1db5633c924",
-      "summary": "Review the exact release packet and establish publication authentication"
-    },
-    {
-      "commit": "f708e8c658d9",
-      "summary": "Authenticate GitHub CLI; recheck exact refs and release absence before effects"
-    }
-  ],
+  "follow_up": [],
   "highlights": [
     {
       "breaking": false,
-      "category": "Changed",
-      "commit": "3abb6086a075",
-      "subject": "docs(release): reconcile pre-tag docs and add the root TODO",
-      "summary": "Require pre-tag documentation and readable release presentation"
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "75f9127dff3b",
-      "subject": "test(release): continue unfinished documentation checks",
-      "summary": "Preserve partial qualification and continue unfinished checks"
-    },
-    {
-      "breaking": false,
-      "category": "Docs",
-      "commit": "d914e9109cd2",
-      "subject": "docs(release): prepare readable release pages and download labels",
-      "summary": "Improve release notes and human download labels"
-    },
-    {
-      "breaking": false,
-      "category": "Docs",
-      "commit": "3abb6086a075",
-      "subject": "docs(release): reconcile pre-tag docs and add the root TODO",
-      "summary": "Add TODO and reconcile release documentation and changelog"
+      "category": "Fixed",
+      "commit": "1ac0b37c4833",
+      "subject": "fix(release): project the project-owned publication checklist",
+      "summary": "Project current release documentation and download review obligations"
     }
   ],
   "preview_only": true,
   "risk_summary": [],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "75f9127dff3be6cad51a4fa7cdac69c0c600f9c0",
-  "source_range": "ecff55da6db49d63c4a3718b726f96d3cd74e6e9..75f9127dff3be6cad51a4fa7cdac69c0c600f9c0",
+  "source_head": "1ac0b37c4833a9fc97e9785d6e2834974ea96057",
+  "source_range": "c4357fc0fa150db5fc715a5365c52140a920d36b..1ac0b37c4833a9fc97e9785d6e2834974ea96057",
   "validation_summary": [
     {
-      "commit": "b1db5633c924",
-      "summary": "PASS - asset identities, accepted ancestry and release-scope comparison\nNOT RUN - publication, downloads and acquired-byte consumer"
-    },
-    {
-      "commit": "f708e8c658d9",
-      "summary": "PASS - preparation checks recorded in evidence/preparation-validation.json\nNOT RUN - authenticated publication, downloads and acquired-byte consumer"
-    },
-    {
-      "commit": "6728db41ed6a",
-      "summary": "PASS - auth, branch/ref observation and conflict-only merge preview\nNOT RUN - revised source, export, publication and acquired-byte checks"
-    },
-    {
-      "commit": "a5aecad6d8f6",
-      "summary": "PASS - reviewed six-file resolution map and frozen asset identities\nNOT RUN - final release docs, publication and acquired-byte acceptance"
-    },
-    {
-      "commit": "d914e9109cd2",
-      "summary": "PASS - GitHub GFM renders both bodies without duplicated title or hard breaks\nNOT RUN - remote metadata updates and all 1.1.0 publication effects"
-    },
-    {
-      "commit": "3abb6086a075",
-      "summary": "PASS - whitespace-only reflow preserves tokens and fenced code; 1.0 metadata readback\nNOT RUN - source/delivered30, owned export, installed defaults and fixed preview"
-    },
-    {
-      "commit": "3abb6086a075",
-      "summary": "PASS - whitespace-only reflow preserves tokens and fenced code; 1.0 metadata readback\nNOT RUN - source/delivered30, owned export, installed defaults and fixed preview"
-    },
-    {
-      "commit": "75f9127dff3b",
-      "summary": "PASS - collection hashes, retirement and exact original inputs\nNOT RUN - bounded continuation and installed default checks"
+      "commit": "1ac0b37c4833",
+      "summary": "PASS - source syntax, scope and message inspection\nNOT RUN - the one reviewed source, delivered and installed qualification allocation"
     }
   ],
   "warnings": []
