@@ -1,0 +1,19 @@
+{
+  "base": "9cead252a1e72c5fe3d3f224b098d98436f7a250",
+  "files": {
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md": "91d3e5caf3f0a812edf537284ec73e07f3e3d978a224e6a9b97b590ee7d46b90",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/deliver.py": "540f3db33b2e790ae2c0980be4c8d05269ddab0bced6f3a7a7efa0b42e0e248f",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/delivery-acceptance.md": "2a28ebb6bf9776d8d47ea7714f1ccdb9386a547b5154eeb950719eb3bf3e255e",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/delivery-attempt-01.json": "5172009b506efe05746026e3c3d48f42e5d7dd9e83cb54847099097e2cba69a4",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/dev-review-packet.md": "6c9ed08deab5e8d621ff82a674091330a5e8a8535a83d7b2d8735217751ee8ac",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/draft-reconciliation.md": "c4f344fb1b93c810df88d81fd4e4a10f3773186eca34471046125ab0a93b42c4",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/recovery-draft-before.json": "ee7246b9a7b88bfa2f0464eb5fe2f15722dd03ce709d7f9350d33c0e08e7b299",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/recovery-effect.json": "0a7748af6e8abde69c7f69b3331053f90a3cd5eb80150ce2a42662fcc7e1c5c3",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/recovery-message.txt": "fe5490e2dc748b0f2361c2991ed0098a4da55b9a79e022c5bfb05407c12ed9d9",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/recovery-releases-before.json": "b12ce4763b3a7682e86f9c5b817aa44f941a63ce5f14f2edf81717a5f80dfe41",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/resume_delivery.py": "eb386596abbf2cc11602b8c965cb4eca55039aeeebee0f342b41d88a1250dbd9",
+    ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/status.yaml": "a285a646de09bfabb32328f9db349ed873f1c19de165cd7555eddd500412aeba"
+  },
+  "effect_sha256": "0a7748af6e8abde69c7f69b3331053f90a3cd5eb80150ce2a42662fcc7e1c5c3",
+  "message_sha256": "fe5490e2dc748b0f2361c2991ed0098a4da55b9a79e022c5bfb05407c12ed9d9"
+}

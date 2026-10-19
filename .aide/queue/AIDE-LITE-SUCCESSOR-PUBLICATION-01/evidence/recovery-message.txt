@@ -1,0 +1,9 @@
+fix(release): resume the existing draft through its release ID
+
+Preserve the completed branch sync, annotated tag and exact draft. Retain the failed published-only lookup and use authenticated draft discovery/by-ID readback. Continue only asset upload, publication, acquisition and the one original consumer; keep execution source separate from the existing release target.
+
+Validation: PASS - 79 operation stream hashes, exact existing draft and tag reconciliation
+ NOT RUN - remaining upload/publication/acquisition/consumer effects
+Changelog: Fixed: Resolve draft metadata through its observed release ID
+AIDE-Task: AIDE-LITE-SUCCESSOR-PUBLICATION-01
+AIDE-Format: compact-v1

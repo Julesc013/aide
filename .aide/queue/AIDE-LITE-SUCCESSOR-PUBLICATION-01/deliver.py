@@ -229,7 +229,11 @@ def main():
             run("create-draft", [plan["gh_executable"], "release", "create", TAG, "--repo", "Julesc013/aide",
                 "--draft", "--verify-tag", "--target", args.commit, "--title", "AIDE Lite 1.1.0",
                 "--notes-file", str(TASK / "release-notes.md")])
-            draft = api("draft", "/releases/tags/" + TAG)
+            values = api("draft-list", "/releases?per_page=100")
+            assert isinstance(values, list) and len(values) < 100
+            matches = [item for item in values if item["tag_name"] == TAG]
+            assert len(matches) == 1, "Draft creation needs exact ID reconciliation"
+            draft = api("draft", "/releases/" + str(matches[0]["id"]))
             assert draft["tag_name"] == TAG and draft["name"] == "AIDE Lite 1.1.0"
             assert draft["body"] == (TASK / "release-notes.md").read_text(encoding="utf-8")
             assert draft["target_commitish"] == args.commit

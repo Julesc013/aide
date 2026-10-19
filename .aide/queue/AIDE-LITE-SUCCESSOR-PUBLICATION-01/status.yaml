@@ -1,8 +1,8 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-SUCCESSOR-PUBLICATION-01
 status: needs_review
-result: PRE_TAG_DOCUMENTATION_QUALIFIED_RELEASE_REVIEW
-next_action: exact qualified integration, tag/publication and acquired-byte consumer review
+result: DRAFT_CREATED_READBACK_RECOVERY_REVIEW
+next_action: exact existing-draft upload/publication/acquisition and one original consumer recovery review
 authentication: active Julesc013 account confirmed
 presentation_1_0_executed: true
 presentation_1_0_ref: evidence/published-1.0.0-presentation.json
@@ -11,3 +11,6 @@ publication_executed: false
 acquired_consumer: NOT_RUN
 jobs_allocated: 2
 maximum_jobs: 3
+release_id: 416392381
+release_target: 9cead252a1e72c5fe3d3f224b098d98436f7a250
+tag_object: 3ae20f881ff065254a681deba30a39209c888ee7
