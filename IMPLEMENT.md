@@ -10246,3 +10246,7 @@ Reconciled the publication branch with current dev in two-parent commit a5aecad6
 Corrected the published 1.0.0 body and four display labels through the reviewed controller at d914e910. All18 operations and stream hashes were checked; release/tag identity, publication time, stable flags, four asset IDs/names/sizes/digests and eight local frozen assets remain intact. [Observed result](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-1.0.0-presentation.json) records the outcome.
 
 Prepared a root TODO, populated human changelog, current roadmap/README and default pre-tag documentation/presentation rules. Public Markdown uses logical paragraphs and bullets without manual column wrapping. Development export and source/consumer qualification of these documentation defaults remain pending; 1.1.0 is not yet published.
+
+### Current-policy release checklist
+
+AIDE-RELEASE-CHECKLIST-PROJECTION-01 corrects the existing report-only checklist, validators and stale-cache reader using the canonical project policy. One separately reviewed finite qualification allocation covers source, development export, installed preservation and fixed preview. Frozen Lite 1.1.0 stays unchanged; actual host participation and downstream ownership remain independent prerequisites.

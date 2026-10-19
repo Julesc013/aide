@@ -1,0 +1,17 @@
+{
+  "base": "c4357fc0fa150db5fc715a5365c52140a920d36b",
+  "files": {
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/admission-effect.md": "23b4ebdfb5c0bb09e0f315deb042a87eb021aefbe856f374528ee977ff6f444f",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/admission-message.txt": "1c3d66b6afce4e9622f310a599bb1acc09fddde30b9c2959ac40757a6c635f7e",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/baseline.json": "894f7817fa6a45ceb503cf7628828a625a66679aabc5caed80364228cf5b42ac",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/latest-intent-packet.json": "85f94466c2a1d12bb4fc2aa5154e4ee82adb27d94813f0a72b2b4dd6560eac78",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/latest-workunit-draft.json": "2f9669407ba0306cd134cd824417867ad0c8f58d14dff57b96b066848789fcc9",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/prior-release-integration.json": "ca51934775c640592ea840b869230a2f7a4574e63daf2c245bcb93cbd2f48519",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/ExecPlan.md": "f2b3dc88ea35f2f0cd7d1202a24b3f5d0acdb069ffc13bc84a6e7ccaff76151e",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/prompt.md": "f56e2279fb5540af08a460d45a15ee771532c46b8a47c5812b5c00b4e7827443",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/status.yaml": "2e020b3c66de3a1c08a3e8ea89708b6f7e0ed08016bf01681dcd6144beca8925",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/task.yaml": "f51860b98fd11322a79352956d477712484e4cf1c20594ef923cca252348d9fa"
+  },
+  "message_sha256": "1c3d66b6afce4e9622f310a599bb1acc09fddde30b9c2959ac40757a6c635f7e",
+  "effect_sha256": "23b4ebdfb5c0bb09e0f315deb042a87eb021aefbe856f374528ee977ff6f444f"
+}

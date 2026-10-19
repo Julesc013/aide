@@ -1,0 +1,14 @@
+{
+  "decision": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "b4bb48b04810e90811bba71bd097b3c6e88a40fd57517a290a42696980b7d904",
+  "effect_sha256": "919ddb931225712db0a9b6c99c28d04c3bfcceaa35d3a374f56ebfb7d03b7cbc",
+  "template_sha256": "371a40e69ec837d482298ca9cf9d6a81e50a730348d3ac08ec2f00160c1f3a51",
+  "required_fixes": [
+    "No implicit draft generation when checklist missing",
+    "Reject empty or non-object checklist",
+    "Preserve manual AGENTS prefix and complete post-import bytes",
+    "Exclude four mutable reports from immutable pins"
+  ],
+  "disposition": "All four repaired before any native allocation; original verdict and manifests retained"
+}

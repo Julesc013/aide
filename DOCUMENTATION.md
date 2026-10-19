@@ -801,3 +801,7 @@ Current writing guide: [commit discipline](docs/reference/commit-discipline.md),
 [Task packets](docs/reference/task-packets.md) distinguishes small record reads from bounded streaming evidence inspection. The [qualification report](.aide/queue/AIDE-TASK-EVIDENCE-READ-01/REPORT.md) records source/delivered/installed behavior, safe paths and unchanged acceptance boundaries.
 
 - [Lite successor publication](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md): frozen1.1.0 delivery, pre-tag documentation, readable release/download presentation and acquired-byte acceptance. Authentication is established; exact refreshed effects remain pending.
+
+### Current-policy release checklist
+
+AIDE-RELEASE-CHECKLIST-PROJECTION-01 corrects the existing report-only checklist, validators and stale-cache reader using the canonical project policy. One separately reviewed finite qualification allocation covers source, development export, installed preservation and fixed preview. Frozen Lite 1.1.0 stays unchanged; actual host participation and downstream ownership remain independent prerequisites.

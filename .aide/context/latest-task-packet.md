@@ -1,15 +1,12 @@
 # AIDE Latest Task Packet
 
-task_id: AIDE-LITE-SUCCESSOR-01
-projection_only: true
-
 ## PHASE
 
-AIDE-LITE-SUCCESSOR-01 - Preserve published Lite assets and prepare an additive successor contract
+UNSPECIFIED - Project the current release checklist policy without publishing
 
 ## GOAL
 
-Preserve published Lite assets and prepare an additive successor contract
+Project the current release checklist policy without publishing
 
 ## WHY
 
@@ -17,9 +14,6 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-LITE-SUCCESSOR-01/task.yaml` (selected scope and acceptance)
-- `.aide/queue/AIDE-LITE-SUCCESSOR-01/ExecPlan.md` (continuation; when present)
-- `.aide/queue/AIDE-LITE-SUCCESSOR-01/status.yaml` (actual state; when present)
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -46,34 +40,17 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-LITE-SUCCESSOR-01/**`
-- `.aide/scripts/aide_lite.py`
-- `.aide/scripts/tests/test_stable_successor.py`
-- `.aide/policies/release-versioning.yaml`
-- `.aide/release/successor-candidate.json`
-- `docs/reference/aide-lite-release-bundle.md`
-- `.aide/queue/index.yaml`
-- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md`
-- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml`
-- `.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/evidence/lite-successor-admission.md`
-- `.aide/intake/latest-*`
-- `.aide/context/latest-task-packet.md`
-- `.aide/reports/capability-*`
-- `.aide/export/aide-lite-pack-v0/**`
-- `.aide/changelog/CHANGELOG.preview.md`
-- `.aide/changelog/RELEASE_NOTES.preview.md`
-- `.aide/changelog/changelog.preview.json`
-- `.aide/changelog/latest-changelog-report.md`
-- `.aide/changelog/malformed-commits.md`
-- `.aide/changelog/release-notes.preview.json`
-- `PLANS.md`
-- `IMPLEMENT.md`
-- `DOCUMENTATION.md`
+- `<fill from the next reviewed queue packet>`
+- `.aide/context/**`
+- `.aide/queue/unspecified-*` if this task becomes a queue item
+- root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
 
-
-- baseline protected paths and effects remain governed by repository policy
+- `.git/**`
+- `.env`
+- `secrets/**`
+- `.aide.local/**`
 - raw provider credentials, API keys, local caches, raw prompt logs
 - Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
 
@@ -137,8 +114,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 5410
-- approx_tokens: 1353
+- chars: 4314
+- approx_tokens: 1079
 - budget_status: PASS
 - warnings:
   - none

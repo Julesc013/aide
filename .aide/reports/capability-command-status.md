@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-task-evidence-read-01`
-- current_commit: `347668a4a507105e71736d00d5e6ba7331c1fe79`
+- current_branch: `task/aide-release-checklist-projection-01`
+- current_commit: `c4357fc0fa150db5fc715a5365c52140a920d36b`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

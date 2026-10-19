@@ -1,0 +1,9 @@
+{
+  "observed_base": "c4357fc0fa150db5fc715a5365c52140a920d36b",
+  "policy": ".aide/policies/release-checklist.yaml",
+  "policy_sha256": "fca9eaf5eead2c7b1ad2b8e702c18d5dd3b333ea845e8e1b159218067e6dc9a1",
+  "policy_items": 10,
+  "hardcoded_items": 7,
+  "runtime_test": "NOT_RUN",
+  "intake": "release-risk classifier is preserved; this bounded child authorizes only report-only source correction through separate gates"
+}

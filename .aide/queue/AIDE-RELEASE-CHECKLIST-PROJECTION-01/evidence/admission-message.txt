@@ -1,0 +1,9 @@
+fix(release): admit the current-policy checklist correction
+
+The report-only release checklist omits current documentation and download requirements. Admit a bounded correction through its existing generator, validators and CLI, preserving published assets and all no-publish boundaries.
+
+Validation: PASS - affected owners and current policy inspected
+ NOT RUN - source, delivered and installed qualification
+Changelog: Internal: Admit the policy-driven release checklist correction
+AIDE-Task: AIDE-RELEASE-CHECKLIST-PROJECTION-01
+AIDE-Format: compact-v1

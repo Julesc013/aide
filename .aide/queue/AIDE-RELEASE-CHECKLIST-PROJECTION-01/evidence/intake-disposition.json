@@ -1,0 +1,22 @@
+[
+  {
+    "path": ".aide/intake/latest-intent-packet.json",
+    "new_sha256": "85f94466c2a1d12bb4fc2aa5154e4ee82adb27d94813f0a72b2b4dd6560eac78",
+    "restored_sha256": "a959149a54bc0cf334e4ac506e6abec65cb9b5dfd1e8455d23d22ef17f6ef17f"
+  },
+  {
+    "path": ".aide/intake/latest-intent-packet.md",
+    "new_sha256": "e3a8c1ae49bbde22e375a271f0e40e7d0dc68e815e6ae889de4d27f4a1a3b052",
+    "restored_sha256": "d75ae7602a55bc226236ddb69541947668e5e99e36ea856335bb21a2cc80f37e"
+  },
+  {
+    "path": ".aide/intake/latest-workunit-draft.json",
+    "new_sha256": "2f9669407ba0306cd134cd824417867ad0c8f58d14dff57b96b066848789fcc9",
+    "restored_sha256": "73d0fd3b0454d5c06ab4f9b435146f2081cd27311e3b0490bdafff953fcfa0ab"
+  },
+  {
+    "path": ".aide/intake/latest-workunit-draft.md",
+    "new_sha256": "5f5e0b12bfc06eb83dab3650d7578c19b7210239ff5ae5347b207cf647006517",
+    "restored_sha256": "80a0ff34330223b00ad8fff7626f1ce9af1e608ffcfc128f8a4e13902f7f171f"
+  }
+]

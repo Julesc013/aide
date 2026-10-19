@@ -1,0 +1,9 @@
+{
+  "syntax": "PASS",
+  "original_12_test_class_ast_unchanged": true,
+  "test_counts": {
+    "Q48GitHubReleaseDraftTests": 12,
+    "Q48ChecklistProjectionTests": 9
+  },
+  "no_tests_executed": true
+}

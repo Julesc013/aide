@@ -4208,3 +4208,7 @@ AIDE-TASK-BRIEF-BROWSER-01 qualifies the unchanged saved real-task page in Edge1
 ### Successor publication and release documentation ? 18 October 2026
 
 [AIDE-LITE-SUCCESSOR-PUBLICATION-01](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md) resumes frozen1.1.0 delivery after authentication. Before a new tag, reconcile README/docs/TODO/PLANS/ROADMAP/changelog and validate exact claims. Correct1.0.0 presentation without changing its assets or tag. Source, effect, integration and acquired-byte gates remain; newer development features require their own subsequent release.
+
+### Current-policy release checklist
+
+AIDE-RELEASE-CHECKLIST-PROJECTION-01 corrects the existing report-only checklist, validators and stale-cache reader using the canonical project policy. One separately reviewed finite qualification allocation covers source, development export, installed preservation and fixed preview. Frozen Lite 1.1.0 stays unchanged; actual host participation and downstream ownership remain independent prerequisites.

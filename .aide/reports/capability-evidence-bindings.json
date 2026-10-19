@@ -30,10 +30,10 @@
       "state": "observed"
     },
     {
-      "bytes": 5410,
+      "bytes": 4314,
       "path": ".aide/context/latest-task-packet.md",
       "reason": "",
-      "sha256": "e7327b1f0fd563c855f698b2b6837313286fdc92ff497ea56a5597b889583744",
+      "sha256": "4f804afe0acba52ddf6bb8635b78ce75304cfaceacab9f1326ce16c94b56f4b6",
       "state": "observed"
     },
     {
@@ -170,10 +170,10 @@
       "state": "observed"
     },
     {
-      "bytes": 2482624,
+      "bytes": 2483455,
       "path": ".aide/scripts/aide_lite.py",
       "reason": "",
-      "sha256": "14adb0c90b3003e8986b0f74b6605a8d71157aeaabe6a5952d13b7b9307a61c1",
+      "sha256": "2e071a3fed7d2a968341170dcab66fb07c4f65add15450dd23333a9985db1bdc",
       "state": "observed"
     },
     {
@@ -254,10 +254,10 @@
       "state": "observed"
     },
     {
-      "bytes": 4923,
+      "bytes": 5792,
       "path": "docs/reference/github-release-draft.md",
       "reason": "",
-      "sha256": "847a5660cd23ec834ededd6c23504911c697a7685d8b1eaaccf0d0744c1efac7",
+      "sha256": "e55619e2988e258aad46e98a964cc6ab9ef0084e0bf6d662ef485e5d5fe610c7",
       "state": "observed"
     },
     {

@@ -1,0 +1,21 @@
+{
+  "base": "c4357fc0fa150db5fc715a5365c52140a920d36b",
+  "files": {
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/admission-effect.md": "39710091008b12ec0b1fefc0c7dc14af883764ca64bf71fe300f94b8c7534fb2",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/admission-message.txt": "232bc49dfa05640c450cc6ac1d42e65ce2407e5242ae74aacd10fced4cf0c105",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/admission-source-initial.json": "d3c8ed0ffe1e1478758768dff5332f31c9edb4342ac4a638b5aa492166b77233",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/baseline.json": "894f7817fa6a45ceb503cf7628828a625a66679aabc5caed80364228cf5b42ac",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/intake-disposition.json": "a619ac02c6ccac18503203a793ba550c4962e3167027b7b78f8fff5c599173eb",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/latest-intent-packet.json": "85f94466c2a1d12bb4fc2aa5154e4ee82adb27d94813f0a72b2b4dd6560eac78",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/latest-intent-packet.md": "e3a8c1ae49bbde22e375a271f0e40e7d0dc68e815e6ae889de4d27f4a1a3b052",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/latest-workunit-draft.json": "2f9669407ba0306cd134cd824417867ad0c8f58d14dff57b96b066848789fcc9",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/latest-workunit-draft.md": "5f5e0b12bfc06eb83dab3650d7578c19b7210239ff5ae5347b207cf647006517",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/prior-release-integration.json": "ca51934775c640592ea840b869230a2f7a4574e63daf2c245bcb93cbd2f48519",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/ExecPlan.md": "eb6bc52aa609d3dd0520808fea3d02e13882809b300b53fb68f475f960af8221",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/prompt.md": "f56e2279fb5540af08a460d45a15ee771532c46b8a47c5812b5c00b4e7827443",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/status.yaml": "2e020b3c66de3a1c08a3e8ea89708b6f7e0ed08016bf01681dcd6144beca8925",
+    ".aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/task.yaml": "541817881f5ff87c5236253317f0afe0343570bad47a1931cf885de459b25248"
+  },
+  "message_sha256": "232bc49dfa05640c450cc6ac1d42e65ce2407e5242ae74aacd10fced4cf0c105",
+  "effect_sha256": "39710091008b12ec0b1fefc0c7dc14af883764ca64bf71fe300f94b8c7534fb2"
+}

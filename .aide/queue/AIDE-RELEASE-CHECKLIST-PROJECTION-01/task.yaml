@@ -1,0 +1,41 @@
+schema_version: aide.queue-task.v0
+id: AIDE-RELEASE-CHECKLIST-PROJECTION-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Project the current release policy into the existing checklist
+type: implementation
+status: needs_review
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/**
+    - .aide.local/release-checklist-projection-execution.json
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_q48_github_release_draft.py
+    - docs/reference/github-release-draft.md
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/github-release-checklist.json
+    - .aide/release/github-release-checklist.md
+    - .aide/release/github-release-draft-validation.json
+    - .aide/release/github-release-draft-validation.md
+    - .aide/reports/capability-ledger.json
+    - .aide/reports/capability-ledger.md
+    - .aide/reports/capability-evidence-bindings.json
+    - .aide/reports/capability-command-status.md
+    - .aide/changelog/**
+    - .aide/context/latest-task-packet.md
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - TODO.md
+    - CHANGELOG.md
+  forbidden_paths:
+    - policy edits, runtime owners, credentials and machine configuration except the exact task qualification profile
+    - target repositories, hosts, GitHub APIs, .github/** and all .aide/release/** except the four named preview reports
+verification:
+  maximum_jobs: 1
+  config_path: .aide.local/release-checklist-projection-execution.json
+  config_digest: 37305690a6445805e44b5b6b9862144c59342076717250dc878413ae2b7c8eb3
+  model_requests: 0
+review_gate: exact_admission_source_job_and_integration

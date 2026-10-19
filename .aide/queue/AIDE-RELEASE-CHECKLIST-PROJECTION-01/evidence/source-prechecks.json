@@ -1,0 +1,19 @@
+{
+  "syntax": "PASS",
+  "git_diff_check": "PASS",
+  "message_check": "PASS",
+  "doctor": {
+    "exit_code": 1,
+    "reason": "existing Q48 checklist projection is stale under corrected validator"
+  },
+  "validate": {
+    "exit_code": 1,
+    "checks": 60922,
+    "pass": 60920,
+    "warn": 1,
+    "fail": 1,
+    "failure": "publication checklist matches current manual review policy",
+    "existing_warning": "review packet review ref missing: .aide/prompts/evidence-review.md"
+  },
+  "disposition": "The one native allocation must refresh the four exact derived reports and pass actual validation/doctor. These preparation failures are retained; they are not waived or counted as qualification."
+}

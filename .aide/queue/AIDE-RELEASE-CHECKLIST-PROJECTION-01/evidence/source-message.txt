@@ -1,0 +1,9 @@
+fix(release): project the project-owned publication checklist
+
+Generate manual review items from the existing policy instead of an obsolete seven-item copy. Keep ordering and project tailoring, reject missing or stale projections, and use compact checklist headings. Refresh only the four named local preview reports during qualification; published packages remain unchanged.
+
+Validation: PASS - source syntax, scope and message inspection
+ NOT RUN - the one reviewed source, delivered and installed qualification allocation
+Changelog: Fixed: Project current release documentation and download review obligations
+AIDE-Task: AIDE-RELEASE-CHECKLIST-PROJECTION-01
+AIDE-Format: compact-v1

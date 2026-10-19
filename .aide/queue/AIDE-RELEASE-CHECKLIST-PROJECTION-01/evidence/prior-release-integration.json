@@ -1,0 +1,1698 @@
+{
+  "status": "PASS",
+  "commit": "c4357fc0fa150db5fc715a5365c52140a920d36b",
+  "tree": "aef0e9e3bfce3f362a0ee9cf06b2fbc5b7281808",
+  "operations": [
+    {
+      "label": "before-head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394849951935200,
+      "exit_code": 0,
+      "streams": {
+        "closure-before-head.stdout.log": {
+          "bytes": 41,
+          "sha256": "93215637f50dbcfd2601ae91624dcf9d0977ab4f1455e4e24e00293b016db32a"
+        },
+        "closure-before-head.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-tree",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394849997076400,
+      "exit_code": 0,
+      "streams": {
+        "closure-before-tree.stdout.log": {
+          "bytes": 41,
+          "sha256": "dbf8669fc06106987f95126bb6aabc8593b964252d862189c26b553e63082390"
+        },
+        "closure-before-tree.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-branch",
+      "argv": [
+        "git",
+        "symbolic-ref",
+        "--short",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394850040399400,
+      "exit_code": 0,
+      "streams": {
+        "closure-before-branch.stdout.log": {
+          "bytes": 40,
+          "sha256": "5b863c99de905ddd7a1c603e6672e8a947ee33dc4f899f903fef62c793b85a97"
+        },
+        "closure-before-branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394850078410600,
+      "exit_code": 0,
+      "streams": {
+        "closure-before-clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "closure-before-clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-dev",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dev"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394850148273000,
+      "exit_code": 0,
+      "streams": {
+        "closure-before-dev.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "closure-before-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394850185714300,
+      "exit_code": 0,
+      "streams": {
+        "closure-before-main.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "closure-before-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-preserved-aide-lite-successor-qualification-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-lite-successor-qualification-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394850223771900,
+      "exit_code": 0,
+      "streams": {
+        "closure-before-preserved-aide-lite-successor-qualification-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "bd125412dd3ac3e8fd97615304741c356d31f3aff7bcf275326342a2766def89"
+        },
+        "closure-before-preserved-aide-lite-successor-qualification-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-preserved-aide-task-brief-readability-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-task-brief-readability-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394850266632200,
+      "exit_code": 0,
+      "streams": {
+        "closure-before-preserved-aide-task-brief-readability-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "b87bb3bb078e2f9fce37293dbbcb393fd569bc4fcc4944da201647528a0394dc"
+        },
+        "closure-before-preserved-aide-task-brief-readability-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "origin",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394850469335200,
+      "exit_code": 0,
+      "streams": {
+        "closure-origin.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "closure-origin.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "worktrees",
+      "argv": [
+        "git",
+        "worktree",
+        "list",
+        "--porcelain"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394850509479400,
+      "exit_code": 0,
+      "streams": {
+        "closure-worktrees.stdout.log": {
+          "bytes": 136,
+          "sha256": "3d88256a4a7719805f7eb91d8ce76c477b03c413b6cef3fc3f1738bc685e8535"
+        },
+        "closure-worktrees.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "helper-plan",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "plan"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394850551666200,
+      "exit_code": 0,
+      "streams": {
+        "closure-helper-plan.stdout.log": {
+          "bytes": 393,
+          "sha256": "2a9f6934e99f0191c7721d26d0f834976a8b130b046033223e5f013993d98ea0"
+        },
+        "closure-helper-plan.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "base-ancestor",
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "9cead252a1e72c5fe3d3f224b098d98436f7a250",
+        "c4357fc0fa150db5fc715a5365c52140a920d36b"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394852134220000,
+      "exit_code": 0,
+      "streams": {
+        "closure-base-ancestor.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "closure-base-ancestor.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "refs-before",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "--tags",
+        "origin",
+        "refs/heads/task/aide-lite-successor-qualification-01",
+        "refs/tags/aide-lite-v1.0.0",
+        "refs/tags/aide-lite-v1.0.0^{}",
+        "refs/tags/aide-lite-v1.1.0",
+        "refs/tags/aide-lite-v1.1.0^{}",
+        "refs/heads/dev",
+        "refs/heads/main",
+        "refs/heads/task/aide-lite-successor-publication-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394852172294700,
+      "exit_code": 0,
+      "streams": {
+        "closure-refs-before.stdout.log": {
+          "bytes": 577,
+          "sha256": "97eba490b2a8a199d88020270ed2341fa2bae8147d4f38c26b468d6e8ddb4eef"
+        },
+        "closure-refs-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/dev:refs/remotes/origin/dev",
+        "refs/heads/main:refs/remotes/origin/main"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394852780294900,
+      "exit_code": 0,
+      "streams": {
+        "closure-fetch.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "closure-fetch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "refs-after-fetch",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "--tags",
+        "origin",
+        "refs/heads/task/aide-lite-successor-qualification-01",
+        "refs/tags/aide-lite-v1.0.0",
+        "refs/tags/aide-lite-v1.0.0^{}",
+        "refs/tags/aide-lite-v1.1.0",
+        "refs/tags/aide-lite-v1.1.0^{}",
+        "refs/heads/dev",
+        "refs/heads/main",
+        "refs/heads/task/aide-lite-successor-publication-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394853486417400,
+      "exit_code": 0,
+      "streams": {
+        "closure-refs-after-fetch.stdout.log": {
+          "bytes": 577,
+          "sha256": "97eba490b2a8a199d88020270ed2341fa2bae8147d4f38c26b468d6e8ddb4eef"
+        },
+        "closure-refs-after-fetch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "release-before",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "api",
+        "-H",
+        "X-GitHub-Api-Version: 2026-03-10",
+        "repos/Julesc013/aide/releases/416392381"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394854152139000,
+      "exit_code": 0,
+      "streams": {
+        "closure-release-before.stdout.log": {
+          "bytes": 10879,
+          "sha256": "2f46416d68c3d5a5a3f121995f8f11bced553529d6ac06bb7ceb3e1b81536b32"
+        },
+        "closure-release-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "latest",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--latest"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394854697408500,
+      "exit_code": 0,
+      "streams": {
+        "closure-latest.stdout.log": {
+          "bytes": 2134,
+          "sha256": "146c8f74c6b8a8aa0b32ba92def704da60c112f9cadc1d9a6467aed938204bd1"
+        },
+        "closure-latest.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "range-before",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "ecff55da6db49d63c4a3718b726f96d3cd74e6e9..c4357fc0fa150db5fc715a5365c52140a920d36b"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394855613896300,
+      "exit_code": 0,
+      "streams": {
+        "closure-range-before.stdout.log": {
+          "bytes": 1143,
+          "sha256": "534e54a1bc40b662ec560191a2e2685aa493542ed793118ed956142bc857f929"
+        },
+        "closure-range-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "range-before-count",
+      "argv": [
+        "git",
+        "rev-list",
+        "--count",
+        "ecff55da6db49d63c4a3718b726f96d3cd74e6e9..c4357fc0fa150db5fc715a5365c52140a920d36b"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394856648243500,
+      "exit_code": 0,
+      "streams": {
+        "closure-range-before-count.stdout.log": {
+          "bytes": 3,
+          "sha256": "917df3320d778ddbaa5c5c7742bc4046bf803c36ed2b050f30844ed206783469"
+        },
+        "closure-range-before-count.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "validate-before",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394856690715500,
+      "exit_code": 0,
+      "streams": {
+        "closure-validate-before.stdout.log": {
+          "bytes": 241,
+          "sha256": "be6b6f03e72a9ed259664ae6465bfb36de0d451860a5dab2b651106d55353aac"
+        },
+        "closure-validate-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-dev-head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394871068539800,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-dev-head.stdout.log": {
+          "bytes": 41,
+          "sha256": "93215637f50dbcfd2601ae91624dcf9d0977ab4f1455e4e24e00293b016db32a"
+        },
+        "closure-pre-dev-head.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-dev-tree",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394871104869700,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-dev-tree.stdout.log": {
+          "bytes": 41,
+          "sha256": "dbf8669fc06106987f95126bb6aabc8593b964252d862189c26b553e63082390"
+        },
+        "closure-pre-dev-tree.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-dev-branch",
+      "argv": [
+        "git",
+        "symbolic-ref",
+        "--short",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394871141781100,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-dev-branch.stdout.log": {
+          "bytes": 40,
+          "sha256": "5b863c99de905ddd7a1c603e6672e8a947ee33dc4f899f903fef62c793b85a97"
+        },
+        "closure-pre-dev-branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-dev-clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394871179944700,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-dev-clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "closure-pre-dev-clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-dev-dev",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dev"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394871257607500,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-dev-dev.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "closure-pre-dev-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-dev-main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394871297030300,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-dev-main.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "closure-pre-dev-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-dev-preserved-aide-lite-successor-qualification-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-lite-successor-qualification-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394871334595800,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-dev-preserved-aide-lite-successor-qualification-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "bd125412dd3ac3e8fd97615304741c356d31f3aff7bcf275326342a2766def89"
+        },
+        "closure-pre-dev-preserved-aide-lite-successor-qualification-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-dev-preserved-aide-task-brief-readability-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-task-brief-readability-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394871373060100,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-dev-preserved-aide-task-brief-readability-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "b87bb3bb078e2f9fce37293dbbcb393fd569bc4fcc4944da201647528a0394dc"
+        },
+        "closure-pre-dev-preserved-aide-task-brief-readability-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "remote-pre-dev",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "--tags",
+        "origin",
+        "refs/heads/task/aide-lite-successor-qualification-01",
+        "refs/tags/aide-lite-v1.0.0",
+        "refs/tags/aide-lite-v1.0.0^{}",
+        "refs/tags/aide-lite-v1.1.0",
+        "refs/tags/aide-lite-v1.1.0^{}",
+        "refs/heads/dev",
+        "refs/heads/main",
+        "refs/heads/task/aide-lite-successor-publication-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394871547287300,
+      "exit_code": 0,
+      "streams": {
+        "closure-remote-pre-dev.stdout.log": {
+          "bytes": 577,
+          "sha256": "97eba490b2a8a199d88020270ed2341fa2bae8147d4f38c26b468d6e8ddb4eef"
+        },
+        "closure-remote-pre-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "cas-dev",
+      "argv": [
+        "git",
+        "update-ref",
+        "refs/heads/dev",
+        "c4357fc0fa150db5fc715a5365c52140a920d36b",
+        "9cead252a1e72c5fe3d3f224b098d98436f7a250"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394872217520100,
+      "exit_code": 0,
+      "streams": {
+        "closure-cas-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "closure-cas-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-dev",
+      "argv": [
+        "git",
+        "push",
+        "origin",
+        "c4357fc0fa150db5fc715a5365c52140a920d36b:refs/heads/dev"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394872266398500,
+      "exit_code": 0,
+      "streams": {
+        "closure-push-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "closure-push-dev.stderr.log": {
+          "bytes": 112,
+          "sha256": "d24dfd997cd99e414f2b58d30124af9c6d042ad3b3c5956857b3fb0a8cb70350"
+        }
+      }
+    },
+    {
+      "label": "remote-post-dev",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "--tags",
+        "origin",
+        "refs/heads/task/aide-lite-successor-qualification-01",
+        "refs/tags/aide-lite-v1.0.0",
+        "refs/tags/aide-lite-v1.0.0^{}",
+        "refs/tags/aide-lite-v1.1.0",
+        "refs/tags/aide-lite-v1.1.0^{}",
+        "refs/heads/dev",
+        "refs/heads/main",
+        "refs/heads/task/aide-lite-successor-publication-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394876195908900,
+      "exit_code": 0,
+      "streams": {
+        "closure-remote-post-dev.stdout.log": {
+          "bytes": 577,
+          "sha256": "8b0cf1ec3299bd38dbadf9b6d5c597f34d14438d7dea1e63b5da40a161ecd0c2"
+        },
+        "closure-remote-post-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "validate-dev",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394876804945200,
+      "exit_code": 0,
+      "streams": {
+        "closure-validate-dev.stdout.log": {
+          "bytes": 241,
+          "sha256": "be6b6f03e72a9ed259664ae6465bfb36de0d451860a5dab2b651106d55353aac"
+        },
+        "closure-validate-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "range-dev",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "ecff55da6db49d63c4a3718b726f96d3cd74e6e9..c4357fc0fa150db5fc715a5365c52140a920d36b"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394891193470300,
+      "exit_code": 0,
+      "streams": {
+        "closure-range-dev.stdout.log": {
+          "bytes": 1143,
+          "sha256": "534e54a1bc40b662ec560191a2e2685aa493542ed793118ed956142bc857f929"
+        },
+        "closure-range-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "range-dev-count",
+      "argv": [
+        "git",
+        "rev-list",
+        "--count",
+        "ecff55da6db49d63c4a3718b726f96d3cd74e6e9..c4357fc0fa150db5fc715a5365c52140a920d36b"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394892223241900,
+      "exit_code": 0,
+      "streams": {
+        "closure-range-dev-count.stdout.log": {
+          "bytes": 3,
+          "sha256": "917df3320d778ddbaa5c5c7742bc4046bf803c36ed2b050f30844ed206783469"
+        },
+        "closure-range-dev-count.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-main-head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394892265465800,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-main-head.stdout.log": {
+          "bytes": 41,
+          "sha256": "93215637f50dbcfd2601ae91624dcf9d0977ab4f1455e4e24e00293b016db32a"
+        },
+        "closure-pre-main-head.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-main-tree",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394892308811800,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-main-tree.stdout.log": {
+          "bytes": 41,
+          "sha256": "dbf8669fc06106987f95126bb6aabc8593b964252d862189c26b553e63082390"
+        },
+        "closure-pre-main-tree.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-main-branch",
+      "argv": [
+        "git",
+        "symbolic-ref",
+        "--short",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394892362143100,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-main-branch.stdout.log": {
+          "bytes": 40,
+          "sha256": "5b863c99de905ddd7a1c603e6672e8a947ee33dc4f899f903fef62c793b85a97"
+        },
+        "closure-pre-main-branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-main-clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394892411457900,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-main-clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "closure-pre-main-clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-main-dev",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dev"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394892526622400,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-main-dev.stdout.log": {
+          "bytes": 41,
+          "sha256": "93215637f50dbcfd2601ae91624dcf9d0977ab4f1455e4e24e00293b016db32a"
+        },
+        "closure-pre-main-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-main-main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394892566443400,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-main-main.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "closure-pre-main-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-main-preserved-aide-lite-successor-qualification-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-lite-successor-qualification-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394892604500700,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-main-preserved-aide-lite-successor-qualification-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "bd125412dd3ac3e8fd97615304741c356d31f3aff7bcf275326342a2766def89"
+        },
+        "closure-pre-main-preserved-aide-lite-successor-qualification-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-main-preserved-aide-task-brief-readability-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-task-brief-readability-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394892642492800,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-main-preserved-aide-task-brief-readability-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "b87bb3bb078e2f9fce37293dbbcb393fd569bc4fcc4944da201647528a0394dc"
+        },
+        "closure-pre-main-preserved-aide-task-brief-readability-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "remote-pre-main",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "--tags",
+        "origin",
+        "refs/heads/task/aide-lite-successor-qualification-01",
+        "refs/tags/aide-lite-v1.0.0",
+        "refs/tags/aide-lite-v1.0.0^{}",
+        "refs/tags/aide-lite-v1.1.0",
+        "refs/tags/aide-lite-v1.1.0^{}",
+        "refs/heads/dev",
+        "refs/heads/main",
+        "refs/heads/task/aide-lite-successor-publication-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394892807253300,
+      "exit_code": 0,
+      "streams": {
+        "closure-remote-pre-main.stdout.log": {
+          "bytes": 577,
+          "sha256": "8b0cf1ec3299bd38dbadf9b6d5c597f34d14438d7dea1e63b5da40a161ecd0c2"
+        },
+        "closure-remote-pre-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "cas-main",
+      "argv": [
+        "git",
+        "update-ref",
+        "refs/heads/main",
+        "c4357fc0fa150db5fc715a5365c52140a920d36b",
+        "9cead252a1e72c5fe3d3f224b098d98436f7a250"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394893483992200,
+      "exit_code": 0,
+      "streams": {
+        "closure-cas-main.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "closure-cas-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-main",
+      "argv": [
+        "git",
+        "push",
+        "origin",
+        "c4357fc0fa150db5fc715a5365c52140a920d36b:refs/heads/main"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394893543549200,
+      "exit_code": 0,
+      "streams": {
+        "closure-push-main.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "closure-push-main.stderr.log": {
+          "bytes": 113,
+          "sha256": "68942d4d2d138413e72566087ecf56155555b5b99648813c379cadd4be83a73d"
+        }
+      }
+    },
+    {
+      "label": "remote-post-main",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "--tags",
+        "origin",
+        "refs/heads/task/aide-lite-successor-qualification-01",
+        "refs/tags/aide-lite-v1.0.0",
+        "refs/tags/aide-lite-v1.0.0^{}",
+        "refs/tags/aide-lite-v1.1.0",
+        "refs/tags/aide-lite-v1.1.0^{}",
+        "refs/heads/dev",
+        "refs/heads/main",
+        "refs/heads/task/aide-lite-successor-publication-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394896179098900,
+      "exit_code": 0,
+      "streams": {
+        "closure-remote-post-main.stdout.log": {
+          "bytes": 577,
+          "sha256": "7d7166be63f088fab5fb821d34773facb21bfe7c074601ff2172d8c7500beed0"
+        },
+        "closure-remote-post-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-important-checkpoint",
+      "argv": [
+        "git",
+        "push",
+        "origin",
+        "c4357fc0fa150db5fc715a5365c52140a920d36b:refs/heads/task/aide-lite-successor-publication-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394897748400900,
+      "exit_code": 0,
+      "streams": {
+        "closure-push-important-checkpoint.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "closure-push-important-checkpoint.stderr.log": {
+          "bytes": 148,
+          "sha256": "a5ca762f8a112a8033045f3f581ec1b93c60cd8e792718e436981c1f3f64bb05"
+        }
+      }
+    },
+    {
+      "label": "refs-final",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "--tags",
+        "origin",
+        "refs/heads/task/aide-lite-successor-qualification-01",
+        "refs/tags/aide-lite-v1.0.0",
+        "refs/tags/aide-lite-v1.0.0^{}",
+        "refs/tags/aide-lite-v1.1.0",
+        "refs/tags/aide-lite-v1.1.0^{}",
+        "refs/heads/dev",
+        "refs/heads/main",
+        "refs/heads/task/aide-lite-successor-publication-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394900204546000,
+      "exit_code": 0,
+      "streams": {
+        "closure-refs-final.stdout.log": {
+          "bytes": 577,
+          "sha256": "f1081858491d0800b0d04384ce89942741a9b82105a738ac65b09c2dedfb16ff"
+        },
+        "closure-refs-final.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-retirement-head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394901008018200,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-retirement-head.stdout.log": {
+          "bytes": 41,
+          "sha256": "93215637f50dbcfd2601ae91624dcf9d0977ab4f1455e4e24e00293b016db32a"
+        },
+        "closure-pre-retirement-head.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-retirement-tree",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394901077441400,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-retirement-tree.stdout.log": {
+          "bytes": 41,
+          "sha256": "dbf8669fc06106987f95126bb6aabc8593b964252d862189c26b553e63082390"
+        },
+        "closure-pre-retirement-tree.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-retirement-branch",
+      "argv": [
+        "git",
+        "symbolic-ref",
+        "--short",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394901115602800,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-retirement-branch.stdout.log": {
+          "bytes": 40,
+          "sha256": "5b863c99de905ddd7a1c603e6672e8a947ee33dc4f899f903fef62c793b85a97"
+        },
+        "closure-pre-retirement-branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-retirement-clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394901153603600,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-retirement-clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "closure-pre-retirement-clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-retirement-dev",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dev"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394901236783900,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-retirement-dev.stdout.log": {
+          "bytes": 41,
+          "sha256": "93215637f50dbcfd2601ae91624dcf9d0977ab4f1455e4e24e00293b016db32a"
+        },
+        "closure-pre-retirement-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-retirement-main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394901279305800,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-retirement-main.stdout.log": {
+          "bytes": 41,
+          "sha256": "93215637f50dbcfd2601ae91624dcf9d0977ab4f1455e4e24e00293b016db32a"
+        },
+        "closure-pre-retirement-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-retirement-preserved-aide-lite-successor-qualification-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-lite-successor-qualification-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394901316489400,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-retirement-preserved-aide-lite-successor-qualification-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "bd125412dd3ac3e8fd97615304741c356d31f3aff7bcf275326342a2766def89"
+        },
+        "closure-pre-retirement-preserved-aide-lite-successor-qualification-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-retirement-preserved-aide-task-brief-readability-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-task-brief-readability-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394901355756000,
+      "exit_code": 0,
+      "streams": {
+        "closure-pre-retirement-preserved-aide-task-brief-readability-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "b87bb3bb078e2f9fce37293dbbcb393fd569bc4fcc4944da201647528a0394dc"
+        },
+        "closure-pre-retirement-preserved-aide-task-brief-readability-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "release-final",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "api",
+        "-H",
+        "X-GitHub-Api-Version: 2026-03-10",
+        "repos/Julesc013/aide/releases/416392381"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394901611352700,
+      "exit_code": 0,
+      "streams": {
+        "closure-release-final.stdout.log": {
+          "bytes": 10879,
+          "sha256": "2f46416d68c3d5a5a3f121995f8f11bced553529d6ac06bb7ceb3e1b81536b32"
+        },
+        "closure-release-final.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "switch-dev",
+      "argv": [
+        "git",
+        "switch",
+        "dev"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394902208131100,
+      "exit_code": 0,
+      "streams": {
+        "closure-switch-dev.stdout.log": {
+          "bytes": 45,
+          "sha256": "6d951163b2728b905933cffc69367b957218a3d9bb39dd4ce81fd34c9d0f8f30"
+        },
+        "closure-switch-dev.stderr.log": {
+          "bytes": 25,
+          "sha256": "4fb03156bc5c0ce43b71763f9c020c9ff54ce1bf6d6ca1fd7c25edc01f254269"
+        }
+      }
+    },
+    {
+      "label": "dev-clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394902318297800,
+      "exit_code": 0,
+      "streams": {
+        "closure-dev-clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "closure-dev-clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "own-task-ref",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-lite-successor-publication-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394902386421300,
+      "exit_code": 0,
+      "streams": {
+        "closure-own-task-ref.stdout.log": {
+          "bytes": 41,
+          "sha256": "93215637f50dbcfd2601ae91624dcf9d0977ab4f1455e4e24e00293b016db32a"
+        },
+        "closure-own-task-ref.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "own-task-ancestor",
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "task/aide-lite-successor-publication-01",
+        "dev"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394902425977100,
+      "exit_code": 0,
+      "streams": {
+        "closure-own-task-ancestor.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "closure-own-task-ancestor.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "retire-own-local-task",
+      "argv": [
+        "git",
+        "branch",
+        "-d",
+        "task/aide-lite-successor-publication-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394902464646000,
+      "exit_code": 0,
+      "streams": {
+        "closure-retire-own-local-task.stdout.log": {
+          "bytes": 71,
+          "sha256": "57dbd5383d454c263cae1b513cc922cec3251622e9dc7109f26ff82c506232c0"
+        },
+        "closure-retire-own-local-task.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-dev",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dev"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394902514397700,
+      "exit_code": 0,
+      "streams": {
+        "closure-final-dev.stdout.log": {
+          "bytes": 41,
+          "sha256": "93215637f50dbcfd2601ae91624dcf9d0977ab4f1455e4e24e00293b016db32a"
+        },
+        "closure-final-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394902552990400,
+      "exit_code": 0,
+      "streams": {
+        "closure-final-main.stdout.log": {
+          "bytes": 41,
+          "sha256": "93215637f50dbcfd2601ae91624dcf9d0977ab4f1455e4e24e00293b016db32a"
+        },
+        "closure-final-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-origin-dev",
+      "argv": [
+        "git",
+        "rev-parse",
+        "origin/dev"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394902592120900,
+      "exit_code": 0,
+      "streams": {
+        "closure-final-origin-dev.stdout.log": {
+          "bytes": 41,
+          "sha256": "93215637f50dbcfd2601ae91624dcf9d0977ab4f1455e4e24e00293b016db32a"
+        },
+        "closure-final-origin-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-origin-main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "origin/main"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394902637429900,
+      "exit_code": 0,
+      "streams": {
+        "closure-final-origin-main.stdout.log": {
+          "bytes": 41,
+          "sha256": "93215637f50dbcfd2601ae91624dcf9d0977ab4f1455e4e24e00293b016db32a"
+        },
+        "closure-final-origin-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-origin-task-aide-lite-successor-publication-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "origin/task/aide-lite-successor-publication-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394902682683100,
+      "exit_code": 0,
+      "streams": {
+        "closure-final-origin-task-aide-lite-successor-publication-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "93215637f50dbcfd2601ae91624dcf9d0977ab4f1455e4e24e00293b016db32a"
+        },
+        "closure-final-origin-task-aide-lite-successor-publication-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-preserved-aide-lite-successor-qualification-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-lite-successor-qualification-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394902728179100,
+      "exit_code": 0,
+      "streams": {
+        "closure-final-preserved-aide-lite-successor-qualification-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "bd125412dd3ac3e8fd97615304741c356d31f3aff7bcf275326342a2766def89"
+        },
+        "closure-final-preserved-aide-lite-successor-qualification-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-preserved-aide-task-brief-readability-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-task-brief-readability-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792394902767899100,
+      "exit_code": 0,
+      "streams": {
+        "closure-final-preserved-aide-task-brief-readability-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "b87bb3bb078e2f9fce37293dbbcb393fd569bc4fcc4944da201647528a0394dc"
+        },
+        "closure-final-preserved-aide-task-brief-readability-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ],
+  "admission": {
+    "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+    "capacity": {
+      "disk_free": {
+        "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\": 248490573824
+      },
+      "physical_free": 20905967616,
+      "commit_free": 23978332160
+    },
+    "reservations": {
+      "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\": 47185920
+    },
+    "active": null,
+    "dispatch": {
+      "schema": "aide.job-dispatch.v1",
+      "mode": "running",
+      "epoch": 0,
+      "codex_admitted": 0,
+      "codex_request_digests": []
+    },
+    "writes": false,
+    "disk_enforcement": "reservation_and_monitored_threshold",
+    "memory_enforcement": "Windows_Job_commit_limit",
+    "log_enforcement": "bounded_pipe_drain"
+  },
+  "dev_admission": {
+    "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+    "capacity": {
+      "disk_free": {
+        "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\": 248490536960
+      },
+      "physical_free": 20930904064,
+      "commit_free": 23984226304
+    },
+    "reservations": {
+      "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\": 47185920
+    },
+    "active": null,
+    "dispatch": {
+      "schema": "aide.job-dispatch.v1",
+      "mode": "running",
+      "epoch": 0,
+      "codex_admitted": 0,
+      "codex_request_digests": []
+    },
+    "writes": false,
+    "disk_enforcement": "reservation_and_monitored_threshold",
+    "memory_enforcement": "Windows_Job_commit_limit",
+    "log_enforcement": "bounded_pipe_drain"
+  },
+  "main_admission": {
+    "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+    "capacity": {
+      "disk_free": {
+        "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\": 248490520576
+      },
+      "physical_free": 20921688064,
+      "commit_free": 23998025728
+    },
+    "reservations": {
+      "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\": 47185920
+    },
+    "active": null,
+    "dispatch": {
+      "schema": "aide.job-dispatch.v1",
+      "mode": "running",
+      "epoch": 0,
+      "codex_admitted": 0,
+      "codex_request_digests": []
+    },
+    "writes": false,
+    "disk_enforcement": "reservation_and_monitored_threshold",
+    "memory_enforcement": "Windows_Job_commit_limit",
+    "log_enforcement": "bounded_pipe_drain"
+  },
+  "post_main_preview": {
+    "status": "PASS",
+    "source_head": "75f9127dff3be6cad51a4fa7cdac69c0c600f9c0",
+    "source_range": "ecff55da6db49d63c4a3718b726f96d3cd74e6e9..75f9127dff3be6cad51a4fa7cdac69c0c600f9c0",
+    "commits": [
+      "75f9127dff3be6cad51a4fa7cdac69c0c600f9c0",
+      "3abb6086a075da3601a2c4f177fc171e8633ab09",
+      "d914e9109cd27d0e5e00d6b3648dae344d4c5412",
+      "a5aecad6d8f685aaaa6e0defb4eee6969035f921",
+      "6728db41ed6a67e7f25429f53632682814f380d2",
+      "f708e8c658d9e3b2b0543fb24abecd5fe94bd094",
+      "b1db5633c9241dae80fcc2893f223784d25cfc7b"
+    ],
+    "malformed_count": 0,
+    "sha256s": {
+      "CHANGELOG.preview.md": "1959ddd26d7875b353481db188dd13b20e78dbc998572ba244cc16cce224bf27",
+      "RELEASE_NOTES.preview.md": "b78ffbda1cb08a9b17864cef96ad213b3917ecb8fa29ff473145eed0d9a43ad9",
+      "changelog.preview.json": "b66127059a0fc88ebf8b5afe2b4c62a83129de2b520a23270219ce31573c5fc9",
+      "latest-changelog-report.md": "65f79d376c686434e3ad445f3390d3e032711673a0f9824b5398e5ee270768c4",
+      "malformed-commits.md": "c827056d0a1acca7429321f0f4b1e62b605aa4f0792038cfc7ba2fbdcd3ab8ad",
+      "release-notes.preview.json": "5131233585298509856fa901224e6dbb68acb2ffb5cc329f7cbd39a59e4322ba"
+    },
+    "regeneration": "read_only_exact_six_output_comparison"
+  },
+  "task_local_retired": true,
+  "remote_important_checkpoint_preserved": true,
+  "release_unchanged": true,
+  "new_jobs": 0
+}

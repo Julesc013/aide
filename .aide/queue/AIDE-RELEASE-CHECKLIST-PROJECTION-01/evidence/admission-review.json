@@ -1,0 +1,8 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "6fc2d24a9e90d45b02bb9ac56dd8f0d9c77d065d04821fefa819d1a29548de73",
+  "effect_sha256": "39710091008b12ec0b1fefc0c7dc14af883764ca64bf71fe300f94b8c7534fb2",
+  "required_fixes": [],
+  "limits": "local branch creation only; separate source/job/integration gates"
+}

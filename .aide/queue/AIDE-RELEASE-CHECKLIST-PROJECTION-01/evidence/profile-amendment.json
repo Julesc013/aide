@@ -1,0 +1,14 @@
+{
+  "base_path": ".aide.local/lite-successor-qualification-execution.json",
+  "base_sha256": "b73f055a31c0b62ed66e9f1ad2dcd3dae4b6f443296ac80fb7cce301e09d8815",
+  "profile_path": ".aide.local/release-checklist-projection-execution.json",
+  "profile_sha256": "343fcb294dd81018a6b4fb8f14195d5904e39d42b1d362b508588a54444c4f65",
+  "config_digest": "37305690a6445805e44b5b6b9862144c59342076717250dc878413ae2b7c8eb3",
+  "only_change": {
+    "limits.canonical_bytes": {
+      "before": 8388608,
+      "after": 16777216
+    }
+  },
+  "reason": "Existing reservations cover whole directory usage: 8 MiB for the existing release root, 7 MiB development pack and 1 MiB preview. Exact task effects still permit only four release reports. Memory, commit, disk reserves, roots, privileges and other limits unchanged."
+}

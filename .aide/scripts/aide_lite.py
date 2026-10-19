@@ -20282,6 +20282,12 @@ def render_github_release_upload_plan_md(data: dict[str, object]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def github_release_manual_review_items(repo_root: Path) -> list[str]:
+    policy = repo_root / RELEASE_CHECKLIST_POLICY_PATH
+    items = parse_simple_list(read_text(policy), "manual_review_items") if policy.is_file() else []
+    return items if all(item.strip() for item in items) else []
+
+
 def github_release_checklist_data(repo_root: Path, blockers: list[str], warnings: list[str]) -> dict[str, object]:
     checks = [
         {"section": "source repo state", "item": "branch checked", "status": "recorded", "evidence": github_release_source_branch(repo_root)},
@@ -20298,15 +20304,9 @@ def github_release_checklist_data(repo_root: Path, blockers: list[str], warnings
         {"section": "security gates", "item": "no local state or secret assets", "status": "required", "evidence": "targeted secret scan"},
         {"section": "target install caveats", "item": "target install readiness not claimed", "status": "pass", "evidence": "Q49/Q50/Q54/Q55 remain future work"},
     ]
-    manual_review = [
-        "review release body",
-        "review suggested tag",
-        "review asset list",
-        "review known risks",
-        "review target install caveats",
-        "decide whether this is pre-release/draft/stable",
-        "decide whether to publish",
-    ]
+    manual_review = github_release_manual_review_items(repo_root)
+    if not manual_review:
+        blockers = [*blockers, f"release checklist policy has no manual review items: {RELEASE_CHECKLIST_POLICY_PATH}"]
     return {
         "schema_version": "aide.github-release-checklist.v0",
         "checklist_id": f"{github_release_draft_id(repo_root)}-checklist",
@@ -20323,24 +20323,24 @@ def github_release_checklist_data(repo_root: Path, blockers: list[str], warnings
 def render_github_release_checklist_md(data: dict[str, object]) -> str:
     checks = data.get("checks", []) if isinstance(data.get("checks"), list) else []
     lines = [
-        "# GitHub Release Publication Checklist",
+        "### GitHub Release Publication Checklist",
         "",
         f"- checklist_id: {data.get('checklist_id')}",
         f"- source_commit: {data.get('source_commit')}",
         "- no_publish: true",
         "",
-        "## Checks",
+        "#### Checks",
     ]
     for check in checks:
         if isinstance(check, dict):
             lines.append(f"- [{check.get('section')}] {check.get('item')}: {check.get('status')} ({check.get('evidence')})")
-    lines.extend(["", "## Blockers"])
+    lines.extend(["", "#### Blockers"])
     blockers = data.get("blockers", []) if isinstance(data.get("blockers"), list) else []
     lines.extend(f"- {item}" for item in blockers) if blockers else lines.append("- none")
-    lines.extend(["", "## Warnings"])
+    lines.extend(["", "#### Warnings"])
     warnings = data.get("warnings", []) if isinstance(data.get("warnings"), list) else []
     lines.extend(f"- {item}" for item in warnings) if warnings else lines.append("- none")
-    lines.extend(["", "## Manual Review Required"])
+    lines.extend(["", "#### Manual Review Required"])
     lines.extend(f"- {item}" for item in data.get("manual_review_required", []) if isinstance(item, str))
     return "\n".join(lines) + "\n"
 
@@ -20418,6 +20418,8 @@ def validate_github_release_draft_files(repo_root: Path, require_outputs: bool =
         text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
         for anchor in anchors:
             check_pass(checks, anchor in text, f"github release draft policy {rel} contains anchor: {anchor}")
+    policy_manual = github_release_manual_review_items(repo_root)
+    check_pass(checks, bool(policy_manual), "release checklist policy declares nonempty manual review items")
     for rel in Q48_SCHEMA_FILES:
         if not (repo_root / rel).exists():
             continue
@@ -20464,10 +20466,9 @@ def validate_github_release_draft_files(repo_root: Path, require_outputs: bool =
         for action in ["create_git_tag", "create_github_release", "upload_release_asset", "call_network"]:
             check_pass(checks, action in blocked_actions, f"upload plan blocks {action}")
     checklist = read_json_file(repo_root / GITHUB_RELEASE_CHECKLIST_JSON_PATH) if (repo_root / GITHUB_RELEASE_CHECKLIST_JSON_PATH).exists() else {}
-    if checklist:
-        check_pass(checks, checklist.get("no_publish") is True, "publication checklist no_publish true")
-        manual_review = checklist.get("manual_review_required", []) if isinstance(checklist.get("manual_review_required"), list) else []
-        check_pass(checks, "review release body" in manual_review, "publication checklist includes manual release body review")
+    check_pass(checks, checklist.get("no_publish") is True, "publication checklist no_publish true")
+    manual_review = checklist.get("manual_review_required", []) if isinstance(checklist.get("manual_review_required"), list) else []
+    check_pass(checks, bool(policy_manual) and manual_review == policy_manual, "publication checklist matches current manual review policy")
     boundary = github_release_boundary_data()
     for key in ["tag_created", "github_release_created", "upload_performed", "network_api_call", "branch_mutation", "active_ci_installed"]:
         check_pass(checks, boundary.get(key) is False, f"publication boundary {key} false")
@@ -20631,17 +20632,21 @@ def command_release_upload_plan(args: argparse.Namespace) -> int:
 
 
 def command_release_checklist(args: argparse.Namespace) -> int:
-    if not (args.repo_root / GITHUB_RELEASE_CHECKLIST_JSON_PATH).exists():
-        build_github_release_draft_outputs(args.repo_root)
-    checklist = read_json_file(args.repo_root / GITHUB_RELEASE_CHECKLIST_JSON_PATH)
+    path = args.repo_root / GITHUB_RELEASE_CHECKLIST_JSON_PATH
+    checklist = read_json_file(path) if path.is_file() else {}
     blockers = checklist.get("blockers", []) if isinstance(checklist.get("blockers"), list) else []
     manual = checklist.get("manual_review_required", []) if isinstance(checklist.get("manual_review_required"), list) else []
+    policy_manual = github_release_manual_review_items(args.repo_root)
+    current = bool(policy_manual) and manual == policy_manual
     print("AIDE Lite release checklist")
     print(f"path: {GITHUB_RELEASE_CHECKLIST_JSON_PATH}")
     print(f"blockers: {len(blockers)}")
     print(f"manual_review_items: {len(manual)}")
+    print(f"manual_review_current: {str(current).lower()}")
+    if not current:
+        print("next_action: reconcile manual_review_items in policy and regenerate the local release draft")
     print("no_publish: true")
-    return 0 if checklist.get("no_publish") is True else 1
+    return 0 if checklist.get("no_publish") is True and current else 1
 
 
 def command_release_publication_boundary(args: argparse.Namespace) -> int:
@@ -26998,10 +27003,12 @@ def run_golden_github_release_checklist(repo_root: Path) -> GoldenTaskResult:
     policy = read_text(repo_root / RELEASE_CHECKLIST_POLICY_PATH) if (repo_root / RELEASE_CHECKLIST_POLICY_PATH).exists() else ""
     for marker in ["source repo state", "validation gates", "security gates", "manual review items"]:
         check_pass(checks, marker in policy, f"release checklist policy contains {marker}")
+    policy_manual = github_release_manual_review_items(repo_root)
+    check_pass(checks, bool(policy_manual), "release checklist policy declares nonempty manual review items")
     if (repo_root / GITHUB_RELEASE_CHECKLIST_JSON_PATH).exists():
         data = read_json_file(repo_root / GITHUB_RELEASE_CHECKLIST_JSON_PATH)
         manual = data.get("manual_review_required", []) if isinstance(data.get("manual_review_required"), list) else []
-        check_pass(checks, "review release body" in manual, "checklist includes release body review")
+        check_pass(checks, bool(policy_manual) and manual == policy_manual, "checklist matches current manual review policy")
     return golden_task_result(
         "github_release_checklist_golden",
         checks,

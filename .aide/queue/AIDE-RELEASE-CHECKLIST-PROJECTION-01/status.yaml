@@ -1,0 +1,7 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-RELEASE-CHECKLIST-PROJECTION-01
+status: needs_review
+result: SOURCE_AND_JOB_PREPARED
+jobs_allocated: 0
+maximum_jobs: 1
+next_action: exact_source_and_job_review
