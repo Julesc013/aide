@@ -10,14 +10,14 @@ Release entries describe the delivered Lite package and its declared compatibili
 - **Docs:** explicit cross-platform/vintage direction, root TODO and pre-tag documentation reconciliation; public Markdown uses logical paragraphs without manual column wrapping. Releases use concise sections, titled downloads and exact artifact links.
 - **Still open:** actual desktop editing/containment, native downstream adoption, complete effort comparisons and repeated daily-use acceptance. The saved readability candidate remains unqualified.
 
-#### AIDE Lite 1.1.0 — Qualified; publication pending
+#### AIDE Lite 1.1.0 — 19 October 2026
 
 - **Added:** 18 public command forms for task continuation, Git policy inspection, review/reuse reporting and effort summaries; 56 qualified forms in total.
 - **Fixed:** installed effort reporting resolves AIDE’s owned helper in adopted projects.
 - **Upgrade:** qualified against the actual published 1.0.0 package, including customization, direct edits, conflicts, recorded resolutions and interrupted-import recovery.
 - **Profile:** T3 Limited Support, local Windows CLI; Windows 10 build 19045 and Python 3.14.8.
 - **Limits:** automatic rollback across changed owned-path sets and automatic downgrade of customized overlays require retained-state manual recovery. Broader host/model operation and whole-outcome savings remain unqualified.
-- **Evidence:** [technical acceptance](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json), [publication and acquisition plan](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md). Newer development features above are outside these frozen archives.
+- **Delivery:** published with four labelled downloads; acquired hashes and the original fresh/brownfield plus partial-import recovery consumer passed. [Release](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.1.0), [technical acceptance](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json), [delivery proof](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-lite-1.1.0-qualified.json). Newer development features above remain outside these frozen archives.
 
 #### AIDE Lite 1.0.0 — 9 October 2026
 

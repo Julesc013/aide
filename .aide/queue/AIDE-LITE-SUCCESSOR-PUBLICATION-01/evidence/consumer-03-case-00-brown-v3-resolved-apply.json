@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-I",
+    "-B",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\synthetic-v3\\files\\.aide\\scripts\\aide_lite.py",
+    "--repo-root",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\brownfield-target",
+    "import-pack",
+    "--pack",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\synthetic-v3",
+    "--target",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\brownfield-target",
+    "--mode",
+    "safe",
+    "--from-pack",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\synthetic-v2",
+    "--resolve",
+    ".aide/prompts/compact-task.md",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\selected-v3-resolution.txt",
+    "--expect-plan",
+    "4a8dee1958a5390b6ac06081ff063a32c08ab29384a2c3abfad97e48435496cf"
+  ],
+  "exit_code": 0,
+  "stderr": "",
+  "stdout": "AIDE Lite import-pack\npack: D:/Projects/AIDE/.aide.local/execution/scratch/7e9fdfcf12bd4485bee6ceca215d2e20/tmp/case-00/run-consumer/synthetic-v3\ntarget: D:/Projects/AIDE/.aide.local/execution/scratch/7e9fdfcf12bd4485bee6ceca215d2e20/tmp/case-00/run-consumer/brownfield-target\ndry_run: false\nmode: safe\nstatus: APPLIED\nplan_digest: 4a8dee1958a5390b6ac06081ff063a32c08ab29384a2c3abfad97e48435496cf\npredecessor_pack: D:/Projects/AIDE/.aide.local/execution/scratch/7e9fdfcf12bd4485bee6ceca215d2e20/tmp/case-00/run-consumer/synthetic-v2\noperation_count: 831\nconflicts: 0\nskipped: 30\nwritten: 2\nprovider_or_model_calls: none\nnetwork_calls: none\n"
+}

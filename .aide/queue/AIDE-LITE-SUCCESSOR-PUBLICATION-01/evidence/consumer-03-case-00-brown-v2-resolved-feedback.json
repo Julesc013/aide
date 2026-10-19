@@ -1,0 +1,77 @@
+{
+  "explanations": [
+    {
+      "action": "preserve",
+      "incoming_digest": "855fe33f36685a19ca187459426d6e8de56b7da65e30633e9ca65246be519e4a",
+      "observed_digest": "66483bdab6bd592ffa1029aef054b95e054727dcfd1f52c9769f37d9085bd3a3",
+      "ownership_basis": "target_owned_after_creation",
+      "project_rationale": "unknown",
+      "rationale_status": "unknown",
+      "reason": "Project-owned file exists; the incoming template cannot replace it.",
+      "target": ".aide/memory/decisions.md"
+    },
+    {
+      "action": "preserve",
+      "incoming_digest": "6e5d82005a6dc949da2ab9073ea550d656120637f7728022aac9e085e2bd7bb9",
+      "observed_digest": "b27b26fcf6a91bf9c2b49adfd67aced70058fcf5f98f6e3de429505037696d03",
+      "ownership_basis": "target_owned_after_creation",
+      "project_rationale": "unknown",
+      "rationale_status": "unknown",
+      "reason": "Project-owned file exists; the incoming template cannot replace it.",
+      "target": ".aide/memory/open-risks.md"
+    },
+    {
+      "action": "preserve",
+      "incoming_digest": "d6c3bffb89f7af6fd2f75ca51514152638345bdd6b87345c6e472c66f08dfbe1",
+      "observed_digest": "41b26b84f5799c9e9ea7aaa2f36dd563ec55b5ea911028619a17ab1fcc194eae",
+      "ownership_basis": "target_owned_after_creation",
+      "project_rationale": "unknown",
+      "rationale_status": "unknown",
+      "reason": "Project-owned file exists; the incoming template cannot replace it.",
+      "target": ".aide/memory/project-state.md"
+    },
+    {
+      "action": "preserve",
+      "incoming_digest": "d3058d9b828ea2505f906b3cd391afc7c3291a054d1bb3ae7f17c0ea5a3169fa",
+      "observed_digest": "579f50748cfd39b8823ef24c533a1ad566052ca2b93985e599529eb308c0f167",
+      "ownership_basis": "target_owned_after_creation",
+      "project_rationale": "unknown",
+      "rationale_status": "unknown",
+      "reason": "Project-owned file exists; the incoming template cannot replace it.",
+      "target": ".aide/profile.yaml"
+    },
+    {
+      "action": "resolve_owned",
+      "incoming_digest": "bc9c3c5389f0b0c2aae5b8d5bcb836507ac5ce9edd2268719a34cdedd3459568",
+      "observed_digest": "774e4e88bd1702db34c37f8801a8e649b14882bc187c330b66365cbbaf69b641",
+      "ownership_basis": "project_selected_three_way",
+      "project_rationale": "unknown",
+      "rationale_status": "unknown",
+      "reason": "A project-selected file supplies the exact postimage for this receipt-owned three-way conflict.",
+      "target": ".aide/prompts/compact-task.md"
+    },
+    {
+      "action": "update_owned",
+      "incoming_digest": "221b83f4b7d0d302832250ee3d441c5d50dc41284fe12ba8ac5e159df525fd5a",
+      "observed_digest": "98da970092e6b9728a5dd1360a6ea231aaa3d7a10a457b398c1095f95a64dd07",
+      "ownership_basis": "installed_receipt",
+      "project_rationale": "unknown",
+      "rationale_status": "unknown",
+      "reason": "The validated predecessor and observed managed bytes prove this recorded baseline may be updated.",
+      "target": ".aide.local.example/README.md"
+    }
+  ],
+  "network_calls": false,
+  "pack": {
+    "checksums_digest": "7983ed41f16a6ceb3fa95049f462fad0163831fcb9565ee7c8168cfbd553901a",
+    "manifest_digest": "0c78b56d71bc333641ceced66cae08964835d4dd8b5049b734f88736992adb72",
+    "pack_id": "aide-lite-pack-v0",
+    "source_commit": "447e393b3f87004641b7387c1f33828ac1ee3a85"
+  },
+  "plan_digest": "676d1df2c44603c931c9cf02c45dc149504202de9a3186e6e576fee0f3d8820d",
+  "provider_or_model_calls": false,
+  "schema_version": "aide.import-feedback.v1",
+  "sharing": "manual_only",
+  "status": "PLANNED",
+  "target": "D:/Projects/AIDE/.aide.local/execution/scratch/7e9fdfcf12bd4485bee6ceca215d2e20/tmp/case-00/run-consumer/brownfield-target"
+}

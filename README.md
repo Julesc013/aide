@@ -38,9 +38,11 @@ AIDE is not an AI editor, a VS Code competitor, a Codex wrapper, a prompt pack, 
 
 ## Status
 
-AIDE Lite **1.0.0 is published** as `aide-lite-v1.0.0`, from release commit `0f293eb6`. Its declared profile is `aide-lite-local-windows`, **T3 Limited Support**, qualified on Windows 10 build 19045 / Python 3.14.7. The [release](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0) and [recorded qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) bind the delivered bytes, all eight consumer cases, 38 public forms, replay and downloaded-asset checks. Development source and release payload identities are separate.
+AIDE Lite **1.1.0 is published** as [`aide-lite-v1.1.0`](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.1.0), with 56 qualified public forms and upgrade/recovery evidence against the actual published 1.0.0 package. All four downloads match the frozen identities; the original acquired-byte fresh/brownfield and partial-import recovery consumer passed and retired. Its declared profile is **T3 Limited Support**, local Windows CLI, Windows 10 build 19045 / Python 3.14.8. [Delivery evidence](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-lite-1.1.0-qualified.json)
 
-**Next release:** frozen Lite **1.1.0 is technically qualified and awaiting publication**, with 56 public forms and upgrade checks against the actual published 1.0.0 package. [Qualification](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json) and the [publication WorkUnit](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md) identify its exact bytes and remaining delivery checks. Newer development features require a subsequent qualified release.
+**Release identities:** the tag records reviewed documentation/publication checkpoint `9cead252`; the manifest identifies frozen payload source `447e393b`. GitHub automatic source archives are repository snapshots; install the labelled portable package. Earlier [Lite 1.0.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0) and its [qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) remain preserved.
+
+**Development:** newer task views, communication defaults, knowledge/continuation and cooperative worker capabilities have scoped source/delivered evidence. They remain outside frozen 1.1.0 and require their own subsequent release qualification.
 
 **Find the next action:** [TODO](TODO.md) is the short current checklist; [PLANS](PLANS.md) holds detailed work, [ROADMAP](ROADMAP.md) describes direction, [CHANGELOG](CHANGELOG.md) records release changes, and [DOCUMENTATION](DOCUMENTATION.md) indexes the docs. The filesystem queue remains the authority for work and acceptance.
 

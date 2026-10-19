@@ -1,5 +1,11 @@
 # AIDE Documentation Index
 
+### Lite 1.1.0 delivered - 19 October 2026
+
+Published release 416392381 at `2026-10-19T07:06:42Z`; tag `aide-lite-v1.1.0` remains at reviewed checkpoint `9cead252` and frozen payload source `447e393b`. All four labelled assets were acquired with exact hashes; original case 0 and partial-import recovery passed in retired job `7e9fdfcf`. Original documentation timeout and failed draft lookup are preserved; completed effects were not replayed. [Delivery evidence](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-lite-1.1.0-qualified.json)
+
+Continue the existing campaign toward an actual host/downstream workflow and owner-to-owner dependency, with recovery and available costs. [User-supplied continuation priorities](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/continuation-priorities.json) preserve existing owners, valid work and exhausted allocations; the week is an objective, not a completion promise. Final source-closeout dev/main synchronization receives its own exact review.
+
 **Platform direction:** [ROADMAP platform reach](ROADMAP.md#platform-reach) links the existing support/reach records and native/legacy design. Windows release qualification and the wider product architecture remain separate.
 
 ### Current planning and release entry points

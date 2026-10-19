@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-I",
+    "-B",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\synthetic-v2\\files\\.aide\\scripts\\aide_lite.py",
+    "--repo-root",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\brownfield-target",
+    "import-pack",
+    "--pack",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\synthetic-v2",
+    "--target",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\brownfield-target",
+    "--mode",
+    "safe",
+    "--from-pack",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\candidate-zip\\aide-lite-pack-v0",
+    "--expect-plan",
+    "22a10c5d1be164533c4a7389e05b3817682a71abda8fbd1564357d868e8d2af9"
+  ],
+  "exit_code": 2,
+  "stderr": "",
+  "stdout": "AIDE Lite import-pack\npack: D:/Projects/AIDE/.aide.local/execution/scratch/7e9fdfcf12bd4485bee6ceca215d2e20/tmp/case-00/run-consumer/synthetic-v2\ntarget: D:/Projects/AIDE/.aide.local/execution/scratch/7e9fdfcf12bd4485bee6ceca215d2e20/tmp/case-00/run-consumer/brownfield-target\ndry_run: false\nmode: safe\nstatus: CONFLICT\nplan_digest: 22a10c5d1be164533c4a7389e05b3817682a71abda8fbd1564357d868e8d2af9\npredecessor_pack: D:/Projects/AIDE/.aide.local/execution/scratch/7e9fdfcf12bd4485bee6ceca215d2e20/tmp/case-00/run-consumer/candidate-zip/aide-lite-pack-v0\noperation_count: 831\nconflicts: 1\nskipped: 30\nwritten: 0\nprovider_or_model_calls: none\nnetwork_calls: none\n"
+}

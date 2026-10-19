@@ -1,0 +1,1712 @@
+{
+  "status": "PUBLISHED_ACQUIRED_CONSUMER_PENDING",
+  "commit": "d04fd33313f4ef1affc30c6458be5d96f1bdcd66",
+  "tree": "1f4bc0ac20e2cdd6607c14dda64193aab7d81144",
+  "release_target": "9cead252a1e72c5fe3d3f224b098d98436f7a250",
+  "release_id": 416392381,
+  "tag_object": "3ae20f881ff065254a681deba30a39209c888ee7",
+  "operations": [
+    {
+      "label": "before-head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393587127298400,
+      "exit_code": 0,
+      "streams": {
+        "recovery-before-head.stdout.log": {
+          "bytes": 41,
+          "sha256": "2c157fb0573e093e30a28904b5311b938f4dabd29dbe6eacccd4b49a7df7d38c"
+        },
+        "recovery-before-head.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-tree",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393587168534200,
+      "exit_code": 0,
+      "streams": {
+        "recovery-before-tree.stdout.log": {
+          "bytes": 41,
+          "sha256": "3dfba650287605052202216a4221e57ab856c133e5148ba2e1f91bbab5e7ed69"
+        },
+        "recovery-before-tree.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-branch",
+      "argv": [
+        "git",
+        "symbolic-ref",
+        "--short",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393587213021600,
+      "exit_code": 0,
+      "streams": {
+        "recovery-before-branch.stdout.log": {
+          "bytes": 40,
+          "sha256": "5b863c99de905ddd7a1c603e6672e8a947ee33dc4f899f903fef62c793b85a97"
+        },
+        "recovery-before-branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393587250977600,
+      "exit_code": 0,
+      "streams": {
+        "recovery-before-clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "recovery-before-clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-dev",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dev"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393587324676300,
+      "exit_code": 0,
+      "streams": {
+        "recovery-before-dev.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "recovery-before-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393587362747000,
+      "exit_code": 0,
+      "streams": {
+        "recovery-before-main.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "recovery-before-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-preserved-aide-lite-successor-qualification-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-lite-successor-qualification-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393587400932800,
+      "exit_code": 0,
+      "streams": {
+        "recovery-before-preserved-aide-lite-successor-qualification-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "bd125412dd3ac3e8fd97615304741c356d31f3aff7bcf275326342a2766def89"
+        },
+        "recovery-before-preserved-aide-lite-successor-qualification-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-preserved-aide-task-brief-readability-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-task-brief-readability-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393587440282700,
+      "exit_code": 0,
+      "streams": {
+        "recovery-before-preserved-aide-task-brief-readability-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "b87bb3bb078e2f9fce37293dbbcb393fd569bc4fcc4944da201647528a0394dc"
+        },
+        "recovery-before-preserved-aide-task-brief-readability-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-remote",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "--tags",
+        "origin",
+        "refs/heads/task/aide-lite-successor-qualification-01",
+        "refs/tags/aide-lite-v1.0.0",
+        "refs/tags/aide-lite-v1.0.0^{}",
+        "refs/heads/dev",
+        "refs/heads/main",
+        "refs/heads/task/aide-lite-successor-publication-01",
+        "refs/tags/aide-lite-v1.1.0",
+        "refs/tags/aide-lite-v1.1.0^{}"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393587478449900,
+      "exit_code": 0,
+      "streams": {
+        "recovery-before-remote.stdout.log": {
+          "bytes": 577,
+          "sha256": "e9e7e6a43e911f4ab6f8dfc623d4102741cd5fbe50cd77b7a07bc72f0ac31c3c"
+        },
+        "recovery-before-remote.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "before-tag",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/tags/aide-lite-v1.1.0"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393588107891700,
+      "exit_code": 0,
+      "streams": {
+        "recovery-before-tag.stdout.log": {
+          "bytes": 41,
+          "sha256": "a71690edeabb082c5d669dc1f1b3fc1984c12c2090ed7a4072b26d9ba9b62f0e"
+        },
+        "recovery-before-tag.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "list-before",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "api",
+        "-H",
+        "X-GitHub-Api-Version: 2026-03-10",
+        "repos/Julesc013/aide/releases?per_page=100"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393588325478200,
+      "exit_code": 0,
+      "streams": {
+        "recovery-list-before.stdout.log": {
+          "bytes": 15125,
+          "sha256": "ed34386fe02f537bb247b55b6b70f6ca13540852d8ce0ee3acfa0332b912d6ad"
+        },
+        "recovery-list-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "draft-before",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "api",
+        "-H",
+        "X-GitHub-Api-Version: 2026-03-10",
+        "repos/Julesc013/aide/releases/416392381"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393588926959600,
+      "exit_code": 0,
+      "streams": {
+        "recovery-draft-before.stdout.log": {
+          "bytes": 4671,
+          "sha256": "21512867e16ffb1c2eb61e644401a41e14de0516e6ad7230864e84e67e6aad93"
+        },
+        "recovery-draft-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-recovery-checkpoint",
+      "argv": [
+        "git",
+        "push",
+        "origin",
+        "d04fd33313f4ef1affc30c6458be5d96f1bdcd66:refs/heads/task/aide-lite-successor-publication-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393589498736400,
+      "exit_code": 0,
+      "streams": {
+        "recovery-push-recovery-checkpoint.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "recovery-push-recovery-checkpoint.stderr.log": {
+          "bytes": 148,
+          "sha256": "529fdd526f89acc782f35ae9c63fcccae454bdc58574fb8323020864b8e2f579"
+        }
+      }
+    },
+    {
+      "label": "pre-upload-head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393592857737700,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-upload-head.stdout.log": {
+          "bytes": 41,
+          "sha256": "2c157fb0573e093e30a28904b5311b938f4dabd29dbe6eacccd4b49a7df7d38c"
+        },
+        "recovery-pre-upload-head.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-upload-tree",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393592900681200,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-upload-tree.stdout.log": {
+          "bytes": 41,
+          "sha256": "3dfba650287605052202216a4221e57ab856c133e5148ba2e1f91bbab5e7ed69"
+        },
+        "recovery-pre-upload-tree.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-upload-branch",
+      "argv": [
+        "git",
+        "symbolic-ref",
+        "--short",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393592937669200,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-upload-branch.stdout.log": {
+          "bytes": 40,
+          "sha256": "5b863c99de905ddd7a1c603e6672e8a947ee33dc4f899f903fef62c793b85a97"
+        },
+        "recovery-pre-upload-branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-upload-clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393592973456600,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-upload-clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "recovery-pre-upload-clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-upload-dev",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dev"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393593047493800,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-upload-dev.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "recovery-pre-upload-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-upload-main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393593084555700,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-upload-main.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "recovery-pre-upload-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-upload-preserved-aide-lite-successor-qualification-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-lite-successor-qualification-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393593122163000,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-upload-preserved-aide-lite-successor-qualification-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "bd125412dd3ac3e8fd97615304741c356d31f3aff7bcf275326342a2766def89"
+        },
+        "recovery-pre-upload-preserved-aide-lite-successor-qualification-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-upload-preserved-aide-task-brief-readability-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-task-brief-readability-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393593158531700,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-upload-preserved-aide-task-brief-readability-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "b87bb3bb078e2f9fce37293dbbcb393fd569bc4fcc4944da201647528a0394dc"
+        },
+        "recovery-pre-upload-preserved-aide-task-brief-readability-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-upload-remote",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "--tags",
+        "origin",
+        "refs/heads/task/aide-lite-successor-qualification-01",
+        "refs/tags/aide-lite-v1.0.0",
+        "refs/tags/aide-lite-v1.0.0^{}",
+        "refs/heads/dev",
+        "refs/heads/main",
+        "refs/heads/task/aide-lite-successor-publication-01",
+        "refs/tags/aide-lite-v1.1.0",
+        "refs/tags/aide-lite-v1.1.0^{}"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393593194406300,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-upload-remote.stdout.log": {
+          "bytes": 577,
+          "sha256": "97eba490b2a8a199d88020270ed2341fa2bae8147d4f38c26b468d6e8ddb4eef"
+        },
+        "recovery-pre-upload-remote.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-upload-tag",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/tags/aide-lite-v1.1.0"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393593815875600,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-upload-tag.stdout.log": {
+          "bytes": 41,
+          "sha256": "a71690edeabb082c5d669dc1f1b3fc1984c12c2090ed7a4072b26d9ba9b62f0e"
+        },
+        "recovery-pre-upload-tag.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "draft-pre-upload",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "api",
+        "-H",
+        "X-GitHub-Api-Version: 2026-03-10",
+        "repos/Julesc013/aide/releases/416392381"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393594043400900,
+      "exit_code": 0,
+      "streams": {
+        "recovery-draft-pre-upload.stdout.log": {
+          "bytes": 4671,
+          "sha256": "21512867e16ffb1c2eb61e644401a41e14de0516e6ad7230864e84e67e6aad93"
+        },
+        "recovery-draft-pre-upload.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "upload",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "release",
+        "upload",
+        "aide-lite-v1.1.0",
+        "D:\\Projects\\AIDE\\aide\\.aide\\release\\stable\\aide-lite-v1.1.0.SHA256SUMS.txt#SHA-256 checksums (TXT)",
+        "D:\\Projects\\AIDE\\aide\\.aide\\release\\stable\\aide-lite-v1.1.0.manifest.json#Release manifest (JSON)",
+        "D:\\Projects\\AIDE\\aide\\.aide\\release\\stable\\aide-lite-v1.1.0.tar.gz#Portable package (TAR.GZ)",
+        "D:\\Projects\\AIDE\\aide\\.aide\\release\\stable\\aide-lite-v1.1.0.zip#Portable package (ZIP)",
+        "--repo",
+        "Julesc013/aide"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393594530307700,
+      "exit_code": 0,
+      "streams": {
+        "recovery-upload.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "recovery-upload.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "uploaded",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "api",
+        "-H",
+        "X-GitHub-Api-Version: 2026-03-10",
+        "repos/Julesc013/aide/releases/416392381"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393597326275300,
+      "exit_code": 0,
+      "streams": {
+        "recovery-uploaded.stdout.log": {
+          "bytes": 10793,
+          "sha256": "fecf794d0593fe9a6a7ef5d6611a8ec6583a4f073aa5ab6a59703bc6d51e506b"
+        },
+        "recovery-uploaded.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-publish-head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393597991016400,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-publish-head.stdout.log": {
+          "bytes": 41,
+          "sha256": "2c157fb0573e093e30a28904b5311b938f4dabd29dbe6eacccd4b49a7df7d38c"
+        },
+        "recovery-pre-publish-head.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-publish-tree",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393598031997600,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-publish-tree.stdout.log": {
+          "bytes": 41,
+          "sha256": "3dfba650287605052202216a4221e57ab856c133e5148ba2e1f91bbab5e7ed69"
+        },
+        "recovery-pre-publish-tree.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-publish-branch",
+      "argv": [
+        "git",
+        "symbolic-ref",
+        "--short",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393598069326600,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-publish-branch.stdout.log": {
+          "bytes": 40,
+          "sha256": "5b863c99de905ddd7a1c603e6672e8a947ee33dc4f899f903fef62c793b85a97"
+        },
+        "recovery-pre-publish-branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-publish-clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393598106332400,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-publish-clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "recovery-pre-publish-clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-publish-dev",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dev"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393598176413800,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-publish-dev.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "recovery-pre-publish-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-publish-main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393598213073900,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-publish-main.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "recovery-pre-publish-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-publish-preserved-aide-lite-successor-qualification-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-lite-successor-qualification-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393598255206600,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-publish-preserved-aide-lite-successor-qualification-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "bd125412dd3ac3e8fd97615304741c356d31f3aff7bcf275326342a2766def89"
+        },
+        "recovery-pre-publish-preserved-aide-lite-successor-qualification-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-publish-preserved-aide-task-brief-readability-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-task-brief-readability-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393598294154900,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-publish-preserved-aide-task-brief-readability-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "b87bb3bb078e2f9fce37293dbbcb393fd569bc4fcc4944da201647528a0394dc"
+        },
+        "recovery-pre-publish-preserved-aide-task-brief-readability-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-publish-remote",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "--tags",
+        "origin",
+        "refs/heads/task/aide-lite-successor-qualification-01",
+        "refs/tags/aide-lite-v1.0.0",
+        "refs/tags/aide-lite-v1.0.0^{}",
+        "refs/heads/dev",
+        "refs/heads/main",
+        "refs/heads/task/aide-lite-successor-publication-01",
+        "refs/tags/aide-lite-v1.1.0",
+        "refs/tags/aide-lite-v1.1.0^{}"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393598331589300,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-publish-remote.stdout.log": {
+          "bytes": 577,
+          "sha256": "97eba490b2a8a199d88020270ed2341fa2bae8147d4f38c26b468d6e8ddb4eef"
+        },
+        "recovery-pre-publish-remote.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-publish-tag",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/tags/aide-lite-v1.1.0"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393598916509900,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-publish-tag.stdout.log": {
+          "bytes": 41,
+          "sha256": "a71690edeabb082c5d669dc1f1b3fc1984c12c2090ed7a4072b26d9ba9b62f0e"
+        },
+        "recovery-pre-publish-tag.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "list-pre-publish",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "api",
+        "-H",
+        "X-GitHub-Api-Version: 2026-03-10",
+        "repos/Julesc013/aide/releases?per_page=100"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393599102163300,
+      "exit_code": 0,
+      "streams": {
+        "recovery-list-pre-publish.stdout.log": {
+          "bytes": 21247,
+          "sha256": "21957a4f040196d6b11a93bfe55713426017b5e42c62230cf990e80e7f588a3c"
+        },
+        "recovery-list-pre-publish.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "draft-pre-publish",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "api",
+        "-H",
+        "X-GitHub-Api-Version: 2026-03-10",
+        "repos/Julesc013/aide/releases/416392381"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393600054347900,
+      "exit_code": 0,
+      "streams": {
+        "recovery-draft-pre-publish.stdout.log": {
+          "bytes": 10793,
+          "sha256": "fecf794d0593fe9a6a7ef5d6611a8ec6583a4f073aa5ab6a59703bc6d51e506b"
+        },
+        "recovery-draft-pre-publish.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "publish",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "release",
+        "edit",
+        "aide-lite-v1.1.0",
+        "--repo",
+        "Julesc013/aide",
+        "--draft=false",
+        "--prerelease=false",
+        "--latest",
+        "--verify-tag"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393600653627600,
+      "exit_code": 0,
+      "streams": {
+        "recovery-publish.stdout.log": {
+          "bytes": 64,
+          "sha256": "2be06b6d6e46c668a15fd977fda53d73d776301b70484eb454ce519fe9cf1ac1"
+        },
+        "recovery-publish.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "published",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "api",
+        "-H",
+        "X-GitHub-Api-Version: 2026-03-10",
+        "repos/Julesc013/aide/releases/416392381"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393602471895700,
+      "exit_code": 0,
+      "streams": {
+        "recovery-published.stdout.log": {
+          "bytes": 10879,
+          "sha256": "ba4869c057fb354777dc28c7dd19c954375c61bc4d73777e7792b3dc569b0079"
+        },
+        "recovery-published.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "latest",
+      "argv": [
+        "C:\\Program Files\\GitHub CLI\\gh.exe",
+        "api",
+        "-H",
+        "X-GitHub-Api-Version: 2026-03-10",
+        "repos/Julesc013/aide/releases/latest"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393603086267500,
+      "exit_code": 0,
+      "streams": {
+        "recovery-latest.stdout.log": {
+          "bytes": 10879,
+          "sha256": "ba4869c057fb354777dc28c7dd19c954375c61bc4d73777e7792b3dc569b0079"
+        },
+        "recovery-latest.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-acquire-head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393603694167200,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-acquire-head.stdout.log": {
+          "bytes": 41,
+          "sha256": "2c157fb0573e093e30a28904b5311b938f4dabd29dbe6eacccd4b49a7df7d38c"
+        },
+        "recovery-pre-acquire-head.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-acquire-tree",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393603739294800,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-acquire-tree.stdout.log": {
+          "bytes": 41,
+          "sha256": "3dfba650287605052202216a4221e57ab856c133e5148ba2e1f91bbab5e7ed69"
+        },
+        "recovery-pre-acquire-tree.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-acquire-branch",
+      "argv": [
+        "git",
+        "symbolic-ref",
+        "--short",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393603781475200,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-acquire-branch.stdout.log": {
+          "bytes": 40,
+          "sha256": "5b863c99de905ddd7a1c603e6672e8a947ee33dc4f899f903fef62c793b85a97"
+        },
+        "recovery-pre-acquire-branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-acquire-clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393603817855800,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-acquire-clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "recovery-pre-acquire-clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-acquire-dev",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dev"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393603890604300,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-acquire-dev.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "recovery-pre-acquire-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-acquire-main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393603930208700,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-acquire-main.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "recovery-pre-acquire-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-acquire-preserved-aide-lite-successor-qualification-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-lite-successor-qualification-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393603968020800,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-acquire-preserved-aide-lite-successor-qualification-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "bd125412dd3ac3e8fd97615304741c356d31f3aff7bcf275326342a2766def89"
+        },
+        "recovery-pre-acquire-preserved-aide-lite-successor-qualification-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-acquire-preserved-aide-task-brief-readability-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-task-brief-readability-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393604004847800,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-acquire-preserved-aide-task-brief-readability-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "b87bb3bb078e2f9fce37293dbbcb393fd569bc4fcc4944da201647528a0394dc"
+        },
+        "recovery-pre-acquire-preserved-aide-task-brief-readability-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-acquire-remote",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "--tags",
+        "origin",
+        "refs/heads/task/aide-lite-successor-qualification-01",
+        "refs/tags/aide-lite-v1.0.0",
+        "refs/tags/aide-lite-v1.0.0^{}",
+        "refs/heads/dev",
+        "refs/heads/main",
+        "refs/heads/task/aide-lite-successor-publication-01",
+        "refs/tags/aide-lite-v1.1.0",
+        "refs/tags/aide-lite-v1.1.0^{}"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393604041508900,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-acquire-remote.stdout.log": {
+          "bytes": 577,
+          "sha256": "97eba490b2a8a199d88020270ed2341fa2bae8147d4f38c26b468d6e8ddb4eef"
+        },
+        "recovery-pre-acquire-remote.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pre-acquire-tag",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/tags/aide-lite-v1.1.0"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393604669936700,
+      "exit_code": 0,
+      "streams": {
+        "recovery-pre-acquire-tag.stdout.log": {
+          "bytes": 41,
+          "sha256": "a71690edeabb082c5d669dc1f1b3fc1984c12c2090ed7a4072b26d9ba9b62f0e"
+        },
+        "recovery-pre-acquire-tag.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "acquire",
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-LITE-SUCCESSOR-PUBLICATION-01\\acquire.py"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393604873584300,
+      "exit_code": 0,
+      "streams": {
+        "recovery-acquire.stdout.log": {
+          "bytes": 66,
+          "sha256": "41aa40528c811a722483d788a51e6334c75e9a086a3b42a6a1bf152192e9f14b"
+        },
+        "recovery-acquire.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393608337568100,
+      "exit_code": 0,
+      "streams": {
+        "recovery-final-head.stdout.log": {
+          "bytes": 41,
+          "sha256": "2c157fb0573e093e30a28904b5311b938f4dabd29dbe6eacccd4b49a7df7d38c"
+        },
+        "recovery-final-head.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-tree",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393608378156700,
+      "exit_code": 0,
+      "streams": {
+        "recovery-final-tree.stdout.log": {
+          "bytes": 41,
+          "sha256": "3dfba650287605052202216a4221e57ab856c133e5148ba2e1f91bbab5e7ed69"
+        },
+        "recovery-final-tree.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-branch",
+      "argv": [
+        "git",
+        "symbolic-ref",
+        "--short",
+        "HEAD"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393608417511300,
+      "exit_code": 0,
+      "streams": {
+        "recovery-final-branch.stdout.log": {
+          "bytes": 40,
+          "sha256": "5b863c99de905ddd7a1c603e6672e8a947ee33dc4f899f903fef62c793b85a97"
+        },
+        "recovery-final-branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393608455291000,
+      "exit_code": 0,
+      "streams": {
+        "recovery-final-clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "recovery-final-clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-dev",
+      "argv": [
+        "git",
+        "rev-parse",
+        "dev"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393608525362700,
+      "exit_code": 0,
+      "streams": {
+        "recovery-final-dev.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "recovery-final-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "main"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393608561732000,
+      "exit_code": 0,
+      "streams": {
+        "recovery-final-main.stdout.log": {
+          "bytes": 41,
+          "sha256": "8a933b5fa23f74d892f7ee6f06438418ba31e39e07e9ae2332930b8609d780ae"
+        },
+        "recovery-final-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-preserved-aide-lite-successor-qualification-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-lite-successor-qualification-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393608598978800,
+      "exit_code": 0,
+      "streams": {
+        "recovery-final-preserved-aide-lite-successor-qualification-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "bd125412dd3ac3e8fd97615304741c356d31f3aff7bcf275326342a2766def89"
+        },
+        "recovery-final-preserved-aide-lite-successor-qualification-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-preserved-aide-task-brief-readability-01",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/heads/task/aide-task-brief-readability-01"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393608636029000,
+      "exit_code": 0,
+      "streams": {
+        "recovery-final-preserved-aide-task-brief-readability-01.stdout.log": {
+          "bytes": 41,
+          "sha256": "b87bb3bb078e2f9fce37293dbbcb393fd569bc4fcc4944da201647528a0394dc"
+        },
+        "recovery-final-preserved-aide-task-brief-readability-01.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-remote",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "--tags",
+        "origin",
+        "refs/heads/task/aide-lite-successor-qualification-01",
+        "refs/tags/aide-lite-v1.0.0",
+        "refs/tags/aide-lite-v1.0.0^{}",
+        "refs/heads/dev",
+        "refs/heads/main",
+        "refs/heads/task/aide-lite-successor-publication-01",
+        "refs/tags/aide-lite-v1.1.0",
+        "refs/tags/aide-lite-v1.1.0^{}"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393608672436900,
+      "exit_code": 0,
+      "streams": {
+        "recovery-final-remote.stdout.log": {
+          "bytes": 577,
+          "sha256": "97eba490b2a8a199d88020270ed2341fa2bae8147d4f38c26b468d6e8ddb4eef"
+        },
+        "recovery-final-remote.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-tag",
+      "argv": [
+        "git",
+        "rev-parse",
+        "refs/tags/aide-lite-v1.1.0"
+      ],
+      "status": "COMPLETED",
+      "at_unix_ns": 1792393609265775300,
+      "exit_code": 0,
+      "streams": {
+        "recovery-final-tag.stdout.log": {
+          "bytes": 41,
+          "sha256": "a71690edeabb082c5d669dc1f1b3fc1984c12c2090ed7a4072b26d9ba9b62f0e"
+        },
+        "recovery-final-tag.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ],
+  "model_requests": 0,
+  "initial_admission": {
+    "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+    "capacity": {
+      "disk_free": {
+        "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\": 248502132736
+      },
+      "physical_free": 20865884160,
+      "commit_free": 23909228544
+    },
+    "reservations": {
+      "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\": 47185920
+    },
+    "active": null,
+    "dispatch": {
+      "schema": "aide.job-dispatch.v1",
+      "mode": "running",
+      "epoch": 0,
+      "codex_admitted": 0,
+      "codex_request_digests": []
+    },
+    "writes": false,
+    "disk_enforcement": "reservation_and_monitored_threshold",
+    "memory_enforcement": "Windows_Job_commit_limit",
+    "log_enforcement": "bounded_pipe_drain"
+  },
+  "upload_admission": {
+    "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+    "capacity": {
+      "disk_free": {
+        "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\": 248502067200
+      },
+      "physical_free": 20858310656,
+      "commit_free": 23922311168
+    },
+    "reservations": {
+      "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\": 47185920
+    },
+    "active": null,
+    "dispatch": {
+      "schema": "aide.job-dispatch.v1",
+      "mode": "running",
+      "epoch": 0,
+      "codex_admitted": 0,
+      "codex_request_digests": []
+    },
+    "writes": false,
+    "disk_enforcement": "reservation_and_monitored_threshold",
+    "memory_enforcement": "Windows_Job_commit_limit",
+    "log_enforcement": "bounded_pipe_drain"
+  },
+  "asset_ids": [
+    655512812,
+    655512814,
+    655512816,
+    655512817
+  ],
+  "publication_admission": {
+    "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+    "capacity": {
+      "disk_free": {
+        "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\": 248502034432
+      },
+      "physical_free": 20900847616,
+      "commit_free": 23970861056
+    },
+    "reservations": {
+      "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\": 47185920
+    },
+    "active": null,
+    "dispatch": {
+      "schema": "aide.job-dispatch.v1",
+      "mode": "running",
+      "epoch": 0,
+      "codex_admitted": 0,
+      "codex_request_digests": []
+    },
+    "writes": false,
+    "disk_enforcement": "reservation_and_monitored_threshold",
+    "memory_enforcement": "Windows_Job_commit_limit",
+    "log_enforcement": "bounded_pipe_drain"
+  },
+  "acquisition_admission": {
+    "config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+    "capacity": {
+      "disk_free": {
+        "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\": 248501960704
+      },
+      "physical_free": 20970926080,
+      "commit_free": 24051494912
+    },
+    "reservations": {
+      "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\": 47185920
+    },
+    "active": null,
+    "dispatch": {
+      "schema": "aide.job-dispatch.v1",
+      "mode": "running",
+      "epoch": 0,
+      "codex_admitted": 0,
+      "codex_request_digests": []
+    },
+    "writes": false,
+    "disk_enforcement": "reservation_and_monitored_threshold",
+    "memory_enforcement": "Windows_Job_commit_limit",
+    "log_enforcement": "bounded_pipe_drain"
+  },
+  "published": {
+    "url": "https://api.github.com/repos/Julesc013/aide/releases/416392381",
+    "assets_url": "https://api.github.com/repos/Julesc013/aide/releases/416392381/assets",
+    "upload_url": "https://uploads.github.com/repos/Julesc013/aide/releases/416392381/assets{?name,label}",
+    "html_url": "https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.1.0",
+    "id": 416392381,
+    "author": {
+      "login": "Julesc013",
+      "id": 30209022,
+      "node_id": "MDQ6VXNlcjMwMjA5MDIy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30209022?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Julesc013",
+      "html_url": "https://github.com/Julesc013",
+      "followers_url": "https://api.github.com/users/Julesc013/followers",
+      "following_url": "https://api.github.com/users/Julesc013/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Julesc013/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Julesc013/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Julesc013/subscriptions",
+      "organizations_url": "https://api.github.com/users/Julesc013/orgs",
+      "repos_url": "https://api.github.com/users/Julesc013/repos",
+      "events_url": "https://api.github.com/users/Julesc013/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Julesc013/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "node_id": "RE_kwDORxX0nM4Y0aS9",
+    "tag_name": "aide-lite-v1.1.0",
+    "target_commitish": "9cead252a1e72c5fe3d3f224b098d98436f7a250",
+    "name": "AIDE Lite 1.1.0",
+    "draft": false,
+    "immutable": false,
+    "prerelease": false,
+    "created_at": "2026-10-18T10:49:33Z",
+    "updated_at": "2026-10-19T07:06:42Z",
+    "published_at": "2026-10-19T07:06:42Z",
+    "assets": [
+      {
+        "url": "https://api.github.com/repos/Julesc013/aide/releases/assets/655512814",
+        "id": 655512814,
+        "node_id": "RA_kwDORxX0nM4nElTu",
+        "name": "aide-lite-v1.1.0.manifest.json",
+        "label": "Release manifest (JSON)",
+        "uploader": {
+          "login": "Julesc013",
+          "id": 30209022,
+          "node_id": "MDQ6VXNlcjMwMjA5MDIy",
+          "avatar_url": "https://avatars.githubusercontent.com/u/30209022?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/Julesc013",
+          "html_url": "https://github.com/Julesc013",
+          "followers_url": "https://api.github.com/users/Julesc013/followers",
+          "following_url": "https://api.github.com/users/Julesc013/following{/other_user}",
+          "gists_url": "https://api.github.com/users/Julesc013/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/Julesc013/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/Julesc013/subscriptions",
+          "organizations_url": "https://api.github.com/users/Julesc013/orgs",
+          "repos_url": "https://api.github.com/users/Julesc013/repos",
+          "events_url": "https://api.github.com/users/Julesc013/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/Julesc013/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/json",
+        "state": "uploaded",
+        "size": 6957,
+        "digest": "sha256:38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f",
+        "download_count": 0,
+        "created_at": "2026-10-19T07:06:36Z",
+        "updated_at": "2026-10-19T07:06:36Z",
+        "browser_download_url": "https://github.com/Julesc013/aide/releases/download/aide-lite-v1.1.0/aide-lite-v1.1.0.manifest.json"
+      },
+      {
+        "url": "https://api.github.com/repos/Julesc013/aide/releases/assets/655512817",
+        "id": 655512817,
+        "node_id": "RA_kwDORxX0nM4nElTx",
+        "name": "aide-lite-v1.1.0.SHA256SUMS.txt",
+        "label": "SHA-256 checksums (TXT)",
+        "uploader": {
+          "login": "Julesc013",
+          "id": 30209022,
+          "node_id": "MDQ6VXNlcjMwMjA5MDIy",
+          "avatar_url": "https://avatars.githubusercontent.com/u/30209022?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/Julesc013",
+          "html_url": "https://github.com/Julesc013",
+          "followers_url": "https://api.github.com/users/Julesc013/followers",
+          "following_url": "https://api.github.com/users/Julesc013/following{/other_user}",
+          "gists_url": "https://api.github.com/users/Julesc013/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/Julesc013/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/Julesc013/subscriptions",
+          "organizations_url": "https://api.github.com/users/Julesc013/orgs",
+          "repos_url": "https://api.github.com/users/Julesc013/repos",
+          "events_url": "https://api.github.com/users/Julesc013/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/Julesc013/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "text/plain; charset=utf-8",
+        "state": "uploaded",
+        "size": 274,
+        "digest": "sha256:01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e",
+        "download_count": 0,
+        "created_at": "2026-10-19T07:06:36Z",
+        "updated_at": "2026-10-19T07:06:36Z",
+        "browser_download_url": "https://github.com/Julesc013/aide/releases/download/aide-lite-v1.1.0/aide-lite-v1.1.0.SHA256SUMS.txt"
+      },
+      {
+        "url": "https://api.github.com/repos/Julesc013/aide/releases/assets/655512812",
+        "id": 655512812,
+        "node_id": "RA_kwDORxX0nM4nElTs",
+        "name": "aide-lite-v1.1.0.tar.gz",
+        "label": "Portable package (TAR.GZ)",
+        "uploader": {
+          "login": "Julesc013",
+          "id": 30209022,
+          "node_id": "MDQ6VXNlcjMwMjA5MDIy",
+          "avatar_url": "https://avatars.githubusercontent.com/u/30209022?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/Julesc013",
+          "html_url": "https://github.com/Julesc013",
+          "followers_url": "https://api.github.com/users/Julesc013/followers",
+          "following_url": "https://api.github.com/users/Julesc013/following{/other_user}",
+          "gists_url": "https://api.github.com/users/Julesc013/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/Julesc013/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/Julesc013/subscriptions",
+          "organizations_url": "https://api.github.com/users/Julesc013/orgs",
+          "repos_url": "https://api.github.com/users/Julesc013/repos",
+          "events_url": "https://api.github.com/users/Julesc013/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/Julesc013/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/x-gtar",
+        "state": "uploaded",
+        "size": 885826,
+        "digest": "sha256:7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44",
+        "download_count": 0,
+        "created_at": "2026-10-19T07:06:36Z",
+        "updated_at": "2026-10-19T07:06:37Z",
+        "browser_download_url": "https://github.com/Julesc013/aide/releases/download/aide-lite-v1.1.0/aide-lite-v1.1.0.tar.gz"
+      },
+      {
+        "url": "https://api.github.com/repos/Julesc013/aide/releases/assets/655512816",
+        "id": 655512816,
+        "node_id": "RA_kwDORxX0nM4nElTw",
+        "name": "aide-lite-v1.1.0.zip",
+        "label": "Portable package (ZIP)",
+        "uploader": {
+          "login": "Julesc013",
+          "id": 30209022,
+          "node_id": "MDQ6VXNlcjMwMjA5MDIy",
+          "avatar_url": "https://avatars.githubusercontent.com/u/30209022?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/Julesc013",
+          "html_url": "https://github.com/Julesc013",
+          "followers_url": "https://api.github.com/users/Julesc013/followers",
+          "following_url": "https://api.github.com/users/Julesc013/following{/other_user}",
+          "gists_url": "https://api.github.com/users/Julesc013/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/Julesc013/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/Julesc013/subscriptions",
+          "organizations_url": "https://api.github.com/users/Julesc013/orgs",
+          "repos_url": "https://api.github.com/users/Julesc013/repos",
+          "events_url": "https://api.github.com/users/Julesc013/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/Julesc013/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/zip",
+        "state": "uploaded",
+        "size": 1231497,
+        "digest": "sha256:80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc",
+        "download_count": 0,
+        "created_at": "2026-10-19T07:06:36Z",
+        "updated_at": "2026-10-19T07:06:37Z",
+        "browser_download_url": "https://github.com/Julesc013/aide/releases/download/aide-lite-v1.1.0/aide-lite-v1.1.0.zip"
+      }
+    ],
+    "tarball_url": "https://api.github.com/repos/Julesc013/aide/tarball/aide-lite-v1.1.0",
+    "zipball_url": "https://api.github.com/repos/Julesc013/aide/zipball/aide-lite-v1.1.0",
+    "body": "Task continuation, review/reuse reports and effort summaries for the qualified local Windows CLI.\n\n### Changes\n\n- **Added:** 18 declared command forms, including `task current`, `task resume-plan`, `git policy`, `review-pack`, `quality reuse` and `job effort`. The manifest lists all 56 qualified forms.\n- **Fixed:** effort reporting in adopted projects now uses AIDE\u2019s installed helper.\n- **Upgrade checked:** the actual published 1.0.0 package, project customization, direct edits, upstream conflicts, recorded resolutions and interrupted-import recovery.\n- **Retained:** all 38 prior public forms and the original eight consumer cases. Earlier failed or interrupted observations remain in the evidence.\n\n### Downloads\n\n| Download | Purpose |\n| --- | --- |\n| [ZIP package](https://github.com/Julesc013/aide/releases/download/aide-lite-v1.1.0/aide-lite-v1.1.0.zip) | Recommended archive for Windows. |\n| [TAR.GZ package](https://github.com/Julesc013/aide/releases/download/aide-lite-v1.1.0/aide-lite-v1.1.0.tar.gz) | The same portable payload in tar format. |\n| [SHA-256 checksums](https://github.com/Julesc013/aide/releases/download/aide-lite-v1.1.0/aide-lite-v1.1.0.SHA256SUMS.txt) | Verify the archive before extraction. |\n| [Release manifest](https://github.com/Julesc013/aide/releases/download/aide-lite-v1.1.0/aide-lite-v1.1.0.manifest.json) | Exact source, artifact and qualified-profile identities. |\n\n**Install or update:** verify the chosen archive, extract outside your project, and follow the included `install.md`. Preview an update before applying it; retain the original packages, project state and recorded conflict resolutions. GitHub\u2019s automatic source archives are repository snapshots; use the portable packages above for installation.\n\n### Qualified profile and known limits\n\n- **Profile:** T3 Limited Support, local Windows CLI; qualified on Windows 10 build 19045 with Python 3.14.8. The manifest defines the exact supported forms and environment.\n- **Recovery limits:** automatic rollback across changed owned-path sets and automatic downgrade of customized overlays are outside this profile. Preserve state and reconcile those cases manually.\n- **Open qualification:** outer editor/shell containment, read isolation, autonomous model operation and whole-task efficiency remain open.\n- **Development continues:** newer compact communication defaults, task briefs, portable handoffs and outcome lessons are reserved for a subsequent qualified release; these frozen packages do not contain them.\n\n**Evidence:** [technical acceptance](https://github.com/Julesc013/aide/blob/dfae9356241dda6a03e2cc48cf9acb245c9a6be1/.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json). Payload source: `447e393b3f87004641b7387c1f33828ac1ee3a85`. The release tag identifies the reviewed publication checkpoint; the manifest identifies the original package build. Downloaded-asset acceptance is recorded separately after publication.\n"
+  },
+  "acquired": {
+    "aide-lite-v1.1.0.SHA256SUMS.txt": {
+      "size_bytes": 274,
+      "sha256": "01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e"
+    },
+    "aide-lite-v1.1.0.manifest.json": {
+      "size_bytes": 6957,
+      "sha256": "38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f"
+    },
+    "aide-lite-v1.1.0.tar.gz": {
+      "size_bytes": 885826,
+      "sha256": "7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44"
+    },
+    "aide-lite-v1.1.0.zip": {
+      "size_bytes": 1231497,
+      "sha256": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc"
+    }
+  },
+  "acquisition_receipt_sha256": "e144ba67d3d7d212a353057dbf3ffecc493fe4a7acb5a88c43239b7d8a5d8560"
+}

@@ -1,7 +1,7 @@
 ### Changed files
 
-- Root README, TODO, ROADMAP, CHANGELOG, PLANS, IMPLEMENT and DOCUMENTATION: current release state, logical Markdown lines, default pre-tag reconciliation and explicit platform direction.
-- Release/packaging policy and communication/Git references: readable notes, labelled assets, per-deliverable versions and the exact-profile boundary.
-- Development export: three documented policy/reference payloads plus exporter metadata; 875 members. Six fixed preview outputs cover ecff55da through75f9127d.
-- Existing publication WorkUnit and campaign view: qualification outcomes, retained partial evidence, one guarded delivery controller, refreshed annotation and the original acquired-byte consumer template.
-- Exact paths and byte identities: [delivery source map](delivery-source.json). Frozen 1.0/1.1 assets and executable product source/tests remain unchanged.
+- Root README/TODO/ROADMAP/CHANGELOG/PLANS/IMPLEMENT/DOCUMENTATION: published and acquired 1.1.0, actual next work and distinct unreleased development.
+- Existing publication task/report, queue index and campaign projection/plan: consumer complete, exact exhausted allocations, owner and platform boundaries, attributed user review priorities.
+- Evidence: original consumer collection, normalized projections, recovery receipt, qualified delivery proof and exact closure packet.
+- One task-local integration controller: safe dev/main synchronization, post-main fixed-preview equality, important remote checkpoint preservation and owned local branch retirement.
+- Exact paths and bytes are in [closure source map](closure-source.json). No executable product, test, pack payload, frozen asset or release metadata is changed.

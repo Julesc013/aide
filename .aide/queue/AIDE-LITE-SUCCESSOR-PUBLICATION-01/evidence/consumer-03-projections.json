@@ -1,0 +1,219 @@
+[
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\acquired-consumer.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-acquired-consumer.json",
+    "raw_sha256": "35c608e8df1ba6b1bcb4be69c9abc627dd23259a500e41434c130cd108db0845",
+    "projection_sha256": "3293a123356f57e604c89a792e18e8c7baa882021391de88fec1d03d1ba507e0",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-agents-overlay-apply.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-agents-overlay-apply.json",
+    "raw_sha256": "c0235ba5cdbdba189cfddcb63f1f29a9450b31b22124205a15a843eb62e18c98",
+    "projection_sha256": "b23acf31efdcc4ca2ac7f0b9d25bd4648d7d0a4fdb43ba787ea8ed1b048f16f9",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-agents-overlay-preview.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-agents-overlay-preview.json",
+    "raw_sha256": "4bcb13242e8be36f7ec91dc18434d78e53bdc8a2363cad641a05095f169eddba",
+    "projection_sha256": "19aa0ace5f35e4a8d1644226d2daceee16a1f629fc805ede091f3af6f6b3c941",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-agents-overlay-repair-health.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-agents-overlay-repair-health.json",
+    "raw_sha256": "dcc6650c9695de94edd0f5b0a03608ab602c68205cc4f83dae655126f59984e8",
+    "projection_sha256": "98ce7542fd777c6779404087d81b6d873f858370edf3eed07e7c94294dafd1a7",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-direct-edit-repair-health.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-direct-edit-repair-health.json",
+    "raw_sha256": "05781afe6ba3d760c465516da625f10e71e1379a360a8afa66d00dd8655dd43d",
+    "projection_sha256": "e316d956b3b87d3c83441926bfcf12e426c3f7c88528fc15dc89ae6e56c8373c",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-v1-apply.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-v1-apply.json",
+    "raw_sha256": "f1f018911cce3b748aed057a5cd71406abeec5b760ea59e45c8328d15abcb633",
+    "projection_sha256": "3f55ad7afa59421420d4f8446f61bc119a30d5319d4eae2ad10b6e7f34e32461",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-v1-preview.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-v1-preview.json",
+    "raw_sha256": "e43d26dfc59960f8aa839421914b8f677d2ead2175e3dedf896266e86ba3dbec",
+    "projection_sha256": "919d7e18bb84a0b44bc3b9b371ecc948f3d09839eb21d8b51d09de27524eae49",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-v2-conflict-apply.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-v2-conflict-apply.json",
+    "raw_sha256": "99b30176f7ab2a0ace2317660361857a834b48aa2b832a285059e16ecf597750",
+    "projection_sha256": "f8a716317e134bb589d5d37b3ec53f85c5c32a7af08d794e98f31e6331a4e5ea",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-v2-conflict-preview.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-v2-conflict-preview.json",
+    "raw_sha256": "34aa882d2b50fa1ff95836a6f740672ff1f3acbbb559c4e5e1c9aca84d9a1295",
+    "projection_sha256": "8175d399b070a3f767a41856e5d3ecbced07bb130fd14b5dbc85683c0dbbcb72",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-v2-resolved-apply.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-v2-resolved-apply.json",
+    "raw_sha256": "52f1a0c1b1238e82a07a4c9912d0434c9f4c31d3c2cb73a37166d2a63b32efc2",
+    "projection_sha256": "b03a5bbf4cd381317ee13fd91f3561986bc2a5c1aec9f0366c293c1eb5f33259",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-v2-resolved-feedback.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-v2-resolved-feedback.json",
+    "raw_sha256": "fa35af933b09229cee8e66df3417b633d419c6671be0e63a98787b5b0165baf3",
+    "projection_sha256": "fa35af933b09229cee8e66df3417b633d419c6671be0e63a98787b5b0165baf3",
+    "transformation": "byte-identical"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-v2-resolved-plain-preview.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-v2-resolved-plain-preview.json",
+    "raw_sha256": "77b428776c9ad7947db6c5e5aafcc319c2279455d27351c8b038b7a1e6202407",
+    "projection_sha256": "4fa0b68b17993f8634ffe4314a712e370efb81121424f7da93ec2ba64b814f5c",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-v2-resolved-preview.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-v2-resolved-preview.json",
+    "raw_sha256": "c3a3ebeb71ab2f34c88831bfaa390632528b1ca82773c0212358f6d9acc9dc1e",
+    "projection_sha256": "50e05c903c9c12a8a5ab851389482ca3b23d4cd7723fd967e1130f6479638c1a",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-v3-conflict-preview.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-v3-conflict-preview.json",
+    "raw_sha256": "9d5b1112ec2c8cdac04987de64e06606358d7879ad443257013d2e0eef227b84",
+    "projection_sha256": "9711e7a1c0f28d3c1a08ff181b9506834a9dc4ff220f226908d4d9791f771600",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-v3-resolved-apply.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-v3-resolved-apply.json",
+    "raw_sha256": "f01a881addc9e91fe12a6b9d31b8c9c05e230a95cd04c51e359977fcaaf914e7",
+    "projection_sha256": "9cfb0575a88f5f11d696b334c9f257cba1cc561fc3b5bea7276542133cb810cc",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\brown-v3-resolved-preview.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-brown-v3-resolved-preview.json",
+    "raw_sha256": "ff8b1f923af9702d67b6b475b5f87a7b7827443fabbd7cef2063225e7087c526",
+    "projection_sha256": "4cb46904abdd4cd01af9349df1f5333a1f67912a7d4ecb7b97c2b2992c961d77",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\fresh-disabled-v2-apply.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-fresh-disabled-v2-apply.json",
+    "raw_sha256": "6e7e024ad40c1099fd2dce0990c7816ce474b5f6247896b5420263c82caac3af",
+    "projection_sha256": "aa41dcfdbc05a57b00f9487256483d10729b4076d9da9f0cd03afb3d1f5a28e4",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\fresh-disabled-v2-preview.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-fresh-disabled-v2-preview.json",
+    "raw_sha256": "73140b8a98c749e5fb590b9dc9d477fbc6485054b68c7a20fda7d4774c78ce89",
+    "projection_sha256": "056fee04129792089c4d4ce7e1db9c8d264ba55238301764381fd29a43d6fc4d",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\fresh-disabled-v3-apply.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-fresh-disabled-v3-apply.json",
+    "raw_sha256": "c8cea8d1404651e9f4b2391587a0335aaa8275c44983c1ce0539555258ef96c7",
+    "projection_sha256": "2d3f742c75b5f7a745b39924731f59dc023705bc3a22e9cd0b4345a8de7d6dcf",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\fresh-disabled-v3-preview.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-fresh-disabled-v3-preview.json",
+    "raw_sha256": "c85f0d13604322b149f013e9c3e544351589baa3fb8cfd25e5d5e8f00f2cdaee",
+    "projection_sha256": "c4389ec907f9241adf9532c93e9603341bf6ec1ebaf65a7ea46d0b12f6faffa7",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\fresh-installed-doctor.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-fresh-installed-doctor.json",
+    "raw_sha256": "53d09ec9364c0d98c44893cc7d8308d4b45b6cb6190563e4e47f256d3faab060",
+    "projection_sha256": "0a676d19d8c9a03766993aabcf3d9f2c821364d17fd1ed7781273ce1c067856d",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\fresh-missing-owned-apply.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-fresh-missing-owned-apply.json",
+    "raw_sha256": "b2c55137a75654eb8299fc31aed1591916cc47ec6952c07e288eecee4bbe0032",
+    "projection_sha256": "64107b028eb2eebc67abe46a875cb6b5cf1b417b7903cac656db77c4ab8533ed",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\fresh-missing-owned-preview.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-fresh-missing-owned-preview.json",
+    "raw_sha256": "7d09c05d7dbe620634eefa568461eb8124f141a2b53f991ae475b1f983d4211e",
+    "projection_sha256": "85e595f61873d3d414c5a84800c386996f960696f6ae0f6d20e84d7a30dc69af",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\fresh-missing-owned-repair-health.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-fresh-missing-owned-repair-health.json",
+    "raw_sha256": "c94213723116ed2598c594c613c4c037446aea294b8db7ffd31fc815b0ade5c6",
+    "projection_sha256": "818d29cdbb4c9630358adf64a6b101bb621d7430a59e4c70e364e9b56dd869f0",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\fresh-missing-owned-repair-preview.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-fresh-missing-owned-repair-preview.json",
+    "raw_sha256": "83f7243383c084f0deada62bf086af63e861176f044bdd0fdca3b2354fac8638",
+    "projection_sha256": "cf8c88ace43b0d9174f23049b201755838627ea2b7218516677b63a353182989",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\fresh-v1-apply.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-fresh-v1-apply.json",
+    "raw_sha256": "6c9f8d4badc9732b83ffca57d4b84beed559a9e04acb96c62284bd408ccf0a4f",
+    "projection_sha256": "25dd75d9939e7272e26890c9b8f4d66857741aac701dd31dc3ed90e94ef36d15",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\fresh-v1-preview.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-fresh-v1-preview.json",
+    "raw_sha256": "b17c12bbdd63cd695f3c9da1503a792c3cda49e8d3bfa9063cc84f4d7dbc47d0",
+    "projection_sha256": "b35d863c7130c3aee69987bc275ce7a39f1e6c80030e897aef5401109abe0d59",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\fresh-v1-repair-health.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-fresh-v1-repair-health.json",
+    "raw_sha256": "f630bec70eef729184ab6ede7d3d93df71803ad600fe8c0182c59dfe93a6d968",
+    "projection_sha256": "5ec7702796a4634c4908a6cc012c645836768082573569e19aa67756534a9e8c",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\partial-recovery-result.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-partial-recovery-result.json",
+    "raw_sha256": "9239bd512b9b73cfcc9d32a2cabe874cbc8997342dd89cd3cef05f0a19f70554",
+    "projection_sha256": "e6be916387e0d04be63485e8b50b68da5bc0ca7db14195d19f8a1c1041f0ff09",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\process.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-process.json",
+    "raw_sha256": "4bc4bfa55d9769d40b8c31abca6f1c22476e88547531f151b635c18f6b55cd47",
+    "projection_sha256": "bf281c91a40dc6bc19bd025443a537cc84d9721e6af871648573501274ecea24",
+    "transformation": "CRLF to LF only"
+  },
+  {
+    "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\7e9fdfcf12bd4485bee6ceca215d2e20\\output\\case-00\\summary.json",
+    "projection": ".aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/consumer-03-case-00-summary.json",
+    "raw_sha256": "477fcf67beadbf706ad3a6ccbf30870316bd9e0ccc53268ae65bad285abe1a7d",
+    "projection_sha256": "641009dabb8c50428ad30b728f01e01941c19151c3506cb770c159aff88f99df",
+    "transformation": "CRLF to LF only"
+  }
+]

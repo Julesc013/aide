@@ -1,14 +1,14 @@
 # AIDE Roadmap
 
-### Current direction - 18 October 2026
+### Current direction - 19 October 2026
 
-**Released:** AIDE Lite 1.0.0 for its exact local Windows CLI profile. **Qualified, unpublished:** frozen 1.1.0, including 56 forms and actual published-predecessor upgrade/recovery. Newer source and development-pack features retain their own evidence and remain outside those frozen archives.
+**Released:** AIDE Lite 1.1.0 for its exact local Windows CLI profile, including 56 forms, actual published-predecessor upgrade/recovery and acquired-byte consumer acceptance. Lite 1.0.0 and its original evidence remain preserved. Newer source/development-pack features retain their own evidence and remain outside these frozen archives.
 
 **Next finish line:** repeatable useful work in AIDE and one downstream project, with interruption recovery, preserved customization and reusable results, clear ownership/resources and complete-outcome accounting. The [current campaign view](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md) links the evidence and blockers; [TODO.md](TODO.md) provides a compact checklist and [PLANS.md](PLANS.md) holds detailed work.
 
 | Horizon | Focus | Acceptance still needed |
 | --- | --- | --- |
-| Now | Publish the qualified Lite successor; prove a useful host and downstream workflow; improve concise context/reuse and initial cost observation. | Exact publication/acquired bytes, supported existing-host binding, downstream writer ownership and actual accepted work. |
+| Now | Use the released Lite foundation and implemented development capabilities to prove a useful host/downstream workflow and one owner-to-owner dependency; preserve continuity and cost observations. | Supported/cooperative existing-host binding, downstream writer ownership, actual accepted work and recovery. |
 | Next | Portable continuity, shared resource/request ownership, better intelligence/harvest and another materially different execution binding. | The same work survives interruption, client change, customization and controlled concurrency. |
 | Later | Richer Workbench/domain authoring, vintage/offline reach, networked teams, controlled learning and contributor/deployment profiles. | Capability-specific implementation, activation, support and release evidence; no uniform host parity. |
 

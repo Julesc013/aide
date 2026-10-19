@@ -1,0 +1,35 @@
+{
+  "schema": "aide.campaign.continuation-intent.v1",
+  "attribution": "User supplied both reviews and requested publication then continuation, 19 October2026 Australia/Sydney",
+  "sources": [
+    {
+      "display_name": "GPT-6 Astra Pro \u2014 Reasoning \u2014 2026-10-17 17:53:06 AEDT",
+      "sha256": "7375ef1cb5683073f7b43bcbbb6dfcbea5509e3c624befa55b8f4ff78f15cb6f"
+    },
+    {
+      "display_name": "GPT-6 Astra Pro \u2014 Reasoning \u2014 2026-10-19 09:47:05 AEDT",
+      "sha256": "9271ab01ab15e24904465075ccec7fcee08c4d19e448bc233ff90b5036d0f428"
+    }
+  ],
+  "existing_campaign": "AIDE-CONVERGENCE-AND-DELIVERY-01",
+  "order": [
+    "Close frozen1.1.0 public release; complete",
+    "Use a real supported/cooperative existing participant binding for useful work; never invent wake-up or containment",
+    "Resolve DiskEd writer ownership/current preimages and a separately reviewed finite target-validation phase; finish target-owned acceptance",
+    "Carry a current owner-confirmed FacMan-to-Setup dependency through requested completion and requester adoption",
+    "Exercise interruption/repetition on the same workflow; preserve results, one useful reuse/lesson outcome and available costs"
+  ],
+  "reuse": [
+    "Existing pinned Mini2.4.6 adapter",
+    "Existing task/result exchange, rebind/cancellation, source-linked lessons and syntax discovery",
+    "Original DiskEd158 passes/two unavailable symlink checks and prepared postimages where actual inputs remain valid"
+  ],
+  "limits": [
+    "Publication total native allocation3 is exhausted after successful consumer",
+    "DiskEd preparation allocation2 is exhausted; actual-target phase requires bounded amendment/review",
+    "Earlier three-call model phase remains exhausted; no new provider/model spend",
+    "Imported244 proposed requirements remain proposals; no automatic adoption or fleet rollout",
+    "Broad platform reach remains visible; no broad port campaign blocks daily use or unchanged releases"
+  ],
+  "planning_horizon": "19-25 October2026 objectives/decision points, not guaranteed dates or a replacement queue"
+}

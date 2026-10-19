@@ -1,9 +1,8 @@
-### Remaining risks and limits
+### Remaining risks
 
-- Native Windows qualification is one profile. Linux/macOS/BSD/Solaris/Unix/DOS/OS2/future platform entries express planned reach, with no new support claim.
-- The tag identifies a reviewed documentation/publication checkpoint; the manifest identifies frozen payload source 447e393b. Automatic GitHub source archives are repository snapshots.
-- Newer development features and defaults are outside frozen 1.1.0; their later packages need applicable qualification.
-- Original timeout remains incomplete. No consumer retry or further native allocation is authorized beyond the one remaining slot.
-- Parent Git/API/download operations are bounded and cooperative. Outer-client containment/read isolation, actual host delivery, native downstream adoption and whole-outcome efficiency remain open.
-- Concurrent ref/release changes or an ambiguous effect stop delivery for reconciliation. Never force, retag, replace assets, delete releases, change reserves or expand spending.
-- The legacy preview does not automatically enforce every new documentation gate. This exact release packet checks them explicitly; the remaining integration improvement stays in TODO.
+- Released1.1.0 is the exact T3 Windows CLI profile. Broader platforms and newer development features need their own evidence/release selection.
+- Outer-client containment/read isolation, actual host editing, native DiskEd adoption, whole-outcome efficiency and repeated daily use remain open.
+- DiskEd writer ownership is unresolved and its preparation allowance exhausted; the earlier three-call live model phase is also exhausted. These are distinct constraints.
+- Tag9cead252 and payload447e393b remain fixed; recovery execution d04fd333 is a separate identity.
+- Any changed input/ref/public metadata stops integration for reconciliation. No force, reset, retag, remote branch deletion, resource-policy change or completed-effect replay.
+- Preserve the important remote publication/consumer closeout checkpoint, original qualification ref and unfinished local readability branch. Only the now-merged owned local publication branch may retire.

@@ -1,0 +1,9 @@
+docs(release): close verified Lite publication and resume daily use
+
+Record published/latest 1.1.0, exact acquired assets and the original consumer/recovery PASS with retired ownership. Reconcile README, TODO, changelog, plans and current campaign state; preserve partial failures and explicit platform/model/target limits. Select actual host/downstream/dependency work from the supplied reviews without restarting existing foundations.
+
+Validation: PASS - publication62 operations, acquired4 hashes, original consumer/recovery, collection and three retired jobs
+ Pending - final full validation, independent closure review and guarded dev/main sync
+Changelog: Docs: Record qualified Lite1.1.0 delivery and next daily-use priorities
+AIDE-Task: AIDE-LITE-SUCCESSOR-PUBLICATION-01
+AIDE-Format: compact-v1

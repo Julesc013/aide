@@ -1,9 +1,8 @@
 ### Validation
 
-- **PASS:** source coverage composes 25 individually completed methods from the incomplete original attempt with five completed continuation methods. All 30 delivered methods passed without skips/failures/errors.
-- **PASS:** ownership 6,875-member export, doctor/validate/pack-status, safe-installed policy/reference defaults and preservation of project AGENTS/TODO/PLANS/ROADMAP/CHANGELOG.
-- **PASS:** six fixed preview outputs regenerated exactly for ecff55da..75f9127d. Later preparation/outcome commits receive strict range checks, not a claim of inclusion in that preview.
-- **PASS:** both native jobs collected, digest-verified and retired; scratch absent and reservations released. Original timeout is incomplete and retained.
-- **PASS:** all eight frozen assets unchanged; published 1.0 presentation correction has exact readback and preserved asset/tag identities.
-- [Qualified documentation](documentation-qualified.json), [prechecks](delivery-prechecks.json), [original technical acceptance](../../AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json).
-- **Pending:** reviewed dev/main/task sync, new tag, publication, acquired-byte original case0/recovery and final delivery closure. The controller verifies the fixed preview again after main synchronization and before any tag.
+- **PASS:** four frozen public assets, labelled metadata and all acquired identities; original acquired-byte case 0 and partial recovery.
+- **PASS:** consumer collection hashes, quiescence/retirement, scratch absent and reservations released; all three allocations retired.
+- **Retained:** source qualification composes 25 completed methods with five continuation methods; delivered 30, ownership six and installed project preservation. Original timeout is incomplete and failed draft lookup remains recorded.
+- [Published proof](published-lite-1.1.0-qualified.json), [consumer](consumer-attempt-03.json), [documentation qualification](documentation-qualified.json), [closure checks](closure-prechecks.json).
+- Final controller rechecks full validation, strict full commit range, all frozen inputs, existing collected evidence and public release metadata. After main sync it regenerates/compares the fixed six-output preview through75f9127d; this preview does not claim to include later closure commits.
+- No new native job, model call, target write, tag or release mutation.

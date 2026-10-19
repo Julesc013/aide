@@ -1,12 +1,12 @@
 ### TODO
 
-**Current checklist — 18 October 2026.** The filesystem [queue](.aide/queue/index.yaml) owns task state, authority and acceptance. This page is a short, dated view for humans and agents; follow each linked WorkUnit before acting.
+**Current checklist — 19 October 2026.** The filesystem [queue](.aide/queue/index.yaml) owns task state, authority and acceptance. This page is a short, dated view for humans and agents; follow each linked WorkUnit before acting.
 
 **Release and daily use**
 
 - [x] Publish and acquire **AIDE Lite 1.0.0** for its exact local Windows CLI profile. [Evidence](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)
 - [x] Qualify the frozen **1.1.0** packages, 56 public forms and upgrade from the actual published predecessor. [Acceptance](.aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json)
-- [ ] Finish **1.1.0 publication and downloaded-package acceptance** after the pre-tag documentation checks. [Release WorkUnit](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md)
+- [x] Publish **1.1.0** and verify all downloaded assets plus the original adoption/recovery consumer. [Delivery evidence](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-lite-1.1.0-qualified.json)
 - [ ] Complete a useful, repeatable workflow in AIDE and one downstream project, including interruption/recovery, preserved customization, conserved results and whole-outcome accounting. [Campaign](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md)
 - [ ] Establish the supported endpoint/session/workspace binding for actual desktop delivery and editing. The host owner supplies the binding; AIDE qualifies the selected route. [Host prerequisite](.aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/native-answer.md)
 - [ ] Establish DiskEd writer/target ownership, then perform the reviewed native adoption and target-owned checks. [Adoption WorkUnit](.aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/ExecPlan.md)

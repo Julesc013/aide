@@ -8,22 +8,21 @@ review_gate: admitted_by_owner
 responsible_owner: AIDE campaign controller; project owners retain target acceptance
 acceptance_scope: Partial exact-subject qualifications; daily-use and full platform acceptance remain open
 product_qualified: false
-observed_at: 2026-10-18
-observed_source_checkpoint: 75f9127dff3be6cad51a4fa7cdac69c0c600f9c0
-next_action: Documentation/default qualification passed; review and integrate the final checkpoint, publish frozen 1.1.0 and verify acquired bytes; then resume dependency-ready work.
+observed_at: 2026-10-19
+observed_source_checkpoint: d04fd33313f4ef1affc30c6458be5d96f1bdcd66
+next_action: Integrate verified release outcome docs, then resolve actual host/target ownership and complete useful downstream/dependency work with recovery.
 remaining_obligations:
   - Actual supported host delivery and bounded ordinary editing with interruption/recovery
   - DiskEd writer ownership, target effect review and native downstream acceptance preserving customization
-  - Frozen 1.1.0 publication and acquired-byte checks after pre-tag documentation and refreshed effect review
   - Whole-outcome effort accounting and matched accepted work; missing usage stays unknown
   - Repeated AIDE and downstream daily-use workflows with conserved results and controlled failure recovery
   - Remaining P0-P11 capability families under existing plan and independent implementation/activation/qualification gates
-published_lite: 1.0.0 exact local Windows profile
-qualified_unpublished_lite: 1.1.0 frozen bytes; newer development features are not included
+published_lite: 1.1.0 exact local Windows profile;1.0.0 retained
+qualified_unpublished_lite: none; newer development features remain unreleased
 preserved_publication_branch: task/aide-lite-successor-publication-01
-preserved_publication_commit: f708e8c658d9e3b2b0543fb24abecd5fe94bd094
-publication_prerequisite: authentication_confirmed_pre_tag_documentation_and_effect_review_pending
-publication_effect: stale_ref_guards_require_refresh_and_exact_review
+preserved_publication_commit: d04fd33313f4ef1affc30c6458be5d96f1bdcd66
+publication_prerequisite: complete_for_frozen_1_1_0
+publication_effect: completed_after_existing_draft_recovery
 native_adoption_prerequisite: active_writer_ownership_not_established
 host_prerequisite: supported_endpoint_bound_to_intended_existing_session_and_workspace
 model_phase: previous_three_calls_exhausted_no_new_live_dispatch
@@ -31,7 +30,7 @@ outer_filesystem_permission: unrestricted_not_whole_session_containment
 unchanged_blockers_stop_independent_work: false
 authority: Existing owner delegation and exact independent source/effect gates; status grants nothing new
 current_state_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
-current_state_sha256: 500682e0b0798aff2217bac22e951a60407798a31dea5f0b69fea26964510217
+current_state_sha256: 0a88edc3c885647aa1282abaddcce86dd510b6d731c3334dfa054d7439bf37c9
 historical_status_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-status.yaml
 historical_status_sha256: 797b885d9b9beee5a17435210f002cfba91ff344eef227af6ceca2dd32214384
 historical_task_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-task.yaml
@@ -53,7 +52,9 @@ task_brief_browser_ref: .aide/queue/AIDE-TASK-BRIEF-BROWSER-01/REPORT.md
 task_evidence_read_ref: .aide/queue/AIDE-TASK-EVIDENCE-READ-01/REPORT.md
 
 successor_publication_ref: .aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/status.yaml
-successor_publication_state: authenticated_pre_tag_documentation_and_exact_effect_review_pending
+successor_publication_state: published_acquired_consumer_pass
 
 publication_resumption_source: d914e9109cd27d0e5e00d6b3648dae344d4c5412
 release_presentation_1_0_ref: .aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-1.0.0-presentation.json
+successor_published_proof: .aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-lite-1.1.0-qualified.json
+continuation_priorities_ref: .aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/continuation-priorities.json

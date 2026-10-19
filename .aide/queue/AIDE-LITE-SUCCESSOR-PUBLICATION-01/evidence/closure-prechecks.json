@@ -1,0 +1,72 @@
+[
+  {
+    "name": "diff",
+    "exit_code": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary": []
+  },
+  {
+    "name": "message",
+    "exit_code": 0,
+    "sha256": "658d9fbf00614b531a8cb6181194e2237f835a0d1a517a7797b9338cf6d1fbbd",
+    "summary": [
+      "AIDE Lite commit check",
+      "result: PASS",
+      "source: .aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/closure-message.txt",
+      "policy: .aide/policies/commit-messages.yaml",
+      "standard: .aide/reports/aide-commit-message-standard.md",
+      "- PASS compact subject follows type[(scope)][!]: description"
+    ]
+  },
+  {
+    "name": "doctor",
+    "exit_code": 0,
+    "sha256": "0b8696637e0634e1e5fe88ec124858fae1ad5c607ba3b8aa1ab7d063fab289e7",
+    "summary": [
+      "AIDE Lite doctor",
+      "status: PASS",
+      "- repo_root: D:/Projects/AIDE/aide",
+      "- PASS required: .aide/policies/token-budget.yaml",
+      "- PASS required: .aide/memory/project-state.md",
+      "- PASS required: .aide/memory/decisions.md"
+    ]
+  },
+  {
+    "name": "validate",
+    "exit_code": 0,
+    "sha256": "306374f6f1ba3ba6997e0e4e1b9ea608058315a34695b965874aed83d3bed1d3",
+    "summary": [
+      "AIDE Lite validate",
+      "status: PASS",
+      "checks: 60921; PASS: 60920; WARN: 1; FAIL: 0; OTHER: 0",
+      "- WARN review packet review ref missing: .aide/prompts/evidence-review.md",
+      "omitted PASS details: 60920; use validate --full or --json for all results"
+    ]
+  },
+  {
+    "name": "pack-status",
+    "exit_code": 0,
+    "sha256": "93c22fefe64112f98edddc6c0b3fecf68bf0f3d0adc7bb0c8a4e11fadbe44ea2",
+    "summary": [
+      "AIDE Lite pack-status",
+      "pack: .aide/export/aide-lite-pack-v0",
+      "exists: true",
+      "checksums_valid: true",
+      "provenance_result: DIRTY_SOURCE_RECORDED",
+      "boundary_result: PASS"
+    ]
+  },
+  {
+    "name": "range",
+    "exit_code": 0,
+    "sha256": "2709354196473d29cbc23599c3e4764d1f2e294cb70e296270c24a790b984fb9",
+    "summary": [
+      "AIDE Lite commit range check",
+      "result: PASS",
+      "range: ecff55da6db49d63c4a3718b726f96d3cd74e6e9..HEAD",
+      "commit_count: 9",
+      "policy: .aide/policies/commit-messages.yaml",
+      "disposition_policy: .aide/policies/commit-message-dispositions.yaml"
+    ]
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-I",
+    "-B",
+    "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01\\canaries\\consumer_canary_runner.py",
+    "--candidate-zip",
+    "D:\\Projects\\AIDE\\aide\\.aide\\release\\acquired-aide-lite-v1.1.0.log\\aide-lite-v1.1.0.zip",
+    "--candidate-tar",
+    "D:\\Projects\\AIDE\\aide\\.aide\\release\\acquired-aide-lite-v1.1.0.log\\aide-lite-v1.1.0.tar.gz",
+    "--candidate-zip-sha256",
+    "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc",
+    "--candidate-tar-sha256",
+    "7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44",
+    "--bundled-cli-sha256",
+    "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+    "--source-commit",
+    "447e393b3f87004641b7387c1f33828ac1ee3a85"
+  ],
+  "started_unix_ns": 1792393624702685000,
+  "canary_sha256": "ece23decd62270cdf1e03ebf04a8b419bc3afb4578a6c6d729cd2c3b763dc62d",
+  "exit_code": 0,
+  "finished_unix_ns": 1792393869338237600
+}

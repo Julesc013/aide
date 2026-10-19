@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-I",
+    "-B",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\candidate-zip\\aide-lite-pack-v0\\files\\.aide\\scripts\\aide_lite.py",
+    "--repo-root",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\fresh-target",
+    "import-pack",
+    "--pack",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\candidate-zip\\aide-lite-pack-v0",
+    "--target",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\7e9fdfcf12bd4485bee6ceca215d2e20\\tmp\\case-00\\run-consumer\\fresh-target",
+    "--mode",
+    "safe",
+    "--expect-plan",
+    "db51236352fcd1efa6c2cf5107ef6a43ea08d17182a60c3e716470748c1f4716"
+  ],
+  "exit_code": 0,
+  "stderr": "",
+  "stdout": "AIDE Lite import-pack\npack: D:/Projects/AIDE/.aide.local/execution/scratch/7e9fdfcf12bd4485bee6ceca215d2e20/tmp/case-00/run-consumer/candidate-zip/aide-lite-pack-v0\ntarget: D:/Projects/AIDE/.aide.local/execution/scratch/7e9fdfcf12bd4485bee6ceca215d2e20/tmp/case-00/run-consumer/fresh-target\ndry_run: false\nmode: safe\nstatus: APPLIED\nplan_digest: db51236352fcd1efa6c2cf5107ef6a43ea08d17182a60c3e716470748c1f4716\npredecessor_pack: none\noperation_count: 831\nconflicts: 0\nskipped: 30\nwritten: 831\nprovider_or_model_calls: none\nnetwork_calls: none\n"
+}

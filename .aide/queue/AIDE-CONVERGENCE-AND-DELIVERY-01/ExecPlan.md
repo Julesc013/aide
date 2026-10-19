@@ -1,3 +1,11 @@
+### 19 October 2026: released foundation, actual daily use next
+
+Lite 1.1.0 is published/acquired/consumer-verified. [Delivery proof](../AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-lite-1.1.0-qualified.json). All three publication native allocations are exhausted and retired. Final source-closeout integration is separately reviewed.
+
+Use the [user-supplied continuation priorities](../AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/continuation-priorities.json) within existing P0-P11 owners: real host participation, actual DiskEd acceptance, a current owner-confirmed FacMan-to-Setup implementation/adoption loop, then interruption/repetition and available costs. Do not rebuild existing Mini, request/rebind/offline, symbol or lesson mechanisms. Do not adopt every imported proposal, activate a new model phase or infer target ownership from a planning document. DiskEd ownership is requested; independent authorized work may continue while that prerequisite remains pending. The 19-25 October horizon is a target, not a promised date.
+
+### Preserved campaign plan
+
 **Current campaign view:** [CURRENT.md](CURRENT.md) and status.yaml identify the latest scoped outcomes, open requirements and action owners. The chronological record below is preserved; older next-step statements are historical.
 
 # AIDE-CONVERGENCE-AND-DELIVERY-01

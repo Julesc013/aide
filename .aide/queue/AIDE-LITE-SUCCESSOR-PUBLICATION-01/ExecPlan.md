@@ -1,3 +1,11 @@
+### Completed release delivery - 19 October 2026
+
+Release 416392381 is published/latest with four labelled frozen assets, all acquired and hash-verified. Original case 0 and partial recovery passed in retired job `7e9fdfcf`. Three native allocations are exhausted and retired. Original timeout and failed draft lookup remain preserved; recovery continued only unfinished effects. Tag target `9cead252` and payload source `447e393b` are unchanged. [Report](REPORT.md), [proof](evidence/published-lite-1.1.0-qualified.json).
+
+**Next:** independently review outcome records and exact source-closeout dev/main synchronization. Retire only the owned local publication task branch after verified integration; preserve the remote important release/consumer closeout and original qualification checkpoints, and unfinished readability branch. Continue toward real host/downstream/dependency work under its own ownership and finite phase gates.
+
+### Preserved preparation and recovery
+
 ### Publish the qualified Lite successor
 
 **Current recovery - 18 October 2026.** Dev/main/task synchronization, fixed post-main preview, exact annotated tag and one draft creation completed at9cead252. Published-only lookup by tag failed; authenticated list/by-ID reconciliation found exact draft416392381 with zero assets. Continue only upload/publication/acquisition and one original consumer after exact recovery review. The release target and tag remain9cead252 while a recovery-only source checkpoint advances. [Reconciliation](evidence/draft-reconciliation.md)
