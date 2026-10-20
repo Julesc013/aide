@@ -2,16 +2,16 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
 status: running
 result: PENDING
-planning_state: live_link_fixture_correction_exact_review_preparation
+planning_state: live_link_repair_passed_revised_build_preparation
 product_qualified: false
-local_jobs_consumed: 13
+local_jobs_consumed: 14
 hosted_runs_consumed: 0
-next_action: Review the corrected iterator fixture and one regression/export effect; production repair is unchanged. Preserve the failed initial probe; revised build, hosted evidence, combined affected-consumer/replay group and promotion remain separately gated within the sixteen-attempt ceiling.
+next_action: Review one necessary revised candidate build with complete old/new archive-member deltas. Repaired supervisor and owned export passed; affected consumers, hosted profiles, final replay and promotion remain separately gated within the sixteen-attempt ceiling.
 qualified_source_checkpoint: cb2ddcaf837e2604f34f11211447c551cc85b29b
 canonical_job: 6355e80d38804f89aa9a83fd743be7e1
 canonical_tests_passed: 12
 canonical_test_skips: 0
-export_refreshes_consumed: 1
+export_refreshes_consumed: 2
 build_checkpoint: 89f334f0d06457b4fbd96ca4aba86fce5eb8e43c
 build_job: 781532d1b1b8470ea780a6d99ff5866f
 archive_qualified: false
@@ -33,3 +33,9 @@ link_repair_checkpoint: c25f16519c0991676c72c2ac41e77852e77b11ad
 link_initial_job: dc5aeb3848c24e929a4e017816a00158
 link_initial_result: FAIL_TEST_FIXTURE_PROTOCOL_BEFORE_REGRESSIONS_OR_EXPORT
 link_initial_retired: true
+link_qualified_checkpoint: 158a5cdcac7afecbc180a6324ea02e46617d1bc9
+link_qualified_job: 02e04e06470743b5aeb62ae37e162e34
+link_corrected_checks_passed: 20
+link_corrected_checks_skipped: 0
+original_legal_transition_false_refusal_demonstrated: true
+original_candidate_precedes_current_export: true

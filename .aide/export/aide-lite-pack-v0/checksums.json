@@ -803,7 +803,7 @@
     "files/core/apply/managed_commit.py": "e3ef99000a466e60ae6d56d6a77fda6501a10a195f70eb6990a97ea99e1c6dcf",
     "files/core/apply/managed_sections.py": "a6cda7e7ffb4e5d3d8e6567192b4a37368c0291608d345612cd14b2b55a16220",
     "files/core/execution/__init__.py": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5",
-    "files/core/execution/managed_workspace.py": "511670e8766d3fa3abb773951b5d7ed7c3ed81809c42a859b4414aba706d5b4f",
+    "files/core/execution/managed_workspace.py": "95296dd25e152a6fa5697e13e93621148a694158de5edcec37b7316096a97fdc",
     "files/core/execution/provider.py": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e",
     "files/core/execution/registered_process.py": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
     "files/core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",

@@ -1,0 +1,13 @@
+{
+  "status": "PASS_STRUCTURAL_REVISED_BUILD_PRECHECK",
+  "base": "158a5cdcac7afecbc180a6324ea02e46617d1bc9",
+  "qualified_export_source": "158a5cdcac7afecbc180a6324ea02e46617d1bc9",
+  "export_members": 879,
+  "release_files_preserved_before_build": 62,
+  "stable_assets_preserved": 12,
+  "old_candidate_recoverable": "9ee1880e553e692ad697e0e8699b29439c47317e",
+  "job_inputs": 1966,
+  "job_preflight": "PASS",
+  "new_jobs": 0,
+  "new_archives": 0
+}

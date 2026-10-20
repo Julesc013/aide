@@ -1,0 +1,12 @@
+build(lite): checkpoint the qualified live-scan repair export
+
+- Retain the original candidate and failed attempts under their exact Git and evidence identities.
+- Preserve the demonstrated original-source false refusal, twenty passing regressions and second owned 879-file export.
+- Prepare one existing-owner unpublished 1.2 rebuild with complete ZIP/TAR inventories and explicit changed-member accounting.
+
+Validation: PASS - twenty corrected-source checks, original-source failure demonstration, exact collection/retirement, 879 export members, 12 preserved stable assets and build preflight; revised build pending
+Changelog: Fixed: qualify bounded live-scan re-observation and prepare the corrected Lite 1.2 candidate
+Risk: Earlier behavior evidence retains its original archive subject; reuse and revised operational qualification remain open.
+Follow-up: Review actual member deltas, affected consumers, hosted profiles and final replay before promotion/publication.
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+AIDE-Format: compact-v1

@@ -1,0 +1,47 @@
+{
+  "task_branch": "task/aide-lite-1-2-archive-qualification-01",
+  "origin_url": "https://github.com/Julesc013/aide.git",
+  "control_config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "qualification_config": ".aide.local/lite-successor-qualification-execution.json",
+  "qualification_config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "expected_refs": {
+    "main": "ed4a90046eba12a717a9962f21523285667a669b",
+    "dev": "d256a6010183a4b6d70b98071a6e534f5624760d",
+    "origin/main": "ed4a90046eba12a717a9962f21523285667a669b",
+    "origin/dev": "d256a6010183a4b6d70b98071a6e534f5624760d"
+  },
+  "base": "158a5cdcac7afecbc180a6324ea02e46617d1bc9",
+  "controller_sha256": "33903f73ce61eecf5d2a02a803c70fab04ac73b6535f3d11aded10724adb2304",
+  "maximum_local_allocations": 1,
+  "total_local_ceiling": 16,
+  "local_jobs_already_consumed": 14,
+  "maximum_hosted_runs": 0,
+  "live_model_requests": 0,
+  "expected_build_changes": [
+    ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt",
+    ".aide/release/stable/aide-lite-v1.2.0.manifest.json",
+    ".aide/release/stable/aide-lite-v1.2.0.tar.gz",
+    ".aide/release/stable/aide-lite-v1.2.0.zip"
+  ],
+  "effects": [
+    "One exact managed task checkpoint retains the qualified export and original/fixed attempt evidence.",
+    "One600second existing-runner allocation invokes existing stable-build and stable-validate for unpublished1.2 only.",
+    "Preserve original candidate bytes in their committed Git subject, every other release file and all879 export members.",
+    "Collect complete old/new ZIP/TAR path,type,mode,size,hash inventories; require only runner executable content and three derived metadata members to differ.",
+    "Bind exact source/config/job/receipt and retire quiescently; stop on any failure,no retry."
+  ],
+  "forbidden": [
+    "export regeneration,oldasset/tag mutation,consumer rerun,hosted dispatch,integration,push,tag,publication or support activation",
+    "other repositories/processes,models/providers/spending,new roots,limits,reserves,configuration or privileges"
+  ],
+  "review_attestation": {
+    "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/revised-build-review.json",
+    "actual_independent_accept_only": true,
+    "included_in_commit": true,
+    "binds": [
+      "source_sha256",
+      "effect_sha256",
+      "controller_sha256"
+    ]
+  }
+}
