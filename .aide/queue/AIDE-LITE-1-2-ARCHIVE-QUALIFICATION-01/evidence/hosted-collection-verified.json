@@ -1,0 +1,34 @@
+{
+  "state": "PASS_LOSSLESS_ROUNDTRIP",
+  "bundles": {
+    "controller": {
+      "files": 269,
+      "raw_file_bytes": 3819399,
+      "bundle_sha256": "faa511b138736710585c1b8573d9cbea6b3a9dcf1cbd8f01a39784ad4e0670b8",
+      "container_bytes": 5104716
+    },
+    "windows-2025-x64": {
+      "files": 14,
+      "raw_file_bytes": 217942,
+      "bundle_sha256": "1916c84e5eae5aaa5466fa19cf0e8bba4ff82e18f03fb6a2a0dbced6a71dad13",
+      "container_bytes": 290982
+    },
+    "ubuntu-24.04-x64": {
+      "files": 2,
+      "raw_file_bytes": 2512,
+      "bundle_sha256": "a2ddf87135c1f991e6d8101c72daec39e7337fbbee4a11008722f1f4026b14d9",
+      "container_bytes": 3402
+    },
+    "macos-15-arm64": {
+      "files": 309,
+      "raw_file_bytes": 7722700,
+      "bundle_sha256": "b17fabfec6fa31377382d0b49e8e8165490088d040eb9bd9d74eb5f8fea3a5f1",
+      "container_bytes": 10308673
+    }
+  },
+  "new_jobs": 0,
+  "authoring_notes": [
+    "Initial one-bundle collection exceeded existing helper container cap. Used bounded ordered chunks without increasing resource or helper caps.",
+    "Previously saved exact gzip profile bundles retained unchanged; verified newly generated duplicate chunks retired."
+  ]
+}

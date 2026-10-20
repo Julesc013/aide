@@ -1,0 +1,296 @@
+{
+  "scope": "unpublishedLinuxenvironmentonly",
+  "old_sha256": "eb8b46a4313834a95db5a64a75537cb09cb8cff381412ed55309baf55ff64b42",
+  "new_sha256": "16764faebaa569398a3627bcb7db5e6e54500db2689c310313278cb9ca34e412",
+  "old_environment": {
+    "system": "Linux",
+    "release": "6.17.0-1022-azure",
+    "version": "#22-Ubuntu SMP Mon Jul 27 17:24:03 UTC 2026",
+    "machine": "x86_64",
+    "runtime": {
+      "implementation": "CPython",
+      "version": "3.14.8"
+    }
+  },
+  "new_environment": {
+    "machine": "x86_64",
+    "release": "7.0.0-1017-azure",
+    "runtime": {
+      "implementation": "CPython",
+      "version": "3.14.8"
+    },
+    "system": "Linux",
+    "version": "#17~24.04.1-Ubuntu SMP PREEMPT Thu Sep 24 18:46:57 UTC 2026"
+  },
+  "preserved_non_linux_profiles": [
+    {
+      "profile_id": "aide-lite-local-windows",
+      "environment": {
+        "system": "Windows",
+        "release": "10",
+        "version": "10.0.19045",
+        "machine": "AMD64",
+        "runtime": {
+          "implementation": "CPython",
+          "version": "3.14.8"
+        }
+      },
+      "support_candidate": {
+        "tier": "T3",
+        "state": "usable",
+        "mode": "companion",
+        "capability_level": "L1"
+      },
+      "capabilities": [
+        "local-cli",
+        "owned-lifecycle",
+        "managed-jobs"
+      ],
+      "supported_cli_forms": [
+        "doctor",
+        "validate",
+        "context",
+        "pack --task <task>",
+        "verify --evidence <evidence-path>",
+        "task inspect",
+        "task status",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+        "plan-removal --target <target>",
+        "apply-removal --target <target> --expect-plan <digest>",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+        "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+        "job inspect --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json> --full",
+        "job recover --config <local-config>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>",
+        "job usage --stream <codex-exec-jsonl>",
+        "job usage --attempt-set <attempt-roster-json>",
+        "job context",
+        "task current",
+        "task current --json",
+        "task current --task-id <ID>",
+        "task current --task-id <ID> --json",
+        "task resume-plan",
+        "task resume-plan --json",
+        "task resume-plan --task-id <ID>",
+        "task resume-plan --task-id <ID> --json",
+        "git policy",
+        "git detect",
+        "git plan",
+        "review-pack",
+        "quality ledger",
+        "quality reuse",
+        "quality explain-file <path>",
+        "quality explain-file <path> --json",
+        "job effort --work-set <path>",
+        "job effort --work-set <path> --json"
+      ],
+      "refused_cli_forms": [],
+      "unqualified_cli_forms": [],
+      "limitations": [
+        "Candidate declaration only; versioned1.2 archives and declared command-form acceptance remain required.",
+        "No outer-client containment or OS network-isolation promise."
+      ]
+    },
+    {
+      "profile_id": "aide-lite-local-windows-server",
+      "environment": {
+        "system": "Windows",
+        "release": "2025Server",
+        "version": "10.0.26100",
+        "machine": "AMD64",
+        "runtime": {
+          "implementation": "CPython",
+          "version": "3.14.8"
+        }
+      },
+      "support_candidate": {
+        "tier": "T3",
+        "state": "usable",
+        "mode": "companion",
+        "capability_level": "L1"
+      },
+      "capabilities": [
+        "local-cli",
+        "owned-lifecycle"
+      ],
+      "supported_cli_forms": [
+        "doctor",
+        "validate",
+        "context",
+        "pack --task <task>",
+        "verify --evidence <evidence-path>",
+        "task inspect",
+        "task status",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+        "plan-removal --target <target>",
+        "apply-removal --target <target> --expect-plan <digest>",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+        "job usage --stream <codex-exec-jsonl>",
+        "job usage --attempt-set <attempt-roster-json>",
+        "job context",
+        "task current",
+        "task current --json",
+        "task current --task-id <ID>",
+        "task current --task-id <ID> --json",
+        "task resume-plan",
+        "task resume-plan --json",
+        "task resume-plan --task-id <ID>",
+        "task resume-plan --task-id <ID> --json",
+        "git policy",
+        "git detect",
+        "git plan",
+        "review-pack",
+        "quality ledger",
+        "quality reuse",
+        "quality explain-file <path>",
+        "quality explain-file <path> --json",
+        "job effort --work-set <path>",
+        "job effort --work-set <path> --json"
+      ],
+      "refused_cli_forms": [],
+      "unqualified_cli_forms": [
+        "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+        "job inspect --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json> --full",
+        "job recover --config <local-config>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>"
+      ],
+      "limitations": [
+        "Candidate declaration only; versioned1.2 archives and declared command-form acceptance remain required.",
+        "No outer-client containment or OS network-isolation promise.",
+        "The seven managed setup/inspect/run/recover/wait forms remain unqualified here; an observed native lifecycle pass does not qualify that execution route."
+      ]
+    },
+    {
+      "profile_id": "aide-lite-local-macos",
+      "environment": {
+        "system": "Darwin",
+        "release": "24.6.0",
+        "version": "Darwin Kernel Version 24.6.0: Tue Jul 21 20:51:34 PDT 2026; root:xnu-11417.140.69.711.44~1/RELEASE_ARM64_VMAPPLE",
+        "machine": "arm64",
+        "runtime": {
+          "implementation": "CPython",
+          "version": "3.14.8"
+        }
+      },
+      "support_candidate": {
+        "tier": "T3",
+        "state": "usable",
+        "mode": "companion",
+        "capability_level": "L1"
+      },
+      "capabilities": [
+        "local-cli",
+        "owned-lifecycle"
+      ],
+      "supported_cli_forms": [
+        "doctor",
+        "validate",
+        "context",
+        "pack --task <task>",
+        "verify --evidence <evidence-path>",
+        "task inspect",
+        "task status",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+        "plan-removal --target <target>",
+        "apply-removal --target <target> --expect-plan <digest>",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+        "job usage --stream <codex-exec-jsonl>",
+        "job usage --attempt-set <attempt-roster-json>",
+        "job context",
+        "task current",
+        "task current --json",
+        "task current --task-id <ID>",
+        "task current --task-id <ID> --json",
+        "task resume-plan",
+        "task resume-plan --json",
+        "task resume-plan --task-id <ID>",
+        "task resume-plan --task-id <ID> --json",
+        "git policy",
+        "git detect",
+        "git plan",
+        "review-pack",
+        "quality ledger",
+        "quality reuse",
+        "quality explain-file <path>",
+        "quality explain-file <path> --json",
+        "job effort --work-set <path>",
+        "job effort --work-set <path> --json"
+      ],
+      "refused_cli_forms": [],
+      "unqualified_cli_forms": [
+        "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+        "job inspect --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json> --full",
+        "job recover --config <local-config>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>"
+      ],
+      "limitations": [
+        "Candidate declaration only; versioned1.2 archives and declared command-form acceptance remain required.",
+        "No outer-client containment or OS network-isolation promise.",
+        "The seven managed setup/inspect/run/recover/wait forms remain unqualified here; an observed native lifecycle pass does not qualify that execution route.",
+        "One cooperative mutation owner; no Windows-style deny-sharing or automatic rename-gap reconciliation."
+      ]
+    }
+  ],
+  "source_export_changed": false,
+  "runtime_qualification": "pendingexactnewarchiveeffects"
+}

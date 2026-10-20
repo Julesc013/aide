@@ -1,0 +1,37 @@
+{
+  "task_branch": "task/aide-lite-1-2-archive-qualification-01",
+  "origin_url": "https://github.com/Julesc013/aide.git",
+  "control_config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "qualification_config": ".aide.local/lite-successor-qualification-execution.json",
+  "qualification_config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "base": "4f85bb0c95ef7fc29667edd351346d684a80bb48",
+  "expected_refs": {
+    "dev": "03929beb3c7278975f9c0b3b1378712aeca2ac91",
+    "main": "ed4a90046eba12a717a9962f21523285667a669b",
+    "origin/dev": "03929beb3c7278975f9c0b3b1378712aeca2ac91",
+    "origin/main": "ed4a90046eba12a717a9962f21523285667a669b"
+  },
+  "controller_sha256": "c3aa4b289bbc3b6035ce278d171bb91aa8d7491065de9740b43996df296df06d",
+  "maximum_local_allocations": 1,
+  "total_local_ceiling": 17,
+  "local_jobs_already_consumed": 15,
+  "maximum_hosted_runs": 0,
+  "maximum_export_refreshes": 0,
+  "live_model_requests": 0,
+  "expected_build_changes": [
+    ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt",
+    ".aide/release/stable/aide-lite-v1.2.0.manifest.json",
+    ".aide/release/stable/aide-lite-v1.2.0.tar.gz",
+    ".aide/release/stable/aide-lite-v1.2.0.zip"
+  ],
+  "effects": [
+    "One exact task checkpoint and one existing-runner metadata build/validation bounded to 600 seconds.",
+    "Only four unpublished assets may change; require precisely stable-release/checksums archive-member changes.",
+    "Preserve all executable/export bytes, source provenance, other profiles, historical assets and all original evidence.",
+    "Retain every actual result and retire quiescently; no automatic retry."
+  ],
+  "forbidden": [
+    "export or executable product change,hosted dispatch,integration,push,tag,publication,support activation",
+    "other repositories/processes,models/providers/spending,new roots,limits,reserves,privileges"
+  ]
+}

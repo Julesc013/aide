@@ -13,7 +13,9 @@
 - [x] Qualify the shared live-scan repair with twenty methods and build the revised 879-member candidate, preserving original attempts and complete archive deltas.
 - [x] Sync the reviewed repair and revised candidate to local/remote `dev@03929beb`; verify all 96 operations and 192 streams.
 - [ ] Complete revised managed-form and unfinished brownfield execution; independent review accepted retained behavior applicability while original package identities remain. [Admitted WorkUnit](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md)
-- [ ] Qualify exact modern profiles and complete release replay.
+- [x] Qualify the exact revised archive on macOS:49 ordinary forms and both actual-predecessor scenarios.
+- [ ] Correct the observed Linux profile drift and Windows CRLF evaluator failure through a finite reviewed amendment; preserve macOS evidence.
+- [ ] Complete remaining modern-profile qualification and the final local affected-consumer/brownfield/replay group.
 - [ ] Review publication and acquired-byte consumers after archive/profile acceptance.
 
 **Release and daily use**

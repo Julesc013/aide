@@ -2,11 +2,11 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
 status: running
 result: PENDING
-planning_state: behavior_reuse_accepted_actual_archive_hosted_preparation
+planning_state: metadata_and_crlf_correction_prepared_exact_build_review_pending
 product_qualified: false
 local_jobs_consumed: 15
-hosted_runs_consumed: 0
-next_action: Independent review accepted bounded retained behavior applicability; prepare and review actual-archive hosted profiles, then separately review the final affected-consumer and release-replay group. One local allocation and one three-profile hosted run remain; no support or promotion is admitted by build success.
+hosted_runs_consumed: 1
+next_action: Preserve all hosted results and independently review a finite Linux environment-metadata and Windows CRLF wrapper correction; no automatic retry or local final-group admission.
 qualified_source_checkpoint: cb2ddcaf837e2604f34f11211447c551cc85b29b
 canonical_job: 6355e80d38804f89aa9a83fd743be7e1
 canonical_tests_passed: 12
@@ -48,3 +48,12 @@ revised_build_retained_files: 14
 behavior_reuse_review: ACCEPT_bounded_behavior_only_original_subjects_retained
 dev_verified_operations: 96
 dev_verified_streams: 192
+hosted_checkpoint: 4f85bb0c95ef7fc29667edd351346d684a80bb48
+hosted_run_id: 39456159304
+macos_forms_passed: 49
+macos_predecessor_cases_passed: 2
+hosted_controller_operations: 133
+hosted_controller_streams: 266
+local_allocation_ceiling: 17
+hosted_run_ceiling: 2
+hosted_job_ceiling: 5

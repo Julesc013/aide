@@ -1,0 +1,32 @@
+{
+  "state": "PASS_METADATA_BUILD_PREPARATION",
+  "base": "4f85bb0c95ef7fc29667edd351346d684a80bb48",
+  "producer_text_checks": {
+    "windows-2025-x64": {
+      "stdout_sha256": "27b7352b20c359d3c8b13a8f9d21d9476031e17f51016350fc9bbd18b5fd7287",
+      "counts": [
+        27,
+        25,
+        2,
+        0,
+        0
+      ]
+    },
+    "macos-15-arm64": {
+      "stdout_sha256": "8e1314fc421813c825bcba1a70506eff0703165ecf31e44bf086fdbdcbe0c9a2",
+      "counts": [
+        27,
+        25,
+        2,
+        0,
+        0
+      ]
+    }
+  },
+  "export_files_preserved": 879,
+  "release_files": 62,
+  "candidate_is_portable_source": false,
+  "local_jobs_consumed": 15,
+  "new_jobs": 0,
+  "job_input_count": 1973
+}

@@ -1,0 +1,12 @@
+fix(lite): preserve hosted outcomes and correct candidate profile
+
+- Preserve the 49-form macOS pass, Linux environment refusal, Windows CRLF wrapper failure and all lossless controller/profile evidence.
+- Correct source-only line framing and the unpublished Linux kernel declaration without changing executable product bytes or the export.
+- Prepare one metadata-only existing-owner build with complete archive/identity deltas; missing Windows/Linux execution and final local checks stay gated.
+
+Validation: PASS - complete hosted receipt roundtrip, actual LF/CRLF producer text, 879 unchanged export files, historical assets and finite job preflight; metadata build pending
+Changelog: Fixed: correct Linux candidate environment metadata and hosted CRLF qualification parsing
+Risk: Published support is unchanged; macOS retains its actual archive subject and later reuse requires independent acceptance.
+Follow-up: Collect metadata-only deltas, separately review two-profile hosted execution and final local qualification.
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+AIDE-Format: compact-v1

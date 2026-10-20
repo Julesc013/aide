@@ -1,0 +1,18 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "amendment_sha256": "7401a5f04b7f726acf379cadcd69afaa2bcdda4913d40ce3464270e2c50149c7",
+  "required_fixes": [],
+  "scope": "Preparation only; no commit/build/job/push/hosted effect admitted.",
+  "reasons": [
+    "Independently verified133operations266streams325profilefiles including ordered chunk reconstruction.",
+    "MacPASS; WindowsCRLFwrapperfailure withretirement; Linuxenvironmentrefusalbeforenoallocation.",
+    "Candidate declaration excluded from portable source/directories/templates/exported checksums."
+  ],
+  "constraints": [
+    "Retain all consumed attempts;17local,2exports,2hostedruns,5hostedjobs total. Noautomaticretry/Macrerun.",
+    "Exact effects and complete deltas required; onlyLinuxenvironment,derivedcontractdigest/checksum changes; preserve executable/export/otherprofiles/provenance.",
+    "Mac keepsoriginalarchive subject; rebuilt applicability separate acceptance afteractualdelta.",
+    "Final revisedidentity/ownership,case6,brownfield,replay,durable receipts and aggregatefeasibility remain."
+  ]
+}

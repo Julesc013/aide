@@ -1,0 +1,16 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "70b2ad817dff451d1ae19a8c235d930d710d32d6b8f0198402654bf22c1a862f",
+  "effect_sha256": "9f76403ce19c8de81d91893862ae889c293840d84280a2d0ac8d7b3135e3a3dc",
+  "controller_sha256": "c3aa4b289bbc3b6035ce278d171bb91aa8d7491065de9740b43996df296df06d",
+  "required_fixes": [],
+  "reasons": [
+    "All45mappedfiles1973inputs,dirty-set boundaries and Git filter identities match.",
+    "Only observed Linux environment changed;879exportmembers,eight historical assets and prior candidate bytes verified.",
+    "Worker requires complete inventories,precisely2metadata members,exactidentity changes and58other release files preserved.",
+    "Existing controller guards/resourceconfig preserved;CRLF correction retains status/count/error assertions."
+  ],
+  "scope": "One exact managed checkpoint and one600second managed build allocation;onlyfourunpublished1.2assets may change. Noexport/hostedrun/push/integration/publication.",
+  "limitations": "Build success establishes metadata equivalence;behavioral reuse/release acceptance remain separately gated."
+}

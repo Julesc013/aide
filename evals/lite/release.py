@@ -121,7 +121,9 @@ def ordinary_forms(fixture, pack, target, module, helper, unused_rec, unused_com
     rec.installed('ordinary-doctor', target, 'doctor')
     validation = rec.installed('ordinary-validate', target, 'validate')
     assert validation.stdout.splitlines().count('status: PASS') == 1
-    counts = re.search(r'^checks: (\d+); PASS: (\d+); WARN: (\d+); FAIL: (\d+); OTHER: (\d+)$', validation.stdout, re.M)
+    count_lines = [line for line in validation.stdout.splitlines() if line.startswith('checks:')]
+    assert len(count_lines) == 1
+    counts = re.fullmatch(r'checks: (\d+); PASS: (\d+); WARN: (\d+); FAIL: (\d+); OTHER: (\d+)', count_lines[0])
     assert counts and int(counts[4]) == int(counts[5]) == 0
     assert int(counts[1]) == int(counts[2]) + int(counts[3])
     save(OUTPUT / 'ordinary-validation-classification.json', {'warnings': [line for line in validation.stdout.splitlines() if line.startswith('- WARN ')]})
@@ -134,8 +136,8 @@ def ordinary_forms(fixture, pack, target, module, helper, unused_rec, unused_com
     context_oracle = load('release_context_evidence', CAN / 'context_offline_canary.py')
     evidence = write('.aide/queue/LOCAL-CONTEXT-CANARY-01/evidence/validation.md', context_oracle.evidence_text())
     verified = rec.installed('ordinary-verify', target, 'verify', '--evidence', str(evidence.relative_to(target)))
-    assert re.search(r'^result: (PASS|WARN)$', verified.stdout, re.M)
-    assert re.search(r'^errors: 0$', verified.stdout, re.M)
+    assert helper.field(verified.stdout, 'result') in ('PASS', 'WARN')
+    assert helper.field(verified.stdout, 'errors') == '0'
     before = helper.tree_hashes(target)
     missing = rec.installed('ordinary-task-inspect', target, 'task', 'inspect', exits=(1,))
     assert 'classification: missing' in missing.stdout

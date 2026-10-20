@@ -1,0 +1,38 @@
+{
+  "encoding": "ordered-gzip+base64-json-chunks",
+  "files": 269,
+  "raw_bytes": 5104716,
+  "sha256": "d06a7908f5d4c7e697358d7a282f009448d9b3677e70b3e0f5993de27b71dc3c",
+  "chunks": [
+    {
+      "path": "hosted-controller-retained-00.json",
+      "sha256": "da8ecbdc3993abd228654c7f013bf918424d23f7bab2f7f33cb7e85347457825",
+      "raw_sha256": "1372f5f250324490e4fcdfbea835d364803d6998e9abf7b16df853a3dbafea7a",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "hosted-controller-retained-01.json",
+      "sha256": "9ddae4e91c6853ec449cff2c6b5c532754ce009392271df96c173c6c8a696b62",
+      "raw_sha256": "d2e4945f7c1d441f8c97c18774d504bee371bd157aaa62c5945ababf2fd962d6",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "hosted-controller-retained-02.json",
+      "sha256": "0546ea0831038b0713471411bc95e93dd9f7dda157764fd759f26098ce6a9b59",
+      "raw_sha256": "deb638973735a69f1f0ce7489c805e582d8bb82d76fafe68055009bfb955433f",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "hosted-controller-retained-03.json",
+      "sha256": "744a72b6779fa0d7d4fd82571240d4d4b1faa8cdbaffecbe81c3627ad9827e1f",
+      "raw_sha256": "abacd83f332e0a3db81deec5bb308e0194693fbb1bc40ab3f0023a3a6131bb16",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "hosted-controller-retained-04.json",
+      "sha256": "b42a82f3ea44d7d6073195af0b7e7b60dbed5133bda5c9bce8f22bf03ced218f",
+      "raw_sha256": "c1477eb881a3c3b50e00b4215a7d7321e77162e52b597bf67c6670a49b9e0fd8",
+      "raw_bytes": 910412
+    }
+  ]
+}
