@@ -1,0 +1,14 @@
+{
+  "encoding": "ordered-gzip+base64-json-chunks",
+  "files": 1381,
+  "raw_bytes": 990707,
+  "sha256": "00d3c3a27c6319ab02208ab7a5f89c3bcc487e55d2122345ea2956bc32b4fefc",
+  "chunks": [
+    {
+      "path": "publication-effects-retained-00.json",
+      "sha256": "e2b36109b3715e81e05db4570f055ea84d9ad7b00bbe817c867ac06040cbac3d",
+      "raw_sha256": "00d3c3a27c6319ab02208ab7a5f89c3bcc487e55d2122345ea2956bc32b4fefc",
+      "raw_bytes": 990707
+    }
+  ]
+}

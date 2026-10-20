@@ -1,5 +1,9 @@
 ### AIDE Implementation Log
 
+### Lite 1.2 published and acquired - 21 October 2026
+
+Existing draft `418708655` was published with four exact labelled assets. The annotated tag remains at `ee36a934`; execution source `1abc5fa630a3ab6fdfbf28f410ad5980f437653f` is separate. All public downloads match immutable hashes/sizes, and the original stopped draft observation remains losslessly preserved. One original acquired-byte adoption/recovery consumer is prepared through the existing600-second runner; qualification allowances remain exhausted and no model requests are admitted.
+
 ### Existing Lite 1.2 draft reconciliation - 21 October 2026
 
 Pre-tag checkpoint `ee36a934` reached local/remote dev/main. Annotated tag `d2accd1e` points there. Draft creation succeeded, but the immediate list omitted the new row, so the controller stopped before upload. A fresh read-only no-cache/alternate-page API observation and CLI list identify exact empty draft `418708655`; the cause of the earlier stale view is unproven. All completed operations and streams are losslessly retained. Recovery resumes that draft only; no duplicate creation, retag, rebuild or qualification restart.

@@ -1,0 +1,18 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "c40eb785c777a0caabadbde9efba810e2e8e1c31a85683457ab77a7d420ad87e",
+  "effect_sha256": "ef57de971bccc157667f03bcc0dd8ea88639da8be1d650d4547cf866a98f2047",
+  "controller_sha256": "cae578c48c483a784cfb6c78daedd7bd6af93f5e2b77125e2bff25d75a3371b1",
+  "acquired_effect_sha256": "8a1cc6f0033336362e0d1649aee74bf98ee2e9d73dc7a94356b2204944773e7f",
+  "acquired_controller_sha256": "4cebe2d5a4f6bdfe7bdce3f32a8806c99b4b15dc6b13410a893b2a272db9c725",
+  "required_fixes": [],
+  "accepted_scope": "One exact consumer preparation checkpoint with guarded dev/main synchronization, followed by one acquired-byte original case-0 consumer allocation through the existing 600-second profile. Preserve original adoption and partial-recovery assertions, collect and retire once, and stop on failure or uncertainty. No publication mutation, export, rebuild or additional allocation.",
+  "notes": [
+    "All 17 mapped files, exact dirty set, raw/filter identities, 2220 checkpoint pins and 2137 job pins verify, including the unchanged qualification configuration.",
+    "The retained publication evidence reconstructs exactly: 689 operations, 1378 streams and 1381 files. Published metadata and all four acquired asset identities match the reviewed release.",
+    "The worker remains byte-identical to its reviewed pre-tag version. Runtime source/tree substitutions come from the successful accepted checkpoint; returned job, manifest, configuration and retirement identities are checked.",
+    "The job has no canonical outputs. Acquired-byte acceptance remains pending its actual result.",
+    "No tests or effects were executed by this reviewer."
+  ]
+}

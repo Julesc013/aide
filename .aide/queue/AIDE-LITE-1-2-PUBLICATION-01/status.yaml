@@ -2,7 +2,7 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-1-2-PUBLICATION-01
 status: running
 result: PENDING
-planning_state: branch_admitted_pre_tag_preparation
+planning_state: published_acquired_original_consumer_preparation
 product_qualified: false
 qualification_ref: ../AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualification-closure-review.json
 qualified_source: 1806ec46d0342b2b3da9ddc49667e5c89ccbda10
@@ -11,9 +11,9 @@ local_jobs_consumed: 0
 local_job_ceiling: 1
 hosted_runs_consumed: 0
 archive_rebuilds: 0
-published: false
-next_action: Review exact documentation checkpoint, publication/acquisition controller and effect; then verify actual acquired-byte consumer.
+published: true
+next_action: Run one exact independently reviewed original acquired-byte consumer; preserve published assets and exhausted qualification allowances.
 tag_created: aide-lite-v1.2.0
 tag_target: ee36a9342e17a4c13378bd9ac034c506056f6de2
 draft_id: 418708655
-delivery_state: stopped_before_upload_existing_empty_draft_verified
+delivery_state: published_acquired_consumer_pending

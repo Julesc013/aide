@@ -1,0 +1,25 @@
+{
+  "schema": "aide.exact-source-map.v1",
+  "workunit": "AIDE-LITE-1-2-PUBLICATION-01",
+  "base": "1abc5fa630a3ab6fdfbf28f410ad5980f437653f",
+  "effect_sha256": "ef57de971bccc157667f03bcc0dd8ea88639da8be1d650d4547cf866a98f2047",
+  "files": {
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/ExecPlan.md": "668cf7aa29d0c3401c164d667c6030ef4b2bcef8b31df82f07074f00b838490a",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/collect_effects.py": "d5dfed76215abfa868863ba8565cbf5f9bbbfb655f797ee4a6032165f00e3dcd",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/consumer_checkpoint.py": "cae578c48c483a784cfb6c78daedd7bd6af93f5e2b77125e2bff25d75a3371b1",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/acquired-effect.json": "8a1cc6f0033336362e0d1649aee74bf98ee2e9d73dc7a94356b2204944773e7f",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/acquired-job-template.json": "e182e90d97fa8a852e186a028e78883671061c67a832951c016d87a2cf8bf62a",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/consumer-checkpoint-effect.json": "ef57de971bccc157667f03bcc0dd8ea88639da8be1d650d4547cf866a98f2047",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/consumer-checkpoint-inputs.json": "e4e1d68b5dfde81277cf13c2d7261ce4fe63e9db2a1190751b9d4ebedc9c41ae",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/consumer-checkpoint-message.txt": "abdd2c4dcc0ce92262dedfcf6b9cfa2e41f2f4d6ec920cd2a85ad670bc5579ef",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/publication-effects-retained-00.json": "e2b36109b3715e81e05db4570f055ea84d9ad7b00bbe817c867ac06040cbac3d",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/publication-effects-retained.json": "6bee16561b88ed7837b2a84c06997ca0759745baba52c6bf79b79790d8c2f33a",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/publication-effects-verified.json": "4d6029bc05a19ffe24814bf95a3e4df1d0657033d9cb6c1cb6a6badfd87b220a",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/published-acquired.json": "7eb035cf1e5e98c45085e3456a85370384e10e772a975c0effaf701d84de1354",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/prepare_consumer.py": "cbcc2ddd82b1ef424ca7e3ccdacfb4987457a55a03b3847030654d30437942a0",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/run_consumer.py": "4cebe2d5a4f6bdfe7bdce3f32a8806c99b4b15dc6b13410a893b2a272db9c725",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/status.yaml": "e5916a63a6a84ae48f5491a821ff5a11f94b6b2db48dcefc85c225da784613cf",
+    "IMPLEMENT.md": "a753bc052a88bbf20fe9ea96de3581ee30c9fd3c5916f3c1450a3cc2d5ffdfc7",
+    "README.md": "e960c56fb2ff10f0f74dfc8934f07f5c31eff40db3e247c674a4cb487c868c53"
+  }
+}

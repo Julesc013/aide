@@ -1,0 +1,12 @@
+test(lite): bind the original consumer to public 1.2 downloads
+
+- Preserve successful publication, exact labelled downloads and complete recovery receipts.
+- Update current release state while keeping acquired-byte consumer acceptance pending.
+- Prepare one original case0 through existing resource admission, collection and retirement.
+
+Validation: PASS - all four public hashes/sizes, successful publication and lossless controller collection; exact runner/config/input validation and structural checks.
+Changelog: Changed: bind Lite 1.2 public acquisition and original consumer acceptance
+Risk: The new consumer has not run; full AIDE daily-use, host containment and staged native ports remain open.
+Follow-up: Execute one independently accepted original acquired-byte consumer and close evidence.
+AIDE-Task: AIDE-LITE-1-2-PUBLICATION-01
+AIDE-Format: compact-v1
