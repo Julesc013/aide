@@ -1,0 +1,7 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LITE-POSIX-LIFECYCLE-01
+status: running
+result: PENDING
+planning_state: admission_accepted_binding_preparation
+product_qualified: false
+next_action: Complete the bounded filesystem binding, shared lifecycle regressions and delivered evaluator; freeze the exact source and execution recipe for independent review before allocation or export refresh.

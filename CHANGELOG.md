@@ -4,6 +4,7 @@ Release entries describe the delivered Lite package and its declared compatibili
 
 #### Unreleased
 
+- **In preparation:** shared Linux/macOS lifecycle filesystem binding, native metadata preservation and project-preserving recovery/exit tests; actual qualification remains pending.
 - **Evaluation:** observe delivered adoption/removal on four exact modern environments: 16 adoption/preservation passes, eight Windows detach passes and eight retained POSIX removal refusals; new support remains unqualified.
 
 - **Planned:** Lite 1.2 modern profile qualification, staged native legacy ports and future Extension 1.0 host packages share Python 3 reference tooling and optional PowerShell Core 7+.

@@ -1,0 +1,53 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LITE-POSIX-LIFECYCLE-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Complete modern POSIX lifecycle through the existing Lite owner
+type: implementation
+status: running
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/**
+    - .aide/scripts/aide_lite.py
+    - .aide/reports/capability-ledger.json
+    - .aide/reports/capability-ledger.md
+    - .aide/reports/capability-evidence-bindings.json
+    - .aide/reports/capability-command-status.md
+    - .aide/scripts/posix_filesystem.py
+    - .aide/scripts/tests/test_posix_filesystem.py
+    - .aide/scripts/tests/test_posix_lifecycle.py
+    - .aide/policies/export-import.yaml
+    - .aide/export/aide-lite-pack-v0/**
+    - evals/lite/lifecycle.py
+    - .github/workflows/lite-modern-lifecycle.yml
+    - docs/reference/portable-lifecycle-filesystems.md
+    - docs/reference/portability-and-build-profiles.md
+    - .aide/queue/index.yaml
+    - .aide/generated/**
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/ExecPlan.md
+    - .aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/integration-completed.json
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - README.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - TODO.md
+    - ROADMAP.md
+    - CHANGELOG.md
+  forbidden_paths:
+    - stable release assets, dist archives, tags, release/version candidate declarations and publication
+    - historical canary/test assertions and historical failure evidence
+    - other repositories, unrelated processes, machine configuration and local root/reserve/privilege changes
+verification:
+  maximum_local_jobs: 1
+  local_config: .aide.local/lite-successor-qualification-execution.json
+  maximum_hosted_runs: 1
+  maximum_hosted_jobs: 3
+  hosted_profile: public_standard_runners_only_no_artifact_or_cache_uploads
+  hosted_job_timeout_minutes: 10
+  live_worker_model_requests: 0
+review_gate: admission_source_local_effect_export_refresh_hosted_effect_and_integration

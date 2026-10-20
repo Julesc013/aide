@@ -4,7 +4,7 @@
 
 - [x] Observe published and development Lite adoption/removal on four real modern environments, preserving eight POSIX removal refusals. [Observations](.aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/REPORT.md)
 
-- [ ] Implement the existing lifecycle owner's POSIX filesystem binding, then qualify actual predecessor upgrades, customization/conflicts, interruption, repair, rollback and removal before Lite 1.2 support claims.
+- [ ] Complete the [admitted POSIX lifecycle binding](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md), then qualify actual predecessor upgrades, customization/conflicts, interruption, repair, rollback and removal before Lite 1.2 support claims. Native ACL/xattr checks and uncertain rename-gap preservation are explicit.
 
 **Release and daily use**
 

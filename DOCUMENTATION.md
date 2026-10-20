@@ -1,5 +1,9 @@
 # AIDE Documentation Index
 
+### POSIX lifecycle preparation - 20 October 2026
+
+[The admitted POSIX lifecycle work](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md) prepares one descriptor-based Linux/macOS binding beneath the existing import, receipt, conflict, repair, rollback and removal owner. Windows primitives remain in place. New regressions retain uncertain rename-gap backups, distinguish actual predecessor rollback refusal from same-path rollback, and check native ACL/xattr preservation. Source, delivered and installed qualification is pending; no Lite 1.2 archive or new support claim exists. [Filesystem profile and recovery limits](docs/reference/portable-lifecycle-filesystems.md).
+
 ### Modern lifecycle observations - 20 October 2026
 
 [Real delivered results](.aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/REPORT.md) cover local Windows 10 and hosted Windows Server 2025, Linux and macOS. All 16 adoption/preservation cases passed; eight Windows removals passed and eight POSIX removals refused at the original Windows-handle guard. Four unchanged 126-test fixture suites produced 491 passes and 13 retained skips. One local job retired and one three-job hosted workflow completed, with exact lossless evidence and no artifact/cache uploads. This completes initial characterization, not Lite 1.2 or new support qualification. The next bounded implementation extends the existing lifecycle filesystem owner on POSIX before full upgrade, conflict and recovery qualification.

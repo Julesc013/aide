@@ -2,11 +2,14 @@ name: Lite modern lifecycle observation
 
 on:
   push:
-    branches: [task/aide-lite-modern-lifecycle-01]
+    branches: [task/aide-lite-posix-lifecycle-01]
     paths:
       - evals/lite/lifecycle.py
       - .github/workflows/lite-modern-lifecycle.yml
-      - .aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/package-inputs.json
+      - .aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/package-inputs.json
+      - .aide/scripts/posix_filesystem.py
+      - .aide/scripts/tests/test_posix_filesystem.py
+      - .aide/scripts/tests/test_posix_lifecycle.py
 
 permissions:
   contents: read
@@ -51,4 +54,5 @@ jobs:
           scratch = pathlib.Path(os.environ['RUNNER_TEMP']).resolve(strict=True)
           subprocess.run([sys.executable, '-I', '-B', 'evals/lite/lifecycle.py',
                           '--scratch-parent', str(scratch), '--output',
-                          str(scratch / 'aide-modern-receipts'), '--emit-log'], check=True)
+                          str(scratch / 'aide-posix-receipts'), '--emit-log',
+                          '--workunit', 'AIDE-LITE-POSIX-LIFECYCLE-01'], check=True)

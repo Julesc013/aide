@@ -1,0 +1,8 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "d257dd36f32f68572aeea79e91d9c881ecd1dc5d3977cf18c46c8fb86f2cf120",
+  "effect_sha256": "779360f2599427abcc6c4df14ce5cc6bb21c224f3a65299e92f7b47dc8c408c6",
+  "required_fixes": [],
+  "scope": "four derived reports only; no source commit, allocation, export, integration or release"
+}

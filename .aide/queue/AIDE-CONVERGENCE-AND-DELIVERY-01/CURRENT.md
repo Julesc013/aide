@@ -8,6 +8,8 @@
 
 **Modern lifecycle result.** [Actual observations](../AIDE-LITE-MODERN-LIFECYCLE-01/REPORT.md) completed on Windows 10, Windows Server 2025, Linux and macOS: 16 successful adoption/preservation cases, eight Windows detach passes and eight preserved POSIX removal refusals. The existing Windows-handle guard is the demonstrated next portability gap. Extend the current lifecycle filesystem owner, then qualify upgrade/conflict/recovery/repair/rollback/removal for Lite 1.2; this does not block independent host/downstream work. No new OS support is claimed.
 
+**Admitted implementation.** [POSIX lifecycle preparation](../AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md) now owns the bounded Linux/macOS binding and exact local/hosted qualification. Preparation retains Windows behavior and original refusals; no job, export refresh, support expansion or release has occurred. Earlier characterization reached verified local/tracking/remote dev/main at `8e5581cc`.
+
 | Next useful outcome | Remaining condition and owner |
 | --- | --- |
 | Actual host participation | Host owner supplies a supported reachable endpoint/session/workspace binding, or an explicit cooperative participant boundary. Qualify the selected delivery/editing/cancellation route; never infer general availability from the historical default-socket error. |

@@ -1,0 +1,31 @@
+{
+  "base": "8e5581cce7c7fd7037f6a199c92a6922260893ab",
+  "control_config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "controller_sha256": "940f6e9d3b4680c78d4e62ebcecb802768b6f1ce100e7a68bfe805d067a418d2",
+  "effects": [
+    "one exact managed preparation commit on this local task branch",
+    "one existing-runner allocation using exact template with actual source commit/tree filled",
+    "one owned development export refresh after exact prior-inventory check, preserving original metadata and all stable assets",
+    "source/delivered/installed regressions, actual published predecessor checks, bounded lossless receipt transport",
+    "existing collection and retirement; failure remains terminal until a changed-input finite amendment"
+  ],
+  "forbidden": [
+    "push, hosted dispatch, dev/main integration, branch retirement, tag or release",
+    "stable asset/version/candidate changes, other targets/processes, root/reserve/privilege changes, models/providers/spending"
+  ],
+  "maximum_local_allocations": 1,
+  "origin_url": "https://github.com/Julesc013/aide.git",
+  "qualification_config": ".aide.local/lite-successor-qualification-execution.json",
+  "qualification_config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "review_attestation": {
+    "actual_independent_accept_only": true,
+    "binds": [
+      "source_sha256",
+      "effect_sha256",
+      "controller_sha256"
+    ],
+    "included_in_commit": true,
+    "path": ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/source-review.json"
+  },
+  "task_branch": "task/aide-lite-posix-lifecycle-01"
+}

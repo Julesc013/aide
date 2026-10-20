@@ -1,0 +1,5 @@
+### Exact admission effect
+
+After independent ACCEPT, use the existing shared estate admission and dispatch locks. Verify the unchanged control configuration, running/unpaused state and no active job; main checkout; HEAD/main/dev/origin main/dev at 8e5581cce7c7fd7037f6a199c92a6922260893ab; fresh matching remote refs and exact origin URL; empty index and only the mapped new packet/intake changes. Classify the helper's packet-only dirty-tree blocker explicitly and refuse any other blocker.
+
+Create only local task/aide-lite-posix-lifecycle-01. Admission permits bounded implementation preparation inside task.yaml, inspection of relevant upstream Python/POSIX semantics, and correction of the prior completed-state projection using its verified receipt. It permits no source commit, local allocation, generated export refresh, branch push, hosted dispatch, integration, provider call or release effect. Each exact candidate and execution recipe requires its own independent review and fresh guards. Stable assets, other projects, roots, reserves and privileges remain unchanged.

@@ -1,0 +1,12 @@
+feat(lite): add a shared POSIX lifecycle filesystem binding
+
+- Preserve one import, conflict, receipt, repair, rollback and removal owner while adding descriptor-based Linux/Darwin operations.
+- Keep Windows primitives, exact preimages, no-clobber publication, native metadata and uncertain backups explicit.
+- Prepare unchanged lifecycle behavior oracles, native failure/ACL/xattr fixtures and installed consumer recovery/exit checks.
+- Prepare one bounded local export/qualification job and one three-profile hosted qualification; no support or release claim.
+- Preserve prior characterization, successful integration and all original failures.
+
+Validation: PASS - Python AST and diff checks; EXPECTED FAIL - pre-refresh doctor/validate with retained stale generated inputs; NOT RUN - native binding tests, export refresh, local/hosted qualification or release.
+Changelog: Added: Candidate POSIX filesystem binding beneath the existing Lite lifecycle.
+AIDE-Task: AIDE-LITE-POSIX-LIFECYCLE-01
+AIDE-Format: compact-v1

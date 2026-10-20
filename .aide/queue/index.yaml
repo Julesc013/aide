@@ -4260,3 +4260,10 @@ items:
   status: passed_with_notes
   path: .aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01
   parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+
+- id: AIDE-LITE-POSIX-LIFECYCLE-01
+  title: Complete modern POSIX lifecycle through the existing Lite owner
+  type: implementation
+  status: running
+  path: .aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01
+  parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

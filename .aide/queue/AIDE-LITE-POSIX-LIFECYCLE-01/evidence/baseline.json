@@ -1,0 +1,23 @@
+{
+  "base": "8e5581cce7c7fd7037f6a199c92a6922260893ab",
+  "previous_goal_turn": "progress: source and evidence integrated; one local and three hosted observations completed",
+  "branch": "main",
+  "index_empty": true,
+  "origin_fetch": "https://github.com/Julesc013/aide.git",
+  "origin_push": "https://github.com/Julesc013/aide.git",
+  "remote_heads": "8e5581cce7c7fd7037f6a199c92a6922260893ab\trefs/heads/dev\n8e5581cce7c7fd7037f6a199c92a6922260893ab\trefs/heads/main",
+  "prior_integration_sha256": "96203a354a38c4e2a1316ff0c37b26bf81d0c14643a1591215edcecf0e27212c",
+  "prior_operations": 134,
+  "prior_verified_streams": 268,
+  "stable_assets": {
+    ".aide/release/stable/aide-lite-v1.0.0.manifest.json": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb",
+    ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83",
+    ".aide/release/stable/aide-lite-v1.0.0.tar.gz": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a",
+    ".aide/release/stable/aide-lite-v1.0.0.zip": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b",
+    ".aide/release/stable/aide-lite-v1.1.0.manifest.json": "38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f",
+    ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt": "01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e",
+    ".aide/release/stable/aide-lite-v1.1.0.tar.gz": "7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44",
+    ".aide/release/stable/aide-lite-v1.1.0.zip": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc"
+  },
+  "unchanged_qualification_config_sha256": "b73f055a31c0b62ed66e9f1ad2dcd3dae4b6f443296ac80fb7cce301e09d8815"
+}

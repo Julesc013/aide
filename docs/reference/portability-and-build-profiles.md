@@ -8,6 +8,7 @@
 
 ### Lite 1.2 delivery plan
 
+The [filesystem binding reference](portable-lifecycle-filesystems.md) describes the current Windows owner, candidate Linux/Darwin operations, cooperative POSIX boundary, metadata and retained-backup limitations. New native operations require actual source/delivered/installed evidence; syntax-only inspection does not discharge this obligation.
 The user selected **staged native ports across releases** on 20 October 2026. Lite 1.2.0 targets qualified modern profiles; Windows 9x, older Windows NT, MS-DOS/FreeDOS, OS/2 and other native ports remain explicit subsequent work. A companion is a useful additional route and never counts as completion of the native target. Exact 1.2 profiles and Python minor-version floors must be selected and tested before freezing its release contract; there is no 1.2 candidate archive, date or support expansion yet.
 
 | Increment through existing owners | Useful result | Acceptance before the claim |

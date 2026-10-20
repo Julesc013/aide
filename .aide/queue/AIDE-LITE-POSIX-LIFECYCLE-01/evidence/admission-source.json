@@ -1,0 +1,22 @@
+{
+  "schema": "aide.exact-admission-review.v1",
+  "files": {
+    ".aide/intake/latest-intent-packet.json": "e89d16a263838c175099324f744a44943a5d7dc42bd5e4b9ea7ba718daa00f79",
+    ".aide/intake/latest-intent-packet.md": "4ac4a9aaf45705194cd18a7dcb8a1f924e8500c9c53638d7f66562b19de58871",
+    ".aide/intake/latest-workunit-draft.json": "37c6e94188de72775399c8cf2ef8444eb60edd4d22ad490a13819a3d6a085ae6",
+    ".aide/intake/latest-workunit-draft.md": "9f578e90c670b0b3807dcfa0e5a219df14e3f258db39715b6c1a2f9d10ea379b",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md": "f4f7a3d37e2cc6019a5312d064b900d079baa447fd7611cbde1ae6574d2d4b14",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/admission-effect.md": "6fef5cb7fd793dd661e21011ecfbd02960357b663b58bdff07cd248ef46a179c",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/baseline.json": "789f9bffcb589036f581756e09256790dedcb824711fb6586dac95181f148263",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/intake-disposition.md": "c7a9e8b4d685b64b40f30300742f8eb4c45a40af437e10c23f1444c7bcdd45e7",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/latest-intent-packet.json": "e89d16a263838c175099324f744a44943a5d7dc42bd5e4b9ea7ba718daa00f79",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/latest-intent-packet.md": "4ac4a9aaf45705194cd18a7dcb8a1f924e8500c9c53638d7f66562b19de58871",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/latest-workunit-draft.json": "37c6e94188de72775399c8cf2ef8444eb60edd4d22ad490a13819a3d6a085ae6",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/latest-workunit-draft.md": "9f578e90c670b0b3807dcfa0e5a219df14e3f258db39715b6c1a2f9d10ea379b",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/prior-integration-completed.json": "96203a354a38c4e2a1316ff0c37b26bf81d0c14643a1591215edcecf0e27212c",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/prompt.md": "ba261af3504ddec79806d55d754c22f7a09e50b67803602ab73b35f7af1c2b49",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/status.yaml": "1eb414aa989b9eb8517c20aa0781d8635c55483bf01d65994b6fd6308648fa69",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/task.yaml": "5b398981bb38eead1a466882060839a052fe653118fd8d9f997c60e7f96119a5"
+  },
+  "effect_sha256": "6fef5cb7fd793dd661e21011ecfbd02960357b663b58bdff07cd248ef46a179c"
+}

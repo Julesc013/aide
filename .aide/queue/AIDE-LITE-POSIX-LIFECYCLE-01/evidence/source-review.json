@@ -1,0 +1,9 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "9c361915d752db73a1e66f51692b88841065afc51170cd6adc69b647a5fc9de5",
+  "effect_sha256": "5826026dcabf7e8ec494e8849564be7dd21599c2bd374a06fdc229df1ec33e95",
+  "controller_sha256": "940f6e9d3b4680c78d4e62ebcecb802768b6f1ce100e7a68bfe805d067a418d2",
+  "required_fixes": [],
+  "scope": "one exact managed source checkpoint and one local qualification allocation; no hosted, integration or release effect"
+}

@@ -1,0 +1,8 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "f231057f873623903210450db8734203fd1487cf6a5a5e5e8c08d03f3e37eeaa",
+  "effect_sha256": "6fef5cb7fd793dd661e21011ecfbd02960357b663b58bdff07cd248ef46a179c",
+  "required_fixes": [],
+  "scope": "admission only; local branch and bounded preparation; no execution effects"
+}

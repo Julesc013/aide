@@ -3,8 +3,8 @@
 - command: `capability ledger`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-release-checklist-projection-01`
-- current_commit: `c4357fc0fa150db5fc715a5365c52140a920d36b`
+- current_branch: `task/aide-lite-posix-lifecycle-01`
+- current_commit: `8e5581cce7c7fd7037f6a199c92a6922260893ab`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

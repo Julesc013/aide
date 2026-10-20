@@ -1,0 +1,74 @@
+{
+  "ast": {
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/commit_and_observe.py": {
+      "sha256": "940f6e9d3b4680c78d4e62ebcecb802768b6f1ce100e7a68bfe805d067a418d2",
+      "status": "PASS"
+    },
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/run_local.py": {
+      "sha256": "5da715ad40016434c33a3ac306d66db9f2521c8c3c03a3b89767390b84595d23",
+      "status": "PASS"
+    },
+    ".aide/scripts/aide_lite.py": {
+      "sha256": "9873437e44474c420a6cbc144d84303a6a824071d41e4885b352c9a37a0694d5",
+      "status": "PASS"
+    },
+    ".aide/scripts/posix_filesystem.py": {
+      "sha256": "84425e7855aafe678ff10d8cfd6558fd31d44c2dd9f9579a3bef12ee487e8660",
+      "status": "PASS"
+    },
+    ".aide/scripts/tests/test_posix_filesystem.py": {
+      "sha256": "5fd3dd51d65fe2072661a2eab65cadb701af7cefe286919d95050b91453b0234",
+      "status": "PASS"
+    },
+    ".aide/scripts/tests/test_posix_lifecycle.py": {
+      "sha256": "2f28ba67a14d91e1df5a4c88867b7bba2780e8dc87c5f49a2eb7111595d5cf09",
+      "status": "PASS"
+    },
+    "evals/lite/lifecycle.py": {
+      "sha256": "5b8ad7f9a34d5a7bd3bc98cd53d1770a750f7b9857a259d8ebb5c012fb41e283",
+      "status": "PASS"
+    }
+  },
+  "commands": {
+    "diff-check": {
+      "exit_code": 0,
+      "streams": {
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/diff-check.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/diff-check.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    "doctor": {
+      "exit_code": 1,
+      "streams": {
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/doctor.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/doctor.stdout.log": {
+          "bytes": 5174,
+          "sha256": "20ed121a4a800922d8e21b9e7dc5b38c8a212405fa9cf6e987f97248cc93a64a"
+        }
+      }
+    },
+    "validate": {
+      "exit_code": 1,
+      "streams": {
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/validate.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/validate.stdout.log": {
+          "bytes": 724,
+          "sha256": "0e121cc90c27d275f615711eb30cf2fb7eb680224694b85206165342fa4df00c"
+        }
+      }
+    }
+  },
+  "qualification_executed": false
+}

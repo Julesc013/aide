@@ -3,18 +3,18 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 20c0e5a2ee6db860751b03b6a4938aeda82e53711939279d3c7b5cdea49a56b3
-- raw_prompt_excerpt: Characterize current Lite lifecycle behavior using the existing published1.1 archives and validated development export on bounded Windows/Linux/macOS runners. Reuse existing archive/install/removal helpers and preserve all assertions. Ad...
-- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.
+- raw_prompt_hash: e30f5653d6f123af8cc8ae5996197666c9f8cb0df2ca8d054172a2957aae4a1d
+- raw_prompt_excerpt: Implement the existing Lite lifecycle POSIX filesystem binding, preserve Windows behavior and project customization, verify actual predecessor upgrade conflict recovery repair rollback and owned removal on exact modern profiles, then rev...
+- interpreted_goal: Normalize prompt into a bounded rollback WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
 - confidence: high
-- task_class: release
+- task_class: rollback
 - risk_class: release
-- sizing_class: blocked
+- sizing_class: two_shot
 - safe_to_execute: false
 - requires_split: true
-- blocked: true
-- blocker_reason: block until release gates, tags, and assets are approved
-- next_action: block until release gates, tags, and assets are approved
+- blocked: false
+- blocker_reason: none
+- next_action: draft the smallest safe WorkUnit after repo-state preflight
 - task_execution: false
 - provider_or_model_calls: none
 - network_calls: none
@@ -24,7 +24,6 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not publish releases, tags, or assets from prompt alone
 
 ## Repo State Refs
 
@@ -43,12 +42,11 @@
 - current_branch:main
 - current_role:canonical
 - workflow:trunk_with_dev_integration
-- worktree_dirty:false
+- worktree_dirty:true
 
 ## Validation Hints
 
 - `git diff --check`
-- `py -3 .aide/scripts/aide_lite.py changelog validate`
 - `py -3 .aide/scripts/aide_lite.py intent validate`
 
 ## Evidence Hints
@@ -57,4 +55,3 @@
 - `validation.md`
 - `remaining-risks.md`
 - `intent-compiler-report.md`
-- `preflight-or-blocker-report.md`
