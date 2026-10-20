@@ -2,7 +2,7 @@
 
 ### Shared lifecycle documentation - 20 October 2026
 
-The [filesystem reference](docs/reference/portable-lifecycle-filesystems.md) defines platform bindings, cooperative POSIX ownership, metadata and recovery limits. The [qualification report](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md) separates original failures, conserved observations, the passing Windows continuation and pending Linux/macOS execution. These development records do not expand the published Lite 1.1 support profile or establish Lite 1.2 archive qualification.
+The [filesystem reference](docs/reference/portable-lifecycle-filesystems.md) defines platform bindings, cooperative POSIX ownership, metadata and recovery limits; its tested export source remains frozen until the next release-preparation gate. The [current qualification report](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md) records actual results, original failures and conserved observations, with exact source/result/index/test witnesses. These development records do not expand the published Lite 1.1 support profile or establish Lite 1.2 archive qualification.
 
 ### Modern lifecycle observations - 20 October 2026
 

@@ -2,7 +2,7 @@
 
 ### Shared lifecycle qualification - 20 October 2026
 
-[The existing lifecycle owner](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md) now has descriptor-based Linux/macOS operations beneath its shared state machine. The bounded Windows continuation passed four delivered cases and five affected checks; exact unchanged evidence is conserved. Next: one reviewed three-profile hosted run, then qualified integration. Linux/macOS qualification, versioned Lite 1.2 archives and publication remain pending. [Results and limits](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md).
+[The existing lifecycle owner](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md) now has descriptor-based Linux/macOS operations beneath its shared state machine. Four local Windows cases and twelve hosted Windows/Linux/macOS cases passed, with exact unchanged evidence conserved and original failures retained. Hosted native/fixture tests produced 447 passes and 21 explicit skips. Next: qualified integration, then accurate multi-profile release metadata and actual versioned Lite 1.2 archive qualification. [Results and limits](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md).
 
 ### Modern lifecycle observations - 20 October 2026
 

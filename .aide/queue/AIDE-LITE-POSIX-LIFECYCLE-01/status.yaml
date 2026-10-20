@@ -1,13 +1,17 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-POSIX-LIFECYCLE-01
 status: needs_review
-result: PENDING
-planning_state: local_continuation_passed_checkpoint_and_hosted_review
+result: PASS
+planning_state: local_and_three_hosted_profiles_passed_integration_review
 product_qualified: false
-next_action: Review the exact generated-export/evidence checkpoint and single three-profile hosted effect; preserve original failures and validate native Linux/macOS behavior before support or release claims.
+next_action: Independently review exact collected outcomes, closure source and dev/main integration; preserve original failures and keep versioned release qualification separate.
 local_attempts_consumed: 2
 additional_local_allocation: none
 last_local_job: eba95a543dc440258bb26da090db3e86
 last_local_result: PASS
 last_local_retired: true
-hosted_runs_consumed: 0
+hosted_runs_consumed: 1
+hosted_run_id: 39416703812
+hosted_source: 9c15cc8e1566bfa199ff882cb8b7a13568225f18
+hosted_native_lifecycle_observed_pass: true
+new_support_or_release_claimed: false

@@ -1,0 +1,20 @@
+test_bounded_read_and_changed_open_leaf_are_detected (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_bounded_read_and_changed_open_leaf_are_detected) ... ok
+test_changed_ancestor_detected_and_replacement_preserved (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_changed_ancestor_detected_and_replacement_preserved) ... ok
+test_complete_create_refuses_existing_without_changing_bytes (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_complete_create_refuses_existing_without_changing_bytes) ... ok
+test_exact_identity_required_for_disposition (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_exact_identity_required_for_disposition) ... ok
+test_failed_publication_restores_original_and_backup_restore_refuses_rival (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_failed_publication_restores_original_and_backup_restore_refuses_rival) ... ok
+test_hardlink_and_fifo_refused_without_blocking (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_hardlink_and_fifo_refused_without_blocking) ... ok
+test_native_acl_survives_update (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_native_acl_survives_update) ... ok
+test_native_extended_metadata_survives_update (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_native_extended_metadata_survives_update) ... ok
+test_replacement_before_unlink_is_preserved (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_replacement_before_unlink_is_preserved) ... ok
+test_rival_publication_preserves_rival_and_intent_backup (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_rival_publication_preserves_rival_and_intent_backup) ... ok
+test_special_permissions_refused_before_replacement (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_special_permissions_refused_before_replacement) ... ok
+test_stale_preimage_never_mutates_target (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_stale_preimage_never_mutates_target) ... ok
+test_symlink_leaf_and_ancestor_refused (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_symlink_leaf_and_ancestor_refused) ... ok
+test_unavailable_native_binding_refuses_before_target_effect (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_unavailable_native_binding_refuses_before_target_effect) ... ok
+test_update_preserves_mode_owner_and_cleans_exact_backup (aide_binding_test_posix_filesystem.PosixFilesystemTests.test_update_preserves_mode_owner_and_cleans_exact_backup) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.217s
+
+OK

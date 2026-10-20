@@ -1,0 +1,17 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "6e79d4e03641fe52bb32019fb85d7417a66d02d95e13c4793ac8023e3450ca03",
+  "effect_sha256": "26be8a6bbc78578ed93e93fa450ea697b2edc38734138f3499efe2e13a6c5999",
+  "controller_sha256": "ddfa05959456c176d08bf77e024f75920c012eb7770d416145d05887558be54c",
+  "required_fixes": [],
+  "scope": "bounded development-lifecycle acceptance and one exact closeout/dev/main integration; no additional jobs, tags or release",
+  "notes": [
+    {
+      "classification": "nonblocking",
+      "finding": "POSIX ownership is cooperative; uncertain rename gaps require reconciliation; classified skips and versioned release qualification remain separate.",
+      "disposition": "Explicitly retained in the same frozen report, risk record and integration effect; no broader support, containment or release claim is made."
+    }
+  ],
+  "review_execution": "read-only; no effect or product test executed"
+}

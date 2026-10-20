@@ -1,0 +1,85 @@
+{
+  "errors": [],
+  "failures": [],
+  "passed": true,
+  "skips": [
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_bounded_read_and_changed_open_leaf_are_detected",
+      "native Linux/Darwin binding"
+    ],
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_changed_ancestor_detected_and_replacement_preserved",
+      "native Linux/Darwin binding"
+    ],
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_complete_create_refuses_existing_without_changing_bytes",
+      "native Linux/Darwin binding"
+    ],
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_exact_identity_required_for_disposition",
+      "native Linux/Darwin binding"
+    ],
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_failed_publication_restores_original_and_backup_restore_refuses_rival",
+      "native Linux/Darwin binding"
+    ],
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_hardlink_and_fifo_refused_without_blocking",
+      "native Linux/Darwin binding"
+    ],
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_native_acl_survives_update",
+      "native Linux/Darwin binding"
+    ],
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_native_extended_metadata_survives_update",
+      "native Linux/Darwin binding"
+    ],
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_replacement_before_unlink_is_preserved",
+      "native Linux/Darwin binding"
+    ],
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_rival_publication_preserves_rival_and_intent_backup",
+      "native Linux/Darwin binding"
+    ],
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_special_permissions_refused_before_replacement",
+      "native Linux/Darwin binding"
+    ],
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_stale_preimage_never_mutates_target",
+      "native Linux/Darwin binding"
+    ],
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_symlink_leaf_and_ancestor_refused",
+      "native Linux/Darwin binding"
+    ],
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_unavailable_native_binding_refuses_before_target_effect",
+      "native Linux/Darwin binding"
+    ],
+    [
+      "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_update_preserves_mode_owner_and_cleans_exact_backup",
+      "native Linux/Darwin binding"
+    ]
+  ],
+  "test_ids": [
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_bounded_read_and_changed_open_leaf_are_detected",
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_changed_ancestor_detected_and_replacement_preserved",
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_complete_create_refuses_existing_without_changing_bytes",
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_exact_identity_required_for_disposition",
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_failed_publication_restores_original_and_backup_restore_refuses_rival",
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_hardlink_and_fifo_refused_without_blocking",
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_native_acl_survives_update",
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_native_extended_metadata_survives_update",
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_replacement_before_unlink_is_preserved",
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_rival_publication_preserves_rival_and_intent_backup",
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_special_permissions_refused_before_replacement",
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_stale_preimage_never_mutates_target",
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_symlink_leaf_and_ancestor_refused",
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_unavailable_native_binding_refuses_before_target_effect",
+    "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_update_preserves_mode_owner_and_cleans_exact_backup"
+  ],
+  "tests_run": 15
+}

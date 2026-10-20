@@ -1,0 +1,9 @@
+{
+  "source_reference": "docs/reference/portable-lifecycle-filesystems.md",
+  "restored_to": "9c15cc8e1566bfa199ff882cb8b7a13568225f18",
+  "restored_sha256": "441624d2936d740bf896781f969bc38943029f0040edae07def421d9cc59152f",
+  "proposed_update": ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/portable-lifecycle-filesystems.proposed.md",
+  "proposed_sha256": "485c007e880e280048cd8c231aca723485485d8c93fdffd92448b7b74d7998c9",
+  "canonical_or_export_updated": false,
+  "reason": "Preserve unchanged tested export provenance; actual current observations live in task report/root views; proposed source-reference refresh belongs next release gate."
+}

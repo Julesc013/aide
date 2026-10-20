@@ -1,0 +1,11 @@
+test(lite): close native lifecycle evidence across modern profiles
+
+- Retain twelve passing hosted development cases and 447 test passes with 21 explicit skips on Windows, Linux and macOS.
+- Verify three lossless receipt bundles and all 78 controller streams; preserve original 1.1 POSIX refusals and the first local timeout/error.
+- Document actual metadata, interruption, customization, repair and exit behavior without claiming a versioned 1.2 release or outer-client containment.
+- Prepare exact dev/main synchronization with preserved stable assets, canonical changelog previews and important remote source checkpoint.
+
+Validation: PASS - exact local/hosted inputs, native and consumer outcomes, collection digests, stable assets, syntax, raw/filter identities and diff checks; post-dev repository validation and commit-range checks remain required before main promotion.
+Changelog: Added: Development lifecycle adoption, recovery and safe exit on qualified modern-profile observations.
+AIDE-Task: AIDE-LITE-POSIX-LIFECYCLE-01
+AIDE-Format: compact-v1

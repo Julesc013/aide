@@ -1,0 +1,594 @@
+{
+  "result": "PASS",
+  "source_commit": "9c15cc8e1566bfa199ff882cb8b7a13568225f18",
+  "run_id": 39416703812,
+  "run_url": "https://github.com/Julesc013/aide/actions/runs/39416703812",
+  "controller_streams": {
+    "000.stdout": {
+      "bytes": 41,
+      "sha256": "2837ca2d9b6c71402685ffa21a188609d7fa4145282087ca814471efc5a68cb4"
+    },
+    "000.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "001.stdout": {
+      "bytes": 34,
+      "sha256": "761b18fdaf1b986345f60848eb38479c644704317d8d78428882e1ef9ddccf61"
+    },
+    "001.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "002.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "002.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "003.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "003.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "004.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "004.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "005.stdout": {
+      "bytes": 41,
+      "sha256": "764ddeb11cf36c8a4330e4ad43a6255c6206b5210c398245ed141d51178665b4"
+    },
+    "005.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "006.stdout": {
+      "bytes": 41,
+      "sha256": "9fc23cad75623d2f4473c113b5c25ebbfbacc4a222dbec4e8e23ed1f3648945f"
+    },
+    "006.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "007.stdout": {
+      "bytes": 41,
+      "sha256": "9fc23cad75623d2f4473c113b5c25ebbfbacc4a222dbec4e8e23ed1f3648945f"
+    },
+    "007.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "008.stdout": {
+      "bytes": 41,
+      "sha256": "9fc23cad75623d2f4473c113b5c25ebbfbacc4a222dbec4e8e23ed1f3648945f"
+    },
+    "008.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "009.stdout": {
+      "bytes": 41,
+      "sha256": "9fc23cad75623d2f4473c113b5c25ebbfbacc4a222dbec4e8e23ed1f3648945f"
+    },
+    "009.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "010.stdout": {
+      "bytes": 113,
+      "sha256": "141cc9725d1c62a467de96728047ce41083529587a71c4ecdda9ca7a506a8f39"
+    },
+    "010.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "011.stdout": {
+      "bytes": 38,
+      "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+    },
+    "011.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "012.stdout": {
+      "bytes": 38,
+      "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+    },
+    "012.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "013.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "013.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "014.stdout": {
+      "bytes": 5788,
+      "sha256": "6d03040117c4ef1753ffdd86a0a0d9e2bbe7e1d1b0f9c33862c199283903f93e"
+    },
+    "014.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "015.stdout": {
+      "bytes": 69,
+      "sha256": "0bffee97e4ad52676c0127aacb5b4b304a2675f5c524de641acf1326e0b0e857"
+    },
+    "015.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "016.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "016.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "017.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "017.stderr": {
+      "bytes": 359,
+      "sha256": "793f91c4ad1254bf07146b7489dbcd9581560953cd3d99f515fa6c35218c293c"
+    },
+    "018.stdout": {
+      "bytes": 86,
+      "sha256": "34a1342607ab404aeba45a62c7c52c244b7de4950cbe2aed0f575a36cf52e2ed"
+    },
+    "018.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "019.stdout": {
+      "bytes": 36,
+      "sha256": "a2790a384d7d281e7395679000c35d27768d89dbd7052f725b8f4688beb59915"
+    },
+    "019.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "020.stdout": {
+      "bytes": 12855,
+      "sha256": "fcd52785ca6812f9584ba1dbade030e91954658d5b1c5f77bf3d4836fb458ab4"
+    },
+    "020.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "021.stdout": {
+      "bytes": 12819,
+      "sha256": "4e9908c28eb426a6b2e236312a09cb0d2031b668593329f4a1043a695d6f79eb"
+    },
+    "021.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "022.stdout": {
+      "bytes": 12819,
+      "sha256": "4e9908c28eb426a6b2e236312a09cb0d2031b668593329f4a1043a695d6f79eb"
+    },
+    "022.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "023.stdout": {
+      "bytes": 12819,
+      "sha256": "4e9908c28eb426a6b2e236312a09cb0d2031b668593329f4a1043a695d6f79eb"
+    },
+    "023.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "024.stdout": {
+      "bytes": 12819,
+      "sha256": "4e9908c28eb426a6b2e236312a09cb0d2031b668593329f4a1043a695d6f79eb"
+    },
+    "024.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "025.stdout": {
+      "bytes": 12819,
+      "sha256": "4e9908c28eb426a6b2e236312a09cb0d2031b668593329f4a1043a695d6f79eb"
+    },
+    "025.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "026.stdout": {
+      "bytes": 12819,
+      "sha256": "4e9908c28eb426a6b2e236312a09cb0d2031b668593329f4a1043a695d6f79eb"
+    },
+    "026.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "027.stdout": {
+      "bytes": 12819,
+      "sha256": "4e9908c28eb426a6b2e236312a09cb0d2031b668593329f4a1043a695d6f79eb"
+    },
+    "027.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "028.stdout": {
+      "bytes": 12819,
+      "sha256": "4e9908c28eb426a6b2e236312a09cb0d2031b668593329f4a1043a695d6f79eb"
+    },
+    "028.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "029.stdout": {
+      "bytes": 12819,
+      "sha256": "4e9908c28eb426a6b2e236312a09cb0d2031b668593329f4a1043a695d6f79eb"
+    },
+    "029.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "030.stdout": {
+      "bytes": 12819,
+      "sha256": "4e9908c28eb426a6b2e236312a09cb0d2031b668593329f4a1043a695d6f79eb"
+    },
+    "030.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "031.stdout": {
+      "bytes": 12819,
+      "sha256": "4e9908c28eb426a6b2e236312a09cb0d2031b668593329f4a1043a695d6f79eb"
+    },
+    "031.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "032.stdout": {
+      "bytes": 12819,
+      "sha256": "4e9908c28eb426a6b2e236312a09cb0d2031b668593329f4a1043a695d6f79eb"
+    },
+    "032.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "033.stdout": {
+      "bytes": 12819,
+      "sha256": "4e9908c28eb426a6b2e236312a09cb0d2031b668593329f4a1043a695d6f79eb"
+    },
+    "033.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "034.stdout": {
+      "bytes": 12819,
+      "sha256": "4e9908c28eb426a6b2e236312a09cb0d2031b668593329f4a1043a695d6f79eb"
+    },
+    "034.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "035.stdout": {
+      "bytes": 12822,
+      "sha256": "2505a630554da7c3cd5a6c5b1121583b7d6da5a7e0acd8a9b15d44ecd61cb3de"
+    },
+    "035.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "036.stdout": {
+      "bytes": 6464,
+      "sha256": "6ecda57f868d217a1e2380e5554e303669bf6b8ce7d21fd138e0040451dba5b3"
+    },
+    "036.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "037.stdout": {
+      "bytes": 8689433,
+      "sha256": "200025bff21f022708453d4108aebfff2e98f18df8e1c0244a1d10243cd713f2"
+    },
+    "037.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "038.stdout": {
+      "bytes": 12822,
+      "sha256": "2505a630554da7c3cd5a6c5b1121583b7d6da5a7e0acd8a9b15d44ecd61cb3de"
+    },
+    "038.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "bundles": {
+    "b76211d4eec9abffbfd67fad25646b8e1aa457029129e61c8d248fc10e76afd8": {
+      "profile": "ubuntu-24.04-x64",
+      "files": 143,
+      "raw_bytes": 6760389,
+      "index_sha256": "0a673c524922c514a41c545e033390abaf9bfe89fff4c2736f87816e14d0c9a3",
+      "copied": {
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/result.json": "3a0ddd25e11dddd94ae90c6c6322d2ba8ce1f5c9ab460880a6ec5af67f1c5f89",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/receipt-index.json": "0a673c524922c514a41c545e033390abaf9bfe89fff4c2736f87816e14d0c9a3",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/fixture-tests.log.txt": "04b6675dedc6c24bcd3281d255854fd850775d21f42285307f6c9795e389b4cd",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_filesystem.log.txt": "67d201ec9393aae4113d855f6eeb9b6e1a7d7f85f75334d369a94d9b3458010c",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_filesystem.result.json": "d831d29d711b013ec4e7a081c49dcf9d5a7e045dfc602d62956c406c572261cf",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_lifecycle.log.txt": "99152c2c7a250d60aad5132becb0699613ba37a2cb787b7b412c3c154293fb86",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_lifecycle.result.json": "698f1c43e6aeb8305de50906988e65eaa14d4fd96d2ddd8bb807a4608e810031"
+      },
+      "suites": {
+        "fixtures": {
+          "tests": 126,
+          "passes": 125,
+          "skips": [
+            [
+              "aide_modern_original_fixtures.FixtureFilesystemTests.test_windows_short_name_alias_is_typed_zero_write",
+              "Windows 8.3 aliases are Windows-specific"
+            ]
+          ]
+        },
+        "test_posix_filesystem": {
+          "tests": 15,
+          "passes": 15,
+          "skips": []
+        },
+        "test_posix_lifecycle": {
+          "tests": 11,
+          "passes": 11,
+          "skips": []
+        }
+      },
+      "current_cases_passed": 4,
+      "historical_cases": [
+        {
+          "cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+          "detached": false,
+          "error": "published-1.1.0-fresh-removal-apply exit 1; see raw streams",
+          "error_type": "AssertionError",
+          "installed": true,
+          "native_acceptance": false,
+          "preserved": true,
+          "shape": "fresh",
+          "subject": "published-1.1.0",
+          "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/aide/aide/evals/lite/lifecycle.py\", line 169, in characterize\n    result = rec.installed(label + \"-removal-apply\", target, \"apply-removal\", \"--target\",\n                           str(target), \"--expect-plan\", plan[\"plan_digest\"], \"--json\")\n  File \"/home/runner/work/aide/aide/.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py\", line 185, in installed\n    return self.run(label, target / \".aide/scripts/aide_lite.py\", target, *parts, exits=exits, offline_text=offline_text)\n           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/aide/aide/evals/lite/lifecycle.py\", line 100, in run\n    raise AssertionError(f\"{label} exit {result.returncode}; see raw streams\")\nAssertionError: published-1.1.0-fresh-removal-apply exit 1; see raw streams\n"
+        },
+        {
+          "cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+          "detached": false,
+          "error": "published-1.1.0-brownfield-removal-apply exit 1; see raw streams",
+          "error_type": "AssertionError",
+          "installed": true,
+          "native_acceptance": false,
+          "preserved": true,
+          "shape": "brownfield",
+          "subject": "published-1.1.0",
+          "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/aide/aide/evals/lite/lifecycle.py\", line 169, in characterize\n    result = rec.installed(label + \"-removal-apply\", target, \"apply-removal\", \"--target\",\n                           str(target), \"--expect-plan\", plan[\"plan_digest\"], \"--json\")\n  File \"/home/runner/work/aide/aide/.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py\", line 185, in installed\n    return self.run(label, target / \".aide/scripts/aide_lite.py\", target, *parts, exits=exits, offline_text=offline_text)\n           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/aide/aide/evals/lite/lifecycle.py\", line 100, in run\n    raise AssertionError(f\"{label} exit {result.returncode}; see raw streams\")\nAssertionError: published-1.1.0-brownfield-removal-apply exit 1; see raw streams\n"
+        }
+      ]
+    },
+    "0c1536aec5edd27098134fbbad0c26bb3f106a29dfa055bc63531d3994f85578": {
+      "profile": "windows-2025-x64",
+      "files": 145,
+      "raw_bytes": 6958335,
+      "index_sha256": "ecb4b192065b079b4f634fb062c89ad51ab493f9cc6db11927a57a9a2bf64a7d",
+      "copied": {
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/result.json": "023730814f766d34d79609a9e2b8cca0b93a7e388108ae12a8be8c9fad9145b8",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/receipt-index.json": "ecb4b192065b079b4f634fb062c89ad51ab493f9cc6db11927a57a9a2bf64a7d",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/fixture-tests.log.txt": "4cfa0131f48cbdcf819bbff2a3ad0cdac7c4f365fb4166514c448476cdba6d48",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_filesystem.log.txt": "2b986a195fa9c215dea395e335deedba77a0c5bde9504a5e298b5b3d8761c649",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_filesystem.result.json": "6c9c2cce6f37f4968cf8a5ed4862680438a8fefb227b662c98051ba849e00469",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_lifecycle.log.txt": "37458cef0c002dfad5fa6ffd1bbc55cde07f4b1de46b50c2c4874ad1e1046663",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_lifecycle.result.json": "d23159d46509622a0f0c0707b120adb4d6b476412620a68ea795720f7b8e56af",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/windows-native-regressions.log.txt": "13cb1b5fa6a38c71e46bf769ce5a561a4820c9c4747d8b3fd2a1053cbce632f5",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/windows-regressions.result.json": "01734ca61dfbd25e227997d4d5751d1194fef091282763f515c047ac7f69268a"
+      },
+      "suites": {
+        "fixtures": {
+          "tests": 126,
+          "passes": 124,
+          "skips": [
+            [
+              "aide_modern_original_fixtures.FixtureFilesystemTests.test_special_file_refused_without_blocking_read",
+              "FIFO not supported"
+            ],
+            [
+              "aide_modern_original_fixtures.FixtureFilesystemTests.test_windows_short_name_alias_is_typed_zero_write",
+              "test volume did not generate a distinct 8.3 alias"
+            ]
+          ]
+        },
+        "test_posix_filesystem": {
+          "tests": 15,
+          "passes": 0,
+          "skips": [
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_bounded_read_and_changed_open_leaf_are_detected",
+              "native Linux/Darwin binding"
+            ],
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_changed_ancestor_detected_and_replacement_preserved",
+              "native Linux/Darwin binding"
+            ],
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_complete_create_refuses_existing_without_changing_bytes",
+              "native Linux/Darwin binding"
+            ],
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_exact_identity_required_for_disposition",
+              "native Linux/Darwin binding"
+            ],
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_failed_publication_restores_original_and_backup_restore_refuses_rival",
+              "native Linux/Darwin binding"
+            ],
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_hardlink_and_fifo_refused_without_blocking",
+              "native Linux/Darwin binding"
+            ],
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_native_acl_survives_update",
+              "native Linux/Darwin binding"
+            ],
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_native_extended_metadata_survives_update",
+              "native Linux/Darwin binding"
+            ],
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_replacement_before_unlink_is_preserved",
+              "native Linux/Darwin binding"
+            ],
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_rival_publication_preserves_rival_and_intent_backup",
+              "native Linux/Darwin binding"
+            ],
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_special_permissions_refused_before_replacement",
+              "native Linux/Darwin binding"
+            ],
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_stale_preimage_never_mutates_target",
+              "native Linux/Darwin binding"
+            ],
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_symlink_leaf_and_ancestor_refused",
+              "native Linux/Darwin binding"
+            ],
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_unavailable_native_binding_refuses_before_target_effect",
+              "native Linux/Darwin binding"
+            ],
+            [
+              "aide_binding_test_posix_filesystem.PosixFilesystemTests.test_update_preserves_mode_owner_and_cleans_exact_backup",
+              "native Linux/Darwin binding"
+            ]
+          ]
+        },
+        "test_posix_lifecycle": {
+          "tests": 11,
+          "passes": 9,
+          "skips": [
+            [
+              "aide_binding_test_posix_lifecycle.PortableLifecycleBindingTests.test_missing_installed_binding_refuses_before_removal_effect",
+              "POSIX installed helper dependency"
+            ],
+            [
+              "aide_binding_test_posix_lifecycle.PortableLifecycleBindingTests.test_process_exit_retains_unresolved_import_backup_and_original_bytes",
+              "POSIX rename-gap process termination"
+            ]
+          ]
+        },
+        "windows": {
+          "tests": 12,
+          "passes": 12,
+          "skips": []
+        }
+      },
+      "current_cases_passed": 4,
+      "historical_cases": [
+        {
+          "cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+          "detached": true,
+          "installed": true,
+          "native_acceptance": true,
+          "preserved": true,
+          "removal_status": "DETACHED",
+          "shape": "fresh",
+          "subject": "published-1.1.0"
+        },
+        {
+          "cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+          "detached": true,
+          "installed": true,
+          "native_acceptance": true,
+          "preserved": true,
+          "removal_status": "DETACHED",
+          "shape": "brownfield",
+          "subject": "published-1.1.0"
+        }
+      ]
+    },
+    "e2c6319c7248c27503cdf3d0c4c9e48b65e3fca5138d18f40eb91019aaa99509": {
+      "profile": "macos-15-arm64",
+      "files": 143,
+      "raw_bytes": 6761921,
+      "index_sha256": "e4ed81389101ea4100b4c46026e4e2859108ebccd3c4eb454dd1ceb34b3913e4",
+      "copied": {
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/result.json": "1b12f5e7a4286998f20ccca25307a06d5b2d828cbd5a256c59c5c5802f053146",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/receipt-index.json": "e4ed81389101ea4100b4c46026e4e2859108ebccd3c4eb454dd1ceb34b3913e4",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/fixture-tests.log.txt": "75755be943e0e85770635156ff0810d9b4dcbb9a1dca066d6a6279516cfb9858",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_filesystem.log.txt": "70fd21189da0e83c4f7910bc1223b53347e85ab045950bb6da0c8292589377d1",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_filesystem.result.json": "d831d29d711b013ec4e7a081c49dcf9d5a7e045dfc602d62956c406c572261cf",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_lifecycle.log.txt": "f02137ed01b7774ee8a2b779bfcf16fac375711563f740c01f9e5a394cf90375",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_lifecycle.result.json": "698f1c43e6aeb8305de50906988e65eaa14d4fd96d2ddd8bb807a4608e810031"
+      },
+      "suites": {
+        "fixtures": {
+          "tests": 126,
+          "passes": 125,
+          "skips": [
+            [
+              "aide_modern_original_fixtures.FixtureFilesystemTests.test_windows_short_name_alias_is_typed_zero_write",
+              "Windows 8.3 aliases are Windows-specific"
+            ]
+          ]
+        },
+        "test_posix_filesystem": {
+          "tests": 15,
+          "passes": 15,
+          "skips": []
+        },
+        "test_posix_lifecycle": {
+          "tests": 11,
+          "passes": 11,
+          "skips": []
+        }
+      },
+      "current_cases_passed": 4,
+      "historical_cases": [
+        {
+          "cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+          "detached": false,
+          "error": "published-1.1.0-fresh-removal-apply exit 1; see raw streams",
+          "error_type": "AssertionError",
+          "installed": true,
+          "native_acceptance": false,
+          "preserved": true,
+          "shape": "fresh",
+          "subject": "published-1.1.0",
+          "traceback": "Traceback (most recent call last):\n  File \"/Users/runner/work/aide/aide/evals/lite/lifecycle.py\", line 169, in characterize\n    result = rec.installed(label + \"-removal-apply\", target, \"apply-removal\", \"--target\",\n                           str(target), \"--expect-plan\", plan[\"plan_digest\"], \"--json\")\n  File \"/Users/runner/work/aide/aide/.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py\", line 185, in installed\n    return self.run(label, target / \".aide/scripts/aide_lite.py\", target, *parts, exits=exits, offline_text=offline_text)\n           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/aide/aide/evals/lite/lifecycle.py\", line 100, in run\n    raise AssertionError(f\"{label} exit {result.returncode}; see raw streams\")\nAssertionError: published-1.1.0-fresh-removal-apply exit 1; see raw streams\n"
+        },
+        {
+          "cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+          "detached": false,
+          "error": "published-1.1.0-brownfield-removal-apply exit 1; see raw streams",
+          "error_type": "AssertionError",
+          "installed": true,
+          "native_acceptance": false,
+          "preserved": true,
+          "shape": "brownfield",
+          "subject": "published-1.1.0",
+          "traceback": "Traceback (most recent call last):\n  File \"/Users/runner/work/aide/aide/evals/lite/lifecycle.py\", line 169, in characterize\n    result = rec.installed(label + \"-removal-apply\", target, \"apply-removal\", \"--target\",\n                           str(target), \"--expect-plan\", plan[\"plan_digest\"], \"--json\")\n  File \"/Users/runner/work/aide/aide/.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py\", line 185, in installed\n    return self.run(label, target / \".aide/scripts/aide_lite.py\", target, *parts, exits=exits, offline_text=offline_text)\n           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/aide/aide/evals/lite/lifecycle.py\", line 100, in run\n    raise AssertionError(f\"{label} exit {result.returncode}; see raw streams\")\nAssertionError: published-1.1.0-brownfield-removal-apply exit 1; see raw streams\n"
+        }
+      ]
+    }
+  },
+  "original_complete_captures": "hosted-logs.log/",
+  "support_claimed": false,
+  "whole_model_usage": "unknown"
+}

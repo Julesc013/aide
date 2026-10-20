@@ -1,0 +1,8 @@
+{
+  "exit": 0,
+  "raw_stdout_sha256": "c05e07b2bb4d3d1623bfca3f82339bb1647251ec66f7f8a1a5295a5e33c1a6e1",
+  "projection_sha256": "3c80eb9d9da1d19c9ba7893b0c3a958baea706bf789961866dbced5ab182d543",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "projection_transform": "CRLF to LF only",
+  "no_new_qualification_job": true
+}

@@ -1,0 +1,13 @@
+{
+  "decision": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "3f64c2ed84b949afe17ab02bca4dba9897900df10e6f7c591860855dd3bda307",
+  "effect_sha256": "26be8a6bbc78578ed93e93fa450ea697b2edc38734138f3499efe2e13a6c5999",
+  "controller_sha256": "ddfa05959456c176d08bf77e024f75920c012eb7770d416145d05887558be54c",
+  "required_fixes": [
+    "Add changed-files.md, validation.md and remaining-risks.md with governing procedure links.",
+    "Preserve proposed portable source-reference update as evidence and restore exact tested bytes; no export refresh or product rerun."
+  ],
+  "development_lifecycle_technical_verdict": "PASS for exact observed environments;447passes21skips12developmentcases;78 streams and three bundles independently verified",
+  "effects_performed": false
+}
