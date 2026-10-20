@@ -1,0 +1,22 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "049278c2e93835ea3df9fb70c621c5260d401a72f5651260709786047f6f0738",
+  "effect_sha256": "42a08acf0073b9f9220d30f64ac96f435cec8c6b1f8f43ff05730a7a0d3ff5b8",
+  "controller_sha256": "b19ab4e60af5d5678a7ff2007d4496b50fd4742539ea513676f2387ea46d6241",
+  "required_fixes": [],
+  "scope": "one exact managed checkpoint and one important task-branch push triggering one bounded three-profile hosted run; no integration or release",
+  "notes": [
+    {
+      "classification": "nonblocking",
+      "finding": "The precheck includes its own pre-update blob identity.",
+      "disposition": "The final frozen source map and independent raw/filtered verification bind current precheck bytes; the pre-update identity grants no authority."
+    },
+    {
+      "classification": "nonblocking",
+      "finding": "Hosted completion within ten minutes is unproven.",
+      "disposition": "Retain actual failures/timeouts and original observations; no redispatch or support claim is authorized."
+    }
+  ],
+  "review_execution": "read-only; no effects or tests executed"
+}

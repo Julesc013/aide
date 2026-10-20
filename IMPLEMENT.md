@@ -1,8 +1,8 @@
 # AIDE Implementation Log
 
-### POSIX lifecycle preparation - 20 October 2026
+### Shared lifecycle implementation - 20 October 2026
 
-[The admitted POSIX lifecycle work](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md) prepares one descriptor-based Linux/macOS binding beneath the existing import, receipt, conflict, repair, rollback and removal owner. Windows primitives remain in place. New regressions retain uncertain rename-gap backups, distinguish actual predecessor rollback refusal from same-path rollback, and check native ACL/xattr preservation. Source, delivered and installed qualification is pending; no Lite 1.2 archive or new support claim exists. [Filesystem profile and recovery limits](docs/reference/portable-lifecycle-filesystems.md).
+Added a sibling POSIX filesystem binding under the existing Lite lifecycle, retaining native Windows primitives and shared ownership/recovery semantics. Source `809456fa` corrects optional callback forwarding and excludes the source-only lifecycle fixture from consumer exports. Job `eba95a54` passed four development adoption/upgrade cases and five affected checks, then retired with verified output/log digests and unchanged stable assets. The first timeout/error remains preserved. Linux/macOS execution and release qualification are pending. [Exact evidence](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md).
 
 ### Modern lifecycle observations - 20 October 2026
 

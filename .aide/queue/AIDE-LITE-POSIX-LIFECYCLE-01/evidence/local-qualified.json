@@ -1,0 +1,42 @@
+{
+  "schema": "aide.local-qualification.v1",
+  "result": "PASS",
+  "source_commit": "809456fa43c543970c45760d5c32db8734c443dc",
+  "source_tree": "f47f53e17783e5a614353582ee190af4fa4bce7c",
+  "job_id": "eba95a543dc440258bb26da090db3e86",
+  "phase": "retired",
+  "scratch_absent": true,
+  "reservation_released": true,
+  "quiescent": true,
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\eba95a543dc440258bb26da090db3e86",
+  "retained_receipt_sha256": "6fa5ebc6c29ae37cfb9c869d121e4d49f44bc0fe231688c512421f290b73d02b",
+  "collected_manifest": {
+    "logs": "2b54ab1e454104b956e8256e816a423ff797c6b582bbd62ade09478b52bb2440",
+    "output": "22ce0358997587e2363c2c943924c5f1f96825783544c7503ea6f764b9362602"
+  },
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4851741
+    },
+    "memory_bytes": 359510016,
+    "scratch_bytes": 26298797
+  },
+  "input_sha256": "3b8229658280f7d327222a06418f25754a4f5fc6d8161ca5d06cb697088154c4",
+  "result_sha256": "45efef6f4e48f2994de9605964bb4eb21e22d15d4296d5ce112d175baa0a562b",
+  "transport_sha256": "e1ac3d937fbf826ab166e2998d06a579234c98821a1ca5b05cbf32428d1af3bc",
+  "development_members": 878,
+  "support_claimed": false,
+  "original_attempt": {
+    "job_id": "5c22da3082784a538aa9f6e2b43c39a4",
+    "state": "INCOMPLETE_WITH_REGRESSION_ERROR",
+    "evidence": "attempt-01.json"
+  },
+  "limitations": [
+    "development export qualification is not a versioned Lite 1.2 release/archive claim",
+    "published 1.1 POSIX removal refusals remain historical-profile observations",
+    "POSIX mutation ownership is cooperative, without hostile-writer or outer-client containment",
+    "a terminated rename gap with outstanding backups requires explicit reconciliation",
+    "actual predecessor path-change rollback refuses; same-path rollback is separately tested",
+    "CLI offline declaration is not an OS network isolation measurement"
+  ]
+}

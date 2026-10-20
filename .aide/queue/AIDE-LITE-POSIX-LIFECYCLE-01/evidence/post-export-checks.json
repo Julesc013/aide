@@ -1,0 +1,20 @@
+[
+  {
+    "name": "post-export-doctor",
+    "exit": 0,
+    "stdout_sha256": "585c64e7eac737c2e172b11d760d884d7c614858c1521bb8941c4e4ffa595f42",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "post-export-validate",
+    "exit": 0,
+    "stdout_sha256": "c05e07b2bb4d3d1623bfca3f82339bb1647251ec66f7f8a1a5295a5e33c1a6e1",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "post-export-commit-check",
+    "exit": 0,
+    "stdout_sha256": "146c8f74c6b8a8aa0b32ba92def704da60c112f9cadc1d9a6467aed938204bd1",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

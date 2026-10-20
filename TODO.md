@@ -4,7 +4,7 @@
 
 - [x] Observe published and development Lite adoption/removal on four real modern environments, preserving eight POSIX removal refusals. [Observations](.aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/REPORT.md)
 
-- [ ] Complete the [admitted POSIX lifecycle binding](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md), then qualify actual predecessor upgrades, customization/conflicts, interruption, repair, rollback and removal before Lite 1.2 support claims. Native ACL/xattr checks and uncertain rename-gap preservation are explicit.
+- [ ] Complete Linux/macOS execution of the [shared lifecycle binding](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md), then review integration and Lite 1.2 archive qualification. The Windows continuation passed adoption, actual predecessor conflict/recovery, repair and exit; original errors, skips and rollback limits remain explicit. [Evidence](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md)
 
 **Release and daily use**
 

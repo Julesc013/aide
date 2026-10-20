@@ -1,0 +1,10 @@
+{
+  "syntax": {
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/checkpoint_and_host.py": "b19ab4e60af5d5678a7ff2007d4496b50fd4742539ea513676f2387ea46d6241",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/observe_hosted.py": "3cd5d901098138021099bd57c03eb83da4a6db4ffb77c505cd3130389dd32f87"
+  },
+  "diff_check_exit": 0,
+  "local_qualification": "local-qualified.json",
+  "repository_checks": "post-export-checks.json",
+  "tests_repeated": false
+}

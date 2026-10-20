@@ -1,0 +1,5 @@
+AIDE Lite validate
+status: PASS
+checks: 60926; PASS: 60925; WARN: 1; FAIL: 0; OTHER: 0
+- WARN review packet review ref missing: .aide/prompts/evidence-review.md
+omitted PASS details: 60925; use validate --full or --json for all results

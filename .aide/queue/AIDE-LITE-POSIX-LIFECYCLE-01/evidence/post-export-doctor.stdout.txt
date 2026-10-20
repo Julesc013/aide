@@ -1,0 +1,88 @@
+AIDE Lite doctor
+status: PASS
+- repo_root: D:/Projects/AIDE/aide
+- PASS required: .aide/policies/token-budget.yaml
+- PASS required: .aide/memory/project-state.md
+- PASS required: .aide/memory/decisions.md
+- PASS required: .aide/memory/open-risks.md
+- PASS required: .aide/prompts/compact-task.md
+- PASS required: .aide/prompts/evidence-review.md
+- PASS required: .aide/prompts/codex-token-mode.md
+- PASS required: .aide/context/ignore.yaml
+- INFO Q09 status: passed
+- INFO Q10 status: passed
+- INFO Q11 status: passed
+- INFO Q12 status: passed
+- INFO Q13 status: passed
+- INFO Q14 status: passed
+- INFO Q15 status: passed
+- INFO Q16 status: passed
+- INFO Q17 status: passed
+- INFO Q18 status: passed
+- INFO Q19 status: passed
+- INFO Q20 status: passed
+- PASS snapshot exists: .aide/context/repo-snapshot.json
+- PASS latest task packet exists: .aide/context/latest-task-packet.md
+- PASS context artifact exists: .aide/context/repo-map.json
+- PASS context artifact exists: .aide/context/repo-map.md
+- PASS context artifact exists: .aide/context/test-map.json
+- PASS context artifact exists: .aide/context/context-index.json
+- PASS context artifact exists: .aide/context/latest-context-packet.md
+- PASS verifier artifact exists: .aide/policies/verification.yaml
+- PASS verifier artifact exists: .aide/verification/latest-verification-report.md
+- PASS review artifact exists: .aide/verification/review-decision-policy.yaml
+- PASS review artifact exists: .aide/context/latest-review-packet.md
+- PASS token ledger artifact exists: .aide/policies/token-ledger.yaml
+- PASS token ledger artifact exists: .aide/reports/token-baselines.yaml
+- PASS token ledger artifact exists: .aide/reports/token-ledger.jsonl
+- PASS token ledger artifact exists: .aide/reports/token-savings-summary.md
+- PASS token ledger records: 83
+- PASS golden task artifact exists: .aide/policies/evals.yaml
+- PASS golden task artifact exists: .aide/evals/golden-tasks/README.md
+- PASS golden task artifact exists: .aide/evals/golden-tasks/catalog.yaml
+- PASS golden task definitions: 171
+- PASS golden task report exists: .aide/evals/runs/latest-golden-tasks.json
+- PASS golden task report exists: .aide/evals/runs/latest-golden-tasks.md
+- PASS controller artifact exists: .aide/policies/controller.yaml
+- PASS controller artifact exists: .aide/controller/README.md
+- PASS controller artifact exists: .aide/controller/outcome-ledger.jsonl
+- PASS controller artifact exists: .aide/controller/latest-outcome-report.md
+- PASS controller artifact exists: .aide/controller/latest-recommendations.md
+- PASS controller artifact exists: .aide/controller/failure-taxonomy.yaml
+- PASS outcome ledger records: 8
+- PASS routing artifact exists: .aide/policies/routing.yaml
+- PASS routing artifact exists: .aide/models/README.md
+- PASS routing artifact exists: .aide/models/providers.yaml
+- PASS routing artifact exists: .aide/models/capabilities.yaml
+- PASS routing artifact exists: .aide/models/routes.yaml
+- PASS routing artifact exists: .aide/models/hard-floors.yaml
+- PASS routing artifact exists: .aide/models/fallback.yaml
+- PASS routing artifact exists: .aide/routing/README.md
+- PASS routing artifact exists: .aide/routing/route-decision.schema.json
+- PASS route decision exists: .aide/routing/latest-route-decision.json
+- PASS route decision exists: .aide/routing/latest-route-decision.md
+- PASS cache/local-state artifact exists: .aide/policies/cache.yaml
+- PASS cache/local-state artifact exists: .aide/policies/local-state.yaml
+- PASS cache/local-state artifact exists: .aide.local.example/README.md
+- PASS cache/local-state artifact exists: .aide/cache/key-policy.yaml
+- PASS cache/local-state artifact exists: .aide/cache/latest-cache-keys.json
+- PASS cache/local-state artifact exists: .aide/cache/latest-cache-keys.md
+- PASS .aide.local ignored by .gitignore: true
+- PASS tracked .aide.local paths: 0
+- PASS gateway artifact exists: .aide/policies/gateway.yaml
+- PASS gateway artifact exists: .aide/gateway/endpoints.yaml
+- PASS gateway artifact exists: .aide/gateway/latest-gateway-status.json
+- PASS gateway artifact exists: .aide/gateway/latest-gateway-status.md
+- PASS provider adapter artifact exists: .aide/policies/provider-adapters.yaml
+- PASS provider adapter artifact exists: .aide/providers/provider-catalog.yaml
+- PASS provider adapter artifact exists: .aide/providers/capability-matrix.yaml
+- PASS provider adapter artifact exists: .aide/providers/latest-provider-status.json
+- PASS provider adapter artifact exists: .aide/providers/latest-provider-status.md
+- PASS adapter status: current; no action needed
+- PASS repair plan available: .aide/repair/latest-repair-plan.md
+- PASS repair doctor report available: .aide/repair/latest-doctor-repair-report.md
+- PASS upgrade plan available: .aide/upgrade/latest-upgrade-plan.md
+- PASS upgrade dry-run available: .aide/upgrade/latest-upgrade-dry-run.md
+- PASS rollback plan available: .aide/rollback/latest-rollback-plan.md
+- PASS uninstall plan available: .aide/uninstall/latest-uninstall-plan.md
+- PASS validation should be run: no hard validation failures detected

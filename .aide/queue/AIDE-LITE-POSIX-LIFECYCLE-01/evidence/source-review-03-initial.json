@@ -1,0 +1,13 @@
+{
+  "decision": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "e8c17df300ab1fb3e387d6b983fa1fa742838851e3700c15991551a3aaa1e1fb",
+  "effect_sha256": "42a08acf0073b9f9220d30f64ac96f435cec8c6b1f8f43ff05730a7a0d3ff5b8",
+  "controller_sha256": "b19ab4e60af5d5678a7ff2007d4496b50fd4742539ea513676f2387ea46d6241",
+  "required_fixes": [
+    "Preserve original post-export stdout captures; normalize only three tracked projections to LF with explicit raw-to-projection identities; retain exact-byte assertion."
+  ],
+  "other_checks": "38 map and 903 pins match; retained digests, 109 transported files, five passing affected checks, four passing development cases and eight stable assets independently verified",
+  "hosted_timeout_not_guaranteed": true,
+  "effects_performed": false
+}

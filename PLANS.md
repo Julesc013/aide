@@ -1,8 +1,8 @@
 # AIDE Planning Index
 
-### POSIX lifecycle preparation - 20 October 2026
+### Shared lifecycle qualification - 20 October 2026
 
-[The admitted POSIX lifecycle work](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md) prepares one descriptor-based Linux/macOS binding beneath the existing import, receipt, conflict, repair, rollback and removal owner. Windows primitives remain in place. New regressions retain uncertain rename-gap backups, distinguish actual predecessor rollback refusal from same-path rollback, and check native ACL/xattr preservation. Source, delivered and installed qualification is pending; no Lite 1.2 archive or new support claim exists. [Filesystem profile and recovery limits](docs/reference/portable-lifecycle-filesystems.md).
+[The existing lifecycle owner](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md) now has descriptor-based Linux/macOS operations beneath its shared state machine. The bounded Windows continuation passed four delivered cases and five affected checks; exact unchanged evidence is conserved. Next: one reviewed three-profile hosted run, then qualified integration. Linux/macOS qualification, versioned Lite 1.2 archives and publication remain pending. [Results and limits](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md).
 
 ### Modern lifecycle observations - 20 October 2026
 

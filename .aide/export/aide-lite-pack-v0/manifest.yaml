@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: ba5c318e32c1c18e25454986d858822929c03c1c
+source_commit: 809456fa43c543970c45760d5c32db8734c443dc
 source_dirty_state: false
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -704,7 +704,6 @@ included_files:
   - files/.aide/scripts/tests/test_outcome_controller.py
   - files/.aide/scripts/tests/test_outcome_lessons.py
   - files/.aide/scripts/tests/test_posix_filesystem.py
-  - files/.aide/scripts/tests/test_posix_lifecycle.py
   - files/.aide/scripts/tests/test_provider_adapter.py
   - files/.aide/scripts/tests/test_public_archive_fixture.py
   - files/.aide/scripts/tests/test_q27_commit_recovery.py

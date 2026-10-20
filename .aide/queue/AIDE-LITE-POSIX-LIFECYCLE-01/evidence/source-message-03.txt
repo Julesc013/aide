@@ -1,0 +1,11 @@
+test(lite): retain qualified payload for native hosted lifecycle checks
+
+- Preserve the first timeout/error and exact reviewed conservation; the Windows continuation passes four development cases and five affected checks.
+- Checkpoint the 878-file generated export, immutable inputs, retained-result identities and current documentation.
+- Reuse the preceding bounded three-profile observer with exact checkpoint ancestry, input applicability and clean-tree checks.
+- Keep local allocations exhausted and hosted execution limited to one standard public run; support, integration and publication remain separate.
+
+Validation: PASS - local continuation, lossless collection/retirement, stable-asset hashes, doctor, 60925 validation passes/one existing warning, commit policy and diff/syntax checks; NOT RUN - native hosted qualification or release.
+Changelog: Changed: Retain the locally qualified shared lifecycle payload and prepare exact native hosted qualification.
+AIDE-Task: AIDE-LITE-POSIX-LIFECYCLE-01
+AIDE-Format: compact-v1

@@ -4,7 +4,8 @@ Release entries describe the delivered Lite package and its declared compatibili
 
 #### Unreleased
 
-- **In preparation:** shared Linux/macOS lifecycle filesystem binding, native metadata preservation and project-preserving recovery/exit tests; actual qualification remains pending.
+- **Added, development:** shared Linux/macOS filesystem binding beneath the existing lifecycle owner. The Windows continuation passed adoption, published 1.1 conflict/recovery, repair and exit; native Linux/macOS qualification remains pending. [Results and limits](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md)
+- **Fixed, development:** preserve the original Windows unlink callback contract and exclude the source-only lifecycle fixture from consumer exports. Original failed and interrupted results remain recorded.
 - **Evaluation:** observe delivered adoption/removal on four exact modern environments: 16 adoption/preservation passes, eight Windows detach passes and eight retained POSIX removal refusals; new support remains unqualified.
 
 - **Planned:** Lite 1.2 modern profile qualification, staged native legacy ports and future Extension 1.0 host packages share Python 3 reference tooling and optional PowerShell Core 7+.

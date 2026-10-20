@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "exact_interrupted_upgrade_recovery",
+    "installed_owned_repair_interruption_and_recovery",
+    "cross_version_path_change_rollback_refuses_without_writes",
+    "detach_and_published_predecessor_reinstall"
+  ],
+  "native_acceptance": true,
+  "preserved": true,
+  "shape": "published-upgrade-fresh",
+  "subject": "development-export"
+}

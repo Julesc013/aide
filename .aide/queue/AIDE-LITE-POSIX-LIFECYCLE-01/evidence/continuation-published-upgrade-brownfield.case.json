@@ -1,0 +1,11 @@
+{
+  "checks": [
+    "real_upstream_conflict_refuses_without_writes",
+    "exact_interrupted_upgrade_recovery",
+    "customization_disabled_examples_and_overlay_remain_project_owned"
+  ],
+  "native_acceptance": true,
+  "preserved": true,
+  "shape": "published-upgrade-brownfield",
+  "subject": "development-export"
+}

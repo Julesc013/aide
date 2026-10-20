@@ -1,0 +1,10 @@
+{
+  "cli_sha256": "3cd8b5ee01cc71b6747ef8b48db26800922710f507d27019e49972d5c221d7c8",
+  "detached": true,
+  "installed": true,
+  "native_acceptance": true,
+  "preserved": true,
+  "removal_status": "DETACHED",
+  "shape": "fresh",
+  "subject": "development-export"
+}

@@ -1,0 +1,42 @@
+AIDE Lite commit check
+result: PASS
+source: git log -1 --pretty=%B
+policy: .aide/policies/commit-messages.yaml
+standard: .aide/reports/aide-commit-message-standard.md
+- PASS compact subject follows type[(scope)][!]: description
+- PASS compact commit type is allowed
+- PASS compact subject describes a specific change
+- PASS compact subject fits the 72-character guideline
+- PASS compact subject omits a trailing period
+- PASS compact subject has a blank separator
+- PASS compact metadata is one final trailer block
+- PASS compact singleton present: AIDE-Format
+- PASS compact singleton present: AIDE-Task
+- PASS compact singleton present: Validation
+- PASS compact singleton is unambiguous: Risk
+- PASS compact singleton is unambiguous: Follow-up
+- PASS compact singleton is unambiguous: BREAKING CHANGE
+- PASS compact singleton is unambiguous: AIDE-Task
+- PASS compact singleton is unambiguous: AIDE-Phase
+- PASS compact singleton is unambiguous: AIDE-Result
+- PASS compact singleton is unambiguous: AIDE-Scope
+- PASS compact singleton is unambiguous: AIDE-Token-Impact
+- PASS compact singleton is unambiguous: AIDE-Quality-Gate
+- PASS compact format is supported
+- PASS compact format marker occurs once in trailers
+- PASS compact metadata is not duplicated or misplaced in prose
+- PASS compact body explains the change and rationale
+- PASS compact validation names an outcome and the actual checks or reason
+- PASS compact changelog has a known category and description
+- PASS compact changelog records at least one explicit entry
+- PASS compact breaking marker has an impact and migration explanation
+- PASS compact breaking footer is not empty
+- PASS compact presentation avoids H1/H2; use plain text or H3/H4
+- PASS compact message excludes control characters
+- PASS commit message excludes raw_prompt_body
+- PASS commit message excludes raw_response_body
+- PASS commit message excludes begin private key
+- PASS commit message excludes openai_api_key
+- PASS commit message excludes anthropic_api_key
+- PASS commit message excludes deepseek_api_key
+- PASS commit message excludes sk-ant

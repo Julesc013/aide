@@ -1,0 +1,50 @@
+{
+  "artifacts_or_cache_uploads": false,
+  "checkpoint_parent": "809456fa43c543970c45760d5c32db8734c443dc",
+  "control_config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "controller_sha256": "b19ab4e60af5d5678a7ff2007d4496b50fd4742539ea513676f2387ea46d6241",
+  "effects": [
+    "one exact managed payload/evidence/docs checkpoint on the existing task branch",
+    "one non-force important-task-branch push, no-follow-tags, if the exact remote ref is absent",
+    "one existing three-profile public-standard hosted workflow and finite lossless observation"
+  ],
+  "forbidden": [
+    "redispatch or automatic retry",
+    "dev/main integration, branch retirement, tag, release, stable/version/candidate mutation",
+    "new model/provider/spending/root/reserve/privilege or unrelated-target effects"
+  ],
+  "integration_base": "8e5581cce7c7fd7037f6a199c92a6922260893ab",
+  "job_timeout_minutes": 10,
+  "maximum_hosted_jobs": 3,
+  "maximum_hosted_runs": 1,
+  "maximum_new_local_jobs": 0,
+  "maximum_pushes": 1,
+  "observer_sha256": "3cd5d901098138021099bd57c03eb83da4a6db4ffb77c505cd3130389dd32f87",
+  "observer_timeout_seconds": 1200,
+  "origin_url": "https://github.com/Julesc013/aide.git",
+  "package_inputs_sha256": "3b8229658280f7d327222a06418f25754a4f5fc6d8161ca5d06cb697088154c4",
+  "profiles": [
+    "windows-2025-x64",
+    "ubuntu-24.04-x64",
+    "macos-15-arm64"
+  ],
+  "qualification_source_commit": "809456fa43c543970c45760d5c32db8734c443dc",
+  "reused_observer": {
+    "path": ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/observe_hosted.py",
+    "sha256": "6f8aa735faaed776f113e86a30c833d3177775df91d5d6b12a6567e0b0eddbb9"
+  },
+  "review_attestation": {
+    "actual_independent_accept_only": true,
+    "binds": [
+      "source_sha256",
+      "effect_sha256",
+      "controller_sha256"
+    ],
+    "included_in_commit": true,
+    "path": ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/source-review-03.json"
+  },
+  "schema": "aide.exact-checkpoint-hosted-effect.v1",
+  "source_binding": "existing managed owner commit receipt, exact reviewed file map, direct parent and all immutable input identities",
+  "source_commit": "EXACT_REVIEWED_CHECKPOINT",
+  "task_branch": "task/aide-lite-posix-lifecycle-01"
+}

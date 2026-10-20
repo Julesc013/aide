@@ -1,13 +1,13 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-POSIX-LIFECYCLE-01
-status: running
+status: needs_review
 result: PENDING
-planning_state: first_attempt_incomplete_forwarding_repair_and_bounded_continuation_preparation
+planning_state: local_continuation_passed_checkpoint_and_hosted_review
 product_qualified: false
-next_action: Review the corrected forwarding route, source-only export boundary, evidence reuse and finite continuation before a second local allocation; preserve attempt 1 and rerun only affected checks plus unfinished development cases.
-local_attempts_consumed: 1
-additional_local_allocation: gated_by_exact_source_effect_02_independent_accept
-last_local_job: 5c22da3082784a538aa9f6e2b43c39a4
-last_local_result: INCOMPLETE_WITH_REGRESSION_ERROR
+next_action: Review the exact generated-export/evidence checkpoint and single three-profile hosted effect; preserve original failures and validate native Linux/macOS behavior before support or release claims.
+local_attempts_consumed: 2
+additional_local_allocation: none
+last_local_job: eba95a543dc440258bb26da090db3e86
+last_local_result: PASS
 last_local_retired: true
 hosted_runs_consumed: 0

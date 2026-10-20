@@ -502,7 +502,7 @@ Generated outputs are addressed in [GENERATED_OUTPUTS.md](GENERATED_OUTPUTS.md):
 
 ### Next release and platform direction
 
-**Current portability work:** the [POSIX lifecycle binding](docs/reference/portable-lifecycle-filesystems.md) is being prepared and has not yet passed native qualification. The published release profile remains unchanged.
+**Current portability work:** the [shared lifecycle binding](docs/reference/portable-lifecycle-filesystems.md) passed the local Windows development-package cases, including published 1.1 upgrade/conflict recovery, repair and exit. Linux/macOS native qualification is next. The original interrupted attempt and callback error remain recorded; the published release profile is unchanged.
 
 **AIDE Lite 1.2.0 is the next planned release**, with exact modern profiles still to qualify. Python 3 reference tooling and optional PowerShell Core 7+ adapters share the existing semantic owners; native legacy ports are staged across releases. Future AIDE Extension 1.0 uses shared contracts and distinct IDE adapters/packages. Read the [portability and build plan](docs/reference/portability-and-build-profiles.md) for source boundaries, requested systems and acceptance; planned reach is not current support.
 
