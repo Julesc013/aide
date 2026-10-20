@@ -1,0 +1,78 @@
+{
+  "state": "PASS_FINAL_LOCAL_GROUP_AND_EXACT_REPLAY",
+  "qualification_pass": true,
+  "job_id": "277a45cf944e432d92e619c6f79cbc4d",
+  "subject": {
+    "commit": "1806ec46d0342b2b3da9ddc49667e5c89ccbda10",
+    "tree": "03c1231b67bae8878b8673398eb0923e9cf957b2"
+  },
+  "manifest_digest": "8bc94fb3532e76c0e7d7ca98998bd1589fc436d343f5ed5ccbcb1b0e329860fb",
+  "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "collected_manifest": {
+    "output": "c25a123b9e57ec469e2e8749a857803133fca7ba87eaf6848c3625eabb7acc81",
+    "logs": "4e9b96d2b3d492a06a6b2b676e17e62e2194609df2e4c8c3a7de6b7b4b04cbef"
+  },
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\277a45cf944e432d92e619c6f79cbc4d",
+  "retained_files": 80,
+  "controller_operations": 202,
+  "controller_retained_sha256": "e664445398498ec8cf27c69740d330cf93aff8aa30eb6a1fff86b92b513e22c2",
+  "job_retained_sha256": "68b26f600b91433022178a9eb50606f8d1e43bf1ef17a9c491ad46af1a0b866f",
+  "lossless_roundtrip_verified": true,
+  "phases": {
+    "status": "PASS",
+    "phases": [
+      {
+        "phase": "managed",
+        "state": "PASS",
+        "started_unix_ns": 1792516633838604700,
+        "fixture_retired": true,
+        "finished_unix_ns": 1792516649289311900
+      },
+      {
+        "phase": "brownfield",
+        "state": "PASS",
+        "started_unix_ns": 1792516649289489400,
+        "fixture_retired": true,
+        "finished_unix_ns": 1792516742866517900
+      },
+      {
+        "phase": "replay",
+        "state": "PASS",
+        "started_unix_ns": 1792516742866711200,
+        "fixture_retired": true,
+        "finished_unix_ns": 1792516849974953500
+      }
+    ],
+    "model_requests": 0,
+    "whole_model_usage": "unknown"
+  },
+  "peaks": {
+    "scratch_bytes": 27529942,
+    "memory_bytes": 285040640,
+    "canonical_bytes": {
+      ".aide/release/stable": 6470459
+    }
+  },
+  "result": {
+    "exit_code": 0,
+    "reason": "exited",
+    "quiescent": true,
+    "bytes": 310,
+    "io_errors": [],
+    "job_id": "277a45cf944e432d92e619c6f79cbc4d",
+    "pid": 12916,
+    "creation_filetime": 134369902336775251
+  },
+  "scratch_absent": true,
+  "reservation_released": true,
+  "local_jobs_consumed": 17,
+  "local_job_ceiling": 17,
+  "hosted_runs_consumed": 2,
+  "hosted_jobs_consumed": 5,
+  "export_refreshes_consumed": 2,
+  "support_activated": false,
+  "published": false,
+  "worker_model_requests": 0,
+  "whole_model_usage": "unknown",
+  "next_boundary": "Independent evidence closure and separately reviewed integration/publication/acquisition; no automatic retry."
+}

@@ -1,6 +1,8 @@
-### Scoped changes
+### Current qualification closeout change set
 
-- Existing execution owner/CLI: approve the literal stable subdirectory and compatible ancestor custody, preserving reverse/unknown/traversal refusals and all broader guards.
-- Tests/export: four focused additions, twelve actual custody passes and one owned refresh; all original methods and historical assets preserved.
-- Existing release owner: four frozen 1.2 candidate assets, exact build result and eight original delivered-byte consumer passes.
-- Task/evidence/docs: exact reviews, rejected candidate, immutable result bundles, accurate current status and guarded dev-only synchronization preparation. No additional product implementation, target mutation, provider route or host capability is introduced.
+- **Evidence:** lossless final job/controller collection, exact replay/identity results, scoped 56-form closure and actual independent ACCEPT. Original observations and failures remain unchanged.
+- **Current summaries:** README, TODO, PLANS, CHANGELOG, DOCUMENTATION, execution log, campaign view/digest and task status describe the accepted unpublished candidate and consumed allowances.
+- **Promotion:** the existing synchronization owner is adapted for one guarded dev/main checkpoint, strict pre-promotion warning classification and identical task-local previews. Exact paths and hashes are in `qualified-integration-source.json`; input pins are in `qualified-integration-inputs.json`.
+- **Preserved:** product source, frozen assets, portable export, historical receipts/subjects and canonical previews. No third-party target mutation, new native/hosted job, branch pruning, tag or publication.
+
+The four earlier promotion summaries are preserved in `historical-promotion-records.json`; the first integration candidate and actual REQUEST_CHANGES remain in the `qualified-integration-first-*` and rejected-candidate bundles. [Scope and procedure](../ExecPlan.md), [Git workflow](../../../../docs/reference/git-workflow-policy.md).

@@ -1,0 +1,121 @@
+{
+  "assets": {
+    ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+      "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+      "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+      "size_bytes": 27957
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+      "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+      "size_bytes": 969467
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.zip": {
+      "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+      "size_bytes": 1328652
+    }
+  },
+  "cases": [
+    {
+      "checks": [
+        "real_upstream_conflict_refuses_without_writes",
+        "exact_interrupted_upgrade_recovery",
+        "customization_disabled_examples_and_overlay_remain_project_owned"
+      ],
+      "native_acceptance": true,
+      "preserved": true,
+      "shape": "published-upgrade-brownfield",
+      "subject": "aide-lite-v1.2.0-actual-archive"
+    }
+  ],
+  "commands": [
+    {
+      "label": "published-upgrade-brownfield-old-install-preview",
+      "record": "published-upgrade-brownfield-old-install-preview.json",
+      "record_sha256": "136b963ac5a91bd1e9c6c52a03efc11063c4035d19dfe604bfb4d05965c38eca"
+    },
+    {
+      "label": "published-upgrade-brownfield-old-install-apply",
+      "record": "published-upgrade-brownfield-old-install-apply.json",
+      "record_sha256": "560a045a5a4fd8b0c4ab3170efd07aa91f374d46c27025a93b922c7394faf527"
+    },
+    {
+      "label": "published-upgrade-brownfield-conflict-preview",
+      "record": "published-upgrade-brownfield-conflict-preview.json",
+      "record_sha256": "72a40be64bd06a20747f82ed166dd182c01d01449ba4aa32d603e2ab80f3a3c6"
+    },
+    {
+      "label": "published-upgrade-brownfield-conflict-refusal",
+      "record": "published-upgrade-brownfield-conflict-refusal.json",
+      "record_sha256": "fae642b5f5022338aaa8f93a07bcdb0afde7e9b9998ff0bd436b6a314756fce8"
+    },
+    {
+      "label": "published-upgrade-brownfield-update-preview",
+      "record": "published-upgrade-brownfield-update-preview.json",
+      "record_sha256": "cc94982c4ad87f5ae085c6c2c090e004a9b376d3a651e681e209237931c42de1"
+    },
+    {
+      "label": "published-upgrade-brownfield-ordinary-resume-refusal",
+      "record": "published-upgrade-brownfield-ordinary-resume-refusal.json",
+      "record_sha256": "9e9395d47b2bbb684764a9bce3a21ff935942de5f4723352aee6ee68e744e904"
+    },
+    {
+      "label": "published-upgrade-brownfield-wrong-plan-refusal",
+      "record": "published-upgrade-brownfield-wrong-plan-refusal.json",
+      "record_sha256": "b3f1801efca54082bd7bd54585c098beb473836b969e1972895d18449dd69562"
+    },
+    {
+      "label": "published-upgrade-brownfield-changed-resolution-refusal",
+      "record": "published-upgrade-brownfield-changed-resolution-refusal.json",
+      "record_sha256": "465c1b08bfc85fb2f427cd2bb22149e45688cba6b7b18c32dd81afc7dd7b411b"
+    },
+    {
+      "label": "published-upgrade-brownfield-exact-recovery",
+      "record": "published-upgrade-brownfield-exact-recovery.json",
+      "record_sha256": "fbc116b1936e355fd09af650b40fb5c1572fbb741195d9d8fb8078fbbcd4730f"
+    },
+    {
+      "label": "published-upgrade-brownfield-overlay-removal-preview",
+      "record": "published-upgrade-brownfield-overlay-removal-preview.json",
+      "record_sha256": "b6641266b9982f84ef90240638c7ca17d4c5b747ab1da4473cc7571eaa914d96"
+    }
+  ],
+  "fixture_retired": true,
+  "predecessor": {
+    "assets": [
+      {
+        "path": ".aide/release/stable/aide-lite-v1.1.0.zip",
+        "sha256": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc",
+        "size_bytes": 1231497
+      },
+      {
+        "path": ".aide/release/stable/aide-lite-v1.1.0.tar.gz",
+        "sha256": "7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44",
+        "size_bytes": 885826
+      },
+      {
+        "path": ".aide/release/stable/aide-lite-v1.1.0.manifest.json",
+        "sha256": "38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f",
+        "size_bytes": 6957
+      },
+      {
+        "path": ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt",
+        "sha256": "01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e",
+        "size_bytes": 274
+      }
+    ],
+    "manifest_sha256": "38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f",
+    "profile_id": "aide-lite-local-windows",
+    "source_commit": "447e393b3f87004641b7387c1f33828ac1ee3a85",
+    "source_tree": "e9407c08ecd5e640a4c3223d2cf8a0cbfdd8636d",
+    "tag": "aide-lite-v1.1.0",
+    "tag_commit": "9cead252a1e72c5fe3d3f224b098d98436f7a250",
+    "version": "1.1.0"
+  },
+  "status": "PASS",
+  "support_claimed": false,
+  "whole_model_usage": "unknown",
+  "worker_model_requests": 0
+}

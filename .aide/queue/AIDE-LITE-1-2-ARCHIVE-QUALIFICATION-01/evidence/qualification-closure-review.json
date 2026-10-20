@@ -1,0 +1,21 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "proposal_sha256": "7ae1906f0ddb47bb051a9ae3522e0091185c8bdc548e05bad0c70a632fd4d851",
+  "generator_sha256": "1bcca1af40d79ccd5bd43ed662d2acb64e735ced41820c3fc10c9071780d3617",
+  "required_fixes": [],
+  "scope": "Exact candidate qualification and explicitly bounded transitive behavioral applicability.",
+  "reasons": [
+    "Verified final job identity, 80 retained files, 202 controller operations, stream hashes, retirement, scratch absence and reservation release.",
+    "All three final phases passed; fresh identity/ownership, brownfield and byte-exact archive replay satisfy the outstanding obligations.",
+    "All 56 primary forms are accounted for: ten fresh affected observations and 46 unchanged original observations under the accepted dependency proof.",
+    "The metadata transition changes exactly two archive members; executable payload and relevant Windows/macOS profiles remain unchanged. Retained observations preserve their original subjects.",
+    "Fresh Windows/Linux coverage and accepted macOS applicability remain accurately distinguished."
+  ],
+  "limitations": [
+    "Retained evidence is not execution of the current archives; original receipts, plans, timings and failures remain historical.",
+    "Exact declared environments only; seven managed forms on each additional profile remain unqualified.",
+    "All 17 local allocations, two exports and two hosted runs containing five jobs are consumed.",
+    "Integration and publication preparation may proceed to separate exact review. No integration, support activation, publication or external effect is accepted here."
+  ]
+}

@@ -12,12 +12,12 @@
 - [x] Pass eighteen additive forms and map all 56 primary forms to current evidence; retain the completed fresh predecessor scenario.
 - [x] Qualify the shared live-scan repair with twenty methods and build the revised 879-member candidate, preserving original attempts and complete archive deltas.
 - [x] Sync the reviewed repair and revised candidate to local/remote `dev@03929beb`; verify all 96 operations and 192 streams.
-- [ ] Complete revised managed-form and unfinished brownfield execution; independent review accepted retained behavior applicability while original package identities remain. [Admitted WorkUnit](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md)
 - [x] Qualify the exact revised archive on macOS:49 ordinary forms and both actual-predecessor scenarios.
 - [x] Correct the unpublished Linux profile metadata and source evaluator CRLF framing; verify the metadata-only archive delta and independently review retained macOS behavioral applicability.
 - [x] Complete the targeted Windows/Linux run; preserve original outcomes and independently accepted macOS subjects.
-- [ ] Complete the final affected local group, fresh identity/ownership and release replay before release acceptance.
-- [ ] Complete remaining modern-profile qualification and the final local affected-consumer/brownfield/replay group.
+- [x] Complete the final affected local group, fresh identity/ownership and exact release replay.
+- [x] Independently accept combined Lite 1.2 qualification evidence.
+- [ ] Integrate reviewed source, then complete Lite 1.2 publication and acquired-byte acceptance.
 - [ ] Review publication and acquired-byte consumers after archive/profile acceptance.
 
 **Release and daily use**

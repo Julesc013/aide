@@ -829,3 +829,7 @@ Current writing guide: [commit discipline](docs/reference/commit-discipline.md),
 AIDE-RELEASE-CHECKLIST-PROJECTION-01 corrects the existing report-only checklist, validators and stale-cache reader using the canonical project policy. One separately reviewed finite qualification allocation covers source, development export, installed preservation and fixed preview. Frozen Lite 1.1.0 stays unchanged; actual host participation and downstream ownership remain independent prerequisites.
 
 **Checklist qualification:** AIDE-RELEASE-CHECKLIST-PROJECTION-01 passed 21 source tests, 21 delivered tests, ownership and installed preservation/refusal cases in one retired allocation. Published Lite 1.1.0 is unchanged; exact terminal integration is recorded separately. [Report](.aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/REPORT.md).
+
+### Lite 1.2 qualification and delivery boundary
+
+The [archive qualification report](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md) links the accepted exact profile evidence, original failures, retained behavioral applicability and final replay. Candidate qualification, source integration, public release and acquired-download acceptance are separate states. The campaign current view and its recorded digest now reflect the completed qualification.

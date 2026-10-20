@@ -10296,3 +10296,7 @@ AIDE-RELEASE-CHECKLIST-PROJECTION-01 corrects the existing report-only checklist
 ### Lite 1.2 metadata build and targeted hosted preparation
 
 The metadata-only candidate build passed and retired at `79e2e8c` (`a0557f5c`), preserving 877 archive members and every executable/installed payload. Only stable identity/checksums changed. Independent review accepted retained macOS behavior under its original subjects. Prepared one guarded checkpoint/dev synchronization and the remaining two-profile hosted run using the existing controllers/evaluator; no main, publication or new support claim. Exact results and finite allowance accounting remain in the archive-qualification WorkUnit.
+
+### Lite 1.2 final qualification group
+
+The accepted source/effect at `1806ec46` ran job `277a45cf`, passing managed forms, the unfinished primary brownfield upgrade, fresh identity/ownership and exact replay. Each phase retired; all 80 retained files and controller bytes verify losslessly. The seventeenth allocation is consumed. Combined closure, integration and publication/acquired-byte acceptance remain separate. No payload/export/asset regeneration occurred.

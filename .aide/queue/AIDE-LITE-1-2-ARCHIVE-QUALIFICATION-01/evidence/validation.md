@@ -1,7 +1,9 @@
-### Validation at the dev checkpoint
+### Validation for accepted candidate integration
 
-- Source custody: twelve affected methods passed, zero skips; all 71 original method bodies unchanged. One owned export refresh passed.
-- Build: existing stable-build and stable-validate passed for four exact 1.2 assets. All 58 prior release files, eight historical stable assets and 879 export files were preserved.
-- Actual archives: eight original Windows consumer cases passed on `eb802917`; exact job/config/source/manifest, collection and retirement checks verify. The 198 retained files are available in per-case lossless bundles and summaries.
-- Structural preflight: doctor, validate, pack-status and compact commit checks passed before the build. Validation retained one pre-existing missing review-reference warning, with no failures. Exact dev-checkpoint preflight and range checks are recorded separately.
-- Not run: eighteen additive forms, actual 1.1 predecessor group, hosted archive profiles and release replay. Ten of thirteen local allocations are consumed; no hosted allocation occurred. Controller/review usage remains unknown.
+- **Source/build:** twelve custody checks, twenty corrected-owner checks without skips, two owned exports and the metadata-only candidate build passed. Original fixture failures and interrupted attempts remain preserved.
+- **Primary coverage:** eight original consumers and 18 additions retain their subjects. Accepted dependency proof plus ten fresh affected case-6 observations account for all 56 forms. The unfinished brownfield upgrade, fresh identity/ownership and byte-exact replay passed at `1806ec46` in retired job `277a45cf`.
+- **Additional profiles:** run `39462430710` passed 49 ordinary forms and both actual-predecessor scenarios on Windows Server/Linux. macOS retains independently accepted applicability from run `39456159304`; it is not a new execution of current archives.
+- **Collection:** final 80 retained files and 202 controller operations verified; hosted 987 controller/profile files, 183 operations and 366 streams roundtrip. Scratch is absent and reservations released. All assets and export bytes remain unchanged.
+- **Acceptance:** exact qualification closure received independent ACCEPT in `qualification-closure-review.json`. Current integration still requires its own exact verdict and fresh source/range/helper/ref checks; only the single known missing review-reference warning is allowed.
+- **Budget:** 17/17 local allocations, 2/2 exports, 2/2 hosted runs and 5/5 hosted jobs consumed. No further qualification execution is admitted. Worker model requests are zero; controller/review usage remains unknown.
+- **Open:** reviewed dev/main synchronization, separate publication and acquired-download acceptance. See [review packet](dev-review-packet.md), [ExecPlan](../ExecPlan.md) and [release policy](../../../../governance/release-policy.md).

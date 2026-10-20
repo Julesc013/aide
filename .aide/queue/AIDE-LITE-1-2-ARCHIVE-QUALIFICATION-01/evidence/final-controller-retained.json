@@ -1,0 +1,20 @@
+{
+  "encoding": "ordered-gzip+base64-json-chunks",
+  "files": 405,
+  "raw_bytes": 1113169,
+  "sha256": "8dcf769300e1bf4322ece74a634bbc69fbf4fcad5cc1839df52042412befd1a0",
+  "chunks": [
+    {
+      "path": "final-controller-retained-00.json",
+      "sha256": "f717740ac898c14945b036be8cbc7207bd7a745a8af1b7c4fff3892ff78ddb09",
+      "raw_sha256": "a6b741a5f502a1ca90accdadfb93e7610f8cb17908583385222c219836e60526",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-controller-retained-01.json",
+      "sha256": "3495a8efeb1e9e8ca962decfa2d194f0b90b03c537941d4fe1c40a0d3d0e20d8",
+      "raw_sha256": "cb715e814da6654ca2d36d0bc8dc6651daabdf0720b2ecedb1ee8a98db02176d",
+      "raw_bytes": 64593
+    }
+  ]
+}

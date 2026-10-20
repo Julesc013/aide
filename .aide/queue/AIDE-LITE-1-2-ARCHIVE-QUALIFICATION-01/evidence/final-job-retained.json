@@ -1,0 +1,38 @@
+{
+  "encoding": "ordered-gzip+base64-json-chunks",
+  "files": 80,
+  "raw_bytes": 4424818,
+  "sha256": "dfc1001c831fcb3aab3981f6e7d290aae37345b412ab2cc201cc41aa1bd578fc",
+  "chunks": [
+    {
+      "path": "final-job-retained-00.json",
+      "sha256": "53ce859bc5a919bbebf767c1d8a59fdfe91be02875d5e7457719ed2b970144a4",
+      "raw_sha256": "f855c76da427bb236d097dd6562758014eeb01a101649d0956b7baf72c10ac93",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-job-retained-01.json",
+      "sha256": "a593603c6503dc5432643b2c827f8af9022c3afa231b334056368fa6ba9b4f4a",
+      "raw_sha256": "67d4eb0d670bb5a5a2b3d3f0daccc12d68826595465e98f9b6445bd8db9d6498",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-job-retained-02.json",
+      "sha256": "e1f28cc72a45a64e4c260470bdde98e546079e2478c992449af640fa4a4eea50",
+      "raw_sha256": "6a4d1ad5162bc4527155dc26982c2e2bfd0993a0e8bf3b9ad5d726bb35fd076e",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-job-retained-03.json",
+      "sha256": "bba13e3c9bc38ddb2565f6bd0d7ee5b4b670bf2728f6ce0abd00724d9f5a434e",
+      "raw_sha256": "e4a9758ac0727019bc5ce3520365ddc1414392c098518d312db1b097459dce01",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-job-retained-04.json",
+      "sha256": "c76f3281ed74bde4d5d0c2e6b51e7f802074e128c7e6016f4e84ce9713a64df9",
+      "raw_sha256": "44809af4cd9bf9d9b690029486124034803f1f1f796219fe18f25c8ef4b70803",
+      "raw_bytes": 230514
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+chore(lite): accept qualified candidate and share release evidence
+
+- Preserve exact final managed, brownfield, identity and replay passes with full lossless collection and original failures.
+- Record independent qualification acceptance for the exact candidate and bounded retained evidence; reconcile current docs, status and view digest.
+- Prepare guarded dev/main synchronization through the existing owner, exact source/range validation and matching task-local previews.
+
+Validation: PASS - independent candidate closure acceptance; final17th allocation retired;56primary forms and49ordinary forms per additional profile accounted for; exact replay and complete receipt roundtrips.
+Changelog: Changed: qualify Lite 1.2 candidate and reconcile current delivery evidence
+Risk: Lite 1.1 remains published; no support activation, tag, publication or acquired-byte acceptance is claimed.
+Follow-up: Separately admit publication and acquired-download acceptance; preserve active task checkpoints.
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+AIDE-Format: compact-v1

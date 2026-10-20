@@ -2,11 +2,11 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
 status: running
 result: PENDING
-planning_state: metadata_and_crlf_correction_prepared_exact_build_review_pending
-product_qualified: false
-local_jobs_consumed: 15
-hosted_runs_consumed: 1
-next_action: Preserve all hosted results and independently review a finite Linux environment-metadata and Windows CRLF wrapper correction; no automatic retry or local final-group admission.
+planning_state: exact_candidate_qualified_unpublished_integration_preparation
+product_qualified: true
+local_jobs_consumed: 17
+hosted_runs_consumed: 2
+next_action: Exact reviewed dev/main synchronization, then separately admitted publication and acquired-byte acceptance.
 qualified_source_checkpoint: cb2ddcaf837e2604f34f11211447c551cc85b29b
 canonical_job: 6355e80d38804f89aa9a83fd743be7e1
 canonical_tests_passed: 12
@@ -14,19 +14,19 @@ canonical_test_skips: 0
 export_refreshes_consumed: 2
 build_checkpoint: 89f334f0d06457b4fbd96ca4aba86fce5eb8e43c
 build_job: 781532d1b1b8470ea780a6d99ff5866f
-archive_qualified: false
+archive_qualified: true
 consumer_checkpoint: eb8029171ee2b87f177e88fa5aca6f1994b9833d
 original_consumer_cases_passed: 8
 original_consumer_cases_incomplete: 0
 consumer_retained_files: 198
-dev_checkpoint: 03929beb3c7278975f9c0b3b1378712aeca2ac91
+dev_checkpoint: 52ddd31908ac96b3e891933a066936e72c90b137
 dev_synced_remote: true
 main_checkpoint: ed4a90046eba12a717a9962f21523285667a669b
 remaining_checkpoint: 9ee1880e553e692ad697e0e8699b29439c47317e
 additive_forms_passed: 18
 public_forms_mapped: 56
-predecessor_scenarios_passed: 1
-predecessor_scenarios_incomplete: 1
+predecessor_scenarios_passed: 2
+predecessor_scenarios_incomplete: 0
 predecessor_interrupted_job: 87be5e52947547d4b7cd06e46b493ab6
 predecessor_interrupted_retired: true
 link_repair_checkpoint: c25f16519c0991676c72c2ac41e77852e77b11ad
@@ -57,3 +57,15 @@ hosted_controller_streams: 266
 local_allocation_ceiling: 17
 hosted_run_ceiling: 2
 hosted_job_ceiling: 5
+qualification_scope: exact candidate profiles and bounded behavioral applicability; not full AIDE platform or publication
+qualification_review_ref: evidence/qualification-closure-review.json
+qualification_subject: 1806ec46d0342b2b3da9ddc49667e5c89ccbda10
+final_job: 277a45cf944e432d92e619c6f79cbc4d
+final_retained_files: 80
+original_predecessor_incomplete_attempts_preserved: 1
+primary_predecessor_evidence: retained fresh behavior plus current brownfield and fresh identity
+latest_hosted_run_id: 39462430710
+latest_hosted_profile_files: 618
+latest_hosted_controller_streams: 366
+macos_evidence_method: retained behavioral applicability; original run and archive identities preserved
+published: false

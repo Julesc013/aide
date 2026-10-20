@@ -1,0 +1,27 @@
+{
+  "decision": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "4b74111d0fa0df40eb9313297335627dbbe4d6a06e8099abc02af436c44c2d0d",
+  "effect_sha256": "9e2ea2a912c78e2d8bfa7ec5e9477329334ccef3af97fcb805616546ac7efd2b",
+  "controller_sha256": "6334e7046ee0cbfcd9c97bb7aaea2158bf67f16ceae69fd69c54813444564195",
+  "reasons": [
+    "All 36 mapped files, 2,155 input pins, dirty paths, Git filter identities, current refs, twelve assets and six canonical previews match.",
+    "Accepted qualification evidence remains valid; no product rerun is needed."
+  ],
+  "required_fixes": [
+    {
+      "location": "evidence/{dev-review-packet,validation,changed-files,remaining-risks}.md",
+      "finding": "The required promotion summaries still describe the earlier dev-only checkpoint, unrun qualification and remaining allocation. They do not describe this dev/main promotion.",
+      "remedy": "Preserve the historical summaries and update the four current records with accepted qualification, consumed allowances, exact integration scope, remaining publication boundaries and governing procedure links."
+    },
+    {
+      "location": "sync_qualified.py:224-225",
+      "finding": "Validation before dev promotion accepts arbitrary warnings or OTHER results when PASS and FAIL:0 appear. Strict classification occurs only after the dev push.",
+      "remedy": "Reuse the existing exact numeric-summary and sole-known-warning classification before dev promotion as well as before main."
+    }
+  ],
+  "optional_notes": [
+    "Reconcile remaining current-text contradictions: CURRENT.md still says sixteen allocations consumed, task.yaml describes hosted work prospectively, and TODO.md retains a duplicate unchecked completed-qualification item."
+  ],
+  "next_phase": "Focused review of preserved corrections and rebound source/effect/controller; no new qualification allocation."
+}

@@ -1,0 +1,3925 @@
+{
+  "state": "EXACT_QUALIFICATION_CLOSURE_PENDING_INDEPENDENT_REVIEW",
+  "assets": {
+    ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+      "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+      "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+      "size_bytes": 27957
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+      "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+      "size_bytes": 969467
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.zip": {
+      "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+      "size_bytes": 1328652
+    }
+  },
+  "payload_source": "158a5cdcac7afecbc180a6324ea02e46617d1bc9",
+  "profiles": [
+    {
+      "capabilities": [
+        "local-cli",
+        "owned-lifecycle",
+        "managed-jobs"
+      ],
+      "environment": {
+        "machine": "AMD64",
+        "release": "10",
+        "runtime": {
+          "implementation": "CPython",
+          "version": "3.14.8"
+        },
+        "system": "Windows",
+        "version": "10.0.19045"
+      },
+      "limitations": [
+        "Candidate declaration only; versioned1.2 archives and declared command-form acceptance remain required.",
+        "No outer-client containment or OS network-isolation promise."
+      ],
+      "profile_id": "aide-lite-local-windows",
+      "refused_cli_forms": [],
+      "support_candidate": {
+        "capability_level": "L1",
+        "mode": "companion",
+        "state": "usable",
+        "tier": "T3"
+      },
+      "supported_cli_forms": [
+        "doctor",
+        "validate",
+        "context",
+        "pack --task <task>",
+        "verify --evidence <evidence-path>",
+        "task inspect",
+        "task status",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+        "plan-removal --target <target>",
+        "apply-removal --target <target> --expect-plan <digest>",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+        "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+        "job inspect --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json> --full",
+        "job recover --config <local-config>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>",
+        "job usage --stream <codex-exec-jsonl>",
+        "job usage --attempt-set <attempt-roster-json>",
+        "job context",
+        "task current",
+        "task current --json",
+        "task current --task-id <ID>",
+        "task current --task-id <ID> --json",
+        "task resume-plan",
+        "task resume-plan --json",
+        "task resume-plan --task-id <ID>",
+        "task resume-plan --task-id <ID> --json",
+        "git policy",
+        "git detect",
+        "git plan",
+        "review-pack",
+        "quality ledger",
+        "quality reuse",
+        "quality explain-file <path>",
+        "quality explain-file <path> --json",
+        "job effort --work-set <path>",
+        "job effort --work-set <path> --json"
+      ],
+      "unqualified_cli_forms": []
+    },
+    {
+      "capabilities": [
+        "local-cli",
+        "owned-lifecycle"
+      ],
+      "environment": {
+        "machine": "AMD64",
+        "release": "2025Server",
+        "runtime": {
+          "implementation": "CPython",
+          "version": "3.14.8"
+        },
+        "system": "Windows",
+        "version": "10.0.26100"
+      },
+      "limitations": [
+        "Candidate declaration only; versioned1.2 archives and declared command-form acceptance remain required.",
+        "No outer-client containment or OS network-isolation promise.",
+        "The seven managed setup/inspect/run/recover/wait forms remain unqualified here; an observed native lifecycle pass does not qualify that execution route."
+      ],
+      "profile_id": "aide-lite-local-windows-server",
+      "refused_cli_forms": [],
+      "support_candidate": {
+        "capability_level": "L1",
+        "mode": "companion",
+        "state": "usable",
+        "tier": "T3"
+      },
+      "supported_cli_forms": [
+        "doctor",
+        "validate",
+        "context",
+        "pack --task <task>",
+        "verify --evidence <evidence-path>",
+        "task inspect",
+        "task status",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+        "plan-removal --target <target>",
+        "apply-removal --target <target> --expect-plan <digest>",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+        "job usage --stream <codex-exec-jsonl>",
+        "job usage --attempt-set <attempt-roster-json>",
+        "job context",
+        "task current",
+        "task current --json",
+        "task current --task-id <ID>",
+        "task current --task-id <ID> --json",
+        "task resume-plan",
+        "task resume-plan --json",
+        "task resume-plan --task-id <ID>",
+        "task resume-plan --task-id <ID> --json",
+        "git policy",
+        "git detect",
+        "git plan",
+        "review-pack",
+        "quality ledger",
+        "quality reuse",
+        "quality explain-file <path>",
+        "quality explain-file <path> --json",
+        "job effort --work-set <path>",
+        "job effort --work-set <path> --json"
+      ],
+      "unqualified_cli_forms": [
+        "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+        "job inspect --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json> --full",
+        "job recover --config <local-config>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>"
+      ]
+    },
+    {
+      "capabilities": [
+        "local-cli",
+        "owned-lifecycle"
+      ],
+      "environment": {
+        "machine": "x86_64",
+        "release": "7.0.0-1017-azure",
+        "runtime": {
+          "implementation": "CPython",
+          "version": "3.14.8"
+        },
+        "system": "Linux",
+        "version": "#17~24.04.1-Ubuntu SMP PREEMPT Thu Sep 24 18:46:57 UTC 2026"
+      },
+      "limitations": [
+        "Candidate declaration only; versioned1.2 archives and declared command-form acceptance remain required.",
+        "No outer-client containment or OS network-isolation promise.",
+        "The seven managed setup/inspect/run/recover/wait forms remain unqualified here; an observed native lifecycle pass does not qualify that execution route.",
+        "One cooperative mutation owner; no Windows-style deny-sharing or automatic rename-gap reconciliation."
+      ],
+      "profile_id": "aide-lite-local-linux",
+      "refused_cli_forms": [],
+      "support_candidate": {
+        "capability_level": "L1",
+        "mode": "companion",
+        "state": "usable",
+        "tier": "T3"
+      },
+      "supported_cli_forms": [
+        "doctor",
+        "validate",
+        "context",
+        "pack --task <task>",
+        "verify --evidence <evidence-path>",
+        "task inspect",
+        "task status",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+        "plan-removal --target <target>",
+        "apply-removal --target <target> --expect-plan <digest>",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+        "job usage --stream <codex-exec-jsonl>",
+        "job usage --attempt-set <attempt-roster-json>",
+        "job context",
+        "task current",
+        "task current --json",
+        "task current --task-id <ID>",
+        "task current --task-id <ID> --json",
+        "task resume-plan",
+        "task resume-plan --json",
+        "task resume-plan --task-id <ID>",
+        "task resume-plan --task-id <ID> --json",
+        "git policy",
+        "git detect",
+        "git plan",
+        "review-pack",
+        "quality ledger",
+        "quality reuse",
+        "quality explain-file <path>",
+        "quality explain-file <path> --json",
+        "job effort --work-set <path>",
+        "job effort --work-set <path> --json"
+      ],
+      "unqualified_cli_forms": [
+        "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+        "job inspect --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json> --full",
+        "job recover --config <local-config>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>"
+      ]
+    },
+    {
+      "capabilities": [
+        "local-cli",
+        "owned-lifecycle"
+      ],
+      "environment": {
+        "machine": "arm64",
+        "release": "24.6.0",
+        "runtime": {
+          "implementation": "CPython",
+          "version": "3.14.8"
+        },
+        "system": "Darwin",
+        "version": "Darwin Kernel Version 24.6.0: Tue Jul 21 20:51:34 PDT 2026; root:xnu-11417.140.69.711.44~1/RELEASE_ARM64_VMAPPLE"
+      },
+      "limitations": [
+        "Candidate declaration only; versioned1.2 archives and declared command-form acceptance remain required.",
+        "No outer-client containment or OS network-isolation promise.",
+        "The seven managed setup/inspect/run/recover/wait forms remain unqualified here; an observed native lifecycle pass does not qualify that execution route.",
+        "One cooperative mutation owner; no Windows-style deny-sharing or automatic rename-gap reconciliation."
+      ],
+      "profile_id": "aide-lite-local-macos",
+      "refused_cli_forms": [],
+      "support_candidate": {
+        "capability_level": "L1",
+        "mode": "companion",
+        "state": "usable",
+        "tier": "T3"
+      },
+      "supported_cli_forms": [
+        "doctor",
+        "validate",
+        "context",
+        "pack --task <task>",
+        "verify --evidence <evidence-path>",
+        "task inspect",
+        "task status",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+        "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+        "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+        "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+        "plan-removal --target <target>",
+        "apply-removal --target <target> --expect-plan <digest>",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+        "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+        "job usage --stream <codex-exec-jsonl>",
+        "job usage --attempt-set <attempt-roster-json>",
+        "job context",
+        "task current",
+        "task current --json",
+        "task current --task-id <ID>",
+        "task current --task-id <ID> --json",
+        "task resume-plan",
+        "task resume-plan --json",
+        "task resume-plan --task-id <ID>",
+        "task resume-plan --task-id <ID> --json",
+        "git policy",
+        "git detect",
+        "git plan",
+        "review-pack",
+        "quality ledger",
+        "quality reuse",
+        "quality explain-file <path>",
+        "quality explain-file <path> --json",
+        "job effort --work-set <path>",
+        "job effort --work-set <path> --json"
+      ],
+      "unqualified_cli_forms": [
+        "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+        "job inspect --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json>",
+        "job run --config <local-config> --manifest <job-json> --full",
+        "job recover --config <local-config>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+        "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>"
+      ]
+    }
+  ],
+  "proofs": {
+    "revised-behavior-reuse-proposal.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/revised-behavior-reuse-proposal.json",
+      "sha256": "865a23c02f5f950badaf4ffddcb2b0efba5b47df3947d7b5fa0324d88bc4d5d1"
+    },
+    "revised-behavior-reuse-review.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/revised-behavior-reuse-review.json",
+      "sha256": "3241c6a7c8281dff7b88ca50736e9c23fe3b652f90d50e10e3aac7c012e5ea16"
+    },
+    "profile-macos-reuse-proposal.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/profile-macos-reuse-proposal.json",
+      "sha256": "22510911d06994755436d13f9d7c511a629354cb4ca1dc9ff18522e6251be577"
+    },
+    "profile-macos-reuse-review.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/profile-macos-reuse-review.json",
+      "sha256": "72a6d6e21101dadad294885250c1797b1484a4ccfa103c72f53fe7ff7f093639"
+    },
+    "profile-archive-member-delta.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/profile-archive-member-delta.json",
+      "sha256": "c73f606fa4ee92073b6e21f5334ac46b5405d115ed0518dc3e471fe6c2505a76"
+    },
+    "profile-build-qualified.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/profile-build-qualified.json",
+      "sha256": "9380937cb60aefc05f4ca3b3ff46cd0691b17828a2678708b7bc28792f713e39"
+    },
+    "profile-coverage.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/profile-coverage.json",
+      "sha256": "8fb83e8136aae4c12af570a908db124a0f0419417c90e8a2602014286feaea98"
+    },
+    "profile-hosted-qualified.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/profile-hosted-qualified.json",
+      "sha256": "441f36417b1f61a9d1fa832dc1cc16a56a0b41fa689c6c6d43d2045dbf030746"
+    },
+    "profile-hosted-collection-verified.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/profile-hosted-collection-verified.json",
+      "sha256": "2e7aa393f480e4ec48c8a7808df5963edd21c366a5b68867c95915aef7381572"
+    },
+    "current-cli-coverage.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/current-cli-coverage.json",
+      "sha256": "1a8c80268827f41923bf601cb444460d69e9f9b13bcb1220d9f23b824e4b28be"
+    },
+    "final-qualified.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-qualified.json",
+      "sha256": "56b37e5b578e0d30fee17a1312dd0bbd05e59d6cb5fed8ddb7d533e7df70a9d8"
+    },
+    "final-managed-result.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-managed-result.json",
+      "sha256": "fa1368f50b54e2814d196ea4b4ecbe7174982c8f6cc8d053313b469190f085b3"
+    },
+    "final-brownfield-result.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-brownfield-result.json",
+      "sha256": "2a96f367fe4ba9bfe1f50083c68db5cefce8519ff94f9e9b2d63a608ac9ff2ac"
+    },
+    "final-replay-result.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-replay-result.json",
+      "sha256": "08d1e527ef8c30d9b1bc02ea0026156a4a95689cb44aa7be810c6f2695048688"
+    },
+    "final-primary_identity-result.json": {
+      "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-primary_identity-result.json",
+      "sha256": "04358eea6f9210d276f2d30356165044ed2533687b3b6790e60ab6b71a18abf7"
+    }
+  },
+  "primary_form_witnesses": [
+    {
+      "form": "doctor",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "b4e2c8f2c03547d2befee3e1987ee316",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-retained.json",
+        "bundle_sha256": "2021eee36e07598021547680a70ee7455b48901a1c08813f004e87004a753cb0",
+        "member": "output/case-00/fresh-installed-doctor.json",
+        "member_sha256": "82ab758811a11d82cb82927aabb858055f540e6bc6420fea7516b7c47f66112f",
+        "argv_tail": [
+          "doctor"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "validate",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "267265c8c514463a8e57c16ef51a9014",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-04-retained.json",
+        "bundle_sha256": "2ace222d44d07977c0da53a7e088d5d2e919df5bf1044e36737454ee8f6b8b6f",
+        "member": "output/case-04/installed-validate.json",
+        "member_sha256": "12798da6929bf10ae79ce5be8db895db044c1b47332f377d7af049ebad1ffeee",
+        "argv_tail": [
+          "validate"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "context",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "d05dac295213417dbe60eaecd9e7c66e",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-02-retained.json",
+        "bundle_sha256": "b6a574c8a502a575cfbfc0cf9e284ff80f19e5a7dcc0dc61004c4661a5b06666",
+        "member": "output/case-02/brownfield-context.json",
+        "member_sha256": "7891807ffe23472a650862f3c4ad74fe3fb1faa7d163017bf56a0d95275f3a1c",
+        "argv_tail": [
+          "context"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "pack --task <task>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "d05dac295213417dbe60eaecd9e7c66e",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-02-retained.json",
+        "bundle_sha256": "b6a574c8a502a575cfbfc0cf9e284ff80f19e5a7dcc0dc61004c4661a5b06666",
+        "member": "output/case-02/brownfield-pack.json",
+        "member_sha256": "b2e0ed1b037d22db8ec7089f769d7192b9dc61601ac0cf4411616fd8d8884bde",
+        "argv_tail": [
+          "pack",
+          "--task",
+          "Inspect disposable target context offline"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "verify --evidence <evidence-path>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "d05dac295213417dbe60eaecd9e7c66e",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-02-retained.json",
+        "bundle_sha256": "b6a574c8a502a575cfbfc0cf9e284ff80f19e5a7dcc0dc61004c4661a5b06666",
+        "member": "output/case-02/brownfield-verify.json",
+        "member_sha256": "ba92738c54e20aa6657201256c6c0a8c39b3abef8f42e02dcb2470be260d2cb1",
+        "argv_tail": [
+          "verify",
+          "--evidence",
+          ".aide\\queue\\LOCAL-CONTEXT-CANARY-01\\evidence\\validation.md"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "task inspect",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "267265c8c514463a8e57c16ef51a9014",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-04-retained.json",
+        "bundle_sha256": "2ace222d44d07977c0da53a7e088d5d2e919df5bf1044e36737454ee8f6b8b6f",
+        "member": "output/case-04/empty-task-inspect.json",
+        "member_sha256": "dc82c1e0d78c2d996ec1f505f1b1c467767ce96cf6513c2e658153ba32bb184f",
+        "argv_tail": [
+          "task",
+          "inspect"
+        ],
+        "exit_code": 1
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "task status",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "267265c8c514463a8e57c16ef51a9014",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-04-retained.json",
+        "bundle_sha256": "2ace222d44d07977c0da53a7e088d5d2e919df5bf1044e36737454ee8f6b8b6f",
+        "member": "output/case-04/task-status.json",
+        "member_sha256": "3e7e4f47928d30ed4eaee58f98b256ce08742ee4bb1acdf3a97d3dcb6ba80382",
+        "argv_tail": [
+          "task",
+          "status"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/install-preview.json",
+        "member_sha256": "c196cedef2e0ab6784718d28a423ad73b81313c5f0fa73d51aa5ec5b5ac18a21",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\ac135cc311e54827a381463b6ecad185\\tmp\\case-additions\\archive\\aide-lite-pack-v0",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\ac135cc311e54827a381463b6ecad185\\tmp\\case-additions\\target",
+          "--mode",
+          "safe",
+          "--dry-run"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/install-apply.json",
+        "member_sha256": "21d1accb7963a215629e5419751213143784f6b41ad74349fd5983fddb201691",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\ac135cc311e54827a381463b6ecad185\\tmp\\case-additions\\archive\\aide-lite-pack-v0",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\ac135cc311e54827a381463b6ecad185\\tmp\\case-additions\\target",
+          "--mode",
+          "safe",
+          "--expect-plan",
+          "567fbe4118c531edf3fe20035f6091ab5e645c550bdba0f856a737ac15ebd8dc"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "b4e2c8f2c03547d2befee3e1987ee316",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-retained.json",
+        "bundle_sha256": "2021eee36e07598021547680a70ee7455b48901a1c08813f004e87004a753cb0",
+        "member": "output/case-00/fresh-disabled-v3-preview.json",
+        "member_sha256": "e3d3f7518714a50c5df07c755789192907205cafc0cceb7457fb4083b5b8a3d0",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\synthetic-v3",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\fresh-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\synthetic-v2",
+          "--dry-run"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "b4e2c8f2c03547d2befee3e1987ee316",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-retained.json",
+        "bundle_sha256": "2021eee36e07598021547680a70ee7455b48901a1c08813f004e87004a753cb0",
+        "member": "output/case-00/fresh-disabled-v2-apply.json",
+        "member_sha256": "c0bde2e9dbeebcf19437bbb330019b3c38774a1af2ca4a7e4c6814db9864f972",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\synthetic-v2",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\fresh-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\candidate-zip\\aide-lite-pack-v0",
+          "--expect-plan",
+          "dbe4ebe6be3ecbbf3fad68a4075975d62ec6a59b434c1f99f50083bc1b449bcf"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "b4e2c8f2c03547d2befee3e1987ee316",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-retained.json",
+        "bundle_sha256": "2021eee36e07598021547680a70ee7455b48901a1c08813f004e87004a753cb0",
+        "member": "output/case-00/brown-v2-resolved-plain-preview.json",
+        "member_sha256": "e9749f69fe14249657b4b8a86a585a145136f1698207177526beec531aed4acb",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\synthetic-v2",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\brownfield-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\candidate-zip\\aide-lite-pack-v0",
+          "--resolve",
+          ".aide/prompts/compact-task.md",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\selected-v2-resolution.txt",
+          "--dry-run"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "b4e2c8f2c03547d2befee3e1987ee316",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-retained.json",
+        "bundle_sha256": "2021eee36e07598021547680a70ee7455b48901a1c08813f004e87004a753cb0",
+        "member": "output/case-00/brown-v2-resolved-apply.json",
+        "member_sha256": "4e5e9eaeef5bc1506abf09aee0fd7e6f23b730c147829454a77a67a30937c43b",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\synthetic-v2",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\brownfield-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\candidate-zip\\aide-lite-pack-v0",
+          "--resolve",
+          ".aide/prompts/compact-task.md",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\selected-v2-resolution.txt",
+          "--expect-plan",
+          "ee41340c91e18e8de340098a8e4367b88f72506a3c327e340663d4df4a80cdf2"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "b4e2c8f2c03547d2befee3e1987ee316",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-retained.json",
+        "bundle_sha256": "2021eee36e07598021547680a70ee7455b48901a1c08813f004e87004a753cb0",
+        "member": "output/case-00/brown-agents-overlay-preview.json",
+        "member_sha256": "df6b23eaecf9794bdd67807149da5984fbc99fc7585758ef89891bb5355995dc",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\synthetic-v3",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\brownfield-target",
+          "--mode",
+          "safe",
+          "--dry-run",
+          "--explain"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "b4e2c8f2c03547d2befee3e1987ee316",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-retained.json",
+        "bundle_sha256": "2021eee36e07598021547680a70ee7455b48901a1c08813f004e87004a753cb0",
+        "member": "output/case-00/fresh-disabled-v2-preview.json",
+        "member_sha256": "693e99f1adc5b5c17134ab49e2bba8b174c47c918071459b95810356d2c57c19",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\synthetic-v2",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\fresh-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\candidate-zip\\aide-lite-pack-v0",
+          "--dry-run",
+          "--explain"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "b4e2c8f2c03547d2befee3e1987ee316",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-retained.json",
+        "bundle_sha256": "2021eee36e07598021547680a70ee7455b48901a1c08813f004e87004a753cb0",
+        "member": "output/case-00/brown-v3-resolved-preview.json",
+        "member_sha256": "0d927ac2cd7f5d3e69213ac78363b68496329792349ad592de7f73a75fa2a8a9",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\synthetic-v3",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\brownfield-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\synthetic-v2",
+          "--resolve",
+          ".aide/prompts/compact-task.md",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\selected-v3-resolution.txt",
+          "--dry-run",
+          "--explain"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "267265c8c514463a8e57c16ef51a9014",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-04-retained.json",
+        "bundle_sha256": "2ace222d44d07977c0da53a7e088d5d2e919df5bf1044e36737454ee8f6b8b6f",
+        "member": "output/case-04/explicit-feedback.json",
+        "member_sha256": "b069d4060977ab9f9f2887c0bd083dffe4aca4a800c097233d728d6e330907a3",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\267265c8c514463a8e57c16ef51a9014\\tmp\\case-04\\public-cli\\candidate\\aide-lite-pack-v0",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\267265c8c514463a8e57c16ef51a9014\\tmp\\case-04\\public-cli\\target",
+          "--mode",
+          "safe",
+          "--dry-run",
+          "--explain",
+          "--feedback-out",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\267265c8c514463a8e57c16ef51a9014\\tmp\\case-04\\public-cli\\local-feedback.json"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "5bf7a38574e14f25bb31f78cdd5f04ee",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-03-retained.json",
+        "bundle_sha256": "a0e5e6905f163712c0beb87f56e9814fad8f79a84a3129e72f403e7e6afde90d",
+        "member": "output/case-03/predecessor-feedback-preview.json",
+        "member_sha256": "ae5907ee4b8ef5f9733066a9a7fea2ae2b90e522b2152de5ae59b6a1b22b3d82",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\synthetic-v2",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\zip\\aide-lite-pack-v0",
+          "--dry-run",
+          "--explain",
+          "--feedback-out",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\update-feedback.json"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "b4e2c8f2c03547d2befee3e1987ee316",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-retained.json",
+        "bundle_sha256": "2021eee36e07598021547680a70ee7455b48901a1c08813f004e87004a753cb0",
+        "member": "output/case-00/brown-v2-resolved-preview.json",
+        "member_sha256": "18bb7ba868337d89df65b9e818bb1e4fa9f04687fa12c27609ebafd878ba50d0",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\synthetic-v2",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\brownfield-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\candidate-zip\\aide-lite-pack-v0",
+          "--resolve",
+          ".aide/prompts/compact-task.md",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\selected-v2-resolution.txt",
+          "--dry-run",
+          "--explain",
+          "--feedback-out",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\brown-v2-resolved-feedback.json"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "5bf7a38574e14f25bb31f78cdd5f04ee",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-03-retained.json",
+        "bundle_sha256": "a0e5e6905f163712c0beb87f56e9814fad8f79a84a3129e72f403e7e6afde90d",
+        "member": "output/case-03/fresh-cli-recover.json",
+        "member_sha256": "90963dbd40f943f3cb87ef3f5fbfae4617a47b983f310f572df3d9a8ffa20c45",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\zip\\aide-lite-pack-v0",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\target",
+          "--mode",
+          "safe",
+          "--recover-partial",
+          "--expect-plan",
+          "07464d4b2bc53e9652a0dfd9f2b74771ff194be2ce57827a94cc0fe8add991e2"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "5bf7a38574e14f25bb31f78cdd5f04ee",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-03-retained.json",
+        "bundle_sha256": "a0e5e6905f163712c0beb87f56e9814fad8f79a84a3129e72f403e7e6afde90d",
+        "member": "output/case-03/update-cli-recover.json",
+        "member_sha256": "0eec4e1cfb06c40ca12e25c7e9a5fb2e6df7401a016d66feabaee0d89d78e433",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\synthetic-v2",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\zip\\aide-lite-pack-v0",
+          "--recover-partial",
+          "--expect-plan",
+          "60cfecb8962ca87eab7ebf5603db82b443cc3d4ae0fe43ba5672ae7b9407e00b"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "5bf7a38574e14f25bb31f78cdd5f04ee",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-03-retained.json",
+        "bundle_sha256": "a0e5e6905f163712c0beb87f56e9814fad8f79a84a3129e72f403e7e6afde90d",
+        "member": "output/case-03/resolved-cli-recover.json",
+        "member_sha256": "690729d6045cda49907d2890adbcb94e98254c368ea481eff351dcc5e4b729d6",
+        "argv_tail": [
+          "import-pack",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\synthetic-v3",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\synthetic-v2",
+          "--resolve",
+          ".aide/prompts/compact-task.md",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\selected-resolution.txt",
+          "--recover-partial",
+          "--expect-plan",
+          "0360cc86a5616dafbabb607112145086fdf0be28c87530d4f4c6eac7d2f34de8"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "c187a939925942618c459fab539b6387",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-01-retained.json",
+        "bundle_sha256": "cf2ec6a286b4098947458859b3ad9a7cf91a057a7af25420d099ae3a5fbf9a31",
+        "member": "output/case-01/rollback-preview.json",
+        "member_sha256": "ec4f0f63b8982ccf4cf04fc70b9e3e70eadbb3b2b4723c1d4f3336b8f7146e9e",
+        "argv_tail": [
+          "rollback-pack",
+          "--current-pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\c187a939925942618c459fab539b6387\\tmp\\case-01\\run-lifecycle\\synthetic-rollback-v2",
+          "--previous-pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\c187a939925942618c459fab539b6387\\tmp\\case-01\\run-lifecycle\\candidate\\aide-lite-pack-v0",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\c187a939925942618c459fab539b6387\\tmp\\case-01\\run-lifecycle\\rollback-brownfield",
+          "--dry-run",
+          "--json"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "c187a939925942618c459fab539b6387",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-01-retained.json",
+        "bundle_sha256": "cf2ec6a286b4098947458859b3ad9a7cf91a057a7af25420d099ae3a5fbf9a31",
+        "member": "output/case-01/rollback-apply.json",
+        "member_sha256": "d61477052ef2e8374e39aeeeae5f0f1358411132b097dc5fa021c5b556717c43",
+        "argv_tail": [
+          "rollback-pack",
+          "--current-pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\c187a939925942618c459fab539b6387\\tmp\\case-01\\run-lifecycle\\synthetic-rollback-v2",
+          "--previous-pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\c187a939925942618c459fab539b6387\\tmp\\case-01\\run-lifecycle\\candidate\\aide-lite-pack-v0",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\c187a939925942618c459fab539b6387\\tmp\\case-01\\run-lifecycle\\rollback-brownfield",
+          "--expect-plan",
+          "4c9ad24c8d7638ee24da601be935c60da2468234a7b0bc0497a5287a0a89fb15",
+          "--json"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "plan-removal --target <target>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "c187a939925942618c459fab539b6387",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-01-retained.json",
+        "bundle_sha256": "cf2ec6a286b4098947458859b3ad9a7cf91a057a7af25420d099ae3a5fbf9a31",
+        "member": "output/case-01/brown-removal-preview.json",
+        "member_sha256": "bfa4464cf2e532c2d2fd7e95841dde36971410cb68af198903ee8cde5ced4546",
+        "argv_tail": [
+          "plan-removal",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\c187a939925942618c459fab539b6387\\tmp\\case-01\\run-lifecycle\\brown-removal",
+          "--json"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "apply-removal --target <target> --expect-plan <digest>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "c187a939925942618c459fab539b6387",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-01-retained.json",
+        "bundle_sha256": "cf2ec6a286b4098947458859b3ad9a7cf91a057a7af25420d099ae3a5fbf9a31",
+        "member": "output/case-01/brown-removal-apply.json",
+        "member_sha256": "f7cd3f24a86a500dd5a0d64a63b79ac57f504803fe977902787dbdac6121faa0",
+        "argv_tail": [
+          "apply-removal",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\c187a939925942618c459fab539b6387\\tmp\\case-01\\run-lifecycle\\brown-removal",
+          "--expect-plan",
+          "8cd598b6bc6c5024b437e996bbe13dbd9435d7522c4d94c54df62c47f11fce90",
+          "--json"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "b4e2c8f2c03547d2befee3e1987ee316",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-retained.json",
+        "bundle_sha256": "2021eee36e07598021547680a70ee7455b48901a1c08813f004e87004a753cb0",
+        "member": "output/case-00/fresh-missing-owned-repair-preview.json",
+        "member_sha256": "3ae816e506fea18a526f969713d1b36810e969c360672022f6b7f11ffb306cee",
+        "argv_tail": [
+          "repair-owned-file",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\synthetic-v3",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\b4e2c8f2c03547d2befee3e1987ee316\\tmp\\case-00\\run-consumer\\fresh-target",
+          "--path",
+          ".aide/prompts/compact-task.md",
+          "--dry-run"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "c187a939925942618c459fab539b6387",
+        "subject": {
+          "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+          "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-01-retained.json",
+        "bundle_sha256": "cf2ec6a286b4098947458859b3ad9a7cf91a057a7af25420d099ae3a5fbf9a31",
+        "member": "output/case-01/repair-apply.json",
+        "member_sha256": "fc1f09e193ff9c64b4dc6cb68b626c9d59caddeb7af105ee3c25fb8b888cb0e4",
+        "argv_tail": [
+          "repair-owned-file",
+          "--pack",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\c187a939925942618c459fab539b6387\\tmp\\case-01\\run-lifecycle\\candidate\\aide-lite-pack-v0",
+          "--target",
+          "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\c187a939925942618c459fab539b6387\\tmp\\case-01\\run-lifecycle\\fresh-repair",
+          "--path",
+          ".aide/prompts/compact-task.md",
+          "--expect-plan",
+          "68cc5c449b2c89caf5f23ccb2e3e496c9966ddc9d4067c34156daf73baf508c2"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+      "method": "fresh_affected_original_case6",
+      "job_id": "277a45cf944e432d92e619c6f79cbc4d",
+      "subject": {
+        "commit": "1806ec46d0342b2b3da9ddc49667e5c89ccbda10",
+        "tree": "03c1231b67bae8878b8673398eb0923e9cf957b2"
+      },
+      "assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "bundle": "evidence/final-job-retained.json",
+      "member": "output/managed/case-06/command_outputs/job-setup-existing.json",
+      "member_sha256": "a459828af96a712951d6bdb00761198d700dbadc22b846f1a684e0f871442d33",
+      "actual_argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files\\.aide\\scripts\\aide_lite.py",
+        "--repo-root",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files",
+        "job",
+        "setup",
+        "--config",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\consumer\\project\\.aide.local\\execution.json",
+        "--selection",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\consumer\\selection.json",
+        "--approved-parent",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\consumer"
+      ],
+      "exit_code": 0
+    },
+    {
+      "form": "job inspect --config <local-config> --manifest <job-json>",
+      "method": "fresh_affected_original_case6",
+      "job_id": "277a45cf944e432d92e619c6f79cbc4d",
+      "subject": {
+        "commit": "1806ec46d0342b2b3da9ddc49667e5c89ccbda10",
+        "tree": "03c1231b67bae8878b8673398eb0923e9cf957b2"
+      },
+      "assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "bundle": "evidence/final-job-retained.json",
+      "member": "output/managed/case-06/command_outputs/job-inspect.json",
+      "member_sha256": "2dc91a0b5480d1b64f6cdc40791b9f4e99dac58f080011425da46d5474c4b120",
+      "actual_argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files\\.aide\\scripts\\aide_lite.py",
+        "--repo-root",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files",
+        "job",
+        "inspect",
+        "--config",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\consumer\\project\\.aide.local\\execution.json",
+        "--manifest",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\consumer\\project\\.aide.local\\current-job-form-probe.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "form": "job run --config <local-config> --manifest <job-json>",
+      "method": "fresh_affected_original_case6",
+      "job_id": "277a45cf944e432d92e619c6f79cbc4d",
+      "subject": {
+        "commit": "1806ec46d0342b2b3da9ddc49667e5c89ccbda10",
+        "tree": "03c1231b67bae8878b8673398eb0923e9cf957b2"
+      },
+      "assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "bundle": "evidence/final-job-retained.json",
+      "member": "output/managed/case-06/command_outputs/job-run.json",
+      "member_sha256": "c824c0b2ebb159568a8a5ca45d85324239fe7d38f4086ec0a9df64e2e705a316",
+      "actual_argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files\\.aide\\scripts\\aide_lite.py",
+        "--repo-root",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files",
+        "job",
+        "run",
+        "--config",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\consumer\\project\\.aide.local\\execution.json",
+        "--manifest",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\consumer\\project\\.aide.local\\current-job-form-probe.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "form": "job run --config <local-config> --manifest <job-json> --full",
+      "method": "fresh_affected_original_case6",
+      "job_id": "277a45cf944e432d92e619c6f79cbc4d",
+      "subject": {
+        "commit": "1806ec46d0342b2b3da9ddc49667e5c89ccbda10",
+        "tree": "03c1231b67bae8878b8673398eb0923e9cf957b2"
+      },
+      "assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "bundle": "evidence/final-job-retained.json",
+      "member": "output/managed/case-06/command_outputs/job-run-full.json",
+      "member_sha256": "570fe6b0f6b9aea76941a4038004f4db247fde169602248a64eae516f4099e0d",
+      "actual_argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files\\.aide\\scripts\\aide_lite.py",
+        "--repo-root",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files",
+        "job",
+        "run",
+        "--config",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\consumer\\project\\.aide.local\\execution.json",
+        "--manifest",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\consumer\\project\\.aide.local\\current-job-form-probe.json",
+        "--full"
+      ],
+      "exit_code": 0
+    },
+    {
+      "form": "job recover --config <local-config>",
+      "method": "fresh_affected_original_case6",
+      "job_id": "277a45cf944e432d92e619c6f79cbc4d",
+      "subject": {
+        "commit": "1806ec46d0342b2b3da9ddc49667e5c89ccbda10",
+        "tree": "03c1231b67bae8878b8673398eb0923e9cf957b2"
+      },
+      "assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "bundle": "evidence/final-job-retained.json",
+      "member": "output/managed/case-06/command_outputs/job-recover.json",
+      "member_sha256": "99bece193c3065020aa96dd8c46d19fef5ef69d12b24ad2acd2f5f05781342a4",
+      "actual_argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files\\.aide\\scripts\\aide_lite.py",
+        "--repo-root",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files",
+        "job",
+        "recover",
+        "--config",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\consumer\\project\\.aide.local\\execution.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "form": "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+      "method": "fresh_affected_original_case6",
+      "job_id": "277a45cf944e432d92e619c6f79cbc4d",
+      "subject": {
+        "commit": "1806ec46d0342b2b3da9ddc49667e5c89ccbda10",
+        "tree": "03c1231b67bae8878b8673398eb0923e9cf957b2"
+      },
+      "assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "bundle": "evidence/final-job-retained.json",
+      "member": "output/managed/case-06/command_outputs/job-wait-default.json",
+      "member_sha256": "82469b6b04ad3936c5b260c3087c7a23ff5db80ff6d74c7704b7ade1303e3b53",
+      "actual_argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files\\.aide\\scripts\\aide_lite.py",
+        "--repo-root",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files",
+        "job",
+        "wait",
+        "--config",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\consumer\\project\\.aide.local\\execution.json",
+        "--job-id",
+        "87628cb8eefb4e4eb8e11c8f6c82cf55",
+        "--manifest-digest",
+        "942231923620321ea42c6c89974697e0290edb2e7e35100fbe7b681630b136b7"
+      ],
+      "exit_code": 0
+    },
+    {
+      "form": "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>",
+      "method": "fresh_affected_original_case6",
+      "job_id": "277a45cf944e432d92e619c6f79cbc4d",
+      "subject": {
+        "commit": "1806ec46d0342b2b3da9ddc49667e5c89ccbda10",
+        "tree": "03c1231b67bae8878b8673398eb0923e9cf957b2"
+      },
+      "assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "bundle": "evidence/final-job-retained.json",
+      "member": "output/managed/case-06/command_outputs/job-wait.json",
+      "member_sha256": "f6424e0dba687df9f4d80f59b93e0403f0b4aeb40a98f2418d0354f7c75a94fa",
+      "actual_argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files\\.aide\\scripts\\aide_lite.py",
+        "--repo-root",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files",
+        "job",
+        "wait",
+        "--config",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\consumer\\project\\.aide.local\\execution.json",
+        "--job-id",
+        "87628cb8eefb4e4eb8e11c8f6c82cf55",
+        "--manifest-digest",
+        "942231923620321ea42c6c89974697e0290edb2e7e35100fbe7b681630b136b7",
+        "--timeout-seconds",
+        "0"
+      ],
+      "exit_code": 0
+    },
+    {
+      "form": "job usage --attempt-set <attempt-roster-json>",
+      "method": "fresh_affected_original_case6",
+      "job_id": "277a45cf944e432d92e619c6f79cbc4d",
+      "subject": {
+        "commit": "1806ec46d0342b2b3da9ddc49667e5c89ccbda10",
+        "tree": "03c1231b67bae8878b8673398eb0923e9cf957b2"
+      },
+      "assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "bundle": "evidence/final-job-retained.json",
+      "member": "output/managed/case-06/command_outputs/job-usage-attempt-set.json",
+      "member_sha256": "954d4addffff82e36f139dda8fb8013f5cba81e9dcda477f606ab42182a65c11",
+      "actual_argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files\\.aide\\scripts\\aide_lite.py",
+        "--repo-root",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files",
+        "job",
+        "usage",
+        "--attempt-set",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\synthetic-attempt-roster.json"
+      ],
+      "exit_code": 2
+    },
+    {
+      "form": "job context",
+      "method": "fresh_affected_original_case6",
+      "job_id": "277a45cf944e432d92e619c6f79cbc4d",
+      "subject": {
+        "commit": "1806ec46d0342b2b3da9ddc49667e5c89ccbda10",
+        "tree": "03c1231b67bae8878b8673398eb0923e9cf957b2"
+      },
+      "assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "bundle": "evidence/final-job-retained.json",
+      "member": "output/managed/case-06/command_outputs/job-context.json",
+      "member_sha256": "24132d1a5857279cd7d0ac6e06c606fd20268cb1cce87405b369e6639c4f0656",
+      "actual_argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files\\.aide\\scripts\\aide_lite.py",
+        "--repo-root",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files",
+        "job",
+        "context"
+      ],
+      "exit_code": 0
+    },
+    {
+      "form": "git detect",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/git-detect.json",
+        "member_sha256": "fb36c1e276f7ab429b47b237ea716c2c47af0a8399cb0e65d4f72e955057bd5e",
+        "argv_tail": [
+          "git",
+          "detect"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "git plan",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/git-plan.json",
+        "member_sha256": "417b7a979014de107f3346bcb1101a1d2daa14ef9ae4c96fce6aa336c5ff1111",
+        "argv_tail": [
+          "git",
+          "plan"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "git policy",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/git-policy.json",
+        "member_sha256": "dba5b2c25b6f3814bcb0a582651cee3c9260770d378c178b0c032160ecc128f7",
+        "argv_tail": [
+          "git",
+          "policy"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "job effort --work-set <path>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/effort-human.json",
+        "member_sha256": "c582b9a9b203da2223f9d2e2b3b9e5b304fabddfec70971b48c61a2073cd09f5",
+        "argv_tail": [
+          "job",
+          "effort",
+          "--work-set",
+          "fixture-work.json"
+        ],
+        "exit_code": 2
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "job effort --work-set <path> --json",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/effort-json.json",
+        "member_sha256": "7248c2bf4735c8091097b726f44fa8a767d2cf4f6d71ff14ed3f43bcc4b28ccc",
+        "argv_tail": [
+          "job",
+          "effort",
+          "--work-set",
+          "fixture-work.json",
+          "--json"
+        ],
+        "exit_code": 2
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "quality explain-file <path>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/quality-human.json",
+        "member_sha256": "eef832f55aef9534ff5a3dd2982c675e218fc925f8fadae7aebfaa4f23f5b8fc",
+        "argv_tail": [
+          "quality",
+          "explain-file",
+          "app/main.py"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "quality explain-file <path> --json",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/quality-json.json",
+        "member_sha256": "90ed9edc488144e3a363cd3ca215cb680463e87a5ba61f50483855c56b924356",
+        "argv_tail": [
+          "quality",
+          "explain-file",
+          "app/helper.py",
+          "--json"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "quality ledger",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/quality-ledger.json",
+        "member_sha256": "07ce83bbc506b77a0a95d8b01204e707bf260991a62c114273492a631207f255",
+        "argv_tail": [
+          "quality",
+          "ledger"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "quality reuse",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/quality-reuse.json",
+        "member_sha256": "2487bd8d18a5513c6123a71a791894930a31e1e9a2617f6935d915d7eda7f32b",
+        "argv_tail": [
+          "quality",
+          "reuse"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "review-pack",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/review-pack.json",
+        "member_sha256": "746dce70a2cca1728c413c8e685ff11f04e509e7094601353fc1e3ecf1d37952",
+        "argv_tail": [
+          "review-pack"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "task current",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/current-False-False.json",
+        "member_sha256": "a4950393354640957a2755bd80ba7328d35a0e7f634c0032d23296e43a195053",
+        "argv_tail": [
+          "task",
+          "current"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "task current --json",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/current-False-True.json",
+        "member_sha256": "db9a1b81c53e349b7331a24063923ca2840b7da99efa815526019e388f79dd52",
+        "argv_tail": [
+          "task",
+          "current",
+          "--json"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "task current --task-id <ID>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/current-True-False.json",
+        "member_sha256": "d84ff16fce2acf194166c41300278e5841189cb87bbea5e0d16f99b8b3cf4186",
+        "argv_tail": [
+          "task",
+          "current",
+          "--task-id",
+          "DELIVERED-ADDITIONS-01"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "task current --task-id <ID> --json",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/current-True-True.json",
+        "member_sha256": "17514544a6f2c77b34df1e8176aa6def1aa54772a3502a92102e2da16e52b5e3",
+        "argv_tail": [
+          "task",
+          "current",
+          "--task-id",
+          "DELIVERED-ADDITIONS-01",
+          "--json"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "task resume-plan",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/resume-plan-False-False.json",
+        "member_sha256": "c21a7eb49a6e7cd6429b0ac70ccc6ebcfe1442b7437d84ce27d31365086b0e3b",
+        "argv_tail": [
+          "task",
+          "resume-plan"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "task resume-plan --json",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/resume-plan-False-True.json",
+        "member_sha256": "2fdaf176fe6751fce5eab2086e592bc38510420aa7f6314ee4f73a82108c8709",
+        "argv_tail": [
+          "task",
+          "resume-plan",
+          "--json"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "task resume-plan --task-id <ID>",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/resume-plan-True-False.json",
+        "member_sha256": "800393e070126efed79c72b442e0d5915d9c215cc63d43f0ae87523bacff92bb",
+        "argv_tail": [
+          "task",
+          "resume-plan",
+          "--task-id",
+          "DELIVERED-ADDITIONS-01"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "task resume-plan --task-id <ID> --json",
+      "method": "retained_behavioral_applicability",
+      "original_observation": {
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "subject": {
+          "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+          "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+          "branch": "task/aide-lite-1-2-archive-qualification-01"
+        },
+        "bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-additions-retained.json",
+        "bundle_sha256": "a5a8e6cc4edd059324da9caf547d03366a83fbeec549c02228c2d5c9bcad321a",
+        "member": "output/resume-plan-True-True.json",
+        "member_sha256": "a95e103e09e20c95843510c89cb46b47bb180c74da22f9a5bdcc3d632b0e27f4",
+        "argv_tail": [
+          "task",
+          "resume-plan",
+          "--task-id",
+          "DELIVERED-ADDITIONS-01",
+          "--json"
+        ],
+        "exit_code": 0
+      },
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+          "size_bytes": 969110
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+          "size_bytes": 1328283
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "reason": "Accepted dependency envelope plus executable/payload-identical metadata correction; Windows profile unchanged; fresh identity/ownership and exact replay now passed."
+    },
+    {
+      "form": "job usage --stream <codex-exec-jsonl>",
+      "method": "fresh_affected_original_case6",
+      "job_id": "277a45cf944e432d92e619c6f79cbc4d",
+      "subject": {
+        "commit": "1806ec46d0342b2b3da9ddc49667e5c89ccbda10",
+        "tree": "03c1231b67bae8878b8673398eb0923e9cf957b2"
+      },
+      "assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "bundle": "evidence/final-job-retained.json",
+      "member": "output/managed/case-06/command_outputs/job-usage.json",
+      "member_sha256": "cefa12c723ddff1d8680df8bbe877b4494ec3df17386f00165128a13fdde895e",
+      "actual_argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-B",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files\\.aide\\scripts\\aide_lite.py",
+        "--repo-root",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\asset\\aide-lite-pack-v0\\files",
+        "job",
+        "usage",
+        "--stream",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\synthetic-codex.jsonl",
+        "--stream",
+        "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\277a45cf944e432d92e619c6f79cbc4d\\tmp\\case-final-managed\\case-06\\aide-public-release-test-a948a5f4dd7042899874ed0f7cea95f0\\synthetic-codex.jsonl"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "additional_profiles": {
+    "windows-2025-x64": {
+      "method": "fresh_actual_archive_execution",
+      "run_id": 39462430710,
+      "source_commit": "52ddd31908ac96b3e891933a066936e72c90b137",
+      "assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "evidence": "evidence/profile-hosted-qualified.json",
+      "evidence_sha256": "441f36417b1f61a9d1fa832dc1cc16a56a0b41fa689c6c6d43d2045dbf030746",
+      "forms": 49,
+      "predecessor_scenarios": 2,
+      "fixture_retired": true
+    },
+    "ubuntu-24.04-x64": {
+      "method": "fresh_actual_archive_execution",
+      "run_id": 39462430710,
+      "source_commit": "52ddd31908ac96b3e891933a066936e72c90b137",
+      "assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "evidence": "evidence/profile-hosted-qualified.json",
+      "evidence_sha256": "441f36417b1f61a9d1fa832dc1cc16a56a0b41fa689c6c6d43d2045dbf030746",
+      "forms": 49,
+      "predecessor_scenarios": 2,
+      "fixture_retired": true
+    },
+    "macos-15-arm64": {
+      "method": "retained_behavioral_applicability",
+      "original_run_id": 39456159304,
+      "original_source_commit": "4f85bb0c95ef7fc29667edd351346d684a80bb48",
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "9fc5aa6e33b4731b4e8eb678bb55438cd86ef242e2af73306653ea527fd29197",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "918fe258b1d0e6768887b70b7b2cd0e57265a15024c66429603542aeecf4d46f",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "3548253b41b5992526a5b3c56133c36adb467e11bd7aa48f44ec4fb8b0fa9428",
+          "size_bytes": 969453
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "665beb8810fbcf9c27420390a82349f4f1ce02afa7bf8cacad891203ad279827",
+          "size_bytes": 1328634
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "original_evidence": "evidence/hosted-qualified.json",
+      "original_evidence_sha256": "ed65ce7c0a173dfb78db1a3e8b84bb5b06dc42e3cc58f8ff66b1dfc3079f8415",
+      "review": "evidence/profile-macos-reuse-review.json",
+      "review_sha256": "72a6d6e21101dadad294885250c1797b1484a4ccfa103c72f53fe7ff7f093639",
+      "forms": 49,
+      "predecessor_scenarios": 2,
+      "fixture_retired": true,
+      "boundary": "Original observations, receipts, plans, ownership hashes, times and resources retain their original identities. No new macOS execution."
+    }
+  },
+  "final_group": {
+    "job_id": "277a45cf944e432d92e619c6f79cbc4d",
+    "subject": {
+      "commit": "1806ec46d0342b2b3da9ddc49667e5c89ccbda10",
+      "tree": "03c1231b67bae8878b8673398eb0923e9cf957b2"
+    },
+    "manifest_digest": "8bc94fb3532e76c0e7d7ca98998bd1589fc436d343f5ed5ccbcb1b0e329860fb",
+    "phases": {
+      "status": "PASS",
+      "phases": [
+        {
+          "phase": "managed",
+          "state": "PASS",
+          "started_unix_ns": 1792516633838604700,
+          "fixture_retired": true,
+          "finished_unix_ns": 1792516649289311900
+        },
+        {
+          "phase": "brownfield",
+          "state": "PASS",
+          "started_unix_ns": 1792516649289489400,
+          "fixture_retired": true,
+          "finished_unix_ns": 1792516742866517900
+        },
+        {
+          "phase": "replay",
+          "state": "PASS",
+          "started_unix_ns": 1792516742866711200,
+          "fixture_retired": true,
+          "finished_unix_ns": 1792516849974953500
+        }
+      ],
+      "model_requests": 0,
+      "whole_model_usage": "unknown"
+    },
+    "scratch_absent": true,
+    "reservation_released": true
+  },
+  "closure_reason": "All fresh obligations in the accepted dependency proof are now met: changed managed owner/case6, exact current identity/ownership, unfinished primary brownfield and complete release replay. The later correction changes only top-level metadata/checksums; executable/installed payload and Windows/macOS profiles are unchanged. Retained observations stay bound to their original source/assets/times.",
+  "retained_fresh_predecessor": "Original primary fresh scenario remains an old-subject behavioral observation under the accepted dependency proof; fresh revised identity/detach and both current WindowsServer/Linux predecessor scenarios supplement it. No new primary fresh full-scenario execution is claimed.",
+  "acceptance_requested": "Exact candidate qualification and transitive retained-behavior applicability only; prepare reviewed integration and separate publication/acquired-byte task.",
+  "limits": [
+    "Exact CPython3.14.8/profile tuples only;56primary forms,49additional-profile ordinary forms;seven additional-profile managed forms remain unqualified.",
+    "Cooperative POSIX mutation ownership; no outer-client read/write containment or OS network-isolation claim.",
+    "No generic native legacy/IDE/runtime/model/provider/whole-outcome-efficiency qualification.",
+    "Historical cross-path rollback/refusal and retained-state recovery limits remain.",
+    "Original interrupted, failed and successful attempts preserve their identities; no all-green parent run is fabricated."
+  ],
+  "local_jobs_consumed": 17,
+  "hosted_runs_consumed": 2,
+  "hosted_jobs_consumed": 5,
+  "export_refreshes_consumed": 2,
+  "worker_model_requests": 0,
+  "whole_model_usage": "unknown",
+  "support_activated": false,
+  "published": false
+}
