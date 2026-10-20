@@ -1,0 +1,54 @@
+{
+  "macos-15-arm64": {
+    "product_removal": "REFUSED",
+    "original_failures_preserved": 4,
+    "raw_error_streams": {
+      "published-1.1.0-fresh-removal-apply.stderr": {
+        "bytes": 69,
+        "sha256": "68b31508e7a633047742b5cbf9a11c66d3a098b6cbaf5e3f0a260b29fe984681",
+        "reason": "explicit Windows anchored-handle requirement"
+      },
+      "development-export-fresh-removal-apply.stderr": {
+        "bytes": 69,
+        "sha256": "68b31508e7a633047742b5cbf9a11c66d3a098b6cbaf5e3f0a260b29fe984681",
+        "reason": "explicit Windows anchored-handle requirement"
+      },
+      "published-1.1.0-brownfield-removal-apply.stderr": {
+        "bytes": 69,
+        "sha256": "68b31508e7a633047742b5cbf9a11c66d3a098b6cbaf5e3f0a260b29fe984681",
+        "reason": "explicit Windows anchored-handle requirement"
+      },
+      "development-export-brownfield-removal-apply.stderr": {
+        "bytes": 69,
+        "sha256": "68b31508e7a633047742b5cbf9a11c66d3a098b6cbaf5e3f0a260b29fe984681",
+        "reason": "explicit Windows anchored-handle requirement"
+      }
+    }
+  },
+  "ubuntu-24.04-x64": {
+    "product_removal": "REFUSED",
+    "original_failures_preserved": 4,
+    "raw_error_streams": {
+      "published-1.1.0-fresh-removal-apply.stderr": {
+        "bytes": 69,
+        "sha256": "68b31508e7a633047742b5cbf9a11c66d3a098b6cbaf5e3f0a260b29fe984681",
+        "reason": "explicit Windows anchored-handle requirement"
+      },
+      "development-export-fresh-removal-apply.stderr": {
+        "bytes": 69,
+        "sha256": "68b31508e7a633047742b5cbf9a11c66d3a098b6cbaf5e3f0a260b29fe984681",
+        "reason": "explicit Windows anchored-handle requirement"
+      },
+      "published-1.1.0-brownfield-removal-apply.stderr": {
+        "bytes": 69,
+        "sha256": "68b31508e7a633047742b5cbf9a11c66d3a098b6cbaf5e3f0a260b29fe984681",
+        "reason": "explicit Windows anchored-handle requirement"
+      },
+      "development-export-brownfield-removal-apply.stderr": {
+        "bytes": 69,
+        "sha256": "68b31508e7a633047742b5cbf9a11c66d3a098b6cbaf5e3f0a260b29fe984681",
+        "reason": "explicit Windows anchored-handle requirement"
+      }
+    }
+  }
+}

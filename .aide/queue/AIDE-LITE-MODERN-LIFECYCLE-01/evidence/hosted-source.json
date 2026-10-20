@@ -1,0 +1,32 @@
+{
+  "schema": "aide.exact-hosted-review.v1",
+  "files": {
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/hosted-effect-initial.json": "f4ac104eb7d9d2806a2fd68d25608f5b9ec7354ab4ed5d8dd8852ba320b9b5b3",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/hosted-effect.json": "a7532528e5c71504e72258ab83f8b3a45f853dd4dd07ae9cadf20b14668b092d",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/hosted-review-initial.json": "446a089f341f2e7ff345ec834762330959086b2f45420141a73d0b2a35faf1e0",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/hosted-review-packet.md": "e9234581f455418897563747dc607f04438dfec51e9332e62ce7f04f6cba8c37",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/hosted-source-initial.json": "f61d86c9870efdbf89987d39a71d009d389e9f1a78d6c015a516f9d1b515f166",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/initial-candidate/observe_hosted.py.txt": "b484b617b307443c72692734f0dab137cca99e2d17463283365660ebb3ec00cd",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/local-qualified.json": "434061ac18df5f6869a0e10dab87148b0fc1041537da9bcbba623d796386dc99",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/local-result.json": "bcff0876cd5a265bdccf95f1370f58fa36b8a364d26e475501c014743be604c0",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/local-transport.json": "6ce4c9868290b6b92b9fd57e5fa9ee8edad1d2a281413118b58b8d083bebfc54",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/package-inputs.json": "f229017490b8aba67e0feea92e420e9ce5489b51c49de56b1ad5bc077e5cc0e6",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/source-review.json": "252e33aeb9b6e72c3320978234154b10622998602586c03fa7773f37d8ae0265",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/observe_hosted.py": "6f8aa735faaed776f113e86a30c833d3177775df91d5d6b12a6567e0b0eddbb9",
+    ".github/workflows/lite-modern-lifecycle.yml": "32bf71e57730df9686b449c6b221d2dbecd6716adf272dc015f7891f888d4b75",
+    "evals/lite/lifecycle.py": "8a7aeff1b19d07c0b6dd604505131387a98ffa6b706a45ac8042c98ed8221aac"
+  },
+  "dirty_files": [
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/hosted-effect-initial.json",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/hosted-effect.json",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/hosted-review-initial.json",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/hosted-review-packet.md",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/hosted-source-initial.json",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/initial-candidate/observe_hosted.py.txt",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/local-qualified.json",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/local-result.json",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/local-transport.json",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/observe_hosted.py"
+  ],
+  "effect_sha256": "a7532528e5c71504e72258ab83f8b3a45f853dd4dd07ae9cadf20b14668b092d"
+}

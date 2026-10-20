@@ -1,0 +1,56 @@
+[
+  {
+    "label": "validate",
+    "argv": [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "validate"
+    ],
+    "exit_code": 0,
+    "stdout_bytes": 241,
+    "stdout_sha256": "8f4f60d7a4fcc2a82001a55e962dfb285fef3f0b723181ac5385b6349ccce52c"
+  },
+  {
+    "label": "message",
+    "argv": [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "commit",
+      "check",
+      "--message-file",
+      "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-LITE-MODERN-LIFECYCLE-01\\evidence\\closure-message.txt"
+    ],
+    "exit_code": 0,
+    "stdout_bytes": 2182,
+    "stdout_sha256": "0d551911993ed2ccf9a46ff334544ff003a27e53f0c2e1b9d1837ae1d4bf98dc"
+  },
+  {
+    "label": "drift",
+    "argv": [
+      "py",
+      "-3",
+      "-B",
+      "scripts/aide",
+      "compile",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "stdout_bytes": 2013,
+    "stdout_sha256": "8bbc49a225b036c8a8e07072bb8b866ec56e2a98d00b0ae975672363fc041b61"
+  },
+  {
+    "label": "diff",
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout_bytes": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

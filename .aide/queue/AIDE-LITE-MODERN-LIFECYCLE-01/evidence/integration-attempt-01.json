@@ -1,0 +1,249 @@
+{
+  "status": "FAILED_RECONCILE_BEFORE_RETRY",
+  "operations": [
+    {
+      "label": "branch",
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "branch.stdout.log": {
+          "bytes": 35,
+          "sha256": "2a470e6f4fb68a60e5da020e59c528a6700a4840bc949e3ccef7a9b92e7a792c"
+        },
+        "branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "base",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "base.stdout.log": {
+          "bytes": 41,
+          "sha256": "032dc6273cacf96b460648b6262496362402311e4ea80d5a2835ebacfc676b7f"
+        },
+        "base.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "index",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "index.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "index.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "changed",
+      "argv": [
+        "git",
+        "diff",
+        "--name-only"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "changed.stdout.log": {
+          "bytes": 523,
+          "sha256": "84b969586efbd03fb9b6875d40d7fb50c8042f5a484d380b1950ef5afd9bdf3e"
+        },
+        "changed.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "untracked",
+      "argv": [
+        "git",
+        "ls-files",
+        "--others",
+        "--exclude-standard"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "untracked.stdout.log": {
+          "bytes": 1587,
+          "sha256": "3ed8fb83f2148235174f18a77b2a9b74995891b947a057e062bdbb3a9df801af"
+        },
+        "untracked.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-fetch-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-fetch-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-commit-fetch-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-push-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-push-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-commit-push-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-before",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-before.stdout.log": {
+          "bytes": 113,
+          "sha256": "11ef593042ed7eb3ea6abb43f59176a0a143ecd956c37bd9ac6f4cd30ccf3ec0"
+        },
+        "fetch-commit-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/dev:refs/remotes/origin/dev",
+        "refs/heads/main:refs/remotes/origin/main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "fetch-commit.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-after",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-after.stdout.log": {
+          "bytes": 113,
+          "sha256": "11ef593042ed7eb3ea6abb43f59176a0a143ecd956c37bd9ac6f4cd30ccf3ec0"
+        },
+        "fetch-commit-after.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "message",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-LITE-MODERN-LIFECYCLE-01\\evidence\\closure-message.txt"
+      ],
+      "state": "exception",
+      "error_type": "FileExistsError",
+      "error": "[Errno 17] File exists: 'D:\\\\Projects\\\\AIDE\\\\aide\\\\.aide\\\\queue\\\\AIDE-LITE-MODERN-LIFECYCLE-01\\\\evidence\\\\message.stdout.log'",
+      "streams": {
+        "message.stdout.log": {
+          "bytes": 2181,
+          "sha256": "ff48d2856a38e6322e13f15cc4f78c5f68bf5114df1fc561d7f65b299ac24d99"
+        },
+        "message.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ],
+  "error_type": "FileExistsError",
+  "error": "[Errno 17] File exists: 'D:\\\\Projects\\\\AIDE\\\\aide\\\\.aide\\\\queue\\\\AIDE-LITE-MODERN-LIFECYCLE-01\\\\evidence\\\\message.stdout.log'"
+}

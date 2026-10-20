@@ -9,8 +9,8 @@ responsible_owner: AIDE campaign controller; project owners retain target accept
 acceptance_scope: Partial exact-subject qualifications; daily-use and full platform acceptance remain open
 product_qualified: false
 observed_at: 2026-10-20
-observed_source_checkpoint: 7877e05655ee33fa99583afe4855fac6a4910292
-next_action: Prepare the bounded Lite1.2 portability plan; refresh stale DiskEd source under clarified local-idle/remote-active ownership, then qualify useful host/downstream work.
+observed_source_checkpoint: f4d099a2b5fd29da83a1a1be1e7f9026e17e4f6e
+next_action: Implement the existing lifecycle POSIX filesystem binding and full Lite1.2 successor checks; continue independent host/downstream work after exact target/source review.
 remaining_obligations:
   - Actual supported host delivery and bounded ordinary editing with interruption/recovery
   - DiskEd current-source reconciliation, target effect review and native downstream acceptance preserving customization
@@ -30,7 +30,7 @@ outer_filesystem_permission: unrestricted_not_whole_session_containment
 unchanged_blockers_stop_independent_work: false
 authority: Existing owner delegation and exact independent source/effect gates; status grants nothing new
 current_state_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
-current_state_sha256: 824e540bf665280e7d828ef47fff3c9a7e63dca7f4c290b5c89924d3b35a4557
+current_state_sha256: b97aa0457b2aed4594e0eeb2b2ee21161e336c76172793770fcc1bb1835accb9
 historical_status_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-status.yaml
 historical_status_sha256: 797b885d9b9beee5a17435210f002cfba91ff344eef227af6ceca2dd32214384
 historical_task_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-task.yaml

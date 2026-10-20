@@ -1,0 +1,243 @@
+{
+  "run_id": 39403629036,
+  "run_url": "https://github.com/Julesc013/aide/actions/runs/39403629036",
+  "source_commit": "f4d099a2b5fd29da83a1a1be1e7f9026e17e4f6e",
+  "workflow_conclusion": "success",
+  "profiles": {
+    "macos-15-arm64": {
+      "host": {
+        "executable_sha256": "20394aac11379defc6864ba50ea5fc915ac930b2144dd7336e3fc53ec4c7dc20",
+        "image_os": "macos15",
+        "image_version": "20260907.0337.1",
+        "machine": "arm64",
+        "python": "3.14.8 (v3.14.8:8e6e75d9102, Sep 30 2026, 14:34:30) [Clang 21.0.0 (clang-2100.1.1.101)]",
+        "release": "24.6.0",
+        "system": "Darwin",
+        "version": "Darwin Kernel Version 24.6.0: Tue Jul 21 20:51:34 PDT 2026; root:xnu-11417.140.69.711.44~1/RELEASE_ARM64_VMAPPLE"
+      },
+      "observation_complete": true,
+      "native_lifecycle_pass": false,
+      "cases": [
+        {
+          "cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+          "detached": false,
+          "error": "published-1.1.0-fresh-removal-apply exit 1; see raw streams",
+          "error_type": "AssertionError",
+          "installed": true,
+          "native_acceptance": false,
+          "preserved": true,
+          "shape": "fresh",
+          "subject": "published-1.1.0",
+          "traceback": "Traceback (most recent call last):\n  File \"/Users/runner/work/aide/aide/evals/lite/lifecycle.py\", line 162, in characterize\n    result = rec.installed(label + \"-removal-apply\", target, \"apply-removal\", \"--target\",\n                           str(target), \"--expect-plan\", plan[\"plan_digest\"], \"--json\")\n  File \"/Users/runner/work/aide/aide/.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py\", line 185, in installed\n    return self.run(label, target / \".aide/scripts/aide_lite.py\", target, *parts, exits=exits, offline_text=offline_text)\n           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/aide/aide/evals/lite/lifecycle.py\", line 94, in run\n    raise AssertionError(f\"{label} exit {result.returncode}; see raw streams\")\nAssertionError: published-1.1.0-fresh-removal-apply exit 1; see raw streams\n"
+        },
+        {
+          "cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+          "detached": false,
+          "error": "published-1.1.0-brownfield-removal-apply exit 1; see raw streams",
+          "error_type": "AssertionError",
+          "installed": true,
+          "native_acceptance": false,
+          "preserved": true,
+          "shape": "brownfield",
+          "subject": "published-1.1.0",
+          "traceback": "Traceback (most recent call last):\n  File \"/Users/runner/work/aide/aide/evals/lite/lifecycle.py\", line 162, in characterize\n    result = rec.installed(label + \"-removal-apply\", target, \"apply-removal\", \"--target\",\n                           str(target), \"--expect-plan\", plan[\"plan_digest\"], \"--json\")\n  File \"/Users/runner/work/aide/aide/.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py\", line 185, in installed\n    return self.run(label, target / \".aide/scripts/aide_lite.py\", target, *parts, exits=exits, offline_text=offline_text)\n           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/aide/aide/evals/lite/lifecycle.py\", line 94, in run\n    raise AssertionError(f\"{label} exit {result.returncode}; see raw streams\")\nAssertionError: published-1.1.0-brownfield-removal-apply exit 1; see raw streams\n"
+        },
+        {
+          "cli_sha256": "b2bc60f0bc0c82b1355b4c80b7218f38449ed7898c020d52e68302b6b83e7310",
+          "detached": false,
+          "error": "development-export-fresh-removal-apply exit 1; see raw streams",
+          "error_type": "AssertionError",
+          "installed": true,
+          "native_acceptance": false,
+          "preserved": true,
+          "shape": "fresh",
+          "subject": "development-export",
+          "traceback": "Traceback (most recent call last):\n  File \"/Users/runner/work/aide/aide/evals/lite/lifecycle.py\", line 162, in characterize\n    result = rec.installed(label + \"-removal-apply\", target, \"apply-removal\", \"--target\",\n                           str(target), \"--expect-plan\", plan[\"plan_digest\"], \"--json\")\n  File \"/Users/runner/work/aide/aide/.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py\", line 185, in installed\n    return self.run(label, target / \".aide/scripts/aide_lite.py\", target, *parts, exits=exits, offline_text=offline_text)\n           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/aide/aide/evals/lite/lifecycle.py\", line 94, in run\n    raise AssertionError(f\"{label} exit {result.returncode}; see raw streams\")\nAssertionError: development-export-fresh-removal-apply exit 1; see raw streams\n"
+        },
+        {
+          "cli_sha256": "b2bc60f0bc0c82b1355b4c80b7218f38449ed7898c020d52e68302b6b83e7310",
+          "detached": false,
+          "error": "development-export-brownfield-removal-apply exit 1; see raw streams",
+          "error_type": "AssertionError",
+          "installed": true,
+          "native_acceptance": false,
+          "preserved": true,
+          "shape": "brownfield",
+          "subject": "development-export",
+          "traceback": "Traceback (most recent call last):\n  File \"/Users/runner/work/aide/aide/evals/lite/lifecycle.py\", line 162, in characterize\n    result = rec.installed(label + \"-removal-apply\", target, \"apply-removal\", \"--target\",\n                           str(target), \"--expect-plan\", plan[\"plan_digest\"], \"--json\")\n  File \"/Users/runner/work/aide/aide/.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py\", line 185, in installed\n    return self.run(label, target / \".aide/scripts/aide_lite.py\", target, *parts, exits=exits, offline_text=offline_text)\n           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/runner/work/aide/aide/evals/lite/lifecycle.py\", line 94, in run\n    raise AssertionError(f\"{label} exit {result.returncode}; see raw streams\")\nAssertionError: development-export-brownfield-removal-apply exit 1; see raw streams\n"
+        }
+      ],
+      "fixtures": {
+        "tests_run": 126,
+        "passed": true,
+        "skips": [
+          [
+            "aide_modern_original_fixtures.FixtureFilesystemTests.test_windows_short_name_alias_is_typed_zero_write",
+            "Windows 8.3 aliases are Windows-specific"
+          ]
+        ],
+        "failures": [],
+        "errors": []
+      },
+      "receipt_index_sha256": "2ea08ca4a742adb9038536fdec41f0abef261f39a166f4c141b6f89296e6c394",
+      "error": null,
+      "error_type": null
+    },
+    "windows-2025-x64": {
+      "host": {
+        "executable_sha256": "434b361fe0c5960d404974feed493db47f2603a1ace2574312104fbed0182c6f",
+        "image_os": "win25-vs2026",
+        "image_version": "20261007.264.1",
+        "machine": "AMD64",
+        "python": "3.14.8 (tags/v3.14.8:8e6e75d, Sep 30 2026, 18:19:33) [MSC v.1944 64 bit (AMD64)]",
+        "release": "2025Server",
+        "system": "Windows",
+        "version": "10.0.26100"
+      },
+      "observation_complete": true,
+      "native_lifecycle_pass": true,
+      "cases": [
+        {
+          "cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+          "detached": true,
+          "installed": true,
+          "native_acceptance": true,
+          "preserved": true,
+          "removal_status": "DETACHED",
+          "shape": "fresh",
+          "subject": "published-1.1.0"
+        },
+        {
+          "cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+          "detached": true,
+          "installed": true,
+          "native_acceptance": true,
+          "preserved": true,
+          "removal_status": "DETACHED",
+          "shape": "brownfield",
+          "subject": "published-1.1.0"
+        },
+        {
+          "cli_sha256": "b2bc60f0bc0c82b1355b4c80b7218f38449ed7898c020d52e68302b6b83e7310",
+          "detached": true,
+          "installed": true,
+          "native_acceptance": true,
+          "preserved": true,
+          "removal_status": "DETACHED",
+          "shape": "fresh",
+          "subject": "development-export"
+        },
+        {
+          "cli_sha256": "b2bc60f0bc0c82b1355b4c80b7218f38449ed7898c020d52e68302b6b83e7310",
+          "detached": true,
+          "installed": true,
+          "native_acceptance": true,
+          "preserved": true,
+          "removal_status": "DETACHED",
+          "shape": "brownfield",
+          "subject": "development-export"
+        }
+      ],
+      "fixtures": {
+        "tests_run": 126,
+        "passed": true,
+        "skips": [
+          [
+            "aide_modern_original_fixtures.FixtureFilesystemTests.test_special_file_refused_without_blocking_read",
+            "FIFO not supported"
+          ],
+          [
+            "aide_modern_original_fixtures.FixtureFilesystemTests.test_windows_short_name_alias_is_typed_zero_write",
+            "test volume did not generate a distinct 8.3 alias"
+          ]
+        ],
+        "failures": [],
+        "errors": []
+      },
+      "receipt_index_sha256": "4fc83945bbf39f165f777fd11c78c5d61ef5c36757a49f6a64c7ceb9e126111a",
+      "error": null,
+      "error_type": null
+    },
+    "ubuntu-24.04-x64": {
+      "host": {
+        "executable_sha256": "a5230d8adbd26c2185d77fb003597c4ee9c44c2369fc179122ff7c3a3a58ae59",
+        "image_os": "ubuntu24",
+        "image_version": "20261012.334.1",
+        "machine": "x86_64",
+        "python": "3.14.8 (main, Oct  1 2026, 02:38:33) [GCC 13.3.0]",
+        "release": "6.17.0-1022-azure",
+        "system": "Linux",
+        "version": "#22-Ubuntu SMP Mon Jul 27 17:24:03 UTC 2026"
+      },
+      "observation_complete": true,
+      "native_lifecycle_pass": false,
+      "cases": [
+        {
+          "cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+          "detached": false,
+          "error": "published-1.1.0-fresh-removal-apply exit 1; see raw streams",
+          "error_type": "AssertionError",
+          "installed": true,
+          "native_acceptance": false,
+          "preserved": true,
+          "shape": "fresh",
+          "subject": "published-1.1.0",
+          "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/aide/aide/evals/lite/lifecycle.py\", line 162, in characterize\n    result = rec.installed(label + \"-removal-apply\", target, \"apply-removal\", \"--target\",\n                           str(target), \"--expect-plan\", plan[\"plan_digest\"], \"--json\")\n  File \"/home/runner/work/aide/aide/.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py\", line 185, in installed\n    return self.run(label, target / \".aide/scripts/aide_lite.py\", target, *parts, exits=exits, offline_text=offline_text)\n           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/aide/aide/evals/lite/lifecycle.py\", line 94, in run\n    raise AssertionError(f\"{label} exit {result.returncode}; see raw streams\")\nAssertionError: published-1.1.0-fresh-removal-apply exit 1; see raw streams\n"
+        },
+        {
+          "cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+          "detached": false,
+          "error": "published-1.1.0-brownfield-removal-apply exit 1; see raw streams",
+          "error_type": "AssertionError",
+          "installed": true,
+          "native_acceptance": false,
+          "preserved": true,
+          "shape": "brownfield",
+          "subject": "published-1.1.0",
+          "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/aide/aide/evals/lite/lifecycle.py\", line 162, in characterize\n    result = rec.installed(label + \"-removal-apply\", target, \"apply-removal\", \"--target\",\n                           str(target), \"--expect-plan\", plan[\"plan_digest\"], \"--json\")\n  File \"/home/runner/work/aide/aide/.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py\", line 185, in installed\n    return self.run(label, target / \".aide/scripts/aide_lite.py\", target, *parts, exits=exits, offline_text=offline_text)\n           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/aide/aide/evals/lite/lifecycle.py\", line 94, in run\n    raise AssertionError(f\"{label} exit {result.returncode}; see raw streams\")\nAssertionError: published-1.1.0-brownfield-removal-apply exit 1; see raw streams\n"
+        },
+        {
+          "cli_sha256": "b2bc60f0bc0c82b1355b4c80b7218f38449ed7898c020d52e68302b6b83e7310",
+          "detached": false,
+          "error": "development-export-fresh-removal-apply exit 1; see raw streams",
+          "error_type": "AssertionError",
+          "installed": true,
+          "native_acceptance": false,
+          "preserved": true,
+          "shape": "fresh",
+          "subject": "development-export",
+          "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/aide/aide/evals/lite/lifecycle.py\", line 162, in characterize\n    result = rec.installed(label + \"-removal-apply\", target, \"apply-removal\", \"--target\",\n                           str(target), \"--expect-plan\", plan[\"plan_digest\"], \"--json\")\n  File \"/home/runner/work/aide/aide/.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py\", line 185, in installed\n    return self.run(label, target / \".aide/scripts/aide_lite.py\", target, *parts, exits=exits, offline_text=offline_text)\n           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/aide/aide/evals/lite/lifecycle.py\", line 94, in run\n    raise AssertionError(f\"{label} exit {result.returncode}; see raw streams\")\nAssertionError: development-export-fresh-removal-apply exit 1; see raw streams\n"
+        },
+        {
+          "cli_sha256": "b2bc60f0bc0c82b1355b4c80b7218f38449ed7898c020d52e68302b6b83e7310",
+          "detached": false,
+          "error": "development-export-brownfield-removal-apply exit 1; see raw streams",
+          "error_type": "AssertionError",
+          "installed": true,
+          "native_acceptance": false,
+          "preserved": true,
+          "shape": "brownfield",
+          "subject": "development-export",
+          "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/aide/aide/evals/lite/lifecycle.py\", line 162, in characterize\n    result = rec.installed(label + \"-removal-apply\", target, \"apply-removal\", \"--target\",\n                           str(target), \"--expect-plan\", plan[\"plan_digest\"], \"--json\")\n  File \"/home/runner/work/aide/aide/.aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py\", line 185, in installed\n    return self.run(label, target / \".aide/scripts/aide_lite.py\", target, *parts, exits=exits, offline_text=offline_text)\n           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/aide/aide/evals/lite/lifecycle.py\", line 94, in run\n    raise AssertionError(f\"{label} exit {result.returncode}; see raw streams\")\nAssertionError: development-export-brownfield-removal-apply exit 1; see raw streams\n"
+        }
+      ],
+      "fixtures": {
+        "tests_run": 126,
+        "passed": true,
+        "skips": [
+          [
+            "aide_modern_original_fixtures.FixtureFilesystemTests.test_windows_short_name_alias_is_typed_zero_write",
+            "Windows 8.3 aliases are Windows-specific"
+          ]
+        ],
+        "failures": [],
+        "errors": []
+      },
+      "receipt_index_sha256": "103ba05794d8a2f521fb5fd4d8992f275762edcd1db55e9eab5ba2702e6c16fb",
+      "error": null,
+      "error_type": null
+    }
+  },
+  "new_os_support_claimed": false,
+  "whole_model_usage": "unknown"
+}

@@ -4257,6 +4257,6 @@ items:
 - id: AIDE-LITE-MODERN-LIFECYCLE-01
   title: Observe actual Lite lifecycle on modern Windows Linux and macOS
   type: implementation
-  status: running
+  status: passed_with_notes
   path: .aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01
   parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

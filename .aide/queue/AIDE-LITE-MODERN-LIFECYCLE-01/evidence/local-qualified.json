@@ -1,0 +1,115 @@
+{
+  "result": "PASS",
+  "source_commit": "f4d099a2b5fd29da83a1a1be1e7f9026e17e4f6e",
+  "job_id": "9130f96f2ba6467bba27ee7869a928d5",
+  "phase": "retired",
+  "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "manifest_digest": "eeb9757feabfc4704d9b6a52c5eb79f02b72d7804050bd7d8ce91d97c4eaf19c",
+  "scratch_absent": true,
+  "reservation_released": true,
+  "collected_manifest": {
+    "output": "387ebc504c8e06e063740e2241c74f7a9efaec9dad0bfc0592952e991abd883d",
+    "logs": "a88540471b3fe06aef4bb22742ad53ed07ca90fc3e77656442b757cc65fe122d"
+  },
+  "retained_path": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\9130f96f2ba6467bba27ee7869a928d5",
+  "peaks": {
+    "scratch_bytes": 16066428,
+    "memory_bytes": 283324416,
+    "canonical_bytes": {}
+  },
+  "host": {
+    "executable_sha256": "434b361fe0c5960d404974feed493db47f2603a1ace2574312104fbed0182c6f",
+    "image_os": null,
+    "image_version": null,
+    "machine": "AMD64",
+    "python": "3.14.8 (tags/v3.14.8:8e6e75d, Sep 30 2026, 18:19:33) [MSC v.1944 64 bit (AMD64)]",
+    "release": "10",
+    "system": "Windows",
+    "version": "10.0.19045"
+  },
+  "cases": [
+    {
+      "subject": "published-1.1.0",
+      "shape": "fresh",
+      "installed": true,
+      "detached": true,
+      "preserved": true,
+      "native_acceptance": true
+    },
+    {
+      "subject": "published-1.1.0",
+      "shape": "brownfield",
+      "installed": true,
+      "detached": true,
+      "preserved": true,
+      "native_acceptance": true
+    },
+    {
+      "subject": "development-export",
+      "shape": "fresh",
+      "installed": true,
+      "detached": true,
+      "preserved": true,
+      "native_acceptance": true
+    },
+    {
+      "subject": "development-export",
+      "shape": "brownfield",
+      "installed": true,
+      "detached": true,
+      "preserved": true,
+      "native_acceptance": true
+    }
+  ],
+  "fixtures": {
+    "tests_run": 126,
+    "passed": true,
+    "skips": [
+      [
+        "aide_modern_original_fixtures.FixtureFilesystemTests.test_dangling_symlink_is_refused",
+        "symlink creation unavailable: [WinError 1314] A required privilege is not held by the client: 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9130f96f2ba6467bba27ee7869a928d5\\\\tmp\\\\aide-modern-egtto5vy\\\\tmp57pqvr2n\\\\missing' -> 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9130f96f2ba6467bba27ee7869a928d5\\\\tmp\\\\aide-modern-egtto5vy\\\\tmp57pqvr2n\\\\root\\\\alias'"
+      ],
+      [
+        "aide_modern_original_fixtures.FixtureFilesystemTests.test_directory_symlink_is_refused",
+        "symlink creation unavailable: [WinError 1314] A required privilege is not held by the client: 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9130f96f2ba6467bba27ee7869a928d5\\\\tmp\\\\aide-modern-egtto5vy\\\\tmptxt8zf8x\\\\outside' -> 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9130f96f2ba6467bba27ee7869a928d5\\\\tmp\\\\aide-modern-egtto5vy\\\\tmptxt8zf8x\\\\root\\\\alias'"
+      ],
+      [
+        "aide_modern_original_fixtures.FixtureFilesystemTests.test_internal_symlink_is_not_silently_resolved",
+        "symlink creation unavailable: [WinError 1314] A required privilege is not held by the client: 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9130f96f2ba6467bba27ee7869a928d5\\\\tmp\\\\aide-modern-egtto5vy\\\\tmp409__c8y\\\\root\\\\real' -> 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9130f96f2ba6467bba27ee7869a928d5\\\\tmp\\\\aide-modern-egtto5vy\\\\tmp409__c8y\\\\root\\\\alias'"
+      ],
+      [
+        "aide_modern_original_fixtures.FixtureFilesystemTests.test_restore_symlink_tree_preserved",
+        "symlink creation unavailable: [WinError 1314] A required privilege is not held by the client: 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9130f96f2ba6467bba27ee7869a928d5\\\\tmp\\\\aide-modern-egtto5vy\\\\tmppun2ndyd\\\\outside' -> 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9130f96f2ba6467bba27ee7869a928d5\\\\tmp\\\\aide-modern-egtto5vy\\\\tmppun2ndyd\\\\root\\\\alias'"
+      ],
+      [
+        "aide_modern_original_fixtures.FixtureFilesystemTests.test_special_file_refused_without_blocking_read",
+        "FIFO not supported"
+      ],
+      [
+        "aide_modern_original_fixtures.FixtureFilesystemTests.test_symlink_root_is_refused",
+        "symlink creation unavailable: [WinError 1314] A required privilege is not held by the client: 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9130f96f2ba6467bba27ee7869a928d5\\\\tmp\\\\aide-modern-egtto5vy\\\\tmpei6mdypi\\\\root' -> 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9130f96f2ba6467bba27ee7869a928d5\\\\tmp\\\\aide-modern-egtto5vy\\\\tmpei6mdypi\\\\root-alias'"
+      ],
+      [
+        "aide_modern_original_fixtures.FixtureFilesystemTests.test_windows_short_name_alias_is_typed_zero_write",
+        "test volume did not generate a distinct 8.3 alias"
+      ],
+      [
+        "aide_modern_original_fixtures.FixturePortabilityRegressionTests.test_snapshot_does_not_follow_file_symlink",
+        "[WinError 1314] A required privilege is not held by the client: 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9130f96f2ba6467bba27ee7869a928d5\\\\tmp\\\\aide-modern-egtto5vy\\\\tmp9w_m_mq4\\\\outside.txt' -> 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9130f96f2ba6467bba27ee7869a928d5\\\\tmp\\\\aide-modern-egtto5vy\\\\tmp9w_m_mq4\\\\workspace\\\\link'"
+      ],
+      [
+        "aide_modern_original_fixtures.OperationCompatibilityTests.test_operation_link_refusal_is_typed",
+        "symlink creation unavailable: [WinError 1314] A required privilege is not held by the client: 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9130f96f2ba6467bba27ee7869a928d5\\\\tmp\\\\aide-modern-egtto5vy\\\\tmppduvxhxr\\\\outside' -> 'D:\\\\Projects\\\\AIDE\\\\.aide.local\\\\execution\\\\scratch\\\\9130f96f2ba6467bba27ee7869a928d5\\\\tmp\\\\aide-modern-egtto5vy\\\\tmppduvxhxr\\\\root\\\\alias'"
+      ]
+    ]
+  },
+  "transport": {
+    "result": "PASS",
+    "files": 67,
+    "compressed_bytes": 783563,
+    "compressed_sha256": "808af99bb1d9df6c88defa072b32eb3e177544d691fbb8c3b95c61cc5112228f",
+    "all_receipt_bytes_equal": true
+  },
+  "new_os_support_claimed": false,
+  "whole_model_usage": "unknown"
+}

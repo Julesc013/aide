@@ -6,6 +6,8 @@
 
 **Development.** Newer task views, communication defaults, context/symbol discovery, handoffs, lessons and cooperative worker features retain their scoped source/delivered/installed evidence. They are outside frozen 1.1.0. The unqualified readability checkpoint `8cd2236f` remains on its local task branch; it has run no jobs. The [release closeout](../AIDE-LITE-SUCCESSOR-PUBLICATION-01/REPORT.md) records publication and consumer separately. Its outcome reached local/remote dev/main at c4357fc0; the [retained Git receipt](../AIDE-RELEASE-CHECKLIST-PROJECTION-01/evidence/prior-release-integration.json) records that completed sync.
 
+**Modern lifecycle result.** [Actual observations](../AIDE-LITE-MODERN-LIFECYCLE-01/REPORT.md) completed on Windows 10, Windows Server 2025, Linux and macOS: 16 successful adoption/preservation cases, eight Windows detach passes and eight preserved POSIX removal refusals. The existing Windows-handle guard is the demonstrated next portability gap. Extend the current lifecycle filesystem owner, then qualify upgrade/conflict/recovery/repair/rollback/removal for Lite 1.2; this does not block independent host/downstream work. No new OS support is claimed.
+
 | Next useful outcome | Remaining condition and owner |
 | --- | --- |
 | Actual host participation | Host owner supplies a supported reachable endpoint/session/workspace binding, or an explicit cooperative participant boundary. Qualify the selected delivery/editing/cancellation route; never infer general availability from the historical default-socket error. |

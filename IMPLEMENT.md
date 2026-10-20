@@ -2,7 +2,7 @@
 
 ### Modern lifecycle observations - 20 October 2026
 
-[Bounded qualification](.aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/ExecPlan.md) prepares one shared evaluator for published Lite 1.1.0 and the validated development export on Windows, Linux and macOS. It preserves original archive, installation and removal assertions and project-owned content. Observation completion is distinct from native lifecycle success; unsupported operations remain failures and no support tier changes. Exact source, local allocation and hosted dispatch reviews remain required.
+[Real delivered results](.aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/REPORT.md) cover local Windows 10 and hosted Windows Server 2025, Linux and macOS. All 16 adoption/preservation cases passed; eight Windows removals passed and eight POSIX removals refused at the original Windows-handle guard. Four unchanged 126-test fixture suites produced 491 passes and 13 retained skips. One local job retired and one three-job hosted workflow completed, with exact lossless evidence and no artifact/cache uploads. This completes initial characterization, not Lite 1.2 or new support qualification. The next bounded implementation extends the existing lifecycle filesystem owner on POSIX before full upgrade, conflict and recovery qualification.
 
 ### Modern lifecycle observations - 20 October 2026
 

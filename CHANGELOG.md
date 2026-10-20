@@ -4,7 +4,7 @@ Release entries describe the delivered Lite package and its declared compatibili
 
 #### Unreleased
 
-- **Evaluation:** prepare actual Windows/Linux/macOS lifecycle observations with unchanged consumer oracles, exact inputs and retained failures; no new product support claim.
+- **Evaluation:** observe delivered adoption/removal on four exact modern environments: 16 adoption/preservation passes, eight Windows detach passes and eight retained POSIX removal refusals; new support remains unqualified.
 
 - **Planned:** Lite 1.2 modern profile qualification, staged native legacy ports and future Extension 1.0 host packages share Python 3 reference tooling and optional PowerShell Core 7+.
 - **Policy:** adopt, tailor, combine, replace or remove AIDE through existing ownership/lifecycle mechanisms; preserve project work and independently versioned public contracts.

@@ -1,7 +1,7 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-MODERN-LIFECYCLE-01
-status: running
-result: PENDING
-planning_state: admission_accepted_preparing_exact_source
+status: passed_with_notes
+result: PASS
+planning_state: observations_complete_native_portability_gaps_preserved
 product_qualified: false
-next_action: Freeze evaluator and local job candidate for independent source and execution review; no actual job dispatched.
+next_action: Integrate qualified characterization after exact outcome/source review; then admit the existing lifecycle POSIX binding and full successor qualification.

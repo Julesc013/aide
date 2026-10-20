@@ -1,0 +1,16 @@
+{
+  "decision": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "f61d86c9870efdbf89987d39a71d009d389e9f1a78d6c015a516f9d1b515f166",
+  "effect_sha256": "f4ac104eb7d9d2806a2fd68d25608f5b9ec7354ab4ed5d8dd8852ba320b9b5b3",
+  "controller_sha256": "b484b617b307443c72692734f0dab137cca99e2d17463283365660ebb3ec00cd",
+  "required_fixes": [
+    "Enforce overall deadline across preflight polling collection and clamp each operation; declare cleanup grace.",
+    "Enforce byte limits during stream drain; preserve partial evidence and terminate owned operation without retry.",
+    "Bind jobs/logs to attempt1 and recheck run source/attempt identity before classifying."
+  ],
+  "optional_notes": [
+    "Explicit github.com host avoids ambient GH_HOST."
+  ],
+  "effects_performed": false
+}

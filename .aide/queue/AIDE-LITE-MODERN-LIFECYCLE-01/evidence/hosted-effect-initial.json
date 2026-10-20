@@ -1,0 +1,30 @@
+{
+  "schema": "aide.hosted-observation-effect.v1",
+  "source_commit": "f4d099a2b5fd29da83a1a1be1e7f9026e17e4f6e",
+  "task_branch": "task/aide-lite-modern-lifecycle-01",
+  "origin_url": "https://github.com/Julesc013/aide.git",
+  "control_config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "controller_sha256": "b484b617b307443c72692734f0dab137cca99e2d17463283365660ebb3ec00cd",
+  "package_inputs_sha256": "f229017490b8aba67e0feea92e420e9ce5489b51c49de56b1ad5bc077e5cc0e6",
+  "profiles": [
+    "windows-2025-x64",
+    "ubuntu-24.04-x64",
+    "macos-15-arm64"
+  ],
+  "python": "3.14.8",
+  "maximum_hosted_runs": 1,
+  "maximum_hosted_jobs": 3,
+  "hosted_job_timeout_minutes": 10,
+  "observer_timeout_seconds": 1200,
+  "effects": [
+    "one nonforce no-follow-tags push of exact commit to absent important task branch",
+    "one resulting push-triggered workflow only; no manual redispatch",
+    "read-only run/job/log collection with capped lossless receipt reconstruction"
+  ],
+  "forbidden": [
+    "dev/main integration, branch retirement, tags or publication",
+    "settings, secrets, billing, larger/self-hosted runners, artifact/cache uploads",
+    "models, providers, targets, source/product/configuration mutation"
+  ],
+  "attestation": "actual independent ACCEPT binds source/effect/controller; excluded from own manifest; no integration grant"
+}

@@ -2,7 +2,9 @@
 
 **Current checklist — 20 October 2026.** The filesystem [queue](.aide/queue/index.yaml) owns task state, authority and acceptance. This page is a short, dated view for humans and agents; follow each linked WorkUnit before acting.
 
-- [ ] Observe published and development Lite adoption/removal on actual modern runners, preserve failures and implement demonstrated native gaps before claiming Lite 1.2 support. [Active phase](.aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/ExecPlan.md)
+- [x] Observe published and development Lite adoption/removal on four real modern environments, preserving eight POSIX removal refusals. [Observations](.aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/REPORT.md)
+
+- [ ] Implement the existing lifecycle owner's POSIX filesystem binding, then qualify actual predecessor upgrades, customization/conflicts, interruption, repair, rollback and removal before Lite 1.2 support claims.
 
 **Release and daily use**
 

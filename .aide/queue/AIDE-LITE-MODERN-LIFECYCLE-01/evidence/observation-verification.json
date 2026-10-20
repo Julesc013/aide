@@ -1,0 +1,39 @@
+{
+  "result": "PASS",
+  "source_commit": "f4d099a2b5fd29da83a1a1be1e7f9026e17e4f6e",
+  "run_id": 39403629036,
+  "run_attempt": 1,
+  "local_retired_and_collection_verified": true,
+  "hosted_raw_streams_verified": 46,
+  "profiles": {
+    "macos-15-arm64": {
+      "receipt_files": 67,
+      "receipt_index_sha256": "2ea08ca4a742adb9038536fdec41f0abef261f39a166f4c141b6f89296e6c394",
+      "result_sha256": "7c7b05415676c9a1c77a13346da0e398a7226a1a6c3b5417ebcbf7feb9197453",
+      "test_count": 126,
+      "skips": 1,
+      "native_lifecycle_pass": false
+    },
+    "windows-2025-x64": {
+      "receipt_files": 67,
+      "receipt_index_sha256": "4fc83945bbf39f165f777fd11c78c5d61ef5c36757a49f6a64c7ceb9e126111a",
+      "result_sha256": "930357359bbc9d3d3d51010adfb5e617f1a8ed46fa22952b1debdbb95454fdf4",
+      "test_count": 126,
+      "skips": 2,
+      "native_lifecycle_pass": true
+    },
+    "ubuntu-24.04-x64": {
+      "receipt_files": 67,
+      "receipt_index_sha256": "103ba05794d8a2f521fb5fd4d8992f275762edcd1db55e9eab5ba2702e6c16fb",
+      "result_sha256": "458d2cc4a043372bc2e5eba294f4231dd7709941c1f395ea79f27f5c5ffd2a4f",
+      "test_count": 126,
+      "skips": 1,
+      "native_lifecycle_pass": false
+    }
+  },
+  "original_input_files_unchanged": 887,
+  "product_and_stable_assets_unchanged": true,
+  "no_new_support_claim": true,
+  "model_worker_calls": 0,
+  "whole_model_usage": "unknown"
+}

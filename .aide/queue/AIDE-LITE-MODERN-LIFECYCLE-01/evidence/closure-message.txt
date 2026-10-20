@@ -1,0 +1,12 @@
+test(lite): retain modern lifecycle results and portability gaps
+
+- Record one retired local job and one three-profile hosted run against exact delivered inputs.
+- Preserve 16 successful adoptions, eight Windows detach passes and eight Linux/macOS removal refusals.
+- Retain 491 fixture passes and 13 explicit skips across four environments; no new OS support is claimed.
+- Preserve original rejected reviews and lossless raw evidence, and prepare the existing lifecycle owner's POSIX increment.
+- Keep published packages and the development export unchanged while syncing qualified evaluation work.
+
+Validation: PASS - exact local/hosted collection, 67-file transport round trip, four 126-test fixture suites and 16 adoption/preservation cases.; EXPECTED LIMITATION - eight POSIX removal refusals retained.; NOT RUN - Lite 1.2 update/recovery/rollback qualification, native ports or publication.
+Changelog: Added: Delivered lifecycle observations for exact modern profiles with preserved portability gaps.
+AIDE-Task: AIDE-LITE-MODERN-LIFECYCLE-01
+AIDE-Format: compact-v1
