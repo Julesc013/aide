@@ -1,0 +1,46 @@
+{
+  "base": "d256a6010183a4b6d70b98071a6e534f5624760d",
+  "task_branch": "task/aide-lite-1-2-archive-qualification-01",
+  "origin_url": "https://github.com/Julesc013/aide.git",
+  "controller_sha256": "5a2a76b9311a1e9c8cadd40480e587f709d9fb9bf5314b1236e0c4b2c01d7e18",
+  "control_config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "qualification_config": ".aide.local/lite-successor-qualification-execution.json",
+  "qualification_config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "maximum_local_allocations": 2,
+  "maximum_hosted_runs": 0,
+  "live_model_requests": 0,
+  "effects": [
+    "One exact compatibility/evidence checkpoint; no portable source or archive bytes change.",
+    "Two serial existing managed600second jobs: all18additive forms, then original actual1.1predecessor fresh/brownfield conflict/recovery/preservation/exit scenarios on the frozen1.2archives.",
+    "Preserve41additive and28predecessor assertions; add only optional evaluator subject metadata with historical default preserved.",
+    "Require exact primary environment, fixed checkpoint/config/input identities and returned job/manifest/config/source identities; stop on first failed/incomplete/nonretired result, no retry."
+  ],
+  "forbidden": [
+    "new export/archive build, original8consumer reruns, hosted/replay execution, dev/main integration or push, tags/publication/support activation",
+    "other repositories/processes, model/provider/spending routes, new roots/reserves/config/privileges"
+  ],
+  "review_attestation": {
+    "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-review.json",
+    "actual_independent_accept_only": true,
+    "included_in_commit": true,
+    "binds": [
+      "source_sha256",
+      "effect_sha256",
+      "controller_sha256"
+    ]
+  },
+  "qualification_state": "eight original consumers and dev sync passed; two remaining local groups prepared, not run",
+  "cases": [
+    "additions",
+    "predecessor"
+  ],
+  "total_local_ceiling": 13,
+  "local_jobs_already_consumed": 10,
+  "fixed_subject_requirement": "Bind the resulting COMMITTED OID/tree once; verify branch/head/tree/clean and approved configuration before each admission, then exact job/manifest/config/source receipt identities before advancing.",
+  "expected_refs": {
+    "main": "ed4a90046eba12a717a9962f21523285667a669b",
+    "dev": "d256a6010183a4b6d70b98071a6e534f5624760d",
+    "origin/main": "ed4a90046eba12a717a9962f21523285667a669b",
+    "origin/dev": "d256a6010183a4b6d70b98071a6e534f5624760d"
+  }
+}

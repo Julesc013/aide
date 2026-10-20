@@ -1,0 +1,17 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "8cc61a333b64ed9acebc52475dfbad3969c9ac1af79522caebbf5bf06d72f782",
+  "effect_sha256": "fc19a12abc8c60bee595e1f0082d2782bfeaa0a8ff3e5f5c71c4e320c6c6759f",
+  "controller_sha256": "5a2a76b9311a1e9c8cadd40480e587f709d9fb9bf5314b1236e0c4b2c01d7e18",
+  "required_fixes": [],
+  "reasons": [
+    "Verified 21 mapped files, 1984 pins per job, unchanged archive identities, preserved41/28assertions and historical evaluator default.",
+    "Fixed source/configuration bindings and terminal stop checks remain intact."
+  ],
+  "scope": "One checkpoint and the two specified serial groups only.",
+  "limitations": [
+    "Hosted qualification, replay, integration and publication remain separately gated."
+  ],
+  "reviewer_executed_tests": false
+}

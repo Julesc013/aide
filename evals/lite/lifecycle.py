@@ -192,7 +192,7 @@ def characterize(work, out, pinned, *, qualify=False, continue_local=False):
     return cases, commands, len(zip_members)
 
 
-def qualify_successor(work, out, rec, helper, old, new):
+def qualify_successor(work, out, rec, helper, old, new, *, subject="development-export"):
     """Actual published predecessor, project edits, recovery and safe exit."""
     module = helper.load_delivered(new)
     changed = ".aide/scripts/aide_lite.py"
@@ -206,7 +206,7 @@ def qualify_successor(work, out, rec, helper, old, new):
         label = "published-upgrade-" + shape
         target = work / label
         target.mkdir()
-        row = {"subject": "development-export", "shape": label,
+        row = {"subject": subject, "shape": label,
                "native_acceptance": False, "preserved": False, "checks": []}
         authored = b"# Existing project rules\r\nPreserve outside the owned block.\r\n"
         project = {"project.txt": b"Preserve project content.\r\n",

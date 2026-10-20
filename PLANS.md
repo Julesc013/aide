@@ -2,7 +2,7 @@
 
 ### Versioned archive qualification - 21 October 2026
 
-[AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md) passed twelve custody checks with no skips, its single owned export refresh and the existing-owner versioned build/validation. Frozen 1.2 ZIP/TAR candidates share 879 file members and source `cb2ddcaf`; both jobs retired completely. All eight original Windows consumers passed and retired, preserving 198 files. Dev synchronization is under review; additive forms, actual-predecessor checks and modern profile evidence remain pending. Ten of thirteen local allocations are consumed; one three-profile hosted run remains available. These ceilings are not automatic grants. Support activation and publication remain pending.
+[AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md) passed twelve custody checks with no skips, its single owned export refresh and the existing-owner versioned build/validation. Frozen 1.2 ZIP/TAR candidates share 879 file members and source `cb2ddcaf`; both jobs retired completely. All eight original Windows consumers passed and retired, preserving 198 files. Dev synchronization completed at `d256a601`; additive forms, actual-predecessor checks and modern profile evidence remain pending. Ten of thirteen local allocations are consumed; one three-profile hosted run remains available. These ceilings are not automatic grants. Support activation and publication remain pending.
 
 ### Multi-profile release contract - 20 October 2026
 

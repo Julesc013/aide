@@ -1,0 +1,2715 @@
+{
+  "status": "PASS",
+  "operations": [
+    {
+      "label": "branch",
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "branch.stdout.log": {
+          "bytes": 44,
+          "sha256": "4ba2636c5e47fc8c9609c4899c3c415867fe00d6343d07cf99ce9766dfb621e5"
+        },
+        "branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "base",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "base.stdout.log": {
+          "bytes": 41,
+          "sha256": "bf3d07fb182baa286780507634d2102eaad19d23333f863aa29c63af99d16702"
+        },
+        "base.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "index",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "index.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "index.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "changed",
+      "argv": [
+        "git",
+        "diff",
+        "--name-only"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "changed.stdout.log": {
+          "bytes": 362,
+          "sha256": "10ce54e4a9ceef38c3b286a71b8eb037dad163c3c6077207b34db13f989dadc1"
+        },
+        "changed.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "untracked",
+      "argv": [
+        "git",
+        "ls-files",
+        "--others",
+        "--exclude-standard"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "untracked.stdout.log": {
+          "bytes": 2684,
+          "sha256": "aaa4c6a24f2c0a2dea6d141c0b2456a349762682b683740f52bdb23c8bb67a16"
+        },
+        "untracked.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-fetch-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-fetch-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-commit-fetch-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-push-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-push-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-commit-push-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-before",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-before.stdout.log": {
+          "bytes": 113,
+          "sha256": "f5bf1ac0f391d40acea569b73f6c459d8148ffbc129cfb098ac186305a0be403"
+        },
+        "fetch-commit-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/dev:refs/remotes/origin/dev",
+        "refs/heads/main:refs/remotes/origin/main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "fetch-commit.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-after",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-after.stdout.log": {
+          "bytes": 113,
+          "sha256": "f5bf1ac0f391d40acea569b73f6c459d8148ffbc129cfb098ac186305a0be403"
+        },
+        "fetch-commit-after.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "message",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01\\evidence\\dev-message.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "message.stdout.log": {
+          "bytes": 2187,
+          "sha256": "d38b5657fb9ad869fa12bcc36eb9216d5b1354adc4cc683eae688dd942b8575b"
+        },
+        "message.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "stage",
+      "argv": [
+        "git",
+        "add",
+        "--",
+        ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md",
+        ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/collect_consumers.py",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/changed-files.md",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-retained.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-summary.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-01-retained.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-01-summary.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-02-retained.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-02-summary.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-03-retained.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-03-summary.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-04-retained.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-04-summary.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-05-retained.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-05-summary.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-06-retained.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-06-summary.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-07-retained.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-07-summary.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-results.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-source-execution.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-effect.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-message.txt",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-prechecks-initial.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-prechecks.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-review-packet.md",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-review.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-source.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/package-inputs.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-risks.md",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/validation.md",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/precheck_dev.py",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/status.yaml",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/sync_dev.py",
+        "CHANGELOG.md",
+        "DOCUMENTATION.md",
+        "IMPLEMENT.md",
+        "PLANS.md",
+        "README.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "stage.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stage.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "staged",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "staged.stdout.log": {
+          "bytes": 3046,
+          "sha256": "5771c1ce01f2917d925c8cfe11b7b1d30b988963a8ced950557f6abde553b0ce"
+        },
+        "staged.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-0",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-0.stdout.log": {
+          "bytes": 41,
+          "sha256": "a5a7658b891f6227cc0a31c6e17aaf3ea314642904013422cf0437c49ae0fa5f"
+        },
+        "raw-0.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-0",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-0.stdout.log": {
+          "bytes": 41,
+          "sha256": "a5a7658b891f6227cc0a31c6e17aaf3ea314642904013422cf0437c49ae0fa5f"
+        },
+        "blob-0.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-1",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-1.stdout.log": {
+          "bytes": 41,
+          "sha256": "63e47642616f838dae0fdef1494262b2d81f5df489e90e4df4faf8a2e8d6b4c7"
+        },
+        "raw-1.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-1",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-1.stdout.log": {
+          "bytes": 41,
+          "sha256": "63e47642616f838dae0fdef1494262b2d81f5df489e90e4df4faf8a2e8d6b4c7"
+        },
+        "blob-1.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-2",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-2.stdout.log": {
+          "bytes": 41,
+          "sha256": "7b1973bad39415fd6de969abc3a3a16e78e5d4a68bc5dd3793ae0099ab69cdbc"
+        },
+        "raw-2.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-2",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-2.stdout.log": {
+          "bytes": 41,
+          "sha256": "7b1973bad39415fd6de969abc3a3a16e78e5d4a68bc5dd3793ae0099ab69cdbc"
+        },
+        "blob-2.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-3",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-3.stdout.log": {
+          "bytes": 41,
+          "sha256": "5aeb79b3f28cc2db86565f58430a94ae53cc96709ca65e4d90a5f84f89816c32"
+        },
+        "raw-3.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-3",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-3.stdout.log": {
+          "bytes": 41,
+          "sha256": "5aeb79b3f28cc2db86565f58430a94ae53cc96709ca65e4d90a5f84f89816c32"
+        },
+        "blob-3.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-4",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/collect_consumers.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-4.stdout.log": {
+          "bytes": 41,
+          "sha256": "5c964241325d47f5df1097b6e4565dea567c15fc53ceae7559f4162eb8fa1720"
+        },
+        "raw-4.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-4",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/collect_consumers.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-4.stdout.log": {
+          "bytes": 41,
+          "sha256": "5c964241325d47f5df1097b6e4565dea567c15fc53ceae7559f4162eb8fa1720"
+        },
+        "blob-4.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-5",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/changed-files.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-5.stdout.log": {
+          "bytes": 41,
+          "sha256": "16d286fd7f4e66a73f2470422e0d89754777aa1e1018b0dbd81d508e978e4c9c"
+        },
+        "raw-5.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-5",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/changed-files.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-5.stdout.log": {
+          "bytes": 41,
+          "sha256": "16d286fd7f4e66a73f2470422e0d89754777aa1e1018b0dbd81d508e978e4c9c"
+        },
+        "blob-5.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-6",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-6.stdout.log": {
+          "bytes": 41,
+          "sha256": "5077b53734379c52d0ec0173f05ef8c242e0a63aa8d4f4f7bb0eca3e991fdf94"
+        },
+        "raw-6.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-6",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-6.stdout.log": {
+          "bytes": 41,
+          "sha256": "5077b53734379c52d0ec0173f05ef8c242e0a63aa8d4f4f7bb0eca3e991fdf94"
+        },
+        "blob-6.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-7",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-7.stdout.log": {
+          "bytes": 41,
+          "sha256": "3744c249295268343eea0c59b2582326a0a5971cd702f9a714333b048bbd7c11"
+        },
+        "raw-7.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-7",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-7.stdout.log": {
+          "bytes": 41,
+          "sha256": "3744c249295268343eea0c59b2582326a0a5971cd702f9a714333b048bbd7c11"
+        },
+        "blob-7.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-8",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-01-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-8.stdout.log": {
+          "bytes": 41,
+          "sha256": "2ebf818550dab0c92e6982cc71ca8c0e6b4051da82ead6a43cdd5a839467313a"
+        },
+        "raw-8.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-8",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-01-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-8.stdout.log": {
+          "bytes": 41,
+          "sha256": "2ebf818550dab0c92e6982cc71ca8c0e6b4051da82ead6a43cdd5a839467313a"
+        },
+        "blob-8.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-9",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-01-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-9.stdout.log": {
+          "bytes": 41,
+          "sha256": "735f94146a97fbe0c6441695f404f0f932a420a3a866ead81bc136e0c9c57aa8"
+        },
+        "raw-9.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-9",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-01-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-9.stdout.log": {
+          "bytes": 41,
+          "sha256": "735f94146a97fbe0c6441695f404f0f932a420a3a866ead81bc136e0c9c57aa8"
+        },
+        "blob-9.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-10",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-02-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-10.stdout.log": {
+          "bytes": 41,
+          "sha256": "68810683f517dd647b66a9ac5e66de2535aa41f5b1a9d5151b3244bb18a114ec"
+        },
+        "raw-10.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-10",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-02-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-10.stdout.log": {
+          "bytes": 41,
+          "sha256": "68810683f517dd647b66a9ac5e66de2535aa41f5b1a9d5151b3244bb18a114ec"
+        },
+        "blob-10.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-11",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-02-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-11.stdout.log": {
+          "bytes": 41,
+          "sha256": "23f8069fcef396d0ae73c06fdad654186bb85f068d52612a635e9e9d149e15f0"
+        },
+        "raw-11.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-11",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-02-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-11.stdout.log": {
+          "bytes": 41,
+          "sha256": "23f8069fcef396d0ae73c06fdad654186bb85f068d52612a635e9e9d149e15f0"
+        },
+        "blob-11.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-12",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-03-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-12.stdout.log": {
+          "bytes": 41,
+          "sha256": "4b4ee1fafafce167aff3f498455e867c6a04bbb952bcf42c89e6c4a48658bac5"
+        },
+        "raw-12.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-12",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-03-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-12.stdout.log": {
+          "bytes": 41,
+          "sha256": "4b4ee1fafafce167aff3f498455e867c6a04bbb952bcf42c89e6c4a48658bac5"
+        },
+        "blob-12.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-13",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-03-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-13.stdout.log": {
+          "bytes": 41,
+          "sha256": "89acdfa028d0b393455d92f4be57091ea53f5fc76fac9a843950eb15a1c866fb"
+        },
+        "raw-13.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-13",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-03-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-13.stdout.log": {
+          "bytes": 41,
+          "sha256": "89acdfa028d0b393455d92f4be57091ea53f5fc76fac9a843950eb15a1c866fb"
+        },
+        "blob-13.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-14",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-04-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-14.stdout.log": {
+          "bytes": 41,
+          "sha256": "23b8be6f4571b725ffbd1fd817b04a25c5ff354e4fe08f61ab75af3ccec7a8b9"
+        },
+        "raw-14.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-14",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-04-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-14.stdout.log": {
+          "bytes": 41,
+          "sha256": "23b8be6f4571b725ffbd1fd817b04a25c5ff354e4fe08f61ab75af3ccec7a8b9"
+        },
+        "blob-14.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-15",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-04-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-15.stdout.log": {
+          "bytes": 41,
+          "sha256": "c3796eff4bae8ca25703604914a72583c1a6bc3fb8f600a9fabe1edd45cbc915"
+        },
+        "raw-15.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-15",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-04-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-15.stdout.log": {
+          "bytes": 41,
+          "sha256": "c3796eff4bae8ca25703604914a72583c1a6bc3fb8f600a9fabe1edd45cbc915"
+        },
+        "blob-15.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-16",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-05-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-16.stdout.log": {
+          "bytes": 41,
+          "sha256": "8bc274ed56c149dc26fd6e3c2f6ad8389c9e43b802920ca68535ebb88362de4c"
+        },
+        "raw-16.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-16",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-05-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-16.stdout.log": {
+          "bytes": 41,
+          "sha256": "8bc274ed56c149dc26fd6e3c2f6ad8389c9e43b802920ca68535ebb88362de4c"
+        },
+        "blob-16.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-17",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-05-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-17.stdout.log": {
+          "bytes": 41,
+          "sha256": "9572b48bee3d58d7b11b2ac1d8a759b8cc40742d2ca2294b7880368578e0b435"
+        },
+        "raw-17.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-17",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-05-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-17.stdout.log": {
+          "bytes": 41,
+          "sha256": "9572b48bee3d58d7b11b2ac1d8a759b8cc40742d2ca2294b7880368578e0b435"
+        },
+        "blob-17.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-18",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-06-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-18.stdout.log": {
+          "bytes": 41,
+          "sha256": "4f42a281477fac8ec34820f09b27f63cf10d9b4b2059a7c67125bdf177cb920b"
+        },
+        "raw-18.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-18",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-06-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-18.stdout.log": {
+          "bytes": 41,
+          "sha256": "4f42a281477fac8ec34820f09b27f63cf10d9b4b2059a7c67125bdf177cb920b"
+        },
+        "blob-18.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-19",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-06-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-19.stdout.log": {
+          "bytes": 41,
+          "sha256": "4400cc4ad05cf39b175eac258802e7938752ef597d03958c90b504590f58812e"
+        },
+        "raw-19.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-19",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-06-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-19.stdout.log": {
+          "bytes": 41,
+          "sha256": "4400cc4ad05cf39b175eac258802e7938752ef597d03958c90b504590f58812e"
+        },
+        "blob-19.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-20",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-07-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-20.stdout.log": {
+          "bytes": 41,
+          "sha256": "242eabb11879b519110fc994a301b69d66b87f3bdf3139129880e159c4c8b822"
+        },
+        "raw-20.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-20",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-07-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-20.stdout.log": {
+          "bytes": 41,
+          "sha256": "242eabb11879b519110fc994a301b69d66b87f3bdf3139129880e159c4c8b822"
+        },
+        "blob-20.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-21",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-07-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-21.stdout.log": {
+          "bytes": 41,
+          "sha256": "6dd0b7a5981fb34473089faca466c5513d10fa86a1658d6243564e23f4fa50f5"
+        },
+        "raw-21.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-21",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-07-summary.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-21.stdout.log": {
+          "bytes": 41,
+          "sha256": "6dd0b7a5981fb34473089faca466c5513d10fa86a1658d6243564e23f4fa50f5"
+        },
+        "blob-21.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-22",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-results.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-22.stdout.log": {
+          "bytes": 41,
+          "sha256": "7139cf7d5d34d5218dec1a34f09eaf9fd4c5f8e9bb4cc49d56beb02c142244e4"
+        },
+        "raw-22.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-22",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-results.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-22.stdout.log": {
+          "bytes": 41,
+          "sha256": "7139cf7d5d34d5218dec1a34f09eaf9fd4c5f8e9bb4cc49d56beb02c142244e4"
+        },
+        "blob-22.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-23",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-source-execution.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-23.stdout.log": {
+          "bytes": 41,
+          "sha256": "fbeae5aebeff83e81cf3bd6c352359d9a29ac6db8e271cc789f181ce93bc9fed"
+        },
+        "raw-23.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-23",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-source-execution.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-23.stdout.log": {
+          "bytes": 41,
+          "sha256": "fbeae5aebeff83e81cf3bd6c352359d9a29ac6db8e271cc789f181ce93bc9fed"
+        },
+        "blob-23.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-24",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-effect.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-24.stdout.log": {
+          "bytes": 41,
+          "sha256": "23536cd1af9574ceffa5b6df8f46138faa3b6ccfdde3e045e0af4bbbb2228dd2"
+        },
+        "raw-24.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-24",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-effect.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-24.stdout.log": {
+          "bytes": 41,
+          "sha256": "23536cd1af9574ceffa5b6df8f46138faa3b6ccfdde3e045e0af4bbbb2228dd2"
+        },
+        "blob-24.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-25",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-message.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-25.stdout.log": {
+          "bytes": 41,
+          "sha256": "8b43961d5bfec83159369203e34e7c346318dc84274c1af6d65170debbafce76"
+        },
+        "raw-25.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-25",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-message.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-25.stdout.log": {
+          "bytes": 41,
+          "sha256": "8b43961d5bfec83159369203e34e7c346318dc84274c1af6d65170debbafce76"
+        },
+        "blob-25.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-26",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-prechecks-initial.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-26.stdout.log": {
+          "bytes": 41,
+          "sha256": "d29daad157b423f9823904e212179ed6efe6aefe394f85338630acfd1fd515fe"
+        },
+        "raw-26.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-26",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-prechecks-initial.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-26.stdout.log": {
+          "bytes": 41,
+          "sha256": "d29daad157b423f9823904e212179ed6efe6aefe394f85338630acfd1fd515fe"
+        },
+        "blob-26.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-27",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-prechecks.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-27.stdout.log": {
+          "bytes": 41,
+          "sha256": "f0fccdf934f826aaaed8436ebff7026b6a9393c74b1c4f2ef5e7f664f5338779"
+        },
+        "raw-27.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-27",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-prechecks.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-27.stdout.log": {
+          "bytes": 41,
+          "sha256": "f0fccdf934f826aaaed8436ebff7026b6a9393c74b1c4f2ef5e7f664f5338779"
+        },
+        "blob-27.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-28",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-review-packet.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-28.stdout.log": {
+          "bytes": 41,
+          "sha256": "3fa7f94aafcc50da89e5067bd3e7ec3cde355ffa800cb7f2a1ee9d2c9493e1f6"
+        },
+        "raw-28.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-28",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-review-packet.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-28.stdout.log": {
+          "bytes": 41,
+          "sha256": "3fa7f94aafcc50da89e5067bd3e7ec3cde355ffa800cb7f2a1ee9d2c9493e1f6"
+        },
+        "blob-28.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-29",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-review.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-29.stdout.log": {
+          "bytes": 41,
+          "sha256": "a284e739d360f54545c2b90a600b5f9dbf2c8dbb29133e79c234d81fd57192f6"
+        },
+        "raw-29.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-29",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-review.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-29.stdout.log": {
+          "bytes": 41,
+          "sha256": "a284e739d360f54545c2b90a600b5f9dbf2c8dbb29133e79c234d81fd57192f6"
+        },
+        "blob-29.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-30",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-source.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-30.stdout.log": {
+          "bytes": 41,
+          "sha256": "3d9504e6c06dffa52a16c6690c955405a942b0a1e8dba84be2904b51c686fad1"
+        },
+        "raw-30.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-30",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-source.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-30.stdout.log": {
+          "bytes": 41,
+          "sha256": "3d9504e6c06dffa52a16c6690c955405a942b0a1e8dba84be2904b51c686fad1"
+        },
+        "blob-30.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-31",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/package-inputs.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-31.stdout.log": {
+          "bytes": 41,
+          "sha256": "5243a41174c44722e127ca30dbe7a0c32cac13c771bcce85e08585b252ff801e"
+        },
+        "raw-31.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-31",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/package-inputs.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-31.stdout.log": {
+          "bytes": 41,
+          "sha256": "5243a41174c44722e127ca30dbe7a0c32cac13c771bcce85e08585b252ff801e"
+        },
+        "blob-31.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-32",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-risks.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-32.stdout.log": {
+          "bytes": 41,
+          "sha256": "747dc580def9ede0a6a884bbf1d1ba15d61b610763cf604b7a6952e2b49c3680"
+        },
+        "raw-32.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-32",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-risks.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-32.stdout.log": {
+          "bytes": 41,
+          "sha256": "747dc580def9ede0a6a884bbf1d1ba15d61b610763cf604b7a6952e2b49c3680"
+        },
+        "blob-32.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-33",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/validation.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-33.stdout.log": {
+          "bytes": 41,
+          "sha256": "b289499266131dae12c2ca0e826c7941ee0e01eade1c9a6c308de381ed2af35f"
+        },
+        "raw-33.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-33",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/validation.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-33.stdout.log": {
+          "bytes": 41,
+          "sha256": "b289499266131dae12c2ca0e826c7941ee0e01eade1c9a6c308de381ed2af35f"
+        },
+        "blob-33.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-34",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/precheck_dev.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-34.stdout.log": {
+          "bytes": 41,
+          "sha256": "6baf71b859d2bba5af5505c83e0f9febc4242fec170811e1019043aea60dbe8f"
+        },
+        "raw-34.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-34",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/precheck_dev.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-34.stdout.log": {
+          "bytes": 41,
+          "sha256": "6baf71b859d2bba5af5505c83e0f9febc4242fec170811e1019043aea60dbe8f"
+        },
+        "blob-34.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-35",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/status.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-35.stdout.log": {
+          "bytes": 41,
+          "sha256": "2182e30a5c58aa710e919334c1cf2bff70d75811278fffcfd95c9aee777996bc"
+        },
+        "raw-35.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-35",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/status.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-35.stdout.log": {
+          "bytes": 41,
+          "sha256": "2182e30a5c58aa710e919334c1cf2bff70d75811278fffcfd95c9aee777996bc"
+        },
+        "blob-35.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-36",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/sync_dev.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-36.stdout.log": {
+          "bytes": 41,
+          "sha256": "43e92eac9615b441e54a0f75f1f62c0ea562fd9c5e003e3d477a8f2969c2238c"
+        },
+        "raw-36.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-36",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/sync_dev.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-36.stdout.log": {
+          "bytes": 41,
+          "sha256": "43e92eac9615b441e54a0f75f1f62c0ea562fd9c5e003e3d477a8f2969c2238c"
+        },
+        "blob-36.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-37",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "CHANGELOG.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-37.stdout.log": {
+          "bytes": 41,
+          "sha256": "8ea0bac9f803fb1fc62cf49e8e152b9f21d0d19491fea2dac640efdd508fc22c"
+        },
+        "raw-37.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-37",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":CHANGELOG.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-37.stdout.log": {
+          "bytes": 41,
+          "sha256": "8ea0bac9f803fb1fc62cf49e8e152b9f21d0d19491fea2dac640efdd508fc22c"
+        },
+        "blob-37.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-38",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "DOCUMENTATION.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-38.stdout.log": {
+          "bytes": 41,
+          "sha256": "cfa2001f69c25d830e4c9cfb6d3e50b46107366266b709b71e7fe11f4171142b"
+        },
+        "raw-38.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-38",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":DOCUMENTATION.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-38.stdout.log": {
+          "bytes": 41,
+          "sha256": "cfa2001f69c25d830e4c9cfb6d3e50b46107366266b709b71e7fe11f4171142b"
+        },
+        "blob-38.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-39",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "IMPLEMENT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-39.stdout.log": {
+          "bytes": 41,
+          "sha256": "4ee5246d2aabc1541702c0306e4d7ed9b5079f270bec9b3ae6fe76287bdf2640"
+        },
+        "raw-39.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-39",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":IMPLEMENT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-39.stdout.log": {
+          "bytes": 41,
+          "sha256": "4ee5246d2aabc1541702c0306e4d7ed9b5079f270bec9b3ae6fe76287bdf2640"
+        },
+        "blob-39.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-40",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "PLANS.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-40.stdout.log": {
+          "bytes": 41,
+          "sha256": "a521d1b1d8d6b71abf68c6098e20ee5b01ca1776de980bace634cb396a5f8a81"
+        },
+        "raw-40.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-40",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":PLANS.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-40.stdout.log": {
+          "bytes": 41,
+          "sha256": "a521d1b1d8d6b71abf68c6098e20ee5b01ca1776de980bace634cb396a5f8a81"
+        },
+        "blob-40.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-41",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "README.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-41.stdout.log": {
+          "bytes": 41,
+          "sha256": "b82f2082383651af712f09ba98f3aa78719571866704288b5c8ab34137d26f3f"
+        },
+        "raw-41.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-41",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":README.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-41.stdout.log": {
+          "bytes": 41,
+          "sha256": "b82f2082383651af712f09ba98f3aa78719571866704288b5c8ab34137d26f3f"
+        },
+        "blob-41.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "tree",
+      "argv": [
+        "git",
+        "write-tree"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "tree.stdout.log": {
+          "bytes": 41,
+          "sha256": "ef1140135a1f230e45666d35e73be90e0e07601460a28dfd6313fc92aa51809d"
+        },
+        "tree.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "commit-check",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--latest"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "commit-check.stdout.log": {
+          "bytes": 2134,
+          "sha256": "146c8f74c6b8a8aa0b32ba92def704da60c112f9cadc1d9a6467aed938204bd1"
+        },
+        "commit-check.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "commit-range-before-sync",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "ed4a90046eba12a717a9962f21523285667a669b..d256a6010183a4b6d70b98071a6e534f5624760d"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "commit-range-before-sync.stdout.log": {
+          "bytes": 661,
+          "sha256": "36ac384aed04276de91fe1bc8f120e6cbad812b49cccf7ece544898b031896b4"
+        },
+        "commit-range-before-sync.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "validate-before-sync",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "validate-before-sync.stdout.log": {
+          "bytes": 241,
+          "sha256": "7155d92da435eb768cffff730030ab3bf65e64ae31386664662e98696e42b5e9"
+        },
+        "validate-before-sync.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev-fetch-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev-fetch-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-dev-fetch-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev-push-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev-push-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-dev-push-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev-before",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev-before.stdout.log": {
+          "bytes": 113,
+          "sha256": "f5bf1ac0f391d40acea569b73f6c459d8148ffbc129cfb098ac186305a0be403"
+        },
+        "fetch-dev-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/dev:refs/remotes/origin/dev",
+        "refs/heads/main:refs/remotes/origin/main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "fetch-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev-after",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev-after.stdout.log": {
+          "bytes": 113,
+          "sha256": "f5bf1ac0f391d40acea569b73f6c459d8148ffbc129cfb098ac186305a0be403"
+        },
+        "fetch-dev-after.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "helper-dev",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "plan"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "helper-dev.stdout.log": {
+          "bytes": 401,
+          "sha256": "ab2aaa304e8c3d49cfb25762340357fd0d3b39e02782c90c1458f460d9c21c16"
+        },
+        "helper-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "head-dev",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "head-dev.stdout.log": {
+          "bytes": 41,
+          "sha256": "5142597b2b5fa1d8873bd135e3d0fdcbebb9a10df319b9b4add46f1fb0659ed3"
+        },
+        "head-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "clean-dev",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "clean-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "clean-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "ancestor-dev",
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "ed4a90046eba12a717a9962f21523285667a669b",
+        "d256a6010183a4b6d70b98071a6e534f5624760d"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "ancestor-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ancestor-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "ref-dev",
+      "argv": [
+        "git",
+        "update-ref",
+        "refs/heads/dev",
+        "d256a6010183a4b6d70b98071a6e534f5624760d",
+        "ed4a90046eba12a717a9962f21523285667a669b"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "ref-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ref-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-dev-fetch-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-dev-fetch-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "push-dev-fetch-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-dev-push-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-dev-push-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "push-dev-push-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-dev",
+      "argv": [
+        "git",
+        "push",
+        "--no-follow-tags",
+        "origin",
+        "d256a6010183a4b6d70b98071a6e534f5624760d:refs/heads/dev"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "push-dev.stderr.log": {
+          "bytes": 112,
+          "sha256": "b02f93fe3bcec660d1d398aa568657f53ceae0465e118adb55a93c7702bd03ee"
+        }
+      }
+    },
+    {
+      "label": "remote-dev",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "remote-dev.stdout.log": {
+          "bytes": 113,
+          "sha256": "429ab4d123ef692faf0405f14753757d1130e6c081733279352a684c56100bb9"
+        },
+        "remote-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "validate-dev",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "validate-dev.stdout.log": {
+          "bytes": 241,
+          "sha256": "7155d92da435eb768cffff730030ab3bf65e64ae31386664662e98696e42b5e9"
+        },
+        "validate-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "commit-range",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "main..dev"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "commit-range.stdout.log": {
+          "bytes": 588,
+          "sha256": "d9f8f474964b65a89389d9926bf75c1e2e0df78c749d5a8d78c404e8179b44c2"
+        },
+        "commit-range.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "tracking-dev",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/dev:refs/remotes/origin/dev"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "tracking-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "tracking-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "retained-task-branch",
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "retained-task-branch.stdout.log": {
+          "bytes": 44,
+          "sha256": "4ba2636c5e47fc8c9609c4899c3c415867fe00d6343d07cf99ce9766dfb621e5"
+        },
+        "retained-task-branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "final-clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "final-clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "remote-final",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "remote-final.stdout.log": {
+          "bytes": 113,
+          "sha256": "429ab4d123ef692faf0405f14753757d1130e6c081733279352a684c56100bb9"
+        },
+        "remote-final.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ],
+  "managed_commit": {
+    "status": "COMMITTED",
+    "branch_advanced": true,
+    "candidate_commit": "d256a6010183a4b6d70b98071a6e534f5624760d",
+    "expected_ref": "refs/heads/task/aide-lite-1-2-archive-qualification-01",
+    "expected_head": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+    "expected_tree": "c798f607aeb6c42f3a1f506ea642c3067d9ce83b",
+    "message_sha256": "1d937e63c185c52a446e322f2e1d102d4014944d1b2d54178f0787e5d3cc791c",
+    "apply": true,
+    "index_sha256": "9dec4e9da2606865f96def935efcb67ce1c805d7bd3d75651ee3c471ebbb8279",
+    "staged_paths": [
+      ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md",
+      ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/collect_consumers.py",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/changed-files.md",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-retained.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-00-summary.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-01-retained.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-01-summary.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-02-retained.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-02-summary.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-03-retained.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-03-summary.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-04-retained.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-04-summary.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-05-retained.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-05-summary.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-06-retained.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-06-summary.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-07-retained.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-case-07-summary.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-results.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/consumer-source-execution.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-effect.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-message.txt",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-prechecks-initial.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-prechecks.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-review-packet.md",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-review.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-source.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/package-inputs.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-risks.md",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/validation.md",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/precheck_dev.py",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/status.yaml",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/sync_dev.py",
+      "CHANGELOG.md",
+      "DOCUMENTATION.md",
+      "IMPLEMENT.md",
+      "PLANS.md",
+      "README.md"
+    ]
+  },
+  "commit": "d256a6010183a4b6d70b98071a6e534f5624760d",
+  "tree": "c798f607aeb6c42f3a1f506ea642c3067d9ce83b",
+  "preview_sha256s": {
+    "CHANGELOG.preview.md": "fba7fb397a8f46a3519563016e8ddaf0bf1fb3e6bb8404be52eceb24e812dbe2",
+    "RELEASE_NOTES.preview.md": "6c43ab9a1a419bf9966e08a5932db108e2f79fc5ed6f4a7339c8ec1b6f3bedbd",
+    "changelog.preview.json": "8ebaec96d1df8c904f24a656b241df7461e6210493351b5550ed76f28b37910f",
+    "release-notes.preview.json": "a498779d4462ce787a997c1d65c1477315c76ee3329370d90731acccfa06b2d9",
+    "malformed-commits.md": "7f5289c952b3bba9c8e5f2f81e3ac8eee1c9836e05dde86c8a86f8429d0f4fbb",
+    "latest-changelog-report.md": "9f09111e1baa34dbb6822270725e0ab69f6dc29362dacae0d7589a46b302f231"
+  },
+  "refs": {
+    "dev": "d256a6010183a4b6d70b98071a6e534f5624760d",
+    "main": "ed4a90046eba12a717a9962f21523285667a669b"
+  }
+}

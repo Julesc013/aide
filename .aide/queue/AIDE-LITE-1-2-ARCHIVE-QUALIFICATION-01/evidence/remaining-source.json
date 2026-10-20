@@ -1,0 +1,30 @@
+{
+  "schema": "aide.exact-source-map.v1",
+  "workunit": "AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01",
+  "base": "d256a6010183a4b6d70b98071a6e534f5624760d",
+  "effect_sha256": "fc19a12abc8c60bee595e1f0082d2782bfeaa0a8ff3e5f5c71c4e320c6c6759f",
+  "qualification_state": "eight original consumers and dev sync passed; two remaining local groups prepared, not run",
+  "files": {
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md": "b2b0fbfe15d2383c66e44ef3d28523b838a4277ef0b3bec6c720c9117341264c",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml": "b64e5b24a4551b837cd3a542b6b1901783042178edff7cc451ed9db5bd50c366",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md": "aba1dbfe9271f99c7f96490f68f096f4f3374d4736ed3aa1205f0dcfc70f52a8",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md": "603571f5c34ac7c10d6fe51565fd1c0735c35395c9fbd9286f3cc7347efbd8b8",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/commit_and_finish_cases.py": "5a2a76b9311a1e9c8cadd40480e587f709d9fb9bf5314b1236e0c4b2c01d7e18",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-sync-completed.json": "7e313cc97dcaea0d6c253767b9607894b2a1783180c79b558998265f7cc84ee0",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-sync-streams.json": "b6b026933ce81336a99853f10a37bb4e60809d0eb3344948d532c67a5a4d283a",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-sync-verification.json": "f1150cedf9addc96e129ba46c1e41676bea994f4490122ba8768bb9804aeba1b",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-effect.json": "fc19a12abc8c60bee595e1f0082d2782bfeaa0a8ff3e5f5c71c4e320c6c6759f",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-job-templates.json": "9738f5589fc3920220ca499dd8a5c0a7d0445a5b2a9298875f166b14cfef3b9a",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-message.txt": "f12ebfe63857cdda1f25ceb45defb32ae06260f2fca092b97fbdc9d5ed5a529e",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-prechecks.json": "e7a009cab89dc6aac1c5619aacf60a427fab8975f805abc7917f94eb60dbbb60",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/precheck_remaining.py": "199cba03d4ca0270b0c74f42d79e28f273fd83c37206fe5f23c09f0b9061e099",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/run_additions.py": "f20b8494b0b3638b0d028272a0904b206fa7a23ba9372f1fe6056931713d71b8",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/run_predecessor.py": "b81a03459c33f4b438167c0b385ebce12ec2d3079dcfa9344b6099c279eab384",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/status.yaml": "30039c238cff06210bec65c1a33db0e3a399ff3a390284824df458ee252ecfc8",
+    "DOCUMENTATION.md": "071de56ff1ce9268cf5141ca8018f1cf9a3d3edcf8ffbd8832a88c40d659b36f",
+    "IMPLEMENT.md": "b44c0f66ed72bca3094fd95d31a4ccb506d5ebb8bfadc82249f58e847f2a2f80",
+    "PLANS.md": "840e168f71bd2086fa1af4a723f942b97714372311707593fed2044e362ed77b",
+    "TODO.md": "985566adf962fc638ea2e8780465a889076024ea14611a7c93249368eed411d0",
+    "evals/lite/lifecycle.py": "312aa2d26caecec7acb0f776fec7382898ff856988d423fdb935a94e70052a1c"
+  }
+}

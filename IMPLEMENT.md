@@ -8,7 +8,7 @@ The accepted custody source checkpoint `cb2ddcaf` passed all twelve selected met
 
 The separately accepted checkpoint `89f334f0` and job `781532d1` passed stable-build/validate for Lite 1.2. The four new assets preserve all 58 prior release files and all export bytes; ZIP/TAR share 879 file members and source `cb2ddcaf`. Collection and retirement verify. Consumer/profile qualification and publication remain pending; this is a frozen build candidate, not a released product.
 
-All eight original current-archive consumer cases passed on `eb802917`, with exact source/configuration/manifest receipts and 198 lossless retained files. Ten of thirteen local allocations are consumed. The dev-only checkpoint is under review; additive, actual-predecessor, hosted and replay groups remain pending. No archive rebuild, new support or publication is claimed.
+All eight original current-archive consumer cases passed on `eb802917`, with exact source/configuration/manifest receipts and 198 lossless retained files. Ten of thirteen local allocations are consumed. The dev-only checkpoint reached `d256a601`; additive, actual-predecessor, hosted and replay groups remain pending. No archive rebuild, new support or publication is claimed.
 
 ### Compatible release metadata preparation - 20 October 2026
 

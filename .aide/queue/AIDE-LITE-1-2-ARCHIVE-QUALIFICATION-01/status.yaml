@@ -2,11 +2,11 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
 status: running
 result: PENDING
-planning_state: original_eight_consumers_pass_dev_checkpoint_preparation
+planning_state: dev_checkpoint_synced_remaining_compatibility_preparation
 product_qualified: false
 local_jobs_consumed: 10
 hosted_runs_consumed: 0
-next_action: Review dev-only synchronization of the qualified checkpoint and retained evidence; then separately admit additive forms, actual predecessor and modern profile checks before release replay/publication.
+next_action: Review two remaining local groups for eighteen additive forms and actual published predecessor; keep hosted profiles, release replay, main promotion and publication separate.
 qualified_source_checkpoint: cb2ddcaf837e2604f34f11211447c551cc85b29b
 canonical_job: 6355e80d38804f89aa9a83fd743be7e1
 canonical_tests_passed: 12
@@ -19,3 +19,6 @@ consumer_checkpoint: eb8029171ee2b87f177e88fa5aca6f1994b9833d
 original_consumer_cases_passed: 8
 original_consumer_cases_incomplete: 0
 consumer_retained_files: 198
+dev_checkpoint: d256a6010183a4b6d70b98071a6e534f5624760d
+dev_synced_remote: true
+main_checkpoint: ed4a90046eba12a717a9962f21523285667a669b

@@ -1,6 +1,6 @@
 # AIDE Documentation Index
 
-**Actual archive phase:** [Lite 1.2 qualification](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md) follows accepted contract/export delivery `ed4a9004`. The candidate build and all eight original Windows consumers passed; additive forms, actual predecessor, modern profiles and release replay remain open. Dev-only checkpoint synchronization is under review; publication remains separate.
+**Actual archive phase:** [Lite 1.2 qualification](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md) follows accepted contract/export delivery `ed4a9004`. The candidate build and all eight original Windows consumers passed; additive forms, actual predecessor, modern profiles and release replay remain open. Dev-only synchronization reached `d256a601`; main promotion and publication remain separate.
 
 **Current release-profile reference:** [Lite release profiles](docs/reference/lite-release-profiles.md) defines the prepared compatible v2 declaration/marker format, exact environment and command dispositions, preserved historical identities and separate qualification/publication gates. The [owning WorkUnit](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md) records review and validation; Lite 1.1 remains published.
 

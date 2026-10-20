@@ -1,0 +1,12 @@
+test(lite): prepare additive and published-predecessor checks
+
+- Retain completed dev synchronization at d256a601 and its exact streams, preserving main and the active task branch.
+- Reuse the eighteen-form evaluator and published-predecessor semantic oracle against actual frozen 1.2 archives, preserving original assertions, refusal behavior and recovery checks.
+- Add an optional subject label with the existing evaluator default preserved; prepare two serial source/configuration-bound jobs with guarded collection/retirement and terminal stop behavior.
+
+Validation: PASS - eight original archive consumers, twelve custody checks, archive build/validation, exact dev synchronization and preserved assets. Read-only remaining-prechecks.json records syntax, original-oracle preservation and literal inputs. The two new groups are not run yet.
+Changelog: Changed: Prepare exact additive-form and actual published-predecessor qualification for the frozen Lite 1.2 candidate; preserve existing evaluation defaults.
+Risk: Qualification is incomplete until these groups and the remaining hosted/replay/release gates pass. No new support or whole-outcome efficiency claim is established.
+Follow-up: Run two reviewed local groups once each, then hosted exact-profile checks and one final release replay before main integration/publication.
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+AIDE-Format: compact-v1

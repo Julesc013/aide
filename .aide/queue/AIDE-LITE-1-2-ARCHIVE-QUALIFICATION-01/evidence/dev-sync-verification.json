@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "operations": 122,
+  "streams": 244,
+  "receipt_sha256": "7e313cc97dcaea0d6c253767b9607894b2a1783180c79b558998265f7cc84ee0",
+  "dev": "d256a6010183a4b6d70b98071a6e534f5624760d",
+  "main": "ed4a90046eba12a717a9962f21523285667a669b",
+  "task_branch_retained": "task/aide-lite-1-2-archive-qualification-01",
+  "remote_refs_match": true,
+  "models_requested": 0,
+  "additional_jobs": 0
+}

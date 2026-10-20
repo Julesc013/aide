@@ -1,0 +1,29 @@
+{
+  "state": "PASS_READ_ONLY_PREFLIGHT",
+  "jobs_requested": 0,
+  "tests_executed": false,
+  "archives_changed": false,
+  "source_head": "d256a6010183a4b6d70b98071a6e534f5624760d",
+  "jobs": {
+    "additions": 1984,
+    "predecessor": 1984
+  },
+  "environment": {
+    "system": "Windows",
+    "release": "10",
+    "version": "10.0.19045",
+    "machine": "AMD64",
+    "runtime": {
+      "implementation": "CPython",
+      "version": "3.14.8"
+    }
+  },
+  "original_additive_assertions_preserved": 41,
+  "original_predecessor_assertions_preserved": 28,
+  "historical_default_preserved": true,
+  "source_portable_changes_after_refresh": 0,
+  "original_consumer_passes_retained": 8,
+  "local_jobs_consumed": 10,
+  "local_ceiling": 13,
+  "hosted_runs_consumed": 0
+}
