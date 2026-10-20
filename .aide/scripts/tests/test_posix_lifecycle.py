@@ -31,6 +31,14 @@ class PortableLifecycleBindingTests(unittest.TestCase):
             self.copy_file(ROOT / relative, source / relative)
         return source
 
+    def test_source_checkout_lifecycle_fixture_is_not_exported(self):
+        source = self.make_source_repo()
+        relative = ".aide/scripts/tests/test_posix_lifecycle.py"
+        self.copy_file(Path(__file__), source / relative)
+        pack = self.freeze_pack(source, "source-fixture-boundary")
+        self.assertFalse((pack / "files" / relative).exists())
+        self.assertTrue((pack / "files/.aide/scripts/posix_filesystem.py").is_file())
+
     @unittest.skipUnless(os.name == "posix", "POSIX rename-gap process termination")
     def test_process_exit_retains_unresolved_import_backup_and_original_bytes(self):
         module = original.aide_lite

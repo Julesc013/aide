@@ -1,8 +1,8 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 1ac0b37c4833a9fc97e9785d6e2834974ea96057
-source_dirty_state: true
+source_commit: ba5c318e32c1c18e25454986d858822929c03c1c
+source_dirty_state: false
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
 raw_prompt_storage: false
@@ -684,6 +684,7 @@ included_files:
   - files/.aide/scripts/aide_lite.py
   - files/.aide/scripts/aide_work_effort.py
   - files/.aide/scripts/outcome_lessons.py
+  - files/.aide/scripts/posix_filesystem.py
   - files/.aide/scripts/quality_symbols.py
   - files/.aide/scripts/task_brief_view.py
   - files/.aide/scripts/task_handoff.py
@@ -702,6 +703,8 @@ included_files:
   - files/.aide/scripts/tests/test_managed_commit_create.py
   - files/.aide/scripts/tests/test_outcome_controller.py
   - files/.aide/scripts/tests/test_outcome_lessons.py
+  - files/.aide/scripts/tests/test_posix_filesystem.py
+  - files/.aide/scripts/tests/test_posix_lifecycle.py
   - files/.aide/scripts/tests/test_provider_adapter.py
   - files/.aide/scripts/tests/test_public_archive_fixture.py
   - files/.aide/scripts/tests/test_q27_commit_recovery.py
@@ -862,6 +865,7 @@ included_files:
   - files/docs/reference/managed-section-patcher.md
   - files/docs/reference/move-salvage-path-aliases.md
   - files/docs/reference/outcome-controller-v0.md
+  - files/docs/reference/portable-lifecycle-filesystems.md
   - files/docs/reference/promotion-policy.md
   - files/docs/reference/promotion-validation-gates.md
   - files/docs/reference/provider-adapter-v0.md

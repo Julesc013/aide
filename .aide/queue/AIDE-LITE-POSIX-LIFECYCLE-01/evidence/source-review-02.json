@@ -1,0 +1,14 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "1be2294fc9ec232aeda83330b5db7c6001279bbb6a5bb6a8d6061771708f47ea",
+  "effect_sha256": "6dcef118ddd00f90c9be6396910e7df5bdb9ae40aa57501c1dc4b13be6dc1333",
+  "controller_sha256": "7352584c39c6434c8377a4131c8bdefc39ecae0a0e24f798f4a2f6f3776c3231",
+  "required_fixes": [],
+  "scope": "one exact managed checkpoint and one additional bounded local continuation; task total two; no hosted execution, integration or release",
+  "notes": [
+    "Original callback error, deadline interruption and 15 POSIX-only skips remain separate observations.",
+    "Checkpoint acceptance is not POSIX qualification or a guarantee of deadline completion."
+  ],
+  "review_execution": "read-only; no tests or mutations performed"
+}

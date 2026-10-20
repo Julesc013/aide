@@ -1,0 +1,126 @@
+{
+  "attempt": 1,
+  "collected_manifest": {
+    "logs": "4fae9378781eaa1b1323e98be50739820d0da60f034fb6f458b2bcc67d17a0be",
+    "output": "ded42f91dc9b1bbc32e3770f7277a92fc89c3c97e3e0c44c070b0ccdf0ec12ff"
+  },
+  "completed": {
+    "original_fixtures": {
+      "passed": 117,
+      "skips": 9,
+      "tests": 126
+    },
+    "posix_primitives": {
+      "native_qualification": false,
+      "passed": 0,
+      "skips": 15,
+      "tests": 15
+    },
+    "published_1_1_adoption_and_detach": [
+      "fresh",
+      "brownfield"
+    ],
+    "shared_lifecycle": {
+      "passed": 8,
+      "skips": 2,
+      "tests": 10
+    },
+    "windows_native": {
+      "errors": 1,
+      "passed": 11,
+      "tests": 12
+    }
+  },
+  "copies": {
+    "local.command.json": {
+      "bytes": 59488,
+      "copy": ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/local.command.json",
+      "sha256": "cf18de4e609efd7e9d0c5b2763c633749d1059fff22b352872b3e67a36998f1d",
+      "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\5c22da3082784a538aa9f6e2b43c39a4\\output\\local.command.json"
+    },
+    "package-inputs.json": {
+      "bytes": 261129,
+      "copy": ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/package-inputs.json",
+      "sha256": "16ec2550c2fc9db069430e467de81f28e2b449ca664315ecb7779e7702eeb27d",
+      "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\5c22da3082784a538aa9f6e2b43c39a4\\output\\package-inputs.json"
+    },
+    "receipts/development-export-fresh-apply.command.json": {
+      "bytes": 775,
+      "copy": ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/receipts/development-export-fresh-apply.command.json",
+      "sha256": "7defb0ad0bb746c7500c46b7c3763da1672721e48d4b9684253c8639665f2d62",
+      "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\5c22da3082784a538aa9f6e2b43c39a4\\output\\receipts\\development-export-fresh-apply.command.json"
+    },
+    "receipts/fixture-tests.log": {
+      "bytes": 18004,
+      "copy": ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/receipts/fixture-tests.log.txt",
+      "sha256": "c42e474b6975d36078d0b8ef54a43d0f99ef330a6f3b9bc699e57faab0a64e43",
+      "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\5c22da3082784a538aa9f6e2b43c39a4\\output\\receipts\\fixture-tests.log"
+    },
+    "receipts/published-1.1.0-brownfield.case.json": {
+      "bytes": 267,
+      "copy": ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/receipts/published-1.1.0-brownfield.case.json",
+      "sha256": "a463c616f62885b1541111afc92d9bd608b5fdd857b3ccf8e32bf4419b778e6b",
+      "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\5c22da3082784a538aa9f6e2b43c39a4\\output\\receipts\\published-1.1.0-brownfield.case.json"
+    },
+    "receipts/published-1.1.0-fresh.case.json": {
+      "bytes": 262,
+      "copy": ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/receipts/published-1.1.0-fresh.case.json",
+      "sha256": "e3beb1a0768f2c7331288cdeb761cced1fdd20dda770f010206ff47e7465417f",
+      "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\5c22da3082784a538aa9f6e2b43c39a4\\output\\receipts\\published-1.1.0-fresh.case.json"
+    },
+    "receipts/test_posix_filesystem.log": {
+      "bytes": 3148,
+      "copy": ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/receipts/test_posix_filesystem.log.txt",
+      "sha256": "2b986a195fa9c215dea395e335deedba77a0c5bde9504a5e298b5b3d8761c649",
+      "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\5c22da3082784a538aa9f6e2b43c39a4\\output\\receipts\\test_posix_filesystem.log"
+    },
+    "receipts/test_posix_lifecycle.log": {
+      "bytes": 2287,
+      "copy": ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/receipts/test_posix_lifecycle.log.txt",
+      "sha256": "d183393b68155212a2e88e2396e8b1466875c0bd3e3cb3dcea45a11ecfa05eaf",
+      "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\5c22da3082784a538aa9f6e2b43c39a4\\output\\receipts\\test_posix_lifecycle.log"
+    },
+    "receipts/windows-native-regressions.log": {
+      "bytes": 4490,
+      "copy": ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/receipts/windows-native-regressions.log.txt",
+      "sha256": "e93c4d99e495c66320ba3610fea69f7fd74ef6ce33b1477ff56be9b5d1310d0e",
+      "source": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\5c22da3082784a538aa9f6e2b43c39a4\\output\\receipts\\windows-native-regressions.log"
+    }
+  },
+  "job_id": "5c22da3082784a538aa9f6e2b43c39a4",
+  "models_requested": 0,
+  "native_lifecycle_pass": false,
+  "peaks": {
+    "canonical_bytes": {
+      ".aide/export/aide-lite-pack-v0": 4851741
+    },
+    "memory_bytes": 330887168,
+    "scratch_bytes": 26446920
+  },
+  "phase": "retired",
+  "qualification_gap": "no POSIX native execution; no final evaluator summary or completed log transport because deadline interrupted evaluation",
+  "record_sha256": "249a390cf54222deecd2ea71610c30b3eee066d8bf33dc680e84231da4ba24d8",
+  "regression": "generic Windows unlink wrapper forwarded unspecified optional parameters to a two-argument callback",
+  "reservation_released": true,
+  "result": "INCOMPLETE_WITH_REGRESSION_ERROR",
+  "schema": "aide.posix-lifecycle-attempt.v1",
+  "scratch_absent": true,
+  "source_commit": "ba5c318e32c1c18e25454986d858822929c03c1c",
+  "source_tree": "0b41d2d78f71075285d84e660bca67f7ff5dfc1e",
+  "stable_assets": {
+    ".aide/release/stable/aide-lite-v1.0.0.SHA256SUMS.txt": "20a8507db9afbda002adb981aa5e7fbaca5b96588802a1f6d5f6965b67abbf83",
+    ".aide/release/stable/aide-lite-v1.0.0.manifest.json": "c53472ac5726657fc90c70b66994cf6b0608ff2fd5f594ef90300c9c622c30fb",
+    ".aide/release/stable/aide-lite-v1.0.0.tar.gz": "efcc1f83a1488ae36f95c42f7815ea7afb697859593d51909bf32eda3d8ae00a",
+    ".aide/release/stable/aide-lite-v1.0.0.zip": "a4787e1e65fc5ad7c8f1bb485b425d9e234c73858a1ae618bd7826fc6c2faf1b",
+    ".aide/release/stable/aide-lite-v1.1.0.SHA256SUMS.txt": "01a61970b04b33b77f9169fb2a093a9466bd7ae745f1e973b7d979c93b78204e",
+    ".aide/release/stable/aide-lite-v1.1.0.manifest.json": "38535c1d48cb4700da663ec1bbd56b3ec23c93639a75e6639d4bcd2d02c0353f",
+    ".aide/release/stable/aide-lite-v1.1.0.tar.gz": "7578e24718f375d150dec974ca34df53b2c167d437abf27e05706bc47d6dca44",
+    ".aide/release/stable/aide-lite-v1.1.0.zip": "80b8a875f63913153f7da890394d4d5c4bcce7c970ab9d48ba39366dd13a94fc"
+  },
+  "support_claimed": false,
+  "unfinished": [
+    "development fresh apply interrupted by 500-second evaluator deadline",
+    "development brownfield not started",
+    "actual published-predecessor fresh/brownfield upgrade cases not started"
+  ]
+}

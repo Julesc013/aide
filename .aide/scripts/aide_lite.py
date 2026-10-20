@@ -41865,7 +41865,7 @@ def is_source_only_export_test(rel_path: str) -> bool:
     if not rel.startswith(".aide/scripts/tests/"):
         return False
     name = Path(rel).name
-    return name in {"test_managed_workspace.py", "test_scoped_host.py"} or name.startswith("test_continuous_worker") or (
+    return name in {"test_managed_workspace.py", "test_scoped_host.py", "test_posix_lifecycle.py"} or name.startswith("test_continuous_worker") or (
         name.startswith("test_aide_") and rel not in PORTABLE_AIDE_TEST_MODULES
     )
 
@@ -41996,8 +41996,12 @@ def portable_verified_file(path: Path, expected_digest: str | None, *, read_only
 def portable_unlink_exact_file(path: Path, expected_digest: str, before_disposition=None,
                                *, expected_identity: str | None = None) -> None:
     if os.name == "nt":
-        windows_unlink_exact_portable_file(path, expected_digest, before_disposition,
-            expected_identity=expected_identity)
+        options = {}
+        if before_disposition is not None:
+            options["before_disposition"] = before_disposition
+        if expected_identity is not None:
+            options["expected_identity"] = expected_identity
+        windows_unlink_exact_portable_file(path, expected_digest, **options)
     else:
         posix_filesystem_binding().unlink_exact(path, expected_digest, before_disposition,
             expected_identity=expected_identity)

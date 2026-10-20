@@ -1,0 +1,12 @@
+fix(lite): preserve Windows unlink callback compatibility
+
+- Forward optional native unlink parameters only when supplied; retain the original failing regression and native implementation.
+- Preserve the first job's completed observations, callback error, evaluator deadline and verified retirement without claiming a pass.
+- Exclude the source-dependent lifecycle fixture from consumer exports through the existing boundary.
+- Prepare durable suite results and a finite continuation for affected checks and four unfinished delivered development cases.
+- Checkpoint the previous generated export before its next owned refresh; stable release assets remain unchanged.
+
+Validation: PASS - syntax, retained output/log manifests, eight stable asset hashes and narrow unchanged-dependency proof; NOT RUN - repaired regression, current export refresh, continuation, hosted qualification or release.
+Changelog: Fixed: Optional Windows unlink forwarding and source-only lifecycle fixture packaging.
+AIDE-Task: AIDE-LITE-POSIX-LIFECYCLE-01
+AIDE-Format: compact-v1

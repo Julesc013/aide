@@ -1,0 +1,43 @@
+test_partial_recovery_blocks_controls_change_during_publication_and_retirement (aide_portable_lifecycle_oracles.ExportImportTests.test_partial_recovery_blocks_controls_change_during_publication_and_retirement) ... ok
+test_disabled_controls_swap_at_receipt_effect_keeps_intent_for_reconciliation (aide_portable_lifecycle_oracles.ExportImportTests.test_disabled_controls_swap_at_receipt_effect_keeps_intent_for_reconciliation) ... ok
+test_removal_rename_gap_legacy_intent_without_file_identity_refuses (aide_portable_lifecycle_oracles.ExportImportTests.test_removal_rename_gap_legacy_intent_without_file_identity_refuses) ... ok
+test_removal_leaf_change_before_handle_open_is_preserved (aide_portable_lifecycle_oracles.ExportImportTests.test_removal_leaf_change_before_handle_open_is_preserved) ... ERROR
+test_removal_rejects_parent_junction_swapped_at_handle_open (aide_portable_lifecycle_oracles.ExportImportTests.test_removal_rejects_parent_junction_swapped_at_handle_open) ... ok
+test_removal_handle_refuses_a_competing_writer_or_hard_link (aide_portable_lifecycle_oracles.ExportImportTests.test_removal_handle_refuses_a_competing_writer_or_hard_link) ... ok
+test_owned_repair_stage_denies_second_process_writer (aide_portable_lifecycle_oracles.ExportImportTests.test_owned_repair_stage_denies_second_process_writer) ... ok
+test_owned_repair_stage_setup_failure_cleans_owned_link (aide_portable_lifecycle_oracles.ExportImportTests.test_owned_repair_stage_setup_failure_cleans_owned_link) ... ok
+test_owned_repair_prepublication_failure_retries_from_missing (aide_portable_lifecycle_oracles.ExportImportTests.test_owned_repair_prepublication_failure_retries_from_missing) ... ok
+test_owned_repair_blocks_parent_substitution_at_publish (aide_portable_lifecycle_oracles.ExportImportTests.test_owned_repair_blocks_parent_substitution_at_publish) ... ok
+test_owned_repair_cleanup_rejects_junction_swap_on_success_and_recovery (aide_portable_lifecycle_oracles.ExportImportTests.test_owned_repair_cleanup_rejects_junction_swap_on_success_and_recovery) ... ok
+test_fresh_import_serializes_second_import_and_repair_without_lock_file (aide_portable_lifecycle_oracles.ExportImportTests.test_fresh_import_serializes_second_import_and_repair_without_lock_file) ... ok
+
+======================================================================
+ERROR: test_removal_leaf_change_before_handle_open_is_preserved (aide_portable_lifecycle_oracles.ExportImportTests.test_removal_leaf_change_before_handle_open_is_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\AIDE\aide\.aide\scripts\tests\test_export_import.py", line 3261, in test_removal_leaf_change_before_handle_open_is_preserved
+    result = aide_lite.apply_portable_removal(target, plan["plan_digest"])
+  File "D:\Projects\AIDE\aide\.aide\scripts\aide_lite.py", line 44431, in apply_portable_removal
+    return _apply_portable_removal_pinned(target_root, expected_plan_digest, fail_after_removals, fail_after_receipt)
+  File "D:\Projects\AIDE\aide\.aide\scripts\aide_lite.py", line 44367, in _apply_portable_removal_pinned
+    portable_unlink_exact_file(target, str(item["preimage_digest"]))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AIDE\aide\.aide\scripts\aide_lite.py", line 41999, in portable_unlink_exact_file
+    windows_unlink_exact_portable_file(path, expected_digest, before_disposition,
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        expected_identity=expected_identity)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\unittest\mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\unittest\mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Python\pythoncore-3.14-64\Lib\unittest\mock.py", line 1247, in _execute_mock_call
+    result = effect(*args, **kwargs)
+TypeError: ExportImportTests.test_removal_leaf_change_before_handle_open_is_preserved.<locals>.replace_leaf() got an unexpected keyword argument 'expected_identity'
+
+----------------------------------------------------------------------
+Ran 12 tests in 351.683s
+
+FAILED (errors=1)

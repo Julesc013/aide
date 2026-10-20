@@ -1,0 +1,18 @@
+{
+  "phase": "source preparation under four admitted derived paths; acceptance still requires exact source-effect-02 review",
+  "exit_code": 0,
+  "before": {
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "d9d95d976ec83862b15bd54ce9c0500d809ee0053c2213e838ae63d34b9caa6b",
+    ".aide/reports/capability-evidence-bindings.json": "237955cf20af65a101bc5415e3db40a996affc8568a302c8ff2f8b444fdf5c87",
+    ".aide/reports/capability-command-status.md": "ee46df14981750cf1efa24fc1e11f12d8671c8f8edbd595832f528d6143a98d5"
+  },
+  "after": {
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "dcaf172f070858ca41662d8dcadf6556f077d5ed02cbf226a5b065984ac0295a",
+    ".aide/reports/capability-evidence-bindings.json": "1c1a8dca9c2b99628db2fbfd110bd0817025d7743223168af43753eed1933687",
+    ".aide/reports/capability-command-status.md": "8c6d435815c4092f696b540bf7d33babec3bd3369dbbfb8632e3094e2f6fddda"
+  },
+  "capability_records_changed": false,
+  "support_claimed": false
+}

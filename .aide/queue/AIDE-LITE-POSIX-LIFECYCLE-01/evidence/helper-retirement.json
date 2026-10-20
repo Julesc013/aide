@@ -1,0 +1,8 @@
+{
+  "pid": 18436,
+  "creation_filetime": 134369682277218922,
+  "command": "python -B .aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/prepare-conserved-evidence.log",
+  "reason": "positively owned read-only preparation helper used repeated full-source AST extraction; no outputs were produced; replace with bounded one-pass line extraction",
+  "product_or_other_process_effects": false,
+  "terminated": true
+}

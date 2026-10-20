@@ -2,6 +2,12 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-POSIX-LIFECYCLE-01
 status: running
 result: PENDING
-planning_state: admission_accepted_binding_preparation
+planning_state: first_attempt_incomplete_forwarding_repair_and_bounded_continuation_preparation
 product_qualified: false
-next_action: Complete the bounded filesystem binding, shared lifecycle regressions and delivered evaluator; freeze the exact source and execution recipe for independent review before allocation or export refresh.
+next_action: Review the corrected forwarding route, source-only export boundary, evidence reuse and finite continuation before a second local allocation; preserve attempt 1 and rerun only affected checks plus unfinished development cases.
+local_attempts_consumed: 1
+additional_local_allocation: gated_by_exact_source_effect_02_independent_accept
+last_local_job: 5c22da3082784a538aa9f6e2b43c39a4
+last_local_result: INCOMPLETE_WITH_REGRESSION_ERROR
+last_local_retired: true
+hosted_runs_consumed: 0

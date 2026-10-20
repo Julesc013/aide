@@ -1,0 +1,36 @@
+{
+  "base": "ba5c318e32c1c18e25454986d858822929c03c1c",
+  "campaign_local_allocations_after_successful_admission": 2,
+  "consumed_job_id": "5c22da3082784a538aa9f6e2b43c39a4",
+  "control_config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "controller_sha256": "7352584c39c6434c8377a4131c8bdefc39ecae0a0e24f798f4a2f6f3776c3231",
+  "effects": [
+    "one exact managed changed-input checkpoint on this existing local task branch, including recoverable previous export bytes",
+    "one additional finite existing-runner allocation under unchanged configuration; not a replenished first allowance",
+    "existing export owner proves exact reviewed prior inventory equals actual committed HEAD before one refresh",
+    "rerun failed original callback regression, three shared removal/recovery checks and new source-test boundary",
+    "execute only four unfinished delivered development cases; preserve and narrowly reuse exact applicable prior observations",
+    "retain per-suite/per-command results, bounded log transport, collection and retirement; terminal failure is not automatically retried"
+  ],
+  "forbidden": [
+    "push, hosted dispatch, dev/main integration, branch retirement, tag or release",
+    "stable asset/version/candidate changes, other targets/processes, root/reserve/privilege changes, models/providers/spending"
+  ],
+  "integration_base": "8e5581cce7c7fd7037f6a199c92a6922260893ab",
+  "maximum_local_allocations": 1,
+  "origin_url": "https://github.com/Julesc013/aide.git",
+  "qualification_config": ".aide.local/lite-successor-qualification-execution.json",
+  "qualification_config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "reuse_plan": ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/continuation-plan.md",
+  "review_attestation": {
+    "actual_independent_accept_only": true,
+    "binds": [
+      "source_sha256",
+      "effect_sha256",
+      "controller_sha256"
+    ],
+    "included_in_commit": true,
+    "path": ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/source-review-02.json"
+  },
+  "task_branch": "task/aide-lite-posix-lifecycle-01"
+}

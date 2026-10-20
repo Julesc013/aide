@@ -15,6 +15,8 @@ TASK = Path(__file__).parent
 scratch = Path(os.environ["AIDE_JOB_TMP"]).resolve(strict=True)
 output = Path(os.environ["AIDE_JOB_OUTPUT"]).resolve(strict=True)
 sys.dont_write_bytecode = True
+continue_local = sys.argv[1:] == ["continue-local"]
+assert sys.argv[1:] in ([], ["continue-local"])
 
 
 def sha(path):
@@ -34,6 +36,7 @@ def load(name, path):
 
 
 record = {"state": "started", "export_refreshed": False, "exit_code": None,
+          "mode": "bounded_continuation" if continue_local else "initial",
           "source_head": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()}
 record_path = output / "local.command.json"
 save(record_path, record)
@@ -41,7 +44,8 @@ streams = [output / ("evaluator" + suffix) for suffix in (".stdout", ".stderr")]
 try:
     assert not subprocess.check_output(["git", "status", "--porcelain"]).strip()
     ownership = load("posix_export_ownership", ROOT / ".aide/queue/AIDE-DAILY-PACK-REFRESH-01/pack_inventory.py")
-    expected = json.loads((TASK / "evidence/prior-export-inventory.json").read_bytes())
+    inventory_name = "prior-export-inventory-02.json" if continue_local else "prior-export-inventory.json"
+    expected = json.loads((TASK / "evidence" / inventory_name).read_bytes())
     observed = ownership.require_same(expected)
     save(output / "export-before.json", observed)
     metadata = output / "prior-metadata"
@@ -69,10 +73,17 @@ try:
         files[name] = sha(ROOT / name)
     pinned = {key: value for key, value in prior.items() if key not in {"files", "development_members"}}
     pinned.update(files=files, development_members=members, workunit="AIDE-LITE-POSIX-LIFECYCLE-01")
+    if continue_local:
+        conserved = json.loads((TASK / "evidence/conserved-evidence.json").read_bytes())
+        assert all(sha(ROOT / name) == value for name, value in conserved["files"].items())
+        pinned["conserved_evidence"] = conserved
+        pinned["files"].update(conserved["files"])
     save(output / "package-inputs.json", pinned)
     argv = [sys.executable, "-I", "-B", "evals/lite/lifecycle.py", "--scratch-parent", str(scratch),
             "--output", str(output / "receipts"), "--emit-log", "--workunit", "AIDE-LITE-POSIX-LIFECYCLE-01",
             "--input-manifest", str(output / "package-inputs.json")]
+    if continue_local:
+        argv.append("--continue-local")
     record.update(state="evaluator_started", argv=argv)
     save(record_path, record)
     with streams[0].open("xb") as stdout, streams[1].open("xb") as stderr:

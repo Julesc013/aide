@@ -1,0 +1,35 @@
+{
+  "changed_functions": {
+    "is_source_only_export_test": {
+      "new": "b9b5d7d34e355dba5bfe987d315d11c0726cbce886fb6aefeb8122102ecf3e50",
+      "old": "33d3a49b2b03ea61b9ba3309d0a15fc229e53fa6e42d2a1cff18755cc451f4b9"
+    },
+    "portable_unlink_exact_file": {
+      "new": "308ba737299073c38fe3a838d71443450ae4ecd03128705d0ba80968ec045558",
+      "old": "f2c0254f9bf09793c830e26be50eafb39d2c177b74a88a7c53b00f4ea1a5f876"
+    }
+  },
+  "reuse_scope": "recorded unchanged helper/fixture observations only; new wrapper, export boundary and unfinished consumer routes require current execution",
+  "source_commit": "ba5c318e32c1c18e25454986d858822929c03c1c",
+  "unchanged_file_sha256": {
+    ".aide/scripts/tests/test_aide_distribution_fixture_portability.py": "e36078a68b4fcf22850773bd9e479e0c218095e138cc84c306fa3c726071ce23",
+    ".aide/scripts/tests/test_export_import.py": "7008820345679e7b6127e499ebedbfb7d6334f3eb129ecdbeb8a8b2676ec0b4a",
+    "core/distribution/operation_executor.py": "c60fb579cfe789fe95821ec3f99c8c5f2c0198f13df8975bed77dbdc54e31bcf",
+    "core/distribution/temp_workspace.py": "87ef18d885a2c70143a83c5275b02cd031f9e73f67b5b9a376f947a9caa6bdd7"
+  },
+  "unchanged_function_sha256": {
+    "_apply_import_pack_unlocked": "bf9652f15f7302ef66b147a06c11e7d4b6a326c23464786e65805a57765554e8",
+    "_apply_portable_removal_pinned": "582e362991c530d08d7c6036a636099eec7f149a9e3ec14d3e1e336105721b43",
+    "apply_portable_rollback": "75cc45f9fe92023dfda405a1ad11445f363bcf5f8f769f5d58ddc8770497df74",
+    "atomic_create_bytes_no_clobber": "3b1ce0f01e68ac28c1793444e272ddb69ff4874b98641ca872e790a54b4107a1",
+    "delete_portable_repair_intent_anchored": "69f5233a389dd9a9983688be27f32cba45e9f4698d7af9e6aaf65b1f2925d38e",
+    "portable_import_delete_open_leaf": "2d093ff680392756845b91375e05071203f5f5d740ada86ef35af7b2c0db0d3e",
+    "portable_import_rename_open_leaf": "346b7c828044329be3ca1e5e9b778f67812c0b03a728af7d6a46f3aef9656a85",
+    "portable_import_verified_leaf": "9c6e30075bcd59eed3a53865b7ef0ec89166cf01b2982949771b3cf85f66b7c1",
+    "recover_partial_import": "6b3694fa19829298c4d8f3006d46465358d695ea4661402f560e0d12685e6cce",
+    "windows_guarded_staged_bytes": "ebf6e2beebf81f6e10ea76187100a6897b0c776cc74b38eb3250c2aec41ea5e1",
+    "windows_link_from_handle": "a11d55c2a64cc435d79fb9ab740940084ec8a55d4c5c7c4d9cf7dff1818671ec",
+    "windows_pinned_directory": "797a55638a4503df00c1a8125be71d7c0945597a2525b0b762b3dda299332b08",
+    "windows_unlink_exact_portable_file": "ce4112f6b33c9f459ffc4a338dafa3df23719b5982d5f521f044e802d7d29dfe"
+  }
+}

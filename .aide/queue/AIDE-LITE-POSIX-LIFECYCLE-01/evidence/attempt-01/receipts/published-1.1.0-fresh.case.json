@@ -1,0 +1,10 @@
+{
+  "cli_sha256": "76c48ff6a261d06ea5e5ff7c3a82032e132f5b3885316a87b4d702be2fc93882",
+  "detached": true,
+  "installed": true,
+  "native_acceptance": true,
+  "preserved": true,
+  "removal_status": "DETACHED",
+  "shape": "fresh",
+  "subject": "published-1.1.0"
+}

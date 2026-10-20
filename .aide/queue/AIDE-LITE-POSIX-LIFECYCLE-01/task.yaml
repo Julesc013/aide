@@ -43,7 +43,8 @@ scope:
     - historical canary/test assertions and historical failure evidence
     - other repositories, unrelated processes, machine configuration and local root/reserve/privilege changes
 verification:
-  maximum_local_jobs: 1
+  maximum_local_jobs: 2
+  local_allowance: initial allocation consumed; one proposed changed-input continuation requires exact source-effect-02 ACCEPT
   local_config: .aide.local/lite-successor-qualification-execution.json
   maximum_hosted_runs: 1
   maximum_hosted_jobs: 3

@@ -1,0 +1,56 @@
+{
+  "authority": "observations only; the independently reviewed exact controller must authorize narrow reuse",
+  "completed_observations": {
+    "original_fixtures": {
+      "passed": 117,
+      "skips": 9,
+      "tests": 126
+    },
+    "posix_primitives": {
+      "native_qualification": false,
+      "passed": 0,
+      "skips": 15,
+      "tests": 15
+    },
+    "published_1_1_adoption_and_detach": [
+      "fresh",
+      "brownfield"
+    ],
+    "shared_lifecycle": {
+      "passed": 8,
+      "skips": 2,
+      "tests": 10
+    },
+    "windows_native": {
+      "errors": 1,
+      "passed": 11,
+      "tests": 12
+    }
+  },
+  "files": {
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01.json": "8dcec06dc5f03145eb8fa2e7404b1a2c5752e9df0f6ef97530b4554befb8dcdd",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/receipts/fixture-tests.log.txt": "c42e474b6975d36078d0b8ef54a43d0f99ef330a6f3b9bc699e57faab0a64e43",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/receipts/published-1.1.0-brownfield.case.json": "a463c616f62885b1541111afc92d9bd608b5fdd857b3ccf8e32bf4419b778e6b",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/receipts/published-1.1.0-fresh.case.json": "e3beb1a0768f2c7331288cdeb761cced1fdd20dda770f010206ff47e7465417f",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/receipts/test_posix_filesystem.log.txt": "2b986a195fa9c215dea395e335deedba77a0c5bde9504a5e298b5b3d8761c649",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/receipts/test_posix_lifecycle.log.txt": "d183393b68155212a2e88e2396e8b1466875c0bd3e3cb3dcea45a11ecfa05eaf",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/attempt-01/receipts/windows-native-regressions.log.txt": "e93c4d99e495c66320ba3610fea69f7fd74ef6ce33b1477ff56be9b5d1310d0e",
+    ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/reuse-dependency-proof.json": "bad6b85fd20d1363e3ccc789e583adf7560e2ae5506a5706a1fea273f957bfaf",
+    ".aide/scripts/tests/test_aide_distribution_fixture_portability.py": "e36078a68b4fcf22850773bd9e479e0c218095e138cc84c306fa3c726071ce23",
+    ".aide/scripts/tests/test_export_import.py": "7008820345679e7b6127e499ebedbfb7d6334f3eb129ecdbeb8a8b2676ec0b4a",
+    "core/distribution/operation_executor.py": "c60fb579cfe789fe95821ec3f99c8c5f2c0198f13df8975bed77dbdc54e31bcf",
+    "core/distribution/temp_workspace.py": "87ef18d885a2c70143a83c5275b02cd031f9e73f67b5b9a376f947a9caa6bdd7"
+  },
+  "limitations": [
+    "not a current-package whole-source pass",
+    "original Windows regression error and 500-second interruption remain preserved"
+  ],
+  "rerun": [
+    "three shared removal/recovery oracles",
+    "failed original callback regression",
+    "new source-test export boundary",
+    "four unfinished delivered development cases"
+  ],
+  "review_required": true,
+  "source_commit": "ba5c318e32c1c18e25454986d858822929c03c1c"
+}

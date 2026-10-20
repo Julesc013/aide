@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-I",
+    "-B",
+    "D:\\Projects\\AIDE\\aide\\.aide\\export\\aide-lite-pack-v0\\files\\.aide\\scripts\\aide_lite.py",
+    "--repo-root",
+    "D:\\Projects\\AIDE\\aide\\.aide\\export\\aide-lite-pack-v0",
+    "import-pack",
+    "--pack",
+    "D:\\Projects\\AIDE\\aide\\.aide\\export\\aide-lite-pack-v0",
+    "--target",
+    "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5c22da3082784a538aa9f6e2b43c39a4\\tmp\\aide-modern-vwlsjbzu\\development-export-fresh",
+    "--mode",
+    "safe",
+    "--expect-plan",
+    "250c76219283cdaa87b04c2b285e71369c8f38e82bfffeff8d20295d7894a0a8"
+  ],
+  "exit_code": null,
+  "label": "development-export-fresh-apply",
+  "state": "started"
+}

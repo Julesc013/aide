@@ -1,0 +1,11 @@
+{
+  "decision": "PASS_WITH_NOTES",
+  "reviewer": "/root/review_disked_continuation",
+  "scope": "continuation design only; no allocation",
+  "required_fixes": [],
+  "notes": [
+    "Fifteen POSIX primitive skips establish no POSIX qualification",
+    "351.683-second Windows suite explains first deadline consumption",
+    "Narrow reuse and affected-check list are proportionate; exact frozen effect still requires ACCEPT"
+  ]
+}
