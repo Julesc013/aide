@@ -1,0 +1,14 @@
+{
+  "decision": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "dad09cc9e6b3498cfb2c4d9abd498ea96e74ad7c2ecac2e1f834bca19444004f",
+  "effect_sha256": "d5e66ace31350c76d316137dbca0819f0a9bc90be667b3a31dd60749161fe32d",
+  "controller_sha256": "f55045160a5e3d1ec6b46e1c636fa12f8b4cca34699f123d9a5f50cef78fbc1d",
+  "required_fixes": [
+    "Post-dev validation must have PASS status, zero FAIL/OTHER and only the exact classified missing historical review-reference warning; stop on new or additional warnings before main."
+  ],
+  "nonblocking_notes": [
+    "All prior source, identity, normalization, managed commit, remote and projection repairs check out; no broader source concern."
+  ],
+  "execution": "No product rerun, native allocation or Git effect was performed."
+}

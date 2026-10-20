@@ -4,7 +4,7 @@
 
 **AIDE is a portable agentic development control plane for real repositories.**
 
-**Platform scope:** Windows, Linux, macOS, BSD, Solaris/Unix, DOS, OS/2 and future operating systems belong in AIDE’s design scope. Shared work records and protocols stay independent of OS and editor; native adapters, local companions and offline relays provide different ways to participate. Each profile records its actual capabilities and qualification. The published Windows profile is one starting point in that wider programme. [Platform plan](ROADMAP.md#platform-reach)
+**Platform scope:** Windows, Linux, macOS, BSD, Solaris/Unix, DOS, OS/2 and future operating systems belong in AIDEâ€™s design scope. Shared work records and protocols stay independent of OS and editor; native adapters, local companions and offline relays provide different ways to participate. Each profile records its actual capabilities and qualification. The published Windows profile is one starting point in that wider programme. [Platform plan](ROADMAP.md#platform-reach)
 
 AIDE helps repositories develop and maintain themselves. It turns development work into protocol objects, evidence packets, event records, and OKF-compatible knowledge so humans, agents, tests, IDEs, scripts, and legacy environments can coordinate through one repo-native control plane.
 
@@ -499,3 +499,9 @@ You may use, modify, fork, redistribute, package, integrate, and build on AIDE, 
 AIDE project names, logos, and branding are not licensed for misleading or official use. See [NOTICE.md](NOTICE.md) and [TRADEMARKS.md](TRADEMARKS.md).
 
 Generated outputs are addressed in [GENERATED_OUTPUTS.md](GENERATED_OUTPUTS.md): your repo content remains yours, and AIDE does not claim ownership over repo-local outputs generated from your own project.
+
+### Next release and platform direction
+
+**AIDE Lite 1.2.0 is the next planned release**, with exact modern profiles still to qualify. Python 3 reference tooling and optional PowerShell Core 7+ adapters share the existing semantic owners; native legacy ports are staged across releases. Future AIDE Extension 1.0 uses shared contracts and distinct IDE adapters/packages. Read the [portability and build plan](docs/reference/portability-and-build-profiles.md) for source boundaries, requested systems and acceptance; planned reach is not current support.
+
+**Adopt or leave at any project stage:** preserve existing project policy, tools and customizations; combine or replace AIDE through explicit adapters and readable work/results. Removal preserves project work, unknown ownership and useful evidence. The [lifecycle and exit plan](docs/reference/portability-and-build-profiles.md#adopt-customize-coexist-and-leave) extends existing Lite mechanisms to future products; those future exits still require implementation and qualification.

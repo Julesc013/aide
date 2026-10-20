@@ -1,6 +1,6 @@
 ### Current campaign: useful daily operation remains the finish line
 
-**Observed 19 October 2026.** Lite 1.1.0 is published, acquired and consumer-verified. Current Git refs and exact effect receipts establish source integration; this view does not grant new authority or replace task evidence.
+**Observed 20 October 2026.** Lite 1.1.0 is published, acquired and consumer-verified. Current Git refs and exact effect receipts establish source integration; this view does not grant new authority or replace task evidence.
 
 **Released product.** [AIDE Lite 1.1.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.1.0), T3 local Windows CLI, 56 forms. Tag checkpoint `9cead252` and manifest payload source `447e393b` are separate. Four labelled assets match frozen hashes; the original downloaded-byte adoption/recovery consumer passed and retired. [Delivery proof](../AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-lite-1.1.0-qualified.json). Lite 1.0.0, original qualification and failed/incomplete observations remain preserved.
 
@@ -9,7 +9,7 @@
 | Next useful outcome | Remaining condition and owner |
 | --- | --- |
 | Actual host participation | Host owner supplies a supported reachable endpoint/session/workspace binding, or an explicit cooperative participant boundary. Qualify the selected delivery/editing/cancellation route; never infer general availability from the historical default-socket error. |
-| DiskEd native acceptance | Current writer/target ownership remains unresolved. Preparation passed 158 checks with two unavailable symlink checks; its two allocations are exhausted. Preserve native DE-W000 and tools; refresh actual preimages and review one finite actual-target phase before writes. |
+| DiskEd native acceptance | The user confirms the local checkout is idle and another computer actively contributes; local source is stale and remote dev/main have advanced. Preparation passed 158 checks with two unavailable symlink checks; its two allocations are exhausted. Preserve native DE-W000 and tools; refresh actual preimages and review one finite actual-target phase before writes. |
 | Owner-to-owner dependency | Use a current FacMan-to-Setup request confirmed by both project owners, with requested completion level, exact returned result and requester adoption. Existing request/rebind/offline mechanisms need operational use, not another queue. |
 | Recovery and repeatability | Interrupt and repeat the actual useful workflow without duplicated completed effects or lost customization/results. |
 | Complete effort and useful learning | Record available preparation-through-cleanup costs, failures and interventions; unknown usage stays unknown. Use existing context, reuse and correctable lessons on real work and retain one useful outcome. Earlier three-call model phase remains exhausted. |
@@ -23,3 +23,7 @@
 **Continue without rediscovery.** Reuse exact valid results and original partial successes. No repeated unchanged host/resource probes, new watcher, replacement checkout, implicit model allowance or unrelated cleanup. Finite code owns waiting/collection/retirement. Missing external prerequisites do not stop independent authorized work. There is no defensible overall platform completion percentage.
 
 **Concrete policy correction qualified:** the [current-policy release checklist](../AIDE-RELEASE-CHECKLIST-PROJECTION-01/REPORT.md) passed source, delivered and installed checks in one retired allocation. It projects existing requirements and refuses stale/missing reports. This development increment is outside frozen 1.1.0; final Git receipt establishes its source delivery. Native downstream ownership and actual host participation remain open.
+
+**Next release direction:** Lite 1.2 targets qualified modern profiles; the user selected staged legacy native ports. [Preparation](../AIDE-LITE-1-2-PORTABILITY-01/ExecPlan.md) records Python 3, optional PowerShell Core 7+, shared semantics, platform backends and future Extension 1.0 host packages. No new release or platform support is claimed.
+
+**Latest completed integration:** the qualified current-policy checklist correction reached local/remote dev/main at observed checkpoint 7877e056; source 1ac0b37c and its original validation/retirement evidence remain distinct from published 1.1.0. This planning item does not repeat those jobs.

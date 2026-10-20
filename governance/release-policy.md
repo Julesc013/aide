@@ -1,6 +1,6 @@
 ### Release policy
 
-**Current product state:** AIDE Lite 1.0.0 is published for its recorded local Windows CLI profile. Frozen 1.1.0 is technically qualified and awaits publication and acquired-byte acceptance. The [changelog](../CHANGELOG.md), [current campaign](../.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md) and exact release evidence distinguish package delivery from newer development and the unfinished platform.
+**Current product state:** AIDE Lite 1.1.0 is published, acquired and consumer-verified for its exact local Windows CLI profile; 1.0.0 remains preserved. Lite 1.2.0 is planned, with modern profiles still to qualify and legacy native ports staged by explicit owner decision. The [changelog](../CHANGELOG.md), [current campaign](../.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md) and exact release evidence distinguish package delivery from newer development and the unfinished platform.
 
 **Before every new tag**
 

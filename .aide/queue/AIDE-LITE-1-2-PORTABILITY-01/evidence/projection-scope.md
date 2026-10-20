@@ -1,0 +1,9 @@
+### Exact task-local projection amendment
+
+The source CLI's canonical changelog writer requires managed job/output admission and refuses alternate source-checkout directories. This task does not call it, override its guard or write `.aide/changelog`. Maximum native jobs remains zero.
+
+For this planning integration only, the separately reviewed controller may call the existing read-only changelog parser and Markdown/JSON renderers, then retain six outputs in each of three distinct ignored task-evidence directories: `projection-local.log`, `projection-dev.log` and `projection-main.log`. This is an explicitly admitted task projection, not canonical preview generation or release notes. Bind the full fixed one-commit range, head, parsed commit identity, zero malformed entries, preview-only flags and all six outputs. Use the existing output validator, cap each set at 1 MiB, create each set exclusively and byte-compare all three. Bind and recheck unchanged preimages for the six canonical reports.
+
+Reuse `core.apply.managed_commit.create_commit`, retain its full terminal outcome, obtain fresh ready helper plans and exact origin fetch/push URL checks before promotion, and use nonforce pushes with `--no-follow-tags`. Existing estate/dispatch ownership remains required. New source/effect hashes supersede the rejected candidate; no prior verdict covers changed bytes.
+
+The exact effect also permits one canonical source-review.json copied from the actual independent ACCEPT response after review. It is an attestation of the frozen source/effect/controller identities, not a member of its own source hash. The controller requires those exact identities, the named independent reviewer and an empty required-fixes list before committing; it includes this receipt with the payload. Never fabricate an ACCEPT.

@@ -8,12 +8,12 @@ review_gate: admitted_by_owner
 responsible_owner: AIDE campaign controller; project owners retain target acceptance
 acceptance_scope: Partial exact-subject qualifications; daily-use and full platform acceptance remain open
 product_qualified: false
-observed_at: 2026-10-19
-observed_source_checkpoint: 1ac0b37c4833a9fc97e9785d6e2834974ea96057
-next_action: Resolve actual host/target ownership and complete useful downstream/dependency work with recovery; independently integrate the qualified checklist correction.
+observed_at: 2026-10-20
+observed_source_checkpoint: 7877e05655ee33fa99583afe4855fac6a4910292
+next_action: Prepare the bounded Lite1.2 portability plan; refresh stale DiskEd source under clarified local-idle/remote-active ownership, then qualify useful host/downstream work.
 remaining_obligations:
   - Actual supported host delivery and bounded ordinary editing with interruption/recovery
-  - DiskEd writer ownership, target effect review and native downstream acceptance preserving customization
+  - DiskEd current-source reconciliation, target effect review and native downstream acceptance preserving customization
   - Whole-outcome effort accounting and matched accepted work; missing usage stays unknown
   - Repeated AIDE and downstream daily-use workflows with conserved results and controlled failure recovery
   - Remaining P0-P11 capability families under existing plan and independent implementation/activation/qualification gates
@@ -23,14 +23,14 @@ preserved_publication_branch: task/aide-lite-successor-publication-01
 preserved_publication_commit: c4357fc0fa150db5fc715a5365c52140a920d36b
 publication_prerequisite: complete_for_frozen_1_1_0
 publication_effect: completed_after_existing_draft_recovery
-native_adoption_prerequisite: active_writer_ownership_not_established
+native_adoption_prerequisite: local_idle_remote_active_source_refresh_and_exact_target_review_required
 host_prerequisite: supported_endpoint_bound_to_intended_existing_session_and_workspace
 model_phase: previous_three_calls_exhausted_no_new_live_dispatch
 outer_filesystem_permission: unrestricted_not_whole_session_containment
 unchanged_blockers_stop_independent_work: false
 authority: Existing owner delegation and exact independent source/effect gates; status grants nothing new
 current_state_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
-current_state_sha256: 9d6cc6799fdf32b7d8fdf8a82140762399f2affe5ee835d7823bffbb695210f1
+current_state_sha256: 824e540bf665280e7d828ef47fff3c9a7e63dca7f4c290b5c89924d3b35a4557
 historical_status_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-status.yaml
 historical_status_sha256: 797b885d9b9beee5a17435210f002cfba91ff344eef227af6ceca2dd32214384
 historical_task_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-task.yaml

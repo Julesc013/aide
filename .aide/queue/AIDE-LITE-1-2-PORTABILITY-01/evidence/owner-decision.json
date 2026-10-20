@@ -1,0 +1,9 @@
+{
+  "observed_at": "2026-10-20",
+  "origin": "Explicit live user answer to release-scope question",
+  "answer": "Stage native ports across releases (recommended)",
+  "effect": "Lite1.2 may ship qualified modern profiles; all named legacy native targets remain staged, companion evidence never substitutes for native execution.",
+  "additional_user_clarification": "DiskEd is active on another computer; no other work is running in its local checkout per user.",
+  "target_mutation_authorized_by_this_record": false,
+  "additional_live_request": "Adopt or discontinue AIDE mid-project; customizable, tunable coexistence and replacement of tools; source-linked learning without lock-in; release and validate independently versioned products across exact architectures and OS profiles."
+}

@@ -1,0 +1,21 @@
+{
+  "base": "7877e05655ee33fa99583afe4855fac6a4910292",
+  "branch": "task/aide-lite-1-2-portability-01",
+  "files": {
+    ".aide/intake/latest-intent-packet.json": "f58b64f76e50d2ee4228222ad1e2dc4c5e62b9b49e77e1fe0fc7042c2cf3fadc",
+    ".aide/intake/latest-intent-packet.md": "25a171e04bad2f8e6c6fdd002e31f86e6cd8eac16c3f893b174990e8b98376f6",
+    ".aide/intake/latest-workunit-draft.json": "aa3f999d679b53bfe16c804a3b0d13c9379bd6ea7d0e58b661af22ef246843fc",
+    ".aide/intake/latest-workunit-draft.md": "e83ec26d390fe6ed909ed6a339e1d1a8b029c629c87b4f347a109856c38786b6",
+    ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/evidence/admission-effect.md": "7ed897d17fcc86c6703f05700725ec7bc2c80a09546dd36e3ded2435e030c9cb",
+    ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/evidence/intake-disposition.md": "3f7c123fbf4721a864969dd612da5dedc7c6b6a595d6afc63395557225097e3c",
+    ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/evidence/latest-intent-packet.json": "f58b64f76e50d2ee4228222ad1e2dc4c5e62b9b49e77e1fe0fc7042c2cf3fadc",
+    ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/evidence/latest-intent-packet.md": "25a171e04bad2f8e6c6fdd002e31f86e6cd8eac16c3f893b174990e8b98376f6",
+    ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/evidence/latest-workunit-draft.json": "aa3f999d679b53bfe16c804a3b0d13c9379bd6ea7d0e58b661af22ef246843fc",
+    ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/evidence/latest-workunit-draft.md": "e83ec26d390fe6ed909ed6a339e1d1a8b029c629c87b4f347a109856c38786b6",
+    ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/ExecPlan.md": "721ae2565e9b0d96d40278100733180a9df349eb187bf91fc44b684019ff36b1",
+    ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/prompt.md": "964702acd60c4fdc55e1f26e9fafe9d407bd200cffca182a99bb15b1b16b8fc4",
+    ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/status.yaml": "0c16f9dc6bb902dcdf7d7ad0b8f812eb603eeceaa22fb1abab8f396a0f031ec6",
+    ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/task.yaml": "05382636a5dc876c7d0beaa929230041de344f7f5a7fa3914f2b434ebbafa6fc"
+  },
+  "effect_sha256": "7ed897d17fcc86c6703f05700725ec7bc2c80a09546dd36e3ded2435e030c9cb"
+}

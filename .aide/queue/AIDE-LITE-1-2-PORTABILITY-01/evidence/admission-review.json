@@ -1,0 +1,8 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "21ea7264ce23f7dbd9ba419d89e8f9307d547cacebcc8f94be2ade62ea82fe76",
+  "effect_sha256": "7ed897d17fcc86c6703f05700725ec7bc2c80a09546dd36e3ded2435e030c9cb",
+  "correction": "Reviewer explicitly corrected an initial hash transcription before any effect.",
+  "scope": "local branch and bounded planning preparation only"
+}

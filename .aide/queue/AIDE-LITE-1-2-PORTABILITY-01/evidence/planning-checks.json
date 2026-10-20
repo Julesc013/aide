@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "source_files_hash_verified": 325,
+  "historical_powershell_hash_verified": 3,
+  "new_reference_links_checked": 5,
+  "platform_intents": 13,
+  "false_support_claims_detected": 0,
+  "product_and_export_changes": false,
+  "native_or_os_qualification": false
+}

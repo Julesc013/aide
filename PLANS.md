@@ -1,5 +1,11 @@
 # AIDE Planning Index
 
+### Lite 1.2 portability preparation - 20 October 2026
+
+[Release preparation](.aide/queue/AIDE-LITE-1-2-PORTABILITY-01/ExecPlan.md) records Python 3 reference tooling, optional PowerShell Core 7+, shared semantics and platform-specific bindings. The user selected staged legacy native ports: Lite 1.2 targets qualified modern profiles, while Windows 9x/older NT, MS-DOS/FreeDOS, OS/2, BSD, Unix, Solaris/SunOS and future native participation retain explicit evidence requirements. AIDE Extension 1.0 is a shared product family with distinct host packages, not a universal binary. This is reviewed planning, not a built or qualified 1.2 release.
+
+DiskEd ownership is clarified: its local checkout is idle per the user, with active development on the other computer. Refresh current remote source and the stale local base before a separately reviewed target phase; do not restart its native campaign or reuse exhausted allocations.
+
 ### Lite 1.1.0 delivered - 19 October 2026
 
 Published release 416392381 at `2026-10-19T07:06:42Z`; tag `aide-lite-v1.1.0` remains at reviewed checkpoint `9cead252` and frozen payload source `447e393b`. All four labelled assets were acquired with exact hashes; original case 0 and partial-import recovery passed in retired job `7e9fdfcf`. Original documentation timeout and failed draft lookup are preserved; completed effects were not replayed. [Delivery evidence](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-lite-1.1.0-qualified.json)
@@ -14,7 +20,7 @@ Documentation/default qualification composes 25 retained source passes with five
 
 Start with [TODO.md](TODO.md) and the [campaign view](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md). The canonical queue owns each WorkUnit's scope, status, evidence and acceptance; this index preserves detailed and dated planning history. [ROADMAP.md](ROADMAP.md) and [specs](specs/) retain long-term intent.
 
-**Active release:** [AIDE-LITE-SUCCESSOR-PUBLICATION-01](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md) has authenticated access and a completed 1.0.0 presentation repair. Before tagging frozen 1.1.0, reconcile the README/docs/TODO/PLANS/ROADMAP/changelog, qualify the changed development documentation defaults, review exact integration/publication and verify acquired bytes. The unqualified readability checkpoint remains on its local task branch for later resumption.
+**Historical publication preparation (completed):** [AIDE-LITE-SUCCESSOR-PUBLICATION-01](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/ExecPlan.md) has authenticated access and a completed 1.0.0 presentation repair. Before tagging frozen 1.1.0, reconcile the README/docs/TODO/PLANS/ROADMAP/changelog, qualify the changed development documentation defaults, review exact integration/publication and verify acquired bytes. The unqualified readability checkpoint remains on its local task branch for later resumption.
 
 ## Selected-task context - 2026-10-18
 

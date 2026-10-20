@@ -1,6 +1,6 @@
 ### TODO
 
-**Current checklist — 19 October 2026.** The filesystem [queue](.aide/queue/index.yaml) owns task state, authority and acceptance. This page is a short, dated view for humans and agents; follow each linked WorkUnit before acting.
+**Current checklist — 20 October 2026.** The filesystem [queue](.aide/queue/index.yaml) owns task state, authority and acceptance. This page is a short, dated view for humans and agents; follow each linked WorkUnit before acting.
 
 **Release and daily use**
 
@@ -9,8 +9,15 @@
 - [x] Publish **1.1.0** and verify all downloaded assets plus the original adoption/recovery consumer. [Delivery evidence](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-lite-1.1.0-qualified.json)
 - [ ] Complete a useful, repeatable workflow in AIDE and one downstream project, including interruption/recovery, preserved customization, conserved results and whole-outcome accounting. [Campaign](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md)
 - [ ] Establish the supported endpoint/session/workspace binding for actual desktop delivery and editing. The host owner supplies the binding; AIDE qualifies the selected route. [Host prerequisite](.aide/queue/AIDE-COOPERATIVE-REVIEW-01/evidence/native-answer.md)
-- [ ] Establish DiskEd writer/target ownership, then perform the reviewed native adoption and target-owned checks. [Adoption WorkUnit](.aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/ExecPlan.md)
+- [ ] Refresh stale DiskEd source and review a finite native adoption phase: local checkout is idle per the user, while another computer actively contributes. Preserve its owner, pending changes and native checks. [Adoption WorkUnit](.aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/ExecPlan.md)
 - [ ] Resume the saved task-brief readability candidate with fresh source/job review. Its checkpoint is unqualified and has run no jobs. Local branch `task/aide-task-brief-readability-01`, checkpoint `8cd2236f` (not integrated)
+
+**Lite 1.2 and future Extension 1.0**
+
+- [x] Record Python 3/shared-source boundaries, optional PowerShell Core 7+ and the owner-selected staged legacy-native strategy. [Plan](.aide/queue/AIDE-LITE-1-2-PORTABILITY-01/ExecPlan.md)
+- [ ] Qualify exact modern Lite 1.2 profiles, portable ordinary CLI and actual 1.1.0 predecessor/customization/conflict/recovery evidence.
+- [ ] Develop native legacy profiles across releases; companion access remains distinct from native support.
+- [ ] Prepare shared Extension 1.0 contracts and separately qualified IDE adapters/packages.
 
 **Next dependency-ready capabilities**
 

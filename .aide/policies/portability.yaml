@@ -1,0 +1,63 @@
+schema_version: aide.portability-policy.v0
+status: active
+owner_task: AIDE-LITE-1-2-PORTABILITY-01
+reference: docs/reference/portability-and-build-profiles.md
+purpose: One maintained semantic implementation with explicit platform and host bindings.
+reference_tooling:
+  language: Python 3
+  minimum_minor: component_profile_and_executable_evidence_required
+  arbitrary_python3_is_qualified: false
+  python2_fallback: forbidden
+  modern_interpreter_required_on_every_target: false
+powershell_adapters:
+  optional: true
+  minimum_major: 7
+  edition: Core
+  executable: pwsh
+  new_or_changed_script_headers:
+    - '#Requires -Version 7.0'
+    - '#Requires -PSEdition Core'
+  implicit_windows_powershell_fallback: forbidden
+  windows_only_modules_require_named_platform_profile: true
+  historical_task_evidence: preserve_original_bytes_do_not_reactivate_as_current_tooling
+source_boundaries:
+  maintained_semantics: shared_existing_owner
+  platform_bindings: capability_technology_named_modules
+  whole_per_os_source_forks: forbidden
+  platform_apis: permitted_only_in_declared_platform_bindings_or_named_platform_tests
+  native_language_and_standard: justified_by_component_and_target_toolchains
+  generated_bindings: reproducible_and_owned_not_another_hand_maintained_semantic_copy
+  shell_wrappers: launch_and_ecosystem_adapters_not_duplicate_policy_or_state_engines
+  host_specific_build_systems: preserve_native_authority
+qualification_dimensions:
+  - controller_os_architecture_interpreter_dependencies_invocation
+  - build_host_os_architecture_toolchain
+  - target_os_architecture_abi_runtime_and_artifact
+  - ide_host_api_technology_and_package
+  - capabilities_and_enforcement_actually_available
+claim_rules:
+  - Source presence, syntax, cross-compilation, native execution, consumer acceptance and released support are separate claims.
+  - Python, PowerShell, a source tree, an emulator or a matching filename alone establishes no platform support.
+  - Native legacy execution and offline or remote companion participation require separate evidence and labels.
+  - Missing isolation, cancellation or resource controls must be explicit; do not silently substitute unrestricted execution.
+  - Use existing T0-T5 support tiers, L0-L4 capability levels and exact compatibility manifests.
+  - Preserve supported contracts and source-linked evidence; qualification reuses only unchanged applicable subjects and dependencies.
+release_direction:
+  lite_next_target: 1.2.0
+  legacy_native_ports: staged_across_releases_by_explicit_owner_decision
+  extension_target: 1.0.0
+  extension_packaging: shared_contracts_distinct_qualified_host_packages
+  release_support_granted_by_policy: false
+  implementation_activation_or_publication_authorized_by_policy: false
+adoption_coexistence_and_exit:
+  lifecycle_owner: existing_distribution_ownership_update_recovery_and_removal_mechanisms
+  adoption: inspect_brownfield_project_then_preview_scoped_owned_changes
+  project_authority: preserve_native_policies_tools_builds_and_acceptance
+  customization: project_owned_overrides_and_explicit_managed_sections
+  learning: attributed_source_linked_correctable_observations_not_implicit_authority
+  competing_tools: coexist_or_import_through_explicit_adapters_without_clobbering
+  removal: owned_material_only_preserve_project_work_customization_unknowns_and_evidence
+  interrupted_effects: reconcile_checkpoint_and_recovery_before_repeat_or_removal
+  continuation: export_readable_versioned_work_context_and_evidence_without_mandatory_service
+  service_exit: reconcile_owned_jobs_requests_credentials_and_data_retention_per_profile
+  portability_includes_replacement: true

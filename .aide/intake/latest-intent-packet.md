@@ -3,9 +3,9 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 6b3b152aeaf1a724317f9f2e181f2f54f80034b204ea3f6fba83d2d99a7f406d
-- raw_prompt_excerpt: Continue the existing campaign toward a useful additive Lite release for new and existing projects. Extend the existing first-stable builder for an explicitly reviewed same-major successor candidate, preserve all immutable published1.0.0...
-- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.
+- raw_prompt_hash: 9c6d2af4690a98fed27eb6e71908ef6f8fb60585b876054369da9b796d1b0657
+- raw_prompt_excerpt: Prepare AIDE Lite 1.2 and the future AIDE Extension 1.0 around one maintained shared source tree: Python 3 reference tooling, PowerShell Core 7+ only for new or changed optional PowerShell adapters, platform APIs isolated in named backen...
+- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release
 - risk_class: release
@@ -13,8 +13,8 @@
 - safe_to_execute: false
 - requires_split: true
 - blocked: true
-- blocker_reason: block until release gates, tags, and assets are approved
-- next_action: block until release gates, tags, and assets are approved
+- blocker_reason: write blocker report and require reviewed authorization before mutation
+- next_action: write blocker report and require reviewed authorization before mutation
 - task_execution: false
 - provider_or_model_calls: none
 - network_calls: none
@@ -31,7 +31,7 @@
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/AIDE-RESUME-PLAN-01/status.yaml`
+- `.aide/queue/AIDE-CODEX-DISPATCH-GATE-01/status.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/repo/file-inventory.json`
 - `.aide/repo/latest-repo-intelligence.md`
@@ -40,8 +40,8 @@
 
 ## Branch State Refs
 
-- current_branch:dev
-- current_role:integration
+- current_branch:main
+- current_role:canonical
 - workflow:trunk_with_dev_integration
 - worktree_dirty:false
 

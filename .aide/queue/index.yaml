@@ -4,6 +4,13 @@ policy: .aide/queue/policy.yaml
 default_concurrency: 1
 canonical_source: .aide/queue
 items:
+  - id: AIDE-LITE-1-2-PORTABILITY-01
+    status: passed
+    title: Prepare Lite 1.2 shared-source portability and Extension 1.0 profiles
+    task: .aide/queue/AIDE-LITE-1-2-PORTABILITY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LITE-1-2-PORTABILITY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-LITE-1-2-PORTABILITY-01/prompt.md
+    evidence: .aide/queue/AIDE-LITE-1-2-PORTABILITY-01/evidence
   - id: AIDE-LITE-SUCCESSOR-01
     status: passed_with_notes
     title: Preserve published assets and prepare an additive Lite successor

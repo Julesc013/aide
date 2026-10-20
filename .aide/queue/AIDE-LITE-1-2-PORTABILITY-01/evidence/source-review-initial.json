@@ -1,0 +1,19 @@
+{
+  "decision": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "e6a1db2bec8285a295aa81bc1efacd75b3fa9759047d7dd201f62238736c299c",
+  "effect_sha256": "e4297b38ae69422d9458a6457603c596ce110a989512fca1019a759d68557c22",
+  "controller_sha256": "96a030f804168ef0cc3a2428720ebc4ea676ec71e6b40fcadeb815793d9a2413",
+  "required_fixes": [
+    "The source CLI refuses the proposed task-local preview output; explicitly admit a bounded projection through existing parsers/renderers with complete range/six-output validation and comparisons.",
+    "Reuse the existing managed commit owner and require fresh ready Git helper plans.",
+    "Guard exact fetch/push URLs and disable implicit tag following.",
+    "Preserve raw identities and resolve six Git clean-filter line-ending mismatches before committing."
+  ],
+  "nonblocking_notes": [
+    "Planning, platform intent, lifecycle ownership and the narrow Profile correction are appropriate.",
+    "Ref ordering and symbolic origin/HEAD handling are correct.",
+    "The existing validation warning and unrun native qualification are accurately disclosed."
+  ],
+  "execution": "No commit, integration, job, target or release effect was performed."
+}

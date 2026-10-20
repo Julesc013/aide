@@ -1,0 +1,6 @@
+{
+  "status": "FAIL",
+  "check": "compact singleton present: Validation",
+  "cause": "Two Validation trailers in the prepared uncommitted message.",
+  "repair": "Combine passed and unrun checks into one Validation trailer. Original message-check.log preserved; no history rewritten."
+}

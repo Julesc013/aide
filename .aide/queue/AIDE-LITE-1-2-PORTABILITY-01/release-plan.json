@@ -1,0 +1,234 @@
+{
+  "schema": "aide.release-preparation-plan.v1",
+  "task_id": "AIDE-LITE-1-2-PORTABILITY-01",
+  "product": "AIDE Lite",
+  "target_version": "1.2.0",
+  "state": "planning_only_no_candidate",
+  "published_predecessor": "1.1.0",
+  "owner_decision_ref": "evidence/owner-decision.json",
+  "release_strategy": "qualified_modern_profiles_with_staged_legacy_native_ports",
+  "reference_language": "Python 3; minimum minor per qualified component profile",
+  "optional_powershell": "Core 7+ via pwsh, no legacy fallback",
+  "shared_source": "one semantic owner and shared contracts with named platform implementations, no whole per-OS forks",
+  "platforms": [
+    {
+      "id": "windows-modern",
+      "family": "Modern Windows NT family",
+      "phase": "modern_candidate",
+      "desired_native": true,
+      "lite_1_2_profile_qualified": false,
+      "exact_profile": null,
+      "evidence_needed": "Exact OS/architecture/interpreter tuple required; Lite1.1 evidence remains exact 19045/Python3.14.8.",
+      "companion_is_native": false
+    },
+    {
+      "id": "linux",
+      "family": "Linux",
+      "phase": "modern_candidate",
+      "desired_native": true,
+      "lite_1_2_profile_qualified": false,
+      "exact_profile": null,
+      "evidence_needed": "Select actual distribution/kernel/filesystem/architecture/runtime.",
+      "companion_is_native": false
+    },
+    {
+      "id": "macos",
+      "family": "macOS",
+      "phase": "modern_candidate",
+      "desired_native": true,
+      "lite_1_2_profile_qualified": false,
+      "exact_profile": null,
+      "evidence_needed": "Select actual OS/architecture/runtime and filesystem behavior.",
+      "companion_is_native": false
+    },
+    {
+      "id": "windows-nt-legacy",
+      "family": "Older Windows NT",
+      "phase": "staged_native",
+      "desired_native": true,
+      "lite_1_2_profile_qualified": false,
+      "exact_profile": null,
+      "evidence_needed": "Select exact NT release, ABI and available native toolchain.",
+      "companion_is_native": false
+    },
+    {
+      "id": "windows-9x",
+      "family": "Windows 9x",
+      "phase": "staged_native",
+      "desired_native": true,
+      "lite_1_2_profile_qualified": false,
+      "exact_profile": null,
+      "evidence_needed": "Separate exact Win32/API and process/filesystem constraints.",
+      "companion_is_native": false
+    },
+    {
+      "id": "msdos",
+      "family": "MS-DOS",
+      "phase": "staged_native",
+      "desired_native": true,
+      "lite_1_2_profile_qualified": false,
+      "exact_profile": null,
+      "evidence_needed": "Exact DOS version, real/protected mode, compiler and memory model.",
+      "companion_is_native": false
+    },
+    {
+      "id": "freedos",
+      "family": "FreeDOS",
+      "phase": "staged_native",
+      "desired_native": true,
+      "lite_1_2_profile_qualified": false,
+      "exact_profile": null,
+      "evidence_needed": "Separate native execution profile from MS-DOS compatibility assumptions.",
+      "companion_is_native": false
+    },
+    {
+      "id": "os2",
+      "family": "OS/2",
+      "phase": "staged_native",
+      "desired_native": true,
+      "lite_1_2_profile_qualified": false,
+      "exact_profile": null,
+      "evidence_needed": "Select exact system, API/ABI, bitness and native compiler.",
+      "companion_is_native": false
+    },
+    {
+      "id": "bsd",
+      "family": "BSD families",
+      "phase": "staged_native",
+      "desired_native": true,
+      "lite_1_2_profile_qualified": false,
+      "exact_profile": null,
+      "evidence_needed": "Qualify individual systems; no Linux-derived blanket support.",
+      "companion_is_native": false
+    },
+    {
+      "id": "unix",
+      "family": "Other Unix systems",
+      "phase": "staged_native",
+      "desired_native": true,
+      "lite_1_2_profile_qualified": false,
+      "exact_profile": null,
+      "evidence_needed": "Resolve concrete implementations and versions before claiming support.",
+      "companion_is_native": false
+    },
+    {
+      "id": "solaris",
+      "family": "Solaris",
+      "phase": "staged_native",
+      "desired_native": true,
+      "lite_1_2_profile_qualified": false,
+      "exact_profile": null,
+      "evidence_needed": "Exact OS, architecture, ABI and toolchain; no generic Unix substitution.",
+      "companion_is_native": false
+    },
+    {
+      "id": "sunos",
+      "family": "SunOS",
+      "phase": "staged_native",
+      "desired_native": true,
+      "lite_1_2_profile_qualified": false,
+      "exact_profile": null,
+      "evidence_needed": "Separate actual system generations and architectures.",
+      "companion_is_native": false
+    },
+    {
+      "id": "future",
+      "family": "Additional and future systems",
+      "phase": "capability_based",
+      "desired_native": false,
+      "lite_1_2_profile_qualified": false,
+      "exact_profile": null,
+      "evidence_needed": "Admit exact component/profile; no prediction of universal compilation.",
+      "companion_is_native": false
+    }
+  ],
+  "implementation_slices": [
+    {
+      "id": "audit",
+      "owner": "existing source/intelligence and platform owners",
+      "output": "bounded current source/dependency findings and native/tool assumptions",
+      "qualification": "inventory only; not an OS support verdict"
+    },
+    {
+      "id": "portable-lite",
+      "owner": "existing portable CLI, lifecycle and execution backend owners",
+      "output": "shared ordinary CLI without mandatory Windows execution imports",
+      "qualification": "actual installed source/package behavior and capability refusal"
+    },
+    {
+      "id": "modern-profiles",
+      "owner": "existing lifecycle consumers and support matrix owners",
+      "output": "explicit Windows/Linux/macOS candidate profile set",
+      "qualification": "independent OS evidence for each shipped profile and actual1.1 upgrade/conflict/recovery"
+    },
+    {
+      "id": "active-workflow",
+      "owner": "existing host/request/worker owners",
+      "output": "one useful bounded host or downstream workflow",
+      "qualification": "actual effects, recovery, no duplicate writer and complete available effort records"
+    },
+    {
+      "id": "release",
+      "owner": "existing release/packaging owners",
+      "output": "reviewed immutable1.2 assets",
+      "qualification": "exact contract, docs, dev/main sync, review and acquired-byte acceptance"
+    },
+    {
+      "id": "legacy-native",
+      "owner": "existing native and legacy compatibility-technology lanes",
+      "output": "smallest useful component per real toolchain/target",
+      "qualification": "native execution plus resource/filesystem/interruption cases; relay remains separate"
+    }
+  ],
+  "extension": {
+    "product": "AIDE Extension",
+    "target_version": "1.0.0",
+    "state": "future_product_preparation",
+    "shared_engine_and_contracts": true,
+    "single_binary_for_all_hosts": false,
+    "host_families": [
+      "Visual Studio",
+      "VS Code",
+      "Xcode",
+      "other existing host lanes"
+    ],
+    "adapter_versioning": "coordinated family1.0 only with per-host manifests; independently released contracts may version separately",
+    "acceptance": "actual host install/start/read-only work/context/evidence, then admitted edit/cancel/recovery per capability profile"
+  },
+  "release_gates": [
+    "select exact supported profiles and compatible public contract",
+    "fresh/brownfield/customization lifecycle",
+    "published1.1 predecessor, direct edits, real conflict/resolution and supported recovery",
+    "applicable filesystem/locking/encoding/process/resource and interruption checks",
+    "source/delivered/installed and independent acceptance evidence",
+    "docs/TODO/PLANS/ROADMAP/changelog and human-readable release presentation",
+    "reviewed source and effects, exact dev/main/tag/artifacts, acquired-byte consumers"
+  ],
+  "claims": {
+    "cross_platform_qualified": false,
+    "native_legacy_ports_qualified": false,
+    "extension_released": false
+  },
+  "preserved_work": [
+    "published Lite1.0 and1.1 assets and original evidence",
+    "existing daily-use and DiskEd task identities and exhausted budgets",
+    "existing P0-P11 roadmap owners and imported-draft boundaries"
+  ],
+  "adoption_and_exit": {
+    "owner": "existing distribution/ownership/update/recovery/removal mechanisms",
+    "join": "fresh and mid-project brownfield; preserve native policy/tools/IDs",
+    "customize": "direct edits, explicit project overrides and disabled optional content",
+    "coexist_and_replace": "owned adapters and readable versioned work/results, no forced tool replacement",
+    "learn": "attributed correctable source-linked facts and lessons; imported content grants no effects",
+    "leave": "reconcile owned activity, export useful work, remove identified owned material only",
+    "evidence": "actual published1.1 predecessor plus mixed-tool, direct-edit, interrupted lifecycle and removal fixtures per new profile"
+  },
+  "independently_delivered_surfaces": {
+    "Lite": "target1.2.0",
+    "Extension": "future target1.0.0 with per-host packages",
+    "harness_runtime_service_app": "own SemVer only when independently released and governed",
+    "protocol_and_persistent_format": "existing compatibility identities and migration/refusal rules",
+    "models_agents_tools": "exact upstream/model/quantization/backend/artifact/recipe pins; not blanket product-version changes",
+    "scripts_packages_docs": "owning product version unless independently delivered; provenance and installed examples"
+  }
+}

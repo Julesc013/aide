@@ -1,0 +1,32 @@
+[
+  {
+    "name": "doctor",
+    "exit_code": 0,
+    "bytes": 5181,
+    "sha256": "585c64e7eac737c2e172b11d760d884d7c614858c1521bb8941c4e4ffa595f42"
+  },
+  {
+    "name": "validate-final",
+    "exit_code": 0,
+    "bytes": 241,
+    "sha256": "8f4f60d7a4fcc2a82001a55e962dfb285fef3f0b723181ac5385b6349ccce52c"
+  },
+  {
+    "name": "generated-drift-final",
+    "exit_code": 0,
+    "bytes": 2013,
+    "sha256": "23b79f52d923348a0f56b31c7e9b6dfcb905e2cd3150ff86e978c486ab26c25e"
+  },
+  {
+    "name": "message-check-repaired",
+    "exit_code": 0,
+    "bytes": 2180,
+    "sha256": "a43794fab7ce1f2158aa07580280a95896c286be9aa39c6ff171943f6236d6fe"
+  },
+  {
+    "name": "diff-check-final",
+    "exit_code": 0,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

@@ -1,0 +1,12 @@
+docs(compat): plan portable Lite releases and project-owned exit
+
+- Prepare Lite 1.2 modern profiles and preserve staged native legacy targets.
+- Keep Python 3 semantics shared, PowerShell Core 7+ optional and platform APIs behind declared backends.
+- Define brownfield adoption, customization, tool coexistence, correctable lessons and safe exit through existing owners.
+- Separate Extension and other product versions from schema, toolchain and model artifact identities.
+- Record source inventory, preserved failures and clarified DiskEd ownership without target effects.
+
+Validation: PASS - 324 Python syntax checks, 328 source/history hashes, plan/links, doctor, generated drift and 60922 structural checks (one existing warning).; NOT RUN - new OS execution, native builds, lifecycle consumers, extensions and release publication.
+Changelog: Docs: Define shared-source portability and no-lock-in release preparation.
+AIDE-Task: AIDE-LITE-1-2-PORTABILITY-01
+AIDE-Format: compact-v1

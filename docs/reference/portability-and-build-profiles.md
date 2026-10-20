@@ -1,0 +1,64 @@
+### Shared source and platform profiles
+
+**Direction:** maintain one source tree and one owner for each semantic rule. Python 3 remains AIDE's reference tooling; native components and IDE bindings use the languages and build systems their actual targets require. Platform APIs belong behind named backends, while work identity, authority, evidence, compatibility and recovery semantics remain shared. This is the engineering boundary in the [portability policy](../../.aide/policies/portability.yaml), not a claim that every existing file is already portable.
+
+**Current evidence:** Lite 1.1.0 is published for the exact T3 Windows 10 build 19045/Python 3.14.8 local CLI profile. The checked source contains Windows Job, token/security and executable-image machinery. Its three tracked PowerShell files are preserved historical task evidence. Python 3 syntax does not establish an arbitrary minimum minor version or runtime support on every OS. The [source inventory](../../.aide/queue/AIDE-LITE-1-2-PORTABILITY-01/evidence/source-inventory.json) records scope, hashes and limited observations; it is not an exhaustive semantic portability audit.
+
+**PowerShell Core 7+:** new or substantively changed current scripts use `pwsh`, require `#Requires -Version 7.0` and `#Requires -PSEdition Core`, and never silently fall back to `powershell.exe`. Prefer the existing Python owner for shared behavior. PowerShell is optional: neither vintage targets nor ordinary Lite use acquire it as a new universal prerequisite. An OS-specific cmdlet still needs an explicit platform binding and profile. Historical evidence stays byte-for-byte preserved; a reused historical script must first be promoted and qualified as current tooling.
+
+### Lite 1.2 delivery plan
+
+The user selected **staged native ports across releases** on 20 October 2026. Lite 1.2.0 targets qualified modern profiles; Windows 9x, older Windows NT, MS-DOS/FreeDOS, OS/2 and other native ports remain explicit subsequent work. A companion is a useful additional route and never counts as completion of the native target. Exact 1.2 profiles and Python minor-version floors must be selected and tested before freezing its release contract; there is no 1.2 candidate archive, date or support expansion yet.
+
+| Increment through existing owners | Useful result | Acceptance before the claim |
+| --- | --- | --- |
+| Source and dependency audit | Locate shared rules, platform APIs, subprocess/tool assumptions, path/encoding/locking dependencies and existing canonical helpers. | Exact source scope and uncertainties; no automatic moves or speculative rewrite. |
+| Portable Lite/controller slice | Run ordinary inspection and lifecycle behavior without loading an unavailable Windows execution backend. | Source and installed-package checks; explicit capability refusals; no weakening of a qualified Windows route. |
+| Modern profile qualification | Exercise Windows, Linux and macOS as separate candidate profiles, selecting exact OS/architecture/runtime tuples when environments exist. | Fresh/brownfield adoption, customization, actual 1.1.0 upgrade and real conflict, repair/rollback/removal, partial failure and interruption/recovery on each claimed profile. |
+| Execution and active interfaces | Complete one actual bounded host or worker workflow through existing admission, request and evidence owners. | Actual delivery/editing/cancellation and process ownership evidence for that route; no general desktop or network claim from fixtures. |
+| Release closure | Ship only the reviewed, qualified profile set and declared additive behavior. | Docs/TODO/plans/roadmap/changelog, source/effect review, labelled assets, immutable hashes, dev/main sync and acquired-byte consumers. |
+| Legacy native increments | Add a bounded native component/profile using the shared contracts and an actually available compiler/runtime. | Exact ABI, memory/storage budgets, filenames/encoding, file and process semantics, real target execution and recovery; a successful cross-build alone is insufficient. |
+
+The machine-readable [release plan](../../.aide/queue/AIDE-LITE-1-2-PORTABILITY-01/release-plan.json) preserves all requested families. Windows NT is a family, not a blanket claim across NT releases; Unix, BSD, Linux, Solaris and SunOS likewise require concrete system profiles. Modern Python and PowerShell cannot simply be assumed available on legacy systems. CPython documents Python 3.14 for Windows 10 and newer. [Python Windows documentation](https://docs.python.org/3.14/using/windows.html)
+
+### Adopt, customize, coexist and leave
+
+**Projects remain independently usable.** Adoption can happen mid-project and removal can be requested at any stage. Use the existing inspect/preview/apply, ownership, three-way update, partial-import recovery, rollback and owned-removal mechanisms. Discover project policy, existing helpers, tests, tools and build authority first; proposed mappings need provenance and uncertainty. Observations and imported tool instructions do not acquire permission to change policy, execute commands or replace another owner.
+
+- **Join:** test fresh and brownfield projects, including existing instruction files and competing automation; show exact owned changes before apply.
+- **Tailor:** preserve direct edits, project overrides, disabled optional content and intentional compatibility differences across updates and real conflicts.
+- **Combine or replace:** use explicit adapters and readable versioned work/result exchange; retain native task IDs, tools and independent acceptance. No compulsory wholesale migration or model/service account.
+- **Learn:** retain useful source-linked facts and lessons with correction, invalidation and retirement. Keep project customization separate from globally promoted behavior or model adaptation.
+- **Leave:** cancel or reconcile AIDE-owned activity, checkpoint/export useful work, and remove only identified owned material. Preserve target source, user edits, unknown ownership, tools, task history and evidence; never equate uninstall with deleting `.aide` wholesale.
+- **Recover:** interrupt adoption, update, replacement and removal; resume without repeated completed effects. If ownership or effect state is ambiguous, retain the work and report a concrete recovery path rather than erase it.
+
+Lite 1.2 must qualify these behaviors against actual published 1.1.0 and exact new profiles. Existing Lite evidence is a foundation, not proof that every future service or extension has implemented exit. Extension/service profiles add host uninstall, outstanding request/job reconciliation, credential-reference disposal and project-controlled data retention/export acceptance as applicable.
+
+### Build and runtime boundaries
+
+Keep **controller**, **build host**, **target binary** and **IDE host** separate. A Windows machine building a DOS executable does not prove the AIDE controller runs on DOS. A Linux process backend does not automatically qualify BSD or Solaris. Shared source may use small platform implementations and reproducible generated bindings; it does not require every source file, host SDK or executable to compile on every platform.
+
+For each profile record source/tree, compiler or interpreter, dependencies, architecture/ABI, invocation, artifact hashes, available capabilities, support tier and capability level, applicable checks and limitations. Test installed entrypoints, filesystem case and encoding, atomic updates and locking, interrupted effects, process-tree cancellation and resource controls as applicable. Incomplete dependency knowledge broadens checks rather than asserting safety. Reuse exact valid evidence and avoid whole-repository requalification for an isolated binding change.
+
+New native work should begin with the smallest useful component and target toolchain proof, then compare its behavior against the shared contract/oracle. Do not select a universal language standard or rewrite the Python controller merely because a legacy compiler exists. Preserve the [existing proposed language/build specification](../../specs/control-plane/engineering/languages-builds-and-toolchains.md) and its imported-draft boundary.
+
+### AIDE Extension 1.0
+
+**Product goal:** one extension family presenting the same work, context, evidence and admitted execution interfaces, with separate native host adapters and packages. Use existing `hosts/**` compatibility-technology lanes and matrices. Shared version 1.0.0 is appropriate only for a coordinated release with an explicit per-host compatibility manifest; independently shipped adapters may need separate versions under the [release policy](../../governance/release-policy.md).
+
+VS Code uses its extension API and manifest; Visual Studio has multiple extensibility models; XcodeKit supplies source-editor extensions with its own capabilities and packaging. They do not accept one universal extension binary or guarantee equal API depth. Prove a thin read-only task/context/evidence view first, then admitted actions, cancellation and recovery for each actual host profile. Preserve older host families and companion routes without claiming uniform parity. [VS Code extension anatomy](https://code.visualstudio.com/api/get-started/extension-anatomy), [Visual Studio extensibility models](https://learn.microsoft.com/en-us/visualstudio/extensibility/visualstudio.extensibility/extensibility-models?view=visualstudio), [XcodeKit](https://developer.apple.com/documentation/xcodekit)
+
+No adapter receives authority to duplicate AIDE's queue, release policy or semantic engine. Endpoints, MCP/A2A bindings and harnesses remain replaceable integrations over the existing owners. This plan creates no endpoint, worker dispatch, installer, CI workflow or new provider spending.
+
+### Independently versioned products and compatibility
+
+| Surface | Version and compatibility owner | Release evidence |
+| --- | --- | --- |
+| Lite | Product SemVer; next target 1.2.0. | Exact CLI/lifecycle contract, predecessor, package and per-platform profiles. |
+| Extension family | Eventual product 1.0.0; coordinated or independently shipped adapters as declared. | Each actual host API, installer/package, capabilities, upgrade and exit. |
+| Independently shipped harness, runtime, service or app | Own product version when it has an independently released public contract; no invented 1.0 milestone for every internal module. | Negotiated protocol/schema ranges, dependencies, deployment, recovery, exit and consumer acceptance. |
+| Protocols and persistent formats | Existing schema/contract identities and migration/refusal policy. | Old/new consumer fixtures, unknown-field/version behavior, real interoperability and recovery. |
+| Models, agents and third-party tools | Pinned upstream version/revision/artifact and execution recipe; model/quantization/backend identities remain distinct. | Applicable compatibility, authorized provider/account/budget, actual outcome/usage and cancellation evidence. |
+| Scripts, packages and documentation | Version with the owning product unless independently delivered; generated material records its source and generator. | Included-file provenance, runnable installed examples, notices/licenses, checksums and truthful support descriptions. |
+
+A product release manifest should bind this compatibility information through existing distribution, adapter and conformance records. Reuse those owners rather than creating another universal registry. One internal change does not force every product to release; a shared-contract change must identify affected consumers and preserve their supported compatibility or provide a reviewed migration. Supply-chain provenance, dependency updates, reproducible build inputs and distinct build-versus-execution evidence apply across architectures, bitness, ABI, endianness and constrained resource profiles.

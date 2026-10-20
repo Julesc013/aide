@@ -18,6 +18,12 @@ The [staged workflow roadmap](docs/roadmap/staged-expansion-roadmap.md) and its 
 
 The phase records below preserve foundation history and host-lane intent. Their earlier deferred labels do not erase later scoped implementation, and completed scaffolding does not establish a shipping product or modern IDE parity.
 
+### Lite 1.2 and Extension 1.0 direction
+
+Lite 1.2.0 is the next release target, with exact Windows/Linux/macOS candidate profiles selected and qualified through existing owners. On 20 October the user selected staged legacy native ports across later releases; older Windows NT, Windows 9x, MS-DOS/FreeDOS, OS/2, BSD, Unix, Solaris/SunOS and future systems remain explicit targets. Modern Python 3 and optional PowerShell Core 7+ are not prerequisites for every legacy target. The [portability reference](docs/reference/portability-and-build-profiles.md) and [bounded preparation](.aide/queue/AIDE-LITE-1-2-PORTABILITY-01/ExecPlan.md) distinguish controller, build host, target and IDE package evidence.
+
+AIDE Extension 1.0 is a future product family over shared contracts, with distinct adapters/packages for Visual Studio, VS Code, Xcode and other host technologies. It requires actual per-host qualification and does not promise one binary or uniform capability. Existing P0-P11 owners and useful daily-use work remain the dependency structure.
+
 ### Platform reach
 
 Windows has priority for the current operator and the first qualified Lite profile. The product architecture spans other operating systems through one shared core and qualified adapters.

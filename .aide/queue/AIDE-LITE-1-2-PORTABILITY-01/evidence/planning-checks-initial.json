@@ -1,0 +1,7 @@
+{
+  "status": "FAIL",
+  "check": "new reference names the PowerShell Core 7+ baseline explicitly",
+  "observation": "The reference stated the correct executable and both #Requires directives, but omitted the exact Core 7+ phrase required by this presentation check.",
+  "repair": "Clarify the heading without changing the directives or lowering an acceptance requirement.",
+  "product_defect_or_os_qualification": false
+}

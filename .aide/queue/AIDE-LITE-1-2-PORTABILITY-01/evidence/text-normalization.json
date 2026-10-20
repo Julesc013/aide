@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "scope": "six reviewed raw text files normalized only for their Git commit projections",
+  "original_identities_preserved_by_lossless_recipe": true,
+  "files": [
+    {
+      "path": ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/evidence/admission-review.json",
+      "original_bytes": 422,
+      "original_sha256": "30ab87612c89a8282fbf0d0a73b678fa9006a4d423a1ec526d17adc4674e2958",
+      "committed_lf_sha256": "fbb9462fbbb3d1276420812e0c6ffd4cecfe0a937ca10a836a03f04d6a019a43",
+      "reconstruction": "Read committed LF bytes, replace every LF with CRLF, then require original length and SHA-256."
+    },
+    {
+      "path": ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/evidence/admission-source.json",
+      "original_bytes": 2087,
+      "original_sha256": "21ea7264ce23f7dbd9ba419d89e8f9307d547cacebcc8f94be2ade62ea82fe76",
+      "committed_lf_sha256": "80a5f825a0f26f908d4fd709cbdbe488f05148964fd96057f35374572fde772b",
+      "reconstruction": "Read committed LF bytes, replace every LF with CRLF, then require original length and SHA-256."
+    },
+    {
+      "path": ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/evidence/intake-disposition.md",
+      "original_bytes": 308,
+      "original_sha256": "3f7c123fbf4721a864969dd612da5dedc7c6b6a595d6afc63395557225097e3c",
+      "committed_lf_sha256": "b70443bb33a606d3e0fec28b57802462c49c12e55e428a259e99c0ba32a85f66",
+      "reconstruction": "Read committed LF bytes, replace every LF with CRLF, then require original length and SHA-256."
+    },
+    {
+      "path": ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/evidence/owner-decision.json",
+      "original_bytes": 795,
+      "original_sha256": "40c8234f06f5bf1dfcde326982261912397a0170f627bedf831ff5eb985fd63b",
+      "committed_lf_sha256": "bc826e43fe723ec6c43671728f356454c7be7f7d62a6b870c934c56f1b836d64",
+      "reconstruction": "Read committed LF bytes, replace every LF with CRLF, then require original length and SHA-256."
+    },
+    {
+      "path": ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/evidence/source-inventory.json",
+      "original_bytes": 84485,
+      "original_sha256": "c988c4b67a184c1b691640538e5ab7956048f834240deaf11073127d26572dfa",
+      "committed_lf_sha256": "acb341eb4174693be29386cd703909557f17ab0a7a517435e54c233825e4e19b",
+      "reconstruction": "Read committed LF bytes, replace every LF with CRLF, then require original length and SHA-256."
+    },
+    {
+      "path": ".aide/queue/AIDE-LITE-1-2-PORTABILITY-01/release-plan.json",
+      "original_bytes": 9774,
+      "original_sha256": "09af65bdd893a7c860c6ce4dc9d458186db7fc989f70a5b4931e3499647b350b",
+      "committed_lf_sha256": "4965644ae8aaeca4cbc203ed32a3c28b06dcb8821e37c053f2d776e97bcd8643",
+      "reconstruction": "Read committed LF bytes, replace every LF with CRLF, then require original length and SHA-256."
+    }
+  ]
+}
