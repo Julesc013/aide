@@ -2,11 +2,11 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
 status: running
 result: PENDING
-planning_state: live_link_repair_passed_revised_build_preparation
+planning_state: revised_candidate_frozen_reuse_and_hosted_preparation
 product_qualified: false
-local_jobs_consumed: 14
+local_jobs_consumed: 15
 hosted_runs_consumed: 0
-next_action: Review one necessary revised candidate build with complete old/new archive-member deltas. Repaired supervisor and owned export passed; affected consumers, hosted profiles, final replay and promotion remain separately gated within the sixteen-attempt ceiling.
+next_action: Prepare exact dependency applicability and revised-archive hosted profiles, then separately review the final affected-consumer and release-replay group. One local allocation and one three-profile hosted run remain; no support or promotion is admitted by build success.
 qualified_source_checkpoint: cb2ddcaf837e2604f34f11211447c551cc85b29b
 canonical_job: 6355e80d38804f89aa9a83fd743be7e1
 canonical_tests_passed: 12
@@ -39,3 +39,9 @@ link_corrected_checks_passed: 20
 link_corrected_checks_skipped: 0
 original_legal_transition_false_refusal_demonstrated: true
 original_candidate_precedes_current_export: true
+revised_build_checkpoint: afe3981287098d951996274949b8c56072170d23
+revised_build_job: 423bc035ebb340a5b6f4e58ae0d32842
+revised_candidate_payload_source: 158a5cdcac7afecbc180a6324ea02e46617d1bc9
+revised_archive_files: 879
+revised_changed_members_per_archive: 4
+revised_build_retained_files: 14

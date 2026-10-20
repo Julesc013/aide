@@ -1,0 +1,12 @@
+chore(lite): share qualified repair and revised candidate on dev
+
+- Preserve twenty passing live-scan regressions, the qualified export and revised 879-member candidate with full ZIP/TAR deltas.
+- Keep original passes and failures under their actual subjects; consumer applicability, hosted profiles and final replay remain open.
+- Prepare a dev-only fast-forward and normal push with exact inputs, source/range checks and identical task-local previews; preserve main and all unrelated refs.
+
+Validation: PASS - qualified source/build collections, retirement, preserved assets and read-only doctor/validate/pack-status/commit-range preflight; synchronization pending
+Changelog: Fixed: share the qualified live-scan repair and corrected Lite 1.2 candidate without changing release support
+Risk: Lite 1.2 is unpublished and current consumer/profile qualification remains incomplete.
+Follow-up: Exact dev effect review, then dependency applicability, hosted profiles and final affected-consumer/replay group.
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+AIDE-Format: compact-v1

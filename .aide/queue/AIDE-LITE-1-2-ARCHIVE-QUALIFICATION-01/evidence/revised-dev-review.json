@@ -1,0 +1,16 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "6e0d2205189ceadc0cab3507840a218e4c4be4608b920dd0c357ab7e4ee4c8fd",
+  "effect_sha256": "bdb250de02bec65ed2c2bb8d877e5d3fcb386a516d4340261c2c3e2f3ebcaa53",
+  "controller_sha256": "cc126b82a78797b6db505ce8c3bcfb2c068bfde66bc0a4dc968492b4364f19ea",
+  "required_fixes": [],
+  "reasons": [
+    "Verified 27 mapped files, 2004 pins, raw/filter identities, 113 refs, retained build evidence and preflight results."
+  ],
+  "limitations": [
+    "One managed checkpoint and guarded dev-only fast-forward/nonforce push. Main, active task branch, assets and canonical previews preserved.",
+    "Reuse, affected consumers, hosted profiles and final replay remain separately gated."
+  ],
+  "reviewer_executed_tests": false
+}
