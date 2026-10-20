@@ -26,3 +26,5 @@
 **Exact projection scope:** evidence/projection-scope.md admits only task-local parser/renderer evidence, with complete one-commit/six-output checks and comparisons. The canonical preview command and reports remain untouched; zero jobs. Reuse the existing managed commit owner and guard ready helper plans, origin URLs and no-follow-tags.
 
 **Subsequent delivery, 20 October:** the original planning scope is complete. Shared lifecycle source and actual Windows/Linux/macOS development-package evidence are independently accepted and delivered at `1e5193b0`. The admitted `AIDE-LITE-MULTIPROFILE-CONTRACT-01` child now prepares compatible release declarations and focused fixture/export checks; no production 1.2 archives or support activation. Existing native legacy staging and active-workflow obligations remain.
+
+**21 October:** compatible contract/export accepted and delivered at `ed4a9004`; admitted archive qualification now prepares actual versioned packages and per-profile forms. No support activation or publication.

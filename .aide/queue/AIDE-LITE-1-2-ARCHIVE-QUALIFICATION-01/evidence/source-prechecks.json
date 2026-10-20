@@ -1,0 +1,198 @@
+{
+  "state": "PASS_READ_ONLY_PREFLIGHT",
+  "tests_executed": false,
+  "allocation_requested": false,
+  "export_refreshed": false,
+  "production_assets_created": false,
+  "source_head": "ed4a90046eba12a717a9962f21523285667a669b",
+  "syntax": [
+    "core/execution/managed_workspace.py",
+    ".aide/scripts/aide_lite.py",
+    ".aide/scripts/tests/test_managed_workspace.py",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/admit.py",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/commit_and_build.py",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/commit_and_observe.py",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/precheck_source.py",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/run_build.py",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/run_canonical.py"
+  ],
+  "original_methods_unchanged": 71,
+  "new_methods": [
+    "test_canonical_ancestor_coverage_never_grants_parent_or_unknown_scope",
+    "test_stable_canonical_junction_refuses_without_touching_target",
+    "test_stable_output_has_independent_budgeted_custody",
+    "test_stable_release_commands_accept_only_covering_canonical_custody"
+  ],
+  "selected_methods": [
+    "test_canonical_outputs_have_finite_reservations_and_no_fallback",
+    "test_changelog_preview_default_needs_budgeted_canonical_custody",
+    "test_canonical_volume_is_in_capacity_sampling_and_inspection",
+    "test_canonical_junction_refuses_without_touching_target",
+    "test_quick_canonical_overrun_fails_and_preserves_source_output",
+    "test_source_generators_require_bound_canonical_output_manifests",
+    "test_crash_before_final_canonical_check_cannot_recover_as_success",
+    "test_crash_recovery_rechecks_canonical_volume_identity",
+    "test_stable_output_has_independent_budgeted_custody",
+    "test_canonical_ancestor_coverage_never_grants_parent_or_unknown_scope",
+    "test_stable_release_commands_accept_only_covering_canonical_custody",
+    "test_stable_canonical_junction_refuses_without_touching_target"
+  ],
+  "literal_job_inputs": 1089,
+  "observed_commit_tree_substituted_only_in_preflight_copy": true,
+  "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "canonical_destinations": [
+    ".aide/export/aide-lite-pack-v0"
+  ],
+  "recoverable_export_files": 879,
+  "stable_assets_unchanged": 8,
+  "commit_message_checks": [
+    {
+      "severity": "PASS",
+      "message": "compact subject follows type[(scope)][!]: description"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact commit type is allowed"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact subject describes a specific change"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact subject fits the 72-character guideline"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact subject omits a trailing period"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact subject has a blank separator"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact metadata is one final trailer block"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact singleton present: AIDE-Format"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact singleton present: AIDE-Task"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact singleton present: Validation"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact singleton is unambiguous: Risk"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact singleton is unambiguous: Follow-up"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact singleton is unambiguous: BREAKING CHANGE"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact singleton is unambiguous: AIDE-Task"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact singleton is unambiguous: AIDE-Phase"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact singleton is unambiguous: AIDE-Result"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact singleton is unambiguous: AIDE-Scope"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact singleton is unambiguous: AIDE-Token-Impact"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact singleton is unambiguous: AIDE-Quality-Gate"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact format is supported"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact format marker occurs once in trailers"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact metadata is not duplicated or misplaced in prose"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact body explains the change and rationale"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact validation names an outcome and the actual checks or reason"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact changelog has a known category and description"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact changelog records at least one explicit entry"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact breaking marker has an impact and migration explanation"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact breaking footer is not empty"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact presentation avoids H1/H2; use plain text or H3/H4"
+    },
+    {
+      "severity": "PASS",
+      "message": "compact message excludes control characters"
+    },
+    {
+      "severity": "PASS",
+      "message": "commit message excludes raw_prompt_body"
+    },
+    {
+      "severity": "PASS",
+      "message": "commit message excludes raw_response_body"
+    },
+    {
+      "severity": "PASS",
+      "message": "commit message excludes begin private key"
+    },
+    {
+      "severity": "PASS",
+      "message": "commit message excludes openai_api_key"
+    },
+    {
+      "severity": "PASS",
+      "message": "commit message excludes anthropic_api_key"
+    },
+    {
+      "severity": "PASS",
+      "message": "commit message excludes deepseek_api_key"
+    },
+    {
+      "severity": "PASS",
+      "message": "commit message excludes sk-ant"
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-MULTIPROFILE-CONTRACT-01
-status: running
-result: PENDING
-planning_state: twenty_fixtures_passed_export_reconciled_exact_final_review_pending
+status: passed
+result: PASS
+planning_state: accepted_contract_and_export_delivered
 product_qualified: false
 local_jobs_consumed: 1
 hosted_runs_authorized: 0
-next_action: Independently review composed qualification and zero-job reconciliation, then exact dev/main delivery; admit production archives and public-form qualification separately.
+next_action: Completed at ed4a9004; continue actual archives/public-form qualification in AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01.
 original_job_result: FAIL_after_completed_tests_and_export
 original_job_id: 9d6ec5bc23354109842c7a8b39f75aec
 tests_passed: 20
@@ -14,3 +14,6 @@ export_files: 879
 additional_jobs: 0
 test_reruns: 0
 export_regenerations: 0
+integration_commit: ed4a90046eba12a717a9962f21523285667a669b
+integration_receipt: evidence/integration-completed.json
+acceptance_scope: development_release_contract_and_exact_export_only

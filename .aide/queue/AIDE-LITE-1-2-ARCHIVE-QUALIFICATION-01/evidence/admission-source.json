@@ -1,0 +1,25 @@
+{
+  "schema": "aide.exact-source-map.v1",
+  "workunit": "AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01",
+  "base": "ed4a90046eba12a717a9962f21523285667a669b",
+  "effect_sha256": "c54c356f558532469e157c5b10ed1e9f1af26b8b970cdf28bbfd1ba4d3d47ebc",
+  "files": {
+    ".aide/intake/latest-intent-packet.json": "873d32bae60a09aaf61f57b8238e55d54d3a35537394668c47f885fd6351db16",
+    ".aide/intake/latest-intent-packet.md": "bbaf85dc71f93bb7786ab895c5a7abc040859754bfe30a21a4a1e7a92d8ba10e",
+    ".aide/intake/latest-workunit-draft.json": "aa09fba7b3a1c599292fffb45a806dd7486c15165c0db6fad51b49d4669834cd",
+    ".aide/intake/latest-workunit-draft.md": "4ee58b1418bb741bbb3b2cfc008f6e71d9a228d595d4dbfb7968225263b139e9",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md": "25baee2d0bf912c9e50203222d61adec36219e2a3dc69f50300c60654a262d11",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/admit.py": "4688515f19744875eea820e1a2c87d392509dce44069386d7e76f53db7be2596",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/admission-effect.json": "c54c356f558532469e157c5b10ed1e9f1af26b8b970cdf28bbfd1ba4d3d47ebc",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/baseline.json": "f3c3241cb28f03442a4949f6d63a54f379df9c863fd686304f3df791a0a447d9",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/intake-disposition.md": "b637b40293f1efbec2d7273a22169e304e68dad316212fb8893dceb9cdd165a4",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/latest-intent-packet.json": "873d32bae60a09aaf61f57b8238e55d54d3a35537394668c47f885fd6351db16",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/latest-intent-packet.md": "bbaf85dc71f93bb7786ab895c5a7abc040859754bfe30a21a4a1e7a92d8ba10e",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/latest-workunit-draft.json": "aa09fba7b3a1c599292fffb45a806dd7486c15165c0db6fad51b49d4669834cd",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/latest-workunit-draft.md": "4ee58b1418bb741bbb3b2cfc008f6e71d9a228d595d4dbfb7968225263b139e9",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/prior-integration-completed.json": "a661979c4965d1e3a4d8dc80fb1d5d1f73676f66fe2611df182243ad5e340c48",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/prompt.md": "db25f6f216ee5a0c80e0294eba1659dcd073a32cf2a61c80ccc211f6689c855e",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/status.yaml": "653413f2b50ef5868ca7e7fb5a40f7056768d35c985c28c3d4b1fdfff5b57d1f",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/task.yaml": "f04393a87dc27f820ac2fba4d34d396d2b38206e2aa55420b32e8b8c4db09ad6"
+  }
+}

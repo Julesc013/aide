@@ -1,0 +1,12 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "1a0b3a68bbd27e2a89d4fc0ff428cbb6c6bbb9e9a2de00de319f2de6996c3a1c",
+  "effect_sha256": "c54c356f558532469e157c5b10ed1e9f1af26b8b970cdf28bbfd1ba4d3d47ebc",
+  "controller_sha256": "4688515f19744875eea820e1a2c87d392509dce44069386d7e76f53db7be2596",
+  "required_fixes": [],
+  "scope": "specified local branch creation and bounded source/evidence preparation only",
+  "reasons": "17mappedfiles/dirtyset/emptyindex/112refs/stable8/priorreceipt232streamsverified;blockedintakepreserved",
+  "future_ceilings": "planning limits, not execution approval",
+  "execution": "no reviewer tests or effects"
+}

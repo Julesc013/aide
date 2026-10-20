@@ -1,0 +1,14 @@
+{
+  "result": "PASS_READ_ONLY_PREPARATION",
+  "original_managed_methods_unchanged": 71,
+  "new_methods": 4,
+  "selected_methods": 12,
+  "prior_export_files": 879,
+  "recoverable_at": "ed4a90046eba12a717a9962f21523285667a669b",
+  "capability_classifications_unchanged": true,
+  "tests_executed": false,
+  "initial_manifest_preflight_refusals": [
+    "source/tree placeholders are not an executable manifest",
+    "existing stable subdirectory was not an approved canonical destination; exact amendment accepted before implementation"
+  ]
+}

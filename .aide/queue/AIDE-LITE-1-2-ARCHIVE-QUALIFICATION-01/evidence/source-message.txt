@@ -1,0 +1,13 @@
+feat(execution): permit budgeted stable archive output
+
+- Add the existing stable subdirectory as a canonical destination so archive production can reserve its actual output while preserving the nearly full parent release tree.
+- Recognize approved declared ancestors, refuse child-to-parent or unknown/traversal scope, and narrow the two stable command guards while retaining broader packaging requirements.
+- Preserve all 71 original managed-workspace methods and add four focused regressions; prepare twelve affected methods and one recoverable export refresh under unchanged limits.
+- Reconcile accepted delivery ed4a9004 and the reviewed narrow amendment; actual archive build, delivered consumers, hosted execution and publication remain separately gated.
+
+Validation: NOT RUN - custody regressions and export refresh await exact source/effect acceptance; syntax, original-method preservation, literal manifest inputs and recoverable export ownership are checked in source-prechecks.json. No job or archive has run.
+Changelog: Added: Budgeted stable-archive destination with compatible ancestor custody and strict scope refusal; no published profile activation.
+Risk: Canonical reservations account for admitted outputs; they do not contain every outer-client filesystem route. Limits, reserves, storage locations and historical assets remain unchanged.
+Follow-up: Run one reviewed regression/export group, then review the actual versioned build and delivered-profile consumers against the refreshed payload.
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+AIDE-Format: compact-v1

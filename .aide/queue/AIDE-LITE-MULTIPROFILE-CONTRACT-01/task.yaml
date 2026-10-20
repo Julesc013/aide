@@ -4,7 +4,7 @@ parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 planning_parent: AIDE-LITE-1-2-PORTABILITY-01
 title: Declare compatible multi-profile Lite release metadata
 type: implementation
-status: running
+status: passed
 scope:
   allowed_paths:
     - .aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/**

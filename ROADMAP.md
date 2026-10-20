@@ -20,6 +20,8 @@ The phase records below preserve foundation history and host-lane intent. Their 
 
 ### Lite 1.2 and Extension 1.0 direction
 
+Compatible multi-profile metadata and the 879-file export are accepted and delivered at `ed4a9004`. The [actual archive phase](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md) now prepares the finite versioned-build and declared-profile qualification sequence. Lite 1.1 remains published; legacy native and future host products retain their own evidence gates.
+
 The [existing lifecycle owner's POSIX binding](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md) passed development-package adoption, published-predecessor conflict/recovery, repair and installed exit on four exact Windows/Linux/macOS environments; accepted integration reached local/remote `dev` and `main` at `1e5193b0`. Next: qualify the prepared [multi-profile release contract](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md), followed by actual versioned archive/public-form/acquisition evidence. The published support profile remains unchanged.
 Lite 1.2.0 is the next release target, with exact Windows/Linux/macOS candidate profiles selected and qualified through existing owners. On 20 October the user selected staged legacy native ports across later releases; older Windows NT, Windows 9x, MS-DOS/FreeDOS, OS/2, BSD, Unix, Solaris/SunOS and future systems remain explicit targets. Modern Python 3 and optional PowerShell Core 7+ are not prerequisites for every legacy target. The [portability reference](docs/reference/portability-and-build-profiles.md) and [bounded preparation](.aide/queue/AIDE-LITE-1-2-PORTABILITY-01/ExecPlan.md) distinguish controller, build host, target and IDE package evidence.
 

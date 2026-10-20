@@ -1,0 +1,21 @@
+{
+  "schema": "aide.exact-source-map.v1",
+  "workunit": "AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01",
+  "effect_sha256": "a146f6635db23e00f2db0301946c85081027f516fbc7fb3d9e7b26b0de8efa5c",
+  "files": {
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/task.yaml": "cd4223bead2c491774b1cd104cc16f5e13c88438c263d91106e9330486331e49",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/status.yaml": "4f54724262dc5e1fc30f772b10b6774c52b3144f12da13e4be3bcc0ddb413f5e",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md": "868e44a1eb839980664da59c4f952939d99348891f0ee6631dbaf62acd70254f",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/canonical-output-amendment.md": "078171431df1430697ff694fcd83bd641e6df4a4b1b7e260269e83dd5e4367e6",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/task-before-canonical-amendment.yaml": "d3c4221e03b2a4c0fa5d1ee50100bbfce973b883c3e18cd3dd8e9c6ed2c1a8a2",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/build-job-template-initial.json": "95fc7b8df19c5ab7b45ea16eeb82be3fda7453f48688ac4866a6dcfda0e7e63b",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/release-before.json": "d3a0f64bca5eef6cdb29f93a53179967007b331b24ef02d5f579c974a255d3b4",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/pack-subject.json": "07f31480b1938e3cf00a314b3d9c05fdd5690cdab6dccf67adfa8cf484757dda",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/canonical-amendment-effect.json": "a146f6635db23e00f2db0301946c85081027f516fbc7fb3d9e7b26b0de8efa5c"
+  },
+  "original_implementation_unchanged": {
+    "core/execution/managed_workspace.py": "55f1590b37d150088c6023ccf8151adfbc350644e906c64d40b367c4884606d6",
+    ".aide/scripts/aide_lite.py": "db4d801ce478db89ac720f624905e91b7e0af395d7fa1bb2ebfbd2fd10e50d14",
+    ".aide/scripts/tests/test_managed_workspace.py": "2b0f0e49b433d569ef8740bcf9c0a904a71feedfa8e59f3b8d593f26dc753ec1"
+  }
+}

@@ -3,8 +3,8 @@
 - command: `capability ledger`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-lite-multiprofile-contract-01`
-- current_commit: `1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d`
+- current_branch: `task/aide-lite-1-2-archive-qualification-01`
+- current_commit: `ed4a90046eba12a717a9962f21523285667a669b`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

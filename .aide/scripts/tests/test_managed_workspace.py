@@ -807,6 +807,86 @@ class ManagedWorkspaceTests(unittest.TestCase):
         with self.assertRaises(workspace.WorkspaceRefused):
             workspace.admission(self.config, roots, observed, self.job['canonical_outputs'])
 
+    def test_stable_output_has_independent_budgeted_custody(self):
+        relative = '.aide/release/stable'
+        path = self.declare_canonical(relative, amount=2048)
+        preserved = path.parent/'prior-evidence.bin'
+        preserved.write_bytes(b'p' * 4096)
+        candidate = path/'candidate.bin'
+        candidate.write_bytes(b'c' * 1024)
+        roots = {**self.roots, **workspace.canonical_roots(self.config, self.job, self.source)}
+        self.assertEqual(workspace.canonical_usage(self.config, self.job, roots), {relative: 1024})
+        volume = workspace.volume_identity(path)
+        plain = workspace.admission(self.config, self.roots, self.ample)
+        reserved = workspace.admission(self.config, roots, self.ample, self.job['canonical_outputs'])
+        self.assertEqual(reserved[volume] - plain[volume], 2048)
+        smaller = json.loads(json.dumps(self.config))
+        smaller['limits']['canonical_bytes'] = 2047
+        with self.assertRaises(workspace.WorkspaceRefused):
+            workspace.canonical_roots(smaller, self.job, self.source)
+        changed_volume = json.loads(json.dumps(self.job))
+        changed_volume['canonical_outputs'][relative]['volume_id'] = 'wrong-volume'
+        with self.assertRaises(workspace.WorkspaceRefused):
+            workspace.canonical_roots(self.config, changed_volume, self.source)
+        candidate.write_bytes(b'c' * 2049)
+        with self.assertRaises(workspace.WorkspaceRefused):
+            workspace.canonical_usage(self.config, self.job, roots)
+        self.assertEqual(preserved.read_bytes(), b'p' * 4096)
+
+    def test_canonical_ancestor_coverage_never_grants_parent_or_unknown_scope(self):
+        stable, parent = '.aide/release/stable', '.aide/release'
+        for declared in (stable, parent):
+            record = {'job': {'canonical_outputs': {declared: {}}}}
+            workspace.require_canonical_outputs(record, (stable,))
+        record = {'job': {'canonical_outputs': {stable: {}}}}
+        for requested in (parent, '.aide/changelog', stable + '/../outside', stable + '/unknown'):
+            with self.subTest(requested=requested), self.assertRaises(workspace.WorkspaceRefused):
+                workspace.require_canonical_outputs(record, (requested,))
+        for declared in ('.aide', '.', stable + '/..', 'unknown'):
+            with self.subTest(declared=declared), self.assertRaises(workspace.WorkspaceRefused):
+                workspace.require_canonical_outputs({'job': {'canonical_outputs': {declared: {}}}}, (stable,))
+
+    def test_stable_release_commands_accept_only_covering_canonical_custody(self):
+        lite = self.lite_module()
+        args = argparse.Namespace(repo_root=REPO, version='1.2.0')
+        for declared in ('.aide/release', '.aide/release/stable', '.aide/changelog'):
+            record = {'job': {'canonical_outputs': {declared: {}}}}
+            for command, owner, value in (
+                    (lite.command_release_stable_build, 'build_stable_release_candidate',
+                     {'identity': {'source_commit': 'a' * 40}}),
+                    (lite.command_release_stable_validate, 'validate_stable_release_candidate',
+                     {'result': 'PASS', 'problems': []})):
+                with self.subTest(declared=declared, owner=owner), \
+                        mock.patch.object(workspace, 'current_context', return_value=record), \
+                        mock.patch.object(lite, owner, return_value=value) as operation, \
+                        mock.patch('builtins.print'):
+                    accepted = declared != '.aide/changelog'
+                    self.assertEqual(command(args), 0 if accepted else 1)
+                    if accepted:
+                        operation.assert_called_once_with(REPO, '1.2.0')
+                    else:
+                        operation.assert_not_called()
+        record = {'job': {'canonical_outputs': {'.aide/release/stable': {}}}}
+        with mock.patch.object(workspace, 'current_context', return_value=record), mock.patch('builtins.print'):
+            self.assertFalse(lite.source_maintainer_job_guard(REPO, canonical_paths=('.aide/release',)))
+            self.assertFalse(lite.source_maintainer_job_guard(REPO, packaging=True))
+
+    @unittest.skipUnless(os.name == 'nt', 'Windows junction fixture')
+    def test_stable_canonical_junction_refuses_without_touching_target(self):
+        target = self.root/'unowned-stable'; target.mkdir()
+        sentinel = target/'keep.txt'; sentinel.write_text('keep')
+        path = self.source/'.aide/release/stable'; path.parent.mkdir(parents=True)
+        result = subprocess.run(['cmd.exe', '/c', 'mklink', '/J', str(path), str(target)],
+                                capture_output=True, timeout=5)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.addCleanup(lambda: os.rmdir(path) if os.path.lexists(path) else None)
+        self.config['limits']['canonical_bytes'] = 2048
+        self.job['canonical_outputs'] = {'.aide/release/stable': {
+            'volume_id': workspace.volume_identity(target), 'bytes': 2048}}
+        with self.assertRaises(workspace.WorkspaceRefused):
+            workspace.canonical_roots(self.config, self.job, self.source)
+        self.assertEqual(sentinel.read_text(), 'keep')
+
     def test_changelog_preview_default_needs_budgeted_canonical_custody(self):
         lite = self.lite_module()
         path = self.declare_canonical('.aide/changelog', amount=4096)

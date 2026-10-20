@@ -3,7 +3,7 @@
   "task_id": "AIDE-LITE-1-2-PORTABILITY-01",
   "product": "AIDE Lite",
   "target_version": "1.2.0",
-  "state": "development_lifecycle_delivered_release_contract_prepared_archive_qualification_pending",
+  "state": "development_contract_delivered_actual_archive_preparation",
   "published_predecessor": "1.1.0",
   "owner_decision_ref": "evidence/owner-decision.json",
   "release_strategy": "qualified_modern_profiles_with_staged_legacy_native_ports",
@@ -241,7 +241,7 @@
     "hosted_test_skips": 21,
     "release_support_activated": false
   },
-  "active_increment": "AIDE-LITE-MULTIPROFILE-CONTRACT-01",
+  "active_increment": "AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01",
   "candidate_profiles": [
     {
       "id": "aide-lite-local-windows",
@@ -307,5 +307,15 @@
       "unqualified_forms": 7,
       "archive_qualified": false
     }
-  ]
+  ],
+  "release_contract_integration": "ed4a90046eba12a717a9962f21523285667a669b",
+  "archive_qualification_allowance": {
+    "maximum_local_jobs": 13,
+    "added_group": "one exact canonical-output regression/export group before archive build",
+    "export_regenerations": 1,
+    "remaining_original_groups": 12,
+    "maximum_hosted_runs": 1,
+    "hosted_profiles": 3,
+    "execution_requires_exact_review": true
+  }
 }

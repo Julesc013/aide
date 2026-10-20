@@ -1,6 +1,6 @@
 ### Current campaign: useful daily operation remains the finish line
 
-**Observed 20 October 2026.** Lite 1.1.0 is published, acquired and consumer-verified. Current Git refs and exact effect receipts establish source integration; this view does not grant new authority or replace task evidence.
+**Observed 21 October 2026.** Lite 1.1.0 is published, acquired and consumer-verified. Current Git refs and exact effect receipts establish source integration; this view does not grant new authority or replace task evidence.
 
 **Released product.** [AIDE Lite 1.1.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.1.0), T3 local Windows CLI, 56 forms. Tag checkpoint `9cead252` and manifest payload source `447e393b` are separate. Four labelled assets match frozen hashes; the original downloaded-byte adoption/recovery consumer passed and retired. [Delivery proof](../AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-lite-1.1.0-qualified.json). Lite 1.0.0, original qualification and failed/incomplete observations remain preserved.
 
@@ -8,9 +8,9 @@
 
 **Modern lifecycle result.** [Initial observations](../AIDE-LITE-MODERN-LIFECYCLE-01/REPORT.md) preserve 16 adoption/preservation passes, eight Windows detach passes and eight POSIX guard refusals. [The subsequent shared binding](../AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md) closes the demonstrated development-package gap: four local and twelve hosted lifecycle cases passed, with 447 hosted test passes and 21 skips. Original timeout/callback failure and historical refusals remain. Both local jobs retired; all 78 hosted controller streams and three receipt bundles verify.
 
-**Latest completed integration:** independent acceptance delivered the shared lifecycle to local/remote dev/main at `1e5193b0`. The important tested remote checkpoint `9c15cc8e` is preserved; 166 integration operations and 332 streams verify in the retained receipt. The existing export has 878 files. This establishes development delivery, not new release support.
+**Latest completed integration:** accepted multi-profile contract/export delivery reached local/tracking/remote dev/main `ed4a9004`; 116 operations and 232 streams verified, clean checkout and owned local task retired. Twenty fixture methods passed and the export has 879 files. The original overall worker FAIL remains; accepted read-only reconciliation performed no further job, rerun or regeneration. Historical assets and other refs remain preserved.
 
-**Active increment:** [compatible multi-profile release metadata](../AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md) prepares the 1.2 declaration, strict v1/v2 lineage and one shared payload with exact capabilities/command dispositions. All twenty affected methods passed and one export refresh produced 879 files. The original post-export worker FAIL is preserved; read-only reconciliation and structural checks pass with no further job, rerun or regeneration. Final exact acceptance/integration is pending. Actual versioned archives, per-profile public forms, publication and acquired-byte consumers remain the next phase; Lite 1.1 stays published.
+**Active increment:** [actual Lite 1.2 archive qualification](../AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md) has branch-only admission from `ed4a9004`. An independently accepted preparation amendment adds one narrow canonical-output regression/export group before the versioned build, delivered consumers/additive forms, actual 1.1 predecessor and modern profile checks. No production 1.2 asset, new support or publication exists yet. Each execution effect is separately reviewed; the ceilings of thirteen local allocations and one hosted run with three profiles are finite limits, not automatic grants.
 
 | Next useful outcome | Remaining condition and owner |
 | --- | --- |

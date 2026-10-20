@@ -1,0 +1,60 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+planning_parent: AIDE-LITE-1-2-PORTABILITY-01
+title: Qualify actual Lite 1.2 archives and exact modern profiles
+type: implementation
+status: running
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/**
+    - evals/lite/lifecycle.py
+    - evals/lite/release.py
+    - .github/workflows/lite-modern-lifecycle.yml
+    - .aide/release/successor-candidate.json
+    - .aide/release/stable/aide-lite-v1.2.0.zip
+    - .aide/release/stable/aide-lite-v1.2.0.tar.gz
+    - .aide/release/stable/aide-lite-v1.2.0.manifest.json
+    - .aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt
+    - .aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/task.yaml
+    - .aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/status.yaml
+    - .aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md
+    - .aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/REPORT.md
+    - .aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/evidence/integration-completed.json
+    - .aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/evidence/integration-verification.json
+    - .aide/queue/AIDE-LITE-1-2-PORTABILITY-01/ExecPlan.md
+    - .aide/queue/AIDE-LITE-1-2-PORTABILITY-01/status.yaml
+    - .aide/queue/AIDE-LITE-1-2-PORTABILITY-01/release-plan.json
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/index.yaml
+    - .aide/generated/**
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - README.md
+    - TODO.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - ROADMAP.md
+    - CHANGELOG.md
+  forbidden_paths:
+    - every historical 1.0 and 1.1 asset, tag or original qualification rewrite
+    - product implementation or portable export changes without a separately reviewed demonstrated-need amendment
+    - production tags, release publication, support activation or acquired-byte publication claims
+    - other repositories, unrelated processes, provider/model routes, spending and hosting protection settings
+    - new roots, reserves, execution privileges, infrastructure or installation campaign
+verification:
+  maximum_local_jobs: 12
+  local_config: .aide.local/lite-successor-qualification-execution.json
+  maximum_seconds_per_local_job: 600
+  local_allowance: one exact versioned build; eight original Windows consumer cases; one additive-form group; one actual-predecessor group; one release replay, only when applicable and separately reviewed
+  maximum_hosted_workflow_runs: 1
+  hosted_jobs: 3 exact declared modern profiles
+  maximum_minutes_per_hosted_job: 10
+  live_worker_model_requests: 0
+  export_regenerations: 0
+review_gate: branch_admission_then_exact_source_build_consumer_hosted_and_integration_effects
+admission_boundary: Preparation and local branch creation only; every build, allocation, push, hosted dispatch and integration needs its own exact technical acceptance under existing delegation.

@@ -1,0 +1,10 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "84ebfcbe3d5922746543cbfeeb4afb54ded5edfd82ee6263cd79247371bca2d0",
+  "effect_sha256": "a146f6635db23e00f2db0301946c85081027f516fbc7fb3d9e7b26b0de8efa5c",
+  "required_fixes": [],
+  "scope": "narrow demonstrated-need source/regression preparation only;13jobs/oneexport prospective ceilings",
+  "required_before_execution": "exact custody/quota/volume/junction/overrun/recovery source/effect review; no controller execution approved",
+  "review_execution": "read-only;9mappedfiles/3unchangedimplementations/58releasepreimages/879packmembersverified"
+}

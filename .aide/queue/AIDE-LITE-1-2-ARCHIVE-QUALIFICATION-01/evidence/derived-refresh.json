@@ -1,0 +1,16 @@
+{
+  "exit_code": 0,
+  "ledger_classifications_unchanged": true,
+  "before": {
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "157d0e1c97f90d7b1da8d2892572b34c79ad0726372d34658446fdb6edaec2bc",
+    ".aide/reports/capability-evidence-bindings.json": "d34512b5d99f9c79f3e3fe5d32151c7fe1eb2983ab798c15ef5efea952c7ae77",
+    ".aide/reports/capability-command-status.md": "25f5efd366ba571f0a264ea54609eae4d17d8accaf2f6833d53ffdfaa5a2014e"
+  },
+  "after": {
+    ".aide/reports/capability-ledger.json": "55eca36c57e6b95752ef5e587bf6710bb8d3e79a5498bf70def17c623ac07470",
+    ".aide/reports/capability-ledger.md": "9add4d922c1867066e4085bd6575861e673179200edcba241d7d99542e836193",
+    ".aide/reports/capability-evidence-bindings.json": "48a3350618a8116e58b1bc52f3bfd883147d35a1958ca7b1f98b03a54ec310c9",
+    ".aide/reports/capability-command-status.md": "0340b5088a58f091a5ed3ae6b6f370b89306de4000a5a890d072501bf8f61d68"
+  }
+}

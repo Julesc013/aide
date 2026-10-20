@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+### Versioned archive qualification - 21 October 2026
+
+[AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md) is admitted for scoped preparation on its local task branch from `ed4a9004`. The approved narrow amendment first prepares one canonical-output regression/export group, followed by the existing-owner build, original delivered Windows consumers/additive forms, actual-predecessor checks and exact modern profile evidence. Each effect needs exact review; thirteen local allocations and one three-profile hosted run are finite ceilings, not automatic execution grants. No new archive, support activation or publication exists yet.
+
 ### Multi-profile release contract - 20 October 2026
 
 [AIDE-LITE-MULTIPROFILE-CONTRACT-01](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md) extends the existing release owner with exact environment, capability and command declarations in one Lite payload. The source-only 1.2 candidate retains the actual 1.1 predecessor and all eight historical assets. Initial independent review found two lineage gaps; explicit minor-version adoption and refusal preservation are now prepared with focused regressions. All twenty affected methods passed and the 879-file export refreshed once. The original post-export worker failure remains preserved; read-only reconciliation completed without reruns or regeneration. Final independent acceptance/integration remains pending. Production archives, all declared public forms, publication and acquired-byte acceptance belong to the subsequent exact phase.

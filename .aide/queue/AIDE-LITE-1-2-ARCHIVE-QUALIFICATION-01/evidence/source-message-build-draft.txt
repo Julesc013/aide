@@ -1,0 +1,13 @@
+build(lite): prepare exact 1.2 archive producer
+
+- Admit actual versioned-archive qualification from accepted contract/export checkpoint ed4a9004, preserving historical assets and consumed qualification evidence.
+- Prepare one existing-owner stable build/validation with literal inputs, unchanged resource limits, bounded output ownership and durable command receipts.
+- Reconcile the preceding completed integration and current docs; keep the 879-file export and product implementation unchanged.
+- Leave delivered consumer/profile evaluation, hosted execution, integration and publication behind their exact review gates.
+
+Validation: NOT RUN - actual archive build awaits this exact source/effect acceptance; read-only syntax, manifest/input identities, historical assets, contract and unchanged-source ancestor provenance are checked in source-prechecks.json.
+Changelog: Changed: Prepare actual Lite 1.2 archive qualification; no asset, supported profile or release exists yet.
+Risk: A successful build establishes candidate bytes only; all declared public forms and actual-predecessor/recovery consumers remain required.
+Follow-up: Collect one reviewed build, freeze exact assets, then qualify original Windows and declared modern profile consumers under finite manifests.
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+AIDE-Format: compact-v1

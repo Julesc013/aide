@@ -3,8 +3,8 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 4d1857f694691bfe43ee278d8035bb7f26e62092613073544da42b8b4fe5d628
-- raw_prompt_excerpt: Prepare Lite 1.2.0 release metadata through the existing stable release owner: preserve historical 1.0/1.1 assets and Windows public behavior; declare exact Windows, Linux and macOS profile capabilities and supported/refused command sets...
+- raw_prompt_hash: cc8ee03ac4ecad98a06369ce4adbc3d9b8e0843da73849a23f502b84ff9571ad
+- raw_prompt_excerpt: Qualify actual AIDE Lite 1.2.0 ZIP and TAR archives against the accepted multi-profile contract at ed4a9004. Preserve all historical1.0/1.1assets and existing valid evidence. Reuse original assertions for Windows56forms and establish49fo...
 - interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release
@@ -31,7 +31,7 @@
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/AIDE-CODEX-DISPATCH-GATE-01/status.yaml`
+- `.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/status.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/repo/file-inventory.json`
 - `.aide/repo/latest-repo-intelligence.md`

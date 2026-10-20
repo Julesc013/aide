@@ -1,0 +1,17 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "ac638af255b28773cfd820e506a24ce0a8f338df75b547c82e97a7ea3beffadd",
+  "effect_sha256": "98feeeaf02e6af48d16169caed238da57d17feab0ac972610d36c41f63f089f0",
+  "controller_sha256": "e50557ab76a344387948923048749fac80c74918c8910e670e4bcfa0a7f9bc56",
+  "required_fixes": [],
+  "reasons": [
+    "67 mapped paths, exact dirty set, Git filter identities, 1089 inputs,879 recoverable pack members and eight historical assets verified.",
+    "All71 original methods unchanged; broader guards preserved and reverse,unknown,traversal coverage refused."
+  ],
+  "limitations": [
+    "Runtime qualification pending. Only twelve passing methods with no skips permit the single owned export refresh.",
+    "Build drafts, further allocations, integration and publication remain separately gated."
+  ],
+  "reviewer_executed_tests": false
+}

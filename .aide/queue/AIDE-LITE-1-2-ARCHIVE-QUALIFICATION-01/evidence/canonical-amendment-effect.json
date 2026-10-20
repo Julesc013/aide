@@ -1,0 +1,24 @@
+{
+  "scope": "approve narrow demonstrated-need preparation amendment only",
+  "base": "ed4a90046eba12a717a9962f21523285667a669b",
+  "task_branch": "task/aide-lite-1-2-archive-qualification-01",
+  "original_source_files": {
+    "core/execution/managed_workspace.py": "55f1590b37d150088c6023ccf8151adfbc350644e906c64d40b367c4884606d6",
+    ".aide/scripts/aide_lite.py": "db4d801ce478db89ac720f624905e91b7e0af395d7fa1bb2ebfbd2fd10e50d14",
+    ".aide/scripts/tests/test_managed_workspace.py": "2b0f0e49b433d569ef8740bcf9c0a904a71feedfa8e59f3b8d593f26dc753ec1"
+  },
+  "effects": [
+    "Allow preparation of the explicitly described existing-owner canonical destination/guard correction and focused tests.",
+    "Allow preparing one exact reviewed regression/export group and update finite total ceiling from12to13, with at most one owned export refresh."
+  ],
+  "execution_approved": false,
+  "forbidden": [
+    "commit, job, export refresh, build, push, hosted execution, integration, tag, publication or support activation before their separate exact source/effect verdicts",
+    "limit/reserve/config/root/privilege/provider changes and removal of preserved evidence"
+  ],
+  "current_jobs_consumed": 0,
+  "current_assets_created": 0,
+  "observed_release_bytes": 8302222,
+  "unchanged_canonical_limit_bytes": 8388608,
+  "observed_stable_bytes": 4144109
+}

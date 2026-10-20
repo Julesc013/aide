@@ -1,14 +1,15 @@
 ### TODO
 
-**Current checklist — 20 October 2026.** The filesystem [queue](.aide/queue/index.yaml) owns task state, authority and acceptance. This page is a short, dated view for humans and agents; follow each linked WorkUnit before acting.
+**Current checklist — 21 October 2026.** The filesystem [queue](.aide/queue/index.yaml) owns task state, authority and acceptance. This page is a short, dated view for humans and agents; follow each linked WorkUnit before acting.
 
 - [x] Observe published and development Lite adoption/removal on four real modern environments, preserving eight POSIX removal refusals. [Observations](.aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/REPORT.md)
 
 - [x] Execute the shared lifecycle binding on exact Windows/Linux/macOS profiles: adoption, actual predecessor conflict/recovery, repair, metadata and exit cases passed. Original errors, skips and rollback limits remain explicit. [Evidence](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md)
 - [x] Review and deliver shared-lifecycle integration to local/remote `dev` and `main` at `1e5193b0`; preserve the important tested remote checkpoint.
 - [x] Run all twenty release-contract fixtures and one owned export refresh; reconcile the retained worker failure without reruns or regeneration. [WorkUnit](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md)
-- [ ] Complete exact source/evidence acceptance and dev/main integration for the release-profile increment.
-- [ ] Qualify actual versioned Lite 1.2 archives and declared public forms, then review publication and acquired-byte consumers.
+- [x] Complete exact source/evidence acceptance and dev/main integration for the release-profile increment at `ed4a9004`.
+- [ ] Build and qualify actual versioned Lite 1.2 archives and declared public forms. [Admitted WorkUnit](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md)
+- [ ] Review publication and acquired-byte consumers after archive/profile acceptance.
 
 **Release and daily use**
 

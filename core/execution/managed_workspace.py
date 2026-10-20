@@ -30,7 +30,7 @@ class WorkspaceRefused(ValueError):
 # Existing repository-owned generator/evaluation destinations only. These are
 # retained canonical outputs, never disposable pools or arbitrary caller paths.
 CANONICAL_OUTPUT_PATHS = frozenset(('.aide/export/aide-lite-pack-v0',
-                                  '.aide/release', '.aide/evals/runs',
+                                  '.aide/release', '.aide/release/stable', '.aide/evals/runs',
                                   '.aide/changelog'))
 
 
@@ -1187,5 +1187,10 @@ def current_context(working_root):
 
 
 def require_canonical_outputs(record, paths):
-    if not set(paths).issubset(record['job'].get('canonical_outputs', {})):
+    declared = set(record['job'].get('canonical_outputs', {}))
+    requested = set(paths)
+    if (not declared.issubset(CANONICAL_OUTPUT_PATHS)
+            or not requested.issubset(CANONICAL_OUTPUT_PATHS)
+            or not all(any(path == root or path.startswith(root + '/') for root in declared)
+                       for path in requested)):
         raise WorkspaceRefused('command requires declared canonical output reservations')

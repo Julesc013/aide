@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "integration_commit": "ed4a90046eba12a717a9962f21523285667a669b",
+  "tree": "b4f7cce33edb74d03e1fccf2941666b408d2e272",
+  "receipt_sha256": "a661979c4965d1e3a4d8dc80fb1d5d1f73676f66fe2611df182243ad5e340c48",
+  "verified_operations": 116,
+  "verified_streams": 232,
+  "local_tracking_remote_equal": true,
+  "clean_main_after_transaction": true,
+  "owned_local_task_retired": true,
+  "other_refs_preserved": true,
+  "scope": "completed prior transaction before this new child; no new integration effect"
+}
