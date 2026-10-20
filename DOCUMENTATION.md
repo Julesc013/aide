@@ -1,5 +1,7 @@
 # AIDE Documentation Index
 
+**Current release-profile reference:** [Lite release profiles](docs/reference/lite-release-profiles.md) defines the prepared compatible v2 declaration/marker format, exact environment and command dispositions, preserved historical identities and separate qualification/publication gates. The [owning WorkUnit](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md) records review and validation; Lite 1.1 remains published.
+
 ### Shared lifecycle documentation - 20 October 2026
 
 The [filesystem reference](docs/reference/portable-lifecycle-filesystems.md) defines platform bindings, cooperative POSIX ownership, metadata and recovery limits; its tested export source remains frozen until the next release-preparation gate. The [current qualification report](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md) records actual results, original failures and conserved observations, with exact source/result/index/test witnesses. These development records do not expand the published Lite 1.1 support profile or establish Lite 1.2 archive qualification.

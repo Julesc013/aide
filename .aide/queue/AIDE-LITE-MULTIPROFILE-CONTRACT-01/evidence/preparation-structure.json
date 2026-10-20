@@ -1,0 +1,11 @@
+{
+  "source_syntax": "PASS",
+  "fixture_syntax": "PASS",
+  "candidate_read_only_contract": "PASS",
+  "forms": 56,
+  "profiles": 4,
+  "historical_assets": 8,
+  "archive_or_test_execution": false,
+  "source_sha256": "49ee54312a1c74de8acc6ac2c8247b8eedaf4eb3efea4291646176d11fc78dba",
+  "candidate_sha256": "eb8b46a4313834a95db5a64a75537cb09cb8cff381412ed55309baf55ff64b42"
+}

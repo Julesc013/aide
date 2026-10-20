@@ -1,8 +1,12 @@
 # AIDE Planning Index
 
+### Multi-profile release contract - 20 October 2026
+
+[AIDE-LITE-MULTIPROFILE-CONTRACT-01](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md) extends the existing release owner with exact environment, capability and command declarations in one Lite payload. The source-only 1.2 candidate retains the actual 1.1 predecessor and all eight historical assets. Initial independent review found two lineage gaps; explicit minor-version adoption and refusal preservation are now prepared with focused regressions. One reviewed fixture/export allocation and final source/integration acceptance remain pending. Production archives, all declared public forms, publication and acquired-byte acceptance belong to the subsequent exact phase.
+
 ### Shared lifecycle qualification - 20 October 2026
 
-[The existing lifecycle owner](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md) now has descriptor-based Linux/macOS operations beneath its shared state machine. Four local Windows cases and twelve hosted Windows/Linux/macOS cases passed, with exact unchanged evidence conserved and original failures retained. Hosted native/fixture tests produced 447 passes and 21 explicit skips. Next: qualified integration, then accurate multi-profile release metadata and actual versioned Lite 1.2 archive qualification. [Results and limits](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md).
+[The existing lifecycle owner](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md) now has descriptor-based Linux/macOS operations beneath its shared state machine. Four local Windows cases and twelve hosted Windows/Linux/macOS cases passed, with exact unchanged evidence conserved and original failures retained. Hosted native/fixture tests produced 447 passes and 21 explicit skips. Independent acceptance and guarded dev/main integration completed at `1e5193b0`; the important remote tested checkpoint `9c15cc8e` remains preserved. Next: accurate multi-profile release metadata and actual versioned Lite 1.2 archive qualification. [Results and limits](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md).
 
 ### Modern lifecycle observations - 20 October 2026
 

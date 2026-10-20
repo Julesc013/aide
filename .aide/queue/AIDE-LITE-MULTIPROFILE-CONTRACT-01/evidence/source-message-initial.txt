@@ -1,0 +1,25 @@
+feat(release): declare compatible Lite environment profiles
+
+Prompt: AIDE-LITE-MULTIPROFILE-CONTRACT-01
+
+**Summary**
+- Extend the existing release owner with strict per-environment command and capability declarations in one Lite payload; retain historical Windows identities.
+
+**Why**
+- Accepted Windows/Linux/macOS lifecycle delivery needs accurate release metadata before versioned archive qualification can begin.
+
+**Changed**
+- Preserve historical assets, supported forms, explicit refusals, environment identities and capabilities; require minor adoption or expansion.
+- Prepare the 1.2 source declaration, synthetic lineage/marker regressions, finite fixture/export worker, current docs and verified preceding integration receipt.
+
+**Validation**
+- Read-only source, lineage, unchanged-test and ownership checks are recorded in source-prechecks.json. Focused fixture tests and export refresh are pending the exact reviewed managed allocation.
+
+**Changelog**
+- Added: prepared multi-profile release contract; no new supported profile or published archive.
+
+**Risks**
+- Declaration and synthetic evidence do not establish actual OS support, whole-client containment or complete effort savings. Original failures and rollback limits remain.
+
+**Follow-up**
+- Run the one reviewed allocation, review actual results and dev/main delivery, then separately admit versioned archive/public-form/acquisition qualification and publication.

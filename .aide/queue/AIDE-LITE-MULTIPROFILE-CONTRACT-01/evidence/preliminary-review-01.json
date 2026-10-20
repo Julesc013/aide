@@ -1,0 +1,35 @@
+{
+  "decision": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "scope": "preliminary technical review only; no source/effect acceptance or execution",
+  "subjects": [
+    {
+      "path": ".aide/scripts/aide_lite.py",
+      "sha256": "6bb6d04d0cfee0abeb611e99590ceefbedfbcdb9d3048fc02d20ec80cf7750a4",
+      "preserved_at": ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/evidence/preliminary-source-01.log/0.bin"
+    },
+    {
+      "path": ".aide/scripts/tests/test_stable_successor.py",
+      "sha256": "224d02925609a4700707af1502366124a8a7de9a699a181c49a0a650d5ca1696",
+      "preserved_at": ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/evidence/preliminary-source-01.log/1.bin"
+    },
+    {
+      "path": ".aide/release/successor-candidate.json",
+      "sha256": "eb8b46a4313834a95db5a64a75537cb09cb8cff381412ed55309baf55ff64b42",
+      "preserved_at": ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/evidence/preliminary-source-01.log/2.bin"
+    },
+    {
+      "path": ".aide/policies/release-versioning.yaml",
+      "sha256": "10b3f1ef49a732ed9f19f41e28c132cefa4ab06571e1939a24c873c644b81fb8",
+      "preserved_at": ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/evidence/preliminary-source-01.log/3.bin"
+    }
+  ],
+  "required_fixes": [
+    "Require a minor version increase for v1-to-v2 profile expansion even when previous_profiles is empty; add patch regression.",
+    "Preserve declared predecessor refusals within the same major; add refusal-to-unqualified regression."
+  ],
+  "optional_findings": [
+    "Extend coherent archive marker tampering coverage to v2 profile declarations."
+  ],
+  "unchanged_evidence": "All eight historical assets match; all 56 original Windows forms exact; original 11 successor tests and admission tests unchanged. No tests/effects executed."
+}

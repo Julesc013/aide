@@ -1,0 +1,12 @@
+{
+  "decision": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "24ef8b9c1a7b5d91a6250d90c40ddce04cb0b69e6e44d9045bc1ce10fe5f1cc4",
+  "effect_sha256": "19e20ed03eb0a84f933a134915de4615414d59708b42e0edaef29158bfd175da",
+  "controller_sha256": "b701e020cbf73de6f1d0f4a47630936187892df9e5d51b5fcbefcd5434f01599",
+  "required_fixes": [
+    "Compare exported CLI with portable_cli_text(source_text).encode(utf-8), preserving other direct payload comparisons; refresh runner pin/source map."
+  ],
+  "other_findings": "No other blocker. Both lineage fixes/regressions sound;67mappedfiles/1089inputs/filter identities match;originaltests/assets/ownership/resources preserved.",
+  "execution": "No tests or effects executed."
+}

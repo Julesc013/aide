@@ -1,0 +1,36 @@
+{
+  "base": "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d",
+  "integration_base": "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d",
+  "task_branch": "task/aide-lite-multiprofile-contract-01",
+  "origin_url": "https://github.com/Julesc013/aide.git",
+  "controller_sha256": "b701e020cbf73de6f1d0f4a47630936187892df9e5d51b5fcbefcd5434f01599",
+  "control_config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "qualification_config": ".aide.local/lite-successor-qualification-execution.json",
+  "qualification_config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "maximum_local_allocations": 1,
+  "maximum_hosted_runs": 0,
+  "live_model_requests": 0,
+  "effects": [
+    "One exact source preparation commit on the existing local task branch; validation remains incomplete until fixtures/export pass.",
+    "One existing managed 600-second allocation runs five original admission and fifteen successor methods, with all eleven original successor bodies preserved.",
+    "On fixture success only, prove the exact recoverable 878-file export inventory before one existing-owner refresh; collect streams and retire.",
+    "No automatic retry; partial failures remain terminal evidence."
+  ],
+  "forbidden": [
+    "dev/main integration, push, branch retirement, tag, production archive, release or support activation",
+    "other targets/processes, providers/model spending, new roots, reserve/config/privilege changes"
+  ],
+  "pre_refresh_failures": [
+    "Two missing generated-reference/manifest failures; must close after owned refresh before acceptance."
+  ],
+  "review_attestation": {
+    "path": ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/evidence/source-review.json",
+    "actual_independent_accept_only": true,
+    "included_in_commit": true,
+    "binds": [
+      "source_sha256",
+      "effect_sha256",
+      "controller_sha256"
+    ]
+  }
+}

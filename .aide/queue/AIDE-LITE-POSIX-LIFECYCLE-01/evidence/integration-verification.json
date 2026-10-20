@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "transaction_receipt_sha256": "176e87f81f71a8649a64b33903693966069125cefc4c5ba54d8a2fd782df5d43",
+  "commit": "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d",
+  "tree": "6e66f548d59e7441c79298bc1051f59788a45da2",
+  "operations": 166,
+  "streams_verified": 332,
+  "observed_refs": {
+    "dev": "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d",
+    "main": "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d"
+  },
+  "local_task_retired": true,
+  "remote_task_preserved": "9c15cc8e1566bfa199ff882cb8b7a13568225f18",
+  "observation_scope": "Completed previous transaction before this child admission; current preparation runs on a new bounded task branch."
+}

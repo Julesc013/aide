@@ -4,6 +4,8 @@ Release entries describe the delivered Lite package and its declared compatibili
 
 #### Unreleased
 
+- **Prepared:** compatible multi-profile release metadata for one Lite 1.2 payload, preserving historical Windows identities and explicit per-environment command contracts. Focused fixtures and export refresh remain pending; this is not a new supported release. [WorkUnit](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md)
+
 - **Added, development:** shared Linux/macOS filesystem binding beneath the existing lifecycle owner. Four exact Windows/Linux/macOS environments passed adoption, published 1.1 conflict/recovery, repair and exit; hosted tests recorded 447 passes/21 explicit skips, including native POSIX ACL/xattr checks. Versioned Lite 1.2 qualification remains separate. [Results and limits](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md)
 - **Fixed, development:** preserve the original Windows unlink callback contract and exclude the source-only lifecycle fixture from consumer exports. Original failed and interrupted results remain recorded.
 - **Evaluation:** observe delivered adoption/removal on four exact modern environments: 16 adoption/preservation passes, eight Windows detach passes and eight retained POSIX removal refusals; new support remains unqualified.

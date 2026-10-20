@@ -1,0 +1,3683 @@
+{
+  "status": "PASS",
+  "operations": [
+    {
+      "label": "branch",
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "branch.stdout.log": {
+          "bytes": 34,
+          "sha256": "761b18fdaf1b986345f60848eb38479c644704317d8d78428882e1ef9ddccf61"
+        },
+        "branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "base",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "base.stdout.log": {
+          "bytes": 41,
+          "sha256": "2837ca2d9b6c71402685ffa21a188609d7fa4145282087ca814471efc5a68cb4"
+        },
+        "base.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "index",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "index.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "index.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "changed",
+      "argv": [
+        "git",
+        "diff",
+        "--name-only"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "changed.stdout.log": {
+          "bytes": 368,
+          "sha256": "031decf820ed98335386ed549a5ceb2d0a9c534d4549ccbb976088921ca70dc1"
+        },
+        "changed.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "untracked",
+      "argv": [
+        "git",
+        "ls-files",
+        "--others",
+        "--exclude-standard"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "untracked.stdout.log": {
+          "bytes": 4015,
+          "sha256": "72f70dc16488f3fc8ba88fb83f518fdde4ae2e71a9437d7eaaf341c40612dd1a"
+        },
+        "untracked.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-fetch-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-fetch-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-commit-fetch-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-push-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-push-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-commit-push-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-before",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-before.stdout.log": {
+          "bytes": 113,
+          "sha256": "141cc9725d1c62a467de96728047ce41083529587a71c4ecdda9ca7a506a8f39"
+        },
+        "fetch-commit-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/dev:refs/remotes/origin/dev",
+        "refs/heads/main:refs/remotes/origin/main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "fetch-commit.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-after",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-after.stdout.log": {
+          "bytes": 113,
+          "sha256": "141cc9725d1c62a467de96728047ce41083529587a71c4ecdda9ca7a506a8f39"
+        },
+        "fetch-commit-after.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "message",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-LITE-POSIX-LIFECYCLE-01\\evidence\\closure-message.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "message.stdout.log": {
+          "bytes": 2181,
+          "sha256": "747d4fee577dc8baeb1c8f3c146c37114ec5159bcdfbc065f9b31e6b34b1e636"
+        },
+        "message.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "stage",
+      "argv": [
+        "git",
+        "add",
+        "--",
+        ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/changed-files.md",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-message.txt",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-prechecks-initial.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-prechecks.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-review-initial.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-review.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-source-initial.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-source.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-validation.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-validation.txt",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/dev-review-packet.md",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-observed.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/fixture-tests.log.txt",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/receipt-index.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/result.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_filesystem.log.txt",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_filesystem.result.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_lifecycle.log.txt",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_lifecycle.result.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/fixture-tests.log.txt",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/receipt-index.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/result.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_filesystem.log.txt",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_filesystem.result.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_lifecycle.log.txt",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_lifecycle.result.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/fixture-tests.log.txt",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/receipt-index.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/result.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_filesystem.log.txt",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_filesystem.result.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_lifecycle.log.txt",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_lifecycle.result.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/windows-native-regressions.log.txt",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/windows-regressions.result.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/integration-effect-initial.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/integration-effect.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/observation-verification.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/portable-lifecycle-filesystems.proposed.md",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/remaining-risks.md",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/source-reference-disposition.json",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/validation.md",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/integrate.py",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/status.yaml",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/task.yaml",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/verify_observation.py",
+        ".aide/queue/index.yaml",
+        "CHANGELOG.md",
+        "DOCUMENTATION.md",
+        "IMPLEMENT.md",
+        "PLANS.md",
+        "README.md",
+        "ROADMAP.md",
+        "TODO.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "stage.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stage.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "staged",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "staged.stdout.log": {
+          "bytes": 4383,
+          "sha256": "fb9620bb4c303b0fc14eed8c7ae45079041d5a17920848c3fc55a4b2b18d1f21"
+        },
+        "staged.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-0",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-0.stdout.log": {
+          "bytes": 41,
+          "sha256": "7594b9ab3ea123fe0a0bcdd31626c3bd90ea47a58c62776880288e853f1ca125"
+        },
+        "raw-0.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-0",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-0.stdout.log": {
+          "bytes": 41,
+          "sha256": "7594b9ab3ea123fe0a0bcdd31626c3bd90ea47a58c62776880288e853f1ca125"
+        },
+        "blob-0.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-1",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-1.stdout.log": {
+          "bytes": 41,
+          "sha256": "9fdf9aa51ad642de557ef2e3d2f230575b891ed5af1538c01d516fb19e596337"
+        },
+        "raw-1.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-1",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-1.stdout.log": {
+          "bytes": 41,
+          "sha256": "9fdf9aa51ad642de557ef2e3d2f230575b891ed5af1538c01d516fb19e596337"
+        },
+        "blob-1.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-2",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-2.stdout.log": {
+          "bytes": 41,
+          "sha256": "3b3faffec4be75900e5093f0a4575559cd6ef3bd6134e23e30bbc56a8f51ed58"
+        },
+        "raw-2.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-2",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-2.stdout.log": {
+          "bytes": 41,
+          "sha256": "3b3faffec4be75900e5093f0a4575559cd6ef3bd6134e23e30bbc56a8f51ed58"
+        },
+        "blob-2.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-3",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/changed-files.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-3.stdout.log": {
+          "bytes": 41,
+          "sha256": "99827b7af04708404e6ce3b6c0543001d682ffc01efe0ac71274cfd0a6809516"
+        },
+        "raw-3.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-3",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/changed-files.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-3.stdout.log": {
+          "bytes": 41,
+          "sha256": "99827b7af04708404e6ce3b6c0543001d682ffc01efe0ac71274cfd0a6809516"
+        },
+        "blob-3.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-4",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-message.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-4.stdout.log": {
+          "bytes": 41,
+          "sha256": "55cf9da2c4064d4ed81932f3fb4364fb426e85e1f1ab6d95bbe8d0ace1717b33"
+        },
+        "raw-4.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-4",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-message.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-4.stdout.log": {
+          "bytes": 41,
+          "sha256": "55cf9da2c4064d4ed81932f3fb4364fb426e85e1f1ab6d95bbe8d0ace1717b33"
+        },
+        "blob-4.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-5",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-prechecks-initial.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-5.stdout.log": {
+          "bytes": 41,
+          "sha256": "d31da96a9a57f7aa84a859b2106fa225fb6ababc3eda6c9958fd936045fc4054"
+        },
+        "raw-5.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-5",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-prechecks-initial.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-5.stdout.log": {
+          "bytes": 41,
+          "sha256": "d31da96a9a57f7aa84a859b2106fa225fb6ababc3eda6c9958fd936045fc4054"
+        },
+        "blob-5.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-6",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-prechecks.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-6.stdout.log": {
+          "bytes": 41,
+          "sha256": "46900ec42410bcdb4bd1f20d443ba64a03a57b6141fb5278ccd67b78758961fb"
+        },
+        "raw-6.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-6",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-prechecks.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-6.stdout.log": {
+          "bytes": 41,
+          "sha256": "46900ec42410bcdb4bd1f20d443ba64a03a57b6141fb5278ccd67b78758961fb"
+        },
+        "blob-6.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-7",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-review-initial.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-7.stdout.log": {
+          "bytes": 41,
+          "sha256": "71a88d9d366a7cdff1962967e0cfec8ef995c3036cf2b82ff0005eed5866352f"
+        },
+        "raw-7.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-7",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-review-initial.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-7.stdout.log": {
+          "bytes": 41,
+          "sha256": "71a88d9d366a7cdff1962967e0cfec8ef995c3036cf2b82ff0005eed5866352f"
+        },
+        "blob-7.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-8",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-review.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-8.stdout.log": {
+          "bytes": 41,
+          "sha256": "6db8b19d4149caec9857e6bbf3bd0dc0afb448fbb92148a61ebd35f51ddf1163"
+        },
+        "raw-8.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-8",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-review.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-8.stdout.log": {
+          "bytes": 41,
+          "sha256": "6db8b19d4149caec9857e6bbf3bd0dc0afb448fbb92148a61ebd35f51ddf1163"
+        },
+        "blob-8.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-9",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-source-initial.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-9.stdout.log": {
+          "bytes": 41,
+          "sha256": "62e4178204099ee3a72059e41e0994e667a44b805b3678792559978e8ded01dd"
+        },
+        "raw-9.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-9",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-source-initial.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-9.stdout.log": {
+          "bytes": 41,
+          "sha256": "62e4178204099ee3a72059e41e0994e667a44b805b3678792559978e8ded01dd"
+        },
+        "blob-9.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-10",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-source.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-10.stdout.log": {
+          "bytes": 41,
+          "sha256": "4b2108ce1aafbf54c8fd6210ff29ce401422083e93787d519b6ae0f63d1c697e"
+        },
+        "raw-10.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-10",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-source.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-10.stdout.log": {
+          "bytes": 41,
+          "sha256": "4b2108ce1aafbf54c8fd6210ff29ce401422083e93787d519b6ae0f63d1c697e"
+        },
+        "blob-10.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-11",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-validation.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-11.stdout.log": {
+          "bytes": 41,
+          "sha256": "ee4d1a59609483cc9ab0a7c0e3aad84b552ca39ae1f1ca6dd324e2c3dc816940"
+        },
+        "raw-11.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-11",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-validation.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-11.stdout.log": {
+          "bytes": 41,
+          "sha256": "ee4d1a59609483cc9ab0a7c0e3aad84b552ca39ae1f1ca6dd324e2c3dc816940"
+        },
+        "blob-11.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-12",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-validation.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-12.stdout.log": {
+          "bytes": 41,
+          "sha256": "1adb0f1596877298ba85cc23f4bc622f7f07886f6163b0c8635c4ea8747c58e8"
+        },
+        "raw-12.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-12",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-validation.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-12.stdout.log": {
+          "bytes": 41,
+          "sha256": "1adb0f1596877298ba85cc23f4bc622f7f07886f6163b0c8635c4ea8747c58e8"
+        },
+        "blob-12.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-13",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/dev-review-packet.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-13.stdout.log": {
+          "bytes": 41,
+          "sha256": "744a0c1073cd38dbacc9525f15b8e0a2738143d019456a5937658ba85efece38"
+        },
+        "raw-13.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-13",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/dev-review-packet.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-13.stdout.log": {
+          "bytes": 41,
+          "sha256": "744a0c1073cd38dbacc9525f15b8e0a2738143d019456a5937658ba85efece38"
+        },
+        "blob-13.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-14",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-observed.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-14.stdout.log": {
+          "bytes": 41,
+          "sha256": "c615fc5a26372bf382dee542c3f8e1ffebf4142a265535f6991b0378800d0783"
+        },
+        "raw-14.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-14",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-observed.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-14.stdout.log": {
+          "bytes": 41,
+          "sha256": "c615fc5a26372bf382dee542c3f8e1ffebf4142a265535f6991b0378800d0783"
+        },
+        "blob-14.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-15",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/fixture-tests.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-15.stdout.log": {
+          "bytes": 41,
+          "sha256": "d5221991251a16f048cf718472c3a34c9bb2f974e9fee536b14cab1953169a04"
+        },
+        "raw-15.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-15",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/fixture-tests.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-15.stdout.log": {
+          "bytes": 41,
+          "sha256": "d5221991251a16f048cf718472c3a34c9bb2f974e9fee536b14cab1953169a04"
+        },
+        "blob-15.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-16",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/receipt-index.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-16.stdout.log": {
+          "bytes": 41,
+          "sha256": "fd611fe36f4db7aad38ed219235b4e97494c946c6d3d74179df4d85695196e53"
+        },
+        "raw-16.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-16",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/receipt-index.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-16.stdout.log": {
+          "bytes": 41,
+          "sha256": "fd611fe36f4db7aad38ed219235b4e97494c946c6d3d74179df4d85695196e53"
+        },
+        "blob-16.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-17",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-17.stdout.log": {
+          "bytes": 41,
+          "sha256": "3a8d405233b300a2263ad2674a108076055a16b092d46ec38236996a6953fc52"
+        },
+        "raw-17.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-17",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-17.stdout.log": {
+          "bytes": 41,
+          "sha256": "3a8d405233b300a2263ad2674a108076055a16b092d46ec38236996a6953fc52"
+        },
+        "blob-17.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-18",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_filesystem.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-18.stdout.log": {
+          "bytes": 41,
+          "sha256": "cf9c039489ac812f3990a23d08866cd1ff5e78b75cc05bc37fdb75b32c01c723"
+        },
+        "raw-18.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-18",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_filesystem.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-18.stdout.log": {
+          "bytes": 41,
+          "sha256": "cf9c039489ac812f3990a23d08866cd1ff5e78b75cc05bc37fdb75b32c01c723"
+        },
+        "blob-18.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-19",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_filesystem.result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-19.stdout.log": {
+          "bytes": 41,
+          "sha256": "d8335f9b37c2e6bc7519d5eb76405e3d3ba611992b5543cb89c4aaf988da6c31"
+        },
+        "raw-19.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-19",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_filesystem.result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-19.stdout.log": {
+          "bytes": 41,
+          "sha256": "d8335f9b37c2e6bc7519d5eb76405e3d3ba611992b5543cb89c4aaf988da6c31"
+        },
+        "blob-19.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-20",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_lifecycle.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-20.stdout.log": {
+          "bytes": 41,
+          "sha256": "46a8bebd902f690a544e411dae9093a2f8310acee63eb7378793e8441b47f036"
+        },
+        "raw-20.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-20",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_lifecycle.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-20.stdout.log": {
+          "bytes": 41,
+          "sha256": "46a8bebd902f690a544e411dae9093a2f8310acee63eb7378793e8441b47f036"
+        },
+        "blob-20.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-21",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_lifecycle.result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-21.stdout.log": {
+          "bytes": 41,
+          "sha256": "ff591b8b0ea81abaa44c3c0c6fe8cdaabd8466783f15ff2c58f2c308cb317b85"
+        },
+        "raw-21.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-21",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_lifecycle.result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-21.stdout.log": {
+          "bytes": 41,
+          "sha256": "ff591b8b0ea81abaa44c3c0c6fe8cdaabd8466783f15ff2c58f2c308cb317b85"
+        },
+        "blob-21.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-22",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/fixture-tests.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-22.stdout.log": {
+          "bytes": 41,
+          "sha256": "cea7d0a3a880c477c52ebbcc4ef1177b3e2bcf7bb4713223f9028a03ac625022"
+        },
+        "raw-22.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-22",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/fixture-tests.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-22.stdout.log": {
+          "bytes": 41,
+          "sha256": "cea7d0a3a880c477c52ebbcc4ef1177b3e2bcf7bb4713223f9028a03ac625022"
+        },
+        "blob-22.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-23",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/receipt-index.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-23.stdout.log": {
+          "bytes": 41,
+          "sha256": "b837178583e2d4607052112bb85c4101536f6e7d671d0c1a2f06df91369e4962"
+        },
+        "raw-23.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-23",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/receipt-index.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-23.stdout.log": {
+          "bytes": 41,
+          "sha256": "b837178583e2d4607052112bb85c4101536f6e7d671d0c1a2f06df91369e4962"
+        },
+        "blob-23.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-24",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-24.stdout.log": {
+          "bytes": 41,
+          "sha256": "b7f06d2f68fe20eaaedb5affdb6113cb3e09d147c04d2d6a3efdd3a1dd818c56"
+        },
+        "raw-24.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-24",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-24.stdout.log": {
+          "bytes": 41,
+          "sha256": "b7f06d2f68fe20eaaedb5affdb6113cb3e09d147c04d2d6a3efdd3a1dd818c56"
+        },
+        "blob-24.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-25",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_filesystem.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-25.stdout.log": {
+          "bytes": 41,
+          "sha256": "dc38464ab157133dd44a53406e9ba5124cef80bce7c72aef214c54eba90cd7dd"
+        },
+        "raw-25.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-25",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_filesystem.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-25.stdout.log": {
+          "bytes": 41,
+          "sha256": "dc38464ab157133dd44a53406e9ba5124cef80bce7c72aef214c54eba90cd7dd"
+        },
+        "blob-25.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-26",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_filesystem.result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-26.stdout.log": {
+          "bytes": 41,
+          "sha256": "d8335f9b37c2e6bc7519d5eb76405e3d3ba611992b5543cb89c4aaf988da6c31"
+        },
+        "raw-26.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-26",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_filesystem.result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-26.stdout.log": {
+          "bytes": 41,
+          "sha256": "d8335f9b37c2e6bc7519d5eb76405e3d3ba611992b5543cb89c4aaf988da6c31"
+        },
+        "blob-26.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-27",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_lifecycle.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-27.stdout.log": {
+          "bytes": 41,
+          "sha256": "86b48c2bba44ecd7c17f327172be217488d454403f02ab5359eae28f147fe2a8"
+        },
+        "raw-27.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-27",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_lifecycle.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-27.stdout.log": {
+          "bytes": 41,
+          "sha256": "86b48c2bba44ecd7c17f327172be217488d454403f02ab5359eae28f147fe2a8"
+        },
+        "blob-27.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-28",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_lifecycle.result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-28.stdout.log": {
+          "bytes": 41,
+          "sha256": "ff591b8b0ea81abaa44c3c0c6fe8cdaabd8466783f15ff2c58f2c308cb317b85"
+        },
+        "raw-28.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-28",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_lifecycle.result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-28.stdout.log": {
+          "bytes": 41,
+          "sha256": "ff591b8b0ea81abaa44c3c0c6fe8cdaabd8466783f15ff2c58f2c308cb317b85"
+        },
+        "blob-28.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-29",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/fixture-tests.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-29.stdout.log": {
+          "bytes": 41,
+          "sha256": "87be789038a4aef04767688e067992f99d918d50e768962a3fdca7da9a16d430"
+        },
+        "raw-29.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-29",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/fixture-tests.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-29.stdout.log": {
+          "bytes": 41,
+          "sha256": "87be789038a4aef04767688e067992f99d918d50e768962a3fdca7da9a16d430"
+        },
+        "blob-29.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-30",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/receipt-index.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-30.stdout.log": {
+          "bytes": 41,
+          "sha256": "b2ccfa7505247ca7d16918b5a21d61276852878b3fd21c70f4094e6ab5da7abc"
+        },
+        "raw-30.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-30",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/receipt-index.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-30.stdout.log": {
+          "bytes": 41,
+          "sha256": "b2ccfa7505247ca7d16918b5a21d61276852878b3fd21c70f4094e6ab5da7abc"
+        },
+        "blob-30.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-31",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-31.stdout.log": {
+          "bytes": 41,
+          "sha256": "addf0fa5e8a090a4d352c8ec2faeb21830e513789b0f2f43eae7c2c63b509c8c"
+        },
+        "raw-31.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-31",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-31.stdout.log": {
+          "bytes": 41,
+          "sha256": "addf0fa5e8a090a4d352c8ec2faeb21830e513789b0f2f43eae7c2c63b509c8c"
+        },
+        "blob-31.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-32",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_filesystem.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-32.stdout.log": {
+          "bytes": 41,
+          "sha256": "6456a7840dd99fec24ed0b08af1fdc3559e8b520e4137553991ec74b2f7c9a4b"
+        },
+        "raw-32.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-32",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_filesystem.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-32.stdout.log": {
+          "bytes": 41,
+          "sha256": "6456a7840dd99fec24ed0b08af1fdc3559e8b520e4137553991ec74b2f7c9a4b"
+        },
+        "blob-32.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-33",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_filesystem.result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-33.stdout.log": {
+          "bytes": 41,
+          "sha256": "adaa4ee90d52d4cca8521fb07e833c4b77d2a18d348c471b87287591fcf96f3b"
+        },
+        "raw-33.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-33",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_filesystem.result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-33.stdout.log": {
+          "bytes": 41,
+          "sha256": "adaa4ee90d52d4cca8521fb07e833c4b77d2a18d348c471b87287591fcf96f3b"
+        },
+        "blob-33.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-34",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_lifecycle.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-34.stdout.log": {
+          "bytes": 41,
+          "sha256": "c298c66c38ba12716ef1b17773c5cc51a5509bbadc26aa08ba70e1e31d1a5ad3"
+        },
+        "raw-34.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-34",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_lifecycle.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-34.stdout.log": {
+          "bytes": 41,
+          "sha256": "c298c66c38ba12716ef1b17773c5cc51a5509bbadc26aa08ba70e1e31d1a5ad3"
+        },
+        "blob-34.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-35",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_lifecycle.result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-35.stdout.log": {
+          "bytes": 41,
+          "sha256": "70cabd81ce0bcf7cbb05ce948a5f92f269d5bd267dac9c98a733225cd2e4a087"
+        },
+        "raw-35.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-35",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_lifecycle.result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-35.stdout.log": {
+          "bytes": 41,
+          "sha256": "70cabd81ce0bcf7cbb05ce948a5f92f269d5bd267dac9c98a733225cd2e4a087"
+        },
+        "blob-35.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-36",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/windows-native-regressions.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-36.stdout.log": {
+          "bytes": 41,
+          "sha256": "00561396707a40a51451324ed561bd3bcb57cf546e5623e4d3823c79cd9de6eb"
+        },
+        "raw-36.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-36",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/windows-native-regressions.log.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-36.stdout.log": {
+          "bytes": 41,
+          "sha256": "00561396707a40a51451324ed561bd3bcb57cf546e5623e4d3823c79cd9de6eb"
+        },
+        "blob-36.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-37",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/windows-regressions.result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-37.stdout.log": {
+          "bytes": 41,
+          "sha256": "6f9dbc2c101a14e213f213ea05efd0abada3356628fa010368fa39588e666b5e"
+        },
+        "raw-37.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-37",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/windows-regressions.result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-37.stdout.log": {
+          "bytes": 41,
+          "sha256": "6f9dbc2c101a14e213f213ea05efd0abada3356628fa010368fa39588e666b5e"
+        },
+        "blob-37.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-38",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/integration-effect-initial.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-38.stdout.log": {
+          "bytes": 41,
+          "sha256": "2fa07fe221b5c6820f8263549af8a68cfa5090d3a87c3accf8f0c3af30e28f53"
+        },
+        "raw-38.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-38",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/integration-effect-initial.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-38.stdout.log": {
+          "bytes": 41,
+          "sha256": "2fa07fe221b5c6820f8263549af8a68cfa5090d3a87c3accf8f0c3af30e28f53"
+        },
+        "blob-38.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-39",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/integration-effect.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-39.stdout.log": {
+          "bytes": 41,
+          "sha256": "2fa07fe221b5c6820f8263549af8a68cfa5090d3a87c3accf8f0c3af30e28f53"
+        },
+        "raw-39.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-39",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/integration-effect.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-39.stdout.log": {
+          "bytes": 41,
+          "sha256": "2fa07fe221b5c6820f8263549af8a68cfa5090d3a87c3accf8f0c3af30e28f53"
+        },
+        "blob-39.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-40",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/observation-verification.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-40.stdout.log": {
+          "bytes": 41,
+          "sha256": "b39af88ba00ef8efaff039dfa684c1b4f5b91d950e10ef0e1c0001b6545d3ede"
+        },
+        "raw-40.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-40",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/observation-verification.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-40.stdout.log": {
+          "bytes": 41,
+          "sha256": "b39af88ba00ef8efaff039dfa684c1b4f5b91d950e10ef0e1c0001b6545d3ede"
+        },
+        "blob-40.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-41",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/portable-lifecycle-filesystems.proposed.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-41.stdout.log": {
+          "bytes": 41,
+          "sha256": "2a6999c3e98132378fe8410660e8363bccfa4ea3a08322161f3f82428f32b3af"
+        },
+        "raw-41.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-41",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/portable-lifecycle-filesystems.proposed.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-41.stdout.log": {
+          "bytes": 41,
+          "sha256": "2a6999c3e98132378fe8410660e8363bccfa4ea3a08322161f3f82428f32b3af"
+        },
+        "blob-41.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-42",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/remaining-risks.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-42.stdout.log": {
+          "bytes": 41,
+          "sha256": "a4e98700f5d76e162670bab4623aa283c86bbe9cec8a1bdb9915e0403fbcbbea"
+        },
+        "raw-42.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-42",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/remaining-risks.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-42.stdout.log": {
+          "bytes": 41,
+          "sha256": "a4e98700f5d76e162670bab4623aa283c86bbe9cec8a1bdb9915e0403fbcbbea"
+        },
+        "blob-42.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-43",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/source-reference-disposition.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-43.stdout.log": {
+          "bytes": 41,
+          "sha256": "6766fdd984791ac5e861925f969c725c91efd2bf293d39a7db0cd15b96454c36"
+        },
+        "raw-43.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-43",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/source-reference-disposition.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-43.stdout.log": {
+          "bytes": 41,
+          "sha256": "6766fdd984791ac5e861925f969c725c91efd2bf293d39a7db0cd15b96454c36"
+        },
+        "blob-43.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-44",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/validation.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-44.stdout.log": {
+          "bytes": 41,
+          "sha256": "fb29ec2a31fee29e13d9c6fba47c4f2630c05f9bde0c4d29d7a213361764c147"
+        },
+        "raw-44.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-44",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/validation.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-44.stdout.log": {
+          "bytes": 41,
+          "sha256": "fb29ec2a31fee29e13d9c6fba47c4f2630c05f9bde0c4d29d7a213361764c147"
+        },
+        "blob-44.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-45",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/integrate.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-45.stdout.log": {
+          "bytes": 41,
+          "sha256": "96e0dcac07f7beaef3f46eadab1589e551cca1d16ac3371e946b853eacc2f312"
+        },
+        "raw-45.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-45",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/integrate.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-45.stdout.log": {
+          "bytes": 41,
+          "sha256": "96e0dcac07f7beaef3f46eadab1589e551cca1d16ac3371e946b853eacc2f312"
+        },
+        "blob-45.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-46",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/status.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-46.stdout.log": {
+          "bytes": 41,
+          "sha256": "2f005fa51729fc0fdd9068905807dbda847a0d199a757b8ba1a14a7b82b6c149"
+        },
+        "raw-46.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-46",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/status.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-46.stdout.log": {
+          "bytes": 41,
+          "sha256": "2f005fa51729fc0fdd9068905807dbda847a0d199a757b8ba1a14a7b82b6c149"
+        },
+        "blob-46.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-47",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/task.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-47.stdout.log": {
+          "bytes": 41,
+          "sha256": "1594b61e72c2bd573f2afef992977d7b234f7e9e3ca3ace98a115da6a3077c11"
+        },
+        "raw-47.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-47",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/task.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-47.stdout.log": {
+          "bytes": 41,
+          "sha256": "1594b61e72c2bd573f2afef992977d7b234f7e9e3ca3ace98a115da6a3077c11"
+        },
+        "blob-47.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-48",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/verify_observation.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-48.stdout.log": {
+          "bytes": 41,
+          "sha256": "ab6754c86a579f255f2c754b4bc40c7bc11f92621a2172a1785e7d4308b1af20"
+        },
+        "raw-48.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-48",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/verify_observation.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-48.stdout.log": {
+          "bytes": 41,
+          "sha256": "ab6754c86a579f255f2c754b4bc40c7bc11f92621a2172a1785e7d4308b1af20"
+        },
+        "blob-48.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-49",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/index.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-49.stdout.log": {
+          "bytes": 41,
+          "sha256": "c5dd41ccf72e43b2e504fadd9c80644d075647b9061e9a5bfde81c0e657b8dde"
+        },
+        "raw-49.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-49",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/index.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-49.stdout.log": {
+          "bytes": 41,
+          "sha256": "c5dd41ccf72e43b2e504fadd9c80644d075647b9061e9a5bfde81c0e657b8dde"
+        },
+        "blob-49.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-50",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "CHANGELOG.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-50.stdout.log": {
+          "bytes": 41,
+          "sha256": "149bd6e006e69044c243b8c7e6476cc2b8197d27d7eb94ea913dd66acb6a18e3"
+        },
+        "raw-50.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-50",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":CHANGELOG.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-50.stdout.log": {
+          "bytes": 41,
+          "sha256": "149bd6e006e69044c243b8c7e6476cc2b8197d27d7eb94ea913dd66acb6a18e3"
+        },
+        "blob-50.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-51",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "DOCUMENTATION.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-51.stdout.log": {
+          "bytes": 41,
+          "sha256": "6c80e8c5f96ea5abb1a063aff02588fdf5da16a32eef14a71accbba1dbdc0cb1"
+        },
+        "raw-51.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-51",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":DOCUMENTATION.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-51.stdout.log": {
+          "bytes": 41,
+          "sha256": "6c80e8c5f96ea5abb1a063aff02588fdf5da16a32eef14a71accbba1dbdc0cb1"
+        },
+        "blob-51.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-52",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "IMPLEMENT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-52.stdout.log": {
+          "bytes": 41,
+          "sha256": "9117b959be72f8074391373064f6d5ebaca34904cd6daca57a94358aae2f90f4"
+        },
+        "raw-52.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-52",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":IMPLEMENT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-52.stdout.log": {
+          "bytes": 41,
+          "sha256": "9117b959be72f8074391373064f6d5ebaca34904cd6daca57a94358aae2f90f4"
+        },
+        "blob-52.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-53",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "PLANS.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-53.stdout.log": {
+          "bytes": 41,
+          "sha256": "43160151fe039b2f406bda66b8126fffeae1b3a8721e5ebaccfaf17f475befb0"
+        },
+        "raw-53.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-53",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":PLANS.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-53.stdout.log": {
+          "bytes": 41,
+          "sha256": "43160151fe039b2f406bda66b8126fffeae1b3a8721e5ebaccfaf17f475befb0"
+        },
+        "blob-53.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-54",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "README.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-54.stdout.log": {
+          "bytes": 41,
+          "sha256": "d9a338b8d48a3a5f3699ba9bc0b45b681604ea5b36be7b7dedb7eea1f4fc8bb3"
+        },
+        "raw-54.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-54",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":README.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-54.stdout.log": {
+          "bytes": 41,
+          "sha256": "d9a338b8d48a3a5f3699ba9bc0b45b681604ea5b36be7b7dedb7eea1f4fc8bb3"
+        },
+        "blob-54.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-55",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "ROADMAP.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-55.stdout.log": {
+          "bytes": 41,
+          "sha256": "b4725853544dd9e6fdb0b4e5e495a4725a50536fd9d0177a2144f186f0375578"
+        },
+        "raw-55.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-55",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":ROADMAP.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-55.stdout.log": {
+          "bytes": 41,
+          "sha256": "b4725853544dd9e6fdb0b4e5e495a4725a50536fd9d0177a2144f186f0375578"
+        },
+        "blob-55.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-56",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "TODO.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-56.stdout.log": {
+          "bytes": 41,
+          "sha256": "1c0ead8acae858e0f3c2f50d560ade66ae04a1a9d7d12ca7d3b20bae79ceb94c"
+        },
+        "raw-56.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-56",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":TODO.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-56.stdout.log": {
+          "bytes": 41,
+          "sha256": "1c0ead8acae858e0f3c2f50d560ade66ae04a1a9d7d12ca7d3b20bae79ceb94c"
+        },
+        "blob-56.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "tree",
+      "argv": [
+        "git",
+        "write-tree"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "tree.stdout.log": {
+          "bytes": 41,
+          "sha256": "2402b9402ead383d5f8a4c5b830069bbb0ab0e99c1dd879c58069659fa5cb494"
+        },
+        "tree.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "commit-check",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--latest"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "commit-check.stdout.log": {
+          "bytes": 2134,
+          "sha256": "146c8f74c6b8a8aa0b32ba92def704da60c112f9cadc1d9a6467aed938204bd1"
+        },
+        "commit-check.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev-fetch-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev-fetch-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-dev-fetch-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev-push-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev-push-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-dev-push-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev-before",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev-before.stdout.log": {
+          "bytes": 113,
+          "sha256": "141cc9725d1c62a467de96728047ce41083529587a71c4ecdda9ca7a506a8f39"
+        },
+        "fetch-dev-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/dev:refs/remotes/origin/dev",
+        "refs/heads/main:refs/remotes/origin/main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "fetch-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev-after",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev-after.stdout.log": {
+          "bytes": 113,
+          "sha256": "141cc9725d1c62a467de96728047ce41083529587a71c4ecdda9ca7a506a8f39"
+        },
+        "fetch-dev-after.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "helper-dev",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "plan"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "helper-dev.stdout.log": {
+          "bytes": 381,
+          "sha256": "068ede02f8d9f40c216b8cbcff1a32d4563a7a032f0701c19ea6141c9975580b"
+        },
+        "helper-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "head-dev",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "head-dev.stdout.log": {
+          "bytes": 41,
+          "sha256": "0a783005e1b651bf61898e6028a28b391583b80b8895a146c1f66415d39646a3"
+        },
+        "head-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "clean-dev",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "clean-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "clean-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "ancestor-dev",
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "8e5581cce7c7fd7037f6a199c92a6922260893ab",
+        "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "ancestor-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ancestor-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "ref-dev",
+      "argv": [
+        "git",
+        "update-ref",
+        "refs/heads/dev",
+        "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d",
+        "8e5581cce7c7fd7037f6a199c92a6922260893ab"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "ref-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ref-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-dev-fetch-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-dev-fetch-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "push-dev-fetch-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-dev-push-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-dev-push-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "push-dev-push-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-dev",
+      "argv": [
+        "git",
+        "push",
+        "--no-follow-tags",
+        "origin",
+        "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d:refs/heads/dev"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "push-dev.stderr.log": {
+          "bytes": 112,
+          "sha256": "82e0ea534788b97a4104c0d32983ef934b63d37cf83062fbcd8923c65af6180b"
+        }
+      }
+    },
+    {
+      "label": "remote-dev",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "remote-dev.stdout.log": {
+          "bytes": 113,
+          "sha256": "e0a811b377ed12e453cd684f049950e03e63a5db00431e4fb7db62f9b7394d58"
+        },
+        "remote-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "validate-dev",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "validate-dev.stdout.log": {
+          "bytes": 241,
+          "sha256": "c05e07b2bb4d3d1623bfca3f82339bb1647251ec66f7f8a1a5295a5e33c1a6e1"
+        },
+        "validate-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "commit-range",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "main..dev"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "commit-range.stdout.log": {
+          "bytes": 612,
+          "sha256": "3cd9d7e5a299ef64072913af5630834eb97cfe88f1007bf05ca7d02941f9423a"
+        },
+        "commit-range.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "tracking-dev",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/dev:refs/remotes/origin/dev"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "tracking-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "tracking-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-main-fetch-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-main-fetch-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-main-fetch-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-main-push-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-main-push-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-main-push-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-main-before",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-main-before.stdout.log": {
+          "bytes": 113,
+          "sha256": "e0a811b377ed12e453cd684f049950e03e63a5db00431e4fb7db62f9b7394d58"
+        },
+        "fetch-main-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-main",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/dev:refs/remotes/origin/dev",
+        "refs/heads/main:refs/remotes/origin/main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-main.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "fetch-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-main-after",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-main-after.stdout.log": {
+          "bytes": 113,
+          "sha256": "e0a811b377ed12e453cd684f049950e03e63a5db00431e4fb7db62f9b7394d58"
+        },
+        "fetch-main-after.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "helper-main",
+      "argv": [
+        "py",
+        "-3",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "plan"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "helper-main.stdout.log": {
+          "bytes": 381,
+          "sha256": "068ede02f8d9f40c216b8cbcff1a32d4563a7a032f0701c19ea6141c9975580b"
+        },
+        "helper-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "head-main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "head-main.stdout.log": {
+          "bytes": 41,
+          "sha256": "0a783005e1b651bf61898e6028a28b391583b80b8895a146c1f66415d39646a3"
+        },
+        "head-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "clean-main",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "clean-main.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "clean-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "ancestor-main",
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "8e5581cce7c7fd7037f6a199c92a6922260893ab",
+        "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "ancestor-main.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ancestor-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "ref-main",
+      "argv": [
+        "git",
+        "update-ref",
+        "refs/heads/main",
+        "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d",
+        "8e5581cce7c7fd7037f6a199c92a6922260893ab"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "ref-main.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ref-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-main-fetch-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-main-fetch-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "push-main-fetch-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-main-push-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-main-push-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "push-main-push-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-main",
+      "argv": [
+        "git",
+        "push",
+        "--no-follow-tags",
+        "origin",
+        "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d:refs/heads/main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-main.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "push-main.stderr.log": {
+          "bytes": 113,
+          "sha256": "5cc7b33dae6c46893277144d2b6bd4cb939e6c75a3c89195c2c662ecfcf4079e"
+        }
+      }
+    },
+    {
+      "label": "remote-main",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "remote-main.stdout.log": {
+          "bytes": 113,
+          "sha256": "01ccb509a1f481693e0357dc00e363b2154db10d46c0af91398b52744b3dfbff"
+        },
+        "remote-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "tracking-main",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/main:refs/remotes/origin/main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "tracking-main.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "tracking-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "checkout-main",
+      "argv": [
+        "git",
+        "switch",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "checkout-main.stdout.log": {
+          "bytes": 46,
+          "sha256": "e51f1dd7542d908a17fa18066b637016c51c0ab97a7ca6ec8890df5b16dc1c46"
+        },
+        "checkout-main.stderr.log": {
+          "bytes": 26,
+          "sha256": "6300963e525f04410f9d2df59c376a7490543a6db6823dd3351451dad11cfcb0"
+        }
+      }
+    },
+    {
+      "label": "final-clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "final-clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "final-clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "remote-final",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "remote-final.stdout.log": {
+          "bytes": 113,
+          "sha256": "01ccb509a1f481693e0357dc00e363b2154db10d46c0af91398b52744b3dfbff"
+        },
+        "remote-final.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "retire-task-branch",
+      "argv": [
+        "git",
+        "branch",
+        "-d",
+        "task/aide-lite-posix-lifecycle-01"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "retire-task-branch.stdout.log": {
+          "bytes": 65,
+          "sha256": "066a7df7a4c2a985d172db631a5100262cb00a01d4eb352ce9cdb12afd42407d"
+        },
+        "retire-task-branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ],
+  "managed_commit": {
+    "status": "COMMITTED",
+    "branch_advanced": true,
+    "candidate_commit": "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d",
+    "expected_ref": "refs/heads/task/aide-lite-posix-lifecycle-01",
+    "expected_head": "9c15cc8e1566bfa199ff882cb8b7a13568225f18",
+    "expected_tree": "6e66f548d59e7441c79298bc1051f59788a45da2",
+    "message_sha256": "7301222178c9f2b208564cc28c3ae1a31d78f1f82104d801e2b2d724412681fb",
+    "apply": true,
+    "index_sha256": "d471f917ce9b18771c3b3f3fc386ef361550388c33662b73098b7641ec056b25",
+    "staged_paths": [
+      ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/changed-files.md",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-message.txt",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-prechecks-initial.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-prechecks.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-review-initial.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-review.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-source-initial.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-source.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-validation.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/closure-validation.txt",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/dev-review-packet.md",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-observed.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/fixture-tests.log.txt",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/receipt-index.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/result.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_filesystem.log.txt",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_filesystem.result.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_lifecycle.log.txt",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/macos-15-arm64/test_posix_lifecycle.result.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/fixture-tests.log.txt",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/receipt-index.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/result.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_filesystem.log.txt",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_filesystem.result.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_lifecycle.log.txt",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/ubuntu-24.04-x64/test_posix_lifecycle.result.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/fixture-tests.log.txt",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/receipt-index.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/result.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_filesystem.log.txt",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_filesystem.result.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_lifecycle.log.txt",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/test_posix_lifecycle.result.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/windows-native-regressions.log.txt",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/hosted-results/windows-2025-x64/windows-regressions.result.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/integration-effect-initial.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/integration-effect.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/observation-verification.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/portable-lifecycle-filesystems.proposed.md",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/remaining-risks.md",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/source-reference-disposition.json",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/validation.md",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/integrate.py",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/status.yaml",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/task.yaml",
+      ".aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/verify_observation.py",
+      ".aide/queue/index.yaml",
+      "CHANGELOG.md",
+      "DOCUMENTATION.md",
+      "IMPLEMENT.md",
+      "PLANS.md",
+      "README.md",
+      "ROADMAP.md",
+      "TODO.md"
+    ]
+  },
+  "commit": "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d",
+  "tree": "6e66f548d59e7441c79298bc1051f59788a45da2",
+  "preview_sha256s": {
+    "CHANGELOG.preview.md": "bda91656f3ff528a89924b0d5ae69a5806f1e612af98d74b3bb25c2e02de17f0",
+    "RELEASE_NOTES.preview.md": "d043b3a4f4412ec3d6c752aff9fc1853158dd80585a441b1472b668c68b92b33",
+    "changelog.preview.json": "2d5dfb6c1e658f1552c02322d0c7a61e7efeb15d4f934f7bd20edfcc8df04ce1",
+    "release-notes.preview.json": "a9b09634bb66e6d41e9abed625b782b98ce9fa7115d67174c1ce5fc377683f80",
+    "malformed-commits.md": "ff0148d4eaa58bf9a1ac4f495bb0d74efb777bd8c47b89c156251f15e51bfca6",
+    "latest-changelog-report.md": "fbc713d49d25d0e2b729aa4d5a67671491798e3a5d274a5b75db007dbd27bffc"
+  },
+  "task_branch_retired": true,
+  "refs": {
+    "dev": "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d",
+    "main": "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d"
+  }
+}

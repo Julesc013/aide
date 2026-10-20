@@ -3,9 +3,9 @@ task_id: AIDE-LITE-1-2-PORTABILITY-01
 status: passed
 result: PASS
 classification: planning_only
-planning_state: planning_and_inventory_checked_exact_independent_gate_required_before_commit
+planning_state: planning_delivered_development_lifecycle_accepted_release_contract_in_progress
 acceptance_scope: bounded planning and source inventory only
 product_qualified: false
 maximum_jobs: 0
-next_action: Characterize portable ordinary CLI dependencies and qualify exact installed modern profiles; native legacy ports remain staged.
+next_action: Complete the admitted release-contract child, then actual versioned archives and exact public-profile consumer qualification; native legacy ports remain staged.
 integration_authority: exact independent source and effect ACCEPT plus fresh refs required; use terminal receipt for actual Git outcome

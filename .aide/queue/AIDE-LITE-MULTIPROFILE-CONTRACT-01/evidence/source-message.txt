@@ -1,0 +1,13 @@
+feat(release): declare compatible Lite environment profiles
+
+- Extend the existing release owner with strict per-environment command/capability declarations in one payload, preserving historical v1 Windows identities and all eight stable assets.
+- Retain supported behavior, explicit refusals, environment identities and capabilities; require a minor release for profile adoption or expansion.
+- Prepare the source-only 1.2 declaration, four synthetic lineage/marker regressions and one bounded fixture/export allocation.
+- Reconcile docs and the verified lifecycle integration at 1e5193b0; source preparation is distinct from archive qualification and release.
+
+Validation: NOT RUN - fixture execution and export refresh await exact source/effect ACCEPT; read-only syntax, original-test preservation, lineage and recoverable ownership pass. Doctor/validate retain two expected missing-export-reference failures plus the existing warning.
+Changelog: Added: Prepared compatible Lite release profiles; no support activation or production archive.
+Risk: Candidate declarations do not establish OS support or whole-client containment; original failures and rollback limits remain.
+Follow-up: Run the one reviewed allocation, review actual results and integration, then separately admit archive/public-form/acquisition qualification.
+AIDE-Task: AIDE-LITE-MULTIPROFILE-CONTRACT-01
+AIDE-Format: compact-v1

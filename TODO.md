@@ -5,7 +5,9 @@
 - [x] Observe published and development Lite adoption/removal on four real modern environments, preserving eight POSIX removal refusals. [Observations](.aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/REPORT.md)
 
 - [x] Execute the shared lifecycle binding on exact Windows/Linux/macOS profiles: adoption, actual predecessor conflict/recovery, repair, metadata and exit cases passed. Original errors, skips and rollback limits remain explicit. [Evidence](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md)
-- [ ] Review shared-lifecycle integration, add accurate multi-profile release metadata and qualify versioned Lite 1.2 archives before publication.
+- [x] Review and deliver shared-lifecycle integration to local/remote `dev` and `main` at `1e5193b0`; preserve the important tested remote checkpoint.
+- [ ] Verify the prepared multi-profile release contract and refresh the generated export under one reviewed allocation. [WorkUnit](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md)
+- [ ] Qualify actual versioned Lite 1.2 archives and declared public forms, then review publication and acquired-byte consumers.
 
 **Release and daily use**
 

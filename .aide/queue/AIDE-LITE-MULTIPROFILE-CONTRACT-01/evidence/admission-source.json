@@ -1,0 +1,23 @@
+{
+  "base": "1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d",
+  "effect_sha256": "1fd61e6abf1f2a0d86015af8d6a33303fc509aff0df3a70f86dcf82b61c5df8d",
+  "files": {
+    ".aide/intake/latest-intent-packet.json": "54caa71ae12e50dcf66408e1e27555bacca540d8c3e2299683764413075ccfbe",
+    ".aide/intake/latest-intent-packet.md": "4a676e6df0e034572b2677806dd937ca0362f01812d2c7c91af505ee34164e78",
+    ".aide/intake/latest-workunit-draft.json": "c5359f48f917a633faa128c54410218b1a656eca81daac562fb64add92aafb34",
+    ".aide/intake/latest-workunit-draft.md": "c679df64e52c24d2a06655e22c6816c79848462c0274037f2747d8b2d1b97e30",
+    ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md": "759063332af9c9e121281b02ad87307f9280ea3fbfabd40902b262cbda96bd41",
+    ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/admit.py": "4688515f19744875eea820e1a2c87d392509dce44069386d7e76f53db7be2596",
+    ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/evidence/admission-effect.json": "1fd61e6abf1f2a0d86015af8d6a33303fc509aff0df3a70f86dcf82b61c5df8d",
+    ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/evidence/baseline.json": "d4aadf30f6f333ab12a279c8843c9e345786d52845d070a472f230339739f638",
+    ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/evidence/intake-disposition.md": "7fd3649b5efe370a478e27ac231f7d7f0ef416a8865784378f8a2acfc7d017f7",
+    ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/evidence/latest-intent-packet.json": "54caa71ae12e50dcf66408e1e27555bacca540d8c3e2299683764413075ccfbe",
+    ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/evidence/latest-intent-packet.md": "4a676e6df0e034572b2677806dd937ca0362f01812d2c7c91af505ee34164e78",
+    ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/evidence/latest-workunit-draft.json": "c5359f48f917a633faa128c54410218b1a656eca81daac562fb64add92aafb34",
+    ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/evidence/latest-workunit-draft.md": "c679df64e52c24d2a06655e22c6816c79848462c0274037f2747d8b2d1b97e30",
+    ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/prompt.md": "c0c0c15830aa85781c5bed376d28c3796e3d6bef0bf234b6fe9431bf23db2226",
+    ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/status.yaml": "aabfc8b21ca646b761b045ebbf2f5e576e8db1943dcb2458db7bc2b5862be715",
+    ".aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/task.yaml": "19977a5e928fd6b06fcc4683d97016993488bf18d6daf343160e2af143c4fd2c"
+  },
+  "schema": "aide.bounded-child-admission.v1"
+}

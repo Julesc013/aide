@@ -1,0 +1,42 @@
+[
+  {
+    "command": "doctor",
+    "exit_code": 1,
+    "streams": {
+      "stdout": {
+        "sha256": "20ed121a4a800922d8e21b9e7dc5b38c8a212405fa9cf6e987f97248cc93a64a",
+        "bytes": 5174
+      },
+      "stderr": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    "tail": [
+      "- PASS upgrade dry-run available: .aide/upgrade/latest-upgrade-dry-run.md",
+      "- PASS rollback plan available: .aide/rollback/latest-rollback-plan.md",
+      "- PASS uninstall plan available: .aide/uninstall/latest-uninstall-plan.md",
+      "- FAIL validation should be run: run validate and fix failures"
+    ]
+  },
+  {
+    "command": "validate",
+    "exit_code": 1,
+    "streams": {
+      "stdout": {
+        "sha256": "72a5989d8cd1cf391c09fd412b8c24d2ec50a26a65878dc2e9b3b2ebbc8ee292",
+        "bytes": 420
+      },
+      "stderr": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    "tail": [
+      "- FAIL Q31 pack includes governance file: files/docs/reference/lite-release-profiles.md",
+      "- FAIL Q31 manifest lists governance file: files/docs/reference/lite-release-profiles.md",
+      "- WARN review packet review ref missing: .aide/prompts/evidence-review.md",
+      "omitted PASS details: 60925; use validate --full or --json for all results"
+    ]
+  }
+]

@@ -4264,6 +4264,13 @@ items:
 - id: AIDE-LITE-POSIX-LIFECYCLE-01
   title: Complete modern POSIX lifecycle through the existing Lite owner
   type: implementation
-  status: needs_review
+  status: passed
   path: .aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01
+  parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+
+- id: AIDE-LITE-MULTIPROFILE-CONTRACT-01
+  title: Declare compatible multi-profile Lite release metadata
+  type: implementation
+  status: running
+  path: .aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01
   parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01

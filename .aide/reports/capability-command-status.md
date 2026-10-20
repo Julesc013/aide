@@ -3,8 +3,8 @@
 - command: `capability status`
 - generated_at: deterministic
 - repo_root: `D:/Projects/AIDE/aide`
-- current_branch: `task/aide-lite-posix-lifecycle-01`
-- current_commit: `ba5c318e32c1c18e25454986d858822929c03c1c`
+- current_branch: `task/aide-lite-multiprofile-contract-01`
+- current_commit: `1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d`
 - mode: report_only
 - task_execution: false
 - repair_execution: false

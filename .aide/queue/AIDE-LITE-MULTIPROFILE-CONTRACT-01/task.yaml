@@ -1,0 +1,62 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LITE-MULTIPROFILE-CONTRACT-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+planning_parent: AIDE-LITE-1-2-PORTABILITY-01
+title: Declare compatible multi-profile Lite release metadata
+type: implementation
+status: running
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_stable_release_admission.py
+    - .aide/scripts/tests/test_stable_successor.py
+    - .aide/release/successor-candidate.json
+    - .aide/policies/release-versioning.yaml
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/reports/capability-ledger.json
+    - .aide/reports/capability-ledger.md
+    - .aide/reports/capability-evidence-bindings.json
+    - .aide/reports/capability-command-status.md
+    - docs/reference/portable-lifecycle-filesystems.md
+    - docs/reference/portability-and-build-profiles.md
+    - docs/reference/lite-release-profiles.md
+    - governance/release-policy.md
+    - packaging/release-policy.md
+    - .aide/queue/index.yaml
+    - .aide/generated/**
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/status.yaml
+    - .aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/task.yaml
+    - .aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md
+    - .aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md
+    - .aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/integration-completed.json
+    - .aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/evidence/integration-verification.json
+    - .aide/queue/AIDE-LITE-1-2-PORTABILITY-01/ExecPlan.md
+    - .aide/queue/AIDE-LITE-1-2-PORTABILITY-01/release-plan.json
+    - .aide/queue/AIDE-LITE-1-2-PORTABILITY-01/status.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - README.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - TODO.md
+    - ROADMAP.md
+    - CHANGELOG.md
+  forbidden_paths:
+    - all frozen 1.0 and 1.1 assets, historical tags or qualification rewrites
+    - production 1.2 archives, tags, release publication or support activation
+    - new execution backends, providers, model routes, spending, roots, reserves or privileges
+    - other repositories, unrelated processes and hosting settings
+verification:
+  maximum_local_jobs: 1
+  local_config: .aide.local/lite-successor-qualification-execution.json
+  local_runtime_seconds: 600
+  local_effects: exact release-contract fixtures and one owned generated-export refresh after source/effect review
+  maximum_hosted_runs: 0
+  live_worker_model_requests: 0
+review_gate: admission_then_exact_source_local_export_effect_then_qualified_integration

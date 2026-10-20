@@ -1,10 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-POSIX-LIFECYCLE-01
-status: needs_review
+status: passed
 result: PASS
-planning_state: local_and_three_hosted_profiles_passed_integration_review
+planning_state: accepted_development_lifecycle_integrated
 product_qualified: false
-next_action: Independently review exact collected outcomes, closure source and dev/main integration; preserve original failures and keep versioned release qualification separate.
+next_action: Reuse the accepted development evidence in the separately admitted release-contract/archive phases; preserve original failures and exhausted allowances.
 local_attempts_consumed: 2
 additional_local_allocation: none
 last_local_job: eba95a543dc440258bb26da090db3e86
@@ -15,3 +15,6 @@ hosted_run_id: 39416703812
 hosted_source: 9c15cc8e1566bfa199ff882cb8b7a13568225f18
 hosted_native_lifecycle_observed_pass: true
 new_support_or_release_claimed: false
+development_lifecycle_qualified: true
+integration_commit: 1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d
+integration_receipt: evidence/integration-completed.json

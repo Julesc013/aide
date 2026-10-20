@@ -8,7 +8,7 @@
 
 ### Lite 1.2 delivery plan
 
-The [filesystem binding reference](portable-lifecycle-filesystems.md) describes the current Windows owner, candidate Linux/Darwin operations, cooperative POSIX boundary, metadata and retained-backup limitations. New native operations require actual source/delivered/installed evidence; syntax-only inspection does not discharge this obligation.
+The [filesystem binding reference](portable-lifecycle-filesystems.md) describes the shared lifecycle and its Windows/Linux/Darwin operations, cooperative POSIX boundary, metadata and retained-backup limitations. Accepted development-package evidence covers four exact modern environments and is integrated at `1e5193b0`; it does not qualify a versioned 1.2 archive or every managed execution backend. The [release profile format](lite-release-profiles.md) separates per-environment command guarantees, observed refusals and unqualified routes. Syntax-only inspection never discharges native-operation acceptance.
 The user selected **staged native ports across releases** on 20 October 2026. Lite 1.2.0 targets qualified modern profiles; Windows 9x, older Windows NT, MS-DOS/FreeDOS, OS/2 and other native ports remain explicit subsequent work. A companion is a useful additional route and never counts as completion of the native target. Exact 1.2 profiles and Python minor-version floors must be selected and tested before freezing its release contract; there is no 1.2 candidate archive, date or support expansion yet.
 
 | Increment through existing owners | Useful result | Acceptance before the claim |
@@ -45,7 +45,7 @@ New native work should begin with the smallest useful component and target toolc
 
 ### AIDE Extension 1.0
 
-**Product goal:** one extension family presenting the same work, context, evidence and admitted execution interfaces, with separate native host adapters and packages. Use existing `hosts/**` compatibility-technology lanes and matrices. Shared version 1.0.0 is appropriate only for a coordinated release with an explicit per-host compatibility manifest; independently shipped adapters may need separate versions under the [release policy](../../governance/release-policy.md).
+**Product goal:** one extension family presenting the same work, context, evidence and admitted execution interfaces, with separate native host adapters and packages. Use existing `hosts/**` compatibility-technology lanes and matrices. Shared version 1.0.0 is appropriate only for a coordinated release with an explicit per-host compatibility manifest; independently shipped adapters may need separate versions under the source repository's `governance/release-policy.md`. Product SemVer, host/profile compatibility and the shared engine's source identity remain separate.
 
 VS Code uses its extension API and manifest; Visual Studio has multiple extensibility models; XcodeKit supplies source-editor extensions with its own capabilities and packaging. They do not accept one universal extension binary or guarantee equal API depth. Prove a thin read-only task/context/evidence view first, then admitted actions, cancellation and recovery for each actual host profile. Preserve older host families and companion routes without claiming uniform parity. [VS Code extension anatomy](https://code.visualstudio.com/api/get-started/extension-anatomy), [Visual Studio extensibility models](https://learn.microsoft.com/en-us/visualstudio/extensibility/visualstudio.extensibility/extensibility-models?view=visualstudio), [XcodeKit](https://developer.apple.com/documentation/xcodekit)
 

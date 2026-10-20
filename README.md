@@ -44,6 +44,8 @@ AIDE Lite **1.1.0 is published** as [`aide-lite-v1.1.0`](https://github.com/Jule
 
 **Development:** newer task views, communication defaults, knowledge/continuation and cooperative worker capabilities have scoped source/delivered evidence. They remain outside frozen 1.1.0 and require their own subsequent release qualification.
 
+**Lite 1.2 progress:** the shared lifecycle is accepted and delivered at `1e5193b0`, with real Windows/Linux/macOS adoption, customization/conflict, recovery, repair and removal evidence. The next [release-profile increment](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md) prepares one payload with exact environment and command contracts; focused fixtures and export refresh remain pending. This is development progress, not a published cross-platform release. [Profile format](docs/reference/lite-release-profiles.md)
+
 **Find the next action:** [TODO](TODO.md) is the short current checklist; [PLANS](PLANS.md) holds detailed work, [ROADMAP](ROADMAP.md) describes direction, [CHANGELOG](CHANGELOG.md) records release changes, and [DOCUMENTATION](DOCUMENTATION.md) indexes the docs. The filesystem queue remains the authority for work and acceptance.
 
 The source includes the self-hosting queue, context and evidence tools, portable import/update, project-owned customization, owned repair, rollback/removal and partial-import recovery. A bounded maintainer runner provides explicit storage admission, finite resource limits and retirement; real build/test use requires configured local pools. Worker, isolation and integration-broker foundations also have source and focused test evidence.

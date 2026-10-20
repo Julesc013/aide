@@ -1,0 +1,9 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LITE-MULTIPROFILE-CONTRACT-01
+status: running
+result: PENDING
+planning_state: admitted_source_contract_and_fixture_preparation
+product_qualified: false
+local_jobs_consumed: 0
+hosted_runs_authorized: 0
+next_action: Complete compatible profile/parser/lineage fixtures and documentation, then review exact source and the single bounded fixture/export effect before execution.

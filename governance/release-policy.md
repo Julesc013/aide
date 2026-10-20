@@ -1,6 +1,6 @@
 ### Release policy
 
-**Current product state:** AIDE Lite 1.1.0 is published, acquired and consumer-verified for its exact local Windows CLI profile; 1.0.0 remains preserved. Lite 1.2.0 is planned, with modern profiles still to qualify and legacy native ports staged by explicit owner decision. The [changelog](../CHANGELOG.md), [current campaign](../.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md) and exact release evidence distinguish package delivery from newer development and the unfinished platform.
+**Current product state:** AIDE Lite 1.1.0 is published, acquired and consumer-verified for its exact local Windows CLI profile; 1.0.0 remains preserved. Newer development lifecycle cases passed on four exact Windows/Linux/macOS environments and reached dev/main at `1e5193b0`. Lite 1.2.0 still requires [per-profile release contracts](../docs/reference/lite-release-profiles.md), actual archive/command qualification and publication; legacy native ports remain staged. The [changelog](../CHANGELOG.md), [current campaign](../.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md) and exact release evidence distinguish package delivery from newer development and the unfinished platform.
 
 **Before every new tag**
 
@@ -32,7 +32,7 @@ Use patch versions for compatible fixes, minor versions for compatible additions
 - Give every downloadable deliverable a clear display label and a stable, machine-friendly filename. Identify platform/architecture only when it distinguishes real payloads. A label change must preserve asset identity and content.
 - Record tag object/target/tree, payload source/tree, exact hashes and qualification separately. A frozen package may retain an earlier payload source when the reviewed tag identifies a later qualification/publication checkpoint; make the distinction explicit. GitHub’s automatic source archives are repository snapshots, not the portable install package.
 - Published package bytes and existing tags are immutable. Presentation-only metadata corrections require a scoped review, preserved preimages and readback; they must not replace assets, rename files, retag or imply fresh product qualification.
-- Support claims bind exact profiles and evidence. Lite acceptance does not confer host, native, hosted, model-enabled or non-Windows lifecycle support, whole-session containment or measured whole-outcome savings.
+- Support claims bind exact profiles, command/capability sets and evidence. Acceptance for one environment or route does not qualify another host, backend, model, platform, whole-session containment or whole-outcome efficiency. A declaration or candidate support tier is not activation; refused behavior and unqualified behavior remain distinct.
 - Keep Q47/Q48 local bundles and drafts marked preview-only. Signing, notarization, protection changes and publication effects need their own actual authority and evidence.
 
 **History:** the bootstrap sequence—inventory, matrices, scaffolding, harness, shared core, adapters, environments, evaluations and packaging—remains planning history. Current releases proceed through the qualified capability and contract gates above.

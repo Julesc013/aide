@@ -1,0 +1,10 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "8f1299c07749b38079a2f468d53b2d5ee45758910fb47b89e16f46d8c1e3b600",
+  "effect_sha256": "19e20ed03eb0a84f933a134915de4615414d59708b42e0edaef29158bfd175da",
+  "controller_sha256": "b701e020cbf73de6f1d0f4a47630936187892df9e5d51b5fcbefcd5434f01599",
+  "required_fixes": [],
+  "accepted_scope": "one managed source checkpoint and one bounded fixture/export allocation only; later qualification/integration/publication separate",
+  "execution": "No reviewer tests or mutations. All69mappedfiles/1089inputs/filteridentities verified."
+}

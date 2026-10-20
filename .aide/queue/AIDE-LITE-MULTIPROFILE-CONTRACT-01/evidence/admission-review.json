@@ -1,0 +1,10 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "eac4c5090a385a7d522059fb7cdd7f030ad4a8f1a1c21b96701d61cb0d9731a1",
+  "effect_sha256": "1fd61e6abf1f2a0d86015af8d6a33303fc509aff0df3a70f86dcf82b61c5df8d",
+  "controller_sha256": "4688515f19744875eea820e1a2c87d392509dce44069386d7e76f53db7be2596",
+  "required_fixes": [],
+  "scope": "guarded local branch creation and scoped preparation only; no commit, job, export refresh, integration or release effect",
+  "review_execution": "read-only; no tests or mutations performed"
+}

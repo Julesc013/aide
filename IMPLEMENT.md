@@ -1,8 +1,12 @@
 # AIDE Implementation Log
 
+### Compatible release metadata preparation - 20 October 2026
+
+The admitted [multi-profile increment](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md) prepares strict v2 declarations and archive markers beside unchanged historical v1 identities. Supported, refused and unqualified command sets remain distinct; same-major lineage preserves existing profiles, environments, supported behavior, explicit refusals and capabilities. The initial technical review and candidate preimages are retained, with both requested fixes and an archive-marker regression prepared. No tests, export refresh or 1.2 archives have yet run in this child; exact source/effect review is still required.
+
 ### Shared lifecycle implementation - 20 October 2026
 
-Added a sibling POSIX filesystem binding under the existing Lite lifecycle, retaining native Windows primitives and shared ownership/recovery semantics. Source `809456fa` corrects optional callback forwarding and excludes the source-only lifecycle fixture from consumer exports. Local job `eba95a54` passed four development cases and five affected checks, then retired. Hosted source `9c15cc8e` passed twelve development cases and 447 tests/21 skips across Windows/Linux/macOS. All 78 controller streams and three lossless receipt bundles verified. Original failures and eight stable assets remain unchanged; integration and versioned release qualification are separate. [Exact evidence](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md).
+Added a sibling POSIX filesystem binding under the existing Lite lifecycle, retaining native Windows primitives and shared ownership/recovery semantics. Source `809456fa` corrects optional callback forwarding and excludes the source-only lifecycle fixture from consumer exports. Local job `eba95a54` passed four development cases and five affected checks, then retired. Hosted source `9c15cc8e` passed twelve development cases and 447 tests/21 skips across Windows/Linux/macOS. All 78 controller streams and three lossless receipt bundles verified. Independent acceptance and dev/main delivery completed at `1e5193b0`; 166 Git/check operations and all 332 retained streams verified. Original failures and eight stable assets remain unchanged; versioned release qualification is separate. [Exact evidence](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md).
 
 ### Modern lifecycle observations - 20 October 2026
 

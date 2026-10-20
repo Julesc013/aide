@@ -1,10 +1,11 @@
 ### Packaging and release shape
 
-AIDE Lite has a published portable package for its exact local Windows CLI profile. Other host, native-extension and service shapes remain declarations or planned capabilities until their own build, compatibility, consumer and release evidence exists. [Release policy](../governance/release-policy.md) governs versions, pre-tag documentation, publication and acquired-byte acceptance.
+AIDE Lite 1.1 has a published portable package for its exact local Windows CLI profile. Newer development lifecycle evidence covers four exact modern environments; a multi-profile 1.2 package still requires its own qualified archives and public contract. Other host, native-extension and service shapes remain declarations or planned capabilities until their own evidence exists. [Release policy](../governance/release-policy.md) governs versions, pre-tag documentation, publication and acquired-byte acceptance.
 
 **Deliverables**
 
 - ZIP and TAR.GZ archives may carry the same portable payload; use one product version and verify both exact identities.
+- New multi-profile metadata describes exact environments, capabilities and supported/refused/unqualified command sets over that shared payload. Preserve historical v1 Windows identities and predecessor behavior; [profile declarations](../docs/reference/lite-release-profiles.md) grant no execution or publication effects.
 - Manifests and checksum files accompany the downloadable packages. Retain stable machine filenames and meaningful human display labels.
 - A release title identifies product/version once. The body presents grouped changes, upgrade instructions, downloads and relevant limitations with logical paragraphs and compact lists.
 - Packaging matrices and catalogs describe maintenance/support posture; they do not establish shipment, signing or parity.
