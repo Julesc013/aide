@@ -1,0 +1,50 @@
+{
+  "state": "PASS_METADATA_BUILD_AND_COMPLETE_DELTA_ONLY",
+  "job_id": "a0557f5c48864e07bb783b5e1aafe4b5",
+  "subject": {
+    "commit": "79e2e8c91e6b34989dfb5224a944fd1874b0c6f7",
+    "tree": "abf8456b03a9fe2896838a107be7245337b05c1f"
+  },
+  "assets": {
+    ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+      "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+      "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+      "size_bytes": 27957
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+      "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+      "size_bytes": 969467
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.zip": {
+      "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+      "size_bytes": 1328652
+    }
+  },
+  "payload_source": "158a5cdcac7afecbc180a6324ea02e46617d1bc9",
+  "manifest_digest": "bc18469f8f1c5c03c0ad64e32ae35ba967c14cde4b7d80bcc164e34e29ce7b75",
+  "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "collected_manifest": {
+    "output": "b88d0a67726fcb7b045511a545449be68f0fe3777884895bbad874b832f0588b",
+    "logs": "77187d27162d01c597eef6e1c2117d4215de18bc4836b37ed2b142211354ddfc"
+  },
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\a0557f5c48864e07bb783b5e1aafe4b5",
+  "retained_files": 14,
+  "peaks": {
+    "scratch_bytes": 4902605,
+    "memory_bytes": 217845760,
+    "canonical_bytes": {
+      ".aide/release/stable": 6470459
+    }
+  },
+  "scratch_absent": true,
+  "reservation_released": true,
+  "local_jobs_consumed": 16,
+  "local_job_ceiling": 17,
+  "export_refreshes_consumed": 2,
+  "hosted_runs_consumed": 1,
+  "hosted_run_ceiling": 2,
+  "qualification": "Metadata-only equivalence; macOS applicability, two-profile hosted execution and final local group remain separately gated."
+}

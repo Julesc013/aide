@@ -58,7 +58,7 @@ verification:
   maximum_local_jobs: 17
   local_config: .aide.local/lite-successor-qualification-execution.json
   maximum_seconds_per_local_job: 600
-  local_allowance: fifteen consumed remain counted; one separately reviewed metadata-only build, then final affected managed-form and unfinished brownfield group combined with complete replay after hosted evidence, each within600seconds
+  local_allowance: sixteen consumed remain counted; metadata-only build completed; final affected managed-form and unfinished brownfield group combined with complete replay after hosted evidence within600seconds
   maximum_hosted_workflow_runs: 2
   hosted_jobs: five total; three consumed, then exactly Windows Server and Linux
   maximum_minutes_per_hosted_job: 10

@@ -1,0 +1,41 @@
+{
+  "state": "PREPARATION_STOPPED_BEFORE_SOURCE_FREEZE_OR_EFFECT",
+  "exit_code": 1,
+  "error": "Compact commit message required a category description; all four preparation commands completed before this assertion.",
+  "new_jobs": 0,
+  "new_pushes": 0,
+  "streams": {
+    "doctor.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "doctor.stdout": {
+      "bytes": 5181,
+      "sha256": "585c64e7eac737c2e172b11d760d884d7c614858c1521bb8941c4e4ffa595f42"
+    },
+    "git-plan.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "git-plan.stdout": {
+      "bytes": 467,
+      "sha256": "50a3765156f43e2bf5738b990281b731321d6285b8c49c4467292df2f39df1e0"
+    },
+    "pack-status.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pack-status.stdout": {
+      "bytes": 232,
+      "sha256": "17eb7a713285498d636c31fd8f0e50e9b1a632f16f230bd1f2db48a19f2bb673"
+    },
+    "validate.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "validate.stdout": {
+      "bytes": 241,
+      "sha256": "7155d92da435eb768cffff730030ab3bf65e64ae31386664662e98696e42b5e9"
+    }
+  }
+}

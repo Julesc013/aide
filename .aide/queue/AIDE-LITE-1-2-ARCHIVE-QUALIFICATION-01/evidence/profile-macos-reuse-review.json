@@ -1,0 +1,18 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "proposal_sha256": "22510911d06994755436d13f9d7c511a629354cb4ca1dc9ff18522e6251be577",
+  "generator_sha256": "6d73175802e0afb959f365a14b3aab44e4448b1543a8dc731cf4987f48a1beea",
+  "required_fixes": [],
+  "scope": "Bounded behavioral applicability of retained49macOS forms and two predecessor scenarios.",
+  "reasons": [
+    "Both879member actual inventories verified;877unchanged,changes onlystable-release/checksums.",
+    "Executable/installedpayload,Macprofile,predecessor/provenance unchanged.",
+    "All14buildfiles309Macreceiptfiles49uniqueformwitnesses and bothsuccessfulscenarios verified."
+  ],
+  "limitations": [
+    "Originalobservations stayboundrun39456159304/source4f85bb0c95ef7fc29667edd351346d684a80bb48/originalarchives;oldplans/receipts/ownershiphashes notrebuilt-byte observations.",
+    "Freshprimaryidentity/ownership,Windows/Linuxexecution,case6,brownfield/replay required.",
+    "No newMacexecution/timing/resource/support/release/publication acceptance."
+  ]
+}

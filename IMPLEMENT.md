@@ -10292,3 +10292,7 @@ Prepared a root TODO, populated human changelog, current roadmap/README and defa
 AIDE-RELEASE-CHECKLIST-PROJECTION-01 corrects the existing report-only checklist, validators and stale-cache reader using the canonical project policy. One separately reviewed finite qualification allocation covers source, development export, installed preservation and fixed preview. Frozen Lite 1.1.0 stays unchanged; actual host participation and downstream ownership remain independent prerequisites.
 
 **Checklist qualification:** AIDE-RELEASE-CHECKLIST-PROJECTION-01 passed 21 source tests, 21 delivered tests, ownership and installed preservation/refusal cases in one retired allocation. Published Lite 1.1.0 is unchanged; exact terminal integration is recorded separately. [Report](.aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/REPORT.md).
+
+### Lite 1.2 metadata build and targeted hosted preparation
+
+The metadata-only candidate build passed and retired at `79e2e8c` (`a0557f5c`), preserving 877 archive members and every executable/installed payload. Only stable identity/checksums changed. Independent review accepted retained macOS behavior under its original subjects. Prepared one guarded checkpoint/dev synchronization and the remaining two-profile hosted run using the existing controllers/evaluator; no main, publication or new support claim. Exact results and finite allowance accounting remain in the archive-qualification WorkUnit.

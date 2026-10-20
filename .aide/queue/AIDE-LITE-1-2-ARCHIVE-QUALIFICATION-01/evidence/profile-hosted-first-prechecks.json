@@ -1,0 +1,70 @@
+{
+  "state": "PASS_PREPARATION_ONLY",
+  "base": "79e2e8c91e6b34989dfb5224a944fd1874b0c6f7",
+  "commands": [
+    {
+      "label": "doctor",
+      "exit_code": 0,
+      "streams": {
+        "doctor.stdout": {
+          "bytes": 5181,
+          "sha256": "585c64e7eac737c2e172b11d760d884d7c614858c1521bb8941c4e4ffa595f42"
+        },
+        "doctor.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "validate",
+      "exit_code": 0,
+      "streams": {
+        "validate.stdout": {
+          "bytes": 241,
+          "sha256": "7155d92da435eb768cffff730030ab3bf65e64ae31386664662e98696e42b5e9"
+        },
+        "validate.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "pack-status",
+      "exit_code": 0,
+      "streams": {
+        "pack-status.stdout": {
+          "bytes": 232,
+          "sha256": "17eb7a713285498d636c31fd8f0e50e9b1a632f16f230bd1f2db48a19f2bb673"
+        },
+        "pack-status.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "git-plan",
+      "exit_code": 0,
+      "streams": {
+        "git-plan.stdout": {
+          "bytes": 467,
+          "sha256": "50a3765156f43e2bf5738b990281b731321d6285b8c49c4467292df2f39df1e0"
+        },
+        "git-plan.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ],
+  "hosted_input_files": 2037,
+  "checkout_availability": "All pins tracked or exact checkpoint candidate.",
+  "local_allocations_consumed": 16,
+  "export_refreshes_consumed": 2,
+  "hosted_runs_consumed": 1,
+  "new_jobs_run": 0,
+  "new_pushes": 0,
+  "macos_applicability_review": "72a6d6e21101dadad294885250c1797b1484a4ccfa103c72f53fe7ff7f093639"
+}

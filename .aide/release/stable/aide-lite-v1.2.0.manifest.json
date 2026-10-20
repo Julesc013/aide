@@ -2,13 +2,13 @@
   "archives": {
     "tar_gz": {
       "path": ".aide/release/stable/aide-lite-v1.2.0.tar.gz",
-      "sha256": "3548253b41b5992526a5b3c56133c36adb467e11bd7aa48f44ec4fb8b0fa9428",
-      "size_bytes": 969453
+      "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+      "size_bytes": 969467
     },
     "zip": {
       "path": ".aide/release/stable/aide-lite-v1.2.0.zip",
-      "sha256": "665beb8810fbcf9c27420390a82349f4f1ce02afa7bf8cacad891203ad279827",
-      "size_bytes": 1328634
+      "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+      "size_bytes": 1328652
     }
   },
   "identity": {
@@ -235,13 +235,13 @@
         ],
         "environment": {
           "machine": "x86_64",
-          "release": "6.17.0-1022-azure",
+          "release": "7.0.0-1017-azure",
           "runtime": {
             "implementation": "CPython",
             "version": "3.14.8"
           },
           "system": "Linux",
-          "version": "#22-Ubuntu SMP Mon Jul 27 17:24:03 UTC 2026"
+          "version": "#17~24.04.1-Ubuntu SMP PREEMPT Thu Sep 24 18:46:57 UTC 2026"
         },
         "limitations": [
           "Candidate declaration only; versioned1.2 archives and declared command-form acceptance remain required.",
@@ -473,7 +473,7 @@
     "source_pack_checksums_sha256": "410ef71bb5e542c23eb79f1e63242d9c0e9a212da2ea73da708a28065b81c257",
     "source_repo": "julesc013/aide",
     "source_tree": "7e1ff347ddc485b28ffdbc788ccc3634dd7bb742",
-    "successor_contract_sha256": "eb8b46a4313834a95db5a64a75537cb09cb8cff381412ed55309baf55ff64b42",
+    "successor_contract_sha256": "16764faebaa569398a3627bcb7db5e6e54500db2689c310313278cb9ca34e412",
     "tag": "aide-lite-v1.2.0",
     "version": "1.2.0",
     "version_policy_sha256": "93a659e76854f2d02f732b9796a0dd7ef252d4263bf66df6b9cebeade0bb992a"

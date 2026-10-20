@@ -1,0 +1,906 @@
+{
+  "state": "METADATA_ONLY_MACOS_APPLICABILITY_PENDING_REVIEW",
+  "original_archive_assets": {
+    ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+      "sha256": "9fc5aa6e33b4731b4e8eb678bb55438cd86ef242e2af73306653ea527fd29197",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+      "sha256": "918fe258b1d0e6768887b70b7b2cd0e57265a15024c66429603542aeecf4d46f",
+      "size_bytes": 27942
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+      "sha256": "3548253b41b5992526a5b3c56133c36adb467e11bd7aa48f44ec4fb8b0fa9428",
+      "size_bytes": 969453
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.zip": {
+      "sha256": "665beb8810fbcf9c27420390a82349f4f1ce02afa7bf8cacad891203ad279827",
+      "size_bytes": 1328634
+    }
+  },
+  "new_archive_assets": {
+    ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+      "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+      "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+      "size_bytes": 27957
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+      "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+      "size_bytes": 969467
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.zip": {
+      "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+      "size_bytes": 1328652
+    }
+  },
+  "original_run_id": 39456159304,
+  "original_source_commit": "4f85bb0c95ef7fc29667edd351346d684a80bb48",
+  "original_profile_evidence": {
+    "status": "PASS",
+    "qualification_pass": true,
+    "environment": {
+      "machine": "arm64",
+      "release": "24.6.0",
+      "runtime": {
+        "implementation": "CPython",
+        "version": "3.14.8"
+      },
+      "system": "Darwin",
+      "version": "Darwin Kernel Version 24.6.0: Tue Jul 21 20:51:34 PDT 2026; root:xnu-11417.140.69.711.44~1/RELEASE_ARM64_VMAPPLE"
+    },
+    "declared_environment": {
+      "machine": "arm64",
+      "release": "24.6.0",
+      "runtime": {
+        "implementation": "CPython",
+        "version": "3.14.8"
+      },
+      "system": "Darwin",
+      "version": "Darwin Kernel Version 24.6.0: Tue Jul 21 20:51:34 PDT 2026; root:xnu-11417.140.69.711.44~1/RELEASE_ARM64_VMAPPLE"
+    },
+    "receipt_bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/hosted-macos-15-arm64-retained.json",
+    "receipt_bundle_sha256": "b17fabfec6fa31377382d0b49e8e8165490088d040eb9bd9d74eb5f8fea3a5f1",
+    "retained_files": 309,
+    "receipt_index_sha256": "682ac5910ab6c88013d5d236d6e104420a6f8eb78c1775d864a179865b6ed627",
+    "forms": [
+      {
+        "argv": [
+          "doctor"
+        ],
+        "exit_code": 0,
+        "form": "doctor",
+        "member": "ordinary-doctor.json",
+        "sha256": "2f93a8e31fc94f472cd73230ff47fec18a1b70e7c674c494b1d55bd7f563afdf"
+      },
+      {
+        "argv": [
+          "validate"
+        ],
+        "exit_code": 0,
+        "form": "validate",
+        "member": "ordinary-validate.json",
+        "sha256": "a9d242c9fe3c2a036d16357b1ea793541d3a0288d2fd956548a96758af64efa4"
+      },
+      {
+        "argv": [
+          "context"
+        ],
+        "exit_code": 0,
+        "form": "context",
+        "member": "ordinary-context.json",
+        "sha256": "53c93af33012f477e616d1324cd74f64bfe3e65f9ed6b7f522e07f9d0af9b5de"
+      },
+      {
+        "argv": [
+          "pack",
+          "--task",
+          "Inspect a disposable target"
+        ],
+        "exit_code": 0,
+        "form": "pack --task <task>",
+        "member": "ordinary-pack.json",
+        "sha256": "c1f80aa10e44f704d1fdf4fbec5659824be0b6cd42c1618883c3f817b754df48"
+      },
+      {
+        "argv": [
+          "verify",
+          "--evidence",
+          ".aide/queue/LOCAL-CONTEXT-CANARY-01/evidence/validation.md"
+        ],
+        "exit_code": 0,
+        "form": "verify --evidence <evidence-path>",
+        "member": "ordinary-verify.json",
+        "sha256": "51c464400ac2a1bde98183f7a898514fa9fe68cb986878a10a8a8e4e469f16ef"
+      },
+      {
+        "argv": [
+          "task",
+          "inspect"
+        ],
+        "exit_code": 1,
+        "form": "task inspect",
+        "member": "ordinary-task-inspect.json",
+        "sha256": "0d81483c62c74c667012143b6eca7cff8dcdc3e1d1ed60d9157c828e3a15b05b"
+      },
+      {
+        "argv": [
+          "task",
+          "status"
+        ],
+        "exit_code": 0,
+        "form": "task status",
+        "member": "ordinary-task-status.json",
+        "sha256": "385a65d4db7a96fef634612b8d6ce6d3b33c76d3ce26a88eb9183cfc06b6749e"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/form-target",
+          "--mode",
+          "safe",
+          "--dry-run"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+        "member": "forms-fresh-plain.json",
+        "sha256": "792844fe61e5702a3a1818be6ee4d450ab6f07e8911b5942285217942e253cb9"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/form-target",
+          "--mode",
+          "safe",
+          "--expect-plan",
+          "30bb4f80850250eb5ce4063f5974936571b3a729206d32e5a03dec05d7476d14"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+        "member": "forms-install-apply.json",
+        "sha256": "4f658a7f191e8898e8cb757722dc9ef0b1bbfc3f12909193b2398388f48667af"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/synthetic-v2",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/form-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--dry-run"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+        "member": "forms-update-plain.json",
+        "sha256": "70ebefd7a6fe74341c7d200b5d50246e451d6ccd36b1e2b8a3fbb824852bfa4e"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/synthetic-v2",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/form-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--expect-plan",
+          "68f4d30b61a7e2b9da55c2d888f780b54c9adce41f7a5fd213044c7f72e1b9be"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+        "member": "forms-update-apply.json",
+        "sha256": "72d75d5e32815b2aae0f1b604646d8f223aa4ea5d833be118f888b8947c3cf59"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/synthetic-v3",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/form-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/synthetic-v2",
+          "--resolve",
+          ".aide/prompts/compact-task.md",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/selected-resolution.txt",
+          "--dry-run"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+        "member": "forms-resolved-plain.json",
+        "sha256": "8a97d63fde707a02339045df4bca42d520584ac5b4ec6be254f08cfaf764daee"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/synthetic-v3",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/form-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/synthetic-v2",
+          "--resolve",
+          ".aide/prompts/compact-task.md",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/selected-resolution.txt",
+          "--expect-plan",
+          "8fad1476dba11ff1fa9b943817d61b2300298533cd862f071476ca07cbd99e06"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+        "member": "forms-resolved-apply.json",
+        "sha256": "7eccdb61485987afcf61b0600ca8d0d5cd3042fe2682697b30d8c22ec0017d5c"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/form-target",
+          "--mode",
+          "safe",
+          "--dry-run",
+          "--explain"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+        "member": "forms-fresh-explain.json",
+        "sha256": "7ac755d0d77363db6907e4d7ae5accbe83d4347baab77c816acd58816a5c499c"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/synthetic-v2",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/form-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--dry-run",
+          "--explain"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+        "member": "forms-update-explain.json",
+        "sha256": "a979f8996e860d8fe627e73bfa7602404cc0c71773fc862d27de9f1c6855e576"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/synthetic-v3",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/form-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/synthetic-v2",
+          "--resolve",
+          ".aide/prompts/compact-task.md",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/selected-resolution.txt",
+          "--dry-run",
+          "--explain"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+        "member": "forms-resolved-explain.json",
+        "sha256": "2a0873f5e65d5b5cc886f8be219c78501134bcf2cd6adcb25a372133d0d02554"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/form-target",
+          "--mode",
+          "safe",
+          "--dry-run",
+          "--explain",
+          "--feedback-out",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/forms-fresh-feedback.json"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "member": "forms-fresh-feedback.json",
+        "sha256": "1c16a28e130c58ff058eef50b2caa76618fb22862a4e56d1c42852312c3db1e3"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/synthetic-v2",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/form-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--dry-run",
+          "--explain",
+          "--feedback-out",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/forms-update-feedback.json"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+        "member": "forms-update-feedback.json",
+        "sha256": "25864c816361b342b410b319b75ab16aa2277a72aead9133ba1d7723c1333324"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/synthetic-v3",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/form-target",
+          "--mode",
+          "safe",
+          "--from-pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/synthetic-v2",
+          "--resolve",
+          ".aide/prompts/compact-task.md",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/selected-resolution.txt",
+          "--dry-run",
+          "--explain",
+          "--feedback-out",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/forms-resolved-feedback.json"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+        "member": "forms-resolved-feedback.json",
+        "sha256": "b89972454b3706f587c5b079d1e50a41893baeb8cc0f9e5b164fb7818350e1e7"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/fresh-partial-target",
+          "--mode",
+          "safe",
+          "--recover-partial",
+          "--expect-plan",
+          "f476f5a228a4e9772a8cbd32a2f4a6bb35393ddf6dadb64d6eabdfad2c69c618"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "member": "fresh-partial-exact-recovery.json",
+        "sha256": "ca5d39e4b22cbd1c812207c9444ca2643a227ea5e951c2a0abe62027a929459c"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--from-pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.1.0/aide-lite-pack-v0",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/published-upgrade-fresh",
+          "--mode",
+          "safe",
+          "--recover-partial",
+          "--expect-plan",
+          "52a38020af8aa44f940988b8311b3485034cadb5893f8304a86d5a0a1fd529fd"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+        "member": "published-upgrade-fresh-exact-recovery.json",
+        "sha256": "bf4dee659a8ca79866d58f03c163a646c5b7fcff97ee94f6b0e7853b7b1fe61f"
+      },
+      {
+        "argv": [
+          "import-pack",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--from-pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.1.0/aide-lite-pack-v0",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/published-upgrade-brownfield",
+          "--mode",
+          "safe",
+          "--resolve",
+          ".aide/scripts/aide_lite.py",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/resolved-cli.py",
+          "--recover-partial",
+          "--expect-plan",
+          "9fadc7e99a255ab5d90bff2002f35db2210939151d27001871fad930eeb41800"
+        ],
+        "exit_code": 0,
+        "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+        "member": "published-upgrade-brownfield-exact-recovery.json",
+        "sha256": "e276c91437e84a7d79a262981cd7e2be193fbb853022691a31eefc82ba17e3e7"
+      },
+      {
+        "argv": [
+          "rollback-pack",
+          "--current-pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/synthetic-rollback-v2",
+          "--previous-pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/rollback-brownfield",
+          "--dry-run",
+          "--json"
+        ],
+        "exit_code": 0,
+        "form": "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+        "member": "rollback-preview.json",
+        "sha256": "5f9836b376e45b2e36821447ad71f1ba60ad2f4b14533e4e12cb8ed3dc8bb213"
+      },
+      {
+        "argv": [
+          "rollback-pack",
+          "--current-pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/synthetic-rollback-v2",
+          "--previous-pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/rollback-brownfield",
+          "--expect-plan",
+          "b424cc15db0b3dc2999defd71e4ec65edca90db15f116a3f3a3fbf4badd03118",
+          "--json"
+        ],
+        "exit_code": 0,
+        "form": "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+        "member": "rollback-apply.json",
+        "sha256": "8078a9c7cf52d429c1ac4fa751eb2311587ad305d75251da6fcfe33aa39ece6a"
+      },
+      {
+        "argv": [
+          "plan-removal",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/repair-target",
+          "--json"
+        ],
+        "exit_code": 0,
+        "form": "plan-removal --target <target>",
+        "member": "forms-removal-preview.json",
+        "sha256": "4bd3fab0c3a87a1f9c501b52a1f3991f4cfadada8c993bd11fa00af71b8c6515"
+      },
+      {
+        "argv": [
+          "apply-removal",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/repair-target",
+          "--expect-plan",
+          "6786b2ecb605f1b051b791a292d29d3e0aaf930ee4ff089f24011bca068635d2",
+          "--json"
+        ],
+        "exit_code": 0,
+        "form": "apply-removal --target <target> --expect-plan <digest>",
+        "member": "forms-removal-apply.json",
+        "sha256": "a4efc255fa8709575f42e128fbb052541c6a1a93c5670ea3e9e59700fd604cff"
+      },
+      {
+        "argv": [
+          "repair-owned-file",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/repair-target",
+          "--path",
+          ".aide/prompts/compact-task.md",
+          "--dry-run"
+        ],
+        "exit_code": 0,
+        "form": "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+        "member": "forms-repair-preview.json",
+        "sha256": "72fa1ceeeb64051a7536fc6227773ecef32c456d8ac7c3a3d29b381aa18a0e54"
+      },
+      {
+        "argv": [
+          "repair-owned-file",
+          "--pack",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/zip-1.2.0/aide-lite-pack-v0",
+          "--target",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/repair-target",
+          "--path",
+          ".aide/prompts/compact-task.md",
+          "--expect-plan",
+          "a15f8bb96a0e3698e7facc3520a9b54e3fc45cb4f8f6450983f7f204ba6839b3"
+        ],
+        "exit_code": 0,
+        "form": "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+        "member": "forms-repair-apply.json",
+        "sha256": "83f543111d74bb4ec39000fc61097d1dfd5a490c6789e883de1d111aacbe0954"
+      },
+      {
+        "argv": [
+          "job",
+          "usage",
+          "--stream",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/case-additions/synthetic-parent.jsonl",
+          "--stream",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/case-additions/synthetic-parent.jsonl"
+        ],
+        "exit_code": 0,
+        "form": "job usage --stream <codex-exec-jsonl>",
+        "member": "ordinary-job-usage.json",
+        "sha256": "52d66c3aadc6d06f3dd05300fec68b0ec40b3943182db5d00799607c4d87a6e5"
+      },
+      {
+        "argv": [
+          "job",
+          "usage",
+          "--attempt-set",
+          "/Users/runner/work/_temp/case-release-ue6p7dnu/case-additions/synthetic-attempt-roster.json"
+        ],
+        "exit_code": 2,
+        "form": "job usage --attempt-set <attempt-roster-json>",
+        "member": "ordinary-job-attempts.json",
+        "sha256": "f6b933be76e5b96f9430b6d07e3493ecf48e8f2f28738d8b93c84666fbc3f02a"
+      },
+      {
+        "argv": [
+          "job",
+          "context"
+        ],
+        "exit_code": 0,
+        "form": "job context",
+        "member": "ordinary-job-context.json",
+        "sha256": "6447f449532f4dc38a78a153baf0fa7fa3191bae5bb6b2ce477365aae12c4604"
+      },
+      {
+        "argv": [
+          "task",
+          "current"
+        ],
+        "exit_code": 0,
+        "form": "task current",
+        "member": "current-False-False.json",
+        "sha256": "24ce0e337a92d56d24dfeff4b69ecfefcb9eaf728a922e43a9a0dbc15153dd0e"
+      },
+      {
+        "argv": [
+          "task",
+          "current",
+          "--json"
+        ],
+        "exit_code": 0,
+        "form": "task current --json",
+        "member": "current-False-True.json",
+        "sha256": "632cbd638527585aed8da18b0af122cc127c0ee2028ebef966bd0e1c4e5004e7"
+      },
+      {
+        "argv": [
+          "task",
+          "current",
+          "--task-id",
+          "DELIVERED-ADDITIONS-01"
+        ],
+        "exit_code": 0,
+        "form": "task current --task-id <ID>",
+        "member": "current-True-False.json",
+        "sha256": "91e2e84eeff1c461e22210264fc6f8207304e0d4314f7c5fd223116204c9ffb6"
+      },
+      {
+        "argv": [
+          "task",
+          "current",
+          "--task-id",
+          "DELIVERED-ADDITIONS-01",
+          "--json"
+        ],
+        "exit_code": 0,
+        "form": "task current --task-id <ID> --json",
+        "member": "current-True-True.json",
+        "sha256": "a13ce45783284b777b19a1d8cd7c477a31b0894ee9e241aaea87bae06b05761b"
+      },
+      {
+        "argv": [
+          "task",
+          "resume-plan"
+        ],
+        "exit_code": 0,
+        "form": "task resume-plan",
+        "member": "resume-plan-False-False.json",
+        "sha256": "eab42e461098c2c6766b59ae669e9f6701c5c04b026526031774899daa1f4cd2"
+      },
+      {
+        "argv": [
+          "task",
+          "resume-plan",
+          "--json"
+        ],
+        "exit_code": 0,
+        "form": "task resume-plan --json",
+        "member": "resume-plan-False-True.json",
+        "sha256": "acff0ba70807b09532405d6652b5070a7829ac2e9f2a6ef13340797426979d1e"
+      },
+      {
+        "argv": [
+          "task",
+          "resume-plan",
+          "--task-id",
+          "DELIVERED-ADDITIONS-01"
+        ],
+        "exit_code": 0,
+        "form": "task resume-plan --task-id <ID>",
+        "member": "resume-plan-True-False.json",
+        "sha256": "8fd45566139a7f052deb4376f617962fb1ea02f9f0a7b8d6aa20e5521503edf6"
+      },
+      {
+        "argv": [
+          "task",
+          "resume-plan",
+          "--task-id",
+          "DELIVERED-ADDITIONS-01",
+          "--json"
+        ],
+        "exit_code": 0,
+        "form": "task resume-plan --task-id <ID> --json",
+        "member": "resume-plan-True-True.json",
+        "sha256": "3229a29af080dee5dac14ecac1f9292be32bf162a5c84f6e3edc17284e8c6235"
+      },
+      {
+        "argv": [
+          "git",
+          "policy"
+        ],
+        "exit_code": 0,
+        "form": "git policy",
+        "member": "git-policy.json",
+        "sha256": "78657a7056fe2daea5d867d7f883695cf857bbb59508bc099d65afa1c3d3ec40"
+      },
+      {
+        "argv": [
+          "git",
+          "detect"
+        ],
+        "exit_code": 0,
+        "form": "git detect",
+        "member": "git-detect.json",
+        "sha256": "86464866ee2c93eb257c214a01ec1756ad3176fca48f16c94a99907bdd9fceed"
+      },
+      {
+        "argv": [
+          "git",
+          "plan"
+        ],
+        "exit_code": 0,
+        "form": "git plan",
+        "member": "git-plan.json",
+        "sha256": "a1bb9fd5305e370a6ed1184b8f3c17e5f5f191a1fec1344f5d0c8d5330f8f53c"
+      },
+      {
+        "argv": [
+          "review-pack"
+        ],
+        "exit_code": 0,
+        "form": "review-pack",
+        "member": "review-pack.json",
+        "sha256": "896c9b08c20996fd9fed6da0e7e4740be2aa766992e98be725dff1e711c29e41"
+      },
+      {
+        "argv": [
+          "quality",
+          "ledger"
+        ],
+        "exit_code": 0,
+        "form": "quality ledger",
+        "member": "quality-ledger.json",
+        "sha256": "f59c50802936f964f7604bd2c733d081e1510efad84a711c3d96462f2a009249"
+      },
+      {
+        "argv": [
+          "quality",
+          "reuse"
+        ],
+        "exit_code": 0,
+        "form": "quality reuse",
+        "member": "quality-reuse.json",
+        "sha256": "39d264975f3a884de56e370ccccc4ea37396187974704af94425203959b0fcfa"
+      },
+      {
+        "argv": [
+          "quality",
+          "explain-file",
+          "app/main.py"
+        ],
+        "exit_code": 0,
+        "form": "quality explain-file <path>",
+        "member": "quality-human.json",
+        "sha256": "c08968a711487c50cd268e05086b2888c1b8a843ce2b7c519ef2a2560b0ed2e4"
+      },
+      {
+        "argv": [
+          "quality",
+          "explain-file",
+          "app/helper.py",
+          "--json"
+        ],
+        "exit_code": 0,
+        "form": "quality explain-file <path> --json",
+        "member": "quality-json.json",
+        "sha256": "323b02ee86fe9de259b2cecda7867916d343d3b6a42e61b924d10f3778676eaa"
+      },
+      {
+        "argv": [
+          "job",
+          "effort",
+          "--work-set",
+          "fixture-work.json"
+        ],
+        "exit_code": 2,
+        "form": "job effort --work-set <path>",
+        "member": "effort-human.json",
+        "sha256": "0fd4d42993459497bc1b391b975820660cb2ee7d92f035e2e2a3e3f4cbe28694"
+      },
+      {
+        "argv": [
+          "job",
+          "effort",
+          "--work-set",
+          "fixture-work.json",
+          "--json"
+        ],
+        "exit_code": 2,
+        "form": "job effort --work-set <path> --json",
+        "member": "effort-json.json",
+        "sha256": "79c0a8f6c97eaa8f52499cc4a055d1711c3d55fd773fbc6c643304af0416fadf"
+      }
+    ],
+    "cases": [
+      {
+        "checks": [
+          "exact_interrupted_upgrade_recovery",
+          "installed_owned_repair_interruption_and_recovery",
+          "cross_version_path_change_rollback_refuses_without_writes",
+          "detach_and_published_predecessor_reinstall"
+        ],
+        "native_acceptance": true,
+        "preserved": true,
+        "shape": "published-upgrade-fresh",
+        "subject": "aide-lite-v1.2.0-actual-archive"
+      },
+      {
+        "checks": [
+          "real_upstream_conflict_refuses_without_writes",
+          "exact_interrupted_upgrade_recovery",
+          "customization_disabled_examples_and_overlay_remain_project_owned"
+        ],
+        "native_acceptance": true,
+        "preserved": true,
+        "shape": "published-upgrade-brownfield",
+        "subject": "aide-lite-v1.2.0-actual-archive"
+      }
+    ],
+    "fixture_retired": true,
+    "error_type": null,
+    "error": null
+  },
+  "preserved_profile": {
+    "capabilities": [
+      "local-cli",
+      "owned-lifecycle"
+    ],
+    "environment": {
+      "machine": "arm64",
+      "release": "24.6.0",
+      "runtime": {
+        "implementation": "CPython",
+        "version": "3.14.8"
+      },
+      "system": "Darwin",
+      "version": "Darwin Kernel Version 24.6.0: Tue Jul 21 20:51:34 PDT 2026; root:xnu-11417.140.69.711.44~1/RELEASE_ARM64_VMAPPLE"
+    },
+    "limitations": [
+      "Candidate declaration only; versioned1.2 archives and declared command-form acceptance remain required.",
+      "No outer-client containment or OS network-isolation promise.",
+      "The seven managed setup/inspect/run/recover/wait forms remain unqualified here; an observed native lifecycle pass does not qualify that execution route.",
+      "One cooperative mutation owner; no Windows-style deny-sharing or automatic rename-gap reconciliation."
+    ],
+    "profile_id": "aide-lite-local-macos",
+    "refused_cli_forms": [],
+    "support_candidate": {
+      "capability_level": "L1",
+      "mode": "companion",
+      "state": "usable",
+      "tier": "T3"
+    },
+    "supported_cli_forms": [
+      "doctor",
+      "validate",
+      "context",
+      "pack --task <task>",
+      "verify --evidence <evidence-path>",
+      "task inspect",
+      "task status",
+      "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+      "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+      "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+      "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+      "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+      "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+      "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+      "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+      "plan-removal --target <target>",
+      "apply-removal --target <target> --expect-plan <digest>",
+      "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+      "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+      "job usage --stream <codex-exec-jsonl>",
+      "job usage --attempt-set <attempt-roster-json>",
+      "job context",
+      "task current",
+      "task current --json",
+      "task current --task-id <ID>",
+      "task current --task-id <ID> --json",
+      "task resume-plan",
+      "task resume-plan --json",
+      "task resume-plan --task-id <ID>",
+      "task resume-plan --task-id <ID> --json",
+      "git policy",
+      "git detect",
+      "git plan",
+      "review-pack",
+      "quality ledger",
+      "quality reuse",
+      "quality explain-file <path>",
+      "quality explain-file <path> --json",
+      "job effort --work-set <path>",
+      "job effort --work-set <path> --json"
+    ],
+    "unqualified_cli_forms": [
+      "job setup --config <local-config> --selection <local-selection-json> --approved-parent <approved-parent>",
+      "job inspect --config <local-config> --manifest <job-json>",
+      "job run --config <local-config> --manifest <job-json>",
+      "job run --config <local-config> --manifest <job-json> --full",
+      "job recover --config <local-config>",
+      "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest>",
+      "job wait --config <local-config> --job-id <exact-id> --manifest-digest <exact-digest> --timeout-seconds <seconds>"
+    ]
+  },
+  "delta_path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/profile-archive-member-delta.json",
+  "delta_sha256": "c73f606fa4ee92073b6e21f5334ac46b5405d115ed0518dc3e471fe6c2505a76",
+  "actual_build_job": "a0557f5c48864e07bb783b5e1aafe4b5",
+  "actual_build_subject": {
+    "commit": "79e2e8c91e6b34989dfb5224a944fd1874b0c6f7",
+    "tree": "abf8456b03a9fe2896838a107be7245337b05c1f"
+  },
+  "unchanged": [
+    "all executable and installed payload bytes",
+    "Mac environment, capability and public-form declarations",
+    "predecessor bytes and scenarios",
+    "portable source/manifest provenance",
+    "archive member identities and modes outside two metadata leaves"
+  ],
+  "changed_identity_effect": "Whole-pack identity/checksum values differ. Old plans, receipts, feedback and ownership hashes remain old observations. They are not new-archive executions.",
+  "dependency_reason": "The two changed top-level metadata leaves are not installed project payloads. Safe import, context, task/git/review/quality/usage, repair, conflict/recovery and detach use the same payload and platform binding. Their identity comparisons derive from the supplied pack; old synthetic and real predecessor scenarios already exercise distinct pack identities. The Linux environment field does not select a macOS lifecycle branch.",
+  "fresh_obligations": [
+    "new primary installed identity/ownership and complete scratch replay",
+    "Windows Server and actual Linux full49-form execution",
+    "primary revised managed case6 and unfinished brownfield",
+    "release acceptance, publication and acquired-byte acceptance"
+  ],
+  "scope": "Behavioral applicability only. No new macOS execution, timing, resources, model use, containment, environment or universal support claim."
+}

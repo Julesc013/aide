@@ -1,0 +1,62 @@
+{
+  "encoding": "ordered-gzip+base64-json-chunks",
+  "files": 32,
+  "raw_bytes": 8714551,
+  "sha256": "c42cd0307729ca5b8c2beb71259f91567576bff44ed9944d157711b146456663",
+  "chunks": [
+    {
+      "path": "profile-hosted-rejected-candidate-00.json",
+      "sha256": "2045e39c498ad4304a313acda46f49eac0f36a827bfe23ce7e9fc79a15df7c6f",
+      "raw_sha256": "bc3c7b7dbb10c947d73f7bb9521a65c30fe6c3806feea24d5173182c768a2926",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-rejected-candidate-01.json",
+      "sha256": "9ea50916a26401d0afe0b1e4866593feecb4b7671222df05a4bdf620bd086e5f",
+      "raw_sha256": "b1f561825692b9ae9b7c5231f5c0cb826b68f4d0d250c77dcb482fa277d42944",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-rejected-candidate-02.json",
+      "sha256": "266c63f8e8c6f280eabff7997209d1c85b52af5f38a24a5ca131f15763cf1c56",
+      "raw_sha256": "2fb7ed63a27c5b6ad197a7f6eeaa5d78b0766006d0d65c017bd2dace0b3d24fa",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-rejected-candidate-03.json",
+      "sha256": "cb585116694c840ee72327ea44d075a17d4c5330b63a0f835c6596787d59e2d1",
+      "raw_sha256": "6862a837aa9b560991fa3109e1700e885482e1a627fa1b5a26cb8816fdf4818b",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-rejected-candidate-04.json",
+      "sha256": "616dab42203f1d1c76c89c6d419553497195986d6e4b67b3f5fcbedf58fe6c89",
+      "raw_sha256": "2035d9185f464610aa84024ec642e83725f6ab7c6d18005b241edc7ef1ec769f",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-rejected-candidate-05.json",
+      "sha256": "26521b05ac6b1c614c32a1c4b7e8ea7788c0e7c5c7ced3ef20dc75b07e4e5411",
+      "raw_sha256": "b1f13c439001bf64e592c875f3247e218c24656b9c4205565475f07070807a7c",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-rejected-candidate-06.json",
+      "sha256": "6721308cde7d8a061a8e226f36e4e7477e0676a4b26a6dcbc9e389ad62add826",
+      "raw_sha256": "9069ca7f71efff5dda622c5eb72704c0bbdb5278a26ddd6cc6cb98ff32a3d4d5",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-rejected-candidate-07.json",
+      "sha256": "cabf599373655caa9249be9352cb630d711903b5addf1c7dc81e7a5dbe9163ac",
+      "raw_sha256": "b7857fac3d74119ed3b18b5c320d194b4af61ffa0eb1ae42edb0fa47737d4242",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-rejected-candidate-08.json",
+      "sha256": "23f372b12a27ff3f6f3e014518823045db11b55389a810fa0ded588f80512f18",
+      "raw_sha256": "f29cced0d41db55ab12230355880c2fce536039ff1d99d109924caafcb43e9a0",
+      "raw_bytes": 325943
+    }
+  ]
+}

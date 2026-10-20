@@ -312,6 +312,8 @@ def coverage(out, forms):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--profile', required=True, choices=('aide-lite-local-windows-server', 'aide-lite-local-linux', 'aide-lite-local-macos'))
+    subjects = {'hosted-inputs.json': 'revised-build-result.json', 'profile-hosted-inputs.json': 'profile-build-result.json'}
+    parser.add_argument('--input-manifest', choices=tuple(subjects), default='hosted-inputs.json')
     parser.add_argument('--emit-log', action='store_true')
     args = parser.parse_args()
     scratch = Path(os.environ['RUNNER_TEMP']).resolve(strict=True)
@@ -329,11 +331,12 @@ def main():
     work = None
     try:
         assert not subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT).strip()
-        subject = json.loads((TASK / 'evidence/revised-build-result.json').read_bytes())
-        inputs = json.loads((TASK / 'evidence/hosted-inputs.json').read_bytes())
+        subject_name = subjects[args.input_manifest]
+        subject = json.loads((TASK / 'evidence' / subject_name).read_bytes())
+        inputs = json.loads((TASK / 'evidence' / args.input_manifest).read_bytes())
         assert inputs['workunit'] == TASK.name and inputs['actual_archive_subject'] == subject['assets']
         assert all(sha(ROOT / name) == digest for name, digest in inputs['files'].items()), 'frozen hosted input changed'
-        result['input_sha256'] = sha(TASK / 'evidence/hosted-inputs.json')
+        result['input_sha256'] = sha(TASK / 'evidence' / args.input_manifest)
         profile = next(p for p in subject['identity']['profiles'] if p['profile_id'] == args.profile)
         actual = {'system': platform.system(), 'release': platform.release(), 'version': platform.version(),
                   'machine': platform.machine(), 'runtime': {'implementation': platform.python_implementation(), 'version': platform.python_version()}}
@@ -357,7 +360,7 @@ def main():
             packs[version] = work / ('zip-' + version) / helper.PACK_NAME
         assert len(left) == 879
         additions = load('release_additive_oracle', TASK / 'run_additions.py')
-        additions.main(subject_name='revised-build-result.json', before_forms=ordinary_forms, deadline=DEADLINE)
+        additions.main(subject_name=subject_name, before_forms=ordinary_forms, deadline=DEADLINE)
         rec = recorder(helper, OUTPUT)
         lifecycle_forms(work, OUTPUT, packs['1.2.0'], helper, rec)
         cases = lifecycle.qualify_successor(work, OUTPUT, rec, helper, packs['1.1.0'], packs['1.2.0'], subject='aide-lite-v1.2.0-actual-archive')

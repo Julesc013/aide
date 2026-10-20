@@ -14,7 +14,8 @@
 - [x] Sync the reviewed repair and revised candidate to local/remote `dev@03929beb`; verify all 96 operations and 192 streams.
 - [ ] Complete revised managed-form and unfinished brownfield execution; independent review accepted retained behavior applicability while original package identities remain. [Admitted WorkUnit](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md)
 - [x] Qualify the exact revised archive on macOS:49 ordinary forms and both actual-predecessor scenarios.
-- [ ] Correct the observed Linux profile drift and Windows CRLF evaluator failure through a finite reviewed amendment; preserve macOS evidence.
+- [x] Correct the unpublished Linux profile metadata and source evaluator CRLF framing; verify the metadata-only archive delta and independently review retained macOS behavioral applicability.
+- [ ] Complete the targeted Windows/Linux run and final affected local group/replay; preserve all original outcomes and macOS subjects.
 - [ ] Complete remaining modern-profile qualification and the final local affected-consumer/brownfield/replay group.
 - [ ] Review publication and acquired-byte consumers after archive/profile acceptance.
 

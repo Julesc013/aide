@@ -1,0 +1,12 @@
+test(lite): share candidate and finish hosted profiles
+
+- Preserve the metadata-only build, full delta and independently accepted macOS behavioral applicability under their original identities.
+- Select the corrected archive manifest and exactly Windows Server/Linux in the existing evaluator/workflow; retain every original assertion and failure.
+- Bind one checkpoint, guarded dev fast-forward/nonforce sync and one important task-branch push with bounded observation and complete collection.
+
+Validation: PASS - metadata build retired; 877 unchanged members; actual independent macOS applicability acceptance; preparation doctor/validate/pack-status and syntax checks. Fresh hosted execution and final local acceptance remain open.
+Changelog: Fixed: qualify corrected candidate metadata on remaining hosted profiles
+Risk: No support activation, main promotion or publication; original incomplete outcomes remain; controller/review usage unknown.
+Follow-up: Collect the two-profile run, then separately review the final affected local group and release replay.
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+AIDE-Format: compact-v1

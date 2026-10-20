@@ -28,10 +28,6 @@ jobs:
             contract_profile: aide-lite-local-linux
             runner: ubuntu-24.04
             architecture: x64
-          - profile: macos-15-arm64
-            contract_profile: aide-lite-local-macos
-            runner: macos-15
-            architecture: arm64
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 10
     steps:
@@ -55,4 +51,5 @@ jobs:
           import os, pathlib, subprocess, sys
           scratch = pathlib.Path(os.environ['RUNNER_TEMP']).resolve(strict=True)
           subprocess.run([sys.executable, '-I', '-B', 'evals/lite/release.py',
-                          '--profile', '${{ matrix.contract_profile }}', '--emit-log'], check=True)
+                          '--profile', '${{ matrix.contract_profile }}',
+                          '--input-manifest', 'profile-hosted-inputs.json', '--emit-log'], check=True)

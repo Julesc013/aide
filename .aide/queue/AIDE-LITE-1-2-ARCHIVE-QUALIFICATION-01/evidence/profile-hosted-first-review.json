@@ -1,0 +1,25 @@
+{
+  "decision": "REJECT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "40a2a8c82c31bd87060bf634d10ff15c6d145fbbe18da01670668085c353f10e",
+  "effect_sha256": "d5906a79c18e13271429879e09f00e54f9829c79ea56bdd00d14f270333d767e",
+  "controller_sha256": "a4eaa0a5637f883a15fe3b7d2386b5fb59f775f8aed045475c88b654b08b69c6",
+  "required_fixes": [
+    {
+      "location": "evidence/profile-hosted-initial-preparation-result.json; checkpoint_sync_and_host.py:108",
+      "finding": "The mapped projection contains 41 CRLF lines. Its raw Git blob differs from its clean-filter blob, so the staged-byte assertion will fail.",
+      "remedy": "Preserve the original bytes and digest, normalize the tracked projection to LF with lossless transformation evidence, and refresh affected pins/map identities. Verify raw/filter equality before staging."
+    },
+    {
+      "location": "checkpoint_sync_and_host.py:130",
+      "finding": "The pre-dev validation guard checks only PASS and zero-FAIL substrings. It omits the existing owner's exact known-warning classification and permits additional WARN or OTHER results.",
+      "remedy": "Reuse the existing numeric-summary and sole-known-warning checks on this validation output before advancing dev."
+    }
+  ],
+  "reasons": [
+    "All 30 mapped hashes, 2,037 input hashes and checkout availability, exact dirty set, twelve assets, six canonical previews and current ref snapshot matched.",
+    "The corrected manifest selection, two-profile workflow and bounded observer are consistent with the requested effect."
+  ],
+  "optional_notes": [],
+  "next_phase": "Focused review of the repaired packet. No effects or tests were executed."
+}
