@@ -1,0 +1,416 @@
+{
+  "state": "PASS_ORIGINAL_EIGHT_CONSUMERS",
+  "subject": {
+    "commit": "eb8029171ee2b87f177e88fa5aca6f1994b9833d",
+    "tree": "3b8c8b96e2e2d121071b3750c019cdfb41283f1a",
+    "branch": "task/aide-lite-1-2-archive-qualification-01"
+  },
+  "cases": [
+    {
+      "case": 0,
+      "job_id": "b4e2c8f2c03547d2befee3e1987ee316",
+      "result": {
+        "assets": {
+          ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+            "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+            "size_bytes": 274
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+            "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+            "size_bytes": 27942
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+            "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+            "size_bytes": 969110
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.zip": {
+            "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+            "size_bytes": 1328283
+          }
+        },
+        "case": 0,
+        "fixture_retired": true,
+        "historical_restricted_account_route": "not exercised",
+        "model_calls": 0,
+        "original_assertions": "unchanged",
+        "outer_containment": "unqualified",
+        "read_isolation": "unqualified",
+        "route": "current Windows Job managed resource runner",
+        "status": "PASS",
+        "summary_sha256": "788a58f0fe38ae2b47250f0b06cc96cae0089b3abf93a32fd97ca74552bc57ac"
+      },
+      "phase": "retired",
+      "manifest_digest": "f973023faf5c0867b2bff561b3a4caab315d07d7e33f2c976608472185745e5b",
+      "collected_manifest": {
+        "output": "b399bd5f1949c4f4897e79fd55e0e58eca1f7c2c9e3a55b3546c9f64e3772bdc",
+        "logs": "379d266a2741486144919787a20b27902c8e7a246cc0b1dfe019b89b9fbb5af8"
+      },
+      "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\b4e2c8f2c03547d2befee3e1987ee316",
+      "retained_files": 38,
+      "retained_raw_bytes": 4551137,
+      "peaks": {
+        "scratch_bytes": 37893494,
+        "memory_bytes": 312201216,
+        "canonical_bytes": {}
+      },
+      "scratch_absent": true,
+      "reservation_released": true
+    },
+    {
+      "case": 1,
+      "job_id": "c187a939925942618c459fab539b6387",
+      "result": {
+        "assets": {
+          ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+            "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+            "size_bytes": 274
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+            "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+            "size_bytes": 27942
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+            "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+            "size_bytes": 969110
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.zip": {
+            "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+            "size_bytes": 1328283
+          }
+        },
+        "case": 1,
+        "fixture_retired": true,
+        "historical_restricted_account_route": "not exercised",
+        "model_calls": 0,
+        "original_assertions": "unchanged",
+        "outer_containment": "unqualified",
+        "read_isolation": "unqualified",
+        "route": "current Windows Job managed resource runner",
+        "status": "PASS",
+        "summary_sha256": "3c45d97f6d8db9475be5b7695dbed7e484d942c83657c6ad26d2c803713aefc9"
+      },
+      "phase": "retired",
+      "manifest_digest": "e5c17f226d4d433ab5e79c1cf85b63302db31ba359401bcba8955fd1e211068a",
+      "collected_manifest": {
+        "output": "168c48c0fc5b66e7d59794d834a1d3142c17762ee66190e1a3e91362034e1584",
+        "logs": "0ed9b928eb6abbd285dcd10ba89957616ba39ebdbc202eba48d2686f0ae717e7"
+      },
+      "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\c187a939925942618c459fab539b6387",
+      "retained_files": 42,
+      "retained_raw_bytes": 6058958,
+      "peaks": {
+        "scratch_bytes": 32327289,
+        "memory_bytes": 265433088,
+        "canonical_bytes": {}
+      },
+      "scratch_absent": true,
+      "reservation_released": true
+    },
+    {
+      "case": 2,
+      "job_id": "d05dac295213417dbe60eaecd9e7c66e",
+      "result": {
+        "assets": {
+          ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+            "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+            "size_bytes": 274
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+            "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+            "size_bytes": 27942
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+            "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+            "size_bytes": 969110
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.zip": {
+            "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+            "size_bytes": 1328283
+          }
+        },
+        "case": 2,
+        "fixture_retired": true,
+        "historical_restricted_account_route": "not exercised",
+        "model_calls": 0,
+        "original_assertions": "unchanged",
+        "outer_containment": "unqualified",
+        "read_isolation": "unqualified",
+        "route": "current Windows Job managed resource runner",
+        "status": "PASS",
+        "summary_sha256": "86c39b3480a2d22e05683d92238b8842ae5de9891d22c043b1ad8af6117aec1e"
+      },
+      "phase": "retired",
+      "manifest_digest": "9a17c3fb958b7a45dcda662c4220aca0d72cb6686833d58d3edb8b315be0daa5",
+      "collected_manifest": {
+        "output": "b49946f90f765dc23e2dec7b02d0ec78b602115f837908f89e32e3964d48dd9d",
+        "logs": "658e9101f5bb100797af0f64b737a3cf55c911a58a9383c2066623c7a4c11b21"
+      },
+      "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\d05dac295213417dbe60eaecd9e7c66e",
+      "retained_files": 21,
+      "retained_raw_bytes": 682490,
+      "peaks": {
+        "scratch_bytes": 15757036,
+        "memory_bytes": 244363264,
+        "canonical_bytes": {}
+      },
+      "scratch_absent": true,
+      "reservation_released": true
+    },
+    {
+      "case": 3,
+      "job_id": "5bf7a38574e14f25bb31f78cdd5f04ee",
+      "result": {
+        "assets": {
+          ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+            "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+            "size_bytes": 274
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+            "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+            "size_bytes": 27942
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+            "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+            "size_bytes": 969110
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.zip": {
+            "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+            "size_bytes": 1328283
+          }
+        },
+        "case": 3,
+        "fixture_retired": true,
+        "historical_restricted_account_route": "not exercised",
+        "model_calls": 0,
+        "original_assertions": "unchanged",
+        "outer_containment": "unqualified",
+        "read_isolation": "unqualified",
+        "route": "current Windows Job managed resource runner",
+        "status": "PASS",
+        "summary_sha256": "3a7a874c921ef276390a6877ed148140b424753726c5e47ab6dd9a82df0e14ad"
+      },
+      "phase": "retired",
+      "manifest_digest": "12e5c6ff4590b53446b1bd86c5011447df5237f849e80430c292c86014d86f2b",
+      "collected_manifest": {
+        "output": "0187ec93d782b8edb88811495d2e0a95d95f1f38ef887b96cdb50101d98f0575",
+        "logs": "be3dfb6113eebf3a16abfe9263b3daef4455809786a9099bb38b6b7e879176f0"
+      },
+      "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\5bf7a38574e14f25bb31f78cdd5f04ee",
+      "retained_files": 21,
+      "retained_raw_bytes": 564315,
+      "peaks": {
+        "scratch_bytes": 25348557,
+        "memory_bytes": 312815616,
+        "canonical_bytes": {}
+      },
+      "scratch_absent": true,
+      "reservation_released": true
+    },
+    {
+      "case": 4,
+      "job_id": "267265c8c514463a8e57c16ef51a9014",
+      "result": {
+        "assets": {
+          ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+            "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+            "size_bytes": 274
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+            "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+            "size_bytes": 27942
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+            "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+            "size_bytes": 969110
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.zip": {
+            "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+            "size_bytes": 1328283
+          }
+        },
+        "case": 4,
+        "fixture_retired": true,
+        "historical_restricted_account_route": "not exercised",
+        "model_calls": 0,
+        "original_assertions": "unchanged",
+        "outer_containment": "unqualified",
+        "read_isolation": "unqualified",
+        "route": "current Windows Job managed resource runner",
+        "status": "PASS",
+        "summary_sha256": "f53eede224ca79e811979baa2fcada6da7bae27325fa9716b91cfcd758216533"
+      },
+      "phase": "retired",
+      "manifest_digest": "e288c9026c479a8f8a8af3ca5c92a77e91e8de35ab5d5f091433fbc4d8b6d407",
+      "collected_manifest": {
+        "output": "310e23c050523dceeedef992b1ac6853fdfbfe63ba6803df6466ef8afff2a113",
+        "logs": "9e0404fd506c53ffaa5c6d9f1ae4874d09a5a70dc5220655392b2423a1d8d1fd"
+      },
+      "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\267265c8c514463a8e57c16ef51a9014",
+      "retained_files": 18,
+      "retained_raw_bytes": 688035,
+      "peaks": {
+        "scratch_bytes": 6579418,
+        "memory_bytes": 239464448,
+        "canonical_bytes": {}
+      },
+      "scratch_absent": true,
+      "reservation_released": true
+    },
+    {
+      "case": 5,
+      "job_id": "47c45e8cf0144fef979b21d4d5662929",
+      "result": {
+        "assets": {
+          ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+            "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+            "size_bytes": 274
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+            "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+            "size_bytes": 27942
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+            "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+            "size_bytes": 969110
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.zip": {
+            "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+            "size_bytes": 1328283
+          }
+        },
+        "case": 5,
+        "fixture_retired": true,
+        "historical_restricted_account_route": "not exercised",
+        "model_calls": 0,
+        "original_assertions": "unchanged",
+        "outer_containment": "unqualified",
+        "read_isolation": "unqualified",
+        "route": "current Windows Job managed resource runner",
+        "status": "PASS",
+        "summary_sha256": "5574c5db98a092eac8fc787ea4379e302defb61e5d1fe3358c805324f8594961"
+      },
+      "phase": "retired",
+      "manifest_digest": "fa2401ea81d21074521dc606e4af275fa1ff8cc6606cd86d4736dd0bb9f01937",
+      "collected_manifest": {
+        "output": "c4f9932b042156293a54a1d606bd146ae57501536552340f6fe3d83be49dd12a",
+        "logs": "c963e45fa14291685c7d370d157632cbcc60f33702633cfd4b7b7f279e52665d"
+      },
+      "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\47c45e8cf0144fef979b21d4d5662929",
+      "retained_files": 25,
+      "retained_raw_bytes": 1856503,
+      "peaks": {
+        "scratch_bytes": 16370118,
+        "memory_bytes": 278241280,
+        "canonical_bytes": {}
+      },
+      "scratch_absent": true,
+      "reservation_released": true
+    },
+    {
+      "case": 6,
+      "job_id": "282e45c890d04122bbe30e1b96d0f837",
+      "result": {
+        "assets": {
+          ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+            "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+            "size_bytes": 274
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+            "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+            "size_bytes": 27942
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+            "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+            "size_bytes": 969110
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.zip": {
+            "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+            "size_bytes": 1328283
+          }
+        },
+        "case": 6,
+        "fixture_retired": true,
+        "historical_restricted_account_route": "not exercised",
+        "model_calls": 0,
+        "original_assertions": "unchanged",
+        "outer_containment": "unqualified",
+        "read_isolation": "unqualified",
+        "route": "current Windows Job managed resource runner",
+        "status": "PASS",
+        "summary_sha256": "4fb3ec11178e52ec123dba6a8270b81ad39ae4096ba2be9b710811ce485f6d0a"
+      },
+      "phase": "retired",
+      "manifest_digest": "5ee8f2d2a95891df7f5ae45d88e0617214b72888be81204605a5a1f44de103a3",
+      "collected_manifest": {
+        "output": "a8d91786c071253e41769619d6f2e059ecabc57394186fa161b8852da40c71c2",
+        "logs": "be47b5e05f58b6f087731735592cc66a57f4dd4b7dd524d76946d13ae9adc70b"
+      },
+      "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\282e45c890d04122bbe30e1b96d0f837",
+      "retained_files": 23,
+      "retained_raw_bytes": 433018,
+      "peaks": {
+        "scratch_bytes": 35800,
+        "memory_bytes": 257191936,
+        "canonical_bytes": {}
+      },
+      "scratch_absent": true,
+      "reservation_released": true
+    },
+    {
+      "case": 7,
+      "job_id": "2c1f6e763a72453c9e6b1a9d49fa11fa",
+      "result": {
+        "assets": {
+          ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+            "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+            "size_bytes": 274
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+            "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+            "size_bytes": 27942
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+            "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+            "size_bytes": 969110
+          },
+          ".aide/release/stable/aide-lite-v1.2.0.zip": {
+            "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+            "size_bytes": 1328283
+          }
+        },
+        "case": 7,
+        "fixture_retired": true,
+        "historical_restricted_account_route": "not exercised",
+        "model_calls": 0,
+        "original_assertions": "unchanged",
+        "outer_containment": "unqualified",
+        "read_isolation": "unqualified",
+        "route": "current Windows Job managed resource runner",
+        "status": "PASS",
+        "summary_sha256": "5fe04d166016bb17f04697f6d08c41612894632102fa406043d663222b94b934"
+      },
+      "phase": "retired",
+      "manifest_digest": "2b38f9764e617d81192d4310034ad21dccb7cd940a79dc071d2402102aea2871",
+      "collected_manifest": {
+        "output": "f4a2d344b0d33161501468c284d1761b58340a81101e67f4611eaea0ab7994a7",
+        "logs": "60c167d1c820061e931cdfbc5b68a2ae0a0c51ed4c02b21563e911795f6f9c17"
+      },
+      "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\2c1f6e763a72453c9e6b1a9d49fa11fa",
+      "retained_files": 10,
+      "retained_raw_bytes": 387830,
+      "peaks": {
+        "scratch_bytes": 2456,
+        "memory_bytes": 229650432,
+        "canonical_bytes": {}
+      },
+      "scratch_absent": true,
+      "reservation_released": true
+    }
+  ],
+  "archive_qualification": "remaining obligations pending",
+  "local_jobs_consumed": 10,
+  "local_ceiling": 13,
+  "hosted_runs_consumed": 0,
+  "worker_model_requests": 0,
+  "whole_model_usage": "unknown"
+}

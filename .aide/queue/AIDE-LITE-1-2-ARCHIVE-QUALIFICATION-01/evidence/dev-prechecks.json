@@ -1,0 +1,126 @@
+{
+  "state": "PASS_READ_ONLY_PREFLIGHT",
+  "jobs_requested": 0,
+  "git_effects": false,
+  "release_effects": false,
+  "preview_sha256s": {
+    "CHANGELOG.preview.md": "7440d93e663e8b869cbfb83aa4045bbbf1c1333a103bb533186215d80a471230",
+    "RELEASE_NOTES.preview.md": "ee28c882e4ddf6a376c0ac15e758d483aeb1333c10c1ec82ad065f7e29ad04f4",
+    "changelog.preview.json": "778ef1a3ac0f2d42e7f9fead9d07cf396338354765ff77384d949c83c0dc6852",
+    "release-notes.preview.json": "19587bc57a01885ebf519fc71a2d2b41c37b5fe11fcdf0907648087cd8780ebe",
+    "malformed-commits.md": "0ddad678aa569c3e0bc9c8b0c03051751d3eaac032ca66685e19674588930d6b",
+    "latest-changelog-report.md": "9c161e04723051e27f78ead4846f5ff84c21a2be3c7d568978a1433b79fe565b"
+  },
+  "commands": [
+    {
+      "args": [
+        "doctor"
+      ],
+      "exit_code": 0,
+      "streams": {
+        "stdout": {
+          "bytes": 5181,
+          "sha256": "585c64e7eac737c2e172b11d760d884d7c614858c1521bb8941c4e4ffa595f42",
+          "base64": "QUlERSBMaXRlIGRvY3Rvcg0Kc3RhdHVzOiBQQVNTDQotIHJlcG9fcm9vdDogRDovUHJvamVjdHMvQUlERS9haWRlDQotIFBBU1MgcmVxdWlyZWQ6IC5haWRlL3BvbGljaWVzL3Rva2VuLWJ1ZGdldC55YW1sDQotIFBBU1MgcmVxdWlyZWQ6IC5haWRlL21lbW9yeS9wcm9qZWN0LXN0YXRlLm1kDQotIFBBU1MgcmVxdWlyZWQ6IC5haWRlL21lbW9yeS9kZWNpc2lvbnMubWQNCi0gUEFTUyByZXF1aXJlZDogLmFpZGUvbWVtb3J5L29wZW4tcmlza3MubWQNCi0gUEFTUyByZXF1aXJlZDogLmFpZGUvcHJvbXB0cy9jb21wYWN0LXRhc2subWQNCi0gUEFTUyByZXF1aXJlZDogLmFpZGUvcHJvbXB0cy9ldmlkZW5jZS1yZXZpZXcubWQNCi0gUEFTUyByZXF1aXJlZDogLmFpZGUvcHJvbXB0cy9jb2RleC10b2tlbi1tb2RlLm1kDQotIFBBU1MgcmVxdWlyZWQ6IC5haWRlL2NvbnRleHQvaWdub3JlLnlhbWwNCi0gSU5GTyBRMDkgc3RhdHVzOiBwYXNzZWQNCi0gSU5GTyBRMTAgc3RhdHVzOiBwYXNzZWQNCi0gSU5GTyBRMTEgc3RhdHVzOiBwYXNzZWQNCi0gSU5GTyBRMTIgc3RhdHVzOiBwYXNzZWQNCi0gSU5GTyBRMTMgc3RhdHVzOiBwYXNzZWQNCi0gSU5GTyBRMTQgc3RhdHVzOiBwYXNzZWQNCi0gSU5GTyBRMTUgc3RhdHVzOiBwYXNzZWQNCi0gSU5GTyBRMTYgc3RhdHVzOiBwYXNzZWQNCi0gSU5GTyBRMTcgc3RhdHVzOiBwYXNzZWQNCi0gSU5GTyBRMTggc3RhdHVzOiBwYXNzZWQNCi0gSU5GTyBRMTkgc3RhdHVzOiBwYXNzZWQNCi0gSU5GTyBRMjAgc3RhdHVzOiBwYXNzZWQNCi0gUEFTUyBzbmFwc2hvdCBleGlzdHM6IC5haWRlL2NvbnRleHQvcmVwby1zbmFwc2hvdC5qc29uDQotIFBBU1MgbGF0ZXN0IHRhc2sgcGFja2V0IGV4aXN0czogLmFpZGUvY29udGV4dC9sYXRlc3QtdGFzay1wYWNrZXQubWQNCi0gUEFTUyBjb250ZXh0IGFydGlmYWN0IGV4aXN0czogLmFpZGUvY29udGV4dC9yZXBvLW1hcC5qc29uDQotIFBBU1MgY29udGV4dCBhcnRpZmFjdCBleGlzdHM6IC5haWRlL2NvbnRleHQvcmVwby1tYXAubWQNCi0gUEFTUyBjb250ZXh0IGFydGlmYWN0IGV4aXN0czogLmFpZGUvY29udGV4dC90ZXN0LW1hcC5qc29uDQotIFBBU1MgY29udGV4dCBhcnRpZmFjdCBleGlzdHM6IC5haWRlL2NvbnRleHQvY29udGV4dC1pbmRleC5qc29uDQotIFBBU1MgY29udGV4dCBhcnRpZmFjdCBleGlzdHM6IC5haWRlL2NvbnRleHQvbGF0ZXN0LWNvbnRleHQtcGFja2V0Lm1kDQotIFBBU1MgdmVyaWZpZXIgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9wb2xpY2llcy92ZXJpZmljYXRpb24ueWFtbA0KLSBQQVNTIHZlcmlmaWVyIGFydGlmYWN0IGV4aXN0czogLmFpZGUvdmVyaWZpY2F0aW9uL2xhdGVzdC12ZXJpZmljYXRpb24tcmVwb3J0Lm1kDQotIFBBU1MgcmV2aWV3IGFydGlmYWN0IGV4aXN0czogLmFpZGUvdmVyaWZpY2F0aW9uL3Jldmlldy1kZWNpc2lvbi1wb2xpY3kueWFtbA0KLSBQQVNTIHJldmlldyBhcnRpZmFjdCBleGlzdHM6IC5haWRlL2NvbnRleHQvbGF0ZXN0LXJldmlldy1wYWNrZXQubWQNCi0gUEFTUyB0b2tlbiBsZWRnZXIgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9wb2xpY2llcy90b2tlbi1sZWRnZXIueWFtbA0KLSBQQVNTIHRva2VuIGxlZGdlciBhcnRpZmFjdCBleGlzdHM6IC5haWRlL3JlcG9ydHMvdG9rZW4tYmFzZWxpbmVzLnlhbWwNCi0gUEFTUyB0b2tlbiBsZWRnZXIgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9yZXBvcnRzL3Rva2VuLWxlZGdlci5qc29ubA0KLSBQQVNTIHRva2VuIGxlZGdlciBhcnRpZmFjdCBleGlzdHM6IC5haWRlL3JlcG9ydHMvdG9rZW4tc2F2aW5ncy1zdW1tYXJ5Lm1kDQotIFBBU1MgdG9rZW4gbGVkZ2VyIHJlY29yZHM6IDgzDQotIFBBU1MgZ29sZGVuIHRhc2sgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9wb2xpY2llcy9ldmFscy55YW1sDQotIFBBU1MgZ29sZGVuIHRhc2sgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9ldmFscy9nb2xkZW4tdGFza3MvUkVBRE1FLm1kDQotIFBBU1MgZ29sZGVuIHRhc2sgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9ldmFscy9nb2xkZW4tdGFza3MvY2F0YWxvZy55YW1sDQotIFBBU1MgZ29sZGVuIHRhc2sgZGVmaW5pdGlvbnM6IDE3MQ0KLSBQQVNTIGdvbGRlbiB0YXNrIHJlcG9ydCBleGlzdHM6IC5haWRlL2V2YWxzL3J1bnMvbGF0ZXN0LWdvbGRlbi10YXNrcy5qc29uDQotIFBBU1MgZ29sZGVuIHRhc2sgcmVwb3J0IGV4aXN0czogLmFpZGUvZXZhbHMvcnVucy9sYXRlc3QtZ29sZGVuLXRhc2tzLm1kDQotIFBBU1MgY29udHJvbGxlciBhcnRpZmFjdCBleGlzdHM6IC5haWRlL3BvbGljaWVzL2NvbnRyb2xsZXIueWFtbA0KLSBQQVNTIGNvbnRyb2xsZXIgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9jb250cm9sbGVyL1JFQURNRS5tZA0KLSBQQVNTIGNvbnRyb2xsZXIgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9jb250cm9sbGVyL291dGNvbWUtbGVkZ2VyLmpzb25sDQotIFBBU1MgY29udHJvbGxlciBhcnRpZmFjdCBleGlzdHM6IC5haWRlL2NvbnRyb2xsZXIvbGF0ZXN0LW91dGNvbWUtcmVwb3J0Lm1kDQotIFBBU1MgY29udHJvbGxlciBhcnRpZmFjdCBleGlzdHM6IC5haWRlL2NvbnRyb2xsZXIvbGF0ZXN0LXJlY29tbWVuZGF0aW9ucy5tZA0KLSBQQVNTIGNvbnRyb2xsZXIgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9jb250cm9sbGVyL2ZhaWx1cmUtdGF4b25vbXkueWFtbA0KLSBQQVNTIG91dGNvbWUgbGVkZ2VyIHJlY29yZHM6IDgNCi0gUEFTUyByb3V0aW5nIGFydGlmYWN0IGV4aXN0czogLmFpZGUvcG9saWNpZXMvcm91dGluZy55YW1sDQotIFBBU1Mgcm91dGluZyBhcnRpZmFjdCBleGlzdHM6IC5haWRlL21vZGVscy9SRUFETUUubWQNCi0gUEFTUyByb3V0aW5nIGFydGlmYWN0IGV4aXN0czogLmFpZGUvbW9kZWxzL3Byb3ZpZGVycy55YW1sDQotIFBBU1Mgcm91dGluZyBhcnRpZmFjdCBleGlzdHM6IC5haWRlL21vZGVscy9jYXBhYmlsaXRpZXMueWFtbA0KLSBQQVNTIHJvdXRpbmcgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9tb2RlbHMvcm91dGVzLnlhbWwNCi0gUEFTUyByb3V0aW5nIGFydGlmYWN0IGV4aXN0czogLmFpZGUvbW9kZWxzL2hhcmQtZmxvb3JzLnlhbWwNCi0gUEFTUyByb3V0aW5nIGFydGlmYWN0IGV4aXN0czogLmFpZGUvbW9kZWxzL2ZhbGxiYWNrLnlhbWwNCi0gUEFTUyByb3V0aW5nIGFydGlmYWN0IGV4aXN0czogLmFpZGUvcm91dGluZy9SRUFETUUubWQNCi0gUEFTUyByb3V0aW5nIGFydGlmYWN0IGV4aXN0czogLmFpZGUvcm91dGluZy9yb3V0ZS1kZWNpc2lvbi5zY2hlbWEuanNvbg0KLSBQQVNTIHJvdXRlIGRlY2lzaW9uIGV4aXN0czogLmFpZGUvcm91dGluZy9sYXRlc3Qtcm91dGUtZGVjaXNpb24uanNvbg0KLSBQQVNTIHJvdXRlIGRlY2lzaW9uIGV4aXN0czogLmFpZGUvcm91dGluZy9sYXRlc3Qtcm91dGUtZGVjaXNpb24ubWQNCi0gUEFTUyBjYWNoZS9sb2NhbC1zdGF0ZSBhcnRpZmFjdCBleGlzdHM6IC5haWRlL3BvbGljaWVzL2NhY2hlLnlhbWwNCi0gUEFTUyBjYWNoZS9sb2NhbC1zdGF0ZSBhcnRpZmFjdCBleGlzdHM6IC5haWRlL3BvbGljaWVzL2xvY2FsLXN0YXRlLnlhbWwNCi0gUEFTUyBjYWNoZS9sb2NhbC1zdGF0ZSBhcnRpZmFjdCBleGlzdHM6IC5haWRlLmxvY2FsLmV4YW1wbGUvUkVBRE1FLm1kDQotIFBBU1MgY2FjaGUvbG9jYWwtc3RhdGUgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9jYWNoZS9rZXktcG9saWN5LnlhbWwNCi0gUEFTUyBjYWNoZS9sb2NhbC1zdGF0ZSBhcnRpZmFjdCBleGlzdHM6IC5haWRlL2NhY2hlL2xhdGVzdC1jYWNoZS1rZXlzLmpzb24NCi0gUEFTUyBjYWNoZS9sb2NhbC1zdGF0ZSBhcnRpZmFjdCBleGlzdHM6IC5haWRlL2NhY2hlL2xhdGVzdC1jYWNoZS1rZXlzLm1kDQotIFBBU1MgLmFpZGUubG9jYWwgaWdub3JlZCBieSAuZ2l0aWdub3JlOiB0cnVlDQotIFBBU1MgdHJhY2tlZCAuYWlkZS5sb2NhbCBwYXRoczogMA0KLSBQQVNTIGdhdGV3YXkgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9wb2xpY2llcy9nYXRld2F5LnlhbWwNCi0gUEFTUyBnYXRld2F5IGFydGlmYWN0IGV4aXN0czogLmFpZGUvZ2F0ZXdheS9lbmRwb2ludHMueWFtbA0KLSBQQVNTIGdhdGV3YXkgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9nYXRld2F5L2xhdGVzdC1nYXRld2F5LXN0YXR1cy5qc29uDQotIFBBU1MgZ2F0ZXdheSBhcnRpZmFjdCBleGlzdHM6IC5haWRlL2dhdGV3YXkvbGF0ZXN0LWdhdGV3YXktc3RhdHVzLm1kDQotIFBBU1MgcHJvdmlkZXIgYWRhcHRlciBhcnRpZmFjdCBleGlzdHM6IC5haWRlL3BvbGljaWVzL3Byb3ZpZGVyLWFkYXB0ZXJzLnlhbWwNCi0gUEFTUyBwcm92aWRlciBhZGFwdGVyIGFydGlmYWN0IGV4aXN0czogLmFpZGUvcHJvdmlkZXJzL3Byb3ZpZGVyLWNhdGFsb2cueWFtbA0KLSBQQVNTIHByb3ZpZGVyIGFkYXB0ZXIgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9wcm92aWRlcnMvY2FwYWJpbGl0eS1tYXRyaXgueWFtbA0KLSBQQVNTIHByb3ZpZGVyIGFkYXB0ZXIgYXJ0aWZhY3QgZXhpc3RzOiAuYWlkZS9wcm92aWRlcnMvbGF0ZXN0LXByb3ZpZGVyLXN0YXR1cy5qc29uDQotIFBBU1MgcHJvdmlkZXIgYWRhcHRlciBhcnRpZmFjdCBleGlzdHM6IC5haWRlL3Byb3ZpZGVycy9sYXRlc3QtcHJvdmlkZXItc3RhdHVzLm1kDQotIFBBU1MgYWRhcHRlciBzdGF0dXM6IGN1cnJlbnQ7IG5vIGFjdGlvbiBuZWVkZWQNCi0gUEFTUyByZXBhaXIgcGxhbiBhdmFpbGFibGU6IC5haWRlL3JlcGFpci9sYXRlc3QtcmVwYWlyLXBsYW4ubWQNCi0gUEFTUyByZXBhaXIgZG9jdG9yIHJlcG9ydCBhdmFpbGFibGU6IC5haWRlL3JlcGFpci9sYXRlc3QtZG9jdG9yLXJlcGFpci1yZXBvcnQubWQNCi0gUEFTUyB1cGdyYWRlIHBsYW4gYXZhaWxhYmxlOiAuYWlkZS91cGdyYWRlL2xhdGVzdC11cGdyYWRlLXBsYW4ubWQNCi0gUEFTUyB1cGdyYWRlIGRyeS1ydW4gYXZhaWxhYmxlOiAuYWlkZS91cGdyYWRlL2xhdGVzdC11cGdyYWRlLWRyeS1ydW4ubWQNCi0gUEFTUyByb2xsYmFjayBwbGFuIGF2YWlsYWJsZTogLmFpZGUvcm9sbGJhY2svbGF0ZXN0LXJvbGxiYWNrLXBsYW4ubWQNCi0gUEFTUyB1bmluc3RhbGwgcGxhbiBhdmFpbGFibGU6IC5haWRlL3VuaW5zdGFsbC9sYXRlc3QtdW5pbnN0YWxsLXBsYW4ubWQNCi0gUEFTUyB2YWxpZGF0aW9uIHNob3VsZCBiZSBydW46IG5vIGhhcmQgdmFsaWRhdGlvbiBmYWlsdXJlcyBkZXRlY3RlZA0K"
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "base64": ""
+        }
+      },
+      "tail": [
+        "- PASS upgrade plan available: .aide/upgrade/latest-upgrade-plan.md",
+        "- PASS upgrade dry-run available: .aide/upgrade/latest-upgrade-dry-run.md",
+        "- PASS rollback plan available: .aide/rollback/latest-rollback-plan.md",
+        "- PASS uninstall plan available: .aide/uninstall/latest-uninstall-plan.md",
+        "- PASS validation should be run: no hard validation failures detected"
+      ]
+    },
+    {
+      "args": [
+        "validate"
+      ],
+      "exit_code": 0,
+      "streams": {
+        "stdout": {
+          "bytes": 241,
+          "sha256": "7155d92da435eb768cffff730030ab3bf65e64ae31386664662e98696e42b5e9",
+          "base64": "QUlERSBMaXRlIHZhbGlkYXRlDQpzdGF0dXM6IFBBU1MNCmNoZWNrczogNjA5Mjg7IFBBU1M6IDYwOTI3OyBXQVJOOiAxOyBGQUlMOiAwOyBPVEhFUjogMA0KLSBXQVJOIHJldmlldyBwYWNrZXQgcmV2aWV3IHJlZiBtaXNzaW5nOiAuYWlkZS9wcm9tcHRzL2V2aWRlbmNlLXJldmlldy5tZA0Kb21pdHRlZCBQQVNTIGRldGFpbHM6IDYwOTI3OyB1c2UgdmFsaWRhdGUgLS1mdWxsIG9yIC0tanNvbiBmb3IgYWxsIHJlc3VsdHMNCg=="
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "base64": ""
+        }
+      },
+      "tail": [
+        "AIDE Lite validate",
+        "status: PASS",
+        "checks: 60928; PASS: 60927; WARN: 1; FAIL: 0; OTHER: 0",
+        "- WARN review packet review ref missing: .aide/prompts/evidence-review.md",
+        "omitted PASS details: 60927; use validate --full or --json for all results"
+      ]
+    },
+    {
+      "args": [
+        "pack-status"
+      ],
+      "exit_code": 0,
+      "streams": {
+        "stdout": {
+          "bytes": 232,
+          "sha256": "17eb7a713285498d636c31fd8f0e50e9b1a632f16f230bd1f2db48a19f2bb673",
+          "base64": "QUlERSBMaXRlIHBhY2stc3RhdHVzDQpwYWNrOiAuYWlkZS9leHBvcnQvYWlkZS1saXRlLXBhY2stdjANCmV4aXN0czogdHJ1ZQ0KY2hlY2tzdW1zX3ZhbGlkOiB0cnVlDQpwcm92ZW5hbmNlX3Jlc3VsdDogUEFTU19TT1VSQ0VfQU5DRVNUT1INCmJvdW5kYXJ5X3Jlc3VsdDogUEFTUw0KY2hlY2tzdW1fcHJvYmxlbXM6IDANCnByb3ZlbmFuY2VfcHJvYmxlbXM6IDANCmJvdW5kYXJ5X3Zpb2xhdGlvbnM6IDANCg=="
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "base64": ""
+        }
+      },
+      "tail": [
+        "provenance_result: PASS_SOURCE_ANCESTOR",
+        "boundary_result: PASS",
+        "checksum_problems: 0",
+        "provenance_problems: 0",
+        "boundary_violations: 0"
+      ]
+    },
+    {
+      "args": [
+        "commit",
+        "check",
+        "--range",
+        "ed4a90046eba12a717a9962f21523285667a669b..eb8029171ee2b87f177e88fa5aca6f1994b9833d"
+      ],
+      "exit_code": 0,
+      "streams": {
+        "stdout": {
+          "bytes": 588,
+          "sha256": "e006ef8e3d832c75669353fe995f66cd87545e112466fed9a4c303a8d0db6eca",
+          "base64": "QUlERSBMaXRlIGNvbW1pdCByYW5nZSBjaGVjaw0KcmVzdWx0OiBQQVNTDQpyYW5nZTogZWQ0YTkwMDQ2ZWJhMTJhNzE3YTk5NjJmMjE1MjMyODU2NjdhNjY5Yi4uZWI4MDI5MTcxZWUyYjg3ZjE3N2U4OGZhNWFjYTZmMTk5NGI5ODMzZA0KY29tbWl0X2NvdW50OiAzDQpwb2xpY3k6IC5haWRlL3BvbGljaWVzL2NvbW1pdC1tZXNzYWdlcy55YW1sDQpkaXNwb3NpdGlvbl9wb2xpY3k6IC5haWRlL3BvbGljaWVzL2NvbW1pdC1tZXNzYWdlLWRpc3Bvc2l0aW9ucy55YW1sDQpkaXNwb3NpdGlvbnM6IGxvYWRlZA0KaGlzdG9yaWNhbF9wcmVzZW50YXRpb25fYm91bmRhcnk6IGRmYWU5MzU2MjQxZGRhNmEwM2UyY2M0OGNmOWFjYjI0NWM5YTZiZTENCi0gY2IyZGRjYSBQQVNTIGZlYXQoZXhlY3V0aW9uKTogcGVybWl0IGJ1ZGdldGVkIHN0YWJsZSBhcmNoaXZlIG91dHB1dA0KLSA4OWYzMzRmIFBBU1MgYnVpbGQobGl0ZSk6IGNoZWNrcG9pbnQgcXVhbGlmaWVkIGV4cG9ydCBmb3IgMS4yIGFyY2hpdmVzDQotIGViODAyOTEgUEFTUyBidWlsZChsaXRlKTogZnJlZXplIDEuMiBjYW5kaWRhdGUgYXJjaGl2ZXMgZm9yIGNvbnN1bWVyIGNoZWNrcw0K"
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "base64": ""
+        }
+      },
+      "tail": [
+        "dispositions: loaded",
+        "historical_presentation_boundary: dfae9356241dda6a03e2cc48cf9acb245c9a6be1",
+        "- cb2ddca PASS feat(execution): permit budgeted stable archive output",
+        "- 89f334f PASS build(lite): checkpoint qualified export for 1.2 archives",
+        "- eb80291 PASS build(lite): freeze 1.2 candidate archives for consumer checks"
+      ]
+    }
+  ],
+  "package_pins": 1996,
+  "source_commits": 3,
+  "stable_assets": 12,
+  "main_preserved": "ed4a90046eba12a717a9962f21523285667a669b",
+  "consumer_cases_passed": 8,
+  "source_portable_changes_after_refresh": 0,
+  "task_branch_retained": true
+}

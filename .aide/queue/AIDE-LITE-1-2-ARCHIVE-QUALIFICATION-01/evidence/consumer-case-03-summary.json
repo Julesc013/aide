@@ -1,0 +1,91 @@
+{
+  "cli_sha256": "55db5eef3c7e9e47970f6194aecb695ba19ecc512c64ad314201c6f622552a9c",
+  "commands": [
+    {
+      "exit_code": 3,
+      "label": "fresh-ordinary-refusal",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\fresh-ordinary-refusal.json",
+      "sha256": "20c9f1dec27496c5caa6c0b67f1c8d0aae615c19bc639ca8651fa197ebc13a91"
+    },
+    {
+      "exit_code": 3,
+      "label": "fresh-wrong-plan-refusal",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\fresh-wrong-plan-refusal.json",
+      "sha256": "f28c2e89e7afea255d2eb40f3b1a9ba61b56453328341246c98b904498baeb48"
+    },
+    {
+      "exit_code": 0,
+      "label": "fresh-cli-recover",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\fresh-cli-recover.json",
+      "sha256": "90963dbd40f943f3cb87ef3f5fbfae4617a47b983f310f572df3d9a8ffa20c45"
+    },
+    {
+      "exit_code": 0,
+      "label": "predecessor-feedback-preview",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\predecessor-feedback-preview.json",
+      "sha256": "ae5907ee4b8ef5f9733066a9a7fea2ae2b90e522b2152de5ae59b6a1b22b3d82"
+    },
+    {
+      "exit_code": 3,
+      "label": "update-ordinary-refusal",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\update-ordinary-refusal.json",
+      "sha256": "0a096a209d702472d2538c9f04fedce0b05917e24811579c8653a1dcc07590d5"
+    },
+    {
+      "exit_code": 3,
+      "label": "update-wrong-plan-refusal",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\update-wrong-plan-refusal.json",
+      "sha256": "791e09e62b2a5be50e12422dba9c08823902124d1876311a0cbb168d93da4d31"
+    },
+    {
+      "exit_code": 0,
+      "label": "update-cli-recover",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\update-cli-recover.json",
+      "sha256": "0eec4e1cfb06c40ca12e25c7e9a5fb2e6df7401a016d66feabaee0d89d78e433"
+    },
+    {
+      "exit_code": 3,
+      "label": "resolved-ordinary-refusal",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\resolved-ordinary-refusal.json",
+      "sha256": "d87da01f88ee71e4e7afc4217957074605418d1979754dc86d58fa0c1677400f"
+    },
+    {
+      "exit_code": 3,
+      "label": "resolved-changed-input-refusal",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\resolved-changed-input-refusal.json",
+      "sha256": "d20b56247bbd5b38de093c5f52ce274c535dac37114a771cdc414a745a28154e"
+    },
+    {
+      "exit_code": 0,
+      "label": "resolved-cli-recover",
+      "log": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch\\5bf7a38574e14f25bb31f78cdd5f04ee\\tmp\\case-03\\partial-cli\\resolved-cli-recover.json",
+      "sha256": "690729d6045cda49907d2890adbcb94e98254c368ea481eff351dcc5e4b729d6"
+    }
+  ],
+  "fresh": [
+    "INTERRUPTED",
+    "RECOVERY_REQUIRED",
+    "RECOVERY_REQUIRED",
+    "RECOVERED"
+  ],
+  "member_count": 879,
+  "predecessor_explanations": 6,
+  "predecessor_feedback_sha256": "a5026ab911f1d3abb1afcf80cae43cc8c21af67007309429effd35a8cb6b31ab",
+  "project_owned_sha256": "52ebd4f3ce2436d98513d5fcf872e309d32b8c1b6b72f350ff321aab57a35486",
+  "resolved_update": [
+    "INTERRUPTED",
+    "RECOVERY_REQUIRED",
+    "RECOVERY_REQUIRED",
+    "RECOVERED"
+  ],
+  "status": "PASS",
+  "synthetic_successor_is_published": false,
+  "tar_sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+  "update": [
+    "INTERRUPTED",
+    "RECOVERY_REQUIRED",
+    "RECOVERY_REQUIRED",
+    "RECOVERED"
+  ],
+  "zip_sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f"
+}

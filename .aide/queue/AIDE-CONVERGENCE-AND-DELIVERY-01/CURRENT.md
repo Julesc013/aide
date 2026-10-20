@@ -12,7 +12,7 @@
 
 **Active increment:** [actual Lite 1.2 archive qualification](../AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md) preserves exact source, build, consumer and hosted-effect gates. The independently accepted canonical-output amendment consumed one narrow regression/export group before the versioned build. Frozen candidate assets now exist; new support and publication remain pending. Thirteen local allocations and one hosted run with three profiles are finite limits, not automatic grants.
 
-**Latest local result:** source `cb2ddcaf` passed all twelve custody checks with zero skips and one owned export refresh. Checkpoint `89f334f0` then passed the existing versioned build/validation in retired job `781532d1`; the ZIP/TAR share 879 file members. Two local allocations and the only export refresh are consumed. Exact archive consumers are next; `dev` and `main` remain at `ed4a9004` until integration acceptance.
+**Latest local result:** source `cb2ddcaf` passed all twelve custody checks with zero skips and one owned export refresh. Checkpoint `89f334f0` then passed the existing versioned build/validation in retired job `781532d1`; the ZIP/TAR share 879 file members. All eight original Windows consumers then passed on `eb802917`; 198 retained files and complete retirement verify. Ten local allocations and the only export refresh are consumed. Dev-only checkpoint synchronization is under review; main promotion follows the remaining release checks.
 
 | Next useful outcome | Remaining condition and owner |
 | --- | --- |

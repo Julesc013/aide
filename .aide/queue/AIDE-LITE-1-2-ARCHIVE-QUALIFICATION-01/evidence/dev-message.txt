@@ -1,0 +1,12 @@
+test(lite): preserve eight passing 1.2 archive consumers
+
+- Retain all eight original Windows consumer passes on frozen 1.2 ZIP/TAR bytes, with exact source, configuration, manifest, collection and retirement identities.
+- Preserve 198 files losslessly, the rejected controller candidate and accepted per-case binding repair; historical assets and valid prior qualifications remain unchanged.
+- Prepare one guarded dev-only fast-forward and nonforce synchronization, preserving main, the active task branch and every unrelated ref. Remaining release checks stay explicit.
+
+Validation: PASS - eight original consumers, twelve prior custody checks, existing archive build/validation, exact output/log digests and complete retirement. No additive, predecessor, hosted or release replay group is claimed here.
+Changelog: Changed: Record eight original consumer passes for the frozen Lite 1.2 candidate; operational profile qualification and publication remain pending.
+Risk: Candidate assets remain unreleased; no universal OS, outer-client containment or complete model-usage claim is established.
+Follow-up: Qualify eighteen additive forms, actual 1.1 predecessor and modern profiles, then complete replay, main integration and publication under exact reviews.
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+AIDE-Format: compact-v1

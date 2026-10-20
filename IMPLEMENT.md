@@ -8,6 +8,8 @@ The accepted custody source checkpoint `cb2ddcaf` passed all twelve selected met
 
 The separately accepted checkpoint `89f334f0` and job `781532d1` passed stable-build/validate for Lite 1.2. The four new assets preserve all 58 prior release files and all export bytes; ZIP/TAR share 879 file members and source `cb2ddcaf`. Collection and retirement verify. Consumer/profile qualification and publication remain pending; this is a frozen build candidate, not a released product.
 
+All eight original current-archive consumer cases passed on `eb802917`, with exact source/configuration/manifest receipts and 198 lossless retained files. Ten of thirteen local allocations are consumed. The dev-only checkpoint is under review; additive, actual-predecessor, hosted and replay groups remain pending. No archive rebuild, new support or publication is claimed.
+
 ### Compatible release metadata preparation - 20 October 2026
 
 The admitted [multi-profile increment](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md) prepares strict v2 declarations and archive markers beside unchanged historical v1 identities. Supported, refused and unqualified command sets remain distinct; same-major lineage preserves existing profiles, environments, supported behavior, explicit refusals and capabilities. The initial technical review and candidate preimages are retained, with both requested fixes and an archive-marker regression prepared. All twenty affected methods passed and the export refreshed once. The original post-export worker failure is retained; read-only reconciliation and structural/export checks pass without another allocation. Final acceptance/integration remains gated; no production 1.2 archive exists.

@@ -2,11 +2,11 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
 status: running
 result: PENDING
-planning_state: candidate_archives_built_original_consumer_preparation
+planning_state: original_eight_consumers_pass_dev_checkpoint_preparation
 product_qualified: false
-local_jobs_consumed: 2
+local_jobs_consumed: 10
 hosted_runs_consumed: 0
-next_action: Independently review the frozen archive checkpoint and eight original serial Windows consumer cases; additive forms, actual-predecessor, hosted qualification, release replay and publication remain pending.
+next_action: Review dev-only synchronization of the qualified checkpoint and retained evidence; then separately admit additive forms, actual predecessor and modern profile checks before release replay/publication.
 qualified_source_checkpoint: cb2ddcaf837e2604f34f11211447c551cc85b29b
 canonical_job: 6355e80d38804f89aa9a83fd743be7e1
 canonical_tests_passed: 12
@@ -15,3 +15,7 @@ export_refreshes_consumed: 1
 build_checkpoint: 89f334f0d06457b4fbd96ca4aba86fce5eb8e43c
 build_job: 781532d1b1b8470ea780a6d99ff5866f
 archive_qualified: false
+consumer_checkpoint: eb8029171ee2b87f177e88fa5aca6f1994b9833d
+original_consumer_cases_passed: 8
+original_consumer_cases_incomplete: 0
+consumer_retained_files: 198

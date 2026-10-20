@@ -1,0 +1,8 @@
+{
+  "state": "REFUSED",
+  "jobs_requested": 0,
+  "git_effects": false,
+  "release_effects": false,
+  "error_type": "IndentationError",
+  "error": "unexpected indent (sync_dev.py, line 257)"
+}
