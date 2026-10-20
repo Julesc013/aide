@@ -1,0 +1,14 @@
+{
+  "encoding": "ordered-gzip+base64-json-chunks",
+  "files": 5,
+  "raw_bytes": 661198,
+  "sha256": "6341378516be623c33a8989d76c55cc368074e3d63222cb2c159d4ab4567beca",
+  "chunks": [
+    {
+      "path": "rejected-recovery-packet-00.json",
+      "sha256": "e765e72b0587efccc69680a2f590c60bf24596d7091d9b235cdc991384d4afc6",
+      "raw_sha256": "6341378516be623c33a8989d76c55cc368074e3d63222cb2c159d4ab4567beca",
+      "raw_bytes": 661198
+    }
+  ]
+}

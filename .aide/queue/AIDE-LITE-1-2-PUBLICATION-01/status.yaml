@@ -13,3 +13,7 @@ hosted_runs_consumed: 0
 archive_rebuilds: 0
 published: false
 next_action: Review exact documentation checkpoint, publication/acquisition controller and effect; then verify actual acquired-byte consumer.
+tag_created: aide-lite-v1.2.0
+tag_target: ee36a9342e17a4c13378bd9ac034c506056f6de2
+draft_id: 418708655
+delivery_state: stopped_before_upload_existing_empty_draft_verified

@@ -1,0 +1,25 @@
+{
+  "decision": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "6d9439e3b85d2b5f5e8030fcc68884aeccd1ada90705b7962e8039a9143cd275",
+  "effect_sha256": "1136f40ffdfd94d16696a1f39c9c3bec10bbcdf651484afe5169650948e0c6f7",
+  "controller_sha256": "368608518df256a6cfa737db947a260017416062dc7be70954a81e4990636702",
+  "recovery_effect_sha256": "64cefd18807289559cee01e833a43d7e0b22e5a6f2826ca5638f2cfb583f7ad6",
+  "recovery_controller_sha256": "cfc63c1e67b83fab2fb113b36fea30fdb7914ba562db0bf5e5b120f739a5aa64",
+  "required_fixes": [
+    {
+      "file": ".aide\\queue\\AIDE-LITE-1-2-PUBLICATION-01\\resume_delivery.py",
+      "finding": "Require successful reviewed recovery checkpoint receipt, exact commit/tree/dev-main/source/effect/controller before external effects."
+    },
+    {
+      "file": ".aide\\queue\\AIDE-LITE-1-2-PUBLICATION-01\\evidence\\recovery-effect.json",
+      "finding": "Pin delivery-effect.json and imported prior update_presentation.py and verify before consumption/import."
+    }
+  ],
+  "notes": [
+    "All14 mapped files/raw-filter identities,2220checkpoint pins,899recovery pins and1147retained files verify.",
+    "No additional confirmed blocker; preserve rejected packet and apply focused preconditions without qualification rerun.",
+    "No tests or effects executed by reviewer."
+  ],
+  "canonical_record": "Structured transcription of actual independent verdict; full affected rejected packet bytes retained."
+}

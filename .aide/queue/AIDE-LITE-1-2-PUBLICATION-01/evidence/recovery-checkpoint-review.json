@@ -1,0 +1,19 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "32b037aee7a5de106e8361e6c42ad4461d386e7d6900dec87f2450afa3a1d7df",
+  "effect_sha256": "1136f40ffdfd94d16696a1f39c9c3bec10bbcdf651484afe5169650948e0c6f7",
+  "controller_sha256": "368608518df256a6cfa737db947a260017416062dc7be70954a81e4990636702",
+  "recovery_effect_sha256": "bcd8965358f3f2e7a1efab50ae2768e14179aa0fb39adc20695b242518240c47",
+  "recovery_controller_sha256": "e1720d1ab48899a0e50a950f8d477141ed9e03819c7999618800f5319f2d14ba",
+  "support_activation": "exact_four_declared_T3_L1_companion_profiles_only",
+  "required_fixes": [],
+  "accepted_scope": "One exact recovery checkpoint with guarded dev/main synchronization, then resume existing draft 418708655 for four exact labelled uploads, verified publication and bounded acquisition. Preserve tag object d2accd1eb683e57ce3587aeea05febde7eb83d59 and release target ee36a9342e17a4c13378bd9ac034c506056f6de2. No creation, retagging, rebuild, remote task publication or consumer allocation.",
+  "notes": [
+    "Both required fixes are satisfied: successful checkpoint evidence is required, and original-effect/helper hashes are checked before consumption or import.",
+    "All 18 mapped files, exact dirty set, raw/filter identities, 2220 checkpoint pins and 901 recovery pins verify.",
+    "Rejected packet identities reconstruct exactly; the correction is confined to the reviewed preconditions and evidence preservation.",
+    "Fresh guards remain mandatory. Any mismatch or uncertain effect requires reconciliation without automatic retry.",
+    "No tests or effects were executed by this reviewer."
+  ]
+}

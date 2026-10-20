@@ -1,0 +1,26 @@
+{
+  "schema": "aide.exact-source-map.v1",
+  "workunit": "AIDE-LITE-1-2-PUBLICATION-01",
+  "base": "ee36a9342e17a4c13378bd9ac034c506056f6de2",
+  "effect_sha256": "1136f40ffdfd94d16696a1f39c9c3bec10bbcdf651484afe5169650948e0c6f7",
+  "files": {
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/recovery-checkpoint-effect.json": "1136f40ffdfd94d16696a1f39c9c3bec10bbcdf651484afe5169650948e0c6f7",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/recovery-checkpoint-inputs.json": "ab6017b2a64c85ea18b43bd699950f4a6dcb808d9590959272b40c8bf74affc2",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/recovery-checkpoint-message.txt": "06802406779087c8449adf9f4bd4b1250788252d16fda4891cd679d1b2a3dd8b",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/recovery-draft-before.json": "012873ccbc559164281dd289af9a71859167af6a6391239cf1cdc61f9aa26dfa",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/recovery-effect.json": "bcd8965358f3f2e7a1efab50ae2768e14179aa0fb39adc20695b242518240c47",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/recovery-rejected-review.json": "ae4a6cf8dd1fd97e95083afec3b5f5c9c86cbcffe105251e2e7f62c7d5aec10a",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/rejected-recovery-packet-00.json": "e765e72b0587efccc69680a2f590c60bf24596d7091d9b235cdc991384d4afc6",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/rejected-recovery-packet.json": "50409b51aaa83837a8617f96919d54a798f990938789b8b9be500bba4a515125",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/stopped-delivery-retained-00.json": "f9d2c4ef350ed23a042aa873af1c160f7e8eeac434f429faa6b1f853add40436",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/stopped-delivery-retained.json": "6692a99a1129cc9e3181b3a8ba9e820029c8beccfa7be1d1d44e1622b83b813a",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/stopped-delivery-verified.json": "97b6b294e0ffcfc2019a1c2ced9813b4e08f39f381ba3b2f551c19e942120a58",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/freeze_recovery.py": "fc9fe82db3dffa66ab48e65d1aa23dbd974ffcce393d771580644b13e379d644",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/prepare_recovery.py": "03133bf2307d9d566e3dcd5701b2e591ef463c29bd92080c9b193cca890b6983",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/recovery_checkpoint.py": "368608518df256a6cfa737db947a260017416062dc7be70954a81e4990636702",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/refresh_recovery_review.py": "10849e6e901eda5ecf807240cbf9c796b06b436aed18525c8e06cd6380f26edb",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/resume_delivery.py": "e1720d1ab48899a0e50a950f8d477141ed9e03819c7999618800f5319f2d14ba",
+    ".aide/queue/AIDE-LITE-1-2-PUBLICATION-01/status.yaml": "ca1eb1cdc8e009c2a23c6ad5fd543a451a5412c4f7e87786d854e72aba337018",
+    "IMPLEMENT.md": "1d474015492a10722b359f69a935c555b039a25298769dd337129416957eaad0"
+  }
+}

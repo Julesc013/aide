@@ -1,0 +1,14 @@
+{
+  "state": "STOPPED_AFTER_EXISTING_DRAFT_CREATION",
+  "lossless_roundtrip_verified": true,
+  "operations": 570,
+  "streams": 1140,
+  "files": 1147,
+  "tag_target": "ee36a9342e17a4c13378bd9ac034c506056f6de2",
+  "tag_object": "d2accd1eb683e57ce3587aeea05febde7eb83d59",
+  "draft_id": 418708655,
+  "assets_uploaded": 0,
+  "published": false,
+  "consumer_allocations": 0,
+  "interpretation": "Immediate list returned only prior rows; fresh no-cache/alternate-page read plus CLI list identify the existing exact empty draft. Cache or consistency cause unproven; do not repeat creation."
+}

@@ -1,5 +1,9 @@
 ### AIDE Implementation Log
 
+### Existing Lite 1.2 draft reconciliation - 21 October 2026
+
+Pre-tag checkpoint `ee36a934` reached local/remote dev/main. Annotated tag `d2accd1e` points there. Draft creation succeeded, but the immediate list omitted the new row, so the controller stopped before upload. A fresh read-only no-cache/alternate-page API observation and CLI list identify exact empty draft `418708655`; the cause of the earlier stale view is unproven. All completed operations and streams are losslessly retained. Recovery resumes that draft only; no duplicate creation, retag, rebuild or qualification restart.
+
 ### Lite 1.2 publication preparation - 21 October 2026
 
 Qualified integration at `3fec7ac3` is verified across all 165 operations/330 streams. The separately admitted publication branch preserves its 20 operations/40 streams. Pre-tag reconciliation fixes stale current-state descriptions, including the release-policy paragraph, without changing release rules, product code, exports or frozen assets. The first admission collection attempted the prior verifier's old evidence directory; task-local binding was corrected and all 41 files roundtrip exactly. Publication, downloads and the one new acquired-byte consumer remain gated.

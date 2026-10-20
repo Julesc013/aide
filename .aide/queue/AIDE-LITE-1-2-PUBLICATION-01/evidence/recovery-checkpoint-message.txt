@@ -1,0 +1,12 @@
+fix(release): resume the verified existing Lite 1.2 draft
+
+- Preserve the stopped delivery, successful pre-tag sync and all raw operation streams.
+- Reconcile the existing empty draft by exact ID; retain the immutable tag and original assets.
+- Prepare bounded existing-owner upload/publication/acquisition without repeating creation.
+
+Validation: PASS - prior source checks and independent qualification retained; exact fresh draft/body/target and complete receipt roundtrip verified.
+Changelog: Fixed: recover a stopped release-list observation without duplicating a draft
+Risk: The immediate stale-list cause is unproven; uncertain effects still stop for reconciliation.
+Follow-up: Publish the existing draft, acquire exact assets, then run one original acquired-byte consumer.
+AIDE-Task: AIDE-LITE-1-2-PUBLICATION-01
+AIDE-Format: compact-v1

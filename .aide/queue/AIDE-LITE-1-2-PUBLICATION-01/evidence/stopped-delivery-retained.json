@@ -1,0 +1,14 @@
+{
+  "encoding": "ordered-gzip+base64-json-chunks",
+  "files": 1147,
+  "raw_bytes": 768382,
+  "sha256": "b0977a2ea54c7188ba6337e1e39e729f4ba7900ba67c30fa82e9a2fa49341172",
+  "chunks": [
+    {
+      "path": "stopped-delivery-retained-00.json",
+      "sha256": "f9d2c4ef350ed23a042aa873af1c160f7e8eeac434f429faa6b1f853add40436",
+      "raw_sha256": "b0977a2ea54c7188ba6337e1e39e729f4ba7900ba67c30fa82e9a2fa49341172",
+      "raw_bytes": 768382
+    }
+  ]
+}
