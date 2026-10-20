@@ -55,15 +55,15 @@ scope:
     - other repositories, unrelated processes, provider/model routes, spending and hosting protection settings
     - new roots, reserves, execution privileges, infrastructure or installation campaign
 verification:
-  maximum_local_jobs: 13
+  maximum_local_jobs: 16
   local_config: .aide.local/lite-successor-qualification-execution.json
   maximum_seconds_per_local_job: 600
-  local_allowance: one narrowly amended canonical-output regression/export group; one exact versioned build; eight original Windows consumer cases; one additive-form group; one actual-predecessor group; one release replay, only when applicable and separately reviewed
+  local_allowance: twelve consumed attempts remain counted; one exact live-scan regression/export group, one necessary revised candidate build, one affected managed-form and unfinished brownfield group, and one release replay, only when applicable and separately reviewed
   maximum_hosted_workflow_runs: 1
   hosted_jobs: 3 exact declared modern profiles
   maximum_minutes_per_hosted_job: 10
   live_worker_model_requests: 0
-  export_regenerations: 1
+  export_regenerations: 2
 review_gate: branch_admission_then_exact_source_build_consumer_hosted_and_integration_effects
 admission_boundary: Preparation and local branch creation only; every build, allocation, push, hosted dispatch and integration needs its own exact technical acceptance under existing delegation.
-scope_amendment: evidence/canonical-output-amendment.md; independently accepted for preparation in evidence/canonical-amendment-review.json; execution requires separate exact source/effect acceptance
+scope_amendment: evidence/canonical-output-amendment.md and evidence/live-link-observation-amendment.md; both independently accepted for preparation in their exact review records; every execution requires separate exact source/effect acceptance

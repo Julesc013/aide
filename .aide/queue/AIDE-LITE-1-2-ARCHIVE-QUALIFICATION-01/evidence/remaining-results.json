@@ -1,0 +1,76 @@
+{
+  "state": "ADDITIONS_PASS_PREDECESSOR_INCOMPLETE",
+  "subject": {
+    "commit": "9ee1880e553e692ad697e0e8699b29439c47317e",
+    "tree": "96ef1142562a182401ed1d09061c05d5c31685e5",
+    "branch": "task/aide-lite-1-2-archive-qualification-01"
+  },
+  "cases": [
+    {
+      "case": "additions",
+      "state": "PASS_ALL_EIGHTEEN_ADDITIVE_FORMS",
+      "job_id": "ac135cc311e54827a381463b6ecad185",
+      "manifest_digest": "2658ab0bea19f137cf0a380e1ca5e4128472031d8550d1ff4663efb6568c394c",
+      "collected_manifest": {
+        "output": "192c13587c0286dfd82cc427998d595cc4b6ca22817131bee14cf563904464aa",
+        "logs": "1919b753d83355a37fa983d22a517f20b4e5433934a34be06eee85692014d0d8"
+      },
+      "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\ac135cc311e54827a381463b6ecad185",
+      "retained_files": 105,
+      "retained_transport_bytes": 818175,
+      "peaks": {
+        "scratch_bytes": 14300979,
+        "memory_bytes": 252006400,
+        "canonical_bytes": {}
+      },
+      "result": {
+        "exit_code": 0,
+        "reason": "exited",
+        "quiescent": true,
+        "bytes": 87,
+        "io_errors": [],
+        "job_id": "ac135cc311e54827a381463b6ecad185",
+        "pid": 2032,
+        "creation_filetime": 134369815339902259
+      },
+      "reconciliation": null,
+      "scratch_absent": true,
+      "reservation_released": true
+    },
+    {
+      "case": "predecessor",
+      "state": "INCOMPLETE_RUNNER_HARDLINK_REFUSAL",
+      "job_id": "87be5e52947547d4b7cd06e46b493ab6",
+      "manifest_digest": "03b85c0ad016c377ea0a940c3a656496b09c45c57f42f0f781e0fab3e5deba32",
+      "collected_manifest": {
+        "output": "7912b8c9688a4dd0ee81040f361ba7d18edd689bb12cd5ce536c8e28f235c0a7",
+        "logs": "f31980b8c626ac9fab7858493dc9969421b27f6adc89422703bc26e8b1fbae69"
+      },
+      "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\87be5e52947547d4b7cd06e46b493ab6",
+      "retained_files": 50,
+      "retained_transport_bytes": 2641581,
+      "peaks": {
+        "scratch_bytes": 29833242,
+        "memory_bytes": 280899584,
+        "canonical_bytes": {}
+      },
+      "result": {
+        "reason": "WorkspaceRefused",
+        "message": "hardlink outside owned scratch or transient link set",
+        "exit_code": null
+      },
+      "reconciliation": {
+        "quiescent": true,
+        "observation": "owned_job_absent"
+      },
+      "scratch_absent": true,
+      "reservation_released": true
+    }
+  ],
+  "archive_qualification": "remaining obligations pending",
+  "local_jobs_consumed": 12,
+  "local_ceiling": 13,
+  "hosted_runs_consumed": 0,
+  "worker_model_requests": 0,
+  "whole_model_usage": "unknown"
+}

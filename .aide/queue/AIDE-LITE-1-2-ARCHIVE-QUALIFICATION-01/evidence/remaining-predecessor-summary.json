@@ -1,0 +1,26 @@
+{
+  "status": "INCOMPLETE",
+  "terminal_result": {
+    "reason": "WorkspaceRefused",
+    "message": "hardlink outside owned scratch or transient link set",
+    "exit_code": null
+  },
+  "completed_scenarios": [
+    {
+      "checks": [
+        "exact_interrupted_upgrade_recovery",
+        "installed_owned_repair_interruption_and_recovery",
+        "cross_version_path_change_rollback_refuses_without_writes",
+        "detach_and_published_predecessor_reinstall"
+      ],
+      "native_acceptance": true,
+      "preserved": true,
+      "shape": "published-upgrade-fresh",
+      "subject": "aide-lite-v1.2.0-actual-archive"
+    }
+  ],
+  "unfinished_scenarios": [
+    "published-upgrade-brownfield"
+  ],
+  "interpretation": "The runner interrupted this attempt; its scenario evidence is preserved without an overall pass or product-defect claim."
+}

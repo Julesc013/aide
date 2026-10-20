@@ -1,0 +1,17 @@
+{
+  "status": "PASS_STRUCTURAL_PRECHECK",
+  "base": "9ee1880e553e692ad697e0e8699b29439c47317e",
+  "original_methods_preserved": 75,
+  "new_methods": 7,
+  "changed_owner_functions": [
+    "tree_usage"
+  ],
+  "export_preimages": 879,
+  "stable_assets_preserved": 12,
+  "job_inputs": 1092,
+  "job_preflight": "PASS",
+  "new_jobs_started": 0,
+  "runtime_tests_run": 0,
+  "prior_incomplete_reconciled": true,
+  "scope": "Preparation only; runtime success is not inferred."
+}

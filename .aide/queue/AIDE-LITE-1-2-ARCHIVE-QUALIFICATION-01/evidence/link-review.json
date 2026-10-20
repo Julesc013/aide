@@ -1,0 +1,16 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "a23306d6bf468f350917bb9536b4af07e681acaa51b979c9fa1091e14022131c",
+  "effect_sha256": "0824fc9d4a6d9405234e76008a8d677d7f5f18b36bae2dbbd52fea268de1103b",
+  "controller_sha256": "ae78f5890603953a7701ffc9224ef6e927f0ae829ec3589188ae2f6cf45b04f9",
+  "required_fixes": [],
+  "reasons": [
+    "Verified32mappedfiles,1092inputpins,exactdirtyset,Gitfilteridentities,75preservedtestmethods,879recoverableexportmembersand12unchangedassets."
+  ],
+  "limitations": [
+    "Exactmanagedcheckpointandone600secondregression/exportallocationonly.",
+    "Exportrequirestheoriginal-racedemonstrationandall20corrected-sourcecheckswithnoskips;archivebuildandsubsequentqualificationremainseparatelygated."
+  ],
+  "reviewer_executed_tests": false
+}

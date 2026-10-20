@@ -556,9 +556,10 @@ def qualify_canonical_outputs(record, config, roots, working):
 
 
 def tree_usage(root, *, maximum, max_files, allow_transient_absence=False,
-               allow_transient_hardlinks=False):
+               allow_transient_hardlinks=False, _retry_link_set=True):
     total = count = 0; pending = [root]
     linked_members: dict[tuple[int, int], list[int]] = {}
+    linked_names: dict[tuple[int, int], list[str]] = {}
     while pending:
         directory = pending.pop()
         try:
@@ -609,6 +610,8 @@ def tree_usage(root, *, maximum, max_files, allow_transient_absence=False,
                     # strict once the child is quiescent.
                     if info.st_nlink > 1:
                         linked_members.setdefault((info.st_dev, info.st_ino), []).append(info.st_nlink)
+                        linked_names.setdefault((info.st_dev, info.st_ino), []).append(
+                            str(Path(entry.path).relative_to(root)))
                     total += info.st_size
                 else:
                     raise WorkspaceRefused(
@@ -619,9 +622,21 @@ def tree_usage(root, *, maximum, max_files, allow_transient_absence=False,
                     )
                 if total > maximum or count > max_files:
                     raise WorkspaceRefused('workspace size/file threshold exceeded')
-    if any(len(counts) != counts[0] or any(value != counts[0] for value in counts)
-           for counts in linked_members.values()):
-        raise WorkspaceRefused('hardlink outside owned scratch or transient link set')
+    inconsistent = [identity for identity, counts in linked_members.items()
+                    if len(counts) != counts[0] or any(value != counts[0] for value in counts)]
+    if inconsistent:
+        # Enumeration is not a snapshot: an owned publication can retire its
+        # staging link between observations. Recheck this root once, only for
+        # live scans. Every ordinary/path/quota check still applies; strict
+        # collection never retries or permits a hardlink. Keep the larger
+        # observed byte count so settling cannot hide already observed usage.
+        if allow_transient_absence and allow_transient_hardlinks and _retry_link_set:
+            time.sleep(0.005)
+            return max(total, tree_usage(root, maximum=maximum, max_files=max_files,
+                allow_transient_absence=True, allow_transient_hardlinks=True, _retry_link_set=False))
+        details = [{'identity': identity, 'names': linked_names[identity][:4],
+                    'observed_counts': linked_members[identity][:4]} for identity in inconsistent[:4]]
+        raise WorkspaceRefused('hardlink outside owned scratch or transient link set: ' + repr(details))
     return total
 
 

@@ -1,0 +1,11 @@
+fix(execution): settle live hardlink observations before refusal
+
+Preserve the incomplete predecessor attempt, 18 passing additions and 56 current form witnesses. Correct only the existing live scan and retain strict collection, all 75 original test bodies and unchanged resource policy.
+
+- Scope: one bounded re-observation, seven new regressions and exact regression/export preparation.
+- Follow-up: one owned export only after tests; revised archives, dependency proof, affected consumers, hosted profiles, replay and publication remain gated.
+
+AIDE-Format: compact-v1
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+Validation: PASS - source AST, 879 owned preimages, 12 stable assets and literal job preflight; runtime group pending
+Changelog: Fixed: prepare bounded live hardlink re-observation with original evidence retained

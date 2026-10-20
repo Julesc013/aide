@@ -30,7 +30,7 @@ outer_filesystem_permission: unrestricted_not_whole_session_containment
 unchanged_blockers_stop_independent_work: false
 authority: Existing owner delegation and exact independent source/effect gates; status grants nothing new
 current_state_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
-current_state_sha256: b2b0fbfe15d2383c66e44ef3d28523b838a4277ef0b3bec6c720c9117341264c
+current_state_sha256: 6960e18875fa1d5db4912d09fd9fb37a8353dcfd03e37947b159170d995174e3
 historical_status_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-status.yaml
 historical_status_sha256: 797b885d9b9beee5a17435210f002cfba91ff344eef227af6ceca2dd32214384
 historical_task_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-task.yaml

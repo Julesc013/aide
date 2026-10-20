@@ -9,7 +9,9 @@
 - [x] Run all twenty release-contract fixtures and one owned export refresh; reconcile the retained worker failure without reruns or regeneration. [WorkUnit](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md)
 - [x] Complete exact source/evidence acceptance and dev/main integration for the release-profile increment at `ed4a9004`.
 - [x] Build frozen Lite 1.2 candidates, pass twelve custody checks and all eight original Windows consumers, and sync accepted progress to `dev@d256a601`; retain 198 files and all original failures. [Current evidence](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md)
-- [ ] Build and qualify actual versioned Lite 1.2 archives and declared public forms. [Admitted WorkUnit](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md)
+- [x] Pass eighteen additive forms and map all 56 primary forms to current evidence; retain the completed fresh predecessor scenario.
+- [ ] Qualify the bounded live-link observation repair, revised candidate and unfinished brownfield scenario; reuse completed evidence only for proven unchanged dependencies. [Admitted WorkUnit](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md)
+- [ ] Qualify exact modern profiles and complete release replay.
 - [ ] Review publication and acquired-byte consumers after archive/profile acceptance.
 
 **Release and daily use**

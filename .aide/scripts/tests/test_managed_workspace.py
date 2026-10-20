@@ -1,6 +1,7 @@
 from __future__ import annotations
 import hashlib
 import argparse
+from contextlib import contextmanager
 import importlib.util
 import json
 import os
@@ -1098,6 +1099,122 @@ class ManagedWorkspaceTests(unittest.TestCase):
             workspace.tree_usage(scratch, maximum=1024, max_files=10,
                                  allow_transient_hardlinks=True)
         self.assertEqual(outside.read_bytes(), b'private')
+
+    def settling_link_fixture(self, settled=lambda path: None):
+        root = self.roots['scratch']
+        first, staging = root / 'a-final', root / 'z-staging'
+        first.write_bytes(b'12345678')
+        os.link(first, staging)
+        original_stat, original_scan = Path.lstat, os.scandir
+        reads = []
+
+        def interleaved(path, *args, **kwargs):
+            if path == first:
+                reads.append(1)
+                if len(reads) > 1:
+                    settled(first)
+            info = original_stat(path, *args, **kwargs)
+            if path == first and len(reads) == 1:
+                staging.unlink()  # A real legal link retirement after metadata observation.
+            return info
+
+        @contextmanager
+        def ordered(path):
+            with original_scan(path) as entries:
+                yield iter(sorted(entries, key=lambda item: item.name))
+
+        return first, reads, interleaved, ordered
+
+    def test_live_link_retirement_rechecks_once_and_accepts_settled_member(self):
+        first, reads, observed, scanned = self.settling_link_fixture()
+        with mock.patch.object(Path, 'lstat', observed), mock.patch.object(workspace.os, 'scandir', scanned), \
+             mock.patch.object(workspace.time, 'sleep') as sleep:
+            self.assertEqual(workspace.tree_usage(first.parent, maximum=64, max_files=2,
+                allow_transient_absence=True, allow_transient_hardlinks=True), 8)
+        self.assertEqual(len(reads), 2)
+        sleep.assert_called_once_with(0.005)
+        self.assertEqual(first.lstat().st_nlink, 1)
+
+    def test_live_link_recheck_preserves_larger_first_observation(self):
+        first, reads, observed, scanned = self.settling_link_fixture(lambda path: path.write_bytes(b'tiny'))
+        with mock.patch.object(Path, 'lstat', observed), mock.patch.object(workspace.os, 'scandir', scanned), \
+             mock.patch.object(workspace.time, 'sleep'):
+            self.assertEqual(workspace.tree_usage(first.parent, maximum=64, max_files=2,
+                allow_transient_absence=True, allow_transient_hardlinks=True), 8)
+        self.assertEqual(len(reads), 2)
+        self.assertEqual(first.stat().st_size, 4)
+
+    def test_live_link_recheck_refuses_persistent_outside_alias_with_bounded_diagnostic(self):
+        outside = self.root / 'outside.txt'
+        outside.write_bytes(b'preserve')
+        member = self.roots['scratch'] / 'alias.txt'
+        os.link(outside, member)
+        with mock.patch.object(workspace.time, 'sleep') as sleep:
+            with self.assertRaisesRegex(workspace.WorkspaceRefused, 'hardlink outside') as failure:
+                workspace.tree_usage(member.parent, maximum=64, max_files=2,
+                    allow_transient_absence=True, allow_transient_hardlinks=True)
+        sleep.assert_called_once_with(0.005)
+        self.assertIn('alias.txt', str(failure.exception))
+        self.assertIn('observed_counts', str(failure.exception))
+        self.assertNotIn(str(outside), str(failure.exception))
+        self.assertEqual(outside.read_bytes(), b'preserve')
+
+    def test_link_set_without_both_live_flags_refuses_without_recheck(self):
+        outside = self.root / 'outside.txt'
+        outside.write_bytes(b'preserve')
+        os.link(outside, self.roots['scratch'] / 'alias.txt')
+        with mock.patch.object(workspace.time, 'sleep') as sleep:
+            for flags in ({}, {'allow_transient_absence': True}, {'allow_transient_hardlinks': True}):
+                with self.assertRaises(workspace.WorkspaceRefused):
+                    workspace.tree_usage(self.roots['scratch'], maximum=64, max_files=2, **flags)
+        sleep.assert_not_called()
+
+    def test_live_link_recheck_does_not_hide_growth_or_file_count(self):
+        for count_limit in (False, True):
+            with self.subTest(count_limit=count_limit):
+                def changed(path):
+                    if count_limit:
+                        (path.parent / 'new.txt').write_bytes(b'new')
+                    else:
+                        path.write_bytes(b'larger-than-eight')
+                first, reads, observed, scanned = self.settling_link_fixture()
+                with mock.patch.object(Path, 'lstat', observed), mock.patch.object(workspace.os, 'scandir', scanned), \
+                     mock.patch.object(workspace.time, 'sleep', side_effect=lambda delay: changed(first)) as sleep:
+                    with self.assertRaisesRegex(workspace.WorkspaceRefused, 'size/file threshold'):
+                        workspace.tree_usage(first.parent, maximum=64 if count_limit else 8,
+                            max_files=1 if count_limit else 2,
+                            allow_transient_absence=True, allow_transient_hardlinks=True)
+                self.assertEqual(len(reads), 2)
+                sleep.assert_called_once_with(0.005)
+                for path in first.parent.iterdir():
+                    path.unlink()
+
+    def test_live_link_recheck_does_not_hide_unavailable_metadata(self):
+        def unavailable(path):
+            raise PermissionError('fixture metadata unavailable')
+        first, reads, observed, scanned = self.settling_link_fixture(unavailable)
+        with mock.patch.object(Path, 'lstat', observed), mock.patch.object(workspace.os, 'scandir', scanned), \
+             mock.patch.object(workspace.time, 'sleep') as sleep:
+            with self.assertRaisesRegex(PermissionError, 'metadata unavailable'):
+                workspace.tree_usage(first.parent, maximum=64, max_files=2,
+                    allow_transient_absence=True, allow_transient_hardlinks=True)
+        self.assertEqual(len(reads), 2)
+        sleep.assert_called_once_with(0.005)
+
+    def test_live_link_recheck_does_not_hide_redirection(self):
+        first, reads, observed, scanned = self.settling_link_fixture()
+        def redirected(path, *args, **kwargs):
+            info = observed(path, *args, **kwargs)
+            if path == first and len(reads) == 2:
+                return SimpleNamespace(st_mode=info.st_mode, st_nlink=info.st_nlink, st_file_attributes=0x400)
+            return info
+        with mock.patch.object(Path, 'lstat', redirected), mock.patch.object(workspace.os, 'scandir', scanned), \
+             mock.patch.object(workspace.time, 'sleep') as sleep:
+            with self.assertRaisesRegex(workspace.WorkspaceRefused, 'linked job member'):
+                workspace.tree_usage(first.parent, maximum=64, max_files=2,
+                    allow_transient_absence=True, allow_transient_hardlinks=True)
+        self.assertEqual(len(reads), 2)
+        sleep.assert_called_once_with(0.005)
 
     def test_usage_scan_tolerates_disappearing_owned_scratch_entries(self):
         scratch = self.roots['scratch']

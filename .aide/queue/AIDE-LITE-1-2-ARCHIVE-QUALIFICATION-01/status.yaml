@@ -2,11 +2,11 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
 status: running
 result: PENDING
-planning_state: dev_checkpoint_synced_remaining_compatibility_preparation
+planning_state: live_link_amendment_accepted_source_effect_preparation
 product_qualified: false
-local_jobs_consumed: 10
+local_jobs_consumed: 12
 hosted_runs_consumed: 0
-next_action: Review two remaining local groups for eighteen additive forms and actual published predecessor; keep hosted profiles, release replay, main promotion and publication separate.
+next_action: Review the exact bounded shared-owner correction and regression/export effect. Preserve original candidates and passing results; revised build, affected consumers, hosted profiles, replay and promotion remain separately gated.
 qualified_source_checkpoint: cb2ddcaf837e2604f34f11211447c551cc85b29b
 canonical_job: 6355e80d38804f89aa9a83fd743be7e1
 canonical_tests_passed: 12
@@ -22,3 +22,10 @@ consumer_retained_files: 198
 dev_checkpoint: d256a6010183a4b6d70b98071a6e534f5624760d
 dev_synced_remote: true
 main_checkpoint: ed4a90046eba12a717a9962f21523285667a669b
+remaining_checkpoint: 9ee1880e553e692ad697e0e8699b29439c47317e
+additive_forms_passed: 18
+public_forms_mapped: 56
+predecessor_scenarios_passed: 1
+predecessor_scenarios_incomplete: 1
+predecessor_interrupted_job: 87be5e52947547d4b7cd06e46b493ab6
+predecessor_interrupted_retired: true

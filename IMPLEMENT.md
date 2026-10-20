@@ -1,5 +1,9 @@
 # AIDE Implementation Log
 
+### Lite 1.2 interrupted predecessor and live-scan repair preparation — 21 October 2026
+
+Accepted checkpoint `9ee1880e` passed eighteen additive forms, and all 56 primary forms map to current evidence. The fresh published-predecessor scenario passed; brownfield stopped at a live hardlink refusal. Both attempts retired quiescently with absent scratch and released reservations; all 155 retained files and the stopped outcome are preserved. Independent review accepted preparation of one bounded shared-owner re-observation, an additional owned export/candidate build and dependency-based evidence reuse. All 75 original test method bodies are preserved alongside seven new regressions. The original incident's exact cause remains unproven. Twelve of sixteen amended allocations and one of two export refreshes are consumed; no new execution or revised archive has occurred.
+
 ### Release contract delivered - 21 October 2026
 
 Accepted contract/export closeout reached local/tracking/remote `dev` and `main` at `ed4a9004`; all 116 operations and 232 streams verified. The original allocation remains FAIL, twenty methods remain passing, and zero-job reconciliation remains distinct. The owned local task branch was retired; historical assets and other refs were preserved. [Next archive phase](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md) has branch-only admission and an independently accepted narrow canonical-output preparation amendment. Four regressions and one bounded regression/export group are prepared before the existing-owner build; no test execution, production 1.2 asset or new release is claimed.
