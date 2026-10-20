@@ -1,0 +1,14 @@
+{
+  "status": "PASS_STRUCTURAL_CORRECTION",
+  "base": "c25f16519c0991676c72c2ac41e77852e77b11ad",
+  "production_bytes_unchanged": true,
+  "test_bodies_preserved": 82,
+  "fixture_change": "iteration plus context-manager protocol",
+  "original_failure_retained_files": 9,
+  "export_preimages": 879,
+  "stable_assets_unchanged": 12,
+  "job_inputs": 1092,
+  "job_preflight": "PASS",
+  "runtime_checks_run": 0,
+  "new_allocations": 0
+}

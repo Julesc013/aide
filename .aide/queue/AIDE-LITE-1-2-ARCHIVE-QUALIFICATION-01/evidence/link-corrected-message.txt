@@ -1,0 +1,12 @@
+test(execution): correct the live-scan fixture iterator
+
+- Preserve the original failed probe and its complete retired collection; it reached no corrected checks or export.
+- Supply both scandir iteration and context protocols; retain all 82 test bodies and the unchanged production repair.
+- Prepare one exact corrected regression/export attempt, counting all 13 consumed allocations; rebuild and release gates remain separate.
+
+Validation: PASS - unchanged production bytes, 82 test bodies, owned export and stable assets, syntax and literal job preflight; runtime checks pending
+Changelog: Fixed: correct deterministic live-scan fixture iteration without changing production behavior
+Risk: No product pass follows from the original fixture error; further failure remains terminal.
+Follow-up: Original-source race demonstration and twenty corrected-source checks before one owned export.
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+AIDE-Format: compact-v1

@@ -58,7 +58,7 @@ verification:
   maximum_local_jobs: 16
   local_config: .aide.local/lite-successor-qualification-execution.json
   maximum_seconds_per_local_job: 600
-  local_allowance: twelve consumed attempts remain counted; one exact live-scan regression/export group, one necessary revised candidate build, one affected managed-form and unfinished brownfield group, and one release replay, only when applicable and separately reviewed
+  local_allowance: thirteen consumed attempts remain counted; one corrected live-scan regression/export group, one necessary revised candidate build, then one separately reviewed affected managed-form and unfinished brownfield group combined with final release replay after hosted evidence, only when applicable and within the unchanged per-job bound
   maximum_hosted_workflow_runs: 1
   hosted_jobs: 3 exact declared modern profiles
   maximum_minutes_per_hosted_job: 10

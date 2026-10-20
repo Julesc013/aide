@@ -1,7 +1,6 @@
 from __future__ import annotations
 import hashlib
 import argparse
-from contextlib import contextmanager
 import importlib.util
 import json
 import os
@@ -1118,10 +1117,17 @@ class ManagedWorkspaceTests(unittest.TestCase):
                 staging.unlink()  # A real legal link retirement after metadata observation.
             return info
 
-        @contextmanager
         def ordered(path):
             with original_scan(path) as entries:
-                yield iter(sorted(entries, key=lambda item: item.name))
+                ordered_entries = sorted(entries, key=lambda item: item.name)
+            class Scan:
+                def __enter__(self):
+                    return self
+                def __exit__(self, *errors):
+                    return False
+                def __iter__(self):
+                    return iter(ordered_entries)
+            return Scan()
 
         return first, reads, interleaved, ordered
 

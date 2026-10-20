@@ -1,0 +1,40 @@
+{
+  "state": "FAIL_TEST_FIXTURE_PROTOCOL_BEFORE_REGRESSIONS_OR_EXPORT",
+  "job_id": "dc5aeb3848c24e929a4e017816a00158",
+  "source": "c25f16519c0991676c72c2ac41e77852e77b11ad",
+  "result": {
+    "exit_code": 1,
+    "reason": "exited",
+    "quiescent": true,
+    "bytes": 1206,
+    "io_errors": [],
+    "job_id": "dc5aeb3848c24e929a4e017816a00158",
+    "pid": 6212,
+    "creation_filetime": 134369831407942842
+  },
+  "original_probe": {
+    "errors": [
+      [
+        "link_workspace_regressions.ManagedWorkspaceTests.test_live_link_retirement_rechecks_once_and_accepts_settled_member",
+        "Traceback (most recent call last):\n  File \"D:\\Projects\\AIDE\\aide\\.aide\\scripts\\tests\\test_managed_workspace.py\", line 1132, in test_live_link_retirement_rechecks_once_and_accepts_settled_member\n    self.assertEqual(workspace.tree_usage(first.parent, maximum=64, max_files=2,\n                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        allow_transient_absence=True, allow_transient_hardlinks=True), 8)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<original-live-scan>\", line 571, in tree_usage\nTypeError: '_GeneratorContextManager' object is not iterable\n"
+      ]
+    ],
+    "failures": [],
+    "skips": [],
+    "stream_sha256": "0aacea53abc3f13927698bcb0e182771abfcfc159b3a0a5ac7ef723b105d4956",
+    "successful": false,
+    "tests_run": 1
+  },
+  "retained_files": 9,
+  "collected_manifest": {
+    "output": "d08ffcc5378f85f7d641d453e4066f7ae20aef88566baec68a75f26c192ab8f5",
+    "logs": "507a7410c7798b92d6d8548dc7e2a75d88a6ac86b787890fca191ce6d3065485"
+  },
+  "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained\\dc5aeb3848c24e929a4e017816a00158",
+  "scratch_absent": true,
+  "reservation_released": true,
+  "corrected_checks_run": 0,
+  "export_refreshed": false,
+  "local_jobs_consumed": 13,
+  "meaning": "The new fixture supplied only a context manager; the original scanner also requires an iterable. No product or original incident verdict follows."
+}

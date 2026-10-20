@@ -1,0 +1,28 @@
+{
+  "schema": "aide.exact-source-map.v1",
+  "workunit": "AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01",
+  "base": "c25f16519c0991676c72c2ac41e77852e77b11ad",
+  "effect_sha256": "d87aedabafc7b4a2dd80f1be2196072343f4d14ae22f2881467d8397036271a8",
+  "files": {
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md": "f8cd0fa7b46847154353d5106ef549b1a3c3883813d5b88df2d4e1c84b867a8d",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml": "9f93730fe04540ac0bfbfb02c469aac59f1e8f788e699937532404a0d0103cb0",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md": "ddb78c909e4b06e0046aa9b7337bd98356a2ec141ddff863a38c84defad94155",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md": "851515f3397cef5ee38e672f69601f60dabce5c84a96084d7c412e839cf9f5a7",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/collect_link_attempt.py": "297fb48762fc0e40f7241c5ddeeacfd496a6bebf56d0e3d37e7c25e362c0b8fb",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/commit_and_repair_scan_corrected.py": "0c3fdf57b2a966120614250b2b5322c5ed72fdb3b69b2b3c9c6db2c0d5509fb9",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/link-corrected-effect.json": "d87aedabafc7b4a2dd80f1be2196072343f4d14ae22f2881467d8397036271a8",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/link-corrected-job-template.json": "92fb573617ddf0bae355b647ad7253ba2fa21f2c76bf5198b4076d6537c0f9b6",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/link-corrected-message.txt": "971062ef7209427976996d7afd08c73f00dc4cc2d2f9fd9056516c52676939bd",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/link-corrected-prechecks.json": "7e8fd128fe7367002c9383620e9f1c21663e9baa41729da65f0edaba6cb6a7c9",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/link-initial-result.json": "f600cd0a3626724217370d52d5db64e2519468a3ead843e9605814b1262510b0",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/link-initial-retained.json": "7ab3cb785e64f03c60abc7c475690beae7648200ab67d030f32edf3f4865211b",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/link-initial-source-execution.json": "c6f876e42d5d2071f618ea3ff04fa0ba6bed084bd8c3eb75ece30bf86797ce83",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/prepare_link_correction.py": "5638560e3341f583c0f171ba3cc9d7b49bf07fd55ea51853787a9d8ff10d503c",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/status.yaml": "19d645e6677e6ff789d440f2edde5df1dfecf9afc98e700a38aa96c3cb7038db",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/task.yaml": "4db53b895c7d9f53b56e0c1f17df892a7ce6d66b54d428d459c996cabb95224d",
+    ".aide/scripts/tests/test_managed_workspace.py": "bb1e8e3b819b985413d106ed69b42e5a653640be620601673c70f59945eb7c38",
+    "IMPLEMENT.md": "60f5e481d81bbbc822e49293702bb9c4a427ca5cee61f4cdf481f81f46662d6a",
+    "PLANS.md": "d9dc603cb4b2f9f95c715e5f18926405f1d3ef46bdf5c667136b45b16c2fc057"
+  },
+  "qualification_state": "Corrected fixture prepared; exact runtime and export effects pending."
+}

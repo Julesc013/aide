@@ -2,11 +2,11 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
 status: running
 result: PENDING
-planning_state: live_link_amendment_accepted_source_effect_preparation
+planning_state: live_link_fixture_correction_exact_review_preparation
 product_qualified: false
-local_jobs_consumed: 12
+local_jobs_consumed: 13
 hosted_runs_consumed: 0
-next_action: Review the exact bounded shared-owner correction and regression/export effect. Preserve original candidates and passing results; revised build, affected consumers, hosted profiles, replay and promotion remain separately gated.
+next_action: Review the corrected iterator fixture and one regression/export effect; production repair is unchanged. Preserve the failed initial probe; revised build, hosted evidence, combined affected-consumer/replay group and promotion remain separately gated within the sixteen-attempt ceiling.
 qualified_source_checkpoint: cb2ddcaf837e2604f34f11211447c551cc85b29b
 canonical_job: 6355e80d38804f89aa9a83fd743be7e1
 canonical_tests_passed: 12
@@ -29,3 +29,7 @@ predecessor_scenarios_passed: 1
 predecessor_scenarios_incomplete: 1
 predecessor_interrupted_job: 87be5e52947547d4b7cd06e46b493ab6
 predecessor_interrupted_retired: true
+link_repair_checkpoint: c25f16519c0991676c72c2ac41e77852e77b11ad
+link_initial_job: dc5aeb3848c24e929a4e017816a00158
+link_initial_result: FAIL_TEST_FIXTURE_PROTOCOL_BEFORE_REGRESSIONS_OR_EXPORT
+link_initial_retired: true
