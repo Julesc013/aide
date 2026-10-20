@@ -1,4 +1,4 @@
-"""Exact reviewed source commit, then one existing managed local allocation."""
+"""Exact reviewed refreshed-pack checkpoint, then one versioned archive build."""
 from pathlib import Path
 import hashlib
 import importlib.util
@@ -24,20 +24,20 @@ def git(*args):
 
 
 def main():
-    source = EVIDENCE / "source.json"
-    effect = EVIDENCE / "source-effect.json"
+    source = EVIDENCE / "build-source.json"
+    effect = EVIDENCE / "build-effect.json"
     assert len(sys.argv) == 3 and [sha(source), sha(effect)] == sys.argv[1:]
     mapped = json.loads(source.read_bytes())
     plan = json.loads(effect.read_bytes())
     assert mapped["effect_sha256"] == sha(effect)
-    verdict = json.loads((EVIDENCE / "source-review.json").read_bytes())
+    verdict = json.loads((EVIDENCE / "build-review.json").read_bytes())
     assert verdict["decision"] == "ACCEPT" and not verdict["required_fixes"]
     assert verdict["reviewer"] == "/root/review_disked_continuation"
     assert verdict["source_sha256"] == sha(source) and verdict["effect_sha256"] == sha(effect)
     assert verdict["controller_sha256"] == sha(Path(__file__))
     allowed = set(mapped["files"]) | {source.relative_to(ROOT).as_posix(),
-                                     (EVIDENCE / "source-review.json").relative_to(ROOT).as_posix()}
-    outcome_path = EVIDENCE / "source-execution.log"
+                                     (EVIDENCE / "build-review.json").relative_to(ROOT).as_posix()}
+    outcome_path = EVIDENCE / "build-execution.log"
     with outcome_path.open("x", encoding="utf-8") as stream:
         stream.write("{}\n")
     outcome = {"state": "started"}
@@ -79,8 +79,8 @@ def main():
             for name in allowed:
                 assert git("hash-object", "--no-filters", "--", name) == git("rev-parse", ":" + name), name
             tree = git("write-tree")
-            message = (EVIDENCE / "source-message.txt").read_bytes()
-            commit = create_commit(ROOT, message=message, expected_message_sha256=sha(EVIDENCE / "source-message.txt"),
+            message = (EVIDENCE / "build-message.txt").read_bytes()
+            commit = create_commit(ROOT, message=message, expected_message_sha256=sha(EVIDENCE / "build-message.txt"),
                                    expected_ref="refs/heads/" + plan["task_branch"], expected_head=plan["base"],
                                    expected_tree=tree, allowed_paths=sorted(allowed), apply=True,
                                    validator=lambda text: [c.message for c in lite.validate_commit_message_text(text) if c.severity == "FAIL"])

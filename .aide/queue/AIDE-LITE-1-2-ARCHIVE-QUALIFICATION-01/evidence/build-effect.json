@@ -1,0 +1,35 @@
+{
+  "base": "cb2ddcaf837e2604f34f11211447c551cc85b29b",
+  "integration_base": "ed4a90046eba12a717a9962f21523285667a669b",
+  "task_branch": "task/aide-lite-1-2-archive-qualification-01",
+  "origin_url": "https://github.com/Julesc013/aide.git",
+  "controller_sha256": "19438bc14e13123fb54264da44ef1c093669379df0fa3ec923aed5fb43950b6e",
+  "control_config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "qualification_config": ".aide.local/lite-successor-qualification-execution.json",
+  "qualification_config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "maximum_local_allocations": 1,
+  "maximum_hosted_runs": 0,
+  "live_model_requests": 0,
+  "effects": [
+    "One exact task checkpoint commits the reviewed four refreshed export paths, custody result and build-stage preparation; no portable source input changed after the completed export refresh.",
+    "One existing managed 600-second allocation runs stable-build then stable-validate for version1.2.0, each subprocess at most240seconds.",
+    "Only four new stable1.2 assets may be written; preserve all58 release preimages,879packmembers and eight historical stable assets. Collect all streams and retire.",
+    "No automatic retry or additional export regeneration. One of thirteen local allocations already consumed; this effect permits only the versioned build group."
+  ],
+  "forbidden": [
+    "archive consumer or hosted execution, dev/main integration, push, branch retirement, tag, release publication or support activation",
+    "other targets/processes, providers/model spending, new roots, reserves, config or execution privileges"
+  ],
+  "review_attestation": {
+    "path": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/build-review.json",
+    "actual_independent_accept_only": true,
+    "included_in_commit": true,
+    "binds": [
+      "source_sha256",
+      "effect_sha256",
+      "controller_sha256"
+    ]
+  },
+  "completed_custody_job": "6355e80d38804f89aa9a83fd743be7e1",
+  "qualification_state": "build-only; four candidate profiles and56forms are not operationally qualified by archive existence"
+}

@@ -19958,7 +19958,7 @@ def command_release_stable_build(args: argparse.Namespace) -> int:
     if not (args.repo_root / "core/execution/managed_workspace.py").is_file():
         print("result: REFUSED\nsource-only managed release runner required")
         return 1
-    if not source_maintainer_job_guard(args.repo_root, canonical_paths=(".aide/release",)):
+    if not source_maintainer_job_guard(args.repo_root, canonical_paths=(STABLE_RELEASE_DIR,)):
         return 1
     try:
         manifest = build_stable_release_candidate(args.repo_root, args.version)
@@ -19976,7 +19976,7 @@ def command_release_stable_validate(args: argparse.Namespace) -> int:
     if not (args.repo_root / "core/execution/managed_workspace.py").is_file():
         print("result: REFUSED\nsource-only managed release runner required")
         return 1
-    if not source_maintainer_job_guard(args.repo_root, canonical_paths=(".aide/release",)):
+    if not source_maintainer_job_guard(args.repo_root, canonical_paths=(STABLE_RELEASE_DIR,)):
         return 1
     result = validate_stable_release_candidate(args.repo_root, args.version)
     print(f"stable release candidate: {result['result']}")

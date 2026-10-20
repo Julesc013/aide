@@ -2,7 +2,7 @@
 
 ### Versioned archive qualification - 21 October 2026
 
-[AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md) is admitted for scoped preparation on its local task branch from `ed4a9004`. The approved narrow amendment first prepares one canonical-output regression/export group, followed by the existing-owner build, original delivered Windows consumers/additive forms, actual-predecessor checks and exact modern profile evidence. Each effect needs exact review; thirteen local allocations and one three-profile hosted run are finite ceilings, not automatic execution grants. No new archive, support activation or publication exists yet.
+[AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md) passed twelve canonical-output checks with no skips and its single owned 879-file export refresh at local source `cb2ddcaf`; the job retired completely. Next are the separately reviewed existing-owner build, original delivered Windows consumers/additive forms, actual-predecessor checks and exact modern profile evidence. One of thirteen local allocations is consumed; one three-profile hosted run remains available. These ceilings are not automatic execution grants. No new archive, support activation or publication exists yet.
 
 ### Multi-profile release contract - 20 October 2026
 

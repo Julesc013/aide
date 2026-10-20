@@ -1,0 +1,33 @@
+{
+  "schema": "aide.exact-source-map.v1",
+  "workunit": "AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01",
+  "base": "cb2ddcaf837e2604f34f11211447c551cc85b29b",
+  "effect_sha256": "4f75705ce07b0890e866633ffa333e1de3927f318442de1ef8c9565030a2f511",
+  "qualification_state": "build-only; four candidate profiles and56forms are not operationally qualified by archive existence",
+  "files": {
+    ".aide/export/aide-lite-pack-v0/checksums.json": "1f4367d0126e46fb2cc7a3865220099c0113066c4190deaee001960fbe0ed18a",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py": "55db5eef3c7e9e47970f6194aecb695ba19ecc512c64ad314201c6f622552a9c",
+    ".aide/export/aide-lite-pack-v0/files/core/execution/managed_workspace.py": "511670e8766d3fa3abb773951b5d7ed7c3ed81809c42a859b4414aba706d5b4f",
+    ".aide/export/aide-lite-pack-v0/manifest.yaml": "b8dbc473fc721c64ccaec9ce4b4ec7e6d7d186d0fa50316e670a8236f2f1effe",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md": "e59ffa71a5131b9ad4b57269df4b45555e5c510179a6af498605aae4be37a3ac",
+    ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml": "355c5819a07b5a2b94c4c63c325b6f67a0186c73a1b5bb9a9613009e850a3e8d",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md": "c82c209474a1ed8a8f7ed47d187bee87e1f6066c04d794c388bd181f6bb2c161",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md": "0d90ff85195111b8addc1bfe91e3c257197f9bc179734ac90efe7ab2d58b3f99",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/commit_and_build.py": "19438bc14e13123fb54264da44ef1c093669379df0fa3ec923aed5fb43950b6e",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/build-effect.json": "4f75705ce07b0890e866633ffa333e1de3927f318442de1ef8c9565030a2f511",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/build-job-template.json": "b76e5f1507c4743c6a4db3be47956b938f03cfc07e00086a42281568505acc6b",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/build-message.txt": "d0ba351cc269e8dede7770870bf07f7e79393a6165e0ff7b6909df464d091e2d",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/build-prechecks.json": "dfc1191a9cd29af74fc7665c872436af5dab9fc6a666eaf56eab072cd0dd61b1",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/canonical-job-result.json": "668cab52e0d8fd0c4614e0ff31a2b46847a9af072bca9b1feda62d2d89d32b2b",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/canonical-result.json": "ca7237bb1c5de395b5c8d4c3b0d595482d4e93ef91f11437422d60f272195ae8",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/canonical-retained-evidence.json": "1c41562dde828faaee1a5e50b0f356a9e76009474d620b3b640c05d04527d983",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/canonical-source-execution.json": "56151700e15905d568d92bde850f9adb469815154765d93738fabc11444165d5",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/canonical-tests.json": "74726fffa63c357b8d4a94ca100326e2d7b18322a7a74cf8de1ea69ddda31735",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/export-after.json": "5e4d16a26f37d7ee42bb2372d44563c1e10c5562ebbfdfed99d0a3dc695104ce",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/pack-subject.json": "c18951d7581d2f97db16890253c5a2954ea5c09f9fdaa44714cbf47a81f4249c",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/precheck_build.py": "f0ff53014e6b13997b24de7d56f751beecff8ce625ebacb2efcae0745ac71f4a",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/status.yaml": "ad7153fd6252232f04ddec5976ee3179df3fe514091e658fb7776668c2b825f8",
+    "IMPLEMENT.md": "444f0169049853b73dd2e0face3cf391ac6cea182e12509034c2748f80687f50",
+    "PLANS.md": "e687851d6b068c44ea8d1c2c28610390e06e6b538cd06e934ab2af697e8f875b"
+  }
+}

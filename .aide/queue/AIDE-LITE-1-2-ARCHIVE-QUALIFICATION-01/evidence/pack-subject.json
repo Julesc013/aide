@@ -1,6 +1,6 @@
 {
   ".aide/export/aide-lite-pack-v0/README.md": "cfe3001e84b68f7b78b249e107edf0843d2310cadfe5a3717b17ce1252d61475",
-  ".aide/export/aide-lite-pack-v0/checksums.json": "7b53ce557c453df351302c70c3692c47aab2fdfabb343def5f5694237d66396d",
+  ".aide/export/aide-lite-pack-v0/checksums.json": "1f4367d0126e46fb2cc7a3865220099c0113066c4190deaee001960fbe0ed18a",
   ".aide/export/aide-lite-pack-v0/export-report.md": "d6be0463516fc6b436fffcecd17af7df047edc5e2053102507103373390d4281",
   ".aide/export/aide-lite-pack-v0/files/.aide.local.example/README.md": "98da970092e6b9728a5dd1360a6ea231aaa3d7a10a457b398c1095f95a64dd07",
   ".aide/export/aide-lite-pack-v0/files/.aide.local.example/cache/README.md": "f6f2c26d1b1e6986d333876ab4a1aa56e32659a3479f4dac593edb56100920c8",
@@ -673,7 +673,7 @@
   ".aide/export/aide-lite-pack-v0/files/.aide/routing/examples/security-review.json": "6ba66fe193de5f0372590212f6e627d673b7e844268af49058e06d2edbf7b8f4",
   ".aide/export/aide-lite-pack-v0/files/.aide/routing/examples/self-modification.json": "67c29e75c8702e2b2a7cc8b11ea733ac94b804cbfcb0dcc1a41a3e0706f6b099",
   ".aide/export/aide-lite-pack-v0/files/.aide/routing/route-decision.schema.json": "da42bfdea1680445c6d272cbd1d3f09b394a5c8b670b15fbd014aa93520d45ea",
-  ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py": "fdf35da28f7616786201ec67a18f99246948925d55f5450fb8b79b89f7d0ce6f",
+  ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py": "55db5eef3c7e9e47970f6194aecb695ba19ecc512c64ad314201c6f622552a9c",
   ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_work_effort.py": "ba2c825d7a364ef575792b36d9f0770921779903ff5aae4869c2144d37721170",
   ".aide/export/aide-lite-pack-v0/files/.aide/scripts/outcome_lessons.py": "11881d38a11d1ba39a11c380aa02c67f91ecb7674824910db22ae10129710a6a",
   ".aide/export/aide-lite-pack-v0/files/.aide/scripts/posix_filesystem.py": "84425e7855aafe678ff10d8cfd6558fd31d44c2dd9f9579a3bef12ee487e8660",
@@ -802,7 +802,7 @@
   ".aide/export/aide-lite-pack-v0/files/core/apply/managed_commit.py": "e3ef99000a466e60ae6d56d6a77fda6501a10a195f70eb6990a97ea99e1c6dcf",
   ".aide/export/aide-lite-pack-v0/files/core/apply/managed_sections.py": "a6cda7e7ffb4e5d3d8e6567192b4a37368c0291608d345612cd14b2b55a16220",
   ".aide/export/aide-lite-pack-v0/files/core/execution/__init__.py": "511fe7cc664550fbaaacc7a0e0998a08a622428e012187ddf2c3fd86deea3bb5",
-  ".aide/export/aide-lite-pack-v0/files/core/execution/managed_workspace.py": "55f1590b37d150088c6023ccf8151adfbc350644e906c64d40b367c4884606d6",
+  ".aide/export/aide-lite-pack-v0/files/core/execution/managed_workspace.py": "511670e8766d3fa3abb773951b5d7ed7c3ed81809c42a859b4414aba706d5b4f",
   ".aide/export/aide-lite-pack-v0/files/core/execution/provider.py": "422873646685637704745e6002e3fce5ae07b046bc93399fdeb9625fcdf5701e",
   ".aide/export/aide-lite-pack-v0/files/core/execution/registered_process.py": "28d1941079003914a48e28f0f885c505147ac0966aa0e26603aba97620f7e35a",
   ".aide/export/aide-lite-pack-v0/files/core/execution/retired_evidence.py": "247ea8c72e489baed9e4d7b532962768c52ecd2167c22319c035eede56d15488",
@@ -877,5 +877,5 @@
   ".aide/export/aide-lite-pack-v0/files/docs/reference/workunit-lifecycle.md": "4817e4284197c343636c65fbfec45b5072276091a9447b961bebbcfa1e695266",
   ".aide/export/aide-lite-pack-v0/import-policy.yaml": "d1ec0ff25cd147736853e03181536480463fc58fc8db1fd39306278d89d89e13",
   ".aide/export/aide-lite-pack-v0/install.md": "3bce5e90257d5d5c3b25ae00d6a8e47b693c8b944bbcf1340b49c5646170ea2f",
-  ".aide/export/aide-lite-pack-v0/manifest.yaml": "9ffb8484c2da4091c2a558b3a0d2a40112a842d662768e097a371f38e1c63ddd"
+  ".aide/export/aide-lite-pack-v0/manifest.yaml": "b8dbc473fc721c64ccaec9ce4b4ec7e6d7d186d0fa50316e670a8236f2f1effe"
 }

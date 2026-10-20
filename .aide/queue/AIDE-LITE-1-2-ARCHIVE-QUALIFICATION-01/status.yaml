@@ -2,8 +2,13 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
 status: running
 result: PENDING
-planning_state: canonical_output_source_preflight_pass_exact_review_pending
+planning_state: twelve_custody_checks_and_owned_export_pass_build_preparation
 product_qualified: false
-local_jobs_consumed: 0
+local_jobs_consumed: 1
 hosted_runs_consumed: 0
-next_action: Independently review exact source.json, source-effect.json and commit_and_observe.py before one twelve-method regression/export group; no archive build or further effects.
+next_action: Independently review the refreshed-pack checkpoint and one existing-owner versioned archive build; delivered consumers, hosted qualification and publication remain pending.
+qualified_source_checkpoint: cb2ddcaf837e2604f34f11211447c551cc85b29b
+canonical_job: 6355e80d38804f89aa9a83fd743be7e1
+canonical_tests_passed: 12
+canonical_test_skips: 0
+export_refreshes_consumed: 1

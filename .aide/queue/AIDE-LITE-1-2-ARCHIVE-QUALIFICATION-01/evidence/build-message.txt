@@ -1,0 +1,12 @@
+build(lite): checkpoint qualified export for 1.2 archives
+
+- Retain twelve passing canonical-custody checks and one completed owned export refresh from source cb2ddcaf, preserving all original tests and historical release assets.
+- Checkpoint the four derived export changes and lossless managed-job evidence before one separately reviewed existing-owner versioned build.
+- Bind fresh pack/source inputs, unchanged limits, exact predecessor and four candidate environment profiles; preserve the original source and build-draft records.
+
+Validation: PASS - twelve selected managed-workspace methods, zero skips, export checksums/boundary, original-method preservation and collected output/log digests; build-prechecks.json records read-only checks. Actual archive build and delivered qualification remain pending.
+Changelog: Changed: Refresh the portable payload with qualified stable-output custody; no new published release or activated support profile.
+Risk: Candidate declarations are not operational qualification. Outer-client containment and complete model usage remain unqualified or unknown.
+Follow-up: Build and validate four versioned assets once, then qualify actual archive bytes and declared public forms before integration/publication.
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+AIDE-Format: compact-v1

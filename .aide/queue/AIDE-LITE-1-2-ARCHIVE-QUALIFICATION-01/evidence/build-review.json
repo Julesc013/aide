@@ -1,0 +1,18 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "00d5d2ebab56f91747bdb28b149a6c5b04d42df2b025946903361c47f49ba155",
+  "effect_sha256": "4f75705ce07b0890e866633ffa333e1de3927f318442de1ef8c9565030a2f511",
+  "controller_sha256": "19438bc14e13123fb54264da44ef1c093669379df0fa3ec923aed5fb43950b6e",
+  "required_fixes": [],
+  "reasons": [
+    "Verified 24 mapped paths, exact dirty set, Git filter identities and 1961 input pins.",
+    "Retained collections and complete 13-file bundle match; test stream confirms12unique passes without skips.",
+    "879packmembers and58releasepreimages match; no portable-source changes after refresh."
+  ],
+  "limitations": [
+    "Archive creation establishes build evidence only; profiles and public forms remain operationally unqualified.",
+    "Only one600second stable-build/stable-validate allocation,240seconds each; fournew1.2assets only. No retry, consumer/hosted execution, integration or publication."
+  ],
+  "reviewer_executed_tests": false
+}
