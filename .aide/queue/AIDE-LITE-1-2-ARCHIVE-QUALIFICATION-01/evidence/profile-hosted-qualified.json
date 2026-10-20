@@ -1,0 +1,1526 @@
+{
+  "state": "WINDOWS_LINUX_PASS_MACOS_RETAINED_SEPARATELY",
+  "source_commit": "52ddd31908ac96b3e891933a066936e72c90b137",
+  "run_id": 39462430710,
+  "run_url": "https://github.com/Julesc013/aide/actions/runs/39462430710",
+  "qualification_pass": true,
+  "profiles": {
+    "windows-2025-x64": {
+      "status": "PASS",
+      "qualification_pass": true,
+      "environment": {
+        "machine": "AMD64",
+        "release": "2025Server",
+        "runtime": {
+          "implementation": "CPython",
+          "version": "3.14.8"
+        },
+        "system": "Windows",
+        "version": "10.0.26100"
+      },
+      "declared_environment": {
+        "machine": "AMD64",
+        "release": "2025Server",
+        "runtime": {
+          "implementation": "CPython",
+          "version": "3.14.8"
+        },
+        "system": "Windows",
+        "version": "10.0.26100"
+      },
+      "receipt_bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/profile-hosted-windows-2025-x64-retained.json",
+      "receipt_bundle_sha256": "a80a8f6aadd4d88397fcdefc20f85abaf941a833c8c9242d3c39a0fcc834ab18",
+      "retained_files": 309,
+      "receipt_index_sha256": "195c6560262be33c0233f79d75ba3171a794f153ece98aaa511ac4a447ac2016",
+      "forms": [
+        {
+          "argv": [
+            "doctor"
+          ],
+          "exit_code": 0,
+          "form": "doctor",
+          "member": "ordinary-doctor.json",
+          "sha256": "04e5cef4a45f1f62f5af139fa0d1e39060522b8fc740372d7ee5a98c7cbbeb00"
+        },
+        {
+          "argv": [
+            "validate"
+          ],
+          "exit_code": 0,
+          "form": "validate",
+          "member": "ordinary-validate.json",
+          "sha256": "9216448ce9f065f082d9f9b8f59a593dff90b2975ea12c56aca59cac6f0efe35"
+        },
+        {
+          "argv": [
+            "context"
+          ],
+          "exit_code": 0,
+          "form": "context",
+          "member": "ordinary-context.json",
+          "sha256": "dbf315fb0d5152d52a2dbbb7b0adfc3a68e97dddc6d613ba0f913fffee6a4f72"
+        },
+        {
+          "argv": [
+            "pack",
+            "--task",
+            "Inspect a disposable target"
+          ],
+          "exit_code": 0,
+          "form": "pack --task <task>",
+          "member": "ordinary-pack.json",
+          "sha256": "8ac6a73ae2b17f430d30ff530761212ea28ea1af434f16ee16a6fc107b29d8a7"
+        },
+        {
+          "argv": [
+            "verify",
+            "--evidence",
+            ".aide\\queue\\LOCAL-CONTEXT-CANARY-01\\evidence\\validation.md"
+          ],
+          "exit_code": 0,
+          "form": "verify --evidence <evidence-path>",
+          "member": "ordinary-verify.json",
+          "sha256": "13ad0c616eb0767cb6ce4e41f049fb6609c3b120ecab2c51890634878d126861"
+        },
+        {
+          "argv": [
+            "task",
+            "inspect"
+          ],
+          "exit_code": 1,
+          "form": "task inspect",
+          "member": "ordinary-task-inspect.json",
+          "sha256": "d147952eb47630ac0eeaa53d6a5babd960ac3930a189790de3cd11332c761abe"
+        },
+        {
+          "argv": [
+            "task",
+            "status"
+          ],
+          "exit_code": 0,
+          "form": "task status",
+          "member": "ordinary-task-status.json",
+          "sha256": "4b74a9d9cf136dba6a8a30eb01a1c16ce48f5cd5ba2ad643cccd3e20014aca92"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\form-target",
+            "--mode",
+            "safe",
+            "--dry-run"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+          "member": "forms-fresh-plain.json",
+          "sha256": "f553e2329244941446cb22f04d5600ec2ba760eba5a95f8792e6590928d2372f"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\form-target",
+            "--mode",
+            "safe",
+            "--expect-plan",
+            "97f56c8a5456aa777b2aeb50285cb2c745a0e13b2d50a7cb8880b72a312d9604"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+          "member": "forms-install-apply.json",
+          "sha256": "2b63e67d95348118b3cc1de44ac2c8140c558fb6bd4f8e27742c7998e32587b8"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\synthetic-v2",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--dry-run"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+          "member": "forms-update-plain.json",
+          "sha256": "75ce16c410ad366f10e3ca511e79ea71ac9e45cfab66a1b0061dac8a0e672724"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\synthetic-v2",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--expect-plan",
+            "2a572413f23ea3f6fc8c3712025d1432bfc3ce8d500347b6c92486560fd6b817"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+          "member": "forms-update-apply.json",
+          "sha256": "5e38769cd567ff4525dcc3ec90cc3b6cc40447e5722da691d5437d6d92f05c1d"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\synthetic-v3",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\synthetic-v2",
+            "--resolve",
+            ".aide/prompts/compact-task.md",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\selected-resolution.txt",
+            "--dry-run"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+          "member": "forms-resolved-plain.json",
+          "sha256": "14e59c730feea7768ade54e32470594e4705877bbc42c478c73d00cc9dfff3ea"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\synthetic-v3",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\synthetic-v2",
+            "--resolve",
+            ".aide/prompts/compact-task.md",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\selected-resolution.txt",
+            "--expect-plan",
+            "c7cb53fafab070d707dd3ae44f7dc4cc82160a921212998961466d740e26ee9f"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+          "member": "forms-resolved-apply.json",
+          "sha256": "af1c2fd8a729ea16097bfb99e663766b41af7e2abed847b988d803a348b61278"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\form-target",
+            "--mode",
+            "safe",
+            "--dry-run",
+            "--explain"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+          "member": "forms-fresh-explain.json",
+          "sha256": "60f584ef3b0c290200cadf57e1ae0de1cdc5c16df95ce24478b8952456a00288"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\synthetic-v2",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--dry-run",
+            "--explain"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+          "member": "forms-update-explain.json",
+          "sha256": "fe55e2a0014ce8da1b8297ba703ca83f6c38b0f49529d267a9d1b0d803a29d96"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\synthetic-v3",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\synthetic-v2",
+            "--resolve",
+            ".aide/prompts/compact-task.md",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\selected-resolution.txt",
+            "--dry-run",
+            "--explain"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+          "member": "forms-resolved-explain.json",
+          "sha256": "1fa148a69c4d48512f20f74660f279b43a17d48bbe3677b16a1363ed85d35a13"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\form-target",
+            "--mode",
+            "safe",
+            "--dry-run",
+            "--explain",
+            "--feedback-out",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\forms-fresh-feedback.json"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+          "member": "forms-fresh-feedback.json",
+          "sha256": "17ed7fdfbf8c443facb5a65a9106ed658412d347863c0fc95f7fab67669e1976"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\synthetic-v2",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--dry-run",
+            "--explain",
+            "--feedback-out",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\forms-update-feedback.json"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+          "member": "forms-update-feedback.json",
+          "sha256": "be510ca1bea215e884b2a170c2ab983bdb61d3672135e741476e16cfe9d9ebb9"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\synthetic-v3",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\synthetic-v2",
+            "--resolve",
+            ".aide/prompts/compact-task.md",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\selected-resolution.txt",
+            "--dry-run",
+            "--explain",
+            "--feedback-out",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\forms-resolved-feedback.json"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+          "member": "forms-resolved-feedback.json",
+          "sha256": "50ee5faa2919780743cda2c21ff890cb1630de02b8f5f6f737d93807bb83082d"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\fresh-partial-target",
+            "--mode",
+            "safe",
+            "--recover-partial",
+            "--expect-plan",
+            "5902c69e2341d278f73e037a54e11d493fabc8866a3ca6a6593a44440e6d3666"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+          "member": "fresh-partial-exact-recovery.json",
+          "sha256": "c5594cebfe61a070c722078b1df0bd622b1645cd19564940a659e9d6ed011433"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--from-pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.1.0\\aide-lite-pack-v0",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\published-upgrade-fresh",
+            "--mode",
+            "safe",
+            "--recover-partial",
+            "--expect-plan",
+            "b49f12f42a73b6c78f3c88a29aa0283be6accd32dfd2b87a8c18be6998b427e1"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+          "member": "published-upgrade-fresh-exact-recovery.json",
+          "sha256": "a985dd63b97676022645d8e8232216576233dce64f798c8f3bcacf0ec7f5afbd"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--from-pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.1.0\\aide-lite-pack-v0",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\published-upgrade-brownfield",
+            "--mode",
+            "safe",
+            "--resolve",
+            ".aide/scripts/aide_lite.py",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\resolved-cli.py",
+            "--recover-partial",
+            "--expect-plan",
+            "71c934c7886a2a3f5271647f108929ef4a5b72fe93ff9e18279a83fc6812fde6"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+          "member": "published-upgrade-brownfield-exact-recovery.json",
+          "sha256": "f0e562ac4a30d9b1cf1283fcff0e3362a3bef2c0a3902de2584c22bbcbe71475"
+        },
+        {
+          "argv": [
+            "rollback-pack",
+            "--current-pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\synthetic-rollback-v2",
+            "--previous-pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\rollback-brownfield",
+            "--dry-run",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+          "member": "rollback-preview.json",
+          "sha256": "0905d7f6c4b60f3b2004474b01a3ccdea3aaa380265bbaa744e55e61bfe835eb"
+        },
+        {
+          "argv": [
+            "rollback-pack",
+            "--current-pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\synthetic-rollback-v2",
+            "--previous-pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\rollback-brownfield",
+            "--expect-plan",
+            "b5b29c3d363ad26b0658df05d3bf8ef2c7bc633bb56d3669eac225d1da02aa0c",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+          "member": "rollback-apply.json",
+          "sha256": "0e173bd90e75262749b0b540213c3f70e110c11485246af5f7e9e37c7cf6007b"
+        },
+        {
+          "argv": [
+            "plan-removal",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\repair-target",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "plan-removal --target <target>",
+          "member": "forms-removal-preview.json",
+          "sha256": "0d6dec495325efd1dfee1cf6fe27037335048e0d0e36c4ede22087e4ad3e5d88"
+        },
+        {
+          "argv": [
+            "apply-removal",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\repair-target",
+            "--expect-plan",
+            "fc70aa3f107110711b8b637be6bb70a388a9a13b16a964af5e8abe07b6069842",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "apply-removal --target <target> --expect-plan <digest>",
+          "member": "forms-removal-apply.json",
+          "sha256": "49381ce820293e3de0845ceaafcee003e73882f05a04cf804b2af0cabf2d3104"
+        },
+        {
+          "argv": [
+            "repair-owned-file",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\repair-target",
+            "--path",
+            ".aide/prompts/compact-task.md",
+            "--dry-run"
+          ],
+          "exit_code": 0,
+          "form": "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+          "member": "forms-repair-preview.json",
+          "sha256": "021dcb600a74681c1ab21ead4686d6b5c47ca94f3983982d85e22857abeb692a"
+        },
+        {
+          "argv": [
+            "repair-owned-file",
+            "--pack",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\zip-1.2.0\\aide-lite-pack-v0",
+            "--target",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\repair-target",
+            "--path",
+            ".aide/prompts/compact-task.md",
+            "--expect-plan",
+            "b286389c838c09c9df9da6a0b5f47d4262bfd395cfe1d6f23edd827426ae288b"
+          ],
+          "exit_code": 0,
+          "form": "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+          "member": "forms-repair-apply.json",
+          "sha256": "a31e1981804c7d29df853cdb38a94b5018607c995f3e6f928f6e89bf591c5e03"
+        },
+        {
+          "argv": [
+            "job",
+            "usage",
+            "--stream",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\case-additions\\synthetic-parent.jsonl",
+            "--stream",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\case-additions\\synthetic-parent.jsonl"
+          ],
+          "exit_code": 0,
+          "form": "job usage --stream <codex-exec-jsonl>",
+          "member": "ordinary-job-usage.json",
+          "sha256": "9c21a6d850d475b09077e5cfc8cf082b63caa3bd5fd068dfe71dfed1dc55d312"
+        },
+        {
+          "argv": [
+            "job",
+            "usage",
+            "--attempt-set",
+            "D:\\a\\_temp\\case-release-7ne1qutg\\case-additions\\synthetic-attempt-roster.json"
+          ],
+          "exit_code": 2,
+          "form": "job usage --attempt-set <attempt-roster-json>",
+          "member": "ordinary-job-attempts.json",
+          "sha256": "676e412502d0da73e856aff5c4c60076b8f5aad95e2faf2ce15ce65eba61611b"
+        },
+        {
+          "argv": [
+            "job",
+            "context"
+          ],
+          "exit_code": 0,
+          "form": "job context",
+          "member": "ordinary-job-context.json",
+          "sha256": "18ccd58c12dc5dff15c750cbf5c73dbdc88475c2ab7f04fe1bff2a24af74cc26"
+        },
+        {
+          "argv": [
+            "task",
+            "current"
+          ],
+          "exit_code": 0,
+          "form": "task current",
+          "member": "current-False-False.json",
+          "sha256": "95d52a16a2f0d80a5f2bdf2fdbf0fa00143181d270ac7ff21d2f34b6128407e5"
+        },
+        {
+          "argv": [
+            "task",
+            "current",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "task current --json",
+          "member": "current-False-True.json",
+          "sha256": "063672c25cf5ed4ee05f92f0747accd8fd492b092c7df5c1d15e871e56c362db"
+        },
+        {
+          "argv": [
+            "task",
+            "current",
+            "--task-id",
+            "DELIVERED-ADDITIONS-01",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "task current --task-id <ID>",
+          "member": "current-explicit-survives.json",
+          "sha256": "3133e74a74bd767fa9060a68aa1266faca8b336eacba59bf6c6b1785e99e5913"
+        },
+        {
+          "argv": [
+            "task",
+            "current",
+            "--task-id",
+            "DELIVERED-ADDITIONS-01",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "task current --task-id <ID> --json",
+          "member": "current-explicit-survives.json",
+          "sha256": "3133e74a74bd767fa9060a68aa1266faca8b336eacba59bf6c6b1785e99e5913"
+        },
+        {
+          "argv": [
+            "task",
+            "resume-plan"
+          ],
+          "exit_code": 0,
+          "form": "task resume-plan",
+          "member": "resume-plan-False-False.json",
+          "sha256": "0393ac7a2a7dbfdb72443dfbf7cd2df850be974932926eb84bd89b98ddc273a4"
+        },
+        {
+          "argv": [
+            "task",
+            "resume-plan",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "task resume-plan --json",
+          "member": "resume-plan-False-True.json",
+          "sha256": "820fb4a8e1abdda37f80eccd6e256b51e9e9f06461e23f20f6f64b51eaad8165"
+        },
+        {
+          "argv": [
+            "task",
+            "resume-plan",
+            "--task-id",
+            "DELIVERED-ADDITIONS-01",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "task resume-plan --task-id <ID>",
+          "member": "resume-plan-explicit-survives.json",
+          "sha256": "f02ec94c0662ac4b5bd50bbb99ce5d1162ffe522f9838e1840754edbfc207245"
+        },
+        {
+          "argv": [
+            "task",
+            "resume-plan",
+            "--task-id",
+            "DELIVERED-ADDITIONS-01",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "task resume-plan --task-id <ID> --json",
+          "member": "resume-plan-explicit-survives.json",
+          "sha256": "f02ec94c0662ac4b5bd50bbb99ce5d1162ffe522f9838e1840754edbfc207245"
+        },
+        {
+          "argv": [
+            "git",
+            "policy"
+          ],
+          "exit_code": 0,
+          "form": "git policy",
+          "member": "git-policy.json",
+          "sha256": "25a7d09bd1ea234ccfef77ee2daa979385010f44c84b1de5bf08bb72261c2d3b"
+        },
+        {
+          "argv": [
+            "git",
+            "detect"
+          ],
+          "exit_code": 0,
+          "form": "git detect",
+          "member": "git-detect.json",
+          "sha256": "abbf0de4c79f82b3408281db7a518421dc586ad4b58f9ee84081e1e13584af3b"
+        },
+        {
+          "argv": [
+            "git",
+            "plan"
+          ],
+          "exit_code": 0,
+          "form": "git plan",
+          "member": "git-plan.json",
+          "sha256": "12f7970d4b551cdeae5fed73a41026be33d28c4bde6350aa80890426dccaea40"
+        },
+        {
+          "argv": [
+            "review-pack"
+          ],
+          "exit_code": 0,
+          "form": "review-pack",
+          "member": "review-pack.json",
+          "sha256": "ff26b4c6bbd99abf58a3991f209d9c34e21ad680f9413cc6e64290fcb9de7721"
+        },
+        {
+          "argv": [
+            "quality",
+            "ledger"
+          ],
+          "exit_code": 0,
+          "form": "quality ledger",
+          "member": "quality-ledger.json",
+          "sha256": "a46ea17973a95eb509d908c115b71fcabc820c61c4cde35c6620dd55d623c138"
+        },
+        {
+          "argv": [
+            "quality",
+            "reuse"
+          ],
+          "exit_code": 0,
+          "form": "quality reuse",
+          "member": "quality-reuse.json",
+          "sha256": "df49bdec96983c10e113a8cc252c824bd91c18f184ef4c64f8b0e8323541ea57"
+        },
+        {
+          "argv": [
+            "quality",
+            "explain-file",
+            "app/main.py"
+          ],
+          "exit_code": 0,
+          "form": "quality explain-file <path>",
+          "member": "quality-human.json",
+          "sha256": "f7074964e7c4f4cbde8718b997ff2f2b5413ff97af4a9b11616870e781bf4cc3"
+        },
+        {
+          "argv": [
+            "quality",
+            "explain-file",
+            "app/helper.py",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "quality explain-file <path> --json",
+          "member": "quality-json.json",
+          "sha256": "e1526342b83a38ca46ef6eea148319070c85476a97483a7910201c584172eef3"
+        },
+        {
+          "argv": [
+            "job",
+            "effort",
+            "--work-set",
+            "fixture-work.json"
+          ],
+          "exit_code": 2,
+          "form": "job effort --work-set <path>",
+          "member": "effort-human.json",
+          "sha256": "ea0b458086cfffe626435e7604a55b7155693b3ee776671ccdc4eab0fdc01b40"
+        },
+        {
+          "argv": [
+            "job",
+            "effort",
+            "--work-set",
+            "fixture-work.json",
+            "--json"
+          ],
+          "exit_code": 2,
+          "form": "job effort --work-set <path> --json",
+          "member": "effort-json.json",
+          "sha256": "d7b0621191c7e195dbc17c12ca3fc805c1d851734b6d99bf9cc72c145dbaaf87"
+        }
+      ],
+      "cases": [
+        {
+          "checks": [
+            "exact_interrupted_upgrade_recovery",
+            "installed_owned_repair_interruption_and_recovery",
+            "cross_version_path_change_rollback_refuses_without_writes",
+            "detach_and_published_predecessor_reinstall"
+          ],
+          "native_acceptance": true,
+          "preserved": true,
+          "shape": "published-upgrade-fresh",
+          "subject": "aide-lite-v1.2.0-actual-archive"
+        },
+        {
+          "checks": [
+            "real_upstream_conflict_refuses_without_writes",
+            "exact_interrupted_upgrade_recovery",
+            "customization_disabled_examples_and_overlay_remain_project_owned"
+          ],
+          "native_acceptance": true,
+          "preserved": true,
+          "shape": "published-upgrade-brownfield",
+          "subject": "aide-lite-v1.2.0-actual-archive"
+        }
+      ],
+      "fixture_retired": true,
+      "error_type": null,
+      "error": null
+    },
+    "ubuntu-24.04-x64": {
+      "status": "PASS",
+      "qualification_pass": true,
+      "environment": {
+        "machine": "x86_64",
+        "release": "7.0.0-1017-azure",
+        "runtime": {
+          "implementation": "CPython",
+          "version": "3.14.8"
+        },
+        "system": "Linux",
+        "version": "#17~24.04.1-Ubuntu SMP PREEMPT Thu Sep 24 18:46:57 UTC 2026"
+      },
+      "declared_environment": {
+        "machine": "x86_64",
+        "release": "7.0.0-1017-azure",
+        "runtime": {
+          "implementation": "CPython",
+          "version": "3.14.8"
+        },
+        "system": "Linux",
+        "version": "#17~24.04.1-Ubuntu SMP PREEMPT Thu Sep 24 18:46:57 UTC 2026"
+      },
+      "receipt_bundle": ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/profile-hosted-ubuntu-24.04-x64-retained.json",
+      "receipt_bundle_sha256": "cadc8c59e9bad480e4077182de557a593e4ab6f1e013b87404b77c9a150fe79d",
+      "retained_files": 309,
+      "receipt_index_sha256": "d6b06f175c7c18085b1e1cf3a4b9c7bba27e5fa18538ce2eba714fa89e9d6609",
+      "forms": [
+        {
+          "argv": [
+            "doctor"
+          ],
+          "exit_code": 0,
+          "form": "doctor",
+          "member": "ordinary-doctor.json",
+          "sha256": "f68d09ad2bb3078a792dffd199156404c5776ba69b704e5eb3f82f1dbcaf6f48"
+        },
+        {
+          "argv": [
+            "validate"
+          ],
+          "exit_code": 0,
+          "form": "validate",
+          "member": "ordinary-validate.json",
+          "sha256": "72432cca415896bb0ae3de560d76f9db8749fcd6b6f4a8956c5cd7050ded6def"
+        },
+        {
+          "argv": [
+            "context"
+          ],
+          "exit_code": 0,
+          "form": "context",
+          "member": "ordinary-context.json",
+          "sha256": "41a771533162cf0989fcbf4a0f49ff61f498e4c51c4c9f4e59425c861ab48fe9"
+        },
+        {
+          "argv": [
+            "pack",
+            "--task",
+            "Inspect a disposable target"
+          ],
+          "exit_code": 0,
+          "form": "pack --task <task>",
+          "member": "ordinary-pack.json",
+          "sha256": "f1be533b1dde16399cd28521a2d996f37a86b69c6f6d3da00d7f09cc88ebe5a6"
+        },
+        {
+          "argv": [
+            "verify",
+            "--evidence",
+            ".aide/queue/LOCAL-CONTEXT-CANARY-01/evidence/validation.md"
+          ],
+          "exit_code": 0,
+          "form": "verify --evidence <evidence-path>",
+          "member": "ordinary-verify.json",
+          "sha256": "23995f6839bd983bd905bb0ca685b4aa8c8d89ed19cb97bfcbe36aca01d529fc"
+        },
+        {
+          "argv": [
+            "task",
+            "inspect"
+          ],
+          "exit_code": 1,
+          "form": "task inspect",
+          "member": "ordinary-task-inspect.json",
+          "sha256": "35082d240312f5e41fcd214640cd67d3220f866fb873033b4f9052c426b1caee"
+        },
+        {
+          "argv": [
+            "task",
+            "status"
+          ],
+          "exit_code": 0,
+          "form": "task status",
+          "member": "ordinary-task-status.json",
+          "sha256": "c17860b9587345efe5fdf6015928b7911f2ce41f669dd162043142c66bd7d80a"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/form-target",
+            "--mode",
+            "safe",
+            "--dry-run"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run",
+          "member": "forms-fresh-plain.json",
+          "sha256": "b0ca626bac1840707d1c3570fb9991bebaa7de1a30fff395371e2c1fa676f57b"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/form-target",
+            "--mode",
+            "safe",
+            "--expect-plan",
+            "8364a042b43d222f2f5e0123b4ecf9d7a770f236aed685bbd04f58934ad40fc5"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --expect-plan <digest>",
+          "member": "forms-install-apply.json",
+          "sha256": "9d8961aa1ab0f4069f2f2b69022d399e7c4aa28679357467fd97adc9d8864db9"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/synthetic-v2",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--dry-run"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run",
+          "member": "forms-update-plain.json",
+          "sha256": "0083bd110a6e1ebaa2196aed662396478906a8dc186c9c306e5cebadd0acf381"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/synthetic-v2",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--expect-plan",
+            "94a940de3e6471363c3d01f0d8e89e6ffe8c88156740f0740b9692e9d46f4f65"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --expect-plan <digest>",
+          "member": "forms-update-apply.json",
+          "sha256": "c08131c6191d533b9d6c693d107aecb190a5ccd266617670530ba1c0cf3d0977"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/synthetic-v3",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/synthetic-v2",
+            "--resolve",
+            ".aide/prompts/compact-task.md",
+            "/home/runner/work/_temp/case-release-1wat80a1/selected-resolution.txt",
+            "--dry-run"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run",
+          "member": "forms-resolved-plain.json",
+          "sha256": "60d40b71f81a334aa03944531bbdcdc989965abd2ecc3c6e71882181dc47e99b"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/synthetic-v3",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/synthetic-v2",
+            "--resolve",
+            ".aide/prompts/compact-task.md",
+            "/home/runner/work/_temp/case-release-1wat80a1/selected-resolution.txt",
+            "--expect-plan",
+            "d24579f9f8335d53bf934b623fbebea9cbf50bec3f10c54617456a79d38f1ce6"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --expect-plan <digest>",
+          "member": "forms-resolved-apply.json",
+          "sha256": "0653f5577dfa046bf4e64edabc54e23144baacb733c5dcf0bc1c7870b3ee8b0a"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/form-target",
+            "--mode",
+            "safe",
+            "--dry-run",
+            "--explain"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain",
+          "member": "forms-fresh-explain.json",
+          "sha256": "77c9c696cf5baa4862af544dde8bbaf259809a2ae1bfac40c5e78bb25efa2a90"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/synthetic-v2",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--dry-run",
+            "--explain"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain",
+          "member": "forms-update-explain.json",
+          "sha256": "a15897d1fe18e04618781910067f84db8f8efc8b114c902e5346697965ec41aa"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/synthetic-v3",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/synthetic-v2",
+            "--resolve",
+            ".aide/prompts/compact-task.md",
+            "/home/runner/work/_temp/case-release-1wat80a1/selected-resolution.txt",
+            "--dry-run",
+            "--explain"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain",
+          "member": "forms-resolved-explain.json",
+          "sha256": "c4d41b404f5d8691dc4e2e715bf58c4a9ee1fc8b1d5e2e7f49b9ca3dd5312b7f"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/form-target",
+            "--mode",
+            "safe",
+            "--dry-run",
+            "--explain",
+            "--feedback-out",
+            "/home/runner/work/_temp/case-release-1wat80a1/forms-fresh-feedback.json"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+          "member": "forms-fresh-feedback.json",
+          "sha256": "c44dee13bb0732097074c81b98af5688fdd9ede1dad820ede16cee0e063efe46"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/synthetic-v2",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--dry-run",
+            "--explain",
+            "--feedback-out",
+            "/home/runner/work/_temp/case-release-1wat80a1/forms-update-feedback.json"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --dry-run --explain --feedback-out <local-packet>",
+          "member": "forms-update-feedback.json",
+          "sha256": "7fc0308d94b4f9e0480fb906edd48cbf848d5c21060eb2fb1b61f6795da4adc6"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/synthetic-v3",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/form-target",
+            "--mode",
+            "safe",
+            "--from-pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/synthetic-v2",
+            "--resolve",
+            ".aide/prompts/compact-task.md",
+            "/home/runner/work/_temp/case-release-1wat80a1/selected-resolution.txt",
+            "--dry-run",
+            "--explain",
+            "--feedback-out",
+            "/home/runner/work/_temp/case-release-1wat80a1/forms-resolved-feedback.json"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --dry-run --explain --feedback-out <local-packet>",
+          "member": "forms-resolved-feedback.json",
+          "sha256": "95f0ff687d7442b4acdd4609cdb5b531119de7b1a343ce504952327deb7fec3f"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/fresh-partial-target",
+            "--mode",
+            "safe",
+            "--recover-partial",
+            "--expect-plan",
+            "a6f8f4f4a56f53e392b0edbdd828225ccb6783967ad9eff8cd9802ee859454bf"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+          "member": "fresh-partial-exact-recovery.json",
+          "sha256": "951427ab8f084e3157b2f963342bf4e9e4bd776e26a6d2a34c032b12842425bf"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--from-pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.1.0/aide-lite-pack-v0",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/published-upgrade-fresh",
+            "--mode",
+            "safe",
+            "--recover-partial",
+            "--expect-plan",
+            "68ba1b3267d7e435cbba34e74efcbecce3516c97bcd644782c257b8f19f4fd33"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --recover-partial --expect-plan <digest>",
+          "member": "published-upgrade-fresh-exact-recovery.json",
+          "sha256": "1fbe4802c343d3a19b3d3dda0797d31ffd8b82e908fc8aa6a89ce2731e4a43df"
+        },
+        {
+          "argv": [
+            "import-pack",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--from-pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.1.0/aide-lite-pack-v0",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/published-upgrade-brownfield",
+            "--mode",
+            "safe",
+            "--resolve",
+            ".aide/scripts/aide_lite.py",
+            "/home/runner/work/_temp/case-release-1wat80a1/resolved-cli.py",
+            "--recover-partial",
+            "--expect-plan",
+            "490c03d3321924d04cb8828310cb793a7d42c0f4b4729c38cc8677e68dd60d7e"
+          ],
+          "exit_code": 0,
+          "form": "import-pack --pack <new-pack> --from-pack <old-pack> --target <target> --mode safe --resolve <target-path> <resolution-file> --recover-partial --expect-plan <digest>",
+          "member": "published-upgrade-brownfield-exact-recovery.json",
+          "sha256": "d30d6704be893116bb0c3b1630e6817875d25d78f3544b8cd0bf9f7a8a030012"
+        },
+        {
+          "argv": [
+            "rollback-pack",
+            "--current-pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/synthetic-rollback-v2",
+            "--previous-pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/rollback-brownfield",
+            "--dry-run",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --dry-run",
+          "member": "rollback-preview.json",
+          "sha256": "670d09f708df297cbc339df6dd5cbbf24064102451afd85ee41ebae88bdd493a"
+        },
+        {
+          "argv": [
+            "rollback-pack",
+            "--current-pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/synthetic-rollback-v2",
+            "--previous-pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/rollback-brownfield",
+            "--expect-plan",
+            "7cbf61764c9c285e65b946b3a42f8fa5a539ceb623bda387de13019a56ecf5a4",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "rollback-pack --current-pack <current-pack> --previous-pack <previous-pack> --target <target> --expect-plan <digest>",
+          "member": "rollback-apply.json",
+          "sha256": "6b5c30cc3de2297e09230cf8b6c9f19f59a390bafb9b6f3987f0ff499393f1cc"
+        },
+        {
+          "argv": [
+            "plan-removal",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/repair-target",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "plan-removal --target <target>",
+          "member": "forms-removal-preview.json",
+          "sha256": "5ccfaed0019ad8c7c40c6efb0826d13436c4712bf83069e6064051f997a89bce"
+        },
+        {
+          "argv": [
+            "apply-removal",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/repair-target",
+            "--expect-plan",
+            "5a854595c41db05cb1c1a63b9bb69563cb33b5b80b9b6c3f86d83debaadf86f3",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "apply-removal --target <target> --expect-plan <digest>",
+          "member": "forms-removal-apply.json",
+          "sha256": "f3300e9695ae5a11c5823b61636f89bf0b4ce13a36cd9d7b28151bba14909cc5"
+        },
+        {
+          "argv": [
+            "repair-owned-file",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/repair-target",
+            "--path",
+            ".aide/prompts/compact-task.md",
+            "--dry-run"
+          ],
+          "exit_code": 0,
+          "form": "repair-owned-file --pack <pack> --target <target> --path <owned-path> --dry-run",
+          "member": "forms-repair-preview.json",
+          "sha256": "a66d51f807391764ee1d6c81148206f12062b6dbb96af4161409c22a4a319f64"
+        },
+        {
+          "argv": [
+            "repair-owned-file",
+            "--pack",
+            "/home/runner/work/_temp/case-release-1wat80a1/zip-1.2.0/aide-lite-pack-v0",
+            "--target",
+            "/home/runner/work/_temp/case-release-1wat80a1/repair-target",
+            "--path",
+            ".aide/prompts/compact-task.md",
+            "--expect-plan",
+            "a8e51fd064d94c702d2f13687148771d808f964080a78dff0ee5f4c5ad6b120f"
+          ],
+          "exit_code": 0,
+          "form": "repair-owned-file --pack <pack> --target <target> --path <owned-path> --expect-plan <digest>",
+          "member": "forms-repair-apply.json",
+          "sha256": "16d17c57fb0a5bc3d544e5df24c7bf434f97e409e38af4738db850768cab8d2d"
+        },
+        {
+          "argv": [
+            "job",
+            "usage",
+            "--stream",
+            "/home/runner/work/_temp/case-release-1wat80a1/case-additions/synthetic-parent.jsonl",
+            "--stream",
+            "/home/runner/work/_temp/case-release-1wat80a1/case-additions/synthetic-parent.jsonl"
+          ],
+          "exit_code": 0,
+          "form": "job usage --stream <codex-exec-jsonl>",
+          "member": "ordinary-job-usage.json",
+          "sha256": "957f4675e9cdaa4aa5b9ec31e7b48974220d95940c08af582f73eb204a7684bd"
+        },
+        {
+          "argv": [
+            "job",
+            "usage",
+            "--attempt-set",
+            "/home/runner/work/_temp/case-release-1wat80a1/case-additions/synthetic-attempt-roster.json"
+          ],
+          "exit_code": 2,
+          "form": "job usage --attempt-set <attempt-roster-json>",
+          "member": "ordinary-job-attempts.json",
+          "sha256": "2ba28d36fa34642c6385f24dee0eff14e9b2c844e36da3c2c80d027bed047846"
+        },
+        {
+          "argv": [
+            "job",
+            "context"
+          ],
+          "exit_code": 0,
+          "form": "job context",
+          "member": "ordinary-job-context.json",
+          "sha256": "67483575a607e2dfadad16d20570bdff98151a406d183e535bd224aa66782ba1"
+        },
+        {
+          "argv": [
+            "task",
+            "current"
+          ],
+          "exit_code": 0,
+          "form": "task current",
+          "member": "current-False-False.json",
+          "sha256": "600760f0850ddb9a660d79288e827f846e5e8a7248402d6c977a256d283c61c0"
+        },
+        {
+          "argv": [
+            "task",
+            "current",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "task current --json",
+          "member": "current-False-True.json",
+          "sha256": "26d2d45b85a2f84078dec3a497938ad94702d733b4dc53817d43b645ce8eea0a"
+        },
+        {
+          "argv": [
+            "task",
+            "current",
+            "--task-id",
+            "DELIVERED-ADDITIONS-01"
+          ],
+          "exit_code": 0,
+          "form": "task current --task-id <ID>",
+          "member": "current-True-False.json",
+          "sha256": "d5f6ddb075a477c34a4988bd1816f893ed41b938bc79a57c883e7a5e88467c05"
+        },
+        {
+          "argv": [
+            "task",
+            "current",
+            "--task-id",
+            "DELIVERED-ADDITIONS-01",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "task current --task-id <ID> --json",
+          "member": "current-True-True.json",
+          "sha256": "84459bc48695b1c20b551e821561bbc7497da7aa567233231c3ea9fadd6d8445"
+        },
+        {
+          "argv": [
+            "task",
+            "resume-plan"
+          ],
+          "exit_code": 0,
+          "form": "task resume-plan",
+          "member": "resume-plan-False-False.json",
+          "sha256": "a64c16c4129b2b50df21af09a4a39f5036c2eada197dda8e1efef1ce42d0a239"
+        },
+        {
+          "argv": [
+            "task",
+            "resume-plan",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "task resume-plan --json",
+          "member": "resume-plan-False-True.json",
+          "sha256": "5aed281172f96fd595d483eb8733ade17b1ed9bd6bc94f2ff0d526181172c1cd"
+        },
+        {
+          "argv": [
+            "task",
+            "resume-plan",
+            "--task-id",
+            "DELIVERED-ADDITIONS-01"
+          ],
+          "exit_code": 0,
+          "form": "task resume-plan --task-id <ID>",
+          "member": "resume-plan-True-False.json",
+          "sha256": "fe361642d6b5803abe734518a6455fcd85a3c84bf775cc9490f8921ed3e800b2"
+        },
+        {
+          "argv": [
+            "task",
+            "resume-plan",
+            "--task-id",
+            "DELIVERED-ADDITIONS-01",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "task resume-plan --task-id <ID> --json",
+          "member": "resume-plan-True-True.json",
+          "sha256": "4a84964f0368e90aafee4e75278fb67289cee860d913bb16d5128f1110e46cf4"
+        },
+        {
+          "argv": [
+            "git",
+            "policy"
+          ],
+          "exit_code": 0,
+          "form": "git policy",
+          "member": "git-policy.json",
+          "sha256": "080cb9ddda110575e8d1c044438a2e051da39a5f5b9ebdb0e35e461bc16db78a"
+        },
+        {
+          "argv": [
+            "git",
+            "detect"
+          ],
+          "exit_code": 0,
+          "form": "git detect",
+          "member": "git-detect.json",
+          "sha256": "e695e8a465fcd9c0bd76a422bb058df127e8ee02333468e8731666d265904085"
+        },
+        {
+          "argv": [
+            "git",
+            "plan"
+          ],
+          "exit_code": 0,
+          "form": "git plan",
+          "member": "git-plan.json",
+          "sha256": "6b80235969ed40922569e3977afb2eec8512e6f8babfdaa876a860575cd28a9e"
+        },
+        {
+          "argv": [
+            "review-pack"
+          ],
+          "exit_code": 0,
+          "form": "review-pack",
+          "member": "review-pack.json",
+          "sha256": "7f686ddbf3d6707ffe53bcc4e3821cde8ba877ea0469074537732ccd0913b0a0"
+        },
+        {
+          "argv": [
+            "quality",
+            "ledger"
+          ],
+          "exit_code": 0,
+          "form": "quality ledger",
+          "member": "quality-ledger.json",
+          "sha256": "718738216d05ed905da12b649c0638aeb5c4fe5e14f71e3b915376ef2f651bf3"
+        },
+        {
+          "argv": [
+            "quality",
+            "reuse"
+          ],
+          "exit_code": 0,
+          "form": "quality reuse",
+          "member": "quality-reuse.json",
+          "sha256": "4c6656fdede3359919166005f9a4534b1b9a9299ec291b81bdb8ba145ae4f3b6"
+        },
+        {
+          "argv": [
+            "quality",
+            "explain-file",
+            "app/main.py"
+          ],
+          "exit_code": 0,
+          "form": "quality explain-file <path>",
+          "member": "quality-human.json",
+          "sha256": "d4f7e6601f14ef24a62b1a4290d48b31d4b8f71360a1521de785ec48d2c90a88"
+        },
+        {
+          "argv": [
+            "quality",
+            "explain-file",
+            "app/helper.py",
+            "--json"
+          ],
+          "exit_code": 0,
+          "form": "quality explain-file <path> --json",
+          "member": "quality-json.json",
+          "sha256": "bb25824f3c7a0ff4ec4ec940a5ce2c6680a9c66d3cf323ee2c2a283ac40b0281"
+        },
+        {
+          "argv": [
+            "job",
+            "effort",
+            "--work-set",
+            "fixture-work.json"
+          ],
+          "exit_code": 2,
+          "form": "job effort --work-set <path>",
+          "member": "effort-human.json",
+          "sha256": "1e7012956c88a743b14bce0b87b2ec47b736b1b1ec2aa7135df54efb87b912d8"
+        },
+        {
+          "argv": [
+            "job",
+            "effort",
+            "--work-set",
+            "fixture-work.json",
+            "--json"
+          ],
+          "exit_code": 2,
+          "form": "job effort --work-set <path> --json",
+          "member": "effort-json.json",
+          "sha256": "86b02c143280d105745b3dc07ee565237404b39dd8dede4ecdc23335f34c9c51"
+        }
+      ],
+      "cases": [
+        {
+          "checks": [
+            "exact_interrupted_upgrade_recovery",
+            "installed_owned_repair_interruption_and_recovery",
+            "cross_version_path_change_rollback_refuses_without_writes",
+            "detach_and_published_predecessor_reinstall"
+          ],
+          "native_acceptance": true,
+          "preserved": true,
+          "shape": "published-upgrade-fresh",
+          "subject": "aide-lite-v1.2.0-actual-archive"
+        },
+        {
+          "checks": [
+            "real_upstream_conflict_refuses_without_writes",
+            "exact_interrupted_upgrade_recovery",
+            "customization_disabled_examples_and_overlay_remain_project_owned"
+          ],
+          "native_acceptance": true,
+          "preserved": true,
+          "shape": "published-upgrade-brownfield",
+          "subject": "aide-lite-v1.2.0-actual-archive"
+        }
+      ],
+      "fixture_retired": true,
+      "error_type": null,
+      "error": null
+    }
+  },
+  "controller_operations": 183,
+  "controller_streams": 366,
+  "hosted_runs_consumed": 2,
+  "hosted_run_ceiling": 2,
+  "local_allocations_consumed": 16,
+  "local_allocation_ceiling": 17,
+  "export_refreshes_consumed": 2,
+  "support_claimed": false,
+  "worker_model_requests": 0,
+  "whole_model_usage": "unknown",
+  "next_boundary": "No automatic retry. Final affected local group, fresh primary identity and complete replay remain separately gated."
+}

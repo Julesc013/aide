@@ -1,0 +1,12 @@
+test(lite): finish affected consumers and exact release replay
+
+- Preserve complete Windows/Linux hosted passes and scoped retained macOS applicability under their exact subjects.
+- Prepare only original managed case6, unfinished primary brownfield, fresh ownership identity and complete replay in one finite existing-runner group.
+- Keep original assertions, retired attempts, source/export/archive bytes and actual published predecessor; bind deadlines, evidence and cleanup.
+
+Validation: PASS - hosted receipt roundtrip, exact inputs/config/environment/assets, original7consumer/10predecessor/8replay assertions, syntax and finite job validation. Final execution remains pending.
+Changelog: Fixed: complete affected current-archive qualification and release replay
+Risk: No support activation, integration or publication; late/incomplete work stays incomplete; controller/review usage unknown.
+Follow-up: Collect and independently accept the final group before dev/main or publication effects.
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+AIDE-Format: compact-v1

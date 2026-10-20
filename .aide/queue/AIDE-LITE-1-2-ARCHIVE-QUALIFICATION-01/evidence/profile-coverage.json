@@ -1,0 +1,144 @@
+{
+  "state": "SCOPED_BEHAVIORAL_COVERAGE_COMPLETE_PRIMARY_IDENTITY_AND_FINAL_GROUP_REQUIRED",
+  "behavioral_coverage_pass": true,
+  "assets": {
+    ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+      "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+      "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+      "size_bytes": 27957
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+      "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+      "size_bytes": 969467
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.zip": {
+      "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+      "size_bytes": 1328652
+    }
+  },
+  "profiles": {
+    "windows-2025-x64": {
+      "method": "fresh_actual_archive_execution",
+      "run_id": 39462430710,
+      "source_commit": "52ddd31908ac96b3e891933a066936e72c90b137",
+      "assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "evidence": "evidence/profile-hosted-qualified.json",
+      "evidence_sha256": "441f36417b1f61a9d1fa832dc1cc16a56a0b41fa689c6c6d43d2045dbf030746",
+      "forms": 49,
+      "predecessor_scenarios": 2,
+      "fixture_retired": true
+    },
+    "ubuntu-24.04-x64": {
+      "method": "fresh_actual_archive_execution",
+      "run_id": 39462430710,
+      "source_commit": "52ddd31908ac96b3e891933a066936e72c90b137",
+      "assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "evidence": "evidence/profile-hosted-qualified.json",
+      "evidence_sha256": "441f36417b1f61a9d1fa832dc1cc16a56a0b41fa689c6c6d43d2045dbf030746",
+      "forms": 49,
+      "predecessor_scenarios": 2,
+      "fixture_retired": true
+    },
+    "macos-15-arm64": {
+      "method": "retained_behavioral_applicability",
+      "original_run_id": 39456159304,
+      "original_source_commit": "4f85bb0c95ef7fc29667edd351346d684a80bb48",
+      "original_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "9fc5aa6e33b4731b4e8eb678bb55438cd86ef242e2af73306653ea527fd29197",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "918fe258b1d0e6768887b70b7b2cd0e57265a15024c66429603542aeecf4d46f",
+          "size_bytes": 27942
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "3548253b41b5992526a5b3c56133c36adb467e11bd7aa48f44ec4fb8b0fa9428",
+          "size_bytes": 969453
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "665beb8810fbcf9c27420390a82349f4f1ce02afa7bf8cacad891203ad279827",
+          "size_bytes": 1328634
+        }
+      },
+      "applies_to_assets": {
+        ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+          "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+          "size_bytes": 274
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+          "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+          "size_bytes": 27957
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+          "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+          "size_bytes": 969467
+        },
+        ".aide/release/stable/aide-lite-v1.2.0.zip": {
+          "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+          "size_bytes": 1328652
+        }
+      },
+      "original_evidence": "evidence/hosted-qualified.json",
+      "original_evidence_sha256": "ed65ce7c0a173dfb78db1a3e8b84bb5b06dc42e3cc58f8ff66b1dfc3079f8415",
+      "review": "evidence/profile-macos-reuse-review.json",
+      "review_sha256": "72a6d6e21101dadad294885250c1797b1484a4ccfa103c72f53fe7ff7f093639",
+      "forms": 49,
+      "predecessor_scenarios": 2,
+      "fixture_retired": true,
+      "boundary": "Original observations, receipts, plans, ownership hashes, times and resources retain their original identities. No new macOS execution."
+    }
+  },
+  "fresh_primary_identity_required": true,
+  "release_accepted": false,
+  "support_activated": false,
+  "remaining": [
+    "affected original managed case6",
+    "primary unfinished published-upgrade brownfield",
+    "fresh revised primary identity/ownership",
+    "complete release replay and final acceptance"
+  ],
+  "local_jobs_consumed": 16,
+  "local_job_ceiling": 17,
+  "hosted_runs_consumed": 2,
+  "hosted_run_ceiling": 2,
+  "hosted_jobs_consumed": 5,
+  "export_refreshes_consumed": 2
+}

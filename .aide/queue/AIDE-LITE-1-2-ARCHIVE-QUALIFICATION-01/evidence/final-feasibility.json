@@ -1,0 +1,20 @@
+{
+  "state": "BOUNDED_FEASIBILITY_WITH_CLEANUP_RESERVE",
+  "outer_runner_seconds": 600,
+  "active_group_seconds": 540,
+  "phase_caps_seconds": {
+    "managed": 60,
+    "brownfield": 240,
+    "replay": 210
+  },
+  "serial_phase_cap_sum_seconds": 510,
+  "outer_cleanup_reserve_seconds": 60,
+  "observed_original_case6_seconds": 14.9429519,
+  "original_case6_process_sha256": "f79a64bd49b2175fb9e828ac63176019f541efde45da283e4eab51b6cacb4e30",
+  "hosted_whole_job_seconds": {
+    "ubuntu-24.04-x64 actual archive qualification": 287.0,
+    "windows-2025-x64 actual archive qualification": 385.0
+  },
+  "basis": "Managed cap exceeds retained14.94s. Brownfield selects one of two unchanged scenarios; hosted Windows385s includes setup,49forms and both scenarios. Replay uses one bounded pair of archive writers, four source checks and one identity/detach fixture. Serial phase retirement prevents combined scratch retention.",
+  "limits": "Observed times are not future guarantees. Shared/phase deadlines stop launches and reject late completion; synchronous replay checks surround projection/archive work. The unchanged600s Job limit is the hard containment limit. No assertion or recovery check is dropped to fit; an overrun stays incomplete without retry."
+}

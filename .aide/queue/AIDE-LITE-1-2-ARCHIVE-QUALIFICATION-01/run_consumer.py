@@ -33,7 +33,7 @@ def write(path, value):
     path.write_text(json.dumps(value, indent=2, sort_keys=True) + '\n', encoding='utf-8')
 
 
-def main(*, subject_name='build-result.json'):
+def main(*, subject_name='build-result.json', deadline=None):
     assert len(sys.argv) == 2 and sys.argv[1] in tuple(map(str, range(8)))
     index = int(sys.argv[1])
     assert not subprocess.check_output(['git', 'status', '--porcelain']).strip()
@@ -80,8 +80,10 @@ def main(*, subject_name='build-result.json'):
                       'source_canary_sha256': sha(CAN / name), 'exit_code': None}
     write(retained / 'process.json', process_record)
     try:
+        if deadline is not None and time.monotonic() >= deadline:
+            raise TimeoutError('consumer deadline before command admission')
         result = capture.capture_streams(argv, cwd=ROOT, env=env,
-            stdout_path=retained / 'stdout.log', stderr_path=retained / 'stderr.log', timeout=600)
+            stdout_path=retained / 'stdout.log', stderr_path=retained / 'stderr.log', timeout=600 if deadline is None else min(600, max(0.001, deadline - time.monotonic())))
         process_record['exit_code'] = result.returncode
     except BaseException as exc:
         process_record['exception'] = repr(exc)

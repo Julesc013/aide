@@ -1,0 +1,20 @@
+{
+  "state": "PASS_LOSSLESS_ROUNDTRIP",
+  "files": {
+    "controller": 369,
+    "windows-2025-x64": 309,
+    "ubuntu-24.04-x64": 309
+  },
+  "controller_operations": 183,
+  "controller_streams": 366,
+  "run_id": 39462430710,
+  "coverage_sha256": "8fb83e8136aae4c12af570a908db124a0f0419417c90e8a2602014286feaea98",
+  "hosted_whole_job_seconds": {
+    "ubuntu-24.04-x64 actual archive qualification": 287.0,
+    "windows-2025-x64 actual archive qualification": 385.0
+  },
+  "timing_boundary": "Whole hosted jobs include setup and all49forms/bothscenarios; not primary-local timing guarantees.",
+  "new_jobs": 0,
+  "worker_model_requests": 0,
+  "whole_model_usage": "unknown"
+}

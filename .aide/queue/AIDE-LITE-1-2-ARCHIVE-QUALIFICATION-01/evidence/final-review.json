@@ -1,0 +1,20 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "617ccf431c65bf185f5a8e2e963f9ea14e36982a74d685b6cb9e50f449b52166",
+  "effect_sha256": "ff200f28fb85bab9aa65fa8a53140f8c29d1ff0a6bbc0a9cc5fbe0271a6f5de1",
+  "controller_sha256": "154feaba24410f7bd0dc428e18eb545420314557d3aea51d490c6ef85232ede8",
+  "required_fixes": [],
+  "reasons": [
+    "Outer retirement now binds its owner under the correct TMP before phase environment changes.",
+    "The exact existing 8 MiB stable reservation is restored for validation only; no-write assertions remain.",
+    "All 86 mappings, 2,130 input pins, dirty-set and raw/filter identities verified. The rejected candidate is preserved losslessly.",
+    "Previously audited hosted evidence and qualification assertions remain unchanged."
+  ],
+  "accepted_scope": "One exact managed checkpoint and the seventeenth, final 600-second local allocation, with fresh guards and the reviewed phase deadlines. No push, integration, export, canonical rebuild or publication.",
+  "optional_notes": [
+    "At closeout, reconcile remaining 'one of two hosted runs' wording with the recorded two consumed runs.",
+    "The parent status current_state_sha256 was already stale before this candidate; reconcile that metadata when closing the current-state update."
+  ],
+  "next_phase": "Execute only the bound effect after fresh guards pass; independently review its actual outcome. No reviewer execution or mutation occurred."
+}

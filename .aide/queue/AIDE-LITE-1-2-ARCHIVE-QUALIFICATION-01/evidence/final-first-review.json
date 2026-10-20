@@ -1,0 +1,27 @@
+{
+  "decision": "REJECT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "28915adcc83b7225c511fbf3ed24c32a260b8e2e272c8d2734366b28d9c46722",
+  "effect_sha256": "a897395d91130826bc29c1de21c59350cd5ee708d0b2a6b96ca16f1568efdf27",
+  "controller_sha256": "154feaba24410f7bd0dc428e18eb545420314557d3aea51d490c6ef85232ede8",
+  "required_fixes": [
+    {
+      "location": "run_final.py: outer phase retirement",
+      "finding": "The retirement owner is imported while AIDE_JOB_TMP names the phase directory. retire_owned_fixture(scratch) therefore rejects that directory because its parent differs from the owner's TMP.",
+      "remedy": "Bind the retirement owner under the outer TMP before changing phase environment, retaining terminal exception recording and PASS only after retirement."
+    },
+    {
+      "location": "run_replay.py stable-validate invocation; evidence/final-job-template.json",
+      "finding": "The template omits canonical_outputs, but release stable-validate requires the existing STABLE_RELEASE_DIR reservation. The command will refuse.",
+      "remedy": "Retain the existing bounded stable reservation, explicitly limit its use to validation, and preserve all asset/export no-write assertions. Do not bypass the guard."
+    }
+  ],
+  "reasons": [
+    "All 56 mapped files, 2,100 input pins, exact dirty set and raw/filter identities verified.",
+    "Independently reconstructed all 987 retained files and verified 183 operations, 366 streams, both fresh 49-form/two-scenario hosted passes and their exact archive identities.",
+    "Coverage correctly distinguishes fresh Windows/Linux execution from previously accepted macOS applicability.",
+    "No additional concrete blocker found; timing evidence supports the bounded plan without guaranteeing completion."
+  ],
+  "optional_notes": [],
+  "next_phase": "Focused review of the two repairs and rebound packet. No tests or effects executed."
+}

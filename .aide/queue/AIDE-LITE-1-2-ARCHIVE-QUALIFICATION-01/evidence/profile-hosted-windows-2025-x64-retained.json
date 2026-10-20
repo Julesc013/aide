@@ -1,0 +1,68 @@
+{
+  "encoding": "ordered-gzip+base64-json-chunks",
+  "files": 309,
+  "raw_bytes": 10407697,
+  "sha256": "721fa93000d23e48c96305e8317a8251df19de851a07ee2e49d3b5886516dccd",
+  "chunks": [
+    {
+      "path": "profile-hosted-windows-2025-x64-retained-00.json",
+      "sha256": "d78fb2aeb7be6ed22de7c9334a7c0c2c62ea017f99b5c8dbb95bb1530b076942",
+      "raw_sha256": "2aaa77990161d4fb7e4c48cb3c3f955376a85447c184aad49e0979ae0fff4476",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-windows-2025-x64-retained-01.json",
+      "sha256": "9d8d0c4f1c4b89a482aa0ed36c6eabf85a9a5e8581653f353568de8019c5f1f1",
+      "raw_sha256": "75102d3c76d132702e21f3687955d6fdb71495e402a0a6cd5fabedd91c5bd301",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-windows-2025-x64-retained-02.json",
+      "sha256": "dfa80eb3549ce30202da64875457da2d36b38d20422e9f5840684b5967377139",
+      "raw_sha256": "7f30ce26f88f5a14c9d73625c0171220740a51d5c45060003c383fa067b438d7",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-windows-2025-x64-retained-03.json",
+      "sha256": "14e9dedab3e3f540b7984091f81e47ba9a15d11ac17c144a27920e15839cb6b7",
+      "raw_sha256": "8e502f14e1cc7a7dc68a67f55dc91e6c0639e3bee96c03b2b835afb125a512c2",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-windows-2025-x64-retained-04.json",
+      "sha256": "e74c9b746146573a4f426abbf51a842441075e8d1354fc836f48ec0b1af4f6be",
+      "raw_sha256": "9b422bf07d2114a363debafd0c4d0cc58e6770bf909c078d6ad87a6a1ebfc104",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-windows-2025-x64-retained-05.json",
+      "sha256": "e11b9022fcf821a549c7dea934f397f8e7af2b5606158ea06cadf55e3998cc8d",
+      "raw_sha256": "e630368114e936b533a57883b95074ed71c9b6173df545fa9d7288e057cbe4f8",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-windows-2025-x64-retained-06.json",
+      "sha256": "c2b689149fba90e282a169d5cd47351fe221f1c9695a17e5c8b78dda9a409597",
+      "raw_sha256": "9b89de2137c0bbf8a00d21d0aa41f012afcdfd28ab7099f7ddb69e469965a1b5",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-windows-2025-x64-retained-07.json",
+      "sha256": "117ce5078ffd434114100968b12f095f094dced6f5571b35246e278512f93353",
+      "raw_sha256": "7ac543a0a1a21145de3cd2c7670a6aba24f3f4e1b2c47e1697793e9567f6df24",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-windows-2025-x64-retained-08.json",
+      "sha256": "f3d60ebcb19ec9cce9ed9dcc118e3be328276040ee979d32854ee90699bc9acd",
+      "raw_sha256": "a0d783923dcd5a922bfe7bc0ce27611ad87ea0d2f2a859b070292270a543a38c",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-windows-2025-x64-retained-09.json",
+      "sha256": "2d538ede7d1b4e1305a7f1e756e48a51a81713da0a01ae47a47ea7aa788efb32",
+      "raw_sha256": "f233a3fdab8ac58ce8bae8d5db5fb0bb9ac8c48ce47c8f747a6c4361fc4d2c83",
+      "raw_bytes": 970513
+    }
+  ]
+}

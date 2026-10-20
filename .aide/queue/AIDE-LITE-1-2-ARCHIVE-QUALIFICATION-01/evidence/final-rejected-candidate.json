@@ -1,0 +1,128 @@
+{
+  "encoding": "ordered-gzip+base64-json-chunks",
+  "files": 58,
+  "raw_bytes": 20405516,
+  "sha256": "0b92bbb0da234a1ee9796e236750a0b8d5bae6178b7be88e0cd21f9781f7e77e",
+  "chunks": [
+    {
+      "path": "final-rejected-candidate-00.json",
+      "sha256": "45069f58ebe89f9c72704c6f5202c69d57d6124d34bebe792cedcbed29551d8c",
+      "raw_sha256": "dfea895af04e7545a5e57d9b16ef184ed9bde0b84fb233d003ab75ef3c8a8db3",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-01.json",
+      "sha256": "7ebbb62e1d1e4be124e021b923768503ad18d6985aea8d56ca84be3c2ededdaf",
+      "raw_sha256": "82a180c56dcb1fa6d101e530497ba51844d7627f01a66446ca385bb519858337",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-02.json",
+      "sha256": "413207178b2fdf5ad0fcae4193b4ce73f5389685e5abe0560d6bb9353d2ee839",
+      "raw_sha256": "53c87b71ce0b419109eec55aa9bd61eeb18fb0f9ee24c96ccac1764981edbcbe",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-03.json",
+      "sha256": "4f537a11ea1bb8da4e1b2bc50b995ae48239c035ed88a0011443814cc06d0497",
+      "raw_sha256": "a7aee032a03c4445ff56d02e1fe59ab8a0053772b5857f50bd95cfae6176457a",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-04.json",
+      "sha256": "68f2fc6e2f186b58c48815703221126fa94dd741b8ff76b2e998b8413fab944d",
+      "raw_sha256": "33595d305b9a9c66bd94297a57a5584d16f16cf0ed485c88ab2d1e9c812f2928",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-05.json",
+      "sha256": "47cf08126a747e5882af9853caea9542cd20fec35f08ad4f05642884d96f17e8",
+      "raw_sha256": "ecd4ebcbe5d880d3fbdc55ab152bbd72f1a69c351098b4b6d9149b6c067c2bf9",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-06.json",
+      "sha256": "83e74d6c7fe182dc43d9032b5416badc394d71016bfb31d0048b7aca85b6aab6",
+      "raw_sha256": "0a624a88c2c115ed42ccfdb779444766dd4d3bb89d38c681505cd41588c73465",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-07.json",
+      "sha256": "ca58fc0367a0701bdecc10ba531e15466a8aa8c24070102f6ade110c6dc47d49",
+      "raw_sha256": "2a8bb50f6f5fe88f985c9ed8ca618c74e1ba76afb3d0fdfc2b61324d5c1fd340",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-08.json",
+      "sha256": "daf4e1eb0a7988f0931203cfa79f8175ce671db339b6ca5167154ee13169e793",
+      "raw_sha256": "0037331b31029543ec50c80130c8897d9ae1c94e65616d686ee6648e03b7824d",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-09.json",
+      "sha256": "18b260698cc38d66756ba16021422366c5b05110868c491ec9dd8356906da3ac",
+      "raw_sha256": "18135790ff6df870e5279fb96003b7b7d8a237ec3d62d3808ddaab011fe6baa4",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-10.json",
+      "sha256": "5ce67a618b9595193054bb5005425bafeb537fae6c3ba214592e6dea1cc7a401",
+      "raw_sha256": "692e32ed0aeadfc72d0c9146d686e3ba065934596c1ca90a979c6a48ffc1d0ed",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-11.json",
+      "sha256": "b69ccde2a92af4ba731e6ac931cc97c9bbb11054884cf192f5331c5af466acfb",
+      "raw_sha256": "3b6c331ded5937420b7d1464af38b903be04e38410bda69d8b52f17696417ad4",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-12.json",
+      "sha256": "bc6897c1ac8ff1fa38d12df69a978658f6799251d447d85da35e261ee0e8dfc4",
+      "raw_sha256": "3d05452e3a1461038f24f5aae36c5b5ba432ddab308e382c835763a8a1c7175d",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-13.json",
+      "sha256": "4220f73db9e58f0065c40cee3d4f79e0c98f36eb32597af1ea69fa80dd03ce3e",
+      "raw_sha256": "e464f91a4abf9f90419186319657171f3714de2b9f818666e9eca4126c953aeb",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-14.json",
+      "sha256": "cfb87271977652bb461e73844e34262515dc43eb0cdaeee52e06d6775aceb56e",
+      "raw_sha256": "7da1fb89f1195d57413149c057aae6854924cf9407870cce06f200ebe02517e0",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-15.json",
+      "sha256": "7497aedd15d012bfa67db1dbdd856053872d667b501a1ba1747697f484669f0e",
+      "raw_sha256": "2b7d20ed7b17d168de6fe5171b88a18dd123c235e94e13aad237af6ee90d2059",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-16.json",
+      "sha256": "3083be38c9f7f4017d1b2a0a00b3a4d86e45bd3527f5afc06b0e9fa889ac9740",
+      "raw_sha256": "53005791528a4221dc7c54633c243affda38ebdd6b157b5dcc0c307e9f71c4be",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-17.json",
+      "sha256": "d2b18057e7499231183f8dba930b9fc35388042350ea937dfe93acae27d4f382",
+      "raw_sha256": "9a52f976567cf04aa189c726e9eb434702364556c01a7ecbd466efc6211ca13e",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-18.json",
+      "sha256": "e08ae4047079893c5752dd4f6698a2dd4657cb0da4a72af52dcb63cc18209d07",
+      "raw_sha256": "b10be1035a376bd1cdf6e299c4900de409c5bc61914d5c9147f797c8ed70ccfc",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "final-rejected-candidate-19.json",
+      "sha256": "3711a1032d7c9ae64d243510f793104b78e56a628773de56b0f6357f11d85b0d",
+      "raw_sha256": "d85e3b0a284646ddb14d21fa8cceca2cc5c6574e01584e6874c6f6742572876b",
+      "raw_bytes": 482572
+    }
+  ]
+}

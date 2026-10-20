@@ -6,6 +6,7 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+import time
 
 sys.dont_write_bytecode = True
 ROOT = Path.cwd()
@@ -33,7 +34,7 @@ def load(name, path):
     return module
 
 
-def main(*, subject_name='build-result.json', shapes=('fresh', 'brownfield')):
+def main(*, subject_name='build-result.json', shapes=('fresh', 'brownfield'), deadline=None):
     assert not sys.argv[1:]
     assert not subprocess.check_output(['git', 'status', '--porcelain']).strip()
     built = json.loads((TASK / 'evidence' / subject_name).read_bytes())
@@ -61,8 +62,10 @@ def main(*, subject_name='build-result.json', shapes=('fresh', 'brownfield')):
             stdout, stderr = OUT / (label + '.stdout'), OUT / (label + '.stderr')
             save(OUT / (label + '.json'), row)
             try:
+                if deadline is not None and time.monotonic() >= deadline:
+                    raise TimeoutError('predecessor deadline before command admission')
                 result = capture.capture_streams(argv, cwd=ROOT, env=dict(os.environ),
-                    stdout_path=stdout, stderr_path=stderr, timeout=180)
+                    stdout_path=stdout, stderr_path=stderr, timeout=180 if deadline is None else min(180, max(0.001, deadline - time.monotonic())))
                 row.update(state='completed', exit_code=result.returncode)
             except BaseException as error:
                 row.update(state='exception', error_type=type(error).__name__, error=str(error))

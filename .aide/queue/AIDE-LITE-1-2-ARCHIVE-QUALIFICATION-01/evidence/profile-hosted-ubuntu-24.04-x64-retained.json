@@ -1,0 +1,68 @@
+{
+  "encoding": "ordered-gzip+base64-json-chunks",
+  "files": 309,
+  "raw_bytes": 10306197,
+  "sha256": "777f42e5210bb11b0b8e386702ebda1d2953fd1e4fceb42c2af26ad3bdd2d09f",
+  "chunks": [
+    {
+      "path": "profile-hosted-ubuntu-24.04-x64-retained-00.json",
+      "sha256": "24fe1cc599348ee11ac76efa6c7885d92b785025beaef9f6dcbc79d84701d57c",
+      "raw_sha256": "e6c0d7641cff1d1c37a9d60cae8e8171f592acc98e0d4715c8a5007e87dd7285",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-ubuntu-24.04-x64-retained-01.json",
+      "sha256": "85add903f6b93c25d8fb2670c0b65c5be251d82bb3aa558861bcd731c88daade",
+      "raw_sha256": "7db9555949f75b8d9cad26d8a9de75f031dc4b041baea190f6a49c5c60904863",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-ubuntu-24.04-x64-retained-02.json",
+      "sha256": "37a63936da6b2b326309ff7ddea348a8dc303b30e90fe69069d4b8f4259bdb86",
+      "raw_sha256": "2163327ac28678c205db9f811137ef22c6ccc43c37fae62722f3d635dc30f6e1",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-ubuntu-24.04-x64-retained-03.json",
+      "sha256": "be386d33b6a14aca055dc4c75d6d12426452012d15f565d27652afba762c5612",
+      "raw_sha256": "3826dbb5f34c71bb6c24964d90c9c7ace0cea0c1c280f88100de5cda1d537100",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-ubuntu-24.04-x64-retained-04.json",
+      "sha256": "82110e82fc4ad2f678c81285716106bd8434b13195b933b5116369c3806c3a6d",
+      "raw_sha256": "3109c7efbe8c94ad230af14e3fd1b6f5f07b7af53b665f0d6c6feaf8682a8b8c",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-ubuntu-24.04-x64-retained-05.json",
+      "sha256": "b5196b58d9592b02fc74aa08f3c62ac560e5aa8b20b6bb570f02e88d5375ab34",
+      "raw_sha256": "048f478759453ed675c9f8f54120d16fb8f200bfa8c31d03de1c2dcd4429da2a",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-ubuntu-24.04-x64-retained-06.json",
+      "sha256": "5453156254b76f05b15fcd35542a159205209f8aac35cda9bce1d8d03629f494",
+      "raw_sha256": "2cd910a32ce28f42238de59b80619a1022a69cdb3999b1eea1bf318c8980b414",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-ubuntu-24.04-x64-retained-07.json",
+      "sha256": "c3d77452faec5f76cc282f88619bd9181de484c3aca68c7fcc3d3e2a2df4746e",
+      "raw_sha256": "afa2fef9b43ee550b6f94b325330dc71f7ddf880f7c3158235e2829948b65ecd",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-ubuntu-24.04-x64-retained-08.json",
+      "sha256": "dfa70e9f6cc9091d830f5c3fa8d67babd7eec3225ebd2d99de10054e34ae0f8a",
+      "raw_sha256": "24c0c5f0b5a6853a4f0cbd5b4cb3b9d40a80a1d2efd0aaa4e73abe6267611f13",
+      "raw_bytes": 1048576
+    },
+    {
+      "path": "profile-hosted-ubuntu-24.04-x64-retained-09.json",
+      "sha256": "ad2697bc015eddb2e97fa73a31ed1ac76712f0137956b8d180c46ddc802d7b12",
+      "raw_sha256": "bbf86061b0aeb9dc1fee632b3716b1af80ee6120cd66102ae2c7e668171a64c6",
+      "raw_bytes": 869013
+    }
+  ]
+}
