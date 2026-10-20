@@ -1,0 +1,29 @@
+{
+  "base": "2f0d29a385a142523e897daeae4cbe96db5a0f0d",
+  "task_branch": "task/aide-lite-modern-lifecycle-01",
+  "origin_url": "https://github.com/Julesc013/aide.git",
+  "control_config_digest": "61162891870315aa1a0adc94ded55e2b9a65224c948c23c26c823005bbbaca90",
+  "qualification_config": ".aide.local/lite-successor-qualification-execution.json",
+  "qualification_config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+  "controller_sha256": "d25ecb654fd8dc68b1d33cc6b70865a27ae0639a18c1d66abe202fd75338e45b",
+  "maximum_local_allocations": 1,
+  "effects": [
+    "one exact managed source commit on this local task branch",
+    "one separately identified existing-runner local allocation using exact template with actual commit/tree filled",
+    "collect verify and retire once; retain incomplete and failed product outcomes"
+  ],
+  "forbidden": [
+    "push, hosted dispatch, dev/main integration, branch retirement, tag or release",
+    "product/backend/export/stable/target mutation, configuration changes, models or providers"
+  ],
+  "review_attestation": {
+    "path": ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/source-review.json",
+    "actual_independent_accept_only": true,
+    "binds": [
+      "source_sha256",
+      "effect_sha256",
+      "controller_sha256"
+    ],
+    "included_in_commit": true
+  }
+}

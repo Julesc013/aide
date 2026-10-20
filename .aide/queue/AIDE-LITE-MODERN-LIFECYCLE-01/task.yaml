@@ -1,0 +1,37 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LITE-MODERN-LIFECYCLE-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+title: Observe actual Lite lifecycle on modern Windows Linux and macOS
+type: implementation
+status: running
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/**
+    - evals/lite/lifecycle.py
+    - .github/workflows/lite-modern-lifecycle.yml
+    - .aide/queue/index.yaml
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/generated/**
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - TODO.md
+    - CHANGELOG.md
+  forbidden_paths:
+    - product source and lifecycle activation, exported packs and stable release assets
+    - existing canary assertions, other repositories, machine configuration and local storage roots
+    - all GitHub settings, secrets, branch protection, tags, releases, issue or PR messages
+verification:
+  maximum_local_jobs: 1
+  local_config: .aide.local/lite-successor-qualification-execution.json
+  maximum_hosted_runs: 1
+  maximum_hosted_jobs: 3
+  hosted_profile: public_standard_runners_only_no_artifact_or_cache_uploads
+  hosted_job_timeout_minutes: 10
+  live_worker_model_requests: 0
+review_gate: exact_admission_source_local_job_hosted_effect_and_integration

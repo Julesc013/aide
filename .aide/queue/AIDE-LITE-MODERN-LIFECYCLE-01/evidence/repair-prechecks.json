@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "syntax_files": 3,
+  "helper_status": "blocked",
+  "helper_blockers": [
+    "dirty_tree_requires_classification"
+  ],
+  "original_count": 126,
+  "raw_git_identity_projection": "LF",
+  "new_jobs": 0,
+  "preserved_static_failure": "KeyError from probing result instead of status; corrected before execution"
+}

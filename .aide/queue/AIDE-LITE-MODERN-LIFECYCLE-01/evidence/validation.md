@@ -1,0 +1,9 @@
+### Candidate verification
+
+**Structural checks:** Python syntax and exact package/helper/dependency hashes; published ZIP/tar identities match the retained 1.1.0 publication record. Existing `doctor` passes. `validate` reports 60,922 checks, 60,921 PASS, one existing missing historical review-reference warning and zero FAIL. Harness regeneration changes only its derived manifest; managed guidance remains current.
+
+**Not run yet:** the new local allocation, hosted runners and lifecycle consumers. The exact independent source review must precede them. The first phase deliberately does not cover update conflicts, rollback, repair or controlled interruption; those remain mandatory later Lite 1.2 obligations.
+
+**Preserved preparation errors:** an implicit Windows text decoder failed on an existing UTF-8 document; the preparation resumed with explicit UTF-8. Initial command discovery tried a nonexistent Lite `generate` subcommand and direct Harness module invocation; neither mutated product state. The documented Harness entry point `py -3 -B scripts/aide compile` was then used.
+
+**Independent review repairs:** the original REQUEST_CHANGES and changed original source bytes remain under `source-review-initial.json` and `initial-candidate/`. Live receipts now go directly to verified managed output; the outer invocation records start/termination/errors and raw-stream identities. Brownfield refusal checks both authored prefix and appended suffix. The existing helper plan is retained and inspected, allowing only the exact classified dirty-tree blocker. The original 126 unique fixture IDs are guarded, task state is reconciled and the single local allocation also round-trips the log transport. A preparation probe caught use of `result` instead of the helper's actual `status` field before execution; this was corrected without allocating work.

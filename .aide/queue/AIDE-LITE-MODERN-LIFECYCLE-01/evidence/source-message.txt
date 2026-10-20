@@ -1,0 +1,12 @@
+test(lite): observe delivered lifecycle across modern profiles
+
+- Reuse original archive, install and removal oracles for published 1.1.0 and the unchanged development export.
+- Observe fresh and existing-project adoption, installed use, preservation and detach without weakening native guards.
+- Retain original filesystem fixture outcomes, raw command streams, exact inputs and host identities.
+- Prepare a pinned three-profile workflow with bounded log receipts and no artifact, cache or model requests.
+- Keep observation completion separate from native lifecycle acceptance and product support.
+
+Validation: PASS - Python syntax, pinned inputs, doctor, generated manifest and structural validation (one existing warning).; NOT RUN - local allocation, hosted runners, new native support or release publication.
+Changelog: Added: Modern-profile lifecycle characterization with preserved product failures.
+AIDE-Task: AIDE-LITE-MODERN-LIFECYCLE-01
+AIDE-Format: compact-v1

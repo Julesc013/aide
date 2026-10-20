@@ -1,0 +1,72 @@
+[
+  {
+    "label": "message",
+    "argv": [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "commit",
+      "check",
+      "--message-file",
+      "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-LITE-MODERN-LIFECYCLE-01\\evidence\\source-message.txt"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "ff48d2856a38e6322e13f15cc4f78c5f68bf5114df1fc561d7f65b299ac24d99",
+    "stdout_bytes": 2181
+  },
+  {
+    "label": "generated-drift",
+    "argv": [
+      "py",
+      "-3",
+      "-B",
+      "scripts/aide",
+      "compile",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "380f6d5df210b04175dfc2785fc99f9ee4886e5e6009c0d318e7e715ff2a29db",
+    "stdout_bytes": 2013
+  },
+  {
+    "label": "diff",
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_bytes": 0
+  },
+  {
+    "label": "git-plan",
+    "argv": [
+      "py",
+      "-3",
+      "-B",
+      ".aide/scripts/aide_lite.py",
+      "git",
+      "plan"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5a04a8dbecc5f5063630168b13928ec4040f5d520eb55918dda9e553a77789b5",
+    "stdout_bytes": 449
+  },
+  {
+    "label": "prior-doctor",
+    "exit_code": 0,
+    "result": "PASS"
+  },
+  {
+    "label": "prior-validate",
+    "exit_code": 0,
+    "checks": 60922,
+    "PASS": 60921,
+    "WARN": 1,
+    "FAIL": 0,
+    "OTHER": 0,
+    "warning": "review packet review ref missing: .aide/prompts/evidence-review.md"
+  }
+]

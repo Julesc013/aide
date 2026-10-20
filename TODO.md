@@ -2,6 +2,8 @@
 
 **Current checklist — 20 October 2026.** The filesystem [queue](.aide/queue/index.yaml) owns task state, authority and acceptance. This page is a short, dated view for humans and agents; follow each linked WorkUnit before acting.
 
+- [ ] Observe published and development Lite adoption/removal on actual modern runners, preserve failures and implement demonstrated native gaps before claiming Lite 1.2 support. [Active phase](.aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/ExecPlan.md)
+
 **Release and daily use**
 
 - [x] Publish and acquire **AIDE Lite 1.0.0** for its exact local Windows CLI profile. [Evidence](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md)

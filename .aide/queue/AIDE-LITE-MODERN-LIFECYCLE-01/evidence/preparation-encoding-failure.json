@@ -1,0 +1,1 @@
+{"result":"FAIL","operation":"prepare documentation","error":"UnicodeDecodeError from implicit Windows locale; corrected with explicit UTF-8","effects":"package input and status updated; remaining preparation resumed explicitly"}

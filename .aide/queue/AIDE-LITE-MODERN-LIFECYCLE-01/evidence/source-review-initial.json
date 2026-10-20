@@ -1,0 +1,16 @@
+{
+  "decision": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "2b0bde08c77e13c9636eaa9e77f52d9f8c49584ad37e7fca84ca47aaa9169ce0",
+  "effect_sha256": "77c493a43395de069e8d24e06fbb07ed035186e833e4c2221f32ed19174c4a49",
+  "controller_sha256": "d25ecb654fd8dc68b1d33cc6b70865a27ae0639a18c1d66abe202fd75338e45b",
+  "required_fixes": [
+    "Write live local receipts beneath verified AIDE_JOB_OUTPUT; retain outer started/terminal/exception metadata and stream hashes.",
+    "Check deliberately appended AGENTS suffix on refusal/error as well as successful detach.",
+    "Retain and inspect helper plan; permit only exact classified dirty-tree blocker and refuse other blockers."
+  ],
+  "optional_notes": [
+    "Exact 126 unique test IDs/count, local receipt transport round-trip and task state coherence are useful."
+  ],
+  "effects_performed": false
+}

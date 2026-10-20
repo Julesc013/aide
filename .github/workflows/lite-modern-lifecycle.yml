@@ -1,0 +1,54 @@
+name: Lite modern lifecycle observation
+
+on:
+  push:
+    branches: [task/aide-lite-modern-lifecycle-01]
+    paths:
+      - evals/lite/lifecycle.py
+      - .github/workflows/lite-modern-lifecycle.yml
+      - .aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/package-inputs.json
+
+permissions:
+  contents: read
+
+jobs:
+  observe:
+    name: ${{ matrix.profile }} lifecycle observation
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - profile: windows-2025-x64
+            runner: windows-2025
+            architecture: x64
+          - profile: ubuntu-24.04-x64
+            runner: ubuntu-24.04
+            architecture: x64
+          - profile: macos-15-arm64
+            runner: macos-15
+            architecture: arm64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 10
+    steps:
+      - name: Check out exact observation source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          submodules: false
+      - name: Select exact Python runtime
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: '3.14.8'
+          architecture: ${{ matrix.architecture }}
+          check-latest: false
+          allow-prereleases: false
+          freethreaded: false
+      - name: Observe lifecycle and retain lossless bounded receipts in logs
+        shell: python
+        run: |
+          import os, pathlib, subprocess, sys
+          scratch = pathlib.Path(os.environ['RUNNER_TEMP']).resolve(strict=True)
+          subprocess.run([sys.executable, '-I', '-B', 'evals/lite/lifecycle.py',
+                          '--scratch-parent', str(scratch), '--output',
+                          str(scratch / 'aide-modern-receipts'), '--emit-log'], check=True)

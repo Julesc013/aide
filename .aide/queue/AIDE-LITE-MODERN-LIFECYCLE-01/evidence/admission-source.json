@@ -1,0 +1,22 @@
+{
+  "base": "2f0d29a385a142523e897daeae4cbe96db5a0f0d",
+  "branch": "task/aide-lite-modern-lifecycle-01",
+  "files": {
+    ".aide/intake/latest-intent-packet.json": "92d20c077c8ea40edbe304212daa08c69957a60add0e878f82a5dac3e6213ef4",
+    ".aide/intake/latest-intent-packet.md": "10a0dfe543e0e6b03b2ec3dd2ec72cd602cca1e050a197f2e4664b8cf5225282",
+    ".aide/intake/latest-workunit-draft.json": "4c923a76de3a6ac5172cabdf334cabce855ccb9ef79b08a14603c1a115721bbc",
+    ".aide/intake/latest-workunit-draft.md": "e2785fc1731275e496c092145a5c4e7e4c70a5e2b1effdc778f8bc672c34638c",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/admission-effect.md": "66ff18258597e663996f1ddf6da79c2539919570feae787df0c01973f730d5ed",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/baseline.json": "c326b96f9c09fa8bd1c78c531cf14d72ce3ff10ec1296f4f200f0a4d7855cbe7",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/intake-disposition.md": "4841efbf134044450028cdf5ffbb471da5f04ff795a56a56c89ccee13bb5645d",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/latest-intent-packet.json": "92d20c077c8ea40edbe304212daa08c69957a60add0e878f82a5dac3e6213ef4",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/latest-intent-packet.md": "10a0dfe543e0e6b03b2ec3dd2ec72cd602cca1e050a197f2e4664b8cf5225282",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/latest-workunit-draft.json": "4c923a76de3a6ac5172cabdf334cabce855ccb9ef79b08a14603c1a115721bbc",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/evidence/latest-workunit-draft.md": "e2785fc1731275e496c092145a5c4e7e4c70a5e2b1effdc778f8bc672c34638c",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/ExecPlan.md": "b98e04abbb347647f4e679b75a7ef92f4625d265775e019d7d2a17cac19301e6",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/prompt.md": "2984e4fcd23524084c07b8508c8c409014f3f49722b056e188fe5bb7a2a668b8",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/status.yaml": "cb3ce767ad83ef7685ad229ef0231e95662f7ba17c4f88aa5a2c6afa3569ed3d",
+    ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/task.yaml": "09e256dcda866266bcf4ec23aa06065e0d79e1085cacdfa0d4d415f7b4236efb"
+  },
+  "effect_sha256": "66ff18258597e663996f1ddf6da79c2539919570feae787df0c01973f730d5ed"
+}

@@ -3,9 +3,9 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 9c6d2af4690a98fed27eb6e71908ef6f8fb60585b876054369da9b796d1b0657
-- raw_prompt_excerpt: Prepare AIDE Lite 1.2 and the future AIDE Extension 1.0 around one maintained shared source tree: Python 3 reference tooling, PowerShell Core 7+ only for new or changed optional PowerShell adapters, platform APIs isolated in named backen...
-- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
+- raw_prompt_hash: 20c0e5a2ee6db860751b03b6a4938aeda82e53711939279d3c7b5cdea49a56b3
+- raw_prompt_excerpt: Characterize current Lite lifecycle behavior using the existing published1.1 archives and validated development export on bounded Windows/Linux/macOS runners. Reuse existing archive/install/removal helpers and preserve all assertions. Ad...
+- interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: block until release gates, tags, and assets are approved.
 - confidence: high
 - task_class: release
 - risk_class: release
@@ -13,8 +13,8 @@
 - safe_to_execute: false
 - requires_split: true
 - blocked: true
-- blocker_reason: write blocker report and require reviewed authorization before mutation
-- next_action: write blocker report and require reviewed authorization before mutation
+- blocker_reason: block until release gates, tags, and assets are approved
+- next_action: block until release gates, tags, and assets are approved
 - task_execution: false
 - provider_or_model_calls: none
 - network_calls: none

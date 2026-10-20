@@ -1,0 +1,28 @@
+"""One admitted local observation; preserve receipts in the managed output."""
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+
+scratch = Path(os.environ["AIDE_JOB_TMP"]).resolve(strict=True)
+output = Path(os.environ["AIDE_JOB_OUTPUT"]).resolve(strict=True)
+receipts = scratch / "modern-receipts"
+streams = [output / ("evaluator" + suffix) for suffix in (".stdout", ".stderr")]
+argv = [sys.executable, "-I", "-B", "evals/lite/lifecycle.py", "--scratch-parent", str(scratch),
+        "--output", str(receipts)]
+result = None
+try:
+    with streams[0].open("xb") as stdout, streams[1].open("xb") as stderr:
+        result = subprocess.run(argv, stdin=subprocess.DEVNULL, stdout=stdout, stderr=stderr, timeout=500)
+finally:
+    if receipts.is_dir():
+        shutil.copytree(receipts, output / "receipts")
+if result.returncode:
+    raise SystemExit(result.returncode)
+data = json.loads((output / "receipts/result.json").read_bytes())
+head = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+assert data["observation_complete"] and data["source_head"] == head
+print(json.dumps({"observation_complete": True, "native_lifecycle_pass": data["native_lifecycle_pass"],
+                  "support_claimed": False}), flush=True)

@@ -1,0 +1,8 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "439d5a430466507e64c8f28d09f15b1fd162450010c9dd1f6f96067d831f6013",
+  "effect_sha256": "3b3b801cdd80d19ca2c04ef663627726f9f09754d725ad51c77a4ccef8d739c0",
+  "controller_sha256": "55555c5c9e6fb8d2c06b0b13cba0c578047ba42497efe17e0f17def06cd70f25",
+  "required_fixes": []
+}

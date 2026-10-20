@@ -1,0 +1,39 @@
+{
+  "observed_utc": "2026-10-20T09:16:34.145516+00:00",
+  "read_only": true,
+  "records": [
+    {
+      "endpoint": "repos/Julesc013/aide",
+      "data": {
+        "full_name": "Julesc013/aide",
+        "visibility": "public",
+        "private": false,
+        "archived": false,
+        "disabled": false,
+        "default_branch": "main",
+        "permissions": {
+          "admin": true,
+          "maintain": true,
+          "push": true,
+          "triage": true,
+          "pull": true
+        }
+      }
+    },
+    {
+      "endpoint": "repos/Julesc013/aide/actions/permissions",
+      "data": {
+        "enabled": true,
+        "allowed_actions": "all",
+        "sha_pinning_required": false
+      }
+    },
+    {
+      "endpoint": "repos/Julesc013/aide/actions/workflows",
+      "data": {
+        "total_count": 0,
+        "workflows": []
+      }
+    }
+  ]
+}

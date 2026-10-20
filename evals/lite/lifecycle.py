@@ -1,0 +1,258 @@
+"""Observe real delivered Lite lifecycle; collector success is not product acceptance.
+
+Uses the original consumer's archive/install/removal oracles without changing
+their assertions. Fixtures stay below an explicitly supplied temporary parent.
+No provider calls, product monkeypatches, support promotion or source refresh.
+"""
+from __future__ import annotations
+
+import argparse
+import base64
+import gzip
+import hashlib
+import importlib.util
+import json
+import os
+import platform
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+import traceback
+import unittest
+
+ROOT = Path(__file__).resolve().parents[2]
+TASK = ROOT / ".aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01"
+HELPER = ROOT / ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py"
+FIXTURES = ROOT / ".aide/scripts/tests/test_aide_distribution_fixture_portability.py"
+MAX_RAW = 8 * 1024 * 1024
+MAX_COMPRESSED = 2 * 1024 * 1024
+
+
+def sha(path):
+    with path.open("rb") as stream:
+        return hashlib.file_digest(stream, "sha256").hexdigest()
+
+
+def save(path, value):
+    path.write_bytes((json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode())
+
+
+def load(name, path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def emit_receipts(out):
+    """Lossless bounded log transport, not an Actions artifact/cache upload."""
+    files = sorted(p for p in out.iterdir() if p.is_file())
+    if sum(p.stat().st_size for p in files) > MAX_RAW:
+        raise ValueError("receipt raw-byte cap exceeded; retain local files")
+    body = {p.name: base64.b64encode(p.read_bytes()).decode("ascii") for p in files}
+    raw = json.dumps(body, sort_keys=True, separators=(",", ":")).encode()
+    packed = gzip.compress(raw, mtime=0)
+    if len(packed) > MAX_COMPRESSED:
+        raise ValueError("receipt transport cap exceeded; retain local files")
+    encoded = base64.b64encode(packed).decode("ascii")
+    chunks = [encoded[i:i + 24000] for i in range(0, len(encoded), 24000)]
+    digest = hashlib.sha256(packed).hexdigest()
+    for index, chunk in enumerate(chunks):
+        print(f"AIDE_RECEIPT_V1 {index + 1}/{len(chunks)} {digest} {chunk}", flush=True)
+
+
+def characterize(work, out, pinned):
+    helper = load("aide_lifecycle_original_helpers", HELPER)
+    commands = []
+
+    class Recorder(helper.Recorder):
+        def run(self, label, script, root, *parts, exits=(0,), offline_text=False):
+            argv = [sys.executable, "-I", "-B", str(script), "--repo-root", str(root), *parts]
+            row = {"label": label, "argv": argv, "state": "started", "exit_code": None}
+            commands.append(row)
+            record = out / (label + ".command.json")
+            save(record, row)
+            streams = [out / (label + suffix) for suffix in (".stdout", ".stderr")]
+            try:
+                with streams[0].open("xb") as stdout, streams[1].open("xb") as stderr:
+                    result = subprocess.run(argv, cwd=ROOT, stdin=subprocess.DEVNULL,
+                                            stdout=stdout, stderr=stderr, timeout=60)
+                row.update(state="completed", exit_code=result.returncode)
+            except (OSError, subprocess.SubprocessError) as error:
+                row.update(state="exception", error_type=type(error).__name__, error=str(error))
+                raise
+            finally:
+                row["streams"] = {p.name: {"bytes": p.stat().st_size, "sha256": sha(p)}
+                                  for p in streams if p.exists()}
+                save(record, row)
+            if any(p.stat().st_size > MAX_RAW for p in streams):
+                raise ValueError("command stream cap exceeded")
+            stdout, stderr = (p.read_bytes().decode("utf-8", errors="replace") for p in streams)
+            if result.returncode not in exits:
+                raise AssertionError(f"{label} exit {result.returncode}; see raw streams")
+            if offline_text and "network_calls: none" not in stdout:
+                raise AssertionError(f"{label} did not declare offline execution")
+            return subprocess.CompletedProcess(argv, result.returncode, stdout, stderr)
+
+    rec = Recorder(out)
+    zip_path = ROOT / ".aide/release/stable/aide-lite-v1.1.0.zip"
+    tar_path = ROOT / ".aide/release/stable/aide-lite-v1.1.0.tar.gz"
+    zip_members = helper.extract_zip(zip_path, work / "published-zip")
+    tar_members = helper.extract_tar(tar_path, work / "published-tar")
+    if zip_members != tar_members:
+        raise AssertionError("published ZIP/tar member identities differ")
+    stable = work / "published-zip" / helper.PACK_NAME
+    development = ROOT / ".aide/export/aide-lite-pack-v0"
+    dev_members = {helper.PACK_NAME + "/" + name: digest
+                   for name, digest in pinned["development_members"].items()}
+    helper.verify_pack(development, dev_members)
+    cases = []
+    for subject, pack in (("published-1.1.0", stable), ("development-export", development)):
+        module = helper.load_delivered(pack)
+        for shape in ("fresh", "brownfield"):
+            label = subject + "-" + shape
+            target = work / label
+            target.mkdir()
+            row = {"subject": subject, "shape": shape, "installed": False,
+                   "detached": False, "preserved": False, "native_acceptance": False,
+                   "cli_sha256": sha(pack / "files/.aide/scripts/aide_lite.py")}
+            authored = {}
+            if shape == "brownfield":
+                authored.update({"unknown.txt": b"Project-owned data.\r\n",
+                                 "AGENTS.md": b"# Project rules\r\nKeep these exact bytes.\r\n",
+                                 "TODO.md": b"# Project TODO\n", "PLANS.md": b"# Project plan\n",
+                                 "ROADMAP.md": b"# Project roadmap\n", "CHANGELOG.md": b"# History\n",
+                                 ".aide/memory/project-state.md": b"Project-owned knowledge.\n",
+                                 "tools/existing.py": b"print('project tool')\n"})
+            for name, raw in authored.items():
+                path = target / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(raw)
+            original_agents = authored.get("AGENTS.md")
+            appended_suffix = None
+            try:
+                helper.install(rec, label, pack, target)
+                row["installed"] = True
+                if shape == "fresh":
+                    authored["unknown.txt"] = b"Project-owned data added after adoption.\r\n"
+                    (target / "unknown.txt").write_bytes(authored["unknown.txt"])
+                receipt = module.load_portable_import_receipt(target)
+                managed = set(receipt["managed"])
+                unknown = {name: hashlib.sha256(raw).hexdigest() for name, raw in authored.items()
+                           if name != "AGENTS.md"}
+                if original_agents is not None:
+                    before = (target / "AGENTS.md").read_bytes()
+                    if not before.startswith(original_agents):
+                        raise AssertionError("adoption changed authored guidance")
+                    suffix = b"\r\n# New project rule after adoption.\r\n"
+                    appended_suffix = suffix
+                    (target / "AGENTS.md").write_bytes(before + suffix)
+                    expected_agents = module.portable_agents_section_postimage(
+                        before + suffix, receipt["managed"]["AGENTS.md"]["installed_digest"])
+                    if expected_agents is None or not expected_agents.startswith(original_agents) or not expected_agents.endswith(suffix):
+                        raise AssertionError("authored section preservation oracle failed")
+                else:
+                    expected_agents = None
+                rec.installed(label + "-doctor", target, "doctor")
+                plan = helper.plan_removal(rec, label + "-removal-preview", target)
+                if plan["status"] != "PLANNED" or set(plan["candidate_targets"]) != managed:
+                    raise AssertionError("removal plan did not cover all owned targets")
+                result = rec.installed(label + "-removal-apply", target, "apply-removal", "--target",
+                                       str(target), "--expect-plan", plan["plan_digest"], "--json")
+                applied = json.loads(result.stdout)
+                row["removal_status"] = applied["status"]
+                if applied["status"] != "DETACHED" or applied["receipt_retained"]:
+                    raise AssertionError("removal did not fully detach")
+                helper.assert_detached(target, managed, module, unknown, authored_agents=expected_agents)
+                row.update(detached=True, native_acceptance=True)
+            except Exception as error:
+                row.update(error_type=type(error).__name__, error=str(error), traceback=traceback.format_exc())
+            finally:
+                # Preservation is an independent condition, including after refusal/failure.
+                row["preserved"] = all((target / name).is_file() and (target / name).read_bytes() == raw
+                                       for name, raw in authored.items() if name != "AGENTS.md")
+                if original_agents is not None:
+                    row["preserved"] &= (target / "AGENTS.md").is_file() and (target / "AGENTS.md").read_bytes().startswith(original_agents)
+                    if appended_suffix is not None:
+                        row["preserved"] &= (target / "AGENTS.md").is_file() and (target / "AGENTS.md").read_bytes().endswith(appended_suffix)
+                row["native_acceptance"] &= row["preserved"]
+                cases.append(row)
+                save(out / (label + ".case.json"), row)
+    return cases, commands, len(zip_members)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--scratch-parent", required=True, type=Path)
+    parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--emit-log", action="store_true")
+    args = parser.parse_args()
+    scratch = args.scratch_parent.resolve(strict=True)
+    out = args.output.resolve()
+    owned = os.environ.get("AIDE_JOB_TMP") or os.environ.get("RUNNER_TEMP")
+    if owned is None or scratch != Path(owned).resolve(strict=True):
+        raise ValueError("scratch must equal the managed job or hosted runner temporary parent")
+    output_parent = Path(os.environ["AIDE_JOB_OUTPUT"]).resolve(strict=True) if os.environ.get("AIDE_JOB_OUTPUT") else scratch
+    if out.exists() or not out.is_relative_to(output_parent) or out == output_parent:
+        raise ValueError("output must be a new child of the managed output or hosted temporary parent")
+    out.mkdir(parents=True)
+    receipt = {"observation_complete": False, "native_lifecycle_pass": False,
+               "support_claimed": False, "models_requested": 0, "whole_model_usage": "unknown",
+               "host": {"system": platform.system(), "release": platform.release(),
+                        "version": platform.version(), "machine": platform.machine(),
+                        "python": sys.version, "executable_sha256": sha(Path(sys.executable)),
+                        "image_os": os.environ.get("ImageOS"), "image_version": os.environ.get("ImageVersion")},
+               "source_head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
+               "limitations": ["initial characterization, not full Lite 1.2 qualification",
+                               "fixture tests do not qualify lifecycle apply or hostile-writer isolation",
+                               "no update, conflict, rollback or interruption claim from these cases",
+                               "CLI offline declaration is not an OS network isolation measurement"]}
+    try:
+        pinned = json.loads((TASK / "evidence/package-inputs.json").read_bytes())
+        actual = {name: sha(ROOT / name) for name in pinned["files"]}
+        if actual != pinned["files"]:
+            raise ValueError("pinned package/helper/fixture input changed")
+        receipt["input_sha256"] = sha(TASK / "evidence/package-inputs.json")
+        receipt["inputs"] = actual
+        with tempfile.TemporaryDirectory(prefix="aide-modern-", dir=scratch) as directory:
+            work = Path(directory)
+            # Standard tempfile users, including the unchanged fixture suite, inherit this parent.
+            tempfile.tempdir = str(work)
+            os.environ.update(TMP=str(work), TEMP=str(work), TMPDIR=str(work))
+            tests_module = load("aide_modern_original_fixtures", FIXTURES)
+            tests = unittest.defaultTestLoader.loadTestsFromModule(tests_module)
+            def test_ids(node):
+                if isinstance(node, unittest.TestSuite):
+                    return [name for child in node for name in test_ids(child)]
+                return [node.id()]
+            ids = test_ids(tests)
+            if len(ids) != len(set(ids)) or len(ids) != 126:
+                raise AssertionError("original fixture suite must contain exactly 126 unique tests")
+            with (out / "fixture-tests.log").open("x", encoding="utf-8", newline="\n") as stream:
+                tests_result = unittest.TextTestRunner(stream=stream, verbosity=2).run(tests)
+            receipt["fixtures"] = {"tests_run": tests_result.testsRun, "test_ids": ids,
+                                   "failures": [(t.id(), detail) for t, detail in tests_result.failures],
+                                   "errors": [(t.id(), detail) for t, detail in tests_result.errors],
+                                   "skips": [(t.id(), why) for t, why in tests_result.skipped],
+                                   "passed": tests_result.wasSuccessful()}
+            cases, commands, members = characterize(work, out, pinned)
+            receipt.update(cases=cases, commands=commands, published_members=members,
+                           observation_complete=True,
+                           native_lifecycle_pass=tests_result.wasSuccessful() and all(c["native_acceptance"] for c in cases))
+    except Exception as error:
+        receipt.update(error_type=type(error).__name__, error=str(error), traceback=traceback.format_exc())
+    finally:
+        save(out / "result.json", receipt)
+        save(out / "receipt-index.json", {p.name: {"bytes": p.stat().st_size, "sha256": sha(p)}
+                                          for p in sorted(out.iterdir()) if p.is_file()})
+        if args.emit_log:
+            emit_receipts(out)
+    print(json.dumps({k: receipt[k] for k in ("observation_complete", "native_lifecycle_pass", "support_claimed")}))
+    return 0 if receipt["observation_complete"] else 1
+
+
+if __name__ == "__main__":
+    sys.dont_write_bytecode = True
+    raise SystemExit(main())

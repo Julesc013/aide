@@ -1,5 +1,13 @@
 # AIDE Implementation Log
 
+### Modern lifecycle observations - 20 October 2026
+
+[Bounded qualification](.aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/ExecPlan.md) prepares one shared evaluator for published Lite 1.1.0 and the validated development export on Windows, Linux and macOS. It preserves original archive, installation and removal assertions and project-owned content. Observation completion is distinct from native lifecycle success; unsupported operations remain failures and no support tier changes. Exact source, local allocation and hosted dispatch reviews remain required.
+
+### Modern lifecycle observations - 20 October 2026
+
+[Bounded qualification](.aide/queue/AIDE-LITE-MODERN-LIFECYCLE-01/ExecPlan.md) prepares one shared evaluator for published Lite 1.1.0 and the validated development export on Windows, Linux and macOS. It preserves original archive, installation and removal assertions and project-owned content. Observation completion is distinct from native lifecycle success; unsupported operations remain failures and no support tier changes. Exact source, local allocation and hosted dispatch reviews remain required.
+
 ### Lite 1.2 portability preparation - 20 October 2026
 
 [Release preparation](.aide/queue/AIDE-LITE-1-2-PORTABILITY-01/ExecPlan.md) records Python 3 reference tooling, optional PowerShell Core 7+, shared semantics and platform-specific bindings. The user selected staged legacy native ports: Lite 1.2 targets qualified modern profiles, while Windows 9x/older NT, MS-DOS/FreeDOS, OS/2, BSD, Unix, Solaris/SunOS and future native participation retain explicit evidence requirements. AIDE Extension 1.0 is a shared product family with distinct host packages, not a universal binary. This is reviewed planning, not a built or qualified 1.2 release.
