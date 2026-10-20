@@ -1,0 +1,19 @@
+{
+  "decision": "REJECT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "ec02482b3234ff107b91db43b7201f64259bdc93f404fa8a41fc12c5d767e2ee",
+  "effect_sha256": "4dc00349656bcc2157ac96dcd446a5c682ab489558c1a84c347e90d9612a5214",
+  "controller_sha256": "95fb2da43f221ee1d157a4305ed2f7db4da0ba78e3a38e2d7cf5e6956d690c4b",
+  "required_fixes": [
+    {
+      "location": "evidence/hosted-inputs.json",
+      "finding": "Ignored local .aide.local/lite-successor-qualification-execution.json is absent from Actions checkout; mandatory verification would fail on all profiles.",
+      "remedy": "Remove hosted pin while retaining local control binding; verify all remaining hosted inputs exist in committed HEAD or exact checkpoint additions, preserve rejected packet and refresh hashes."
+    }
+  ],
+  "optional_notes": [
+    "Missing-receipt per-profile summary optional; exact run/rawlogs and explicit incomplete result remain necessary.",
+    "No other concrete blocker established; no tests/jobs/mutations/external effects performed."
+  ],
+  "next_phase": "Focused corrected-packet review; original effect unexecuted."
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "ACCEPT",
+  "scope": "bounded behavioral applicability only",
+  "reviewer": "/root/review_disked_continuation",
+  "proof_sha256": "865a23c02f5f950badaf4ffddcb2b0efba5b47df3947d7b5fa0324d88bc4d5d1",
+  "generator_sha256": "77fa3300382ce0ae6a5c8a16b28568c48d9e8a80922bb9c7b80d7e31ea74609d",
+  "required_fixes": [],
+  "actual_review": "Independently verified all 56 form witnesses, eight original case results, ten retained bundles containing 353 files, and the completed fresh-predecessor witness. Actual archive comparison confirms 875 unchanged members; executable changes are confined to tree_usage. Previously inspected ordinary dispatch paths do not reach its changed live-observation branch. Applicability of 46 ordinary forms, seven non-case-6 behaviors, 18 additions and completed fresh-predecessor behavior retains original subjects.",
+  "limitations": [
+    "Retained behavioral observations are not revised-archive executions.",
+    "Predecessor parent remains incomplete; environment, timing, resource and containment limitations persist.",
+    "Overlapping evidence is not additional execution.",
+    "All ten case-6 forms, revised installed identity/ownership, brownfield, hosted profiles and replay require fresh evidence.",
+    "No execution, support or release authority."
+  ]
+}

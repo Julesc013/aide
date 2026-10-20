@@ -1,0 +1,12 @@
+test(lite): qualify actual archives on declared modern profiles
+
+- Reuse existing lifecycle, task/git/review/quality/usage assertions for49 ordinary delivered CLI forms and real1.1-to-1.2 recovery.
+- Preserve original behavioral observations under independently accepted dependency applicability; revised managed forms and final local replay remain open.
+- Bind one three-profile hosted run to exact archives, environment tuples and inputs with a finite observer, raw receipts and guarded fixture retirement.
+
+Validation: PASS - source syntax, preserved assertion expressions, retained argv matcher and read-only doctor/validate/pack-status/Git preflight; hosted qualification pending
+Changelog: Changed: prepare exact archive-based Windows Server, Linux and macOS qualification without changing portable product bytes
+Risk: Hosted observations may refuse changed environments; no new support or publication claim.
+Follow-up: Collect all hosted outcomes, then independently review the remaining local affected-consumer and release-replay group.
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+AIDE-Format: compact-v1

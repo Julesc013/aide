@@ -1,0 +1,96 @@
+{
+  "assertion_expressions_preserved": {
+    "run_additions.py": 42,
+    "run_consumer.py": 7,
+    "run_predecessor.py": 10,
+    "qualify_successor": 28
+  },
+  "pure_form_matcher_retained_argv_checks": 56,
+  "runtime_qualification": "not executed",
+  "authoring_corrections": [
+    "Cancelled inefficient all-function AST extraction before any proof output; narrowed it to one function.",
+    "Replaced whitespace-specific safe-import-prefix check with AST literal verification.",
+    "Independent preliminary review found successful validate includes FAIL:0; replaced substring refusal with exact status/count parsing.",
+    "Removed redundant nested partial-canary launch; retained shared actual-predecessor recovery oracle and focused fresh-partial semantics.",
+    "Added shared480s evaluator deadline and bounded command timeouts, reserving time within10min hosted job for cleanup/receipts."
+  ],
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "streams": {
+        "doctor.stdout": {
+          "bytes": 5181,
+          "sha256": "585c64e7eac737c2e172b11d760d884d7c614858c1521bb8941c4e4ffa595f42"
+        },
+        "doctor.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "exit_code": 0,
+      "streams": {
+        "validate.stdout": {
+          "bytes": 241,
+          "sha256": "7155d92da435eb768cffff730030ab3bf65e64ae31386664662e98696e42b5e9"
+        },
+        "validate.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "pack-status"
+      ],
+      "exit_code": 0,
+      "streams": {
+        "pack-status.stdout": {
+          "bytes": 232,
+          "sha256": "17eb7a713285498d636c31fd8f0e50e9b1a632f16f230bd1f2db48a19f2bb673"
+        },
+        "pack-status.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "plan"
+      ],
+      "exit_code": 0,
+      "streams": {
+        "git-plan.stdout": {
+          "bytes": 467,
+          "sha256": "50a3765156f43e2bf5738b990281b731321d6285b8c49c4467292df2f39df1e0"
+        },
+        "git-plan.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ]
+}

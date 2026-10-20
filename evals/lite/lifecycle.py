@@ -192,7 +192,7 @@ def characterize(work, out, pinned, *, qualify=False, continue_local=False):
     return cases, commands, len(zip_members)
 
 
-def qualify_successor(work, out, rec, helper, old, new, *, subject="development-export"):
+def qualify_successor(work, out, rec, helper, old, new, *, subject="development-export", shapes=("fresh", "brownfield")):
     """Actual published predecessor, project edits, recovery and safe exit."""
     module = helper.load_delivered(new)
     changed = ".aide/scripts/aide_lite.py"
@@ -201,8 +201,10 @@ def qualify_successor(work, out, rec, helper, old, new, *, subject="development-
     new_bytes = (new / "files" / changed).read_bytes()
     if old_bytes == new_bytes:
         raise AssertionError("predecessor conflict needs real changed upstream bytes")
+    if not shapes or len(set(shapes)) != len(shapes) or any(shape not in ("fresh", "brownfield") for shape in shapes):
+        raise ValueError("successor shapes must be a nonempty distinct subset of fresh/brownfield")
     cases = []
-    for shape in ("fresh", "brownfield"):
+    for shape in shapes:
         label = "published-upgrade-" + shape
         target = work / label
         target.mkdir()

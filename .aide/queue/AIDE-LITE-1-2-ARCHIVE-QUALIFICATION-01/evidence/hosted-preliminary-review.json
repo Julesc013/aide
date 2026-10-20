@@ -1,0 +1,29 @@
+{
+  "decision": "PASS_WITH_NOTES",
+  "scope": "preliminary source review only",
+  "reviewer": "/root/review_disked_continuation",
+  "files": {
+    "evals/lite/release.py": "c5c76864e521599b1196216d75b0bf7cbfb9da7b2191eb3f180be240eac5af7b",
+    ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/run_additions.py": "792b35274d0f46632c0ef7738d5c7c893bfa7f188c10fdb777991098042cac7f",
+    ".github/workflows/lite-modern-lifecycle.yml": "347653c4a26f9061d4d9221964765da4d78054ce4a02bd03de47952d5cb48a38"
+  },
+  "required_fixes": [],
+  "preserved_assertion_expressions": {
+    "additive": 42,
+    "lifecycle": 28,
+    "predecessor": 10,
+    "consumer": 7
+  },
+  "findings_corrected": [
+    "Successful validation includes FAIL:0.",
+    "Nested partial subprocess lacked complete start/final receipt and cancellation discipline; replaced with shared recovery composition and fresh-partial fixture.",
+    "Original additive True/False labels require ordinary ASCII uppercase receipt filenames."
+  ],
+  "notes": [
+    "Prior hosted predecessor command durations34-57s support feasibility, not a timing guarantee.",
+    "480s bounds command admission/timeouts; in-process operations and cleanup still rely on outer workflow.",
+    "Actual timing, receipt sizes and environment identity remain observations.",
+    "Incomplete outcomes are retained without automatic retry."
+  ],
+  "next": "Separate complete frozen source/effect/controller review; no execution/release/support acceptance."
+}

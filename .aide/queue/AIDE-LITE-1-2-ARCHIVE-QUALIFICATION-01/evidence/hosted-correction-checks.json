@@ -1,0 +1,14 @@
+{
+  "state": "PASS_HOSTED_CHECKOUT_AVAILABILITY_PREPARATION",
+  "excluded_local_pin": ".aide.local/lite-successor-qualification-execution.json",
+  "local_pin_sha256": "b73f055a31c0b62ed66e9f1ad2dcd3dae4b6f443296ac80fb7cce301e09d8815",
+  "hosted_input_files": 2017,
+  "availability": "Every hosted pin is tracked or an exact mapped checkpoint candidate.",
+  "source_prechecks_reused": {
+    "path": "evidence/hosted-prechecks.json",
+    "sha256": "68de7a933ba6f29c78e9eb69568e486b841f61d68946365ac4eb08e13be64646",
+    "reason": "No evaluator, portable source, archive, original assertion, workflow or controller bytes changed."
+  },
+  "jobs_run": 0,
+  "effect": "Local-only control configuration stays local; all original bounded effect and qualification obligations remain."
+}

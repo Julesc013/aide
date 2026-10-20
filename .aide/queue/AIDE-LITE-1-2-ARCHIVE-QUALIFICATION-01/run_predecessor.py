@@ -33,10 +33,10 @@ def load(name, path):
     return module
 
 
-def main():
+def main(*, subject_name='build-result.json', shapes=('fresh', 'brownfield')):
     assert not sys.argv[1:]
     assert not subprocess.check_output(['git', 'status', '--porcelain']).strip()
-    built = json.loads((TASK / 'evidence/build-result.json').read_bytes())
+    built = json.loads((TASK / 'evidence' / subject_name).read_bytes())
     predecessor = built['identity']['predecessor_matrix'][0]
     assert predecessor['version'] == '1.1.0' and built['identity']['version'] == '1.2.0'
     assert subprocess.check_output(['git', 'rev-parse', predecessor['tag'] + '^{commit}'],
@@ -89,8 +89,8 @@ def main():
         packs[version] = work / ('zip-' + version) / helper.PACK_NAME
     recorder = Recorder(OUT)
     cases = evaluation.qualify_successor(work, OUT, recorder, helper, packs['1.1.0'], packs['1.2.0'],
-                                         subject='aide-lite-v1.2.0-actual-archive')
-    summary = {'status': 'PASS' if len(cases) == 2 and all(c['native_acceptance'] for c in cases) else 'FAIL',
+                                         subject='aide-lite-v1.2.0-actual-archive', shapes=shapes)
+    summary = {'status': 'PASS' if len(cases) == len(shapes) and all(c['native_acceptance'] for c in cases) else 'FAIL',
                'cases': cases, 'commands': recorder.commands, 'assets': built['assets'],
                'predecessor': predecessor, 'fixture_retired': False, 'worker_model_requests': 0,
                'whole_model_usage': 'unknown', 'support_claimed': False}

@@ -1,0 +1,22 @@
+{
+  "status": "PASS_VERIFIED_DEV_SYNC",
+  "commit": "03929beb3c7278975f9c0b3b1378712aeca2ac91",
+  "tree": "e03bc5ef66394dd91d09725acd841e7bc57b4d92",
+  "refs": {
+    "dev": "03929beb3c7278975f9c0b3b1378712aeca2ac91",
+    "main": "ed4a90046eba12a717a9962f21523285667a669b"
+  },
+  "operations": 96,
+  "streams": 192,
+  "complete_receipt_sha256": "83ad54ef69f5524e80f70dc7922dcd7e862df1b3e74759b6213397b537268e3f",
+  "preview_sha256s": {
+    "CHANGELOG.preview.md": "6be8f94a0a9edaba80e311bbef0cf8d56896bbea245a0233c09d8ed75775b238",
+    "RELEASE_NOTES.preview.md": "3b9429cb63fa79b625a56c4dc950ad4129853104d87c7111fcf965fd6d4ab3a2",
+    "changelog.preview.json": "c7a216ee074901c386d6116a62a8256a14983eed650dcf1824133f7b97aa6c8c",
+    "release-notes.preview.json": "a78bd32bcbb0e0c8365ae34217c837d1e2f10c2a32d1f7f6e253af18316813ac",
+    "malformed-commits.md": "ecf9f51c60516cd097e2f31dd68904255722079fd951a70f33bfba09b0566264",
+    "latest-changelog-report.md": "3edd198bf2985351d4cc3df0cf3d8d758c141ded2b34bd5c38b01716749cb38e"
+  },
+  "model_requests": 0,
+  "scope": "Dev checkpoint only; revised consumer/profile/replay, main promotion and publication remain open."
+}

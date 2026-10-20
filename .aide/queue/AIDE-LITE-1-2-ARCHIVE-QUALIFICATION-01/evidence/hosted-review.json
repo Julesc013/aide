@@ -1,0 +1,16 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "ce9a9e03018bd44a221500429693d3cae6c10e046bd52b8d336a5227b63d4432",
+  "effect_sha256": "881133f840156b316190bd82ac20eda5244bca6b322027299749a4f5effde1c0",
+  "controller_sha256": "95fb2da43f221ee1d157a4305ed2f7db4da0ba78e3a38e2d7cf5e6956d690c4b",
+  "required_fixes": [],
+  "reasons": [
+    "Only unavailable local config pin removed; all2017remaining inputs match and are tracked or exact checkpoint additions.",
+    "All37mappedfiles,dirty-set boundaries,dependent hashes and Git filter identities verified.",
+    "All31initialcandidate files losslessly preserved; rejected identities/verdict and eight original precheck streams verified.",
+    "Evaluator/workflow/observer/controller/qualification subjects unchanged."
+  ],
+  "scope": "Exact managed checkpoint and one guarded task-branch push triggering one3profile hosted run, bounded observation/collection; no local allocation, dev/main promotion, rebuild, release or support acceptance.",
+  "limitations": "Outcomes unobserved; retain failures/incomplete receipts with no automatic retry."
+}

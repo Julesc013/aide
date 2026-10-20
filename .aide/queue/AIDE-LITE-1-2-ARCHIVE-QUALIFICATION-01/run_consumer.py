@@ -33,11 +33,10 @@ def write(path, value):
     path.write_text(json.dumps(value, indent=2, sort_keys=True) + '\n', encoding='utf-8')
 
 
-def main():
+def main(*, subject_name='build-result.json'):
     assert len(sys.argv) == 2 and sys.argv[1] in tuple(map(str, range(8)))
     index = int(sys.argv[1])
     assert not subprocess.check_output(['git', 'status', '--porcelain']).strip()
-    subject_name = 'build-result.json'
     subject = json.loads((TASK / 'evidence' / subject_name).read_text(encoding='utf-8'))
     for name, value in subject['assets'].items():
         assert sha(ROOT / name) == value['sha256']

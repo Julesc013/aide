@@ -2,11 +2,11 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
 status: running
 result: PENDING
-planning_state: revised_candidate_frozen_reuse_and_hosted_preparation
+planning_state: behavior_reuse_accepted_actual_archive_hosted_preparation
 product_qualified: false
 local_jobs_consumed: 15
 hosted_runs_consumed: 0
-next_action: Prepare exact dependency applicability and revised-archive hosted profiles, then separately review the final affected-consumer and release-replay group. One local allocation and one three-profile hosted run remain; no support or promotion is admitted by build success.
+next_action: Independent review accepted bounded retained behavior applicability; prepare and review actual-archive hosted profiles, then separately review the final affected-consumer and release-replay group. One local allocation and one three-profile hosted run remain; no support or promotion is admitted by build success.
 qualified_source_checkpoint: cb2ddcaf837e2604f34f11211447c551cc85b29b
 canonical_job: 6355e80d38804f89aa9a83fd743be7e1
 canonical_tests_passed: 12
@@ -19,7 +19,7 @@ consumer_checkpoint: eb8029171ee2b87f177e88fa5aca6f1994b9833d
 original_consumer_cases_passed: 8
 original_consumer_cases_incomplete: 0
 consumer_retained_files: 198
-dev_checkpoint: d256a6010183a4b6d70b98071a6e534f5624760d
+dev_checkpoint: 03929beb3c7278975f9c0b3b1378712aeca2ac91
 dev_synced_remote: true
 main_checkpoint: ed4a90046eba12a717a9962f21523285667a669b
 remaining_checkpoint: 9ee1880e553e692ad697e0e8699b29439c47317e
@@ -45,3 +45,6 @@ revised_candidate_payload_source: 158a5cdcac7afecbc180a6324ea02e46617d1bc9
 revised_archive_files: 879
 revised_changed_members_per_archive: 4
 revised_build_retained_files: 14
+behavior_reuse_review: ACCEPT_bounded_behavior_only_original_subjects_retained
+dev_verified_operations: 96
+dev_verified_streams: 192

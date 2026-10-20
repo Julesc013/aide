@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import time
 
 ROOT = Path.cwd()
 TASK = ROOT / '.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01'
@@ -13,13 +14,11 @@ TMP = Path(os.environ['AIDE_JOB_TMP']).resolve(strict=True)
 OUT = Path(os.environ['AIDE_JOB_OUTPUT']).resolve(strict=True)
 
 
-def main():
-    assert not sys.argv[1:]
+def main(*, subject_name='build-result.json', before_forms=None, deadline=None):
     import importlib.util
     spec = importlib.util.spec_from_file_location('successor_common', TASK / 'run_consumer.py')
     common = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(common)
-    subject_name = 'build-result.json'
     subject = json.loads((TASK / 'evidence' / subject_name).read_text(encoding='utf-8'))
     assert not subprocess.check_output(['git', 'status', '--porcelain']).strip()
     for name, value in subject['assets'].items():
@@ -39,8 +38,11 @@ def main():
         stdout, stderr = OUT / (label + '.stdout'), OUT / (label + '.stderr')
         common.write(path, record)
         try:
+            remaining = 180 if deadline is None else min(180, deadline - time.monotonic())
+            if remaining <= 0:
+                raise TimeoutError('one evaluator deadline; retain completed observations')
             result = capture.capture_streams(argv, cwd=cwd, env=dict(os.environ),
-                stdout_path=stdout, stderr_path=stderr, timeout=180)
+                stdout_path=stdout, stderr_path=stderr, timeout=remaining)
             record['exit_code'] = result.returncode
         except BaseException as exc:
             record['exception'] = repr(exc)
@@ -86,6 +88,9 @@ def main():
             forms[form] = {'command': label, 'exit_code': result.returncode,
                            'allowed_report_writes': list(writes)}
         return result.stdout
+
+    if before_forms is not None:
+        before_forms(fixture, pack, target, module, helper, rec, command, write)
 
     task_id = 'DELIVERED-ADDITIONS-01'
     task_path = '.aide/queue/' + task_id
@@ -229,4 +234,5 @@ def main():
 
 
 if __name__ == '__main__':
+    assert not sys.argv[1:]
     main()
