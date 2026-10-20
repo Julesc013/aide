@@ -1,0 +1,12 @@
+build(lite): freeze 1.2 candidate archives for consumer checks
+
+- Retain exact ZIP, TAR, manifest and checksum assets from the accepted versioned build, with the complete collected result and lossless streams.
+- Preserve all historical assets and refreshed payload bytes; bind eight unchanged original Windows canaries to the frozen 1.2 subject through one scoped selector.
+- Prepare serial fresh admission and terminal stop behavior, preserving completed cases on interruption or failure instead of restarting qualification.
+
+Validation: PASS - existing stable-build and stable-validate, 58 unchanged release preimages, 879 unchanged export files, archive identity and collected output/log digests. Twelve prior custody checks remain valid. Actual consumer execution is pending.
+Changelog: Added: Frozen Lite 1.2 candidate downloads for exact delivered-byte qualification; no public release or new support activation.
+Risk: Build success does not establish consumer acceptance. Broader host containment and whole-outcome model usage remain unqualified or unknown.
+Follow-up: Run eight original consumers once each, then qualify additive forms, actual predecessor and declared modern profiles before release replay and publication.
+AIDE-Task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+AIDE-Format: compact-v1

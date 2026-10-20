@@ -1,0 +1,29 @@
+{
+  "limits": {
+    "canonical_bytes": 8388608,
+    "commit_reserve_bytes": 4294967296,
+    "disk_reserve_bytes": 10737418240,
+    "log_bytes": 1048576,
+    "max_files": 15000,
+    "memory_bytes": 1073741824,
+    "physical_reserve_bytes": 4294967296,
+    "processes": 16,
+    "retained_bytes": 16777216,
+    "runtime_seconds": 600,
+    "scratch_bytes": 67108864
+  },
+  "roots": {
+    "control": "D:\\Projects\\AIDE\\.aide.local\\execution\\control",
+    "retained": "D:\\Projects\\AIDE\\.aide.local\\execution\\retained",
+    "scratch": "D:\\Projects\\AIDE\\.aide.local\\execution\\scratch"
+  },
+  "schema": "aide.managed-workspace.local.v1",
+  "volume_ids": {
+    "control": "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\",
+    "retained": "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\",
+    "scratch": "\\\\?\\volume{f3ada789-6f83-4af0-9697-b283e38b7538}\\"
+  },
+  "working_roots": [
+    "D:\\Projects\\AIDE\\aide"
+  ]
+}

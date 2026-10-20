@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-I",
+    "-B",
+    ".aide/scripts/aide_lite.py",
+    "release",
+    "stable-validate",
+    "--version",
+    "1.2.0"
+  ],
+  "exit_code": 0,
+  "state": "completed",
+  "streams": {
+    "stable-validate.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stable-validate.stdout": {
+      "bytes": 50,
+      "sha256": "986b22ede5aad84ee9e7c264d9de0161f15805f77720a5a4f6d024bbee07df52"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "state": "PASS_READ_ONLY_PREFLIGHT",
+  "jobs_requested": 0,
+  "consumer_tests_executed": false,
+  "source_head": "89f334f0d06457b4fbd96ca4aba86fce5eb8e43c",
+  "literal_shared_inputs": 1978,
+  "original_canary_files": {
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/consumer_canary_base.py": "c8ef2dab903793e2f9ae11c5d8ce6ecebad0c0733b142e8ce85360affac11cba",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/consumer_canary_runner.py": "ece23decd62270cdf1e03ebf04a8b419bc3afb4578a6c6d729cd2c3b763dc62d",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/context_offline_canary.py": "4bce2172cae12c7504e8095e23e8151e07b2a4fd9f34f2f221ad79cc8009cb92",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/forced_restart_base.py": "2dd3b0f8b12a7bc382a71747019ce61ba7938e72b832d1a96d2e807b3e2b005b",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/forced_restart_runner.py": "615f02705135758104cfafa2c11b7797220f622e489d86508224c59a922e1bbd",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/job_forms_canary.py": "51d9a46fbf285664067b4c5b5247d5e9e61cbc0efe7f024cdc818b66d1f12ab7",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/legacy-config-template.json": "f7b89605be4e453bb6d71b35001bbb6d1d7dd26989c91089070f934b8c8721ed",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_canary_base.py": "08ab80da60664556f16d9ba63ce9ba08f24060327de1316dad0a80ce4118dfb1",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_canary_runner.py": "716256c5236eb1b68d00c871612b9d5fbbb29a6c57541a2756f529d5d4298e7b",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/lifecycle_helper.py": "3f3140807520b1481181c34e95e06273e2774698cf2d384e42b5b6214f58a181",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/partial_cli_canary.py": "a1fbff1147cdf341e00da4a5c40869cdccd1dd2011dbc20dbcbff9db6f64456d",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/public_cli_canary.py": "3ebc962bd9c8a938cd10b36c5da16862ef75e6d3d605ffac269ae2467e4095e3",
+    ".aide/queue/AIDE-CURRENT-SCOPED-LITE-QUALIFICATION-01/canaries/taskos_delivered_canary.py": "3fbf7e4a859f98923204a77cdeb70fd3dde690458aa055b23de1176864246183"
+  },
+  "old_probe_config_unchanged": true,
+  "build_job_retired": true,
+  "build_retained_files": 13,
+  "stable_assets_preserved": 8,
+  "release_preimages": 58,
+  "pack_files": 879,
+  "archive_assets": {
+    ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+      "sha256": "53f3ae890d6f460ff879b763d602fc942d61e442a6c15f722adfbfa09f5ffe99",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+      "sha256": "68b80254c91941594278d7460fd7b2e0d4e702476899802f6c5cd95bb62fc12c",
+      "size_bytes": 27942
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+      "sha256": "683db138bfc03da14ee3e9c3d6257206347ad947653d7f10224c892a8f1b9950",
+      "size_bytes": 969110
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.zip": {
+      "sha256": "62c920d62c8b44b11c97d80cf0401997bcf05aad0b805348ded7f22ed469698f",
+      "size_bytes": 1328283
+    }
+  },
+  "prepared_cases": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "worker_model_requests": 0,
+  "whole_model_usage": "unknown"
+}

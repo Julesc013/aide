@@ -1,0 +1,17 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "eb10ad4a8114f460e976e452db3bcf0f6f04a4168fb7ddddcaaef4230db9c4bf",
+  "effect_sha256": "90e0539fe7e57b0b6e6c3721c3116fd060adea5635b73744c99fba112a8d3510",
+  "controller_sha256": "4035e3090994a6d7d384763545d00066e19f11b383cd60647bd3bc5582cdc408",
+  "required_fixes": [],
+  "reasons": [
+    "Both required fixes are satisfied.",
+    "Verified all33mapped files,1978input pins, exact dirty set, Git filter identities and preserved rejected subjects."
+  ],
+  "scope": "Exact managed checkpoint and at most eight serial original consumer cases, stopping on first failure or incomplete result.",
+  "limitations": [
+    "Remaining qualification, integration and publication gates remain separate."
+  ],
+  "reviewer_executed_tests": false
+}

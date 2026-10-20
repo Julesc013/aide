@@ -4,6 +4,8 @@ Release entries describe the delivered Lite package and its declared compatibili
 
 #### Unreleased
 
+- **Build candidate:** Lite 1.2 ZIP/TAR, manifest and checksums passed the existing build/validation owner, preserving all historical assets. Twelve custody regressions and one owned export refresh passed; delivered consumers and exact profile qualification remain pending. [Evidence and limits](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md)
+
 - **Added, development:** compatible multi-profile release metadata and a verified 879-file export, delivered at `ed4a9004`. Twenty focused fixtures passed; the original worker failure and accepted read-only reconciliation remain preserved. Actual versioned-archive qualification is next; this is not a new supported release. [WorkUnit](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/REPORT.md)
 
 - **Added, development:** shared Linux/macOS filesystem binding beneath the existing lifecycle owner. Four exact Windows/Linux/macOS environments passed adoption, published 1.1 conflict/recovery, repair and exit; hosted tests recorded 447 passes/21 explicit skips, including native POSIX ACL/xattr checks. Versioned Lite 1.2 qualification remains separate. [Results and limits](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md)

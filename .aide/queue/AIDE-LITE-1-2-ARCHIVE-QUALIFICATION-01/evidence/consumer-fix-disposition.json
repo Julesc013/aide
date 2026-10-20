@@ -1,0 +1,18 @@
+{
+  "initial_decision": "REQUEST_CHANGES",
+  "initial_source_sha256": "17cd936621ef15095c966c0078f850bd918887b90682fc3246ca247879dc80aa",
+  "initial_effect_sha256": "d79036fd1309e7cc61fd19b83b8055bc6e1535d0c94fffc4944a997a49812914",
+  "initial_controller_sha256": "3d90de67589705314ef4e19a0c552304357fe846e79c4d36827b8a62e9a90b48",
+  "fixed_controller_sha256": "4035e3090994a6d7d384763545d00066e19f11b383cd60647bd3bc5582cdc408",
+  "fixes": [
+    "Bind the COMMITTED result OID/tree once.",
+    "Check that exact commit/tree, branch, clean state and approved parsed configuration digest before every case.",
+    "Preserve existing raw configuration SHA pin in each job input map.",
+    "Before continuing require exact returned job/manifest/config/source identities plus successful retirement/quiescence/scratch absence/reservation release.",
+    "Recheck branch/commit/tree/clean state after each return."
+  ],
+  "archive_bytes_changed": false,
+  "original_canaries_changed": false,
+  "new_jobs_requested": 0,
+  "read_only_preflight": "PASS"
+}
