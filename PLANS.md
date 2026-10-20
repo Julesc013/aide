@@ -2,7 +2,7 @@
 
 ### Multi-profile release contract - 20 October 2026
 
-[AIDE-LITE-MULTIPROFILE-CONTRACT-01](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md) extends the existing release owner with exact environment, capability and command declarations in one Lite payload. The source-only 1.2 candidate retains the actual 1.1 predecessor and all eight historical assets. Initial independent review found two lineage gaps; explicit minor-version adoption and refusal preservation are now prepared with focused regressions. One reviewed fixture/export allocation and final source/integration acceptance remain pending. Production archives, all declared public forms, publication and acquired-byte acceptance belong to the subsequent exact phase.
+[AIDE-LITE-MULTIPROFILE-CONTRACT-01](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md) extends the existing release owner with exact environment, capability and command declarations in one Lite payload. The source-only 1.2 candidate retains the actual 1.1 predecessor and all eight historical assets. Initial independent review found two lineage gaps; explicit minor-version adoption and refusal preservation are now prepared with focused regressions. All twenty affected methods passed and the 879-file export refreshed once. The original post-export worker failure remains preserved; read-only reconciliation completed without reruns or regeneration. Final independent acceptance/integration remains pending. Production archives, all declared public forms, publication and acquired-byte acceptance belong to the subsequent exact phase.
 
 ### Shared lifecycle qualification - 20 October 2026
 

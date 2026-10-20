@@ -1,0 +1,22 @@
+{
+  "additional_jobs": 0,
+  "collected_manifest": {
+    "logs": "58e617b8eaa8aff31a05b88cb8f9e8851883c7eccf1a94c340f13e186a24c7b2",
+    "output": "89955112ecf1aa1deeb7080e688f46b08a89e84cb22faea523350704557a5f22"
+  },
+  "export_files": 879,
+  "export_regenerations": 0,
+  "job_id": "9d6ec5bc23354109842c7a8b39f75aec",
+  "job_result": "FAIL_PRESERVED",
+  "production_archives_built": false,
+  "profiles": 4,
+  "public_forms": 56,
+  "read_only_tail_completed": true,
+  "result": "PASS_READ_ONLY_RECONCILIATION",
+  "source_commit": "30bd712785d2388775903601c0f501016b774540",
+  "source_only_reference": "docs/reference/portability-and-build-profiles.md",
+  "stable_assets_unchanged": 8,
+  "support_claimed": false,
+  "test_reruns": 0,
+  "tests_passed": 20
+}

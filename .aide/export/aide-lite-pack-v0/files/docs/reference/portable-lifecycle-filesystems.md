@@ -1,6 +1,6 @@
 ### Portable lifecycle filesystem bindings
 
-**Status:** prepared implementation for `AIDE-LITE-POSIX-LIFECYCLE-01`; native qualification is pending. Published Lite 1.1.0 retains its exact Windows support profile. Source presence, syntax checks and successful collection do not expand support.
+**Status:** accepted development-package lifecycle cases passed on the four exact Windows/Linux/macOS environments below. [Observed evidence and acceptance state](https://github.com/Julesc013/aide/blob/1e5193b0f1e7e8e3c14f30ba0124e8f44b799c9d/.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/REPORT.md) remain separate from versioned release qualification. Published Lite 1.1.0 retains its exact Windows support profile; source presence or successful collection alone does not expand support.
 
 AIDE keeps one import, update, repair, rollback and removal implementation in `.aide/scripts/aide_lite.py`. Filesystem bindings implement only the operations that depend on the operating system. They do not own separate plans, task queues, receipts, policy, upgrade rules or release versions. The new standard-library sibling `posix_filesystem.py` follows the existing export pattern and remains loaded during same-process self-removal.
 
@@ -38,7 +38,7 @@ Removal preserves project memory, customization, tools, unknown material and edi
 
 ### Qualification and release
 
-The bounded candidate uses exact CPython 3.14.8 on local Windows 10/x64 and standard hosted Windows Server 2025/x64, Ubuntu 24.04/x64 and macOS 15/arm64. These are qualification targets until actual results are accepted. Tests include unchanged shared behavior oracles, native no-clobber/refusal/metadata fixtures, installed-CLI self-removal, an actual published 1.1 predecessor conflict, selected resolution, interruption, repair and project-preserving exit. Windows-only skips are retained and never count as POSIX passes.
+The bounded candidate uses exact CPython 3.14.8 on local Windows 10 build 19045/x64 and standard hosted Windows Server 2025 build 26100/x64, Ubuntu 24.04/kernel 6.17.0-1022-azure/x64 and macOS 15/Darwin 24.6.0/arm64. The local continuation and hosted run passed all sixteen current-development adoption/upgrade cases across those environments. Hosted tests produced 447 passes and 21 explicit skips; all fifteen POSIX primitive tests, including native ACL/xattr preservation, passed on each Linux/macOS profile. Tests include unchanged shared behavior oracles, native no-clobber/refusal/metadata fixtures, installed-CLI self-removal, an actual published 1.1 predecessor conflict, selected resolution, interruption, repair and project-preserving exit. Windows-only skips remain separate and never count as POSIX passes. The unchanged published 1.1 package still refused POSIX removal at its historical Windows-handle guard; this does not invalidate its original Windows release profile.
 
 The versioned Lite 1.2 release still requires frozen archives, checksums, acquired-byte replay, support-profile records, documentation/changelog closure and reviewed publication. Historical failures and valid successes retain their own subjects. BSD, Unix, Solaris/SunOS, older Windows, DOS/FreeDOS and OS/2 native work remains staged under the [portability plan](portability-and-build-profiles.md); companion access does not complete native qualification.
 

@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "syntax": {
+    "integrate.py": "dcc3e7e62d95555d46d175d516771e1583b6346a48c760b8b893ff3fee951b39",
+    "reconcile_export.py": "0caf33afd28b2b687df0327153ff91dea4da3851b41d18f19612992ed550c74e"
+  },
+  "preserved_input_files": 1968,
+  "portable_source_changes_after_export": [],
+  "diff_check_exit": 0,
+  "commit_format": "compact-v1 PASS",
+  "allocation_result": "FAIL_preserved",
+  "reconciled_test_passes": 20,
+  "additional_jobs": 0,
+  "export_regenerations": 0
+}

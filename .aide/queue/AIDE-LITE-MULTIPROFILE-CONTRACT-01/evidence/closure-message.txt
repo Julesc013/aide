@@ -1,0 +1,13 @@
+test(release): conserve profile fixtures and verified export
+
+- Retain twenty passing fixture methods and the original retired job failure after its completed export refresh; preserve exact lossless streams and source identities.
+- Complete the remaining export/contract checks by read-only reconciliation, correcting the source-only reference assumption without another job, test rerun or regeneration.
+- Deliver the 879-file owned export with strict per-environment release contracts and coherent current docs; all eight historical assets remain unchanged.
+- Prepare reviewed nonforce dev/main synchronization and matching two-commit release projections; preserve other branches and retire only this integrated local task branch.
+
+Validation: PASS - twenty affected methods, exact source/collection/export checks, doctor, pack-status and compact commit check; structural validation has 60927 PASS, one existing WARN and zero FAIL. The original job stays FAIL; post-dev validation and actual commit-range checks precede main promotion.
+Changelog: Added: Compatible Lite release-profile metadata and verified development export, with explicit historical and unqualified behavior.
+Risk: No production 1.2 archive or support activation; actual per-profile public forms, publication and acquired-byte acceptance remain separate.
+Follow-up: Admit exact versioned archive and public-profile qualification, then publication; retain active host/downstream and staged native/IDE work.
+AIDE-Task: AIDE-LITE-MULTIPROFILE-CONTRACT-01
+AIDE-Format: compact-v1

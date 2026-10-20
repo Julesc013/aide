@@ -2,8 +2,15 @@ schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-MULTIPROFILE-CONTRACT-01
 status: running
 result: PENDING
-planning_state: admitted_source_contract_and_fixture_preparation
+planning_state: twenty_fixtures_passed_export_reconciled_exact_final_review_pending
 product_qualified: false
-local_jobs_consumed: 0
+local_jobs_consumed: 1
 hosted_runs_authorized: 0
-next_action: Complete compatible profile/parser/lineage fixtures and documentation, then review exact source and the single bounded fixture/export effect before execution.
+next_action: Independently review composed qualification and zero-job reconciliation, then exact dev/main delivery; admit production archives and public-form qualification separately.
+original_job_result: FAIL_after_completed_tests_and_export
+original_job_id: 9d6ec5bc23354109842c7a8b39f75aec
+tests_passed: 20
+export_files: 879
+additional_jobs: 0
+test_reruns: 0
+export_regenerations: 0

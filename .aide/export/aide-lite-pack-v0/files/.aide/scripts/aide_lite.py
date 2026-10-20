@@ -881,6 +881,7 @@ Q36_REQUIRED_FILES = [
 Q36_PORTABLE_SOURCE_FILES = [
     ".aide/scripts/posix_filesystem.py",
     "docs/reference/portable-lifecycle-filesystems.md",
+    "docs/reference/lite-release-profiles.md",
     ".aide/scripts/task_handoff.py",
     ".aide/scripts/quality_symbols.py",
     ".aide/scripts/task_brief_view.py",
@@ -19478,6 +19479,8 @@ def command_release_bundle(args: argparse.Namespace) -> int:
 
 STABLE_RELEASE_DIR = ".aide/release/stable"
 STABLE_RELEASE_PROFILE = "aide-lite-local-windows"
+MULTIPROFILE_RELEASE_PROFILE = "aide-lite-local-cli"
+MULTIPROFILE_LIFECYCLE_SCOPE = "Exact declared environment and command profiles; no blanket OS support"
 STABLE_SUCCESSOR_PATH = ".aide/release/successor-candidate.json"
 STABLE_ASSET_MAX_BYTES = 8 * 1024 * 1024
 
@@ -19538,6 +19541,80 @@ def stable_release_record(repo_root: Path, relative: str) -> tuple[dict[str, obj
     return value, hashlib.sha256(data).hexdigest()
 
 
+def stable_release_profiles(value: object, forms: list[str]) -> list[dict[str, object]]:
+    """Validate declarations, not qualification, host activation or execution grants."""
+    def text(item: object, maximum: int = 512) -> bool:
+        return (isinstance(item, str) and 0 < len(item) <= maximum
+                and item == item.strip() and not any(ord(char) < 32 or ord(char) == 127 for char in item))
+
+    def strings(items: object, maximum: int, *, empty: bool = False) -> bool:
+        return (isinstance(items, list) and (empty or bool(items)) and len(items) <= maximum
+                and all(text(item) for item in items) and len(items) == len(set(items)))
+
+    if not isinstance(value, list) or not 1 <= len(value) <= 16:
+        raise ValueError("release profiles require 1 to 16 explicit declarations")
+    seen: set[str] = set()
+    all_forms = set(forms)
+    for profile in value:
+        if (not isinstance(profile, dict) or set(profile) != {
+                "profile_id", "environment", "support_candidate", "capabilities",
+                "supported_cli_forms", "refused_cli_forms", "unqualified_cli_forms", "limitations"}):
+            raise ValueError("unknown or missing release profile fields")
+        name = profile["profile_id"]
+        if (not isinstance(name, str) or not re.fullmatch(r"[a-z][a-z0-9_-]{0,95}", name)
+                or name in seen):
+            raise ValueError("invalid or duplicate release profile identity")
+        seen.add(name)
+        environment = profile["environment"]
+        if (not isinstance(environment, dict)
+                or set(environment) != {"system", "release", "version", "machine", "runtime"}
+                or any(not text(environment[key]) for key in ("system", "release", "version", "machine"))):
+            raise ValueError("release profile requires an exact environment")
+        runtime = environment["runtime"]
+        if (not isinstance(runtime, dict) or set(runtime) != {"implementation", "version"}
+                or not all(text(item, 128) for item in runtime.values())):
+            raise ValueError("release profile requires an exact runtime identity")
+        support = profile["support_candidate"]
+        if (not isinstance(support, dict) or set(support) != {"tier", "state", "mode", "capability_level"}
+                or not all(isinstance(item, str) for item in support.values())
+                or support["tier"] not in {f"T{number}" for number in range(6)}
+                or support["state"] not in {"planned", "researched", "booting", "loads", "usable", "shipping", "frozen"}
+                or support["mode"] not in {"native", "legacy-native", "companion", "archival"}
+                or support["capability_level"] not in {f"L{number}" for number in range(5)}):
+            raise ValueError("invalid candidate support posture")
+        capabilities = profile["capabilities"]
+        if (not strings(capabilities, 32)
+                or any(not re.fullmatch(r"[a-z][a-z0-9_-]{0,95}", item) for item in capabilities)
+                or not strings(profile["limitations"], 16)):
+            raise ValueError("invalid profile capabilities or limitations")
+        supported, refused, unqualified = (profile[key] for key in (
+            "supported_cli_forms", "refused_cli_forms", "unqualified_cli_forms"))
+        if (not strings(supported, 128) or not strings(refused, 128, empty=True)
+                or not strings(unqualified, 128, empty=True)
+                or set(supported) & set(refused) or set(supported) & set(unqualified) or set(refused) & set(unqualified)
+                or set(supported) | set(refused) | set(unqualified) != all_forms):
+            raise ValueError("profile command availability must partition the public contract")
+    return value
+
+
+def stable_release_historical_profiles(identity: dict[str, object]) -> list[dict[str, object]]:
+    """Read each frozen identity under its own schema, never today's candidate."""
+    schema = identity.get("schema_version")
+    if (schema == "aide.stable-release-identity.v1" and identity.get("profile_id") == STABLE_RELEASE_PROFILE
+            and "profiles" not in identity):
+        return []
+    if schema == "aide.stable-release-identity.v2" and identity.get("profile_id") == MULTIPROFILE_RELEASE_PROFILE:
+        if ("support_tier_candidate" in identity or "support_mode" in identity
+                or identity.get("lifecycle_apply_platform") != MULTIPROFILE_LIFECYCLE_SCOPE):
+            raise ValueError("historical multi-profile identity contains conflicting global claims")
+        forms = identity.get("public_cli_forms")
+        if (not isinstance(forms, list) or not forms or len(forms) > 128
+                or any(not isinstance(form, str) for form in forms) or len(forms) != len(set(forms))):
+            raise ValueError("invalid historical profile command contract")
+        return stable_release_profiles(identity.get("profiles"), forms)
+    raise ValueError("unknown historical release profile identity")
+
+
 def stable_release_contract(repo_root: Path, version: str) -> dict[str, object]:
     """Resolve a candidate declaration; historical pins are not current-pack checks."""
     stable_release_paths(version)
@@ -19549,10 +19626,13 @@ def stable_release_contract(repo_root: Path, version: str) -> dict[str, object]:
     if refs != [f"successor_candidate_ref: {STABLE_SUCCESSOR_PATH}"]:
         raise ValueError("stable successor requires the exact policy candidate reference")
     record, digest = stable_release_record(repo_root, STABLE_SUCCESSOR_PATH)
-    if (set(record) != {"schema_version", "version", "profile_id", "predecessor",
-                       "additional_cli_forms", "preserved_assets"}
-            or record["schema_version"] != "aide.stable-successor-candidate.v1"
-            or record["version"] != version or record["profile_id"] != STABLE_RELEASE_PROFILE):
+    fields = {"schema_version", "version", "profile_id", "predecessor", "additional_cli_forms", "preserved_assets"}
+    multi = record.get("schema_version") == "aide.stable-successor-candidate.v2"
+    if (set(record) != fields | ({"profiles"} if multi else set())
+            or not isinstance(record["schema_version"], str)
+            or record["schema_version"] not in {"aide.stable-successor-candidate.v1", "aide.stable-successor-candidate.v2"}
+            or record["version"] != version
+            or record["profile_id"] != (MULTIPROFILE_RELEASE_PROFILE if multi else STABLE_RELEASE_PROFILE)):
         raise ValueError("unsupported stable successor identity or fields")
     predecessor = record["predecessor"]
     if (not isinstance(predecessor, dict) or set(predecessor) != {"version", "tag_commit"}
@@ -19572,6 +19652,7 @@ def stable_release_contract(repo_root: Path, version: str) -> dict[str, object]:
             or len(additions) != len(set(additions)) or set(additions) & set(baseline)):
         raise ValueError("invalid or duplicate successor CLI forms")
     forms = baseline + additions
+    profiles = stable_release_profiles(record["profiles"], forms) if multi else []
     assets = record["preserved_assets"]
     if not isinstance(assets, list) or not 4 <= len(assets) <= 32:
         raise ValueError("preserved asset list must contain 4 to 32 members")
@@ -19611,12 +19692,11 @@ def stable_release_contract(repo_root: Path, version: str) -> dict[str, object]:
         identity = manifest.get("identity")
         if (manifest.get("schema_version") != "aide.stable-release-candidate.v1"
                 or manifest.get("status") != "frozen_release_assets" or not isinstance(identity, dict)
-                or identity.get("schema_version") != "aide.stable-release-identity.v1"
                 or identity.get("version") != old_version or identity.get("tag") != f"aide-lite-v{old_version}"
-                or identity.get("profile_id") != STABLE_RELEASE_PROFILE
                 or identity.get("artifact_state") != "immutable_release_payload"
                 or identity.get("intended_channel") != "stable"):
             raise ValueError("preserved historical manifest identity mismatch")
+        stable_release_historical_profiles(identity)
         for field in ("source_commit", "source_tree"):
             if not isinstance(identity.get(field), str) or not re.fullmatch(r"[0-9a-f]{40}", identity[field]):
                 raise ValueError("invalid historical source identity")
@@ -19635,6 +19715,37 @@ def stable_release_contract(repo_root: Path, version: str) -> dict[str, object]:
         raise ValueError("successor removes or reinterprets a predecessor CLI form")
     if current_numbers[1] == previous_numbers[1] and set(forms) != set(old_forms):
         raise ValueError("additional public forms require a minor version increase")
+    previous_profiles = stable_release_historical_profiles(historical[previous])
+    if multi and not previous_profiles and current_numbers[1] == previous_numbers[1]:
+        raise ValueError("adopting the profile contract requires a minor version increase")
+    if previous_profiles and current_numbers[1] == previous_numbers[1]:
+        current_by_id = {profile["profile_id"]: profile for profile in profiles}
+        if ({profile["profile_id"] for profile in previous_profiles} != set(current_by_id)
+                or any(any(set(profile[group]) != set(current_by_id[profile["profile_id"]][group])
+                           for group in ("supported_cli_forms", "refused_cli_forms", "unqualified_cli_forms"))
+                       or set(profile["capabilities"]) != set(current_by_id[profile["profile_id"]]["capabilities"])
+                       for profile in previous_profiles)):
+            raise ValueError("additional profile behavior requires a minor version increase")
+    if previous_profiles and not multi:
+        raise ValueError("successor cannot discard the predecessor profile contract")
+    if multi:
+        by_id = {profile["profile_id"]: profile for profile in profiles}
+        if not previous_profiles:
+            previous_profiles = [{"profile_id": STABLE_RELEASE_PROFILE, "supported_cli_forms": old_forms,
+                                  "legacy_system": "Windows", "legacy_mode": "companion"}]
+        for prior in previous_profiles:
+            current = by_id.get(prior["profile_id"])
+            if current is None or not set(prior["supported_cli_forms"]) <= set(current["supported_cli_forms"]):
+                raise ValueError("successor removes predecessor behavior from its profile")
+            if not set(prior.get("refused_cli_forms", [])) <= set(current["refused_cli_forms"]):
+                raise ValueError("successor removes a predecessor profile refusal")
+            if ("legacy_system" in prior and (current["environment"]["system"] != prior["legacy_system"]
+                    or current["support_candidate"]["mode"] != prior["legacy_mode"])):
+                raise ValueError("successor reinterprets the historical Windows companion profile")
+            if "environment" in prior and current["environment"] != prior["environment"]:
+                raise ValueError("a different environment requires a distinct profile identity")
+            if "capabilities" in prior and not set(prior["capabilities"]) <= set(current["capabilities"]):
+                raise ValueError("successor removes predecessor profile capabilities")
     tag = f"aide-lite-v{previous}"
     observed = subprocess.run(["git", "-C", str(repo_root), "rev-parse", "--verify", f"refs/tags/{tag}^{{commit}}"],
                               check=False, capture_output=True, text=True, encoding="utf-8")
@@ -19646,9 +19757,12 @@ def stable_release_contract(repo_root: Path, version: str) -> dict[str, object]:
     matrix = [{"version": previous, "tag": tag, "tag_commit": predecessor["tag_commit"],
                "manifest_sha256": pins[stable_release_paths(previous)["manifest"]]["sha256"],
                "source_commit": historical[previous]["source_commit"],
-               "source_tree": historical[previous]["source_tree"], "profile_id": STABLE_RELEASE_PROFILE,
+               "source_tree": historical[previous]["source_tree"], "profile_id": historical[previous]["profile_id"],
                "assets": [pins[rel] for rel in stable_release_paths(previous).values()]}]
-    return {"forms": forms, "predecessors": matrix, "preserved": set(pins), "digest": digest}
+    contract = {"forms": forms, "predecessors": matrix, "preserved": set(pins), "digest": digest}
+    if multi:
+        contract.update(profile_id=MULTIPROFILE_RELEASE_PROFILE, profiles=profiles)
+    return contract
 
 
 def stable_release_output_preflight(repo_root: Path, allowed: set[str]) -> None:
@@ -19714,6 +19828,11 @@ def build_stable_release_candidate(repo_root: Path, version: str) -> dict[str, o
     }
     if contract["digest"] is not None:
         marker["successor_contract_sha256"] = contract["digest"]
+    if contract.get("profiles"):
+        marker.update(schema_version="aide.stable-release-identity.v2", profile_id=contract["profile_id"],
+                      profiles=contract["profiles"],
+                      lifecycle_apply_platform=MULTIPROFILE_LIFECYCLE_SCOPE)
+        del marker["support_tier_candidate"], marker["support_mode"]
     output_root.mkdir(parents=True, exist_ok=True)
     with public_archive_fixture("aide-stable-pack-") as temp_name:
         projected = Path(temp_name) / RELEASE_ARCHIVE_ROOT
@@ -19765,12 +19884,20 @@ def validate_stable_release_candidate(repo_root: Path, version: str) -> dict[str
     if (manifest.get("schema_version") != "aide.stable-release-candidate.v1"
             or manifest.get("status") != "frozen_release_assets" or identity.get("version") != version):
         problems.append("stable candidate identity or status mismatch")
-    if (identity.get("schema_version") != "aide.stable-release-identity.v1"
+    expected_schema = "aide.stable-release-identity.v2" if contract.get("profiles") else "aide.stable-release-identity.v1"
+    if (identity.get("schema_version") != expected_schema
             or identity.get("tag") != f"aide-lite-v{version}"
             or identity.get("release_axis") != "aide_lite_portable_package"):
         problems.append("stable identity schema, tag or release axis mismatch")
-    if identity.get("profile_id") != STABLE_RELEASE_PROFILE or identity.get("artifact_state") != "immutable_release_payload" or identity.get("intended_channel") != "stable":
+    if identity.get("profile_id") != contract.get("profile_id", STABLE_RELEASE_PROFILE) or identity.get("artifact_state") != "immutable_release_payload" or identity.get("intended_channel") != "stable":
         problems.append("stable profile identity mismatch")
+    if contract.get("profiles"):
+        if (identity.get("profiles") != contract["profiles"] or "support_tier_candidate" in identity
+                or "support_mode" in identity
+                or identity.get("lifecycle_apply_platform") != MULTIPROFILE_LIFECYCLE_SCOPE):
+            problems.append("stable per-profile declarations differ from the candidate contract")
+    elif "profiles" in identity:
+        problems.append("historical single-profile identity cannot acquire new profile declarations")
     if identity.get("public_cli_forms") != contract["forms"]:
         problems.append("stable public CLI forms differ from version policy")
     if (identity.get("predecessor_matrix") != contract["predecessors"]

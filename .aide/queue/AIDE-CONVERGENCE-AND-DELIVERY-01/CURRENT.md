@@ -10,7 +10,7 @@
 
 **Latest completed integration:** independent acceptance delivered the shared lifecycle to local/remote dev/main at `1e5193b0`. The important tested remote checkpoint `9c15cc8e` is preserved; 166 integration operations and 332 streams verify in the retained receipt. The existing export has 878 files. This establishes development delivery, not new release support.
 
-**Active increment:** [compatible multi-profile release metadata](../AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md) prepares the 1.2 declaration, strict v1/v2 lineage and one shared payload with exact capabilities/command dispositions. One reviewed fixture/export allocation is pending. Actual versioned archives, per-profile public forms, publication and acquired-byte consumers remain the next phase; Lite 1.1 stays published.
+**Active increment:** [compatible multi-profile release metadata](../AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md) prepares the 1.2 declaration, strict v1/v2 lineage and one shared payload with exact capabilities/command dispositions. All twenty affected methods passed and one export refresh produced 879 files. The original post-export worker FAIL is preserved; read-only reconciliation and structural checks pass with no further job, rerun or regeneration. Final exact acceptance/integration is pending. Actual versioned archives, per-profile public forms, publication and acquired-byte consumers remain the next phase; Lite 1.1 stays published.
 
 | Next useful outcome | Remaining condition and owner |
 | --- | --- |

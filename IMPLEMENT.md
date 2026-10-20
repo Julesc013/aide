@@ -2,7 +2,7 @@
 
 ### Compatible release metadata preparation - 20 October 2026
 
-The admitted [multi-profile increment](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md) prepares strict v2 declarations and archive markers beside unchanged historical v1 identities. Supported, refused and unqualified command sets remain distinct; same-major lineage preserves existing profiles, environments, supported behavior, explicit refusals and capabilities. The initial technical review and candidate preimages are retained, with both requested fixes and an archive-marker regression prepared. No tests, export refresh or 1.2 archives have yet run in this child; exact source/effect review is still required.
+The admitted [multi-profile increment](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md) prepares strict v2 declarations and archive markers beside unchanged historical v1 identities. Supported, refused and unqualified command sets remain distinct; same-major lineage preserves existing profiles, environments, supported behavior, explicit refusals and capabilities. The initial technical review and candidate preimages are retained, with both requested fixes and an archive-marker regression prepared. All twenty affected methods passed and the export refreshed once. The original post-export worker failure is retained; read-only reconciliation and structural/export checks pass without another allocation. Final acceptance/integration remains gated; no production 1.2 archive exists.
 
 ### Shared lifecycle implementation - 20 October 2026
 

@@ -1,0 +1,12 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "70e3716579c3df4c67cfa39261d7e437dd49e540ed072c88b7c3a010ef3339c5",
+  "effect_sha256": "8a561c6c09d7d2ffb778e868f6044f818b1a9232bf4e5bfbe1a9598d0aef9a7c",
+  "controller_sha256": "dcc3e7e62d95555d46d175d516771e1583b6346a48c760b8b893ff3fee951b39",
+  "required_fixes": [],
+  "accepted_scope": "bounded development-contract qualification from20testpasses plus read-only export reconciliation; exact managed closure and guarded dev/main effect only",
+  "preserved_original_job": "FAIL",
+  "verified": "30mappedfiles, exactdirty/filteridentities,1968pins,retainedcollections,losslessbundle,879fileexport; no reviewer tests/mutations",
+  "excluded": "additionaljobs/export/productionarchives/support/tag/publication"
+}
