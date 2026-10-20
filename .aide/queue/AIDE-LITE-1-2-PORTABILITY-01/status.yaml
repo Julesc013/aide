@@ -3,9 +3,9 @@ task_id: AIDE-LITE-1-2-PORTABILITY-01
 status: passed
 result: PASS
 classification: planning_only
-planning_state: planning_delivered_exact_archives_qualified_integrated_publication_pending
+planning_state: planning_delivered_modern_release_published_acquired_consumer_pass
 acceptance_scope: bounded planning and source inventory only
 product_qualified: false
 maximum_jobs: 0
-next_action: Complete separately admitted Lite 1.2 publication/acquired-byte acceptance; staged legacy native/IDE products and daily-use workflow remain separate.
+next_action: Lite 1.2 exact modern release is complete; continue existing daily-use/downstream and staged legacy native/IDE work through their own gates.
 integration_authority: exact independent source and effect ACCEPT plus fresh refs required; use terminal receipt for actual Git outcome

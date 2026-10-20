@@ -9,16 +9,16 @@ responsible_owner: AIDE campaign controller; project owners retain target accept
 acceptance_scope: Partial exact-subject qualifications; daily-use and full platform acceptance remain open
 product_qualified: false
 observed_at: 2026-10-21
-observed_source_checkpoint: 3fec7ac375da0e17f035336e080d75ebd26a9920
-next_action: Independently admit prepared AIDE-LITE-1-2-PUBLICATION-01, reconcile pre-tag docs and deliver frozen assets plus acquired-download acceptance.
+observed_source_checkpoint: e4fd86d899bb53b237a9a8dd247ce0eeca202319
+next_action: Continue existing useful daily-use and downstream workflow through its exact host/source/owner gates; Lite 1.2 publication is complete.
 remaining_obligations:
   - Actual supported host delivery and bounded ordinary editing with interruption/recovery
   - DiskEd current-source reconciliation, target effect review and native downstream acceptance preserving customization
   - Whole-outcome effort accounting and matched accepted work; missing usage stays unknown
   - Repeated AIDE and downstream daily-use workflows with conserved results and controlled failure recovery
   - Remaining P0-P11 capability families under existing plan and independent implementation/activation/qualification gates
-published_lite: 1.1.0 exact local Windows profile;1.0.0 retained
-qualified_unpublished_lite: 1.2.0 exact declared profiles; retained applicability remains explicitly bounded; publication pending
+published_lite: 1.2.0 exact four modern T3/L1 companion profiles;1.1.0 and1.0.0 preserved
+qualified_unpublished_lite: none;1.2.0 published and acquired-consumer verified
 preserved_publication_branch: task/aide-lite-successor-publication-01
 preserved_publication_commit: c4357fc0fa150db5fc715a5365c52140a920d36b
 publication_prerequisite: complete_for_frozen_1_1_0
@@ -30,13 +30,13 @@ outer_filesystem_permission: unrestricted_not_whole_session_containment
 unchanged_blockers_stop_independent_work: false
 authority: Existing owner delegation and exact independent source/effect gates; status grants nothing new
 current_state_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
-current_state_sha256: 58e63548c421f6c13fcc8560fc4c10197c181dcb3e3286f298ecb8864fa4071e
+current_state_sha256: 744c86d2764f51de36f93ecd6df8f63ef780fa995f3916d8dc861618f69abead
 historical_status_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-status.yaml
 historical_status_sha256: 797b885d9b9beee5a17435210f002cfba91ff344eef227af6ceca2dd32214384
 historical_task_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-task.yaml
 historical_task_sha256: 9d686a19f9b774b218f9284be0bb11cf38b288dc725f32c7d0ad7bbab37e789a
 planning_qualification_ref: .aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/status.yaml
-published_profile_ref: .aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json
+published_profile_ref: .aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/published-lite-1.2.0-qualified.json
 successor_qualification_ref: .aide/queue/AIDE-LITE-SUCCESSOR-QUALIFICATION-01/evidence/technical-acceptance.json
 successor_reconciliation_ref: .aide/queue/AIDE-LITE-SUCCESSOR-INTEGRATION-01/REPORT.md
 native_adoption_ref: .aide/queue/AIDE-DAILY-DISKED-ADOPTION-01/status.yaml

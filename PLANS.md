@@ -1,5 +1,9 @@
 # AIDE Planning Index
 
+### Lite 1.2 delivered - 21 October 2026
+
+Lite 1.2 is published and all four public hashes/sizes match. The original acquired-byte adoption/recovery consumer passed in one retired job; complete receipts roundtrip. Historical/rejected/stopped results and tag/payload identities remain preserved. The source-only preparer originally validated prospective placeholder IDs; its corrected copy check did not allocate or run a test. Final reviewed closeout updates current docs and safely syncs dev/main, with its own operation receipt retained as runtime evidence. [Delivery report](.aide/queue/AIDE-LITE-1-2-PUBLICATION-01/REPORT.md). Full daily-use/downstream, host and staged native/Extension work remain open.
+
 ### Lite 1.2 publication execution
 
 The branch-only admission is complete and losslessly verified. Pre-tag documentation now reflects accepted archive qualification and `dev`/`main@3fec7ac3`. Reuse the existing guarded checkpoint/delivery/acquisition owners; publish four immutable labelled assets, then run one original case0 consumer on public downloads. No archive/export regeneration or repeat of exhausted qualification is admitted. [WorkUnit](.aide/queue/AIDE-LITE-1-2-PUBLICATION-01/ExecPlan.md).
@@ -172,7 +176,7 @@ The [existing SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md)
 
 The owner requested execution of the reviewed workflow plan. The [existing campaign](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/ExecPlan.md) routes the [bounded planning amendment](.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md) before actual-route qualification and target-owned consumption. The [roadmap](docs/roadmap/staged-expansion-roadmap.md) and its [advisory dependency view](docs/roadmap/development-workflows.json) preserve P0-P11/C1-C12, separate implementation/activation/claim gates from preferred sequencing, and define start/work/verify/interrupt/resume/conserve/consume/explain acceptance. Whole-outcome observation, understandable output and selective reuse begin with the first workflow. This candidate awaits independent review.
 
-Actual host metadata is GUNMETAL-WIN, i7-7700K, approximately32GiB RAM, GTX1050Ti, Windows10 build19045/Python3.14.8. Metadata is not route qualification. Released Lite1.0.0, prior failures and five reused plus three completed consumers remain preserved. No target implementation, model call or release effect follows from this planning amendment.
+Actual host metadata is GUNMETAL-WIN, i7-7700K, approximately32GiB RAM, GTX1050Ti, Windows10 build19045/Python3.14.8. Metadata is not route qualification. Released Lite 1.0.0, prior failures and five reused plus three completed consumers remain preserved. No target implementation, model call or release effect follows from this planning amendment.
 
 ## Owner machine allocation - 2026-10-09
 
@@ -182,11 +186,11 @@ The new machine's identity, hardware, checkout paths, storage budgets, client pe
 
 ## Actual user-context MXC result - 2026-10-09
 
-[Actual Jules qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json) records strict MXC refusal before fixtures under the existing stock Windows Job owner. This changed-executor test made zero model calls, collected8 files6,954B and retired/released all scratch/reservations. Both tested contexts now have negative evidence; native isolation and ordinary editing remain unqualified. No unchanged replay or fallback is authorized. A supported constrained executor is the remaining setup dependency; Lite1.0.0's existing publication stays valid.
+[Actual Jules qualification](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-user-qualification.json) records strict MXC refusal before fixtures under the existing stock Windows Job owner. This changed-executor test made zero model calls, collected8 files6,954B and retired/released all scratch/reservations. Both tested contexts now have negative evidence; native isolation and ordinary editing remain unqualified. No unchanged replay or fallback is authorized. A supported constrained executor is the remaining setup dependency; Lite 1.0.0's existing publication stays valid.
 
 ## Native MXC prerequisite - 2026-10-09
 
-The [exact prerequisite](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json) records the tested executor's native MXC unavailability before fixture execution. The original failure is preserved; no model, fallback or replay occurred. A supported constrained ordinary editing executor remains necessary. Reuse valid Lite1.0.0 evidence and the previous decoder; this negative result does not qualify read isolation or unrestricted outer tools. Whole-outcome efficiency, ownership-safe wider cleanup and downstream adoption remain open.
+The [exact prerequisite](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json) records the tested executor's native MXC unavailability before fixture execution. The original failure is preserved; no model, fallback or replay occurred. A supported constrained ordinary editing executor remains necessary. Reuse valid Lite 1.0.0 evidence and the previous decoder; this negative result does not qualify read isolation or unrestricted outer tools. Whole-outcome efficiency, ownership-safe wider cleanup and downstream adoption remain open.
 
 ## Changed host configuration - 2026-10-09
 
@@ -4151,7 +4155,7 @@ The current package has all8 original consumers PASS with38 forms/51 output reco
 
 ## Published Lite profile - 2026-10-09
 
-[AIDE Lite1.0.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0) is published for the qualified localWindows T3 profile. Strict release ACCEPT, all4downloaded asset hashes and unchanged fresh/brownfield acquisition/update/ recovery acceptance passed; full collection, scratch retirement and reservation release are recorded in the [existing report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and [exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json). Tag0f293eb6 and pack sourcea17cf4b3 remain distinct immutable identities. No code/export/archive or unsupported profile was changed. Broader containment, read isolation, actual model editing, whole-outcome efficiency, wider cleanup and downstream work remain open; this is not whole-programme completion.
+[AIDE Lite 1.0.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0) is published for the qualified localWindows T3 profile. Strict release ACCEPT, all4downloaded asset hashes and unchanged fresh/brownfield acquisition/update/ recovery acceptance passed; full collection, scratch retirement and reservation release are recorded in the [existing report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and [exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json). Tag0f293eb6 and pack sourcea17cf4b3 remain distinct immutable identities. No code/export/archive or unsupported profile was changed. Broader containment, read isolation, actual model editing, whole-outcome efficiency, wider cleanup and downstream work remain open; this is not whole-programme completion.
 
 ## Installed changelog compatibility repair - 2026-10-17
 

@@ -1,5 +1,9 @@
 ### AIDE Implementation Log
 
+### Lite 1.2 acquired consumer and closure - 21 October 2026
+
+Lite 1.2 is published and all four public hashes/sizes match. The original acquired-byte adoption/recovery consumer passed in one retired job; complete receipts roundtrip. Historical/rejected/stopped results and tag/payload identities remain preserved. The source-only preparer originally validated prospective placeholder IDs; its corrected copy check did not allocate or run a test. Final reviewed closeout updates current docs and safely syncs dev/main, with its own operation receipt retained as runtime evidence. [Delivery report](.aide/queue/AIDE-LITE-1-2-PUBLICATION-01/REPORT.md). Full daily-use/downstream, host and staged native/Extension work remain open.
+
 ### Lite 1.2 published and acquired - 21 October 2026
 
 Existing draft `418708655` was published with four exact labelled assets. The annotated tag remains at `ee36a934`; execution source `1abc5fa630a3ab6fdfbf28f410ad5980f437653f` is separate. All public downloads match immutable hashes/sizes, and the original stopped draft observation remains losslessly preserved. One original acquired-byte adoption/recovery consumer is prepared through the existing600-second runner; qualification allowances remain exhausted and no model requests are admitted.
@@ -156,7 +160,7 @@ Independent review required two record corrections, both repaired without rerun 
 
 ### Current export structural result — 2026-10-12
 
-Corrected jobc74e8a7f passed six ownership checks, rebuilt only the positively owned export and passed doctor/validate/pack-status. The855-file/4.37MB result matches retained hashes; published Lite1.0.0 assets remain byte-identical. Full validation output and verified collection/retirement are preserved. Original startup failure remains. Generated-result review and clean replay are next; consumer/integration/release and broader daily-use requirements stay open.
+Corrected jobc74e8a7f passed six ownership checks, rebuilt only the positively owned export and passed doctor/validate/pack-status. The855-file/4.37MB result matches retained hashes; published Lite 1.0.0 assets remain byte-identical. Full validation output and verified collection/retirement are preserved. Original startup failure remains. Generated-result review and clean replay are next; consumer/integration/release and broader daily-use requirements stay open.
 
 ### Derived export isolated-import correction — 2026-10-12
 
@@ -188,7 +192,7 @@ Prepared the [exact SESSION effect](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evid
 
 ### Daily-use planning candidate — 2026-10-12
 
-Prepared the owner's workflow amendment through [AIDE-DAILY-USE-PLAN-AMENDMENT-01](.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md). The existing roadmap now gives capability-specific relationships, eight daily-use acceptance phases, immediate accounting/usability/reuse and three horizons. Its adjacent JSON is advisory navigation, not another task authority. README and Profile current focus identify published Lite1.0.0; the old roadmap checkpoint is explicitly historical. Original release bytes and specification drafts are unchanged.
+Prepared the owner's workflow amendment through [AIDE-DAILY-USE-PLAN-AMENDMENT-01](.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md). The existing roadmap now gives capability-specific relationships, eight daily-use acceptance phases, immediate accounting/usability/reuse and three horizons. Its adjacent JSON is advisory navigation, not another task authority. README and Profile current focus identify published Lite 1.0.0; the old roadmap checkpoint is explicitly historical. Original release bytes and specification drafts are unchanged.
 
 Baseline doctor/validate results are preserved in task evidence: validate found 13 missing task-packet sections and stale capability input bindings. An explicit current packet and derived projection refresh are planned; validation never silently refreshes its subject. One host metadata observation identifies the actual new machine and changed Python; no model/native qualification occurred. Final doctor/validate passed with no failure/warning lines. Plan checks cover22 capabilities/eight phases and reject six invalid plans. Exact child scope/link checks pass; the built-in verifier's18 wrong-task scope warnings remain disclosed. Independent acceptance and operational/target effects remain outstanding.
 
@@ -10193,7 +10197,7 @@ All8 current-package cases now pass original assertions. New restart5, TaskOS7 a
 
 ### Published Lite profile - 2026-10-09
 
-[AIDE Lite1.0.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0) is published for the qualified localWindows T3 profile. Strict release ACCEPT, all4downloaded asset hashes and unchanged fresh/brownfield acquisition/update/ recovery acceptance passed; full collection, scratch retirement and reservation release are recorded in the [existing report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and [exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json). Tag0f293eb6 and pack sourcea17cf4b3 remain distinct immutable identities. No code/export/archive or unsupported profile was changed. Broader containment, read isolation, actual model editing, whole-outcome efficiency, wider cleanup and downstream work remain open; this is not whole-programme completion.
+[AIDE Lite 1.0.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0) is published for the qualified localWindows T3 profile. Strict release ACCEPT, all4downloaded asset hashes and unchanged fresh/brownfield acquisition/update/ recovery acceptance passed; full collection, scratch retirement and reservation release are recorded in the [existing report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and [exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json). Tag0f293eb6 and pack sourcea17cf4b3 remain distinct immutable identities. No code/export/archive or unsupported profile was changed. Broader containment, read isolation, actual model editing, whole-outcome efficiency, wider cleanup and downstream work remain open; this is not whole-programme completion.
 
 ### Installed changelog guard source candidate - 2026-10-17
 

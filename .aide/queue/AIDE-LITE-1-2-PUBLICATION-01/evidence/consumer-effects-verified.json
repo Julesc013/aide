@@ -1,0 +1,10 @@
+{
+  "state": "PASS_LOSSLESS_CONSUMER",
+  "operations": 91,
+  "streams": 182,
+  "files": 222,
+  "retained_sha256": "6f723f70c9175690fa32adbcf86cf475736946db4c04ca77b5a1b6f12cc63ff6",
+  "lossless_roundtrip_verified": true,
+  "new_effects": 0,
+  "model_requests": 0
+}

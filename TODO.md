@@ -18,8 +18,8 @@
 - [x] Complete the final affected local group, fresh identity/ownership and exact release replay.
 - [x] Independently accept combined Lite 1.2 qualification evidence.
 - [x] Integrate reviewed Lite 1.2 source/evidence to local/remote dev/main.
-- [ ] Complete Lite 1.2 publication and acquired-byte acceptance.
-- [ ] Review publication and acquired-byte consumers after archive/profile acceptance.
+- [x] Complete Lite 1.2 publication and acquired-byte acceptance; preserve the one retired original consumer and exact public assets.
+- [x] Independently review publication and acquired-byte consumer inputs/effects; close exact release evidence.
 
 **Release and daily use**
 

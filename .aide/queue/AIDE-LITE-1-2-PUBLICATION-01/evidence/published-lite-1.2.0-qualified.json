@@ -1,0 +1,98 @@
+{
+  "state": "PUBLISHED_ACQUIRED_ORIGINAL_CONSUMER_PASS",
+  "version": "1.2.0",
+  "release": {
+    "id": 418708655,
+    "tag_name": "aide-lite-v1.2.0",
+    "name": "AIDE Lite 1.2.0",
+    "body": "**Shared Lite lifecycle on four qualified modern profiles.** Adopt AIDE in a new or existing Git project, preserve project-owned policy and tools, customize managed content, and preview updates or removal before applying an exact plan.\n\n### Changes\n\n- **Portable lifecycle:** shared Windows, Linux and macOS filesystem bindings beneath the existing ownership and recovery mechanisms.\n- **Upgrade and exit:** qualification against the actual published 1.1.0 package covers customization, direct edits, conflicts and recorded resolutions, interrupted imports, owned repair and removal.\n- **Ownership repair:** re-observe live filesystem state before the existing ownership decision; retain the false-refusal regression and original failed attempts.\n- **Release profiles:** explicit environment, command and limitation records; one maintained source tree with platform bindings.\n\n### Qualified profiles\n\nAll profiles are **T3 Limited Support / L1 companion**, using **CPython 3.14.8**. This table describes the tested environments; it does not promise every OS release or Python minor version.\n\n| Environment | Architecture | Public forms |\n| --- | --- | --- |\n| Windows 10, build 19045 | AMD64 | 56 |\n| Windows Server 2025, build 26100 | AMD64 | 49 ordinary forms |\n| Linux, kernel `7.0.0-1017-azure` | x86_64 | 49 ordinary forms |\n| Darwin `24.6.0` / macOS 15 runner | arm64 | 49 ordinary forms |\n\nThe seven managed-job forms remain unqualified on each additional profile. Windows/Linux have fresh archive runs; macOS retains independently accepted behavioral evidence across the verified metadata-only archive change. The [qualification report](https://github.com/Julesc013/aide/blob/main/.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md) preserves exact tuples, subjects, failures, applicability proofs and replay results.\n\n### Downloads\n\n- **Portable package - ZIP:** `aide-lite-v1.2.0.zip`\n- **Portable package - TAR.GZ:** `aide-lite-v1.2.0.tar.gz`\n- **Release manifest:** `aide-lite-v1.2.0.manifest.json`\n- **SHA-256 checksums:** `aide-lite-v1.2.0.SHA256SUMS.txt`\n\nDownload one portable package and the checksums, verify it, extract outside the development checkout, and follow its `install.md`. Use Python 3 on the qualified profile. GitHub's automatic **Source code** downloads are repository snapshots, not the portable install package.\n\n### Limits and compatibility\n\n- POSIX ownership is cooperative. Outer editor/shell read/write containment and OS network isolation are not established by this release.\n- Changed-owned-path rollback and customized-overlay downgrade retain documented manual-recovery requirements. Preserve project work, backups and recovery evidence before exit; removal is not blanket `.aide` deletion.\n- Native DOS/FreeDOS, Windows 9x, older NT, OS/2, BSD/Solaris/SunOS ports and IDE extensions remain staged work. Companion participation does not qualify those native ports.\n- Live-model productivity, whole-task efficiency and autonomous cross-project delivery remain separate qualification obligations.\n\n**Provenance:** the tag identifies the reviewed publication/documentation checkpoint; the manifest identifies immutable payload source `158a5cdcac7afecbc180a6324ea02e46617d1bc9`. Historical preparation wording inside the frozen package is qualified by the current release evidence. Lite 1.0.0 and 1.1.0 assets and tags remain preserved.\n",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-20T18:15:44Z",
+    "target_commitish": "ee36a9342e17a4c13378bd9ac034c506056f6de2",
+    "immutable": false,
+    "assets": [
+      {
+        "id": 660097891,
+        "name": "aide-lite-v1.2.0.zip",
+        "label": "Portable package - ZIP",
+        "size": 1328652,
+        "digest": "sha256:e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Julesc013/aide/releases/download/aide-lite-v1.2.0/aide-lite-v1.2.0.zip"
+      },
+      {
+        "id": 660097892,
+        "name": "aide-lite-v1.2.0.manifest.json",
+        "label": "Release manifest",
+        "size": 27957,
+        "digest": "sha256:75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Julesc013/aide/releases/download/aide-lite-v1.2.0/aide-lite-v1.2.0.manifest.json"
+      },
+      {
+        "id": 660097893,
+        "name": "aide-lite-v1.2.0.tar.gz",
+        "label": "Portable package - TAR.GZ",
+        "size": 969467,
+        "digest": "sha256:4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Julesc013/aide/releases/download/aide-lite-v1.2.0/aide-lite-v1.2.0.tar.gz"
+      },
+      {
+        "id": 660097895,
+        "name": "aide-lite-v1.2.0.SHA256SUMS.txt",
+        "label": "SHA-256 checksums",
+        "size": 274,
+        "digest": "sha256:ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Julesc013/aide/releases/download/aide-lite-v1.2.0/aide-lite-v1.2.0.SHA256SUMS.txt"
+      }
+    ]
+  },
+  "tag_object": "d2accd1eb683e57ce3587aeea05febde7eb83d59",
+  "tag_commit": "ee36a9342e17a4c13378bd9ac034c506056f6de2",
+  "payload_source": "158a5cdcac7afecbc180a6324ea02e46617d1bc9",
+  "assets": {
+    "aide-lite-v1.2.0.SHA256SUMS.txt": {
+      "size_bytes": 274,
+      "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8"
+    },
+    "aide-lite-v1.2.0.manifest.json": {
+      "size_bytes": 27957,
+      "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428"
+    },
+    "aide-lite-v1.2.0.tar.gz": {
+      "size_bytes": 969467,
+      "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c"
+    },
+    "aide-lite-v1.2.0.zip": {
+      "size_bytes": 1328652,
+      "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d"
+    }
+  },
+  "acquisition_receipt_sha256": "4ea303679a18bd1ce9ae491ed25606f371883d7c9d5290f33afec84b375e9512",
+  "consumer": {
+    "job_id": "5c567008f1ff4f23b8b98fce6b3052cd",
+    "source_commit": "e4fd86d899bb53b237a9a8dd247ce0eeca202319",
+    "source_tree": "ac66345239fd5a46169c4354ddadb57abaf749ca",
+    "manifest_digest": "948572d2ddbcaf3e56003301154989e2f4543addf5e5272b0fc42927748bcf9f",
+    "config_digest": "fca2e5c311d117eed49b7f07a33b3cd434801cf46a987db47ff3cc14a4460f33",
+    "original_assertions": "unchanged",
+    "case": 0,
+    "partial_recovery": "PASS",
+    "exit_code": 0,
+    "quiescent": true,
+    "scratch_absent": true,
+    "reservation_released": true
+  },
+  "qualification_review_sha256": "3fc7564787f33d645089e6e0bc9e66b1ceedf0d226aada1879471d187ab05ab3",
+  "publication_collection_sha256": "4d6029bc05a19ffe24814bf95a3e4df1d0657033d9cb6c1cb6a6badfd87b220a",
+  "consumer_collection_sha256": "804070a57d4277ffa4f2bdf4459705e7174d08b7ddbef122507408ff273b8d69",
+  "support_scope": "Four exact T3/L1 companion profiles; CPython3.14.8,56primary/49ordinary per additional profile. Retained macOS applicability and original subjects remain explicit.",
+  "full_platform_complete": false,
+  "legacy_native_ports_complete": false,
+  "worker_model_requests": 0,
+  "controller_review_usage": "unknown",
+  "whole_outcome_efficiency": "unqualified"
+}

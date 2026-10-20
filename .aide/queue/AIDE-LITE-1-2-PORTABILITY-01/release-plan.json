@@ -3,7 +3,7 @@
   "task_id": "AIDE-LITE-1-2-PORTABILITY-01",
   "product": "AIDE Lite",
   "target_version": "1.2.0",
-  "state": "exact_archives_qualified_integrated_publication_pending",
+  "state": "exact_modern_profiles_published_acquired_original_consumer_verified",
   "published_predecessor": "1.1.0",
   "owner_decision_ref": "evidence/owner-decision.json",
   "release_strategy": "qualified_modern_profiles_with_staged_legacy_native_ports",
@@ -18,7 +18,7 @@
       "desired_native": true,
       "lite_1_2_profile_qualified": false,
       "exact_profile": null,
-      "evidence_needed": "Exact OS/architecture/interpreter tuple required; Lite1.1 evidence remains exact 19045/Python3.14.8.",
+      "evidence_needed": "Exact OS/architecture/interpreter tuple required; Lite 1.1 evidence remains exact 19045/Python3.14.8.",
       "companion_is_native": false
     },
     {
@@ -205,12 +205,12 @@
     "reviewed source and effects, exact dev/main/tag/artifacts, acquired-byte consumers"
   ],
   "claims": {
-    "cross_platform_qualified": "exact_declared_companion_profiles_only_unpublished",
+    "cross_platform_qualified": "exact_declared_companion_profiles_only_published",
     "native_legacy_ports_qualified": false,
     "extension_released": false
   },
   "preserved_work": [
-    "published Lite1.0 and1.1 assets and original evidence",
+    "published Lite 1.0 and1.1 assets and original evidence",
     "existing daily-use and DiskEd task identities and exhausted budgets",
     "existing P0-P11 roadmap owners and imported-draft boundaries"
   ],
@@ -322,14 +322,14 @@
     "hosted_profiles": 3,
     "execution_requires_exact_review": true,
     "historical_planning_record": true,
-    "current_disposition": "Superseded by owning qualification task amendments; all17local/twoexports/twohosted/fivejobs consumed, no retry allowance."
+    "current_disposition": "Superseded by owning qualification task amendments; all17 local/twoexports/twohosted/fivejobs consumed, no retry allowance."
   },
   "current_archive_qualification": {
     "workunit": "AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01",
     "integration": "3fec7ac375da0e17f035336e080d75ebd26a9920",
     "independent_acceptance": true,
-    "publication": false,
-    "acquired_consumer": false,
+    "publication": true,
+    "acquired_consumer": true,
     "allocations_consumed": 17,
     "exports_consumed": 2,
     "hosted_runs_consumed": 2,

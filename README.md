@@ -38,7 +38,7 @@ AIDE is not an AI editor, a VS Code competitor, a Codex wrapper, a prompt pack, 
 
 ### Status
 
-AIDE Lite **1.2.0 is published** as [`aide-lite-v1.2.0`](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.2.0). Four exact T3/L1 companion profiles use CPython 3.14.8: Windows 10/19045 AMD64 (56 forms), Windows Server 2025/26100 AMD64, Linux 7.0.0-1017-azure x86_64 and Darwin 24.6.0 arm64 (49 ordinary forms each). All four public downloads match the frozen identities; original acquired-byte adoption/recovery acceptance is pending. [Publication and hashes](.aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/published-acquired.json)
+AIDE Lite **1.2.0 is published** as [`aide-lite-v1.2.0`](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.2.0). Four exact T3/L1 companion profiles use CPython 3.14.8: Windows 10/19045 AMD64 (56 forms), Windows Server 2025/26100 AMD64, Linux 7.0.0-1017-azure x86_64 and Darwin 24.6.0 arm64 (49 ordinary forms each). All four public downloads match frozen hashes/sizes; the original acquired-byte fresh/brownfield and partial-import recovery consumer passed and retired. [Delivery proof](.aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/published-lite-1.2.0-qualified.json)
 
 **Release identities:** the tag records reviewed checkpoint `ee36a934`; the manifest records frozen payload source `158a5cdc`. Install a labelled portable package; GitHub automatic source archives are repository snapshots. Lite 1.0.0 and 1.1.0 tags, assets and original evidence remain preserved.
 
@@ -504,7 +504,7 @@ Generated outputs are addressed in [GENERATED_OUTPUTS.md](GENERATED_OUTPUTS.md):
 
 ### Next release and platform direction
 
-**Current portability work:** [Lite 1.2 archive qualification](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md) is independently accepted and integrated into `dev`/`main` at `3fec7ac3`. Four exact modern companion profiles are qualified: 56 forms on Windows 10 and 49 ordinary forms each on Windows Server, Linux and macOS. Retained evidence keeps its original subjects and applicability proofs. Publication and acquired-download acceptance remain separate.
+**Current portability work:** Lite 1.2 archive/profile qualification, publication and acquired-byte acceptance are complete for the exact declared profiles. Original failures and retained behavioral applicability remain preserved. [Qualification](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md), [delivery](.aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/published-lite-1.2.0-qualified.json). Broader managed backends, native legacy ports and future products retain separate acceptance requirements.
 
 **AIDE Lite 1.2.0 is published.** One maintained Python 3 source tree uses explicit platform bindings; optional PowerShell adapters require Core 7+. Legacy native ports remain staged. Future Extension 1.0 shares contracts through distinct IDE adapters/packages. [Portability, exit and independent products](docs/reference/portability-and-build-profiles.md).
 

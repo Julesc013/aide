@@ -1,6 +1,6 @@
 ### Release policy
 
-**Current product state:** Lite 1.1.0 is published, acquired and consumer-verified; 1.0.0 remains preserved. Lite 1.2.0 exact archive/profile qualification is independently accepted and integrated at `3fec7ac3`; its separately admitted [publication WorkUnit](../.aide/queue/AIDE-LITE-1-2-PUBLICATION-01/ExecPlan.md) owns tag, publication and acquired-byte acceptance. Legacy native ports and future products remain staged. The [changelog](../CHANGELOG.md) and [current campaign](../.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md) distinguish these states.
+**Current product state:** Lite 1.2.0 is published, acquired and original-consumer verified for four exact modern T3/L1 companion profiles. [Delivery evidence](../.aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/published-lite-1.2.0-qualified.json) preserves immutable assets, actual subjects, retained applicability and retirement. Lite 1.0/1.1 remain preserved. Legacy native ports, host products and full daily-use workflow remain staged under their own evidence gates.
 
 **Before every new tag**
 

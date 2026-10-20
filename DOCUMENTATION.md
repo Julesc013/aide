@@ -1,6 +1,6 @@
 ### AIDE Documentation Index
 
-**Current release boundary:** [Lite 1.2 qualification](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md) is independently accepted and integrated at `3fec7ac3`; [publication and acquired-download acceptance](.aide/queue/AIDE-LITE-1-2-PUBLICATION-01/ExecPlan.md) remain. The [portability reference](docs/reference/portability-and-build-profiles.md) records shared source, exact modern profiles, staged native legacy ports, project-owned customization/exit and independently versioned future products. Lite 1.1 remains published. Earlier dated progress notes below retain their historical scope.
+**Current release boundary:** [AIDE Lite 1.2 delivery](.aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/published-lite-1.2.0-qualified.json) includes exact archive/profile qualification, published labelled assets, verified public downloads and original acquired-byte adoption/recovery acceptance. [Portability and build profiles](docs/reference/portability-and-build-profiles.md) preserves the shared-source design, staged legacy native goals, customization/exit and independently versioned future products. Earlier dated progress notes retain their historical scope.
 
 **Release-profile format:** [Lite profiles](docs/reference/lite-release-profiles.md) defines compatible v2 declarations/markers, exact environment and command dispositions and preserved historical identities. Frozen preparation wording is superseded by current qualification evidence; archives are not rebuilt to rewrite their history.
 
@@ -116,7 +116,7 @@ Continue the existing campaign toward an actual host/downstream workflow and own
 
 ### Daily-use planning and current release — 2026-10-12
 
-The [existing roadmap](docs/roadmap/staged-expansion-roadmap.md) and [advisory capability relationships](docs/roadmap/development-workflows.json) define the next useful development milestone, four distinct relationship types, early accounting/usability/harvest and independent smaller capabilities. The [planning child](.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md) owns the candidate, checks and next briefs; independent acceptance remains pending. The [release report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) records published Lite1.0.0 and completed consumer/replay/acquisition checks. Historical checkpoints below retain their original subjects. Host metadata and support qualification are separate; no universal readiness follows from the plan.
+The [existing roadmap](docs/roadmap/staged-expansion-roadmap.md) and [advisory capability relationships](docs/roadmap/development-workflows.json) define the next useful development milestone, four distinct relationship types, early accounting/usability/harvest and independent smaller capabilities. The [planning child](.aide/queue/AIDE-DAILY-USE-PLAN-AMENDMENT-01/ExecPlan.md) owns the candidate, checks and next briefs; independent acceptance remains pending. The [release report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) records published Lite 1.0.0 and completed consumer/replay/acquisition checks. Historical checkpoints below retain their original subjects. Host metadata and support qualification are separate; no universal readiness follows from the plan.
 
 ### Owner development machine allocation - 2026-10-09
 
@@ -128,7 +128,7 @@ The [existing roadmap](docs/roadmap/staged-expansion-roadmap.md) and [advisory c
 
 ### Current native host prerequisite - 2026-10-09
 
-[Native MXC reconciliation](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json) keeps the original failure and tested-executor unavailability separate from [configuration decoding](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/changed-backend-qualification.json). Neither demonstrates ordinary model editing or outer containment. [SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) records the strict route, unchanged resources, classifier regression and no-replay rule. Lite1.0.0's published tag/assets and acquired consumer evidence remain valid.
+[Native MXC reconciliation](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/mxc-prerequisite-reconciliation.json) keeps the original failure and tested-executor unavailability separate from [configuration decoding](.aide/queue/AIDE-SESSION-CONTAINMENT-01/evidence/changed-backend-qualification.json). Neither demonstrates ordinary model editing or outer containment. [SESSION plan](.aide/queue/AIDE-SESSION-CONTAINMENT-01/ExecPlan.md) records the strict route, unchanged resources, classifier regression and no-replay rule. Lite 1.0.0's published tag/assets and acquired consumer evidence remain valid.
 
 ### Changed host configuration - 2026-10-09
 
@@ -750,7 +750,7 @@ The stable WorkUnit's current report, consumer matrix and replay replace the old
 
 ### Published Lite profile - 2026-10-09
 
-[AIDE Lite1.0.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0) is published for the qualified localWindows T3 profile. Strict release ACCEPT, all4downloaded asset hashes and unchanged fresh/brownfield acquisition/update/ recovery acceptance passed; full collection, scratch retirement and reservation release are recorded in the [existing report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and [exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json). Tag0f293eb6 and pack sourcea17cf4b3 remain distinct immutable identities. No code/export/archive or unsupported profile was changed. Broader containment, read isolation, actual model editing, whole-outcome efficiency, wider cleanup and downstream work remain open; this is not whole-programme completion.
+[AIDE Lite 1.0.0](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.0.0) is published for the qualified localWindows T3 profile. Strict release ACCEPT, all4downloaded asset hashes and unchanged fresh/brownfield acquisition/update/ recovery acceptance passed; full collection, scratch retirement and reservation release are recorded in the [existing report](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/REPORT.md) and [exact qualification](.aide/queue/AIDE-STABLE-LITE-RELEASE-EFFECT-01/evidence/published-lite-1.0.0-qualified.json). Tag0f293eb6 and pack sourcea17cf4b3 remain distinct immutable identities. No code/export/archive or unsupported profile was changed. Broader containment, read isolation, actual model editing, whole-outcome efficiency, wider cleanup and downstream work remain open; this is not whole-programme completion.
 
 - [Installed changelog recognition](docs/reference/changelog-preview.md) distinguishes project-owned queues from source admission; [bounded repair](.aide/queue/AIDE-INSTALLED-CHANGELOG-GUARD-01/ExecPlan.md) tracks actual qualification.
 

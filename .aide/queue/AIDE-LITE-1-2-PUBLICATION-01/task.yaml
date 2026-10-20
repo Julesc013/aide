@@ -4,7 +4,7 @@ parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 qualification_task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
 title: Publish the qualified Lite 1.2 package and verify acquired downloads
 type: release
-status: running
+status: passed
 scope:
   allowed_paths:
     - .aide/queue/AIDE-LITE-1-2-PUBLICATION-01/**

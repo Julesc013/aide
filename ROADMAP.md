@@ -2,7 +2,7 @@
 
 ### Current direction - 21 October 2026
 
-**Released:** AIDE Lite 1.1.0 for its exact local Windows CLI profile, including 56 forms, actual published-predecessor upgrade/recovery and acquired-byte consumer acceptance. Lite 1.0.0 and its original evidence remain preserved. Newer source/development-pack features retain their own evidence and remain outside these frozen archives.
+**Released:** AIDE Lite 1.2.0 for four exact modern T3/L1 companion profiles:56 public forms on primary Windows and49 ordinary forms on Windows Server/Linux/macOS. Actual published1.1 predecessor/customization/conflict/recovery, immutable package replay, public download identities and the original acquired-byte adoption/recovery consumer are accepted. Historical releases and original evidence remain preserved.
 
 **Next finish line:** repeatable useful work in AIDE and one downstream project, with interruption recovery, preserved customization and reusable results, clear ownership/resources and complete-outcome accounting. The [current campaign view](.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md) links the evidence and blockers; [TODO.md](TODO.md) provides a compact checklist and [PLANS.md](PLANS.md) holds detailed work.
 
@@ -20,7 +20,7 @@ The phase records below preserve foundation history and host-lane intent. Their 
 
 ### Lite 1.2 and Extension 1.0 direction
 
-The exact Lite 1.2 candidate is independently qualified and integrated into local/remote `dev` and `main` at `3fec7ac3`. The [qualification report](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md) preserves original failures and subjects, bounded retained evidence, final byte-exact replay and four exact modern profiles. The [publication WorkUnit](.aide/queue/AIDE-LITE-1-2-PUBLICATION-01/ExecPlan.md) owns the remaining tag, labelled downloads, publication and original acquired-byte consumer; Lite 1.1 remains the published release until that effect completes.
+Lite 1.2 qualification and public delivery are complete for the exact declared profiles. The [release evidence](.aide/queue/AIDE-LITE-1-2-PUBLICATION-01/evidence/published-lite-1.2.0-qualified.json) preserves tag/payload/execution identities, original failures and retained applicability. Next is the existing daily-use/downstream milestone, with real host delivery, useful accepted work, recovery and complete available effort accounting.
 
 One maintained source tree and shared semantic owners remain the design rule. Windows 9x, older Windows NT, MS-DOS/FreeDOS, OS/2, BSD, Unix, Solaris/SunOS and future native ports are staged across later releases. Controller runtime, build host, target ABI and IDE package are separate profiles; modern Python 3 or optional PowerShell Core 7+ is not imposed on every legacy target. [Portability and exit](docs/reference/portability-and-build-profiles.md) defines adoption, customization, coexistence, replacement and removal obligations.
 

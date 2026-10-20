@@ -1,0 +1,12 @@
+docs(lite): close published 1.2 acceptance and current roadmap
+
+- Preserve exact publication, public download and original consumer pass with lossless receipts and retired ownership.
+- Reconcile README, docs, TODO, plans, roadmap, changelog and release/portability state without changing frozen bytes.
+- Preserve full-platform blockers and prepare final guarded dev/main sync and owned local branch retirement.
+
+Validation: PASS - original acquired-byte case0 and partial recovery; exact four assets and fresh public readback; complete receipt roundtrip, quiescence and retirement.
+Changelog: Changed: publish Lite 1.2 exact modern profiles and close acquired-package acceptance
+Risk: Outer containment, whole-outcome efficiency, actual daily-use/downstream and staged native/host products remain unfinished.
+Follow-up: Continue existing campaign through dependency-ready host/source/owner gates; no qualification or publication restart.
+AIDE-Task: AIDE-LITE-1-2-PUBLICATION-01
+AIDE-Format: compact-v1

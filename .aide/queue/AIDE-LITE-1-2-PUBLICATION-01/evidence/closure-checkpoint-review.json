@@ -1,0 +1,16 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "2689f4f90dc4be94c6638eb6d23bb31289a19cb4c36cd4ab1dc394be84e41906",
+  "effect_sha256": "91a1f4fe0827faa98ad37cf404141eb17790a067ecd28144d5479e2b18428dfd",
+  "controller_sha256": "1bea06caff0d6f95bd1da7c61d05c14ed1db8c02525c2bfb56dd1d8f1f32f4e5",
+  "required_fixes": [],
+  "accepted_scope": "Accept the recorded exact Lite 1.2 publication, acquisition and original consumer outcome. Permit one managed closure checkpoint, guarded dev/main fast-forward/nonforce synchronization, matching task-local previews, then retirement of only the merged local publication branch. No release, tag, asset, export or job mutation.",
+  "notes": [
+    "The four required promotion records are present, accurately scoped and linked; all 26 local links resolve.",
+    "All 42 mapped files, exact dirty set and raw/filter identities verify. Every previously reviewed mapped file remains unchanged; rejected source/effect identities reconstruct exactly.",
+    "Previously verified consumer retirement, collections, publication readback and narrow controller findings remain applicable.",
+    "Final synchronization and branch retirement remain prospective until the controller succeeds. Its final operation receipt may remain runtime evidence as declared.",
+    "No tests or effects were executed by this reviewer."
+  ]
+}

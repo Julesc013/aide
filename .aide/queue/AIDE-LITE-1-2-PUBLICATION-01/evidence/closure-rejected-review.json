@@ -1,0 +1,20 @@
+{
+  "decision": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "f00c378f24555487aaa4834c6eb70c52ff8f709ff4a78d74820517e609008839",
+  "effect_sha256": "91a1f4fe0827faa98ad37cf404141eb17790a067ecd28144d5479e2b18428dfd",
+  "controller_sha256": "1bea06caff0d6f95bd1da7c61d05c14ed1db8c02525c2bfb56dd1d8f1f32f4e5",
+  "required_fixes": [
+    {
+      "finding": "Missing promotion-rules.yaml summaries changed-files.md,validation.md,remaining-risks.md and dev-review-packet.md.",
+      "remedy": "Add concise task-local projections linked to actual evidence, exact scope and procedures; bind source map; reuse existing qualification without tests/jobs."
+    }
+  ],
+  "notes": [
+    "Actual submitted job/case0/partial-recovery PASS and all retirement conditions verified.",
+    "All222 retainedfiles and91operations182streams reconstruct; all34mapped files/raw-filter IDs,2220closure pins, stable assets, canonicalpreviews and campaign digest verify; public readback preserves3releases.",
+    "Retirement limited to merged owned local task branch; no additional concrete outcome/controller blocker.",
+    "Final postcommit receipt may remain runtime evidence as declared. No tests or effects executed by reviewer."
+  ],
+  "canonical_record": "Structured transcription of actual independent verdict; rejected source/effect bytes preserved."
+}

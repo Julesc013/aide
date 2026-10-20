@@ -4276,15 +4276,15 @@ items:
   parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 
 - id: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
-  title: Qualify actual Lite1.2 archives and exact modern profiles
+  title: Qualify actual Lite 1.2 archives and exact modern profiles
   type: implementation
   status: passed
   path: .aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
   parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
 
 - id: AIDE-LITE-1-2-PUBLICATION-01
-  title: Publish the qualified Lite1.2 package and verify acquired downloads
+  title: Publish the qualified Lite 1.2 package and verify acquired downloads
   type: release
-  status: running
+  status: passed
   path: .aide/queue/AIDE-LITE-1-2-PUBLICATION-01
   parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
