@@ -1,0 +1,25 @@
+{
+  "status": "PASS_VERIFIED_DEV_MAIN_SYNC",
+  "commit": "3fec7ac375da0e17f035336e080d75ebd26a9920",
+  "tree": "d6a066e80533a37a12ce15883889aded3e0caa8c",
+  "refs": {
+    "dev": "3fec7ac375da0e17f035336e080d75ebd26a9920",
+    "main": "3fec7ac375da0e17f035336e080d75ebd26a9920"
+  },
+  "operations": 165,
+  "streams": 330,
+  "complete_receipt_sha256": "d6d7aeaec0c6f3be4354524624eb7daaad97cec1134444703ca8dc27a2400251",
+  "retained_sha256": "bd29ff1491739fbd6e810acd06fcac61fc665f85773bae833c762139f81c1888",
+  "lossless_roundtrip_verified": true,
+  "preview_sha256s": {
+    "CHANGELOG.preview.md": "57b394572f0b269fe34beab5ef1a80985f6fb06f37b8be88d2daa2d3def5507a",
+    "RELEASE_NOTES.preview.md": "6e92e7f70139700839f77c775b7aef719236419bd14efe09d0e1b66950c20c4a",
+    "changelog.preview.json": "6f1dcfe951ad1e5f24ba99cb7d04a2754488273e757ab797016ac59700da7259",
+    "release-notes.preview.json": "d259e7b44dcc3cd76bda858f61b436c6033aed4ac6bbc011b173343da45d776c",
+    "malformed-commits.md": "0e60ea1a3c68a531219c88ca857fa032218b78fa1e9d40dd2ac3b6a6c24ba875",
+    "latest-changelog-report.md": "d923c5a7cc56703b07c81917665e9fe0c7e24d31f37752e7c7b553d5082c27f5"
+  },
+  "new_jobs": 0,
+  "model_requests": 0,
+  "scope": "Accepted candidate and evidence integrated; support activation, publication and acquired-download acceptance remain separate."
+}

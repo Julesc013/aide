@@ -1,0 +1,14 @@
+{
+  "encoding": "ordered-gzip+base64-json-chunks",
+  "files": 41,
+  "raw_bytes": 68378,
+  "sha256": "a44e66b3fbe7ed7a6eb5f99204b81cc98934c619135791de05c01903f2bcb18a",
+  "chunks": [
+    {
+      "path": "admission-retained-00.json",
+      "sha256": "1aebc117c327c14bcd9b7c95c2519661fea037dafdaa21f27535a7cc9a0435f4",
+      "raw_sha256": "a44e66b3fbe7ed7a6eb5f99204b81cc98934c619135791de05c01903f2bcb18a",
+      "raw_bytes": 68378
+    }
+  ]
+}

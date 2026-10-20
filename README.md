@@ -1,4 +1,4 @@
-# AIDE
+### AIDE
 
 ![coverage](https://badgen.net/static/coverage/not%20much/F73) ![code style](https://badgen.net/static/code%20style/mine/999)
 
@@ -36,7 +36,7 @@ AIDE is not an AI editor, a VS Code competitor, a Codex wrapper, a prompt pack, 
 
 **AIDE is the system around agents.**
 
-## Status
+### Status
 
 AIDE Lite **1.1.0 is published** as [`aide-lite-v1.1.0`](https://github.com/Julesc013/aide/releases/tag/aide-lite-v1.1.0), with 56 qualified public forms and upgrade/recovery evidence against the actual published 1.0.0 package. All four downloads match the frozen identities; the original acquired-byte fresh/brownfield and partial-import recovery consumer passed and retired. Its declared profile is **T3 Limited Support**, local Windows CLI, Windows 10 build 19045 / Python 3.14.8. [Delivery evidence](.aide/queue/AIDE-LITE-SUCCESSOR-PUBLICATION-01/evidence/published-lite-1.1.0-qualified.json)
 
@@ -44,7 +44,7 @@ AIDE Lite **1.1.0 is published** as [`aide-lite-v1.1.0`](https://github.com/Jule
 
 **Development:** newer task views, communication defaults, knowledge/continuation and cooperative worker capabilities have scoped source/delivered evidence. They remain outside frozen 1.1.0 and require their own subsequent release qualification.
 
-**Lite 1.2 progress:** exact archive consumers and additional forms passed; Windows/Linux completed 49 ordinary forms and both published-predecessor scenarios per profile. macOS has independently accepted retained behavioral applicability. The final primary managed/brownfield/identity and byte-exact replay group passed and retired; original outcomes remain preserved. Independent review accepted the combined qualification; reviewed integration, publication and acquired-byte acceptance remain. Lite 1.1 is still published. [Qualification and limits](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md), [profile format](docs/reference/lite-release-profiles.md)
+**Lite 1.2 progress:** exact archive consumers and additional forms passed; Windows/Linux completed 49 ordinary forms and both published-predecessor scenarios per profile. macOS has independently accepted retained behavioral applicability. The final primary managed/brownfield/identity and byte-exact replay group passed and retired; original outcomes remain preserved. Independent review accepted the combined qualification; dev/main integration reached `3fec7ac3`; publication and acquired-byte acceptance remain. Lite 1.1 is still published. [Qualification and limits](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md), [profile format](docs/reference/lite-release-profiles.md)
 
 **Find the next action:** [TODO](TODO.md) is the short current checklist; [PLANS](PLANS.md) holds detailed work, [ROADMAP](ROADMAP.md) describes direction, [CHANGELOG](CHANGELOG.md) records release changes, and [DOCUMENTATION](DOCUMENTATION.md) indexes the docs. The filesystem queue remains the authority for work and acceptance.
 
@@ -75,7 +75,7 @@ Context packs prevent rediscovery.
 Runtime foundations coordinate bounded work.
 ```
 
-## Why AIDE Exists
+### Why AIDE Exists
 
 Modern AI coding tools are powerful, but most are still session-shaped:
 
@@ -99,7 +99,7 @@ Agents become bounded workers inside that control plane.
 
 AIDE's promise is not that agents never fail. AIDE's promise is that failures become structured work, claims require evidence, knowledge compounds, and safe progress can continue without tying the whole repo to one fragile agent session.
 
-## Core Idea
+### Core Idea
 
 The target operating loop is below. Current bounded foundations do not establish whole-session containment or a continuously productive unattended service.
 
@@ -125,7 +125,7 @@ AIDE is intended to coordinate:
 - visual workspaces
 - knowledge bundles
 
-## Quick Example
+### Quick Example
 
 For a goal such as "refresh the public README":
 
@@ -143,7 +143,7 @@ goal
 
 The current repository models these objects and includes bounded local process, transaction, lifecycle and worker foundations. Declaration/schema/projection checks do not qualify a general scheduler, async test broker or unattended promotion loop. See the scope and evidence in the current reconciliation report.
 
-## How AIDE Works
+### How AIDE Works
 
 AIDE models development as typed, reviewable objects:
 
@@ -163,7 +163,7 @@ AIDE models development as typed, reviewable objects:
 | `AdapterManifest` | Provider, tool, and host adapter declarations | Implemented declaration/schema; not adapter admission |
 | `ContextPack` | Compact agent context from OKF, protocol, and evidence | Implemented v2 projection; not model dispatch |
 
-## What Makes AIDE Different
+### What Makes AIDE Different
 
 | Category | What it does | How AIDE differs |
 | --- | --- | --- |
@@ -175,7 +175,7 @@ AIDE models development as typed, reviewable objects:
 
 AIDE is not the agent. AIDE is the system around the agent.
 
-## OKF Knowledge Plane
+### OKF Knowledge Plane
 
 AIDE uses an OKF-compatible knowledge bundle because project knowledge should be portable, readable, versionable, and useful to both humans and agents.
 
@@ -214,7 +214,7 @@ Current local bundle shape:
 
 The knowledge plane is influenced by the LLM Wiki pattern: maintain a persistent, interlinked markdown wiki that accumulates synthesis over time instead of repeatedly retrieving raw files for every question. In AIDE, that wiki is not the source of execution truth. It is the repo's compiled explanation layer.
 
-## Agentic Development Workflow
+### Agentic Development Workflow
 
 AIDE is designed to support this loop:
 
@@ -235,7 +235,7 @@ goal
 
 AIDE should not rely on one long-running agent session. The durable process is AIDE. Agents are disposable workers.
 
-## Multi-IDE And Legacy Support
+### Multi-IDE And Legacy Support
 
 AIDE is designed to work beyond one editor.
 
@@ -265,7 +265,7 @@ legacy IDE / workspace
 
 The old IDE does not need to run a first-party agent binary. It only needs a bridge. The current repo has host-lane proof records and skeletons, not complete legacy IDE products.
 
-## Workshop / Workbench Vision
+### Workshop / Workbench Vision
 
 AIDE is also intended to support visual development.
 
@@ -285,7 +285,7 @@ For a game, engine, or complex software project, a first-class Workshop/Workbenc
 
 The Workshop should be a visual operating surface over AIDE, not a separate authority layer. It is planned, not implemented.
 
-## Safety And Truth Model
+### Safety And Truth Model
 
 AIDE is built around bounded autonomy.
 
@@ -314,7 +314,7 @@ governance and policy
 
 Generated downstream artifacts are outputs, not source-of-truth records, unless a reviewed policy explicitly says otherwise.
 
-## Current Roadmap
+### Current Roadmap
 
 Existing declaration and projection foundations include:
 
@@ -343,7 +343,7 @@ checkpoint / promotion runtime
 
 The [staged development plan](docs/roadmap/staged-expansion-roadmap.md) separates dependency-ready local work from host/model/network qualification and larger deployments. The [full reconciliation report](.aide/queue/AIDE-ARCHITECTURE-RECONCILIATION-01/REPORT.md) links current claims to source and recorded evidence. Candidates are not admitted runtime work or calendar promises.
 
-## Implementation Status
+### Implementation Status
 
 | Area | Status | Notes |
 | --- | --- | --- |
@@ -369,7 +369,7 @@ The [staged development plan](docs/roadmap/staged-expansion-roadmap.md) separate
 | Legacy IDE adapters | Lane-specific proofs/bindings | Exact inventory, tier and capability ceiling apply; no family-wide parity |
 | Live model/provider operation | Unqualified | Offline metadata and opt-in host-binding source exist; actual usage/efficiency qualification remains pending |
 
-## Getting Started
+### Getting Started
 
 This repo is still pre-product. Start by inspecting the local control plane:
 
@@ -387,7 +387,7 @@ For non-trivial work, use the filesystem queue under `.aide/queue/` or compile a
 py -3 .aide/scripts/aide_lite.py intent compile --prompt "<bounded task>"
 ```
 
-## Repository Layout
+### Repository Layout
 
 Durable repo contract:
 
@@ -432,7 +432,7 @@ Other important roots:
 
 Committed `.aide/` content should describe repo truth and portable project law. Volatile runtime state should remain outside normal committed source control.
 
-## Design Principles
+### Design Principles
 
 ```text
 Boring core, flexible edges.
@@ -445,7 +445,7 @@ Runtime after protocol.
 Surfaces after truth.
 ```
 
-## What AIDE Is Not
+### What AIDE Is Not
 
 AIDE is not:
 
@@ -459,7 +459,7 @@ AIDE is not:
 
 AIDE can generate repo guidance and context for tools such as Codex, Claude Code, Gemini CLI, local scripts, CI, and human workers. Provider-specific integrations are adapters. They are not the AIDE architecture.
 
-## Influences And References
+### Influences And References
 
 - [Open Knowledge Format introduction](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing)
 - [Open Knowledge Format specification](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)
@@ -468,7 +468,7 @@ AIDE can generate repo guidance and context for tools such as Codex, Claude Code
 
 OKF is useful to AIDE because it is portable markdown plus frontmatter, not a new mandatory runtime. The LLM Wiki pattern is useful because it treats knowledge as a persistent, compounding artifact. `AGENTS.md` is useful as a tool guidance export target, not as AIDE's internal ontology.
 
-## Contributing
+### Contributing
 
 AIDE is being built slice by slice.
 
@@ -492,7 +492,7 @@ Each non-trivial change should produce:
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md) before making substantial changes.
 
-## License
+### License
 
 AIDE is licensed under the Apache License, Version 2.0 (`Apache-2.0`).
 
@@ -504,8 +504,8 @@ Generated outputs are addressed in [GENERATED_OUTPUTS.md](GENERATED_OUTPUTS.md):
 
 ### Next release and platform direction
 
-**Current portability work:** the [shared lifecycle binding](docs/reference/portable-lifecycle-filesystems.md) passed development-package adoption, published 1.1 upgrade/conflict recovery, repair and exit on four exact Windows/Linux/macOS environments. Native ACL/xattr and refusal/recovery checks passed on Linux/macOS. Qualified integration and versioned Lite 1.2 archives remain separate; original failures and the published release profile are preserved.
+**Current portability work:** [Lite 1.2 archive qualification](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md) is independently accepted and integrated into `dev`/`main` at `3fec7ac3`. Four exact modern companion profiles are qualified: 56 forms on Windows 10 and 49 ordinary forms each on Windows Server, Linux and macOS. Retained evidence keeps its original subjects and applicability proofs. Publication and acquired-download acceptance remain separate.
 
-**AIDE Lite 1.2.0 is the next planned release**, with exact modern profiles still to qualify. Python 3 reference tooling and optional PowerShell Core 7+ adapters share the existing semantic owners; native legacy ports are staged across releases. Future AIDE Extension 1.0 uses shared contracts and distinct IDE adapters/packages. Read the [portability and build plan](docs/reference/portability-and-build-profiles.md) for source boundaries, requested systems and acceptance; planned reach is not current support.
+**AIDE Lite 1.2.0 is prepared for publication.** Its shared Python 3 implementation uses explicit filesystem/platform bindings; optional PowerShell adapters require Core 7+. Legacy native ports remain staged. Future Extension 1.0 uses shared contracts with distinct IDE adapters/packages. The [portability and build plan](docs/reference/portability-and-build-profiles.md) distinguishes maintained source, exact supported profiles, native targets and future product releases.
 
 **Adopt or leave at any project stage:** preserve existing project policy, tools and customizations; combine or replace AIDE through explicit adapters and readable work/results. Removal preserves project work, unknown ownership and useful evidence. The [lifecycle and exit plan](docs/reference/portability-and-build-profiles.md#adopt-customize-coexist-and-leave) extends existing Lite mechanisms to future products; those future exits still require implementation and qualification.

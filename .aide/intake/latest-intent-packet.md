@@ -3,8 +3,8 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: cc8ee03ac4ecad98a06369ce4adbc3d9b8e0843da73849a23f502b84ff9571ad
-- raw_prompt_excerpt: Qualify actual AIDE Lite 1.2.0 ZIP and TAR archives against the accepted multi-profile contract at ed4a9004. Preserve all historical1.0/1.1assets and existing valid evidence. Reuse original assertions for Windows56forms and establish49fo...
+- raw_prompt_hash: b69ae027c8c7216c672957ffbe9022a42c0932d68383b8206687f16f7e8a2f63
+- raw_prompt_excerpt: Prepare separately reviewed publication of the independently qualified frozen AIDE Lite 1.2.0 assets: reconcile README, docs, TODO, PLANS, ROADMAP and changelog before tagging; preserve original qualification and all existing assets/tags...
 - interpreted_goal: Normalize prompt into a bounded release WorkUnit draft: write blocker report and require reviewed authorization before mutation.
 - confidence: high
 - task_class: release
@@ -31,7 +31,7 @@
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/status.yaml`
+- `.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/status.yaml`
 - `.aide/queue/index.yaml`
 - `.aide/repo/file-inventory.json`
 - `.aide/repo/latest-repo-intelligence.md`
@@ -40,10 +40,10 @@
 
 ## Branch State Refs
 
-- current_branch:main
-- current_role:canonical
+- current_branch:task/aide-lite-1-2-archive-qualification-01
+- current_role:task
 - workflow:trunk_with_dev_integration
-- worktree_dirty:false
+- worktree_dirty:true
 
 ## Validation Hints
 

@@ -1,0 +1,12 @@
+chore(lite): prepare qualified 1.2 publication and exact platform notes
+
+- Preserve completed qualification/dev/main and branch-admission receipts with lossless roundtrip verification.
+- Reconcile README, docs, TODO, plans, roadmap, changelog and the release-policy status paragraph before tagging.
+- Adapt existing release owners for four immutable labelled assets, both preserved predecessors and bounded public acquisition.
+
+Validation: PASS - accepted exact archive qualification and input hashes; pre-tag source checks and strict known-warning classification; original failures retained.
+Changelog: Changed: prepare Lite 1.2 modern companion release, adoption/exit and staged native-product documentation
+Risk: Publication and acquired-byte consumer remain pending; exact profiles do not imply legacy native or IDE parity.
+Follow-up: Execute only exact independently accepted publication/acquisition effects, then one original acquired-byte consumer.
+AIDE-Task: AIDE-LITE-1-2-PUBLICATION-01
+AIDE-Format: compact-v1

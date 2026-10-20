@@ -3,7 +3,7 @@
   "task_id": "AIDE-LITE-1-2-PORTABILITY-01",
   "product": "AIDE Lite",
   "target_version": "1.2.0",
-  "state": "development_contract_delivered_actual_archive_preparation",
+  "state": "exact_archives_qualified_integrated_publication_pending",
   "published_predecessor": "1.1.0",
   "owner_decision_ref": "evidence/owner-decision.json",
   "release_strategy": "qualified_modern_profiles_with_staged_legacy_native_ports",
@@ -205,7 +205,7 @@
     "reviewed source and effects, exact dev/main/tag/artifacts, acquired-byte consumers"
   ],
   "claims": {
-    "cross_platform_qualified": false,
+    "cross_platform_qualified": "exact_declared_companion_profiles_only_unpublished",
     "native_legacy_ports_qualified": false,
     "extension_released": false
   },
@@ -241,7 +241,7 @@
     "hosted_test_skips": 21,
     "release_support_activated": false
   },
-  "active_increment": "AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01",
+  "active_increment": "AIDE-LITE-1-2-PUBLICATION-01",
   "candidate_profiles": [
     {
       "id": "aide-lite-local-windows",
@@ -257,7 +257,8 @@
       },
       "proposed_forms": 56,
       "unqualified_forms": 0,
-      "archive_qualified": false
+      "archive_qualified": true,
+      "support_mode": "companion"
     },
     {
       "id": "aide-lite-local-windows-server",
@@ -273,14 +274,15 @@
       },
       "proposed_forms": 49,
       "unqualified_forms": 7,
-      "archive_qualified": false
+      "archive_qualified": true,
+      "support_mode": "companion"
     },
     {
       "id": "aide-lite-local-linux",
       "environment": {
         "system": "Linux",
-        "release": "6.17.0-1022-azure",
-        "version": "#22-Ubuntu SMP Mon Jul 27 17:24:03 UTC 2026",
+        "release": "7.0.0-1017-azure",
+        "version": "#17~24.04.1-Ubuntu SMP PREEMPT Thu Sep 24 18:46:57 UTC 2026",
         "machine": "x86_64",
         "runtime": {
           "implementation": "CPython",
@@ -289,7 +291,8 @@
       },
       "proposed_forms": 49,
       "unqualified_forms": 7,
-      "archive_qualified": false
+      "archive_qualified": true,
+      "support_mode": "companion"
     },
     {
       "id": "aide-lite-local-macos",
@@ -305,7 +308,8 @@
       },
       "proposed_forms": 49,
       "unqualified_forms": 7,
-      "archive_qualified": false
+      "archive_qualified": true,
+      "support_mode": "companion"
     }
   ],
   "release_contract_integration": "ed4a90046eba12a717a9962f21523285667a669b",
@@ -316,6 +320,19 @@
     "remaining_original_groups": 12,
     "maximum_hosted_runs": 1,
     "hosted_profiles": 3,
-    "execution_requires_exact_review": true
+    "execution_requires_exact_review": true,
+    "historical_planning_record": true,
+    "current_disposition": "Superseded by owning qualification task amendments; all17local/twoexports/twohosted/fivejobs consumed, no retry allowance."
+  },
+  "current_archive_qualification": {
+    "workunit": "AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01",
+    "integration": "3fec7ac375da0e17f035336e080d75ebd26a9920",
+    "independent_acceptance": true,
+    "publication": false,
+    "acquired_consumer": false,
+    "allocations_consumed": 17,
+    "exports_consumed": 2,
+    "hosted_runs_consumed": 2,
+    "hosted_jobs_consumed": 5
   }
 }

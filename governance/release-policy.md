@@ -1,6 +1,6 @@
 ### Release policy
 
-**Current product state:** AIDE Lite 1.1.0 is published, acquired and consumer-verified for its exact local Windows CLI profile; 1.0.0 remains preserved. Newer development lifecycle cases passed on four exact Windows/Linux/macOS environments and reached dev/main at `1e5193b0`. Lite 1.2.0 still requires [per-profile release contracts](../docs/reference/lite-release-profiles.md), actual archive/command qualification and publication; legacy native ports remain staged. The [changelog](../CHANGELOG.md), [current campaign](../.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md) and exact release evidence distinguish package delivery from newer development and the unfinished platform.
+**Current product state:** Lite 1.1.0 is published, acquired and consumer-verified; 1.0.0 remains preserved. Lite 1.2.0 exact archive/profile qualification is independently accepted and integrated at `3fec7ac3`; its separately admitted [publication WorkUnit](../.aide/queue/AIDE-LITE-1-2-PUBLICATION-01/ExecPlan.md) owns tag, publication and acquired-byte acceptance. Legacy native ports and future products remain staged. The [changelog](../CHANGELOG.md) and [current campaign](../.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md) distinguish these states.
 
 **Before every new tag**
 

@@ -1,0 +1,11 @@
+{
+  "state": "PASS_BRANCH_ADMISSION",
+  "base": "3fec7ac375da0e17f035336e080d75ebd26a9920",
+  "task_branch": "task/aide-lite-1-2-publication-01",
+  "operations": 20,
+  "streams": 40,
+  "receipt_sha256": "3681f766cf947568efd52b0d567168ff7121001094593bac2b12559a4d70723d",
+  "retained_sha256": "6752ddb2af6fe80a4a186c647d367d8f9187e45e3e6f9fa41fa5efd0937f2e51",
+  "lossless_roundtrip_verified": true,
+  "commit_push_tag_publication_download_job": "none"
+}

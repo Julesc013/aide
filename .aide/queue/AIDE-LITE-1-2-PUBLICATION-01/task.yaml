@@ -1,0 +1,48 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LITE-1-2-PUBLICATION-01
+parent_task: AIDE-CONVERGENCE-AND-DELIVERY-01
+qualification_task: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
+title: Publish the qualified Lite 1.2 package and verify acquired downloads
+type: release
+status: running
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-LITE-1-2-PUBLICATION-01/**
+    - .aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/**
+    - .aide/queue/AIDE-LITE-1-2-PORTABILITY-01/status.yaml
+    - .aide/queue/AIDE-LITE-1-2-PORTABILITY-01/release-plan.json
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
+    - .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml
+    - .aide/queue/index.yaml
+    - .aide/intake/latest-intent-packet.json
+    - .aide/intake/latest-intent-packet.md
+    - .aide/intake/latest-workunit-draft.json
+    - .aide/intake/latest-workunit-draft.md
+    - .aide/release/acquired-aide-lite-v1.2.0.log/**
+    - README.md
+    - TODO.md
+    - PLANS.md
+    - ROADMAP.md
+    - CHANGELOG.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/portability-and-build-profiles.md
+    - governance/release-policy.md
+    - governance/release-policy.md
+  forbidden_paths:
+    - product source or portable export changes
+    - rebuilding, replacing or clobbering any frozen asset or existing tag
+    - historical evidence rewrites, protection bypass, force or unrelated branch pruning
+    - unrelated targets, processes, credentials, providers, spending, roots, reserves or privileges
+review_gate: exact_admission_source_integration_publication_acquisition_and_final_closure
+admission_boundary: Preparation only; each checkpoint, branch, push, tag, publication, download and allocation requires exact independent acceptance under existing owner delegation.
+maximum_local_jobs: 1
+job_purpose: Original acquired-byte case0 fresh/brownfield and partial-import recovery only; qualification task remains exhausted at17 allocations.
+maximum_seconds_per_local_job: 600
+maximum_hosted_runs: 0
+export_regenerations: 0
+archive_rebuilds: 0
+maximum_new_release: 1
+release_tag: aide-lite-v1.2.0
+release_title: AIDE Lite 1.2.0
+live_worker_model_requests: 0

@@ -1,6 +1,6 @@
-# AIDE Roadmap
+### AIDE Roadmap
 
-### Current direction - 19 October 2026
+### Current direction - 21 October 2026
 
 **Released:** AIDE Lite 1.1.0 for its exact local Windows CLI profile, including 56 forms, actual published-predecessor upgrade/recovery and acquired-byte consumer acceptance. Lite 1.0.0 and its original evidence remain preserved. Newer source/development-pack features retain their own evidence and remain outside these frozen archives.
 
@@ -20,10 +20,9 @@ The phase records below preserve foundation history and host-lane intent. Their 
 
 ### Lite 1.2 and Extension 1.0 direction
 
-Compatible multi-profile metadata and the 879-file export are accepted and delivered at `ed4a9004`. The [actual archive phase](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md) now prepares the finite versioned-build and declared-profile qualification sequence. Lite 1.1 remains published; legacy native and future host products retain their own evidence gates.
+The exact Lite 1.2 candidate is independently qualified and integrated into local/remote `dev` and `main` at `3fec7ac3`. The [qualification report](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md) preserves original failures and subjects, bounded retained evidence, final byte-exact replay and four exact modern profiles. The [publication WorkUnit](.aide/queue/AIDE-LITE-1-2-PUBLICATION-01/ExecPlan.md) owns the remaining tag, labelled downloads, publication and original acquired-byte consumer; Lite 1.1 remains the published release until that effect completes.
 
-The [existing lifecycle owner's POSIX binding](.aide/queue/AIDE-LITE-POSIX-LIFECYCLE-01/ExecPlan.md) passed development-package adoption, published-predecessor conflict/recovery, repair and installed exit on four exact Windows/Linux/macOS environments; accepted integration reached local/remote `dev` and `main` at `1e5193b0`. Next: qualify the prepared [multi-profile release contract](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/ExecPlan.md), followed by actual versioned archive/public-form/acquisition evidence. The published support profile remains unchanged.
-Lite 1.2.0 is the next release target, with exact Windows/Linux/macOS candidate profiles selected and qualified through existing owners. On 20 October the user selected staged legacy native ports across later releases; older Windows NT, Windows 9x, MS-DOS/FreeDOS, OS/2, BSD, Unix, Solaris/SunOS and future systems remain explicit targets. Modern Python 3 and optional PowerShell Core 7+ are not prerequisites for every legacy target. The [portability reference](docs/reference/portability-and-build-profiles.md) and [bounded preparation](.aide/queue/AIDE-LITE-1-2-PORTABILITY-01/ExecPlan.md) distinguish controller, build host, target and IDE package evidence.
+One maintained source tree and shared semantic owners remain the design rule. Windows 9x, older Windows NT, MS-DOS/FreeDOS, OS/2, BSD, Unix, Solaris/SunOS and future native ports are staged across later releases. Controller runtime, build host, target ABI and IDE package are separate profiles; modern Python 3 or optional PowerShell Core 7+ is not imposed on every legacy target. [Portability and exit](docs/reference/portability-and-build-profiles.md) defines adoption, customization, coexistence, replacement and removal obligations.
 
 AIDE Extension 1.0 is a future product family over shared contracts, with distinct adapters/packages for Visual Studio, VS Code, Xcode and other host technologies. It requires actual per-host qualification and does not promise one binary or uniform capability. Existing P0-P11 owners and useful daily-use work remain the dependency structure.
 
@@ -47,17 +46,17 @@ This is planned reach, not a universal compatibility claim or a new release prer
 
 Reviewed campaign source was fast-forwarded from e88b1c2e to 53be4fc4; remaining historical evidence is preserved without malformed commit ancestry. The release and project rollout plan is in [the closeout report](.aide/queue/AIDE-CAMPAIGN-DEV-SYNC-CLOSEOUT-01/evidence/repo-release-rollout-report.md). This is source/evidence integration only. Main, release assets and deployments are unchanged; final qualification remains open and development stays stopped.
 
-## Scope And Limits
+### Scope And Limits
 
 This roadmap is a phase-based engineering guide. It is not a calendar promise and it does not override governance, support law, or actual verification evidence.
 
-## Public Positioning
+### Public Positioning
 
 AIDE should be presented as a portable agentic development control plane for real repositories. It is infrastructure around agents: protocol executes, evidence proves, OKF knowledge explains, and later runtime layers coordinate.
 
 Public roadmap language must not imply that AIDE is already a full autonomous runtime, AI editor, VS Code competitor, Codex wrapper, prompt pack, RAG system, project-management tool, provider adapter stack, Workshop product, or legacy IDE bridge. Those surfaces remain planned unless the queue and validation evidence say otherwise.
 
-## Completed Phases
+### Completed Phases
 
 - `P00`: governance, naming law, support law, capability doctrine, and root control-plane baseline
 - `P01` through `P05`: inventory, matrices, host-family scaffolding, and source-backed ecosystem atlases for Microsoft, Apple, CodeWarrior, and broader legacy candidates
@@ -118,7 +117,7 @@ Public roadmap language must not imply that AIDE is already a full autonomous ru
 - `AIDE-RESUME-BUILD-CONTEXTPACK-V2-01` through `AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01`: deterministic ContextPack v2 projection accepted with warnings for review, with no model, embedding, worker, runtime, admission, trust, patch apply, or target mutation behavior
 - `AIDE-BUILD-INTEROP-EXPORTS-01`: static interop export previews built with warnings for review, with no live MCP/A2A, Host Contract, Dominium Bridge conformance, Workbench, runtime, worker, provider/model/network, patch apply, branch/worktree, release, promotion, or target mutation behavior
 
-## Near-Term Phases
+### Near-Term Phases
 
 - process `AIDE-CHECK-INTEROP-EXPORTS-01` as the current serialized AIDE next task, then accept static interop exports only if the independent check passes
 - keep live queue truth authoritative over roadmap text, generated task packets, and chat handoffs
@@ -136,27 +135,27 @@ Public roadmap language must not imply that AIDE is already a full autonomous ru
 - tighten host-lane docs, matrix posture, and eval reports as implementation moves
 - add lightweight maintenance support and repo audit discipline without jumping straight to CI
 
-## Self-Hosting Reboot Queue
+### Self-Hosting Reboot Queue
 
 The reboot queue is defined in [docs/roadmap/reboot-roadmap.md](docs/roadmap/reboot-roadmap.md) and summarized in [docs/roadmap/queue-roadmap.md](docs/roadmap/queue-roadmap.md). It starts with Q00 baseline freeze and continues through documentation split, structural skeleton, profile contract, harness, generated artifacts, compatibility baseline, Dominium Bridge baseline, self-hosting automation, and token survival. Q02 adds skeleton directories only; the structural migration map lives at [docs/reference/structural-migration-map.md](docs/reference/structural-migration-map.md). Q03 adds the declarative Profile/Contract v0 and source-of-truth references. Q04 adds minimal executable Harness validation and reporting. Q05 adds generated artifact v0 markers, managed sections, preview-only Claude guidance, and drift checks. Q06 adds Compatibility baseline records and Harness checks without real migrations. Q07 adds AIDE-side Dominium Bridge metadata and structural Harness checks without modifying the Dominium repo or generating real Dominium outputs. Q08 adds report-first self-check automation without external workers, generated-artifact refresh, or autonomous service behavior. Q09-Q20 are accepted with notes as the token-survival foundation: compact packets, AIDE Lite, context compiler, verifier, evidence review, estimated token ledger, deterministic local golden tasks, advisory outcome and routing signals, cache/local-state boundary, local/report-only Gateway skeleton, and offline provider metadata. QFIX-01 reconciles that status truth. QFIX-02 establishes `py -3 .aide/scripts/aide_lite.py test` as the canonical AIDE Lite validation command and documents the old `-t .` unittest form as non-canonical. Q21 creates the portable AIDE Lite Pack and validates fixture imports before real target pilots. Q22/Q23 target imports have now run in Eureka and Dominium and await target-repo review. Q24 compiles compact existing-tool guidance as generated previews plus a safe AGENTS managed section. Q25 repairs pack integrity, default import scope, provenance reporting, and state-truth guidance. Q26 reviews the Eureka pilot evidence read-only. Q27 adds structured commit discipline, changelog preview, task resumption, WorkUnit idempotency, and recovery policy. Q28 adds branch workflow policy and report-only detection. Q29 adds dry-run-first Git helper plans and tests mutating land/promote/prune behavior only in temporary fixture repositories. Q30 records the AIDE-specific `main`/`dev` policy and confirms live `dev` setup remains a future explicit operator action, not an implicit branch mutation. Q31 exports the generic Q27-Q30 governance surface through the portable pack while keeping AIDE-specific live branch reports out of target truth. Q34 turns structured commits into preview-only changelog and release-note drafts while keeping release publishing, tags, and GitHub Releases deferred. Q35 adds report-only GitHub protection and CI advisory plans while keeping active GitHub settings, workflow files, tags, releases, and branch mutation deferred. Q36 adds a deterministic no-call intent compiler so raw prompts become reviewable intent packets and WorkUnit drafts before any implementation work begins. Q37 adds deterministic repo intelligence indexes so future quality and refactor phases can cite file inventory, ownership, dependencies, tests, docs, generated outputs, and conservative orphan candidates without moving or deleting files. Q38 adds deterministic advisory quality reports so future refactor planning can use visible warnings instead of broad cleanup prompts. Q39 adds a deterministic no-apply refactor control plane so later root recycling, tool absorption, move maps, salvage maps, path aliases, install, upgrade, and rollback phases can plan structural changes before applying them. Q40 adds a deterministic no-apply root recycling framework so root cleanup starts with root inventory, file fate candidates, risks, exceptions, and review-gated plans rather than root moves or deletion. Q41 adds deterministic existing-tool absorption planning so repositories with XStack, AuditX, RepoX, TestX, project validators, scripts, CI wrappers, or command catalogs can preserve and map those systems before any future wrapper execution or migration. Q42 adds candidate move, salvage, path-alias, reference-rewrite, and draft migration-ledger plans so future install and migration phases can reason about paths without applying changes. Q43 adds deterministic install observe/plan/dry-run outputs, ownership ledgers, conflict reports, preservation reports, and verification plans so target installs are preservation-first and reviewable before any future apply phase. Q44 adds deterministic repair observe/diagnose/plan/dry-run outputs, repair class gates, doctor repair reports, and verification plans so broken, partial, stale, or inconsistent AIDE installs can be diagnosed without applying repairs. Q45 adds deterministic upgrade observe/compare/plan/dry-run outputs, compatibility reporting, conflict reporting, migration gates, and verification plans so target updates are preservation-first. Q46 adds deterministic rollback and uninstall observe/plan/dry-run outputs, ownership-evidence gates, and preservation boundaries so removal and recovery are reviewable without deleting files or removing target state. Q47 adds deterministic local release bundle generation from the validated export pack, with archives, checksums, manifests, install notes, provenance, and fixture extraction validation while keeping publication, tags, uploads, GitHub Releases, and target installs deferred. Q48 adds deterministic local GitHub Release draft generation from that bundle, with draft text, asset checksums, no-upload plans, checklists, and publication-boundary reports while still keeping publication, tags, uploads, GitHub API calls, and target readiness claims deferred.
 
 The staged view for later candidates lives in [docs/roadmap/staged-expansion-roadmap.md](docs/roadmap/staged-expansion-roadmap.md). Later tracks such as Runtime, CLI or Service surfaces, Commander, Mobile, IDE Hosts, Pack/Skill/Workflow IR, GStack/reference imports, provider adapters, app surfaces, and broader release automation remain deferred until queue evidence supports them.
 
-## Medium-Term Phases
+### Medium-Term Phases
 
 - add richer embedded or local-service execution paths where the current `cli-bridge` proof is only a first step
 - expand verification from structural and smoke evidence toward stronger workflow-aware coverage
 - mature packaging manifests, release-shape evidence, and release-readiness audits
 - decide which candidate legacy families are strong enough for promotion into committed host work
 
-## Long-Horizon Phases
+### Long-Horizon Phases
 
 - advance selected host lanes toward `L3` and `L4` where the host surface genuinely supports it
 - broaden committed host-family coverage beyond the current Microsoft, Apple, and CodeWarrior set
 - improve environment reproducibility for archival lanes that depend on preserved toolchains or media
 - move from proof-oriented host work toward durable release posture where verification and packaging evidence justify it
 
-## Committed Work Versus Candidate Work
+### Committed Work Versus Candidate Work
 
 Committed work today:
 
@@ -173,7 +172,7 @@ Candidate or future research work today:
 - broader release automation
 - additional native interop surfaces and richer execution modes not yet implemented
 
-## Major Unresolved Or Blocker Themes
+### Major Unresolved Or Blocker Themes
 
 - missing reproducible native environments for several archival or native reference lanes
 - embedded or native interop paths that are still blocked while `cli-bridge` proofs exist
@@ -181,7 +180,7 @@ Candidate or future research work today:
 - environment acquisition and preservation costs for historical hosts
 - later-era contract ambiguity inside some legacy umbrellas
 
-## Roadmap Discipline
+### Roadmap Discipline
 
 - Promote work only when research, manifests, matrices, and verification evidence support it.
 - Keep blocked and deferred work explicit.

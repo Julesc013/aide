@@ -1,0 +1,16 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "75af8f8256cf7556ab2c1b12784a6775abef144fc692ebb7303cdf5004e21304",
+  "effect_sha256": "d8c8563eda899dde4e0d7c3e5d8cdf58529730ed879d67e2372758f125bcf459",
+  "controller_sha256": "f2c8bb885e973f71d1d535eaec76f8dad1a753ff5179bb184643be62b44a1f56",
+  "required_fixes": [],
+  "reasons": [
+    "Verified all 35 mapped files, exact dirty paths, raw/filter identities, current refs, configuration, twelve assets and 879 export files.",
+    "Independently reconstructed the completed integration receipt and verified all 165 operations and 330 streams.",
+    "Preparation checks passed with only the classified historical warning; current records preserve qualification and publication boundaries."
+  ],
+  "scope": "Create only task/aide-lite-1-2-publication-01 at 3fec7ac375da0e17f035336e080d75ebd26a9920 under the exact fresh guards, carrying the reviewed preparation bytes and preserving existing refs.",
+  "optional_notes": [],
+  "next_phase": "Prepare separately reviewed checkpoint/publication/acquisition effects. This admission permits no commit, push, tag, release, download, job or support activation."
+}

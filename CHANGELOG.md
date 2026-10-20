@@ -4,7 +4,7 @@ Release entries describe the delivered Lite package and its declared compatibili
 
 #### Unreleased
 
-- **Qualification candidate:** Lite 1.2 archives passed source/custody, original consumers, additional forms, Windows/Linux ordinary forms and real-predecessor scenarios, with scoped retained macOS applicability. The final managed/brownfield/identity and byte-exact replay group passed; original failures remain preserved. Combined technical acceptance passed; reviewed integration, publication and acquired-byte checks remain. [Evidence and limits](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md)
+- **Qualification candidate:** Lite 1.2 archives passed source/custody, original consumers, additional forms, Windows/Linux ordinary forms and real-predecessor scenarios, with scoped retained macOS applicability. The final managed/brownfield/identity and byte-exact replay group passed; original failures remain preserved. Combined technical acceptance passed; dev/main integration completed; publication and acquired-byte checks remain. [Evidence and limits](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md)
 
 - **Added, development:** compatible multi-profile release metadata and a verified 879-file export, delivered at `ed4a9004`. Twenty focused fixtures passed; the original worker failure and accepted read-only reconciliation remain preserved. Actual versioned-archive qualification is next; this is not a new supported release. [WorkUnit](.aide/queue/AIDE-LITE-MULTIPROFILE-CONTRACT-01/REPORT.md)
 
@@ -20,6 +20,15 @@ Release entries describe the delivered Lite package and its declared compatibili
 - **Changed:** compact commit/PR communication and short-lived task branches with reviewed, frequent dev/main synchronization.
 - **Docs:** explicit cross-platform/vintage direction, root TODO and pre-tag documentation reconciliation; public Markdown uses logical paragraphs without manual column wrapping. Releases use concise sections, titled downloads and exact artifact links.
 - **Still open:** actual desktop editing/containment, native downstream adoption, complete effort comparisons and repeated daily-use acceptance. The saved readability candidate remains unqualified.
+
+#### AIDE Lite 1.2.0 - prepared for publication
+
+- **Added:** shared Linux/macOS lifecycle bindings and explicit per-environment release profiles from one maintained source tree.
+- **Qualified:** T3/L1 companion profiles on Windows 10/19045 AMD64 (56 public forms), Windows Server 2025/26100 AMD64, Linux 7.0.0-1017-azure x86_64 and Darwin 24.6.0 arm64 (49 ordinary forms each), all CPython 3.14.8.
+- **Lifecycle:** fresh/brownfield adoption, project-owned customization, actual published 1.1.0 upgrade/conflict/recovery and owned repair/removal; exact original subjects and retained applicability remain explicit.
+- **Fixed:** live filesystem re-observation at the existing ownership boundary; false refusal regression and exact release replay passed.
+- **Limits:** cooperative POSIX ownership; seven managed forms remain unqualified on each additional profile. Outer-client isolation, live-model outcomes and legacy native/IDE parity are outside this release. Changed-path rollback and customized-overlay downgrade retain manual-recovery limits.
+- **Delivery:** exact archive qualification and dev/main integration passed; publication and acquired-download acceptance pending. [Evidence](.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md).
 
 #### AIDE Lite 1.1.0 â€” 19 October 2026
 

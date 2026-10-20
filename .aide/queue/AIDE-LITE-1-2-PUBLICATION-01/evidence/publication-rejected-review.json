@@ -1,0 +1,23 @@
+{
+  "decision": "REQUEST_CHANGES",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "a86c5d46e7a11ac3e80e20d2b13f1268cd75530f41ee2b888c60f5d52c1e9b78",
+  "effect_sha256": "b629c440d3e6b8dbe2c8c5d753a4e0433d9f4bc9d684f739a77fbedae2cf8074",
+  "controller_sha256": "eed430e992fe76c02c113d1268ec4d1b9b2e76f8b7ffc838fa18951709b30beb",
+  "delivery_effect_sha256": "7c4158363bd6d4e34479dc3ba0207f2b9d74c11f26f88bd8bed434c5b1c7ffef",
+  "delivery_controller_sha256": "463805a5e7e255aab81783e36ba5213118015fccf23b466293b54bcbcab5f3f8",
+  "required_fixes": [
+    {
+      "file": ".aide\\queue\\AIDE-LITE-1-2-PUBLICATION-01\\deliver.py",
+      "line": 161,
+      "finding": "release_list() permits additional unexpected releases before --latest.",
+      "remedy": "Require exact two preserved IDs, plus only the recorded candidate before publication; stop for reconciliation on unexpected releases."
+    }
+  ],
+  "notes": [
+    "All63 mapped files/raw-filter identities and898 delivery pins match; documentation and exact four T3/L1 companion boundaries reviewed.",
+    "No additional concrete blocker identified; preserve rejected packet and rebind focused correction; unchanged product qualification need not rerun.",
+    "No checkpoint/publication/support activation accepted. No effects or tests executed."
+  ],
+  "canonical_record": "Faithful structured transcription of actual independent verdict; full rejected bytes retained."
+}

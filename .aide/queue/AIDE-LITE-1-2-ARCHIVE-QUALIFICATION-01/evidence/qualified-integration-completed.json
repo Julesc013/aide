@@ -1,0 +1,3656 @@
+{
+  "status": "PASS",
+  "operations": [
+    {
+      "label": "branch",
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "branch.stdout.log": {
+          "bytes": 44,
+          "sha256": "4ba2636c5e47fc8c9609c4899c3c415867fe00d6343d07cf99ce9766dfb621e5"
+        },
+        "branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "base",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "base.stdout.log": {
+          "bytes": 41,
+          "sha256": "1f92db4434fe009e058b2b1f2a1a32302882ef1f8cb6de08bee77de0e4d9bb06"
+        },
+        "base.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "index",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "index.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "index.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "changed",
+      "argv": [
+        "git",
+        "diff",
+        "--name-only"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "changed.stdout.log": {
+          "bytes": 742,
+          "sha256": "3ea67b8b2d24e8494fc921b244158ddc77fc3f4c82aa90d383041b3e1389ab9f"
+        },
+        "changed.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "untracked",
+      "argv": [
+        "git",
+        "ls-files",
+        "--others",
+        "--exclude-standard"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "untracked.stdout.log": {
+          "bytes": 3727,
+          "sha256": "ff41b725ccfdcdefc3760993b274ea601c5d07b992ae7ed6af382879a9594dcc"
+        },
+        "untracked.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-fetch-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-fetch-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-commit-fetch-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-push-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-push-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-commit-push-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-before",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-before.stdout.log": {
+          "bytes": 113,
+          "sha256": "600fe98dea3b146d57c55eb1ad2ec884200f6d385d13119dcda986b631f6aa12"
+        },
+        "fetch-commit-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/dev:refs/remotes/origin/dev",
+        "refs/heads/main:refs/remotes/origin/main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "fetch-commit.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-commit-after",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-commit-after.stdout.log": {
+          "bytes": 113,
+          "sha256": "600fe98dea3b146d57c55eb1ad2ec884200f6d385d13119dcda986b631f6aa12"
+        },
+        "fetch-commit-after.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "message",
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--message-file",
+        "D:\\Projects\\AIDE\\aide\\.aide\\queue\\AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01\\evidence\\qualified-integration-message.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "message.stdout.log": {
+          "bytes": 2205,
+          "sha256": "5b7856d09dceb8ecd7f095419917efcaad724891448d7d467f5d0f762b66cada"
+        },
+        "message.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "stage",
+      "argv": [
+        "git",
+        "add",
+        "--",
+        ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md",
+        ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/collect_final.py",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/changed-files.md",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-review-packet.md",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-brownfield-result.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-controller-retained-00.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-controller-retained-01.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-controller-retained.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-00.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-01.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-02.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-03.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-04.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-managed-result.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-primary_identity-result.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-qualified.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-replay-result.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/historical-promotion-records.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualification-closure-proposal.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualification-closure-review.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-effect.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-effect.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-inputs.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-message.txt",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-prechecks.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-review.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-source.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-inputs.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-message.txt",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-prechecks.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-00.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-01.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-02.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-03.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-04.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-05.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-review.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-source.json",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-risks.md",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/validation.md",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/prepare_closure.py",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/prepare_qualified.py",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/status.yaml",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/sync_qualified.py",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/task.yaml",
+        "CHANGELOG.md",
+        "DOCUMENTATION.md",
+        "IMPLEMENT.md",
+        "PLANS.md",
+        "README.md",
+        "TODO.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "stage.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stage.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "staged",
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "staged.stdout.log": {
+          "bytes": 4469,
+          "sha256": "b2e2c45761d8a160076b1e011aeac52a31ac52292b3fac368c53893418359224"
+        },
+        "staged.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-0",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-0.stdout.log": {
+          "bytes": 41,
+          "sha256": "a20da2691059b3431dd111b0c91f7fb8da268599eea92e065cc8cf9547952d0e"
+        },
+        "raw-0.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-0",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-0.stdout.log": {
+          "bytes": 41,
+          "sha256": "a20da2691059b3431dd111b0c91f7fb8da268599eea92e065cc8cf9547952d0e"
+        },
+        "blob-0.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-1",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-1.stdout.log": {
+          "bytes": 41,
+          "sha256": "70e0bdb8bc348c9b3afe5a314d6dfa5765b195b4eb37ed37122d107c37ca0718"
+        },
+        "raw-1.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-1",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-1.stdout.log": {
+          "bytes": 41,
+          "sha256": "70e0bdb8bc348c9b3afe5a314d6dfa5765b195b4eb37ed37122d107c37ca0718"
+        },
+        "blob-1.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-2",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-2.stdout.log": {
+          "bytes": 41,
+          "sha256": "8b1b7a57ff9b35c12c944b785c11177067a3332b48daef8db295762a4144994f"
+        },
+        "raw-2.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-2",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-2.stdout.log": {
+          "bytes": 41,
+          "sha256": "8b1b7a57ff9b35c12c944b785c11177067a3332b48daef8db295762a4144994f"
+        },
+        "blob-2.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-3",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-3.stdout.log": {
+          "bytes": 41,
+          "sha256": "efc7e1724e17d6475777764167ae06506ab06c3ebbd080d7371e7af207428562"
+        },
+        "raw-3.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-3",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-3.stdout.log": {
+          "bytes": 41,
+          "sha256": "efc7e1724e17d6475777764167ae06506ab06c3ebbd080d7371e7af207428562"
+        },
+        "blob-3.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-4",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/collect_final.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-4.stdout.log": {
+          "bytes": 41,
+          "sha256": "781501a0f28d73f635b3af31ec1ba228ecb6bd3d57d82eb60e0dadd4f87d1e71"
+        },
+        "raw-4.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-4",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/collect_final.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-4.stdout.log": {
+          "bytes": 41,
+          "sha256": "781501a0f28d73f635b3af31ec1ba228ecb6bd3d57d82eb60e0dadd4f87d1e71"
+        },
+        "blob-4.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-5",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/changed-files.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-5.stdout.log": {
+          "bytes": 41,
+          "sha256": "8bfd045f278ebaba26e9b9f0820cf8ff17e3a179de328ae8b3a8716693850926"
+        },
+        "raw-5.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-5",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/changed-files.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-5.stdout.log": {
+          "bytes": 41,
+          "sha256": "8bfd045f278ebaba26e9b9f0820cf8ff17e3a179de328ae8b3a8716693850926"
+        },
+        "blob-5.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-6",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-review-packet.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-6.stdout.log": {
+          "bytes": 41,
+          "sha256": "7be2f2ddccdcd2150fde0ce0d022afec4f7ea2345dc736b72db439eea00325b3"
+        },
+        "raw-6.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-6",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-review-packet.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-6.stdout.log": {
+          "bytes": 41,
+          "sha256": "7be2f2ddccdcd2150fde0ce0d022afec4f7ea2345dc736b72db439eea00325b3"
+        },
+        "blob-6.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-7",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-brownfield-result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-7.stdout.log": {
+          "bytes": 41,
+          "sha256": "e72cf8b06e229b409b362a6ddb16cc27e04aea2652a88396c8fbb892d3743af4"
+        },
+        "raw-7.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-7",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-brownfield-result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-7.stdout.log": {
+          "bytes": 41,
+          "sha256": "e72cf8b06e229b409b362a6ddb16cc27e04aea2652a88396c8fbb892d3743af4"
+        },
+        "blob-7.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-8",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-controller-retained-00.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-8.stdout.log": {
+          "bytes": 41,
+          "sha256": "768ed2d3fd51c2661c3cc444ec4a2854172bab86b8f6080999a4785925727445"
+        },
+        "raw-8.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-8",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-controller-retained-00.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-8.stdout.log": {
+          "bytes": 41,
+          "sha256": "768ed2d3fd51c2661c3cc444ec4a2854172bab86b8f6080999a4785925727445"
+        },
+        "blob-8.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-9",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-controller-retained-01.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-9.stdout.log": {
+          "bytes": 41,
+          "sha256": "426c8ea104756cfde6c1b19c36d880eed5f1d2f567bbbee62c19250ed8a12a0e"
+        },
+        "raw-9.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-9",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-controller-retained-01.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-9.stdout.log": {
+          "bytes": 41,
+          "sha256": "426c8ea104756cfde6c1b19c36d880eed5f1d2f567bbbee62c19250ed8a12a0e"
+        },
+        "blob-9.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-10",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-controller-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-10.stdout.log": {
+          "bytes": 41,
+          "sha256": "fbf53d4c24290d76b2a081441e0972ee4e193d021da228f6dc6df9cc18694e4d"
+        },
+        "raw-10.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-10",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-controller-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-10.stdout.log": {
+          "bytes": 41,
+          "sha256": "fbf53d4c24290d76b2a081441e0972ee4e193d021da228f6dc6df9cc18694e4d"
+        },
+        "blob-10.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-11",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-00.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-11.stdout.log": {
+          "bytes": 41,
+          "sha256": "27ef50e2fb4a8e7948740773e6681321a8a9071f76c4626a274f0cb187acf6de"
+        },
+        "raw-11.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-11",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-00.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-11.stdout.log": {
+          "bytes": 41,
+          "sha256": "27ef50e2fb4a8e7948740773e6681321a8a9071f76c4626a274f0cb187acf6de"
+        },
+        "blob-11.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-12",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-01.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-12.stdout.log": {
+          "bytes": 41,
+          "sha256": "63dcbfd37400bb774fa0c3a464d056d3bac808b0d4e78d0c632e757f1bf98598"
+        },
+        "raw-12.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-12",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-01.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-12.stdout.log": {
+          "bytes": 41,
+          "sha256": "63dcbfd37400bb774fa0c3a464d056d3bac808b0d4e78d0c632e757f1bf98598"
+        },
+        "blob-12.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-13",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-02.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-13.stdout.log": {
+          "bytes": 41,
+          "sha256": "ac863574de5128cfb540328c28a74be419b4833b214640ab7ad21e52b9b2bed2"
+        },
+        "raw-13.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-13",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-02.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-13.stdout.log": {
+          "bytes": 41,
+          "sha256": "ac863574de5128cfb540328c28a74be419b4833b214640ab7ad21e52b9b2bed2"
+        },
+        "blob-13.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-14",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-03.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-14.stdout.log": {
+          "bytes": 41,
+          "sha256": "9b21586733ca8f4d726fef4833fe6f30b7df66ffc13715094c32f73272ba623e"
+        },
+        "raw-14.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-14",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-03.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-14.stdout.log": {
+          "bytes": 41,
+          "sha256": "9b21586733ca8f4d726fef4833fe6f30b7df66ffc13715094c32f73272ba623e"
+        },
+        "blob-14.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-15",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-04.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-15.stdout.log": {
+          "bytes": 41,
+          "sha256": "e70de2a2c517bea0f54fe96659ea101cacac1663e28797152bc46dbd873831c8"
+        },
+        "raw-15.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-15",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-04.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-15.stdout.log": {
+          "bytes": 41,
+          "sha256": "e70de2a2c517bea0f54fe96659ea101cacac1663e28797152bc46dbd873831c8"
+        },
+        "blob-15.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-16",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-16.stdout.log": {
+          "bytes": 41,
+          "sha256": "8077873025ae2191a652261e84f1ffb731f2dbf2ee48e9d8fa018edc80f5367e"
+        },
+        "raw-16.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-16",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-16.stdout.log": {
+          "bytes": 41,
+          "sha256": "8077873025ae2191a652261e84f1ffb731f2dbf2ee48e9d8fa018edc80f5367e"
+        },
+        "blob-16.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-17",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-managed-result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-17.stdout.log": {
+          "bytes": 41,
+          "sha256": "5ecd802afbea49d558d40b35d4e50c2bbc93de508a9a2a089d59359778eed290"
+        },
+        "raw-17.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-17",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-managed-result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-17.stdout.log": {
+          "bytes": 41,
+          "sha256": "5ecd802afbea49d558d40b35d4e50c2bbc93de508a9a2a089d59359778eed290"
+        },
+        "blob-17.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-18",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-primary_identity-result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-18.stdout.log": {
+          "bytes": 41,
+          "sha256": "e32f6571dcf9c60bf98477f89881462771a6845363ef9d93479ec23cf206ec07"
+        },
+        "raw-18.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-18",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-primary_identity-result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-18.stdout.log": {
+          "bytes": 41,
+          "sha256": "e32f6571dcf9c60bf98477f89881462771a6845363ef9d93479ec23cf206ec07"
+        },
+        "blob-18.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-19",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-qualified.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-19.stdout.log": {
+          "bytes": 41,
+          "sha256": "19a35b19d1f35c95774e21da3186e2734b3f1fbf6f94d45e24d9cbb1833e5417"
+        },
+        "raw-19.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-19",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-qualified.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-19.stdout.log": {
+          "bytes": 41,
+          "sha256": "19a35b19d1f35c95774e21da3186e2734b3f1fbf6f94d45e24d9cbb1833e5417"
+        },
+        "blob-19.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-20",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-replay-result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-20.stdout.log": {
+          "bytes": 41,
+          "sha256": "457c73135c09ea96b8beecdddbe876aaa7d513f01027c4390fa1db997ab517ae"
+        },
+        "raw-20.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-20",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-replay-result.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-20.stdout.log": {
+          "bytes": 41,
+          "sha256": "457c73135c09ea96b8beecdddbe876aaa7d513f01027c4390fa1db997ab517ae"
+        },
+        "blob-20.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-21",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/historical-promotion-records.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-21.stdout.log": {
+          "bytes": 41,
+          "sha256": "54ae76ac8eb87b01e8b1b77fa1b54520204045291ed26b1ab739dd7b7a107b89"
+        },
+        "raw-21.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-21",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/historical-promotion-records.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-21.stdout.log": {
+          "bytes": 41,
+          "sha256": "54ae76ac8eb87b01e8b1b77fa1b54520204045291ed26b1ab739dd7b7a107b89"
+        },
+        "blob-21.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-22",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualification-closure-proposal.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-22.stdout.log": {
+          "bytes": 41,
+          "sha256": "54401b48adc4ffed7b9f7cf5b96772f5463b7ef4c1f4f0c14696005beac76329"
+        },
+        "raw-22.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-22",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualification-closure-proposal.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-22.stdout.log": {
+          "bytes": 41,
+          "sha256": "54401b48adc4ffed7b9f7cf5b96772f5463b7ef4c1f4f0c14696005beac76329"
+        },
+        "blob-22.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-23",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualification-closure-review.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-23.stdout.log": {
+          "bytes": 41,
+          "sha256": "e462f00f427e4a8a21e33b59bd40b87af6e74c4e69ff187ed8b413c11d697491"
+        },
+        "raw-23.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-23",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualification-closure-review.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-23.stdout.log": {
+          "bytes": 41,
+          "sha256": "e462f00f427e4a8a21e33b59bd40b87af6e74c4e69ff187ed8b413c11d697491"
+        },
+        "blob-23.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-24",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-effect.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-24.stdout.log": {
+          "bytes": 41,
+          "sha256": "460b81f07407ff3c6d66c22cc02187f4d2ecbde01c910b8140f221aa8c9edb47"
+        },
+        "raw-24.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-24",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-effect.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-24.stdout.log": {
+          "bytes": 41,
+          "sha256": "460b81f07407ff3c6d66c22cc02187f4d2ecbde01c910b8140f221aa8c9edb47"
+        },
+        "blob-24.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-25",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-effect.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-25.stdout.log": {
+          "bytes": 41,
+          "sha256": "b8e58c801bbf7d05ed9e1aa7da05a4a5dba86f23651e9a4f349d183cdf012821"
+        },
+        "raw-25.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-25",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-effect.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-25.stdout.log": {
+          "bytes": 41,
+          "sha256": "b8e58c801bbf7d05ed9e1aa7da05a4a5dba86f23651e9a4f349d183cdf012821"
+        },
+        "blob-25.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-26",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-inputs.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-26.stdout.log": {
+          "bytes": 41,
+          "sha256": "6256674c9876ab2d74fe8f66aa10a757039708c2e7f53ad9777b532f3125c398"
+        },
+        "raw-26.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-26",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-inputs.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-26.stdout.log": {
+          "bytes": 41,
+          "sha256": "6256674c9876ab2d74fe8f66aa10a757039708c2e7f53ad9777b532f3125c398"
+        },
+        "blob-26.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-27",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-message.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-27.stdout.log": {
+          "bytes": 41,
+          "sha256": "6361346908aad3c09edb6b6361c74ca0c90aceae7db9186facc3c793c95224eb"
+        },
+        "raw-27.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-27",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-message.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-27.stdout.log": {
+          "bytes": 41,
+          "sha256": "6361346908aad3c09edb6b6361c74ca0c90aceae7db9186facc3c793c95224eb"
+        },
+        "blob-27.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-28",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-prechecks.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-28.stdout.log": {
+          "bytes": 41,
+          "sha256": "31bd21db1012ec93f0b49e6f5997dc1f7d2c27e5fe50d11827e57bda04ec8bfc"
+        },
+        "raw-28.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-28",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-prechecks.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-28.stdout.log": {
+          "bytes": 41,
+          "sha256": "31bd21db1012ec93f0b49e6f5997dc1f7d2c27e5fe50d11827e57bda04ec8bfc"
+        },
+        "blob-28.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-29",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-review.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-29.stdout.log": {
+          "bytes": 41,
+          "sha256": "e0e04a4e15a56069fdb78760451de8e9fbb419c7cb9b0f089256c03673ea02df"
+        },
+        "raw-29.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-29",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-review.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-29.stdout.log": {
+          "bytes": 41,
+          "sha256": "e0e04a4e15a56069fdb78760451de8e9fbb419c7cb9b0f089256c03673ea02df"
+        },
+        "blob-29.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-30",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-source.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-30.stdout.log": {
+          "bytes": 41,
+          "sha256": "4c4a55a45cde5e2a9d59bc5641bf102597090e6218e71680610c0b9c481d7cc8"
+        },
+        "raw-30.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-30",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-source.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-30.stdout.log": {
+          "bytes": 41,
+          "sha256": "4c4a55a45cde5e2a9d59bc5641bf102597090e6218e71680610c0b9c481d7cc8"
+        },
+        "blob-30.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-31",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-inputs.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-31.stdout.log": {
+          "bytes": 41,
+          "sha256": "db4be8a72b67b306893f55d0842752f623e517c358328fdb6745d91ef7e822bc"
+        },
+        "raw-31.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-31",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-inputs.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-31.stdout.log": {
+          "bytes": 41,
+          "sha256": "db4be8a72b67b306893f55d0842752f623e517c358328fdb6745d91ef7e822bc"
+        },
+        "blob-31.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-32",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-message.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-32.stdout.log": {
+          "bytes": 41,
+          "sha256": "6361346908aad3c09edb6b6361c74ca0c90aceae7db9186facc3c793c95224eb"
+        },
+        "raw-32.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-32",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-message.txt"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-32.stdout.log": {
+          "bytes": 41,
+          "sha256": "6361346908aad3c09edb6b6361c74ca0c90aceae7db9186facc3c793c95224eb"
+        },
+        "blob-32.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-33",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-prechecks.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-33.stdout.log": {
+          "bytes": 41,
+          "sha256": "25b2b890fbaa30c58e96284f504836740cd1ff9e580ecda099a6e21cca832647"
+        },
+        "raw-33.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-33",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-prechecks.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-33.stdout.log": {
+          "bytes": 41,
+          "sha256": "25b2b890fbaa30c58e96284f504836740cd1ff9e580ecda099a6e21cca832647"
+        },
+        "blob-33.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-34",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-00.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-34.stdout.log": {
+          "bytes": 41,
+          "sha256": "aa652ace9f24bc0c1c21e1ee5fa681a6af1724151a0f3ab342e70f477cb9d982"
+        },
+        "raw-34.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-34",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-00.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-34.stdout.log": {
+          "bytes": 41,
+          "sha256": "aa652ace9f24bc0c1c21e1ee5fa681a6af1724151a0f3ab342e70f477cb9d982"
+        },
+        "blob-34.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-35",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-01.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-35.stdout.log": {
+          "bytes": 41,
+          "sha256": "9d8ed592298edfbe5fb988f8dde150898d442a435bf8ce04285c4ddd5a08b75d"
+        },
+        "raw-35.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-35",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-01.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-35.stdout.log": {
+          "bytes": 41,
+          "sha256": "9d8ed592298edfbe5fb988f8dde150898d442a435bf8ce04285c4ddd5a08b75d"
+        },
+        "blob-35.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-36",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-02.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-36.stdout.log": {
+          "bytes": 41,
+          "sha256": "d29a50e6d95e54768a4a9a15a5ad1bc3d2fd53bc23d8cb20f15bb58213eb413b"
+        },
+        "raw-36.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-36",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-02.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-36.stdout.log": {
+          "bytes": 41,
+          "sha256": "d29a50e6d95e54768a4a9a15a5ad1bc3d2fd53bc23d8cb20f15bb58213eb413b"
+        },
+        "blob-36.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-37",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-03.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-37.stdout.log": {
+          "bytes": 41,
+          "sha256": "c564099396d1001e4ad417da32acbc8710803c4a2e1bff574523414bac857a98"
+        },
+        "raw-37.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-37",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-03.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-37.stdout.log": {
+          "bytes": 41,
+          "sha256": "c564099396d1001e4ad417da32acbc8710803c4a2e1bff574523414bac857a98"
+        },
+        "blob-37.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-38",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-04.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-38.stdout.log": {
+          "bytes": 41,
+          "sha256": "8c223516494854e608e9af90e1bcce71723f8b9d3c4a4db194df902f5158333c"
+        },
+        "raw-38.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-38",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-04.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-38.stdout.log": {
+          "bytes": 41,
+          "sha256": "8c223516494854e608e9af90e1bcce71723f8b9d3c4a4db194df902f5158333c"
+        },
+        "blob-38.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-39",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-05.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-39.stdout.log": {
+          "bytes": 41,
+          "sha256": "74717019a62d0177b035a9ed445bed8613488435f8ecbdd9530736fbe30bbeb5"
+        },
+        "raw-39.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-39",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-05.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-39.stdout.log": {
+          "bytes": 41,
+          "sha256": "74717019a62d0177b035a9ed445bed8613488435f8ecbdd9530736fbe30bbeb5"
+        },
+        "blob-39.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-40",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-40.stdout.log": {
+          "bytes": 41,
+          "sha256": "df9dec831e422bdd2a5837f9f66b1869e140c82e363ca18b8577cf452aa51225"
+        },
+        "raw-40.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-40",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-40.stdout.log": {
+          "bytes": 41,
+          "sha256": "df9dec831e422bdd2a5837f9f66b1869e140c82e363ca18b8577cf452aa51225"
+        },
+        "blob-40.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-41",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-review.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-41.stdout.log": {
+          "bytes": 41,
+          "sha256": "cff73b49df6cc8eddb6af83f68cdba1db64415b9939cf7a4bcc8555f7f8f6184"
+        },
+        "raw-41.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-41",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-review.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-41.stdout.log": {
+          "bytes": 41,
+          "sha256": "cff73b49df6cc8eddb6af83f68cdba1db64415b9939cf7a4bcc8555f7f8f6184"
+        },
+        "blob-41.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-42",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-source.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-42.stdout.log": {
+          "bytes": 41,
+          "sha256": "4a35eb1161a2279b1a31016ff670196608ca3f5c5ab573164952a59ee6438be4"
+        },
+        "raw-42.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-42",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-source.json"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-42.stdout.log": {
+          "bytes": 41,
+          "sha256": "4a35eb1161a2279b1a31016ff670196608ca3f5c5ab573164952a59ee6438be4"
+        },
+        "blob-42.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-43",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-risks.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-43.stdout.log": {
+          "bytes": 41,
+          "sha256": "adc108082318286020a4c75d22956612e1948021cae4dbcb9484d7bffd20c2a2"
+        },
+        "raw-43.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-43",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-risks.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-43.stdout.log": {
+          "bytes": 41,
+          "sha256": "adc108082318286020a4c75d22956612e1948021cae4dbcb9484d7bffd20c2a2"
+        },
+        "blob-43.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-44",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/validation.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-44.stdout.log": {
+          "bytes": 41,
+          "sha256": "bbde38e30575a5ac49aeae453c9d22eb48a2ea623bc322ab84eea7861d90d4fd"
+        },
+        "raw-44.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-44",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/validation.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-44.stdout.log": {
+          "bytes": 41,
+          "sha256": "bbde38e30575a5ac49aeae453c9d22eb48a2ea623bc322ab84eea7861d90d4fd"
+        },
+        "blob-44.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-45",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/prepare_closure.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-45.stdout.log": {
+          "bytes": 41,
+          "sha256": "40d0dcb47c842929bd122b5a829315e879b7b9a9001876931bfa8e8202d45212"
+        },
+        "raw-45.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-45",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/prepare_closure.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-45.stdout.log": {
+          "bytes": 41,
+          "sha256": "40d0dcb47c842929bd122b5a829315e879b7b9a9001876931bfa8e8202d45212"
+        },
+        "blob-45.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-46",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/prepare_qualified.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-46.stdout.log": {
+          "bytes": 41,
+          "sha256": "a22309b9e3a4f576203175ccedf6338d5694e8cd8548924e655d0c9531fbc757"
+        },
+        "raw-46.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-46",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/prepare_qualified.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-46.stdout.log": {
+          "bytes": 41,
+          "sha256": "a22309b9e3a4f576203175ccedf6338d5694e8cd8548924e655d0c9531fbc757"
+        },
+        "blob-46.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-47",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/status.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-47.stdout.log": {
+          "bytes": 41,
+          "sha256": "45a85abaf7328efe0cfd6982ac557e6cc0e280aa22e61f2bbe9854973ad4687d"
+        },
+        "raw-47.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-47",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/status.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-47.stdout.log": {
+          "bytes": 41,
+          "sha256": "45a85abaf7328efe0cfd6982ac557e6cc0e280aa22e61f2bbe9854973ad4687d"
+        },
+        "blob-47.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-48",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/sync_qualified.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-48.stdout.log": {
+          "bytes": 41,
+          "sha256": "b957e05f629d0c7081013af258de7f39e5a6246c74f703198a9153f827dc7c0a"
+        },
+        "raw-48.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-48",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/sync_qualified.py"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-48.stdout.log": {
+          "bytes": 41,
+          "sha256": "b957e05f629d0c7081013af258de7f39e5a6246c74f703198a9153f827dc7c0a"
+        },
+        "blob-48.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-49",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/task.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-49.stdout.log": {
+          "bytes": 41,
+          "sha256": "740ea5e070b376ebda9d52e326a69be4ff584f4fd5870dbe3adbb8401f7433ba"
+        },
+        "raw-49.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-49",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":.aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/task.yaml"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-49.stdout.log": {
+          "bytes": 41,
+          "sha256": "740ea5e070b376ebda9d52e326a69be4ff584f4fd5870dbe3adbb8401f7433ba"
+        },
+        "blob-49.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-50",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "CHANGELOG.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-50.stdout.log": {
+          "bytes": 41,
+          "sha256": "a3b0db8bd0086b7b990d87c6ca342344574a871875f548669e7eedd3efb688b3"
+        },
+        "raw-50.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-50",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":CHANGELOG.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-50.stdout.log": {
+          "bytes": 41,
+          "sha256": "a3b0db8bd0086b7b990d87c6ca342344574a871875f548669e7eedd3efb688b3"
+        },
+        "blob-50.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-51",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "DOCUMENTATION.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-51.stdout.log": {
+          "bytes": 41,
+          "sha256": "9602597306673bfa6fdea5c62b3f707e98fb9061cd877bf3ed4506e02b6e4eeb"
+        },
+        "raw-51.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-51",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":DOCUMENTATION.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-51.stdout.log": {
+          "bytes": 41,
+          "sha256": "9602597306673bfa6fdea5c62b3f707e98fb9061cd877bf3ed4506e02b6e4eeb"
+        },
+        "blob-51.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-52",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "IMPLEMENT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-52.stdout.log": {
+          "bytes": 41,
+          "sha256": "8016351242fa36d205441e9765f99211d6e0287006f54aae6095bed336eeacc2"
+        },
+        "raw-52.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-52",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":IMPLEMENT.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-52.stdout.log": {
+          "bytes": 41,
+          "sha256": "8016351242fa36d205441e9765f99211d6e0287006f54aae6095bed336eeacc2"
+        },
+        "blob-52.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-53",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "PLANS.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-53.stdout.log": {
+          "bytes": 41,
+          "sha256": "cfa9664c89ed98566be396f7d6d75d960f8d07eb9edd007dd15c453ae7291a69"
+        },
+        "raw-53.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-53",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":PLANS.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-53.stdout.log": {
+          "bytes": 41,
+          "sha256": "cfa9664c89ed98566be396f7d6d75d960f8d07eb9edd007dd15c453ae7291a69"
+        },
+        "blob-53.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-54",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "README.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-54.stdout.log": {
+          "bytes": 41,
+          "sha256": "833c893ac7888c51dedfd59b8a7069cc7d0ebbcdebf007f66a79e3d34eb84cde"
+        },
+        "raw-54.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-54",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":README.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-54.stdout.log": {
+          "bytes": 41,
+          "sha256": "833c893ac7888c51dedfd59b8a7069cc7d0ebbcdebf007f66a79e3d34eb84cde"
+        },
+        "blob-54.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "raw-55",
+      "argv": [
+        "git",
+        "hash-object",
+        "--no-filters",
+        "--",
+        "TODO.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "raw-55.stdout.log": {
+          "bytes": 41,
+          "sha256": "7da3facfa5edc41a0dfb254a6191c10597d905fc03353e52165050e5c3997bfb"
+        },
+        "raw-55.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "blob-55",
+      "argv": [
+        "git",
+        "rev-parse",
+        ":TODO.md"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "blob-55.stdout.log": {
+          "bytes": 41,
+          "sha256": "7da3facfa5edc41a0dfb254a6191c10597d905fc03353e52165050e5c3997bfb"
+        },
+        "blob-55.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "tree",
+      "argv": [
+        "git",
+        "write-tree"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "tree.stdout.log": {
+          "bytes": 41,
+          "sha256": "75f2011f2807216e91bede6f909917425665400abb6f2ded33a68ead7e72d7d2"
+        },
+        "tree.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "commit-check",
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--latest"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "commit-check.stdout.log": {
+          "bytes": 2134,
+          "sha256": "146c8f74c6b8a8aa0b32ba92def704da60c112f9cadc1d9a6467aed938204bd1"
+        },
+        "commit-check.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "commit-range-before-sync",
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "52ddd31908ac96b3e891933a066936e72c90b137..3fec7ac375da0e17f035336e080d75ebd26a9920"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "commit-range-before-sync.stdout.log": {
+          "bytes": 526,
+          "sha256": "6ac0ba3ccf12a679ee5d2d604eadd0ca98e539fa85609a215e211c0d3181be6a"
+        },
+        "commit-range-before-sync.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "validate-before-sync",
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "validate-before-sync.stdout.log": {
+          "bytes": 241,
+          "sha256": "7155d92da435eb768cffff730030ab3bf65e64ae31386664662e98696e42b5e9"
+        },
+        "validate-before-sync.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev-fetch-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev-fetch-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-dev-fetch-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev-push-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev-push-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-dev-push-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev-before",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev-before.stdout.log": {
+          "bytes": 113,
+          "sha256": "600fe98dea3b146d57c55eb1ad2ec884200f6d385d13119dcda986b631f6aa12"
+        },
+        "fetch-dev-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/dev:refs/remotes/origin/dev",
+        "refs/heads/main:refs/remotes/origin/main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "fetch-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-dev-after",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-dev-after.stdout.log": {
+          "bytes": 113,
+          "sha256": "600fe98dea3b146d57c55eb1ad2ec884200f6d385d13119dcda986b631f6aa12"
+        },
+        "fetch-dev-after.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "helper-dev",
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "plan"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "helper-dev.stdout.log": {
+          "bytes": 401,
+          "sha256": "ab2aaa304e8c3d49cfb25762340357fd0d3b39e02782c90c1458f460d9c21c16"
+        },
+        "helper-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "head-dev",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "head-dev.stdout.log": {
+          "bytes": 41,
+          "sha256": "a9d1fdca0d5fcf13924b2bb044a44a873a8c0a5a840f2d5c31f075525efef296"
+        },
+        "head-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "clean-dev",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "clean-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "clean-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "ancestor-dev",
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "52ddd31908ac96b3e891933a066936e72c90b137",
+        "3fec7ac375da0e17f035336e080d75ebd26a9920"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "ancestor-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ancestor-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "ref-dev",
+      "argv": [
+        "git",
+        "update-ref",
+        "refs/heads/dev",
+        "3fec7ac375da0e17f035336e080d75ebd26a9920",
+        "52ddd31908ac96b3e891933a066936e72c90b137"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "ref-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ref-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-dev-fetch-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-dev-fetch-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "push-dev-fetch-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-dev-push-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-dev-push-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "push-dev-push-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-dev",
+      "argv": [
+        "git",
+        "push",
+        "--no-follow-tags",
+        "origin",
+        "3fec7ac375da0e17f035336e080d75ebd26a9920:refs/heads/dev"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "push-dev.stderr.log": {
+          "bytes": 112,
+          "sha256": "91a8f8204c995a56b906f4c2930c1f8a5b5b266db4009942da5d7df0138d4711"
+        }
+      }
+    },
+    {
+      "label": "remote-dev",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "remote-dev.stdout.log": {
+          "bytes": 113,
+          "sha256": "5fba486a10535e21e070b78dbc1a4a64dca6d50b26bbd63a42a4e0db495ac4bf"
+        },
+        "remote-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "validate-dev",
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "validate"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "validate-dev.stdout.log": {
+          "bytes": 241,
+          "sha256": "7155d92da435eb768cffff730030ab3bf65e64ae31386664662e98696e42b5e9"
+        },
+        "validate-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "commit-range",
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "commit",
+        "check",
+        "--range",
+        "main..dev"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "commit-range.stdout.log": {
+          "bytes": 1374,
+          "sha256": "b8453fa013d6231187687e4b292525ee4cc34b15429e17f3b70b12341cd8b147"
+        },
+        "commit-range.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "tracking-dev",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/dev:refs/remotes/origin/dev"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "tracking-dev.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "tracking-dev.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-main-fetch-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-main-fetch-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-main-fetch-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-main-push-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-main-push-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "fetch-main-push-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-main-before",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-main-before.stdout.log": {
+          "bytes": 113,
+          "sha256": "5fba486a10535e21e070b78dbc1a4a64dca6d50b26bbd63a42a4e0db495ac4bf"
+        },
+        "fetch-main-before.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-main",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/dev:refs/remotes/origin/dev",
+        "refs/heads/main:refs/remotes/origin/main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-main.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "fetch-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "fetch-main-after",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "fetch-main-after.stdout.log": {
+          "bytes": 113,
+          "sha256": "5fba486a10535e21e070b78dbc1a4a64dca6d50b26bbd63a42a4e0db495ac4bf"
+        },
+        "fetch-main-after.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "helper-main",
+      "argv": [
+        "C:\\Users\\Jules\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-B",
+        ".aide/scripts/aide_lite.py",
+        "git",
+        "plan"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "helper-main.stdout.log": {
+          "bytes": 401,
+          "sha256": "ab2aaa304e8c3d49cfb25762340357fd0d3b39e02782c90c1458f460d9c21c16"
+        },
+        "helper-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "head-main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "head-main.stdout.log": {
+          "bytes": 41,
+          "sha256": "a9d1fdca0d5fcf13924b2bb044a44a873a8c0a5a840f2d5c31f075525efef296"
+        },
+        "head-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "clean-main",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "clean-main.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "clean-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "ancestor-main",
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "ed4a90046eba12a717a9962f21523285667a669b",
+        "3fec7ac375da0e17f035336e080d75ebd26a9920"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "ancestor-main.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ancestor-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "ref-main",
+      "argv": [
+        "git",
+        "update-ref",
+        "refs/heads/main",
+        "3fec7ac375da0e17f035336e080d75ebd26a9920",
+        "ed4a90046eba12a717a9962f21523285667a669b"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "ref-main.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "ref-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-main-fetch-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-main-fetch-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "push-main-fetch-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-main-push-url",
+      "argv": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-main-push-url.stdout.log": {
+          "bytes": 38,
+          "sha256": "2906ea23d47f0d7106136448234ed6d9b28c92bf8de1373673ec04b52b55853a"
+        },
+        "push-main-push-url.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "push-main",
+      "argv": [
+        "git",
+        "push",
+        "--no-follow-tags",
+        "origin",
+        "3fec7ac375da0e17f035336e080d75ebd26a9920:refs/heads/main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "push-main.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "push-main.stderr.log": {
+          "bytes": 113,
+          "sha256": "d0b69c971b7c6a9f62f72c9a5c78246661b0ab7f48fa104362ab319e8807eaad"
+        }
+      }
+    },
+    {
+      "label": "remote-main",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "remote-main.stdout.log": {
+          "bytes": 113,
+          "sha256": "4cfdba7b0f45be02aa110fee338a85fa59cb76bc9c56bd452b87d0f3f59acc08"
+        },
+        "remote-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "tracking-main",
+      "argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "refs/heads/main:refs/remotes/origin/main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "tracking-main.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "tracking-main.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "retained-task-branch",
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "retained-task-branch.stdout.log": {
+          "bytes": 44,
+          "sha256": "4ba2636c5e47fc8c9609c4899c3c415867fe00d6343d07cf99ce9766dfb621e5"
+        },
+        "retained-task-branch.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "final-clean",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "final-clean.stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "final-clean.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "remote-final",
+      "argv": [
+        "git",
+        "ls-remote",
+        "--heads",
+        "origin",
+        "dev",
+        "main"
+      ],
+      "state": "completed",
+      "exit_code": 0,
+      "streams": {
+        "remote-final.stdout.log": {
+          "bytes": 113,
+          "sha256": "4cfdba7b0f45be02aa110fee338a85fa59cb76bc9c56bd452b87d0f3f59acc08"
+        },
+        "remote-final.stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ],
+  "managed_commit": {
+    "status": "COMMITTED",
+    "branch_advanced": true,
+    "candidate_commit": "3fec7ac375da0e17f035336e080d75ebd26a9920",
+    "expected_ref": "refs/heads/task/aide-lite-1-2-archive-qualification-01",
+    "expected_head": "1806ec46d0342b2b3da9ddc49667e5c89ccbda10",
+    "expected_tree": "d6a066e80533a37a12ce15883889aded3e0caa8c",
+    "message_sha256": "1969bb433181cad041c6cccac3cc2c314746d1e543ea83b16c7490a8c872cbc3",
+    "apply": true,
+    "index_sha256": "566ef42037a46fe2401b4213bf0a6809e57d559f035f4fc5cf8f7e9f5ce33846",
+    "staged_paths": [
+      ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md",
+      ".aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/status.yaml",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/ExecPlan.md",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/REPORT.md",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/collect_final.py",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/changed-files.md",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/dev-review-packet.md",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-brownfield-result.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-controller-retained-00.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-controller-retained-01.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-controller-retained.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-00.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-01.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-02.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-03.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained-04.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-job-retained.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-managed-result.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-primary_identity-result.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-qualified.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/final-replay-result.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/historical-promotion-records.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualification-closure-proposal.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualification-closure-review.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-effect.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-effect.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-inputs.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-message.txt",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-prechecks.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-review.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-first-source.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-inputs.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-message.txt",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-prechecks.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-00.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-01.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-02.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-03.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-04.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate-05.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-rejected-candidate.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-review.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualified-integration-source.json",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/remaining-risks.md",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/validation.md",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/prepare_closure.py",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/prepare_qualified.py",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/status.yaml",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/sync_qualified.py",
+      ".aide/queue/AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/task.yaml",
+      "CHANGELOG.md",
+      "DOCUMENTATION.md",
+      "IMPLEMENT.md",
+      "PLANS.md",
+      "README.md",
+      "TODO.md"
+    ]
+  },
+  "commit": "3fec7ac375da0e17f035336e080d75ebd26a9920",
+  "tree": "d6a066e80533a37a12ce15883889aded3e0caa8c",
+  "preview_sha256s": {
+    "CHANGELOG.preview.md": "57b394572f0b269fe34beab5ef1a80985f6fb06f37b8be88d2daa2d3def5507a",
+    "RELEASE_NOTES.preview.md": "6e92e7f70139700839f77c775b7aef719236419bd14efe09d0e1b66950c20c4a",
+    "changelog.preview.json": "6f1dcfe951ad1e5f24ba99cb7d04a2754488273e757ab797016ac59700da7259",
+    "release-notes.preview.json": "d259e7b44dcc3cd76bda858f61b436c6033aed4ac6bbc011b173343da45d776c",
+    "malformed-commits.md": "0e60ea1a3c68a531219c88ca857fa032218b78fa1e9d40dd2ac3b6a6c24ba875",
+    "latest-changelog-report.md": "d923c5a7cc56703b07c81917665e9fe0c7e24d31f37752e7c7b553d5082c27f5"
+  },
+  "refs": {
+    "dev": "3fec7ac375da0e17f035336e080d75ebd26a9920",
+    "main": "3fec7ac375da0e17f035336e080d75ebd26a9920"
+  }
+}

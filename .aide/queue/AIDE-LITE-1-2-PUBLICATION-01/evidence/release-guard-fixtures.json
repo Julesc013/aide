@@ -1,0 +1,38 @@
+{
+  "state": "PASS",
+  "cases": {
+    "preserved_only": {
+      "accepted": true,
+      "expected": true,
+      "pass": true
+    },
+    "candidate_draft": {
+      "accepted": true,
+      "expected": true,
+      "pass": true
+    },
+    "unexpected_concurrent": {
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    "unexpected_before_latest": {
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    "duplicate_id": {
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    "missing_predecessor": {
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    }
+  },
+  "method": "Compile the actual nested projection/release_list AST; deterministic API responses, no network effects or jobs.",
+  "controller_sha256": "2e19ce5ab6611b5bd50ef3d57045831f73ae0e94c52bca1961e6f1788d4a1d87",
+  "original_rejection_preserved": true
+}

@@ -1,0 +1,14 @@
+{
+  "encoding": "ordered-gzip+base64-json-chunks",
+  "files": 6,
+  "raw_bytes": 729700,
+  "sha256": "2f60551cac629738fb16b6e65823e3f77dabf6bc90957d351a3df6093728d1d2",
+  "chunks": [
+    {
+      "path": "rejected-publication-packet-00.json",
+      "sha256": "818b66699a6a7759d0e219e3e87cace72e59b3ea5af70d251522615db193875a",
+      "raw_sha256": "2f60551cac629738fb16b6e65823e3f77dabf6bc90957d351a3df6093728d1d2",
+      "raw_bytes": 729700
+    }
+  ]
+}

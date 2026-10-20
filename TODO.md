@@ -17,7 +17,8 @@
 - [x] Complete the targeted Windows/Linux run; preserve original outcomes and independently accepted macOS subjects.
 - [x] Complete the final affected local group, fresh identity/ownership and exact release replay.
 - [x] Independently accept combined Lite 1.2 qualification evidence.
-- [ ] Integrate reviewed source, then complete Lite 1.2 publication and acquired-byte acceptance.
+- [x] Integrate reviewed Lite 1.2 source/evidence to local/remote dev/main.
+- [ ] Complete Lite 1.2 publication and acquired-byte acceptance.
 - [ ] Review publication and acquired-byte consumers after archive/profile acceptance.
 
 **Release and daily use**
@@ -33,7 +34,7 @@
 **Lite 1.2 and future Extension 1.0**
 
 - [x] Record Python 3/shared-source boundaries, optional PowerShell Core 7+ and the owner-selected staged legacy-native strategy. [Plan](.aide/queue/AIDE-LITE-1-2-PORTABILITY-01/ExecPlan.md)
-- [ ] Qualify exact modern Lite 1.2 profiles, portable ordinary CLI and actual 1.1.0 predecessor/customization/conflict/recovery evidence.
+- [x] Qualify exact modern Lite 1.2 profiles, portable ordinary CLI and actual 1.1.0 predecessor/customization/conflict/recovery evidence; preserve exact subjects and reviewed applicability.
 - [ ] Develop native legacy profiles across releases; companion access remains distinct from native support.
 - [ ] Prepare shared Extension 1.0 contracts and separately qualified IDE adapters/packages.
 
@@ -42,7 +43,7 @@
 - [ ] Release newer development features only after their exact package/profile qualification: compact communication, task briefs, handoff, lessons and cooperative interfaces.
 - [ ] Prove one real pinned Mini worker attempt and a small matched comparison when an approved route and finite live-model budget are admitted.
 - [ ] Improve reuse/impact decisions, lightweight harvest and portable continuation through existing owners; preserve unknown, unindexed and stale evidence.
-- [ ] Qualify platform participation beyond Windows: bounded Linux/macOS profiles, then evidence-driven BSD/Solaris/Unix adaptations and DOS/OS/2/vintage native or offline-companion paths. Preserve common work/protocol semantics and declare each profile’s limits. [Platform reach](ROADMAP.md#platform-reach)
+- [ ] Extend qualified modern companion participation into evidence-driven BSD/Solaris/Unix adaptations and DOS/OS/2/vintage native or offline-companion paths. Preserve common work/protocol semantics and declare each profile’s limits. [Platform reach](ROADMAP.md#platform-reach)
 - [ ] Expand host bindings, read-only Workbench/offline access, domain authoring, networked collaboration and controlled learning through their capability-specific gates.
 
 - [x] Project the current checklist policy through the existing report-only release preview, validator and stale-cache reader. [Source/delivered/installed evidence](.aide/queue/AIDE-RELEASE-CHECKLIST-PROJECTION-01/REPORT.md). Development-only; tags are not automatically intercepted.

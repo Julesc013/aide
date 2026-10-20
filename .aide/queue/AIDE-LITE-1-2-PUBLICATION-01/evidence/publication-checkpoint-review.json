@@ -1,0 +1,19 @@
+{
+  "decision": "ACCEPT",
+  "reviewer": "/root/review_disked_continuation",
+  "source_sha256": "d72dc43bde11f6466646a3f77400b92b7c34cf8a3562a208ceb62c82954fb3ff",
+  "effect_sha256": "b629c440d3e6b8dbe2c8c5d753a4e0433d9f4bc9d684f739a77fbedae2cf8074",
+  "controller_sha256": "eed430e992fe76c02c113d1268ec4d1b9b2e76f8b7ffc838fa18951709b30beb",
+  "delivery_effect_sha256": "5d43c91329ceecee2acca160cc9121c387a027c84d3cfe278baf476d45ab23b8",
+  "delivery_controller_sha256": "2e19ce5ab6611b5bd50ef3d57045831f73ae0e94c52bca1961e6f1788d4a1d87",
+  "support_activation": "exact_four_declared_T3_L1_companion_profiles_only",
+  "required_fixes": [],
+  "accepted_scope": "One exact managed pre-tag checkpoint and guarded dev/main synchronization, followed by the reviewed single tag/draft/four-asset publication and bounded acquisition effect. Support activation is limited to the four declared T3/L1 companion profiles. Consumer allocation remains separately gated.",
+  "notes": [
+    "The release-ID equality guard now rejects unexpected releases before tagging and publication; the adaptation generator contains the same correction.",
+    "All 68 mapped files, exact dirty set, Git filter identities, 2220 checkpoint input pins and 898 delivery file pins verified.",
+    "Original rejected packet identities reconstruct exactly. The controller change is limited to the required guard; six recorded deterministic cases cover acceptance and refusal.",
+    "Unchanged qualification evidence is reused with its recorded limitations. Fresh execution guards remain mandatory; uncertain outcomes require reconciliation without automatic retry.",
+    "No effects or tests were executed by this reviewer."
+  ]
+}

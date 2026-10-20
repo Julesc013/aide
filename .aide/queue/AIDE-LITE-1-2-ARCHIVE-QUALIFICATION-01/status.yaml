@@ -1,12 +1,12 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01
-status: running
-result: PENDING
-planning_state: exact_candidate_qualified_unpublished_integration_preparation
+status: passed
+result: PASS
+planning_state: exact_candidate_qualified_and_integrated_unpublished
 product_qualified: true
 local_jobs_consumed: 17
 hosted_runs_consumed: 2
-next_action: Exact reviewed dev/main synchronization, then separately admitted publication and acquired-byte acceptance.
+next_action: Continue only through separately admitted AIDE-LITE-1-2-PUBLICATION-01; all qualification allowances remain consumed.
 qualified_source_checkpoint: cb2ddcaf837e2604f34f11211447c551cc85b29b
 canonical_job: 6355e80d38804f89aa9a83fd743be7e1
 canonical_tests_passed: 12
@@ -19,9 +19,9 @@ consumer_checkpoint: eb8029171ee2b87f177e88fa5aca6f1994b9833d
 original_consumer_cases_passed: 8
 original_consumer_cases_incomplete: 0
 consumer_retained_files: 198
-dev_checkpoint: 52ddd31908ac96b3e891933a066936e72c90b137
+dev_checkpoint: 3fec7ac375da0e17f035336e080d75ebd26a9920
 dev_synced_remote: true
-main_checkpoint: ed4a90046eba12a717a9962f21523285667a669b
+main_checkpoint: 3fec7ac375da0e17f035336e080d75ebd26a9920
 remaining_checkpoint: 9ee1880e553e692ad697e0e8699b29439c47317e
 additive_forms_passed: 18
 public_forms_mapped: 56
@@ -69,3 +69,6 @@ latest_hosted_profile_files: 618
 latest_hosted_controller_streams: 366
 macos_evidence_method: retained behavioral applicability; original run and archive identities preserved
 published: false
+integration_receipt_ref: evidence/qualified-integration-verified.json
+integration_operations: 165
+integration_streams: 330

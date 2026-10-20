@@ -1,0 +1,14 @@
+{
+  "encoding": "ordered-gzip+base64-json-chunks",
+  "files": 331,
+  "raw_bytes": 183296,
+  "sha256": "1213b785b08a19fbe8cbc3af3d4ce38ebe12b90c72531674c8f62b8de47248f7",
+  "chunks": [
+    {
+      "path": "qualified-integration-retained-00.json",
+      "sha256": "12ef349f58d04de06cfae75410aebd7203aa82580dce043a89878235b3cbff2b",
+      "raw_sha256": "1213b785b08a19fbe8cbc3af3d4ce38ebe12b90c72531674c8f62b8de47248f7",
+      "raw_bytes": 183296
+    }
+  ]
+}

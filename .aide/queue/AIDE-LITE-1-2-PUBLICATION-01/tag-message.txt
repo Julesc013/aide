@@ -1,0 +1,6 @@
+AIDE Lite 1.2.0
+
+Qualified local CLI companion profiles on exact Windows desktop/server, Linux and macOS environments.
+Reviewed publication/documentation checkpoint; immutable payload source 158a5cdcac7afecbc180a6324ea02e46617d1bc9 remains distinct.
+Four labelled assets; original qualification, failures and bounded applicability remain preserved.
+Public acquisition and consumer acceptance are recorded separately after publication.

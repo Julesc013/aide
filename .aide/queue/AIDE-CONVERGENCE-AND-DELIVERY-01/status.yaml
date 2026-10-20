@@ -9,8 +9,8 @@ responsible_owner: AIDE campaign controller; project owners retain target accept
 acceptance_scope: Partial exact-subject qualifications; daily-use and full platform acceptance remain open
 product_qualified: false
 observed_at: 2026-10-21
-observed_source_checkpoint: 1806ec46d0342b2b3da9ddc49667e5c89ccbda10
-next_action: Integrate the independently qualified Lite 1.2 candidate, then separately review publication and acquired-byte acceptance; continue independent daily-use obligations.
+observed_source_checkpoint: 3fec7ac375da0e17f035336e080d75ebd26a9920
+next_action: Independently admit prepared AIDE-LITE-1-2-PUBLICATION-01, reconcile pre-tag docs and deliver frozen assets plus acquired-download acceptance.
 remaining_obligations:
   - Actual supported host delivery and bounded ordinary editing with interruption/recovery
   - DiskEd current-source reconciliation, target effect review and native downstream acceptance preserving customization
@@ -30,7 +30,7 @@ outer_filesystem_permission: unrestricted_not_whole_session_containment
 unchanged_blockers_stop_independent_work: false
 authority: Existing owner delegation and exact independent source/effect gates; status grants nothing new
 current_state_ref: .aide/queue/AIDE-CONVERGENCE-AND-DELIVERY-01/CURRENT.md
-current_state_sha256: 3aa19e355048c92d941d1400f2e1c1092343dc11699d3889c2ca2847da424e9a
+current_state_sha256: 58e63548c421f6c13fcc8560fc4c10197c181dcb3e3286f298ecb8864fa4071e
 historical_status_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-status.yaml
 historical_status_sha256: 797b885d9b9beee5a17435210f002cfba91ff344eef227af6ceca2dd32214384
 historical_task_ref: .aide/queue/AIDE-CAMPAIGN-CURRENT-STATE-01/evidence/prior-task.yaml

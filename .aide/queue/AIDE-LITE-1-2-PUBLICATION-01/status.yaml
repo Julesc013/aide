@@ -1,0 +1,15 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LITE-1-2-PUBLICATION-01
+status: running
+result: PENDING
+planning_state: branch_admitted_pre_tag_preparation
+product_qualified: false
+qualification_ref: ../AIDE-LITE-1-2-ARCHIVE-QUALIFICATION-01/evidence/qualification-closure-review.json
+qualified_source: 1806ec46d0342b2b3da9ddc49667e5c89ccbda10
+qualified_integration: 3fec7ac375da0e17f035336e080d75ebd26a9920
+local_jobs_consumed: 0
+local_job_ceiling: 1
+hosted_runs_consumed: 0
+archive_rebuilds: 0
+published: false
+next_action: Review exact documentation checkpoint, publication/acquisition controller and effect; then verify actual acquired-byte consumer.

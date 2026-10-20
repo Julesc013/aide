@@ -1,0 +1,26 @@
+{
+  "version": "1.2.0",
+  "tag": "aide-lite-v1.2.0",
+  "archive_source": "158a5cdcac7afecbc180a6324ea02e46617d1bc9",
+  "archive_tree": "7e1ff347ddc485b28ffdbc788ccc3634dd7bb742",
+  "assets": {
+    ".aide/release/stable/aide-lite-v1.2.0.SHA256SUMS.txt": {
+      "sha256": "ea83ca70db8c4cb670d8774fb8ddbe5450d800e610b2a79b23aee357c1454bc8",
+      "size_bytes": 274
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.manifest.json": {
+      "sha256": "75bbc890e81b1b22fe0896301ceda0509706c84d5c4569a1c2433bf296308428",
+      "size_bytes": 27957
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.tar.gz": {
+      "sha256": "4d68a1acd436f8acbbd543b6c26fe6db1dcb430c43cd3d361e7911735264501c",
+      "size_bytes": 969467
+    },
+    ".aide/release/stable/aide-lite-v1.2.0.zip": {
+      "sha256": "e75f5d3140a43db5dc607cd0083922446271418e318d17f9635747ffd80ba56d",
+      "size_bytes": 1328652
+    }
+  },
+  "qualification_review_sha256": "3fc7564787f33d645089e6e0bc9e66b1ceedf0d226aada1879471d187ab05ab3",
+  "qualification_proposal_sha256": "7ae1906f0ddb47bb051a9ae3522e0091185c8bdc548e05bad0c70a632fd4d851"
+}
